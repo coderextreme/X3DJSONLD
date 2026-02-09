@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Interchange",
     "head":
     {
@@ -47,22 +47,15 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://kshell.com/mobiusCarlson.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a mobius of 3 NURBS Patch Surfaces",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":

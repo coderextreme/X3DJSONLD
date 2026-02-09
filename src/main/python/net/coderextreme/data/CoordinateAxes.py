@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,7 +22,7 @@ meta4.content = "14 July 2000"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "modified"
-meta5.content = "20 October 2019"
+meta5.content = "Mon, 09 Feb 2026 07:09:53 GMT"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
@@ -55,240 +55,199 @@ meta11.name = "identifier"
 meta11.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"
 
 head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "generator"
-meta12.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "license"
-meta13.content = "../license.html"
-
-head1.children.append(meta13)
 
 X3D0.head = head1
-Scene14 = x3d.Scene()
-WorldInfo15 = x3d.WorldInfo()
-WorldInfo15.title = "CoordinateAxes.x3d"
+Scene12 = x3d.Scene()
+WorldInfo13 = x3d.WorldInfo()
+WorldInfo13.title = "CoordinateAxes.x3d"
 
-Scene14.children.append(WorldInfo15)
-Collision16 = x3d.Collision()
-Collision16.DEF = "DoNotCollideWithVisualizationWidget"
-"""Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph."""
-"""This NavigationInfo allows examine mode and will be overridden by any parent scene."""
-"""Each arrow goes from +1m to -1m to allow linear scaling to fit a scene"""
-"""Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user"""
-Group17 = x3d.Group()
-"""Vertical Y arrow and label"""
-Group18 = x3d.Group()
-Group18.DEF = "ArrowGreen"
-Shape19 = x3d.Shape()
-Cylinder20 = x3d.Cylinder()
-Cylinder20.DEF = "ArrowCylinder"
-Cylinder20.radius = 0.025
+Scene12.children.append(WorldInfo13)
+Collision14 = x3d.Collision(DEF="DoNotCollideWithVisualizationWidget")
+Group15 = x3d.Group()
+Group16 = x3d.Group(DEF="ArrowGreen")
+Shape17 = x3d.Shape()
+Appearance18 = x3d.Appearance(DEF="Green")
+Material19 = x3d.Material()
+Material19.diffuseColor = [0.1,0.6,0.1]
+Material19.emissiveColor = [0.05,0.2,0.05]
+
+Appearance18.material = Material19
+
+Shape17.appearance = Appearance18
+Cylinder20 = x3d.Cylinder(DEF="ArrowCylinder")
 Cylinder20.top = False
+Cylinder20.radius = 0.025
 
-Shape19.geometry = Cylinder20
-Appearance21 = x3d.Appearance()
-Appearance21.DEF = "Green"
-Material22 = x3d.Material()
-Material22.diffuseColor = [0.1,0.6,0.1]
-Material22.emissiveColor = [0.05,0.2,0.05]
+Shape17.geometry = Cylinder20
 
-Appearance21.material = Material22
+Group16.children.append(Shape17)
+Transform21 = x3d.Transform()
+Transform21.translation = [0,1,0]
+Shape22 = x3d.Shape()
+Appearance23 = x3d.Appearance(USE="Green")
 
-Shape19.appearance = Appearance21
+Shape22.appearance = Appearance23
+Cone24 = x3d.Cone(DEF="ArrowCone")
+Cone24.height = 0.1
+Cone24.bottomRadius = 0.05
 
-Group18.children.append(Shape19)
-Transform23 = x3d.Transform()
-Transform23.translation = [0,1,0]
-Shape24 = x3d.Shape()
-Cone25 = x3d.Cone()
-Cone25.DEF = "ArrowCone"
-Cone25.bottomRadius = 0.05
-Cone25.height = 0.1
+Shape22.geometry = Cone24
 
-Shape24.geometry = Cone25
-Appearance26 = x3d.Appearance()
-Appearance26.USE = "Green"
+Transform21.children.append(Shape22)
 
-Shape24.appearance = Appearance26
+Group16.children.append(Transform21)
 
-Transform23.children.append(Shape24)
+Group15.children.append(Group16)
+Transform25 = x3d.Transform()
+Transform25.translation = [0,1.08,0]
+Billboard26 = x3d.Billboard()
+Shape27 = x3d.Shape()
+Appearance28 = x3d.Appearance(DEF="LABEL_APPEARANCE")
+Material29 = x3d.Material()
+Material29.diffuseColor = [1,1,0.3]
+Material29.emissiveColor = [0.33,0.33,0.1]
 
-Group18.children.append(Transform23)
+Appearance28.material = Material29
 
-Group17.children.append(Group18)
-Transform27 = x3d.Transform()
-Transform27.translation = [0,1.08,0]
-Billboard28 = x3d.Billboard()
-Shape29 = x3d.Shape()
-Appearance30 = x3d.Appearance()
-Appearance30.DEF = "LABEL_APPEARANCE"
-Material31 = x3d.Material()
-Material31.diffuseColor = [1,1,0.3]
-Material31.emissiveColor = [0.33,0.33,0.1]
+Shape27.appearance = Appearance28
+Text30 = x3d.Text()
+Text30.string = ["Y"]
+FontStyle31 = x3d.FontStyle(DEF="LABEL_FONT")
+FontStyle31.family = ["SANS"]
+FontStyle31.size = 0.2
+FontStyle31.justify = ["MIDDLE","MIDDLE"]
 
-Appearance30.material = Material31
+Text30.fontStyle = FontStyle31
 
-Shape29.appearance = Appearance30
-Text32 = x3d.Text()
-Text32.string = ["Y"]
-FontStyle33 = x3d.FontStyle()
-FontStyle33.DEF = "LABEL_FONT"
-FontStyle33.family = ["SANS"]
-FontStyle33.justify = ["MIDDLE","MIDDLE"]
-FontStyle33.size = 0.2
+Shape27.geometry = Text30
 
-Text32.fontStyle = FontStyle33
+Billboard26.children.append(Shape27)
 
-Shape29.geometry = Text32
+Transform25.children.append(Billboard26)
 
-Billboard28.children.append(Shape29)
+Group15.children.append(Transform25)
 
-Transform27.children.append(Billboard28)
+Collision14.proxy = Group15
+Transform32 = x3d.Transform()
+Transform32.rotation = [0,0,1,-1.57079]
+Group33 = x3d.Group()
+Group34 = x3d.Group(DEF="ArrowRed")
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance(DEF="Red")
+Material37 = x3d.Material()
+Material37.diffuseColor = [0.7,0.1,0.1]
+Material37.emissiveColor = [0.33,0,0]
 
-Group17.children.append(Transform27)
+Appearance36.material = Material37
 
-Collision16.proxy = Group17
-Transform34 = x3d.Transform()
-Transform34.rotation = [0,0,1,-1.57079]
-"""Horizontal X arrow and label"""
-Group35 = x3d.Group()
-Group36 = x3d.Group()
-Group36.DEF = "ArrowRed"
-Shape37 = x3d.Shape()
-Cylinder38 = x3d.Cylinder()
-Cylinder38.USE = "ArrowCylinder"
+Shape35.appearance = Appearance36
+Cylinder38 = x3d.Cylinder(USE="ArrowCylinder")
 
-Shape37.geometry = Cylinder38
-Appearance39 = x3d.Appearance()
-Appearance39.DEF = "Red"
-Material40 = x3d.Material()
-Material40.diffuseColor = [0.7,0.1,0.1]
-Material40.emissiveColor = [0.33,0,0]
+Shape35.geometry = Cylinder38
 
-Appearance39.material = Material40
+Group34.children.append(Shape35)
+Transform39 = x3d.Transform()
+Transform39.translation = [0,1,0]
+Shape40 = x3d.Shape()
+Appearance41 = x3d.Appearance(USE="Red")
 
-Shape37.appearance = Appearance39
+Shape40.appearance = Appearance41
+Cone42 = x3d.Cone(USE="ArrowCone")
 
-Group36.children.append(Shape37)
-Transform41 = x3d.Transform()
-Transform41.translation = [0,1,0]
-Shape42 = x3d.Shape()
-Cone43 = x3d.Cone()
-Cone43.USE = "ArrowCone"
+Shape40.geometry = Cone42
 
-Shape42.geometry = Cone43
-Appearance44 = x3d.Appearance()
-Appearance44.USE = "Red"
+Transform39.children.append(Shape40)
 
-Shape42.appearance = Appearance44
+Group34.children.append(Transform39)
 
-Transform41.children.append(Shape42)
+Group33.children.append(Group34)
+Transform43 = x3d.Transform()
+Transform43.translation = [0.072,1.1,0]
+Transform43.rotation = [0,0,1,1.57079]
+Billboard44 = x3d.Billboard()
+Shape45 = x3d.Shape()
+Appearance46 = x3d.Appearance(USE="LABEL_APPEARANCE")
 
-Group36.children.append(Transform41)
+Shape45.appearance = Appearance46
+Text47 = x3d.Text()
+Text47.string = ["X"]
+FontStyle48 = x3d.FontStyle(USE="LABEL_FONT")
 
-Group35.children.append(Group36)
-Transform45 = x3d.Transform()
-Transform45.rotation = [0,0,1,1.57079]
-Transform45.translation = [0.072,1.1,0]
-"""note label rotated back to original coordinate frame"""
-Billboard46 = x3d.Billboard()
-Shape47 = x3d.Shape()
-Appearance48 = x3d.Appearance()
-Appearance48.USE = "LABEL_APPEARANCE"
+Text47.fontStyle = FontStyle48
 
-Shape47.appearance = Appearance48
-Text49 = x3d.Text()
-Text49.string = ["X"]
-FontStyle50 = x3d.FontStyle()
-FontStyle50.USE = "LABEL_FONT"
+Shape45.geometry = Text47
 
-Text49.fontStyle = FontStyle50
+Billboard44.children.append(Shape45)
 
-Shape47.geometry = Text49
+Transform43.children.append(Billboard44)
 
-Billboard46.children.append(Shape47)
+Group33.children.append(Transform43)
 
-Transform45.children.append(Billboard46)
+Transform32.children.append(Group33)
 
-Group35.children.append(Transform45)
+Collision14.proxy = Transform32
+Transform49 = x3d.Transform()
+Transform49.rotation = [1,0,0,1.57079]
+Group50 = x3d.Group()
+Group51 = x3d.Group(DEF="ArrowBlue")
+Shape52 = x3d.Shape()
+Appearance53 = x3d.Appearance(DEF="Blue")
+Material54 = x3d.Material()
+Material54.diffuseColor = [0.3,0.3,1]
+Material54.emissiveColor = [0.1,0.1,0.33]
 
-Transform34.children.append(Group35)
+Appearance53.material = Material54
 
-Collision16.proxy = Transform34
-Transform51 = x3d.Transform()
-Transform51.rotation = [1,0,0,1.57079]
-"""Perpendicular Z arrow and label, note right-hand rule"""
-Group52 = x3d.Group()
-Group53 = x3d.Group()
-Group53.DEF = "ArrowBlue"
-Shape54 = x3d.Shape()
-Cylinder55 = x3d.Cylinder()
-Cylinder55.USE = "ArrowCylinder"
+Shape52.appearance = Appearance53
+Cylinder55 = x3d.Cylinder(USE="ArrowCylinder")
 
-Shape54.geometry = Cylinder55
-Appearance56 = x3d.Appearance()
-Appearance56.DEF = "Blue"
-Material57 = x3d.Material()
-Material57.diffuseColor = [0.3,0.3,1]
-Material57.emissiveColor = [0.1,0.1,0.33]
+Shape52.geometry = Cylinder55
 
-Appearance56.material = Material57
+Group51.children.append(Shape52)
+Transform56 = x3d.Transform()
+Transform56.translation = [0,1,0]
+Shape57 = x3d.Shape()
+Appearance58 = x3d.Appearance(USE="Blue")
 
-Shape54.appearance = Appearance56
+Shape57.appearance = Appearance58
+Cone59 = x3d.Cone(USE="ArrowCone")
 
-Group53.children.append(Shape54)
-Transform58 = x3d.Transform()
-Transform58.translation = [0,1,0]
-Shape59 = x3d.Shape()
-Cone60 = x3d.Cone()
-Cone60.USE = "ArrowCone"
+Shape57.geometry = Cone59
 
-Shape59.geometry = Cone60
-Appearance61 = x3d.Appearance()
-Appearance61.USE = "Blue"
+Transform56.children.append(Shape57)
 
-Shape59.appearance = Appearance61
+Group51.children.append(Transform56)
 
-Transform58.children.append(Shape59)
+Group50.children.append(Group51)
+Transform60 = x3d.Transform()
+Transform60.translation = [0,1.1,0.072]
+Transform60.rotation = [1,0,0,-1.57079]
+Billboard61 = x3d.Billboard()
+Shape62 = x3d.Shape()
+Appearance63 = x3d.Appearance(USE="LABEL_APPEARANCE")
 
-Group53.children.append(Transform58)
+Shape62.appearance = Appearance63
+Text64 = x3d.Text()
+Text64.string = ["Z"]
+FontStyle65 = x3d.FontStyle(USE="LABEL_FONT")
 
-Group52.children.append(Group53)
-Transform62 = x3d.Transform()
-Transform62.rotation = [1,0,0,-1.57079]
-Transform62.translation = [0,1.1,0.072]
-"""note label rotated back to original coordinate frame"""
-Billboard63 = x3d.Billboard()
-Shape64 = x3d.Shape()
-Appearance65 = x3d.Appearance()
-Appearance65.USE = "LABEL_APPEARANCE"
+Text64.fontStyle = FontStyle65
 
-Shape64.appearance = Appearance65
-Text66 = x3d.Text()
-Text66.string = ["Z"]
-FontStyle67 = x3d.FontStyle()
-FontStyle67.USE = "LABEL_FONT"
+Shape62.geometry = Text64
 
-Text66.fontStyle = FontStyle67
+Billboard61.children.append(Shape62)
 
-Shape64.geometry = Text66
+Transform60.children.append(Billboard61)
 
-Billboard63.children.append(Shape64)
+Group50.children.append(Transform60)
 
-Transform62.children.append(Billboard63)
+Transform49.children.append(Group50)
 
-Group52.children.append(Transform62)
+Collision14.proxy = Transform49
 
-Transform51.children.append(Group52)
+Scene12.children.append(Collision14)
 
-Collision16.proxy = Transform51
-
-Scene14.children.append(Collision16)
-
-X3D0.Scene = Scene14
+X3D0.Scene = Scene12
 f = open("../data/CoordinateAxes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

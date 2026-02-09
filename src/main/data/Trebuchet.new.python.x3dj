@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"Mon, 09 Feb 2026 07:13:13 GMT",
         "@name":"modified"
       }
     },
@@ -99,20 +99,6 @@
         "@name":"reference"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -145,7 +131,10 @@
             "AudioClip":
             {
       {
-        "@DEF":"HolyGrail"
+        "@DEF":"HolyGrail",
+        "@description":"HolyGrail",
+        "@loop":"true",
+        "@url":""holygral.mp3" "http://www.nps.navy.mil/code32/vrml/holygral.mp3""
       }
     },
         }        "Shape":
@@ -203,7 +192,8 @@
             "Switch":
             {
       {
-        "@DEF":"Weight"
+        "@DEF":"Weight",
+        "@whichChoice":"0"
       }
                 "Group":
                 {
@@ -272,7 +262,8 @@
                     }                }            }            "TouchSensor":
             {
       {
-        "@DEF":"weightselector"
+        "@DEF":"weightselector",
+        "@description":"weight selector"
       }
     },
             "Transform":
@@ -305,7 +296,8 @@
             "Transform":
             {
       {
-        "@DEF":"launch"
+        "@DEF":"launch",
+        "@translation":"0 2 5"
       }
                 "Billboard":
                 {
@@ -364,7 +356,9 @@
                                 "AudioClip":
                                 {
       {
-        "@DEF":"PigDogSound"
+        "@DEF":"PigDogSound",
+        "@description":"PigDogSound",
+        "@url":""pigdog.wav" "http://www.nps.navy.mil/code32/vrml/pigdog.wav""
       }
     },
                             }                        }                        "Group":
@@ -378,13 +372,16 @@
                                 "AudioClip":
                                 {
       {
-        "@DEF":"MonkSound"
+        "@DEF":"MonkSound",
+        "@description":"MonkSound",
+        "@url":""monks.wav" "http://www.nps.navy.mil/code32/vrml/monks.wav""
       }
     },
                             }                        }                    }                }                "TouchSensor":
                 {
       {
-        "@DEF":"Launch"
+        "@DEF":"Launch",
+        "@description":"launch!"
       }
     },
             }            "Transform":
@@ -392,7 +389,8 @@
                 "Switch":
                 {
       {
-        "@DEF":"projectilename"
+        "@DEF":"projectilename",
+        "@whichChoice":"0"
       }
                     "Group":
                     {
@@ -425,7 +423,9 @@
                             "AudioClip":
                             {
       {
-        "@DEF":"HolyHandGrenadeSound"
+        "@DEF":"HolyHandGrenadeSound",
+        "@description":"HolyHandGrenadeSound",
+        "@url":""grenade.wav" "http://www.nps.navy.mil/code32/vrml/grenade.wav""
       }
     },
                         }                    }                    "Group":
@@ -458,7 +458,9 @@
                             "AudioClip":
                             {
       {
-        "@DEF":"CowSound"
+        "@DEF":"CowSound",
+        "@description":"CowSound",
+        "@url":""lavache.wav" "http://www.nps.navy.mil/code32/vrml/lavache.wav""
       }
     },
                         }                    }                    "Group":
@@ -492,7 +494,9 @@
                             "AudioClip":
                             {
       {
-        "@DEF":"HamsterSound"
+        "@DEF":"HamsterSound",
+        "@description":"HamsterSound",
+        "@url":""hamster.wav" "http://www.nps.navy.mil/code32/vrml/hamster.wav""
       }
     },
                         }                    }                }            }        }        "Transform":
@@ -503,7 +507,8 @@
             "Transform":
             {
       {
-        "@DEF":"aft"
+        "@DEF":"aft",
+        "@translation":"5 5 15"
       }
                 "Transform":
                 {
@@ -534,7 +539,8 @@
                     "ImageTexture":
                     {
       {
-        "@DEF":"woodTexture"
+        "@DEF":"woodTexture",
+        "@url":""wood.gif" "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif""
       }
     },
                 }                "Box":
@@ -546,7 +552,9 @@
             }            "Transform":
             {
       {
-        "@DEF":"angledsupport"
+        "@DEF":"angledsupport",
+        "@rotation":"0 0 1 1",
+        "@translation":"-5 10 0"
       }
                 "Shape":
                 {
@@ -557,7 +565,9 @@
             }            "Transform":
             {
       {
-        "@DEF":"angledsupport2"
+        "@DEF":"angledsupport2",
+        "@rotation":"0 0 1 -1",
+        "@translation":"5 10 0"
       }
                 "Shape":
                 {
@@ -568,7 +578,10 @@
             }            "Transform":
             {
       {
-        "@DEF":"verticalsupport"
+        "@DEF":"verticalsupport",
+        "@rotation":"0 0 1 1.57",
+        "@scale":"0.9 1 1",
+        "@translation":"0 11 0"
       }
                 "Shape":
                 {
@@ -579,7 +592,9 @@
             }            "Transform":
             {
       {
-        "@DEF":"horizontalsupport"
+        "@DEF":"horizontalsupport",
+        "@scale":"0.4 1 1",
+        "@translation":"0 10 0"
       }
                 "Shape":
                 {
@@ -608,7 +623,8 @@
                 }            }            "Transform":
             {
       {
-        "@DEF":"panel"
+        "@DEF":"panel",
+        "@translation":"0 18.2 -0.3"
       }
                 "Shape":
                 {
@@ -656,7 +672,11 @@
                     }                }            }            "Transform":
             {
       {
-        "@DEF":"flinger"
+        "@DEF":"flinger",
+        "@center":"7 0 0",
+        "@rotation":"0 0 1 0.82",
+        "@scale":"0.9 1 1",
+        "@translation":"-7 18 2.5"
       }
                 "Transform":
                 {
@@ -924,7 +944,9 @@
                             }                        }                    }                    "Transform":
                     {
       {
-        "@DEF":"sling"
+        "@DEF":"sling",
+        "@rotation":"0 0 1 -0.82",
+        "@translation":"-4 -15.3 0"
       }
                         "Transform":
                         {
@@ -1069,18 +1091,21 @@
                                         }                                    }                                }                                "TouchSensor":
                                 {
       {
-        "@DEF":"LauncheeChoice"
+        "@DEF":"LauncheeChoice",
+        "@description":"launcher choice"
       }
     },
                             }                            "Transform":
                             {
       {
-        "@DEF":"projectiletransform"
+        "@DEF":"projectiletransform",
+        "@scale":"0.01 0.01 0.01"
       }
                                 "Switch":
                                 {
       {
-        "@DEF":"projectile"
+        "@DEF":"projectile",
+        "@whichChoice":"0"
       }
                                     "Group":
                                     {
@@ -1258,7 +1283,8 @@
                 "Transform":
                 {
       {
-        "@DEF":"screw"
+        "@DEF":"screw",
+        "@rotation":"1 0 0 1.57"
       }
                     "Shape":
                     {
@@ -1303,7 +1329,9 @@
                 }                "Transform":
                 {
       {
-        "@DEF":"Pin"
+        "@DEF":"Pin",
+        "@rotation":"1 0 0 -1.57",
+        "@translation":"0 0 -3"
       }
                     "Transform":
                     {
@@ -1670,7 +1698,8 @@
                             }                        }                    }                }                "Transform":
                 {
       {
-        "@DEF":"ProjectileTransform"
+        "@DEF":"ProjectileTransform",
+        "@translation":"14.25 1.25 0"
       }
                     "Switch":
                     {
@@ -1699,7 +1728,8 @@
                     "Transform":
                     {
       {
-        "@DEF":"Front"
+        "@DEF":"Front",
+        "@rotation":"0 1 0 1.57"
       }
                         "Viewpoint":
                         {
@@ -1726,7 +1756,52 @@
                     }                }                "Script":
                 {
       {
-        "@DEF":"WeightScript"
+        "@DEF":"WeightScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	whichchoice =0;
+&quot;+
+&quot;	CounterWeight=100;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_boolean ( boolean_input, eventTime)
+&quot;+
+&quot;{
+&quot;+
+&quot;
+&quot;+
+&quot;	if ( boolean_input== false ) { return; } // ignore the unclick
+&quot;+
+&quot;        whichchoice = whichchoice +1;
+&quot;+
+&quot;	if (whichchoice == 0)CounterWeight=50.00;
+&quot;+
+&quot;	if (whichchoice == 1)CounterWeight=500.00;
+&quot;+
+&quot;	if (whichchoice == 2)CounterWeight=1000.00;
+&quot;+
+&quot;	if (whichchoice == 3)CounterWeight=10000.00;
+&quot;+
+&quot;        if ( whichchoice ==4 ) { whichchoice = 0; CounterWeight=50; }
+&quot;+
+&quot;
+&quot;+
+&quot;
+&quot;+
+&quot;        Browser.println ('CounterWeight ='+CounterWeight);
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -1755,7 +1830,32 @@
                 }                "Script":
                 {
       {
-        "@DEF":"LauncheeScript"
+        "@DEF":"LauncheeScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function set_boolean (boolean_input, eventTime)
+&quot;+
+&quot;{
+&quot;+
+&quot;	if ( boolean_input== false ) { return; } // ignore unclick
+&quot;+
+&quot;        whichchoice = whichchoice +1;
+&quot;+
+&quot;        if (whichchoice == 0)ProjectileWeight=10.00;
+&quot;+
+&quot;        if (whichchoice == 1)ProjectileWeight=1000.00;
+&quot;+
+&quot;	if (whichchoice == 2)ProjectileWeight=5;
+&quot;+
+&quot;
+&quot;+
+&quot;	if ( whichchoice ==3 ) { whichchoice = 0; ProjectileWeight=10.00; }
+&quot;+
+&quot;	Browser.println ('Projectile Weight'+ProjectileWeight);
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -1784,7 +1884,30 @@
                 }                "Script":
                 {
       {
-        "@DEF":"PigdogMonkScript"
+        "@DEF":"PigdogMonkScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function set_boolean (boolean_input, eventTime)
+&quot;+
+&quot;{
+&quot;+
+&quot;	if ( boolean_input== false ) { return; } // ignore unclick
+&quot;+
+&quot;
+&quot;+
+&quot;        whichchoice = whichchoice +1;
+&quot;+
+&quot;
+&quot;+
+&quot;        if ( whichchoice ==2 )  whichchoice = 0;
+&quot;+
+&quot;
+&quot;+
+&quot;
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -1805,7 +1928,88 @@
                 }                "Script":
                 {
       {
-        "@DEF":"Mover"
+        "@DEF":"Mover",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	MassCounterWeight=100;
+&quot;+
+&quot;	MassProjectileWeight=10;
+&quot;+
+&quot;	Browser.println ('MassCounterWeight =' + MassCounterWeight);
+&quot;+
+&quot;	Browser.println ('MassProjectileWeight =' + MassProjectileWeight);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_MassProjectileWeight (value, timestamp)
+&quot;+
+&quot;{
+&quot;+
+&quot;	MassProjectileWeight = value;
+&quot;+
+&quot;	Browser.println ('new MassProjectileWeight =' + MassProjectileWeight);
+&quot;+
+&quot;}
+&quot;+
+&quot;function set_MassCounterWeight (value2, timestamp)
+&quot;+
+&quot;{
+&quot;+
+&quot;	MassCounterWeight = value2;
+&quot;+
+&quot;	Browser.println ('new MassCounterWeight =' + MassCounterWeight);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction ( fraction, eventTime )
+&quot;+
+&quot;{
+&quot;+
+&quot;	var TrebuchetHeight=45;
+&quot;+
+&quot;	var Height =25;
+&quot;+
+&quot;      	var x = (2*(MassCounterWeight/MassProjectileWeight)*Height*fraction)-.5*TrebuchetHeight;
+&quot;+
+&quot;	// start at TrebuchetHeight and keep along z axis (z=zero)
+&quot;+
+&quot;	var y =  (MassCounterWeight/MassProjectileWeight)*Height*Math.sin(fraction*3.14);
+&quot;+
+&quot;        var z = 0;
+&quot;+
+&quot;        transparent = new SFVec3f (1,1,1);
+&quot;+
+&quot;     if (y <1.5*TrebuchetHeight  )if (x<TrebuchetHeight)
+&quot;+
+&quot;		{
+&quot;+
+&quot;		x=x-10;
+&quot;+
+&quot;		y=y+1;
+&quot;+
+&quot;		transparent = new SFVec3f(.01, .01, .01);
+&quot;+
+&quot;			}
+&quot;+
+&quot;
+&quot;+
+&quot;	value_changed = new SFVec3f (x, y, z);
+&quot;+
+&quot;	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -1868,37 +2072,48 @@
                 }            }        }        "TimeSensor":
         {
       {
-        "@DEF":"clock"
+        "@DEF":"clock",
+        "@cycleInterval":"10"
       }
     },
         "PositionInterpolator":
         {
       {
-        "@DEF":"verticalweightpath"
+        "@DEF":"verticalweightpath",
+        "@key":"0 0.1 0.2 0.2 0.3 0.9",
+        "@keyValue":"1.4 1.6 0 1 -8 0 -3.5 -12 0 -3.5 -12 0 1.2 -8 0 1.4 1.6 0"
       }
     },
         "OrientationInterpolator":
         {
       {
-        "@DEF":"flingerangles"
+        "@DEF":"flingerangles",
+        "@key":"0 0.1 0.2 0.2 0.3 0.9",
+        "@keyValue":"0 0 1 0.82 0 0 1 -0.77 0 0 1 -1.57 0 0 1 -1.57 0 0 1 -0.77 0 0 1 0.82"
       }
     },
         "PositionInterpolator":
         {
       {
-        "@DEF":"pinpath"
+        "@DEF":"pinpath",
+        "@key":"0 0.01 0.95 1",
+        "@keyValue":"0 0 -3 0 0 -10 0 0 -10 0 0 -3"
       }
     },
         "OrientationInterpolator":
         {
       {
-        "@DEF":"RnSAngels"
+        "@DEF":"RnSAngels",
+        "@key":"0 0.7 1",
+        "@keyValue":"0 0 1 0 0 0 1 -3.14 0 0 1 0"
       }
     },
         "PositionInterpolator":
         {
       {
-        "@DEF":"invisiable"
+        "@DEF":"invisiable",
+        "@key":"0 0.2 0.98 0.99",
+        "@keyValue":"1 1 1 0.01 0.01 0.01 0.01 0.01 0.01 1 1 1"
       }
     },
         "ROUTE":
@@ -2005,7 +2220,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"PigdogMonkScript",
-        "@toField":"whichChoice",
+        "@toField":"set_whichChoice",
         "@toNode":"PigdogMonk"
       }
     },
@@ -2050,7 +2265,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"LauncheeScript",
-        "@toField":"whichChoice",
+        "@toField":"set_whichChoice",
         "@toNode":"projectile"
       }
     },
@@ -2059,7 +2274,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"LauncheeScript",
-        "@toField":"whichChoice",
+        "@toField":"set_whichChoice",
         "@toNode":"projectilename"
       }
     },
@@ -2077,7 +2292,7 @@
       {
         "@fromField":"whichchoice",
         "@fromNode":"WeightScript",
-        "@toField":"whichChoice",
+        "@toField":"set_whichChoice",
         "@toNode":"Weight"
       }
     },

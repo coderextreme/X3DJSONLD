@@ -495,32 +495,6 @@
       <HAnimJoint USE='hanim_l_tarsometatarsal_4' containerField='joints'/>
       <HAnimJoint USE='hanim_l_tarsometatarsal_5' containerField='joints'/>
       <HAnimJoint USE='hanim_l_transversetarsal' containerField='joints'/>
-      <HAnimSegment USE='hanim_l_calcaneus' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_cuboid' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_cuneiform_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_cuneiform_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_cuneiform_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_metatarsal_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_navicular' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>

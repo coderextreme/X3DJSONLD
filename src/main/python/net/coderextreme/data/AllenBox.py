@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -20,44 +20,38 @@ meta4.name = "created"
 meta4.content = "8 July 2025"
 
 head1.children.append(meta4)
-meta5 = x3d.meta()
-meta5.name = "license"
-meta5.content = "../license.html"
-
-head1.children.append(meta5)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-WorldInfo7 = x3d.WorldInfo()
-WorldInfo7.title = "AllenBox.x3d"
+Scene5 = x3d.Scene()
+WorldInfo6 = x3d.WorldInfo()
+WorldInfo6.title = "AllenBox.x3d"
 
-Scene6.children.append(WorldInfo7)
-NavigationInfo8 = x3d.NavigationInfo()
-NavigationInfo8.avatarSize = [0.15,1.53,0.75]
-NavigationInfo8.speed = 0.5
-NavigationInfo8.type = ["EXAMINE"]
+Scene5.children.append(WorldInfo6)
+NavigationInfo7 = x3d.NavigationInfo()
+NavigationInfo7.type = ["EXAMINE"]
+NavigationInfo7.avatarSize = [0.15,1.53,0.75]
+NavigationInfo7.speed = 0.5
 
-Scene6.children.append(NavigationInfo8)
-Transform9 = x3d.Transform()
-Transform9.DEF = "Floor"
-Transform9.scale = [1,0.0125,1]
-Transform9.translation = [0,-0.0125,0]
-Shape10 = x3d.Shape()
-Box11 = x3d.Box()
+Scene5.children.append(NavigationInfo7)
+Transform8 = x3d.Transform(DEF="Floor")
+Transform8.translation = [0,-0.0125,0]
+Transform8.scale = [1,0.0125,1]
+Shape9 = x3d.Shape()
+Appearance10 = x3d.Appearance()
+Material11 = x3d.Material()
 
-Shape10.geometry = Box11
-Appearance12 = x3d.Appearance()
-Material13 = x3d.Material()
+Appearance10.material = Material11
 
-Appearance12.material = Material13
+Shape9.appearance = Appearance10
+Box12 = x3d.Box()
 
-Shape10.appearance = Appearance12
+Shape9.geometry = Box12
 
-Transform9.children.append(Shape10)
+Transform8.children.append(Shape9)
 
-Scene6.children.append(Transform9)
+Scene5.children.append(Transform8)
 
-X3D0.Scene = Scene6
+X3D0.Scene = Scene5
 f = open("../data/AllenBox.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Interchange",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"9 May 2020",
+        "@content":"Mon, 09 Feb 2026 07:12:41 GMT",
         "@name":"modified"
       }
     },
@@ -60,22 +60,8 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Thumb_marine_x3d21897981139112986.jpg",
-        "@name":"Vizthumbnail"
       }
     },
     }    "Scene":
@@ -116,7 +102,8 @@
                         "Transform":
                         {
       {
-        "@DEF":"dad_Transform5"
+        "@DEF":"dad_Transform5",
+        "@rotation":"0 1 0 1.569"
       }
                             "Group":
                             {
@@ -126,7 +113,11 @@
                                 "Transform":
                                 {
       {
-        "@DEF":"dad_Cover_FACES01_FACES"
+        "@DEF":"dad_Cover_FACES01_FACES",
+        "@rotation":"0 -0.716 0.698 3.141",
+        "@scale":"0.1097 0.09537 0.09537",
+        "@scaleOrientation":"0.577 -0.577 0.577 2.094",
+        "@translation":"-0.189 1.74359 -0.02274"
       }
                                     "Shape":
                                     {
@@ -138,13 +129,17 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material0_mat"
+        "@DEF":"material0_mat",
+        "@ambientIntensity":"1",
+        "@diffuseColor":"0.1255 0.1843 0.09804",
+        "@shininess":"0.056"
       }
     },
                                             "ImageTexture":
                                             {
       {
-        "@DEF":"marine_camo"
+        "@DEF":"marine_camo",
+        "@url":""marine_camo.jpg" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Polygonal/marine_camo.jpg""
       }
     },
                                         }                                        "IndexedFaceSet":
@@ -170,7 +165,10 @@
                                         }                                    }                                }                                "Transform":
                                 {
       {
-        "@DEF":"dad_HEAD_FACES01_FACES"
+        "@DEF":"dad_HEAD_FACES01_FACES",
+        "@rotation":"1 0 0 1.571",
+        "@scale":"0.4132 0.4132 0.4132",
+        "@translation":"-0.02468 1.03432 -0.09053"
       }
                                     "Shape":
                                     {
@@ -182,7 +180,10 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material2_mat"
+        "@DEF":"material2_mat",
+        "@ambientIntensity":"1",
+        "@diffuseColor":"0.1255 0.1843 0.09804",
+        "@shininess":"0.056"
       }
     },
                                             "ImageTexture":
@@ -214,7 +215,10 @@
                                         }                                    }                                }                                "Transform":
                                 {
       {
-        "@DEF":"dad_BODY_FACES01_FACES"
+        "@DEF":"dad_BODY_FACES01_FACES",
+        "@rotation":"1 0 0 1.571",
+        "@scale":"0.4132 0.4132 0.4132",
+        "@translation":"-0.02585 1.03714 -0.09053"
       }
                                     "Shape":
                                     {
@@ -226,7 +230,10 @@
                                             "Material":
                                             {
       {
-        "@DEF":"material1_mat"
+        "@DEF":"material1_mat",
+        "@ambientIntensity":"1",
+        "@diffuseColor":"0.1255 0.1843 0.09804",
+        "@shininess":"0.056"
       }
     },
                                             "ImageTexture":
@@ -258,13 +265,19 @@
                                         }                                    }                                }                            }                        }                    }                }                "Viewpoint":
                 {
       {
-        "@DEF":"Viewpoint1"
+        "@DEF":"Viewpoint1",
+        "@description":"Sailor Front",
+        "@orientation":"0 1 0 1.571",
+        "@position":"2.293 1.66 0"
       }
     },
                 "Viewpoint":
                 {
       {
-        "@DEF":"Viewpoint2"
+        "@DEF":"Viewpoint2",
+        "@description":"Sailor Back",
+        "@orientation":"-0.185 -0.965 -0.185 1.605",
+        "@position":"-1.208 2 0"
       }
     },
             }        }    }}

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="asmallbox.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="asmallbox.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/abox.x3d"></meta>
-<meta name="description" content="a box"></meta>
 </head>
-<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_1"><Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -15,7 +14,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="one"><ProtoInterface><field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
+<ProtoDeclare name="one"><ProtoInterface><field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_2"><Cylinder></Cylinder>
 </Shape>
 </field>
 </ProtoInterface>
@@ -25,7 +24,7 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="one"><fieldValue name="myShape"><Shape><Box></Box>
+<ProtoInstance name="one"><fieldValue name="myShape"><Shape DEF="_3"><Box></Box>
 </Shape>
 </fieldValue>
 </ProtoInstance>

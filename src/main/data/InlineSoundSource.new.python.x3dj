@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"4 August 2021",
+        "@content":"Mon, 09 Feb 2026 07:11:33 GMT",
         "@name":"modified"
       }
     },
@@ -78,20 +78,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -120,13 +106,19 @@
         "Viewpoint":
         {
       {
-        "@DEF":"Camera001"
+        "@DEF":"Camera001",
+        "@description":"Camera001",
+        "@farDistance":"0",
+        "@nearDistance":"1",
+        "@orientation":"1 0 0 -0.523599",
+        "@position":"0 2000 3500"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"Floor"
+        "@DEF":"Floor",
+        "@translation":"1.241 0 0.358"
       }
             "Shape":
             {
@@ -144,7 +136,9 @@
                 }                "IndexedFaceSet":
                 {
       {
-        "@DEF":"Box001-GEOMETRY"
+        "@DEF":"Box001-GEOMETRY",
+        "@coordIndex":"0 1 2 -1 3 4 5 -1 6 7 8 -1 9 10 11 -1 12 13 14 -1 15 16 17 -1 18 19 20 -1 21 22 23 -1 24 25 26 -1 27 28 29 -1 30 31 32 -1 33 34 35 -1",
+        "@solid":"false"
       }
                     "Coordinate":
                     {
@@ -166,7 +160,8 @@
             "Inline":
             {
       {
-        "@DEF":"inline"
+        "@DEF":"inline",
+        "@url":""x3d/example1.x3d" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.x3d" "x3d/example1.wrl" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/x3d/example1.wrl""
       }
     },
         }    }}

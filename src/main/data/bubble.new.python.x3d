@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='bubble.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='Tour around a prismatic sphere' name='description'/>
-    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d' name='identifier'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Bubble in action' orientation='1 0 0 0' position='0 0 4'/>
     <ProtoDeclare name='Bubble'>
+      <ProtoInterface/>
       <ProtoBody>
         <Transform DEF='transform'>
           <Shape>
@@ -22,9 +20,9 @@
           </Shape>
           <Script DEF='bounce'>
             <field accessType='inputOutput' name='scale' type='SFVec3f' value='1 1 1'/>
-            <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
-            <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
-            <field accessType='inputOutput' name='scalvel' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='translation' type='SFVec3f'/>
+            <field accessType='inputOutput' name='velocity' type='SFVec3f'/>
+            <field accessType='inputOutput' name='scalvel' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
           <![CDATA[ecmascript:
 "+
@@ -116,13 +114,15 @@
 "+
 "}]]>
           </Script>
-          <TimeSensor DEF='bubbleClock'/>
-          <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
-          <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
-          <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
+          <TimeSensor DEF='bubbleClock' cycleInterval='10' loop='true'/>
         </Transform>
+        <ROUTE fromField='translation_changed' fromNode='bounce' toField='set_translation' toNode='transform'/>
+        <ROUTE fromField='scale_changed' fromNode='bounce' toField='set_scale' toNode='transform'/>
+        <ROUTE fromField='fraction_changed' fromNode='bubbleClock' toField='set_fraction' toNode='bounce'/>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Bubble in action' position='0 0 4'/>
     <ProtoInstance DEF='bubbleA' name='Bubble'/>
   </Scene>
 </X3D>

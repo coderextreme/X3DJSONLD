@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Full"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -32,7 +32,7 @@ meta6.content = "28 October 2020"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "23 April 2023"
+meta7.content = "Mon, 09 Feb 2026 07:13:12 GMT"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -55,288 +55,262 @@ meta11.name = "identifier"
 meta11.content = "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"
 
 head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "generator"
-meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "license"
-meta13.content = "../license.html"
-
-head1.children.append(meta13)
 
 X3D0.head = head1
-Scene14 = x3d.Scene()
-WorldInfo15 = x3d.WorldInfo()
-WorldInfo15.title = "SplitChannels.x3d"
+Scene12 = x3d.Scene()
+WorldInfo13 = x3d.WorldInfo()
+WorldInfo13.title = "SplitChannels.x3d"
 
-Scene14.children.append(WorldInfo15)
-NavigationInfo16 = x3d.NavigationInfo()
-NavigationInfo16.type = ["NONE"]
+Scene12.children.append(WorldInfo13)
+NavigationInfo14 = x3d.NavigationInfo()
+NavigationInfo14.type = ["NONE"]
 
-Scene14.children.append(NavigationInfo16)
-Background17 = x3d.Background()
-Background17.skyColor = [(0.2, 0.2, 0.21)]
+Scene12.children.append(NavigationInfo14)
+Background15 = x3d.Background()
+Background15.skyColor = [(0.2, 0.2, 0.21)]
 
-Scene14.children.append(Background17)
-Viewpoint18 = x3d.Viewpoint()
-Viewpoint18.orientation = [1,0,0,-0.5]
-Viewpoint18.position = [0,500,600]
-Viewpoint18.retainUserOffsets = True
+Scene12.children.append(Background15)
+Viewpoint16 = x3d.Viewpoint()
+Viewpoint16.position = [0,500,600]
+Viewpoint16.orientation = [1,0,0,-0.5]
+Viewpoint16.retainUserOffsets = True
 
-Scene14.children.append(Viewpoint18)
-Transform19 = x3d.Transform()
-Transform19.DEF = "PowerR"
-Transform19.translation = [100,400,400]
-Transform20 = x3d.Transform()
-Transform20.rotation = [1,0,0,-0.5]
-Transform20.translation = [0,40,0]
-Shape21 = x3d.Shape()
-Appearance22 = x3d.Appearance()
-Appearance22.DEF = "audio_emit"
-Material23 = x3d.Material()
-Material23.diffuseColor = [0,1,0]
-Material23.emissiveColor = [0.8,0.8,0.8]
-Material23.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(Viewpoint16)
+Transform17 = x3d.Transform(DEF="PowerR")
+Transform17.translation = [100,400,400]
+Transform18 = x3d.Transform()
+Transform18.translation = [0,40,0]
+Transform18.rotation = [1,0,0,-0.5]
+Shape19 = x3d.Shape()
+Appearance20 = x3d.Appearance(DEF="audio_emit")
+Material21 = x3d.Material()
+Material21.diffuseColor = [0,1,0]
+Material21.specularColor = [0.01,0.01,0.01]
+Material21.emissiveColor = [0.8,0.8,0.8]
 
-Appearance22.material = Material23
+Appearance20.material = Material21
 
-Shape21.appearance = Appearance22
-Box24 = x3d.Box()
-Box24.size = [10,80,0.01]
+Shape19.appearance = Appearance20
+Box22 = x3d.Box()
+Box22.size = [10,80,0.01]
 
-Shape21.geometry = Box24
+Shape19.geometry = Box22
 
-Transform20.children.append(Shape21)
+Transform18.children.append(Shape19)
 
-Transform19.children.append(Transform20)
-Transform25 = x3d.Transform()
-Transform25.rotation = [1,0,0,-0.5]
-Transform25.translation = [-2.7,37,0]
-Shape26 = x3d.Shape()
-Appearance27 = x3d.Appearance()
-Appearance27.DEF = "audio_emit2"
-Material28 = x3d.Material()
-Material28.diffuseColor = [0,1,0]
-Material28.emissiveColor = [0.8,0.8,0.8]
-Material28.specularColor = [0.01,0.01,0.01]
+Transform17.children.append(Transform18)
+Transform23 = x3d.Transform()
+Transform23.translation = [-2.7,37,0]
+Transform23.rotation = [1,0,0,-0.5]
+Shape24 = x3d.Shape()
+Appearance25 = x3d.Appearance(DEF="audio_emit2")
+Material26 = x3d.Material()
+Material26.diffuseColor = [0,1,0]
+Material26.specularColor = [0.01,0.01,0.01]
+Material26.emissiveColor = [0.8,0.8,0.8]
 
-Appearance27.material = Material28
-ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.url = ["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
+Appearance25.material = Material26
+ImageTexture27 = x3d.ImageTexture()
+ImageTexture27.url = ["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
 
-Appearance27.texture = ImageTexture29
+Appearance25.texture = ImageTexture27
 
-Shape26.appearance = Appearance27
-Box30 = x3d.Box()
-Box30.size = [25,83,0.01]
+Shape24.appearance = Appearance25
+Box28 = x3d.Box()
+Box28.size = [25,83,0.01]
 
-Shape26.geometry = Box30
+Shape24.geometry = Box28
 
-Transform25.children.append(Shape26)
+Transform23.children.append(Shape24)
 
-Transform19.children.append(Transform25)
-Transform31 = x3d.Transform()
-Transform31.DEF = "volumeRight"
-Transform31.rotation = [1,0,0,-0.5]
-Transform31.scale = [10,10,10]
-Transform31.translation = [0,-10,0]
-Shape32 = x3d.Shape()
-Appearance33 = x3d.Appearance()
-Material34 = x3d.Material()
-Material34.ambientIntensity = 0.0933
-Material34.diffuseColor = [0.345,0.345,0.882]
-Material34.shininess = 0.51
-Material34.specularColor = [0.46,0.46,0.46]
+Transform17.children.append(Transform23)
+Transform29 = x3d.Transform(DEF="volumeRight")
+Transform29.translation = [0,-10,0]
+Transform29.rotation = [1,0,0,-0.5]
+Transform29.scale = [10,10,10]
+Shape30 = x3d.Shape()
+Appearance31 = x3d.Appearance()
+Material32 = x3d.Material()
+Material32.ambientIntensity = 0.0933
+Material32.diffuseColor = [0.345,0.345,0.882]
+Material32.specularColor = [0.46,0.46,0.46]
+Material32.shininess = 0.51
 
-Appearance33.material = Material34
+Appearance31.material = Material32
 
-Shape32.appearance = Appearance33
-Text35 = x3d.Text()
-Text35.string = ["Right Channel Volume"]
-FontStyle36 = x3d.FontStyle()
-FontStyle36.DEF = "VolumeFontStyle"
-FontStyle36.family = ["Times","SERIF"]
-FontStyle36.style = "BOLD"
+Shape30.appearance = Appearance31
+Text33 = x3d.Text()
+Text33.string = ["Right Channel Volume"]
+FontStyle34 = x3d.FontStyle(DEF="VolumeFontStyle")
+FontStyle34.family = ["Times","SERIF"]
+FontStyle34.style = "BOLD"
 
-Text35.fontStyle = FontStyle36
+Text33.fontStyle = FontStyle34
 
-Shape32.geometry = Text35
+Shape30.geometry = Text33
 
-Transform31.children.append(Shape32)
+Transform29.children.append(Shape30)
 
-Transform19.children.append(Transform31)
+Transform17.children.append(Transform29)
 
-Scene14.children.append(Transform19)
-Transform37 = x3d.Transform()
-Transform37.DEF = "PowerL"
-Transform37.translation = [-100,400,400]
-Transform38 = x3d.Transform()
-Transform38.rotation = [1,0,0,-0.5]
-Transform38.translation = [0,40,0]
-Shape39 = x3d.Shape()
-Appearance40 = x3d.Appearance()
-Appearance40.DEF = "audio_emit3"
-Material41 = x3d.Material()
-Material41.diffuseColor = [0,1,0]
-Material41.emissiveColor = [0.8,0.8,0.8]
-Material41.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(Transform17)
+Transform35 = x3d.Transform(DEF="PowerL")
+Transform35.translation = [-100,400,400]
+Transform36 = x3d.Transform()
+Transform36.translation = [0,40,0]
+Transform36.rotation = [1,0,0,-0.5]
+Shape37 = x3d.Shape()
+Appearance38 = x3d.Appearance(DEF="audio_emit3")
+Material39 = x3d.Material()
+Material39.diffuseColor = [0,1,0]
+Material39.specularColor = [0.01,0.01,0.01]
+Material39.emissiveColor = [0.8,0.8,0.8]
 
-Appearance40.material = Material41
+Appearance38.material = Material39
 
-Shape39.appearance = Appearance40
-Box42 = x3d.Box()
-Box42.size = [10,80,0.01]
+Shape37.appearance = Appearance38
+Box40 = x3d.Box()
+Box40.size = [10,80,0.01]
 
-Shape39.geometry = Box42
+Shape37.geometry = Box40
 
-Transform38.children.append(Shape39)
+Transform36.children.append(Shape37)
 
-Transform37.children.append(Transform38)
-Transform43 = x3d.Transform()
-Transform43.rotation = [1,0,0,-0.5]
-Transform43.translation = [13.2,37,0]
-Shape44 = x3d.Shape()
-Appearance45 = x3d.Appearance()
-Appearance45.DEF = "audio_emit4"
-Material46 = x3d.Material()
-Material46.diffuseColor = [0,1,0]
-Material46.emissiveColor = [0.8,0.8,0.8]
-Material46.specularColor = [0.01,0.01,0.01]
+Transform35.children.append(Transform36)
+Transform41 = x3d.Transform()
+Transform41.translation = [13.2,37,0]
+Transform41.rotation = [1,0,0,-0.5]
+Shape42 = x3d.Shape()
+Appearance43 = x3d.Appearance(DEF="audio_emit4")
+Material44 = x3d.Material()
+Material44.diffuseColor = [0,1,0]
+Material44.specularColor = [0.01,0.01,0.01]
+Material44.emissiveColor = [0.8,0.8,0.8]
 
-Appearance45.material = Material46
-ImageTexture47 = x3d.ImageTexture()
-ImageTexture47.url = ["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
+Appearance43.material = Material44
+ImageTexture45 = x3d.ImageTexture()
+ImageTexture45.url = ["images/line.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"]
 
-Appearance45.texture = ImageTexture47
+Appearance43.texture = ImageTexture45
 
-Shape44.appearance = Appearance45
-Box48 = x3d.Box()
-Box48.size = [25,83,0.01]
+Shape42.appearance = Appearance43
+Box46 = x3d.Box()
+Box46.size = [25,83,0.01]
 
-Shape44.geometry = Box48
+Shape42.geometry = Box46
 
-Transform43.children.append(Shape44)
+Transform41.children.append(Shape42)
 
-Transform37.children.append(Transform43)
-Transform49 = x3d.Transform()
-Transform49.DEF = "volumeLeft"
-Transform49.rotation = [1,0,0,-0.5]
-Transform49.scale = [10,10,10]
-Transform49.translation = [0,-10,0]
-Shape50 = x3d.Shape()
-Appearance51 = x3d.Appearance()
-Material52 = x3d.Material()
-Material52.ambientIntensity = 0.0933
-Material52.diffuseColor = [0.345,0.345,0.882]
-Material52.shininess = 0.51
-Material52.specularColor = [0.46,0.46,0.46]
+Transform35.children.append(Transform41)
+Transform47 = x3d.Transform(DEF="volumeLeft")
+Transform47.translation = [0,-10,0]
+Transform47.rotation = [1,0,0,-0.5]
+Transform47.scale = [10,10,10]
+Shape48 = x3d.Shape()
+Appearance49 = x3d.Appearance()
+Material50 = x3d.Material()
+Material50.ambientIntensity = 0.0933
+Material50.diffuseColor = [0.345,0.345,0.882]
+Material50.specularColor = [0.46,0.46,0.46]
+Material50.shininess = 0.51
 
-Appearance51.material = Material52
+Appearance49.material = Material50
 
-Shape50.appearance = Appearance51
-Text53 = x3d.Text()
-Text53.string = ["Left Channel Volume"]
-FontStyle54 = x3d.FontStyle()
-FontStyle54.USE = "VolumeFontStyle"
+Shape48.appearance = Appearance49
+Text51 = x3d.Text()
+Text51.string = ["Left Channel Volume"]
+FontStyle52 = x3d.FontStyle(USE="VolumeFontStyle")
 
-Text53.fontStyle = FontStyle54
+Text51.fontStyle = FontStyle52
 
-Shape50.geometry = Text53
+Shape48.geometry = Text51
 
-Transform49.children.append(Shape50)
+Transform47.children.append(Shape48)
 
-Transform37.children.append(Transform49)
+Transform35.children.append(Transform47)
 
-Scene14.children.append(Transform37)
-Transform55 = x3d.Transform()
-Shape56 = x3d.Shape()
-Appearance57 = x3d.Appearance()
-Appearance57.DEF = "floor"
-Material58 = x3d.Material()
-Material58.diffuseColor = [0.1,0.1,0.1]
-Material58.shininess = 0.8
-Material58.specularColor = [0.5,0.6,0.7]
+Scene12.children.append(Transform35)
+Transform53 = x3d.Transform()
+Shape54 = x3d.Shape()
+Appearance55 = x3d.Appearance(DEF="floor")
+Material56 = x3d.Material()
+Material56.diffuseColor = [0.1,0.1,0.1]
+Material56.specularColor = [0.5,0.6,0.7]
+Material56.shininess = 0.8
 
-Appearance57.material = Material58
+Appearance55.material = Material56
 
-Shape56.appearance = Appearance57
-Box59 = x3d.Box()
-Box59.size = [1500,10,500]
+Shape54.appearance = Appearance55
+Box57 = x3d.Box()
+Box57.size = [1500,10,500]
 
-Shape56.geometry = Box59
+Shape54.geometry = Box57
 
-Transform55.children.append(Shape56)
+Transform53.children.append(Shape54)
 
-Scene14.children.append(Transform55)
-ListenerPointSource60 = x3d.ListenerPointSource()
-ListenerPointSource60.trackCurrentView = True
+Scene12.children.append(Transform53)
+ListenerPointSource58 = x3d.ListenerPointSource()
+ListenerPointSource58.trackCurrentView = True
 
-Scene14.children.append(ListenerPointSource60)
-StreamAudioDestination61 = x3d.StreamAudioDestination()
-Gain62 = x3d.Gain()
-ChannelMerger63 = x3d.ChannelMerger()
-ChannelSelector64 = x3d.ChannelSelector()
-Gain65 = x3d.Gain()
-Gain65.USE = "ChannelSplitter"
+Scene12.children.append(ListenerPointSource58)
+StreamAudioDestination59 = x3d.StreamAudioDestination()
+Gain60 = x3d.Gain()
+ChannelMerger61 = x3d.ChannelMerger()
+ChannelSelector62 = x3d.ChannelSelector()
+ChannelSplitter63 = x3d.ChannelSplitter(DEF="ChannelSplitter")
+ChannelSplitter63.channelCountMode = "EXPLICIT"
+AudioClip64 = x3d.AudioClip()
+AudioClip64.description = "Violin"
+AudioClip64.url = ["sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]
 
-ChannelSelector64.children.append(Gain65)
+ChannelSplitter63.outputs.append(AudioClip64)
 
-ChannelMerger63.children.append(ChannelSelector64)
-ChannelSelector66 = x3d.ChannelSelector()
-ChannelSelector66.channelSelection = 1
-Gain67 = x3d.Gain()
-Gain67.USE = "ChannelSplitter"
+ChannelSelector62.children.append(ChannelSplitter63)
 
-ChannelSelector66.children.append(Gain67)
+ChannelMerger61.children.append(ChannelSelector62)
+ChannelSelector65 = x3d.ChannelSelector()
+ChannelSelector65.channelSelection = 1
+ChannelSplitter66 = x3d.ChannelSplitter(USE="ChannelSplitter")
 
-ChannelMerger63.children.append(ChannelSelector66)
+ChannelSelector65.children.append(ChannelSplitter66)
 
-Gain62.children.append(ChannelMerger63)
+ChannelMerger61.children.append(ChannelSelector65)
 
-StreamAudioDestination61.children.append(Gain62)
+Gain60.children.append(ChannelMerger61)
 
-Scene14.children.append(StreamAudioDestination61)
-ChannelSplitter68 = x3d.ChannelSplitter()
-ChannelSplitter68.DEF = "ChannelSplitter"
-ChannelSplitter68.channelCountMode = "EXPLICIT"
-AudioClip69 = x3d.AudioClip()
-AudioClip69.description = "Violin"
-AudioClip69.url = ["sound/violin.mp3","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"]
+StreamAudioDestination59.children.append(Gain60)
 
-ChannelSplitter68.outputs.append(AudioClip69)
+Scene12.children.append(StreamAudioDestination59)
+ChannelSplitter67 = x3d.ChannelSplitter(USE="ChannelSplitter")
 
-Scene14.children.append(ChannelSplitter68)
-Transform70 = x3d.Transform()
-Transform70.DEF = "Audio3"
-Transform70.rotation = [1,0,0,-0.5]
-Transform70.translation = [0,100,0]
-Shape71 = x3d.Shape()
-Appearance72 = x3d.Appearance()
-Appearance72.DEF = "audio_emit5"
-Material73 = x3d.Material()
-Material73.diffuseColor = [0.3,1,0.3]
-Material73.emissiveColor = [0.8,0.8,0.8]
-Material73.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(ChannelSplitter67)
+Transform68 = x3d.Transform(DEF="Audio3")
+Transform68.translation = [0,100,0]
+Transform68.rotation = [1,0,0,-0.5]
+Shape69 = x3d.Shape()
+Appearance70 = x3d.Appearance(DEF="audio_emit5")
+Material71 = x3d.Material()
+Material71.diffuseColor = [0.3,1,0.3]
+Material71.specularColor = [0.01,0.01,0.01]
+Material71.emissiveColor = [0.8,0.8,0.8]
 
-Appearance72.material = Material73
-ImageTexture74 = x3d.ImageTexture()
-ImageTexture74.url = ["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]
+Appearance70.material = Material71
+ImageTexture72 = x3d.ImageTexture()
+ImageTexture72.url = ["images/loudspeaker.png","https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"]
 
-Appearance72.texture = ImageTexture74
+Appearance70.texture = ImageTexture72
 
-Shape71.appearance = Appearance72
-Box75 = x3d.Box()
-Box75.size = [100,100,0.001]
+Shape69.appearance = Appearance70
+Box73 = x3d.Box()
+Box73.size = [100,100,0.001]
 
-Shape71.geometry = Box75
+Shape69.geometry = Box73
 
-Transform70.children.append(Shape71)
+Transform68.children.append(Shape69)
 
-Scene14.children.append(Transform70)
+Scene12.children.append(Transform68)
 
-X3D0.Scene = Scene14
+X3D0.Scene = Scene12
 f = open("../data/SplitChannels.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

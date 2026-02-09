@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='HAnim' level='1'/>
+    <component level='1' name='HAnim'/>
     <meta content='IFS.x3d' name='title'/>
-    <meta content='http://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d' name='identifier'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='h2.pl' name='generator'/>
-    <meta content='18 Jan 2023' name='modified'/>
-    <meta content='John Carlson' name='creator'/>
-    <meta content='9 November 2020' name='created'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='Mon, 09 Feb 2026 07:11:33 GMT' name='modified'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Group>
-      <!-- DEFS for markers of skeleton joints, segments, and sites -->
       <Transform translation='0 2.1 0'>
         <Shape DEF='HAnimSiteShape'>
           <Appearance>

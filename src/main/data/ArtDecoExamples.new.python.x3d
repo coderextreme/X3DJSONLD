@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='ArtDecoExamples.x3d' name='title'/>
     <meta content='Example ExternProtoDeclare/ProtoInstance usage of X3D/VRML materials, originally converted from SGI&apos;s Open Inventor material examples.' name='description'/>
     <meta content='David Roussel' name='creator'/>
     <meta content='James Harney, Don Brutzman NPS' name='translator'/>
     <meta content='7 April 2002' name='created'/>
-    <meta content='19 January 2025' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:09:43 GMT' name='modified'/>
     <meta content='http://vrmlstuff.free.fr/materials' name='reference'/>
     <meta content='Universal Media Material Library' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d' name='identifier'/>
-    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <WorldInfo title='ArtDecoExamples.x3d'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco00' url='"../data/ArtDecoPrototypes.json#ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco00" "ArtDecoPrototypes.wrl#ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco00"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco01' url='"../data/ArtDecoPrototypes.json#ArtDeco01" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco01" "ArtDecoPrototypes.wrl#ArtDeco01" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco01"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco02' url='"../data/ArtDecoPrototypes.json#ArtDeco02" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco02" "ArtDecoPrototypes.wrl#ArtDeco02" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco02"'/>
@@ -51,16 +48,17 @@
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco32' url='"../data/ArtDecoPrototypes.json#ArtDeco32" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco32" "ArtDecoPrototypes.wrl#ArtDeco32" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco32"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco33' url='"../data/ArtDecoPrototypes.json#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco33" "ArtDecoPrototypes.wrl#ArtDeco33" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco33"'/>
     <ExternProtoDeclare appinfo='UniversalMediaMaterials prototype' documentation='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials' name='ArtDeco34' url='"../data/ArtDecoPrototypes.json#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34" "ArtDecoPrototypes.wrl#ArtDeco34" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"'/>
+    <WorldInfo title='ArtDecoExamples.x3d'/>
     <Group>
       <NavigationInfo headlight='false'/>
-      <Viewpoint DEF='Front'/>
-      <Viewpoint DEF='PersRight'/>
-      <Viewpoint DEF='PersLeft'/>
-      <Viewpoint DEF='Back'/>
-      <Transform DEF='Close_travel'>
-        <PositionInterpolator DEF='Close_Mover'/>
-        <TimeSensor DEF='Close_Time'/>
-        <Viewpoint DEF='Close'/>
+      <Viewpoint DEF='Front' description='Front view' position='0 0 12'/>
+      <Viewpoint DEF='PersRight' description='Low Right' orientation='0.74291 0.30772 0.59447 1.2171' position='6.9282 -6.9282 6.9282'/>
+      <Viewpoint DEF='PersLeft' description='Low Left' orientation='0.74291 -0.30772 -0.59447 1.2171' position='-6.9282 -6.9282 6.9282'/>
+      <Viewpoint DEF='Back' description='Back view' orientation='0 1 0 3.1416' position='0 0 -12'/>
+      <Transform DEF='Close_travel' translation='0 -0.97 0'>
+        <PositionInterpolator DEF='Close_Mover' key='0 0.25 0.5 0.75 1' keyValue='0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0'/>
+        <TimeSensor DEF='Close_Time' cycleInterval='12' loop='true'/>
+        <Viewpoint DEF='Close' description='Close Front' position='0 0 6'/>
       </Transform>
       <DirectionalLight direction='1 -1 -1'/>
       <DirectionalLight direction='0 1 -0.5' intensity='0.5'/>
@@ -69,30 +67,30 @@
           <Inline url='"../data/gridBack.json" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.x3d" "gridBack.wrl" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.wrl"'/>
         </Transform>
       </Anchor>
-      <Viewpoint DEF='View00'/>
+      <Viewpoint DEF='View00' description='ArtDeco00' position='-3.75 3.75 3'/>
       <Transform translation='-3.75 3.75 0'>
         <Anchor description='ArtDeco00 view' url='"#View00"'>
           <Shape>
             <Appearance>
               <ProtoInstance name='ArtDeco00'/>
             </Appearance>
-            <Sphere DEF='Ball'/>
+            <Sphere DEF='Ball' radius='0.5'/>
           </Shape>
         </Anchor>
         <Transform translation='0 0.3 0.5'>
           <Anchor description='ArtDeco00 view source documentation' parameter='"target=_source"' url='"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00" "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"'>
             <Shape>
               <Appearance>
-                <Material DEF='TextMat'/>
+                <Material DEF='TextMat' diffuseColor='1 1 1'/>
               </Appearance>
               <Text string='"ArtDeco00"'>
-                <FontStyle DEF='Style'/>
+                <FontStyle DEF='Style' family='"SANS"' justify='"MIDDLE" "MIDDLE"' size='0.3'/>
               </Text>
             </Shape>
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View01'/>
+      <Viewpoint DEF='View01' description='ArtDeco01' position='-2.25 3.75 3'/>
       <Transform translation='-2.25 3.75 0'>
         <Anchor description='ArtDeco01 view' url='"#View01"'>
           <Shape>
@@ -115,7 +113,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View02'/>
+      <Viewpoint DEF='View02' description='ArtDeco02' position='-0.75 3.75 3'/>
       <Transform translation='-0.75 3.75 0'>
         <Anchor description='ArtDeco02 view' url='"#View02"'>
           <Shape>
@@ -138,7 +136,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View03'/>
+      <Viewpoint DEF='View03' description='ArtDeco03' position='0.75 3.75 3'/>
       <Transform translation='0.75 3.75 0'>
         <Anchor description='ArtDeco03 view' url='"#View03"'>
           <Shape>
@@ -161,7 +159,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View04'/>
+      <Viewpoint DEF='View04' description='ArtDeco04' position='2.25 3.75 3'/>
       <Transform translation='2.25 3.75 0'>
         <Anchor description='ArtDeco04 view' url='"#View04"'>
           <Shape>
@@ -184,7 +182,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View05'/>
+      <Viewpoint DEF='View05' description='ArtDeco05' position='3.75 3.75 3'/>
       <Transform translation='3.75 3.75 0'>
         <Anchor description='ArtDeco05 view' url='"#View05"'>
           <Shape>
@@ -207,7 +205,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View06'/>
+      <Viewpoint DEF='View06' description='ArtDeco06' position='-3.75 2.25 3'/>
       <Transform translation='-3.75 2.25 0'>
         <Anchor description='ArtDeco06 view' url='"#View06"'>
           <Shape>
@@ -230,7 +228,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View07'/>
+      <Viewpoint DEF='View07' description='ArtDeco07' position='-2.25 2.25 3'/>
       <Transform translation='-2.25 2.25 0'>
         <Anchor description='ArtDeco07 view' url='"#View07"'>
           <Shape>
@@ -253,7 +251,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View08'/>
+      <Viewpoint DEF='View08' description='ArtDeco08' position='-0.75 2.25 3'/>
       <Transform translation='-0.75 2.25 0'>
         <Anchor description='ArtDeco08 view' url='"#View08"'>
           <Shape>
@@ -276,7 +274,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View09'/>
+      <Viewpoint DEF='View09' description='ArtDeco09' position='0.75 2.25 3'/>
       <Transform translation='0.75 2.25 0'>
         <Anchor description='ArtDeco09 view' url='"#View09"'>
           <Shape>
@@ -299,7 +297,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View10'/>
+      <Viewpoint DEF='View10' description='ArtDeco10' position='2.25 2.25 3'/>
       <Transform translation='2.25 2.25 0'>
         <Anchor description='ArtDeco10 view' url='"#View10"'>
           <Shape>
@@ -322,7 +320,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View11'/>
+      <Viewpoint DEF='View11' description='ArtDeco11' position='3.75 2.25 3'/>
       <Transform translation='3.75 2.25 0'>
         <Anchor description='ArtDeco11 view' url='"#View11"'>
           <Shape>
@@ -345,7 +343,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View12'/>
+      <Viewpoint DEF='View12' description='ArtDeco12' position='-3.75 0.75 3'/>
       <Transform translation='-3.75 0.75 0'>
         <Anchor description='ArtDeco12 view' url='"#View12"'>
           <Shape>
@@ -368,7 +366,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View13'/>
+      <Viewpoint DEF='View13' description='ArtDeco13' position='-2.25 0.75 3'/>
       <Transform translation='-2.25 0.75 0'>
         <Anchor description='ArtDeco13 view' url='"#View13"'>
           <Shape>
@@ -391,7 +389,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View14'/>
+      <Viewpoint DEF='View14' description='ArtDeco14' position='-0.75 0.75 3'/>
       <Transform translation='-0.75 0.75 0'>
         <Anchor description='ArtDeco14 view' url='"#View14"'>
           <Shape>
@@ -414,7 +412,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View15'/>
+      <Viewpoint DEF='View15' description='ArtDeco15' position='0.75 0.75 3'/>
       <Transform translation='0.75 0.75 0'>
         <Anchor description='ArtDeco15 view' url='"#View15"'>
           <Shape>
@@ -437,7 +435,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View16'/>
+      <Viewpoint DEF='View16' description='ArtDeco16' position='2.25 0.75 3'/>
       <Transform translation='2.25 0.75 0'>
         <Anchor description='ArtDeco16 view' url='"#View16"'>
           <Shape>
@@ -460,7 +458,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View17'/>
+      <Viewpoint DEF='View17' description='ArtDeco17' position='3.75 0.75 3'/>
       <Transform translation='3.75 0.75 0'>
         <Anchor description='ArtDeco17 view' url='"#View17"'>
           <Shape>
@@ -483,7 +481,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View18'/>
+      <Viewpoint DEF='View18' description='ArtDeco18' position='-3.75 -0.75 3'/>
       <Transform translation='-3.75 -0.75 0'>
         <Anchor description='ArtDeco18 view' url='"#View18"'>
           <Shape>
@@ -506,7 +504,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View19'/>
+      <Viewpoint DEF='View19' description='ArtDeco19' position='-2.25 -0.75 3'/>
       <Transform translation='-2.25 -0.75 0'>
         <Anchor description='ArtDeco19 view' url='"#View19"'>
           <Shape>
@@ -529,7 +527,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View20'/>
+      <Viewpoint DEF='View20' description='ArtDeco20' position='-0.75 -0.75 3'/>
       <Transform translation='-0.75 -0.75 0'>
         <Anchor description='ArtDeco20 view' url='"#View20"'>
           <Shape>
@@ -552,7 +550,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View21'/>
+      <Viewpoint DEF='View21' description='ArtDeco21' position='0.75 -0.75 3'/>
       <Transform translation='0.75 -0.75 0'>
         <Anchor description='ArtDeco21 view' url='"#View21"'>
           <Shape>
@@ -575,7 +573,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View22'/>
+      <Viewpoint DEF='View22' description='ArtDeco22' position='2.25 -0.75 3'/>
       <Transform translation='2.25 -0.75 0'>
         <Anchor description='ArtDeco22 view' url='"#View22"'>
           <Shape>
@@ -598,7 +596,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View23'/>
+      <Viewpoint DEF='View23' description='ArtDeco23' position='3.75 -0.75 3'/>
       <Transform translation='3.75 -0.75 0'>
         <Anchor description='ArtDeco23 view' url='"#View23"'>
           <Shape>
@@ -621,7 +619,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View24'/>
+      <Viewpoint DEF='View24' description='ArtDeco24' position='-3.75 -2.25 3'/>
       <Transform translation='-3.75 -2.25 0'>
         <Anchor description='ArtDeco24 view' url='"#View24"'>
           <Shape>
@@ -644,7 +642,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View25'/>
+      <Viewpoint DEF='View25' description='ArtDeco25' position='-2.25 -2.25 3'/>
       <Transform translation='-2.25 -2.25 0'>
         <Anchor description='ArtDeco25 view' url='"#View25"'>
           <Shape>
@@ -667,7 +665,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View26'/>
+      <Viewpoint DEF='View26' description='ArtDeco26' position='-0.75 -2.25 3'/>
       <Transform translation='-0.75 -2.25 0'>
         <Anchor description='ArtDeco26 view' url='"#View26"'>
           <Shape>
@@ -690,7 +688,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View27'/>
+      <Viewpoint DEF='View27' description='ArtDeco27' position='0.75 -2.25 3'/>
       <Transform translation='0.75 -2.25 0'>
         <Anchor description='ArtDeco27 view' url='"#View27"'>
           <Shape>
@@ -713,7 +711,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View28'/>
+      <Viewpoint DEF='View28' description='ArtDeco28' position='2.25 -2.25 3'/>
       <Transform translation='2.25 -2.25 0'>
         <Anchor description='ArtDeco28 view' url='"#View28"'>
           <Shape>
@@ -736,7 +734,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View29'/>
+      <Viewpoint DEF='View29' description='ArtDeco29' position='3.75 -2.25 3'/>
       <Transform translation='3.75 -2.25 0'>
         <Anchor description='ArtDeco29 view' url='"#View29"'>
           <Shape>
@@ -759,7 +757,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View30'/>
+      <Viewpoint DEF='View30' description='ArtDeco30' position='-3.75 -3.75 3'/>
       <Transform translation='-3.75 -3.75 0'>
         <Anchor description='ArtDeco30 view' url='"#View30"'>
           <Shape>
@@ -782,7 +780,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View31'/>
+      <Viewpoint DEF='View31' description='ArtDeco31' position='-2.25 -3.75 3'/>
       <Transform translation='-2.25 -3.75 0'>
         <Anchor description='ArtDeco31 view' url='"#View31"'>
           <Shape>
@@ -805,7 +803,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View32'/>
+      <Viewpoint DEF='View32' description='ArtDeco32' position='-0.75 -3.75 3'/>
       <Transform translation='-0.75 -3.75 0'>
         <Anchor description='ArtDeco32 view' url='"#View32"'>
           <Shape>
@@ -828,7 +826,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View33'/>
+      <Viewpoint DEF='View33' description='ArtDeco33' position='0.75 -3.75 3'/>
       <Transform translation='0.75 -3.75 0'>
         <Anchor description='ArtDeco33 view' url='"#View33"'>
           <Shape>
@@ -851,7 +849,7 @@
           </Anchor>
         </Transform>
       </Transform>
-      <Viewpoint DEF='View34'/>
+      <Viewpoint DEF='View34' description='ArtDeco34' position='2.25 -3.75 3'/>
       <Transform translation='2.25 -3.75 0'>
         <Anchor description='ArtDeco34 view' url='"#View34"'>
           <Shape>

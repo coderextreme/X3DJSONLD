@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='pp3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='John Carlson' name='translator'/>
     <meta content='5 May 2015' name='created'/>
-    <meta content='23 Dec 2022' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:12:59 GMT' name='modified'/>
     <meta content='A process pipeline between three spheres (try typing on spheres and blue' name='description'/>
-    <meta content='https://coderextreme.net/x3d/pp3.x3d' name='identifier'/>
-    <meta content='manual' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='Process'>
+      <ProtoInterface/>
       <ProtoBody>
         <Group>
           <Transform scale='0.5 0.5 0.5'>
@@ -33,13 +32,13 @@
             <Transform translation='2 0 0'>
               <Shape>
                 <Appearance>
-                  <Material DEF='MaterialLightBlue'/>
+                  <Material DEF='MaterialLightBlue' diffuseColor='1 1 1'/>
                 </Appearance>
-                <Text DEF='RightString'/>
+                <Text DEF='RightString' string='"r"'/>
               </Shape>
             </Transform>
-            <StringSensor DEF='RightSensor'/>
-            <TouchSensor DEF='RightTouch'/>
+            <StringSensor DEF='RightSensor' enabled='false'/>
+            <TouchSensor DEF='RightTouch' description='touch to activate'/>
           </Transform>
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
@@ -53,11 +52,11 @@
                 <Appearance>
                   <Material USE='MaterialLightBlue'/>
                 </Appearance>
-                <Text DEF='UpString'/>
+                <Text DEF='UpString' string='"u"'/>
               </Shape>
             </Transform>
-            <StringSensor DEF='UpSensor'/>
-            <TouchSensor DEF='UpTouch'/>
+            <StringSensor DEF='UpSensor' enabled='false'/>
+            <TouchSensor DEF='UpTouch' description='touch to activate'/>
           </Transform>
           <Transform scale='0.5 0.5 0.5'>
             <Shape>
@@ -82,8 +81,8 @@
                 <Text DEF='CenterString'/>
               </Shape>
             </Transform>
-            <StringSensor DEF='CenterSensor'/>
-            <TouchSensor DEF='CenterTouch'/>
+            <StringSensor DEF='CenterSensor' enabled='false'/>
+            <TouchSensor DEF='CenterTouch' description='touch to activate'/>
           </Transform>
         </Group>
         <Script DEF='RightSingleToMultiString'>

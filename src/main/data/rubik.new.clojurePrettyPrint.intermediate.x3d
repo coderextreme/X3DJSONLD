@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='rubik.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d' name='identifier'/>
-    <meta content='a kind of rubik cube with spheres' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Rubiks Cube' position='0 0 12'/>
     <ProtoDeclare name='sphereproto'>
       <ProtoInterface>
-        <field name='xtranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='xtranslation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
@@ -32,16 +29,14 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field name='ytranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ytranslation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
           <IS>
             <connect nodeField='translation' protoField='ytranslation'/>
           </IS>
-          <ProtoInstance name='sphereproto'>
-            <fieldValue name='xtranslation' value='0 0 0'/>
-          </ProtoInstance>
+          <ProtoInstance name='sphereproto'/>
           <ProtoInstance name='sphereproto'>
             <fieldValue name='xtranslation' value='2 0 0'/>
           </ProtoInstance>
@@ -53,16 +48,14 @@
     </ProtoDeclare>
     <ProtoDeclare name='nine'>
       <ProtoInterface>
-        <field name='ztranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ztranslation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
           <IS>
             <connect nodeField='translation' protoField='ztranslation'/>
           </IS>
-          <ProtoInstance name='three'>
-            <fieldValue name='ytranslation' value='0 0 0'/>
-          </ProtoInstance>
+          <ProtoInstance name='three'/>
           <ProtoInstance name='three'>
             <fieldValue name='ytranslation' value='0 2 0'/>
           </ProtoInstance>
@@ -74,16 +67,14 @@
     </ProtoDeclare>
     <ProtoDeclare name='twentyseven'>
       <ProtoInterface>
-        <field name='ttranslation' accessType='inputOutput' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ttranslation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform>
           <IS>
             <connect nodeField='translation' protoField='ttranslation'/>
           </IS>
-          <ProtoInstance name='nine'>
-            <fieldValue name='ztranslation' value='0 0 0'/>
-          </ProtoInstance>
+          <ProtoInstance name='nine'/>
           <ProtoInstance name='nine'>
             <fieldValue name='ztranslation' value='0 0 2'/>
           </ProtoInstance>
@@ -93,8 +84,8 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
-    <ProtoInstance name='twentyseven'>
-      <fieldValue name='ttranslation' value='0 0 0'/>
-    </ProtoInstance>
+    <NavigationInfo type='"ANY" "EXAMINE" "WALK" "FLY" "LOOKAT"'/>
+    <Viewpoint description='Rubiks Cube' position='0 0 12'/>
+    <ProtoInstance name='twentyseven'/>
   </Scene>
 </X3D>

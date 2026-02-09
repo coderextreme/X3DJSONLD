@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"05 May 2017",
+        "@content":"Mon, 09 Feb 2026 07:12:59 GMT",
         "@name":"modified"
       }
     },
@@ -50,20 +50,6 @@
         "@name":"description"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/x3d/qq3.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"manual",
-        "@name":"generator"
-      }
-    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -71,6 +57,9 @@
       {
         "@name":"Process"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Group":

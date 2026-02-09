@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component name='Shaders'/>
     <component level='3' name='EnvironmentalEffects'/>
-    <component name='Rendering'/>
-    <component name='Texturing'/>
     <component level='3' name='Grouping'/>
     <component name='CubeMapTexturing'/>
-    <component name='Core'/>
     <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
     <meta content='ball.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
-    <meta content='manual' name='generator'/>
-    <meta content='a prismatic sphere' name='description'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='ball.x3d'/>
-    <NavigationInfo avatarSize='0.25 1.60000002384186 0.75' type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
+    <NavigationInfo type='"ANY" "EXAMINE" "FLY" "LOOKAT"'/>
     <Viewpoint description='Tour Views' position='0 0 12'/>
     <Background backUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
     <Transform>
       <Shape>
         <Appearance>
-          <Material diffuseColor='0.699999988079071 0.699999988079071 0.699999988079071' specularColor='0.5 0.5 0.5'/>
+          <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader language='GLSL'>
-            <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.980000019073486 1 1.03299999237061'/>
+            <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
             <field accessType='initializeOnly' name='cube' type='SFNode'>
               <ComposedCubeMapTexture>
                 <ImageTexture url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"'/>
@@ -40,7 +36,7 @@
             <field accessType='initializeOnly' name='scale' type='SFFloat' value='0.5'/>
             <field accessType='initializeOnly' name='power' type='SFFloat' value='2'/>
             <ShaderPart url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"'/>
-            <ShaderPart DEF='commonfs'/>
+            <ShaderPart DEF='commonfs' type='FRAGMENT' url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"'/>
           </ComposedShader>
         </Appearance>
         <Sphere/>

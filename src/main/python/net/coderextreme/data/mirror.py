@@ -3,361 +3,315 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
-"""<component name='Shape' level='4'></component>"""
 component2 = x3d.component()
-component2.name = "Scripting"
-component2.level = 1
+component2.name = "EnvironmentalEffects"
+component2.level = 3
 
 head1.children.append(component2)
 component3 = x3d.component()
-component3.name = "EnvironmentalEffects"
-component3.level = 3
+component3.name = "Shaders"
+component3.level = 1
 
 head1.children.append(component3)
 component4 = x3d.component()
-component4.name = "Shaders"
+component4.name = "CubeMapTexturing"
 component4.level = 1
 
 head1.children.append(component4)
 component5 = x3d.component()
-component5.name = "CubeMapTexturing"
-component5.level = 1
+component5.name = "Grouping"
+component5.level = 3
 
 head1.children.append(component5)
-component6 = x3d.component()
-component6.name = "Texturing"
-component6.level = 1
+meta6 = x3d.meta()
+meta6.name = "title"
+meta6.content = "mirror.x3d"
 
-head1.children.append(component6)
-component7 = x3d.component()
-component7.name = "Rendering"
-component7.level = 1
+head1.children.append(meta6)
+meta7 = x3d.meta()
+meta7.name = "creator"
+meta7.content = "John Carlson"
 
-head1.children.append(component7)
-component8 = x3d.component()
-component8.name = "Grouping"
-component8.level = 3
+head1.children.append(meta7)
+meta8 = x3d.meta()
+meta8.name = "generator"
+meta8.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
-head1.children.append(component8)
-component9 = x3d.component()
-component9.name = "Core"
-component9.level = 1
+head1.children.append(meta8)
+meta9 = x3d.meta()
+meta9.name = "generator"
+meta9.content = "manual"
 
-head1.children.append(component9)
-meta10 = x3d.meta()
-meta10.name = "title"
-meta10.content = "mirror.x3d"
-
-head1.children.append(meta10)
-meta11 = x3d.meta()
-meta11.name = "creator"
-meta11.content = "John Carlson"
-
-head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "generator"
-meta12.content = "manual"
-
-head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "identifier"
-meta13.content = "https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d"
-
-head1.children.append(meta13)
-meta14 = x3d.meta()
-meta14.name = "description"
-meta14.content = "sphere with alternating backgrounds"
-
-head1.children.append(meta14)
+head1.children.append(meta9)
 
 X3D0.head = head1
-Scene15 = x3d.Scene()
-Viewpoint16 = x3d.Viewpoint()
-Viewpoint16.position = [0,5,100]
-Viewpoint16.description = "Switch background and images texture"
+Scene10 = x3d.Scene()
+Viewpoint11 = x3d.Viewpoint()
+Viewpoint11.description = "Switch background and images texture"
+Viewpoint11.position = [0,5,100]
 
-Scene15.children.append(Viewpoint16)
-TextureBackground17 = x3d.TextureBackground()
-ImageTexture18 = x3d.ImageTexture()
-ImageTexture18.DEF = "leftBackgroundTexture"
-ImageTexture18.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+Scene10.children.append(Viewpoint11)
+TextureBackground12 = x3d.TextureBackground()
+ImageTexture13 = x3d.ImageTexture(DEF="frontBackgroundTexture")
+ImageTexture13.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
 
-TextureBackground17.leftTexture = ImageTexture18
-ImageTexture19 = x3d.ImageTexture()
-ImageTexture19.DEF = "rightBackgroundTexture"
-ImageTexture19.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+TextureBackground12.frontTexture = ImageTexture13
+ImageTexture14 = x3d.ImageTexture(DEF="backBackgroundTexture")
+ImageTexture14.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
 
-TextureBackground17.rightTexture = ImageTexture19
-ImageTexture20 = x3d.ImageTexture()
-ImageTexture20.DEF = "frontBackgroundTexture"
-ImageTexture20.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+TextureBackground12.backTexture = ImageTexture14
+ImageTexture15 = x3d.ImageTexture(DEF="leftBackgroundTexture")
+ImageTexture15.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
 
-TextureBackground17.frontTexture = ImageTexture20
-ImageTexture21 = x3d.ImageTexture()
-ImageTexture21.DEF = "backBackgroundTexture"
-ImageTexture21.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+TextureBackground12.leftTexture = ImageTexture15
+ImageTexture16 = x3d.ImageTexture(DEF="rightBackgroundTexture")
+ImageTexture16.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
 
-TextureBackground17.backTexture = ImageTexture21
-ImageTexture22 = x3d.ImageTexture()
-ImageTexture22.DEF = "topBackgroundTexture"
-ImageTexture22.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+TextureBackground12.rightTexture = ImageTexture16
+ImageTexture17 = x3d.ImageTexture(DEF="topBackgroundTexture")
+ImageTexture17.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
 
-TextureBackground17.topTexture = ImageTexture22
-ImageTexture23 = x3d.ImageTexture()
-ImageTexture23.DEF = "bottomBackgroundTexture"
-ImageTexture23.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+TextureBackground12.topTexture = ImageTexture17
+ImageTexture18 = x3d.ImageTexture(DEF="bottomBackgroundTexture")
+ImageTexture18.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
 
-TextureBackground17.bottomTexture = ImageTexture23
+TextureBackground12.bottomTexture = ImageTexture18
 
-Scene15.children.append(TextureBackground17)
-Transform24 = x3d.Transform()
-Shape25 = x3d.Shape()
-Appearance26 = x3d.Appearance()
-Material27 = x3d.Material()
-Material27.diffuseColor = [0.7,0.7,0.7]
-Material27.specularColor = [0.5,0.5,0.5]
+Scene10.children.append(TextureBackground12)
+Transform19 = x3d.Transform()
+Shape20 = x3d.Shape()
+Appearance21 = x3d.Appearance()
+Material22 = x3d.Material()
+Material22.diffuseColor = [0.7,0.7,0.7]
+Material22.specularColor = [0.5,0.5,0.5]
 
-Appearance26.material = Material27
-ComposedCubeMapTexture28 = x3d.ComposedCubeMapTexture()
-ImageTexture29 = x3d.ImageTexture()
-ImageTexture29.DEF = "backShader"
-ImageTexture29.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
+Appearance21.material = Material22
+ComposedCubeMapTexture23 = x3d.ComposedCubeMapTexture()
+ImageTexture24 = x3d.ImageTexture(DEF="frontShader")
+ImageTexture24.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
 
-ComposedCubeMapTexture28.backTexture = ImageTexture29
-ImageTexture30 = x3d.ImageTexture()
-ImageTexture30.DEF = "bottomShader"
-ImageTexture30.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
+ComposedCubeMapTexture23.frontTexture = ImageTexture24
+ImageTexture25 = x3d.ImageTexture(DEF="backShader")
+ImageTexture25.url = ["../resources/images/all_probes/beach_cross/beach_back.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"]
 
-ComposedCubeMapTexture28.bottomTexture = ImageTexture30
-ImageTexture31 = x3d.ImageTexture()
-ImageTexture31.DEF = "frontShader"
-ImageTexture31.url = ["../resources/images/all_probes/beach_cross/beach_front.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"]
+ComposedCubeMapTexture23.backTexture = ImageTexture25
+ImageTexture26 = x3d.ImageTexture(DEF="leftShader")
+ImageTexture26.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
 
-ComposedCubeMapTexture28.frontTexture = ImageTexture31
-ImageTexture32 = x3d.ImageTexture()
-ImageTexture32.DEF = "leftShader"
-ImageTexture32.url = ["../resources/images/all_probes/beach_cross/beach_left.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"]
+ComposedCubeMapTexture23.leftTexture = ImageTexture26
+ImageTexture27 = x3d.ImageTexture(DEF="rightShader")
+ImageTexture27.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
 
-ComposedCubeMapTexture28.leftTexture = ImageTexture32
-ImageTexture33 = x3d.ImageTexture()
-ImageTexture33.DEF = "rightShader"
-ImageTexture33.url = ["../resources/images/all_probes/beach_cross/beach_right.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"]
+ComposedCubeMapTexture23.rightTexture = ImageTexture27
+ImageTexture28 = x3d.ImageTexture(DEF="topShader")
+ImageTexture28.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
 
-ComposedCubeMapTexture28.rightTexture = ImageTexture33
-ImageTexture34 = x3d.ImageTexture()
-ImageTexture34.DEF = "topShader"
-ImageTexture34.url = ["../resources/images/all_probes/beach_cross/beach_top.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"]
+ComposedCubeMapTexture23.topTexture = ImageTexture28
+ImageTexture29 = x3d.ImageTexture(DEF="bottomShader")
+ImageTexture29.url = ["../resources/images/all_probes/beach_cross/beach_bottom.png","https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"]
 
-ComposedCubeMapTexture28.topTexture = ImageTexture34
+ComposedCubeMapTexture23.bottomTexture = ImageTexture29
 
-Appearance26.texture = ComposedCubeMapTexture28
-ComposedShader35 = x3d.ComposedShader()
-ComposedShader35.DEF = "x3dom"
-ComposedShader35.language = "GLSL"
+Appearance21.texture = ComposedCubeMapTexture23
+ComposedShader30 = x3d.ComposedShader(DEF="x3dom")
+ComposedShader30.language = "GLSL"
+ShaderPart31 = x3d.ShaderPart()
+ShaderPart31.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
+
+ComposedShader30.parts.append(ShaderPart31)
+ShaderPart32 = x3d.ShaderPart()
+ShaderPart32.type = "FRAGMENT"
+ShaderPart32.url = ["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]
+
+ComposedShader30.parts.append(ShaderPart32)
+field33 = x3d.field()
+field33.accessType = "inputOutput"
+field33.type = "SFVec3f"
+field33.name = "chromaticDispertion"
+field33.value = [0.98,1,1.033]
+
+ComposedShader30.field.append(field33)
+field34 = x3d.field()
+field34.accessType = "inputOutput"
+field34.type = "SFInt32"
+field34.name = "cube"
+
+ComposedShader30.field.append(field34)
+field35 = x3d.field()
+field35.accessType = "inputOutput"
+field35.type = "SFFloat"
+field35.name = "bias"
+field35.value = 0.5
+
+ComposedShader30.field.append(field35)
 field36 = x3d.field()
-field36.name = "chromaticDispertion"
 field36.accessType = "inputOutput"
-field36.type = "SFVec3f"
-field36.value = [0.98,1,1.033]
+field36.type = "SFFloat"
+field36.name = "scale"
+field36.value = 0.5
 
-ComposedShader35.field.append(field36)
+ComposedShader30.field.append(field36)
 field37 = x3d.field()
-field37.name = "cube"
 field37.accessType = "inputOutput"
-field37.type = "SFInt32"
-field37.value = 0
+field37.type = "SFFloat"
+field37.name = "power"
+field37.value = 2
 
-ComposedShader35.field.append(field37)
-field38 = x3d.field()
-field38.name = "bias"
-field38.accessType = "inputOutput"
-field38.type = "SFFloat"
-field38.value = 0.5
+ComposedShader30.field.append(field37)
 
-ComposedShader35.field.append(field38)
-field39 = x3d.field()
-field39.name = "scale"
-field39.accessType = "inputOutput"
-field39.type = "SFFloat"
-field39.value = 0.5
+Appearance21.shaders.append(ComposedShader30)
+ComposedShader38 = x3d.ComposedShader(DEF="x_ite")
+ComposedShader38.language = "GLSL"
+ShaderPart39 = x3d.ShaderPart()
+ShaderPart39.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
 
-ComposedShader35.field.append(field39)
-field40 = x3d.field()
-field40.name = "power"
-field40.accessType = "inputOutput"
-field40.type = "SFFloat"
-field40.value = 2
+ComposedShader38.parts.append(ShaderPart39)
+ShaderPart40 = x3d.ShaderPart()
+ShaderPart40.type = "FRAGMENT"
+ShaderPart40.url = ["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]
 
-ComposedShader35.field.append(field40)
-ShaderPart41 = x3d.ShaderPart()
-ShaderPart41.url = ["../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"]
-ShaderPart41.type = "VERTEX"
+ComposedShader38.parts.append(ShaderPart40)
+field41 = x3d.field()
+field41.accessType = "inputOutput"
+field41.type = "SFVec3f"
+field41.name = "chromaticDispertion"
+field41.value = [0.98,1,1.033]
 
-ComposedShader35.parts.append(ShaderPart41)
-ShaderPart42 = x3d.ShaderPart()
-ShaderPart42.url = ["../shaders/mix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/mix.fs"]
-ShaderPart42.type = "FRAGMENT"
+ComposedShader38.field.append(field41)
+field42 = x3d.field()
+field42.accessType = "inputOutput"
+field42.type = "SFInt32"
+field42.name = "cube"
 
-ComposedShader35.parts.append(ShaderPart42)
+ComposedShader38.field.append(field42)
+field43 = x3d.field()
+field43.accessType = "inputOutput"
+field43.type = "SFFloat"
+field43.name = "bias"
+field43.value = 0.5
 
-Appearance26.shaders.append(ComposedShader35)
-ComposedShader43 = x3d.ComposedShader()
-ComposedShader43.DEF = "x_ite"
-ComposedShader43.language = "GLSL"
-"""http://hypertextbook.com/facts/2005/JustinChe.shtml"""
+ComposedShader38.field.append(field43)
 field44 = x3d.field()
-field44.name = "chromaticDispertion"
 field44.accessType = "inputOutput"
-field44.type = "SFVec3f"
-field44.value = [0.98,1,1.033]
+field44.type = "SFFloat"
+field44.name = "scale"
+field44.value = 0.5
 
-ComposedShader43.field.append(field44)
+ComposedShader38.field.append(field44)
 field45 = x3d.field()
-field45.name = "cube"
 field45.accessType = "inputOutput"
-field45.type = "SFInt32"
-field45.value = 0
+field45.type = "SFFloat"
+field45.name = "power"
+field45.value = 2
 
-ComposedShader43.field.append(field45)
-field46 = x3d.field()
-field46.name = "bias"
-field46.accessType = "inputOutput"
-field46.type = "SFFloat"
-field46.value = 0.5
+ComposedShader38.field.append(field45)
 
-ComposedShader43.field.append(field46)
-field47 = x3d.field()
-field47.name = "scale"
-field47.accessType = "inputOutput"
-field47.type = "SFFloat"
-field47.value = 0.5
+Appearance21.shaders.append(ComposedShader38)
 
-ComposedShader43.field.append(field47)
+Shape20.appearance = Appearance21
+Sphere46 = x3d.Sphere()
+Sphere46.radius = 30
+
+Shape20.geometry = Sphere46
+
+Transform19.children.append(Shape20)
+Script47 = x3d.Script(DEF="UrlSelector")
+Script47.directOutput = True
 field48 = x3d.field()
-field48.name = "power"
-field48.accessType = "inputOutput"
-field48.type = "SFFloat"
-field48.value = 2
+field48.accessType = "initializeOnly"
+field48.type = "MFString"
+field48.name = "frontUrls"
+field48.value = ["../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"]
 
-ComposedShader43.field.append(field48)
-ShaderPart49 = x3d.ShaderPart()
-ShaderPart49.url = ["../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"]
-ShaderPart49.type = "VERTEX"
+Script47.field.append(field48)
+field49 = x3d.field()
+field49.accessType = "initializeOnly"
+field49.type = "MFString"
+field49.name = "backUrls"
+field49.value = ["../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"]
 
-ComposedShader43.parts.append(ShaderPart49)
-ShaderPart50 = x3d.ShaderPart()
-ShaderPart50.url = ["../shaders/x_itemix.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"]
-ShaderPart50.type = "FRAGMENT"
+Script47.field.append(field49)
+field50 = x3d.field()
+field50.accessType = "initializeOnly"
+field50.type = "MFString"
+field50.name = "leftUrls"
+field50.value = ["../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"]
 
-ComposedShader43.parts.append(ShaderPart50)
+Script47.field.append(field50)
+field51 = x3d.field()
+field51.accessType = "initializeOnly"
+field51.type = "MFString"
+field51.name = "rightUrls"
+field51.value = ["../resources/images/all_probes/beach_cross/beach_right.png","../resources/images/all_probes/building_cross/building_right.png","../resources/images/all_probes/campus_cross/campus_right.png","../resources/images/all_probes/galileo_cross/galileo_right.png","../resources/images/all_probes/grace_cross/grace_right.png","../resources/images/all_probes/kitchen_cross/kitchen_right.png","../resources/images/all_probes/rnl_cross/rnl_right.png","../resources/images/all_probes/stpeters_cross/stpeters_right.png","../resources/images/all_probes/uffizi_cross/uffizi_right.png"]
 
-Appearance26.shaders.append(ComposedShader43)
+Script47.field.append(field51)
+field52 = x3d.field()
+field52.accessType = "initializeOnly"
+field52.type = "MFString"
+field52.name = "topUrls"
+field52.value = ["../resources/images/all_probes/beach_cross/beach_top.png","../resources/images/all_probes/building_cross/building_top.png","../resources/images/all_probes/campus_cross/campus_top.png","../resources/images/all_probes/galileo_cross/galileo_top.png","../resources/images/all_probes/grace_cross/grace_top.png","../resources/images/all_probes/kitchen_cross/kitchen_top.png","../resources/images/all_probes/rnl_cross/rnl_top.png","../resources/images/all_probes/stpeters_cross/stpeters_top.png","../resources/images/all_probes/uffizi_cross/uffizi_top.png"]
 
-Shape25.appearance = Appearance26
-Sphere51 = x3d.Sphere()
-Sphere51.radius = 30
-
-Shape25.geometry = Sphere51
-
-Transform24.children.append(Shape25)
-Script52 = x3d.Script()
-Script52.DEF = "UrlSelector"
-Script52.directOutput = True
+Script47.field.append(field52)
 field53 = x3d.field()
-field53.name = "frontUrls"
-field53.type = "MFString"
 field53.accessType = "initializeOnly"
-field53.value = ["../resources/images/all_probes/beach_cross/beach_front.png","../resources/images/all_probes/building_cross/building_front.png","../resources/images/all_probes/campus_cross/campus_front.png","../resources/images/all_probes/galileo_cross/galileo_front.png","../resources/images/all_probes/grace_cross/grace_front.png","../resources/images/all_probes/kitchen_cross/kitchen_front.png","../resources/images/all_probes/rnl_cross/rnl_front.png","../resources/images/all_probes/stpeters_cross/stpeters_front.png","../resources/images/all_probes/uffizi_cross/uffizi_front.png"]
+field53.type = "MFString"
+field53.name = "bottomUrls"
+field53.value = ["../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]
 
-Script52.field.append(field53)
+Script47.field.append(field53)
 field54 = x3d.field()
-field54.name = "backUrls"
+field54.accessType = "outputOnly"
 field54.type = "MFString"
-field54.accessType = "initializeOnly"
-field54.value = ["../resources/images/all_probes/beach_cross/beach_back.png","../resources/images/all_probes/building_cross/building_back.png","../resources/images/all_probes/campus_cross/campus_back.png","../resources/images/all_probes/galileo_cross/galileo_back.png","../resources/images/all_probes/grace_cross/grace_back.png","../resources/images/all_probes/kitchen_cross/kitchen_back.png","../resources/images/all_probes/rnl_cross/rnl_back.png","../resources/images/all_probes/stpeters_cross/stpeters_back.png","../resources/images/all_probes/uffizi_cross/uffizi_back.png"]
+field54.name = "front_changed"
 
-Script52.field.append(field54)
+Script47.field.append(field54)
 field55 = x3d.field()
-field55.name = "leftUrls"
+field55.accessType = "outputOnly"
 field55.type = "MFString"
-field55.accessType = "initializeOnly"
-field55.value = ["../resources/images/all_probes/beach_cross/beach_left.png","../resources/images/all_probes/building_cross/building_left.png","../resources/images/all_probes/campus_cross/campus_left.png","../resources/images/all_probes/galileo_cross/galileo_left.png","../resources/images/all_probes/grace_cross/grace_left.png","../resources/images/all_probes/kitchen_cross/kitchen_left.png","../resources/images/all_probes/rnl_cross/rnl_left.png","../resources/images/all_probes/stpeters_cross/stpeters_left.png","../resources/images/all_probes/uffizi_cross/uffizi_left.png"]
+field55.name = "back_changed"
 
-Script52.field.append(field55)
+Script47.field.append(field55)
 field56 = x3d.field()
-field56.name = "rightUrls"
+field56.accessType = "outputOnly"
 field56.type = "MFString"
-field56.accessType = "initializeOnly"
-field56.value = ["../resources/images/all_probes/beach_cross/beach_right.png","../resources/images/all_probes/building_cross/building_right.png","../resources/images/all_probes/campus_cross/campus_right.png","../resources/images/all_probes/galileo_cross/galileo_right.png","../resources/images/all_probes/grace_cross/grace_right.png","../resources/images/all_probes/kitchen_cross/kitchen_right.png","../resources/images/all_probes/rnl_cross/rnl_right.png","../resources/images/all_probes/stpeters_cross/stpeters_right.png","../resources/images/all_probes/uffizi_cross/uffizi_right.png"]
+field56.name = "left_changed"
 
-Script52.field.append(field56)
+Script47.field.append(field56)
 field57 = x3d.field()
-field57.name = "topUrls"
+field57.accessType = "outputOnly"
 field57.type = "MFString"
-field57.accessType = "initializeOnly"
-field57.value = ["../resources/images/all_probes/beach_cross/beach_top.png","../resources/images/all_probes/building_cross/building_top.png","../resources/images/all_probes/campus_cross/campus_top.png","../resources/images/all_probes/galileo_cross/galileo_top.png","../resources/images/all_probes/grace_cross/grace_top.png","../resources/images/all_probes/kitchen_cross/kitchen_top.png","../resources/images/all_probes/rnl_cross/rnl_top.png","../resources/images/all_probes/stpeters_cross/stpeters_top.png","../resources/images/all_probes/uffizi_cross/uffizi_top.png"]
+field57.name = "right_changed"
 
-Script52.field.append(field57)
+Script47.field.append(field57)
 field58 = x3d.field()
-field58.name = "bottomUrls"
+field58.accessType = "outputOnly"
 field58.type = "MFString"
-field58.accessType = "initializeOnly"
-field58.value = ["../resources/images/all_probes/beach_cross/beach_bottom.png","../resources/images/all_probes/building_cross/building_bottom.png","../resources/images/all_probes/campus_cross/campus_bottom.png","../resources/images/all_probes/galileo_cross/galileo_bottom.png","../resources/images/all_probes/grace_cross/grace_bottom.png","../resources/images/all_probes/kitchen_cross/kitchen_bottom.png","../resources/images/all_probes/rnl_cross/rnl_bottom.png","../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","../resources/images/all_probes/uffizi_cross/uffizi_bottom.png"]
+field58.name = "top_changed"
 
-Script52.field.append(field58)
+Script47.field.append(field58)
 field59 = x3d.field()
-field59.name = "front_changed"
-field59.type = "MFString"
 field59.accessType = "outputOnly"
+field59.type = "MFString"
+field59.name = "bottom_changed"
 
-Script52.field.append(field59)
+Script47.field.append(field59)
 field60 = x3d.field()
-field60.name = "back_changed"
-field60.type = "MFString"
-field60.accessType = "outputOnly"
+field60.accessType = "inputOnly"
+field60.type = "SFFloat"
+field60.name = "set_fraction"
 
-Script52.field.append(field60)
+Script47.field.append(field60)
 field61 = x3d.field()
-field61.name = "left_changed"
-field61.type = "MFString"
-field61.accessType = "outputOnly"
+field61.accessType = "inputOutput"
+field61.type = "SFInt32"
+field61.name = "old"
+field61.value = -1
 
-Script52.field.append(field61)
-field62 = x3d.field()
-field62.name = "right_changed"
-field62.type = "MFString"
-field62.accessType = "outputOnly"
+Script47.field.append(field61)
 
-Script52.field.append(field62)
-field63 = x3d.field()
-field63.name = "top_changed"
-field63.type = "MFString"
-field63.accessType = "outputOnly"
-
-Script52.field.append(field63)
-field64 = x3d.field()
-field64.name = "bottom_changed"
-field64.type = "MFString"
-field64.accessType = "outputOnly"
-
-Script52.field.append(field64)
-field65 = x3d.field()
-field65.name = "set_fraction"
-field65.type = "SFFloat"
-field65.accessType = "inputOnly"
-
-Script52.field.append(field65)
-field66 = x3d.field()
-field66.name = "old"
-field66.type = "SFInt32"
-field66.accessType = "inputOutput"
-field66.value = -1
-
-Script52.field.append(field66)
-
-Script52.sourceCode = '''ecmascript:\n"+
+Script47.sourceCode = '''ecmascript:\n"+
 "        function set_fraction( f, tm ) {\n"+
 "	    var side = Math.floor(f*frontUrls.length);\n"+
 "	    if (side > frontUrls.length-1) {\n"+
@@ -375,108 +329,107 @@ Script52.sourceCode = '''ecmascript:\n"+
 "            }\n"+
 "        }'''
 
-Transform24.children.append(Script52)
-TimeSensor67 = x3d.TimeSensor()
-TimeSensor67.DEF = "Clock"
-TimeSensor67.cycleInterval = 45
-TimeSensor67.loop = True
+Transform19.children.append(Script47)
+TimeSensor62 = x3d.TimeSensor(DEF="Clock")
+TimeSensor62.cycleInterval = 45
+TimeSensor62.loop = True
 
-Transform24.children.append(TimeSensor67)
+Transform19.children.append(TimeSensor62)
+
+Scene10.children.append(Transform19)
+ROUTE63 = x3d.ROUTE()
+ROUTE63.fromNode = "Clock"
+ROUTE63.fromField = "fraction_changed"
+ROUTE63.toNode = "UrlSelector"
+ROUTE63.toField = "set_fraction"
+
+Scene10.children.append(ROUTE63)
+ROUTE64 = x3d.ROUTE()
+ROUTE64.fromNode = "UrlSelector"
+ROUTE64.fromField = "front_changed"
+ROUTE64.toNode = "frontBackgroundTexture"
+ROUTE64.toField = "set_url"
+
+Scene10.children.append(ROUTE64)
+ROUTE65 = x3d.ROUTE()
+ROUTE65.fromNode = "UrlSelector"
+ROUTE65.fromField = "back_changed"
+ROUTE65.toNode = "backBackgroundTexture"
+ROUTE65.toField = "set_url"
+
+Scene10.children.append(ROUTE65)
+ROUTE66 = x3d.ROUTE()
+ROUTE66.fromNode = "UrlSelector"
+ROUTE66.fromField = "left_changed"
+ROUTE66.toNode = "leftBackgroundTexture"
+ROUTE66.toField = "set_url"
+
+Scene10.children.append(ROUTE66)
+ROUTE67 = x3d.ROUTE()
+ROUTE67.fromNode = "UrlSelector"
+ROUTE67.fromField = "right_changed"
+ROUTE67.toNode = "rightBackgroundTexture"
+ROUTE67.toField = "set_url"
+
+Scene10.children.append(ROUTE67)
 ROUTE68 = x3d.ROUTE()
-ROUTE68.fromNode = "Clock"
-ROUTE68.fromField = "fraction_changed"
-ROUTE68.toNode = "UrlSelector"
-ROUTE68.toField = "set_fraction"
+ROUTE68.fromNode = "UrlSelector"
+ROUTE68.fromField = "top_changed"
+ROUTE68.toNode = "topBackgroundTexture"
+ROUTE68.toField = "set_url"
 
-Transform24.children.append(ROUTE68)
+Scene10.children.append(ROUTE68)
 ROUTE69 = x3d.ROUTE()
 ROUTE69.fromNode = "UrlSelector"
-ROUTE69.fromField = "front_changed"
-ROUTE69.toNode = "frontBackgroundTexture"
-ROUTE69.toField = "url"
+ROUTE69.fromField = "bottom_changed"
+ROUTE69.toNode = "bottomBackgroundTexture"
+ROUTE69.toField = "set_url"
 
-Transform24.children.append(ROUTE69)
+Scene10.children.append(ROUTE69)
 ROUTE70 = x3d.ROUTE()
 ROUTE70.fromNode = "UrlSelector"
-ROUTE70.fromField = "back_changed"
-ROUTE70.toNode = "backBackgroundTexture"
-ROUTE70.toField = "url"
+ROUTE70.fromField = "front_changed"
+ROUTE70.toNode = "frontShader"
+ROUTE70.toField = "set_url"
 
-Transform24.children.append(ROUTE70)
+Scene10.children.append(ROUTE70)
 ROUTE71 = x3d.ROUTE()
 ROUTE71.fromNode = "UrlSelector"
-ROUTE71.fromField = "left_changed"
-ROUTE71.toNode = "leftBackgroundTexture"
-ROUTE71.toField = "url"
+ROUTE71.fromField = "back_changed"
+ROUTE71.toNode = "backShader"
+ROUTE71.toField = "set_url"
 
-Transform24.children.append(ROUTE71)
+Scene10.children.append(ROUTE71)
 ROUTE72 = x3d.ROUTE()
 ROUTE72.fromNode = "UrlSelector"
-ROUTE72.fromField = "right_changed"
-ROUTE72.toNode = "rightBackgroundTexture"
-ROUTE72.toField = "url"
+ROUTE72.fromField = "left_changed"
+ROUTE72.toNode = "leftShader"
+ROUTE72.toField = "set_url"
 
-Transform24.children.append(ROUTE72)
+Scene10.children.append(ROUTE72)
 ROUTE73 = x3d.ROUTE()
 ROUTE73.fromNode = "UrlSelector"
-ROUTE73.fromField = "top_changed"
-ROUTE73.toNode = "topBackgroundTexture"
-ROUTE73.toField = "url"
+ROUTE73.fromField = "right_changed"
+ROUTE73.toNode = "rightShader"
+ROUTE73.toField = "set_url"
 
-Transform24.children.append(ROUTE73)
+Scene10.children.append(ROUTE73)
 ROUTE74 = x3d.ROUTE()
 ROUTE74.fromNode = "UrlSelector"
-ROUTE74.fromField = "bottom_changed"
-ROUTE74.toNode = "bottomBackgroundTexture"
-ROUTE74.toField = "url"
+ROUTE74.fromField = "top_changed"
+ROUTE74.toNode = "topShader"
+ROUTE74.toField = "set_url"
 
-Transform24.children.append(ROUTE74)
+Scene10.children.append(ROUTE74)
 ROUTE75 = x3d.ROUTE()
 ROUTE75.fromNode = "UrlSelector"
-ROUTE75.fromField = "front_changed"
-ROUTE75.toNode = "frontShader"
-ROUTE75.toField = "url"
+ROUTE75.fromField = "bottom_changed"
+ROUTE75.toNode = "bottomShader"
+ROUTE75.toField = "set_url"
 
-Transform24.children.append(ROUTE75)
-ROUTE76 = x3d.ROUTE()
-ROUTE76.fromNode = "UrlSelector"
-ROUTE76.fromField = "back_changed"
-ROUTE76.toNode = "backShader"
-ROUTE76.toField = "url"
+Scene10.children.append(ROUTE75)
 
-Transform24.children.append(ROUTE76)
-ROUTE77 = x3d.ROUTE()
-ROUTE77.fromNode = "UrlSelector"
-ROUTE77.fromField = "left_changed"
-ROUTE77.toNode = "leftShader"
-ROUTE77.toField = "url"
-
-Transform24.children.append(ROUTE77)
-ROUTE78 = x3d.ROUTE()
-ROUTE78.fromNode = "UrlSelector"
-ROUTE78.fromField = "right_changed"
-ROUTE78.toNode = "rightShader"
-ROUTE78.toField = "url"
-
-Transform24.children.append(ROUTE78)
-ROUTE79 = x3d.ROUTE()
-ROUTE79.fromNode = "UrlSelector"
-ROUTE79.fromField = "top_changed"
-ROUTE79.toNode = "topShader"
-ROUTE79.toField = "url"
-
-Transform24.children.append(ROUTE79)
-ROUTE80 = x3d.ROUTE()
-ROUTE80.fromNode = "UrlSelector"
-ROUTE80.fromField = "bottom_changed"
-ROUTE80.toNode = "bottomShader"
-ROUTE80.toField = "url"
-
-Transform24.children.append(ROUTE80)
-
-Scene15.children.append(Transform24)
-
-X3D0.Scene = Scene15
+X3D0.Scene = Scene10
 f = open("../data/mirror.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

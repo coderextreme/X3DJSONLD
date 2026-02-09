@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -25,39 +25,19 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/ThreeDTexture.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a kind of ThreeDTexture cube with spheres",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
     {
-        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Rubiks Cube",
-        "@position":"0 0 12"
-      }
-    },
         "ProtoDeclare":
         {
       {
@@ -70,8 +50,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"xtranslation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             }            "ProtoBody":
@@ -112,8 +91,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"ytranslation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             }            "ProtoBody":
@@ -134,14 +112,8 @@
       {
         "@name":"sphereproto"
       }
-                        "fieldValue":
-                        {
-      {
-        "@name":"xtranslation",
-        "@value":"0 0 0"
-      }
     },
-                    }                    "ProtoInstance":
+                    "ProtoInstance":
                     {
       {
         "@name":"sphereproto"
@@ -177,8 +149,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"ztranslation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             }            "ProtoBody":
@@ -199,14 +170,8 @@
       {
         "@name":"three"
       }
-                        "fieldValue":
-                        {
-      {
-        "@name":"ytranslation",
-        "@value":"0 0 0"
-      }
     },
-                    }                    "ProtoInstance":
+                    "ProtoInstance":
                     {
       {
         "@name":"three"
@@ -242,8 +207,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"ttranslation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             }            "ProtoBody":
@@ -264,14 +228,8 @@
       {
         "@name":"nine"
       }
-                        "fieldValue":
-                        {
-      {
-        "@name":"ztranslation",
-        "@value":"0 0 0"
-      }
     },
-                    }                    "ProtoInstance":
+                    "ProtoInstance":
                     {
       {
         "@name":"nine"
@@ -295,16 +253,23 @@
         "@value":"0 0 -2"
       }
     },
-                    }                }            }        }        "ProtoInstance":
+                    }                }            }        }        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Rubiks Cube",
+        "@position":"0 0 12"
+      }
+    },
+        "ProtoInstance":
         {
       {
         "@name":"twentyseven"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"ttranslation",
-        "@value":"0 0 0"
-      }
     },
-        }    }}
+    }}

@@ -289,22 +289,6 @@
       <HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
       <HAnimJoint USE='hanim_l_wrist' containerField='joints'/>
       <HAnimJoint USE='hanim_r_wrist' containerField='joints'/>
-      <HAnimSegment USE='hanim_c4' containerField='segments'/>
-      <HAnimSegment USE='hanim_l1' containerField='segments'/>
-      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
-      <HAnimSegment USE='hanim_skull' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_hand' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_hand' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_hindfoot' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_hindfoot' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
     </HAnimHumanoid>
     <NavigationInfo avatarSize='0.15 1.53 0.75' speed='0.5' type='"EXAMINE"'/>
     <Group DEF='Interface'>

@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"5 December 2021",
+        "@content":"Mon, 09 Feb 2026 07:09:54 GMT",
         "@name":"modified"
       }
     },
@@ -78,20 +78,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -121,7 +107,8 @@
         "Transform":
         {
       {
-        "@DEF":"TransformAudio1"
+        "@DEF":"TransformAudio1",
+        "@translation":"-200 50 0"
       }
             "Shape":
             {
@@ -147,7 +134,8 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio2"
+        "@DEF":"TransformAudio2",
+        "@translation":"0 50 0"
       }
             "Shape":
             {
@@ -173,7 +161,8 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio3"
+        "@DEF":"TransformAudio3",
+        "@translation":"200 50 0"
       }
             "Shape":
             {
@@ -199,37 +188,43 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"AnimData"
+        "@DEF":"AnimData",
+        "@translation":"0 50 0"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxH"
+        "@DEF":"AnimDataBoxH",
+        "@translation":"0 100 0"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxM"
+        "@DEF":"AnimDataBoxM",
+        "@translation":"15 100 0"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxL"
+        "@DEF":"AnimDataBoxL",
+        "@translation":"30 100 0"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxMM"
+        "@DEF":"AnimDataBoxMM",
+        "@translation":"-15 100 0"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"AnimDataBoxLM"
+        "@DEF":"AnimDataBoxLM",
+        "@translation":"-30 100 0"
       }
     },
         "Transform":

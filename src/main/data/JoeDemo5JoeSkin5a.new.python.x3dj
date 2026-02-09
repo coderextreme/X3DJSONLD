@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -1988,6 +1988,7 @@
         "@DEF":"DefaultTimer"
       }
     },
+      { "#comment" : "indention-to-match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -2870,6 +2871,7 @@
         "@DEF":"Default_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -4193,6 +4195,7 @@
         "@toNode":"Default_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -4634,6 +4637,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Default_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -5518,6 +5522,7 @@
         "@DEF":"PoseTTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -6400,6 +6405,7 @@
         "@DEF":"PoseT_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -7723,6 +7729,7 @@
         "@toNode":"PoseT_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -8164,6 +8171,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='PoseT_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -9048,6 +9056,7 @@
         "@DEF":"PoseATimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -9930,6 +9939,7 @@
         "@DEF":"PoseA_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -11253,6 +11263,7 @@
         "@toNode":"PoseA_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -11694,6 +11705,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='PoseA_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -12578,6 +12590,7 @@
         "@DEF":"PoseHTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -13460,6 +13473,7 @@
         "@DEF":"PoseH_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -14783,6 +14797,7 @@
         "@toNode":"PoseH_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -15224,6 +15239,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='PoseH_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -16102,6 +16118,24 @@
       {
         "@DEF":"Pitch1Animation_loa4"
       }
+      { "#comment" : "Pitch1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of x-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians, zero degrees." }
+      { "#comment" : "x y z scale, all in radians 0 to <+-inf." }
+      { "#comment" : "Thus, 1 radian in a times scale 1 = +1 radian" }
+      { "#comment" : "= about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "greater than +-6.28 radians range" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive pitch value applied to the" }
+      { "#comment" : "skullbase Joint would rotate the" }
+      { "#comment" : "the gaze of model down, toward the floor." }
             "TimeSensor":
             {
       {
@@ -16990,6 +17024,7 @@
         "@DEF":"Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -18313,6 +18348,7 @@
         "@toNode":"Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -18754,6 +18790,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Pitch1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -20520,6 +20557,7 @@
         "@DEF":"Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -21843,6 +21881,7 @@
         "@toNode":"Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -22284,6 +22323,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Pitch2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -23162,6 +23202,25 @@
       {
         "@DEF":"Yaw1Animation_loa4"
       }
+      { "#comment" : "Yaw1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of y-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians, zero degrees." }
+      { "#comment" : "x y z scale, all in radians 0 to <+-inf." }
+      { "#comment" : "Thus, 1 radian in y times scale 1 = +1 radian" }
+      { "#comment" : "= about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive yaw value applied to the" }
+      { "#comment" : "skullbase Joint would move the" }
+      { "#comment" : "the gaze of model toward the" }
+      { "#comment" : "model&apos;s +X direction, the model left" }
+      { "#comment" : "over the left shoulder." }
             "TimeSensor":
             {
       {
@@ -24050,6 +24109,7 @@
         "@DEF":"Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -25373,6 +25433,7 @@
         "@toNode":"Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -25814,6 +25875,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Yaw1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -27580,6 +27642,7 @@
         "@DEF":"Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -28903,6 +28966,7 @@
         "@toNode":"Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -29344,6 +29408,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Yaw2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -30222,6 +30287,29 @@
       {
         "@DEF":"Roll1Animation_loa4"
       }
+      { "#comment" : "This Roll1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of z-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians = zero degrees" }
+      { "#comment" : "2pi radians = 360 degrees." }
+      { "#comment" : "form: x y z scale" }
+      { "#comment" : "pitch, yaw, roll right hand rule" }
+      { "#comment" : "in radians 0 to <+-inf." }
+      { "#comment" : "actual result = x y z per scale" }
+      { "#comment" : "1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z" }
+      { "#comment" : "1 radian = about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive roll value applied to the" }
+      { "#comment" : "skullbase Joint would rotate the" }
+      { "#comment" : "the gaze of model ccw toward the" }
+      { "#comment" : "model&apos;s +X direction, the model left" }
+      { "#comment" : "toward the left shoulder." }
             "TimeSensor":
             {
       {
@@ -31110,6 +31198,7 @@
         "@DEF":"Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -32433,6 +32522,7 @@
         "@toNode":"Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -32874,6 +32964,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Roll1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -36404,6 +36495,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Roll2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -37288,6 +37380,7 @@
         "@DEF":"WalkTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -38170,6 +38263,7 @@
         "@DEF":"Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -39493,6 +39587,7 @@
         "@toNode":"Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -39934,6 +40029,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Walk_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -40818,6 +40914,7 @@
         "@DEF":"RunTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -41700,6 +41797,7 @@
         "@DEF":"Run_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -43023,6 +43121,7 @@
         "@toNode":"Run_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -43464,6 +43563,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Run_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -46994,6 +47094,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Jump_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -50524,6 +50625,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Kick1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {
@@ -54054,6 +54156,7 @@
         "@toNode":"Joe_r_tarsal_distal_interphalangeal_3"
       }
     },
+      { "#comment" : "ROUTE fromField='value_changed' fromNode='Kick2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/" }
             "ROUTE":
             {
       {

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Interchange' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Interchange' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component level='4' name='NURBS'/>
     <component level='2' name='Shape'/>
     <unit category='length' conversionFactor='25.4' name='millimeters'/>
     <meta content='mobiusCarlson.x3d' name='title'/>
     <meta content='Vince Marchetti' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://kshell.com/mobiusCarlson.x3d' name='identifier'/>
-    <meta content='a mobius of 3 NURBS Patch Surfaces' name='description'/>
   </head>
   <Scene>
     <Background skyColor='1 1 1'/>

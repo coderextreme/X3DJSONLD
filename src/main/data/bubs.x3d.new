@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
-<meta name="title" content="bubs.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="bubs.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="Tour around a prismatic sphere"></meta>
-<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
-<Viewpoint position="0 0 4" orientation="1 0 0 0" description="Bubbles in action"></Viewpoint>
-<Background backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&quot;" frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&quot;"></Background>
-<ProtoDeclare name="Bubble"><ProtoBody><Transform DEF="body_trans"><Shape><Sphere radius="0.25"></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
+<Scene><ProtoDeclare name="Bubble"><ProtoInterface></ProtoInterface>
+<ProtoBody><Transform DEF="body_trans"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0" transparency="0.2"></Material>
 </Appearance>
+<Sphere radius="0.25"></Sphere>
 </Shape>
-<Script DEF="bounce1"><field name="scale" accessType="inputOutput" type="SFVec3f" value="1 1 1"></field>
-<field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="scalvel" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<Script DEF="bounce1"><field accessType="inputOutput" type="SFVec3f" name="scale" value="1 1 1"></field>
+<field accessType="inputOutput" type="SFVec3f" name="translation"></field>
+<field accessType="inputOutput" type="SFVec3f" name="velocity"></field>
+<field accessType="inputOutput" type="SFVec3f" name="scalvel"></field>
+<field accessType="inputOnly" type="SFFloat" name="set_fraction"></field>
 <![CDATA[ecmascript:
 function initialize() {
     velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
@@ -59,15 +55,18 @@ function set_fraction(value) {
     }
 }]]></Script>
 <TimeSensor DEF="bubbleClock" cycleInterval="10" loop="true"></TimeSensor>
+</Transform>
 <ROUTE fromNode="bounce1" fromField="translation_changed" toNode="body_trans" toField="set_translation"></ROUTE>
 <ROUTE fromNode="bounce1" fromField="scale_changed" toNode="body_trans" toField="set_scale"></ROUTE>
 <ROUTE fromNode="bubbleClock" fromField="fraction_changed" toNode="bounce1" toField="set_fraction"></ROUTE>
-</Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="Bubble" DEF="bubbleA"></ProtoInstance>
-<ProtoInstance name="Bubble" DEF="bubbleB"></ProtoInstance>
-<ProtoInstance name="Bubble" DEF="bubbleC"></ProtoInstance>
-<ProtoInstance name="Bubble" DEF="bubbleD"></ProtoInstance>
+<NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
+<Viewpoint description="Bubbles in action" position="0 0 4"></Viewpoint>
+<Background frontUrl="&quot;../resources/images/FR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png&quot;" backUrl="&quot;../resources/images/BK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png&quot;" leftUrl="&quot;../resources/images/LF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png&quot;" rightUrl="&quot;../resources/images/RT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png&quot;" topUrl="&quot;../resources/images/TP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png&quot;" bottomUrl="&quot;../resources/images/BT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png&quot;"></Background>
+<ProtoInstance DEF="bubbleA" name="Bubble"></ProtoInstance>
+<ProtoInstance DEF="bubbleB" name="Bubble"></ProtoInstance>
+<ProtoInstance DEF="bubbleC" name="Bubble"></ProtoInstance>
+<ProtoInstance DEF="bubbleD" name="Bubble"></ProtoInstance>
 </Scene>
 </X3D>

@@ -3,9 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
-"""All head/meta tags are optional, WorldInfo is also optional"""
-"""Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1"""
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -29,7 +27,7 @@ meta5.content = "19 January 2020"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "24 January 2020"
+meta6.content = "Mon, 09 Feb 2026 07:11:18 GMT"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -72,32 +70,22 @@ meta14.name = "identifier"
 meta14.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"
 
 head1.children.append(meta14)
-meta15 = x3d.meta()
-meta15.name = "generator"
-meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta15)
-meta16 = x3d.meta()
-meta16.name = "license"
-meta16.content = "../license.html"
-
-head1.children.append(meta16)
 
 X3D0.head = head1
-Scene17 = x3d.Scene()
-WorldInfo18 = x3d.WorldInfo()
-WorldInfo18.title = "HelloWorldMinimal.x3d"
+Scene15 = x3d.Scene()
+WorldInfo16 = x3d.WorldInfo()
+WorldInfo16.title = "HelloWorldMinimal.x3d"
 
-Scene17.children.append(WorldInfo18)
-Shape19 = x3d.Shape()
-Text20 = x3d.Text()
-Text20.string = ["hello, world"]
+Scene15.children.append(WorldInfo16)
+Shape17 = x3d.Shape()
+Text18 = x3d.Text()
+Text18.string = ["hello, world"]
 
-Shape19.geometry = Text20
+Shape17.geometry = Text18
 
-Scene17.children.append(Shape19)
+Scene15.children.append(Shape17)
 
-X3D0.Scene = Scene17
+X3D0.Scene = Scene15
 f = open("../data/HelloWorldMinimal.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

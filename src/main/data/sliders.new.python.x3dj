@@ -4,48 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"EnvironmentalEffects"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
-      }
-    },
         "meta":
         {
       {
@@ -88,11 +50,300 @@
         "@name":"license"
       }
     },
-        "meta":
+    }    "Scene":
+    {
+        "ProtoDeclare":
         {
       {
-        "@content":"Vim, VI Improved",
-        "@name":"generator"
+        "@name":"SliderProto"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"sliderTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"textString",
+        "@type":"MFString",
+        "@value":"['x=']"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterScale",
+        "@type":"SFFloat",
+        "@value":"15"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterName",
+        "@type":"SFString",
+        "@value":"x"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"orbScript",
+        "@type":"SFNode"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Group":
+                {
+                    "Transform":
+                    {
+      {
+        "@DEF":"protoSlider"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"translation",
+        "@protoField":"sliderTranslation"
+      }
+    },
+                        }                        "Transform":
+                        {
+      {
+        "@DEF":"protoTransform",
+        "@translation":"0 0 0.1"
+      }
+                            "PlaneSensor":
+                            {
+      {
+        "@DEF":"protoSensor",
+        "@description":"Grab with mouse to adjust slider",
+        "@maxPosition":"1 0"
+      }
+    },
+                            "Transform":
+                            {
+                                "TouchSensor":
+                                {
+      {
+        "@DEF":"protoTS",
+        "@description":"Maybe start dragging this?"
+      }
+    },
+                            }                            "Transform":
+                            {
+                                "Shape":
+                                {
+                                    "Appearance":
+                                    {
+                                        "Material":
+                                        {
+    },
+                                    }                                    "Text":
+                                    {
+      {
+        "@DEF":"protoText"
+      }
+                                        "IS":
+                                        {
+                                            "connect":
+                                            {
+      {
+        "@nodeField":"string",
+        "@protoField":"textString"
+      }
+    },
+                                        }                                        "FontStyle":
+                                        {
+      {
+        "@size":"0.23"
+      }
+    },
+                                    }                                }                            }                        }                    }                    "Script":
+                    {
+      {
+        "@DEF":"protoValueTransformerScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function set_protoScale(value) {
+&quot;+
+&quot;	protoScale = value;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_protoParameterName(value) {
+&quot;+
+&quot;	protoParameterName = value;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_protoScript(value) {
+&quot;+
+&quot;	protoScript = value;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_protoValue(value) {
+&quot;+
+&quot;	protoValue = value;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_protoText(value) {
+&quot;+
+&quot;	protoText = value;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function newTranslation(value) {
+&quot;+
+&quot;       	set_protoValue(value.x * protoScale);
+&quot;+
+&quot;       	set_protoText(new MFString(protoParameterName+'='+protoValue.toFixed(2)));
+&quot;+
+&quot;	protoScript[protoParameterName] = protoValue;
+&quot;+
+&quot;};"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoScale",
+        "@protoField":"parameterScale"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoParameterName",
+        "@protoField":"parameterName"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoScript",
+        "@protoField":"orbScript"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoScale",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoParameterName",
+        "@type":"SFString"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"newTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoScript",
+        "@type":"SFNode"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoValue",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoText",
+        "@type":"MFString",
+        "@value":"['1.0']"
+      }
+    },
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"set_translation",
+        "@toNode":"protoTransform"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"newTranslation",
+        "@toNode":"protoValueTransformerScript"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"protoText_changed",
+        "@fromNode":"protoValueTransformerScript",
+        "@toField":"set_string",
+        "@toNode":"protoText"
+      }
+    },
+            }        }        "ROUTE":
+        {
+      {
+        "@fromField":"coordIndexes_changed",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_coordIndex",
+        "@toNode":"Orbit"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"coordinates_changed",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_point",
+        "@toNode":"OrbitCoordinates"
       }
     },
     }}

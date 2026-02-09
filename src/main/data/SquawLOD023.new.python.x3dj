@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -52,7 +52,7 @@
         "meta":
         {
       {
-        "@content":"20 January 2020",
+        "@content":"Mon, 09 Feb 2026 07:13:12 GMT",
         "@name":"modified"
       }
     },
@@ -80,22 +80,8 @@
         "meta":
         {
       {
-        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -116,7 +102,10 @@
             "GeoOrigin":
             {
       {
-        "@DEF":"ORIGIN"
+        "@DEF":"ORIGIN",
+        "@geoCoords":"4342525.5 740604 0",
+        "@geoSystem":""UTM" "Z10" "N"",
+        "@rotateYUp":"true"
       }
     },
             "Shape":

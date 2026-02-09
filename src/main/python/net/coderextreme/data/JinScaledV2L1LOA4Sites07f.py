@@ -5,8 +5,8 @@ X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
 X3D0.version = "4.0"
 head1 = x3d.head()
-"""Scaled 1:1, Added Animations"""
-"""Added Sites"""
+head1.children.append(x3d.Comment("""Scaled 1:1, Added Animations"""))
+head1.children.append(x3d.Comment("""Added Sites"""))
 component2 = x3d.component()
 component2.name = "HAnim"
 component2.level = 1
@@ -117,8 +117,7 @@ Scene22.children.append(WorldInfo23)
 NavigationInfo24 = x3d.NavigationInfo()
 
 Scene22.children.append(NavigationInfo24)
-Group25 = x3d.Group()
-Group25.DEF = "SceneViewpoints"
+Group25 = x3d.Group(DEF="SceneViewpoints")
 Viewpoint26 = x3d.Viewpoint()
 Viewpoint26.centerOfRotation = [0,1,0]
 Viewpoint26.description = "JinLOA4"
@@ -186,12 +185,9 @@ Viewpoint35.position = [0,3.5,0]
 Group25.children.append(Viewpoint35)
 
 Scene22.children.append(Group25)
-Group36 = x3d.Group()
-Group36.DEF = "Markers"
-Transform37 = x3d.Transform()
-Transform37.DEF = "SiteMarker"
-Shape38 = x3d.Shape()
-Shape38.DEF = "HAnimSiteShape"
+Group36 = x3d.Group(DEF="Markers")
+Transform37 = x3d.Transform(DEF="SiteMarker")
+Shape38 = x3d.Shape(DEF="HAnimSiteShape")
 Sphere39 = x3d.Sphere()
 Sphere39.radius = 0.01
 
@@ -210,9 +206,8 @@ Transform37.children.append(Shape38)
 Group36.children.append(Transform37)
 
 Scene22.children.append(Group36)
-HAnimHumanoid42 = x3d.HAnimHumanoid()
+HAnimHumanoid42 = x3d.HAnimHumanoid(DEF="hanim_JinLOA4")
 HAnimHumanoid42.name = "JinLOA4"
-HAnimHumanoid42.DEF = "hanim_JinLOA4"
 HAnimHumanoid42.loa = 4
 HAnimHumanoid42.version = "2.0"
 MetadataSet43 = x3d.MetadataSet()
@@ -276,26 +271,19 @@ if MetadataSet43.value is None:
 MetadataSet43.value.append(MetadataString51)
 
 HAnimHumanoid42.metadata = MetadataSet43
-HAnimJoint52 = x3d.HAnimJoint()
+HAnimJoint52 = x3d.HAnimJoint(DEF="hanim_humanoid_root")
 HAnimJoint52.name = "humanoid_root"
-HAnimJoint52.DEF = "hanim_humanoid_root"
 HAnimJoint52.center = [0,0.826,-0.016]
-HAnimJoint52.ulimit = [0,0,0]
-HAnimJoint52.llimit = [0,0,0]
-HAnimSegment53 = x3d.HAnimSegment()
+HAnimSegment53 = x3d.HAnimSegment(DEF="hanim_sacrum")
 HAnimSegment53.name = "sacrum"
-HAnimSegment53.DEF = "hanim_sacrum"
-Shape54 = x3d.Shape()
-Shape54.DEF = "sacrum_Shape"
+Shape54 = x3d.Shape(DEF="sacrum_Shape")
 Appearance55 = x3d.Appearance()
-Material56 = x3d.Material()
-Material56.DEF = "SurfaceDefault"
+Material56 = x3d.Material(DEF="SurfaceDefault")
 Material56.diffuseColor = [0.588,0.588,0.588]
 Material56.transparency = 0.8
 
 Appearance55.material = Material56
-ImageTexture57 = x3d.ImageTexture()
-ImageTexture57.DEF = "JinLOA4TextureAtlas"
+ImageTexture57 = x3d.ImageTexture(DEF="JinLOA4TextureAtlas")
 ImageTexture57.url = ["images/Jin.png","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"]
 
 Appearance55.texture = ImageTexture57
@@ -317,31 +305,28 @@ IndexedFaceSet58.texCoord = TextureCoordinate60
 Shape54.geometry = IndexedFaceSet58
 
 HAnimSegment53.children.append(Shape54)
-Group61 = x3d.Group()
-Group61.DEF = "sacrum_Sites"
-"""None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group61 = x3d.Group(DEF="sacrum_Sites")
+Group61.children.append(x3d.Comment("""None"""))
+Group61.children.append(x3d.Comment("""(example site and site marker code)"""))
+Group61.children.append(x3d.Comment("""<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>"""))
+Group61.children.append(x3d.Comment("""<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>"""))
+Group61.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group61.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment53.children.append(Group61)
 
 HAnimJoint52.children.append(HAnimSegment53)
-HAnimJoint62 = x3d.HAnimJoint()
+HAnimJoint62 = x3d.HAnimJoint(DEF="hanim_sacroiliac")
 HAnimJoint62.name = "sacroiliac"
-HAnimJoint62.DEF = "hanim_sacroiliac"
 HAnimJoint62.center = [0,0.707,-0.016]
-HAnimJoint62.ulimit = [0,0,0]
-HAnimJoint62.llimit = [0,0,0]
-HAnimSegment63 = x3d.HAnimSegment()
+HAnimSegment63 = x3d.HAnimSegment(DEF="hanim_pelvis")
 HAnimSegment63.name = "pelvis"
-HAnimSegment63.DEF = "hanim_pelvis"
-Shape64 = x3d.Shape()
-Shape64.DEF = "pelvis_Shape"
+Shape64 = x3d.Shape(DEF="pelvis_Shape")
 Appearance65 = x3d.Appearance()
-Material66 = x3d.Material()
-Material66.USE = "SurfaceDefault"
+Material66 = x3d.Material(USE="SurfaceDefault")
 
 Appearance65.material = Material66
-ImageTexture67 = x3d.ImageTexture()
-ImageTexture67.USE = "JinLOA4TextureAtlas"
+ImageTexture67 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance65.texture = ImageTexture67
 
@@ -362,145 +347,133 @@ IndexedFaceSet68.texCoord = TextureCoordinate70
 Shape64.geometry = IndexedFaceSet68
 
 HAnimSegment63.children.append(Shape64)
-Group71 = x3d.Group()
-Group71.DEF = "pelvis_Sites"
-"""(r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z)"""
-HAnimSite72 = x3d.HAnimSite()
+Group71 = x3d.Group(DEF="pelvis_Sites")
+Group71.children.append(x3d.Comment("""(r_iliocristale_pt '-0.1525 1.0628 0.0035)"""))
+Group71.children.append(x3d.Comment("""(r_trochanterion_pt -0.1689 0.8419 0.0352)"""))
+Group71.children.append(x3d.Comment("""(l_iliocristale_pt 0.1612 1.0537 0.0008)"""))
+Group71.children.append(x3d.Comment("""(l_trochanterion_pt 0.1677 0.8336 0.0303)"""))
+Group71.children.append(x3d.Comment("""(r_asis_pt -0.0887 1.0021 0.1112)"""))
+Group71.children.append(x3d.Comment("""(l_asis_pt 0.0774 1.0190 -0.1151)"""))
+Group71.children.append(x3d.Comment("""(r_psis_pt -0.0716 1.0190 -0.1138)"""))
+Group71.children.append(x3d.Comment("""(l_psis_pt 0.0774 1.0190 -0.1151)"""))
+Group71.children.append(x3d.Comment("""(crotch_pt 0.0034 0.8266 0.0257)"""))
+Group71.children.append(x3d.Comment("""(buttocks_standing_wall_contact_point x y z)"""))
+HAnimSite72 = x3d.HAnimSite(DEF="hanim_r_iliocristale_pt")
 HAnimSite72.name = "r_iliocristale_pt"
-HAnimSite72.DEF = "hanim_r_iliocristale_pt"
 HAnimSite72.translation = [-0.13,0.92,0.0035]
 TouchSensor73 = x3d.TouchSensor()
 TouchSensor73.description = "HAnimSite r_iliocristale_pt 36"
 
 HAnimSite72.children.append(TouchSensor73)
-Shape74 = x3d.Shape()
-Shape74.USE = "HAnimSiteShape"
+Shape74 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite72.children.append(Shape74)
 
 Group71.children.append(HAnimSite72)
-HAnimSite75 = x3d.HAnimSite()
+HAnimSite75 = x3d.HAnimSite(DEF="hanim_r_trochanterion_pt")
 HAnimSite75.name = "r_trochanterion_pt"
-HAnimSite75.DEF = "hanim_r_trochanterion_pt"
 HAnimSite75.translation = [-0.14,0.8,0.0035]
 TouchSensor76 = x3d.TouchSensor()
 TouchSensor76.description = "HAnimSite r_trochanterion_pt 46"
 
 HAnimSite75.children.append(TouchSensor76)
-Shape77 = x3d.Shape()
-Shape77.USE = "HAnimSiteShape"
+Shape77 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite75.children.append(Shape77)
 
 Group71.children.append(HAnimSite75)
-HAnimSite78 = x3d.HAnimSite()
+HAnimSite78 = x3d.HAnimSite(DEF="hanim_l_iliocristale_pt")
 HAnimSite78.name = "l_iliocristale_pt"
-HAnimSite78.DEF = "hanim_l_iliocristale_pt"
 HAnimSite78.translation = [0.13,0.92,0.0035]
 TouchSensor79 = x3d.TouchSensor()
 TouchSensor79.description = "HAnimSite l_iliocristale_pt 33"
 
 HAnimSite78.children.append(TouchSensor79)
-Shape80 = x3d.Shape()
-Shape80.USE = "HAnimSiteShape"
+Shape80 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite78.children.append(Shape80)
 
 Group71.children.append(HAnimSite78)
-HAnimSite81 = x3d.HAnimSite()
+HAnimSite81 = x3d.HAnimSite(DEF="hanim_l_trochanterion_pt")
 HAnimSite81.name = "l_trochanterion_pt"
-HAnimSite81.DEF = "hanim_l_trochanterion_pt"
 HAnimSite81.translation = [0.14,0.8,0.0035]
 TouchSensor82 = x3d.TouchSensor()
 TouchSensor82.description = "HAnimSite l_trochanterion_pt 42"
 
 HAnimSite81.children.append(TouchSensor82)
-Shape83 = x3d.Shape()
-Shape83.USE = "HAnimSiteShape"
+Shape83 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite81.children.append(Shape83)
 
 Group71.children.append(HAnimSite81)
-HAnimSite84 = x3d.HAnimSite()
+HAnimSite84 = x3d.HAnimSite(DEF="hanim_r_asis_pt")
 HAnimSite84.name = "r_asis_pt"
-HAnimSite84.DEF = "hanim_r_asis_pt"
 HAnimSite84.translation = [-0.1,0.86,0.0035]
 TouchSensor85 = x3d.TouchSensor()
 TouchSensor85.description = "HAnimSite r_asis_pt 35"
 
 HAnimSite84.children.append(TouchSensor85)
-Shape86 = x3d.Shape()
-Shape86.USE = "HAnimSiteShape"
+Shape86 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite84.children.append(Shape86)
 
 Group71.children.append(HAnimSite84)
-HAnimSite87 = x3d.HAnimSite()
+HAnimSite87 = x3d.HAnimSite(DEF="hanim_l_asis_pt")
 HAnimSite87.name = "l_asis_pt"
-HAnimSite87.DEF = "hanim_l_asis_pt"
 HAnimSite87.translation = [0.1,0.86,0.0035]
 TouchSensor88 = x3d.TouchSensor()
 TouchSensor88.description = "HAnimSite l_asis_pt 32"
 
 HAnimSite87.children.append(TouchSensor88)
-Shape89 = x3d.Shape()
-Shape89.USE = "HAnimSiteShape"
+Shape89 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite87.children.append(Shape89)
 
 Group71.children.append(HAnimSite87)
-HAnimSite90 = x3d.HAnimSite()
+HAnimSite90 = x3d.HAnimSite(DEF="hanim_r_psis_pt")
 HAnimSite90.name = "r_psis_pt"
-HAnimSite90.DEF = "hanim_r_psis_pt"
 HAnimSite90.translation = [-0.05,0.84,-0.11]
 TouchSensor91 = x3d.TouchSensor()
 TouchSensor91.description = "HAnimSite r_psis_pt 37"
 
 HAnimSite90.children.append(TouchSensor91)
-Shape92 = x3d.Shape()
-Shape92.USE = "HAnimSiteShape"
+Shape92 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite90.children.append(Shape92)
 
 Group71.children.append(HAnimSite90)
-HAnimSite93 = x3d.HAnimSite()
+HAnimSite93 = x3d.HAnimSite(DEF="hanim_l_psis_pt")
 HAnimSite93.name = "l_psis_pt"
-HAnimSite93.DEF = "hanim_l_psis_pt"
 HAnimSite93.translation = [0.05,0.84,-0.11]
 TouchSensor94 = x3d.TouchSensor()
 TouchSensor94.description = "HAnimSite l_psis_pt 34"
 
 HAnimSite93.children.append(TouchSensor94)
-Shape95 = x3d.Shape()
-Shape95.USE = "HAnimSiteShape"
+Shape95 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite93.children.append(Shape95)
 
 Group71.children.append(HAnimSite93)
-HAnimSite96 = x3d.HAnimSite()
+HAnimSite96 = x3d.HAnimSite(DEF="hanim_crotch_pt")
 HAnimSite96.name = "crotch_pt"
-HAnimSite96.DEF = "hanim_crotch_pt"
 HAnimSite96.translation = [0,0.703,0]
 TouchSensor97 = x3d.TouchSensor()
 TouchSensor97.description = "HAnimSite crotch_pt 38"
 
 HAnimSite96.children.append(TouchSensor97)
-Shape98 = x3d.Shape()
-Shape98.USE = "HAnimSiteShape"
+Shape98 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite96.children.append(Shape98)
 
 Group71.children.append(HAnimSite96)
-HAnimSite99 = x3d.HAnimSite()
+HAnimSite99 = x3d.HAnimSite(DEF="hanim_buttocks_standing_wall_contact_point_pt")
 HAnimSite99.name = "buttocks_standing_wall_contact_point_pt"
-HAnimSite99.DEF = "hanim_buttocks_standing_wall_contact_point_pt"
 HAnimSite99.translation = [0,0.8,-0.15]
 TouchSensor100 = x3d.TouchSensor()
 TouchSensor100.description = "HAnimSite buttocks_standing_wall_contact_point_pt 93"
 
 HAnimSite99.children.append(TouchSensor100)
-Shape101 = x3d.Shape()
-Shape101.USE = "HAnimSiteShape"
+Shape101 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite99.children.append(Shape101)
 
@@ -509,24 +482,17 @@ Group71.children.append(HAnimSite99)
 HAnimSegment63.children.append(Group71)
 
 HAnimJoint62.children.append(HAnimSegment63)
-HAnimJoint102 = x3d.HAnimJoint()
+HAnimJoint102 = x3d.HAnimJoint(DEF="hanim_l_hip")
 HAnimJoint102.name = "l_hip"
-HAnimJoint102.DEF = "hanim_l_hip"
 HAnimJoint102.center = [0.095,0.8266,-0.0183]
-HAnimJoint102.ulimit = [0,0,0]
-HAnimJoint102.llimit = [0,0,0]
-HAnimSegment103 = x3d.HAnimSegment()
+HAnimSegment103 = x3d.HAnimSegment(DEF="hanim_l_thigh")
 HAnimSegment103.name = "l_thigh"
-HAnimSegment103.DEF = "hanim_l_thigh"
-Shape104 = x3d.Shape()
-Shape104.DEF = "l_thigh_Shape"
+Shape104 = x3d.Shape(DEF="l_thigh_Shape")
 Appearance105 = x3d.Appearance()
-Material106 = x3d.Material()
-Material106.USE = "SurfaceDefault"
+Material106 = x3d.Material(USE="SurfaceDefault")
 
 Appearance105.material = Material106
-ImageTexture107 = x3d.ImageTexture()
-ImageTexture107.USE = "JinLOA4TextureAtlas"
+ImageTexture107 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance105.texture = ImageTexture107
 
@@ -547,61 +513,55 @@ IndexedFaceSet108.texCoord = TextureCoordinate110
 Shape104.geometry = IndexedFaceSet108
 
 HAnimSegment103.children.append(Shape104)
-Group111 = x3d.Group()
-Group111.DEF = "l_thigh_Sites"
-"""(l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z)"""
-HAnimSite112 = x3d.HAnimSite()
+Group111 = x3d.Group(DEF="l_thigh_Sites")
+Group111.children.append(x3d.Comment("""(l_knee_crease_pt 0.0993 0.4881 -0.0309)"""))
+Group111.children.append(x3d.Comment("""(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)"""))
+Group111.children.append(x3d.Comment("""(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)"""))
+Group111.children.append(x3d.Comment("""(l_suprapatella_pt x y z)"""))
+HAnimSite112 = x3d.HAnimSite(DEF="hanim_l_knee_crease_pt")
 HAnimSite112.name = "l_knee_crease_pt"
-HAnimSite112.DEF = "hanim_l_knee_crease_pt"
 HAnimSite112.translation = [0.09,0.41,-0.056]
 TouchSensor113 = x3d.TouchSensor()
 TouchSensor113.description = "HAnimSite l_knee_crease_pt 90"
 
 HAnimSite112.children.append(TouchSensor113)
-Shape114 = x3d.Shape()
-Shape114.USE = "HAnimSiteShape"
+Shape114 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite112.children.append(Shape114)
 
 Group111.children.append(HAnimSite112)
-HAnimSite115 = x3d.HAnimSite()
+HAnimSite115 = x3d.HAnimSite(DEF="hanim_l_femoral_medial_epicondyles_pt")
 HAnimSite115.name = "l_femoral_medial_epicondyles_pt"
-HAnimSite115.DEF = "hanim_l_femoral_medial_epicondyles_pt"
 HAnimSite115.translation = [0.039,0.41,-0.01]
 TouchSensor116 = x3d.TouchSensor()
 TouchSensor116.description = "HAnimSite l_femoral_medial_epicondyles_pt 39"
 
 HAnimSite115.children.append(TouchSensor116)
-Shape117 = x3d.Shape()
-Shape117.USE = "HAnimSiteShape"
+Shape117 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite115.children.append(Shape117)
 
 Group111.children.append(HAnimSite115)
-HAnimSite118 = x3d.HAnimSite()
+HAnimSite118 = x3d.HAnimSite(DEF="hanim_l_femoral_lateral_epicondyles_pt")
 HAnimSite118.name = "l_femoral_lateral_epicondyles_pt"
-HAnimSite118.DEF = "hanim_l_femoral_lateral_epicondyles_pt"
 HAnimSite118.translation = [0.127,0.41,-0.01]
 TouchSensor119 = x3d.TouchSensor()
 TouchSensor119.description = "l_femoral_lateral_epicondyles_pt 40"
 
 HAnimSite118.children.append(TouchSensor119)
-Shape120 = x3d.Shape()
-Shape120.USE = "HAnimSiteShape"
+Shape120 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite118.children.append(Shape120)
 
 Group111.children.append(HAnimSite118)
-HAnimSite121 = x3d.HAnimSite()
+HAnimSite121 = x3d.HAnimSite(DEF="hanim_l_suprapatella_pt")
 HAnimSite121.name = "l_suprapatella_pt"
-HAnimSite121.DEF = "hanim_l_suprapatella_pt"
 HAnimSite121.translation = [0.085,0.41,0.042]
 TouchSensor122 = x3d.TouchSensor()
 TouchSensor122.description = "HAnimSite l_suprapatella_pt 41"
 
 HAnimSite121.children.append(TouchSensor122)
-Shape123 = x3d.Shape()
-Shape123.USE = "HAnimSiteShape"
+Shape123 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite121.children.append(Shape123)
 
@@ -610,24 +570,17 @@ Group111.children.append(HAnimSite121)
 HAnimSegment103.children.append(Group111)
 
 HAnimJoint102.children.append(HAnimSegment103)
-HAnimJoint124 = x3d.HAnimJoint()
+HAnimJoint124 = x3d.HAnimJoint(DEF="hanim_l_knee")
 HAnimJoint124.name = "l_knee"
-HAnimJoint124.DEF = "hanim_l_knee"
 HAnimJoint124.center = [0.09261001,0.408825,-0.01943775]
-HAnimJoint124.ulimit = [0,0,0]
-HAnimJoint124.llimit = [0,0,0]
-HAnimSegment125 = x3d.HAnimSegment()
+HAnimSegment125 = x3d.HAnimSegment(DEF="hanim_l_calf")
 HAnimSegment125.name = "l_calf"
-HAnimSegment125.DEF = "hanim_l_calf"
-Shape126 = x3d.Shape()
-Shape126.DEF = "l_calf_Shape"
+Shape126 = x3d.Shape(DEF="l_calf_Shape")
 Appearance127 = x3d.Appearance()
-Material128 = x3d.Material()
-Material128.USE = "SurfaceDefault"
+Material128 = x3d.Material(USE="SurfaceDefault")
 
 Appearance127.material = Material128
-ImageTexture129 = x3d.ImageTexture()
-ImageTexture129.USE = "JinLOA4TextureAtlas"
+ImageTexture129 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance127.texture = ImageTexture129
 
@@ -648,47 +601,42 @@ IndexedFaceSet130.texCoord = TextureCoordinate132
 Shape126.geometry = IndexedFaceSet130
 
 HAnimSegment125.children.append(Shape126)
-Group133 = x3d.Group()
-Group133.DEF = "l_calf_Sites"
-"""(l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)"""
-HAnimSite134 = x3d.HAnimSite()
+Group133 = x3d.Group(DEF="l_calf_Sites")
+Group133.children.append(x3d.Comment("""(l_tibiale_pt x y z)"""))
+Group133.children.append(x3d.Comment("""(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)"""))
+Group133.children.append(x3d.Comment("""(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)"""))
+HAnimSite134 = x3d.HAnimSite(DEF="hanim_l_tibiale_pt")
 HAnimSite134.name = "l_tibiale_pt"
-HAnimSite134.DEF = "hanim_l_tibiale_pt"
 HAnimSite134.translation = [0.09,0.31,0.038]
 TouchSensor135 = x3d.TouchSensor()
 TouchSensor135.description = "HAnimSite l_tibiale_pt 47"
 
 HAnimSite134.children.append(TouchSensor135)
-Shape136 = x3d.Shape()
-Shape136.USE = "HAnimSiteShape"
+Shape136 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite134.children.append(Shape136)
 
 Group133.children.append(HAnimSite134)
-HAnimSite137 = x3d.HAnimSite()
+HAnimSite137 = x3d.HAnimSite(DEF="hanim_l_medial_malleolus_pt")
 HAnimSite137.name = "l_medial_malleolus_pt"
-HAnimSite137.DEF = "hanim_l_medial_malleolus_pt"
 HAnimSite137.translation = [0.061,0.095,-0.02]
 TouchSensor138 = x3d.TouchSensor()
 TouchSensor138.description = "HAnimSite l_medial_malleolus_pt 48"
 
 HAnimSite137.children.append(TouchSensor138)
-Shape139 = x3d.Shape()
-Shape139.USE = "HAnimSiteShape"
+Shape139 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite137.children.append(Shape139)
 
 Group133.children.append(HAnimSite137)
-HAnimSite140 = x3d.HAnimSite()
+HAnimSite140 = x3d.HAnimSite(DEF="hanim_l_lateral_malleolus_pt")
 HAnimSite140.name = "l_lateral_malleolus_pt"
-HAnimSite140.DEF = "hanim_l_lateral_malleolus_pt"
 HAnimSite140.translation = [0.12,0.095,-0.02]
 TouchSensor141 = x3d.TouchSensor()
 TouchSensor141.description = "HAnimSite l_lateral_malleolus_pt 49"
 
 HAnimSite140.children.append(TouchSensor141)
-Shape142 = x3d.Shape()
-Shape142.USE = "HAnimSiteShape"
+Shape142 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite140.children.append(Shape142)
 
@@ -697,24 +645,17 @@ Group133.children.append(HAnimSite140)
 HAnimSegment125.children.append(Group133)
 
 HAnimJoint124.children.append(HAnimSegment125)
-HAnimJoint143 = x3d.HAnimJoint()
+HAnimJoint143 = x3d.HAnimJoint(DEF="hanim_l_talocrural")
 HAnimJoint143.name = "l_talocrural"
-HAnimJoint143.DEF = "hanim_l_talocrural"
 HAnimJoint143.center = [0.08883,0.09544501,-0.010451251]
-HAnimJoint143.ulimit = [0,0,0]
-HAnimJoint143.llimit = [0,0,0]
-HAnimSegment144 = x3d.HAnimSegment()
+HAnimSegment144 = x3d.HAnimSegment(DEF="hanim_l_talus")
 HAnimSegment144.name = "l_talus"
-HAnimSegment144.DEF = "hanim_l_talus"
-Shape145 = x3d.Shape()
-Shape145.DEF = "l_talus_Shape"
+Shape145 = x3d.Shape(DEF="l_talus_Shape")
 Appearance146 = x3d.Appearance()
-Material147 = x3d.Material()
-Material147.USE = "SurfaceDefault"
+Material147 = x3d.Material(USE="SurfaceDefault")
 
 Appearance146.material = Material147
-ImageTexture148 = x3d.ImageTexture()
-ImageTexture148.USE = "JinLOA4TextureAtlas"
+ImageTexture148 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance146.texture = ImageTexture148
 
@@ -735,33 +676,29 @@ IndexedFaceSet149.texCoord = TextureCoordinate151
 Shape145.geometry = IndexedFaceSet149
 
 HAnimSegment144.children.append(Shape145)
-Group152 = x3d.Group()
-Group152.DEF = "l_talus_Sites"
-"""(l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)"""
-HAnimSite153 = x3d.HAnimSite()
+Group152 = x3d.Group(DEF="l_talus_Sites")
+Group152.children.append(x3d.Comment("""(l_sphyrion_pt 0.0890 0.0575 -0.0943)"""))
+Group152.children.append(x3d.Comment("""(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)"""))
+HAnimSite153 = x3d.HAnimSite(DEF="hanim_l_sphyrion_pt")
 HAnimSite153.name = "l_sphyrion_pt"
-HAnimSite153.DEF = "hanim_l_sphyrion_pt"
 HAnimSite153.translation = [0.054,0.065,-0.02]
 TouchSensor154 = x3d.TouchSensor()
 TouchSensor154.description = "HAnimSite l_sphyrion_pt 50"
 
 HAnimSite153.children.append(TouchSensor154)
-Shape155 = x3d.Shape()
-Shape155.USE = "HAnimSiteShape"
+Shape155 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite153.children.append(Shape155)
 
 Group152.children.append(HAnimSite153)
-HAnimSite156 = x3d.HAnimSite()
+HAnimSite156 = x3d.HAnimSite(DEF="hanim_l_calcaneus_posterior_pt")
 HAnimSite156.name = "l_calcaneus_posterior_pt"
-HAnimSite156.DEF = "hanim_l_calcaneus_posterior_pt"
 HAnimSite156.translation = [0.09,0.03,-0.06]
 TouchSensor157 = x3d.TouchSensor()
 TouchSensor157.description = "HAnimSite l_calcaneus_posterior_pt 58"
 
 HAnimSite156.children.append(TouchSensor157)
-Shape158 = x3d.Shape()
-Shape158.USE = "HAnimSiteShape"
+Shape158 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite156.children.append(Shape158)
 
@@ -770,24 +707,17 @@ Group152.children.append(HAnimSite156)
 HAnimSegment144.children.append(Group152)
 
 HAnimJoint143.children.append(HAnimSegment144)
-HAnimJoint159 = x3d.HAnimJoint()
+HAnimJoint159 = x3d.HAnimJoint(DEF="hanim_l_talocalcaneonavicular")
 HAnimJoint159.name = "l_talocalcaneonavicular"
-HAnimJoint159.DEF = "hanim_l_talocalcaneonavicular"
 HAnimJoint159.center = [0.07830001,0.036900003,0.0048645]
-HAnimJoint159.ulimit = [0,0,0]
-HAnimJoint159.llimit = [0,0,0]
-HAnimSegment160 = x3d.HAnimSegment()
+HAnimSegment160 = x3d.HAnimSegment(DEF="hanim_l_navicular")
 HAnimSegment160.name = "l_navicular"
-HAnimSegment160.DEF = "hanim_l_navicular"
-Shape161 = x3d.Shape()
-Shape161.DEF = "l_navicular_Shape"
+Shape161 = x3d.Shape(DEF="l_navicular_Shape")
 Appearance162 = x3d.Appearance()
-Material163 = x3d.Material()
-Material163.USE = "SurfaceDefault"
+Material163 = x3d.Material(USE="SurfaceDefault")
 
 Appearance162.material = Material163
-ImageTexture164 = x3d.ImageTexture()
-ImageTexture164.USE = "JinLOA4TextureAtlas"
+ImageTexture164 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance162.texture = ImageTexture164
 
@@ -808,31 +738,23 @@ IndexedFaceSet165.texCoord = TextureCoordinate167
 Shape161.geometry = IndexedFaceSet165
 
 HAnimSegment160.children.append(Shape161)
-Group168 = x3d.Group()
-Group168.DEF = "l_navicular_Sites"
-"""None"""
+Group168 = x3d.Group(DEF="l_navicular_Sites")
+Group168.children.append(x3d.Comment("""None"""))
 
 HAnimSegment160.children.append(Group168)
 
 HAnimJoint159.children.append(HAnimSegment160)
-HAnimJoint169 = x3d.HAnimJoint()
+HAnimJoint169 = x3d.HAnimJoint(DEF="hanim_l_cuneonavicular_1")
 HAnimJoint169.name = "l_cuneonavicular_1"
-HAnimJoint169.DEF = "hanim_l_cuneonavicular_1"
 HAnimJoint169.center = [0.067365,0.032107502,0.018391501]
-HAnimJoint169.ulimit = [0,0,0]
-HAnimJoint169.llimit = [0,0,0]
-HAnimSegment170 = x3d.HAnimSegment()
+HAnimSegment170 = x3d.HAnimSegment(DEF="hanim_1")
 HAnimSegment170.name = "l_cuneiform_1"
-HAnimSegment170.DEF = "hanim_1"
-Shape171 = x3d.Shape()
-Shape171.DEF = "l_cuneiform_1_Shape"
+Shape171 = x3d.Shape(DEF="l_cuneiform_1_Shape")
 Appearance172 = x3d.Appearance()
-Material173 = x3d.Material()
-Material173.USE = "SurfaceDefault"
+Material173 = x3d.Material(USE="SurfaceDefault")
 
 Appearance172.material = Material173
-ImageTexture174 = x3d.ImageTexture()
-ImageTexture174.USE = "JinLOA4TextureAtlas"
+ImageTexture174 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance172.texture = ImageTexture174
 
@@ -853,31 +775,23 @@ IndexedFaceSet175.texCoord = TextureCoordinate177
 Shape171.geometry = IndexedFaceSet175
 
 HAnimSegment170.children.append(Shape171)
-Group178 = x3d.Group()
-Group178.DEF = "l_cuneiform_1_Sites"
-"""None"""
+Group178 = x3d.Group(DEF="l_cuneiform_1_Sites")
+Group178.children.append(x3d.Comment("""None"""))
 
 HAnimSegment170.children.append(Group178)
 
 HAnimJoint169.children.append(HAnimSegment170)
-HAnimJoint179 = x3d.HAnimJoint()
+HAnimJoint179 = x3d.HAnimJoint(DEF="hanim_l_tarsometatarsal_1")
 HAnimJoint179.name = "l_tarsometatarsal_1"
-HAnimJoint179.DEF = "hanim_l_tarsometatarsal_1"
 HAnimJoint179.center = [0.06462,0.023242502,0.04419]
-HAnimJoint179.ulimit = [0,0,0]
-HAnimJoint179.llimit = [0,0,0]
-HAnimSegment180 = x3d.HAnimSegment()
+HAnimSegment180 = x3d.HAnimSegment(DEF="hanim_l_metatarsal_1")
 HAnimSegment180.name = "l_metatarsal_1"
-HAnimSegment180.DEF = "hanim_l_metatarsal_1"
-Shape181 = x3d.Shape()
-Shape181.DEF = "l_metatarsal_1_Shape"
+Shape181 = x3d.Shape(DEF="l_metatarsal_1_Shape")
 Appearance182 = x3d.Appearance()
-Material183 = x3d.Material()
-Material183.USE = "SurfaceDefault"
+Material183 = x3d.Material(USE="SurfaceDefault")
 
 Appearance182.material = Material183
-ImageTexture184 = x3d.ImageTexture()
-ImageTexture184.USE = "JinLOA4TextureAtlas"
+ImageTexture184 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance182.texture = ImageTexture184
 
@@ -898,31 +812,23 @@ IndexedFaceSet185.texCoord = TextureCoordinate187
 Shape181.geometry = IndexedFaceSet185
 
 HAnimSegment180.children.append(Shape181)
-Group188 = x3d.Group()
-Group188.DEF = "l_metatarsal_1_Sites"
-"""None"""
+Group188 = x3d.Group(DEF="l_metatarsal_1_Sites")
+Group188.children.append(x3d.Comment("""None"""))
 
 HAnimSegment180.children.append(Group188)
 
 HAnimJoint179.children.append(HAnimSegment180)
-HAnimJoint189 = x3d.HAnimJoint()
+HAnimJoint189 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal_1")
 HAnimJoint189.name = "l_metatarsophalangeal_1"
-HAnimJoint189.DEF = "hanim_l_metatarsophalangeal_1"
 HAnimJoint189.center = [0.0621225,0.014424751,0.0936225]
-HAnimJoint189.ulimit = [0,0,0]
-HAnimJoint189.llimit = [0,0,0]
-HAnimSegment190 = x3d.HAnimSegment()
+HAnimSegment190 = x3d.HAnimSegment(DEF="hanim_l_tarsal_proximal_phalanx_1")
 HAnimSegment190.name = "l_tarsal_proximal_phalanx_1"
-HAnimSegment190.DEF = "hanim_l_tarsal_proximal_phalanx_1"
-Shape191 = x3d.Shape()
-Shape191.DEF = "l_tarsal_proximal_phalanx_1_Shape"
+Shape191 = x3d.Shape(DEF="l_tarsal_proximal_phalanx_1_Shape")
 Appearance192 = x3d.Appearance()
-Material193 = x3d.Material()
-Material193.USE = "SurfaceDefault"
+Material193 = x3d.Material(USE="SurfaceDefault")
 
 Appearance192.material = Material193
-ImageTexture194 = x3d.ImageTexture()
-ImageTexture194.USE = "JinLOA4TextureAtlas"
+ImageTexture194 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance192.texture = ImageTexture194
 
@@ -943,19 +849,16 @@ IndexedFaceSet195.texCoord = TextureCoordinate197
 Shape191.geometry = IndexedFaceSet195
 
 HAnimSegment190.children.append(Shape191)
-Group198 = x3d.Group()
-Group198.DEF = "l_tarsal_proximal_phalanx_1_Sites"
-"""(l_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)"""
-HAnimSite199 = x3d.HAnimSite()
+Group198 = x3d.Group(DEF="l_tarsal_proximal_phalanx_1_Sites")
+Group198.children.append(x3d.Comment("""(l_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)"""))
+HAnimSite199 = x3d.HAnimSite(DEF="hanim_l_metatarsal_phalanx_1_pt")
 HAnimSite199.name = "l_metatarsal_phalanx_1_pt"
-HAnimSite199.DEF = "hanim_l_metatarsal_phalanx_1_pt"
 HAnimSite199.translation = [0.062,0.012,0.1]
 TouchSensor200 = x3d.TouchSensor()
 TouchSensor200.description = "HAnimSite l_metatarsal_phalanx_1_pt 55"
 
 HAnimSite199.children.append(TouchSensor200)
-Shape201 = x3d.Shape()
-Shape201.USE = "HAnimSiteShapeB"
+Shape201 = x3d.Shape(USE="HAnimSiteShapeB")
 
 HAnimSite199.children.append(Shape201)
 
@@ -964,24 +867,17 @@ Group198.children.append(HAnimSite199)
 HAnimSegment190.children.append(Group198)
 
 HAnimJoint189.children.append(HAnimSegment190)
-HAnimJoint202 = x3d.HAnimJoint()
+HAnimJoint202 = x3d.HAnimJoint(DEF="hanim_l_tarsal_interphalangeal_1")
 HAnimJoint202.name = "l_tarsal_interphalangeal_1"
-HAnimJoint202.DEF = "hanim_l_tarsal_interphalangeal_1"
 HAnimJoint202.center = [0.062,0.012,0.115]
-HAnimJoint202.ulimit = [0,0,0]
-HAnimJoint202.llimit = [0,0,0]
-HAnimSegment203 = x3d.HAnimSegment()
+HAnimSegment203 = x3d.HAnimSegment(DEF="hanim_l_tarsal_distal_phalanx_1")
 HAnimSegment203.name = "l_tarsal_distal_phalanx_1"
-HAnimSegment203.DEF = "hanim_l_tarsal_distal_phalanx_1"
-Shape204 = x3d.Shape()
-Shape204.DEF = "l_tarsal_distal_phalanx_1_Shape"
+Shape204 = x3d.Shape(DEF="l_tarsal_distal_phalanx_1_Shape")
 Appearance205 = x3d.Appearance()
-Material206 = x3d.Material()
-Material206.USE = "SurfaceDefault"
+Material206 = x3d.Material(USE="SurfaceDefault")
 
 Appearance205.material = Material206
-ImageTexture207 = x3d.ImageTexture()
-ImageTexture207.USE = "JinLOA4TextureAtlas"
+ImageTexture207 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance205.texture = ImageTexture207
 
@@ -1002,19 +898,16 @@ IndexedFaceSet208.texCoord = TextureCoordinate210
 Shape204.geometry = IndexedFaceSet208
 
 HAnimSegment203.children.append(Shape204)
-Group211 = x3d.Group()
-Group211.DEF = "l_tarsal_distal_phalanx_1_Sites"
-"""(l_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)"""
-HAnimSite212 = x3d.HAnimSite()
+Group211 = x3d.Group(DEF="l_tarsal_distal_phalanx_1_Sites")
+Group211.children.append(x3d.Comment("""(l_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)"""))
+HAnimSite212 = x3d.HAnimSite(DEF="hanim_l_tarsal_distal_phalanx_1_tip")
 HAnimSite212.name = "l_tarsal_distal_phalanx_1_tip"
-HAnimSite212.DEF = "hanim_l_tarsal_distal_phalanx_1_tip"
 HAnimSite212.translation = [0.062,0.012,0.134]
 TouchSensor213 = x3d.TouchSensor()
 TouchSensor213.description = "HAnimSite l_tarsal_distal_phalanx_1_tip 111"
 
 HAnimSite212.children.append(TouchSensor213)
-Shape214 = x3d.Shape()
-Shape214.USE = "HAnimSiteShape"
+Shape214 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite212.children.append(Shape214)
 
@@ -1031,24 +924,17 @@ HAnimJoint179.children.append(HAnimJoint189)
 HAnimJoint169.children.append(HAnimJoint179)
 
 HAnimJoint159.children.append(HAnimJoint169)
-HAnimJoint215 = x3d.HAnimJoint()
+HAnimJoint215 = x3d.HAnimJoint(DEF="hanim_l_cuneonavicular_2")
 HAnimJoint215.name = "l_cuneonavicular_2"
-HAnimJoint215.DEF = "hanim_l_cuneonavicular_2"
 HAnimJoint215.center = [0.0814275,0.033525,0.02142675]
-HAnimJoint215.ulimit = [0,0,0]
-HAnimJoint215.llimit = [0,0,0]
-HAnimSegment216 = x3d.HAnimSegment()
+HAnimSegment216 = x3d.HAnimSegment(DEF="hanim_l_cuneiform_2")
 HAnimSegment216.name = "l_cuneiform_2"
-HAnimSegment216.DEF = "hanim_l_cuneiform_2"
-Shape217 = x3d.Shape()
-Shape217.DEF = "l_cuneiform_2_Shape"
+Shape217 = x3d.Shape(DEF="l_cuneiform_2_Shape")
 Appearance218 = x3d.Appearance()
-Material219 = x3d.Material()
-Material219.USE = "SurfaceDefault"
+Material219 = x3d.Material(USE="SurfaceDefault")
 
 Appearance218.material = Material219
-ImageTexture220 = x3d.ImageTexture()
-ImageTexture220.USE = "JinLOA4TextureAtlas"
+ImageTexture220 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance218.texture = ImageTexture220
 
@@ -1069,31 +955,23 @@ IndexedFaceSet221.texCoord = TextureCoordinate223
 Shape217.geometry = IndexedFaceSet221
 
 HAnimSegment216.children.append(Shape217)
-Group224 = x3d.Group()
-Group224.DEF = "l_cuneiform_2_Sites"
-"""None"""
+Group224 = x3d.Group(DEF="l_cuneiform_2_Sites")
+Group224.children.append(x3d.Comment("""None"""))
 
 HAnimSegment216.children.append(Group224)
 
 HAnimJoint215.children.append(HAnimSegment216)
-HAnimJoint225 = x3d.HAnimJoint()
+HAnimJoint225 = x3d.HAnimJoint(DEF="hanim_l_tarsometatarsal_2")
 HAnimJoint225.name = "l_tarsometatarsal_2"
-HAnimJoint225.DEF = "hanim_l_tarsometatarsal_2"
 HAnimJoint225.center = [0.08019,0.0261,0.041062504]
-HAnimJoint225.ulimit = [0,0,0]
-HAnimJoint225.llimit = [0,0,0]
-HAnimSegment226 = x3d.HAnimSegment()
+HAnimSegment226 = x3d.HAnimSegment(DEF="hanim_l_metatarsal_2")
 HAnimSegment226.name = "l_metatarsal_2"
-HAnimSegment226.DEF = "hanim_l_metatarsal_2"
-Shape227 = x3d.Shape()
-Shape227.DEF = "l_metatarsal_2_Shape"
+Shape227 = x3d.Shape(DEF="l_metatarsal_2_Shape")
 Appearance228 = x3d.Appearance()
-Material229 = x3d.Material()
-Material229.USE = "SurfaceDefault"
+Material229 = x3d.Material(USE="SurfaceDefault")
 
 Appearance228.material = Material229
-ImageTexture230 = x3d.ImageTexture()
-ImageTexture230.USE = "JinLOA4TextureAtlas"
+ImageTexture230 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance228.texture = ImageTexture230
 
@@ -1114,31 +992,23 @@ IndexedFaceSet231.texCoord = TextureCoordinate233
 Shape227.geometry = IndexedFaceSet231
 
 HAnimSegment226.children.append(Shape227)
-Group234 = x3d.Group()
-Group234.DEF = "l_metatarsal_2_Sites"
-"""None"""
+Group234 = x3d.Group(DEF="l_metatarsal_2_Sites")
+Group234.children.append(x3d.Comment("""None"""))
 
 HAnimSegment226.children.append(Group234)
 
 HAnimJoint225.children.append(HAnimSegment226)
-HAnimJoint235 = x3d.HAnimJoint()
+HAnimJoint235 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal_2")
 HAnimJoint235.name = "l_metatarsophalangeal_2"
-HAnimJoint235.DEF = "hanim_l_metatarsophalangeal_2"
 HAnimJoint235.center = [0.08253,0.014976,0.097830005]
-HAnimJoint235.ulimit = [0,0,0]
-HAnimJoint235.llimit = [0,0,0]
-HAnimSegment236 = x3d.HAnimSegment()
+HAnimSegment236 = x3d.HAnimSegment(DEF="hanim_l_tarsal_proximal_phalanx_2")
 HAnimSegment236.name = "l_tarsal_proximal_phalanx_2"
-HAnimSegment236.DEF = "hanim_l_tarsal_proximal_phalanx_2"
-Shape237 = x3d.Shape()
-Shape237.DEF = "l_tarsal_proximal_phalanx_2_Shape"
+Shape237 = x3d.Shape(DEF="l_tarsal_proximal_phalanx_2_Shape")
 Appearance238 = x3d.Appearance()
-Material239 = x3d.Material()
-Material239.USE = "SurfaceDefault"
+Material239 = x3d.Material(USE="SurfaceDefault")
 
 Appearance238.material = Material239
-ImageTexture240 = x3d.ImageTexture()
-ImageTexture240.USE = "JinLOA4TextureAtlas"
+ImageTexture240 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance238.texture = ImageTexture240
 
@@ -1159,31 +1029,23 @@ IndexedFaceSet241.texCoord = TextureCoordinate243
 Shape237.geometry = IndexedFaceSet241
 
 HAnimSegment236.children.append(Shape237)
-Group244 = x3d.Group()
-Group244.DEF = "l_tarsal_proximal_phalanx_2_Sites"
-"""None"""
+Group244 = x3d.Group(DEF="l_tarsal_proximal_phalanx_2_Sites")
+Group244.children.append(x3d.Comment("""None"""))
 
 HAnimSegment236.children.append(Group244)
 
 HAnimJoint235.children.append(HAnimSegment236)
-HAnimJoint245 = x3d.HAnimJoint()
+HAnimJoint245 = x3d.HAnimJoint(DEF="hanim_l_tarsal_proximal_interphalangeal_2")
 HAnimJoint245.name = "l_tarsal_proximal_interphalangeal_2"
-HAnimJoint245.DEF = "hanim_l_tarsal_proximal_interphalangeal_2"
 HAnimJoint245.center = [0.0843075,0.012647251,0.1140075]
-HAnimJoint245.ulimit = [0,0,0]
-HAnimJoint245.llimit = [0,0,0]
-HAnimSegment246 = x3d.HAnimSegment()
+HAnimSegment246 = x3d.HAnimSegment(DEF="hanim_l_tarsal_middle_phalanx_2")
 HAnimSegment246.name = "l_tarsal_middle_phalanx_2"
-HAnimSegment246.DEF = "hanim_l_tarsal_middle_phalanx_2"
-Shape247 = x3d.Shape()
-Shape247.DEF = "l_tarsal_middle_phalanx_2_Shape"
+Shape247 = x3d.Shape(DEF="l_tarsal_middle_phalanx_2_Shape")
 Appearance248 = x3d.Appearance()
-Material249 = x3d.Material()
-Material249.USE = "SurfaceDefault"
+Material249 = x3d.Material(USE="SurfaceDefault")
 
 Appearance248.material = Material249
-ImageTexture250 = x3d.ImageTexture()
-ImageTexture250.USE = "JinLOA4TextureAtlas"
+ImageTexture250 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance248.texture = ImageTexture250
 
@@ -1204,31 +1066,23 @@ IndexedFaceSet251.texCoord = TextureCoordinate253
 Shape247.geometry = IndexedFaceSet251
 
 HAnimSegment246.children.append(Shape247)
-Group254 = x3d.Group()
-Group254.DEF = "l_tarsal_middle_phalanx_2_Sites"
-"""None"""
+Group254 = x3d.Group(DEF="l_tarsal_middle_phalanx_2_Sites")
+Group254.children.append(x3d.Comment("""None"""))
 
 HAnimSegment246.children.append(Group254)
 
 HAnimJoint245.children.append(HAnimSegment246)
-HAnimJoint255 = x3d.HAnimJoint()
+HAnimJoint255 = x3d.HAnimJoint(DEF="hanim_l_tarsal_distal_interphalangeal_2")
 HAnimJoint255.name = "l_tarsal_distal_interphalangeal_2"
-HAnimJoint255.DEF = "hanim_l_tarsal_distal_interphalangeal_2"
 HAnimJoint255.center = [0.0843075,0.00982575,0.123435006]
-HAnimJoint255.ulimit = [0,0,0]
-HAnimJoint255.llimit = [0,0,0]
-HAnimSegment256 = x3d.HAnimSegment()
+HAnimSegment256 = x3d.HAnimSegment(DEF="hanim_l_tarsal_distal_phalanx_2")
 HAnimSegment256.name = "l_tarsal_distal_phalanx_2"
-HAnimSegment256.DEF = "hanim_l_tarsal_distal_phalanx_2"
-Shape257 = x3d.Shape()
-Shape257.DEF = "l_tarsal_distal_phalanx_2_Shape"
+Shape257 = x3d.Shape(DEF="l_tarsal_distal_phalanx_2_Shape")
 Appearance258 = x3d.Appearance()
-Material259 = x3d.Material()
-Material259.USE = "SurfaceDefault"
+Material259 = x3d.Material(USE="SurfaceDefault")
 
 Appearance258.material = Material259
-ImageTexture260 = x3d.ImageTexture()
-ImageTexture260.USE = "JinLOA4TextureAtlas"
+ImageTexture260 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance258.texture = ImageTexture260
 
@@ -1249,19 +1103,16 @@ IndexedFaceSet261.texCoord = TextureCoordinate263
 Shape257.geometry = IndexedFaceSet261
 
 HAnimSegment256.children.append(Shape257)
-Group264 = x3d.Group()
-Group264.DEF = "l_tarsal_distal_phalanx_2"
-"""(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)"""
-HAnimSite265 = x3d.HAnimSite()
+Group264 = x3d.Group(DEF="l_tarsal_distal_phalanx_2")
+Group264.children.append(x3d.Comment("""(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)"""))
+HAnimSite265 = x3d.HAnimSite(DEF="hanim_l_tarsal_distal_phalanx_2_tip")
 HAnimSite265.name = "l_tarsal_distal_phalanx_2_tip"
-HAnimSite265.DEF = "hanim_l_tarsal_distal_phalanx_2_tip"
 HAnimSite265.translation = [0.08,0.016,0.14]
 TouchSensor266 = x3d.TouchSensor()
 TouchSensor266.description = "HAnimSite l_tarsal_distal_phalanx_2_tip 112"
 
 HAnimSite265.children.append(TouchSensor266)
-Shape267 = x3d.Shape()
-Shape267.USE = "HAnimSiteShape"
+Shape267 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite265.children.append(Shape267)
 
@@ -1280,24 +1131,17 @@ HAnimJoint225.children.append(HAnimJoint235)
 HAnimJoint215.children.append(HAnimJoint225)
 
 HAnimJoint159.children.append(HAnimJoint215)
-HAnimJoint268 = x3d.HAnimJoint()
+HAnimJoint268 = x3d.HAnimJoint(DEF="hanim_l_cuneonavicular_3")
 HAnimJoint268.name = "l_cuneonavicular_3"
-HAnimJoint268.DEF = "hanim_l_cuneonavicular_3"
 HAnimJoint268.center = [0.092970006,0.03339,0.019818]
-HAnimJoint268.ulimit = [0,0,0]
-HAnimJoint268.llimit = [0,0,0]
-HAnimSegment269 = x3d.HAnimSegment()
+HAnimSegment269 = x3d.HAnimSegment(DEF="hanim_l_cuneiform_3")
 HAnimSegment269.name = "l_cuneiform_3"
-HAnimSegment269.DEF = "hanim_l_cuneiform_3"
-Shape270 = x3d.Shape()
-Shape270.DEF = "l_cuneiform_3_Shape"
+Shape270 = x3d.Shape(DEF="l_cuneiform_3_Shape")
 Appearance271 = x3d.Appearance()
-Material272 = x3d.Material()
-Material272.USE = "SurfaceDefault"
+Material272 = x3d.Material(USE="SurfaceDefault")
 
 Appearance271.material = Material272
-ImageTexture273 = x3d.ImageTexture()
-ImageTexture273.USE = "JinLOA4TextureAtlas"
+ImageTexture273 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance271.texture = ImageTexture273
 
@@ -1318,31 +1162,23 @@ IndexedFaceSet274.texCoord = TextureCoordinate276
 Shape270.geometry = IndexedFaceSet274
 
 HAnimSegment269.children.append(Shape270)
-Group277 = x3d.Group()
-Group277.DEF = "l_cuneiform_3_Sites"
-"""None"""
+Group277 = x3d.Group(DEF="l_cuneiform_3_Sites")
+Group277.children.append(x3d.Comment("""None"""))
 
 HAnimSegment269.children.append(Group277)
 
 HAnimJoint268.children.append(HAnimSegment269)
-HAnimJoint278 = x3d.HAnimJoint()
+HAnimJoint278 = x3d.HAnimJoint(DEF="hanim_l_tarsometatarsal_3")
 HAnimJoint278.name = "l_tarsometatarsal_3"
-HAnimJoint278.DEF = "hanim_l_tarsometatarsal_3"
 HAnimJoint278.center = [0.09459,0.0261,0.039397504]
-HAnimJoint278.ulimit = [0,0,0]
-HAnimJoint278.llimit = [0,0,0]
-HAnimSegment279 = x3d.HAnimSegment()
+HAnimSegment279 = x3d.HAnimSegment(DEF="hanim_l_metatarsal_3")
 HAnimSegment279.name = "l_metatarsal_3"
-HAnimSegment279.DEF = "hanim_l_metatarsal_3"
-Shape280 = x3d.Shape()
-Shape280.DEF = "l_metatarsal_3_Shape"
+Shape280 = x3d.Shape(DEF="l_metatarsal_3_Shape")
 Appearance281 = x3d.Appearance()
-Material282 = x3d.Material()
-Material282.USE = "SurfaceDefault"
+Material282 = x3d.Material(USE="SurfaceDefault")
 
 Appearance281.material = Material282
-ImageTexture283 = x3d.ImageTexture()
-ImageTexture283.USE = "JinLOA4TextureAtlas"
+ImageTexture283 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance281.texture = ImageTexture283
 
@@ -1363,31 +1199,23 @@ IndexedFaceSet284.texCoord = TextureCoordinate286
 Shape280.geometry = IndexedFaceSet284
 
 HAnimSegment279.children.append(Shape280)
-Group287 = x3d.Group()
-Group287.DEF = "l_metatarsal_3_Sites"
-"""None"""
+Group287 = x3d.Group(DEF="l_metatarsal_3_Sites")
+Group287.children.append(x3d.Comment("""None"""))
 
 HAnimSegment279.children.append(Group287)
 
 HAnimJoint278.children.append(HAnimSegment279)
-HAnimJoint288 = x3d.HAnimJoint()
+HAnimJoint288 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal_3")
 HAnimJoint288.name = "l_metatarsophalangeal_3"
-HAnimJoint288.DEF = "hanim_l_metatarsophalangeal_3"
 HAnimJoint288.center = [0.096480004,0.015057,0.09542251]
-HAnimJoint288.ulimit = [0,0,0]
-HAnimJoint288.llimit = [0,0,0]
-HAnimSegment289 = x3d.HAnimSegment()
+HAnimSegment289 = x3d.HAnimSegment(DEF="hanim_l_tarsal_proximal_phalanx_3")
 HAnimSegment289.name = "l_tarsal_proximal_phalanx_3"
-HAnimSegment289.DEF = "hanim_l_tarsal_proximal_phalanx_3"
-Shape290 = x3d.Shape()
-Shape290.DEF = "l_tarsal_proximal_phalanx_3_Shape"
+Shape290 = x3d.Shape(DEF="l_tarsal_proximal_phalanx_3_Shape")
 Appearance291 = x3d.Appearance()
-Material292 = x3d.Material()
-Material292.USE = "SurfaceDefault"
+Material292 = x3d.Material(USE="SurfaceDefault")
 
 Appearance291.material = Material292
-ImageTexture293 = x3d.ImageTexture()
-ImageTexture293.USE = "JinLOA4TextureAtlas"
+ImageTexture293 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance291.texture = ImageTexture293
 
@@ -1408,31 +1236,23 @@ IndexedFaceSet294.texCoord = TextureCoordinate296
 Shape290.geometry = IndexedFaceSet294
 
 HAnimSegment289.children.append(Shape290)
-Group297 = x3d.Group()
-Group297.DEF = "l_tarsal_proximal_phalanx_3_Sites"
-"""None"""
+Group297 = x3d.Group(DEF="l_tarsal_proximal_phalanx_3_Sites")
+Group297.children.append(x3d.Comment("""None"""))
 
 HAnimSegment289.children.append(Group297)
 
 HAnimJoint288.children.append(HAnimSegment289)
-HAnimJoint298 = x3d.HAnimJoint()
+HAnimJoint298 = x3d.HAnimJoint(DEF="hanim_l_tarsal_proximal_interphalangeal_3")
 HAnimJoint298.name = "l_tarsal_proximal_interphalangeal_3"
-HAnimJoint298.DEF = "hanim_l_tarsal_proximal_interphalangeal_3"
 HAnimJoint298.center = [0.098865,0.011922751,0.110475]
-HAnimJoint298.ulimit = [0,0,0]
-HAnimJoint298.llimit = [0,0,0]
-HAnimSegment299 = x3d.HAnimSegment()
+HAnimSegment299 = x3d.HAnimSegment(DEF="hanim_l_tarsal_middle_phalanx_3")
 HAnimSegment299.name = "l_tarsal_middle_phalanx_3"
-HAnimSegment299.DEF = "hanim_l_tarsal_middle_phalanx_3"
-Shape300 = x3d.Shape()
-Shape300.DEF = "l_tarsal_middle_phalanx_3_Shape"
+Shape300 = x3d.Shape(DEF="l_tarsal_middle_phalanx_3_Shape")
 Appearance301 = x3d.Appearance()
-Material302 = x3d.Material()
-Material302.USE = "SurfaceDefault"
+Material302 = x3d.Material(USE="SurfaceDefault")
 
 Appearance301.material = Material302
-ImageTexture303 = x3d.ImageTexture()
-ImageTexture303.USE = "JinLOA4TextureAtlas"
+ImageTexture303 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance301.texture = ImageTexture303
 
@@ -1453,31 +1273,23 @@ IndexedFaceSet304.texCoord = TextureCoordinate306
 Shape300.geometry = IndexedFaceSet304
 
 HAnimSegment299.children.append(Shape300)
-Group307 = x3d.Group()
-Group307.DEF = "l_tarsal_middle_phalanx_3_Sites"
-"""None"""
+Group307 = x3d.Group(DEF="l_tarsal_middle_phalanx_3_Sites")
+Group307.children.append(x3d.Comment("""None"""))
 
 HAnimSegment299.children.append(Group307)
 
 HAnimJoint298.children.append(HAnimSegment299)
-HAnimJoint308 = x3d.HAnimJoint()
+HAnimJoint308 = x3d.HAnimJoint(DEF="hanim_l_tarsal_distal_interphalangeal_3")
 HAnimJoint308.name = "l_tarsal_distal_interphalangeal_3"
-HAnimJoint308.DEF = "hanim_l_tarsal_distal_interphalangeal_3"
 HAnimJoint308.center = [0.1004175,0.00982575,0.11970001]
-HAnimJoint308.ulimit = [0,0,0]
-HAnimJoint308.llimit = [0,0,0]
-HAnimSegment309 = x3d.HAnimSegment()
+HAnimSegment309 = x3d.HAnimSegment(DEF="hanim_l_tarsal_distal_phalanx_3")
 HAnimSegment309.name = "l_tarsal_distal_phalanx_3"
-HAnimSegment309.DEF = "hanim_l_tarsal_distal_phalanx_3"
-Shape310 = x3d.Shape()
-Shape310.DEF = "l_tarsal_distal_phalanx_3_Shape"
+Shape310 = x3d.Shape(DEF="l_tarsal_distal_phalanx_3_Shape")
 Appearance311 = x3d.Appearance()
-Material312 = x3d.Material()
-Material312.USE = "SurfaceDefault"
+Material312 = x3d.Material(USE="SurfaceDefault")
 
 Appearance311.material = Material312
-ImageTexture313 = x3d.ImageTexture()
-ImageTexture313.USE = "JinLOA4TextureAtlas"
+ImageTexture313 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance311.texture = ImageTexture313
 
@@ -1498,19 +1310,16 @@ IndexedFaceSet314.texCoord = TextureCoordinate316
 Shape310.geometry = IndexedFaceSet314
 
 HAnimSegment309.children.append(Shape310)
-Group317 = x3d.Group()
-Group317.DEF = "l_tarsal_distal_phalanx_3_Sites"
-"""(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)"""
-HAnimSite318 = x3d.HAnimSite()
+Group317 = x3d.Group(DEF="l_tarsal_distal_phalanx_3_Sites")
+Group317.children.append(x3d.Comment("""(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)"""))
+HAnimSite318 = x3d.HAnimSite(DEF="hanim_l_tarsal_distal_phalanx_3_tip")
 HAnimSite318.name = "l_tarsal_distal_phalanx_3_tip"
-HAnimSite318.DEF = "hanim_l_tarsal_distal_phalanx_3_tip"
 HAnimSite318.translation = [0.1,0.016,0.14]
 TouchSensor319 = x3d.TouchSensor()
 TouchSensor319.description = "HAnimSite l_tarsal_distal_phalanx_3_tip 113"
 
 HAnimSite318.children.append(TouchSensor319)
-Shape320 = x3d.Shape()
-Shape320.USE = "HAnimSiteShape"
+Shape320 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite318.children.append(Shape320)
 
@@ -1531,24 +1340,17 @@ HAnimJoint268.children.append(HAnimJoint278)
 HAnimJoint159.children.append(HAnimJoint268)
 
 HAnimJoint143.children.append(HAnimJoint159)
-HAnimJoint321 = x3d.HAnimJoint()
+HAnimJoint321 = x3d.HAnimJoint(DEF="hanim_l_calcaneocuboid")
 HAnimJoint321.name = "l_calcaneocuboid"
-HAnimJoint321.DEF = "hanim_l_calcaneocuboid"
 HAnimJoint321.center = [0.0891,0.0579825,-0.025965001]
-HAnimJoint321.ulimit = [0,0,0]
-HAnimJoint321.llimit = [0,0,0]
-HAnimSegment322 = x3d.HAnimSegment()
+HAnimSegment322 = x3d.HAnimSegment(DEF="hanim_l_calcaneus")
 HAnimSegment322.name = "l_calcaneus"
-HAnimSegment322.DEF = "hanim_l_calcaneus"
-Shape323 = x3d.Shape()
-Shape323.DEF = "l_calcaneus_Shape"
+Shape323 = x3d.Shape(DEF="l_calcaneus_Shape")
 Appearance324 = x3d.Appearance()
-Material325 = x3d.Material()
-Material325.USE = "SurfaceDefault"
+Material325 = x3d.Material(USE="SurfaceDefault")
 
 Appearance324.material = Material325
-ImageTexture326 = x3d.ImageTexture()
-ImageTexture326.USE = "JinLOA4TextureAtlas"
+ImageTexture326 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance324.texture = ImageTexture326
 
@@ -1569,31 +1371,23 @@ IndexedFaceSet327.texCoord = TextureCoordinate329
 Shape323.geometry = IndexedFaceSet327
 
 HAnimSegment322.children.append(Shape323)
-Group330 = x3d.Group()
-Group330.DEF = "l_calcaneus_Sites"
-"""None"""
+Group330 = x3d.Group(DEF="l_calcaneus_Sites")
+Group330.children.append(x3d.Comment("""None"""))
 
 HAnimSegment322.children.append(Group330)
 
 HAnimJoint321.children.append(HAnimSegment322)
-HAnimJoint331 = x3d.HAnimJoint()
+HAnimJoint331 = x3d.HAnimJoint(DEF="hanim_l_transversetarsal")
 HAnimJoint331.name = "l_transversetarsal"
-HAnimJoint331.DEF = "hanim_l_transversetarsal"
 HAnimJoint331.center = [0.1106325,0.03528,0.002089125]
-HAnimJoint331.ulimit = [0,0,0]
-HAnimJoint331.llimit = [0,0,0]
-HAnimSegment332 = x3d.HAnimSegment()
+HAnimSegment332 = x3d.HAnimSegment(DEF="hanim_l_cuboid")
 HAnimSegment332.name = "l_cuboid"
-HAnimSegment332.DEF = "hanim_l_cuboid"
-Shape333 = x3d.Shape()
-Shape333.DEF = "l_cuboid_Shape"
+Shape333 = x3d.Shape(DEF="l_cuboid_Shape")
 Appearance334 = x3d.Appearance()
-Material335 = x3d.Material()
-Material335.USE = "SurfaceDefault"
+Material335 = x3d.Material(USE="SurfaceDefault")
 
 Appearance334.material = Material335
-ImageTexture336 = x3d.ImageTexture()
-ImageTexture336.USE = "JinLOA4TextureAtlas"
+ImageTexture336 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance334.texture = ImageTexture336
 
@@ -1614,31 +1408,23 @@ IndexedFaceSet337.texCoord = TextureCoordinate339
 Shape333.geometry = IndexedFaceSet337
 
 HAnimSegment332.children.append(Shape333)
-Group340 = x3d.Group()
-Group340.DEF = "l_cuboid_Sites"
-"""None"""
+Group340 = x3d.Group(DEF="l_cuboid_Sites")
+Group340.children.append(x3d.Comment("""None"""))
 
 HAnimSegment332.children.append(Group340)
 
 HAnimJoint331.children.append(HAnimSegment332)
-HAnimJoint341 = x3d.HAnimJoint()
+HAnimJoint341 = x3d.HAnimJoint(DEF="hanim_l_tarsometatarsal_4")
 HAnimJoint341.name = "l_tarsometatarsal_4"
-HAnimJoint341.DEF = "hanim_l_tarsometatarsal_4"
 HAnimJoint341.center = [0.1064925,0.0245475,0.03843]
-HAnimJoint341.ulimit = [0,0,0]
-HAnimJoint341.llimit = [0,0,0]
-HAnimSegment342 = x3d.HAnimSegment()
+HAnimSegment342 = x3d.HAnimSegment(DEF="hanim_l_metatarsal_4")
 HAnimSegment342.name = "l_metatarsal_4"
-HAnimSegment342.DEF = "hanim_l_metatarsal_4"
-Shape343 = x3d.Shape()
-Shape343.DEF = "l_metatarsal_4_Shape"
+Shape343 = x3d.Shape(DEF="l_metatarsal_4_Shape")
 Appearance344 = x3d.Appearance()
-Material345 = x3d.Material()
-Material345.USE = "SurfaceDefault"
+Material345 = x3d.Material(USE="SurfaceDefault")
 
 Appearance344.material = Material345
-ImageTexture346 = x3d.ImageTexture()
-ImageTexture346.USE = "JinLOA4TextureAtlas"
+ImageTexture346 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance344.texture = ImageTexture346
 
@@ -1659,31 +1445,23 @@ IndexedFaceSet347.texCoord = TextureCoordinate349
 Shape343.geometry = IndexedFaceSet347
 
 HAnimSegment342.children.append(Shape343)
-Group350 = x3d.Group()
-Group350.DEF = "l_metatarsal_4_Sites"
-"""None"""
+Group350 = x3d.Group(DEF="l_metatarsal_4_Sites")
+Group350.children.append(x3d.Comment("""None"""))
 
 HAnimSegment342.children.append(Group350)
 
 HAnimJoint341.children.append(HAnimSegment342)
-HAnimJoint351 = x3d.HAnimJoint()
+HAnimJoint351 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal_4")
 HAnimJoint351.name = "l_metatarsophalangeal_4"
-HAnimJoint351.DEF = "hanim_l_metatarsophalangeal_4"
 HAnimJoint351.center = [0.109867506,0.01435275,0.091170006]
-HAnimJoint351.ulimit = [0,0,0]
-HAnimJoint351.llimit = [0,0,0]
-HAnimSegment352 = x3d.HAnimSegment()
+HAnimSegment352 = x3d.HAnimSegment(DEF="hanim_l_tarsal_proximal_phalanx_4")
 HAnimSegment352.name = "l_tarsal_proximal_phalanx_4"
-HAnimSegment352.DEF = "hanim_l_tarsal_proximal_phalanx_4"
-Shape353 = x3d.Shape()
-Shape353.DEF = "l_tarsal_proximal_phalanx_4_Shape"
+Shape353 = x3d.Shape(DEF="l_tarsal_proximal_phalanx_4_Shape")
 Appearance354 = x3d.Appearance()
-Material355 = x3d.Material()
-Material355.USE = "SurfaceDefault"
+Material355 = x3d.Material(USE="SurfaceDefault")
 
 Appearance354.material = Material355
-ImageTexture356 = x3d.ImageTexture()
-ImageTexture356.USE = "JinLOA4TextureAtlas"
+ImageTexture356 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance354.texture = ImageTexture356
 
@@ -1704,31 +1482,23 @@ IndexedFaceSet357.texCoord = TextureCoordinate359
 Shape353.geometry = IndexedFaceSet357
 
 HAnimSegment352.children.append(Shape353)
-Group360 = x3d.Group()
-Group360.DEF = "l_tarsal_proximal_phalanx_4_Sites"
-"""None"""
+Group360 = x3d.Group(DEF="l_tarsal_proximal_phalanx_4_Sites")
+Group360.children.append(x3d.Comment("""None"""))
 
 HAnimSegment352.children.append(Group360)
 
 HAnimJoint351.children.append(HAnimSegment352)
-HAnimJoint361 = x3d.HAnimJoint()
+HAnimJoint361 = x3d.HAnimJoint(DEF="hanim_l_tarsal_proximal_interphalangeal_4")
 HAnimJoint361.name = "l_tarsal_proximal_interphalangeal_4"
-HAnimJoint361.DEF = "hanim_l_tarsal_proximal_interphalangeal_4"
 HAnimJoint361.center = [0.114165,0.0122445,0.1063125]
-HAnimJoint361.ulimit = [0,0,0]
-HAnimJoint361.llimit = [0,0,0]
-HAnimSegment362 = x3d.HAnimSegment()
+HAnimSegment362 = x3d.HAnimSegment(DEF="hanim_l_tarsal_middle_phalanx_4")
 HAnimSegment362.name = "l_tarsal_middle_phalanx_4"
-HAnimSegment362.DEF = "hanim_l_tarsal_middle_phalanx_4"
-Shape363 = x3d.Shape()
-Shape363.DEF = "l_tarsal_middle_phalanx_4_Shape"
+Shape363 = x3d.Shape(DEF="l_tarsal_middle_phalanx_4_Shape")
 Appearance364 = x3d.Appearance()
-Material365 = x3d.Material()
-Material365.USE = "SurfaceDefault"
+Material365 = x3d.Material(USE="SurfaceDefault")
 
 Appearance364.material = Material365
-ImageTexture366 = x3d.ImageTexture()
-ImageTexture366.USE = "JinLOA4TextureAtlas"
+ImageTexture366 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance364.texture = ImageTexture366
 
@@ -1749,31 +1519,23 @@ IndexedFaceSet367.texCoord = TextureCoordinate369
 Shape363.geometry = IndexedFaceSet367
 
 HAnimSegment362.children.append(Shape363)
-Group370 = x3d.Group()
-Group370.DEF = "l_tarsal_middle_phalanx_4_Sites"
-"""None"""
+Group370 = x3d.Group(DEF="l_tarsal_middle_phalanx_4_Sites")
+Group370.children.append(x3d.Comment("""None"""))
 
 HAnimSegment362.children.append(Group370)
 
 HAnimJoint361.children.append(HAnimSegment362)
-HAnimJoint371 = x3d.HAnimJoint()
+HAnimJoint371 = x3d.HAnimJoint(DEF="hanim_l_tarsal_distal_interphalangeal_4")
 HAnimJoint371.name = "l_tarsal_distal_interphalangeal_4"
-HAnimJoint371.DEF = "hanim_l_tarsal_distal_interphalangeal_4"
 HAnimJoint371.center = [0.1156725,0.009369,0.11369251]
-HAnimJoint371.ulimit = [0,0,0]
-HAnimJoint371.llimit = [0,0,0]
-HAnimSegment372 = x3d.HAnimSegment()
+HAnimSegment372 = x3d.HAnimSegment(DEF="hanim_l_tarsal_distal_phalanx_4")
 HAnimSegment372.name = "l_tarsal_distal_phalanx_4"
-HAnimSegment372.DEF = "hanim_l_tarsal_distal_phalanx_4"
-Shape373 = x3d.Shape()
-Shape373.DEF = "l_tarsal_distal_phalanx_4_Shape"
+Shape373 = x3d.Shape(DEF="l_tarsal_distal_phalanx_4_Shape")
 Appearance374 = x3d.Appearance()
-Material375 = x3d.Material()
-Material375.USE = "SurfaceDefault"
+Material375 = x3d.Material(USE="SurfaceDefault")
 
 Appearance374.material = Material375
-ImageTexture376 = x3d.ImageTexture()
-ImageTexture376.USE = "JinLOA4TextureAtlas"
+ImageTexture376 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance374.texture = ImageTexture376
 
@@ -1794,19 +1556,16 @@ IndexedFaceSet377.texCoord = TextureCoordinate379
 Shape373.geometry = IndexedFaceSet377
 
 HAnimSegment372.children.append(Shape373)
-Group380 = x3d.Group()
-Group380.DEF = "l_tarsal_distal_phalanx_4_Sites"
-"""(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)"""
-HAnimSite381 = x3d.HAnimSite()
+Group380 = x3d.Group(DEF="l_tarsal_distal_phalanx_4_Sites")
+Group380.children.append(x3d.Comment("""(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)"""))
+HAnimSite381 = x3d.HAnimSite(DEF="hanim_l_tarsal_distal_phalanx_4_tip")
 HAnimSite381.name = "l_tarsal_distal_phalanx_4_tip"
-HAnimSite381.DEF = "hanim_l_tarsal_distal_phalanx_4_tip"
 HAnimSite381.translation = [0.115,0.016,0.13]
 TouchSensor382 = x3d.TouchSensor()
 TouchSensor382.description = "HAnimSite l_tarsal_distal_phalanx_4_tip 114"
 
 HAnimSite381.children.append(TouchSensor382)
-Shape383 = x3d.Shape()
-Shape383.USE = "HAnimSiteShape"
+Shape383 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite381.children.append(Shape383)
 
@@ -1823,24 +1582,17 @@ HAnimJoint351.children.append(HAnimJoint361)
 HAnimJoint341.children.append(HAnimJoint351)
 
 HAnimJoint331.children.append(HAnimJoint341)
-HAnimJoint384 = x3d.HAnimJoint()
+HAnimJoint384 = x3d.HAnimJoint(DEF="hanim_l_tarsometatarsal_5")
 HAnimJoint384.name = "l_tarsometatarsal_5"
-HAnimJoint384.DEF = "hanim_l_tarsometatarsal_5"
 HAnimJoint384.center = [0.120825,0.020945251,0.03474]
-HAnimJoint384.ulimit = [0,0,0]
-HAnimJoint384.llimit = [0,0,0]
-HAnimSegment385 = x3d.HAnimSegment()
+HAnimSegment385 = x3d.HAnimSegment(DEF="hanim_l_metatarsal_5")
 HAnimSegment385.name = "l_metatarsal_5"
-HAnimSegment385.DEF = "hanim_l_metatarsal_5"
-Shape386 = x3d.Shape()
-Shape386.DEF = "l_metatarsal_5_Shape"
+Shape386 = x3d.Shape(DEF="l_metatarsal_5_Shape")
 Appearance387 = x3d.Appearance()
-Material388 = x3d.Material()
-Material388.USE = "SurfaceDefault"
+Material388 = x3d.Material(USE="SurfaceDefault")
 
 Appearance387.material = Material388
-ImageTexture389 = x3d.ImageTexture()
-ImageTexture389.USE = "JinLOA4TextureAtlas"
+ImageTexture389 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance387.texture = ImageTexture389
 
@@ -1861,31 +1613,23 @@ IndexedFaceSet390.texCoord = TextureCoordinate392
 Shape386.geometry = IndexedFaceSet390
 
 HAnimSegment385.children.append(Shape386)
-Group393 = x3d.Group()
-Group393.DEF = "l_metatarsal_5_Sites"
-"""None"""
+Group393 = x3d.Group(DEF="l_metatarsal_5_Sites")
+Group393.children.append(x3d.Comment("""None"""))
 
 HAnimSegment385.children.append(Group393)
 
 HAnimJoint384.children.append(HAnimSegment385)
-HAnimJoint394 = x3d.HAnimJoint()
+HAnimJoint394 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal_5")
 HAnimJoint394.name = "l_metatarsophalangeal_5"
-HAnimJoint394.DEF = "hanim_l_metatarsophalangeal_5"
 HAnimJoint394.center = [0.124065004,0.013671,0.0865575]
-HAnimJoint394.ulimit = [0,0,0]
-HAnimJoint394.llimit = [0,0,0]
-HAnimSegment395 = x3d.HAnimSegment()
+HAnimSegment395 = x3d.HAnimSegment(DEF="hanim_l_tarsal_proximal_phalanx_5")
 HAnimSegment395.name = "l_tarsal_proximal_phalanx_5"
-HAnimSegment395.DEF = "hanim_l_tarsal_proximal_phalanx_5"
-Shape396 = x3d.Shape()
-Shape396.DEF = "l_tarsal_proximal_phalanx_5_Shape"
+Shape396 = x3d.Shape(DEF="l_tarsal_proximal_phalanx_5_Shape")
 Appearance397 = x3d.Appearance()
-Material398 = x3d.Material()
-Material398.USE = "SurfaceDefault"
+Material398 = x3d.Material(USE="SurfaceDefault")
 
 Appearance397.material = Material398
-ImageTexture399 = x3d.ImageTexture()
-ImageTexture399.USE = "JinLOA4TextureAtlas"
+ImageTexture399 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance397.texture = ImageTexture399
 
@@ -1906,31 +1650,23 @@ IndexedFaceSet400.texCoord = TextureCoordinate402
 Shape396.geometry = IndexedFaceSet400
 
 HAnimSegment395.children.append(Shape396)
-Group403 = x3d.Group()
-Group403.DEF = "l_tarsal_proximal_phalanx_5_Sites"
-"""None"""
+Group403 = x3d.Group(DEF="l_tarsal_proximal_phalanx_5_Sites")
+Group403.children.append(x3d.Comment("""None"""))
 
 HAnimSegment395.children.append(Group403)
 
 HAnimJoint394.children.append(HAnimSegment395)
-HAnimJoint404 = x3d.HAnimJoint()
+HAnimJoint404 = x3d.HAnimJoint(DEF="hanim_l_tarsal_proximal_interphalangeal_5")
 HAnimJoint404.name = "l_tarsal_proximal_interphalangeal_5"
-HAnimJoint404.DEF = "hanim_l_tarsal_proximal_interphalangeal_5"
 HAnimJoint404.center = [0.1263825,0.01085625,0.09414]
-HAnimJoint404.ulimit = [0,0,0]
-HAnimJoint404.llimit = [0,0,0]
-HAnimSegment405 = x3d.HAnimSegment()
+HAnimSegment405 = x3d.HAnimSegment(DEF="hanim_l_tarsal_middle_phalanx_5")
 HAnimSegment405.name = "l_tarsal_middle_phalanx_5"
-HAnimSegment405.DEF = "hanim_l_tarsal_middle_phalanx_5"
-Shape406 = x3d.Shape()
-Shape406.DEF = "l_tarsal_middle_phalanx_5_Shape"
+Shape406 = x3d.Shape(DEF="l_tarsal_middle_phalanx_5_Shape")
 Appearance407 = x3d.Appearance()
-Material408 = x3d.Material()
-Material408.USE = "SurfaceDefault"
+Material408 = x3d.Material(USE="SurfaceDefault")
 
 Appearance407.material = Material408
-ImageTexture409 = x3d.ImageTexture()
-ImageTexture409.USE = "JinLOA4TextureAtlas"
+ImageTexture409 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance407.texture = ImageTexture409
 
@@ -1951,19 +1687,16 @@ IndexedFaceSet410.texCoord = TextureCoordinate412
 Shape406.geometry = IndexedFaceSet410
 
 HAnimSegment405.children.append(Shape406)
-Group413 = x3d.Group()
-Group413.DEF = "l_tarsal_middle_phalanx_5_Sites"
-"""(l_metatarsal_phalanx_5_pt 0.1825 0.0070 0.0928)"""
-HAnimSite414 = x3d.HAnimSite()
+Group413 = x3d.Group(DEF="l_tarsal_middle_phalanx_5_Sites")
+Group413.children.append(x3d.Comment("""(l_metatarsal_phalanx_5_pt 0.1825 0.0070 0.0928)"""))
+HAnimSite414 = x3d.HAnimSite(DEF="hanim_l_metatarsal_phalanx_5_pt")
 HAnimSite414.name = "l_metatarsal_phalanx_5_pt"
-HAnimSite414.DEF = "hanim_l_metatarsal_phalanx_5_pt"
 HAnimSite414.translation = [0.12,0.02,0.04]
 TouchSensor415 = x3d.TouchSensor()
 TouchSensor415.description = "HAnimSite l_metatarsal_phalanx_5_pt 56"
 
 HAnimSite414.children.append(TouchSensor415)
-Shape416 = x3d.Shape()
-Shape416.USE = "HAnimSiteShape"
+Shape416 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite414.children.append(Shape416)
 
@@ -1972,24 +1705,17 @@ Group413.children.append(HAnimSite414)
 HAnimSegment405.children.append(Group413)
 
 HAnimJoint404.children.append(HAnimSegment405)
-HAnimJoint417 = x3d.HAnimJoint()
+HAnimJoint417 = x3d.HAnimJoint(DEF="hanim_l_tarsal_distal_interphalangeal_5")
 HAnimJoint417.name = "l_tarsal_distal_interphalangeal_5"
-HAnimJoint417.DEF = "hanim_l_tarsal_distal_interphalangeal_5"
 HAnimJoint417.center = [0.1272825,0.008563501,0.10188]
-HAnimJoint417.ulimit = [0,0,0]
-HAnimJoint417.llimit = [0,0,0]
-HAnimSegment418 = x3d.HAnimSegment()
+HAnimSegment418 = x3d.HAnimSegment(DEF="hanim_l_tarsal_distal_phalanx_5")
 HAnimSegment418.name = "l_tarsal_distal_phalanx_5"
-HAnimSegment418.DEF = "hanim_l_tarsal_distal_phalanx_5"
-Shape419 = x3d.Shape()
-Shape419.DEF = "l_tarsal_distal_phalanx_5_Shape"
+Shape419 = x3d.Shape(DEF="l_tarsal_distal_phalanx_5_Shape")
 Appearance420 = x3d.Appearance()
-Material421 = x3d.Material()
-Material421.USE = "SurfaceDefault"
+Material421 = x3d.Material(USE="SurfaceDefault")
 
 Appearance420.material = Material421
-ImageTexture422 = x3d.ImageTexture()
-ImageTexture422.USE = "JinLOA4TextureAtlas"
+ImageTexture422 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance420.texture = ImageTexture422
 
@@ -2010,19 +1736,16 @@ IndexedFaceSet423.texCoord = TextureCoordinate425
 Shape419.geometry = IndexedFaceSet423
 
 HAnimSegment418.children.append(Shape419)
-Group426 = x3d.Group()
-Group426.DEF = "l_tarsal_distal_phalanx_5_Sites"
-"""(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)"""
-HAnimSite427 = x3d.HAnimSite()
+Group426 = x3d.Group(DEF="l_tarsal_distal_phalanx_5_Sites")
+Group426.children.append(x3d.Comment("""(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)"""))
+HAnimSite427 = x3d.HAnimSite(DEF="hanim_l_tarsal_distal_phalanx_5_tip")
 HAnimSite427.name = "l_tarsal_distal_phalanx_5_tip"
-HAnimSite427.DEF = "hanim_l_tarsal_distal_phalanx_5_tip"
 HAnimSite427.translation = [0.125,0.016,0.115]
 TouchSensor428 = x3d.TouchSensor()
 TouchSensor428.description = "HAnimSite l_tarsal_distal_phalanx_5_tip 115"
 
 HAnimSite427.children.append(TouchSensor428)
-Shape429 = x3d.Shape()
-Shape429.USE = "HAnimSiteShape"
+Shape429 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite427.children.append(Shape429)
 
@@ -2049,24 +1772,17 @@ HAnimJoint124.children.append(HAnimJoint143)
 HAnimJoint102.children.append(HAnimJoint124)
 
 HAnimJoint62.children.append(HAnimJoint102)
-HAnimJoint430 = x3d.HAnimJoint()
+HAnimJoint430 = x3d.HAnimJoint(DEF="hanim_r_hip")
 HAnimJoint430.name = "r_hip"
-HAnimJoint430.DEF = "hanim_r_hip"
 HAnimJoint430.center = [-0.094657496,0.8266501,-0.018348752]
-HAnimJoint430.ulimit = [0,0,0]
-HAnimJoint430.llimit = [0,0,0]
-HAnimSegment431 = x3d.HAnimSegment()
+HAnimSegment431 = x3d.HAnimSegment(DEF="hanim_r_thigh")
 HAnimSegment431.name = "r_thigh"
-HAnimSegment431.DEF = "hanim_r_thigh"
-Shape432 = x3d.Shape()
-Shape432.DEF = "r_thigh_Shape"
+Shape432 = x3d.Shape(DEF="r_thigh_Shape")
 Appearance433 = x3d.Appearance()
-Material434 = x3d.Material()
-Material434.USE = "SurfaceDefault"
+Material434 = x3d.Material(USE="SurfaceDefault")
 
 Appearance433.material = Material434
-ImageTexture435 = x3d.ImageTexture()
-ImageTexture435.USE = "JinLOA4TextureAtlas"
+ImageTexture435 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance433.texture = ImageTexture435
 
@@ -2087,61 +1803,55 @@ IndexedFaceSet436.texCoord = TextureCoordinate438
 Shape432.geometry = IndexedFaceSet436
 
 HAnimSegment431.children.append(Shape432)
-Group439 = x3d.Group()
-Group439.DEF = "r_thigh_Sites"
-"""(r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z)"""
-HAnimSite440 = x3d.HAnimSite()
+Group439 = x3d.Group(DEF="r_thigh_Sites")
+Group439.children.append(x3d.Comment("""(r_knee_crease_pt -0.0825 0.4932 -0.0326)"""))
+Group439.children.append(x3d.Comment("""(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)"""))
+Group439.children.append(x3d.Comment("""(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)"""))
+Group439.children.append(x3d.Comment("""(r_suprapatella_pt x y z)"""))
+HAnimSite440 = x3d.HAnimSite(DEF="hanim_r_knee_crease_pt")
 HAnimSite440.name = "r_knee_crease_pt"
-HAnimSite440.DEF = "hanim_r_knee_crease_pt"
 HAnimSite440.translation = [-0.09,0.41,-0.056]
 TouchSensor441 = x3d.TouchSensor()
 TouchSensor441.description = "HAnimSite r_knee_crease_pt 91"
 
 HAnimSite440.children.append(TouchSensor441)
-Shape442 = x3d.Shape()
-Shape442.USE = "HAnimSiteShape"
+Shape442 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite440.children.append(Shape442)
 
 Group439.children.append(HAnimSite440)
-HAnimSite443 = x3d.HAnimSite()
+HAnimSite443 = x3d.HAnimSite(DEF="hanim_r_femoral_medial_epicondyles_pt")
 HAnimSite443.name = "r_femoral_medial_epicondyles_pt"
-HAnimSite443.DEF = "hanim_r_femoral_medial_epicondyles_pt"
 HAnimSite443.translation = [-0.039,0.41,-0.01]
 TouchSensor444 = x3d.TouchSensor()
 TouchSensor444.description = "HAnimSite r_femoral_medial_epicondyles_pt 43"
 
 HAnimSite443.children.append(TouchSensor444)
-Shape445 = x3d.Shape()
-Shape445.USE = "HAnimSiteShape"
+Shape445 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite443.children.append(Shape445)
 
 Group439.children.append(HAnimSite443)
-HAnimSite446 = x3d.HAnimSite()
+HAnimSite446 = x3d.HAnimSite(DEF="hanim_r_femoral_lateral_epicondyles_pt")
 HAnimSite446.name = "r_femoral_lateral_epicondyles_pt"
-HAnimSite446.DEF = "hanim_r_femoral_lateral_epicondyles_pt"
 HAnimSite446.translation = [-0.127,0.41,-0.01]
 TouchSensor447 = x3d.TouchSensor()
 TouchSensor447.description = "HAnimSite r_femoral_lateral_epicondyles_pt 44"
 
 HAnimSite446.children.append(TouchSensor447)
-Shape448 = x3d.Shape()
-Shape448.USE = "HAnimSiteShape"
+Shape448 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite446.children.append(Shape448)
 
 Group439.children.append(HAnimSite446)
-HAnimSite449 = x3d.HAnimSite()
+HAnimSite449 = x3d.HAnimSite(DEF="hanim_r_suprapatella_pt")
 HAnimSite449.name = "r_suprapatella_pt"
-HAnimSite449.DEF = "hanim_r_suprapatella_pt"
 HAnimSite449.translation = [-0.085,0.41,0.042]
 TouchSensor450 = x3d.TouchSensor()
 TouchSensor450.description = "HAnimSite r_suprapatella_pt 45"
 
 HAnimSite449.children.append(TouchSensor450)
-Shape451 = x3d.Shape()
-Shape451.USE = "HAnimSiteShape"
+Shape451 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite449.children.append(Shape451)
 
@@ -2150,24 +1860,17 @@ Group439.children.append(HAnimSite449)
 HAnimSegment431.children.append(Group439)
 
 HAnimJoint430.children.append(HAnimSegment431)
-HAnimJoint452 = x3d.HAnimJoint()
+HAnimJoint452 = x3d.HAnimJoint(DEF="hanim_r_knee")
 HAnimJoint452.name = "r_knee"
-HAnimJoint452.DEF = "hanim_r_knee"
 HAnimJoint452.center = [-0.09261001,0.408825,-0.01943775]
-HAnimJoint452.ulimit = [0,0,0]
-HAnimJoint452.llimit = [0,0,0]
-HAnimSegment453 = x3d.HAnimSegment()
+HAnimSegment453 = x3d.HAnimSegment(DEF="hanim_r_calf")
 HAnimSegment453.name = "r_calf"
-HAnimSegment453.DEF = "hanim_r_calf"
-Shape454 = x3d.Shape()
-Shape454.DEF = "r_calf_Shape"
+Shape454 = x3d.Shape(DEF="r_calf_Shape")
 Appearance455 = x3d.Appearance()
-Material456 = x3d.Material()
-Material456.USE = "SurfaceDefault"
+Material456 = x3d.Material(USE="SurfaceDefault")
 
 Appearance455.material = Material456
-ImageTexture457 = x3d.ImageTexture()
-ImageTexture457.USE = "JinLOA4TextureAtlas"
+ImageTexture457 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance455.texture = ImageTexture457
 
@@ -2188,47 +1891,42 @@ IndexedFaceSet458.texCoord = TextureCoordinate460
 Shape454.geometry = IndexedFaceSet458
 
 HAnimSegment453.children.append(Shape454)
-Group461 = x3d.Group()
-Group461.DEF = "r_calf_Sites"
-"""(r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)"""
-HAnimSite462 = x3d.HAnimSite()
+Group461 = x3d.Group(DEF="r_calf_Sites")
+Group461.children.append(x3d.Comment("""(r_tibiale_pt x y z)"""))
+Group461.children.append(x3d.Comment("""(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)"""))
+Group461.children.append(x3d.Comment("""(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)"""))
+HAnimSite462 = x3d.HAnimSite(DEF="hanim_r_tibiale_pt")
 HAnimSite462.name = "r_tibiale_pt"
-HAnimSite462.DEF = "hanim_r_tibiale_pt"
 HAnimSite462.translation = [-0.09,0.31,0.038]
 TouchSensor463 = x3d.TouchSensor()
 TouchSensor463.description = "HAnimSite r_tibiale_pt 51"
 
 HAnimSite462.children.append(TouchSensor463)
-Shape464 = x3d.Shape()
-Shape464.USE = "HAnimSiteShape"
+Shape464 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite462.children.append(Shape464)
 
 Group461.children.append(HAnimSite462)
-HAnimSite465 = x3d.HAnimSite()
+HAnimSite465 = x3d.HAnimSite(DEF="hanim_r_medial_malleolus_pt")
 HAnimSite465.name = "r_medial_malleolus_ptt"
-HAnimSite465.DEF = "hanim_r_medial_malleolus_pt"
 HAnimSite465.translation = [-0.061,0.095,-0.02]
 TouchSensor466 = x3d.TouchSensor()
 TouchSensor466.description = "HAnimSite r_medial_malleolus_pt 52"
 
 HAnimSite465.children.append(TouchSensor466)
-Shape467 = x3d.Shape()
-Shape467.USE = "HAnimSiteShape"
+Shape467 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite465.children.append(Shape467)
 
 Group461.children.append(HAnimSite465)
-HAnimSite468 = x3d.HAnimSite()
+HAnimSite468 = x3d.HAnimSite(DEF="hanim_r_lateral_malleolus_pt")
 HAnimSite468.name = "r_lateral_malleolus_pt"
-HAnimSite468.DEF = "hanim_r_lateral_malleolus_pt"
 HAnimSite468.translation = [-0.12,0.095,-0.02]
 TouchSensor469 = x3d.TouchSensor()
 TouchSensor469.description = "HAnimSite r_lateral_malleolus_pt 53"
 
 HAnimSite468.children.append(TouchSensor469)
-Shape470 = x3d.Shape()
-Shape470.USE = "HAnimSiteShape"
+Shape470 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite468.children.append(Shape470)
 
@@ -2237,24 +1935,17 @@ Group461.children.append(HAnimSite468)
 HAnimSegment453.children.append(Group461)
 
 HAnimJoint452.children.append(HAnimSegment453)
-HAnimJoint471 = x3d.HAnimJoint()
+HAnimJoint471 = x3d.HAnimJoint(DEF="hanim_r_talocrural")
 HAnimJoint471.name = "r_talocrural"
-HAnimJoint471.DEF = "hanim_r_talocrural"
 HAnimJoint471.center = [-0.088447504,0.09544501,-0.010451251]
-HAnimJoint471.ulimit = [0,0,0]
-HAnimJoint471.llimit = [0,0,0]
-HAnimSegment472 = x3d.HAnimSegment()
+HAnimSegment472 = x3d.HAnimSegment(DEF="hanim_r_talus")
 HAnimSegment472.name = "r_talus"
-HAnimSegment472.DEF = "hanim_r_talus"
-Shape473 = x3d.Shape()
-Shape473.DEF = "r_talus_Shape"
+Shape473 = x3d.Shape(DEF="r_talus_Shape")
 Appearance474 = x3d.Appearance()
-Material475 = x3d.Material()
-Material475.USE = "SurfaceDefault"
+Material475 = x3d.Material(USE="SurfaceDefault")
 
 Appearance474.material = Material475
-ImageTexture476 = x3d.ImageTexture()
-ImageTexture476.USE = "JinLOA4TextureAtlas"
+ImageTexture476 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance474.texture = ImageTexture476
 
@@ -2275,33 +1966,29 @@ IndexedFaceSet477.texCoord = TextureCoordinate479
 Shape473.geometry = IndexedFaceSet477
 
 HAnimSegment472.children.append(Shape473)
-Group480 = x3d.Group()
-Group480.DEF = "r_talus_Sites"
-"""(r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)"""
-HAnimSite481 = x3d.HAnimSite()
+Group480 = x3d.Group(DEF="r_talus_Sites")
+Group480.children.append(x3d.Comment("""(r_sphyrion_pt -0.0603 0.0610 -0.1002)"""))
+Group480.children.append(x3d.Comment("""(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)"""))
+HAnimSite481 = x3d.HAnimSite(DEF="hanim_r_sphyrion_pt")
 HAnimSite481.name = "r_sphyrion_pt"
-HAnimSite481.DEF = "hanim_r_sphyrion_pt"
 HAnimSite481.translation = [-0.054,0.065,-0.02]
 TouchSensor482 = x3d.TouchSensor()
 TouchSensor482.description = "HAnimSite r_sphyrion_pt 54"
 
 HAnimSite481.children.append(TouchSensor482)
-Shape483 = x3d.Shape()
-Shape483.USE = "HAnimSiteShape"
+Shape483 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite481.children.append(Shape483)
 
 Group480.children.append(HAnimSite481)
-HAnimSite484 = x3d.HAnimSite()
+HAnimSite484 = x3d.HAnimSite(DEF="hanim_r_calcaneus_posterior_pt")
 HAnimSite484.name = "r_calcaneus_posterior_pt"
-HAnimSite484.DEF = "hanim_r_calcaneus_posterior_pt"
 HAnimSite484.translation = [-0.09,0.03,-0.06]
 TouchSensor485 = x3d.TouchSensor()
 TouchSensor485.description = "HAnimSite r_calcaneus_posterior_pt 62"
 
 HAnimSite484.children.append(TouchSensor485)
-Shape486 = x3d.Shape()
-Shape486.USE = "HAnimSiteShape"
+Shape486 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite484.children.append(Shape486)
 
@@ -2310,24 +1997,17 @@ Group480.children.append(HAnimSite484)
 HAnimSegment472.children.append(Group480)
 
 HAnimJoint471.children.append(HAnimSegment472)
-HAnimJoint487 = x3d.HAnimJoint()
+HAnimJoint487 = x3d.HAnimJoint(DEF="hanim_r_talocalcaneonavicular")
 HAnimJoint487.name = "r_talocalcaneonavicular"
-HAnimJoint487.DEF = "hanim_r_talocalcaneonavicular"
 HAnimJoint487.center = [-0.07794,0.036900003,0.0048645]
-HAnimJoint487.ulimit = [0,0,0]
-HAnimJoint487.llimit = [0,0,0]
-HAnimSegment488 = x3d.HAnimSegment()
+HAnimSegment488 = x3d.HAnimSegment(DEF="hanim_r_navicular")
 HAnimSegment488.name = "r_navicular"
-HAnimSegment488.DEF = "hanim_r_navicular"
-Shape489 = x3d.Shape()
-Shape489.DEF = "r_navicular_Shape"
+Shape489 = x3d.Shape(DEF="r_navicular_Shape")
 Appearance490 = x3d.Appearance()
-Material491 = x3d.Material()
-Material491.USE = "SurfaceDefault"
+Material491 = x3d.Material(USE="SurfaceDefault")
 
 Appearance490.material = Material491
-ImageTexture492 = x3d.ImageTexture()
-ImageTexture492.USE = "JinLOA4TextureAtlas"
+ImageTexture492 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance490.texture = ImageTexture492
 
@@ -2348,31 +2028,23 @@ IndexedFaceSet493.texCoord = TextureCoordinate495
 Shape489.geometry = IndexedFaceSet493
 
 HAnimSegment488.children.append(Shape489)
-Group496 = x3d.Group()
-Group496.DEF = "r_navicular_Sites"
-"""None"""
+Group496 = x3d.Group(DEF="r_navicular_Sites")
+Group496.children.append(x3d.Comment("""None"""))
 
 HAnimSegment488.children.append(Group496)
 
 HAnimJoint487.children.append(HAnimSegment488)
-HAnimJoint497 = x3d.HAnimJoint()
+HAnimJoint497 = x3d.HAnimJoint(DEF="hanim_r_cuneonavicular_1")
 HAnimJoint497.name = "r_cuneonavicular_1"
-HAnimJoint497.DEF = "hanim_r_cuneonavicular_1"
 HAnimJoint497.center = [-0.0669825,0.032107502,0.018391501]
-HAnimJoint497.ulimit = [0,0,0]
-HAnimJoint497.llimit = [0,0,0]
-HAnimSegment498 = x3d.HAnimSegment()
+HAnimSegment498 = x3d.HAnimSegment(DEF="hanim_r_cuneiform_1")
 HAnimSegment498.name = "r_cuneiform_1"
-HAnimSegment498.DEF = "hanim_r_cuneiform_1"
-Shape499 = x3d.Shape()
-Shape499.DEF = "r_cuneiform_1_Shape"
+Shape499 = x3d.Shape(DEF="r_cuneiform_1_Shape")
 Appearance500 = x3d.Appearance()
-Material501 = x3d.Material()
-Material501.USE = "SurfaceDefault"
+Material501 = x3d.Material(USE="SurfaceDefault")
 
 Appearance500.material = Material501
-ImageTexture502 = x3d.ImageTexture()
-ImageTexture502.USE = "JinLOA4TextureAtlas"
+ImageTexture502 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance500.texture = ImageTexture502
 
@@ -2393,31 +2065,23 @@ IndexedFaceSet503.texCoord = TextureCoordinate505
 Shape499.geometry = IndexedFaceSet503
 
 HAnimSegment498.children.append(Shape499)
-Group506 = x3d.Group()
-Group506.DEF = "r_cuneiform_1_Sites"
-"""None"""
+Group506 = x3d.Group(DEF="r_cuneiform_1_Sites")
+Group506.children.append(x3d.Comment("""None"""))
 
 HAnimSegment498.children.append(Group506)
 
 HAnimJoint497.children.append(HAnimSegment498)
-HAnimJoint507 = x3d.HAnimJoint()
+HAnimJoint507 = x3d.HAnimJoint(DEF="hanim_r_tarsometatarsal_1")
 HAnimJoint507.name = "r_tarsometatarsal_1"
-HAnimJoint507.DEF = "hanim_r_tarsometatarsal_1"
 HAnimJoint507.center = [-0.06426,0.023242502,0.04419]
-HAnimJoint507.ulimit = [0,0,0]
-HAnimJoint507.llimit = [0,0,0]
-HAnimSegment508 = x3d.HAnimSegment()
+HAnimSegment508 = x3d.HAnimSegment(DEF="hanim_r_metatarsal_1")
 HAnimSegment508.name = "r_metatarsal_1"
-HAnimSegment508.DEF = "hanim_r_metatarsal_1"
-Shape509 = x3d.Shape()
-Shape509.DEF = "r_metatarsal_1_Shape"
+Shape509 = x3d.Shape(DEF="r_metatarsal_1_Shape")
 Appearance510 = x3d.Appearance()
-Material511 = x3d.Material()
-Material511.USE = "SurfaceDefault"
+Material511 = x3d.Material(USE="SurfaceDefault")
 
 Appearance510.material = Material511
-ImageTexture512 = x3d.ImageTexture()
-ImageTexture512.USE = "JinLOA4TextureAtlas"
+ImageTexture512 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance510.texture = ImageTexture512
 
@@ -2438,31 +2102,23 @@ IndexedFaceSet513.texCoord = TextureCoordinate515
 Shape509.geometry = IndexedFaceSet513
 
 HAnimSegment508.children.append(Shape509)
-Group516 = x3d.Group()
-Group516.DEF = "r_metatarsal_1_Sites"
-"""None"""
+Group516 = x3d.Group(DEF="r_metatarsal_1_Sites")
+Group516.children.append(x3d.Comment("""None"""))
 
 HAnimSegment508.children.append(Group516)
 
 HAnimJoint507.children.append(HAnimSegment508)
-HAnimJoint517 = x3d.HAnimJoint()
+HAnimJoint517 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal_1")
 HAnimJoint517.name = "r_metatarsophalangeal_1"
-HAnimJoint517.DEF = "hanim_r_metatarsophalangeal_1"
 HAnimJoint517.center = [-0.0617625,0.014424751,0.0936225]
-HAnimJoint517.ulimit = [0,0,0]
-HAnimJoint517.llimit = [0,0,0]
-HAnimSegment518 = x3d.HAnimSegment()
+HAnimSegment518 = x3d.HAnimSegment(DEF="hanim_r_tarsal_proximal_phalanx_1")
 HAnimSegment518.name = "r_tarsal_proximal_phalanx_1"
-HAnimSegment518.DEF = "hanim_r_tarsal_proximal_phalanx_1"
-Shape519 = x3d.Shape()
-Shape519.DEF = "r_tarsal_proximal_phalanx_1_Shape"
+Shape519 = x3d.Shape(DEF="r_tarsal_proximal_phalanx_1_Shape")
 Appearance520 = x3d.Appearance()
-Material521 = x3d.Material()
-Material521.USE = "SurfaceDefault"
+Material521 = x3d.Material(USE="SurfaceDefault")
 
 Appearance520.material = Material521
-ImageTexture522 = x3d.ImageTexture()
-ImageTexture522.USE = "JinLOA4TextureAtlas"
+ImageTexture522 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance520.texture = ImageTexture522
 
@@ -2483,19 +2139,16 @@ IndexedFaceSet523.texCoord = TextureCoordinate525
 Shape519.geometry = IndexedFaceSet523
 
 HAnimSegment518.children.append(Shape519)
-Group526 = x3d.Group()
-Group526.DEF = "r_tarsal_proximal_phalanx_1_Sites"
-"""(r_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)"""
-HAnimSite527 = x3d.HAnimSite()
+Group526 = x3d.Group(DEF="r_tarsal_proximal_phalanx_1_Sites")
+Group526.children.append(x3d.Comment("""(r_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)"""))
+HAnimSite527 = x3d.HAnimSite(DEF="hanim_r_metatarsal_phalanx_1_pt")
 HAnimSite527.name = "r_metatarsal_phalanx_1_pt"
-HAnimSite527.DEF = "hanim_r_metatarsal_phalanx_1_pt"
 HAnimSite527.translation = [-0.062,0.012,0.1]
 TouchSensor528 = x3d.TouchSensor()
 TouchSensor528.description = "HAnimSite r_metatarsal_phalanx_1_pt 59"
 
 HAnimSite527.children.append(TouchSensor528)
-Shape529 = x3d.Shape()
-Shape529.USE = "HAnimSiteShape"
+Shape529 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite527.children.append(Shape529)
 
@@ -2504,24 +2157,17 @@ Group526.children.append(HAnimSite527)
 HAnimSegment518.children.append(Group526)
 
 HAnimJoint517.children.append(HAnimSegment518)
-HAnimJoint530 = x3d.HAnimJoint()
+HAnimJoint530 = x3d.HAnimJoint(DEF="hanim_r_tarsal_interphalangeal_1")
 HAnimJoint530.name = "r_tarsal_interphalangeal_1"
-HAnimJoint530.DEF = "hanim_r_tarsal_interphalangeal_1"
 HAnimJoint530.center = [-0.06174,0.0121365,0.1153125]
-HAnimJoint530.ulimit = [0,0,0]
-HAnimJoint530.llimit = [0,0,0]
-HAnimSegment531 = x3d.HAnimSegment()
+HAnimSegment531 = x3d.HAnimSegment(DEF="hanim_r_tarsal_distal_phalanx_1")
 HAnimSegment531.name = "r_tarsal_distal_phalanx_1"
-HAnimSegment531.DEF = "hanim_r_tarsal_distal_phalanx_1"
-Shape532 = x3d.Shape()
-Shape532.DEF = "r_tarsal_distal_phalanx_1_Shape"
+Shape532 = x3d.Shape(DEF="r_tarsal_distal_phalanx_1_Shape")
 Appearance533 = x3d.Appearance()
-Material534 = x3d.Material()
-Material534.USE = "SurfaceDefault"
+Material534 = x3d.Material(USE="SurfaceDefault")
 
 Appearance533.material = Material534
-ImageTexture535 = x3d.ImageTexture()
-ImageTexture535.USE = "JinLOA4TextureAtlas"
+ImageTexture535 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance533.texture = ImageTexture535
 
@@ -2542,19 +2188,16 @@ IndexedFaceSet536.texCoord = TextureCoordinate538
 Shape532.geometry = IndexedFaceSet536
 
 HAnimSegment531.children.append(Shape532)
-Group539 = x3d.Group()
-Group539.DEF = "r_tarsal_distal_phalanx_1_Sites"
-"""(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)"""
-HAnimSite540 = x3d.HAnimSite()
+Group539 = x3d.Group(DEF="r_tarsal_distal_phalanx_1_Sites")
+Group539.children.append(x3d.Comment("""(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)"""))
+HAnimSite540 = x3d.HAnimSite(DEF="hanim_r_tarsal_distal_phalanx_1_tip")
 HAnimSite540.name = "r_tarsal_distal_phalanx_1_tip"
-HAnimSite540.DEF = "hanim_r_tarsal_distal_phalanx_1_tip"
 HAnimSite540.translation = [-0.06,0.012,0.14]
 TouchSensor541 = x3d.TouchSensor()
 TouchSensor541.description = "HAnimSite r_tarsal_distal_phalanx_1_tip 116"
 
 HAnimSite540.children.append(TouchSensor541)
-Shape542 = x3d.Shape()
-Shape542.USE = "HAnimSiteShape"
+Shape542 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite540.children.append(Shape542)
 
@@ -2571,24 +2214,17 @@ HAnimJoint507.children.append(HAnimJoint517)
 HAnimJoint497.children.append(HAnimJoint507)
 
 HAnimJoint487.children.append(HAnimJoint497)
-HAnimJoint543 = x3d.HAnimJoint()
+HAnimJoint543 = x3d.HAnimJoint(DEF="hanim_r_cuneonavicular_2")
 HAnimJoint543.name = "r_cuneonavicular_2"
-HAnimJoint543.DEF = "hanim_r_cuneonavicular_2"
 HAnimJoint543.center = [-0.081045,0.033525,0.02142675]
-HAnimJoint543.ulimit = [0,0,0]
-HAnimJoint543.llimit = [0,0,0]
-HAnimSegment544 = x3d.HAnimSegment()
+HAnimSegment544 = x3d.HAnimSegment(DEF="hanim_r_cuneiform_2")
 HAnimSegment544.name = "r_cuneiform_2"
-HAnimSegment544.DEF = "hanim_r_cuneiform_2"
-Shape545 = x3d.Shape()
-Shape545.DEF = "r_cuneiform_2_Shape"
+Shape545 = x3d.Shape(DEF="r_cuneiform_2_Shape")
 Appearance546 = x3d.Appearance()
-Material547 = x3d.Material()
-Material547.USE = "SurfaceDefault"
+Material547 = x3d.Material(USE="SurfaceDefault")
 
 Appearance546.material = Material547
-ImageTexture548 = x3d.ImageTexture()
-ImageTexture548.USE = "JinLOA4TextureAtlas"
+ImageTexture548 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance546.texture = ImageTexture548
 
@@ -2609,31 +2245,23 @@ IndexedFaceSet549.texCoord = TextureCoordinate551
 Shape545.geometry = IndexedFaceSet549
 
 HAnimSegment544.children.append(Shape545)
-Group552 = x3d.Group()
-Group552.DEF = "r_cuneiform_2_Sites"
-"""None"""
+Group552 = x3d.Group(DEF="r_cuneiform_2_Sites")
+Group552.children.append(x3d.Comment("""None"""))
 
 HAnimSegment544.children.append(Group552)
 
 HAnimJoint543.children.append(HAnimSegment544)
-HAnimJoint553 = x3d.HAnimJoint()
+HAnimJoint553 = x3d.HAnimJoint(DEF="hanim_r_tarsometatarsal_2")
 HAnimJoint553.name = "r_tarsometatarsal_2"
-HAnimJoint553.DEF = "hanim_r_tarsometatarsal_2"
 HAnimJoint553.center = [-0.079830006,0.0261,0.041062504]
-HAnimJoint553.ulimit = [0,0,0]
-HAnimJoint553.llimit = [0,0,0]
-HAnimSegment554 = x3d.HAnimSegment()
+HAnimSegment554 = x3d.HAnimSegment(DEF="hanim_r_metatarsal_2")
 HAnimSegment554.name = "r_metatarsal_2"
-HAnimSegment554.DEF = "hanim_r_metatarsal_2"
-Shape555 = x3d.Shape()
-Shape555.DEF = "r_metatarsal_2_Shape"
+Shape555 = x3d.Shape(DEF="r_metatarsal_2_Shape")
 Appearance556 = x3d.Appearance()
-Material557 = x3d.Material()
-Material557.USE = "SurfaceDefault"
+Material557 = x3d.Material(USE="SurfaceDefault")
 
 Appearance556.material = Material557
-ImageTexture558 = x3d.ImageTexture()
-ImageTexture558.USE = "JinLOA4TextureAtlas"
+ImageTexture558 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance556.texture = ImageTexture558
 
@@ -2654,31 +2282,23 @@ IndexedFaceSet559.texCoord = TextureCoordinate561
 Shape555.geometry = IndexedFaceSet559
 
 HAnimSegment554.children.append(Shape555)
-Group562 = x3d.Group()
-Group562.DEF = "r_metatarsal_2_Sites"
-"""None"""
+Group562 = x3d.Group(DEF="r_metatarsal_2_Sites")
+Group562.children.append(x3d.Comment("""None"""))
 
 HAnimSegment554.children.append(Group562)
 
 HAnimJoint553.children.append(HAnimSegment554)
-HAnimJoint563 = x3d.HAnimJoint()
+HAnimJoint563 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal_2")
 HAnimJoint563.name = "r_metatarsophalangeal_2"
-HAnimJoint563.DEF = "hanim_r_metatarsophalangeal_2"
 HAnimJoint563.center = [-0.0821475,0.014976,0.097830005]
-HAnimJoint563.ulimit = [0,0,0]
-HAnimJoint563.llimit = [0,0,0]
-HAnimSegment564 = x3d.HAnimSegment()
+HAnimSegment564 = x3d.HAnimSegment(DEF="hanim_r_tarsal_proximal_phalanx_2")
 HAnimSegment564.name = "r_tarsal_proximal_phalanx_2"
-HAnimSegment564.DEF = "hanim_r_tarsal_proximal_phalanx_2"
-Shape565 = x3d.Shape()
-Shape565.DEF = "r_tarsal_proximal_phalanx_2_Shape"
+Shape565 = x3d.Shape(DEF="r_tarsal_proximal_phalanx_2_Shape")
 Appearance566 = x3d.Appearance()
-Material567 = x3d.Material()
-Material567.USE = "SurfaceDefault"
+Material567 = x3d.Material(USE="SurfaceDefault")
 
 Appearance566.material = Material567
-ImageTexture568 = x3d.ImageTexture()
-ImageTexture568.USE = "JinLOA4TextureAtlas"
+ImageTexture568 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance566.texture = ImageTexture568
 
@@ -2699,31 +2319,23 @@ IndexedFaceSet569.texCoord = TextureCoordinate571
 Shape565.geometry = IndexedFaceSet569
 
 HAnimSegment564.children.append(Shape565)
-Group572 = x3d.Group()
-Group572.DEF = "r_tarsal_proximal_phalanx_2_Sites"
-"""None"""
+Group572 = x3d.Group(DEF="r_tarsal_proximal_phalanx_2_Sites")
+Group572.children.append(x3d.Comment("""None"""))
 
 HAnimSegment564.children.append(Group572)
 
 HAnimJoint563.children.append(HAnimSegment564)
-HAnimJoint573 = x3d.HAnimJoint()
+HAnimJoint573 = x3d.HAnimJoint(DEF="hanim_r_tarsal_proximal_interphalangeal_2")
 HAnimJoint573.name = "r_tarsal_proximal_interphalangeal_2"
-HAnimJoint573.DEF = "hanim_r_tarsal_proximal_interphalangeal_2"
 HAnimJoint573.center = [-0.083925,0.012647251,0.1140075]
-HAnimJoint573.ulimit = [0,0,0]
-HAnimJoint573.llimit = [0,0,0]
-HAnimSegment574 = x3d.HAnimSegment()
+HAnimSegment574 = x3d.HAnimSegment(DEF="hanim_r_tarsal_middle_phalanx_2")
 HAnimSegment574.name = "r_tarsal_middle_phalanx_2"
-HAnimSegment574.DEF = "hanim_r_tarsal_middle_phalanx_2"
-Shape575 = x3d.Shape()
-Shape575.DEF = "r_tarsal_middle_phalanx_2_Shape"
+Shape575 = x3d.Shape(DEF="r_tarsal_middle_phalanx_2_Shape")
 Appearance576 = x3d.Appearance()
-Material577 = x3d.Material()
-Material577.USE = "SurfaceDefault"
+Material577 = x3d.Material(USE="SurfaceDefault")
 
 Appearance576.material = Material577
-ImageTexture578 = x3d.ImageTexture()
-ImageTexture578.USE = "JinLOA4TextureAtlas"
+ImageTexture578 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance576.texture = ImageTexture578
 
@@ -2744,31 +2356,23 @@ IndexedFaceSet579.texCoord = TextureCoordinate581
 Shape575.geometry = IndexedFaceSet579
 
 HAnimSegment574.children.append(Shape575)
-Group582 = x3d.Group()
-Group582.DEF = "r_tarsal_middle_phalanx_2_Sites"
-"""None"""
+Group582 = x3d.Group(DEF="r_tarsal_middle_phalanx_2_Sites")
+Group582.children.append(x3d.Comment("""None"""))
 
 HAnimSegment574.children.append(Group582)
 
 HAnimJoint573.children.append(HAnimSegment574)
-HAnimJoint583 = x3d.HAnimJoint()
+HAnimJoint583 = x3d.HAnimJoint(DEF="hanim_r_tarsal_distal_interphalangeal_2")
 HAnimJoint583.name = "r_tarsal_distal_interphalangeal_2"
-HAnimJoint583.DEF = "hanim_r_tarsal_distal_interphalangeal_2"
 HAnimJoint583.center = [-0.083925,0.00982575,0.123435006]
-HAnimJoint583.ulimit = [0,0,0]
-HAnimJoint583.llimit = [0,0,0]
-HAnimSegment584 = x3d.HAnimSegment()
+HAnimSegment584 = x3d.HAnimSegment(DEF="hanim_r_tarsal_distal_phalanx_2")
 HAnimSegment584.name = "r_tarsal_distal_phalanx_2"
-HAnimSegment584.DEF = "hanim_r_tarsal_distal_phalanx_2"
-Shape585 = x3d.Shape()
-Shape585.DEF = "r_tarsal_distal_phalanx_2_Shape"
+Shape585 = x3d.Shape(DEF="r_tarsal_distal_phalanx_2_Shape")
 Appearance586 = x3d.Appearance()
-Material587 = x3d.Material()
-Material587.USE = "SurfaceDefault"
+Material587 = x3d.Material(USE="SurfaceDefault")
 
 Appearance586.material = Material587
-ImageTexture588 = x3d.ImageTexture()
-ImageTexture588.USE = "JinLOA4TextureAtlas"
+ImageTexture588 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance586.texture = ImageTexture588
 
@@ -2789,19 +2393,16 @@ IndexedFaceSet589.texCoord = TextureCoordinate591
 Shape585.geometry = IndexedFaceSet589
 
 HAnimSegment584.children.append(Shape585)
-Group592 = x3d.Group()
-Group592.DEF = "r_tarsal_distal_phalanx_2_Sites"
-"""(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)"""
-HAnimSite593 = x3d.HAnimSite()
+Group592 = x3d.Group(DEF="r_tarsal_distal_phalanx_2_Sites")
+Group592.children.append(x3d.Comment("""(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)"""))
+HAnimSite593 = x3d.HAnimSite(DEF="hanim_r_tarsal_distal_phalanx_2_tip")
 HAnimSite593.name = "r_tarsal_distal_phalanx_2_tip"
-HAnimSite593.DEF = "hanim_r_tarsal_distal_phalanx_2_tip"
 HAnimSite593.translation = [-0.08,0.016,0.14]
 TouchSensor594 = x3d.TouchSensor()
 TouchSensor594.description = "HAnimSite r_tarsal_distal_phalanx_2_tip 117"
 
 HAnimSite593.children.append(TouchSensor594)
-Shape595 = x3d.Shape()
-Shape595.USE = "HAnimSiteShape"
+Shape595 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite593.children.append(Shape595)
 
@@ -2820,24 +2421,17 @@ HAnimJoint553.children.append(HAnimJoint563)
 HAnimJoint543.children.append(HAnimJoint553)
 
 HAnimJoint487.children.append(HAnimJoint543)
-HAnimJoint596 = x3d.HAnimJoint()
+HAnimJoint596 = x3d.HAnimJoint(DEF="hanim_r_cuneonavicular_3")
 HAnimJoint596.name = "r_cuneonavicular_3"
-HAnimJoint596.DEF = "hanim_r_cuneonavicular_3"
 HAnimJoint596.center = [-0.09261001,0.03339,0.019818]
-HAnimJoint596.ulimit = [0,0,0]
-HAnimJoint596.llimit = [0,0,0]
-HAnimSegment597 = x3d.HAnimSegment()
+HAnimSegment597 = x3d.HAnimSegment(DEF="hanim_r_cuneiform_3")
 HAnimSegment597.name = "r_cuneiform_3"
-HAnimSegment597.DEF = "hanim_r_cuneiform_3"
-Shape598 = x3d.Shape()
-Shape598.DEF = "r_cuneiform_3_Shape"
+Shape598 = x3d.Shape(DEF="r_cuneiform_3_Shape")
 Appearance599 = x3d.Appearance()
-Material600 = x3d.Material()
-Material600.USE = "SurfaceDefault"
+Material600 = x3d.Material(USE="SurfaceDefault")
 
 Appearance599.material = Material600
-ImageTexture601 = x3d.ImageTexture()
-ImageTexture601.USE = "JinLOA4TextureAtlas"
+ImageTexture601 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance599.texture = ImageTexture601
 
@@ -2858,31 +2452,23 @@ IndexedFaceSet602.texCoord = TextureCoordinate604
 Shape598.geometry = IndexedFaceSet602
 
 HAnimSegment597.children.append(Shape598)
-Group605 = x3d.Group()
-Group605.DEF = "r_cuneiform_3_Sites"
-"""None"""
+Group605 = x3d.Group(DEF="r_cuneiform_3_Sites")
+Group605.children.append(x3d.Comment("""None"""))
 
 HAnimSegment597.children.append(Group605)
 
 HAnimJoint596.children.append(HAnimSegment597)
-HAnimJoint606 = x3d.HAnimJoint()
+HAnimJoint606 = x3d.HAnimJoint(DEF="hanim_r_tarsometatarsal_3")
 HAnimJoint606.name = "r_tarsometatarsal_3"
-HAnimJoint606.DEF = "hanim_r_tarsometatarsal_3"
 HAnimJoint606.center = [-0.09423001,0.0261,0.039397504]
-HAnimJoint606.ulimit = [0,0,0]
-HAnimJoint606.llimit = [0,0,0]
-HAnimSegment607 = x3d.HAnimSegment()
+HAnimSegment607 = x3d.HAnimSegment(DEF="hanim_r_metatarsal_3")
 HAnimSegment607.name = "r_metatarsal_3"
-HAnimSegment607.DEF = "hanim_r_metatarsal_3"
-Shape608 = x3d.Shape()
-Shape608.DEF = "r_metatarsal_3_Shape"
+Shape608 = x3d.Shape(DEF="r_metatarsal_3_Shape")
 Appearance609 = x3d.Appearance()
-Material610 = x3d.Material()
-Material610.USE = "SurfaceDefault"
+Material610 = x3d.Material(USE="SurfaceDefault")
 
 Appearance609.material = Material610
-ImageTexture611 = x3d.ImageTexture()
-ImageTexture611.USE = "JinLOA4TextureAtlas"
+ImageTexture611 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance609.texture = ImageTexture611
 
@@ -2903,31 +2489,23 @@ IndexedFaceSet612.texCoord = TextureCoordinate614
 Shape608.geometry = IndexedFaceSet612
 
 HAnimSegment607.children.append(Shape608)
-Group615 = x3d.Group()
-Group615.DEF = "r_metatarsal_3_Sites"
-"""None"""
+Group615 = x3d.Group(DEF="r_metatarsal_3_Sites")
+Group615.children.append(x3d.Comment("""None"""))
 
 HAnimSegment607.children.append(Group615)
 
 HAnimJoint606.children.append(HAnimSegment607)
-HAnimJoint616 = x3d.HAnimJoint()
+HAnimJoint616 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal_3")
 HAnimJoint616.name = "r_metatarsophalangeal_3"
-HAnimJoint616.DEF = "hanim_r_metatarsophalangeal_3"
 HAnimJoint616.center = [-0.0960975,0.015057,0.09542251]
-HAnimJoint616.ulimit = [0,0,0]
-HAnimJoint616.llimit = [0,0,0]
-HAnimSegment617 = x3d.HAnimSegment()
+HAnimSegment617 = x3d.HAnimSegment(DEF="hanim_r_tarsal_proximal_phalanx_3")
 HAnimSegment617.name = "r_tarsal_proximal_phalanx_3"
-HAnimSegment617.DEF = "hanim_r_tarsal_proximal_phalanx_3"
-Shape618 = x3d.Shape()
-Shape618.DEF = "r_tarsal_proximal_phalanx_3_Shape"
+Shape618 = x3d.Shape(DEF="r_tarsal_proximal_phalanx_3_Shape")
 Appearance619 = x3d.Appearance()
-Material620 = x3d.Material()
-Material620.USE = "SurfaceDefault"
+Material620 = x3d.Material(USE="SurfaceDefault")
 
 Appearance619.material = Material620
-ImageTexture621 = x3d.ImageTexture()
-ImageTexture621.USE = "JinLOA4TextureAtlas"
+ImageTexture621 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance619.texture = ImageTexture621
 
@@ -2948,31 +2526,23 @@ IndexedFaceSet622.texCoord = TextureCoordinate624
 Shape618.geometry = IndexedFaceSet622
 
 HAnimSegment617.children.append(Shape618)
-Group625 = x3d.Group()
-Group625.DEF = "r_tarsal_proximal_phalanx_3_Sites"
-"""None"""
+Group625 = x3d.Group(DEF="r_tarsal_proximal_phalanx_3_Sites")
+Group625.children.append(x3d.Comment("""None"""))
 
 HAnimSegment617.children.append(Group625)
 
 HAnimJoint616.children.append(HAnimSegment617)
-HAnimJoint626 = x3d.HAnimJoint()
+HAnimJoint626 = x3d.HAnimJoint(DEF="hanim_r_tarsal_proximal_interphalangeal_3")
 HAnimJoint626.name = "r_tarsal_proximal_interphalangeal_3"
-HAnimJoint626.DEF = "hanim_r_tarsal_proximal_interphalangeal_3"
 HAnimJoint626.center = [-0.098505,0.011922751,0.110475]
-HAnimJoint626.ulimit = [0,0,0]
-HAnimJoint626.llimit = [0,0,0]
-HAnimSegment627 = x3d.HAnimSegment()
+HAnimSegment627 = x3d.HAnimSegment(DEF="hanim_r_tarsal_middle_phalanx_3")
 HAnimSegment627.name = "r_tarsal_middle_phalanx_3"
-HAnimSegment627.DEF = "hanim_r_tarsal_middle_phalanx_3"
-Shape628 = x3d.Shape()
-Shape628.DEF = "r_tarsal_middle_phalanx_3_Shape"
+Shape628 = x3d.Shape(DEF="r_tarsal_middle_phalanx_3_Shape")
 Appearance629 = x3d.Appearance()
-Material630 = x3d.Material()
-Material630.USE = "SurfaceDefault"
+Material630 = x3d.Material(USE="SurfaceDefault")
 
 Appearance629.material = Material630
-ImageTexture631 = x3d.ImageTexture()
-ImageTexture631.USE = "JinLOA4TextureAtlas"
+ImageTexture631 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance629.texture = ImageTexture631
 
@@ -2993,31 +2563,23 @@ IndexedFaceSet632.texCoord = TextureCoordinate634
 Shape628.geometry = IndexedFaceSet632
 
 HAnimSegment627.children.append(Shape628)
-Group635 = x3d.Group()
-Group635.DEF = "r_tarsal_middle_phalanx_3_Sites"
-"""None"""
+Group635 = x3d.Group(DEF="r_tarsal_middle_phalanx_3_Sites")
+Group635.children.append(x3d.Comment("""None"""))
 
 HAnimSegment627.children.append(Group635)
 
 HAnimJoint626.children.append(HAnimSegment627)
-HAnimJoint636 = x3d.HAnimJoint()
+HAnimJoint636 = x3d.HAnimJoint(DEF="hanim_r_tarsal_distal_interphalangeal_3")
 HAnimJoint636.name = "r_tarsal_distal_interphalangeal_3"
-HAnimJoint636.DEF = "hanim_r_tarsal_distal_interphalangeal_3"
 HAnimJoint636.center = [-0.100035004,0.00982575,0.11970001]
-HAnimJoint636.ulimit = [0,0,0]
-HAnimJoint636.llimit = [0,0,0]
-HAnimSegment637 = x3d.HAnimSegment()
+HAnimSegment637 = x3d.HAnimSegment(DEF="hanim_r_tarsal_distal_phalanx_3")
 HAnimSegment637.name = "r_tarsal_distal_phalanx_3"
-HAnimSegment637.DEF = "hanim_r_tarsal_distal_phalanx_3"
-Shape638 = x3d.Shape()
-Shape638.DEF = "r_tarsal_distal_phalanx_3_Shape"
+Shape638 = x3d.Shape(DEF="r_tarsal_distal_phalanx_3_Shape")
 Appearance639 = x3d.Appearance()
-Material640 = x3d.Material()
-Material640.USE = "SurfaceDefault"
+Material640 = x3d.Material(USE="SurfaceDefault")
 
 Appearance639.material = Material640
-ImageTexture641 = x3d.ImageTexture()
-ImageTexture641.USE = "JinLOA4TextureAtlas"
+ImageTexture641 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance639.texture = ImageTexture641
 
@@ -3038,19 +2600,16 @@ IndexedFaceSet642.texCoord = TextureCoordinate644
 Shape638.geometry = IndexedFaceSet642
 
 HAnimSegment637.children.append(Shape638)
-Group645 = x3d.Group()
-Group645.DEF = "r_tarsal_distal_phalanx_3_Sites"
-"""(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)"""
-HAnimSite646 = x3d.HAnimSite()
+Group645 = x3d.Group(DEF="r_tarsal_distal_phalanx_3_Sites")
+Group645.children.append(x3d.Comment("""(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)"""))
+HAnimSite646 = x3d.HAnimSite(DEF="hanim_r_tarsal_distal_phalanx_3_tip")
 HAnimSite646.name = "r_tarsal_distal_phalanx_3_tip"
-HAnimSite646.DEF = "hanim_r_tarsal_distal_phalanx_3_tip"
 HAnimSite646.translation = [-0.1,0.016,0.14]
 TouchSensor647 = x3d.TouchSensor()
 TouchSensor647.description = "HAnimSite r_tarsal_distal_phalanx_3_tip 118"
 
 HAnimSite646.children.append(TouchSensor647)
-Shape648 = x3d.Shape()
-Shape648.USE = "HAnimSiteShape"
+Shape648 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite646.children.append(Shape648)
 
@@ -3071,24 +2630,17 @@ HAnimJoint596.children.append(HAnimJoint606)
 HAnimJoint487.children.append(HAnimJoint596)
 
 HAnimJoint471.children.append(HAnimJoint487)
-HAnimJoint649 = x3d.HAnimJoint()
+HAnimJoint649 = x3d.HAnimJoint(DEF="hanim_r_calcaneocuboid")
 HAnimJoint649.name = "r_calcaneocuboid"
-HAnimJoint649.DEF = "hanim_r_calcaneocuboid"
 HAnimJoint649.center = [-0.088717505,0.0579825,-0.025965001]
-HAnimJoint649.ulimit = [0,0,0]
-HAnimJoint649.llimit = [0,0,0]
-HAnimSegment650 = x3d.HAnimSegment()
+HAnimSegment650 = x3d.HAnimSegment(DEF="hanim_r_calcaneus")
 HAnimSegment650.name = "r_calcaneus"
-HAnimSegment650.DEF = "hanim_r_calcaneus"
-Shape651 = x3d.Shape()
-Shape651.DEF = "r_calcaneus_Shape"
+Shape651 = x3d.Shape(DEF="r_calcaneus_Shape")
 Appearance652 = x3d.Appearance()
-Material653 = x3d.Material()
-Material653.USE = "SurfaceDefault"
+Material653 = x3d.Material(USE="SurfaceDefault")
 
 Appearance652.material = Material653
-ImageTexture654 = x3d.ImageTexture()
-ImageTexture654.USE = "JinLOA4TextureAtlas"
+ImageTexture654 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance652.texture = ImageTexture654
 
@@ -3109,31 +2661,23 @@ IndexedFaceSet655.texCoord = TextureCoordinate657
 Shape651.geometry = IndexedFaceSet655
 
 HAnimSegment650.children.append(Shape651)
-Group658 = x3d.Group()
-Group658.DEF = "r_calcaneus_Sites"
-"""None"""
+Group658 = x3d.Group(DEF="r_calcaneus_Sites")
+Group658.children.append(x3d.Comment("""None"""))
 
 HAnimSegment650.children.append(Group658)
 
 HAnimJoint649.children.append(HAnimSegment650)
-HAnimJoint659 = x3d.HAnimJoint()
+HAnimJoint659 = x3d.HAnimJoint(DEF="hanim_r_transversetarsal")
 HAnimJoint659.name = "r_transversetarsal"
-HAnimJoint659.DEF = "hanim_r_transversetarsal"
 HAnimJoint659.center = [-0.110272504,0.03528,0.002089125]
-HAnimJoint659.ulimit = [0,0,0]
-HAnimJoint659.llimit = [0,0,0]
-HAnimSegment660 = x3d.HAnimSegment()
+HAnimSegment660 = x3d.HAnimSegment(DEF="hanim_r_cuboid")
 HAnimSegment660.name = "r_cuboid"
-HAnimSegment660.DEF = "hanim_r_cuboid"
-Shape661 = x3d.Shape()
-Shape661.DEF = "r_cuboid_Shape"
+Shape661 = x3d.Shape(DEF="r_cuboid_Shape")
 Appearance662 = x3d.Appearance()
-Material663 = x3d.Material()
-Material663.USE = "SurfaceDefault"
+Material663 = x3d.Material(USE="SurfaceDefault")
 
 Appearance662.material = Material663
-ImageTexture664 = x3d.ImageTexture()
-ImageTexture664.USE = "JinLOA4TextureAtlas"
+ImageTexture664 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance662.texture = ImageTexture664
 
@@ -3154,31 +2698,23 @@ IndexedFaceSet665.texCoord = TextureCoordinate667
 Shape661.geometry = IndexedFaceSet665
 
 HAnimSegment660.children.append(Shape661)
-Group668 = x3d.Group()
-Group668.DEF = "r_cuboid_Sites"
-"""None"""
+Group668 = x3d.Group(DEF="r_cuboid_Sites")
+Group668.children.append(x3d.Comment("""None"""))
 
 HAnimSegment660.children.append(Group668)
 
 HAnimJoint659.children.append(HAnimSegment660)
-HAnimJoint669 = x3d.HAnimJoint()
+HAnimJoint669 = x3d.HAnimJoint(DEF="hanim_r_tarsometatarsal_4")
 HAnimJoint669.name = "r_tarsometatarsal_4"
-HAnimJoint669.DEF = "hanim_r_tarsometatarsal_4"
 HAnimJoint669.center = [-0.10613251,0.0245475,0.03843]
-HAnimJoint669.ulimit = [0,0,0]
-HAnimJoint669.llimit = [0,0,0]
-HAnimSegment670 = x3d.HAnimSegment()
+HAnimSegment670 = x3d.HAnimSegment(DEF="hanim_r_metatarsal_4")
 HAnimSegment670.name = "r_metatarsal_4"
-HAnimSegment670.DEF = "hanim_r_metatarsal_4"
-Shape671 = x3d.Shape()
-Shape671.DEF = "r_metatarsal_4_Shape"
+Shape671 = x3d.Shape(DEF="r_metatarsal_4_Shape")
 Appearance672 = x3d.Appearance()
-Material673 = x3d.Material()
-Material673.USE = "SurfaceDefault"
+Material673 = x3d.Material(USE="SurfaceDefault")
 
 Appearance672.material = Material673
-ImageTexture674 = x3d.ImageTexture()
-ImageTexture674.USE = "JinLOA4TextureAtlas"
+ImageTexture674 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance672.texture = ImageTexture674
 
@@ -3199,31 +2735,23 @@ IndexedFaceSet675.texCoord = TextureCoordinate677
 Shape671.geometry = IndexedFaceSet675
 
 HAnimSegment670.children.append(Shape671)
-Group678 = x3d.Group()
-Group678.DEF = "r_metatarsal_4_Sites"
-"""None"""
+Group678 = x3d.Group(DEF="r_metatarsal_4_Sites")
+Group678.children.append(x3d.Comment("""None"""))
 
 HAnimSegment670.children.append(Group678)
 
 HAnimJoint669.children.append(HAnimSegment670)
-HAnimJoint679 = x3d.HAnimJoint()
+HAnimJoint679 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal_4")
 HAnimJoint679.name = "r_metatarsophalangeal_4"
-HAnimJoint679.DEF = "hanim_r_metatarsophalangeal_4"
 HAnimJoint679.center = [-0.10950751,0.01435275,0.091170006]
-HAnimJoint679.ulimit = [0,0,0]
-HAnimJoint679.llimit = [0,0,0]
-HAnimSegment680 = x3d.HAnimSegment()
+HAnimSegment680 = x3d.HAnimSegment(DEF="hanim_r_tarsal_proximal_phalanx_4")
 HAnimSegment680.name = "r_tarsal_proximal_phalanx_4"
-HAnimSegment680.DEF = "hanim_r_tarsal_proximal_phalanx_4"
-Shape681 = x3d.Shape()
-Shape681.DEF = "r_tarsal_proximal_phalanx_4_Shape"
+Shape681 = x3d.Shape(DEF="r_tarsal_proximal_phalanx_4_Shape")
 Appearance682 = x3d.Appearance()
-Material683 = x3d.Material()
-Material683.USE = "SurfaceDefault"
+Material683 = x3d.Material(USE="SurfaceDefault")
 
 Appearance682.material = Material683
-ImageTexture684 = x3d.ImageTexture()
-ImageTexture684.USE = "JinLOA4TextureAtlas"
+ImageTexture684 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance682.texture = ImageTexture684
 
@@ -3244,31 +2772,23 @@ IndexedFaceSet685.texCoord = TextureCoordinate687
 Shape681.geometry = IndexedFaceSet685
 
 HAnimSegment680.children.append(Shape681)
-Group688 = x3d.Group()
-Group688.DEF = "r_tarsal_proximal_phalanx_4_Sites"
-"""None"""
+Group688 = x3d.Group(DEF="r_tarsal_proximal_phalanx_4_Sites")
+Group688.children.append(x3d.Comment("""None"""))
 
 HAnimSegment680.children.append(Group688)
 
 HAnimJoint679.children.append(HAnimSegment680)
-HAnimJoint689 = x3d.HAnimJoint()
+HAnimJoint689 = x3d.HAnimJoint(DEF="hanim_r_tarsal_proximal_interphalangeal_4")
 HAnimJoint689.name = "r_tarsal_proximal_interphalangeal_4"
-HAnimJoint689.DEF = "hanim_r_tarsal_proximal_interphalangeal_4"
 HAnimJoint689.center = [-0.11378251,0.0122445,0.1063125]
-HAnimJoint689.ulimit = [0,0,0]
-HAnimJoint689.llimit = [0,0,0]
-HAnimSegment690 = x3d.HAnimSegment()
+HAnimSegment690 = x3d.HAnimSegment(DEF="hanim_r_tarsal_middle_phalanx_4")
 HAnimSegment690.name = "r_tarsal_middle_phalanx_4"
-HAnimSegment690.DEF = "hanim_r_tarsal_middle_phalanx_4"
-Shape691 = x3d.Shape()
-Shape691.DEF = "r_tarsal_middle_phalanx_4_Shape"
+Shape691 = x3d.Shape(DEF="r_tarsal_middle_phalanx_4_Shape")
 Appearance692 = x3d.Appearance()
-Material693 = x3d.Material()
-Material693.USE = "SurfaceDefault"
+Material693 = x3d.Material(USE="SurfaceDefault")
 
 Appearance692.material = Material693
-ImageTexture694 = x3d.ImageTexture()
-ImageTexture694.USE = "JinLOA4TextureAtlas"
+ImageTexture694 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance692.texture = ImageTexture694
 
@@ -3289,31 +2809,23 @@ IndexedFaceSet695.texCoord = TextureCoordinate697
 Shape691.geometry = IndexedFaceSet695
 
 HAnimSegment690.children.append(Shape691)
-Group698 = x3d.Group()
-Group698.DEF = "r_tarsal_middle_phalanx_4_Sites"
-"""None"""
+Group698 = x3d.Group(DEF="r_tarsal_middle_phalanx_4_Sites")
+Group698.children.append(x3d.Comment("""None"""))
 
 HAnimSegment690.children.append(Group698)
 
 HAnimJoint689.children.append(HAnimSegment690)
-HAnimJoint699 = x3d.HAnimJoint()
+HAnimJoint699 = x3d.HAnimJoint(DEF="hanim_r_tarsal_distal_interphalangeal_4")
 HAnimJoint699.name = "r_tarsal_distal_interphalangeal_4"
-HAnimJoint699.DEF = "hanim_r_tarsal_distal_interphalangeal_4"
 HAnimJoint699.center = [-0.1153125,0.009369,0.11369251]
-HAnimJoint699.ulimit = [0,0,0]
-HAnimJoint699.llimit = [0,0,0]
-HAnimSegment700 = x3d.HAnimSegment()
+HAnimSegment700 = x3d.HAnimSegment(DEF="hanim_r_tarsal_distal_phalanx_4")
 HAnimSegment700.name = "r_tarsal_distal_phalanx_4"
-HAnimSegment700.DEF = "hanim_r_tarsal_distal_phalanx_4"
-Shape701 = x3d.Shape()
-Shape701.DEF = "r_tarsal_distal_phalanx_4_Shape"
+Shape701 = x3d.Shape(DEF="r_tarsal_distal_phalanx_4_Shape")
 Appearance702 = x3d.Appearance()
-Material703 = x3d.Material()
-Material703.USE = "SurfaceDefault"
+Material703 = x3d.Material(USE="SurfaceDefault")
 
 Appearance702.material = Material703
-ImageTexture704 = x3d.ImageTexture()
-ImageTexture704.USE = "JinLOA4TextureAtlas"
+ImageTexture704 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance702.texture = ImageTexture704
 
@@ -3334,19 +2846,16 @@ IndexedFaceSet705.texCoord = TextureCoordinate707
 Shape701.geometry = IndexedFaceSet705
 
 HAnimSegment700.children.append(Shape701)
-Group708 = x3d.Group()
-Group708.DEF = "r_tarsal_distal_phalanx_4_Sites"
-"""(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)"""
-HAnimSite709 = x3d.HAnimSite()
+Group708 = x3d.Group(DEF="r_tarsal_distal_phalanx_4_Sites")
+Group708.children.append(x3d.Comment("""(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)"""))
+HAnimSite709 = x3d.HAnimSite(DEF="hanim_r_tarsal_distal_phalanx_4_tip")
 HAnimSite709.name = "r_tarsal_distal_phalanx_4_tip"
-HAnimSite709.DEF = "hanim_r_tarsal_distal_phalanx_4_tip"
 HAnimSite709.translation = [-0.115,0.016,0.13]
 TouchSensor710 = x3d.TouchSensor()
 TouchSensor710.description = "HAnimSite r_tarsal_distal_phalanx_4_tip 119"
 
 HAnimSite709.children.append(TouchSensor710)
-Shape711 = x3d.Shape()
-Shape711.USE = "HAnimSiteShape"
+Shape711 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite709.children.append(Shape711)
 
@@ -3363,24 +2872,17 @@ HAnimJoint679.children.append(HAnimJoint689)
 HAnimJoint669.children.append(HAnimJoint679)
 
 HAnimJoint659.children.append(HAnimJoint669)
-HAnimJoint712 = x3d.HAnimJoint()
+HAnimJoint712 = x3d.HAnimJoint(DEF="hanim_r_tarsometatarsal_5")
 HAnimJoint712.name = "r_tarsometatarsal_5"
-HAnimJoint712.DEF = "hanim_r_tarsometatarsal_5"
 HAnimJoint712.center = [-0.12044251,0.020945251,0.03474]
-HAnimJoint712.ulimit = [0,0,0]
-HAnimJoint712.llimit = [0,0,0]
-HAnimSegment713 = x3d.HAnimSegment()
+HAnimSegment713 = x3d.HAnimSegment(DEF="hanim_r_metatarsal_5")
 HAnimSegment713.name = "r_metatarsal_5"
-HAnimSegment713.DEF = "hanim_r_metatarsal_5"
-Shape714 = x3d.Shape()
-Shape714.DEF = "r_metatarsal_5_Shape"
+Shape714 = x3d.Shape(DEF="r_metatarsal_5_Shape")
 Appearance715 = x3d.Appearance()
-Material716 = x3d.Material()
-Material716.USE = "SurfaceDefault"
+Material716 = x3d.Material(USE="SurfaceDefault")
 
 Appearance715.material = Material716
-ImageTexture717 = x3d.ImageTexture()
-ImageTexture717.USE = "JinLOA4TextureAtlas"
+ImageTexture717 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance715.texture = ImageTexture717
 
@@ -3401,31 +2903,23 @@ IndexedFaceSet718.texCoord = TextureCoordinate720
 Shape714.geometry = IndexedFaceSet718
 
 HAnimSegment713.children.append(Shape714)
-Group721 = x3d.Group()
-Group721.DEF = "r_metatarsal__Sites"
-"""None"""
+Group721 = x3d.Group(DEF="r_metatarsal__Sites")
+Group721.children.append(x3d.Comment("""None"""))
 
 HAnimSegment713.children.append(Group721)
 
 HAnimJoint712.children.append(HAnimSegment713)
-HAnimJoint722 = x3d.HAnimJoint()
+HAnimJoint722 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal_5")
 HAnimJoint722.name = "r_metatarsophalangeal_5"
-HAnimJoint722.DEF = "hanim_r_metatarsophalangeal_5"
 HAnimJoint722.center = [-0.12368251,0.013671,0.0865575]
-HAnimJoint722.ulimit = [0,0,0]
-HAnimJoint722.llimit = [0,0,0]
-HAnimSegment723 = x3d.HAnimSegment()
+HAnimSegment723 = x3d.HAnimSegment(DEF="hanim_r_tarsal_proximal_phalanx_5")
 HAnimSegment723.name = "r_tarsal_proximal_phalanx_5"
-HAnimSegment723.DEF = "hanim_r_tarsal_proximal_phalanx_5"
-Shape724 = x3d.Shape()
-Shape724.DEF = "r_tarsal_proximal_phalanx_5_Shape"
+Shape724 = x3d.Shape(DEF="r_tarsal_proximal_phalanx_5_Shape")
 Appearance725 = x3d.Appearance()
-Material726 = x3d.Material()
-Material726.USE = "SurfaceDefault"
+Material726 = x3d.Material(USE="SurfaceDefault")
 
 Appearance725.material = Material726
-ImageTexture727 = x3d.ImageTexture()
-ImageTexture727.USE = "JinLOA4TextureAtlas"
+ImageTexture727 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance725.texture = ImageTexture727
 
@@ -3446,31 +2940,23 @@ IndexedFaceSet728.texCoord = TextureCoordinate730
 Shape724.geometry = IndexedFaceSet728
 
 HAnimSegment723.children.append(Shape724)
-Group731 = x3d.Group()
-Group731.DEF = "r_tarsal_proximal_phalanx_5_Sites"
-"""None"""
+Group731 = x3d.Group(DEF="r_tarsal_proximal_phalanx_5_Sites")
+Group731.children.append(x3d.Comment("""None"""))
 
 HAnimSegment723.children.append(Group731)
 
 HAnimJoint722.children.append(HAnimSegment723)
-HAnimJoint732 = x3d.HAnimJoint()
+HAnimJoint732 = x3d.HAnimJoint(DEF="hanim_r_tarsal_proximal_interphalangeal_5")
 HAnimJoint732.name = "r_tarsal_proximal_interphalangeal_5"
-HAnimJoint732.DEF = "hanim_r_tarsal_proximal_interphalangeal_5"
 HAnimJoint732.center = [-0.126,0.01085625,0.09414]
-HAnimJoint732.ulimit = [0,0,0]
-HAnimJoint732.llimit = [0,0,0]
-HAnimSegment733 = x3d.HAnimSegment()
+HAnimSegment733 = x3d.HAnimSegment(DEF="hanim_r_tarsal_middle_phalanx_5")
 HAnimSegment733.name = "r_tarsal_middle_phalanx_5"
-HAnimSegment733.DEF = "hanim_r_tarsal_middle_phalanx_5"
-Shape734 = x3d.Shape()
-Shape734.DEF = "r_tarsal_middle_phalanx_5_Shape"
+Shape734 = x3d.Shape(DEF="r_tarsal_middle_phalanx_5_Shape")
 Appearance735 = x3d.Appearance()
-Material736 = x3d.Material()
-Material736.USE = "SurfaceDefault"
+Material736 = x3d.Material(USE="SurfaceDefault")
 
 Appearance735.material = Material736
-ImageTexture737 = x3d.ImageTexture()
-ImageTexture737.USE = "JinLOA4TextureAtlas"
+ImageTexture737 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance735.texture = ImageTexture737
 
@@ -3491,19 +2977,16 @@ IndexedFaceSet738.texCoord = TextureCoordinate740
 Shape734.geometry = IndexedFaceSet738
 
 HAnimSegment733.children.append(Shape734)
-Group741 = x3d.Group()
-Group741.DEF = "r_tarsal_middle_phalanx_5_Sites"
-"""(r_metatarsal_phalanx_5_pt x y z)"""
-HAnimSite742 = x3d.HAnimSite()
+Group741 = x3d.Group(DEF="r_tarsal_middle_phalanx_5_Sites")
+Group741.children.append(x3d.Comment("""(r_metatarsal_phalanx_5_pt x y z)"""))
+HAnimSite742 = x3d.HAnimSite(DEF="hanim_r_metatarsal_phalanx_5_pt")
 HAnimSite742.name = "r_metatarsal_phalanx_5_pt"
-HAnimSite742.DEF = "hanim_r_metatarsal_phalanx_5_pt"
 HAnimSite742.translation = [-0.12,0.02,0.04]
 TouchSensor743 = x3d.TouchSensor()
 TouchSensor743.description = "HAnimSite r_metatarsal_phalanx_5_pt 60"
 
 HAnimSite742.children.append(TouchSensor743)
-Shape744 = x3d.Shape()
-Shape744.USE = "HAnimSiteShape"
+Shape744 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite742.children.append(Shape744)
 
@@ -3512,24 +2995,17 @@ Group741.children.append(HAnimSite742)
 HAnimSegment733.children.append(Group741)
 
 HAnimJoint732.children.append(HAnimSegment733)
-HAnimJoint745 = x3d.HAnimJoint()
+HAnimJoint745 = x3d.HAnimJoint(DEF="hanim_r_tarsal_distal_interphalangeal_5")
 HAnimJoint745.name = "r_tarsal_distal_interphalangeal_5"
-HAnimJoint745.DEF = "hanim_r_tarsal_distal_interphalangeal_5"
 HAnimJoint745.center = [-0.1269225,0.008563501,0.10188]
-HAnimJoint745.ulimit = [0,0,0]
-HAnimJoint745.llimit = [0,0,0]
-HAnimSegment746 = x3d.HAnimSegment()
+HAnimSegment746 = x3d.HAnimSegment(DEF="hanim_r_tarsal_distal_phalanx_5")
 HAnimSegment746.name = "r_tarsal_distal_phalanx_5"
-HAnimSegment746.DEF = "hanim_r_tarsal_distal_phalanx_5"
-Shape747 = x3d.Shape()
-Shape747.DEF = "r_tarsal_distal_phalanx_5_Shape"
+Shape747 = x3d.Shape(DEF="r_tarsal_distal_phalanx_5_Shape")
 Appearance748 = x3d.Appearance()
-Material749 = x3d.Material()
-Material749.USE = "SurfaceDefault"
+Material749 = x3d.Material(USE="SurfaceDefault")
 
 Appearance748.material = Material749
-ImageTexture750 = x3d.ImageTexture()
-ImageTexture750.USE = "JinLOA4TextureAtlas"
+ImageTexture750 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance748.texture = ImageTexture750
 
@@ -3550,19 +3026,16 @@ IndexedFaceSet751.texCoord = TextureCoordinate753
 Shape747.geometry = IndexedFaceSet751
 
 HAnimSegment746.children.append(Shape747)
-Group754 = x3d.Group()
-Group754.DEF = "r_tarsal_distal_phalanx_5_Sites"
-"""(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)"""
-HAnimSite755 = x3d.HAnimSite()
+Group754 = x3d.Group(DEF="r_tarsal_distal_phalanx_5_Sites")
+Group754.children.append(x3d.Comment("""(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)"""))
+HAnimSite755 = x3d.HAnimSite(DEF="hanim_r_tarsal_distal_phalanx_5_tip")
 HAnimSite755.name = "r_tarsal_distal_phalanx_5_tip"
-HAnimSite755.DEF = "hanim_r_tarsal_distal_phalanx_5_tip"
 HAnimSite755.translation = [-0.125,0.016,0.115]
 TouchSensor756 = x3d.TouchSensor()
 TouchSensor756.description = "HAnimSite r_tarsal_distal_phalanx_5_tip 120"
 
 HAnimSite755.children.append(TouchSensor756)
-Shape757 = x3d.Shape()
-Shape757.USE = "HAnimSiteShape"
+Shape757 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite755.children.append(Shape757)
 
@@ -3589,24 +3062,17 @@ HAnimJoint452.children.append(HAnimJoint471)
 HAnimJoint430.children.append(HAnimJoint452)
 
 HAnimJoint62.children.append(HAnimJoint430)
-HAnimJoint758 = x3d.HAnimJoint()
+HAnimJoint758 = x3d.HAnimJoint(DEF="hanim_vl5")
 HAnimJoint758.name = "vl5"
-HAnimJoint758.DEF = "hanim_vl5"
 HAnimJoint758.center = [0,0.92542505,-0.013763251]
-HAnimJoint758.ulimit = [0,0,0]
-HAnimJoint758.llimit = [0,0,0]
-HAnimSegment759 = x3d.HAnimSegment()
+HAnimSegment759 = x3d.HAnimSegment(DEF="hanim_l5")
 HAnimSegment759.name = "l5"
-HAnimSegment759.DEF = "hanim_l5"
-Shape760 = x3d.Shape()
-Shape760.DEF = "l5_Shape"
+Shape760 = x3d.Shape(DEF="l5_Shape")
 Appearance761 = x3d.Appearance()
-Material762 = x3d.Material()
-Material762.USE = "SurfaceDefault"
+Material762 = x3d.Material(USE="SurfaceDefault")
 
 Appearance761.material = Material762
-ImageTexture763 = x3d.ImageTexture()
-ImageTexture763.USE = "JinLOA4TextureAtlas"
+ImageTexture763 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance761.texture = ImageTexture763
 
@@ -3627,75 +3093,68 @@ IndexedFaceSet764.texCoord = TextureCoordinate766
 Shape760.geometry = IndexedFaceSet764
 
 HAnimSegment759.children.append(Shape760)
-Group767 = x3d.Group()
-Group767.DEF = "l5_Sites"
-"""(spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017)"""
-HAnimSite768 = x3d.HAnimSite()
+Group767 = x3d.Group(DEF="l5_Sites")
+Group767.children.append(x3d.Comment("""(spine_1_middle_back x y z)"""))
+Group767.children.append(x3d.Comment("""(spine_2_lower_back_pt x y z)"""))
+Group767.children.append(x3d.Comment("""(waist_preferred_anterior_pt x y z)"""))
+Group767.children.append(x3d.Comment("""(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)"""))
+Group767.children.append(x3d.Comment("""(navel 0.0069 1.0966 0.1017)"""))
+HAnimSite768 = x3d.HAnimSite(DEF="hanim_spine_1_middle_back_pt")
 HAnimSite768.name = "spine_1_middle_back_pt"
-HAnimSite768.DEF = "hanim_spine_1_middle_back_pt"
 HAnimSite768.translation = [0,1,-0.1]
 TouchSensor769 = x3d.TouchSensor()
 TouchSensor769.description = "HAnimSite spine_1_middle_back_pt 24"
 
 HAnimSite768.children.append(TouchSensor769)
-Shape770 = x3d.Shape()
-Shape770.USE = "HAnimSiteShape"
+Shape770 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite768.children.append(Shape770)
 
 Group767.children.append(HAnimSite768)
-HAnimSite771 = x3d.HAnimSite()
+HAnimSite771 = x3d.HAnimSite(DEF="hanim_spine_2_lower_back_pt")
 HAnimSite771.name = "spine_2_lower_back_pt"
-HAnimSite771.DEF = "hanim_spine_2_lower_back_pt"
 HAnimSite771.translation = [0,0.95,-0.1]
 TouchSensor772 = x3d.TouchSensor()
 TouchSensor772.description = "HAnimSite spine_2_lower_back_pt 25"
 
 HAnimSite771.children.append(TouchSensor772)
-Shape773 = x3d.Shape()
-Shape773.USE = "HAnimSiteShape"
+Shape773 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite771.children.append(Shape773)
 
 Group767.children.append(HAnimSite771)
-HAnimSite774 = x3d.HAnimSite()
+HAnimSite774 = x3d.HAnimSite(DEF="hanim_waist_preferred_anterior_pt")
 HAnimSite774.name = "waist_preferred_anterior_pt"
-HAnimSite774.DEF = "hanim_waist_preferred_anterior_pt"
 HAnimSite774.translation = [0,0.9,0.1]
 TouchSensor775 = x3d.TouchSensor()
 TouchSensor775.description = "HAnimSiteA waist_preferred_anterior_pt 26"
 
 HAnimSite774.children.append(TouchSensor775)
-Shape776 = x3d.Shape()
-Shape776.USE = "HAnimSiteShape"
+Shape776 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite774.children.append(Shape776)
 
 Group767.children.append(HAnimSite774)
-HAnimSite777 = x3d.HAnimSite()
+HAnimSite777 = x3d.HAnimSite(DEF="hanim_waist_preferred_posterior_pt")
 HAnimSite777.name = "waist_preferred_posterior_pt"
-HAnimSite777.DEF = "hanim_waist_preferred_posterior_pt"
 HAnimSite777.translation = [0,0.9,-0.1]
 TouchSensor778 = x3d.TouchSensor()
 TouchSensor778.description = "HAnimSite waist_preferred_posterior_pt 27"
 
 HAnimSite777.children.append(TouchSensor778)
-Shape779 = x3d.Shape()
-Shape779.USE = "HAnimSiteShape"
+Shape779 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite777.children.append(Shape779)
 
 Group767.children.append(HAnimSite777)
-HAnimSite780 = x3d.HAnimSite()
+HAnimSite780 = x3d.HAnimSite(DEF="hanim_navel_pt")
 HAnimSite780.name = "navel_pt"
-HAnimSite780.DEF = "hanim_navel_pt"
 HAnimSite780.translation = [0,0.9,-0.1]
 TouchSensor781 = x3d.TouchSensor()
 TouchSensor781.description = "HAnimSite navel 84"
 
 HAnimSite780.children.append(TouchSensor781)
-Shape782 = x3d.Shape()
-Shape782.USE = "HAnimSiteShape"
+Shape782 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite780.children.append(Shape782)
 
@@ -3704,24 +3163,17 @@ Group767.children.append(HAnimSite780)
 HAnimSegment759.children.append(Group767)
 
 HAnimJoint758.children.append(HAnimSegment759)
-HAnimJoint783 = x3d.HAnimJoint()
+HAnimJoint783 = x3d.HAnimJoint(DEF="hanim_vl4")
 HAnimJoint783.name = "vl4"
-HAnimJoint783.DEF = "hanim_vl4"
 HAnimJoint783.center = [0,0.94972503,-0.013763251]
-HAnimJoint783.ulimit = [0,0,0]
-HAnimJoint783.llimit = [0,0,0]
-HAnimSegment784 = x3d.HAnimSegment()
+HAnimSegment784 = x3d.HAnimSegment(DEF="hanim_l4")
 HAnimSegment784.name = "l4"
-HAnimSegment784.DEF = "hanim_l4"
-Shape785 = x3d.Shape()
-Shape785.DEF = "l4_Shape"
+Shape785 = x3d.Shape(DEF="l4_Shape")
 Appearance786 = x3d.Appearance()
-Material787 = x3d.Material()
-Material787.USE = "SurfaceDefault"
+Material787 = x3d.Material(USE="SurfaceDefault")
 
 Appearance786.material = Material787
-ImageTexture788 = x3d.ImageTexture()
-ImageTexture788.USE = "JinLOA4TextureAtlas"
+ImageTexture788 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance786.texture = ImageTexture788
 
@@ -3742,31 +3194,23 @@ IndexedFaceSet789.texCoord = TextureCoordinate791
 Shape785.geometry = IndexedFaceSet789
 
 HAnimSegment784.children.append(Shape785)
-Group792 = x3d.Group()
-Group792.DEF = "l4_Sites"
-"""None"""
+Group792 = x3d.Group(DEF="l4_Sites")
+Group792.children.append(x3d.Comment("""None"""))
 
 HAnimSegment784.children.append(Group792)
 
 HAnimJoint783.children.append(HAnimSegment784)
-HAnimJoint793 = x3d.HAnimJoint()
+HAnimJoint793 = x3d.HAnimJoint(DEF="hanim_vl3")
 HAnimJoint793.name = "vl3"
-HAnimJoint793.DEF = "hanim_vl3"
 HAnimJoint793.center = [0,0.96592504,-0.013763251]
-HAnimJoint793.ulimit = [0,0,0]
-HAnimJoint793.llimit = [0,0,0]
-HAnimSegment794 = x3d.HAnimSegment()
+HAnimSegment794 = x3d.HAnimSegment(DEF="hanim_l3")
 HAnimSegment794.name = "l3"
-HAnimSegment794.DEF = "hanim_l3"
-Shape795 = x3d.Shape()
-Shape795.DEF = "l3_Shape"
+Shape795 = x3d.Shape(DEF="l3_Shape")
 Appearance796 = x3d.Appearance()
-Material797 = x3d.Material()
-Material797.USE = "SurfaceDefault"
+Material797 = x3d.Material(USE="SurfaceDefault")
 
 Appearance796.material = Material797
-ImageTexture798 = x3d.ImageTexture()
-ImageTexture798.USE = "JinLOA4TextureAtlas"
+ImageTexture798 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance796.texture = ImageTexture798
 
@@ -3787,31 +3231,23 @@ IndexedFaceSet799.texCoord = TextureCoordinate801
 Shape795.geometry = IndexedFaceSet799
 
 HAnimSegment794.children.append(Shape795)
-Group802 = x3d.Group()
-Group802.DEF = "l3_Sites"
-"""None"""
+Group802 = x3d.Group(DEF="l3_Sites")
+Group802.children.append(x3d.Comment("""None"""))
 
 HAnimSegment794.children.append(Group802)
 
 HAnimJoint793.children.append(HAnimSegment794)
-HAnimJoint803 = x3d.HAnimJoint()
+HAnimJoint803 = x3d.HAnimJoint(DEF="hanim_vl2")
 HAnimJoint803.name = "vl2"
-HAnimJoint803.DEF = "hanim_vl2"
 HAnimJoint803.center = [0,0.98235005,-0.013763251]
-HAnimJoint803.ulimit = [0,0,0]
-HAnimJoint803.llimit = [0,0,0]
-HAnimSegment804 = x3d.HAnimSegment()
+HAnimSegment804 = x3d.HAnimSegment(DEF="hanim_l2")
 HAnimSegment804.name = "l2"
-HAnimSegment804.DEF = "hanim_l2"
-Shape805 = x3d.Shape()
-Shape805.DEF = "l2_Shape"
+Shape805 = x3d.Shape(DEF="l2_Shape")
 Appearance806 = x3d.Appearance()
-Material807 = x3d.Material()
-Material807.USE = "SurfaceDefault"
+Material807 = x3d.Material(USE="SurfaceDefault")
 
 Appearance806.material = Material807
-ImageTexture808 = x3d.ImageTexture()
-ImageTexture808.USE = "JinLOA4TextureAtlas"
+ImageTexture808 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance806.texture = ImageTexture808
 
@@ -3832,33 +3268,29 @@ IndexedFaceSet809.texCoord = TextureCoordinate811
 Shape805.geometry = IndexedFaceSet809
 
 HAnimSegment804.children.append(Shape805)
-Group812 = x3d.Group()
-Group812.DEF = "l2_Sites"
-"""(l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016)"""
-HAnimSite813 = x3d.HAnimSite()
+Group812 = x3d.Group(DEF="l2_Sites")
+Group812.children.append(x3d.Comment("""(l_rib_10_pt 0.0871 1.1925 0.0992)"""))
+Group812.children.append(x3d.Comment("""(r_rib_10_pt -0.0711 1.1941 0.1016)"""))
+HAnimSite813 = x3d.HAnimSite(DEF="hanim_l_rib_10_pt")
 HAnimSite813.name = "l_rib_10_pt"
-HAnimSite813.DEF = "hanim_l_rib_10_pt"
 HAnimSite813.translation = [0.09,1,0.04]
 TouchSensor814 = x3d.TouchSensor()
 TouchSensor814.description = "HAnimSite l_rib_10_pt 28"
 
 HAnimSite813.children.append(TouchSensor814)
-Shape815 = x3d.Shape()
-Shape815.USE = "HAnimSiteShape"
+Shape815 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite813.children.append(Shape815)
 
 Group812.children.append(HAnimSite813)
-HAnimSite816 = x3d.HAnimSite()
+HAnimSite816 = x3d.HAnimSite(DEF="hanim_r_rib_10_pt")
 HAnimSite816.name = "r_rib_10_pt"
-HAnimSite816.DEF = "hanim_r_rib_10_pt"
 HAnimSite816.translation = [-0.09,1,0.04]
 TouchSensor817 = x3d.TouchSensor()
 TouchSensor817.description = "HAnimSite r_rib_10_pt 30"
 
 HAnimSite816.children.append(TouchSensor817)
-Shape818 = x3d.Shape()
-Shape818.USE = "HAnimSiteShape"
+Shape818 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite816.children.append(Shape818)
 
@@ -3867,24 +3299,17 @@ Group812.children.append(HAnimSite816)
 HAnimSegment804.children.append(Group812)
 
 HAnimJoint803.children.append(HAnimSegment804)
-HAnimJoint819 = x3d.HAnimJoint()
+HAnimJoint819 = x3d.HAnimJoint(DEF="hanim_vl1")
 HAnimJoint819.name = "vl1"
-HAnimJoint819.DEF = "hanim_vl1"
 HAnimJoint819.center = [0,0.99967504,-0.013763251]
-HAnimJoint819.ulimit = [0,0,0]
-HAnimJoint819.llimit = [0,0,0]
-HAnimSegment820 = x3d.HAnimSegment()
+HAnimSegment820 = x3d.HAnimSegment(DEF="hanim_l1")
 HAnimSegment820.name = "l1"
-HAnimSegment820.DEF = "hanim_l1"
-Shape821 = x3d.Shape()
-Shape821.DEF = "l1_Shape"
+Shape821 = x3d.Shape(DEF="l1_Shape")
 Appearance822 = x3d.Appearance()
-Material823 = x3d.Material()
-Material823.USE = "SurfaceDefault"
+Material823 = x3d.Material(USE="SurfaceDefault")
 
 Appearance822.material = Material823
-ImageTexture824 = x3d.ImageTexture()
-ImageTexture824.USE = "JinLOA4TextureAtlas"
+ImageTexture824 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance822.texture = ImageTexture824
 
@@ -3905,31 +3330,23 @@ IndexedFaceSet825.texCoord = TextureCoordinate827
 Shape821.geometry = IndexedFaceSet825
 
 HAnimSegment820.children.append(Shape821)
-Group828 = x3d.Group()
-Group828.DEF = "l1_Sites"
-"""None"""
+Group828 = x3d.Group(DEF="l1_Sites")
+Group828.children.append(x3d.Comment("""None"""))
 
 HAnimSegment820.children.append(Group828)
 
 HAnimJoint819.children.append(HAnimSegment820)
-HAnimJoint829 = x3d.HAnimJoint()
+HAnimJoint829 = x3d.HAnimJoint(DEF="hanim_vt12")
 HAnimJoint829.name = "vt12"
-HAnimJoint829.DEF = "hanim_vt12"
 HAnimJoint829.center = [0,1.0230751,-0.013763251]
-HAnimJoint829.ulimit = [0,0,0]
-HAnimJoint829.llimit = [0,0,0]
-HAnimSegment830 = x3d.HAnimSegment()
+HAnimSegment830 = x3d.HAnimSegment(DEF="hanim_t12")
 HAnimSegment830.name = "t12"
-HAnimSegment830.DEF = "hanim_t12"
-Shape831 = x3d.Shape()
-Shape831.DEF = "t12_Shape"
+Shape831 = x3d.Shape(DEF="t12_Shape")
 Appearance832 = x3d.Appearance()
-Material833 = x3d.Material()
-Material833.USE = "SurfaceDefault"
+Material833 = x3d.Material(USE="SurfaceDefault")
 
 Appearance832.material = Material833
-ImageTexture834 = x3d.ImageTexture()
-ImageTexture834.USE = "JinLOA4TextureAtlas"
+ImageTexture834 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance832.texture = ImageTexture834
 
@@ -3950,31 +3367,23 @@ IndexedFaceSet835.texCoord = TextureCoordinate837
 Shape831.geometry = IndexedFaceSet835
 
 HAnimSegment830.children.append(Shape831)
-Group838 = x3d.Group()
-Group838.DEF = "t12_Sites"
-"""None"""
+Group838 = x3d.Group(DEF="t12_Sites")
+Group838.children.append(x3d.Comment("""None"""))
 
 HAnimSegment830.children.append(Group838)
 
 HAnimJoint829.children.append(HAnimSegment830)
-HAnimJoint839 = x3d.HAnimJoint()
+HAnimJoint839 = x3d.HAnimJoint(DEF="hanim_vt11")
 HAnimJoint839.name = "vt11"
-HAnimJoint839.DEF = "hanim_vt11"
 HAnimJoint839.center = [0,1.0467,-0.013763251]
-HAnimJoint839.ulimit = [0,0,0]
-HAnimJoint839.llimit = [0,0,0]
-HAnimSegment840 = x3d.HAnimSegment()
+HAnimSegment840 = x3d.HAnimSegment(DEF="hanim_t11")
 HAnimSegment840.name = "t11"
-HAnimSegment840.DEF = "hanim_t11"
-Shape841 = x3d.Shape()
-Shape841.DEF = "t11_Shape"
+Shape841 = x3d.Shape(DEF="t11_Shape")
 Appearance842 = x3d.Appearance()
-Material843 = x3d.Material()
-Material843.USE = "SurfaceDefault"
+Material843 = x3d.Material(USE="SurfaceDefault")
 
 Appearance842.material = Material843
-ImageTexture844 = x3d.ImageTexture()
-ImageTexture844.USE = "JinLOA4TextureAtlas"
+ImageTexture844 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance842.texture = ImageTexture844
 
@@ -3995,31 +3404,23 @@ IndexedFaceSet845.texCoord = TextureCoordinate847
 Shape841.geometry = IndexedFaceSet845
 
 HAnimSegment840.children.append(Shape841)
-Group848 = x3d.Group()
-Group848.DEF = "t11_Sites"
-"""None"""
+Group848 = x3d.Group(DEF="t11_Sites")
+Group848.children.append(x3d.Comment("""None"""))
 
 HAnimSegment840.children.append(Group848)
 
 HAnimJoint839.children.append(HAnimSegment840)
-HAnimJoint849 = x3d.HAnimJoint()
+HAnimJoint849 = x3d.HAnimJoint(DEF="hanim_vt10")
 HAnimJoint849.name = "vt10"
-HAnimJoint849.DEF = "hanim_vt10"
 HAnimJoint849.center = [0,1.0638,-0.013785751]
-HAnimJoint849.ulimit = [0,0,0]
-HAnimJoint849.llimit = [0,0,0]
-HAnimSegment850 = x3d.HAnimSegment()
+HAnimSegment850 = x3d.HAnimSegment(DEF="hanim_t10")
 HAnimSegment850.name = "t10"
-HAnimSegment850.DEF = "hanim_t10"
-Shape851 = x3d.Shape()
-Shape851.DEF = "t10_Shape"
+Shape851 = x3d.Shape(DEF="t10_Shape")
 Appearance852 = x3d.Appearance()
-Material853 = x3d.Material()
-Material853.USE = "SurfaceDefault"
+Material853 = x3d.Material(USE="SurfaceDefault")
 
 Appearance852.material = Material853
-ImageTexture854 = x3d.ImageTexture()
-ImageTexture854.USE = "JinLOA4TextureAtlas"
+ImageTexture854 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance852.texture = ImageTexture854
 
@@ -4040,33 +3441,29 @@ IndexedFaceSet855.texCoord = TextureCoordinate857
 Shape851.geometry = IndexedFaceSet855
 
 HAnimSegment850.children.append(Shape851)
-Group858 = x3d.Group()
-Group858.DEF = "t10_Sites"
-"""(substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z)"""
-HAnimSite859 = x3d.HAnimSite()
+Group858 = x3d.Group(DEF="t10_Sites")
+Group858.children.append(x3d.Comment("""(substernale_pt 0.0085 1.2995 0.1147)"""))
+Group858.children.append(x3d.Comment("""(mesosternale_pt x y z)"""))
+HAnimSite859 = x3d.HAnimSite(DEF="hanim_substernale_pt")
 HAnimSite859.name = "substernale_pt"
-HAnimSite859.DEF = "hanim_substernale_pt"
 HAnimSite859.translation = [0,1.08,0.076]
 TouchSensor860 = x3d.TouchSensor()
 TouchSensor860.description = "HAnimSite substernale_pt 13"
 
 HAnimSite859.children.append(TouchSensor860)
-Shape861 = x3d.Shape()
-Shape861.USE = "HAnimSiteShape"
+Shape861 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite859.children.append(Shape861)
 
 Group858.children.append(HAnimSite859)
-HAnimSite862 = x3d.HAnimSite()
+HAnimSite862 = x3d.HAnimSite(DEF="hanim_mesosternale_pt")
 HAnimSite862.name = "mesosternale_pt"
-HAnimSite862.DEF = "hanim_mesosternale_pt"
 HAnimSite862.translation = [0,1.15,0.076]
 TouchSensor863 = x3d.TouchSensor()
 TouchSensor863.description = "HAnimSite mesosternale_pt 88"
 
 HAnimSite862.children.append(TouchSensor863)
-Shape864 = x3d.Shape()
-Shape864.USE = "HAnimSiteShape"
+Shape864 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite862.children.append(Shape864)
 
@@ -4075,24 +3472,17 @@ Group858.children.append(HAnimSite862)
 HAnimSegment850.children.append(Group858)
 
 HAnimJoint849.children.append(HAnimSegment850)
-HAnimJoint865 = x3d.HAnimJoint()
+HAnimJoint865 = x3d.HAnimJoint(DEF="hanim_vt9")
 HAnimJoint865.name = "vt9"
-HAnimJoint865.DEF = "hanim_vt9"
 HAnimJoint865.center = [0,1.078425,-0.013763251]
-HAnimJoint865.ulimit = [0,0,0]
-HAnimJoint865.llimit = [0,0,0]
-HAnimSegment866 = x3d.HAnimSegment()
+HAnimSegment866 = x3d.HAnimSegment(DEF="hanim_t9")
 HAnimSegment866.name = "t9"
-HAnimSegment866.DEF = "hanim_t9"
-Shape867 = x3d.Shape()
-Shape867.DEF = "t9_Shape"
+Shape867 = x3d.Shape(DEF="t9_Shape")
 Appearance868 = x3d.Appearance()
-Material869 = x3d.Material()
-Material869.USE = "SurfaceDefault"
+Material869 = x3d.Material(USE="SurfaceDefault")
 
 Appearance868.material = Material869
-ImageTexture870 = x3d.ImageTexture()
-ImageTexture870.USE = "JinLOA4TextureAtlas"
+ImageTexture870 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance868.texture = ImageTexture870
 
@@ -4113,75 +3503,68 @@ IndexedFaceSet871.texCoord = TextureCoordinate873
 Shape867.geometry = IndexedFaceSet871
 
 HAnimSegment866.children.append(Shape867)
-Group874 = x3d.Group()
-Group874.DEF = "t9_Sites"
-"""(l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z)"""
-HAnimSite875 = x3d.HAnimSite()
+Group874 = x3d.Group(DEF="t9_Sites")
+Group874.children.append(x3d.Comment("""(l_thelion_pt 0.0918 1.3382 0.1192)"""))
+Group874.children.append(x3d.Comment("""(r_thelion_pt -0.0736 1.3385 0.1217)"""))
+Group874.children.append(x3d.Comment("""(rear_center_midsagittal_plane_pt x y z)"""))
+Group874.children.append(x3d.Comment("""(l_chest_midsagittal_plane_pt x y z)"""))
+Group874.children.append(x3d.Comment("""(r_chest_midsagittal_plane_pt x y z)"""))
+HAnimSite875 = x3d.HAnimSite(DEF="hanim_l_thelion_pt")
 HAnimSite875.name = "l_thelion_pt"
-HAnimSite875.DEF = "hanim_l_thelion_pt"
 HAnimSite875.translation = [0.07,1.12,0.09]
 TouchSensor876 = x3d.TouchSensor()
 TouchSensor876.description = "HAnimSite l_thelion_pt 29"
 
 HAnimSite875.children.append(TouchSensor876)
-Shape877 = x3d.Shape()
-Shape877.USE = "HAnimSiteShape"
+Shape877 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite875.children.append(Shape877)
 
 Group874.children.append(HAnimSite875)
-HAnimSite878 = x3d.HAnimSite()
+HAnimSite878 = x3d.HAnimSite(DEF="hanim_r_thelion_pt")
 HAnimSite878.name = "r_thelion_pt"
-HAnimSite878.DEF = "hanim_r_thelion_pt"
 HAnimSite878.translation = [-0.07,1.12,0.09]
 TouchSensor879 = x3d.TouchSensor()
 TouchSensor879.description = "HAnimSite r_thelion_pt 31"
 
 HAnimSite878.children.append(TouchSensor879)
-Shape880 = x3d.Shape()
-Shape880.USE = "HAnimSiteShape"
+Shape880 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite878.children.append(Shape880)
 
 Group874.children.append(HAnimSite878)
-HAnimSite881 = x3d.HAnimSite()
+HAnimSite881 = x3d.HAnimSite(DEF="hanim_rear_center_midsagittal_plane_pt")
 HAnimSite881.name = "rear_center_midsagittal_plane_pt"
-HAnimSite881.DEF = "hanim_rear_center_midsagittal_plane_pt"
 HAnimSite881.translation = [0,1.1,-0.1]
 TouchSensor882 = x3d.TouchSensor()
 TouchSensor882.description = "HAnimSite rear_center_midsagittal_plane_pt 92"
 
 HAnimSite881.children.append(TouchSensor882)
-Shape883 = x3d.Shape()
-Shape883.USE = "HAnimSiteShape"
+Shape883 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite881.children.append(Shape883)
 
 Group874.children.append(HAnimSite881)
-HAnimSite884 = x3d.HAnimSite()
+HAnimSite884 = x3d.HAnimSite(DEF="hanim_l_chest_midsagittal_plane_pt")
 HAnimSite884.name = "l_chest_midsagittal_plane_pt"
-HAnimSite884.DEF = "hanim_l_chest_midsagittal_plane_pt"
 HAnimSite884.translation = [0.13,1.12,0]
 TouchSensor885 = x3d.TouchSensor()
 TouchSensor885.description = "HAnimSite l_chest_midsagittal_plane_pt 94"
 
 HAnimSite884.children.append(TouchSensor885)
-Shape886 = x3d.Shape()
-Shape886.USE = "HAnimSiteShapeB"
+Shape886 = x3d.Shape(USE="HAnimSiteShapeB")
 
 HAnimSite884.children.append(Shape886)
 
 Group874.children.append(HAnimSite884)
-HAnimSite887 = x3d.HAnimSite()
+HAnimSite887 = x3d.HAnimSite(DEF="hanim_r_chest_midsagittal_plane_pt")
 HAnimSite887.name = "r_chest_midsagittal_plane_pt"
-HAnimSite887.DEF = "hanim_r_chest_midsagittal_plane_pt"
 HAnimSite887.translation = [-0.13,1.12,0]
 TouchSensor888 = x3d.TouchSensor()
 TouchSensor888.description = "HAnimSite r_chest_midsagittal_plane_pt 95"
 
 HAnimSite887.children.append(TouchSensor888)
-Shape889 = x3d.Shape()
-Shape889.USE = "HAnimSiteShape"
+Shape889 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite887.children.append(Shape889)
 
@@ -4190,24 +3573,17 @@ Group874.children.append(HAnimSite887)
 HAnimSegment866.children.append(Group874)
 
 HAnimJoint865.children.append(HAnimSegment866)
-HAnimJoint890 = x3d.HAnimJoint()
+HAnimJoint890 = x3d.HAnimJoint(DEF="hanim_vt8")
 HAnimJoint890.name = "vt8"
-HAnimJoint890.DEF = "hanim_vt8"
 HAnimJoint890.center = [0,1.0930501,-0.013763251]
-HAnimJoint890.ulimit = [0,0,0]
-HAnimJoint890.llimit = [0,0,0]
-HAnimSegment891 = x3d.HAnimSegment()
+HAnimSegment891 = x3d.HAnimSegment(DEF="hanim_t8")
 HAnimSegment891.name = "t8"
-HAnimSegment891.DEF = "hanim_t8"
-Shape892 = x3d.Shape()
-Shape892.DEF = "t8_Shape"
+Shape892 = x3d.Shape(DEF="t8_Shape")
 Appearance893 = x3d.Appearance()
-Material894 = x3d.Material()
-Material894.USE = "SurfaceDefault"
+Material894 = x3d.Material(USE="SurfaceDefault")
 
 Appearance893.material = Material894
-ImageTexture895 = x3d.ImageTexture()
-ImageTexture895.USE = "JinLOA4TextureAtlas"
+ImageTexture895 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance893.texture = ImageTexture895
 
@@ -4228,31 +3604,23 @@ IndexedFaceSet896.texCoord = TextureCoordinate898
 Shape892.geometry = IndexedFaceSet896
 
 HAnimSegment891.children.append(Shape892)
-Group899 = x3d.Group()
-Group899.DEF = "t8_Sites"
-"""None"""
+Group899 = x3d.Group(DEF="t8_Sites")
+Group899.children.append(x3d.Comment("""None"""))
 
 HAnimSegment891.children.append(Group899)
 
 HAnimJoint890.children.append(HAnimSegment891)
-HAnimJoint900 = x3d.HAnimJoint()
+HAnimJoint900 = x3d.HAnimJoint(DEF="hanim_vt7")
 HAnimJoint900.name = "vt7"
-HAnimJoint900.DEF = "hanim_vt7"
 HAnimJoint900.center = [0,1.1088,-0.013763251]
-HAnimJoint900.ulimit = [0,0,0]
-HAnimJoint900.llimit = [0,0,0]
-HAnimSegment901 = x3d.HAnimSegment()
+HAnimSegment901 = x3d.HAnimSegment(DEF="hanim_t7")
 HAnimSegment901.name = "t7"
-HAnimSegment901.DEF = "hanim_t7"
-Shape902 = x3d.Shape()
-Shape902.DEF = "t7_Shape"
+Shape902 = x3d.Shape(DEF="t7_Shape")
 Appearance903 = x3d.Appearance()
-Material904 = x3d.Material()
-Material904.USE = "SurfaceDefault"
+Material904 = x3d.Material(USE="SurfaceDefault")
 
 Appearance903.material = Material904
-ImageTexture905 = x3d.ImageTexture()
-ImageTexture905.USE = "JinLOA4TextureAtlas"
+ImageTexture905 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance903.texture = ImageTexture905
 
@@ -4273,31 +3641,23 @@ IndexedFaceSet906.texCoord = TextureCoordinate908
 Shape902.geometry = IndexedFaceSet906
 
 HAnimSegment901.children.append(Shape902)
-Group909 = x3d.Group()
-Group909.DEF = "t7_Sites"
-"""None"""
+Group909 = x3d.Group(DEF="t7_Sites")
+Group909.children.append(x3d.Comment("""None"""))
 
 HAnimSegment901.children.append(Group909)
 
 HAnimJoint900.children.append(HAnimSegment901)
-HAnimJoint910 = x3d.HAnimJoint()
+HAnimJoint910 = x3d.HAnimJoint(DEF="hanim_vt6")
 HAnimJoint910.name = "vt6"
-HAnimJoint910.DEF = "hanim_vt6"
 HAnimJoint910.center = [0,1.1216251,-0.013763251]
-HAnimJoint910.ulimit = [0,0,0]
-HAnimJoint910.llimit = [0,0,0]
-HAnimSegment911 = x3d.HAnimSegment()
+HAnimSegment911 = x3d.HAnimSegment(DEF="hanim_t6")
 HAnimSegment911.name = "t6"
-HAnimSegment911.DEF = "hanim_t6"
-Shape912 = x3d.Shape()
-Shape912.DEF = "t6_Shape"
+Shape912 = x3d.Shape(DEF="t6_Shape")
 Appearance913 = x3d.Appearance()
-Material914 = x3d.Material()
-Material914.USE = "SurfaceDefault"
+Material914 = x3d.Material(USE="SurfaceDefault")
 
 Appearance913.material = Material914
-ImageTexture915 = x3d.ImageTexture()
-ImageTexture915.USE = "JinLOA4TextureAtlas"
+ImageTexture915 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance913.texture = ImageTexture915
 
@@ -4318,31 +3678,23 @@ IndexedFaceSet916.texCoord = TextureCoordinate918
 Shape912.geometry = IndexedFaceSet916
 
 HAnimSegment911.children.append(Shape912)
-Group919 = x3d.Group()
-Group919.DEF = "t6_Sites"
-"""None"""
+Group919 = x3d.Group(DEF="t6_Sites")
+Group919.children.append(x3d.Comment("""None"""))
 
 HAnimSegment911.children.append(Group919)
 
 HAnimJoint910.children.append(HAnimSegment911)
-HAnimJoint920 = x3d.HAnimJoint()
+HAnimJoint920 = x3d.HAnimJoint(DEF="hanim_vt5")
 HAnimJoint920.name = "vt5"
-HAnimJoint920.DEF = "hanim_vt5"
 HAnimJoint920.center = [0,1.13715,-0.013763251]
-HAnimJoint920.ulimit = [0,0,0]
-HAnimJoint920.llimit = [0,0,0]
-HAnimSegment921 = x3d.HAnimSegment()
+HAnimSegment921 = x3d.HAnimSegment(DEF="hanim_t5")
 HAnimSegment921.name = "t5"
-HAnimSegment921.DEF = "hanim_t5"
-Shape922 = x3d.Shape()
-Shape922.DEF = "t5_Shape"
+Shape922 = x3d.Shape(DEF="t5_Shape")
 Appearance923 = x3d.Appearance()
-Material924 = x3d.Material()
-Material924.USE = "SurfaceDefault"
+Material924 = x3d.Material(USE="SurfaceDefault")
 
 Appearance923.material = Material924
-ImageTexture925 = x3d.ImageTexture()
-ImageTexture925.USE = "JinLOA4TextureAtlas"
+ImageTexture925 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance923.texture = ImageTexture925
 
@@ -4363,31 +3715,23 @@ IndexedFaceSet926.texCoord = TextureCoordinate928
 Shape922.geometry = IndexedFaceSet926
 
 HAnimSegment921.children.append(Shape922)
-Group929 = x3d.Group()
-Group929.DEF = "t5_Sites"
-"""None"""
+Group929 = x3d.Group(DEF="t5_Sites")
+Group929.children.append(x3d.Comment("""None"""))
 
 HAnimSegment921.children.append(Group929)
 
 HAnimJoint920.children.append(HAnimSegment921)
-HAnimJoint930 = x3d.HAnimJoint()
+HAnimJoint930 = x3d.HAnimJoint(DEF="hanim_vt4")
 HAnimJoint930.name = "vt4"
-HAnimJoint930.DEF = "hanim_vt4"
 HAnimJoint930.center = [0,1.1524501,-0.013763251]
-HAnimJoint930.ulimit = [0,0,0]
-HAnimJoint930.llimit = [0,0,0]
-HAnimSegment931 = x3d.HAnimSegment()
+HAnimSegment931 = x3d.HAnimSegment(DEF="hanim_t4")
 HAnimSegment931.name = "t4"
-HAnimSegment931.DEF = "hanim_t4"
-Shape932 = x3d.Shape()
-Shape932.DEF = "t4_Shape"
+Shape932 = x3d.Shape(DEF="t4_Shape")
 Appearance933 = x3d.Appearance()
-Material934 = x3d.Material()
-Material934.USE = "SurfaceDefault"
+Material934 = x3d.Material(USE="SurfaceDefault")
 
 Appearance933.material = Material934
-ImageTexture935 = x3d.ImageTexture()
-ImageTexture935.USE = "JinLOA4TextureAtlas"
+ImageTexture935 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance933.texture = ImageTexture935
 
@@ -4408,31 +3752,23 @@ IndexedFaceSet936.texCoord = TextureCoordinate938
 Shape932.geometry = IndexedFaceSet936
 
 HAnimSegment931.children.append(Shape932)
-Group939 = x3d.Group()
-Group939.DEF = "t4_Sites"
-"""None"""
+Group939 = x3d.Group(DEF="t4_Sites")
+Group939.children.append(x3d.Comment("""None"""))
 
 HAnimSegment931.children.append(Group939)
 
 HAnimJoint930.children.append(HAnimSegment931)
-HAnimJoint940 = x3d.HAnimJoint()
+HAnimJoint940 = x3d.HAnimJoint(DEF="hanim_vt3")
 HAnimJoint940.name = "vt3"
-HAnimJoint940.DEF = "hanim_vt3"
 HAnimJoint940.center = [0,1.1709001,-0.013763251]
-HAnimJoint940.ulimit = [0,0,0]
-HAnimJoint940.llimit = [0,0,0]
-HAnimSegment941 = x3d.HAnimSegment()
+HAnimSegment941 = x3d.HAnimSegment(DEF="hanim_t3")
 HAnimSegment941.name = "t3"
-HAnimSegment941.DEF = "hanim_t3"
-Shape942 = x3d.Shape()
-Shape942.DEF = "t3_Shape"
+Shape942 = x3d.Shape(DEF="t3_Shape")
 Appearance943 = x3d.Appearance()
-Material944 = x3d.Material()
-Material944.USE = "SurfaceDefault"
+Material944 = x3d.Material(USE="SurfaceDefault")
 
 Appearance943.material = Material944
-ImageTexture945 = x3d.ImageTexture()
-ImageTexture945.USE = "JinLOA4TextureAtlas"
+ImageTexture945 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance943.texture = ImageTexture945
 
@@ -4453,31 +3789,23 @@ IndexedFaceSet946.texCoord = TextureCoordinate948
 Shape942.geometry = IndexedFaceSet946
 
 HAnimSegment941.children.append(Shape942)
-Group949 = x3d.Group()
-Group949.DEF = "t3_Sites"
-"""None"""
+Group949 = x3d.Group(DEF="t3_Sites")
+Group949.children.append(x3d.Comment("""None"""))
 
 HAnimSegment941.children.append(Group949)
 
 HAnimJoint940.children.append(HAnimSegment941)
-HAnimJoint950 = x3d.HAnimJoint()
+HAnimJoint950 = x3d.HAnimJoint(DEF="hanim_vt2")
 HAnimJoint950.name = "vt2"
-HAnimJoint950.DEF = "hanim_vt2"
 HAnimJoint950.center = [0,1.19565,-0.013785751]
-HAnimJoint950.ulimit = [0,0,0]
-HAnimJoint950.llimit = [0,0,0]
-HAnimSegment951 = x3d.HAnimSegment()
+HAnimSegment951 = x3d.HAnimSegment(DEF="hanim_t2")
 HAnimSegment951.name = "t2"
-HAnimSegment951.DEF = "hanim_t2"
-Shape952 = x3d.Shape()
-Shape952.DEF = "t2_Shape"
+Shape952 = x3d.Shape(DEF="t2_Shape")
 Appearance953 = x3d.Appearance()
-Material954 = x3d.Material()
-Material954.USE = "SurfaceDefault"
+Material954 = x3d.Material(USE="SurfaceDefault")
 
 Appearance953.material = Material954
-ImageTexture955 = x3d.ImageTexture()
-ImageTexture955.USE = "JinLOA4TextureAtlas"
+ImageTexture955 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance953.texture = ImageTexture955
 
@@ -4498,31 +3826,23 @@ IndexedFaceSet956.texCoord = TextureCoordinate958
 Shape952.geometry = IndexedFaceSet956
 
 HAnimSegment951.children.append(Shape952)
-Group959 = x3d.Group()
-Group959.DEF = "t2_Sites"
-"""None"""
+Group959 = x3d.Group(DEF="t2_Sites")
+Group959.children.append(x3d.Comment("""None"""))
 
 HAnimSegment951.children.append(Group959)
 
 HAnimJoint950.children.append(HAnimSegment951)
-HAnimJoint960 = x3d.HAnimJoint()
+HAnimJoint960 = x3d.HAnimJoint(DEF="hanim_vt1")
 HAnimJoint960.name = "vt1"
-HAnimJoint960.DEF = "hanim_vt1"
 HAnimJoint960.center = [0,1.22,-0.0138]
-HAnimJoint960.ulimit = [0,0,0]
-HAnimJoint960.llimit = [0,0,0]
-HAnimSegment961 = x3d.HAnimSegment()
+HAnimSegment961 = x3d.HAnimSegment(DEF="hanim_t1")
 HAnimSegment961.name = "t1"
-HAnimSegment961.DEF = "hanim_t1"
-Shape962 = x3d.Shape()
-Shape962.DEF = "t1_Shape"
+Shape962 = x3d.Shape(DEF="t1_Shape")
 Appearance963 = x3d.Appearance()
-Material964 = x3d.Material()
-Material964.USE = "SurfaceDefault"
+Material964 = x3d.Material(USE="SurfaceDefault")
 
 Appearance963.material = Material964
-ImageTexture965 = x3d.ImageTexture()
-ImageTexture965.USE = "JinLOA4TextureAtlas"
+ImageTexture965 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance963.texture = ImageTexture965
 
@@ -4543,33 +3863,29 @@ IndexedFaceSet966.texCoord = TextureCoordinate968
 Shape962.geometry = IndexedFaceSet966
 
 HAnimSegment961.children.append(Shape962)
-Group969 = x3d.Group()
-Group969.DEF = "t1_Sites"
-"""(suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815)"""
-HAnimSite970 = x3d.HAnimSite()
+Group969 = x3d.Group(DEF="t1_Sites")
+Group969.children.append(x3d.Comment("""(suprasternale_pt 0.0084 1.4714 0.0551)"""))
+Group969.children.append(x3d.Comment("""(cervicale_pt 0.0064 1.520 -0.0815)"""))
+HAnimSite970 = x3d.HAnimSite(DEF="hanim_suprasternale_pt")
 HAnimSite970.name = "suprasternale_pt"
-HAnimSite970.DEF = "hanim_suprasternale_pt"
 HAnimSite970.translation = [0,1.22,0.08]
 TouchSensor971 = x3d.TouchSensor()
 TouchSensor971.description = "HAnimSite suprasternale_pt 12"
 
 HAnimSite970.children.append(TouchSensor971)
-Shape972 = x3d.Shape()
-Shape972.USE = "HAnimSiteShape"
+Shape972 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite970.children.append(Shape972)
 
 Group969.children.append(HAnimSite970)
-HAnimSite973 = x3d.HAnimSite()
+HAnimSite973 = x3d.HAnimSite(DEF="hanim_cervicale_pt")
 HAnimSite973.name = "cervicale_pt"
-HAnimSite973.DEF = "hanim_cervicale_pt"
 HAnimSite973.translation = [0,1.22,-0.08]
 TouchSensor974 = x3d.TouchSensor()
 TouchSensor974.description = "HAnimSite cervicale_pt 10"
 
 HAnimSite973.children.append(TouchSensor974)
-Shape975 = x3d.Shape()
-Shape975.USE = "HAnimSiteShape"
+Shape975 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite973.children.append(Shape975)
 
@@ -4578,24 +3894,17 @@ Group969.children.append(HAnimSite973)
 HAnimSegment961.children.append(Group969)
 
 HAnimJoint960.children.append(HAnimSegment961)
-HAnimJoint976 = x3d.HAnimJoint()
+HAnimJoint976 = x3d.HAnimJoint(DEF="hanim_vc7")
 HAnimJoint976.name = "vc7"
-HAnimJoint976.DEF = "hanim_vc7"
 HAnimJoint976.center = [0,1.245375,-0.015063751]
-HAnimJoint976.ulimit = [0,0,0]
-HAnimJoint976.llimit = [0,0,0]
-HAnimSegment977 = x3d.HAnimSegment()
+HAnimSegment977 = x3d.HAnimSegment(DEF="hanim_c7")
 HAnimSegment977.name = "c7"
-HAnimSegment977.DEF = "hanim_c7"
-Shape978 = x3d.Shape()
-Shape978.DEF = "c7_Shape"
+Shape978 = x3d.Shape(DEF="c7_Shape")
 Appearance979 = x3d.Appearance()
-Material980 = x3d.Material()
-Material980.USE = "SurfaceDefault"
+Material980 = x3d.Material(USE="SurfaceDefault")
 
 Appearance979.material = Material980
-ImageTexture981 = x3d.ImageTexture()
-ImageTexture981.USE = "JinLOA4TextureAtlas"
+ImageTexture981 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance979.texture = ImageTexture981
 
@@ -4616,33 +3925,29 @@ IndexedFaceSet982.texCoord = TextureCoordinate984
 Shape978.geometry = IndexedFaceSet982
 
 HAnimSegment977.children.append(Shape978)
-Group985 = x3d.Group()
-Group985.DEF = "c7_Sites"
-"""(l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220)"""
-HAnimSite986 = x3d.HAnimSite()
+Group985 = x3d.Group(DEF="c7_Sites")
+Group985.children.append(x3d.Comment("""(l_neck_base_pt 0.0646 1.5141 -0.0380)"""))
+Group985.children.append(x3d.Comment("""(r_neck_base_pt -0.0419 1.5149 -0.0220)"""))
+HAnimSite986 = x3d.HAnimSite(DEF="hanim_l_neck_base_pt")
 HAnimSite986.name = "l_neck_base_pt"
-HAnimSite986.DEF = "hanim_l_neck_base_pt"
 HAnimSite986.translation = [0.06,1.26,0]
 TouchSensor987 = x3d.TouchSensor()
 TouchSensor987.description = "HAnimSite l_neck_base_pt 82"
 
 HAnimSite986.children.append(TouchSensor987)
-Shape988 = x3d.Shape()
-Shape988.USE = "HAnimSiteShape"
+Shape988 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite986.children.append(Shape988)
 
 Group985.children.append(HAnimSite986)
-HAnimSite989 = x3d.HAnimSite()
+HAnimSite989 = x3d.HAnimSite(DEF="hanim_r_neck_base_pt")
 HAnimSite989.name = "r_neck_base_pt"
-HAnimSite989.DEF = "hanim_r_neck_base_pt"
 HAnimSite989.translation = [-0.06,1.26,0]
 TouchSensor990 = x3d.TouchSensor()
 TouchSensor990.description = "HAnimSite r_neck_base_pt 83"
 
 HAnimSite989.children.append(TouchSensor990)
-Shape991 = x3d.Shape()
-Shape991.USE = "HAnimSiteShape"
+Shape991 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite989.children.append(Shape991)
 
@@ -4651,24 +3956,17 @@ Group985.children.append(HAnimSite989)
 HAnimSegment977.children.append(Group985)
 
 HAnimJoint976.children.append(HAnimSegment977)
-HAnimJoint992 = x3d.HAnimJoint()
+HAnimJoint992 = x3d.HAnimJoint(DEF="hanim_vc6")
 HAnimJoint992.name = "vc6"
-HAnimJoint992.DEF = "hanim_vc6"
 HAnimJoint992.center = [0,1.2575251,-0.015063751]
-HAnimJoint992.ulimit = [0,0,0]
-HAnimJoint992.llimit = [0,0,0]
-HAnimSegment993 = x3d.HAnimSegment()
+HAnimSegment993 = x3d.HAnimSegment(DEF="hanim_c6")
 HAnimSegment993.name = "c6"
-HAnimSegment993.DEF = "hanim_c6"
-Shape994 = x3d.Shape()
-Shape994.DEF = "c6_Shape"
+Shape994 = x3d.Shape(DEF="c6_Shape")
 Appearance995 = x3d.Appearance()
-Material996 = x3d.Material()
-Material996.USE = "SurfaceDefault"
+Material996 = x3d.Material(USE="SurfaceDefault")
 
 Appearance995.material = Material996
-ImageTexture997 = x3d.ImageTexture()
-ImageTexture997.USE = "JinLOA4TextureAtlas"
+ImageTexture997 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance995.texture = ImageTexture997
 
@@ -4689,31 +3987,23 @@ IndexedFaceSet998.texCoord = TextureCoordinate1000
 Shape994.geometry = IndexedFaceSet998
 
 HAnimSegment993.children.append(Shape994)
-Group1001 = x3d.Group()
-Group1001.DEF = "c6_Sites"
-"""None"""
+Group1001 = x3d.Group(DEF="c6_Sites")
+Group1001.children.append(x3d.Comment("""None"""))
 
 HAnimSegment993.children.append(Group1001)
 
 HAnimJoint992.children.append(HAnimSegment993)
-HAnimJoint1002 = x3d.HAnimJoint()
+HAnimJoint1002 = x3d.HAnimJoint(DEF="hanim_vc5")
 HAnimJoint1002.name = "vc5"
-HAnimJoint1002.DEF = "hanim_vc5"
 HAnimJoint1002.center = [0,1.2699,-0.015063751]
-HAnimJoint1002.ulimit = [0,0,0]
-HAnimJoint1002.llimit = [0,0,0]
-HAnimSegment1003 = x3d.HAnimSegment()
+HAnimSegment1003 = x3d.HAnimSegment(DEF="hanim_c5")
 HAnimSegment1003.name = "c5"
-HAnimSegment1003.DEF = "hanim_c5"
-Shape1004 = x3d.Shape()
-Shape1004.DEF = "c5_Shape"
+Shape1004 = x3d.Shape(DEF="c5_Shape")
 Appearance1005 = x3d.Appearance()
-Material1006 = x3d.Material()
-Material1006.USE = "SurfaceDefault"
+Material1006 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1005.material = Material1006
-ImageTexture1007 = x3d.ImageTexture()
-ImageTexture1007.USE = "JinLOA4TextureAtlas"
+ImageTexture1007 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1005.texture = ImageTexture1007
 
@@ -4734,31 +4024,23 @@ IndexedFaceSet1008.texCoord = TextureCoordinate1010
 Shape1004.geometry = IndexedFaceSet1008
 
 HAnimSegment1003.children.append(Shape1004)
-Group1011 = x3d.Group()
-Group1011.DEF = "c5_Sites"
-"""None"""
+Group1011 = x3d.Group(DEF="c5_Sites")
+Group1011.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1003.children.append(Group1011)
 
 HAnimJoint1002.children.append(HAnimSegment1003)
-HAnimJoint1012 = x3d.HAnimJoint()
+HAnimJoint1012 = x3d.HAnimJoint(DEF="hanim_vc4")
 HAnimJoint1012.name = "vc4"
-HAnimJoint1012.DEF = "hanim_vc4"
 HAnimJoint1012.center = [0,1.2822751,-0.015063751]
-HAnimJoint1012.ulimit = [0,0,0]
-HAnimJoint1012.llimit = [0,0,0]
-HAnimSegment1013 = x3d.HAnimSegment()
+HAnimSegment1013 = x3d.HAnimSegment(DEF="hanim_c4")
 HAnimSegment1013.name = "c4"
-HAnimSegment1013.DEF = "hanim_c4"
-Shape1014 = x3d.Shape()
-Shape1014.DEF = "c4_Shape"
+Shape1014 = x3d.Shape(DEF="c4_Shape")
 Appearance1015 = x3d.Appearance()
-Material1016 = x3d.Material()
-Material1016.USE = "SurfaceDefault"
+Material1016 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1015.material = Material1016
-ImageTexture1017 = x3d.ImageTexture()
-ImageTexture1017.USE = "JinLOA4TextureAtlas"
+ImageTexture1017 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1015.texture = ImageTexture1017
 
@@ -4779,31 +4061,23 @@ IndexedFaceSet1018.texCoord = TextureCoordinate1020
 Shape1014.geometry = IndexedFaceSet1018
 
 HAnimSegment1013.children.append(Shape1014)
-Group1021 = x3d.Group()
-Group1021.DEF = "c4_Sites"
-"""None"""
+Group1021 = x3d.Group(DEF="c4_Sites")
+Group1021.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1013.children.append(Group1021)
 
 HAnimJoint1012.children.append(HAnimSegment1013)
-HAnimJoint1022 = x3d.HAnimJoint()
+HAnimJoint1022 = x3d.HAnimJoint(DEF="hanim_vc3")
 HAnimJoint1022.name = "vc3"
-HAnimJoint1022.DEF = "hanim_vc3"
 HAnimJoint1022.center = [0,1.2951001,-0.015063751]
-HAnimJoint1022.ulimit = [0,0,0]
-HAnimJoint1022.llimit = [0,0,0]
-HAnimSegment1023 = x3d.HAnimSegment()
+HAnimSegment1023 = x3d.HAnimSegment(DEF="hanim_c3")
 HAnimSegment1023.name = "c3"
-HAnimSegment1023.DEF = "hanim_c3"
-Shape1024 = x3d.Shape()
-Shape1024.DEF = "c3_Shape"
+Shape1024 = x3d.Shape(DEF="c3_Shape")
 Appearance1025 = x3d.Appearance()
-Material1026 = x3d.Material()
-Material1026.USE = "SurfaceDefault"
+Material1026 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1025.material = Material1026
-ImageTexture1027 = x3d.ImageTexture()
-ImageTexture1027.USE = "JinLOA4TextureAtlas"
+ImageTexture1027 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1025.texture = ImageTexture1027
 
@@ -4824,31 +4098,23 @@ IndexedFaceSet1028.texCoord = TextureCoordinate1030
 Shape1024.geometry = IndexedFaceSet1028
 
 HAnimSegment1023.children.append(Shape1024)
-Group1031 = x3d.Group()
-Group1031.DEF = "c3_Sites"
-"""None"""
+Group1031 = x3d.Group(DEF="c3_Sites")
+Group1031.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1023.children.append(Group1031)
 
 HAnimJoint1022.children.append(HAnimSegment1023)
-HAnimJoint1032 = x3d.HAnimJoint()
+HAnimJoint1032 = x3d.HAnimJoint(DEF="hanim_vc2")
 HAnimJoint1032.name = "vc2"
-HAnimJoint1032.DEF = "hanim_vc2"
 HAnimJoint1032.center = [0,1.307,-0.015]
-HAnimJoint1032.ulimit = [0,0,0]
-HAnimJoint1032.llimit = [0,0,0]
-HAnimSegment1033 = x3d.HAnimSegment()
+HAnimSegment1033 = x3d.HAnimSegment(DEF="hanim_c2")
 HAnimSegment1033.name = "c2"
-HAnimSegment1033.DEF = "hanim_c2"
-Shape1034 = x3d.Shape()
-Shape1034.DEF = "c2_Shape"
+Shape1034 = x3d.Shape(DEF="c2_Shape")
 Appearance1035 = x3d.Appearance()
-Material1036 = x3d.Material()
-Material1036.USE = "SurfaceDefault"
+Material1036 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1035.material = Material1036
-ImageTexture1037 = x3d.ImageTexture()
-ImageTexture1037.USE = "JinLOA4TextureAtlas"
+ImageTexture1037 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1035.texture = ImageTexture1037
 
@@ -4869,19 +4135,16 @@ IndexedFaceSet1038.texCoord = TextureCoordinate1040
 Shape1034.geometry = IndexedFaceSet1038
 
 HAnimSegment1033.children.append(Shape1034)
-Group1041 = x3d.Group()
-Group1041.DEF = "c2_Sites"
-"""(adams_apple x y z)"""
-HAnimSite1042 = x3d.HAnimSite()
+Group1041 = x3d.Group(DEF="c2_Sites")
+Group1041.children.append(x3d.Comment("""(adams_apple x y z)"""))
+HAnimSite1042 = x3d.HAnimSite(DEF="hanim_adams_apple_pt")
 HAnimSite1042.name = "adams_apple_pt"
-HAnimSite1042.DEF = "hanim_adams_apple_pt"
 HAnimSite1042.translation = [0,1.29,0.04]
 TouchSensor1043 = x3d.TouchSensor()
 TouchSensor1043.description = "HAnimSite adams_apple_pt 11"
 
 HAnimSite1042.children.append(TouchSensor1043)
-Shape1044 = x3d.Shape()
-Shape1044.USE = "HAnimSiteShape"
+Shape1044 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1042.children.append(Shape1044)
 
@@ -4890,24 +4153,17 @@ Group1041.children.append(HAnimSite1042)
 HAnimSegment1033.children.append(Group1041)
 
 HAnimJoint1032.children.append(HAnimSegment1033)
-HAnimJoint1045 = x3d.HAnimJoint()
+HAnimJoint1045 = x3d.HAnimJoint(DEF="hanim_vc1")
 HAnimJoint1045.name = "vc1"
-HAnimJoint1045.DEF = "hanim_vc1"
 HAnimJoint1045.center = [0,1.3185,-0.015063751]
-HAnimJoint1045.ulimit = [0,0,0]
-HAnimJoint1045.llimit = [0,0,0]
-HAnimSegment1046 = x3d.HAnimSegment()
+HAnimSegment1046 = x3d.HAnimSegment(DEF="hanim_c1")
 HAnimSegment1046.name = "c1"
-HAnimSegment1046.DEF = "hanim_c1"
-Shape1047 = x3d.Shape()
-Shape1047.DEF = "c1_Shape"
+Shape1047 = x3d.Shape(DEF="c1_Shape")
 Appearance1048 = x3d.Appearance()
-Material1049 = x3d.Material()
-Material1049.USE = "SurfaceDefault"
+Material1049 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1048.material = Material1049
-ImageTexture1050 = x3d.ImageTexture()
-ImageTexture1050.USE = "JinLOA4TextureAtlas"
+ImageTexture1050 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1048.texture = ImageTexture1050
 
@@ -4928,31 +4184,23 @@ IndexedFaceSet1051.texCoord = TextureCoordinate1053
 Shape1047.geometry = IndexedFaceSet1051
 
 HAnimSegment1046.children.append(Shape1047)
-Group1054 = x3d.Group()
-Group1054.DEF = "c1_Sites"
-"""None"""
+Group1054 = x3d.Group(DEF="c1_Sites")
+Group1054.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1046.children.append(Group1054)
 
 HAnimJoint1045.children.append(HAnimSegment1046)
-HAnimJoint1055 = x3d.HAnimJoint()
+HAnimJoint1055 = x3d.HAnimJoint(DEF="hanim_skullbase")
 HAnimJoint1055.name = "skullbase"
-HAnimJoint1055.DEF = "hanim_skullbase"
 HAnimJoint1055.center = [0,1.3126501,-0.01544175]
-HAnimJoint1055.ulimit = [0,0,0]
-HAnimJoint1055.llimit = [0,0,0]
-HAnimSegment1056 = x3d.HAnimSegment()
+HAnimSegment1056 = x3d.HAnimSegment(DEF="hanim_skull")
 HAnimSegment1056.name = "skull"
-HAnimSegment1056.DEF = "hanim_skull"
-Shape1057 = x3d.Shape()
-Shape1057.DEF = "skull_Shape"
+Shape1057 = x3d.Shape(DEF="skull_Shape")
 Appearance1058 = x3d.Appearance()
-Material1059 = x3d.Material()
-Material1059.USE = "SurfaceDefault"
+Material1059 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1058.material = Material1059
-ImageTexture1060 = x3d.ImageTexture()
-ImageTexture1060.USE = "JinLOA4TextureAtlas"
+ImageTexture1060 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1058.texture = ImageTexture1060
 
@@ -4973,159 +4221,146 @@ IndexedFaceSet1061.texCoord = TextureCoordinate1063
 Shape1057.geometry = IndexedFaceSet1061
 
 HAnimSegment1056.children.append(Shape1057)
-Group1064 = x3d.Group()
-Group1064.DEF = "skull_Sites"
-"""(skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z)"""
-HAnimSite1065 = x3d.HAnimSite()
+Group1064 = x3d.Group(DEF="skull_Sites")
+Group1064.children.append(x3d.Comment("""(skull_vertex_pt 0.0050 1.7504 0.0055)"""))
+Group1064.children.append(x3d.Comment("""(glabella_pt x y z)"""))
+Group1064.children.append(x3d.Comment("""(sellion_pt 0.0058 1.6316 0.0852)"""))
+Group1064.children.append(x3d.Comment("""(l_infraorbitale_pt 0.0341 1.6171 0.0752)"""))
+Group1064.children.append(x3d.Comment("""(r_infraorbitale_pt -0.0237 1.6171 0.0752)"""))
+Group1064.children.append(x3d.Comment("""(l_tragion_pt 0.0739 1.6348 0.0282)"""))
+Group1064.children.append(x3d.Comment("""(r_tragion_pt -0.0646 1.6347 0.0302)"""))
+Group1064.children.append(x3d.Comment("""(nuchale_pt 0.0039 1.5972 -0.0796)"""))
+Group1064.children.append(x3d.Comment("""(opisthocranion_pt x y z)"""))
+Group1064.children.append(x3d.Comment("""(l_ectocanthus_pt x y z)"""))
+Group1064.children.append(x3d.Comment("""(r_ectocanthus_pt x y z)"""))
+HAnimSite1065 = x3d.HAnimSite(DEF="hanim_skull_vertex_pt")
 HAnimSite1065.name = "skull_vertex_pt"
-HAnimSite1065.DEF = "hanim_skull_vertex_pt"
 HAnimSite1065.translation = [0,1.612,-0.03]
 TouchSensor1066 = x3d.TouchSensor()
 TouchSensor1066.description = "HAnimSite skull_vertex_pt 0"
 
 HAnimSite1065.children.append(TouchSensor1066)
-Shape1067 = x3d.Shape()
-Shape1067.USE = "HAnimSiteShape"
+Shape1067 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1065.children.append(Shape1067)
 
 Group1064.children.append(HAnimSite1065)
-HAnimSite1068 = x3d.HAnimSite()
+HAnimSite1068 = x3d.HAnimSite(DEF="hanim_glabella_pt")
 HAnimSite1068.name = "glabella_pt"
-HAnimSite1068.DEF = "hanim_glabella_pt"
 HAnimSite1068.translation = [0,1.454,0.128]
 TouchSensor1069 = x3d.TouchSensor()
 TouchSensor1069.description = "HAnimSite glabella_pt 1"
 
 HAnimSite1068.children.append(TouchSensor1069)
-Shape1070 = x3d.Shape()
-Shape1070.USE = "HAnimSiteShape"
+Shape1070 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1068.children.append(Shape1070)
 
 Group1064.children.append(HAnimSite1068)
-HAnimSite1071 = x3d.HAnimSite()
+HAnimSite1071 = x3d.HAnimSite(DEF="hanim_sellion_pt")
 HAnimSite1071.name = "sellion_pt"
-HAnimSite1071.DEF = "hanim_sellion_pt"
 HAnimSite1071.translation = [0,1.4,0.12]
 TouchSensor1072 = x3d.TouchSensor()
 TouchSensor1072.description = "HAnimSite sellion_pt 2"
 
 HAnimSite1071.children.append(TouchSensor1072)
-Shape1073 = x3d.Shape()
-Shape1073.USE = "HAnimSiteShape"
+Shape1073 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1071.children.append(Shape1073)
 
 Group1064.children.append(HAnimSite1071)
-HAnimSite1074 = x3d.HAnimSite()
+HAnimSite1074 = x3d.HAnimSite(DEF="hanim_l_infraorbitale_pt")
 HAnimSite1074.name = "l_infraorbitale_pt"
-HAnimSite1074.DEF = "hanim_l_infraorbitale_pt"
 HAnimSite1074.translation = [0.039,1.38,0.09]
 TouchSensor1075 = x3d.TouchSensor()
 TouchSensor1075.description = "HAnimSite l_infraorbitale_pt 3"
 
 HAnimSite1074.children.append(TouchSensor1075)
-Shape1076 = x3d.Shape()
-Shape1076.USE = "HAnimSiteShape"
+Shape1076 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1074.children.append(Shape1076)
 
 Group1064.children.append(HAnimSite1074)
-HAnimSite1077 = x3d.HAnimSite()
+HAnimSite1077 = x3d.HAnimSite(DEF="hanim_l_tragion_pt")
 HAnimSite1077.name = "l_tragion_pt"
-HAnimSite1077.DEF = "hanim_l_tragion_pt"
 HAnimSite1077.translation = [0.1,1.38,0.0282]
 TouchSensor1078 = x3d.TouchSensor()
 TouchSensor1078.description = "HAnimSite l_tragion_pt 4"
 
 HAnimSite1077.children.append(TouchSensor1078)
-Shape1079 = x3d.Shape()
-Shape1079.USE = "HAnimSiteShape"
+Shape1079 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1077.children.append(Shape1079)
 
 Group1064.children.append(HAnimSite1077)
-HAnimSite1080 = x3d.HAnimSite()
+HAnimSite1080 = x3d.HAnimSite(DEF="hanim_r_infraorbitale_pt")
 HAnimSite1080.name = "r_infraorbitale_pt"
-HAnimSite1080.DEF = "hanim_r_infraorbitale_pt"
 HAnimSite1080.translation = [-0.039,1.38,0.09]
 TouchSensor1081 = x3d.TouchSensor()
 TouchSensor1081.description = "HAnimSite r_infraorbitale_pt 6"
 
 HAnimSite1080.children.append(TouchSensor1081)
-Shape1082 = x3d.Shape()
-Shape1082.USE = "HAnimSiteShape"
+Shape1082 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1080.children.append(Shape1082)
 
 Group1064.children.append(HAnimSite1080)
-HAnimSite1083 = x3d.HAnimSite()
+HAnimSite1083 = x3d.HAnimSite(DEF="hanim_r_tragion_pt")
 HAnimSite1083.name = "r_tragion_pt"
-HAnimSite1083.DEF = "hanim_r_tragion_pt"
 HAnimSite1083.translation = [-0.1,1.38,0.0282]
 TouchSensor1084 = x3d.TouchSensor()
 TouchSensor1084.description = "HAnimSite r_tragion_pt 7"
 
 HAnimSite1083.children.append(TouchSensor1084)
-Shape1085 = x3d.Shape()
-Shape1085.USE = "HAnimSiteShape"
+Shape1085 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1083.children.append(Shape1085)
 
 Group1064.children.append(HAnimSite1083)
-HAnimSite1086 = x3d.HAnimSite()
+HAnimSite1086 = x3d.HAnimSite(DEF="hanim_nuchale_pt")
 HAnimSite1086.name = "nuchale_pt"
-HAnimSite1086.DEF = "hanim_nuchale_pt"
 HAnimSite1086.translation = [0.0039,1.35,-0.16]
 TouchSensor1087 = x3d.TouchSensor()
 TouchSensor1087.description = "HAnimSite nuchale_pt 81"
 
 HAnimSite1086.children.append(TouchSensor1087)
-Shape1088 = x3d.Shape()
-Shape1088.USE = "HAnimSiteShape"
+Shape1088 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1086.children.append(Shape1088)
 
 Group1064.children.append(HAnimSite1086)
-HAnimSite1089 = x3d.HAnimSite()
+HAnimSite1089 = x3d.HAnimSite(DEF="hanim_opisthocranion_pt")
 HAnimSite1089.name = "opisthocranion_pt"
-HAnimSite1089.DEF = "hanim_opisthocranion_pt"
 HAnimSite1089.translation = [0.0039,1.4588,-0.18]
 TouchSensor1090 = x3d.TouchSensor()
 TouchSensor1090.description = "HAnimSite opisthocranion_pt 89"
 
 HAnimSite1089.children.append(TouchSensor1090)
-Shape1091 = x3d.Shape()
-Shape1091.USE = "HAnimSiteShape"
+Shape1091 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1089.children.append(Shape1091)
 
 Group1064.children.append(HAnimSite1089)
-HAnimSite1092 = x3d.HAnimSite()
+HAnimSite1092 = x3d.HAnimSite(DEF="hanim_l_ectocanthus_pt")
 HAnimSite1092.name = "l_ectocanthus_pt"
-HAnimSite1092.DEF = "hanim_l_ectocanthus_pt"
 HAnimSite1092.translation = [0.086,1.399,0.074]
 TouchSensor1093 = x3d.TouchSensor()
 TouchSensor1093.description = "HAnimSite l_ectocanthus_pt 85"
 
 HAnimSite1092.children.append(TouchSensor1093)
-Shape1094 = x3d.Shape()
-Shape1094.USE = "HAnimSiteShape"
+Shape1094 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1092.children.append(Shape1094)
 
 Group1064.children.append(HAnimSite1092)
-HAnimSite1095 = x3d.HAnimSite()
+HAnimSite1095 = x3d.HAnimSite(DEF="hanim_r_ectocanthus_pt")
 HAnimSite1095.name = "r_ectocanthus_pt"
-HAnimSite1095.DEF = "hanim_r_ectocanthus_pt"
 HAnimSite1095.translation = [-0.086,1.399,0.074]
 TouchSensor1096 = x3d.TouchSensor()
 TouchSensor1096.description = "HAnimSite r_ectocanthus_pt 86"
 
 HAnimSite1095.children.append(TouchSensor1096)
-Shape1097 = x3d.Shape()
-Shape1097.USE = "HAnimSiteShape"
+Shape1097 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1095.children.append(Shape1097)
 
@@ -5134,24 +4369,17 @@ Group1064.children.append(HAnimSite1095)
 HAnimSegment1056.children.append(Group1064)
 
 HAnimJoint1055.children.append(HAnimSegment1056)
-HAnimJoint1098 = x3d.HAnimJoint()
+HAnimJoint1098 = x3d.HAnimJoint(DEF="hanim_l_eyelid_joint")
 HAnimJoint1098.name = "l_eyelid_joint"
-HAnimJoint1098.DEF = "hanim_l_eyelid_joint"
 HAnimJoint1098.center = [0.0505125,1.42425,0.03294]
-HAnimJoint1098.ulimit = [0,0,0]
-HAnimJoint1098.llimit = [0,0,0]
-HAnimSegment1099 = x3d.HAnimSegment()
+HAnimSegment1099 = x3d.HAnimSegment(DEF="hanim_l_eyelid")
 HAnimSegment1099.name = "l_eyelid"
-HAnimSegment1099.DEF = "hanim_l_eyelid"
-Shape1100 = x3d.Shape()
-Shape1100.DEF = "l_eyelid_Shape"
+Shape1100 = x3d.Shape(DEF="l_eyelid_Shape")
 Appearance1101 = x3d.Appearance()
-Material1102 = x3d.Material()
-Material1102.USE = "SurfaceDefault"
+Material1102 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1101.material = Material1102
-ImageTexture1103 = x3d.ImageTexture()
-ImageTexture1103.USE = "JinLOA4TextureAtlas"
+ImageTexture1103 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1101.texture = ImageTexture1103
 
@@ -5172,33 +4400,29 @@ IndexedFaceSet1104.texCoord = TextureCoordinate1106
 Shape1100.geometry = IndexedFaceSet1104
 
 HAnimSegment1099.children.append(Shape1100)
-Group1107 = x3d.Group()
-Group1107.DEF = "l_eyelid_Sites"
-"""(l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1107 = x3d.Group(DEF="l_eyelid_Sites")
+Group1107.children.append(x3d.Comment("""(l_eyelid_tip_pt x y z)"""))
+Group1107.children.append(x3d.Comment("""<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>"""))
+Group1107.children.append(x3d.Comment("""<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>"""))
+Group1107.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1107.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1099.children.append(Group1107)
 
 HAnimJoint1098.children.append(HAnimSegment1099)
 
 HAnimJoint1055.children.append(HAnimJoint1098)
-HAnimJoint1108 = x3d.HAnimJoint()
+HAnimJoint1108 = x3d.HAnimJoint(DEF="hanim_r_eyelid_joint")
 HAnimJoint1108.name = "r_eyelid_joint"
-HAnimJoint1108.DEF = "hanim_r_eyelid_joint"
 HAnimJoint1108.center = [-0.0505125,1.42425,0.03294]
-HAnimJoint1108.ulimit = [0,0,0]
-HAnimJoint1108.llimit = [0,0,0]
-HAnimSegment1109 = x3d.HAnimSegment()
+HAnimSegment1109 = x3d.HAnimSegment(DEF="hanim_r_eyelid")
 HAnimSegment1109.name = "r_eyelid"
-HAnimSegment1109.DEF = "hanim_r_eyelid"
-Shape1110 = x3d.Shape()
-Shape1110.DEF = "r_eyelid_Shape"
+Shape1110 = x3d.Shape(DEF="r_eyelid_Shape")
 Appearance1111 = x3d.Appearance()
-Material1112 = x3d.Material()
-Material1112.USE = "SurfaceDefault"
+Material1112 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1111.material = Material1112
-ImageTexture1113 = x3d.ImageTexture()
-ImageTexture1113.USE = "JinLOA4TextureAtlas"
+ImageTexture1113 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1111.texture = ImageTexture1113
 
@@ -5219,33 +4443,29 @@ IndexedFaceSet1114.texCoord = TextureCoordinate1116
 Shape1110.geometry = IndexedFaceSet1114
 
 HAnimSegment1109.children.append(Shape1110)
-Group1117 = x3d.Group()
-Group1117.DEF = "r_eyelid_Sites"
-"""(r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1117 = x3d.Group(DEF="r_eyelid_Sites")
+Group1117.children.append(x3d.Comment("""(r_eyelid_tip_pt x y z)"""))
+Group1117.children.append(x3d.Comment("""<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>"""))
+Group1117.children.append(x3d.Comment("""<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>"""))
+Group1117.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1117.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1109.children.append(Group1117)
 
 HAnimJoint1108.children.append(HAnimSegment1109)
 
 HAnimJoint1055.children.append(HAnimJoint1108)
-HAnimJoint1118 = x3d.HAnimJoint()
+HAnimJoint1118 = x3d.HAnimJoint(DEF="hanim_l_eyeball_joint")
 HAnimJoint1118.name = "l_eyeball_joint"
-HAnimJoint1118.DEF = "hanim_l_eyeball_joint"
 HAnimJoint1118.center = [0.048127502,1.4049001,0.0830475]
-HAnimJoint1118.ulimit = [0,0,0]
-HAnimJoint1118.llimit = [0,0,0]
-HAnimSegment1119 = x3d.HAnimSegment()
+HAnimSegment1119 = x3d.HAnimSegment(DEF="hanim_l_eyeball")
 HAnimSegment1119.name = "l_eyeball"
-HAnimSegment1119.DEF = "hanim_l_eyeball"
-Shape1120 = x3d.Shape()
-Shape1120.DEF = "l_eyeball_Shape"
+Shape1120 = x3d.Shape(DEF="l_eyeball_Shape")
 Appearance1121 = x3d.Appearance()
-Material1122 = x3d.Material()
-Material1122.USE = "SurfaceDefault"
+Material1122 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1121.material = Material1122
-ImageTexture1123 = x3d.ImageTexture()
-ImageTexture1123.USE = "JinLOA4TextureAtlas"
+ImageTexture1123 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1121.texture = ImageTexture1123
 
@@ -5266,33 +4486,29 @@ IndexedFaceSet1124.texCoord = TextureCoordinate1126
 Shape1120.geometry = IndexedFaceSet1124
 
 HAnimSegment1119.children.append(Shape1120)
-Group1127 = x3d.Group()
-Group1127.DEF = "l_eyeball_Sites"
-"""(l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1127 = x3d.Group(DEF="l_eyeball_Sites")
+Group1127.children.append(x3d.Comment("""(l_eyeball_tip_pt x y z)"""))
+Group1127.children.append(x3d.Comment("""<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>"""))
+Group1127.children.append(x3d.Comment("""<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>"""))
+Group1127.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1127.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1119.children.append(Group1127)
 
 HAnimJoint1118.children.append(HAnimSegment1119)
 
 HAnimJoint1055.children.append(HAnimJoint1118)
-HAnimJoint1128 = x3d.HAnimJoint()
+HAnimJoint1128 = x3d.HAnimJoint(DEF="hanim_r_eyeball_joint")
 HAnimJoint1128.name = "r_eyeball_joint"
-HAnimJoint1128.DEF = "hanim_r_eyeball_joint"
 HAnimJoint1128.center = [-0.048127502,1.4049001,0.0830475]
-HAnimJoint1128.ulimit = [0,0,0]
-HAnimJoint1128.llimit = [0,0,0]
-HAnimSegment1129 = x3d.HAnimSegment()
+HAnimSegment1129 = x3d.HAnimSegment(DEF="hanim_r_eyeball")
 HAnimSegment1129.name = "r_eyeball"
-HAnimSegment1129.DEF = "hanim_r_eyeball"
-Shape1130 = x3d.Shape()
-Shape1130.DEF = "r_eyeball_Shape"
+Shape1130 = x3d.Shape(DEF="r_eyeball_Shape")
 Appearance1131 = x3d.Appearance()
-Material1132 = x3d.Material()
-Material1132.USE = "SurfaceDefault"
+Material1132 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1131.material = Material1132
-ImageTexture1133 = x3d.ImageTexture()
-ImageTexture1133.USE = "JinLOA4TextureAtlas"
+ImageTexture1133 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1131.texture = ImageTexture1133
 
@@ -5313,33 +4529,29 @@ IndexedFaceSet1134.texCoord = TextureCoordinate1136
 Shape1130.geometry = IndexedFaceSet1134
 
 HAnimSegment1129.children.append(Shape1130)
-Group1137 = x3d.Group()
-Group1137.DEF = "r_eyeball_Sites"
-"""(r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1137 = x3d.Group(DEF="r_eyeball_Sites")
+Group1137.children.append(x3d.Comment("""(r_eyeball_tip_pt x y z)"""))
+Group1137.children.append(x3d.Comment("""<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>"""))
+Group1137.children.append(x3d.Comment("""<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>"""))
+Group1137.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1137.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1129.children.append(Group1137)
 
 HAnimJoint1128.children.append(HAnimSegment1129)
 
 HAnimJoint1055.children.append(HAnimJoint1128)
-HAnimJoint1138 = x3d.HAnimJoint()
+HAnimJoint1138 = x3d.HAnimJoint(DEF="hanim_l_eyebrow_joint")
 HAnimJoint1138.name = "l_eyebrow_joint"
-HAnimJoint1138.DEF = "hanim_l_eyebrow_joint"
 HAnimJoint1138.center = [0.021748502,1.4139,0.1069425]
-HAnimJoint1138.ulimit = [0,0,0]
-HAnimJoint1138.llimit = [0,0,0]
-HAnimSegment1139 = x3d.HAnimSegment()
+HAnimSegment1139 = x3d.HAnimSegment(DEF="hanim_l_eyebrow")
 HAnimSegment1139.name = "l_eyebrow"
-HAnimSegment1139.DEF = "hanim_l_eyebrow"
-Shape1140 = x3d.Shape()
-Shape1140.DEF = "l_eyebrow_Shape"
+Shape1140 = x3d.Shape(DEF="l_eyebrow_Shape")
 Appearance1141 = x3d.Appearance()
-Material1142 = x3d.Material()
-Material1142.USE = "SurfaceDefault"
+Material1142 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1141.material = Material1142
-ImageTexture1143 = x3d.ImageTexture()
-ImageTexture1143.USE = "JinLOA4TextureAtlas"
+ImageTexture1143 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1141.texture = ImageTexture1143
 
@@ -5360,33 +4572,29 @@ IndexedFaceSet1144.texCoord = TextureCoordinate1146
 Shape1140.geometry = IndexedFaceSet1144
 
 HAnimSegment1139.children.append(Shape1140)
-Group1147 = x3d.Group()
-Group1147.DEF = "l_eyebrow_Sites"
-"""(l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1147 = x3d.Group(DEF="l_eyebrow_Sites")
+Group1147.children.append(x3d.Comment("""(l_eyebrow_tip_pt x y z)"""))
+Group1147.children.append(x3d.Comment("""<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>"""))
+Group1147.children.append(x3d.Comment("""<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>"""))
+Group1147.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1147.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1139.children.append(Group1147)
 
 HAnimJoint1138.children.append(HAnimSegment1139)
 
 HAnimJoint1055.children.append(HAnimJoint1138)
-HAnimJoint1148 = x3d.HAnimJoint()
+HAnimJoint1148 = x3d.HAnimJoint(DEF="hanim_r_eyebrow_joint")
 HAnimJoint1148.name = "r_eyebrow_joint"
-HAnimJoint1148.DEF = "hanim_r_eyebrow_joint"
 HAnimJoint1148.center = [-0.021748502,1.4139,0.1069425]
-HAnimJoint1148.ulimit = [0,0,0]
-HAnimJoint1148.llimit = [0,0,0]
-HAnimSegment1149 = x3d.HAnimSegment()
+HAnimSegment1149 = x3d.HAnimSegment(DEF="hanim_r_eyebrow")
 HAnimSegment1149.name = "r_eyebrow"
-HAnimSegment1149.DEF = "hanim_r_eyebrow"
-Shape1150 = x3d.Shape()
-Shape1150.DEF = "r_eyebrow_Shape"
+Shape1150 = x3d.Shape(DEF="r_eyebrow_Shape")
 Appearance1151 = x3d.Appearance()
-Material1152 = x3d.Material()
-Material1152.USE = "SurfaceDefault"
+Material1152 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1151.material = Material1152
-ImageTexture1153 = x3d.ImageTexture()
-ImageTexture1153.USE = "JinLOA4TextureAtlas"
+ImageTexture1153 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1151.texture = ImageTexture1153
 
@@ -5407,33 +4615,29 @@ IndexedFaceSet1154.texCoord = TextureCoordinate1156
 Shape1150.geometry = IndexedFaceSet1154
 
 HAnimSegment1149.children.append(Shape1150)
-Group1157 = x3d.Group()
-Group1157.DEF = "r_eyebrow_Sites"
-"""(r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>"""
+Group1157 = x3d.Group(DEF="r_eyebrow_Sites")
+Group1157.children.append(x3d.Comment("""(r_eyebrow_tip_pt x y z)"""))
+Group1157.children.append(x3d.Comment("""<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>"""))
+Group1157.children.append(x3d.Comment("""<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>"""))
+Group1157.children.append(x3d.Comment("""<Shape USE='HAnimSiteShape'/>"""))
+Group1157.children.append(x3d.Comment("""</HAnimSite>"""))
 
 HAnimSegment1149.children.append(Group1157)
 
 HAnimJoint1148.children.append(HAnimSegment1149)
 
 HAnimJoint1055.children.append(HAnimJoint1148)
-HAnimJoint1158 = x3d.HAnimJoint()
+HAnimJoint1158 = x3d.HAnimJoint(DEF="hanim_temporomandibular")
 HAnimJoint1158.name = "temporomandibular"
-HAnimJoint1158.DEF = "hanim_temporomandibular"
 HAnimJoint1158.center = [0,1.312875,0.015378751]
-HAnimJoint1158.ulimit = [0,0,0]
-HAnimJoint1158.llimit = [0,0,0]
-HAnimSegment1159 = x3d.HAnimSegment()
+HAnimSegment1159 = x3d.HAnimSegment(DEF="hanim_jaw")
 HAnimSegment1159.name = "jaw"
-HAnimSegment1159.DEF = "hanim_jaw"
-Shape1160 = x3d.Shape()
-Shape1160.DEF = "jaw_Shape"
+Shape1160 = x3d.Shape(DEF="jaw_Shape")
 Appearance1161 = x3d.Appearance()
-Material1162 = x3d.Material()
-Material1162.USE = "SurfaceDefault"
+Material1162 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1161.material = Material1162
-ImageTexture1163 = x3d.ImageTexture()
-ImageTexture1163.USE = "JinLOA4TextureAtlas"
+ImageTexture1163 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1161.texture = ImageTexture1163
 
@@ -5454,61 +4658,55 @@ IndexedFaceSet1164.texCoord = TextureCoordinate1166
 Shape1160.geometry = IndexedFaceSet1164
 
 HAnimSegment1159.children.append(Shape1160)
-Group1167 = x3d.Group()
-Group1167.DEF = "jaw_Sites"
-"""(r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z)"""
-HAnimSite1168 = x3d.HAnimSite()
+Group1167 = x3d.Group(DEF="jaw_Sites")
+Group1167.children.append(x3d.Comment("""(r_gonion_pt -0.0520 1.5529 0.0347)"""))
+Group1167.children.append(x3d.Comment("""(l_gonion_pt 0.0631 1.5530 0.0330)"""))
+Group1167.children.append(x3d.Comment("""(supramenton_pt 0.0061 1.5410 0.0805)"""))
+Group1167.children.append(x3d.Comment("""(menton_pt x y z)"""))
+HAnimSite1168 = x3d.HAnimSite(DEF="hanim_l_gonion_pt")
 HAnimSite1168.name = "l_gonion_pt"
-HAnimSite1168.DEF = "hanim_l_gonion_pt"
 HAnimSite1168.translation = [0.068,1.346,0.033]
 TouchSensor1169 = x3d.TouchSensor()
 TouchSensor1169.description = "HAnimSite l_gonion_pt 5"
 
 HAnimSite1168.children.append(TouchSensor1169)
-Shape1170 = x3d.Shape()
-Shape1170.USE = "HAnimSiteShape"
+Shape1170 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1168.children.append(Shape1170)
 
 Group1167.children.append(HAnimSite1168)
-HAnimSite1171 = x3d.HAnimSite()
+HAnimSite1171 = x3d.HAnimSite(DEF="hanim_r_gonion_pt")
 HAnimSite1171.name = "r_gonion_pt"
-HAnimSite1171.DEF = "hanim_r_gonion_pt"
 HAnimSite1171.translation = [-0.068,1.346,0.033]
 TouchSensor1172 = x3d.TouchSensor()
 TouchSensor1172.description = "HAnimSite r_gonion_pt 8"
 
 HAnimSite1171.children.append(TouchSensor1172)
-Shape1173 = x3d.Shape()
-Shape1173.USE = "HAnimSiteShape"
+Shape1173 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1171.children.append(Shape1173)
 
 Group1167.children.append(HAnimSite1171)
-HAnimSite1174 = x3d.HAnimSite()
+HAnimSite1174 = x3d.HAnimSite(DEF="hanim_supramenton_pt")
 HAnimSite1174.name = "supramenton_pt"
-HAnimSite1174.DEF = "hanim_supramenton_pt"
 HAnimSite1174.translation = [0,1.32,0.086]
 TouchSensor1175 = x3d.TouchSensor()
 TouchSensor1175.description = "HAnimSite supramenton_pt 9"
 
 HAnimSite1174.children.append(TouchSensor1175)
-Shape1176 = x3d.Shape()
-Shape1176.USE = "HAnimSiteShape"
+Shape1176 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1174.children.append(Shape1176)
 
 Group1167.children.append(HAnimSite1174)
-HAnimSite1177 = x3d.HAnimSite()
+HAnimSite1177 = x3d.HAnimSite(DEF="hanim_menton_pt")
 HAnimSite1177.name = "menton_pt"
-HAnimSite1177.DEF = "hanim_menton_pt"
 HAnimSite1177.translation = [0,1.3,0.08]
 TouchSensor1178 = x3d.TouchSensor()
 TouchSensor1178.description = "HAnimSite menton_pt 87"
 
 HAnimSite1177.children.append(TouchSensor1178)
-Shape1179 = x3d.Shape()
-Shape1179.USE = "HAnimSiteShape"
+Shape1179 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1177.children.append(Shape1179)
 
@@ -5535,24 +4733,17 @@ HAnimJoint992.children.append(HAnimJoint1002)
 HAnimJoint976.children.append(HAnimJoint992)
 
 HAnimJoint960.children.append(HAnimJoint976)
-HAnimJoint1180 = x3d.HAnimJoint()
+HAnimJoint1180 = x3d.HAnimJoint(DEF="hanim_l_sternoclavicular")
 HAnimJoint1180.name = "l_sternoclavicular"
-HAnimJoint1180.DEF = "hanim_l_sternoclavicular"
 HAnimJoint1180.center = [0.038475003,1.2087001,-0.013785751]
-HAnimJoint1180.ulimit = [0,0,0]
-HAnimJoint1180.llimit = [0,0,0]
-HAnimSegment1181 = x3d.HAnimSegment()
+HAnimSegment1181 = x3d.HAnimSegment(DEF="hanim_l_clavicle")
 HAnimSegment1181.name = "l_clavicle"
-HAnimSegment1181.DEF = "hanim_l_clavicle"
-Shape1182 = x3d.Shape()
-Shape1182.DEF = "l_clavicle_Shape"
+Shape1182 = x3d.Shape(DEF="l_clavicle_Shape")
 Appearance1183 = x3d.Appearance()
-Material1184 = x3d.Material()
-Material1184.USE = "SurfaceDefault"
+Material1184 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1183.material = Material1184
-ImageTexture1185 = x3d.ImageTexture()
-ImageTexture1185.USE = "JinLOA4TextureAtlas"
+ImageTexture1185 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1183.texture = ImageTexture1185
 
@@ -5573,19 +4764,16 @@ IndexedFaceSet1186.texCoord = TextureCoordinate1188
 Shape1182.geometry = IndexedFaceSet1186
 
 HAnimSegment1181.children.append(Shape1182)
-Group1189 = x3d.Group()
-Group1189.DEF = "l_clavicle_Sites"
-"""(l_clavicale_pt 0.0271 1.4943 0.0394)"""
-HAnimSite1190 = x3d.HAnimSite()
+Group1189 = x3d.Group(DEF="l_clavicle_Sites")
+Group1189.children.append(x3d.Comment("""(l_clavicale_pt 0.0271 1.4943 0.0394)"""))
+HAnimSite1190 = x3d.HAnimSite(DEF="hanim_l_clavicale_pt")
 HAnimSite1190.name = "l_clavicale_pt"
-HAnimSite1190.DEF = "hanim_l_clavicale_pt"
 HAnimSite1190.translation = [0.03,1.2,0.04]
 TouchSensor1191 = x3d.TouchSensor()
 TouchSensor1191.description = "HAnimSite l_clavicale_pt 14"
 
 HAnimSite1190.children.append(TouchSensor1191)
-Shape1192 = x3d.Shape()
-Shape1192.USE = "HAnimSiteShape"
+Shape1192 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1190.children.append(Shape1192)
 
@@ -5594,24 +4782,17 @@ Group1189.children.append(HAnimSite1190)
 HAnimSegment1181.children.append(Group1189)
 
 HAnimJoint1180.children.append(HAnimSegment1181)
-HAnimJoint1193 = x3d.HAnimJoint()
+HAnimJoint1193 = x3d.HAnimJoint(DEF="hanim_l_acromioclavicular")
 HAnimJoint1193.name = "l_acromioclavicular"
-HAnimJoint1193.DEF = "hanim_l_acromioclavicular"
 HAnimJoint1193.center = [0.12294001,1.191825,-0.012897001]
-HAnimJoint1193.ulimit = [0,0,0]
-HAnimJoint1193.llimit = [0,0,0]
-HAnimSegment1194 = x3d.HAnimSegment()
+HAnimSegment1194 = x3d.HAnimSegment(DEF="hanim_l_scapula")
 HAnimSegment1194.name = "l_scapula"
-HAnimSegment1194.DEF = "hanim_l_scapula"
-Shape1195 = x3d.Shape()
-Shape1195.DEF = "l_scapula_Shape"
+Shape1195 = x3d.Shape(DEF="l_scapula_Shape")
 Appearance1196 = x3d.Appearance()
-Material1197 = x3d.Material()
-Material1197.USE = "SurfaceDefault"
+Material1197 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1196.material = Material1197
-ImageTexture1198 = x3d.ImageTexture()
-ImageTexture1198.USE = "JinLOA4TextureAtlas"
+ImageTexture1198 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1196.texture = ImageTexture1198
 
@@ -5632,61 +4813,55 @@ IndexedFaceSet1199.texCoord = TextureCoordinate1201
 Shape1195.geometry = IndexedFaceSet1199
 
 HAnimSegment1194.children.append(Shape1195)
-Group1202 = x3d.Group()
-Group1202.DEF = "l_scapula_Sites"
-"""(l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z)"""
-HAnimSite1203 = x3d.HAnimSite()
+Group1202 = x3d.Group(DEF="l_scapula_Sites")
+Group1202.children.append(x3d.Comment("""(l_acromion_pt 0.2032 1.4760 -0.0490)"""))
+Group1202.children.append(x3d.Comment("""(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)"""))
+Group1202.children.append(x3d.Comment("""(l_axilla_distal_pt 0.1706 1.4072 -0.0875)"""))
+Group1202.children.append(x3d.Comment("""(l_axilla_posterior_folds_pt x y z)"""))
+HAnimSite1203 = x3d.HAnimSite(DEF="hanim_l_acromion_pt")
 HAnimSite1203.name = "l_acromion_pt"
-HAnimSite1203.DEF = "hanim_l_acromion_pt"
 HAnimSite1203.translation = [0.15,1.222,-0.02]
 TouchSensor1204 = x3d.TouchSensor()
 TouchSensor1204.description = "HAnimSite l_acromion_pt 15"
 
 HAnimSite1203.children.append(TouchSensor1204)
-Shape1205 = x3d.Shape()
-Shape1205.USE = "HAnimSiteShape"
+Shape1205 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1203.children.append(Shape1205)
 
 Group1202.children.append(HAnimSite1203)
-HAnimSite1206 = x3d.HAnimSite()
+HAnimSite1206 = x3d.HAnimSite(DEF="hanim_l_axilla_proximal_pt")
 HAnimSite1206.name = "l_axilla_proximal_pt"
-HAnimSite1206.DEF = "hanim_l_axilla_proximal_pt"
 HAnimSite1206.translation = [0.15,1.16,0.04]
 TouchSensor1207 = x3d.TouchSensor()
 TouchSensor1207.description = "HAnimSite l_axilla_proximal_pt 16"
 
 HAnimSite1206.children.append(TouchSensor1207)
-Shape1208 = x3d.Shape()
-Shape1208.USE = "HAnimSiteShape"
+Shape1208 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1206.children.append(Shape1208)
 
 Group1202.children.append(HAnimSite1206)
-HAnimSite1209 = x3d.HAnimSite()
+HAnimSite1209 = x3d.HAnimSite(DEF="hanim_l_axilla_distal_pt")
 HAnimSite1209.name = "l_axilla_distal_pt"
-HAnimSite1209.DEF = "hanim_l_axilla_distal_pt"
 HAnimSite1209.translation = [0.17,1.14,0]
 TouchSensor1210 = x3d.TouchSensor()
 TouchSensor1210.description = "HAnimSite l_axilla_distal_pt 17"
 
 HAnimSite1209.children.append(TouchSensor1210)
-Shape1211 = x3d.Shape()
-Shape1211.USE = "HAnimSiteShape"
+Shape1211 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1209.children.append(Shape1211)
 
 Group1202.children.append(HAnimSite1209)
-HAnimSite1212 = x3d.HAnimSite()
+HAnimSite1212 = x3d.HAnimSite(DEF="l_axilla_posterior_folds_pt")
 HAnimSite1212.name = "l_axilla_posterior_folds_pt"
-HAnimSite1212.DEF = "l_axilla_posterior_folds_pt"
 HAnimSite1212.translation = [0.15,1.145,-0.04]
 TouchSensor1213 = x3d.TouchSensor()
 TouchSensor1213.description = "HAnimSite l_axilla_posterior_folds_pt 18"
 
 HAnimSite1212.children.append(TouchSensor1213)
-Shape1214 = x3d.Shape()
-Shape1214.USE = "HAnimSiteShape"
+Shape1214 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1212.children.append(Shape1214)
 
@@ -5695,24 +4870,17 @@ Group1202.children.append(HAnimSite1212)
 HAnimSegment1194.children.append(Group1202)
 
 HAnimJoint1193.children.append(HAnimSegment1194)
-HAnimJoint1215 = x3d.HAnimJoint()
+HAnimJoint1215 = x3d.HAnimJoint(DEF="hanim_l_shoulder")
 HAnimJoint1215.name = "l_shoulder"
-HAnimJoint1215.DEF = "hanim_l_shoulder"
 HAnimJoint1215.center = [0.16506,1.1785501,-0.0032670002]
-HAnimJoint1215.ulimit = [0,0,0]
-HAnimJoint1215.llimit = [0,0,0]
-HAnimSegment1216 = x3d.HAnimSegment()
+HAnimSegment1216 = x3d.HAnimSegment(DEF="hanim_l_upperarm")
 HAnimSegment1216.name = "l_upperarm"
-HAnimSegment1216.DEF = "hanim_l_upperarm"
-Shape1217 = x3d.Shape()
-Shape1217.DEF = "l_upperarm_Shape"
+Shape1217 = x3d.Shape(DEF="l_upperarm_Shape")
 Appearance1218 = x3d.Appearance()
-Material1219 = x3d.Material()
-Material1219.USE = "SurfaceDefault"
+Material1219 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1218.material = Material1219
-ImageTexture1220 = x3d.ImageTexture()
-ImageTexture1220.USE = "JinLOA4TextureAtlas"
+ImageTexture1220 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1218.texture = ImageTexture1220
 
@@ -5733,61 +4901,55 @@ IndexedFaceSet1221.texCoord = TextureCoordinate1223
 Shape1217.geometry = IndexedFaceSet1221
 
 HAnimSegment1216.children.append(Shape1217)
-Group1224 = x3d.Group()
-Group1224.DEF = "l_upperarm_Sites"
-"""(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z)"""
-HAnimSite1225 = x3d.HAnimSite()
+Group1224 = x3d.Group(DEF="l_upperarm_Sites")
+Group1224.children.append(x3d.Comment("""(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)"""))
+Group1224.children.append(x3d.Comment("""(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)"""))
+Group1224.children.append(x3d.Comment("""(l_radiale_pt 0.2182 1.1212 -0.1167)"""))
+Group1224.children.append(x3d.Comment("""(l_bideltoid_pt x y z)"""))
+HAnimSite1225 = x3d.HAnimSite(DEF="hanim_l_humeral_lateral_epicondyles_pt")
 HAnimSite1225.name = "l_humeral_lateral_epicondyles_pt"
-HAnimSite1225.DEF = "hanim_l_humeral_lateral_epicondyles_pt"
 HAnimSite1225.translation = [0.2,0.95,-0.03]
 TouchSensor1226 = x3d.TouchSensor()
 TouchSensor1226.description = "HAnimSite l_humeral_lateral_epicondyles_pt 63"
 
 HAnimSite1225.children.append(TouchSensor1226)
-Shape1227 = x3d.Shape()
-Shape1227.USE = "HAnimSiteShape"
+Shape1227 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1225.children.append(Shape1227)
 
 Group1224.children.append(HAnimSite1225)
-HAnimSite1228 = x3d.HAnimSite()
+HAnimSite1228 = x3d.HAnimSite(DEF="hanim_l_humeral_medial_epicondyles_pt")
 HAnimSite1228.name = "l_humeral_medial_epicondyles_pt"
-HAnimSite1228.DEF = "hanim_l_humeral_medial_epicondyles_pt"
 HAnimSite1228.translation = [0.18,0.93,-0.03]
 TouchSensor1229 = x3d.TouchSensor()
 TouchSensor1229.description = "HAnimSite l_humeral_medial_epicondyles_pt 64"
 
 HAnimSite1228.children.append(TouchSensor1229)
-Shape1230 = x3d.Shape()
-Shape1230.USE = "HAnimSiteShape"
+Shape1230 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1228.children.append(Shape1230)
 
 Group1224.children.append(HAnimSite1228)
-HAnimSite1231 = x3d.HAnimSite()
+HAnimSite1231 = x3d.HAnimSite(DEF="hanim_l_radiale_pt")
 HAnimSite1231.name = "l_radiale_pt"
-HAnimSite1231.DEF = "hanim_l_radiale_pt"
 HAnimSite1231.translation = [0.2,0.91,-0.03]
 TouchSensor1232 = x3d.TouchSensor()
 TouchSensor1232.description = "HAnimSite l_radiale_pt 69"
 
 HAnimSite1231.children.append(TouchSensor1232)
-Shape1233 = x3d.Shape()
-Shape1233.USE = "HAnimSiteShape"
+Shape1233 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1231.children.append(Shape1233)
 
 Group1224.children.append(HAnimSite1231)
-HAnimSite1234 = x3d.HAnimSite()
+HAnimSite1234 = x3d.HAnimSite(DEF="hanim_l_bideltoid_pt")
 HAnimSite1234.name = "l_bideltoid_pt"
-HAnimSite1234.DEF = "hanim_l_bideltoid_pt"
 HAnimSite1234.translation = [0.225,1.185,0]
 TouchSensor1235 = x3d.TouchSensor()
 TouchSensor1235.description = "HAnimSite l_bideltoid_pt 96"
 
 HAnimSite1234.children.append(TouchSensor1235)
-Shape1236 = x3d.Shape()
-Shape1236.USE = "HAnimSiteShape"
+Shape1236 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1234.children.append(Shape1236)
 
@@ -5796,24 +4958,17 @@ Group1224.children.append(HAnimSite1234)
 HAnimSegment1216.children.append(Group1224)
 
 HAnimJoint1215.children.append(HAnimSegment1216)
-HAnimJoint1237 = x3d.HAnimJoint()
+HAnimJoint1237 = x3d.HAnimJoint(DEF="hanim_l_elbow")
 HAnimJoint1237.name = "l_elbow"
-HAnimJoint1237.DEF = "hanim_l_elbow"
 HAnimJoint1237.center = [0.18209252,0.9288,-0.0056295004]
-HAnimJoint1237.ulimit = [0,0,0]
-HAnimJoint1237.llimit = [0,0,0]
-HAnimSegment1238 = x3d.HAnimSegment()
+HAnimSegment1238 = x3d.HAnimSegment(DEF="hanim_l_forearm")
 HAnimSegment1238.name = "l_forearm"
-HAnimSegment1238.DEF = "hanim_l_forearm"
-Shape1239 = x3d.Shape()
-Shape1239.DEF = "l_forearm_Shape"
+Shape1239 = x3d.Shape(DEF="l_forearm_Shape")
 Appearance1240 = x3d.Appearance()
-Material1241 = x3d.Material()
-Material1241.USE = "SurfaceDefault"
+Material1241 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1240.material = Material1241
-ImageTexture1242 = x3d.ImageTexture()
-ImageTexture1242.USE = "JinLOA4TextureAtlas"
+ImageTexture1242 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1240.texture = ImageTexture1242
 
@@ -5834,33 +4989,29 @@ IndexedFaceSet1243.texCoord = TextureCoordinate1245
 Shape1239.geometry = IndexedFaceSet1243
 
 HAnimSegment1238.children.append(Shape1239)
-Group1246 = x3d.Group()
-Group1246.DEF = "l_forearm_Sites"
-"""(l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123)"""
-HAnimSite1247 = x3d.HAnimSite()
+Group1246 = x3d.Group(DEF="l_forearm_Sites")
+Group1246.children.append(x3d.Comment("""(l_radial_styloid_pt 0.1901 0.8645 -0.0415)"""))
+Group1246.children.append(x3d.Comment("""(l_olecranon_pt -0.1962 1.1375 -0.1123)"""))
+HAnimSite1247 = x3d.HAnimSite(DEF="hanim_l_radial_styloid_pt")
 HAnimSite1247.name = "l_radial_styloid_pt"
-HAnimSite1247.DEF = "hanim_l_radial_styloid_pt"
 HAnimSite1247.translation = [0.18,0.725,0.025]
 TouchSensor1248 = x3d.TouchSensor()
 TouchSensor1248.description = "HAnimSite l_radial_styloid_pt 71"
 
 HAnimSite1247.children.append(TouchSensor1248)
-Shape1249 = x3d.Shape()
-Shape1249.USE = "HAnimSiteShape"
+Shape1249 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1247.children.append(Shape1249)
 
 Group1246.children.append(HAnimSite1247)
-HAnimSite1250 = x3d.HAnimSite()
+HAnimSite1250 = x3d.HAnimSite(DEF="hanim_l_olecranon_pt")
 HAnimSite1250.name = "l_olecranon_pt"
-HAnimSite1250.DEF = "hanim_l_olecranon_pt"
 HAnimSite1250.translation = [0.2,0.92,-0.03]
 TouchSensor1251 = x3d.TouchSensor()
 TouchSensor1251.description = "HAnimSite l_olecranon_pt 65"
 
 HAnimSite1250.children.append(TouchSensor1251)
-Shape1252 = x3d.Shape()
-Shape1252.USE = "HAnimSiteShape"
+Shape1252 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1250.children.append(Shape1252)
 
@@ -5869,24 +5020,17 @@ Group1246.children.append(HAnimSite1250)
 HAnimSegment1238.children.append(Group1246)
 
 HAnimJoint1237.children.append(HAnimSegment1238)
-HAnimJoint1253 = x3d.HAnimJoint()
+HAnimJoint1253 = x3d.HAnimJoint(DEF="hanim_l_radiocarpal")
 HAnimJoint1253.name = "l_radiocarpal"
-HAnimJoint1253.DEF = "hanim_l_radiocarpal"
 HAnimJoint1253.center = [0.18193501,0.724275,-0.00502425]
-HAnimJoint1253.ulimit = [0,0,0]
-HAnimJoint1253.llimit = [0,0,0]
-HAnimSegment1254 = x3d.HAnimSegment()
+HAnimSegment1254 = x3d.HAnimSegment(DEF="hanim_l_carpal")
 HAnimSegment1254.name = "l_carpal"
-HAnimSegment1254.DEF = "hanim_l_carpal"
-Shape1255 = x3d.Shape()
-Shape1255.DEF = "l_carpal_Shape"
+Shape1255 = x3d.Shape(DEF="l_carpal_Shape")
 Appearance1256 = x3d.Appearance()
-Material1257 = x3d.Material()
-Material1257.USE = "SurfaceDefault"
+Material1257 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1256.material = Material1257
-ImageTexture1258 = x3d.ImageTexture()
-ImageTexture1258.USE = "JinLOA4TextureAtlas"
+ImageTexture1258 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1256.texture = ImageTexture1258
 
@@ -5907,19 +5051,16 @@ IndexedFaceSet1259.texCoord = TextureCoordinate1261
 Shape1255.geometry = IndexedFaceSet1259
 
 HAnimSegment1254.children.append(Shape1255)
-Group1262 = x3d.Group()
-Group1262.DEF = "l_carpal_Sites"
-"""(l_ulnar_styloid_pt -0.2142 0.8529 -0.0648)"""
-HAnimSite1263 = x3d.HAnimSite()
+Group1262 = x3d.Group(DEF="l_carpal_Sites")
+Group1262.children.append(x3d.Comment("""(l_ulnar_styloid_pt -0.2142 0.8529 -0.0648)"""))
+HAnimSite1263 = x3d.HAnimSite(DEF="hanim_l_ulnar_styloid_pt")
 HAnimSite1263.name = "l_ulnar_styloid_pt"
-HAnimSite1263.DEF = "hanim_l_ulnar_styloid_pt"
 HAnimSite1263.translation = [0.2,0.725,0]
 TouchSensor1264 = x3d.TouchSensor()
 TouchSensor1264.description = "HAnimSite l_ulnar_styloid_pt 70"
 
 HAnimSite1263.children.append(TouchSensor1264)
-Shape1265 = x3d.Shape()
-Shape1265.USE = "HAnimSiteShape"
+Shape1265 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1263.children.append(Shape1265)
 
@@ -5928,24 +5069,17 @@ Group1262.children.append(HAnimSite1263)
 HAnimSegment1254.children.append(Group1262)
 
 HAnimJoint1253.children.append(HAnimSegment1254)
-HAnimJoint1266 = x3d.HAnimJoint()
+HAnimJoint1266 = x3d.HAnimJoint(DEF="hanim_l_midcarpal_1")
 HAnimJoint1266.name = "l_midcarpal_1"
-HAnimJoint1266.DEF = "hanim_l_midcarpal_1"
 HAnimJoint1266.center = [0.1812825,0.70605004,0.0193275]
-HAnimJoint1266.ulimit = [0,0,0]
-HAnimJoint1266.llimit = [0,0,0]
-HAnimSegment1267 = x3d.HAnimSegment()
+HAnimSegment1267 = x3d.HAnimSegment(DEF="hanim_l_trapezium")
 HAnimSegment1267.name = "l_trapezium"
-HAnimSegment1267.DEF = "hanim_l_trapezium"
-Shape1268 = x3d.Shape()
-Shape1268.DEF = "l_trapezium_Shape"
+Shape1268 = x3d.Shape(DEF="l_trapezium_Shape")
 Appearance1269 = x3d.Appearance()
-Material1270 = x3d.Material()
-Material1270.USE = "SurfaceDefault"
+Material1270 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1269.material = Material1270
-ImageTexture1271 = x3d.ImageTexture()
-ImageTexture1271.USE = "JinLOA4TextureAtlas"
+ImageTexture1271 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1269.texture = ImageTexture1271
 
@@ -5966,31 +5100,23 @@ IndexedFaceSet1272.texCoord = TextureCoordinate1274
 Shape1268.geometry = IndexedFaceSet1272
 
 HAnimSegment1267.children.append(Shape1268)
-Group1275 = x3d.Group()
-Group1275.DEF = "l_trapezium_Sites"
-"""None"""
+Group1275 = x3d.Group(DEF="l_trapezium_Sites")
+Group1275.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1267.children.append(Group1275)
 
 HAnimJoint1266.children.append(HAnimSegment1267)
-HAnimJoint1276 = x3d.HAnimJoint()
+HAnimJoint1276 = x3d.HAnimJoint(DEF="hanim_l_carpometacarpal_1")
 HAnimJoint1276.name = "l_carpometacarpal_1"
-HAnimJoint1276.DEF = "hanim_l_carpometacarpal_1"
 HAnimJoint1276.center = [0.18049501,0.69255006,0.0259875]
-HAnimJoint1276.ulimit = [0,0,0]
-HAnimJoint1276.llimit = [0,0,0]
-HAnimSegment1277 = x3d.HAnimSegment()
+HAnimSegment1277 = x3d.HAnimSegment(DEF="hanim_l_metacarpal_1")
 HAnimSegment1277.name = "l_metacarpal_1"
-HAnimSegment1277.DEF = "hanim_l_metacarpal_1"
-Shape1278 = x3d.Shape()
-Shape1278.DEF = "l_metacarpal_1_Shape"
+Shape1278 = x3d.Shape(DEF="l_metacarpal_1_Shape")
 Appearance1279 = x3d.Appearance()
-Material1280 = x3d.Material()
-Material1280.USE = "SurfaceDefault"
+Material1280 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1279.material = Material1280
-ImageTexture1281 = x3d.ImageTexture()
-ImageTexture1281.USE = "JinLOA4TextureAtlas"
+ImageTexture1281 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1279.texture = ImageTexture1281
 
@@ -6011,19 +5137,16 @@ IndexedFaceSet1282.texCoord = TextureCoordinate1284
 Shape1278.geometry = IndexedFaceSet1282
 
 HAnimSegment1277.children.append(Shape1278)
-Group1285 = x3d.Group()
-Group1285.DEF = "l_metacarpal_1_Sites"
-"""(l_metacarpal_phalanx_2_pt 0.2009 0.8139 -0.0237)"""
-HAnimSite1286 = x3d.HAnimSite()
+Group1285 = x3d.Group(DEF="l_metacarpal_1_Sites")
+Group1285.children.append(x3d.Comment("""(l_metacarpal_phalanx_2_pt 0.2009 0.8139 -0.0237)"""))
+HAnimSite1286 = x3d.HAnimSite(DEF="hanim_l_metacarpal_phalanx_2_pt")
 HAnimSite1286.name = "l_metacarpal_phalanx_2_pt"
-HAnimSite1286.DEF = "hanim_l_metacarpal_phalanx_2_pt"
 HAnimSite1286.translation = [0.2,0.665,0.012]
 TouchSensor1287 = x3d.TouchSensor()
 TouchSensor1287.description = "HAnimSite l_metacarpal_phalanx_2_pt 75"
 
 HAnimSite1286.children.append(TouchSensor1287)
-Shape1288 = x3d.Shape()
-Shape1288.USE = "HAnimSiteShape"
+Shape1288 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1286.children.append(Shape1288)
 
@@ -6032,24 +5155,17 @@ Group1285.children.append(HAnimSite1286)
 HAnimSegment1277.children.append(Group1285)
 
 HAnimJoint1276.children.append(HAnimSegment1277)
-HAnimJoint1289 = x3d.HAnimJoint()
+HAnimJoint1289 = x3d.HAnimJoint(DEF="hanim_l_metacarpophalangeal_1")
 HAnimJoint1289.name = "l_metacarpophalangeal_1"
-HAnimJoint1289.DEF = "hanim_l_metacarpophalangeal_1"
 HAnimJoint1289.center = [0.181035,0.67275,0.035775002]
-HAnimJoint1289.ulimit = [0,0,0]
-HAnimJoint1289.llimit = [0,0,0]
-HAnimSegment1290 = x3d.HAnimSegment()
+HAnimSegment1290 = x3d.HAnimSegment(DEF="hanim_l_carpal_proximal_phalanx_1")
 HAnimSegment1290.name = "l_carpal_proximal_phalanx_1"
-HAnimSegment1290.DEF = "hanim_l_carpal_proximal_phalanx_1"
-Shape1291 = x3d.Shape()
-Shape1291.DEF = "l_carpal_proximal_phalanx_1_Shape"
+Shape1291 = x3d.Shape(DEF="l_carpal_proximal_phalanx_1_Shape")
 Appearance1292 = x3d.Appearance()
-Material1293 = x3d.Material()
-Material1293.USE = "SurfaceDefault"
+Material1293 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1292.material = Material1293
-ImageTexture1294 = x3d.ImageTexture()
-ImageTexture1294.USE = "JinLOA4TextureAtlas"
+ImageTexture1294 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1292.texture = ImageTexture1294
 
@@ -6070,31 +5186,23 @@ IndexedFaceSet1295.texCoord = TextureCoordinate1297
 Shape1291.geometry = IndexedFaceSet1295
 
 HAnimSegment1290.children.append(Shape1291)
-Group1298 = x3d.Group()
-Group1298.DEF = "l_carpal_proximal_phalanx_1_Sites"
-"""None"""
+Group1298 = x3d.Group(DEF="l_carpal_proximal_phalanx_1_Sites")
+Group1298.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1290.children.append(Group1298)
 
 HAnimJoint1289.children.append(HAnimSegment1290)
-HAnimJoint1299 = x3d.HAnimJoint()
+HAnimJoint1299 = x3d.HAnimJoint(DEF="hanim_l_carpal_interphalangeal_1")
 HAnimJoint1299.name = "l_carpal_interphalangeal_1"
-HAnimJoint1299.DEF = "hanim_l_carpal_interphalangeal_1"
 HAnimJoint1299.center = [0.182655,0.654075,0.0496575]
-HAnimJoint1299.ulimit = [0,0,0]
-HAnimJoint1299.llimit = [0,0,0]
-HAnimSegment1300 = x3d.HAnimSegment()
+HAnimSegment1300 = x3d.HAnimSegment(DEF="hanim_l_carpal_distal_phalanx_1")
 HAnimSegment1300.name = "l_carpal_distal_phalanx_1"
-HAnimSegment1300.DEF = "hanim_l_carpal_distal_phalanx_1"
-Shape1301 = x3d.Shape()
-Shape1301.DEF = "l_carpal_distal_phalanx_1_Shape"
+Shape1301 = x3d.Shape(DEF="l_carpal_distal_phalanx_1_Shape")
 Appearance1302 = x3d.Appearance()
-Material1303 = x3d.Material()
-Material1303.USE = "SurfaceDefault"
+Material1303 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1302.material = Material1303
-ImageTexture1304 = x3d.ImageTexture()
-ImageTexture1304.USE = "JinLOA4TextureAtlas"
+ImageTexture1304 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1302.texture = ImageTexture1304
 
@@ -6115,19 +5223,16 @@ IndexedFaceSet1305.texCoord = TextureCoordinate1307
 Shape1301.geometry = IndexedFaceSet1305
 
 HAnimSegment1300.children.append(Shape1301)
-Group1308 = x3d.Group()
-Group1308.DEF = "l_carpal_distal_phalanx_1_Sites"
-"""(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)"""
-HAnimSite1309 = x3d.HAnimSite()
+Group1308 = x3d.Group(DEF="l_carpal_distal_phalanx_1_Sites")
+Group1308.children.append(x3d.Comment("""(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)"""))
+HAnimSite1309 = x3d.HAnimSite(DEF="hanim_l_carpal_distal_phalanx_1_tip")
 HAnimSite1309.name = "l_carpal_distal_phalanx_1_tip"
-HAnimSite1309.DEF = "hanim_l_carpal_distal_phalanx_1_tip"
 HAnimSite1309.translation = [0.18,0.64,0.06]
 TouchSensor1310 = x3d.TouchSensor()
 TouchSensor1310.description = "HAnimSite l_carpal_distal_phalanx_1_tip 101"
 
 HAnimSite1309.children.append(TouchSensor1310)
-Shape1311 = x3d.Shape()
-Shape1311.USE = "HAnimSiteShape"
+Shape1311 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1309.children.append(Shape1311)
 
@@ -6144,24 +5249,17 @@ HAnimJoint1276.children.append(HAnimJoint1289)
 HAnimJoint1266.children.append(HAnimJoint1276)
 
 HAnimJoint1253.children.append(HAnimJoint1266)
-HAnimJoint1312 = x3d.HAnimJoint()
+HAnimJoint1312 = x3d.HAnimJoint(DEF="hanim_l_midcarpal_2")
 HAnimJoint1312.name = "l_midcarpal_2"
-HAnimJoint1312.DEF = "hanim_l_midcarpal_2"
 HAnimJoint1312.center = [0.1812825,0.70695,0.008417251]
-HAnimJoint1312.ulimit = [0,0,0]
-HAnimJoint1312.llimit = [0,0,0]
-HAnimSegment1313 = x3d.HAnimSegment()
+HAnimSegment1313 = x3d.HAnimSegment(DEF="hanim_l_trapezoid")
 HAnimSegment1313.name = "l_trapezoid"
-HAnimSegment1313.DEF = "hanim_l_trapezoid"
-Shape1314 = x3d.Shape()
-Shape1314.DEF = "l_trapezoid_Shape"
+Shape1314 = x3d.Shape(DEF="l_trapezoid_Shape")
 Appearance1315 = x3d.Appearance()
-Material1316 = x3d.Material()
-Material1316.USE = "SurfaceDefault"
+Material1316 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1315.material = Material1316
-ImageTexture1317 = x3d.ImageTexture()
-ImageTexture1317.USE = "JinLOA4TextureAtlas"
+ImageTexture1317 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1315.texture = ImageTexture1317
 
@@ -6182,31 +5280,23 @@ IndexedFaceSet1318.texCoord = TextureCoordinate1320
 Shape1314.geometry = IndexedFaceSet1318
 
 HAnimSegment1313.children.append(Shape1314)
-Group1321 = x3d.Group()
-Group1321.DEF = "l_trapezoid_Sites"
-"""None"""
+Group1321 = x3d.Group(DEF="l_trapezoid_Sites")
+Group1321.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1313.children.append(Group1321)
 
 HAnimJoint1312.children.append(HAnimSegment1313)
-HAnimJoint1322 = x3d.HAnimJoint()
+HAnimJoint1322 = x3d.HAnimJoint(DEF="hanim_l_carpometacarpal_2")
 HAnimJoint1322.name = "l_carpometacarpal_2"
-HAnimJoint1322.DEF = "hanim_l_carpometacarpal_2"
 HAnimJoint1322.center = [0.1812825,0.6876,0.009729]
-HAnimJoint1322.ulimit = [0,0,0]
-HAnimJoint1322.llimit = [0,0,0]
-HAnimSegment1323 = x3d.HAnimSegment()
+HAnimSegment1323 = x3d.HAnimSegment(DEF="hanim_l_metacarpal_2")
 HAnimSegment1323.name = "l_metacarpal_2"
-HAnimSegment1323.DEF = "hanim_l_metacarpal_2"
-Shape1324 = x3d.Shape()
-Shape1324.DEF = "l_metacarpal_2_Shape"
+Shape1324 = x3d.Shape(DEF="l_metacarpal_2_Shape")
 Appearance1325 = x3d.Appearance()
-Material1326 = x3d.Material()
-Material1326.USE = "SurfaceDefault"
+Material1326 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1325.material = Material1326
-ImageTexture1327 = x3d.ImageTexture()
-ImageTexture1327.USE = "JinLOA4TextureAtlas"
+ImageTexture1327 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1325.texture = ImageTexture1327
 
@@ -6227,31 +5317,23 @@ IndexedFaceSet1328.texCoord = TextureCoordinate1330
 Shape1324.geometry = IndexedFaceSet1328
 
 HAnimSegment1323.children.append(Shape1324)
-Group1331 = x3d.Group()
-Group1331.DEF = "l_metacarpal_2_Sites"
-"""None"""
+Group1331 = x3d.Group(DEF="l_metacarpal_2_Sites")
+Group1331.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1323.children.append(Group1331)
 
 HAnimJoint1322.children.append(HAnimSegment1323)
-HAnimJoint1332 = x3d.HAnimJoint()
+HAnimJoint1332 = x3d.HAnimJoint(DEF="hanim_l_metacarpophalangeal_2")
 HAnimJoint1332.name = "l_metacarpophalangeal_2"
-HAnimJoint1332.DEF = "hanim_l_metacarpophalangeal_2"
 HAnimJoint1332.center = [0.18373501,0.6372,0.015075001]
-HAnimJoint1332.ulimit = [0,0,0]
-HAnimJoint1332.llimit = [0,0,0]
-HAnimSegment1333 = x3d.HAnimSegment()
+HAnimSegment1333 = x3d.HAnimSegment(DEF="hanim_l_carpal_proximal_phalanx_2")
 HAnimSegment1333.name = "l_carpal_proximal_phalanx_2"
-HAnimSegment1333.DEF = "hanim_l_carpal_proximal_phalanx_2"
-Shape1334 = x3d.Shape()
-Shape1334.DEF = "l_carpal_proximal_phalanx_2_Shape"
+Shape1334 = x3d.Shape(DEF="l_carpal_proximal_phalanx_2_Shape")
 Appearance1335 = x3d.Appearance()
-Material1336 = x3d.Material()
-Material1336.USE = "SurfaceDefault"
+Material1336 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1335.material = Material1336
-ImageTexture1337 = x3d.ImageTexture()
-ImageTexture1337.USE = "JinLOA4TextureAtlas"
+ImageTexture1337 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1335.texture = ImageTexture1337
 
@@ -6272,31 +5354,23 @@ IndexedFaceSet1338.texCoord = TextureCoordinate1340
 Shape1334.geometry = IndexedFaceSet1338
 
 HAnimSegment1333.children.append(Shape1334)
-Group1341 = x3d.Group()
-Group1341.DEF = "l_carpal_proximal_phalanx_2_Sites"
-"""None"""
+Group1341 = x3d.Group(DEF="l_carpal_proximal_phalanx_2_Sites")
+Group1341.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1333.children.append(Group1341)
 
 HAnimJoint1332.children.append(HAnimSegment1333)
-HAnimJoint1342 = x3d.HAnimJoint()
+HAnimJoint1342 = x3d.HAnimJoint(DEF="hanim_l_carpal_proximal_interphalangeal_2")
 HAnimJoint1342.name = "l_carpal_proximal_interphalangeal_2"
-HAnimJoint1342.DEF = "hanim_l_carpal_proximal_interphalangeal_2"
 HAnimJoint1342.center = [0.18171,0.606825,0.014184001]
-HAnimJoint1342.ulimit = [0,0,0]
-HAnimJoint1342.llimit = [0,0,0]
-HAnimSegment1343 = x3d.HAnimSegment()
+HAnimSegment1343 = x3d.HAnimSegment(DEF="hanim_l_carpal_middle_phalanx_2")
 HAnimSegment1343.name = "l_carpal_middle_phalanx_2"
-HAnimSegment1343.DEF = "hanim_l_carpal_middle_phalanx_2"
-Shape1344 = x3d.Shape()
-Shape1344.DEF = "l_carpal_middle_phalanx_2_Shape"
+Shape1344 = x3d.Shape(DEF="l_carpal_middle_phalanx_2_Shape")
 Appearance1345 = x3d.Appearance()
-Material1346 = x3d.Material()
-Material1346.USE = "SurfaceDefault"
+Material1346 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1345.material = Material1346
-ImageTexture1347 = x3d.ImageTexture()
-ImageTexture1347.USE = "JinLOA4TextureAtlas"
+ImageTexture1347 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1345.texture = ImageTexture1347
 
@@ -6317,31 +5391,23 @@ IndexedFaceSet1348.texCoord = TextureCoordinate1350
 Shape1344.geometry = IndexedFaceSet1348
 
 HAnimSegment1343.children.append(Shape1344)
-Group1351 = x3d.Group()
-Group1351.DEF = "l_carpal_middle_phalanx_2_Sites"
-"""None"""
+Group1351 = x3d.Group(DEF="l_carpal_middle_phalanx_2_Sites")
+Group1351.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1343.children.append(Group1351)
 
 HAnimJoint1342.children.append(HAnimSegment1343)
-HAnimJoint1352 = x3d.HAnimJoint()
+HAnimJoint1352 = x3d.HAnimJoint(DEF="hanim_l_carpal_distal_interphalangeal_2")
 HAnimJoint1352.name = "l_carpal_distal_interphalangeal_2"
-HAnimJoint1352.DEF = "hanim_l_carpal_distal_interphalangeal_2"
 HAnimJoint1352.center = [0.180675,0.58162504,0.013385251]
-HAnimJoint1352.ulimit = [0,0,0]
-HAnimJoint1352.llimit = [0,0,0]
-HAnimSegment1353 = x3d.HAnimSegment()
+HAnimSegment1353 = x3d.HAnimSegment(DEF="hanim_l_carpal_distal_phalanx_2")
 HAnimSegment1353.name = "l_carpal_distal_phalanx_2"
-HAnimSegment1353.DEF = "hanim_l_carpal_distal_phalanx_2"
-Shape1354 = x3d.Shape()
-Shape1354.DEF = "l_carpal_distal_phalanx_2_Shape"
+Shape1354 = x3d.Shape(DEF="l_carpal_distal_phalanx_2_Shape")
 Appearance1355 = x3d.Appearance()
-Material1356 = x3d.Material()
-Material1356.USE = "SurfaceDefault"
+Material1356 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1355.material = Material1356
-ImageTexture1357 = x3d.ImageTexture()
-ImageTexture1357.USE = "JinLOA4TextureAtlas"
+ImageTexture1357 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1355.texture = ImageTexture1357
 
@@ -6362,19 +5428,16 @@ IndexedFaceSet1358.texCoord = TextureCoordinate1360
 Shape1354.geometry = IndexedFaceSet1358
 
 HAnimSegment1353.children.append(Shape1354)
-Group1361 = x3d.Group()
-Group1361.DEF = "l_carpal_distal_phalanx_2_Sites"
-"""(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)"""
-HAnimSite1362 = x3d.HAnimSite()
+Group1361 = x3d.Group(DEF="l_carpal_distal_phalanx_2_Sites")
+Group1361.children.append(x3d.Comment("""(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)"""))
+HAnimSite1362 = x3d.HAnimSite(DEF="hanim_l_carpal_distal_phalanx_2_tip")
 HAnimSite1362.name = "l_carpal_distal_phalanx_2_tip"
-HAnimSite1362.DEF = "hanim_l_carpal_distal_phalanx_2_tip"
 HAnimSite1362.translation = [0.172,0.558,0.017]
 TouchSensor1363 = x3d.TouchSensor()
 TouchSensor1363.description = "HAnimSite l_carpal_distal_phalanx_2_tip 102"
 
 HAnimSite1362.children.append(TouchSensor1363)
-Shape1364 = x3d.Shape()
-Shape1364.USE = "HAnimSiteShape"
+Shape1364 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1362.children.append(Shape1364)
 
@@ -6393,24 +5456,17 @@ HAnimJoint1322.children.append(HAnimJoint1332)
 HAnimJoint1312.children.append(HAnimJoint1322)
 
 HAnimJoint1253.children.append(HAnimJoint1312)
-HAnimJoint1365 = x3d.HAnimJoint()
+HAnimJoint1365 = x3d.HAnimJoint(DEF="hanim_l_midcarpal_3")
 HAnimJoint1365.name = "l_midcarpal_3"
-HAnimJoint1365.DEF = "hanim_l_midcarpal_3"
 HAnimJoint1365.center = [0.18108001,0.708525,-0.0047970004]
-HAnimJoint1365.ulimit = [0,0,0]
-HAnimJoint1365.llimit = [0,0,0]
-HAnimSegment1366 = x3d.HAnimSegment()
+HAnimSegment1366 = x3d.HAnimSegment(DEF="hanim_l_capitate")
 HAnimSegment1366.name = "l_capitate"
-HAnimSegment1366.DEF = "hanim_l_capitate"
-Shape1367 = x3d.Shape()
-Shape1367.DEF = "l_capitate_Shape"
+Shape1367 = x3d.Shape(DEF="l_capitate_Shape")
 Appearance1368 = x3d.Appearance()
-Material1369 = x3d.Material()
-Material1369.USE = "SurfaceDefault"
+Material1369 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1368.material = Material1369
-ImageTexture1370 = x3d.ImageTexture()
-ImageTexture1370.USE = "JinLOA4TextureAtlas"
+ImageTexture1370 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1368.texture = ImageTexture1370
 
@@ -6431,31 +5487,23 @@ IndexedFaceSet1371.texCoord = TextureCoordinate1373
 Shape1367.geometry = IndexedFaceSet1371
 
 HAnimSegment1366.children.append(Shape1367)
-Group1374 = x3d.Group()
-Group1374.DEF = "l_capitate_Sites"
-"""None"""
+Group1374 = x3d.Group(DEF="l_capitate_Sites")
+Group1374.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1366.children.append(Group1374)
 
 HAnimJoint1365.children.append(HAnimSegment1366)
-HAnimJoint1375 = x3d.HAnimJoint()
+HAnimJoint1375 = x3d.HAnimJoint(DEF="hanim_l_carpometacarpal_3")
 HAnimJoint1375.name = "l_carpometacarpal_3"
-HAnimJoint1375.DEF = "hanim_l_carpometacarpal_3"
 HAnimJoint1375.center = [0.18108001,0.6858,-0.0062527503]
-HAnimJoint1375.ulimit = [0,0,0]
-HAnimJoint1375.llimit = [0,0,0]
-HAnimSegment1376 = x3d.HAnimSegment()
+HAnimSegment1376 = x3d.HAnimSegment(DEF="hanim_l_metacarpal_3")
 HAnimSegment1376.name = "l_metacarpal_3"
-HAnimSegment1376.DEF = "hanim_l_metacarpal_3"
-Shape1377 = x3d.Shape()
-Shape1377.DEF = "l_metacarpal_3_Shape"
+Shape1377 = x3d.Shape(DEF="l_metacarpal_3_Shape")
 Appearance1378 = x3d.Appearance()
-Material1379 = x3d.Material()
-Material1379.USE = "SurfaceDefault"
+Material1379 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1378.material = Material1379
-ImageTexture1380 = x3d.ImageTexture()
-ImageTexture1380.USE = "JinLOA4TextureAtlas"
+ImageTexture1380 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1378.texture = ImageTexture1380
 
@@ -6476,19 +5524,16 @@ IndexedFaceSet1381.texCoord = TextureCoordinate1383
 Shape1377.geometry = IndexedFaceSet1381
 
 HAnimSegment1376.children.append(Shape1377)
-Group1384 = x3d.Group()
-Group1384.DEF = "l_metacarpal_3_Sites"
-"""(l_metacarpal_phalanx_3 x y z)"""
-HAnimSite1385 = x3d.HAnimSite()
+Group1384 = x3d.Group(DEF="l_metacarpal_3_Sites")
+Group1384.children.append(x3d.Comment("""(l_metacarpal_phalanx_3 x y z)"""))
+HAnimSite1385 = x3d.HAnimSite(DEF="hanim_l_metacarpal_phalanx_3")
 HAnimSite1385.name = "l_metacarpal_phalanx_3"
-HAnimSite1385.DEF = "hanim_l_metacarpal_phalanx_3"
 HAnimSite1385.translation = [0.2,0.665,-0.039]
 TouchSensor1386 = x3d.TouchSensor()
 TouchSensor1386.description = "HAnimSite l_metacarpal_phalanx_3 76"
 
 HAnimSite1385.children.append(TouchSensor1386)
-Shape1387 = x3d.Shape()
-Shape1387.USE = "HAnimSiteShape"
+Shape1387 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1385.children.append(Shape1387)
 
@@ -6497,24 +5542,17 @@ Group1384.children.append(HAnimSite1385)
 HAnimSegment1376.children.append(Group1384)
 
 HAnimJoint1375.children.append(HAnimSegment1376)
-HAnimJoint1388 = x3d.HAnimJoint()
+HAnimJoint1388 = x3d.HAnimJoint(DEF="hanim_l_metacarpophalangeal_3")
 HAnimJoint1388.name = "l_metacarpophalangeal_3"
-HAnimJoint1388.DEF = "hanim_l_metacarpophalangeal_3"
 HAnimJoint1388.center = [0.18369,0.63495,-0.00391725]
-HAnimJoint1388.ulimit = [0,0,0]
-HAnimJoint1388.llimit = [0,0,0]
-HAnimSegment1389 = x3d.HAnimSegment()
+HAnimSegment1389 = x3d.HAnimSegment(DEF="hanim_l_carpal_proximal_phalanx_3")
 HAnimSegment1389.name = "l_carpal_proximal_phalanx_3"
-HAnimSegment1389.DEF = "hanim_l_carpal_proximal_phalanx_3"
-Shape1390 = x3d.Shape()
-Shape1390.DEF = "l_carpal_proximal_phalanx_3_Shape"
+Shape1390 = x3d.Shape(DEF="l_carpal_proximal_phalanx_3_Shape")
 Appearance1391 = x3d.Appearance()
-Material1392 = x3d.Material()
-Material1392.USE = "SurfaceDefault"
+Material1392 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1391.material = Material1392
-ImageTexture1393 = x3d.ImageTexture()
-ImageTexture1393.USE = "JinLOA4TextureAtlas"
+ImageTexture1393 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1391.texture = ImageTexture1393
 
@@ -6535,31 +5573,23 @@ IndexedFaceSet1394.texCoord = TextureCoordinate1396
 Shape1390.geometry = IndexedFaceSet1394
 
 HAnimSegment1389.children.append(Shape1390)
-Group1397 = x3d.Group()
-Group1397.DEF = "l_carpal_proximal_phalanx_3_Sites"
-"""None"""
+Group1397 = x3d.Group(DEF="l_carpal_proximal_phalanx_3_Sites")
+Group1397.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1389.children.append(Group1397)
 
 HAnimJoint1388.children.append(HAnimSegment1389)
-HAnimJoint1398 = x3d.HAnimJoint()
+HAnimJoint1398 = x3d.HAnimJoint(DEF="hanim_l_carpal_proximal_interphalangeal_3")
 HAnimJoint1398.name = "l_carpal_proximal_interphalangeal_3"
-HAnimJoint1398.DEF = "hanim_l_carpal_proximal_interphalangeal_3"
 HAnimJoint1398.center = [0.18171,0.603225,-0.003537]
-HAnimJoint1398.ulimit = [0,0,0]
-HAnimJoint1398.llimit = [0,0,0]
-HAnimSegment1399 = x3d.HAnimSegment()
+HAnimSegment1399 = x3d.HAnimSegment(DEF="hanim_l_carpal_middle_phalanx_3")
 HAnimSegment1399.name = "l_carpal_middle_phalanx_3"
-HAnimSegment1399.DEF = "hanim_l_carpal_middle_phalanx_3"
-Shape1400 = x3d.Shape()
-Shape1400.DEF = "l_carpal_middle_phalanx_3_Shape"
+Shape1400 = x3d.Shape(DEF="l_carpal_middle_phalanx_3_Shape")
 Appearance1401 = x3d.Appearance()
-Material1402 = x3d.Material()
-Material1402.USE = "SurfaceDefault"
+Material1402 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1401.material = Material1402
-ImageTexture1403 = x3d.ImageTexture()
-ImageTexture1403.USE = "JinLOA4TextureAtlas"
+ImageTexture1403 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1401.texture = ImageTexture1403
 
@@ -6580,31 +5610,23 @@ IndexedFaceSet1404.texCoord = TextureCoordinate1406
 Shape1400.geometry = IndexedFaceSet1404
 
 HAnimSegment1399.children.append(Shape1400)
-Group1407 = x3d.Group()
-Group1407.DEF = "l_carpal_middle_phalanx_3_Sites"
-"""None"""
+Group1407 = x3d.Group(DEF="l_carpal_middle_phalanx_3_Sites")
+Group1407.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1399.children.append(Group1407)
 
 HAnimJoint1398.children.append(HAnimSegment1399)
-HAnimJoint1408 = x3d.HAnimJoint()
+HAnimJoint1408 = x3d.HAnimJoint(DEF="hanim_l_carpal_distal_interphalangeal_3")
 HAnimJoint1408.name = "l_carpal_distal_interphalangeal_3"
-HAnimJoint1408.DEF = "hanim_l_carpal_distal_interphalangeal_3"
 HAnimJoint1408.center = [0.180675,0.575325,-0.0037597502]
-HAnimJoint1408.ulimit = [0,0,0]
-HAnimJoint1408.llimit = [0,0,0]
-HAnimSegment1409 = x3d.HAnimSegment()
+HAnimSegment1409 = x3d.HAnimSegment(DEF="hanim_l_carpal_distal_phalanx_3")
 HAnimSegment1409.name = "l_carpal_distal_phalanx_3"
-HAnimSegment1409.DEF = "hanim_l_carpal_distal_phalanx_3"
-Shape1410 = x3d.Shape()
-Shape1410.DEF = "l_carpal_distal_phalanx_3_Shape"
+Shape1410 = x3d.Shape(DEF="l_carpal_distal_phalanx_3_Shape")
 Appearance1411 = x3d.Appearance()
-Material1412 = x3d.Material()
-Material1412.USE = "SurfaceDefault"
+Material1412 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1411.material = Material1412
-ImageTexture1413 = x3d.ImageTexture()
-ImageTexture1413.USE = "JinLOA4TextureAtlas"
+ImageTexture1413 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1411.texture = ImageTexture1413
 
@@ -6625,33 +5647,29 @@ IndexedFaceSet1414.texCoord = TextureCoordinate1416
 Shape1410.geometry = IndexedFaceSet1414
 
 HAnimSegment1409.children.append(Shape1410)
-Group1417 = x3d.Group()
-Group1417.DEF = "l_carpal_distal_phalanx_3_Sites"
-"""(l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)"""
-HAnimSite1418 = x3d.HAnimSite()
+Group1417 = x3d.Group(DEF="l_carpal_distal_phalanx_3_Sites")
+Group1417.children.append(x3d.Comment("""(l_dactylion_pt 0.2056 0.6743 -0.0482)"""))
+Group1417.children.append(x3d.Comment("""(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)"""))
+HAnimSite1418 = x3d.HAnimSite(DEF="hanim_l_dactylion_pt")
 HAnimSite1418.name = "l_dactylion_pt"
-HAnimSite1418.DEF = "hanim_l_dactylion_pt"
 HAnimSite1418.translation = [0.17,0.555,-0.006]
 TouchSensor1419 = x3d.TouchSensor()
 TouchSensor1419.description = "HAnimSite l_dactylion_pt 57"
 
 HAnimSite1418.children.append(TouchSensor1419)
-Shape1420 = x3d.Shape()
-Shape1420.USE = "HAnimSiteShape"
+Shape1420 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1418.children.append(Shape1420)
 
 Group1417.children.append(HAnimSite1418)
-HAnimSite1421 = x3d.HAnimSite()
+HAnimSite1421 = x3d.HAnimSite(DEF="hanim_l_carpal_distal_phalanx_3_tip")
 HAnimSite1421.name = "l_carpal_distal_phalanx_3_tip"
-HAnimSite1421.DEF = "hanim_l_carpal_distal_phalanx_3_tip"
 HAnimSite1421.translation = [0.172,0.555,-0.006]
 TouchSensor1422 = x3d.TouchSensor()
 TouchSensor1422.description = "HAnimSite l_carpal_distal_phalanx_3_tip 103"
 
 HAnimSite1421.children.append(TouchSensor1422)
-Shape1423 = x3d.Shape()
-Shape1423.USE = "HAnimSiteShape"
+Shape1423 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1421.children.append(Shape1423)
 
@@ -6670,24 +5688,17 @@ HAnimJoint1375.children.append(HAnimJoint1388)
 HAnimJoint1365.children.append(HAnimJoint1375)
 
 HAnimJoint1253.children.append(HAnimJoint1365)
-HAnimJoint1424 = x3d.HAnimJoint()
+HAnimJoint1424 = x3d.HAnimJoint(DEF="hanim_l_midcarpal_4_5")
 HAnimJoint1424.name = "l_midcarpal_4_5"
-HAnimJoint1424.DEF = "hanim_l_midcarpal_4_5"
 HAnimJoint1424.center = [0.18108001,0.70582503,-0.025740001]
-HAnimJoint1424.ulimit = [0,0,0]
-HAnimJoint1424.llimit = [0,0,0]
-HAnimSegment1425 = x3d.HAnimSegment()
+HAnimSegment1425 = x3d.HAnimSegment(DEF="hanim_l_hamate")
 HAnimSegment1425.name = "l_hamate"
-HAnimSegment1425.DEF = "hanim_l_hamate"
-Shape1426 = x3d.Shape()
-Shape1426.DEF = "l_hamate_Shape"
+Shape1426 = x3d.Shape(DEF="l_hamate_Shape")
 Appearance1427 = x3d.Appearance()
-Material1428 = x3d.Material()
-Material1428.USE = "SurfaceDefault"
+Material1428 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1427.material = Material1428
-ImageTexture1429 = x3d.ImageTexture()
-ImageTexture1429.USE = "JinLOA4TextureAtlas"
+ImageTexture1429 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1427.texture = ImageTexture1429
 
@@ -6708,31 +5719,23 @@ IndexedFaceSet1430.texCoord = TextureCoordinate1432
 Shape1426.geometry = IndexedFaceSet1430
 
 HAnimSegment1425.children.append(Shape1426)
-Group1433 = x3d.Group()
-Group1433.DEF = "l_hamate_Sites"
-"""None"""
+Group1433 = x3d.Group(DEF="l_hamate_Sites")
+Group1433.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1425.children.append(Group1433)
 
 HAnimJoint1424.children.append(HAnimSegment1425)
-HAnimJoint1434 = x3d.HAnimJoint()
+HAnimJoint1434 = x3d.HAnimJoint(DEF="hanim_l_carpometacarpal_4")
 HAnimJoint1434.name = "l_carpometacarpal_4"
-HAnimJoint1434.DEF = "hanim_l_carpometacarpal_4"
 HAnimJoint1434.center = [0.18108001,0.68625003,-0.01991925]
-HAnimJoint1434.ulimit = [0,0,0]
-HAnimJoint1434.llimit = [0,0,0]
-HAnimSegment1435 = x3d.HAnimSegment()
+HAnimSegment1435 = x3d.HAnimSegment(DEF="hanim_l_metacarpal_4")
 HAnimSegment1435.name = "l_metacarpal_4"
-HAnimSegment1435.DEF = "hanim_l_metacarpal_4"
-Shape1436 = x3d.Shape()
-Shape1436.DEF = "l_metacarpal_4_Shape"
+Shape1436 = x3d.Shape(DEF="l_metacarpal_4_Shape")
 Appearance1437 = x3d.Appearance()
-Material1438 = x3d.Material()
-Material1438.USE = "SurfaceDefault"
+Material1438 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1437.material = Material1438
-ImageTexture1439 = x3d.ImageTexture()
-ImageTexture1439.USE = "JinLOA4TextureAtlas"
+ImageTexture1439 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1437.texture = ImageTexture1439
 
@@ -6753,31 +5756,23 @@ IndexedFaceSet1440.texCoord = TextureCoordinate1442
 Shape1436.geometry = IndexedFaceSet1440
 
 HAnimSegment1435.children.append(Shape1436)
-Group1443 = x3d.Group()
-Group1443.DEF = "l_metacarpal_4_Sites"
-"""None"""
+Group1443 = x3d.Group(DEF="l_metacarpal_4_Sites")
+Group1443.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1435.children.append(Group1443)
 
 HAnimJoint1434.children.append(HAnimSegment1435)
-HAnimJoint1444 = x3d.HAnimJoint()
+HAnimJoint1444 = x3d.HAnimJoint(DEF="hanim_l_metacarpophalangeal_4")
 HAnimJoint1444.name = "l_metacarpophalangeal_4"
-HAnimJoint1444.DEF = "hanim_l_metacarpophalangeal_4"
 HAnimJoint1444.center = [0.18369,0.63405,-0.02144025]
-HAnimJoint1444.ulimit = [0,0,0]
-HAnimJoint1444.llimit = [0,0,0]
-HAnimSegment1445 = x3d.HAnimSegment()
+HAnimSegment1445 = x3d.HAnimSegment(DEF="hanim_l_carpal_proximal_phalanx_4")
 HAnimSegment1445.name = "l_carpal_proximal_phalanx_4"
-HAnimSegment1445.DEF = "hanim_l_carpal_proximal_phalanx_4"
-Shape1446 = x3d.Shape()
-Shape1446.DEF = "l_carpal_proximal_phalanx_4_Shape"
+Shape1446 = x3d.Shape(DEF="l_carpal_proximal_phalanx_4_Shape")
 Appearance1447 = x3d.Appearance()
-Material1448 = x3d.Material()
-Material1448.USE = "SurfaceDefault"
+Material1448 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1447.material = Material1448
-ImageTexture1449 = x3d.ImageTexture()
-ImageTexture1449.USE = "JinLOA4TextureAtlas"
+ImageTexture1449 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1447.texture = ImageTexture1449
 
@@ -6798,31 +5793,23 @@ IndexedFaceSet1450.texCoord = TextureCoordinate1452
 Shape1446.geometry = IndexedFaceSet1450
 
 HAnimSegment1445.children.append(Shape1446)
-Group1453 = x3d.Group()
-Group1453.DEF = "l_carpal_proximal_phalanx_4_Sites"
-"""None"""
+Group1453 = x3d.Group(DEF="l_carpal_proximal_phalanx_4_Sites")
+Group1453.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1445.children.append(Group1453)
 
 HAnimJoint1444.children.append(HAnimSegment1445)
-HAnimJoint1454 = x3d.HAnimJoint()
+HAnimJoint1454 = x3d.HAnimJoint(DEF="hanim_l_carpal_proximal_interphalangeal_4")
 HAnimJoint1454.name = "l_carpal_proximal_interphalangeal_4"
-HAnimJoint1454.DEF = "hanim_l_carpal_proximal_interphalangeal_4"
 HAnimJoint1454.center = [0.18171,0.6066,-0.020646]
-HAnimJoint1454.ulimit = [0,0,0]
-HAnimJoint1454.llimit = [0,0,0]
-HAnimSegment1455 = x3d.HAnimSegment()
+HAnimSegment1455 = x3d.HAnimSegment(DEF="hanim_l_carpal_middle_phalanx_4")
 HAnimSegment1455.name = "l_carpal_middle_phalanx_4"
-HAnimSegment1455.DEF = "hanim_l_carpal_middle_phalanx_4"
-Shape1456 = x3d.Shape()
-Shape1456.DEF = "l_carpal_middle_phalanx_4_Shape"
+Shape1456 = x3d.Shape(DEF="l_carpal_middle_phalanx_4_Shape")
 Appearance1457 = x3d.Appearance()
-Material1458 = x3d.Material()
-Material1458.USE = "SurfaceDefault"
+Material1458 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1457.material = Material1458
-ImageTexture1459 = x3d.ImageTexture()
-ImageTexture1459.USE = "JinLOA4TextureAtlas"
+ImageTexture1459 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1457.texture = ImageTexture1459
 
@@ -6843,31 +5830,23 @@ IndexedFaceSet1460.texCoord = TextureCoordinate1462
 Shape1456.geometry = IndexedFaceSet1460
 
 HAnimSegment1455.children.append(Shape1456)
-Group1463 = x3d.Group()
-Group1463.DEF = "l_carpal_middle_phalanx_4_Sites"
-"""None"""
+Group1463 = x3d.Group(DEF="l_carpal_middle_phalanx_4_Sites")
+Group1463.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1455.children.append(Group1463)
 
 HAnimJoint1454.children.append(HAnimSegment1455)
-HAnimJoint1464 = x3d.HAnimJoint()
+HAnimJoint1464 = x3d.HAnimJoint(DEF="hanim_l_carpal_distal_interphalangeal_4")
 HAnimJoint1464.name = "l_carpal_distal_interphalangeal_4"
-HAnimJoint1464.DEF = "hanim_l_carpal_distal_interphalangeal_4"
 HAnimJoint1464.center = [0.180675,0.580725,-0.019777501]
-HAnimJoint1464.ulimit = [0,0,0]
-HAnimJoint1464.llimit = [0,0,0]
-HAnimSegment1465 = x3d.HAnimSegment()
+HAnimSegment1465 = x3d.HAnimSegment(DEF="hanim_l_carpal_distal_phalanx_4")
 HAnimSegment1465.name = "l_carpal_distal_phalanx_4"
-HAnimSegment1465.DEF = "hanim_l_carpal_distal_phalanx_4"
-Shape1466 = x3d.Shape()
-Shape1466.DEF = "l_carpal_distal_phalanx_4_Shape"
+Shape1466 = x3d.Shape(DEF="l_carpal_distal_phalanx_4_Shape")
 Appearance1467 = x3d.Appearance()
-Material1468 = x3d.Material()
-Material1468.USE = "SurfaceDefault"
+Material1468 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1467.material = Material1468
-ImageTexture1469 = x3d.ImageTexture()
-ImageTexture1469.USE = "JinLOA4TextureAtlas"
+ImageTexture1469 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1467.texture = ImageTexture1469
 
@@ -6888,19 +5867,16 @@ IndexedFaceSet1470.texCoord = TextureCoordinate1472
 Shape1466.geometry = IndexedFaceSet1470
 
 HAnimSegment1465.children.append(Shape1466)
-Group1473 = x3d.Group()
-Group1473.DEF = "l_carpal_distal_phalanx_4_Sites"
-"""(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)"""
-HAnimSite1474 = x3d.HAnimSite()
+Group1473 = x3d.Group(DEF="l_carpal_distal_phalanx_4_Sites")
+Group1473.children.append(x3d.Comment("""(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)"""))
+HAnimSite1474 = x3d.HAnimSite(DEF="hanim_l_carpal_distal_phalanx_4_tip")
 HAnimSite1474.name = "l_carpal_distal_phalanx_4_tip"
-HAnimSite1474.DEF = "hanim_l_carpal_distal_phalanx_4_tip"
 HAnimSite1474.translation = [0.172,0.559,-0.024]
 TouchSensor1475 = x3d.TouchSensor()
 TouchSensor1475.description = "HAnimSite l_carpal_distal_phalanx_4_tip 104"
 
 HAnimSite1474.children.append(TouchSensor1475)
-Shape1476 = x3d.Shape()
-Shape1476.USE = "HAnimSiteShape"
+Shape1476 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1474.children.append(Shape1476)
 
@@ -6919,24 +5895,17 @@ HAnimJoint1434.children.append(HAnimJoint1444)
 HAnimJoint1424.children.append(HAnimJoint1434)
 
 HAnimJoint1253.children.append(HAnimJoint1424)
-HAnimJoint1477 = x3d.HAnimJoint()
+HAnimJoint1477 = x3d.HAnimJoint(DEF="hanim_l_carpometacarpal_5")
 HAnimJoint1477.name = "l_carpometacarpal_5"
-HAnimJoint1477.DEF = "hanim_l_carpometacarpal_5"
 HAnimJoint1477.center = [0.1816425,0.68827504,-0.032782502]
-HAnimJoint1477.ulimit = [0,0,0]
-HAnimJoint1477.llimit = [0,0,0]
-HAnimSegment1478 = x3d.HAnimSegment()
+HAnimSegment1478 = x3d.HAnimSegment(DEF="hanim_l_metacarpal_5")
 HAnimSegment1478.name = "l_metacarpal_5"
-HAnimSegment1478.DEF = "hanim_l_metacarpal_5"
-Shape1479 = x3d.Shape()
-Shape1479.DEF = "l_metacarpal_5_Shape"
+Shape1479 = x3d.Shape(DEF="l_metacarpal_5_Shape")
 Appearance1480 = x3d.Appearance()
-Material1481 = x3d.Material()
-Material1481.USE = "SurfaceDefault"
+Material1481 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1480.material = Material1481
-ImageTexture1482 = x3d.ImageTexture()
-ImageTexture1482.USE = "JinLOA4TextureAtlas"
+ImageTexture1482 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1480.texture = ImageTexture1482
 
@@ -6957,19 +5926,16 @@ IndexedFaceSet1483.texCoord = TextureCoordinate1485
 Shape1479.geometry = IndexedFaceSet1483
 
 HAnimSegment1478.children.append(Shape1479)
-Group1486 = x3d.Group()
-Group1486.DEF = "l_metacarpal_5_Sites"
-"""(l_metacarpal_phalanx_5_pt 0.1929 0.7860 -0.1122)"""
-HAnimSite1487 = x3d.HAnimSite()
+Group1486 = x3d.Group(DEF="l_metacarpal_5_Sites")
+Group1486.children.append(x3d.Comment("""(l_metacarpal_phalanx_5_pt 0.1929 0.7860 -0.1122)"""))
+HAnimSite1487 = x3d.HAnimSite(DEF="hanim_l_metacarpal_phalanx_5_pt")
 HAnimSite1487.name = "l_metacarpal_phalanx_5_pt"
-HAnimSite1487.DEF = "hanim_l_metacarpal_phalanx_5_pt"
 HAnimSite1487.translation = [0.2,0.665,-0.036]
 TouchSensor1488 = x3d.TouchSensor()
 TouchSensor1488.description = "HAnimSite l_metacarpal_phalanx_5_pt 77"
 
 HAnimSite1487.children.append(TouchSensor1488)
-Shape1489 = x3d.Shape()
-Shape1489.USE = "HAnimSiteShape"
+Shape1489 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1487.children.append(Shape1489)
 
@@ -6978,24 +5944,17 @@ Group1486.children.append(HAnimSite1487)
 HAnimSegment1478.children.append(Group1486)
 
 HAnimJoint1477.children.append(HAnimSegment1478)
-HAnimJoint1490 = x3d.HAnimJoint()
+HAnimJoint1490 = x3d.HAnimJoint(DEF="hanim_l_metacarpophalangeal_5")
 HAnimJoint1490.name = "l_metacarpophalangeal_5"
-HAnimJoint1490.DEF = "hanim_l_metacarpophalangeal_5"
 HAnimJoint1490.center = [0.18333,0.6381,-0.0370575]
-HAnimJoint1490.ulimit = [0,0,0]
-HAnimJoint1490.llimit = [0,0,0]
-HAnimSegment1491 = x3d.HAnimSegment()
+HAnimSegment1491 = x3d.HAnimSegment(DEF="hanim_l_carpal_proximal_phalanx_5")
 HAnimSegment1491.name = "l_carpal_proximal_phalanx_5"
-HAnimSegment1491.DEF = "hanim_l_carpal_proximal_phalanx_5"
-Shape1492 = x3d.Shape()
-Shape1492.DEF = "l_carpal_proximal_phalanx_5_Shape"
+Shape1492 = x3d.Shape(DEF="l_carpal_proximal_phalanx_5_Shape")
 Appearance1493 = x3d.Appearance()
-Material1494 = x3d.Material()
-Material1494.USE = "SurfaceDefault"
+Material1494 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1493.material = Material1494
-ImageTexture1495 = x3d.ImageTexture()
-ImageTexture1495.USE = "JinLOA4TextureAtlas"
+ImageTexture1495 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1493.texture = ImageTexture1495
 
@@ -7016,31 +5975,23 @@ IndexedFaceSet1496.texCoord = TextureCoordinate1498
 Shape1492.geometry = IndexedFaceSet1496
 
 HAnimSegment1491.children.append(Shape1492)
-Group1499 = x3d.Group()
-Group1499.DEF = "l_carpal_proximal_phalanx_5_Sites"
-"""None"""
+Group1499 = x3d.Group(DEF="l_carpal_proximal_phalanx_5_Sites")
+Group1499.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1491.children.append(Group1499)
 
 HAnimJoint1490.children.append(HAnimSegment1491)
-HAnimJoint1500 = x3d.HAnimJoint()
+HAnimJoint1500 = x3d.HAnimJoint(DEF="hanim_l_carpal_proximal_interphalangeal_5")
 HAnimJoint1500.name = "l_carpal_proximal_interphalangeal_5"
-HAnimJoint1500.DEF = "hanim_l_carpal_proximal_interphalangeal_5"
 HAnimJoint1500.center = [0.18166502,0.62100005,-0.037147503]
-HAnimJoint1500.ulimit = [0,0,0]
-HAnimJoint1500.llimit = [0,0,0]
-HAnimSegment1501 = x3d.HAnimSegment()
+HAnimSegment1501 = x3d.HAnimSegment(DEF="hanim_l_carpal_middle_phalanx_5")
 HAnimSegment1501.name = "l_carpal_middle_phalanx_5"
-HAnimSegment1501.DEF = "hanim_l_carpal_middle_phalanx_5"
-Shape1502 = x3d.Shape()
-Shape1502.DEF = "l_carpal_middle_phalanx_5_Shape"
+Shape1502 = x3d.Shape(DEF="l_carpal_middle_phalanx_5_Shape")
 Appearance1503 = x3d.Appearance()
-Material1504 = x3d.Material()
-Material1504.USE = "SurfaceDefault"
+Material1504 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1503.material = Material1504
-ImageTexture1505 = x3d.ImageTexture()
-ImageTexture1505.USE = "JinLOA4TextureAtlas"
+ImageTexture1505 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1503.texture = ImageTexture1505
 
@@ -7061,31 +6012,23 @@ IndexedFaceSet1506.texCoord = TextureCoordinate1508
 Shape1502.geometry = IndexedFaceSet1506
 
 HAnimSegment1501.children.append(Shape1502)
-Group1509 = x3d.Group()
-Group1509.DEF = "l_carpal_middle_phalanx_5_Sites"
-"""None"""
+Group1509 = x3d.Group(DEF="l_carpal_middle_phalanx_5_Sites")
+Group1509.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1501.children.append(Group1509)
 
 HAnimJoint1500.children.append(HAnimSegment1501)
-HAnimJoint1510 = x3d.HAnimJoint()
+HAnimJoint1510 = x3d.HAnimJoint(DEF="hanim_l_carpal_distal_interphalangeal_5")
 HAnimJoint1510.name = "l_carpal_distal_interphalangeal_5"
-HAnimJoint1510.DEF = "hanim_l_carpal_distal_interphalangeal_5"
 HAnimJoint1510.center = [0.18081002,0.602325,-0.0369675]
-HAnimJoint1510.ulimit = [0,0,0]
-HAnimJoint1510.llimit = [0,0,0]
-HAnimSegment1511 = x3d.HAnimSegment()
+HAnimSegment1511 = x3d.HAnimSegment(DEF="hanim_l_carpal_distal_phalanx_5")
 HAnimSegment1511.name = "l_carpal_distal_phalanx_5"
-HAnimSegment1511.DEF = "hanim_l_carpal_distal_phalanx_5"
-Shape1512 = x3d.Shape()
-Shape1512.DEF = "l_carpal_distal_phalanx_5_Shape"
+Shape1512 = x3d.Shape(DEF="l_carpal_distal_phalanx_5_Shape")
 Appearance1513 = x3d.Appearance()
-Material1514 = x3d.Material()
-Material1514.USE = "SurfaceDefault"
+Material1514 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1513.material = Material1514
-ImageTexture1515 = x3d.ImageTexture()
-ImageTexture1515.USE = "JinLOA4TextureAtlas"
+ImageTexture1515 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1513.texture = ImageTexture1515
 
@@ -7106,19 +6049,16 @@ IndexedFaceSet1516.texCoord = TextureCoordinate1518
 Shape1512.geometry = IndexedFaceSet1516
 
 HAnimSegment1511.children.append(Shape1512)
-Group1519 = x3d.Group()
-Group1519.DEF = "l_carpal_distal_phalanx_5_Sites"
-"""(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)"""
-HAnimSite1520 = x3d.HAnimSite()
+Group1519 = x3d.Group(DEF="l_carpal_distal_phalanx_5_Sites")
+Group1519.children.append(x3d.Comment("""(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)"""))
+HAnimSite1520 = x3d.HAnimSite(DEF="hanim_l_carpal_distal_phalanx_5_tip")
 HAnimSite1520.name = "l_carpal_distal_phalanx_5_tip"
-HAnimSite1520.DEF = "hanim_l_carpal_distal_phalanx_5_tip"
 HAnimSite1520.translation = [0.172,0.58,-0.039]
 TouchSensor1521 = x3d.TouchSensor()
 TouchSensor1521.description = "HAnimSite l_carpal_distal_phalanx_5_tip 105"
 
 HAnimSite1520.children.append(TouchSensor1521)
-Shape1522 = x3d.Shape()
-Shape1522.USE = "HAnimSiteShape"
+Shape1522 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1520.children.append(Shape1522)
 
@@ -7145,24 +6085,17 @@ HAnimJoint1193.children.append(HAnimJoint1215)
 HAnimJoint1180.children.append(HAnimJoint1193)
 
 HAnimJoint960.children.append(HAnimJoint1180)
-HAnimJoint1523 = x3d.HAnimJoint()
+HAnimJoint1523 = x3d.HAnimJoint(DEF="hanim_r_sternoclavicular")
 HAnimJoint1523.name = "r_sternoclavicular"
-HAnimJoint1523.DEF = "hanim_r_sternoclavicular"
 HAnimJoint1523.center = [-0.038475003,1.2087001,-0.013785751]
-HAnimJoint1523.ulimit = [0,0,0]
-HAnimJoint1523.llimit = [0,0,0]
-HAnimSegment1524 = x3d.HAnimSegment()
+HAnimSegment1524 = x3d.HAnimSegment(DEF="hanim_r_clavicle")
 HAnimSegment1524.name = "r_clavicle"
-HAnimSegment1524.DEF = "hanim_r_clavicle"
-Shape1525 = x3d.Shape()
-Shape1525.DEF = "r_clavicle_Shape"
+Shape1525 = x3d.Shape(DEF="r_clavicle_Shape")
 Appearance1526 = x3d.Appearance()
-Material1527 = x3d.Material()
-Material1527.USE = "SurfaceDefault"
+Material1527 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1526.material = Material1527
-ImageTexture1528 = x3d.ImageTexture()
-ImageTexture1528.USE = "JinLOA4TextureAtlas"
+ImageTexture1528 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1526.texture = ImageTexture1528
 
@@ -7183,19 +6116,17 @@ IndexedFaceSet1529.texCoord = TextureCoordinate1531
 Shape1525.geometry = IndexedFaceSet1529
 
 HAnimSegment1524.children.append(Shape1525)
-Group1532 = x3d.Group()
-Group1532.DEF = "r_clavicle_Sites"
-"""0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400)"""
-HAnimSite1533 = x3d.HAnimSite()
+Group1532 = x3d.Group(DEF="r_clavicle_Sites")
+Group1532.children.append(x3d.Comment("""0.15 1.222 -0.02"""))
+Group1532.children.append(x3d.Comment("""(r_clavicale_pt -0.0115 1.4943 0.0400)"""))
+HAnimSite1533 = x3d.HAnimSite(DEF="hanim_r_clavicale_pt")
 HAnimSite1533.name = "r_clavicale_pt"
-HAnimSite1533.DEF = "hanim_r_clavicale_pt"
 HAnimSite1533.translation = [-0.03,1.2,0.04]
 TouchSensor1534 = x3d.TouchSensor()
 TouchSensor1534.description = "HAnimSite r_clavicale_pt 19"
 
 HAnimSite1533.children.append(TouchSensor1534)
-Shape1535 = x3d.Shape()
-Shape1535.USE = "HAnimSiteShape"
+Shape1535 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1533.children.append(Shape1535)
 
@@ -7204,24 +6135,17 @@ Group1532.children.append(HAnimSite1533)
 HAnimSegment1524.children.append(Group1532)
 
 HAnimJoint1523.children.append(HAnimSegment1524)
-HAnimJoint1536 = x3d.HAnimJoint()
+HAnimJoint1536 = x3d.HAnimJoint(DEF="hanim_r_acromioclavicular")
 HAnimJoint1536.name = "r_acromioclavicular"
-HAnimJoint1536.DEF = "hanim_r_acromioclavicular"
 HAnimJoint1536.center = [-0.12294001,1.191825,-0.012897001]
-HAnimJoint1536.ulimit = [0,0,0]
-HAnimJoint1536.llimit = [0,0,0]
-HAnimSegment1537 = x3d.HAnimSegment()
+HAnimSegment1537 = x3d.HAnimSegment(DEF="hanim_r_scapula")
 HAnimSegment1537.name = "r_scapula"
-HAnimSegment1537.DEF = "hanim_r_scapula"
-Shape1538 = x3d.Shape()
-Shape1538.DEF = "r_scapula_Shape"
+Shape1538 = x3d.Shape(DEF="r_scapula_Shape")
 Appearance1539 = x3d.Appearance()
-Material1540 = x3d.Material()
-Material1540.USE = "SurfaceDefault"
+Material1540 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1539.material = Material1540
-ImageTexture1541 = x3d.ImageTexture()
-ImageTexture1541.USE = "JinLOA4TextureAtlas"
+ImageTexture1541 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1539.texture = ImageTexture1541
 
@@ -7242,61 +6166,55 @@ IndexedFaceSet1542.texCoord = TextureCoordinate1544
 Shape1538.geometry = IndexedFaceSet1542
 
 HAnimSegment1537.children.append(Shape1538)
-Group1545 = x3d.Group()
-Group1545.DEF = "r_scapula_Sites"
-"""(r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z)"""
-HAnimSite1546 = x3d.HAnimSite()
+Group1545 = x3d.Group(DEF="r_scapula_Sites")
+Group1545.children.append(x3d.Comment("""(r_acromion_pt -0.1905 1.4791 -0.0431)"""))
+Group1545.children.append(x3d.Comment("""(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)"""))
+Group1545.children.append(x3d.Comment("""(r_axilla_distal_pt -0.1603 1.4098 -0.0826)"""))
+Group1545.children.append(x3d.Comment("""(r_axilla_posterior_folds_pt x y z)"""))
+HAnimSite1546 = x3d.HAnimSite(DEF="hanim_r_acromion_pt")
 HAnimSite1546.name = "r_acromion_pt"
-HAnimSite1546.DEF = "hanim_r_acromion_pt"
 HAnimSite1546.translation = [-0.15,1.222,-0.02]
 TouchSensor1547 = x3d.TouchSensor()
 TouchSensor1547.description = "HAnimSite r_acromion_pt 20"
 
 HAnimSite1546.children.append(TouchSensor1547)
-Shape1548 = x3d.Shape()
-Shape1548.USE = "HAnimSiteShape"
+Shape1548 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1546.children.append(Shape1548)
 
 Group1545.children.append(HAnimSite1546)
-HAnimSite1549 = x3d.HAnimSite()
+HAnimSite1549 = x3d.HAnimSite(DEF="hanim_r_axilla_proximal_pt")
 HAnimSite1549.name = "r_axilla_proximal_pt"
-HAnimSite1549.DEF = "hanim_r_axilla_proximal_pt"
 HAnimSite1549.translation = [-0.15,1.16,0.04]
 TouchSensor1550 = x3d.TouchSensor()
 TouchSensor1550.description = "HAnimSite sitename_pt 21"
 
 HAnimSite1549.children.append(TouchSensor1550)
-Shape1551 = x3d.Shape()
-Shape1551.USE = "HAnimSiteShape"
+Shape1551 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1549.children.append(Shape1551)
 
 Group1545.children.append(HAnimSite1549)
-HAnimSite1552 = x3d.HAnimSite()
+HAnimSite1552 = x3d.HAnimSite(DEF="hanim_r_axilla_distal_pt")
 HAnimSite1552.name = "r_axilla_distal_pt"
-HAnimSite1552.DEF = "hanim_r_axilla_distal_pt"
 HAnimSite1552.translation = [-0.17,1.14,0]
 TouchSensor1553 = x3d.TouchSensor()
 TouchSensor1553.description = "HAnimSite r_axilla_distal_pt 22"
 
 HAnimSite1552.children.append(TouchSensor1553)
-Shape1554 = x3d.Shape()
-Shape1554.USE = "HAnimSiteShape"
+Shape1554 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1552.children.append(Shape1554)
 
 Group1545.children.append(HAnimSite1552)
-HAnimSite1555 = x3d.HAnimSite()
+HAnimSite1555 = x3d.HAnimSite(DEF="hanim_r_axilla_posterior_folds_pt")
 HAnimSite1555.name = "r_axilla_posterior_folds_pt"
-HAnimSite1555.DEF = "hanim_r_axilla_posterior_folds_pt"
 HAnimSite1555.translation = [-0.15,1.145,-0.04]
 TouchSensor1556 = x3d.TouchSensor()
 TouchSensor1556.description = "HAnimSite r_axilla_posterior_folds_pt 23"
 
 HAnimSite1555.children.append(TouchSensor1556)
-Shape1557 = x3d.Shape()
-Shape1557.USE = "HAnimSiteShape"
+Shape1557 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1555.children.append(Shape1557)
 
@@ -7305,24 +6223,17 @@ Group1545.children.append(HAnimSite1555)
 HAnimSegment1537.children.append(Group1545)
 
 HAnimJoint1536.children.append(HAnimSegment1537)
-HAnimJoint1558 = x3d.HAnimJoint()
+HAnimJoint1558 = x3d.HAnimJoint(DEF="hanim_r_shoulder")
 HAnimJoint1558.name = "r_shoulder"
-HAnimJoint1558.DEF = "hanim_r_shoulder"
 HAnimJoint1558.center = [-0.16470002,1.1785501,-0.0032670002]
-HAnimJoint1558.ulimit = [0,0,0]
-HAnimJoint1558.llimit = [0,0,0]
-HAnimSegment1559 = x3d.HAnimSegment()
+HAnimSegment1559 = x3d.HAnimSegment(DEF="hanim_r_upperarm")
 HAnimSegment1559.name = "r_upperarm"
-HAnimSegment1559.DEF = "hanim_r_upperarm"
-Shape1560 = x3d.Shape()
-Shape1560.DEF = "r_upperarm_Shape"
+Shape1560 = x3d.Shape(DEF="r_upperarm_Shape")
 Appearance1561 = x3d.Appearance()
-Material1562 = x3d.Material()
-Material1562.USE = "SurfaceDefault"
+Material1562 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1561.material = Material1562
-ImageTexture1563 = x3d.ImageTexture()
-ImageTexture1563.USE = "JinLOA4TextureAtlas"
+ImageTexture1563 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1561.texture = ImageTexture1563
 
@@ -7343,61 +6254,55 @@ IndexedFaceSet1564.texCoord = TextureCoordinate1566
 Shape1560.geometry = IndexedFaceSet1564
 
 HAnimSegment1559.children.append(Shape1560)
-Group1567 = x3d.Group()
-Group1567.DEF = "r_upperarm_Sites"
-"""(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z)"""
-HAnimSite1568 = x3d.HAnimSite()
+Group1567 = x3d.Group(DEF="r_upperarm_Sites")
+Group1567.children.append(x3d.Comment("""(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)"""))
+Group1567.children.append(x3d.Comment("""(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)"""))
+Group1567.children.append(x3d.Comment("""(r_radiale_pt -0.2130 1.1305 -0.1091)"""))
+Group1567.children.append(x3d.Comment("""(r_bideltoid_pt x y z)"""))
+HAnimSite1568 = x3d.HAnimSite(DEF="hanim_r_humeral_lateral_epicondyles_pt")
 HAnimSite1568.name = "r_humeral_lateral_epicondyles_pt"
-HAnimSite1568.DEF = "hanim_r_humeral_lateral_epicondyles_pt"
 HAnimSite1568.translation = [-0.2,0.95,-0.03]
 TouchSensor1569 = x3d.TouchSensor()
 TouchSensor1569.description = "HAnimSite r_humeral_lateral_epicondyles_pt 66"
 
 HAnimSite1568.children.append(TouchSensor1569)
-Shape1570 = x3d.Shape()
-Shape1570.USE = "HAnimSiteShape"
+Shape1570 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1568.children.append(Shape1570)
 
 Group1567.children.append(HAnimSite1568)
-HAnimSite1571 = x3d.HAnimSite()
+HAnimSite1571 = x3d.HAnimSite(DEF="hanim_r_humeral_medial_epicondyles_pt")
 HAnimSite1571.name = "r_humeral_medial_epicondyles_pt"
-HAnimSite1571.DEF = "hanim_r_humeral_medial_epicondyles_pt"
 HAnimSite1571.translation = [-0.18,0.93,-0.03]
 TouchSensor1572 = x3d.TouchSensor()
 TouchSensor1572.description = "HAnimSite r_humeral_medial_epicondyles_pt 67"
 
 HAnimSite1571.children.append(TouchSensor1572)
-Shape1573 = x3d.Shape()
-Shape1573.USE = "HAnimSiteShape"
+Shape1573 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1571.children.append(Shape1573)
 
 Group1567.children.append(HAnimSite1571)
-HAnimSite1574 = x3d.HAnimSite()
+HAnimSite1574 = x3d.HAnimSite(DEF="hanim_r_radiale_pt")
 HAnimSite1574.name = "r_radiale_pt"
-HAnimSite1574.DEF = "hanim_r_radiale_pt"
 HAnimSite1574.translation = [-0.2,0.91,-0.03]
 TouchSensor1575 = x3d.TouchSensor()
 TouchSensor1575.description = "HAnimSite r_radiale_pt 72"
 
 HAnimSite1574.children.append(TouchSensor1575)
-Shape1576 = x3d.Shape()
-Shape1576.USE = "HAnimSiteShape"
+Shape1576 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1574.children.append(Shape1576)
 
 Group1567.children.append(HAnimSite1574)
-HAnimSite1577 = x3d.HAnimSite()
+HAnimSite1577 = x3d.HAnimSite(DEF="hanim_r_bideltoid_pt")
 HAnimSite1577.name = "r_bideltoid_pt"
-HAnimSite1577.DEF = "hanim_r_bideltoid_pt"
 HAnimSite1577.translation = [-0.225,1.185,0]
 TouchSensor1578 = x3d.TouchSensor()
 TouchSensor1578.description = "HAnimSite r_bideltoid_pt 97"
 
 HAnimSite1577.children.append(TouchSensor1578)
-Shape1579 = x3d.Shape()
-Shape1579.USE = "HAnimSiteShape"
+Shape1579 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1577.children.append(Shape1579)
 
@@ -7406,24 +6311,17 @@ Group1567.children.append(HAnimSite1577)
 HAnimSegment1559.children.append(Group1567)
 
 HAnimJoint1558.children.append(HAnimSegment1559)
-HAnimJoint1580 = x3d.HAnimJoint()
+HAnimJoint1580 = x3d.HAnimJoint(DEF="hanim_r_elbow")
 HAnimJoint1580.name = "r_elbow"
-HAnimJoint1580.DEF = "hanim_r_elbow"
 HAnimJoint1580.center = [-0.1817325,0.9288,-0.0056295004]
-HAnimJoint1580.ulimit = [0,0,0]
-HAnimJoint1580.llimit = [0,0,0]
-HAnimSegment1581 = x3d.HAnimSegment()
+HAnimSegment1581 = x3d.HAnimSegment(DEF="hanim_r_forearm")
 HAnimSegment1581.name = "r_forearm"
-HAnimSegment1581.DEF = "hanim_r_forearm"
-Shape1582 = x3d.Shape()
-Shape1582.DEF = "r_forearm_Shape"
+Shape1582 = x3d.Shape(DEF="r_forearm_Shape")
 Appearance1583 = x3d.Appearance()
-Material1584 = x3d.Material()
-Material1584.USE = "SurfaceDefault"
+Material1584 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1583.material = Material1584
-ImageTexture1585 = x3d.ImageTexture()
-ImageTexture1585.USE = "JinLOA4TextureAtlas"
+ImageTexture1585 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1583.texture = ImageTexture1585
 
@@ -7444,33 +6342,29 @@ IndexedFaceSet1586.texCoord = TextureCoordinate1588
 Shape1582.geometry = IndexedFaceSet1586
 
 HAnimSegment1581.children.append(Shape1582)
-Group1589 = x3d.Group()
-Group1589.DEF = "r_forearm_Sites"
-"""(r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065)"""
-HAnimSite1590 = x3d.HAnimSite()
+Group1589 = x3d.Group(DEF="r_forearm_Sites")
+Group1589.children.append(x3d.Comment("""(r_radial_styloid_pt -0.1884 0.8676 -0.0360)"""))
+Group1589.children.append(x3d.Comment("""(r_olecranon_pt -0.1907 1.1405 -0.1065)"""))
+HAnimSite1590 = x3d.HAnimSite(DEF="hanim_r_radial_styloid_pt")
 HAnimSite1590.name = "r_radial_styloid_pt"
-HAnimSite1590.DEF = "hanim_r_radial_styloid_pt"
 HAnimSite1590.translation = [-0.18,0.725,0.025]
 TouchSensor1591 = x3d.TouchSensor()
 TouchSensor1591.description = "HAnimSite r_radial_styloid_pt 74"
 
 HAnimSite1590.children.append(TouchSensor1591)
-Shape1592 = x3d.Shape()
-Shape1592.USE = "HAnimSiteShape"
+Shape1592 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1590.children.append(Shape1592)
 
 Group1589.children.append(HAnimSite1590)
-HAnimSite1593 = x3d.HAnimSite()
+HAnimSite1593 = x3d.HAnimSite(DEF="hanim_r_olecranon_pt")
 HAnimSite1593.name = "r_olecranon_pt"
-HAnimSite1593.DEF = "hanim_r_olecranon_pt"
 HAnimSite1593.translation = [-0.2,0.92,-0.03]
 TouchSensor1594 = x3d.TouchSensor()
 TouchSensor1594.description = "HAnimSite r_olecranon_pt 68"
 
 HAnimSite1593.children.append(TouchSensor1594)
-Shape1595 = x3d.Shape()
-Shape1595.USE = "HAnimSiteShape"
+Shape1595 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1593.children.append(Shape1595)
 
@@ -7479,24 +6373,17 @@ Group1589.children.append(HAnimSite1593)
 HAnimSegment1581.children.append(Group1589)
 
 HAnimJoint1580.children.append(HAnimSegment1581)
-HAnimJoint1596 = x3d.HAnimJoint()
+HAnimJoint1596 = x3d.HAnimJoint(DEF="hanim_r_radiocarpal")
 HAnimJoint1596.name = "r_radiocarpal"
-HAnimJoint1596.DEF = "hanim_r_radiocarpal"
 HAnimJoint1596.center = [-0.181575,0.724275,-0.005022]
-HAnimJoint1596.ulimit = [0,0,0]
-HAnimJoint1596.llimit = [0,0,0]
-HAnimSegment1597 = x3d.HAnimSegment()
+HAnimSegment1597 = x3d.HAnimSegment(DEF="hanim_r_carpal")
 HAnimSegment1597.name = "r_carpal"
-HAnimSegment1597.DEF = "hanim_r_carpal"
-Shape1598 = x3d.Shape()
-Shape1598.DEF = "r_carpal_Shape"
+Shape1598 = x3d.Shape(DEF="r_carpal_Shape")
 Appearance1599 = x3d.Appearance()
-Material1600 = x3d.Material()
-Material1600.USE = "SurfaceDefault"
+Material1600 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1599.material = Material1600
-ImageTexture1601 = x3d.ImageTexture()
-ImageTexture1601.USE = "JinLOA4TextureAtlas"
+ImageTexture1601 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1599.texture = ImageTexture1601
 
@@ -7517,19 +6404,16 @@ IndexedFaceSet1602.texCoord = TextureCoordinate1604
 Shape1598.geometry = IndexedFaceSet1602
 
 HAnimSegment1597.children.append(Shape1598)
-Group1605 = x3d.Group()
-Group1605.DEF = "r_carpal_Sites"
-"""(r_ulnar_styloid_pt -0.2117 0.8562 -0.0584)"""
-HAnimSite1606 = x3d.HAnimSite()
+Group1605 = x3d.Group(DEF="r_carpal_Sites")
+Group1605.children.append(x3d.Comment("""(r_ulnar_styloid_pt -0.2117 0.8562 -0.0584)"""))
+HAnimSite1606 = x3d.HAnimSite(DEF="hanim_r_ulnar_styloid_pt")
 HAnimSite1606.name = "r_ulnar_styloid_pt"
-HAnimSite1606.DEF = "hanim_r_ulnar_styloid_pt"
 HAnimSite1606.translation = [-0.2,0.725,0]
 TouchSensor1607 = x3d.TouchSensor()
 TouchSensor1607.description = "HAnimSite r_ulnar_styloid_pt 73"
 
 HAnimSite1606.children.append(TouchSensor1607)
-Shape1608 = x3d.Shape()
-Shape1608.USE = "HAnimSiteShape"
+Shape1608 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1606.children.append(Shape1608)
 
@@ -7538,24 +6422,17 @@ Group1605.children.append(HAnimSite1606)
 HAnimSegment1597.children.append(Group1605)
 
 HAnimJoint1596.children.append(HAnimSegment1597)
-HAnimJoint1609 = x3d.HAnimJoint()
+HAnimJoint1609 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_1")
 HAnimJoint1609.name = "r_midcarpal_1"
-HAnimJoint1609.DEF = "hanim_r_midcarpal_1"
 HAnimJoint1609.center = [-0.18096751,0.70605004,0.0193275]
-HAnimJoint1609.ulimit = [0,0,0]
-HAnimJoint1609.llimit = [0,0,0]
-HAnimSegment1610 = x3d.HAnimSegment()
+HAnimSegment1610 = x3d.HAnimSegment(DEF="hanim_r_trapezium")
 HAnimSegment1610.name = "r_trapezium"
-HAnimSegment1610.DEF = "hanim_r_trapezium"
-Shape1611 = x3d.Shape()
-Shape1611.DEF = "r_trapezium_Shape"
+Shape1611 = x3d.Shape(DEF="r_trapezium_Shape")
 Appearance1612 = x3d.Appearance()
-Material1613 = x3d.Material()
-Material1613.USE = "SurfaceDefault"
+Material1613 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1612.material = Material1613
-ImageTexture1614 = x3d.ImageTexture()
-ImageTexture1614.USE = "JinLOA4TextureAtlas"
+ImageTexture1614 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1612.texture = ImageTexture1614
 
@@ -7576,31 +6453,23 @@ IndexedFaceSet1615.texCoord = TextureCoordinate1617
 Shape1611.geometry = IndexedFaceSet1615
 
 HAnimSegment1610.children.append(Shape1611)
-Group1618 = x3d.Group()
-Group1618.DEF = "r_trapezium_Sites"
-"""None"""
+Group1618 = x3d.Group(DEF="r_trapezium_Sites")
+Group1618.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1610.children.append(Group1618)
 
 HAnimJoint1609.children.append(HAnimSegment1610)
-HAnimJoint1619 = x3d.HAnimJoint()
+HAnimJoint1619 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_1")
 HAnimJoint1619.name = "r_carpometacarpal_1"
-HAnimJoint1619.DEF = "hanim_r_carpometacarpal_1"
 HAnimJoint1619.center = [-0.180135,0.69255006,0.0259875]
-HAnimJoint1619.ulimit = [0,0,0]
-HAnimJoint1619.llimit = [0,0,0]
-HAnimSegment1620 = x3d.HAnimSegment()
+HAnimSegment1620 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_1")
 HAnimSegment1620.name = "r_metacarpal_1"
-HAnimSegment1620.DEF = "hanim_r_metacarpal_1"
-Shape1621 = x3d.Shape()
-Shape1621.DEF = "r_metacarpal_1_Shape"
+Shape1621 = x3d.Shape(DEF="r_metacarpal_1_Shape")
 Appearance1622 = x3d.Appearance()
-Material1623 = x3d.Material()
-Material1623.USE = "SurfaceDefault"
+Material1623 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1622.material = Material1623
-ImageTexture1624 = x3d.ImageTexture()
-ImageTexture1624.USE = "JinLOA4TextureAtlas"
+ImageTexture1624 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1622.texture = ImageTexture1624
 
@@ -7621,19 +6490,16 @@ IndexedFaceSet1625.texCoord = TextureCoordinate1627
 Shape1621.geometry = IndexedFaceSet1625
 
 HAnimSegment1620.children.append(Shape1621)
-Group1628 = x3d.Group()
-Group1628.DEF = "r_metacarpal_1_Sites"
-"""(r_metacarpal_phalanx_2_pt -0.1977 0.8169 -0.0177)"""
-HAnimSite1629 = x3d.HAnimSite()
+Group1628 = x3d.Group(DEF="r_metacarpal_1_Sites")
+Group1628.children.append(x3d.Comment("""(r_metacarpal_phalanx_2_pt -0.1977 0.8169 -0.0177)"""))
+HAnimSite1629 = x3d.HAnimSite(DEF="hanim_r_metacarpal_phalanx_2_pt")
 HAnimSite1629.name = "r_metacarpal_phalanx_2_pt"
-HAnimSite1629.DEF = "hanim_r_metacarpal_phalanx_2_pt"
 HAnimSite1629.translation = [-0.2,0.665,0.012]
 TouchSensor1630 = x3d.TouchSensor()
 TouchSensor1630.description = "HAnimSite r_metacarpal_phalanx_2_pt 78"
 
 HAnimSite1629.children.append(TouchSensor1630)
-Shape1631 = x3d.Shape()
-Shape1631.USE = "HAnimSiteShape"
+Shape1631 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1629.children.append(Shape1631)
 
@@ -7642,24 +6508,17 @@ Group1628.children.append(HAnimSite1629)
 HAnimSegment1620.children.append(Group1628)
 
 HAnimJoint1619.children.append(HAnimSegment1620)
-HAnimJoint1632 = x3d.HAnimJoint()
+HAnimJoint1632 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_1")
 HAnimJoint1632.name = "r_metacarpophalangeal_1"
-HAnimJoint1632.DEF = "hanim_r_metacarpophalangeal_1"
 HAnimJoint1632.center = [-0.18065251,0.67275,0.035775002]
-HAnimJoint1632.ulimit = [0,0,0]
-HAnimJoint1632.llimit = [0,0,0]
-HAnimSegment1633 = x3d.HAnimSegment()
+HAnimSegment1633 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_1")
 HAnimSegment1633.name = "r_carpal_proximal_phalanx_1"
-HAnimSegment1633.DEF = "hanim_r_carpal_proximal_phalanx_1"
-Shape1634 = x3d.Shape()
-Shape1634.DEF = "r_carpal_proximal_phalanx_1_Shape"
+Shape1634 = x3d.Shape(DEF="r_carpal_proximal_phalanx_1_Shape")
 Appearance1635 = x3d.Appearance()
-Material1636 = x3d.Material()
-Material1636.USE = "SurfaceDefault"
+Material1636 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1635.material = Material1636
-ImageTexture1637 = x3d.ImageTexture()
-ImageTexture1637.USE = "JinLOA4TextureAtlas"
+ImageTexture1637 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1635.texture = ImageTexture1637
 
@@ -7680,31 +6539,23 @@ IndexedFaceSet1638.texCoord = TextureCoordinate1640
 Shape1634.geometry = IndexedFaceSet1638
 
 HAnimSegment1633.children.append(Shape1634)
-Group1641 = x3d.Group()
-Group1641.DEF = "r_carpal_proximal_phalanx_1_Sites"
-"""None"""
+Group1641 = x3d.Group(DEF="r_carpal_proximal_phalanx_1_Sites")
+Group1641.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1633.children.append(Group1641)
 
 HAnimJoint1632.children.append(HAnimSegment1633)
-HAnimJoint1642 = x3d.HAnimJoint()
+HAnimJoint1642 = x3d.HAnimJoint(DEF="hanim_r_carpal_interphalangeal_1")
 HAnimJoint1642.name = "r_carpal_interphalangeal_1"
-HAnimJoint1642.DEF = "hanim_r_carpal_interphalangeal_1"
 HAnimJoint1642.center = [-0.18227251,0.654075,0.0496575]
-HAnimJoint1642.ulimit = [0,0,0]
-HAnimJoint1642.llimit = [0,0,0]
-HAnimSegment1643 = x3d.HAnimSegment()
+HAnimSegment1643 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_1")
 HAnimSegment1643.name = "r_carpal_distal_phalanx_1"
-HAnimSegment1643.DEF = "hanim_r_carpal_distal_phalanx_1"
-Shape1644 = x3d.Shape()
-Shape1644.DEF = "r_carpal_distal_phalanx_1_Shape"
+Shape1644 = x3d.Shape(DEF="r_carpal_distal_phalanx_1_Shape")
 Appearance1645 = x3d.Appearance()
-Material1646 = x3d.Material()
-Material1646.USE = "SurfaceDefault"
+Material1646 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1645.material = Material1646
-ImageTexture1647 = x3d.ImageTexture()
-ImageTexture1647.USE = "JinLOA4TextureAtlas"
+ImageTexture1647 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1645.texture = ImageTexture1647
 
@@ -7725,19 +6576,16 @@ IndexedFaceSet1648.texCoord = TextureCoordinate1650
 Shape1644.geometry = IndexedFaceSet1648
 
 HAnimSegment1643.children.append(Shape1644)
-Group1651 = x3d.Group()
-Group1651.DEF = "r_carpal_distal_phalanx_1_Sites"
-"""(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)"""
-HAnimSite1652 = x3d.HAnimSite()
+Group1651 = x3d.Group(DEF="r_carpal_distal_phalanx_1_Sites")
+Group1651.children.append(x3d.Comment("""(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)"""))
+HAnimSite1652 = x3d.HAnimSite(DEF="hanim_r_carpal_distal_phalanx_1_tip")
 HAnimSite1652.name = "r_carpal_distal_phalanx_1_tip"
-HAnimSite1652.DEF = "hanim_r_carpal_distal_phalanx_1_tip"
 HAnimSite1652.translation = [-0.18,0.64,0.06]
 TouchSensor1653 = x3d.TouchSensor()
 TouchSensor1653.description = "HAnimSite r_carpal_distal_phalanx_1_tip 106"
 
 HAnimSite1652.children.append(TouchSensor1653)
-Shape1654 = x3d.Shape()
-Shape1654.USE = "HAnimSiteShape"
+Shape1654 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1652.children.append(Shape1654)
 
@@ -7754,24 +6602,17 @@ HAnimJoint1619.children.append(HAnimJoint1632)
 HAnimJoint1609.children.append(HAnimJoint1619)
 
 HAnimJoint1596.children.append(HAnimJoint1609)
-HAnimJoint1655 = x3d.HAnimJoint()
+HAnimJoint1655 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_2")
 HAnimJoint1655.name = "r_midcarpal_2"
-HAnimJoint1655.DEF = "hanim_r_midcarpal_2"
 HAnimJoint1655.center = [-0.18096751,0.70695,0.008417251]
-HAnimJoint1655.ulimit = [0,0,0]
-HAnimJoint1655.llimit = [0,0,0]
-HAnimSegment1656 = x3d.HAnimSegment()
+HAnimSegment1656 = x3d.HAnimSegment(DEF="hanim_r_trapezoid")
 HAnimSegment1656.name = "r_trapezoid"
-HAnimSegment1656.DEF = "hanim_r_trapezoid"
-Shape1657 = x3d.Shape()
-Shape1657.DEF = "r_trapezoid_Shape"
+Shape1657 = x3d.Shape(DEF="r_trapezoid_Shape")
 Appearance1658 = x3d.Appearance()
-Material1659 = x3d.Material()
-Material1659.USE = "SurfaceDefault"
+Material1659 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1658.material = Material1659
-ImageTexture1660 = x3d.ImageTexture()
-ImageTexture1660.USE = "JinLOA4TextureAtlas"
+ImageTexture1660 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1658.texture = ImageTexture1660
 
@@ -7792,31 +6633,23 @@ IndexedFaceSet1661.texCoord = TextureCoordinate1663
 Shape1657.geometry = IndexedFaceSet1661
 
 HAnimSegment1656.children.append(Shape1657)
-Group1664 = x3d.Group()
-Group1664.DEF = "r_trapezoid_Sites"
-"""None"""
+Group1664 = x3d.Group(DEF="r_trapezoid_Sites")
+Group1664.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1656.children.append(Group1664)
 
 HAnimJoint1655.children.append(HAnimSegment1656)
-HAnimJoint1665 = x3d.HAnimJoint()
+HAnimJoint1665 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_2")
 HAnimJoint1665.name = "r_carpometacarpal_2"
-HAnimJoint1665.DEF = "hanim_r_carpometacarpal_2"
 HAnimJoint1665.center = [-0.18090001,0.6876,0.009729]
-HAnimJoint1665.ulimit = [0,0,0]
-HAnimJoint1665.llimit = [0,0,0]
-HAnimSegment1666 = x3d.HAnimSegment()
+HAnimSegment1666 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_2")
 HAnimSegment1666.name = "r_metacarpal_2"
-HAnimSegment1666.DEF = "hanim_r_metacarpal_2"
-Shape1667 = x3d.Shape()
-Shape1667.DEF = "r_metacarpal_2_Shape"
+Shape1667 = x3d.Shape(DEF="r_metacarpal_2_Shape")
 Appearance1668 = x3d.Appearance()
-Material1669 = x3d.Material()
-Material1669.USE = "SurfaceDefault"
+Material1669 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1668.material = Material1669
-ImageTexture1670 = x3d.ImageTexture()
-ImageTexture1670.USE = "JinLOA4TextureAtlas"
+ImageTexture1670 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1668.texture = ImageTexture1670
 
@@ -7837,31 +6670,23 @@ IndexedFaceSet1671.texCoord = TextureCoordinate1673
 Shape1667.geometry = IndexedFaceSet1671
 
 HAnimSegment1666.children.append(Shape1667)
-Group1674 = x3d.Group()
-Group1674.DEF = "r_metacarpal_2_Sites"
-"""None"""
+Group1674 = x3d.Group(DEF="r_metacarpal_2_Sites")
+Group1674.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1666.children.append(Group1674)
 
 HAnimJoint1665.children.append(HAnimSegment1666)
-HAnimJoint1675 = x3d.HAnimJoint()
+HAnimJoint1675 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_2")
 HAnimJoint1675.name = "r_metacarpophalangeal_2"
-HAnimJoint1675.DEF = "hanim_r_metacarpophalangeal_2"
 HAnimJoint1675.center = [-0.18335252,0.6372,0.015075001]
-HAnimJoint1675.ulimit = [0,0,0]
-HAnimJoint1675.llimit = [0,0,0]
-HAnimSegment1676 = x3d.HAnimSegment()
+HAnimSegment1676 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_2")
 HAnimSegment1676.name = "r_carpal_proximal_phalanx_2"
-HAnimSegment1676.DEF = "hanim_r_carpal_proximal_phalanx_2"
-Shape1677 = x3d.Shape()
-Shape1677.DEF = "r_carpal_proximal_phalanx_2_Shape"
+Shape1677 = x3d.Shape(DEF="r_carpal_proximal_phalanx_2_Shape")
 Appearance1678 = x3d.Appearance()
-Material1679 = x3d.Material()
-Material1679.USE = "SurfaceDefault"
+Material1679 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1678.material = Material1679
-ImageTexture1680 = x3d.ImageTexture()
-ImageTexture1680.USE = "JinLOA4TextureAtlas"
+ImageTexture1680 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1678.texture = ImageTexture1680
 
@@ -7882,31 +6707,23 @@ IndexedFaceSet1681.texCoord = TextureCoordinate1683
 Shape1677.geometry = IndexedFaceSet1681
 
 HAnimSegment1676.children.append(Shape1677)
-Group1684 = x3d.Group()
-Group1684.DEF = "r_carpal_proximal_phalanx_2_Sites"
-"""None"""
+Group1684 = x3d.Group(DEF="r_carpal_proximal_phalanx_2_Sites")
+Group1684.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1676.children.append(Group1684)
 
 HAnimJoint1675.children.append(HAnimSegment1676)
-HAnimJoint1685 = x3d.HAnimJoint()
+HAnimJoint1685 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_2")
 HAnimJoint1685.name = "r_carpal_proximal_interphalangeal_2"
-HAnimJoint1685.DEF = "hanim_r_carpal_proximal_interphalangeal_2"
 HAnimJoint1685.center = [-0.1813275,0.606825,0.014184001]
-HAnimJoint1685.ulimit = [0,0,0]
-HAnimJoint1685.llimit = [0,0,0]
-HAnimSegment1686 = x3d.HAnimSegment()
+HAnimSegment1686 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_2")
 HAnimSegment1686.name = "r_carpal_middle_phalanx_2"
-HAnimSegment1686.DEF = "hanim_r_carpal_middle_phalanx_2"
-Shape1687 = x3d.Shape()
-Shape1687.DEF = "r_carpal_middle_phalanx_2_Shape"
+Shape1687 = x3d.Shape(DEF="r_carpal_middle_phalanx_2_Shape")
 Appearance1688 = x3d.Appearance()
-Material1689 = x3d.Material()
-Material1689.USE = "SurfaceDefault"
+Material1689 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1688.material = Material1689
-ImageTexture1690 = x3d.ImageTexture()
-ImageTexture1690.USE = "JinLOA4TextureAtlas"
+ImageTexture1690 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1688.texture = ImageTexture1690
 
@@ -7927,31 +6744,23 @@ IndexedFaceSet1691.texCoord = TextureCoordinate1693
 Shape1687.geometry = IndexedFaceSet1691
 
 HAnimSegment1686.children.append(Shape1687)
-Group1694 = x3d.Group()
-Group1694.DEF = "r_carpal_middle_phalanx_2_Sites"
-"""None"""
+Group1694 = x3d.Group(DEF="r_carpal_middle_phalanx_2_Sites")
+Group1694.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1686.children.append(Group1694)
 
 HAnimJoint1685.children.append(HAnimSegment1686)
-HAnimJoint1695 = x3d.HAnimJoint()
+HAnimJoint1695 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_2")
 HAnimJoint1695.name = "r_carpal_distal_interphalangeal_2"
-HAnimJoint1695.DEF = "hanim_r_carpal_distal_interphalangeal_2"
 HAnimJoint1695.center = [-0.1802925,0.58162504,0.013385251]
-HAnimJoint1695.ulimit = [0,0,0]
-HAnimJoint1695.llimit = [0,0,0]
-HAnimSegment1696 = x3d.HAnimSegment()
+HAnimSegment1696 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_2")
 HAnimSegment1696.name = "r_carpal_distal_phalanx_2"
-HAnimSegment1696.DEF = "hanim_r_carpal_distal_phalanx_2"
-Shape1697 = x3d.Shape()
-Shape1697.DEF = "r_carpal_distal_phalanx_2_Shape"
+Shape1697 = x3d.Shape(DEF="r_carpal_distal_phalanx_2_Shape")
 Appearance1698 = x3d.Appearance()
-Material1699 = x3d.Material()
-Material1699.USE = "SurfaceDefault"
+Material1699 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1698.material = Material1699
-ImageTexture1700 = x3d.ImageTexture()
-ImageTexture1700.USE = "JinLOA4TextureAtlas"
+ImageTexture1700 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1698.texture = ImageTexture1700
 
@@ -7972,19 +6781,16 @@ IndexedFaceSet1701.texCoord = TextureCoordinate1703
 Shape1697.geometry = IndexedFaceSet1701
 
 HAnimSegment1696.children.append(Shape1697)
-Group1704 = x3d.Group()
-Group1704.DEF = "r_carpal_distal_phalanx_2_Sites"
-"""(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)"""
-HAnimSite1705 = x3d.HAnimSite()
+Group1704 = x3d.Group(DEF="r_carpal_distal_phalanx_2_Sites")
+Group1704.children.append(x3d.Comment("""(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)"""))
+HAnimSite1705 = x3d.HAnimSite(DEF="hanim_r_carpal_distal_phalanx_2_tip")
 HAnimSite1705.name = "r_carpal_distal_phalanx_2_tip"
-HAnimSite1705.DEF = "hanim_r_carpal_distal_phalanx_2_tip"
 HAnimSite1705.translation = [-0.172,0.558,0.017]
 TouchSensor1706 = x3d.TouchSensor()
 TouchSensor1706.description = "HAnimSite r_carpal_distal_phalanx_2_tip 107"
 
 HAnimSite1705.children.append(TouchSensor1706)
-Shape1707 = x3d.Shape()
-Shape1707.USE = "HAnimSiteShape"
+Shape1707 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1705.children.append(Shape1707)
 
@@ -8003,24 +6809,17 @@ HAnimJoint1665.children.append(HAnimJoint1675)
 HAnimJoint1655.children.append(HAnimJoint1665)
 
 HAnimJoint1596.children.append(HAnimJoint1655)
-HAnimJoint1708 = x3d.HAnimJoint()
+HAnimJoint1708 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_3")
 HAnimJoint1708.name = "r_midcarpal_3"
-HAnimJoint1708.DEF = "hanim_r_midcarpal_3"
 HAnimJoint1708.center = [-0.18072,0.708525,-0.0047970004]
-HAnimJoint1708.ulimit = [0,0,0]
-HAnimJoint1708.llimit = [0,0,0]
-HAnimSegment1709 = x3d.HAnimSegment()
+HAnimSegment1709 = x3d.HAnimSegment(DEF="hanim_r_capitate")
 HAnimSegment1709.name = "r_capitate"
-HAnimSegment1709.DEF = "hanim_r_capitate"
-Shape1710 = x3d.Shape()
-Shape1710.DEF = "r_capitate_Shape"
+Shape1710 = x3d.Shape(DEF="r_capitate_Shape")
 Appearance1711 = x3d.Appearance()
-Material1712 = x3d.Material()
-Material1712.USE = "SurfaceDefault"
+Material1712 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1711.material = Material1712
-ImageTexture1713 = x3d.ImageTexture()
-ImageTexture1713.USE = "JinLOA4TextureAtlas"
+ImageTexture1713 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1711.texture = ImageTexture1713
 
@@ -8041,31 +6840,23 @@ IndexedFaceSet1714.texCoord = TextureCoordinate1716
 Shape1710.geometry = IndexedFaceSet1714
 
 HAnimSegment1709.children.append(Shape1710)
-Group1717 = x3d.Group()
-Group1717.DEF = "r_capitate_Sites"
-"""None"""
+Group1717 = x3d.Group(DEF="r_capitate_Sites")
+Group1717.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1709.children.append(Group1717)
 
 HAnimJoint1708.children.append(HAnimSegment1709)
-HAnimJoint1718 = x3d.HAnimJoint()
+HAnimJoint1718 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_3")
 HAnimJoint1718.name = "r_carpometacarpal_3"
-HAnimJoint1718.DEF = "hanim_r_carpometacarpal_3"
 HAnimJoint1718.center = [-0.18072,0.6858,-0.0062527503]
-HAnimJoint1718.ulimit = [0,0,0]
-HAnimJoint1718.llimit = [0,0,0]
-HAnimSegment1719 = x3d.HAnimSegment()
+HAnimSegment1719 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_3")
 HAnimSegment1719.name = "r_metacarpal_3"
-HAnimSegment1719.DEF = "hanim_r_metacarpal_3"
-Shape1720 = x3d.Shape()
-Shape1720.DEF = "r_metacarpal_3_Shape"
+Shape1720 = x3d.Shape(DEF="r_metacarpal_3_Shape")
 Appearance1721 = x3d.Appearance()
-Material1722 = x3d.Material()
-Material1722.USE = "SurfaceDefault"
+Material1722 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1721.material = Material1722
-ImageTexture1723 = x3d.ImageTexture()
-ImageTexture1723.USE = "JinLOA4TextureAtlas"
+ImageTexture1723 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1721.texture = ImageTexture1723
 
@@ -8086,19 +6877,16 @@ IndexedFaceSet1724.texCoord = TextureCoordinate1726
 Shape1720.geometry = IndexedFaceSet1724
 
 HAnimSegment1719.children.append(Shape1720)
-Group1727 = x3d.Group()
-Group1727.DEF = "r_metacarpal_3_Sites"
-"""(r_metacarpal_phalanx_3 x y z)"""
-HAnimSite1728 = x3d.HAnimSite()
+Group1727 = x3d.Group(DEF="r_metacarpal_3_Sites")
+Group1727.children.append(x3d.Comment("""(r_metacarpal_phalanx_3 x y z)"""))
+HAnimSite1728 = x3d.HAnimSite(DEF="hanim_r_metacarpal_phalanx_3")
 HAnimSite1728.name = "r_metacarpal_phalanx_3"
-HAnimSite1728.DEF = "hanim_r_metacarpal_phalanx_3"
 HAnimSite1728.translation = [-0.2,0.665,0.016]
 TouchSensor1729 = x3d.TouchSensor()
 TouchSensor1729.description = "HAnimSite r_metacarpal_phalanx_3 79"
 
 HAnimSite1728.children.append(TouchSensor1729)
-Shape1730 = x3d.Shape()
-Shape1730.USE = "HAnimSiteShape"
+Shape1730 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1728.children.append(Shape1730)
 
@@ -8107,24 +6895,17 @@ Group1727.children.append(HAnimSite1728)
 HAnimSegment1719.children.append(Group1727)
 
 HAnimJoint1718.children.append(HAnimSegment1719)
-HAnimJoint1731 = x3d.HAnimJoint()
+HAnimJoint1731 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_3")
 HAnimJoint1731.name = "r_metacarpophalangeal_3"
-HAnimJoint1731.DEF = "hanim_r_metacarpophalangeal_3"
 HAnimJoint1731.center = [-0.18330751,0.63495,-0.00391725]
-HAnimJoint1731.ulimit = [0,0,0]
-HAnimJoint1731.llimit = [0,0,0]
-HAnimSegment1732 = x3d.HAnimSegment()
+HAnimSegment1732 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_3")
 HAnimSegment1732.name = "r_carpal_proximal_phalanx_3"
-HAnimSegment1732.DEF = "hanim_r_carpal_proximal_phalanx_3"
-Shape1733 = x3d.Shape()
-Shape1733.DEF = "r_carpal_proximal_phalanx_3_Shape"
+Shape1733 = x3d.Shape(DEF="r_carpal_proximal_phalanx_3_Shape")
 Appearance1734 = x3d.Appearance()
-Material1735 = x3d.Material()
-Material1735.USE = "SurfaceDefault"
+Material1735 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1734.material = Material1735
-ImageTexture1736 = x3d.ImageTexture()
-ImageTexture1736.USE = "JinLOA4TextureAtlas"
+ImageTexture1736 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1734.texture = ImageTexture1736
 
@@ -8145,31 +6926,23 @@ IndexedFaceSet1737.texCoord = TextureCoordinate1739
 Shape1733.geometry = IndexedFaceSet1737
 
 HAnimSegment1732.children.append(Shape1733)
-Group1740 = x3d.Group()
-Group1740.DEF = "r_carpal_proximal_phalanx_3_Sites"
-"""None"""
+Group1740 = x3d.Group(DEF="r_carpal_proximal_phalanx_3_Sites")
+Group1740.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1732.children.append(Group1740)
 
 HAnimJoint1731.children.append(HAnimSegment1732)
-HAnimJoint1741 = x3d.HAnimJoint()
+HAnimJoint1741 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_3")
 HAnimJoint1741.name = "r_carpal_proximal_interphalangeal_3"
-HAnimJoint1741.DEF = "hanim_r_carpal_proximal_interphalangeal_3"
 HAnimJoint1741.center = [-0.1813275,0.603225,-0.003537]
-HAnimJoint1741.ulimit = [0,0,0]
-HAnimJoint1741.llimit = [0,0,0]
-HAnimSegment1742 = x3d.HAnimSegment()
+HAnimSegment1742 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_3")
 HAnimSegment1742.name = "r_carpal_middle_phalanx_3"
-HAnimSegment1742.DEF = "hanim_r_carpal_middle_phalanx_3"
-Shape1743 = x3d.Shape()
-Shape1743.DEF = "r_carpal_middle_phalanx_3_Shape"
+Shape1743 = x3d.Shape(DEF="r_carpal_middle_phalanx_3_Shape")
 Appearance1744 = x3d.Appearance()
-Material1745 = x3d.Material()
-Material1745.USE = "SurfaceDefault"
+Material1745 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1744.material = Material1745
-ImageTexture1746 = x3d.ImageTexture()
-ImageTexture1746.USE = "JinLOA4TextureAtlas"
+ImageTexture1746 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1744.texture = ImageTexture1746
 
@@ -8190,31 +6963,23 @@ IndexedFaceSet1747.texCoord = TextureCoordinate1749
 Shape1743.geometry = IndexedFaceSet1747
 
 HAnimSegment1742.children.append(Shape1743)
-Group1750 = x3d.Group()
-Group1750.DEF = "r_carpal_middle_phalanx_3_Sites"
-"""None"""
+Group1750 = x3d.Group(DEF="r_carpal_middle_phalanx_3_Sites")
+Group1750.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1742.children.append(Group1750)
 
 HAnimJoint1741.children.append(HAnimSegment1742)
-HAnimJoint1751 = x3d.HAnimJoint()
+HAnimJoint1751 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_3")
 HAnimJoint1751.name = "r_carpal_distal_interphalangeal_3"
-HAnimJoint1751.DEF = "hanim_r_carpal_distal_interphalangeal_3"
 HAnimJoint1751.center = [-0.1802925,0.575325,-0.0037597502]
-HAnimJoint1751.ulimit = [0,0,0]
-HAnimJoint1751.llimit = [0,0,0]
-HAnimSegment1752 = x3d.HAnimSegment()
+HAnimSegment1752 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_3")
 HAnimSegment1752.name = "r_carpal_distal_phalanx_3"
-HAnimSegment1752.DEF = "hanim_r_carpal_distal_phalanx_3"
-Shape1753 = x3d.Shape()
-Shape1753.DEF = "r_carpal_distal_phalanx_3_Shape"
+Shape1753 = x3d.Shape(DEF="r_carpal_distal_phalanx_3_Shape")
 Appearance1754 = x3d.Appearance()
-Material1755 = x3d.Material()
-Material1755.USE = "SurfaceDefault"
+Material1755 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1754.material = Material1755
-ImageTexture1756 = x3d.ImageTexture()
-ImageTexture1756.USE = "JinLOA4TextureAtlas"
+ImageTexture1756 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1754.texture = ImageTexture1756
 
@@ -8235,33 +7000,29 @@ IndexedFaceSet1757.texCoord = TextureCoordinate1759
 Shape1753.geometry = IndexedFaceSet1757
 
 HAnimSegment1752.children.append(Shape1753)
-Group1760 = x3d.Group()
-Group1760.DEF = "r_carpal_distal_phalanx_3_Sites"
-"""(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 )"""
-HAnimSite1761 = x3d.HAnimSite()
+Group1760 = x3d.Group(DEF="r_carpal_distal_phalanx_3_Sites")
+Group1760.children.append(x3d.Comment("""(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)"""))
+Group1760.children.append(x3d.Comment("""(r_dactylion_pt -0.1941 0.6772 -0.0423 )"""))
+HAnimSite1761 = x3d.HAnimSite(DEF="hanim_r_carpal_distal_phalanx_3_tip")
 HAnimSite1761.name = "r_carpal_distal_phalanx_3_tip"
-HAnimSite1761.DEF = "hanim_r_carpal_distal_phalanx_3_tip"
 HAnimSite1761.translation = [-0.17,0.555,-0.006]
 TouchSensor1762 = x3d.TouchSensor()
 TouchSensor1762.description = "HAnimSite r_carpal_distal_phalanx_3_tip 108"
 
 HAnimSite1761.children.append(TouchSensor1762)
-Shape1763 = x3d.Shape()
-Shape1763.USE = "HAnimSiteShape"
+Shape1763 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1761.children.append(Shape1763)
 
 Group1760.children.append(HAnimSite1761)
-HAnimSite1764 = x3d.HAnimSite()
+HAnimSite1764 = x3d.HAnimSite(DEF="hanim_r_dactylion_pt")
 HAnimSite1764.name = "r_dactylion_pt"
-HAnimSite1764.DEF = "hanim_r_dactylion_pt"
 HAnimSite1764.translation = [-0.172,0.555,-0.006]
 TouchSensor1765 = x3d.TouchSensor()
 TouchSensor1765.description = "HAnimSite r_dactylion_pt 61"
 
 HAnimSite1764.children.append(TouchSensor1765)
-Shape1766 = x3d.Shape()
-Shape1766.USE = "HAnimSiteShape"
+Shape1766 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1764.children.append(Shape1766)
 
@@ -8280,24 +7041,17 @@ HAnimJoint1718.children.append(HAnimJoint1731)
 HAnimJoint1708.children.append(HAnimJoint1718)
 
 HAnimJoint1596.children.append(HAnimJoint1708)
-HAnimJoint1767 = x3d.HAnimJoint()
+HAnimJoint1767 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_4_5")
 HAnimJoint1767.name = "r_midcarpal_4_5"
-HAnimJoint1767.DEF = "hanim_r_midcarpal_4_5"
 HAnimJoint1767.center = [-0.18072,0.70582503,-0.025740001]
-HAnimJoint1767.ulimit = [0,0,0]
-HAnimJoint1767.llimit = [0,0,0]
-HAnimSegment1768 = x3d.HAnimSegment()
+HAnimSegment1768 = x3d.HAnimSegment(DEF="hanim_r_hamate")
 HAnimSegment1768.name = "r_hamate"
-HAnimSegment1768.DEF = "hanim_r_hamate"
-Shape1769 = x3d.Shape()
-Shape1769.DEF = "r_hamate_Shape"
+Shape1769 = x3d.Shape(DEF="r_hamate_Shape")
 Appearance1770 = x3d.Appearance()
-Material1771 = x3d.Material()
-Material1771.USE = "SurfaceDefault"
+Material1771 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1770.material = Material1771
-ImageTexture1772 = x3d.ImageTexture()
-ImageTexture1772.USE = "JinLOA4TextureAtlas"
+ImageTexture1772 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1770.texture = ImageTexture1772
 
@@ -8318,31 +7072,23 @@ IndexedFaceSet1773.texCoord = TextureCoordinate1775
 Shape1769.geometry = IndexedFaceSet1773
 
 HAnimSegment1768.children.append(Shape1769)
-Group1776 = x3d.Group()
-Group1776.DEF = "r_hamate_Sites"
-"""None"""
+Group1776 = x3d.Group(DEF="r_hamate_Sites")
+Group1776.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1768.children.append(Group1776)
 
 HAnimJoint1767.children.append(HAnimSegment1768)
-HAnimJoint1777 = x3d.HAnimJoint()
+HAnimJoint1777 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_4")
 HAnimJoint1777.name = "r_carpometacarpal_4"
-HAnimJoint1777.DEF = "hanim_r_carpometacarpal_4"
 HAnimJoint1777.center = [-0.18072,0.68625003,-0.01991925]
-HAnimJoint1777.ulimit = [0,0,0]
-HAnimJoint1777.llimit = [0,0,0]
-HAnimSegment1778 = x3d.HAnimSegment()
+HAnimSegment1778 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_4")
 HAnimSegment1778.name = "r_metacarpal_4"
-HAnimSegment1778.DEF = "hanim_r_metacarpal_4"
-Shape1779 = x3d.Shape()
-Shape1779.DEF = "r_metacarpal_4_Shape"
+Shape1779 = x3d.Shape(DEF="r_metacarpal_4_Shape")
 Appearance1780 = x3d.Appearance()
-Material1781 = x3d.Material()
-Material1781.USE = "SurfaceDefault"
+Material1781 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1780.material = Material1781
-ImageTexture1782 = x3d.ImageTexture()
-ImageTexture1782.USE = "JinLOA4TextureAtlas"
+ImageTexture1782 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1780.texture = ImageTexture1782
 
@@ -8363,31 +7109,23 @@ IndexedFaceSet1783.texCoord = TextureCoordinate1785
 Shape1779.geometry = IndexedFaceSet1783
 
 HAnimSegment1778.children.append(Shape1779)
-Group1786 = x3d.Group()
-Group1786.DEF = "r_metacarpal_4_Sites"
-"""None"""
+Group1786 = x3d.Group(DEF="r_metacarpal_4_Sites")
+Group1786.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1778.children.append(Group1786)
 
 HAnimJoint1777.children.append(HAnimSegment1778)
-HAnimJoint1787 = x3d.HAnimJoint()
+HAnimJoint1787 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_4")
 HAnimJoint1787.name = "r_metacarpophalangeal_4"
-HAnimJoint1787.DEF = "hanim_r_metacarpophalangeal_4"
 HAnimJoint1787.center = [-0.18330751,0.63405,-0.02144025]
-HAnimJoint1787.ulimit = [0,0,0]
-HAnimJoint1787.llimit = [0,0,0]
-HAnimSegment1788 = x3d.HAnimSegment()
+HAnimSegment1788 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_4")
 HAnimSegment1788.name = "r_carpal_proximal_phalanx_4"
-HAnimSegment1788.DEF = "hanim_r_carpal_proximal_phalanx_4"
-Shape1789 = x3d.Shape()
-Shape1789.DEF = "r_carpal_proximal_phalanx_4_Shape"
+Shape1789 = x3d.Shape(DEF="r_carpal_proximal_phalanx_4_Shape")
 Appearance1790 = x3d.Appearance()
-Material1791 = x3d.Material()
-Material1791.USE = "SurfaceDefault"
+Material1791 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1790.material = Material1791
-ImageTexture1792 = x3d.ImageTexture()
-ImageTexture1792.USE = "JinLOA4TextureAtlas"
+ImageTexture1792 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1790.texture = ImageTexture1792
 
@@ -8408,31 +7146,23 @@ IndexedFaceSet1793.texCoord = TextureCoordinate1795
 Shape1789.geometry = IndexedFaceSet1793
 
 HAnimSegment1788.children.append(Shape1789)
-Group1796 = x3d.Group()
-Group1796.DEF = "r_carpal_proximal_phalanx_4_Sites"
-"""None"""
+Group1796 = x3d.Group(DEF="r_carpal_proximal_phalanx_4_Sites")
+Group1796.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1788.children.append(Group1796)
 
 HAnimJoint1787.children.append(HAnimSegment1788)
-HAnimJoint1797 = x3d.HAnimJoint()
+HAnimJoint1797 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_4")
 HAnimJoint1797.name = "r_carpal_proximal_interphalangeal_4"
-HAnimJoint1797.DEF = "hanim_r_carpal_proximal_interphalangeal_4"
 HAnimJoint1797.center = [-0.1813275,0.6066,-0.020646]
-HAnimJoint1797.ulimit = [0,0,0]
-HAnimJoint1797.llimit = [0,0,0]
-HAnimSegment1798 = x3d.HAnimSegment()
+HAnimSegment1798 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_4")
 HAnimSegment1798.name = "r_carpal_middle_phalanx_4"
-HAnimSegment1798.DEF = "hanim_r_carpal_middle_phalanx_4"
-Shape1799 = x3d.Shape()
-Shape1799.DEF = "r_carpal_middle_phalanx_4_Shape"
+Shape1799 = x3d.Shape(DEF="r_carpal_middle_phalanx_4_Shape")
 Appearance1800 = x3d.Appearance()
-Material1801 = x3d.Material()
-Material1801.USE = "SurfaceDefault"
+Material1801 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1800.material = Material1801
-ImageTexture1802 = x3d.ImageTexture()
-ImageTexture1802.USE = "JinLOA4TextureAtlas"
+ImageTexture1802 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1800.texture = ImageTexture1802
 
@@ -8453,31 +7183,23 @@ IndexedFaceSet1803.texCoord = TextureCoordinate1805
 Shape1799.geometry = IndexedFaceSet1803
 
 HAnimSegment1798.children.append(Shape1799)
-Group1806 = x3d.Group()
-Group1806.DEF = "r_carpal_middle_phalanx_4_Sites"
-"""None"""
+Group1806 = x3d.Group(DEF="r_carpal_middle_phalanx_4_Sites")
+Group1806.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1798.children.append(Group1806)
 
 HAnimJoint1797.children.append(HAnimSegment1798)
-HAnimJoint1807 = x3d.HAnimJoint()
+HAnimJoint1807 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_4")
 HAnimJoint1807.name = "r_carpal_distal_interphalangeal_4"
-HAnimJoint1807.DEF = "hanim_r_carpal_distal_interphalangeal_4"
 HAnimJoint1807.center = [-0.1802925,0.580725,-0.019777501]
-HAnimJoint1807.ulimit = [0,0,0]
-HAnimJoint1807.llimit = [0,0,0]
-HAnimSegment1808 = x3d.HAnimSegment()
+HAnimSegment1808 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_4")
 HAnimSegment1808.name = "r_carpal_distal_phalanx_4"
-HAnimSegment1808.DEF = "hanim_r_carpal_distal_phalanx_4"
-Shape1809 = x3d.Shape()
-Shape1809.DEF = "r_carpal_distal_phalanx_4_Shape"
+Shape1809 = x3d.Shape(DEF="r_carpal_distal_phalanx_4_Shape")
 Appearance1810 = x3d.Appearance()
-Material1811 = x3d.Material()
-Material1811.USE = "SurfaceDefault"
+Material1811 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1810.material = Material1811
-ImageTexture1812 = x3d.ImageTexture()
-ImageTexture1812.USE = "JinLOA4TextureAtlas"
+ImageTexture1812 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1810.texture = ImageTexture1812
 
@@ -8498,19 +7220,16 @@ IndexedFaceSet1813.texCoord = TextureCoordinate1815
 Shape1809.geometry = IndexedFaceSet1813
 
 HAnimSegment1808.children.append(Shape1809)
-Group1816 = x3d.Group()
-Group1816.DEF = "hanim_r_carpal_distal_phalanx_4_Sites"
-"""(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)"""
-HAnimSite1817 = x3d.HAnimSite()
+Group1816 = x3d.Group(DEF="hanim_r_carpal_distal_phalanx_4_Sites")
+Group1816.children.append(x3d.Comment("""(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)"""))
+HAnimSite1817 = x3d.HAnimSite(DEF="hanim_r_carpal_distal_phalanx_4_tip")
 HAnimSite1817.name = "r_carpal_distal_phalanx_4_tip"
-HAnimSite1817.DEF = "hanim_r_carpal_distal_phalanx_4_tip"
 HAnimSite1817.translation = [-0.172,0.559,-0.024]
 TouchSensor1818 = x3d.TouchSensor()
 TouchSensor1818.description = "HAnimSite r_carpal_distal_phalanx_4_tip 109"
 
 HAnimSite1817.children.append(TouchSensor1818)
-Shape1819 = x3d.Shape()
-Shape1819.USE = "HAnimSiteShape"
+Shape1819 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1817.children.append(Shape1819)
 
@@ -8529,24 +7248,17 @@ HAnimJoint1777.children.append(HAnimJoint1787)
 HAnimJoint1767.children.append(HAnimJoint1777)
 
 HAnimJoint1596.children.append(HAnimJoint1767)
-HAnimJoint1820 = x3d.HAnimJoint()
+HAnimJoint1820 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_5")
 HAnimJoint1820.name = "r_carpometacarpal_5"
-HAnimJoint1820.DEF = "hanim_r_carpometacarpal_5"
 HAnimJoint1820.center = [-0.18126,0.68827504,-0.032782502]
-HAnimJoint1820.ulimit = [0,0,0]
-HAnimJoint1820.llimit = [0,0,0]
-HAnimSegment1821 = x3d.HAnimSegment()
+HAnimSegment1821 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_5")
 HAnimSegment1821.name = "r_metacarpal_5"
-HAnimSegment1821.DEF = "hanim_r_metacarpal_5"
-Shape1822 = x3d.Shape()
-Shape1822.DEF = "r_metacarpal_5_Shape"
+Shape1822 = x3d.Shape(DEF="r_metacarpal_5_Shape")
 Appearance1823 = x3d.Appearance()
-Material1824 = x3d.Material()
-Material1824.USE = "SurfaceDefault"
+Material1824 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1823.material = Material1824
-ImageTexture1825 = x3d.ImageTexture()
-ImageTexture1825.USE = "JinLOA4TextureAtlas"
+ImageTexture1825 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1823.texture = ImageTexture1825
 
@@ -8567,19 +7279,16 @@ IndexedFaceSet1826.texCoord = TextureCoordinate1828
 Shape1822.geometry = IndexedFaceSet1826
 
 HAnimSegment1821.children.append(Shape1822)
-Group1829 = x3d.Group()
-Group1829.DEF = "r_metacarpal_5_Sites"
-"""(r_metacarpal_phalanx_5_pt -0.1929 0.7890 -0.1064)"""
-HAnimSite1830 = x3d.HAnimSite()
+Group1829 = x3d.Group(DEF="r_metacarpal_5_Sites")
+Group1829.children.append(x3d.Comment("""(r_metacarpal_phalanx_5_pt -0.1929 0.7890 -0.1064)"""))
+HAnimSite1830 = x3d.HAnimSite(DEF="hanim_r_metacarpal_phalanx_5_pt")
 HAnimSite1830.name = "r_metacarpal_phalanx_5_pt"
-HAnimSite1830.DEF = "hanim_r_metacarpal_phalanx_5_pt"
 HAnimSite1830.translation = [-0.2,0.665,-0.036]
 TouchSensor1831 = x3d.TouchSensor()
 TouchSensor1831.description = "HAnimSite r_metacarpal_phalanx_5_pt 80"
 
 HAnimSite1830.children.append(TouchSensor1831)
-Shape1832 = x3d.Shape()
-Shape1832.USE = "HAnimSiteShape"
+Shape1832 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1830.children.append(Shape1832)
 
@@ -8588,24 +7297,17 @@ Group1829.children.append(HAnimSite1830)
 HAnimSegment1821.children.append(Group1829)
 
 HAnimJoint1820.children.append(HAnimSegment1821)
-HAnimJoint1833 = x3d.HAnimJoint()
+HAnimJoint1833 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_5")
 HAnimJoint1833.name = "r_metacarpophalangeal_5"
-HAnimJoint1833.DEF = "hanim_r_metacarpophalangeal_5"
 HAnimJoint1833.center = [-0.18297,0.6381,-0.0370575]
-HAnimJoint1833.ulimit = [0,0,0]
-HAnimJoint1833.llimit = [0,0,0]
-HAnimSegment1834 = x3d.HAnimSegment()
+HAnimSegment1834 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_5")
 HAnimSegment1834.name = "r_carpal_proximal_phalanx_5"
-HAnimSegment1834.DEF = "hanim_r_carpal_proximal_phalanx_5"
-Shape1835 = x3d.Shape()
-Shape1835.DEF = "r_carpal_proximal_phalanx_5_Shape"
+Shape1835 = x3d.Shape(DEF="r_carpal_proximal_phalanx_5_Shape")
 Appearance1836 = x3d.Appearance()
-Material1837 = x3d.Material()
-Material1837.USE = "SurfaceDefault"
+Material1837 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1836.material = Material1837
-ImageTexture1838 = x3d.ImageTexture()
-ImageTexture1838.USE = "JinLOA4TextureAtlas"
+ImageTexture1838 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1836.texture = ImageTexture1838
 
@@ -8626,31 +7328,23 @@ IndexedFaceSet1839.texCoord = TextureCoordinate1841
 Shape1835.geometry = IndexedFaceSet1839
 
 HAnimSegment1834.children.append(Shape1835)
-Group1842 = x3d.Group()
-Group1842.DEF = "r_carpal_proximal_phalanx_5_Sites"
-"""None"""
+Group1842 = x3d.Group(DEF="r_carpal_proximal_phalanx_5_Sites")
+Group1842.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1834.children.append(Group1842)
 
 HAnimJoint1833.children.append(HAnimSegment1834)
-HAnimJoint1843 = x3d.HAnimJoint()
+HAnimJoint1843 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_5")
 HAnimJoint1843.name = "r_carpal_proximal_interphalangeal_5"
-HAnimJoint1843.DEF = "hanim_r_carpal_proximal_interphalangeal_5"
 HAnimJoint1843.center = [-0.18130499,0.62100005,-0.037147503]
-HAnimJoint1843.ulimit = [0,0,0]
-HAnimJoint1843.llimit = [0,0,0]
-HAnimSegment1844 = x3d.HAnimSegment()
+HAnimSegment1844 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_5")
 HAnimSegment1844.name = "r_carpal_middle_phalanx_5"
-HAnimSegment1844.DEF = "hanim_r_carpal_middle_phalanx_5"
-Shape1845 = x3d.Shape()
-Shape1845.DEF = "r_carpal_middle_phalanx_5_Shape"
+Shape1845 = x3d.Shape(DEF="r_carpal_middle_phalanx_5_Shape")
 Appearance1846 = x3d.Appearance()
-Material1847 = x3d.Material()
-Material1847.USE = "SurfaceDefault"
+Material1847 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1846.material = Material1847
-ImageTexture1848 = x3d.ImageTexture()
-ImageTexture1848.USE = "JinLOA4TextureAtlas"
+ImageTexture1848 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1846.texture = ImageTexture1848
 
@@ -8671,31 +7365,23 @@ IndexedFaceSet1849.texCoord = TextureCoordinate1851
 Shape1845.geometry = IndexedFaceSet1849
 
 HAnimSegment1844.children.append(Shape1845)
-Group1852 = x3d.Group()
-Group1852.DEF = "r_carpal_middle_phalanx_5_Sites"
-"""None"""
+Group1852 = x3d.Group(DEF="r_carpal_middle_phalanx_5_Sites")
+Group1852.children.append(x3d.Comment("""None"""))
 
 HAnimSegment1844.children.append(Group1852)
 
 HAnimJoint1843.children.append(HAnimSegment1844)
-HAnimJoint1853 = x3d.HAnimJoint()
+HAnimJoint1853 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_5")
 HAnimJoint1853.name = "r_carpal_distal_interphalangeal_5"
-HAnimJoint1853.DEF = "hanim_r_carpal_distal_interphalangeal_5"
 HAnimJoint1853.center = [-0.18045002,0.602325,-0.0369675]
-HAnimJoint1853.ulimit = [0,0,0]
-HAnimJoint1853.llimit = [0,0,0]
-HAnimSegment1854 = x3d.HAnimSegment()
+HAnimSegment1854 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_5")
 HAnimSegment1854.name = "r_carpal_distal_phalanx_5"
-HAnimSegment1854.DEF = "hanim_r_carpal_distal_phalanx_5"
-Shape1855 = x3d.Shape()
-Shape1855.DEF = "r_carpal_distal_phalanx_5_Shape"
+Shape1855 = x3d.Shape(DEF="r_carpal_distal_phalanx_5_Shape")
 Appearance1856 = x3d.Appearance()
-Material1857 = x3d.Material()
-Material1857.USE = "SurfaceDefault"
+Material1857 = x3d.Material(USE="SurfaceDefault")
 
 Appearance1856.material = Material1857
-ImageTexture1858 = x3d.ImageTexture()
-ImageTexture1858.USE = "JinLOA4TextureAtlas"
+ImageTexture1858 = x3d.ImageTexture(USE="JinLOA4TextureAtlas")
 
 Appearance1856.texture = ImageTexture1858
 
@@ -8716,19 +7402,16 @@ IndexedFaceSet1859.texCoord = TextureCoordinate1861
 Shape1855.geometry = IndexedFaceSet1859
 
 HAnimSegment1854.children.append(Shape1855)
-Group1862 = x3d.Group()
-Group1862.DEF = "r_carpal_distal_phalanx_5_Sites"
-"""(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)"""
-HAnimSite1863 = x3d.HAnimSite()
+Group1862 = x3d.Group(DEF="r_carpal_distal_phalanx_5_Sites")
+Group1862.children.append(x3d.Comment("""(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)"""))
+HAnimSite1863 = x3d.HAnimSite(DEF="hanim_r_carpal_distal_phalanx_5_tip")
 HAnimSite1863.name = "r_carpal_distal_phalanx_5_tip"
-HAnimSite1863.DEF = "hanim_r_carpal_distal_phalanx_5_tip"
 HAnimSite1863.translation = [-0.172,0.58,-0.039]
 TouchSensor1864 = x3d.TouchSensor()
 TouchSensor1864.description = "HAnimSite r_carpal_distal_phalanx_5_tip 110"
 
 HAnimSite1863.children.append(TouchSensor1864)
-Shape1865 = x3d.Shape()
-Shape1865.USE = "HAnimSiteShape"
+Shape1865 = x3d.Shape(USE="HAnimSiteShape")
 
 HAnimSite1863.children.append(Shape1865)
 
@@ -8795,893 +7478,744 @@ HAnimJoint52.children.append(HAnimJoint62)
 HAnimHumanoid42.skeleton.append(HAnimJoint52)
 
 Scene22.children.append(HAnimHumanoid42)
-Group1866 = x3d.Group()
-Group1866.DEF = "StopAnimation_loa4"
-TimeSensor1867 = x3d.TimeSensor()
-TimeSensor1867.DEF = "StopTimer"
+Group1866 = x3d.Group(DEF="StopAnimation_loa4")
+TimeSensor1867 = x3d.TimeSensor(DEF="StopTimer")
 TimeSensor1867.cycleInterval = 5.5
 TimeSensor1867.loop = True
 
 Group1866.children.append(TimeSensor1867)
-"""indention to match Joint hierarchy"""
-PositionInterpolator1868 = x3d.PositionInterpolator()
-PositionInterpolator1868.DEF = "Stop_humanoid_root_TranslationInterpolator"
+Group1866.children.append(x3d.Comment("""indention to match Joint hierarchy"""))
+PositionInterpolator1868 = x3d.PositionInterpolator(DEF="Stop_humanoid_root_TranslationInterpolator")
 PositionInterpolator1868.key = [0,0.5,1]
 PositionInterpolator1868.keyValue = [(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
 Group1866.children.append(PositionInterpolator1868)
-OrientationInterpolator1869 = x3d.OrientationInterpolator()
-OrientationInterpolator1869.DEF = "Stop_humanoid_root_RotationInterpolator"
+OrientationInterpolator1869 = x3d.OrientationInterpolator(DEF="Stop_humanoid_root_RotationInterpolator")
 OrientationInterpolator1869.key = [0,0.5,1]
 OrientationInterpolator1869.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1869)
-OrientationInterpolator1870 = x3d.OrientationInterpolator()
-OrientationInterpolator1870.DEF = "Stop_sacroiliac_RotationInterpolator"
+OrientationInterpolator1870 = x3d.OrientationInterpolator(DEF="Stop_sacroiliac_RotationInterpolator")
 OrientationInterpolator1870.key = [0,0.5,1]
 OrientationInterpolator1870.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1870)
-OrientationInterpolator1871 = x3d.OrientationInterpolator()
-OrientationInterpolator1871.DEF = "Stop_l_hip_RotationInterpolator"
+OrientationInterpolator1871 = x3d.OrientationInterpolator(DEF="Stop_l_hip_RotationInterpolator")
 OrientationInterpolator1871.key = [0,0.5,1]
 OrientationInterpolator1871.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1871)
-OrientationInterpolator1872 = x3d.OrientationInterpolator()
-OrientationInterpolator1872.DEF = "Stop_l_knee_RotationInterpolator"
+OrientationInterpolator1872 = x3d.OrientationInterpolator(DEF="Stop_l_knee_RotationInterpolator")
 OrientationInterpolator1872.key = [0,0.5,1]
 OrientationInterpolator1872.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1872)
-OrientationInterpolator1873 = x3d.OrientationInterpolator()
-OrientationInterpolator1873.DEF = "Stop_l_talocrural_RotationInterpolator"
+OrientationInterpolator1873 = x3d.OrientationInterpolator(DEF="Stop_l_talocrural_RotationInterpolator")
 OrientationInterpolator1873.key = [0,0.5,1]
 OrientationInterpolator1873.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1873)
-OrientationInterpolator1874 = x3d.OrientationInterpolator()
-OrientationInterpolator1874.DEF = "Stop_l_talocalcaneonavicular_RotationInterpolator"
+OrientationInterpolator1874 = x3d.OrientationInterpolator(DEF="Stop_l_talocalcaneonavicular_RotationInterpolator")
 OrientationInterpolator1874.key = [0,0.5,1]
 OrientationInterpolator1874.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1874)
-OrientationInterpolator1875 = x3d.OrientationInterpolator()
-OrientationInterpolator1875.DEF = "Stop_l_cuneonavicular_1_RotationInterpolator"
+OrientationInterpolator1875 = x3d.OrientationInterpolator(DEF="Stop_l_cuneonavicular_1_RotationInterpolator")
 OrientationInterpolator1875.key = [0,0.5,1]
 OrientationInterpolator1875.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1875)
-OrientationInterpolator1876 = x3d.OrientationInterpolator()
-OrientationInterpolator1876.DEF = "Stop_l_tarsometatarsal_1_RotationInterpolator"
+OrientationInterpolator1876 = x3d.OrientationInterpolator(DEF="Stop_l_tarsometatarsal_1_RotationInterpolator")
 OrientationInterpolator1876.key = [0,0.5,1]
 OrientationInterpolator1876.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1876)
-OrientationInterpolator1877 = x3d.OrientationInterpolator()
-OrientationInterpolator1877.DEF = "Stop_l_metatarsophalangeal_1_RotationInterpolator"
+OrientationInterpolator1877 = x3d.OrientationInterpolator(DEF="Stop_l_metatarsophalangeal_1_RotationInterpolator")
 OrientationInterpolator1877.key = [0,0.5,1]
 OrientationInterpolator1877.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1877)
-OrientationInterpolator1878 = x3d.OrientationInterpolator()
-OrientationInterpolator1878.DEF = "Stop_l_tarsal_interphalangeal_1_RotationInterpolator"
+OrientationInterpolator1878 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_interphalangeal_1_RotationInterpolator")
 OrientationInterpolator1878.key = [0,0.5,1]
 OrientationInterpolator1878.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1878)
-OrientationInterpolator1879 = x3d.OrientationInterpolator()
-OrientationInterpolator1879.DEF = "Stop_l_cuneonavicular_2_RotationInterpolator"
+OrientationInterpolator1879 = x3d.OrientationInterpolator(DEF="Stop_l_cuneonavicular_2_RotationInterpolator")
 OrientationInterpolator1879.key = [0,0.5,1]
 OrientationInterpolator1879.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1879)
-OrientationInterpolator1880 = x3d.OrientationInterpolator()
-OrientationInterpolator1880.DEF = "Stop_l_tarsometatarsal_2_RotationInterpolator"
+OrientationInterpolator1880 = x3d.OrientationInterpolator(DEF="Stop_l_tarsometatarsal_2_RotationInterpolator")
 OrientationInterpolator1880.key = [0,0.5,1]
 OrientationInterpolator1880.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1880)
-OrientationInterpolator1881 = x3d.OrientationInterpolator()
-OrientationInterpolator1881.DEF = "Stop_l_metatarsophalangeal_2_RotationInterpolator"
+OrientationInterpolator1881 = x3d.OrientationInterpolator(DEF="Stop_l_metatarsophalangeal_2_RotationInterpolator")
 OrientationInterpolator1881.key = [0,0.5,1]
 OrientationInterpolator1881.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1881)
-OrientationInterpolator1882 = x3d.OrientationInterpolator()
-OrientationInterpolator1882.DEF = "Stop_l_tarsal_proximal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1882 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_proximal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1882.key = [0,0.5,1]
 OrientationInterpolator1882.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1882)
-OrientationInterpolator1883 = x3d.OrientationInterpolator()
-OrientationInterpolator1883.DEF = "Stop_l_tarsal_distal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1883 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_distal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1883.key = [0,0.5,1]
 OrientationInterpolator1883.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1883)
-OrientationInterpolator1884 = x3d.OrientationInterpolator()
-OrientationInterpolator1884.DEF = "Stop_l_cuneonavicular_3_RotationInterpolator"
+OrientationInterpolator1884 = x3d.OrientationInterpolator(DEF="Stop_l_cuneonavicular_3_RotationInterpolator")
 OrientationInterpolator1884.key = [0,0.5,1]
 OrientationInterpolator1884.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1884)
-OrientationInterpolator1885 = x3d.OrientationInterpolator()
-OrientationInterpolator1885.DEF = "Stop_l_tarsometatarsal_3_RotationInterpolator"
+OrientationInterpolator1885 = x3d.OrientationInterpolator(DEF="Stop_l_tarsometatarsal_3_RotationInterpolator")
 OrientationInterpolator1885.key = [0,0.5,1]
 OrientationInterpolator1885.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1885)
-OrientationInterpolator1886 = x3d.OrientationInterpolator()
-OrientationInterpolator1886.DEF = "Stop_l_metatarsophalangeal_3_RotationInterpolator"
+OrientationInterpolator1886 = x3d.OrientationInterpolator(DEF="Stop_l_metatarsophalangeal_3_RotationInterpolator")
 OrientationInterpolator1886.key = [0,0.5,1]
 OrientationInterpolator1886.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1886)
-OrientationInterpolator1887 = x3d.OrientationInterpolator()
-OrientationInterpolator1887.DEF = "Stop_l_tarsal_proximal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1887 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_proximal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1887.key = [0,0.5,1]
 OrientationInterpolator1887.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1887)
-OrientationInterpolator1888 = x3d.OrientationInterpolator()
-OrientationInterpolator1888.DEF = "Stop_l_tarsal_distal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1888 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_distal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1888.key = [0,0.5,1]
 OrientationInterpolator1888.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1888)
-OrientationInterpolator1889 = x3d.OrientationInterpolator()
-OrientationInterpolator1889.DEF = "Stop_l_calcaneocuboid_RotationInterpolator"
+OrientationInterpolator1889 = x3d.OrientationInterpolator(DEF="Stop_l_calcaneocuboid_RotationInterpolator")
 OrientationInterpolator1889.key = [0,0.5,1]
 OrientationInterpolator1889.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1889)
-OrientationInterpolator1890 = x3d.OrientationInterpolator()
-OrientationInterpolator1890.DEF = "Stop_l_transversetarsal_RotationInterpolator"
+OrientationInterpolator1890 = x3d.OrientationInterpolator(DEF="Stop_l_transversetarsal_RotationInterpolator")
 OrientationInterpolator1890.key = [0,0.5,1]
 OrientationInterpolator1890.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1890)
-OrientationInterpolator1891 = x3d.OrientationInterpolator()
-OrientationInterpolator1891.DEF = "Stop_l_tarsometatarsal_4_RotationInterpolator"
+OrientationInterpolator1891 = x3d.OrientationInterpolator(DEF="Stop_l_tarsometatarsal_4_RotationInterpolator")
 OrientationInterpolator1891.key = [0,0.5,1]
 OrientationInterpolator1891.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1891)
-OrientationInterpolator1892 = x3d.OrientationInterpolator()
-OrientationInterpolator1892.DEF = "Stop_l_metatarsophalangeal_4_RotationInterpolator"
+OrientationInterpolator1892 = x3d.OrientationInterpolator(DEF="Stop_l_metatarsophalangeal_4_RotationInterpolator")
 OrientationInterpolator1892.key = [0,0.5,1]
 OrientationInterpolator1892.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1892)
-OrientationInterpolator1893 = x3d.OrientationInterpolator()
-OrientationInterpolator1893.DEF = "Stop_l_tarsal_proximal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1893 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_proximal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1893.key = [0,0.5,1]
 OrientationInterpolator1893.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1893)
-OrientationInterpolator1894 = x3d.OrientationInterpolator()
-OrientationInterpolator1894.DEF = "Stop_l_tarsal_distal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1894 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_distal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1894.key = [0,0.5,1]
 OrientationInterpolator1894.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1894)
-OrientationInterpolator1895 = x3d.OrientationInterpolator()
-OrientationInterpolator1895.DEF = "Stop_l_tarsometatarsal_5_RotationInterpolator"
+OrientationInterpolator1895 = x3d.OrientationInterpolator(DEF="Stop_l_tarsometatarsal_5_RotationInterpolator")
 OrientationInterpolator1895.key = [0,0.5,1]
 OrientationInterpolator1895.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1895)
-OrientationInterpolator1896 = x3d.OrientationInterpolator()
-OrientationInterpolator1896.DEF = "Stop_l_metatarsophalangeal_5_RotationInterpolator"
+OrientationInterpolator1896 = x3d.OrientationInterpolator(DEF="Stop_l_metatarsophalangeal_5_RotationInterpolator")
 OrientationInterpolator1896.key = [0,0.5,1]
 OrientationInterpolator1896.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1896)
-OrientationInterpolator1897 = x3d.OrientationInterpolator()
-OrientationInterpolator1897.DEF = "Stop_l_tarsal_proximal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1897 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_proximal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1897.key = [0,0.5,1]
 OrientationInterpolator1897.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1897)
-OrientationInterpolator1898 = x3d.OrientationInterpolator()
-OrientationInterpolator1898.DEF = "Stop_l_tarsal_distal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1898 = x3d.OrientationInterpolator(DEF="Stop_l_tarsal_distal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1898.key = [0,0.5,1]
 OrientationInterpolator1898.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1898)
-OrientationInterpolator1899 = x3d.OrientationInterpolator()
-OrientationInterpolator1899.DEF = "Stop_r_hip_RotationInterpolator"
+OrientationInterpolator1899 = x3d.OrientationInterpolator(DEF="Stop_r_hip_RotationInterpolator")
 OrientationInterpolator1899.key = [0,0.5,1]
 OrientationInterpolator1899.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1899)
-OrientationInterpolator1900 = x3d.OrientationInterpolator()
-OrientationInterpolator1900.DEF = "Stop_r_knee_RotationInterpolator"
+OrientationInterpolator1900 = x3d.OrientationInterpolator(DEF="Stop_r_knee_RotationInterpolator")
 OrientationInterpolator1900.key = [0,0.5,1]
 OrientationInterpolator1900.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1900)
-OrientationInterpolator1901 = x3d.OrientationInterpolator()
-OrientationInterpolator1901.DEF = "Stop_r_talocrural_RotationInterpolator"
+OrientationInterpolator1901 = x3d.OrientationInterpolator(DEF="Stop_r_talocrural_RotationInterpolator")
 OrientationInterpolator1901.key = [0,0.5,1]
 OrientationInterpolator1901.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1901)
-OrientationInterpolator1902 = x3d.OrientationInterpolator()
-OrientationInterpolator1902.DEF = "Stop_r_talocalcaneonavicular_RotationInterpolator"
+OrientationInterpolator1902 = x3d.OrientationInterpolator(DEF="Stop_r_talocalcaneonavicular_RotationInterpolator")
 OrientationInterpolator1902.key = [0,0.5,1]
 OrientationInterpolator1902.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1902)
-OrientationInterpolator1903 = x3d.OrientationInterpolator()
-OrientationInterpolator1903.DEF = "Stop_r_cuneonavicular_1_RotationInterpolator"
+OrientationInterpolator1903 = x3d.OrientationInterpolator(DEF="Stop_r_cuneonavicular_1_RotationInterpolator")
 OrientationInterpolator1903.key = [0,0.5,1]
 OrientationInterpolator1903.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1903)
-OrientationInterpolator1904 = x3d.OrientationInterpolator()
-OrientationInterpolator1904.DEF = "Stop_r_tarsometatarsal_1_RotationInterpolator"
+OrientationInterpolator1904 = x3d.OrientationInterpolator(DEF="Stop_r_tarsometatarsal_1_RotationInterpolator")
 OrientationInterpolator1904.key = [0,0.5,1]
 OrientationInterpolator1904.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1904)
-OrientationInterpolator1905 = x3d.OrientationInterpolator()
-OrientationInterpolator1905.DEF = "Stop_r_metatarsophalangeal_1_RotationInterpolator"
+OrientationInterpolator1905 = x3d.OrientationInterpolator(DEF="Stop_r_metatarsophalangeal_1_RotationInterpolator")
 OrientationInterpolator1905.key = [0,0.5,1]
 OrientationInterpolator1905.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1905)
-OrientationInterpolator1906 = x3d.OrientationInterpolator()
-OrientationInterpolator1906.DEF = "Stop_r_tarsal_interphalangeal_1_RotationInterpolator"
+OrientationInterpolator1906 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_interphalangeal_1_RotationInterpolator")
 OrientationInterpolator1906.key = [0,0.5,1]
 OrientationInterpolator1906.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1906)
-OrientationInterpolator1907 = x3d.OrientationInterpolator()
-OrientationInterpolator1907.DEF = "Stop_r_cuneonavicular_2_RotationInterpolator"
+OrientationInterpolator1907 = x3d.OrientationInterpolator(DEF="Stop_r_cuneonavicular_2_RotationInterpolator")
 OrientationInterpolator1907.key = [0,0.5,1]
 OrientationInterpolator1907.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1907)
-OrientationInterpolator1908 = x3d.OrientationInterpolator()
-OrientationInterpolator1908.DEF = "Stop_r_tarsometatarsal_2_RotationInterpolator"
+OrientationInterpolator1908 = x3d.OrientationInterpolator(DEF="Stop_r_tarsometatarsal_2_RotationInterpolator")
 OrientationInterpolator1908.key = [0,0.5,1]
 OrientationInterpolator1908.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1908)
-OrientationInterpolator1909 = x3d.OrientationInterpolator()
-OrientationInterpolator1909.DEF = "Stop_r_metatarsophalangeal_2_RotationInterpolator"
+OrientationInterpolator1909 = x3d.OrientationInterpolator(DEF="Stop_r_metatarsophalangeal_2_RotationInterpolator")
 OrientationInterpolator1909.key = [0,0.5,1]
 OrientationInterpolator1909.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1909)
-OrientationInterpolator1910 = x3d.OrientationInterpolator()
-OrientationInterpolator1910.DEF = "Stop_r_tarsal_proximal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1910 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_proximal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1910.key = [0,0.5,1]
 OrientationInterpolator1910.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1910)
-OrientationInterpolator1911 = x3d.OrientationInterpolator()
-OrientationInterpolator1911.DEF = "Stop_r_tarsal_distal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1911 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_distal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1911.key = [0,0.5,1]
 OrientationInterpolator1911.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1911)
-OrientationInterpolator1912 = x3d.OrientationInterpolator()
-OrientationInterpolator1912.DEF = "Stop_r_cuneonavicular_3_RotationInterpolator"
+OrientationInterpolator1912 = x3d.OrientationInterpolator(DEF="Stop_r_cuneonavicular_3_RotationInterpolator")
 OrientationInterpolator1912.key = [0,0.5,1]
 OrientationInterpolator1912.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1912)
-OrientationInterpolator1913 = x3d.OrientationInterpolator()
-OrientationInterpolator1913.DEF = "Stop_r_tarsometatarsal_3_RotationInterpolator"
+OrientationInterpolator1913 = x3d.OrientationInterpolator(DEF="Stop_r_tarsometatarsal_3_RotationInterpolator")
 OrientationInterpolator1913.key = [0,0.5,1]
 OrientationInterpolator1913.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1913)
-OrientationInterpolator1914 = x3d.OrientationInterpolator()
-OrientationInterpolator1914.DEF = "Stop_r_metatarsophalangeal_3_RotationInterpolator"
+OrientationInterpolator1914 = x3d.OrientationInterpolator(DEF="Stop_r_metatarsophalangeal_3_RotationInterpolator")
 OrientationInterpolator1914.key = [0,0.5,1]
 OrientationInterpolator1914.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1914)
-OrientationInterpolator1915 = x3d.OrientationInterpolator()
-OrientationInterpolator1915.DEF = "Stop_r_tarsal_proximal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1915 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_proximal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1915.key = [0,0.5,1]
 OrientationInterpolator1915.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1915)
-OrientationInterpolator1916 = x3d.OrientationInterpolator()
-OrientationInterpolator1916.DEF = "Stop_r_tarsal_distal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1916 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_distal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1916.key = [0,0.5,1]
 OrientationInterpolator1916.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1916)
-OrientationInterpolator1917 = x3d.OrientationInterpolator()
-OrientationInterpolator1917.DEF = "Stop_r_calcaneocuboid_RotationInterpolator"
+OrientationInterpolator1917 = x3d.OrientationInterpolator(DEF="Stop_r_calcaneocuboid_RotationInterpolator")
 OrientationInterpolator1917.key = [0,0.5,1]
 OrientationInterpolator1917.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1917)
-OrientationInterpolator1918 = x3d.OrientationInterpolator()
-OrientationInterpolator1918.DEF = "Stop_r_transversetarsal_RotationInterpolator"
+OrientationInterpolator1918 = x3d.OrientationInterpolator(DEF="Stop_r_transversetarsal_RotationInterpolator")
 OrientationInterpolator1918.key = [0,0.5,1]
 OrientationInterpolator1918.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1918)
-OrientationInterpolator1919 = x3d.OrientationInterpolator()
-OrientationInterpolator1919.DEF = "Stop_r_tarsometatarsal_4_RotationInterpolator"
+OrientationInterpolator1919 = x3d.OrientationInterpolator(DEF="Stop_r_tarsometatarsal_4_RotationInterpolator")
 OrientationInterpolator1919.key = [0,0.5,1]
 OrientationInterpolator1919.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1919)
-OrientationInterpolator1920 = x3d.OrientationInterpolator()
-OrientationInterpolator1920.DEF = "Stop_r_metatarsophalangeal_4_RotationInterpolator"
+OrientationInterpolator1920 = x3d.OrientationInterpolator(DEF="Stop_r_metatarsophalangeal_4_RotationInterpolator")
 OrientationInterpolator1920.key = [0,0.5,1]
 OrientationInterpolator1920.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1920)
-OrientationInterpolator1921 = x3d.OrientationInterpolator()
-OrientationInterpolator1921.DEF = "Stop_r_tarsal_proximal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1921 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_proximal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1921.key = [0,0.5,1]
 OrientationInterpolator1921.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1921)
-OrientationInterpolator1922 = x3d.OrientationInterpolator()
-OrientationInterpolator1922.DEF = "Stop_r_tarsal_distal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1922 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_distal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1922.key = [0,0.5,1]
 OrientationInterpolator1922.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1922)
-OrientationInterpolator1923 = x3d.OrientationInterpolator()
-OrientationInterpolator1923.DEF = "Stop_r_tarsometatarsal_5_RotationInterpolator"
+OrientationInterpolator1923 = x3d.OrientationInterpolator(DEF="Stop_r_tarsometatarsal_5_RotationInterpolator")
 OrientationInterpolator1923.key = [0,0.5,1]
 OrientationInterpolator1923.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1923)
-OrientationInterpolator1924 = x3d.OrientationInterpolator()
-OrientationInterpolator1924.DEF = "Stop_r_metatarsophalangeal_5_RotationInterpolator"
+OrientationInterpolator1924 = x3d.OrientationInterpolator(DEF="Stop_r_metatarsophalangeal_5_RotationInterpolator")
 OrientationInterpolator1924.key = [0,0.5,1]
 OrientationInterpolator1924.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1924)
-OrientationInterpolator1925 = x3d.OrientationInterpolator()
-OrientationInterpolator1925.DEF = "Stop_r_tarsal_proximal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1925 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_proximal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1925.key = [0,0.5,1]
 OrientationInterpolator1925.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1925)
-OrientationInterpolator1926 = x3d.OrientationInterpolator()
-OrientationInterpolator1926.DEF = "Stop_r_tarsal_distal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1926 = x3d.OrientationInterpolator(DEF="Stop_r_tarsal_distal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1926.key = [0,0.5,1]
 OrientationInterpolator1926.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1926)
-OrientationInterpolator1927 = x3d.OrientationInterpolator()
-OrientationInterpolator1927.DEF = "Stop_vl5_RotationInterpolator"
+OrientationInterpolator1927 = x3d.OrientationInterpolator(DEF="Stop_vl5_RotationInterpolator")
 OrientationInterpolator1927.key = [0,0.5,1]
 OrientationInterpolator1927.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1927)
-OrientationInterpolator1928 = x3d.OrientationInterpolator()
-OrientationInterpolator1928.DEF = "Stop_vl4_RotationInterpolator"
+OrientationInterpolator1928 = x3d.OrientationInterpolator(DEF="Stop_vl4_RotationInterpolator")
 OrientationInterpolator1928.key = [0,0.5,1]
 OrientationInterpolator1928.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1928)
-OrientationInterpolator1929 = x3d.OrientationInterpolator()
-OrientationInterpolator1929.DEF = "Stop_vl3_RotationInterpolator"
+OrientationInterpolator1929 = x3d.OrientationInterpolator(DEF="Stop_vl3_RotationInterpolator")
 OrientationInterpolator1929.key = [0,0.5,1]
 OrientationInterpolator1929.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1929)
-OrientationInterpolator1930 = x3d.OrientationInterpolator()
-OrientationInterpolator1930.DEF = "Stop_vl2_RotationInterpolator"
+OrientationInterpolator1930 = x3d.OrientationInterpolator(DEF="Stop_vl2_RotationInterpolator")
 OrientationInterpolator1930.key = [0,0.5,1]
 OrientationInterpolator1930.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1930)
-OrientationInterpolator1931 = x3d.OrientationInterpolator()
-OrientationInterpolator1931.DEF = "Stop_vl1_RotationInterpolator"
+OrientationInterpolator1931 = x3d.OrientationInterpolator(DEF="Stop_vl1_RotationInterpolator")
 OrientationInterpolator1931.key = [0,0.5,1]
 OrientationInterpolator1931.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1931)
-OrientationInterpolator1932 = x3d.OrientationInterpolator()
-OrientationInterpolator1932.DEF = "Stop_vt12_RotationInterpolator"
+OrientationInterpolator1932 = x3d.OrientationInterpolator(DEF="Stop_vt12_RotationInterpolator")
 OrientationInterpolator1932.key = [0,0.5,1]
 OrientationInterpolator1932.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1932)
-OrientationInterpolator1933 = x3d.OrientationInterpolator()
-OrientationInterpolator1933.DEF = "Stop_vt11_RotationInterpolator"
+OrientationInterpolator1933 = x3d.OrientationInterpolator(DEF="Stop_vt11_RotationInterpolator")
 OrientationInterpolator1933.key = [0,0.5,1]
 OrientationInterpolator1933.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1933)
-OrientationInterpolator1934 = x3d.OrientationInterpolator()
-OrientationInterpolator1934.DEF = "Stop_vt10_RotationInterpolator"
+OrientationInterpolator1934 = x3d.OrientationInterpolator(DEF="Stop_vt10_RotationInterpolator")
 OrientationInterpolator1934.key = [0,0.5,1]
 OrientationInterpolator1934.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1934)
-OrientationInterpolator1935 = x3d.OrientationInterpolator()
-OrientationInterpolator1935.DEF = "Stop_vt9_RotationInterpolator"
+OrientationInterpolator1935 = x3d.OrientationInterpolator(DEF="Stop_vt9_RotationInterpolator")
 OrientationInterpolator1935.key = [0,0.5,1]
 OrientationInterpolator1935.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1935)
-OrientationInterpolator1936 = x3d.OrientationInterpolator()
-OrientationInterpolator1936.DEF = "Stop_vt8_RotationInterpolator"
+OrientationInterpolator1936 = x3d.OrientationInterpolator(DEF="Stop_vt8_RotationInterpolator")
 OrientationInterpolator1936.key = [0,0.5,1]
 OrientationInterpolator1936.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1936)
-OrientationInterpolator1937 = x3d.OrientationInterpolator()
-OrientationInterpolator1937.DEF = "Stop_vt7_RotationInterpolator"
+OrientationInterpolator1937 = x3d.OrientationInterpolator(DEF="Stop_vt7_RotationInterpolator")
 OrientationInterpolator1937.key = [0,0.5,1]
 OrientationInterpolator1937.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1937)
-OrientationInterpolator1938 = x3d.OrientationInterpolator()
-OrientationInterpolator1938.DEF = "Stop_vt6_RotationInterpolator"
+OrientationInterpolator1938 = x3d.OrientationInterpolator(DEF="Stop_vt6_RotationInterpolator")
 OrientationInterpolator1938.key = [0,0.5,1]
 OrientationInterpolator1938.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1938)
-OrientationInterpolator1939 = x3d.OrientationInterpolator()
-OrientationInterpolator1939.DEF = "Stop_vt5_RotationInterpolator"
+OrientationInterpolator1939 = x3d.OrientationInterpolator(DEF="Stop_vt5_RotationInterpolator")
 OrientationInterpolator1939.key = [0,0.5,1]
 OrientationInterpolator1939.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1939)
-OrientationInterpolator1940 = x3d.OrientationInterpolator()
-OrientationInterpolator1940.DEF = "Stop_vt4_RotationInterpolator"
+OrientationInterpolator1940 = x3d.OrientationInterpolator(DEF="Stop_vt4_RotationInterpolator")
 OrientationInterpolator1940.key = [0,0.5,1]
 OrientationInterpolator1940.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1940)
-OrientationInterpolator1941 = x3d.OrientationInterpolator()
-OrientationInterpolator1941.DEF = "Stop_vt3_RotationInterpolator"
+OrientationInterpolator1941 = x3d.OrientationInterpolator(DEF="Stop_vt3_RotationInterpolator")
 OrientationInterpolator1941.key = [0,0.5,1]
 OrientationInterpolator1941.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1941)
-OrientationInterpolator1942 = x3d.OrientationInterpolator()
-OrientationInterpolator1942.DEF = "Stop_vt2_RotationInterpolator"
+OrientationInterpolator1942 = x3d.OrientationInterpolator(DEF="Stop_vt2_RotationInterpolator")
 OrientationInterpolator1942.key = [0,0.5,1]
 OrientationInterpolator1942.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1942)
-OrientationInterpolator1943 = x3d.OrientationInterpolator()
-OrientationInterpolator1943.DEF = "Stop_vt1_RotationInterpolator"
+OrientationInterpolator1943 = x3d.OrientationInterpolator(DEF="Stop_vt1_RotationInterpolator")
 OrientationInterpolator1943.key = [0,0.5,1]
 OrientationInterpolator1943.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1943)
-OrientationInterpolator1944 = x3d.OrientationInterpolator()
-OrientationInterpolator1944.DEF = "Stop_vc7_RotationInterpolator"
+OrientationInterpolator1944 = x3d.OrientationInterpolator(DEF="Stop_vc7_RotationInterpolator")
 OrientationInterpolator1944.key = [0,0.5,1]
 OrientationInterpolator1944.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1944)
-OrientationInterpolator1945 = x3d.OrientationInterpolator()
-OrientationInterpolator1945.DEF = "Stop_vc6_RotationInterpolator"
+OrientationInterpolator1945 = x3d.OrientationInterpolator(DEF="Stop_vc6_RotationInterpolator")
 OrientationInterpolator1945.key = [0,0.5,1]
 OrientationInterpolator1945.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1945)
-OrientationInterpolator1946 = x3d.OrientationInterpolator()
-OrientationInterpolator1946.DEF = "Stop_vc5_RotationInterpolator"
+OrientationInterpolator1946 = x3d.OrientationInterpolator(DEF="Stop_vc5_RotationInterpolator")
 OrientationInterpolator1946.key = [0,0.5,1]
 OrientationInterpolator1946.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1946)
-OrientationInterpolator1947 = x3d.OrientationInterpolator()
-OrientationInterpolator1947.DEF = "Stop_vc4_RotationInterpolator"
+OrientationInterpolator1947 = x3d.OrientationInterpolator(DEF="Stop_vc4_RotationInterpolator")
 OrientationInterpolator1947.key = [0,0.5,1]
 OrientationInterpolator1947.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1947)
-OrientationInterpolator1948 = x3d.OrientationInterpolator()
-OrientationInterpolator1948.DEF = "Stop_vc3_RotationInterpolator"
+OrientationInterpolator1948 = x3d.OrientationInterpolator(DEF="Stop_vc3_RotationInterpolator")
 OrientationInterpolator1948.key = [0,0.5,1]
 OrientationInterpolator1948.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1948)
-OrientationInterpolator1949 = x3d.OrientationInterpolator()
-OrientationInterpolator1949.DEF = "Stop_vc2_RotationInterpolator"
+OrientationInterpolator1949 = x3d.OrientationInterpolator(DEF="Stop_vc2_RotationInterpolator")
 OrientationInterpolator1949.key = [0,0.5,1]
 OrientationInterpolator1949.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1949)
-OrientationInterpolator1950 = x3d.OrientationInterpolator()
-OrientationInterpolator1950.DEF = "Stop_vc1_RotationInterpolator"
+OrientationInterpolator1950 = x3d.OrientationInterpolator(DEF="Stop_vc1_RotationInterpolator")
 OrientationInterpolator1950.key = [0,0.5,1]
 OrientationInterpolator1950.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1950)
-OrientationInterpolator1951 = x3d.OrientationInterpolator()
-OrientationInterpolator1951.DEF = "Stop_skullbase_RotationInterpolator"
+OrientationInterpolator1951 = x3d.OrientationInterpolator(DEF="Stop_skullbase_RotationInterpolator")
 OrientationInterpolator1951.key = [0,0.5,1]
 OrientationInterpolator1951.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1951)
-OrientationInterpolator1952 = x3d.OrientationInterpolator()
-OrientationInterpolator1952.DEF = "Stop_l_eyelid_joint_RotationInterpolator"
+OrientationInterpolator1952 = x3d.OrientationInterpolator(DEF="Stop_l_eyelid_joint_RotationInterpolator")
 OrientationInterpolator1952.key = [0,0.5,1]
 OrientationInterpolator1952.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1952)
-OrientationInterpolator1953 = x3d.OrientationInterpolator()
-OrientationInterpolator1953.DEF = "Stop_r_eyelid_joint_RotationInterpolator"
+OrientationInterpolator1953 = x3d.OrientationInterpolator(DEF="Stop_r_eyelid_joint_RotationInterpolator")
 OrientationInterpolator1953.key = [0,0.5,1]
 OrientationInterpolator1953.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1953)
-OrientationInterpolator1954 = x3d.OrientationInterpolator()
-OrientationInterpolator1954.DEF = "Stop_l_eyeball_joint_RotationInterpolator"
+OrientationInterpolator1954 = x3d.OrientationInterpolator(DEF="Stop_l_eyeball_joint_RotationInterpolator")
 OrientationInterpolator1954.key = [0,0.5,1]
 OrientationInterpolator1954.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1954)
-OrientationInterpolator1955 = x3d.OrientationInterpolator()
-OrientationInterpolator1955.DEF = "Stop_r_eyeball_joint_RotationInterpolator"
+OrientationInterpolator1955 = x3d.OrientationInterpolator(DEF="Stop_r_eyeball_joint_RotationInterpolator")
 OrientationInterpolator1955.key = [0,0.5,1]
 OrientationInterpolator1955.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1955)
-OrientationInterpolator1956 = x3d.OrientationInterpolator()
-OrientationInterpolator1956.DEF = "Stop_l_eyebrow_joint_RotationInterpolator"
+OrientationInterpolator1956 = x3d.OrientationInterpolator(DEF="Stop_l_eyebrow_joint_RotationInterpolator")
 OrientationInterpolator1956.key = [0,0.5,1]
 OrientationInterpolator1956.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1956)
-OrientationInterpolator1957 = x3d.OrientationInterpolator()
-OrientationInterpolator1957.DEF = "Stop_r_eyebrow_joint_RotationInterpolator"
+OrientationInterpolator1957 = x3d.OrientationInterpolator(DEF="Stop_r_eyebrow_joint_RotationInterpolator")
 OrientationInterpolator1957.key = [0,0.5,1]
 OrientationInterpolator1957.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1957)
-OrientationInterpolator1958 = x3d.OrientationInterpolator()
-OrientationInterpolator1958.DEF = "Stop_temporomandibular_RotationInterpolator"
+OrientationInterpolator1958 = x3d.OrientationInterpolator(DEF="Stop_temporomandibular_RotationInterpolator")
 OrientationInterpolator1958.key = [0,0.5,1]
 OrientationInterpolator1958.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1958)
-OrientationInterpolator1959 = x3d.OrientationInterpolator()
-OrientationInterpolator1959.DEF = "Stop_l_sternoclavicular_RotationInterpolator"
+OrientationInterpolator1959 = x3d.OrientationInterpolator(DEF="Stop_l_sternoclavicular_RotationInterpolator")
 OrientationInterpolator1959.key = [0,0.5,1]
 OrientationInterpolator1959.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1959)
-OrientationInterpolator1960 = x3d.OrientationInterpolator()
-OrientationInterpolator1960.DEF = "Stop_l_acromioclavicular_RotationInterpolator"
+OrientationInterpolator1960 = x3d.OrientationInterpolator(DEF="Stop_l_acromioclavicular_RotationInterpolator")
 OrientationInterpolator1960.key = [0,0.5,1]
 OrientationInterpolator1960.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1960)
-OrientationInterpolator1961 = x3d.OrientationInterpolator()
-OrientationInterpolator1961.DEF = "Stop_l_shoulder_RotationInterpolator"
+OrientationInterpolator1961 = x3d.OrientationInterpolator(DEF="Stop_l_shoulder_RotationInterpolator")
 OrientationInterpolator1961.key = [0,0.5,1]
 OrientationInterpolator1961.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1961)
-OrientationInterpolator1962 = x3d.OrientationInterpolator()
-OrientationInterpolator1962.DEF = "Stop_l_elbow_RotationInterpolator"
+OrientationInterpolator1962 = x3d.OrientationInterpolator(DEF="Stop_l_elbow_RotationInterpolator")
 OrientationInterpolator1962.key = [0,0.5,1]
 OrientationInterpolator1962.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1962)
-OrientationInterpolator1963 = x3d.OrientationInterpolator()
-OrientationInterpolator1963.DEF = "Stop_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator1963 = x3d.OrientationInterpolator(DEF="Stop_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator1963.key = [0,0.5,1]
 OrientationInterpolator1963.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1963)
-OrientationInterpolator1964 = x3d.OrientationInterpolator()
-OrientationInterpolator1964.DEF = "Stop_l_midcarpal_1_RotationInterpolator"
+OrientationInterpolator1964 = x3d.OrientationInterpolator(DEF="Stop_l_midcarpal_1_RotationInterpolator")
 OrientationInterpolator1964.key = [0,0.5,1]
 OrientationInterpolator1964.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1964)
-OrientationInterpolator1965 = x3d.OrientationInterpolator()
-OrientationInterpolator1965.DEF = "Stop_l_carpometacarpal_1_RotationInterpolator"
+OrientationInterpolator1965 = x3d.OrientationInterpolator(DEF="Stop_l_carpometacarpal_1_RotationInterpolator")
 OrientationInterpolator1965.key = [0,0.5,1]
 OrientationInterpolator1965.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1965)
-OrientationInterpolator1966 = x3d.OrientationInterpolator()
-OrientationInterpolator1966.DEF = "Stop_l_metacarpophalangeal_1_RotationInterpolator"
+OrientationInterpolator1966 = x3d.OrientationInterpolator(DEF="Stop_l_metacarpophalangeal_1_RotationInterpolator")
 OrientationInterpolator1966.key = [0,0.5,1]
 OrientationInterpolator1966.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1966)
-OrientationInterpolator1967 = x3d.OrientationInterpolator()
-OrientationInterpolator1967.DEF = "Stop_l_carpal_interphalangeal_1_RotationInterpolator"
+OrientationInterpolator1967 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_interphalangeal_1_RotationInterpolator")
 OrientationInterpolator1967.key = [0,0.5,1]
 OrientationInterpolator1967.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1967)
-OrientationInterpolator1968 = x3d.OrientationInterpolator()
-OrientationInterpolator1968.DEF = "Stop_l_midcarpal_2_RotationInterpolator"
+OrientationInterpolator1968 = x3d.OrientationInterpolator(DEF="Stop_l_midcarpal_2_RotationInterpolator")
 OrientationInterpolator1968.key = [0,0.5,1]
 OrientationInterpolator1968.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1968)
-OrientationInterpolator1969 = x3d.OrientationInterpolator()
-OrientationInterpolator1969.DEF = "Stop_l_carpometacarpal_2_RotationInterpolator"
+OrientationInterpolator1969 = x3d.OrientationInterpolator(DEF="Stop_l_carpometacarpal_2_RotationInterpolator")
 OrientationInterpolator1969.key = [0,0.5,1]
 OrientationInterpolator1969.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1969)
-OrientationInterpolator1970 = x3d.OrientationInterpolator()
-OrientationInterpolator1970.DEF = "Stop_l_metacarpophalangeal_2_RotationInterpolator"
+OrientationInterpolator1970 = x3d.OrientationInterpolator(DEF="Stop_l_metacarpophalangeal_2_RotationInterpolator")
 OrientationInterpolator1970.key = [0,0.5,1]
 OrientationInterpolator1970.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1970)
-OrientationInterpolator1971 = x3d.OrientationInterpolator()
-OrientationInterpolator1971.DEF = "Stop_l_carpal_proximal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1971 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_proximal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1971.key = [0,0.5,1]
 OrientationInterpolator1971.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1971)
-OrientationInterpolator1972 = x3d.OrientationInterpolator()
-OrientationInterpolator1972.DEF = "Stop_l_carpal_distal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1972 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_distal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1972.key = [0,0.5,1]
 OrientationInterpolator1972.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1972)
-OrientationInterpolator1973 = x3d.OrientationInterpolator()
-OrientationInterpolator1973.DEF = "Stop_l_midcarpal_3_RotationInterpolator"
+OrientationInterpolator1973 = x3d.OrientationInterpolator(DEF="Stop_l_midcarpal_3_RotationInterpolator")
 OrientationInterpolator1973.key = [0,0.5,1]
 OrientationInterpolator1973.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1973)
-OrientationInterpolator1974 = x3d.OrientationInterpolator()
-OrientationInterpolator1974.DEF = "Stop_l_carpometacarpal_3_RotationInterpolator"
+OrientationInterpolator1974 = x3d.OrientationInterpolator(DEF="Stop_l_carpometacarpal_3_RotationInterpolator")
 OrientationInterpolator1974.key = [0,0.5,1]
 OrientationInterpolator1974.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1974)
-OrientationInterpolator1975 = x3d.OrientationInterpolator()
-OrientationInterpolator1975.DEF = "Stop_l_metacarpophalangeal_3_RotationInterpolator"
+OrientationInterpolator1975 = x3d.OrientationInterpolator(DEF="Stop_l_metacarpophalangeal_3_RotationInterpolator")
 OrientationInterpolator1975.key = [0,0.5,1]
 OrientationInterpolator1975.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1975)
-OrientationInterpolator1976 = x3d.OrientationInterpolator()
-OrientationInterpolator1976.DEF = "Stop_l_carpal_proximal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1976 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_proximal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1976.key = [0,0.5,1]
 OrientationInterpolator1976.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1976)
-OrientationInterpolator1977 = x3d.OrientationInterpolator()
-OrientationInterpolator1977.DEF = "Stop_l_carpal_distal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator1977 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_distal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator1977.key = [0,0.5,1]
 OrientationInterpolator1977.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1977)
-OrientationInterpolator1978 = x3d.OrientationInterpolator()
-OrientationInterpolator1978.DEF = "Stop_l_midcarpal_4_5_RotationInterpolator"
+OrientationInterpolator1978 = x3d.OrientationInterpolator(DEF="Stop_l_midcarpal_4_5_RotationInterpolator")
 OrientationInterpolator1978.key = [0,0.5,1]
 OrientationInterpolator1978.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1978)
-OrientationInterpolator1979 = x3d.OrientationInterpolator()
-OrientationInterpolator1979.DEF = "Stop_l_carpometacarpal_4_RotationInterpolator"
+OrientationInterpolator1979 = x3d.OrientationInterpolator(DEF="Stop_l_carpometacarpal_4_RotationInterpolator")
 OrientationInterpolator1979.key = [0,0.5,1]
 OrientationInterpolator1979.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1979)
-OrientationInterpolator1980 = x3d.OrientationInterpolator()
-OrientationInterpolator1980.DEF = "Stop_l_metacarpophalangeal_4_RotationInterpolator"
+OrientationInterpolator1980 = x3d.OrientationInterpolator(DEF="Stop_l_metacarpophalangeal_4_RotationInterpolator")
 OrientationInterpolator1980.key = [0,0.5,1]
 OrientationInterpolator1980.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1980)
-OrientationInterpolator1981 = x3d.OrientationInterpolator()
-OrientationInterpolator1981.DEF = "Stop_l_carpal_proximal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1981 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_proximal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1981.key = [0,0.5,1]
 OrientationInterpolator1981.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1981)
-OrientationInterpolator1982 = x3d.OrientationInterpolator()
-OrientationInterpolator1982.DEF = "Stop_l_carpal_distal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator1982 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_distal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator1982.key = [0,0.5,1]
 OrientationInterpolator1982.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1982)
-OrientationInterpolator1983 = x3d.OrientationInterpolator()
-OrientationInterpolator1983.DEF = "Stop_l_carpometacarpal_5_RotationInterpolator"
+OrientationInterpolator1983 = x3d.OrientationInterpolator(DEF="Stop_l_carpometacarpal_5_RotationInterpolator")
 OrientationInterpolator1983.key = [0,0.5,1]
 OrientationInterpolator1983.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1983)
-OrientationInterpolator1984 = x3d.OrientationInterpolator()
-OrientationInterpolator1984.DEF = "Stop_l_metacarpophalangeal_5_RotationInterpolator"
+OrientationInterpolator1984 = x3d.OrientationInterpolator(DEF="Stop_l_metacarpophalangeal_5_RotationInterpolator")
 OrientationInterpolator1984.key = [0,0.5,1]
 OrientationInterpolator1984.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1984)
-OrientationInterpolator1985 = x3d.OrientationInterpolator()
-OrientationInterpolator1985.DEF = "Stop_l_carpal_proximal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1985 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_proximal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1985.key = [0,0.5,1]
 OrientationInterpolator1985.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1985)
-OrientationInterpolator1986 = x3d.OrientationInterpolator()
-OrientationInterpolator1986.DEF = "Stop_l_carpal_distal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator1986 = x3d.OrientationInterpolator(DEF="Stop_l_carpal_distal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator1986.key = [0,0.5,1]
 OrientationInterpolator1986.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1986)
-OrientationInterpolator1987 = x3d.OrientationInterpolator()
-OrientationInterpolator1987.DEF = "Stop_r_sternoclavicular_RotationInterpolator"
+OrientationInterpolator1987 = x3d.OrientationInterpolator(DEF="Stop_r_sternoclavicular_RotationInterpolator")
 OrientationInterpolator1987.key = [0,0.5,1]
 OrientationInterpolator1987.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1987)
-OrientationInterpolator1988 = x3d.OrientationInterpolator()
-OrientationInterpolator1988.DEF = "Stop_r_acromioclavicular_RotationInterpolator"
+OrientationInterpolator1988 = x3d.OrientationInterpolator(DEF="Stop_r_acromioclavicular_RotationInterpolator")
 OrientationInterpolator1988.key = [0,0.5,1]
 OrientationInterpolator1988.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1988)
-OrientationInterpolator1989 = x3d.OrientationInterpolator()
-OrientationInterpolator1989.DEF = "Stop_r_shoulder_RotationInterpolator"
+OrientationInterpolator1989 = x3d.OrientationInterpolator(DEF="Stop_r_shoulder_RotationInterpolator")
 OrientationInterpolator1989.key = [0,0.5,1]
 OrientationInterpolator1989.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1989)
-OrientationInterpolator1990 = x3d.OrientationInterpolator()
-OrientationInterpolator1990.DEF = "Stop_r_elbow_RotationInterpolator"
+OrientationInterpolator1990 = x3d.OrientationInterpolator(DEF="Stop_r_elbow_RotationInterpolator")
 OrientationInterpolator1990.key = [0,0.5,1]
 OrientationInterpolator1990.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1990)
-OrientationInterpolator1991 = x3d.OrientationInterpolator()
-OrientationInterpolator1991.DEF = "Stop_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator1991 = x3d.OrientationInterpolator(DEF="Stop_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator1991.key = [0,0.5,1]
 OrientationInterpolator1991.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1991)
-OrientationInterpolator1992 = x3d.OrientationInterpolator()
-OrientationInterpolator1992.DEF = "Stop_r_midcarpal_1_RotationInterpolator"
+OrientationInterpolator1992 = x3d.OrientationInterpolator(DEF="Stop_r_midcarpal_1_RotationInterpolator")
 OrientationInterpolator1992.key = [0,0.5,1]
 OrientationInterpolator1992.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1992)
-OrientationInterpolator1993 = x3d.OrientationInterpolator()
-OrientationInterpolator1993.DEF = "Stop_r_carpometacarpal_1_RotationInterpolator"
+OrientationInterpolator1993 = x3d.OrientationInterpolator(DEF="Stop_r_carpometacarpal_1_RotationInterpolator")
 OrientationInterpolator1993.key = [0,0.5,1]
 OrientationInterpolator1993.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1993)
-OrientationInterpolator1994 = x3d.OrientationInterpolator()
-OrientationInterpolator1994.DEF = "Stop_r_metacarpophalangeal_1_RotationInterpolator"
+OrientationInterpolator1994 = x3d.OrientationInterpolator(DEF="Stop_r_metacarpophalangeal_1_RotationInterpolator")
 OrientationInterpolator1994.key = [0,0.5,1]
 OrientationInterpolator1994.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1994)
-OrientationInterpolator1995 = x3d.OrientationInterpolator()
-OrientationInterpolator1995.DEF = "Stop_r_carpal_interphalangeal_1_RotationInterpolator"
+OrientationInterpolator1995 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_interphalangeal_1_RotationInterpolator")
 OrientationInterpolator1995.key = [0,0.5,1]
 OrientationInterpolator1995.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1995)
-OrientationInterpolator1996 = x3d.OrientationInterpolator()
-OrientationInterpolator1996.DEF = "Stop_r_midcarpal_2_RotationInterpolator"
+OrientationInterpolator1996 = x3d.OrientationInterpolator(DEF="Stop_r_midcarpal_2_RotationInterpolator")
 OrientationInterpolator1996.key = [0,0.5,1]
 OrientationInterpolator1996.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1996)
-OrientationInterpolator1997 = x3d.OrientationInterpolator()
-OrientationInterpolator1997.DEF = "Stop_r_carpometacarpal_2_RotationInterpolator"
+OrientationInterpolator1997 = x3d.OrientationInterpolator(DEF="Stop_r_carpometacarpal_2_RotationInterpolator")
 OrientationInterpolator1997.key = [0,0.5,1]
 OrientationInterpolator1997.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1997)
-OrientationInterpolator1998 = x3d.OrientationInterpolator()
-OrientationInterpolator1998.DEF = "Stop_r_metacarpophalangeal_2_RotationInterpolator"
+OrientationInterpolator1998 = x3d.OrientationInterpolator(DEF="Stop_r_metacarpophalangeal_2_RotationInterpolator")
 OrientationInterpolator1998.key = [0,0.5,1]
 OrientationInterpolator1998.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1998)
-OrientationInterpolator1999 = x3d.OrientationInterpolator()
-OrientationInterpolator1999.DEF = "Stop_r_carpal_proximal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator1999 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_proximal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator1999.key = [0,0.5,1]
 OrientationInterpolator1999.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator1999)
-OrientationInterpolator2000 = x3d.OrientationInterpolator()
-OrientationInterpolator2000.DEF = "Stop_r_carpal_distal_interphalangeal_2_RotationInterpolator"
+OrientationInterpolator2000 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_distal_interphalangeal_2_RotationInterpolator")
 OrientationInterpolator2000.key = [0,0.5,1]
 OrientationInterpolator2000.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2000)
-OrientationInterpolator2001 = x3d.OrientationInterpolator()
-OrientationInterpolator2001.DEF = "Stop_r_midcarpal_3_RotationInterpolator"
+OrientationInterpolator2001 = x3d.OrientationInterpolator(DEF="Stop_r_midcarpal_3_RotationInterpolator")
 OrientationInterpolator2001.key = [0,0.5,1]
 OrientationInterpolator2001.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2001)
-OrientationInterpolator2002 = x3d.OrientationInterpolator()
-OrientationInterpolator2002.DEF = "Stop_r_carpometacarpal_3_RotationInterpolator"
+OrientationInterpolator2002 = x3d.OrientationInterpolator(DEF="Stop_r_carpometacarpal_3_RotationInterpolator")
 OrientationInterpolator2002.key = [0,0.5,1]
 OrientationInterpolator2002.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2002)
-OrientationInterpolator2003 = x3d.OrientationInterpolator()
-OrientationInterpolator2003.DEF = "Stop_r_metacarpophalangeal_3_RotationInterpolator"
+OrientationInterpolator2003 = x3d.OrientationInterpolator(DEF="Stop_r_metacarpophalangeal_3_RotationInterpolator")
 OrientationInterpolator2003.key = [0,0.5,1]
 OrientationInterpolator2003.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2003)
-OrientationInterpolator2004 = x3d.OrientationInterpolator()
-OrientationInterpolator2004.DEF = "Stop_r_carpal_proximal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator2004 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_proximal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator2004.key = [0,0.5,1]
 OrientationInterpolator2004.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2004)
-OrientationInterpolator2005 = x3d.OrientationInterpolator()
-OrientationInterpolator2005.DEF = "Stop_r_carpal_distal_interphalangeal_3_RotationInterpolator"
+OrientationInterpolator2005 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_distal_interphalangeal_3_RotationInterpolator")
 OrientationInterpolator2005.key = [0,0.5,1]
 OrientationInterpolator2005.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2005)
-OrientationInterpolator2006 = x3d.OrientationInterpolator()
-OrientationInterpolator2006.DEF = "Stop_r_midcarpal_4_5_RotationInterpolator"
+OrientationInterpolator2006 = x3d.OrientationInterpolator(DEF="Stop_r_midcarpal_4_5_RotationInterpolator")
 OrientationInterpolator2006.key = [0,0.5,1]
 OrientationInterpolator2006.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2006)
-OrientationInterpolator2007 = x3d.OrientationInterpolator()
-OrientationInterpolator2007.DEF = "Stop_r_carpometacarpal_4_RotationInterpolator"
+OrientationInterpolator2007 = x3d.OrientationInterpolator(DEF="Stop_r_carpometacarpal_4_RotationInterpolator")
 OrientationInterpolator2007.key = [0,0.5,1]
 OrientationInterpolator2007.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2007)
-OrientationInterpolator2008 = x3d.OrientationInterpolator()
-OrientationInterpolator2008.DEF = "Stop_r_metacarpophalangeal_4_RotationInterpolator"
+OrientationInterpolator2008 = x3d.OrientationInterpolator(DEF="Stop_r_metacarpophalangeal_4_RotationInterpolator")
 OrientationInterpolator2008.key = [0,0.5,1]
 OrientationInterpolator2008.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2008)
-OrientationInterpolator2009 = x3d.OrientationInterpolator()
-OrientationInterpolator2009.DEF = "Stop_r_carpal_proximal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator2009 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_proximal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator2009.key = [0,0.5,1]
 OrientationInterpolator2009.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2009)
-OrientationInterpolator2010 = x3d.OrientationInterpolator()
-OrientationInterpolator2010.DEF = "Stop_r_carpal_distal_interphalangeal_4_RotationInterpolator"
+OrientationInterpolator2010 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_distal_interphalangeal_4_RotationInterpolator")
 OrientationInterpolator2010.key = [0,0.5,1]
 OrientationInterpolator2010.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2010)
-OrientationInterpolator2011 = x3d.OrientationInterpolator()
-OrientationInterpolator2011.DEF = "Stop_r_carpometacarpal_5_RotationInterpolator"
+OrientationInterpolator2011 = x3d.OrientationInterpolator(DEF="Stop_r_carpometacarpal_5_RotationInterpolator")
 OrientationInterpolator2011.key = [0,0.5,1]
 OrientationInterpolator2011.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2011)
-OrientationInterpolator2012 = x3d.OrientationInterpolator()
-OrientationInterpolator2012.DEF = "Stop_r_metacarpophalangeal_5_RotationInterpolator"
+OrientationInterpolator2012 = x3d.OrientationInterpolator(DEF="Stop_r_metacarpophalangeal_5_RotationInterpolator")
 OrientationInterpolator2012.key = [0,0.5,1]
 OrientationInterpolator2012.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2012)
-OrientationInterpolator2013 = x3d.OrientationInterpolator()
-OrientationInterpolator2013.DEF = "Stop_r_carpal_proximal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator2013 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_proximal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator2013.key = [0,0.5,1]
 OrientationInterpolator2013.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group1866.children.append(OrientationInterpolator2013)
-OrientationInterpolator2014 = x3d.OrientationInterpolator()
-OrientationInterpolator2014.DEF = "Stop_r_carpal_distal_interphalangeal_5_RotationInterpolator"
+OrientationInterpolator2014 = x3d.OrientationInterpolator(DEF="Stop_r_carpal_distal_interphalangeal_5_RotationInterpolator")
 OrientationInterpolator2014.key = [0,0.5,1]
 OrientationInterpolator2014.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
@@ -11746,1442 +10280,1199 @@ ROUTE2308.toNode = "hanim_r_carpal_distal_interphalangeal_5"
 Group1866.children.append(ROUTE2308)
 
 Scene22.children.append(Group1866)
-Group2309 = x3d.Group()
-Group2309.DEF = "StandAnimation"
-TimeSensor2310 = x3d.TimeSensor()
-TimeSensor2310.DEF = "StandTimer"
+Group2309 = x3d.Group(DEF="StandAnimation")
+TimeSensor2310 = x3d.TimeSensor(DEF="StandTimer")
 TimeSensor2310.cycleInterval = 5.73
 TimeSensor2310.loop = True
 
 Group2309.children.append(TimeSensor2310)
-OrientationInterpolator2311 = x3d.OrientationInterpolator()
-OrientationInterpolator2311.DEF = "Stand_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2311 = x3d.OrientationInterpolator(DEF="Stand_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2311.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2311.keyValue = [(1, 0, 0, 0),(-1, 0, 0, 0.015),(1, 0, 0, 0.17),(-1, 0, 0, 0.025),(1, 0, 0, 0.01),(1, 0, 0, 0)]
 
 Group2309.children.append(OrientationInterpolator2311)
-OrientationInterpolator2312 = x3d.OrientationInterpolator()
-OrientationInterpolator2312.DEF = "Stand_r_talocrural_RotationInterpolator"
+OrientationInterpolator2312 = x3d.OrientationInterpolator(DEF="Stand_r_talocrural_RotationInterpolator")
 OrientationInterpolator2312.key = [0,0.5,1]
 OrientationInterpolator2312.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2312)
-OrientationInterpolator2313 = x3d.OrientationInterpolator()
-OrientationInterpolator2313.DEF = "Stand_r_knee_RotationInterpolator"
+OrientationInterpolator2313 = x3d.OrientationInterpolator(DEF="Stand_r_knee_RotationInterpolator")
 OrientationInterpolator2313.key = [0,0.5,1]
 OrientationInterpolator2313.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2313)
-OrientationInterpolator2314 = x3d.OrientationInterpolator()
-OrientationInterpolator2314.DEF = "Stand_r_hip_RotationInterpolator"
+OrientationInterpolator2314 = x3d.OrientationInterpolator(DEF="Stand_r_hip_RotationInterpolator")
 OrientationInterpolator2314.key = [0,0.5,1]
 OrientationInterpolator2314.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2314)
-OrientationInterpolator2315 = x3d.OrientationInterpolator()
-OrientationInterpolator2315.DEF = "Stand_l_talocrural_RotationInterpolator"
+OrientationInterpolator2315 = x3d.OrientationInterpolator(DEF="Stand_l_talocrural_RotationInterpolator")
 OrientationInterpolator2315.key = [0,0.5,1]
 OrientationInterpolator2315.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2315)
-OrientationInterpolator2316 = x3d.OrientationInterpolator()
-OrientationInterpolator2316.DEF = "Stand_l_knee_RotationInterpolator"
+OrientationInterpolator2316 = x3d.OrientationInterpolator(DEF="Stand_l_knee_RotationInterpolator")
 OrientationInterpolator2316.key = [0,0.5,1]
 OrientationInterpolator2316.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2316)
-OrientationInterpolator2317 = x3d.OrientationInterpolator()
-OrientationInterpolator2317.DEF = "Stand_l_hip_RotationInterpolator"
+OrientationInterpolator2317 = x3d.OrientationInterpolator(DEF="Stand_l_hip_RotationInterpolator")
 OrientationInterpolator2317.key = [0,0.5,1]
 OrientationInterpolator2317.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2317)
-OrientationInterpolator2318 = x3d.OrientationInterpolator()
-OrientationInterpolator2318.DEF = "Stand_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2318 = x3d.OrientationInterpolator(DEF="Stand_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2318.key = [0,0.5,1]
 OrientationInterpolator2318.keyValue = [(0, 0, 1, 0),(0, 0, -1, 0.25),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2318)
-OrientationInterpolator2319 = x3d.OrientationInterpolator()
-OrientationInterpolator2319.DEF = "Stand_r_elbow_RotationInterpolator"
+OrientationInterpolator2319 = x3d.OrientationInterpolator(DEF="Stand_r_elbow_RotationInterpolator")
 OrientationInterpolator2319.key = [0,0.5,1]
 OrientationInterpolator2319.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2319)
-OrientationInterpolator2320 = x3d.OrientationInterpolator()
-OrientationInterpolator2320.DEF = "Stand_r_shoulder_RotationInterpolator"
+OrientationInterpolator2320 = x3d.OrientationInterpolator(DEF="Stand_r_shoulder_RotationInterpolator")
 OrientationInterpolator2320.key = [0,0.5,1]
 OrientationInterpolator2320.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2320)
-OrientationInterpolator2321 = x3d.OrientationInterpolator()
-OrientationInterpolator2321.DEF = "Stand_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2321 = x3d.OrientationInterpolator(DEF="Stand_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2321.key = [0,0.5,1]
 OrientationInterpolator2321.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2321)
-OrientationInterpolator2322 = x3d.OrientationInterpolator()
-OrientationInterpolator2322.DEF = "Stand_l_elbow_RotationInterpolator"
+OrientationInterpolator2322 = x3d.OrientationInterpolator(DEF="Stand_l_elbow_RotationInterpolator")
 OrientationInterpolator2322.key = [0,0.5,1]
 OrientationInterpolator2322.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2322)
-OrientationInterpolator2323 = x3d.OrientationInterpolator()
-OrientationInterpolator2323.DEF = "Stand_l_shoulder_RotationInterpolator"
+OrientationInterpolator2323 = x3d.OrientationInterpolator(DEF="Stand_l_shoulder_RotationInterpolator")
 OrientationInterpolator2323.key = [0,0.5,1]
 OrientationInterpolator2323.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2323)
-OrientationInterpolator2324 = x3d.OrientationInterpolator()
-OrientationInterpolator2324.DEF = "Stand_head_RotationInterpolator"
+OrientationInterpolator2324 = x3d.OrientationInterpolator(DEF="Stand_head_RotationInterpolator")
 OrientationInterpolator2324.key = [0,0.5,1]
 OrientationInterpolator2324.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2324)
-OrientationInterpolator2325 = x3d.OrientationInterpolator()
-OrientationInterpolator2325.DEF = "Stand_neck_RotationInterpolator"
+OrientationInterpolator2325 = x3d.OrientationInterpolator(DEF="Stand_neck_RotationInterpolator")
 OrientationInterpolator2325.key = [0,0.5,1]
 OrientationInterpolator2325.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.5),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2325)
-OrientationInterpolator2326 = x3d.OrientationInterpolator()
-OrientationInterpolator2326.DEF = "Stand_l_eyeball_RotationInterpolator"
+OrientationInterpolator2326 = x3d.OrientationInterpolator(DEF="Stand_l_eyeball_RotationInterpolator")
 OrientationInterpolator2326.key = [0,0.4,0.7,1]
 OrientationInterpolator2326.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.5),(1, 0, 0, 0.45),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2326)
-OrientationInterpolator2327 = x3d.OrientationInterpolator()
-OrientationInterpolator2327.DEF = "Stand_r_eyeball_RotationInterpolator"
+OrientationInterpolator2327 = x3d.OrientationInterpolator(DEF="Stand_r_eyeball_RotationInterpolator")
 OrientationInterpolator2327.key = [0,0.4,0.7,1]
 OrientationInterpolator2327.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.5),(1, 0, 0, 0.45),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2327)
-OrientationInterpolator2328 = x3d.OrientationInterpolator()
-OrientationInterpolator2328.DEF = "Stand_lower_body_RotationInterpolator"
+OrientationInterpolator2328 = x3d.OrientationInterpolator(DEF="Stand_lower_body_RotationInterpolator")
 OrientationInterpolator2328.key = [0,0.5,1]
 OrientationInterpolator2328.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2328)
-OrientationInterpolator2329 = x3d.OrientationInterpolator()
-OrientationInterpolator2329.DEF = "Stand_upper_body_RotationInterpolator"
+OrientationInterpolator2329 = x3d.OrientationInterpolator(DEF="Stand_upper_body_RotationInterpolator")
 OrientationInterpolator2329.key = [0,0.5,1]
 OrientationInterpolator2329.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2329)
-OrientationInterpolator2330 = x3d.OrientationInterpolator()
-OrientationInterpolator2330.DEF = "Stand_whole_body_RotationInterpolator"
+OrientationInterpolator2330 = x3d.OrientationInterpolator(DEF="Stand_whole_body_RotationInterpolator")
 OrientationInterpolator2330.key = [0,0.5,1]
 OrientationInterpolator2330.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2330)
-PositionInterpolator2331 = x3d.PositionInterpolator()
-PositionInterpolator2331.DEF = "Stand_whole_body_TranslationInterpolator"
+PositionInterpolator2331 = x3d.PositionInterpolator(DEF="Stand_whole_body_TranslationInterpolator")
 PositionInterpolator2331.key = [0,0.5,1]
 PositionInterpolator2331.keyValue = [(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
 Group2309.children.append(PositionInterpolator2331)
-OrientationInterpolator2332 = x3d.OrientationInterpolator()
-OrientationInterpolator2332.DEF = "Stand_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2332 = x3d.OrientationInterpolator(DEF="Stand_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2332.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2332.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2332)
-OrientationInterpolator2333 = x3d.OrientationInterpolator()
-OrientationInterpolator2333.DEF = "Stand_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2333 = x3d.OrientationInterpolator(DEF="Stand_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2333.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2333.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2333)
-OrientationInterpolator2334 = x3d.OrientationInterpolator()
-OrientationInterpolator2334.DEF = "Stand_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2334 = x3d.OrientationInterpolator(DEF="Stand_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2334.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2334.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2334)
-OrientationInterpolator2335 = x3d.OrientationInterpolator()
-OrientationInterpolator2335.DEF = "Stand_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2335 = x3d.OrientationInterpolator(DEF="Stand_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2335.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2335.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2335)
-OrientationInterpolator2336 = x3d.OrientationInterpolator()
-OrientationInterpolator2336.DEF = "Stand_sacroiliac_YawInterpolator"
+OrientationInterpolator2336 = x3d.OrientationInterpolator(DEF="Stand_sacroiliac_YawInterpolator")
 OrientationInterpolator2336.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2336.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2336)
-OrientationInterpolator2337 = x3d.OrientationInterpolator()
-OrientationInterpolator2337.DEF = "Stand_vl5_YawInterpolator"
+OrientationInterpolator2337 = x3d.OrientationInterpolator(DEF="Stand_vl5_YawInterpolator")
 OrientationInterpolator2337.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2337.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2337)
-OrientationInterpolator2338 = x3d.OrientationInterpolator()
-OrientationInterpolator2338.DEF = "Stand_vc6_YawInterpolator"
+OrientationInterpolator2338 = x3d.OrientationInterpolator(DEF="Stand_vc6_YawInterpolator")
 OrientationInterpolator2338.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2338.keyValue = [(0, 1, 0, 0),(0, 1, 0, 0),(0, 1, 0, 0),(0, 1, 0, 0),(-1, 0, 0, 0),(0, -1, 0, 0),(0, 1, 0, 0)]
 
 Group2309.children.append(OrientationInterpolator2338)
-OrientationInterpolator2339 = x3d.OrientationInterpolator()
-OrientationInterpolator2339.DEF = "Stand_l_thumb1_PitchInterpolator"
+OrientationInterpolator2339 = x3d.OrientationInterpolator(DEF="Stand_l_thumb1_PitchInterpolator")
 OrientationInterpolator2339.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2339.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2339)
-OrientationInterpolator2340 = x3d.OrientationInterpolator()
-OrientationInterpolator2340.DEF = "Stand_r_thumb1_PitchInterpolator"
+OrientationInterpolator2340 = x3d.OrientationInterpolator(DEF="Stand_r_thumb1_PitchInterpolator")
 OrientationInterpolator2340.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2340.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.5),(1, 0, 0, 0.1),(1, 0, 0, 0.27),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2309.children.append(OrientationInterpolator2340)
-OrientationInterpolator2341 = x3d.OrientationInterpolator()
-OrientationInterpolator2341.DEF = "Stand_r_index1_RollInterpolator"
+OrientationInterpolator2341 = x3d.OrientationInterpolator(DEF="Stand_r_index1_RollInterpolator")
 OrientationInterpolator2341.key = [0,0.2,0.4,0.5,0.8,1]
 OrientationInterpolator2341.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.1),(0, 0, 1, 0.2),(0, 0, 1, 0.3),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2341)
-OrientationInterpolator2342 = x3d.OrientationInterpolator()
-OrientationInterpolator2342.DEF = "Stand_r_index2_RollInterpolator"
+OrientationInterpolator2342 = x3d.OrientationInterpolator(DEF="Stand_r_index2_RollInterpolator")
 OrientationInterpolator2342.key = [0,0.2,0.4,0.5,0.8,1]
 OrientationInterpolator2342.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.4),(0, 0, 1, 0.32),(0, 0, 1, 0.25),(0, 0, 1, 0.2),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2342)
-OrientationInterpolator2343 = x3d.OrientationInterpolator()
-OrientationInterpolator2343.DEF = "Stand_r_index3_RollInterpolator"
+OrientationInterpolator2343 = x3d.OrientationInterpolator(DEF="Stand_r_index3_RollInterpolator")
 OrientationInterpolator2343.key = [0,0.2,0.4,0.5,0.8,1]
 OrientationInterpolator2343.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.2),(0, 0, 1, 0.3),(0, 0, 1, 0.35),(0, 0, 1, 0.2),(0, 0, 1, 0)]
 
 Group2309.children.append(OrientationInterpolator2343)
 
 Scene22.children.append(Group2309)
-Group2344 = x3d.Group()
-Group2344.DEF = "PitchesAnimation"
-TimeSensor2345 = x3d.TimeSensor()
-TimeSensor2345.DEF = "PitchTimer"
+Group2344 = x3d.Group(DEF="PitchesAnimation")
+TimeSensor2345 = x3d.TimeSensor(DEF="PitchTimer")
 TimeSensor2345.cycleInterval = 5.73
 TimeSensor2345.loop = True
 
 Group2344.children.append(TimeSensor2345)
-OrientationInterpolator2346 = x3d.OrientationInterpolator()
-OrientationInterpolator2346.DEF = "Pitch_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2346 = x3d.OrientationInterpolator(DEF="Pitch_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2346.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2346.keyValue = [(1, 0, 0, 0),(-1, 0, 0, 0.5),(-1, 0, 0, 0.7),(1, 0, 0, 0.75),(-1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2344.children.append(OrientationInterpolator2346)
-OrientationInterpolator2347 = x3d.OrientationInterpolator()
-OrientationInterpolator2347.DEF = "Pitches_r_talocrural_RotationInterpolator"
+OrientationInterpolator2347 = x3d.OrientationInterpolator(DEF="Pitches_r_talocrural_RotationInterpolator")
 OrientationInterpolator2347.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2347.keyValue = [(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2347)
-OrientationInterpolator2348 = x3d.OrientationInterpolator()
-OrientationInterpolator2348.DEF = "Pitches_r_knee_RotationInterpolator"
+OrientationInterpolator2348 = x3d.OrientationInterpolator(DEF="Pitches_r_knee_RotationInterpolator")
 OrientationInterpolator2348.key = [0,0.5,1]
 OrientationInterpolator2348.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2348)
-OrientationInterpolator2349 = x3d.OrientationInterpolator()
-OrientationInterpolator2349.DEF = "Pitches_r_hip_RotationInterpolator"
+OrientationInterpolator2349 = x3d.OrientationInterpolator(DEF="Pitches_r_hip_RotationInterpolator")
 OrientationInterpolator2349.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2349.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2349)
-OrientationInterpolator2350 = x3d.OrientationInterpolator()
-OrientationInterpolator2350.DEF = "Pitches_l_talocrural_RotationInterpolator"
+OrientationInterpolator2350 = x3d.OrientationInterpolator(DEF="Pitches_l_talocrural_RotationInterpolator")
 OrientationInterpolator2350.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2350.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2350)
-OrientationInterpolator2351 = x3d.OrientationInterpolator()
-OrientationInterpolator2351.DEF = "Pitches_l_knee_RotationInterpolator"
+OrientationInterpolator2351 = x3d.OrientationInterpolator(DEF="Pitches_l_knee_RotationInterpolator")
 OrientationInterpolator2351.key = [0,0.5,1]
 OrientationInterpolator2351.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2351)
-OrientationInterpolator2352 = x3d.OrientationInterpolator()
-OrientationInterpolator2352.DEF = "Pitches_l_hip_RotationInterpolator"
+OrientationInterpolator2352 = x3d.OrientationInterpolator(DEF="Pitches_l_hip_RotationInterpolator")
 OrientationInterpolator2352.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2352.keyValue = [(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2352)
-OrientationInterpolator2353 = x3d.OrientationInterpolator()
-OrientationInterpolator2353.DEF = "Pitches_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2353 = x3d.OrientationInterpolator(DEF="Pitches_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2353.key = [0,0.5,1]
 OrientationInterpolator2353.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2353)
-OrientationInterpolator2354 = x3d.OrientationInterpolator()
-OrientationInterpolator2354.DEF = "Pitches_r_elbow_RotationInterpolator"
+OrientationInterpolator2354 = x3d.OrientationInterpolator(DEF="Pitches_r_elbow_RotationInterpolator")
 OrientationInterpolator2354.key = [0,0.5,1]
 OrientationInterpolator2354.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2354)
-OrientationInterpolator2355 = x3d.OrientationInterpolator()
-OrientationInterpolator2355.DEF = "Pitches_r_shoulder_RotationInterpolator"
+OrientationInterpolator2355 = x3d.OrientationInterpolator(DEF="Pitches_r_shoulder_RotationInterpolator")
 OrientationInterpolator2355.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2355.keyValue = [(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2355)
-OrientationInterpolator2356 = x3d.OrientationInterpolator()
-OrientationInterpolator2356.DEF = "Pitches_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2356 = x3d.OrientationInterpolator(DEF="Pitches_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2356.key = [0,0.5,1]
 OrientationInterpolator2356.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2356)
-OrientationInterpolator2357 = x3d.OrientationInterpolator()
-OrientationInterpolator2357.DEF = "Pitches_l_elbow_RotationInterpolator"
+OrientationInterpolator2357 = x3d.OrientationInterpolator(DEF="Pitches_l_elbow_RotationInterpolator")
 OrientationInterpolator2357.key = [0,0.5,1]
 OrientationInterpolator2357.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2357)
-OrientationInterpolator2358 = x3d.OrientationInterpolator()
-OrientationInterpolator2358.DEF = "Pitches_l_shoulder_RotationInterpolator"
+OrientationInterpolator2358 = x3d.OrientationInterpolator(DEF="Pitches_l_shoulder_RotationInterpolator")
 OrientationInterpolator2358.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2358.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 1.5),(0, 0, 1, 0),(1, 0, 0, 1.5),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2358)
-OrientationInterpolator2359 = x3d.OrientationInterpolator()
-OrientationInterpolator2359.DEF = "Pitches_head_RotationInterpolator"
+OrientationInterpolator2359 = x3d.OrientationInterpolator(DEF="Pitches_head_RotationInterpolator")
 OrientationInterpolator2359.key = [0,0.5,1]
 OrientationInterpolator2359.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2359)
-OrientationInterpolator2360 = x3d.OrientationInterpolator()
-OrientationInterpolator2360.DEF = "Pitches_neck_RotationInterpolator"
+OrientationInterpolator2360 = x3d.OrientationInterpolator(DEF="Pitches_neck_RotationInterpolator")
 OrientationInterpolator2360.key = [0,0.25,0.55,1]
 OrientationInterpolator2360.keyValue = [(0, 0, 1, 0),(1, 0, 0, 0.55),(-1, 0, 0, 1.05),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2360)
-OrientationInterpolator2361 = x3d.OrientationInterpolator()
-OrientationInterpolator2361.DEF = "Pitches_lower_body_RotationInterpolator"
+OrientationInterpolator2361 = x3d.OrientationInterpolator(DEF="Pitches_lower_body_RotationInterpolator")
 OrientationInterpolator2361.key = [0,0.5,1]
 OrientationInterpolator2361.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2361)
-OrientationInterpolator2362 = x3d.OrientationInterpolator()
-OrientationInterpolator2362.DEF = "Pitches_upper_body_RotationInterpolator"
+OrientationInterpolator2362 = x3d.OrientationInterpolator(DEF="Pitches_upper_body_RotationInterpolator")
 OrientationInterpolator2362.key = [0,0.5,1]
 OrientationInterpolator2362.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2362)
-OrientationInterpolator2363 = x3d.OrientationInterpolator()
-OrientationInterpolator2363.DEF = "Pitches_whole_body_RotationInterpolator"
+OrientationInterpolator2363 = x3d.OrientationInterpolator(DEF="Pitches_whole_body_RotationInterpolator")
 OrientationInterpolator2363.key = [0,0.5,1]
 OrientationInterpolator2363.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2363)
-PositionInterpolator2364 = x3d.PositionInterpolator()
-PositionInterpolator2364.DEF = "Pitches_whole_body_TranslationInterpolator"
+PositionInterpolator2364 = x3d.PositionInterpolator(DEF="Pitches_whole_body_TranslationInterpolator")
 PositionInterpolator2364.key = [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1]
 PositionInterpolator2364.keyValue = [(0, 0, 0),(0, -0.15, 0),(0, -0.7, 0),(0, -0.15, 0),(0, 0, 0),(0, -0.15, 0),(0, -0.7, 0),(0, -0.15, 0),(0, 0, 0)]
 
 Group2344.children.append(PositionInterpolator2364)
-OrientationInterpolator2365 = x3d.OrientationInterpolator()
-OrientationInterpolator2365.DEF = "Pitch_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2365 = x3d.OrientationInterpolator(DEF="Pitch_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2365.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2365.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2365)
-OrientationInterpolator2366 = x3d.OrientationInterpolator()
-OrientationInterpolator2366.DEF = "Pitch_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2366 = x3d.OrientationInterpolator(DEF="Pitch_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2366.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2366.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2366)
-OrientationInterpolator2367 = x3d.OrientationInterpolator()
-OrientationInterpolator2367.DEF = "Pitch_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2367 = x3d.OrientationInterpolator(DEF="Pitch_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2367.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2367.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2367)
-OrientationInterpolator2368 = x3d.OrientationInterpolator()
-OrientationInterpolator2368.DEF = "Pitch_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2368 = x3d.OrientationInterpolator(DEF="Pitch_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2368.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2368.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2368)
-OrientationInterpolator2369 = x3d.OrientationInterpolator()
-OrientationInterpolator2369.DEF = "Pitch_sacroiliac_YawInterpolator"
+OrientationInterpolator2369 = x3d.OrientationInterpolator(DEF="Pitch_sacroiliac_YawInterpolator")
 OrientationInterpolator2369.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2369.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2369)
-OrientationInterpolator2370 = x3d.OrientationInterpolator()
-OrientationInterpolator2370.DEF = "Pitch_vl5_YawInterpolator"
+OrientationInterpolator2370 = x3d.OrientationInterpolator(DEF="Pitch_vl5_YawInterpolator")
 OrientationInterpolator2370.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2370.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2370)
-OrientationInterpolator2371 = x3d.OrientationInterpolator()
-OrientationInterpolator2371.DEF = "Pitch_vc6_YawInterpolator"
+OrientationInterpolator2371 = x3d.OrientationInterpolator(DEF="Pitch_vc6_YawInterpolator")
 OrientationInterpolator2371.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2371.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2344.children.append(OrientationInterpolator2371)
-OrientationInterpolator2372 = x3d.OrientationInterpolator()
-OrientationInterpolator2372.DEF = "Pitch_l_thumb1_PitchInterpolator"
+OrientationInterpolator2372 = x3d.OrientationInterpolator(DEF="Pitch_l_thumb1_PitchInterpolator")
 OrientationInterpolator2372.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2372.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.3),(1, 0, 0, 0.27),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2344.children.append(OrientationInterpolator2372)
-OrientationInterpolator2373 = x3d.OrientationInterpolator()
-OrientationInterpolator2373.DEF = "Pitch_r_thumb1_PitchInterpolator"
+OrientationInterpolator2373 = x3d.OrientationInterpolator(DEF="Pitch_r_thumb1_PitchInterpolator")
 OrientationInterpolator2373.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2373.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.3),(1, 0, 0, 0.27),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2344.children.append(OrientationInterpolator2373)
 
 Scene22.children.append(Group2344)
-Group2374 = x3d.Group()
-Group2374.DEF = "YawsAnimation"
-TimeSensor2375 = x3d.TimeSensor()
-TimeSensor2375.DEF = "YawTimer"
+Group2374 = x3d.Group(DEF="YawsAnimation")
+TimeSensor2375 = x3d.TimeSensor(DEF="YawTimer")
 TimeSensor2375.cycleInterval = 5.73
 TimeSensor2375.loop = True
 
 Group2374.children.append(TimeSensor2375)
-OrientationInterpolator2376 = x3d.OrientationInterpolator()
-OrientationInterpolator2376.DEF = "Yaw_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2376 = x3d.OrientationInterpolator(DEF="Yaw_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2376.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2376.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2376)
-OrientationInterpolator2377 = x3d.OrientationInterpolator()
-OrientationInterpolator2377.DEF = "Yaws_r_talocrural_RotationInterpolator"
+OrientationInterpolator2377 = x3d.OrientationInterpolator(DEF="Yaws_r_talocrural_RotationInterpolator")
 OrientationInterpolator2377.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2377.keyValue = [(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2377)
-OrientationInterpolator2378 = x3d.OrientationInterpolator()
-OrientationInterpolator2378.DEF = "Yaws_r_knee_RotationInterpolator"
+OrientationInterpolator2378 = x3d.OrientationInterpolator(DEF="Yaws_r_knee_RotationInterpolator")
 OrientationInterpolator2378.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2378.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2378)
-OrientationInterpolator2379 = x3d.OrientationInterpolator()
-OrientationInterpolator2379.DEF = "Yaws_r_hip_RotationInterpolator"
+OrientationInterpolator2379 = x3d.OrientationInterpolator(DEF="Yaws_r_hip_RotationInterpolator")
 OrientationInterpolator2379.key = [0,0.5,1]
 OrientationInterpolator2379.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2379)
-OrientationInterpolator2380 = x3d.OrientationInterpolator()
-OrientationInterpolator2380.DEF = "Yaws_l_talocrural_RotationInterpolator"
+OrientationInterpolator2380 = x3d.OrientationInterpolator(DEF="Yaws_l_talocrural_RotationInterpolator")
 OrientationInterpolator2380.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2380.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2380)
-OrientationInterpolator2381 = x3d.OrientationInterpolator()
-OrientationInterpolator2381.DEF = "Yaws_l_knee_RotationInterpolator"
+OrientationInterpolator2381 = x3d.OrientationInterpolator(DEF="Yaws_l_knee_RotationInterpolator")
 OrientationInterpolator2381.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2381.keyValue = [(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2381)
-OrientationInterpolator2382 = x3d.OrientationInterpolator()
-OrientationInterpolator2382.DEF = "Yaws_l_hip_RotationInterpolator"
+OrientationInterpolator2382 = x3d.OrientationInterpolator(DEF="Yaws_l_hip_RotationInterpolator")
 OrientationInterpolator2382.key = [0,0.5,1]
 OrientationInterpolator2382.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2382)
-OrientationInterpolator2383 = x3d.OrientationInterpolator()
-OrientationInterpolator2383.DEF = "Yaws_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2383 = x3d.OrientationInterpolator(DEF="Yaws_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2383.key = [0,0.5,1]
 OrientationInterpolator2383.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2383)
-OrientationInterpolator2384 = x3d.OrientationInterpolator()
-OrientationInterpolator2384.DEF = "Yaws_r_elbow_RotationInterpolator"
+OrientationInterpolator2384 = x3d.OrientationInterpolator(DEF="Yaws_r_elbow_RotationInterpolator")
 OrientationInterpolator2384.key = [0,0.5,1]
 OrientationInterpolator2384.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2384)
-OrientationInterpolator2385 = x3d.OrientationInterpolator()
-OrientationInterpolator2385.DEF = "Yaws_r_shoulder_RotationInterpolator"
+OrientationInterpolator2385 = x3d.OrientationInterpolator(DEF="Yaws_r_shoulder_RotationInterpolator")
 OrientationInterpolator2385.key = [0,0.5,1]
 OrientationInterpolator2385.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2385)
-OrientationInterpolator2386 = x3d.OrientationInterpolator()
-OrientationInterpolator2386.DEF = "Yaws_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2386 = x3d.OrientationInterpolator(DEF="Yaws_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2386.key = [0,0.5,1]
 OrientationInterpolator2386.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2386)
-OrientationInterpolator2387 = x3d.OrientationInterpolator()
-OrientationInterpolator2387.DEF = "Yaws_l_elbow_RotationInterpolator"
+OrientationInterpolator2387 = x3d.OrientationInterpolator(DEF="Yaws_l_elbow_RotationInterpolator")
 OrientationInterpolator2387.key = [0,0.5,1]
 OrientationInterpolator2387.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2387)
-OrientationInterpolator2388 = x3d.OrientationInterpolator()
-OrientationInterpolator2388.DEF = "Yaws_l_shoulder_RotationInterpolator"
+OrientationInterpolator2388 = x3d.OrientationInterpolator(DEF="Yaws_l_shoulder_RotationInterpolator")
 OrientationInterpolator2388.key = [0,0.5,1]
 OrientationInterpolator2388.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2388)
-OrientationInterpolator2389 = x3d.OrientationInterpolator()
-OrientationInterpolator2389.DEF = "Yaws_head_RotationInterpolator"
+OrientationInterpolator2389 = x3d.OrientationInterpolator(DEF="Yaws_head_RotationInterpolator")
 OrientationInterpolator2389.key = [0,0.5,1]
 OrientationInterpolator2389.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2389)
-OrientationInterpolator2390 = x3d.OrientationInterpolator()
-OrientationInterpolator2390.DEF = "Yaws_neck_RotationInterpolator"
+OrientationInterpolator2390 = x3d.OrientationInterpolator(DEF="Yaws_neck_RotationInterpolator")
 OrientationInterpolator2390.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2390.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2390)
-OrientationInterpolator2391 = x3d.OrientationInterpolator()
-OrientationInterpolator2391.DEF = "Yaws_upper_body_RotationInterpolator"
+OrientationInterpolator2391 = x3d.OrientationInterpolator(DEF="Yaws_upper_body_RotationInterpolator")
 OrientationInterpolator2391.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2391.keyValue = [(0, 0, 1, 0),(0, -1, 0, 1.5),(0, 0, 1, 0),(0, 1, 0, 1.5),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2391)
-OrientationInterpolator2392 = x3d.OrientationInterpolator()
-OrientationInterpolator2392.DEF = "Yaws_lower_body_RotationInterpolator"
+OrientationInterpolator2392 = x3d.OrientationInterpolator(DEF="Yaws_lower_body_RotationInterpolator")
 OrientationInterpolator2392.key = [0,0.5,1]
 OrientationInterpolator2392.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2392)
-OrientationInterpolator2393 = x3d.OrientationInterpolator()
-OrientationInterpolator2393.DEF = "Yaws_whole_body_RotationInterpolator"
+OrientationInterpolator2393 = x3d.OrientationInterpolator(DEF="Yaws_whole_body_RotationInterpolator")
 OrientationInterpolator2393.key = [0,0.5,1]
 OrientationInterpolator2393.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2393)
-PositionInterpolator2394 = x3d.PositionInterpolator()
-PositionInterpolator2394.DEF = "Yaws_whole_body_TranslationInterpolator"
+PositionInterpolator2394 = x3d.PositionInterpolator(DEF="Yaws_whole_body_TranslationInterpolator")
 PositionInterpolator2394.key = [0,0.5,1]
 PositionInterpolator2394.keyValue = [(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
 Group2374.children.append(PositionInterpolator2394)
-OrientationInterpolator2395 = x3d.OrientationInterpolator()
-OrientationInterpolator2395.DEF = "Yaw_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2395 = x3d.OrientationInterpolator(DEF="Yaw_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2395.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2395.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2395)
-OrientationInterpolator2396 = x3d.OrientationInterpolator()
-OrientationInterpolator2396.DEF = "Yaw_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2396 = x3d.OrientationInterpolator(DEF="Yaw_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2396.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2396.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2396)
-OrientationInterpolator2397 = x3d.OrientationInterpolator()
-OrientationInterpolator2397.DEF = "Yaw_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2397 = x3d.OrientationInterpolator(DEF="Yaw_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2397.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2397.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2397)
-OrientationInterpolator2398 = x3d.OrientationInterpolator()
-OrientationInterpolator2398.DEF = "Yaw_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2398 = x3d.OrientationInterpolator(DEF="Yaw_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2398.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2398.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2398)
-OrientationInterpolator2399 = x3d.OrientationInterpolator()
-OrientationInterpolator2399.DEF = "Yaw_sacroiliac_YawInterpolator"
+OrientationInterpolator2399 = x3d.OrientationInterpolator(DEF="Yaw_sacroiliac_YawInterpolator")
 OrientationInterpolator2399.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2399.keyValue = [(0, 1, 0, 0),(0, -1, 0, 0.1),(0, 1, 0, 0),(0, 1, 0, 0.24),(0, -1, 0, 0.4),(0, 1, 0, 0)]
 
 Group2374.children.append(OrientationInterpolator2399)
-OrientationInterpolator2400 = x3d.OrientationInterpolator()
-OrientationInterpolator2400.DEF = "Yaw_vl5_YawInterpolator"
+OrientationInterpolator2400 = x3d.OrientationInterpolator(DEF="Yaw_vl5_YawInterpolator")
 OrientationInterpolator2400.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2400.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2400)
-OrientationInterpolator2401 = x3d.OrientationInterpolator()
-OrientationInterpolator2401.DEF = "Yaw_vc6_YawInterpolator"
+OrientationInterpolator2401 = x3d.OrientationInterpolator(DEF="Yaw_vc6_YawInterpolator")
 OrientationInterpolator2401.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2401.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2401)
-OrientationInterpolator2402 = x3d.OrientationInterpolator()
-OrientationInterpolator2402.DEF = "Yaw_l_thumb1_PitchInterpolator"
+OrientationInterpolator2402 = x3d.OrientationInterpolator(DEF="Yaw_l_thumb1_PitchInterpolator")
 OrientationInterpolator2402.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2402.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2402)
-OrientationInterpolator2403 = x3d.OrientationInterpolator()
-OrientationInterpolator2403.DEF = "Yaw_r_thumb1_PitchInterpolator"
+OrientationInterpolator2403 = x3d.OrientationInterpolator(DEF="Yaw_r_thumb1_PitchInterpolator")
 OrientationInterpolator2403.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2403.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2374.children.append(OrientationInterpolator2403)
 
 Scene22.children.append(Group2374)
-Group2404 = x3d.Group()
-Group2404.DEF = "RollsAnimation"
-TimeSensor2405 = x3d.TimeSensor()
-TimeSensor2405.DEF = "RollTimer"
+Group2404 = x3d.Group(DEF="RollsAnimation")
+TimeSensor2405 = x3d.TimeSensor(DEF="RollTimer")
 TimeSensor2405.cycleInterval = 5.73
 TimeSensor2405.loop = True
 
 Group2404.children.append(TimeSensor2405)
-OrientationInterpolator2406 = x3d.OrientationInterpolator()
-OrientationInterpolator2406.DEF = "Roll_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2406 = x3d.OrientationInterpolator(DEF="Roll_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2406.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2406.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2406)
-OrientationInterpolator2407 = x3d.OrientationInterpolator()
-OrientationInterpolator2407.DEF = "Rolls_r_talocrural_RotationInterpolator"
+OrientationInterpolator2407 = x3d.OrientationInterpolator(DEF="Rolls_r_talocrural_RotationInterpolator")
 OrientationInterpolator2407.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2407.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2407)
-OrientationInterpolator2408 = x3d.OrientationInterpolator()
-OrientationInterpolator2408.DEF = "Rolls_r_knee_RotationInterpolator"
+OrientationInterpolator2408 = x3d.OrientationInterpolator(DEF="Rolls_r_knee_RotationInterpolator")
 OrientationInterpolator2408.key = [0,0.5,1]
 OrientationInterpolator2408.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2408)
-OrientationInterpolator2409 = x3d.OrientationInterpolator()
-OrientationInterpolator2409.DEF = "Rolls_r_hip_RotationInterpolator"
+OrientationInterpolator2409 = x3d.OrientationInterpolator(DEF="Rolls_r_hip_RotationInterpolator")
 OrientationInterpolator2409.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2409.keyValue = [(0, 0, -1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2409)
-OrientationInterpolator2410 = x3d.OrientationInterpolator()
-OrientationInterpolator2410.DEF = "Rolls_l_talocrural_RotationInterpolator"
+OrientationInterpolator2410 = x3d.OrientationInterpolator(DEF="Rolls_l_talocrural_RotationInterpolator")
 OrientationInterpolator2410.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2410.keyValue = [(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2410)
-OrientationInterpolator2411 = x3d.OrientationInterpolator()
-OrientationInterpolator2411.DEF = "Rolls_l_knee_RotationInterpolator"
+OrientationInterpolator2411 = x3d.OrientationInterpolator(DEF="Rolls_l_knee_RotationInterpolator")
 OrientationInterpolator2411.key = [0,0.5,1]
 OrientationInterpolator2411.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2411)
-OrientationInterpolator2412 = x3d.OrientationInterpolator()
-OrientationInterpolator2412.DEF = "Rolls_l_hip_RotationInterpolator"
+OrientationInterpolator2412 = x3d.OrientationInterpolator(DEF="Rolls_l_hip_RotationInterpolator")
 OrientationInterpolator2412.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2412.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2412)
-OrientationInterpolator2413 = x3d.OrientationInterpolator()
-OrientationInterpolator2413.DEF = "Rolls_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2413 = x3d.OrientationInterpolator(DEF="Rolls_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2413.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2413.keyValue = [(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2413)
-OrientationInterpolator2414 = x3d.OrientationInterpolator()
-OrientationInterpolator2414.DEF = "Rolls_r_elbow_RotationInterpolator"
+OrientationInterpolator2414 = x3d.OrientationInterpolator(DEF="Rolls_r_elbow_RotationInterpolator")
 OrientationInterpolator2414.key = [0,0.5,1]
 OrientationInterpolator2414.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2414)
-OrientationInterpolator2415 = x3d.OrientationInterpolator()
-OrientationInterpolator2415.DEF = "Rolls_r_shoulder_RotationInterpolator"
+OrientationInterpolator2415 = x3d.OrientationInterpolator(DEF="Rolls_r_shoulder_RotationInterpolator")
 OrientationInterpolator2415.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2415.keyValue = [(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, -1, 3),(0, 0, -1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2415)
-OrientationInterpolator2416 = x3d.OrientationInterpolator()
-OrientationInterpolator2416.DEF = "Rolls_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2416 = x3d.OrientationInterpolator(DEF="Rolls_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2416.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2416.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0),(0, 0, -1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2416)
-OrientationInterpolator2417 = x3d.OrientationInterpolator()
-OrientationInterpolator2417.DEF = "Rolls_l_elbow_RotationInterpolator"
+OrientationInterpolator2417 = x3d.OrientationInterpolator(DEF="Rolls_l_elbow_RotationInterpolator")
 OrientationInterpolator2417.key = [0,0.5,1]
 OrientationInterpolator2417.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2417)
-OrientationInterpolator2418 = x3d.OrientationInterpolator()
-OrientationInterpolator2418.DEF = "Rolls_l_shoulder_RotationInterpolator"
+OrientationInterpolator2418 = x3d.OrientationInterpolator(DEF="Rolls_l_shoulder_RotationInterpolator")
 OrientationInterpolator2418.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2418.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 3),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2418)
-OrientationInterpolator2419 = x3d.OrientationInterpolator()
-OrientationInterpolator2419.DEF = "Rolls_head_RotationInterpolator"
+OrientationInterpolator2419 = x3d.OrientationInterpolator(DEF="Rolls_head_RotationInterpolator")
 OrientationInterpolator2419.key = [0,0.5,1]
 OrientationInterpolator2419.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2419)
-OrientationInterpolator2420 = x3d.OrientationInterpolator()
-OrientationInterpolator2420.DEF = "Rolls_neck_RotationInterpolator"
+OrientationInterpolator2420 = x3d.OrientationInterpolator(DEF="Rolls_neck_RotationInterpolator")
 OrientationInterpolator2420.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2420.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.25),(0, 0, 1, 0),(0, 0, -1, 1.25),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2420)
-OrientationInterpolator2421 = x3d.OrientationInterpolator()
-OrientationInterpolator2421.DEF = "Rolls_lower_body_RotationInterpolator"
+OrientationInterpolator2421 = x3d.OrientationInterpolator(DEF="Rolls_lower_body_RotationInterpolator")
 OrientationInterpolator2421.key = [0,0.5,1]
 OrientationInterpolator2421.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2421)
-OrientationInterpolator2422 = x3d.OrientationInterpolator()
-OrientationInterpolator2422.DEF = "Rolls_upper_body_RotationInterpolator"
+OrientationInterpolator2422 = x3d.OrientationInterpolator(DEF="Rolls_upper_body_RotationInterpolator")
 OrientationInterpolator2422.key = [0,0.5,1]
 OrientationInterpolator2422.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2422)
-OrientationInterpolator2423 = x3d.OrientationInterpolator()
-OrientationInterpolator2423.DEF = "Rolls_whole_body_RotationInterpolator"
+OrientationInterpolator2423 = x3d.OrientationInterpolator(DEF="Rolls_whole_body_RotationInterpolator")
 OrientationInterpolator2423.key = [0,0.5,1]
 OrientationInterpolator2423.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2423)
-PositionInterpolator2424 = x3d.PositionInterpolator()
-PositionInterpolator2424.DEF = "Rolls_whole_body_TranslationInterpolator"
+PositionInterpolator2424 = x3d.PositionInterpolator(DEF="Rolls_whole_body_TranslationInterpolator")
 PositionInterpolator2424.key = [0,0.125,0.25,0.375,0.5,0.625,0.75,0.875,1]
 PositionInterpolator2424.keyValue = [(0, 0, 0),(0, -0.25, 0),(0, -0.8, 0),(0, -0.25, 0),(0, 0, 0),(0, -0.25, 0),(0, -0.8, 0),(0, -0.25, 0),(0, 0, 0)]
 
 Group2404.children.append(PositionInterpolator2424)
-OrientationInterpolator2425 = x3d.OrientationInterpolator()
-OrientationInterpolator2425.DEF = "Roll_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2425 = x3d.OrientationInterpolator(DEF="Roll_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2425.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2425.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.2),(0, 0, 1, 0.22),(0, 0, 1, 0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2425)
-OrientationInterpolator2426 = x3d.OrientationInterpolator()
-OrientationInterpolator2426.DEF = "Roll_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2426 = x3d.OrientationInterpolator(DEF="Roll_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2426.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2426.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2426)
-OrientationInterpolator2427 = x3d.OrientationInterpolator()
-OrientationInterpolator2427.DEF = "Roll_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2427 = x3d.OrientationInterpolator(DEF="Roll_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2427.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2427.keyValue = [(0, 0, 1, 0),(0, 0, 1, -0.2),(0, 0, 1, -0.22),(0, 0, 1, -0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2427)
-OrientationInterpolator2428 = x3d.OrientationInterpolator()
-OrientationInterpolator2428.DEF = "Roll_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2428 = x3d.OrientationInterpolator(DEF="Roll_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2428.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2428.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, -0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2428)
-OrientationInterpolator2429 = x3d.OrientationInterpolator()
-OrientationInterpolator2429.DEF = "Roll_sacroiliac_YawInterpolator"
+OrientationInterpolator2429 = x3d.OrientationInterpolator(DEF="Roll_sacroiliac_YawInterpolator")
 OrientationInterpolator2429.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2429.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2429)
-OrientationInterpolator2430 = x3d.OrientationInterpolator()
-OrientationInterpolator2430.DEF = "Roll_vl5_YawInterpolator"
+OrientationInterpolator2430 = x3d.OrientationInterpolator(DEF="Roll_vl5_YawInterpolator")
 OrientationInterpolator2430.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2430.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2430)
-OrientationInterpolator2431 = x3d.OrientationInterpolator()
-OrientationInterpolator2431.DEF = "Roll_vc6_YawInterpolator"
+OrientationInterpolator2431 = x3d.OrientationInterpolator(DEF="Roll_vc6_YawInterpolator")
 OrientationInterpolator2431.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2431.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2431)
-OrientationInterpolator2432 = x3d.OrientationInterpolator()
-OrientationInterpolator2432.DEF = "Roll_l_thumb1_PitchInterpolator"
+OrientationInterpolator2432 = x3d.OrientationInterpolator(DEF="Roll_l_thumb1_PitchInterpolator")
 OrientationInterpolator2432.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2432.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2432)
-OrientationInterpolator2433 = x3d.OrientationInterpolator()
-OrientationInterpolator2433.DEF = "Roll_r_thumb1_PitchInterpolator"
+OrientationInterpolator2433 = x3d.OrientationInterpolator(DEF="Roll_r_thumb1_PitchInterpolator")
 OrientationInterpolator2433.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2433.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2404.children.append(OrientationInterpolator2433)
 
 Scene22.children.append(Group2404)
-Group2434 = x3d.Group()
-Group2434.DEF = "WalkAnimation"
-TimeSensor2435 = x3d.TimeSensor()
-TimeSensor2435.DEF = "WalkTimer"
+Group2434 = x3d.Group(DEF="WalkAnimation")
+TimeSensor2435 = x3d.TimeSensor(DEF="WalkTimer")
 TimeSensor2435.cycleInterval = 1.73
 TimeSensor2435.loop = True
 
 Group2434.children.append(TimeSensor2435)
-OrientationInterpolator2436 = x3d.OrientationInterpolator()
-OrientationInterpolator2436.DEF = "Walk_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2436 = x3d.OrientationInterpolator(DEF="Walk_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2436.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2436.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2436)
-OrientationInterpolator2437 = x3d.OrientationInterpolator()
-OrientationInterpolator2437.DEF = "Walk_r_talocrural_RotationInterpolator"
+OrientationInterpolator2437 = x3d.OrientationInterpolator(DEF="Walk_r_talocrural_RotationInterpolator")
 OrientationInterpolator2437.key = [0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]
 OrientationInterpolator2437.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.3533),(-1, 0, 0, 0.1072),(1, 0, 0, 0.2612),(1, 0, 0, 0.1268),(-1, 0, 0, 0.01793),(-1, 0, 0, 0.05824),(-1, 0, 0, 0.2398),(-1, 0, 0, 0.35),(-1, 0, 0, 0.3322),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2437)
-OrientationInterpolator2438 = x3d.OrientationInterpolator()
-OrientationInterpolator2438.DEF = "Walk_r_knee_RotationInterpolator"
+OrientationInterpolator2438 = x3d.OrientationInterpolator(DEF="Walk_r_knee_RotationInterpolator")
 OrientationInterpolator2438.key = [0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]
 OrientationInterpolator2438.keyValue = [(1, 0, 0, 0.8573),(1, 0, 0, 0.8926),(1, 0, 0, 0.5351),(1, 0, 0, 0.1756),(1, 0, 0, 0.1194),(1, 0, 0, 0.3153),(1, 0, 0, 0.09354),(1, 0, 0, 0.08558),(1, 0, 0, 0.2475),(1, 0, 0, 0.8573)]
 
 Group2434.children.append(OrientationInterpolator2438)
-OrientationInterpolator2439 = x3d.OrientationInterpolator()
-OrientationInterpolator2439.DEF = "Walk_r_hip_RotationInterpolator"
+OrientationInterpolator2439 = x3d.OrientationInterpolator(DEF="Walk_r_hip_RotationInterpolator")
 OrientationInterpolator2439.key = [0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]
 OrientationInterpolator2439.keyValue = [(-0.5831, 0.03511, 0.8116, 0.1481),(-0.995, 0.02296, 0.09674, 0.4683),(-1, 0.00192, 0.007964, 0.4732),(-0.998, -0.0158, -0.06102, 0.5079),(-0.9911, -0.03541, -0.1286, 0.5419),(-0.9131, -0.06243, -0.403, 0.3361),(-0.4306, -0.07962, -0.899, 0.07038),(1, 0, 0, 0.2571),(0.9891, -0.02805, 0.1444, 0.3879),(-0.5831, 0.03511, 0.8116, 0.1481)]
 
 Group2434.children.append(OrientationInterpolator2439)
-OrientationInterpolator2440 = x3d.OrientationInterpolator()
-OrientationInterpolator2440.DEF = "Walk_l_talocrural_RotationInterpolator"
+OrientationInterpolator2440 = x3d.OrientationInterpolator(DEF="Walk_l_talocrural_RotationInterpolator")
 OrientationInterpolator2440.key = [0,0.125,0.2083,0.375,0.6667,0.9167,1]
 OrientationInterpolator2440.keyValue = [(-1, 0, 0, 0.06714),(-1, 0, 0, 0.2152),(-1, 0, 0, 0.3184),(-1, 0, 0, 0.4717),(-1, 0, 0, 0.2912),(1, 0, 0, 0.1222),(-1, 0, 0, 0.06714)]
 
 Group2434.children.append(OrientationInterpolator2440)
-OrientationInterpolator2441 = x3d.OrientationInterpolator()
-OrientationInterpolator2441.DEF = "Walk_l_knee_RotationInterpolator"
+OrientationInterpolator2441 = x3d.OrientationInterpolator(DEF="Walk_l_knee_RotationInterpolator")
 OrientationInterpolator2441.key = [0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1]
 OrientationInterpolator2441.keyValue = [(1, 0, 0, 0.3226),(1, 0, 0, 0.1556),(1, 0, 0, 0.08678),(1, 0, 0, 0.8751),(1, 0, 0, 1.131),(1, 0, 0, 0.09961),(1, 0, 0, 0.3942),(1, 0, 0, 0.3226)]
 
 Group2434.children.append(OrientationInterpolator2441)
-OrientationInterpolator2442 = x3d.OrientationInterpolator()
-OrientationInterpolator2442.DEF = "Walk_l_hip_RotationInterpolator"
+OrientationInterpolator2442 = x3d.OrientationInterpolator(DEF="Walk_l_hip_RotationInterpolator")
 OrientationInterpolator2442.key = [0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1]
 OrientationInterpolator2442.keyValue = [(-0.873, 0.06094, 0.484, 0.2865),(0.9963, -0.01057, 0.08481, 0.2488),(0.9965, 0.01591, -0.08222, 0.3836),(-0.7018, -0.03223, -0.7117, 0.1289),(-1, 0, 0, 0.5518),(-0.9964, 0.02231, 0.0817, 0.5351),(-0.9809, 0.04912, 0.1881, 0.5204),(-0.873, 0.06094, 0.484, 0.2865)]
 
 Group2434.children.append(OrientationInterpolator2442)
-OrientationInterpolator2443 = x3d.OrientationInterpolator()
-OrientationInterpolator2443.DEF = "Walk_lower_body_RotationInterpolator"
+OrientationInterpolator2443 = x3d.OrientationInterpolator(DEF="Walk_lower_body_RotationInterpolator")
 OrientationInterpolator2443.key = [0,0.5,1]
 OrientationInterpolator2443.keyValue = [(0, 0, -1, 0.1056),(0, 0, 1, 0.09018),(0, 0, -1, 0.1056)]
 
 Group2434.children.append(OrientationInterpolator2443)
-OrientationInterpolator2444 = x3d.OrientationInterpolator()
-OrientationInterpolator2444.DEF = "Walk_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2444 = x3d.OrientationInterpolator(DEF="Walk_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2444.key = [0,0.375,0.9167,1]
 OrientationInterpolator2444.keyValue = [(-0.8129, 0.4759, -0.3357, 0.1346),(0.1533, -0.9878, 0.02582, 0.3902),(-0.5701, 0.7604, -0.311, 0.366),(-0.8129, 0.4759, -0.3357, 0.1346)]
 
 Group2434.children.append(OrientationInterpolator2444)
-OrientationInterpolator2445 = x3d.OrientationInterpolator()
-OrientationInterpolator2445.DEF = "Walk_r_elbow_RotationInterpolator"
+OrientationInterpolator2445 = x3d.OrientationInterpolator(DEF="Walk_r_elbow_RotationInterpolator")
 OrientationInterpolator2445.key = [0,0.375,0.9167,1]
 OrientationInterpolator2445.keyValue = [(-1, 0, 0, 0.411508),(-1, 0, 0, 0.0925011),(-1, 0, 0, 0.572568),(-1, 0, 0, 0.411508)]
 
 Group2434.children.append(OrientationInterpolator2445)
-OrientationInterpolator2446 = x3d.OrientationInterpolator()
-OrientationInterpolator2446.DEF = "Walk_r_shoulder_RotationInterpolator"
+OrientationInterpolator2446 = x3d.OrientationInterpolator(DEF="Walk_r_shoulder_RotationInterpolator")
 OrientationInterpolator2446.key = [0,0.375,0.9167,1]
 OrientationInterpolator2446.keyValue = [(-1, 0, 0, 0.09346),(1, 0, 0, 0.3197),(-1, 0, 0, 0.1564),(-1, 0, 0, 0.09346)]
 
 Group2434.children.append(OrientationInterpolator2446)
-OrientationInterpolator2447 = x3d.OrientationInterpolator()
-OrientationInterpolator2447.DEF = "Walk_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2447 = x3d.OrientationInterpolator(DEF="Walk_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2447.key = [0,0.375,0.9167,1]
 OrientationInterpolator2447.keyValue = [(0, -1, 0, 0.461076),(-0.330195, -0.927451, 0.175516, 0.538852),(0.0327774, -0.999314, -0.0172185, 0.492033),(0, -1, 0, 0.461076)]
 
 Group2434.children.append(OrientationInterpolator2447)
-OrientationInterpolator2448 = x3d.OrientationInterpolator()
-OrientationInterpolator2448.DEF = "Walk_l_elbow_RotationInterpolator"
+OrientationInterpolator2448 = x3d.OrientationInterpolator(DEF="Walk_l_elbow_RotationInterpolator")
 OrientationInterpolator2448.key = [0,0.375,0.9167,1]
 OrientationInterpolator2448.keyValue = [(-1, 0, 0, 0.0659878),(-1, 0, 0, 0.488383),(-1, 0, 0, 0.0177536),(-1, 0, 0, 0.0659878)]
 
 Group2434.children.append(OrientationInterpolator2448)
-OrientationInterpolator2449 = x3d.OrientationInterpolator()
-OrientationInterpolator2449.DEF = "Walk_l_shoulder_RotationInterpolator"
+OrientationInterpolator2449 = x3d.OrientationInterpolator(DEF="Walk_l_shoulder_RotationInterpolator")
 OrientationInterpolator2449.key = [0,0.375,0.9167,1]
 OrientationInterpolator2449.keyValue = [(1, 0, 0, 0.1189),(-1, 0, 0, 0.1861),(1, 0, 0, 0.3357),(1, 0, 0, 0.1189)]
 
 Group2434.children.append(OrientationInterpolator2449)
-OrientationInterpolator2450 = x3d.OrientationInterpolator()
-OrientationInterpolator2450.DEF = "Walk_head_RotationInterpolator"
+OrientationInterpolator2450 = x3d.OrientationInterpolator(DEF="Walk_head_RotationInterpolator")
 OrientationInterpolator2450.key = [0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]
 OrientationInterpolator2450.keyValue = [(0, -1, 0, 0.08642),(0, 1, 0, 0.1825),(0, 1, 0, 0.1505),(0, 1, 0, 0.1053),(0, 1, 0, 0.04391),(0, -1, 0, 0.03119),(0, -1, 0, 0.07936),(0, -1, 0, 0.1616),(0, -1, 0, 0.155),(0, -1, 0, 0.08642)]
 
 Group2434.children.append(OrientationInterpolator2450)
-OrientationInterpolator2451 = x3d.OrientationInterpolator()
-OrientationInterpolator2451.DEF = "Walk_neck_RotationInterpolator"
+OrientationInterpolator2451 = x3d.OrientationInterpolator(DEF="Walk_neck_RotationInterpolator")
 OrientationInterpolator2451.key = [0,1]
 OrientationInterpolator2451.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2451)
-OrientationInterpolator2452 = x3d.OrientationInterpolator()
-OrientationInterpolator2452.DEF = "Walk_upper_body_RotationInterpolator"
+OrientationInterpolator2452 = x3d.OrientationInterpolator(DEF="Walk_upper_body_RotationInterpolator")
 OrientationInterpolator2452.key = [0,0.2083,0.375,0.75,0.8333,1]
 OrientationInterpolator2452.keyValue = [(0, 1, 0, 0.0826),(-0.01972, -0.5974, 0.8017, 0.08231),(0.009296, -0.9648, 0.2627, 0.1734),(-0.01238, 0.9549, -0.2968, 0.08732),(-0.008125, 0.9691, -0.2463, 0.158),(0, 1, 0, 0.0826)]
 
 Group2434.children.append(OrientationInterpolator2452)
-OrientationInterpolator2453 = x3d.OrientationInterpolator()
-OrientationInterpolator2453.DEF = "Walk_whole_body_RotationInterpolator"
+OrientationInterpolator2453 = x3d.OrientationInterpolator(DEF="Walk_whole_body_RotationInterpolator")
 OrientationInterpolator2453.key = [0,1]
 OrientationInterpolator2453.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2453)
-PositionInterpolator2454 = x3d.PositionInterpolator()
-PositionInterpolator2454.DEF = "Walk_whole_body_TranslationInterpolator"
+PositionInterpolator2454 = x3d.PositionInterpolator(DEF="Walk_whole_body_TranslationInterpolator")
 PositionInterpolator2454.key = [0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]
 PositionInterpolator2454.keyValue = [(0, -0.00928, 0),(0, -0.003858, 0),(0, -0.008847, 0),(0, -0.01486, 0),(0, -0.02641, 0),(0, -0.03934, 0),(0, -0.0502, 0),(0, -0.07469, 0),(0, -0.02732, 0),(0, -0.01608, 0),(0, -0.01129, 0),(0, -0.005819, 0),(0, -0.002004, 0),(0, -0.002579, 0),(0, -0.0143, 0),(0, -0.03799, 0),(0, -0.05648, 0),(0, -0.045, 0),(0, -0.00928, 0)]
 
 Group2434.children.append(PositionInterpolator2454)
-OrientationInterpolator2455 = x3d.OrientationInterpolator()
-OrientationInterpolator2455.DEF = "Walk_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2455 = x3d.OrientationInterpolator(DEF="Walk_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2455.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2455.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2455)
-OrientationInterpolator2456 = x3d.OrientationInterpolator()
-OrientationInterpolator2456.DEF = "Walk_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2456 = x3d.OrientationInterpolator(DEF="Walk_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2456.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2456.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2456)
-OrientationInterpolator2457 = x3d.OrientationInterpolator()
-OrientationInterpolator2457.DEF = "Walk_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2457 = x3d.OrientationInterpolator(DEF="Walk_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2457.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2457.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2457)
-OrientationInterpolator2458 = x3d.OrientationInterpolator()
-OrientationInterpolator2458.DEF = "Walk_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2458 = x3d.OrientationInterpolator(DEF="Walk_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2458.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2458.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2458)
-OrientationInterpolator2459 = x3d.OrientationInterpolator()
-OrientationInterpolator2459.DEF = "Walk_sacroiliac_YawInterpolator"
+OrientationInterpolator2459 = x3d.OrientationInterpolator(DEF="Walk_sacroiliac_YawInterpolator")
 OrientationInterpolator2459.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2459.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2459)
-OrientationInterpolator2460 = x3d.OrientationInterpolator()
-OrientationInterpolator2460.DEF = "Walk_vl5_YawInterpolator"
+OrientationInterpolator2460 = x3d.OrientationInterpolator(DEF="Walk_vl5_YawInterpolator")
 OrientationInterpolator2460.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2460.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2460)
-OrientationInterpolator2461 = x3d.OrientationInterpolator()
-OrientationInterpolator2461.DEF = "Walk_vc6_YawInterpolator"
+OrientationInterpolator2461 = x3d.OrientationInterpolator(DEF="Walk_vc6_YawInterpolator")
 OrientationInterpolator2461.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2461.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2434.children.append(OrientationInterpolator2461)
-OrientationInterpolator2462 = x3d.OrientationInterpolator()
-OrientationInterpolator2462.DEF = "Walk_l_thumb1_PitchInterpolator"
+OrientationInterpolator2462 = x3d.OrientationInterpolator(DEF="Walk_l_thumb1_PitchInterpolator")
 OrientationInterpolator2462.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2462.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.5),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2434.children.append(OrientationInterpolator2462)
-OrientationInterpolator2463 = x3d.OrientationInterpolator()
-OrientationInterpolator2463.DEF = "Walk_r_thumb1_PitchInterpolator"
+OrientationInterpolator2463 = x3d.OrientationInterpolator(DEF="Walk_r_thumb1_PitchInterpolator")
 OrientationInterpolator2463.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2463.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.5),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2434.children.append(OrientationInterpolator2463)
 
 Scene22.children.append(Group2434)
-Group2464 = x3d.Group()
-Group2464.DEF = "RunAnimation"
-TimeSensor2465 = x3d.TimeSensor()
-TimeSensor2465.DEF = "RunTimer"
+Group2464 = x3d.Group(DEF="RunAnimation")
+TimeSensor2465 = x3d.TimeSensor(DEF="RunTimer")
 TimeSensor2465.cycleInterval = 0.9
 TimeSensor2465.loop = True
 
 Group2464.children.append(TimeSensor2465)
-OrientationInterpolator2466 = x3d.OrientationInterpolator()
-OrientationInterpolator2466.DEF = "Run_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2466 = x3d.OrientationInterpolator(DEF="Run_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2466.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2466.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2466)
-OrientationInterpolator2467 = x3d.OrientationInterpolator()
-OrientationInterpolator2467.DEF = "Run_l_hip_RotationInterpolator_Run"
+OrientationInterpolator2467 = x3d.OrientationInterpolator(DEF="Run_l_hip_RotationInterpolator_Run")
 OrientationInterpolator2467.key = [0,0.2182,0.4909,0.7455,1]
 OrientationInterpolator2467.keyValue = [(-0.99, 0.033, 0.04, 1.42),(-0.99, 0.1328, 0.067, 0.42),(0.99, 0.014, 0.009, 0.9),(-0.99, 0.0703, 0.05, 0.7),(-0.99, 0.033, 0.04, 1.42)]
 
 Group2464.children.append(OrientationInterpolator2467)
-OrientationInterpolator2468 = x3d.OrientationInterpolator()
-OrientationInterpolator2468.DEF = "Run_l_knee_RotationInterpolator_Run"
+OrientationInterpolator2468 = x3d.OrientationInterpolator(DEF="Run_l_knee_RotationInterpolator_Run")
 OrientationInterpolator2468.key = [0,0.2182,0.4909,0.7455,1]
 OrientationInterpolator2468.keyValue = [(1, 0, 0, 1.01),(1, 0, 0, 0.426),(1, 0, 0, 0.705),(1, 0, 0, 2.179),(1, 0, 0, 1.01)]
 
 Group2464.children.append(OrientationInterpolator2468)
-OrientationInterpolator2469 = x3d.OrientationInterpolator()
-OrientationInterpolator2469.DEF = "Run_l_talocrural_RotationInterpolator_Run"
+OrientationInterpolator2469 = x3d.OrientationInterpolator(DEF="Run_l_talocrural_RotationInterpolator_Run")
 OrientationInterpolator2469.key = [0,0.22,0.3,0.4,1]
 OrientationInterpolator2469.keyValue = [(1, 0, 0, 0.0374),(-1, 0, 0, 0.1037),(-1, 0, 0, 0.4328),(1, 0, 0, 0.1929),(1, 0, 0, 0.03574)]
 
 Group2464.children.append(OrientationInterpolator2469)
-OrientationInterpolator2470 = x3d.OrientationInterpolator()
-OrientationInterpolator2470.DEF = "Run_r_hip_RotationInterpolator_Run"
+OrientationInterpolator2470 = x3d.OrientationInterpolator(DEF="Run_r_hip_RotationInterpolator_Run")
 OrientationInterpolator2470.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2470.keyValue = [(0.99, -0.014, 0.009, 0.9),(-0.99, -0.0703, -0.05, 0.7),(-0.99, -0.033, 0.04, 1.42),(-0.99, -0.1328, -0.067, 0.42),(0.99, -0.014, 0.009, 0.9)]
 
 Group2464.children.append(OrientationInterpolator2470)
-OrientationInterpolator2471 = x3d.OrientationInterpolator()
-OrientationInterpolator2471.DEF = "Run_r_knee_RotationInterpolator_Run"
+OrientationInterpolator2471 = x3d.OrientationInterpolator(DEF="Run_r_knee_RotationInterpolator_Run")
 OrientationInterpolator2471.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2471.keyValue = [(1, 0, 0, 0.705),(1, 0, 0, 2.179),(1, 0, 0, 1.01),(1, 0, 0, 0.426),(1, 0, 0, 0.705)]
 
 Group2464.children.append(OrientationInterpolator2471)
-OrientationInterpolator2472 = x3d.OrientationInterpolator()
-OrientationInterpolator2472.DEF = "Run_r_talocrural_RotationInterpolator_Run"
+OrientationInterpolator2472 = x3d.OrientationInterpolator(DEF="Run_r_talocrural_RotationInterpolator_Run")
 OrientationInterpolator2472.key = [0,0.4,0.71,0.8,0.82,1]
 OrientationInterpolator2472.keyValue = [(1, 0, 0, 0.2323),(-1, 0, 0, 0.07843),(-1, 0, 0, 0.32),(-1, 0, 0, 0.374),(-1, 0, 0, 0.3478),(1, 0, 0, 0.2323)]
 
 Group2464.children.append(OrientationInterpolator2472)
-OrientationInterpolator2473 = x3d.OrientationInterpolator()
-OrientationInterpolator2473.DEF = "Run_l_shoulder_RotationInterpolator_Run"
+OrientationInterpolator2473 = x3d.OrientationInterpolator(DEF="Run_l_shoulder_RotationInterpolator_Run")
 OrientationInterpolator2473.key = [0,0.2182,0.4909,0.7455,1]
 OrientationInterpolator2473.keyValue = [(0.99, -0.074, 0.25, 1.5),(0.99, -0.092, 0.44, 0.3),(-0.99, 0.136, 0.25, 0.85),(0.99, -0.081, 0.38, 0.4),(0.99, -0.074, 0.25, 1.5)]
 
 Group2464.children.append(OrientationInterpolator2473)
-OrientationInterpolator2474 = x3d.OrientationInterpolator()
-OrientationInterpolator2474.DEF = "Run_l_elbow_RotationInterpolator_Run"
+OrientationInterpolator2474 = x3d.OrientationInterpolator(DEF="Run_l_elbow_RotationInterpolator_Run")
 OrientationInterpolator2474.key = [0,0.2182,0.4909,0.7455,1]
 OrientationInterpolator2474.keyValue = [(-1, 0, 0, 1.85),(-0.99, -0.19, 0.18, 1.35),(-1, 0, 0, 0.975),(-0.99, -0.09, -0.02, 1.55),(-1, 0, 0, 1.85)]
 
 Group2464.children.append(OrientationInterpolator2474)
-OrientationInterpolator2475 = x3d.OrientationInterpolator()
-OrientationInterpolator2475.DEF = "Run_l_radiocarpal_RotationInterpolator_Run"
+OrientationInterpolator2475 = x3d.OrientationInterpolator(DEF="Run_l_radiocarpal_RotationInterpolator_Run")
 OrientationInterpolator2475.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2475.keyValue = [(-0.25, -1, 0.08, 0.14),(0.25, 1, 0.08, 0.14),(0, 0, 1, 0),(-0.25, 1, 0.08, -0.14),(-0.25, 1, 0.08, 0.14)]
 
 Group2464.children.append(OrientationInterpolator2475)
-OrientationInterpolator2476 = x3d.OrientationInterpolator()
-OrientationInterpolator2476.DEF = "Run_r_shoulder_RotationInterpolator_Run"
+OrientationInterpolator2476 = x3d.OrientationInterpolator(DEF="Run_r_shoulder_RotationInterpolator_Run")
 OrientationInterpolator2476.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2476.keyValue = [(-0.99, -0.136, -0.25, 0.85),(0.99, 0.081, -0.38, 0.4),(0.99, 0.074, -0.25, 1.5),(0.99, 0.081, -0.38, 0.4),(-0.99, -0.136, -0.25, 0.85)]
 
 Group2464.children.append(OrientationInterpolator2476)
-OrientationInterpolator2477 = x3d.OrientationInterpolator()
-OrientationInterpolator2477.DEF = "Run_r_elbow_RotationInterpolator_Run"
+OrientationInterpolator2477 = x3d.OrientationInterpolator(DEF="Run_r_elbow_RotationInterpolator_Run")
 OrientationInterpolator2477.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2477.keyValue = [(-1, 0, 0, 0.975),(-0.99, 0.09, 0.02, 1.55),(-1, 0, 0, 1.85),(-0.99, 0.19, -0.18, 1.35),(-1, 0, 0, 0.975)]
 
 Group2464.children.append(OrientationInterpolator2477)
-OrientationInterpolator2478 = x3d.OrientationInterpolator()
-OrientationInterpolator2478.DEF = "Run_r_radiocarpal_RotationInterpolator_Run"
+OrientationInterpolator2478 = x3d.OrientationInterpolator(DEF="Run_r_radiocarpal_RotationInterpolator_Run")
 OrientationInterpolator2478.key = [0,1]
 OrientationInterpolator2478.keyValue = [(-0.917742, -0.237244, -0.318536, 0.214273),(-0.917742, -0.237244, -0.318536, 0.214273)]
 
 Group2464.children.append(OrientationInterpolator2478)
-OrientationInterpolator2479 = x3d.OrientationInterpolator()
-OrientationInterpolator2479.DEF = "Run_lower_body_RotationInterpolator_Run"
+OrientationInterpolator2479 = x3d.OrientationInterpolator(DEF="Run_lower_body_RotationInterpolator_Run")
 OrientationInterpolator2479.key = [0,0.2182,0.4909,0.7455,1]
 OrientationInterpolator2479.keyValue = [(0, -1, 0, 0.125),(0, 0, 1, 0),(0, 1, 0, 0.125),(0, 0, 1, 0),(0, -1, 0, 0.125)]
 
 Group2464.children.append(OrientationInterpolator2479)
-OrientationInterpolator2480 = x3d.OrientationInterpolator()
-OrientationInterpolator2480.DEF = "Run_head_RotationInterpolator_Run"
+OrientationInterpolator2480 = x3d.OrientationInterpolator(DEF="Run_head_RotationInterpolator_Run")
 OrientationInterpolator2480.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2480.keyValue = [(1, 0, 0, 0.08),(1, 0, 0, 0.12),(1, 0, 0, 0.3),(1, 0, 0, 0.3),(1, 0, 0, 0.08)]
 
 Group2464.children.append(OrientationInterpolator2480)
-OrientationInterpolator2481 = x3d.OrientationInterpolator()
-OrientationInterpolator2481.DEF = "Run_neck_RotationInterpolator_Run"
+OrientationInterpolator2481 = x3d.OrientationInterpolator(DEF="Run_neck_RotationInterpolator_Run")
 OrientationInterpolator2481.key = [0,0.2545,0.4909,0.7091,1]
 OrientationInterpolator2481.keyValue = [(0.7, 0, 0, 0.4),(-0.7, -0.7, 0, 0.4),(0, 0, 0, 0.4),(-0.7, 0.7, 0, 0.4),(0.7, 0, 0, 0.4)]
 
 Group2464.children.append(OrientationInterpolator2481)
-OrientationInterpolator2482 = x3d.OrientationInterpolator()
-OrientationInterpolator2482.DEF = "Run_upper_body_RotationInterpolator_Run"
+OrientationInterpolator2482 = x3d.OrientationInterpolator(DEF="Run_upper_body_RotationInterpolator_Run")
 OrientationInterpolator2482.key = [0,0.2545,0.4909,0.7636,1]
 OrientationInterpolator2482.keyValue = [(0.97, 0.65, 0.086, 0.5),(0.9, 0.003, -0.02, 0.38),(0.95, -0.68, -0.086, 0.5),(0.9, 0.004, -0.025, 0.4),(0.97, 0.65, 0.086, 0.5)]
 
 Group2464.children.append(OrientationInterpolator2482)
-OrientationInterpolator2483 = x3d.OrientationInterpolator()
-OrientationInterpolator2483.DEF = "Run_whole_body_RotationInterpolator_Run"
+OrientationInterpolator2483 = x3d.OrientationInterpolator(DEF="Run_whole_body_RotationInterpolator_Run")
 OrientationInterpolator2483.key = [0,0.25,0.5,0.75,1]
 OrientationInterpolator2483.keyValue = [(1, 0, 0, 0.06),(1, 0, 0, 0.167),(1, 0, 0, 0.06),(1, 0, 0, 0.168),(1, 0, 0, 0.06)]
 
 Group2464.children.append(OrientationInterpolator2483)
-PositionInterpolator2484 = x3d.PositionInterpolator()
-PositionInterpolator2484.DEF = "Run_whole_body_TranslationInterpolator_Run"
+PositionInterpolator2484 = x3d.PositionInterpolator(DEF="Run_whole_body_TranslationInterpolator_Run")
 PositionInterpolator2484.key = [0,0.22,0.3,0.31,0.5,0.69,0.7,0.78,1]
 PositionInterpolator2484.keyValue = [(0, -0.01, 0),(0, -0.037, 0),(0, -0.049, 0),(0, -0.037, 0),(0, -0.01, 0),(0, -0.037, 0),(0, -0.049, 0),(0, -0.037, 0),(0, -0.01, 0)]
 
 Group2464.children.append(PositionInterpolator2484)
-OrientationInterpolator2485 = x3d.OrientationInterpolator()
-OrientationInterpolator2485.DEF = "Run_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2485 = x3d.OrientationInterpolator(DEF="Run_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2485.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2485.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2485)
-OrientationInterpolator2486 = x3d.OrientationInterpolator()
-OrientationInterpolator2486.DEF = "Run_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2486 = x3d.OrientationInterpolator(DEF="Run_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2486.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2486.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2486)
-OrientationInterpolator2487 = x3d.OrientationInterpolator()
-OrientationInterpolator2487.DEF = "Run_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2487 = x3d.OrientationInterpolator(DEF="Run_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2487.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2487.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2487)
-OrientationInterpolator2488 = x3d.OrientationInterpolator()
-OrientationInterpolator2488.DEF = "Run_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2488 = x3d.OrientationInterpolator(DEF="Run_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2488.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2488.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2488)
-OrientationInterpolator2489 = x3d.OrientationInterpolator()
-OrientationInterpolator2489.DEF = "Run_sacroiliac_YawInterpolator"
+OrientationInterpolator2489 = x3d.OrientationInterpolator(DEF="Run_sacroiliac_YawInterpolator")
 OrientationInterpolator2489.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2489.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2489)
-OrientationInterpolator2490 = x3d.OrientationInterpolator()
-OrientationInterpolator2490.DEF = "Run_vl5_YawInterpolator"
+OrientationInterpolator2490 = x3d.OrientationInterpolator(DEF="Run_vl5_YawInterpolator")
 OrientationInterpolator2490.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2490.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2490)
-OrientationInterpolator2491 = x3d.OrientationInterpolator()
-OrientationInterpolator2491.DEF = "Run_vc6_YawInterpolator"
+OrientationInterpolator2491 = x3d.OrientationInterpolator(DEF="Run_vc6_YawInterpolator")
 OrientationInterpolator2491.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2491.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2464.children.append(OrientationInterpolator2491)
-OrientationInterpolator2492 = x3d.OrientationInterpolator()
-OrientationInterpolator2492.DEF = "Run_l_thumb1_PitchInterpolator"
+OrientationInterpolator2492 = x3d.OrientationInterpolator(DEF="Run_l_thumb1_PitchInterpolator")
 OrientationInterpolator2492.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2492.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.7),(1, 0, 0, 0.27),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2464.children.append(OrientationInterpolator2492)
-OrientationInterpolator2493 = x3d.OrientationInterpolator()
-OrientationInterpolator2493.DEF = "Run_r_thumb1_PitchInterpolator"
+OrientationInterpolator2493 = x3d.OrientationInterpolator(DEF="Run_r_thumb1_PitchInterpolator")
 OrientationInterpolator2493.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2493.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.25),(1, 0, 0, 0.7),(1, 0, 0, 0.27),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2464.children.append(OrientationInterpolator2493)
 
 Scene22.children.append(Group2464)
-Group2494 = x3d.Group()
-Group2494.DEF = "JumpAnimation"
-TimeSensor2495 = x3d.TimeSensor()
-TimeSensor2495.DEF = "JumpTimer"
+Group2494 = x3d.Group(DEF="JumpAnimation")
+TimeSensor2495 = x3d.TimeSensor(DEF="JumpTimer")
 TimeSensor2495.cycleInterval = 3.73
 TimeSensor2495.loop = True
 
 Group2494.children.append(TimeSensor2495)
-OrientationInterpolator2496 = x3d.OrientationInterpolator()
-OrientationInterpolator2496.DEF = "Jump_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2496 = x3d.OrientationInterpolator(DEF="Jump_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2496.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2496.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2496)
-OrientationInterpolator2497 = x3d.OrientationInterpolator()
-OrientationInterpolator2497.DEF = "Jump_r_talocrural_RotationInterpolator"
+OrientationInterpolator2497 = x3d.OrientationInterpolator(DEF="Jump_r_talocrural_RotationInterpolator")
 OrientationInterpolator2497.key = [0,0.1,0.15,0.25,0.28,0.32,0.35,0.64,0.76,0.84,0.88,0.92,0.96,1]
 OrientationInterpolator2497.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.6735),(-1, 0, 0, 0.6735),(-1, 0, 0, 0.3527),(-1, 0, 0, 0.3038),(-1, 0, 0, 0.07964),(1, 0, 0, 1.3),(1, 0, 0, 0.6509),(1, 0, 0, 0.3001),(-1, 0, 0, 0.2087),(-1, 0, 0, 0.3756),(-1, 0, 0, 0.3279),(-1, 0, 0, 0.1193),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2497)
-OrientationInterpolator2498 = x3d.OrientationInterpolator()
-OrientationInterpolator2498.DEF = "Jump_r_knee_RotationInterpolator"
+OrientationInterpolator2498 = x3d.OrientationInterpolator(DEF="Jump_r_knee_RotationInterpolator")
 OrientationInterpolator2498.key = [0,0.2,0.25,0.3,0.64,0.76,0.88,1]
 OrientationInterpolator2498.keyValue = [(0, 0, 1, 0),(1, 0, 0, 2.5),(1, 0, 0, 1.7),(0, 0, 1, 0),(1, 0, 0, 0.9507),(1, 0, 0, 0.5845),(1, 0, 0, 0.9054),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2498)
-OrientationInterpolator2499 = x3d.OrientationInterpolator()
-OrientationInterpolator2499.DEF = "Jump_r_hip_RotationInterpolator"
+OrientationInterpolator2499 = x3d.OrientationInterpolator(DEF="Jump_r_hip_RotationInterpolator")
 OrientationInterpolator2499.key = [0,0.18,0.24,0.26,0.28,0.32,0.48,0.64,0.76,0.88,1]
 OrientationInterpolator2499.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 1.63),(-1, 0, 0, 1.7),(-1, 0, 0, 1.55),(-1, 0, 0, 0.8943),(-1, 0, 0, 0.3698),(0, 0, 1, 0),(-1, 0, 0, 0.4963),(-1, 0, 0, 0.3829),(-1, 0, 0, 0.5169),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2499)
-OrientationInterpolator2500 = x3d.OrientationInterpolator()
-OrientationInterpolator2500.DEF = "Jump_l_talocrural_RotationInterpolator"
+OrientationInterpolator2500 = x3d.OrientationInterpolator(DEF="Jump_l_talocrural_RotationInterpolator")
 OrientationInterpolator2500.key = [0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]
 OrientationInterpolator2500.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.625),(-1, 0, 0, 0.625),(-1, 0, 0, 0.3364),(-1, 0, 0, 0.2742),(-1, 0, 0, 0.05078),(1, 0, 0, 0.2833),(1, 0, 0, 0.6667),(1, 0, 0, 0.2833),(-1, 0, 0, 0.2108),(-1, 0, 0, 0.375),(-1, 0, 0, 0.3146),(-1, 0, 0, 0.1174),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2500)
-OrientationInterpolator2501 = x3d.OrientationInterpolator()
-OrientationInterpolator2501.DEF = "Jump_l_knee_RotationInterpolator"
+OrientationInterpolator2501 = x3d.OrientationInterpolator(DEF="Jump_l_knee_RotationInterpolator")
 OrientationInterpolator2501.key = [0,0.28,0.32,0.48,0.64,0.76,0.88,1]
 OrientationInterpolator2501.keyValue = [(0, 0, 1, 0),(1, 0, 0, 2.047),(1, 0, 0, 2.047),(0, 0, 1, 0),(1, 0, 0, 1.566),(1, 0, 0, 0.5913),(1, 0, 0, 0.9235),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2501)
-OrientationInterpolator2502 = x3d.OrientationInterpolator()
-OrientationInterpolator2502.DEF = "Jump_l_hip_RotationInterpolator"
+OrientationInterpolator2502 = x3d.OrientationInterpolator(DEF="Jump_l_hip_RotationInterpolator")
 OrientationInterpolator2502.key = [0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]
 OrientationInterpolator2502.keyValue = [(0, 0, 1, 0),(1, 0, 0, 4.349),(1, 0, 0, 4.349),(1, 0, 0, 4.615),(-1, 0, 0, 0.9136),(-1, 0, 0, 0.3614),(0, 0, 1, 0),(-1, 0, 0, 0.7869),(-1, 0, 0, 0.3918),(-1, 0, 0, 0.5433),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2502)
-OrientationInterpolator2503 = x3d.OrientationInterpolator()
-OrientationInterpolator2503.DEF = "Jump_lower_body_RotationInterpolator"
+OrientationInterpolator2503 = x3d.OrientationInterpolator(DEF="Jump_lower_body_RotationInterpolator")
 OrientationInterpolator2503.key = [0,0.28,0.32,0.48,0.76,1]
 OrientationInterpolator2503.keyValue = [(0, 0, 1, 0),(1, 0, 0, 0.1892),(1, 0, 0, 0.1892),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2503)
-OrientationInterpolator2504 = x3d.OrientationInterpolator()
-OrientationInterpolator2504.DEF = "Jump_r_radiocarpal_RotationInterpolator"
+OrientationInterpolator2504 = x3d.OrientationInterpolator(DEF="Jump_r_radiocarpal_RotationInterpolator")
 OrientationInterpolator2504.key = [0,0.28,0.32,0.64,0.76,1]
 OrientationInterpolator2504.keyValue = [(0, 0, 1, 0),(-0.0585279, 0.983903, -0.168849, 1.85956),(-0.0585279, 0.983903, -0.168849, 1.85956),(-0.00222418, 0.99801, -0.0630095, 1.46072),(0, 1, 0, 0.497349),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2504)
-OrientationInterpolator2505 = x3d.OrientationInterpolator()
-OrientationInterpolator2505.DEF = "Jump_r_elbow_RotationInterpolator"
+OrientationInterpolator2505 = x3d.OrientationInterpolator(DEF="Jump_r_elbow_RotationInterpolator")
 OrientationInterpolator2505.key = [0,0.28,0.32,0.64,0.76,1]
 OrientationInterpolator2505.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.04151),(-1, 0, 0, 0.04151),(-1, 0, 0, 0.5855),(-1, 0, 0, 0.5852),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2505)
-OrientationInterpolator2506 = x3d.OrientationInterpolator()
-OrientationInterpolator2506.DEF = "Jump_r_shoulder_RotationInterpolator"
+OrientationInterpolator2506 = x3d.OrientationInterpolator(DEF="Jump_r_shoulder_RotationInterpolator")
 OrientationInterpolator2506.key = [0,0.28,0.32,0.64,0.76,0.88,1]
 OrientationInterpolator2506.keyValue = [(0, 0, 1, 0),(0.9992, 0.02042, 0.03558, 4.688),(0.9992, 0.02042, 0.03558, 4.688),(0.9989, -0.04623, 0.005159, 4.079),(-0.8687, -0.2525, -0.4261, 1.501),(-0.941, -0.2893, -0.1754, 0.4788),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2506)
-OrientationInterpolator2507 = x3d.OrientationInterpolator()
-OrientationInterpolator2507.DEF = "Jump_l_radiocarpal_RotationInterpolator"
+OrientationInterpolator2507 = x3d.OrientationInterpolator(DEF="Jump_l_radiocarpal_RotationInterpolator")
 OrientationInterpolator2507.key = [0,0.48,0.52,0.64,0.76,0.88,1]
 OrientationInterpolator2507.keyValue = [(0, 0, 1, 0),(0.0672928, 0.989475, -0.128107, 4.15574),(0.0672928, 0.989475, -0.128107, 4.15574),(0.00364942, 0.999901, 0.0135896, 4.5822),(0, -1, 0, 0.655922),(-0.00050618, -0.999999, 0.0012782, 1.28397),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2507)
-OrientationInterpolator2508 = x3d.OrientationInterpolator()
-OrientationInterpolator2508.DEF = "Jump_l_elbow_RotationInterpolator"
+OrientationInterpolator2508 = x3d.OrientationInterpolator(DEF="Jump_l_elbow_RotationInterpolator")
 OrientationInterpolator2508.key = [0,0.28,0.32,0.58,0.72,1]
 OrientationInterpolator2508.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 1.13),(-1, 0, 0, 1.7),(-1, 0, 0, 1.7),(-1, 0, 0, 0.4),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2508)
-OrientationInterpolator2509 = x3d.OrientationInterpolator()
-OrientationInterpolator2509.DEF = "Jump_l_shoulder_RotationInterpolator"
+OrientationInterpolator2509 = x3d.OrientationInterpolator(DEF="Jump_l_shoulder_RotationInterpolator")
 OrientationInterpolator2509.key = [0,0.28,0.32,0.64,0.76,0.88,1]
 OrientationInterpolator2509.keyValue = [(0, 0, 1, 0),(-0.9987, 0.02554, 0.04498, 1.57),(-0.9987, 0.02554, 0.04498, 1.57),(1, 0.0004113, 0.003055, 4.114),(-0.8413, 0.3238, 0.4329, 1.453),(-0.877, 0.4198, 0.2337, 0.6009),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2509)
-OrientationInterpolator2510 = x3d.OrientationInterpolator()
-OrientationInterpolator2510.DEF = "Jump_head_RotationInterpolator"
+OrientationInterpolator2510 = x3d.OrientationInterpolator(DEF="Jump_head_RotationInterpolator")
 OrientationInterpolator2510.key = [0,0.28,0.32,0.48,0.76,1]
 OrientationInterpolator2510.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.5989),(-1, 0, 0, 0.5989),(-1, 0, 0, 0.3216),(1, 0, 0, 0.06503),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2510)
-OrientationInterpolator2511 = x3d.OrientationInterpolator()
-OrientationInterpolator2511.DEF = "Jump_neck_RotationInterpolator"
+OrientationInterpolator2511 = x3d.OrientationInterpolator(DEF="Jump_neck_RotationInterpolator")
 OrientationInterpolator2511.key = [0,0.28,0.32,0.48,0.76,1]
 OrientationInterpolator2511.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.1942),(-1, 0, 0, 0.1942),(0, 0, 1, 0),(1, 0, 0, 0.2284),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2511)
-OrientationInterpolator2512 = x3d.OrientationInterpolator()
-OrientationInterpolator2512.DEF = "Jump_upper_body_RotationInterpolator"
+OrientationInterpolator2512 = x3d.OrientationInterpolator(DEF="Jump_upper_body_RotationInterpolator")
 OrientationInterpolator2512.key = [0,0.22,0.28,0.34,0.71,0.88,1]
 OrientationInterpolator2512.keyValue = [(0, 0, 1, 0),(1, 0, 0, 1.05),(1, 0, 0, 1.051),(-1, 0, 0, 0.257),(1, 0, 0, 0.2171),(1, 0, 0, 0.3465),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2512)
-OrientationInterpolator2513 = x3d.OrientationInterpolator()
-OrientationInterpolator2513.DEF = "Jump_whole_body_RotationInterpolator"
+OrientationInterpolator2513 = x3d.OrientationInterpolator(DEF="Jump_whole_body_RotationInterpolator")
 OrientationInterpolator2513.key = [0,0.28,0.32,0.48,0.64,0.76,1]
 OrientationInterpolator2513.keyValue = [(0, 0, 1, 0),(1, 0, 0, 0.3273),(1, 0, 0, 0.3273),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2513)
-PositionInterpolator2514 = x3d.PositionInterpolator()
-PositionInterpolator2514.DEF = "Jump_whole_body_TranslationInterpolator"
+PositionInterpolator2514 = x3d.PositionInterpolator(DEF="Jump_whole_body_TranslationInterpolator")
 PositionInterpolator2514.key = [0,0.04,0.07,0.11,0.15,0.19,0.22,0.25,0.27,0.31,0.33,0.35,0.38,0.53,0.544,0.76,0.8,0.84,0.88,0.92,0.96,1]
 PositionInterpolator2514.keyValue = [(0, 0, 0),(0, -0.01264, -0.01289),(0, -0.04712, -0.03738),(-0.0003345, -0.1049, -0.05353),(-0.0005712, -0.1892, -0.06561),(-0.0008233, -0.286, -0.06276),(-0.0009591, -0.3795, -0.05148),(-0.00106, -0.4484, -0.03656),(-0.00106, -0.4484, -0.03656),(-0.001122, -0.25, -0.1499),(-0.0008616, -0.05, -0.06358),(-0.0005128, 0.15, -0.05488),(0.0004779, 0.55, 0.02732),(0.0001728, 1.385, 0.006873),(0.00017, 1.395, 0.0069),(0, 0.35, 0.02148),(0, -0.01299, -0.01057),(0, -0.06932, -0.01064),(0.0001365, -0.1037, -0.005059),(0.0001279, -0.07198, -0.007596),(0.000141, -0.01626, -0.004935),(0, 0, 0)]
 
 Group2494.children.append(PositionInterpolator2514)
-OrientationInterpolator2515 = x3d.OrientationInterpolator()
-OrientationInterpolator2515.DEF = "Jump_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2515 = x3d.OrientationInterpolator(DEF="Jump_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2515.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2515.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.2),(0, 0, 1, 0.22),(0, 0, 1, 0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2515)
-OrientationInterpolator2516 = x3d.OrientationInterpolator()
-OrientationInterpolator2516.DEF = "Jump_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2516 = x3d.OrientationInterpolator(DEF="Jump_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2516.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2516.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2516)
-OrientationInterpolator2517 = x3d.OrientationInterpolator()
-OrientationInterpolator2517.DEF = "Jump_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2517 = x3d.OrientationInterpolator(DEF="Jump_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2517.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2517.keyValue = [(0, 0, 1, 0),(0, 0, 1, -0.2),(0, 0, 1, -0.22),(0, 0, 1, -0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2517)
-OrientationInterpolator2518 = x3d.OrientationInterpolator()
-OrientationInterpolator2518.DEF = "Jump_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2518 = x3d.OrientationInterpolator(DEF="Jump_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2518.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2518.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, -0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2494.children.append(OrientationInterpolator2518)
-OrientationInterpolator2519 = x3d.OrientationInterpolator()
-OrientationInterpolator2519.DEF = "Jump_sacroiliac_YawInterpolator"
+OrientationInterpolator2519 = x3d.OrientationInterpolator(DEF="Jump_sacroiliac_YawInterpolator")
 OrientationInterpolator2519.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2519.keyValue = [(0, 1, 0, 0),(0, -1, 0, 0.1),(0, 1, 0, 0),(0, 1, -1, 0.24),(0, -1, 0, 0.4),(0, 1, 0, 0)]
 
 Group2494.children.append(OrientationInterpolator2519)
-OrientationInterpolator2520 = x3d.OrientationInterpolator()
-OrientationInterpolator2520.DEF = "Jump_vl5_YawInterpolator"
+OrientationInterpolator2520 = x3d.OrientationInterpolator(DEF="Jump_vl5_YawInterpolator")
 OrientationInterpolator2520.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2520.keyValue = [(0, 1, 0, 0),(0, 1, 0, -0.1),(0, 1, 0, 0),(0, 1, 0, 0),(1, 0, 0, 0.6),(0, 1, 0, 0.1),(0, 1, 0, 0)]
 
 Group2494.children.append(OrientationInterpolator2520)
-OrientationInterpolator2521 = x3d.OrientationInterpolator()
-OrientationInterpolator2521.DEF = "Jump_vc6_YawInterpolator"
+OrientationInterpolator2521 = x3d.OrientationInterpolator(DEF="Jump_vc6_YawInterpolator")
 OrientationInterpolator2521.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2521.keyValue = [(0, 1, 0, 0),(0, 1, 0, 0.8),(0, 1, 0, 0),(0, 1, 0, 0),(-1, 0, 0, 0.6),(0, -1, 0, 0.8),(0, 1, 0, 0)]
 
 Group2494.children.append(OrientationInterpolator2521)
-OrientationInterpolator2522 = x3d.OrientationInterpolator()
-OrientationInterpolator2522.DEF = "Jump_l_thumb1_PitchInterpolator"
+OrientationInterpolator2522 = x3d.OrientationInterpolator(DEF="Jump_l_thumb1_PitchInterpolator")
 OrientationInterpolator2522.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2522.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.5),(1, 0, 0, 1.1),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2494.children.append(OrientationInterpolator2522)
-OrientationInterpolator2523 = x3d.OrientationInterpolator()
-OrientationInterpolator2523.DEF = "Jump_r_thumb1_PitchInterpolator"
+OrientationInterpolator2523 = x3d.OrientationInterpolator(DEF="Jump_r_thumb1_PitchInterpolator")
 OrientationInterpolator2523.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2523.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.5),(1, 0, 0, 1.1),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2494.children.append(OrientationInterpolator2523)
 
 Scene22.children.append(Group2494)
-Group2524 = x3d.Group()
-Group2524.DEF = "KickAnimation"
-TimeSensor2525 = x3d.TimeSensor()
-TimeSensor2525.DEF = "KickTimer"
+Group2524 = x3d.Group(DEF="KickAnimation")
+TimeSensor2525 = x3d.TimeSensor(DEF="KickTimer")
 TimeSensor2525.cycleInterval = 3.73
 TimeSensor2525.loop = True
 
 Group2524.children.append(TimeSensor2525)
-OrientationInterpolator2526 = x3d.OrientationInterpolator()
-OrientationInterpolator2526.DEF = "Kick_l_sternoclavicular_RollInterpolator"
+OrientationInterpolator2526 = x3d.OrientationInterpolator(DEF="Kick_l_sternoclavicular_RollInterpolator")
 OrientationInterpolator2526.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2526.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0.2),(0, 0, 1, 0.22),(0, 0, 1, 0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2526)
-OrientationInterpolator2527 = x3d.OrientationInterpolator()
-OrientationInterpolator2527.DEF = "Kick_l_acromioclavicular_RollInterpolator"
+OrientationInterpolator2527 = x3d.OrientationInterpolator(DEF="Kick_l_acromioclavicular_RollInterpolator")
 OrientationInterpolator2527.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2527.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2527)
-OrientationInterpolator2528 = x3d.OrientationInterpolator()
-OrientationInterpolator2528.DEF = "Kick_l_shoulder_RollInterpolator"
+OrientationInterpolator2528 = x3d.OrientationInterpolator(DEF="Kick_l_shoulder_RollInterpolator")
 OrientationInterpolator2528.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2528.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.76),(-0.25, 0, 1, 1.76),(0, 0, 1, 1.256),(0, 0, 1, 0.05),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2528)
-OrientationInterpolator2529 = x3d.OrientationInterpolator()
-OrientationInterpolator2529.DEF = "Kick_l_ForeArm_PitchInterpolator"
+OrientationInterpolator2529 = x3d.OrientationInterpolator(DEF="Kick_l_ForeArm_PitchInterpolator")
 OrientationInterpolator2529.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2529.keyValue = [(1, 0, 0, 0),(1, 0, 0, -0.55),(-1, 0.25, 0, 2.55),(1, 0, 0, 0),(1, 0, 0, 0),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2529)
-OrientationInterpolator2530 = x3d.OrientationInterpolator()
-OrientationInterpolator2530.DEF = "Kick_l_radiocarpal_RollInterpolator"
+OrientationInterpolator2530 = x3d.OrientationInterpolator(DEF="Kick_l_radiocarpal_RollInterpolator")
 OrientationInterpolator2530.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2530.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 1, 0, 0.55),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2530)
-OrientationInterpolator2531 = x3d.OrientationInterpolator()
-OrientationInterpolator2531.DEF = "Kick_l_thumb1_PitchInterpolator"
+OrientationInterpolator2531 = x3d.OrientationInterpolator(DEF="Kick_l_thumb1_PitchInterpolator")
 OrientationInterpolator2531.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2531.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.5),(1, 0, 0, 1.1),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2531)
-OrientationInterpolator2532 = x3d.OrientationInterpolator()
-OrientationInterpolator2532.DEF = "Kick_r_sternoclavicular_RollInterpolator"
+OrientationInterpolator2532 = x3d.OrientationInterpolator(DEF="Kick_r_sternoclavicular_RollInterpolator")
 OrientationInterpolator2532.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2532.keyValue = [(0, 0, 1, 0),(0, 0, 1, -0.2),(0, 0, 1, -0.22),(0, 0, 1, -0.2),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2532)
-OrientationInterpolator2533 = x3d.OrientationInterpolator()
-OrientationInterpolator2533.DEF = "Kick_r_acromioclavicular_RollInterpolator"
+OrientationInterpolator2533 = x3d.OrientationInterpolator(DEF="Kick_r_acromioclavicular_RollInterpolator")
 OrientationInterpolator2533.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2533.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, -0.05),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2533)
-OrientationInterpolator2534 = x3d.OrientationInterpolator()
-OrientationInterpolator2534.DEF = "Kick_r_shoulder_RollInterpolator"
+OrientationInterpolator2534 = x3d.OrientationInterpolator(DEF="Kick_r_shoulder_RollInterpolator")
 OrientationInterpolator2534.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2534.keyValue = [(0, 0, 1, 0),(0, 0, 1, -1.76),(0.25, 0, 1, -1.76),(0, 0, 1, -1.256),(0, 0, 1, -0.05),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2534)
-OrientationInterpolator2535 = x3d.OrientationInterpolator()
-OrientationInterpolator2535.DEF = "Kick_r_ForeArm_PitchInterpolator"
+OrientationInterpolator2535 = x3d.OrientationInterpolator(DEF="Kick_r_ForeArm_PitchInterpolator")
 OrientationInterpolator2535.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2535.keyValue = [(1, 0, 0, 0),(1, 0, 0, -0.55),(1, 0.25, 0, -2.55),(1, 0, 0, 0),(1, 0, 0, 0),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2535)
-OrientationInterpolator2536 = x3d.OrientationInterpolator()
-OrientationInterpolator2536.DEF = "Kick_r_radiocarpal_RollInterpolator"
+OrientationInterpolator2536 = x3d.OrientationInterpolator(DEF="Kick_r_radiocarpal_RollInterpolator")
 OrientationInterpolator2536.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2536.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 1, 0, -0.55),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2536)
-OrientationInterpolator2537 = x3d.OrientationInterpolator()
-OrientationInterpolator2537.DEF = "Kick_r_thumb1_PitchInterpolator"
+OrientationInterpolator2537 = x3d.OrientationInterpolator(DEF="Kick_r_thumb1_PitchInterpolator")
 OrientationInterpolator2537.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2537.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.5),(1, 0, 0, 1.1),(1, 0, 0, 0.7),(1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2537)
-OrientationInterpolator2538 = x3d.OrientationInterpolator()
-OrientationInterpolator2538.DEF = "Kick_r_hip_PitchInterpolator"
+OrientationInterpolator2538 = x3d.OrientationInterpolator(DEF="Kick_r_hip_PitchInterpolator")
 OrientationInterpolator2538.key = [0,0.2,0.3,0.5,0.6,0.9,1]
 OrientationInterpolator2538.keyValue = [(1, 0, 0, 0),(1, 0, 0, 0.9),(-1, 0, 0, 1.75),(-1, 0, 0, 2.25),(-1, 0, 0, 2),(1, 0, 0, 0),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2538)
-OrientationInterpolator2539 = x3d.OrientationInterpolator()
-OrientationInterpolator2539.DEF = "Kick_r_knee_PitchInterpolator"
+OrientationInterpolator2539 = x3d.OrientationInterpolator(DEF="Kick_r_knee_PitchInterpolator")
 OrientationInterpolator2539.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2539.keyValue = [(0, 0, 1, 0),(1, 0, 0, 1.95),(1, 0, 0, 1.75),(-1, 0, 0, 0.28),(1, 0, 0, 0),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2539)
-OrientationInterpolator2540 = x3d.OrientationInterpolator()
-OrientationInterpolator2540.DEF = "Kick_l_hip_PitchInterpolator"
+OrientationInterpolator2540 = x3d.OrientationInterpolator(DEF="Kick_l_hip_PitchInterpolator")
 OrientationInterpolator2540.key = [0,0.2,0.3,0.5,0.6,0.9,1]
 OrientationInterpolator2540.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2540)
-OrientationInterpolator2541 = x3d.OrientationInterpolator()
-OrientationInterpolator2541.DEF = "Kick_l_knee_PitchInterpolator"
+OrientationInterpolator2541 = x3d.OrientationInterpolator(DEF="Kick_l_knee_PitchInterpolator")
 OrientationInterpolator2541.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2541.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2541)
-OrientationInterpolator2542 = x3d.OrientationInterpolator()
-OrientationInterpolator2542.DEF = "Kick_r_talocrural_PitchInterpolator"
+OrientationInterpolator2542 = x3d.OrientationInterpolator(DEF="Kick_r_talocrural_PitchInterpolator")
 OrientationInterpolator2542.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2542.keyValue = [(0, 0, 1, 0),(-1, 0, 0, 0.9),(-1, 0, 0, 0.95),(1, 0, 0, 0.75),(-1, 0, 0, 0.05),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2542)
-OrientationInterpolator2543 = x3d.OrientationInterpolator()
-OrientationInterpolator2543.DEF = "Kick_r_metatarsal_PitchInterpolator"
+OrientationInterpolator2543 = x3d.OrientationInterpolator(DEF="Kick_r_metatarsal_PitchInterpolator")
 OrientationInterpolator2543.key = [0,0.2,0.4,0.6,0.7,1]
 OrientationInterpolator2543.keyValue = [(1, 0, 0, 0),(-1, 0, 0, 0.5),(-1, 0, 0, 0.7),(1, 0, 0, 0.75),(-1, 0, 0, 0.2),(1, 0, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2543)
-OrientationInterpolator2544 = x3d.OrientationInterpolator()
-OrientationInterpolator2544.DEF = "Kick_sacroiliac_YawInterpolator"
+OrientationInterpolator2544 = x3d.OrientationInterpolator(DEF="Kick_sacroiliac_YawInterpolator")
 OrientationInterpolator2544.key = [0,0.2,0.4,0.6,0.8,1]
 OrientationInterpolator2544.keyValue = [(0, 1, 0, 0),(0, -1, 0, 0.1),(0, 1, 0, 0),(0, 1, -1, 0.24),(0, -1, 0, 0.4),(0, 1, 0, 0)]
 
 Group2524.children.append(OrientationInterpolator2544)
-OrientationInterpolator2545 = x3d.OrientationInterpolator()
-OrientationInterpolator2545.DEF = "Kick_vl5_YawInterpolator"
+OrientationInterpolator2545 = x3d.OrientationInterpolator(DEF="Kick_vl5_YawInterpolator")
 OrientationInterpolator2545.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2545.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2545)
-OrientationInterpolator2546 = x3d.OrientationInterpolator()
-OrientationInterpolator2546.DEF = "Kick_vc6_YawInterpolator"
+OrientationInterpolator2546 = x3d.OrientationInterpolator(DEF="Kick_vc6_YawInterpolator")
 OrientationInterpolator2546.key = [0,0.2,0.4,0.5,0.6,0.8,1]
 OrientationInterpolator2546.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2546)
-OrientationInterpolator2547 = x3d.OrientationInterpolator()
-OrientationInterpolator2547.DEF = "Kick_lower_body_RotationInterpolator"
+OrientationInterpolator2547 = x3d.OrientationInterpolator(DEF="Kick_lower_body_RotationInterpolator")
 OrientationInterpolator2547.key = [0,0.5,1]
 OrientationInterpolator2547.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2547)
-OrientationInterpolator2548 = x3d.OrientationInterpolator()
-OrientationInterpolator2548.DEF = "Kick_upper_body_RotationInterpolator"
+OrientationInterpolator2548 = x3d.OrientationInterpolator(DEF="Kick_upper_body_RotationInterpolator")
 OrientationInterpolator2548.key = [0,0.5,1]
 OrientationInterpolator2548.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2548)
-OrientationInterpolator2549 = x3d.OrientationInterpolator()
-OrientationInterpolator2549.DEF = "Kick_whole_body_RotationInterpolator"
+OrientationInterpolator2549 = x3d.OrientationInterpolator(DEF="Kick_whole_body_RotationInterpolator")
 OrientationInterpolator2549.key = [0,0.5,1]
 OrientationInterpolator2549.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
 Group2524.children.append(OrientationInterpolator2549)
-PositionInterpolator2550 = x3d.PositionInterpolator()
-PositionInterpolator2550.DEF = "Kick_whole_body_TranslationInterpolator"
+PositionInterpolator2550 = x3d.PositionInterpolator(DEF="Kick_whole_body_TranslationInterpolator")
 PositionInterpolator2550.key = [0,0.5,1]
 PositionInterpolator2550.keyValue = [(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
 Group2524.children.append(PositionInterpolator2550)
-OrientationInterpolator2551 = x3d.OrientationInterpolator()
-OrientationInterpolator2551.DEF = "Kick_neck_RotationInterpolator"
+OrientationInterpolator2551 = x3d.OrientationInterpolator(DEF="Kick_neck_RotationInterpolator")
 OrientationInterpolator2551.key = [0,0.25,0.55,1]
 OrientationInterpolator2551.keyValue = [(0, 0, 1, 0),(1, 0, 0, 0.7),(1, 0, 0, 0.5),(0, 0, 1, 0)]
 
@@ -15666,13 +13957,10 @@ ROUTE2905.toField = "set_translation"
 ROUTE2905.toNode = "hanim_humanoid_root"
 
 Scene22.children.append(ROUTE2905)
-Group2906 = x3d.Group()
-Group2906.DEF = "Interface"
-Transform2907 = x3d.Transform()
-Transform2907.DEF = "CoordinateSystemFloor"
+Group2906 = x3d.Group(DEF="Interface")
+Transform2907 = x3d.Transform(DEF="CoordinateSystemFloor")
 Transform2907.scale = [0.1,0.1,0.1]
-Shape2908 = x3d.Shape()
-Shape2908.DEF = "AxisLines_Shape"
+Shape2908 = x3d.Shape(DEF="AxisLines_Shape")
 IndexedLineSet2909 = x3d.IndexedLineSet()
 IndexedLineSet2909.colorIndex = [0,1,2]
 IndexedLineSet2909.colorPerVertex = False
@@ -15691,30 +13979,24 @@ Shape2908.geometry = IndexedLineSet2909
 Transform2907.children.append(Shape2908)
 
 Group2906.children.append(Transform2907)
-ProximitySensor2912 = x3d.ProximitySensor()
-ProximitySensor2912.DEF = "HudProx"
+ProximitySensor2912 = x3d.ProximitySensor(DEF="HudProx")
 ProximitySensor2912.size = [50,50,50]
 
 Group2906.children.append(ProximitySensor2912)
-Transform2913 = x3d.Transform()
-Transform2913.DEF = "HudXform"
+Transform2913 = x3d.Transform(DEF="HudXform")
 Transform2913.rotation = [0,1,0,0.78]
 Transform2913.translation = [2,1,2]
 Transform2914 = x3d.Transform()
 Transform2914.scale = [0.02,0.02,0.02]
 Transform2914.translation = [-0.4,-0.01,-0.75]
-Transform2915 = x3d.Transform()
-Transform2915.DEF = "Stand_Text"
+Transform2915 = x3d.Transform(DEF="Stand_Text")
 Transform2915.translation = [0,-0.9,0]
-TouchSensor2916 = x3d.TouchSensor()
-TouchSensor2916.DEF = "Stand_Touch"
+TouchSensor2916 = x3d.TouchSensor(DEF="Stand_Touch")
 
 Transform2915.children.append(TouchSensor2916)
-Shape2917 = x3d.Shape()
-Shape2917.DEF = "StandText"
+Shape2917 = x3d.Shape(DEF="StandText")
 Appearance2918 = x3d.Appearance()
-Material2919 = x3d.Material()
-Material2919.DEF = "text_color"
+Material2919 = x3d.Material(DEF="text_color")
 Material2919.ambientIntensity = 1
 Material2919.diffuseColor = [0.819,0.521,0.169]
 Material2919.emissiveColor = [0.819,0.521,0.169]
@@ -15733,11 +14015,9 @@ Text2920.fontStyle = FontStyle2921
 Shape2917.geometry = Text2920
 
 Transform2915.children.append(Shape2917)
-Shape2922 = x3d.Shape()
-Shape2922.DEF = "Stand_Back"
+Shape2922 = x3d.Shape(DEF="Stand_Back")
 Appearance2923 = x3d.Appearance()
-Material2924 = x3d.Material()
-Material2924.DEF = "Clear"
+Material2924 = x3d.Material(DEF="Clear")
 Material2924.ambientIntensity = 1
 Material2924.diffuseColor = [0,0.5,0]
 Material2924.emissiveColor = [0,0.5,0]
@@ -15746,8 +14026,7 @@ Material2924.transparency = 0.8
 Appearance2923.material = Material2924
 
 Shape2922.appearance = Appearance2923
-IndexedFaceSet2925 = x3d.IndexedFaceSet()
-IndexedFaceSet2925.DEF = "Backing"
+IndexedFaceSet2925 = x3d.IndexedFaceSet(DEF="Backing")
 IndexedFaceSet2925.coordIndex = [0,1,2,3,-1]
 Coordinate2926 = x3d.Coordinate()
 Coordinate2926.point = [(-0.2, -0.25, -0.01),(3, -0.25, -0.01),(3, 1, -0.01),(-0.2, 1, -0.01)]
@@ -15759,18 +14038,14 @@ Shape2922.geometry = IndexedFaceSet2925
 Transform2915.children.append(Shape2922)
 
 Transform2914.children.append(Transform2915)
-Transform2927 = x3d.Transform()
-Transform2927.DEF = "Pitch_Text"
+Transform2927 = x3d.Transform(DEF="Pitch_Text")
 Transform2927.translation = [0,-2.4,0]
-TouchSensor2928 = x3d.TouchSensor()
-TouchSensor2928.DEF = "Pitch_Touch"
+TouchSensor2928 = x3d.TouchSensor(DEF="Pitch_Touch")
 
 Transform2927.children.append(TouchSensor2928)
-Shape2929 = x3d.Shape()
-Shape2929.DEF = "PitchText"
+Shape2929 = x3d.Shape(DEF="PitchText")
 Appearance2930 = x3d.Appearance()
-Material2931 = x3d.Material()
-Material2931.USE = "text_color"
+Material2931 = x3d.Material(USE="text_color")
 
 Appearance2930.material = Material2931
 
@@ -15785,35 +14060,28 @@ Text2932.fontStyle = FontStyle2933
 Shape2929.geometry = Text2932
 
 Transform2927.children.append(Shape2929)
-Shape2934 = x3d.Shape()
-Shape2934.DEF = "Pitch_Back"
+Shape2934 = x3d.Shape(DEF="Pitch_Back")
 Appearance2935 = x3d.Appearance()
-Material2936 = x3d.Material()
-Material2936.USE = "Clear"
+Material2936 = x3d.Material(USE="Clear")
 
 Appearance2935.material = Material2936
 
 Shape2934.appearance = Appearance2935
-IndexedFaceSet2937 = x3d.IndexedFaceSet()
-IndexedFaceSet2937.USE = "Backing"
+IndexedFaceSet2937 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2934.geometry = IndexedFaceSet2937
 
 Transform2927.children.append(Shape2934)
 
 Transform2914.children.append(Transform2927)
-Transform2938 = x3d.Transform()
-Transform2938.DEF = "Yaw_Text"
+Transform2938 = x3d.Transform(DEF="Yaw_Text")
 Transform2938.translation = [0,-3.8,0]
-TouchSensor2939 = x3d.TouchSensor()
-TouchSensor2939.DEF = "Yaw_Touch"
+TouchSensor2939 = x3d.TouchSensor(DEF="Yaw_Touch")
 
 Transform2938.children.append(TouchSensor2939)
-Shape2940 = x3d.Shape()
-Shape2940.DEF = "YawText"
+Shape2940 = x3d.Shape(DEF="YawText")
 Appearance2941 = x3d.Appearance()
-Material2942 = x3d.Material()
-Material2942.USE = "text_color"
+Material2942 = x3d.Material(USE="text_color")
 
 Appearance2941.material = Material2942
 
@@ -15828,35 +14096,28 @@ Text2943.fontStyle = FontStyle2944
 Shape2940.geometry = Text2943
 
 Transform2938.children.append(Shape2940)
-Shape2945 = x3d.Shape()
-Shape2945.DEF = "Yaw_Back"
+Shape2945 = x3d.Shape(DEF="Yaw_Back")
 Appearance2946 = x3d.Appearance()
-Material2947 = x3d.Material()
-Material2947.USE = "Clear"
+Material2947 = x3d.Material(USE="Clear")
 
 Appearance2946.material = Material2947
 
 Shape2945.appearance = Appearance2946
-IndexedFaceSet2948 = x3d.IndexedFaceSet()
-IndexedFaceSet2948.USE = "Backing"
+IndexedFaceSet2948 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2945.geometry = IndexedFaceSet2948
 
 Transform2938.children.append(Shape2945)
 
 Transform2914.children.append(Transform2938)
-Transform2949 = x3d.Transform()
-Transform2949.DEF = "Roll_Text"
+Transform2949 = x3d.Transform(DEF="Roll_Text")
 Transform2949.translation = [0,-5.2,0]
-TouchSensor2950 = x3d.TouchSensor()
-TouchSensor2950.DEF = "Roll_Touch"
+TouchSensor2950 = x3d.TouchSensor(DEF="Roll_Touch")
 
 Transform2949.children.append(TouchSensor2950)
-Shape2951 = x3d.Shape()
-Shape2951.DEF = "RollText"
+Shape2951 = x3d.Shape(DEF="RollText")
 Appearance2952 = x3d.Appearance()
-Material2953 = x3d.Material()
-Material2953.USE = "text_color"
+Material2953 = x3d.Material(USE="text_color")
 
 Appearance2952.material = Material2953
 
@@ -15871,35 +14132,28 @@ Text2954.fontStyle = FontStyle2955
 Shape2951.geometry = Text2954
 
 Transform2949.children.append(Shape2951)
-Shape2956 = x3d.Shape()
-Shape2956.DEF = "Roll_Back"
+Shape2956 = x3d.Shape(DEF="Roll_Back")
 Appearance2957 = x3d.Appearance()
-Material2958 = x3d.Material()
-Material2958.USE = "Clear"
+Material2958 = x3d.Material(USE="Clear")
 
 Appearance2957.material = Material2958
 
 Shape2956.appearance = Appearance2957
-IndexedFaceSet2959 = x3d.IndexedFaceSet()
-IndexedFaceSet2959.USE = "Backing"
+IndexedFaceSet2959 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2956.geometry = IndexedFaceSet2959
 
 Transform2949.children.append(Shape2956)
 
 Transform2914.children.append(Transform2949)
-Transform2960 = x3d.Transform()
-Transform2960.DEF = "Walk_Text"
+Transform2960 = x3d.Transform(DEF="Walk_Text")
 Transform2960.translation = [0,-6.6,0]
-TouchSensor2961 = x3d.TouchSensor()
-TouchSensor2961.DEF = "Walk_Touch"
+TouchSensor2961 = x3d.TouchSensor(DEF="Walk_Touch")
 
 Transform2960.children.append(TouchSensor2961)
-Shape2962 = x3d.Shape()
-Shape2962.DEF = "WalkText"
+Shape2962 = x3d.Shape(DEF="WalkText")
 Appearance2963 = x3d.Appearance()
-Material2964 = x3d.Material()
-Material2964.USE = "text_color"
+Material2964 = x3d.Material(USE="text_color")
 
 Appearance2963.material = Material2964
 
@@ -15914,35 +14168,28 @@ Text2965.fontStyle = FontStyle2966
 Shape2962.geometry = Text2965
 
 Transform2960.children.append(Shape2962)
-Shape2967 = x3d.Shape()
-Shape2967.DEF = "Walk_Back"
+Shape2967 = x3d.Shape(DEF="Walk_Back")
 Appearance2968 = x3d.Appearance()
-Material2969 = x3d.Material()
-Material2969.USE = "Clear"
+Material2969 = x3d.Material(USE="Clear")
 
 Appearance2968.material = Material2969
 
 Shape2967.appearance = Appearance2968
-IndexedFaceSet2970 = x3d.IndexedFaceSet()
-IndexedFaceSet2970.USE = "Backing"
+IndexedFaceSet2970 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2967.geometry = IndexedFaceSet2970
 
 Transform2960.children.append(Shape2967)
 
 Transform2914.children.append(Transform2960)
-Transform2971 = x3d.Transform()
-Transform2971.DEF = "Run_Text"
+Transform2971 = x3d.Transform(DEF="Run_Text")
 Transform2971.translation = [0,-8,0]
-TouchSensor2972 = x3d.TouchSensor()
-TouchSensor2972.DEF = "Run_Touch"
+TouchSensor2972 = x3d.TouchSensor(DEF="Run_Touch")
 
 Transform2971.children.append(TouchSensor2972)
-Shape2973 = x3d.Shape()
-Shape2973.DEF = "RunText"
+Shape2973 = x3d.Shape(DEF="RunText")
 Appearance2974 = x3d.Appearance()
-Material2975 = x3d.Material()
-Material2975.USE = "text_color"
+Material2975 = x3d.Material(USE="text_color")
 
 Appearance2974.material = Material2975
 
@@ -15957,35 +14204,28 @@ Text2976.fontStyle = FontStyle2977
 Shape2973.geometry = Text2976
 
 Transform2971.children.append(Shape2973)
-Shape2978 = x3d.Shape()
-Shape2978.DEF = "Run_Back"
+Shape2978 = x3d.Shape(DEF="Run_Back")
 Appearance2979 = x3d.Appearance()
-Material2980 = x3d.Material()
-Material2980.USE = "Clear"
+Material2980 = x3d.Material(USE="Clear")
 
 Appearance2979.material = Material2980
 
 Shape2978.appearance = Appearance2979
-IndexedFaceSet2981 = x3d.IndexedFaceSet()
-IndexedFaceSet2981.USE = "Backing"
+IndexedFaceSet2981 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2978.geometry = IndexedFaceSet2981
 
 Transform2971.children.append(Shape2978)
 
 Transform2914.children.append(Transform2971)
-Transform2982 = x3d.Transform()
-Transform2982.DEF = "Jump_Text"
+Transform2982 = x3d.Transform(DEF="Jump_Text")
 Transform2982.translation = [0,-9.4,0]
-TouchSensor2983 = x3d.TouchSensor()
-TouchSensor2983.DEF = "Jump_Touch"
+TouchSensor2983 = x3d.TouchSensor(DEF="Jump_Touch")
 
 Transform2982.children.append(TouchSensor2983)
-Shape2984 = x3d.Shape()
-Shape2984.DEF = "JumpText"
+Shape2984 = x3d.Shape(DEF="JumpText")
 Appearance2985 = x3d.Appearance()
-Material2986 = x3d.Material()
-Material2986.USE = "text_color"
+Material2986 = x3d.Material(USE="text_color")
 
 Appearance2985.material = Material2986
 
@@ -16000,35 +14240,28 @@ Text2987.fontStyle = FontStyle2988
 Shape2984.geometry = Text2987
 
 Transform2982.children.append(Shape2984)
-Shape2989 = x3d.Shape()
-Shape2989.DEF = "Jump_Back"
+Shape2989 = x3d.Shape(DEF="Jump_Back")
 Appearance2990 = x3d.Appearance()
-Material2991 = x3d.Material()
-Material2991.USE = "Clear"
+Material2991 = x3d.Material(USE="Clear")
 
 Appearance2990.material = Material2991
 
 Shape2989.appearance = Appearance2990
-IndexedFaceSet2992 = x3d.IndexedFaceSet()
-IndexedFaceSet2992.USE = "Backing"
+IndexedFaceSet2992 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape2989.geometry = IndexedFaceSet2992
 
 Transform2982.children.append(Shape2989)
 
 Transform2914.children.append(Transform2982)
-Transform2993 = x3d.Transform()
-Transform2993.DEF = "Kick_Text"
+Transform2993 = x3d.Transform(DEF="Kick_Text")
 Transform2993.translation = [0,-10.8,0]
-TouchSensor2994 = x3d.TouchSensor()
-TouchSensor2994.DEF = "Kick_Touch"
+TouchSensor2994 = x3d.TouchSensor(DEF="Kick_Touch")
 
 Transform2993.children.append(TouchSensor2994)
-Shape2995 = x3d.Shape()
-Shape2995.DEF = "KickText"
+Shape2995 = x3d.Shape(DEF="KickText")
 Appearance2996 = x3d.Appearance()
-Material2997 = x3d.Material()
-Material2997.USE = "text_color"
+Material2997 = x3d.Material(USE="text_color")
 
 Appearance2996.material = Material2997
 
@@ -16043,35 +14276,28 @@ Text2998.fontStyle = FontStyle2999
 Shape2995.geometry = Text2998
 
 Transform2993.children.append(Shape2995)
-Shape3000 = x3d.Shape()
-Shape3000.DEF = "Kick_Back"
+Shape3000 = x3d.Shape(DEF="Kick_Back")
 Appearance3001 = x3d.Appearance()
-Material3002 = x3d.Material()
-Material3002.USE = "Clear"
+Material3002 = x3d.Material(USE="Clear")
 
 Appearance3001.material = Material3002
 
 Shape3000.appearance = Appearance3001
-IndexedFaceSet3003 = x3d.IndexedFaceSet()
-IndexedFaceSet3003.USE = "Backing"
+IndexedFaceSet3003 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape3000.geometry = IndexedFaceSet3003
 
 Transform2993.children.append(Shape3000)
 
 Transform2914.children.append(Transform2993)
-Transform3004 = x3d.Transform()
-Transform3004.DEF = "Stop_Text"
+Transform3004 = x3d.Transform(DEF="Stop_Text")
 Transform3004.translation = [0,0.4,0]
-TouchSensor3005 = x3d.TouchSensor()
-TouchSensor3005.DEF = "Stop_Touch"
+TouchSensor3005 = x3d.TouchSensor(DEF="Stop_Touch")
 
 Transform3004.children.append(TouchSensor3005)
-Shape3006 = x3d.Shape()
-Shape3006.DEF = "StopText"
+Shape3006 = x3d.Shape(DEF="StopText")
 Appearance3007 = x3d.Appearance()
-Material3008 = x3d.Material()
-Material3008.USE = "text_color"
+Material3008 = x3d.Material(USE="text_color")
 
 Appearance3007.material = Material3008
 
@@ -16086,31 +14312,25 @@ Text3009.fontStyle = FontStyle3010
 Shape3006.geometry = Text3009
 
 Transform3004.children.append(Shape3006)
-Shape3011 = x3d.Shape()
-Shape3011.DEF = "Stop_Back"
+Shape3011 = x3d.Shape(DEF="Stop_Back")
 Appearance3012 = x3d.Appearance()
-Material3013 = x3d.Material()
-Material3013.USE = "Clear"
+Material3013 = x3d.Material(USE="Clear")
 
 Appearance3012.material = Material3013
 
 Shape3011.appearance = Appearance3012
-IndexedFaceSet3014 = x3d.IndexedFaceSet()
-IndexedFaceSet3014.USE = "Backing"
+IndexedFaceSet3014 = x3d.IndexedFaceSet(USE="Backing")
 
 Shape3011.geometry = IndexedFaceSet3014
 
 Transform3004.children.append(Shape3011)
 
 Transform2914.children.append(Transform3004)
-Transform3015 = x3d.Transform()
-Transform3015.DEF = "SceneLabel"
+Transform3015 = x3d.Transform(DEF="SceneLabel")
 Transform3015.translation = [1.3,3,0]
-Shape3016 = x3d.Shape()
-Shape3016.DEF = "SceneLabelText"
+Shape3016 = x3d.Shape(DEF="SceneLabelText")
 Appearance3017 = x3d.Appearance()
-Material3018 = x3d.Material()
-Material3018.USE = "text_color"
+Material3018 = x3d.Material(USE="text_color")
 
 Appearance3017.material = Material3018
 

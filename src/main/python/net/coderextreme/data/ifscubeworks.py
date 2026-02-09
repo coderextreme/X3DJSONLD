@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -35,46 +35,40 @@ meta7.name = "license"
 meta7.content = "https://www.web3d.org/x3d/content/examples/license.html"
 
 head1.children.append(meta7)
-meta8 = x3d.meta()
-meta8.name = "generator"
-meta8.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta8)
 
 X3D0.head = head1
-Scene9 = x3d.Scene()
-WorldInfo10 = x3d.WorldInfo()
-WorldInfo10.title = "ifscubeworks.x3d"
+Scene8 = x3d.Scene()
+WorldInfo9 = x3d.WorldInfo()
+WorldInfo9.title = "ifscubeworks.x3d"
 
-Scene9.children.append(WorldInfo10)
-Group11 = x3d.Group()
-Shape12 = x3d.Shape()
-IndexedFaceSet13 = x3d.IndexedFaceSet()
-IndexedFaceSet13.DEF = "IndexedFaceSet"
-IndexedFaceSet13.coordIndex = [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]
-IndexedFaceSet13.normalIndex = [0,0,1,2,3,4,5]
-IndexedFaceSet13.normalPerVertex = False
-IndexedFaceSet13.colorIndex = [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]
-Coordinate14 = x3d.Coordinate()
-Coordinate14.point = [(0, 0, 1),(0, 1, 1),(1, 1, 1),(1, 0, 1)]
+Scene8.children.append(WorldInfo9)
+Group10 = x3d.Group()
+Shape11 = x3d.Shape()
+IndexedFaceSet12 = x3d.IndexedFaceSet(DEF="IndexedFaceSet")
+IndexedFaceSet12.normalPerVertex = False
+IndexedFaceSet12.colorIndex = [0,0,0,-1,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1,0,0,0,0,-1]
+IndexedFaceSet12.normalIndex = [0,0,1,2,3,4,5]
+IndexedFaceSet12.coordIndex = [0,0,1,-1,0,1,1,-1,2,2,3,3,-1,0,3,3,0,-1,0,3,2,1,-1,1,2,2,1,-1,1,2,3,0,-1]
+Color13 = x3d.Color()
+Color13.color = [(0, 1, 0)]
 
-IndexedFaceSet13.coord = Coordinate14
-Normal15 = x3d.Normal()
-Normal15.vector = [(1, 0, 0),(-1, 0, 0),(0, 1, 0),(0, 0, -1),(0, -1, 0),(0, 0, 1)]
+IndexedFaceSet12.color = Color13
+Normal14 = x3d.Normal()
+Normal14.vector = [(1, 0, 0),(-1, 0, 0),(0, 1, 0),(0, 0, -1),(0, -1, 0),(0, 0, 1)]
 
-IndexedFaceSet13.normal = Normal15
-Color16 = x3d.Color()
-Color16.color = [(0, 1, 0)]
+IndexedFaceSet12.normal = Normal14
+Coordinate15 = x3d.Coordinate()
+Coordinate15.point = [(0, 0, 1),(0, 1, 1),(1, 1, 1),(1, 0, 1)]
 
-IndexedFaceSet13.color = Color16
+IndexedFaceSet12.coord = Coordinate15
 
-Shape12.geometry = IndexedFaceSet13
+Shape11.geometry = IndexedFaceSet12
 
-Group11.children.append(Shape12)
+Group10.children.append(Shape11)
 
-Scene9.children.append(Group11)
+Scene8.children.append(Group10)
 
-X3D0.Scene = Scene9
+X3D0.Scene = Scene8
 f = open("../data/ifscubeworks.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

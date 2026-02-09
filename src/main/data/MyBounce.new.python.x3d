@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='Scripting'/>
     <meta content='MyBounce.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='3 prismatic spheres' name='description'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d' name='identifier'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -19,10 +17,10 @@
       </Shape>
     </Transform>
     <Script DEF='Bounce2'>
-      <field accessType='inputOnly' name='set_translation' type='SFVec3f' value='0 0 0'/>
-      <field accessType='outputOnly' name='translation_changed' type='SFVec3f' value='0 0 0'/>
-      <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
-      <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+      <field accessType='inputOnly' name='set_translation' type='SFVec3f'/>
+      <field accessType='outputOnly' name='translation_changed' type='SFVec3f'/>
+      <field accessType='inputOutput' name='translation' type='SFVec3f'/>
+      <field accessType='inputOutput' name='velocity' type='SFVec3f'/>
       <field accessType='inputOnly' name='set_fraction' type='SFTime'/>
     <![CDATA[ecmascript:
 "+
@@ -86,7 +84,7 @@
 "+
 "			}]]>
     </Script>
-    <TimeSensor DEF='TourTime'/>
+    <TimeSensor DEF='TourTime' cycleInterval='0.15' loop='true'/>
     <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce2'/>
     <ROUTE fromField='translation_changed' fromNode='Bounce2' toField='set_translation' toNode='transform'/>
   </Scene>

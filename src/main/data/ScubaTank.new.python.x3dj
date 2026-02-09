@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Interchange",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"23 May 2020",
+        "@content":"Mon, 09 Feb 2026 07:12:56 GMT",
         "@name":"modified"
       }
     },
@@ -48,20 +48,6 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -86,7 +72,11 @@
                         "Material":
                         {
       {
-        "@DEF":"tank"
+        "@DEF":"tank",
+        "@ambientIntensity":"0.3",
+        "@diffuseColor":"0.3 0.3 0.5",
+        "@shininess":"0.1",
+        "@specularColor":"0.7 0.7 0.8"
       }
     },
                     }                    "Cylinder":
@@ -132,7 +122,9 @@
                         "Material":
                         {
       {
-        "@DEF":"black"
+        "@DEF":"black",
+        "@ambientIntensity":"0.3",
+        "@diffuseColor":"0 0 0"
       }
     },
                     }                    "Cylinder":
@@ -164,7 +156,11 @@
                                 "Material":
                                 {
       {
-        "@DEF":"pressureColor"
+        "@DEF":"pressureColor",
+        "@ambientIntensity":"0.4",
+        "@diffuseColor":"0.91 0.91 0.91",
+        "@shininess":"0.16",
+        "@specularColor":"0.91 0.9 0.91"
       }
     },
                             }                            "Cylinder":

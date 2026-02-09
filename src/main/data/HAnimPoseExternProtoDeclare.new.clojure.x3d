@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Full' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
+  <head>
+    <meta content='HAnimPoseExternProtoDeclare.x3d' name='title'/>
+    <meta content='Define ExternProtoDeclare for an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed.' name='description'/>
+    <meta content='1 November 2025' name='created'/>
+    <meta content='Mon, 09 Feb 2026 07:11:17 GMT' name='modified'/>
+    <meta content='Don Brutzman' name='creator'/>
+    <meta content='Joe Williams' name='creator'/>
+    <meta content='Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE' name='contributor'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose' name='specificationUrl'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.2 Modelling of human-like HAnim figures' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures' name='specificationUrl'/>
+    <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses' name='specificationUrl'/>
+    <meta content='Direct scene manipulations with Javascript, https://doc.instantreality.org/tutorial/direct-scene-manipulations-with-javascript' name='reference'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
+  </head>
+  <Scene>
+    <ExternProtoDeclare appinfo='Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values.' name='HAnimPose' url='"Filename.x3d#HAnimPose" "https://some.address.org/Filename.x3d#HAnimPose"'>
+      <field accessType='inputOutput' appinfo='HAnimHumanoid for this Pose to act upon' name='parentHAnimHumanoid' type='SFNode'/>
+      <field accessType='inputOutput' appinfo='name of this pose' name='name' type='SFString'/>
+      <field accessType='inputOutput' appinfo='joint values to apply to HAnimHumanoid' name='children' type='MFNode'/>
+      <field accessType='inputOutput' appinfo='explanation of purpose' name='description' type='SFString'/>
+      <field accessType='inputOutput' appinfo='default value true' name='enabled' type='SFBool'/>
+      <field accessType='initializeOnly' appinfo='default is no loa' name='loa' type='SFInt32'/>
+      <field accessType='inputOutput' appinfo='how many seconds to achieve the pose' name='transitionDuration' type='SFTime'/>
+      <field accessType='inputOutput' appinfo='single Metadata* node' name='metadata' type='SFNode'/>
+      <field accessType='outputOnly' appinfo='event indicating when pose transition is active' name='isActive' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1' name='commencePose' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='reset the skeleton to I pose with all joints zeroed' name='resetAllJoints' type='SFBool'/>
+      <field accessType='inputOnly' appinfo='allows transition to proceed incrementally from fraction [0..10' name='set_fraction' type='SFFloat'/>
+      <field accessType='inputOnly' appinfo='starts the animation clock' name='set_startTime' type='SFTime'/>
+      <field accessType='inputOnly' appinfo='possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE' name='isLoaded' type='SFBool'/>
+      <field accessType='inputOutput' appinfo='debug trace to Browser output console this is a local prototype field' name='traceEnabled' type='SFBool'/>
+    </ExternProtoDeclare>
+    <WorldInfo DEF='ModelInfo' info='"Design to illustrate a potential HAnimPose node"' title='HAnimPoseExternProtoDeclare'/>
+    <Background skyColor='0.6 0.6 0.8'/>
+    <NavigationInfo/>
+    <Viewpoint description='HAnimPoseExternProtoDeclare description' position='0 1 4'/>
+    <Transform DEF='DisplayHeader1' translation='0 1.5 0'>
+      <Anchor description='go to HAnimPoseExternProtoDeclareIndex page' parameter='"target=_blank"' url='"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclareIndex.html"'>
+        <Shape>
+          <Appearance DEF='PoseTextAppearance'>
+            <Material diffuseColor='0.1 0.3 0.5'/>
+          </Appearance>
+          <Text string='"Utility scene" "HAnimPoseExternProtoDeclare.x3d"'>
+            <FontStyle DEF='HeaderFont' family='"SANS"' justify='"MIDDLE" "MIDDLE"' size='0.15' style='BOLD'/>
+          </Text>
+        </Shape>
+        <Shape>
+          <Appearance DEF='TransparentAppearance'>
+            <Material transparency='1.0'/>
+          </Appearance>
+          <Box size='3.5 0.5 0.001'/>
+        </Shape>
+      </Anchor>
+    </Transform>
+    <Transform DEF='DisplayHeader2' translation='0 0.5 0'>
+      <Anchor description='go to HAnimPosePrototypeIndex page' parameter='"target=_blank"' url='"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeIndex.html"'>
+        <Shape>
+          <Appearance USE='PoseTextAppearance'/>
+          <Text string='"This model supports" "HAnimPosePrototype.x3d"'>
+            <FontStyle USE='HeaderFont'/>
+          </Text>
+        </Shape>
+      </Anchor>
+      <Shape>
+        <Appearance USE='TransparentAppearance'/>
+        <Box size='2.6 0.5 0.001'/>
+      </Shape>
+    </Transform>
+  </Scene>
+</X3D>

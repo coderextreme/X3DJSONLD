@@ -3,383 +3,377 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
-component2 = x3d.component()
-component2.name = "Scripting"
-component2.level = 1
+meta2 = x3d.meta()
+meta2.name = "creator"
+meta2.content = "John W Carlson"
 
-head1.children.append(component2)
+head1.children.append(meta2)
 meta3 = x3d.meta()
-meta3.name = "creator"
-meta3.content = "John W Carlson"
+meta3.name = "created"
+meta3.content = "December 13 2015"
 
 head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.name = "created"
-meta4.content = "December 13 2015"
+meta4.name = "modified"
+meta4.content = "Mon, 09 Feb 2026 07:11:19 GMT"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.name = "modified"
-meta5.content = "July 14 2025"
+meta5.name = "title"
+meta5.content = "force.x3d"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.name = "title"
-meta6.content = "force.x3d"
+meta6.name = "identifier"
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
 
 head1.children.append(meta6)
-meta7 = x3d.meta()
-meta7.name = "identifier"
-meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"
-
-head1.children.append(meta7)
-meta8 = x3d.meta()
-meta8.name = "description"
-meta8.content = "beginnings of a force directed graph in 3D"
-
-head1.children.append(meta8)
-meta9 = x3d.meta()
-meta9.name = "generator"
-meta9.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta9)
-meta10 = x3d.meta()
-meta10.name = "generator"
-meta10.content = "x3d-tidy V1.0.175, https://www.npmjs.com/package/x3d-tidy"
-
-head1.children.append(meta10)
 
 X3D0.head = head1
-Scene11 = x3d.Scene()
-ProtoDeclare12 = x3d.ProtoDeclare()
-ProtoDeclare12.name = "node"
-ProtoInterface13 = x3d.ProtoInterface()
-field14 = x3d.field()
-field14.name = "position"
-field14.accessType = "inputOutput"
-field14.type = "SFVec3f"
+Scene7 = x3d.Scene()
+ProtoDeclare8 = x3d.ProtoDeclare()
+ProtoDeclare8.name = "node"
+ProtoInterface9 = x3d.ProtoInterface()
+field10 = x3d.field()
+field10.accessType = "inputOutput"
+field10.type = "SFVec3f"
+field10.name = "position"
 
-ProtoInterface13.field.append(field14)
+ProtoInterface9.field.append(field10)
 
-ProtoDeclare12.ProtoInterface = ProtoInterface13
-ProtoBody15 = x3d.ProtoBody()
-Group16 = x3d.Group()
-Transform17 = x3d.Transform()
-Transform17.DEF = "transform"
-IS18 = x3d.IS()
-connect19 = x3d.connect()
-connect19.nodeField = "translation"
-connect19.protoField = "position"
+ProtoDeclare8.ProtoInterface = ProtoInterface9
+ProtoBody11 = x3d.ProtoBody()
+Group12 = x3d.Group()
+Transform13 = x3d.Transform(DEF="transform")
+Shape14 = x3d.Shape()
+Appearance15 = x3d.Appearance()
+Material16 = x3d.Material()
+Material16.diffuseColor = [1,0,0]
 
-IS18.connect.append(connect19)
+Appearance15.material = Material16
 
-Transform17.IS = IS18
-Shape20 = x3d.Shape()
-Sphere21 = x3d.Sphere()
+Shape14.appearance = Appearance15
+Sphere17 = x3d.Sphere()
 
-Shape20.geometry = Sphere21
-Appearance22 = x3d.Appearance()
-Material23 = x3d.Material()
-Material23.diffuseColor = [1,0,0]
+Shape14.geometry = Sphere17
 
-Appearance22.material = Material23
+Transform13.children.append(Shape14)
+Transform18 = x3d.Transform()
+Transform18.translation = [1,0,0]
+Shape19 = x3d.Shape()
+Appearance20 = x3d.Appearance()
+Material21 = x3d.Material()
+Material21.diffuseColor = [0,0,1]
 
-Shape20.appearance = Appearance22
+Appearance20.material = Material21
 
-Transform17.children.append(Shape20)
-Transform24 = x3d.Transform()
-Transform24.translation = [1,0,0]
-Shape25 = x3d.Shape()
-Appearance26 = x3d.Appearance()
-Material27 = x3d.Material()
-Material27.diffuseColor = [0,0,1]
+Shape19.appearance = Appearance20
+Text22 = x3d.Text()
+Text22.string = ["Node"]
+FontStyle23 = x3d.FontStyle()
+FontStyle23.size = 5
+FontStyle23.justify = ["MIDDLE","MIDDLE"]
 
-Appearance26.material = Material27
+Text22.fontStyle = FontStyle23
 
-Shape25.appearance = Appearance26
-Text28 = x3d.Text()
-Text28.string = ["Node"]
-FontStyle29 = x3d.FontStyle()
-FontStyle29.size = 5
-FontStyle29.justify = ["MIDDLE","MIDDLE"]
+Shape19.geometry = Text22
 
-Text28.fontStyle = FontStyle29
+Transform18.children.append(Shape19)
 
-Shape25.geometry = Text28
+Transform13.children.append(Transform18)
+IS24 = x3d.IS()
+connect25 = x3d.connect()
+connect25.nodeField = "translation"
+connect25.protoField = "position"
 
-Transform24.children.append(Shape25)
+IS24.connect.append(connect25)
 
-Transform17.children.append(Transform24)
+Transform13.IS = IS24
 
-Group16.children.append(Transform17)
-PositionInterpolator30 = x3d.PositionInterpolator()
-PositionInterpolator30.DEF = "NodePosition"
-PositionInterpolator30.key = [0,1]
-PositionInterpolator30.keyValue = [(0, 0, 0),(0, 5, 0)]
+Group12.children.append(Transform13)
+PositionInterpolator26 = x3d.PositionInterpolator(DEF="NodePosition")
+PositionInterpolator26.key = [0,1]
+PositionInterpolator26.keyValue = [(0, 0, 0),(0, 5, 0)]
 
-Group16.children.append(PositionInterpolator30)
-Script31 = x3d.Script()
-Script31.DEF = "MoveBall"
-field32 = x3d.field()
-field32.name = "translation"
-field32.accessType = "inputOutput"
-field32.type = "SFVec3f"
-field32.value = [50,50,0]
+Group12.children.append(PositionInterpolator26)
+Script27 = x3d.Script(DEF="MoveBall")
+field28 = x3d.field()
+field28.accessType = "inputOutput"
+field28.type = "SFVec3f"
+field28.name = "translation"
+field28.value = [50,50,0]
 
-Script31.field.append(field32)
-field33 = x3d.field()
-field33.name = "old"
-field33.accessType = "inputOutput"
-field33.type = "SFVec3f"
+Script27.field.append(field28)
+field29 = x3d.field()
+field29.accessType = "inputOutput"
+field29.type = "SFVec3f"
+field29.name = "old"
 
-Script31.field.append(field33)
-field34 = x3d.field()
-field34.name = "set_cycle"
-field34.accessType = "inputOnly"
-field34.type = "SFTime"
+Script27.field.append(field29)
+field30 = x3d.field()
+field30.accessType = "inputOnly"
+field30.type = "SFTime"
+field30.name = "set_cycle"
 
-Script31.field.append(field34)
-field35 = x3d.field()
-field35.name = "keyValue"
-field35.accessType = "outputOnly"
-field35.type = "MFVec3f"
+Script27.field.append(field30)
+field31 = x3d.field()
+field31.accessType = "outputOnly"
+field31.type = "MFVec3f"
+field31.name = "keyValue"
 
-Script31.field.append(field35)
+Script27.field.append(field31)
 
-Script31.sourceCode = '''ecmascript:\n"+
+Script27.sourceCode = '''ecmascript:\n"+
 "		function set_cycle(value) {\n"+
 "			old = translation;\n"+
 "			translation = new SFVec3f(Math.random()*100-50, Math.random()*100-50, Math.random()*100-50);\n"+
 "			keyValue = new MFVec3f(old, translation);\n"+
 "		}'''
 
-Group16.children.append(Script31)
-TimeSensor36 = x3d.TimeSensor()
-TimeSensor36.DEF = "nodeClock"
-TimeSensor36.cycleInterval = 3
-TimeSensor36.loop = True
+Group12.children.append(Script27)
+TimeSensor32 = x3d.TimeSensor(DEF="nodeClock")
+TimeSensor32.cycleInterval = 3
+TimeSensor32.loop = True
 
-Group16.children.append(TimeSensor36)
-ROUTE37 = x3d.ROUTE()
-ROUTE37.fromNode = "nodeClock"
-ROUTE37.fromField = "cycleTime"
-ROUTE37.toNode = "MoveBall"
-ROUTE37.toField = "set_cycle"
+Group12.children.append(TimeSensor32)
 
-Group16.children.append(ROUTE37)
-ROUTE38 = x3d.ROUTE()
-ROUTE38.fromNode = "nodeClock"
-ROUTE38.fromField = "fraction_changed"
-ROUTE38.toNode = "NodePosition"
-ROUTE38.toField = "set_fraction"
+ProtoBody11.children.append(Group12)
+ROUTE33 = x3d.ROUTE()
+ROUTE33.fromNode = "nodeClock"
+ROUTE33.fromField = "cycleTime"
+ROUTE33.toNode = "MoveBall"
+ROUTE33.toField = "set_cycle"
 
-Group16.children.append(ROUTE38)
-ROUTE39 = x3d.ROUTE()
-ROUTE39.fromNode = "MoveBall"
-ROUTE39.fromField = "keyValue"
-ROUTE39.toNode = "NodePosition"
-ROUTE39.toField = "set_keyValue"
+ProtoBody11.children.append(ROUTE33)
+ROUTE34 = x3d.ROUTE()
+ROUTE34.fromNode = "nodeClock"
+ROUTE34.fromField = "fraction_changed"
+ROUTE34.toNode = "NodePosition"
+ROUTE34.toField = "set_fraction"
 
-Group16.children.append(ROUTE39)
-ROUTE40 = x3d.ROUTE()
-ROUTE40.fromNode = "NodePosition"
-ROUTE40.fromField = "value_changed"
-ROUTE40.toNode = "transform"
-ROUTE40.toField = "set_translation"
+ProtoBody11.children.append(ROUTE34)
+ROUTE35 = x3d.ROUTE()
+ROUTE35.fromNode = "MoveBall"
+ROUTE35.fromField = "keyValue"
+ROUTE35.toNode = "NodePosition"
+ROUTE35.toField = "set_keyValue"
 
-Group16.children.append(ROUTE40)
+ProtoBody11.children.append(ROUTE35)
+ROUTE36 = x3d.ROUTE()
+ROUTE36.fromNode = "NodePosition"
+ROUTE36.fromField = "value_changed"
+ROUTE36.toNode = "transform"
+ROUTE36.toField = "set_translation"
 
-ProtoBody15.children.append(Group16)
+ProtoBody11.children.append(ROUTE36)
 
-ProtoDeclare12.ProtoBody = ProtoBody15
+ProtoDeclare8.ProtoBody = ProtoBody11
 
-Scene11.children.append(ProtoDeclare12)
-ProtoDeclare41 = x3d.ProtoDeclare()
-ProtoDeclare41.name = "cyl"
-ProtoInterface42 = x3d.ProtoInterface()
-field43 = x3d.field()
-field43.name = "set_positionA"
-field43.accessType = "inputOutput"
-field43.type = "SFVec3f"
+Scene7.children.append(ProtoDeclare8)
+ProtoDeclare37 = x3d.ProtoDeclare()
+ProtoDeclare37.name = "cyl"
+ProtoInterface38 = x3d.ProtoInterface()
+field39 = x3d.field()
+field39.accessType = "inputOutput"
+field39.type = "SFVec3f"
+field39.name = "set_positionA"
 
-ProtoInterface42.field.append(field43)
-field44 = x3d.field()
-field44.name = "set_positionB"
-field44.accessType = "inputOutput"
-field44.type = "SFVec3f"
+ProtoInterface38.field.append(field39)
+field40 = x3d.field()
+field40.accessType = "inputOutput"
+field40.type = "SFVec3f"
+field40.name = "set_positionB"
 
-ProtoInterface42.field.append(field44)
+ProtoInterface38.field.append(field40)
 
-ProtoDeclare41.ProtoInterface = ProtoInterface42
-ProtoBody45 = x3d.ProtoBody()
-Group46 = x3d.Group()
-Shape47 = x3d.Shape()
-Appearance48 = x3d.Appearance()
-Material49 = x3d.Material()
-Material49.diffuseColor = [0,1,0]
+ProtoDeclare37.ProtoInterface = ProtoInterface38
+ProtoBody41 = x3d.ProtoBody()
+Group42 = x3d.Group()
+Shape43 = x3d.Shape()
+Appearance44 = x3d.Appearance()
+Material45 = x3d.Material()
+Material45.diffuseColor = [0,1,0]
 
-Appearance48.material = Material49
+Appearance44.material = Material45
 
-Shape47.appearance = Appearance48
-Extrusion50 = x3d.Extrusion()
-Extrusion50.DEF = "extrusion"
-Extrusion50.creaseAngle = 0.785
-Extrusion50.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
-Extrusion50.spine = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
+Shape43.appearance = Appearance44
+Extrusion46 = x3d.Extrusion(DEF="extrusion")
+Extrusion46.creaseAngle = 0.785
+Extrusion46.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Extrusion46.spine = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
 
-Shape47.geometry = Extrusion50
+Shape43.geometry = Extrusion46
 
-Group46.children.append(Shape47)
-Script51 = x3d.Script()
-Script51.DEF = "MoveCylinder"
-field52 = x3d.field()
-field52.name = "spine"
-field52.accessType = "inputOutput"
-field52.type = "MFVec3f"
-field52.value = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
+Group42.children.append(Shape43)
+Script47 = x3d.Script(DEF="MoveCylinder")
+field48 = x3d.field()
+field48.accessType = "inputOutput"
+field48.type = "MFVec3f"
+field48.name = "spine"
+field48.value = [(0, -50, 0),(0, 0, 0),(0, 50, 0)]
 
-Script51.field.append(field52)
-field53 = x3d.field()
-field53.name = "endA"
-field53.accessType = "inputOutput"
-field53.type = "SFVec3f"
+Script47.field.append(field48)
+field49 = x3d.field()
+field49.accessType = "inputOutput"
+field49.type = "SFVec3f"
+field49.name = "endA"
 
-Script51.field.append(field53)
-field54 = x3d.field()
-field54.name = "endB"
-field54.accessType = "inputOutput"
-field54.type = "SFVec3f"
+Script47.field.append(field49)
+field50 = x3d.field()
+field50.accessType = "inputOutput"
+field50.type = "SFVec3f"
+field50.name = "endB"
 
-Script51.field.append(field54)
-IS55 = x3d.IS()
-connect56 = x3d.connect()
-connect56.nodeField = "endA"
-connect56.protoField = "set_positionA"
+Script47.field.append(field50)
 
-IS55.connect.append(connect56)
-connect57 = x3d.connect()
-connect57.nodeField = "endB"
-connect57.protoField = "set_positionB"
-
-IS55.connect.append(connect57)
-
-Script51.IS = IS55
-
-Script51.sourceCode = '''ecmascript:\n"+
+Script47.sourceCode = '''ecmascript:\n"+
 "\n"+
 "                function set_endA(value) {\n"+
 "		    spine = new MFVec3f(value, spine[1]);\n"+
 "                }\n"+
-"\n"+
+"                \n"+
 "                function set_endB(value) {\n"+
 "		    spine = new MFVec3f(spine[0], value);\n"+
 "                }'''
+IS51 = x3d.IS()
+connect52 = x3d.connect()
+connect52.nodeField = "endA"
+connect52.protoField = "set_positionA"
 
-Group46.children.append(Script51)
-ROUTE58 = x3d.ROUTE()
-ROUTE58.fromNode = "MoveCylinder"
-ROUTE58.fromField = "spine_changed"
-ROUTE58.toNode = "extrusion"
-ROUTE58.toField = "set_spine"
+IS51.connect.append(connect52)
+connect53 = x3d.connect()
+connect53.nodeField = "endB"
+connect53.protoField = "set_positionB"
 
-Group46.children.append(ROUTE58)
+IS51.connect.append(connect53)
 
-ProtoBody45.children.append(Group46)
+Script47.IS = IS51
 
-ProtoDeclare41.ProtoBody = ProtoBody45
+Group42.children.append(Script47)
 
-Scene11.children.append(ProtoDeclare41)
-Transform59 = x3d.Transform()
-Transform59.DEF = "HoldsContent"
-Transform59.scale = [0.1,0.1,0.1]
-PlaneSensor60 = x3d.PlaneSensor()
-PlaneSensor60.DEF = "clickGenerator"
-PlaneSensor60.description = "click on background to add nodes, click on nodes to add links"
-PlaneSensor60.minPosition = [-50,-50]
-PlaneSensor60.maxPosition = [50,50]
+ProtoBody41.children.append(Group42)
+ROUTE54 = x3d.ROUTE()
+ROUTE54.fromNode = "MoveCylinder"
+ROUTE54.fromField = "spine_changed"
+ROUTE54.toNode = "extrusion"
+ROUTE54.toField = "set_spine"
 
-Transform59.children.append(PlaneSensor60)
-ProtoInstance61 = x3d.ProtoInstance()
+ProtoBody41.children.append(ROUTE54)
+
+ProtoDeclare37.ProtoBody = ProtoBody41
+
+Scene7.children.append(ProtoDeclare37)
+Transform55 = x3d.Transform(DEF="HoldsContent")
+Transform55.scale = [0.1,0.1,0.1]
+PlaneSensor56 = x3d.PlaneSensor(DEF="clickGenerator")
+PlaneSensor56.description = "click on background to add nodes, click on nodes to add links"
+PlaneSensor56.minPosition = [-50,-50]
+PlaneSensor56.maxPosition = [50,50]
+
+Transform55.children.append(PlaneSensor56)
+ProtoInstance57 = x3d.ProtoInstance(DEF="nodeA")
+ProtoInstance57.name = "node"
+fieldValue58 = x3d.fieldValue()
+fieldValue58.name = "position"
+fieldValue58.value = "0 1.818333 0"
+
+ProtoInstance57.fieldValue.append(fieldValue58)
+
+Transform55.children.append(ProtoInstance57)
+ProtoInstance59 = x3d.ProtoInstance(DEF="nodeB")
+ProtoInstance59.name = "node"
+fieldValue60 = x3d.fieldValue()
+fieldValue60.name = "position"
+fieldValue60.value = "0 1.818333 0"
+
+ProtoInstance59.fieldValue.append(fieldValue60)
+
+Transform55.children.append(ProtoInstance59)
+ProtoInstance61 = x3d.ProtoInstance(DEF="nodeC")
 ProtoInstance61.name = "node"
-ProtoInstance61.DEF = "nodeA"
 fieldValue62 = x3d.fieldValue()
 fieldValue62.name = "position"
-fieldValue62.value = "0 1.388333 0"
+fieldValue62.value = "0 1.818333 0"
 
 ProtoInstance61.fieldValue.append(fieldValue62)
 
-Transform59.children.append(ProtoInstance61)
-ProtoInstance63 = x3d.ProtoInstance()
+Transform55.children.append(ProtoInstance61)
+ProtoInstance63 = x3d.ProtoInstance(DEF="nodeD")
 ProtoInstance63.name = "node"
-ProtoInstance63.DEF = "nodeB"
 fieldValue64 = x3d.fieldValue()
 fieldValue64.name = "position"
-fieldValue64.value = "0 1.388333 0"
+fieldValue64.value = "0 1.818333 0"
 
 ProtoInstance63.fieldValue.append(fieldValue64)
 
-Transform59.children.append(ProtoInstance63)
-ProtoInstance65 = x3d.ProtoInstance()
-ProtoInstance65.name = "node"
-ProtoInstance65.DEF = "nodeC"
+Transform55.children.append(ProtoInstance63)
+ProtoInstance65 = x3d.ProtoInstance(DEF="linkA")
+ProtoInstance65.name = "cyl"
 fieldValue66 = x3d.fieldValue()
-fieldValue66.name = "position"
-fieldValue66.value = "0 1.388333 0"
+fieldValue66.name = "set_positionA"
+fieldValue66.value = "0 1.818333 0"
 
 ProtoInstance65.fieldValue.append(fieldValue66)
+fieldValue67 = x3d.fieldValue()
+fieldValue67.name = "set_positionB"
+fieldValue67.value = "0 1.818333 0"
 
-Transform59.children.append(ProtoInstance65)
-ProtoInstance67 = x3d.ProtoInstance()
-ProtoInstance67.name = "node"
-ProtoInstance67.DEF = "nodeD"
-fieldValue68 = x3d.fieldValue()
-fieldValue68.name = "position"
-fieldValue68.value = "0 1.388333 0"
+ProtoInstance65.fieldValue.append(fieldValue67)
 
-ProtoInstance67.fieldValue.append(fieldValue68)
+Transform55.children.append(ProtoInstance65)
+ProtoInstance68 = x3d.ProtoInstance(DEF="linkB")
+ProtoInstance68.name = "cyl"
+fieldValue69 = x3d.fieldValue()
+fieldValue69.name = "set_positionA"
+fieldValue69.value = "0 1.818333 0"
 
-Transform59.children.append(ProtoInstance67)
-ProtoInstance69 = x3d.ProtoInstance()
-ProtoInstance69.name = "cyl"
-ProtoInstance69.DEF = "linkA"
+ProtoInstance68.fieldValue.append(fieldValue69)
+fieldValue70 = x3d.fieldValue()
+fieldValue70.name = "set_positionB"
+fieldValue70.value = "0 1.818333 0"
 
-Transform59.children.append(ProtoInstance69)
-ProtoInstance70 = x3d.ProtoInstance()
-ProtoInstance70.name = "cyl"
-ProtoInstance70.DEF = "linkB"
+ProtoInstance68.fieldValue.append(fieldValue70)
 
-Transform59.children.append(ProtoInstance70)
-ProtoInstance71 = x3d.ProtoInstance()
+Transform55.children.append(ProtoInstance68)
+ProtoInstance71 = x3d.ProtoInstance(DEF="linkC")
 ProtoInstance71.name = "cyl"
-ProtoInstance71.DEF = "linkC"
+fieldValue72 = x3d.fieldValue()
+fieldValue72.name = "set_positionA"
+fieldValue72.value = "0 1.818333 0"
 
-Transform59.children.append(ProtoInstance71)
+ProtoInstance71.fieldValue.append(fieldValue72)
+fieldValue73 = x3d.fieldValue()
+fieldValue73.name = "set_positionB"
+fieldValue73.value = "0 1.818333 0"
 
-Scene11.children.append(Transform59)
-Script72 = x3d.Script()
-Script72.DEF = "clickHandler"
-field73 = x3d.field()
-field73.name = "counter"
-field73.accessType = "inputOutput"
-field73.type = "SFInt32"
+ProtoInstance71.fieldValue.append(fieldValue73)
 
-Script72.field.append(field73)
-field74 = x3d.field()
-field74.name = "node_changed"
-field74.accessType = "outputOnly"
-field74.type = "SFNode"
+Transform55.children.append(ProtoInstance71)
 
-Script72.field.append(field74)
+Scene7.children.append(Transform55)
+Script74 = x3d.Script(DEF="clickHandler")
 field75 = x3d.field()
-field75.name = "add_node"
-field75.accessType = "inputOnly"
-field75.type = "SFBool"
+field75.accessType = "inputOutput"
+field75.type = "SFInt32"
+field75.name = "counter"
 
-Script72.field.append(field75)
+Script74.field.append(field75)
+field76 = x3d.field()
+field76.accessType = "outputOnly"
+field76.type = "SFNode"
+field76.name = "node_changed"
 
-Script72.sourceCode = '''ecmascript:\n"+
+Script74.field.append(field76)
+field77 = x3d.field()
+field77.accessType = "inputOnly"
+field77.type = "SFBool"
+field77.name = "add_node"
+
+Script74.field.append(field77)
+
+Script74.sourceCode = '''ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+
 "                counter = counter++;\n"+
@@ -395,61 +389,61 @@ Script72.sourceCode = '''ecmascript:\n"+
 "				  ]\n"+
 "				}\n"+
 "			});\n"+
-"\n"+
+"                \n"+
 "        }'''
 
-Scene11.children.append(Script72)
-ROUTE76 = x3d.ROUTE()
-ROUTE76.fromNode = "clickGenerator"
-ROUTE76.fromField = "isActive"
-ROUTE76.toNode = "clickHandler"
-ROUTE76.toField = "add_node"
-
-Scene11.children.append(ROUTE76)
-ROUTE77 = x3d.ROUTE()
-ROUTE77.fromNode = "nodeA"
-ROUTE77.fromField = "position_changed"
-ROUTE77.toNode = "linkA"
-ROUTE77.toField = "set_positionA"
-
-Scene11.children.append(ROUTE77)
+Scene7.children.append(Script74)
 ROUTE78 = x3d.ROUTE()
-ROUTE78.fromNode = "nodeB"
-ROUTE78.fromField = "position_changed"
-ROUTE78.toNode = "linkA"
-ROUTE78.toField = "set_positionB"
+ROUTE78.fromNode = "clickGenerator"
+ROUTE78.fromField = "isActive"
+ROUTE78.toNode = "clickHandler"
+ROUTE78.toField = "add_node"
 
-Scene11.children.append(ROUTE78)
+Scene7.children.append(ROUTE78)
 ROUTE79 = x3d.ROUTE()
 ROUTE79.fromNode = "nodeA"
 ROUTE79.fromField = "position_changed"
-ROUTE79.toNode = "linkB"
-ROUTE79.toField = "set_positionA"
+ROUTE79.toNode = "linkA"
+ROUTE79.toField = "set_set_positionA"
 
-Scene11.children.append(ROUTE79)
+Scene7.children.append(ROUTE79)
 ROUTE80 = x3d.ROUTE()
-ROUTE80.fromNode = "nodeC"
+ROUTE80.fromNode = "nodeB"
 ROUTE80.fromField = "position_changed"
-ROUTE80.toNode = "linkB"
-ROUTE80.toField = "set_positionB"
+ROUTE80.toNode = "linkA"
+ROUTE80.toField = "set_set_positionB"
 
-Scene11.children.append(ROUTE80)
+Scene7.children.append(ROUTE80)
 ROUTE81 = x3d.ROUTE()
 ROUTE81.fromNode = "nodeA"
 ROUTE81.fromField = "position_changed"
-ROUTE81.toNode = "linkC"
-ROUTE81.toField = "set_positionA"
+ROUTE81.toNode = "linkB"
+ROUTE81.toField = "set_set_positionA"
 
-Scene11.children.append(ROUTE81)
+Scene7.children.append(ROUTE81)
 ROUTE82 = x3d.ROUTE()
-ROUTE82.fromNode = "nodeD"
+ROUTE82.fromNode = "nodeC"
 ROUTE82.fromField = "position_changed"
-ROUTE82.toNode = "linkC"
-ROUTE82.toField = "set_positionB"
+ROUTE82.toNode = "linkB"
+ROUTE82.toField = "set_set_positionB"
 
-Scene11.children.append(ROUTE82)
+Scene7.children.append(ROUTE82)
+ROUTE83 = x3d.ROUTE()
+ROUTE83.fromNode = "nodeA"
+ROUTE83.fromField = "position_changed"
+ROUTE83.toNode = "linkC"
+ROUTE83.toField = "set_set_positionA"
 
-X3D0.Scene = Scene11
+Scene7.children.append(ROUTE83)
+ROUTE84 = x3d.ROUTE()
+ROUTE84.fromNode = "nodeD"
+ROUTE84.fromField = "position_changed"
+ROUTE84.toNode = "linkC"
+ROUTE84.toField = "set_set_positionB"
+
+Scene7.children.append(ROUTE84)
+
+X3D0.Scene = Scene7
 f = open("../data/force_tidy.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

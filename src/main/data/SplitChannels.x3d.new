@@ -1,74 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="SplitChannels.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="SplitChannels.x3d"></meta>
 <meta name="description" content="This X3D scene includes a simple sound source which can be moved right and left. Depending on the position of the sound source, the user can hear the produced sound from the corresponding output speaker. Accordingly, there is a source that can be passed through a SpatialSound for the spatialization of the input audio. The approach is based on the relative position of the source and the listener, in comparison to the panner."></meta>
 <meta name="info" content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."></meta>
 <meta name="creator" content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"></meta>
 <meta name="created" content="28 October 2020"></meta>
-<meta name="modified" content="23 April 2023"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:13:12 GMT"></meta>
 <meta name="reference" content="CHANGELOG.txt"></meta>
 <meta name="TODO" content="credit for audio files"></meta>
 <meta name="reference" content="http://www.medialab.hmu.gr/minipages/x3domAudio"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"></meta>
-<meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="SplitChannels.x3d"></WorldInfo>
 <NavigationInfo type="&quot;NONE&quot;"></NavigationInfo>
 <Background skyColor="0.2 0.2 0.21"></Background>
-<Viewpoint orientation="1 0 0 -0.5" position="0 500 600" retainUserOffsets="true"></Viewpoint>
-<Transform DEF="PowerR" translation="100 400 400"><Transform rotation="1 0 0 -0.5" translation="0 40 0"><Shape><Appearance containerField="appearance" DEF="audio_emit"><Material containerField="material" diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Viewpoint position="0 500 600" orientation="1 0 0 -0.5" retainUserOffsets="true"></Viewpoint>
+<Transform DEF="PowerR" translation="100 400 400"><Transform translation="0 40 0" rotation="1 0 0 -0.5"><Shape><Appearance containerField="appearance" DEF="audio_emit"><Material containerField="material" diffuseColor="0 1 0" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
 </Appearance>
 <Box size="10 80 0.01"></Box>
 </Shape>
 </Transform>
-<Transform rotation="1 0 0 -0.5" translation="-2.7 37 0"><Shape><Appearance containerField="appearance" DEF="audio_emit2"><Material containerField="material" diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform translation="-2.7 37 0" rotation="1 0 0 -0.5"><Shape><Appearance containerField="appearance" DEF="audio_emit2"><Material containerField="material" diffuseColor="0 1 0" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
 <ImageTexture containerField="texture" url="&quot;images/line.png&quot; &quot;https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png&quot;"></ImageTexture>
 </Appearance>
 <Box size="25 83 0.01"></Box>
 </Shape>
 </Transform>
-<Transform DEF="volumeRight" rotation="1 0 0 -0.5" scale="10 10 10" translation="0 -10 0"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
+<Transform DEF="volumeRight" translation="0 -10 0" rotation="1 0 0 -0.5" scale="10 10 10"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" specularColor="0.46 0.46 0.46" shininess="0.51"></Material>
 </Appearance>
 <Text string="&quot;Right Channel Volume&quot;"><FontStyle containerField="fontStyle" DEF="VolumeFontStyle" family="&quot;Times&quot; &quot;SERIF&quot;" style="BOLD"></FontStyle>
 </Text>
 </Shape>
 </Transform>
 </Transform>
-<Transform DEF="PowerL" translation="-100 400 400"><Transform rotation="1 0 0 -0.5" translation="0 40 0"><Shape><Appearance containerField="appearance" DEF="audio_emit3"><Material containerField="material" diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform DEF="PowerL" translation="-100 400 400"><Transform translation="0 40 0" rotation="1 0 0 -0.5"><Shape><Appearance containerField="appearance" DEF="audio_emit3"><Material containerField="material" diffuseColor="0 1 0" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
 </Appearance>
 <Box size="10 80 0.01"></Box>
 </Shape>
 </Transform>
-<Transform rotation="1 0 0 -0.5" translation="13.2 37 0"><Shape><Appearance containerField="appearance" DEF="audio_emit4"><Material containerField="material" diffuseColor="0 1 0" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<Transform translation="13.2 37 0" rotation="1 0 0 -0.5"><Shape><Appearance containerField="appearance" DEF="audio_emit4"><Material containerField="material" diffuseColor="0 1 0" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
 <ImageTexture containerField="texture" url="&quot;images/line.png&quot; &quot;https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png&quot;"></ImageTexture>
 </Appearance>
 <Box size="25 83 0.01"></Box>
 </Shape>
 </Transform>
-<Transform DEF="volumeLeft" rotation="1 0 0 -0.5" scale="10 10 10" translation="0 -10 0"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" shininess="0.51" specularColor="0.46 0.46 0.46"></Material>
+<Transform DEF="volumeLeft" translation="0 -10 0" rotation="1 0 0 -0.5" scale="10 10 10"><Shape><Appearance containerField="appearance"><Material containerField="material" ambientIntensity="0.0933" diffuseColor="0.345 0.345 0.882" specularColor="0.46 0.46 0.46" shininess="0.51"></Material>
 </Appearance>
 <Text string="&quot;Left Channel Volume&quot;"><FontStyle containerField="fontStyle" USE="VolumeFontStyle"></FontStyle>
 </Text>
 </Shape>
 </Transform>
 </Transform>
-<Transform><Shape><Appearance containerField="appearance" DEF="floor"><Material containerField="material" diffuseColor="0.1 0.1 0.1" shininess="0.8" specularColor="0.5 0.6 0.7"></Material>
+<Transform><Shape><Appearance containerField="appearance" DEF="floor"><Material containerField="material" diffuseColor="0.1 0.1 0.1" specularColor="0.5 0.6 0.7" shininess="0.8"></Material>
 </Appearance>
 <Box size="1500 10 500"></Box>
 </Shape>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>
-<StreamAudioDestination><Gain><ChannelMerger><ChannelSelector><Gain USE="ChannelSplitter"></Gain>
+<StreamAudioDestination><Gain><ChannelMerger><ChannelSelector><ChannelSplitter DEF="ChannelSplitter" channelCountMode="EXPLICIT"><AudioClip description="Violin" url="&quot;sound/violin.mp3&quot; &quot;https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
+</ChannelSplitter>
 </ChannelSelector>
-<ChannelSelector channelSelection="1"><Gain USE="ChannelSplitter"></Gain>
+<ChannelSelector channelSelection="1"><ChannelSplitter USE="ChannelSplitter"></ChannelSplitter>
 </ChannelSelector>
 </ChannelMerger>
 </Gain>
 </StreamAudioDestination>
-<ChannelSplitter DEF="ChannelSplitter" channelCountMode="EXPLICIT"><AudioClip description="Violin" url="&quot;sound/violin.mp3&quot; &quot;https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3&quot;"></AudioClip>
-</ChannelSplitter>
-<Transform DEF="Audio3" rotation="1 0 0 -0.5" translation="0 100 0"><Shape><Appearance containerField="appearance" DEF="audio_emit5"><Material containerField="material" diffuseColor="0.3 1 0.3" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
+<ChannelSplitter USE="ChannelSplitter"></ChannelSplitter>
+<Transform DEF="Audio3" translation="0 100 0" rotation="1 0 0 -0.5"><Shape><Appearance containerField="appearance" DEF="audio_emit5"><Material containerField="material" diffuseColor="0.3 1 0.3" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
 <ImageTexture containerField="texture" url="&quot;images/loudspeaker.png&quot; &quot;https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png&quot;"></ImageTexture>
 </Appearance>
 <Box size="100 100 0.001"></Box>

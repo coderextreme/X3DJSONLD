@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -26,13 +26,6 @@
         {
       {
         "@content":"Carlson, II",
-        "@name":"creator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Carlson, III",
         "@name":"creator"
       }
     },

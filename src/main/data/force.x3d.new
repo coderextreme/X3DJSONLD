@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
-<meta name="creator" content="John W Carlson"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
-<meta name="modified" content="July 14 2025"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:11:19 GMT"></meta>
 <meta name="title" content="force.x3d"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/force.x3d"></meta>
-<meta name="description" content="beginnings of a force directed graph in 3D"></meta>
-<meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><ProtoDeclare name="node"><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<Scene><ProtoDeclare name="node"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="position"></field>
 </ProtoInterface>
-<ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
-</IS>
-<Shape><Sphere></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+<ProtoBody><Group><Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
+<Sphere></Sphere>
 </Shape>
-<Transform translation="1 0 0"><Shape><Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="5"></FontStyle>
-</Text>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
+<Transform translation="1 0 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
+<Text string="&quot;Node&quot;"><FontStyle containerField="fontStyle" size="5" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+</Text>
 </Shape>
 </Transform>
+<IS><connect nodeField="translation" protoField="position"></connect>
+</IS>
 </Transform>
 <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="MoveBall"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<Script DEF="MoveBall"><field accessType="inputOutput" type="SFVec3f" name="translation" value="50 50 0"></field>
+<field accessType="inputOutput" type="SFVec3f" name="old"></field>
+<field accessType="inputOnly" type="SFTime" name="set_cycle"></field>
+<field accessType="outputOnly" type="MFVec3f" name="keyValue"></field>
 <![CDATA[ecmascript:
 			function set_cycle(value) {
 				old = translation;
@@ -36,26 +33,23 @@
 				keyValue = new MFVec3f(old, translation);
 			}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
+</Group>
 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"></ROUTE>
+<ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="set_keyValue"></ROUTE>
 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
-</Group>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="cyl"><ProtoInterface><field name="set_positionA" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_positionB" accessType="inputOutput" type="SFVec3f" value="50 50 50"></field>
+<ProtoDeclare name="cyl"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="set_positionA"></field>
+<field accessType="inputOutput" type="SFVec3f" name="set_positionB" value="50 50 50"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<ProtoBody><Group><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
+<Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
 </Shape>
-<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
-<field name="endA" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="endB" accessType="inputOutput" type="SFVec3f" value="50 50 50"></field>
-<IS><connect nodeField="endA" protoField="set_positionA"></connect>
-<connect nodeField="endB" protoField="set_positionB"></connect>
-</IS>
+<Script DEF="MoveCylinder"><field accessType="inputOutput" type="MFVec3f" name="spine" value="0 -50 0 0 0 0 0 50 0"></field>
+<field accessType="inputOutput" type="SFVec3f" name="endA"></field>
+<field accessType="inputOutput" type="SFVec3f" name="endB"></field>
 <![CDATA[ecmascript:
 			function set_endA(value) {
 				spine = new MFVec3f(value, spine[1]);
@@ -63,27 +57,36 @@
 
 			function set_endB(value) {
 				spine = new MFVec3f(spine[0], value);
-			}]]></Script>
-<ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
+			}]]><IS><connect nodeField="endA" protoField="set_positionA"></connect>
+<connect nodeField="endB" protoField="set_positionB"></connect>
+</IS>
+</Script>
 </Group>
+<ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" minPosition="-50 -50" maxPosition="50 50" description="click on background to add nodes, click on nodes to add links"></PlaneSensor>
-<ProtoInstance name="node" DEF="nodeA"><fieldValue name="position" value="0 0 0"></fieldValue>
+<Transform DEF="HoldsContent" scale="0.1 0.1 0.1"><PlaneSensor DEF="clickGenerator" description="click on background to add nodes, click on nodes to add links" minPosition="-50 -50" maxPosition="50 50"></PlaneSensor>
+<ProtoInstance DEF="nodeA" name="node"><fieldValue name="position" value="0 1.743333 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="node" DEF="nodeB"><fieldValue name="position" value="50 50 50"></fieldValue>
+<ProtoInstance DEF="nodeB" name="node"><fieldValue name="position" value="0 1.743333 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="node" DEF="nodeC"><fieldValue name="position" value="-50 -50 -50"></fieldValue>
+<ProtoInstance DEF="nodeC" name="node"><fieldValue name="position" value="0 1.743333 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="node" DEF="nodeD"><fieldValue name="position" value="50 50 -50"></fieldValue>
+<ProtoInstance DEF="nodeD" name="node"><fieldValue name="position" value="0 1.743333 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkA"></ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkB"></ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkC"></ProtoInstance>
+<ProtoInstance DEF="linkA" name="cyl"><fieldValue name="set_positionA" value="0 1.743333 0"></fieldValue>
+<fieldValue name="set_positionB" value="0 1.743333 0"></fieldValue>
+</ProtoInstance>
+<ProtoInstance DEF="linkB" name="cyl"><fieldValue name="set_positionA" value="0 1.743333 0"></fieldValue>
+<fieldValue name="set_positionB" value="0 1.743333 0"></fieldValue>
+</ProtoInstance>
+<ProtoInstance DEF="linkC" name="cyl"><fieldValue name="set_positionA" value="0 1.743333 0"></fieldValue>
+<fieldValue name="set_positionB" value="0 1.743333 0"></fieldValue>
+</ProtoInstance>
 </Transform>
-<Script DEF="clickHandler"><field name="counter" accessType="inputOutput" value="0" type="SFInt32"></field>
-<field name="add_node" accessType="inputOnly" value="false" type="SFBool"></field>
-<!--<field accessType="outputOnly" name="node_changed" type="SFNode"></field>--><!--<field name="ModifiableNode" type="SFNode" accessType="inputOutput">--><!--<Transform USE="HoldsContent"></Transform>--><!--</field>--><![CDATA[ecmascript:
+<Script DEF="clickHandler"><field accessType="inputOutput" type="SFInt32" name="counter"></field>
+<field accessType="inputOnly" type="SFBool" name="add_node"></field>
+<![CDATA[ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
                 counter = counter++;
@@ -99,14 +102,14 @@
 				  ]
 				}
 			});
-
+                
         }]]></Script>
 <ROUTE fromNode="clickGenerator" fromField="isActive" toNode="clickHandler" toField="add_node"></ROUTE>
-<ROUTE fromNode="nodeA" fromField="position" toNode="linkA" toField="set_positionA"></ROUTE>
-<ROUTE fromNode="nodeB" fromField="position" toNode="linkA" toField="set_positionB"></ROUTE>
-<ROUTE fromNode="nodeA" fromField="position" toNode="linkB" toField="set_positionA"></ROUTE>
-<ROUTE fromNode="nodeC" fromField="position" toNode="linkB" toField="set_positionB"></ROUTE>
-<ROUTE fromNode="nodeA" fromField="position" toNode="linkC" toField="set_positionA"></ROUTE>
-<ROUTE fromNode="nodeD" fromField="position" toNode="linkC" toField="set_positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position_changed" toNode="linkA" toField="set_set_positionA"></ROUTE>
+<ROUTE fromNode="nodeB" fromField="position_changed" toNode="linkA" toField="set_set_positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position_changed" toNode="linkB" toField="set_set_positionA"></ROUTE>
+<ROUTE fromNode="nodeC" fromField="position_changed" toNode="linkB" toField="set_set_positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position_changed" toNode="linkC" toField="set_set_positionA"></ROUTE>
+<ROUTE fromNode="nodeD" fromField="position_changed" toNode="linkC" toField="set_set_positionB"></ROUTE>
 </Scene>
 </X3D>

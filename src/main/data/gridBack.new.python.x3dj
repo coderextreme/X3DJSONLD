@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Interchange",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"12 January 2014",
+        "@content":"Mon, 09 Feb 2026 07:11:21 GMT",
         "@name":"modified"
       }
     },
@@ -69,20 +69,6 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":

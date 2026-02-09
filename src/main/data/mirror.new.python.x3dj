@@ -4,16 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
         "component":
         {
       {
@@ -36,26 +30,8 @@
         "component":
         {
       {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
         "@level":"3",
         "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
       }
     },
         "meta":
@@ -75,22 +51,15 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/mirror.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"sphere with alternating backgrounds",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -107,37 +76,43 @@
             "ImageTexture":
             {
       {
-        "@DEF":"backBackgroundTexture"
+        "@DEF":"backBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"bottomBackgroundTexture"
+        "@DEF":"bottomBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"frontBackgroundTexture"
+        "@DEF":"frontBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"leftBackgroundTexture"
+        "@DEF":"leftBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"rightBackgroundTexture"
+        "@DEF":"rightBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
       }
     },
             "ImageTexture":
             {
       {
-        "@DEF":"topBackgroundTexture"
+        "@DEF":"topBackgroundTexture",
+        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
       }
     },
         }        "Transform":
@@ -158,43 +133,50 @@
                         "ImageTexture":
                         {
       {
-        "@DEF":"backShader"
+        "@DEF":"backShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"bottomShader"
+        "@DEF":"bottomShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"frontShader"
+        "@DEF":"frontShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"leftShader"
+        "@DEF":"leftShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"rightShader"
+        "@DEF":"rightShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"topShader"
+        "@DEF":"topShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextrme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
       }
     },
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x3dom"
+        "@DEF":"x3dom",
+        "@language":"GLSL"
       }
                         "field":
                         {
@@ -256,7 +238,8 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x_ite"
+        "@DEF":"x_ite",
+        "@language":"GLSL"
       }
                         "field":
                         {
@@ -324,7 +307,41 @@
             }            "Script":
             {
       {
-        "@DEF":"UrlSelector"
+        "@DEF":"UrlSelector",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function set_fraction( f, tm ) {
+&quot;+
+&quot;	    var side = Math.floor(f*frontUrls.length);
+&quot;+
+&quot;	    if (side > frontUrls.length-1) {
+&quot;+
+&quot;	    	side = 0;
+&quot;+
+&quot;	    }
+&quot;+
+&quot;	    if (side != old) {
+&quot;+
+&quot;	    	    Browser.print(f+&quot; &quot;+side);
+&quot;+
+&quot;	    	    old = side;
+&quot;+
+&quot;		    front_changed[0] = frontUrls[side];
+&quot;+
+&quot;		    back_changed[0] = backUrls[side];
+&quot;+
+&quot;		    left_changed[0] = leftUrls[side];
+&quot;+
+&quot;		    right_changed[0] = rightUrls[side];
+&quot;+
+&quot;		    top_changed[0] = topUrls[side];
+&quot;+
+&quot;		    bottom_changed[0] = bottomUrls[side];
+&quot;+
+&quot;            }
+&quot;+
+&quot;        }"
       }
                 "field":
                 {
@@ -448,11 +465,13 @@
             }            "TimeSensor":
             {
       {
-        "@DEF":"Clock"
+        "@DEF":"Clock",
+        "@cycleInterval":"45",
+        "@loop":"true"
       }
     },
-            "ROUTE":
-            {
+        }        "ROUTE":
+        {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"Clock",
@@ -460,112 +479,112 @@
         "@toNode":"UrlSelector"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"front_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"frontBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"back_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"backBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"left_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"leftBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"right_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"rightBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"top_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"topBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"bottom_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"bottomBackgroundTexture"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"front_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"frontShader"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"back_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"backShader"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"left_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"leftShader"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"right_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"rightShader"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"top_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"topShader"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"bottom_changed",
         "@fromNode":"UrlSelector",
-        "@toField":"url",
+        "@toField":"set_url",
         "@toNode":"bottomShader"
       }
     },
-        }    }}
+    }}

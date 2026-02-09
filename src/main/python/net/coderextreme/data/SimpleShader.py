@@ -3,9 +3,8 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
-"""meta content='under development' name='warning'/"""
 component2 = x3d.component()
 component2.name = "Shaders"
 component2.level = 1
@@ -43,7 +42,7 @@ meta8.content = "15 October 2009"
 head1.children.append(meta8)
 meta9 = x3d.meta()
 meta9.name = "modified"
-meta9.content = "20 October 2019"
+meta9.content = "Mon, 09 Feb 2026 07:12:58 GMT"
 
 head1.children.append(meta9)
 meta10 = x3d.meta()
@@ -78,66 +77,62 @@ meta15.content = "ShaderTutorialInstantReality.pdf"
 head1.children.append(meta15)
 meta16 = x3d.meta()
 meta16.name = "generator"
-meta16.content = "Titania V3.0.3, http://titania.create3000.de"
+meta16.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta16)
 meta17 = x3d.meta()
-meta17.name = "info"
-meta17.content = "World of Titania"
+meta17.name = "generator"
+meta17.content = "Titania V3.0.3, http://titania.create3000.de"
 
 head1.children.append(meta17)
 meta18 = x3d.meta()
-meta18.name = "outputStyle"
-meta18.content = "nicest"
+meta18.name = "generator"
+meta18.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta18)
 meta19 = x3d.meta()
-meta19.name = "generator"
-meta19.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+meta19.name = "info"
+meta19.content = "World of Titania"
 
 head1.children.append(meta19)
-meta20 = x3d.meta()
-meta20.name = "identifier"
-meta20.content = "https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"
-
-head1.children.append(meta20)
-meta21 = x3d.meta()
-meta21.name = "license"
-meta21.content = "../../license.html"
-
-head1.children.append(meta21)
 
 X3D0.head = head1
-Scene22 = x3d.Scene()
-ProtoDeclare23 = x3d.ProtoDeclare()
-ProtoDeclare23.name = "myPrototype"
-ProtoInterface24 = x3d.ProtoInterface()
-field25 = x3d.field()
-field25.name = "myInputRange"
-field25.accessType = "initializeOnly"
-field25.type = "SFVec3f"
-field25.value = [0.95,0.44,0.22]
+Scene20 = x3d.Scene()
+ProtoDeclare21 = x3d.ProtoDeclare()
+ProtoDeclare21.name = "myPrototype"
+ProtoInterface22 = x3d.ProtoInterface()
+field23 = x3d.field()
+field23.accessType = "initializeOnly"
+field23.type = "SFVec3f"
+field23.name = "myInputRange"
+field23.value = [0.95,0.44,0.22]
 
-ProtoInterface24.field.append(field25)
+ProtoInterface22.field.append(field23)
 
-ProtoDeclare23.ProtoInterface = ProtoInterface24
-ProtoBody26 = x3d.ProtoBody()
-Transform27 = x3d.Transform()
-Transform27.DEF = "TR"
-Shape28 = x3d.Shape()
-Appearance29 = x3d.Appearance()
-Material30 = x3d.Material()
-Material30.diffuseColor = [0.5,0.5,0.9]
+ProtoDeclare21.ProtoInterface = ProtoInterface22
+ProtoBody24 = x3d.ProtoBody()
+Transform25 = x3d.Transform(DEF="TR")
+Shape26 = x3d.Shape()
+Appearance27 = x3d.Appearance()
+Material28 = x3d.Material()
+Material28.diffuseColor = [0.5,0.5,0.9]
 
-Appearance29.material = Material30
-ComposedShader31 = x3d.ComposedShader()
-ComposedShader31.language = "GLSL"
+Appearance27.material = Material28
+ComposedShader29 = x3d.ComposedShader()
+ComposedShader29.language = "GLSL"
+ShaderPart30 = x3d.ShaderPart()
+
+ComposedShader29.parts.append(ShaderPart30)
+ShaderPart31 = x3d.ShaderPart()
+ShaderPart31.type = "FRAGMENT"
+
+ComposedShader29.parts.append(ShaderPart31)
 field32 = x3d.field()
-field32.name = "decis"
 field32.accessType = "initializeOnly"
 field32.type = "SFVec3f"
+field32.name = "decis"
 
-ComposedShader31.field.append(field32)
+ComposedShader29.field.append(field32)
 IS33 = x3d.IS()
 connect34 = x3d.connect()
 connect34.nodeField = "decis"
@@ -145,137 +140,116 @@ connect34.protoField = "myInputRange"
 
 IS33.connect.append(connect34)
 
-ComposedShader31.IS = IS33
-ShaderPart35 = x3d.ShaderPart()
-ShaderPart35.type = "VERTEX"
+ComposedShader29.IS = IS33
 
-ComposedShader31.parts.append(ShaderPart35)
+Appearance27.shaders.append(ComposedShader29)
+ComposedShader35 = x3d.ComposedShader(DEF="Cobweb")
+ComposedShader35.language = "GLSL"
 ShaderPart36 = x3d.ShaderPart()
-ShaderPart36.type = "FRAGMENT"
 
-ComposedShader31.parts.append(ShaderPart36)
+ComposedShader35.parts.append(ShaderPart36)
+ShaderPart37 = x3d.ShaderPart()
+ShaderPart37.type = "FRAGMENT"
 
-Appearance29.shaders.append(ComposedShader31)
-ComposedShader37 = x3d.ComposedShader()
-ComposedShader37.DEF = "Cobweb"
-ComposedShader37.language = "GLSL"
+ComposedShader35.parts.append(ShaderPart37)
 field38 = x3d.field()
-field38.name = "decis"
 field38.accessType = "initializeOnly"
 field38.type = "SFVec3f"
+field38.name = "decis"
 field38.value = [0.95,0.77,0.44]
 
-ComposedShader37.field.append(field38)
-ShaderPart39 = x3d.ShaderPart()
-ShaderPart39.type = "VERTEX"
+ComposedShader35.field.append(field38)
 
-ComposedShader37.parts.append(ShaderPart39)
-ShaderPart40 = x3d.ShaderPart()
-ShaderPart40.DEF = "_1"
-ShaderPart40.type = "FRAGMENT"
+Appearance27.shaders.append(ComposedShader35)
 
-ComposedShader37.parts.append(ShaderPart40)
+Shape26.appearance = Appearance27
+Sphere39 = x3d.Sphere()
+Sphere39.radius = 1.75
 
-Appearance29.shaders.append(ComposedShader37)
+Shape26.geometry = Sphere39
 
-Shape28.appearance = Appearance29
-Sphere41 = x3d.Sphere()
-Sphere41.radius = 1.75
+Transform25.children.append(Shape26)
 
-Shape28.geometry = Sphere41
+ProtoBody24.children.append(Transform25)
 
-Transform27.children.append(Shape28)
+ProtoDeclare21.ProtoBody = ProtoBody24
 
-ProtoBody26.children.append(Transform27)
-
-ProtoDeclare23.ProtoBody = ProtoBody26
-
-Scene22.children.append(ProtoDeclare23)
-WorldInfo42 = x3d.WorldInfo()
-WorldInfo42.title = "SimpleShader"
-MetadataSet43 = x3d.MetadataSet()
-MetadataSet43.name = "Titania"
-MetadataSet43.DEF = "Titania"
+Scene20.children.append(ProtoDeclare21)
+WorldInfo40 = x3d.WorldInfo()
+WorldInfo40.title = "SimpleShader"
+MetadataSet41 = x3d.MetadataSet(DEF="Titania")
+MetadataSet41.name = "Titania"
+MetadataSet41.reference = "http://titania.create3000.de"
+MetadataSet42 = x3d.MetadataSet(DEF="Selection")
+MetadataSet42.name = "Selection"
+MetadataSet42.reference = "http://titania.create3000.de"
+MetadataSet43 = x3d.MetadataSet(DEF="nodes")
+MetadataSet43.name = "nodes"
 MetadataSet43.reference = "http://titania.create3000.de"
-MetadataSet44 = x3d.MetadataSet()
-MetadataSet44.name = "Selection"
-MetadataSet44.DEF = "Selection"
+
+if MetadataSet42.value is None:
+    MetadataSet42.value = []
+MetadataSet42.value.append(MetadataSet43)
+
+if MetadataSet41.value is None:
+    MetadataSet41.value = []
+MetadataSet41.value.append(MetadataSet42)
+MetadataSet44 = x3d.MetadataSet(DEF="NavigationInfo")
+MetadataSet44.name = "NavigationInfo"
 MetadataSet44.reference = "http://titania.create3000.de"
-MetadataSet45 = x3d.MetadataSet()
-MetadataSet45.name = "nodes"
-MetadataSet45.DEF = "nodes"
-MetadataSet45.reference = "http://titania.create3000.de"
-"""NULL"""
+MetadataString45 = x3d.MetadataString(DEF="type")
+MetadataString45.name = "type"
+MetadataString45.reference = "http://titania.create3000.de"
+MetadataString45.value = ["EXAMINE"]
 
 if MetadataSet44.value is None:
     MetadataSet44.value = []
-MetadataSet44.value.append(MetadataSet45)
+MetadataSet44.value.append(MetadataString45)
 
-if MetadataSet43.value is None:
-    MetadataSet43.value = []
-MetadataSet43.value.append(MetadataSet44)
-MetadataSet46 = x3d.MetadataSet()
-MetadataSet46.name = "NavigationInfo"
-MetadataSet46.DEF = "NavigationInfo"
+if MetadataSet41.value is None:
+    MetadataSet41.value = []
+MetadataSet41.value.append(MetadataSet44)
+MetadataSet46 = x3d.MetadataSet(DEF="Viewpoint")
+MetadataSet46.name = "Viewpoint"
 MetadataSet46.reference = "http://titania.create3000.de"
-MetadataString47 = x3d.MetadataString()
-MetadataString47.name = "type"
-MetadataString47.DEF = "type"
-MetadataString47.reference = "http://titania.create3000.de"
-MetadataString47.value = ["EXAMINE"]
+MetadataDouble47 = x3d.MetadataDouble(DEF="position")
+MetadataDouble47.name = "position"
+MetadataDouble47.reference = "http://titania.create3000.de"
+MetadataDouble47.value = [6.24067728185014,0.00250837343276661,2.92117542307615]
 
 if MetadataSet46.value is None:
     MetadataSet46.value = []
-MetadataSet46.value.append(MetadataString47)
+MetadataSet46.value.append(MetadataDouble47)
+MetadataDouble48 = x3d.MetadataDouble(DEF="orientation")
+MetadataDouble48.name = "orientation"
+MetadataDouble48.reference = "http://titania.create3000.de"
+MetadataDouble48.value = [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]
 
-if MetadataSet43.value is None:
-    MetadataSet43.value = []
-MetadataSet43.value.append(MetadataSet46)
-MetadataSet48 = x3d.MetadataSet()
-MetadataSet48.name = "Viewpoint"
-MetadataSet48.DEF = "Viewpoint"
-MetadataSet48.reference = "http://titania.create3000.de"
-MetadataDouble49 = x3d.MetadataDouble()
-MetadataDouble49.name = "position"
-MetadataDouble49.DEF = "position"
+if MetadataSet46.value is None:
+    MetadataSet46.value = []
+MetadataSet46.value.append(MetadataDouble48)
+MetadataDouble49 = x3d.MetadataDouble(DEF="centerOfRotation")
+MetadataDouble49.name = "centerOfRotation"
 MetadataDouble49.reference = "http://titania.create3000.de"
-MetadataDouble49.value = [6.24067728185014,0.00250837343276661,2.92117542307615]
+MetadataDouble49.value = [-0.808320198626341,-0.358072370409949,0.22817191560906]
 
-if MetadataSet48.value is None:
-    MetadataSet48.value = []
-MetadataSet48.value.append(MetadataDouble49)
-MetadataDouble50 = x3d.MetadataDouble()
-MetadataDouble50.name = "orientation"
-MetadataDouble50.DEF = "orientation"
-MetadataDouble50.reference = "http://titania.create3000.de"
-MetadataDouble50.value = [-0.110173424710488,0.990158061907379,-0.0863065984000336,1.21146676119191]
+if MetadataSet46.value is None:
+    MetadataSet46.value = []
+MetadataSet46.value.append(MetadataDouble49)
 
-if MetadataSet48.value is None:
-    MetadataSet48.value = []
-MetadataSet48.value.append(MetadataDouble50)
-MetadataDouble51 = x3d.MetadataDouble()
-MetadataDouble51.name = "centerOfRotation"
-MetadataDouble51.DEF = "centerOfRotation"
-MetadataDouble51.reference = "http://titania.create3000.de"
-MetadataDouble51.value = [-0.808320198626341,-0.358072370409949,0.22817191560906]
+if MetadataSet41.value is None:
+    MetadataSet41.value = []
+MetadataSet41.value.append(MetadataSet46)
 
-if MetadataSet48.value is None:
-    MetadataSet48.value = []
-MetadataSet48.value.append(MetadataDouble51)
+WorldInfo40.metadata = MetadataSet41
 
-if MetadataSet43.value is None:
-    MetadataSet43.value = []
-MetadataSet43.value.append(MetadataSet48)
+Scene20.children.append(WorldInfo40)
+ProtoInstance50 = x3d.ProtoInstance()
+ProtoInstance50.name = "myPrototype"
 
-WorldInfo42.metadata = MetadataSet43
+Scene20.children.append(ProtoInstance50)
 
-Scene22.children.append(WorldInfo42)
-ProtoInstance52 = x3d.ProtoInstance()
-ProtoInstance52.name = "myPrototype"
-
-Scene22.children.append(ProtoInstance52)
-
-X3D0.Scene = Scene22
+X3D0.Scene = Scene20
 f = open("../data/SimpleShader.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='jumpcut_loadurl.x3d' name='title'/>
     <meta content='http://www.nist.gov/vrml.html' name='reference'/>
@@ -10,20 +10,18 @@
     <meta content='Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d' name='info'/>
     <meta content='Michael Kass NIST, Don Brutzman NPS' name='translator'/>
     <meta content='21 January 2001' name='translated'/>
-    <meta content='20 October 2019' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:12:07 GMT' name='modified'/>
     <meta content='Test jumpcut Viewpoint transition using Script loadUrl method. A NavigationInfo type of ANY is NOT included in the NavigationInfo node field in this world. Consequently, a Script node with a call to the "loadURL" method, with a url corresponding to the MFString "Top_View" (the name of a Viewpoint in this world) should create a "jump cut" transition of views when the Box geometry in this world is indicated by the pointing device. As a result, indicating the Box geometry should result in a Viewpoint transition to the top view of the Box geometry.' name='description'/>
     <meta content='https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d' name='identifier'/>
-    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../../license.html' name='license'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='jumpcut_loadurl.x3d'/>
     <Background groundAngle='1.57' groundColor='0 0.5 0 0 0.5 0' skyColor='0 0 1'/>
     <NavigationInfo type='"EXAMINE" "WALK" "FLY" "ANY"'/>
-    <Viewpoint DEF='Front_View'/>
-    <Viewpoint DEF='Top_View'/>
-    <TouchSensor DEF='STARTER'/>
+    <Viewpoint DEF='Front_View' description='Front View'/>
+    <Viewpoint DEF='Top_View' description='Top View' orientation='1 0 0 -1.57' position='0 10 0'/>
+    <TouchSensor DEF='STARTER' description='touch to activate'/>
     <Transform DEF='ROOT'>
       <Shape>
         <Appearance>
@@ -32,7 +30,7 @@
         <Box/>
       </Shape>
     </Transform>
-    <Script DEF='MYSCRIPT'>
+    <Script DEF='MYSCRIPT' url='"jumpcut_loadurl.js" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"'>
       <field accessType='initializeOnly' name='myParameter' type='MFString' value='"Top_View"'/>
       <field accessType='initializeOnly' name='myUrl' type='MFString' value='"jumpcut_loadurl.x3d#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View" "jumpcut_loadurl.wrl#Top_View" "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"'/>
       <field accessType='inputOnly' name='trigger_event' type='SFBool'/>

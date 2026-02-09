@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"23 May 2020",
+        "@content":"Mon, 09 Feb 2026 07:12:41 GMT",
         "@name":"modified"
       }
     },
@@ -48,20 +48,6 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -95,7 +81,8 @@
                         "Material":
                         {
       {
-        "@DEF":"frameColor"
+        "@DEF":"frameColor",
+        "@diffuseColor":"0 0 0"
       }
     },
                     }                    "IndexedFaceSet":
@@ -114,7 +101,8 @@
                     }                }            }            "Transform":
             {
       {
-        "@DEF":"snorkelHoldRing"
+        "@DEF":"snorkelHoldRing",
+        "@translation":"0.075 0.075 -0.02"
       }
                 "Shape":
                 {
@@ -156,7 +144,9 @@
                                 "Material":
                                 {
       {
-        "@DEF":"snorkelTube"
+        "@DEF":"snorkelTube",
+        "@diffuseColor":"0.678 1 0.184",
+        "@transparency":"0.4"
       }
     },
                             }                            "Extrusion":
@@ -180,7 +170,9 @@
                                 "Material":
                                 {
       {
-        "@DEF":"Mouthpiece"
+        "@DEF":"Mouthpiece",
+        "@diffuseColor":"0.678 1 0.8",
+        "@transparency":"0.4"
       }
     },
                             }                            "Extrusion":
@@ -226,7 +218,9 @@
                         "Material":
                         {
       {
-        "@DEF":"plastic"
+        "@DEF":"plastic",
+        "@diffuseColor":"0.941 0.973 1",
+        "@transparency":"0.8"
       }
     },
                     }                    "IndexedFaceSet":
@@ -282,7 +276,9 @@
                         "Material":
                         {
       {
-        "@DEF":"plasticFit"
+        "@DEF":"plasticFit",
+        "@diffuseColor":"0.678 1 0.184",
+        "@transparency":"0.7"
       }
     },
                     }                    "IndexedFaceSet":

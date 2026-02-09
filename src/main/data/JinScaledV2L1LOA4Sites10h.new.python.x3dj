@@ -8,6 +8,8 @@
         "@profile":"Immersive",
     "head":
     {
+    { "#comment" : "Scaled 1:1, Added Animations" }
+    { "#comment" : "Added Sites" }
         "component":
         {
       {
@@ -149,6 +151,71 @@
     },
     }    "Scene":
     {
+    { "#comment" : "https://www.web3d.org/documents/specifications/19774/V2.0/index.html" }
+    { "#comment" : "Jin loa4 v2 1:1" }
+    { "#comment" : "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4" }
+    { "#comment" : "with v2 Site surface feature point landmarks" }
+    { "#comment" : "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html" }
+    { "#comment" : "The first part of this x3d xml user code listing" }
+    { "#comment" : "includes definitions for the collection of" }
+    { "#comment" : "Shapes and Sites that will be used to compose the character." }
+    { "#comment" : "This allows the skeleton structure user code to be simplified." }
+    { "#comment" : "example:" }
+    { "#comment" : "<HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'>" }
+    { "#comment" : "<HAnimSegment DEF='hanim_sacrum' name='sacrum'>" }
+    { "#comment" : "<Shape USE='sacrum_Shape'/>" }
+    { "#comment" : "<Group USE='sacrum_Sites'/>" }
+    { "#comment" : "</HAnimSegment>" }
+    { "#comment" : "... entire sheleton hierarchy ,,," }
+    { "#comment" : "</HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'>" }
+    { "#comment" : "<HAnimSegment DEF='hanim_sacrum' name='sacrum'>" }
+    { "#comment" : "<Shape USE='sacrum_Shape'/>" }
+    { "#comment" : "<Group USE='sacrum_Sites'/>" }
+    { "#comment" : "</HAnimSegment>" }
+    { "#comment" : "... entire skeleton hierarchy ,,," }
+    { "#comment" : "</HAnimJoint" }
+    { "#comment" : "DefaultAnimation_loa4 Default pose All Joints = 0 0 1 0" }
+    { "#comment" : "TestAnimation_loa4 Modify this set to experiment" }
+    { "#comment" : "PitchAnimation_loa4 Example x-axis rotations" }
+    { "#comment" : "YawAnimation_loa4 Example y-axis rotations" }
+    { "#comment" : "RollAnimation_loa4 Example z-axis rotations" }
+    { "#comment" : "WalkAnimation_loa4 Example Walk animation" }
+    { "#comment" : "RunAnimation_loa4 Example Run animnation" }
+    { "#comment" : "JumpAnimation_loa4 Example Jump animation" }
+    { "#comment" : "KickAnimation_loa4 Example Kick animation" }
+    { "#comment" : "TimerControls Selection of timer for animation" }
+    { "#comment" : "Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing" }
+    { "#comment" : "0.02 - 0.08 root translation" }
+    { "#comment" : "0.08 - 0.1 root rotation" }
+    { "#comment" : "0.2 - 0.3 sacro" }
+    { "#comment" : "0.25 - 0.75 eyeball" }
+    { "#comment" : "0.6 - 0.65 hip" }
+    { "#comment" : "0.65 0.70 knee" }
+    { "#comment" : "0.70 - 0.74 talocrural" }
+    { "#comment" : "talocalcaneonavicular (1 2 3)" }
+    { "#comment" : "calcaneocuboid (4 5)" }
+    { "#comment" : "transversetarsal (4 5)" }
+    { "#comment" : "cuneonavicular (1 2 3)" }
+    { "#comment" : "tarsometatarsal (1 2 3 4 5)" }
+    { "#comment" : "metatarsophalangeal (1 2 3 4 5)" }
+    { "#comment" : "tarsal_interphalangeal (1)" }
+    { "#comment" : "tarsal_proximal_interphalangeal (2 3 4 5)" }
+    { "#comment" : "tarsal_distal_interphalangeal (2 3 4 5)" }
+    { "#comment" : "0.3 - 0.5 vl5" }
+    { "#comment" : "0.6 0.6375 vl2" }
+    { "#comment" : "0.6375 - 0.6875 vt10" }
+    { "#comment" : "0.6875 - 0.725 vt9" }
+    { "#comment" : "0.725 - 0.7875 vt5" }
+    { "#comment" : "0.7875 - 0.825 vt1" }
+    { "#comment" : "0.825 - 0.8625 vc7" }
+    { "#comment" : "0.8625 - 0.9 vc2" }
+    { "#comment" : "0.9 - 0.9985 skullbase" }
+    { "#comment" : "0.9 - 0.915 sterno" }
+    { "#comment" : "0.915 - 0.93 acrom" }
+    { "#comment" : "0.93 - 0.945 shoulder" }
+    { "#comment" : "0.945 - 0.96 elbow" }
+    { "#comment" : "0.96 - 0.98 radio" }
+    { "#comment" : "0.98 0.985 angeal_1" }
         "WorldInfo":
         {
       {
@@ -383,7 +450,15 @@
         "@size":"0.016 0.016 0.016"
       }
     },
-                }            }        }        "Group":
+                }            }        }    { "#comment" : "Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'>" }
+    { "#comment" : "<Shape DEF='AxisLines_Shape'>" }
+    { "#comment" : "<IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>" }
+    { "#comment" : "<Color color='1 0 0 0 1 0 0 0 1'/>" }
+    { "#comment" : "<Coordinate point='0 0 0 1 0 0 0 1 0 0 0 1'/>" }
+    { "#comment" : "</IndexedLineSet>" }
+    { "#comment" : "</Shape>" }
+    { "#comment" : "</Transform" }
+        "Group":
         {
       {
         "@DEF":"AnimationSelectMenu"
@@ -1018,6 +1093,8 @@
         "@toNode":"HudXform"
       }
     },
+        { "#comment" : "</Group>" }
+        { "#comment" : "Joint center and Joint hierarchy connections" }
                 "Transform":
                 {
       {
@@ -4639,7 +4716,8 @@
         "@point":"0 1.3126 -0.0154 0 1.3128 0.01538"
       }
     },
-                            }                        }                        "Transform":
+                            }                        }            { "#comment" : "Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape" }
+                        "Transform":
                         {
       {
         "@DEF":"l_eyelid_jointJointShape"
@@ -5546,7 +5624,8 @@
         "@USE":"HAnimJointLandmark"
       }
     },
-                        }                        "Shape":
+                        }            { "#comment" : "Shape DEF='l_carpal_distal_interphalangeal_2-to-l_dactylion_pt'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='0.18067 0.5816 0.01338, 0.17 0.558 0.017'/></LineSet></Shape" }
+                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_2_Segment"
@@ -6748,7 +6827,8 @@
         "@USE":"HAnimJointLandmark"
       }
     },
-                        }                        "Shape":
+                        }            { "#comment" : "Shape DEF='r_carpal_distal_interphalangeal_2-to-r_dactylion'><LineSet vertexCount='2'><Color USE='SkeletonColor'/><Coordinate point='-0.1803 0.5816 0.01338, -0.17 0.558 0.017'/></LineSet></Shape" }
+                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_2_Segment"
@@ -7343,6 +7423,7 @@
       {
         "@DEF":"SurfaceAndSiteDefinitions"
       }
+            { "#comment" : "Transform DEF='ShapesAndSites' scale='0.1 0.1 0.1' translation='-0.2 -0.1 -0.62'" }
                         "Shape":
                         {
       {
@@ -7386,8 +7467,18 @@
       {
         "@DEF":"sacrum_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "*no surface features this Segment)" }
+              { "#comment" : "(example site and site landmark code" }
+              { "#comment" : "<HAnimSite DEF='hanim_sitename_pt' name='sitename' translation='sitename_ptTranslation'>" }
+              { "#comment" : "<TouchSensor description='HAnimSite sitename nnfromtable'/>" }
+              { "#comment" : "<Shape USE='HAnimSiteLandmark'/>" }
+              { "#comment" : "</HAnimSite>" }
+              { "#comment" : "<Shape DEF='JointName-to-SiteName'>" }
+              { "#comment" : "<LineSet vertexCount='2'><Color DEF='SiteColor' color='0 1 0, 1 0 0'/>" }
+              { "#comment" : "<Coordinate point='parentJointCenter, sitename_ptTranslation'/>" }
+              { "#comment" : "</LineSet>" }
+              { "#comment" : "</Shape>" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"pelvis_Shape"
@@ -8343,8 +8434,8 @@
       {
         "@DEF":"l_navicular_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_cuneiform_1_Shape"
@@ -8387,8 +8478,8 @@
       {
         "@DEF":"l_cuneiform_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metatarsal_1_Shape"
@@ -8431,8 +8522,8 @@
       {
         "@DEF":"l_metatarsal_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_proximal_phalanx_1_Shape"
@@ -8574,7 +8665,12 @@
         "@USE":"HAnimSiteLandmark"
       }
     },
-                            }                        }                        "Shape":
+                            }              { "#comment" : "Shape DEF='l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip'>" }
+              { "#comment" : "<LineSet vertexCount='2'><Color USE='SiteColor'/>" }
+              { "#comment" : "<Coordinate point='0.062 0.012 0.115, 0.062 0.012 0.134'/>" }
+              { "#comment" : "</LineSet>" }
+              { "#comment" : "</Shape" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_cuneiform_2_Shape"
@@ -8617,8 +8713,8 @@
       {
         "@DEF":"l_cuneiform_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metatarsal_2_Shape"
@@ -8661,8 +8757,8 @@
       {
         "@DEF":"l_metatarsal_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_proximal_phalanx_2_Shape"
@@ -8705,8 +8801,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_middle_phalanx_2_Shape"
@@ -8749,8 +8845,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_distal_phalanx_2_Shape"
@@ -8875,8 +8971,8 @@
       {
         "@DEF":"l_cuneiform_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metatarsal_3_Shape"
@@ -8919,8 +9015,8 @@
       {
         "@DEF":"l_metatarsal_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_proximal_phalanx_3_Shape"
@@ -8963,8 +9059,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_middle_phalanx_3_Shape"
@@ -9007,8 +9103,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_distal_phalanx_3_Shape"
@@ -9133,8 +9229,8 @@
       {
         "@DEF":"l_calcaneus_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_cuboid_Shape"
@@ -9177,8 +9273,8 @@
       {
         "@DEF":"l_cuboid_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metatarsal_4_Shape"
@@ -9221,8 +9317,8 @@
       {
         "@DEF":"l_metatarsal_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_proximal_phalanx_4_Shape"
@@ -9265,8 +9361,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_middle_phalanx_4_Shape"
@@ -9309,8 +9405,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_distal_phalanx_4_Shape"
@@ -9435,8 +9531,8 @@
       {
         "@DEF":"l_metatarsal_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_proximal_phalanx_5_Shape"
@@ -9479,8 +9575,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_tarsal_middle_phalanx_5_Shape"
@@ -10167,8 +10263,8 @@
       {
         "@DEF":"r_navicular_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_cuneiform_1_Shape"
@@ -10211,8 +10307,8 @@
       {
         "@DEF":"r_cuneiform_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metatarsal_1_Shape"
@@ -10255,8 +10351,8 @@
       {
         "@DEF":"r_metatarsal_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_proximal_phalanx_1_Shape"
@@ -10463,8 +10559,8 @@
       {
         "@DEF":"r_cuneiform_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metatarsal_2_Shape"
@@ -10507,8 +10603,8 @@
       {
         "@DEF":"r_metatarsal_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_proximal_phalanx_2_Shape"
@@ -10551,8 +10647,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_middle_phalanx_2_Shape"
@@ -10595,8 +10691,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_distal_phalanx_2_Shape"
@@ -10721,8 +10817,8 @@
       {
         "@DEF":"r_cuneiform_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metatarsal_3_Shape"
@@ -10765,8 +10861,8 @@
       {
         "@DEF":"r_metatarsal_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_proximal_phalanx_3_Shape"
@@ -10809,8 +10905,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_middle_phalanx_3_Shape"
@@ -10853,8 +10949,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_distal_phalanx_3_Shape"
@@ -10979,8 +11075,8 @@
       {
         "@DEF":"r_calcaneus_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_cuboid_Shape"
@@ -11023,8 +11119,8 @@
       {
         "@DEF":"r_cuboid_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metatarsal_4_Shape"
@@ -11067,8 +11163,8 @@
       {
         "@DEF":"r_metatarsal_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_proximal_phalanx_4_Shape"
@@ -11111,8 +11207,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_middle_phalanx_4_Shape"
@@ -11155,8 +11251,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_distal_phalanx_4_Shape"
@@ -11281,8 +11377,8 @@
       {
         "@DEF":"r_metatarsal_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_proximal_phalanx_5_Shape"
@@ -11325,8 +11421,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_tarsal_middle_phalanx_5_Shape"
@@ -11771,8 +11867,8 @@
       {
         "@DEF":"l4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l3_Shape"
@@ -11815,8 +11911,8 @@
       {
         "@DEF":"l3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l2_Shape"
@@ -11980,8 +12076,8 @@
       {
         "@DEF":"l1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t12_Shape"
@@ -12024,8 +12120,8 @@
       {
         "@DEF":"t12_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t11_Shape"
@@ -12068,8 +12164,8 @@
       {
         "@DEF":"t11_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t10_Shape"
@@ -12471,8 +12567,8 @@
       {
         "@DEF":"t8_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t7_Shape"
@@ -12515,8 +12611,8 @@
       {
         "@DEF":"t7_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t6_Shape"
@@ -12559,8 +12655,8 @@
       {
         "@DEF":"t6_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t5_Shape"
@@ -12603,8 +12699,8 @@
       {
         "@DEF":"t5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t4_Shape"
@@ -12647,8 +12743,8 @@
       {
         "@DEF":"t4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t3_Shape"
@@ -12691,8 +12787,8 @@
       {
         "@DEF":"t3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t2_Shape"
@@ -12735,8 +12831,8 @@
       {
         "@DEF":"t2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"t1_Shape"
@@ -13021,8 +13117,8 @@
       {
         "@DEF":"c6_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"c5_Shape"
@@ -13065,8 +13161,8 @@
       {
         "@DEF":"c5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"c4_Shape"
@@ -13109,8 +13205,8 @@
       {
         "@DEF":"c4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"c3_Shape"
@@ -13153,8 +13249,8 @@
       {
         "@DEF":"c3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"c2_Shape"
@@ -13279,8 +13375,8 @@
       {
         "@DEF":"c1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"skull_Shape"
@@ -15169,8 +15265,8 @@
       {
         "@DEF":"l_trapezium_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metacarpal_1_Shape"
@@ -15295,8 +15391,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_1_Shape"
@@ -15421,8 +15517,8 @@
       {
         "@DEF":"l_trapezoid_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metacarpal_2_Shape"
@@ -15465,8 +15561,8 @@
       {
         "@DEF":"l_metacarpal_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_proximal_phalanx_2_Shape"
@@ -15509,8 +15605,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_middle_phalanx_2_Shape"
@@ -15553,8 +15649,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_2_Shape"
@@ -15718,8 +15814,8 @@
       {
         "@DEF":"l_capitate_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metacarpal_3_Shape"
@@ -15844,8 +15940,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_middle_phalanx_3_Shape"
@@ -15888,8 +15984,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_3_Shape"
@@ -16014,8 +16110,8 @@
       {
         "@DEF":"l_hamate_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_metacarpal_4_Shape"
@@ -16058,8 +16154,8 @@
       {
         "@DEF":"l_metacarpal_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_proximal_phalanx_4_Shape"
@@ -16102,8 +16198,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_middle_phalanx_4_Shape"
@@ -16146,8 +16242,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_4_Shape"
@@ -16354,8 +16450,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_middle_phalanx_5_Shape"
@@ -16398,8 +16494,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"l_carpal_distal_phalanx_5_Shape"
@@ -17207,8 +17303,8 @@
       {
         "@DEF":"r_trapezium_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metacarpal_1_Shape"
@@ -17333,8 +17429,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_1_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_1_Shape"
@@ -17459,8 +17555,8 @@
       {
         "@DEF":"r_trapezoid_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metacarpal_2_Shape"
@@ -17503,8 +17599,8 @@
       {
         "@DEF":"r_metacarpal_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_proximal_phalanx_2_Shape"
@@ -17547,8 +17643,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_middle_phalanx_2_Shape"
@@ -17591,8 +17687,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_2_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_2_Shape"
@@ -17756,8 +17852,8 @@
       {
         "@DEF":"r_capitate_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metacarpal_3_Shape"
@@ -17882,8 +17978,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_middle_phalanx_3_Shape"
@@ -17926,8 +18022,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_3_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_3_Shape"
@@ -18052,8 +18148,8 @@
       {
         "@DEF":"r_hamate_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_metacarpal_4_Shape"
@@ -18096,8 +18192,8 @@
       {
         "@DEF":"r_metacarpal_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_proximal_phalanx_4_Shape"
@@ -18140,8 +18236,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_middle_phalanx_4_Shape"
@@ -18184,8 +18280,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_4_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_4_Shape"
@@ -18392,8 +18488,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_middle_phalanx_5_Shape"
@@ -18436,8 +18532,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_5_Sites"
       }
-    },
-                        "Shape":
+              { "#comment" : "None" }
+                        }                        "Shape":
                         {
       {
         "@DEF":"r_carpal_distal_phalanx_5_Shape"
@@ -18524,6 +18620,16 @@
       {
         "@DEF":"hanim_JinLOA4S"
       }
+      { "#comment" : "MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>" }
+      { "#comment" : "<MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"'/>" }
+      { "#comment" : "<MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>" }
+      { "#comment" : "<MetadataString name='creationDate' value='31 March 2011'/>" }
+      { "#comment" : "<MetadataString name='John Carlson and Joe Williams' value='Modifiers'/>" }
+      { "#comment" : "<MetadataString name='modificationDate' value='25 March 2024'/>" }
+      { "#comment" : "<MetadataString name='gender' value='female'/>" }
+      { "#comment" : "<MetadataFloat name='height' value='1.5'/>" }
+      { "#comment" : "<MetadataString name='humanoidVersion' value='2.0'/>" }
+      { "#comment" : "</MetadataSet" }
             "HAnimJoint":
             {
       {
@@ -21442,6 +21548,7 @@
         "@USE":"skull-to-temporomandibular_Segment"
       }
     },
+                                                            { "#comment" : "Shape DEF='skull-to-tongue_joint'/" }
                                                                                                                         "Group":
                                                                                                                         {
       {
@@ -22180,6 +22287,7 @@
         "@USE":"l_carpal_distal_interphalangeal_2JointShape"
       }
     },
+                                                                { "#comment" : "Shape USE='l_carpal_distal_phalanx_2-to-l_dactylion_pt'/" }
                                                                                                                                 "Shape":
                                                                                                                                 {
       {
@@ -23162,6 +23270,7 @@
         "@USE":"r_carpal_distal_interphalangeal_2JointShape"
       }
     },
+                                                                { "#comment" : "Shape USE='r_carpal_distal_interphalangeal_2-to-r_dactylion'/" }
                                                                                                                                 "Shape":
                                                                                                                                 {
       {
@@ -23667,6 +23776,7 @@
         "@DEF":"DefaultTimer"
       }
     },
+      { "#comment" : "indention-to-match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -24549,6 +24659,7 @@
         "@DEF":"Default_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -25872,6 +25983,7 @@
         "@toNode":"Default_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -27206,6 +27318,7 @@
         "@DEF":"TestTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -28088,6 +28201,7 @@
         "@DEF":"Test_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -29411,6 +29525,7 @@
         "@toNode":"Test_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -30739,6 +30854,24 @@
       {
         "@DEF":"Pitch1Animation_loa4"
       }
+      { "#comment" : "Pitch1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of x-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians, zero degrees." }
+      { "#comment" : "x y z scale, all in radians 0 to <+-inf." }
+      { "#comment" : "Thus, 1 radian in a times scale 1 = +1 radian" }
+      { "#comment" : "= about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "greater than +-6.28 radians range" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive pitch value applied to the" }
+      { "#comment" : "skullbase Joint would rotate the" }
+      { "#comment" : "the gaze of model down, toward the floor." }
             "TimeSensor":
             {
       {
@@ -31627,6 +31760,7 @@
         "@DEF":"Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -32950,6 +33084,7 @@
         "@toNode":"Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -35166,6 +35301,7 @@
         "@DEF":"Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -36489,6 +36625,7 @@
         "@toNode":"Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -37817,6 +37954,25 @@
       {
         "@DEF":"Yaw1Animation_loa4"
       }
+      { "#comment" : "Yaw1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of y-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians, zero degrees." }
+      { "#comment" : "x y z scale, all in radians 0 to <+-inf." }
+      { "#comment" : "Thus, 1 radian in y times scale 1 = +1 radian" }
+      { "#comment" : "= about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive yaw value applied to the" }
+      { "#comment" : "skullbase Joint would move the" }
+      { "#comment" : "the gaze of model toward the" }
+      { "#comment" : "model's +X direction, the model left" }
+      { "#comment" : "over the left shoulder." }
             "TimeSensor":
             {
       {
@@ -38705,6 +38861,7 @@
         "@DEF":"Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -40028,6 +40185,7 @@
         "@toNode":"Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -42244,6 +42402,7 @@
         "@DEF":"Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -43567,6 +43726,7 @@
         "@toNode":"Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -44895,6 +45055,25 @@
       {
         "@DEF":"Roll1Animation_loa4"
       }
+      { "#comment" : "Roll1 example shows Y-axis control of Joint nodes" }
+      { "#comment" : "that through the skeleton hierarchy control" }
+      { "#comment" : "Segment geometry and Site position." }
+      { "#comment" : "So, the following interpolator:" }
+      { "#comment" : "<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>" }
+      { "#comment" : "will start at 0 move to +1 radian of z-axis" }
+      { "#comment" : "rotation of the Joint, then return to 0." }
+      { "#comment" : "0 0 1 0 is default value, meaning set to" }
+      { "#comment" : "0 radians, zero degrees." }
+      { "#comment" : "x y z scale, all in radians 0 to <+-inf." }
+      { "#comment" : "Thus, 1 radian in a times scale 1 = +1 radian" }
+      { "#comment" : "= about 60 degrees" }
+      { "#comment" : "360 degrees divided by 2 times pi" }
+      { "#comment" : "Right hand rule for axes so a" }
+      { "#comment" : "positive roll value applied to the" }
+      { "#comment" : "skullbase Joint would rotate the" }
+      { "#comment" : "the gaze of model ccw toward the" }
+      { "#comment" : "model's +X direction, the model left" }
+      { "#comment" : "toward the left shoulder." }
             "TimeSensor":
             {
       {
@@ -45783,6 +45962,7 @@
         "@DEF":"Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -47106,6 +47286,7 @@
         "@toNode":"Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -51979,6 +52160,7 @@
         "@DEF":"WalkTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -52861,6 +53043,7 @@
         "@DEF":"Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -54184,6 +54367,7 @@
         "@toNode":"Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -55518,6 +55702,7 @@
         "@DEF":"RunTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {
@@ -56400,6 +56585,7 @@
         "@DEF":"Run_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Timer to Interpolators" }
             "ROUTE":
             {
       {
@@ -57723,6 +57909,7 @@
         "@toNode":"Run_r_carpal_distal_interphalangeal_5_RotationInterpolator"
       }
     },
+      { "#comment" : "Interpolators to Joints" }
             "ROUTE":
             {
       {
@@ -69663,7 +69850,26 @@
         "@toNode":"hanim_r_carpal_distal_interphalangeal_5"
       }
     },
-        }        "Group":
+        }    { "#comment" : "Ball for Kick2 not included Group>" }
+    { "#comment" : "<Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'>" }
+    { "#comment" : "<Shape DEF='ball_Shape'>" }
+    { "#comment" : "<Appearance DEF='ball_Appearance'>" }
+    { "#comment" : "<Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/>" }
+    { "#comment" : "</Appearance>" }
+    { "#comment" : "<IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>" }
+    { "#comment" : "<Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/>" }
+    { "#comment" : "</IndexedFaceSet>" }
+    { "#comment" : "</Shape>" }
+    { "#comment" : "<Viewpoint DEF='ballView_1' description='Ball View'/>" }
+    { "#comment" : "</Transform>" }
+    { "#comment" : "<PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/>" }
+    { "#comment" : "<OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/>" }
+    { "#comment" : "<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/>" }
+    { "#comment" : "<ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/>" }
+    { "#comment" : "<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/>" }
+    { "#comment" : "<ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/>" }
+    { "#comment" : "</Group" }
+        "Group":
         {
       {
         "@DEF":"TimerControls"

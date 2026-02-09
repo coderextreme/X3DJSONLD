@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"10 November 2019",
+        "@content":"Mon, 09 Feb 2026 07:12:54 GMT",
         "@name":"modified"
       }
     },
@@ -211,20 +211,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -254,7 +240,8 @@
             "TouchSensor":
             {
       {
-        "@DEF":"RandomTextClickedSensor"
+        "@DEF":"RandomTextClickedSensor",
+        "@description":"Select to see a new strategy"
       }
     },
             "Shape":
@@ -275,7 +262,9 @@
                     "FontStyle":
                     {
       {
-        "@DEF":"MessageFont"
+        "@DEF":"MessageFont",
+        "@family":""SANS"",
+        "@justify":""MIDDLE" "MIDDLE""
       }
     },
                 }            }            "Transform":
@@ -315,7 +304,8 @@
                     }                }            }        }        "Script":
         {
       {
-        "@DEF":"TextScript"
+        "@DEF":"TextScript",
+        "@url":""ObliqueStrategiesScript.js" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js""
       }
             "field":
             {
@@ -390,7 +380,9 @@
         }        "Transform":
         {
       {
-        "@DEF":"CardTransform"
+        "@DEF":"CardTransform",
+        "@scale":"0.4 0.4 0.4",
+        "@translation":"0 -1.5 0"
       }
             "Shape":
             {
@@ -414,45 +406,24 @@
         "@justify":""MIDDLE" "MIDDLE""
       }
     },
-                }            }            "ROUTE":
+                }            }            "Sound":
             {
       {
-        "@fromField":"string_changed",
-        "@fromNode":"TextScript",
-        "@toField":"string",
-        "@toNode":"CardText"
-      }
-    },
-            "Sound":
-            {
-      {
-        "@DEF":"CardSoundSpatialization"
+        "@DEF":"CardSoundSpatialization",
+        "@maxBack":"100",
+        "@maxFront":"100",
+        "@minBack":"20",
+        "@minFront":"20"
       }
                 "AudioClip":
                 {
       {
-        "@DEF":"TextToSpeechAudioClip"
+        "@DEF":"TextToSpeechAudioClip",
+        "@description":"sends strategy text google translate",
+        "@url":""http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium" "translate_tts_mp3FileFormatNotSupported.wav" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav""
       }
     },
-            }            "ROUTE":
-            {
-      {
-        "@fromField":"textToSpeechUrl",
-        "@fromNode":"TextScript",
-        "@toField":"url",
-        "@toNode":"TextToSpeechAudioClip"
-      }
-    },
-            "ROUTE":
-            {
-      {
-        "@fromField":"newCardTime",
-        "@fromNode":"TextScript",
-        "@toField":"startTime",
-        "@toNode":"TextToSpeechAudioClip"
-      }
-    },
-        }        "Transform":
+            }        }        "Transform":
         {
       {
         "@scale":"0.4 0.4 0.4",
@@ -461,16 +432,8 @@
             "TouchSensor":
             {
       {
-        "@DEF":"PreviousTextClickedSensor"
-      }
-    },
-            "ROUTE":
-            {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"PreviousTextClickedSensor",
-        "@toField":"selectPreviousCard",
-        "@toNode":"TextScript"
+        "@DEF":"PreviousTextClickedSensor",
+        "@description":"Select to see previous strategy"
       }
     },
             "Shape":
@@ -536,16 +499,8 @@
             "TouchSensor":
             {
       {
-        "@DEF":"NextTextClickedSensor"
-      }
-    },
-            "ROUTE":
-            {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"NextTextClickedSensor",
-        "@toField":"selectNextCard",
-        "@toNode":"TextScript"
+        "@DEF":"NextTextClickedSensor",
+        "@description":"Select to see next strategy"
       }
     },
             "Shape":
@@ -590,15 +545,6 @@
         "@USE":"RandomTextClickedSensor"
       }
     },
-            "ROUTE":
-            {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"RandomTextClickedSensor",
-        "@toField":"selectRandomCard",
-        "@toNode":"TextScript"
-      }
-    },
             "Shape":
             {
                 "Appearance":
@@ -638,17 +584,11 @@
             "Anchor":
             {
       {
-        "@DEF":"TextToSpeechAnchor"
+        "@DEF":"TextToSpeechAnchor",
+        "@description":"text to speech in browser",
+        "@parameter":""target=_blank"",
+        "@url":""http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change""
       }
-                "ROUTE":
-                {
-      {
-        "@fromField":"textToSpeechUrl",
-        "@fromNode":"TextScript",
-        "@toField":"url",
-        "@toNode":"TextToSpeechAnchor"
-      }
-    },
                 "Shape":
                 {
                     "Appearance":
@@ -679,4 +619,67 @@
         "@USE":"TransparentClickSurface"
       }
     },
-                }            }        }    }}
+                }            }        }        "ROUTE":
+        {
+      {
+        "@fromField":"string_changed",
+        "@fromNode":"TextScript",
+        "@toField":"set_string",
+        "@toNode":"CardText"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"textToSpeechUrl",
+        "@fromNode":"TextScript",
+        "@toField":"set_url",
+        "@toNode":"TextToSpeechAudioClip"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"newCardTime",
+        "@fromNode":"TextScript",
+        "@toField":"set_startTime",
+        "@toNode":"TextToSpeechAudioClip"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"PreviousTextClickedSensor",
+        "@toField":"selectPreviousCard",
+        "@toNode":"TextScript"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"NextTextClickedSensor",
+        "@toField":"selectNextCard",
+        "@toNode":"TextScript"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"RandomTextClickedSensor",
+        "@toField":"selectRandomCard",
+        "@toNode":"TextScript"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"textToSpeechUrl",
+        "@fromNode":"TextScript",
+        "@toField":"set_url",
+        "@toNode":"TextToSpeechAnchor"
+      }
+    },
+    }}

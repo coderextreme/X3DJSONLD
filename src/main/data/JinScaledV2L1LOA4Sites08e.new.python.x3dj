@@ -8,6 +8,8 @@
         "@profile":"Immersive",
     "head":
     {
+    { "#comment" : "Scaled 1:1, Added Animations" }
+    { "#comment" : "Added Sites" }
         "component":
         {
       {
@@ -398,8 +400,13 @@
       {
         "@DEF":"sacrum_Sites"
       }
-    },
-                }                "HAnimJoint":
+            { "#comment" : "None" }
+            { "#comment" : "(example site and site marker code)" }
+            { "#comment" : "<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>" }
+            { "#comment" : "<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>" }
+            { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+            { "#comment" : "</HAnimSite>" }
+                    }                }                "HAnimJoint":
                 {
       {
         "@DEF":"hanim_sacroiliac"
@@ -452,6 +459,16 @@
       {
         "@DEF":"pelvis_Sites"
       }
+              { "#comment" : "(r_iliocristale_pt '-0.1525 1.0628 0.0035)" }
+              { "#comment" : "(r_trochanterion_pt -0.1689 0.8419 0.0352)" }
+              { "#comment" : "(l_iliocristale_pt 0.1612 1.0537 0.0008)" }
+              { "#comment" : "(l_trochanterion_pt 0.1677 0.8336 0.0303)" }
+              { "#comment" : "(r_asis_pt -0.0887 1.0021 0.1112)" }
+              { "#comment" : "(l_asis_pt 0.0774 1.0190 -0.1151)" }
+              { "#comment" : "(r_psis_pt -0.0716 1.0190 -0.1138)" }
+              { "#comment" : "(l_psis_pt 0.0774 1.0190 -0.1151)" }
+              { "#comment" : "(crotch_pt 0.0034 0.8266 0.0257)" }
+              { "#comment" : "(buttocks_standing_wall_contact_point x y z)" }
                             "HAnimSite":
                             {
       {
@@ -675,6 +692,10 @@
       {
         "@DEF":"l_thigh_Sites"
       }
+                { "#comment" : "(l_knee_crease_pt 0.0993 0.4881 -0.0309)" }
+                { "#comment" : "(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)" }
+                { "#comment" : "(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)" }
+                { "#comment" : "(l_suprapatella_pt x y z)" }
                                 "HAnimSite":
                                 {
       {
@@ -796,6 +817,9 @@
       {
         "@DEF":"l_calf_Sites"
       }
+                  { "#comment" : "(l_tibiale_pt x y z)" }
+                  { "#comment" : "(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)" }
+                  { "#comment" : "(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)" }
                                     "HAnimSite":
                                     {
       {
@@ -900,6 +924,8 @@
       {
         "@DEF":"l_talus_Sites"
       }
+                    { "#comment" : "(l_sphyrion_pt 0.0890 0.0575 -0.0943)" }
+                    { "#comment" : "(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)" }
                                         "HAnimSite":
                                         {
       {
@@ -987,8 +1013,8 @@
       {
         "@DEF":"l_navicular_Sites"
       }
-    },
-                                    }                                    "HAnimJoint":
+                      { "#comment" : "None" }
+                                        }                                    }                                    "HAnimJoint":
                                     {
       {
         "@DEF":"hanim_l_cuneonavicular_1"
@@ -1041,8 +1067,8 @@
       {
         "@DEF":"l_cuneiform_1_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_l_tarsometatarsal_1"
@@ -1095,8 +1121,8 @@
       {
         "@DEF":"l_metatarsal_1_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_l_metatarsophalangeal_1"
@@ -1149,6 +1175,7 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_1_Sites"
       }
+                            { "#comment" : "(l_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)" }
                                                         "HAnimSite":
                                                         {
       {
@@ -1219,6 +1246,7 @@
       {
         "@DEF":"l_tarsal_distal_phalanx_1_Sites"
       }
+                              { "#comment" : "(l_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)" }
                                                             "HAnimSite":
                                                             {
       {
@@ -1289,8 +1317,8 @@
       {
         "@DEF":"l_cuneiform_2_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_l_tarsometatarsal_2"
@@ -1343,8 +1371,8 @@
       {
         "@DEF":"l_metatarsal_2_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_l_metatarsophalangeal_2"
@@ -1397,8 +1425,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_2_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2"
@@ -1451,8 +1479,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_2_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_l_tarsal_distal_interphalangeal_2"
@@ -1505,6 +1533,7 @@
       {
         "@DEF":"l_tarsal_distal_phalanx_2"
       }
+                                { "#comment" : "(l_tarsal_distal_phalanx_2_tip 0.110 0.011 0.19)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -1575,8 +1604,8 @@
       {
         "@DEF":"l_cuneiform_3_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_l_tarsometatarsal_3"
@@ -1629,8 +1658,8 @@
       {
         "@DEF":"l_metatarsal_3_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_l_metatarsophalangeal_3"
@@ -1683,8 +1712,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_3_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3"
@@ -1737,8 +1766,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_3_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_l_tarsal_distal_interphalangeal_3"
@@ -1791,6 +1820,7 @@
       {
         "@DEF":"l_tarsal_distal_phalanx_3_Sites"
       }
+                                { "#comment" : "(l_tarsal_distal_phalanx_3_tip 0.128 0.011 0.185)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -1861,8 +1891,8 @@
       {
         "@DEF":"l_calcaneus_Sites"
       }
-    },
-                                    }                                    "HAnimJoint":
+                      { "#comment" : "None" }
+                                        }                                    }                                    "HAnimJoint":
                                     {
       {
         "@DEF":"hanim_l_transversetarsal"
@@ -1915,8 +1945,8 @@
       {
         "@DEF":"l_cuboid_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_l_tarsometatarsal_4"
@@ -1969,8 +1999,8 @@
       {
         "@DEF":"l_metatarsal_4_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_l_metatarsophalangeal_4"
@@ -2023,8 +2053,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_4_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4"
@@ -2077,8 +2107,8 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_4_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_l_tarsal_distal_interphalangeal_4"
@@ -2131,6 +2161,7 @@
       {
         "@DEF":"l_tarsal_distal_phalanx_4_Sites"
       }
+                                { "#comment" : "(l_tarsal_distal_phalanx_4_tip 0.142 0.011 0.178)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -2201,8 +2232,8 @@
       {
         "@DEF":"l_metatarsal_5_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_l_metatarsophalangeal_5"
@@ -2255,8 +2286,8 @@
       {
         "@DEF":"l_tarsal_proximal_phalanx_5_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5"
@@ -2309,6 +2340,7 @@
       {
         "@DEF":"l_tarsal_middle_phalanx_5_Sites"
       }
+                              { "#comment" : "(l_metatarsal_phalanx_5_pt 0.1825 0.0070 0.0928)" }
                                                             "HAnimSite":
                                                             {
       {
@@ -2379,6 +2411,7 @@
       {
         "@DEF":"l_tarsal_distal_phalanx_5_Sites"
       }
+                                { "#comment" : "(l_tarsal_distal_phalanx_5_tip 0.154 0.010 0.168)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -2449,6 +2482,10 @@
       {
         "@DEF":"r_thigh_Sites"
       }
+                { "#comment" : "(r_knee_crease_pt -0.0825 0.4932 -0.0326)" }
+                { "#comment" : "(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)" }
+                { "#comment" : "(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)" }
+                { "#comment" : "(r_suprapatella_pt x y z)" }
                                 "HAnimSite":
                                 {
       {
@@ -2570,6 +2607,9 @@
       {
         "@DEF":"r_calf_Sites"
       }
+                  { "#comment" : "(r_tibiale_pt x y z)" }
+                  { "#comment" : "(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)" }
+                  { "#comment" : "(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)" }
                                     "HAnimSite":
                                     {
       {
@@ -2674,6 +2714,8 @@
       {
         "@DEF":"r_talus_Sites"
       }
+                    { "#comment" : "(r_sphyrion_pt -0.0603 0.0610 -0.1002)" }
+                    { "#comment" : "(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)" }
                                         "HAnimSite":
                                         {
       {
@@ -2761,8 +2803,8 @@
       {
         "@DEF":"r_navicular_Sites"
       }
-    },
-                                    }                                    "HAnimJoint":
+                      { "#comment" : "None" }
+                                        }                                    }                                    "HAnimJoint":
                                     {
       {
         "@DEF":"hanim_r_cuneonavicular_1"
@@ -2815,8 +2857,8 @@
       {
         "@DEF":"r_cuneiform_1_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_r_tarsometatarsal_1"
@@ -2869,8 +2911,8 @@
       {
         "@DEF":"r_metatarsal_1_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_r_metatarsophalangeal_1"
@@ -2923,6 +2965,7 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_1_Sites"
       }
+                            { "#comment" : "(r_metatarsal_phalanx_1_pt 0.0816 0.0232 0.0106)" }
                                                         "HAnimSite":
                                                         {
       {
@@ -2993,6 +3036,7 @@
       {
         "@DEF":"r_tarsal_distal_phalanx_1_Sites"
       }
+                              { "#comment" : "(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)" }
                                                             "HAnimSite":
                                                             {
       {
@@ -3063,8 +3107,8 @@
       {
         "@DEF":"r_cuneiform_2_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_r_tarsometatarsal_2"
@@ -3117,8 +3161,8 @@
       {
         "@DEF":"r_metatarsal_2_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_r_metatarsophalangeal_2"
@@ -3171,8 +3215,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_2_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2"
@@ -3225,8 +3269,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_2_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_r_tarsal_distal_interphalangeal_2"
@@ -3279,6 +3323,7 @@
       {
         "@DEF":"r_tarsal_distal_phalanx_2_Sites"
       }
+                                { "#comment" : "(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -3349,8 +3394,8 @@
       {
         "@DEF":"r_cuneiform_3_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_r_tarsometatarsal_3"
@@ -3403,8 +3448,8 @@
       {
         "@DEF":"r_metatarsal_3_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_r_metatarsophalangeal_3"
@@ -3457,8 +3502,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_3_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3"
@@ -3511,8 +3556,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_3_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_r_tarsal_distal_interphalangeal_3"
@@ -3565,6 +3610,7 @@
       {
         "@DEF":"r_tarsal_distal_phalanx_3_Sites"
       }
+                                { "#comment" : "(r_tarsal_distal_phalanx_3_tip -0.128 0.011 0.185)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -3635,8 +3681,8 @@
       {
         "@DEF":"r_calcaneus_Sites"
       }
-    },
-                                    }                                    "HAnimJoint":
+                      { "#comment" : "None" }
+                                        }                                    }                                    "HAnimJoint":
                                     {
       {
         "@DEF":"hanim_r_transversetarsal"
@@ -3689,8 +3735,8 @@
       {
         "@DEF":"r_cuboid_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_r_tarsometatarsal_4"
@@ -3743,8 +3789,8 @@
       {
         "@DEF":"r_metatarsal_4_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_r_metatarsophalangeal_4"
@@ -3797,8 +3843,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_4_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4"
@@ -3851,8 +3897,8 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_4_Sites"
       }
-    },
-                                                    }                                                    "HAnimJoint":
+                              { "#comment" : "None" }
+                                                        }                                                    }                                                    "HAnimJoint":
                                                     {
       {
         "@DEF":"hanim_r_tarsal_distal_interphalangeal_4"
@@ -3905,6 +3951,7 @@
       {
         "@DEF":"r_tarsal_distal_phalanx_4_Sites"
       }
+                                { "#comment" : "(r_tarsal_distal_phalanx_4_tip -0.142 0.011 0.178)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -3975,8 +4022,8 @@
       {
         "@DEF":"r_metatarsal__Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_r_metatarsophalangeal_5"
@@ -4029,8 +4076,8 @@
       {
         "@DEF":"r_tarsal_proximal_phalanx_5_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5"
@@ -4083,6 +4130,7 @@
       {
         "@DEF":"r_tarsal_middle_phalanx_5_Sites"
       }
+                              { "#comment" : "(r_metatarsal_phalanx_5_pt x y z)" }
                                                             "HAnimSite":
                                                             {
       {
@@ -4153,6 +4201,7 @@
       {
         "@DEF":"r_tarsal_distal_phalanx_5_Sites"
       }
+                                { "#comment" : "(r_tarsal_distal_phalanx_5_tip -0.154 0.010 0.168)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -4223,6 +4272,11 @@
       {
         "@DEF":"l5_Sites"
       }
+                { "#comment" : "(spine_1_middle_back x y z)" }
+                { "#comment" : "(spine_2_lower_back_pt x y z)" }
+                { "#comment" : "(waist_preferred_anterior_pt x y z)" }
+                { "#comment" : "(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)" }
+                { "#comment" : "(navel 0.0069 1.0966 0.1017)" }
                                 "HAnimSite":
                                 {
       {
@@ -4361,8 +4415,8 @@
       {
         "@DEF":"l4_Sites"
       }
-    },
-                            }                            "HAnimJoint":
+                  { "#comment" : "None" }
+                                }                            }                            "HAnimJoint":
                             {
       {
         "@DEF":"hanim_vl3"
@@ -4415,8 +4469,8 @@
       {
         "@DEF":"l3_Sites"
       }
-    },
-                                }                                "HAnimJoint":
+                    { "#comment" : "None" }
+                                    }                                }                                "HAnimJoint":
                                 {
       {
         "@DEF":"hanim_vl2"
@@ -4469,6 +4523,8 @@
       {
         "@DEF":"l2_Sites"
       }
+                      { "#comment" : "(l_rib_10_pt 0.0871 1.1925 0.0992)" }
+                      { "#comment" : "(r_rib_10_pt -0.0711 1.1941 0.1016)" }
                                             "HAnimSite":
                                             {
       {
@@ -4556,8 +4612,8 @@
       {
         "@DEF":"l1_Sites"
       }
-    },
-                                        }                                        "HAnimJoint":
+                        { "#comment" : "None" }
+                                            }                                        }                                        "HAnimJoint":
                                         {
       {
         "@DEF":"hanim_vt12"
@@ -4610,8 +4666,8 @@
       {
         "@DEF":"t12_Sites"
       }
-    },
-                                            }                                            "HAnimJoint":
+                          { "#comment" : "None" }
+                                                }                                            }                                            "HAnimJoint":
                                             {
       {
         "@DEF":"hanim_vt11"
@@ -4664,8 +4720,8 @@
       {
         "@DEF":"t11_Sites"
       }
-    },
-                                                }                                                "HAnimJoint":
+                            { "#comment" : "None" }
+                                                    }                                                }                                                "HAnimJoint":
                                                 {
       {
         "@DEF":"hanim_vt10"
@@ -4718,6 +4774,8 @@
       {
         "@DEF":"t10_Sites"
       }
+                              { "#comment" : "(substernale_pt 0.0085 1.2995 0.1147)" }
+                              { "#comment" : "(mesosternale_pt x y z)" }
                                                             "HAnimSite":
                                                             {
       {
@@ -4805,6 +4863,11 @@
       {
         "@DEF":"t9_Sites"
       }
+                                { "#comment" : "(l_thelion_pt 0.0918 1.3382 0.1192)" }
+                                { "#comment" : "(r_thelion_pt -0.0736 1.3385 0.1217)" }
+                                { "#comment" : "(rear_center_midsagittal_plane_pt x y z)" }
+                                { "#comment" : "(l_chest_midsagittal_plane_pt x y z)" }
+                                { "#comment" : "(r_chest_midsagittal_plane_pt x y z)" }
                                                                 "HAnimSite":
                                                                 {
       {
@@ -4943,8 +5006,8 @@
       {
         "@DEF":"t8_Sites"
       }
-    },
-                                                            }                                                            "HAnimJoint":
+                                  { "#comment" : "None" }
+                                                                }                                                            }                                                            "HAnimJoint":
                                                             {
       {
         "@DEF":"hanim_vt7"
@@ -4997,8 +5060,8 @@
       {
         "@DEF":"t7_Sites"
       }
-    },
-                                                                }                                                                "HAnimJoint":
+                                    { "#comment" : "None" }
+                                                                    }                                                                }                                                                "HAnimJoint":
                                                                 {
       {
         "@DEF":"hanim_vt6"
@@ -5051,8 +5114,8 @@
       {
         "@DEF":"t6_Sites"
       }
-    },
-                                                                    }                                                                    "HAnimJoint":
+                                      { "#comment" : "None" }
+                                                                        }                                                                    }                                                                    "HAnimJoint":
                                                                     {
       {
         "@DEF":"hanim_vt5"
@@ -5105,8 +5168,8 @@
       {
         "@DEF":"t5_Sites"
       }
-    },
-                                                                        }                                                                        "HAnimJoint":
+                                        { "#comment" : "None" }
+                                                                            }                                                                        }                                                                        "HAnimJoint":
                                                                         {
       {
         "@DEF":"hanim_vt4"
@@ -5159,8 +5222,8 @@
       {
         "@DEF":"t4_Sites"
       }
-    },
-                                                                            }                                                                            "HAnimJoint":
+                                          { "#comment" : "None" }
+                                                                                }                                                                            }                                                                            "HAnimJoint":
                                                                             {
       {
         "@DEF":"hanim_vt3"
@@ -5213,8 +5276,8 @@
       {
         "@DEF":"t3_Sites"
       }
-    },
-                                                                                }                                                                                "HAnimJoint":
+                                            { "#comment" : "None" }
+                                                                                    }                                                                                }                                                                                "HAnimJoint":
                                                                                 {
       {
         "@DEF":"hanim_vt2"
@@ -5267,8 +5330,8 @@
       {
         "@DEF":"t2_Sites"
       }
-    },
-                                                                                    }                                                                                    "HAnimJoint":
+                                              { "#comment" : "None" }
+                                                                                        }                                                                                    }                                                                                    "HAnimJoint":
                                                                                     {
       {
         "@DEF":"hanim_vt1"
@@ -5321,6 +5384,8 @@
       {
         "@DEF":"t1_Sites"
       }
+                                                { "#comment" : "(suprasternale_pt 0.0084 1.4714 0.0551)" }
+                                                { "#comment" : "(cervicale_pt 0.0064 1.520 -0.0815)" }
                                                                                                 "HAnimSite":
                                                                                                 {
       {
@@ -5408,6 +5473,8 @@
       {
         "@DEF":"c7_Sites"
       }
+                                                  { "#comment" : "(l_neck_base_pt 0.0646 1.5141 -0.0380)" }
+                                                  { "#comment" : "(r_neck_base_pt -0.0419 1.5149 -0.0220)" }
                                                                                                     "HAnimSite":
                                                                                                     {
       {
@@ -5495,8 +5562,8 @@
       {
         "@DEF":"c6_Sites"
       }
-    },
-                                                                                                }                                                                                                "HAnimJoint":
+                                                    { "#comment" : "None" }
+                                                                                                    }                                                                                                }                                                                                                "HAnimJoint":
                                                                                                 {
       {
         "@DEF":"hanim_vc5"
@@ -5549,8 +5616,8 @@
       {
         "@DEF":"c5_Sites"
       }
-    },
-                                                                                                    }                                                                                                    "HAnimJoint":
+                                                      { "#comment" : "None" }
+                                                                                                        }                                                                                                    }                                                                                                    "HAnimJoint":
                                                                                                     {
       {
         "@DEF":"hanim_vc4"
@@ -5603,8 +5670,8 @@
       {
         "@DEF":"c4_Sites"
       }
-    },
-                                                                                                        }                                                                                                        "HAnimJoint":
+                                                        { "#comment" : "None" }
+                                                                                                            }                                                                                                        }                                                                                                        "HAnimJoint":
                                                                                                         {
       {
         "@DEF":"hanim_vc3"
@@ -5657,8 +5724,8 @@
       {
         "@DEF":"c3_Sites"
       }
-    },
-                                                                                                            }                                                                                                            "HAnimJoint":
+                                                          { "#comment" : "None" }
+                                                                                                                }                                                                                                            }                                                                                                            "HAnimJoint":
                                                                                                             {
       {
         "@DEF":"hanim_vc2"
@@ -5711,6 +5778,7 @@
       {
         "@DEF":"c2_Sites"
       }
+                                                            { "#comment" : "(adams_apple x y z)" }
                                                                                                                         "HAnimSite":
                                                                                                                         {
       {
@@ -5781,8 +5849,8 @@
       {
         "@DEF":"c1_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_skullbase"
@@ -5835,6 +5903,17 @@
       {
         "@DEF":"skull_Sites"
       }
+                                                                { "#comment" : "(skull_vertex_pt 0.0050 1.7504 0.0055)" }
+                                                                { "#comment" : "(glabella_pt x y z)" }
+                                                                { "#comment" : "(sellion_pt 0.0058 1.6316 0.0852)" }
+                                                                { "#comment" : "(l_infraorbitale_pt 0.0341 1.6171 0.0752)" }
+                                                                { "#comment" : "(r_infraorbitale_pt -0.0237 1.6171 0.0752)" }
+                                                                { "#comment" : "(l_tragion_pt 0.0739 1.6348 0.0282)" }
+                                                                { "#comment" : "(r_tragion_pt -0.0646 1.6347 0.0302)" }
+                                                                { "#comment" : "(nuchale_pt 0.0039 1.5972 -0.0796)" }
+                                                                { "#comment" : "(opisthocranion_pt x y z)" }
+                                                                { "#comment" : "(l_ectocanthus_pt x y z)" }
+                                                                { "#comment" : "(r_ectocanthus_pt x y z)" }
                                                                                                                                 "HAnimSite":
                                                                                                                                 {
       {
@@ -6075,8 +6154,12 @@
       {
         "@DEF":"l_eyelid_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(l_eyelid_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_eyelid_joint"
@@ -6129,8 +6212,12 @@
       {
         "@DEF":"r_eyelid_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(r_eyelid_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_eyeball_joint"
@@ -6183,8 +6270,12 @@
       {
         "@DEF":"l_eyeball_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(l_eyeball_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_eyeball_joint"
@@ -6237,8 +6328,12 @@
       {
         "@DEF":"r_eyeball_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(r_eyeball_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_eyebrow_joint"
@@ -6291,8 +6386,12 @@
       {
         "@DEF":"l_eyebrow_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(l_eyebrow_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_eyebrow_joint"
@@ -6345,8 +6444,12 @@
       {
         "@DEF":"r_eyebrow_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                  { "#comment" : "(r_eyebrow_tip_pt x y z)" }
+                                                                  { "#comment" : "<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>" }
+                                                                  { "#comment" : "<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>" }
+                                                                  { "#comment" : "<Shape USE='HAnimSiteShape'/>" }
+                                                                  { "#comment" : "</HAnimSite>" }
+                                                                                                                                }                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_temporomandibular"
@@ -6399,6 +6502,10 @@
       {
         "@DEF":"jaw_Sites"
       }
+                                                                  { "#comment" : "(r_gonion_pt -0.0520 1.5529 0.0347)" }
+                                                                  { "#comment" : "(l_gonion_pt 0.0631 1.5530 0.0330)" }
+                                                                  { "#comment" : "(supramenton_pt 0.0061 1.5410 0.0805)" }
+                                                                  { "#comment" : "(menton_pt x y z)" }
                                                                                                                                     "HAnimSite":
                                                                                                                                     {
       {
@@ -6520,6 +6627,7 @@
       {
         "@DEF":"l_clavicle_Sites"
       }
+                                                  { "#comment" : "(l_clavicale_pt 0.0271 1.4943 0.0394)" }
                                                                                                     "HAnimSite":
                                                                                                     {
       {
@@ -6590,6 +6698,10 @@
       {
         "@DEF":"l_scapula_Sites"
       }
+                                                    { "#comment" : "(l_acromion_pt 0.2032 1.4760 -0.0490)" }
+                                                    { "#comment" : "(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)" }
+                                                    { "#comment" : "(l_axilla_distal_pt 0.1706 1.4072 -0.0875)" }
+                                                    { "#comment" : "(l_axilla_posterior_folds_pt x y z)" }
                                                                                                         "HAnimSite":
                                                                                                         {
       {
@@ -6711,6 +6823,10 @@
       {
         "@DEF":"l_upperarm_Sites"
       }
+                                                      { "#comment" : "(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)" }
+                                                      { "#comment" : "(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)" }
+                                                      { "#comment" : "(l_radiale_pt 0.2182 1.1212 -0.1167)" }
+                                                      { "#comment" : "(l_bideltoid_pt x y z)" }
                                                                                                             "HAnimSite":
                                                                                                             {
       {
@@ -6832,6 +6948,8 @@
       {
         "@DEF":"l_forearm_Sites"
       }
+                                                        { "#comment" : "(l_radial_styloid_pt 0.1901 0.8645 -0.0415)" }
+                                                        { "#comment" : "(l_olecranon_pt -0.1962 1.1375 -0.1123)" }
                                                                                                                 "HAnimSite":
                                                                                                                 {
       {
@@ -6919,6 +7037,7 @@
       {
         "@DEF":"l_carpal_Sites"
       }
+                                                          { "#comment" : "(l_ulnar_styloid_pt -0.2142 0.8529 -0.0648)" }
                                                                                                                     "HAnimSite":
                                                                                                                     {
       {
@@ -6989,8 +7108,8 @@
       {
         "@DEF":"l_trapezium_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_1"
@@ -7043,6 +7162,7 @@
       {
         "@DEF":"l_metacarpal_1_Sites"
       }
+                                                              { "#comment" : "(l_metacarpal_phalanx_2_pt 0.2009 0.8139 -0.0237)" }
                                                                                                                             "HAnimSite":
                                                                                                                             {
       {
@@ -7113,8 +7233,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_1_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_interphalangeal_1"
@@ -7167,6 +7287,7 @@
       {
         "@DEF":"l_carpal_distal_phalanx_1_Sites"
       }
+                                                                  { "#comment" : "(l_carpal_distal_phalanx_1_tip 0.1982 0.8061 0.0759)" }
                                                                                                                                     "HAnimSite":
                                                                                                                                     {
       {
@@ -7237,8 +7358,8 @@
       {
         "@DEF":"l_trapezoid_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_2"
@@ -7291,8 +7412,8 @@
       {
         "@DEF":"l_metacarpal_2_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_l_metacarpophalangeal_2"
@@ -7345,8 +7466,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_2_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_2"
@@ -7399,8 +7520,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_2_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_l_carpal_distal_interphalangeal_2"
@@ -7453,6 +7574,7 @@
       {
         "@DEF":"l_carpal_distal_phalanx_2_Sites"
       }
+                                                                    { "#comment" : "(l_carpal_distal_phalanx_2_tip 0.2089 0.6858 -0.0245)" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -7523,8 +7645,8 @@
       {
         "@DEF":"l_capitate_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_3"
@@ -7577,6 +7699,7 @@
       {
         "@DEF":"l_metacarpal_3_Sites"
       }
+                                                              { "#comment" : "(l_metacarpal_phalanx_3 x y z)" }
                                                                                                                             "HAnimSite":
                                                                                                                             {
       {
@@ -7647,8 +7770,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_3_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_3"
@@ -7701,8 +7824,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_3_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_l_carpal_distal_interphalangeal_3"
@@ -7755,6 +7878,8 @@
       {
         "@DEF":"l_carpal_distal_phalanx_3_Sites"
       }
+                                                                    { "#comment" : "(l_dactylion_pt 0.2056 0.6743 -0.0482)" }
+                                                                    { "#comment" : "(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -7842,8 +7967,8 @@
       {
         "@DEF":"l_hamate_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_l_carpometacarpal_4"
@@ -7896,8 +8021,8 @@
       {
         "@DEF":"l_metacarpal_4_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_l_metacarpophalangeal_4"
@@ -7950,8 +8075,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_4_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_4"
@@ -8004,8 +8129,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_4_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_l_carpal_distal_interphalangeal_4"
@@ -8058,6 +8183,7 @@
       {
         "@DEF":"l_carpal_distal_phalanx_4_Sites"
       }
+                                                                    { "#comment" : "(l_carpal_distal_phalanx_4_tip 0.2035 0.6750 -0.0756)" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -8128,6 +8254,7 @@
       {
         "@DEF":"l_metacarpal_5_Sites"
       }
+                                                            { "#comment" : "(l_metacarpal_phalanx_5_pt 0.1929 0.7860 -0.1122)" }
                                                                                                                         "HAnimSite":
                                                                                                                         {
       {
@@ -8198,8 +8325,8 @@
       {
         "@DEF":"l_carpal_proximal_phalanx_5_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_l_carpal_proximal_interphalangeal_5"
@@ -8252,8 +8379,8 @@
       {
         "@DEF":"l_carpal_middle_phalanx_5_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_l_carpal_distal_interphalangeal_5"
@@ -8306,6 +8433,7 @@
       {
         "@DEF":"l_carpal_distal_phalanx_5_Sites"
       }
+                                                                  { "#comment" : "(l_carpal_distal_phalanx_5_tip 0.2014 0.7009 -0.1012)" }
                                                                                                                                     "HAnimSite":
                                                                                                                                     {
       {
@@ -8376,6 +8504,8 @@
       {
         "@DEF":"r_clavicle_Sites"
       }
+                                                  { "#comment" : "0.15 1.222 -0.02" }
+                                                  { "#comment" : "(r_clavicale_pt -0.0115 1.4943 0.0400)" }
                                                                                                     "HAnimSite":
                                                                                                     {
       {
@@ -8446,6 +8576,10 @@
       {
         "@DEF":"r_scapula_Sites"
       }
+                                                    { "#comment" : "(r_acromion_pt -0.1905 1.4791 -0.0431)" }
+                                                    { "#comment" : "(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)" }
+                                                    { "#comment" : "(r_axilla_distal_pt -0.1603 1.4098 -0.0826)" }
+                                                    { "#comment" : "(r_axilla_posterior_folds_pt x y z)" }
                                                                                                         "HAnimSite":
                                                                                                         {
       {
@@ -8567,6 +8701,10 @@
       {
         "@DEF":"r_upperarm_Sites"
       }
+                                                      { "#comment" : "(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)" }
+                                                      { "#comment" : "(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)" }
+                                                      { "#comment" : "(r_radiale_pt -0.2130 1.1305 -0.1091)" }
+                                                      { "#comment" : "(r_bideltoid_pt x y z)" }
                                                                                                             "HAnimSite":
                                                                                                             {
       {
@@ -8688,6 +8826,8 @@
       {
         "@DEF":"r_forearm_Sites"
       }
+                                                        { "#comment" : "(r_radial_styloid_pt -0.1884 0.8676 -0.0360)" }
+                                                        { "#comment" : "(r_olecranon_pt -0.1907 1.1405 -0.1065)" }
                                                                                                                 "HAnimSite":
                                                                                                                 {
       {
@@ -8775,6 +8915,7 @@
       {
         "@DEF":"r_carpal_Sites"
       }
+                                                          { "#comment" : "(r_ulnar_styloid_pt -0.2117 0.8562 -0.0584)" }
                                                                                                                     "HAnimSite":
                                                                                                                     {
       {
@@ -8845,8 +8986,8 @@
       {
         "@DEF":"r_trapezium_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_1"
@@ -8899,6 +9040,7 @@
       {
         "@DEF":"r_metacarpal_1_Sites"
       }
+                                                              { "#comment" : "(r_metacarpal_phalanx_2_pt -0.1977 0.8169 -0.0177)" }
                                                                                                                             "HAnimSite":
                                                                                                                             {
       {
@@ -8969,8 +9111,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_1_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_interphalangeal_1"
@@ -9023,6 +9165,7 @@
       {
         "@DEF":"r_carpal_distal_phalanx_1_Sites"
       }
+                                                                  { "#comment" : "(r_carpal_distal_phalanx_1_tip -0.1869 0.8090 0.0820)" }
                                                                                                                                     "HAnimSite":
                                                                                                                                     {
       {
@@ -9093,8 +9236,8 @@
       {
         "@DEF":"r_trapezoid_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_2"
@@ -9147,8 +9290,8 @@
       {
         "@DEF":"r_metacarpal_2_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_r_metacarpophalangeal_2"
@@ -9201,8 +9344,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_2_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_2"
@@ -9255,8 +9398,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_2_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_r_carpal_distal_interphalangeal_2"
@@ -9309,6 +9452,7 @@
       {
         "@DEF":"r_carpal_distal_phalanx_2_Sites"
       }
+                                                                    { "#comment" : "(r_carpal_distal_phalanx_2_tip -0.1980 0.6883 -0.0180)" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -9379,8 +9523,8 @@
       {
         "@DEF":"r_capitate_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_3"
@@ -9433,6 +9577,7 @@
       {
         "@DEF":"r_metacarpal_3_Sites"
       }
+                                                              { "#comment" : "(r_metacarpal_phalanx_3 x y z)" }
                                                                                                                             "HAnimSite":
                                                                                                                             {
       {
@@ -9503,8 +9648,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_3_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_3"
@@ -9557,8 +9702,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_3_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_r_carpal_distal_interphalangeal_3"
@@ -9611,6 +9756,8 @@
       {
         "@DEF":"r_carpal_distal_phalanx_3_Sites"
       }
+                                                                    { "#comment" : "(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)" }
+                                                                    { "#comment" : "(r_dactylion_pt -0.1941 0.6772 -0.0423 )" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -9698,8 +9845,8 @@
       {
         "@DEF":"r_hamate_Sites"
       }
-    },
-                                                                                                                }                                                                                                                "HAnimJoint":
+                                                            { "#comment" : "None" }
+                                                                                                                    }                                                                                                                }                                                                                                                "HAnimJoint":
                                                                                                                 {
       {
         "@DEF":"hanim_r_carpometacarpal_4"
@@ -9752,8 +9899,8 @@
       {
         "@DEF":"r_metacarpal_4_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_r_metacarpophalangeal_4"
@@ -9806,8 +9953,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_4_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_4"
@@ -9860,8 +10007,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_4_Sites"
       }
-    },
-                                                                                                                            }                                                                                                                            "HAnimJoint":
+                                                                  { "#comment" : "None" }
+                                                                                                                                }                                                                                                                            }                                                                                                                            "HAnimJoint":
                                                                                                                             {
       {
         "@DEF":"hanim_r_carpal_distal_interphalangeal_4"
@@ -9914,6 +10061,7 @@
       {
         "@DEF":"hanim_r_carpal_distal_phalanx_4_Sites"
       }
+                                                                    { "#comment" : "(r_carpal_distal_phalanx_4_tip -0.1934 0.6778 -0.0693)" }
                                                                                                                                         "HAnimSite":
                                                                                                                                         {
       {
@@ -9984,6 +10132,7 @@
       {
         "@DEF":"r_metacarpal_5_Sites"
       }
+                                                            { "#comment" : "(r_metacarpal_phalanx_5_pt -0.1929 0.7890 -0.1064)" }
                                                                                                                         "HAnimSite":
                                                                                                                         {
       {
@@ -10054,8 +10203,8 @@
       {
         "@DEF":"r_carpal_proximal_phalanx_5_Sites"
       }
-    },
-                                                                                                                    }                                                                                                                    "HAnimJoint":
+                                                              { "#comment" : "None" }
+                                                                                                                        }                                                                                                                    }                                                                                                                    "HAnimJoint":
                                                                                                                     {
       {
         "@DEF":"hanim_r_carpal_proximal_interphalangeal_5"
@@ -10108,8 +10257,8 @@
       {
         "@DEF":"r_carpal_middle_phalanx_5_Sites"
       }
-    },
-                                                                                                                        }                                                                                                                        "HAnimJoint":
+                                                                { "#comment" : "None" }
+                                                                                                                            }                                                                                                                        }                                                                                                                        "HAnimJoint":
                                                                                                                         {
       {
         "@DEF":"hanim_r_carpal_distal_interphalangeal_5"
@@ -10162,6 +10311,7 @@
       {
         "@DEF":"r_carpal_distal_phalanx_5_Sites"
       }
+                                                                  { "#comment" : "(r_carpal_distal_phalanx_5_tip -0.1938 0.7035 -0.0949)" }
                                                                                                                                     "HAnimSite":
                                                                                                                                     {
       {
@@ -10190,6 +10340,7 @@
         "@DEF":"StopTimer"
       }
     },
+      { "#comment" : "indention to match Joint hierarchy" }
             "PositionInterpolator":
             {
       {

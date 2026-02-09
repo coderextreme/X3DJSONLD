@@ -5,7 +5,7 @@ PROFILE Full
 META "title" "HAnimPoseExample.x3d"
 META "description" "Native XML definition of an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."
 META "created" "11 December 2025"
-META "modified" "14 December 2025"
+META "modified" "Mon, 09 Feb 2026 07:11:17 GMT"
 META "creator" "Don Brutzman"
 META "warning" "under development for X3D 4.1"
 META "specificationSection" "HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose"
@@ -14,10 +14,10 @@ META "specificationSection" "HAnim Architecture volume 1 version 2.1 draft, clau
 META "specificationUrl" "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures"
 META "specificationSection" "HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses"
 META "specificationUrl" "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses"
-META "generator" "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
-META "identifier" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExample.x3d"
-META "license" "https://www.web3d.org/x3d/content/examples/license.html"
-DEF ModelInfo WorldInfo { 
+META "generator" "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+DEF ModelInfo WorldInfo {
+      info ["Example scene for HAnimPose node"]
+      title "HAnimPoseExample.x3d" 
     }
     Background {
       skyColor [0.8 0.8 1] 
@@ -26,14 +26,12 @@ DEF ModelInfo WorldInfo {
     }
     DEF HandleInlineLoading Group {
       children [
-        DEF HumanoidInline Inline { 
-        }
-        IMPORT {
-          AS "HumanoidImported"
-          importedDEF "JoeSkeletonSkinSite"
-          inlineDEF "HumanoidInline" 
+        DEF HumanoidInline Inline {
+          description "remote HAnimHumanoid for IMPORT"
+          url ["../Skin/JoeSkeletonSkinSite.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSite.x3d"] 
         }
         DEF HumanoidInlineLoadSensor LoadSensor {
+          timeOut 2
           children [
             USE HumanoidInline 
           ]
@@ -48,31 +46,55 @@ DEF ModelInfo WorldInfo {
       position 0 1 4 
     }
     DEF T_Pose HAnimPose {
+      description "arms stretched outward and level similar to letter T"
+      loa 1
+      name "T"
+      transitionDuration 1.3
       metadata MetadataString {
         name "metadataTest"
         value ["hello HAnimPose metadata"] 
       }
       
       children [
-        DEF PoseJoint_l_shoulder_1 HAnimJoint { 
+        DEF PoseJoint_l_shoulder_1 HAnimJoint {
+          description "left shoulder"
+          name "l_shoulder"
+          rotation 0 0 1 1.57 
         }
-        DEF PoseJoint_r_shoulder_1 HAnimJoint { 
+        DEF PoseJoint_r_shoulder_1 HAnimJoint {
+          description "right shoulder"
+          name "r_shoulder"
+          rotation 0 0 -1 1.57 
         }
         
       ]
     
     }
     DEF A_Pose HAnimPose {
+      description "arms stretched outward and downward similar to letter A"
+      loa 1
+      name "A"
+      transitionDuration 1.2
       children [
-        DEF PoseJoint_l_shoulder HAnimJoint { 
+        DEF PoseJoint_l_shoulder HAnimJoint {
+          description "left shoulder"
+          name "l_shoulder"
+          rotation 0 0 1 0.5 
         }
-        DEF PoseJoint_r_shoulder HAnimJoint { 
+        DEF PoseJoint_r_shoulder HAnimJoint {
+          description "right shoulder"
+          name "r_shoulder"
+          rotation 0 0 -1 0.5 
         }
         
       ]
     
     }
     DEF TouchDown_Pose HAnimPose {
+      description "arms and legs stretched outward providing a TouchDown gesture"
+      loa 1
+      name "TouchDown"
+      transitionDuration 1.2
       children [
         HAnimJoint {
           name "humanoid_root"
@@ -140,21 +162,43 @@ DEF ModelInfo WorldInfo {
       ]
     
     }
-    DEF I_Pose HAnimPose { 
+    DEF I_Pose HAnimPose {
+      description "arms and legs straight down default binding pose for baseline Humanoid"
+      loa 1
+      name "I"
+      transitionDuration 1.5 
     }
-    DEF H_Pose HAnimPose { 
+    DEF H_Pose HAnimPose {
+      description "TODO experimental pose not yet implemented"
+      enabled FALSE
+      name "H"
+      transitionDuration 1.4 
     }
     DEF FaceLeft_Pose HAnimPose {
+      description "Only modify humanoid_root Joint node to face left"
+      loa 0
+      name "FaceLeft"
+      transitionDuration 1.1
       children [
-        DEF FaceLeft_humanoid_root HAnimJoint { 
+        DEF FaceLeft_humanoid_root HAnimJoint {
+          description "Only rotate the model"
+          name "humanoid_root"
+          rotation 0 1 0 1.570796 
         }
         
       ]
     
     }
     DEF FaceRight_Pose HAnimPose {
+      description "Only modify humanoid_root Joint node to face right"
+      loa 0
+      name "FaceRight"
+      transitionDuration 1.1
       children [
-        DEF FaceRight_humanoid_root HAnimJoint { 
+        DEF FaceRight_humanoid_root HAnimJoint {
+          description "Only rotate the model"
+          name "humanoid_root"
+          rotation 0 1 0 -1.570796 
         }
         
       ]
@@ -163,6 +207,7 @@ DEF ModelInfo WorldInfo {
     DEF InterfaceButtonsGroup Group {
       children [
         DEF DisplayHeader Transform {
+          translation 0 2 0
           children [
             Shape {
               appearance DEF PoseTextAppearance Appearance {
@@ -174,7 +219,10 @@ DEF ModelInfo WorldInfo {
               
               geometry Text {
                 string ["HAnimPosePrototype example implementation"]
-                fontStyle DEF HeaderFont FontStyle { 
+                fontStyle DEF HeaderFont FontStyle {
+                  family ["SANS"]
+                  justify ["MIDDLE" "MIDDLE"]
+                  size 0.15 
                 }
                  
               }
@@ -185,12 +233,16 @@ DEF ModelInfo WorldInfo {
         
         }
         DEF T_PoseInterface Transform {
+          translation -1.5 1.5 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
               geometry Text {
                 string [""T" Pose"]
-                fontStyle DEF SharedFont FontStyle { 
+                fontStyle DEF SharedFont FontStyle {
+                  family ["SANS"]
+                  justify ["MIDDLE" "MIDDLE"]
+                  size 0.1 
                 }
                  
               }
@@ -209,15 +261,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF T_PoseTouchSensor TouchSensor { 
+            DEF T_PoseTouchSensor TouchSensor {
+              description "select to move shoulders to "T" pose, leave other joints unchanged" 
             }
-            
-            ROUTE T_PoseTouchSensor.isActive TO T_Pose.commencePose
             
           ]
         
         }
         DEF A_PoseInterface Transform {
+          translation -1.5 1 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
@@ -234,15 +286,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF A_PoseTouchSensor TouchSensor { 
+            DEF A_PoseTouchSensor TouchSensor {
+              description "select to move shoulders to "A" pose, leave other joints unchanged" 
             }
-            
-            ROUTE A_PoseTouchSensor.isActive TO A_Pose.commencePose
             
           ]
         
         }
         DEF TouchDown_PoseInterface Transform {
+          translation -1.5 0.5 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
@@ -259,15 +311,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF TouchDown_PoseTouchSensor TouchSensor { 
+            DEF TouchDown_PoseTouchSensor TouchSensor {
+              description "select to transition all joints to TouchDown pose" 
             }
-            
-            ROUTE TouchDown_PoseTouchSensor.isActive TO TouchDown_Pose.commencePose
             
           ]
         
         }
         DEF I_PoseInterface Transform {
+          translation -1.5 0 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
@@ -284,15 +336,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF I_PoseTouchSensor TouchSensor { 
+            DEF I_PoseTouchSensor TouchSensor {
+              description "select to transition all joints to "I" pose" 
             }
-            
-            ROUTE I_PoseTouchSensor.isActive TO I_Pose.commencePose
             
           ]
         
         }
         DEF FaceLeftPoseInterface Transform {
+          translation 1.5 1.5 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
@@ -309,15 +361,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF FaceLeftTouchSensor TouchSensor { 
+            DEF FaceLeftTouchSensor TouchSensor {
+              description "select to rotate body and Face Left, leave other joints unchanged" 
             }
-            
-            ROUTE FaceLeftTouchSensor.isActive TO FaceLeft_Pose.commencePose
             
           ]
         
         }
         DEF FaceRightPoseInterface Transform {
+          translation 1.5 1 0
           children [
             Shape {
               appearance USE PoseTextAppearance 
@@ -334,15 +386,15 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF FaceRightTouchSensor TouchSensor { 
+            DEF FaceRightTouchSensor TouchSensor {
+              description "select to rotate body and Face Right, leave other joints unchanged" 
             }
-            
-            ROUTE FaceRightTouchSensor.isActive TO FaceRight_Pose.commencePose
             
           ]
         
         }
         DEF AnimatePosesInterface Transform {
+          translation 1.5 0.5 0
           children [
             Shape {
               appearance DEF AnimationTextAppearance Appearance {
@@ -365,23 +417,23 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF AnimatePosesTouchSensor TouchSensor { 
+            DEF AnimatePosesTouchSensor TouchSensor {
+              description "select to animate current pose to "I" pose, then back to original pose, using TimeSensor events" 
             }
-            DEF AnimatePosesClock TimeSensor { 
+            DEF AnimatePosesClock TimeSensor {
+              cycleInterval 4
+              description "directly animate several poses" 
             }
-            DEF AnimatePosesLoopInterpolator ScalarInterpolator { 
+            DEF AnimatePosesLoopInterpolator ScalarInterpolator {
+              key [0 0.05 0.45 0.55 0.95 1]
+              keyValue [0 0 1 1 0 0] 
             }
-            
-            ROUTE AnimatePosesTouchSensor.touchTime TO AnimatePosesClock.startTime
-            
-            ROUTE AnimatePosesClock.fraction_changed TO AnimatePosesLoopInterpolator.set_fraction
-            
-            ROUTE AnimatePosesLoopInterpolator.value_changed TO I_Pose.set_fraction
             
           ]
         
         }
         DEF ResetDefaultPoseInterface Transform {
+          translation 1.5 0 0
           children [
             Shape {
               appearance USE AnimationTextAppearance 
@@ -398,10 +450,9 @@ DEF ModelInfo WorldInfo {
               }
                
             }
-            DEF ResetPoseTouchSensor TouchSensor { 
+            DEF ResetPoseTouchSensor TouchSensor {
+              description "select to immediately Rezero All Joints (to default "I" Pose) by sending resetAllJoints event" 
             }
-            
-            ROUTE ResetPoseTouchSensor.isActive TO FaceLeft_Pose.resetAllJoints
             
           ]
         
@@ -410,25 +461,7 @@ DEF ModelInfo WorldInfo {
       ]
     
     }
-    DEF HandleInlineLoadsensorRouting Group {
-      children [
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO A_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO H_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO I_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO T_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO FaceLeft_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO FaceRight_Pose.isLoaded
-        
-        ROUTE HumanoidInlineLoadSensor.isLoaded TO TouchDown_Pose.isLoaded
-        
-      ]
-    
+    DEF HandleInlineLoadsensorRouting Group { 
     }
     HAnimHumanoid {
       info ["humanoidVersion=2.0"]
@@ -438,4 +471,29 @@ DEF ModelInfo WorldInfo {
       ]
      
     }
+    IMPORT {
+      AS "HumanoidImported"
+      importedDEF "JoeSkeletonSkinSite"
+      inlineDEF "HumanoidInline" 
+    }
+    
+    ROUTE T_PoseTouchSensor.isActive TO T_Pose.commencePose
+    
+    ROUTE A_PoseTouchSensor.isActive TO A_Pose.commencePose
+    
+    ROUTE TouchDown_PoseTouchSensor.isActive TO TouchDown_Pose.commencePose
+    
+    ROUTE I_PoseTouchSensor.isActive TO I_Pose.commencePose
+    
+    ROUTE FaceLeftTouchSensor.isActive TO FaceLeft_Pose.commencePose
+    
+    ROUTE FaceRightTouchSensor.isActive TO FaceRight_Pose.commencePose
+    
+    ROUTE AnimatePosesTouchSensor.touchTime TO AnimatePosesClock.set_startTime
+    
+    ROUTE AnimatePosesClock.fraction_changed TO AnimatePosesLoopInterpolator.set_fraction
+    
+    ROUTE AnimatePosesLoopInterpolator.value_changed TO I_Pose.set_fraction
+    
+    ROUTE ResetPoseTouchSensor.isActive TO FaceLeft_Pose.resetAllJoints
     

@@ -3,194 +3,166 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 component2 = x3d.component()
-component2.name = "Scripting"
-component2.level = 1
+component2.name = "EnvironmentalEffects"
+component2.level = 3
 
 head1.children.append(component2)
 component3 = x3d.component()
-component3.name = "EnvironmentalEffects"
-component3.level = 3
+component3.name = "Shaders"
+component3.level = 1
 
 head1.children.append(component3)
 component4 = x3d.component()
-component4.name = "Shaders"
+component4.name = "CubeMapTexturing"
 component4.level = 1
 
 head1.children.append(component4)
 component5 = x3d.component()
-component5.name = "CubeMapTexturing"
-component5.level = 1
+component5.name = "Grouping"
+component5.level = 3
 
 head1.children.append(component5)
-component6 = x3d.component()
-component6.name = "Texturing"
-component6.level = 1
+meta6 = x3d.meta()
+meta6.name = "title"
+meta6.content = "sphereflowers.x3d"
 
-head1.children.append(component6)
-component7 = x3d.component()
-component7.name = "Rendering"
-component7.level = 1
+head1.children.append(meta6)
+meta7 = x3d.meta()
+meta7.name = "creator"
+meta7.content = "John Carlson"
 
-head1.children.append(component7)
-component8 = x3d.component()
-component8.name = "Grouping"
-component8.level = 3
+head1.children.append(meta7)
+meta8 = x3d.meta()
+meta8.name = "created"
+meta8.content = "Jan 17 2022"
 
-head1.children.append(component8)
-component9 = x3d.component()
-component9.name = "Core"
-component9.level = 1
+head1.children.append(meta8)
+meta9 = x3d.meta()
+meta9.name = "modified"
+meta9.content = "Mon, 09 Feb 2026 07:13:20 GMT"
 
-head1.children.append(component9)
+head1.children.append(meta9)
 meta10 = x3d.meta()
-meta10.name = "title"
-meta10.content = "sphereflowers.x3d"
+meta10.name = "description"
+meta10.content = "5 or more prismatic flowers"
 
 head1.children.append(meta10)
-meta11 = x3d.meta()
-meta11.name = "creator"
-meta11.content = "John Carlson"
-
-head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "created"
-meta12.content = "Jan 17 2022"
-
-head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "modified"
-meta13.content = "Sep 3 2023"
-
-head1.children.append(meta13)
-meta14 = x3d.meta()
-meta14.name = "description"
-meta14.content = "5 or more prismatic flowers"
-
-head1.children.append(meta14)
-meta15 = x3d.meta()
-meta15.name = "generator"
-meta15.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta15)
-meta16 = x3d.meta()
-meta16.name = "identifier"
-meta16.content = "https://coderextreme.net/X3DJSONLD/src/main/data/sphereflowers.x3d"
-
-head1.children.append(meta16)
 
 X3D0.head = head1
-Scene17 = x3d.Scene()
-NavigationInfo18 = x3d.NavigationInfo()
+Scene11 = x3d.Scene()
+ExternProtoDeclare12 = x3d.ExternProtoDeclare()
+ExternProtoDeclare12.name = "FlowerProto"
+ExternProtoDeclare12.url = ["../data/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"]
+field13 = x3d.field()
+field13.accessType = "inputOutput"
+field13.type = "MFString"
+field13.name = "vertex"
 
-Scene17.children.append(NavigationInfo18)
-Background19 = x3d.Background()
-Background19.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-Background19.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-Background19.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-Background19.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-Background19.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-Background19.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+ExternProtoDeclare12.field.append(field13)
+field14 = x3d.field()
+field14.accessType = "inputOutput"
+field14.type = "MFString"
+field14.name = "fragment"
 
-Scene17.children.append(Background19)
-Group20 = x3d.Group()
-ExternProtoDeclare21 = x3d.ExternProtoDeclare()
-ExternProtoDeclare21.name = "FlowerProto"
-ExternProtoDeclare21.url = ["../data/flowerproto.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d#FlowerProto"]
-field22 = x3d.field()
-field22.name = "vertex"
-field22.accessType = "inputOutput"
-field22.type = "MFString"
+ExternProtoDeclare12.field.append(field14)
 
-ExternProtoDeclare21.field.append(field22)
-field23 = x3d.field()
-field23.name = "fragment"
-field23.accessType = "inputOutput"
-field23.type = "MFString"
+Scene11.children.append(ExternProtoDeclare12)
+ProtoDeclare15 = x3d.ProtoDeclare()
+ProtoDeclare15.name = "flower"
+ProtoInterface16 = x3d.ProtoInterface()
 
-ExternProtoDeclare21.field.append(field23)
+ProtoDeclare15.ProtoInterface = ProtoInterface16
+ProtoBody17 = x3d.ProtoBody()
+Group18 = x3d.Group()
+ProtoInstance19 = x3d.ProtoInstance()
+ProtoInstance19.name = "FlowerProto"
+fieldValue20 = x3d.fieldValue()
+fieldValue20.name = "vertex"
+fieldValue20.value = "\"../shaders/x_ite_flowers_chromatic.vs\""
 
-Group20.children.append(ExternProtoDeclare21)
-ProtoDeclare24 = x3d.ProtoDeclare()
-ProtoDeclare24.name = "flower"
-ProtoBody25 = x3d.ProtoBody()
-Group26 = x3d.Group()
+ProtoInstance19.fieldValue.append(fieldValue20)
+fieldValue21 = x3d.fieldValue()
+fieldValue21.name = "fragment"
+fieldValue21.value = "\"../shaders/x_ite.fs\""
+
+ProtoInstance19.fieldValue.append(fieldValue21)
+
+Group18.children.append(ProtoInstance19)
+
+ProtoBody17.children.append(Group18)
+
+ProtoDeclare15.ProtoBody = ProtoBody17
+
+Scene11.children.append(ProtoDeclare15)
+NavigationInfo22 = x3d.NavigationInfo()
+
+Scene11.children.append(NavigationInfo22)
+Background23 = x3d.Background()
+Background23.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background23.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background23.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background23.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background23.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+Background23.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+
+Scene11.children.append(Background23)
+Group24 = x3d.Group()
+ProtoInstance25 = x3d.ProtoInstance()
+ProtoInstance25.name = "flower"
+
+Group24.children.append(ProtoInstance25)
+ProtoInstance26 = x3d.ProtoInstance()
+ProtoInstance26.name = "flower"
+
+Group24.children.append(ProtoInstance26)
 ProtoInstance27 = x3d.ProtoInstance()
-ProtoInstance27.name = "FlowerProto"
-fieldValue28 = x3d.fieldValue()
-fieldValue28.name = "vertex"
-fieldValue28.value = "\"../shaders/x_ite_flowers_chromatic.vs\""
+ProtoInstance27.name = "flower"
 
-ProtoInstance27.fieldValue.append(fieldValue28)
-fieldValue29 = x3d.fieldValue()
-fieldValue29.name = "fragment"
-fieldValue29.value = "\"../shaders/x_ite.fs\""
+Group24.children.append(ProtoInstance27)
+ProtoInstance28 = x3d.ProtoInstance()
+ProtoInstance28.name = "flower"
 
-ProtoInstance27.fieldValue.append(fieldValue29)
+Group24.children.append(ProtoInstance28)
+ProtoInstance29 = x3d.ProtoInstance()
+ProtoInstance29.name = "flower"
 
-Group26.children.append(ProtoInstance27)
-
-ProtoBody25.children.append(Group26)
-
-ProtoDeclare24.ProtoBody = ProtoBody25
-
-Group20.children.append(ProtoDeclare24)
+Group24.children.append(ProtoInstance29)
 ProtoInstance30 = x3d.ProtoInstance()
 ProtoInstance30.name = "flower"
 
-Group20.children.append(ProtoInstance30)
-ProtoInstance31 = x3d.ProtoInstance()
-ProtoInstance31.name = "flower"
+Group24.children.append(ProtoInstance30)
+TimeSensor31 = x3d.TimeSensor(DEF="SongTime")
+TimeSensor31.loop = True
 
-Group20.children.append(ProtoInstance31)
-ProtoInstance32 = x3d.ProtoInstance()
-ProtoInstance32.name = "flower"
+Group24.children.append(TimeSensor31)
+Sound32 = x3d.Sound()
+Sound32.location = [0,1,0]
+Sound32.minBack = 20
+Sound32.minFront = 20
+Sound32.maxBack = 100
+Sound32.maxFront = 100
+AudioClip33 = x3d.AudioClip(DEF="AudioClip")
+AudioClip33.description = "Chandubabamusic #1"
+AudioClip33.url = ["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
+AudioClip33.startTime = 1770621200.309
 
-Group20.children.append(ProtoInstance32)
-ProtoInstance33 = x3d.ProtoInstance()
-ProtoInstance33.name = "flower"
+Sound32.source = AudioClip33
 
-Group20.children.append(ProtoInstance33)
-ProtoInstance34 = x3d.ProtoInstance()
-ProtoInstance34.name = "flower"
+Group24.children.append(Sound32)
 
-Group20.children.append(ProtoInstance34)
-ProtoInstance35 = x3d.ProtoInstance()
-ProtoInstance35.name = "flower"
+Scene11.children.append(Group24)
+ROUTE34 = x3d.ROUTE()
+ROUTE34.fromNode = "SongTime"
+ROUTE34.fromField = "cycleTime"
+ROUTE34.toNode = "AudioClip"
+ROUTE34.toField = "set_startTime"
 
-Group20.children.append(ProtoInstance35)
-TimeSensor36 = x3d.TimeSensor()
-TimeSensor36.DEF = "SongTime"
-TimeSensor36.loop = True
+Scene11.children.append(ROUTE34)
 
-Group20.children.append(TimeSensor36)
-Sound37 = x3d.Sound()
-Sound37.maxBack = 100
-Sound37.maxFront = 100
-Sound37.minBack = 20
-Sound37.minFront = 20
-Sound37.location = [0,1,0]
-AudioClip38 = x3d.AudioClip()
-AudioClip38.DEF = "AudioClip"
-AudioClip38.description = "Chandubabamusic #1"
-AudioClip38.url = ["../resources/chandubabamusic1.wav","https://coderextreme.net/X3DJSONLD/src/main/resources/chandubabamusic1.wav"]
-
-Sound37.source = AudioClip38
-
-Group20.children.append(Sound37)
-ROUTE39 = x3d.ROUTE()
-ROUTE39.fromField = "cycleTime"
-ROUTE39.fromNode = "SongTime"
-ROUTE39.toField = "startTime"
-ROUTE39.toNode = "AudioClip"
-
-Group20.children.append(ROUTE39)
-
-Scene17.children.append(Group20)
-
-X3D0.Scene = Scene17
+X3D0.Scene = Scene11
 f = open("../data/sphereflowers.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

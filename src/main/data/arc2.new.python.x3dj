@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -25,22 +25,15 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a generic proto to connect two objects",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -66,7 +59,8 @@
             "Transform":
             {
       {
-        "@DEF":"DECLpoint_INSTANCE_node"
+        "@DEF":"DECLpoint_INSTANCE_node",
+        "@translation":"0 4.45 0"
       }
                 "Shape":
                 {
@@ -87,21 +81,33 @@
                 }                "PositionInterpolator":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE_PI1"
+        "@DEF":"DECLpoint_INSTANCE_PI1",
+        "@key":"0 1",
+        "@keyValue":"0 0 0 0 5 0"
       }
     },
                 "Script":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE_MB1"
+        "@DEF":"DECLpoint_INSTANCE_MB1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;               function set_location(value) {
+&quot;+
+&quot;                    old = translation;
+&quot;+
+&quot;                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+&quot;+
+&quot;                    keyValue = new MFVec3f([old, translation]);
+&quot;+
+&quot;               }"
       }
                     "field":
                     {
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                     "field":
@@ -109,8 +115,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                     "field":
@@ -133,52 +138,9 @@
                 }                "TimeSensor":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE_CL1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"cycleTime",
-        "@fromNode":"DECLpoint_INSTANCE_CL1",
-        "@toField":"set_location",
-        "@toNode":"DECLpoint_INSTANCE_MB1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"DECLpoint_INSTANCE_CL1",
-        "@toField":"set_fraction",
-        "@toNode":"DECLpoint_INSTANCE_PI1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"keyValue",
-        "@fromNode":"DECLpoint_INSTANCE_MB1",
-        "@toField":"keyValue",
-        "@toNode":"DECLpoint_INSTANCE_PI1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"DECLpoint_INSTANCE_PI1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_INSTANCE_node"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"translation_changed",
-        "@fromNode":"DECLpoint_INSTANCE_MB1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_INSTANCE_node"
+        "@DEF":"DECLpoint_INSTANCE_CL1",
+        "@cycleInterval":"3",
+        "@loop":"true"
       }
     },
             }        }        "Transform":
@@ -189,7 +151,8 @@
             "Transform":
             {
       {
-        "@DEF":"DECLpoint_INSTANCE1000_node"
+        "@DEF":"DECLpoint_INSTANCE1000_node",
+        "@translation":"0 4.45 0"
       }
                 "Shape":
                 {
@@ -210,21 +173,33 @@
                 }                "PositionInterpolator":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE1000_PI1"
+        "@DEF":"DECLpoint_INSTANCE1000_PI1",
+        "@key":"0 1",
+        "@keyValue":"0 0 0 0 5 0"
       }
     },
                 "Script":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE1000_MB1"
+        "@DEF":"DECLpoint_INSTANCE1000_MB1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;               function set_location(value) {
+&quot;+
+&quot;                    old = translation;
+&quot;+
+&quot;                    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+&quot;+
+&quot;                    keyValue = new MFVec3f([old, translation]);
+&quot;+
+&quot;               }"
       }
                     "field":
                     {
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                     "field":
@@ -232,8 +207,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                     "field":
@@ -256,52 +230,9 @@
                 }                "TimeSensor":
                 {
       {
-        "@DEF":"DECLpoint_INSTANCE1000_CL1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"cycleTime",
-        "@fromNode":"DECLpoint_INSTANCE1000_CL1",
-        "@toField":"set_location",
-        "@toNode":"DECLpoint_INSTANCE1000_MB1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"DECLpoint_INSTANCE1000_CL1",
-        "@toField":"set_fraction",
-        "@toNode":"DECLpoint_INSTANCE1000_PI1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"keyValue",
-        "@fromNode":"DECLpoint_INSTANCE1000_MB1",
-        "@toField":"keyValue",
-        "@toNode":"DECLpoint_INSTANCE1000_PI1"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"DECLpoint_INSTANCE1000_PI1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_INSTANCE1000_node"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"translation_changed",
-        "@fromNode":"DECLpoint_INSTANCE1000_MB1",
-        "@toField":"set_translation",
-        "@toNode":"DECLpoint_INSTANCE1000_node"
+        "@DEF":"DECLpoint_INSTANCE1000_CL1",
+        "@cycleInterval":"3",
+        "@loop":"true"
       }
     },
             }        }        "Transform":
@@ -334,7 +265,84 @@
                 }            }        }        "Script":
         {
       {
-        "@DEF":"DECLx3dconnector_connector1_S1"
+        "@DEF":"DECLx3dconnector_connector1_S1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function recompute(startpoint,endpoint){
+&quot;+
+&quot;	    if (typeof endpoint === 'undefined') {
+&quot;+
+&quot;		return;
+&quot;+
+&quot;	    }
+&quot;+
+&quot;            var dif = endpoint.subtract(startpoint);
+&quot;+
+&quot;            var dist = dif.length()*0.5;
+&quot;+
+&quot;            var dif2 = dif.multiply(0.5);
+&quot;+
+&quot;            var norm = dif.normalize();
+&quot;+
+&quot;            var transl = startpoint.add(dif2);
+&quot;+
+&quot;	    if (typeof Quaternion !== 'undefined') {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    } else {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    }
+&quot;+
+&quot;	}
+&quot;+
+&quot;	function recompute_and_route(startpoint, endpoint) {
+&quot;+
+&quot;	      var trafo = recompute(startpoint, endpoint);
+&quot;+
+&quot;	      transC1.translation = trafo.translation;
+&quot;+
+&quot;	      rotscaleC1.rotation = trafo.rotation;
+&quot;+
+&quot;	      rotscaleC1.scale = trafo.scale;
+&quot;+
+&quot;	}
+&quot;+
+&quot;        function initialize(){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_startpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(val,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_endpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,val);
+&quot;+
+&quot;        }"
       }
             "field":
             {
@@ -405,6 +413,96 @@
       }
     },
         }        "ROUTE":
+        {
+      {
+        "@fromField":"cycleTime",
+        "@fromNode":"DECLpoint_INSTANCE_CL1",
+        "@toField":"set_location",
+        "@toNode":"DECLpoint_INSTANCE_MB1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"DECLpoint_INSTANCE_CL1",
+        "@toField":"set_fraction",
+        "@toNode":"DECLpoint_INSTANCE_PI1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"keyValue_changed",
+        "@fromNode":"DECLpoint_INSTANCE_MB1",
+        "@toField":"set_keyValue",
+        "@toNode":"DECLpoint_INSTANCE_PI1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"DECLpoint_INSTANCE_PI1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_INSTANCE_node"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"DECLpoint_INSTANCE_MB1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_INSTANCE_node"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"cycleTime",
+        "@fromNode":"DECLpoint_INSTANCE1000_CL1",
+        "@toField":"set_location",
+        "@toNode":"DECLpoint_INSTANCE1000_MB1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"DECLpoint_INSTANCE1000_CL1",
+        "@toField":"set_fraction",
+        "@toNode":"DECLpoint_INSTANCE1000_PI1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"keyValue_changed",
+        "@fromNode":"DECLpoint_INSTANCE1000_MB1",
+        "@toField":"set_keyValue",
+        "@toNode":"DECLpoint_INSTANCE1000_PI1"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"DECLpoint_INSTANCE1000_PI1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_INSTANCE1000_node"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"DECLpoint_INSTANCE1000_MB1",
+        "@toField":"set_translation",
+        "@toNode":"DECLpoint_INSTANCE1000_node"
+      }
+    },
+        "ROUTE":
         {
       {
         "@fromField":"translation_changed",

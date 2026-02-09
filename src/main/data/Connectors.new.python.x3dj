@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -32,29 +32,15 @@
         "meta":
         {
       {
-        "@content":"Titania V3.0.4, https://titania.create3000.de",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Tue, 25 Jul 2017 09:42:17 GMT",
-        "@name":"modified"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Connectors",
-        "@name":"title"
+        "@content":"Titania V3.0.4, https://titania.create3000.de",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -115,7 +101,95 @@
                 }                "Script":
                 {
       {
-        "@DEF":"RoundedRectangle2D"
+        "@DEF":"RoundedRectangle2D",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	var point         = new SFVec3f (cornerRadius, 0, 0);
+&quot;+
+&quot;	var startRotation = new SFRotation ();
+&quot;+
+&quot;	var endRotation   = new SFRotation (0, 0, 1, Math .PI / 2);
+&quot;+
+&quot;	var corner        = new MFVec3f ();
+&quot;+
+&quot;	var coordIndex    = new MFInt32 ();
+&quot;+
+&quot;	var points        = new MFVec3f ();
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension * 4; ++ i)
+&quot;+
+&quot;		coordIndex [coordIndex .length] = i;
+&quot;+
+&quot;
+&quot;+
+&quot;	geometry .coordIndex = coordIndex;
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++i)
+&quot;+
+&quot;		corner [i] = startRotation .slerp (endRotation, i / (cornerDimension - 1)) .multVec (point);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (size .x / 2 - cornerRadius, size .y / 2 - cornerRadius, 0);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = corner [i] .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (-size .x / 2 + cornerRadius, size .y / 2 - cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI * 0.5);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (-size .x / 2 + cornerRadius, -size .y / 2 + cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	var translation = new SFVec3f (size .x / 2 - cornerRadius, -size .y / 2 + cornerRadius, 0);
+&quot;+
+&quot;	var rotation    = new SFRotation (0, 0, 1, Math .PI * 1.5);
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < cornerDimension; ++ i)
+&quot;+
+&quot;		points [points .length] = rotation .multVec (corner [i]) .add (translation);
+&quot;+
+&quot;
+&quot;+
+&quot;	geometry .coord .point = points;
+&quot;+
+&quot;}"
       }
                     "IS":
                     {
@@ -360,7 +434,8 @@
                                 }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"Input"
+        "@DEF":"Input",
+        "@translation":"-1 0 0"
       }
                             "ProtoInstance":
                             {
@@ -382,13 +457,15 @@
                                     "Disk2D":
                                     {
       {
-        "@DEF":"Connector"
+        "@DEF":"Connector",
+        "@outerRadius":"0.2"
       }
     },
                                 }                            }                        }                        "Transform":
                         {
       {
-        "@DEF":"Output"
+        "@DEF":"Output",
+        "@translation":"1 0 0"
       }
                             "ProtoInstance":
                             {
@@ -554,7 +631,8 @@
                             }                        }                    }                    "LineSet":
                     {
       {
-        "@DEF":"Geometry_1"
+        "@DEF":"Geometry_1",
+        "@vertexCount":"2"
       }
                         "Coordinate":
                         {
@@ -565,7 +643,61 @@
                     }                }                "Script":
                 {
       {
-        "@DEF":"Route"
+        "@DEF":"Route",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	Browser .addRoute (output, 'translation_changed', self, 'set_translation');
+&quot;+
+&quot;	Browser .addRoute (input,  'translation_changed', self, 'set_translation');
+&quot;+
+&quot;
+&quot;+
+&quot;	set_translation ();
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_translation ()
+&quot;+
+&quot;{
+&quot;+
+&quot;	geometry .vertexCount [0] = routeDimension;
+&quot;+
+&quot;
+&quot;+
+&quot;	var outPoint = output .translation .add (new SFVec3f ( 1, 0, 0));
+&quot;+
+&quot;	var inPoint  = input  .translation .add (new SFVec3f (-1, 0, 0));
+&quot;+
+&quot;
+&quot;+
+&quot;	var w = inPoint .x - outPoint .x;
+&quot;+
+&quot;	var h = outPoint .y - inPoint .y;
+&quot;+
+&quot;
+&quot;+
+&quot;	for (var i = 0; i < routeDimension; ++ i)
+&quot;+
+&quot;	{
+&quot;+
+&quot;		var t = i / (routeDimension - 1);
+&quot;+
+&quot;		var y = h / 2 * (Math .cos (t * Math .PI) - 1);
+&quot;+
+&quot;
+&quot;+
+&quot;		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));
+&quot;+
+&quot;	}
+&quot;+
+&quot;}"
       }
                     "IS":
                     {

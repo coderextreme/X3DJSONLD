@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component name='HAnim'/>
     <meta content='JinLOA4_5.x3d' name='title'/>
@@ -8,23 +8,21 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='23 December 2021' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:11:46 GMT' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool' name='description'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
     <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
     <meta content='KoreanCharactersIllustrated.pdf' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/JinLOA4.x3d' name='identifier'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
     <meta content='Suwon HAnim Converter' name='generator'/>
-    <meta content='Gnu Image Manipulation Program, http://www.gimp.org' name='generator'/>
-    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='JinLOA4_5.x3d'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='JinLOA4' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_JinLOA4'>
+    <HAnimHumanoid DEF='hanim_JinLOA4' loa='4' name='JinLOA4'>
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee, Chul Hee Jung and Myeong Won Lee"'/>
         <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
@@ -179,159 +177,13 @@
       <HAnimJoint USE='hanim_r_tarsometatarsal_5'/>
       <HAnimJoint USE='hanim_l_transversetarsal'/>
       <HAnimJoint USE='hanim_r_transversetarsal'/>
-      <HAnimSegment USE='hanim_sacrum'/>
-      <HAnimSegment USE='hanim_pelvis'/>
-      <HAnimSegment USE='hanim_l5'/>
-      <HAnimSegment USE='hanim_l4'/>
-      <HAnimSegment USE='hanim_l3'/>
-      <HAnimSegment USE='hanim_l2'/>
-      <HAnimSegment USE='hanim_l1'/>
-      <HAnimSegment USE='hanim_t12'/>
-      <HAnimSegment USE='hanim_t11'/>
-      <HAnimSegment USE='hanim_t10'/>
-      <HAnimSegment USE='hanim_t9'/>
-      <HAnimSegment USE='hanim_t8'/>
-      <HAnimSegment USE='hanim_t7'/>
-      <HAnimSegment USE='hanim_t6'/>
-      <HAnimSegment USE='hanim_t5'/>
-      <HAnimSegment USE='hanim_t4'/>
-      <HAnimSegment USE='hanim_t3'/>
-      <HAnimSegment USE='hanim_t2'/>
-      <HAnimSegment USE='hanim_t1'/>
-      <HAnimSegment USE='hanim_c7'/>
-      <HAnimSegment USE='hanim_c6'/>
-      <HAnimSegment USE='hanim_c5'/>
-      <HAnimSegment USE='hanim_c4'/>
-      <HAnimSegment USE='hanim_c3'/>
-      <HAnimSegment USE='hanim_c2'/>
-      <HAnimSegment USE='hanim_c1'/>
-      <HAnimSegment USE='hanim_skull'/>
-      <HAnimSegment USE='hanim_jaw'/>
-      <HAnimSegment USE='hanim_l_calcaneus'/>
-      <HAnimSegment USE='hanim_r_calcaneus'/>
-      <HAnimSegment USE='hanim_l_calf'/>
-      <HAnimSegment USE='hanim_r_calf'/>
-      <HAnimSegment USE='hanim_l_capitate'/>
-      <HAnimSegment USE='hanim_r_capitate'/>
-      <HAnimSegment USE='hanim_l_carpal'/>
-      <HAnimSegment USE='hanim_r_carpal'/>
-      <HAnimSegment USE='hanim_l_carpal_distal_phalanx_1'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_carpal_distal_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_carpal_distal_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_carpal_distal_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_carpal_distal_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_carpal_middle_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_carpal_middle_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_carpal_middle_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_carpal_middle_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_carpal_proximal_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_clavicle'/>
-      <HAnimSegment USE='hanim_r_clavicle'/>
-      <HAnimSegment USE='hanim_l_cuboid'/>
-      <HAnimSegment USE='hanim_r_cuboid'/>
-      <HAnimSegment USE='hanim_l_cuneiform_1'/>
-      <HAnimSegment USE='hanim_r_cuneiform_1'/>
-      <HAnimSegment USE='hanim_l_cuneiform_2'/>
-      <HAnimSegment USE='hanim_r_cuneiform_2'/>
-      <HAnimSegment USE='hanim_l_cuneiform_3'/>
-      <HAnimSegment USE='hanim_r_cuneiform_3'/>
-      <HAnimSegment USE='hanim_l_eyeball'/>
-      <HAnimSegment USE='hanim_r_eyeball'/>
-      <HAnimSegment USE='hanim_l_eyebrow'/>
-      <HAnimSegment USE='hanim_r_eyebrow'/>
-      <HAnimSegment USE='hanim_l_eyelid'/>
-      <HAnimSegment USE='hanim_r_eyelid'/>
-      <HAnimSegment USE='hanim_l_forearm'/>
-      <HAnimSegment USE='hanim_r_forearm'/>
-      <HAnimSegment USE='hanim_l_hamate'/>
-      <HAnimSegment USE='hanim_r_hamate'/>
-      <HAnimSegment USE='hanim_l_metacarpal_1'/>
-      <HAnimSegment USE='hanim_r_metacarpal_1'/>
-      <HAnimSegment USE='hanim_l_metacarpal_2'/>
-      <HAnimSegment USE='hanim_r_metacarpal_2'/>
-      <HAnimSegment USE='hanim_l_metacarpal_3'/>
-      <HAnimSegment USE='hanim_r_metacarpal_3'/>
-      <HAnimSegment USE='hanim_l_metacarpal_4'/>
-      <HAnimSegment USE='hanim_r_metacarpal_4'/>
-      <HAnimSegment USE='hanim_l_metacarpal_5'/>
-      <HAnimSegment USE='hanim_r_metacarpal_5'/>
-      <HAnimSegment USE='hanim_l_metatarsal_1'/>
-      <HAnimSegment USE='hanim_r_metatarsal_1'/>
-      <HAnimSegment USE='hanim_l_metatarsal_2'/>
-      <HAnimSegment USE='hanim_r_metatarsal_2'/>
-      <HAnimSegment USE='hanim_l_metatarsal_3'/>
-      <HAnimSegment USE='hanim_r_metatarsal_3'/>
-      <HAnimSegment USE='hanim_l_metatarsal_4'/>
-      <HAnimSegment USE='hanim_r_metatarsal_4'/>
-      <HAnimSegment USE='hanim_l_metatarsal_5'/>
-      <HAnimSegment USE='hanim_r_metatarsal_5'/>
-      <HAnimSegment USE='hanim_l_navicular'/>
-      <HAnimSegment USE='hanim_r_navicular'/>
-      <HAnimSegment USE='hanim_l_scapula'/>
-      <HAnimSegment USE='hanim_r_scapula'/>
-      <HAnimSegment USE='hanim_l_talus'/>
-      <HAnimSegment USE='hanim_r_talus'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_1'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_distal_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_tarsal_distal_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_middle_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_tarsal_middle_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_1'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_3'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_3'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_4'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_4'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_5'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_5'/>
-      <HAnimSegment USE='hanim_l_thigh'/>
-      <HAnimSegment USE='hanim_r_thigh'/>
-      <HAnimSegment USE='hanim_l_trapezium'/>
-      <HAnimSegment USE='hanim_r_trapezium'/>
-      <HAnimSegment USE='hanim_l_trapezoid'/>
-      <HAnimSegment USE='hanim_r_trapezoid'/>
-      <HAnimSegment USE='hanim_l_upperarm'/>
-      <HAnimSegment USE='hanim_r_upperarm'/>
-      <HAnimJoint DEF='hanim_humanoid_root'>
-        <HAnimSegment DEF='hanim_sacrum'>
-          <Transform translation='0 1631.5555111111114 -31.44888888888889'>
+      <HAnimJoint DEF='hanim_humanoid_root' center='0 1631.556 -31.44889' name='humanoid_root'>
+        <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
+          <Transform translation='0 1631.556 -31.44889'>
             <Shape>
               <Appearance>
                 <Material diffuseColor='0.588 0.588 0.588'/>
-                <ImageTexture DEF='JinLOA4TextureAtlas'/>
+                <ImageTexture DEF='JinLOA4TextureAtlas' url='"images/Jin.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png"'/>
               </Appearance>
               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1' creaseAngle='3.14159' texCoordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>
                 <Coordinate point='0 1.053 0.0273 0 0.9123 -0.5414 -0.4375 0.9123 -0.4652 -0.7578 0.9123 -0.3733 -0.875 0.9123 0.0273 -0.7578 0.9123 0.4279 -0.4375 0.9123 0.5198 0 0.9123 0.596 0.4375 0.9123 0.5198 0.7578 0.9123 0.4279 0.875 0.9123 0.0273 0.7578 0.9123 -0.3733 0.4375 0.9123 -0.4652 0 0.5267 -0.8842 -0.5658 0.5267 -0.7621 -0.98 0.5267 -0.4285 -1.132 0.5267 0.0273 -0.98 0.5267 0.483 -0.5658 0.5267 0.6985 0 0.5267 0.8206 0.5658 0.5267 0.6985 0.98 0.5267 0.483 1.132 0.5267 0.0273 0.98 0.5267 -0.4285 0.5658 0.5267 -0.7621 0 0 -0.9616 -0.6534 0 -0.8206 -1.132 0 -0.4353 -1.307 0 0.0273 -1.132 0 0.5536 -0.6534 0 0.8206 0 0 0.9616 0.6534 0 0.8206 1.132 0 0.5536 1.307 0 0.0273 1.132 0 -0.4353 0.6534 0 -0.8206 0 -0.5267 -0.8206 -0.5658 -0.5267 -0.6985 -0.98 -0.5267 -0.3648 -1.132 -0.5267 0.0273 -0.98 -0.5267 0.483 -0.5658 -0.5267 0.6985 0 -0.5267 0.8206 0.5658 -0.5267 0.6985 0.98 -0.5267 0.483 1.132 -0.5267 0.0273 0.98 -0.5267 -0.3648 0.5658 -0.5267 -0.6985 0 -0.9123 -0.4353 -0.3267 -0.9123 -0.3648 -0.5658 -0.9123 -0.2358 -0.6534 -0.9123 0.0273 -0.5658 -0.9123 0.2904 -0.3267 -0.9123 0.483 0 -0.9123 0.5536 0.3267 -0.9123 0.483 0.5658 -0.9123 0.2904 0.6534 -0.9123 0.0273 0.5658 -0.9123 -0.2358 0.3267 -0.9123 -0.3648 0 -1.053 0.0273'/>
@@ -340,9 +192,9 @@
             </Shape>
           </Transform>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_sacroiliac'>
-          <HAnimSegment DEF='hanim_pelvis'>
-            <Transform translation='0 1396.888888888889 -31.44888888888889'>
+        <HAnimJoint DEF='hanim_sacroiliac' center='0 1396.889 -31.44889' name='sacroiliac'>
+          <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
+            <Transform translation='0 1396.889 -31.44889'>
               <Shape>
                 <Appearance>
                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -355,9 +207,9 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_hip'>
-            <HAnimSegment DEF='hanim_l_thigh'>
-              <Transform translation='186.9777777777778 1632.8889777777777 -36.24444444444445'>
+          <HAnimJoint DEF='hanim_l_hip' center='186.9778 1632.889 -36.24444' name='l_hip'>
+            <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
+              <Transform translation='186.9778 1632.889 -36.24444'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -370,9 +222,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_knee'>
-              <HAnimSegment DEF='hanim_l_calf'>
-                <Transform translation='182.93333333333334 807.5555555555557 -38.39555555555556'>
+            <HAnimJoint DEF='hanim_l_knee' center='182.9333 807.5556 -38.39556' name='l_knee'>
+              <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
+                <Transform translation='182.9333 807.5556 -38.39556'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -385,9 +237,9 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_talocrural'>
-                <HAnimSegment DEF='hanim_l_talus'>
-                  <Transform translation='175.46666666666667 188.53333333333333 -20.644444444444446'>
+              <HAnimJoint DEF='hanim_l_talocrural' center='175.4667 188.5333 -20.64444' name='l_talocrural'>
+                <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
+                  <Transform translation='175.4667 188.5333 -20.64444'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -400,9 +252,9 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_l_talocalcaneonavicular'>
-                  <HAnimSegment DEF='hanim_l_navicular'>
-                    <Transform translation='154.66666666666669 72.88888888888889 9.60888888888889'>
+                <HAnimJoint DEF='hanim_l_talocalcaneonavicular' center='154.6667 72.88889 9.608889' name='l_talocalcaneonavicular'>
+                  <HAnimSegment DEF='hanim_l_navicular' name='l_navicular'>
+                    <Transform translation='154.6667 72.88889 9.608889'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -415,9 +267,9 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_1'>
-                    <HAnimSegment DEF='hanim_l_cuneiform_1'>
-                      <Transform translation='133.0666666666667 63.422222222222224 36.32888888888889'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_1' center='133.0667 63.42222 36.32889' name='l_cuneonavicular_1'>
+                    <HAnimSegment DEF='hanim_l_cuneiform_1' name='l_cuneiform_1'>
+                      <Transform translation='133.0667 63.42222 36.32889'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -430,9 +282,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_1'>
-                      <HAnimSegment DEF='hanim_l_metatarsal_1'>
-                        <Transform translation='127.64444444444445 45.91111111111111 87.28888888888889'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_1' center='127.6444 45.91111 87.28889' name='l_tarsometatarsal_1'>
+                      <HAnimSegment DEF='hanim_l_metatarsal_1' name='l_metatarsal_1'>
+                        <Transform translation='127.6444 45.91111 87.28889'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -445,9 +297,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_1'>
-                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1'>
-                          <Transform translation='122.71111111111112 28.493333333333336 184.9333333333333'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_1' center='122.7111 28.49333 184.9333' name='l_metatarsophalangeal_1'>
+                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_1' name='l_tarsal_proximal_phalanx_1'>
+                          <Transform translation='122.7111 28.49333 184.9333'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -460,9 +312,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_1'>
-                          <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_1'>
-                            <Transform translation='122.71111111111112 23.973333333333333 227.7777777777778'>
+                        <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_1' center='122.7111 23.97333 227.7778' name='l_tarsal_distal_interphalangeal_1'>
+                          <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_1' name='l_tarsal_distal_phalanx_1'>
+                            <Transform translation='122.7111 23.97333 227.7778'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -479,9 +331,9 @@
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_2'>
-                    <HAnimSegment DEF='hanim_l_cuneiform_2'>
-                      <Transform translation='160.84444444444446 66.22222222222223 42.324444444444445'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_2' center='160.8444 66.22222 42.32444' name='l_cuneonavicular_2'>
+                    <HAnimSegment DEF='hanim_l_cuneiform_2' name='l_cuneiform_2'>
+                      <Transform translation='160.8444 66.22222 42.32444'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -494,9 +346,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_2'>
-                      <HAnimSegment DEF='hanim_l_metatarsal_2'>
-                        <Transform translation='158.4 51.55555555555556 81.11111111111111'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_2' center='158.4 51.55556 81.11111' name='l_tarsometatarsal_2'>
+                      <HAnimSegment DEF='hanim_l_metatarsal_2' name='l_metatarsal_2'>
+                        <Transform translation='158.4 51.55556 81.11111'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -509,9 +361,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_2'>
-                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2'>
-                          <Transform translation='163.02222222222224 29.58222222222222 193.24444444444444'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='163.0222 29.58222 193.2444' name='l_metatarsophalangeal_2'>
+                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
+                          <Transform translation='163.0222 29.58222 193.2444'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -524,9 +376,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2'>
-                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2'>
-                            <Transform translation='166.53333333333333 24.982222222222227 225.20000000000002'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_2' center='166.5333 24.98222 225.2' name='l_tarsal_proximal_interphalangeal_2'>
+                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_2' name='l_tarsal_middle_phalanx_2'>
+                            <Transform translation='166.5333 24.98222 225.2'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -539,9 +391,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2'>
-                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_2'>
-                              <Transform translation='166.53333333333333 19.40888888888889 243.82222222222222'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_2' center='166.5333 19.40889 243.8222' name='l_tarsal_distal_interphalangeal_2'>
+                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_2' name='l_tarsal_distal_phalanx_2'>
+                              <Transform translation='166.5333 19.40889 243.8222'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -559,9 +411,9 @@
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_l_cuneonavicular_3'>
-                    <HAnimSegment DEF='hanim_l_cuneiform_3'>
-                      <Transform translation='183.64444444444445 65.95555555555556 39.14666666666667'>
+                  <HAnimJoint DEF='hanim_l_cuneonavicular_3' center='183.6444 65.95556 39.14667' name='l_cuneonavicular_3'>
+                    <HAnimSegment DEF='hanim_l_cuneiform_3' name='l_cuneiform_3'>
+                      <Transform translation='183.6444 65.95556 39.14667'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -574,9 +426,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3'>
-                      <HAnimSegment DEF='hanim_l_metatarsal_3'>
-                        <Transform translation='186.84444444444443 51.55555555555556 77.82222222222222'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_3' center='186.8444 51.55556 77.82222' name='l_tarsometatarsal_3'>
+                      <HAnimSegment DEF='hanim_l_metatarsal_3' name='l_metatarsal_3'>
+                        <Transform translation='186.8444 51.55556 77.82222'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -589,9 +441,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_3'>
-                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3'>
-                          <Transform translation='190.57777777777778 29.742222222222225 188.48888888888888'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_3' center='190.5778 29.74222 188.4889' name='l_metatarsophalangeal_3'>
+                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_3' name='l_tarsal_proximal_phalanx_3'>
+                          <Transform translation='190.5778 29.74222 188.4889'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -604,9 +456,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3'>
-                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3'>
-                            <Transform translation='195.2888888888889 23.551111111111112 218.22222222222223'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_3' center='195.2889 23.55111 218.2222' name='l_tarsal_proximal_interphalangeal_3'>
+                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_3' name='l_tarsal_middle_phalanx_3'>
+                            <Transform translation='195.2889 23.55111 218.2222'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -619,9 +471,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3'>
-                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_3'>
-                              <Transform translation='198.35555555555555 19.40888888888889 236.44444444444446'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_3' center='198.3556 19.40889 236.4444' name='l_tarsal_distal_interphalangeal_3'>
+                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_3' name='l_tarsal_distal_phalanx_3'>
+                              <Transform translation='198.3556 19.40889 236.4444'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -640,9 +492,9 @@
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
-                <HAnimJoint DEF='hanim_l_calcaneocuboid'>
-                  <HAnimSegment DEF='hanim_l_calcaneus'>
-                    <Transform translation='176 114.53333333333333 -51.288888888888884'>
+                <HAnimJoint DEF='hanim_l_calcaneocuboid' center='176 114.5333 -51.28889' name='l_calcaneocuboid'>
+                  <HAnimSegment DEF='hanim_l_calcaneus' name='l_calcaneus'>
+                    <Transform translation='176 114.5333 -51.28889'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -655,9 +507,9 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_l_transversetarsal'>
-                    <HAnimSegment DEF='hanim_l_cuboid'>
-                      <Transform translation='218.53333333333333 69.6888888888889 4.126666666666667'>
+                  <HAnimJoint DEF='hanim_l_transversetarsal' center='218.5333 69.68889 4.126667' name='l_transversetarsal'>
+                    <HAnimSegment DEF='hanim_l_cuboid' name='l_cuboid'>
+                      <Transform translation='218.5333 69.68889 4.126667'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -670,9 +522,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_4'>
-                      <HAnimSegment DEF='hanim_l_metatarsal_4'>
-                        <Transform translation='210.35555555555555 48.48888888888889 75.91111111111111'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_4' center='210.3556 48.48889 75.91111' name='l_tarsometatarsal_4'>
+                      <HAnimSegment DEF='hanim_l_metatarsal_4' name='l_metatarsal_4'>
+                        <Transform translation='210.3556 48.48889 75.91111'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -685,9 +537,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_4'>
-                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4'>
-                          <Transform translation='217.02222222222224 28.351111111111113 180.08888888888887'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_4' center='217.0222 28.35111 180.0889' name='l_metatarsophalangeal_4'>
+                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_4' name='l_tarsal_proximal_phalanx_4'>
+                          <Transform translation='217.0222 28.35111 180.0889'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -700,9 +552,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4'>
-                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4'>
-                            <Transform translation='225.51111111111112 24.186666666666667 210'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_4' center='225.5111 24.18667 210' name='l_tarsal_proximal_interphalangeal_4'>
+                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_4' name='l_tarsal_middle_phalanx_4'>
+                            <Transform translation='225.5111 24.18667 210'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -715,9 +567,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4'>
-                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_4'>
-                              <Transform translation='228.4888888888889 18.506666666666668 224.57777777777778'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_4' center='228.4889 18.50667 224.5778' name='l_tarsal_distal_interphalangeal_4'>
+                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_4' name='l_tarsal_distal_phalanx_4'>
+                              <Transform translation='228.4889 18.50667 224.5778'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -734,9 +586,9 @@
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_l_tarsometatarsal_5'>
-                      <HAnimSegment DEF='hanim_l_metatarsal_5'>
-                        <Transform translation='238.66666666666669 41.373333333333335 68.62222222222222'>
+                    <HAnimJoint DEF='hanim_l_tarsometatarsal_5' center='238.6667 41.37333 68.62222' name='l_tarsometatarsal_5'>
+                      <HAnimSegment DEF='hanim_l_metatarsal_5' name='l_metatarsal_5'>
+                        <Transform translation='238.6667 41.37333 68.62222'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -749,9 +601,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_5'>
-                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5'>
-                          <Transform translation='245.0666666666667 27.004444444444445 170.9777777777778'>
+                      <HAnimJoint DEF='hanim_l_metatarsophalangeal_5' center='245.0667 27.00444 170.9778' name='l_metatarsophalangeal_5'>
+                        <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_5' name='l_tarsal_proximal_phalanx_5'>
+                          <Transform translation='245.0667 27.00444 170.9778'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -764,9 +616,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5'>
-                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5'>
-                            <Transform translation='249.64444444444445 21.444444444444443 185.95555555555558'>
+                        <HAnimJoint DEF='hanim_l_tarsal_proximal_interphalangeal_5' center='249.6444 21.44444 185.9556' name='l_tarsal_proximal_interphalangeal_5'>
+                          <HAnimSegment DEF='hanim_l_tarsal_middle_phalanx_5' name='l_tarsal_middle_phalanx_5'>
+                            <Transform translation='249.6444 21.44444 185.9556'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -779,9 +631,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5'>
-                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_5'>
-                              <Transform translation='251.42222222222225 16.915555555555557 201.24444444444444'>
+                          <HAnimJoint DEF='hanim_l_tarsal_distal_interphalangeal_5' center='251.4222 16.91556 201.2444' name='l_tarsal_distal_interphalangeal_5'>
+                            <HAnimSegment DEF='hanim_l_tarsal_distal_phalanx_5' name='l_tarsal_distal_phalanx_5'>
+                              <Transform translation='251.4222 16.91556 201.2444'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -803,9 +655,9 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_hip'>
-            <HAnimSegment DEF='hanim_r_thigh'>
-              <Transform translation='-186.9777777777778 1632.8889777777777 -36.24444444444445'>
+          <HAnimJoint DEF='hanim_r_hip' center='-186.9778 1632.889 -36.24444' name='r_hip'>
+            <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
+              <Transform translation='-186.9778 1632.889 -36.24444'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -818,9 +670,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_knee'>
-              <HAnimSegment DEF='hanim_r_calf'>
-                <Transform translation='-182.93333333333334 807.5555555555557 -38.39555555555556'>
+            <HAnimJoint DEF='hanim_r_knee' center='-182.9333 807.5556 -38.39556' name='r_knee'>
+              <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
+                <Transform translation='-182.9333 807.5556 -38.39556'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -833,9 +685,9 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_talocrural'>
-                <HAnimSegment DEF='hanim_r_talus'>
-                  <Transform translation='-174.7111111111111 188.53333333333333 -20.644444444444446'>
+              <HAnimJoint DEF='hanim_r_talocrural' center='-174.7111 188.5333 -20.64444' name='r_talocrural'>
+                <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
+                  <Transform translation='-174.7111 188.5333 -20.64444'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -848,9 +700,9 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_r_talocalcaneonavicular'>
-                  <HAnimSegment DEF='hanim_r_navicular'>
-                    <Transform translation='-153.95555555555555 72.88888888888889 9.60888888888889'>
+                <HAnimJoint DEF='hanim_r_talocalcaneonavicular' center='-153.9556 72.88889 9.608889' name='r_talocalcaneonavicular'>
+                  <HAnimSegment DEF='hanim_r_navicular' name='r_navicular'>
+                    <Transform translation='-153.9556 72.88889 9.608889'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -863,9 +715,9 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_1'>
-                    <HAnimSegment DEF='hanim_r_cuneiform_1'>
-                      <Transform translation='-132.3111111111111 63.422222222222224 36.32888888888889'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_1' center='-132.3111 63.42222 36.32889' name='r_cuneonavicular_1'>
+                    <HAnimSegment DEF='hanim_r_cuneiform_1' name='r_cuneiform_1'>
+                      <Transform translation='-132.3111 63.42222 36.32889'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -878,9 +730,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_1'>
-                      <HAnimSegment DEF='hanim_r_metatarsal_1'>
-                        <Transform translation='-126.93333333333334 45.91111111111111 87.28888888888889'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_1' center='-126.9333 45.91111 87.28889' name='r_tarsometatarsal_1'>
+                      <HAnimSegment DEF='hanim_r_metatarsal_1' name='r_metatarsal_1'>
+                        <Transform translation='-126.9333 45.91111 87.28889'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -893,9 +745,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_1'>
-                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1'>
-                          <Transform translation='-122.00000000000001 28.493333333333336 184.9333333333333'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_1' center='-122 28.49333 184.9333' name='r_metatarsophalangeal_1'>
+                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_1' name='r_tarsal_proximal_phalanx_1'>
+                          <Transform translation='-122 28.49333 184.9333'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -908,9 +760,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_1'>
-                          <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1'>
-                            <Transform translation='-121.95555555555556 23.973333333333333 227.7777777777778'>
+                        <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_1' center='-121.9556 23.97333 227.7778' name='r_tarsal_distal_interphalangeal_1'>
+                          <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_1' name='r_tarsal_distal_phalanx_1'>
+                            <Transform translation='-121.9556 23.97333 227.7778'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -927,9 +779,9 @@
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_2'>
-                    <HAnimSegment DEF='hanim_r_cuneiform_2'>
-                      <Transform translation='-160.0888888888889 66.22222222222223 42.324444444444445'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_2' center='-160.0889 66.22222 42.32444' name='r_cuneonavicular_2'>
+                    <HAnimSegment DEF='hanim_r_cuneiform_2' name='r_cuneiform_2'>
+                      <Transform translation='-160.0889 66.22222 42.32444'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -942,9 +794,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_2'>
-                      <HAnimSegment DEF='hanim_r_metatarsal_2'>
-                        <Transform translation='-157.6888888888889 51.55555555555556 81.11111111111111'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_2' center='-157.6889 51.55556 81.11111' name='r_tarsometatarsal_2'>
+                      <HAnimSegment DEF='hanim_r_metatarsal_2' name='r_metatarsal_2'>
+                        <Transform translation='-157.6889 51.55556 81.11111'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -957,9 +809,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_2'>
-                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2'>
-                          <Transform translation='-162.26666666666665 29.58222222222222 193.24444444444444'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-162.2667 29.58222 193.2444' name='r_metatarsophalangeal_2'>
+                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
+                          <Transform translation='-162.2667 29.58222 193.2444'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -972,9 +824,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2'>
-                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2'>
-                            <Transform translation='-165.77777777777777 24.982222222222227 225.20000000000002'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_2' center='-165.7778 24.98222 225.2' name='r_tarsal_proximal_interphalangeal_2'>
+                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_2' name='r_tarsal_middle_phalanx_2'>
+                            <Transform translation='-165.7778 24.98222 225.2'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -987,9 +839,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2'>
-                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2'>
-                              <Transform translation='-165.77777777777777 19.40888888888889 243.82222222222222'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_2' center='-165.7778 19.40889 243.8222' name='r_tarsal_distal_interphalangeal_2'>
+                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_2' name='r_tarsal_distal_phalanx_2'>
+                              <Transform translation='-165.7778 19.40889 243.8222'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1007,9 +859,9 @@
                       </HAnimJoint>
                     </HAnimJoint>
                   </HAnimJoint>
-                  <HAnimJoint DEF='hanim_r_cuneonavicular_3'>
-                    <HAnimSegment DEF='hanim_r_cuneiform_3'>
-                      <Transform translation='-182.93333333333334 65.95555555555556 39.14666666666667'>
+                  <HAnimJoint DEF='hanim_r_cuneonavicular_3' center='-182.9333 65.95556 39.14667' name='r_cuneonavicular_3'>
+                    <HAnimSegment DEF='hanim_r_cuneiform_3' name='r_cuneiform_3'>
+                      <Transform translation='-182.9333 65.95556 39.14667'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1022,9 +874,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3'>
-                      <HAnimSegment DEF='hanim_r_metatarsal_3'>
-                        <Transform translation='-186.13333333333333 51.55555555555556 77.82222222222222'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_3' center='-186.1333 51.55556 77.82222' name='r_tarsometatarsal_3'>
+                      <HAnimSegment DEF='hanim_r_metatarsal_3' name='r_metatarsal_3'>
+                        <Transform translation='-186.1333 51.55556 77.82222'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1037,9 +889,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_3'>
-                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3'>
-                          <Transform translation='-189.82222222222222 29.742222222222225 188.48888888888888'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_3' center='-189.8222 29.74222 188.4889' name='r_metatarsophalangeal_3'>
+                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_3' name='r_tarsal_proximal_phalanx_3'>
+                          <Transform translation='-189.8222 29.74222 188.4889'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1052,9 +904,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3'>
-                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3'>
-                            <Transform translation='-194.57777777777778 23.551111111111112 218.22222222222223'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_3' center='-194.5778 23.55111 218.2222' name='r_tarsal_proximal_interphalangeal_3'>
+                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_3' name='r_tarsal_middle_phalanx_3'>
+                            <Transform translation='-194.5778 23.55111 218.2222'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1067,9 +919,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3'>
-                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_3'>
-                              <Transform translation='-197.6 19.40888888888889 236.44444444444446'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_3' center='-197.6 19.40889 236.4444' name='r_tarsal_distal_interphalangeal_3'>
+                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_3' name='r_tarsal_distal_phalanx_3'>
+                              <Transform translation='-197.6 19.40889 236.4444'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1088,9 +940,9 @@
                     </HAnimJoint>
                   </HAnimJoint>
                 </HAnimJoint>
-                <HAnimJoint DEF='hanim_r_calcaneocuboid'>
-                  <HAnimSegment DEF='hanim_r_calcaneus'>
-                    <Transform translation='-175.24444444444444 114.53333333333333 -51.288888888888884'>
+                <HAnimJoint DEF='hanim_r_calcaneocuboid' center='-175.2444 114.5333 -51.28889' name='r_calcaneocuboid'>
+                  <HAnimSegment DEF='hanim_r_calcaneus' name='r_calcaneus'>
+                    <Transform translation='-175.2444 114.5333 -51.28889'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1103,9 +955,9 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_r_transversetarsal'>
-                    <HAnimSegment DEF='hanim_r_cuboid'>
-                      <Transform translation='-217.82222222222222 69.6888888888889 4.126666666666667'>
+                  <HAnimJoint DEF='hanim_r_transversetarsal' center='-217.8222 69.68889 4.126667' name='r_transversetarsal'>
+                    <HAnimSegment DEF='hanim_r_cuboid' name='r_cuboid'>
+                      <Transform translation='-217.8222 69.68889 4.126667'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1118,9 +970,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_4'>
-                      <HAnimSegment DEF='hanim_r_metatarsal_4'>
-                        <Transform translation='-209.64444444444445 48.48888888888889 75.91111111111111'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_4' center='-209.6444 48.48889 75.91111' name='r_tarsometatarsal_4'>
+                      <HAnimSegment DEF='hanim_r_metatarsal_4' name='r_metatarsal_4'>
+                        <Transform translation='-209.6444 48.48889 75.91111'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1133,9 +985,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_4'>
-                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4'>
-                          <Transform translation='-216.31111111111113 28.351111111111113 180.08888888888887'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_4' center='-216.3111 28.35111 180.0889' name='r_metatarsophalangeal_4'>
+                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_4' name='r_tarsal_proximal_phalanx_4'>
+                          <Transform translation='-216.3111 28.35111 180.0889'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1148,9 +1000,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4'>
-                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4'>
-                            <Transform translation='-224.7555555555556 24.186666666666667 210'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_4' center='-224.7556 24.18667 210' name='r_tarsal_proximal_interphalangeal_4'>
+                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_4' name='r_tarsal_middle_phalanx_4'>
+                            <Transform translation='-224.7556 24.18667 210'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1163,9 +1015,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4'>
-                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_4'>
-                              <Transform translation='-227.7777777777778 18.506666666666668 224.57777777777778'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_4' center='-227.7778 18.50667 224.5778' name='r_tarsal_distal_interphalangeal_4'>
+                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_4' name='r_tarsal_distal_phalanx_4'>
+                              <Transform translation='-227.7778 18.50667 224.5778'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1182,9 +1034,9 @@
                         </HAnimJoint>
                       </HAnimJoint>
                     </HAnimJoint>
-                    <HAnimJoint DEF='hanim_r_tarsometatarsal_5'>
-                      <HAnimSegment DEF='hanim_r_metatarsal_5'>
-                        <Transform translation='-237.9111111111111 41.373333333333335 68.62222222222222'>
+                    <HAnimJoint DEF='hanim_r_tarsometatarsal_5' center='-237.9111 41.37333 68.62222' name='r_tarsometatarsal_5'>
+                      <HAnimSegment DEF='hanim_r_metatarsal_5' name='r_metatarsal_5'>
+                        <Transform translation='-237.9111 41.37333 68.62222'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1197,9 +1049,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_5'>
-                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5'>
-                          <Transform translation='-244.3111111111111 27.004444444444445 170.9777777777778'>
+                      <HAnimJoint DEF='hanim_r_metatarsophalangeal_5' center='-244.3111 27.00444 170.9778' name='r_metatarsophalangeal_5'>
+                        <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_5' name='r_tarsal_proximal_phalanx_5'>
+                          <Transform translation='-244.3111 27.00444 170.9778'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1212,9 +1064,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5'>
-                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5'>
-                            <Transform translation='-248.88888888888889 21.444444444444443 185.95555555555558'>
+                        <HAnimJoint DEF='hanim_r_tarsal_proximal_interphalangeal_5' center='-248.8889 21.44444 185.9556' name='r_tarsal_proximal_interphalangeal_5'>
+                          <HAnimSegment DEF='hanim_r_tarsal_middle_phalanx_5' name='r_tarsal_middle_phalanx_5'>
+                            <Transform translation='-248.8889 21.44444 185.9556'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1227,9 +1079,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5'>
-                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_5'>
-                              <Transform translation='-250.7111111111111 16.915555555555557 201.24444444444444'>
+                          <HAnimJoint DEF='hanim_r_tarsal_distal_interphalangeal_5' center='-250.7111 16.91556 201.2444' name='r_tarsal_distal_interphalangeal_5'>
+                            <HAnimSegment DEF='hanim_r_tarsal_distal_phalanx_5' name='r_tarsal_distal_phalanx_5'>
+                              <Transform translation='-250.7111 16.91556 201.2444'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1251,9 +1103,9 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vl5'>
-            <HAnimSegment DEF='hanim_l5'>
-              <Transform translation='0 1828.0000444444445 -27.186666666666667'>
+          <HAnimJoint DEF='hanim_vl5' center='0 1828 -27.18667' name='vl5'>
+            <HAnimSegment DEF='hanim_l5' name='l5'>
+              <Transform translation='0 1828 -27.18667'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1266,9 +1118,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_vl4'>
-              <HAnimSegment DEF='hanim_l4'>
-                <Transform translation='0 1875.9999555555557 -27.186666666666667'>
+            <HAnimJoint DEF='hanim_vl4' center='0 1876 -27.18667' name='vl4'>
+              <HAnimSegment DEF='hanim_l4' name='l4'>
+                <Transform translation='0 1876 -27.18667'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1281,9 +1133,9 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_vl3'>
-                <HAnimSegment DEF='hanim_l3'>
-                  <Transform translation='0 1908 -27.186666666666667'>
+              <HAnimJoint DEF='hanim_vl3' center='0 1908 -27.18667' name='vl3'>
+                <HAnimSegment DEF='hanim_l3' name='l3'>
+                  <Transform translation='0 1908 -27.18667'>
                     <Shape>
                       <Appearance>
                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1296,9 +1148,9 @@
                     </Shape>
                   </Transform>
                 </HAnimSegment>
-                <HAnimJoint DEF='hanim_vl2'>
-                  <HAnimSegment DEF='hanim_l2'>
-                    <Transform translation='0 1940.4444444444443 -27.186666666666667'>
+                <HAnimJoint DEF='hanim_vl2' center='0 1940.444 -27.18667' name='vl2'>
+                  <HAnimSegment DEF='hanim_l2' name='l2'>
+                    <Transform translation='0 1940.444 -27.18667'>
                       <Shape>
                         <Appearance>
                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1311,9 +1163,9 @@
                       </Shape>
                     </Transform>
                   </HAnimSegment>
-                  <HAnimJoint DEF='hanim_vl1'>
-                    <HAnimSegment DEF='hanim_l1'>
-                      <Transform translation='0 1974.6666666666667 -27.186666666666667'>
+                  <HAnimJoint DEF='hanim_vl1' center='0 1974.667 -27.18667' name='vl1'>
+                    <HAnimSegment DEF='hanim_l1' name='l1'>
+                      <Transform translation='0 1974.667 -27.18667'>
                         <Shape>
                           <Appearance>
                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1326,9 +1178,9 @@
                         </Shape>
                       </Transform>
                     </HAnimSegment>
-                    <HAnimJoint DEF='hanim_vt12'>
-                      <HAnimSegment DEF='hanim_t12'>
-                        <Transform translation='0 2020.8889333333336 -27.186666666666667'>
+                    <HAnimJoint DEF='hanim_vt12' center='0 2020.889 -27.18667' name='vt12'>
+                      <HAnimSegment DEF='hanim_t12' name='t12'>
+                        <Transform translation='0 2020.889 -27.18667'>
                           <Shape>
                             <Appearance>
                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1341,9 +1193,9 @@
                           </Shape>
                         </Transform>
                       </HAnimSegment>
-                      <HAnimJoint DEF='hanim_vt11'>
-                        <HAnimSegment DEF='hanim_t11'>
-                          <Transform translation='0 2067.5555555555557 -27.186666666666667'>
+                      <HAnimJoint DEF='hanim_vt11' center='0 2067.556 -27.18667' name='vt11'>
+                        <HAnimSegment DEF='hanim_t11' name='t11'>
+                          <Transform translation='0 2067.556 -27.18667'>
                             <Shape>
                               <Appearance>
                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1356,9 +1208,9 @@
                             </Shape>
                           </Transform>
                         </HAnimSegment>
-                        <HAnimJoint DEF='hanim_vt10'>
-                          <HAnimSegment DEF='hanim_t10'>
-                            <Transform translation='0 2101.333288888889 -27.23111111111111'>
+                        <HAnimJoint DEF='hanim_vt10' center='0 2101.333 -27.23111' name='vt10'>
+                          <HAnimSegment DEF='hanim_t10' name='t10'>
+                            <Transform translation='0 2101.333 -27.23111'>
                               <Shape>
                                 <Appearance>
                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1371,9 +1223,9 @@
                               </Shape>
                             </Transform>
                           </HAnimSegment>
-                          <HAnimJoint DEF='hanim_vt9'>
-                            <HAnimSegment DEF='hanim_t9'>
-                              <Transform translation='0 2130.222222222222 -27.186666666666667'>
+                          <HAnimJoint DEF='hanim_vt9' center='0 2130.222 -27.18667' name='vt9'>
+                            <HAnimSegment DEF='hanim_t9' name='t9'>
+                              <Transform translation='0 2130.222 -27.18667'>
                                 <Shape>
                                   <Appearance>
                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1386,9 +1238,9 @@
                                 </Shape>
                               </Transform>
                             </HAnimSegment>
-                            <HAnimJoint DEF='hanim_vt8'>
-                              <HAnimSegment DEF='hanim_t8'>
-                                <Transform translation='0 2159.1112000000003 -27.186666666666667'>
+                            <HAnimJoint DEF='hanim_vt8' center='0 2159.111 -27.18667' name='vt8'>
+                              <HAnimSegment DEF='hanim_t8' name='t8'>
+                                <Transform translation='0 2159.111 -27.18667'>
                                   <Shape>
                                     <Appearance>
                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1401,9 +1253,9 @@
                                   </Shape>
                                 </Transform>
                               </HAnimSegment>
-                              <HAnimJoint DEF='hanim_vt7'>
-                                <HAnimSegment DEF='hanim_t7'>
-                                  <Transform translation='0 2190.2221777777777 -27.186666666666667'>
+                              <HAnimJoint DEF='hanim_vt7' center='0 2190.222 -27.18667' name='vt7'>
+                                <HAnimSegment DEF='hanim_t7' name='t7'>
+                                  <Transform translation='0 2190.222 -27.18667'>
                                     <Shape>
                                       <Appearance>
                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1416,9 +1268,9 @@
                                     </Shape>
                                   </Transform>
                                 </HAnimSegment>
-                                <HAnimJoint DEF='hanim_vt6'>
-                                  <HAnimSegment DEF='hanim_t6'>
-                                    <Transform translation='0 2215.5554666666667 -27.186666666666667'>
+                                <HAnimJoint DEF='hanim_vt6' center='0 2215.555 -27.18667' name='vt6'>
+                                  <HAnimSegment DEF='hanim_t6' name='t6'>
+                                    <Transform translation='0 2215.555 -27.18667'>
                                       <Shape>
                                         <Appearance>
                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1431,9 +1283,9 @@
                                       </Shape>
                                     </Transform>
                                   </HAnimSegment>
-                                  <HAnimJoint DEF='hanim_vt5'>
-                                    <HAnimSegment DEF='hanim_t5'>
-                                      <Transform translation='0 2246.2222666666667 -27.186666666666667'>
+                                  <HAnimJoint DEF='hanim_vt5' center='0 2246.222 -27.18667' name='vt5'>
+                                    <HAnimSegment DEF='hanim_t5' name='t5'>
+                                      <Transform translation='0 2246.222 -27.18667'>
                                         <Shape>
                                           <Appearance>
                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1446,9 +1298,9 @@
                                         </Shape>
                                       </Transform>
                                     </HAnimSegment>
-                                    <HAnimJoint DEF='hanim_vt4'>
-                                      <HAnimSegment DEF='hanim_t4'>
-                                        <Transform translation='0 2276.4444888888893 -27.186666666666667'>
+                                    <HAnimJoint DEF='hanim_vt4' center='0 2276.444 -27.18667' name='vt4'>
+                                      <HAnimSegment DEF='hanim_t4' name='t4'>
+                                        <Transform translation='0 2276.444 -27.18667'>
                                           <Shape>
                                             <Appearance>
                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1461,9 +1313,9 @@
                                           </Shape>
                                         </Transform>
                                       </HAnimSegment>
-                                      <HAnimJoint DEF='hanim_vt3'>
-                                        <HAnimSegment DEF='hanim_t3'>
-                                          <Transform translation='0 2312.888933333333 -27.186666666666667'>
+                                      <HAnimJoint DEF='hanim_vt3' center='0 2312.889 -27.18667' name='vt3'>
+                                        <HAnimSegment DEF='hanim_t3' name='t3'>
+                                          <Transform translation='0 2312.889 -27.18667'>
                                             <Shape>
                                               <Appearance>
                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1476,9 +1328,9 @@
                                             </Shape>
                                           </Transform>
                                         </HAnimSegment>
-                                        <HAnimJoint DEF='hanim_vt2'>
-                                          <HAnimSegment DEF='hanim_t2'>
-                                            <Transform translation='0 2361.7777333333333 -27.23111111111111'>
+                                        <HAnimJoint DEF='hanim_vt2' center='0 2361.778 -27.23111' name='vt2'>
+                                          <HAnimSegment DEF='hanim_t2' name='t2'>
+                                            <Transform translation='0 2361.778 -27.23111'>
                                               <Shape>
                                                 <Appearance>
                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1491,9 +1343,9 @@
                                               </Shape>
                                             </Transform>
                                           </HAnimSegment>
-                                          <HAnimJoint DEF='hanim_vt1'>
-                                            <HAnimSegment DEF='hanim_t1'>
-                                              <Transform translation='0 2408.8889333333336 -27.186666666666667'>
+                                          <HAnimJoint DEF='hanim_vt1' center='0 2408.889 -27.18667' name='vt1'>
+                                            <HAnimSegment DEF='hanim_t1' name='t1'>
+                                              <Transform translation='0 2408.889 -27.18667'>
                                                 <Shape>
                                                   <Appearance>
                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1506,9 +1358,9 @@
                                                 </Shape>
                                               </Transform>
                                             </HAnimSegment>
-                                            <HAnimJoint DEF='hanim_vc7'>
-                                              <HAnimSegment DEF='hanim_c7'>
-                                                <Transform translation='0 2459.999911111111 -29.755555555555556'>
+                                            <HAnimJoint DEF='hanim_vc7' center='0 2460 -29.75556' name='vc7'>
+                                              <HAnimSegment DEF='hanim_c7' name='c7'>
+                                                <Transform translation='0 2460 -29.75556'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1521,9 +1373,9 @@
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_vc6'>
-                                                <HAnimSegment DEF='hanim_c6'>
-                                                  <Transform translation='0 2483.999955555556 -29.755555555555556'>
+                                              <HAnimJoint DEF='hanim_vc6' center='0 2484 -29.75556' name='vc6'>
+                                                <HAnimSegment DEF='hanim_c6' name='c6'>
+                                                  <Transform translation='0 2484 -29.75556'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1536,9 +1388,9 @@
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_vc5'>
-                                                  <HAnimSegment DEF='hanim_c5'>
-                                                    <Transform translation='0 2508.4444000000003 -29.755555555555556'>
+                                                <HAnimJoint DEF='hanim_vc5' center='0 2508.444 -29.75556' name='vc5'>
+                                                  <HAnimSegment DEF='hanim_c5' name='c5'>
+                                                    <Transform translation='0 2508.444 -29.75556'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1551,9 +1403,9 @@
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_vc4'>
-                                                    <HAnimSegment DEF='hanim_c4'>
-                                                      <Transform translation='0 2532.8889777777777 -29.755555555555556'>
+                                                  <HAnimJoint DEF='hanim_vc4' center='0 2532.889 -29.75556' name='vc4'>
+                                                    <HAnimSegment DEF='hanim_c4' name='c4'>
+                                                      <Transform translation='0 2532.889 -29.75556'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1566,9 +1418,9 @@
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_vc3'>
-                                                      <HAnimSegment DEF='hanim_c3'>
-                                                        <Transform translation='0 2558.2222666666667 -29.755555555555556'>
+                                                    <HAnimJoint DEF='hanim_vc3' center='0 2558.222 -29.75556' name='vc3'>
+                                                      <HAnimSegment DEF='hanim_c3' name='c3'>
+                                                        <Transform translation='0 2558.222 -29.75556'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1581,9 +1433,9 @@
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_vc2'>
-                                                        <HAnimSegment DEF='hanim_c2'>
-                                                          <Transform translation='0 2581.3334222222225 -29.755555555555556'>
+                                                      <HAnimJoint DEF='hanim_vc2' center='0 2581.333 -29.75556' name='vc2'>
+                                                        <HAnimSegment DEF='hanim_c2' name='c2'>
+                                                          <Transform translation='0 2581.333 -29.75556'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1596,9 +1448,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_vc1'>
-                                                          <HAnimSegment DEF='hanim_c1'>
-                                                            <Transform translation='0 2604.444355555556 -29.755555555555556'>
+                                                        <HAnimJoint DEF='hanim_vc1' center='0 2604.444 -29.75556' name='vc1'>
+                                                          <HAnimSegment DEF='hanim_c1' name='c1'>
+                                                            <Transform translation='0 2604.444 -29.75556'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1611,9 +1463,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_skullbase'>
-                                                            <HAnimSegment DEF='hanim_skull'>
-                                                              <Transform translation='0 2592.888888888889 -30.502222222222223'>
+                                                          <HAnimJoint DEF='hanim_skullbase' center='0 2592.889 -30.50222' name='skullbase'>
+                                                            <HAnimSegment DEF='hanim_skull' name='skull'>
+                                                              <Transform translation='0 2592.889 -30.50222'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1626,9 +1478,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_eyelid_joint'>
-                                                              <HAnimSegment DEF='hanim_l_eyelid'>
-                                                                <Transform translation='99.77777777777779 2813.333288888889 65.06666666666666'>
+                                                            <HAnimJoint DEF='hanim_l_eyelid_joint' center='99.77778 2813.333 65.06667' name='l_eyelid_joint'>
+                                                              <HAnimSegment DEF='hanim_l_eyelid' name='l_eyelid'>
+                                                                <Transform translation='99.77778 2813.333 65.06667'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1642,9 +1494,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyelid_joint'>
-                                                              <HAnimSegment DEF='hanim_r_eyelid'>
-                                                                <Transform translation='-99.77777777777779 2813.333288888889 65.06666666666666'>
+                                                            <HAnimJoint DEF='hanim_r_eyelid_joint' center='-99.77778 2813.333 65.06667' name='r_eyelid_joint'>
+                                                              <HAnimSegment DEF='hanim_r_eyelid' name='r_eyelid'>
+                                                                <Transform translation='-99.77778 2813.333 65.06667'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1658,9 +1510,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_l_eyeball_joint'>
-                                                              <HAnimSegment DEF='hanim_l_eyeball'>
-                                                                <Transform translation='95.06666666666666 2775.111066666667 164.04444444444445'>
+                                                            <HAnimJoint DEF='hanim_l_eyeball_joint' center='95.06667 2775.111 164.0444' name='l_eyeball_joint'>
+                                                              <HAnimSegment DEF='hanim_l_eyeball' name='l_eyeball'>
+                                                                <Transform translation='95.06667 2775.111 164.0444'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1674,9 +1526,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyeball_joint'>
-                                                              <HAnimSegment DEF='hanim_r_eyeball'>
-                                                                <Transform translation='-95.06666666666666 2775.111066666667 164.04444444444445'>
+                                                            <HAnimJoint DEF='hanim_r_eyeball_joint' center='-95.06667 2775.111 164.0444' name='r_eyeball_joint'>
+                                                              <HAnimSegment DEF='hanim_r_eyeball' name='r_eyeball'>
+                                                                <Transform translation='-95.06667 2775.111 164.0444'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1690,9 +1542,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_l_eyebrow_joint'>
-                                                              <HAnimSegment DEF='hanim_l_eyebrow'>
-                                                                <Transform translation='42.96 2792.888888888889 211.24444444444447'>
+                                                            <HAnimJoint DEF='hanim_l_eyebrow_joint' center='42.96 2792.889 211.2444' name='l_eyebrow_joint'>
+                                                              <HAnimSegment DEF='hanim_l_eyebrow' name='l_eyebrow'>
+                                                                <Transform translation='42.96 2792.889 211.2444'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1706,9 +1558,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_r_eyebrow_joint'>
-                                                              <HAnimSegment DEF='hanim_r_eyebrow'>
-                                                                <Transform translation='-42.96 2792.888888888889 211.24444444444447'>
+                                                            <HAnimJoint DEF='hanim_r_eyebrow_joint' center='-42.96 2792.889 211.2444' name='r_eyebrow_joint'>
+                                                              <HAnimSegment DEF='hanim_r_eyebrow' name='r_eyebrow'>
+                                                                <Transform translation='-42.96 2792.889 211.2444'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1722,9 +1574,9 @@
                                                                 </Transform>
                                                               </HAnimSegment>
                                                             </HAnimJoint>
-                                                            <HAnimJoint DEF='hanim_temporomandibular'>
-                                                              <HAnimSegment DEF='hanim_jaw'>
-                                                                <Transform translation='0 2593.3332444444445 30.37777777777778'>
+                                                            <HAnimJoint DEF='hanim_temporomandibular' center='0 2593.333 30.37778' name='temporomandibular'>
+                                                              <HAnimSegment DEF='hanim_jaw' name='jaw'>
+                                                                <Transform translation='0 2593.333 30.37778'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1746,9 +1598,9 @@
                                                 </HAnimJoint>
                                               </HAnimJoint>
                                             </HAnimJoint>
-                                            <HAnimJoint DEF='hanim_l_acromioclavicular'>
-                                              <HAnimSegment DEF='hanim_l_clavicle'>
-                                                <Transform translation='76 2387.5556 -27.23111111111111'>
+                                            <HAnimJoint DEF='hanim_l_acromioclavicular' center='76 2387.556 -27.23111' name='l_acromioclavicular'>
+                                              <HAnimSegment DEF='hanim_l_clavicle' name='l_clavicle'>
+                                                <Transform translation='76 2387.556 -27.23111'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1761,9 +1613,9 @@
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_l_sternoclavicular'>
-                                                <HAnimSegment DEF='hanim_l_scapula'>
-                                                  <Transform translation='242.84444444444446 2354.222266666667 -25.47555555555556'>
+                                              <HAnimJoint DEF='hanim_l_sternoclavicular' center='242.8444 2354.222 -25.47556' name='l_sternoclavicular'>
+                                                <HAnimSegment DEF='hanim_l_scapula' name='l_scapula'>
+                                                  <Transform translation='242.8444 2354.222 -25.47556'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1776,9 +1628,9 @@
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_l_shoulder'>
-                                                  <HAnimSegment DEF='hanim_l_upperarm'>
-                                                    <Transform translation='326.0444444444445 2328.0000444444445 -6.453333333333333'>
+                                                <HAnimJoint DEF='hanim_l_shoulder' center='326.0444 2328 -6.453333' name='l_shoulder'>
+                                                  <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
+                                                    <Transform translation='326.0444 2328 -6.453333'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1791,9 +1643,9 @@
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_l_elbow'>
-                                                    <HAnimSegment DEF='hanim_l_forearm'>
-                                                      <Transform translation='359.6888888888889 1834.666622222222 -11.12'>
+                                                  <HAnimJoint DEF='hanim_l_elbow' center='359.6889 1834.667 -11.12' name='l_elbow'>
+                                                    <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
+                                                      <Transform translation='359.6889 1834.667 -11.12'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1806,9 +1658,9 @@
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_l_radiocarpal'>
-                                                      <HAnimSegment DEF='hanim_l_carpal'>
-                                                        <Transform translation='359.3777777777778 1430.6666222222223 -9.924444444444445'>
+                                                    <HAnimJoint DEF='hanim_l_radiocarpal' center='359.3778 1430.667 -9.924444' name='l_radiocarpal'>
+                                                      <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
+                                                        <Transform translation='359.3778 1430.667 -9.924444'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1821,9 +1673,9 @@
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_1'>
-                                                        <HAnimSegment DEF='hanim_l_trapezium'>
-                                                          <Transform translation='358.0888888888889 1394.6666222222223 38.17777777777778'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_1' center='358.0889 1394.667 38.17778' name='l_midcarpal_1'>
+                                                        <HAnimSegment DEF='hanim_l_trapezium' name='l_trapezium'>
+                                                          <Transform translation='358.0889 1394.667 38.17778'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1836,9 +1688,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_1'>
-                                                          <HAnimSegment DEF='hanim_l_metacarpal_1'>
-                                                            <Transform translation='356.53333333333336 1368.0000444444445 51.333333333333336'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_1' center='356.5333 1368 51.33333' name='l_carpometacarpal_1'>
+                                                          <HAnimSegment DEF='hanim_l_metacarpal_1' name='l_metacarpal_1'>
+                                                            <Transform translation='356.5333 1368 51.33333'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1851,9 +1703,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_1'>
-                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1'>
-                                                              <Transform translation='357.59999999999997 1328.888888888889 70.66666666666667'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_1' center='357.6 1328.889 70.66667' name='l_metacarpophalangeal_1'>
+                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_1' name='l_carpal_proximal_phalanx_1'>
+                                                              <Transform translation='357.6 1328.889 70.66667'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1866,9 +1718,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1'>
-                                                              <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_1'>
-                                                                <Transform translation='360.8 1292 98.08888888888889'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_interphalangeal_1' center='360.8 1292 98.08889' name='l_carpal_interphalangeal_1'>
+                                                              <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_1' name='l_carpal_distal_phalanx_1'>
+                                                                <Transform translation='360.8 1292 98.08889'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1885,9 +1737,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_2'>
-                                                        <HAnimSegment DEF='hanim_l_trapezoid'>
-                                                          <Transform translation='358.0888888888889 1396.4444444444446 16.626666666666665'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_2' center='358.0889 1396.444 16.62667' name='l_midcarpal_2'>
+                                                        <HAnimSegment DEF='hanim_l_trapezoid' name='l_trapezoid'>
+                                                          <Transform translation='358.0889 1396.444 16.62667'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1900,9 +1752,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_2'>
-                                                          <HAnimSegment DEF='hanim_l_metacarpal_2'>
-                                                            <Transform translation='358.0888888888889 1358.222177777778 19.21777777777778'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_2' center='358.0889 1358.222 19.21778' name='l_carpometacarpal_2'>
+                                                          <HAnimSegment DEF='hanim_l_metacarpal_2' name='l_metacarpal_2'>
+                                                            <Transform translation='358.0889 1358.222 19.21778'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1915,9 +1767,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_2'>
-                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2'>
-                                                              <Transform translation='362.93333333333334 1258.6666666666667 29.777777777777782'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_2' center='362.9333 1258.667 29.77778' name='l_metacarpophalangeal_2'>
+                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_2' name='l_carpal_proximal_phalanx_2'>
+                                                              <Transform translation='362.9333 1258.667 29.77778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1930,9 +1782,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2'>
-                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2'>
-                                                                <Transform translation='358.9333333333334 1198.6666222222223 28.017777777777777'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_2' center='358.9333 1198.667 28.01778' name='l_carpal_proximal_interphalangeal_2'>
+                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_2' name='l_carpal_middle_phalanx_2'>
+                                                                <Transform translation='358.9333 1198.667 28.01778'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1945,9 +1797,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2'>
-                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_2'>
-                                                                  <Transform translation='356.88888888888886 1148.888888888889 26.44'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_2' center='356.8889 1148.889 26.44' name='l_carpal_distal_interphalangeal_2'>
+                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_2' name='l_carpal_distal_phalanx_2'>
+                                                                  <Transform translation='356.8889 1148.889 26.44'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1965,9 +1817,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_3'>
-                                                        <HAnimSegment DEF='hanim_l_capitate'>
-                                                          <Transform translation='357.6888888888889 1399.5555555555554 -9.475555555555555'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_3' center='357.6889 1399.556 -9.475556' name='l_midcarpal_3'>
+                                                        <HAnimSegment DEF='hanim_l_capitate' name='l_capitate'>
+                                                          <Transform translation='357.6889 1399.556 -9.475556'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1980,9 +1832,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_3'>
-                                                          <HAnimSegment DEF='hanim_l_metacarpal_3'>
-                                                            <Transform translation='357.6888888888889 1354.6666666666667 -12.351111111111111'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_3' center='357.6889 1354.667 -12.35111' name='l_carpometacarpal_3'>
+                                                          <HAnimSegment DEF='hanim_l_metacarpal_3' name='l_metacarpal_3'>
+                                                            <Transform translation='357.6889 1354.667 -12.35111'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -1995,9 +1847,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_3'>
-                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3'>
-                                                              <Transform translation='362.84444444444443 1254.222177777778 -7.7377777777777785'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_3' center='362.8444 1254.222 -7.737778' name='l_metacarpophalangeal_3'>
+                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_3' name='l_carpal_proximal_phalanx_3'>
+                                                              <Transform translation='362.8444 1254.222 -7.737778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2010,9 +1862,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3'>
-                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3'>
-                                                                <Transform translation='358.9333333333334 1191.5555111111112 -6.986666666666667'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_3' center='358.9333 1191.556 -6.986667' name='l_carpal_proximal_interphalangeal_3'>
+                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_3' name='l_carpal_middle_phalanx_3'>
+                                                                <Transform translation='358.9333 1191.556 -6.986667'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2025,9 +1877,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3'>
-                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_3'>
-                                                                  <Transform translation='356.88888888888886 1136.4444444444446 -7.426666666666667'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_3' center='356.8889 1136.444 -7.426667' name='l_carpal_distal_interphalangeal_3'>
+                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_3' name='l_carpal_distal_phalanx_3'>
+                                                                  <Transform translation='356.8889 1136.444 -7.426667'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2045,9 +1897,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_midcarpal_4_5'>
-                                                        <HAnimSegment DEF='hanim_l_hamate'>
-                                                          <Transform translation='357.6888888888889 1394.2222666666667 -50.84444444444444'>
+                                                      <HAnimJoint DEF='hanim_l_midcarpal_4_5' center='357.6889 1394.222 -50.84444' name='l_midcarpal_4_5'>
+                                                        <HAnimSegment DEF='hanim_l_hamate' name='l_hamate'>
+                                                          <Transform translation='357.6889 1394.222 -50.84444'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2060,9 +1912,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_4'>
-                                                          <HAnimSegment DEF='hanim_l_metacarpal_4'>
-                                                            <Transform translation='357.6888888888889 1355.5555555555557 -39.346666666666664'>
+                                                        <HAnimJoint DEF='hanim_l_carpometacarpal_4' center='357.6889 1355.556 -39.34667' name='l_carpometacarpal_4'>
+                                                          <HAnimSegment DEF='hanim_l_metacarpal_4' name='l_metacarpal_4'>
+                                                            <Transform translation='357.6889 1355.556 -39.34667'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2075,9 +1927,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_4'>
-                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4'>
-                                                              <Transform translation='362.84444444444443 1252.4444444444446 -42.35111111111111'>
+                                                          <HAnimJoint DEF='hanim_l_metacarpophalangeal_4' center='362.8444 1252.444 -42.35111' name='l_metacarpophalangeal_4'>
+                                                            <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_4' name='l_carpal_proximal_phalanx_4'>
+                                                              <Transform translation='362.8444 1252.444 -42.35111'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2090,9 +1942,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4'>
-                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4'>
-                                                                <Transform translation='358.9333333333334 1198.222177777778 -40.782222222222224'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_4' center='358.9333 1198.222 -40.78222' name='l_carpal_proximal_interphalangeal_4'>
+                                                              <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_4' name='l_carpal_middle_phalanx_4'>
+                                                                <Transform translation='358.9333 1198.222 -40.78222'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2105,9 +1957,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4'>
-                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_4'>
-                                                                  <Transform translation='356.88888888888886 1147.1110666666668 -39.06666666666667'>
+                                                              <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_4' center='356.8889 1147.111 -39.06667' name='l_carpal_distal_interphalangeal_4'>
+                                                                <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_4' name='l_carpal_distal_phalanx_4'>
+                                                                  <Transform translation='356.8889 1147.111 -39.06667'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2125,9 +1977,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_l_carpometacarpal_5'>
-                                                        <HAnimSegment DEF='hanim_l_metacarpal_5'>
-                                                          <Transform translation='358.8 1359.5555555555557 -64.75555555555556'>
+                                                      <HAnimJoint DEF='hanim_l_carpometacarpal_5' center='358.8 1359.556 -64.75556' name='l_carpometacarpal_5'>
+                                                        <HAnimSegment DEF='hanim_l_metacarpal_5' name='l_metacarpal_5'>
+                                                          <Transform translation='358.8 1359.556 -64.75556'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2140,9 +1992,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_l_metacarpophalangeal_5'>
-                                                          <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5'>
-                                                            <Transform translation='362.1333333333333 1260.444488888889 -73.2'>
+                                                        <HAnimJoint DEF='hanim_l_metacarpophalangeal_5' center='362.1333 1260.444 -73.2' name='l_metacarpophalangeal_5'>
+                                                          <HAnimSegment DEF='hanim_l_carpal_proximal_phalanx_5' name='l_carpal_proximal_phalanx_5'>
+                                                            <Transform translation='362.1333 1260.444 -73.2'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2155,9 +2007,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5'>
-                                                            <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5'>
-                                                              <Transform translation='358.84444444444443 1226.6666666666667 -73.37777777777778'>
+                                                          <HAnimJoint DEF='hanim_l_carpal_proximal_interphalangeal_5' center='358.8444 1226.667 -73.37778' name='l_carpal_proximal_interphalangeal_5'>
+                                                            <HAnimSegment DEF='hanim_l_carpal_middle_phalanx_5' name='l_carpal_middle_phalanx_5'>
+                                                              <Transform translation='358.8444 1226.667 -73.37778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2170,9 +2022,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5'>
-                                                              <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_5'>
-                                                                <Transform translation='357.15555555555557 1189.7777777777778 -73.02222222222223'>
+                                                            <HAnimJoint DEF='hanim_l_carpal_distal_interphalangeal_5' center='357.1556 1189.778 -73.02222' name='l_carpal_distal_interphalangeal_5'>
+                                                              <HAnimSegment DEF='hanim_l_carpal_distal_phalanx_5' name='l_carpal_distal_phalanx_5'>
+                                                                <Transform translation='357.1556 1189.778 -73.02222'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2194,9 +2046,9 @@
                                                 </HAnimJoint>
                                               </HAnimJoint>
                                             </HAnimJoint>
-                                            <HAnimJoint DEF='hanim_r_acromioclavicular'>
-                                              <HAnimSegment DEF='hanim_r_clavicle'>
-                                                <Transform translation='-76 2387.5556 -27.23111111111111'>
+                                            <HAnimJoint DEF='hanim_r_acromioclavicular' center='-76 2387.556 -27.23111' name='r_acromioclavicular'>
+                                              <HAnimSegment DEF='hanim_r_clavicle' name='r_clavicle'>
+                                                <Transform translation='-76 2387.556 -27.23111'>
                                                   <Shape>
                                                     <Appearance>
                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2209,9 +2061,9 @@
                                                   </Shape>
                                                 </Transform>
                                               </HAnimSegment>
-                                              <HAnimJoint DEF='hanim_r_sternoclavicular'>
-                                                <HAnimSegment DEF='hanim_r_scapula'>
-                                                  <Transform translation='-242.84444444444446 2354.222266666667 -25.47555555555556'>
+                                              <HAnimJoint DEF='hanim_r_sternoclavicular' center='-242.8444 2354.222 -25.47556' name='r_sternoclavicular'>
+                                                <HAnimSegment DEF='hanim_r_scapula' name='r_scapula'>
+                                                  <Transform translation='-242.8444 2354.222 -25.47556'>
                                                     <Shape>
                                                       <Appearance>
                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2224,9 +2076,9 @@
                                                     </Shape>
                                                   </Transform>
                                                 </HAnimSegment>
-                                                <HAnimJoint DEF='hanim_r_shoulder'>
-                                                  <HAnimSegment DEF='hanim_r_upperarm'>
-                                                    <Transform translation='-325.33333333333337 2328.0000444444445 -6.453333333333333'>
+                                                <HAnimJoint DEF='hanim_r_shoulder' center='-325.3333 2328 -6.453333' name='r_shoulder'>
+                                                  <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
+                                                    <Transform translation='-325.3333 2328 -6.453333'>
                                                       <Shape>
                                                         <Appearance>
                                                           <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2239,9 +2091,9 @@
                                                       </Shape>
                                                     </Transform>
                                                   </HAnimSegment>
-                                                  <HAnimJoint DEF='hanim_r_elbow'>
-                                                    <HAnimSegment DEF='hanim_r_forearm'>
-                                                      <Transform translation='-358.9777777777778 1834.666622222222 -11.12'>
+                                                  <HAnimJoint DEF='hanim_r_elbow' center='-358.9778 1834.667 -11.12' name='r_elbow'>
+                                                    <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
+                                                      <Transform translation='-358.9778 1834.667 -11.12'>
                                                         <Shape>
                                                           <Appearance>
                                                             <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2254,9 +2106,9 @@
                                                         </Shape>
                                                       </Transform>
                                                     </HAnimSegment>
-                                                    <HAnimJoint DEF='hanim_r_radiocarpal'>
-                                                      <HAnimSegment DEF='hanim_r_carpal'>
-                                                        <Transform translation='-358.6666666666667 1430.6666222222223 -9.92'>
+                                                    <HAnimJoint DEF='hanim_r_radiocarpal' center='-358.6667 1430.667 -9.92' name='r_radiocarpal'>
+                                                      <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
+                                                        <Transform translation='-358.6667 1430.667 -9.92'>
                                                           <Shape>
                                                             <Appearance>
                                                               <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2269,9 +2121,9 @@
                                                           </Shape>
                                                         </Transform>
                                                       </HAnimSegment>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_1'>
-                                                        <HAnimSegment DEF='hanim_r_trapezium'>
-                                                          <Transform translation='-357.46666666666664 1394.6666222222223 38.17777777777778'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_1' center='-357.4667 1394.667 38.17778' name='r_midcarpal_1'>
+                                                        <HAnimSegment DEF='hanim_r_trapezium' name='r_trapezium'>
+                                                          <Transform translation='-357.4667 1394.667 38.17778'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2284,9 +2136,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_1'>
-                                                          <HAnimSegment DEF='hanim_r_metacarpal_1'>
-                                                            <Transform translation='-355.82222222222225 1368.0000444444445 51.333333333333336'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_1' center='-355.8222 1368 51.33333' name='r_carpometacarpal_1'>
+                                                          <HAnimSegment DEF='hanim_r_metacarpal_1' name='r_metacarpal_1'>
+                                                            <Transform translation='-355.8222 1368 51.33333'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2299,9 +2151,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_1'>
-                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1'>
-                                                              <Transform translation='-356.84444444444443 1328.888888888889 70.66666666666667'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_1' center='-356.8444 1328.889 70.66667' name='r_metacarpophalangeal_1'>
+                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_1' name='r_carpal_proximal_phalanx_1'>
+                                                              <Transform translation='-356.8444 1328.889 70.66667'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2314,9 +2166,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1'>
-                                                              <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_1'>
-                                                                <Transform translation='-360.0444444444445 1292 98.08888888888889'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_interphalangeal_1' center='-360.0444 1292 98.08889' name='r_carpal_interphalangeal_1'>
+                                                              <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_1' name='r_carpal_distal_phalanx_1'>
+                                                                <Transform translation='-360.0444 1292 98.08889'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2333,9 +2185,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_2'>
-                                                        <HAnimSegment DEF='hanim_r_trapezoid'>
-                                                          <Transform translation='-357.46666666666664 1396.4444444444446 16.626666666666665'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_2' center='-357.4667 1396.444 16.62667' name='r_midcarpal_2'>
+                                                        <HAnimSegment DEF='hanim_r_trapezoid' name='r_trapezoid'>
+                                                          <Transform translation='-357.4667 1396.444 16.62667'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2348,9 +2200,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_2'>
-                                                          <HAnimSegment DEF='hanim_r_metacarpal_2'>
-                                                            <Transform translation='-357.3333333333333 1358.222177777778 19.21777777777778'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_2' center='-357.3333 1358.222 19.21778' name='r_carpometacarpal_2'>
+                                                          <HAnimSegment DEF='hanim_r_metacarpal_2' name='r_metacarpal_2'>
+                                                            <Transform translation='-357.3333 1358.222 19.21778'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2363,9 +2215,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_2'>
-                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2'>
-                                                              <Transform translation='-362.17777777777775 1258.6666666666667 29.777777777777782'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_2' center='-362.1778 1258.667 29.77778' name='r_metacarpophalangeal_2'>
+                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_2' name='r_carpal_proximal_phalanx_2'>
+                                                              <Transform translation='-362.1778 1258.667 29.77778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2378,9 +2230,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2'>
-                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2'>
-                                                                <Transform translation='-358.17777777777775 1198.6666222222223 28.017777777777777'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_2' center='-358.1778 1198.667 28.01778' name='r_carpal_proximal_interphalangeal_2'>
+                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_2' name='r_carpal_middle_phalanx_2'>
+                                                                <Transform translation='-358.1778 1198.667 28.01778'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2393,9 +2245,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2'>
-                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_2'>
-                                                                  <Transform translation='-356.1333333333333 1148.888888888889 26.44'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_2' center='-356.1333 1148.889 26.44' name='r_carpal_distal_interphalangeal_2'>
+                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_2' name='r_carpal_distal_phalanx_2'>
+                                                                  <Transform translation='-356.1333 1148.889 26.44'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2413,9 +2265,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_3'>
-                                                        <HAnimSegment DEF='hanim_r_capitate'>
-                                                          <Transform translation='-356.9777777777778 1399.5555555555554 -9.475555555555555'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_3' center='-356.9778 1399.556 -9.475556' name='r_midcarpal_3'>
+                                                        <HAnimSegment DEF='hanim_r_capitate' name='r_capitate'>
+                                                          <Transform translation='-356.9778 1399.556 -9.475556'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2428,9 +2280,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_3'>
-                                                          <HAnimSegment DEF='hanim_r_metacarpal_3'>
-                                                            <Transform translation='-356.9777777777778 1354.6666666666667 -12.351111111111111'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_3' center='-356.9778 1354.667 -12.35111' name='r_carpometacarpal_3'>
+                                                          <HAnimSegment DEF='hanim_r_metacarpal_3' name='r_metacarpal_3'>
+                                                            <Transform translation='-356.9778 1354.667 -12.35111'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2443,9 +2295,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_3'>
-                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3'>
-                                                              <Transform translation='-362.0888888888889 1254.222177777778 -7.7377777777777785'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_3' center='-362.0889 1254.222 -7.737778' name='r_metacarpophalangeal_3'>
+                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_3' name='r_carpal_proximal_phalanx_3'>
+                                                              <Transform translation='-362.0889 1254.222 -7.737778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2458,9 +2310,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3'>
-                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3'>
-                                                                <Transform translation='-358.17777777777775 1191.5555111111112 -6.986666666666667'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_3' center='-358.1778 1191.556 -6.986667' name='r_carpal_proximal_interphalangeal_3'>
+                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_3' name='r_carpal_middle_phalanx_3'>
+                                                                <Transform translation='-358.1778 1191.556 -6.986667'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2473,9 +2325,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3'>
-                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_3'>
-                                                                  <Transform translation='-356.1333333333333 1136.4444444444446 -7.426666666666667'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_3' center='-356.1333 1136.444 -7.426667' name='r_carpal_distal_interphalangeal_3'>
+                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_3' name='r_carpal_distal_phalanx_3'>
+                                                                  <Transform translation='-356.1333 1136.444 -7.426667'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2493,9 +2345,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_midcarpal_4_5'>
-                                                        <HAnimSegment DEF='hanim_r_hamate'>
-                                                          <Transform translation='-356.9777777777778 1394.2222666666667 -50.84444444444444'>
+                                                      <HAnimJoint DEF='hanim_r_midcarpal_4_5' center='-356.9778 1394.222 -50.84444' name='r_midcarpal_4_5'>
+                                                        <HAnimSegment DEF='hanim_r_hamate' name='r_hamate'>
+                                                          <Transform translation='-356.9778 1394.222 -50.84444'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2508,9 +2360,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_4'>
-                                                          <HAnimSegment DEF='hanim_r_metacarpal_4'>
-                                                            <Transform translation='-356.9777777777778 1355.5555555555557 -39.346666666666664'>
+                                                        <HAnimJoint DEF='hanim_r_carpometacarpal_4' center='-356.9778 1355.556 -39.34667' name='r_carpometacarpal_4'>
+                                                          <HAnimSegment DEF='hanim_r_metacarpal_4' name='r_metacarpal_4'>
+                                                            <Transform translation='-356.9778 1355.556 -39.34667'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2523,9 +2375,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_4'>
-                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4'>
-                                                              <Transform translation='-362.0888888888889 1252.4444444444446 -42.35111111111111'>
+                                                          <HAnimJoint DEF='hanim_r_metacarpophalangeal_4' center='-362.0889 1252.444 -42.35111' name='r_metacarpophalangeal_4'>
+                                                            <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_4' name='r_carpal_proximal_phalanx_4'>
+                                                              <Transform translation='-362.0889 1252.444 -42.35111'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2538,9 +2390,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4'>
-                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4'>
-                                                                <Transform translation='-358.17777777777775 1198.222177777778 -40.782222222222224'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_4' center='-358.1778 1198.222 -40.78222' name='r_carpal_proximal_interphalangeal_4'>
+                                                              <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_4' name='r_carpal_middle_phalanx_4'>
+                                                                <Transform translation='-358.1778 1198.222 -40.78222'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2553,9 +2405,9 @@
                                                                   </Shape>
                                                                 </Transform>
                                                               </HAnimSegment>
-                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4'>
-                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_4'>
-                                                                  <Transform translation='-356.1333333333333 1147.1110666666668 -39.06666666666667'>
+                                                              <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_4' center='-356.1333 1147.111 -39.06667' name='r_carpal_distal_interphalangeal_4'>
+                                                                <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_4' name='r_carpal_distal_phalanx_4'>
+                                                                  <Transform translation='-356.1333 1147.111 -39.06667'>
                                                                     <Shape>
                                                                       <Appearance>
                                                                         <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2573,9 +2425,9 @@
                                                           </HAnimJoint>
                                                         </HAnimJoint>
                                                       </HAnimJoint>
-                                                      <HAnimJoint DEF='hanim_r_carpometacarpal_5'>
-                                                        <HAnimSegment DEF='hanim_r_metacarpal_5'>
-                                                          <Transform translation='-358.0444444444444 1359.5555555555557 -64.75555555555556'>
+                                                      <HAnimJoint DEF='hanim_r_carpometacarpal_5' center='-358.0444 1359.556 -64.75556' name='r_carpometacarpal_5'>
+                                                        <HAnimSegment DEF='hanim_r_metacarpal_5' name='r_metacarpal_5'>
+                                                          <Transform translation='-358.0444 1359.556 -64.75556'>
                                                             <Shape>
                                                               <Appearance>
                                                                 <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2588,9 +2440,9 @@
                                                             </Shape>
                                                           </Transform>
                                                         </HAnimSegment>
-                                                        <HAnimJoint DEF='hanim_r_metacarpophalangeal_5'>
-                                                          <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5'>
-                                                            <Transform translation='-361.4222222222222 1260.444488888889 -73.2'>
+                                                        <HAnimJoint DEF='hanim_r_metacarpophalangeal_5' center='-361.4222 1260.444 -73.2' name='r_metacarpophalangeal_5'>
+                                                          <HAnimSegment DEF='hanim_r_carpal_proximal_phalanx_5' name='r_carpal_proximal_phalanx_5'>
+                                                            <Transform translation='-361.4222 1260.444 -73.2'>
                                                               <Shape>
                                                                 <Appearance>
                                                                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2603,9 +2455,9 @@
                                                               </Shape>
                                                             </Transform>
                                                           </HAnimSegment>
-                                                          <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5'>
-                                                            <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5'>
-                                                              <Transform translation='-358.1333333333333 1226.6666666666667 -73.37777777777778'>
+                                                          <HAnimJoint DEF='hanim_r_carpal_proximal_interphalangeal_5' center='-358.1333 1226.667 -73.37778' name='r_carpal_proximal_interphalangeal_5'>
+                                                            <HAnimSegment DEF='hanim_r_carpal_middle_phalanx_5' name='r_carpal_middle_phalanx_5'>
+                                                              <Transform translation='-358.1333 1226.667 -73.37778'>
                                                                 <Shape>
                                                                   <Appearance>
                                                                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -2618,9 +2470,9 @@
                                                                 </Shape>
                                                               </Transform>
                                                             </HAnimSegment>
-                                                            <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5'>
-                                                              <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_5'>
-                                                                <Transform translation='-356.44444444444446 1189.7777777777778 -73.02222222222223'>
+                                                            <HAnimJoint DEF='hanim_r_carpal_distal_interphalangeal_5' center='-356.4444 1189.778 -73.02222' name='r_carpal_distal_interphalangeal_5'>
+                                                              <HAnimSegment DEF='hanim_r_carpal_distal_phalanx_5' name='r_carpal_distal_phalanx_5'>
+                                                                <Transform translation='-356.4444 1189.778 -73.02222'>
                                                                   <Shape>
                                                                     <Appearance>
                                                                       <Material diffuseColor='0.588 0.588 0.588'/>

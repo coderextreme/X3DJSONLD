@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Interchange"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 component2 = x3d.component()
 component2.name = "HAnim"
@@ -37,7 +37,7 @@ meta7.content = "25 May 2023"
 head1.children.append(meta7)
 meta8 = x3d.meta()
 meta8.name = "modified"
-meta8.content = "27 May 2023"
+meta8.content = "Mon, 09 Feb 2026 07:12:40 GMT"
 
 head1.children.append(meta8)
 meta9 = x3d.meta()
@@ -50,214 +50,180 @@ meta10.name = "identifier"
 meta10.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/MainStage.x3d"
 
 head1.children.append(meta10)
-meta11 = x3d.meta()
-meta11.name = "generator"
-meta11.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "license"
-meta12.content = "../license.html"
-
-head1.children.append(meta12)
 
 X3D0.head = head1
-Scene13 = x3d.Scene()
-WorldInfo14 = x3d.WorldInfo()
-WorldInfo14.title = "MainStage.x3d"
+Scene11 = x3d.Scene()
+WorldInfo12 = x3d.WorldInfo()
+WorldInfo12.title = "MainStage.x3d"
 
-Scene13.children.append(WorldInfo14)
-NavigationInfo15 = x3d.NavigationInfo()
-NavigationInfo15.headlight = False
+Scene11.children.append(WorldInfo12)
+NavigationInfo13 = x3d.NavigationInfo()
+NavigationInfo13.headlight = False
 
-Scene13.children.append(NavigationInfo15)
+Scene11.children.append(NavigationInfo13)
+DirectionalLight14 = x3d.DirectionalLight()
+DirectionalLight14.global_ = True
+DirectionalLight14.ambientIntensity = 1
+DirectionalLight14.direction = [-0.5,-0.5,-0.5]
+
+Scene11.children.append(DirectionalLight14)
+DirectionalLight15 = x3d.DirectionalLight()
+DirectionalLight15.global_ = True
+DirectionalLight15.ambientIntensity = 1
+DirectionalLight15.direction = [-1,-1,-1]
+
+Scene11.children.append(DirectionalLight15)
 DirectionalLight16 = x3d.DirectionalLight()
-DirectionalLight16.ambientIntensity = 1
-DirectionalLight16.direction = [-0.5,-0.5,-0.5]
 DirectionalLight16.global_ = True
+DirectionalLight16.intensity = 0.5
+DirectionalLight16.ambientIntensity = 1
+DirectionalLight16.direction = [1,1,-1]
 
-Scene13.children.append(DirectionalLight16)
-DirectionalLight17 = x3d.DirectionalLight()
-DirectionalLight17.ambientIntensity = 1
-DirectionalLight17.direction = [-1,-1,-1]
-DirectionalLight17.global_ = True
+Scene11.children.append(DirectionalLight16)
+Viewpoint17 = x3d.Viewpoint(DEF="Scene_StageFrontViewFar")
+Viewpoint17.description = "hanim_Stage Front View"
+Viewpoint17.position = [0,4,10]
+Viewpoint17.orientation = [1,0,0,-0.449999988]
 
-Scene13.children.append(DirectionalLight17)
-DirectionalLight18 = x3d.DirectionalLight()
-DirectionalLight18.ambientIntensity = 1
-DirectionalLight18.direction = [1,1,-1]
-DirectionalLight18.global_ = True
-DirectionalLight18.intensity = 0.5
+Scene11.children.append(Viewpoint17)
+Viewpoint18 = x3d.Viewpoint(DEF="Scene_InclinedView")
+Viewpoint18.description = "hanim_Inclined View"
+Viewpoint18.position = [2.62,1.05,4.06]
+Viewpoint18.orientation = [-0.112999998,0.992999971,0.034699999,0.671000004]
 
-Scene13.children.append(DirectionalLight18)
-Viewpoint19 = x3d.Viewpoint()
-Viewpoint19.DEF = "Scene_StageFrontViewFar"
+Scene11.children.append(Viewpoint18)
+Viewpoint19 = x3d.Viewpoint(DEF="Scene_StageFrontView")
 Viewpoint19.description = "hanim_Stage Front View"
-Viewpoint19.orientation = [1,0,0,-0.449999988]
-Viewpoint19.position = [0,4,10]
+Viewpoint19.position = [0,1,5]
 
-Scene13.children.append(Viewpoint19)
-Viewpoint20 = x3d.Viewpoint()
-Viewpoint20.DEF = "Scene_InclinedView"
-Viewpoint20.description = "hanim_Inclined View"
-Viewpoint20.orientation = [-0.112999998,0.992999971,0.034699999,0.671000004]
-Viewpoint20.position = [2.619999886,1.049999952,4.059999943]
+Scene11.children.append(Viewpoint19)
+Viewpoint20 = x3d.Viewpoint(DEF="Scene_FeetStageBottomView")
+Viewpoint20.description = "hanim_feet View"
+Viewpoint20.position = [0,-10,0]
+Viewpoint20.orientation = [1,0,0,1.570000052]
 
-Scene13.children.append(Viewpoint20)
-Viewpoint21 = x3d.Viewpoint()
-Viewpoint21.DEF = "Scene_StageFrontView"
-Viewpoint21.description = "hanim_Stage Front View"
-Viewpoint21.position = [0,1,5]
+Scene11.children.append(Viewpoint20)
+Viewpoint21 = x3d.Viewpoint(DEF="Scene_HeadTopView")
+Viewpoint21.description = "hanim_Head Top View"
+Viewpoint21.position = [0,15,0]
+Viewpoint21.orientation = [1,0,0,-1.570000052]
 
-Scene13.children.append(Viewpoint21)
-Viewpoint22 = x3d.Viewpoint()
-Viewpoint22.DEF = "Scene_FeetStageBottomView"
-Viewpoint22.description = "hanim_feet View"
-Viewpoint22.orientation = [1,0,0,1.570000052]
-Viewpoint22.position = [0,-10,0]
+Scene11.children.append(Viewpoint21)
+Viewpoint22 = x3d.Viewpoint(DEF="Scene_TopFrontCloseView")
+Viewpoint22.description = "hanim_Head Top View"
+Viewpoint22.position = [0,8,3]
+Viewpoint22.orientation = [1,0,0,-1.100000024]
 
-Scene13.children.append(Viewpoint22)
-Viewpoint23 = x3d.Viewpoint()
-Viewpoint23.DEF = "Scene_HeadTopView"
-Viewpoint23.description = "hanim_Head Top View"
-Viewpoint23.orientation = [1,0,0,-1.570000052]
-Viewpoint23.position = [0,15,0]
+Scene11.children.append(Viewpoint22)
+Group23 = x3d.Group(DEF="HAnimStage")
+Transform24 = x3d.Transform(DEF="cordsysfloor")
+Transform24.scale = [0.175,0.175,0.175]
+Inline25 = x3d.Inline()
+Inline25.url = ["JointCoordinateAxes.x3dv"]
 
-Scene13.children.append(Viewpoint23)
-Viewpoint24 = x3d.Viewpoint()
-Viewpoint24.DEF = "Scene_TopFrontCloseView"
-Viewpoint24.description = "hanim_Head Top View"
-Viewpoint24.orientation = [1,0,0,-1.100000024]
-Viewpoint24.position = [0,8,3]
+Transform24.children.append(Inline25)
 
-Scene13.children.append(Viewpoint24)
-Group25 = x3d.Group()
-Group25.DEF = "HAnimStage"
-Transform26 = x3d.Transform()
-Transform26.DEF = "cordsysfloor"
-Transform26.scale = [0.174999997,0.174999997,0.174999997]
-Inline27 = x3d.Inline()
-Inline27.url = ["JointCoordinateAxes.x3dv"]
+Group23.children.append(Transform24)
+Transform26 = x3d.Transform(DEF="StageGeometry")
+Transform26.translation = [0,-0.01,0]
+Transform26.scale = [1,0.01,1]
+Shape27 = x3d.Shape()
+Appearance28 = x3d.Appearance()
+Material29 = x3d.Material()
+Material29.transparency = 0.6
 
-Transform26.children.append(Inline27)
+Appearance28.material = Material29
 
-Group25.children.append(Transform26)
-Transform28 = x3d.Transform()
-Transform28.DEF = "StageGeometry"
-Transform28.scale = [1,0.01,1]
-Transform28.translation = [0,-0.01,0]
-Shape29 = x3d.Shape()
-Appearance30 = x3d.Appearance()
-Material31 = x3d.Material()
-Material31.transparency = 0.6
+Shape27.appearance = Appearance28
+Box30 = x3d.Box()
+Box30.size = [9,1,9]
 
-Appearance30.material = Material31
+Shape27.geometry = Box30
 
-Shape29.appearance = Appearance30
-Box32 = x3d.Box()
-Box32.size = [9,1,9]
+Transform26.children.append(Shape27)
+Transform31 = x3d.Transform(DEF="Circle0")
+Shape32 = x3d.Shape()
+Appearance33 = x3d.Appearance(DEF="LineColor")
+Material34 = x3d.Material()
+Material34.ambientIntensity = 1
+Material34.diffuseColor = [0.7,0,0.9]
+Material34.specularColor = [0,0,1]
+Material34.emissiveColor = [0.45,0.45,1]
+Material34.shininess = 1
 
-Shape29.geometry = Box32
+Appearance33.material = Material34
 
-Transform28.children.append(Shape29)
-Transform33 = x3d.Transform()
-Transform33.DEF = "Circle0"
-Shape34 = x3d.Shape()
-Appearance35 = x3d.Appearance()
-Appearance35.DEF = "LineColor"
-Material36 = x3d.Material()
-Material36.ambientIntensity = 1
-Material36.diffuseColor = [0.699999988,0,0.899999976]
-Material36.emissiveColor = [0.449999988,0.449999988,1]
-Material36.shininess = 1
-Material36.specularColor = [0,0,1]
+Shape32.appearance = Appearance33
+IndexedLineSet35 = x3d.IndexedLineSet(DEF="Orbit1")
+IndexedLineSet35.coordIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]
+Coordinate36 = x3d.Coordinate()
+Coordinate36.point = [(1, 0, 0),(0.995, 0, -0.105),(0.979, 0, -0.208),(0.951, 0, -0.309),(0.914, 0, -0.407),(0.866, 0, -0.5),(0.809, 0, -0.588),(0.743, 0, -0.669),(0.669, 0, -0.743),(0.588, 0, -0.809),(0.5, 0, -0.866),(0.407, 0, -0.914),(0.309, 0, -0.951),(0.208, 0, -0.978),(0.105, 0, -0.995),(0, 0, -1),(-0.105, 0, -0.994522),(-0.208, 0, -0.978),(-0.309, 0, -0.951),(-0.407, 0, -0.914),(-0.5, 0, -0.866),(-0.588, 0, -0.809),(-0.669, 0, -0.743),(-0.743, 0, -0.669),(-0.809, 0, -0.588),(-0.866, 0, -0.5),(-0.914, 0, -0.407),(-0.951, 0, -0.309),(-0.978, 0, -0.208),(-0.995, 0, -0.105),(-1, 0, 0),(-0.995, 0, 0.105),(-0.978, 0, 0.208),(-0.951, 0, 0.309),(-0.914, 0, 0.407),(-0.866, 0, 0.5),(-0.809, 0, 0.588),(-0.743, 0, 0.669),(-0.669, 0, 0.743),(-0.588, 0, 0.809),(-0.5, 0, 0.866),(-0.407, 0, 0.914),(-0.309, 0, 0.951),(-0.208, 0, 0.978),(-0.105, 0, 0.995),(0, 0, 1),(0.105, 0, 0.995),(0.208, 0, 0.978),(0.309, 0, 0.951),(0.407, 0, 0.914),(0.5, 0, 0.866),(0.588, 0, 0.809),(0.669, 0, 0.743),(0.743, 0, 0.669),(0.809, 0, 0.588),(0.866, 0, 0.5),(0.914, 0, 0.407),(0.951, 0, 0.309),(0.978, 0, 0.208),(0.995, 0, 0.104),(1, 0, 0)]
 
-Appearance35.material = Material36
+IndexedLineSet35.coord = Coordinate36
 
-Shape34.appearance = Appearance35
-IndexedLineSet37 = x3d.IndexedLineSet()
-IndexedLineSet37.DEF = "Orbit1"
-IndexedLineSet37.coordIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]
-Coordinate38 = x3d.Coordinate()
-Coordinate38.point = [(1, 0, 0),(0.995000005, 0, -0.104999997),(0.978999972, 0, -0.208000004),(0.950999975, 0, -0.308999985),(0.913999975, 0, -0.407000005),(0.865999997, 0, -0.5),(0.809000015, 0, -0.588),(0.742999971, 0, -0.66900003),(0.66900003, 0, -0.742999971),(0.588, 0, -0.809000015),(0.5, 0, -0.865999997),(0.407000005, 0, -0.913999975),(0.308999985, 0, -0.950999975),(0.208000004, 0, -0.977999985),(0.104999997, 0, -0.995000005),(0, 0, -1),(-0.104999997, 0, -0.994521976),(-0.208000004, 0, -0.977999985),(-0.308999985, 0, -0.950999975),(-0.407000005, 0, -0.913999975),(-0.5, 0, -0.865999997),(-0.588, 0, -0.809000015),(-0.66900003, 0, -0.742999971),(-0.742999971, 0, -0.66900003),(-0.809000015, 0, -0.588),(-0.865999997, 0, -0.5),(-0.913999975, 0, -0.407000005),(-0.950999975, 0, -0.308999985),(-0.977999985, 0, -0.208000004),(-0.995000005, 0, -0.104999997),(-1, 0, 0),(-0.995000005, 0, 0.104999997),(-0.977999985, 0, 0.208000004),(-0.950999975, 0, 0.308999985),(-0.913999975, 0, 0.407000005),(-0.865999997, 0, 0.5),(-0.809000015, 0, 0.588),(-0.742999971, 0, 0.66900003),(-0.66900003, 0, 0.742999971),(-0.588, 0, 0.809000015),(-0.5, 0, 0.865999997),(-0.407000005, 0, 0.913999975),(-0.308999985, 0, 0.950999975),(-0.208000004, 0, 0.977999985),(-0.104999997, 0, 0.995000005),(0, 0, 1),(0.104999997, 0, 0.995000005),(0.208000004, 0, 0.977999985),(0.308999985, 0, 0.950999975),(0.407000005, 0, 0.913999975),(0.5, 0, 0.865999997),(0.588, 0, 0.809000015),(0.66900003, 0, 0.742999971),(0.742999971, 0, 0.66900003),(0.809000015, 0, 0.588),(0.865999997, 0, 0.5),(0.913999975, 0, 0.407000005),(0.950999975, 0, 0.308999985),(0.977999985, 0, 0.208000004),(0.995000005, 0, 0.104000002),(1, 0, 0)]
+Shape32.geometry = IndexedLineSet35
 
-IndexedLineSet37.coord = Coordinate38
+Transform31.children.append(Shape32)
 
-Shape34.geometry = IndexedLineSet37
+Transform26.children.append(Transform31)
+Transform37 = x3d.Transform(DEF="Circle1")
+Transform37.scale = [0.5,1,0.5]
+Shape38 = x3d.Shape()
+Appearance39 = x3d.Appearance(USE="LineColor")
 
-Transform33.children.append(Shape34)
+Shape38.appearance = Appearance39
+IndexedLineSet40 = x3d.IndexedLineSet(USE="Orbit1")
 
-Transform28.children.append(Transform33)
-Transform39 = x3d.Transform()
-Transform39.DEF = "Circle1"
-Transform39.scale = [0.5,1,0.5]
-Shape40 = x3d.Shape()
-Appearance41 = x3d.Appearance()
-Appearance41.USE = "LineColor"
+Shape38.geometry = IndexedLineSet40
 
-Shape40.appearance = Appearance41
-IndexedLineSet42 = x3d.IndexedLineSet()
-IndexedLineSet42.USE = "Orbit1"
+Transform37.children.append(Shape38)
 
-Shape40.geometry = IndexedLineSet42
+Transform26.children.append(Transform37)
+Transform41 = x3d.Transform(DEF="Circle2")
+Transform41.scale = [0.25,1,0.25]
+Shape42 = x3d.Shape()
+Appearance43 = x3d.Appearance(USE="LineColor")
 
-Transform39.children.append(Shape40)
+Shape42.appearance = Appearance43
+IndexedLineSet44 = x3d.IndexedLineSet(USE="Orbit1")
 
-Transform28.children.append(Transform39)
-Transform43 = x3d.Transform()
-Transform43.DEF = "Circle2"
-Transform43.scale = [0.25,1,0.25]
-Shape44 = x3d.Shape()
-Appearance45 = x3d.Appearance()
-Appearance45.USE = "LineColor"
+Shape42.geometry = IndexedLineSet44
 
-Shape44.appearance = Appearance45
-IndexedLineSet46 = x3d.IndexedLineSet()
-IndexedLineSet46.USE = "Orbit1"
+Transform41.children.append(Shape42)
 
-Shape44.geometry = IndexedLineSet46
+Transform26.children.append(Transform41)
+Transform45 = x3d.Transform(DEF="Circle3")
+Transform45.scale = [2,1,2]
+Shape46 = x3d.Shape()
+Appearance47 = x3d.Appearance(USE="LineColor")
 
-Transform43.children.append(Shape44)
+Shape46.appearance = Appearance47
+IndexedLineSet48 = x3d.IndexedLineSet(USE="Orbit1")
 
-Transform28.children.append(Transform43)
-Transform47 = x3d.Transform()
-Transform47.DEF = "Circle3"
-Transform47.scale = [2,1,2]
-Shape48 = x3d.Shape()
-Appearance49 = x3d.Appearance()
-Appearance49.USE = "LineColor"
+Shape46.geometry = IndexedLineSet48
 
-Shape48.appearance = Appearance49
-IndexedLineSet50 = x3d.IndexedLineSet()
-IndexedLineSet50.USE = "Orbit1"
+Transform45.children.append(Shape46)
 
-Shape48.geometry = IndexedLineSet50
+Transform26.children.append(Transform45)
+Transform49 = x3d.Transform(DEF="Circle4")
+Transform49.scale = [3,1,3]
+Shape50 = x3d.Shape()
+Appearance51 = x3d.Appearance(USE="LineColor")
 
-Transform47.children.append(Shape48)
+Shape50.appearance = Appearance51
+IndexedLineSet52 = x3d.IndexedLineSet(USE="Orbit1")
 
-Transform28.children.append(Transform47)
-Transform51 = x3d.Transform()
-Transform51.DEF = "Circle4"
-Transform51.scale = [3,1,3]
-Shape52 = x3d.Shape()
-Appearance53 = x3d.Appearance()
-Appearance53.USE = "LineColor"
+Shape50.geometry = IndexedLineSet52
 
-Shape52.appearance = Appearance53
-IndexedLineSet54 = x3d.IndexedLineSet()
-IndexedLineSet54.USE = "Orbit1"
+Transform49.children.append(Shape50)
 
-Shape52.geometry = IndexedLineSet54
+Transform26.children.append(Transform49)
 
-Transform51.children.append(Shape52)
+Group23.children.append(Transform26)
 
-Transform28.children.append(Transform51)
+Scene11.children.append(Group23)
 
-Group25.children.append(Transform28)
-
-Scene13.children.append(Group25)
-
-X3D0.Scene = Scene13
+X3D0.Scene = Scene11
 f = open("../data/MainStage.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

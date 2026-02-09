@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><!--All head/meta tags are optional, WorldInfo is also optional--><!--Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1--><head><meta name="title" content="HelloWorldMinimal.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="HelloWorldMinimal.x3d"></meta>
 <meta name="description" content="Hello World minimal example scene."></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="created" content="19 January 2020"></meta>
-<meta name="modified" content="24 January 2020"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:11:18 GMT"></meta>
 <meta name="reference" content="https://helloworldcollection.de"></meta>
 <meta name="reference" content="https://en.wiktionary.org/wiki/Hello_World"></meta>
 <meta name="reference" content="https://en.wikipedia.org/wiki/%22Hello,%20World!%22_program"></meta>
@@ -13,8 +13,6 @@
 <meta name="reference" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes"></meta>
 <meta name="reference" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimalIndex.html"></meta>
 <meta name="identifier" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldMinimal.x3d"></meta>
-<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="HelloWorldMinimal.x3d"></WorldInfo>
 <Shape><Text string="&quot;hello, world&quot;"></Text>

@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <!-- meta content='under development' name='warning'/ -->
-    <component name='Shaders' level='1'/>
+    <component level='1' name='Shaders'/>
     <meta content='SimpleShader.x3d' name='title'/>
     <meta content='Simple shader example' name='description'/>
     <meta content='John Stewart' name='creator'/>
     <meta content='Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick' name='translator'/>
     <meta content='26 May 2009' name='created'/>
     <meta content='15 October 2009' name='translated'/>
-    <meta content='20 October 2019' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:12:58 GMT' name='modified'/>
     <meta content='http://www.opengl.org/wiki/Fragment_Shader' name='reference'/>
     <meta content='http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader' name='reference'/>
     <meta content='https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest' name='reference'/>
     <meta content='X3D shader example' name='subject'/>
     <meta content='originals/simpleShader.x3dv' name='reference'/>
     <meta content='ShaderTutorialInstantReality.pdf' name='reference'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='Titania V3.0.3, http://titania.create3000.de' name='generator'/>
-    <meta content='World of Titania' name='info'/>
-    <meta content='nicest' name='outputStyle'/>
     <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d' name='identifier'/>
-    <meta content='../../license.html' name='license'/>
+    <meta content='World of Titania' name='info'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='myPrototype'>
       <ProtoInterface>
-        <field name='myInputRange' accessType='initializeOnly' type='SFVec3f' value='0.95 0.44 0.22'/>
+        <field accessType='initializeOnly' name='myInputRange' type='SFVec3f' value='0.95 0.44 0.22'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='TR'>
@@ -36,7 +33,7 @@
             <Appearance>
               <Material diffuseColor='0.5 0.5 0.9'/>
               <ComposedShader language='GLSL'>
-                <field name='decis' accessType='initializeOnly' type='SFVec3f'/>
+                <field accessType='initializeOnly' name='decis' type='SFVec3f'/>
                 <IS>
                   <connect nodeField='decis' protoField='myInputRange'/>
                 </IS>
@@ -44,9 +41,9 @@
                 <ShaderPart type='FRAGMENT'/>
               </ComposedShader>
               <ComposedShader DEF='Cobweb' language='GLSL'>
-                <field name='decis' accessType='initializeOnly' type='SFVec3f' value='0.95 0.77 0.44'/>
+                <field accessType='initializeOnly' name='decis' type='SFVec3f' value='0.95 0.77 0.44'/>
                 <ShaderPart/>
-                <ShaderPart DEF='_1' type='FRAGMENT'/>
+                <ShaderPart type='FRAGMENT'/>
               </ComposedShader>
             </Appearance>
             <Sphere radius='1.75'/>
@@ -55,11 +52,9 @@
       </ProtoBody>
     </ProtoDeclare>
     <WorldInfo title='SimpleShader'>
-      <MetadataSet DEF='Titania' name='Titania' containerField='metadata' reference='http://titania.create3000.de'>
+      <MetadataSet DEF='Titania' containerField='metadata' name='Titania' reference='http://titania.create3000.de'>
         <MetadataSet DEF='Selection' name='Selection' reference='http://titania.create3000.de'>
-          <MetadataSet DEF='nodes' name='nodes' reference='http://titania.create3000.de'>
-            <!-- NULL -->
-          </MetadataSet>
+          <MetadataSet DEF='nodes' name='nodes' reference='http://titania.create3000.de'/>
         </MetadataSet>
         <MetadataSet DEF='NavigationInfo' name='NavigationInfo' reference='http://titania.create3000.de'>
           <MetadataString DEF='type' name='type' reference='http://titania.create3000.de' value='"EXAMINE"'/>

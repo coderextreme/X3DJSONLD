@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"Mon, 09 Feb 2026 07:09:43 GMT",
         "@name":"modified"
       }
     },
@@ -71,28 +71,8 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "WorldInfo":
-        {
-      {
-        "@title":"ArtDecoPrototypes.x3d"
-      }
-    }
         "ProtoDeclare":
         {
       {
@@ -100,6 +80,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco00"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -118,6 +101,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco01"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -136,6 +122,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco02"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -154,6 +143,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco03"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -172,6 +164,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco04"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -190,6 +185,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco05"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -208,6 +206,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco06"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -226,6 +227,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco07"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -244,6 +248,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco08"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -262,6 +269,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco09"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -280,6 +290,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco10"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -298,6 +311,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco11"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -317,6 +333,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco12"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -335,6 +354,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco13"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -353,6 +375,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco14"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -371,6 +396,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco15"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -389,6 +417,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco16"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -407,6 +438,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco17"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -425,6 +459,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco18"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -443,6 +480,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco19"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -461,6 +501,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco20"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -479,6 +522,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco21"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -497,6 +543,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco22"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -515,6 +564,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco23"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -533,6 +585,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco24"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -551,6 +606,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco25"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -569,6 +627,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco26"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -587,6 +648,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco27"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -605,6 +669,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco28"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -623,6 +690,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco29"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -641,6 +711,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco30"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -659,6 +732,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco31"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -677,6 +753,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco32"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -695,6 +774,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco33"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -713,6 +795,9 @@
         "@documentation":"https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials",
         "@name":"ArtDeco34"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Material":
@@ -723,7 +808,13 @@
         "@specularColor":"0.2 0.2 0.2"
       }
     },
-            }        }        "Anchor":
+            }        }        "WorldInfo":
+        {
+      {
+        "@title":"ArtDecoPrototypes.x3d"
+      }
+    }
+        "Anchor":
         {
       {
         "@description":"ArtDecoPrototypeExample",

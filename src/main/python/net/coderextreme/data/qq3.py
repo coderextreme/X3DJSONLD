@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "11 Jan 2015"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "05 May 2017"
+meta6.content = "Mon, 09 Feb 2026 07:12:59 GMT"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -35,122 +35,107 @@ meta7.name = "description"
 meta7.content = "12 extrusions"
 
 head1.children.append(meta7)
-meta8 = x3d.meta()
-meta8.name = "identifier"
-meta8.content = "https://coderextreme.net/x3d/qq3.x3d"
-
-head1.children.append(meta8)
-meta9 = x3d.meta()
-meta9.name = "generator"
-meta9.content = "manual"
-
-head1.children.append(meta9)
 
 X3D0.head = head1
-Scene10 = x3d.Scene()
-ProtoDeclare11 = x3d.ProtoDeclare()
-ProtoDeclare11.name = "Process"
-ProtoBody12 = x3d.ProtoBody()
-Group13 = x3d.Group()
-"""left"""
-Transform14 = x3d.Transform()
-Transform14.scale = [0.5,0.5,0.5]
-Shape15 = x3d.Shape()
-Shape15.DEF = "ShapeLeftDown"
-Appearance16 = x3d.Appearance()
-Material17 = x3d.Material()
-Material17.diffuseColor = [0.7,1,0]
+Scene8 = x3d.Scene()
+ProtoDeclare9 = x3d.ProtoDeclare()
+ProtoDeclare9.name = "Process"
+ProtoInterface10 = x3d.ProtoInterface()
 
-Appearance16.material = Material17
+ProtoDeclare9.ProtoInterface = ProtoInterface10
+ProtoBody11 = x3d.ProtoBody()
+Group12 = x3d.Group()
+Transform13 = x3d.Transform()
+Transform13.scale = [0.5,0.5,0.5]
+Shape14 = x3d.Shape(DEF="ShapeLeftDown")
+Appearance15 = x3d.Appearance()
+Material16 = x3d.Material()
+Material16.diffuseColor = [0.7,1,0]
 
-Shape15.appearance = Appearance16
-Extrusion18 = x3d.Extrusion()
-Extrusion18.spine = [(-2.5, 0, 0),(-2, 0, 0),(-1.5, 0, 0)]
-Extrusion18.creaseAngle = 0.785
-Extrusion18.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Appearance15.material = Material16
 
-Shape15.geometry = Extrusion18
+Shape14.appearance = Appearance15
+Extrusion17 = x3d.Extrusion()
+Extrusion17.creaseAngle = 0.785
+Extrusion17.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Extrusion17.spine = [(-2.5, 0, 0),(-2, 0, 0),(-1.5, 0, 0)]
 
-Transform14.children.append(Shape15)
+Shape14.geometry = Extrusion17
 
-Group13.children.append(Transform14)
-"""right"""
-Transform19 = x3d.Transform()
-Transform19.scale = [0.5,0.5,0.5]
-Shape20 = x3d.Shape()
-Shape20.DEF = "ShapeUpRight"
-Appearance21 = x3d.Appearance()
-Material22 = x3d.Material()
-Material22.diffuseColor = [0,0.7,1]
+Transform13.children.append(Shape14)
 
-Appearance21.material = Material22
+Group12.children.append(Transform13)
+Transform18 = x3d.Transform()
+Transform18.scale = [0.5,0.5,0.5]
+Shape19 = x3d.Shape(DEF="ShapeUpRight")
+Appearance20 = x3d.Appearance()
+Material21 = x3d.Material()
+Material21.diffuseColor = [0,0.7,1]
 
-Shape20.appearance = Appearance21
-Extrusion23 = x3d.Extrusion()
-Extrusion23.spine = [(1.5, 0, 0),(2, 0, 0),(2.5, 0, 0)]
-Extrusion23.creaseAngle = 0.785
-Extrusion23.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Appearance20.material = Material21
 
-Shape20.geometry = Extrusion23
+Shape19.appearance = Appearance20
+Extrusion22 = x3d.Extrusion()
+Extrusion22.creaseAngle = 0.785
+Extrusion22.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0),(-0.92, 0.38),(-0.71, 0.71),(-0.38, 0.92),(0, 1),(0.38, 0.92),(0.71, 0.71),(0.92, 0.38),(1, 0)]
+Extrusion22.spine = [(1.5, 0, 0),(2, 0, 0),(2.5, 0, 0)]
 
-Transform19.children.append(Shape20)
+Shape19.geometry = Extrusion22
 
-Group13.children.append(Transform19)
-"""up"""
-Transform24 = x3d.Transform()
-Transform24.scale = [0.5,0.5,0.5]
-Shape25 = x3d.Shape()
-Shape25.USE = "ShapeUpRight"
+Transform18.children.append(Shape19)
 
-Transform24.children.append(Shape25)
+Group12.children.append(Transform18)
+Transform23 = x3d.Transform()
+Transform23.scale = [0.5,0.5,0.5]
+Shape24 = x3d.Shape(USE="ShapeUpRight")
 
-Group13.children.append(Transform24)
-"""down"""
-Transform26 = x3d.Transform()
-Transform26.scale = [0.5,0.5,0.5]
-Shape27 = x3d.Shape()
-Shape27.USE = "ShapeLeftDown"
+Transform23.children.append(Shape24)
 
-Transform26.children.append(Shape27)
+Group12.children.append(Transform23)
+Transform25 = x3d.Transform()
+Transform25.scale = [0.5,0.5,0.5]
+Shape26 = x3d.Shape(USE="ShapeLeftDown")
 
-Group13.children.append(Transform26)
+Transform25.children.append(Shape26)
 
-ProtoBody12.children.append(Group13)
+Group12.children.append(Transform25)
 
-ProtoDeclare11.ProtoBody = ProtoBody12
+ProtoBody11.children.append(Group12)
 
-Scene10.children.append(ProtoDeclare11)
-Viewpoint28 = x3d.Viewpoint()
-Viewpoint28.description = "Process pipes"
-Viewpoint28.orientation = [1,0,0,-0.4]
-Viewpoint28.position = [0,5,12]
+ProtoDeclare9.ProtoBody = ProtoBody11
 
-Scene10.children.append(Viewpoint28)
-Transform29 = x3d.Transform()
-Transform29.translation = [0,-2.5,0]
-ProtoInstance30 = x3d.ProtoInstance()
-ProtoInstance30.name = "Process"
+Scene8.children.append(ProtoDeclare9)
+Viewpoint27 = x3d.Viewpoint()
+Viewpoint27.description = "Process pipes"
+Viewpoint27.position = [0,5,12]
+Viewpoint27.orientation = [1,0,0,-0.4]
 
-Transform29.children.append(ProtoInstance30)
+Scene8.children.append(Viewpoint27)
+Transform28 = x3d.Transform()
+Transform28.translation = [0,-2.5,0]
+ProtoInstance29 = x3d.ProtoInstance()
+ProtoInstance29.name = "Process"
 
-Scene10.children.append(Transform29)
-Transform31 = x3d.Transform()
-ProtoInstance32 = x3d.ProtoInstance()
-ProtoInstance32.name = "Process"
+Transform28.children.append(ProtoInstance29)
 
-Transform31.children.append(ProtoInstance32)
+Scene8.children.append(Transform28)
+Transform30 = x3d.Transform()
+ProtoInstance31 = x3d.ProtoInstance()
+ProtoInstance31.name = "Process"
 
-Scene10.children.append(Transform31)
-Transform33 = x3d.Transform()
-Transform33.translation = [0,2.5,0]
-ProtoInstance34 = x3d.ProtoInstance()
-ProtoInstance34.name = "Process"
+Transform30.children.append(ProtoInstance31)
 
-Transform33.children.append(ProtoInstance34)
+Scene8.children.append(Transform30)
+Transform32 = x3d.Transform()
+Transform32.translation = [0,2.5,0]
+ProtoInstance33 = x3d.ProtoInstance()
+ProtoInstance33.name = "Process"
 
-Scene10.children.append(Transform33)
+Transform32.children.append(ProtoInstance33)
 
-X3D0.Scene = Scene10
+Scene8.children.append(Transform32)
+
+X3D0.Scene = Scene8
 f = open("../data/qq3.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

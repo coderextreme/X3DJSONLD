@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='ArchPrototype.x3d' name='title'/>
     <meta content='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.' name='description'/>
     <meta content='Possibility to create shapes related to arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information.' name='description'/>
     <meta content='Michele Foti, Don Brutzman' name='creator'/>
     <meta content='15 December 2014' name='created'/>
-    <meta content='27 November 2015' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:09:43 GMT' name='modified'/>
     <meta content='ArchModelingDiagrams.pdf' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/Arch' name='reference'/>
     <meta content='http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d' name='identifier'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <ProtoDeclare appinfo='Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js.' name='ArchPrototype'>
@@ -38,23 +36,23 @@
             <Appearance>
               <Material DEF='MaterialNode'>
                 <IS>
-                  <connect nodeField='emissiveColor' protoField='emissiveColor'/>
                   <connect nodeField='diffuseColor' protoField='diffuseColor'/>
+                  <connect nodeField='emissiveColor' protoField='emissiveColor'/>
                 </IS>
               </Material>
             </Appearance>
-            <IndexedFaceSet DEF='ArchIndex'>
+            <IndexedFaceSet DEF='ArchIndex' convex='false' solid='false'>
               <Coordinate DEF='ArchChord'/>
             </IndexedFaceSet>
           </Shape>
         </Transform>
-        <Script DEF='ArchPrototypeScript'>
+        <Script DEF='ArchPrototypeScript' url='"../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"'>
           <IS>
             <connect nodeField='clearSpanWidth' protoField='clearSpanWidth'/>
             <connect nodeField='riseHeight' protoField='riseHeight'/>
             <connect nodeField='depth' protoField='depth'/>
-            <connect nodeField='pierWidth' protoField='pierWidth'/>
             <connect nodeField='topAbutmentHeight' protoField='topAbutmentHeight'/>
+            <connect nodeField='pierWidth' protoField='pierWidth'/>
             <connect nodeField='pierHeight' protoField='pierHeight'/>
             <connect nodeField='archHalf' protoField='archHalf'/>
             <connect nodeField='archHalfExtensionWidth' protoField='archHalfExtensionWidth'/>
@@ -79,8 +77,8 @@
           <field accessType='outputOnly' appinfo='send computed points to the Coordinate node' name='pointOut' type='MFVec3f'/>
           <field accessType='outputOnly' appinfo='send computed indices to the IndexedFaceSet node' name='indexOut' type='MFInt32'/>
         </Script>
-        <ROUTE fromField='computedScale' fromNode='ArchPrototypeScript' toField='scale' toNode='ArchTransform'/>
-        <ROUTE fromField='pointOut' fromNode='ArchPrototypeScript' toField='point' toNode='ArchChord'/>
+        <ROUTE fromField='computedScale' fromNode='ArchPrototypeScript' toField='set_scale' toNode='ArchTransform'/>
+        <ROUTE fromField='pointOut' fromNode='ArchPrototypeScript' toField='set_point' toNode='ArchChord'/>
         <ROUTE fromField='indexOut' fromNode='ArchPrototypeScript' toField='set_coordIndex' toNode='ArchIndex'/>
       </ProtoBody>
     </ProtoDeclare>
@@ -94,6 +92,6 @@
       <fieldValue name='pierWidth' value='1'/>
       <fieldValue name='pierHeight' value='2'/>
     </ProtoInstance>
-    <Inline DEF='CoordinateAxes'/>
+    <Inline DEF='CoordinateAxes' url='"../data/CoordinateAxes.x3d"'/>
   </Scene>
 </X3D>

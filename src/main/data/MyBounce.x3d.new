@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
-<meta name="title" content="MyBounce.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="MyBounce.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="3 prismatic spheres"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
 <Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
@@ -12,11 +10,11 @@
 <Sphere></Sphere>
 </Shape>
 </Transform>
-<Script DEF="Bounce2"><field name="set_translation" accessType="inputOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="translation_changed" accessType="outputOnly" type="SFVec3f" value="0 0 0"></field>
-<field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_fraction" accessType="inputOnly" type="SFTime"></field>
+<Script DEF="Bounce2"><field accessType="inputOnly" type="SFVec3f" name="set_translation"></field>
+<field accessType="outputOnly" type="SFVec3f" name="translation_changed"></field>
+<field accessType="inputOutput" type="SFVec3f" name="translation"></field>
+<field accessType="inputOutput" type="SFVec3f" name="velocity"></field>
+<field accessType="inputOnly" type="SFTime" name="set_fraction"></field>
 <![CDATA[ecmascript:
 			function newBubble() {
 			    translation = new SFVec3f(0, 0, 0);

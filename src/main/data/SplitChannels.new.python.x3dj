@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"23 April 2023",
+        "@content":"Mon, 09 Feb 2026 07:13:12 GMT",
         "@name":"modified"
       }
     },
@@ -76,20 +76,6 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -123,7 +109,8 @@
         "Transform":
         {
       {
-        "@DEF":"PowerR"
+        "@DEF":"PowerR",
+        "@translation":"100 400 400"
       }
             "Transform":
             {
@@ -188,7 +175,10 @@
                 }            }            "Transform":
             {
       {
-        "@DEF":"volumeRight"
+        "@DEF":"volumeRight",
+        "@rotation":"1 0 0 -0.5",
+        "@scale":"10 10 10",
+        "@translation":"0 -10 0"
       }
                 "Shape":
                 {
@@ -211,13 +201,15 @@
                         "FontStyle":
                         {
       {
-        "@DEF":"VolumeFontStyle"
+        "@DEF":"VolumeFontStyle",
+        "@family":""Times" "SERIF""
       }
     },
                     }                }            }        }        "Transform":
         {
       {
-        "@DEF":"PowerL"
+        "@DEF":"PowerL",
+        "@translation":"-100 400 400"
       }
             "Transform":
             {
@@ -282,7 +274,10 @@
                 }            }            "Transform":
             {
       {
-        "@DEF":"volumeLeft"
+        "@DEF":"volumeLeft",
+        "@rotation":"1 0 0 -0.5",
+        "@scale":"10 10 10",
+        "@translation":"0 -10 0"
       }
                 "Shape":
                 {
@@ -345,18 +340,25 @@
                 {
                     "ChannelSelector":
                     {
-                        "Gain":
+                        "ChannelSplitter":
                         {
       {
-        "@USE":"ChannelSplitter"
+        "@DEF":"ChannelSplitter",
+        "@channelCountMode":"EXPLICIT"
+      }
+                            "AudioClip":
+                            {
+      {
+        "@description":"Violin",
+        "@url":""sound/violin.mp3" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3""
       }
     },
-                    }                    "ChannelSelector":
+                        }                    }                    "ChannelSelector":
                     {
       {
         "@channelSelection":"1"
       }
-                        "Gain":
+                        "ChannelSplitter":
                         {
       {
         "@USE":"ChannelSplitter"
@@ -365,19 +367,15 @@
                     }                }            }        }        "ChannelSplitter":
         {
       {
-        "@DEF":"ChannelSplitter"
-      }
-            "AudioClip":
-            {
-      {
-        "@description":"Violin",
-        "@url":""sound/violin.mp3" "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3""
+        "@USE":"ChannelSplitter"
       }
     },
-        }        "Transform":
+        "Transform":
         {
       {
-        "@DEF":"Audio3"
+        "@DEF":"Audio3",
+        "@rotation":"1 0 0 -0.5",
+        "@translation":"0 100 0"
       }
             "Shape":
             {

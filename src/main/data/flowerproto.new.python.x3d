@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
-    <component name='Texturing'/>
-    <component name='Rendering'/>
     <component level='4' name='Shape'/>
     <component level='3' name='Grouping'/>
-    <component name='Core'/>
     <meta content='flowerproto.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower proto with configurable shaders' name='description'/>
-    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d' name='identifier'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <ProtoDeclare name='FlowerProto'>
       <ProtoInterface>
-        <field accessType='inputOnly' name='vertex' type='MFString' value='"../shaders/gl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs"'/>
-        <field accessType='inputOnly' name='fragment' type='MFString' value='"../shaders/pc_flowers.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs"'/>
+        <field accessType='inputOnly' name='vertex' type='MFString'/>
+        <field accessType='inputOnly' name='fragment' type='MFString'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='transform'>
@@ -36,18 +31,16 @@
                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
               </ComposedCubeMapTexture>
-              <ComposedShader DEF='shader'>
-                <field accessType='inputOnly' name='cube' type='SFNode'>
-                  <ComposedCubeMapTexture USE='texture'/>
-                </field>
+              <ComposedShader DEF='shader' language='GLSL'>
+                <field accessType='inputOnly' name='cube' type='SFNode'/>
                 <field accessType='initializeOnly' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
-                <field accessType='inputOnly' name='bias' type='SFFloat' value='0.5'/>
-                <field accessType='inputOnly' name='scale' type='SFFloat' value='0.5'/>
-                <field accessType='inputOnly' name='power' type='SFFloat' value='2'/>
-                <field accessType='inputOnly' name='a' type='SFFloat' value='10'/>
-                <field accessType='inputOnly' name='b' type='SFFloat' value='1'/>
-                <field accessType='inputOnly' name='c' type='SFFloat' value='20'/>
-                <field accessType='inputOnly' name='d' type='SFFloat' value='20'/>
+                <field accessType='inputOnly' name='bias' type='SFFloat'/>
+                <field accessType='inputOnly' name='scale' type='SFFloat'/>
+                <field accessType='inputOnly' name='power' type='SFFloat'/>
+                <field accessType='inputOnly' name='a' type='SFFloat'/>
+                <field accessType='inputOnly' name='b' type='SFFloat'/>
+                <field accessType='inputOnly' name='c' type='SFFloat'/>
+                <field accessType='inputOnly' name='d' type='SFFloat'/>
                 <field accessType='inputOnly' name='tdelta' type='SFFloat'/>
                 <field accessType='inputOnly' name='pdelta' type='SFFloat'/>
                 <ShaderPart>
@@ -64,16 +57,16 @@
             </Appearance>
             <Sphere/>
           </Shape>
-          <Script DEF='Animate'>
-            <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
-            <field accessType='outputOnly' name='velocity' type='SFVec3f' value='0 0 0'/>
+          <Script DEF='Animate' directOutput='true'>
+            <field accessType='inputOutput' name='translation' type='SFVec3f'/>
+            <field accessType='outputOnly' name='velocity' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
-            <field accessType='outputOnly' name='a' type='SFFloat' value='0.5'/>
-            <field accessType='outputOnly' name='b' type='SFFloat' value='0.5'/>
-            <field accessType='outputOnly' name='c' type='SFFloat' value='3'/>
-            <field accessType='outputOnly' name='d' type='SFFloat' value='3'/>
-            <field accessType='outputOnly' name='tdelta' type='SFFloat' value='0.5'/>
-            <field accessType='outputOnly' name='pdelta' type='SFFloat' value='0.5'/>
+            <field accessType='outputOnly' name='a' type='SFFloat'/>
+            <field accessType='outputOnly' name='b' type='SFFloat'/>
+            <field accessType='outputOnly' name='c' type='SFFloat'/>
+            <field accessType='outputOnly' name='d' type='SFFloat'/>
+            <field accessType='outputOnly' name='tdelta' type='SFFloat'/>
+            <field accessType='outputOnly' name='pdelta' type='SFFloat'/>
           <![CDATA[ecmascript:
 "+
 "			function initialize() {
@@ -206,16 +199,16 @@
 "+
 "			}]]>
           </Script>
-          <TimeSensor DEF='TourTime'/>
-          <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
-          <ROUTE fromField='translation_changed' fromNode='Animate' toField='set_translation' toNode='transform'/>
-          <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='shader'/>
-          <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='shader'/>
-          <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='shader'/>
-          <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='shader'/>
-          <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='shader'/>
-          <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='shader'/>
+          <TimeSensor DEF='TourTime' cycleInterval='5' loop='true'/>
         </Transform>
+        <ROUTE fromField='fraction_changed' fromNode='TourTime' toField='set_fraction' toNode='Animate'/>
+        <ROUTE fromField='translation_changed' fromNode='Animate' toField='set_translation' toNode='transform'/>
+        <ROUTE fromField='a' fromNode='Animate' toField='a' toNode='shader'/>
+        <ROUTE fromField='b' fromNode='Animate' toField='b' toNode='shader'/>
+        <ROUTE fromField='c' fromNode='Animate' toField='c' toNode='shader'/>
+        <ROUTE fromField='d' fromNode='Animate' toField='d' toNode='shader'/>
+        <ROUTE fromField='tdelta' fromNode='Animate' toField='tdelta' toNode='shader'/>
+        <ROUTE fromField='pdelta' fromNode='Animate' toField='pdelta' toNode='shader'/>
       </ProtoBody>
     </ProtoDeclare>
   </Scene>

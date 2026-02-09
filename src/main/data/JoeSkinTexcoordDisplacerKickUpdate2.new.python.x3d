@@ -2,6 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <!-- BS studio translation from .x3dv by Joe using BS Contact -->
     <component name='H-Anim'/>
     <meta content='JoeSkinTexcoordDisplacerKick.x3d' name='title'/>
     <meta content='Joe No Reservations 20200709 fix hier20161206 20161111 20160720 20121221 20040109 x3d/hanim' name='info'/>
@@ -22,6 +23,7 @@
     <Background DEF='blue_Background'/>
     <SpotLight DEF='light1'/>
     <PointLight DEF='light2'/>
+    <!-- External from the Humanoid viewpoints -->
     <Viewpoint DEF='Scene_InclinedView'/>
     <Viewpoint DEF='Scene_IFrontView'/>
     <Viewpoint DEF='Scene_ISideView'/>
@@ -228,6 +230,7 @@
     </Group>
     <Group>
       <TimeSensor DEF='KickTimer'/>
+      <!-- Interpolators -->
       <OrientationInterpolator DEF='HumanoidRootRotInterp'/>
       <PositionInterpolator DEF='HumanoidRootTransInterp'/>
       <OrientationInterpolator DEF='sacroiliacRotInterp'/>
@@ -324,6 +327,7 @@
       <OrientationInterpolator DEF='r_pinky2RotInterp'/>
       <OrientationInterpolator DEF='r_pinky3RotInterp'/>
     </Group>
+    <!-- TimeSensor to Interpolators -->
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='HumanoidRootRotInterp'/>
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='HumanoidRootTransInterp'/>
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='sacroiliacRotInterp'/>
@@ -419,6 +423,7 @@
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='r_pinky1RotInterp'/>
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='r_pinky2RotInterp'/>
     <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='r_pinky3RotInterp'/>
+    <!-- Routes from Interpolators to Joe_ model Joints -->
     <ROUTE fromField='value_changed' fromNode='HumanoidRootRotInterp' toField='set_rotation' toNode='Joe_HumanoidRoot'/>
     <ROUTE fromField='value_changed' fromNode='HumanoidRootTransInterp' toField='set_translation' toNode='Joe_HumanoidRoot'/>
     <ROUTE fromField='value_changed' fromNode='sacroiliacRotInterp' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -515,6 +520,7 @@
     <ROUTE fromField='value_changed' fromNode='r_pinky2RotInterp' toField='set_rotation' toNode='Joe_r_pinky2'/>
     <ROUTE fromField='value_changed' fromNode='r_pinky3RotInterp' toField='set_rotation' toNode='Joe_r_pinky3'/>
     <Group DEF='DisplacersAnimationGroup'>
+      <!-- TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor -->
       <ScalarInterpolator DEF='skull_tipTest'/>
       <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='skull_tipTest'/>
       <ROUTE fromField='value_changed' fromNode='skull_tipTest' toField='weight' toNode='Joe_skull_tipTest'/>
@@ -537,8 +543,10 @@
         </Shape>
         <Viewpoint DEF='ballView_1'/>
       </Transform>
+      <!-- Ball Animation interpolators -->
       <PositionInterpolator DEF='ballTransInterp'/>
       <OrientationInterpolator DEF='ballRotInterp'/>
+      <!-- Ball Animation Routes -->
       <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='ballTransInterp'/>
       <ROUTE fromField='value_changed' fromNode='ballTransInterp' toField='set_translation' toNode='SBall'/>
       <ROUTE fromField='fraction_changed' fromNode='KickTimer' toField='set_fraction' toNode='ballRotInterp'/>

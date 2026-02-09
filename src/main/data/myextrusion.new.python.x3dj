@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -25,7 +25,7 @@
         "meta":
         {
       {
-        "@content":"November 9 2024",
+        "@content":"Mon, 09 Feb 2026 07:12:59 GMT",
         "@name":"modified"
       }
     },
@@ -41,20 +41,6 @@
       {
         "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"beginnings of a force directed graph in 3D",
-        "@name":"description"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
       }
     },
     }    "Scene":
@@ -74,19 +60,44 @@
                 }                "Extrusion":
                 {
       {
-        "@DEF":"myextrusion"
+        "@DEF":"myextrusion",
+        "@creaseAngle":"0.785",
+        "@crossSection":"1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0",
+        "@spine":"-50 -50 0 50 50 0"
       }
     },
             }            "TimeSensor":
             {
       {
-        "@DEF":"TourTime"
+        "@DEF":"TourTime",
+        "@loop":"true"
       }
     },
             "Script":
             {
       {
-        "@DEF":"MoveCylinder"
+        "@DEF":"MoveCylinder",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;                function set_cycle(value) {
+&quot;+
+&quot;                        Browser.print(value);
+&quot;+
+&quot;                        var endA = new SFVec3f(spine[0].x*Math.random()*2, spine[0].y*Math.random()*2, spine[0].z*Math.random()*2);
+&quot;+
+&quot;                        var endB = new SFVec3f(spine[1].x*Math.random()*2, spine[1].y*Math.random()*2, spine[1].z*Math.random()*2);
+&quot;+
+&quot;                        var tmpspine = new MFVec3f();
+&quot;+
+&quot;			tmpspine[0] = endA;
+&quot;+
+&quot;			tmpspine[1] = endB;
+&quot;+
+&quot;                        spine = tmpspine;
+&quot;+
+&quot;                }"
       }
                 "field":
                 {
@@ -105,8 +116,8 @@
         "@value":"[(-50, -50, 0), (50, 50, 0)]"
       }
     },
-            }            "ROUTE":
-            {
+            }        }        "ROUTE":
+        {
       {
         "@fromField":"cycleTime",
         "@fromNode":"TourTime",
@@ -114,8 +125,8 @@
         "@toNode":"MoveCylinder"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"spine_changed",
         "@fromNode":"MoveCylinder",
@@ -123,4 +134,4 @@
         "@toNode":"myextrusion"
       }
     },
-        }    }}
+    }}

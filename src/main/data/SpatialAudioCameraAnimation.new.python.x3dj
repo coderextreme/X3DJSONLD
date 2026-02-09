@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"5 December 2021",
+        "@content":"Mon, 09 Feb 2026 07:12:59 GMT",
         "@name":"modified"
       }
     },
@@ -78,20 +78,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -117,67 +103,41 @@
         "Viewpoint":
         {
       {
-        "@DEF":"Camera001"
+        "@DEF":"Camera001",
+        "@description":"Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the &quot;ears of the user&quot;. So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view",
+        "@orientation":"8.84716566625976e-05 -0.961979599390949 -0.273121296365546 3.14182290693948",
+        "@position":"0 2000 -3367.763"
       }
     },
         "TimeSensor":
         {
       {
-        "@DEF":"TIMER"
+        "@DEF":"TIMER",
+        "@cycleInterval":"33.333332",
+        "@loop":"true"
       }
     },
         "PositionInterpolator":
         {
       {
-        "@DEF":"Camera001-POS-INTERP"
+        "@DEF":"Camera001-POS-INTERP",
+        "@key":"0 0.25 0.5 0.75 1",
+        "@keyValue":"0 2000 3500 0 2000 0 0 2000 -3500 0 2000 0 0 2000 3500"
       }
     },
         "OrientationInterpolator":
         {
       {
-        "@DEF":"Camera001-ROT-INTERP"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"TIMER",
-        "@toField":"set_fraction",
-        "@toNode":"Camera001-POS-INTERP"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"Camera001-POS-INTERP",
-        "@toField":"set_position",
-        "@toNode":"Camera001"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"TIMER",
-        "@toField":"set_fraction",
-        "@toNode":"Camera001-ROT-INTERP"
-      }
-    },
-        "ROUTE":
-        {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"Camera001-ROT-INTERP",
-        "@toField":"set_orientation",
-        "@toNode":"Camera001"
+        "@DEF":"Camera001-ROT-INTERP",
+        "@key":"0 0.25 0.5 0.75 1",
+        "@keyValue":"1 0 0 -0.523599 0.99999 0.003554 0.002727 -1.309007 0 -0.965926 -0.258819 -3.141593 0.002282 -0.793351 -0.60876 -3.135645 1 -1e-06 0 -0.523599"
       }
     },
         "Transform":
         {
       {
-        "@DEF":"Floor"
+        "@DEF":"Floor",
+        "@translation":"1.241 0 0.358"
       }
             "Shape":
             {
@@ -201,7 +161,8 @@
             }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio1"
+        "@DEF":"TransformAudio1",
+        "@translation":"-933.1235 0 -926.2532"
       }
             "Shape":
             {
@@ -227,7 +188,10 @@
                 "Transform":
                 {
       {
-        "@DEF":"violin"
+        "@DEF":"violin",
+        "@rotation":"1 0 0 -0.5",
+        "@scale":"100 100 100",
+        "@translation":"0 100 0"
       }
                     "Shape":
                     {
@@ -250,13 +214,15 @@
                             "FontStyle":
                             {
       {
-        "@DEF":"ModelFontStyle"
+        "@DEF":"ModelFontStyle",
+        "@family":""Times" "SERIF""
       }
     },
                         }                    }                }            }        }        "Transform":
         {
       {
-        "@DEF":"TransformAudio2"
+        "@DEF":"TransformAudio2",
+        "@translation":"933.4756 0 924.4232"
       }
             "Shape":
             {
@@ -282,7 +248,10 @@
                 "Transform":
                 {
       {
-        "@DEF":"saxophone"
+        "@DEF":"saxophone",
+        "@rotation":"1 0 0 -0.5",
+        "@scale":"100 100 100",
+        "@translation":"0 100 0"
       }
                     "Shape":
                     {
@@ -346,4 +315,40 @@
         "@url":""sound/saxophone.mp3" "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3""
       }
     },
-                }            }        }    }}
+                }            }        }        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TIMER",
+        "@toField":"set_fraction",
+        "@toNode":"Camera001-POS-INTERP"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"Camera001-POS-INTERP",
+        "@toField":"set_position",
+        "@toNode":"Camera001"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TIMER",
+        "@toField":"set_fraction",
+        "@toNode":"Camera001-ROT-INTERP"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"Camera001-ROT-INTERP",
+        "@toField":"set_orientation",
+        "@toNode":"Camera001"
+      }
+    },
+    }}

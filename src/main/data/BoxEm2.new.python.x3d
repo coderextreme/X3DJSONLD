@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='BoxEm2.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/BoxEm2.x3d' name='identifier'/>
-    <meta content='3 boxes' name='description'/>
   </head>
   <Scene>
-    <NavigationInfo type='"EXAMINE"'/>
-    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoDeclare name='anyShape'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='xtranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='xtranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_1'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -34,9 +31,9 @@
     </ProtoDeclare>
     <ProtoDeclare name='three'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='ytranslation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='ytranslation' type='SFVec3f'/>
         <field accessType='inputOutput' name='myShape' type='MFNode'>
-          <Shape>
+          <Shape DEF='_2'>
             <Appearance>
               <Material diffuseColor='1 1 1'/>
             </Appearance>
@@ -53,7 +50,6 @@
             <IS>
               <connect nodeField='myShape' protoField='myShape'/>
             </IS>
-            <fieldValue name='xtranslation' value='0 0 0'/>
           </ProtoInstance>
           <ProtoInstance name='anyShape'>
             <IS>
@@ -70,8 +66,9 @@
         </Transform>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo type='"EXAMINE"'/>
+    <Viewpoint description='Cubes on Fire' position='0 0 12'/>
     <ProtoInstance DEF='threepi' name='three'>
-      <fieldValue name='ytranslation' value='0 0 0'/>
       <fieldValue name='myShape'>
         <Shape DEF='box'>
           <Appearance>

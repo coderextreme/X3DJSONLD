@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "16 March 2009"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "25 October 2016"
+meta6.content = "Mon, 09 Feb 2026 07:09:51 GMT"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -65,688 +65,542 @@ meta13.name = "reference"
 meta13.content = "https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"
 
 head1.children.append(meta13)
-meta14 = x3d.meta()
-meta14.name = "generator"
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta14)
-meta15 = x3d.meta()
-meta15.name = "license"
-meta15.content = "../license.html"
-
-head1.children.append(meta15)
 
 X3D0.head = head1
-Scene16 = x3d.Scene()
-"""=============== Camera =============="""
-ProtoDeclare17 = x3d.ProtoDeclare()
-ProtoDeclare17.name = "Camera"
-ProtoDeclare17.appinfo = "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images."
-ProtoInterface18 = x3d.ProtoInterface()
-"""Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields"""
+Scene14 = x3d.Scene()
+ProtoDeclare15 = x3d.ProtoDeclare()
+ProtoDeclare15.name = "Camera"
+ProtoDeclare15.appinfo = "Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images."
+ProtoInterface16 = x3d.ProtoInterface()
+field17 = x3d.field()
+field17.accessType = "inputOutput"
+field17.type = "SFString"
+field17.name = "description"
+field17.appinfo = "Text description to be displayed for this Camera"
+
+ProtoInterface16.field.append(field17)
+field18 = x3d.field()
+field18.accessType = "inputOutput"
+field18.type = "SFVec3f"
+field18.name = "position"
+field18.value = [0,0,10]
+field18.appinfo = "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"
+
+ProtoInterface16.field.append(field18)
 field19 = x3d.field()
-field19.name = "description"
 field19.accessType = "inputOutput"
-field19.appinfo = "Text description to be displayed for this Camera"
-field19.type = "SFString"
+field19.type = "SFRotation"
+field19.name = "orientation"
+field19.appinfo = "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"
 
-ProtoInterface18.field.append(field19)
+ProtoInterface16.field.append(field19)
 field20 = x3d.field()
-field20.name = "position"
 field20.accessType = "inputOutput"
-field20.appinfo = "Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"
-field20.type = "SFVec3f"
-field20.value = [0,0,10]
+field20.type = "SFFloat"
+field20.name = "fieldOfView"
+field20.value = 0.7854
+field20.appinfo = "pi/4"
 
-ProtoInterface18.field.append(field20)
+ProtoInterface16.field.append(field20)
 field21 = x3d.field()
-field21.name = "orientation"
-field21.accessType = "inputOutput"
-field21.appinfo = "Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"
-field21.type = "SFRotation"
-field21.value = [0,0,1,0]
+field21.accessType = "inputOnly"
+field21.type = "SFFloat"
+field21.name = "set_fraction"
+field21.appinfo = "input fraction drives interpolators"
 
-ProtoInterface18.field.append(field21)
+ProtoInterface16.field.append(field21)
 field22 = x3d.field()
-field22.name = "fieldOfView"
-field22.accessType = "inputOutput"
-field22.appinfo = "pi/4"
-field22.type = "SFFloat"
-field22.value = 0.7854
+field22.accessType = "inputOnly"
+field22.type = "SFBool"
+field22.name = "set_bind"
+field22.appinfo = "input event binds or unbinds this Camera"
 
-ProtoInterface18.field.append(field22)
+ProtoInterface16.field.append(field22)
 field23 = x3d.field()
-field23.name = "set_fraction"
-field23.accessType = "inputOnly"
-field23.appinfo = "input fraction drives interpolators"
-field23.type = "SFFloat"
+field23.accessType = "outputOnly"
+field23.type = "SFTime"
+field23.name = "bindTime"
+field23.appinfo = "output event indicates when this Camera is bound"
 
-ProtoInterface18.field.append(field23)
+ProtoInterface16.field.append(field23)
 field24 = x3d.field()
-field24.name = "set_bind"
-field24.accessType = "inputOnly"
-field24.appinfo = "input event binds or unbinds this Camera"
+field24.accessType = "outputOnly"
 field24.type = "SFBool"
+field24.name = "isBound"
+field24.appinfo = "output event indicates whether this Camera is bound or unbound"
 
-ProtoInterface18.field.append(field24)
+ProtoInterface16.field.append(field24)
 field25 = x3d.field()
-field25.name = "bindTime"
-field25.accessType = "outputOnly"
-field25.appinfo = "output event indicates when this Camera is bound"
-field25.type = "SFTime"
+field25.accessType = "inputOutput"
+field25.type = "SFFloat"
+field25.name = "nearClipPlane"
+field25.value = 0.25
+field25.appinfo = "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]"
 
-ProtoInterface18.field.append(field25)
+ProtoInterface16.field.append(field25)
 field26 = x3d.field()
-field26.name = "isBound"
-field26.accessType = "outputOnly"
-field26.appinfo = "output event indicates whether this Camera is bound or unbound"
-field26.type = "SFBool"
+field26.accessType = "inputOutput"
+field26.type = "SFFloat"
+field26.name = "farClipPlane"
+field26.appinfo = "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit"
 
-ProtoInterface18.field.append(field26)
+ProtoInterface16.field.append(field26)
 field27 = x3d.field()
-field27.name = "nearClipPlane"
 field27.accessType = "inputOutput"
-field27.appinfo = "Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]"
-field27.type = "SFFloat"
-field27.value = 0.25
+field27.type = "MFNode"
+field27.name = "shots"
+field27.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes"
 
-ProtoInterface18.field.append(field27)
+ProtoInterface16.field.append(field27)
 field28 = x3d.field()
-field28.name = "farClipPlane"
 field28.accessType = "inputOutput"
-field28.appinfo = "Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit"
-field28.type = "SFFloat"
-field28.value = 0
+field28.type = "SFBool"
+field28.name = "headlight"
+field28.value = True
+field28.appinfo = "Whether camera headlight is on or off"
 
-ProtoInterface18.field.append(field28)
+ProtoInterface16.field.append(field28)
 field29 = x3d.field()
-field29.name = "shots"
 field29.accessType = "inputOutput"
-field29.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes"
-field29.type = "MFNode"
-"""initialization nodes (if any) go here"""
+field29.type = "SFColor"
+field29.name = "headlightColor"
+field29.value = [1,1,1]
+field29.appinfo = "Camera headlight color"
 
-ProtoInterface18.field.append(field29)
+ProtoInterface16.field.append(field29)
 field30 = x3d.field()
-field30.name = "headlight"
 field30.accessType = "inputOutput"
-field30.appinfo = "Whether camera headlight is on or off"
-field30.type = "SFBool"
-field30.value = True
+field30.type = "SFFloat"
+field30.name = "headlightIntensity"
+field30.value = 1
+field30.appinfo = "Camera headlight intensity"
 
-ProtoInterface18.field.append(field30)
+ProtoInterface16.field.append(field30)
 field31 = x3d.field()
-field31.name = "headlightColor"
 field31.accessType = "inputOutput"
-field31.appinfo = "Camera headlight color"
 field31.type = "SFColor"
+field31.name = "filterColor"
 field31.value = [1,1,1]
+field31.appinfo = "Camera filter color that modifies virtual lens capture"
 
-ProtoInterface18.field.append(field31)
+ProtoInterface16.field.append(field31)
 field32 = x3d.field()
-field32.name = "headlightIntensity"
 field32.accessType = "inputOutput"
-field32.appinfo = "Camera headlight intensity"
 field32.type = "SFFloat"
+field32.name = "filterTransparency"
 field32.value = 1
+field32.appinfo = "Camera filter transparency that modifies virtual lens capture"
 
-ProtoInterface18.field.append(field32)
+ProtoInterface16.field.append(field32)
 field33 = x3d.field()
-field33.name = "filterColor"
 field33.accessType = "inputOutput"
-field33.appinfo = "Camera filter color that modifies virtual lens capture"
-field33.type = "SFColor"
-field33.value = [1,1,1]
+field33.type = "SFVec3f"
+field33.name = "upVector"
+field33.value = [0,1,0]
+field33.appinfo = "upVector changes modify camera orientation (and possibly vice versa)"
 
-ProtoInterface18.field.append(field33)
+ProtoInterface16.field.append(field33)
 field34 = x3d.field()
-field34.name = "filterTransparency"
 field34.accessType = "inputOutput"
-field34.appinfo = "Camera filter transparency that modifies virtual lens capture"
 field34.type = "SFFloat"
-field34.value = 1
+field34.name = "fStop"
+field34.value = 5.6
+field34.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-ProtoInterface18.field.append(field34)
+ProtoInterface16.field.append(field34)
 field35 = x3d.field()
-field35.name = "upVector"
 field35.accessType = "inputOutput"
-field35.appinfo = "upVector changes modify camera orientation (and possibly vice versa)"
-field35.type = "SFVec3f"
-field35.value = [0,1,0]
+field35.type = "SFFloat"
+field35.name = "focusDistance"
+field35.value = 10
+field35.appinfo = "Distance to focal plane of sharpest focus"
 
-ProtoInterface18.field.append(field35)
+ProtoInterface16.field.append(field35)
 field36 = x3d.field()
-field36.name = "fStop"
-field36.accessType = "inputOutput"
-field36.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field36.type = "SFFloat"
-field36.value = 5.6
+field36.accessType = "outputOnly"
+field36.type = "SFBool"
+field36.name = "isActive"
+field36.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-ProtoInterface18.field.append(field36)
+ProtoInterface16.field.append(field36)
 field37 = x3d.field()
-field37.name = "focusDistance"
-field37.accessType = "inputOutput"
-field37.appinfo = "Distance to focal plane of sharpest focus"
-field37.type = "SFFloat"
-field37.value = 10
+field37.accessType = "outputOnly"
+field37.type = "SFTime"
+field37.name = "totalDuration"
+field37.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"
 
-ProtoInterface18.field.append(field37)
+ProtoInterface16.field.append(field37)
 field38 = x3d.field()
-field38.name = "isActive"
-field38.accessType = "outputOnly"
-field38.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field38.type = "SFBool"
+field38.accessType = "inputOutput"
+field38.type = "SFNode"
+field38.name = "offlineRender"
+field38.appinfo = "OfflineRender node"
 
-ProtoInterface18.field.append(field38)
+ProtoInterface16.field.append(field38)
 field39 = x3d.field()
-field39.name = "totalDuration"
-field39.accessType = "outputOnly"
-field39.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"
-field39.type = "SFTime"
+field39.accessType = "initializeOnly"
+field39.type = "SFBool"
+field39.name = "traceEnabled"
+field39.appinfo = "enable console output to trace script computations and prototype progress"
 
-ProtoInterface18.field.append(field39)
-field40 = x3d.field()
-field40.name = "offlineRender"
-field40.accessType = "inputOutput"
-field40.appinfo = "OfflineRender node"
-field40.type = "SFNode"
-"""initialization node (if any) goes here"""
+ProtoInterface16.field.append(field39)
 
-ProtoInterface18.field.append(field40)
-field41 = x3d.field()
-field41.name = "traceEnabled"
-field41.accessType = "initializeOnly"
-field41.appinfo = "enable console output to trace script computations and prototype progress"
-field41.type = "SFBool"
-field41.value = False
+ProtoDeclare15.ProtoInterface = ProtoInterface16
+ProtoBody40 = x3d.ProtoBody()
+Viewpoint41 = x3d.Viewpoint(DEF="CameraViewpoint")
+IS42 = x3d.IS()
+connect43 = x3d.connect()
+connect43.nodeField = "set_bind"
+connect43.protoField = "set_bind"
 
-ProtoInterface18.field.append(field41)
+IS42.connect.append(connect43)
+connect44 = x3d.connect()
+connect44.nodeField = "description"
+connect44.protoField = "description"
 
-ProtoDeclare17.ProtoInterface = ProtoInterface18
-ProtoBody42 = x3d.ProtoBody()
-Viewpoint43 = x3d.Viewpoint()
-Viewpoint43.DEF = "CameraViewpoint"
-IS44 = x3d.IS()
+IS42.connect.append(connect44)
 connect45 = x3d.connect()
-connect45.nodeField = "description"
-connect45.protoField = "description"
+connect45.nodeField = "position"
+connect45.protoField = "position"
 
-IS44.connect.append(connect45)
+IS42.connect.append(connect45)
 connect46 = x3d.connect()
-connect46.nodeField = "position"
-connect46.protoField = "position"
+connect46.nodeField = "orientation"
+connect46.protoField = "orientation"
 
-IS44.connect.append(connect46)
+IS42.connect.append(connect46)
 connect47 = x3d.connect()
-connect47.nodeField = "orientation"
-connect47.protoField = "orientation"
+connect47.nodeField = "fieldOfView"
+connect47.protoField = "fieldOfView"
 
-IS44.connect.append(connect47)
+IS42.connect.append(connect47)
 connect48 = x3d.connect()
-connect48.nodeField = "fieldOfView"
-connect48.protoField = "fieldOfView"
+connect48.nodeField = "isBound"
+connect48.protoField = "isBound"
 
-IS44.connect.append(connect48)
+IS42.connect.append(connect48)
 connect49 = x3d.connect()
-connect49.nodeField = "set_bind"
-connect49.protoField = "set_bind"
+connect49.nodeField = "bindTime"
+connect49.protoField = "bindTime"
 
-IS44.connect.append(connect49)
-connect50 = x3d.connect()
-connect50.nodeField = "bindTime"
-connect50.protoField = "bindTime"
+IS42.connect.append(connect49)
 
-IS44.connect.append(connect50)
-connect51 = x3d.connect()
-connect51.nodeField = "isBound"
-connect51.protoField = "isBound"
+Viewpoint41.IS = IS42
 
-IS44.connect.append(connect51)
+ProtoBody40.children.append(Viewpoint41)
+NavigationInfo50 = x3d.NavigationInfo(DEF="CameraNavInfo")
+NavigationInfo50.type = ["EXAMINE","FLY","ANY"]
+IS51 = x3d.IS()
+connect52 = x3d.connect()
+connect52.nodeField = "set_bind"
+connect52.protoField = "set_bind"
 
-Viewpoint43.IS = IS44
+IS51.connect.append(connect52)
+connect53 = x3d.connect()
+connect53.nodeField = "headlight"
+connect53.protoField = "headlight"
 
-ProtoBody42.children.append(Viewpoint43)
-"""NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation"""
-NavigationInfo52 = x3d.NavigationInfo()
-NavigationInfo52.DEF = "CameraNavInfo"
-NavigationInfo52.type = ["EXAMINE","FLY","ANY"]
-IS53 = x3d.IS()
+IS51.connect.append(connect53)
 connect54 = x3d.connect()
-connect54.nodeField = "set_bind"
-connect54.protoField = "set_bind"
+connect54.nodeField = "visibilityLimit"
+connect54.protoField = "farClipPlane"
 
-IS53.connect.append(connect54)
-connect55 = x3d.connect()
-connect55.nodeField = "headlight"
-connect55.protoField = "headlight"
+IS51.connect.append(connect54)
 
-IS53.connect.append(connect55)
-connect56 = x3d.connect()
-connect56.nodeField = "visibilityLimit"
-connect56.protoField = "farClipPlane"
+NavigationInfo50.IS = IS51
 
-IS53.connect.append(connect56)
-"""No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing."""
+ProtoBody40.children.append(NavigationInfo50)
+DirectionalLight55 = x3d.DirectionalLight(DEF="CameraDirectionalLight")
+DirectionalLight55.global_ = True
+IS56 = x3d.IS()
+connect57 = x3d.connect()
+connect57.nodeField = "on"
+connect57.protoField = "headlight"
 
-NavigationInfo52.IS = IS53
+IS56.connect.append(connect57)
+connect58 = x3d.connect()
+connect58.nodeField = "color"
+connect58.protoField = "headlightColor"
 
-ProtoBody42.children.append(NavigationInfo52)
-"""this DirectionalLight replaces NavigationInfo headlight in order to add color capability"""
-DirectionalLight57 = x3d.DirectionalLight()
-DirectionalLight57.DEF = "CameraDirectionalLight"
-DirectionalLight57.global_ = True
-"""TODO confirm other default field values match NavigationInfo spec"""
-IS58 = x3d.IS()
+IS56.connect.append(connect58)
 connect59 = x3d.connect()
-connect59.nodeField = "on"
-connect59.protoField = "headlight"
+connect59.nodeField = "intensity"
+connect59.protoField = "headlightIntensity"
 
-IS58.connect.append(connect59)
-connect60 = x3d.connect()
-connect60.nodeField = "color"
-connect60.protoField = "headlightColor"
+IS56.connect.append(connect59)
 
-IS58.connect.append(connect60)
-connect61 = x3d.connect()
-connect61.nodeField = "intensity"
-connect61.protoField = "headlightIntensity"
+DirectionalLight55.IS = IS56
 
-IS58.connect.append(connect61)
+ProtoBody40.children.append(DirectionalLight55)
+PositionInterpolator60 = x3d.PositionInterpolator(DEF="CameraPositionInterpolator")
+PositionInterpolator60.key = [0,1]
+PositionInterpolator60.keyValue = [(0, 0, 0),(0, 0, 0)]
+IS61 = x3d.IS()
+connect62 = x3d.connect()
+connect62.nodeField = "set_fraction"
+connect62.protoField = "set_fraction"
 
-DirectionalLight57.IS = IS58
+IS61.connect.append(connect62)
 
-ProtoBody42.children.append(DirectionalLight57)
-PositionInterpolator62 = x3d.PositionInterpolator()
-PositionInterpolator62.DEF = "CameraPositionInterpolator"
-PositionInterpolator62.key = [0,1]
-PositionInterpolator62.keyValue = [(0, 0, 0),(0, 0, 0)]
-IS63 = x3d.IS()
-connect64 = x3d.connect()
-connect64.nodeField = "set_fraction"
-connect64.protoField = "set_fraction"
+PositionInterpolator60.IS = IS61
 
-IS63.connect.append(connect64)
+ProtoBody40.children.append(PositionInterpolator60)
+OrientationInterpolator63 = x3d.OrientationInterpolator(DEF="CameraOrientationInterpolator")
+OrientationInterpolator63.key = [0,1]
+OrientationInterpolator63.keyValue = [(0, 1, 0, 0),(0, 1, 0, 0)]
+IS64 = x3d.IS()
+connect65 = x3d.connect()
+connect65.nodeField = "set_fraction"
+connect65.protoField = "set_fraction"
 
-PositionInterpolator62.IS = IS63
+IS64.connect.append(connect65)
 
-ProtoBody42.children.append(PositionInterpolator62)
-OrientationInterpolator65 = x3d.OrientationInterpolator()
-OrientationInterpolator65.DEF = "CameraOrientationInterpolator"
-OrientationInterpolator65.key = [0,1]
-OrientationInterpolator65.keyValue = [(0, 1, 0, 0),(0, 1, 0, 0)]
-IS66 = x3d.IS()
-connect67 = x3d.connect()
-connect67.nodeField = "set_fraction"
-connect67.protoField = "set_fraction"
+OrientationInterpolator63.IS = IS64
 
-IS66.connect.append(connect67)
+ProtoBody40.children.append(OrientationInterpolator63)
+Script66 = x3d.Script(DEF="CameraScript")
+Script66.directOutput = True
+Script66.mustEvaluate = True
+field67 = x3d.field()
+field67.accessType = "inputOutput"
+field67.type = "SFString"
+field67.name = "description"
+field67.appinfo = "Text description to be displayed for this Camera"
 
-OrientationInterpolator65.IS = IS66
+Script66.field.append(field67)
+field68 = x3d.field()
+field68.accessType = "inputOutput"
+field68.type = "SFVec3f"
+field68.name = "position"
+field68.appinfo = "Camera position in local transformation frame"
 
-ProtoBody42.children.append(OrientationInterpolator65)
-ROUTE68 = x3d.ROUTE()
-ROUTE68.fromField = "value_changed"
-ROUTE68.fromNode = "CameraPositionInterpolator"
-ROUTE68.toField = "position"
-ROUTE68.toNode = "CameraViewpoint"
+Script66.field.append(field68)
+field69 = x3d.field()
+field69.accessType = "inputOutput"
+field69.type = "SFRotation"
+field69.name = "orientation"
+field69.appinfo = "Camera rotation in local transformation frame"
 
-ProtoBody42.children.append(ROUTE68)
-ROUTE69 = x3d.ROUTE()
-ROUTE69.fromField = "value_changed"
-ROUTE69.fromNode = "CameraOrientationInterpolator"
-ROUTE69.toField = "orientation"
-ROUTE69.toNode = "CameraViewpoint"
+Script66.field.append(field69)
+field70 = x3d.field()
+field70.accessType = "inputOnly"
+field70.type = "SFFloat"
+field70.name = "set_fraction"
+field70.appinfo = "input fraction drives interpolators"
 
-ProtoBody42.children.append(ROUTE69)
-Script70 = x3d.Script()
-Script70.DEF = "CameraScript"
-Script70.directOutput = True
-Script70.mustEvaluate = True
-"""binding is controlled externally, all camera operations proceed the same regardless of whether bound or not"""
+Script66.field.append(field70)
 field71 = x3d.field()
-field71.name = "description"
-field71.accessType = "inputOutput"
-field71.appinfo = "Text description to be displayed for this Camera"
-field71.type = "SFString"
+field71.accessType = "inputOnly"
+field71.type = "SFBool"
+field71.name = "set_bind"
+field71.appinfo = "input event binds or unbinds this Camera"
 
-Script70.field.append(field71)
+Script66.field.append(field71)
 field72 = x3d.field()
-field72.name = "position"
 field72.accessType = "inputOutput"
-field72.appinfo = "Camera position in local transformation frame"
-field72.type = "SFVec3f"
+field72.type = "SFFloat"
+field72.name = "fieldOfView"
+field72.appinfo = "pi/4"
 
-Script70.field.append(field72)
+Script66.field.append(field72)
 field73 = x3d.field()
-field73.name = "orientation"
 field73.accessType = "inputOutput"
-field73.appinfo = "Camera rotation in local transformation frame"
-field73.type = "SFRotation"
+field73.type = "SFFloat"
+field73.name = "nearClipPlane"
+field73.appinfo = "Vector distance to near clipping plane"
 
-Script70.field.append(field73)
+Script66.field.append(field73)
 field74 = x3d.field()
-field74.name = "set_fraction"
-field74.accessType = "inputOnly"
-field74.appinfo = "input fraction drives interpolators"
+field74.accessType = "inputOutput"
 field74.type = "SFFloat"
+field74.name = "farClipPlane"
+field74.appinfo = "Vector distance to far clipping plane"
 
-Script70.field.append(field74)
+Script66.field.append(field74)
 field75 = x3d.field()
-field75.name = "set_bind"
-field75.accessType = "inputOnly"
-field75.appinfo = "input event binds or unbinds this Camera"
-field75.type = "SFBool"
+field75.accessType = "inputOutput"
+field75.type = "MFNode"
+field75.name = "shots"
+field75.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes"
 
-Script70.field.append(field75)
+Script66.field.append(field75)
 field76 = x3d.field()
-field76.name = "fieldOfView"
 field76.accessType = "inputOutput"
-field76.appinfo = "pi/4"
-field76.type = "SFFloat"
+field76.type = "SFColor"
+field76.name = "filterColor"
+field76.appinfo = "Camera filter color that modifies virtual lens capture"
 
-Script70.field.append(field76)
+Script66.field.append(field76)
 field77 = x3d.field()
-field77.name = "nearClipPlane"
 field77.accessType = "inputOutput"
-field77.appinfo = "Vector distance to near clipping plane"
 field77.type = "SFFloat"
+field77.name = "filterTransparency"
+field77.appinfo = "Camera filter transparency that modifies virtual lens capture"
 
-Script70.field.append(field77)
+Script66.field.append(field77)
 field78 = x3d.field()
-field78.name = "farClipPlane"
 field78.accessType = "inputOutput"
-field78.appinfo = "Vector distance to far clipping plane"
-field78.type = "SFFloat"
+field78.type = "SFVec3f"
+field78.name = "upVector"
+field78.appinfo = "upVector changes modify camera orientation (and possibly vice versa)"
 
-Script70.field.append(field78)
+Script66.field.append(field78)
 field79 = x3d.field()
-field79.name = "shots"
 field79.accessType = "inputOutput"
-field79.appinfo = "Array of CameraShot nodes which in turn contain CameraMovement nodes"
-field79.type = "MFNode"
-"""initialization nodes (if any) go here"""
+field79.type = "SFFloat"
+field79.name = "fStop"
+field79.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-Script70.field.append(field79)
+Script66.field.append(field79)
 field80 = x3d.field()
-field80.name = "filterColor"
 field80.accessType = "inputOutput"
-field80.appinfo = "Camera filter color that modifies virtual lens capture"
-field80.type = "SFColor"
+field80.type = "SFFloat"
+field80.name = "focusDistance"
+field80.appinfo = "Distance to focal plane of sharpest focus"
 
-Script70.field.append(field80)
+Script66.field.append(field80)
 field81 = x3d.field()
-field81.name = "filterTransparency"
-field81.accessType = "inputOutput"
-field81.appinfo = "Camera filter transparency that modifies virtual lens capture"
-field81.type = "SFFloat"
+field81.accessType = "outputOnly"
+field81.type = "SFBool"
+field81.name = "isActive"
+field81.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-Script70.field.append(field81)
+Script66.field.append(field81)
 field82 = x3d.field()
-field82.name = "upVector"
-field82.accessType = "inputOutput"
-field82.appinfo = "upVector changes modify camera orientation (and possibly vice versa)"
-field82.type = "SFVec3f"
+field82.accessType = "outputOnly"
+field82.type = "SFTime"
+field82.name = "totalDuration"
+field82.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"
 
-Script70.field.append(field82)
+Script66.field.append(field82)
 field83 = x3d.field()
-field83.name = "fStop"
 field83.accessType = "inputOutput"
-field83.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field83.type = "SFFloat"
+field83.type = "SFNode"
+field83.name = "offlineRender"
+field83.appinfo = "OfflineRender node"
 
-Script70.field.append(field83)
+Script66.field.append(field83)
 field84 = x3d.field()
-field84.name = "focusDistance"
-field84.accessType = "inputOutput"
-field84.appinfo = "Distance to focal plane of sharpest focus"
-field84.type = "SFFloat"
+field84.accessType = "initializeOnly"
+field84.type = "SFNode"
+field84.name = "ViewpointNode"
+field84.appinfo = "node reference to permit getting setting fields from within Script"
+Viewpoint85 = x3d.Viewpoint(USE="CameraViewpoint")
 
-Script70.field.append(field84)
-field85 = x3d.field()
-field85.name = "isActive"
-field85.accessType = "outputOnly"
-field85.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field85.type = "SFBool"
+field84.children.append(Viewpoint85)
 
-Script70.field.append(field85)
+Script66.field.append(field84)
 field86 = x3d.field()
-field86.name = "totalDuration"
-field86.accessType = "outputOnly"
-field86.appinfo = "Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"
-field86.type = "SFTime"
+field86.accessType = "initializeOnly"
+field86.type = "SFNode"
+field86.name = "NavInfoNode"
+field86.appinfo = "node reference to permit getting setting fields from within Script"
+NavigationInfo87 = x3d.NavigationInfo(USE="CameraNavInfo")
 
-Script70.field.append(field86)
-field87 = x3d.field()
-field87.name = "offlineRender"
-field87.accessType = "inputOutput"
-field87.appinfo = "OfflineRender node"
-field87.type = "SFNode"
-"""initialization node (if any) goes here"""
+field86.children.append(NavigationInfo87)
 
-Script70.field.append(field87)
+Script66.field.append(field86)
 field88 = x3d.field()
-field88.name = "ViewpointNode"
 field88.accessType = "initializeOnly"
-field88.appinfo = "node reference to permit getting setting fields from within Script"
 field88.type = "SFNode"
-Viewpoint89 = x3d.Viewpoint()
-Viewpoint89.USE = "CameraViewpoint"
+field88.name = "CameraPI"
+field88.appinfo = "node reference to permit getting setting fields from within Script"
+PositionInterpolator89 = x3d.PositionInterpolator(USE="CameraPositionInterpolator")
 
-field88.children.append(Viewpoint89)
+field88.children.append(PositionInterpolator89)
 
-Script70.field.append(field88)
+Script66.field.append(field88)
 field90 = x3d.field()
-field90.name = "NavInfoNode"
 field90.accessType = "initializeOnly"
-field90.appinfo = "node reference to permit getting setting fields from within Script"
 field90.type = "SFNode"
-NavigationInfo91 = x3d.NavigationInfo()
-NavigationInfo91.USE = "CameraNavInfo"
+field90.name = "CameraOI"
+field90.appinfo = "node reference to permit getting setting fields from within Script"
+OrientationInterpolator91 = x3d.OrientationInterpolator(USE="CameraOrientationInterpolator")
 
-field90.children.append(NavigationInfo91)
+field90.children.append(OrientationInterpolator91)
 
-Script70.field.append(field90)
+Script66.field.append(field90)
 field92 = x3d.field()
-field92.name = "CameraPI"
-field92.accessType = "initializeOnly"
-field92.appinfo = "node reference to permit getting setting fields from within Script"
-field92.type = "SFNode"
-PositionInterpolator93 = x3d.PositionInterpolator()
-PositionInterpolator93.USE = "CameraPositionInterpolator"
+field92.accessType = "inputOutput"
+field92.type = "MFFloat"
+field92.name = "key"
+field92.appinfo = "key array for interpolators"
 
-field92.children.append(PositionInterpolator93)
+Script66.field.append(field92)
+field93 = x3d.field()
+field93.accessType = "inputOutput"
+field93.type = "MFVec3f"
+field93.name = "keyValuePosition"
+field93.appinfo = "keyValue array for PositionInterpolator"
 
-Script70.field.append(field92)
+Script66.field.append(field93)
 field94 = x3d.field()
-field94.name = "CameraOI"
-field94.accessType = "initializeOnly"
-field94.appinfo = "node reference to permit getting setting fields from within Script"
-field94.type = "SFNode"
-OrientationInterpolator95 = x3d.OrientationInterpolator()
-OrientationInterpolator95.USE = "CameraOrientationInterpolator"
+field94.accessType = "inputOutput"
+field94.type = "MFRotation"
+field94.name = "keyValueOrientation"
+field94.appinfo = "keyValue array for OrientationInterpolator"
 
-field94.children.append(OrientationInterpolator95)
+Script66.field.append(field94)
+field95 = x3d.field()
+field95.accessType = "inputOutput"
+field95.type = "SFBool"
+field95.name = "animated"
+field95.appinfo = "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events"
 
-Script70.field.append(field94)
+Script66.field.append(field95)
 field96 = x3d.field()
-field96.name = "key"
-field96.accessType = "inputOutput"
-field96.appinfo = "key array for interpolators"
-field96.type = "MFFloat"
+field96.accessType = "initializeOnly"
+field96.type = "SFBool"
+field96.name = "initialized"
+field96.appinfo = "perform checkShots() function once immediately after initialization"
 
-Script70.field.append(field96)
+Script66.field.append(field96)
 field97 = x3d.field()
-field97.name = "keyValuePosition"
-field97.accessType = "inputOutput"
-field97.appinfo = "keyValue array for PositionInterpolator"
-field97.type = "MFVec3f"
+field97.accessType = "initializeOnly"
+field97.type = "SFInt32"
+field97.name = "shotCount"
+field97.appinfo = "how many CameraShot nodes are contained in shots array"
 
-Script70.field.append(field97)
+Script66.field.append(field97)
 field98 = x3d.field()
-field98.name = "keyValueOrientation"
-field98.accessType = "inputOutput"
-field98.appinfo = "keyValue array for OrientationInterpolator"
-field98.type = "MFRotation"
+field98.accessType = "initializeOnly"
+field98.type = "SFInt32"
+field98.name = "movesCount"
+field98.appinfo = "how many CameraMove nodes are contained in moves array"
 
-Script70.field.append(field98)
+Script66.field.append(field98)
 field99 = x3d.field()
-field99.name = "animated"
-field99.accessType = "inputOutput"
-field99.appinfo = "whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events"
-field99.type = "SFBool"
-field99.value = False
+field99.accessType = "initializeOnly"
+field99.type = "SFFloat"
+field99.name = "frameCount"
+field99.appinfo = "how many frames were created in current loop"
 
-Script70.field.append(field99)
+Script66.field.append(field99)
 field100 = x3d.field()
-field100.name = "initialized"
 field100.accessType = "initializeOnly"
-field100.appinfo = "perform checkShots() function once immediately after initialization"
-field100.type = "SFBool"
-field100.value = False
+field100.type = "SFTime"
+field100.name = "startTime"
+field100.value = 0
+field100.appinfo = "holding variable"
 
-Script70.field.append(field100)
+Script66.field.append(field100)
 field101 = x3d.field()
-field101.name = "shotCount"
 field101.accessType = "initializeOnly"
-field101.appinfo = "how many CameraShot nodes are contained in shots array"
-field101.type = "SFInt32"
+field101.type = "SFTime"
+field101.name = "priorTraceTime"
 field101.value = 0
+field101.appinfo = "holding variable"
 
-Script70.field.append(field101)
+Script66.field.append(field101)
 field102 = x3d.field()
-field102.name = "movesCount"
 field102.accessType = "initializeOnly"
-field102.appinfo = "how many CameraMove nodes are contained in moves array"
-field102.type = "SFInt32"
-field102.value = 0
+field102.type = "SFBool"
+field102.name = "traceEnabled"
+field102.appinfo = "enable console output to trace script computations and prototype progress"
 
-Script70.field.append(field102)
-field103 = x3d.field()
-field103.name = "frameCount"
-field103.accessType = "initializeOnly"
-field103.appinfo = "how many frames were created in current loop"
-field103.type = "SFFloat"
-field103.value = 0
+Script66.field.append(field102)
 
-Script70.field.append(field103)
-field104 = x3d.field()
-field104.name = "startTime"
-field104.accessType = "initializeOnly"
-field104.appinfo = "holding variable"
-field104.type = "SFTime"
-field104.value = 0
-
-Script70.field.append(field104)
-field105 = x3d.field()
-field105.name = "priorTraceTime"
-field105.accessType = "initializeOnly"
-field105.appinfo = "holding variable"
-field105.type = "SFTime"
-field105.value = 0
-
-Script70.field.append(field105)
-field106 = x3d.field()
-field106.name = "traceEnabled"
-field106.accessType = "initializeOnly"
-field106.appinfo = "enable console output to trace script computations and prototype progress"
-field106.type = "SFBool"
-
-Script70.field.append(field106)
-IS107 = x3d.IS()
-connect108 = x3d.connect()
-connect108.nodeField = "description"
-connect108.protoField = "description"
-
-IS107.connect.append(connect108)
-connect109 = x3d.connect()
-connect109.nodeField = "position"
-connect109.protoField = "position"
-
-IS107.connect.append(connect109)
-connect110 = x3d.connect()
-connect110.nodeField = "orientation"
-connect110.protoField = "orientation"
-
-IS107.connect.append(connect110)
-connect111 = x3d.connect()
-connect111.nodeField = "set_fraction"
-connect111.protoField = "set_fraction"
-
-IS107.connect.append(connect111)
-connect112 = x3d.connect()
-connect112.nodeField = "set_bind"
-connect112.protoField = "set_bind"
-
-IS107.connect.append(connect112)
-connect113 = x3d.connect()
-connect113.nodeField = "fieldOfView"
-connect113.protoField = "fieldOfView"
-
-IS107.connect.append(connect113)
-connect114 = x3d.connect()
-connect114.nodeField = "nearClipPlane"
-connect114.protoField = "nearClipPlane"
-
-IS107.connect.append(connect114)
-connect115 = x3d.connect()
-connect115.nodeField = "farClipPlane"
-connect115.protoField = "farClipPlane"
-
-IS107.connect.append(connect115)
-connect116 = x3d.connect()
-connect116.nodeField = "shots"
-connect116.protoField = "shots"
-
-IS107.connect.append(connect116)
-connect117 = x3d.connect()
-connect117.nodeField = "filterColor"
-connect117.protoField = "filterColor"
-
-IS107.connect.append(connect117)
-connect118 = x3d.connect()
-connect118.nodeField = "filterTransparency"
-connect118.protoField = "filterTransparency"
-
-IS107.connect.append(connect118)
-connect119 = x3d.connect()
-connect119.nodeField = "upVector"
-connect119.protoField = "upVector"
-
-IS107.connect.append(connect119)
-connect120 = x3d.connect()
-connect120.nodeField = "fStop"
-connect120.protoField = "fStop"
-
-IS107.connect.append(connect120)
-connect121 = x3d.connect()
-connect121.nodeField = "focusDistance"
-connect121.protoField = "focusDistance"
-
-IS107.connect.append(connect121)
-connect122 = x3d.connect()
-connect122.nodeField = "isActive"
-connect122.protoField = "isActive"
-
-IS107.connect.append(connect122)
-connect123 = x3d.connect()
-connect123.nodeField = "totalDuration"
-connect123.protoField = "totalDuration"
-
-IS107.connect.append(connect123)
-connect124 = x3d.connect()
-connect124.nodeField = "offlineRender"
-connect124.protoField = "offlineRender"
-
-IS107.connect.append(connect124)
-connect125 = x3d.connect()
-connect125.nodeField = "traceEnabled"
-connect125.protoField = "traceEnabled"
-
-IS107.connect.append(connect125)
-
-Script70.IS = IS107
-
-Script70.sourceCode = '''ecmascript:\n"+
+Script66.sourceCode = '''ecmascript:\n"+
 "function initialize () // CameraScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1086,323 +940,360 @@ Script70.sourceCode = '''ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[Camera] ' + outputString + '\\n');\n"+
 "}'''
+IS103 = x3d.IS()
+connect104 = x3d.connect()
+connect104.nodeField = "description"
+connect104.protoField = "description"
 
-ProtoBody42.children.append(Script70)
+IS103.connect.append(connect104)
+connect105 = x3d.connect()
+connect105.nodeField = "position"
+connect105.protoField = "position"
+
+IS103.connect.append(connect105)
+connect106 = x3d.connect()
+connect106.nodeField = "orientation"
+connect106.protoField = "orientation"
+
+IS103.connect.append(connect106)
+connect107 = x3d.connect()
+connect107.nodeField = "set_fraction"
+connect107.protoField = "set_fraction"
+
+IS103.connect.append(connect107)
+connect108 = x3d.connect()
+connect108.nodeField = "set_bind"
+connect108.protoField = "set_bind"
+
+IS103.connect.append(connect108)
+connect109 = x3d.connect()
+connect109.nodeField = "fieldOfView"
+connect109.protoField = "fieldOfView"
+
+IS103.connect.append(connect109)
+connect110 = x3d.connect()
+connect110.nodeField = "nearClipPlane"
+connect110.protoField = "nearClipPlane"
+
+IS103.connect.append(connect110)
+connect111 = x3d.connect()
+connect111.nodeField = "farClipPlane"
+connect111.protoField = "farClipPlane"
+
+IS103.connect.append(connect111)
+connect112 = x3d.connect()
+connect112.nodeField = "shots"
+connect112.protoField = "shots"
+
+IS103.connect.append(connect112)
+connect113 = x3d.connect()
+connect113.nodeField = "filterColor"
+connect113.protoField = "filterColor"
+
+IS103.connect.append(connect113)
+connect114 = x3d.connect()
+connect114.nodeField = "filterTransparency"
+connect114.protoField = "filterTransparency"
+
+IS103.connect.append(connect114)
+connect115 = x3d.connect()
+connect115.nodeField = "upVector"
+connect115.protoField = "upVector"
+
+IS103.connect.append(connect115)
+connect116 = x3d.connect()
+connect116.nodeField = "fStop"
+connect116.protoField = "fStop"
+
+IS103.connect.append(connect116)
+connect117 = x3d.connect()
+connect117.nodeField = "focusDistance"
+connect117.protoField = "focusDistance"
+
+IS103.connect.append(connect117)
+connect118 = x3d.connect()
+connect118.nodeField = "isActive"
+connect118.protoField = "isActive"
+
+IS103.connect.append(connect118)
+connect119 = x3d.connect()
+connect119.nodeField = "totalDuration"
+connect119.protoField = "totalDuration"
+
+IS103.connect.append(connect119)
+connect120 = x3d.connect()
+connect120.nodeField = "offlineRender"
+connect120.protoField = "offlineRender"
+
+IS103.connect.append(connect120)
+connect121 = x3d.connect()
+connect121.nodeField = "traceEnabled"
+connect121.protoField = "traceEnabled"
+
+IS103.connect.append(connect121)
+
+Script66.IS = IS103
+
+ProtoBody40.children.append(Script66)
+ROUTE122 = x3d.ROUTE()
+ROUTE122.fromNode = "CameraPositionInterpolator"
+ROUTE122.fromField = "value_changed"
+ROUTE122.toNode = "CameraViewpoint"
+ROUTE122.toField = "set_position"
+
+ProtoBody40.children.append(ROUTE122)
+ROUTE123 = x3d.ROUTE()
+ROUTE123.fromNode = "CameraOrientationInterpolator"
+ROUTE123.fromField = "value_changed"
+ROUTE123.toNode = "CameraViewpoint"
+ROUTE123.toField = "set_orientation"
+
+ProtoBody40.children.append(ROUTE123)
+ROUTE124 = x3d.ROUTE()
+ROUTE124.fromNode = "CameraScript"
+ROUTE124.fromField = "position_changed"
+ROUTE124.toNode = "CameraViewpoint"
+ROUTE124.toField = "set_position"
+
+ProtoBody40.children.append(ROUTE124)
+ROUTE125 = x3d.ROUTE()
+ROUTE125.fromNode = "CameraScript"
+ROUTE125.fromField = "orientation_changed"
+ROUTE125.toNode = "CameraViewpoint"
+ROUTE125.toField = "set_orientation"
+
+ProtoBody40.children.append(ROUTE125)
 ROUTE126 = x3d.ROUTE()
-ROUTE126.fromField = "position"
 ROUTE126.fromNode = "CameraScript"
-ROUTE126.toField = "position"
+ROUTE126.fromField = "isActive"
 ROUTE126.toNode = "CameraViewpoint"
+ROUTE126.toField = "set_bind"
 
-ProtoBody42.children.append(ROUTE126)
+ProtoBody40.children.append(ROUTE126)
 ROUTE127 = x3d.ROUTE()
-ROUTE127.fromField = "orientation"
 ROUTE127.fromNode = "CameraScript"
-ROUTE127.toField = "orientation"
-ROUTE127.toNode = "CameraViewpoint"
+ROUTE127.fromField = "isActive"
+ROUTE127.toNode = "CameraNavInfo"
+ROUTE127.toField = "set_bind"
 
-ProtoBody42.children.append(ROUTE127)
+ProtoBody40.children.append(ROUTE127)
 ROUTE128 = x3d.ROUTE()
-ROUTE128.fromField = "isActive"
 ROUTE128.fromNode = "CameraScript"
-ROUTE128.toField = "set_bind"
-ROUTE128.toNode = "CameraViewpoint"
+ROUTE128.fromField = "isActive"
+ROUTE128.toNode = "CameraDirectionalLight"
+ROUTE128.toField = "set_on"
 
-ProtoBody42.children.append(ROUTE128)
-ROUTE129 = x3d.ROUTE()
-ROUTE129.fromField = "isActive"
-ROUTE129.fromNode = "CameraScript"
-ROUTE129.toField = "set_bind"
-ROUTE129.toNode = "CameraNavInfo"
+ProtoBody40.children.append(ROUTE128)
 
-ProtoBody42.children.append(ROUTE129)
-ROUTE130 = x3d.ROUTE()
-ROUTE130.fromField = "isActive"
-ROUTE130.fromNode = "CameraScript"
-ROUTE130.toField = "on"
-ROUTE130.toNode = "CameraDirectionalLight"
+ProtoDeclare15.ProtoBody = ProtoBody40
 
-ProtoBody42.children.append(ROUTE130)
+Scene14.children.append(ProtoDeclare15)
+ProtoDeclare129 = x3d.ProtoDeclare()
+ProtoDeclare129.name = "CameraShot"
+ProtoDeclare129.appinfo = "CameraShot collects a specific set of CameraMovement animations that make up an individual shot."
+ProtoInterface130 = x3d.ProtoInterface()
+field131 = x3d.field()
+field131.accessType = "inputOutput"
+field131.type = "SFString"
+field131.name = "description"
+field131.appinfo = "Text description to be displayed for this CameraShot"
 
-ProtoDeclare17.ProtoBody = ProtoBody42
+ProtoInterface130.field.append(field131)
+field132 = x3d.field()
+field132.accessType = "inputOutput"
+field132.type = "SFBool"
+field132.name = "enabled"
+field132.value = True
+field132.appinfo = "Whether this CameraShot can be activated"
 
-Scene16.children.append(ProtoDeclare17)
-"""=============== CameraShot =============="""
-ProtoDeclare131 = x3d.ProtoDeclare()
-ProtoDeclare131.name = "CameraShot"
-ProtoDeclare131.appinfo = "CameraShot collects a specific set of CameraMovement animations that make up an individual shot."
-ProtoInterface132 = x3d.ProtoInterface()
+ProtoInterface130.field.append(field132)
 field133 = x3d.field()
-field133.name = "description"
 field133.accessType = "inputOutput"
-field133.appinfo = "Text description to be displayed for this CameraShot"
-field133.type = "SFString"
+field133.type = "MFNode"
+field133.name = "moves"
+field133.appinfo = "Set of CameraMovement nodes"
 
-ProtoInterface132.field.append(field133)
+ProtoInterface130.field.append(field133)
 field134 = x3d.field()
-field134.name = "enabled"
 field134.accessType = "inputOutput"
-field134.appinfo = "Whether this CameraShot can be activated"
-field134.type = "SFBool"
-field134.value = True
+field134.type = "SFVec3f"
+field134.name = "initialPosition"
+field134.value = [0,0,10]
+field134.appinfo = "Setup to reinitialize camera position for this shot"
 
-ProtoInterface132.field.append(field134)
+ProtoInterface130.field.append(field134)
 field135 = x3d.field()
-field135.name = "moves"
 field135.accessType = "inputOutput"
-field135.appinfo = "Set of CameraMovement nodes"
-field135.type = "MFNode"
-"""initializing CameraMovement nodes are inserted here by scene author using ProtoInstance"""
+field135.type = "SFRotation"
+field135.name = "initialOrientation"
+field135.appinfo = "Setup to reinitialize camera rotation for this shot"
 
-ProtoInterface132.field.append(field135)
+ProtoInterface130.field.append(field135)
 field136 = x3d.field()
-field136.name = "initialPosition"
 field136.accessType = "inputOutput"
-field136.appinfo = "Setup to reinitialize camera position for this shot"
 field136.type = "SFVec3f"
-field136.value = [0,0,10]
+field136.name = "initialAimPoint"
+field136.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot"
 
-ProtoInterface132.field.append(field136)
+ProtoInterface130.field.append(field136)
 field137 = x3d.field()
-field137.name = "initialOrientation"
 field137.accessType = "inputOutput"
-field137.appinfo = "Setup to reinitialize camera rotation for this shot"
-field137.type = "SFRotation"
-field137.value = [0,0,1,0]
+field137.type = "SFFloat"
+field137.name = "initialFieldOfView"
+field137.value = 0.7854
+field137.appinfo = "pi/4"
 
-ProtoInterface132.field.append(field137)
+ProtoInterface130.field.append(field137)
 field138 = x3d.field()
-field138.name = "initialAimPoint"
 field138.accessType = "inputOutput"
-field138.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot"
-field138.type = "SFVec3f"
-field138.value = [0,0,0]
+field138.type = "SFFloat"
+field138.name = "initialFStop"
+field138.value = 5.6
+field138.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-ProtoInterface132.field.append(field138)
+ProtoInterface130.field.append(field138)
 field139 = x3d.field()
-field139.name = "initialFieldOfView"
 field139.accessType = "inputOutput"
-field139.appinfo = "pi/4"
 field139.type = "SFFloat"
-field139.value = 0.7854
+field139.name = "initialFocusDistance"
+field139.value = 10
+field139.appinfo = "Distance to focal plane of sharpest focus"
 
-ProtoInterface132.field.append(field139)
+ProtoInterface130.field.append(field139)
 field140 = x3d.field()
-field140.name = "initialFStop"
-field140.accessType = "inputOutput"
-field140.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field140.type = "SFFloat"
-field140.value = 5.6
+field140.accessType = "outputOnly"
+field140.type = "SFTime"
+field140.name = "shotDuration"
+field140.appinfo = "Subtotal duration of contained CameraMovement move durations"
 
-ProtoInterface132.field.append(field140)
+ProtoInterface130.field.append(field140)
 field141 = x3d.field()
-field141.name = "initialFocusDistance"
-field141.accessType = "inputOutput"
-field141.appinfo = "Distance to focal plane of sharpest focus"
-field141.type = "SFFloat"
-field141.value = 10
+field141.accessType = "outputOnly"
+field141.type = "SFBool"
+field141.name = "isActive"
+field141.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-ProtoInterface132.field.append(field141)
+ProtoInterface130.field.append(field141)
 field142 = x3d.field()
-field142.name = "shotDuration"
-field142.accessType = "outputOnly"
-field142.appinfo = "Subtotal duration of contained CameraMovement move durations"
-field142.type = "SFTime"
+field142.accessType = "initializeOnly"
+field142.type = "SFBool"
+field142.name = "traceEnabled"
+field142.appinfo = "enable console output to trace script computations and prototype progress"
 
-ProtoInterface132.field.append(field142)
-field143 = x3d.field()
-field143.name = "isActive"
-field143.accessType = "outputOnly"
-field143.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field143.type = "SFBool"
+ProtoInterface130.field.append(field142)
 
-ProtoInterface132.field.append(field143)
-field144 = x3d.field()
-field144.name = "traceEnabled"
-field144.accessType = "initializeOnly"
-field144.appinfo = "enable console output to trace script computations and prototype progress"
-field144.type = "SFBool"
-field144.value = False
+ProtoDeclare129.ProtoInterface = ProtoInterface130
+ProtoBody143 = x3d.ProtoBody()
+Script144 = x3d.Script(DEF="CameraShotScript")
+Script144.directOutput = True
+Script144.mustEvaluate = True
+field145 = x3d.field()
+field145.accessType = "inputOutput"
+field145.type = "SFString"
+field145.name = "description"
+field145.appinfo = "Text description to be displayed for this CameraShot"
 
-ProtoInterface132.field.append(field144)
+Script144.field.append(field145)
+field146 = x3d.field()
+field146.accessType = "inputOutput"
+field146.type = "SFBool"
+field146.name = "enabled"
+field146.appinfo = "Whether this CameraShot can be activated"
 
-ProtoDeclare131.ProtoInterface = ProtoInterface132
-ProtoBody145 = x3d.ProtoBody()
-Script146 = x3d.Script()
-Script146.DEF = "CameraShotScript"
-Script146.directOutput = True
-Script146.mustEvaluate = True
+Script144.field.append(field146)
 field147 = x3d.field()
-field147.name = "description"
 field147.accessType = "inputOutput"
-field147.appinfo = "Text description to be displayed for this CameraShot"
-field147.type = "SFString"
+field147.type = "MFNode"
+field147.name = "moves"
+field147.appinfo = "Set of CameraMovement nodes"
 
-Script146.field.append(field147)
+Script144.field.append(field147)
 field148 = x3d.field()
-field148.name = "enabled"
 field148.accessType = "inputOutput"
-field148.appinfo = "Whether this CameraShot can be activated"
-field148.type = "SFBool"
+field148.type = "SFVec3f"
+field148.name = "initialPosition"
+field148.appinfo = "Setup to reinitialize camera position for this shot"
 
-Script146.field.append(field148)
+Script144.field.append(field148)
 field149 = x3d.field()
-field149.name = "moves"
 field149.accessType = "inputOutput"
-field149.appinfo = "Set of CameraMovement nodes"
-field149.type = "MFNode"
-"""initialization nodes (if any) go here"""
+field149.type = "SFRotation"
+field149.name = "initialOrientation"
+field149.appinfo = "Setup to reinitialize camera rotation for this shot"
 
-Script146.field.append(field149)
+Script144.field.append(field149)
 field150 = x3d.field()
-field150.name = "initialPosition"
 field150.accessType = "inputOutput"
-field150.appinfo = "Setup to reinitialize camera position for this shot"
 field150.type = "SFVec3f"
+field150.name = "initialAimPoint"
+field150.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot"
 
-Script146.field.append(field150)
+Script144.field.append(field150)
 field151 = x3d.field()
-field151.name = "initialOrientation"
 field151.accessType = "inputOutput"
-field151.appinfo = "Setup to reinitialize camera rotation for this shot"
-field151.type = "SFRotation"
+field151.type = "SFFloat"
+field151.name = "initialFieldOfView"
+field151.appinfo = "pi/4"
 
-Script146.field.append(field151)
+Script144.field.append(field151)
 field152 = x3d.field()
-field152.name = "initialAimPoint"
 field152.accessType = "inputOutput"
-field152.appinfo = "Setup to reinitialize aimpoint (relative location for camera direction) for this shot"
-field152.type = "SFVec3f"
+field152.type = "SFFloat"
+field152.name = "initialFStop"
+field152.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-Script146.field.append(field152)
+Script144.field.append(field152)
 field153 = x3d.field()
-field153.name = "initialFieldOfView"
 field153.accessType = "inputOutput"
-field153.appinfo = "pi/4"
 field153.type = "SFFloat"
+field153.name = "initialFocusDistance"
+field153.appinfo = "Distance to focal plane of sharpest focus"
 
-Script146.field.append(field153)
+Script144.field.append(field153)
 field154 = x3d.field()
-field154.name = "initialFStop"
-field154.accessType = "inputOutput"
-field154.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field154.type = "SFFloat"
+field154.accessType = "outputOnly"
+field154.type = "SFTime"
+field154.name = "shotDuration"
+field154.appinfo = "Subtotal duration of contained CameraMovement move durations"
 
-Script146.field.append(field154)
+Script144.field.append(field154)
 field155 = x3d.field()
-field155.name = "initialFocusDistance"
-field155.accessType = "inputOutput"
-field155.appinfo = "Distance to focal plane of sharpest focus"
-field155.type = "SFFloat"
+field155.accessType = "outputOnly"
+field155.type = "SFBool"
+field155.name = "isActive"
+field155.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-Script146.field.append(field155)
+Script144.field.append(field155)
 field156 = x3d.field()
-field156.name = "shotDuration"
-field156.accessType = "outputOnly"
-field156.appinfo = "Subtotal duration of contained CameraMovement move durations"
-field156.type = "SFTime"
+field156.accessType = "initializeOnly"
+field156.type = "SFBool"
+field156.name = "traceEnabled"
+field156.appinfo = "enable console output to trace script computations and prototype progress"
 
-Script146.field.append(field156)
+Script144.field.append(field156)
 field157 = x3d.field()
-field157.name = "isActive"
-field157.accessType = "outputOnly"
-field157.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field157.type = "SFBool"
+field157.accessType = "inputOutput"
+field157.type = "MFFloat"
+field157.name = "key"
+field157.appinfo = "key array for interpolators"
 
-Script146.field.append(field157)
+Script144.field.append(field157)
 field158 = x3d.field()
-field158.name = "traceEnabled"
-field158.accessType = "initializeOnly"
-field158.appinfo = "enable console output to trace script computations and prototype progress"
-field158.type = "SFBool"
+field158.accessType = "inputOutput"
+field158.type = "MFVec3f"
+field158.name = "keyValuePosition"
+field158.appinfo = "keyValue array for PositionInterpolator"
 
-Script146.field.append(field158)
+Script144.field.append(field158)
 field159 = x3d.field()
-field159.name = "key"
 field159.accessType = "inputOutput"
-field159.appinfo = "key array for interpolators"
-field159.type = "MFFloat"
+field159.type = "MFRotation"
+field159.name = "keyValueOrientation"
+field159.appinfo = "keyValue array for OrientationInterpolator"
 
-Script146.field.append(field159)
-field160 = x3d.field()
-field160.name = "keyValuePosition"
-field160.accessType = "inputOutput"
-field160.appinfo = "keyValue array for PositionInterpolator"
-field160.type = "MFVec3f"
+Script144.field.append(field159)
 
-Script146.field.append(field160)
-field161 = x3d.field()
-field161.name = "keyValueOrientation"
-field161.accessType = "inputOutput"
-field161.appinfo = "keyValue array for OrientationInterpolator"
-field161.type = "MFRotation"
-
-Script146.field.append(field161)
-IS162 = x3d.IS()
-connect163 = x3d.connect()
-connect163.nodeField = "description"
-connect163.protoField = "description"
-
-IS162.connect.append(connect163)
-connect164 = x3d.connect()
-connect164.nodeField = "enabled"
-connect164.protoField = "enabled"
-
-IS162.connect.append(connect164)
-connect165 = x3d.connect()
-connect165.nodeField = "moves"
-connect165.protoField = "moves"
-
-IS162.connect.append(connect165)
-connect166 = x3d.connect()
-connect166.nodeField = "initialPosition"
-connect166.protoField = "initialPosition"
-
-IS162.connect.append(connect166)
-connect167 = x3d.connect()
-connect167.nodeField = "initialOrientation"
-connect167.protoField = "initialOrientation"
-
-IS162.connect.append(connect167)
-connect168 = x3d.connect()
-connect168.nodeField = "initialAimPoint"
-connect168.protoField = "initialAimPoint"
-
-IS162.connect.append(connect168)
-connect169 = x3d.connect()
-connect169.nodeField = "initialFieldOfView"
-connect169.protoField = "initialFieldOfView"
-
-IS162.connect.append(connect169)
-connect170 = x3d.connect()
-connect170.nodeField = "initialFStop"
-connect170.protoField = "initialFStop"
-
-IS162.connect.append(connect170)
-connect171 = x3d.connect()
-connect171.nodeField = "initialFocusDistance"
-connect171.protoField = "initialFocusDistance"
-
-IS162.connect.append(connect171)
-connect172 = x3d.connect()
-connect172.nodeField = "shotDuration"
-connect172.protoField = "shotDuration"
-
-IS162.connect.append(connect172)
-connect173 = x3d.connect()
-connect173.nodeField = "isActive"
-connect173.protoField = "isActive"
-
-IS162.connect.append(connect173)
-connect174 = x3d.connect()
-connect174.nodeField = "traceEnabled"
-connect174.protoField = "traceEnabled"
-
-IS162.connect.append(connect174)
-
-Script146.IS = IS162
-
-Script146.sourceCode = '''ecmascript:\n"+
+Script144.sourceCode = '''ecmascript:\n"+
 "function initialize () // CameraShotScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1495,271 +1386,260 @@ Script146.sourceCode = '''ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraShot] ' + outputString + '\\n');\n"+
 "}'''
+IS160 = x3d.IS()
+connect161 = x3d.connect()
+connect161.nodeField = "description"
+connect161.protoField = "description"
 
-ProtoBody145.children.append(Script146)
-"""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""
+IS160.connect.append(connect161)
+connect162 = x3d.connect()
+connect162.nodeField = "enabled"
+connect162.protoField = "enabled"
 
-ProtoDeclare131.ProtoBody = ProtoBody145
+IS160.connect.append(connect162)
+connect163 = x3d.connect()
+connect163.nodeField = "moves"
+connect163.protoField = "moves"
 
-Scene16.children.append(ProtoDeclare131)
-"""=============== CameraMovement =============="""
-ProtoDeclare175 = x3d.ProtoDeclare()
-ProtoDeclare175.name = "CameraMovement"
-ProtoDeclare175.appinfo = "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView."
-ProtoInterface176 = x3d.ProtoInterface()
+IS160.connect.append(connect163)
+connect164 = x3d.connect()
+connect164.nodeField = "initialPosition"
+connect164.protoField = "initialPosition"
+
+IS160.connect.append(connect164)
+connect165 = x3d.connect()
+connect165.nodeField = "initialOrientation"
+connect165.protoField = "initialOrientation"
+
+IS160.connect.append(connect165)
+connect166 = x3d.connect()
+connect166.nodeField = "initialAimPoint"
+connect166.protoField = "initialAimPoint"
+
+IS160.connect.append(connect166)
+connect167 = x3d.connect()
+connect167.nodeField = "initialFieldOfView"
+connect167.protoField = "initialFieldOfView"
+
+IS160.connect.append(connect167)
+connect168 = x3d.connect()
+connect168.nodeField = "initialFStop"
+connect168.protoField = "initialFStop"
+
+IS160.connect.append(connect168)
+connect169 = x3d.connect()
+connect169.nodeField = "initialFocusDistance"
+connect169.protoField = "initialFocusDistance"
+
+IS160.connect.append(connect169)
+connect170 = x3d.connect()
+connect170.nodeField = "shotDuration"
+connect170.protoField = "shotDuration"
+
+IS160.connect.append(connect170)
+connect171 = x3d.connect()
+connect171.nodeField = "isActive"
+connect171.protoField = "isActive"
+
+IS160.connect.append(connect171)
+connect172 = x3d.connect()
+connect172.nodeField = "traceEnabled"
+connect172.protoField = "traceEnabled"
+
+IS160.connect.append(connect172)
+
+Script144.IS = IS160
+
+ProtoBody143.children.append(Script144)
+
+ProtoDeclare129.ProtoBody = ProtoBody143
+
+Scene14.children.append(ProtoDeclare129)
+ProtoDeclare173 = x3d.ProtoDeclare()
+ProtoDeclare173.name = "CameraMovement"
+ProtoDeclare173.appinfo = "CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView."
+ProtoInterface174 = x3d.ProtoInterface()
+field175 = x3d.field()
+field175.accessType = "inputOutput"
+field175.type = "SFString"
+field175.name = "description"
+field175.appinfo = "Text description to be displayed for this CameraMovement"
+
+ProtoInterface174.field.append(field175)
+field176 = x3d.field()
+field176.accessType = "inputOutput"
+field176.type = "SFBool"
+field176.name = "enabled"
+field176.value = True
+field176.appinfo = "Whether this CameraMovement can be activated"
+
+ProtoInterface174.field.append(field176)
 field177 = x3d.field()
-field177.name = "description"
 field177.accessType = "inputOutput"
-field177.appinfo = "Text description to be displayed for this CameraMovement"
-field177.type = "SFString"
+field177.type = "SFFloat"
+field177.name = "duration"
+field177.appinfo = "Duration in seconds for this move"
 
-ProtoInterface176.field.append(field177)
+ProtoInterface174.field.append(field177)
 field178 = x3d.field()
-field178.name = "enabled"
 field178.accessType = "inputOutput"
-field178.appinfo = "Whether this CameraMovement can be activated"
-field178.type = "SFBool"
-field178.value = True
+field178.type = "SFVec3f"
+field178.name = "goalPosition"
+field178.value = [0,0,10]
+field178.appinfo = "Goal camera position for this move"
 
-ProtoInterface176.field.append(field178)
+ProtoInterface174.field.append(field178)
 field179 = x3d.field()
-field179.name = "duration"
 field179.accessType = "inputOutput"
-field179.appinfo = "Duration in seconds for this move"
-field179.type = "SFFloat"
-field179.value = 0
+field179.type = "SFRotation"
+field179.name = "goalOrientation"
+field179.appinfo = "Goal camera rotation for this move"
 
-ProtoInterface176.field.append(field179)
+ProtoInterface174.field.append(field179)
 field180 = x3d.field()
-field180.name = "goalPosition"
 field180.accessType = "inputOutput"
-field180.appinfo = "Goal camera position for this move"
-field180.type = "SFVec3f"
-field180.value = [0,0,10]
+field180.type = "SFBool"
+field180.name = "tracking"
+field180.appinfo = "Whether or not camera direction is tracking towards the aimPoint"
 
-ProtoInterface176.field.append(field180)
+ProtoInterface174.field.append(field180)
 field181 = x3d.field()
-field181.name = "goalOrientation"
 field181.accessType = "inputOutput"
-field181.appinfo = "Goal camera rotation for this move"
-field181.type = "SFRotation"
-field181.value = [0,0,1,0]
+field181.type = "SFVec3f"
+field181.name = "goalAimPoint"
+field181.appinfo = "Goal aimPoint for this move, ignored if tracking=false"
 
-ProtoInterface176.field.append(field181)
+ProtoInterface174.field.append(field181)
 field182 = x3d.field()
-field182.name = "tracking"
 field182.accessType = "inputOutput"
-field182.appinfo = "Whether or not camera direction is tracking towards the aimPoint"
-field182.type = "SFBool"
-field182.value = False
+field182.type = "SFFloat"
+field182.name = "goalFieldOfView"
+field182.value = 0.7854
+field182.appinfo = "Goal fieldOfView for this move"
 
-ProtoInterface176.field.append(field182)
+ProtoInterface174.field.append(field182)
 field183 = x3d.field()
-field183.name = "goalAimPoint"
 field183.accessType = "inputOutput"
-field183.appinfo = "Goal aimPoint for this move, ignored if tracking=false"
-field183.type = "SFVec3f"
-field183.value = [0,0,0]
+field183.type = "SFFloat"
+field183.name = "goalFStop"
+field183.value = 5.6
+field183.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-ProtoInterface176.field.append(field183)
+ProtoInterface174.field.append(field183)
 field184 = x3d.field()
-field184.name = "goalFieldOfView"
 field184.accessType = "inputOutput"
-field184.appinfo = "Goal fieldOfView for this move"
 field184.type = "SFFloat"
-field184.value = 0.7854
+field184.name = "goalFocusDistance"
+field184.value = 10
+field184.appinfo = "Distance to focal plane of sharpest focus"
 
-ProtoInterface176.field.append(field184)
+ProtoInterface174.field.append(field184)
 field185 = x3d.field()
-field185.name = "goalFStop"
-field185.accessType = "inputOutput"
-field185.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field185.type = "SFFloat"
-field185.value = 5.6
+field185.accessType = "outputOnly"
+field185.type = "SFBool"
+field185.name = "isActive"
+field185.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-ProtoInterface176.field.append(field185)
+ProtoInterface174.field.append(field185)
 field186 = x3d.field()
-field186.name = "goalFocusDistance"
-field186.accessType = "inputOutput"
-field186.appinfo = "Distance to focal plane of sharpest focus"
-field186.type = "SFFloat"
-field186.value = 10
+field186.accessType = "initializeOnly"
+field186.type = "SFBool"
+field186.name = "traceEnabled"
+field186.appinfo = "enable console output to trace script computations and prototype progress"
 
-ProtoInterface176.field.append(field186)
-field187 = x3d.field()
-field187.name = "isActive"
-field187.accessType = "outputOnly"
-field187.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field187.type = "SFBool"
+ProtoInterface174.field.append(field186)
 
-ProtoInterface176.field.append(field187)
-field188 = x3d.field()
-field188.name = "traceEnabled"
-field188.accessType = "initializeOnly"
-field188.appinfo = "enable console output to trace script computations and prototype progress"
-field188.type = "SFBool"
-field188.value = False
+ProtoDeclare173.ProtoInterface = ProtoInterface174
+ProtoBody187 = x3d.ProtoBody()
+Script188 = x3d.Script(DEF="CameraMovementScript")
+Script188.directOutput = True
+Script188.mustEvaluate = True
+field189 = x3d.field()
+field189.accessType = "inputOutput"
+field189.type = "SFString"
+field189.name = "description"
+field189.appinfo = "Text description to be displayed for this CameraMovement"
 
-ProtoInterface176.field.append(field188)
+Script188.field.append(field189)
+field190 = x3d.field()
+field190.accessType = "inputOutput"
+field190.type = "SFBool"
+field190.name = "enabled"
+field190.appinfo = "Whether this CameraMovement can be activated"
 
-ProtoDeclare175.ProtoInterface = ProtoInterface176
-ProtoBody189 = x3d.ProtoBody()
-"""First node determines node type of this prototype"""
-"""Subsequent nodes do not render, but still must be a valid X3D subgraph"""
-"""Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events"""
-Script190 = x3d.Script()
-Script190.DEF = "CameraMovementScript"
-Script190.directOutput = True
-Script190.mustEvaluate = True
+Script188.field.append(field190)
 field191 = x3d.field()
-field191.name = "description"
 field191.accessType = "inputOutput"
-field191.appinfo = "Text description to be displayed for this CameraMovement"
-field191.type = "SFString"
+field191.type = "SFFloat"
+field191.name = "duration"
+field191.appinfo = "Duration in seconds for this move"
 
-Script190.field.append(field191)
+Script188.field.append(field191)
 field192 = x3d.field()
-field192.name = "enabled"
 field192.accessType = "inputOutput"
-field192.appinfo = "Whether this CameraMovement can be activated"
-field192.type = "SFBool"
+field192.type = "SFVec3f"
+field192.name = "goalPosition"
+field192.appinfo = "Goal camera position for this move"
 
-Script190.field.append(field192)
+Script188.field.append(field192)
 field193 = x3d.field()
-field193.name = "duration"
 field193.accessType = "inputOutput"
-field193.appinfo = "Duration in seconds for this move"
-field193.type = "SFFloat"
+field193.type = "SFRotation"
+field193.name = "goalOrientation"
+field193.appinfo = "Goal camera rotation for this move"
 
-Script190.field.append(field193)
+Script188.field.append(field193)
 field194 = x3d.field()
-field194.name = "goalPosition"
 field194.accessType = "inputOutput"
-field194.appinfo = "Goal camera position for this move"
-field194.type = "SFVec3f"
+field194.type = "SFBool"
+field194.name = "tracking"
+field194.appinfo = "Whether or not camera direction is tracking towards the aimPoint"
 
-Script190.field.append(field194)
+Script188.field.append(field194)
 field195 = x3d.field()
-field195.name = "goalOrientation"
 field195.accessType = "inputOutput"
-field195.appinfo = "Goal camera rotation for this move"
-field195.type = "SFRotation"
+field195.type = "SFVec3f"
+field195.name = "goalAimPoint"
+field195.appinfo = "Goal aimPoint for this move, ignored if tracking=false"
 
-Script190.field.append(field195)
+Script188.field.append(field195)
 field196 = x3d.field()
-field196.name = "tracking"
 field196.accessType = "inputOutput"
-field196.appinfo = "Whether or not camera direction is tracking towards the aimPoint"
-field196.type = "SFBool"
+field196.type = "SFFloat"
+field196.name = "goalFieldOfView"
+field196.appinfo = "Goal fieldOfView for this move"
 
-Script190.field.append(field196)
+Script188.field.append(field196)
 field197 = x3d.field()
-field197.name = "goalAimPoint"
 field197.accessType = "inputOutput"
-field197.appinfo = "Goal aimPoint for this move, ignored if tracking=false"
-field197.type = "SFVec3f"
+field197.type = "SFFloat"
+field197.name = "goalFStop"
+field197.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
 
-Script190.field.append(field197)
+Script188.field.append(field197)
 field198 = x3d.field()
-field198.name = "goalFieldOfView"
 field198.accessType = "inputOutput"
-field198.appinfo = "Goal fieldOfView for this move"
 field198.type = "SFFloat"
+field198.name = "goalFocusDistance"
+field198.appinfo = "Distance to focal plane of sharpest focus"
 
-Script190.field.append(field198)
+Script188.field.append(field198)
 field199 = x3d.field()
-field199.name = "goalFStop"
-field199.accessType = "inputOutput"
-field199.appinfo = "Focal length divided effective aperture diameter indicating width of focal plane"
-field199.type = "SFFloat"
+field199.accessType = "outputOnly"
+field199.type = "SFBool"
+field199.name = "isActive"
+field199.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
 
-Script190.field.append(field199)
+Script188.field.append(field199)
 field200 = x3d.field()
-field200.name = "goalFocusDistance"
-field200.accessType = "inputOutput"
-field200.appinfo = "Distance to focal plane of sharpest focus"
-field200.type = "SFFloat"
+field200.accessType = "initializeOnly"
+field200.type = "SFBool"
+field200.name = "traceEnabled"
+field200.appinfo = "enable console output to trace script computations and prototype progress"
 
-Script190.field.append(field200)
-field201 = x3d.field()
-field201.name = "isActive"
-field201.accessType = "outputOnly"
-field201.appinfo = "Mark start/stop with true/false output respectively useful to trigger external animations"
-field201.type = "SFBool"
+Script188.field.append(field200)
 
-Script190.field.append(field201)
-field202 = x3d.field()
-field202.name = "traceEnabled"
-field202.accessType = "initializeOnly"
-field202.appinfo = "enable console output to trace script computations and prototype progress"
-field202.type = "SFBool"
-
-Script190.field.append(field202)
-IS203 = x3d.IS()
-connect204 = x3d.connect()
-connect204.nodeField = "description"
-connect204.protoField = "description"
-
-IS203.connect.append(connect204)
-connect205 = x3d.connect()
-connect205.nodeField = "enabled"
-connect205.protoField = "enabled"
-
-IS203.connect.append(connect205)
-connect206 = x3d.connect()
-connect206.nodeField = "duration"
-connect206.protoField = "duration"
-
-IS203.connect.append(connect206)
-connect207 = x3d.connect()
-connect207.nodeField = "goalPosition"
-connect207.protoField = "goalPosition"
-
-IS203.connect.append(connect207)
-connect208 = x3d.connect()
-connect208.nodeField = "goalOrientation"
-connect208.protoField = "goalOrientation"
-
-IS203.connect.append(connect208)
-connect209 = x3d.connect()
-connect209.nodeField = "tracking"
-connect209.protoField = "tracking"
-
-IS203.connect.append(connect209)
-connect210 = x3d.connect()
-connect210.nodeField = "goalAimPoint"
-connect210.protoField = "goalAimPoint"
-
-IS203.connect.append(connect210)
-connect211 = x3d.connect()
-connect211.nodeField = "goalFieldOfView"
-connect211.protoField = "goalFieldOfView"
-
-IS203.connect.append(connect211)
-connect212 = x3d.connect()
-connect212.nodeField = "goalFStop"
-connect212.protoField = "goalFStop"
-
-IS203.connect.append(connect212)
-connect213 = x3d.connect()
-connect213.nodeField = "goalFocusDistance"
-connect213.protoField = "goalFocusDistance"
-
-IS203.connect.append(connect213)
-connect214 = x3d.connect()
-connect214.nodeField = "isActive"
-connect214.protoField = "isActive"
-
-IS203.connect.append(connect214)
-connect215 = x3d.connect()
-connect215.nodeField = "traceEnabled"
-connect215.protoField = "traceEnabled"
-
-IS203.connect.append(connect215)
-
-Script190.IS = IS203
-
-Script190.sourceCode = '''ecmascript:\n"+
+Script188.sourceCode = '''ecmascript:\n"+
 "function initialize () // CameraMovementScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -1849,248 +1729,246 @@ Script190.sourceCode = '''ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[CameraMovement] ' + outputString + '\\n');\n"+
 "}'''
+IS201 = x3d.IS()
+connect202 = x3d.connect()
+connect202.nodeField = "description"
+connect202.protoField = "description"
 
-ProtoBody189.children.append(Script190)
-"""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""
+IS201.connect.append(connect202)
+connect203 = x3d.connect()
+connect203.nodeField = "enabled"
+connect203.protoField = "enabled"
 
-ProtoDeclare175.ProtoBody = ProtoBody189
+IS201.connect.append(connect203)
+connect204 = x3d.connect()
+connect204.nodeField = "duration"
+connect204.protoField = "duration"
 
-Scene16.children.append(ProtoDeclare175)
-"""=============== OfflineRender =============="""
-ProtoDeclare216 = x3d.ProtoDeclare()
-ProtoDeclare216.name = "OfflineRender"
-ProtoDeclare216.appinfo = "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)."
-ProtoInterface217 = x3d.ProtoInterface()
-"""TODO non-photorealistic rendering (NPR) parameters"""
+IS201.connect.append(connect204)
+connect205 = x3d.connect()
+connect205.nodeField = "goalPosition"
+connect205.protoField = "goalPosition"
+
+IS201.connect.append(connect205)
+connect206 = x3d.connect()
+connect206.nodeField = "goalOrientation"
+connect206.protoField = "goalOrientation"
+
+IS201.connect.append(connect206)
+connect207 = x3d.connect()
+connect207.nodeField = "tracking"
+connect207.protoField = "tracking"
+
+IS201.connect.append(connect207)
+connect208 = x3d.connect()
+connect208.nodeField = "goalAimPoint"
+connect208.protoField = "goalAimPoint"
+
+IS201.connect.append(connect208)
+connect209 = x3d.connect()
+connect209.nodeField = "goalFieldOfView"
+connect209.protoField = "goalFieldOfView"
+
+IS201.connect.append(connect209)
+connect210 = x3d.connect()
+connect210.nodeField = "goalFStop"
+connect210.protoField = "goalFStop"
+
+IS201.connect.append(connect210)
+connect211 = x3d.connect()
+connect211.nodeField = "goalFocusDistance"
+connect211.protoField = "goalFocusDistance"
+
+IS201.connect.append(connect211)
+connect212 = x3d.connect()
+connect212.nodeField = "isActive"
+connect212.protoField = "isActive"
+
+IS201.connect.append(connect212)
+connect213 = x3d.connect()
+connect213.nodeField = "traceEnabled"
+connect213.protoField = "traceEnabled"
+
+IS201.connect.append(connect213)
+
+Script188.IS = IS201
+
+ProtoBody187.children.append(Script188)
+
+ProtoDeclare173.ProtoBody = ProtoBody187
+
+Scene14.children.append(ProtoDeclare173)
+ProtoDeclare214 = x3d.ProtoDeclare()
+ProtoDeclare214.name = "OfflineRender"
+ProtoDeclare214.appinfo = "OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)."
+ProtoInterface215 = x3d.ProtoInterface()
+field216 = x3d.field()
+field216.accessType = "inputOutput"
+field216.type = "SFString"
+field216.name = "description"
+field216.appinfo = "Text description to be displayed for this OfflineRender"
+
+ProtoInterface215.field.append(field216)
+field217 = x3d.field()
+field217.accessType = "inputOutput"
+field217.type = "SFBool"
+field217.name = "enabled"
+field217.value = True
+field217.appinfo = "Whether this OfflineRender can be activated"
+
+ProtoInterface215.field.append(field217)
 field218 = x3d.field()
-field218.name = "description"
 field218.accessType = "inputOutput"
-field218.appinfo = "Text description to be displayed for this OfflineRender"
-field218.type = "SFString"
+field218.type = "SFFloat"
+field218.name = "frameRate"
+field218.value = 30
+field218.appinfo = "Frames per second recorded for this rendering"
 
-ProtoInterface217.field.append(field218)
+ProtoInterface215.field.append(field218)
 field219 = x3d.field()
-field219.name = "enabled"
 field219.accessType = "inputOutput"
-field219.appinfo = "Whether this OfflineRender can be activated"
-field219.type = "SFBool"
-field219.value = True
+field219.type = "SFVec2f"
+field219.name = "frameSize"
+field219.value = [640,480]
+field219.appinfo = "Size of frame in number of pixels width and height"
 
-ProtoInterface217.field.append(field219)
+ProtoInterface215.field.append(field219)
 field220 = x3d.field()
-field220.name = "frameRate"
 field220.accessType = "inputOutput"
-field220.appinfo = "Frames per second recorded for this rendering"
 field220.type = "SFFloat"
-field220.value = 30
+field220.name = "pixelAspectRatio"
+field220.value = 1.33
+field220.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1"
 
-ProtoInterface217.field.append(field220)
+ProtoInterface215.field.append(field220)
 field221 = x3d.field()
-field221.name = "frameSize"
-field221.accessType = "inputOutput"
-field221.appinfo = "Size of frame in number of pixels width and height"
-field221.type = "SFVec2f"
-field221.value = [640,480]
+field221.accessType = "inputOnly"
+field221.type = "SFTime"
+field221.name = "set_startTime"
+field221.appinfo = "Begin render operation"
 
-ProtoInterface217.field.append(field221)
+ProtoInterface215.field.append(field221)
 field222 = x3d.field()
-field222.name = "pixelAspectRatio"
-field222.accessType = "inputOutput"
-field222.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1"
+field222.accessType = "outputOnly"
 field222.type = "SFFloat"
-field222.value = 1.33
+field222.name = "progress"
+field222.appinfo = "Progress performing render operation (0..1)"
 
-ProtoInterface217.field.append(field222)
+ProtoInterface215.field.append(field222)
 field223 = x3d.field()
-field223.name = "set_startTime"
-field223.accessType = "inputOnly"
-field223.appinfo = "Begin render operation"
+field223.accessType = "outputOnly"
 field223.type = "SFTime"
+field223.name = "renderCompleteTime"
+field223.appinfo = "Render operation complete"
 
-ProtoInterface217.field.append(field223)
+ProtoInterface215.field.append(field223)
 field224 = x3d.field()
-field224.name = "progress"
-field224.accessType = "outputOnly"
-field224.appinfo = "Progress performing render operation (0..1)"
-field224.type = "SFFloat"
+field224.accessType = "initializeOnly"
+field224.type = "MFString"
+field224.name = "movieFormat"
+field224.value = ["mpeg"]
+field224.appinfo = "Format of rendered output movie (mpeg mp4 etc.), use first supported format"
 
-ProtoInterface217.field.append(field224)
+ProtoInterface215.field.append(field224)
 field225 = x3d.field()
-field225.name = "renderCompleteTime"
-field225.accessType = "outputOnly"
-field225.appinfo = "Render operation complete"
-field225.type = "SFTime"
+field225.accessType = "initializeOnly"
+field225.type = "MFString"
+field225.name = "imageFormat"
+field225.value = ["png"]
+field225.appinfo = "Format of rendered output images (png jpeg gif tiff etc.) use first supported format"
 
-ProtoInterface217.field.append(field225)
+ProtoInterface215.field.append(field225)
 field226 = x3d.field()
-field226.name = "movieFormat"
 field226.accessType = "initializeOnly"
-field226.appinfo = "Format of rendered output movie (mpeg mp4 etc.), use first supported format"
-field226.type = "MFString"
-field226.value = ["mpeg"]
+field226.type = "SFBool"
+field226.name = "traceEnabled"
+field226.appinfo = "enable console output to trace script computations and prototype progress"
 
-ProtoInterface217.field.append(field226)
-field227 = x3d.field()
-field227.name = "imageFormat"
-field227.accessType = "initializeOnly"
-field227.appinfo = "Format of rendered output images (png jpeg gif tiff etc.) use first supported format"
-field227.type = "MFString"
-field227.value = ["png"]
+ProtoInterface215.field.append(field226)
 
-ProtoInterface217.field.append(field227)
-field228 = x3d.field()
-field228.name = "traceEnabled"
-field228.accessType = "initializeOnly"
-field228.appinfo = "enable console output to trace script computations and prototype progress"
-field228.type = "SFBool"
-field228.value = False
+ProtoDeclare214.ProtoInterface = ProtoInterface215
+ProtoBody227 = x3d.ProtoBody()
+Script228 = x3d.Script(DEF="OfflineRenderScript")
+Script228.mustEvaluate = True
+field229 = x3d.field()
+field229.accessType = "inputOutput"
+field229.type = "SFString"
+field229.name = "description"
+field229.appinfo = "Text description to be displayed for this OfflineRender"
 
-ProtoInterface217.field.append(field228)
+Script228.field.append(field229)
+field230 = x3d.field()
+field230.accessType = "inputOutput"
+field230.type = "SFBool"
+field230.name = "enabled"
+field230.appinfo = "Whether this OfflineRender can be activated"
 
-ProtoDeclare216.ProtoInterface = ProtoInterface217
-ProtoBody229 = x3d.ProtoBody()
-"""First node determines node type of this prototype"""
-"""Subsequent nodes do not render, but still must be a valid X3D subgraph"""
-Script230 = x3d.Script()
-Script230.DEF = "OfflineRenderScript"
-Script230.mustEvaluate = True
+Script228.field.append(field230)
 field231 = x3d.field()
-field231.name = "description"
 field231.accessType = "inputOutput"
-field231.appinfo = "Text description to be displayed for this OfflineRender"
-field231.type = "SFString"
+field231.type = "SFFloat"
+field231.name = "frameRate"
+field231.appinfo = "Frames per second recorded for this rendering"
 
-Script230.field.append(field231)
+Script228.field.append(field231)
 field232 = x3d.field()
-field232.name = "enabled"
 field232.accessType = "inputOutput"
-field232.appinfo = "Whether this OfflineRender can be activated"
-field232.type = "SFBool"
+field232.type = "SFVec2f"
+field232.name = "frameSize"
+field232.appinfo = "Size of frame in number of pixels width and height"
 
-Script230.field.append(field232)
+Script228.field.append(field232)
 field233 = x3d.field()
-field233.name = "frameRate"
 field233.accessType = "inputOutput"
-field233.appinfo = "Frames per second recorded for this rendering"
 field233.type = "SFFloat"
+field233.name = "pixelAspectRatio"
+field233.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1"
 
-Script230.field.append(field233)
+Script228.field.append(field233)
 field234 = x3d.field()
-field234.name = "frameSize"
-field234.accessType = "inputOutput"
-field234.appinfo = "Size of frame in number of pixels width and height"
-field234.type = "SFVec2f"
+field234.accessType = "inputOnly"
+field234.type = "SFTime"
+field234.name = "set_startTime"
+field234.appinfo = "Begin render operation"
 
-Script230.field.append(field234)
+Script228.field.append(field234)
 field235 = x3d.field()
-field235.name = "pixelAspectRatio"
-field235.accessType = "inputOutput"
-field235.appinfo = "Relative dimensions of pixel height/width typically 1.33 or 1"
+field235.accessType = "outputOnly"
 field235.type = "SFFloat"
+field235.name = "progress"
+field235.appinfo = "Progress performing render operation (0..1)"
 
-Script230.field.append(field235)
+Script228.field.append(field235)
 field236 = x3d.field()
-field236.name = "set_startTime"
-field236.accessType = "inputOnly"
-field236.appinfo = "Begin render operation"
+field236.accessType = "outputOnly"
 field236.type = "SFTime"
+field236.name = "renderCompleteTime"
+field236.appinfo = "Render operation complete"
 
-Script230.field.append(field236)
+Script228.field.append(field236)
 field237 = x3d.field()
-field237.name = "progress"
-field237.accessType = "outputOnly"
-field237.appinfo = "Progress performing render operation (0..1)"
-field237.type = "SFFloat"
+field237.accessType = "initializeOnly"
+field237.type = "MFString"
+field237.name = "movieFormat"
+field237.appinfo = "Format of rendered output movie (mpeg mp4 etc.)"
 
-Script230.field.append(field237)
+Script228.field.append(field237)
 field238 = x3d.field()
-field238.name = "renderCompleteTime"
-field238.accessType = "outputOnly"
-field238.appinfo = "Render operation complete"
-field238.type = "SFTime"
+field238.accessType = "initializeOnly"
+field238.type = "MFString"
+field238.name = "imageFormat"
+field238.appinfo = "Format of rendered output images (png jpeg gif tiff etc.)"
 
-Script230.field.append(field238)
+Script228.field.append(field238)
 field239 = x3d.field()
-field239.name = "movieFormat"
 field239.accessType = "initializeOnly"
-field239.appinfo = "Format of rendered output movie (mpeg mp4 etc.)"
-field239.type = "MFString"
+field239.type = "SFBool"
+field239.name = "traceEnabled"
+field239.appinfo = "enable console output to trace script computations and prototype progress"
 
-Script230.field.append(field239)
-field240 = x3d.field()
-field240.name = "imageFormat"
-field240.accessType = "initializeOnly"
-field240.appinfo = "Format of rendered output images (png jpeg gif tiff etc.)"
-field240.type = "MFString"
+Script228.field.append(field239)
 
-Script230.field.append(field240)
-field241 = x3d.field()
-field241.name = "traceEnabled"
-field241.accessType = "initializeOnly"
-field241.appinfo = "enable console output to trace script computations and prototype progress"
-field241.type = "SFBool"
-
-Script230.field.append(field241)
-IS242 = x3d.IS()
-connect243 = x3d.connect()
-connect243.nodeField = "description"
-connect243.protoField = "description"
-
-IS242.connect.append(connect243)
-connect244 = x3d.connect()
-connect244.nodeField = "enabled"
-connect244.protoField = "enabled"
-
-IS242.connect.append(connect244)
-connect245 = x3d.connect()
-connect245.nodeField = "frameRate"
-connect245.protoField = "frameRate"
-
-IS242.connect.append(connect245)
-connect246 = x3d.connect()
-connect246.nodeField = "frameSize"
-connect246.protoField = "frameSize"
-
-IS242.connect.append(connect246)
-connect247 = x3d.connect()
-connect247.nodeField = "pixelAspectRatio"
-connect247.protoField = "pixelAspectRatio"
-
-IS242.connect.append(connect247)
-connect248 = x3d.connect()
-connect248.nodeField = "set_startTime"
-connect248.protoField = "set_startTime"
-
-IS242.connect.append(connect248)
-connect249 = x3d.connect()
-connect249.nodeField = "progress"
-connect249.protoField = "progress"
-
-IS242.connect.append(connect249)
-connect250 = x3d.connect()
-connect250.nodeField = "renderCompleteTime"
-connect250.protoField = "renderCompleteTime"
-
-IS242.connect.append(connect250)
-connect251 = x3d.connect()
-connect251.nodeField = "movieFormat"
-connect251.protoField = "movieFormat"
-
-IS242.connect.append(connect251)
-connect252 = x3d.connect()
-connect252.nodeField = "imageFormat"
-connect252.protoField = "imageFormat"
-
-IS242.connect.append(connect252)
-connect253 = x3d.connect()
-connect253.nodeField = "traceEnabled"
-connect253.protoField = "traceEnabled"
-
-IS242.connect.append(connect253)
-
-Script230.IS = IS242
-
-Script230.sourceCode = '''ecmascript:\n"+
+Script228.sourceCode = '''ecmascript:\n"+
 "function initialize () // OfflineRenderScript\n"+
 "{\n"+
 "//  tracePrint ('initialize start...');\n"+
@@ -2144,23 +2022,86 @@ Script230.sourceCode = '''ecmascript:\n"+
 "    else\n"+
 "         Browser.print ('[OfflineRender] ' + outputString + '\\n');\n"+
 "}'''
+IS240 = x3d.IS()
+connect241 = x3d.connect()
+connect241.nodeField = "description"
+connect241.protoField = "description"
 
-ProtoBody229.children.append(Script230)
-"""Add any ROUTEs here, going from Script to other nodes within ProtoBody"""
+IS240.connect.append(connect241)
+connect242 = x3d.connect()
+connect242.nodeField = "enabled"
+connect242.protoField = "enabled"
 
-ProtoDeclare216.ProtoBody = ProtoBody229
+IS240.connect.append(connect242)
+connect243 = x3d.connect()
+connect243.nodeField = "frameRate"
+connect243.protoField = "frameRate"
 
-Scene16.children.append(ProtoDeclare216)
-"""=============== Launch Prototype Example =============="""
-Background254 = x3d.Background()
-Background254.skyColor = [(0.282353, 0.380392, 0.470588)]
+IS240.connect.append(connect243)
+connect244 = x3d.connect()
+connect244.nodeField = "frameSize"
+connect244.protoField = "frameSize"
 
-Scene16.children.append(Background254)
-Anchor255 = x3d.Anchor()
-Anchor255.description = "launch CameraExample scene"
-Anchor255.url = ["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]
-Transform256 = x3d.Transform()
-Shape257 = x3d.Shape()
+IS240.connect.append(connect244)
+connect245 = x3d.connect()
+connect245.nodeField = "pixelAspectRatio"
+connect245.protoField = "pixelAspectRatio"
+
+IS240.connect.append(connect245)
+connect246 = x3d.connect()
+connect246.nodeField = "set_startTime"
+connect246.protoField = "set_startTime"
+
+IS240.connect.append(connect246)
+connect247 = x3d.connect()
+connect247.nodeField = "progress"
+connect247.protoField = "progress"
+
+IS240.connect.append(connect247)
+connect248 = x3d.connect()
+connect248.nodeField = "renderCompleteTime"
+connect248.protoField = "renderCompleteTime"
+
+IS240.connect.append(connect248)
+connect249 = x3d.connect()
+connect249.nodeField = "movieFormat"
+connect249.protoField = "movieFormat"
+
+IS240.connect.append(connect249)
+connect250 = x3d.connect()
+connect250.nodeField = "imageFormat"
+connect250.protoField = "imageFormat"
+
+IS240.connect.append(connect250)
+connect251 = x3d.connect()
+connect251.nodeField = "traceEnabled"
+connect251.protoField = "traceEnabled"
+
+IS240.connect.append(connect251)
+
+Script228.IS = IS240
+
+ProtoBody227.children.append(Script228)
+
+ProtoDeclare214.ProtoBody = ProtoBody227
+
+Scene14.children.append(ProtoDeclare214)
+Background252 = x3d.Background()
+Background252.skyColor = [(0.282353, 0.380392, 0.470588)]
+
+Scene14.children.append(Background252)
+Anchor253 = x3d.Anchor()
+Anchor253.description = "launch CameraExample scene"
+Anchor253.url = ["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"]
+Transform254 = x3d.Transform()
+Shape255 = x3d.Shape()
+Appearance256 = x3d.Appearance()
+Material257 = x3d.Material()
+Material257.diffuseColor = [1,1,0.2]
+
+Appearance256.material = Material257
+
+Shape255.appearance = Appearance256
 Text258 = x3d.Text()
 Text258.string = ["CameraPrototypes.x3d","defines multiple prototype nodes","","Click on this text to see","CameraExamples.x3d scene"]
 FontStyle259 = x3d.FontStyle()
@@ -2168,22 +2109,15 @@ FontStyle259.justify = ["MIDDLE","MIDDLE"]
 
 Text258.fontStyle = FontStyle259
 
-Shape257.geometry = Text258
-Appearance260 = x3d.Appearance()
-Material261 = x3d.Material()
-Material261.diffuseColor = [1,1,0.2]
+Shape255.geometry = Text258
 
-Appearance260.material = Material261
+Transform254.children.append(Shape255)
 
-Shape257.appearance = Appearance260
+Anchor253.children.append(Transform254)
 
-Transform256.children.append(Shape257)
+Scene14.children.append(Anchor253)
 
-Anchor255.children.append(Transform256)
-
-Scene16.children.append(Anchor255)
-
-X3D0.Scene = Scene16
+X3D0.Scene = Scene14
 f = open("../data/CameraPrototypes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

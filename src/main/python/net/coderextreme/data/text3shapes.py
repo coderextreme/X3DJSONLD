@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "creator"
@@ -30,80 +30,75 @@ meta6.name = "description"
 meta6.content = "3 text shapes"
 
 head1.children.append(meta6)
-meta7 = x3d.meta()
-meta7.name = "generator"
-meta7.content = "Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta7)
 
 X3D0.head = head1
-Scene8 = x3d.Scene()
-Transform9 = x3d.Transform()
-Shape10 = x3d.Shape()
-Text11 = x3d.Text()
-Text11.string = ["Node\"\"\""]
-FontStyle12 = x3d.FontStyle()
+Scene7 = x3d.Scene()
+Transform8 = x3d.Transform()
+Shape9 = x3d.Shape()
+Appearance10 = x3d.Appearance()
+Material11 = x3d.Material()
 
-Text11.fontStyle = FontStyle12
+Appearance10.material = Material11
 
-Shape10.geometry = Text11
-Appearance13 = x3d.Appearance()
-Material14 = x3d.Material()
+Shape9.appearance = Appearance10
+Text12 = x3d.Text()
+Text12.string = ["Node\"\"\""]
+FontStyle13 = x3d.FontStyle()
 
-Appearance13.material = Material14
+Text12.fontStyle = FontStyle13
 
-Shape10.appearance = Appearance13
+Shape9.geometry = Text12
 
-Transform9.children.append(Shape10)
-Shape15 = x3d.Shape()
-Text16 = x3d.Text()
-Text16.string = ["Node2","\\\\","\\\\\\\\","Node2"]
-FontStyle17 = x3d.FontStyle()
+Transform8.children.append(Shape9)
+Shape14 = x3d.Shape()
+Appearance15 = x3d.Appearance()
+Material16 = x3d.Material()
 
-Text16.fontStyle = FontStyle17
+Appearance15.material = Material16
 
-Shape15.geometry = Text16
-Appearance18 = x3d.Appearance()
-Material19 = x3d.Material()
+Shape14.appearance = Appearance15
+Text17 = x3d.Text()
+Text17.string = ["Node2","\\\\","\\\\\\\\","Node2"]
+FontStyle18 = x3d.FontStyle()
 
-Appearance18.material = Material19
+Text17.fontStyle = FontStyle18
 
-Shape15.appearance = Appearance18
+Shape14.geometry = Text17
 
-Transform9.children.append(Shape15)
-Shape20 = x3d.Shape()
-Text21 = x3d.Text()
-Text21.string = ["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]
-FontStyle22 = x3d.FontStyle()
+Transform8.children.append(Shape14)
+Shape19 = x3d.Shape()
+Appearance20 = x3d.Appearance()
+Material21 = x3d.Material()
 
-Text21.fontStyle = FontStyle22
+Appearance20.material = Material21
 
-Shape20.geometry = Text21
-Appearance23 = x3d.Appearance()
-Material24 = x3d.Material()
+Shape19.appearance = Appearance20
+Text22 = x3d.Text()
+Text22.string = ["Node3 \\\\\\\\ \\\\ ","Node3\"\"\""]
+FontStyle23 = x3d.FontStyle()
 
-Appearance23.material = Material24
+Text22.fontStyle = FontStyle23
 
-Shape20.appearance = Appearance23
+Shape19.geometry = Text22
 
-Transform9.children.append(Shape20)
-Script25 = x3d.Script()
-field26 = x3d.field()
-field26.name = "frontUrls"
-field26.type = "MFString"
-field26.accessType = "initializeOnly"
-field26.value = ["rnl_front.png","uffizi_front.png"]
+Transform8.children.append(Shape19)
+Script24 = x3d.Script()
+field25 = x3d.field()
+field25.accessType = "initializeOnly"
+field25.type = "MFString"
+field25.name = "frontUrls"
+field25.value = ["rnl_front.png","uffizi_front.png"]
 
-Script25.field.append(field26)
+Script24.field.append(field25)
 
-Script25.sourceCode = '''ecmascript:\n"+
-"			    var me = '\"1\" \"\"2\" \"\\n3\"';'''
+Script24.sourceCode = '''ecmascript:\n"+
+"			    var me = '\"1\" \"\\\"2\" \"\\n3\"';'''
 
-Transform9.children.append(Script25)
+Transform8.children.append(Script24)
 
-Scene8.children.append(Transform9)
+Scene7.children.append(Transform8)
 
-X3D0.Scene = Scene8
+X3D0.Scene = Scene7
 f = open("../data/text3shapes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -33,8 +33,8 @@ ClojureSerializer.prototype = {
 		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setDeleteIntermediateFiles false)\n";
 		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setStripTrailingZeroes true)\n";
 		str += "(org.web3d.x3d.jsail.ConfigurationProperties/setStripDefaultAttributes true)\n";
-		str += "(def EXPORT org.web3d.x3d.jsail.Networking.EXPORT)\n"
-		str += "(def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)\n"
+		// str += "(def EXPORT org.web3d.x3d.jsail.Networking.EXPORT)\n"
+		// str += "(def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)\n"
 
 		var bodystr = "";
         

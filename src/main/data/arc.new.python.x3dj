@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -25,39 +25,19 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a generic proto to connect two objects",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
     {
-        "Viewpoint":
-        {
-      {
-        "@description":"Only Viewpoint",
-        "@position":"0 0 5"
-      }
-    },
-        "Background":
-        {
-      {
-        "@skyColor":"0.4 0.4 0.4"
-      }
-    },
         "ProtoDeclare":
         {
       {
@@ -70,8 +50,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             }            "ProtoBody":
@@ -109,13 +88,28 @@
                     }                    "PositionInterpolator":
                     {
       {
-        "@DEF":"PI1"
+        "@DEF":"PI1",
+        "@key":"0 1",
+        "@keyValue":"0 0 0 0 5 0"
       }
     },
                     "Script":
                     {
       {
-        "@DEF":"MB1"
+        "@DEF":"MB1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;		function set_location(value) {
+&quot;+
+&quot;                    old = translation;
+&quot;+
+&quot;		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);
+&quot;+
+&quot;                    keyValue = new MFVec3f([old, translation]);
+&quot;+
+&quot;		    // Browser.println(keyValue);
+&quot;+
+&quot;		}"
       }
                         "field":
                         {
@@ -131,8 +125,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"old",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -155,11 +148,13 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"CL1"
+        "@DEF":"CL1",
+        "@cycleInterval":"3",
+        "@loop":"true"
       }
     },
-                    "ROUTE":
-                    {
+                }                "ROUTE":
+                {
       {
         "@fromField":"cycleTime",
         "@fromNode":"CL1",
@@ -167,8 +162,8 @@
         "@toNode":"MB1"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"CL1",
@@ -176,17 +171,17 @@
         "@toNode":"PI1"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"keyValue",
+        "@fromField":"keyValue_changed",
         "@fromNode":"MB1",
-        "@toField":"keyValue",
+        "@toField":"set_keyValue",
         "@toNode":"PI1"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"value_changed",
         "@fromNode":"PI1",
@@ -194,7 +189,7 @@
         "@toNode":"node"
       }
     },
-                }            }        }        "ProtoDeclare":
+            }        }        "ProtoDeclare":
         {
       {
         "@name":"x3dconnector"
@@ -267,7 +262,98 @@
                             }                        }                    }                    "Script":
                     {
       {
-        "@DEF":"S1"
+        "@DEF":"S1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function recompute(startpoint,endpoint){
+&quot;+
+&quot;	    if (typeof endpoint === 'undefined') {
+&quot;+
+&quot;		return;
+&quot;+
+&quot;	    }
+&quot;+
+&quot;            var dif = endpoint.subtract(startpoint);
+&quot;+
+&quot;            var dist = dif.length()*0.5;
+&quot;+
+&quot;            var dif2 = dif.multiply(0.5);
+&quot;+
+&quot;            var norm = dif.normalize();
+&quot;+
+&quot;            var transl = startpoint.add(dif2);
+&quot;+
+&quot;	    if (typeof Quaternion !== 'undefined') {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new Quaternion.rotateFromTo(new SFVec3f(0.0,1.0,0.0), norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    } else if (typeof SFRotation !== 'undefined') {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl,
+&quot;+
+&quot;			    rotation : new SFRotation(new SFVec3f(0.0,1.0,0.0),norm)
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    } else {
+&quot;+
+&quot;		    return {
+&quot;+
+&quot;			    scale : new SFVec3f(1.0,dist,1.0),
+&quot;+
+&quot;			    translation : transl
+&quot;+
+&quot;		    };
+&quot;+
+&quot;	    }
+&quot;+
+&quot;	}
+&quot;+
+&quot;	function recompute_and_route(startpoint, endpoint) {
+&quot;+
+&quot;	      var trafo = recompute(startpoint, endpoint);
+&quot;+
+&quot;	      if (trafo) {
+&quot;+
+&quot;		      position.translation = trafo.translation;
+&quot;+
+&quot;		      rotscale.rotation = trafo.rotation;
+&quot;+
+&quot;		      rotscale.scale = trafo.scale;
+&quot;+
+&quot;	      }
+&quot;+
+&quot;	}
+&quot;+
+&quot;        function initialize(){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_startpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(val,endnode.translation);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        function set_endpoint(val,t){
+&quot;+
+&quot;            recompute_and_route(startnode.translation,val);
+&quot;+
+&quot;        }"
       }
                         "IS":
                         {
@@ -357,35 +443,72 @@
         "@type":"SFVec3f"
       }
     },
-                    }                }            }        }        "ProtoInstance":
+                    }                }            }        }        "Viewpoint":
+        {
+      {
+        "@description":"Only Viewpoint",
+        "@position":"0 0 5"
+      }
+    },
+        "Background":
+        {
+      {
+        "@skyColor":"0.4 0.4 0.4"
+      }
+    },
+        "ProtoInstance":
         {
       {
         "@DEF":"G1",
         "@name":"point"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"translation",
+        "@value":"0 4.376667 0"
+      }
     },
-        "ProtoInstance":
+        }        "ProtoInstance":
         {
       {
         "@DEF":"G2",
         "@name":"point"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"translation",
+        "@value":"0 4.376667 0"
+      }
     },
-        "ProtoInstance":
+        }        "ProtoInstance":
         {
       {
         "@DEF":"G3",
         "@name":"point"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"translation",
+        "@value":"0 4.376667 0"
+      }
     },
-        "ProtoInstance":
+        }        "ProtoInstance":
         {
       {
         "@DEF":"G4",
         "@name":"point"
       }
+            "fieldValue":
+            {
+      {
+        "@name":"translation",
+        "@value":"0 4.376667 0"
+      }
     },
-        "ProtoInstance":
+        }        "ProtoInstance":
         {
       {
         "@DEF":"connector1",
@@ -415,19 +538,7 @@
         "@name":"point"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint"
-      }
-    },
-        }        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@DEF":"connector2",
@@ -457,19 +568,7 @@
         "@name":"point"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint"
-      }
-    },
-        }        "ProtoInstance":
+            }        }        "ProtoInstance":
         {
       {
         "@DEF":"connector3",
@@ -499,22 +598,10 @@
         "@name":"point"
       }
     },
-            }            "fieldValue":
-            {
-      {
-        "@name":"set_startpoint"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"set_endpoint"
-      }
-    },
-        }        "ROUTE":
+            }        }        "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector1"
@@ -523,7 +610,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G2",
         "@toField":"set_endpoint",
         "@toNode":"connector1"
@@ -532,7 +619,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector2"
@@ -541,7 +628,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G3",
         "@toField":"set_endpoint",
         "@toNode":"connector2"
@@ -550,7 +637,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G1",
         "@toField":"set_startpoint",
         "@toNode":"connector3"
@@ -559,7 +646,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"translation",
+        "@fromField":"translation_changed",
         "@fromNode":"G4",
         "@toField":"set_endpoint",
         "@toNode":"connector3"

@@ -1,64 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="rubik.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="rubik.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"></meta>
-<meta name="description" content="a kind of rubik cube with spheres"></meta>
 </head>
-<Scene><NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
-<Viewpoint description="Rubiks Cube" position="0 0 12"></Viewpoint>
-<ProtoDeclare name="sphereproto"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<Scene><ProtoDeclare name="sphereproto"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="xtranslation"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="xtranslation"></connect>
-</IS>
-<Shape><Sphere></Sphere>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<ProtoBody><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
+<Sphere></Sphere>
 </Shape>
+<IS><connect nodeField="translation" protoField="xtranslation"></connect>
+</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="three"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="ytranslation"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
-</IS>
-<ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
-</ProtoInstance>
+<ProtoBody><Transform><ProtoInstance name="sphereproto"></ProtoInstance>
 <ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
 </ProtoInstance>
 <ProtoInstance name="sphereproto"><fieldValue name="xtranslation" value="-2 0 0"></fieldValue>
 </ProtoInstance>
+<IS><connect nodeField="translation" protoField="ytranslation"></connect>
+</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="nine"><ProtoInterface><field name="ztranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="nine"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="ztranslation"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ztranslation"></connect>
-</IS>
-<ProtoInstance name="three"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
-</ProtoInstance>
+<ProtoBody><Transform><ProtoInstance name="three"></ProtoInstance>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 2 0"></fieldValue>
 </ProtoInstance>
 <ProtoInstance name="three"><fieldValue name="ytranslation" value="0 -2 0"></fieldValue>
 </ProtoInstance>
+<IS><connect nodeField="translation" protoField="ztranslation"></connect>
+</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="twentyseven"><ProtoInterface><field name="ttranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<ProtoDeclare name="twentyseven"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="ttranslation"></field>
 </ProtoInterface>
-<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ttranslation"></connect>
-</IS>
-<ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 0"></fieldValue>
-</ProtoInstance>
+<ProtoBody><Transform><ProtoInstance name="nine"></ProtoInstance>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 2"></fieldValue>
 </ProtoInstance>
 <ProtoInstance name="nine"><fieldValue name="ztranslation" value="0 0 -2"></fieldValue>
 </ProtoInstance>
+<IS><connect nodeField="translation" protoField="ttranslation"></connect>
+</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoInstance name="twentyseven"><fieldValue name="ttranslation" value="0 0 0"></fieldValue>
-</ProtoInstance>
+<NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
+<Viewpoint description="Rubiks Cube" position="0 0 12"></Viewpoint>
+<ProtoInstance name="twentyseven"></ProtoInstance>
 </Scene>
 </X3D>

@@ -1,24 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='flower3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d' name='identifier'/>
-    <meta content='a flower' name='description'/>
   </head>
   <Scene>
     <NavigationInfo/>
     <DirectionalLight direction='0 -0.8 -0.2' intensity='0.5'/>
     <Background skyColor='1 1 1'/>
     <Viewpoint description='One mathematical orbital' position='0 0 50'/>
-    <Transform DEF='OrbitTransform'>
+    <Transform DEF='OrbitTransform' translation='8 0 0'>
       <Shape>
         <Appearance>
           <Material diffuseColor='0 0.5 1' specularColor='0 0.5 1'/>
         </Appearance>
-        <IndexedFaceSet DEF='Orbit'>
+        <IndexedFaceSet DEF='Orbit' convex='false'>
           <Coordinate DEF='OrbitCoordinates'/>
         </IndexedFaceSet>
       </Shape>
@@ -29,7 +28,7 @@
       <field accessType='outputOnly' name='coordIndexes' type='MFInt32'/>
     <![CDATA[ecmascript:
 "+
-"
+"    
 "+
 "var e = 5;
 "+
@@ -179,9 +178,9 @@
 "+
 "}]]>
     </Script>
-    <TimeSensor DEF='Clock'/>
+    <TimeSensor DEF='Clock' cycleInterval='16' loop='true'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
+    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
   </Scene>
 </X3D>

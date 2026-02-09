@@ -34,11 +34,15 @@
           },
           {
             "@name":"modified",
-            "@content":"23 December 2021"
+            "@content":"5 November 2025"
           },
           {
             "@name":"description",
             "@content":"Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
+          },
+          {
+            "@name":"Image",
+            "@content":"../Poses/images/HAnimPoseExampleKoreanCharacter04Young.png"
           },
           {
             "@name":"reference",
@@ -46,7 +50,7 @@
           },
           {
             "@name":"reference",
-            "@content":"KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
+            "@content":"../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
           },
           {
             "@name":"reference",
@@ -58,7 +62,7 @@
           },
           {
             "@name":"generator",
-            "@content":"3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
+            "@content":"3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
           },
           {
             "@name":"generator",
@@ -66,11 +70,11 @@
           },
           {
             "@name":"generator",
-            "@content":"Gnu Image Manipulation Program, https://www.gimp.org"
+            "@content":"Gnu Image Manipulation Program, http://www.gimp.org"
           },
           {
             "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            "@content":"X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
           },
           {
             "@name":"license",
@@ -1526,6 +1530,12 @@
                   }
                 }
               ]
+            }
+          },
+          { "EXPORT":
+            {
+              "@AS":"KoreanCharacter04Young",
+              "@localDEF":"hanim_Young"
             }
           }
         ]

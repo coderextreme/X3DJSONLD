@@ -4,10 +4,17 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
+        "component":
+        {
+      {
+        "@level":"2",
+        "@name":"HAnim"
+      }
+    },
         "meta":
         {
       {
@@ -53,7 +60,7 @@
         "meta":
         {
       {
-        "@content":"2 July 2023",
+        "@content":"Mon, 09 Feb 2026 07:09:53 GMT",
         "@name":"modified"
       }
     },
@@ -99,20 +106,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -143,7 +136,8 @@
             "HAnimHumanoid":
             {
       {
-        "@DEF":"a_SimpleSkeleton"
+        "@DEF":"a_SimpleSkeleton",
+        "@name":"SimpleSkeleton"
       }
                 "HAnimJoint":
                 {
@@ -170,7 +164,8 @@
                         "HAnimSite":
                         {
       {
-        "@DEF":"a_feature01_tip"
+        "@DEF":"a_feature01_tip",
+        "@name":"feature01_tip"
       }
                             "Shape":
                             {
@@ -181,7 +176,8 @@
                         }                    }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"b_SimpleSkeletonMesh"
+        "@DEF":"b_SimpleSkeletonMesh",
+        "@name":"SimpleSkeletonMesh"
       }
                 "HAnimJoint":
                 {
@@ -204,7 +200,8 @@
                         }                    }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"c_SkinIndexedGeometry"
+        "@DEF":"c_SkinIndexedGeometry",
+        "@name":"SkinIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -226,7 +223,8 @@
             }            "HAnimHumanoid":
             {
       {
-        "@DEF":"d_SkinShapeIndexedGeometry"
+        "@DEF":"d_SkinShapeIndexedGeometry",
+        "@name":"SkinShapeIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -250,7 +248,8 @@
                 }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"e_SkinSwitchShapeIndexedGeometry"
+        "@DEF":"e_SkinSwitchShapeIndexedGeometry",
+        "@name":"SkinSwitchShapeIndexedGeometry"
       }
                 "HAnimJoint":
                 {
@@ -279,7 +278,8 @@
                     }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry"
+        "@DEF":"f_SynthesizedSkinShapeIndexedTwoPartGeometry",
+        "@name":"SynthesizedSkinShapeIndexedTwoPartGeometry"
       }
                 "HAnimJoint":
                 {
@@ -308,7 +308,8 @@
                     }                }            }            "HAnimHumanoid":
             {
       {
-        "@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes"
+        "@DEF":"g_ApparelSkinIndexedGeometryMultipleShapes",
+        "@name":"ApparelSkinIndexedGeometryMultipleShapes"
       }
                 "HAnimJoint":
                 {
@@ -327,7 +328,8 @@
             }            "HAnimHumanoid":
             {
       {
-        "@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes"
+        "@DEF":"h_AnatomySkinIndexedGeometryMultipleShapes",
+        "@name":"AnatomySkinIndexedGeometryMultipleShapes"
       }
                 "HAnimJoint":
                 {
@@ -346,7 +348,9 @@
             }        }        "Viewpoint":
         {
       {
-        "@DEF":"ViewHelpText"
+        "@DEF":"ViewHelpText",
+        "@description":"Select text to see website",
+        "@position":"0 0 12"
       }
     },
         "Anchor":

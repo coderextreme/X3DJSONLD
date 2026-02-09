@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Interchange",
     "head":
     {
@@ -95,7 +95,7 @@
         "meta":
         {
       {
-        "@content":"16 January 2011",
+        "@content":"Mon, 09 Feb 2026 07:12:59 GMT",
         "@name":"modified"
       }
     },
@@ -116,22 +116,8 @@
         "meta":
         {
       {
-        "@content":"Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -159,7 +145,8 @@
                         "PixelTexture":
                         {
       {
-        "@DEF":"RgbOpacityCheckerboard"
+        "@DEF":"RgbOpacityCheckerboard",
+        "@image":"2 2 4 -16776961 -65536 -65536 -16776961"
       }
     },
                     }                    "Box":

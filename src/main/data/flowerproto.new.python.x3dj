@@ -4,16 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
         "component":
         {
       {
@@ -36,18 +30,6 @@
         "component":
         {
       {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
         "@level":"4",
         "@name":"Shape"
       }
@@ -57,12 +39,6 @@
       {
         "@level":"3",
         "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
       }
     },
         "meta":
@@ -89,15 +65,8 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d",
-        "@name":"identifier"
       }
     },
     }    "Scene":
@@ -114,8 +83,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"vertex",
-        "@type":"MFString",
-        "@value":"['../shaders/gl_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/gl_flowers_chromatic.vs']"
+        "@type":"MFString"
       }
     },
                 "field":
@@ -123,8 +91,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"fragment",
-        "@type":"MFString",
-        "@value":"['../shaders/pc_flowers.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_flowers.fs']"
+        "@type":"MFString"
       }
     },
             }            "ProtoBody":
@@ -189,7 +156,8 @@
                             }                            "ComposedShader":
                             {
       {
-        "@DEF":"shader"
+        "@DEF":"shader",
+        "@language":"GLSL"
       }
                                 "field":
                                 {
@@ -198,13 +166,8 @@
         "@name":"cube",
         "@type":"SFNode"
       }
-                                    "ComposedCubeMapTexture":
-                                    {
-      {
-        "@USE":"texture"
-      }
     },
-                                }                                "field":
+                                "field":
                                 {
       {
         "@accessType":"initializeOnly",
@@ -218,8 +181,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"bias",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -227,8 +189,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"scale",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -236,8 +197,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"power",
-        "@type":"SFFloat",
-        "@value":"2"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -245,8 +205,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"a",
-        "@type":"SFFloat",
-        "@value":"10"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -254,8 +213,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"b",
-        "@type":"SFFloat",
-        "@value":"1"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -263,8 +221,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"c",
-        "@type":"SFFloat",
-        "@value":"20"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -272,8 +229,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"d",
-        "@type":"SFFloat",
-        "@value":"20"
+        "@type":"SFFloat"
       }
     },
                                 "field":
@@ -323,15 +279,146 @@
                     }                    "Script":
                     {
       {
-        "@DEF":"Animate"
+        "@DEF":"Animate",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;			function initialize() {
+&quot;+
+&quot;			    translation = new SFVec3f(0, 0, 0);
+&quot;+
+&quot;			    velocity = new SFVec3f(
+&quot;+
+&quot;			    	Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5);
+&quot;+
+&quot;			}
+&quot;+
+&quot;			function set_fraction() {
+&quot;+
+&quot;			    translation = new SFVec3f(
+&quot;+
+&quot;			    	translation.x + velocity.x,
+&quot;+
+&quot;				translation.y + velocity.y,
+&quot;+
+&quot;				translation.z + velocity.z);
+&quot;+
+&quot;			    for (var j = 0; j <= 2; j++) {
+&quot;+
+&quot;				    if (Math.abs(translation.x) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.y) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.z) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else {
+&quot;+
+&quot;					velocity.x += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.y += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.z += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;				    }
+&quot;+
+&quot;			    }
+&quot;+
+&quot;			    animate_flowers();
+&quot;+
+&quot;			}
+&quot;+
+&quot;
+&quot;+
+&quot;			function animate_flowers(fraction, eventTime) {
+&quot;+
+&quot;				var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;				switch (choice) {
+&quot;+
+&quot;				case 0:
+&quot;+
+&quot;					a += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 1:
+&quot;+
+&quot;					b += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 2:
+&quot;+
+&quot;					c += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 3:
+&quot;+
+&quot;					d += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				tdelta += 0.5;
+&quot;+
+&quot;				pdelta += 0.5;
+&quot;+
+&quot;				if (a > 1) {
+&quot;+
+&quot;					a =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (b > 1) {
+&quot;+
+&quot;					b =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c < 1) {
+&quot;+
+&quot;					c =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d < 1) {
+&quot;+
+&quot;					d =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c > 10) {
+&quot;+
+&quot;					c = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d > 10) {
+&quot;+
+&quot;					d = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;			}"
       }
                         "field":
                         {
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -339,8 +426,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"velocity",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -356,8 +442,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"a",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -365,8 +450,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"b",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -374,8 +458,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"c",
-        "@type":"SFFloat",
-        "@value":"3"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -383,8 +466,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"d",
-        "@type":"SFFloat",
-        "@value":"3"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -392,8 +474,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"tdelta",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -401,18 +482,19 @@
       {
         "@accessType":"outputOnly",
         "@name":"pdelta",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"TourTime"
+        "@DEF":"TourTime",
+        "@cycleInterval":"5",
+        "@loop":"true"
       }
     },
-                    "ROUTE":
-                    {
+                }                "ROUTE":
+                {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"TourTime",
@@ -420,8 +502,8 @@
         "@toNode":"Animate"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"translation_changed",
         "@fromNode":"Animate",
@@ -429,8 +511,8 @@
         "@toNode":"transform"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"a",
         "@fromNode":"Animate",
@@ -438,8 +520,8 @@
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"b",
         "@fromNode":"Animate",
@@ -447,8 +529,8 @@
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"c",
         "@fromNode":"Animate",
@@ -456,8 +538,8 @@
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"d",
         "@fromNode":"Animate",
@@ -465,8 +547,8 @@
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"tdelta",
         "@fromNode":"Animate",
@@ -474,8 +556,8 @@
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"pdelta",
         "@fromNode":"Animate",
@@ -483,4 +565,4 @@
         "@toNode":"shader"
       }
     },
-                }            }        }    }}
+            }        }    }}

@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"3.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"28 November 2019",
+        "@content":"Mon, 09 Feb 2026 07:11:17 GMT",
         "@name":"modified"
       }
     },
@@ -62,20 +62,6 @@
       {
         "@content":"https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -122,13 +108,15 @@
                         "Coordinate":
                         {
       {
-        "@DEF":"EndPoints"
+        "@DEF":"EndPoints",
+        "@point":"0 0 0 -10 0 10 -9 0 10 -8 0 10 -7 0 10 -6 0 10 -5 0 10 -4 0 10 -3 0 10 -2 0 10 -1 0 10 0 0 10 1 0 10 2 0 10 3 0 10 4 0 10 5 0 10 6 0 10 7 0 10 8 0 10 9 0 10 10 0 10 -10 0 -10 -9 0 -10 -8 0 -10 -7 0 -10 -6 0 -10 -5 0 -10 -4 0 -10 -3 0 -10 -2 0 -10 -1 0 -10 0 0 -10 1 0 -10 2 0 -10 3 0 -10 4 0 -10 5 0 -10 6 0 -10 7 0 -10 8 0 -10 9 0 -10 10 0 -10"
       }
     },
                     }                }                "Transform":
                 {
       {
-        "@DEF":"LinesAlignedAlongX"
+        "@DEF":"LinesAlignedAlongX",
+        "@rotation":"0 1 0 1.57079"
       }
                     "Shape":
                     {
@@ -156,12 +144,15 @@
                             }                            "Text":
                             {
       {
-        "@DEF":"CenterTextNode"
+        "@DEF":"CenterTextNode",
+        "@string":""origin""
       }
                                 "FontStyle":
                                 {
       {
-        "@DEF":"FS4"
+        "@DEF":"FS4",
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"0.4"
       }
     },
                             }                        }                    }                }                "Transform":

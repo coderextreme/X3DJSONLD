@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"14 December 2025",
+        "@content":"Mon, 09 Feb 2026 07:11:17 GMT",
         "@name":"modified"
       }
     },
@@ -263,79 +263,20 @@
         "meta":
         {
       {
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit",
         "@name":"generator"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototype.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "WorldInfo":
-        {
-      {
-        "@DEF":"ModelInfo"
-      }
-    }
-        "Background":
-        {
-      {
-        "@skyColor":"0.8 0.8 1"
-      }
-    },
-        "NavigationInfo":
-        {
-    },
-        "Group":
-        {
-      {
-        "@DEF":"HandleInlineLoading"
-      }
-            "Inline":
-            {
-      {
-        "@DEF":"HumanoidInline"
-      }
-    },
-            "IMPORT":
-            {
-      {
-        "@AS":"HumanoidImported",
-        "@importedDEF":"BoxMan2",
-        "@inlineDEF":"HumanoidInline"
-      }
-    },
-            "LoadSensor":
-            {
-      {
-        "@DEF":"HumanoidInlineLoadSensor"
-      }
-                "Inline":
-                {
-      {
-        "@USE":"HumanoidInline"
-      }
-    },
-            }        }        "ProtoDeclare":
+        "ProtoDeclare":
         {
       {
         "@appinfo":"Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values.",
@@ -487,10 +428,18 @@
                 "TimeSensor":
                 {
       {
-        "@DEF":"ClockTimeSensor"
+        "@DEF":"ClockTimeSensor",
+        "@description":"control timing of pose animation when triggered"
       }
                     "IS":
                     {
+                        "connect":
+                        {
+      {
+        "@nodeField":"metadata",
+        "@protoField":"metadata"
+      }
+    },
                         "connect":
                         {
       {
@@ -508,13 +457,6 @@
                         "connect":
                         {
       {
-        "@nodeField":"isActive",
-        "@protoField":"isActive"
-      }
-    },
-                        "connect":
-                        {
-      {
         "@nodeField":"startTime",
         "@protoField":"set_startTime"
       }
@@ -522,14 +464,15 @@
                         "connect":
                         {
       {
-        "@nodeField":"metadata",
-        "@protoField":"metadata"
+        "@nodeField":"isActive",
+        "@protoField":"isActive"
       }
     },
                     }                }                "TimeSensor":
                 {
       {
-        "@DEF":"ResetTimeSensor"
+        "@DEF":"ResetTimeSensor",
+        "@description":"control timing of skeleton reset to &quot;A&quot; pose when triggered"
       }
                     "IS":
                     {
@@ -569,7 +512,9 @@
                 "Script":
                 {
       {
-        "@DEF":"HAnimPoseScript"
+        "@DEF":"HAnimPoseScript",
+        "@directOutput":"true",
+        "@url":""HAnimPosePrototypeScript.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js""
       }
                     "IS":
                     {
@@ -808,7 +753,49 @@
         "@type":"MFNode"
       }
     },
-                }            }        }        "Viewpoint":
+                }            }        }        "WorldInfo":
+        {
+      {
+        "@DEF":"ModelInfo",
+        "@info":""Design to illustrate a potential HAnimPose node"",
+        "@title":"HAnimPosePrototype.x3d"
+      }
+    }
+        "Background":
+        {
+      {
+        "@skyColor":"0.8 0.8 1"
+      }
+    },
+        "NavigationInfo":
+        {
+    },
+        "Group":
+        {
+      {
+        "@DEF":"HandleInlineLoading"
+      }
+            "Inline":
+            {
+      {
+        "@DEF":"HumanoidInline",
+        "@description":"remote HAnimHumanoid for IMPORT",
+        "@url":""../Skin/BoxMan2.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d""
+      }
+    },
+            "LoadSensor":
+            {
+      {
+        "@DEF":"HumanoidInlineLoadSensor",
+        "@timeOut":"2"
+      }
+                "Inline":
+                {
+      {
+        "@USE":"HumanoidInline"
+      }
+    },
+            }        }        "Viewpoint":
         {
       {
         "@description":"HAnimPose for HumanoidInline IMPORT model",
@@ -824,20 +811,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"T"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -849,15 +822,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"1"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"description",
-        "@value":"arms stretched outward and level similar to letter T"
+        "@name":"name",
+        "@value":"T"
       }
     },
             "fieldValue":
@@ -868,16 +834,36 @@
                 "HAnimJoint":
                 {
       {
-        "@DEF":"PoseJoint_l_shoulder_1"
+        "@DEF":"PoseJoint_l_shoulder_1",
+        "@description":"left shoulder",
+        "@name":"l_shoulder",
+        "@rotation":"0 0 1 1.57"
       }
     },
                 "HAnimJoint":
                 {
       {
-        "@DEF":"PoseJoint_r_shoulder_1"
+        "@DEF":"PoseJoint_r_shoulder_1",
+        "@description":"right shoulder",
+        "@name":"r_shoulder",
+        "@rotation":"0 0 -1 1.57"
       }
     },
             }            "fieldValue":
+            {
+      {
+        "@name":"description",
+        "@value":"arms stretched outward and level similar to letter T"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"loa",
+        "@value":"1"
+      }
+    },
+            "fieldValue":
             {
       {
         "@name":"transitionDuration",
@@ -893,20 +879,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"A"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -918,15 +890,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"1"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"description",
-        "@value":"arms stretched outward and downward similar to letter A"
+        "@name":"name",
+        "@value":"A"
       }
     },
             "fieldValue":
@@ -937,27 +902,40 @@
                 "HAnimJoint":
                 {
       {
-        "@DEF":"PoseJoint_l_shoulder"
+        "@DEF":"PoseJoint_l_shoulder",
+        "@description":"left shoulder",
+        "@name":"l_shoulder",
+        "@rotation":"0 0 1 0.5"
       }
     },
                 "HAnimJoint":
                 {
       {
-        "@DEF":"PoseJoint_r_shoulder"
+        "@DEF":"PoseJoint_r_shoulder",
+        "@description":"right shoulder",
+        "@name":"r_shoulder",
+        "@rotation":"0 0 -1 0.5"
       }
     },
             }            "fieldValue":
             {
       {
-        "@name":"transitionDuration",
-        "@value":"1.2"
+        "@name":"description",
+        "@value":"arms stretched outward and downward similar to letter A"
       }
     },
             "fieldValue":
             {
       {
-        "@name":"traceEnabled",
-        "@value":"true"
+        "@name":"loa",
+        "@value":"1"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"transitionDuration",
+        "@value":"1.2"
       }
     },
         }        "ProtoInstance":
@@ -969,20 +947,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"TouchDown"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -994,15 +958,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"1"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"description",
-        "@value":"arms and legs stretched outward providing a TouchDown gesture"
+        "@name":"name",
+        "@value":"TouchDown"
       }
     },
             "fieldValue":
@@ -1013,6 +970,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_1",
         "@name":"humanoid_root",
         "@rotation":"0 1 0 -0.698132"
       }
@@ -1020,6 +978,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_2",
         "@name":"l_hip",
         "@rotation":"-1 1 1 1"
       }
@@ -1027,6 +986,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_3",
         "@name":"l_knee",
         "@rotation":"1 0 0 1"
       }
@@ -1034,6 +994,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_4",
         "@name":"l_talocrural",
         "@rotation":"-0.2 0 0.1 0.225"
       }
@@ -1041,6 +1002,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_5",
         "@name":"r_hip",
         "@rotation":"-1 -1 -1 1"
       }
@@ -1048,6 +1010,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_6",
         "@name":"r_knee",
         "@rotation":"1 0 0 1"
       }
@@ -1055,6 +1018,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_7",
         "@name":"r_talocrural",
         "@rotation":"-0.2 0 0.1 0.25"
       }
@@ -1062,6 +1026,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_8",
         "@name":"vl5",
         "@rotation":"0 0 0.01 0.2"
       }
@@ -1069,6 +1034,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_9",
         "@name":"vt10",
         "@rotation":"0 0 0.01 0.1"
       }
@@ -1076,6 +1042,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_10",
         "@name":"vc4",
         "@rotation":"0 0 -0.01 0.15"
       }
@@ -1083,6 +1050,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_11",
         "@name":"l_shoulder",
         "@rotation":"-1 0.5 1 2"
       }
@@ -1090,6 +1058,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_12",
         "@name":"l_elbow",
         "@rotation":"-1 0 0 1"
       }
@@ -1097,12 +1066,14 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_13",
         "@name":"l_radiocarpal"
       }
     },
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_14",
         "@name":"r_shoulder",
         "@rotation":"-1 -0.5 -1 2.6"
       }
@@ -1110,6 +1081,7 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_15",
         "@name":"r_elbow",
         "@rotation":"-1 0 0 1"
       }
@@ -1117,21 +1089,29 @@
                 "HAnimJoint":
                 {
       {
+        "@DEF":"_16",
         "@name":"r_radiocarpal"
       }
     },
             }            "fieldValue":
             {
       {
-        "@name":"transitionDuration",
-        "@value":"1.2"
+        "@name":"description",
+        "@value":"arms and legs stretched outward providing a TouchDown gesture"
       }
     },
             "fieldValue":
             {
       {
-        "@name":"traceEnabled",
-        "@value":"true"
+        "@name":"loa",
+        "@value":"1"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"transitionDuration",
+        "@value":"1.2"
       }
     },
         }        "ProtoInstance":
@@ -1143,20 +1123,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"I"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -1168,8 +1134,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"1"
+        "@name":"name",
+        "@value":"I"
       }
     },
             "fieldValue":
@@ -1182,7 +1148,8 @@
             "fieldValue":
             {
       {
-        "@name":"children"
+        "@name":"loa",
+        "@value":"1"
       }
     },
             "fieldValue":
@@ -1190,13 +1157,6 @@
       {
         "@name":"transitionDuration",
         "@value":"1.5"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"traceEnabled",
-        "@value":"true"
       }
     },
         }        "ProtoInstance":
@@ -1215,13 +1175,6 @@
             "fieldValue":
             {
       {
-        "@name":"enabled",
-        "@value":"false"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"description",
         "@value":"TODO experimental pose not yet implemented"
       }
@@ -1229,15 +1182,15 @@
             "fieldValue":
             {
       {
-        "@name":"transitionDuration",
-        "@value":"1.4"
+        "@name":"enabled",
+        "@value":"false"
       }
     },
             "fieldValue":
             {
       {
-        "@name":"traceEnabled",
-        "@value":"true"
+        "@name":"transitionDuration",
+        "@value":"1.4"
       }
     },
         }        "ProtoInstance":
@@ -1249,20 +1202,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"FaceLeft"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -1274,15 +1213,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"0"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"description",
-        "@value":"Only modify humanoid_root Joint node to face left"
+        "@name":"name",
+        "@value":"FaceLeft"
       }
     },
             "fieldValue":
@@ -1293,21 +1225,31 @@
                 "HAnimJoint":
                 {
       {
-        "@DEF":"FaceLeft_humanoid_root"
+        "@DEF":"FaceLeft_humanoid_root",
+        "@description":"Only rotate the model",
+        "@name":"humanoid_root",
+        "@rotation":"0 1 0 1.570796"
       }
     },
             }            "fieldValue":
             {
       {
-        "@name":"transitionDuration",
-        "@value":"1.1"
+        "@name":"description",
+        "@value":"Only modify humanoid_root Joint node to face left"
       }
     },
             "fieldValue":
             {
       {
-        "@name":"traceEnabled",
-        "@value":"true"
+        "@name":"loa",
+        "@value":"0"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"transitionDuration",
+        "@value":"1.1"
       }
     },
         }        "ProtoInstance":
@@ -1319,20 +1261,6 @@
             "fieldValue":
             {
       {
-        "@name":"name",
-        "@value":"FaceRight"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"enabled",
-        "@value":"true"
-      }
-    },
-            "fieldValue":
-            {
-      {
         "@name":"parentHAnimHumanoid"
       }
                 "HAnimHumanoid":
@@ -1344,15 +1272,8 @@
             }            "fieldValue":
             {
       {
-        "@name":"loa",
-        "@value":"0"
-      }
-    },
-            "fieldValue":
-            {
-      {
-        "@name":"description",
-        "@value":"Only modify humanoid_root Joint node to face right"
+        "@name":"name",
+        "@value":"FaceRight"
       }
     },
             "fieldValue":
@@ -1363,21 +1284,31 @@
                 "HAnimJoint":
                 {
       {
-        "@DEF":"FaceRight_humanoid_root"
+        "@DEF":"FaceRight_humanoid_root",
+        "@description":"Only rotate the model",
+        "@name":"humanoid_root",
+        "@rotation":"0 1 0 -1.570796"
       }
     },
             }            "fieldValue":
             {
       {
-        "@name":"transitionDuration",
-        "@value":"1.1"
+        "@name":"description",
+        "@value":"Only modify humanoid_root Joint node to face right"
       }
     },
             "fieldValue":
             {
       {
-        "@name":"traceEnabled",
-        "@value":"true"
+        "@name":"loa",
+        "@value":"0"
+      }
+    },
+            "fieldValue":
+            {
+      {
+        "@name":"transitionDuration",
+        "@value":"1.1"
       }
     },
         }        "Group":
@@ -1388,7 +1319,8 @@
             "Transform":
             {
       {
-        "@DEF":"DisplayHeader"
+        "@DEF":"DisplayHeader",
+        "@translation":"0 2 0"
       }
                 "Shape":
                 {
@@ -1411,13 +1343,17 @@
                         "FontStyle":
                         {
       {
-        "@DEF":"HeaderFont"
+        "@DEF":"HeaderFont",
+        "@family":""SANS"",
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"0.15"
       }
     },
                     }                }            }            "Transform":
             {
       {
-        "@DEF":"T_PoseInterface"
+        "@DEF":"T_PoseInterface",
+        "@translation":"-1.5 1.5 0"
       }
                 "Shape":
                 {
@@ -1435,7 +1371,10 @@
                         "FontStyle":
                         {
       {
-        "@DEF":"SharedFont"
+        "@DEF":"SharedFont",
+        "@family":""SANS"",
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"0.1"
       }
     },
                     }                }                "Shape":
@@ -1460,22 +1399,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"T_PoseTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"T_PoseTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"T_Pose"
+        "@DEF":"T_PoseTouchSensor",
+        "@description":"select to move shoulders to &quot;T&quot; pose, leave other joints unchanged"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"A_PoseInterface"
+        "@DEF":"A_PoseInterface",
+        "@translation":"-1.5 1 0"
       }
                 "Shape":
                 {
@@ -1513,22 +1445,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"A_PoseTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"A_PoseTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"A_Pose"
+        "@DEF":"A_PoseTouchSensor",
+        "@description":"select to move shoulders to &quot;A&quot; pose, leave other joints unchanged"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"TouchDown_PoseInterface"
+        "@DEF":"TouchDown_PoseInterface",
+        "@translation":"-1.5 0.5 0"
       }
                 "Shape":
                 {
@@ -1566,22 +1491,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"TouchDown_PoseTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"TouchDown_PoseTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"TouchDown_Pose"
+        "@DEF":"TouchDown_PoseTouchSensor",
+        "@description":"select to transition all joints to TouchDown pose"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"I_PoseInterface"
+        "@DEF":"I_PoseInterface",
+        "@translation":"-1.5 0 0"
       }
                 "Shape":
                 {
@@ -1619,22 +1537,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"I_PoseTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"I_PoseTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"I_Pose"
+        "@DEF":"I_PoseTouchSensor",
+        "@description":"select to transition all joints to &quot;I&quot; pose"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"FaceLeftPoseInterface"
+        "@DEF":"FaceLeftPoseInterface",
+        "@translation":"1.5 1.5 0"
       }
                 "Shape":
                 {
@@ -1672,22 +1583,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"FaceLeftTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"FaceLeftTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"FaceLeft_Pose"
+        "@DEF":"FaceLeftTouchSensor",
+        "@description":"select to rotate body and Face Left, leave other joints unchanged"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"FaceRightPoseInterface"
+        "@DEF":"FaceRightPoseInterface",
+        "@translation":"1.5 1 0"
       }
                 "Shape":
                 {
@@ -1725,22 +1629,15 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"FaceRightTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"FaceRightTouchSensor",
-        "@toField":"commencePose",
-        "@toNode":"FaceRight_Pose"
+        "@DEF":"FaceRightTouchSensor",
+        "@description":"select to rotate body and Face Right, leave other joints unchanged"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"AnimatePosesInterface"
+        "@DEF":"AnimatePosesInterface",
+        "@translation":"1.5 0.5 0"
       }
                 "Shape":
                 {
@@ -1783,52 +1680,31 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"AnimatePosesTouchSensor"
+        "@DEF":"AnimatePosesTouchSensor",
+        "@description":"select to animate current pose to &quot;I&quot; pose, then back to original pose, using TimeSensor events"
       }
     },
                 "TimeSensor":
                 {
       {
-        "@DEF":"AnimatePosesClock"
+        "@DEF":"AnimatePosesClock",
+        "@cycleInterval":"4",
+        "@description":"directly animate several poses"
       }
     },
                 "ScalarInterpolator":
                 {
       {
-        "@DEF":"AnimatePosesLoopInterpolator"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"touchTime",
-        "@fromNode":"AnimatePosesTouchSensor",
-        "@toField":"startTime",
-        "@toNode":"AnimatePosesClock"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"fraction_changed",
-        "@fromNode":"AnimatePosesClock",
-        "@toField":"set_fraction",
-        "@toNode":"AnimatePosesLoopInterpolator"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"value_changed",
-        "@fromNode":"AnimatePosesLoopInterpolator",
-        "@toField":"set_fraction",
-        "@toNode":"I_Pose"
+        "@DEF":"AnimatePosesLoopInterpolator",
+        "@key":"0 0.05 0.45 0.55 0.95 1",
+        "@keyValue":"0 0 1 1 0 0"
       }
     },
             }            "Transform":
             {
       {
-        "@DEF":"ResetDefaultPoseInterface"
+        "@DEF":"ResetDefaultPoseInterface",
+        "@translation":"1.5 0 0"
       }
                 "Shape":
                 {
@@ -1866,16 +1742,8 @@
                 }                "TouchSensor":
                 {
       {
-        "@DEF":"ResetPoseTouchSensor"
-      }
-    },
-                "ROUTE":
-                {
-      {
-        "@fromField":"isActive",
-        "@fromNode":"ResetPoseTouchSensor",
-        "@toField":"resetAllJoints",
-        "@toNode":"FaceLeft_Pose"
+        "@DEF":"ResetPoseTouchSensor",
+        "@description":"select to immediately Rezero All Joints (to default &quot;I&quot; Pose) by sending resetAllJoints event"
       }
     },
             }        }        "Group":
@@ -1883,8 +1751,107 @@
       {
         "@DEF":"HandleInlineLoadsensorRouting"
       }
-            "ROUTE":
-            {
+    },
+        "IMPORT":
+        {
+      {
+        "@AS":"HumanoidImported",
+        "@importedDEF":"BoxMan2",
+        "@inlineDEF":"HumanoidInline"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"T_PoseTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"T_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"A_PoseTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"A_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"TouchDown_PoseTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"TouchDown_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"I_PoseTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"I_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"FaceLeftTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"FaceLeft_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"FaceRightTouchSensor",
+        "@toField":"commencePose",
+        "@toNode":"FaceRight_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"touchTime",
+        "@fromNode":"AnimatePosesTouchSensor",
+        "@toField":"set_startTime",
+        "@toNode":"AnimatePosesClock"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"AnimatePosesClock",
+        "@toField":"set_fraction",
+        "@toNode":"AnimatePosesLoopInterpolator"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"value_changed",
+        "@fromNode":"AnimatePosesLoopInterpolator",
+        "@toField":"set_fraction",
+        "@toNode":"I_Pose"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"isActive",
+        "@fromNode":"ResetPoseTouchSensor",
+        "@toField":"resetAllJoints",
+        "@toNode":"FaceLeft_Pose"
+      }
+    },
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1892,8 +1859,8 @@
         "@toNode":"A_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1901,8 +1868,8 @@
         "@toNode":"H_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1910,8 +1877,8 @@
         "@toNode":"I_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1919,8 +1886,8 @@
         "@toNode":"T_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1928,8 +1895,8 @@
         "@toNode":"FaceLeft_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1937,8 +1904,8 @@
         "@toNode":"FaceRight_Pose"
       }
     },
-            "ROUTE":
-            {
+        "ROUTE":
+        {
       {
         "@fromField":"isLoaded",
         "@fromNode":"HumanoidInlineLoadSensor",
@@ -1946,4 +1913,4 @@
         "@toNode":"TouchDown_Pose"
       }
     },
-        }    }}
+    }}

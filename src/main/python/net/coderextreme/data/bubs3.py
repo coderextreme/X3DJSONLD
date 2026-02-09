@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,91 +22,80 @@ meta4.content = "Tour around a prismatic sphere"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta5)
-meta6 = x3d.meta()
-meta6.name = "identifier"
-meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"
-
-head1.children.append(meta6)
 
 X3D0.head = head1
-Scene7 = x3d.Scene()
-NavigationInfo8 = x3d.NavigationInfo()
-NavigationInfo8.type = ["EXAMINE"]
+Scene6 = x3d.Scene()
+NavigationInfo7 = x3d.NavigationInfo()
+NavigationInfo7.type = ["EXAMINE"]
 
-Scene7.children.append(NavigationInfo8)
-Viewpoint9 = x3d.Viewpoint()
-Viewpoint9.position = [0,0,4]
-Viewpoint9.orientation = [1,0,0,0]
-Viewpoint9.description = "Bubbles in action"
+Scene6.children.append(NavigationInfo7)
+Viewpoint8 = x3d.Viewpoint()
+Viewpoint8.description = "Bubbles in action"
+Viewpoint8.position = [0,0,4]
 
-Scene7.children.append(Viewpoint9)
-Background10 = x3d.Background()
-Background10.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
-Background10.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
-Background10.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
-Background10.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
-Background10.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
-Background10.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
+Scene6.children.append(Viewpoint8)
+Background9 = x3d.Background()
+Background9.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
+Background9.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
+Background9.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
+Background9.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
+Background9.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
+Background9.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
 
-Scene7.children.append(Background10)
-Transform11 = x3d.Transform()
-Transform11.DEF = "DECLBubble_transformA"
-Shape12 = x3d.Shape()
-Sphere13 = x3d.Sphere()
-Sphere13.radius = 0.25
+Scene6.children.append(Background9)
+Transform10 = x3d.Transform(DEF="DECLBubble_transformA")
+Shape11 = x3d.Shape()
+Appearance12 = x3d.Appearance()
+Material13 = x3d.Material()
+Material13.diffuseColor = [1,0,0]
+Material13.transparency = 0.2
 
-Shape12.geometry = Sphere13
-Appearance14 = x3d.Appearance()
-Material15 = x3d.Material()
-Material15.diffuseColor = [1,0,0]
-Material15.transparency = 0.2
+Appearance12.material = Material13
 
-Appearance14.material = Material15
+Shape11.appearance = Appearance12
+Sphere14 = x3d.Sphere()
+Sphere14.radius = 0.25
 
-Shape12.appearance = Appearance14
+Shape11.geometry = Sphere14
 
-Transform11.children.append(Shape12)
-Script16 = x3d.Script()
-Script16.DEF = "DECLBubble_bubbleA_bounce"
+Transform10.children.append(Shape11)
+Script15 = x3d.Script(DEF="DECLBubble_bubbleA_bounce")
+field16 = x3d.field()
+field16.accessType = "inputOutput"
+field16.type = "SFVec3f"
+field16.name = "scale"
+field16.value = [1,1,1]
+
+Script15.field.append(field16)
 field17 = x3d.field()
-field17.name = "scale"
 field17.accessType = "inputOutput"
 field17.type = "SFVec3f"
-field17.value = [1,1,1]
+field17.name = "translation"
 
-Script16.field.append(field17)
+Script15.field.append(field17)
 field18 = x3d.field()
-field18.name = "translation"
 field18.accessType = "inputOutput"
 field18.type = "SFVec3f"
-field18.value = [0,0,0]
+field18.name = "velocity"
 
-Script16.field.append(field18)
+Script15.field.append(field18)
 field19 = x3d.field()
-field19.name = "velocity"
 field19.accessType = "inputOutput"
 field19.type = "SFVec3f"
-field19.value = [0,0,0]
+field19.name = "scalvel"
 
-Script16.field.append(field19)
+Script15.field.append(field19)
 field20 = x3d.field()
-field20.name = "scalvel"
-field20.accessType = "inputOutput"
-field20.type = "SFVec3f"
-field20.value = [0,0,0]
+field20.accessType = "inputOnly"
+field20.type = "SFFloat"
+field20.name = "set_fraction"
 
-Script16.field.append(field20)
-field21 = x3d.field()
-field21.name = "set_fraction"
-field21.accessType = "inputOnly"
-field21.type = "SFFloat"
+Script15.field.append(field20)
 
-Script16.field.append(field21)
-
-Script16.sourceCode = '''ecmascript:\n"+
+Script15.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -146,91 +135,64 @@ Script16.sourceCode = '''ecmascript:\n"+
 "    }\n"+
 "}'''
 
-Transform11.children.append(Script16)
-TimeSensor22 = x3d.TimeSensor()
-TimeSensor22.DEF = "DECLBubble_bubbleA_bubbleClock"
-TimeSensor22.cycleInterval = 10
-TimeSensor22.loop = True
+Transform10.children.append(Script15)
+TimeSensor21 = x3d.TimeSensor(DEF="DECLBubble_bubbleA_bubbleClock")
+TimeSensor21.cycleInterval = 10
+TimeSensor21.loop = True
 
-Transform11.children.append(TimeSensor22)
-ROUTE23 = x3d.ROUTE()
-ROUTE23.fromNode = "DECLBubble_bubbleA_bounce"
-ROUTE23.fromField = "translation_changed"
-ROUTE23.toNode = "DECLBubble_transformA"
-ROUTE23.toField = "set_translation"
+Transform10.children.append(TimeSensor21)
 
-Transform11.children.append(ROUTE23)
-ROUTE24 = x3d.ROUTE()
-ROUTE24.fromNode = "DECLBubble_bubbleA_bounce"
-ROUTE24.fromField = "scale_changed"
-ROUTE24.toNode = "DECLBubble_transformA"
-ROUTE24.toField = "set_scale"
+Scene6.children.append(Transform10)
+Transform22 = x3d.Transform(DEF="DECLBubble_transformB")
+Shape23 = x3d.Shape()
+Appearance24 = x3d.Appearance()
+Material25 = x3d.Material()
+Material25.diffuseColor = [1,0,0]
+Material25.transparency = 0.2
 
-Transform11.children.append(ROUTE24)
-ROUTE25 = x3d.ROUTE()
-ROUTE25.fromNode = "DECLBubble_bubbleA_bubbleClock"
-ROUTE25.fromField = "fraction_changed"
-ROUTE25.toNode = "DECLBubble_bubbleA_bounce"
-ROUTE25.toField = "set_fraction"
+Appearance24.material = Material25
 
-Transform11.children.append(ROUTE25)
+Shape23.appearance = Appearance24
+Sphere26 = x3d.Sphere()
+Sphere26.radius = 0.25
 
-Scene7.children.append(Transform11)
-Transform26 = x3d.Transform()
-Transform26.DEF = "DECLBubble_transformB"
-Shape27 = x3d.Shape()
-Sphere28 = x3d.Sphere()
-Sphere28.radius = 0.25
+Shape23.geometry = Sphere26
 
-Shape27.geometry = Sphere28
-Appearance29 = x3d.Appearance()
-Material30 = x3d.Material()
-Material30.diffuseColor = [1,0,0]
-Material30.transparency = 0.2
+Transform22.children.append(Shape23)
+Script27 = x3d.Script(DEF="DECLBubble_bubbleB_bounce")
+field28 = x3d.field()
+field28.accessType = "inputOutput"
+field28.type = "SFVec3f"
+field28.name = "scale"
+field28.value = [1,1,1]
 
-Appearance29.material = Material30
+Script27.field.append(field28)
+field29 = x3d.field()
+field29.accessType = "inputOutput"
+field29.type = "SFVec3f"
+field29.name = "translation"
 
-Shape27.appearance = Appearance29
+Script27.field.append(field29)
+field30 = x3d.field()
+field30.accessType = "inputOutput"
+field30.type = "SFVec3f"
+field30.name = "velocity"
 
-Transform26.children.append(Shape27)
-Script31 = x3d.Script()
-Script31.DEF = "DECLBubble_bubbleB_bounce"
+Script27.field.append(field30)
+field31 = x3d.field()
+field31.accessType = "inputOutput"
+field31.type = "SFVec3f"
+field31.name = "scalvel"
+
+Script27.field.append(field31)
 field32 = x3d.field()
-field32.name = "scale"
-field32.accessType = "inputOutput"
-field32.type = "SFVec3f"
-field32.value = [1,1,1]
+field32.accessType = "inputOnly"
+field32.type = "SFFloat"
+field32.name = "set_fraction"
 
-Script31.field.append(field32)
-field33 = x3d.field()
-field33.name = "translation"
-field33.accessType = "inputOutput"
-field33.type = "SFVec3f"
-field33.value = [0,0,0]
+Script27.field.append(field32)
 
-Script31.field.append(field33)
-field34 = x3d.field()
-field34.name = "velocity"
-field34.accessType = "inputOutput"
-field34.type = "SFVec3f"
-field34.value = [0,0,0]
-
-Script31.field.append(field34)
-field35 = x3d.field()
-field35.name = "scalvel"
-field35.accessType = "inputOutput"
-field35.type = "SFVec3f"
-field35.value = [0,0,0]
-
-Script31.field.append(field35)
-field36 = x3d.field()
-field36.name = "set_fraction"
-field36.accessType = "inputOnly"
-field36.type = "SFFloat"
-
-Script31.field.append(field36)
-
-Script31.sourceCode = '''ecmascript:\n"+
+Script27.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -270,91 +232,64 @@ Script31.sourceCode = '''ecmascript:\n"+
 "    }\n"+
 "}'''
 
-Transform26.children.append(Script31)
-TimeSensor37 = x3d.TimeSensor()
-TimeSensor37.DEF = "DECLBubble_bubbleB_bubbleClock"
-TimeSensor37.cycleInterval = 10
-TimeSensor37.loop = True
+Transform22.children.append(Script27)
+TimeSensor33 = x3d.TimeSensor(DEF="DECLBubble_bubbleB_bubbleClock")
+TimeSensor33.cycleInterval = 10
+TimeSensor33.loop = True
 
-Transform26.children.append(TimeSensor37)
-ROUTE38 = x3d.ROUTE()
-ROUTE38.fromNode = "DECLBubble_bubbleB_bounce"
-ROUTE38.fromField = "translation_changed"
-ROUTE38.toNode = "DECLBubble_transformB"
-ROUTE38.toField = "set_translation"
+Transform22.children.append(TimeSensor33)
 
-Transform26.children.append(ROUTE38)
-ROUTE39 = x3d.ROUTE()
-ROUTE39.fromNode = "DECLBubble_bubbleB_bounce"
-ROUTE39.fromField = "scale_changed"
-ROUTE39.toNode = "DECLBubble_transformB"
-ROUTE39.toField = "set_scale"
+Scene6.children.append(Transform22)
+Transform34 = x3d.Transform(DEF="DECLBubble_transformC")
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance()
+Material37 = x3d.Material()
+Material37.diffuseColor = [1,0,0]
+Material37.transparency = 0.2
 
-Transform26.children.append(ROUTE39)
-ROUTE40 = x3d.ROUTE()
-ROUTE40.fromNode = "DECLBubble_bubbleB_bubbleClock"
-ROUTE40.fromField = "fraction_changed"
-ROUTE40.toNode = "DECLBubble_bubbleB_bounce"
-ROUTE40.toField = "set_fraction"
+Appearance36.material = Material37
 
-Transform26.children.append(ROUTE40)
+Shape35.appearance = Appearance36
+Sphere38 = x3d.Sphere()
+Sphere38.radius = 0.25
 
-Scene7.children.append(Transform26)
-Transform41 = x3d.Transform()
-Transform41.DEF = "DECLBubble_transformC"
-Shape42 = x3d.Shape()
-Sphere43 = x3d.Sphere()
-Sphere43.radius = 0.25
+Shape35.geometry = Sphere38
 
-Shape42.geometry = Sphere43
-Appearance44 = x3d.Appearance()
-Material45 = x3d.Material()
-Material45.diffuseColor = [1,0,0]
-Material45.transparency = 0.2
+Transform34.children.append(Shape35)
+Script39 = x3d.Script(DEF="DECLBubble_bubbleC_bounce")
+field40 = x3d.field()
+field40.accessType = "inputOutput"
+field40.type = "SFVec3f"
+field40.name = "scale"
+field40.value = [1,1,1]
 
-Appearance44.material = Material45
+Script39.field.append(field40)
+field41 = x3d.field()
+field41.accessType = "inputOutput"
+field41.type = "SFVec3f"
+field41.name = "translation"
 
-Shape42.appearance = Appearance44
+Script39.field.append(field41)
+field42 = x3d.field()
+field42.accessType = "inputOutput"
+field42.type = "SFVec3f"
+field42.name = "velocity"
 
-Transform41.children.append(Shape42)
-Script46 = x3d.Script()
-Script46.DEF = "DECLBubble_bubbleC_bounce"
-field47 = x3d.field()
-field47.name = "scale"
-field47.accessType = "inputOutput"
-field47.type = "SFVec3f"
-field47.value = [1,1,1]
+Script39.field.append(field42)
+field43 = x3d.field()
+field43.accessType = "inputOutput"
+field43.type = "SFVec3f"
+field43.name = "scalvel"
 
-Script46.field.append(field47)
-field48 = x3d.field()
-field48.name = "translation"
-field48.accessType = "inputOutput"
-field48.type = "SFVec3f"
-field48.value = [0,0,0]
+Script39.field.append(field43)
+field44 = x3d.field()
+field44.accessType = "inputOnly"
+field44.type = "SFFloat"
+field44.name = "set_fraction"
 
-Script46.field.append(field48)
-field49 = x3d.field()
-field49.name = "velocity"
-field49.accessType = "inputOutput"
-field49.type = "SFVec3f"
-field49.value = [0,0,0]
+Script39.field.append(field44)
 
-Script46.field.append(field49)
-field50 = x3d.field()
-field50.name = "scalvel"
-field50.accessType = "inputOutput"
-field50.type = "SFVec3f"
-field50.value = [0,0,0]
-
-Script46.field.append(field50)
-field51 = x3d.field()
-field51.name = "set_fraction"
-field51.accessType = "inputOnly"
-field51.type = "SFFloat"
-
-Script46.field.append(field51)
-
-Script46.sourceCode = '''ecmascript:\n"+
+Script39.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -394,91 +329,64 @@ Script46.sourceCode = '''ecmascript:\n"+
 "    }\n"+
 "}'''
 
-Transform41.children.append(Script46)
-TimeSensor52 = x3d.TimeSensor()
-TimeSensor52.DEF = "DECLBubble_bubbleC_bubbleClock"
-TimeSensor52.cycleInterval = 10
-TimeSensor52.loop = True
+Transform34.children.append(Script39)
+TimeSensor45 = x3d.TimeSensor(DEF="DECLBubble_bubbleC_bubbleClock")
+TimeSensor45.cycleInterval = 10
+TimeSensor45.loop = True
 
-Transform41.children.append(TimeSensor52)
-ROUTE53 = x3d.ROUTE()
-ROUTE53.fromNode = "DECLBubble_bubbleC_bounce"
-ROUTE53.fromField = "translation_changed"
-ROUTE53.toNode = "DECLBubble_transformC"
-ROUTE53.toField = "set_translation"
+Transform34.children.append(TimeSensor45)
 
-Transform41.children.append(ROUTE53)
-ROUTE54 = x3d.ROUTE()
-ROUTE54.fromNode = "DECLBubble_bubbleC_bounce"
-ROUTE54.fromField = "scale_changed"
-ROUTE54.toNode = "DECLBubble_transformC"
-ROUTE54.toField = "set_scale"
+Scene6.children.append(Transform34)
+Transform46 = x3d.Transform(DEF="DECLBubble_transformD")
+Shape47 = x3d.Shape()
+Appearance48 = x3d.Appearance()
+Material49 = x3d.Material()
+Material49.diffuseColor = [1,0,0]
+Material49.transparency = 0.2
 
-Transform41.children.append(ROUTE54)
-ROUTE55 = x3d.ROUTE()
-ROUTE55.fromNode = "DECLBubble_bubbleC_bubbleClock"
-ROUTE55.fromField = "fraction_changed"
-ROUTE55.toNode = "DECLBubble_bubbleC_bounce"
-ROUTE55.toField = "set_fraction"
+Appearance48.material = Material49
 
-Transform41.children.append(ROUTE55)
+Shape47.appearance = Appearance48
+Sphere50 = x3d.Sphere()
+Sphere50.radius = 0.25
 
-Scene7.children.append(Transform41)
-Transform56 = x3d.Transform()
-Transform56.DEF = "DECLBubble_transformD"
-Shape57 = x3d.Shape()
-Sphere58 = x3d.Sphere()
-Sphere58.radius = 0.25
+Shape47.geometry = Sphere50
 
-Shape57.geometry = Sphere58
-Appearance59 = x3d.Appearance()
-Material60 = x3d.Material()
-Material60.diffuseColor = [1,0,0]
-Material60.transparency = 0.2
+Transform46.children.append(Shape47)
+Script51 = x3d.Script(DEF="DECLBubble_bubbleD_bounce")
+field52 = x3d.field()
+field52.accessType = "inputOutput"
+field52.type = "SFVec3f"
+field52.name = "scale"
+field52.value = [1,1,1]
 
-Appearance59.material = Material60
+Script51.field.append(field52)
+field53 = x3d.field()
+field53.accessType = "inputOutput"
+field53.type = "SFVec3f"
+field53.name = "translation"
 
-Shape57.appearance = Appearance59
+Script51.field.append(field53)
+field54 = x3d.field()
+field54.accessType = "inputOutput"
+field54.type = "SFVec3f"
+field54.name = "velocity"
 
-Transform56.children.append(Shape57)
-Script61 = x3d.Script()
-Script61.DEF = "DECLBubble_bubbleD_bounce"
-field62 = x3d.field()
-field62.name = "scale"
-field62.accessType = "inputOutput"
-field62.type = "SFVec3f"
-field62.value = [1,1,1]
+Script51.field.append(field54)
+field55 = x3d.field()
+field55.accessType = "inputOutput"
+field55.type = "SFVec3f"
+field55.name = "scalvel"
 
-Script61.field.append(field62)
-field63 = x3d.field()
-field63.name = "translation"
-field63.accessType = "inputOutput"
-field63.type = "SFVec3f"
-field63.value = [0,0,0]
+Script51.field.append(field55)
+field56 = x3d.field()
+field56.accessType = "inputOnly"
+field56.type = "SFFloat"
+field56.name = "set_fraction"
 
-Script61.field.append(field63)
-field64 = x3d.field()
-field64.name = "velocity"
-field64.accessType = "inputOutput"
-field64.type = "SFVec3f"
-field64.value = [0,0,0]
+Script51.field.append(field56)
 
-Script61.field.append(field64)
-field65 = x3d.field()
-field65.name = "scalvel"
-field65.accessType = "inputOutput"
-field65.type = "SFVec3f"
-field65.value = [0,0,0]
-
-Script61.field.append(field65)
-field66 = x3d.field()
-field66.name = "set_fraction"
-field66.accessType = "inputOnly"
-field66.type = "SFFloat"
-
-Script61.field.append(field66)
-
-Script61.sourceCode = '''ecmascript:\n"+
+Script51.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -518,38 +426,100 @@ Script61.sourceCode = '''ecmascript:\n"+
 "    }\n"+
 "}'''
 
-Transform56.children.append(Script61)
-TimeSensor67 = x3d.TimeSensor()
-TimeSensor67.DEF = "DECLBubble_bubbleD_bubbleClock"
-TimeSensor67.cycleInterval = 10
-TimeSensor67.loop = True
+Transform46.children.append(Script51)
+TimeSensor57 = x3d.TimeSensor(DEF="DECLBubble_bubbleD_bubbleClock")
+TimeSensor57.cycleInterval = 10
+TimeSensor57.loop = True
 
-Transform56.children.append(TimeSensor67)
+Transform46.children.append(TimeSensor57)
+
+Scene6.children.append(Transform46)
+ROUTE58 = x3d.ROUTE()
+ROUTE58.fromNode = "DECLBubble_bubbleA_bounce"
+ROUTE58.fromField = "translation_changed"
+ROUTE58.toNode = "DECLBubble_transformA"
+ROUTE58.toField = "set_translation"
+
+Scene6.children.append(ROUTE58)
+ROUTE59 = x3d.ROUTE()
+ROUTE59.fromNode = "DECLBubble_bubbleA_bounce"
+ROUTE59.fromField = "scale_changed"
+ROUTE59.toNode = "DECLBubble_transformA"
+ROUTE59.toField = "set_scale"
+
+Scene6.children.append(ROUTE59)
+ROUTE60 = x3d.ROUTE()
+ROUTE60.fromNode = "DECLBubble_bubbleA_bubbleClock"
+ROUTE60.fromField = "fraction_changed"
+ROUTE60.toNode = "DECLBubble_bubbleA_bounce"
+ROUTE60.toField = "set_fraction"
+
+Scene6.children.append(ROUTE60)
+ROUTE61 = x3d.ROUTE()
+ROUTE61.fromNode = "DECLBubble_bubbleB_bounce"
+ROUTE61.fromField = "translation_changed"
+ROUTE61.toNode = "DECLBubble_transformB"
+ROUTE61.toField = "set_translation"
+
+Scene6.children.append(ROUTE61)
+ROUTE62 = x3d.ROUTE()
+ROUTE62.fromNode = "DECLBubble_bubbleB_bounce"
+ROUTE62.fromField = "scale_changed"
+ROUTE62.toNode = "DECLBubble_transformB"
+ROUTE62.toField = "set_scale"
+
+Scene6.children.append(ROUTE62)
+ROUTE63 = x3d.ROUTE()
+ROUTE63.fromNode = "DECLBubble_bubbleB_bubbleClock"
+ROUTE63.fromField = "fraction_changed"
+ROUTE63.toNode = "DECLBubble_bubbleB_bounce"
+ROUTE63.toField = "set_fraction"
+
+Scene6.children.append(ROUTE63)
+ROUTE64 = x3d.ROUTE()
+ROUTE64.fromNode = "DECLBubble_bubbleC_bounce"
+ROUTE64.fromField = "translation_changed"
+ROUTE64.toNode = "DECLBubble_transformC"
+ROUTE64.toField = "set_translation"
+
+Scene6.children.append(ROUTE64)
+ROUTE65 = x3d.ROUTE()
+ROUTE65.fromNode = "DECLBubble_bubbleC_bounce"
+ROUTE65.fromField = "scale_changed"
+ROUTE65.toNode = "DECLBubble_transformC"
+ROUTE65.toField = "set_scale"
+
+Scene6.children.append(ROUTE65)
+ROUTE66 = x3d.ROUTE()
+ROUTE66.fromNode = "DECLBubble_bubbleC_bubbleClock"
+ROUTE66.fromField = "fraction_changed"
+ROUTE66.toNode = "DECLBubble_bubbleC_bounce"
+ROUTE66.toField = "set_fraction"
+
+Scene6.children.append(ROUTE66)
+ROUTE67 = x3d.ROUTE()
+ROUTE67.fromNode = "DECLBubble_bubbleD_bounce"
+ROUTE67.fromField = "translation_changed"
+ROUTE67.toNode = "DECLBubble_transformD"
+ROUTE67.toField = "set_translation"
+
+Scene6.children.append(ROUTE67)
 ROUTE68 = x3d.ROUTE()
 ROUTE68.fromNode = "DECLBubble_bubbleD_bounce"
-ROUTE68.fromField = "translation_changed"
+ROUTE68.fromField = "scale_changed"
 ROUTE68.toNode = "DECLBubble_transformD"
-ROUTE68.toField = "set_translation"
+ROUTE68.toField = "set_scale"
 
-Transform56.children.append(ROUTE68)
+Scene6.children.append(ROUTE68)
 ROUTE69 = x3d.ROUTE()
-ROUTE69.fromNode = "DECLBubble_bubbleD_bounce"
-ROUTE69.fromField = "scale_changed"
-ROUTE69.toNode = "DECLBubble_transformD"
-ROUTE69.toField = "set_scale"
+ROUTE69.fromNode = "DECLBubble_bubbleD_bubbleClock"
+ROUTE69.fromField = "fraction_changed"
+ROUTE69.toNode = "DECLBubble_bubbleD_bounce"
+ROUTE69.toField = "set_fraction"
 
-Transform56.children.append(ROUTE69)
-ROUTE70 = x3d.ROUTE()
-ROUTE70.fromNode = "DECLBubble_bubbleD_bubbleClock"
-ROUTE70.fromField = "fraction_changed"
-ROUTE70.toNode = "DECLBubble_bubbleD_bounce"
-ROUTE70.toField = "set_fraction"
+Scene6.children.append(ROUTE69)
 
-Transform56.children.append(ROUTE70)
-
-Scene7.children.append(Transform56)
-
-X3D0.Scene = Scene7
+X3D0.Scene = Scene6
 f = open("../data/bubs3.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -25,22 +25,15 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a flower",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -91,18 +84,173 @@
                 }                "IndexedFaceSet":
                 {
       {
-        "@DEF":"Orbit"
+        "@DEF":"Orbit",
+        "@ccw":"false",
+        "@convex":"false",
+        "@coordIndex":"0 1 2 -1"
       }
                     "Coordinate":
                     {
       {
-        "@DEF":"OrbitCoordinates"
+        "@DEF":"OrbitCoordinates",
+        "@point":"0 0 1 0 1 0 1 0 0"
       }
     },
                 }            }        }        "Script":
         {
       {
-        "@DEF":"OrbitScript"
+        "@DEF":"OrbitScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;var e = 5;
+&quot;+
+&quot;var f = 5;
+&quot;+
+&quot;var g = 5;
+&quot;+
+&quot;var h = 5;
+&quot;+
+&quot;var resolution = 100;
+&quot;+
+&quot;var t = 0;
+&quot;+
+&quot;var p = 0;
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;     generateCoordinates(resolution);
+&quot;+
+&quot;     var localci = new MFInt32();
+&quot;+
+&quot;     var arrIndex = 0;
+&quot;+
+&quot;     for (var i = 0; i < resolution-1; i++) {
+&quot;+
+&quot;     	for (var j = 0; j < resolution-1; j++) {
+&quot;+
+&quot;	     localci[arrIndex++] = i*resolution+j;
+&quot;+
+&quot;	     localci[arrIndex++] = i*resolution+j+1;
+&quot;+
+&quot;	     localci[arrIndex++] = (i+1)*resolution+j+1;
+&quot;+
+&quot;	     localci[arrIndex++] = (i+1)*resolution+j;
+&quot;+
+&quot;	     localci[arrIndex++] = -1;
+&quot;+
+&quot;	}
+&quot;+
+&quot;    }
+&quot;+
+&quot;    coordIndexes = localci;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function generateCoordinates(resolution) {
+&quot;+
+&quot;     var theta = 0.0;
+&quot;+
+&quot;     var phi = 0.0;
+&quot;+
+&quot;     var delta = (2 * 3.141592653) / (resolution-1);
+&quot;+
+&quot;     var localc = new MFVec3f();
+&quot;+
+&quot;     var arrIndex = 0;
+&quot;+
+&quot;     for (var i = 0; i < resolution; i++) {
+&quot;+
+&quot;     	for (var j = 0; j < resolution; j++) {
+&quot;+
+&quot;		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+&quot;+
+&quot;		localc[arrIndex++] = new SFVec3f(
+&quot;+
+&quot;			rho * Math.cos(phi) * Math.cos(theta),
+&quot;+
+&quot;			rho * Math.cos(phi) * Math.sin(theta),
+&quot;+
+&quot;			rho * Math.sin(phi)
+&quot;+
+&quot;		);
+&quot;+
+&quot;		theta += delta;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	phi += delta;
+&quot;+
+&quot;     }
+&quot;+
+&quot;     coordinates = localc;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction(fraction, eventTime) {
+&quot;+
+&quot;	t += 0.5;
+&quot;+
+&quot;	p += 0.5;
+&quot;+
+&quot;	var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;	switch (choice) {
+&quot;+
+&quot;	case 0:
+&quot;+
+&quot;		e += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 1:
+&quot;+
+&quot;		f += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 2:
+&quot;+
+&quot;		g += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 3:
+&quot;+
+&quot;		h += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (f < 1) {
+&quot;+
+&quot;		f = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (g < 1) {
+&quot;+
+&quot;		g = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (h < 1) {
+&quot;+
+&quot;		h = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	generateCoordinates(resolution);
+&quot;+
+&quot;}"
       }
             "field":
             {
@@ -131,7 +279,9 @@
         }        "TimeSensor":
         {
       {
-        "@DEF":"Clock"
+        "@DEF":"Clock",
+        "@cycleInterval":"16",
+        "@loop":"true"
       }
     },
         "ROUTE":
@@ -148,7 +298,7 @@
       {
         "@fromField":"coordinates",
         "@fromNode":"OrbitScript",
-        "@toField":"point",
+        "@toField":"set_point",
         "@toNode":"OrbitCoordinates"
       }
     },

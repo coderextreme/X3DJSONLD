@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"23 Dec 2022",
+        "@content":"Mon, 09 Feb 2026 07:12:59 GMT",
         "@name":"modified"
       }
     },
@@ -50,20 +50,6 @@
         "@name":"description"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/x3d/pp3.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"manual",
-        "@name":"generator"
-      }
-    },
     }    "Scene":
     {
         "ProtoDeclare":
@@ -71,6 +57,9 @@
       {
         "@name":"Process"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Group":
@@ -135,25 +124,29 @@
                                     "Material":
                                     {
       {
-        "@DEF":"MaterialLightBlue"
+        "@DEF":"MaterialLightBlue",
+        "@diffuseColor":"1 1 1"
       }
     },
                                 }                                "Text":
                                 {
       {
-        "@DEF":"RightString"
+        "@DEF":"RightString",
+        "@string":""r""
       }
     },
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"RightSensor"
+        "@DEF":"RightSensor",
+        "@enabled":"false"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"RightTouch"
+        "@DEF":"RightTouch",
+        "@description":"touch to activate"
       }
     },
                     }                    "Transform":
@@ -198,19 +191,22 @@
                                 }                                "Text":
                                 {
       {
-        "@DEF":"UpString"
+        "@DEF":"UpString",
+        "@string":""u""
       }
     },
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"UpSensor"
+        "@DEF":"UpSensor",
+        "@enabled":"false"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"UpTouch"
+        "@DEF":"UpTouch",
+        "@description":"touch to activate"
       }
     },
                     }                    "Transform":
@@ -277,19 +273,38 @@
                             }                        }                        "StringSensor":
                         {
       {
-        "@DEF":"CenterSensor"
+        "@DEF":"CenterSensor",
+        "@enabled":"false"
       }
     },
                         "TouchSensor":
                         {
       {
-        "@DEF":"CenterTouch"
+        "@DEF":"CenterTouch",
+        "@description":"touch to activate"
       }
     },
                     }                }                "Script":
                 {
       {
-        "@DEF":"RightSingleToMultiString"
+        "@DEF":"RightSingleToMultiString",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;	rightlines = new MFString(&quot;&quot;);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_rightstring(rightstr) {
+&quot;+
+&quot;	rightlines = new MFString(rightstr);
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -310,7 +325,24 @@
                 }                "Script":
                 {
       {
-        "@DEF":"UpSingleToMultiString"
+        "@DEF":"UpSingleToMultiString",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;	uplines = new MFString(&quot;&quot;);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_upstring(upstr) {
+&quot;+
+&quot;	uplines = new MFString(upstr);
+&quot;+
+&quot;}"
       }
                     "field":
                     {
@@ -331,7 +363,24 @@
                 }                "Script":
                 {
       {
-        "@DEF":"CenterSingleToMultiString"
+        "@DEF":"CenterSingleToMultiString",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;	centerlines = new MFString(&quot;&quot;);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_centerstring(centerstr) {
+&quot;+
+&quot;	centerlines = new MFString(centerstr);
+&quot;+
+&quot;}"
       }
                     "field":
                     {

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Interchange' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Interchange' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='IcosahedronSubdivisionLevel5.x3d' name='title'/>
     <meta content='IcosahedronSubdivisionLevel5.ply' name='reference'/>
     <meta content='Icosahedron is a polyhedron with twenty faces, subdivided to level 5, where all 10242 vertices and 20480 faces produce regular (equilateral) triangles.' name='description'/>
     <meta content='13 September 2014' name='created'/>
-    <meta content='27 September 2014' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:11:33 GMT' name='modified'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='Icosahedron.x3d' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/Icosahedron' name='reference'/>
@@ -14,9 +14,7 @@
     <meta content='https://en.wikipedia.org/wiki/Platonic_solid' name='reference'/>
     <meta content='https://en.wikipedia.org/wiki/Geodesic_grid' name='reference'/>
     <meta content='http://x3dGraphics.com/examples/X3dForAdvancedModeling/GeometricShapes/IcosahedronSubdivisionLevel5.x3d' name='identifier'/>
-    <meta content='Meshlab X3D Exported, http://meshlab.sourceforge.net' name='generator'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <Background skyColor='0.5 1 0.9'/>

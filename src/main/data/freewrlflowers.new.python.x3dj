@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -32,20 +32,66 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d",
-        "@name":"identifier"
       }
     },
     }    "Scene":
     {
-        "NavigationInfo":
+        "ExternProtoDeclare":
+        {
+      {
+        "@name":"FlowerProto",
+        "@url":""../data/flowerprotofreewrl.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto""
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"vertex",
+        "@type":"MFString"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"fragment",
+        "@type":"MFString"
+      }
+    },
+        }        "ProtoDeclare":
+        {
+      {
+        "@name":"flower"
+      }
+            "ProtoInterface":
+            {
+    },
+            "ProtoBody":
+            {
+                "Group":
+                {
+                    "ProtoInstance":
+                    {
+      {
+        "@name":"FlowerProto"
+      }
+                        "fieldValue":
+                        {
+      {
+        "@name":"vertex",
+        "@value":""../shaders/freewrl_flowers_chromatic.vs""
+      }
+    },
+                        "fieldValue":
+                        {
+      {
+        "@name":"fragment",
+        "@value":""../shaders/freewrl.fs""
+      }
+    },
+                    }                }            }        }        "NavigationInfo":
         {
     },
         "Viewpoint":
@@ -68,57 +114,7 @@
     },
         "Group":
         {
-            "ExternProtoDeclare":
-            {
-      {
-        "@name":"FlowerProto",
-        "@url":""../data/flowerprotofreewrl.x3d#FlowerProto" "https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto""
-      }
-                "field":
-                {
-      {
-        "@accessType":"inputOutput",
-        "@name":"vertex",
-        "@type":"MFString"
-      }
-    },
-                "field":
-                {
-      {
-        "@accessType":"inputOutput",
-        "@name":"fragment",
-        "@type":"MFString"
-      }
-    },
-            }            "ProtoDeclare":
-            {
-      {
-        "@name":"flower"
-      }
-                "ProtoBody":
-                {
-                    "Group":
-                    {
-                        "ProtoInstance":
-                        {
-      {
-        "@name":"FlowerProto"
-      }
-                            "fieldValue":
-                            {
-      {
-        "@name":"vertex",
-        "@value":""../shaders/freewrl_flowers_chromatic.vs""
-      }
-    },
-                            "fieldValue":
-                            {
-      {
-        "@name":"fragment",
-        "@value":""../shaders/freewrl.fs""
-      }
-    },
-                        }                    }                }            }            "ProtoInstance":
+            "ProtoInstance":
             {
       {
         "@name":"flower"

@@ -4,16 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
         "meta":
         {
       {
@@ -33,13 +27,6 @@
       {
         "@content":"3 prismatic spheres",
         "@name":"description"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d",
-        "@name":"identifier"
       }
     },
     }    "Scene":
@@ -69,15 +56,75 @@
             }        }        "Script":
         {
       {
-        "@DEF":"Bounce2"
+        "@DEF":"Bounce2",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;			function newBubble() {
+&quot;+
+&quot;			    translation = new SFVec3f(0, 0, 0);
+&quot;+
+&quot;			    velocity = new SFVec3f(
+&quot;+
+&quot;			    	Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5);
+&quot;+
+&quot;			}
+&quot;+
+&quot;			function set_fraction() {
+&quot;+
+&quot;			    translation = new SFVec3f(
+&quot;+
+&quot;			    	translation.x + velocity.x,
+&quot;+
+&quot;				translation.y + velocity.y,
+&quot;+
+&quot;				translation.z + velocity.z);
+&quot;+
+&quot;				if (Math.abs(translation.x) > 10) {
+&quot;+
+&quot;					newBubble();
+&quot;+
+&quot;				} else if (Math.abs(translation.y) > 10) {
+&quot;+
+&quot;					newBubble();
+&quot;+
+&quot;				} else if (Math.abs(translation.z) > 10) {
+&quot;+
+&quot;					newBubble();
+&quot;+
+&quot;				} else {
+&quot;+
+&quot;					velocity = new SFVec3f(
+&quot;+
+&quot;						velocity.x + Math.random() * 0.2 - 0.1,
+&quot;+
+&quot;						velocity.y + Math.random() * 0.2 - 0.1,
+&quot;+
+&quot;						velocity.z + Math.random() * 0.2 - 0.1
+&quot;+
+&quot;					);
+&quot;+
+&quot;				}
+&quot;+
+&quot;			}
+&quot;+
+&quot;
+&quot;+
+&quot;			function initialize() {
+&quot;+
+&quot;			     newBubble();
+&quot;+
+&quot;			}"
       }
             "field":
             {
       {
         "@accessType":"inputOnly",
         "@name":"set_translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             "field":
@@ -85,8 +132,7 @@
       {
         "@accessType":"outputOnly",
         "@name":"translation_changed",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             "field":
@@ -94,8 +140,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             "field":
@@ -103,8 +148,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
             "field":
@@ -118,7 +162,9 @@
         }        "TimeSensor":
         {
       {
-        "@DEF":"TourTime"
+        "@DEF":"TourTime",
+        "@cycleInterval":"0.15",
+        "@loop":"true"
       }
     },
         "ROUTE":

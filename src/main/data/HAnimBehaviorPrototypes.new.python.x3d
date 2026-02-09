@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component name='HAnim'/>
     <meta content='HAnimBehaviorPrototypes.x3d' name='title'/>
     <meta content='Prototypes for HAnimBehavior node, which collects OrientationInterpolators for aggregate animation of an HAnim humanoid model, and HAnimBodyBehaviorChooser, which selects one body and enables/disables multiple aggregated behaviors.' name='description'/>
     <meta content='Don Brutzman, Jeff Weekley, MV4205 Advanced X3D Authoring class, and Keith Victor' name='creator'/>
     <meta content='2 May 2006' name='created'/>
-    <meta content='4 July 2020' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:11:17 GMT' name='modified'/>
     <meta content='Web3D2007BlendedBehaviorsChangeableBodies.pdf' name='reference'/>
     <meta content='https://www.web3d.org/files/specifications/19774/V1.0' name='reference'/>
     <meta content='https://www.web3d.org/x3d/specifications/ISO-IEC-19775-X3DAbstractSpecification_Revision1_to_Part1/Part01/components/hanim.html' name='reference'/>
@@ -16,11 +16,8 @@
     <meta content='X3D HAnim humanoid animation behaviors' name='subject'/>
     <meta content='under development. should joint translations be exposed? upgrade to HAnim v2.2' name='warning'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d' name='identifier'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
-    <WorldInfo title='HAnimBehaviorPrototypes.x3d'/>
     <ProtoDeclare appinfo='The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior.' documentation='https://www.web3d.org/files/specifications/19774/V1.0/' name='HAnimBehavior'>
       <ProtoInterface>
         <field accessType='inputOutput' appinfo='Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3.' name='supportedLOA' type='SFInt32' value='-1'/>
@@ -612,14 +609,12 @@
             <connect nodeField='cycleInterval' protoField='cycleInterval'/>
             <connect nodeField='loop' protoField='loop'/>
             <connect nodeField='startTime' protoField='startTime'/>
-            <connect nodeField='stopTime' protoField='stopTime'/>
-            <connect nodeField='pauseTime' protoField='pauseTime'/>
             <connect nodeField='resumeTime' protoField='resumeTime'/>
-            <connect nodeField='cycleTime' protoField='cycleTime'/>
-            <connect nodeField='isActive' protoField='isActive'/>
+            <connect nodeField='pauseTime' protoField='pauseTime'/>
+            <connect nodeField='stopTime' protoField='stopTime'/>
             <connect nodeField='isPaused' protoField='isPaused'/>
-            <connect nodeField='elapsedTime' protoField='elapsedTime'/>
-            <connect nodeField='time' protoField='time'/>
+            <connect nodeField='isActive' protoField='isActive'/>
+            <connect nodeField='cycleTime' protoField='cycleTime'/>
             <connect nodeField='fraction_changed' protoField='fraction_changed'/>
           </IS>
         </TimeSensor>
@@ -635,7 +630,6 @@
             <connect nodeField='value_changed' protoField='HumanoidRoot_translation_changed'/>
           </IS>
         </PositionInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='HumanoidRootPI'/>
         <OrientationInterpolator DEF='HumanoidRootOI'>
           <IS>
             <connect nodeField='key' protoField='HumanoidRoot_rotation_key'/>
@@ -643,7 +637,6 @@
             <connect nodeField='value_changed' protoField='HumanoidRoot_rotation_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='HumanoidRootOI'/>
         <OrientationInterpolator DEF='c1_OI'>
           <IS>
             <connect nodeField='key' protoField='c1_key'/>
@@ -651,7 +644,6 @@
             <connect nodeField='value_changed' protoField='c1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c1_OI'/>
         <OrientationInterpolator DEF='c2_OI'>
           <IS>
             <connect nodeField='key' protoField='c2_key'/>
@@ -659,7 +651,6 @@
             <connect nodeField='value_changed' protoField='c2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c2_OI'/>
         <OrientationInterpolator DEF='c3_OI'>
           <IS>
             <connect nodeField='key' protoField='c3_key'/>
@@ -667,7 +658,6 @@
             <connect nodeField='value_changed' protoField='c3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c3_OI'/>
         <OrientationInterpolator DEF='c4_OI'>
           <IS>
             <connect nodeField='key' protoField='c4_key'/>
@@ -675,7 +665,6 @@
             <connect nodeField='value_changed' protoField='c4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c4_OI'/>
         <OrientationInterpolator DEF='c5_OI'>
           <IS>
             <connect nodeField='key' protoField='c5_key'/>
@@ -683,7 +672,6 @@
             <connect nodeField='value_changed' protoField='c5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c5_OI'/>
         <OrientationInterpolator DEF='c6_OI'>
           <IS>
             <connect nodeField='key' protoField='c6_key'/>
@@ -691,7 +679,6 @@
             <connect nodeField='value_changed' protoField='c6_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c6_OI'/>
         <OrientationInterpolator DEF='c7_OI'>
           <IS>
             <connect nodeField='key' protoField='c7_key'/>
@@ -699,7 +686,6 @@
             <connect nodeField='value_changed' protoField='c7_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c7_OI'/>
         <OrientationInterpolator DEF='jaw_OI'>
           <IS>
             <connect nodeField='key' protoField='jaw_key'/>
@@ -707,7 +693,6 @@
             <connect nodeField='value_changed' protoField='jaw_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='jaw_OI'/>
         <OrientationInterpolator DEF='l1_OI'>
           <IS>
             <connect nodeField='key' protoField='l1_key'/>
@@ -715,7 +700,6 @@
             <connect nodeField='value_changed' protoField='l1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l1_OI'/>
         <OrientationInterpolator DEF='l2_OI'>
           <IS>
             <connect nodeField='key' protoField='l2_key'/>
@@ -723,7 +707,6 @@
             <connect nodeField='value_changed' protoField='l2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l2_OI'/>
         <OrientationInterpolator DEF='l3_OI'>
           <IS>
             <connect nodeField='key' protoField='l3_key'/>
@@ -731,7 +714,6 @@
             <connect nodeField='value_changed' protoField='l3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l3_OI'/>
         <OrientationInterpolator DEF='l4_OI'>
           <IS>
             <connect nodeField='key' protoField='l4_key'/>
@@ -739,7 +721,6 @@
             <connect nodeField='value_changed' protoField='l4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l4_OI'/>
         <OrientationInterpolator DEF='l5_OI'>
           <IS>
             <connect nodeField='key' protoField='l5_key'/>
@@ -747,7 +728,6 @@
             <connect nodeField='value_changed' protoField='l5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l5_OI'/>
         <OrientationInterpolator DEF='l_acromioclavicular_OI'>
           <IS>
             <connect nodeField='key' protoField='l_acromioclavicular_key'/>
@@ -755,7 +735,6 @@
             <connect nodeField='value_changed' protoField='l_acromioclavicular_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_acromioclavicular_OI'/>
         <OrientationInterpolator DEF='l_ankle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ankle_key'/>
@@ -763,7 +742,6 @@
             <connect nodeField='value_changed' protoField='l_ankle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ankle_OI'/>
         <OrientationInterpolator DEF='l_calf_OI'>
           <IS>
             <connect nodeField='key' protoField='l_calf_key'/>
@@ -771,7 +749,6 @@
             <connect nodeField='value_changed' protoField='l_calf_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_calf_OI'/>
         <OrientationInterpolator DEF='l_clavicle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_clavicle_key'/>
@@ -779,7 +756,6 @@
             <connect nodeField='value_changed' protoField='l_clavicle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_clavicle_OI'/>
         <OrientationInterpolator DEF='l_elbow_OI'>
           <IS>
             <connect nodeField='key' protoField='l_elbow_key'/>
@@ -787,7 +763,6 @@
             <connect nodeField='value_changed' protoField='l_elbow_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_elbow_OI'/>
         <OrientationInterpolator DEF='l_eyeball_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyeball_key'/>
@@ -795,7 +770,6 @@
             <connect nodeField='value_changed' protoField='l_eyeball_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyeball_OI'/>
         <OrientationInterpolator DEF='l_eyeball_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyeball_joint_key'/>
@@ -803,7 +777,6 @@
             <connect nodeField='value_changed' protoField='l_eyeball_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyeball_joint_OI'/>
         <OrientationInterpolator DEF='l_eyebrow_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyebrow_key'/>
@@ -811,7 +784,6 @@
             <connect nodeField='value_changed' protoField='l_eyebrow_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyebrow_OI'/>
         <OrientationInterpolator DEF='l_eyebrow_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyebrow_joint_key'/>
@@ -819,7 +791,6 @@
             <connect nodeField='value_changed' protoField='l_eyebrow_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyebrow_joint_OI'/>
         <OrientationInterpolator DEF='l_eyelid_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyelid_key'/>
@@ -827,7 +798,6 @@
             <connect nodeField='value_changed' protoField='l_eyelid_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyelid_OI'/>
         <OrientationInterpolator DEF='l_eyelid_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='l_eyelid_joint_key'/>
@@ -835,7 +805,6 @@
             <connect nodeField='value_changed' protoField='l_eyelid_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyelid_joint_OI'/>
         <OrientationInterpolator DEF='l_forearm_OI'>
           <IS>
             <connect nodeField='key' protoField='l_forearm_key'/>
@@ -843,7 +812,6 @@
             <connect nodeField='value_changed' protoField='l_forearm_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_forearm_OI'/>
         <OrientationInterpolator DEF='l_forefoot_OI'>
           <IS>
             <connect nodeField='key' protoField='l_forefoot_key'/>
@@ -851,7 +819,6 @@
             <connect nodeField='value_changed' protoField='l_forefoot_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_forefoot_OI'/>
         <OrientationInterpolator DEF='l_hand_OI'>
           <IS>
             <connect nodeField='key' protoField='l_hand_key'/>
@@ -859,7 +826,6 @@
             <connect nodeField='value_changed' protoField='l_hand_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hand_OI'/>
         <OrientationInterpolator DEF='l_hindfoot_OI'>
           <IS>
             <connect nodeField='key' protoField='l_hindfoot_key'/>
@@ -867,7 +833,6 @@
             <connect nodeField='value_changed' protoField='l_hindfoot_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hindfoot_OI'/>
         <OrientationInterpolator DEF='l_hip_OI'>
           <IS>
             <connect nodeField='key' protoField='l_hip_key'/>
@@ -875,7 +840,6 @@
             <connect nodeField='value_changed' protoField='l_hip_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hip_OI'/>
         <OrientationInterpolator DEF='l_index0_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index0_key'/>
@@ -883,7 +847,6 @@
             <connect nodeField='value_changed' protoField='l_index0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index0_OI'/>
         <OrientationInterpolator DEF='l_index1_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index1_key'/>
@@ -891,7 +854,6 @@
             <connect nodeField='value_changed' protoField='l_index1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index1_OI'/>
         <OrientationInterpolator DEF='l_index2_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index2_key'/>
@@ -899,7 +861,6 @@
             <connect nodeField='value_changed' protoField='l_index2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index2_OI'/>
         <OrientationInterpolator DEF='l_index3_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index3_key'/>
@@ -907,7 +868,6 @@
             <connect nodeField='value_changed' protoField='l_index3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index3_OI'/>
         <OrientationInterpolator DEF='l_index_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index_distal_key'/>
@@ -915,7 +875,6 @@
             <connect nodeField='value_changed' protoField='l_index_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_distal_OI'/>
         <OrientationInterpolator DEF='l_index_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index_metacarpal_key'/>
@@ -923,7 +882,6 @@
             <connect nodeField='value_changed' protoField='l_index_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_metacarpal_OI'/>
         <OrientationInterpolator DEF='l_index_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index_middle_key'/>
@@ -931,7 +889,6 @@
             <connect nodeField='value_changed' protoField='l_index_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_middle_OI'/>
         <OrientationInterpolator DEF='l_index_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_index_proximal_key'/>
@@ -939,7 +896,6 @@
             <connect nodeField='value_changed' protoField='l_index_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_proximal_OI'/>
         <OrientationInterpolator DEF='l_knee_OI'>
           <IS>
             <connect nodeField='key' protoField='l_knee_key'/>
@@ -947,7 +903,6 @@
             <connect nodeField='value_changed' protoField='l_knee_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_knee_OI'/>
         <OrientationInterpolator DEF='l_metatarsal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_metatarsal_key'/>
@@ -955,7 +910,6 @@
             <connect nodeField='value_changed' protoField='l_metatarsal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_metatarsal_OI'/>
         <OrientationInterpolator DEF='l_middistal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middistal_key'/>
@@ -963,7 +917,6 @@
             <connect nodeField='value_changed' protoField='l_middistal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middistal_OI'/>
         <OrientationInterpolator DEF='l_middle0_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle0_key'/>
@@ -971,7 +924,6 @@
             <connect nodeField='value_changed' protoField='l_middle0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle0_OI'/>
         <OrientationInterpolator DEF='l_middle1_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle1_key'/>
@@ -979,7 +931,6 @@
             <connect nodeField='value_changed' protoField='l_middle1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle1_OI'/>
         <OrientationInterpolator DEF='l_middle2_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle2_key'/>
@@ -987,7 +938,6 @@
             <connect nodeField='value_changed' protoField='l_middle2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle2_OI'/>
         <OrientationInterpolator DEF='l_middle3_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle3_key'/>
@@ -995,7 +945,6 @@
             <connect nodeField='value_changed' protoField='l_middle3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle3_OI'/>
         <OrientationInterpolator DEF='l_middle_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle_distal_key'/>
@@ -1003,7 +952,6 @@
             <connect nodeField='value_changed' protoField='l_middle_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_distal_OI'/>
         <OrientationInterpolator DEF='l_middle_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle_metacarpal_key'/>
@@ -1011,7 +959,6 @@
             <connect nodeField='value_changed' protoField='l_middle_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_metacarpal_OI'/>
         <OrientationInterpolator DEF='l_middle_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle_middle_key'/>
@@ -1019,7 +966,6 @@
             <connect nodeField='value_changed' protoField='l_middle_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_middle_OI'/>
         <OrientationInterpolator DEF='l_middle_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_middle_proximal_key'/>
@@ -1027,7 +973,6 @@
             <connect nodeField='value_changed' protoField='l_middle_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_proximal_OI'/>
         <OrientationInterpolator DEF='l_midproximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_midproximal_key'/>
@@ -1035,7 +980,6 @@
             <connect nodeField='value_changed' protoField='l_midproximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_midproximal_OI'/>
         <OrientationInterpolator DEF='l_midtarsal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_midtarsal_key'/>
@@ -1043,7 +987,6 @@
             <connect nodeField='value_changed' protoField='l_midtarsal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_midtarsal_OI'/>
         <OrientationInterpolator DEF='l_pinky0_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky0_key'/>
@@ -1051,7 +994,6 @@
             <connect nodeField='value_changed' protoField='l_pinky0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky0_OI'/>
         <OrientationInterpolator DEF='l_pinky1_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky1_key'/>
@@ -1059,7 +1001,6 @@
             <connect nodeField='value_changed' protoField='l_pinky1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky1_OI'/>
         <OrientationInterpolator DEF='l_pinky2_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky2_key'/>
@@ -1067,7 +1008,6 @@
             <connect nodeField='value_changed' protoField='l_pinky2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky2_OI'/>
         <OrientationInterpolator DEF='l_pinky3_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky3_key'/>
@@ -1075,7 +1015,6 @@
             <connect nodeField='value_changed' protoField='l_pinky3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky3_OI'/>
         <OrientationInterpolator DEF='l_pinky_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky_distal_key'/>
@@ -1083,7 +1022,6 @@
             <connect nodeField='value_changed' protoField='l_pinky_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_distal_OI'/>
         <OrientationInterpolator DEF='l_pinky_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky_metacarpal_key'/>
@@ -1091,7 +1029,6 @@
             <connect nodeField='value_changed' protoField='l_pinky_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_metacarpal_OI'/>
         <OrientationInterpolator DEF='l_pinky_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky_middle_key'/>
@@ -1099,7 +1036,6 @@
             <connect nodeField='value_changed' protoField='l_pinky_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_middle_OI'/>
         <OrientationInterpolator DEF='l_pinky_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_pinky_proximal_key'/>
@@ -1107,7 +1043,6 @@
             <connect nodeField='value_changed' protoField='l_pinky_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_proximal_OI'/>
         <OrientationInterpolator DEF='l_ring0_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring0_key'/>
@@ -1115,7 +1050,6 @@
             <connect nodeField='value_changed' protoField='l_ring0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring0_OI'/>
         <OrientationInterpolator DEF='l_ring1_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring1_key'/>
@@ -1123,7 +1057,6 @@
             <connect nodeField='value_changed' protoField='l_ring1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring1_OI'/>
         <OrientationInterpolator DEF='l_ring2_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring2_key'/>
@@ -1131,7 +1064,6 @@
             <connect nodeField='value_changed' protoField='l_ring2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring2_OI'/>
         <OrientationInterpolator DEF='l_ring3_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring3_key'/>
@@ -1139,7 +1071,6 @@
             <connect nodeField='value_changed' protoField='l_ring3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring3_OI'/>
         <OrientationInterpolator DEF='l_ring_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring_distal_key'/>
@@ -1147,7 +1078,6 @@
             <connect nodeField='value_changed' protoField='l_ring_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_distal_OI'/>
         <OrientationInterpolator DEF='l_ring_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring_metacarpal_key'/>
@@ -1155,7 +1085,6 @@
             <connect nodeField='value_changed' protoField='l_ring_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_metacarpal_OI'/>
         <OrientationInterpolator DEF='l_ring_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring_middle_key'/>
@@ -1163,7 +1092,6 @@
             <connect nodeField='value_changed' protoField='l_ring_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_middle_OI'/>
         <OrientationInterpolator DEF='l_ring_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_ring_proximal_key'/>
@@ -1171,7 +1099,6 @@
             <connect nodeField='value_changed' protoField='l_ring_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_proximal_OI'/>
         <OrientationInterpolator DEF='l_scapula_OI'>
           <IS>
             <connect nodeField='key' protoField='l_scapula_key'/>
@@ -1179,7 +1106,6 @@
             <connect nodeField='value_changed' protoField='l_scapula_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_scapula_OI'/>
         <OrientationInterpolator DEF='l_shoulder_OI'>
           <IS>
             <connect nodeField='key' protoField='l_shoulder_key'/>
@@ -1187,7 +1113,6 @@
             <connect nodeField='value_changed' protoField='l_shoulder_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_shoulder_OI'/>
         <OrientationInterpolator DEF='l_sternoclavicular_OI'>
           <IS>
             <connect nodeField='key' protoField='l_sternoclavicular_key'/>
@@ -1195,7 +1120,6 @@
             <connect nodeField='value_changed' protoField='l_sternoclavicular_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_sternoclavicular_OI'/>
         <OrientationInterpolator DEF='l_subtalar_OI'>
           <IS>
             <connect nodeField='key' protoField='l_subtalar_key'/>
@@ -1203,7 +1127,6 @@
             <connect nodeField='value_changed' protoField='l_subtalar_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_subtalar_OI'/>
         <OrientationInterpolator DEF='l_thigh_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thigh_key'/>
@@ -1211,7 +1134,6 @@
             <connect nodeField='value_changed' protoField='l_thigh_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thigh_OI'/>
         <OrientationInterpolator DEF='l_thumb1_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb1_key'/>
@@ -1219,7 +1141,6 @@
             <connect nodeField='value_changed' protoField='l_thumb1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb1_OI'/>
         <OrientationInterpolator DEF='l_thumb2_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb2_key'/>
@@ -1227,7 +1148,6 @@
             <connect nodeField='value_changed' protoField='l_thumb2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb2_OI'/>
         <OrientationInterpolator DEF='l_thumb3_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb3_key'/>
@@ -1235,7 +1155,6 @@
             <connect nodeField='value_changed' protoField='l_thumb3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb3_OI'/>
         <OrientationInterpolator DEF='l_thumb_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb_distal_key'/>
@@ -1243,7 +1162,6 @@
             <connect nodeField='value_changed' protoField='l_thumb_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_distal_OI'/>
         <OrientationInterpolator DEF='l_thumb_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb_metacarpal_key'/>
@@ -1251,7 +1169,6 @@
             <connect nodeField='value_changed' protoField='l_thumb_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_metacarpal_OI'/>
         <OrientationInterpolator DEF='l_thumb_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='l_thumb_proximal_key'/>
@@ -1259,7 +1176,6 @@
             <connect nodeField='value_changed' protoField='l_thumb_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_proximal_OI'/>
         <OrientationInterpolator DEF='l_upperarm_OI'>
           <IS>
             <connect nodeField='key' protoField='l_upperarm_key'/>
@@ -1267,7 +1183,6 @@
             <connect nodeField='value_changed' protoField='l_upperarm_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_upperarm_OI'/>
         <OrientationInterpolator DEF='l_wrist_OI'>
           <IS>
             <connect nodeField='key' protoField='l_wrist_key'/>
@@ -1275,7 +1190,6 @@
             <connect nodeField='value_changed' protoField='l_wrist_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_wrist_OI'/>
         <OrientationInterpolator DEF='pelvis_OI'>
           <IS>
             <connect nodeField='key' protoField='pelvis_key'/>
@@ -1283,7 +1197,6 @@
             <connect nodeField='value_changed' protoField='pelvis_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='pelvis_OI'/>
         <OrientationInterpolator DEF='r_acromioclavicular_OI'>
           <IS>
             <connect nodeField='key' protoField='r_acromioclavicular_key'/>
@@ -1291,7 +1204,6 @@
             <connect nodeField='value_changed' protoField='r_acromioclavicular_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_acromioclavicular_OI'/>
         <OrientationInterpolator DEF='r_ankle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ankle_key'/>
@@ -1299,7 +1211,6 @@
             <connect nodeField='value_changed' protoField='r_ankle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ankle_OI'/>
         <OrientationInterpolator DEF='r_calf_OI'>
           <IS>
             <connect nodeField='key' protoField='r_calf_key'/>
@@ -1307,7 +1218,6 @@
             <connect nodeField='value_changed' protoField='r_calf_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_calf_OI'/>
         <OrientationInterpolator DEF='r_clavicle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_clavicle_key'/>
@@ -1315,7 +1225,6 @@
             <connect nodeField='value_changed' protoField='r_clavicle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_clavicle_OI'/>
         <OrientationInterpolator DEF='r_elbow_OI'>
           <IS>
             <connect nodeField='key' protoField='r_elbow_key'/>
@@ -1323,7 +1232,6 @@
             <connect nodeField='value_changed' protoField='r_elbow_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_elbow_OI'/>
         <OrientationInterpolator DEF='r_eyeball_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyeball_key'/>
@@ -1331,7 +1239,6 @@
             <connect nodeField='value_changed' protoField='r_eyeball_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyeball_OI'/>
         <OrientationInterpolator DEF='r_eyeball_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyeball_joint_key'/>
@@ -1339,7 +1246,6 @@
             <connect nodeField='value_changed' protoField='r_eyeball_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyeball_joint_OI'/>
         <OrientationInterpolator DEF='r_eyebrow_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyebrow_key'/>
@@ -1347,7 +1253,6 @@
             <connect nodeField='value_changed' protoField='r_eyebrow_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyebrow_OI'/>
         <OrientationInterpolator DEF='r_eyebrow_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyebrow_joint_key'/>
@@ -1355,7 +1260,6 @@
             <connect nodeField='value_changed' protoField='r_eyebrow_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyebrow_joint_OI'/>
         <OrientationInterpolator DEF='r_eyelid_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyelid_key'/>
@@ -1363,7 +1267,6 @@
             <connect nodeField='value_changed' protoField='r_eyelid_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyelid_OI'/>
         <OrientationInterpolator DEF='r_eyelid_joint_OI'>
           <IS>
             <connect nodeField='key' protoField='r_eyelid_joint_key'/>
@@ -1371,7 +1274,6 @@
             <connect nodeField='value_changed' protoField='r_eyelid_joint_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyelid_joint_OI'/>
         <OrientationInterpolator DEF='r_forearm_OI'>
           <IS>
             <connect nodeField='key' protoField='r_forearm_key'/>
@@ -1379,7 +1281,6 @@
             <connect nodeField='value_changed' protoField='r_forearm_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_forearm_OI'/>
         <OrientationInterpolator DEF='r_forefoot_OI'>
           <IS>
             <connect nodeField='key' protoField='r_forefoot_key'/>
@@ -1387,7 +1288,6 @@
             <connect nodeField='value_changed' protoField='r_forefoot_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_forefoot_OI'/>
         <OrientationInterpolator DEF='r_hand_OI'>
           <IS>
             <connect nodeField='key' protoField='r_hand_key'/>
@@ -1395,7 +1295,6 @@
             <connect nodeField='value_changed' protoField='r_hand_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hand_OI'/>
         <OrientationInterpolator DEF='r_hindfoot_OI'>
           <IS>
             <connect nodeField='key' protoField='r_hindfoot_key'/>
@@ -1403,7 +1302,6 @@
             <connect nodeField='value_changed' protoField='r_hindfoot_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hindfoot_OI'/>
         <OrientationInterpolator DEF='r_hip_OI'>
           <IS>
             <connect nodeField='key' protoField='r_hip_key'/>
@@ -1411,7 +1309,6 @@
             <connect nodeField='value_changed' protoField='r_hip_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hip_OI'/>
         <OrientationInterpolator DEF='r_index0_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index0_key'/>
@@ -1419,7 +1316,6 @@
             <connect nodeField='value_changed' protoField='r_index0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index0_OI'/>
         <OrientationInterpolator DEF='r_index1_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index1_key'/>
@@ -1427,7 +1323,6 @@
             <connect nodeField='value_changed' protoField='r_index1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index1_OI'/>
         <OrientationInterpolator DEF='r_index2_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index2_key'/>
@@ -1435,7 +1330,6 @@
             <connect nodeField='value_changed' protoField='r_index2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index2_OI'/>
         <OrientationInterpolator DEF='r_index3_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index3_key'/>
@@ -1443,7 +1337,6 @@
             <connect nodeField='value_changed' protoField='r_index3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index3_OI'/>
         <OrientationInterpolator DEF='r_index_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index_distal_key'/>
@@ -1451,7 +1344,6 @@
             <connect nodeField='value_changed' protoField='r_index_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_distal_OI'/>
         <OrientationInterpolator DEF='r_index_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index_metacarpal_key'/>
@@ -1459,7 +1351,6 @@
             <connect nodeField='value_changed' protoField='r_index_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_metacarpal_OI'/>
         <OrientationInterpolator DEF='r_index_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index_middle_key'/>
@@ -1467,7 +1358,6 @@
             <connect nodeField='value_changed' protoField='r_index_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_middle_OI'/>
         <OrientationInterpolator DEF='r_index_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_index_proximal_key'/>
@@ -1475,7 +1365,6 @@
             <connect nodeField='value_changed' protoField='r_index_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_proximal_OI'/>
         <OrientationInterpolator DEF='r_knee_OI'>
           <IS>
             <connect nodeField='key' protoField='r_knee_key'/>
@@ -1483,7 +1372,6 @@
             <connect nodeField='value_changed' protoField='r_knee_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_knee_OI'/>
         <OrientationInterpolator DEF='r_metatarsal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_metatarsal_key'/>
@@ -1491,7 +1379,6 @@
             <connect nodeField='value_changed' protoField='r_metatarsal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_metatarsal_OI'/>
         <OrientationInterpolator DEF='r_middistal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middistal_key'/>
@@ -1499,7 +1386,6 @@
             <connect nodeField='value_changed' protoField='r_middistal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middistal_OI'/>
         <OrientationInterpolator DEF='r_middle0_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle0_key'/>
@@ -1507,7 +1393,6 @@
             <connect nodeField='value_changed' protoField='r_middle0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle0_OI'/>
         <OrientationInterpolator DEF='r_middle1_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle1_key'/>
@@ -1515,7 +1400,6 @@
             <connect nodeField='value_changed' protoField='r_middle1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle1_OI'/>
         <OrientationInterpolator DEF='r_middle2_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle2_key'/>
@@ -1523,7 +1407,6 @@
             <connect nodeField='value_changed' protoField='r_middle2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle2_OI'/>
         <OrientationInterpolator DEF='r_middle3_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle3_key'/>
@@ -1531,7 +1414,6 @@
             <connect nodeField='value_changed' protoField='r_middle3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle3_OI'/>
         <OrientationInterpolator DEF='r_middle_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle_distal_key'/>
@@ -1539,7 +1421,6 @@
             <connect nodeField='value_changed' protoField='r_middle_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_distal_OI'/>
         <OrientationInterpolator DEF='r_middle_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle_metacarpal_key'/>
@@ -1547,7 +1428,6 @@
             <connect nodeField='value_changed' protoField='r_middle_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_metacarpal_OI'/>
         <OrientationInterpolator DEF='r_middle_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle_middle_key'/>
@@ -1555,7 +1435,6 @@
             <connect nodeField='value_changed' protoField='r_middle_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_middle_OI'/>
         <OrientationInterpolator DEF='r_middle_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_middle_proximal_key'/>
@@ -1563,7 +1442,6 @@
             <connect nodeField='value_changed' protoField='r_middle_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_proximal_OI'/>
         <OrientationInterpolator DEF='r_midproximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_midproximal_key'/>
@@ -1571,7 +1449,6 @@
             <connect nodeField='value_changed' protoField='r_midproximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_midproximal_OI'/>
         <OrientationInterpolator DEF='r_midtarsal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_midtarsal_key'/>
@@ -1579,7 +1456,6 @@
             <connect nodeField='value_changed' protoField='r_midtarsal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_midtarsal_OI'/>
         <OrientationInterpolator DEF='r_pinky0_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky0_key'/>
@@ -1587,7 +1463,6 @@
             <connect nodeField='value_changed' protoField='r_pinky0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky0_OI'/>
         <OrientationInterpolator DEF='r_pinky1_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky1_key'/>
@@ -1595,7 +1470,6 @@
             <connect nodeField='value_changed' protoField='r_pinky1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky1_OI'/>
         <OrientationInterpolator DEF='r_pinky2_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky2_key'/>
@@ -1603,7 +1477,6 @@
             <connect nodeField='value_changed' protoField='r_pinky2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky2_OI'/>
         <OrientationInterpolator DEF='r_pinky3_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky3_key'/>
@@ -1611,7 +1484,6 @@
             <connect nodeField='value_changed' protoField='r_pinky3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky3_OI'/>
         <OrientationInterpolator DEF='r_pinky_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky_distal_key'/>
@@ -1619,7 +1491,6 @@
             <connect nodeField='value_changed' protoField='r_pinky_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_distal_OI'/>
         <OrientationInterpolator DEF='r_pinky_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky_metacarpal_key'/>
@@ -1627,7 +1498,6 @@
             <connect nodeField='value_changed' protoField='r_pinky_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_metacarpal_OI'/>
         <OrientationInterpolator DEF='r_pinky_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky_middle_key'/>
@@ -1635,7 +1505,6 @@
             <connect nodeField='value_changed' protoField='r_pinky_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_middle_OI'/>
         <OrientationInterpolator DEF='r_pinky_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_pinky_proximal_key'/>
@@ -1643,7 +1512,6 @@
             <connect nodeField='value_changed' protoField='r_pinky_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_proximal_OI'/>
         <OrientationInterpolator DEF='r_ring0_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring0_key'/>
@@ -1651,7 +1519,6 @@
             <connect nodeField='value_changed' protoField='r_ring0_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring0_OI'/>
         <OrientationInterpolator DEF='r_ring1_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring1_key'/>
@@ -1659,7 +1526,6 @@
             <connect nodeField='value_changed' protoField='r_ring1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring1_OI'/>
         <OrientationInterpolator DEF='r_ring2_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring2_key'/>
@@ -1667,7 +1533,6 @@
             <connect nodeField='value_changed' protoField='r_ring2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring2_OI'/>
         <OrientationInterpolator DEF='r_ring3_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring3_key'/>
@@ -1675,7 +1540,6 @@
             <connect nodeField='value_changed' protoField='r_ring3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring3_OI'/>
         <OrientationInterpolator DEF='r_ring_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring_distal_key'/>
@@ -1683,7 +1547,6 @@
             <connect nodeField='value_changed' protoField='r_ring_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_distal_OI'/>
         <OrientationInterpolator DEF='r_ring_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring_metacarpal_key'/>
@@ -1691,7 +1554,6 @@
             <connect nodeField='value_changed' protoField='r_ring_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_metacarpal_OI'/>
         <OrientationInterpolator DEF='r_ring_middle_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring_middle_key'/>
@@ -1699,7 +1561,6 @@
             <connect nodeField='value_changed' protoField='r_ring_middle_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_middle_OI'/>
         <OrientationInterpolator DEF='r_ring_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_ring_proximal_key'/>
@@ -1707,7 +1568,6 @@
             <connect nodeField='value_changed' protoField='r_ring_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_proximal_OI'/>
         <OrientationInterpolator DEF='r_scapula_OI'>
           <IS>
             <connect nodeField='key' protoField='r_scapula_key'/>
@@ -1715,7 +1575,6 @@
             <connect nodeField='value_changed' protoField='r_scapula_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_scapula_OI'/>
         <OrientationInterpolator DEF='r_shoulder_OI'>
           <IS>
             <connect nodeField='key' protoField='r_shoulder_key'/>
@@ -1723,7 +1582,6 @@
             <connect nodeField='value_changed' protoField='r_shoulder_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_shoulder_OI'/>
         <OrientationInterpolator DEF='r_sternoclavicular_OI'>
           <IS>
             <connect nodeField='key' protoField='r_sternoclavicular_key'/>
@@ -1731,7 +1589,6 @@
             <connect nodeField='value_changed' protoField='r_sternoclavicular_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_sternoclavicular_OI'/>
         <OrientationInterpolator DEF='r_subtalar_OI'>
           <IS>
             <connect nodeField='key' protoField='r_subtalar_key'/>
@@ -1739,7 +1596,6 @@
             <connect nodeField='value_changed' protoField='r_subtalar_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_subtalar_OI'/>
         <OrientationInterpolator DEF='r_thigh_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thigh_key'/>
@@ -1747,7 +1603,6 @@
             <connect nodeField='value_changed' protoField='r_thigh_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thigh_OI'/>
         <OrientationInterpolator DEF='r_thumb1_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb1_key'/>
@@ -1755,7 +1610,6 @@
             <connect nodeField='value_changed' protoField='r_thumb1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb1_OI'/>
         <OrientationInterpolator DEF='r_thumb2_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb2_key'/>
@@ -1763,7 +1617,6 @@
             <connect nodeField='value_changed' protoField='r_thumb2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb2_OI'/>
         <OrientationInterpolator DEF='r_thumb3_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb3_key'/>
@@ -1771,7 +1624,6 @@
             <connect nodeField='value_changed' protoField='r_thumb3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb3_OI'/>
         <OrientationInterpolator DEF='r_thumb_distal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb_distal_key'/>
@@ -1779,7 +1631,6 @@
             <connect nodeField='value_changed' protoField='r_thumb_distal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_distal_OI'/>
         <OrientationInterpolator DEF='r_thumb_metacarpal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb_metacarpal_key'/>
@@ -1787,7 +1638,6 @@
             <connect nodeField='value_changed' protoField='r_thumb_metacarpal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_metacarpal_OI'/>
         <OrientationInterpolator DEF='r_thumb_proximal_OI'>
           <IS>
             <connect nodeField='key' protoField='r_thumb_proximal_key'/>
@@ -1795,7 +1645,6 @@
             <connect nodeField='value_changed' protoField='r_thumb_proximal_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_proximal_OI'/>
         <OrientationInterpolator DEF='r_upperarm_OI'>
           <IS>
             <connect nodeField='key' protoField='r_upperarm_key'/>
@@ -1803,7 +1652,6 @@
             <connect nodeField='value_changed' protoField='r_upperarm_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_upperarm_OI'/>
         <OrientationInterpolator DEF='r_wrist_OI'>
           <IS>
             <connect nodeField='key' protoField='r_wrist_key'/>
@@ -1811,7 +1659,6 @@
             <connect nodeField='value_changed' protoField='r_wrist_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_wrist_OI'/>
         <OrientationInterpolator DEF='sacroiliac_OI'>
           <IS>
             <connect nodeField='key' protoField='sacroiliac_key'/>
@@ -1819,7 +1666,6 @@
             <connect nodeField='value_changed' protoField='sacroiliac_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='sacroiliac_OI'/>
         <OrientationInterpolator DEF='sacrum_OI'>
           <IS>
             <connect nodeField='key' protoField='sacrum_key'/>
@@ -1827,7 +1673,6 @@
             <connect nodeField='value_changed' protoField='sacrum_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='sacrum_OI'/>
         <OrientationInterpolator DEF='skull_OI'>
           <IS>
             <connect nodeField='key' protoField='skull_key'/>
@@ -1835,7 +1680,6 @@
             <connect nodeField='value_changed' protoField='skull_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='skull_OI'/>
         <OrientationInterpolator DEF='skullbase_OI'>
           <IS>
             <connect nodeField='key' protoField='skullbase_key'/>
@@ -1843,7 +1687,6 @@
             <connect nodeField='value_changed' protoField='skullbase_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='skullbase_OI'/>
         <OrientationInterpolator DEF='t1_OI'>
           <IS>
             <connect nodeField='key' protoField='t1_key'/>
@@ -1851,7 +1694,6 @@
             <connect nodeField='value_changed' protoField='t1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t1_OI'/>
         <OrientationInterpolator DEF='t2_OI'>
           <IS>
             <connect nodeField='key' protoField='t2_key'/>
@@ -1859,7 +1701,6 @@
             <connect nodeField='value_changed' protoField='t2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t2_OI'/>
         <OrientationInterpolator DEF='t3_OI'>
           <IS>
             <connect nodeField='key' protoField='t3_key'/>
@@ -1867,7 +1708,6 @@
             <connect nodeField='value_changed' protoField='t3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t3_OI'/>
         <OrientationInterpolator DEF='t4_OI'>
           <IS>
             <connect nodeField='key' protoField='t4_key'/>
@@ -1875,7 +1715,6 @@
             <connect nodeField='value_changed' protoField='t4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t4_OI'/>
         <OrientationInterpolator DEF='t5_OI'>
           <IS>
             <connect nodeField='key' protoField='t5_key'/>
@@ -1883,7 +1722,6 @@
             <connect nodeField='value_changed' protoField='t5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t5_OI'/>
         <OrientationInterpolator DEF='t6_OI'>
           <IS>
             <connect nodeField='key' protoField='t6_key'/>
@@ -1891,7 +1729,6 @@
             <connect nodeField='value_changed' protoField='t6_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t6_OI'/>
         <OrientationInterpolator DEF='t7_OI'>
           <IS>
             <connect nodeField='key' protoField='t7_key'/>
@@ -1899,7 +1736,6 @@
             <connect nodeField='value_changed' protoField='t7_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t7_OI'/>
         <OrientationInterpolator DEF='t8_OI'>
           <IS>
             <connect nodeField='key' protoField='t8_key'/>
@@ -1907,7 +1743,6 @@
             <connect nodeField='value_changed' protoField='t8_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t8_OI'/>
         <OrientationInterpolator DEF='t9_OI'>
           <IS>
             <connect nodeField='key' protoField='t9_key'/>
@@ -1915,7 +1750,6 @@
             <connect nodeField='value_changed' protoField='t9_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t9_OI'/>
         <OrientationInterpolator DEF='t10_OI'>
           <IS>
             <connect nodeField='key' protoField='t10_key'/>
@@ -1923,7 +1757,6 @@
             <connect nodeField='value_changed' protoField='t10_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t10_OI'/>
         <OrientationInterpolator DEF='t11_OI'>
           <IS>
             <connect nodeField='key' protoField='t11_key'/>
@@ -1931,7 +1764,6 @@
             <connect nodeField='value_changed' protoField='t11_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t11_OI'/>
         <OrientationInterpolator DEF='t12_OI'>
           <IS>
             <connect nodeField='key' protoField='t12_key'/>
@@ -1939,7 +1771,6 @@
             <connect nodeField='value_changed' protoField='t12_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t12_OI'/>
         <OrientationInterpolator DEF='temporomandibular_OI'>
           <IS>
             <connect nodeField='key' protoField='temporomandibular_key'/>
@@ -1947,7 +1778,6 @@
             <connect nodeField='value_changed' protoField='temporomandibular_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='temporomandibular_OI'/>
         <OrientationInterpolator DEF='vc1_OI'>
           <IS>
             <connect nodeField='key' protoField='vc1_key'/>
@@ -1955,7 +1785,6 @@
             <connect nodeField='value_changed' protoField='vc1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc1_OI'/>
         <OrientationInterpolator DEF='vc2_OI'>
           <IS>
             <connect nodeField='key' protoField='vc2_key'/>
@@ -1963,7 +1792,6 @@
             <connect nodeField='value_changed' protoField='vc2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc2_OI'/>
         <OrientationInterpolator DEF='vc3_OI'>
           <IS>
             <connect nodeField='key' protoField='vc3_key'/>
@@ -1971,7 +1799,6 @@
             <connect nodeField='value_changed' protoField='vc3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc3_OI'/>
         <OrientationInterpolator DEF='vc4_OI'>
           <IS>
             <connect nodeField='key' protoField='vc4_key'/>
@@ -1979,7 +1806,6 @@
             <connect nodeField='value_changed' protoField='vc4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc4_OI'/>
         <OrientationInterpolator DEF='vc5_OI'>
           <IS>
             <connect nodeField='key' protoField='vc5_key'/>
@@ -1987,7 +1813,6 @@
             <connect nodeField='value_changed' protoField='vc5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc5_OI'/>
         <OrientationInterpolator DEF='vc6_OI'>
           <IS>
             <connect nodeField='key' protoField='vc6_key'/>
@@ -1995,7 +1820,6 @@
             <connect nodeField='value_changed' protoField='vc6_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc6_OI'/>
         <OrientationInterpolator DEF='vc7_OI'>
           <IS>
             <connect nodeField='key' protoField='vc7_key'/>
@@ -2003,7 +1827,6 @@
             <connect nodeField='value_changed' protoField='vc7_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc7_OI'/>
         <OrientationInterpolator DEF='vl1_OI'>
           <IS>
             <connect nodeField='key' protoField='vl1_key'/>
@@ -2011,7 +1834,6 @@
             <connect nodeField='value_changed' protoField='vl1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl1_OI'/>
         <OrientationInterpolator DEF='vl2_OI'>
           <IS>
             <connect nodeField='key' protoField='vl2_key'/>
@@ -2019,7 +1841,6 @@
             <connect nodeField='value_changed' protoField='vl2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl2_OI'/>
         <OrientationInterpolator DEF='vl3_OI'>
           <IS>
             <connect nodeField='key' protoField='vl3_key'/>
@@ -2027,7 +1848,6 @@
             <connect nodeField='value_changed' protoField='vl3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl3_OI'/>
         <OrientationInterpolator DEF='vl4_OI'>
           <IS>
             <connect nodeField='key' protoField='vl4_key'/>
@@ -2035,7 +1855,6 @@
             <connect nodeField='value_changed' protoField='vl4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl4_OI'/>
         <OrientationInterpolator DEF='vl5_OI'>
           <IS>
             <connect nodeField='key' protoField='vl5_key'/>
@@ -2043,7 +1862,6 @@
             <connect nodeField='value_changed' protoField='vl5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl5_OI'/>
         <OrientationInterpolator DEF='vt1_OI'>
           <IS>
             <connect nodeField='key' protoField='vt1_key'/>
@@ -2051,7 +1869,6 @@
             <connect nodeField='value_changed' protoField='vt1_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt1_OI'/>
         <OrientationInterpolator DEF='vt2_OI'>
           <IS>
             <connect nodeField='key' protoField='vt2_key'/>
@@ -2059,7 +1876,6 @@
             <connect nodeField='value_changed' protoField='vt2_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt2_OI'/>
         <OrientationInterpolator DEF='vt3_OI'>
           <IS>
             <connect nodeField='key' protoField='vt3_key'/>
@@ -2067,7 +1883,6 @@
             <connect nodeField='value_changed' protoField='vt3_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt3_OI'/>
         <OrientationInterpolator DEF='vt4_OI'>
           <IS>
             <connect nodeField='key' protoField='vt4_key'/>
@@ -2075,7 +1890,6 @@
             <connect nodeField='value_changed' protoField='vt4_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt4_OI'/>
         <OrientationInterpolator DEF='vt5_OI'>
           <IS>
             <connect nodeField='key' protoField='vt5_key'/>
@@ -2083,7 +1897,6 @@
             <connect nodeField='value_changed' protoField='vt5_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt5_OI'/>
         <OrientationInterpolator DEF='vt6_OI'>
           <IS>
             <connect nodeField='key' protoField='vt6_key'/>
@@ -2091,7 +1904,6 @@
             <connect nodeField='value_changed' protoField='vt6_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt6_OI'/>
         <OrientationInterpolator DEF='vt7_OI'>
           <IS>
             <connect nodeField='key' protoField='vt7_key'/>
@@ -2099,7 +1911,6 @@
             <connect nodeField='value_changed' protoField='vt7_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt7_OI'/>
         <OrientationInterpolator DEF='vt8_OI'>
           <IS>
             <connect nodeField='key' protoField='vt8_key'/>
@@ -2107,7 +1918,6 @@
             <connect nodeField='value_changed' protoField='vt8_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt8_OI'/>
         <OrientationInterpolator DEF='vt9_OI'>
           <IS>
             <connect nodeField='key' protoField='vt9_key'/>
@@ -2115,7 +1925,6 @@
             <connect nodeField='value_changed' protoField='vt9_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt9_OI'/>
         <OrientationInterpolator DEF='vt10_OI'>
           <IS>
             <connect nodeField='key' protoField='vt10_key'/>
@@ -2123,7 +1932,6 @@
             <connect nodeField='value_changed' protoField='vt10_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt10_OI'/>
         <OrientationInterpolator DEF='vt11_OI'>
           <IS>
             <connect nodeField='key' protoField='vt11_key'/>
@@ -2131,7 +1939,6 @@
             <connect nodeField='value_changed' protoField='vt11_changed'/>
           </IS>
         </OrientationInterpolator>
-        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt11_OI'/>
         <OrientationInterpolator DEF='vt12_OI'>
           <IS>
             <connect nodeField='key' protoField='vt12_key'/>
@@ -2139,6 +1946,194 @@
             <connect nodeField='value_changed' protoField='vt12_changed'/>
           </IS>
         </OrientationInterpolator>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='HumanoidRootPI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='HumanoidRootOI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c6_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='c7_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='jaw_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_acromioclavicular_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ankle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_calf_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_clavicle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_elbow_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyeball_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyeball_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyebrow_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyebrow_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyelid_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_eyelid_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_forearm_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_forefoot_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hand_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hindfoot_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_hip_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_index_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_knee_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_metatarsal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middistal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_middle_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_midproximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_midtarsal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_pinky_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_ring_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_scapula_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_shoulder_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_sternoclavicular_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_subtalar_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thigh_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_thumb_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_upperarm_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='l_wrist_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='pelvis_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_acromioclavicular_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ankle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_calf_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_clavicle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_elbow_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyeball_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyeball_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyebrow_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyebrow_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyelid_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_eyelid_joint_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_forearm_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_forefoot_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hand_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hindfoot_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_hip_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_index_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_knee_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_metatarsal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middistal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_middle_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_midproximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_midtarsal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_pinky_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring0_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_middle_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_ring_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_scapula_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_shoulder_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_sternoclavicular_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_subtalar_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thigh_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_distal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_metacarpal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_thumb_proximal_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_upperarm_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='r_wrist_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='sacroiliac_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='sacrum_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='skull_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='skullbase_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t6_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t7_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t8_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t9_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t10_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t11_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='t12_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='temporomandibular_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc6_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vc7_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vl5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt1_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt2_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt3_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt4_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt5_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt6_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt7_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt8_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt9_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt10_OI'/>
+        <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt11_OI'/>
         <ROUTE fromField='fraction_changed' fromNode='BehaviorClock' toField='set_fraction' toNode='vt12_OI'/>
       </ProtoBody>
     </ProtoDeclare>
@@ -2179,7 +2174,7 @@
             <connect nodeField='whichChoice' protoField='supportedLOA'/>
           </IS>
         </Switch>
-        <Script DEF='BehaviorSelectionScript'>
+        <Script DEF='BehaviorSelectionScript' directOutput='true' url='"HAnimBehaviorPrototypesScript.js" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"'>
           <IS>
             <connect nodeField='HumanoidArray' protoField='HumanoidArray'/>
             <connect nodeField='whichBody' protoField='whichBody'/>
@@ -2206,6 +2201,7 @@
         </Script>
       </ProtoBody>
     </ProtoDeclare>
+    <WorldInfo title='HAnimBehaviorPrototypes.x3d'/>
     <ProtoInstance DEF='BehaviorTest1' name='HAnimBehavior'>
       <fieldValue name='HumanoidRoot_translation_key' value='0 0.25 0.5 0.75 1'/>
       <fieldValue name='HumanoidRoot_translation_keyValue' value='0 0 0 0 0 10 0 0 20 0 0 30 0 0 40 0 0 50'/>
@@ -2214,7 +2210,7 @@
     </ProtoInstance>
     <ProtoInstance DEF='ChooserTest' name='HAnimBodyBehaviorChooser'>
       <fieldValue name='HumanoidArray'>
-        <HAnimHumanoid DEF='hanim_DiamondManLOA-1'/>
+        <HAnimHumanoid DEF='hanim_DiamondManLOA-1' name='DiamondManLOA-1'/>
       </fieldValue>
       <fieldValue name='whichBody' value='0'/>
       <fieldValue name='hAnimBehaviorNodes'>

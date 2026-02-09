@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component name='Geospatial'/>
     <meta content='SquawLOD023.x3d' name='title'/>
@@ -8,18 +8,16 @@
     <meta content='Salvador Bayarri, ESRI' name='creator'/>
     <meta content='Don Brutzman' name='translator'/>
     <meta content='22 April 2003' name='translated'/>
-    <meta content='20 January 2020' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:13:12 GMT' name='modified'/>
     <meta content='http://www.geovrml.org/examples' name='reference'/>
     <meta content='X3D geospatial example' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/Geospatial/SquawLOD023.x3d' name='identifier'/>
-    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
-    <meta content='X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='SquawLOD023.x3d'/>
     <GeoLOD center='4344125.917539 741821.999947 1970.5' geoSystem='"UTM" "Z10" "N"' range='0'>
-      <GeoOrigin DEF='ORIGIN'/>
+      <GeoOrigin DEF='ORIGIN' geoCoords='4342525.5 740604 0' geoSystem='"UTM" "Z10" "N"' rotateYUp='true'/>
       <Shape>
         <Appearance>
           <Material ambientIntensity='0.9' diffuseColor='1 1 1' shininess='1'/>

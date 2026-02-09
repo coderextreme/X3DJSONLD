@@ -328,8 +328,6 @@
         <HAnimJoint USE='Joe_r_thumb3' containerField='joints'/>
         <HAnimJoint USE='Joe_l_wrist' containerField='joints'/>
         <HAnimJoint USE='Joe_r_wrist' containerField='joints'/>
-        <HAnimSegment USE='Joe_sacrum' containerField='segments'/>
-        <HAnimSite USE='Joe_RootFront_view' containerField='sites'/>
       </HAnimHumanoid>
     </Group>
     <Group>

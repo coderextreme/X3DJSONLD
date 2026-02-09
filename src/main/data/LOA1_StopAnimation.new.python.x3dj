@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -53,7 +53,7 @@
         "meta":
         {
       {
-        "@content":"23 May 2020",
+        "@content":"Mon, 09 Feb 2026 07:12:35 GMT",
         "@name":"modified"
       }
     },
@@ -99,28 +99,8 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "WorldInfo":
-        {
-      {
-        "@title":"LOA1_StopAnimation.x3d"
-      }
-    }
         "ProtoDeclare":
         {
       {
@@ -134,7 +114,7 @@
         "@accessType":"inputOutput",
         "@name":"cycleInterval",
         "@type":"SFTime",
-        "@value":"0.009999999776482582"
+        "@value":"0.00999999977648258"
       }
     },
                 "field":
@@ -168,8 +148,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"stopTime",
-        "@type":"SFTime",
-        "@value":"-1"
+        "@type":"SFTime"
       }
     },
                 "field":
@@ -354,15 +333,15 @@
                             "connect":
                             {
       {
-        "@nodeField":"cycleInterval",
-        "@protoField":"cycleInterval"
+        "@nodeField":"enabled",
+        "@protoField":"enabled"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"enabled",
-        "@protoField":"enabled"
+        "@nodeField":"cycleInterval",
+        "@protoField":"cycleInterval"
       }
     },
                             "connect":
@@ -389,21 +368,23 @@
                             "connect":
                             {
       {
-        "@nodeField":"fraction_changed",
-        "@protoField":"fraction_changed"
+        "@nodeField":"isActive",
+        "@protoField":"isActive"
       }
     },
                             "connect":
                             {
       {
-        "@nodeField":"isActive",
-        "@protoField":"isActive"
+        "@nodeField":"fraction_changed",
+        "@protoField":"fraction_changed"
       }
     },
                         }                    }                    "PositionInterpolator":
                     {
       {
-        "@DEF":"HUMANOIDROOT_POSITION_ANIMATOR"
+        "@DEF":"HUMANOIDROOT_POSITION_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 0 0 0 0"
       }
                         "IS":
                         {
@@ -417,7 +398,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"HUMANOIDROOT_ANIMATOR"
+        "@DEF":"HUMANOIDROOT_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -431,7 +414,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"SACROILIAC_ANIMATOR"
+        "@DEF":"SACROILIAC_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -445,7 +430,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_HIP_ANIMATOR"
+        "@DEF":"L_HIP_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -459,7 +446,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_KNEE_ANIMATOR"
+        "@DEF":"L_KNEE_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -473,7 +462,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_ANKLE_ANIMATOR"
+        "@DEF":"L_ANKLE_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -487,7 +478,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_MIDTARSAL_ANIMATOR"
+        "@DEF":"L_MIDTARSAL_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"1 0 0 0 1 0 0 0"
       }
                         "IS":
                         {
@@ -501,7 +494,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_HIP_ANIMATOR"
+        "@DEF":"R_HIP_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -515,7 +510,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_KNEE_ANIMATOR"
+        "@DEF":"R_KNEE_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -529,7 +526,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_ANKLE_ANIMATOR"
+        "@DEF":"R_ANKLE_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -543,7 +542,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_MIDTARSAL_ANIMATOR"
+        "@DEF":"R_MIDTARSAL_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"1 0 0 0 1 0 0 0"
       }
                         "IS":
                         {
@@ -557,7 +558,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"VL5_ANIMATOR"
+        "@DEF":"VL5_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -571,7 +574,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"SKULLBASE_ANIMATOR"
+        "@DEF":"SKULLBASE_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -585,7 +590,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_SHOULDER_ANIMATOR"
+        "@DEF":"L_SHOULDER_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -599,7 +606,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_ELBOW_ANIMATOR"
+        "@DEF":"L_ELBOW_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -613,7 +622,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"L_WRIST_ANIMATOR"
+        "@DEF":"L_WRIST_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -627,7 +638,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_SHOULDER_ANIMATOR"
+        "@DEF":"R_SHOULDER_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -641,7 +654,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_ELBOW_ANIMATOR"
+        "@DEF":"R_ELBOW_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -655,7 +670,9 @@
                         }                    }                    "OrientationInterpolator":
                     {
       {
-        "@DEF":"R_WRIST_ANIMATOR"
+        "@DEF":"R_WRIST_ANIMATOR",
+        "@key":"0 1",
+        "@keyValue":"0 0 1 0 0 0 1 0"
       }
                         "IS":
                         {
@@ -837,7 +854,13 @@
         "@toNode":"R_WRIST_ANIMATOR"
       }
     },
-            }        }        "Anchor":
+            }        }        "WorldInfo":
+        {
+      {
+        "@title":"LOA1_StopAnimation.x3d"
+      }
+    }
+        "Anchor":
         {
       {
         "@description":"InterchangableActorsViaDynamicRouting",

@@ -337,24 +337,6 @@
       <HAnimJoint USE='hanim_r_shoulder' containerField='joints'/>
       <HAnimJoint USE='hanim_l_talocrural' containerField='joints'/>
       <HAnimJoint USE='hanim_r_talocrural' containerField='joints'/>
-      <HAnimSegment USE='hanim_sacrum' containerField='segments'/>
-      <HAnimSegment USE='hanim_pelvis' containerField='segments'/>
-      <HAnimSegment USE='hanim_l5' containerField='segments'/>
-      <HAnimSegment USE='hanim_skull' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_calf' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_carpal' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_forearm' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_talus' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_thigh' containerField='segments'/>
-      <HAnimSegment USE='hanim_l_upperarm' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_upperarm' containerField='segments'/>
     </HAnimHumanoid>
     <Group DEF='KeyframeAnimation'>
       <TimeSensor DEF='KeyframeTimer' cycleInterval='8.033494' loop='true'/>

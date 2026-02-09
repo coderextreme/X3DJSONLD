@@ -8,6 +8,7 @@
         "@profile":"Immersive",
     "head":
     {
+    { "#comment" : "BS studio translation from .x3dv by Joe using BS Contact" }
         "component":
         {
       {
@@ -131,6 +132,7 @@
         "@DEF":"light2"
       }
     },
+    { "#comment" : "External from the Humanoid viewpoints" }
         "Viewpoint":
         {
       {
@@ -770,6 +772,7 @@
         "@DEF":"KickTimer"
       }
     },
+      { "#comment" : "Interpolators" }
             "OrientationInterpolator":
             {
       {
@@ -1340,7 +1343,8 @@
         "@DEF":"r_pinky3RotInterp"
       }
     },
-        }        "ROUTE":
+        }    { "#comment" : "TimeSensor to Interpolators" }
+        "ROUTE":
         {
       {
         "@fromField":"fraction_changed",
@@ -2195,6 +2199,7 @@
         "@toNode":"r_pinky3RotInterp"
       }
     },
+    { "#comment" : "Routes from Interpolators to Joe_ model Joints" }
         "ROUTE":
         {
       {
@@ -3055,6 +3060,7 @@
       {
         "@DEF":"DisplacersAnimationGroup"
       }
+      { "#comment" : "TimeSensor DEF='skull_tipTestTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor" }
             "ScalarInterpolator":
             {
       {
@@ -3154,7 +3160,8 @@
         "@DEF":"ballView_1"
       }
     },
-            }            "PositionInterpolator":
+            }      { "#comment" : "Ball Animation interpolators" }
+            "PositionInterpolator":
             {
       {
         "@DEF":"ballTransInterp"
@@ -3166,6 +3173,7 @@
         "@DEF":"ballRotInterp"
       }
     },
+      { "#comment" : "Ball Animation Routes" }
             "ROUTE":
             {
       {

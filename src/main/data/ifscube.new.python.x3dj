@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -36,13 +36,6 @@
         "@name":"creator"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"4 April 2017",
-        "@name":"created"
-      }
-    },
     }    "Scene":
     {
         "Group":
@@ -52,7 +45,12 @@
                 "IndexedFaceSet":
                 {
       {
-        "@DEF":"IndexedFaceSet"
+        "@DEF":"IndexedFaceSet",
+        "@colorIndex":"0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1",
+        "@coordIndex":"0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1",
+        "@creaseAngle":"1.57",
+        "@normalIndex":"0 -1 0 -1 1 -1 2 -1 3 -1 4 -1 5 -1",
+        "@normalPerVertex":"false"
       }
                     "Color":
                     {

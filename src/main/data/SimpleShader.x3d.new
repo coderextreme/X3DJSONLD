@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--meta content='under development' name='warning'/--><component name="Shaders" level="1"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><component name="Shaders" level="1"></component>
 <meta name="title" content="SimpleShader.x3d"></meta>
 <meta name="description" content="Simple shader example"></meta>
 <meta name="creator" content="John Stewart"></meta>
 <meta name="translator" content="Holger Seelig, John Carlson, Don Brutzman and Jeff Malnick"></meta>
 <meta name="created" content="26 May 2009"></meta>
 <meta name="translated" content="15 October 2009"></meta>
-<meta name="modified" content="20 October 2019"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:12:58 GMT"></meta>
 <meta name="reference" content="http://www.opengl.org/wiki/Fragment_Shader"></meta>
 <meta name="reference" content="http://www.opengl.org/wiki/http://www.opengl.org/wiki/Vertex_Shader"></meta>
 <meta name="reference" content="https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"></meta>
 <meta name="subject" content="X3D shader example"></meta>
 <meta name="reference" content="originals/simpleShader.x3dv"></meta>
 <meta name="reference" content="ShaderTutorialInstantReality.pdf"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="Titania V3.0.3, http://titania.create3000.de"></meta>
-<meta name="info" content="World of Titania"></meta>
-<meta name="outputStyle" content="nicest"></meta>
 <meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
-<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"></meta>
-<meta name="license" content="../../license.html"></meta>
+<meta name="info" content="World of Titania"></meta>
 </head>
-<Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field name="myInputRange" accessType="initializeOnly" type="SFVec3f" value="0.95 0.44 0.22"></field>
+<Scene><ProtoDeclare name="myPrototype"><ProtoInterface><field accessType="initializeOnly" type="SFVec3f" name="myInputRange" value="0.95 0.44 0.22"></field>
 </ProtoInterface>
 <ProtoBody><Transform DEF="TR"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.5 0.5 0.9"></Material>
-<ComposedShader language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f"></field>
+<ComposedShader language="GLSL"><ShaderPart></ShaderPart>
+<ShaderPart type="FRAGMENT"></ShaderPart>
+<field accessType="initializeOnly" type="SFVec3f" name="decis"></field>
 <IS><connect nodeField="decis" protoField="myInputRange"></connect>
 </IS>
-<ShaderPart type="VERTEX"></ShaderPart>
-<ShaderPart type="FRAGMENT"></ShaderPart>
 </ComposedShader>
-<ComposedShader DEF="Cobweb" language="GLSL"><field name="decis" accessType="initializeOnly" type="SFVec3f" value="0.95 0.77 0.44"></field>
-<ShaderPart type="VERTEX"></ShaderPart>
-<ShaderPart DEF="_1" type="FRAGMENT"></ShaderPart>
+<ComposedShader DEF="Cobweb" language="GLSL"><ShaderPart></ShaderPart>
+<ShaderPart type="FRAGMENT"></ShaderPart>
+<field accessType="initializeOnly" type="SFVec3f" name="decis" value="0.95 0.77 0.44"></field>
 </ComposedShader>
 </Appearance>
 <Sphere radius="1.75"></Sphere>
@@ -40,13 +38,13 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<WorldInfo title="SimpleShader"><MetadataSet containerField="metadata" name="Titania" DEF="Titania" reference="http://titania.create3000.de"><MetadataSet name="Selection" DEF="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet name="nodes" DEF="nodes" reference="http://titania.create3000.de" containerField="value"><!--NULL--></MetadataSet>
+<WorldInfo title="SimpleShader"><MetadataSet containerField="metadata" DEF="Titania" name="Titania" reference="http://titania.create3000.de"><MetadataSet DEF="Selection" name="Selection" reference="http://titania.create3000.de" containerField="value"><MetadataSet DEF="nodes" name="nodes" reference="http://titania.create3000.de" containerField="value"></MetadataSet>
 </MetadataSet>
-<MetadataSet name="NavigationInfo" DEF="NavigationInfo" reference="http://titania.create3000.de" containerField="value"><MetadataString name="type" DEF="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
+<MetadataSet DEF="NavigationInfo" name="NavigationInfo" reference="http://titania.create3000.de" containerField="value"><MetadataString DEF="type" name="type" reference="http://titania.create3000.de" value="&quot;EXAMINE&quot;" containerField="value"></MetadataString>
 </MetadataSet>
-<MetadataSet name="Viewpoint" DEF="Viewpoint" reference="http://titania.create3000.de" containerField="value"><MetadataDouble name="position" DEF="position" reference="http://titania.create3000.de" value="6.24067728185014 0.00250837343276661 2.92117542307615" containerField="value"></MetadataDouble>
-<MetadataDouble name="orientation" DEF="orientation" reference="http://titania.create3000.de" value="-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191" containerField="value"></MetadataDouble>
-<MetadataDouble name="centerOfRotation" DEF="centerOfRotation" reference="http://titania.create3000.de" value="-0.808320198626341 -0.358072370409949 0.22817191560906" containerField="value"></MetadataDouble>
+<MetadataSet DEF="Viewpoint" name="Viewpoint" reference="http://titania.create3000.de" containerField="value"><MetadataDouble DEF="position" name="position" reference="http://titania.create3000.de" value="6.24067728185014 0.00250837343276661 2.92117542307615" containerField="value"></MetadataDouble>
+<MetadataDouble DEF="orientation" name="orientation" reference="http://titania.create3000.de" value="-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191" containerField="value"></MetadataDouble>
+<MetadataDouble DEF="centerOfRotation" name="centerOfRotation" reference="http://titania.create3000.de" value="-0.808320198626341 -0.358072370409949 0.22817191560906" containerField="value"></MetadataDouble>
 </MetadataSet>
 </MetadataSet>
 </WorldInfo>

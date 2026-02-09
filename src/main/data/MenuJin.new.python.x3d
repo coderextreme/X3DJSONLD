@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='Menu.x3d' name='title'/>
-    <meta content='X3D scene with a Switch of Inlines controlled by a menu' name='description'/>
   </head>
   <Scene>
     <Viewpoint position='0 20 110'/>
     <Group>
-      <Switch DEF='SceneSwitcher'>
+      <Switch DEF='SceneSwitcher' whichChoice='0'>
         <Group>
           <Script DEF='Choice0'>
             <field accessType='inputOnly' name='touchTime' type='SFTime'/>
@@ -27,7 +26,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinBlink'/>
+          <Inline DEF='JinBlink' url='"../resources/JinBlink.x3d" "JinBlink.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice1'>
@@ -47,7 +46,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinBrowLowerer'/>
+          <Inline DEF='JinBrowLowerer' url='"../resources/JinBrowLowerer.x3d" "JinBrowLowerer.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice2'>
@@ -67,7 +66,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinCheekPuffer'/>
+          <Inline DEF='JinCheekPuffer' url='"../resources/JinCheekPuffer.x3d" "JinCheekPuffer.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice3'>
@@ -87,7 +86,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinCheekRaiser'/>
+          <Inline DEF='JinCheekRaiser' url='"../resources/JinCheekRaiser.x3d" "JinCheekRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice4'>
@@ -107,7 +106,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinChinRaiser'/>
+          <Inline DEF='JinChinRaiser' url='"../resources/JinChinRaiser.x3d" "JinChinRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice5'>
@@ -127,7 +126,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinDimpler'/>
+          <Inline DEF='JinDimpler' url='"../resources/JinDimpler.x3d" "JinDimpler.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice6'>
@@ -147,7 +146,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinEyesClosed'/>
+          <Inline DEF='JinEyesClosed' url='"../resources/JinEyesClosed.x3d" "JinEyesClosed.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice7'>
@@ -167,7 +166,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinInnerBrowRaiser'/>
+          <Inline DEF='JinInnerBrowRaiser' url='"../resources/JinInnerBrowRaiser.x3d" "JinInnerBrowRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice8'>
@@ -187,7 +186,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinJawDrop'/>
+          <Inline DEF='JinJawDrop' url='"../resources/JinJawDrop.x3d" "JinJawDrop.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice9'>
@@ -207,7 +206,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLidDroop'/>
+          <Inline DEF='JinLidDroop' url='"../resources/JinLidDroop.x3d" "JinLidDroop.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice10'>
@@ -227,7 +226,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLidTightener'/>
+          <Inline DEF='JinLidTightener' url='"../resources/JinLidTightener.x3d" "JinLidTightener.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice11'>
@@ -247,7 +246,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipCornerDepressor'/>
+          <Inline DEF='JinLipCornerDepressor' url='"../resources/JinLipCornerDepressor.x3d" "JinLipCornerDepressor.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice12'>
@@ -267,7 +266,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipCornerPuller'/>
+          <Inline DEF='JinLipCornerPuller' url='"../resources/JinLipCornerPuller.x3d" "JinLipCornerPuller.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice13'>
@@ -287,7 +286,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipFunneler'/>
+          <Inline DEF='JinLipFunneler' url='"../resources/JinLipFunneler.x3d" "JinLipFunneler.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice14'>
@@ -307,7 +306,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipPressor'/>
+          <Inline DEF='JinLipPressor' url='"../resources/JinLipPressor.x3d" "JinLipPressor.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice15'>
@@ -327,7 +326,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipPuckerer'/>
+          <Inline DEF='JinLipPuckerer' url='"../resources/JinLipPuckerer.x3d" "JinLipPuckerer.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice16'>
@@ -347,7 +346,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipsPart'/>
+          <Inline DEF='JinLipsPart' url='"../resources/JinLipsPart.x3d" "JinLipsPart.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice17'>
@@ -367,7 +366,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipStretcher'/>
+          <Inline DEF='JinLipStretcher' url='"../resources/JinLipStretcher.x3d" "JinLipStretcher.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice18'>
@@ -387,7 +386,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipSuck'/>
+          <Inline DEF='JinLipSuck' url='"../resources/JinLipSuck.x3d" "JinLipSuck.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice19'>
@@ -407,7 +406,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLipTightener'/>
+          <Inline DEF='JinLipTightener' url='"../resources/JinLipTightener.x3d" "JinLipTightener.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice20'>
@@ -427,7 +426,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinLowerLipDepressor'/>
+          <Inline DEF='JinLowerLipDepressor' url='"../resources/JinLowerLipDepressor.x3d" "JinLowerLipDepressor.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice21'>
@@ -447,7 +446,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinMouthStretch'/>
+          <Inline DEF='JinMouthStretch' url='"../resources/JinMouthStretch.x3d" "JinMouthStretch.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice22'>
@@ -467,7 +466,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinNasolabialDeepener'/>
+          <Inline DEF='JinNasolabialDeepener' url='"../resources/JinNasolabialDeepener.x3d" "JinNasolabialDeepener.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice23'>
@@ -487,7 +486,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinNoseWrinkler'/>
+          <Inline DEF='JinNoseWrinkler' url='"../resources/JinNoseWrinkler.x3d" "JinNoseWrinkler.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice24'>
@@ -507,7 +506,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinOuterBrowRaiser'/>
+          <Inline DEF='JinOuterBrowRaiser' url='"../resources/JinOuterBrowRaiser.x3d" "JinOuterBrowRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice25'>
@@ -527,7 +526,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinSlit'/>
+          <Inline DEF='JinSlit' url='"../resources/JinSlit.x3d" "JinSlit.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice26'>
@@ -547,7 +546,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinSquint'/>
+          <Inline DEF='JinSquint' url='"../resources/JinSquint.x3d" "JinSquint.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice27'>
@@ -567,7 +566,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinUpperLidRaiser'/>
+          <Inline DEF='JinUpperLidRaiser' url='"../resources/JinUpperLidRaiser.x3d" "JinUpperLidRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice28'>
@@ -587,7 +586,7 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinUpperLipRaiser'/>
+          <Inline DEF='JinUpperLipRaiser' url='"../resources/JinUpperLipRaiser.x3d" "JinUpperLipRaiser.x3d"'/>
         </Group>
         <Group>
           <Script DEF='Choice29'>
@@ -607,11 +606,11 @@
 "+
 "      }]]>
           </Script>
-          <Inline DEF='JinWink'/>
+          <Inline DEF='JinWink' url='"../resources/JinWink.x3d" "JinWink.x3d"'/>
         </Group>
       </Switch>
       <Transform translation='48 63.4 0'>
-        <TouchSensor DEF='JinBlink_Sensor'/>
+        <TouchSensor DEF='JinBlink_Sensor' description='TSJinBlink'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -625,14 +624,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinBlink_Sensor' toField='touchTime' toNode='Choice0'/>
-      <ROUTE fromField='choice' fromNode='Choice0' toField='whichChoice' toNode='SceneSwitcher'/>
       <Transform translation='48 60.4 0'>
-        <TouchSensor DEF='JinBrowLowerer_Sensor'/>
+        <TouchSensor DEF='JinBrowLowerer_Sensor' description='TSJinBrowLowerer'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -646,14 +643,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinBrowLowerer_Sensor' toField='touchTime' toNode='Choice1'/>
-      <ROUTE fromField='choice' fromNode='Choice1' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 57.39999999999999 0'>
-        <TouchSensor DEF='JinCheekPuffer_Sensor'/>
+      <Transform translation='48 57.4 0'>
+        <TouchSensor DEF='JinCheekPuffer_Sensor' description='TSJinCheekPuffer'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -667,14 +662,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinCheekPuffer_Sensor' toField='touchTime' toNode='Choice2'/>
-      <ROUTE fromField='choice' fromNode='Choice2' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 54.39999999999999 0'>
-        <TouchSensor DEF='JinCheekRaiser_Sensor'/>
+      <Transform translation='48 54.4 0'>
+        <TouchSensor DEF='JinCheekRaiser_Sensor' description='TSJinCheekRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -688,14 +681,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinCheekRaiser_Sensor' toField='touchTime' toNode='Choice3'/>
-      <ROUTE fromField='choice' fromNode='Choice3' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 51.39999999999999 0'>
-        <TouchSensor DEF='JinChinRaiser_Sensor'/>
+      <Transform translation='48 51.4 0'>
+        <TouchSensor DEF='JinChinRaiser_Sensor' description='TSJinChinRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -709,14 +700,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinChinRaiser_Sensor' toField='touchTime' toNode='Choice4'/>
-      <ROUTE fromField='choice' fromNode='Choice4' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 48.39999999999999 0'>
-        <TouchSensor DEF='JinDimpler_Sensor'/>
+      <Transform translation='48 48.4 0'>
+        <TouchSensor DEF='JinDimpler_Sensor' description='TSJinDimpler'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -730,14 +719,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinDimpler_Sensor' toField='touchTime' toNode='Choice5'/>
-      <ROUTE fromField='choice' fromNode='Choice5' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 45.39999999999999 0'>
-        <TouchSensor DEF='JinEyesClosed_Sensor'/>
+      <Transform translation='48 45.4 0'>
+        <TouchSensor DEF='JinEyesClosed_Sensor' description='TSJinEyesClosed'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -751,14 +738,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinEyesClosed_Sensor' toField='touchTime' toNode='Choice6'/>
-      <ROUTE fromField='choice' fromNode='Choice6' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 42.39999999999999 0'>
-        <TouchSensor DEF='JinInnerBrowRaiser_Sensor'/>
+      <Transform translation='48 42.4 0'>
+        <TouchSensor DEF='JinInnerBrowRaiser_Sensor' description='TSJinInnerBrowRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -772,14 +757,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinInnerBrowRaiser_Sensor' toField='touchTime' toNode='Choice7'/>
-      <ROUTE fromField='choice' fromNode='Choice7' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 39.39999999999999 0'>
-        <TouchSensor DEF='JinJawDrop_Sensor'/>
+      <Transform translation='48 39.4 0'>
+        <TouchSensor DEF='JinJawDrop_Sensor' description='TSJinJawDrop'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -793,14 +776,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinJawDrop_Sensor' toField='touchTime' toNode='Choice8'/>
-      <ROUTE fromField='choice' fromNode='Choice8' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 36.39999999999999 0'>
-        <TouchSensor DEF='JinLidDroop_Sensor'/>
+      <Transform translation='48 36.4 0'>
+        <TouchSensor DEF='JinLidDroop_Sensor' description='TSJinLidDroop'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -814,14 +795,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLidDroop_Sensor' toField='touchTime' toNode='Choice9'/>
-      <ROUTE fromField='choice' fromNode='Choice9' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 33.39999999999999 0'>
-        <TouchSensor DEF='JinLidTightener_Sensor'/>
+      <Transform translation='48 33.4 0'>
+        <TouchSensor DEF='JinLidTightener_Sensor' description='TSJinLidTightener'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -835,14 +814,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLidTightener_Sensor' toField='touchTime' toNode='Choice10'/>
-      <ROUTE fromField='choice' fromNode='Choice10' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 30.399999999999995 0'>
-        <TouchSensor DEF='JinLipCornerDepressor_Sensor'/>
+      <Transform translation='48 30.4 0'>
+        <TouchSensor DEF='JinLipCornerDepressor_Sensor' description='TSJinLipCornerDepressor'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -856,14 +833,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipCornerDepressor_Sensor' toField='touchTime' toNode='Choice11'/>
-      <ROUTE fromField='choice' fromNode='Choice11' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 27.399999999999995 0'>
-        <TouchSensor DEF='JinLipCornerPuller_Sensor'/>
+      <Transform translation='48 27.4 0'>
+        <TouchSensor DEF='JinLipCornerPuller_Sensor' description='TSJinLipCornerPuller'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -877,14 +852,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipCornerPuller_Sensor' toField='touchTime' toNode='Choice12'/>
-      <ROUTE fromField='choice' fromNode='Choice12' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 24.399999999999995 0'>
-        <TouchSensor DEF='JinLipFunneler_Sensor'/>
+      <Transform translation='48 24.4 0'>
+        <TouchSensor DEF='JinLipFunneler_Sensor' description='TSJinLipFunneler'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -898,14 +871,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipFunneler_Sensor' toField='touchTime' toNode='Choice13'/>
-      <ROUTE fromField='choice' fromNode='Choice13' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 21.399999999999995 0'>
-        <TouchSensor DEF='JinLipPressor_Sensor'/>
+      <Transform translation='48 21.4 0'>
+        <TouchSensor DEF='JinLipPressor_Sensor' description='TSJinLipPressor'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -919,14 +890,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipPressor_Sensor' toField='touchTime' toNode='Choice14'/>
-      <ROUTE fromField='choice' fromNode='Choice14' toField='whichChoice' toNode='SceneSwitcher'/>
       <Transform translation='48 18.4 0'>
-        <TouchSensor DEF='JinLipPuckerer_Sensor'/>
+        <TouchSensor DEF='JinLipPuckerer_Sensor' description='TSJinLipPuckerer'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -940,14 +909,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipPuckerer_Sensor' toField='touchTime' toNode='Choice15'/>
-      <ROUTE fromField='choice' fromNode='Choice15' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 15.399999999999997 0'>
-        <TouchSensor DEF='JinLipsPart_Sensor'/>
+      <Transform translation='48 15.4 0'>
+        <TouchSensor DEF='JinLipsPart_Sensor' description='TSJinLipsPart'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -961,14 +928,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipsPart_Sensor' toField='touchTime' toNode='Choice16'/>
-      <ROUTE fromField='choice' fromNode='Choice16' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 12.399999999999999 0'>
-        <TouchSensor DEF='JinLipStretcher_Sensor'/>
+      <Transform translation='48 12.4 0'>
+        <TouchSensor DEF='JinLipStretcher_Sensor' description='TSJinLipStretcher'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -982,14 +947,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipStretcher_Sensor' toField='touchTime' toNode='Choice17'/>
-      <ROUTE fromField='choice' fromNode='Choice17' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 9.399999999999999 0'>
-        <TouchSensor DEF='JinLipSuck_Sensor'/>
+      <Transform translation='48 9.4 0'>
+        <TouchSensor DEF='JinLipSuck_Sensor' description='TSJinLipSuck'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1003,14 +966,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipSuck_Sensor' toField='touchTime' toNode='Choice18'/>
-      <ROUTE fromField='choice' fromNode='Choice18' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 6.399999999999999 0'>
-        <TouchSensor DEF='JinLipTightener_Sensor'/>
+      <Transform translation='48 6.4 0'>
+        <TouchSensor DEF='JinLipTightener_Sensor' description='TSJinLipTightener'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1024,14 +985,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLipTightener_Sensor' toField='touchTime' toNode='Choice19'/>
-      <ROUTE fromField='choice' fromNode='Choice19' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 3.399999999999995 0'>
-        <TouchSensor DEF='JinLowerLipDepressor_Sensor'/>
+      <Transform translation='48 3.4 0'>
+        <TouchSensor DEF='JinLowerLipDepressor_Sensor' description='TSJinLowerLipDepressor'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1045,14 +1004,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinLowerLipDepressor_Sensor' toField='touchTime' toNode='Choice20'/>
-      <ROUTE fromField='choice' fromNode='Choice20' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 0.399999999999995 0'>
-        <TouchSensor DEF='JinMouthStretch_Sensor'/>
+      <Transform translation='48 0.4 0'>
+        <TouchSensor DEF='JinMouthStretch_Sensor' description='TSJinMouthStretch'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1066,14 +1023,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinMouthStretch_Sensor' toField='touchTime' toNode='Choice21'/>
-      <ROUTE fromField='choice' fromNode='Choice21' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -2.6000000000000085 0'>
-        <TouchSensor DEF='JinNasolabialDeepener_Sensor'/>
+      <Transform translation='48 -2.6 0'>
+        <TouchSensor DEF='JinNasolabialDeepener_Sensor' description='TSJinNasolabialDeepener'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1087,14 +1042,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinNasolabialDeepener_Sensor' toField='touchTime' toNode='Choice22'/>
-      <ROUTE fromField='choice' fromNode='Choice22' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -5.6000000000000085 0'>
-        <TouchSensor DEF='JinNoseWrinkler_Sensor'/>
+      <Transform translation='48 -5.6 0'>
+        <TouchSensor DEF='JinNoseWrinkler_Sensor' description='TSJinNoseWrinkler'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1108,14 +1061,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinNoseWrinkler_Sensor' toField='touchTime' toNode='Choice23'/>
-      <ROUTE fromField='choice' fromNode='Choice23' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -8.600000000000009 0'>
-        <TouchSensor DEF='JinOuterBrowRaiser_Sensor'/>
+      <Transform translation='48 -8.6 0'>
+        <TouchSensor DEF='JinOuterBrowRaiser_Sensor' description='TSJinOuterBrowRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1129,14 +1080,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinOuterBrowRaiser_Sensor' toField='touchTime' toNode='Choice24'/>
-      <ROUTE fromField='choice' fromNode='Choice24' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -11.600000000000009 0'>
-        <TouchSensor DEF='JinSlit_Sensor'/>
+      <Transform translation='48 -11.6 0'>
+        <TouchSensor DEF='JinSlit_Sensor' description='TSJinSlit'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1150,14 +1099,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinSlit_Sensor' toField='touchTime' toNode='Choice25'/>
-      <ROUTE fromField='choice' fromNode='Choice25' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -14.600000000000001 0'>
-        <TouchSensor DEF='JinSquint_Sensor'/>
+      <Transform translation='48 -14.6 0'>
+        <TouchSensor DEF='JinSquint_Sensor' description='TSJinSquint'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1171,14 +1118,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinSquint_Sensor' toField='touchTime' toNode='Choice26'/>
-      <ROUTE fromField='choice' fromNode='Choice26' toField='whichChoice' toNode='SceneSwitcher'/>
       <Transform translation='48 -17.6 0'>
-        <TouchSensor DEF='JinUpperLidRaiser_Sensor'/>
+        <TouchSensor DEF='JinUpperLidRaiser_Sensor' description='TSJinUpperLidRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1192,14 +1137,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinUpperLidRaiser_Sensor' toField='touchTime' toNode='Choice27'/>
-      <ROUTE fromField='choice' fromNode='Choice27' toField='whichChoice' toNode='SceneSwitcher'/>
       <Transform translation='48 -20.6 0'>
-        <TouchSensor DEF='JinUpperLipRaiser_Sensor'/>
+        <TouchSensor DEF='JinUpperLipRaiser_Sensor' description='TSJinUpperLipRaiser'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1213,14 +1156,12 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinUpperLipRaiser_Sensor' toField='touchTime' toNode='Choice28'/>
-      <ROUTE fromField='choice' fromNode='Choice28' toField='whichChoice' toNode='SceneSwitcher'/>
-      <Transform translation='48 -23.599999999999994 0'>
-        <TouchSensor DEF='JinWink_Sensor'/>
+      <Transform translation='48 -23.6 0'>
+        <TouchSensor DEF='JinWink_Sensor' description='TSJinWink'/>
         <Shape>
           <Appearance>
             <Material diffuseColor='1 1 1'/>
@@ -1234,12 +1175,70 @@
             <Material diffuseColor='0 0 1'/>
           </Appearance>
           <IndexedFaceSet coordIndex='0 1 2 3 -1'>
-            <Coordinate point='20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1'/>
+            <Coordinate point='20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1'/>
           </IndexedFaceSet>
         </Shape>
       </Transform>
-      <ROUTE fromField='touchTime' fromNode='JinWink_Sensor' toField='touchTime' toNode='Choice29'/>
-      <ROUTE fromField='choice' fromNode='Choice29' toField='whichChoice' toNode='SceneSwitcher'/>
     </Group>
+    <ROUTE fromField='touchTime' fromNode='JinBlink_Sensor' toField='touchTime' toNode='Choice0'/>
+    <ROUTE fromField='choice' fromNode='Choice0' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinBrowLowerer_Sensor' toField='touchTime' toNode='Choice1'/>
+    <ROUTE fromField='choice' fromNode='Choice1' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinCheekPuffer_Sensor' toField='touchTime' toNode='Choice2'/>
+    <ROUTE fromField='choice' fromNode='Choice2' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinCheekRaiser_Sensor' toField='touchTime' toNode='Choice3'/>
+    <ROUTE fromField='choice' fromNode='Choice3' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinChinRaiser_Sensor' toField='touchTime' toNode='Choice4'/>
+    <ROUTE fromField='choice' fromNode='Choice4' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinDimpler_Sensor' toField='touchTime' toNode='Choice5'/>
+    <ROUTE fromField='choice' fromNode='Choice5' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinEyesClosed_Sensor' toField='touchTime' toNode='Choice6'/>
+    <ROUTE fromField='choice' fromNode='Choice6' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinInnerBrowRaiser_Sensor' toField='touchTime' toNode='Choice7'/>
+    <ROUTE fromField='choice' fromNode='Choice7' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinJawDrop_Sensor' toField='touchTime' toNode='Choice8'/>
+    <ROUTE fromField='choice' fromNode='Choice8' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLidDroop_Sensor' toField='touchTime' toNode='Choice9'/>
+    <ROUTE fromField='choice' fromNode='Choice9' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLidTightener_Sensor' toField='touchTime' toNode='Choice10'/>
+    <ROUTE fromField='choice' fromNode='Choice10' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipCornerDepressor_Sensor' toField='touchTime' toNode='Choice11'/>
+    <ROUTE fromField='choice' fromNode='Choice11' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipCornerPuller_Sensor' toField='touchTime' toNode='Choice12'/>
+    <ROUTE fromField='choice' fromNode='Choice12' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipFunneler_Sensor' toField='touchTime' toNode='Choice13'/>
+    <ROUTE fromField='choice' fromNode='Choice13' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipPressor_Sensor' toField='touchTime' toNode='Choice14'/>
+    <ROUTE fromField='choice' fromNode='Choice14' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipPuckerer_Sensor' toField='touchTime' toNode='Choice15'/>
+    <ROUTE fromField='choice' fromNode='Choice15' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipsPart_Sensor' toField='touchTime' toNode='Choice16'/>
+    <ROUTE fromField='choice' fromNode='Choice16' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipStretcher_Sensor' toField='touchTime' toNode='Choice17'/>
+    <ROUTE fromField='choice' fromNode='Choice17' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipSuck_Sensor' toField='touchTime' toNode='Choice18'/>
+    <ROUTE fromField='choice' fromNode='Choice18' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLipTightener_Sensor' toField='touchTime' toNode='Choice19'/>
+    <ROUTE fromField='choice' fromNode='Choice19' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinLowerLipDepressor_Sensor' toField='touchTime' toNode='Choice20'/>
+    <ROUTE fromField='choice' fromNode='Choice20' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinMouthStretch_Sensor' toField='touchTime' toNode='Choice21'/>
+    <ROUTE fromField='choice' fromNode='Choice21' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinNasolabialDeepener_Sensor' toField='touchTime' toNode='Choice22'/>
+    <ROUTE fromField='choice' fromNode='Choice22' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinNoseWrinkler_Sensor' toField='touchTime' toNode='Choice23'/>
+    <ROUTE fromField='choice' fromNode='Choice23' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinOuterBrowRaiser_Sensor' toField='touchTime' toNode='Choice24'/>
+    <ROUTE fromField='choice' fromNode='Choice24' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinSlit_Sensor' toField='touchTime' toNode='Choice25'/>
+    <ROUTE fromField='choice' fromNode='Choice25' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinSquint_Sensor' toField='touchTime' toNode='Choice26'/>
+    <ROUTE fromField='choice' fromNode='Choice26' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinUpperLidRaiser_Sensor' toField='touchTime' toNode='Choice27'/>
+    <ROUTE fromField='choice' fromNode='Choice27' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinUpperLipRaiser_Sensor' toField='touchTime' toNode='Choice28'/>
+    <ROUTE fromField='choice' fromNode='Choice28' toField='set_whichChoice' toNode='SceneSwitcher'/>
+    <ROUTE fromField='touchTime' fromNode='JinWink_Sensor' toField='touchTime' toNode='Choice29'/>
+    <ROUTE fromField='choice' fromNode='Choice29' toField='set_whichChoice' toNode='SceneSwitcher'/>
   </Scene>
 </X3D>

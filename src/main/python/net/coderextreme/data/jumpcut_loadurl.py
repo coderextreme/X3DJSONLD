@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -47,7 +47,7 @@ meta9.content = "21 January 2001"
 head1.children.append(meta9)
 meta10 = x3d.meta()
 meta10.name = "modified"
-meta10.content = "20 October 2019"
+meta10.content = "Mon, 09 Feb 2026 07:12:07 GMT"
 
 head1.children.append(meta10)
 meta11 = x3d.meta()
@@ -62,103 +62,88 @@ meta12.content = "https://www.web3d.org/x3d/content/examples/ConformanceNist/Bin
 head1.children.append(meta12)
 meta13 = x3d.meta()
 meta13.name = "generator"
-meta13.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
+meta13.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta13)
-meta14 = x3d.meta()
-meta14.name = "generator"
-meta14.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta14)
-meta15 = x3d.meta()
-meta15.name = "license"
-meta15.content = "../../license.html"
-
-head1.children.append(meta15)
 
 X3D0.head = head1
-Scene16 = x3d.Scene()
-WorldInfo17 = x3d.WorldInfo()
-WorldInfo17.title = "jumpcut_loadurl.x3d"
+Scene14 = x3d.Scene()
+WorldInfo15 = x3d.WorldInfo()
+WorldInfo15.title = "jumpcut_loadurl.x3d"
 
-Scene16.children.append(WorldInfo17)
-Background18 = x3d.Background()
-Background18.groundAngle = [1.57]
-Background18.groundColor = [(0, 0.5, 0),(0, 0.5, 0)]
-Background18.skyColor = [(0, 0, 1)]
+Scene14.children.append(WorldInfo15)
+Background16 = x3d.Background()
+Background16.skyColor = [(0, 0, 1)]
+Background16.groundAngle = [1.57]
+Background16.groundColor = [(0, 0.5, 0),(0, 0.5, 0)]
 
-Scene16.children.append(Background18)
-NavigationInfo19 = x3d.NavigationInfo()
-NavigationInfo19.type = ["EXAMINE","WALK","FLY","ANY"]
+Scene14.children.append(Background16)
+NavigationInfo17 = x3d.NavigationInfo()
+NavigationInfo17.type = ["EXAMINE","WALK","FLY","ANY"]
 
-Scene16.children.append(NavigationInfo19)
-Viewpoint20 = x3d.Viewpoint()
-Viewpoint20.DEF = "Front_View"
-Viewpoint20.description = "Front View"
+Scene14.children.append(NavigationInfo17)
+Viewpoint18 = x3d.Viewpoint(DEF="Front_View")
+Viewpoint18.description = "Front View"
 
-Scene16.children.append(Viewpoint20)
-Viewpoint21 = x3d.Viewpoint()
-Viewpoint21.DEF = "Top_View"
-Viewpoint21.description = "Top View"
-Viewpoint21.orientation = [1,0,0,-1.57]
-Viewpoint21.position = [0,10,0]
+Scene14.children.append(Viewpoint18)
+Viewpoint19 = x3d.Viewpoint(DEF="Top_View")
+Viewpoint19.description = "Top View"
+Viewpoint19.position = [0,10,0]
+Viewpoint19.orientation = [1,0,0,-1.57]
 
-Scene16.children.append(Viewpoint21)
-TouchSensor22 = x3d.TouchSensor()
-TouchSensor22.DEF = "STARTER"
-TouchSensor22.description = "touch to activate"
+Scene14.children.append(Viewpoint19)
+TouchSensor20 = x3d.TouchSensor(DEF="STARTER")
+TouchSensor20.description = "touch to activate"
 
-Scene16.children.append(TouchSensor22)
-Transform23 = x3d.Transform()
-Transform23.DEF = "ROOT"
-Shape24 = x3d.Shape()
-Appearance25 = x3d.Appearance()
-Material26 = x3d.Material()
+Scene14.children.append(TouchSensor20)
+Transform21 = x3d.Transform(DEF="ROOT")
+Shape22 = x3d.Shape()
+Appearance23 = x3d.Appearance()
+Material24 = x3d.Material()
 
-Appearance25.material = Material26
+Appearance23.material = Material24
 
-Shape24.appearance = Appearance25
-Box27 = x3d.Box()
+Shape22.appearance = Appearance23
+Box25 = x3d.Box()
 
-Shape24.geometry = Box27
+Shape22.geometry = Box25
 
-Transform23.children.append(Shape24)
+Transform21.children.append(Shape22)
 
-Scene16.children.append(Transform23)
-Script28 = x3d.Script()
-Script28.DEF = "MYSCRIPT"
-Script28.url = ["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]
+Scene14.children.append(Transform21)
+Script26 = x3d.Script(DEF="MYSCRIPT")
+Script26.url = ["jumpcut_loadurl.js","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"]
+field27 = x3d.field()
+field27.accessType = "initializeOnly"
+field27.type = "MFString"
+field27.name = "myParameter"
+field27.value = ["Top_View"]
+
+Script26.field.append(field27)
+field28 = x3d.field()
+field28.accessType = "initializeOnly"
+field28.type = "MFString"
+field28.name = "myUrl"
+field28.value = ["jumpcut_loadurl.x3d#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View","jumpcut_loadurl.wrl#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"]
+
+Script26.field.append(field28)
 field29 = x3d.field()
-field29.name = "myParameter"
-field29.accessType = "initializeOnly"
-field29.type = "MFString"
-field29.value = ["Top_View"]
+field29.accessType = "inputOnly"
+field29.type = "SFBool"
+field29.name = "trigger_event"
 
-Script28.field.append(field29)
-field30 = x3d.field()
-field30.name = "myUrl"
-field30.accessType = "initializeOnly"
-field30.type = "MFString"
-field30.value = ["jumpcut_loadurl.x3d#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View","jumpcut_loadurl.wrl#Top_View","https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View"]
+Script26.field.append(field29)
 
-Script28.field.append(field30)
-field31 = x3d.field()
-field31.name = "trigger_event"
-field31.accessType = "inputOnly"
-field31.type = "SFBool"
+Scene14.children.append(Script26)
+ROUTE30 = x3d.ROUTE()
+ROUTE30.fromNode = "STARTER"
+ROUTE30.fromField = "isActive"
+ROUTE30.toNode = "MYSCRIPT"
+ROUTE30.toField = "trigger_event"
 
-Script28.field.append(field31)
+Scene14.children.append(ROUTE30)
 
-Scene16.children.append(Script28)
-ROUTE32 = x3d.ROUTE()
-ROUTE32.fromField = "isActive"
-ROUTE32.fromNode = "STARTER"
-ROUTE32.toField = "trigger_event"
-ROUTE32.toNode = "MYSCRIPT"
-
-Scene16.children.append(ROUTE32)
-
-X3D0.Scene = Scene16
+X3D0.Scene = Scene14
 f = open("../data/jumpcut_loadurl.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

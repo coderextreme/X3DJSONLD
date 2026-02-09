@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -59,7 +59,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"Mon, 09 Feb 2026 07:12:58 GMT",
         "@name":"modified"
       }
     },
@@ -108,22 +108,15 @@
         "meta":
         {
       {
-        "@content":"Titania V3.0.3, http://titania.create3000.de",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"World of Titania",
-        "@name":"info"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"nicest",
-        "@name":"outputStyle"
+        "@content":"Titania V3.0.3, http://titania.create3000.de",
+        "@name":"generator"
       }
     },
         "meta":
@@ -136,15 +129,8 @@
         "meta":
         {
       {
-        "@content":"https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../../license.html",
-        "@name":"license"
+        "@content":"World of Titania",
+        "@name":"info"
       }
     },
     }    "Scene":
@@ -216,7 +202,8 @@
                             }                            "ComposedShader":
                             {
       {
-        "@DEF":"Cobweb"
+        "@DEF":"Cobweb",
+        "@language":"GLSL"
       }
                                 "field":
                                 {
@@ -233,7 +220,7 @@
                                 "ShaderPart":
                                 {
       {
-        "@DEF":"_1"
+        "@type":"FRAGMENT"
       }
     },
                             }                        }                        "Sphere":
@@ -250,51 +237,73 @@
             "MetadataSet":
             {
       {
-        "@DEF":"Titania"
+        "@DEF":"Titania",
+        "@name":"Titania",
+        "@reference":"http://titania.create3000.de"
       }
                 "MetadataSet":
                 {
       {
-        "@DEF":"Selection"
+        "@DEF":"Selection",
+        "@name":"Selection",
+        "@reference":"http://titania.create3000.de"
       }
                     "MetadataSet":
                     {
       {
-        "@DEF":"nodes"
+        "@DEF":"nodes",
+        "@name":"nodes",
+        "@reference":"http://titania.create3000.de"
       }
     },
                 }                "MetadataSet":
                 {
       {
-        "@DEF":"NavigationInfo"
+        "@DEF":"NavigationInfo",
+        "@name":"NavigationInfo",
+        "@reference":"http://titania.create3000.de"
       }
                     "MetadataString":
                     {
       {
-        "@DEF":"type"
+        "@DEF":"type",
+        "@name":"type",
+        "@reference":"http://titania.create3000.de",
+        "@value":""EXAMINE""
       }
     },
                 }                "MetadataSet":
                 {
       {
-        "@DEF":"Viewpoint"
+        "@DEF":"Viewpoint",
+        "@name":"Viewpoint",
+        "@reference":"http://titania.create3000.de"
       }
                     "MetadataDouble":
                     {
       {
-        "@DEF":"position"
+        "@DEF":"position",
+        "@name":"position",
+        "@reference":"http://titania.create3000.de",
+        "@value":"6.24067728185014 0.00250837343276661 2.92117542307615"
       }
     },
                     "MetadataDouble":
                     {
       {
-        "@DEF":"orientation"
+        "@DEF":"orientation",
+        "@name":"orientation",
+        "@reference":"http://titania.create3000.de",
+        "@value":"-0.110173424710488 0.990158061907379 -0.0863065984000336 1.21146676119191"
       }
     },
                     "MetadataDouble":
                     {
       {
-        "@DEF":"centerOfRotation"
+        "@DEF":"centerOfRotation",
+        "@name":"centerOfRotation",
+        "@reference":"http://titania.create3000.de",
+        "@value":"-0.808320198626341 -0.358072370409949 0.22817191560906"
       }
     },
                 }            }        }        "ProtoInstance":

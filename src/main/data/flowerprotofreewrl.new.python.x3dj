@@ -4,67 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"EnvironmentalEffects"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Shaders"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"CubeMapTexturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"4",
-        "@name":"Shape"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
-      }
-    },
         "meta":
         {
       {
@@ -89,40 +32,12 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowerproto.x3d",
-        "@name":"identifier"
       }
     },
     }    "Scene":
     {
-        "NavigationInfo":
-        {
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Tour Views",
-        "@position":"0 0 50"
-      }
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
-        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
-        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
-        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
-        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
-        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
-      }
-    },
         "ProtoDeclare":
         {
       {
@@ -135,8 +50,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"vertex",
-        "@type":"MFString",
-        "@value":"['../shaders/freewrl_flowers_chromatic.vs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs']"
+        "@type":"MFString"
       }
     },
                 "field":
@@ -144,8 +58,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"fragment",
-        "@type":"MFString",
-        "@value":"['../shaders/freewrl.fs', 'https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs']"
+        "@type":"MFString"
       }
     },
             }            "ProtoBody":
@@ -210,7 +123,8 @@
                             }                            "ComposedShader":
                             {
       {
-        "@DEF":"shader"
+        "@DEF":"shader",
+        "@language":"GLSL"
       }
                                 "field":
                                 {
@@ -342,15 +256,146 @@
                     }                    "Script":
                     {
       {
-        "@DEF":"Animate"
+        "@DEF":"Animate",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;			function initialize() {
+&quot;+
+&quot;			    translation = new SFVec3f(0, 0, 0);
+&quot;+
+&quot;			    velocity = new SFVec3f(
+&quot;+
+&quot;			    	Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5);
+&quot;+
+&quot;			}
+&quot;+
+&quot;			function set_fraction() {
+&quot;+
+&quot;			    translation = new SFVec3f(
+&quot;+
+&quot;			    	translation.x + velocity.x,
+&quot;+
+&quot;				translation.y + velocity.y,
+&quot;+
+&quot;				translation.z + velocity.z);
+&quot;+
+&quot;			    for (var j = 0; j <= 2; j++) {
+&quot;+
+&quot;				    if (Math.abs(translation.x) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.y) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.z) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else {
+&quot;+
+&quot;					velocity.x += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.y += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.z += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;				    }
+&quot;+
+&quot;			    }
+&quot;+
+&quot;			    animate_flowers();
+&quot;+
+&quot;			}
+&quot;+
+&quot;
+&quot;+
+&quot;			function animate_flowers(fraction, eventTime) {
+&quot;+
+&quot;				var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;				switch (choice) {
+&quot;+
+&quot;				case 0:
+&quot;+
+&quot;					a += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 1:
+&quot;+
+&quot;					b += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 2:
+&quot;+
+&quot;					c += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 3:
+&quot;+
+&quot;					d += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				tdelta += 0.5;
+&quot;+
+&quot;				pdelta += 0.5;
+&quot;+
+&quot;				if (a > 1) {
+&quot;+
+&quot;					a =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (b > 1) {
+&quot;+
+&quot;					b =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c < 1) {
+&quot;+
+&quot;					c =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d < 1) {
+&quot;+
+&quot;					d =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c > 10) {
+&quot;+
+&quot;					c = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d > 10) {
+&quot;+
+&quot;					d = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;			}"
       }
                         "field":
                         {
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -358,8 +403,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -427,20 +471,22 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"TourTime"
+        "@DEF":"TourTime",
+        "@cycleInterval":"5",
+        "@loop":"true"
       }
     },
-                    "ROUTE":
-                    {
+                }                "ROUTE":
+                {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"TourTime",
-        "@toField":"set_fraction",
+        "@toField":"set_set_fraction",
         "@toNode":"Animate"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"translation_changed",
         "@fromNode":"Animate",
@@ -448,77 +494,85 @@
         "@toNode":"transform"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"a",
+        "@fromField":"a_changed",
         "@fromNode":"Animate",
-        "@toField":"a",
+        "@toField":"set_a",
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"b",
+        "@fromField":"b_changed",
         "@fromNode":"Animate",
-        "@toField":"b",
+        "@toField":"set_b",
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"c",
+        "@fromField":"c_changed",
         "@fromNode":"Animate",
-        "@toField":"c",
+        "@toField":"set_c",
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"d",
+        "@fromField":"d_changed",
         "@fromNode":"Animate",
-        "@toField":"d",
+        "@toField":"set_d",
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"tdelta",
+        "@fromField":"tdelta_changed",
         "@fromNode":"Animate",
-        "@toField":"tdelta",
+        "@toField":"set_tdelta",
         "@toNode":"shader"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
-        "@fromField":"pdelta",
+        "@fromField":"pdelta_changed",
         "@fromNode":"Animate",
-        "@toField":"pdelta",
+        "@toField":"set_pdelta",
         "@toNode":"shader"
       }
     },
-                }            }        }        "ProtoInstance":
+            }        }        "NavigationInfo":
+        {
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Tour Views",
+        "@position":"0 0 50"
+      }
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
+        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
+        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
+        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+        "ProtoInstance":
         {
       {
         "@name":"FlowerProto"
       }
-            "fieldValue":
-            {
-      {
-        "@name":"vertex",
-        "@value":""../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs""
-      }
     },
-            "fieldValue":
-            {
-      {
-        "@name":"fragment",
-        "@value":""../shaders/freewrl.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs""
-      }
-    },
-        }    }}
+    }}

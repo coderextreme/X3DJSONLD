@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -39,7 +39,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"Mon, 09 Feb 2026 07:13:15 GMT",
         "@name":"modified"
       }
     },
@@ -99,63 +99,8 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "WorldInfo":
-        {
-      {
-        "@title":"ViewFrustumExample.x3d"
-      }
-    }
-        "Viewpoint":
-        {
-      {
-        "@description":"ViewFrustum from above, looking down",
-        "@orientation":"1 0 0 -1.57",
-        "@position":"0 40 0"
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"ViewFrustum from point of view"
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"ViewFrustum behind point of view",
-        "@position":"0 0 15"
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"ViewFrustum oblique side view",
-        "@orientation":"0.8005 0.5926 0.0898 -0.3743",
-        "@position":"-5 5 20"
-      }
-    },
-        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE" "FLY" "ANY""
-      }
-    },
         "ExternProtoDeclare":
         {
       {
@@ -235,7 +180,48 @@
         "@type":"SFBool"
       }
     },
-        }        "ProtoInstance":
+        }        "WorldInfo":
+        {
+      {
+        "@title":"ViewFrustumExample.x3d"
+      }
+    }
+        "Viewpoint":
+        {
+      {
+        "@description":"ViewFrustum from above, looking down",
+        "@orientation":"1 0 0 -1.57",
+        "@position":"0 40 0"
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"ViewFrustum from point of view"
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"ViewFrustum behind point of view",
+        "@position":"0 0 15"
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"ViewFrustum oblique side view",
+        "@orientation":"0.8005 0.5926 0.0898 -0.3743",
+        "@position":"-5 5 20"
+      }
+    },
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE" "FLY" "ANY""
+      }
+    },
+        "ProtoInstance":
         {
       {
         "@name":"ViewFrustum"
@@ -300,7 +286,8 @@
         }        "Inline":
         {
       {
-        "@DEF":"GridXZ"
+        "@DEF":"GridXZ",
+        "@url":""GridXZ_20x20Fixed.x3d""
       }
     },
         "Transform":
@@ -311,7 +298,8 @@
             "Inline":
             {
       {
-        "@DEF":"CoordinateAxes"
+        "@DEF":"CoordinateAxes",
+        "@url":""CoordinateAxes.x3d""
       }
     },
         }    }}

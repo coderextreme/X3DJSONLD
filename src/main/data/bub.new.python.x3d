@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
-    <component name='Texturing'/>
-    <component name='Rendering'/>
     <component level='3' name='Grouping'/>
-    <component name='Core'/>
     <meta content='bub.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='3 prismatic spheres' name='description'/>
-    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bub.x3d' name='identifier'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
   </head>
   <Scene>
-    <NavigationInfo/>
-    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
-    <Viewpoint description='Look at the bubbles flying' position='0 0 20'/>
     <ProtoDeclare name='Bubble'>
+      <ProtoInterface/>
       <ProtoBody>
         <Transform DEF='transform'>
           <Shape DEF='myShape'>
@@ -34,7 +27,7 @@
                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"'/>
                 <ImageTexture url='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
               </ComposedCubeMapTexture>
-              <ComposedShader DEF='x3dom'>
+              <ComposedShader DEF='x3dom' language='GLSL'>
                 <field accessType='inputOutput' name='cube' type='SFInt32'/>
                 <field accessType='inputOutput' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
                 <field accessType='inputOutput' name='bias' type='SFFloat' value='0.5'/>
@@ -43,7 +36,7 @@
                 <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
                 <ShaderPart type='FRAGMENT' url='"../shaders/pc_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"'/>
               </ComposedShader>
-              <ComposedShader DEF='x_ite'>
+              <ComposedShader DEF='x_ite' language='GLSL'>
                 <field accessType='inputOutput' name='cube' type='SFNode'>
                   <ComposedCubeMapTexture USE='texture'/>
                 </field>
@@ -59,8 +52,8 @@
           </Shape>
         </Transform>
         <Script DEF='Bounce'>
-          <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
-          <field accessType='inputOutput' name='velocity' type='SFVec3f' value='0 0 0'/>
+          <field accessType='inputOutput' name='translation' type='SFVec3f'/>
+          <field accessType='inputOutput' name='velocity' type='SFVec3f'/>
           <field accessType='inputOnly' name='set_fraction' type='SFTime'/>
         <![CDATA[ecmascript:
 "+
@@ -112,11 +105,14 @@
 "+
 "			}]]>
         </Script>
-        <TimeSensor DEF='TourTime'/>
+        <TimeSensor DEF='TourTime' cycleInterval='0.15' loop='true'/>
         <ROUTE fromField='cycleTime' fromNode='TourTime' toField='set_fraction' toNode='Bounce'/>
         <ROUTE fromField='translation_changed' fromNode='Bounce' toField='set_translation' toNode='transform'/>
       </ProtoBody>
     </ProtoDeclare>
+    <NavigationInfo/>
+    <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
+    <Viewpoint description='Look at the bubbles flying' position='0 0 20'/>
     <ProtoInstance name='Bubble'/>
     <ProtoInstance name='Bubble'/>
     <ProtoInstance name='Bubble'/>

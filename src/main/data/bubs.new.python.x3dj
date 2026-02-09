@@ -4,16 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
         "meta":
         {
       {
@@ -38,49 +32,20 @@
         "meta":
         {
       {
-        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d",
-        "@name":"identifier"
       }
     },
     }    "Scene":
     {
-        "NavigationInfo":
-        {
-      {
-        "@type":""EXAMINE""
-      }
-    },
-        "Viewpoint":
-        {
-      {
-        "@description":"Bubbles in action",
-        "@orientation":"1 0 0 0",
-        "@position":"0 0 4"
-      }
-    },
-        "Background":
-        {
-      {
-        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
-        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
-        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
-        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
-        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
-        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
-      }
-    },
         "ProtoDeclare":
         {
       {
         "@name":"Bubble"
       }
+            "ProtoInterface":
+            {
+    },
             "ProtoBody":
             {
                 "Transform":
@@ -108,7 +73,84 @@
                     }                    "Script":
                     {
       {
-        "@DEF":"bounce1"
+        "@DEF":"bounce1",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+&quot;+
+&quot;
+&quot;+
+&quot;    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction(value) {
+&quot;+
+&quot;    translation = new SFVec3f(	translation.x + velocity.x, translation.y + velocity.y, translation.z + velocity.z);
+&quot;+
+&quot;    scale = new SFVec3f(scale.x + scalvel.x, scale.y + scalvel.y, scale.z + scalvel.z);
+&quot;+
+&quot;    // if you get to far away or too big, explode
+&quot;+
+&quot;    if ( Math.abs(translation.x) > 256) {
+&quot;+
+&quot;	translation.x = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;    if ( Math.abs(translation.y) > 256) {
+&quot;+
+&quot;	translation.y = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;    if ( Math.abs(translation.z) > 256) {
+&quot;+
+&quot;	translation.z = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;    if (Math.abs(scale.x) > 20) {
+&quot;+
+&quot;	scale.x = scale.x/20;
+&quot;+
+&quot;	translation.x = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;    if (Math.abs(scale.y) > 20) {
+&quot;+
+&quot;	scale.y = scale.y/20;
+&quot;+
+&quot;	translation.y = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;    if (Math.abs(scale.z) > 20) {
+&quot;+
+&quot;	scale.z = scale.z/20;
+&quot;+
+&quot;	translation.z = 0;
+&quot;+
+&quot;	initialize();
+&quot;+
+&quot;    }
+&quot;+
+&quot;}"
       }
                         "field":
                         {
@@ -124,8 +166,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"translation",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -133,8 +174,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"velocity",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -142,8 +182,7 @@
       {
         "@accessType":"inputOutput",
         "@name":"scalvel",
-        "@type":"SFVec3f",
-        "@value":"[0, 0, 0]"
+        "@type":"SFVec3f"
       }
     },
                         "field":
@@ -157,11 +196,13 @@
                     }                    "TimeSensor":
                     {
       {
-        "@DEF":"bubbleClock"
+        "@DEF":"bubbleClock",
+        "@cycleInterval":"10",
+        "@loop":"true"
       }
     },
-                    "ROUTE":
-                    {
+                }                "ROUTE":
+                {
       {
         "@fromField":"translation_changed",
         "@fromNode":"bounce1",
@@ -169,8 +210,8 @@
         "@toNode":"body_trans"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"scale_changed",
         "@fromNode":"bounce1",
@@ -178,8 +219,8 @@
         "@toNode":"body_trans"
       }
     },
-                    "ROUTE":
-                    {
+                "ROUTE":
+                {
       {
         "@fromField":"fraction_changed",
         "@fromNode":"bubbleClock",
@@ -187,7 +228,31 @@
         "@toNode":"bounce1"
       }
     },
-                }            }        }        "ProtoInstance":
+            }        }        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Bubbles in action",
+        "@position":"0 0 4"
+      }
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/BK.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"",
+        "@bottomUrl":""../resources/images/BT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"",
+        "@frontUrl":""../resources/images/FR.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"",
+        "@leftUrl":""../resources/images/LF.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"",
+        "@rightUrl":""../resources/images/RT.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"",
+        "@topUrl":""../resources/images/TP.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png""
+      }
+    },
+        "ProtoInstance":
         {
       {
         "@DEF":"bubbleA",

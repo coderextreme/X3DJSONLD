@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component name='HAnim'/>
     <meta content='KoreanCharacter04Young.x3d' name='title'/>
@@ -8,28 +8,27 @@
     <meta content='Chul Hee Jung and Myeong Won Lee' name='translator'/>
     <meta content='31 March 2011' name='created'/>
     <meta content='1 November 2014' name='translated'/>
-    <meta content='23 December 2021' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:12:34 GMT' name='modified'/>
     <meta content='Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.' name='description'/>
+    <meta content='../Poses/images/HAnimPoseExampleKoreanCharacter04Young.png' name='Image'/>
     <meta content='KoreanCharacter00ReadMe.txt' name='reference'/>
-    <meta content='KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
+    <meta content='../KoreanCharacterHumanMotion_Infotech2014_140706.pdf' name='reference'/>
     <meta content='KoreanCharactersIllustrated.pdf' name='reference'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter04Young.x3d' name='identifier'/>
-    <meta content='3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview' name='generator'/>
     <meta content='Suwon University HAnim Editor' name='generator'/>
-    <meta content='Gnu Image Manipulation Program, https://www.gimp.org' name='generator'/>
-    <meta content='X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='../license.html' name='license'/>
   </head>
   <Scene>
     <WorldInfo title='KoreanCharacter04Young.x3d'/>
     <NavigationInfo speed='1.5'/>
     <Viewpoint centerOfRotation='0 1 0' description='Young' position='0 1 3'/>
-    <HAnimHumanoid DEF='hanim_Young'>
+    <HAnimHumanoid DEF='hanim_Young' name='Young' scale='0.0225 0.0225 0.0225'>
       <MetadataSet name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
         <MetadataString name='authorName' value='"Chul Hee Jung and Myeong Won Lee"'/>
         <MetadataString name='authorEmail' value='"myeongwonlee@gmail.com"'/>
-        <MetadataString name='creationDate' value='"31 March 2011"'/>
-        <MetadataString name='gender' value='"female"'/>
+        <MetadataString name='creationDate'/>
+        <MetadataString name='gender'/>
         <MetadataFloat name='height' value='1.5'/>
         <MetadataString name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
@@ -51,31 +50,13 @@
       <HAnimJoint USE='hanim_r_shoulder'/>
       <HAnimJoint USE='hanim_l_talocrural'/>
       <HAnimJoint USE='hanim_r_talocrural'/>
-      <HAnimSegment USE='hanim_l5'/>
-      <HAnimSegment USE='hanim_pelvis'/>
-      <HAnimSegment USE='hanim_sacrum'/>
-      <HAnimSegment USE='hanim_skull'/>
-      <HAnimSegment USE='hanim_l_calf'/>
-      <HAnimSegment USE='hanim_r_calf'/>
-      <HAnimSegment USE='hanim_l_carpal'/>
-      <HAnimSegment USE='hanim_r_carpal'/>
-      <HAnimSegment USE='hanim_l_forearm'/>
-      <HAnimSegment USE='hanim_r_forearm'/>
-      <HAnimSegment USE='hanim_l_talus'/>
-      <HAnimSegment USE='hanim_r_talus'/>
-      <HAnimSegment USE='hanim_l_tarsal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_r_tarsal_proximal_phalanx_2'/>
-      <HAnimSegment USE='hanim_l_thigh'/>
-      <HAnimSegment USE='hanim_r_thigh'/>
-      <HAnimSegment USE='hanim_l_upperarm'/>
-      <HAnimSegment USE='hanim_r_upperarm'/>
-      <HAnimJoint DEF='hanim_humanoid_root'>
-        <HAnimSegment DEF='hanim_sacrum'>
-          <Transform translation='0 31.540001 -0.3172'>
+      <HAnimJoint DEF='hanim_humanoid_root' center='0 31.54 -0.3172' name='humanoid_root'>
+        <HAnimSegment DEF='hanim_sacrum' name='sacrum'>
+          <Transform translation='0 31.54 -0.3172'>
             <Shape>
               <Appearance>
                 <Material diffuseColor='0.588 0.588 0.588'/>
-                <ImageTexture DEF='YoungTextureAtlas'/>
+                <ImageTexture DEF='YoungTextureAtlas' url='"images/Young.png" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Young.png"'/>
               </Appearance>
               <IndexedFaceSet coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1' creaseAngle='1.57' texCoordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 14 2 1 -1 1 13 14 -1 15 3 2 -1 2 14 15 -1 16 4 3 -1 3 15 16 -1 17 5 4 -1 4 16 17 -1 18 6 5 -1 5 17 18 -1 19 7 6 -1 6 18 19 -1 20 8 7 -1 7 19 20 -1 21 9 8 -1 8 20 21 -1 22 10 9 -1 9 21 22 -1 23 11 10 -1 10 22 23 -1 24 12 11 -1 11 23 24 -1 13 1 12 -1 12 24 13 -1 26 14 13 -1 13 25 26 -1 27 15 14 -1 14 26 27 -1 28 16 15 -1 15 27 28 -1 29 17 16 -1 16 28 29 -1 30 18 17 -1 17 29 30 -1 31 19 18 -1 18 30 31 -1 32 20 19 -1 19 31 32 -1 33 21 20 -1 20 32 33 -1 34 22 21 -1 21 33 34 -1 35 23 22 -1 22 34 35 -1 36 24 23 -1 23 35 36 -1 25 13 24 -1 24 36 25 -1 38 26 25 -1 25 37 38 -1 39 27 26 -1 26 38 39 -1 40 28 27 -1 27 39 40 -1 41 29 28 -1 28 40 41 -1 42 30 29 -1 29 41 42 -1 43 31 30 -1 30 42 43 -1 44 32 31 -1 31 43 44 -1 45 33 32 -1 32 44 45 -1 46 34 33 -1 33 45 46 -1 47 35 34 -1 34 46 47 -1 48 36 35 -1 35 47 48 -1 37 25 36 -1 36 48 37 -1 50 38 37 -1 37 49 50 -1 51 39 38 -1 38 50 51 -1 52 40 39 -1 39 51 52 -1 53 41 40 -1 40 52 53 -1 54 42 41 -1 41 53 54 -1 55 43 42 -1 42 54 55 -1 56 44 43 -1 43 55 56 -1 57 45 44 -1 44 56 57 -1 58 46 45 -1 45 57 58 -1 59 47 46 -1 46 58 59 -1 60 48 47 -1 47 59 60 -1 49 37 48 -1 48 60 49 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>
                 <Coordinate point='0 0.9084 0.0235 0 0.7867 -0.4669 -0.3773 0.7867 -0.4012 -0.6534 0.7867 -0.3219 -0.7545 0.7867 0.0235 -0.6534 0.7867 0.369 -0.3773 0.7867 0.4482 0 0.7867 0.5139 0.3773 0.7867 0.4482 0.6534 0.7867 0.369 0.7545 0.7867 0.0235 0.6534 0.7867 -0.3219 0.3773 0.7867 -0.4012 0 0.4542 -0.7625 -0.4879 0.4542 -0.6572 -0.8451 0.4542 -0.3695 -0.9758 0.4542 0.0235 -0.8451 0.4542 0.4165 -0.4879 0.4542 0.6023 0 0.4542 0.7076 0.4879 0.4542 0.6023 0.8451 0.4542 0.4165 0.9758 0.4542 0.0235 0.8451 0.4542 -0.3695 0.4879 0.4542 -0.6572 0 0 -0.8292 -0.5634 0 -0.7076 -0.9758 0 -0.3754 -1.127 0 0.0235 -0.9758 0 0.4773 -0.5634 0 0.7076 0 0 0.8292 0.5634 0 0.7076 0.9758 0 0.4773 1.127 0 0.0235 0.9758 0 -0.3754 0.5634 0 -0.7076 0 -0.4542 -0.7076 -0.4879 -0.4542 -0.6023 -0.8451 -0.4542 -0.3146 -0.9758 -0.4542 0.0235 -0.8451 -0.4542 0.4165 -0.4879 -0.4542 0.6023 0 -0.4542 0.7076 0.4879 -0.4542 0.6023 0.8451 -0.4542 0.4165 0.9758 -0.4542 0.0235 0.8451 -0.4542 -0.3146 0.4879 -0.4542 -0.6023 0 -0.7867 -0.3754 -0.2817 -0.7867 -0.3146 -0.4879 -0.7867 -0.2034 -0.5634 -0.7867 0.0235 -0.4879 -0.7867 0.2504 -0.2817 -0.7867 0.4165 0 -0.7867 0.4773 0.2817 -0.7867 0.4165 0.4879 -0.7867 0.2504 0.5634 -0.7867 0.0235 0.4879 -0.7867 -0.2034 0.2817 -0.7867 -0.3146 0 -0.9084 0.0235'/>
@@ -84,9 +65,9 @@
             </Shape>
           </Transform>
         </HAnimSegment>
-        <HAnimJoint DEF='hanim_l_hip'>
-          <HAnimSegment DEF='hanim_l_thigh'>
-            <Transform translation='3.504 29.040001 -0.4027'>
+        <HAnimJoint DEF='hanim_l_hip' center='3.504 29.04 -0.4027' name='l_hip'>
+          <HAnimSegment DEF='hanim_l_thigh' name='l_thigh'>
+            <Transform translation='3.504 29.04 -0.4027'>
               <Shape>
                 <Appearance>
                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -99,8 +80,8 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_knee'>
-            <HAnimSegment DEF='hanim_l_calf'>
+          <HAnimJoint DEF='hanim_l_knee' center='3.414 14.95 -0.4549' name='l_knee'>
+            <HAnimSegment DEF='hanim_l_calf' name='l_calf'>
               <Transform translation='3.414 14.95 -0.4549'>
                 <Shape>
                   <Appearance>
@@ -114,8 +95,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_talocrural'>
-              <HAnimSegment DEF='hanim_l_talus'>
+            <HAnimJoint DEF='hanim_l_talocrural' center='3.18 3.449 -0.3088' name='l_talocrural'>
+              <HAnimSegment DEF='hanim_l_talus' name='l_talus'>
                 <Transform translation='3.18 3.449 -0.3088'>
                   <Shape>
                     <Appearance>
@@ -129,8 +110,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_metatarsophalangeal_2'>
-                <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2'>
+              <HAnimJoint DEF='hanim_l_metatarsophalangeal_2' center='3.18 3.189 0.9724' name='l_metatarsophalangeal_2'>
+                <HAnimSegment DEF='hanim_l_tarsal_proximal_phalanx_2' name='l_tarsal_proximal_phalanx_2'>
                   <Transform translation='3.18 3.189 0.9724'>
                     <Shape>
                       <Appearance>
@@ -148,9 +129,9 @@
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint DEF='hanim_r_hip'>
-          <HAnimSegment DEF='hanim_r_thigh'>
-            <Transform translation='-3.504 29.040001 -0.4027'>
+        <HAnimJoint DEF='hanim_r_hip' center='-3.504 29.04 -0.4027' name='r_hip'>
+          <HAnimSegment DEF='hanim_r_thigh' name='r_thigh'>
+            <Transform translation='-3.504 29.04 -0.4027'>
               <Shape>
                 <Appearance>
                   <Material diffuseColor='0.588 0.588 0.588'/>
@@ -163,8 +144,8 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_r_knee'>
-            <HAnimSegment DEF='hanim_r_calf'>
+          <HAnimJoint DEF='hanim_r_knee' center='-3.414 14.95 -0.4549' name='r_knee'>
+            <HAnimSegment DEF='hanim_r_calf' name='r_calf'>
               <Transform translation='-3.414 14.95 -0.4549'>
                 <Shape>
                   <Appearance>
@@ -178,8 +159,8 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_talocrural'>
-              <HAnimSegment DEF='hanim_r_talus'>
+            <HAnimJoint DEF='hanim_r_talocrural' center='-3.18 3.449 -0.3088' name='r_talocrural'>
+              <HAnimSegment DEF='hanim_r_talus' name='r_talus'>
                 <Transform translation='-3.18 3.449 -0.3088'>
                   <Shape>
                     <Appearance>
@@ -193,8 +174,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_metatarsophalangeal_2'>
-                <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2'>
+              <HAnimJoint DEF='hanim_r_metatarsophalangeal_2' center='-3.18 3.189 0.9724' name='r_metatarsophalangeal_2'>
+                <HAnimSegment DEF='hanim_r_tarsal_proximal_phalanx_2' name='r_tarsal_proximal_phalanx_2'>
                   <Transform translation='-3.18 3.189 0.9724'>
                     <Shape>
                       <Appearance>
@@ -212,8 +193,8 @@
             </HAnimJoint>
           </HAnimJoint>
         </HAnimJoint>
-        <HAnimJoint DEF='hanim_sacroiliac'>
-          <HAnimSegment DEF='hanim_pelvis'>
+        <HAnimJoint DEF='hanim_sacroiliac' center='0 27.07 -0.3172' name='sacroiliac'>
+          <HAnimSegment DEF='hanim_pelvis' name='pelvis'>
             <Transform translation='0 27.07 -0.3172'>
               <Shape>
                 <Appearance>
@@ -227,9 +208,9 @@
               </Shape>
             </Transform>
           </HAnimSegment>
-          <HAnimJoint DEF='hanim_l_shoulder'>
-            <HAnimSegment DEF='hanim_l_upperarm'>
-              <Transform translation='5.441 45.830002 0.1786'>
+          <HAnimJoint DEF='hanim_l_shoulder' center='5.441 45.83 0.1786' name='l_shoulder'>
+            <HAnimSegment DEF='hanim_l_upperarm' name='l_upperarm'>
+              <Transform translation='5.441 45.83 0.1786'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -242,9 +223,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_l_elbow'>
-              <HAnimSegment DEF='hanim_l_forearm'>
-                <Transform translation='6.823 36.080002 0.08607'>
+            <HAnimJoint DEF='hanim_l_elbow' center='6.823 36.08 0.08607' name='l_elbow'>
+              <HAnimSegment DEF='hanim_l_forearm' name='l_forearm'>
+                <Transform translation='6.823 36.08 0.08607'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -257,8 +238,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_l_radiocarpal'>
-                <HAnimSegment DEF='hanim_l_carpal'>
+              <HAnimJoint DEF='hanim_l_radiocarpal' center='6.915 28.41 0.3752' name='l_radiocarpal'>
+                <HAnimSegment DEF='hanim_l_carpal' name='l_carpal'>
                   <Transform translation='6.915 28.41 0.3752'>
                     <Shape>
                       <Appearance>
@@ -275,9 +256,9 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_r_shoulder'>
-            <HAnimSegment DEF='hanim_r_upperarm'>
-              <Transform translation='-5.441 45.830002 0.1786'>
+          <HAnimJoint DEF='hanim_r_shoulder' center='-5.441 45.83 0.1786' name='r_shoulder'>
+            <HAnimSegment DEF='hanim_r_upperarm' name='r_upperarm'>
+              <Transform translation='-5.441 45.83 0.1786'>
                 <Shape>
                   <Appearance>
                     <Material diffuseColor='0.588 0.588 0.588'/>
@@ -290,9 +271,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_r_elbow'>
-              <HAnimSegment DEF='hanim_r_forearm'>
-                <Transform translation='-6.823 36.080002 0.08607'>
+            <HAnimJoint DEF='hanim_r_elbow' center='-6.823 36.08 0.08607' name='r_elbow'>
+              <HAnimSegment DEF='hanim_r_forearm' name='r_forearm'>
+                <Transform translation='-6.823 36.08 0.08607'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -305,8 +286,8 @@
                   </Shape>
                 </Transform>
               </HAnimSegment>
-              <HAnimJoint DEF='hanim_r_radiocarpal'>
-                <HAnimSegment DEF='hanim_r_carpal'>
+              <HAnimJoint DEF='hanim_r_radiocarpal' center='-6.915 28.41 0.3752' name='r_radiocarpal'>
+                <HAnimSegment DEF='hanim_r_carpal' name='r_carpal'>
                   <Transform translation='-6.915 28.41 0.3752'>
                     <Shape>
                       <Appearance>
@@ -323,8 +304,8 @@
               </HAnimJoint>
             </HAnimJoint>
           </HAnimJoint>
-          <HAnimJoint DEF='hanim_vl5'>
-            <HAnimSegment DEF='hanim_l5'>
+          <HAnimJoint DEF='hanim_vl5' center='0 35.75 -0.445' name='vl5'>
+            <HAnimSegment DEF='hanim_l5' name='l5'>
               <Transform translation='0 35.75 -0.445'>
                 <Shape>
                   <Appearance>
@@ -338,9 +319,9 @@
                 </Shape>
               </Transform>
             </HAnimSegment>
-            <HAnimJoint DEF='hanim_skullbase'>
-              <HAnimSegment DEF='hanim_skull'>
-                <Transform translation='0 50.470001 -0.1481'>
+            <HAnimJoint DEF='hanim_skullbase' center='0 50.47 -0.1481' name='skullbase'>
+              <HAnimSegment DEF='hanim_skull' name='skull'>
+                <Transform translation='0 50.47 -0.1481'>
                   <Shape>
                     <Appearance>
                       <Material diffuseColor='0.588 0.588 0.588'/>
@@ -358,5 +339,6 @@
         </HAnimJoint>
       </HAnimJoint>
     </HAnimHumanoid>
+    <EXPORT AS='KoreanCharacter04Young' localDEF='hanim_Young'/>
   </Scene>
 </X3D>

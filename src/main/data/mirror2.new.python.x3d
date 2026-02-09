@@ -1,37 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='Scripting'/>
     <component level='3' name='EnvironmentalEffects'/>
     <component name='Shaders'/>
     <component name='CubeMapTexturing'/>
-    <component name='Texturing'/>
-    <component name='Rendering'/>
     <component level='3' name='Grouping'/>
-    <component name='Core'/>
     <meta content='mirror2.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/mirror2.x3d' name='identifier'/>
-    <meta content='a mirrored sphere' name='description'/>
   </head>
   <Scene>
     <Viewpoint description='Switch background and images texture' position='0 5 100'/>
-    <Background DEF='cube'/>
+    <Background DEF='cube' backUrl='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"' bottomUrl='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"' frontUrl='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"' leftUrl='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"' rightUrl='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"' topUrl='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
     <Transform>
       <Shape>
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedCubeMapTexture>
-            <ImageTexture DEF='backShader'/>
-            <ImageTexture DEF='bottomShader'/>
-            <ImageTexture DEF='frontShader'/>
-            <ImageTexture DEF='leftShader'/>
-            <ImageTexture DEF='rightShader'/>
-            <ImageTexture DEF='topShader'/>
+            <ImageTexture DEF='backShader' url='"../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"'/>
+            <ImageTexture DEF='bottomShader' url='"../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"'/>
+            <ImageTexture DEF='frontShader' url='"../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"'/>
+            <ImageTexture DEF='leftShader' url='"../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"'/>
+            <ImageTexture DEF='rightShader' url='"../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"'/>
+            <ImageTexture DEF='topShader' url='"../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"'/>
           </ComposedCubeMapTexture>
-          <ComposedShader DEF='x_ite'>
+          <ComposedShader DEF='x_ite' language='GLSL'>
             <field accessType='inputOutput' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
             <field accessType='inputOutput' name='cube' type='SFInt32'/>
             <field accessType='inputOutput' name='bias' type='SFFloat' value='0.5'/>
@@ -40,7 +35,7 @@
             <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'/>
             <ShaderPart type='FRAGMENT' url='"../shaders/x_itemix.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itemix.fs"'/>
           </ComposedShader>
-          <ComposedShader DEF='x3dom'>
+          <ComposedShader DEF='x3dom' language='GLSL'>
             <field accessType='inputOutput' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
             <field accessType='inputOutput' name='cube' type='SFInt32'/>
             <field accessType='inputOutput' name='bias' type='SFFloat' value='0.5'/>
@@ -52,7 +47,7 @@
         </Appearance>
         <Sphere radius='30'/>
       </Shape>
-      <Script DEF='UrlSelector'>
+      <Script DEF='UrlSelector' directOutput='true'>
         <field accessType='initializeOnly' name='frontUrls' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_front.png" "../resources/images/all_probes/building_cross/building_front.png" "../resources/images/all_probes/campus_cross/campus_front.png" "../resources/images/all_probes/galileo_cross/galileo_front.png" "../resources/images/all_probes/grace_cross/grace_front.png" "../resources/images/all_probes/kitchen_cross/kitchen_front.png" "../resources/images/all_probes/rnl_cross/rnl_front.png" "../resources/images/all_probes/stpeters_cross/stpeters_front.png" "../resources/images/all_probes/uffizi_cross/uffizi_front.png"'/>
         <field accessType='initializeOnly' name='backUrls' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_back.png" "../resources/images/all_probes/building_cross/building_back.png" "../resources/images/all_probes/campus_cross/campus_back.png" "../resources/images/all_probes/galileo_cross/galileo_back.png" "../resources/images/all_probes/grace_cross/grace_back.png" "../resources/images/all_probes/kitchen_cross/kitchen_back.png" "../resources/images/all_probes/rnl_cross/rnl_back.png" "../resources/images/all_probes/stpeters_cross/stpeters_back.png" "../resources/images/all_probes/uffizi_cross/uffizi_back.png"'/>
         <field accessType='initializeOnly' name='leftUrls' type='MFString' value='"../resources/images/all_probes/beach_cross/beach_left.png" "../resources/images/all_probes/building_cross/building_left.png" "../resources/images/all_probes/campus_cross/campus_left.png" "../resources/images/all_probes/galileo_cross/galileo_left.png" "../resources/images/all_probes/grace_cross/grace_left.png" "../resources/images/all_probes/kitchen_cross/kitchen_left.png" "../resources/images/all_probes/rnl_cross/rnl_left.png" "../resources/images/all_probes/stpeters_cross/stpeters_left.png" "../resources/images/all_probes/uffizi_cross/uffizi_left.png"'/>
@@ -101,20 +96,20 @@
 "+
 "        }]]>
       </Script>
-      <TimeSensor DEF='Clock'/>
-      <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
-      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='frontUrl' toNode='cube'/>
-      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='backUrl' toNode='cube'/>
-      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='leftUrl' toNode='cube'/>
-      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='rightUrl' toNode='cube'/>
-      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='topUrl' toNode='cube'/>
-      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='bottomUrl' toNode='cube'/>
-      <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='url' toNode='frontShader'/>
-      <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='url' toNode='backShader'/>
-      <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='url' toNode='leftShader'/>
-      <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='url' toNode='rightShader'/>
-      <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='url' toNode='topShader'/>
-      <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='url' toNode='bottomShader'/>
+      <TimeSensor DEF='Clock' cycleInterval='45' loop='true'/>
     </Transform>
+    <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='UrlSelector'/>
+    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_frontUrl' toNode='cube'/>
+    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_backUrl' toNode='cube'/>
+    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_leftUrl' toNode='cube'/>
+    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_rightUrl' toNode='cube'/>
+    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_topUrl' toNode='cube'/>
+    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_bottomUrl' toNode='cube'/>
+    <ROUTE fromField='front_changed' fromNode='UrlSelector' toField='set_url' toNode='frontShader'/>
+    <ROUTE fromField='back_changed' fromNode='UrlSelector' toField='set_url' toNode='backShader'/>
+    <ROUTE fromField='left_changed' fromNode='UrlSelector' toField='set_url' toNode='leftShader'/>
+    <ROUTE fromField='right_changed' fromNode='UrlSelector' toField='set_url' toNode='rightShader'/>
+    <ROUTE fromField='top_changed' fromNode='UrlSelector' toField='set_url' toNode='topShader'/>
+    <ROUTE fromField='bottom_changed' fromNode='UrlSelector' toField='set_url' toNode='bottomShader'/>
   </Scene>
 </X3D>

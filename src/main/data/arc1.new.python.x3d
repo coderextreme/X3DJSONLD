@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='arc1.x3d' name='title'/>
     <meta content='Lost, Doug Sanden I think' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d' name='identifier'/>
-    <meta content='a generic proto to connect two objects' name='description'/>
   </head>
   <Scene>
-    <Viewpoint description='Only Viewpoint' position='0 0 5'/>
-    <Background skyColor='0.4 0.4 0.4'/>
     <ProtoDeclare name='point'>
       <ProtoInterface>
-        <field accessType='inputOutput' name='translation' type='SFVec3f' value='0 0 0'/>
+        <field accessType='inputOutput' name='translation' type='SFVec3f'/>
       </ProtoInterface>
       <ProtoBody>
         <Transform DEF='node'>
@@ -26,10 +23,10 @@
             </Appearance>
             <Sphere radius='0.1'/>
           </Shape>
-          <PositionInterpolator DEF='PI1'/>
+          <PositionInterpolator DEF='PI1' key='0 1' keyValue='0 0 0 0 5 0'/>
           <Script DEF='MB1'>
             <field accessType='inputOutput' name='translation' type='SFVec3f' value='50 50 0'/>
-            <field accessType='inputOutput' name='old' type='SFVec3f' value='0 0 0'/>
+            <field accessType='inputOutput' name='old' type='SFVec3f'/>
             <field accessType='inputOnly' name='set_location' type='SFTime'/>
             <field accessType='inputOutput' name='keyValue' type='MFVec3f' value='0 0 0 0 5 0'/>
           <![CDATA[ecmascript:
@@ -44,31 +41,15 @@
 "+
 "               }]]>
           </Script>
-          <TimeSensor DEF='CL1'/>
-          <ROUTE fromField='cycleTime' fromNode='CL1' toField='set_location' toNode='MB1'/>
-          <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
-          <ROUTE fromField='keyValue' fromNode='MB1' toField='keyValue' toNode='PI1'/>
-          <ROUTE fromField='value_changed' fromNode='PI1' toField='set_translation' toNode='node'/>
-          <ROUTE fromField='translation_changed' fromNode='MB1' toField='set_translation' toNode='node'/>
+          <TimeSensor DEF='CL1' cycleInterval='3' loop='true'/>
         </Transform>
+        <ROUTE fromField='cycleTime' fromNode='CL1' toField='set_location' toNode='MB1'/>
+        <ROUTE fromField='fraction_changed' fromNode='CL1' toField='set_fraction' toNode='PI1'/>
+        <ROUTE fromField='keyValue_changed' fromNode='MB1' toField='set_keyValue' toNode='PI1'/>
+        <ROUTE fromField='value_changed' fromNode='PI1' toField='set_translation' toNode='node'/>
+        <ROUTE fromField='translation_changed' fromNode='MB1' toField='set_translation' toNode='node'/>
       </ProtoBody>
     </ProtoDeclare>
-    <Transform DEF='G1'>
-      <ProtoInstance name='point'/>
-    </Transform>
-    <Transform DEF='G2'>
-      <ProtoInstance name='point'/>
-    </Transform>
-    <Transform DEF='transC1'>
-      <Transform DEF='rotscaleC1'>
-        <Shape>
-          <Appearance>
-            <Material diffuseColor='0.2 0.7 0.7' transparency='0.5'/>
-          </Appearance>
-          <Cylinder radius='0.05'/>
-        </Shape>
-      </Transform>
-    </Transform>
     <ProtoDeclare name='x3dconnector'>
       <ProtoInterface>
         <field accessType='initializeOnly' name='startnode' type='SFNode'/>
@@ -83,8 +64,6 @@
           <IS>
             <connect nodeField='startnode' protoField='startnode'/>
             <connect nodeField='endnode' protoField='endnode'/>
-            <connect nodeField='transnode' protoField='transnode'/>
-            <connect nodeField='rotscalenode' protoField='rotscalenode'/>
             <connect nodeField='set_startpoint' protoField='set_startpoint'/>
             <connect nodeField='set_endpoint' protoField='set_endpoint'/>
           </IS>
@@ -178,6 +157,28 @@
         </Script>
       </ProtoBody>
     </ProtoDeclare>
+    <Viewpoint description='Only Viewpoint' position='0 0 5'/>
+    <Background skyColor='0.4 0.4 0.4'/>
+    <Transform DEF='G1'>
+      <ProtoInstance name='point'>
+        <fieldValue name='translation' value='0 4.416667 0'/>
+      </ProtoInstance>
+    </Transform>
+    <Transform DEF='G2'>
+      <ProtoInstance name='point'>
+        <fieldValue name='translation' value='0 4.416667 0'/>
+      </ProtoInstance>
+    </Transform>
+    <Transform DEF='transC1'>
+      <Transform DEF='rotscaleC1'>
+        <Shape>
+          <Appearance>
+            <Material diffuseColor='0.2 0.7 0.7' transparency='0.5'/>
+          </Appearance>
+          <Cylinder radius='0.05'/>
+        </Shape>
+      </Transform>
+    </Transform>
     <ProtoInstance DEF='connector1' name='x3dconnector'>
       <fieldValue name='startnode'>
         <Transform USE='G1'/>
@@ -191,8 +192,6 @@
       <fieldValue name='rotscalenode'>
         <Transform USE='rotscaleC1'/>
       </fieldValue>
-      <fieldValue name='set_startpoint'/>
-      <fieldValue name='set_endpoint'/>
     </ProtoInstance>
     <ROUTE fromField='translation_changed' fromNode='G1' toField='set_startpoint' toNode='connector1'/>
     <ROUTE fromField='translation_changed' fromNode='G2' toField='set_endpoint' toNode='connector1'/>

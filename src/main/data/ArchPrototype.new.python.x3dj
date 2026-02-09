@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -46,7 +46,7 @@
         "meta":
         {
       {
-        "@content":"27 November 2015",
+        "@content":"Mon, 09 Feb 2026 07:09:43 GMT",
         "@name":"modified"
       }
     },
@@ -69,20 +69,6 @@
       {
         "@content":"http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d",
         "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"../license.html",
-        "@name":"license"
       }
     },
     }    "Scene":
@@ -253,21 +239,23 @@
                                     "connect":
                                     {
       {
-        "@nodeField":"emissiveColor",
-        "@protoField":"emissiveColor"
+        "@nodeField":"diffuseColor",
+        "@protoField":"diffuseColor"
       }
     },
                                     "connect":
                                     {
       {
-        "@nodeField":"diffuseColor",
-        "@protoField":"diffuseColor"
+        "@nodeField":"emissiveColor",
+        "@protoField":"emissiveColor"
       }
     },
                                 }                            }                        }                        "IndexedFaceSet":
                         {
       {
-        "@DEF":"ArchIndex"
+        "@DEF":"ArchIndex",
+        "@convex":"false",
+        "@solid":"false"
       }
                             "Coordinate":
                             {
@@ -278,7 +266,8 @@
                         }                    }                }                "Script":
                 {
       {
-        "@DEF":"ArchPrototypeScript"
+        "@DEF":"ArchPrototypeScript",
+        "@url":""../node/ArchPrototypeScript.js" "https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js""
       }
                     "IS":
                     {
@@ -306,15 +295,15 @@
                         "connect":
                         {
       {
-        "@nodeField":"pierWidth",
-        "@protoField":"pierWidth"
+        "@nodeField":"topAbutmentHeight",
+        "@protoField":"topAbutmentHeight"
       }
     },
                         "connect":
                         {
       {
-        "@nodeField":"topAbutmentHeight",
-        "@protoField":"topAbutmentHeight"
+        "@nodeField":"pierWidth",
+        "@protoField":"pierWidth"
       }
     },
                         "connect":
@@ -506,7 +495,7 @@
       {
         "@fromField":"computedScale",
         "@fromNode":"ArchPrototypeScript",
-        "@toField":"scale",
+        "@toField":"set_scale",
         "@toNode":"ArchTransform"
       }
     },
@@ -515,7 +504,7 @@
       {
         "@fromField":"pointOut",
         "@fromNode":"ArchPrototypeScript",
-        "@toField":"point",
+        "@toField":"set_point",
         "@toNode":"ArchChord"
       }
     },
@@ -593,7 +582,8 @@
         }        "Inline":
         {
       {
-        "@DEF":"CoordinateAxes"
+        "@DEF":"CoordinateAxes",
+        "@url":""../data/CoordinateAxes.x3d""
       }
     },
     }}

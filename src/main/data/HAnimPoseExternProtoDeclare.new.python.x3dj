@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"14 December 2025",
+        "@content":"Mon, 09 Feb 2026 07:11:17 GMT",
         "@name":"modified"
       }
     },
@@ -109,48 +109,19 @@
         "meta":
         {
       {
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
         "@content":"X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit",
         "@name":"generator"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclare.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "WorldInfo":
-        {
-      {
-        "@DEF":"ModelInfo"
-      }
-    }
-        "Background":
-        {
-      {
-        "@skyColor":"0.6 0.6 0.8"
-      }
-    },
-        "NavigationInfo":
-        {
-    },
         "ExternProtoDeclare":
         {
       {
@@ -293,7 +264,24 @@
         "@type":"SFBool"
       }
     },
-        }        "Viewpoint":
+        }        "WorldInfo":
+        {
+      {
+        "@DEF":"ModelInfo",
+        "@info":""Design to illustrate a potential HAnimPose node"",
+        "@title":"HAnimPoseExternProtoDeclare"
+      }
+    }
+        "Background":
+        {
+      {
+        "@skyColor":"0.6 0.6 0.8"
+      }
+    },
+        "NavigationInfo":
+        {
+    },
+        "Viewpoint":
         {
       {
         "@description":"HAnimPoseExternProtoDeclare description",
@@ -303,7 +291,8 @@
         "Transform":
         {
       {
-        "@DEF":"DisplayHeader1"
+        "@DEF":"DisplayHeader1",
+        "@translation":"0 1.5 0"
       }
             "Anchor":
             {
@@ -333,7 +322,10 @@
                         "FontStyle":
                         {
       {
-        "@DEF":"HeaderFont"
+        "@DEF":"HeaderFont",
+        "@family":""SANS"",
+        "@justify":""MIDDLE" "MIDDLE"",
+        "@size":"0.15"
       }
     },
                     }                }                "Shape":
@@ -358,7 +350,8 @@
                 }            }        }        "Transform":
         {
       {
-        "@DEF":"DisplayHeader2"
+        "@DEF":"DisplayHeader2",
+        "@translation":"0 0.5 0"
       }
             "Anchor":
             {

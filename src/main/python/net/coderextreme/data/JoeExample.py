@@ -13,8 +13,7 @@ head1.children.append(meta2)
 
 X3D0.head = head1
 Scene3 = x3d.Scene()
-Script4 = x3d.Script()
-Script4.DEF = "OpenVault"
+Script4 = x3d.Script(DEF="OpenVault")
 field5 = x3d.field()
 field5.name = "openVault"
 field5.type = "SFTime"
@@ -74,8 +73,7 @@ Sound13.maxBack = 1000
 Sound13.maxFront = 1000
 Sound13.minBack = 1000
 Sound13.minFront = 1000
-AudioClip14 = x3d.AudioClip()
-AudioClip14.DEF = "Click"
+AudioClip14 = x3d.AudioClip(DEF="Click")
 AudioClip14.stopTime = 1
 AudioClip14.description = "clicking sound"
 AudioClip14.url = ["../resources/chandubabamusic1.wav"]
@@ -83,8 +81,7 @@ AudioClip14.url = ["../resources/chandubabamusic1.wav"]
 Sound13.source = AudioClip14
 
 Scene3.children.append(Sound13)
-TouchSensor15 = x3d.TouchSensor()
-TouchSensor15.DEF = "TS"
+TouchSensor15 = x3d.TouchSensor(DEF="TS")
 
 Scene3.children.append(TouchSensor15)
 ROUTE16 = x3d.ROUTE()

@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -32,7 +32,7 @@
         "meta":
         {
       {
-        "@content":"20 October 2019",
+        "@content":"Mon, 09 Feb 2026 07:11:17 GMT",
         "@name":"modified"
       }
     },
@@ -78,20 +78,6 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
-        "@name":"license"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
-        "@name":"generator"
-      }
-    },
     }    "Scene":
     {
         "WorldInfo":
@@ -105,7 +91,10 @@
             "Viewpoint":
             {
       {
-        "@DEF":"ViewUpClose"
+        "@DEF":"ViewUpClose",
+        "@centerOfRotation":"0 -1 0",
+        "@description":"Hello world!",
+        "@position":"0 -1 7"
       }
     },
             "Transform":
@@ -120,13 +109,15 @@
                         "Material":
                         {
       {
-        "@DEF":"MaterialLightBlue"
+        "@DEF":"MaterialLightBlue",
+        "@diffuseColor":"0.1 0.5 1"
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"ImageCloudlessEarth"
+        "@DEF":"ImageCloudlessEarth",
+        "@url":""earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif""
       }
     },
                     }                    "Sphere":
@@ -150,7 +141,8 @@
                     }                    "Text":
                     {
       {
-        "@DEF":"TextMessage"
+        "@DEF":"TextMessage",
+        "@string":""Hello" "world!""
       }
                         "FontStyle":
                         {

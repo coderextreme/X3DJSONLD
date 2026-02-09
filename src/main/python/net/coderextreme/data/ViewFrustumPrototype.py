@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "16 August 2008"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "20 October 2019"
+meta6.content = "Mon, 09 Feb 2026 07:13:15 GMT"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -60,377 +60,349 @@ meta12.name = "identifier"
 meta12.content = "https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"
 
 head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "generator"
-meta13.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta13)
-meta14 = x3d.meta()
-meta14.name = "license"
-meta14.content = "../license.html"
-
-head1.children.append(meta14)
 
 X3D0.head = head1
-Scene15 = x3d.Scene()
-WorldInfo16 = x3d.WorldInfo()
-WorldInfo16.title = "ViewFrustumPrototype.x3d"
+Scene13 = x3d.Scene()
+ProtoDeclare14 = x3d.ProtoDeclare()
+ProtoDeclare14.name = "ViewFrustum"
+ProtoDeclare14.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"
+ProtoInterface15 = x3d.ProtoInterface()
+field16 = x3d.field()
+field16.accessType = "initializeOnly"
+field16.type = "SFNode"
+field16.name = "ViewpointNode"
+field16.appinfo = "required: insert Viewpoint DEF or USE node for view of interest"
 
-Scene15.children.append(WorldInfo16)
-ProtoDeclare17 = x3d.ProtoDeclare()
-ProtoDeclare17.name = "ViewFrustum"
-ProtoDeclare17.appinfo = "Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"
-ProtoInterface18 = x3d.ProtoInterface()
+ProtoInterface15.field.append(field16)
+field17 = x3d.field()
+field17.accessType = "initializeOnly"
+field17.type = "SFNode"
+field17.name = "NavigationInfoNode"
+field17.appinfo = "required: insert NavigationInfo DEF or USE node of interest"
+
+ProtoInterface15.field.append(field17)
+field18 = x3d.field()
+field18.accessType = "inputOutput"
+field18.type = "SFBool"
+field18.name = "visible"
+field18.value = True
+field18.appinfo = "whether or not frustum geometry is rendered"
+
+ProtoInterface15.field.append(field18)
 field19 = x3d.field()
-field19.name = "ViewpointNode"
-field19.accessType = "initializeOnly"
-field19.appinfo = "required: insert Viewpoint DEF or USE node for view of interest"
-field19.type = "SFNode"
-"""NULL node, ProtoInstance must provide"""
+field19.accessType = "inputOutput"
+field19.type = "SFColor"
+field19.name = "lineColor"
+field19.value = [0.9,0.9,0.9]
+field19.appinfo = "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"
 
-ProtoInterface18.field.append(field19)
+ProtoInterface15.field.append(field19)
 field20 = x3d.field()
-field20.name = "NavigationInfoNode"
-field20.accessType = "initializeOnly"
-field20.appinfo = "required: insert NavigationInfo DEF or USE node of interest"
-field20.type = "SFNode"
-"""NULL node, ProtoInstance must provide"""
+field20.accessType = "inputOutput"
+field20.type = "SFColor"
+field20.name = "frustumColor"
+field20.value = [0.8,0.8,0.8]
+field20.appinfo = "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"
 
-ProtoInterface18.field.append(field20)
+ProtoInterface15.field.append(field20)
 field21 = x3d.field()
-field21.name = "visible"
 field21.accessType = "inputOutput"
-field21.appinfo = "whether or not frustum geometry is rendered"
-field21.type = "SFBool"
-field21.value = True
+field21.type = "SFFloat"
+field21.name = "transparency"
+field21.value = 0.5
+field21.appinfo = "transparency of ViewFrustum hull geometry, default value 0.5"
 
-ProtoInterface18.field.append(field21)
+ProtoInterface15.field.append(field21)
 field22 = x3d.field()
-field22.name = "lineColor"
 field22.accessType = "inputOutput"
-field22.appinfo = "RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"
-field22.type = "SFColor"
-field22.value = [0.9,0.9,0.9]
+field22.type = "SFFloat"
+field22.name = "aspectRatio"
+field22.value = 0.75
+field22.appinfo = "assumed ratio height/width, default value 0.75"
 
-ProtoInterface18.field.append(field22)
+ProtoInterface15.field.append(field22)
 field23 = x3d.field()
-field23.name = "frustumColor"
-field23.accessType = "inputOutput"
-field23.appinfo = "RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"
-field23.type = "SFColor"
-field23.value = [0.8,0.8,0.8]
+field23.accessType = "initializeOnly"
+field23.type = "SFBool"
+field23.name = "trace"
+field23.appinfo = "debug support, default false"
 
-ProtoInterface18.field.append(field23)
-field24 = x3d.field()
-field24.name = "transparency"
-field24.accessType = "inputOutput"
-field24.appinfo = "transparency of ViewFrustum hull geometry, default value 0.5"
-field24.type = "SFFloat"
-field24.value = 0.5
+ProtoInterface15.field.append(field23)
 
-ProtoInterface18.field.append(field24)
-field25 = x3d.field()
-field25.name = "aspectRatio"
-field25.accessType = "inputOutput"
-field25.appinfo = "assumed ratio height/width, default value 0.75"
-field25.type = "SFFloat"
-field25.value = 0.75
+ProtoDeclare14.ProtoInterface = ProtoInterface15
+ProtoBody24 = x3d.ProtoBody()
+Switch25 = x3d.Switch(DEF="VisibilitySwitch")
+Transform26 = x3d.Transform(DEF="PositionTransform")
+Transform26.rotation = [0,1,0,3.14159]
+Transform27 = x3d.Transform(DEF="OrientationTransform")
+Shape28 = x3d.Shape()
+Appearance29 = x3d.Appearance()
+Material30 = x3d.Material()
+IS31 = x3d.IS()
+connect32 = x3d.connect()
+connect32.nodeField = "emissiveColor"
+connect32.protoField = "lineColor"
 
-ProtoInterface18.field.append(field25)
-field26 = x3d.field()
-field26.name = "trace"
-field26.accessType = "initializeOnly"
-field26.appinfo = "debug support, default false"
-field26.type = "SFBool"
-field26.value = False
+IS31.connect.append(connect32)
 
-ProtoInterface18.field.append(field26)
+Material30.IS = IS31
 
-ProtoDeclare17.ProtoInterface = ProtoInterface18
-ProtoBody27 = x3d.ProtoBody()
-Switch28 = x3d.Switch()
-Switch28.DEF = "VisibilitySwitch"
-Switch28.whichChoice = -1
-Transform29 = x3d.Transform()
-Transform29.DEF = "PositionTransform"
-Transform29.rotation = [0,1,0,3.14159]
-Transform30 = x3d.Transform()
-Transform30.DEF = "OrientationTransform"
-Shape31 = x3d.Shape()
-IndexedLineSet32 = x3d.IndexedLineSet()
-IndexedLineSet32.DEF = "FrustumLines"
-IndexedLineSet32.coordIndex = [0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]
-Coordinate33 = x3d.Coordinate()
-Coordinate33.DEF = "FrustumCoordinate"
-Coordinate33.point = [(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0)]
+Appearance29.material = Material30
 
-IndexedLineSet32.coord = Coordinate33
+Shape28.appearance = Appearance29
+IndexedLineSet33 = x3d.IndexedLineSet(DEF="FrustumLines")
+IndexedLineSet33.coordIndex = [0,1,2,3,0,-1,4,5,6,7,4,-1,0,4,-1,1,5,-1,2,6,-1,3,7,-1]
+Coordinate34 = x3d.Coordinate(DEF="FrustumCoordinate")
+Coordinate34.point = [(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0),(0, 0, 0)]
 
-Shape31.geometry = IndexedLineSet32
-Appearance34 = x3d.Appearance()
-Material35 = x3d.Material()
-IS36 = x3d.IS()
-connect37 = x3d.connect()
-connect37.nodeField = "emissiveColor"
-connect37.protoField = "lineColor"
+IndexedLineSet33.coord = Coordinate34
 
-IS36.connect.append(connect37)
+Shape28.geometry = IndexedLineSet33
 
-Material35.IS = IS36
+Transform27.children.append(Shape28)
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance(DEF="FrustumAppearance")
+Material37 = x3d.Material()
+IS38 = x3d.IS()
+connect39 = x3d.connect()
+connect39.nodeField = "diffuseColor"
+connect39.protoField = "frustumColor"
 
-Appearance34.material = Material35
+IS38.connect.append(connect39)
+connect40 = x3d.connect()
+connect40.nodeField = "transparency"
+connect40.protoField = "transparency"
 
-Shape31.appearance = Appearance34
+IS38.connect.append(connect40)
 
-Transform30.children.append(Shape31)
-Shape38 = x3d.Shape()
-Extrusion39 = x3d.Extrusion()
-Extrusion39.DEF = "FrustumExtrusion"
+Material37.IS = IS38
 
-Shape38.geometry = Extrusion39
-Appearance40 = x3d.Appearance()
-Appearance40.DEF = "FrustumAppearance"
-Material41 = x3d.Material()
-IS42 = x3d.IS()
-connect43 = x3d.connect()
-connect43.nodeField = "diffuseColor"
-connect43.protoField = "frustumColor"
+Appearance36.material = Material37
 
-IS42.connect.append(connect43)
-connect44 = x3d.connect()
-connect44.nodeField = "transparency"
-connect44.protoField = "transparency"
+Shape35.appearance = Appearance36
+Extrusion41 = x3d.Extrusion(DEF="FrustumExtrusion")
 
-IS42.connect.append(connect44)
+Shape35.geometry = Extrusion41
 
-Material41.IS = IS42
+Transform27.children.append(Shape35)
+Shape42 = x3d.Shape()
+Appearance43 = x3d.Appearance(USE="FrustumAppearance")
 
-Appearance40.material = Material41
+Shape42.appearance = Appearance43
+Sphere44 = x3d.Sphere()
+Sphere44.radius = 0.08
 
-Shape38.appearance = Appearance40
+Shape42.geometry = Sphere44
 
-Transform30.children.append(Shape38)
-Shape45 = x3d.Shape()
-Sphere46 = x3d.Sphere()
-Sphere46.radius = 0.08
+Transform27.children.append(Shape42)
 
-Shape45.geometry = Sphere46
-Appearance47 = x3d.Appearance()
-Appearance47.USE = "FrustumAppearance"
+Transform26.children.append(Transform27)
 
-Shape45.appearance = Appearance47
+Switch25.children.append(Transform26)
 
-Transform30.children.append(Shape45)
+ProtoBody24.children.append(Switch25)
+Script45 = x3d.Script(DEF="GeometryComputationScript")
+Script45.url = ["ViewFrustumPrototypeScript.js"]
+Script45.directOutput = True
+field46 = x3d.field()
+field46.accessType = "inputOutput"
+field46.type = "SFBool"
+field46.name = "visible"
+field46.appinfo = "Whether or not frustum geometry is rendered"
 
-Transform29.children.append(Transform30)
+Script45.field.append(field46)
+field47 = x3d.field()
+field47.accessType = "outputOnly"
+field47.type = "SFInt32"
+field47.name = "visibilitySwitchSelection"
+field47.appinfo = "Adjust Switch selection to make geometry visible or not"
 
-Switch28.children.append(Transform29)
+Script45.field.append(field47)
+field48 = x3d.field()
+field48.accessType = "initializeOnly"
+field48.type = "SFNode"
+field48.name = "ViewpointNode"
 
-ProtoBody27.children.append(Switch28)
-Script48 = x3d.Script()
-Script48.DEF = "GeometryComputationScript"
-Script48.directOutput = True
-Script48.url = ["ViewFrustumPrototypeScript.js"]
+Script45.field.append(field48)
 field49 = x3d.field()
-field49.name = "visible"
-field49.accessType = "inputOutput"
-field49.appinfo = "Whether or not frustum geometry is rendered"
-field49.type = "SFBool"
+field49.accessType = "initializeOnly"
+field49.type = "SFNode"
+field49.name = "NavigationInfoNode"
 
-Script48.field.append(field49)
+Script45.field.append(field49)
 field50 = x3d.field()
-field50.name = "visibilitySwitchSelection"
-field50.accessType = "outputOnly"
-field50.appinfo = "Adjust Switch selection to make geometry visible or not"
-field50.type = "SFInt32"
+field50.accessType = "initializeOnly"
+field50.type = "SFNode"
+field50.name = "FrustumCoordinate"
+Coordinate51 = x3d.Coordinate(USE="FrustumCoordinate")
 
-Script48.field.append(field50)
-field51 = x3d.field()
-field51.name = "ViewpointNode"
-field51.accessType = "initializeOnly"
-field51.type = "SFNode"
-"""initialization node (if any) goes here"""
+field50.children.append(Coordinate51)
 
-Script48.field.append(field51)
+Script45.field.append(field50)
 field52 = x3d.field()
-field52.name = "NavigationInfoNode"
 field52.accessType = "initializeOnly"
 field52.type = "SFNode"
-"""initialization node (if any) goes here"""
+field52.name = "FrustumExtrusion"
+Extrusion53 = x3d.Extrusion(USE="FrustumExtrusion")
 
-Script48.field.append(field52)
-field53 = x3d.field()
-field53.name = "FrustumCoordinate"
-field53.accessType = "initializeOnly"
-field53.type = "SFNode"
-Coordinate54 = x3d.Coordinate()
-Coordinate54.USE = "FrustumCoordinate"
+field52.children.append(Extrusion53)
 
-field53.children.append(Coordinate54)
+Script45.field.append(field52)
+field54 = x3d.field()
+field54.accessType = "inputOnly"
+field54.type = "SFBool"
+field54.name = "recompute"
 
-Script48.field.append(field53)
+Script45.field.append(field54)
 field55 = x3d.field()
-field55.name = "FrustumExtrusion"
-field55.accessType = "initializeOnly"
-field55.type = "SFNode"
-Extrusion56 = x3d.Extrusion()
-Extrusion56.USE = "FrustumExtrusion"
+field55.accessType = "inputOutput"
+field55.type = "SFFloat"
+field55.name = "aspectRatio"
+field55.appinfo = "assumed ratio height/width"
 
-field55.children.append(Extrusion56)
+Script45.field.append(field55)
+field56 = x3d.field()
+field56.accessType = "outputOnly"
+field56.type = "SFVec3f"
+field56.name = "position_changed"
 
-Script48.field.append(field55)
+Script45.field.append(field56)
 field57 = x3d.field()
-field57.name = "recompute"
-field57.accessType = "inputOnly"
-field57.type = "SFBool"
+field57.accessType = "outputOnly"
+field57.type = "SFRotation"
+field57.name = "orientation_changed"
 
-Script48.field.append(field57)
+Script45.field.append(field57)
 field58 = x3d.field()
-field58.name = "aspectRatio"
-field58.accessType = "inputOutput"
-field58.appinfo = "assumed ratio height/width"
-field58.type = "SFFloat"
+field58.accessType = "outputOnly"
+field58.type = "MFVec3f"
+field58.name = "spine_changed"
 
-Script48.field.append(field58)
+Script45.field.append(field58)
 field59 = x3d.field()
-field59.name = "position_changed"
 field59.accessType = "outputOnly"
-field59.type = "SFVec3f"
+field59.type = "MFVec2f"
+field59.name = "scale_changed"
 
-Script48.field.append(field59)
+Script45.field.append(field59)
 field60 = x3d.field()
-field60.name = "orientation_changed"
 field60.accessType = "outputOnly"
-field60.type = "SFRotation"
+field60.type = "MFVec3f"
+field60.name = "point_changed"
 
-Script48.field.append(field60)
+Script45.field.append(field60)
 field61 = x3d.field()
-field61.name = "spine_changed"
-field61.accessType = "outputOnly"
-field61.type = "MFVec3f"
+field61.accessType = "initializeOnly"
+field61.type = "SFBool"
+field61.name = "trace"
 
-Script48.field.append(field61)
-field62 = x3d.field()
-field62.name = "scale_changed"
-field62.accessType = "outputOnly"
-field62.type = "MFVec2f"
+Script45.field.append(field61)
+IS62 = x3d.IS()
+connect63 = x3d.connect()
+connect63.nodeField = "visible"
+connect63.protoField = "visible"
 
-Script48.field.append(field62)
-field63 = x3d.field()
-field63.name = "point_changed"
-field63.accessType = "outputOnly"
-field63.type = "MFVec3f"
+IS62.connect.append(connect63)
+connect64 = x3d.connect()
+connect64.nodeField = "ViewpointNode"
+connect64.protoField = "ViewpointNode"
 
-Script48.field.append(field63)
-field64 = x3d.field()
-field64.name = "trace"
-field64.accessType = "initializeOnly"
-field64.type = "SFBool"
+IS62.connect.append(connect64)
+connect65 = x3d.connect()
+connect65.nodeField = "NavigationInfoNode"
+connect65.protoField = "NavigationInfoNode"
 
-Script48.field.append(field64)
-IS65 = x3d.IS()
+IS62.connect.append(connect65)
 connect66 = x3d.connect()
-connect66.nodeField = "visible"
-connect66.protoField = "visible"
+connect66.nodeField = "aspectRatio"
+connect66.protoField = "aspectRatio"
 
-IS65.connect.append(connect66)
+IS62.connect.append(connect66)
 connect67 = x3d.connect()
-connect67.nodeField = "ViewpointNode"
-connect67.protoField = "ViewpointNode"
+connect67.nodeField = "trace"
+connect67.protoField = "trace"
 
-IS65.connect.append(connect67)
-connect68 = x3d.connect()
-connect68.nodeField = "NavigationInfoNode"
-connect68.protoField = "NavigationInfoNode"
+IS62.connect.append(connect67)
 
-IS65.connect.append(connect68)
-connect69 = x3d.connect()
-connect69.nodeField = "aspectRatio"
-connect69.protoField = "aspectRatio"
+Script45.IS = IS62
 
-IS65.connect.append(connect69)
-connect70 = x3d.connect()
-connect70.nodeField = "trace"
-connect70.protoField = "trace"
+ProtoBody24.children.append(Script45)
+ROUTE68 = x3d.ROUTE()
+ROUTE68.fromNode = "GeometryComputationScript"
+ROUTE68.fromField = "visibilitySwitchSelection"
+ROUTE68.toNode = "VisibilitySwitch"
+ROUTE68.toField = "set_whichChoice"
 
-IS65.connect.append(connect70)
+ProtoBody24.children.append(ROUTE68)
+ROUTE69 = x3d.ROUTE()
+ROUTE69.fromNode = "GeometryComputationScript"
+ROUTE69.fromField = "position_changed"
+ROUTE69.toNode = "PositionTransform"
+ROUTE69.toField = "set_translation"
 
-Script48.IS = IS65
+ProtoBody24.children.append(ROUTE69)
+ROUTE70 = x3d.ROUTE()
+ROUTE70.fromNode = "GeometryComputationScript"
+ROUTE70.fromField = "orientation_changed"
+ROUTE70.toNode = "OrientationTransform"
+ROUTE70.toField = "set_rotation"
 
-ProtoBody27.children.append(Script48)
+ProtoBody24.children.append(ROUTE70)
 ROUTE71 = x3d.ROUTE()
-ROUTE71.fromField = "visibilitySwitchSelection"
 ROUTE71.fromNode = "GeometryComputationScript"
-ROUTE71.toField = "whichChoice"
-ROUTE71.toNode = "VisibilitySwitch"
+ROUTE71.fromField = "spine_changed"
+ROUTE71.toNode = "FrustumExtrusion"
+ROUTE71.toField = "set_spine"
 
-ProtoBody27.children.append(ROUTE71)
+ProtoBody24.children.append(ROUTE71)
 ROUTE72 = x3d.ROUTE()
-ROUTE72.fromField = "position_changed"
 ROUTE72.fromNode = "GeometryComputationScript"
-ROUTE72.toField = "translation"
-ROUTE72.toNode = "PositionTransform"
+ROUTE72.fromField = "scale_changed"
+ROUTE72.toNode = "FrustumExtrusion"
+ROUTE72.toField = "set_scale"
 
-ProtoBody27.children.append(ROUTE72)
+ProtoBody24.children.append(ROUTE72)
 ROUTE73 = x3d.ROUTE()
-ROUTE73.fromField = "orientation_changed"
 ROUTE73.fromNode = "GeometryComputationScript"
-ROUTE73.toField = "rotation"
-ROUTE73.toNode = "OrientationTransform"
+ROUTE73.fromField = "point_changed"
+ROUTE73.toNode = "FrustumCoordinate"
+ROUTE73.toField = "set_point"
 
-ProtoBody27.children.append(ROUTE73)
-ROUTE74 = x3d.ROUTE()
-ROUTE74.fromField = "spine_changed"
-ROUTE74.fromNode = "GeometryComputationScript"
-ROUTE74.toField = "set_spine"
-ROUTE74.toNode = "FrustumExtrusion"
+ProtoBody24.children.append(ROUTE73)
 
-ProtoBody27.children.append(ROUTE74)
-ROUTE75 = x3d.ROUTE()
-ROUTE75.fromField = "scale_changed"
-ROUTE75.fromNode = "GeometryComputationScript"
-ROUTE75.toField = "set_scale"
-ROUTE75.toNode = "FrustumExtrusion"
+ProtoDeclare14.ProtoBody = ProtoBody24
 
-ProtoBody27.children.append(ROUTE75)
-ROUTE76 = x3d.ROUTE()
-ROUTE76.fromField = "point_changed"
-ROUTE76.fromNode = "GeometryComputationScript"
-ROUTE76.toField = "point"
-ROUTE76.toNode = "FrustumCoordinate"
+Scene13.children.append(ProtoDeclare14)
+WorldInfo74 = x3d.WorldInfo()
+WorldInfo74.title = "ViewFrustumPrototype.x3d"
 
-ProtoBody27.children.append(ROUTE76)
+Scene13.children.append(WorldInfo74)
+Anchor75 = x3d.Anchor()
+Anchor75.description = "ViewFrustum Example"
+Anchor75.url = ["ViewFrustumExample.x3d"]
+Shape76 = x3d.Shape()
+Appearance77 = x3d.Appearance()
+Material78 = x3d.Material()
+Material78.diffuseColor = [0.8,0.4,0]
 
-ProtoDeclare17.ProtoBody = ProtoBody27
+Appearance77.material = Material78
 
-Scene15.children.append(ProtoDeclare17)
-"""Example use is in separate scene"""
-Anchor77 = x3d.Anchor()
-Anchor77.description = "ViewFrustum Example"
-Anchor77.url = ["ViewFrustumExample.x3d"]
-Shape78 = x3d.Shape()
-Appearance79 = x3d.Appearance()
-Material80 = x3d.Material()
-Material80.diffuseColor = [0.8,0.4,0]
+Shape76.appearance = Appearance77
+Text79 = x3d.Text()
+Text79.string = ["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]
+FontStyle80 = x3d.FontStyle()
+FontStyle80.size = 0.8
+FontStyle80.justify = ["MIDDLE","MIDDLE"]
 
-Appearance79.material = Material80
+Text79.fontStyle = FontStyle80
 
-Shape78.appearance = Appearance79
-Text81 = x3d.Text()
-Text81.string = ["ViewFrustumPrototype.x3d","is a Prototype declaration file.","For an example scene using the prototype,","click this text and view","ViewFrustumExample.x3d"]
-FontStyle82 = x3d.FontStyle()
-FontStyle82.justify = ["MIDDLE","MIDDLE"]
-FontStyle82.size = 0.8
+Shape76.geometry = Text79
 
-Text81.fontStyle = FontStyle82
+Anchor75.children.append(Shape76)
 
-Shape78.geometry = Text81
+Scene13.children.append(Anchor75)
 
-Anchor77.children.append(Shape78)
-
-Scene15.children.append(Anchor77)
-
-X3D0.Scene = Scene15
+X3D0.Scene = Scene13
 f = open("../data/ViewFrustumPrototype.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

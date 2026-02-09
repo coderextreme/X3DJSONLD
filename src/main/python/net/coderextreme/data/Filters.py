@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Full"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -32,7 +32,7 @@ meta6.content = "28 October 2020"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "5 December 2021"
+meta7.content = "Mon, 09 Feb 2026 07:09:54 GMT"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -55,236 +55,210 @@ meta11.name = "identifier"
 meta11.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d"
 
 head1.children.append(meta11)
-meta12 = x3d.meta()
-meta12.name = "generator"
-meta12.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
-
-head1.children.append(meta12)
-meta13 = x3d.meta()
-meta13.name = "license"
-meta13.content = "../license.html"
-
-head1.children.append(meta13)
 
 X3D0.head = head1
-Scene14 = x3d.Scene()
-WorldInfo15 = x3d.WorldInfo()
-WorldInfo15.title = "Filters.x3d"
+Scene12 = x3d.Scene()
+WorldInfo13 = x3d.WorldInfo()
+WorldInfo13.title = "Filters.x3d"
 
-Scene14.children.append(WorldInfo15)
-NavigationInfo16 = x3d.NavigationInfo()
+Scene12.children.append(WorldInfo13)
+NavigationInfo14 = x3d.NavigationInfo()
 
-Scene14.children.append(NavigationInfo16)
-Background17 = x3d.Background()
-Background17.skyColor = [(0.2, 0.2, 0.2)]
+Scene12.children.append(NavigationInfo14)
+Background15 = x3d.Background()
+Background15.skyColor = [(0.2, 0.2, 0.2)]
 
-Scene14.children.append(Background17)
-Viewpoint18 = x3d.Viewpoint()
-Viewpoint18.description = "View entire audio model"
-Viewpoint18.orientation = [1,0,0,-0.5]
-Viewpoint18.position = [0,500,600]
-Viewpoint18.retainUserOffsets = True
+Scene12.children.append(Background15)
+Viewpoint16 = x3d.Viewpoint()
+Viewpoint16.description = "View entire audio model"
+Viewpoint16.position = [0,500,600]
+Viewpoint16.orientation = [1,0,0,-0.5]
+Viewpoint16.retainUserOffsets = True
 
-Scene14.children.append(Viewpoint18)
-Transform19 = x3d.Transform()
-Transform19.DEF = "TransformAudio1"
-Transform19.translation = [-200,50,0]
-Shape20 = x3d.Shape()
-Appearance21 = x3d.Appearance()
-Appearance21.DEF = "audio_emit"
-Material22 = x3d.Material()
-Material22.diffuseColor = [0.1,0.1,0.1]
-Material22.emissiveColor = [0.8,0.8,0.8]
-Material22.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(Viewpoint16)
+Transform17 = x3d.Transform(DEF="TransformAudio1")
+Transform17.translation = [-200,50,0]
+Shape18 = x3d.Shape()
+Appearance19 = x3d.Appearance(DEF="audio_emit")
+Material20 = x3d.Material()
+Material20.diffuseColor = [0.1,0.1,0.1]
+Material20.specularColor = [0.01,0.01,0.01]
+Material20.emissiveColor = [0.8,0.8,0.8]
 
-Appearance21.material = Material22
+Appearance19.material = Material20
 
-Shape20.appearance = Appearance21
-Sphere23 = x3d.Sphere()
-Sphere23.radius = 30
+Shape18.appearance = Appearance19
+Sphere21 = x3d.Sphere()
+Sphere21.radius = 30
 
-Shape20.geometry = Sphere23
+Shape18.geometry = Sphere21
 
-Transform19.children.append(Shape20)
+Transform17.children.append(Shape18)
 
-Scene14.children.append(Transform19)
-Transform24 = x3d.Transform()
-Transform24.DEF = "TransformAudio2"
-Transform24.translation = [0,50,0]
-Shape25 = x3d.Shape()
-Appearance26 = x3d.Appearance()
-Appearance26.DEF = "audio_emit2"
-Material27 = x3d.Material()
-Material27.diffuseColor = [0.1,0.1,0.1]
-Material27.emissiveColor = [0.8,0.8,0.8]
-Material27.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(Transform17)
+Transform22 = x3d.Transform(DEF="TransformAudio2")
+Transform22.translation = [0,50,0]
+Shape23 = x3d.Shape()
+Appearance24 = x3d.Appearance(DEF="audio_emit2")
+Material25 = x3d.Material()
+Material25.diffuseColor = [0.1,0.1,0.1]
+Material25.specularColor = [0.01,0.01,0.01]
+Material25.emissiveColor = [0.8,0.8,0.8]
 
-Appearance26.material = Material27
+Appearance24.material = Material25
 
-Shape25.appearance = Appearance26
-Sphere28 = x3d.Sphere()
-Sphere28.radius = 30
+Shape23.appearance = Appearance24
+Sphere26 = x3d.Sphere()
+Sphere26.radius = 30
 
-Shape25.geometry = Sphere28
+Shape23.geometry = Sphere26
 
-Transform24.children.append(Shape25)
+Transform22.children.append(Shape23)
 
-Scene14.children.append(Transform24)
-Transform29 = x3d.Transform()
-Transform29.DEF = "TransformAudio3"
-Transform29.translation = [200,50,0]
-Shape30 = x3d.Shape()
-Appearance31 = x3d.Appearance()
-Appearance31.DEF = "audio_emit3"
-Material32 = x3d.Material()
-Material32.diffuseColor = [0.1,0.1,0.1]
-Material32.emissiveColor = [0.8,0.8,0.8]
-Material32.specularColor = [0.01,0.01,0.01]
+Scene12.children.append(Transform22)
+Transform27 = x3d.Transform(DEF="TransformAudio3")
+Transform27.translation = [200,50,0]
+Shape28 = x3d.Shape()
+Appearance29 = x3d.Appearance(DEF="audio_emit3")
+Material30 = x3d.Material()
+Material30.diffuseColor = [0.1,0.1,0.1]
+Material30.specularColor = [0.01,0.01,0.01]
+Material30.emissiveColor = [0.8,0.8,0.8]
 
-Appearance31.material = Material32
+Appearance29.material = Material30
 
-Shape30.appearance = Appearance31
-Sphere33 = x3d.Sphere()
-Sphere33.radius = 30
+Shape28.appearance = Appearance29
+Sphere31 = x3d.Sphere()
+Sphere31.radius = 30
 
-Shape30.geometry = Sphere33
+Shape28.geometry = Sphere31
 
-Transform29.children.append(Shape30)
+Transform27.children.append(Shape28)
 
-Scene14.children.append(Transform29)
-Transform34 = x3d.Transform()
-Transform34.DEF = "AnimData"
-Transform34.translation = [0,50,0]
+Scene12.children.append(Transform27)
+Transform32 = x3d.Transform(DEF="AnimData")
+Transform32.translation = [0,50,0]
 
-Scene14.children.append(Transform34)
-Transform35 = x3d.Transform()
-Transform35.DEF = "AnimDataBoxH"
-Transform35.translation = [0,100,0]
+Scene12.children.append(Transform32)
+Transform33 = x3d.Transform(DEF="AnimDataBoxH")
+Transform33.translation = [0,100,0]
 
-Scene14.children.append(Transform35)
-Transform36 = x3d.Transform()
-Transform36.DEF = "AnimDataBoxM"
-Transform36.translation = [15,100,0]
+Scene12.children.append(Transform33)
+Transform34 = x3d.Transform(DEF="AnimDataBoxM")
+Transform34.translation = [15,100,0]
 
-Scene14.children.append(Transform36)
-Transform37 = x3d.Transform()
-Transform37.DEF = "AnimDataBoxL"
-Transform37.translation = [30,100,0]
+Scene12.children.append(Transform34)
+Transform35 = x3d.Transform(DEF="AnimDataBoxL")
+Transform35.translation = [30,100,0]
 
-Scene14.children.append(Transform37)
+Scene12.children.append(Transform35)
+Transform36 = x3d.Transform(DEF="AnimDataBoxMM")
+Transform36.translation = [-15,100,0]
+
+Scene12.children.append(Transform36)
+Transform37 = x3d.Transform(DEF="AnimDataBoxLM")
+Transform37.translation = [-30,100,0]
+
+Scene12.children.append(Transform37)
 Transform38 = x3d.Transform()
-Transform38.DEF = "AnimDataBoxMM"
-Transform38.translation = [-15,100,0]
+Shape39 = x3d.Shape()
+Appearance40 = x3d.Appearance(DEF="floor")
+Material41 = x3d.Material()
+Material41.diffuseColor = [0.1,0.1,0.1]
+Material41.specularColor = [0.5,0.6,0.7]
+Material41.shininess = 0.8
 
-Scene14.children.append(Transform38)
-Transform39 = x3d.Transform()
-Transform39.DEF = "AnimDataBoxLM"
-Transform39.translation = [-30,100,0]
+Appearance40.material = Material41
 
-Scene14.children.append(Transform39)
-Transform40 = x3d.Transform()
-Shape41 = x3d.Shape()
-Appearance42 = x3d.Appearance()
-Appearance42.DEF = "floor"
-Material43 = x3d.Material()
-Material43.diffuseColor = [0.1,0.1,0.1]
-Material43.shininess = 0.8
-Material43.specularColor = [0.5,0.6,0.7]
+Shape39.appearance = Appearance40
+Cylinder42 = x3d.Cylinder()
+Cylinder42.radius = 500
 
-Appearance42.material = Material43
+Shape39.geometry = Cylinder42
 
-Shape41.appearance = Appearance42
-Cylinder44 = x3d.Cylinder()
-Cylinder44.radius = 500
+Transform38.children.append(Shape39)
 
-Shape41.geometry = Cylinder44
+Scene12.children.append(Transform38)
+ListenerPointSource43 = x3d.ListenerPointSource()
+ListenerPointSource43.trackCurrentView = True
 
-Transform40.children.append(Shape41)
-
-Scene14.children.append(Transform40)
-ListenerPointSource45 = x3d.ListenerPointSource()
-ListenerPointSource45.trackCurrentView = True
-
-Scene14.children.append(ListenerPointSource45)
-StreamAudioDestination46 = x3d.StreamAudioDestination()
-DynamicsCompressor47 = x3d.DynamicsCompressor()
+Scene12.children.append(ListenerPointSource43)
+StreamAudioDestination44 = x3d.StreamAudioDestination()
+DynamicsCompressor45 = x3d.DynamicsCompressor()
+Gain46 = x3d.Gain()
+SpatialSound47 = x3d.SpatialSound(DEF="Audio1")
 Gain48 = x3d.Gain()
-SpatialSound49 = x3d.SpatialSound()
-SpatialSound49.DEF = "Audio1"
-Gain50 = x3d.Gain()
-Analyser51 = x3d.Analyser()
-BiquadFilter52 = x3d.BiquadFilter()
-BiquadFilter52.detune = 50
-BiquadFilter52.frequency = 600
-BiquadFilter52.qualityFactor = 30
-BiquadFilter52.type = "ALLPASS"
-AudioClip53 = x3d.AudioClip()
-AudioClip53.description = "Techno beat"
-AudioClip53.loop = True
-AudioClip53.url = ["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"]
+Analyser49 = x3d.Analyser()
+BiquadFilter50 = x3d.BiquadFilter()
+BiquadFilter50.detune = 50
+BiquadFilter50.type = "ALLPASS"
+BiquadFilter50.frequency = 600
+BiquadFilter50.qualityFactor = 30
+AudioClip51 = x3d.AudioClip()
+AudioClip51.description = "Techno beat"
+AudioClip51.url = ["sound/techno_beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"]
+AudioClip51.loop = True
 
-BiquadFilter52.children.append(AudioClip53)
+BiquadFilter50.children.append(AudioClip51)
 
-Analyser51.children.append(BiquadFilter52)
+Analyser49.children.append(BiquadFilter50)
 
-Gain50.children.append(Analyser51)
+Gain48.children.append(Analyser49)
 
-SpatialSound49.children.append(Gain50)
+SpatialSound47.children.append(Gain48)
 
-Gain48.children.append(SpatialSound49)
-SpatialSound54 = x3d.SpatialSound()
-SpatialSound54.DEF = "Audio2"
-Gain55 = x3d.Gain()
-Analyser56 = x3d.Analyser()
-BiquadFilter57 = x3d.BiquadFilter()
-BiquadFilter57.detune = 15
-BiquadFilter57.frequency = 600
-BiquadFilter57.qualityFactor = 15
-BiquadFilter57.type = "ALLPASS"
-AudioClip58 = x3d.AudioClip()
-AudioClip58.description = "Simple beat"
-AudioClip58.loop = True
-AudioClip58.url = ["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"]
+Gain46.children.append(SpatialSound47)
+SpatialSound52 = x3d.SpatialSound(DEF="Audio2")
+Gain53 = x3d.Gain()
+Analyser54 = x3d.Analyser()
+BiquadFilter55 = x3d.BiquadFilter()
+BiquadFilter55.detune = 15
+BiquadFilter55.type = "ALLPASS"
+BiquadFilter55.frequency = 600
+BiquadFilter55.qualityFactor = 15
+AudioClip56 = x3d.AudioClip()
+AudioClip56.description = "Simple beat"
+AudioClip56.url = ["sound/beat.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"]
+AudioClip56.loop = True
 
-BiquadFilter57.children.append(AudioClip58)
+BiquadFilter55.children.append(AudioClip56)
 
-Analyser56.children.append(BiquadFilter57)
+Analyser54.children.append(BiquadFilter55)
 
-Gain55.children.append(Analyser56)
+Gain53.children.append(Analyser54)
 
-SpatialSound54.children.append(Gain55)
+SpatialSound52.children.append(Gain53)
 
-Gain48.children.append(SpatialSound54)
-SpatialSound59 = x3d.SpatialSound()
-SpatialSound59.DEF = "Audio3"
-Gain60 = x3d.Gain()
-Analyser61 = x3d.Analyser()
-BiquadFilter62 = x3d.BiquadFilter()
-BiquadFilter62.frequency = 1000
-BiquadFilter62.qualityFactor = 0
-BiquadFilter62.type = "ALLPASS"
-AudioClip63 = x3d.AudioClip()
-AudioClip63.description = "Wobble loop"
-AudioClip63.loop = True
-AudioClip63.url = ["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"]
+Gain46.children.append(SpatialSound52)
+SpatialSound57 = x3d.SpatialSound(DEF="Audio3")
+Gain58 = x3d.Gain()
+Analyser59 = x3d.Analyser()
+BiquadFilter60 = x3d.BiquadFilter()
+BiquadFilter60.type = "ALLPASS"
+BiquadFilter60.frequency = 1000
+BiquadFilter60.qualityFactor = 0
+AudioClip61 = x3d.AudioClip()
+AudioClip61.description = "Wobble loop"
+AudioClip61.url = ["sound/wobble_loop.mp3","https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"]
+AudioClip61.loop = True
 
-BiquadFilter62.children.append(AudioClip63)
+BiquadFilter60.children.append(AudioClip61)
 
-Analyser61.children.append(BiquadFilter62)
+Analyser59.children.append(BiquadFilter60)
 
-Gain60.children.append(Analyser61)
+Gain58.children.append(Analyser59)
 
-SpatialSound59.children.append(Gain60)
+SpatialSound57.children.append(Gain58)
 
-Gain48.children.append(SpatialSound59)
+Gain46.children.append(SpatialSound57)
 
-DynamicsCompressor47.children.append(Gain48)
+DynamicsCompressor45.children.append(Gain46)
 
-StreamAudioDestination46.children.append(DynamicsCompressor47)
+StreamAudioDestination44.children.append(DynamicsCompressor45)
 
-Scene14.children.append(StreamAudioDestination46)
+Scene12.children.append(StreamAudioDestination44)
 
-X3D0.Scene = Scene14
+X3D0.Scene = Scene12
 f = open("../data/Filters.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -4,16 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
         "component":
         {
       {
@@ -36,18 +30,6 @@
         "component":
         {
       {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
         "@level":"4",
         "@name":"Shape"
       }
@@ -57,12 +39,6 @@
       {
         "@level":"3",
         "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
       }
     },
         "meta":
@@ -82,22 +58,15 @@
         "meta":
         {
       {
-        "@content":"manual",
+        "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy",
         "@name":"generator"
       }
     },
         "meta":
         {
       {
-        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers7.x3d",
-        "@name":"identifier"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"a flower",
-        "@name":"description"
+        "@content":"manual",
+        "@name":"generator"
       }
     },
     }    "Scene":
@@ -108,7 +77,13 @@
         "Background":
         {
       {
-        "@DEF":"background"
+        "@DEF":"background",
+        "@backUrl":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png"",
+        "@leftUrl":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png"",
+        "@rightUrl":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"",
+        "@topUrl":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
       }
     },
         "Viewpoint":
@@ -139,43 +114,50 @@
                         "ImageTexture":
                         {
       {
-        "@DEF":"backShader"
+        "@DEF":"backShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_back.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"bottomShader"
+        "@DEF":"bottomShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_bottom.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"frontShader"
+        "@DEF":"frontShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_front.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"leftShader"
+        "@DEF":"leftShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_left.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"rightShader"
+        "@DEF":"rightShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png""
       }
     },
                         "ImageTexture":
                         {
       {
-        "@DEF":"topShader"
+        "@DEF":"topShader",
+        "@url":""../resources/images/all_probes/beach_cross/beach_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png""
       }
     },
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x3dom"
+        "@DEF":"x3dom",
+        "@language":"GLSL"
       }
                         "field":
                         {
@@ -294,7 +276,8 @@
                     }                    "ComposedShader":
                     {
       {
-        "@DEF":"x_ite"
+        "@DEF":"x_ite",
+        "@language":"GLSL"
       }
                         "field":
                         {
@@ -323,8 +306,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"bias",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -332,8 +314,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"scale",
-        "@type":"SFFloat",
-        "@value":"0.5"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -341,8 +322,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"power",
-        "@type":"SFFloat",
-        "@value":"2"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -350,8 +330,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"a",
-        "@type":"SFFloat",
-        "@value":"10"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -359,8 +338,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"b",
-        "@type":"SFFloat",
-        "@value":"1"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -368,8 +346,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"c",
-        "@type":"SFFloat",
-        "@value":"20"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -377,8 +354,7 @@
       {
         "@accessType":"inputOnly",
         "@name":"d",
-        "@type":"SFFloat",
-        "@value":"20"
+        "@type":"SFFloat"
       }
     },
                         "field":
@@ -416,7 +392,39 @@
             }        }        "Script":
         {
       {
-        "@DEF":"UrlSelector"
+        "@DEF":"UrlSelector",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;        function set_fraction( f, tm ) {
+&quot;+
+&quot;            var side = Math.floor(f*frontUrls.length);
+&quot;+
+&quot;            if (side > frontUrls.length-1) {
+&quot;+
+&quot;                side = 0;
+&quot;+
+&quot;            }
+&quot;+
+&quot;            if (side != old) {
+&quot;+
+&quot;                    old = side;
+&quot;+
+&quot;                    front[0] = frontUrls[side];
+&quot;+
+&quot;                    back[0] = backUrls[side];
+&quot;+
+&quot;                    left[0] = leftUrls[side];
+&quot;+
+&quot;                    right[0] = rightUrls[side];
+&quot;+
+&quot;                    top[0] = topUrls[side];
+&quot;+
+&quot;                    bottom[0] = bottomUrls[side];
+&quot;+
+&quot;            }
+&quot;+
+&quot;        }"
       }
             "field":
             {
@@ -540,7 +548,85 @@
         }        "Script":
         {
       {
-        "@DEF":"Animate"
+        "@DEF":"Animate",
+        "@directOutput":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction() {
+&quot;+
+&quot;	var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;	switch (choice) {
+&quot;+
+&quot;	case 0:
+&quot;+
+&quot;		a = a + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 1:
+&quot;+
+&quot;		b = b + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 2:
+&quot;+
+&quot;		c = c + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 3:
+&quot;+
+&quot;		d = d + Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	tdelta = tdelta + 0.5;
+&quot;+
+&quot;	pdelta = pdelta + 0.5;
+&quot;+
+&quot;	if (a < 1) {
+&quot;+
+&quot;		a = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (b < 1) {
+&quot;+
+&quot;		b = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (c < 1) {
+&quot;+
+&quot;		c = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (c > 20) {
+&quot;+
+&quot;		c = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (d < 1) {
+&quot;+
+&quot;		d = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (d > 20) {
+&quot;+
+&quot;		d = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;}"
       }
             "field":
             {
@@ -605,7 +691,9 @@
         }        "TimeSensor":
         {
       {
-        "@DEF":"TourTime"
+        "@DEF":"TourTime",
+        "@cycleInterval":"5",
+        "@loop":"true"
       }
     },
         "ROUTE":
@@ -620,7 +708,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"a",
+        "@fromField":"a_changed",
         "@fromNode":"Animate",
         "@toField":"a",
         "@toNode":"x_ite"
@@ -629,7 +717,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"b",
+        "@fromField":"b_changed",
         "@fromNode":"Animate",
         "@toField":"b",
         "@toNode":"x_ite"
@@ -638,7 +726,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"c",
+        "@fromField":"c_changed",
         "@fromNode":"Animate",
         "@toField":"c",
         "@toNode":"x_ite"
@@ -647,7 +735,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"d",
+        "@fromField":"d_changed",
         "@fromNode":"Animate",
         "@toField":"d",
         "@toNode":"x_ite"
@@ -656,7 +744,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"pdelta",
+        "@fromField":"pdelta_changed",
         "@fromNode":"Animate",
         "@toField":"pdelta",
         "@toNode":"x_ite"
@@ -665,7 +753,7 @@
         "ROUTE":
         {
       {
-        "@fromField":"tdelta",
+        "@fromField":"tdelta_changed",
         "@fromNode":"Animate",
         "@toField":"tdelta",
         "@toNode":"x_ite"
@@ -674,54 +762,54 @@
         "ROUTE":
         {
       {
-        "@fromField":"a",
+        "@fromField":"a_changed",
         "@fromNode":"Animate",
-        "@toField":"a",
+        "@toField":"set_a",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"b",
+        "@fromField":"b_changed",
         "@fromNode":"Animate",
-        "@toField":"b",
+        "@toField":"set_b",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"c",
+        "@fromField":"c_changed",
         "@fromNode":"Animate",
-        "@toField":"c",
+        "@toField":"set_c",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"d",
+        "@fromField":"d_changed",
         "@fromNode":"Animate",
-        "@toField":"d",
+        "@toField":"set_d",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"pdelta",
+        "@fromField":"pdelta_changed",
         "@fromNode":"Animate",
-        "@toField":"pdelta",
+        "@toField":"set_pdelta",
         "@toNode":"x3dom"
       }
     },
         "ROUTE":
         {
       {
-        "@fromField":"tdelta",
+        "@fromField":"tdelta_changed",
         "@fromNode":"Animate",
-        "@toField":"tdelta",
+        "@toField":"set_tdelta",
         "@toNode":"x3dom"
       }
     },

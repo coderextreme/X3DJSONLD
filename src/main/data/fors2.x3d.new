@@ -1,28 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
-<meta name="creator" content="John W Carlson"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
-<meta name="modified" content="July 14 2025"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:11:19 GMT"></meta>
 <meta name="title" content="fors2.x3d"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/fors2.x3d"></meta>
-<meta name="description" content="beginnings of a force directed graph in 3D"></meta>
-<meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><ProtoDeclare name="node"><ProtoInterface><field name="position" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<Scene><ProtoDeclare name="node"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="position"></field>
 </ProtoInterface>
-<ProtoBody><Group><Transform DEF="transform"><IS><connect nodeField="translation" protoField="position"></connect>
-</IS>
-<Shape><!--comment before Sphere--><!--comment after Sphere--><!--comment after Appearance--><Sphere></Sphere>
-<Appearance containerField="appearance"><!--comment before Material--><!--comment after Material--><Material containerField="material" diffuseColor="1 0 0"></Material>
+<ProtoBody><Group><Transform DEF="transform"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
+<Sphere></Sphere>
 </Shape>
+<IS><connect nodeField="translation" protoField="position"></connect>
+</IS>
 </Transform>
 <PositionInterpolator DEF="NodePosition" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="MoveBall"><field name="translation" accessType="inputOutput" type="SFVec3f" value="50 50 0"></field>
-<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
-<field name="keyValue" accessType="outputOnly" type="MFVec3f"></field>
+<Script DEF="MoveBall"><field accessType="inputOutput" type="SFVec3f" name="translation" value="50 50 0"></field>
+<field accessType="inputOutput" type="SFVec3f" name="old"></field>
+<field accessType="inputOnly" type="SFTime" name="set_cycle"></field>
+<field accessType="outputOnly" type="MFVec3f" name="keyValue"></field>
 <![CDATA[ecmascript:
 			function set_cycle(value) {
 				old = translation;
@@ -30,26 +27,23 @@
 				keyValue = new MFVec3f(old, translation);
 			}]]></Script>
 <TimeSensor DEF="nodeClock" cycleInterval="3" loop="true"></TimeSensor>
+</Group>
 <ROUTE fromNode="nodeClock" fromField="cycleTime" toNode="MoveBall" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="nodeClock" fromField="fraction_changed" toNode="NodePosition" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="keyValue"></ROUTE>
+<ROUTE fromNode="MoveBall" fromField="keyValue" toNode="NodePosition" toField="set_keyValue"></ROUTE>
 <ROUTE fromNode="NodePosition" fromField="value_changed" toNode="transform" toField="set_translation"></ROUTE>
-</Group>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="cyl"><ProtoInterface><field name="positionA" accessType="inputOutput" type="SFVec3f"></field>
-<field name="positionB" accessType="inputOutput" type="SFVec3f"></field>
+<ProtoDeclare name="cyl"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="positionA"></field>
+<field accessType="inputOutput" type="SFVec3f" name="positionB"></field>
 </ProtoInterface>
-<ProtoBody><Group><Shape><Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
-<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<ProtoBody><Group><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
+<Extrusion DEF="extrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -50 0 0 0 0 0 50 0"></Extrusion>
 </Shape>
-<Script DEF="MoveCylinder"><field name="spine" accessType="inputOutput" type="MFVec3f" value="0 -50 0 0 0 0 0 50 0"></field>
-<field name="endA" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
-<field name="endB" accessType="inputOutput" type="SFVec3f" value="50 50 50"></field>
-<IS><connect nodeField="endA" protoField="positionA"></connect>
-<connect nodeField="endB" protoField="positionB"></connect>
-</IS>
+<Script DEF="MoveCylinder"><field accessType="inputOutput" type="MFVec3f" name="spine" value="0 -50 0 0 0 0 0 50 0"></field>
+<field accessType="inputOutput" type="SFVec3f" name="endA"></field>
+<field accessType="inputOutput" type="SFVec3f" name="endB"></field>
 <![CDATA[ecmascript:
 			function set_endA(value) {
 				spine = new MFVec3f(value, spine[1]);
@@ -57,18 +51,23 @@
 
 			function set_endB(value) {
 				spine = new MFVec3f(spine[0], value);
-			}]]></Script>
-<ROUTE fromNode="MoveCylinder" fromField="spine" toNode="extrusion" toField="set_spine"></ROUTE>
+			}]]><IS><connect nodeField="endA" protoField="positionA"></connect>
+<connect nodeField="endB" protoField="positionB"></connect>
+</IS>
+</Script>
 </Group>
+<ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="extrusion" toField="set_spine"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<Transform scale="0.1 0.1 0.1"><ProtoInstance name="node" DEF="nodeA"><fieldValue name="position" value="-50 -50 -50"></fieldValue>
+<Transform scale="0.1 0.1 0.1"><ProtoInstance DEF="nodeA" name="node"><fieldValue name="position" value="0 1.965 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="node" DEF="nodeB"><fieldValue name="position" value="50 50 50"></fieldValue>
+<ProtoInstance DEF="nodeB" name="node"><fieldValue name="position" value="0 1.965 0"></fieldValue>
 </ProtoInstance>
-<ProtoInstance name="cyl" DEF="linkA"></ProtoInstance>
+<ProtoInstance DEF="linkA" name="cyl"><fieldValue name="positionA" value="0 1.965 0"></fieldValue>
+<fieldValue name="positionB" value="0 1.965 0"></fieldValue>
+</ProtoInstance>
 </Transform>
-<ROUTE fromNode="nodeA" fromField="position" toNode="linkA" toField="positionA"></ROUTE>
-<ROUTE fromNode="nodeB" fromField="position" toNode="linkA" toField="positionB"></ROUTE>
+<ROUTE fromNode="nodeA" fromField="position_changed" toNode="linkA" toField="set_positionA"></ROUTE>
+<ROUTE fromNode="nodeB" fromField="position_changed" toNode="linkA" toField="set_positionB"></ROUTE>
 </Scene>
 </X3D>

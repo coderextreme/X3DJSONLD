@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="flower.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="flower.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
-<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"></meta>
-<meta name="description" content="a flower"></meta>
 </head>
 <Scene><NavigationInfo></NavigationInfo>
-<DirectionalLight direction="0 -0.8 -0.2" intensity="0.5"></DirectionalLight>
+<DirectionalLight intensity="0.5" direction="0 -0.8 -0.2"></DirectionalLight>
 <Background skyColor="1 1 1"></Background>
 <Viewpoint description="One mathematical orbital" position="0 0 50"></Viewpoint>
-<Transform translation="0 -1 1" rotation="0 1 0 3.1415926" scale="1.5 1.5 1.5"><Shape><Appearance containerField="appearance"><Material containerField="material" transparency="0.1" diffuseColor="0.9 0.3 0.3" specularColor="0.8 0.8 0.8" shininess="0.145"></Material>
+<Transform translation="0 -1 1" rotation="0 1 0 3.1415926" scale="1.5 1.5 1.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.9 0.3 0.3" specularColor="0.8 0.8 0.8" shininess="0.145" transparency="0.1"></Material>
 </Appearance>
-<IndexedFaceSet ccw="false" convex="false" coordIndex="0 1 2 -1" DEF="Orbit"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
+<IndexedFaceSet DEF="Orbit" ccw="false" convex="false" coordIndex="0 1 2 -1"><Coordinate DEF="OrbitCoordinates" point="0 0 1 0 1 0 1 0 0"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Script DEF="OrbitScript"><field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
-<field name="coordinates" accessType="outputOnly" type="MFVec3f"></field>
-<field name="coordIndexes" accessType="outputOnly" type="MFInt32"></field>
-<!--<field accessType="inputOutput" name="e" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="f" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="g" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="h" type="SFFloat" value="5"></field>--><!--<field accessType="inputOutput" name="t" type="SFFloat" value="0"></field>--><!--<field accessType="inputOutput" name="p" type="SFFloat" value="0"></field>--><!--<field accessType="inputOutput" name="resolution" type="SFInt32" value="150"></field>--><![CDATA[ecmascript:
+<Script DEF="OrbitScript"><field accessType="inputOnly" type="SFFloat" name="set_fraction"></field>
+<field accessType="outputOnly" type="MFVec3f" name="coordinates"></field>
+<field accessType="outputOnly" type="MFInt32" name="coordIndexes"></field>
+<![CDATA[ecmascript:
 
 var e = 5;
 var f = 5;
@@ -97,7 +96,7 @@ function set_fraction(fraction, eventTime) {
 }]]></Script>
 <TimeSensor DEF="Clock" cycleInterval="16" loop="true"></TimeSensor>
 <ROUTE fromNode="OrbitScript" fromField="coordIndexes" toNode="Orbit" toField="set_coordIndex"></ROUTE>
-<ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="point"></ROUTE>
+<ROUTE fromNode="OrbitScript" fromField="coordinates" toNode="OrbitCoordinates" toField="set_point"></ROUTE>
 <ROUTE fromNode="Clock" fromField="fraction_changed" toNode="OrbitScript" toField="set_fraction"></ROUTE>
 </Scene>
 </X3D>

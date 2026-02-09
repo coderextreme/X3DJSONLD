@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -17,88 +17,78 @@ meta3.content = "John Carlson"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "generator"
-meta4.content = "manual"
+meta4.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.name = "identifier"
-meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d"
+meta5.name = "generator"
+meta5.content = "manual"
 
 head1.children.append(meta5)
-meta6 = x3d.meta()
-meta6.name = "description"
-meta6.content = "a flower"
-
-head1.children.append(meta6)
 
 X3D0.head = head1
-Scene7 = x3d.Scene()
-NavigationInfo8 = x3d.NavigationInfo()
+Scene6 = x3d.Scene()
+NavigationInfo7 = x3d.NavigationInfo()
 
-Scene7.children.append(NavigationInfo8)
-DirectionalLight9 = x3d.DirectionalLight()
-DirectionalLight9.direction = [0,-0.8,-0.2]
-DirectionalLight9.intensity = 0.5
+Scene6.children.append(NavigationInfo7)
+DirectionalLight8 = x3d.DirectionalLight()
+DirectionalLight8.intensity = 0.5
+DirectionalLight8.direction = [0,-0.8,-0.2]
 
-Scene7.children.append(DirectionalLight9)
-Background10 = x3d.Background()
-Background10.skyColor = [(1, 1, 1)]
+Scene6.children.append(DirectionalLight8)
+Background9 = x3d.Background()
+Background9.skyColor = [(1, 1, 1)]
 
-Scene7.children.append(Background10)
-Viewpoint11 = x3d.Viewpoint()
-Viewpoint11.description = "One mathematical orbital"
-Viewpoint11.position = [0,0,50]
+Scene6.children.append(Background9)
+Viewpoint10 = x3d.Viewpoint()
+Viewpoint10.description = "One mathematical orbital"
+Viewpoint10.position = [0,0,50]
 
-Scene7.children.append(Viewpoint11)
-Transform12 = x3d.Transform()
-Transform12.DEF = "OrbitTransform"
-Transform12.translation = [8,0,0]
-Shape13 = x3d.Shape()
-Appearance14 = x3d.Appearance()
-Material15 = x3d.Material()
-Material15.diffuseColor = [0,0.5,1]
-Material15.specularColor = [0,0.5,1]
+Scene6.children.append(Viewpoint10)
+Transform11 = x3d.Transform(DEF="OrbitTransform")
+Transform11.translation = [8,0,0]
+Shape12 = x3d.Shape()
+Appearance13 = x3d.Appearance()
+Material14 = x3d.Material()
+Material14.diffuseColor = [0,0.5,1]
+Material14.specularColor = [0,0.5,1]
 
-Appearance14.material = Material15
+Appearance13.material = Material14
 
-Shape13.appearance = Appearance14
-IndexedFaceSet16 = x3d.IndexedFaceSet()
-IndexedFaceSet16.convex = False
-IndexedFaceSet16.DEF = "Orbit"
-Coordinate17 = x3d.Coordinate()
-Coordinate17.DEF = "OrbitCoordinates"
+Shape12.appearance = Appearance13
+IndexedFaceSet15 = x3d.IndexedFaceSet(DEF="Orbit")
+IndexedFaceSet15.convex = False
+Coordinate16 = x3d.Coordinate(DEF="OrbitCoordinates")
 
-IndexedFaceSet16.coord = Coordinate17
+IndexedFaceSet15.coord = Coordinate16
 
-Shape13.geometry = IndexedFaceSet16
+Shape12.geometry = IndexedFaceSet15
 
-Transform12.children.append(Shape13)
+Transform11.children.append(Shape12)
 
-Scene7.children.append(Transform12)
-Script18 = x3d.Script()
-Script18.DEF = "OrbitScript"
+Scene6.children.append(Transform11)
+Script17 = x3d.Script(DEF="OrbitScript")
+field18 = x3d.field()
+field18.accessType = "inputOnly"
+field18.type = "SFFloat"
+field18.name = "set_fraction"
+
+Script17.field.append(field18)
 field19 = x3d.field()
-field19.name = "set_fraction"
-field19.accessType = "inputOnly"
-field19.type = "SFFloat"
+field19.accessType = "outputOnly"
+field19.type = "MFVec3f"
+field19.name = "coordinates"
 
-Script18.field.append(field19)
+Script17.field.append(field19)
 field20 = x3d.field()
-field20.name = "coordinates"
 field20.accessType = "outputOnly"
-field20.type = "MFVec3f"
+field20.type = "MFInt32"
+field20.name = "coordIndexes"
 
-Script18.field.append(field20)
-field21 = x3d.field()
-field21.name = "coordIndexes"
-field21.accessType = "outputOnly"
-field21.type = "MFInt32"
+Script17.field.append(field20)
 
-Script18.field.append(field21)
-"""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"""
-
-Script18.sourceCode = '''ecmascript:\n"+
-"\n"+
+Script17.sourceCode = '''ecmascript:\n"+
+"    \n"+
 "var e = 5;\n"+
 "var f = 5;\n"+
 "var g = 5;\n"+
@@ -174,36 +164,35 @@ Script18.sourceCode = '''ecmascript:\n"+
 "	generateCoordinates(resolution);\n"+
 "}'''
 
-Scene7.children.append(Script18)
-TimeSensor22 = x3d.TimeSensor()
-TimeSensor22.DEF = "Clock"
-TimeSensor22.cycleInterval = 16
-TimeSensor22.loop = True
+Scene6.children.append(Script17)
+TimeSensor21 = x3d.TimeSensor(DEF="Clock")
+TimeSensor21.cycleInterval = 16
+TimeSensor21.loop = True
 
-Scene7.children.append(TimeSensor22)
+Scene6.children.append(TimeSensor21)
+ROUTE22 = x3d.ROUTE()
+ROUTE22.fromNode = "OrbitScript"
+ROUTE22.fromField = "coordIndexes"
+ROUTE22.toNode = "Orbit"
+ROUTE22.toField = "set_coordIndex"
+
+Scene6.children.append(ROUTE22)
 ROUTE23 = x3d.ROUTE()
 ROUTE23.fromNode = "OrbitScript"
-ROUTE23.fromField = "coordIndexes"
-ROUTE23.toNode = "Orbit"
-ROUTE23.toField = "set_coordIndex"
+ROUTE23.fromField = "coordinates"
+ROUTE23.toNode = "OrbitCoordinates"
+ROUTE23.toField = "set_point"
 
-Scene7.children.append(ROUTE23)
+Scene6.children.append(ROUTE23)
 ROUTE24 = x3d.ROUTE()
-ROUTE24.fromNode = "OrbitScript"
-ROUTE24.fromField = "coordinates"
-ROUTE24.toNode = "OrbitCoordinates"
-ROUTE24.toField = "point"
+ROUTE24.fromNode = "Clock"
+ROUTE24.fromField = "fraction_changed"
+ROUTE24.toNode = "OrbitScript"
+ROUTE24.toField = "set_fraction"
 
-Scene7.children.append(ROUTE24)
-ROUTE25 = x3d.ROUTE()
-ROUTE25.fromNode = "Clock"
-ROUTE25.fromField = "fraction_changed"
-ROUTE25.toNode = "OrbitScript"
-ROUTE25.toField = "set_fraction"
+Scene6.children.append(ROUTE24)
 
-Scene7.children.append(ROUTE25)
-
-X3D0.Scene = Scene7
+X3D0.Scene = Scene6
 f = open("../data/flower3.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

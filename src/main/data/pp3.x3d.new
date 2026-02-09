@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="pp3.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="pp3.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="translator" content="John Carlson"></meta>
 <meta name="created" content="5 May 2015"></meta>
-<meta name="modified" content="23 Dec 2022"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:12:59 GMT"></meta>
 <meta name="description" content="A process pipeline between three spheres (try typing on spheres and blue"></meta>
-<meta name="identifier" content="https://coderextreme.net/x3d/pp3.x3d"></meta>
-<meta name="generator" content="manual"></meta>
 </head>
-<Scene><ProtoDeclare name="Process"><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<Scene><ProtoDeclare name="Process"><ProtoInterface></ProtoInterface>
+<ProtoBody><Group><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -2 0 0 -1.5 0 0"></Extrusion>
 </Shape>
-<!--<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'></Text> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"></StringSensor> <TouchSensor DEF="LeftTouch" enabled="true"></TouchSensor>--></Transform>
-<!--right--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
+</Transform>
+<Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2 0 0 2.5 0 0"></Extrusion>
 </Shape>
@@ -24,9 +23,9 @@
 </Shape>
 </Transform>
 <StringSensor DEF="RightSensor" enabled="false"></StringSensor>
-<TouchSensor description="touch to activate" DEF="RightTouch"></TouchSensor>
+<TouchSensor DEF="RightTouch" description="touch to activate"></TouchSensor>
 </Transform>
-<!--up--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
+<Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 1.5 0 0 2 0 0 2.5 0"></Extrusion>
 </Shape>
@@ -36,28 +35,28 @@
 </Shape>
 </Transform>
 <StringSensor DEF="UpSensor" enabled="false"></StringSensor>
-<TouchSensor description="touch to activate" DEF="UpTouch"></TouchSensor>
+<TouchSensor DEF="UpTouch" description="touch to activate"></TouchSensor>
 </Transform>
-<!--down--><Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
+<Transform scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0" transparency="0.5"></Material>
 </Appearance>
 <Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="0 -2.5 0 0 -2 0 0 -1.5 0"></Extrusion>
 </Shape>
-<!--<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'></Text> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"></StringSensor> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"></TouchSensor>--></Transform>
-<!--center--><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0.7"></Material>
+</Transform>
+<Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0.7"></Material>
 </Appearance>
 <Sphere></Sphere>
 </Shape>
-<Transform scale="0.5 0.5 0.5" translation="-0.5 0 1"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
+<Transform translation="-0.5 0 1" scale="0.5 0.5 0.5"><Shape><Appearance containerField="appearance"><Material containerField="material" USE="MaterialLightBlue"></Material>
 </Appearance>
 <Text DEF="CenterString"></Text>
 </Shape>
 </Transform>
 <StringSensor DEF="CenterSensor" enabled="false"></StringSensor>
-<TouchSensor description="touch to activate" DEF="CenterTouch"></TouchSensor>
+<TouchSensor DEF="CenterTouch" description="touch to activate"></TouchSensor>
 </Transform>
 </Group>
-<Script DEF="RightSingleToMultiString"><field name="set_rightstring" accessType="inputOnly" type="SFString"></field>
-<field name="rightlines" accessType="outputOnly" type="MFString"></field>
+<Script DEF="RightSingleToMultiString"><field accessType="inputOnly" type="SFString" name="set_rightstring"></field>
+<field accessType="outputOnly" type="MFString" name="rightlines"></field>
 <![CDATA[ecmascript:
 
 function initialize() {
@@ -67,8 +66,8 @@ function initialize() {
 function set_rightstring(rightstr) {
 	rightlines = new MFString(rightstr);
 }]]></Script>
-<Script DEF="UpSingleToMultiString"><field name="set_upstring" accessType="inputOnly" type="SFString"></field>
-<field name="uplines" accessType="outputOnly" type="MFString"></field>
+<Script DEF="UpSingleToMultiString"><field accessType="inputOnly" type="SFString" name="set_upstring"></field>
+<field accessType="outputOnly" type="MFString" name="uplines"></field>
 <![CDATA[ecmascript:
 
 function initialize() {
@@ -78,8 +77,8 @@ function initialize() {
 function set_upstring(upstr) {
 	uplines = new MFString(upstr);
 }]]></Script>
-<Script DEF="CenterSingleToMultiString"><field name="set_centerstring" accessType="inputOnly" type="SFString"></field>
-<field name="centerlines" accessType="outputOnly" type="MFString"></field>
+<Script DEF="CenterSingleToMultiString"><field accessType="inputOnly" type="SFString" name="set_centerstring"></field>
+<field accessType="outputOnly" type="MFString" name="centerlines"></field>
 <![CDATA[ecmascript:
 
 function initialize() {
@@ -89,19 +88,19 @@ function initialize() {
 function set_centerstring(centerstr) {
 	centerlines = new MFString(centerstr);
 }]]></Script>
-<ROUTE fromField="enteredText" fromNode="CenterSensor" toField="set_centerstring" toNode="CenterSingleToMultiString"></ROUTE>
-<ROUTE fromField="centerlines" fromNode="CenterSingleToMultiString" toField="set_string" toNode="CenterString"></ROUTE>
-<ROUTE fromField="isOver" fromNode="CenterTouch" toField="set_enabled" toNode="CenterSensor"></ROUTE>
-<ROUTE fromField="enteredText" fromNode="RightSensor" toField="set_rightstring" toNode="RightSingleToMultiString"></ROUTE>
-<ROUTE fromField="rightlines" fromNode="RightSingleToMultiString" toField="set_string" toNode="RightString"></ROUTE>
-<ROUTE fromField="isOver" fromNode="RightTouch" toField="set_enabled" toNode="RightSensor"></ROUTE>
-<ROUTE fromField="enteredText" fromNode="UpSensor" toField="set_upstring" toNode="UpSingleToMultiString"></ROUTE>
-<ROUTE fromField="uplines" fromNode="UpSingleToMultiString" toField="set_string" toNode="UpString"></ROUTE>
-<ROUTE fromField="isOver" fromNode="UpTouch" toField="set_enabled" toNode="UpSensor"></ROUTE>
+<ROUTE fromNode="CenterSensor" fromField="enteredText" toNode="CenterSingleToMultiString" toField="set_centerstring"></ROUTE>
+<ROUTE fromNode="CenterSingleToMultiString" fromField="centerlines" toNode="CenterString" toField="set_string"></ROUTE>
+<ROUTE fromNode="CenterTouch" fromField="isOver" toNode="CenterSensor" toField="set_enabled"></ROUTE>
+<ROUTE fromNode="RightSensor" fromField="enteredText" toNode="RightSingleToMultiString" toField="set_rightstring"></ROUTE>
+<ROUTE fromNode="RightSingleToMultiString" fromField="rightlines" toNode="RightString" toField="set_string"></ROUTE>
+<ROUTE fromNode="RightTouch" fromField="isOver" toNode="RightSensor" toField="set_enabled"></ROUTE>
+<ROUTE fromNode="UpSensor" fromField="enteredText" toNode="UpSingleToMultiString" toField="set_upstring"></ROUTE>
+<ROUTE fromNode="UpSingleToMultiString" fromField="uplines" toNode="UpString" toField="set_string"></ROUTE>
+<ROUTE fromNode="UpTouch" fromField="isOver" toNode="UpSensor" toField="set_enabled"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
 <NavigationInfo></NavigationInfo>
-<Viewpoint description="Process pipes" orientation="1 0 0 -0.4" position="0 5 12"></Viewpoint>
+<Viewpoint description="Process pipes" position="0 5 12" orientation="1 0 0 -0.4"></Viewpoint>
 <Transform translation="0 -2.5 0"><ProtoInstance name="Process"></ProtoInstance>
 </Transform>
 <Transform><ProtoInstance name="Process"></ProtoInstance>

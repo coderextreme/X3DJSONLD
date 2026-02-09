@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="qq3.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="qq3.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="translator" content="John Carlson"></meta>
 <meta name="created" content="11 Jan 2015"></meta>
-<meta name="modified" content="05 May 2017"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 07:12:59 GMT"></meta>
 <meta name="description" content="12 extrusions"></meta>
-<meta name="identifier" content="https://coderextreme.net/x3d/qq3.x3d"></meta>
-<meta name="generator" content="manual"></meta>
 </head>
-<Scene><ProtoDeclare name="Process"><ProtoBody><Group><!--left--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0"></Material>
+<Scene><ProtoDeclare name="Process"><ProtoInterface></ProtoInterface>
+<ProtoBody><Group><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeLeftDown"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 1 0"></Material>
 </Appearance>
-<Extrusion spine="-2.5 0 0 -2 0 0 -1.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-2.5 0 0 -2 0 0 -1.5 0 0"></Extrusion>
 </Shape>
 </Transform>
-<!--right--><Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1"></Material>
+<Transform scale="0.5 0.5 0.5"><Shape DEF="ShapeUpRight"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0.7 1"></Material>
 </Appearance>
-<Extrusion spine="1.5 0 0 2 0 0 2.5 0 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Extrusion creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="1.5 0 0 2 0 0 2.5 0 0"></Extrusion>
 </Shape>
 </Transform>
-<!--up--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
+<Transform scale="0.5 0.5 0.5"><Shape USE="ShapeUpRight"></Shape>
 </Transform>
-<!--down--><Transform scale="0.5 0.5 0.5"><Shape USE="ShapeLeftDown"></Shape>
+<Transform scale="0.5 0.5 0.5"><Shape USE="ShapeLeftDown"></Shape>
 </Transform>
 </Group>
 </ProtoBody>
 </ProtoDeclare>
-<Viewpoint description="Process pipes" orientation="1 0 0 -0.4" position="0 5 12"></Viewpoint>
+<Viewpoint description="Process pipes" position="0 5 12" orientation="1 0 0 -0.4"></Viewpoint>
 <Transform translation="0 -2.5 0"><ProtoInstance name="Process"></ProtoInstance>
 </Transform>
 <Transform><ProtoInstance name="Process"></ProtoInstance>

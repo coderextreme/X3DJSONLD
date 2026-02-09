@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Full"
-X3D0.version = "4.0"
+X3D0.version = "4.1"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "comment"
@@ -22,116 +22,90 @@ meta4.content = "Holger Seelig"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "Titania V3.0.4, https://titania.create3000.de"
+meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.name = "identifier"
-meta6.content = "file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"
+meta6.name = "generator"
+meta6.content = "Titania V3.0.4, https://titania.create3000.de"
 
 head1.children.append(meta6)
-meta7 = x3d.meta()
-meta7.name = "modified"
-meta7.content = "Tue, 25 Jul 2017 09:42:17 GMT"
-
-head1.children.append(meta7)
-meta8 = x3d.meta()
-meta8.name = "title"
-meta8.content = "Connectors"
-
-head1.children.append(meta8)
 
 X3D0.head = head1
-Scene9 = x3d.Scene()
-ProtoDeclare10 = x3d.ProtoDeclare()
-ProtoDeclare10.name = "RoundedRectangle2D"
-ProtoInterface11 = x3d.ProtoInterface()
+Scene7 = x3d.Scene()
+ProtoDeclare8 = x3d.ProtoDeclare()
+ProtoDeclare8.name = "RoundedRectangle2D"
+ProtoInterface9 = x3d.ProtoInterface()
+field10 = x3d.field()
+field10.accessType = "initializeOnly"
+field10.type = "SFFloat"
+field10.name = "cornerRadius"
+field10.value = 1
+
+ProtoInterface9.field.append(field10)
+field11 = x3d.field()
+field11.accessType = "initializeOnly"
+field11.type = "SFVec2f"
+field11.name = "size"
+field11.value = [2,2]
+
+ProtoInterface9.field.append(field11)
 field12 = x3d.field()
-field12.name = "cornerRadius"
 field12.accessType = "initializeOnly"
-field12.type = "SFFloat"
-field12.value = 1
+field12.type = "SFBool"
+field12.name = "solid"
+field12.value = True
 
-ProtoInterface11.field.append(field12)
-field13 = x3d.field()
-field13.name = "size"
-field13.accessType = "initializeOnly"
-field13.type = "SFVec2f"
-field13.value = [2,2]
+ProtoInterface9.field.append(field12)
 
-ProtoInterface11.field.append(field13)
-field14 = x3d.field()
-field14.name = "solid"
-field14.accessType = "initializeOnly"
-field14.type = "SFBool"
-field14.value = True
+ProtoDeclare8.ProtoInterface = ProtoInterface9
+ProtoBody13 = x3d.ProtoBody()
+IndexedFaceSet14 = x3d.IndexedFaceSet(DEF="Geometry")
+Coordinate15 = x3d.Coordinate()
 
-ProtoInterface11.field.append(field14)
+IndexedFaceSet14.coord = Coordinate15
+IS16 = x3d.IS()
+connect17 = x3d.connect()
+connect17.nodeField = "solid"
+connect17.protoField = "solid"
 
-ProtoDeclare10.ProtoInterface = ProtoInterface11
-ProtoBody15 = x3d.ProtoBody()
-IndexedFaceSet16 = x3d.IndexedFaceSet()
-IndexedFaceSet16.DEF = "Geometry"
-IS17 = x3d.IS()
-connect18 = x3d.connect()
-connect18.nodeField = "solid"
-connect18.protoField = "solid"
+IS16.connect.append(connect17)
 
-IS17.connect.append(connect18)
+IndexedFaceSet14.IS = IS16
 
-IndexedFaceSet16.IS = IS17
-Coordinate19 = x3d.Coordinate()
+ProtoBody13.children.append(IndexedFaceSet14)
+Script18 = x3d.Script(DEF="RoundedRectangle2D")
+Script18.directOutput = True
+field19 = x3d.field()
+field19.accessType = "initializeOnly"
+field19.type = "SFFloat"
+field19.name = "cornerDimension"
+field19.value = 10
 
-IndexedFaceSet16.coord = Coordinate19
+Script18.field.append(field19)
+field20 = x3d.field()
+field20.accessType = "initializeOnly"
+field20.type = "SFFloat"
+field20.name = "cornerRadius"
 
-ProtoBody15.children.append(IndexedFaceSet16)
-Script20 = x3d.Script()
-Script20.DEF = "RoundedRectangle2D"
-Script20.directOutput = True
+Script18.field.append(field20)
 field21 = x3d.field()
-field21.name = "cornerDimension"
 field21.accessType = "initializeOnly"
-field21.type = "SFFloat"
-field21.value = 10
+field21.type = "SFVec2f"
+field21.name = "size"
 
-Script20.field.append(field21)
+Script18.field.append(field21)
 field22 = x3d.field()
-field22.name = "cornerRadius"
 field22.accessType = "initializeOnly"
-field22.type = "SFFloat"
+field22.type = "SFNode"
+field22.name = "geometry"
+IndexedFaceSet23 = x3d.IndexedFaceSet(USE="Geometry")
 
-Script20.field.append(field22)
-field23 = x3d.field()
-field23.name = "size"
-field23.accessType = "initializeOnly"
-field23.type = "SFVec2f"
+field22.children.append(IndexedFaceSet23)
 
-Script20.field.append(field23)
-field24 = x3d.field()
-field24.name = "geometry"
-field24.accessType = "initializeOnly"
-field24.type = "SFNode"
-IndexedFaceSet25 = x3d.IndexedFaceSet()
-IndexedFaceSet25.USE = "Geometry"
+Script18.field.append(field22)
 
-field24.children.append(IndexedFaceSet25)
-
-Script20.field.append(field24)
-IS26 = x3d.IS()
-connect27 = x3d.connect()
-connect27.nodeField = "cornerRadius"
-connect27.protoField = "cornerRadius"
-
-IS26.connect.append(connect27)
-connect28 = x3d.connect()
-connect28.nodeField = "size"
-connect28.protoField = "size"
-
-IS26.connect.append(connect28)
-
-Script20.IS = IS26
-
-Script20.sourceCode = '''ecmascript:\n"+
+Script18.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -175,406 +149,393 @@ Script20.sourceCode = '''ecmascript:\n"+
 "\n"+
 "	geometry .coord .point = points;\n"+
 "}'''
+IS24 = x3d.IS()
+connect25 = x3d.connect()
+connect25.nodeField = "cornerRadius"
+connect25.protoField = "cornerRadius"
 
-ProtoBody15.children.append(Script20)
+IS24.connect.append(connect25)
+connect26 = x3d.connect()
+connect26.nodeField = "size"
+connect26.protoField = "size"
 
-ProtoDeclare10.ProtoBody = ProtoBody15
+IS24.connect.append(connect26)
 
-Scene9.children.append(ProtoDeclare10)
-ProtoDeclare29 = x3d.ProtoDeclare()
-ProtoDeclare29.name = "Widget"
-ProtoInterface30 = x3d.ProtoInterface()
+Script18.IS = IS24
+
+ProtoBody13.children.append(Script18)
+
+ProtoDeclare8.ProtoBody = ProtoBody13
+
+Scene7.children.append(ProtoDeclare8)
+ProtoDeclare27 = x3d.ProtoDeclare()
+ProtoDeclare27.name = "Widget"
+ProtoInterface28 = x3d.ProtoInterface()
+field29 = x3d.field()
+field29.accessType = "inputOutput"
+field29.type = "SFColor"
+field29.name = "fillColor"
+field29.value = [0.1,0.1,0.1]
+
+ProtoInterface28.field.append(field29)
+field30 = x3d.field()
+field30.accessType = "inputOutput"
+field30.type = "SFColor"
+field30.name = "lineColor"
+field30.value = [0.4,0.4,0.4]
+
+ProtoInterface28.field.append(field30)
 field31 = x3d.field()
-field31.name = "fillColor"
 field31.accessType = "inputOutput"
-field31.type = "SFColor"
-field31.value = [0.1,0.1,0.1]
+field31.type = "SFFloat"
+field31.name = "linewidthScaleFactor"
+field31.value = 1
 
-ProtoInterface30.field.append(field31)
+ProtoInterface28.field.append(field31)
 field32 = x3d.field()
-field32.name = "lineColor"
 field32.accessType = "inputOutput"
-field32.type = "SFColor"
-field32.value = [0.4,0.4,0.4]
+field32.type = "SFNode"
+field32.name = "geometry"
 
-ProtoInterface30.field.append(field32)
-field33 = x3d.field()
-field33.name = "linewidthScaleFactor"
-field33.accessType = "inputOutput"
-field33.type = "SFFloat"
-field33.value = 1
+ProtoInterface28.field.append(field32)
 
-ProtoInterface30.field.append(field33)
-field34 = x3d.field()
-field34.name = "geometry"
-field34.accessType = "inputOutput"
-field34.type = "SFNode"
-
-ProtoInterface30.field.append(field34)
-
-ProtoDeclare29.ProtoInterface = ProtoInterface30
-ProtoBody35 = x3d.ProtoBody()
-Transform36 = x3d.Transform()
-Transform36.DEF = "Shape"
-Shape37 = x3d.Shape()
+ProtoDeclare27.ProtoInterface = ProtoInterface28
+ProtoBody33 = x3d.ProtoBody()
+Transform34 = x3d.Transform(DEF="Shape")
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance()
+Material37 = x3d.Material()
 IS38 = x3d.IS()
 connect39 = x3d.connect()
-connect39.nodeField = "geometry"
-connect39.protoField = "geometry"
+connect39.nodeField = "diffuseColor"
+connect39.protoField = "fillColor"
 
 IS38.connect.append(connect39)
 
-Shape37.IS = IS38
-Appearance40 = x3d.Appearance()
-Material41 = x3d.Material()
-IS42 = x3d.IS()
-connect43 = x3d.connect()
-connect43.nodeField = "diffuseColor"
-connect43.protoField = "fillColor"
+Material37.IS = IS38
 
-IS42.connect.append(connect43)
+Appearance36.material = Material37
 
-Material41.IS = IS42
+Shape35.appearance = Appearance36
+IS40 = x3d.IS()
+connect41 = x3d.connect()
+connect41.nodeField = "geometry"
+connect41.protoField = "geometry"
 
-Appearance40.material = Material41
+IS40.connect.append(connect41)
 
-Shape37.appearance = Appearance40
+Shape35.IS = IS40
 
-Transform36.children.append(Shape37)
-Shape44 = x3d.Shape()
+Transform34.children.append(Shape35)
+Shape42 = x3d.Shape()
+Appearance43 = x3d.Appearance()
+LineProperties44 = x3d.LineProperties()
 IS45 = x3d.IS()
 connect46 = x3d.connect()
-connect46.nodeField = "geometry"
-connect46.protoField = "geometry"
+connect46.nodeField = "linewidthScaleFactor"
+connect46.protoField = "linewidthScaleFactor"
 
 IS45.connect.append(connect46)
 
-Shape44.IS = IS45
-Appearance47 = x3d.Appearance()
-FillProperties48 = x3d.FillProperties()
-FillProperties48.filled = False
-FillProperties48.hatched = False
+LineProperties44.IS = IS45
 
-Appearance47.fillProperties = FillProperties48
-LineProperties49 = x3d.LineProperties()
-IS50 = x3d.IS()
-connect51 = x3d.connect()
-connect51.nodeField = "linewidthScaleFactor"
-connect51.protoField = "linewidthScaleFactor"
+Appearance43.lineProperties = LineProperties44
+FillProperties47 = x3d.FillProperties()
+FillProperties47.filled = False
+FillProperties47.hatched = False
 
-IS50.connect.append(connect51)
+Appearance43.fillProperties = FillProperties47
+Material48 = x3d.Material()
+Material48.diffuseColor = [0,0,0]
+IS49 = x3d.IS()
+connect50 = x3d.connect()
+connect50.nodeField = "emissiveColor"
+connect50.protoField = "lineColor"
 
-LineProperties49.IS = IS50
+IS49.connect.append(connect50)
 
-Appearance47.lineProperties = LineProperties49
-Material52 = x3d.Material()
-Material52.diffuseColor = [0,0,0]
-IS53 = x3d.IS()
-connect54 = x3d.connect()
-connect54.nodeField = "emissiveColor"
-connect54.protoField = "lineColor"
+Material48.IS = IS49
 
-IS53.connect.append(connect54)
+Appearance43.material = Material48
 
-Material52.IS = IS53
+Shape42.appearance = Appearance43
+IS51 = x3d.IS()
+connect52 = x3d.connect()
+connect52.nodeField = "geometry"
+connect52.protoField = "geometry"
 
-Appearance47.material = Material52
+IS51.connect.append(connect52)
 
-Shape44.appearance = Appearance47
+Shape42.IS = IS51
 
-Transform36.children.append(Shape44)
+Transform34.children.append(Shape42)
 
-ProtoBody35.children.append(Transform36)
+ProtoBody33.children.append(Transform34)
 
-ProtoDeclare29.ProtoBody = ProtoBody35
+ProtoDeclare27.ProtoBody = ProtoBody33
 
-Scene9.children.append(ProtoDeclare29)
-ProtoDeclare55 = x3d.ProtoDeclare()
-ProtoDeclare55.name = "Node"
-ProtoInterface56 = x3d.ProtoInterface()
-field57 = x3d.field()
-field57.name = "translation"
-field57.accessType = "inputOutput"
-field57.type = "SFVec3f"
+Scene7.children.append(ProtoDeclare27)
+ProtoDeclare53 = x3d.ProtoDeclare()
+ProtoDeclare53.name = "Node"
+ProtoInterface54 = x3d.ProtoInterface()
+field55 = x3d.field()
+field55.accessType = "inputOutput"
+field55.type = "SFVec3f"
+field55.name = "translation"
 
-ProtoInterface56.field.append(field57)
+ProtoInterface54.field.append(field55)
 
-ProtoDeclare55.ProtoInterface = ProtoInterface56
-ProtoBody58 = x3d.ProtoBody()
-Group59 = x3d.Group()
-PlaneSensor60 = x3d.PlaneSensor()
-PlaneSensor60.DEF = "PlaneSensor"
+ProtoDeclare53.ProtoInterface = ProtoInterface54
+ProtoBody56 = x3d.ProtoBody()
+Group57 = x3d.Group()
+PlaneSensor58 = x3d.PlaneSensor(DEF="PlaneSensor")
 
-Group59.children.append(PlaneSensor60)
-Transform61 = x3d.Transform()
-Transform61.DEF = "Node"
-IS62 = x3d.IS()
-connect63 = x3d.connect()
-connect63.nodeField = "translation"
-connect63.protoField = "translation"
+Group57.children.append(PlaneSensor58)
+Transform59 = x3d.Transform(DEF="Node")
+ProtoInstance60 = x3d.ProtoInstance()
+ProtoInstance60.name = "Widget"
+fieldValue61 = x3d.fieldValue()
+fieldValue61.name = "geometry"
+ProtoInstance62 = x3d.ProtoInstance()
+ProtoInstance62.name = "RoundedRectangle2D"
+fieldValue63 = x3d.fieldValue()
+fieldValue63.name = "cornerRadius"
+fieldValue63.value = "0.12"
 
-IS62.connect.append(connect63)
+ProtoInstance62.fieldValue.append(fieldValue63)
+fieldValue64 = x3d.fieldValue()
+fieldValue64.name = "size"
+fieldValue64.value = "2 1"
 
-Transform61.IS = IS62
-ProtoInstance64 = x3d.ProtoInstance()
-ProtoInstance64.name = "Widget"
-fieldValue65 = x3d.fieldValue()
-fieldValue65.name = "geometry"
+ProtoInstance62.fieldValue.append(fieldValue64)
+
+fieldValue61.children.append(ProtoInstance62)
+
+ProtoInstance60.fieldValue.append(fieldValue61)
+
+Transform59.children.append(ProtoInstance60)
+Transform65 = x3d.Transform(DEF="Input")
+Transform65.translation = [-1,0,0]
 ProtoInstance66 = x3d.ProtoInstance()
-ProtoInstance66.name = "RoundedRectangle2D"
+ProtoInstance66.name = "Widget"
 fieldValue67 = x3d.fieldValue()
-fieldValue67.name = "cornerRadius"
-fieldValue67.value = "0.12"
+fieldValue67.name = "lineColor"
+fieldValue67.value = "0.72 0.14 0.23"
 
 ProtoInstance66.fieldValue.append(fieldValue67)
 fieldValue68 = x3d.fieldValue()
-fieldValue68.name = "size"
-fieldValue68.value = "2 1"
+fieldValue68.name = "geometry"
+Disk2D69 = x3d.Disk2D(DEF="Connector")
+Disk2D69.outerRadius = 0.2
+
+fieldValue68.children.append(Disk2D69)
 
 ProtoInstance66.fieldValue.append(fieldValue68)
 
-fieldValue65.children.append(ProtoInstance66)
+Transform65.children.append(ProtoInstance66)
 
-ProtoInstance64.fieldValue.append(fieldValue65)
-
-Transform61.children.append(ProtoInstance64)
-Transform69 = x3d.Transform()
-Transform69.DEF = "Input"
-Transform69.translation = [-1,0,0]
-ProtoInstance70 = x3d.ProtoInstance()
-ProtoInstance70.name = "Widget"
-fieldValue71 = x3d.fieldValue()
-fieldValue71.name = "lineColor"
-fieldValue71.value = "0.72 0.14 0.23"
-
-ProtoInstance70.fieldValue.append(fieldValue71)
+Transform59.children.append(Transform65)
+Transform70 = x3d.Transform(DEF="Output")
+Transform70.translation = [1,0,0]
+ProtoInstance71 = x3d.ProtoInstance()
+ProtoInstance71.name = "Widget"
 fieldValue72 = x3d.fieldValue()
-fieldValue72.name = "geometry"
-Disk2D73 = x3d.Disk2D()
-Disk2D73.DEF = "Connector"
-Disk2D73.outerRadius = 0.2
+fieldValue72.name = "lineColor"
+fieldValue72.value = "0.44 0.5 0.72"
 
-fieldValue72.children.append(Disk2D73)
+ProtoInstance71.fieldValue.append(fieldValue72)
+fieldValue73 = x3d.fieldValue()
+fieldValue73.name = "geometry"
+Disk2D74 = x3d.Disk2D(USE="Connector")
 
-ProtoInstance70.fieldValue.append(fieldValue72)
+fieldValue73.children.append(Disk2D74)
 
-Transform69.children.append(ProtoInstance70)
+ProtoInstance71.fieldValue.append(fieldValue73)
 
-Transform61.children.append(Transform69)
-Transform74 = x3d.Transform()
-Transform74.DEF = "Output"
-Transform74.translation = [1,0,0]
-ProtoInstance75 = x3d.ProtoInstance()
-ProtoInstance75.name = "Widget"
-fieldValue76 = x3d.fieldValue()
-fieldValue76.name = "lineColor"
-fieldValue76.value = "0.44 0.5 0.72"
+Transform70.children.append(ProtoInstance71)
 
-ProtoInstance75.fieldValue.append(fieldValue76)
-fieldValue77 = x3d.fieldValue()
-fieldValue77.name = "geometry"
-Disk2D78 = x3d.Disk2D()
-Disk2D78.USE = "Connector"
+Transform59.children.append(Transform70)
+IS75 = x3d.IS()
+connect76 = x3d.connect()
+connect76.nodeField = "translation"
+connect76.protoField = "translation"
 
-fieldValue77.children.append(Disk2D78)
+IS75.connect.append(connect76)
 
-ProtoInstance75.fieldValue.append(fieldValue77)
+Transform59.IS = IS75
 
-Transform74.children.append(ProtoInstance75)
+Group57.children.append(Transform59)
 
-Transform61.children.append(Transform74)
+ProtoBody56.children.append(Group57)
+Script77 = x3d.Script()
+Script77.directOutput = True
+field78 = x3d.field()
+field78.accessType = "inputOutput"
+field78.type = "SFVec3f"
+field78.name = "translation"
 
-Group59.children.append(Transform61)
+Script77.field.append(field78)
+field79 = x3d.field()
+field79.accessType = "initializeOnly"
+field79.type = "SFNode"
+field79.name = "sensor"
+PlaneSensor80 = x3d.PlaneSensor(USE="PlaneSensor")
 
-ProtoBody58.children.append(Group59)
-Script79 = x3d.Script()
-Script79.directOutput = True
-field80 = x3d.field()
-field80.name = "translation"
-field80.accessType = "inputOutput"
-field80.type = "SFVec3f"
+field79.children.append(PlaneSensor80)
 
-Script79.field.append(field80)
+Script77.field.append(field79)
 field81 = x3d.field()
-field81.name = "sensor"
 field81.accessType = "initializeOnly"
 field81.type = "SFNode"
-PlaneSensor82 = x3d.PlaneSensor()
-PlaneSensor82.USE = "PlaneSensor"
+field81.name = "transform"
+Transform82 = x3d.Transform(USE="Node")
 
-field81.children.append(PlaneSensor82)
+field81.children.append(Transform82)
 
-Script79.field.append(field81)
-field83 = x3d.field()
-field83.name = "transform"
-field83.accessType = "initializeOnly"
-field83.type = "SFNode"
-Transform84 = x3d.Transform()
-Transform84.USE = "Node"
+Script77.field.append(field81)
 
-field83.children.append(Transform84)
-
-Script79.field.append(field83)
-IS85 = x3d.IS()
-connect86 = x3d.connect()
-connect86.nodeField = "translation"
-connect86.protoField = "translation"
-
-IS85.connect.append(connect86)
-
-Script79.IS = IS85
-
-Script79.sourceCode = '''ecmascript:\n"+
+Script77.sourceCode = '''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
 "}'''
+IS83 = x3d.IS()
+connect84 = x3d.connect()
+connect84.nodeField = "translation"
+connect84.protoField = "translation"
 
-ProtoBody58.children.append(Script79)
-ROUTE87 = x3d.ROUTE()
-ROUTE87.fromNode = "PlaneSensor"
-ROUTE87.fromField = "translation_changed"
-ROUTE87.toNode = "Node"
-ROUTE87.toField = "set_translation"
+IS83.connect.append(connect84)
 
-ProtoBody58.children.append(ROUTE87)
+Script77.IS = IS83
 
-ProtoDeclare55.ProtoBody = ProtoBody58
+ProtoBody56.children.append(Script77)
+ROUTE85 = x3d.ROUTE()
+ROUTE85.fromNode = "PlaneSensor"
+ROUTE85.fromField = "translation_changed"
+ROUTE85.toNode = "Node"
+ROUTE85.toField = "set_translation"
 
-Scene9.children.append(ProtoDeclare55)
-ProtoDeclare88 = x3d.ProtoDeclare()
-ProtoDeclare88.name = "Route"
-ProtoInterface89 = x3d.ProtoInterface()
+ProtoBody56.children.append(ROUTE85)
+
+ProtoDeclare53.ProtoBody = ProtoBody56
+
+Scene7.children.append(ProtoDeclare53)
+ProtoDeclare86 = x3d.ProtoDeclare()
+ProtoDeclare86.name = "Route"
+ProtoInterface87 = x3d.ProtoInterface()
+field88 = x3d.field()
+field88.accessType = "inputOutput"
+field88.type = "SFColor"
+field88.name = "lineColor"
+field88.value = [0.43,0.43,0.98]
+
+ProtoInterface87.field.append(field88)
+field89 = x3d.field()
+field89.accessType = "inputOutput"
+field89.type = "SFFloat"
+field89.name = "linewidthScaleFactor"
+field89.value = 2
+
+ProtoInterface87.field.append(field89)
 field90 = x3d.field()
-field90.name = "lineColor"
-field90.accessType = "inputOutput"
-field90.type = "SFColor"
-field90.value = [0.43,0.43,0.98]
+field90.accessType = "initializeOnly"
+field90.type = "SFNode"
+field90.name = "output"
 
-ProtoInterface89.field.append(field90)
+ProtoInterface87.field.append(field90)
 field91 = x3d.field()
-field91.name = "linewidthScaleFactor"
-field91.accessType = "inputOutput"
-field91.type = "SFFloat"
-field91.value = 2
+field91.accessType = "initializeOnly"
+field91.type = "SFNode"
+field91.name = "input"
 
-ProtoInterface89.field.append(field91)
-field92 = x3d.field()
-field92.name = "output"
-field92.accessType = "initializeOnly"
-field92.type = "SFNode"
+ProtoInterface87.field.append(field91)
 
-ProtoInterface89.field.append(field92)
-field93 = x3d.field()
-field93.name = "input"
-field93.accessType = "initializeOnly"
-field93.type = "SFNode"
+ProtoDeclare86.ProtoInterface = ProtoInterface87
+ProtoBody92 = x3d.ProtoBody()
+Shape93 = x3d.Shape()
+Appearance94 = x3d.Appearance()
+LineProperties95 = x3d.LineProperties()
+IS96 = x3d.IS()
+connect97 = x3d.connect()
+connect97.nodeField = "linewidthScaleFactor"
+connect97.protoField = "linewidthScaleFactor"
 
-ProtoInterface89.field.append(field93)
+IS96.connect.append(connect97)
 
-ProtoDeclare88.ProtoInterface = ProtoInterface89
-ProtoBody94 = x3d.ProtoBody()
-Shape95 = x3d.Shape()
-Appearance96 = x3d.Appearance()
-LineProperties97 = x3d.LineProperties()
-IS98 = x3d.IS()
-connect99 = x3d.connect()
-connect99.nodeField = "linewidthScaleFactor"
-connect99.protoField = "linewidthScaleFactor"
+LineProperties95.IS = IS96
 
-IS98.connect.append(connect99)
+Appearance94.lineProperties = LineProperties95
+Material98 = x3d.Material()
+Material98.diffuseColor = [0,0,0]
+IS99 = x3d.IS()
+connect100 = x3d.connect()
+connect100.nodeField = "emissiveColor"
+connect100.protoField = "lineColor"
 
-LineProperties97.IS = IS98
+IS99.connect.append(connect100)
 
-Appearance96.lineProperties = LineProperties97
-Material100 = x3d.Material()
-Material100.diffuseColor = [0,0,0]
-IS101 = x3d.IS()
-connect102 = x3d.connect()
-connect102.nodeField = "emissiveColor"
-connect102.protoField = "lineColor"
+Material98.IS = IS99
 
-IS101.connect.append(connect102)
+Appearance94.material = Material98
 
-Material100.IS = IS101
+Shape93.appearance = Appearance94
+LineSet101 = x3d.LineSet(DEF="Geometry_1")
+LineSet101.vertexCount = [2]
+Coordinate102 = x3d.Coordinate()
+Coordinate102.point = [(-1, 0, 0),(1, 0, 0)]
 
-Appearance96.material = Material100
+LineSet101.coord = Coordinate102
 
-Shape95.appearance = Appearance96
-LineSet103 = x3d.LineSet()
-LineSet103.DEF = "Geometry_1"
-LineSet103.vertexCount = [2]
-Coordinate104 = x3d.Coordinate()
-Coordinate104.point = [(-1, 0, 0),(1, 0, 0)]
+Shape93.geometry = LineSet101
 
-LineSet103.coord = Coordinate104
+ProtoBody92.children.append(Shape93)
+Script103 = x3d.Script(DEF="Route")
+Script103.directOutput = True
+field104 = x3d.field()
+field104.accessType = "inputOnly"
+field104.type = "SFVec3f"
+field104.name = "set_translation"
 
-Shape95.geometry = LineSet103
+Script103.field.append(field104)
+field105 = x3d.field()
+field105.accessType = "initializeOnly"
+field105.type = "SFInt32"
+field105.name = "routeDimension"
+field105.value = 21
 
-ProtoBody94.children.append(Shape95)
-Script105 = x3d.Script()
-Script105.DEF = "Route"
-Script105.directOutput = True
+Script103.field.append(field105)
 field106 = x3d.field()
-field106.name = "set_translation"
-field106.accessType = "inputOnly"
-field106.type = "SFVec3f"
+field106.accessType = "initializeOnly"
+field106.type = "SFNode"
+field106.name = "output"
 
-Script105.field.append(field106)
+Script103.field.append(field106)
 field107 = x3d.field()
-field107.name = "routeDimension"
 field107.accessType = "initializeOnly"
-field107.type = "SFInt32"
-field107.value = 21
+field107.type = "SFNode"
+field107.name = "input"
 
-Script105.field.append(field107)
+Script103.field.append(field107)
 field108 = x3d.field()
-field108.name = "output"
 field108.accessType = "initializeOnly"
 field108.type = "SFNode"
+field108.name = "geometry"
+LineSet109 = x3d.LineSet(USE="Geometry_1")
 
-Script105.field.append(field108)
-field109 = x3d.field()
-field109.name = "input"
-field109.accessType = "initializeOnly"
-field109.type = "SFNode"
+field108.children.append(LineSet109)
 
-Script105.field.append(field109)
+Script103.field.append(field108)
 field110 = x3d.field()
-field110.name = "geometry"
 field110.accessType = "initializeOnly"
 field110.type = "SFNode"
-LineSet111 = x3d.LineSet()
-LineSet111.USE = "Geometry_1"
+field110.name = "self"
+Script111 = x3d.Script(USE="Route")
 
-field110.children.append(LineSet111)
+field110.children.append(Script111)
 
-Script105.field.append(field110)
-field112 = x3d.field()
-field112.name = "self"
-field112.accessType = "initializeOnly"
-field112.type = "SFNode"
-Script113 = x3d.Script()
-Script113.USE = "Route"
+Script103.field.append(field110)
 
-field112.children.append(Script113)
-
-Script105.field.append(field112)
-IS114 = x3d.IS()
-connect115 = x3d.connect()
-connect115.nodeField = "output"
-connect115.protoField = "output"
-
-IS114.connect.append(connect115)
-connect116 = x3d.connect()
-connect116.nodeField = "input"
-connect116.protoField = "input"
-
-IS114.connect.append(connect116)
-
-Script105.IS = IS114
-
-Script105.sourceCode = '''ecmascript:\n"+
+Script103.sourceCode = '''ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	Browser .addRoute (output, 'translation_changed', self, 'set_translation');\n"+
@@ -601,337 +562,321 @@ Script105.sourceCode = '''ecmascript:\n"+
 "		geometry .coord .point [i] = outPoint .add (new SFVec3f (t * w, y, 0));\n"+
 "	}\n"+
 "}'''
+IS112 = x3d.IS()
+connect113 = x3d.connect()
+connect113.nodeField = "output"
+connect113.protoField = "output"
 
-ProtoBody94.children.append(Script105)
+IS112.connect.append(connect113)
+connect114 = x3d.connect()
+connect114.nodeField = "input"
+connect114.protoField = "input"
 
-ProtoDeclare88.ProtoBody = ProtoBody94
+IS112.connect.append(connect114)
 
-Scene9.children.append(ProtoDeclare88)
-NavigationInfo117 = x3d.NavigationInfo()
-NavigationInfo117.type = ["FLY","ANY"]
+Script103.IS = IS112
 
-Scene9.children.append(NavigationInfo117)
-Background118 = x3d.Background()
-Background118.skyColor = [(0.2, 0.2, 0.2)]
+ProtoBody92.children.append(Script103)
 
-Scene9.children.append(Background118)
-OrthoViewpoint119 = x3d.OrthoViewpoint()
-OrthoViewpoint119.description = "OthoViewpoint"
-OrthoViewpoint119.position = [-3.13496,-4.19776,10]
-OrthoViewpoint119.centerOfRotation = [-3.13496,-4.19776,0]
-OrthoViewpoint119.fieldOfView = [0,0,10,10]
+ProtoDeclare86.ProtoBody = ProtoBody92
 
-Scene9.children.append(OrthoViewpoint119)
-Viewpoint120 = x3d.Viewpoint()
-Viewpoint120.description = "Viewpoint"
+Scene7.children.append(ProtoDeclare86)
+NavigationInfo115 = x3d.NavigationInfo()
+NavigationInfo115.type = ["FLY","ANY"]
 
-Scene9.children.append(Viewpoint120)
-Transform121 = x3d.Transform()
-Transform121.DEF = "Connectors"
-ProtoInstance122 = x3d.ProtoInstance()
-ProtoInstance122.name = "Route"
+Scene7.children.append(NavigationInfo115)
+Background116 = x3d.Background()
+Background116.skyColor = [(0.2, 0.2, 0.2)]
+
+Scene7.children.append(Background116)
+OrthoViewpoint117 = x3d.OrthoViewpoint()
+OrthoViewpoint117.description = "OthoViewpoint"
+OrthoViewpoint117.position = [-3.13496,-4.19776,10]
+OrthoViewpoint117.centerOfRotation = [-3.13496,-4.19776,0]
+OrthoViewpoint117.fieldOfView = [0,0,10,10]
+
+Scene7.children.append(OrthoViewpoint117)
+Viewpoint118 = x3d.Viewpoint()
+Viewpoint118.description = "Viewpoint"
+
+Scene7.children.append(Viewpoint118)
+Transform119 = x3d.Transform(DEF="Connectors")
+ProtoInstance120 = x3d.ProtoInstance()
+ProtoInstance120.name = "Route"
+fieldValue121 = x3d.fieldValue()
+fieldValue121.name = "output"
+ProtoInstance122 = x3d.ProtoInstance(DEF="N1")
+ProtoInstance122.name = "Node"
 fieldValue123 = x3d.fieldValue()
-fieldValue123.name = "output"
-ProtoInstance124 = x3d.ProtoInstance()
-ProtoInstance124.name = "Node"
-ProtoInstance124.DEF = "N1"
-fieldValue125 = x3d.fieldValue()
-fieldValue125.name = "translation"
-fieldValue125.value = "-3.98323 2.88948 0"
-
-ProtoInstance124.fieldValue.append(fieldValue125)
-
-fieldValue123.children.append(ProtoInstance124)
+fieldValue123.name = "translation"
+fieldValue123.value = "-3.98323 2.88948 0"
 
 ProtoInstance122.fieldValue.append(fieldValue123)
+
+fieldValue121.children.append(ProtoInstance122)
+
+ProtoInstance120.fieldValue.append(fieldValue121)
+fieldValue124 = x3d.fieldValue()
+fieldValue124.name = "input"
+ProtoInstance125 = x3d.ProtoInstance(DEF="N2")
+ProtoInstance125.name = "Node"
 fieldValue126 = x3d.fieldValue()
-fieldValue126.name = "input"
+fieldValue126.name = "translation"
+fieldValue126.value = "-0.0890862 2.96049 0"
+
+ProtoInstance125.fieldValue.append(fieldValue126)
+
+fieldValue124.children.append(ProtoInstance125)
+
+ProtoInstance120.fieldValue.append(fieldValue124)
+
+Transform119.children.append(ProtoInstance120)
 ProtoInstance127 = x3d.ProtoInstance()
-ProtoInstance127.name = "Node"
-ProtoInstance127.DEF = "N2"
+ProtoInstance127.name = "Route"
 fieldValue128 = x3d.fieldValue()
-fieldValue128.name = "translation"
-fieldValue128.value = "-0.0890862 2.96049 0"
+fieldValue128.name = "output"
+ProtoInstance129 = x3d.ProtoInstance(USE="N1")
+ProtoInstance129.name = "Node"
+
+fieldValue128.children.append(ProtoInstance129)
 
 ProtoInstance127.fieldValue.append(fieldValue128)
-
-fieldValue126.children.append(ProtoInstance127)
-
-ProtoInstance122.fieldValue.append(fieldValue126)
-
-Transform121.children.append(ProtoInstance122)
-ProtoInstance129 = x3d.ProtoInstance()
-ProtoInstance129.name = "Route"
 fieldValue130 = x3d.fieldValue()
-fieldValue130.name = "output"
-ProtoInstance131 = x3d.ProtoInstance()
+fieldValue130.name = "input"
+ProtoInstance131 = x3d.ProtoInstance(DEF="N3")
 ProtoInstance131.name = "Node"
-ProtoInstance131.USE = "N1"
+fieldValue132 = x3d.fieldValue()
+fieldValue132.name = "translation"
+fieldValue132.value = "-0.104169 1.16371 0"
+
+ProtoInstance131.fieldValue.append(fieldValue132)
 
 fieldValue130.children.append(ProtoInstance131)
 
-ProtoInstance129.fieldValue.append(fieldValue130)
-fieldValue132 = x3d.fieldValue()
-fieldValue132.name = "input"
+ProtoInstance127.fieldValue.append(fieldValue130)
+
+Transform119.children.append(ProtoInstance127)
 ProtoInstance133 = x3d.ProtoInstance()
-ProtoInstance133.name = "Node"
-ProtoInstance133.DEF = "N3"
+ProtoInstance133.name = "Route"
 fieldValue134 = x3d.fieldValue()
-fieldValue134.name = "translation"
-fieldValue134.value = "-0.104169 1.16371 0"
+fieldValue134.name = "output"
+ProtoInstance135 = x3d.ProtoInstance(USE="N1")
+ProtoInstance135.name = "Node"
+
+fieldValue134.children.append(ProtoInstance135)
 
 ProtoInstance133.fieldValue.append(fieldValue134)
-
-fieldValue132.children.append(ProtoInstance133)
-
-ProtoInstance129.fieldValue.append(fieldValue132)
-
-Transform121.children.append(ProtoInstance129)
-ProtoInstance135 = x3d.ProtoInstance()
-ProtoInstance135.name = "Route"
 fieldValue136 = x3d.fieldValue()
-fieldValue136.name = "output"
-ProtoInstance137 = x3d.ProtoInstance()
+fieldValue136.name = "input"
+ProtoInstance137 = x3d.ProtoInstance(DEF="N4")
 ProtoInstance137.name = "Node"
-ProtoInstance137.USE = "N1"
+fieldValue138 = x3d.fieldValue()
+fieldValue138.name = "translation"
+fieldValue138.value = "-0.0998688 -0.40172 0"
+
+ProtoInstance137.fieldValue.append(fieldValue138)
 
 fieldValue136.children.append(ProtoInstance137)
 
-ProtoInstance135.fieldValue.append(fieldValue136)
-fieldValue138 = x3d.fieldValue()
-fieldValue138.name = "input"
+ProtoInstance133.fieldValue.append(fieldValue136)
+
+Transform119.children.append(ProtoInstance133)
 ProtoInstance139 = x3d.ProtoInstance()
-ProtoInstance139.name = "Node"
-ProtoInstance139.DEF = "N4"
+ProtoInstance139.name = "Route"
 fieldValue140 = x3d.fieldValue()
-fieldValue140.name = "translation"
-fieldValue140.value = "-0.0998688 -0.40172 0"
+fieldValue140.name = "output"
+ProtoInstance141 = x3d.ProtoInstance(USE="N1")
+ProtoInstance141.name = "Node"
+
+fieldValue140.children.append(ProtoInstance141)
 
 ProtoInstance139.fieldValue.append(fieldValue140)
-
-fieldValue138.children.append(ProtoInstance139)
-
-ProtoInstance135.fieldValue.append(fieldValue138)
-
-Transform121.children.append(ProtoInstance135)
-ProtoInstance141 = x3d.ProtoInstance()
-ProtoInstance141.name = "Route"
 fieldValue142 = x3d.fieldValue()
-fieldValue142.name = "output"
-ProtoInstance143 = x3d.ProtoInstance()
+fieldValue142.name = "input"
+ProtoInstance143 = x3d.ProtoInstance(DEF="N5")
 ProtoInstance143.name = "Node"
-ProtoInstance143.USE = "N1"
+fieldValue144 = x3d.fieldValue()
+fieldValue144.name = "translation"
+fieldValue144.value = "-0.0998687 -2.14742 0"
+
+ProtoInstance143.fieldValue.append(fieldValue144)
 
 fieldValue142.children.append(ProtoInstance143)
 
-ProtoInstance141.fieldValue.append(fieldValue142)
-fieldValue144 = x3d.fieldValue()
-fieldValue144.name = "input"
+ProtoInstance139.fieldValue.append(fieldValue142)
+
+Transform119.children.append(ProtoInstance139)
 ProtoInstance145 = x3d.ProtoInstance()
-ProtoInstance145.name = "Node"
-ProtoInstance145.DEF = "N5"
+ProtoInstance145.name = "Route"
 fieldValue146 = x3d.fieldValue()
-fieldValue146.name = "translation"
-fieldValue146.value = "-0.0998687 -2.14742 0"
+fieldValue146.name = "output"
+ProtoInstance147 = x3d.ProtoInstance(USE="N2")
+ProtoInstance147.name = "Node"
+
+fieldValue146.children.append(ProtoInstance147)
 
 ProtoInstance145.fieldValue.append(fieldValue146)
-
-fieldValue144.children.append(ProtoInstance145)
-
-ProtoInstance141.fieldValue.append(fieldValue144)
-
-Transform121.children.append(ProtoInstance141)
-ProtoInstance147 = x3d.ProtoInstance()
-ProtoInstance147.name = "Route"
 fieldValue148 = x3d.fieldValue()
-fieldValue148.name = "output"
-ProtoInstance149 = x3d.ProtoInstance()
+fieldValue148.name = "input"
+ProtoInstance149 = x3d.ProtoInstance(DEF="N6")
 ProtoInstance149.name = "Node"
-ProtoInstance149.USE = "N2"
+fieldValue150 = x3d.fieldValue()
+fieldValue150.name = "translation"
+fieldValue150.value = "3.55694 2.4116 0"
+
+ProtoInstance149.fieldValue.append(fieldValue150)
 
 fieldValue148.children.append(ProtoInstance149)
 
-ProtoInstance147.fieldValue.append(fieldValue148)
-fieldValue150 = x3d.fieldValue()
-fieldValue150.name = "input"
+ProtoInstance145.fieldValue.append(fieldValue148)
+
+Transform119.children.append(ProtoInstance145)
 ProtoInstance151 = x3d.ProtoInstance()
-ProtoInstance151.name = "Node"
-ProtoInstance151.DEF = "N6"
+ProtoInstance151.name = "Route"
 fieldValue152 = x3d.fieldValue()
-fieldValue152.name = "translation"
-fieldValue152.value = "3.55694 2.4116 0"
+fieldValue152.name = "output"
+ProtoInstance153 = x3d.ProtoInstance(USE="N3")
+ProtoInstance153.name = "Node"
+
+fieldValue152.children.append(ProtoInstance153)
 
 ProtoInstance151.fieldValue.append(fieldValue152)
-
-fieldValue150.children.append(ProtoInstance151)
-
-ProtoInstance147.fieldValue.append(fieldValue150)
-
-Transform121.children.append(ProtoInstance147)
-ProtoInstance153 = x3d.ProtoInstance()
-ProtoInstance153.name = "Route"
 fieldValue154 = x3d.fieldValue()
-fieldValue154.name = "output"
-ProtoInstance155 = x3d.ProtoInstance()
+fieldValue154.name = "input"
+ProtoInstance155 = x3d.ProtoInstance(USE="N6")
 ProtoInstance155.name = "Node"
-ProtoInstance155.USE = "N3"
 
 fieldValue154.children.append(ProtoInstance155)
 
-ProtoInstance153.fieldValue.append(fieldValue154)
-fieldValue156 = x3d.fieldValue()
-fieldValue156.name = "input"
-ProtoInstance157 = x3d.ProtoInstance()
-ProtoInstance157.name = "Node"
-ProtoInstance157.USE = "N6"
+ProtoInstance151.fieldValue.append(fieldValue154)
 
-fieldValue156.children.append(ProtoInstance157)
+Transform119.children.append(ProtoInstance151)
+ProtoInstance156 = x3d.ProtoInstance()
+ProtoInstance156.name = "Route"
+fieldValue157 = x3d.fieldValue()
+fieldValue157.name = "output"
+ProtoInstance158 = x3d.ProtoInstance(USE="N4")
+ProtoInstance158.name = "Node"
 
-ProtoInstance153.fieldValue.append(fieldValue156)
+fieldValue157.children.append(ProtoInstance158)
 
-Transform121.children.append(ProtoInstance153)
-ProtoInstance158 = x3d.ProtoInstance()
-ProtoInstance158.name = "Route"
+ProtoInstance156.fieldValue.append(fieldValue157)
 fieldValue159 = x3d.fieldValue()
-fieldValue159.name = "output"
-ProtoInstance160 = x3d.ProtoInstance()
+fieldValue159.name = "input"
+ProtoInstance160 = x3d.ProtoInstance(DEF="N7")
 ProtoInstance160.name = "Node"
-ProtoInstance160.USE = "N4"
+fieldValue161 = x3d.fieldValue()
+fieldValue161.name = "translation"
+fieldValue161.value = "3.75106 -0.0794556 0"
+
+ProtoInstance160.fieldValue.append(fieldValue161)
 
 fieldValue159.children.append(ProtoInstance160)
 
-ProtoInstance158.fieldValue.append(fieldValue159)
-fieldValue161 = x3d.fieldValue()
-fieldValue161.name = "input"
+ProtoInstance156.fieldValue.append(fieldValue159)
+
+Transform119.children.append(ProtoInstance156)
 ProtoInstance162 = x3d.ProtoInstance()
-ProtoInstance162.name = "Node"
-ProtoInstance162.DEF = "N7"
+ProtoInstance162.name = "Route"
 fieldValue163 = x3d.fieldValue()
-fieldValue163.name = "translation"
-fieldValue163.value = "3.75106 -0.0794556 0"
+fieldValue163.name = "output"
+ProtoInstance164 = x3d.ProtoInstance(USE="N5")
+ProtoInstance164.name = "Node"
+
+fieldValue163.children.append(ProtoInstance164)
 
 ProtoInstance162.fieldValue.append(fieldValue163)
-
-fieldValue161.children.append(ProtoInstance162)
-
-ProtoInstance158.fieldValue.append(fieldValue161)
-
-Transform121.children.append(ProtoInstance158)
-ProtoInstance164 = x3d.ProtoInstance()
-ProtoInstance164.name = "Route"
 fieldValue165 = x3d.fieldValue()
-fieldValue165.name = "output"
-ProtoInstance166 = x3d.ProtoInstance()
+fieldValue165.name = "input"
+ProtoInstance166 = x3d.ProtoInstance(USE="N7")
 ProtoInstance166.name = "Node"
-ProtoInstance166.USE = "N5"
 
 fieldValue165.children.append(ProtoInstance166)
 
-ProtoInstance164.fieldValue.append(fieldValue165)
-fieldValue167 = x3d.fieldValue()
-fieldValue167.name = "input"
-ProtoInstance168 = x3d.ProtoInstance()
-ProtoInstance168.name = "Node"
-ProtoInstance168.USE = "N7"
+ProtoInstance162.fieldValue.append(fieldValue165)
 
-fieldValue167.children.append(ProtoInstance168)
+Transform119.children.append(ProtoInstance162)
+ProtoInstance167 = x3d.ProtoInstance()
+ProtoInstance167.name = "Route"
+fieldValue168 = x3d.fieldValue()
+fieldValue168.name = "output"
+ProtoInstance169 = x3d.ProtoInstance(USE="N6")
+ProtoInstance169.name = "Node"
 
-ProtoInstance164.fieldValue.append(fieldValue167)
+fieldValue168.children.append(ProtoInstance169)
 
-Transform121.children.append(ProtoInstance164)
-ProtoInstance169 = x3d.ProtoInstance()
-ProtoInstance169.name = "Route"
+ProtoInstance167.fieldValue.append(fieldValue168)
 fieldValue170 = x3d.fieldValue()
-fieldValue170.name = "output"
-ProtoInstance171 = x3d.ProtoInstance()
+fieldValue170.name = "input"
+ProtoInstance171 = x3d.ProtoInstance(DEF="N8")
 ProtoInstance171.name = "Node"
-ProtoInstance171.USE = "N6"
+fieldValue172 = x3d.fieldValue()
+fieldValue172.name = "translation"
+fieldValue172.value = "7.68077 1.21228 0"
+
+ProtoInstance171.fieldValue.append(fieldValue172)
 
 fieldValue170.children.append(ProtoInstance171)
 
-ProtoInstance169.fieldValue.append(fieldValue170)
-fieldValue172 = x3d.fieldValue()
-fieldValue172.name = "input"
+ProtoInstance167.fieldValue.append(fieldValue170)
+
+Transform119.children.append(ProtoInstance167)
 ProtoInstance173 = x3d.ProtoInstance()
-ProtoInstance173.name = "Node"
-ProtoInstance173.DEF = "N8"
+ProtoInstance173.name = "Route"
 fieldValue174 = x3d.fieldValue()
-fieldValue174.name = "translation"
-fieldValue174.value = "7.68077 1.21228 0"
+fieldValue174.name = "output"
+ProtoInstance175 = x3d.ProtoInstance(USE="N7")
+ProtoInstance175.name = "Node"
+
+fieldValue174.children.append(ProtoInstance175)
 
 ProtoInstance173.fieldValue.append(fieldValue174)
-
-fieldValue172.children.append(ProtoInstance173)
-
-ProtoInstance169.fieldValue.append(fieldValue172)
-
-Transform121.children.append(ProtoInstance169)
-ProtoInstance175 = x3d.ProtoInstance()
-ProtoInstance175.name = "Route"
 fieldValue176 = x3d.fieldValue()
-fieldValue176.name = "output"
-ProtoInstance177 = x3d.ProtoInstance()
+fieldValue176.name = "input"
+ProtoInstance177 = x3d.ProtoInstance(USE="N8")
 ProtoInstance177.name = "Node"
-ProtoInstance177.USE = "N7"
 
 fieldValue176.children.append(ProtoInstance177)
 
-ProtoInstance175.fieldValue.append(fieldValue176)
-fieldValue178 = x3d.fieldValue()
-fieldValue178.name = "input"
-ProtoInstance179 = x3d.ProtoInstance()
+ProtoInstance173.fieldValue.append(fieldValue176)
+
+Transform119.children.append(ProtoInstance173)
+ProtoInstance178 = x3d.ProtoInstance(USE="N1")
+ProtoInstance178.name = "Node"
+
+Transform119.children.append(ProtoInstance178)
+ProtoInstance179 = x3d.ProtoInstance(USE="N2")
 ProtoInstance179.name = "Node"
-ProtoInstance179.USE = "N8"
 
-fieldValue178.children.append(ProtoInstance179)
-
-ProtoInstance175.fieldValue.append(fieldValue178)
-
-Transform121.children.append(ProtoInstance175)
-ProtoInstance180 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance179)
+ProtoInstance180 = x3d.ProtoInstance(USE="N3")
 ProtoInstance180.name = "Node"
-ProtoInstance180.USE = "N1"
 
-Transform121.children.append(ProtoInstance180)
-ProtoInstance181 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance180)
+ProtoInstance181 = x3d.ProtoInstance(USE="N4")
 ProtoInstance181.name = "Node"
-ProtoInstance181.USE = "N2"
 
-Transform121.children.append(ProtoInstance181)
-ProtoInstance182 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance181)
+ProtoInstance182 = x3d.ProtoInstance(USE="N5")
 ProtoInstance182.name = "Node"
-ProtoInstance182.USE = "N3"
 
-Transform121.children.append(ProtoInstance182)
-ProtoInstance183 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance182)
+ProtoInstance183 = x3d.ProtoInstance(USE="N6")
 ProtoInstance183.name = "Node"
-ProtoInstance183.USE = "N4"
 
-Transform121.children.append(ProtoInstance183)
-ProtoInstance184 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance183)
+ProtoInstance184 = x3d.ProtoInstance(USE="N7")
 ProtoInstance184.name = "Node"
-ProtoInstance184.USE = "N5"
 
-Transform121.children.append(ProtoInstance184)
-ProtoInstance185 = x3d.ProtoInstance()
+Transform119.children.append(ProtoInstance184)
+ProtoInstance185 = x3d.ProtoInstance(USE="N8")
 ProtoInstance185.name = "Node"
-ProtoInstance185.USE = "N6"
 
-Transform121.children.append(ProtoInstance185)
-ProtoInstance186 = x3d.ProtoInstance()
-ProtoInstance186.name = "Node"
-ProtoInstance186.USE = "N7"
+Transform119.children.append(ProtoInstance185)
 
-Transform121.children.append(ProtoInstance186)
-ProtoInstance187 = x3d.ProtoInstance()
-ProtoInstance187.name = "Node"
-ProtoInstance187.USE = "N8"
+Scene7.children.append(Transform119)
 
-Transform121.children.append(ProtoInstance187)
-
-Scene9.children.append(Transform121)
-
-X3D0.Scene = Scene9
+X3D0.Scene = Scene7
 f = open("../data/Connectors.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

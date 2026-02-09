@@ -4,67 +4,10 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Full",
     "head":
     {
-        "component":
-        {
-      {
-        "@name":"Scripting"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"EnvironmentalEffects"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Shaders"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"CubeMapTexturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Texturing"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Rendering"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"3",
-        "@name":"Grouping"
-      }
-    },
-        "component":
-        {
-      {
-        "@name":"Core"
-      }
-    },
-        "component":
-        {
-      {
-        "@level":"2",
-        "@name":"DIS"
-      }
-    },
         "meta":
         {
       {
@@ -110,7 +53,7 @@
         "meta":
         {
       {
-        "@content":"*enter date of latest revision here*",
+        "@content":"Mon, 09 Feb 2026 07:09:47 GMT",
         "@name":"modified"
       }
     },
@@ -191,23 +134,315 @@
         "@name":"identifier"
       }
     },
-        "meta":
-        {
-      {
-        "@content":"PSPad, http://www.pspad.com/",
-        "@name":"generator"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"license.html",
-        "@name":"license"
-      }
-    },
     }    "Scene":
     {
-        "NavigationInfo":
+        "ProtoDeclare":
+        {
+      {
+        "@name":"SliderProto"
+      }
+            "ProtoInterface":
+            {
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"sliderTranslation",
+        "@type":"SFVec3f",
+        "@value":"[0, 0.7, 0]"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"transformTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"sensorTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"textString",
+        "@type":"MFString",
+        "@value":"['a=']"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterScale",
+        "@type":"SFFloat",
+        "@value":"30"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"parameterName",
+        "@type":"SFString",
+        "@value":"a"
+      }
+    },
+                "field":
+                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"shaderNode",
+        "@type":"SFNode"
+      }
+    },
+            }            "ProtoBody":
+            {
+                "Group":
+                {
+                    "Transform":
+                    {
+      {
+        "@DEF":"protoSlider"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"translation",
+        "@protoField":"sliderTranslation"
+      }
+    },
+                        }                        "Transform":
+                        {
+      {
+        "@DEF":"protoTransform"
+      }
+                            "IS":
+                            {
+                                "connect":
+                                {
+      {
+        "@nodeField":"translation",
+        "@protoField":"transformTranslation"
+      }
+    },
+                                "connect":
+                                {
+      {
+        "@nodeField":"translation",
+        "@protoField":"sensorTranslation"
+      }
+    },
+                            }                            "PlaneSensor":
+                            {
+      {
+        "@DEF":"protoSensor",
+        "@maxPosition":"1 0"
+      }
+    },
+                            "Transform":
+                            {
+                                "TouchSensor":
+                                {
+      {
+        "@DEF":"protoTS"
+      }
+    },
+                            }                            "Transform":
+                            {
+                                "Shape":
+                                {
+                                    "Appearance":
+                                    {
+                                        "Material":
+                                        {
+    },
+                                    }                                    "Text":
+                                    {
+      {
+        "@DEF":"protoText"
+      }
+                                        "IS":
+                                        {
+                                            "connect":
+                                            {
+      {
+        "@nodeField":"string",
+        "@protoField":"textString"
+      }
+    },
+                                        }                                        "FontStyle":
+                                        {
+      {
+        "@size":"0.23"
+      }
+    },
+                                    }                                }                            }                        }                    }                    "Script":
+                    {
+      {
+        "@DEF":"protoValueTransformerScript",
+        "@directOutput":"true",
+        "@mustEvaluate":"true",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;const newTranslation = function(Value) {
+&quot;+
+&quot;	'use strict';
+&quot;+
+&quot;	protoValue_changed = Value.x * protoScale;
+&quot;+
+&quot;	protoText_changed = new MFString(protoParameterName+'='+protoValue_changed.toFixed(2));
+&quot;+
+&quot;
+&quot;+
+&quot;        var orientation = Value.x;
+&quot;+
+&quot;
+&quot;+
+&quot;        var ps = Browser.currentScene.getNamedNode(&quot;protoSensor&quot;);
+&quot;+
+&quot;        var t = Browser.currentScene.getNamedNode(&quot;protoTransform&quot;);
+&quot;+
+&quot;        var txt = Browser.currentScene.getNamedNode(&quot;protoText&quot;);
+&quot;+
+&quot;        if (shader) {
+&quot;+
+&quot;            shader.getField(protoParameterName).setValue(orientation * protoScale);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        if (txt) {
+&quot;+
+&quot;            var stringField = txt.getField(&quot;string&quot;);
+&quot;+
+&quot;            var label = protoParameterName;
+&quot;+
+&quot;            stringField.setValue(new MFString(label+&quot;=&quot;+(orientation * protoScale).toFixed(2)));
+&quot;+
+&quot;        }
+&quot;+
+&quot;        if (ps) {
+&quot;+
+&quot;            ps.offset = new SFVec3f(orientation, ps.offset[1], ps.offset[2]);
+&quot;+
+&quot;        }
+&quot;+
+&quot;        if (t) {
+&quot;+
+&quot;            t.translation = new SFVec3f(orientation, t.translation[1], t.translation[2]);
+&quot;+
+&quot;        }
+&quot;+
+&quot;}"
+      }
+                        "IS":
+                        {
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoScale",
+        "@protoField":"parameterScale"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"protoParameterName",
+        "@protoField":"parameterName"
+      }
+    },
+                            "connect":
+                            {
+      {
+        "@nodeField":"shader",
+        "@protoField":"shaderNode"
+      }
+    },
+                        }                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoScale",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"protoParameterName",
+        "@type":"SFString"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"shader",
+        "@type":"SFNode"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"newTranslation",
+        "@type":"SFVec3f"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"protoValue_changed",
+        "@type":"SFFloat"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"outputOnly",
+        "@name":"protoText_changed",
+        "@type":"MFString"
+      }
+    },
+                    }                }                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"set_translation",
+        "@toNode":"protoTransform"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"protoSensor",
+        "@toField":"newTranslation",
+        "@toNode":"protoValueTransformerScript"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"protoText_changed",
+        "@fromNode":"protoValueTransformerScript",
+        "@toField":"set_string",
+        "@toNode":"protoText"
+      }
+    },
+            }        }        "NavigationInfo":
         {
       {
         "@avatarSize":"0.25 1.75 0.75",
@@ -234,6 +469,42 @@
         "@description":"My Overview",
         "@fieldOfView":"1.570796",
         "@position":"0 1.75 60"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"coordIndexes",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_coordIndex",
+        "@toNode":"Orbit"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"coordinates_changed",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_point",
+        "@toNode":"OrbitCoordinates"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"addedEntities",
+        "@fromNode":"EntityManager",
+        "@toField":"addChildren",
+        "@toNode":"AvatarHolder"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"removedEntities",
+        "@fromNode":"EntityManager",
+        "@toField":"removeChildren",
+        "@toNode":"AvatarHolder"
       }
     },
     }}

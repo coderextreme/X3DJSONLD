@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <component level='2' name='HAnim'/>
     <meta content='JoeDemo5JoeSkin5.x3d' name='title'/>
@@ -499,6 +499,7 @@
     </Group>
     <Group DEF='DefaultAnimation_loa4'>
       <TimeSensor DEF='DefaultTimer'/>
+      <!-- indention-to-match Joint hierarchy -->
       <PositionInterpolator DEF='Default_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Default_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='Default_sacroiliac_RotationInterpolator'/>
@@ -646,6 +647,7 @@
       <OrientationInterpolator DEF='Default_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_sacroiliac_RotationInterpolator'/>
@@ -793,6 +795,7 @@
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='DefaultTimer' toField='set_fraction' toNode='Default_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Default_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Default_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Default_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -842,6 +845,7 @@
       <ROUTE fromField='value_changed' fromNode='Default_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Default_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Default_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Default_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Default_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Default_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Default_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -942,6 +946,7 @@
     </Group>
     <Group DEF='PoseTAnimation_loa4'>
       <TimeSensor DEF='PoseTTimer'/>
+      <!-- indention to match Joint hierarchy -->
       <PositionInterpolator DEF='PoseT_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='PoseT_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseT_sacroiliac_RotationInterpolator'/>
@@ -1089,6 +1094,7 @@
       <OrientationInterpolator DEF='PoseT_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseT_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseT_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_sacroiliac_RotationInterpolator'/>
@@ -1236,6 +1242,7 @@
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseTTimer' toField='set_fraction' toNode='PoseT_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='PoseT_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -1285,6 +1292,7 @@
       <ROUTE fromField='value_changed' fromNode='PoseT_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='PoseT_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='PoseT_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='PoseT_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -1385,6 +1393,7 @@
     </Group>
     <Group DEF='PoseAAnimation_loa4'>
       <TimeSensor DEF='PoseATimer'/>
+      <!-- indention to match Joint hierarchy -->
       <PositionInterpolator DEF='PoseA_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='PoseA_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseA_sacroiliac_RotationInterpolator'/>
@@ -1532,6 +1541,7 @@
       <OrientationInterpolator DEF='PoseA_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseA_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseA_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_sacroiliac_RotationInterpolator'/>
@@ -1679,6 +1689,7 @@
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseATimer' toField='set_fraction' toNode='PoseA_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='PoseA_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -1728,6 +1739,7 @@
       <ROUTE fromField='value_changed' fromNode='PoseA_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='PoseA_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='PoseA_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='PoseA_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -1828,6 +1840,7 @@
     </Group>
     <Group DEF='PoseHAnimation_loa4'>
       <TimeSensor DEF='PoseHTimer'/>
+      <!-- indention to match Joint hierarchy -->
       <PositionInterpolator DEF='PoseH_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='PoseH_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseH_sacroiliac_RotationInterpolator'/>
@@ -1975,6 +1988,7 @@
       <OrientationInterpolator DEF='PoseH_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseH_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='PoseH_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_sacroiliac_RotationInterpolator'/>
@@ -2122,6 +2136,7 @@
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='PoseHTimer' toField='set_fraction' toNode='PoseH_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='PoseH_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -2171,6 +2186,7 @@
       <ROUTE fromField='value_changed' fromNode='PoseH_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='PoseH_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='PoseH_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='PoseH_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -2270,6 +2286,24 @@
       <ROUTE fromField='value_changed' fromNode='PoseH_r_carpal_distal_interphalangeal_5_RotationInterpolator' toField='set_rotation' toNode='Joe_r_carpal_distal_interphalangeal_5'/>
     </Group>
     <Group DEF='Pitch1Animation_loa4'>
+      <!-- Pitch1 example shows Y-axis control of Joint nodes -->
+      <!-- that through the skeleton hierarchy control -->
+      <!-- Segment geometry and Site position. -->
+      <!-- So, the following interpolator: -->
+      <!-- <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> -->
+      <!-- will start at 0 move to +1 radian of x-axis -->
+      <!-- rotation of the Joint, then return to 0. -->
+      <!-- 0 0 1 0 is default value, meaning set to -->
+      <!-- 0 radians, zero degrees. -->
+      <!-- x y z scale, all in radians 0 to <+-inf. -->
+      <!-- Thus, 1 radian in a times scale 1 = +1 radian -->
+      <!-- = about 60 degrees -->
+      <!-- 360 degrees divided by 2 times pi -->
+      <!-- greater than +-6.28 radians range -->
+      <!-- Right hand rule for axes so a -->
+      <!-- positive pitch value applied to the -->
+      <!-- skullbase Joint would rotate the -->
+      <!-- the gaze of model down, toward the floor. -->
       <TimeSensor DEF='Pitch1Timer'/>
       <PositionInterpolator DEF='Pitch1_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Pitch1_humanoid_root_RotationInterpolator'/>
@@ -2418,6 +2452,7 @@
       <OrientationInterpolator DEF='Pitch1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_sacroiliac_RotationInterpolator'/>
@@ -2565,6 +2600,7 @@
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch1Timer' toField='set_fraction' toNode='Pitch1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Pitch1_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -2614,6 +2650,7 @@
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Pitch1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Pitch1_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -2861,6 +2898,7 @@
       <OrientationInterpolator DEF='Pitch2_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_sacroiliac_RotationInterpolator'/>
@@ -3008,6 +3046,7 @@
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Pitch2Timer' toField='set_fraction' toNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Pitch2_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -3057,6 +3096,7 @@
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Pitch2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -3156,6 +3196,25 @@
       <ROUTE fromField='value_changed' fromNode='Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator' toField='set_rotation' toNode='Joe_r_carpal_distal_interphalangeal_5'/>
     </Group>
     <Group DEF='Yaw1Animation_loa4'>
+      <!-- Yaw1 example shows Y-axis control of Joint nodes -->
+      <!-- that through the skeleton hierarchy control -->
+      <!-- Segment geometry and Site position. -->
+      <!-- So, the following interpolator: -->
+      <!-- <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> -->
+      <!-- will start at 0 move to +1 radian of y-axis -->
+      <!-- rotation of the Joint, then return to 0. -->
+      <!-- 0 0 1 0 is default value, meaning set to -->
+      <!-- 0 radians, zero degrees. -->
+      <!-- x y z scale, all in radians 0 to <+-inf. -->
+      <!-- Thus, 1 radian in y times scale 1 = +1 radian -->
+      <!-- = about 60 degrees -->
+      <!-- 360 degrees divided by 2 times pi -->
+      <!-- Right hand rule for axes so a -->
+      <!-- positive yaw value applied to the -->
+      <!-- skullbase Joint would move the -->
+      <!-- the gaze of model toward the -->
+      <!-- model&apos;s +X direction, the model left -->
+      <!-- over the left shoulder. -->
       <TimeSensor DEF='Yaw1Timer'/>
       <PositionInterpolator DEF='Yaw1_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Yaw1_humanoid_root_RotationInterpolator'/>
@@ -3304,6 +3363,7 @@
       <OrientationInterpolator DEF='Yaw1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_sacroiliac_RotationInterpolator'/>
@@ -3451,6 +3511,7 @@
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw1Timer' toField='set_fraction' toNode='Yaw1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Yaw1_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -3500,6 +3561,7 @@
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Yaw1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Yaw1_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -3747,6 +3809,7 @@
       <OrientationInterpolator DEF='Yaw2_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_sacroiliac_RotationInterpolator'/>
@@ -3894,6 +3957,7 @@
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Yaw2Timer' toField='set_fraction' toNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Yaw2_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -3943,6 +4007,7 @@
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Yaw2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -4042,6 +4107,29 @@
       <ROUTE fromField='value_changed' fromNode='Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator' toField='set_rotation' toNode='Joe_r_carpal_distal_interphalangeal_5'/>
     </Group>
     <Group DEF='Roll1Animation_loa4'>
+      <!-- This Roll1 example shows Y-axis control of Joint nodes -->
+      <!-- that through the skeleton hierarchy control -->
+      <!-- Segment geometry and Site position. -->
+      <!-- So, the following interpolator: -->
+      <!-- <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> -->
+      <!-- will start at 0 move to +1 radian of z-axis -->
+      <!-- rotation of the Joint, then return to 0. -->
+      <!-- 0 0 1 0 is default value, meaning set to -->
+      <!-- 0 radians = zero degrees -->
+      <!-- 2pi radians = 360 degrees. -->
+      <!-- form: x y z scale -->
+      <!-- pitch, yaw, roll right hand rule -->
+      <!-- in radians 0 to <+-inf. -->
+      <!-- actual result = x y z per scale -->
+      <!-- 1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z -->
+      <!-- 1 radian = about 60 degrees -->
+      <!-- 360 degrees divided by 2 times pi -->
+      <!-- Right hand rule for axes so a -->
+      <!-- positive roll value applied to the -->
+      <!-- skullbase Joint would rotate the -->
+      <!-- the gaze of model ccw toward the -->
+      <!-- model&apos;s +X direction, the model left -->
+      <!-- toward the left shoulder. -->
       <TimeSensor DEF='Roll1Timer'/>
       <PositionInterpolator DEF='Roll1_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Roll1_humanoid_root_RotationInterpolator'/>
@@ -4190,6 +4278,7 @@
       <OrientationInterpolator DEF='Roll1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_sacroiliac_RotationInterpolator'/>
@@ -4337,6 +4426,7 @@
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='Roll1Timer' toField='set_fraction' toNode='Roll1_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Roll1_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -4386,6 +4476,7 @@
       <ROUTE fromField='value_changed' fromNode='Roll1_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Roll1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Roll1_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Roll1_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -4829,6 +4920,7 @@
       <ROUTE fromField='value_changed' fromNode='Roll2_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Roll2_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Roll2_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Roll2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Roll2_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Roll2_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Roll2_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -4929,6 +5021,7 @@
     </Group>
     <Group DEF='WalkAnimation_loa4'>
       <TimeSensor DEF='WalkTimer'/>
+      <!-- indention to match Joint hierarchy -->
       <PositionInterpolator DEF='Walk_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Walk_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='Walk_sacroiliac_RotationInterpolator'/>
@@ -5076,6 +5169,7 @@
       <OrientationInterpolator DEF='Walk_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_sacroiliac_RotationInterpolator'/>
@@ -5223,6 +5317,7 @@
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='WalkTimer' toField='set_fraction' toNode='Walk_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Walk_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Walk_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Walk_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -5272,6 +5367,7 @@
       <ROUTE fromField='value_changed' fromNode='Walk_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Walk_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Walk_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Walk_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Walk_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Walk_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Walk_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -5372,6 +5468,7 @@
     </Group>
     <Group DEF='RunAnimation_loa4'>
       <TimeSensor DEF='RunTimer'/>
+      <!-- indention to match Joint hierarchy -->
       <PositionInterpolator DEF='Run_humanoid_root_TranslationInterpolator'/>
       <OrientationInterpolator DEF='Run_humanoid_root_RotationInterpolator'/>
       <OrientationInterpolator DEF='Run_sacroiliac_RotationInterpolator'/>
@@ -5519,6 +5616,7 @@
       <OrientationInterpolator DEF='Run_r_metacarpophalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <OrientationInterpolator DEF='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Timer to Interpolators -->
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_humanoid_root_TranslationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_humanoid_root_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_sacroiliac_RotationInterpolator'/>
@@ -5666,6 +5764,7 @@
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_metacarpophalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_carpal_proximal_interphalangeal_5_RotationInterpolator'/>
       <ROUTE fromField='fraction_changed' fromNode='RunTimer' toField='set_fraction' toNode='Run_r_carpal_distal_interphalangeal_5_RotationInterpolator'/>
+      <!-- Interpolators to Joints -->
       <ROUTE fromField='value_changed' fromNode='Run_humanoid_root_TranslationInterpolator' toField='set_translation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Run_humanoid_root_RotationInterpolator' toField='set_rotation' toNode='Joe_humanoid_root'/>
       <ROUTE fromField='value_changed' fromNode='Run_sacroiliac_RotationInterpolator' toField='set_rotation' toNode='Joe_sacroiliac'/>
@@ -5715,6 +5814,7 @@
       <ROUTE fromField='value_changed' fromNode='Run_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Run_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Run_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Run_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Run_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Run_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Run_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -6158,6 +6258,7 @@
       <ROUTE fromField='value_changed' fromNode='Jump_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Jump_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Jump_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Jump_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Jump_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Jump_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Jump_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -6601,6 +6702,7 @@
       <ROUTE fromField='value_changed' fromNode='Kick1_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Kick1_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Kick1_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Kick1_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Kick1_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Kick1_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Kick1_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>
@@ -7044,6 +7146,7 @@
       <ROUTE fromField='value_changed' fromNode='Kick2_r_metatarsophalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Kick2_r_tarsal_proximal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_proximal_interphalangeal_3'/>
       <ROUTE fromField='value_changed' fromNode='Kick2_r_tarsal_distal_interphalangeal_3_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsal_distal_interphalangeal_3'/>
+      <!-- ROUTE fromField='value_changed' fromNode='Kick2_r_calcaneocuboid_RotationInterpolator' toField='set_rotation' toNode='Joe_r_calcaneocuboid'/ -->
       <ROUTE fromField='value_changed' fromNode='Kick2_r_transversetarsal_RotationInterpolator' toField='set_rotation' toNode='Joe_r_transversetarsal'/>
       <ROUTE fromField='value_changed' fromNode='Kick2_r_tarsometatarsal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_tarsometatarsal_4'/>
       <ROUTE fromField='value_changed' fromNode='Kick2_r_metatarsophalangeal_4_RotationInterpolator' toField='set_rotation' toNode='Joe_r_metatarsophalangeal_4'/>

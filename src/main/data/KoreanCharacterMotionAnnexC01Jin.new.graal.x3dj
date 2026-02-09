@@ -34,7 +34,7 @@
           },
           {
             "@name":"modified",
-            "@content":"7 January 2023"
+            "@content":"29 October 2025"
           },
           {
             "@name":"description",
@@ -46,7 +46,7 @@
           },
           {
             "@name":"reference",
-            "@content":"KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
+            "@content":"../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
           },
           {
             "@name":"reference",
@@ -66,7 +66,7 @@
           },
           {
             "@name":"generator",
-            "@content":"3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
+            "@content":"3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
           },
           {
             "@name":"generator",
@@ -74,11 +74,11 @@
           },
           {
             "@name":"generator",
-            "@content":"Gnu Image Manipulation Program, https://www.gimp.org"
+            "@content":"Gnu Image Manipulation Program, http://www.gimp.org"
           },
           {
             "@name":"generator",
-            "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+            "@content":"X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
           },
           {
             "@name":"license",

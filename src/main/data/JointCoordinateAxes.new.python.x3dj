@@ -4,7 +4,7 @@
         "encoding":"UTF-8",
         "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "@version":"4.0",
+        "@version":"4.1",
         "@profile":"Immersive",
     "head":
     {
@@ -13,13 +13,6 @@
       {
         "@content":"x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy",
         "@name":"converter"
-      }
-    },
-        "meta":
-        {
-      {
-        "@content":"Mon, 31 Jul 2023 03:48:04 GMT",
-        "@name":"converted"
       }
     },
     }    "Scene":
@@ -123,7 +116,10 @@
                             "FontStyle":
                             {
       {
-        "@DEF":"LABEL_FONT"
+        "@DEF":"LABEL_FONT",
+        "@family":""SANS"",
+        "@justify":""MIDDLE"",
+        "@size":"0.2"
       }
     },
                         }                    }                }            }        }        "Transform":
