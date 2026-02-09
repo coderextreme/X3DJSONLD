@@ -395,6 +395,10 @@ PythonSerializer.prototype = {
 						continue;
 					} else if (element.nodeName === "Background" && attr === "skyTransparency") {
 						continue;
+					} else if (attr === "DEF") {
+						continue; // print in constructor
+					} else if (attr === "USE") {
+						continue; // print in constructor
 					}
 					attrType = "SFString";
 					if (typeof fieldTypes[element.nodeName] !== 'undefined') {
@@ -412,16 +416,6 @@ PythonSerializer.prototype = {
 					}
 					str += element.nodeName+stack[0];
 					str += '.'+method+" = "+strval+"\n";
-					// console.log("2 attr", attr, "attrType", attrType);
-					/*
-					if (attr === "keyValue") {
-						console.log("method", method);
-						console.log("Result", strval);
-						console.log("3 attr", attr, "attrType", attrType);
-					} else {
-						console.log("4 attr", attr, "attrType", attrType);
-					}
-					*/
 				}
 			} catch (e) {
 			}
@@ -437,8 +431,30 @@ PythonSerializer.prototype = {
 					ch += node.nodeName.substring(1)+stack[0]+" = ";
 					ch += node.nodeValue;
 				} else {
-					ch += node.nodeName+stack[0]+" = x3d."+node.nodeName;
-					ch += "()\n";
+					var DEF = undefined;
+					var USE = undefined;
+					var DEFpar = "";
+					var USEpar = "";
+					for (let a in node.attributes) {
+						let attrs = node.attributes;
+						try {
+							parseInt(a);
+							let attrsa = attrs[a];
+							if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
+								let attr = attrsa.nodeName;
+								if (attr === "DEF") {
+									DEF = attrs[a].nodeValue;
+									DEFpar = 'DEF="'+DEF+'"';
+								} else if (attr === "USE") {
+									USE = attrs[a].nodeValue;
+									USEpar = 'USE="'+USE+'"';
+								}
+							}
+						} catch {
+							console.error("Attribute index is not an integer");
+						}
+					}
+					ch += node.nodeName+stack[0]+" = x3d."+node.nodeName+"("+USEpar+DEFpar+")\n";
 				}
 
 				let bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
@@ -487,6 +503,7 @@ PythonSerializer.prototype = {
 					method === ".layerSet" ||
 					(method === ".textureTransform" && element.nodeName === "Appearance") ||
 					(method === ".baseTexture" && element.nodeName === "PhysicalMaterial") ||
+					(method === ".metallicRoughnessTexture" && element.nodeName === "PhysicalMaterial") ||
   					((method === ".ambientTexture" || method === ".diffuseTexture" || method === ".emissiveTexture" || method === ".normalTexture" || method === ".occlusionTexture" || method === ".shininessTexture" || method === ".specularTexture") && element.nodeName.endsWith("Material")) ||
 					method === ".acousticProperties" ||
 					method === ".topTexture" ||
@@ -543,14 +560,17 @@ PythonSerializer.prototype = {
 				str += ch;
 				stack.shift();
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 8) {
+				let method = this.printParentChild(element, node, cn, mapToMethod, n);
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				// str += ".addComments(CommentsBlock(\"\"\""+y+"\"\"\")) \\\n";
+				str += element.nodeName+stack[0]+".children.append(x3d.Comment(\"\"\""+y+"\"\"\"))\n";
+				/*
 				str += y.split("\r\n").map(function(x) {
 					return x.replace(/^/g, '"""');
 					}).join("\r\n");
 				str += '"""\r\n';
+				*/
 			} else if (element.childNodes.hasOwnProperty(cn) && node.nodeType == 4) {
 				str += "\n"+element.nodeName+stack[0];
 				str += ".sourceCode = '''"+node.nodeValue.split(/\r?\n/).map(function(x) {
