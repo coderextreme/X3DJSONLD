@@ -314,7 +314,7 @@ ProtoInstance54 = x3d.ProtoInstance()
 ProtoInstance54.name = "point"
 fieldValue55 = x3d.fieldValue()
 fieldValue55.name = "translation"
-fieldValue55.value = "0 4.416667 0"
+fieldValue55.value = "0 0.9499997 0"
 
 ProtoInstance54.fieldValue.append(fieldValue55)
 
@@ -326,7 +326,7 @@ ProtoInstance57 = x3d.ProtoInstance()
 ProtoInstance57.name = "point"
 fieldValue58 = x3d.fieldValue()
 fieldValue58.name = "translation"
-fieldValue58.value = "0 4.416667 0"
+fieldValue58.value = "0 0.9499997 0"
 
 ProtoInstance57.fieldValue.append(fieldValue58)
 

@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "20 June 2001"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 07:13:13 GMT"
+meta6.content = "20 October 2019"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -70,1251 +70,1271 @@ meta14.name = "reference"
 meta14.content = "http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"
 
 head1.children.append(meta14)
+meta15 = x3d.meta()
+meta15.name = "generator"
+meta15.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta15)
+meta16 = x3d.meta()
+meta16.name = "license"
+meta16.content = "../license.html"
+
+head1.children.append(meta16)
 
 X3D0.head = head1
-Scene15 = x3d.Scene()
-WorldInfo16 = x3d.WorldInfo()
-WorldInfo16.title = "Trebuchet.x3d"
+Scene17 = x3d.Scene()
+WorldInfo18 = x3d.WorldInfo()
+WorldInfo18.title = "Trebuchet.x3d"
 
-Scene15.children.append(WorldInfo16)
-Background17 = x3d.Background()
-Background17.frontUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"]
-Background17.backUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"]
-Background17.leftUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"]
-Background17.rightUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"]
-Background17.topUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"]
-Background17.bottomUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"]
-Background17.skyAngle = [1.309,1.57079]
-Background17.skyColor = [(0, 0.2, 0.7),(0, 0.5, 1),(1, 1, 1)]
-Background17.groundAngle = [1.309,1.570796]
-Background17.groundColor = [(0.1, 0.1, 0),(0.4, 0.25, 0.2),(0.6, 0.6, 0.6)]
+Scene17.children.append(WorldInfo18)
+Background19 = x3d.Background()
+Background19.backUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"]
+Background19.bottomUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"]
+Background19.frontUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"]
+Background19.groundAngle = [1.309,1.570796]
+Background19.groundColor = [(0.1, 0.1, 0),(0.4, 0.25, 0.2),(0.6, 0.6, 0.6)]
+Background19.leftUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"]
+Background19.rightUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"]
+Background19.skyAngle = [1.309,1.57079]
+Background19.skyColor = [(0, 0.2, 0.7),(0, 0.5, 1),(1, 1, 1)]
+Background19.topUrl = ["https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"]
 
-Scene15.children.append(Background17)
-Sound18 = x3d.Sound()
-Sound18.maxBack = 1000
-Sound18.maxFront = 1000
-AudioClip19 = x3d.AudioClip(DEF="HolyGrail")
-AudioClip19.description = "HolyGrail"
-AudioClip19.url = ["holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"]
-AudioClip19.loop = True
+Scene17.children.append(Background19)
+Sound20 = x3d.Sound()
+Sound20.maxBack = 1000
+Sound20.maxFront = 1000
+AudioClip21 = x3d.AudioClip(DEF="HolyGrail")
+AudioClip21.description = "HolyGrail"
+AudioClip21.loop = True
+AudioClip21.url = ["holygral.mp3","http://www.nps.navy.mil/code32/vrml/holygral.mp3"]
 
-Sound18.source = AudioClip19
+Sound20.source = AudioClip21
 
-Scene15.children.append(Sound18)
-Shape20 = x3d.Shape()
-Appearance21 = x3d.Appearance()
-ImageTexture22 = x3d.ImageTexture()
-ImageTexture22.url = ["grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"]
-
-Appearance21.texture = ImageTexture22
-
-Shape20.appearance = Appearance21
+Scene17.children.append(Sound20)
+Shape22 = x3d.Shape()
 Box23 = x3d.Box()
 Box23.size = [10000,1,10000]
 
-Shape20.geometry = Box23
+Shape22.geometry = Box23
+Appearance24 = x3d.Appearance()
+ImageTexture25 = x3d.ImageTexture()
+ImageTexture25.url = ["grass.jpg","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"]
 
-Scene15.children.append(Shape20)
-Transform24 = x3d.Transform()
-Transform24.translation = [10.5,6.5,4.5]
-Transform24.rotation = [0,1,0,1.57]
-Transform24.scale = [0.5,0.5,0.5]
-Shape25 = x3d.Shape()
-Appearance26 = x3d.Appearance(DEF="TextAppearance")
-Material27 = x3d.Material()
-Material27.diffuseColor = [1,0,0]
-Material27.emissiveColor = [1,1,0]
+Appearance24.texture = ImageTexture25
 
-Appearance26.material = Material27
+Shape22.appearance = Appearance24
 
-Shape25.appearance = Appearance26
-Text28 = x3d.Text()
-Text28.string = ["Click Sling to Select Projectile"]
-FontStyle29 = x3d.FontStyle()
+Scene17.children.append(Shape22)
+Transform26 = x3d.Transform()
+Transform26.rotation = [0,1,0,1.57]
+Transform26.scale = [0.5,0.5,0.5]
+Transform26.translation = [10.5,6.5,4.5]
+Shape27 = x3d.Shape()
+Appearance28 = x3d.Appearance(DEF="TextAppearance")
+Material29 = x3d.Material()
+Material29.diffuseColor = [1,0,0]
+Material29.emissiveColor = [1,1,0]
 
-Text28.fontStyle = FontStyle29
+Appearance28.material = Material29
 
-Shape25.geometry = Text28
+Shape27.appearance = Appearance28
+Text30 = x3d.Text()
+Text30.string = ["Click Sling to Select Projectile"]
+FontStyle31 = x3d.FontStyle()
 
-Transform24.children.append(Shape25)
+Text30.fontStyle = FontStyle31
 
-Scene15.children.append(Transform24)
-Transform30 = x3d.Transform()
-Transform30.translation = [11,5.5,6]
-Transform30.rotation = [0,1,0,1.57]
-Transform30.scale = [0.5,0.5,0.5]
-Switch31 = x3d.Switch(DEF="Weight")
-Switch31.whichChoice = 0
-Group32 = x3d.Group()
-Shape33 = x3d.Shape()
-Appearance34 = x3d.Appearance(USE="TextAppearance")
+Shape27.geometry = Text30
 
-Shape33.appearance = Appearance34
-Text35 = x3d.Text()
-Text35.string = ["Click Here to Change Counter Weight (50 lbs)"]
+Transform26.children.append(Shape27)
 
-Shape33.geometry = Text35
+Scene17.children.append(Transform26)
+Transform32 = x3d.Transform()
+Transform32.rotation = [0,1,0,1.57]
+Transform32.scale = [0.5,0.5,0.5]
+Transform32.translation = [11,5.5,6]
+Switch33 = x3d.Switch(DEF="Weight")
+Switch33.whichChoice = 0
+Group34 = x3d.Group()
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance(USE="TextAppearance")
 
-Group32.children.append(Shape33)
+Shape35.appearance = Appearance36
+Text37 = x3d.Text()
+Text37.string = ["Click Here to Change Counter Weight (50 lbs)"]
 
-Switch31.children.append(Group32)
-Group36 = x3d.Group()
-Shape37 = x3d.Shape()
-Appearance38 = x3d.Appearance(USE="TextAppearance")
+Shape35.geometry = Text37
 
-Shape37.appearance = Appearance38
-Text39 = x3d.Text()
-Text39.string = ["Click Here to Change Counter Weight (500 lbs)"]
+Group34.children.append(Shape35)
 
-Shape37.geometry = Text39
+Switch33.children.append(Group34)
+Group38 = x3d.Group()
+Shape39 = x3d.Shape()
+Appearance40 = x3d.Appearance(USE="TextAppearance")
 
-Group36.children.append(Shape37)
+Shape39.appearance = Appearance40
+Text41 = x3d.Text()
+Text41.string = ["Click Here to Change Counter Weight (500 lbs)"]
 
-Switch31.children.append(Group36)
-Group40 = x3d.Group()
-Shape41 = x3d.Shape()
-Appearance42 = x3d.Appearance(USE="TextAppearance")
+Shape39.geometry = Text41
 
-Shape41.appearance = Appearance42
-Text43 = x3d.Text()
-Text43.string = ["Click Here to Change Counter Weight (1000 lbs)"]
+Group38.children.append(Shape39)
 
-Shape41.geometry = Text43
+Switch33.children.append(Group38)
+Group42 = x3d.Group()
+Shape43 = x3d.Shape()
+Appearance44 = x3d.Appearance(USE="TextAppearance")
 
-Group40.children.append(Shape41)
+Shape43.appearance = Appearance44
+Text45 = x3d.Text()
+Text45.string = ["Click Here to Change Counter Weight (1000 lbs)"]
 
-Switch31.children.append(Group40)
-Group44 = x3d.Group()
-Shape45 = x3d.Shape()
-Appearance46 = x3d.Appearance(USE="TextAppearance")
+Shape43.geometry = Text45
 
-Shape45.appearance = Appearance46
-Text47 = x3d.Text()
-Text47.string = ["Click Here to Change Counter Weight (10000 lbs)"]
+Group42.children.append(Shape43)
 
-Shape45.geometry = Text47
+Switch33.children.append(Group42)
+Group46 = x3d.Group()
+Shape47 = x3d.Shape()
+Appearance48 = x3d.Appearance(USE="TextAppearance")
 
-Group44.children.append(Shape45)
+Shape47.appearance = Appearance48
+Text49 = x3d.Text()
+Text49.string = ["Click Here to Change Counter Weight (10000 lbs)"]
 
-Switch31.children.append(Group44)
+Shape47.geometry = Text49
 
-Transform30.children.append(Switch31)
-TouchSensor48 = x3d.TouchSensor(DEF="weightselector")
-TouchSensor48.description = "weight selector"
+Group46.children.append(Shape47)
 
-Transform30.children.append(TouchSensor48)
-Transform49 = x3d.Transform()
-Transform49.translation = [8,0,0]
-Shape50 = x3d.Shape()
-Appearance51 = x3d.Appearance()
-Material52 = x3d.Material()
-Material52.transparency = 1
+Switch33.children.append(Group46)
 
-Appearance51.material = Material52
+Transform32.children.append(Switch33)
+TouchSensor50 = x3d.TouchSensor(DEF="weightselector")
+TouchSensor50.description = "weight selector"
 
-Shape50.appearance = Appearance51
+Transform32.children.append(TouchSensor50)
+Transform51 = x3d.Transform()
+Transform51.translation = [8,0,0]
+Shape52 = x3d.Shape()
 Box53 = x3d.Box()
 Box53.size = [20,1,1]
 
-Shape50.geometry = Box53
+Shape52.geometry = Box53
+Appearance54 = x3d.Appearance()
+Material55 = x3d.Material()
+Material55.transparency = 1
 
-Transform49.children.append(Shape50)
+Appearance54.material = Material55
 
-Transform30.children.append(Transform49)
+Shape52.appearance = Appearance54
 
-Scene15.children.append(Transform30)
-Transform54 = x3d.Transform()
-Transform54.translation = [10,0.5,4.5]
-Transform54.rotation = [0,1,0,1.57]
-Transform55 = x3d.Transform(DEF="launch")
-Transform55.translation = [0,2,5]
-Billboard56 = x3d.Billboard()
-Shape57 = x3d.Shape()
-Appearance58 = x3d.Appearance()
-Material59 = x3d.Material()
-Material59.diffuseColor = [1,0,0]
+Transform51.children.append(Shape52)
 
-Appearance58.material = Material59
+Transform32.children.append(Transform51)
 
-Shape57.appearance = Appearance58
-Text60 = x3d.Text()
-Text60.string = ["LAUNCH"]
-FontStyle61 = x3d.FontStyle()
+Scene17.children.append(Transform32)
+Transform56 = x3d.Transform()
+Transform56.rotation = [0,1,0,1.57]
+Transform56.translation = [10,0.5,4.5]
+Transform57 = x3d.Transform(DEF="launch")
+Transform57.translation = [0,2,5]
+Billboard58 = x3d.Billboard()
+Shape59 = x3d.Shape()
+Appearance60 = x3d.Appearance()
+Material61 = x3d.Material()
+Material61.diffuseColor = [1,0,0]
 
-Text60.fontStyle = FontStyle61
+Appearance60.material = Material61
 
-Shape57.geometry = Text60
+Shape59.appearance = Appearance60
+Text62 = x3d.Text()
+Text62.string = ["LAUNCH"]
+FontStyle63 = x3d.FontStyle()
 
-Billboard56.children.append(Shape57)
-Transform62 = x3d.Transform()
-Transform62.translation = [2,0.3,0]
-Shape63 = x3d.Shape()
-Appearance64 = x3d.Appearance()
-Material65 = x3d.Material()
-Material65.transparency = 1
+Text62.fontStyle = FontStyle63
 
-Appearance64.material = Material65
+Shape59.geometry = Text62
 
-Shape63.appearance = Appearance64
+Billboard58.children.append(Shape59)
+Transform64 = x3d.Transform()
+Transform64.translation = [2,0.3,0]
+Shape65 = x3d.Shape()
 Box66 = x3d.Box()
 Box66.size = [5,1,1]
 
-Shape63.geometry = Box66
+Shape65.geometry = Box66
+Appearance67 = x3d.Appearance()
+Material68 = x3d.Material()
+Material68.transparency = 1
 
-Transform62.children.append(Shape63)
+Appearance67.material = Material68
 
-Billboard56.children.append(Transform62)
-Switch67 = x3d.Switch(DEF="PigdogMonk")
-Group68 = x3d.Group()
-Sound69 = x3d.Sound()
-Sound69.maxBack = 1000
-Sound69.maxFront = 1000
-AudioClip70 = x3d.AudioClip(DEF="PigDogSound")
-AudioClip70.description = "PigDogSound"
-AudioClip70.url = ["pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"]
+Shape65.appearance = Appearance67
 
-Sound69.source = AudioClip70
+Transform64.children.append(Shape65)
 
-Group68.children.append(Sound69)
+Billboard58.children.append(Transform64)
+Switch69 = x3d.Switch(DEF="PigdogMonk")
+Switch69.whichChoice = -1
+Group70 = x3d.Group()
+Sound71 = x3d.Sound()
+Sound71.maxBack = 1000
+Sound71.maxFront = 1000
+AudioClip72 = x3d.AudioClip(DEF="PigDogSound")
+AudioClip72.description = "PigDogSound"
+AudioClip72.url = ["pigdog.wav","http://www.nps.navy.mil/code32/vrml/pigdog.wav"]
 
-Switch67.children.append(Group68)
-Group71 = x3d.Group()
-Sound72 = x3d.Sound()
-Sound72.maxBack = 1000
-Sound72.maxFront = 1000
-AudioClip73 = x3d.AudioClip(DEF="MonkSound")
-AudioClip73.description = "MonkSound"
-AudioClip73.url = ["monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"]
+Sound71.source = AudioClip72
 
-Sound72.source = AudioClip73
+Group70.children.append(Sound71)
 
-Group71.children.append(Sound72)
+Switch69.children.append(Group70)
+Group73 = x3d.Group()
+Sound74 = x3d.Sound()
+Sound74.maxBack = 1000
+Sound74.maxFront = 1000
+AudioClip75 = x3d.AudioClip(DEF="MonkSound")
+AudioClip75.description = "MonkSound"
+AudioClip75.url = ["monks.wav","http://www.nps.navy.mil/code32/vrml/monks.wav"]
 
-Switch67.children.append(Group71)
+Sound74.source = AudioClip75
 
-Billboard56.children.append(Switch67)
+Group73.children.append(Sound74)
 
-Transform55.children.append(Billboard56)
-TouchSensor74 = x3d.TouchSensor(DEF="Launch")
-TouchSensor74.description = "launch!"
+Switch69.children.append(Group73)
 
-Transform55.children.append(TouchSensor74)
+Billboard58.children.append(Switch69)
 
-Transform54.children.append(Transform55)
-Transform75 = x3d.Transform()
-Switch76 = x3d.Switch(DEF="projectilename")
-Switch76.whichChoice = 0
-Group77 = x3d.Group()
-Shape78 = x3d.Shape()
-Appearance79 = x3d.Appearance(USE="TextAppearance")
+Transform57.children.append(Billboard58)
+TouchSensor76 = x3d.TouchSensor(DEF="Launch")
+TouchSensor76.description = "launch!"
 
-Shape78.appearance = Appearance79
-Text80 = x3d.Text()
-Text80.string = ["Bowling Ball (10 lbs)"]
-FontStyle81 = x3d.FontStyle()
-FontStyle81.size = 0.5
+Transform57.children.append(TouchSensor76)
 
-Text80.fontStyle = FontStyle81
+Transform56.children.append(Transform57)
+Transform77 = x3d.Transform()
+Switch78 = x3d.Switch(DEF="projectilename")
+Switch78.whichChoice = 0
+Group79 = x3d.Group()
+Shape80 = x3d.Shape()
+Appearance81 = x3d.Appearance(USE="TextAppearance")
 
-Shape78.geometry = Text80
+Shape80.appearance = Appearance81
+Text82 = x3d.Text()
+Text82.string = ["Bowling Ball (10 lbs)"]
+FontStyle83 = x3d.FontStyle()
+FontStyle83.size = 0.5
 
-Group77.children.append(Shape78)
-Sound82 = x3d.Sound()
-Sound82.maxBack = 1000
-Sound82.maxFront = 1000
-Sound82.priority = 1
-AudioClip83 = x3d.AudioClip(DEF="HolyHandGrenadeSound")
-AudioClip83.description = "HolyHandGrenadeSound"
-AudioClip83.url = ["grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"]
+Text82.fontStyle = FontStyle83
 
-Sound82.source = AudioClip83
+Shape80.geometry = Text82
 
-Group77.children.append(Sound82)
+Group79.children.append(Shape80)
+Sound84 = x3d.Sound()
+Sound84.maxBack = 1000
+Sound84.maxFront = 1000
+Sound84.priority = 1
+AudioClip85 = x3d.AudioClip(DEF="HolyHandGrenadeSound")
+AudioClip85.description = "HolyHandGrenadeSound"
+AudioClip85.url = ["grenade.wav","http://www.nps.navy.mil/code32/vrml/grenade.wav"]
 
-Switch76.children.append(Group77)
-Group84 = x3d.Group()
-Shape85 = x3d.Shape()
-Appearance86 = x3d.Appearance(USE="TextAppearance")
+Sound84.source = AudioClip85
 
-Shape85.appearance = Appearance86
-Text87 = x3d.Text()
-Text87.string = ["Cow (1000 lbs)"]
-FontStyle88 = x3d.FontStyle()
-FontStyle88.size = 0.5
+Group79.children.append(Sound84)
 
-Text87.fontStyle = FontStyle88
+Switch78.children.append(Group79)
+Group86 = x3d.Group()
+Shape87 = x3d.Shape()
+Appearance88 = x3d.Appearance(USE="TextAppearance")
 
-Shape85.geometry = Text87
+Shape87.appearance = Appearance88
+Text89 = x3d.Text()
+Text89.string = ["Cow (1000 lbs)"]
+FontStyle90 = x3d.FontStyle()
+FontStyle90.size = 0.5
 
-Group84.children.append(Shape85)
-Sound89 = x3d.Sound()
-Sound89.maxBack = 1000
-Sound89.maxFront = 1000
-AudioClip90 = x3d.AudioClip(DEF="CowSound")
-AudioClip90.description = "CowSound"
-AudioClip90.url = ["lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"]
+Text89.fontStyle = FontStyle90
 
-Sound89.source = AudioClip90
+Shape87.geometry = Text89
 
-Group84.children.append(Sound89)
+Group86.children.append(Shape87)
+Sound91 = x3d.Sound()
+Sound91.maxBack = 1000
+Sound91.maxFront = 1000
+AudioClip92 = x3d.AudioClip(DEF="CowSound")
+AudioClip92.description = "CowSound"
+AudioClip92.url = ["lavache.wav","http://www.nps.navy.mil/code32/vrml/lavache.wav"]
 
-Switch76.children.append(Group84)
-Group91 = x3d.Group()
-Shape92 = x3d.Shape()
-Appearance93 = x3d.Appearance(USE="TextAppearance")
+Sound91.source = AudioClip92
 
-Shape92.appearance = Appearance93
-Text94 = x3d.Text()
-Text94.string = ["Chicken (5 lbs)"]
-FontStyle95 = x3d.FontStyle()
-FontStyle95.size = 0.5
+Group86.children.append(Sound91)
 
-Text94.fontStyle = FontStyle95
+Switch78.children.append(Group86)
+Group93 = x3d.Group()
+Shape94 = x3d.Shape()
+Appearance95 = x3d.Appearance(USE="TextAppearance")
 
-Shape92.geometry = Text94
+Shape94.appearance = Appearance95
+Text96 = x3d.Text()
+Text96.string = ["Chicken (5 lbs)"]
+FontStyle97 = x3d.FontStyle()
+FontStyle97.size = 0.5
 
-Group91.children.append(Shape92)
-Sound96 = x3d.Sound()
-Sound96.maxBack = 1000
-Sound96.maxFront = 1000
-Sound96.priority = 1
-AudioClip97 = x3d.AudioClip(DEF="HamsterSound")
-AudioClip97.description = "HamsterSound"
-AudioClip97.url = ["hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"]
+Text96.fontStyle = FontStyle97
 
-Sound96.source = AudioClip97
+Shape94.geometry = Text96
 
-Group91.children.append(Sound96)
+Group93.children.append(Shape94)
+Sound98 = x3d.Sound()
+Sound98.maxBack = 1000
+Sound98.maxFront = 1000
+Sound98.priority = 1
+AudioClip99 = x3d.AudioClip(DEF="HamsterSound")
+AudioClip99.description = "HamsterSound"
+AudioClip99.url = ["hamster.wav","http://www.nps.navy.mil/code32/vrml/hamster.wav"]
 
-Switch76.children.append(Group91)
+Sound98.source = AudioClip99
 
-Transform75.children.append(Switch76)
+Group93.children.append(Sound98)
 
-Transform54.children.append(Transform75)
+Switch78.children.append(Group93)
 
-Scene15.children.append(Transform54)
-Transform98 = x3d.Transform()
-Transform98.rotation = [0,1,0,-1.67]
-Transform99 = x3d.Transform(DEF="aft")
-Transform99.translation = [5,5,15]
+Transform77.children.append(Switch78)
+
+Transform56.children.append(Transform77)
+
+Scene17.children.append(Transform56)
 Transform100 = x3d.Transform()
-Transform100.translation = [-2.5,-4.5,-2]
-Transform101 = x3d.Transform(USE="launch")
+Transform100.rotation = [0,1,0,-1.67]
+Transform101 = x3d.Transform(DEF="aft")
+Transform101.translation = [5,5,15]
+Transform102 = x3d.Transform()
+Transform102.translation = [-2.5,-4.5,-2]
+Transform103 = x3d.Transform(USE="launch")
+
+Transform102.children.append(Transform103)
+
+Transform101.children.append(Transform102)
 
 Transform100.children.append(Transform101)
 
-Transform99.children.append(Transform100)
-
-Transform98.children.append(Transform99)
-
-Scene15.children.append(Transform98)
-Transform102 = x3d.Transform()
-Transform102.translation = [0,3,0]
-Shape103 = x3d.Shape(DEF="plank")
-Appearance104 = x3d.Appearance(DEF="wood")
-ImageTexture105 = x3d.ImageTexture(DEF="woodTexture")
-ImageTexture105.url = ["wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"]
-
-Appearance104.texture = ImageTexture105
-
-Shape103.appearance = Appearance104
+Scene17.children.append(Transform100)
+Transform104 = x3d.Transform()
+Transform104.translation = [0,3,0]
+Shape105 = x3d.Shape(DEF="plank")
 Box106 = x3d.Box()
 Box106.size = [25,1,1]
 
-Shape103.geometry = Box106
+Shape105.geometry = Box106
+Appearance107 = x3d.Appearance(DEF="wood")
+ImageTexture108 = x3d.ImageTexture(DEF="woodTexture")
+ImageTexture108.url = ["wood.gif","https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"]
 
-Transform102.children.append(Shape103)
-Transform107 = x3d.Transform(DEF="angledsupport")
-Transform107.translation = [-5,10,0]
-Transform107.rotation = [0,0,1,1]
-Shape108 = x3d.Shape(USE="plank")
+Appearance107.texture = ImageTexture108
 
-Transform107.children.append(Shape108)
+Shape105.appearance = Appearance107
 
-Transform102.children.append(Transform107)
-Transform109 = x3d.Transform(DEF="angledsupport2")
-Transform109.translation = [5,10,0]
-Transform109.rotation = [0,0,1,-1]
+Transform104.children.append(Shape105)
+Transform109 = x3d.Transform(DEF="angledsupport")
+Transform109.rotation = [0,0,1,1]
+Transform109.translation = [-5,10,0]
 Shape110 = x3d.Shape(USE="plank")
 
 Transform109.children.append(Shape110)
 
-Transform102.children.append(Transform109)
-Transform111 = x3d.Transform(DEF="verticalsupport")
-Transform111.translation = [0,11,0]
-Transform111.rotation = [0,0,1,1.57]
-Transform111.scale = [0.9,1,1]
+Transform104.children.append(Transform109)
+Transform111 = x3d.Transform(DEF="angledsupport2")
+Transform111.rotation = [0,0,1,-1]
+Transform111.translation = [5,10,0]
 Shape112 = x3d.Shape(USE="plank")
 
 Transform111.children.append(Shape112)
 
-Transform102.children.append(Transform111)
-Transform113 = x3d.Transform(DEF="horizontalsupport")
-Transform113.translation = [0,10,0]
-Transform113.scale = [0.4,1,1]
+Transform104.children.append(Transform111)
+Transform113 = x3d.Transform(DEF="verticalsupport")
+Transform113.rotation = [0,0,1,1.57]
+Transform113.scale = [0.9,1,1]
+Transform113.translation = [0,11,0]
 Shape114 = x3d.Shape(USE="plank")
 
 Transform113.children.append(Shape114)
+Transform113.children.append(x3d.Comment("""Main Verticle Support"""))
 
-Transform102.children.append(Transform113)
-Transform115 = x3d.Transform()
-Transform115.translation = [0,5,10]
-Transform115.rotation = [0,0,1,1.57]
-Transform115.scale = [0.6,1,1]
-Transform116 = x3d.Transform()
-Transform116.rotation = [0,1,0,0.4]
-Shape117 = x3d.Shape(USE="plank")
+Transform104.children.append(Transform113)
+Transform115 = x3d.Transform(DEF="horizontalsupport")
+Transform115.scale = [0.4,1,1]
+Transform115.translation = [0,10,0]
+Shape116 = x3d.Shape(USE="plank")
 
-Transform116.children.append(Shape117)
+Transform115.children.append(Shape116)
 
-Transform115.children.append(Transform116)
-
-Transform102.children.append(Transform115)
-Transform118 = x3d.Transform(DEF="panel")
-Transform118.translation = [0,18.2,-0.3]
-Shape119 = x3d.Shape()
-Appearance120 = x3d.Appearance(USE="wood")
-
-Shape119.appearance = Appearance120
-Box121 = x3d.Box()
-Box121.size = [5,5,0.5]
-
-Shape119.geometry = Box121
+Transform104.children.append(Transform115)
+Transform117 = x3d.Transform()
+Transform117.rotation = [0,0,1,1.57]
+Transform117.scale = [0.6,1,1]
+Transform117.translation = [0,5,10]
+Transform118 = x3d.Transform()
+Transform118.rotation = [0,1,0,0.4]
+Shape119 = x3d.Shape(USE="plank")
 
 Transform118.children.append(Shape119)
 
-Transform102.children.append(Transform118)
-Transform122 = x3d.Transform()
-Transform122.translation = [0,0.6,2.5]
-Transform122.rotation = [1,0,0,-1.57]
-Transform123 = x3d.Transform()
-Transform123.rotation = [0,0,1,1.57]
-Shape124 = x3d.Shape()
-Appearance125 = x3d.Appearance(USE="wood")
+Transform117.children.append(Transform118)
 
-Shape124.appearance = Appearance125
-Extrusion126 = x3d.Extrusion()
-Extrusion126.beginCap = False
-Extrusion126.endCap = False
-Extrusion126.solid = False
-Extrusion126.crossSection = [(1, -0.38),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, -0.38),(-1, -1.1),(1, -1.1),(1, -0.38)]
-Extrusion126.spine = [(0, 6, 0),(0, -11, 0)]
+Transform104.children.append(Transform117)
+Transform120 = x3d.Transform(DEF="panel")
+Transform120.translation = [0,18.2,-0.3]
+Shape121 = x3d.Shape()
+Box122 = x3d.Box()
+Box122.size = [5,5,0.5]
 
-Shape124.geometry = Extrusion126
+Shape121.geometry = Box122
+Appearance123 = x3d.Appearance(USE="wood")
 
-Transform123.children.append(Shape124)
+Shape121.appearance = Appearance123
 
-Transform122.children.append(Transform123)
+Transform120.children.append(Shape121)
 
-Transform102.children.append(Transform122)
-Transform127 = x3d.Transform(DEF="flinger")
-Transform127.translation = [-7,18,2.5]
-Transform127.rotation = [0,0,1,0.82]
-Transform127.scale = [0.9,1,1]
-Transform127.center = [7,0,0]
-Transform128 = x3d.Transform()
-Shape129 = x3d.Shape()
-Appearance130 = x3d.Appearance(USE="wood")
+Transform104.children.append(Transform120)
+Transform124 = x3d.Transform()
+Transform124.rotation = [1,0,0,-1.57]
+Transform124.translation = [0,0.6,2.5]
+Transform125 = x3d.Transform()
+Transform125.rotation = [0,0,1,1.57]
+Shape126 = x3d.Shape()
+Extrusion127 = x3d.Extrusion()
+Extrusion127.beginCap = False
+Extrusion127.crossSection = [(1, -0.38),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, -0.38),(-1, -1.1),(1, -1.1),(1, -0.38)]
+Extrusion127.endCap = False
+Extrusion127.solid = False
+Extrusion127.spine = [(0, 6, 0),(0, -11, 0)]
 
-Shape129.appearance = Appearance130
-Box131 = x3d.Box()
-Box131.size = [35,1,1]
+Shape126.geometry = Extrusion127
+Appearance128 = x3d.Appearance(USE="wood")
 
-Shape129.geometry = Box131
+Shape126.appearance = Appearance128
 
-Transform128.children.append(Shape129)
-Transform132 = x3d.Transform()
-Transform132.translation = [7,0,0]
-Shape133 = x3d.Shape()
-Appearance134 = x3d.Appearance(USE="wood")
+Transform125.children.append(Shape126)
 
-Shape133.appearance = Appearance134
-Box135 = x3d.Box()
-Box135.size = [8,2,2]
+Transform124.children.append(Transform125)
 
-Shape133.geometry = Box135
+Transform104.children.append(Transform124)
+Transform129 = x3d.Transform(DEF="flinger")
+Transform129.center = [7,0,0]
+Transform129.rotation = [0,0,1,0.82]
+Transform129.scale = [0.9,1,1]
+Transform129.translation = [-7,18,2.5]
+Transform130 = x3d.Transform()
+Shape131 = x3d.Shape()
+Box132 = x3d.Box()
+Box132.size = [35,1,1]
 
-Transform132.children.append(Shape133)
+Shape131.geometry = Box132
+Appearance133 = x3d.Appearance(USE="wood")
 
-Transform128.children.append(Transform132)
+Shape131.appearance = Appearance133
 
-Transform127.children.append(Transform128)
-Transform136 = x3d.Transform()
-Transform136.translation = [-15,-1,0]
-Transform136.rotation = [1,0,0,1.57]
-Transform136.scale = [0.2,0.2,0.2]
-Shape137 = x3d.Shape(DEF="Torus")
-Appearance138 = x3d.Appearance()
-Material139 = x3d.Material()
-Material139.specularColor = [1,1,1]
+Transform130.children.append(Shape131)
+Transform134 = x3d.Transform()
+Transform134.translation = [7,0,0]
+Shape135 = x3d.Shape()
+Box136 = x3d.Box()
+Box136.size = [8,2,2]
 
-Appearance138.material = Material139
+Shape135.geometry = Box136
+Appearance137 = x3d.Appearance(USE="wood")
 
-Shape137.appearance = Appearance138
-Extrusion140 = x3d.Extrusion()
-Extrusion140.beginCap = False
-Extrusion140.endCap = False
-Extrusion140.convex = False
-Extrusion140.creaseAngle = 1.57
-Extrusion140.crossSection = [(0.9, 0),(0.81, -0.34),(0.63, -0.63),(0.34, -0.83),(0, -0.9),(-0.34, -0.81),(-0.63, -0.63),(-0.81, -0.34),(-0.9, 0),(-0.81, 0.34),(-0.63, 0.63),(-0.34, 0.81),(0, 0.9),(0.38, 0.81),(0.63, 0.63),(0.81, 0.34),(0.9, 0)]
-Extrusion140.spine = [(2, 0, 0),(1.85, 0, 0.77),(1.41, 0, 1.41),(0.77, 0, 1.85),(0, 0, 2),(-0.77, 0, 1.85),(-1.41, 0, 1.41),(-1.85, 0, 0.77),(-2, 0, 0),(-1.85, 0, -0.77),(-1.41, 0, -1.41),(-0.77, 0, -1.85),(0, 0, -2),(0.77, 0, -1.85),(1.41, 0, -1.41),(1.85, 0, -0.77),(2, 0, 0)]
+Shape135.appearance = Appearance137
 
-Shape137.geometry = Extrusion140
+Transform134.children.append(Shape135)
 
-Transform136.children.append(Shape137)
-Transform141 = x3d.Transform()
-Transform141.translation = [1,0,2]
-Shape142 = x3d.Shape()
-Appearance143 = x3d.Appearance(DEF="rope")
-ImageTexture144 = x3d.ImageTexture(USE="woodTexture")
+Transform130.children.append(Transform134)
 
-Appearance143.texture = ImageTexture144
+Transform129.children.append(Transform130)
+Transform138 = x3d.Transform()
+Transform138.rotation = [1,0,0,1.57]
+Transform138.scale = [0.2,0.2,0.2]
+Transform138.translation = [-15,-1,0]
+Shape139 = x3d.Shape(DEF="Torus")
+Appearance140 = x3d.Appearance()
+Material141 = x3d.Material()
+Material141.specularColor = [1,1,1]
 
-Shape142.appearance = Appearance143
-Sphere145 = x3d.Sphere()
-Sphere145.radius = 1.5
+Appearance140.material = Material141
 
-Shape142.geometry = Sphere145
+Shape139.appearance = Appearance140
+Extrusion142 = x3d.Extrusion()
+Extrusion142.beginCap = False
+Extrusion142.convex = False
+Extrusion142.creaseAngle = 1.57
+Extrusion142.crossSection = [(0.9, 0),(0.81, -0.34),(0.63, -0.63),(0.34, -0.83),(0, -0.9),(-0.34, -0.81),(-0.63, -0.63),(-0.81, -0.34),(-0.9, 0),(-0.81, 0.34),(-0.63, 0.63),(-0.34, 0.81),(0, 0.9),(0.38, 0.81),(0.63, 0.63),(0.81, 0.34),(0.9, 0)]
+Extrusion142.endCap = False
+Extrusion142.spine = [(2, 0, 0),(1.85, 0, 0.77),(1.41, 0, 1.41),(0.77, 0, 1.85),(0, 0, 2),(-0.77, 0, 1.85),(-1.41, 0, 1.41),(-1.85, 0, 0.77),(-2, 0, 0),(-1.85, 0, -0.77),(-1.41, 0, -1.41),(-0.77, 0, -1.85),(0, 0, -2),(0.77, 0, -1.85),(1.41, 0, -1.41),(1.85, 0, -0.77),(2, 0, 0)]
 
-Transform141.children.append(Shape142)
+Shape139.geometry = Extrusion142
 
-Transform136.children.append(Transform141)
+Transform138.children.append(Shape139)
+Transform143 = x3d.Transform()
+Transform143.translation = [1,0,2]
+Shape144 = x3d.Shape()
+Appearance145 = x3d.Appearance(DEF="rope")
+ImageTexture146 = x3d.ImageTexture(USE="woodTexture")
 
-Transform127.children.append(Transform136)
-Transform146 = x3d.Transform()
-Transform146.translation = [-18.3,0.3,0]
-Transform146.rotation = [0,0,1,1.2]
-Transform146.scale = [0.2,0.2,0.2]
-Shape147 = x3d.Shape()
-Appearance148 = x3d.Appearance()
-Material149 = x3d.Material()
-Material149.specularColor = [1,1,1]
+Appearance145.texture = ImageTexture146
 
-Appearance148.material = Material149
+Shape144.appearance = Appearance145
+Sphere147 = x3d.Sphere()
+Sphere147.radius = 1.5
 
-Shape147.appearance = Appearance148
+Shape144.geometry = Sphere147
+
+Transform143.children.append(Shape144)
+Transform143.children.append(x3d.Comment("""knott"""))
+
+Transform138.children.append(Transform143)
+
+Transform129.children.append(Transform138)
+Transform129.children.append(x3d.Comment("""The Unicorn"""))
+Transform148 = x3d.Transform()
+Transform148.rotation = [0,0,1,1.2]
+Transform148.scale = [0.2,0.2,0.2]
+Transform148.translation = [-18.3,0.3,0]
+Shape149 = x3d.Shape()
 Cylinder150 = x3d.Cylinder()
 Cylinder150.height = 10
 
-Shape147.geometry = Cylinder150
+Shape149.geometry = Cylinder150
+Appearance151 = x3d.Appearance()
+Material152 = x3d.Material()
+Material152.specularColor = [1,1,1]
 
-Transform146.children.append(Shape147)
-Transform151 = x3d.Transform()
-Transform151.translation = [0,-2.5,0]
-Shape152 = x3d.Shape(USE="Torus")
+Appearance151.material = Material152
 
-Transform151.children.append(Shape152)
+Shape149.appearance = Appearance151
+
+Transform148.children.append(Shape149)
 Transform153 = x3d.Transform()
-Transform153.translation = [-2,0,0]
-Shape154 = x3d.Shape()
-Appearance155 = x3d.Appearance(USE="rope")
-
-Shape154.appearance = Appearance155
-Sphere156 = x3d.Sphere()
-Sphere156.radius = 1.5
-
-Shape154.geometry = Sphere156
+Transform153.translation = [0,-2.5,0]
+Transform153.children.append(x3d.Comment("""The Unicorn"""))
+Shape154 = x3d.Shape(USE="Torus")
 
 Transform153.children.append(Shape154)
+Transform155 = x3d.Transform()
+Transform155.translation = [-2,0,0]
+Shape156 = x3d.Shape()
+Sphere157 = x3d.Sphere()
+Sphere157.radius = 1.5
 
-Transform151.children.append(Transform153)
+Shape156.geometry = Sphere157
+Appearance158 = x3d.Appearance(USE="rope")
 
-Transform146.children.append(Transform151)
-Transform157 = x3d.Transform()
-Transform157.translation = [15,55,-11]
-Transform157.rotation = [0,0,1,1.2]
-Transform158 = x3d.Transform()
-Transform158.scale = [5,5,5]
-Shape159 = x3d.Shape()
-Appearance160 = x3d.Appearance(USE="rope")
+Shape156.appearance = Appearance158
 
-Shape159.appearance = Appearance160
-Extrusion161 = x3d.Extrusion()
-Extrusion161.beginCap = False
-Extrusion161.endCap = False
-Extrusion161.solid = False
-Extrusion161.creaseAngle = 0.76
-Extrusion161.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
-Extrusion161.spine = [(-15.2, 1.4, 2.2),(-12, -0.8, 2.2)]
+Transform155.children.append(Shape156)
+Transform155.children.append(x3d.Comment("""Knott"""))
 
-Shape159.geometry = Extrusion161
+Transform153.children.append(Transform155)
 
-Transform158.children.append(Shape159)
+Transform148.children.append(Transform153)
+Transform159 = x3d.Transform()
+Transform159.rotation = [0,0,1,1.2]
+Transform159.translation = [15,55,-11]
+Transform160 = x3d.Transform()
+Transform160.scale = [5,5,5]
+Shape161 = x3d.Shape()
+Appearance162 = x3d.Appearance(USE="rope")
 
-Transform157.children.append(Transform158)
+Shape161.appearance = Appearance162
+Extrusion163 = x3d.Extrusion()
+Extrusion163.beginCap = False
+Extrusion163.creaseAngle = 0.76
+Extrusion163.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
+Extrusion163.endCap = False
+Extrusion163.solid = False
+Extrusion163.spine = [(-15.2, 1.4, 2.2),(-12, -0.8, 2.2)]
 
-Transform146.children.append(Transform157)
+Shape161.geometry = Extrusion163
 
-Transform127.children.append(Transform146)
-Transform162 = x3d.Transform()
-Transform162.translation = [-17,-4.5,0]
-Transform162.rotation = [1,0,0,-1.7]
-Transform163 = x3d.Transform()
-Transform163.scale = [0.2,0.2,0.2]
-Shape164 = x3d.Shape(USE="Torus")
+Transform160.children.append(Shape161)
 
-Transform163.children.append(Shape164)
+Transform159.children.append(Transform160)
+
+Transform148.children.append(Transform159)
+
+Transform129.children.append(Transform148)
+Transform164 = x3d.Transform()
+Transform164.rotation = [1,0,0,-1.7]
+Transform164.translation = [-17,-4.5,0]
 Transform165 = x3d.Transform()
-Transform165.translation = [-1,0,1.7]
-Shape166 = x3d.Shape()
-Appearance167 = x3d.Appearance(USE="rope")
-
-Shape166.appearance = Appearance167
-Sphere168 = x3d.Sphere()
-Sphere168.radius = 1.5
-
-Shape166.geometry = Sphere168
+Transform165.scale = [0.2,0.2,0.2]
+Transform165.children.append(x3d.Comment("""Knot"""))
+Shape166 = x3d.Shape(USE="Torus")
 
 Transform165.children.append(Shape166)
+Transform167 = x3d.Transform()
+Transform167.translation = [-1,0,1.7]
+Shape168 = x3d.Shape()
+Sphere169 = x3d.Sphere()
+Sphere169.radius = 1.5
 
-Transform163.children.append(Transform165)
+Shape168.geometry = Sphere169
+Appearance170 = x3d.Appearance(USE="rope")
 
-Transform162.children.append(Transform163)
+Shape168.appearance = Appearance170
 
-Transform127.children.append(Transform162)
-Transform169 = x3d.Transform(DEF="RnS")
-Transform170 = x3d.Transform(DEF="ropes")
-Transform171 = x3d.Transform()
-Transform171.translation = [7,-26,-2.5]
-Transform171.rotation = [0,0,1,-0.82]
-Shape172 = x3d.Shape()
-Appearance173 = x3d.Appearance(USE="rope")
+Transform167.children.append(Shape168)
 
-Shape172.appearance = Appearance173
-Extrusion174 = x3d.Extrusion()
-Extrusion174.beginCap = False
-Extrusion174.endCap = False
-Extrusion174.solid = False
-Extrusion174.creaseAngle = 0.76
-Extrusion174.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
-Extrusion174.spine = [(-33, 0.9, 2.5),(-18.5, 1.9, 2.55)]
+Transform165.children.append(Transform167)
 
-Shape172.geometry = Extrusion174
+Transform164.children.append(Transform165)
 
-Transform171.children.append(Shape172)
-Shape175 = x3d.Shape()
-Appearance176 = x3d.Appearance(USE="rope")
+Transform129.children.append(Transform164)
+Transform171 = x3d.Transform(DEF="RnS")
+Transform172 = x3d.Transform(DEF="ropes")
+Transform173 = x3d.Transform()
+Transform173.rotation = [0,0,1,-0.82]
+Transform173.translation = [7,-26,-2.5]
+Shape174 = x3d.Shape()
+Appearance175 = x3d.Appearance(USE="rope")
 
-Shape175.appearance = Appearance176
-Extrusion177 = x3d.Extrusion()
-Extrusion177.beginCap = False
-Extrusion177.endCap = False
-Extrusion177.solid = False
-Extrusion177.creaseAngle = 0.76
-Extrusion177.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
-Extrusion177.spine = [(-35.7, -0.8, 2.5),(-18.8, -0.8, 2.55)]
+Shape174.appearance = Appearance175
+Extrusion176 = x3d.Extrusion()
+Extrusion176.beginCap = False
+Extrusion176.creaseAngle = 0.76
+Extrusion176.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
+Extrusion176.endCap = False
+Extrusion176.solid = False
+Extrusion176.spine = [(-33, 0.9, 2.5),(-18.5, 1.9, 2.55)]
 
-Shape175.geometry = Extrusion177
+Shape174.geometry = Extrusion176
 
-Transform171.children.append(Shape175)
+Transform173.children.append(Shape174)
+Shape177 = x3d.Shape()
+Appearance178 = x3d.Appearance(USE="rope")
 
-Transform170.children.append(Transform171)
+Shape177.appearance = Appearance178
+Extrusion179 = x3d.Extrusion()
+Extrusion179.beginCap = False
+Extrusion179.creaseAngle = 0.76
+Extrusion179.crossSection = [(0.1, 0),(0.092, -0.038),(0.071, -0.071),(0.038, -0.092),(0, -0.1),(-0.038, -0.092),(-0.071, -0.071),(-0.092, -0.038),(-0.1, 0),(-0.092, 0.038),(-0.071, 0.071),(-0.038, 0.092),(0, 0.1),(0.038, 0.092),(0.071, 0.071),(0.092, 0.038),(0.1, 0)]
+Extrusion179.endCap = False
+Extrusion179.solid = False
+Extrusion179.spine = [(-35.7, -0.8, 2.5),(-18.8, -0.8, 2.55)]
 
-Transform169.children.append(Transform170)
-Transform178 = x3d.Transform(DEF="sling")
-Transform178.translation = [-4,-15.3,0]
-Transform178.rotation = [0,0,1,-0.82]
-Transform179 = x3d.Transform()
-Transform180 = x3d.Transform()
-Transform180.translation = [0.5,0,-1]
-Transform180.rotation = [0,1,0,-1.57]
-Transform180.scale = [1,1.3,1]
+Shape177.geometry = Extrusion179
+
+Transform173.children.append(Shape177)
+
+Transform172.children.append(Transform173)
+
+Transform171.children.append(Transform172)
+Transform180 = x3d.Transform(DEF="sling")
+Transform180.rotation = [0,0,1,-0.82]
+Transform180.translation = [-4,-15.3,0]
 Transform181 = x3d.Transform()
-Transform181.rotation = [0,0,1,1.57]
 Transform182 = x3d.Transform()
-Transform182.scale = [0.3,0.3,0.3]
-Shape183 = x3d.Shape(DEF="halfsling")
-Appearance184 = x3d.Appearance(DEF="clear")
-Material185 = x3d.Material()
-Material185.transparency = 0.5
+Transform182.rotation = [0,1,0,-1.57]
+Transform182.scale = [1,1.3,1]
+Transform182.translation = [0.5,0,-1]
+Transform183 = x3d.Transform()
+Transform183.rotation = [0,0,1,1.57]
+Transform184 = x3d.Transform()
+Transform184.scale = [0.3,0.3,0.3]
+Shape185 = x3d.Shape(DEF="halfsling")
+Appearance186 = x3d.Appearance(DEF="clear")
+Material187 = x3d.Material()
+Material187.transparency = 0.5
 
-Appearance184.material = Material185
+Appearance186.material = Material187
 
-Shape183.appearance = Appearance184
-Extrusion186 = x3d.Extrusion()
-Extrusion186.crossSection = [(0, 0),(0, 5),(0.5, 7),(1, 8),(2, 9),(3, 11),(3.5, 11.2),(4, 11),(5, 9),(6, 8),(6.5, 7),(6.7, 5),(6.7, 0),(0, 0)]
-Extrusion186.spine = [(0, 0, 0),(0.1, 0, 0)]
+Shape185.appearance = Appearance186
+Extrusion188 = x3d.Extrusion()
+Extrusion188.crossSection = [(0, 0),(0, 5),(0.5, 7),(1, 8),(2, 9),(3, 11),(3.5, 11.2),(4, 11),(5, 9),(6, 8),(6.5, 7),(6.7, 5),(6.7, 0),(0, 0)]
+Extrusion188.spine = [(0, 0, 0),(0.1, 0, 0)]
 
-Shape183.geometry = Extrusion186
+Shape185.geometry = Extrusion188
 
-Transform182.children.append(Shape183)
-Transform187 = x3d.Transform()
-Transform187.translation = [0,-3.5,11.5]
-Transform187.scale = [0.3,0.3,0.3]
-Shape188 = x3d.Shape(USE="Torus")
-
-Transform187.children.append(Shape188)
+Transform184.children.append(Shape185)
 Transform189 = x3d.Transform()
-Transform189.translation = [0,0,2]
-Shape190 = x3d.Shape()
-Appearance191 = x3d.Appearance(USE="rope")
-
-Shape190.appearance = Appearance191
-Sphere192 = x3d.Sphere()
-Sphere192.radius = 1.5
-
-Shape190.geometry = Sphere192
+Transform189.scale = [0.3,0.3,0.3]
+Transform189.translation = [0,-3.5,11.5]
+Shape190 = x3d.Shape(USE="Torus")
 
 Transform189.children.append(Shape190)
+Transform191 = x3d.Transform()
+Transform191.translation = [0,0,2]
+Shape192 = x3d.Shape()
+Appearance193 = x3d.Appearance(USE="rope")
 
-Transform187.children.append(Transform189)
+Shape192.appearance = Appearance193
+Sphere194 = x3d.Sphere()
+Sphere194.radius = 1.5
 
-Transform182.children.append(Transform187)
+Shape192.geometry = Sphere194
 
-Transform181.children.append(Transform182)
-Transform193 = x3d.Transform()
-Transform193.translation = [2,0,0]
-Transform193.scale = [0.3,0.3,0.3]
-Shape194 = x3d.Shape(USE="halfsling")
+Transform191.children.append(Shape192)
 
-Transform193.children.append(Shape194)
+Transform189.children.append(Transform191)
+
+Transform184.children.append(Transform189)
+
+Transform183.children.append(Transform184)
 Transform195 = x3d.Transform()
-Transform195.translation = [0,-3.5,11.3]
 Transform195.scale = [0.3,0.3,0.3]
-Shape196 = x3d.Shape(USE="Torus")
+Transform195.translation = [2,0,0]
+Shape196 = x3d.Shape(USE="halfsling")
 
 Transform195.children.append(Shape196)
 Transform197 = x3d.Transform()
-Transform197.translation = [0,0,2]
-Shape198 = x3d.Shape()
-Appearance199 = x3d.Appearance(USE="rope")
-
-Shape198.appearance = Appearance199
-Sphere200 = x3d.Sphere()
-Sphere200.radius = 1.5
-
-Shape198.geometry = Sphere200
+Transform197.scale = [0.3,0.3,0.3]
+Transform197.translation = [0,-3.5,11.3]
+Shape198 = x3d.Shape(USE="Torus")
 
 Transform197.children.append(Shape198)
+Transform199 = x3d.Transform()
+Transform199.translation = [0,0,2]
+Shape200 = x3d.Shape()
+Appearance201 = x3d.Appearance(USE="rope")
+
+Shape200.appearance = Appearance201
+Sphere202 = x3d.Sphere()
+Sphere202.radius = 1.5
+
+Shape200.geometry = Sphere202
+
+Transform199.children.append(Shape200)
+
+Transform197.children.append(Transform199)
 
 Transform195.children.append(Transform197)
 
-Transform193.children.append(Transform195)
+Transform183.children.append(Transform195)
+Transform203 = x3d.Transform()
+Transform203.translation = [1,-1,0]
+Shape204 = x3d.Shape()
+Extrusion205 = x3d.Extrusion()
+Extrusion205.beginCap = False
+Extrusion205.creaseAngle = 0.785
+Extrusion205.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0)]
+Extrusion205.endCap = False
+Extrusion205.solid = False
+Extrusion205.spine = [(0, -1, 0),(0, 1, 0)]
 
-Transform181.children.append(Transform193)
-Transform201 = x3d.Transform()
-Transform201.translation = [1,-1,0]
-Shape202 = x3d.Shape()
-Appearance203 = x3d.Appearance(USE="clear")
+Shape204.geometry = Extrusion205
+Appearance206 = x3d.Appearance(USE="clear")
 
-Shape202.appearance = Appearance203
-Extrusion204 = x3d.Extrusion()
-Extrusion204.beginCap = False
-Extrusion204.endCap = False
-Extrusion204.solid = False
-Extrusion204.creaseAngle = 0.785
-Extrusion204.crossSection = [(1, 0),(0.92, -0.38),(0.71, -0.71),(0.38, -0.92),(0, -1),(-0.38, -0.92),(-0.71, -0.71),(-0.92, -0.38),(-1, 0)]
-Extrusion204.spine = [(0, -1, 0),(0, 1, 0)]
+Shape204.appearance = Appearance206
 
-Shape202.geometry = Extrusion204
+Transform203.children.append(Shape204)
 
-Transform201.children.append(Shape202)
+Transform183.children.append(Transform203)
 
-Transform181.children.append(Transform201)
+Transform182.children.append(Transform183)
+TouchSensor207 = x3d.TouchSensor(DEF="LauncheeChoice")
+TouchSensor207.description = "launcher choice"
 
-Transform180.children.append(Transform181)
-TouchSensor205 = x3d.TouchSensor(DEF="LauncheeChoice")
-TouchSensor205.description = "launcher choice"
+Transform182.children.append(TouchSensor207)
 
-Transform180.children.append(TouchSensor205)
-
-Transform179.children.append(Transform180)
-Transform206 = x3d.Transform(DEF="projectiletransform")
-Transform206.scale = [0.01,0.01,0.01]
-Switch207 = x3d.Switch(DEF="projectile")
-Switch207.whichChoice = 0
-Group208 = x3d.Group()
-Transform209 = x3d.Transform()
-Transform209.translation = [0,0.7,0]
-Shape210 = x3d.Shape()
-Appearance211 = x3d.Appearance(DEF="black")
-Material212 = x3d.Material()
-Material212.diffuseColor = [0,0,0]
-Material212.specularColor = [1,1,1]
-
-Appearance211.material = Material212
-
-Shape210.appearance = Appearance211
+Transform181.children.append(Transform182)
+Transform208 = x3d.Transform(DEF="projectiletransform")
+Transform208.scale = [0.01,0.01,0.01]
+Switch209 = x3d.Switch(DEF="projectile")
+Switch209.whichChoice = 0
+Group210 = x3d.Group()
+Transform211 = x3d.Transform()
+Transform211.translation = [0,0.7,0]
+Shape212 = x3d.Shape()
 Sphere213 = x3d.Sphere()
 Sphere213.radius = 0.7
 
-Shape210.geometry = Sphere213
+Shape212.geometry = Sphere213
+Appearance214 = x3d.Appearance(DEF="black")
+Material215 = x3d.Material()
+Material215.diffuseColor = [0,0,0]
+Material215.specularColor = [1,1,1]
 
-Transform209.children.append(Shape210)
+Appearance214.material = Material215
 
-Group208.children.append(Transform209)
+Shape212.appearance = Appearance214
 
-Switch207.children.append(Group208)
-Group214 = x3d.Group()
-Transform215 = x3d.Transform()
-Inline216 = x3d.Inline()
-Inline216.url = ["cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"]
+Transform211.children.append(Shape212)
 
-Transform215.children.append(Inline216)
+Group210.children.append(Transform211)
 
-Group214.children.append(Transform215)
+Switch209.children.append(Group210)
+Group216 = x3d.Group()
+Transform217 = x3d.Transform()
+Inline218 = x3d.Inline()
+Inline218.url = ["cow.wrl","http://www.uoguelph.ca/~dchiu/cow.wrl"]
 
-Switch207.children.append(Group214)
-Group217 = x3d.Group()
-Transform218 = x3d.Transform()
-Transform218.translation = [0,0.7,0]
-Transform218.rotation = [0,1,0,1.57]
-Transform218.scale = [0.4,0.4,0.4]
-Inline219 = x3d.Inline()
-Inline219.url = ["vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"]
+Transform217.children.append(Inline218)
 
-Transform218.children.append(Inline219)
+Group216.children.append(Transform217)
 
-Group217.children.append(Transform218)
-
-Switch207.children.append(Group217)
-
-Transform206.children.append(Switch207)
-
-Transform179.children.append(Transform206)
-
-Transform178.children.append(Transform179)
-
-Transform169.children.append(Transform178)
-
-Transform127.children.append(Transform169)
-
-Transform102.children.append(Transform127)
+Switch209.children.append(Group216)
+Group219 = x3d.Group()
 Transform220 = x3d.Transform()
-Transform220.translation = [0,18,2.5]
-Transform220.rotation = [1,0,0,1.57]
-Shape221 = x3d.Shape()
-Appearance222 = x3d.Appearance()
-Material223 = x3d.Material()
-Material223.diffuseColor = [0,0,0]
-Material223.specularColor = [1,1,1]
+Transform220.rotation = [0,1,0,1.57]
+Transform220.scale = [0.4,0.4,0.4]
+Transform220.translation = [0,0.7,0]
+Inline221 = x3d.Inline()
+Inline221.url = ["vrml_ginger.wrl","http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"]
 
-Appearance222.material = Material223
+Transform220.children.append(Inline221)
 
-Shape221.appearance = Appearance222
+Group219.children.append(Transform220)
+
+Switch209.children.append(Group219)
+
+Transform208.children.append(Switch209)
+
+Transform181.children.append(Transform208)
+
+Transform180.children.append(Transform181)
+
+Transform171.children.append(Transform180)
+
+Transform129.children.append(Transform171)
+
+Transform104.children.append(Transform129)
+Transform222 = x3d.Transform()
+Transform222.rotation = [1,0,0,1.57]
+Transform222.translation = [0,18,2.5]
+Shape223 = x3d.Shape()
 Cylinder224 = x3d.Cylinder()
 Cylinder224.height = 8
 Cylinder224.radius = 0.4
 
-Shape221.geometry = Cylinder224
+Shape223.geometry = Cylinder224
+Appearance225 = x3d.Appearance()
+Material226 = x3d.Material()
+Material226.diffuseColor = [0,0,0]
+Material226.specularColor = [1,1,1]
 
-Transform220.children.append(Shape221)
+Appearance225.material = Material226
 
-Transform102.children.append(Transform220)
-Transform225 = x3d.Transform(DEF="verticalweight")
-Transform226 = x3d.Transform()
-Transform226.translation = [4,18,1.8]
-Shape227 = x3d.Shape()
-Appearance228 = x3d.Appearance(USE="wood")
+Shape223.appearance = Appearance225
 
-Shape227.appearance = Appearance228
-Box229 = x3d.Box()
-Box229.size = [1,10,0.5]
+Transform222.children.append(Shape223)
+Transform222.children.append(x3d.Comment("""Top Pivot"""))
 
-Shape227.geometry = Box229
+Transform104.children.append(Transform222)
+Transform227 = x3d.Transform(DEF="verticalweight")
+Transform228 = x3d.Transform()
+Transform228.translation = [4,18,1.8]
+Shape229 = x3d.Shape()
+Box230 = x3d.Box()
+Box230.size = [1,10,0.5]
 
-Transform226.children.append(Shape227)
+Shape229.geometry = Box230
+Appearance231 = x3d.Appearance(USE="wood")
 
-Transform225.children.append(Transform226)
-Transform230 = x3d.Transform()
-Transform230.translation = [4,18,3.2]
-Shape231 = x3d.Shape()
-Appearance232 = x3d.Appearance(USE="wood")
+Shape229.appearance = Appearance231
 
-Shape231.appearance = Appearance232
-Box233 = x3d.Box()
-Box233.size = [1,10,0.5]
+Transform228.children.append(Shape229)
 
-Shape231.geometry = Box233
+Transform227.children.append(Transform228)
+Transform232 = x3d.Transform()
+Transform232.translation = [4,18,3.2]
+Shape233 = x3d.Shape()
+Box234 = x3d.Box()
+Box234.size = [1,10,0.5]
 
-Transform230.children.append(Shape231)
+Shape233.geometry = Box234
+Appearance235 = x3d.Appearance(USE="wood")
 
-Transform225.children.append(Transform230)
-Transform234 = x3d.Transform()
-Transform234.translation = [4,14,2.5]
-Shape235 = x3d.Shape()
-Appearance236 = x3d.Appearance()
-Material237 = x3d.Material()
-Material237.diffuseColor = [0,0,0]
-Material237.specularColor = [1,1,1]
+Shape233.appearance = Appearance235
 
-Appearance236.material = Material237
+Transform232.children.append(Shape233)
 
-Shape235.appearance = Appearance236
+Transform227.children.append(Transform232)
+Transform236 = x3d.Transform()
+Transform236.translation = [4,14,2.5]
+Transform236.children.append(x3d.Comment("""CounterWeight"""))
+Shape237 = x3d.Shape()
 Cylinder238 = x3d.Cylinder()
 Cylinder238.height = 4
 Cylinder238.radius = 1.5
 
-Shape235.geometry = Cylinder238
+Shape237.geometry = Cylinder238
+Appearance239 = x3d.Appearance()
+Material240 = x3d.Material()
+Material240.diffuseColor = [0,0,0]
+Material240.specularColor = [1,1,1]
 
-Transform234.children.append(Shape235)
+Appearance239.material = Material240
 
-Transform225.children.append(Transform234)
-Transform239 = x3d.Transform()
-Transform239.translation = [4,22,2.5]
-Transform239.rotation = [1,0,0,1.57]
-Shape240 = x3d.Shape()
-Appearance241 = x3d.Appearance()
-Material242 = x3d.Material()
-Material242.diffuseColor = [0,0,0]
-Material242.specularColor = [1,1,1]
+Shape237.appearance = Appearance239
 
-Appearance241.material = Material242
+Transform236.children.append(Shape237)
 
-Shape240.appearance = Appearance241
+Transform227.children.append(Transform236)
+Transform241 = x3d.Transform()
+Transform241.rotation = [1,0,0,1.57]
+Transform241.translation = [4,22,2.5]
+Shape242 = x3d.Shape()
 Cylinder243 = x3d.Cylinder()
 Cylinder243.height = 2.5
 Cylinder243.radius = 0.3
 
-Shape240.geometry = Cylinder243
+Shape242.geometry = Cylinder243
+Appearance244 = x3d.Appearance()
+Material245 = x3d.Material()
+Material245.diffuseColor = [0,0,0]
+Material245.specularColor = [1,1,1]
 
-Transform239.children.append(Shape240)
+Appearance244.material = Material245
 
-Transform225.children.append(Transform239)
+Shape242.appearance = Appearance244
 
-Transform102.children.append(Transform225)
-Transform244 = x3d.Transform()
-Transform244.translation = [-11.5,-1,2]
-Transform244.rotation = [0,0,1,1.57]
-Transform244.scale = [0.2,0.2,0.2]
-Transform245 = x3d.Transform(DEF="screw")
-Transform245.rotation = [1,0,0,1.57]
-Shape246 = x3d.Shape(USE="Torus")
+Transform241.children.append(Shape242)
 
-Transform245.children.append(Shape246)
-Transform247 = x3d.Transform()
-Transform247.translation = [0,0,7]
-Transform247.rotation = [1,0,0,-1.57]
-Shape248 = x3d.Shape()
-Appearance249 = x3d.Appearance()
-Material250 = x3d.Material()
-Material250.specularColor = [1,1,1]
+Transform227.children.append(Transform241)
 
-Appearance249.material = Material250
+Transform104.children.append(Transform227)
+Transform246 = x3d.Transform()
+Transform246.rotation = [0,0,1,1.57]
+Transform246.scale = [0.2,0.2,0.2]
+Transform246.translation = [-11.5,-1,2]
+Transform247 = x3d.Transform(DEF="screw")
+Transform247.rotation = [1,0,0,1.57]
+Shape248 = x3d.Shape(USE="Torus")
 
-Shape248.appearance = Appearance249
+Transform247.children.append(Shape248)
+Transform249 = x3d.Transform()
+Transform249.rotation = [1,0,0,-1.57]
+Transform249.translation = [0,0,7]
+Shape250 = x3d.Shape()
 Cylinder251 = x3d.Cylinder()
 Cylinder251.height = 10
 Cylinder251.radius = 0.7
 
-Shape248.geometry = Cylinder251
+Shape250.geometry = Cylinder251
+Appearance252 = x3d.Appearance()
+Material253 = x3d.Material()
+Material253.specularColor = [1,1,1]
 
-Transform247.children.append(Shape248)
+Appearance252.material = Material253
 
-Transform245.children.append(Transform247)
+Shape250.appearance = Appearance252
 
-Transform244.children.append(Transform245)
-Transform252 = x3d.Transform()
-Transform252.translation = [0,0,7]
-Transform253 = x3d.Transform(USE="screw")
+Transform249.children.append(Shape250)
 
-Transform252.children.append(Transform253)
+Transform247.children.append(Transform249)
 
-Transform244.children.append(Transform252)
-Transform254 = x3d.Transform(DEF="Pin")
-Transform254.translation = [0,0,-3]
-Transform254.rotation = [1,0,0,-1.57]
+Transform246.children.append(Transform247)
+Transform254 = x3d.Transform()
+Transform254.translation = [0,0,7]
 Transform255 = x3d.Transform(USE="screw")
 
 Transform254.children.append(Transform255)
 
-Transform244.children.append(Transform254)
+Transform246.children.append(Transform254)
+Transform246.children.append(x3d.Comment("""Release Pin"""))
+Transform256 = x3d.Transform(DEF="Pin")
+Transform256.rotation = [1,0,0,-1.57]
+Transform256.translation = [0,0,-3]
+Transform257 = x3d.Transform(USE="screw")
 
-Transform102.children.append(Transform244)
-Transform256 = x3d.Transform()
-Transform256.translation = [0,0,5]
-Shape257 = x3d.Shape(USE="plank")
+Transform256.children.append(Transform257)
 
-Transform256.children.append(Shape257)
-Transform258 = x3d.Transform(USE="angledsupport")
+Transform246.children.append(Transform256)
 
-Transform256.children.append(Transform258)
-Transform259 = x3d.Transform(USE="angledsupport2")
+Transform104.children.append(Transform246)
+Transform258 = x3d.Transform()
+Transform258.translation = [0,0,5]
+Shape259 = x3d.Shape(USE="plank")
 
-Transform256.children.append(Transform259)
-Transform260 = x3d.Transform(USE="verticalsupport")
+Transform258.children.append(Shape259)
+Transform260 = x3d.Transform(USE="angledsupport")
 
-Transform256.children.append(Transform260)
-Transform261 = x3d.Transform(USE="horizontalsupport")
+Transform258.children.append(Transform260)
+Transform261 = x3d.Transform(USE="angledsupport2")
 
-Transform256.children.append(Transform261)
-Transform262 = x3d.Transform()
-Transform262.translation = [0,-11,-2.5]
-Transform262.rotation = [0,1,0,1.57]
-Transform262.scale = [0.6,1,1]
+Transform258.children.append(Transform261)
+Transform262 = x3d.Transform(USE="verticalsupport")
+
+Transform258.children.append(Transform262)
 Transform263 = x3d.Transform(USE="horizontalsupport")
 
-Transform262.children.append(Transform263)
-
-Transform256.children.append(Transform262)
+Transform258.children.append(Transform263)
 Transform264 = x3d.Transform()
-Transform264.translation = [0,5,-10]
-Transform264.rotation = [0,0,1,-1.57]
+Transform264.rotation = [0,1,0,1.57]
 Transform264.scale = [0.6,1,1]
-Transform265 = x3d.Transform()
-Transform265.rotation = [0,1,0,0.4]
-Shape266 = x3d.Shape(USE="plank")
-
-Transform265.children.append(Shape266)
+Transform264.translation = [0,-11,-2.5]
+Transform265 = x3d.Transform(USE="horizontalsupport")
 
 Transform264.children.append(Transform265)
 
-Transform256.children.append(Transform264)
+Transform258.children.append(Transform264)
+Transform266 = x3d.Transform()
+Transform266.rotation = [0,0,1,-1.57]
+Transform266.scale = [0.6,1,1]
+Transform266.translation = [0,5,-10]
 Transform267 = x3d.Transform()
-Transform267.translation = [0,0,0.6]
-Transform268 = x3d.Transform(USE="panel")
+Transform267.rotation = [0,1,0,0.4]
+Shape268 = x3d.Shape(USE="plank")
 
-Transform267.children.append(Transform268)
+Transform267.children.append(Shape268)
 
-Transform256.children.append(Transform267)
+Transform266.children.append(Transform267)
 
-Transform102.children.append(Transform256)
+Transform258.children.append(Transform266)
 Transform269 = x3d.Transform()
-Transform269.translation = [10,-1,2.5]
-Shape270 = x3d.Shape(DEF="Axle")
-Appearance271 = x3d.Appearance(USE="wood")
+Transform269.translation = [0,0,0.6]
+Transform270 = x3d.Transform(USE="panel")
 
-Shape270.appearance = Appearance271
-Box272 = x3d.Box()
-Box272.size = [1,1,8]
+Transform269.children.append(Transform270)
 
-Shape270.geometry = Box272
+Transform258.children.append(Transform269)
 
-Transform269.children.append(Shape270)
-Transform273 = x3d.Transform()
-Transform273.translation = [0,0,4.5]
-Transform273.rotation = [1,0,0,1.57]
-Shape274 = x3d.Shape(DEF="wheel")
-Appearance275 = x3d.Appearance(USE="wood")
+Transform104.children.append(Transform258)
+Transform271 = x3d.Transform()
+Transform271.translation = [10,-1,2.5]
+Shape272 = x3d.Shape(DEF="Axle")
+Box273 = x3d.Box()
+Box273.size = [1,1,8]
 
-Shape274.appearance = Appearance275
-Cylinder276 = x3d.Cylinder()
-Cylinder276.radius = 2
+Shape272.geometry = Box273
+Appearance274 = x3d.Appearance(USE="wood")
 
-Shape274.geometry = Cylinder276
+Shape272.appearance = Appearance274
 
-Transform273.children.append(Shape274)
-Shape277 = x3d.Shape(DEF="tracks")
-Appearance278 = x3d.Appearance(USE="black")
+Transform271.children.append(Shape272)
+Transform275 = x3d.Transform()
+Transform275.rotation = [1,0,0,1.57]
+Transform275.translation = [0,0,4.5]
+Shape276 = x3d.Shape(DEF="wheel")
+Cylinder277 = x3d.Cylinder()
+Cylinder277.radius = 2
 
-Shape277.appearance = Appearance278
-Sphere279 = x3d.Sphere()
-Sphere279.radius = 1.5
+Shape276.geometry = Cylinder277
+Appearance278 = x3d.Appearance(USE="wood")
 
-Shape277.geometry = Sphere279
+Shape276.appearance = Appearance278
 
-Transform273.children.append(Shape277)
-Transform280 = x3d.Transform()
-Transform280.translation = [0,0.55,0]
-Shape281 = x3d.Shape(DEF="hub")
-Appearance282 = x3d.Appearance(USE="black")
+Transform275.children.append(Shape276)
+Shape279 = x3d.Shape(DEF="tracks")
+Sphere280 = x3d.Sphere()
+Sphere280.radius = 1.5
 
-Shape281.appearance = Appearance282
-Sphere283 = x3d.Sphere()
-Sphere283.radius = 1.5
+Shape279.geometry = Sphere280
+Appearance281 = x3d.Appearance(USE="black")
 
-Shape281.geometry = Sphere283
+Shape279.appearance = Appearance281
 
-Transform280.children.append(Shape281)
+Transform275.children.append(Shape279)
+Transform282 = x3d.Transform()
+Transform282.translation = [0,0.55,0]
+Shape283 = x3d.Shape(DEF="hub")
+Sphere284 = x3d.Sphere()
+Sphere284.radius = 1.5
 
-Transform273.children.append(Transform280)
+Shape283.geometry = Sphere284
+Appearance285 = x3d.Appearance(USE="black")
 
-Transform269.children.append(Transform273)
-Transform284 = x3d.Transform()
-Transform284.translation = [0,0,-4.5]
-Transform284.rotation = [1,0,0,1.57]
-Shape285 = x3d.Shape(USE="wheel")
+Shape283.appearance = Appearance285
 
-Transform284.children.append(Shape285)
-Shape286 = x3d.Shape(USE="tracks")
+Transform282.children.append(Shape283)
 
-Transform284.children.append(Shape286)
-Transform287 = x3d.Transform()
-Transform287.translation = [0,-0.55,0]
-Shape288 = x3d.Shape(USE="hub")
+Transform275.children.append(Transform282)
 
-Transform287.children.append(Shape288)
+Transform271.children.append(Transform275)
+Transform286 = x3d.Transform()
+Transform286.rotation = [1,0,0,1.57]
+Transform286.translation = [0,0,-4.5]
+Shape287 = x3d.Shape(USE="wheel")
 
-Transform284.children.append(Transform287)
+Transform286.children.append(Shape287)
+Shape288 = x3d.Shape(USE="tracks")
 
-Transform269.children.append(Transform284)
-
-Transform102.children.append(Transform269)
+Transform286.children.append(Shape288)
 Transform289 = x3d.Transform()
-Transform289.translation = [-10,-1,2.5]
-Shape290 = x3d.Shape(USE="Axle")
+Transform289.translation = [0,-0.55,0]
+Shape290 = x3d.Shape(USE="hub")
 
 Transform289.children.append(Shape290)
+
+Transform286.children.append(Transform289)
+
+Transform271.children.append(Transform286)
+
+Transform104.children.append(Transform271)
 Transform291 = x3d.Transform()
-Transform291.translation = [0,0,4.5]
-Transform291.rotation = [1,0,0,1.57]
-Shape292 = x3d.Shape(USE="wheel")
+Transform291.translation = [-10,-1,2.5]
+Shape292 = x3d.Shape(USE="Axle")
 
 Transform291.children.append(Shape292)
-Shape293 = x3d.Shape(USE="tracks")
+Transform293 = x3d.Transform()
+Transform293.rotation = [1,0,0,1.57]
+Transform293.translation = [0,0,4.5]
+Shape294 = x3d.Shape(USE="wheel")
 
-Transform291.children.append(Shape293)
-Transform294 = x3d.Transform()
-Transform294.translation = [0,0.55,0]
-Shape295 = x3d.Shape(USE="hub")
+Transform293.children.append(Shape294)
+Shape295 = x3d.Shape(USE="tracks")
 
-Transform294.children.append(Shape295)
-
-Transform291.children.append(Transform294)
-
-Transform289.children.append(Transform291)
+Transform293.children.append(Shape295)
 Transform296 = x3d.Transform()
-Transform296.translation = [0,0,-4.5]
-Transform296.rotation = [1,0,0,1.57]
-Shape297 = x3d.Shape(USE="wheel")
+Transform296.translation = [0,0.55,0]
+Shape297 = x3d.Shape(USE="hub")
 
 Transform296.children.append(Shape297)
-Shape298 = x3d.Shape(USE="tracks")
 
-Transform296.children.append(Shape298)
-Transform299 = x3d.Transform()
-Transform299.translation = [0,-0.55,0]
-Shape300 = x3d.Shape(USE="hub")
+Transform293.children.append(Transform296)
 
-Transform299.children.append(Shape300)
+Transform291.children.append(Transform293)
+Transform298 = x3d.Transform()
+Transform298.rotation = [1,0,0,1.57]
+Transform298.translation = [0,0,-4.5]
+Shape299 = x3d.Shape(USE="wheel")
 
-Transform296.children.append(Transform299)
+Transform298.children.append(Shape299)
+Shape300 = x3d.Shape(USE="tracks")
 
-Transform289.children.append(Transform296)
+Transform298.children.append(Shape300)
 Transform301 = x3d.Transform()
-Transform301.translation = [0,100,400]
-Transform301.rotation = [0,1,0,-0.6]
-Transform302 = x3d.Transform()
-Transform302.translation = [1,3,0]
-Viewpoint303 = x3d.Viewpoint()
-Viewpoint303.description = "Side"
+Transform301.translation = [0,-0.55,0]
+Shape302 = x3d.Shape(USE="hub")
 
-Transform302.children.append(Viewpoint303)
+Transform301.children.append(Shape302)
 
-Transform301.children.append(Transform302)
-Transform304 = x3d.Transform(USE="launch")
+Transform298.children.append(Transform301)
 
-Transform301.children.append(Transform304)
-Transform305 = x3d.Transform()
-TouchSensor306 = x3d.TouchSensor(USE="LauncheeChoice")
+Transform291.children.append(Transform298)
+Transform303 = x3d.Transform()
+Transform303.rotation = [0,1,0,-0.6]
+Transform303.translation = [0,100,400]
+Transform304 = x3d.Transform()
+Transform304.translation = [1,3,0]
+Viewpoint305 = x3d.Viewpoint()
+Viewpoint305.description = "Side"
 
-Transform305.children.append(TouchSensor306)
-Switch307 = x3d.Switch(USE="projectilename")
+Transform304.children.append(Viewpoint305)
 
-Transform305.children.append(Switch307)
-Transform308 = x3d.Transform()
-Transform308.translation = [2.5,0,0]
-Shape309 = x3d.Shape()
-Appearance310 = x3d.Appearance()
-Material311 = x3d.Material()
-Material311.transparency = 1
+Transform303.children.append(Transform304)
+Transform306 = x3d.Transform(USE="launch")
 
-Appearance310.material = Material311
+Transform303.children.append(Transform306)
+Transform307 = x3d.Transform()
+TouchSensor308 = x3d.TouchSensor(USE="LauncheeChoice")
 
-Shape309.appearance = Appearance310
+Transform307.children.append(TouchSensor308)
+Switch309 = x3d.Switch(USE="projectilename")
+
+Transform307.children.append(Switch309)
+Transform310 = x3d.Transform()
+Transform310.translation = [2.5,0,0]
+Shape311 = x3d.Shape()
 Box312 = x3d.Box()
 Box312.size = [5,0.5,0.5]
 
-Shape309.geometry = Box312
+Shape311.geometry = Box312
+Appearance313 = x3d.Appearance()
+Material314 = x3d.Material()
+Material314.transparency = 1
 
-Transform308.children.append(Shape309)
+Appearance313.material = Material314
 
-Transform305.children.append(Transform308)
+Shape311.appearance = Appearance313
 
-Transform301.children.append(Transform305)
-Transform313 = x3d.Transform()
-Transform313.translation = [0,-1,0]
-Transform313.scale = [0.5,0.5,0.5]
-TouchSensor314 = x3d.TouchSensor(USE="weightselector")
+Transform310.children.append(Shape311)
 
-Transform313.children.append(TouchSensor314)
-Switch315 = x3d.Switch(USE="Weight")
+Transform307.children.append(Transform310)
 
-Transform313.children.append(Switch315)
-Transform316 = x3d.Transform()
-Transform316.translation = [8,0,0]
-Shape317 = x3d.Shape()
-Appearance318 = x3d.Appearance()
-Material319 = x3d.Material()
-Material319.transparency = 1
+Transform303.children.append(Transform307)
+Transform315 = x3d.Transform()
+Transform315.scale = [0.5,0.5,0.5]
+Transform315.translation = [0,-1,0]
+TouchSensor316 = x3d.TouchSensor(USE="weightselector")
 
-Appearance318.material = Material319
+Transform315.children.append(TouchSensor316)
+Switch317 = x3d.Switch(USE="Weight")
 
-Shape317.appearance = Appearance318
+Transform315.children.append(Switch317)
+Transform318 = x3d.Transform()
+Transform318.translation = [8,0,0]
+Shape319 = x3d.Shape()
 Box320 = x3d.Box()
 Box320.size = [17,1,0.5]
 
-Shape317.geometry = Box320
+Shape319.geometry = Box320
+Appearance321 = x3d.Appearance()
+Material322 = x3d.Material()
+Material322.transparency = 1
 
-Transform316.children.append(Shape317)
+Appearance321.material = Material322
 
-Transform313.children.append(Transform316)
+Shape319.appearance = Appearance321
 
-Transform301.children.append(Transform313)
+Transform318.children.append(Shape319)
 
-Transform289.children.append(Transform301)
-Transform321 = x3d.Transform(DEF="ProjectileTransform")
-Transform321.translation = [14.25,1.25,0]
-Switch322 = x3d.Switch(USE="projectile")
+Transform315.children.append(Transform318)
 
-Transform321.children.append(Switch322)
-Transform323 = x3d.Transform()
-Transform323.translation = [0,1,0]
-Transform323.rotation = [0,1,0,1.57]
-Viewpoint324 = x3d.Viewpoint()
-Viewpoint324.description = "Projectile Cam"
-Viewpoint324.position = [0,0,15]
+Transform303.children.append(Transform315)
 
-Transform323.children.append(Viewpoint324)
+Transform291.children.append(Transform303)
+Transform323 = x3d.Transform(DEF="ProjectileTransform")
+Transform323.translation = [14.25,1.25,0]
+Switch324 = x3d.Switch(USE="projectile")
 
-Transform321.children.append(Transform323)
-
-Transform289.children.append(Transform321)
+Transform323.children.append(Switch324)
 Transform325 = x3d.Transform()
-Transform325.translation = [20,2,0]
-Transform326 = x3d.Transform(DEF="Front")
-Transform326.rotation = [0,1,0,1.57]
-Viewpoint327 = x3d.Viewpoint()
-Viewpoint327.description = "Fore"
+Transform325.rotation = [0,1,0,1.57]
+Transform325.translation = [0,1,0]
+Viewpoint326 = x3d.Viewpoint()
+Viewpoint326.description = "Projectile Cam"
+Viewpoint326.position = [0,0,15]
 
-Transform326.children.append(Viewpoint327)
+Transform325.children.append(Viewpoint326)
 
-Transform325.children.append(Transform326)
+Transform323.children.append(Transform325)
 
-Transform289.children.append(Transform325)
-Transform328 = x3d.Transform()
-Transform328.translation = [-8,4,0]
-Transform329 = x3d.Transform()
-Transform329.rotation = [0,1,0,-1.57]
-Viewpoint330 = x3d.Viewpoint()
-Viewpoint330.description = "Aft"
+Transform291.children.append(Transform323)
+Transform327 = x3d.Transform()
+Transform327.translation = [20,2,0]
+Transform328 = x3d.Transform(DEF="Front")
+Transform328.rotation = [0,1,0,1.57]
+Viewpoint329 = x3d.Viewpoint()
+Viewpoint329.description = "Fore"
 
-Transform329.children.append(Viewpoint330)
+Transform328.children.append(Viewpoint329)
 
-Transform328.children.append(Transform329)
+Transform327.children.append(Transform328)
 
-Transform289.children.append(Transform328)
-Script331 = x3d.Script(DEF="WeightScript")
-field332 = x3d.field()
-field332.accessType = "inputOnly"
-field332.type = "SFBool"
-field332.name = "set_boolean"
+Transform291.children.append(Transform327)
+Transform330 = x3d.Transform()
+Transform330.translation = [-8,4,0]
+Transform331 = x3d.Transform()
+Transform331.rotation = [0,1,0,-1.57]
+Viewpoint332 = x3d.Viewpoint()
+Viewpoint332.description = "Aft"
 
-Script331.field.append(field332)
-field333 = x3d.field()
-field333.accessType = "outputOnly"
-field333.type = "SFInt32"
-field333.name = "whichchoice"
+Transform331.children.append(Viewpoint332)
 
-Script331.field.append(field333)
+Transform330.children.append(Transform331)
+
+Transform291.children.append(Transform330)
+Script333 = x3d.Script(DEF="WeightScript")
 field334 = x3d.field()
-field334.accessType = "outputOnly"
-field334.type = "SFFloat"
-field334.name = "CounterWeight"
+field334.name = "set_boolean"
+field334.accessType = "inputOnly"
+field334.type = "SFBool"
 
-Script331.field.append(field334)
+Script333.field.append(field334)
+field335 = x3d.field()
+field335.name = "whichchoice"
+field335.accessType = "outputOnly"
+field335.type = "SFInt32"
 
-Script331.sourceCode = '''ecmascript:\n"+
+Script333.field.append(field335)
+field336 = x3d.field()
+field336.name = "CounterWeight"
+field336.accessType = "outputOnly"
+field336.type = "SFFloat"
+
+Script333.field.append(field336)
+
+Script333.sourceCode = '''ecmascript:\n"+
 "\n"+
 "\n"+
 "function initialize ()\n"+
@@ -1338,28 +1358,28 @@ Script331.sourceCode = '''ecmascript:\n"+
 "        Browser.println ('CounterWeight ='+CounterWeight);\n"+
 "}'''
 
-Transform289.children.append(Script331)
-Script335 = x3d.Script(DEF="LauncheeScript")
-field336 = x3d.field()
-field336.accessType = "inputOnly"
-field336.type = "SFBool"
-field336.name = "set_boolean"
-
-Script335.field.append(field336)
-field337 = x3d.field()
-field337.accessType = "outputOnly"
-field337.type = "SFInt32"
-field337.name = "whichchoice"
-
-Script335.field.append(field337)
+Transform291.children.append(Script333)
+Script337 = x3d.Script(DEF="LauncheeScript")
 field338 = x3d.field()
-field338.accessType = "outputOnly"
-field338.type = "SFFloat"
-field338.name = "ProjectileWeight"
+field338.name = "set_boolean"
+field338.accessType = "inputOnly"
+field338.type = "SFBool"
 
-Script335.field.append(field338)
+Script337.field.append(field338)
+field339 = x3d.field()
+field339.name = "whichchoice"
+field339.accessType = "outputOnly"
+field339.type = "SFInt32"
 
-Script335.sourceCode = '''ecmascript:\n"+
+Script337.field.append(field339)
+field340 = x3d.field()
+field340.name = "ProjectileWeight"
+field340.accessType = "outputOnly"
+field340.type = "SFFloat"
+
+Script337.field.append(field340)
+
+Script337.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function set_boolean (boolean_input, eventTime)\n"+
 "{\n"+
@@ -1373,22 +1393,22 @@ Script335.sourceCode = '''ecmascript:\n"+
 "	Browser.println ('Projectile Weight'+ProjectileWeight);\n"+
 "}'''
 
-Transform289.children.append(Script335)
-Script339 = x3d.Script(DEF="PigdogMonkScript")
-field340 = x3d.field()
-field340.accessType = "inputOnly"
-field340.type = "SFBool"
-field340.name = "set_boolean"
+Transform291.children.append(Script337)
+Script341 = x3d.Script(DEF="PigdogMonkScript")
+field342 = x3d.field()
+field342.name = "set_boolean"
+field342.accessType = "inputOnly"
+field342.type = "SFBool"
 
-Script339.field.append(field340)
-field341 = x3d.field()
-field341.accessType = "outputOnly"
-field341.type = "SFInt32"
-field341.name = "whichchoice"
+Script341.field.append(field342)
+field343 = x3d.field()
+field343.name = "whichchoice"
+field343.accessType = "outputOnly"
+field343.type = "SFInt32"
 
-Script339.field.append(field341)
+Script341.field.append(field343)
 
-Script339.sourceCode = '''ecmascript:\n"+
+Script341.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function set_boolean (boolean_input, eventTime)\n"+
 "{\n"+
@@ -1401,54 +1421,54 @@ Script339.sourceCode = '''ecmascript:\n"+
 "\n"+
 "}'''
 
-Transform289.children.append(Script339)
-Script342 = x3d.Script(DEF="Mover")
-field343 = x3d.field()
-field343.accessType = "inputOnly"
-field343.type = "SFFloat"
-field343.name = "set_fraction"
-
-Script342.field.append(field343)
-field344 = x3d.field()
-field344.accessType = "inputOnly"
-field344.type = "SFFloat"
-field344.name = "set_MassCounterWeight"
-
-Script342.field.append(field344)
+Transform291.children.append(Script341)
+Script344 = x3d.Script(DEF="Mover")
 field345 = x3d.field()
+field345.name = "set_fraction"
 field345.accessType = "inputOnly"
 field345.type = "SFFloat"
-field345.name = "set_MassProjectileWeight"
 
-Script342.field.append(field345)
+Script344.field.append(field345)
 field346 = x3d.field()
-field346.accessType = "initializeOnly"
+field346.name = "set_MassCounterWeight"
+field346.accessType = "inputOnly"
 field346.type = "SFFloat"
-field346.name = "MassCounterWeight"
-field346.value = 1
 
-Script342.field.append(field346)
+Script344.field.append(field346)
 field347 = x3d.field()
-field347.accessType = "initializeOnly"
+field347.name = "set_MassProjectileWeight"
+field347.accessType = "inputOnly"
 field347.type = "SFFloat"
-field347.name = "MassProjectileWeight"
-field347.value = 1
 
-Script342.field.append(field347)
+Script344.field.append(field347)
 field348 = x3d.field()
-field348.accessType = "outputOnly"
-field348.type = "SFVec3f"
-field348.name = "transparent"
+field348.name = "MassCounterWeight"
+field348.accessType = "initializeOnly"
+field348.type = "SFFloat"
+field348.value = 1
 
-Script342.field.append(field348)
+Script344.field.append(field348)
 field349 = x3d.field()
-field349.accessType = "outputOnly"
-field349.type = "SFVec3f"
-field349.name = "value_changed"
+field349.name = "MassProjectileWeight"
+field349.accessType = "initializeOnly"
+field349.type = "SFFloat"
+field349.value = 1
 
-Script342.field.append(field349)
+Script344.field.append(field349)
+field350 = x3d.field()
+field350.name = "transparent"
+field350.accessType = "outputOnly"
+field350.type = "SFVec3f"
 
-Script342.sourceCode = '''ecmascript:\n"+
+Script344.field.append(field350)
+field351 = x3d.field()
+field351.name = "value_changed"
+field351.accessType = "outputOnly"
+field351.type = "SFVec3f"
+
+Script344.field.append(field351)
+
+Script344.sourceCode = '''ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -1490,224 +1510,224 @@ Script342.sourceCode = '''ecmascript:\n"+
 "	Browser.println ('x=' + value_changed[0] + ' y=' + value_changed[1] + ' z=' + value_changed[2]);\n"+
 "}'''
 
-Transform289.children.append(Script342)
+Transform291.children.append(Script344)
 
-Transform102.children.append(Transform289)
+Transform104.children.append(Transform291)
 
-Scene15.children.append(Transform102)
-TimeSensor350 = x3d.TimeSensor(DEF="clock")
-TimeSensor350.cycleInterval = 10
+Scene17.children.append(Transform104)
+TimeSensor352 = x3d.TimeSensor(DEF="clock")
+TimeSensor352.cycleInterval = 10
 
-Scene15.children.append(TimeSensor350)
-PositionInterpolator351 = x3d.PositionInterpolator(DEF="verticalweightpath")
-PositionInterpolator351.key = [0,0.1,0.2,0.2,0.3,0.9]
-PositionInterpolator351.keyValue = [(1.4, 1.6, 0),(1, -8, 0),(-3.5, -12, 0),(-3.5, -12, 0),(1.2, -8, 0),(1.4, 1.6, 0)]
+Scene17.children.append(TimeSensor352)
+PositionInterpolator353 = x3d.PositionInterpolator(DEF="verticalweightpath")
+PositionInterpolator353.key = [0,0.1,0.2,0.2,0.3,0.9]
+PositionInterpolator353.keyValue = [(1.4, 1.6, 0),(1, -8, 0),(-3.5, -12, 0),(-3.5, -12, 0),(1.2, -8, 0),(1.4, 1.6, 0)]
 
-Scene15.children.append(PositionInterpolator351)
-OrientationInterpolator352 = x3d.OrientationInterpolator(DEF="flingerangles")
-OrientationInterpolator352.key = [0,0.1,0.2,0.2,0.3,0.9]
-OrientationInterpolator352.keyValue = [(0, 0, 1, 0.82),(0, 0, 1, -0.77),(0, 0, 1, -1.57),(0, 0, 1, -1.57),(0, 0, 1, -0.77),(0, 0, 1, 0.82)]
+Scene17.children.append(PositionInterpolator353)
+OrientationInterpolator354 = x3d.OrientationInterpolator(DEF="flingerangles")
+OrientationInterpolator354.key = [0,0.1,0.2,0.2,0.3,0.9]
+OrientationInterpolator354.keyValue = [(0, 0, 1, 0.82),(0, 0, 1, -0.77),(0, 0, 1, -1.57),(0, 0, 1, -1.57),(0, 0, 1, -0.77),(0, 0, 1, 0.82)]
 
-Scene15.children.append(OrientationInterpolator352)
-PositionInterpolator353 = x3d.PositionInterpolator(DEF="pinpath")
-PositionInterpolator353.key = [0,0.01,0.95,1]
-PositionInterpolator353.keyValue = [(0, 0, -3),(0, 0, -10),(0, 0, -10),(0, 0, -3)]
+Scene17.children.append(OrientationInterpolator354)
+PositionInterpolator355 = x3d.PositionInterpolator(DEF="pinpath")
+PositionInterpolator355.key = [0,0.01,0.95,1]
+PositionInterpolator355.keyValue = [(0, 0, -3),(0, 0, -10),(0, 0, -10),(0, 0, -3)]
 
-Scene15.children.append(PositionInterpolator353)
-OrientationInterpolator354 = x3d.OrientationInterpolator(DEF="RnSAngels")
-OrientationInterpolator354.key = [0,0.7,1]
-OrientationInterpolator354.keyValue = [(0, 0, 1, 0),(0, 0, 1, -3.14),(0, 0, 1, 0)]
+Scene17.children.append(PositionInterpolator355)
+OrientationInterpolator356 = x3d.OrientationInterpolator(DEF="RnSAngels")
+OrientationInterpolator356.key = [0,0.7,1]
+OrientationInterpolator356.keyValue = [(0, 0, 1, 0),(0, 0, 1, -3.14),(0, 0, 1, 0)]
 
-Scene15.children.append(OrientationInterpolator354)
-PositionInterpolator355 = x3d.PositionInterpolator(DEF="invisiable")
-PositionInterpolator355.key = [0,0.2,0.98,0.99]
-PositionInterpolator355.keyValue = [(1, 1, 1),(0.01, 0.01, 0.01),(0.01, 0.01, 0.01),(1, 1, 1)]
+Scene17.children.append(OrientationInterpolator356)
+PositionInterpolator357 = x3d.PositionInterpolator(DEF="invisiable")
+PositionInterpolator357.key = [0,0.2,0.98,0.99]
+PositionInterpolator357.keyValue = [(1, 1, 1),(0.01, 0.01, 0.01),(0.01, 0.01, 0.01),(1, 1, 1)]
 
-Scene15.children.append(PositionInterpolator355)
-ROUTE356 = x3d.ROUTE()
-ROUTE356.fromNode = "clock"
-ROUTE356.fromField = "fraction_changed"
-ROUTE356.toNode = "invisiable"
-ROUTE356.toField = "set_fraction"
-
-Scene15.children.append(ROUTE356)
-ROUTE357 = x3d.ROUTE()
-ROUTE357.fromNode = "invisiable"
-ROUTE357.fromField = "value_changed"
-ROUTE357.toNode = "projectiletransform"
-ROUTE357.toField = "set_scale"
-
-Scene15.children.append(ROUTE357)
+Scene17.children.append(PositionInterpolator357)
 ROUTE358 = x3d.ROUTE()
-ROUTE358.fromNode = "WeightScript"
-ROUTE358.fromField = "CounterWeight"
-ROUTE358.toNode = "Mover"
-ROUTE358.toField = "set_MassCounterWeight"
+ROUTE358.fromField = "fraction_changed"
+ROUTE358.fromNode = "clock"
+ROUTE358.toField = "set_fraction"
+ROUTE358.toNode = "invisiable"
 
-Scene15.children.append(ROUTE358)
+Scene17.children.append(ROUTE358)
 ROUTE359 = x3d.ROUTE()
-ROUTE359.fromNode = "LauncheeScript"
-ROUTE359.fromField = "ProjectileWeight"
-ROUTE359.toNode = "Mover"
-ROUTE359.toField = "set_MassProjectileWeight"
+ROUTE359.fromField = "value_changed"
+ROUTE359.fromNode = "invisiable"
+ROUTE359.toField = "set_scale"
+ROUTE359.toNode = "projectiletransform"
 
-Scene15.children.append(ROUTE359)
+Scene17.children.append(ROUTE359)
 ROUTE360 = x3d.ROUTE()
-ROUTE360.fromNode = "clock"
-ROUTE360.fromField = "fraction_changed"
+ROUTE360.fromField = "CounterWeight"
+ROUTE360.fromNode = "WeightScript"
+ROUTE360.toField = "set_MassCounterWeight"
 ROUTE360.toNode = "Mover"
-ROUTE360.toField = "set_fraction"
 
-Scene15.children.append(ROUTE360)
+Scene17.children.append(ROUTE360)
 ROUTE361 = x3d.ROUTE()
-ROUTE361.fromNode = "Mover"
-ROUTE361.fromField = "value_changed"
-ROUTE361.toNode = "ProjectileTransform"
-ROUTE361.toField = "set_translation"
+ROUTE361.fromField = "ProjectileWeight"
+ROUTE361.fromNode = "LauncheeScript"
+ROUTE361.toField = "set_MassProjectileWeight"
+ROUTE361.toNode = "Mover"
 
-Scene15.children.append(ROUTE361)
+Scene17.children.append(ROUTE361)
 ROUTE362 = x3d.ROUTE()
-ROUTE362.fromNode = "Mover"
-ROUTE362.fromField = "transparent"
-ROUTE362.toNode = "ProjectileTransform"
-ROUTE362.toField = "set_scale"
+ROUTE362.fromField = "fraction_changed"
+ROUTE362.fromNode = "clock"
+ROUTE362.toField = "set_fraction"
+ROUTE362.toNode = "Mover"
 
-Scene15.children.append(ROUTE362)
+Scene17.children.append(ROUTE362)
 ROUTE363 = x3d.ROUTE()
-ROUTE363.fromNode = "Launch"
-ROUTE363.fromField = "touchTime"
-ROUTE363.toNode = "clock"
-ROUTE363.toField = "set_startTime"
+ROUTE363.fromField = "value_changed"
+ROUTE363.fromNode = "Mover"
+ROUTE363.toField = "set_translation"
+ROUTE363.toNode = "ProjectileTransform"
 
-Scene15.children.append(ROUTE363)
+Scene17.children.append(ROUTE363)
 ROUTE364 = x3d.ROUTE()
-ROUTE364.fromNode = "Launch"
-ROUTE364.fromField = "isActive"
-ROUTE364.toNode = "PigdogMonkScript"
-ROUTE364.toField = "set_boolean"
+ROUTE364.fromField = "transparent"
+ROUTE364.fromNode = "Mover"
+ROUTE364.toField = "set_scale"
+ROUTE364.toNode = "ProjectileTransform"
 
-Scene15.children.append(ROUTE364)
+Scene17.children.append(ROUTE364)
 ROUTE365 = x3d.ROUTE()
-ROUTE365.fromNode = "Launch"
 ROUTE365.fromField = "touchTime"
-ROUTE365.toNode = "PigDogSound"
+ROUTE365.fromNode = "Launch"
 ROUTE365.toField = "set_startTime"
+ROUTE365.toNode = "clock"
 
-Scene15.children.append(ROUTE365)
+Scene17.children.append(ROUTE365)
 ROUTE366 = x3d.ROUTE()
+ROUTE366.fromField = "isActive"
 ROUTE366.fromNode = "Launch"
-ROUTE366.fromField = "touchTime"
-ROUTE366.toNode = "MonkSound"
-ROUTE366.toField = "set_startTime"
+ROUTE366.toField = "set_boolean"
+ROUTE366.toNode = "PigdogMonkScript"
 
-Scene15.children.append(ROUTE366)
+Scene17.children.append(ROUTE366)
 ROUTE367 = x3d.ROUTE()
-ROUTE367.fromNode = "PigdogMonkScript"
-ROUTE367.fromField = "whichchoice"
-ROUTE367.toNode = "PigdogMonk"
-ROUTE367.toField = "set_whichChoice"
+ROUTE367.fromField = "touchTime"
+ROUTE367.fromNode = "Launch"
+ROUTE367.toField = "set_startTime"
+ROUTE367.toNode = "PigDogSound"
 
-Scene15.children.append(ROUTE367)
+Scene17.children.append(ROUTE367)
 ROUTE368 = x3d.ROUTE()
-ROUTE368.fromNode = "LauncheeChoice"
 ROUTE368.fromField = "touchTime"
-ROUTE368.toNode = "HolyHandGrenadeSound"
+ROUTE368.fromNode = "Launch"
 ROUTE368.toField = "set_startTime"
+ROUTE368.toNode = "MonkSound"
 
-Scene15.children.append(ROUTE368)
+Scene17.children.append(ROUTE368)
 ROUTE369 = x3d.ROUTE()
-ROUTE369.fromNode = "LauncheeChoice"
-ROUTE369.fromField = "touchTime"
-ROUTE369.toNode = "CowSound"
-ROUTE369.toField = "set_startTime"
+ROUTE369.fromField = "whichchoice"
+ROUTE369.fromNode = "PigdogMonkScript"
+ROUTE369.toField = "whichChoice"
+ROUTE369.toNode = "PigdogMonk"
 
-Scene15.children.append(ROUTE369)
+Scene17.children.append(ROUTE369)
 ROUTE370 = x3d.ROUTE()
-ROUTE370.fromNode = "LauncheeChoice"
 ROUTE370.fromField = "touchTime"
-ROUTE370.toNode = "HamsterSound"
+ROUTE370.fromNode = "LauncheeChoice"
 ROUTE370.toField = "set_startTime"
+ROUTE370.toNode = "HolyHandGrenadeSound"
 
-Scene15.children.append(ROUTE370)
+Scene17.children.append(ROUTE370)
 ROUTE371 = x3d.ROUTE()
+ROUTE371.fromField = "touchTime"
 ROUTE371.fromNode = "LauncheeChoice"
-ROUTE371.fromField = "isActive"
-ROUTE371.toNode = "LauncheeScript"
-ROUTE371.toField = "set_boolean"
+ROUTE371.toField = "set_startTime"
+ROUTE371.toNode = "CowSound"
 
-Scene15.children.append(ROUTE371)
+Scene17.children.append(ROUTE371)
 ROUTE372 = x3d.ROUTE()
-ROUTE372.fromNode = "LauncheeScript"
-ROUTE372.fromField = "whichchoice"
-ROUTE372.toNode = "projectile"
-ROUTE372.toField = "set_whichChoice"
+ROUTE372.fromField = "touchTime"
+ROUTE372.fromNode = "LauncheeChoice"
+ROUTE372.toField = "set_startTime"
+ROUTE372.toNode = "HamsterSound"
 
-Scene15.children.append(ROUTE372)
+Scene17.children.append(ROUTE372)
 ROUTE373 = x3d.ROUTE()
-ROUTE373.fromNode = "LauncheeScript"
-ROUTE373.fromField = "whichchoice"
-ROUTE373.toNode = "projectilename"
-ROUTE373.toField = "set_whichChoice"
+ROUTE373.fromField = "isActive"
+ROUTE373.fromNode = "LauncheeChoice"
+ROUTE373.toField = "set_boolean"
+ROUTE373.toNode = "LauncheeScript"
 
-Scene15.children.append(ROUTE373)
+Scene17.children.append(ROUTE373)
 ROUTE374 = x3d.ROUTE()
-ROUTE374.fromNode = "weightselector"
-ROUTE374.fromField = "isActive"
-ROUTE374.toNode = "WeightScript"
-ROUTE374.toField = "set_boolean"
+ROUTE374.fromField = "whichchoice"
+ROUTE374.fromNode = "LauncheeScript"
+ROUTE374.toField = "whichChoice"
+ROUTE374.toNode = "projectile"
 
-Scene15.children.append(ROUTE374)
+Scene17.children.append(ROUTE374)
 ROUTE375 = x3d.ROUTE()
-ROUTE375.fromNode = "WeightScript"
 ROUTE375.fromField = "whichchoice"
-ROUTE375.toNode = "Weight"
-ROUTE375.toField = "set_whichChoice"
+ROUTE375.fromNode = "LauncheeScript"
+ROUTE375.toField = "whichChoice"
+ROUTE375.toNode = "projectilename"
 
-Scene15.children.append(ROUTE375)
+Scene17.children.append(ROUTE375)
 ROUTE376 = x3d.ROUTE()
-ROUTE376.fromNode = "clock"
-ROUTE376.fromField = "fraction_changed"
-ROUTE376.toNode = "flingerangles"
-ROUTE376.toField = "set_fraction"
+ROUTE376.fromField = "isActive"
+ROUTE376.fromNode = "weightselector"
+ROUTE376.toField = "set_boolean"
+ROUTE376.toNode = "WeightScript"
 
-Scene15.children.append(ROUTE376)
+Scene17.children.append(ROUTE376)
 ROUTE377 = x3d.ROUTE()
-ROUTE377.fromNode = "flingerangles"
-ROUTE377.fromField = "value_changed"
-ROUTE377.toNode = "flinger"
-ROUTE377.toField = "set_rotation"
+ROUTE377.fromField = "whichchoice"
+ROUTE377.fromNode = "WeightScript"
+ROUTE377.toField = "whichChoice"
+ROUTE377.toNode = "Weight"
 
-Scene15.children.append(ROUTE377)
+Scene17.children.append(ROUTE377)
 ROUTE378 = x3d.ROUTE()
-ROUTE378.fromNode = "clock"
 ROUTE378.fromField = "fraction_changed"
-ROUTE378.toNode = "verticalweightpath"
+ROUTE378.fromNode = "clock"
 ROUTE378.toField = "set_fraction"
+ROUTE378.toNode = "flingerangles"
 
-Scene15.children.append(ROUTE378)
+Scene17.children.append(ROUTE378)
 ROUTE379 = x3d.ROUTE()
-ROUTE379.fromNode = "verticalweightpath"
 ROUTE379.fromField = "value_changed"
-ROUTE379.toNode = "verticalweight"
-ROUTE379.toField = "set_translation"
+ROUTE379.fromNode = "flingerangles"
+ROUTE379.toField = "set_rotation"
+ROUTE379.toNode = "flinger"
 
-Scene15.children.append(ROUTE379)
+Scene17.children.append(ROUTE379)
 ROUTE380 = x3d.ROUTE()
-ROUTE380.fromNode = "clock"
 ROUTE380.fromField = "fraction_changed"
-ROUTE380.toNode = "pinpath"
+ROUTE380.fromNode = "clock"
 ROUTE380.toField = "set_fraction"
+ROUTE380.toNode = "verticalweightpath"
 
-Scene15.children.append(ROUTE380)
+Scene17.children.append(ROUTE380)
 ROUTE381 = x3d.ROUTE()
-ROUTE381.fromNode = "pinpath"
 ROUTE381.fromField = "value_changed"
-ROUTE381.toNode = "Pin"
+ROUTE381.fromNode = "verticalweightpath"
 ROUTE381.toField = "set_translation"
+ROUTE381.toNode = "verticalweight"
 
-Scene15.children.append(ROUTE381)
+Scene17.children.append(ROUTE381)
+ROUTE382 = x3d.ROUTE()
+ROUTE382.fromField = "fraction_changed"
+ROUTE382.fromNode = "clock"
+ROUTE382.toField = "set_fraction"
+ROUTE382.toNode = "pinpath"
 
-X3D0.Scene = Scene15
+Scene17.children.append(ROUTE382)
+ROUTE383 = x3d.ROUTE()
+ROUTE383.fromField = "value_changed"
+ROUTE383.fromNode = "pinpath"
+ROUTE383.toField = "set_translation"
+ROUTE383.toNode = "Pin"
+
+Scene17.children.append(ROUTE383)
+
+X3D0.Scene = Scene17
 f = open("../data/Trebuchet.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

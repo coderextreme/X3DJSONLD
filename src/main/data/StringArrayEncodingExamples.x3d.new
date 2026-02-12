@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="StringArrayEncodingExamples.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="StringArrayEncodingExamples.x3d"></meta>
 <meta name="description" content="Demonstrate simple X3D MFString (string array) encoding."></meta>
 <meta name="created" content="27 May 2017"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:13:12 GMT"></meta>
+<meta name="modified" content="27 May 2017"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="reference" content="X3dHeaderPrototypeSyntaxExamples.x3d"></meta>
 <meta name="specificationSection" content="X3D encodings, ISO/IEC 19775-1, Part 1: Architecture and base components, 5 Field type reference, 5.3.14 SFString and MFString"></meta>
@@ -13,13 +13,15 @@
 <meta name="specificationSection" content="X3D encodings, ISO/IEC 19776-2 v3.3, Part 2: Classic VRML encoding, 5.15 SFString and MFString"></meta>
 <meta name="specificationUrl" content="https://www.web3d.org/documents/specifications/19776-2/V3.3/Part02/EncodingOfFields.html#SFString"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><Viewpoint DEF="EntryView" description="Hello MFString syntax"></Viewpoint>
 <Background skyColor="0.6 1 0.8"></Background>
-<Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.6 0.4 0.2"></Material>
-</Appearance>
-<Text string="&quot;One, Two, Three&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot;&quot;"><FontStyle containerField="fontStyle" style="BOLD" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Shape><Text string="&quot;One, Two, Three&quot; &quot;&quot; &quot;He said, \&quot;Immel did it!\&quot;&quot;"><!--alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"'--><!--alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \""Immel did it!\"""})--><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" style="BOLD"></FontStyle>
 </Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.6 0.4 0.2"></Material>
+</Appearance>
 </Shape>
 </Scene>
 </X3D>

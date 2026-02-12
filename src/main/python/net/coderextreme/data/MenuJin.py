@@ -3,39 +3,45 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
 meta2.content = "Menu.x3d"
 
 head1.children.append(meta2)
+meta3 = x3d.meta()
+meta3.name = "description"
+meta3.content = "X3D scene with a Switch of Inlines controlled by a menu"
+
+head1.children.append(meta3)
 
 X3D0.head = head1
-Scene3 = x3d.Scene()
-Viewpoint4 = x3d.Viewpoint()
-Viewpoint4.position = [0,20,110]
+Scene4 = x3d.Scene()
+Scene4.children.append(x3d.Comment("""Viewpoint and any other scene setup"""))
+Viewpoint5 = x3d.Viewpoint()
+Viewpoint5.position = [0,20,110]
 
-Scene3.children.append(Viewpoint4)
-Group5 = x3d.Group()
-Switch6 = x3d.Switch(DEF="SceneSwitcher")
-Switch6.whichChoice = 0
-Group7 = x3d.Group()
-Script8 = x3d.Script(DEF="Choice0")
-field9 = x3d.field()
-field9.accessType = "inputOnly"
-field9.type = "SFTime"
-field9.name = "touchTime"
-
-Script8.field.append(field9)
+Scene4.children.append(Viewpoint5)
+Group6 = x3d.Group()
+Switch7 = x3d.Switch(DEF="SceneSwitcher")
+Switch7.whichChoice = 0
+Group8 = x3d.Group()
+Script9 = x3d.Script(DEF="Choice0")
 field10 = x3d.field()
-field10.accessType = "outputOnly"
-field10.type = "SFInt32"
-field10.name = "choice"
+field10.name = "touchTime"
+field10.type = "SFTime"
+field10.accessType = "inputOnly"
 
-Script8.field.append(field10)
+Script9.field.append(field10)
+field11 = x3d.field()
+field11.name = "choice"
+field11.type = "SFInt32"
+field11.accessType = "outputOnly"
 
-Script8.sourceCode = '''ecmascript:\n"+
+Script9.field.append(field11)
+
+Script9.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 0;\n"+
 "      }\n"+
@@ -43,29 +49,29 @@ Script8.sourceCode = '''ecmascript:\n"+
 "          choice = 0;\n"+
 "      }'''
 
-Group7.children.append(Script8)
-Inline11 = x3d.Inline(DEF="JinBlink")
-Inline11.url = ["../resources/JinBlink.x3d","JinBlink.x3d"]
+Group8.children.append(Script9)
+Inline12 = x3d.Inline(DEF="JinBlink")
+Inline12.url = ["../resources/JinBlink.x3d","JinBlink.x3d"]
 
-Group7.children.append(Inline11)
+Group8.children.append(Inline12)
 
-Switch6.children.append(Group7)
-Group12 = x3d.Group()
-Script13 = x3d.Script(DEF="Choice1")
-field14 = x3d.field()
-field14.accessType = "inputOnly"
-field14.type = "SFTime"
-field14.name = "touchTime"
-
-Script13.field.append(field14)
+Switch7.children.append(Group8)
+Group13 = x3d.Group()
+Script14 = x3d.Script(DEF="Choice1")
 field15 = x3d.field()
-field15.accessType = "outputOnly"
-field15.type = "SFInt32"
-field15.name = "choice"
+field15.name = "touchTime"
+field15.type = "SFTime"
+field15.accessType = "inputOnly"
 
-Script13.field.append(field15)
+Script14.field.append(field15)
+field16 = x3d.field()
+field16.name = "choice"
+field16.type = "SFInt32"
+field16.accessType = "outputOnly"
 
-Script13.sourceCode = '''ecmascript:\n"+
+Script14.field.append(field16)
+
+Script14.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 1;\n"+
 "      }\n"+
@@ -73,29 +79,29 @@ Script13.sourceCode = '''ecmascript:\n"+
 "          choice = 1;\n"+
 "      }'''
 
-Group12.children.append(Script13)
-Inline16 = x3d.Inline(DEF="JinBrowLowerer")
-Inline16.url = ["../resources/JinBrowLowerer.x3d","JinBrowLowerer.x3d"]
+Group13.children.append(Script14)
+Inline17 = x3d.Inline(DEF="JinBrowLowerer")
+Inline17.url = ["../resources/JinBrowLowerer.x3d","JinBrowLowerer.x3d"]
 
-Group12.children.append(Inline16)
+Group13.children.append(Inline17)
 
-Switch6.children.append(Group12)
-Group17 = x3d.Group()
-Script18 = x3d.Script(DEF="Choice2")
-field19 = x3d.field()
-field19.accessType = "inputOnly"
-field19.type = "SFTime"
-field19.name = "touchTime"
-
-Script18.field.append(field19)
+Switch7.children.append(Group13)
+Group18 = x3d.Group()
+Script19 = x3d.Script(DEF="Choice2")
 field20 = x3d.field()
-field20.accessType = "outputOnly"
-field20.type = "SFInt32"
-field20.name = "choice"
+field20.name = "touchTime"
+field20.type = "SFTime"
+field20.accessType = "inputOnly"
 
-Script18.field.append(field20)
+Script19.field.append(field20)
+field21 = x3d.field()
+field21.name = "choice"
+field21.type = "SFInt32"
+field21.accessType = "outputOnly"
 
-Script18.sourceCode = '''ecmascript:\n"+
+Script19.field.append(field21)
+
+Script19.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 2;\n"+
 "      }\n"+
@@ -103,29 +109,29 @@ Script18.sourceCode = '''ecmascript:\n"+
 "          choice = 2;\n"+
 "      }'''
 
-Group17.children.append(Script18)
-Inline21 = x3d.Inline(DEF="JinCheekPuffer")
-Inline21.url = ["../resources/JinCheekPuffer.x3d","JinCheekPuffer.x3d"]
+Group18.children.append(Script19)
+Inline22 = x3d.Inline(DEF="JinCheekPuffer")
+Inline22.url = ["../resources/JinCheekPuffer.x3d","JinCheekPuffer.x3d"]
 
-Group17.children.append(Inline21)
+Group18.children.append(Inline22)
 
-Switch6.children.append(Group17)
-Group22 = x3d.Group()
-Script23 = x3d.Script(DEF="Choice3")
-field24 = x3d.field()
-field24.accessType = "inputOnly"
-field24.type = "SFTime"
-field24.name = "touchTime"
-
-Script23.field.append(field24)
+Switch7.children.append(Group18)
+Group23 = x3d.Group()
+Script24 = x3d.Script(DEF="Choice3")
 field25 = x3d.field()
-field25.accessType = "outputOnly"
-field25.type = "SFInt32"
-field25.name = "choice"
+field25.name = "touchTime"
+field25.type = "SFTime"
+field25.accessType = "inputOnly"
 
-Script23.field.append(field25)
+Script24.field.append(field25)
+field26 = x3d.field()
+field26.name = "choice"
+field26.type = "SFInt32"
+field26.accessType = "outputOnly"
 
-Script23.sourceCode = '''ecmascript:\n"+
+Script24.field.append(field26)
+
+Script24.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 3;\n"+
 "      }\n"+
@@ -133,29 +139,29 @@ Script23.sourceCode = '''ecmascript:\n"+
 "          choice = 3;\n"+
 "      }'''
 
-Group22.children.append(Script23)
-Inline26 = x3d.Inline(DEF="JinCheekRaiser")
-Inline26.url = ["../resources/JinCheekRaiser.x3d","JinCheekRaiser.x3d"]
+Group23.children.append(Script24)
+Inline27 = x3d.Inline(DEF="JinCheekRaiser")
+Inline27.url = ["../resources/JinCheekRaiser.x3d","JinCheekRaiser.x3d"]
 
-Group22.children.append(Inline26)
+Group23.children.append(Inline27)
 
-Switch6.children.append(Group22)
-Group27 = x3d.Group()
-Script28 = x3d.Script(DEF="Choice4")
-field29 = x3d.field()
-field29.accessType = "inputOnly"
-field29.type = "SFTime"
-field29.name = "touchTime"
-
-Script28.field.append(field29)
+Switch7.children.append(Group23)
+Group28 = x3d.Group()
+Script29 = x3d.Script(DEF="Choice4")
 field30 = x3d.field()
-field30.accessType = "outputOnly"
-field30.type = "SFInt32"
-field30.name = "choice"
+field30.name = "touchTime"
+field30.type = "SFTime"
+field30.accessType = "inputOnly"
 
-Script28.field.append(field30)
+Script29.field.append(field30)
+field31 = x3d.field()
+field31.name = "choice"
+field31.type = "SFInt32"
+field31.accessType = "outputOnly"
 
-Script28.sourceCode = '''ecmascript:\n"+
+Script29.field.append(field31)
+
+Script29.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 4;\n"+
 "      }\n"+
@@ -163,29 +169,29 @@ Script28.sourceCode = '''ecmascript:\n"+
 "          choice = 4;\n"+
 "      }'''
 
-Group27.children.append(Script28)
-Inline31 = x3d.Inline(DEF="JinChinRaiser")
-Inline31.url = ["../resources/JinChinRaiser.x3d","JinChinRaiser.x3d"]
+Group28.children.append(Script29)
+Inline32 = x3d.Inline(DEF="JinChinRaiser")
+Inline32.url = ["../resources/JinChinRaiser.x3d","JinChinRaiser.x3d"]
 
-Group27.children.append(Inline31)
+Group28.children.append(Inline32)
 
-Switch6.children.append(Group27)
-Group32 = x3d.Group()
-Script33 = x3d.Script(DEF="Choice5")
-field34 = x3d.field()
-field34.accessType = "inputOnly"
-field34.type = "SFTime"
-field34.name = "touchTime"
-
-Script33.field.append(field34)
+Switch7.children.append(Group28)
+Group33 = x3d.Group()
+Script34 = x3d.Script(DEF="Choice5")
 field35 = x3d.field()
-field35.accessType = "outputOnly"
-field35.type = "SFInt32"
-field35.name = "choice"
+field35.name = "touchTime"
+field35.type = "SFTime"
+field35.accessType = "inputOnly"
 
-Script33.field.append(field35)
+Script34.field.append(field35)
+field36 = x3d.field()
+field36.name = "choice"
+field36.type = "SFInt32"
+field36.accessType = "outputOnly"
 
-Script33.sourceCode = '''ecmascript:\n"+
+Script34.field.append(field36)
+
+Script34.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 5;\n"+
 "      }\n"+
@@ -193,29 +199,29 @@ Script33.sourceCode = '''ecmascript:\n"+
 "          choice = 5;\n"+
 "      }'''
 
-Group32.children.append(Script33)
-Inline36 = x3d.Inline(DEF="JinDimpler")
-Inline36.url = ["../resources/JinDimpler.x3d","JinDimpler.x3d"]
+Group33.children.append(Script34)
+Inline37 = x3d.Inline(DEF="JinDimpler")
+Inline37.url = ["../resources/JinDimpler.x3d","JinDimpler.x3d"]
 
-Group32.children.append(Inline36)
+Group33.children.append(Inline37)
 
-Switch6.children.append(Group32)
-Group37 = x3d.Group()
-Script38 = x3d.Script(DEF="Choice6")
-field39 = x3d.field()
-field39.accessType = "inputOnly"
-field39.type = "SFTime"
-field39.name = "touchTime"
-
-Script38.field.append(field39)
+Switch7.children.append(Group33)
+Group38 = x3d.Group()
+Script39 = x3d.Script(DEF="Choice6")
 field40 = x3d.field()
-field40.accessType = "outputOnly"
-field40.type = "SFInt32"
-field40.name = "choice"
+field40.name = "touchTime"
+field40.type = "SFTime"
+field40.accessType = "inputOnly"
 
-Script38.field.append(field40)
+Script39.field.append(field40)
+field41 = x3d.field()
+field41.name = "choice"
+field41.type = "SFInt32"
+field41.accessType = "outputOnly"
 
-Script38.sourceCode = '''ecmascript:\n"+
+Script39.field.append(field41)
+
+Script39.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 6;\n"+
 "      }\n"+
@@ -223,29 +229,29 @@ Script38.sourceCode = '''ecmascript:\n"+
 "          choice = 6;\n"+
 "      }'''
 
-Group37.children.append(Script38)
-Inline41 = x3d.Inline(DEF="JinEyesClosed")
-Inline41.url = ["../resources/JinEyesClosed.x3d","JinEyesClosed.x3d"]
+Group38.children.append(Script39)
+Inline42 = x3d.Inline(DEF="JinEyesClosed")
+Inline42.url = ["../resources/JinEyesClosed.x3d","JinEyesClosed.x3d"]
 
-Group37.children.append(Inline41)
+Group38.children.append(Inline42)
 
-Switch6.children.append(Group37)
-Group42 = x3d.Group()
-Script43 = x3d.Script(DEF="Choice7")
-field44 = x3d.field()
-field44.accessType = "inputOnly"
-field44.type = "SFTime"
-field44.name = "touchTime"
-
-Script43.field.append(field44)
+Switch7.children.append(Group38)
+Group43 = x3d.Group()
+Script44 = x3d.Script(DEF="Choice7")
 field45 = x3d.field()
-field45.accessType = "outputOnly"
-field45.type = "SFInt32"
-field45.name = "choice"
+field45.name = "touchTime"
+field45.type = "SFTime"
+field45.accessType = "inputOnly"
 
-Script43.field.append(field45)
+Script44.field.append(field45)
+field46 = x3d.field()
+field46.name = "choice"
+field46.type = "SFInt32"
+field46.accessType = "outputOnly"
 
-Script43.sourceCode = '''ecmascript:\n"+
+Script44.field.append(field46)
+
+Script44.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 7;\n"+
 "      }\n"+
@@ -253,29 +259,29 @@ Script43.sourceCode = '''ecmascript:\n"+
 "          choice = 7;\n"+
 "      }'''
 
-Group42.children.append(Script43)
-Inline46 = x3d.Inline(DEF="JinInnerBrowRaiser")
-Inline46.url = ["../resources/JinInnerBrowRaiser.x3d","JinInnerBrowRaiser.x3d"]
+Group43.children.append(Script44)
+Inline47 = x3d.Inline(DEF="JinInnerBrowRaiser")
+Inline47.url = ["../resources/JinInnerBrowRaiser.x3d","JinInnerBrowRaiser.x3d"]
 
-Group42.children.append(Inline46)
+Group43.children.append(Inline47)
 
-Switch6.children.append(Group42)
-Group47 = x3d.Group()
-Script48 = x3d.Script(DEF="Choice8")
-field49 = x3d.field()
-field49.accessType = "inputOnly"
-field49.type = "SFTime"
-field49.name = "touchTime"
-
-Script48.field.append(field49)
+Switch7.children.append(Group43)
+Group48 = x3d.Group()
+Script49 = x3d.Script(DEF="Choice8")
 field50 = x3d.field()
-field50.accessType = "outputOnly"
-field50.type = "SFInt32"
-field50.name = "choice"
+field50.name = "touchTime"
+field50.type = "SFTime"
+field50.accessType = "inputOnly"
 
-Script48.field.append(field50)
+Script49.field.append(field50)
+field51 = x3d.field()
+field51.name = "choice"
+field51.type = "SFInt32"
+field51.accessType = "outputOnly"
 
-Script48.sourceCode = '''ecmascript:\n"+
+Script49.field.append(field51)
+
+Script49.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 8;\n"+
 "      }\n"+
@@ -283,29 +289,29 @@ Script48.sourceCode = '''ecmascript:\n"+
 "          choice = 8;\n"+
 "      }'''
 
-Group47.children.append(Script48)
-Inline51 = x3d.Inline(DEF="JinJawDrop")
-Inline51.url = ["../resources/JinJawDrop.x3d","JinJawDrop.x3d"]
+Group48.children.append(Script49)
+Inline52 = x3d.Inline(DEF="JinJawDrop")
+Inline52.url = ["../resources/JinJawDrop.x3d","JinJawDrop.x3d"]
 
-Group47.children.append(Inline51)
+Group48.children.append(Inline52)
 
-Switch6.children.append(Group47)
-Group52 = x3d.Group()
-Script53 = x3d.Script(DEF="Choice9")
-field54 = x3d.field()
-field54.accessType = "inputOnly"
-field54.type = "SFTime"
-field54.name = "touchTime"
-
-Script53.field.append(field54)
+Switch7.children.append(Group48)
+Group53 = x3d.Group()
+Script54 = x3d.Script(DEF="Choice9")
 field55 = x3d.field()
-field55.accessType = "outputOnly"
-field55.type = "SFInt32"
-field55.name = "choice"
+field55.name = "touchTime"
+field55.type = "SFTime"
+field55.accessType = "inputOnly"
 
-Script53.field.append(field55)
+Script54.field.append(field55)
+field56 = x3d.field()
+field56.name = "choice"
+field56.type = "SFInt32"
+field56.accessType = "outputOnly"
 
-Script53.sourceCode = '''ecmascript:\n"+
+Script54.field.append(field56)
+
+Script54.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 9;\n"+
 "      }\n"+
@@ -313,29 +319,29 @@ Script53.sourceCode = '''ecmascript:\n"+
 "          choice = 9;\n"+
 "      }'''
 
-Group52.children.append(Script53)
-Inline56 = x3d.Inline(DEF="JinLidDroop")
-Inline56.url = ["../resources/JinLidDroop.x3d","JinLidDroop.x3d"]
+Group53.children.append(Script54)
+Inline57 = x3d.Inline(DEF="JinLidDroop")
+Inline57.url = ["../resources/JinLidDroop.x3d","JinLidDroop.x3d"]
 
-Group52.children.append(Inline56)
+Group53.children.append(Inline57)
 
-Switch6.children.append(Group52)
-Group57 = x3d.Group()
-Script58 = x3d.Script(DEF="Choice10")
-field59 = x3d.field()
-field59.accessType = "inputOnly"
-field59.type = "SFTime"
-field59.name = "touchTime"
-
-Script58.field.append(field59)
+Switch7.children.append(Group53)
+Group58 = x3d.Group()
+Script59 = x3d.Script(DEF="Choice10")
 field60 = x3d.field()
-field60.accessType = "outputOnly"
-field60.type = "SFInt32"
-field60.name = "choice"
+field60.name = "touchTime"
+field60.type = "SFTime"
+field60.accessType = "inputOnly"
 
-Script58.field.append(field60)
+Script59.field.append(field60)
+field61 = x3d.field()
+field61.name = "choice"
+field61.type = "SFInt32"
+field61.accessType = "outputOnly"
 
-Script58.sourceCode = '''ecmascript:\n"+
+Script59.field.append(field61)
+
+Script59.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 10;\n"+
 "      }\n"+
@@ -343,29 +349,29 @@ Script58.sourceCode = '''ecmascript:\n"+
 "          choice = 10;\n"+
 "      }'''
 
-Group57.children.append(Script58)
-Inline61 = x3d.Inline(DEF="JinLidTightener")
-Inline61.url = ["../resources/JinLidTightener.x3d","JinLidTightener.x3d"]
+Group58.children.append(Script59)
+Inline62 = x3d.Inline(DEF="JinLidTightener")
+Inline62.url = ["../resources/JinLidTightener.x3d","JinLidTightener.x3d"]
 
-Group57.children.append(Inline61)
+Group58.children.append(Inline62)
 
-Switch6.children.append(Group57)
-Group62 = x3d.Group()
-Script63 = x3d.Script(DEF="Choice11")
-field64 = x3d.field()
-field64.accessType = "inputOnly"
-field64.type = "SFTime"
-field64.name = "touchTime"
-
-Script63.field.append(field64)
+Switch7.children.append(Group58)
+Group63 = x3d.Group()
+Script64 = x3d.Script(DEF="Choice11")
 field65 = x3d.field()
-field65.accessType = "outputOnly"
-field65.type = "SFInt32"
-field65.name = "choice"
+field65.name = "touchTime"
+field65.type = "SFTime"
+field65.accessType = "inputOnly"
 
-Script63.field.append(field65)
+Script64.field.append(field65)
+field66 = x3d.field()
+field66.name = "choice"
+field66.type = "SFInt32"
+field66.accessType = "outputOnly"
 
-Script63.sourceCode = '''ecmascript:\n"+
+Script64.field.append(field66)
+
+Script64.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 11;\n"+
 "      }\n"+
@@ -373,29 +379,29 @@ Script63.sourceCode = '''ecmascript:\n"+
 "          choice = 11;\n"+
 "      }'''
 
-Group62.children.append(Script63)
-Inline66 = x3d.Inline(DEF="JinLipCornerDepressor")
-Inline66.url = ["../resources/JinLipCornerDepressor.x3d","JinLipCornerDepressor.x3d"]
+Group63.children.append(Script64)
+Inline67 = x3d.Inline(DEF="JinLipCornerDepressor")
+Inline67.url = ["../resources/JinLipCornerDepressor.x3d","JinLipCornerDepressor.x3d"]
 
-Group62.children.append(Inline66)
+Group63.children.append(Inline67)
 
-Switch6.children.append(Group62)
-Group67 = x3d.Group()
-Script68 = x3d.Script(DEF="Choice12")
-field69 = x3d.field()
-field69.accessType = "inputOnly"
-field69.type = "SFTime"
-field69.name = "touchTime"
-
-Script68.field.append(field69)
+Switch7.children.append(Group63)
+Group68 = x3d.Group()
+Script69 = x3d.Script(DEF="Choice12")
 field70 = x3d.field()
-field70.accessType = "outputOnly"
-field70.type = "SFInt32"
-field70.name = "choice"
+field70.name = "touchTime"
+field70.type = "SFTime"
+field70.accessType = "inputOnly"
 
-Script68.field.append(field70)
+Script69.field.append(field70)
+field71 = x3d.field()
+field71.name = "choice"
+field71.type = "SFInt32"
+field71.accessType = "outputOnly"
 
-Script68.sourceCode = '''ecmascript:\n"+
+Script69.field.append(field71)
+
+Script69.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 12;\n"+
 "      }\n"+
@@ -403,29 +409,29 @@ Script68.sourceCode = '''ecmascript:\n"+
 "          choice = 12;\n"+
 "      }'''
 
-Group67.children.append(Script68)
-Inline71 = x3d.Inline(DEF="JinLipCornerPuller")
-Inline71.url = ["../resources/JinLipCornerPuller.x3d","JinLipCornerPuller.x3d"]
+Group68.children.append(Script69)
+Inline72 = x3d.Inline(DEF="JinLipCornerPuller")
+Inline72.url = ["../resources/JinLipCornerPuller.x3d","JinLipCornerPuller.x3d"]
 
-Group67.children.append(Inline71)
+Group68.children.append(Inline72)
 
-Switch6.children.append(Group67)
-Group72 = x3d.Group()
-Script73 = x3d.Script(DEF="Choice13")
-field74 = x3d.field()
-field74.accessType = "inputOnly"
-field74.type = "SFTime"
-field74.name = "touchTime"
-
-Script73.field.append(field74)
+Switch7.children.append(Group68)
+Group73 = x3d.Group()
+Script74 = x3d.Script(DEF="Choice13")
 field75 = x3d.field()
-field75.accessType = "outputOnly"
-field75.type = "SFInt32"
-field75.name = "choice"
+field75.name = "touchTime"
+field75.type = "SFTime"
+field75.accessType = "inputOnly"
 
-Script73.field.append(field75)
+Script74.field.append(field75)
+field76 = x3d.field()
+field76.name = "choice"
+field76.type = "SFInt32"
+field76.accessType = "outputOnly"
 
-Script73.sourceCode = '''ecmascript:\n"+
+Script74.field.append(field76)
+
+Script74.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 13;\n"+
 "      }\n"+
@@ -433,29 +439,29 @@ Script73.sourceCode = '''ecmascript:\n"+
 "          choice = 13;\n"+
 "      }'''
 
-Group72.children.append(Script73)
-Inline76 = x3d.Inline(DEF="JinLipFunneler")
-Inline76.url = ["../resources/JinLipFunneler.x3d","JinLipFunneler.x3d"]
+Group73.children.append(Script74)
+Inline77 = x3d.Inline(DEF="JinLipFunneler")
+Inline77.url = ["../resources/JinLipFunneler.x3d","JinLipFunneler.x3d"]
 
-Group72.children.append(Inline76)
+Group73.children.append(Inline77)
 
-Switch6.children.append(Group72)
-Group77 = x3d.Group()
-Script78 = x3d.Script(DEF="Choice14")
-field79 = x3d.field()
-field79.accessType = "inputOnly"
-field79.type = "SFTime"
-field79.name = "touchTime"
-
-Script78.field.append(field79)
+Switch7.children.append(Group73)
+Group78 = x3d.Group()
+Script79 = x3d.Script(DEF="Choice14")
 field80 = x3d.field()
-field80.accessType = "outputOnly"
-field80.type = "SFInt32"
-field80.name = "choice"
+field80.name = "touchTime"
+field80.type = "SFTime"
+field80.accessType = "inputOnly"
 
-Script78.field.append(field80)
+Script79.field.append(field80)
+field81 = x3d.field()
+field81.name = "choice"
+field81.type = "SFInt32"
+field81.accessType = "outputOnly"
 
-Script78.sourceCode = '''ecmascript:\n"+
+Script79.field.append(field81)
+
+Script79.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 14;\n"+
 "      }\n"+
@@ -463,29 +469,29 @@ Script78.sourceCode = '''ecmascript:\n"+
 "          choice = 14;\n"+
 "      }'''
 
-Group77.children.append(Script78)
-Inline81 = x3d.Inline(DEF="JinLipPressor")
-Inline81.url = ["../resources/JinLipPressor.x3d","JinLipPressor.x3d"]
+Group78.children.append(Script79)
+Inline82 = x3d.Inline(DEF="JinLipPressor")
+Inline82.url = ["../resources/JinLipPressor.x3d","JinLipPressor.x3d"]
 
-Group77.children.append(Inline81)
+Group78.children.append(Inline82)
 
-Switch6.children.append(Group77)
-Group82 = x3d.Group()
-Script83 = x3d.Script(DEF="Choice15")
-field84 = x3d.field()
-field84.accessType = "inputOnly"
-field84.type = "SFTime"
-field84.name = "touchTime"
-
-Script83.field.append(field84)
+Switch7.children.append(Group78)
+Group83 = x3d.Group()
+Script84 = x3d.Script(DEF="Choice15")
 field85 = x3d.field()
-field85.accessType = "outputOnly"
-field85.type = "SFInt32"
-field85.name = "choice"
+field85.name = "touchTime"
+field85.type = "SFTime"
+field85.accessType = "inputOnly"
 
-Script83.field.append(field85)
+Script84.field.append(field85)
+field86 = x3d.field()
+field86.name = "choice"
+field86.type = "SFInt32"
+field86.accessType = "outputOnly"
 
-Script83.sourceCode = '''ecmascript:\n"+
+Script84.field.append(field86)
+
+Script84.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 15;\n"+
 "      }\n"+
@@ -493,29 +499,29 @@ Script83.sourceCode = '''ecmascript:\n"+
 "          choice = 15;\n"+
 "      }'''
 
-Group82.children.append(Script83)
-Inline86 = x3d.Inline(DEF="JinLipPuckerer")
-Inline86.url = ["../resources/JinLipPuckerer.x3d","JinLipPuckerer.x3d"]
+Group83.children.append(Script84)
+Inline87 = x3d.Inline(DEF="JinLipPuckerer")
+Inline87.url = ["../resources/JinLipPuckerer.x3d","JinLipPuckerer.x3d"]
 
-Group82.children.append(Inline86)
+Group83.children.append(Inline87)
 
-Switch6.children.append(Group82)
-Group87 = x3d.Group()
-Script88 = x3d.Script(DEF="Choice16")
-field89 = x3d.field()
-field89.accessType = "inputOnly"
-field89.type = "SFTime"
-field89.name = "touchTime"
-
-Script88.field.append(field89)
+Switch7.children.append(Group83)
+Group88 = x3d.Group()
+Script89 = x3d.Script(DEF="Choice16")
 field90 = x3d.field()
-field90.accessType = "outputOnly"
-field90.type = "SFInt32"
-field90.name = "choice"
+field90.name = "touchTime"
+field90.type = "SFTime"
+field90.accessType = "inputOnly"
 
-Script88.field.append(field90)
+Script89.field.append(field90)
+field91 = x3d.field()
+field91.name = "choice"
+field91.type = "SFInt32"
+field91.accessType = "outputOnly"
 
-Script88.sourceCode = '''ecmascript:\n"+
+Script89.field.append(field91)
+
+Script89.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 16;\n"+
 "      }\n"+
@@ -523,29 +529,29 @@ Script88.sourceCode = '''ecmascript:\n"+
 "          choice = 16;\n"+
 "      }'''
 
-Group87.children.append(Script88)
-Inline91 = x3d.Inline(DEF="JinLipsPart")
-Inline91.url = ["../resources/JinLipsPart.x3d","JinLipsPart.x3d"]
+Group88.children.append(Script89)
+Inline92 = x3d.Inline(DEF="JinLipsPart")
+Inline92.url = ["../resources/JinLipsPart.x3d","JinLipsPart.x3d"]
 
-Group87.children.append(Inline91)
+Group88.children.append(Inline92)
 
-Switch6.children.append(Group87)
-Group92 = x3d.Group()
-Script93 = x3d.Script(DEF="Choice17")
-field94 = x3d.field()
-field94.accessType = "inputOnly"
-field94.type = "SFTime"
-field94.name = "touchTime"
-
-Script93.field.append(field94)
+Switch7.children.append(Group88)
+Group93 = x3d.Group()
+Script94 = x3d.Script(DEF="Choice17")
 field95 = x3d.field()
-field95.accessType = "outputOnly"
-field95.type = "SFInt32"
-field95.name = "choice"
+field95.name = "touchTime"
+field95.type = "SFTime"
+field95.accessType = "inputOnly"
 
-Script93.field.append(field95)
+Script94.field.append(field95)
+field96 = x3d.field()
+field96.name = "choice"
+field96.type = "SFInt32"
+field96.accessType = "outputOnly"
 
-Script93.sourceCode = '''ecmascript:\n"+
+Script94.field.append(field96)
+
+Script94.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 17;\n"+
 "      }\n"+
@@ -553,29 +559,29 @@ Script93.sourceCode = '''ecmascript:\n"+
 "          choice = 17;\n"+
 "      }'''
 
-Group92.children.append(Script93)
-Inline96 = x3d.Inline(DEF="JinLipStretcher")
-Inline96.url = ["../resources/JinLipStretcher.x3d","JinLipStretcher.x3d"]
+Group93.children.append(Script94)
+Inline97 = x3d.Inline(DEF="JinLipStretcher")
+Inline97.url = ["../resources/JinLipStretcher.x3d","JinLipStretcher.x3d"]
 
-Group92.children.append(Inline96)
+Group93.children.append(Inline97)
 
-Switch6.children.append(Group92)
-Group97 = x3d.Group()
-Script98 = x3d.Script(DEF="Choice18")
-field99 = x3d.field()
-field99.accessType = "inputOnly"
-field99.type = "SFTime"
-field99.name = "touchTime"
-
-Script98.field.append(field99)
+Switch7.children.append(Group93)
+Group98 = x3d.Group()
+Script99 = x3d.Script(DEF="Choice18")
 field100 = x3d.field()
-field100.accessType = "outputOnly"
-field100.type = "SFInt32"
-field100.name = "choice"
+field100.name = "touchTime"
+field100.type = "SFTime"
+field100.accessType = "inputOnly"
 
-Script98.field.append(field100)
+Script99.field.append(field100)
+field101 = x3d.field()
+field101.name = "choice"
+field101.type = "SFInt32"
+field101.accessType = "outputOnly"
 
-Script98.sourceCode = '''ecmascript:\n"+
+Script99.field.append(field101)
+
+Script99.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 18;\n"+
 "      }\n"+
@@ -583,29 +589,29 @@ Script98.sourceCode = '''ecmascript:\n"+
 "          choice = 18;\n"+
 "      }'''
 
-Group97.children.append(Script98)
-Inline101 = x3d.Inline(DEF="JinLipSuck")
-Inline101.url = ["../resources/JinLipSuck.x3d","JinLipSuck.x3d"]
+Group98.children.append(Script99)
+Inline102 = x3d.Inline(DEF="JinLipSuck")
+Inline102.url = ["../resources/JinLipSuck.x3d","JinLipSuck.x3d"]
 
-Group97.children.append(Inline101)
+Group98.children.append(Inline102)
 
-Switch6.children.append(Group97)
-Group102 = x3d.Group()
-Script103 = x3d.Script(DEF="Choice19")
-field104 = x3d.field()
-field104.accessType = "inputOnly"
-field104.type = "SFTime"
-field104.name = "touchTime"
-
-Script103.field.append(field104)
+Switch7.children.append(Group98)
+Group103 = x3d.Group()
+Script104 = x3d.Script(DEF="Choice19")
 field105 = x3d.field()
-field105.accessType = "outputOnly"
-field105.type = "SFInt32"
-field105.name = "choice"
+field105.name = "touchTime"
+field105.type = "SFTime"
+field105.accessType = "inputOnly"
 
-Script103.field.append(field105)
+Script104.field.append(field105)
+field106 = x3d.field()
+field106.name = "choice"
+field106.type = "SFInt32"
+field106.accessType = "outputOnly"
 
-Script103.sourceCode = '''ecmascript:\n"+
+Script104.field.append(field106)
+
+Script104.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 19;\n"+
 "      }\n"+
@@ -613,29 +619,29 @@ Script103.sourceCode = '''ecmascript:\n"+
 "          choice = 19;\n"+
 "      }'''
 
-Group102.children.append(Script103)
-Inline106 = x3d.Inline(DEF="JinLipTightener")
-Inline106.url = ["../resources/JinLipTightener.x3d","JinLipTightener.x3d"]
+Group103.children.append(Script104)
+Inline107 = x3d.Inline(DEF="JinLipTightener")
+Inline107.url = ["../resources/JinLipTightener.x3d","JinLipTightener.x3d"]
 
-Group102.children.append(Inline106)
+Group103.children.append(Inline107)
 
-Switch6.children.append(Group102)
-Group107 = x3d.Group()
-Script108 = x3d.Script(DEF="Choice20")
-field109 = x3d.field()
-field109.accessType = "inputOnly"
-field109.type = "SFTime"
-field109.name = "touchTime"
-
-Script108.field.append(field109)
+Switch7.children.append(Group103)
+Group108 = x3d.Group()
+Script109 = x3d.Script(DEF="Choice20")
 field110 = x3d.field()
-field110.accessType = "outputOnly"
-field110.type = "SFInt32"
-field110.name = "choice"
+field110.name = "touchTime"
+field110.type = "SFTime"
+field110.accessType = "inputOnly"
 
-Script108.field.append(field110)
+Script109.field.append(field110)
+field111 = x3d.field()
+field111.name = "choice"
+field111.type = "SFInt32"
+field111.accessType = "outputOnly"
 
-Script108.sourceCode = '''ecmascript:\n"+
+Script109.field.append(field111)
+
+Script109.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 20;\n"+
 "      }\n"+
@@ -643,29 +649,29 @@ Script108.sourceCode = '''ecmascript:\n"+
 "          choice = 20;\n"+
 "      }'''
 
-Group107.children.append(Script108)
-Inline111 = x3d.Inline(DEF="JinLowerLipDepressor")
-Inline111.url = ["../resources/JinLowerLipDepressor.x3d","JinLowerLipDepressor.x3d"]
+Group108.children.append(Script109)
+Inline112 = x3d.Inline(DEF="JinLowerLipDepressor")
+Inline112.url = ["../resources/JinLowerLipDepressor.x3d","JinLowerLipDepressor.x3d"]
 
-Group107.children.append(Inline111)
+Group108.children.append(Inline112)
 
-Switch6.children.append(Group107)
-Group112 = x3d.Group()
-Script113 = x3d.Script(DEF="Choice21")
-field114 = x3d.field()
-field114.accessType = "inputOnly"
-field114.type = "SFTime"
-field114.name = "touchTime"
-
-Script113.field.append(field114)
+Switch7.children.append(Group108)
+Group113 = x3d.Group()
+Script114 = x3d.Script(DEF="Choice21")
 field115 = x3d.field()
-field115.accessType = "outputOnly"
-field115.type = "SFInt32"
-field115.name = "choice"
+field115.name = "touchTime"
+field115.type = "SFTime"
+field115.accessType = "inputOnly"
 
-Script113.field.append(field115)
+Script114.field.append(field115)
+field116 = x3d.field()
+field116.name = "choice"
+field116.type = "SFInt32"
+field116.accessType = "outputOnly"
 
-Script113.sourceCode = '''ecmascript:\n"+
+Script114.field.append(field116)
+
+Script114.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 21;\n"+
 "      }\n"+
@@ -673,29 +679,29 @@ Script113.sourceCode = '''ecmascript:\n"+
 "          choice = 21;\n"+
 "      }'''
 
-Group112.children.append(Script113)
-Inline116 = x3d.Inline(DEF="JinMouthStretch")
-Inline116.url = ["../resources/JinMouthStretch.x3d","JinMouthStretch.x3d"]
+Group113.children.append(Script114)
+Inline117 = x3d.Inline(DEF="JinMouthStretch")
+Inline117.url = ["../resources/JinMouthStretch.x3d","JinMouthStretch.x3d"]
 
-Group112.children.append(Inline116)
+Group113.children.append(Inline117)
 
-Switch6.children.append(Group112)
-Group117 = x3d.Group()
-Script118 = x3d.Script(DEF="Choice22")
-field119 = x3d.field()
-field119.accessType = "inputOnly"
-field119.type = "SFTime"
-field119.name = "touchTime"
-
-Script118.field.append(field119)
+Switch7.children.append(Group113)
+Group118 = x3d.Group()
+Script119 = x3d.Script(DEF="Choice22")
 field120 = x3d.field()
-field120.accessType = "outputOnly"
-field120.type = "SFInt32"
-field120.name = "choice"
+field120.name = "touchTime"
+field120.type = "SFTime"
+field120.accessType = "inputOnly"
 
-Script118.field.append(field120)
+Script119.field.append(field120)
+field121 = x3d.field()
+field121.name = "choice"
+field121.type = "SFInt32"
+field121.accessType = "outputOnly"
 
-Script118.sourceCode = '''ecmascript:\n"+
+Script119.field.append(field121)
+
+Script119.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 22;\n"+
 "      }\n"+
@@ -703,29 +709,29 @@ Script118.sourceCode = '''ecmascript:\n"+
 "          choice = 22;\n"+
 "      }'''
 
-Group117.children.append(Script118)
-Inline121 = x3d.Inline(DEF="JinNasolabialDeepener")
-Inline121.url = ["../resources/JinNasolabialDeepener.x3d","JinNasolabialDeepener.x3d"]
+Group118.children.append(Script119)
+Inline122 = x3d.Inline(DEF="JinNasolabialDeepener")
+Inline122.url = ["../resources/JinNasolabialDeepener.x3d","JinNasolabialDeepener.x3d"]
 
-Group117.children.append(Inline121)
+Group118.children.append(Inline122)
 
-Switch6.children.append(Group117)
-Group122 = x3d.Group()
-Script123 = x3d.Script(DEF="Choice23")
-field124 = x3d.field()
-field124.accessType = "inputOnly"
-field124.type = "SFTime"
-field124.name = "touchTime"
-
-Script123.field.append(field124)
+Switch7.children.append(Group118)
+Group123 = x3d.Group()
+Script124 = x3d.Script(DEF="Choice23")
 field125 = x3d.field()
-field125.accessType = "outputOnly"
-field125.type = "SFInt32"
-field125.name = "choice"
+field125.name = "touchTime"
+field125.type = "SFTime"
+field125.accessType = "inputOnly"
 
-Script123.field.append(field125)
+Script124.field.append(field125)
+field126 = x3d.field()
+field126.name = "choice"
+field126.type = "SFInt32"
+field126.accessType = "outputOnly"
 
-Script123.sourceCode = '''ecmascript:\n"+
+Script124.field.append(field126)
+
+Script124.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 23;\n"+
 "      }\n"+
@@ -733,29 +739,29 @@ Script123.sourceCode = '''ecmascript:\n"+
 "          choice = 23;\n"+
 "      }'''
 
-Group122.children.append(Script123)
-Inline126 = x3d.Inline(DEF="JinNoseWrinkler")
-Inline126.url = ["../resources/JinNoseWrinkler.x3d","JinNoseWrinkler.x3d"]
+Group123.children.append(Script124)
+Inline127 = x3d.Inline(DEF="JinNoseWrinkler")
+Inline127.url = ["../resources/JinNoseWrinkler.x3d","JinNoseWrinkler.x3d"]
 
-Group122.children.append(Inline126)
+Group123.children.append(Inline127)
 
-Switch6.children.append(Group122)
-Group127 = x3d.Group()
-Script128 = x3d.Script(DEF="Choice24")
-field129 = x3d.field()
-field129.accessType = "inputOnly"
-field129.type = "SFTime"
-field129.name = "touchTime"
-
-Script128.field.append(field129)
+Switch7.children.append(Group123)
+Group128 = x3d.Group()
+Script129 = x3d.Script(DEF="Choice24")
 field130 = x3d.field()
-field130.accessType = "outputOnly"
-field130.type = "SFInt32"
-field130.name = "choice"
+field130.name = "touchTime"
+field130.type = "SFTime"
+field130.accessType = "inputOnly"
 
-Script128.field.append(field130)
+Script129.field.append(field130)
+field131 = x3d.field()
+field131.name = "choice"
+field131.type = "SFInt32"
+field131.accessType = "outputOnly"
 
-Script128.sourceCode = '''ecmascript:\n"+
+Script129.field.append(field131)
+
+Script129.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 24;\n"+
 "      }\n"+
@@ -763,29 +769,29 @@ Script128.sourceCode = '''ecmascript:\n"+
 "          choice = 24;\n"+
 "      }'''
 
-Group127.children.append(Script128)
-Inline131 = x3d.Inline(DEF="JinOuterBrowRaiser")
-Inline131.url = ["../resources/JinOuterBrowRaiser.x3d","JinOuterBrowRaiser.x3d"]
+Group128.children.append(Script129)
+Inline132 = x3d.Inline(DEF="JinOuterBrowRaiser")
+Inline132.url = ["../resources/JinOuterBrowRaiser.x3d","JinOuterBrowRaiser.x3d"]
 
-Group127.children.append(Inline131)
+Group128.children.append(Inline132)
 
-Switch6.children.append(Group127)
-Group132 = x3d.Group()
-Script133 = x3d.Script(DEF="Choice25")
-field134 = x3d.field()
-field134.accessType = "inputOnly"
-field134.type = "SFTime"
-field134.name = "touchTime"
-
-Script133.field.append(field134)
+Switch7.children.append(Group128)
+Group133 = x3d.Group()
+Script134 = x3d.Script(DEF="Choice25")
 field135 = x3d.field()
-field135.accessType = "outputOnly"
-field135.type = "SFInt32"
-field135.name = "choice"
+field135.name = "touchTime"
+field135.type = "SFTime"
+field135.accessType = "inputOnly"
 
-Script133.field.append(field135)
+Script134.field.append(field135)
+field136 = x3d.field()
+field136.name = "choice"
+field136.type = "SFInt32"
+field136.accessType = "outputOnly"
 
-Script133.sourceCode = '''ecmascript:\n"+
+Script134.field.append(field136)
+
+Script134.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 25;\n"+
 "      }\n"+
@@ -793,29 +799,29 @@ Script133.sourceCode = '''ecmascript:\n"+
 "          choice = 25;\n"+
 "      }'''
 
-Group132.children.append(Script133)
-Inline136 = x3d.Inline(DEF="JinSlit")
-Inline136.url = ["../resources/JinSlit.x3d","JinSlit.x3d"]
+Group133.children.append(Script134)
+Inline137 = x3d.Inline(DEF="JinSlit")
+Inline137.url = ["../resources/JinSlit.x3d","JinSlit.x3d"]
 
-Group132.children.append(Inline136)
+Group133.children.append(Inline137)
 
-Switch6.children.append(Group132)
-Group137 = x3d.Group()
-Script138 = x3d.Script(DEF="Choice26")
-field139 = x3d.field()
-field139.accessType = "inputOnly"
-field139.type = "SFTime"
-field139.name = "touchTime"
-
-Script138.field.append(field139)
+Switch7.children.append(Group133)
+Group138 = x3d.Group()
+Script139 = x3d.Script(DEF="Choice26")
 field140 = x3d.field()
-field140.accessType = "outputOnly"
-field140.type = "SFInt32"
-field140.name = "choice"
+field140.name = "touchTime"
+field140.type = "SFTime"
+field140.accessType = "inputOnly"
 
-Script138.field.append(field140)
+Script139.field.append(field140)
+field141 = x3d.field()
+field141.name = "choice"
+field141.type = "SFInt32"
+field141.accessType = "outputOnly"
 
-Script138.sourceCode = '''ecmascript:\n"+
+Script139.field.append(field141)
+
+Script139.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 26;\n"+
 "      }\n"+
@@ -823,29 +829,29 @@ Script138.sourceCode = '''ecmascript:\n"+
 "          choice = 26;\n"+
 "      }'''
 
-Group137.children.append(Script138)
-Inline141 = x3d.Inline(DEF="JinSquint")
-Inline141.url = ["../resources/JinSquint.x3d","JinSquint.x3d"]
+Group138.children.append(Script139)
+Inline142 = x3d.Inline(DEF="JinSquint")
+Inline142.url = ["../resources/JinSquint.x3d","JinSquint.x3d"]
 
-Group137.children.append(Inline141)
+Group138.children.append(Inline142)
 
-Switch6.children.append(Group137)
-Group142 = x3d.Group()
-Script143 = x3d.Script(DEF="Choice27")
-field144 = x3d.field()
-field144.accessType = "inputOnly"
-field144.type = "SFTime"
-field144.name = "touchTime"
-
-Script143.field.append(field144)
+Switch7.children.append(Group138)
+Group143 = x3d.Group()
+Script144 = x3d.Script(DEF="Choice27")
 field145 = x3d.field()
-field145.accessType = "outputOnly"
-field145.type = "SFInt32"
-field145.name = "choice"
+field145.name = "touchTime"
+field145.type = "SFTime"
+field145.accessType = "inputOnly"
 
-Script143.field.append(field145)
+Script144.field.append(field145)
+field146 = x3d.field()
+field146.name = "choice"
+field146.type = "SFInt32"
+field146.accessType = "outputOnly"
 
-Script143.sourceCode = '''ecmascript:\n"+
+Script144.field.append(field146)
+
+Script144.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 27;\n"+
 "      }\n"+
@@ -853,29 +859,29 @@ Script143.sourceCode = '''ecmascript:\n"+
 "          choice = 27;\n"+
 "      }'''
 
-Group142.children.append(Script143)
-Inline146 = x3d.Inline(DEF="JinUpperLidRaiser")
-Inline146.url = ["../resources/JinUpperLidRaiser.x3d","JinUpperLidRaiser.x3d"]
+Group143.children.append(Script144)
+Inline147 = x3d.Inline(DEF="JinUpperLidRaiser")
+Inline147.url = ["../resources/JinUpperLidRaiser.x3d","JinUpperLidRaiser.x3d"]
 
-Group142.children.append(Inline146)
+Group143.children.append(Inline147)
 
-Switch6.children.append(Group142)
-Group147 = x3d.Group()
-Script148 = x3d.Script(DEF="Choice28")
-field149 = x3d.field()
-field149.accessType = "inputOnly"
-field149.type = "SFTime"
-field149.name = "touchTime"
-
-Script148.field.append(field149)
+Switch7.children.append(Group143)
+Group148 = x3d.Group()
+Script149 = x3d.Script(DEF="Choice28")
 field150 = x3d.field()
-field150.accessType = "outputOnly"
-field150.type = "SFInt32"
-field150.name = "choice"
+field150.name = "touchTime"
+field150.type = "SFTime"
+field150.accessType = "inputOnly"
 
-Script148.field.append(field150)
+Script149.field.append(field150)
+field151 = x3d.field()
+field151.name = "choice"
+field151.type = "SFInt32"
+field151.accessType = "outputOnly"
 
-Script148.sourceCode = '''ecmascript:\n"+
+Script149.field.append(field151)
+
+Script149.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 28;\n"+
 "      }\n"+
@@ -883,29 +889,29 @@ Script148.sourceCode = '''ecmascript:\n"+
 "          choice = 28;\n"+
 "      }'''
 
-Group147.children.append(Script148)
-Inline151 = x3d.Inline(DEF="JinUpperLipRaiser")
-Inline151.url = ["../resources/JinUpperLipRaiser.x3d","JinUpperLipRaiser.x3d"]
+Group148.children.append(Script149)
+Inline152 = x3d.Inline(DEF="JinUpperLipRaiser")
+Inline152.url = ["../resources/JinUpperLipRaiser.x3d","JinUpperLipRaiser.x3d"]
 
-Group147.children.append(Inline151)
+Group148.children.append(Inline152)
 
-Switch6.children.append(Group147)
-Group152 = x3d.Group()
-Script153 = x3d.Script(DEF="Choice29")
-field154 = x3d.field()
-field154.accessType = "inputOnly"
-field154.type = "SFTime"
-field154.name = "touchTime"
-
-Script153.field.append(field154)
+Switch7.children.append(Group148)
+Group153 = x3d.Group()
+Script154 = x3d.Script(DEF="Choice29")
 field155 = x3d.field()
-field155.accessType = "outputOnly"
-field155.type = "SFInt32"
-field155.name = "choice"
+field155.name = "touchTime"
+field155.type = "SFTime"
+field155.accessType = "inputOnly"
 
-Script153.field.append(field155)
+Script154.field.append(field155)
+field156 = x3d.field()
+field156.name = "choice"
+field156.type = "SFInt32"
+field156.accessType = "outputOnly"
 
-Script153.sourceCode = '''ecmascript:\n"+
+Script154.field.append(field156)
+
+Script154.sourceCode = '''ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 29;\n"+
 "      }\n"+
@@ -913,1819 +919,1819 @@ Script153.sourceCode = '''ecmascript:\n"+
 "          choice = 29;\n"+
 "      }'''
 
-Group152.children.append(Script153)
-Inline156 = x3d.Inline(DEF="JinWink")
-Inline156.url = ["../resources/JinWink.x3d","JinWink.x3d"]
+Group153.children.append(Script154)
+Inline157 = x3d.Inline(DEF="JinWink")
+Inline157.url = ["../resources/JinWink.x3d","JinWink.x3d"]
 
-Group152.children.append(Inline156)
+Group153.children.append(Inline157)
 
-Switch6.children.append(Group152)
+Switch7.children.append(Group153)
 
-Group5.children.append(Switch6)
-Transform157 = x3d.Transform()
-Transform157.translation = [48,63.4,0]
-TouchSensor158 = x3d.TouchSensor(DEF="JinBlink_Sensor")
-TouchSensor158.description = "TSJinBlink"
+Group6.children.append(Switch7)
+Transform158 = x3d.Transform()
+Transform158.translation = [48,63.4,0]
+TouchSensor159 = x3d.TouchSensor(DEF="JinBlink_Sensor")
+TouchSensor159.description = "TSJinBlink"
 
-Transform157.children.append(TouchSensor158)
-Shape159 = x3d.Shape()
-Appearance160 = x3d.Appearance()
-Material161 = x3d.Material()
-Material161.diffuseColor = [1,1,1]
+Transform158.children.append(TouchSensor159)
+Shape160 = x3d.Shape()
+Appearance161 = x3d.Appearance()
+Material162 = x3d.Material()
+Material162.diffuseColor = [1,1,1]
 
-Appearance160.material = Material161
+Appearance161.material = Material162
 
-Shape159.appearance = Appearance160
-Text162 = x3d.Text()
-Text162.string = ["JinBlink"]
-FontStyle163 = x3d.FontStyle()
-FontStyle163.size = 2.4
-FontStyle163.spacing = 1.2
-FontStyle163.justify = ["MIDDLE","MIDDLE"]
+Shape160.appearance = Appearance161
+Text163 = x3d.Text()
+Text163.string = ["JinBlink"]
+FontStyle164 = x3d.FontStyle()
+FontStyle164.size = 2.4
+FontStyle164.spacing = 1.2
+FontStyle164.justify = ["MIDDLE","MIDDLE"]
 
-Text162.fontStyle = FontStyle163
+Text163.fontStyle = FontStyle164
 
-Shape159.geometry = Text162
+Shape160.geometry = Text163
 
-Transform157.children.append(Shape159)
-Shape164 = x3d.Shape()
-Appearance165 = x3d.Appearance()
-Material166 = x3d.Material()
-Material166.diffuseColor = [0,0,1]
+Transform158.children.append(Shape160)
+Shape165 = x3d.Shape()
+Appearance166 = x3d.Appearance()
+Material167 = x3d.Material()
+Material167.diffuseColor = [0,0,1]
 
-Appearance165.material = Material166
+Appearance166.material = Material167
 
-Shape164.appearance = Appearance165
-IndexedFaceSet167 = x3d.IndexedFaceSet()
-IndexedFaceSet167.coordIndex = [0,1,2,3,-1]
-Coordinate168 = x3d.Coordinate()
-Coordinate168.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Shape165.appearance = Appearance166
+IndexedFaceSet168 = x3d.IndexedFaceSet()
+IndexedFaceSet168.coordIndex = [0,1,2,3,-1]
+Coordinate169 = x3d.Coordinate()
+Coordinate169.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-IndexedFaceSet167.coord = Coordinate168
+IndexedFaceSet168.coord = Coordinate169
 
-Shape164.geometry = IndexedFaceSet167
+Shape165.geometry = IndexedFaceSet168
 
-Transform157.children.append(Shape164)
+Transform158.children.append(Shape165)
 
-Group5.children.append(Transform157)
-Transform169 = x3d.Transform()
-Transform169.translation = [48,60.4,0]
-TouchSensor170 = x3d.TouchSensor(DEF="JinBrowLowerer_Sensor")
-TouchSensor170.description = "TSJinBrowLowerer"
+Group6.children.append(Transform158)
+ROUTE170 = x3d.ROUTE()
+ROUTE170.fromNode = "JinBlink_Sensor"
+ROUTE170.fromField = "touchTime"
+ROUTE170.toNode = "Choice0"
+ROUTE170.toField = "touchTime"
 
-Transform169.children.append(TouchSensor170)
-Shape171 = x3d.Shape()
-Appearance172 = x3d.Appearance()
-Material173 = x3d.Material()
-Material173.diffuseColor = [1,1,1]
+Group6.children.append(ROUTE170)
+ROUTE171 = x3d.ROUTE()
+ROUTE171.fromNode = "Choice0"
+ROUTE171.fromField = "choice"
+ROUTE171.toNode = "SceneSwitcher"
+ROUTE171.toField = "whichChoice"
 
-Appearance172.material = Material173
+Group6.children.append(ROUTE171)
+Transform172 = x3d.Transform()
+Transform172.translation = [48,60.4,0]
+TouchSensor173 = x3d.TouchSensor(DEF="JinBrowLowerer_Sensor")
+TouchSensor173.description = "TSJinBrowLowerer"
 
-Shape171.appearance = Appearance172
-Text174 = x3d.Text()
-Text174.string = ["JinBrowLowerer"]
-FontStyle175 = x3d.FontStyle()
-FontStyle175.size = 2.4
-FontStyle175.spacing = 1.2
-FontStyle175.justify = ["MIDDLE","MIDDLE"]
+Transform172.children.append(TouchSensor173)
+Shape174 = x3d.Shape()
+Appearance175 = x3d.Appearance()
+Material176 = x3d.Material()
+Material176.diffuseColor = [1,1,1]
 
-Text174.fontStyle = FontStyle175
+Appearance175.material = Material176
 
-Shape171.geometry = Text174
+Shape174.appearance = Appearance175
+Text177 = x3d.Text()
+Text177.string = ["JinBrowLowerer"]
+FontStyle178 = x3d.FontStyle()
+FontStyle178.size = 2.4
+FontStyle178.spacing = 1.2
+FontStyle178.justify = ["MIDDLE","MIDDLE"]
 
-Transform169.children.append(Shape171)
-Shape176 = x3d.Shape()
-Appearance177 = x3d.Appearance()
-Material178 = x3d.Material()
-Material178.diffuseColor = [0,0,1]
+Text177.fontStyle = FontStyle178
 
-Appearance177.material = Material178
+Shape174.geometry = Text177
 
-Shape176.appearance = Appearance177
-IndexedFaceSet179 = x3d.IndexedFaceSet()
-IndexedFaceSet179.coordIndex = [0,1,2,3,-1]
-Coordinate180 = x3d.Coordinate()
-Coordinate180.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform172.children.append(Shape174)
+Shape179 = x3d.Shape()
+Appearance180 = x3d.Appearance()
+Material181 = x3d.Material()
+Material181.diffuseColor = [0,0,1]
 
-IndexedFaceSet179.coord = Coordinate180
+Appearance180.material = Material181
 
-Shape176.geometry = IndexedFaceSet179
+Shape179.appearance = Appearance180
+IndexedFaceSet182 = x3d.IndexedFaceSet()
+IndexedFaceSet182.coordIndex = [0,1,2,3,-1]
+Coordinate183 = x3d.Coordinate()
+Coordinate183.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Transform169.children.append(Shape176)
+IndexedFaceSet182.coord = Coordinate183
 
-Group5.children.append(Transform169)
-Transform181 = x3d.Transform()
-Transform181.translation = [48,57.4,0]
-TouchSensor182 = x3d.TouchSensor(DEF="JinCheekPuffer_Sensor")
-TouchSensor182.description = "TSJinCheekPuffer"
+Shape179.geometry = IndexedFaceSet182
 
-Transform181.children.append(TouchSensor182)
-Shape183 = x3d.Shape()
-Appearance184 = x3d.Appearance()
-Material185 = x3d.Material()
-Material185.diffuseColor = [1,1,1]
+Transform172.children.append(Shape179)
 
-Appearance184.material = Material185
+Group6.children.append(Transform172)
+ROUTE184 = x3d.ROUTE()
+ROUTE184.fromNode = "JinBrowLowerer_Sensor"
+ROUTE184.fromField = "touchTime"
+ROUTE184.toNode = "Choice1"
+ROUTE184.toField = "touchTime"
 
-Shape183.appearance = Appearance184
-Text186 = x3d.Text()
-Text186.string = ["JinCheekPuffer"]
-FontStyle187 = x3d.FontStyle()
-FontStyle187.size = 2.4
-FontStyle187.spacing = 1.2
-FontStyle187.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(ROUTE184)
+ROUTE185 = x3d.ROUTE()
+ROUTE185.fromNode = "Choice1"
+ROUTE185.fromField = "choice"
+ROUTE185.toNode = "SceneSwitcher"
+ROUTE185.toField = "whichChoice"
 
-Text186.fontStyle = FontStyle187
+Group6.children.append(ROUTE185)
+Transform186 = x3d.Transform()
+Transform186.translation = [48,57.39999999999999,0]
+TouchSensor187 = x3d.TouchSensor(DEF="JinCheekPuffer_Sensor")
+TouchSensor187.description = "TSJinCheekPuffer"
 
-Shape183.geometry = Text186
-
-Transform181.children.append(Shape183)
+Transform186.children.append(TouchSensor187)
 Shape188 = x3d.Shape()
 Appearance189 = x3d.Appearance()
 Material190 = x3d.Material()
-Material190.diffuseColor = [0,0,1]
+Material190.diffuseColor = [1,1,1]
 
 Appearance189.material = Material190
 
 Shape188.appearance = Appearance189
-IndexedFaceSet191 = x3d.IndexedFaceSet()
-IndexedFaceSet191.coordIndex = [0,1,2,3,-1]
-Coordinate192 = x3d.Coordinate()
-Coordinate192.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Text191 = x3d.Text()
+Text191.string = ["JinCheekPuffer"]
+FontStyle192 = x3d.FontStyle()
+FontStyle192.size = 2.4
+FontStyle192.spacing = 1.2
+FontStyle192.justify = ["MIDDLE","MIDDLE"]
 
-IndexedFaceSet191.coord = Coordinate192
+Text191.fontStyle = FontStyle192
 
-Shape188.geometry = IndexedFaceSet191
+Shape188.geometry = Text191
 
-Transform181.children.append(Shape188)
+Transform186.children.append(Shape188)
+Shape193 = x3d.Shape()
+Appearance194 = x3d.Appearance()
+Material195 = x3d.Material()
+Material195.diffuseColor = [0,0,1]
 
-Group5.children.append(Transform181)
-Transform193 = x3d.Transform()
-Transform193.translation = [48,54.4,0]
-TouchSensor194 = x3d.TouchSensor(DEF="JinCheekRaiser_Sensor")
-TouchSensor194.description = "TSJinCheekRaiser"
+Appearance194.material = Material195
 
-Transform193.children.append(TouchSensor194)
-Shape195 = x3d.Shape()
-Appearance196 = x3d.Appearance()
-Material197 = x3d.Material()
-Material197.diffuseColor = [1,1,1]
+Shape193.appearance = Appearance194
+IndexedFaceSet196 = x3d.IndexedFaceSet()
+IndexedFaceSet196.coordIndex = [0,1,2,3,-1]
+Coordinate197 = x3d.Coordinate()
+Coordinate197.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Appearance196.material = Material197
+IndexedFaceSet196.coord = Coordinate197
 
-Shape195.appearance = Appearance196
-Text198 = x3d.Text()
-Text198.string = ["JinCheekRaiser"]
-FontStyle199 = x3d.FontStyle()
-FontStyle199.size = 2.4
-FontStyle199.spacing = 1.2
-FontStyle199.justify = ["MIDDLE","MIDDLE"]
+Shape193.geometry = IndexedFaceSet196
 
-Text198.fontStyle = FontStyle199
+Transform186.children.append(Shape193)
 
-Shape195.geometry = Text198
+Group6.children.append(Transform186)
+ROUTE198 = x3d.ROUTE()
+ROUTE198.fromNode = "JinCheekPuffer_Sensor"
+ROUTE198.fromField = "touchTime"
+ROUTE198.toNode = "Choice2"
+ROUTE198.toField = "touchTime"
 
-Transform193.children.append(Shape195)
-Shape200 = x3d.Shape()
-Appearance201 = x3d.Appearance()
-Material202 = x3d.Material()
-Material202.diffuseColor = [0,0,1]
+Group6.children.append(ROUTE198)
+ROUTE199 = x3d.ROUTE()
+ROUTE199.fromNode = "Choice2"
+ROUTE199.fromField = "choice"
+ROUTE199.toNode = "SceneSwitcher"
+ROUTE199.toField = "whichChoice"
 
-Appearance201.material = Material202
+Group6.children.append(ROUTE199)
+Transform200 = x3d.Transform()
+Transform200.translation = [48,54.39999999999999,0]
+TouchSensor201 = x3d.TouchSensor(DEF="JinCheekRaiser_Sensor")
+TouchSensor201.description = "TSJinCheekRaiser"
 
-Shape200.appearance = Appearance201
-IndexedFaceSet203 = x3d.IndexedFaceSet()
-IndexedFaceSet203.coordIndex = [0,1,2,3,-1]
-Coordinate204 = x3d.Coordinate()
-Coordinate204.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform200.children.append(TouchSensor201)
+Shape202 = x3d.Shape()
+Appearance203 = x3d.Appearance()
+Material204 = x3d.Material()
+Material204.diffuseColor = [1,1,1]
 
-IndexedFaceSet203.coord = Coordinate204
+Appearance203.material = Material204
 
-Shape200.geometry = IndexedFaceSet203
+Shape202.appearance = Appearance203
+Text205 = x3d.Text()
+Text205.string = ["JinCheekRaiser"]
+FontStyle206 = x3d.FontStyle()
+FontStyle206.size = 2.4
+FontStyle206.spacing = 1.2
+FontStyle206.justify = ["MIDDLE","MIDDLE"]
 
-Transform193.children.append(Shape200)
+Text205.fontStyle = FontStyle206
 
-Group5.children.append(Transform193)
-Transform205 = x3d.Transform()
-Transform205.translation = [48,51.4,0]
-TouchSensor206 = x3d.TouchSensor(DEF="JinChinRaiser_Sensor")
-TouchSensor206.description = "TSJinChinRaiser"
+Shape202.geometry = Text205
 
-Transform205.children.append(TouchSensor206)
+Transform200.children.append(Shape202)
 Shape207 = x3d.Shape()
 Appearance208 = x3d.Appearance()
 Material209 = x3d.Material()
-Material209.diffuseColor = [1,1,1]
+Material209.diffuseColor = [0,0,1]
 
 Appearance208.material = Material209
 
 Shape207.appearance = Appearance208
-Text210 = x3d.Text()
-Text210.string = ["JinChinRaiser"]
-FontStyle211 = x3d.FontStyle()
-FontStyle211.size = 2.4
-FontStyle211.spacing = 1.2
-FontStyle211.justify = ["MIDDLE","MIDDLE"]
+IndexedFaceSet210 = x3d.IndexedFaceSet()
+IndexedFaceSet210.coordIndex = [0,1,2,3,-1]
+Coordinate211 = x3d.Coordinate()
+Coordinate211.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Text210.fontStyle = FontStyle211
+IndexedFaceSet210.coord = Coordinate211
 
-Shape207.geometry = Text210
+Shape207.geometry = IndexedFaceSet210
 
-Transform205.children.append(Shape207)
-Shape212 = x3d.Shape()
-Appearance213 = x3d.Appearance()
-Material214 = x3d.Material()
-Material214.diffuseColor = [0,0,1]
+Transform200.children.append(Shape207)
 
-Appearance213.material = Material214
+Group6.children.append(Transform200)
+ROUTE212 = x3d.ROUTE()
+ROUTE212.fromNode = "JinCheekRaiser_Sensor"
+ROUTE212.fromField = "touchTime"
+ROUTE212.toNode = "Choice3"
+ROUTE212.toField = "touchTime"
 
-Shape212.appearance = Appearance213
-IndexedFaceSet215 = x3d.IndexedFaceSet()
-IndexedFaceSet215.coordIndex = [0,1,2,3,-1]
-Coordinate216 = x3d.Coordinate()
-Coordinate216.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Group6.children.append(ROUTE212)
+ROUTE213 = x3d.ROUTE()
+ROUTE213.fromNode = "Choice3"
+ROUTE213.fromField = "choice"
+ROUTE213.toNode = "SceneSwitcher"
+ROUTE213.toField = "whichChoice"
 
-IndexedFaceSet215.coord = Coordinate216
+Group6.children.append(ROUTE213)
+Transform214 = x3d.Transform()
+Transform214.translation = [48,51.39999999999999,0]
+TouchSensor215 = x3d.TouchSensor(DEF="JinChinRaiser_Sensor")
+TouchSensor215.description = "TSJinChinRaiser"
 
-Shape212.geometry = IndexedFaceSet215
+Transform214.children.append(TouchSensor215)
+Shape216 = x3d.Shape()
+Appearance217 = x3d.Appearance()
+Material218 = x3d.Material()
+Material218.diffuseColor = [1,1,1]
 
-Transform205.children.append(Shape212)
+Appearance217.material = Material218
 
-Group5.children.append(Transform205)
-Transform217 = x3d.Transform()
-Transform217.translation = [48,48.4,0]
-TouchSensor218 = x3d.TouchSensor(DEF="JinDimpler_Sensor")
-TouchSensor218.description = "TSJinDimpler"
+Shape216.appearance = Appearance217
+Text219 = x3d.Text()
+Text219.string = ["JinChinRaiser"]
+FontStyle220 = x3d.FontStyle()
+FontStyle220.size = 2.4
+FontStyle220.spacing = 1.2
+FontStyle220.justify = ["MIDDLE","MIDDLE"]
 
-Transform217.children.append(TouchSensor218)
-Shape219 = x3d.Shape()
-Appearance220 = x3d.Appearance()
-Material221 = x3d.Material()
-Material221.diffuseColor = [1,1,1]
+Text219.fontStyle = FontStyle220
 
-Appearance220.material = Material221
+Shape216.geometry = Text219
 
-Shape219.appearance = Appearance220
-Text222 = x3d.Text()
-Text222.string = ["JinDimpler"]
-FontStyle223 = x3d.FontStyle()
-FontStyle223.size = 2.4
-FontStyle223.spacing = 1.2
-FontStyle223.justify = ["MIDDLE","MIDDLE"]
+Transform214.children.append(Shape216)
+Shape221 = x3d.Shape()
+Appearance222 = x3d.Appearance()
+Material223 = x3d.Material()
+Material223.diffuseColor = [0,0,1]
 
-Text222.fontStyle = FontStyle223
+Appearance222.material = Material223
 
-Shape219.geometry = Text222
+Shape221.appearance = Appearance222
+IndexedFaceSet224 = x3d.IndexedFaceSet()
+IndexedFaceSet224.coordIndex = [0,1,2,3,-1]
+Coordinate225 = x3d.Coordinate()
+Coordinate225.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Transform217.children.append(Shape219)
-Shape224 = x3d.Shape()
-Appearance225 = x3d.Appearance()
-Material226 = x3d.Material()
-Material226.diffuseColor = [0,0,1]
+IndexedFaceSet224.coord = Coordinate225
 
-Appearance225.material = Material226
+Shape221.geometry = IndexedFaceSet224
 
-Shape224.appearance = Appearance225
-IndexedFaceSet227 = x3d.IndexedFaceSet()
-IndexedFaceSet227.coordIndex = [0,1,2,3,-1]
-Coordinate228 = x3d.Coordinate()
-Coordinate228.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform214.children.append(Shape221)
 
-IndexedFaceSet227.coord = Coordinate228
+Group6.children.append(Transform214)
+ROUTE226 = x3d.ROUTE()
+ROUTE226.fromNode = "JinChinRaiser_Sensor"
+ROUTE226.fromField = "touchTime"
+ROUTE226.toNode = "Choice4"
+ROUTE226.toField = "touchTime"
 
-Shape224.geometry = IndexedFaceSet227
+Group6.children.append(ROUTE226)
+ROUTE227 = x3d.ROUTE()
+ROUTE227.fromNode = "Choice4"
+ROUTE227.fromField = "choice"
+ROUTE227.toNode = "SceneSwitcher"
+ROUTE227.toField = "whichChoice"
 
-Transform217.children.append(Shape224)
+Group6.children.append(ROUTE227)
+Transform228 = x3d.Transform()
+Transform228.translation = [48,48.39999999999999,0]
+TouchSensor229 = x3d.TouchSensor(DEF="JinDimpler_Sensor")
+TouchSensor229.description = "TSJinDimpler"
 
-Group5.children.append(Transform217)
-Transform229 = x3d.Transform()
-Transform229.translation = [48,45.4,0]
-TouchSensor230 = x3d.TouchSensor(DEF="JinEyesClosed_Sensor")
-TouchSensor230.description = "TSJinEyesClosed"
+Transform228.children.append(TouchSensor229)
+Shape230 = x3d.Shape()
+Appearance231 = x3d.Appearance()
+Material232 = x3d.Material()
+Material232.diffuseColor = [1,1,1]
 
-Transform229.children.append(TouchSensor230)
-Shape231 = x3d.Shape()
-Appearance232 = x3d.Appearance()
-Material233 = x3d.Material()
-Material233.diffuseColor = [1,1,1]
+Appearance231.material = Material232
 
-Appearance232.material = Material233
+Shape230.appearance = Appearance231
+Text233 = x3d.Text()
+Text233.string = ["JinDimpler"]
+FontStyle234 = x3d.FontStyle()
+FontStyle234.size = 2.4
+FontStyle234.spacing = 1.2
+FontStyle234.justify = ["MIDDLE","MIDDLE"]
 
-Shape231.appearance = Appearance232
-Text234 = x3d.Text()
-Text234.string = ["JinEyesClosed"]
-FontStyle235 = x3d.FontStyle()
-FontStyle235.size = 2.4
-FontStyle235.spacing = 1.2
-FontStyle235.justify = ["MIDDLE","MIDDLE"]
+Text233.fontStyle = FontStyle234
 
-Text234.fontStyle = FontStyle235
+Shape230.geometry = Text233
 
-Shape231.geometry = Text234
+Transform228.children.append(Shape230)
+Shape235 = x3d.Shape()
+Appearance236 = x3d.Appearance()
+Material237 = x3d.Material()
+Material237.diffuseColor = [0,0,1]
 
-Transform229.children.append(Shape231)
-Shape236 = x3d.Shape()
-Appearance237 = x3d.Appearance()
-Material238 = x3d.Material()
-Material238.diffuseColor = [0,0,1]
+Appearance236.material = Material237
 
-Appearance237.material = Material238
+Shape235.appearance = Appearance236
+IndexedFaceSet238 = x3d.IndexedFaceSet()
+IndexedFaceSet238.coordIndex = [0,1,2,3,-1]
+Coordinate239 = x3d.Coordinate()
+Coordinate239.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape236.appearance = Appearance237
-IndexedFaceSet239 = x3d.IndexedFaceSet()
-IndexedFaceSet239.coordIndex = [0,1,2,3,-1]
-Coordinate240 = x3d.Coordinate()
-Coordinate240.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+IndexedFaceSet238.coord = Coordinate239
 
-IndexedFaceSet239.coord = Coordinate240
+Shape235.geometry = IndexedFaceSet238
 
-Shape236.geometry = IndexedFaceSet239
+Transform228.children.append(Shape235)
 
-Transform229.children.append(Shape236)
+Group6.children.append(Transform228)
+ROUTE240 = x3d.ROUTE()
+ROUTE240.fromNode = "JinDimpler_Sensor"
+ROUTE240.fromField = "touchTime"
+ROUTE240.toNode = "Choice5"
+ROUTE240.toField = "touchTime"
 
-Group5.children.append(Transform229)
-Transform241 = x3d.Transform()
-Transform241.translation = [48,42.4,0]
-TouchSensor242 = x3d.TouchSensor(DEF="JinInnerBrowRaiser_Sensor")
-TouchSensor242.description = "TSJinInnerBrowRaiser"
+Group6.children.append(ROUTE240)
+ROUTE241 = x3d.ROUTE()
+ROUTE241.fromNode = "Choice5"
+ROUTE241.fromField = "choice"
+ROUTE241.toNode = "SceneSwitcher"
+ROUTE241.toField = "whichChoice"
 
-Transform241.children.append(TouchSensor242)
-Shape243 = x3d.Shape()
-Appearance244 = x3d.Appearance()
-Material245 = x3d.Material()
-Material245.diffuseColor = [1,1,1]
+Group6.children.append(ROUTE241)
+Transform242 = x3d.Transform()
+Transform242.translation = [48,45.39999999999999,0]
+TouchSensor243 = x3d.TouchSensor(DEF="JinEyesClosed_Sensor")
+TouchSensor243.description = "TSJinEyesClosed"
 
-Appearance244.material = Material245
+Transform242.children.append(TouchSensor243)
+Shape244 = x3d.Shape()
+Appearance245 = x3d.Appearance()
+Material246 = x3d.Material()
+Material246.diffuseColor = [1,1,1]
 
-Shape243.appearance = Appearance244
-Text246 = x3d.Text()
-Text246.string = ["JinInnerBrowRaiser"]
-FontStyle247 = x3d.FontStyle()
-FontStyle247.size = 2.4
-FontStyle247.spacing = 1.2
-FontStyle247.justify = ["MIDDLE","MIDDLE"]
+Appearance245.material = Material246
 
-Text246.fontStyle = FontStyle247
+Shape244.appearance = Appearance245
+Text247 = x3d.Text()
+Text247.string = ["JinEyesClosed"]
+FontStyle248 = x3d.FontStyle()
+FontStyle248.size = 2.4
+FontStyle248.spacing = 1.2
+FontStyle248.justify = ["MIDDLE","MIDDLE"]
 
-Shape243.geometry = Text246
+Text247.fontStyle = FontStyle248
 
-Transform241.children.append(Shape243)
-Shape248 = x3d.Shape()
-Appearance249 = x3d.Appearance()
-Material250 = x3d.Material()
-Material250.diffuseColor = [0,0,1]
+Shape244.geometry = Text247
 
-Appearance249.material = Material250
+Transform242.children.append(Shape244)
+Shape249 = x3d.Shape()
+Appearance250 = x3d.Appearance()
+Material251 = x3d.Material()
+Material251.diffuseColor = [0,0,1]
 
-Shape248.appearance = Appearance249
-IndexedFaceSet251 = x3d.IndexedFaceSet()
-IndexedFaceSet251.coordIndex = [0,1,2,3,-1]
-Coordinate252 = x3d.Coordinate()
-Coordinate252.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Appearance250.material = Material251
 
-IndexedFaceSet251.coord = Coordinate252
+Shape249.appearance = Appearance250
+IndexedFaceSet252 = x3d.IndexedFaceSet()
+IndexedFaceSet252.coordIndex = [0,1,2,3,-1]
+Coordinate253 = x3d.Coordinate()
+Coordinate253.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape248.geometry = IndexedFaceSet251
+IndexedFaceSet252.coord = Coordinate253
 
-Transform241.children.append(Shape248)
+Shape249.geometry = IndexedFaceSet252
 
-Group5.children.append(Transform241)
-Transform253 = x3d.Transform()
-Transform253.translation = [48,39.4,0]
-TouchSensor254 = x3d.TouchSensor(DEF="JinJawDrop_Sensor")
-TouchSensor254.description = "TSJinJawDrop"
+Transform242.children.append(Shape249)
 
-Transform253.children.append(TouchSensor254)
-Shape255 = x3d.Shape()
-Appearance256 = x3d.Appearance()
-Material257 = x3d.Material()
-Material257.diffuseColor = [1,1,1]
+Group6.children.append(Transform242)
+ROUTE254 = x3d.ROUTE()
+ROUTE254.fromNode = "JinEyesClosed_Sensor"
+ROUTE254.fromField = "touchTime"
+ROUTE254.toNode = "Choice6"
+ROUTE254.toField = "touchTime"
 
-Appearance256.material = Material257
+Group6.children.append(ROUTE254)
+ROUTE255 = x3d.ROUTE()
+ROUTE255.fromNode = "Choice6"
+ROUTE255.fromField = "choice"
+ROUTE255.toNode = "SceneSwitcher"
+ROUTE255.toField = "whichChoice"
 
-Shape255.appearance = Appearance256
-Text258 = x3d.Text()
-Text258.string = ["JinJawDrop"]
-FontStyle259 = x3d.FontStyle()
-FontStyle259.size = 2.4
-FontStyle259.spacing = 1.2
-FontStyle259.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(ROUTE255)
+Transform256 = x3d.Transform()
+Transform256.translation = [48,42.39999999999999,0]
+TouchSensor257 = x3d.TouchSensor(DEF="JinInnerBrowRaiser_Sensor")
+TouchSensor257.description = "TSJinInnerBrowRaiser"
 
-Text258.fontStyle = FontStyle259
+Transform256.children.append(TouchSensor257)
+Shape258 = x3d.Shape()
+Appearance259 = x3d.Appearance()
+Material260 = x3d.Material()
+Material260.diffuseColor = [1,1,1]
 
-Shape255.geometry = Text258
+Appearance259.material = Material260
 
-Transform253.children.append(Shape255)
-Shape260 = x3d.Shape()
-Appearance261 = x3d.Appearance()
-Material262 = x3d.Material()
-Material262.diffuseColor = [0,0,1]
+Shape258.appearance = Appearance259
+Text261 = x3d.Text()
+Text261.string = ["JinInnerBrowRaiser"]
+FontStyle262 = x3d.FontStyle()
+FontStyle262.size = 2.4
+FontStyle262.spacing = 1.2
+FontStyle262.justify = ["MIDDLE","MIDDLE"]
 
-Appearance261.material = Material262
+Text261.fontStyle = FontStyle262
 
-Shape260.appearance = Appearance261
-IndexedFaceSet263 = x3d.IndexedFaceSet()
-IndexedFaceSet263.coordIndex = [0,1,2,3,-1]
-Coordinate264 = x3d.Coordinate()
-Coordinate264.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Shape258.geometry = Text261
 
-IndexedFaceSet263.coord = Coordinate264
+Transform256.children.append(Shape258)
+Shape263 = x3d.Shape()
+Appearance264 = x3d.Appearance()
+Material265 = x3d.Material()
+Material265.diffuseColor = [0,0,1]
 
-Shape260.geometry = IndexedFaceSet263
+Appearance264.material = Material265
 
-Transform253.children.append(Shape260)
+Shape263.appearance = Appearance264
+IndexedFaceSet266 = x3d.IndexedFaceSet()
+IndexedFaceSet266.coordIndex = [0,1,2,3,-1]
+Coordinate267 = x3d.Coordinate()
+Coordinate267.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Group5.children.append(Transform253)
-Transform265 = x3d.Transform()
-Transform265.translation = [48,36.4,0]
-TouchSensor266 = x3d.TouchSensor(DEF="JinLidDroop_Sensor")
-TouchSensor266.description = "TSJinLidDroop"
+IndexedFaceSet266.coord = Coordinate267
 
-Transform265.children.append(TouchSensor266)
-Shape267 = x3d.Shape()
-Appearance268 = x3d.Appearance()
-Material269 = x3d.Material()
-Material269.diffuseColor = [1,1,1]
+Shape263.geometry = IndexedFaceSet266
 
-Appearance268.material = Material269
+Transform256.children.append(Shape263)
 
-Shape267.appearance = Appearance268
-Text270 = x3d.Text()
-Text270.string = ["JinLidDroop"]
-FontStyle271 = x3d.FontStyle()
-FontStyle271.size = 2.4
-FontStyle271.spacing = 1.2
-FontStyle271.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(Transform256)
+ROUTE268 = x3d.ROUTE()
+ROUTE268.fromNode = "JinInnerBrowRaiser_Sensor"
+ROUTE268.fromField = "touchTime"
+ROUTE268.toNode = "Choice7"
+ROUTE268.toField = "touchTime"
 
-Text270.fontStyle = FontStyle271
+Group6.children.append(ROUTE268)
+ROUTE269 = x3d.ROUTE()
+ROUTE269.fromNode = "Choice7"
+ROUTE269.fromField = "choice"
+ROUTE269.toNode = "SceneSwitcher"
+ROUTE269.toField = "whichChoice"
 
-Shape267.geometry = Text270
+Group6.children.append(ROUTE269)
+Transform270 = x3d.Transform()
+Transform270.translation = [48,39.39999999999999,0]
+TouchSensor271 = x3d.TouchSensor(DEF="JinJawDrop_Sensor")
+TouchSensor271.description = "TSJinJawDrop"
 
-Transform265.children.append(Shape267)
+Transform270.children.append(TouchSensor271)
 Shape272 = x3d.Shape()
 Appearance273 = x3d.Appearance()
 Material274 = x3d.Material()
-Material274.diffuseColor = [0,0,1]
+Material274.diffuseColor = [1,1,1]
 
 Appearance273.material = Material274
 
 Shape272.appearance = Appearance273
-IndexedFaceSet275 = x3d.IndexedFaceSet()
-IndexedFaceSet275.coordIndex = [0,1,2,3,-1]
-Coordinate276 = x3d.Coordinate()
-Coordinate276.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Text275 = x3d.Text()
+Text275.string = ["JinJawDrop"]
+FontStyle276 = x3d.FontStyle()
+FontStyle276.size = 2.4
+FontStyle276.spacing = 1.2
+FontStyle276.justify = ["MIDDLE","MIDDLE"]
 
-IndexedFaceSet275.coord = Coordinate276
+Text275.fontStyle = FontStyle276
 
-Shape272.geometry = IndexedFaceSet275
+Shape272.geometry = Text275
 
-Transform265.children.append(Shape272)
+Transform270.children.append(Shape272)
+Shape277 = x3d.Shape()
+Appearance278 = x3d.Appearance()
+Material279 = x3d.Material()
+Material279.diffuseColor = [0,0,1]
 
-Group5.children.append(Transform265)
-Transform277 = x3d.Transform()
-Transform277.translation = [48,33.4,0]
-TouchSensor278 = x3d.TouchSensor(DEF="JinLidTightener_Sensor")
-TouchSensor278.description = "TSJinLidTightener"
+Appearance278.material = Material279
 
-Transform277.children.append(TouchSensor278)
-Shape279 = x3d.Shape()
-Appearance280 = x3d.Appearance()
-Material281 = x3d.Material()
-Material281.diffuseColor = [1,1,1]
+Shape277.appearance = Appearance278
+IndexedFaceSet280 = x3d.IndexedFaceSet()
+IndexedFaceSet280.coordIndex = [0,1,2,3,-1]
+Coordinate281 = x3d.Coordinate()
+Coordinate281.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Appearance280.material = Material281
+IndexedFaceSet280.coord = Coordinate281
 
-Shape279.appearance = Appearance280
-Text282 = x3d.Text()
-Text282.string = ["JinLidTightener"]
-FontStyle283 = x3d.FontStyle()
-FontStyle283.size = 2.4
-FontStyle283.spacing = 1.2
-FontStyle283.justify = ["MIDDLE","MIDDLE"]
+Shape277.geometry = IndexedFaceSet280
 
-Text282.fontStyle = FontStyle283
+Transform270.children.append(Shape277)
 
-Shape279.geometry = Text282
+Group6.children.append(Transform270)
+ROUTE282 = x3d.ROUTE()
+ROUTE282.fromNode = "JinJawDrop_Sensor"
+ROUTE282.fromField = "touchTime"
+ROUTE282.toNode = "Choice8"
+ROUTE282.toField = "touchTime"
 
-Transform277.children.append(Shape279)
-Shape284 = x3d.Shape()
-Appearance285 = x3d.Appearance()
-Material286 = x3d.Material()
-Material286.diffuseColor = [0,0,1]
+Group6.children.append(ROUTE282)
+ROUTE283 = x3d.ROUTE()
+ROUTE283.fromNode = "Choice8"
+ROUTE283.fromField = "choice"
+ROUTE283.toNode = "SceneSwitcher"
+ROUTE283.toField = "whichChoice"
 
-Appearance285.material = Material286
+Group6.children.append(ROUTE283)
+Transform284 = x3d.Transform()
+Transform284.translation = [48,36.39999999999999,0]
+TouchSensor285 = x3d.TouchSensor(DEF="JinLidDroop_Sensor")
+TouchSensor285.description = "TSJinLidDroop"
 
-Shape284.appearance = Appearance285
-IndexedFaceSet287 = x3d.IndexedFaceSet()
-IndexedFaceSet287.coordIndex = [0,1,2,3,-1]
-Coordinate288 = x3d.Coordinate()
-Coordinate288.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform284.children.append(TouchSensor285)
+Shape286 = x3d.Shape()
+Appearance287 = x3d.Appearance()
+Material288 = x3d.Material()
+Material288.diffuseColor = [1,1,1]
 
-IndexedFaceSet287.coord = Coordinate288
+Appearance287.material = Material288
 
-Shape284.geometry = IndexedFaceSet287
+Shape286.appearance = Appearance287
+Text289 = x3d.Text()
+Text289.string = ["JinLidDroop"]
+FontStyle290 = x3d.FontStyle()
+FontStyle290.size = 2.4
+FontStyle290.spacing = 1.2
+FontStyle290.justify = ["MIDDLE","MIDDLE"]
 
-Transform277.children.append(Shape284)
+Text289.fontStyle = FontStyle290
 
-Group5.children.append(Transform277)
-Transform289 = x3d.Transform()
-Transform289.translation = [48,30.4,0]
-TouchSensor290 = x3d.TouchSensor(DEF="JinLipCornerDepressor_Sensor")
-TouchSensor290.description = "TSJinLipCornerDepressor"
+Shape286.geometry = Text289
 
-Transform289.children.append(TouchSensor290)
+Transform284.children.append(Shape286)
 Shape291 = x3d.Shape()
 Appearance292 = x3d.Appearance()
 Material293 = x3d.Material()
-Material293.diffuseColor = [1,1,1]
+Material293.diffuseColor = [0,0,1]
 
 Appearance292.material = Material293
 
 Shape291.appearance = Appearance292
-Text294 = x3d.Text()
-Text294.string = ["JinLipCornerDepressor"]
-FontStyle295 = x3d.FontStyle()
-FontStyle295.size = 2.4
-FontStyle295.spacing = 1.2
-FontStyle295.justify = ["MIDDLE","MIDDLE"]
+IndexedFaceSet294 = x3d.IndexedFaceSet()
+IndexedFaceSet294.coordIndex = [0,1,2,3,-1]
+Coordinate295 = x3d.Coordinate()
+Coordinate295.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Text294.fontStyle = FontStyle295
+IndexedFaceSet294.coord = Coordinate295
 
-Shape291.geometry = Text294
+Shape291.geometry = IndexedFaceSet294
 
-Transform289.children.append(Shape291)
-Shape296 = x3d.Shape()
-Appearance297 = x3d.Appearance()
-Material298 = x3d.Material()
-Material298.diffuseColor = [0,0,1]
+Transform284.children.append(Shape291)
 
-Appearance297.material = Material298
+Group6.children.append(Transform284)
+ROUTE296 = x3d.ROUTE()
+ROUTE296.fromNode = "JinLidDroop_Sensor"
+ROUTE296.fromField = "touchTime"
+ROUTE296.toNode = "Choice9"
+ROUTE296.toField = "touchTime"
 
-Shape296.appearance = Appearance297
-IndexedFaceSet299 = x3d.IndexedFaceSet()
-IndexedFaceSet299.coordIndex = [0,1,2,3,-1]
-Coordinate300 = x3d.Coordinate()
-Coordinate300.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Group6.children.append(ROUTE296)
+ROUTE297 = x3d.ROUTE()
+ROUTE297.fromNode = "Choice9"
+ROUTE297.fromField = "choice"
+ROUTE297.toNode = "SceneSwitcher"
+ROUTE297.toField = "whichChoice"
 
-IndexedFaceSet299.coord = Coordinate300
+Group6.children.append(ROUTE297)
+Transform298 = x3d.Transform()
+Transform298.translation = [48,33.39999999999999,0]
+TouchSensor299 = x3d.TouchSensor(DEF="JinLidTightener_Sensor")
+TouchSensor299.description = "TSJinLidTightener"
 
-Shape296.geometry = IndexedFaceSet299
+Transform298.children.append(TouchSensor299)
+Shape300 = x3d.Shape()
+Appearance301 = x3d.Appearance()
+Material302 = x3d.Material()
+Material302.diffuseColor = [1,1,1]
 
-Transform289.children.append(Shape296)
+Appearance301.material = Material302
 
-Group5.children.append(Transform289)
-Transform301 = x3d.Transform()
-Transform301.translation = [48,27.4,0]
-TouchSensor302 = x3d.TouchSensor(DEF="JinLipCornerPuller_Sensor")
-TouchSensor302.description = "TSJinLipCornerPuller"
+Shape300.appearance = Appearance301
+Text303 = x3d.Text()
+Text303.string = ["JinLidTightener"]
+FontStyle304 = x3d.FontStyle()
+FontStyle304.size = 2.4
+FontStyle304.spacing = 1.2
+FontStyle304.justify = ["MIDDLE","MIDDLE"]
 
-Transform301.children.append(TouchSensor302)
-Shape303 = x3d.Shape()
-Appearance304 = x3d.Appearance()
-Material305 = x3d.Material()
-Material305.diffuseColor = [1,1,1]
+Text303.fontStyle = FontStyle304
 
-Appearance304.material = Material305
+Shape300.geometry = Text303
 
-Shape303.appearance = Appearance304
-Text306 = x3d.Text()
-Text306.string = ["JinLipCornerPuller"]
-FontStyle307 = x3d.FontStyle()
-FontStyle307.size = 2.4
-FontStyle307.spacing = 1.2
-FontStyle307.justify = ["MIDDLE","MIDDLE"]
+Transform298.children.append(Shape300)
+Shape305 = x3d.Shape()
+Appearance306 = x3d.Appearance()
+Material307 = x3d.Material()
+Material307.diffuseColor = [0,0,1]
 
-Text306.fontStyle = FontStyle307
+Appearance306.material = Material307
 
-Shape303.geometry = Text306
+Shape305.appearance = Appearance306
+IndexedFaceSet308 = x3d.IndexedFaceSet()
+IndexedFaceSet308.coordIndex = [0,1,2,3,-1]
+Coordinate309 = x3d.Coordinate()
+Coordinate309.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Transform301.children.append(Shape303)
-Shape308 = x3d.Shape()
-Appearance309 = x3d.Appearance()
-Material310 = x3d.Material()
-Material310.diffuseColor = [0,0,1]
+IndexedFaceSet308.coord = Coordinate309
 
-Appearance309.material = Material310
+Shape305.geometry = IndexedFaceSet308
 
-Shape308.appearance = Appearance309
-IndexedFaceSet311 = x3d.IndexedFaceSet()
-IndexedFaceSet311.coordIndex = [0,1,2,3,-1]
-Coordinate312 = x3d.Coordinate()
-Coordinate312.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform298.children.append(Shape305)
 
-IndexedFaceSet311.coord = Coordinate312
+Group6.children.append(Transform298)
+ROUTE310 = x3d.ROUTE()
+ROUTE310.fromNode = "JinLidTightener_Sensor"
+ROUTE310.fromField = "touchTime"
+ROUTE310.toNode = "Choice10"
+ROUTE310.toField = "touchTime"
 
-Shape308.geometry = IndexedFaceSet311
+Group6.children.append(ROUTE310)
+ROUTE311 = x3d.ROUTE()
+ROUTE311.fromNode = "Choice10"
+ROUTE311.fromField = "choice"
+ROUTE311.toNode = "SceneSwitcher"
+ROUTE311.toField = "whichChoice"
 
-Transform301.children.append(Shape308)
+Group6.children.append(ROUTE311)
+Transform312 = x3d.Transform()
+Transform312.translation = [48,30.399999999999995,0]
+TouchSensor313 = x3d.TouchSensor(DEF="JinLipCornerDepressor_Sensor")
+TouchSensor313.description = "TSJinLipCornerDepressor"
 
-Group5.children.append(Transform301)
-Transform313 = x3d.Transform()
-Transform313.translation = [48,24.4,0]
-TouchSensor314 = x3d.TouchSensor(DEF="JinLipFunneler_Sensor")
-TouchSensor314.description = "TSJinLipFunneler"
+Transform312.children.append(TouchSensor313)
+Shape314 = x3d.Shape()
+Appearance315 = x3d.Appearance()
+Material316 = x3d.Material()
+Material316.diffuseColor = [1,1,1]
 
-Transform313.children.append(TouchSensor314)
-Shape315 = x3d.Shape()
-Appearance316 = x3d.Appearance()
-Material317 = x3d.Material()
-Material317.diffuseColor = [1,1,1]
+Appearance315.material = Material316
 
-Appearance316.material = Material317
+Shape314.appearance = Appearance315
+Text317 = x3d.Text()
+Text317.string = ["JinLipCornerDepressor"]
+FontStyle318 = x3d.FontStyle()
+FontStyle318.size = 2.4
+FontStyle318.spacing = 1.2
+FontStyle318.justify = ["MIDDLE","MIDDLE"]
 
-Shape315.appearance = Appearance316
-Text318 = x3d.Text()
-Text318.string = ["JinLipFunneler"]
-FontStyle319 = x3d.FontStyle()
-FontStyle319.size = 2.4
-FontStyle319.spacing = 1.2
-FontStyle319.justify = ["MIDDLE","MIDDLE"]
+Text317.fontStyle = FontStyle318
 
-Text318.fontStyle = FontStyle319
+Shape314.geometry = Text317
 
-Shape315.geometry = Text318
+Transform312.children.append(Shape314)
+Shape319 = x3d.Shape()
+Appearance320 = x3d.Appearance()
+Material321 = x3d.Material()
+Material321.diffuseColor = [0,0,1]
 
-Transform313.children.append(Shape315)
-Shape320 = x3d.Shape()
-Appearance321 = x3d.Appearance()
-Material322 = x3d.Material()
-Material322.diffuseColor = [0,0,1]
+Appearance320.material = Material321
 
-Appearance321.material = Material322
+Shape319.appearance = Appearance320
+IndexedFaceSet322 = x3d.IndexedFaceSet()
+IndexedFaceSet322.coordIndex = [0,1,2,3,-1]
+Coordinate323 = x3d.Coordinate()
+Coordinate323.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape320.appearance = Appearance321
-IndexedFaceSet323 = x3d.IndexedFaceSet()
-IndexedFaceSet323.coordIndex = [0,1,2,3,-1]
-Coordinate324 = x3d.Coordinate()
-Coordinate324.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+IndexedFaceSet322.coord = Coordinate323
 
-IndexedFaceSet323.coord = Coordinate324
+Shape319.geometry = IndexedFaceSet322
 
-Shape320.geometry = IndexedFaceSet323
+Transform312.children.append(Shape319)
 
-Transform313.children.append(Shape320)
+Group6.children.append(Transform312)
+ROUTE324 = x3d.ROUTE()
+ROUTE324.fromNode = "JinLipCornerDepressor_Sensor"
+ROUTE324.fromField = "touchTime"
+ROUTE324.toNode = "Choice11"
+ROUTE324.toField = "touchTime"
 
-Group5.children.append(Transform313)
-Transform325 = x3d.Transform()
-Transform325.translation = [48,21.4,0]
-TouchSensor326 = x3d.TouchSensor(DEF="JinLipPressor_Sensor")
-TouchSensor326.description = "TSJinLipPressor"
+Group6.children.append(ROUTE324)
+ROUTE325 = x3d.ROUTE()
+ROUTE325.fromNode = "Choice11"
+ROUTE325.fromField = "choice"
+ROUTE325.toNode = "SceneSwitcher"
+ROUTE325.toField = "whichChoice"
 
-Transform325.children.append(TouchSensor326)
-Shape327 = x3d.Shape()
-Appearance328 = x3d.Appearance()
-Material329 = x3d.Material()
-Material329.diffuseColor = [1,1,1]
+Group6.children.append(ROUTE325)
+Transform326 = x3d.Transform()
+Transform326.translation = [48,27.399999999999995,0]
+TouchSensor327 = x3d.TouchSensor(DEF="JinLipCornerPuller_Sensor")
+TouchSensor327.description = "TSJinLipCornerPuller"
 
-Appearance328.material = Material329
+Transform326.children.append(TouchSensor327)
+Shape328 = x3d.Shape()
+Appearance329 = x3d.Appearance()
+Material330 = x3d.Material()
+Material330.diffuseColor = [1,1,1]
 
-Shape327.appearance = Appearance328
-Text330 = x3d.Text()
-Text330.string = ["JinLipPressor"]
-FontStyle331 = x3d.FontStyle()
-FontStyle331.size = 2.4
-FontStyle331.spacing = 1.2
-FontStyle331.justify = ["MIDDLE","MIDDLE"]
+Appearance329.material = Material330
 
-Text330.fontStyle = FontStyle331
+Shape328.appearance = Appearance329
+Text331 = x3d.Text()
+Text331.string = ["JinLipCornerPuller"]
+FontStyle332 = x3d.FontStyle()
+FontStyle332.size = 2.4
+FontStyle332.spacing = 1.2
+FontStyle332.justify = ["MIDDLE","MIDDLE"]
 
-Shape327.geometry = Text330
+Text331.fontStyle = FontStyle332
 
-Transform325.children.append(Shape327)
-Shape332 = x3d.Shape()
-Appearance333 = x3d.Appearance()
-Material334 = x3d.Material()
-Material334.diffuseColor = [0,0,1]
+Shape328.geometry = Text331
 
-Appearance333.material = Material334
+Transform326.children.append(Shape328)
+Shape333 = x3d.Shape()
+Appearance334 = x3d.Appearance()
+Material335 = x3d.Material()
+Material335.diffuseColor = [0,0,1]
 
-Shape332.appearance = Appearance333
-IndexedFaceSet335 = x3d.IndexedFaceSet()
-IndexedFaceSet335.coordIndex = [0,1,2,3,-1]
-Coordinate336 = x3d.Coordinate()
-Coordinate336.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Appearance334.material = Material335
 
-IndexedFaceSet335.coord = Coordinate336
+Shape333.appearance = Appearance334
+IndexedFaceSet336 = x3d.IndexedFaceSet()
+IndexedFaceSet336.coordIndex = [0,1,2,3,-1]
+Coordinate337 = x3d.Coordinate()
+Coordinate337.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape332.geometry = IndexedFaceSet335
+IndexedFaceSet336.coord = Coordinate337
 
-Transform325.children.append(Shape332)
+Shape333.geometry = IndexedFaceSet336
 
-Group5.children.append(Transform325)
-Transform337 = x3d.Transform()
-Transform337.translation = [48,18.4,0]
-TouchSensor338 = x3d.TouchSensor(DEF="JinLipPuckerer_Sensor")
-TouchSensor338.description = "TSJinLipPuckerer"
+Transform326.children.append(Shape333)
 
-Transform337.children.append(TouchSensor338)
-Shape339 = x3d.Shape()
-Appearance340 = x3d.Appearance()
-Material341 = x3d.Material()
-Material341.diffuseColor = [1,1,1]
+Group6.children.append(Transform326)
+ROUTE338 = x3d.ROUTE()
+ROUTE338.fromNode = "JinLipCornerPuller_Sensor"
+ROUTE338.fromField = "touchTime"
+ROUTE338.toNode = "Choice12"
+ROUTE338.toField = "touchTime"
 
-Appearance340.material = Material341
+Group6.children.append(ROUTE338)
+ROUTE339 = x3d.ROUTE()
+ROUTE339.fromNode = "Choice12"
+ROUTE339.fromField = "choice"
+ROUTE339.toNode = "SceneSwitcher"
+ROUTE339.toField = "whichChoice"
 
-Shape339.appearance = Appearance340
-Text342 = x3d.Text()
-Text342.string = ["JinLipPuckerer"]
-FontStyle343 = x3d.FontStyle()
-FontStyle343.size = 2.4
-FontStyle343.spacing = 1.2
-FontStyle343.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(ROUTE339)
+Transform340 = x3d.Transform()
+Transform340.translation = [48,24.399999999999995,0]
+TouchSensor341 = x3d.TouchSensor(DEF="JinLipFunneler_Sensor")
+TouchSensor341.description = "TSJinLipFunneler"
 
-Text342.fontStyle = FontStyle343
+Transform340.children.append(TouchSensor341)
+Shape342 = x3d.Shape()
+Appearance343 = x3d.Appearance()
+Material344 = x3d.Material()
+Material344.diffuseColor = [1,1,1]
 
-Shape339.geometry = Text342
+Appearance343.material = Material344
 
-Transform337.children.append(Shape339)
-Shape344 = x3d.Shape()
-Appearance345 = x3d.Appearance()
-Material346 = x3d.Material()
-Material346.diffuseColor = [0,0,1]
+Shape342.appearance = Appearance343
+Text345 = x3d.Text()
+Text345.string = ["JinLipFunneler"]
+FontStyle346 = x3d.FontStyle()
+FontStyle346.size = 2.4
+FontStyle346.spacing = 1.2
+FontStyle346.justify = ["MIDDLE","MIDDLE"]
 
-Appearance345.material = Material346
+Text345.fontStyle = FontStyle346
 
-Shape344.appearance = Appearance345
-IndexedFaceSet347 = x3d.IndexedFaceSet()
-IndexedFaceSet347.coordIndex = [0,1,2,3,-1]
-Coordinate348 = x3d.Coordinate()
-Coordinate348.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Shape342.geometry = Text345
 
-IndexedFaceSet347.coord = Coordinate348
+Transform340.children.append(Shape342)
+Shape347 = x3d.Shape()
+Appearance348 = x3d.Appearance()
+Material349 = x3d.Material()
+Material349.diffuseColor = [0,0,1]
 
-Shape344.geometry = IndexedFaceSet347
+Appearance348.material = Material349
 
-Transform337.children.append(Shape344)
+Shape347.appearance = Appearance348
+IndexedFaceSet350 = x3d.IndexedFaceSet()
+IndexedFaceSet350.coordIndex = [0,1,2,3,-1]
+Coordinate351 = x3d.Coordinate()
+Coordinate351.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Group5.children.append(Transform337)
-Transform349 = x3d.Transform()
-Transform349.translation = [48,15.4,0]
-TouchSensor350 = x3d.TouchSensor(DEF="JinLipsPart_Sensor")
-TouchSensor350.description = "TSJinLipsPart"
+IndexedFaceSet350.coord = Coordinate351
 
-Transform349.children.append(TouchSensor350)
-Shape351 = x3d.Shape()
-Appearance352 = x3d.Appearance()
-Material353 = x3d.Material()
-Material353.diffuseColor = [1,1,1]
+Shape347.geometry = IndexedFaceSet350
 
-Appearance352.material = Material353
+Transform340.children.append(Shape347)
 
-Shape351.appearance = Appearance352
-Text354 = x3d.Text()
-Text354.string = ["JinLipsPart"]
-FontStyle355 = x3d.FontStyle()
-FontStyle355.size = 2.4
-FontStyle355.spacing = 1.2
-FontStyle355.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(Transform340)
+ROUTE352 = x3d.ROUTE()
+ROUTE352.fromNode = "JinLipFunneler_Sensor"
+ROUTE352.fromField = "touchTime"
+ROUTE352.toNode = "Choice13"
+ROUTE352.toField = "touchTime"
 
-Text354.fontStyle = FontStyle355
+Group6.children.append(ROUTE352)
+ROUTE353 = x3d.ROUTE()
+ROUTE353.fromNode = "Choice13"
+ROUTE353.fromField = "choice"
+ROUTE353.toNode = "SceneSwitcher"
+ROUTE353.toField = "whichChoice"
 
-Shape351.geometry = Text354
+Group6.children.append(ROUTE353)
+Transform354 = x3d.Transform()
+Transform354.translation = [48,21.399999999999995,0]
+TouchSensor355 = x3d.TouchSensor(DEF="JinLipPressor_Sensor")
+TouchSensor355.description = "TSJinLipPressor"
 
-Transform349.children.append(Shape351)
+Transform354.children.append(TouchSensor355)
 Shape356 = x3d.Shape()
 Appearance357 = x3d.Appearance()
 Material358 = x3d.Material()
-Material358.diffuseColor = [0,0,1]
+Material358.diffuseColor = [1,1,1]
 
 Appearance357.material = Material358
 
 Shape356.appearance = Appearance357
-IndexedFaceSet359 = x3d.IndexedFaceSet()
-IndexedFaceSet359.coordIndex = [0,1,2,3,-1]
-Coordinate360 = x3d.Coordinate()
-Coordinate360.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Text359 = x3d.Text()
+Text359.string = ["JinLipPressor"]
+FontStyle360 = x3d.FontStyle()
+FontStyle360.size = 2.4
+FontStyle360.spacing = 1.2
+FontStyle360.justify = ["MIDDLE","MIDDLE"]
 
-IndexedFaceSet359.coord = Coordinate360
+Text359.fontStyle = FontStyle360
 
-Shape356.geometry = IndexedFaceSet359
+Shape356.geometry = Text359
 
-Transform349.children.append(Shape356)
+Transform354.children.append(Shape356)
+Shape361 = x3d.Shape()
+Appearance362 = x3d.Appearance()
+Material363 = x3d.Material()
+Material363.diffuseColor = [0,0,1]
 
-Group5.children.append(Transform349)
-Transform361 = x3d.Transform()
-Transform361.translation = [48,12.4,0]
-TouchSensor362 = x3d.TouchSensor(DEF="JinLipStretcher_Sensor")
-TouchSensor362.description = "TSJinLipStretcher"
+Appearance362.material = Material363
 
-Transform361.children.append(TouchSensor362)
-Shape363 = x3d.Shape()
-Appearance364 = x3d.Appearance()
-Material365 = x3d.Material()
-Material365.diffuseColor = [1,1,1]
+Shape361.appearance = Appearance362
+IndexedFaceSet364 = x3d.IndexedFaceSet()
+IndexedFaceSet364.coordIndex = [0,1,2,3,-1]
+Coordinate365 = x3d.Coordinate()
+Coordinate365.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Appearance364.material = Material365
+IndexedFaceSet364.coord = Coordinate365
 
-Shape363.appearance = Appearance364
-Text366 = x3d.Text()
-Text366.string = ["JinLipStretcher"]
-FontStyle367 = x3d.FontStyle()
-FontStyle367.size = 2.4
-FontStyle367.spacing = 1.2
-FontStyle367.justify = ["MIDDLE","MIDDLE"]
+Shape361.geometry = IndexedFaceSet364
 
-Text366.fontStyle = FontStyle367
+Transform354.children.append(Shape361)
 
-Shape363.geometry = Text366
+Group6.children.append(Transform354)
+ROUTE366 = x3d.ROUTE()
+ROUTE366.fromNode = "JinLipPressor_Sensor"
+ROUTE366.fromField = "touchTime"
+ROUTE366.toNode = "Choice14"
+ROUTE366.toField = "touchTime"
 
-Transform361.children.append(Shape363)
-Shape368 = x3d.Shape()
-Appearance369 = x3d.Appearance()
-Material370 = x3d.Material()
-Material370.diffuseColor = [0,0,1]
+Group6.children.append(ROUTE366)
+ROUTE367 = x3d.ROUTE()
+ROUTE367.fromNode = "Choice14"
+ROUTE367.fromField = "choice"
+ROUTE367.toNode = "SceneSwitcher"
+ROUTE367.toField = "whichChoice"
 
-Appearance369.material = Material370
+Group6.children.append(ROUTE367)
+Transform368 = x3d.Transform()
+Transform368.translation = [48,18.4,0]
+TouchSensor369 = x3d.TouchSensor(DEF="JinLipPuckerer_Sensor")
+TouchSensor369.description = "TSJinLipPuckerer"
 
-Shape368.appearance = Appearance369
-IndexedFaceSet371 = x3d.IndexedFaceSet()
-IndexedFaceSet371.coordIndex = [0,1,2,3,-1]
-Coordinate372 = x3d.Coordinate()
-Coordinate372.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform368.children.append(TouchSensor369)
+Shape370 = x3d.Shape()
+Appearance371 = x3d.Appearance()
+Material372 = x3d.Material()
+Material372.diffuseColor = [1,1,1]
 
-IndexedFaceSet371.coord = Coordinate372
+Appearance371.material = Material372
 
-Shape368.geometry = IndexedFaceSet371
+Shape370.appearance = Appearance371
+Text373 = x3d.Text()
+Text373.string = ["JinLipPuckerer"]
+FontStyle374 = x3d.FontStyle()
+FontStyle374.size = 2.4
+FontStyle374.spacing = 1.2
+FontStyle374.justify = ["MIDDLE","MIDDLE"]
 
-Transform361.children.append(Shape368)
+Text373.fontStyle = FontStyle374
 
-Group5.children.append(Transform361)
-Transform373 = x3d.Transform()
-Transform373.translation = [48,9.4,0]
-TouchSensor374 = x3d.TouchSensor(DEF="JinLipSuck_Sensor")
-TouchSensor374.description = "TSJinLipSuck"
+Shape370.geometry = Text373
 
-Transform373.children.append(TouchSensor374)
+Transform368.children.append(Shape370)
 Shape375 = x3d.Shape()
 Appearance376 = x3d.Appearance()
 Material377 = x3d.Material()
-Material377.diffuseColor = [1,1,1]
+Material377.diffuseColor = [0,0,1]
 
 Appearance376.material = Material377
 
 Shape375.appearance = Appearance376
-Text378 = x3d.Text()
-Text378.string = ["JinLipSuck"]
-FontStyle379 = x3d.FontStyle()
-FontStyle379.size = 2.4
-FontStyle379.spacing = 1.2
-FontStyle379.justify = ["MIDDLE","MIDDLE"]
+IndexedFaceSet378 = x3d.IndexedFaceSet()
+IndexedFaceSet378.coordIndex = [0,1,2,3,-1]
+Coordinate379 = x3d.Coordinate()
+Coordinate379.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Text378.fontStyle = FontStyle379
+IndexedFaceSet378.coord = Coordinate379
 
-Shape375.geometry = Text378
+Shape375.geometry = IndexedFaceSet378
 
-Transform373.children.append(Shape375)
-Shape380 = x3d.Shape()
-Appearance381 = x3d.Appearance()
-Material382 = x3d.Material()
-Material382.diffuseColor = [0,0,1]
+Transform368.children.append(Shape375)
 
-Appearance381.material = Material382
+Group6.children.append(Transform368)
+ROUTE380 = x3d.ROUTE()
+ROUTE380.fromNode = "JinLipPuckerer_Sensor"
+ROUTE380.fromField = "touchTime"
+ROUTE380.toNode = "Choice15"
+ROUTE380.toField = "touchTime"
 
-Shape380.appearance = Appearance381
-IndexedFaceSet383 = x3d.IndexedFaceSet()
-IndexedFaceSet383.coordIndex = [0,1,2,3,-1]
-Coordinate384 = x3d.Coordinate()
-Coordinate384.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Group6.children.append(ROUTE380)
+ROUTE381 = x3d.ROUTE()
+ROUTE381.fromNode = "Choice15"
+ROUTE381.fromField = "choice"
+ROUTE381.toNode = "SceneSwitcher"
+ROUTE381.toField = "whichChoice"
 
-IndexedFaceSet383.coord = Coordinate384
+Group6.children.append(ROUTE381)
+Transform382 = x3d.Transform()
+Transform382.translation = [48,15.399999999999997,0]
+TouchSensor383 = x3d.TouchSensor(DEF="JinLipsPart_Sensor")
+TouchSensor383.description = "TSJinLipsPart"
 
-Shape380.geometry = IndexedFaceSet383
+Transform382.children.append(TouchSensor383)
+Shape384 = x3d.Shape()
+Appearance385 = x3d.Appearance()
+Material386 = x3d.Material()
+Material386.diffuseColor = [1,1,1]
 
-Transform373.children.append(Shape380)
+Appearance385.material = Material386
 
-Group5.children.append(Transform373)
-Transform385 = x3d.Transform()
-Transform385.translation = [48,6.4,0]
-TouchSensor386 = x3d.TouchSensor(DEF="JinLipTightener_Sensor")
-TouchSensor386.description = "TSJinLipTightener"
+Shape384.appearance = Appearance385
+Text387 = x3d.Text()
+Text387.string = ["JinLipsPart"]
+FontStyle388 = x3d.FontStyle()
+FontStyle388.size = 2.4
+FontStyle388.spacing = 1.2
+FontStyle388.justify = ["MIDDLE","MIDDLE"]
 
-Transform385.children.append(TouchSensor386)
-Shape387 = x3d.Shape()
-Appearance388 = x3d.Appearance()
-Material389 = x3d.Material()
-Material389.diffuseColor = [1,1,1]
+Text387.fontStyle = FontStyle388
 
-Appearance388.material = Material389
+Shape384.geometry = Text387
 
-Shape387.appearance = Appearance388
-Text390 = x3d.Text()
-Text390.string = ["JinLipTightener"]
-FontStyle391 = x3d.FontStyle()
-FontStyle391.size = 2.4
-FontStyle391.spacing = 1.2
-FontStyle391.justify = ["MIDDLE","MIDDLE"]
+Transform382.children.append(Shape384)
+Shape389 = x3d.Shape()
+Appearance390 = x3d.Appearance()
+Material391 = x3d.Material()
+Material391.diffuseColor = [0,0,1]
 
-Text390.fontStyle = FontStyle391
+Appearance390.material = Material391
 
-Shape387.geometry = Text390
+Shape389.appearance = Appearance390
+IndexedFaceSet392 = x3d.IndexedFaceSet()
+IndexedFaceSet392.coordIndex = [0,1,2,3,-1]
+Coordinate393 = x3d.Coordinate()
+Coordinate393.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Transform385.children.append(Shape387)
-Shape392 = x3d.Shape()
-Appearance393 = x3d.Appearance()
-Material394 = x3d.Material()
-Material394.diffuseColor = [0,0,1]
+IndexedFaceSet392.coord = Coordinate393
 
-Appearance393.material = Material394
+Shape389.geometry = IndexedFaceSet392
 
-Shape392.appearance = Appearance393
-IndexedFaceSet395 = x3d.IndexedFaceSet()
-IndexedFaceSet395.coordIndex = [0,1,2,3,-1]
-Coordinate396 = x3d.Coordinate()
-Coordinate396.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform382.children.append(Shape389)
 
-IndexedFaceSet395.coord = Coordinate396
+Group6.children.append(Transform382)
+ROUTE394 = x3d.ROUTE()
+ROUTE394.fromNode = "JinLipsPart_Sensor"
+ROUTE394.fromField = "touchTime"
+ROUTE394.toNode = "Choice16"
+ROUTE394.toField = "touchTime"
 
-Shape392.geometry = IndexedFaceSet395
+Group6.children.append(ROUTE394)
+ROUTE395 = x3d.ROUTE()
+ROUTE395.fromNode = "Choice16"
+ROUTE395.fromField = "choice"
+ROUTE395.toNode = "SceneSwitcher"
+ROUTE395.toField = "whichChoice"
 
-Transform385.children.append(Shape392)
+Group6.children.append(ROUTE395)
+Transform396 = x3d.Transform()
+Transform396.translation = [48,12.399999999999999,0]
+TouchSensor397 = x3d.TouchSensor(DEF="JinLipStretcher_Sensor")
+TouchSensor397.description = "TSJinLipStretcher"
 
-Group5.children.append(Transform385)
-Transform397 = x3d.Transform()
-Transform397.translation = [48,3.4,0]
-TouchSensor398 = x3d.TouchSensor(DEF="JinLowerLipDepressor_Sensor")
-TouchSensor398.description = "TSJinLowerLipDepressor"
+Transform396.children.append(TouchSensor397)
+Shape398 = x3d.Shape()
+Appearance399 = x3d.Appearance()
+Material400 = x3d.Material()
+Material400.diffuseColor = [1,1,1]
 
-Transform397.children.append(TouchSensor398)
-Shape399 = x3d.Shape()
-Appearance400 = x3d.Appearance()
-Material401 = x3d.Material()
-Material401.diffuseColor = [1,1,1]
+Appearance399.material = Material400
 
-Appearance400.material = Material401
+Shape398.appearance = Appearance399
+Text401 = x3d.Text()
+Text401.string = ["JinLipStretcher"]
+FontStyle402 = x3d.FontStyle()
+FontStyle402.size = 2.4
+FontStyle402.spacing = 1.2
+FontStyle402.justify = ["MIDDLE","MIDDLE"]
 
-Shape399.appearance = Appearance400
-Text402 = x3d.Text()
-Text402.string = ["JinLowerLipDepressor"]
-FontStyle403 = x3d.FontStyle()
-FontStyle403.size = 2.4
-FontStyle403.spacing = 1.2
-FontStyle403.justify = ["MIDDLE","MIDDLE"]
+Text401.fontStyle = FontStyle402
 
-Text402.fontStyle = FontStyle403
+Shape398.geometry = Text401
 
-Shape399.geometry = Text402
+Transform396.children.append(Shape398)
+Shape403 = x3d.Shape()
+Appearance404 = x3d.Appearance()
+Material405 = x3d.Material()
+Material405.diffuseColor = [0,0,1]
 
-Transform397.children.append(Shape399)
-Shape404 = x3d.Shape()
-Appearance405 = x3d.Appearance()
-Material406 = x3d.Material()
-Material406.diffuseColor = [0,0,1]
+Appearance404.material = Material405
 
-Appearance405.material = Material406
+Shape403.appearance = Appearance404
+IndexedFaceSet406 = x3d.IndexedFaceSet()
+IndexedFaceSet406.coordIndex = [0,1,2,3,-1]
+Coordinate407 = x3d.Coordinate()
+Coordinate407.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape404.appearance = Appearance405
-IndexedFaceSet407 = x3d.IndexedFaceSet()
-IndexedFaceSet407.coordIndex = [0,1,2,3,-1]
-Coordinate408 = x3d.Coordinate()
-Coordinate408.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+IndexedFaceSet406.coord = Coordinate407
 
-IndexedFaceSet407.coord = Coordinate408
+Shape403.geometry = IndexedFaceSet406
 
-Shape404.geometry = IndexedFaceSet407
+Transform396.children.append(Shape403)
 
-Transform397.children.append(Shape404)
+Group6.children.append(Transform396)
+ROUTE408 = x3d.ROUTE()
+ROUTE408.fromNode = "JinLipStretcher_Sensor"
+ROUTE408.fromField = "touchTime"
+ROUTE408.toNode = "Choice17"
+ROUTE408.toField = "touchTime"
 
-Group5.children.append(Transform397)
-Transform409 = x3d.Transform()
-Transform409.translation = [48,0.4,0]
-TouchSensor410 = x3d.TouchSensor(DEF="JinMouthStretch_Sensor")
-TouchSensor410.description = "TSJinMouthStretch"
+Group6.children.append(ROUTE408)
+ROUTE409 = x3d.ROUTE()
+ROUTE409.fromNode = "Choice17"
+ROUTE409.fromField = "choice"
+ROUTE409.toNode = "SceneSwitcher"
+ROUTE409.toField = "whichChoice"
 
-Transform409.children.append(TouchSensor410)
-Shape411 = x3d.Shape()
-Appearance412 = x3d.Appearance()
-Material413 = x3d.Material()
-Material413.diffuseColor = [1,1,1]
+Group6.children.append(ROUTE409)
+Transform410 = x3d.Transform()
+Transform410.translation = [48,9.399999999999999,0]
+TouchSensor411 = x3d.TouchSensor(DEF="JinLipSuck_Sensor")
+TouchSensor411.description = "TSJinLipSuck"
 
-Appearance412.material = Material413
+Transform410.children.append(TouchSensor411)
+Shape412 = x3d.Shape()
+Appearance413 = x3d.Appearance()
+Material414 = x3d.Material()
+Material414.diffuseColor = [1,1,1]
 
-Shape411.appearance = Appearance412
-Text414 = x3d.Text()
-Text414.string = ["JinMouthStretch"]
-FontStyle415 = x3d.FontStyle()
-FontStyle415.size = 2.4
-FontStyle415.spacing = 1.2
-FontStyle415.justify = ["MIDDLE","MIDDLE"]
+Appearance413.material = Material414
 
-Text414.fontStyle = FontStyle415
+Shape412.appearance = Appearance413
+Text415 = x3d.Text()
+Text415.string = ["JinLipSuck"]
+FontStyle416 = x3d.FontStyle()
+FontStyle416.size = 2.4
+FontStyle416.spacing = 1.2
+FontStyle416.justify = ["MIDDLE","MIDDLE"]
 
-Shape411.geometry = Text414
+Text415.fontStyle = FontStyle416
 
-Transform409.children.append(Shape411)
-Shape416 = x3d.Shape()
-Appearance417 = x3d.Appearance()
-Material418 = x3d.Material()
-Material418.diffuseColor = [0,0,1]
+Shape412.geometry = Text415
 
-Appearance417.material = Material418
+Transform410.children.append(Shape412)
+Shape417 = x3d.Shape()
+Appearance418 = x3d.Appearance()
+Material419 = x3d.Material()
+Material419.diffuseColor = [0,0,1]
 
-Shape416.appearance = Appearance417
-IndexedFaceSet419 = x3d.IndexedFaceSet()
-IndexedFaceSet419.coordIndex = [0,1,2,3,-1]
-Coordinate420 = x3d.Coordinate()
-Coordinate420.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Appearance418.material = Material419
 
-IndexedFaceSet419.coord = Coordinate420
+Shape417.appearance = Appearance418
+IndexedFaceSet420 = x3d.IndexedFaceSet()
+IndexedFaceSet420.coordIndex = [0,1,2,3,-1]
+Coordinate421 = x3d.Coordinate()
+Coordinate421.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape416.geometry = IndexedFaceSet419
+IndexedFaceSet420.coord = Coordinate421
 
-Transform409.children.append(Shape416)
+Shape417.geometry = IndexedFaceSet420
 
-Group5.children.append(Transform409)
-Transform421 = x3d.Transform()
-Transform421.translation = [48,-2.6,0]
-TouchSensor422 = x3d.TouchSensor(DEF="JinNasolabialDeepener_Sensor")
-TouchSensor422.description = "TSJinNasolabialDeepener"
+Transform410.children.append(Shape417)
 
-Transform421.children.append(TouchSensor422)
-Shape423 = x3d.Shape()
-Appearance424 = x3d.Appearance()
-Material425 = x3d.Material()
-Material425.diffuseColor = [1,1,1]
+Group6.children.append(Transform410)
+ROUTE422 = x3d.ROUTE()
+ROUTE422.fromNode = "JinLipSuck_Sensor"
+ROUTE422.fromField = "touchTime"
+ROUTE422.toNode = "Choice18"
+ROUTE422.toField = "touchTime"
 
-Appearance424.material = Material425
+Group6.children.append(ROUTE422)
+ROUTE423 = x3d.ROUTE()
+ROUTE423.fromNode = "Choice18"
+ROUTE423.fromField = "choice"
+ROUTE423.toNode = "SceneSwitcher"
+ROUTE423.toField = "whichChoice"
 
-Shape423.appearance = Appearance424
-Text426 = x3d.Text()
-Text426.string = ["JinNasolabialDeepener"]
-FontStyle427 = x3d.FontStyle()
-FontStyle427.size = 2.4
-FontStyle427.spacing = 1.2
-FontStyle427.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(ROUTE423)
+Transform424 = x3d.Transform()
+Transform424.translation = [48,6.399999999999999,0]
+TouchSensor425 = x3d.TouchSensor(DEF="JinLipTightener_Sensor")
+TouchSensor425.description = "TSJinLipTightener"
 
-Text426.fontStyle = FontStyle427
+Transform424.children.append(TouchSensor425)
+Shape426 = x3d.Shape()
+Appearance427 = x3d.Appearance()
+Material428 = x3d.Material()
+Material428.diffuseColor = [1,1,1]
 
-Shape423.geometry = Text426
+Appearance427.material = Material428
 
-Transform421.children.append(Shape423)
-Shape428 = x3d.Shape()
-Appearance429 = x3d.Appearance()
-Material430 = x3d.Material()
-Material430.diffuseColor = [0,0,1]
+Shape426.appearance = Appearance427
+Text429 = x3d.Text()
+Text429.string = ["JinLipTightener"]
+FontStyle430 = x3d.FontStyle()
+FontStyle430.size = 2.4
+FontStyle430.spacing = 1.2
+FontStyle430.justify = ["MIDDLE","MIDDLE"]
 
-Appearance429.material = Material430
+Text429.fontStyle = FontStyle430
 
-Shape428.appearance = Appearance429
-IndexedFaceSet431 = x3d.IndexedFaceSet()
-IndexedFaceSet431.coordIndex = [0,1,2,3,-1]
-Coordinate432 = x3d.Coordinate()
-Coordinate432.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Shape426.geometry = Text429
 
-IndexedFaceSet431.coord = Coordinate432
+Transform424.children.append(Shape426)
+Shape431 = x3d.Shape()
+Appearance432 = x3d.Appearance()
+Material433 = x3d.Material()
+Material433.diffuseColor = [0,0,1]
 
-Shape428.geometry = IndexedFaceSet431
+Appearance432.material = Material433
 
-Transform421.children.append(Shape428)
+Shape431.appearance = Appearance432
+IndexedFaceSet434 = x3d.IndexedFaceSet()
+IndexedFaceSet434.coordIndex = [0,1,2,3,-1]
+Coordinate435 = x3d.Coordinate()
+Coordinate435.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Group5.children.append(Transform421)
-Transform433 = x3d.Transform()
-Transform433.translation = [48,-5.6,0]
-TouchSensor434 = x3d.TouchSensor(DEF="JinNoseWrinkler_Sensor")
-TouchSensor434.description = "TSJinNoseWrinkler"
+IndexedFaceSet434.coord = Coordinate435
 
-Transform433.children.append(TouchSensor434)
-Shape435 = x3d.Shape()
-Appearance436 = x3d.Appearance()
-Material437 = x3d.Material()
-Material437.diffuseColor = [1,1,1]
+Shape431.geometry = IndexedFaceSet434
 
-Appearance436.material = Material437
+Transform424.children.append(Shape431)
 
-Shape435.appearance = Appearance436
-Text438 = x3d.Text()
-Text438.string = ["JinNoseWrinkler"]
-FontStyle439 = x3d.FontStyle()
-FontStyle439.size = 2.4
-FontStyle439.spacing = 1.2
-FontStyle439.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(Transform424)
+ROUTE436 = x3d.ROUTE()
+ROUTE436.fromNode = "JinLipTightener_Sensor"
+ROUTE436.fromField = "touchTime"
+ROUTE436.toNode = "Choice19"
+ROUTE436.toField = "touchTime"
 
-Text438.fontStyle = FontStyle439
+Group6.children.append(ROUTE436)
+ROUTE437 = x3d.ROUTE()
+ROUTE437.fromNode = "Choice19"
+ROUTE437.fromField = "choice"
+ROUTE437.toNode = "SceneSwitcher"
+ROUTE437.toField = "whichChoice"
 
-Shape435.geometry = Text438
+Group6.children.append(ROUTE437)
+Transform438 = x3d.Transform()
+Transform438.translation = [48,3.399999999999995,0]
+TouchSensor439 = x3d.TouchSensor(DEF="JinLowerLipDepressor_Sensor")
+TouchSensor439.description = "TSJinLowerLipDepressor"
 
-Transform433.children.append(Shape435)
+Transform438.children.append(TouchSensor439)
 Shape440 = x3d.Shape()
 Appearance441 = x3d.Appearance()
 Material442 = x3d.Material()
-Material442.diffuseColor = [0,0,1]
+Material442.diffuseColor = [1,1,1]
 
 Appearance441.material = Material442
 
 Shape440.appearance = Appearance441
-IndexedFaceSet443 = x3d.IndexedFaceSet()
-IndexedFaceSet443.coordIndex = [0,1,2,3,-1]
-Coordinate444 = x3d.Coordinate()
-Coordinate444.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Text443 = x3d.Text()
+Text443.string = ["JinLowerLipDepressor"]
+FontStyle444 = x3d.FontStyle()
+FontStyle444.size = 2.4
+FontStyle444.spacing = 1.2
+FontStyle444.justify = ["MIDDLE","MIDDLE"]
 
-IndexedFaceSet443.coord = Coordinate444
+Text443.fontStyle = FontStyle444
 
-Shape440.geometry = IndexedFaceSet443
+Shape440.geometry = Text443
 
-Transform433.children.append(Shape440)
+Transform438.children.append(Shape440)
+Shape445 = x3d.Shape()
+Appearance446 = x3d.Appearance()
+Material447 = x3d.Material()
+Material447.diffuseColor = [0,0,1]
 
-Group5.children.append(Transform433)
-Transform445 = x3d.Transform()
-Transform445.translation = [48,-8.6,0]
-TouchSensor446 = x3d.TouchSensor(DEF="JinOuterBrowRaiser_Sensor")
-TouchSensor446.description = "TSJinOuterBrowRaiser"
+Appearance446.material = Material447
 
-Transform445.children.append(TouchSensor446)
-Shape447 = x3d.Shape()
-Appearance448 = x3d.Appearance()
-Material449 = x3d.Material()
-Material449.diffuseColor = [1,1,1]
+Shape445.appearance = Appearance446
+IndexedFaceSet448 = x3d.IndexedFaceSet()
+IndexedFaceSet448.coordIndex = [0,1,2,3,-1]
+Coordinate449 = x3d.Coordinate()
+Coordinate449.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Appearance448.material = Material449
+IndexedFaceSet448.coord = Coordinate449
 
-Shape447.appearance = Appearance448
-Text450 = x3d.Text()
-Text450.string = ["JinOuterBrowRaiser"]
-FontStyle451 = x3d.FontStyle()
-FontStyle451.size = 2.4
-FontStyle451.spacing = 1.2
-FontStyle451.justify = ["MIDDLE","MIDDLE"]
+Shape445.geometry = IndexedFaceSet448
 
-Text450.fontStyle = FontStyle451
+Transform438.children.append(Shape445)
 
-Shape447.geometry = Text450
+Group6.children.append(Transform438)
+ROUTE450 = x3d.ROUTE()
+ROUTE450.fromNode = "JinLowerLipDepressor_Sensor"
+ROUTE450.fromField = "touchTime"
+ROUTE450.toNode = "Choice20"
+ROUTE450.toField = "touchTime"
 
-Transform445.children.append(Shape447)
-Shape452 = x3d.Shape()
-Appearance453 = x3d.Appearance()
-Material454 = x3d.Material()
-Material454.diffuseColor = [0,0,1]
+Group6.children.append(ROUTE450)
+ROUTE451 = x3d.ROUTE()
+ROUTE451.fromNode = "Choice20"
+ROUTE451.fromField = "choice"
+ROUTE451.toNode = "SceneSwitcher"
+ROUTE451.toField = "whichChoice"
 
-Appearance453.material = Material454
+Group6.children.append(ROUTE451)
+Transform452 = x3d.Transform()
+Transform452.translation = [48,0.399999999999995,0]
+TouchSensor453 = x3d.TouchSensor(DEF="JinMouthStretch_Sensor")
+TouchSensor453.description = "TSJinMouthStretch"
 
-Shape452.appearance = Appearance453
-IndexedFaceSet455 = x3d.IndexedFaceSet()
-IndexedFaceSet455.coordIndex = [0,1,2,3,-1]
-Coordinate456 = x3d.Coordinate()
-Coordinate456.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform452.children.append(TouchSensor453)
+Shape454 = x3d.Shape()
+Appearance455 = x3d.Appearance()
+Material456 = x3d.Material()
+Material456.diffuseColor = [1,1,1]
 
-IndexedFaceSet455.coord = Coordinate456
+Appearance455.material = Material456
 
-Shape452.geometry = IndexedFaceSet455
+Shape454.appearance = Appearance455
+Text457 = x3d.Text()
+Text457.string = ["JinMouthStretch"]
+FontStyle458 = x3d.FontStyle()
+FontStyle458.size = 2.4
+FontStyle458.spacing = 1.2
+FontStyle458.justify = ["MIDDLE","MIDDLE"]
 
-Transform445.children.append(Shape452)
+Text457.fontStyle = FontStyle458
 
-Group5.children.append(Transform445)
-Transform457 = x3d.Transform()
-Transform457.translation = [48,-11.6,0]
-TouchSensor458 = x3d.TouchSensor(DEF="JinSlit_Sensor")
-TouchSensor458.description = "TSJinSlit"
+Shape454.geometry = Text457
 
-Transform457.children.append(TouchSensor458)
+Transform452.children.append(Shape454)
 Shape459 = x3d.Shape()
 Appearance460 = x3d.Appearance()
 Material461 = x3d.Material()
-Material461.diffuseColor = [1,1,1]
+Material461.diffuseColor = [0,0,1]
 
 Appearance460.material = Material461
 
 Shape459.appearance = Appearance460
-Text462 = x3d.Text()
-Text462.string = ["JinSlit"]
-FontStyle463 = x3d.FontStyle()
-FontStyle463.size = 2.4
-FontStyle463.spacing = 1.2
-FontStyle463.justify = ["MIDDLE","MIDDLE"]
+IndexedFaceSet462 = x3d.IndexedFaceSet()
+IndexedFaceSet462.coordIndex = [0,1,2,3,-1]
+Coordinate463 = x3d.Coordinate()
+Coordinate463.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Text462.fontStyle = FontStyle463
+IndexedFaceSet462.coord = Coordinate463
 
-Shape459.geometry = Text462
+Shape459.geometry = IndexedFaceSet462
 
-Transform457.children.append(Shape459)
-Shape464 = x3d.Shape()
-Appearance465 = x3d.Appearance()
-Material466 = x3d.Material()
-Material466.diffuseColor = [0,0,1]
+Transform452.children.append(Shape459)
 
-Appearance465.material = Material466
+Group6.children.append(Transform452)
+ROUTE464 = x3d.ROUTE()
+ROUTE464.fromNode = "JinMouthStretch_Sensor"
+ROUTE464.fromField = "touchTime"
+ROUTE464.toNode = "Choice21"
+ROUTE464.toField = "touchTime"
 
-Shape464.appearance = Appearance465
-IndexedFaceSet467 = x3d.IndexedFaceSet()
-IndexedFaceSet467.coordIndex = [0,1,2,3,-1]
-Coordinate468 = x3d.Coordinate()
-Coordinate468.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Group6.children.append(ROUTE464)
+ROUTE465 = x3d.ROUTE()
+ROUTE465.fromNode = "Choice21"
+ROUTE465.fromField = "choice"
+ROUTE465.toNode = "SceneSwitcher"
+ROUTE465.toField = "whichChoice"
 
-IndexedFaceSet467.coord = Coordinate468
+Group6.children.append(ROUTE465)
+Transform466 = x3d.Transform()
+Transform466.translation = [48,-2.6000000000000085,0]
+TouchSensor467 = x3d.TouchSensor(DEF="JinNasolabialDeepener_Sensor")
+TouchSensor467.description = "TSJinNasolabialDeepener"
 
-Shape464.geometry = IndexedFaceSet467
+Transform466.children.append(TouchSensor467)
+Shape468 = x3d.Shape()
+Appearance469 = x3d.Appearance()
+Material470 = x3d.Material()
+Material470.diffuseColor = [1,1,1]
 
-Transform457.children.append(Shape464)
+Appearance469.material = Material470
 
-Group5.children.append(Transform457)
-Transform469 = x3d.Transform()
-Transform469.translation = [48,-14.6,0]
-TouchSensor470 = x3d.TouchSensor(DEF="JinSquint_Sensor")
-TouchSensor470.description = "TSJinSquint"
+Shape468.appearance = Appearance469
+Text471 = x3d.Text()
+Text471.string = ["JinNasolabialDeepener"]
+FontStyle472 = x3d.FontStyle()
+FontStyle472.size = 2.4
+FontStyle472.spacing = 1.2
+FontStyle472.justify = ["MIDDLE","MIDDLE"]
 
-Transform469.children.append(TouchSensor470)
-Shape471 = x3d.Shape()
-Appearance472 = x3d.Appearance()
-Material473 = x3d.Material()
-Material473.diffuseColor = [1,1,1]
+Text471.fontStyle = FontStyle472
 
-Appearance472.material = Material473
+Shape468.geometry = Text471
 
-Shape471.appearance = Appearance472
-Text474 = x3d.Text()
-Text474.string = ["JinSquint"]
-FontStyle475 = x3d.FontStyle()
-FontStyle475.size = 2.4
-FontStyle475.spacing = 1.2
-FontStyle475.justify = ["MIDDLE","MIDDLE"]
+Transform466.children.append(Shape468)
+Shape473 = x3d.Shape()
+Appearance474 = x3d.Appearance()
+Material475 = x3d.Material()
+Material475.diffuseColor = [0,0,1]
 
-Text474.fontStyle = FontStyle475
+Appearance474.material = Material475
 
-Shape471.geometry = Text474
+Shape473.appearance = Appearance474
+IndexedFaceSet476 = x3d.IndexedFaceSet()
+IndexedFaceSet476.coordIndex = [0,1,2,3,-1]
+Coordinate477 = x3d.Coordinate()
+Coordinate477.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Transform469.children.append(Shape471)
-Shape476 = x3d.Shape()
-Appearance477 = x3d.Appearance()
-Material478 = x3d.Material()
-Material478.diffuseColor = [0,0,1]
+IndexedFaceSet476.coord = Coordinate477
 
-Appearance477.material = Material478
+Shape473.geometry = IndexedFaceSet476
 
-Shape476.appearance = Appearance477
-IndexedFaceSet479 = x3d.IndexedFaceSet()
-IndexedFaceSet479.coordIndex = [0,1,2,3,-1]
-Coordinate480 = x3d.Coordinate()
-Coordinate480.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Transform466.children.append(Shape473)
 
-IndexedFaceSet479.coord = Coordinate480
+Group6.children.append(Transform466)
+ROUTE478 = x3d.ROUTE()
+ROUTE478.fromNode = "JinNasolabialDeepener_Sensor"
+ROUTE478.fromField = "touchTime"
+ROUTE478.toNode = "Choice22"
+ROUTE478.toField = "touchTime"
 
-Shape476.geometry = IndexedFaceSet479
+Group6.children.append(ROUTE478)
+ROUTE479 = x3d.ROUTE()
+ROUTE479.fromNode = "Choice22"
+ROUTE479.fromField = "choice"
+ROUTE479.toNode = "SceneSwitcher"
+ROUTE479.toField = "whichChoice"
 
-Transform469.children.append(Shape476)
+Group6.children.append(ROUTE479)
+Transform480 = x3d.Transform()
+Transform480.translation = [48,-5.6000000000000085,0]
+TouchSensor481 = x3d.TouchSensor(DEF="JinNoseWrinkler_Sensor")
+TouchSensor481.description = "TSJinNoseWrinkler"
 
-Group5.children.append(Transform469)
-Transform481 = x3d.Transform()
-Transform481.translation = [48,-17.6,0]
-TouchSensor482 = x3d.TouchSensor(DEF="JinUpperLidRaiser_Sensor")
-TouchSensor482.description = "TSJinUpperLidRaiser"
+Transform480.children.append(TouchSensor481)
+Shape482 = x3d.Shape()
+Appearance483 = x3d.Appearance()
+Material484 = x3d.Material()
+Material484.diffuseColor = [1,1,1]
 
-Transform481.children.append(TouchSensor482)
-Shape483 = x3d.Shape()
-Appearance484 = x3d.Appearance()
-Material485 = x3d.Material()
-Material485.diffuseColor = [1,1,1]
+Appearance483.material = Material484
 
-Appearance484.material = Material485
+Shape482.appearance = Appearance483
+Text485 = x3d.Text()
+Text485.string = ["JinNoseWrinkler"]
+FontStyle486 = x3d.FontStyle()
+FontStyle486.size = 2.4
+FontStyle486.spacing = 1.2
+FontStyle486.justify = ["MIDDLE","MIDDLE"]
 
-Shape483.appearance = Appearance484
-Text486 = x3d.Text()
-Text486.string = ["JinUpperLidRaiser"]
-FontStyle487 = x3d.FontStyle()
-FontStyle487.size = 2.4
-FontStyle487.spacing = 1.2
-FontStyle487.justify = ["MIDDLE","MIDDLE"]
+Text485.fontStyle = FontStyle486
 
-Text486.fontStyle = FontStyle487
+Shape482.geometry = Text485
 
-Shape483.geometry = Text486
+Transform480.children.append(Shape482)
+Shape487 = x3d.Shape()
+Appearance488 = x3d.Appearance()
+Material489 = x3d.Material()
+Material489.diffuseColor = [0,0,1]
 
-Transform481.children.append(Shape483)
-Shape488 = x3d.Shape()
-Appearance489 = x3d.Appearance()
-Material490 = x3d.Material()
-Material490.diffuseColor = [0,0,1]
+Appearance488.material = Material489
 
-Appearance489.material = Material490
+Shape487.appearance = Appearance488
+IndexedFaceSet490 = x3d.IndexedFaceSet()
+IndexedFaceSet490.coordIndex = [0,1,2,3,-1]
+Coordinate491 = x3d.Coordinate()
+Coordinate491.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape488.appearance = Appearance489
-IndexedFaceSet491 = x3d.IndexedFaceSet()
-IndexedFaceSet491.coordIndex = [0,1,2,3,-1]
-Coordinate492 = x3d.Coordinate()
-Coordinate492.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+IndexedFaceSet490.coord = Coordinate491
 
-IndexedFaceSet491.coord = Coordinate492
+Shape487.geometry = IndexedFaceSet490
 
-Shape488.geometry = IndexedFaceSet491
+Transform480.children.append(Shape487)
 
-Transform481.children.append(Shape488)
+Group6.children.append(Transform480)
+ROUTE492 = x3d.ROUTE()
+ROUTE492.fromNode = "JinNoseWrinkler_Sensor"
+ROUTE492.fromField = "touchTime"
+ROUTE492.toNode = "Choice23"
+ROUTE492.toField = "touchTime"
 
-Group5.children.append(Transform481)
-Transform493 = x3d.Transform()
-Transform493.translation = [48,-20.6,0]
-TouchSensor494 = x3d.TouchSensor(DEF="JinUpperLipRaiser_Sensor")
-TouchSensor494.description = "TSJinUpperLipRaiser"
+Group6.children.append(ROUTE492)
+ROUTE493 = x3d.ROUTE()
+ROUTE493.fromNode = "Choice23"
+ROUTE493.fromField = "choice"
+ROUTE493.toNode = "SceneSwitcher"
+ROUTE493.toField = "whichChoice"
 
-Transform493.children.append(TouchSensor494)
-Shape495 = x3d.Shape()
-Appearance496 = x3d.Appearance()
-Material497 = x3d.Material()
-Material497.diffuseColor = [1,1,1]
+Group6.children.append(ROUTE493)
+Transform494 = x3d.Transform()
+Transform494.translation = [48,-8.600000000000009,0]
+TouchSensor495 = x3d.TouchSensor(DEF="JinOuterBrowRaiser_Sensor")
+TouchSensor495.description = "TSJinOuterBrowRaiser"
 
-Appearance496.material = Material497
+Transform494.children.append(TouchSensor495)
+Shape496 = x3d.Shape()
+Appearance497 = x3d.Appearance()
+Material498 = x3d.Material()
+Material498.diffuseColor = [1,1,1]
 
-Shape495.appearance = Appearance496
-Text498 = x3d.Text()
-Text498.string = ["JinUpperLipRaiser"]
-FontStyle499 = x3d.FontStyle()
-FontStyle499.size = 2.4
-FontStyle499.spacing = 1.2
-FontStyle499.justify = ["MIDDLE","MIDDLE"]
+Appearance497.material = Material498
 
-Text498.fontStyle = FontStyle499
+Shape496.appearance = Appearance497
+Text499 = x3d.Text()
+Text499.string = ["JinOuterBrowRaiser"]
+FontStyle500 = x3d.FontStyle()
+FontStyle500.size = 2.4
+FontStyle500.spacing = 1.2
+FontStyle500.justify = ["MIDDLE","MIDDLE"]
 
-Shape495.geometry = Text498
+Text499.fontStyle = FontStyle500
 
-Transform493.children.append(Shape495)
-Shape500 = x3d.Shape()
-Appearance501 = x3d.Appearance()
-Material502 = x3d.Material()
-Material502.diffuseColor = [0,0,1]
+Shape496.geometry = Text499
 
-Appearance501.material = Material502
+Transform494.children.append(Shape496)
+Shape501 = x3d.Shape()
+Appearance502 = x3d.Appearance()
+Material503 = x3d.Material()
+Material503.diffuseColor = [0,0,1]
 
-Shape500.appearance = Appearance501
-IndexedFaceSet503 = x3d.IndexedFaceSet()
-IndexedFaceSet503.coordIndex = [0,1,2,3,-1]
-Coordinate504 = x3d.Coordinate()
-Coordinate504.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Appearance502.material = Material503
 
-IndexedFaceSet503.coord = Coordinate504
+Shape501.appearance = Appearance502
+IndexedFaceSet504 = x3d.IndexedFaceSet()
+IndexedFaceSet504.coordIndex = [0,1,2,3,-1]
+Coordinate505 = x3d.Coordinate()
+Coordinate505.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Shape500.geometry = IndexedFaceSet503
+IndexedFaceSet504.coord = Coordinate505
 
-Transform493.children.append(Shape500)
+Shape501.geometry = IndexedFaceSet504
 
-Group5.children.append(Transform493)
-Transform505 = x3d.Transform()
-Transform505.translation = [48,-23.6,0]
-TouchSensor506 = x3d.TouchSensor(DEF="JinWink_Sensor")
-TouchSensor506.description = "TSJinWink"
+Transform494.children.append(Shape501)
 
-Transform505.children.append(TouchSensor506)
-Shape507 = x3d.Shape()
-Appearance508 = x3d.Appearance()
-Material509 = x3d.Material()
-Material509.diffuseColor = [1,1,1]
+Group6.children.append(Transform494)
+ROUTE506 = x3d.ROUTE()
+ROUTE506.fromNode = "JinOuterBrowRaiser_Sensor"
+ROUTE506.fromField = "touchTime"
+ROUTE506.toNode = "Choice24"
+ROUTE506.toField = "touchTime"
 
-Appearance508.material = Material509
+Group6.children.append(ROUTE506)
+ROUTE507 = x3d.ROUTE()
+ROUTE507.fromNode = "Choice24"
+ROUTE507.fromField = "choice"
+ROUTE507.toNode = "SceneSwitcher"
+ROUTE507.toField = "whichChoice"
 
-Shape507.appearance = Appearance508
-Text510 = x3d.Text()
-Text510.string = ["JinWink"]
-FontStyle511 = x3d.FontStyle()
-FontStyle511.size = 2.4
-FontStyle511.spacing = 1.2
-FontStyle511.justify = ["MIDDLE","MIDDLE"]
+Group6.children.append(ROUTE507)
+Transform508 = x3d.Transform()
+Transform508.translation = [48,-11.600000000000009,0]
+TouchSensor509 = x3d.TouchSensor(DEF="JinSlit_Sensor")
+TouchSensor509.description = "TSJinSlit"
 
-Text510.fontStyle = FontStyle511
+Transform508.children.append(TouchSensor509)
+Shape510 = x3d.Shape()
+Appearance511 = x3d.Appearance()
+Material512 = x3d.Material()
+Material512.diffuseColor = [1,1,1]
 
-Shape507.geometry = Text510
+Appearance511.material = Material512
 
-Transform505.children.append(Shape507)
-Shape512 = x3d.Shape()
-Appearance513 = x3d.Appearance()
-Material514 = x3d.Material()
-Material514.diffuseColor = [0,0,1]
+Shape510.appearance = Appearance511
+Text513 = x3d.Text()
+Text513.string = ["JinSlit"]
+FontStyle514 = x3d.FontStyle()
+FontStyle514.size = 2.4
+FontStyle514.spacing = 1.2
+FontStyle514.justify = ["MIDDLE","MIDDLE"]
 
-Appearance513.material = Material514
+Text513.fontStyle = FontStyle514
 
-Shape512.appearance = Appearance513
-IndexedFaceSet515 = x3d.IndexedFaceSet()
-IndexedFaceSet515.coordIndex = [0,1,2,3,-1]
-Coordinate516 = x3d.Coordinate()
-Coordinate516.point = [(20, 1.383333, -0.1),(-20, 1.383333, -0.1),(-20, -1.616667, -0.1),(20, -1.616667, -0.1)]
+Shape510.geometry = Text513
 
-IndexedFaceSet515.coord = Coordinate516
+Transform508.children.append(Shape510)
+Shape515 = x3d.Shape()
+Appearance516 = x3d.Appearance()
+Material517 = x3d.Material()
+Material517.diffuseColor = [0,0,1]
 
-Shape512.geometry = IndexedFaceSet515
+Appearance516.material = Material517
 
-Transform505.children.append(Shape512)
+Shape515.appearance = Appearance516
+IndexedFaceSet518 = x3d.IndexedFaceSet()
+IndexedFaceSet518.coordIndex = [0,1,2,3,-1]
+Coordinate519 = x3d.Coordinate()
+Coordinate519.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Group5.children.append(Transform505)
+IndexedFaceSet518.coord = Coordinate519
 
-Scene3.children.append(Group5)
-ROUTE517 = x3d.ROUTE()
-ROUTE517.fromNode = "JinBlink_Sensor"
-ROUTE517.fromField = "touchTime"
-ROUTE517.toNode = "Choice0"
-ROUTE517.toField = "touchTime"
+Shape515.geometry = IndexedFaceSet518
 
-Scene3.children.append(ROUTE517)
-ROUTE518 = x3d.ROUTE()
-ROUTE518.fromNode = "Choice0"
-ROUTE518.fromField = "choice"
-ROUTE518.toNode = "SceneSwitcher"
-ROUTE518.toField = "set_whichChoice"
+Transform508.children.append(Shape515)
 
-Scene3.children.append(ROUTE518)
-ROUTE519 = x3d.ROUTE()
-ROUTE519.fromNode = "JinBrowLowerer_Sensor"
-ROUTE519.fromField = "touchTime"
-ROUTE519.toNode = "Choice1"
-ROUTE519.toField = "touchTime"
-
-Scene3.children.append(ROUTE519)
+Group6.children.append(Transform508)
 ROUTE520 = x3d.ROUTE()
-ROUTE520.fromNode = "Choice1"
-ROUTE520.fromField = "choice"
-ROUTE520.toNode = "SceneSwitcher"
-ROUTE520.toField = "set_whichChoice"
+ROUTE520.fromNode = "JinSlit_Sensor"
+ROUTE520.fromField = "touchTime"
+ROUTE520.toNode = "Choice25"
+ROUTE520.toField = "touchTime"
 
-Scene3.children.append(ROUTE520)
+Group6.children.append(ROUTE520)
 ROUTE521 = x3d.ROUTE()
-ROUTE521.fromNode = "JinCheekPuffer_Sensor"
-ROUTE521.fromField = "touchTime"
-ROUTE521.toNode = "Choice2"
-ROUTE521.toField = "touchTime"
+ROUTE521.fromNode = "Choice25"
+ROUTE521.fromField = "choice"
+ROUTE521.toNode = "SceneSwitcher"
+ROUTE521.toField = "whichChoice"
 
-Scene3.children.append(ROUTE521)
-ROUTE522 = x3d.ROUTE()
-ROUTE522.fromNode = "Choice2"
-ROUTE522.fromField = "choice"
-ROUTE522.toNode = "SceneSwitcher"
-ROUTE522.toField = "set_whichChoice"
+Group6.children.append(ROUTE521)
+Transform522 = x3d.Transform()
+Transform522.translation = [48,-14.600000000000001,0]
+TouchSensor523 = x3d.TouchSensor(DEF="JinSquint_Sensor")
+TouchSensor523.description = "TSJinSquint"
 
-Scene3.children.append(ROUTE522)
-ROUTE523 = x3d.ROUTE()
-ROUTE523.fromNode = "JinCheekRaiser_Sensor"
-ROUTE523.fromField = "touchTime"
-ROUTE523.toNode = "Choice3"
-ROUTE523.toField = "touchTime"
+Transform522.children.append(TouchSensor523)
+Shape524 = x3d.Shape()
+Appearance525 = x3d.Appearance()
+Material526 = x3d.Material()
+Material526.diffuseColor = [1,1,1]
 
-Scene3.children.append(ROUTE523)
-ROUTE524 = x3d.ROUTE()
-ROUTE524.fromNode = "Choice3"
-ROUTE524.fromField = "choice"
-ROUTE524.toNode = "SceneSwitcher"
-ROUTE524.toField = "set_whichChoice"
+Appearance525.material = Material526
 
-Scene3.children.append(ROUTE524)
-ROUTE525 = x3d.ROUTE()
-ROUTE525.fromNode = "JinChinRaiser_Sensor"
-ROUTE525.fromField = "touchTime"
-ROUTE525.toNode = "Choice4"
-ROUTE525.toField = "touchTime"
+Shape524.appearance = Appearance525
+Text527 = x3d.Text()
+Text527.string = ["JinSquint"]
+FontStyle528 = x3d.FontStyle()
+FontStyle528.size = 2.4
+FontStyle528.spacing = 1.2
+FontStyle528.justify = ["MIDDLE","MIDDLE"]
 
-Scene3.children.append(ROUTE525)
-ROUTE526 = x3d.ROUTE()
-ROUTE526.fromNode = "Choice4"
-ROUTE526.fromField = "choice"
-ROUTE526.toNode = "SceneSwitcher"
-ROUTE526.toField = "set_whichChoice"
+Text527.fontStyle = FontStyle528
 
-Scene3.children.append(ROUTE526)
-ROUTE527 = x3d.ROUTE()
-ROUTE527.fromNode = "JinDimpler_Sensor"
-ROUTE527.fromField = "touchTime"
-ROUTE527.toNode = "Choice5"
-ROUTE527.toField = "touchTime"
+Shape524.geometry = Text527
 
-Scene3.children.append(ROUTE527)
-ROUTE528 = x3d.ROUTE()
-ROUTE528.fromNode = "Choice5"
-ROUTE528.fromField = "choice"
-ROUTE528.toNode = "SceneSwitcher"
-ROUTE528.toField = "set_whichChoice"
+Transform522.children.append(Shape524)
+Shape529 = x3d.Shape()
+Appearance530 = x3d.Appearance()
+Material531 = x3d.Material()
+Material531.diffuseColor = [0,0,1]
 
-Scene3.children.append(ROUTE528)
-ROUTE529 = x3d.ROUTE()
-ROUTE529.fromNode = "JinEyesClosed_Sensor"
-ROUTE529.fromField = "touchTime"
-ROUTE529.toNode = "Choice6"
-ROUTE529.toField = "touchTime"
+Appearance530.material = Material531
 
-Scene3.children.append(ROUTE529)
-ROUTE530 = x3d.ROUTE()
-ROUTE530.fromNode = "Choice6"
-ROUTE530.fromField = "choice"
-ROUTE530.toNode = "SceneSwitcher"
-ROUTE530.toField = "set_whichChoice"
+Shape529.appearance = Appearance530
+IndexedFaceSet532 = x3d.IndexedFaceSet()
+IndexedFaceSet532.coordIndex = [0,1,2,3,-1]
+Coordinate533 = x3d.Coordinate()
+Coordinate533.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Scene3.children.append(ROUTE530)
-ROUTE531 = x3d.ROUTE()
-ROUTE531.fromNode = "JinInnerBrowRaiser_Sensor"
-ROUTE531.fromField = "touchTime"
-ROUTE531.toNode = "Choice7"
-ROUTE531.toField = "touchTime"
+IndexedFaceSet532.coord = Coordinate533
 
-Scene3.children.append(ROUTE531)
-ROUTE532 = x3d.ROUTE()
-ROUTE532.fromNode = "Choice7"
-ROUTE532.fromField = "choice"
-ROUTE532.toNode = "SceneSwitcher"
-ROUTE532.toField = "set_whichChoice"
+Shape529.geometry = IndexedFaceSet532
 
-Scene3.children.append(ROUTE532)
-ROUTE533 = x3d.ROUTE()
-ROUTE533.fromNode = "JinJawDrop_Sensor"
-ROUTE533.fromField = "touchTime"
-ROUTE533.toNode = "Choice8"
-ROUTE533.toField = "touchTime"
+Transform522.children.append(Shape529)
 
-Scene3.children.append(ROUTE533)
+Group6.children.append(Transform522)
 ROUTE534 = x3d.ROUTE()
-ROUTE534.fromNode = "Choice8"
-ROUTE534.fromField = "choice"
-ROUTE534.toNode = "SceneSwitcher"
-ROUTE534.toField = "set_whichChoice"
+ROUTE534.fromNode = "JinSquint_Sensor"
+ROUTE534.fromField = "touchTime"
+ROUTE534.toNode = "Choice26"
+ROUTE534.toField = "touchTime"
 
-Scene3.children.append(ROUTE534)
+Group6.children.append(ROUTE534)
 ROUTE535 = x3d.ROUTE()
-ROUTE535.fromNode = "JinLidDroop_Sensor"
-ROUTE535.fromField = "touchTime"
-ROUTE535.toNode = "Choice9"
-ROUTE535.toField = "touchTime"
+ROUTE535.fromNode = "Choice26"
+ROUTE535.fromField = "choice"
+ROUTE535.toNode = "SceneSwitcher"
+ROUTE535.toField = "whichChoice"
 
-Scene3.children.append(ROUTE535)
-ROUTE536 = x3d.ROUTE()
-ROUTE536.fromNode = "Choice9"
-ROUTE536.fromField = "choice"
-ROUTE536.toNode = "SceneSwitcher"
-ROUTE536.toField = "set_whichChoice"
+Group6.children.append(ROUTE535)
+Transform536 = x3d.Transform()
+Transform536.translation = [48,-17.6,0]
+TouchSensor537 = x3d.TouchSensor(DEF="JinUpperLidRaiser_Sensor")
+TouchSensor537.description = "TSJinUpperLidRaiser"
 
-Scene3.children.append(ROUTE536)
-ROUTE537 = x3d.ROUTE()
-ROUTE537.fromNode = "JinLidTightener_Sensor"
-ROUTE537.fromField = "touchTime"
-ROUTE537.toNode = "Choice10"
-ROUTE537.toField = "touchTime"
+Transform536.children.append(TouchSensor537)
+Shape538 = x3d.Shape()
+Appearance539 = x3d.Appearance()
+Material540 = x3d.Material()
+Material540.diffuseColor = [1,1,1]
 
-Scene3.children.append(ROUTE537)
-ROUTE538 = x3d.ROUTE()
-ROUTE538.fromNode = "Choice10"
-ROUTE538.fromField = "choice"
-ROUTE538.toNode = "SceneSwitcher"
-ROUTE538.toField = "set_whichChoice"
+Appearance539.material = Material540
 
-Scene3.children.append(ROUTE538)
-ROUTE539 = x3d.ROUTE()
-ROUTE539.fromNode = "JinLipCornerDepressor_Sensor"
-ROUTE539.fromField = "touchTime"
-ROUTE539.toNode = "Choice11"
-ROUTE539.toField = "touchTime"
+Shape538.appearance = Appearance539
+Text541 = x3d.Text()
+Text541.string = ["JinUpperLidRaiser"]
+FontStyle542 = x3d.FontStyle()
+FontStyle542.size = 2.4
+FontStyle542.spacing = 1.2
+FontStyle542.justify = ["MIDDLE","MIDDLE"]
 
-Scene3.children.append(ROUTE539)
-ROUTE540 = x3d.ROUTE()
-ROUTE540.fromNode = "Choice11"
-ROUTE540.fromField = "choice"
-ROUTE540.toNode = "SceneSwitcher"
-ROUTE540.toField = "set_whichChoice"
+Text541.fontStyle = FontStyle542
 
-Scene3.children.append(ROUTE540)
-ROUTE541 = x3d.ROUTE()
-ROUTE541.fromNode = "JinLipCornerPuller_Sensor"
-ROUTE541.fromField = "touchTime"
-ROUTE541.toNode = "Choice12"
-ROUTE541.toField = "touchTime"
+Shape538.geometry = Text541
 
-Scene3.children.append(ROUTE541)
-ROUTE542 = x3d.ROUTE()
-ROUTE542.fromNode = "Choice12"
-ROUTE542.fromField = "choice"
-ROUTE542.toNode = "SceneSwitcher"
-ROUTE542.toField = "set_whichChoice"
+Transform536.children.append(Shape538)
+Shape543 = x3d.Shape()
+Appearance544 = x3d.Appearance()
+Material545 = x3d.Material()
+Material545.diffuseColor = [0,0,1]
 
-Scene3.children.append(ROUTE542)
-ROUTE543 = x3d.ROUTE()
-ROUTE543.fromNode = "JinLipFunneler_Sensor"
-ROUTE543.fromField = "touchTime"
-ROUTE543.toNode = "Choice13"
-ROUTE543.toField = "touchTime"
+Appearance544.material = Material545
 
-Scene3.children.append(ROUTE543)
-ROUTE544 = x3d.ROUTE()
-ROUTE544.fromNode = "Choice13"
-ROUTE544.fromField = "choice"
-ROUTE544.toNode = "SceneSwitcher"
-ROUTE544.toField = "set_whichChoice"
+Shape543.appearance = Appearance544
+IndexedFaceSet546 = x3d.IndexedFaceSet()
+IndexedFaceSet546.coordIndex = [0,1,2,3,-1]
+Coordinate547 = x3d.Coordinate()
+Coordinate547.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Scene3.children.append(ROUTE544)
-ROUTE545 = x3d.ROUTE()
-ROUTE545.fromNode = "JinLipPressor_Sensor"
-ROUTE545.fromField = "touchTime"
-ROUTE545.toNode = "Choice14"
-ROUTE545.toField = "touchTime"
+IndexedFaceSet546.coord = Coordinate547
 
-Scene3.children.append(ROUTE545)
-ROUTE546 = x3d.ROUTE()
-ROUTE546.fromNode = "Choice14"
-ROUTE546.fromField = "choice"
-ROUTE546.toNode = "SceneSwitcher"
-ROUTE546.toField = "set_whichChoice"
+Shape543.geometry = IndexedFaceSet546
 
-Scene3.children.append(ROUTE546)
-ROUTE547 = x3d.ROUTE()
-ROUTE547.fromNode = "JinLipPuckerer_Sensor"
-ROUTE547.fromField = "touchTime"
-ROUTE547.toNode = "Choice15"
-ROUTE547.toField = "touchTime"
+Transform536.children.append(Shape543)
 
-Scene3.children.append(ROUTE547)
+Group6.children.append(Transform536)
 ROUTE548 = x3d.ROUTE()
-ROUTE548.fromNode = "Choice15"
-ROUTE548.fromField = "choice"
-ROUTE548.toNode = "SceneSwitcher"
-ROUTE548.toField = "set_whichChoice"
+ROUTE548.fromNode = "JinUpperLidRaiser_Sensor"
+ROUTE548.fromField = "touchTime"
+ROUTE548.toNode = "Choice27"
+ROUTE548.toField = "touchTime"
 
-Scene3.children.append(ROUTE548)
+Group6.children.append(ROUTE548)
 ROUTE549 = x3d.ROUTE()
-ROUTE549.fromNode = "JinLipsPart_Sensor"
-ROUTE549.fromField = "touchTime"
-ROUTE549.toNode = "Choice16"
-ROUTE549.toField = "touchTime"
+ROUTE549.fromNode = "Choice27"
+ROUTE549.fromField = "choice"
+ROUTE549.toNode = "SceneSwitcher"
+ROUTE549.toField = "whichChoice"
 
-Scene3.children.append(ROUTE549)
-ROUTE550 = x3d.ROUTE()
-ROUTE550.fromNode = "Choice16"
-ROUTE550.fromField = "choice"
-ROUTE550.toNode = "SceneSwitcher"
-ROUTE550.toField = "set_whichChoice"
+Group6.children.append(ROUTE549)
+Transform550 = x3d.Transform()
+Transform550.translation = [48,-20.6,0]
+TouchSensor551 = x3d.TouchSensor(DEF="JinUpperLipRaiser_Sensor")
+TouchSensor551.description = "TSJinUpperLipRaiser"
 
-Scene3.children.append(ROUTE550)
-ROUTE551 = x3d.ROUTE()
-ROUTE551.fromNode = "JinLipStretcher_Sensor"
-ROUTE551.fromField = "touchTime"
-ROUTE551.toNode = "Choice17"
-ROUTE551.toField = "touchTime"
+Transform550.children.append(TouchSensor551)
+Shape552 = x3d.Shape()
+Appearance553 = x3d.Appearance()
+Material554 = x3d.Material()
+Material554.diffuseColor = [1,1,1]
 
-Scene3.children.append(ROUTE551)
-ROUTE552 = x3d.ROUTE()
-ROUTE552.fromNode = "Choice17"
-ROUTE552.fromField = "choice"
-ROUTE552.toNode = "SceneSwitcher"
-ROUTE552.toField = "set_whichChoice"
+Appearance553.material = Material554
 
-Scene3.children.append(ROUTE552)
-ROUTE553 = x3d.ROUTE()
-ROUTE553.fromNode = "JinLipSuck_Sensor"
-ROUTE553.fromField = "touchTime"
-ROUTE553.toNode = "Choice18"
-ROUTE553.toField = "touchTime"
+Shape552.appearance = Appearance553
+Text555 = x3d.Text()
+Text555.string = ["JinUpperLipRaiser"]
+FontStyle556 = x3d.FontStyle()
+FontStyle556.size = 2.4
+FontStyle556.spacing = 1.2
+FontStyle556.justify = ["MIDDLE","MIDDLE"]
 
-Scene3.children.append(ROUTE553)
-ROUTE554 = x3d.ROUTE()
-ROUTE554.fromNode = "Choice18"
-ROUTE554.fromField = "choice"
-ROUTE554.toNode = "SceneSwitcher"
-ROUTE554.toField = "set_whichChoice"
+Text555.fontStyle = FontStyle556
 
-Scene3.children.append(ROUTE554)
-ROUTE555 = x3d.ROUTE()
-ROUTE555.fromNode = "JinLipTightener_Sensor"
-ROUTE555.fromField = "touchTime"
-ROUTE555.toNode = "Choice19"
-ROUTE555.toField = "touchTime"
+Shape552.geometry = Text555
 
-Scene3.children.append(ROUTE555)
-ROUTE556 = x3d.ROUTE()
-ROUTE556.fromNode = "Choice19"
-ROUTE556.fromField = "choice"
-ROUTE556.toNode = "SceneSwitcher"
-ROUTE556.toField = "set_whichChoice"
+Transform550.children.append(Shape552)
+Shape557 = x3d.Shape()
+Appearance558 = x3d.Appearance()
+Material559 = x3d.Material()
+Material559.diffuseColor = [0,0,1]
 
-Scene3.children.append(ROUTE556)
-ROUTE557 = x3d.ROUTE()
-ROUTE557.fromNode = "JinLowerLipDepressor_Sensor"
-ROUTE557.fromField = "touchTime"
-ROUTE557.toNode = "Choice20"
-ROUTE557.toField = "touchTime"
+Appearance558.material = Material559
 
-Scene3.children.append(ROUTE557)
-ROUTE558 = x3d.ROUTE()
-ROUTE558.fromNode = "Choice20"
-ROUTE558.fromField = "choice"
-ROUTE558.toNode = "SceneSwitcher"
-ROUTE558.toField = "set_whichChoice"
+Shape557.appearance = Appearance558
+IndexedFaceSet560 = x3d.IndexedFaceSet()
+IndexedFaceSet560.coordIndex = [0,1,2,3,-1]
+Coordinate561 = x3d.Coordinate()
+Coordinate561.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Scene3.children.append(ROUTE558)
-ROUTE559 = x3d.ROUTE()
-ROUTE559.fromNode = "JinMouthStretch_Sensor"
-ROUTE559.fromField = "touchTime"
-ROUTE559.toNode = "Choice21"
-ROUTE559.toField = "touchTime"
+IndexedFaceSet560.coord = Coordinate561
 
-Scene3.children.append(ROUTE559)
-ROUTE560 = x3d.ROUTE()
-ROUTE560.fromNode = "Choice21"
-ROUTE560.fromField = "choice"
-ROUTE560.toNode = "SceneSwitcher"
-ROUTE560.toField = "set_whichChoice"
+Shape557.geometry = IndexedFaceSet560
 
-Scene3.children.append(ROUTE560)
-ROUTE561 = x3d.ROUTE()
-ROUTE561.fromNode = "JinNasolabialDeepener_Sensor"
-ROUTE561.fromField = "touchTime"
-ROUTE561.toNode = "Choice22"
-ROUTE561.toField = "touchTime"
+Transform550.children.append(Shape557)
 
-Scene3.children.append(ROUTE561)
+Group6.children.append(Transform550)
 ROUTE562 = x3d.ROUTE()
-ROUTE562.fromNode = "Choice22"
-ROUTE562.fromField = "choice"
-ROUTE562.toNode = "SceneSwitcher"
-ROUTE562.toField = "set_whichChoice"
+ROUTE562.fromNode = "JinUpperLipRaiser_Sensor"
+ROUTE562.fromField = "touchTime"
+ROUTE562.toNode = "Choice28"
+ROUTE562.toField = "touchTime"
 
-Scene3.children.append(ROUTE562)
+Group6.children.append(ROUTE562)
 ROUTE563 = x3d.ROUTE()
-ROUTE563.fromNode = "JinNoseWrinkler_Sensor"
-ROUTE563.fromField = "touchTime"
-ROUTE563.toNode = "Choice23"
-ROUTE563.toField = "touchTime"
+ROUTE563.fromNode = "Choice28"
+ROUTE563.fromField = "choice"
+ROUTE563.toNode = "SceneSwitcher"
+ROUTE563.toField = "whichChoice"
 
-Scene3.children.append(ROUTE563)
-ROUTE564 = x3d.ROUTE()
-ROUTE564.fromNode = "Choice23"
-ROUTE564.fromField = "choice"
-ROUTE564.toNode = "SceneSwitcher"
-ROUTE564.toField = "set_whichChoice"
+Group6.children.append(ROUTE563)
+Transform564 = x3d.Transform()
+Transform564.translation = [48,-23.599999999999994,0]
+TouchSensor565 = x3d.TouchSensor(DEF="JinWink_Sensor")
+TouchSensor565.description = "TSJinWink"
 
-Scene3.children.append(ROUTE564)
-ROUTE565 = x3d.ROUTE()
-ROUTE565.fromNode = "JinOuterBrowRaiser_Sensor"
-ROUTE565.fromField = "touchTime"
-ROUTE565.toNode = "Choice24"
-ROUTE565.toField = "touchTime"
+Transform564.children.append(TouchSensor565)
+Shape566 = x3d.Shape()
+Appearance567 = x3d.Appearance()
+Material568 = x3d.Material()
+Material568.diffuseColor = [1,1,1]
 
-Scene3.children.append(ROUTE565)
-ROUTE566 = x3d.ROUTE()
-ROUTE566.fromNode = "Choice24"
-ROUTE566.fromField = "choice"
-ROUTE566.toNode = "SceneSwitcher"
-ROUTE566.toField = "set_whichChoice"
+Appearance567.material = Material568
 
-Scene3.children.append(ROUTE566)
-ROUTE567 = x3d.ROUTE()
-ROUTE567.fromNode = "JinSlit_Sensor"
-ROUTE567.fromField = "touchTime"
-ROUTE567.toNode = "Choice25"
-ROUTE567.toField = "touchTime"
+Shape566.appearance = Appearance567
+Text569 = x3d.Text()
+Text569.string = ["JinWink"]
+FontStyle570 = x3d.FontStyle()
+FontStyle570.size = 2.4
+FontStyle570.spacing = 1.2
+FontStyle570.justify = ["MIDDLE","MIDDLE"]
 
-Scene3.children.append(ROUTE567)
-ROUTE568 = x3d.ROUTE()
-ROUTE568.fromNode = "Choice25"
-ROUTE568.fromField = "choice"
-ROUTE568.toNode = "SceneSwitcher"
-ROUTE568.toField = "set_whichChoice"
+Text569.fontStyle = FontStyle570
 
-Scene3.children.append(ROUTE568)
-ROUTE569 = x3d.ROUTE()
-ROUTE569.fromNode = "JinSquint_Sensor"
-ROUTE569.fromField = "touchTime"
-ROUTE569.toNode = "Choice26"
-ROUTE569.toField = "touchTime"
+Shape566.geometry = Text569
 
-Scene3.children.append(ROUTE569)
-ROUTE570 = x3d.ROUTE()
-ROUTE570.fromNode = "Choice26"
-ROUTE570.fromField = "choice"
-ROUTE570.toNode = "SceneSwitcher"
-ROUTE570.toField = "set_whichChoice"
+Transform564.children.append(Shape566)
+Shape571 = x3d.Shape()
+Appearance572 = x3d.Appearance()
+Material573 = x3d.Material()
+Material573.diffuseColor = [0,0,1]
 
-Scene3.children.append(ROUTE570)
-ROUTE571 = x3d.ROUTE()
-ROUTE571.fromNode = "JinUpperLidRaiser_Sensor"
-ROUTE571.fromField = "touchTime"
-ROUTE571.toNode = "Choice27"
-ROUTE571.toField = "touchTime"
+Appearance572.material = Material573
 
-Scene3.children.append(ROUTE571)
-ROUTE572 = x3d.ROUTE()
-ROUTE572.fromNode = "Choice27"
-ROUTE572.fromField = "choice"
-ROUTE572.toNode = "SceneSwitcher"
-ROUTE572.toField = "set_whichChoice"
+Shape571.appearance = Appearance572
+IndexedFaceSet574 = x3d.IndexedFaceSet()
+IndexedFaceSet574.coordIndex = [0,1,2,3,-1]
+Coordinate575 = x3d.Coordinate()
+Coordinate575.point = [(20, 1.3833333333333333, -0.1),(-20, 1.3833333333333333, -0.1),(-20, -1.616666666666667, -0.1),(20, -1.616666666666667, -0.1)]
 
-Scene3.children.append(ROUTE572)
-ROUTE573 = x3d.ROUTE()
-ROUTE573.fromNode = "JinUpperLipRaiser_Sensor"
-ROUTE573.fromField = "touchTime"
-ROUTE573.toNode = "Choice28"
-ROUTE573.toField = "touchTime"
+IndexedFaceSet574.coord = Coordinate575
 
-Scene3.children.append(ROUTE573)
-ROUTE574 = x3d.ROUTE()
-ROUTE574.fromNode = "Choice28"
-ROUTE574.fromField = "choice"
-ROUTE574.toNode = "SceneSwitcher"
-ROUTE574.toField = "set_whichChoice"
+Shape571.geometry = IndexedFaceSet574
 
-Scene3.children.append(ROUTE574)
-ROUTE575 = x3d.ROUTE()
-ROUTE575.fromNode = "JinWink_Sensor"
-ROUTE575.fromField = "touchTime"
-ROUTE575.toNode = "Choice29"
-ROUTE575.toField = "touchTime"
+Transform564.children.append(Shape571)
 
-Scene3.children.append(ROUTE575)
+Group6.children.append(Transform564)
 ROUTE576 = x3d.ROUTE()
-ROUTE576.fromNode = "Choice29"
-ROUTE576.fromField = "choice"
-ROUTE576.toNode = "SceneSwitcher"
-ROUTE576.toField = "set_whichChoice"
+ROUTE576.fromNode = "JinWink_Sensor"
+ROUTE576.fromField = "touchTime"
+ROUTE576.toNode = "Choice29"
+ROUTE576.toField = "touchTime"
 
-Scene3.children.append(ROUTE576)
+Group6.children.append(ROUTE576)
+ROUTE577 = x3d.ROUTE()
+ROUTE577.fromNode = "Choice29"
+ROUTE577.fromField = "choice"
+ROUTE577.toNode = "SceneSwitcher"
+ROUTE577.toField = "whichChoice"
 
-X3D0.Scene = Scene3
+Group6.children.append(ROUTE577)
+
+Scene4.children.append(Group6)
+
+X3D0.Scene = Scene4
 f = open("../data/MenuJin.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

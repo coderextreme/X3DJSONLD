@@ -1,0 +1,1 @@
+src;C:\Users\jcarl\.m2\repository\org\clojure\clojure\1.12.4\clojure-1.12.4.jar;C:\Users\jcarl\pythonSAI\X3DJSAIL.4.0.full.jar;C:\Users\jcarl\X3DJSONLD\src\main\clojure\net\coderextreme\data\src;C:\Users\jcarl\.m2\repository\org\clojure\core.specs.alpha\0.4.74\core.specs.alpha-0.4.74.jar;C:\Users\jcarl\.m2\repository\org\clojure\spec.alpha\0.5.238\spec.alpha-0.5.238.jar

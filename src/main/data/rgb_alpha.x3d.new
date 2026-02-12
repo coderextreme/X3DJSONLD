@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="rgb_alpha.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="rgb_alpha.x3d"></meta>
 <meta name="Image" content="rgb_alpha-front.jpg"></meta>
 <meta name="Image" content="rgb_alpha-rear.jpg"></meta>
 <meta name="Image" content="rgb_alpha-top.jpg"></meta>
@@ -12,10 +12,12 @@
 <meta name="info" content="Correct definition and compliance of this conformance scene is maintained by the X3D Working Group, https://www.web3d.org/working-groups/x3d"></meta>
 <meta name="translator" content="Michael Kass NIST, Don Brutzman NPS"></meta>
 <meta name="translated" content="21 January 2001"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:12:59 GMT"></meta>
+<meta name="modified" content="16 January 2011"></meta>
 <meta name="description" content="Test browser ability to map a RGB plus alpha opacity to geometry. A checkerboard of four colored squares: lower left (red), lower right (transparent), uppser left (transparent) and upper right (red) map onto the faces of all geometry. For the sphere, the texture should cover the entire surface, and wrap counterclockwise from the back of the sphere. For the cone, the texture should wrap counterclockwise (from above) starting at the back of the cone. A circle cutout of the texture is applied right side up to the base of the cone when the cone is tilted toward the -z axis. For the cylinder, the texture should wrap counterclockwise (from above) starting at the back of the cylinder. A circle cutout of the texture is applied right side up to the top and bottom caps of the cylinder. For the box, the texture should be applied right side up in its entirety to each face of the box."></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/ConformanceNist/Appearance/PixelTexture/rgb_alpha.x3d"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
+<meta name="generator" content="Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../../license.html"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;EXAMINE&quot; &quot;WALK&quot; &quot;FLY&quot; &quot;ANY&quot;"></NavigationInfo>
 <Group><Transform translation="6.14221 0.0694613 -0.000999451"><Shape><Appearance containerField="appearance"><Material containerField="material"></Material>

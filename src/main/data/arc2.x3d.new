@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="arc2.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="arc2.x3d"></meta>
 <meta name="creator" content="Lost, Doug Sanden I think"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/arc1.x3d"></meta>
+<meta name="description" content="a generic proto to connect two objects"></meta>
 </head>
-<Scene><Viewpoint description="Only Viewpoint" position="0 0 5"></Viewpoint>
+<Scene><Viewpoint position="0 0 5" description="Only Viewpoint"></Viewpoint>
 <Background skyColor="0.4 0.4 0.4"></Background>
-<Transform DEF="G1"><Transform DEF="DECLpoint_INSTANCE_node" translation="0 4.45 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+<Transform DEF="G1"><Transform DEF="DECLpoint_INSTANCE_node"><Shape><Sphere radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
-<Sphere radius="0.1"></Sphere>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_INSTANCE_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="DECLpoint_INSTANCE_MB1"><field accessType="inputOutput" type="SFVec3f" name="translation"></field>
-<field accessType="inputOutput" type="SFVec3f" name="old"></field>
-<field accessType="inputOnly" type="SFTime" name="set_location"></field>
-<field accessType="inputOutput" type="MFVec3f" name="keyValue" value="0 0 0 0 5 0"></field>
+<Script DEF="DECLpoint_INSTANCE_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
 <![CDATA[ecmascript:
                function set_location(value) {
                     old = translation;
@@ -23,17 +24,22 @@
                     keyValue = new MFVec3f([old, translation]);
                }]]></Script>
 <TimeSensor DEF="DECLpoint_INSTANCE_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE_MB1" fromField="keyValue" toNode="DECLpoint_INSTANCE_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE_PI1" fromField="value_changed" toNode="DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
 </Transform>
 </Transform>
-<Transform DEF="G2"><Transform DEF="DECLpoint_INSTANCE1000_node" translation="0 4.45 0"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
+<Transform DEF="G2"><Transform DEF="DECLpoint_INSTANCE1000_node"><Shape><Sphere radius="0.1"></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 0 0"></Material>
 </Appearance>
-<Sphere radius="0.1"></Sphere>
 </Shape>
 <PositionInterpolator DEF="DECLpoint_INSTANCE1000_PI1" key="0 1" keyValue="0 0 0 0 5 0"></PositionInterpolator>
-<Script DEF="DECLpoint_INSTANCE1000_MB1"><field accessType="inputOutput" type="SFVec3f" name="translation"></field>
-<field accessType="inputOutput" type="SFVec3f" name="old"></field>
-<field accessType="inputOnly" type="SFTime" name="set_location"></field>
-<field accessType="inputOutput" type="MFVec3f" name="keyValue" value="0 0 0 0 5 0"></field>
+<Script DEF="DECLpoint_INSTANCE1000_MB1"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="old" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_location" accessType="inputOnly" type="SFTime"></field>
+<field name="keyValue" accessType="inputOutput" type="MFVec3f" value="0 0 0 0 5 0"></field>
 <![CDATA[ecmascript:
                function set_location(value) {
                     old = translation;
@@ -41,6 +47,11 @@
                     keyValue = new MFVec3f([old, translation]);
                }]]></Script>
 <TimeSensor DEF="DECLpoint_INSTANCE1000_CL1" cycleInterval="3" loop="true"></TimeSensor>
+<ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE1000_MB1" toField="set_location"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE1000_PI1" toField="set_fraction"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE1000_MB1" fromField="keyValue" toNode="DECLpoint_INSTANCE1000_PI1" toField="keyValue"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE1000_PI1" fromField="value_changed" toNode="DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
+<ROUTE fromNode="DECLpoint_INSTANCE1000_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
 </Transform>
 </Transform>
 <Transform DEF="transC1"><Transform DEF="rotscaleC1"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.7 0.7" transparency="0.5"></Material>
@@ -49,16 +60,16 @@
 </Shape>
 </Transform>
 </Transform>
-<Script DEF="DECLx3dconnector_connector1_S1"><field accessType="initializeOnly" type="SFNode" name="startnode"><Transform USE="G1"></Transform>
+<Script DEF="DECLx3dconnector_connector1_S1"><field name="startnode" accessType="initializeOnly" type="SFNode"><Transform USE="G1"></Transform>
 </field>
-<field accessType="initializeOnly" type="SFNode" name="endnode"><Transform USE="G2"></Transform>
+<field name="endnode" accessType="initializeOnly" type="SFNode"><Transform USE="G2"></Transform>
 </field>
-<field accessType="initializeOnly" type="SFNode" name="transC1"><Transform USE="transC1"></Transform>
+<field name="transC1" accessType="initializeOnly" type="SFNode"><Transform USE="transC1"></Transform>
 </field>
-<field accessType="initializeOnly" type="SFNode" name="rotscaleC1"><Transform USE="rotscaleC1"></Transform>
+<field name="rotscaleC1" accessType="initializeOnly" type="SFNode"><Transform USE="rotscaleC1"></Transform>
 </field>
-<field accessType="inputOnly" type="SFVec3f" name="set_startpoint"></field>
-<field accessType="inputOnly" type="SFVec3f" name="set_endpoint"></field>
+<field name="set_startpoint" accessType="inputOnly" type="SFVec3f"></field>
+<field name="set_endpoint" accessType="inputOnly" type="SFVec3f"></field>
 <![CDATA[ecmascript:
         function recompute(startpoint,endpoint){
 	    if (typeof endpoint === 'undefined') {
@@ -98,16 +109,6 @@
         function set_endpoint(val,t){
             recompute_and_route(startnode.translation,val);
         }]]></Script>
-<ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE_MB1" toField="set_location"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE_PI1" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE_MB1" fromField="keyValue_changed" toNode="DECLpoint_INSTANCE_PI1" toField="set_keyValue"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE_PI1" fromField="value_changed" toNode="DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE_node" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="cycleTime" toNode="DECLpoint_INSTANCE1000_MB1" toField="set_location"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE1000_CL1" fromField="fraction_changed" toNode="DECLpoint_INSTANCE1000_PI1" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE1000_MB1" fromField="keyValue_changed" toNode="DECLpoint_INSTANCE1000_PI1" toField="set_keyValue"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE1000_PI1" fromField="value_changed" toNode="DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
-<ROUTE fromNode="DECLpoint_INSTANCE1000_MB1" fromField="translation_changed" toNode="DECLpoint_INSTANCE1000_node" toField="set_translation"></ROUTE>
 <ROUTE fromNode="G1" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_startpoint"></ROUTE>
 <ROUTE fromNode="G2" fromField="translation_changed" toNode="DECLx3dconnector_connector1_S1" toField="set_endpoint"></ROUTE>
 </Scene>

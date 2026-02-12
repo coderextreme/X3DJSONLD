@@ -1,40 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="MultiTextureDesignPattern.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="3.3" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-3.3.xsd" ><head><meta name="title" content="MultiTextureDesignPattern.x3d"></meta>
 <meta name="description" content="Design pattern for MultiTexture, MultiTextureCoordinate, MultiTextureTransform node correspondences"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="created" content="5 March 2011"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:12:52 GMT"></meta>
+<meta name="modified" content="29 October 2023"></meta>
 <meta name="TODO" content="X3D schematron rules for quality assurance"></meta>
 <meta name="Image" content="MultiTextureDesignPatternSceneGraph.png"></meta>
 <meta name="subject" content="MultiTexture, MultiTextureCoordinate, MultiTextureTransform"></meta>
 <meta name="reference" content="https://www.web3d.org/files/specifications/19775-1/V3.2/Part01/components/texturing.html#MultiTexture"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/TextureMapping/MultiTextureDesignPattern.x3d"></meta>
 <meta name="reference" content="https://www.web3d.org/x3d/content/examples/X3dResources.html"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
-<Scene><WorldInfo title="MultiTextureDesignPattern.x3d"></WorldInfo>
+<Scene><!--================================--><WorldInfo title="MultiTextureDesignPattern.x3d"></WorldInfo>
 <Background skyColor="0.72549 1 0.721569"></Background>
 <Viewpoint description="MultiTexture design pattern"></Viewpoint>
-<Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.4 0.8"></Material>
-</Appearance>
-<Text string="&quot;Source shows design pattern for&quot; &quot;MultiTexture, MultiTextureCoordinate,&quot; &quot; and MultiTextureTransform nodes&quot;"><FontStyle containerField="fontStyle" size="0.6" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Shape><Text string="&quot;Source shows design pattern for&quot; &quot;MultiTexture, MultiTextureCoordinate,&quot; &quot; and MultiTextureTransform nodes&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.6"></FontStyle>
 </Text>
-</Shape>
-<Shape><Appearance containerField="appearance"><Material containerField="material"></Material>
-<MultiTexture containerField="texture" color="0.9 1 0.2" alpha="0.8" mode="&quot;MODULATE&quot; &quot;REPLACE&quot; &quot;BLENDDIFFUSEALPHA&quot;" source="&quot;DIFFUSE&quot; &quot;SPECULAR&quot; &quot;FACTOR&quot;" function="&quot;COMPLEMENT&quot; &quot;ALPHAREPLICATE&quot;"><ImageTexture></ImageTexture>
-<MovieTexture></MovieTexture>
-<PixelTexture></PixelTexture>
-</MultiTexture>
-<MultiTextureTransform containerField="textureTransform"><TextureTransform></TextureTransform>
-<TextureTransform></TextureTransform>
-<TextureTransform></TextureTransform>
-</MultiTextureTransform>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.2 0.4 0.8"></Material>
 </Appearance>
-<IndexedFaceSet><MultiTextureCoordinate containerField="texCoord"><TextureCoordinate point="0 0 1 0 1 1 0 1"></TextureCoordinate>
+</Shape>
+<!--================================--><Shape><!--add a single geometry node here--><IndexedFaceSet><MultiTextureCoordinate containerField="texCoord"><!--add multiple TextureCoordinate nodes here, match corresponding MultiTexture child texture nodes--><TextureCoordinate point="0 0 1 0 1 1 0 1"></TextureCoordinate>
 <TextureCoordinate point="0 0 1 0 1 1 0 1"></TextureCoordinate>
 <TextureCoordinate point="0 0 1 0 1 1 0 1"></TextureCoordinate>
 </MultiTextureCoordinate>
 </IndexedFaceSet>
+<Appearance containerField="appearance"><Material containerField="material"></Material>
+<MultiTexture containerField="texture" alpha="0.8" color="0.9 1 0.2" function="&quot;COMPLEMENT&quot; &quot;ALPHAREPLICATE&quot;" mode="&quot;MODULATE&quot; &quot;REPLACE&quot; &quot;BLENDDIFFUSEALPHA&quot;" source="&quot;DIFFUSE&quot; &quot;SPECULAR&quot; &quot;FACTOR&quot;"><!--add multiple texture nodes here--><ImageTexture></ImageTexture>
+<MovieTexture></MovieTexture>
+<PixelTexture></PixelTexture>
+</MultiTexture>
+<MultiTextureTransform containerField="textureTransform"><!--add multiple TextureTransform nodes here, match corresponding MultiTexture child texture nodes--><TextureTransform></TextureTransform>
+<TextureTransform></TextureTransform>
+<TextureTransform></TextureTransform>
+</MultiTextureTransform>
+</Appearance>
 </Shape>
 </Scene>
 </X3D>

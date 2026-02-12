@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "3.3"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "5 March 2011"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 07:12:52 GMT"
+meta6.content = "29 October 2023"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -60,98 +60,114 @@ meta12.name = "reference"
 meta12.content = "https://www.web3d.org/x3d/content/examples/X3dResources.html"
 
 head1.children.append(meta12)
+meta13 = x3d.meta()
+meta13.name = "generator"
+meta13.content = "X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
+
+head1.children.append(meta13)
+meta14 = x3d.meta()
+meta14.name = "license"
+meta14.content = "../license.html"
+
+head1.children.append(meta14)
 
 X3D0.head = head1
-Scene13 = x3d.Scene()
-WorldInfo14 = x3d.WorldInfo()
-WorldInfo14.title = "MultiTextureDesignPattern.x3d"
+Scene15 = x3d.Scene()
+Scene15.children.append(x3d.Comment("""================================"""))
+WorldInfo16 = x3d.WorldInfo()
+WorldInfo16.title = "MultiTextureDesignPattern.x3d"
 
-Scene13.children.append(WorldInfo14)
-Background15 = x3d.Background()
-Background15.skyColor = [(0.72549, 1, 0.721569)]
+Scene15.children.append(WorldInfo16)
+Background17 = x3d.Background()
+Background17.skyColor = [(0.72549, 1, 0.721569)]
 
-Scene13.children.append(Background15)
-Viewpoint16 = x3d.Viewpoint()
-Viewpoint16.description = "MultiTexture design pattern"
+Scene15.children.append(Background17)
+Viewpoint18 = x3d.Viewpoint()
+Viewpoint18.description = "MultiTexture design pattern"
 
-Scene13.children.append(Viewpoint16)
-Shape17 = x3d.Shape()
-Appearance18 = x3d.Appearance()
-Material19 = x3d.Material()
-Material19.diffuseColor = [0.2,0.4,0.8]
-
-Appearance18.material = Material19
-
-Shape17.appearance = Appearance18
+Scene15.children.append(Viewpoint18)
+Shape19 = x3d.Shape()
 Text20 = x3d.Text()
 Text20.string = ["Source shows design pattern for","MultiTexture, MultiTextureCoordinate,"," and MultiTextureTransform nodes"]
 FontStyle21 = x3d.FontStyle()
-FontStyle21.size = 0.6
 FontStyle21.justify = ["MIDDLE","MIDDLE"]
+FontStyle21.size = 0.6
 
 Text20.fontStyle = FontStyle21
 
-Shape17.geometry = Text20
+Shape19.geometry = Text20
+Appearance22 = x3d.Appearance()
+Material23 = x3d.Material()
+Material23.diffuseColor = [0.2,0.4,0.8]
 
-Scene13.children.append(Shape17)
-Shape22 = x3d.Shape()
-Appearance23 = x3d.Appearance()
-Material24 = x3d.Material()
+Appearance22.material = Material23
 
-Appearance23.material = Material24
-MultiTexture25 = x3d.MultiTexture()
-MultiTexture25.color = [0.9,1,0.2]
-MultiTexture25.alpha = 0.8
-MultiTexture25.mode = ["MODULATE","REPLACE","BLENDDIFFUSEALPHA"]
-MultiTexture25.source = ["DIFFUSE","SPECULAR","FACTOR"]
-MultiTexture25.function = ["COMPLEMENT","ALPHAREPLICATE"]
-ImageTexture26 = x3d.ImageTexture()
+Shape19.appearance = Appearance22
 
-MultiTexture25.texture.append(ImageTexture26)
-MovieTexture27 = x3d.MovieTexture()
+Scene15.children.append(Shape19)
+Scene15.children.append(x3d.Comment("""================================"""))
+Shape24 = x3d.Shape()
+Shape24.children.append(x3d.Comment("""add a single geometry node here"""))
+IndexedFaceSet25 = x3d.IndexedFaceSet()
+MultiTextureCoordinate26 = x3d.MultiTextureCoordinate()
+MultiTextureCoordinate26.children.append(x3d.Comment("""add multiple TextureCoordinate nodes here, match corresponding MultiTexture child texture nodes"""))
+TextureCoordinate27 = x3d.TextureCoordinate()
+TextureCoordinate27.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
 
-MultiTexture25.texture.append(MovieTexture27)
-PixelTexture28 = x3d.PixelTexture()
+MultiTextureCoordinate26.texCoord.append(TextureCoordinate27)
+TextureCoordinate28 = x3d.TextureCoordinate()
+TextureCoordinate28.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
 
-MultiTexture25.texture.append(PixelTexture28)
+MultiTextureCoordinate26.texCoord.append(TextureCoordinate28)
+TextureCoordinate29 = x3d.TextureCoordinate()
+TextureCoordinate29.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
 
-Appearance23.texture = MultiTexture25
-MultiTextureTransform29 = x3d.MultiTextureTransform()
-TextureTransform30 = x3d.TextureTransform()
+MultiTextureCoordinate26.texCoord.append(TextureCoordinate29)
 
-MultiTextureTransform29.textureTransform.append(TextureTransform30)
-TextureTransform31 = x3d.TextureTransform()
+IndexedFaceSet25.texCoord = MultiTextureCoordinate26
 
-MultiTextureTransform29.textureTransform.append(TextureTransform31)
-TextureTransform32 = x3d.TextureTransform()
+Shape24.geometry = IndexedFaceSet25
+Appearance30 = x3d.Appearance()
+Material31 = x3d.Material()
 
-MultiTextureTransform29.textureTransform.append(TextureTransform32)
+Appearance30.material = Material31
+MultiTexture32 = x3d.MultiTexture()
+MultiTexture32.alpha = 0.8
+MultiTexture32.color = [0.9,1,0.2]
+MultiTexture32.function = ["COMPLEMENT","ALPHAREPLICATE"]
+MultiTexture32.mode = ["MODULATE","REPLACE","BLENDDIFFUSEALPHA"]
+MultiTexture32.source = ["DIFFUSE","SPECULAR","FACTOR"]
+MultiTexture32.children.append(x3d.Comment("""add multiple texture nodes here"""))
+ImageTexture33 = x3d.ImageTexture()
 
-Appearance23.textureTransform = MultiTextureTransform29
+MultiTexture32.texture.append(ImageTexture33)
+MovieTexture34 = x3d.MovieTexture()
 
-Shape22.appearance = Appearance23
-IndexedFaceSet33 = x3d.IndexedFaceSet()
-MultiTextureCoordinate34 = x3d.MultiTextureCoordinate()
-TextureCoordinate35 = x3d.TextureCoordinate()
-TextureCoordinate35.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
+MultiTexture32.texture.append(MovieTexture34)
+PixelTexture35 = x3d.PixelTexture()
 
-MultiTextureCoordinate34.texCoord.append(TextureCoordinate35)
-TextureCoordinate36 = x3d.TextureCoordinate()
-TextureCoordinate36.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
+MultiTexture32.texture.append(PixelTexture35)
 
-MultiTextureCoordinate34.texCoord.append(TextureCoordinate36)
-TextureCoordinate37 = x3d.TextureCoordinate()
-TextureCoordinate37.point = [(0, 0),(1, 0),(1, 1),(0, 1)]
+Appearance30.texture = MultiTexture32
+MultiTextureTransform36 = x3d.MultiTextureTransform()
+MultiTextureTransform36.children.append(x3d.Comment("""add multiple TextureTransform nodes here, match corresponding MultiTexture child texture nodes"""))
+TextureTransform37 = x3d.TextureTransform()
 
-MultiTextureCoordinate34.texCoord.append(TextureCoordinate37)
+MultiTextureTransform36.textureTransform.append(TextureTransform37)
+TextureTransform38 = x3d.TextureTransform()
 
-IndexedFaceSet33.texCoord = MultiTextureCoordinate34
+MultiTextureTransform36.textureTransform.append(TextureTransform38)
+TextureTransform39 = x3d.TextureTransform()
 
-Shape22.geometry = IndexedFaceSet33
+MultiTextureTransform36.textureTransform.append(TextureTransform39)
 
-Scene13.children.append(Shape22)
+Appearance30.textureTransform = MultiTextureTransform36
 
-X3D0.Scene = Scene13
+Shape24.appearance = Appearance30
+
+Scene15.children.append(Shape24)
+
+X3D0.Scene = Scene15
 f = open("../data/MultiTextureDesignPattern.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

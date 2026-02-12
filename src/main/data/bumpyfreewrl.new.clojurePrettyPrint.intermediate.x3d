@@ -1,45 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Full' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <!-- <component name='Shape' level='4'></component> -->
-    <component name='Scripting' level='1'/>
-    <component name='EnvironmentalEffects' level='3'/>
-    <component name='Shaders' level='1'/>
-    <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
-    <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
     <meta content='bumpyfreewrl.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
     <meta content='A flower' name='description'/>
-    <meta content='X3D-Edit, https://savage.nps.edu/X3D-Edit' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/bumpfreewrl.x3d' name='identifier'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='bumpyx_ite.x3d'/>
     <NavigationInfo/>
     <Viewpoint description='Transparent rose' position='0 0 40'/>
-    <!-- Images courtesy of Paul Debevec's Light Probe Image Gallery -->
     <Background backUrl='"../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"' bottomUrl='"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"' frontUrl='"../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"' leftUrl='"../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"' rightUrl='"../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"' topUrl='"../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"'/>
     <Transform>
       <Shape>
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader DEF='freewrlShader' language='GLSL'>
-            <field name='chromaticDispertion' accessType='inputOnly' type='SFVec3f' value='0.98 1 1.033'/>
-            <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'/>
-            <field name='bias' accessType='inputOnly' type='SFFloat' value='0.5'/>
-            <field name='scale' accessType='inputOnly' type='SFFloat' value='0.5'/>
-            <field name='power' accessType='inputOnly' type='SFFloat' value='2.0'/>
-            <field name='a' accessType='inputOutput' type='SFFloat' value='10.0'/>
-            <field name='b' accessType='inputOutput' type='SFFloat' value='1.0'/>
-            <field name='c' accessType='inputOutput' type='SFFloat' value='5.0'/>
-            <field name='d' accessType='inputOutput' type='SFFloat' value='5.0'/>
-            <field name='tdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
-            <field name='pdelta' accessType='inputOutput' type='SFFloat' value='0.0'/>
+            <field accessType='inputOnly' name='chromaticDispertion' type='SFVec3f'/>
+            <field accessType='inputOnly' name='fw_textureCoordGenType' type='SFInt32'/>
+            <field accessType='inputOnly' name='bias' type='SFFloat'/>
+            <field accessType='inputOnly' name='scale' type='SFFloat'/>
+            <field accessType='inputOnly' name='power' type='SFFloat'/>
+            <field accessType='inputOutput' name='a' type='SFFloat' value='10.0'/>
+            <field accessType='inputOutput' name='b' type='SFFloat' value='1.0'/>
+            <field accessType='inputOutput' name='c' type='SFFloat' value='5.0'/>
+            <field accessType='inputOutput' name='d' type='SFFloat' value='5.0'/>
+            <field accessType='inputOutput' name='tdelta' type='SFFloat'/>
+            <field accessType='inputOutput' name='pdelta' type='SFFloat'/>
             <ShaderPart url='"../shaders/freewrl_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"'/>
             <ShaderPart type='FRAGMENT' url='"../shaders/freewrl_bubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"'/>
           </ComposedShader>

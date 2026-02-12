@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="LOA1_StandAnimation.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="LOA1_StandAnimation.x3d"></meta>
 <meta name="description" content="Humanoid animation prototype reusable by any Humanoid."></meta>
 <meta name="creator" content="Cindy Ballreich cindy@ballreich.net 3Name3D, Joe Williams, Don Brutzman"></meta>
 <meta name="rights" content="1997 3Name3D / Yglesias, Wallock, Divekar, Inc., all rights reserved."></meta>
 <meta name="translator" content="Ozan APAYDIN"></meta>
 <meta name="created" content="1 December 2001"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:12:35 GMT"></meta>
+<meta name="modified" content="23 May 2020"></meta>
 <meta name="TODO" content="consider adding eyeball animation"></meta>
 <meta name="reference" content="https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"></meta>
 <meta name="reference" content="https://www.HAnim.org"></meta>
@@ -14,41 +14,44 @@
 <meta name="reference" content="https://HAnim.org/Nodes"></meta>
 <meta name="subject" content="Nancy Stand Animation HAnim 2001"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_StandAnimation.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
-<Scene><ProtoDeclare name="LOA1_StandAnimation"><ProtoInterface><field accessType="inputOutput" type="SFTime" name="cycleInterval" value="0.00999999977648258"></field>
-<field accessType="inputOutput" type="SFBool" name="enabled" value="true"></field>
-<field accessType="inputOutput" type="SFBool" name="loop" value="true"></field>
-<field accessType="inputOutput" type="SFTime" name="startTime" value="0"></field>
-<field accessType="inputOutput" type="SFTime" name="stopTime"></field>
-<field accessType="outputOnly" type="SFFloat" name="fraction_changed"></field>
-<field accessType="outputOnly" type="SFBool" name="isActive"></field>
-<field accessType="outputOnly" type="SFVec3f" name="HumanoidRoot_translation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="HumanoidRoot_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="lower_body_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_hip_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_knee_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_ankle_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_midtarsal_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_hip_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_knee_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_ankle_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_midtarsal_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="vl5_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="skullbase_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_shoulder_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_elbow_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="l_wrist_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_shoulder_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_elbow_rotation_changed"></field>
-<field accessType="outputOnly" type="SFRotation" name="r_wrist_rotation_changed"></field>
+<Scene><WorldInfo title="LOA1_StandAnimation.x3d"></WorldInfo>
+<ProtoDeclare name="LOA1_StandAnimation"><ProtoInterface><field name="cycleInterval" accessType="inputOutput" type="SFTime" value="0.009999999776482582"></field>
+<field name="enabled" accessType="inputOutput" type="SFBool" value="true"></field>
+<field name="loop" accessType="inputOutput" type="SFBool" value="true"></field>
+<field name="startTime" accessType="inputOutput" type="SFTime" value="0"></field>
+<field name="stopTime" accessType="inputOutput" type="SFTime" value="-1"></field>
+<field name="fraction_changed" accessType="outputOnly" type="SFFloat"></field>
+<field name="isActive" accessType="outputOnly" type="SFBool"></field>
+<field name="HumanoidRoot_translation_changed" accessType="outputOnly" type="SFVec3f"></field>
+<field name="HumanoidRoot_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="lower_body_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_hip_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_knee_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_ankle_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_midtarsal_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_hip_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_knee_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_ankle_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_midtarsal_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="vl5_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="skullbase_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_shoulder_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_elbow_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="l_wrist_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_shoulder_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_elbow_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
+<field name="r_wrist_rotation_changed" accessType="outputOnly" type="SFRotation"></field>
 </ProtoInterface>
-<ProtoBody><Group><TimeSensor DEF="TIMER"><IS><connect nodeField="enabled" protoField="enabled"></connect>
-<connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
+<ProtoBody><Group><TimeSensor DEF="TIMER"><IS><connect nodeField="cycleInterval" protoField="cycleInterval"></connect>
+<connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="loop" protoField="loop"></connect>
 <connect nodeField="startTime" protoField="startTime"></connect>
 <connect nodeField="stopTime" protoField="stopTime"></connect>
-<connect nodeField="isActive" protoField="isActive"></connect>
 <connect nodeField="fraction_changed" protoField="fraction_changed"></connect>
+<connect nodeField="isActive" protoField="isActive"></connect>
 </IS>
 </TimeSensor>
 <PositionInterpolator DEF="HUMANOIDROOT_POSITION_ANIMATOR" key="0 1" keyValue="0 0 0 0 0 0"><IS><connect nodeField="value_changed" protoField="HumanoidRoot_translation_changed"></connect>
@@ -109,32 +112,31 @@
 </IS>
 </OrientationInterpolator>
 </Group>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="HUMANOIDROOT_POSITION_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="HUMANOIDROOT_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="SACROILIAC_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_HIP_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_KNEE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_ANKLE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_MIDTARSAL_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_HIP_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_KNEE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_ANKLE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_MIDTARSAL_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="VL5_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="SKULLBASE_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_SHOULDER_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_ELBOW_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="L_WRIST_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_SHOULDER_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_ELBOW_ANIMATOR" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="TIMER" fromField="fraction_changed" toNode="R_WRIST_ANIMATOR" toField="set_fraction"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="HUMANOIDROOT_POSITION_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="HUMANOIDROOT_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="SACROILIAC_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_HIP_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_KNEE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_ANKLE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_MIDTARSAL_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_HIP_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_KNEE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_ANKLE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_MIDTARSAL_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="VL5_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="SKULLBASE_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_SHOULDER_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_ELBOW_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="L_WRIST_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_SHOULDER_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_ELBOW_ANIMATOR"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="TIMER" toField="set_fraction" toNode="R_WRIST_ANIMATOR"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<WorldInfo title="LOA1_StandAnimation.x3d"></WorldInfo>
-<Anchor description="InterchangableActorsViaDynamicRouting" url="&quot;InterchangableActorsViaDynamicRouting.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d&quot; &quot;InterchangableActorsViaDynamicRouting.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl&quot;" parameter="&quot;target=_blank&quot;"><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 0.2"></Material>
-</Appearance>
-<Text string="&quot;LOA1_StandAnimation.x3d&quot; &quot;defines a prototype&quot; &quot;for animating a humanoid.&quot; &quot;&quot; &quot;Click this text to see&quot; &quot;InterchangableActorsViaDynamicRouting example.&quot;"><FontStyle containerField="fontStyle" size="0.8" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<!--======================================--><!--Point to example use in case someone inspects this file--><Anchor description="InterchangableActorsViaDynamicRouting" parameter="&quot;target=_blank&quot;" url="&quot;InterchangableActorsViaDynamicRouting.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d&quot; &quot;InterchangableActorsViaDynamicRouting.wrl&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl&quot;"><Shape><Text string="&quot;LOA1_StandAnimation.x3d&quot; &quot;defines a prototype&quot; &quot;for animating a humanoid.&quot; &quot;&quot; &quot;Click this text to see&quot; &quot;InterchangableActorsViaDynamicRouting example.&quot;"><FontStyle containerField="fontStyle" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.8"></FontStyle>
 </Text>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 0.2"></Material>
+</Appearance>
 </Shape>
 </Anchor>
 </Scene>

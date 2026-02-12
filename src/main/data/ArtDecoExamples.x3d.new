@@ -5,7 +5,7 @@
 <meta name="creator" content="David Roussel"></meta>
 <meta name="translator" content="James Harney, Don Brutzman NPS"></meta>
 <meta name="created" content="7 April 2002"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:09:43 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:09:32 GMT"></meta>
 <meta name="reference" content="http://vrmlstuff.free.fr/materials"></meta>
 <meta name="subject" content="Universal Media Material Library"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"></meta>
@@ -51,7 +51,7 @@
 <Viewpoint DEF="PersRight" description="Low Right" position="6.9282 -6.9282 6.9282" orientation="0.74291 0.30772 0.59447 1.2171"></Viewpoint>
 <Viewpoint DEF="PersLeft" description="Low Left" position="-6.9282 -6.9282 6.9282" orientation="0.74291 -0.30772 -0.59447 1.2171"></Viewpoint>
 <Viewpoint DEF="Back" description="Back view" position="0 0 -12" orientation="0 1 0 3.1416"></Viewpoint>
-<Transform DEF="Close_travel" translation="0 -0.97 0"><PositionInterpolator DEF="Close_Mover" key="0 0.25 0.5 0.75 1" keyValue="0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0"></PositionInterpolator>
+<Transform DEF="Close_travel" translation="0 -0.3366667 0"><PositionInterpolator DEF="Close_Mover" key="0 0.25 0.5 0.75 1" keyValue="0 2.5 0 0 0 0 0 -2.5 0 0 0 0 0 2.5 0"></PositionInterpolator>
 <TimeSensor DEF="Close_Time" cycleInterval="12" loop="true"></TimeSensor>
 <Viewpoint DEF="Close" description="Close Front" position="0 0 6"></Viewpoint>
 </Transform>

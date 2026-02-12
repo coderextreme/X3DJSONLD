@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
     <component level='1' name='HAnim'/>
     <meta content='JohnJoint2.x3d' name='title'/>
     <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/JohnJoint2.x3d' name='identifier'/>
     <meta content='An attempt at a standard LOA-4 skeleton' name='description'/>
-    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='h2.pl' name='generator'/>
-    <meta content='Mon, 09 Feb 2026 07:11:51 GMT' name='modified'/>
+    <meta content='14 Jan 2023' name='modified'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='9 November 2020' name='created'/>
+    <meta content='../license.html' name='license'/>
     <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Transform>
+      <!-- DEF for markerfor XYZ axes -->
       <Shape DEF='AxisLinesShape'>
+        <!-- RGB lines showing XYZ axes -->
         <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>
           <Color color='1 0 0 0 0.6 0 0 0 1'/>
           <Coordinate point='0 0 0 0.1 0 0 0 0.1 0 0 0 0.1'/>
@@ -21,7 +25,16 @@
       </Shape>
     </Transform>
     <Group>
+      <!-- DEFS for markers of skeleton joints, segments, and sites -->
       <Transform>
+        <!-- <Transform translation='0 2 0'> -->
+        <!-- <Shape DEF='HAnimRootShape'> -->
+        <!-- <Sphere radius='0.02' /> -->
+        <!-- <Appearance> -->
+        <!-- <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> -->
+        <!-- </Appearance> -->
+        <!-- </Shape> -->
+        <!-- </Transform> -->
         <Transform translation='0 2.1 0'>
           <Shape DEF='HAnimJointShape'>
             <Appearance>
@@ -38,6 +51,17 @@
             </LineSet>
           </Shape>
         </Transform>
+        <!-- <Transform translation='0 2.1 0'> -->
+        <!-- <Shape DEF='HAnimSiteShape'> -->
+        <!-- <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> -->
+        <!-- <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> -->
+        <!-- <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> -->
+        <!-- </IndexedFaceSet> -->
+        <!-- <Appearance> -->
+        <!-- <Material diffuseColor='1 1 0' transparency='0.3'/> -->
+        <!-- </Appearance> -->
+        <!-- </Shape> -->
+        <!-- </Transform> -->
       </Transform>
     </Group>
     <NavigationInfo speed='1.5'/>

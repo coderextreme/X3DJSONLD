@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -37,7 +37,7 @@ meta7.content = "2 JAN 2025"
 head1.children.append(meta7)
 meta8 = x3d.meta()
 meta8.name = "modified"
-meta8.content = "Mon, 09 Feb 2026 07:12:55 GMT"
+meta8.content = "2 JAN 2025"
 
 head1.children.append(meta8)
 meta9 = x3d.meta()
@@ -77,2806 +77,2832 @@ meta15.content = "Originally Published in Proceedings of Web3D 2003, ACM Press"
 head1.children.append(meta15)
 meta16 = x3d.meta()
 meta16.name = "generator"
-meta16.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta16.content = "CmlToX3d.xslt"
 
 head1.children.append(meta16)
+meta17 = x3d.meta()
+meta17.name = "identifier"
+meta17.content = "https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Oxytocin.x3d"
+
+head1.children.append(meta17)
+meta18 = x3d.meta()
+meta18.name = "license"
+meta18.content = "../license.html"
+
+head1.children.append(meta18)
 
 X3D0.head = head1
-Scene17 = x3d.Scene()
-ProtoDeclare18 = x3d.ProtoDeclare()
-ProtoDeclare18.name = "Carbon"
-ProtoInterface19 = x3d.ProtoInterface()
-field20 = x3d.field()
-field20.accessType = "inputOutput"
-field20.type = "SFVec3f"
-field20.name = "position"
-
-ProtoInterface19.field.append(field20)
-field21 = x3d.field()
-field21.accessType = "inputOutput"
-field21.type = "SFFloat"
-field21.name = "materialTransparency"
-field21.value = 0.6
-
-ProtoInterface19.field.append(field21)
-
-ProtoDeclare18.ProtoInterface = ProtoInterface19
-ProtoBody22 = x3d.ProtoBody()
-Group23 = x3d.Group()
-Transform24 = x3d.Transform(DEF="atoC")
-Shape25 = x3d.Shape()
-Appearance26 = x3d.Appearance()
-Material27 = x3d.Material(DEF="atoC_mat")
-Material27.diffuseColor = [0,0,0]
-Material27.specularColor = [0.29,0.3,0.29]
-Material27.shininess = 0.8
-IS28 = x3d.IS()
-connect29 = x3d.connect()
-connect29.nodeField = "transparency"
-connect29.protoField = "materialTransparency"
-
-IS28.connect.append(connect29)
-
-Material27.IS = IS28
-
-Appearance26.material = Material27
-
-Shape25.appearance = Appearance26
-Sphere30 = x3d.Sphere()
-Sphere30.radius = 0.77
-
-Shape25.geometry = Sphere30
-
-Transform24.children.append(Shape25)
-Shape31 = x3d.Shape()
-Appearance32 = x3d.Appearance()
-Material33 = x3d.Material()
-Material33.diffuseColor = [0.9,0.9,0.9]
-
-Appearance32.material = Material33
-
-Shape31.appearance = Appearance32
-Text34 = x3d.Text()
-Text34.string = ["C"]
-FontStyle35 = x3d.FontStyle()
-FontStyle35.size = 0.8
-
-Text34.fontStyle = FontStyle35
+Scene19 = x3d.Scene()
+ProtoDeclare20 = x3d.ProtoDeclare()
+ProtoDeclare20.name = "Carbon"
+ProtoInterface21 = x3d.ProtoInterface()
+field22 = x3d.field()
+field22.name = "position"
+field22.accessType = "inputOutput"
+field22.type = "SFVec3f"
+field22.value = [0,0,0]
+
+ProtoInterface21.field.append(field22)
+field23 = x3d.field()
+field23.name = "materialTransparency"
+field23.accessType = "inputOutput"
+field23.type = "SFFloat"
+field23.value = 0.6
+
+ProtoInterface21.field.append(field23)
+
+ProtoDeclare20.ProtoInterface = ProtoInterface21
+ProtoBody24 = x3d.ProtoBody()
+Group25 = x3d.Group()
+Transform26 = x3d.Transform(DEF="atoC")
+IS27 = x3d.IS()
+connect28 = x3d.connect()
+connect28.nodeField = "translation"
+connect28.protoField = "position"
+
+IS27.connect.append(connect28)
+
+Transform26.IS = IS27
+Shape29 = x3d.Shape()
+Appearance30 = x3d.Appearance()
+Material31 = x3d.Material(DEF="atoC_mat")
+Material31.diffuseColor = [0,0,0]
+Material31.shininess = 0.8
+Material31.specularColor = [0.29,0.3,0.29]
+IS32 = x3d.IS()
+connect33 = x3d.connect()
+connect33.nodeField = "transparency"
+connect33.protoField = "materialTransparency"
+
+IS32.connect.append(connect33)
+
+Material31.IS = IS32
+
+Appearance30.material = Material31
+
+Shape29.appearance = Appearance30
+Sphere34 = x3d.Sphere()
+Sphere34.radius = 0.77
+
+Shape29.geometry = Sphere34
+
+Transform26.children.append(Shape29)
+Shape35 = x3d.Shape()
+Appearance36 = x3d.Appearance()
+Material37 = x3d.Material()
+Material37.diffuseColor = [0.9,0.9,0.9]
+
+Appearance36.material = Material37
+
+Shape35.appearance = Appearance36
+Text38 = x3d.Text()
+Text38.string = ["C"]
+FontStyle39 = x3d.FontStyle()
+FontStyle39.size = 0.8
+
+Text38.fontStyle = FontStyle39
+
+Shape35.geometry = Text38
+
+Transform26.children.append(Shape35)
+
+Group25.children.append(Transform26)
+
+ProtoBody24.children.append(Group25)
+
+ProtoDeclare20.ProtoBody = ProtoBody24
+
+Scene19.children.append(ProtoDeclare20)
+ProtoDeclare40 = x3d.ProtoDeclare()
+ProtoDeclare40.name = "Hydrogen"
+ProtoInterface41 = x3d.ProtoInterface()
+field42 = x3d.field()
+field42.name = "position"
+field42.accessType = "inputOutput"
+field42.type = "SFVec3f"
+field42.value = [0,0,0]
+
+ProtoInterface41.field.append(field42)
+field43 = x3d.field()
+field43.name = "materialTransparency"
+field43.accessType = "inputOutput"
+field43.type = "SFFloat"
+field43.value = 0.6
+
+ProtoInterface41.field.append(field43)
+
+ProtoDeclare40.ProtoInterface = ProtoInterface41
+ProtoBody44 = x3d.ProtoBody()
+Group45 = x3d.Group()
+Transform46 = x3d.Transform(DEF="atoH")
+IS47 = x3d.IS()
+connect48 = x3d.connect()
+connect48.nodeField = "translation"
+connect48.protoField = "position"
+
+IS47.connect.append(connect48)
+
+Transform46.IS = IS47
+Shape49 = x3d.Shape()
+Appearance50 = x3d.Appearance()
+Material51 = x3d.Material(DEF="atoH_mat")
+Material51.ambientIntensity = 0.0933
+Material51.diffuseColor = [0.38,0.38,0.42]
+Material51.shininess = 0.5
+Material51.specularColor = [0.53,0.53,0.53]
+IS52 = x3d.IS()
+connect53 = x3d.connect()
+connect53.nodeField = "transparency"
+connect53.protoField = "materialTransparency"
+
+IS52.connect.append(connect53)
+
+Material51.IS = IS52
+
+Appearance50.material = Material51
+
+Shape49.appearance = Appearance50
+Sphere54 = x3d.Sphere()
+Sphere54.radius = 0.32
+
+Shape49.geometry = Sphere54
+
+Transform46.children.append(Shape49)
+Shape55 = x3d.Shape()
+Appearance56 = x3d.Appearance()
+Material57 = x3d.Material()
+Material57.diffuseColor = [0.9,0.9,0.9]
 
-Shape31.geometry = Text34
-
-Transform24.children.append(Shape31)
-IS36 = x3d.IS()
-connect37 = x3d.connect()
-connect37.nodeField = "translation"
-connect37.protoField = "position"
-
-IS36.connect.append(connect37)
-
-Transform24.IS = IS36
-
-Group23.children.append(Transform24)
-
-ProtoBody22.children.append(Group23)
-
-ProtoDeclare18.ProtoBody = ProtoBody22
-
-Scene17.children.append(ProtoDeclare18)
-ProtoDeclare38 = x3d.ProtoDeclare()
-ProtoDeclare38.name = "Hydrogen"
-ProtoInterface39 = x3d.ProtoInterface()
-field40 = x3d.field()
-field40.accessType = "inputOutput"
-field40.type = "SFVec3f"
-field40.name = "position"
-
-ProtoInterface39.field.append(field40)
-field41 = x3d.field()
-field41.accessType = "inputOutput"
-field41.type = "SFFloat"
-field41.name = "materialTransparency"
-field41.value = 0.6
-
-ProtoInterface39.field.append(field41)
-
-ProtoDeclare38.ProtoInterface = ProtoInterface39
-ProtoBody42 = x3d.ProtoBody()
-Group43 = x3d.Group()
-Transform44 = x3d.Transform(DEF="atoH")
-Shape45 = x3d.Shape()
-Appearance46 = x3d.Appearance()
-Material47 = x3d.Material(DEF="atoH_mat")
-Material47.ambientIntensity = 0.0933
-Material47.diffuseColor = [0.38,0.38,0.42]
-Material47.specularColor = [0.53,0.53,0.53]
-Material47.shininess = 0.5
-IS48 = x3d.IS()
-connect49 = x3d.connect()
-connect49.nodeField = "transparency"
-connect49.protoField = "materialTransparency"
+Appearance56.material = Material57
 
-IS48.connect.append(connect49)
-
-Material47.IS = IS48
-
-Appearance46.material = Material47
-
-Shape45.appearance = Appearance46
-Sphere50 = x3d.Sphere()
-Sphere50.radius = 0.32
+Shape55.appearance = Appearance56
+Text58 = x3d.Text()
+Text58.string = ["H"]
+FontStyle59 = x3d.FontStyle()
+FontStyle59.size = 0.4
 
-Shape45.geometry = Sphere50
+Text58.fontStyle = FontStyle59
+
+Shape55.geometry = Text58
 
-Transform44.children.append(Shape45)
-Shape51 = x3d.Shape()
-Appearance52 = x3d.Appearance()
-Material53 = x3d.Material()
-Material53.diffuseColor = [0.9,0.9,0.9]
+Transform46.children.append(Shape55)
+
+Group45.children.append(Transform46)
+
+ProtoBody44.children.append(Group45)
+
+ProtoDeclare40.ProtoBody = ProtoBody44
 
-Appearance52.material = Material53
+Scene19.children.append(ProtoDeclare40)
+ProtoDeclare60 = x3d.ProtoDeclare()
+ProtoDeclare60.name = "Nitrogen"
+ProtoInterface61 = x3d.ProtoInterface()
+field62 = x3d.field()
+field62.name = "position"
+field62.accessType = "inputOutput"
+field62.type = "SFVec3f"
+field62.value = [0,0,0]
+
+ProtoInterface61.field.append(field62)
+field63 = x3d.field()
+field63.name = "materialTransparency"
+field63.accessType = "inputOutput"
+field63.type = "SFFloat"
+field63.value = 0.6
+
+ProtoInterface61.field.append(field63)
+
+ProtoDeclare60.ProtoInterface = ProtoInterface61
+ProtoBody64 = x3d.ProtoBody()
+Group65 = x3d.Group()
+Transform66 = x3d.Transform(DEF="atoN")
+IS67 = x3d.IS()
+connect68 = x3d.connect()
+connect68.nodeField = "translation"
+connect68.protoField = "position"
+
+IS67.connect.append(connect68)
+
+Transform66.IS = IS67
+Shape69 = x3d.Shape()
+Appearance70 = x3d.Appearance()
+Material71 = x3d.Material(DEF="atoN_mat")
+Material71.diffuseColor = [0,0,0.72]
+Material71.emissiveColor = [0,0,0.13]
+Material71.specularColor = [0.5,0.5,0.5]
+IS72 = x3d.IS()
+connect73 = x3d.connect()
+connect73.nodeField = "transparency"
+connect73.protoField = "materialTransparency"
+
+IS72.connect.append(connect73)
+
+Material71.IS = IS72
+
+Appearance70.material = Material71
+
+Shape69.appearance = Appearance70
+Sphere74 = x3d.Sphere()
+Sphere74.radius = 0.75
+
+Shape69.geometry = Sphere74
+
+Transform66.children.append(Shape69)
+Shape75 = x3d.Shape()
+Appearance76 = x3d.Appearance()
+Material77 = x3d.Material()
+Material77.diffuseColor = [0.9,0.9,0.9]
 
-Shape51.appearance = Appearance52
-Text54 = x3d.Text()
-Text54.string = ["H"]
-FontStyle55 = x3d.FontStyle()
-FontStyle55.size = 0.4
+Appearance76.material = Material77
 
-Text54.fontStyle = FontStyle55
+Shape75.appearance = Appearance76
+Text78 = x3d.Text()
+Text78.string = ["N"]
+FontStyle79 = x3d.FontStyle()
+FontStyle79.size = 0.8
 
-Shape51.geometry = Text54
+Text78.fontStyle = FontStyle79
+
+Shape75.geometry = Text78
 
-Transform44.children.append(Shape51)
-IS56 = x3d.IS()
-connect57 = x3d.connect()
-connect57.nodeField = "translation"
-connect57.protoField = "position"
+Transform66.children.append(Shape75)
+
+Group65.children.append(Transform66)
+
+ProtoBody64.children.append(Group65)
+
+ProtoDeclare60.ProtoBody = ProtoBody64
+
+Scene19.children.append(ProtoDeclare60)
+ProtoDeclare80 = x3d.ProtoDeclare()
+ProtoDeclare80.name = "Oxygen"
+ProtoInterface81 = x3d.ProtoInterface()
+field82 = x3d.field()
+field82.name = "position"
+field82.accessType = "inputOutput"
+field82.type = "SFVec3f"
+field82.value = [0,0,0]
+
+ProtoInterface81.field.append(field82)
+field83 = x3d.field()
+field83.name = "materialTransparency"
+field83.accessType = "inputOutput"
+field83.type = "SFFloat"
+field83.value = 0.6
+
+ProtoInterface81.field.append(field83)
+
+ProtoDeclare80.ProtoInterface = ProtoInterface81
+ProtoBody84 = x3d.ProtoBody()
+Group85 = x3d.Group()
+Transform86 = x3d.Transform(DEF="atoO")
+IS87 = x3d.IS()
+connect88 = x3d.connect()
+connect88.nodeField = "translation"
+connect88.protoField = "position"
+
+IS87.connect.append(connect88)
+
+Transform86.IS = IS87
+Shape89 = x3d.Shape()
+Appearance90 = x3d.Appearance()
+Material91 = x3d.Material(DEF="atoO_mat")
+Material91.ambientIntensity = 0.487
+Material91.diffuseColor = [0.54,0.05,0.25]
+Material91.shininess = 0.2
+Material91.specularColor = [0.81,0.77,0.75]
+IS92 = x3d.IS()
+connect93 = x3d.connect()
+connect93.nodeField = "transparency"
+connect93.protoField = "materialTransparency"
+
+IS92.connect.append(connect93)
+
+Material91.IS = IS92
+
+Appearance90.material = Material91
+
+Shape89.appearance = Appearance90
+Sphere94 = x3d.Sphere()
+Sphere94.radius = 0.73
+
+Shape89.geometry = Sphere94
 
-IS56.connect.append(connect57)
+Transform86.children.append(Shape89)
+Shape95 = x3d.Shape()
+Appearance96 = x3d.Appearance()
+Material97 = x3d.Material()
+Material97.diffuseColor = [0.9,0.9,0.9]
 
-Transform44.IS = IS56
+Appearance96.material = Material97
 
-Group43.children.append(Transform44)
+Shape95.appearance = Appearance96
+Text98 = x3d.Text()
+Text98.string = ["O"]
+FontStyle99 = x3d.FontStyle()
+FontStyle99.size = 0.8
+
+Text98.fontStyle = FontStyle99
 
-ProtoBody42.children.append(Group43)
+Shape95.geometry = Text98
+
+Transform86.children.append(Shape95)
+
+Group85.children.append(Transform86)
+
+ProtoBody84.children.append(Group85)
+
+ProtoDeclare80.ProtoBody = ProtoBody84
+
+Scene19.children.append(ProtoDeclare80)
+ProtoDeclare100 = x3d.ProtoDeclare()
+ProtoDeclare100.name = "Fluorine"
+ProtoInterface101 = x3d.ProtoInterface()
+field102 = x3d.field()
+field102.name = "position"
+field102.accessType = "inputOutput"
+field102.type = "SFVec3f"
+field102.value = [0,0,0]
+
+ProtoInterface101.field.append(field102)
+field103 = x3d.field()
+field103.name = "materialTransparency"
+field103.accessType = "inputOutput"
+field103.type = "SFFloat"
+field103.value = 0.6
+
+ProtoInterface101.field.append(field103)
+
+ProtoDeclare100.ProtoInterface = ProtoInterface101
+ProtoBody104 = x3d.ProtoBody()
+Group105 = x3d.Group()
+Transform106 = x3d.Transform(DEF="atoF")
+IS107 = x3d.IS()
+connect108 = x3d.connect()
+connect108.nodeField = "translation"
+connect108.protoField = "position"
+
+IS107.connect.append(connect108)
+
+Transform106.IS = IS107
+Shape109 = x3d.Shape()
+Appearance110 = x3d.Appearance()
+Material111 = x3d.Material(DEF="atoF_mat")
+Material111.diffuseColor = [1,0.48,0.79]
+Material111.emissiveColor = [0.09,0.04,0.07]
+IS112 = x3d.IS()
+connect113 = x3d.connect()
+connect113.nodeField = "transparency"
+connect113.protoField = "materialTransparency"
+
+IS112.connect.append(connect113)
+
+Material111.IS = IS112
+
+Appearance110.material = Material111
+
+Shape109.appearance = Appearance110
+Sphere114 = x3d.Sphere()
+Sphere114.radius = 0.72
 
-ProtoDeclare38.ProtoBody = ProtoBody42
+Shape109.geometry = Sphere114
 
-Scene17.children.append(ProtoDeclare38)
-ProtoDeclare58 = x3d.ProtoDeclare()
-ProtoDeclare58.name = "Nitrogen"
-ProtoInterface59 = x3d.ProtoInterface()
-field60 = x3d.field()
-field60.accessType = "inputOutput"
-field60.type = "SFVec3f"
-field60.name = "position"
-
-ProtoInterface59.field.append(field60)
-field61 = x3d.field()
-field61.accessType = "inputOutput"
-field61.type = "SFFloat"
-field61.name = "materialTransparency"
-field61.value = 0.6
-
-ProtoInterface59.field.append(field61)
-
-ProtoDeclare58.ProtoInterface = ProtoInterface59
-ProtoBody62 = x3d.ProtoBody()
-Group63 = x3d.Group()
-Transform64 = x3d.Transform(DEF="atoN")
-Shape65 = x3d.Shape()
-Appearance66 = x3d.Appearance()
-Material67 = x3d.Material(DEF="atoN_mat")
-Material67.diffuseColor = [0,0,0.72]
-Material67.specularColor = [0.5,0.5,0.5]
-Material67.emissiveColor = [0,0,0.13]
-IS68 = x3d.IS()
-connect69 = x3d.connect()
-connect69.nodeField = "transparency"
-connect69.protoField = "materialTransparency"
+Transform106.children.append(Shape109)
+Shape115 = x3d.Shape()
+Appearance116 = x3d.Appearance()
+Material117 = x3d.Material()
+Material117.diffuseColor = [0.9,0.9,0.9]
 
-IS68.connect.append(connect69)
-
-Material67.IS = IS68
-
-Appearance66.material = Material67
-
-Shape65.appearance = Appearance66
-Sphere70 = x3d.Sphere()
-Sphere70.radius = 0.75
+Appearance116.material = Material117
 
-Shape65.geometry = Sphere70
+Shape115.appearance = Appearance116
+Text118 = x3d.Text()
+Text118.string = ["F"]
+FontStyle119 = x3d.FontStyle()
+FontStyle119.size = 0.8
 
-Transform64.children.append(Shape65)
-Shape71 = x3d.Shape()
-Appearance72 = x3d.Appearance()
-Material73 = x3d.Material()
-Material73.diffuseColor = [0.9,0.9,0.9]
+Text118.fontStyle = FontStyle119
 
-Appearance72.material = Material73
+Shape115.geometry = Text118
 
-Shape71.appearance = Appearance72
-Text74 = x3d.Text()
-Text74.string = ["N"]
-FontStyle75 = x3d.FontStyle()
-FontStyle75.size = 0.8
+Transform106.children.append(Shape115)
+
+Group105.children.append(Transform106)
 
-Text74.fontStyle = FontStyle75
+ProtoBody104.children.append(Group105)
 
-Shape71.geometry = Text74
+ProtoDeclare100.ProtoBody = ProtoBody104
 
-Transform64.children.append(Shape71)
-IS76 = x3d.IS()
-connect77 = x3d.connect()
-connect77.nodeField = "translation"
-connect77.protoField = "position"
+Scene19.children.append(ProtoDeclare100)
+ProtoDeclare120 = x3d.ProtoDeclare()
+ProtoDeclare120.name = "Silicon"
+ProtoInterface121 = x3d.ProtoInterface()
+field122 = x3d.field()
+field122.name = "position"
+field122.accessType = "inputOutput"
+field122.type = "SFVec3f"
+field122.value = [0,0,0]
+
+ProtoInterface121.field.append(field122)
+field123 = x3d.field()
+field123.name = "materialTransparency"
+field123.accessType = "inputOutput"
+field123.type = "SFFloat"
+field123.value = 0.6
+
+ProtoInterface121.field.append(field123)
+
+ProtoDeclare120.ProtoInterface = ProtoInterface121
+ProtoBody124 = x3d.ProtoBody()
+Group125 = x3d.Group()
+Transform126 = x3d.Transform(DEF="atoSi")
+IS127 = x3d.IS()
+connect128 = x3d.connect()
+connect128.nodeField = "translation"
+connect128.protoField = "position"
+
+IS127.connect.append(connect128)
+
+Transform126.IS = IS127
+Shape129 = x3d.Shape()
+Appearance130 = x3d.Appearance()
+Material131 = x3d.Material(DEF="atoSi_mat")
+Material131.diffuseColor = [0.8,0.8,0.8]
+IS132 = x3d.IS()
+connect133 = x3d.connect()
+connect133.nodeField = "transparency"
+connect133.protoField = "materialTransparency"
+
+IS132.connect.append(connect133)
+
+Material131.IS = IS132
+
+Appearance130.material = Material131
+
+Shape129.appearance = Appearance130
+Sphere134 = x3d.Sphere()
+Sphere134.radius = 1.18
+
+Shape129.geometry = Sphere134
+
+Transform126.children.append(Shape129)
+Shape135 = x3d.Shape()
+Appearance136 = x3d.Appearance()
+Material137 = x3d.Material()
+Material137.diffuseColor = [0.9,0.9,0.9]
 
-IS76.connect.append(connect77)
+Appearance136.material = Material137
 
-Transform64.IS = IS76
+Shape135.appearance = Appearance136
+Text138 = x3d.Text()
+Text138.string = ["Si"]
+FontStyle139 = x3d.FontStyle()
+FontStyle139.size = 0.8
 
-Group63.children.append(Transform64)
+Text138.fontStyle = FontStyle139
 
-ProtoBody62.children.append(Group63)
+Shape135.geometry = Text138
+
+Transform126.children.append(Shape135)
 
-ProtoDeclare58.ProtoBody = ProtoBody62
+Group125.children.append(Transform126)
+
+ProtoBody124.children.append(Group125)
+
+ProtoDeclare120.ProtoBody = ProtoBody124
+
+Scene19.children.append(ProtoDeclare120)
+ProtoDeclare140 = x3d.ProtoDeclare()
+ProtoDeclare140.name = "Phosphorus"
+ProtoInterface141 = x3d.ProtoInterface()
+field142 = x3d.field()
+field142.name = "position"
+field142.accessType = "inputOutput"
+field142.type = "SFVec3f"
+field142.value = [0,0,0]
+
+ProtoInterface141.field.append(field142)
+field143 = x3d.field()
+field143.name = "materialTransparency"
+field143.accessType = "inputOutput"
+field143.type = "SFFloat"
+field143.value = 0.6
+
+ProtoInterface141.field.append(field143)
+
+ProtoDeclare140.ProtoInterface = ProtoInterface141
+ProtoBody144 = x3d.ProtoBody()
+Group145 = x3d.Group()
+Transform146 = x3d.Transform(DEF="atoP")
+IS147 = x3d.IS()
+connect148 = x3d.connect()
+connect148.nodeField = "translation"
+connect148.protoField = "position"
+
+IS147.connect.append(connect148)
+
+Transform146.IS = IS147
+Shape149 = x3d.Shape()
+Appearance150 = x3d.Appearance()
+Material151 = x3d.Material(DEF="atoP_mat")
+Material151.ambientIntensity = 0.11
+Material151.diffuseColor = [0.9,0.41,0]
+Material151.emissiveColor = [0.1,0.04,0]
+Material151.shininess = 0.8
+Material151.specularColor = [0.1,0.1,0.1]
+IS152 = x3d.IS()
+connect153 = x3d.connect()
+connect153.nodeField = "transparency"
+connect153.protoField = "materialTransparency"
+
+IS152.connect.append(connect153)
+
+Material151.IS = IS152
+
+Appearance150.material = Material151
+
+Shape149.appearance = Appearance150
+Sphere154 = x3d.Sphere()
+Sphere154.radius = 1.1
+
+Shape149.geometry = Sphere154
+
+Transform146.children.append(Shape149)
+Shape155 = x3d.Shape()
+Appearance156 = x3d.Appearance()
+Material157 = x3d.Material()
+Material157.diffuseColor = [0.9,0.9,0.9]
 
-Scene17.children.append(ProtoDeclare58)
-ProtoDeclare78 = x3d.ProtoDeclare()
-ProtoDeclare78.name = "Oxygen"
-ProtoInterface79 = x3d.ProtoInterface()
-field80 = x3d.field()
-field80.accessType = "inputOutput"
-field80.type = "SFVec3f"
-field80.name = "position"
-
-ProtoInterface79.field.append(field80)
-field81 = x3d.field()
-field81.accessType = "inputOutput"
-field81.type = "SFFloat"
-field81.name = "materialTransparency"
-field81.value = 0.6
-
-ProtoInterface79.field.append(field81)
+Appearance156.material = Material157
 
-ProtoDeclare78.ProtoInterface = ProtoInterface79
-ProtoBody82 = x3d.ProtoBody()
-Group83 = x3d.Group()
-Transform84 = x3d.Transform(DEF="atoO")
-Shape85 = x3d.Shape()
-Appearance86 = x3d.Appearance()
-Material87 = x3d.Material(DEF="atoO_mat")
-Material87.ambientIntensity = 0.487
-Material87.diffuseColor = [0.54,0.05,0.25]
-Material87.specularColor = [0.81,0.77,0.75]
-IS88 = x3d.IS()
-connect89 = x3d.connect()
-connect89.nodeField = "transparency"
-connect89.protoField = "materialTransparency"
+Shape155.appearance = Appearance156
+Text158 = x3d.Text()
+Text158.string = ["P"]
+FontStyle159 = x3d.FontStyle()
+FontStyle159.size = 0.8
 
-IS88.connect.append(connect89)
+Text158.fontStyle = FontStyle159
+
+Shape155.geometry = Text158
+
+Transform146.children.append(Shape155)
+
+Group145.children.append(Transform146)
+
+ProtoBody144.children.append(Group145)
+
+ProtoDeclare140.ProtoBody = ProtoBody144
+
+Scene19.children.append(ProtoDeclare140)
+ProtoDeclare160 = x3d.ProtoDeclare()
+ProtoDeclare160.name = "Sulphur"
+ProtoInterface161 = x3d.ProtoInterface()
+field162 = x3d.field()
+field162.name = "position"
+field162.accessType = "inputOutput"
+field162.type = "SFVec3f"
+field162.value = [0,0,0]
+
+ProtoInterface161.field.append(field162)
+field163 = x3d.field()
+field163.name = "materialTransparency"
+field163.accessType = "inputOutput"
+field163.type = "SFFloat"
+field163.value = 0.6
+
+ProtoInterface161.field.append(field163)
+
+ProtoDeclare160.ProtoInterface = ProtoInterface161
+ProtoBody164 = x3d.ProtoBody()
+Group165 = x3d.Group()
+Transform166 = x3d.Transform(DEF="atoS")
+IS167 = x3d.IS()
+connect168 = x3d.connect()
+connect168.nodeField = "translation"
+connect168.protoField = "position"
+
+IS167.connect.append(connect168)
+
+Transform166.IS = IS167
+Shape169 = x3d.Shape()
+Appearance170 = x3d.Appearance()
+Material171 = x3d.Material(DEF="atoS_mat")
+Material171.ambientIntensity = 0.0467
+Material171.diffuseColor = [0.25,0.39,0.25]
+Material171.emissiveColor = [0.05,0.08,0.05]
+Material171.shininess = 0.6
+Material171.specularColor = [0.11,0.12,0.08]
+IS172 = x3d.IS()
+connect173 = x3d.connect()
+connect173.nodeField = "transparency"
+connect173.protoField = "materialTransparency"
+
+IS172.connect.append(connect173)
+
+Material171.IS = IS172
+
+Appearance170.material = Material171
+
+Shape169.appearance = Appearance170
+Sphere174 = x3d.Sphere()
+Sphere174.radius = 1.3
+
+Shape169.geometry = Sphere174
+
+Transform166.children.append(Shape169)
+Shape175 = x3d.Shape()
+Appearance176 = x3d.Appearance()
+Material177 = x3d.Material()
+Material177.diffuseColor = [0.9,0.9,0.9]
 
-Material87.IS = IS88
-
-Appearance86.material = Material87
+Appearance176.material = Material177
 
-Shape85.appearance = Appearance86
-Sphere90 = x3d.Sphere()
-Sphere90.radius = 0.73
+Shape175.appearance = Appearance176
+Text178 = x3d.Text()
+Text178.string = ["S"]
+FontStyle179 = x3d.FontStyle()
+FontStyle179.size = 0.8
+
+Text178.fontStyle = FontStyle179
+
+Shape175.geometry = Text178
+
+Transform166.children.append(Shape175)
+
+Group165.children.append(Transform166)
+
+ProtoBody164.children.append(Group165)
+
+ProtoDeclare160.ProtoBody = ProtoBody164
+
+Scene19.children.append(ProtoDeclare160)
+ProtoDeclare180 = x3d.ProtoDeclare()
+ProtoDeclare180.name = "Chlorine"
+ProtoInterface181 = x3d.ProtoInterface()
+field182 = x3d.field()
+field182.name = "position"
+field182.accessType = "inputOutput"
+field182.type = "SFVec3f"
+field182.value = [0,0,0]
+
+ProtoInterface181.field.append(field182)
+field183 = x3d.field()
+field183.name = "materialTransparency"
+field183.accessType = "inputOutput"
+field183.type = "SFFloat"
+field183.value = 0.6
+
+ProtoInterface181.field.append(field183)
+
+ProtoDeclare180.ProtoInterface = ProtoInterface181
+ProtoBody184 = x3d.ProtoBody()
+Group185 = x3d.Group()
+Transform186 = x3d.Transform(DEF="atoCl")
+IS187 = x3d.IS()
+connect188 = x3d.connect()
+connect188.nodeField = "translation"
+connect188.protoField = "position"
+
+IS187.connect.append(connect188)
+
+Transform186.IS = IS187
+Shape189 = x3d.Shape()
+Appearance190 = x3d.Appearance()
+Material191 = x3d.Material(DEF="atoCl_mat")
+Material191.diffuseColor = [0.28,0.7,0]
+Material191.emissiveColor = [0.06,0.15,0]
+Material191.shininess = 0.8
+Material191.specularColor = [0.5,0.5,0.5]
+IS192 = x3d.IS()
+connect193 = x3d.connect()
+connect193.nodeField = "transparency"
+connect193.protoField = "materialTransparency"
+
+IS192.connect.append(connect193)
+
+Material191.IS = IS192
+
+Appearance190.material = Material191
+
+Shape189.appearance = Appearance190
+Sphere194 = x3d.Sphere()
+Sphere194.radius = 1.01
+
+Shape189.geometry = Sphere194
+
+Transform186.children.append(Shape189)
+Shape195 = x3d.Shape()
+Appearance196 = x3d.Appearance()
+Material197 = x3d.Material()
+Material197.diffuseColor = [0.9,0.9,0.9]
+
+Appearance196.material = Material197
+
+Shape195.appearance = Appearance196
+Text198 = x3d.Text()
+Text198.string = ["Cl"]
+FontStyle199 = x3d.FontStyle()
+FontStyle199.size = 0.8
+
+Text198.fontStyle = FontStyle199
+
+Shape195.geometry = Text198
+
+Transform186.children.append(Shape195)
+
+Group185.children.append(Transform186)
+
+ProtoBody184.children.append(Group185)
+
+ProtoDeclare180.ProtoBody = ProtoBody184
+
+Scene19.children.append(ProtoDeclare180)
+ProtoDeclare200 = x3d.ProtoDeclare()
+ProtoDeclare200.name = "Bromine"
+ProtoInterface201 = x3d.ProtoInterface()
+field202 = x3d.field()
+field202.name = "position"
+field202.accessType = "inputOutput"
+field202.type = "SFVec3f"
+field202.value = [0,0,0]
+
+ProtoInterface201.field.append(field202)
+field203 = x3d.field()
+field203.name = "materialTransparency"
+field203.accessType = "inputOutput"
+field203.type = "SFFloat"
+field203.value = 0.6
+
+ProtoInterface201.field.append(field203)
+
+ProtoDeclare200.ProtoInterface = ProtoInterface201
+ProtoBody204 = x3d.ProtoBody()
+Group205 = x3d.Group()
+Transform206 = x3d.Transform(DEF="atoBr")
+IS207 = x3d.IS()
+connect208 = x3d.connect()
+connect208.nodeField = "translation"
+connect208.protoField = "position"
+
+IS207.connect.append(connect208)
+
+Transform206.IS = IS207
+Shape209 = x3d.Shape()
+Appearance210 = x3d.Appearance()
+Material211 = x3d.Material(DEF="atoBr_mat")
+Material211.ambientIntensity = 0.0833
+Material211.diffuseColor = [0.5,0.3,0.19]
+Material211.emissiveColor = [0.12,0.13,0.08]
+Material211.shininess = 0.17
+Material211.specularColor = [0.08,0.08,0.05]
+IS212 = x3d.IS()
+connect213 = x3d.connect()
+connect213.nodeField = "transparency"
+connect213.protoField = "materialTransparency"
+
+IS212.connect.append(connect213)
+
+Material211.IS = IS212
+
+Appearance210.material = Material211
+
+Shape209.appearance = Appearance210
+Sphere214 = x3d.Sphere()
+Sphere214.radius = 1.14
+
+Shape209.geometry = Sphere214
+
+Transform206.children.append(Shape209)
+Shape215 = x3d.Shape()
+Appearance216 = x3d.Appearance()
+Material217 = x3d.Material()
+Material217.diffuseColor = [0.9,0.9,0.9]
+
+Appearance216.material = Material217
 
-Shape85.geometry = Sphere90
+Shape215.appearance = Appearance216
+Text218 = x3d.Text()
+Text218.string = ["Br"]
+FontStyle219 = x3d.FontStyle()
+FontStyle219.size = 0.8
+
+Text218.fontStyle = FontStyle219
+
+Shape215.geometry = Text218
+
+Transform206.children.append(Shape215)
+
+Group205.children.append(Transform206)
+
+ProtoBody204.children.append(Group205)
+
+ProtoDeclare200.ProtoBody = ProtoBody204
+
+Scene19.children.append(ProtoDeclare200)
+ProtoDeclare220 = x3d.ProtoDeclare()
+ProtoDeclare220.name = "Iodine"
+ProtoInterface221 = x3d.ProtoInterface()
+field222 = x3d.field()
+field222.name = "position"
+field222.accessType = "inputOutput"
+field222.type = "SFVec3f"
+field222.value = [0,0,0]
+
+ProtoInterface221.field.append(field222)
+field223 = x3d.field()
+field223.name = "materialTransparency"
+field223.accessType = "inputOutput"
+field223.type = "SFFloat"
+field223.value = 0.6
+
+ProtoInterface221.field.append(field223)
+
+ProtoDeclare220.ProtoInterface = ProtoInterface221
+ProtoBody224 = x3d.ProtoBody()
+Group225 = x3d.Group()
+Transform226 = x3d.Transform(DEF="atoI")
+IS227 = x3d.IS()
+connect228 = x3d.connect()
+connect228.nodeField = "translation"
+connect228.protoField = "position"
+
+IS227.connect.append(connect228)
+
+Transform226.IS = IS227
+Shape229 = x3d.Shape()
+Appearance230 = x3d.Appearance()
+Material231 = x3d.Material(DEF="atoI_mat")
+Material231.diffuseColor = [0.56,0.37,0.74]
+Material231.emissiveColor = [0.15,0.1,0.2]
+Material231.shininess = 0.09
+Material231.specularColor = [0.12,0.12,0.12]
+IS232 = x3d.IS()
+connect233 = x3d.connect()
+connect233.nodeField = "transparency"
+connect233.protoField = "materialTransparency"
+
+IS232.connect.append(connect233)
+
+Material231.IS = IS232
+
+Appearance230.material = Material231
+
+Shape229.appearance = Appearance230
+Sphere234 = x3d.Sphere()
+Sphere234.radius = 1.33
+
+Shape229.geometry = Sphere234
+
+Transform226.children.append(Shape229)
+Shape235 = x3d.Shape()
+Appearance236 = x3d.Appearance()
+Material237 = x3d.Material()
+Material237.diffuseColor = [0.9,0.9,0.9]
+
+Appearance236.material = Material237
 
-Transform84.children.append(Shape85)
-Shape91 = x3d.Shape()
-Appearance92 = x3d.Appearance()
-Material93 = x3d.Material()
-Material93.diffuseColor = [0.9,0.9,0.9]
+Shape235.appearance = Appearance236
+Text238 = x3d.Text()
+Text238.string = ["I"]
+FontStyle239 = x3d.FontStyle()
+FontStyle239.size = 0.8
+
+Text238.fontStyle = FontStyle239
+
+Shape235.geometry = Text238
+
+Transform226.children.append(Shape235)
+
+Group225.children.append(Transform226)
+
+ProtoBody224.children.append(Group225)
+
+ProtoDeclare220.ProtoBody = ProtoBody224
+
+Scene19.children.append(ProtoDeclare220)
+ProtoDeclare240 = x3d.ProtoDeclare()
+ProtoDeclare240.name = "unknown"
+ProtoInterface241 = x3d.ProtoInterface()
+field242 = x3d.field()
+field242.name = "position"
+field242.accessType = "inputOutput"
+field242.type = "SFVec3f"
+field242.value = [0,0,0]
+
+ProtoInterface241.field.append(field242)
+field243 = x3d.field()
+field243.name = "materialTransparency"
+field243.accessType = "inputOutput"
+field243.type = "SFFloat"
+field243.value = 0.6
+
+ProtoInterface241.field.append(field243)
+
+ProtoDeclare240.ProtoInterface = ProtoInterface241
+ProtoBody244 = x3d.ProtoBody()
+Group245 = x3d.Group()
+Transform246 = x3d.Transform(DEF="ato_")
+IS247 = x3d.IS()
+connect248 = x3d.connect()
+connect248.nodeField = "translation"
+connect248.protoField = "position"
 
-Appearance92.material = Material93
+IS247.connect.append(connect248)
 
-Shape91.appearance = Appearance92
-Text94 = x3d.Text()
-Text94.string = ["O"]
-FontStyle95 = x3d.FontStyle()
-FontStyle95.size = 0.8
-
-Text94.fontStyle = FontStyle95
-
-Shape91.geometry = Text94
-
-Transform84.children.append(Shape91)
-IS96 = x3d.IS()
-connect97 = x3d.connect()
-connect97.nodeField = "translation"
-connect97.protoField = "position"
-
-IS96.connect.append(connect97)
-
-Transform84.IS = IS96
-
-Group83.children.append(Transform84)
-
-ProtoBody82.children.append(Group83)
-
-ProtoDeclare78.ProtoBody = ProtoBody82
-
-Scene17.children.append(ProtoDeclare78)
-ProtoDeclare98 = x3d.ProtoDeclare()
-ProtoDeclare98.name = "Fluorine"
-ProtoInterface99 = x3d.ProtoInterface()
-field100 = x3d.field()
-field100.accessType = "inputOutput"
-field100.type = "SFVec3f"
-field100.name = "position"
-
-ProtoInterface99.field.append(field100)
-field101 = x3d.field()
-field101.accessType = "inputOutput"
-field101.type = "SFFloat"
-field101.name = "materialTransparency"
-field101.value = 0.6
-
-ProtoInterface99.field.append(field101)
-
-ProtoDeclare98.ProtoInterface = ProtoInterface99
-ProtoBody102 = x3d.ProtoBody()
-Group103 = x3d.Group()
-Transform104 = x3d.Transform(DEF="atoF")
-Shape105 = x3d.Shape()
-Appearance106 = x3d.Appearance()
-Material107 = x3d.Material(DEF="atoF_mat")
-Material107.diffuseColor = [1,0.48,0.79]
-Material107.emissiveColor = [0.09,0.04,0.07]
-IS108 = x3d.IS()
-connect109 = x3d.connect()
-connect109.nodeField = "transparency"
-connect109.protoField = "materialTransparency"
-
-IS108.connect.append(connect109)
-
-Material107.IS = IS108
-
-Appearance106.material = Material107
-
-Shape105.appearance = Appearance106
-Sphere110 = x3d.Sphere()
-Sphere110.radius = 0.72
-
-Shape105.geometry = Sphere110
-
-Transform104.children.append(Shape105)
-Shape111 = x3d.Shape()
-Appearance112 = x3d.Appearance()
-Material113 = x3d.Material()
-Material113.diffuseColor = [0.9,0.9,0.9]
-
-Appearance112.material = Material113
-
-Shape111.appearance = Appearance112
-Text114 = x3d.Text()
-Text114.string = ["F"]
-FontStyle115 = x3d.FontStyle()
-FontStyle115.size = 0.8
-
-Text114.fontStyle = FontStyle115
-
-Shape111.geometry = Text114
-
-Transform104.children.append(Shape111)
-IS116 = x3d.IS()
-connect117 = x3d.connect()
-connect117.nodeField = "translation"
-connect117.protoField = "position"
-
-IS116.connect.append(connect117)
-
-Transform104.IS = IS116
-
-Group103.children.append(Transform104)
-
-ProtoBody102.children.append(Group103)
-
-ProtoDeclare98.ProtoBody = ProtoBody102
-
-Scene17.children.append(ProtoDeclare98)
-ProtoDeclare118 = x3d.ProtoDeclare()
-ProtoDeclare118.name = "Silicon"
-ProtoInterface119 = x3d.ProtoInterface()
-field120 = x3d.field()
-field120.accessType = "inputOutput"
-field120.type = "SFVec3f"
-field120.name = "position"
-
-ProtoInterface119.field.append(field120)
-field121 = x3d.field()
-field121.accessType = "inputOutput"
-field121.type = "SFFloat"
-field121.name = "materialTransparency"
-field121.value = 0.6
-
-ProtoInterface119.field.append(field121)
-
-ProtoDeclare118.ProtoInterface = ProtoInterface119
-ProtoBody122 = x3d.ProtoBody()
-Group123 = x3d.Group()
-Transform124 = x3d.Transform(DEF="atoSi")
-Shape125 = x3d.Shape()
-Appearance126 = x3d.Appearance()
-Material127 = x3d.Material(DEF="atoSi_mat")
-IS128 = x3d.IS()
-connect129 = x3d.connect()
-connect129.nodeField = "transparency"
-connect129.protoField = "materialTransparency"
-
-IS128.connect.append(connect129)
-
-Material127.IS = IS128
-
-Appearance126.material = Material127
-
-Shape125.appearance = Appearance126
-Sphere130 = x3d.Sphere()
-Sphere130.radius = 1.18
-
-Shape125.geometry = Sphere130
-
-Transform124.children.append(Shape125)
-Shape131 = x3d.Shape()
-Appearance132 = x3d.Appearance()
-Material133 = x3d.Material()
-Material133.diffuseColor = [0.9,0.9,0.9]
-
-Appearance132.material = Material133
-
-Shape131.appearance = Appearance132
-Text134 = x3d.Text()
-Text134.string = ["Si"]
-FontStyle135 = x3d.FontStyle()
-FontStyle135.size = 0.8
-
-Text134.fontStyle = FontStyle135
-
-Shape131.geometry = Text134
-
-Transform124.children.append(Shape131)
-IS136 = x3d.IS()
-connect137 = x3d.connect()
-connect137.nodeField = "translation"
-connect137.protoField = "position"
-
-IS136.connect.append(connect137)
-
-Transform124.IS = IS136
-
-Group123.children.append(Transform124)
-
-ProtoBody122.children.append(Group123)
-
-ProtoDeclare118.ProtoBody = ProtoBody122
-
-Scene17.children.append(ProtoDeclare118)
-ProtoDeclare138 = x3d.ProtoDeclare()
-ProtoDeclare138.name = "Phosphorus"
-ProtoInterface139 = x3d.ProtoInterface()
-field140 = x3d.field()
-field140.accessType = "inputOutput"
-field140.type = "SFVec3f"
-field140.name = "position"
-
-ProtoInterface139.field.append(field140)
-field141 = x3d.field()
-field141.accessType = "inputOutput"
-field141.type = "SFFloat"
-field141.name = "materialTransparency"
-field141.value = 0.6
-
-ProtoInterface139.field.append(field141)
-
-ProtoDeclare138.ProtoInterface = ProtoInterface139
-ProtoBody142 = x3d.ProtoBody()
-Group143 = x3d.Group()
-Transform144 = x3d.Transform(DEF="atoP")
-Shape145 = x3d.Shape()
-Appearance146 = x3d.Appearance()
-Material147 = x3d.Material(DEF="atoP_mat")
-Material147.ambientIntensity = 0.11
-Material147.diffuseColor = [0.9,0.41,0]
-Material147.specularColor = [0.1,0.1,0.1]
-Material147.emissiveColor = [0.1,0.04,0]
-Material147.shininess = 0.8
-IS148 = x3d.IS()
-connect149 = x3d.connect()
-connect149.nodeField = "transparency"
-connect149.protoField = "materialTransparency"
-
-IS148.connect.append(connect149)
-
-Material147.IS = IS148
-
-Appearance146.material = Material147
-
-Shape145.appearance = Appearance146
-Sphere150 = x3d.Sphere()
-Sphere150.radius = 1.1
-
-Shape145.geometry = Sphere150
-
-Transform144.children.append(Shape145)
-Shape151 = x3d.Shape()
-Appearance152 = x3d.Appearance()
-Material153 = x3d.Material()
-Material153.diffuseColor = [0.9,0.9,0.9]
-
-Appearance152.material = Material153
-
-Shape151.appearance = Appearance152
-Text154 = x3d.Text()
-Text154.string = ["P"]
-FontStyle155 = x3d.FontStyle()
-FontStyle155.size = 0.8
-
-Text154.fontStyle = FontStyle155
-
-Shape151.geometry = Text154
-
-Transform144.children.append(Shape151)
-IS156 = x3d.IS()
-connect157 = x3d.connect()
-connect157.nodeField = "translation"
-connect157.protoField = "position"
-
-IS156.connect.append(connect157)
-
-Transform144.IS = IS156
-
-Group143.children.append(Transform144)
-
-ProtoBody142.children.append(Group143)
-
-ProtoDeclare138.ProtoBody = ProtoBody142
-
-Scene17.children.append(ProtoDeclare138)
-ProtoDeclare158 = x3d.ProtoDeclare()
-ProtoDeclare158.name = "Sulphur"
-ProtoInterface159 = x3d.ProtoInterface()
-field160 = x3d.field()
-field160.accessType = "inputOutput"
-field160.type = "SFVec3f"
-field160.name = "position"
-
-ProtoInterface159.field.append(field160)
-field161 = x3d.field()
-field161.accessType = "inputOutput"
-field161.type = "SFFloat"
-field161.name = "materialTransparency"
-field161.value = 0.6
-
-ProtoInterface159.field.append(field161)
-
-ProtoDeclare158.ProtoInterface = ProtoInterface159
-ProtoBody162 = x3d.ProtoBody()
-Group163 = x3d.Group()
-Transform164 = x3d.Transform(DEF="atoS")
-Shape165 = x3d.Shape()
-Appearance166 = x3d.Appearance()
-Material167 = x3d.Material(DEF="atoS_mat")
-Material167.ambientIntensity = 0.0467
-Material167.diffuseColor = [0.25,0.39,0.25]
-Material167.specularColor = [0.11,0.12,0.08]
-Material167.emissiveColor = [0.05,0.08,0.05]
-Material167.shininess = 0.6
-IS168 = x3d.IS()
-connect169 = x3d.connect()
-connect169.nodeField = "transparency"
-connect169.protoField = "materialTransparency"
-
-IS168.connect.append(connect169)
-
-Material167.IS = IS168
-
-Appearance166.material = Material167
-
-Shape165.appearance = Appearance166
-Sphere170 = x3d.Sphere()
-Sphere170.radius = 1.3
-
-Shape165.geometry = Sphere170
-
-Transform164.children.append(Shape165)
-Shape171 = x3d.Shape()
-Appearance172 = x3d.Appearance()
-Material173 = x3d.Material()
-Material173.diffuseColor = [0.9,0.9,0.9]
-
-Appearance172.material = Material173
-
-Shape171.appearance = Appearance172
-Text174 = x3d.Text()
-Text174.string = ["S"]
-FontStyle175 = x3d.FontStyle()
-FontStyle175.size = 0.8
-
-Text174.fontStyle = FontStyle175
-
-Shape171.geometry = Text174
-
-Transform164.children.append(Shape171)
-IS176 = x3d.IS()
-connect177 = x3d.connect()
-connect177.nodeField = "translation"
-connect177.protoField = "position"
-
-IS176.connect.append(connect177)
-
-Transform164.IS = IS176
-
-Group163.children.append(Transform164)
-
-ProtoBody162.children.append(Group163)
-
-ProtoDeclare158.ProtoBody = ProtoBody162
-
-Scene17.children.append(ProtoDeclare158)
-ProtoDeclare178 = x3d.ProtoDeclare()
-ProtoDeclare178.name = "Chlorine"
-ProtoInterface179 = x3d.ProtoInterface()
-field180 = x3d.field()
-field180.accessType = "inputOutput"
-field180.type = "SFVec3f"
-field180.name = "position"
-
-ProtoInterface179.field.append(field180)
-field181 = x3d.field()
-field181.accessType = "inputOutput"
-field181.type = "SFFloat"
-field181.name = "materialTransparency"
-field181.value = 0.6
-
-ProtoInterface179.field.append(field181)
-
-ProtoDeclare178.ProtoInterface = ProtoInterface179
-ProtoBody182 = x3d.ProtoBody()
-Group183 = x3d.Group()
-Transform184 = x3d.Transform(DEF="atoCl")
-Shape185 = x3d.Shape()
-Appearance186 = x3d.Appearance()
-Material187 = x3d.Material(DEF="atoCl_mat")
-Material187.diffuseColor = [0.28,0.7,0]
-Material187.specularColor = [0.5,0.5,0.5]
-Material187.emissiveColor = [0.06,0.15,0]
-Material187.shininess = 0.8
-IS188 = x3d.IS()
-connect189 = x3d.connect()
-connect189.nodeField = "transparency"
-connect189.protoField = "materialTransparency"
-
-IS188.connect.append(connect189)
-
-Material187.IS = IS188
-
-Appearance186.material = Material187
-
-Shape185.appearance = Appearance186
-Sphere190 = x3d.Sphere()
-Sphere190.radius = 1.01
-
-Shape185.geometry = Sphere190
-
-Transform184.children.append(Shape185)
-Shape191 = x3d.Shape()
-Appearance192 = x3d.Appearance()
-Material193 = x3d.Material()
-Material193.diffuseColor = [0.9,0.9,0.9]
-
-Appearance192.material = Material193
-
-Shape191.appearance = Appearance192
-Text194 = x3d.Text()
-Text194.string = ["Cl"]
-FontStyle195 = x3d.FontStyle()
-FontStyle195.size = 0.8
-
-Text194.fontStyle = FontStyle195
-
-Shape191.geometry = Text194
-
-Transform184.children.append(Shape191)
-IS196 = x3d.IS()
-connect197 = x3d.connect()
-connect197.nodeField = "translation"
-connect197.protoField = "position"
-
-IS196.connect.append(connect197)
-
-Transform184.IS = IS196
-
-Group183.children.append(Transform184)
-
-ProtoBody182.children.append(Group183)
-
-ProtoDeclare178.ProtoBody = ProtoBody182
-
-Scene17.children.append(ProtoDeclare178)
-ProtoDeclare198 = x3d.ProtoDeclare()
-ProtoDeclare198.name = "Bromine"
-ProtoInterface199 = x3d.ProtoInterface()
-field200 = x3d.field()
-field200.accessType = "inputOutput"
-field200.type = "SFVec3f"
-field200.name = "position"
-
-ProtoInterface199.field.append(field200)
-field201 = x3d.field()
-field201.accessType = "inputOutput"
-field201.type = "SFFloat"
-field201.name = "materialTransparency"
-field201.value = 0.6
-
-ProtoInterface199.field.append(field201)
-
-ProtoDeclare198.ProtoInterface = ProtoInterface199
-ProtoBody202 = x3d.ProtoBody()
-Group203 = x3d.Group()
-Transform204 = x3d.Transform(DEF="atoBr")
-Shape205 = x3d.Shape()
-Appearance206 = x3d.Appearance()
-Material207 = x3d.Material(DEF="atoBr_mat")
-Material207.ambientIntensity = 0.0833
-Material207.diffuseColor = [0.5,0.3,0.19]
-Material207.specularColor = [0.08,0.08,0.05]
-Material207.emissiveColor = [0.12,0.13,0.08]
-Material207.shininess = 0.17
-IS208 = x3d.IS()
-connect209 = x3d.connect()
-connect209.nodeField = "transparency"
-connect209.protoField = "materialTransparency"
-
-IS208.connect.append(connect209)
-
-Material207.IS = IS208
-
-Appearance206.material = Material207
-
-Shape205.appearance = Appearance206
-Sphere210 = x3d.Sphere()
-Sphere210.radius = 1.14
-
-Shape205.geometry = Sphere210
-
-Transform204.children.append(Shape205)
-Shape211 = x3d.Shape()
-Appearance212 = x3d.Appearance()
-Material213 = x3d.Material()
-Material213.diffuseColor = [0.9,0.9,0.9]
-
-Appearance212.material = Material213
-
-Shape211.appearance = Appearance212
-Text214 = x3d.Text()
-Text214.string = ["Br"]
-FontStyle215 = x3d.FontStyle()
-FontStyle215.size = 0.8
-
-Text214.fontStyle = FontStyle215
-
-Shape211.geometry = Text214
-
-Transform204.children.append(Shape211)
-IS216 = x3d.IS()
-connect217 = x3d.connect()
-connect217.nodeField = "translation"
-connect217.protoField = "position"
-
-IS216.connect.append(connect217)
-
-Transform204.IS = IS216
-
-Group203.children.append(Transform204)
-
-ProtoBody202.children.append(Group203)
-
-ProtoDeclare198.ProtoBody = ProtoBody202
-
-Scene17.children.append(ProtoDeclare198)
-ProtoDeclare218 = x3d.ProtoDeclare()
-ProtoDeclare218.name = "Iodine"
-ProtoInterface219 = x3d.ProtoInterface()
-field220 = x3d.field()
-field220.accessType = "inputOutput"
-field220.type = "SFVec3f"
-field220.name = "position"
-
-ProtoInterface219.field.append(field220)
-field221 = x3d.field()
-field221.accessType = "inputOutput"
-field221.type = "SFFloat"
-field221.name = "materialTransparency"
-field221.value = 0.6
-
-ProtoInterface219.field.append(field221)
-
-ProtoDeclare218.ProtoInterface = ProtoInterface219
-ProtoBody222 = x3d.ProtoBody()
-Group223 = x3d.Group()
-Transform224 = x3d.Transform(DEF="atoI")
-Shape225 = x3d.Shape()
-Appearance226 = x3d.Appearance()
-Material227 = x3d.Material(DEF="atoI_mat")
-Material227.diffuseColor = [0.56,0.37,0.74]
-Material227.specularColor = [0.12,0.12,0.12]
-Material227.emissiveColor = [0.15,0.1,0.2]
-Material227.shininess = 0.09
-IS228 = x3d.IS()
-connect229 = x3d.connect()
-connect229.nodeField = "transparency"
-connect229.protoField = "materialTransparency"
-
-IS228.connect.append(connect229)
-
-Material227.IS = IS228
-
-Appearance226.material = Material227
-
-Shape225.appearance = Appearance226
-Sphere230 = x3d.Sphere()
-Sphere230.radius = 1.33
-
-Shape225.geometry = Sphere230
-
-Transform224.children.append(Shape225)
-Shape231 = x3d.Shape()
-Appearance232 = x3d.Appearance()
-Material233 = x3d.Material()
-Material233.diffuseColor = [0.9,0.9,0.9]
-
-Appearance232.material = Material233
-
-Shape231.appearance = Appearance232
-Text234 = x3d.Text()
-Text234.string = ["I"]
-FontStyle235 = x3d.FontStyle()
-FontStyle235.size = 0.8
-
-Text234.fontStyle = FontStyle235
-
-Shape231.geometry = Text234
-
-Transform224.children.append(Shape231)
-IS236 = x3d.IS()
-connect237 = x3d.connect()
-connect237.nodeField = "translation"
-connect237.protoField = "position"
-
-IS236.connect.append(connect237)
-
-Transform224.IS = IS236
-
-Group223.children.append(Transform224)
-
-ProtoBody222.children.append(Group223)
-
-ProtoDeclare218.ProtoBody = ProtoBody222
-
-Scene17.children.append(ProtoDeclare218)
-ProtoDeclare238 = x3d.ProtoDeclare()
-ProtoDeclare238.name = "unknown"
-ProtoInterface239 = x3d.ProtoInterface()
-field240 = x3d.field()
-field240.accessType = "inputOutput"
-field240.type = "SFVec3f"
-field240.name = "position"
-
-ProtoInterface239.field.append(field240)
-field241 = x3d.field()
-field241.accessType = "inputOutput"
-field241.type = "SFFloat"
-field241.name = "materialTransparency"
-field241.value = 0.6
-
-ProtoInterface239.field.append(field241)
-
-ProtoDeclare238.ProtoInterface = ProtoInterface239
-ProtoBody242 = x3d.ProtoBody()
-Group243 = x3d.Group()
-Transform244 = x3d.Transform(DEF="ato_")
-Shape245 = x3d.Shape()
-Appearance246 = x3d.Appearance()
-Material247 = x3d.Material(DEF="ato__mat")
-Material247.diffuseColor = [1,1,1]
-Material247.specularColor = [0.12,0.12,0.12]
-Material247.emissiveColor = [0.15,0.1,0.2]
-Material247.shininess = 0.09
-IS248 = x3d.IS()
-connect249 = x3d.connect()
-connect249.nodeField = "transparency"
-connect249.protoField = "materialTransparency"
-
-IS248.connect.append(connect249)
-
-Material247.IS = IS248
-
-Appearance246.material = Material247
-
-Shape245.appearance = Appearance246
-Sphere250 = x3d.Sphere()
-Sphere250.radius = 1.001
-
-Shape245.geometry = Sphere250
-
-Transform244.children.append(Shape245)
-Shape251 = x3d.Shape()
-Appearance252 = x3d.Appearance()
-Material253 = x3d.Material()
-Material253.diffuseColor = [0.9,0.9,0.9]
-
-Appearance252.material = Material253
-
-Shape251.appearance = Appearance252
-Text254 = x3d.Text()
-Text254.string = ["?"]
-FontStyle255 = x3d.FontStyle()
-FontStyle255.size = 0.8
-
-Text254.fontStyle = FontStyle255
-
-Shape251.geometry = Text254
-
-Transform244.children.append(Shape251)
-IS256 = x3d.IS()
-connect257 = x3d.connect()
-connect257.nodeField = "translation"
-connect257.protoField = "position"
-
-IS256.connect.append(connect257)
-
-Transform244.IS = IS256
-
-Group243.children.append(Transform244)
-
-ProtoBody242.children.append(Group243)
-
-ProtoDeclare238.ProtoBody = ProtoBody242
-
-Scene17.children.append(ProtoDeclare238)
-ProtoDeclare258 = x3d.ProtoDeclare()
-ProtoDeclare258.name = "line"
-ProtoInterface259 = x3d.ProtoInterface()
-field260 = x3d.field()
-field260.accessType = "inputOutput"
-field260.type = "MFVec3f"
-field260.name = "bond_set"
-field260.value = [(-1, 0, 0),(1, 0, 0)]
-
-ProtoInterface259.field.append(field260)
-
-ProtoDeclare258.ProtoInterface = ProtoInterface259
-ProtoBody261 = x3d.ProtoBody()
-Group262 = x3d.Group()
-Shape263 = x3d.Shape()
-Appearance264 = x3d.Appearance()
-Material265 = x3d.Material()
-Material265.diffuseColor = [1,1,1]
-Material265.emissiveColor = [1,1,1]
-
-Appearance264.material = Material265
-
-Shape263.appearance = Appearance264
-IndexedLineSet266 = x3d.IndexedLineSet()
-IndexedLineSet266.coordIndex = [0,1,-1]
-Coordinate267 = x3d.Coordinate(DEF="bondo")
-IS268 = x3d.IS()
-connect269 = x3d.connect()
-connect269.nodeField = "point"
-connect269.protoField = "bond_set"
-
-IS268.connect.append(connect269)
-
-Coordinate267.IS = IS268
-
-IndexedLineSet266.coord = Coordinate267
-
-Shape263.geometry = IndexedLineSet266
-
-Group262.children.append(Shape263)
-
-ProtoBody261.children.append(Group262)
-
-ProtoDeclare258.ProtoBody = ProtoBody261
-
-Scene17.children.append(ProtoDeclare258)
-ProtoDeclare270 = x3d.ProtoDeclare()
-ProtoDeclare270.name = "title_text"
-ProtoInterface271 = x3d.ProtoInterface()
-field272 = x3d.field()
-field272.accessType = "inputOutput"
-field272.type = "MFString"
-field272.name = "txt"
-
-ProtoInterface271.field.append(field272)
-
-ProtoDeclare270.ProtoInterface = ProtoInterface271
-ProtoBody273 = x3d.ProtoBody()
-Transform274 = x3d.Transform()
-Group275 = x3d.Group()
+Transform246.IS = IS247
+Shape249 = x3d.Shape()
+Appearance250 = x3d.Appearance()
+Material251 = x3d.Material(DEF="ato__mat")
+Material251.diffuseColor = [1,1,1]
+Material251.emissiveColor = [0.15,0.1,0.2]
+Material251.shininess = 0.09
+Material251.specularColor = [0.12,0.12,0.12]
+IS252 = x3d.IS()
+connect253 = x3d.connect()
+connect253.nodeField = "transparency"
+connect253.protoField = "materialTransparency"
+
+IS252.connect.append(connect253)
+
+Material251.IS = IS252
+
+Appearance250.material = Material251
+
+Shape249.appearance = Appearance250
+Sphere254 = x3d.Sphere()
+Sphere254.radius = 1.001
+
+Shape249.geometry = Sphere254
+
+Transform246.children.append(Shape249)
+Shape255 = x3d.Shape()
+Appearance256 = x3d.Appearance()
+Material257 = x3d.Material()
+Material257.diffuseColor = [0.9,0.9,0.9]
+
+Appearance256.material = Material257
+
+Shape255.appearance = Appearance256
+Text258 = x3d.Text()
+Text258.string = ["?"]
+FontStyle259 = x3d.FontStyle()
+FontStyle259.size = 0.8
+
+Text258.fontStyle = FontStyle259
+
+Shape255.geometry = Text258
+
+Transform246.children.append(Shape255)
+
+Group245.children.append(Transform246)
+
+ProtoBody244.children.append(Group245)
+
+ProtoDeclare240.ProtoBody = ProtoBody244
+
+Scene19.children.append(ProtoDeclare240)
+ProtoDeclare260 = x3d.ProtoDeclare()
+ProtoDeclare260.name = "line"
+ProtoInterface261 = x3d.ProtoInterface()
+field262 = x3d.field()
+field262.name = "bond_set"
+field262.accessType = "inputOutput"
+field262.type = "MFVec3f"
+field262.value = [(-1, 0, 0),(1, 0, 0)]
+
+ProtoInterface261.field.append(field262)
+
+ProtoDeclare260.ProtoInterface = ProtoInterface261
+ProtoBody263 = x3d.ProtoBody()
+Group264 = x3d.Group()
+Shape265 = x3d.Shape()
+Appearance266 = x3d.Appearance()
+Material267 = x3d.Material()
+Material267.diffuseColor = [1,1,1]
+Material267.emissiveColor = [1,1,1]
+
+Appearance266.material = Material267
+
+Shape265.appearance = Appearance266
+IndexedLineSet268 = x3d.IndexedLineSet()
+IndexedLineSet268.coordIndex = [0,1,-1]
+Coordinate269 = x3d.Coordinate(DEF="bondo")
+IS270 = x3d.IS()
+connect271 = x3d.connect()
+connect271.nodeField = "point"
+connect271.protoField = "bond_set"
+
+IS270.connect.append(connect271)
+
+Coordinate269.IS = IS270
+
+IndexedLineSet268.coord = Coordinate269
+
+Shape265.geometry = IndexedLineSet268
+
+Group264.children.append(Shape265)
+
+ProtoBody263.children.append(Group264)
+
+ProtoDeclare260.ProtoBody = ProtoBody263
+
+Scene19.children.append(ProtoDeclare260)
+ProtoDeclare272 = x3d.ProtoDeclare()
+ProtoDeclare272.name = "title_text"
+ProtoInterface273 = x3d.ProtoInterface()
+field274 = x3d.field()
+field274.name = "txt"
+field274.accessType = "inputOutput"
+field274.type = "MFString"
+
+ProtoInterface273.field.append(field274)
+
+ProtoDeclare272.ProtoInterface = ProtoInterface273
+ProtoBody275 = x3d.ProtoBody()
 Transform276 = x3d.Transform()
-Shape277 = x3d.Shape()
-Appearance278 = x3d.Appearance()
-Material279 = x3d.Material()
-Material279.diffuseColor = [0.9,0.9,0.9]
+Group277 = x3d.Group()
+Transform278 = x3d.Transform()
+Shape279 = x3d.Shape()
+Appearance280 = x3d.Appearance()
+Material281 = x3d.Material()
+Material281.diffuseColor = [0.9,0.9,0.9]
 
-Appearance278.material = Material279
+Appearance280.material = Material281
 
-Shape277.appearance = Appearance278
-Text280 = x3d.Text(DEF="cmpd_name")
-FontStyle281 = x3d.FontStyle()
+Shape279.appearance = Appearance280
+Text282 = x3d.Text(DEF="cmpd_name")
+IS283 = x3d.IS()
+connect284 = x3d.connect()
+connect284.nodeField = "string"
+connect284.protoField = "txt"
 
-Text280.fontStyle = FontStyle281
-IS282 = x3d.IS()
-connect283 = x3d.connect()
-connect283.nodeField = "string"
-connect283.protoField = "txt"
+IS283.connect.append(connect284)
 
-IS282.connect.append(connect283)
+Text282.IS = IS283
+FontStyle285 = x3d.FontStyle()
 
-Text280.IS = IS282
+Text282.fontStyle = FontStyle285
 
-Shape277.geometry = Text280
+Shape279.geometry = Text282
 
-Transform276.children.append(Shape277)
+Transform278.children.append(Shape279)
 
-Group275.children.append(Transform276)
+Group277.children.append(Transform278)
 
-Transform274.children.append(Group275)
+Transform276.children.append(Group277)
 
-ProtoBody273.children.append(Transform274)
+ProtoBody275.children.append(Transform276)
 
-ProtoDeclare270.ProtoBody = ProtoBody273
+ProtoDeclare272.ProtoBody = ProtoBody275
 
-Scene17.children.append(ProtoDeclare270)
-ProtoDeclare284 = x3d.ProtoDeclare()
-ProtoDeclare284.name = "ano1_text"
-ProtoInterface285 = x3d.ProtoInterface()
-field286 = x3d.field()
-field286.accessType = "inputOutput"
-field286.type = "MFString"
-field286.name = "txt"
+Scene19.children.append(ProtoDeclare272)
+ProtoDeclare286 = x3d.ProtoDeclare()
+ProtoDeclare286.name = "ano1_text"
+ProtoInterface287 = x3d.ProtoInterface()
+field288 = x3d.field()
+field288.name = "txt"
+field288.accessType = "inputOutput"
+field288.type = "MFString"
 
-ProtoInterface285.field.append(field286)
+ProtoInterface287.field.append(field288)
 
-ProtoDeclare284.ProtoInterface = ProtoInterface285
-ProtoBody287 = x3d.ProtoBody()
-Transform288 = x3d.Transform()
-Group289 = x3d.Group()
+ProtoDeclare286.ProtoInterface = ProtoInterface287
+ProtoBody289 = x3d.ProtoBody()
 Transform290 = x3d.Transform()
-Shape291 = x3d.Shape()
-Appearance292 = x3d.Appearance()
-Material293 = x3d.Material()
-Material293.diffuseColor = [0.9,0.9,0.9]
+Group291 = x3d.Group()
+Transform292 = x3d.Transform()
+Shape293 = x3d.Shape()
+Appearance294 = x3d.Appearance()
+Material295 = x3d.Material()
+Material295.diffuseColor = [0.9,0.9,0.9]
 
-Appearance292.material = Material293
+Appearance294.material = Material295
 
-Shape291.appearance = Appearance292
-Text294 = x3d.Text(DEF="cmpd_name1")
-FontStyle295 = x3d.FontStyle()
-FontStyle295.size = 0.8
+Shape293.appearance = Appearance294
+Text296 = x3d.Text(DEF="cmpd_name1")
+IS297 = x3d.IS()
+connect298 = x3d.connect()
+connect298.nodeField = "string"
+connect298.protoField = "txt"
 
-Text294.fontStyle = FontStyle295
-IS296 = x3d.IS()
-connect297 = x3d.connect()
-connect297.nodeField = "string"
-connect297.protoField = "txt"
+IS297.connect.append(connect298)
 
-IS296.connect.append(connect297)
+Text296.IS = IS297
+FontStyle299 = x3d.FontStyle()
+FontStyle299.size = 0.8
 
-Text294.IS = IS296
+Text296.fontStyle = FontStyle299
 
-Shape291.geometry = Text294
+Shape293.geometry = Text296
 
-Transform290.children.append(Shape291)
+Transform292.children.append(Shape293)
 
-Group289.children.append(Transform290)
+Group291.children.append(Transform292)
 
-Transform288.children.append(Group289)
+Transform290.children.append(Group291)
 
-ProtoBody287.children.append(Transform288)
+ProtoBody289.children.append(Transform290)
 
-ProtoDeclare284.ProtoBody = ProtoBody287
+ProtoDeclare286.ProtoBody = ProtoBody289
 
-Scene17.children.append(ProtoDeclare284)
-ProtoDeclare298 = x3d.ProtoDeclare()
-ProtoDeclare298.name = "ano2_text"
-ProtoInterface299 = x3d.ProtoInterface()
-field300 = x3d.field()
-field300.accessType = "inputOutput"
-field300.type = "MFString"
-field300.name = "txt"
+Scene19.children.append(ProtoDeclare286)
+ProtoDeclare300 = x3d.ProtoDeclare()
+ProtoDeclare300.name = "ano2_text"
+ProtoInterface301 = x3d.ProtoInterface()
+field302 = x3d.field()
+field302.name = "txt"
+field302.accessType = "inputOutput"
+field302.type = "MFString"
 
-ProtoInterface299.field.append(field300)
+ProtoInterface301.field.append(field302)
 
-ProtoDeclare298.ProtoInterface = ProtoInterface299
-ProtoBody301 = x3d.ProtoBody()
-Transform302 = x3d.Transform()
-Group303 = x3d.Group()
+ProtoDeclare300.ProtoInterface = ProtoInterface301
+ProtoBody303 = x3d.ProtoBody()
 Transform304 = x3d.Transform()
-Shape305 = x3d.Shape()
-Appearance306 = x3d.Appearance()
-Material307 = x3d.Material()
-Material307.diffuseColor = [0.9,0.9,0.9]
+Group305 = x3d.Group()
+Transform306 = x3d.Transform()
+Shape307 = x3d.Shape()
+Appearance308 = x3d.Appearance()
+Material309 = x3d.Material()
+Material309.diffuseColor = [0.9,0.9,0.9]
+
+Appearance308.material = Material309
 
-Appearance306.material = Material307
+Shape307.appearance = Appearance308
+Text310 = x3d.Text(DEF="cmpd_name2")
+IS311 = x3d.IS()
+connect312 = x3d.connect()
+connect312.nodeField = "string"
+connect312.protoField = "txt"
+
+IS311.connect.append(connect312)
+
+Text310.IS = IS311
+FontStyle313 = x3d.FontStyle()
+FontStyle313.size = 0.6
+
+Text310.fontStyle = FontStyle313
+
+Shape307.geometry = Text310
+
+Transform306.children.append(Shape307)
+
+Group305.children.append(Transform306)
+
+Transform304.children.append(Group305)
 
-Shape305.appearance = Appearance306
-Text308 = x3d.Text(DEF="cmpd_name2")
-FontStyle309 = x3d.FontStyle()
-FontStyle309.size = 0.6
+ProtoBody303.children.append(Transform304)
+
+ProtoDeclare300.ProtoBody = ProtoBody303
+
+Scene19.children.append(ProtoDeclare300)
+Background314 = x3d.Background()
+Background314.groundAngle = [1.309,1.570796]
+Background314.groundColor = [(0, 0.5, 0.7),(0, 0.4, 0.7),(0.6, 0.5, 0.7)]
+Background314.skyAngle = [1.309,1.570796]
+Background314.skyColor = [(0, 0.5, 0.8),(0, 0.6, 0.7),(0.6, 0.6, 0.7)]
+
+Scene19.children.append(Background314)
+PointLight315 = x3d.PointLight()
+PointLight315.ambientIntensity = 1
+PointLight315.location = [0,0,5]
+PointLight315.radius = 30
+
+Scene19.children.append(PointLight315)
+NavigationInfo316 = x3d.NavigationInfo()
+NavigationInfo316.type = ["EXAMINE","FLY","ANY"]
+
+Scene19.children.append(NavigationInfo316)
+Viewpoint317 = x3d.Viewpoint()
+Viewpoint317.description = "Inspect Oxytocin"
+Viewpoint317.position = [0,2,20]
+
+Scene19.children.append(Viewpoint317)
+Scene19.children.append(x3d.Comment("""Copyright by the U.S. Sec. Commerce on behalf of U.S.A. All rights reserved."""))
+Scene19.children.append(x3d.Comment("""type=\"3D\" <date day=\"23\" month=\"11\" year=\"1995\"/>"""))
+Transform318 = x3d.Transform(DEF="infogroupa")
+Transform318.translation = [-8,2,-4]
+Transform319 = x3d.Transform()
+Transform319.translation = [0,6,0]
+Viewpoint320 = x3d.Viewpoint()
+Viewpoint320.description = "title billboard"
+Viewpoint320.position = [6,-2,10]
 
-Text308.fontStyle = FontStyle309
-IS310 = x3d.IS()
-connect311 = x3d.connect()
-connect311.nodeField = "string"
-connect311.protoField = "txt"
+Transform319.children.append(Viewpoint320)
+ProtoInstance321 = x3d.ProtoInstance()
+ProtoInstance321.name = "title_text"
+fieldValue322 = x3d.fieldValue()
+fieldValue322.name = "txt"
+fieldValue322.value = "\"Oxytocin: \""
+
+ProtoInstance321.fieldValue.append(fieldValue322)
+
+Transform319.children.append(ProtoInstance321)
 
-IS310.connect.append(connect311)
+Transform318.children.append(Transform319)
+
+Scene19.children.append(Transform318)
+Group323 = x3d.Group()
+Transform324 = x3d.Transform()
+ProtoInstance325 = x3d.ProtoInstance(DEF="a1")
+ProtoInstance325.name = "Nitrogen"
+fieldValue326 = x3d.fieldValue()
+fieldValue326.name = "position"
+fieldValue326.value = "-2.0514 1.8507 0"
+
+ProtoInstance325.fieldValue.append(fieldValue326)
 
-Text308.IS = IS310
-
-Shape305.geometry = Text308
+Transform324.children.append(ProtoInstance325)
+
+Group323.children.append(Transform324)
+Transform327 = x3d.Transform()
+ProtoInstance328 = x3d.ProtoInstance(DEF="a2")
+ProtoInstance328.name = "Carbon"
+fieldValue329 = x3d.fieldValue()
+fieldValue329.name = "position"
+fieldValue329.value = "-3.601 1.9845 0"
 
-Transform304.children.append(Shape305)
+ProtoInstance328.fieldValue.append(fieldValue329)
 
-Group303.children.append(Transform304)
+Transform327.children.append(ProtoInstance328)
 
-Transform302.children.append(Group303)
+Group323.children.append(Transform327)
+Transform330 = x3d.Transform()
+ProtoInstance331 = x3d.ProtoInstance(DEF="a3")
+ProtoInstance331.name = "Carbon"
+fieldValue332 = x3d.fieldValue()
+fieldValue332.name = "position"
+fieldValue332.value = "-1.2821 0.4905 0"
 
-ProtoBody301.children.append(Transform302)
+ProtoInstance331.fieldValue.append(fieldValue332)
 
-ProtoDeclare298.ProtoBody = ProtoBody301
-
-Scene17.children.append(ProtoDeclare298)
-Background312 = x3d.Background()
-Background312.skyAngle = [1.309,1.570796]
-Background312.skyColor = [(0, 0.5, 0.8),(0, 0.6, 0.7),(0.6, 0.6, 0.7)]
-Background312.groundAngle = [1.309,1.570796]
-Background312.groundColor = [(0, 0.5, 0.7),(0, 0.4, 0.7),(0.6, 0.5, 0.7)]
+Transform330.children.append(ProtoInstance331)
 
-Scene17.children.append(Background312)
-PointLight313 = x3d.PointLight()
-PointLight313.ambientIntensity = 1
-PointLight313.location = [0,0,5]
-PointLight313.radius = 30
-
-Scene17.children.append(PointLight313)
-NavigationInfo314 = x3d.NavigationInfo()
-NavigationInfo314.type = ["EXAMINE","FLY","ANY"]
+Group323.children.append(Transform330)
+Transform333 = x3d.Transform()
+ProtoInstance334 = x3d.ProtoInstance(DEF="a4")
+ProtoInstance334.name = "Carbon"
+fieldValue335 = x3d.fieldValue()
+fieldValue335.name = "position"
+fieldValue335.value = "-1.4159 3.2554 0"
 
-Scene17.children.append(NavigationInfo314)
-Viewpoint315 = x3d.Viewpoint()
-Viewpoint315.description = "Inspect Oxytocin"
-Viewpoint315.position = [0,2,20]
+ProtoInstance334.fieldValue.append(fieldValue335)
 
-Scene17.children.append(Viewpoint315)
-Transform316 = x3d.Transform(DEF="infogroupa")
-Transform316.translation = [-8,2,-4]
-Transform317 = x3d.Transform()
-Transform317.translation = [0,6,0]
-Viewpoint318 = x3d.Viewpoint()
-Viewpoint318.description = "title billboard"
-Viewpoint318.position = [6,-2,10]
+Transform333.children.append(ProtoInstance334)
 
-Transform317.children.append(Viewpoint318)
-ProtoInstance319 = x3d.ProtoInstance()
-ProtoInstance319.name = "title_text"
-fieldValue320 = x3d.fieldValue()
-fieldValue320.name = "txt"
-fieldValue320.value = "\"Oxytocin: \""
+Group323.children.append(Transform333)
+Transform336 = x3d.Transform()
+ProtoInstance337 = x3d.ProtoInstance(DEF="a5")
+ProtoInstance337.name = "Carbon"
+fieldValue338 = x3d.fieldValue()
+fieldValue338.name = "position"
+fieldValue338.value = "-4.649 0.8473 0"
 
-ProtoInstance319.fieldValue.append(fieldValue320)
+ProtoInstance337.fieldValue.append(fieldValue338)
 
-Transform317.children.append(ProtoInstance319)
+Transform336.children.append(ProtoInstance337)
 
-Transform316.children.append(Transform317)
+Group323.children.append(Transform336)
+Transform339 = x3d.Transform()
+ProtoInstance340 = x3d.ProtoInstance(DEF="a6")
+ProtoInstance340.name = "Carbon"
+fieldValue341 = x3d.fieldValue()
+fieldValue341.name = "position"
+fieldValue341.value = "-3.9355 3.5341 0"
 
-Scene17.children.append(Transform316)
-Group321 = x3d.Group()
-Transform322 = x3d.Transform()
-ProtoInstance323 = x3d.ProtoInstance(DEF="a1")
-ProtoInstance323.name = "Nitrogen"
-fieldValue324 = x3d.fieldValue()
-fieldValue324.name = "position"
-fieldValue324.value = "-2.0514 1.8507 0"
+ProtoInstance340.fieldValue.append(fieldValue341)
 
-ProtoInstance323.fieldValue.append(fieldValue324)
+Transform339.children.append(ProtoInstance340)
 
-Transform322.children.append(ProtoInstance323)
+Group323.children.append(Transform339)
+Transform342 = x3d.Transform()
+ProtoInstance343 = x3d.ProtoInstance(DEF="a7")
+ProtoInstance343.name = "Carbon"
+fieldValue344 = x3d.fieldValue()
+fieldValue344.name = "position"
+fieldValue344.value = "0.2341 0.4905 0"
 
-Group321.children.append(Transform322)
-Transform325 = x3d.Transform()
-ProtoInstance326 = x3d.ProtoInstance(DEF="a2")
-ProtoInstance326.name = "Carbon"
-fieldValue327 = x3d.fieldValue()
-fieldValue327.name = "position"
-fieldValue327.value = "-3.601 1.9845 0"
+ProtoInstance343.fieldValue.append(fieldValue344)
 
-ProtoInstance326.fieldValue.append(fieldValue327)
+Transform342.children.append(ProtoInstance343)
 
-Transform325.children.append(ProtoInstance326)
+Group323.children.append(Transform342)
+Transform345 = x3d.Transform()
+ProtoInstance346 = x3d.ProtoInstance(DEF="a8")
+ProtoInstance346.name = "Oxygen"
+fieldValue347 = x3d.fieldValue()
+fieldValue347.name = "position"
+fieldValue347.value = "-2.0514 -0.8362 0"
 
-Group321.children.append(Transform325)
-Transform328 = x3d.Transform()
-ProtoInstance329 = x3d.ProtoInstance(DEF="a3")
-ProtoInstance329.name = "Carbon"
-fieldValue330 = x3d.fieldValue()
-fieldValue330.name = "position"
-fieldValue330.value = "-1.2821 0.4905 0"
+ProtoInstance346.fieldValue.append(fieldValue347)
 
-ProtoInstance329.fieldValue.append(fieldValue330)
+Transform345.children.append(ProtoInstance346)
 
-Transform328.children.append(ProtoInstance329)
+Group323.children.append(Transform345)
+Transform348 = x3d.Transform()
+ProtoInstance349 = x3d.ProtoInstance(DEF="a9")
+ProtoInstance349.name = "Carbon"
+fieldValue350 = x3d.fieldValue()
+fieldValue350.name = "position"
+fieldValue350.value = "-2.5753 4.3034 0"
 
-Group321.children.append(Transform328)
-Transform331 = x3d.Transform()
-ProtoInstance332 = x3d.ProtoInstance(DEF="a4")
-ProtoInstance332.name = "Carbon"
-fieldValue333 = x3d.fieldValue()
-fieldValue333.name = "position"
-fieldValue333.value = "-1.4159 3.2554 0"
+ProtoInstance349.fieldValue.append(fieldValue350)
 
-ProtoInstance332.fieldValue.append(fieldValue333)
+Transform348.children.append(ProtoInstance349)
 
-Transform331.children.append(ProtoInstance332)
+Group323.children.append(Transform348)
+Transform351 = x3d.Transform()
+ProtoInstance352 = x3d.ProtoInstance(DEF="a10")
+ProtoInstance352.name = "Nitrogen"
+fieldValue353 = x3d.fieldValue()
+fieldValue353.name = "position"
+fieldValue353.value = "-6.1764 1.1595 0"
 
-Group321.children.append(Transform331)
-Transform334 = x3d.Transform()
-ProtoInstance335 = x3d.ProtoInstance(DEF="a5")
-ProtoInstance335.name = "Carbon"
-fieldValue336 = x3d.fieldValue()
-fieldValue336.name = "position"
-fieldValue336.value = "-4.649 0.8473 0"
+ProtoInstance352.fieldValue.append(fieldValue353)
 
-ProtoInstance335.fieldValue.append(fieldValue336)
+Transform351.children.append(ProtoInstance352)
 
-Transform334.children.append(ProtoInstance335)
+Group323.children.append(Transform351)
+Transform354 = x3d.Transform()
+ProtoInstance355 = x3d.ProtoInstance(DEF="a11")
+ProtoInstance355.name = "Oxygen"
+fieldValue356 = x3d.fieldValue()
+fieldValue356.name = "position"
+fieldValue356.value = "-4.1585 -0.6132 0"
 
-Group321.children.append(Transform334)
-Transform337 = x3d.Transform()
-ProtoInstance338 = x3d.ProtoInstance(DEF="a6")
-ProtoInstance338.name = "Carbon"
-fieldValue339 = x3d.fieldValue()
-fieldValue339.name = "position"
-fieldValue339.value = "-3.9355 3.5341 0"
+ProtoInstance355.fieldValue.append(fieldValue356)
 
-ProtoInstance338.fieldValue.append(fieldValue339)
+Transform354.children.append(ProtoInstance355)
 
-Transform337.children.append(ProtoInstance338)
+Group323.children.append(Transform354)
+Transform357 = x3d.Transform()
+ProtoInstance358 = x3d.ProtoInstance(DEF="a12")
+ProtoInstance358.name = "Nitrogen"
+fieldValue359 = x3d.fieldValue()
+fieldValue359.name = "position"
+fieldValue359.value = "0.4905 2.0402 0"
 
-Group321.children.append(Transform337)
-Transform340 = x3d.Transform()
-ProtoInstance341 = x3d.ProtoInstance(DEF="a7")
-ProtoInstance341.name = "Carbon"
-fieldValue342 = x3d.fieldValue()
-fieldValue342.name = "position"
-fieldValue342.value = "0.2341 0.4905 0"
+ProtoInstance358.fieldValue.append(fieldValue359)
 
-ProtoInstance341.fieldValue.append(fieldValue342)
+Transform357.children.append(ProtoInstance358)
 
-Transform340.children.append(ProtoInstance341)
+Group323.children.append(Transform357)
+Transform360 = x3d.Transform()
+ProtoInstance361 = x3d.ProtoInstance(DEF="a13")
+ProtoInstance361.name = "Carbon"
+fieldValue362 = x3d.fieldValue()
+fieldValue362.name = "position"
+fieldValue362.value = "0.4905 -1.0257 0"
 
-Group321.children.append(Transform340)
-Transform343 = x3d.Transform()
-ProtoInstance344 = x3d.ProtoInstance(DEF="a8")
-ProtoInstance344.name = "Oxygen"
-fieldValue345 = x3d.fieldValue()
-fieldValue345.name = "position"
-fieldValue345.value = "-2.0514 -0.8362 0"
+ProtoInstance361.fieldValue.append(fieldValue362)
 
-ProtoInstance344.fieldValue.append(fieldValue345)
+Transform360.children.append(ProtoInstance361)
 
-Transform343.children.append(ProtoInstance344)
+Group323.children.append(Transform360)
+Transform363 = x3d.Transform()
+ProtoInstance364 = x3d.ProtoInstance(DEF="a14")
+ProtoInstance364.name = "Carbon"
+fieldValue365 = x3d.fieldValue()
+fieldValue365.name = "position"
+fieldValue365.value = "-7.2243 0.0223 0"
 
-Group321.children.append(Transform343)
-Transform346 = x3d.Transform()
-ProtoInstance347 = x3d.ProtoInstance(DEF="a9")
-ProtoInstance347.name = "Carbon"
-fieldValue348 = x3d.fieldValue()
-fieldValue348.name = "position"
-fieldValue348.value = "-2.5753 4.3034 0"
+ProtoInstance364.fieldValue.append(fieldValue365)
 
-ProtoInstance347.fieldValue.append(fieldValue348)
+Transform363.children.append(ProtoInstance364)
 
-Transform346.children.append(ProtoInstance347)
+Group323.children.append(Transform363)
+Transform366 = x3d.Transform()
+ProtoInstance367 = x3d.ProtoInstance(DEF="a15")
+ProtoInstance367.name = "Carbon"
+fieldValue368 = x3d.fieldValue()
+fieldValue368.name = "position"
+fieldValue368.value = "1.2041 3.3892 0"
 
-Group321.children.append(Transform346)
-Transform349 = x3d.Transform()
-ProtoInstance350 = x3d.ProtoInstance(DEF="a10")
-ProtoInstance350.name = "Nitrogen"
-fieldValue351 = x3d.fieldValue()
-fieldValue351.name = "position"
-fieldValue351.value = "-6.1764 1.1595 0"
+ProtoInstance367.fieldValue.append(fieldValue368)
 
-ProtoInstance350.fieldValue.append(fieldValue351)
+Transform366.children.append(ProtoInstance367)
 
-Transform349.children.append(ProtoInstance350)
+Group323.children.append(Transform366)
+Transform369 = x3d.Transform()
+ProtoInstance370 = x3d.ProtoInstance(DEF="a16")
+ProtoInstance370.name = "Sulphur"
+fieldValue371 = x3d.fieldValue()
+fieldValue371.name = "position"
+fieldValue371.value = "1.1706 -2.4081 0"
 
-Group321.children.append(Transform349)
-Transform352 = x3d.Transform()
-ProtoInstance353 = x3d.ProtoInstance(DEF="a11")
-ProtoInstance353.name = "Oxygen"
-fieldValue354 = x3d.fieldValue()
-fieldValue354.name = "position"
-fieldValue354.value = "-4.1585 -0.6132 0"
+ProtoInstance370.fieldValue.append(fieldValue371)
 
-ProtoInstance353.fieldValue.append(fieldValue354)
+Transform369.children.append(ProtoInstance370)
 
-Transform352.children.append(ProtoInstance353)
+Group323.children.append(Transform369)
+Transform372 = x3d.Transform()
+ProtoInstance373 = x3d.ProtoInstance(DEF="a17")
+ProtoInstance373.name = "Carbon"
+fieldValue374 = x3d.fieldValue()
+fieldValue374.name = "position"
+fieldValue374.value = "-8.7071 0.3568 0"
 
-Group321.children.append(Transform352)
-Transform355 = x3d.Transform()
-ProtoInstance356 = x3d.ProtoInstance(DEF="a12")
-ProtoInstance356.name = "Nitrogen"
-fieldValue357 = x3d.fieldValue()
-fieldValue357.name = "position"
-fieldValue357.value = "0.4905 2.0402 0"
+ProtoInstance373.fieldValue.append(fieldValue374)
 
-ProtoInstance356.fieldValue.append(fieldValue357)
+Transform372.children.append(ProtoInstance373)
 
-Transform355.children.append(ProtoInstance356)
+Group323.children.append(Transform372)
+Transform375 = x3d.Transform()
+ProtoInstance376 = x3d.ProtoInstance(DEF="a18")
+ProtoInstance376.name = "Carbon"
+fieldValue377 = x3d.fieldValue()
+fieldValue377.name = "position"
+fieldValue377.value = "-6.7226 -1.4382 0"
 
-Group321.children.append(Transform355)
-Transform358 = x3d.Transform()
-ProtoInstance359 = x3d.ProtoInstance(DEF="a13")
-ProtoInstance359.name = "Carbon"
-fieldValue360 = x3d.fieldValue()
-fieldValue360.name = "position"
-fieldValue360.value = "0.4905 -1.0257 0"
+ProtoInstance376.fieldValue.append(fieldValue377)
 
-ProtoInstance359.fieldValue.append(fieldValue360)
+Transform375.children.append(ProtoInstance376)
 
-Transform358.children.append(ProtoInstance359)
+Group323.children.append(Transform375)
+Transform378 = x3d.Transform()
+ProtoInstance379 = x3d.ProtoInstance(DEF="a19")
+ProtoInstance379.name = "Carbon"
+fieldValue380 = x3d.fieldValue()
+fieldValue380.name = "position"
+fieldValue380.value = "2.3078 4.4929 0"
 
-Group321.children.append(Transform358)
-Transform361 = x3d.Transform()
-ProtoInstance362 = x3d.ProtoInstance(DEF="a14")
-ProtoInstance362.name = "Carbon"
-fieldValue363 = x3d.fieldValue()
-fieldValue363.name = "position"
-fieldValue363.value = "-7.2243 0.0223 0"
+ProtoInstance379.fieldValue.append(fieldValue380)
 
-ProtoInstance362.fieldValue.append(fieldValue363)
+Transform378.children.append(ProtoInstance379)
 
-Transform361.children.append(ProtoInstance362)
+Group323.children.append(Transform378)
+Transform381 = x3d.Transform()
+ProtoInstance382 = x3d.ProtoInstance(DEF="a20")
+ProtoInstance382.name = "Oxygen"
+fieldValue383 = x3d.fieldValue()
+fieldValue383.name = "position"
+fieldValue383.value = "-0.0446 4.3368 0"
 
-Group321.children.append(Transform361)
-Transform364 = x3d.Transform()
-ProtoInstance365 = x3d.ProtoInstance(DEF="a15")
-ProtoInstance365.name = "Carbon"
-fieldValue366 = x3d.fieldValue()
-fieldValue366.name = "position"
-fieldValue366.value = "1.2041 3.3892 0"
+ProtoInstance382.fieldValue.append(fieldValue383)
 
-ProtoInstance365.fieldValue.append(fieldValue366)
+Transform381.children.append(ProtoInstance382)
 
-Transform364.children.append(ProtoInstance365)
+Group323.children.append(Transform381)
+Transform384 = x3d.Transform()
+ProtoInstance385 = x3d.ProtoInstance(DEF="a21")
+ProtoInstance385.name = "Sulphur"
+fieldValue386 = x3d.fieldValue()
+fieldValue386.name = "position"
+fieldValue386.value = "2.2855 -3.5118 0"
 
-Group321.children.append(Transform364)
-Transform367 = x3d.Transform()
-ProtoInstance368 = x3d.ProtoInstance(DEF="a16")
-ProtoInstance368.name = "Sulphur"
-fieldValue369 = x3d.fieldValue()
-fieldValue369.name = "position"
-fieldValue369.value = "1.1706 -2.4081 0"
+ProtoInstance385.fieldValue.append(fieldValue386)
 
-ProtoInstance368.fieldValue.append(fieldValue369)
+Transform384.children.append(ProtoInstance385)
 
-Transform367.children.append(ProtoInstance368)
+Group323.children.append(Transform384)
+Transform387 = x3d.Transform()
+ProtoInstance388 = x3d.ProtoInstance(DEF="a22")
+ProtoInstance388.name = "Nitrogen"
+fieldValue389 = x3d.fieldValue()
+fieldValue389.name = "position"
+fieldValue389.value = "-9.7662 -0.7804 0"
 
-Group321.children.append(Transform367)
-Transform370 = x3d.Transform()
-ProtoInstance371 = x3d.ProtoInstance(DEF="a17")
-ProtoInstance371.name = "Carbon"
-fieldValue372 = x3d.fieldValue()
-fieldValue372.name = "position"
-fieldValue372.value = "-8.7071 0.3568 0"
+ProtoInstance388.fieldValue.append(fieldValue389)
 
-ProtoInstance371.fieldValue.append(fieldValue372)
+Transform387.children.append(ProtoInstance388)
 
-Transform370.children.append(ProtoInstance371)
+Group323.children.append(Transform387)
+Transform390 = x3d.Transform()
+ProtoInstance391 = x3d.ProtoInstance(DEF="a23")
+ProtoInstance391.name = "Oxygen"
+fieldValue392 = x3d.fieldValue()
+fieldValue392.name = "position"
+fieldValue392.value = "-9.2088 1.8507 0"
 
-Group321.children.append(Transform370)
-Transform373 = x3d.Transform()
-ProtoInstance374 = x3d.ProtoInstance(DEF="a18")
-ProtoInstance374.name = "Carbon"
-fieldValue375 = x3d.fieldValue()
-fieldValue375.name = "position"
-fieldValue375.value = "-6.7226 -1.4382 0"
+ProtoInstance391.fieldValue.append(fieldValue392)
 
-ProtoInstance374.fieldValue.append(fieldValue375)
+Transform390.children.append(ProtoInstance391)
 
-Transform373.children.append(ProtoInstance374)
+Group323.children.append(Transform390)
+Transform393 = x3d.Transform()
+ProtoInstance394 = x3d.ProtoInstance(DEF="a24")
+ProtoInstance394.name = "Carbon"
+fieldValue395 = x3d.fieldValue()
+fieldValue395.name = "position"
+fieldValue395.value = "-7.7483 -2.5753 0"
 
-Group321.children.append(Transform373)
-Transform376 = x3d.Transform()
-ProtoInstance377 = x3d.ProtoInstance(DEF="a19")
-ProtoInstance377.name = "Carbon"
-fieldValue378 = x3d.fieldValue()
-fieldValue378.name = "position"
-fieldValue378.value = "2.3078 4.4929 0"
+ProtoInstance394.fieldValue.append(fieldValue395)
 
-ProtoInstance377.fieldValue.append(fieldValue378)
+Transform393.children.append(ProtoInstance394)
 
-Transform376.children.append(ProtoInstance377)
+Group323.children.append(Transform393)
+Transform396 = x3d.Transform()
+ProtoInstance397 = x3d.ProtoInstance(DEF="a25")
+ProtoInstance397.name = "Nitrogen"
+fieldValue398 = x3d.fieldValue()
+fieldValue398.name = "position"
+fieldValue398.value = "3.6902 5.1841 0"
 
-Group321.children.append(Transform376)
-Transform379 = x3d.Transform()
-ProtoInstance380 = x3d.ProtoInstance(DEF="a20")
-ProtoInstance380.name = "Oxygen"
-fieldValue381 = x3d.fieldValue()
-fieldValue381.name = "position"
-fieldValue381.value = "-0.0446 4.3368 0"
+ProtoInstance397.fieldValue.append(fieldValue398)
 
-ProtoInstance380.fieldValue.append(fieldValue381)
+Transform396.children.append(ProtoInstance397)
 
-Transform379.children.append(ProtoInstance380)
+Group323.children.append(Transform396)
+Transform399 = x3d.Transform()
+ProtoInstance400 = x3d.ProtoInstance(DEF="a26")
+ProtoInstance400.name = "Carbon"
+fieldValue401 = x3d.fieldValue()
+fieldValue401.name = "position"
+fieldValue401.value = "1.3936 5.7416 0"
 
-Group321.children.append(Transform379)
-Transform382 = x3d.Transform()
-ProtoInstance383 = x3d.ProtoInstance(DEF="a21")
-ProtoInstance383.name = "Sulphur"
-fieldValue384 = x3d.fieldValue()
-fieldValue384.name = "position"
-fieldValue384.value = "2.2855 -3.5118 0"
+ProtoInstance400.fieldValue.append(fieldValue401)
 
-ProtoInstance383.fieldValue.append(fieldValue384)
+Transform399.children.append(ProtoInstance400)
 
-Transform382.children.append(ProtoInstance383)
+Group323.children.append(Transform399)
+Transform402 = x3d.Transform()
+ProtoInstance403 = x3d.ProtoInstance(DEF="a27")
+ProtoInstance403.name = "Carbon"
+fieldValue404 = x3d.fieldValue()
+fieldValue404.name = "position"
+fieldValue404.value = "3.6568 -4.2253 0"
 
-Group321.children.append(Transform382)
-Transform385 = x3d.Transform()
-ProtoInstance386 = x3d.ProtoInstance(DEF="a22")
-ProtoInstance386.name = "Nitrogen"
-fieldValue387 = x3d.fieldValue()
-fieldValue387.name = "position"
-fieldValue387.value = "-9.7662 -0.7804 0"
+ProtoInstance403.fieldValue.append(fieldValue404)
 
-ProtoInstance386.fieldValue.append(fieldValue387)
+Transform402.children.append(ProtoInstance403)
 
-Transform385.children.append(ProtoInstance386)
+Group323.children.append(Transform402)
+Transform405 = x3d.Transform()
+ProtoInstance406 = x3d.ProtoInstance(DEF="a28")
+ProtoInstance406.name = "Carbon"
+fieldValue407 = x3d.fieldValue()
+fieldValue407.name = "position"
+fieldValue407.value = "-11.2825 -0.4459 0"
 
-Group321.children.append(Transform385)
-Transform388 = x3d.Transform()
-ProtoInstance389 = x3d.ProtoInstance(DEF="a23")
-ProtoInstance389.name = "Oxygen"
-fieldValue390 = x3d.fieldValue()
-fieldValue390.name = "position"
-fieldValue390.value = "-9.2088 1.8507 0"
+ProtoInstance406.fieldValue.append(fieldValue407)
 
-ProtoInstance389.fieldValue.append(fieldValue390)
+Transform405.children.append(ProtoInstance406)
 
-Transform388.children.append(ProtoInstance389)
+Group323.children.append(Transform405)
+Transform408 = x3d.Transform()
+ProtoInstance409 = x3d.ProtoInstance(DEF="a29")
+ProtoInstance409.name = "Carbon"
+fieldValue410 = x3d.fieldValue()
+fieldValue410.name = "position"
+fieldValue410.value = "-7.2243 -4.0693 0"
 
-Group321.children.append(Transform388)
-Transform391 = x3d.Transform()
-ProtoInstance392 = x3d.ProtoInstance(DEF="a24")
-ProtoInstance392.name = "Carbon"
-fieldValue393 = x3d.fieldValue()
-fieldValue393.name = "position"
-fieldValue393.value = "-7.7483 -2.5753 0"
+ProtoInstance409.fieldValue.append(fieldValue410)
 
-ProtoInstance392.fieldValue.append(fieldValue393)
+Transform408.children.append(ProtoInstance409)
 
-Transform391.children.append(ProtoInstance392)
+Group323.children.append(Transform408)
+Transform411 = x3d.Transform()
+ProtoInstance412 = x3d.ProtoInstance(DEF="a30")
+ProtoInstance412.name = "Carbon"
+fieldValue413 = x3d.fieldValue()
+fieldValue413.name = "position"
+fieldValue413.value = "-8.7963 -2.4081 0"
 
-Group321.children.append(Transform391)
-Transform394 = x3d.Transform()
-ProtoInstance395 = x3d.ProtoInstance(DEF="a25")
-ProtoInstance395.name = "Nitrogen"
-fieldValue396 = x3d.fieldValue()
-fieldValue396.name = "position"
-fieldValue396.value = "3.6902 5.1841 0"
+ProtoInstance412.fieldValue.append(fieldValue413)
 
-ProtoInstance395.fieldValue.append(fieldValue396)
+Transform411.children.append(ProtoInstance412)
 
-Transform394.children.append(ProtoInstance395)
+Group323.children.append(Transform411)
+Transform414 = x3d.Transform()
+ProtoInstance415 = x3d.ProtoInstance(DEF="a31")
+ProtoInstance415.name = "Carbon"
+fieldValue416 = x3d.fieldValue()
+fieldValue416.name = "position"
+fieldValue416.value = "5.2064 5.4405 0"
 
-Group321.children.append(Transform394)
-Transform397 = x3d.Transform()
-ProtoInstance398 = x3d.ProtoInstance(DEF="a26")
-ProtoInstance398.name = "Carbon"
-fieldValue399 = x3d.fieldValue()
-fieldValue399.name = "position"
-fieldValue399.value = "1.3936 5.7416 0"
+ProtoInstance415.fieldValue.append(fieldValue416)
 
-ProtoInstance398.fieldValue.append(fieldValue399)
+Transform414.children.append(ProtoInstance415)
 
-Transform397.children.append(ProtoInstance398)
+Group323.children.append(Transform414)
+Transform417 = x3d.Transform()
+ProtoInstance418 = x3d.ProtoInstance(DEF="a32")
+ProtoInstance418.name = "Carbon"
+fieldValue419 = x3d.fieldValue()
+fieldValue419.name = "position"
+fieldValue419.value = "2.0291 7.1797 0"
 
-Group321.children.append(Transform397)
-Transform400 = x3d.Transform()
-ProtoInstance401 = x3d.ProtoInstance(DEF="a27")
-ProtoInstance401.name = "Carbon"
-fieldValue402 = x3d.fieldValue()
-fieldValue402.name = "position"
-fieldValue402.value = "3.6568 -4.2253 0"
+ProtoInstance418.fieldValue.append(fieldValue419)
 
-ProtoInstance401.fieldValue.append(fieldValue402)
+Transform417.children.append(ProtoInstance418)
 
-Transform400.children.append(ProtoInstance401)
+Group323.children.append(Transform417)
+Transform420 = x3d.Transform()
+ProtoInstance421 = x3d.ProtoInstance(DEF="a33")
+ProtoInstance421.name = "Carbon"
+fieldValue422 = x3d.fieldValue()
+fieldValue422.name = "position"
+fieldValue422.value = "5.1841 -4.4818 0"
 
-Group321.children.append(Transform400)
-Transform403 = x3d.Transform()
-ProtoInstance404 = x3d.ProtoInstance(DEF="a28")
-ProtoInstance404.name = "Carbon"
-fieldValue405 = x3d.fieldValue()
-fieldValue405.name = "position"
-fieldValue405.value = "-11.2825 -0.4459 0"
+ProtoInstance421.fieldValue.append(fieldValue422)
 
-ProtoInstance404.fieldValue.append(fieldValue405)
+Transform420.children.append(ProtoInstance421)
 
-Transform403.children.append(ProtoInstance404)
+Group323.children.append(Transform420)
+Transform423 = x3d.Transform()
+ProtoInstance424 = x3d.ProtoInstance(DEF="a34")
+ProtoInstance424.name = "Carbon"
+fieldValue425 = x3d.fieldValue()
+fieldValue425.name = "position"
+fieldValue425.value = "-12.3304 -1.6054 0"
 
-Group321.children.append(Transform403)
-Transform406 = x3d.Transform()
-ProtoInstance407 = x3d.ProtoInstance(DEF="a29")
-ProtoInstance407.name = "Carbon"
-fieldValue408 = x3d.fieldValue()
-fieldValue408.name = "position"
-fieldValue408.value = "-7.2243 -4.0693 0"
+ProtoInstance424.fieldValue.append(fieldValue425)
 
-ProtoInstance407.fieldValue.append(fieldValue408)
+Transform423.children.append(ProtoInstance424)
 
-Transform406.children.append(ProtoInstance407)
+Group323.children.append(Transform423)
+Transform426 = x3d.Transform()
+ProtoInstance427 = x3d.ProtoInstance(DEF="a35")
+ProtoInstance427.name = "Carbon"
+fieldValue428 = x3d.fieldValue()
+fieldValue428.name = "position"
+fieldValue428.value = "6.7561 5.1841 0"
 
-Group321.children.append(Transform406)
-Transform409 = x3d.Transform()
-ProtoInstance410 = x3d.ProtoInstance(DEF="a30")
-ProtoInstance410.name = "Carbon"
-fieldValue411 = x3d.fieldValue()
-fieldValue411.name = "position"
-fieldValue411.value = "-8.7963 -2.4081 0"
+ProtoInstance427.fieldValue.append(fieldValue428)
 
-ProtoInstance410.fieldValue.append(fieldValue411)
+Transform426.children.append(ProtoInstance427)
 
-Transform409.children.append(ProtoInstance410)
+Group323.children.append(Transform426)
+Transform429 = x3d.Transform()
+ProtoInstance430 = x3d.ProtoInstance(DEF="a36")
+ProtoInstance430.name = "Oxygen"
+fieldValue431 = x3d.fieldValue()
+fieldValue431.name = "position"
+fieldValue431.value = "5.2399 6.9791 0"
 
-Group321.children.append(Transform409)
-Transform412 = x3d.Transform()
-ProtoInstance413 = x3d.ProtoInstance(DEF="a31")
-ProtoInstance413.name = "Carbon"
-fieldValue414 = x3d.fieldValue()
-fieldValue414.name = "position"
-fieldValue414.value = "5.2064 5.4405 0"
+ProtoInstance430.fieldValue.append(fieldValue431)
 
-ProtoInstance413.fieldValue.append(fieldValue414)
+Transform429.children.append(ProtoInstance430)
 
-Transform412.children.append(ProtoInstance413)
+Group323.children.append(Transform429)
+Transform432 = x3d.Transform()
+ProtoInstance433 = x3d.ProtoInstance(DEF="a37")
+ProtoInstance433.name = "Nitrogen"
+fieldValue434 = x3d.fieldValue()
+fieldValue434.name = "position"
+fieldValue434.value = "1.126 8.4507 0"
 
-Group321.children.append(Transform412)
-Transform415 = x3d.Transform()
-ProtoInstance416 = x3d.ProtoInstance(DEF="a32")
-ProtoInstance416.name = "Carbon"
-fieldValue417 = x3d.fieldValue()
-fieldValue417.name = "position"
-fieldValue417.value = "2.0291 7.1797 0"
+ProtoInstance433.fieldValue.append(fieldValue434)
 
-ProtoInstance416.fieldValue.append(fieldValue417)
+Transform432.children.append(ProtoInstance433)
 
-Transform415.children.append(ProtoInstance416)
+Group323.children.append(Transform432)
+Transform435 = x3d.Transform()
+ProtoInstance436 = x3d.ProtoInstance(DEF="a38")
+ProtoInstance436.name = "Oxygen"
+fieldValue437 = x3d.fieldValue()
+fieldValue437.name = "position"
+fieldValue437.value = "3.5787 7.3135 0"
 
-Group321.children.append(Transform415)
-Transform418 = x3d.Transform()
-ProtoInstance419 = x3d.ProtoInstance(DEF="a33")
-ProtoInstance419.name = "Carbon"
-fieldValue420 = x3d.fieldValue()
-fieldValue420.name = "position"
-fieldValue420.value = "5.1841 -4.4818 0"
+ProtoInstance436.fieldValue.append(fieldValue437)
 
-ProtoInstance419.fieldValue.append(fieldValue420)
+Transform435.children.append(ProtoInstance436)
 
-Transform418.children.append(ProtoInstance419)
+Group323.children.append(Transform435)
+Transform438 = x3d.Transform()
+ProtoInstance439 = x3d.ProtoInstance(DEF="a39")
+ProtoInstance439.name = "Carbon"
+fieldValue440 = x3d.fieldValue()
+fieldValue440.name = "position"
+fieldValue440.value = "6.7226 -4.2253 0"
 
-Group321.children.append(Transform418)
-Transform421 = x3d.Transform()
-ProtoInstance422 = x3d.ProtoInstance(DEF="a34")
-ProtoInstance422.name = "Carbon"
-fieldValue423 = x3d.fieldValue()
-fieldValue423.name = "position"
-fieldValue423.value = "-12.3304 -1.6054 0"
+ProtoInstance439.fieldValue.append(fieldValue440)
 
-ProtoInstance422.fieldValue.append(fieldValue423)
+Transform438.children.append(ProtoInstance439)
 
-Transform421.children.append(ProtoInstance422)
+Group323.children.append(Transform438)
+Transform441 = x3d.Transform()
+ProtoInstance442 = x3d.ProtoInstance(DEF="a40")
+ProtoInstance442.name = "Nitrogen"
+fieldValue443 = x3d.fieldValue()
+fieldValue443.name = "position"
+fieldValue443.value = "5.1841 -6.0203 0"
 
-Group321.children.append(Transform421)
-Transform424 = x3d.Transform()
-ProtoInstance425 = x3d.ProtoInstance(DEF="a35")
-ProtoInstance425.name = "Carbon"
-fieldValue426 = x3d.fieldValue()
-fieldValue426.name = "position"
-fieldValue426.value = "6.7561 5.1841 0"
+ProtoInstance442.fieldValue.append(fieldValue443)
 
-ProtoInstance425.fieldValue.append(fieldValue426)
+Transform441.children.append(ProtoInstance442)
 
-Transform424.children.append(ProtoInstance425)
+Group323.children.append(Transform441)
+Transform444 = x3d.Transform()
+ProtoInstance445 = x3d.ProtoInstance(DEF="a41")
+ProtoInstance445.name = "Nitrogen"
+fieldValue446 = x3d.fieldValue()
+fieldValue446.name = "position"
+fieldValue446.value = "-13.8466 -1.2709 0"
 
-Group321.children.append(Transform424)
-Transform427 = x3d.Transform()
-ProtoInstance428 = x3d.ProtoInstance(DEF="a36")
-ProtoInstance428.name = "Oxygen"
-fieldValue429 = x3d.fieldValue()
-fieldValue429.name = "position"
-fieldValue429.value = "5.2399 6.9791 0"
+ProtoInstance445.fieldValue.append(fieldValue446)
 
-ProtoInstance428.fieldValue.append(fieldValue429)
+Transform444.children.append(ProtoInstance445)
 
-Transform427.children.append(ProtoInstance428)
+Group323.children.append(Transform444)
+Transform447 = x3d.Transform()
+ProtoInstance448 = x3d.ProtoInstance(DEF="a42")
+ProtoInstance448.name = "Oxygen"
+fieldValue449 = x3d.fieldValue()
+fieldValue449.name = "position"
+fieldValue449.value = "-11.8622 -3.0659 0"
 
-Group321.children.append(Transform427)
-Transform430 = x3d.Transform()
-ProtoInstance431 = x3d.ProtoInstance(DEF="a37")
-ProtoInstance431.name = "Nitrogen"
-fieldValue432 = x3d.fieldValue()
-fieldValue432.name = "position"
-fieldValue432.value = "1.126 8.4507 0"
+ProtoInstance448.fieldValue.append(fieldValue449)
 
-ProtoInstance431.fieldValue.append(fieldValue432)
+Transform447.children.append(ProtoInstance448)
 
-Transform430.children.append(ProtoInstance431)
+Group323.children.append(Transform447)
+Transform450 = x3d.Transform()
+ProtoInstance451 = x3d.ProtoInstance(DEF="a43")
+ProtoInstance451.name = "Nitrogen"
+fieldValue452 = x3d.fieldValue()
+fieldValue452.name = "position"
+fieldValue452.value = "8.1385 4.4706 0"
 
-Group321.children.append(Transform430)
-Transform433 = x3d.Transform()
-ProtoInstance434 = x3d.ProtoInstance(DEF="a38")
-ProtoInstance434.name = "Oxygen"
-fieldValue435 = x3d.fieldValue()
-fieldValue435.name = "position"
-fieldValue435.value = "3.5787 7.3135 0"
+ProtoInstance451.fieldValue.append(fieldValue452)
 
-ProtoInstance434.fieldValue.append(fieldValue435)
+Transform450.children.append(ProtoInstance451)
 
-Transform433.children.append(ProtoInstance434)
+Group323.children.append(Transform450)
+Transform453 = x3d.Transform()
+ProtoInstance454 = x3d.ProtoInstance(DEF="a44")
+ProtoInstance454.name = "Carbon"
+fieldValue455 = x3d.fieldValue()
+fieldValue455.name = "position"
+fieldValue455.value = "7.2243 6.6781 0"
 
-Group321.children.append(Transform433)
-Transform436 = x3d.Transform()
-ProtoInstance437 = x3d.ProtoInstance(DEF="a39")
-ProtoInstance437.name = "Carbon"
-fieldValue438 = x3d.fieldValue()
-fieldValue438.name = "position"
-fieldValue438.value = "6.7226 -4.2253 0"
+ProtoInstance454.fieldValue.append(fieldValue455)
 
-ProtoInstance437.fieldValue.append(fieldValue438)
+Transform453.children.append(ProtoInstance454)
 
-Transform436.children.append(ProtoInstance437)
+Group323.children.append(Transform453)
+Transform456 = x3d.Transform()
+ProtoInstance457 = x3d.ProtoInstance(DEF="a45")
+ProtoInstance457.name = "Nitrogen"
+fieldValue458 = x3d.fieldValue()
+fieldValue458.name = "position"
+fieldValue458.value = "8.1051 -3.5341 0"
 
-Group321.children.append(Transform436)
-Transform439 = x3d.Transform()
-ProtoInstance440 = x3d.ProtoInstance(DEF="a40")
-ProtoInstance440.name = "Nitrogen"
-fieldValue441 = x3d.fieldValue()
-fieldValue441.name = "position"
-fieldValue441.value = "5.1841 -6.0203 0"
+ProtoInstance457.fieldValue.append(fieldValue458)
 
-ProtoInstance440.fieldValue.append(fieldValue441)
+Transform456.children.append(ProtoInstance457)
 
-Transform439.children.append(ProtoInstance440)
+Group323.children.append(Transform456)
+Transform459 = x3d.Transform()
+ProtoInstance460 = x3d.ProtoInstance(DEF="a46")
+ProtoInstance460.name = "Oxygen"
+fieldValue461 = x3d.fieldValue()
+fieldValue461.name = "position"
+fieldValue461.value = "7.202 -5.7193 0"
 
-Group321.children.append(Transform439)
-Transform442 = x3d.Transform()
-ProtoInstance443 = x3d.ProtoInstance(DEF="a41")
-ProtoInstance443.name = "Nitrogen"
-fieldValue444 = x3d.fieldValue()
-fieldValue444.name = "position"
-fieldValue444.value = "-13.8466 -1.2709 0"
+ProtoInstance460.fieldValue.append(fieldValue461)
 
-ProtoInstance443.fieldValue.append(fieldValue444)
+Transform459.children.append(ProtoInstance460)
 
-Transform442.children.append(ProtoInstance443)
+Group323.children.append(Transform459)
+Transform462 = x3d.Transform()
+ProtoInstance463 = x3d.ProtoInstance(DEF="a47")
+ProtoInstance463.name = "Carbon"
+fieldValue464 = x3d.fieldValue()
+fieldValue464.name = "position"
+fieldValue464.value = "9.2422 3.3669 0"
 
-Group321.children.append(Transform442)
-Transform445 = x3d.Transform()
-ProtoInstance446 = x3d.ProtoInstance(DEF="a42")
-ProtoInstance446.name = "Oxygen"
-fieldValue447 = x3d.fieldValue()
-fieldValue447.name = "position"
-fieldValue447.value = "-11.8622 -3.0659 0"
+ProtoInstance463.fieldValue.append(fieldValue464)
 
-ProtoInstance446.fieldValue.append(fieldValue447)
+Transform462.children.append(ProtoInstance463)
 
-Transform445.children.append(ProtoInstance446)
+Group323.children.append(Transform462)
+Transform465 = x3d.Transform()
+ProtoInstance466 = x3d.ProtoInstance(DEF="a48")
+ProtoInstance466.name = "Carbon"
+fieldValue467 = x3d.fieldValue()
+fieldValue467.name = "position"
+fieldValue467.value = "8.7406 6.9791 0"
 
-Group321.children.append(Transform445)
-Transform448 = x3d.Transform()
-ProtoInstance449 = x3d.ProtoInstance(DEF="a43")
-ProtoInstance449.name = "Nitrogen"
-fieldValue450 = x3d.fieldValue()
-fieldValue450.name = "position"
-fieldValue450.value = "8.1385 4.4706 0"
+ProtoInstance466.fieldValue.append(fieldValue467)
 
-ProtoInstance449.fieldValue.append(fieldValue450)
+Transform465.children.append(ProtoInstance466)
 
-Transform448.children.append(ProtoInstance449)
+Group323.children.append(Transform465)
+Transform468 = x3d.Transform()
+ProtoInstance469 = x3d.ProtoInstance(DEF="a49")
+ProtoInstance469.name = "Carbon"
+fieldValue470 = x3d.fieldValue()
+fieldValue470.name = "position"
+fieldValue470.value = "9.2088 -2.4304 0"
 
-Group321.children.append(Transform448)
-Transform451 = x3d.Transform()
-ProtoInstance452 = x3d.ProtoInstance(DEF="a44")
-ProtoInstance452.name = "Carbon"
-fieldValue453 = x3d.fieldValue()
-fieldValue453.name = "position"
-fieldValue453.value = "7.2243 6.6781 0"
+ProtoInstance469.fieldValue.append(fieldValue470)
 
-ProtoInstance452.fieldValue.append(fieldValue453)
+Transform468.children.append(ProtoInstance469)
 
-Transform451.children.append(ProtoInstance452)
+Group323.children.append(Transform468)
+Transform471 = x3d.Transform()
+ProtoInstance472 = x3d.ProtoInstance(DEF="a50")
+ProtoInstance472.name = "Carbon"
+fieldValue473 = x3d.fieldValue()
+fieldValue473.name = "position"
+fieldValue473.value = "9.9335 1.9845 0"
 
-Group321.children.append(Transform451)
-Transform454 = x3d.Transform()
-ProtoInstance455 = x3d.ProtoInstance(DEF="a45")
-ProtoInstance455.name = "Nitrogen"
-fieldValue456 = x3d.fieldValue()
-fieldValue456.name = "position"
-fieldValue456.value = "8.1051 -3.5341 0"
+ProtoInstance472.fieldValue.append(fieldValue473)
 
-ProtoInstance455.fieldValue.append(fieldValue456)
+Transform471.children.append(ProtoInstance472)
 
-Transform454.children.append(ProtoInstance455)
+Group323.children.append(Transform471)
+Transform474 = x3d.Transform()
+ProtoInstance475 = x3d.ProtoInstance(DEF="a51")
+ProtoInstance475.name = "Oxygen"
+fieldValue476 = x3d.fieldValue()
+fieldValue476.name = "position"
+fieldValue476.value = "10.4797 4.3034 0"
 
-Group321.children.append(Transform454)
-Transform457 = x3d.Transform()
-ProtoInstance458 = x3d.ProtoInstance(DEF="a46")
-ProtoInstance458.name = "Oxygen"
-fieldValue459 = x3d.fieldValue()
-fieldValue459.name = "position"
-fieldValue459.value = "7.202 -5.7193 0"
+ProtoInstance475.fieldValue.append(fieldValue476)
 
-ProtoInstance458.fieldValue.append(fieldValue459)
+Transform474.children.append(ProtoInstance475)
 
-Transform457.children.append(ProtoInstance458)
+Group323.children.append(Transform474)
+Transform477 = x3d.Transform()
+ProtoInstance478 = x3d.ProtoInstance(DEF="a52")
+ProtoInstance478.name = "Carbon"
+fieldValue479 = x3d.fieldValue()
+fieldValue479.name = "position"
+fieldValue479.value = "9.2422 8.4507 0"
 
-Group321.children.append(Transform457)
-Transform460 = x3d.Transform()
-ProtoInstance461 = x3d.ProtoInstance(DEF="a47")
-ProtoInstance461.name = "Carbon"
-fieldValue462 = x3d.fieldValue()
-fieldValue462.name = "position"
-fieldValue462.value = "9.2422 3.3669 0"
+ProtoInstance478.fieldValue.append(fieldValue479)
 
-ProtoInstance461.fieldValue.append(fieldValue462)
+Transform477.children.append(ProtoInstance478)
 
-Transform460.children.append(ProtoInstance461)
+Group323.children.append(Transform477)
+Transform480 = x3d.Transform()
+ProtoInstance481 = x3d.ProtoInstance(DEF="a53")
+ProtoInstance481.name = "Carbon"
+fieldValue482 = x3d.fieldValue()
+fieldValue482.name = "position"
+fieldValue482.value = "10.4797 -3.3446 0"
 
-Group321.children.append(Transform460)
-Transform463 = x3d.Transform()
-ProtoInstance464 = x3d.ProtoInstance(DEF="a48")
-ProtoInstance464.name = "Carbon"
-fieldValue465 = x3d.fieldValue()
-fieldValue465.name = "position"
-fieldValue465.value = "8.7406 6.9791 0"
+ProtoInstance481.fieldValue.append(fieldValue482)
 
-ProtoInstance464.fieldValue.append(fieldValue465)
+Transform480.children.append(ProtoInstance481)
 
-Transform463.children.append(ProtoInstance464)
+Group323.children.append(Transform480)
+Transform483 = x3d.Transform()
+ProtoInstance484 = x3d.ProtoInstance(DEF="a54")
+ProtoInstance484.name = "Carbon"
+fieldValue485 = x3d.fieldValue()
+fieldValue485.name = "position"
+fieldValue485.value = "9.9335 -1.0591 0"
 
-Group321.children.append(Transform463)
-Transform466 = x3d.Transform()
-ProtoInstance467 = x3d.ProtoInstance(DEF="a49")
-ProtoInstance467.name = "Carbon"
-fieldValue468 = x3d.fieldValue()
-fieldValue468.name = "position"
-fieldValue468.value = "9.2088 -2.4304 0"
+ProtoInstance484.fieldValue.append(fieldValue485)
 
-ProtoInstance467.fieldValue.append(fieldValue468)
+Transform483.children.append(ProtoInstance484)
 
-Transform466.children.append(ProtoInstance467)
+Group323.children.append(Transform483)
+Transform486 = x3d.Transform()
+ProtoInstance487 = x3d.ProtoInstance(DEF="a55")
+ProtoInstance487.name = "Nitrogen"
+fieldValue488 = x3d.fieldValue()
+fieldValue488.name = "position"
+fieldValue488.value = "10.1787 0.4682 0"
 
-Group321.children.append(Transform466)
-Transform469 = x3d.Transform()
-ProtoInstance470 = x3d.ProtoInstance(DEF="a50")
-ProtoInstance470.name = "Carbon"
-fieldValue471 = x3d.fieldValue()
-fieldValue471.name = "position"
-fieldValue471.value = "9.9335 1.9845 0"
+ProtoInstance487.fieldValue.append(fieldValue488)
 
-ProtoInstance470.fieldValue.append(fieldValue471)
+Transform486.children.append(ProtoInstance487)
 
-Transform469.children.append(ProtoInstance470)
+Group323.children.append(Transform486)
+Transform489 = x3d.Transform()
+ProtoInstance490 = x3d.ProtoInstance(DEF="a56")
+ProtoInstance490.name = "Carbon"
+fieldValue491 = x3d.fieldValue()
+fieldValue491.name = "position"
+fieldValue491.value = "11.4274 2.4862 0"
 
-Group321.children.append(Transform469)
-Transform472 = x3d.Transform()
-ProtoInstance473 = x3d.ProtoInstance(DEF="a51")
-ProtoInstance473.name = "Oxygen"
-fieldValue474 = x3d.fieldValue()
-fieldValue474.name = "position"
-fieldValue474.value = "10.4797 4.3034 0"
+ProtoInstance490.fieldValue.append(fieldValue491)
 
-ProtoInstance473.fieldValue.append(fieldValue474)
+Transform489.children.append(ProtoInstance490)
 
-Transform472.children.append(ProtoInstance473)
+Group323.children.append(Transform489)
+Transform492 = x3d.Transform()
+ProtoInstance493 = x3d.ProtoInstance(DEF="a57")
+ProtoInstance493.name = "Nitrogen"
+fieldValue494 = x3d.fieldValue()
+fieldValue494.name = "position"
+fieldValue494.value = "10.7585 8.774 0"
 
-Group321.children.append(Transform472)
-Transform475 = x3d.Transform()
-ProtoInstance476 = x3d.ProtoInstance(DEF="a52")
-ProtoInstance476.name = "Carbon"
-fieldValue477 = x3d.fieldValue()
-fieldValue477.name = "position"
-fieldValue477.value = "9.2422 8.4507 0"
+ProtoInstance493.fieldValue.append(fieldValue494)
 
-ProtoInstance476.fieldValue.append(fieldValue477)
+Transform492.children.append(ProtoInstance493)
 
-Transform475.children.append(ProtoInstance476)
+Group323.children.append(Transform492)
+Transform495 = x3d.Transform()
+ProtoInstance496 = x3d.ProtoInstance(DEF="a58")
+ProtoInstance496.name = "Oxygen"
+fieldValue497 = x3d.fieldValue()
+fieldValue497.name = "position"
+fieldValue497.value = "8.2166 9.6324 0"
 
-Group321.children.append(Transform475)
-Transform478 = x3d.Transform()
-ProtoInstance479 = x3d.ProtoInstance(DEF="a53")
-ProtoInstance479.name = "Carbon"
-fieldValue480 = x3d.fieldValue()
-fieldValue480.name = "position"
-fieldValue480.value = "10.4797 -3.3446 0"
+ProtoInstance496.fieldValue.append(fieldValue497)
 
-ProtoInstance479.fieldValue.append(fieldValue480)
+Transform495.children.append(ProtoInstance496)
 
-Transform478.children.append(ProtoInstance479)
+Group323.children.append(Transform495)
+Transform498 = x3d.Transform()
+ProtoInstance499 = x3d.ProtoInstance(DEF="a59")
+ProtoInstance499.name = "Carbon"
+fieldValue500 = x3d.fieldValue()
+fieldValue500.name = "position"
+fieldValue500.value = "10.3237 -4.8943 0"
 
-Group321.children.append(Transform478)
-Transform481 = x3d.Transform()
-ProtoInstance482 = x3d.ProtoInstance(DEF="a54")
-ProtoInstance482.name = "Carbon"
-fieldValue483 = x3d.fieldValue()
-fieldValue483.name = "position"
-fieldValue483.value = "9.9335 -1.0591 0"
+ProtoInstance499.fieldValue.append(fieldValue500)
 
-ProtoInstance482.fieldValue.append(fieldValue483)
+Transform498.children.append(ProtoInstance499)
 
-Transform481.children.append(ProtoInstance482)
+Group323.children.append(Transform498)
+Transform501 = x3d.Transform()
+ProtoInstance502 = x3d.ProtoInstance(DEF="a60")
+ProtoInstance502.name = "Oxygen"
+fieldValue503 = x3d.fieldValue()
+fieldValue503.name = "position"
+fieldValue503.value = "11.4274 -1.5274 0"
 
-Group321.children.append(Transform481)
-Transform484 = x3d.Transform()
-ProtoInstance485 = x3d.ProtoInstance(DEF="a55")
-ProtoInstance485.name = "Nitrogen"
-fieldValue486 = x3d.fieldValue()
-fieldValue486.name = "position"
-fieldValue486.value = "10.1787 0.4682 0"
+ProtoInstance502.fieldValue.append(fieldValue503)
 
-ProtoInstance485.fieldValue.append(fieldValue486)
+Transform501.children.append(ProtoInstance502)
 
-Transform484.children.append(ProtoInstance485)
+Group323.children.append(Transform501)
+Transform504 = x3d.Transform()
+ProtoInstance505 = x3d.ProtoInstance(DEF="a61")
+ProtoInstance505.name = "Carbon"
+fieldValue506 = x3d.fieldValue()
+fieldValue506.name = "position"
+fieldValue506.value = "12.5534 1.427 0"
 
-Group321.children.append(Transform484)
-Transform487 = x3d.Transform()
-ProtoInstance488 = x3d.ProtoInstance(DEF="a56")
-ProtoInstance488.name = "Carbon"
-fieldValue489 = x3d.fieldValue()
-fieldValue489.name = "position"
-fieldValue489.value = "11.4274 2.4862 0"
+ProtoInstance505.fieldValue.append(fieldValue506)
 
-ProtoInstance488.fieldValue.append(fieldValue489)
+Transform504.children.append(ProtoInstance505)
 
-Transform487.children.append(ProtoInstance488)
+Group323.children.append(Transform504)
+Transform507 = x3d.Transform()
+ProtoInstance508 = x3d.ProtoInstance(DEF="a62")
+ProtoInstance508.name = "Carbon"
+fieldValue509 = x3d.fieldValue()
+fieldValue509.name = "position"
+fieldValue509.value = "11.7507 4.0024 0"
 
-Group321.children.append(Transform487)
-Transform490 = x3d.Transform()
-ProtoInstance491 = x3d.ProtoInstance(DEF="a57")
-ProtoInstance491.name = "Nitrogen"
-fieldValue492 = x3d.fieldValue()
-fieldValue492.name = "position"
-fieldValue492.value = "10.7585 8.774 0"
+ProtoInstance508.fieldValue.append(fieldValue509)
 
-ProtoInstance491.fieldValue.append(fieldValue492)
+Transform507.children.append(ProtoInstance508)
 
-Transform490.children.append(ProtoInstance491)
+Group323.children.append(Transform507)
+Transform510 = x3d.Transform()
+ProtoInstance511 = x3d.ProtoInstance(DEF="a63")
+ProtoInstance511.name = "Carbon"
+fieldValue512 = x3d.fieldValue()
+fieldValue512.name = "position"
+fieldValue512.value = "8.8855 -5.5297 0"
 
-Group321.children.append(Transform490)
-Transform493 = x3d.Transform()
-ProtoInstance494 = x3d.ProtoInstance(DEF="a58")
-ProtoInstance494.name = "Oxygen"
-fieldValue495 = x3d.fieldValue()
-fieldValue495.name = "position"
-fieldValue495.value = "8.2166 9.6324 0"
+ProtoInstance511.fieldValue.append(fieldValue512)
 
-ProtoInstance494.fieldValue.append(fieldValue495)
+Transform510.children.append(ProtoInstance511)
 
-Transform493.children.append(ProtoInstance494)
+Group323.children.append(Transform510)
+Transform513 = x3d.Transform()
+ProtoInstance514 = x3d.ProtoInstance(DEF="a64")
+ProtoInstance514.name = "Carbon"
+fieldValue515 = x3d.fieldValue()
+fieldValue515.name = "position"
+fieldValue515.value = "11.5612 -5.8085 0"
 
-Group321.children.append(Transform493)
-Transform496 = x3d.Transform()
-ProtoInstance497 = x3d.ProtoInstance(DEF="a59")
-ProtoInstance497.name = "Carbon"
-fieldValue498 = x3d.fieldValue()
-fieldValue498.name = "position"
-fieldValue498.value = "10.3237 -4.8943 0"
+ProtoInstance514.fieldValue.append(fieldValue515)
 
-ProtoInstance497.fieldValue.append(fieldValue498)
+Transform513.children.append(ProtoInstance514)
 
-Transform496.children.append(ProtoInstance497)
+Group323.children.append(Transform513)
+Transform516 = x3d.Transform()
+ProtoInstance517 = x3d.ProtoInstance(DEF="a65")
+ProtoInstance517.name = "Carbon"
+fieldValue518 = x3d.fieldValue()
+fieldValue518.name = "position"
+fieldValue518.value = "14.0473 1.9064 0"
 
-Group321.children.append(Transform496)
-Transform499 = x3d.Transform()
-ProtoInstance500 = x3d.ProtoInstance(DEF="a60")
-ProtoInstance500.name = "Oxygen"
-fieldValue501 = x3d.fieldValue()
-fieldValue501.name = "position"
-fieldValue501.value = "11.4274 -1.5274 0"
+ProtoInstance517.fieldValue.append(fieldValue518)
 
-ProtoInstance500.fieldValue.append(fieldValue501)
+Transform516.children.append(ProtoInstance517)
 
-Transform499.children.append(ProtoInstance500)
+Group323.children.append(Transform516)
+Transform519 = x3d.Transform()
+ProtoInstance520 = x3d.ProtoInstance(DEF="a66")
+ProtoInstance520.name = "Carbon"
+fieldValue521 = x3d.fieldValue()
+fieldValue521.name = "position"
+fieldValue521.value = "8.7183 -7.0794 0"
 
-Group321.children.append(Transform499)
-Transform502 = x3d.Transform()
-ProtoInstance503 = x3d.ProtoInstance(DEF="a61")
-ProtoInstance503.name = "Carbon"
-fieldValue504 = x3d.fieldValue()
-fieldValue504.name = "position"
-fieldValue504.value = "12.5534 1.427 0"
+ProtoInstance520.fieldValue.append(fieldValue521)
 
-ProtoInstance503.fieldValue.append(fieldValue504)
+Transform519.children.append(ProtoInstance520)
 
-Transform502.children.append(ProtoInstance503)
+Group323.children.append(Transform519)
+Transform522 = x3d.Transform()
+ProtoInstance523 = x3d.ProtoInstance(DEF="a67")
+ProtoInstance523.name = "Carbon"
+fieldValue524 = x3d.fieldValue()
+fieldValue524.name = "position"
+fieldValue524.value = "11.3939 -7.347 0"
 
-Group321.children.append(Transform502)
-Transform505 = x3d.Transform()
-ProtoInstance506 = x3d.ProtoInstance(DEF="a62")
-ProtoInstance506.name = "Carbon"
-fieldValue507 = x3d.fieldValue()
-fieldValue507.name = "position"
-fieldValue507.value = "11.7507 4.0024 0"
+ProtoInstance523.fieldValue.append(fieldValue524)
 
-ProtoInstance506.fieldValue.append(fieldValue507)
+Transform522.children.append(ProtoInstance523)
 
-Transform505.children.append(ProtoInstance506)
+Group323.children.append(Transform522)
+Transform525 = x3d.Transform()
+ProtoInstance526 = x3d.ProtoInstance(DEF="a68")
+ProtoInstance526.name = "Carbon"
+fieldValue527 = x3d.fieldValue()
+fieldValue527.name = "position"
+fieldValue527.value = "9.9892 -7.9824 0"
 
-Group321.children.append(Transform505)
-Transform508 = x3d.Transform()
-ProtoInstance509 = x3d.ProtoInstance(DEF="a63")
-ProtoInstance509.name = "Carbon"
-fieldValue510 = x3d.fieldValue()
-fieldValue510.name = "position"
-fieldValue510.value = "8.8855 -5.5297 0"
+ProtoInstance526.fieldValue.append(fieldValue527)
 
-ProtoInstance509.fieldValue.append(fieldValue510)
+Transform525.children.append(ProtoInstance526)
 
-Transform508.children.append(ProtoInstance509)
+Group323.children.append(Transform525)
+Transform528 = x3d.Transform()
+ProtoInstance529 = x3d.ProtoInstance(DEF="a69")
+ProtoInstance529.name = "Oxygen"
+fieldValue530 = x3d.fieldValue()
+fieldValue530.name = "position"
+fieldValue530.value = "9.7885 -9.5321 0"
 
-Group321.children.append(Transform508)
-Transform511 = x3d.Transform()
-ProtoInstance512 = x3d.ProtoInstance(DEF="a64")
-ProtoInstance512.name = "Carbon"
-fieldValue513 = x3d.fieldValue()
-fieldValue513.name = "position"
-fieldValue513.value = "11.5612 -5.8085 0"
+ProtoInstance529.fieldValue.append(fieldValue530)
 
-ProtoInstance512.fieldValue.append(fieldValue513)
+Transform528.children.append(ProtoInstance529)
 
-Transform511.children.append(ProtoInstance512)
+Group323.children.append(Transform528)
 
-Group321.children.append(Transform511)
-Transform514 = x3d.Transform()
-ProtoInstance515 = x3d.ProtoInstance(DEF="a65")
-ProtoInstance515.name = "Carbon"
-fieldValue516 = x3d.fieldValue()
-fieldValue516.name = "position"
-fieldValue516.value = "14.0473 1.9064 0"
-
-ProtoInstance515.fieldValue.append(fieldValue516)
-
-Transform514.children.append(ProtoInstance515)
-
-Group321.children.append(Transform514)
-Transform517 = x3d.Transform()
-ProtoInstance518 = x3d.ProtoInstance(DEF="a66")
-ProtoInstance518.name = "Carbon"
-fieldValue519 = x3d.fieldValue()
-fieldValue519.name = "position"
-fieldValue519.value = "8.7183 -7.0794 0"
-
-ProtoInstance518.fieldValue.append(fieldValue519)
-
-Transform517.children.append(ProtoInstance518)
-
-Group321.children.append(Transform517)
-Transform520 = x3d.Transform()
-ProtoInstance521 = x3d.ProtoInstance(DEF="a67")
-ProtoInstance521.name = "Carbon"
-fieldValue522 = x3d.fieldValue()
-fieldValue522.name = "position"
-fieldValue522.value = "11.3939 -7.347 0"
-
-ProtoInstance521.fieldValue.append(fieldValue522)
-
-Transform520.children.append(ProtoInstance521)
-
-Group321.children.append(Transform520)
-Transform523 = x3d.Transform()
-ProtoInstance524 = x3d.ProtoInstance(DEF="a68")
-ProtoInstance524.name = "Carbon"
-fieldValue525 = x3d.fieldValue()
-fieldValue525.name = "position"
-fieldValue525.value = "9.9892 -7.9824 0"
-
-ProtoInstance524.fieldValue.append(fieldValue525)
-
-Transform523.children.append(ProtoInstance524)
-
-Group321.children.append(Transform523)
-Transform526 = x3d.Transform()
-ProtoInstance527 = x3d.ProtoInstance(DEF="a69")
-ProtoInstance527.name = "Oxygen"
-fieldValue528 = x3d.fieldValue()
-fieldValue528.name = "position"
-fieldValue528.value = "9.7885 -9.5321 0"
-
-ProtoInstance527.fieldValue.append(fieldValue528)
-
-Transform526.children.append(ProtoInstance527)
-
-Group321.children.append(Transform526)
-
-Scene17.children.append(Group321)
-Group529 = x3d.Group()
-ProtoInstance530 = x3d.ProtoInstance(DEF="b1")
-ProtoInstance530.name = "line"
-fieldValue531 = x3d.fieldValue()
-fieldValue531.name = "bond_set"
-fieldValue531.value = "-2.0514 1.8507 0 -3.601 1.9845 0"
-
-ProtoInstance530.fieldValue.append(fieldValue531)
-
-Group529.children.append(ProtoInstance530)
-ProtoInstance532 = x3d.ProtoInstance(DEF="b2")
+Scene19.children.append(Group323)
+Group531 = x3d.Group()
+ProtoInstance532 = x3d.ProtoInstance(DEF="b1")
 ProtoInstance532.name = "line"
 fieldValue533 = x3d.fieldValue()
 fieldValue533.name = "bond_set"
-fieldValue533.value = "-2.0514 1.8507 0 -1.2821 0.4905 0"
+fieldValue533.value = "-2.0514 1.8507 0 -3.601 1.9845 0"
 
 ProtoInstance532.fieldValue.append(fieldValue533)
 
-Group529.children.append(ProtoInstance532)
-ProtoInstance534 = x3d.ProtoInstance(DEF="b3")
+Group531.children.append(ProtoInstance532)
+ProtoInstance534 = x3d.ProtoInstance(DEF="b2")
 ProtoInstance534.name = "line"
 fieldValue535 = x3d.fieldValue()
 fieldValue535.name = "bond_set"
-fieldValue535.value = "-2.0514 1.8507 0 -1.4159 3.2554 0"
+fieldValue535.value = "-2.0514 1.8507 0 -1.2821 0.4905 0"
 
 ProtoInstance534.fieldValue.append(fieldValue535)
 
-Group529.children.append(ProtoInstance534)
-ProtoInstance536 = x3d.ProtoInstance(DEF="b4")
+Group531.children.append(ProtoInstance534)
+ProtoInstance536 = x3d.ProtoInstance(DEF="b3")
 ProtoInstance536.name = "line"
 fieldValue537 = x3d.fieldValue()
 fieldValue537.name = "bond_set"
-fieldValue537.value = "-3.601 1.9845 0 -4.649 0.8473 0"
+fieldValue537.value = "-2.0514 1.8507 0 -1.4159 3.2554 0"
 
 ProtoInstance536.fieldValue.append(fieldValue537)
 
-Group529.children.append(ProtoInstance536)
-ProtoInstance538 = x3d.ProtoInstance(DEF="b5")
+Group531.children.append(ProtoInstance536)
+ProtoInstance538 = x3d.ProtoInstance(DEF="b4")
 ProtoInstance538.name = "line"
 fieldValue539 = x3d.fieldValue()
 fieldValue539.name = "bond_set"
-fieldValue539.value = "-3.601 1.9845 0 -3.9355 3.5341 0"
+fieldValue539.value = "-3.601 1.9845 0 -4.649 0.8473 0"
 
 ProtoInstance538.fieldValue.append(fieldValue539)
 
-Group529.children.append(ProtoInstance538)
-ProtoInstance540 = x3d.ProtoInstance(DEF="b6")
+Group531.children.append(ProtoInstance538)
+ProtoInstance540 = x3d.ProtoInstance(DEF="b5")
 ProtoInstance540.name = "line"
 fieldValue541 = x3d.fieldValue()
 fieldValue541.name = "bond_set"
-fieldValue541.value = "-1.2821 0.4905 0 0.2341 0.4905 0"
+fieldValue541.value = "-3.601 1.9845 0 -3.9355 3.5341 0"
 
 ProtoInstance540.fieldValue.append(fieldValue541)
 
-Group529.children.append(ProtoInstance540)
-ProtoInstance542 = x3d.ProtoInstance(DEF="b7")
+Group531.children.append(ProtoInstance540)
+ProtoInstance542 = x3d.ProtoInstance(DEF="b6")
 ProtoInstance542.name = "line"
 fieldValue543 = x3d.fieldValue()
 fieldValue543.name = "bond_set"
-fieldValue543.value = "-1.3021 0.4905 0 -2.0714 -0.8362 0"
+fieldValue543.value = "-1.2821 0.4905 0 0.2341 0.4905 0"
 
 ProtoInstance542.fieldValue.append(fieldValue543)
 
-Group529.children.append(ProtoInstance542)
-ProtoInstance544 = x3d.ProtoInstance(DEF="b7_2")
+Group531.children.append(ProtoInstance542)
+ProtoInstance544 = x3d.ProtoInstance(DEF="b7")
 ProtoInstance544.name = "line"
 fieldValue545 = x3d.fieldValue()
 fieldValue545.name = "bond_set"
-fieldValue545.value = "-1.2621 0.4905 0 -2.0314 -0.8362 0"
+fieldValue545.value = "-1.3021 0.4905 0 -2.0714 -0.8362 0"
 
 ProtoInstance544.fieldValue.append(fieldValue545)
 
-Group529.children.append(ProtoInstance544)
-ProtoInstance546 = x3d.ProtoInstance(DEF="b8")
+Group531.children.append(ProtoInstance544)
+ProtoInstance546 = x3d.ProtoInstance(DEF="b7_2")
 ProtoInstance546.name = "line"
 fieldValue547 = x3d.fieldValue()
 fieldValue547.name = "bond_set"
-fieldValue547.value = "-1.4159 3.2554 0 -2.5753 4.3034 0"
+fieldValue547.value = "-1.2621 0.4905 0 -2.0314 -0.8362 0"
 
 ProtoInstance546.fieldValue.append(fieldValue547)
 
-Group529.children.append(ProtoInstance546)
-ProtoInstance548 = x3d.ProtoInstance(DEF="b9")
+Group531.children.append(ProtoInstance546)
+ProtoInstance548 = x3d.ProtoInstance(DEF="b8")
 ProtoInstance548.name = "line"
 fieldValue549 = x3d.fieldValue()
 fieldValue549.name = "bond_set"
-fieldValue549.value = "-4.649 0.8473 0 -6.1764 1.1595 0"
+fieldValue549.value = "-1.4159 3.2554 0 -2.5753 4.3034 0"
 
 ProtoInstance548.fieldValue.append(fieldValue549)
 
-Group529.children.append(ProtoInstance548)
-ProtoInstance550 = x3d.ProtoInstance(DEF="b10")
+Group531.children.append(ProtoInstance548)
+ProtoInstance550 = x3d.ProtoInstance(DEF="b9")
 ProtoInstance550.name = "line"
 fieldValue551 = x3d.fieldValue()
 fieldValue551.name = "bond_set"
-fieldValue551.value = "-4.669 0.8473 0 -4.1785 -0.6132 0"
+fieldValue551.value = "-4.649 0.8473 0 -6.1764 1.1595 0"
 
 ProtoInstance550.fieldValue.append(fieldValue551)
 
-Group529.children.append(ProtoInstance550)
-ProtoInstance552 = x3d.ProtoInstance(DEF="b10_2")
+Group531.children.append(ProtoInstance550)
+ProtoInstance552 = x3d.ProtoInstance(DEF="b10")
 ProtoInstance552.name = "line"
 fieldValue553 = x3d.fieldValue()
 fieldValue553.name = "bond_set"
-fieldValue553.value = "-4.629 0.8473 0 -4.1385 -0.6132 0"
+fieldValue553.value = "-4.669 0.8473 0 -4.1785 -0.6132 0"
 
 ProtoInstance552.fieldValue.append(fieldValue553)
 
-Group529.children.append(ProtoInstance552)
-ProtoInstance554 = x3d.ProtoInstance(DEF="b11")
+Group531.children.append(ProtoInstance552)
+ProtoInstance554 = x3d.ProtoInstance(DEF="b10_2")
 ProtoInstance554.name = "line"
 fieldValue555 = x3d.fieldValue()
 fieldValue555.name = "bond_set"
-fieldValue555.value = "0.2341 0.4905 0 0.4905 2.0402 0"
+fieldValue555.value = "-4.6290000000000004 0.8473 0 -4.1385000000000005 -0.6132 0"
 
 ProtoInstance554.fieldValue.append(fieldValue555)
 
-Group529.children.append(ProtoInstance554)
-ProtoInstance556 = x3d.ProtoInstance(DEF="b12")
+Group531.children.append(ProtoInstance554)
+ProtoInstance556 = x3d.ProtoInstance(DEF="b11")
 ProtoInstance556.name = "line"
 fieldValue557 = x3d.fieldValue()
 fieldValue557.name = "bond_set"
-fieldValue557.value = "0.2341 0.4905 0 0.4905 -1.0257 0"
+fieldValue557.value = "0.2341 0.4905 0 0.4905 2.0402 0"
 
 ProtoInstance556.fieldValue.append(fieldValue557)
 
-Group529.children.append(ProtoInstance556)
-ProtoInstance558 = x3d.ProtoInstance(DEF="b13")
+Group531.children.append(ProtoInstance556)
+ProtoInstance558 = x3d.ProtoInstance(DEF="b12")
 ProtoInstance558.name = "line"
 fieldValue559 = x3d.fieldValue()
 fieldValue559.name = "bond_set"
-fieldValue559.value = "-6.1764 1.1595 0 -7.2243 0.0223 0"
+fieldValue559.value = "0.2341 0.4905 0 0.4905 -1.0257 0"
 
 ProtoInstance558.fieldValue.append(fieldValue559)
 
-Group529.children.append(ProtoInstance558)
-ProtoInstance560 = x3d.ProtoInstance(DEF="b14")
+Group531.children.append(ProtoInstance558)
+ProtoInstance560 = x3d.ProtoInstance(DEF="b13")
 ProtoInstance560.name = "line"
 fieldValue561 = x3d.fieldValue()
 fieldValue561.name = "bond_set"
-fieldValue561.value = "0.4905 2.0402 0 1.2041 3.3892 0"
+fieldValue561.value = "-6.1764 1.1595 0 -7.2243 0.0223 0"
 
 ProtoInstance560.fieldValue.append(fieldValue561)
 
-Group529.children.append(ProtoInstance560)
-ProtoInstance562 = x3d.ProtoInstance(DEF="b15")
+Group531.children.append(ProtoInstance560)
+ProtoInstance562 = x3d.ProtoInstance(DEF="b14")
 ProtoInstance562.name = "line"
 fieldValue563 = x3d.fieldValue()
 fieldValue563.name = "bond_set"
-fieldValue563.value = "0.4905 -1.0257 0 1.1706 -2.4081 0"
+fieldValue563.value = "0.4905 2.0402 0 1.2041 3.3892 0"
 
 ProtoInstance562.fieldValue.append(fieldValue563)
 
-Group529.children.append(ProtoInstance562)
-ProtoInstance564 = x3d.ProtoInstance(DEF="b16")
+Group531.children.append(ProtoInstance562)
+ProtoInstance564 = x3d.ProtoInstance(DEF="b15")
 ProtoInstance564.name = "line"
 fieldValue565 = x3d.fieldValue()
 fieldValue565.name = "bond_set"
-fieldValue565.value = "-7.2243 0.0223 0 -8.7071 0.3568 0"
+fieldValue565.value = "0.4905 -1.0257 0 1.1706 -2.4081 0"
 
 ProtoInstance564.fieldValue.append(fieldValue565)
 
-Group529.children.append(ProtoInstance564)
-ProtoInstance566 = x3d.ProtoInstance(DEF="b17")
+Group531.children.append(ProtoInstance564)
+ProtoInstance566 = x3d.ProtoInstance(DEF="b16")
 ProtoInstance566.name = "line"
 fieldValue567 = x3d.fieldValue()
 fieldValue567.name = "bond_set"
-fieldValue567.value = "-7.2243 0.0223 0 -6.7226 -1.4382 0"
+fieldValue567.value = "-7.2243 0.0223 0 -8.7071 0.3568 0"
 
 ProtoInstance566.fieldValue.append(fieldValue567)
 
-Group529.children.append(ProtoInstance566)
-ProtoInstance568 = x3d.ProtoInstance(DEF="b18")
+Group531.children.append(ProtoInstance566)
+ProtoInstance568 = x3d.ProtoInstance(DEF="b17")
 ProtoInstance568.name = "line"
 fieldValue569 = x3d.fieldValue()
 fieldValue569.name = "bond_set"
-fieldValue569.value = "1.2041 3.3892 0 2.3078 4.4929 0"
+fieldValue569.value = "-7.2243 0.0223 0 -6.7226 -1.4382 0"
 
 ProtoInstance568.fieldValue.append(fieldValue569)
 
-Group529.children.append(ProtoInstance568)
-ProtoInstance570 = x3d.ProtoInstance(DEF="b19")
+Group531.children.append(ProtoInstance568)
+ProtoInstance570 = x3d.ProtoInstance(DEF="b18")
 ProtoInstance570.name = "line"
 fieldValue571 = x3d.fieldValue()
 fieldValue571.name = "bond_set"
-fieldValue571.value = "1.1841 3.3892 0 -0.0646 4.3368 0"
+fieldValue571.value = "1.2041 3.3892 0 2.3078 4.4929 0"
 
 ProtoInstance570.fieldValue.append(fieldValue571)
 
-Group529.children.append(ProtoInstance570)
-ProtoInstance572 = x3d.ProtoInstance(DEF="b19_2")
+Group531.children.append(ProtoInstance570)
+ProtoInstance572 = x3d.ProtoInstance(DEF="b19")
 ProtoInstance572.name = "line"
 fieldValue573 = x3d.fieldValue()
 fieldValue573.name = "bond_set"
-fieldValue573.value = "1.2241 3.3892 0 -0.0246 4.3368 0"
+fieldValue573.value = "1.1841 3.3892 0 -0.0646 4.3368 0"
 
 ProtoInstance572.fieldValue.append(fieldValue573)
 
-Group529.children.append(ProtoInstance572)
-ProtoInstance574 = x3d.ProtoInstance(DEF="b20")
+Group531.children.append(ProtoInstance572)
+ProtoInstance574 = x3d.ProtoInstance(DEF="b19_2")
 ProtoInstance574.name = "line"
 fieldValue575 = x3d.fieldValue()
 fieldValue575.name = "bond_set"
-fieldValue575.value = "1.1706 -2.4081 0 2.2855 -3.5118 0"
+fieldValue575.value = "1.2241 3.3892 0 -0.0246 4.3368 0"
 
 ProtoInstance574.fieldValue.append(fieldValue575)
 
-Group529.children.append(ProtoInstance574)
-ProtoInstance576 = x3d.ProtoInstance(DEF="b21")
+Group531.children.append(ProtoInstance574)
+ProtoInstance576 = x3d.ProtoInstance(DEF="b20")
 ProtoInstance576.name = "line"
 fieldValue577 = x3d.fieldValue()
 fieldValue577.name = "bond_set"
-fieldValue577.value = "-8.7071 0.3568 0 -9.7662 -0.7804 0"
+fieldValue577.value = "1.1706 -2.4081 0 2.2855 -3.5118 0"
 
 ProtoInstance576.fieldValue.append(fieldValue577)
 
-Group529.children.append(ProtoInstance576)
-ProtoInstance578 = x3d.ProtoInstance(DEF="b22")
+Group531.children.append(ProtoInstance576)
+ProtoInstance578 = x3d.ProtoInstance(DEF="b21")
 ProtoInstance578.name = "line"
 fieldValue579 = x3d.fieldValue()
 fieldValue579.name = "bond_set"
-fieldValue579.value = "-8.7271 0.3568 0 -9.2288 1.8507 0"
+fieldValue579.value = "-8.7071 0.3568 0 -9.7662 -0.7804 0"
 
 ProtoInstance578.fieldValue.append(fieldValue579)
 
-Group529.children.append(ProtoInstance578)
-ProtoInstance580 = x3d.ProtoInstance(DEF="b22_2")
+Group531.children.append(ProtoInstance578)
+ProtoInstance580 = x3d.ProtoInstance(DEF="b22")
 ProtoInstance580.name = "line"
 fieldValue581 = x3d.fieldValue()
 fieldValue581.name = "bond_set"
-fieldValue581.value = "-8.6871 0.3568 0 -9.1888 1.8507 0"
+fieldValue581.value = "-8.7271 0.3568 0 -9.2288 1.8507 0"
 
 ProtoInstance580.fieldValue.append(fieldValue581)
 
-Group529.children.append(ProtoInstance580)
-ProtoInstance582 = x3d.ProtoInstance(DEF="b23")
+Group531.children.append(ProtoInstance580)
+ProtoInstance582 = x3d.ProtoInstance(DEF="b22_2")
 ProtoInstance582.name = "line"
 fieldValue583 = x3d.fieldValue()
 fieldValue583.name = "bond_set"
-fieldValue583.value = "-6.7226 -1.4382 0 -7.7483 -2.5753 0"
+fieldValue583.value = "-8.687100000000001 0.3568 0 -9.1888 1.8507 0"
 
 ProtoInstance582.fieldValue.append(fieldValue583)
 
-Group529.children.append(ProtoInstance582)
-ProtoInstance584 = x3d.ProtoInstance(DEF="b24")
+Group531.children.append(ProtoInstance582)
+ProtoInstance584 = x3d.ProtoInstance(DEF="b23")
 ProtoInstance584.name = "line"
 fieldValue585 = x3d.fieldValue()
 fieldValue585.name = "bond_set"
-fieldValue585.value = "2.3078 4.4929 0 3.6902 5.1841 0"
+fieldValue585.value = "-6.7226 -1.4382 0 -7.7483 -2.5753 0"
 
 ProtoInstance584.fieldValue.append(fieldValue585)
 
-Group529.children.append(ProtoInstance584)
-ProtoInstance586 = x3d.ProtoInstance(DEF="b25")
+Group531.children.append(ProtoInstance584)
+ProtoInstance586 = x3d.ProtoInstance(DEF="b24")
 ProtoInstance586.name = "line"
 fieldValue587 = x3d.fieldValue()
 fieldValue587.name = "bond_set"
-fieldValue587.value = "2.3078 4.4929 0 1.3936 5.7416 0"
+fieldValue587.value = "2.3078 4.4929 0 3.6902 5.1841 0"
 
 ProtoInstance586.fieldValue.append(fieldValue587)
 
-Group529.children.append(ProtoInstance586)
-ProtoInstance588 = x3d.ProtoInstance(DEF="b26")
+Group531.children.append(ProtoInstance586)
+ProtoInstance588 = x3d.ProtoInstance(DEF="b25")
 ProtoInstance588.name = "line"
 fieldValue589 = x3d.fieldValue()
 fieldValue589.name = "bond_set"
-fieldValue589.value = "2.2855 -3.5118 0 3.6568 -4.2253 0"
+fieldValue589.value = "2.3078 4.4929 0 1.3936 5.7416 0"
 
 ProtoInstance588.fieldValue.append(fieldValue589)
 
-Group529.children.append(ProtoInstance588)
-ProtoInstance590 = x3d.ProtoInstance(DEF="b27")
+Group531.children.append(ProtoInstance588)
+ProtoInstance590 = x3d.ProtoInstance(DEF="b26")
 ProtoInstance590.name = "line"
 fieldValue591 = x3d.fieldValue()
 fieldValue591.name = "bond_set"
-fieldValue591.value = "-9.7662 -0.7804 0 -11.2825 -0.4459 0"
+fieldValue591.value = "2.2855 -3.5118 0 3.6568 -4.2253 0"
 
 ProtoInstance590.fieldValue.append(fieldValue591)
 
-Group529.children.append(ProtoInstance590)
-ProtoInstance592 = x3d.ProtoInstance(DEF="b28")
+Group531.children.append(ProtoInstance590)
+ProtoInstance592 = x3d.ProtoInstance(DEF="b27")
 ProtoInstance592.name = "line"
 fieldValue593 = x3d.fieldValue()
 fieldValue593.name = "bond_set"
-fieldValue593.value = "-7.7483 -2.5753 0 -7.2243 -4.0693 0"
+fieldValue593.value = "-9.7662 -0.7804 0 -11.2825 -0.4459 0"
 
 ProtoInstance592.fieldValue.append(fieldValue593)
 
-Group529.children.append(ProtoInstance592)
-ProtoInstance594 = x3d.ProtoInstance(DEF="b29")
+Group531.children.append(ProtoInstance592)
+ProtoInstance594 = x3d.ProtoInstance(DEF="b28")
 ProtoInstance594.name = "line"
 fieldValue595 = x3d.fieldValue()
 fieldValue595.name = "bond_set"
-fieldValue595.value = "-7.7483 -2.5753 0 -8.7963 -2.4081 0"
+fieldValue595.value = "-7.7483 -2.5753 0 -7.2243 -4.0693 0"
 
 ProtoInstance594.fieldValue.append(fieldValue595)
 
-Group529.children.append(ProtoInstance594)
-ProtoInstance596 = x3d.ProtoInstance(DEF="b30")
+Group531.children.append(ProtoInstance594)
+ProtoInstance596 = x3d.ProtoInstance(DEF="b29")
 ProtoInstance596.name = "line"
 fieldValue597 = x3d.fieldValue()
 fieldValue597.name = "bond_set"
-fieldValue597.value = "3.6902 5.1841 0 5.2064 5.4405 0"
+fieldValue597.value = "-7.7483 -2.5753 0 -8.7963 -2.4081 0"
 
 ProtoInstance596.fieldValue.append(fieldValue597)
 
-Group529.children.append(ProtoInstance596)
-ProtoInstance598 = x3d.ProtoInstance(DEF="b31")
+Group531.children.append(ProtoInstance596)
+ProtoInstance598 = x3d.ProtoInstance(DEF="b30")
 ProtoInstance598.name = "line"
 fieldValue599 = x3d.fieldValue()
 fieldValue599.name = "bond_set"
-fieldValue599.value = "1.3936 5.7416 0 2.0291 7.1797 0"
+fieldValue599.value = "3.6902 5.1841 0 5.2064 5.4405 0"
 
 ProtoInstance598.fieldValue.append(fieldValue599)
 
-Group529.children.append(ProtoInstance598)
-ProtoInstance600 = x3d.ProtoInstance(DEF="b32")
+Group531.children.append(ProtoInstance598)
+ProtoInstance600 = x3d.ProtoInstance(DEF="b31")
 ProtoInstance600.name = "line"
 fieldValue601 = x3d.fieldValue()
 fieldValue601.name = "bond_set"
-fieldValue601.value = "3.6568 -4.2253 0 5.1841 -4.4818 0"
+fieldValue601.value = "1.3936 5.7416 0 2.0291 7.1797 0"
 
 ProtoInstance600.fieldValue.append(fieldValue601)
 
-Group529.children.append(ProtoInstance600)
-ProtoInstance602 = x3d.ProtoInstance(DEF="b33")
+Group531.children.append(ProtoInstance600)
+ProtoInstance602 = x3d.ProtoInstance(DEF="b32")
 ProtoInstance602.name = "line"
 fieldValue603 = x3d.fieldValue()
 fieldValue603.name = "bond_set"
-fieldValue603.value = "-11.2825 -0.4459 0 -12.3304 -1.6054 0"
+fieldValue603.value = "3.6568 -4.2253 0 5.1841 -4.4818 0"
 
 ProtoInstance602.fieldValue.append(fieldValue603)
 
-Group529.children.append(ProtoInstance602)
-ProtoInstance604 = x3d.ProtoInstance(DEF="b34")
+Group531.children.append(ProtoInstance602)
+ProtoInstance604 = x3d.ProtoInstance(DEF="b33")
 ProtoInstance604.name = "line"
 fieldValue605 = x3d.fieldValue()
 fieldValue605.name = "bond_set"
-fieldValue605.value = "5.2064 5.4405 0 6.7561 5.1841 0"
+fieldValue605.value = "-11.2825 -0.4459 0 -12.3304 -1.6054 0"
 
 ProtoInstance604.fieldValue.append(fieldValue605)
 
-Group529.children.append(ProtoInstance604)
-ProtoInstance606 = x3d.ProtoInstance(DEF="b35")
+Group531.children.append(ProtoInstance604)
+ProtoInstance606 = x3d.ProtoInstance(DEF="b34")
 ProtoInstance606.name = "line"
 fieldValue607 = x3d.fieldValue()
 fieldValue607.name = "bond_set"
-fieldValue607.value = "5.1864 5.4405 0 5.2199 6.9791 0"
+fieldValue607.value = "5.2064 5.4405 0 6.7561 5.1841 0"
 
 ProtoInstance606.fieldValue.append(fieldValue607)
 
-Group529.children.append(ProtoInstance606)
-ProtoInstance608 = x3d.ProtoInstance(DEF="b35_2")
+Group531.children.append(ProtoInstance606)
+ProtoInstance608 = x3d.ProtoInstance(DEF="b35")
 ProtoInstance608.name = "line"
 fieldValue609 = x3d.fieldValue()
 fieldValue609.name = "bond_set"
-fieldValue609.value = "5.2264 5.4405 0 5.2599 6.9791 0"
+fieldValue609.value = "5.186400000000001 5.4405 0 5.2199 6.9791 0"
 
 ProtoInstance608.fieldValue.append(fieldValue609)
 
-Group529.children.append(ProtoInstance608)
-ProtoInstance610 = x3d.ProtoInstance(DEF="b36")
+Group531.children.append(ProtoInstance608)
+ProtoInstance610 = x3d.ProtoInstance(DEF="b35_2")
 ProtoInstance610.name = "line"
 fieldValue611 = x3d.fieldValue()
 fieldValue611.name = "bond_set"
-fieldValue611.value = "2.0291 7.1797 0 1.126 8.4507 0"
+fieldValue611.value = "5.2264 5.4405 0 5.259899999999999 6.9791 0"
 
 ProtoInstance610.fieldValue.append(fieldValue611)
 
-Group529.children.append(ProtoInstance610)
-ProtoInstance612 = x3d.ProtoInstance(DEF="b37")
+Group531.children.append(ProtoInstance610)
+ProtoInstance612 = x3d.ProtoInstance(DEF="b36")
 ProtoInstance612.name = "line"
 fieldValue613 = x3d.fieldValue()
 fieldValue613.name = "bond_set"
-fieldValue613.value = "2.0091 7.1797 0 3.5587 7.3135 0"
+fieldValue613.value = "2.0291 7.1797 0 1.126 8.4507 0"
 
 ProtoInstance612.fieldValue.append(fieldValue613)
 
-Group529.children.append(ProtoInstance612)
-ProtoInstance614 = x3d.ProtoInstance(DEF="b37_2")
+Group531.children.append(ProtoInstance612)
+ProtoInstance614 = x3d.ProtoInstance(DEF="b37")
 ProtoInstance614.name = "line"
 fieldValue615 = x3d.fieldValue()
 fieldValue615.name = "bond_set"
-fieldValue615.value = "2.0491 7.1797 0 3.5987 7.3135 0"
+fieldValue615.value = "2.0091 7.1797 0 3.5587 7.3135 0"
 
 ProtoInstance614.fieldValue.append(fieldValue615)
 
-Group529.children.append(ProtoInstance614)
-ProtoInstance616 = x3d.ProtoInstance(DEF="b38")
+Group531.children.append(ProtoInstance614)
+ProtoInstance616 = x3d.ProtoInstance(DEF="b37_2")
 ProtoInstance616.name = "line"
 fieldValue617 = x3d.fieldValue()
 fieldValue617.name = "bond_set"
-fieldValue617.value = "5.1841 -4.4818 0 6.7226 -4.2253 0"
+fieldValue617.value = "2.0491 7.1797 0 3.5987 7.3135 0"
 
 ProtoInstance616.fieldValue.append(fieldValue617)
 
-Group529.children.append(ProtoInstance616)
-ProtoInstance618 = x3d.ProtoInstance(DEF="b39")
+Group531.children.append(ProtoInstance616)
+ProtoInstance618 = x3d.ProtoInstance(DEF="b38")
 ProtoInstance618.name = "line"
 fieldValue619 = x3d.fieldValue()
 fieldValue619.name = "bond_set"
-fieldValue619.value = "5.1841 -4.4818 0 5.1841 -6.0203 0"
+fieldValue619.value = "5.1841 -4.4818 0 6.7226 -4.2253 0"
 
 ProtoInstance618.fieldValue.append(fieldValue619)
 
-Group529.children.append(ProtoInstance618)
-ProtoInstance620 = x3d.ProtoInstance(DEF="b40")
+Group531.children.append(ProtoInstance618)
+ProtoInstance620 = x3d.ProtoInstance(DEF="b39")
 ProtoInstance620.name = "line"
 fieldValue621 = x3d.fieldValue()
 fieldValue621.name = "bond_set"
-fieldValue621.value = "-12.3304 -1.6054 0 -13.8466 -1.2709 0"
+fieldValue621.value = "5.1841 -4.4818 0 5.1841 -6.0203 0"
 
 ProtoInstance620.fieldValue.append(fieldValue621)
 
-Group529.children.append(ProtoInstance620)
-ProtoInstance622 = x3d.ProtoInstance(DEF="b41")
+Group531.children.append(ProtoInstance620)
+ProtoInstance622 = x3d.ProtoInstance(DEF="b40")
 ProtoInstance622.name = "line"
 fieldValue623 = x3d.fieldValue()
 fieldValue623.name = "bond_set"
-fieldValue623.value = "-12.3504 -1.6054 0 -11.8822 -3.0659 0"
+fieldValue623.value = "-12.3304 -1.6054 0 -13.8466 -1.2709 0"
 
 ProtoInstance622.fieldValue.append(fieldValue623)
 
-Group529.children.append(ProtoInstance622)
-ProtoInstance624 = x3d.ProtoInstance(DEF="b41_2")
+Group531.children.append(ProtoInstance622)
+ProtoInstance624 = x3d.ProtoInstance(DEF="b41")
 ProtoInstance624.name = "line"
 fieldValue625 = x3d.fieldValue()
 fieldValue625.name = "bond_set"
-fieldValue625.value = "-12.3104 -1.6054 0 -11.8422 -3.0659 0"
+fieldValue625.value = "-12.350399999999999 -1.6054 0 -11.8822 -3.0659 0"
 
 ProtoInstance624.fieldValue.append(fieldValue625)
 
-Group529.children.append(ProtoInstance624)
-ProtoInstance626 = x3d.ProtoInstance(DEF="b42")
+Group531.children.append(ProtoInstance624)
+ProtoInstance626 = x3d.ProtoInstance(DEF="b41_2")
 ProtoInstance626.name = "line"
 fieldValue627 = x3d.fieldValue()
 fieldValue627.name = "bond_set"
-fieldValue627.value = "6.7561 5.1841 0 8.1385 4.4706 0"
+fieldValue627.value = "-12.3104 -1.6054 0 -11.8422 -3.0659 0"
 
 ProtoInstance626.fieldValue.append(fieldValue627)
 
-Group529.children.append(ProtoInstance626)
-ProtoInstance628 = x3d.ProtoInstance(DEF="b43")
+Group531.children.append(ProtoInstance626)
+ProtoInstance628 = x3d.ProtoInstance(DEF="b42")
 ProtoInstance628.name = "line"
 fieldValue629 = x3d.fieldValue()
 fieldValue629.name = "bond_set"
-fieldValue629.value = "6.7561 5.1841 0 7.2243 6.6781 0"
+fieldValue629.value = "6.7561 5.1841 0 8.1385 4.4706 0"
 
 ProtoInstance628.fieldValue.append(fieldValue629)
 
-Group529.children.append(ProtoInstance628)
-ProtoInstance630 = x3d.ProtoInstance(DEF="b44")
+Group531.children.append(ProtoInstance628)
+ProtoInstance630 = x3d.ProtoInstance(DEF="b43")
 ProtoInstance630.name = "line"
 fieldValue631 = x3d.fieldValue()
 fieldValue631.name = "bond_set"
-fieldValue631.value = "6.7226 -4.2253 0 8.1051 -3.5341 0"
+fieldValue631.value = "6.7561 5.1841 0 7.2243 6.6781 0"
 
 ProtoInstance630.fieldValue.append(fieldValue631)
 
-Group529.children.append(ProtoInstance630)
-ProtoInstance632 = x3d.ProtoInstance(DEF="b45")
+Group531.children.append(ProtoInstance630)
+ProtoInstance632 = x3d.ProtoInstance(DEF="b44")
 ProtoInstance632.name = "line"
 fieldValue633 = x3d.fieldValue()
 fieldValue633.name = "bond_set"
-fieldValue633.value = "6.7026 -4.2253 0 7.182 -5.7193 0"
+fieldValue633.value = "6.7226 -4.2253 0 8.1051 -3.5341 0"
 
 ProtoInstance632.fieldValue.append(fieldValue633)
 
-Group529.children.append(ProtoInstance632)
-ProtoInstance634 = x3d.ProtoInstance(DEF="b45_2")
+Group531.children.append(ProtoInstance632)
+ProtoInstance634 = x3d.ProtoInstance(DEF="b45")
 ProtoInstance634.name = "line"
 fieldValue635 = x3d.fieldValue()
 fieldValue635.name = "bond_set"
-fieldValue635.value = "6.7426 -4.2253 0 7.222 -5.7193 0"
+fieldValue635.value = "6.7026 -4.2253 0 7.182 -5.7193 0"
 
 ProtoInstance634.fieldValue.append(fieldValue635)
 
-Group529.children.append(ProtoInstance634)
-ProtoInstance636 = x3d.ProtoInstance(DEF="b46")
+Group531.children.append(ProtoInstance634)
+ProtoInstance636 = x3d.ProtoInstance(DEF="b45_2")
 ProtoInstance636.name = "line"
 fieldValue637 = x3d.fieldValue()
 fieldValue637.name = "bond_set"
-fieldValue637.value = "8.1385 4.4706 0 9.2422 3.3669 0"
+fieldValue637.value = "6.7425999999999995 -4.2253 0 7.2219999999999995 -5.7193 0"
 
 ProtoInstance636.fieldValue.append(fieldValue637)
 
-Group529.children.append(ProtoInstance636)
-ProtoInstance638 = x3d.ProtoInstance(DEF="b47")
+Group531.children.append(ProtoInstance636)
+ProtoInstance638 = x3d.ProtoInstance(DEF="b46")
 ProtoInstance638.name = "line"
 fieldValue639 = x3d.fieldValue()
 fieldValue639.name = "bond_set"
-fieldValue639.value = "7.2243 6.6781 0 8.7406 6.9791 0"
+fieldValue639.value = "8.1385 4.4706 0 9.2422 3.3669 0"
 
 ProtoInstance638.fieldValue.append(fieldValue639)
 
-Group529.children.append(ProtoInstance638)
-ProtoInstance640 = x3d.ProtoInstance(DEF="b48")
+Group531.children.append(ProtoInstance638)
+ProtoInstance640 = x3d.ProtoInstance(DEF="b47")
 ProtoInstance640.name = "line"
 fieldValue641 = x3d.fieldValue()
 fieldValue641.name = "bond_set"
-fieldValue641.value = "8.1051 -3.5341 0 9.2088 -2.4304 0"
+fieldValue641.value = "7.2243 6.6781 0 8.7406 6.9791 0"
 
 ProtoInstance640.fieldValue.append(fieldValue641)
 
-Group529.children.append(ProtoInstance640)
-ProtoInstance642 = x3d.ProtoInstance(DEF="b49")
+Group531.children.append(ProtoInstance640)
+ProtoInstance642 = x3d.ProtoInstance(DEF="b48")
 ProtoInstance642.name = "line"
 fieldValue643 = x3d.fieldValue()
 fieldValue643.name = "bond_set"
-fieldValue643.value = "9.2422 3.3669 0 9.9335 1.9845 0"
+fieldValue643.value = "8.1051 -3.5341 0 9.2088 -2.4304 0"
 
 ProtoInstance642.fieldValue.append(fieldValue643)
 
-Group529.children.append(ProtoInstance642)
-ProtoInstance644 = x3d.ProtoInstance(DEF="b50")
+Group531.children.append(ProtoInstance642)
+ProtoInstance644 = x3d.ProtoInstance(DEF="b49")
 ProtoInstance644.name = "line"
 fieldValue645 = x3d.fieldValue()
 fieldValue645.name = "bond_set"
-fieldValue645.value = "9.2222 3.3669 0 10.4597 4.3034 0"
+fieldValue645.value = "9.2422 3.3669 0 9.9335 1.9845 0"
 
 ProtoInstance644.fieldValue.append(fieldValue645)
 
-Group529.children.append(ProtoInstance644)
-ProtoInstance646 = x3d.ProtoInstance(DEF="b50_2")
+Group531.children.append(ProtoInstance644)
+ProtoInstance646 = x3d.ProtoInstance(DEF="b50")
 ProtoInstance646.name = "line"
 fieldValue647 = x3d.fieldValue()
 fieldValue647.name = "bond_set"
-fieldValue647.value = "9.2622 3.3669 0 10.4997 4.3034 0"
+fieldValue647.value = "9.2222 3.3669 0 10.4597 4.3034 0"
 
 ProtoInstance646.fieldValue.append(fieldValue647)
 
-Group529.children.append(ProtoInstance646)
-ProtoInstance648 = x3d.ProtoInstance(DEF="b51")
+Group531.children.append(ProtoInstance646)
+ProtoInstance648 = x3d.ProtoInstance(DEF="b50_2")
 ProtoInstance648.name = "line"
 fieldValue649 = x3d.fieldValue()
 fieldValue649.name = "bond_set"
-fieldValue649.value = "8.7406 6.9791 0 9.2422 8.4507 0"
+fieldValue649.value = "9.2622 3.3669 0 10.499699999999999 4.3034 0"
 
 ProtoInstance648.fieldValue.append(fieldValue649)
 
-Group529.children.append(ProtoInstance648)
-ProtoInstance650 = x3d.ProtoInstance(DEF="b52")
+Group531.children.append(ProtoInstance648)
+ProtoInstance650 = x3d.ProtoInstance(DEF="b51")
 ProtoInstance650.name = "line"
 fieldValue651 = x3d.fieldValue()
 fieldValue651.name = "bond_set"
-fieldValue651.value = "9.2088 -2.4304 0 10.4797 -3.3446 0"
+fieldValue651.value = "8.7406 6.9791 0 9.2422 8.4507 0"
 
 ProtoInstance650.fieldValue.append(fieldValue651)
 
-Group529.children.append(ProtoInstance650)
-ProtoInstance652 = x3d.ProtoInstance(DEF="b53")
+Group531.children.append(ProtoInstance650)
+ProtoInstance652 = x3d.ProtoInstance(DEF="b52")
 ProtoInstance652.name = "line"
 fieldValue653 = x3d.fieldValue()
 fieldValue653.name = "bond_set"
-fieldValue653.value = "9.2088 -2.4304 0 9.9335 -1.0591 0"
+fieldValue653.value = "9.2088 -2.4304 0 10.4797 -3.3446 0"
 
 ProtoInstance652.fieldValue.append(fieldValue653)
 
-Group529.children.append(ProtoInstance652)
-ProtoInstance654 = x3d.ProtoInstance(DEF="b54")
+Group531.children.append(ProtoInstance652)
+ProtoInstance654 = x3d.ProtoInstance(DEF="b53")
 ProtoInstance654.name = "line"
 fieldValue655 = x3d.fieldValue()
 fieldValue655.name = "bond_set"
-fieldValue655.value = "9.9335 1.9845 0 10.1787 0.4682 0"
+fieldValue655.value = "9.2088 -2.4304 0 9.9335 -1.0591 0"
 
 ProtoInstance654.fieldValue.append(fieldValue655)
 
-Group529.children.append(ProtoInstance654)
-ProtoInstance656 = x3d.ProtoInstance(DEF="b55")
+Group531.children.append(ProtoInstance654)
+ProtoInstance656 = x3d.ProtoInstance(DEF="b54")
 ProtoInstance656.name = "line"
 fieldValue657 = x3d.fieldValue()
 fieldValue657.name = "bond_set"
-fieldValue657.value = "9.9335 1.9845 0 11.4274 2.4862 0"
+fieldValue657.value = "9.9335 1.9845 0 10.1787 0.4682 0"
 
 ProtoInstance656.fieldValue.append(fieldValue657)
 
-Group529.children.append(ProtoInstance656)
-ProtoInstance658 = x3d.ProtoInstance(DEF="b56")
+Group531.children.append(ProtoInstance656)
+ProtoInstance658 = x3d.ProtoInstance(DEF="b55")
 ProtoInstance658.name = "line"
 fieldValue659 = x3d.fieldValue()
 fieldValue659.name = "bond_set"
-fieldValue659.value = "9.2422 8.4507 0 10.7585 8.774 0"
+fieldValue659.value = "9.9335 1.9845 0 11.4274 2.4862 0"
 
 ProtoInstance658.fieldValue.append(fieldValue659)
 
-Group529.children.append(ProtoInstance658)
-ProtoInstance660 = x3d.ProtoInstance(DEF="b57")
+Group531.children.append(ProtoInstance658)
+ProtoInstance660 = x3d.ProtoInstance(DEF="b56")
 ProtoInstance660.name = "line"
 fieldValue661 = x3d.fieldValue()
 fieldValue661.name = "bond_set"
-fieldValue661.value = "9.2222 8.4507 0 8.1966 9.6324 0"
+fieldValue661.value = "9.2422 8.4507 0 10.7585 8.774 0"
 
 ProtoInstance660.fieldValue.append(fieldValue661)
 
-Group529.children.append(ProtoInstance660)
-ProtoInstance662 = x3d.ProtoInstance(DEF="b57_2")
+Group531.children.append(ProtoInstance660)
+ProtoInstance662 = x3d.ProtoInstance(DEF="b57")
 ProtoInstance662.name = "line"
 fieldValue663 = x3d.fieldValue()
 fieldValue663.name = "bond_set"
-fieldValue663.value = "9.2622 8.4507 0 8.2366 9.6324 0"
+fieldValue663.value = "9.2222 8.4507 0 8.1966 9.6324 0"
 
 ProtoInstance662.fieldValue.append(fieldValue663)
 
-Group529.children.append(ProtoInstance662)
-ProtoInstance664 = x3d.ProtoInstance(DEF="b58")
+Group531.children.append(ProtoInstance662)
+ProtoInstance664 = x3d.ProtoInstance(DEF="b57_2")
 ProtoInstance664.name = "line"
 fieldValue665 = x3d.fieldValue()
 fieldValue665.name = "bond_set"
-fieldValue665.value = "10.4797 -3.3446 0 10.3237 -4.8943 0"
+fieldValue665.value = "9.2622 8.4507 0 8.2366 9.6324 0"
 
 ProtoInstance664.fieldValue.append(fieldValue665)
 
-Group529.children.append(ProtoInstance664)
-ProtoInstance666 = x3d.ProtoInstance(DEF="b59")
+Group531.children.append(ProtoInstance664)
+ProtoInstance666 = x3d.ProtoInstance(DEF="b58")
 ProtoInstance666.name = "line"
 fieldValue667 = x3d.fieldValue()
 fieldValue667.name = "bond_set"
-fieldValue667.value = "9.9135 -1.0591 0 11.4074 -1.5274 0"
+fieldValue667.value = "10.4797 -3.3446 0 10.3237 -4.8943 0"
 
 ProtoInstance666.fieldValue.append(fieldValue667)
 
-Group529.children.append(ProtoInstance666)
-ProtoInstance668 = x3d.ProtoInstance(DEF="b59_2")
+Group531.children.append(ProtoInstance666)
+ProtoInstance668 = x3d.ProtoInstance(DEF="b59")
 ProtoInstance668.name = "line"
 fieldValue669 = x3d.fieldValue()
 fieldValue669.name = "bond_set"
-fieldValue669.value = "9.9535 -1.0591 0 11.4474 -1.5274 0"
+fieldValue669.value = "9.9135 -1.0591 0 11.4074 -1.5274 0"
 
 ProtoInstance668.fieldValue.append(fieldValue669)
 
-Group529.children.append(ProtoInstance668)
-ProtoInstance670 = x3d.ProtoInstance(DEF="b60")
+Group531.children.append(ProtoInstance668)
+ProtoInstance670 = x3d.ProtoInstance(DEF="b59_2")
 ProtoInstance670.name = "line"
 fieldValue671 = x3d.fieldValue()
 fieldValue671.name = "bond_set"
-fieldValue671.value = "11.4274 2.4862 0 12.5534 1.427 0"
+fieldValue671.value = "9.9535 -1.0591 0 11.4474 -1.5274 0"
 
 ProtoInstance670.fieldValue.append(fieldValue671)
 
-Group529.children.append(ProtoInstance670)
-ProtoInstance672 = x3d.ProtoInstance(DEF="b61")
+Group531.children.append(ProtoInstance670)
+ProtoInstance672 = x3d.ProtoInstance(DEF="b60")
 ProtoInstance672.name = "line"
 fieldValue673 = x3d.fieldValue()
 fieldValue673.name = "bond_set"
-fieldValue673.value = "11.4274 2.4862 0 11.7507 4.0024 0"
+fieldValue673.value = "11.4274 2.4862 0 12.5534 1.427 0"
 
 ProtoInstance672.fieldValue.append(fieldValue673)
 
-Group529.children.append(ProtoInstance672)
-ProtoInstance674 = x3d.ProtoInstance(DEF="b62")
+Group531.children.append(ProtoInstance672)
+ProtoInstance674 = x3d.ProtoInstance(DEF="b61")
 ProtoInstance674.name = "line"
 fieldValue675 = x3d.fieldValue()
 fieldValue675.name = "bond_set"
-fieldValue675.value = "10.3237 -4.8943 0 8.8855 -5.5297 0"
+fieldValue675.value = "11.4274 2.4862 0 11.7507 4.0024 0"
 
 ProtoInstance674.fieldValue.append(fieldValue675)
 
-Group529.children.append(ProtoInstance674)
-ProtoInstance676 = x3d.ProtoInstance(DEF="b63")
+Group531.children.append(ProtoInstance674)
+ProtoInstance676 = x3d.ProtoInstance(DEF="b62")
 ProtoInstance676.name = "line"
 fieldValue677 = x3d.fieldValue()
 fieldValue677.name = "bond_set"
-fieldValue677.value = "10.3037 -4.8943 0 11.5412 -5.8085 0"
+fieldValue677.value = "10.3237 -4.8943 0 8.8855 -5.5297 0"
 
 ProtoInstance676.fieldValue.append(fieldValue677)
 
-Group529.children.append(ProtoInstance676)
-ProtoInstance678 = x3d.ProtoInstance(DEF="b63_2")
+Group531.children.append(ProtoInstance676)
+ProtoInstance678 = x3d.ProtoInstance(DEF="b63")
 ProtoInstance678.name = "line"
 fieldValue679 = x3d.fieldValue()
 fieldValue679.name = "bond_set"
-fieldValue679.value = "10.3437 -4.8943 0 11.5812 -5.8085 0"
+fieldValue679.value = "10.303700000000001 -4.8943 0 11.5412 -5.8085 0"
 
 ProtoInstance678.fieldValue.append(fieldValue679)
 
-Group529.children.append(ProtoInstance678)
-ProtoInstance680 = x3d.ProtoInstance(DEF="b64")
+Group531.children.append(ProtoInstance678)
+ProtoInstance680 = x3d.ProtoInstance(DEF="b63_2")
 ProtoInstance680.name = "line"
 fieldValue681 = x3d.fieldValue()
 fieldValue681.name = "bond_set"
-fieldValue681.value = "12.5534 1.427 0 14.0473 1.9064 0"
+fieldValue681.value = "10.3437 -4.8943 0 11.581199999999999 -5.8085 0"
 
 ProtoInstance680.fieldValue.append(fieldValue681)
 
-Group529.children.append(ProtoInstance680)
-ProtoInstance682 = x3d.ProtoInstance(DEF="b65")
+Group531.children.append(ProtoInstance680)
+ProtoInstance682 = x3d.ProtoInstance(DEF="b64")
 ProtoInstance682.name = "line"
 fieldValue683 = x3d.fieldValue()
 fieldValue683.name = "bond_set"
-fieldValue683.value = "8.8655 -5.5297 0 8.6983 -7.0794 0"
+fieldValue683.value = "12.5534 1.427 0 14.0473 1.9064 0"
 
 ProtoInstance682.fieldValue.append(fieldValue683)
 
-Group529.children.append(ProtoInstance682)
-ProtoInstance684 = x3d.ProtoInstance(DEF="b65_2")
+Group531.children.append(ProtoInstance682)
+ProtoInstance684 = x3d.ProtoInstance(DEF="b65")
 ProtoInstance684.name = "line"
 fieldValue685 = x3d.fieldValue()
 fieldValue685.name = "bond_set"
-fieldValue685.value = "8.9055 -5.5297 0 8.7383 -7.0794 0"
+fieldValue685.value = "8.8655 -5.5297 0 8.6983 -7.0794 0"
 
 ProtoInstance684.fieldValue.append(fieldValue685)
 
-Group529.children.append(ProtoInstance684)
-ProtoInstance686 = x3d.ProtoInstance(DEF="b66")
+Group531.children.append(ProtoInstance684)
+ProtoInstance686 = x3d.ProtoInstance(DEF="b65_2")
 ProtoInstance686.name = "line"
 fieldValue687 = x3d.fieldValue()
 fieldValue687.name = "bond_set"
-fieldValue687.value = "11.5612 -5.8085 0 11.3939 -7.347 0"
+fieldValue687.value = "8.9055 -5.5297 0 8.738299999999999 -7.0794 0"
 
 ProtoInstance686.fieldValue.append(fieldValue687)
 
-Group529.children.append(ProtoInstance686)
-ProtoInstance688 = x3d.ProtoInstance(DEF="b67")
+Group531.children.append(ProtoInstance686)
+ProtoInstance688 = x3d.ProtoInstance(DEF="b66")
 ProtoInstance688.name = "line"
 fieldValue689 = x3d.fieldValue()
 fieldValue689.name = "bond_set"
-fieldValue689.value = "8.7183 -7.0794 0 9.9892 -7.9824 0"
+fieldValue689.value = "11.5612 -5.8085 0 11.3939 -7.347 0"
 
 ProtoInstance688.fieldValue.append(fieldValue689)
 
-Group529.children.append(ProtoInstance688)
-ProtoInstance690 = x3d.ProtoInstance(DEF="b68")
+Group531.children.append(ProtoInstance688)
+ProtoInstance690 = x3d.ProtoInstance(DEF="b67")
 ProtoInstance690.name = "line"
 fieldValue691 = x3d.fieldValue()
 fieldValue691.name = "bond_set"
-fieldValue691.value = "9.9892 -7.9824 0 9.7885 -9.5321 0"
+fieldValue691.value = "8.7183 -7.0794 0 9.9892 -7.9824 0"
 
 ProtoInstance690.fieldValue.append(fieldValue691)
 
-Group529.children.append(ProtoInstance690)
-ProtoInstance692 = x3d.ProtoInstance(DEF="b69")
+Group531.children.append(ProtoInstance690)
+ProtoInstance692 = x3d.ProtoInstance(DEF="b68")
 ProtoInstance692.name = "line"
 fieldValue693 = x3d.fieldValue()
 fieldValue693.name = "bond_set"
-fieldValue693.value = "-3.9355 3.5341 0 -2.5753 4.3034 0"
+fieldValue693.value = "9.9892 -7.9824 0 9.7885 -9.5321 0"
 
 ProtoInstance692.fieldValue.append(fieldValue693)
 
-Group529.children.append(ProtoInstance692)
-ProtoInstance694 = x3d.ProtoInstance(DEF="b70")
+Group531.children.append(ProtoInstance692)
+ProtoInstance694 = x3d.ProtoInstance(DEF="b69")
 ProtoInstance694.name = "line"
 fieldValue695 = x3d.fieldValue()
 fieldValue695.name = "bond_set"
-fieldValue695.value = "9.9335 -1.0591 0 10.1787 0.4682 0"
+fieldValue695.value = "-3.9355 3.5341 0 -2.5753 4.3034 0"
 
 ProtoInstance694.fieldValue.append(fieldValue695)
 
-Group529.children.append(ProtoInstance694)
-ProtoInstance696 = x3d.ProtoInstance(DEF="b71")
+Group531.children.append(ProtoInstance694)
+ProtoInstance696 = x3d.ProtoInstance(DEF="b70")
 ProtoInstance696.name = "line"
 fieldValue697 = x3d.fieldValue()
 fieldValue697.name = "bond_set"
-fieldValue697.value = "11.3739 -7.347 0 9.9692 -7.9824 0"
+fieldValue697.value = "9.9335 -1.0591 0 10.1787 0.4682 0"
 
 ProtoInstance696.fieldValue.append(fieldValue697)
 
-Group529.children.append(ProtoInstance696)
-ProtoInstance698 = x3d.ProtoInstance(DEF="b71_2")
+Group531.children.append(ProtoInstance696)
+ProtoInstance698 = x3d.ProtoInstance(DEF="b71")
 ProtoInstance698.name = "line"
 fieldValue699 = x3d.fieldValue()
 fieldValue699.name = "bond_set"
-fieldValue699.value = "11.4139 -7.347 0 10.0092 -7.9824 0"
+fieldValue699.value = "11.3739 -7.347 0 9.9692 -7.9824 0"
 
 ProtoInstance698.fieldValue.append(fieldValue699)
 
-Group529.children.append(ProtoInstance698)
+Group531.children.append(ProtoInstance698)
+ProtoInstance700 = x3d.ProtoInstance(DEF="b71_2")
+ProtoInstance700.name = "line"
+fieldValue701 = x3d.fieldValue()
+fieldValue701.name = "bond_set"
+fieldValue701.value = "11.4139 -7.347 0 10.0092 -7.9824 0"
 
-Scene17.children.append(Group529)
+ProtoInstance700.fieldValue.append(fieldValue701)
 
-X3D0.Scene = Scene17
+Group531.children.append(ProtoInstance700)
+
+Scene19.children.append(Group531)
+
+X3D0.Scene = Scene19
 f = open("../data/Oxytocin.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

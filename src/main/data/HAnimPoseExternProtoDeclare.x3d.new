@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="HAnimPoseExternProtoDeclare.x3d"></meta>
 <meta name="description" content="Define ExternProtoDeclare for an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."></meta>
 <meta name="created" content="1 November 2025"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:11:17 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:10:48 GMT"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="creator" content="Joe Williams"></meta>
 <meta name="contributor" content="Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE"></meta>

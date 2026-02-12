@@ -1,7 +1,7 @@
 (ns forcenode
   (:import 	(org.web3d.x3d.jsail.Shape AcousticProperties Appearance FillProperties LineProperties Material PhysicalMaterial PointProperties Shape TwoSidedMaterial UnlitMaterial)
 	(org.web3d.x3d.jsail.Sound Analyser AudioClip AudioDestination BiquadFilter BufferAudioSource ChannelMerger ChannelSelector ChannelSplitter Convolver Delay DynamicsCompressor Gain ListenerPointSource MicrophoneSource OscillatorSource PeriodicWave Sound SpatialSound StreamAudioDestination StreamAudioSource WaveShaper)
-	(org.web3d.x3d.jsail.Networking Anchor Inline LoadSensor)
+	(org.web3d.x3d.jsail.Networking Anchor Inline LoadSensor EXPORT IMPORT)
 	(org.web3d.x3d.jsail.Geometry2D Arc2D ArcClose2D Circle2D Disk2D Polyline2D Polypoint2D Rectangle2D TriangleSet2D)
 	(org.web3d.x3d.jsail.EnvironmentalEffects Background Fog FogCoordinate LocalFog TextureBackground)
 	(org.web3d.x3d.jsail.RigidBodyPhysics BallJoint CollidableOffset CollidableShape CollisionCollection CollisionSensor CollisionSpace Contact DoubleAxisHingeJoint MotorJoint RigidBody RigidBodyCollection SingleAxisHingeJoint SliderJoint UniversalJoint)
@@ -16,7 +16,7 @@
 	(org.web3d.x3d.jsail.Interpolation ColorInterpolator CoordinateInterpolator CoordinateInterpolator2D EaseInEaseOut NormalInterpolator OrientationInterpolator PositionInterpolator PositionInterpolator2D ScalarInterpolator SplinePositionInterpolator SplinePositionInterpolator2D SplineScalarInterpolator SquadOrientationInterpolator)
 	(org.web3d.x3d.jsail.CubeMapTexturing ComposedCubeMapTexture GeneratedCubeMapTexture ImageCubeMapTexture)
 	(org.web3d.x3d.jsail.Shaders ComposedShader FloatVertexAttribute Matrix3VertexAttribute Matrix4VertexAttribute PackagedShader ProgramShader ShaderPart ShaderProgram)
-	(org.web3d.x3d.jsail.Texturing3D ComposedTexture3D ImageTexture3D PixelTexture3D TextureCoordinate3D TextureCoordinate4D TextureTransform3D TextureTransformMatrix3D ImageTextureAtlas)
+	(org.web3d.x3d.jsail.Texturing3D ComposedTexture3D ImageTexture3D PixelTexture3D TextureCoordinate3D TextureCoordinate4D TextureTransform3D TextureTransformMatrix3D)
 	(org.web3d.x3d.jsail.NURBS Contour2D ContourPolyline2D NurbsCurve NurbsCurve2D NurbsOrientationInterpolator NurbsPatchSurface NurbsPositionInterpolator NurbsSet NurbsSurfaceInterpolator NurbsSweptSurface NurbsSwungSurface NurbsTextureCoordinate NurbsTrimmedSurface)
 	(org.web3d.x3d.jsail.PointingDeviceSensor CylinderSensor PlaneSensor SphereSensor TouchSensor)
 	(org.web3d.x3d.jsail.Lighting DirectionalLight EnvironmentLight PointLight SpotLight)
@@ -35,7 +35,6 @@
 	(org.web3d.x3d.jsail.Scripting Script)
 	(org.web3d.x3d.jsail.TextureProjection TextureProjector TextureProjectorParallel)
 	(org.web3d.x3d.jsail.Time TimeSensor)
-	(org.web3d.x3d.jsail.X_ITE AnisotropyMaterialExtension BlendMode ClearcoatMaterialExtension DepthMode DispersionMaterialExtension EmissiveStrengthMaterialExtension IORMaterialExtension InstancedShape IridescenceMaterialExtension SheenMaterialExtension SpecularGlossinessMaterial SpecularMaterialExtension TransmissionMaterialExtension VolumeMaterialExtension DiffuseTransmissionMaterialExtension)
 	(org.web3d.x3d.jsail.fields SFBool MFBool SFColor MFColor SFColorRGBA MFColorRGBA SFDouble MFDouble SFFloat MFFloat SFImage MFImage SFInt32 MFInt32 SFMatrix3d MFMatrix3d SFMatrix3f MFMatrix3f SFMatrix4d MFMatrix4d SFMatrix4f MFMatrix4f SFNode MFNode SFRotation MFRotation SFString MFString SFTime MFTime SFVec2d MFVec2d SFVec2f MFVec2f SFVec3d MFVec3d SFVec3f MFVec3f SFVec4d MFVec4d SFVec4f MFVec4f)
 	(org.web3d.x3d.jsail ConfigurationProperties)
 ))
@@ -43,8 +42,6 @@
 (org.web3d.x3d.jsail.ConfigurationProperties/setDeleteIntermediateFiles false)
 (org.web3d.x3d.jsail.ConfigurationProperties/setStripTrailingZeroes true)
 (org.web3d.x3d.jsail.ConfigurationProperties/setStripDefaultAttributes true)
-(def EXPORT org.web3d.x3d.jsail.Networking.EXPORT)
-(def IMPORT org.web3d.x3d.jsail.Networking.IMPORT)
 (def X3D0 (doto (X3D.)
     (.setProfile "Immersive")
     (.setVersion "4.0")
@@ -342,7 +339,9 @@
                 (.setValue "false")
                 (.setType "SFBool")
             ))
-(.addComments "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")
+(.addComments "<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">")
+(.addComments "<Transform USE=\"HoldsContent\"/>")
+(.addComments "</field>")
 (.setSourceCode "ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);
@@ -408,4 +407,4 @@
 (.toFileX3D X3D0 "../../../../../data/forcenode.new.clojure.x3d")
 (.toFileJSON X3D0 "../../../../../data/forcenode.new.clojure.x3dj")
 (defn -main []
-(println "Hello from your main function!"))
+(println "Hello from your clojure.main function!"))

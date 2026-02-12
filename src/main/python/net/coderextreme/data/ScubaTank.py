@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Interchange"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "24 January 2001"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 07:12:56 GMT"
+meta6.content = "23 May 2020"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -35,184 +35,194 @@ meta7.name = "identifier"
 meta7.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"
 
 head1.children.append(meta7)
+meta8 = x3d.meta()
+meta8.name = "generator"
+meta8.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta8)
+meta9 = x3d.meta()
+meta9.name = "license"
+meta9.content = "../license.html"
+
+head1.children.append(meta9)
 
 X3D0.head = head1
-Scene8 = x3d.Scene()
-WorldInfo9 = x3d.WorldInfo()
-WorldInfo9.title = "ScubaTank.x3d"
+Scene10 = x3d.Scene()
+WorldInfo11 = x3d.WorldInfo()
+WorldInfo11.title = "ScubaTank.x3d"
 
-Scene8.children.append(WorldInfo9)
-Transform10 = x3d.Transform(DEF="ScubaTank")
-Transform11 = x3d.Transform()
-Shape12 = x3d.Shape()
-Appearance13 = x3d.Appearance()
-Material14 = x3d.Material(DEF="tank")
-Material14.ambientIntensity = 0.3
-Material14.diffuseColor = [0.3,0.3,0.5]
-Material14.specularColor = [0.7,0.7,0.8]
-Material14.shininess = 0.1
+Scene10.children.append(WorldInfo11)
+Transform12 = x3d.Transform(DEF="ScubaTank")
+Transform13 = x3d.Transform()
+Shape14 = x3d.Shape()
+Appearance15 = x3d.Appearance()
+Material16 = x3d.Material(DEF="tank")
+Material16.ambientIntensity = 0.3
+Material16.diffuseColor = [0.3,0.3,0.5]
+Material16.shininess = 0.1
+Material16.specularColor = [0.7,0.7,0.8]
 
-Appearance13.material = Material14
+Appearance15.material = Material16
 
-Shape12.appearance = Appearance13
-Cylinder15 = x3d.Cylinder()
-Cylinder15.height = 0.7
-Cylinder15.radius = 0.1
+Shape14.appearance = Appearance15
+Cylinder17 = x3d.Cylinder()
+Cylinder17.height = 0.7
+Cylinder17.radius = 0.1
 
-Shape12.geometry = Cylinder15
+Shape14.geometry = Cylinder17
 
-Transform11.children.append(Shape12)
+Transform13.children.append(Shape14)
 
-Transform10.children.append(Transform11)
-Transform16 = x3d.Transform()
-Transform16.translation = [0,0.35,0]
-Shape17 = x3d.Shape()
-Appearance18 = x3d.Appearance()
-Material19 = x3d.Material(USE="tank")
+Transform12.children.append(Transform13)
+Transform18 = x3d.Transform()
+Transform18.translation = [0,0.35,0]
+Shape19 = x3d.Shape()
+Appearance20 = x3d.Appearance()
+Material21 = x3d.Material(USE="tank")
 
-Appearance18.material = Material19
+Appearance20.material = Material21
 
-Shape17.appearance = Appearance18
-Sphere20 = x3d.Sphere()
-Sphere20.radius = 0.098
+Shape19.appearance = Appearance20
+Sphere22 = x3d.Sphere()
+Sphere22.radius = 0.098
 
-Shape17.geometry = Sphere20
+Shape19.geometry = Sphere22
 
-Transform16.children.append(Shape17)
+Transform18.children.append(Shape19)
 
-Transform10.children.append(Transform16)
-Transform21 = x3d.Transform()
-Transform21.translation = [0,-0.35,0]
-Shape22 = x3d.Shape(DEF="tankBottom")
-Appearance23 = x3d.Appearance()
-Material24 = x3d.Material(DEF="black")
-Material24.ambientIntensity = 0.3
-Material24.diffuseColor = [0,0,0]
+Transform12.children.append(Transform18)
+Transform23 = x3d.Transform()
+Transform23.translation = [0,-0.35,0]
+Shape24 = x3d.Shape(DEF="tankBottom")
+Appearance25 = x3d.Appearance()
+Material26 = x3d.Material(DEF="black")
+Material26.ambientIntensity = 0.3
+Material26.diffuseColor = [0,0,0]
 
-Appearance23.material = Material24
+Appearance25.material = Material26
 
-Shape22.appearance = Appearance23
-Cylinder25 = x3d.Cylinder()
-Cylinder25.height = 0.06
-Cylinder25.radius = 0.115
+Shape24.appearance = Appearance25
+Cylinder27 = x3d.Cylinder()
+Cylinder27.height = 0.06
+Cylinder27.radius = 0.115
 
-Shape22.geometry = Cylinder25
+Shape24.geometry = Cylinder27
 
-Transform21.children.append(Shape22)
+Transform23.children.append(Shape24)
 
-Transform10.children.append(Transform21)
-Group26 = x3d.Group(DEF="tankNozzle")
-Transform27 = x3d.Transform()
-Transform28 = x3d.Transform()
-Transform28.translation = [0,0.45,0]
-Shape29 = x3d.Shape(DEF="pressure")
-Appearance30 = x3d.Appearance()
-Material31 = x3d.Material(DEF="pressureColor")
-Material31.ambientIntensity = 0.4
-Material31.diffuseColor = [0.91,0.91,0.91]
-Material31.specularColor = [0.91,0.9,0.91]
-Material31.shininess = 0.16
+Transform12.children.append(Transform23)
+Group28 = x3d.Group(DEF="tankNozzle")
+Transform29 = x3d.Transform()
+Transform30 = x3d.Transform()
+Transform30.translation = [0,0.45,0]
+Shape31 = x3d.Shape(DEF="pressure")
+Appearance32 = x3d.Appearance()
+Material33 = x3d.Material(DEF="pressureColor")
+Material33.ambientIntensity = 0.4
+Material33.diffuseColor = [0.91,0.91,0.91]
+Material33.shininess = 0.16
+Material33.specularColor = [0.91,0.9,0.91]
 
-Appearance30.material = Material31
+Appearance32.material = Material33
 
-Shape29.appearance = Appearance30
-Cylinder32 = x3d.Cylinder()
-Cylinder32.height = 0.1
-Cylinder32.radius = 0.015
+Shape31.appearance = Appearance32
+Cylinder34 = x3d.Cylinder()
+Cylinder34.height = 0.1
+Cylinder34.radius = 0.015
 
-Shape29.geometry = Cylinder32
+Shape31.geometry = Cylinder34
 
-Transform28.children.append(Shape29)
+Transform30.children.append(Shape31)
 
-Transform27.children.append(Transform28)
-Transform33 = x3d.Transform()
-Transform33.translation = [0,0.5,0]
-Shape34 = x3d.Shape(DEF="pressureTop")
-Appearance35 = x3d.Appearance()
-Material36 = x3d.Material(USE="black")
+Transform29.children.append(Transform30)
+Transform35 = x3d.Transform()
+Transform35.translation = [0,0.5,0]
+Shape36 = x3d.Shape(DEF="pressureTop")
+Appearance37 = x3d.Appearance()
+Material38 = x3d.Material(USE="black")
 
-Appearance35.material = Material36
+Appearance37.material = Material38
 
-Shape34.appearance = Appearance35
-Cylinder37 = x3d.Cylinder()
-Cylinder37.height = 0.02
-Cylinder37.radius = 0.025
+Shape36.appearance = Appearance37
+Cylinder39 = x3d.Cylinder()
+Cylinder39.height = 0.02
+Cylinder39.radius = 0.025
 
-Shape34.geometry = Cylinder37
+Shape36.geometry = Cylinder39
 
-Transform33.children.append(Shape34)
+Transform35.children.append(Shape36)
 
-Transform27.children.append(Transform33)
-Transform38 = x3d.Transform()
-Transform38.translation = [-0.028,0.462,0]
-Transform38.rotation = [0,0,1,1.57]
-Transform39 = x3d.Transform()
-Shape40 = x3d.Shape(DEF="connectorToRegulator")
-Appearance41 = x3d.Appearance()
-Material42 = x3d.Material(USE="pressureColor")
+Transform29.children.append(Transform35)
+Transform40 = x3d.Transform()
+Transform40.rotation = [0,0,1,1.57]
+Transform40.translation = [-0.028,0.462,0]
+Transform41 = x3d.Transform()
+Shape42 = x3d.Shape(DEF="connectorToRegulator")
+Appearance43 = x3d.Appearance()
+Material44 = x3d.Material(USE="pressureColor")
 
-Appearance41.material = Material42
+Appearance43.material = Material44
 
-Shape40.appearance = Appearance41
-Cylinder43 = x3d.Cylinder()
-Cylinder43.height = 0.03
-Cylinder43.radius = 0.01
+Shape42.appearance = Appearance43
+Cylinder45 = x3d.Cylinder()
+Cylinder45.height = 0.03
+Cylinder45.radius = 0.01
 
-Shape40.geometry = Cylinder43
+Shape42.geometry = Cylinder45
 
-Transform39.children.append(Shape40)
+Transform41.children.append(Shape42)
 
-Transform38.children.append(Transform39)
-Transform44 = x3d.Transform()
-Transform44.translation = [0,0.02,0]
-Shape45 = x3d.Shape(DEF="connectorToRegulatorTop")
-Appearance46 = x3d.Appearance()
-Material47 = x3d.Material(USE="black")
+Transform40.children.append(Transform41)
+Transform46 = x3d.Transform()
+Transform46.translation = [0,0.02,0]
+Shape47 = x3d.Shape(DEF="connectorToRegulatorTop")
+Appearance48 = x3d.Appearance()
+Material49 = x3d.Material(USE="black")
 
-Appearance46.material = Material47
+Appearance48.material = Material49
 
-Shape45.appearance = Appearance46
-Cylinder48 = x3d.Cylinder()
-Cylinder48.height = 0.02
-Cylinder48.radius = 0.02
+Shape47.appearance = Appearance48
+Cylinder50 = x3d.Cylinder()
+Cylinder50.height = 0.02
+Cylinder50.radius = 0.02
 
-Shape45.geometry = Cylinder48
+Shape47.geometry = Cylinder50
 
-Transform44.children.append(Shape45)
+Transform46.children.append(Shape47)
 
-Transform38.children.append(Transform44)
+Transform40.children.append(Transform46)
 
-Transform27.children.append(Transform38)
+Transform29.children.append(Transform40)
 
-Group26.children.append(Transform27)
+Group28.children.append(Transform29)
 
-Transform10.children.append(Group26)
-Transform49 = x3d.Transform()
-Transform49.translation = [0,0.2,0]
-Shape50 = x3d.Shape(DEF="tankHoldBelt")
-Appearance51 = x3d.Appearance()
-Material52 = x3d.Material(USE="black")
+Transform12.children.append(Group28)
+Transform51 = x3d.Transform()
+Transform51.translation = [0,0.2,0]
+Shape52 = x3d.Shape(DEF="tankHoldBelt")
+Appearance53 = x3d.Appearance()
+Material54 = x3d.Material(USE="black")
 
-Appearance51.material = Material52
+Appearance53.material = Material54
 
-Shape50.appearance = Appearance51
-Cylinder53 = x3d.Cylinder()
-Cylinder53.height = 0.1
-Cylinder53.radius = 0.115
+Shape52.appearance = Appearance53
+Cylinder55 = x3d.Cylinder()
+Cylinder55.height = 0.1
+Cylinder55.radius = 0.115
 
-Shape50.geometry = Cylinder53
+Shape52.geometry = Cylinder55
 
-Transform49.children.append(Shape50)
+Transform51.children.append(Shape52)
 
-Transform10.children.append(Transform49)
+Transform12.children.append(Transform51)
 
-Scene8.children.append(Transform10)
-Background54 = x3d.Background()
-Background54.skyColor = [(0.6, 0.6, 0.6)]
+Scene10.children.append(Transform12)
+Background56 = x3d.Background()
+Background56.skyColor = [(0.6, 0.6, 0.6)]
 
-Scene8.children.append(Background54)
+Scene10.children.append(Background56)
 
-X3D0.Scene = Scene8
+X3D0.Scene = Scene10
 f = open("../data/ScubaTank.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

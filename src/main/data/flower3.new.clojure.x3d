@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='flower3.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/flower3.x3d' name='identifier'/>
-    <meta content='a flower' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <NavigationInfo/>
@@ -25,13 +24,12 @@
       </Shape>
     </Transform>
     <Script DEF='OrbitScript'>
-      <!-- <field accessType="inputOutput" name="e" type="SFFloat" value="5"/> <field accessType="inputOutput" name="f" type="SFFloat" value="5"/> <field accessType="inputOutput" name="g" type="SFFloat" value="5"/> <field accessType="inputOutput" name="h" type="SFFloat" value="5"/> <field accessType="inputOutput" name="t" type="SFFloat" value="0"/> <field accessType="inputOutput" name="p" type="SFFloat" value="0"/> <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/> -->
-      <field name='set_fraction' accessType='inputOnly' type='SFFloat'/>
-      <field name='coordinates' accessType='outputOnly' type='MFVec3f'/>
-      <field name='coordIndexes' accessType='outputOnly' type='MFInt32'/>
+      <field accessType='inputOnly' name='set_fraction' type='SFFloat'/>
+      <field accessType='outputOnly' name='coordinates' type='MFVec3f'/>
+      <field accessType='outputOnly' name='coordIndexes' type='MFInt32'/>
 <![CDATA[
 ecmascript:
-
+    
 var e = 5;
 var f = 5;
 var g = 5;
@@ -110,7 +108,7 @@ function set_fraction(fraction, eventTime) {
     </Script>
     <TimeSensor DEF='Clock' cycleInterval='16.0' loop='true'/>
     <ROUTE fromField='coordIndexes' fromNode='OrbitScript' toField='set_coordIndex' toNode='Orbit'/>
-    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='point' toNode='OrbitCoordinates'/>
+    <ROUTE fromField='coordinates' fromNode='OrbitScript' toField='set_point' toNode='OrbitCoordinates'/>
     <ROUTE fromField='fraction_changed' fromNode='Clock' toField='set_fraction' toNode='OrbitScript'/>
   </Scene>
 </X3D>

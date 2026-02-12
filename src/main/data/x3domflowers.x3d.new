@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><component name="EnvironmentalEffects" level="3"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="Scripting" level="1"></component>
+<component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
+<component name="Texturing" level="1"></component>
+<component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
+<component name="Core" level="1"></component>
 <meta name="title" content="x3domflowers.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="5 or more prismatic flowers"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
+<meta name="generator" content="X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"></meta>
 </head>
-<Scene><ExternProtoDeclare name="FlowerProto" url="&quot;../data/flowerproto.json#FlowerProto&quot;"><field accessType="inputOutput" type="MFString" name="vertex"></field>
-<field accessType="inputOutput" type="MFString" name="fragment"></field>
+<Scene><NavigationInfo></NavigationInfo>
+<!--Images courtesy of Paul Debevec's Light Probe Image Gallery--><Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
+<Group><ExternProtoDeclare name="FlowerProto" url="&quot;../data/flowerproto.json#FlowerProto&quot;"><field name="vertex" accessType="inputOutput" type="MFString"></field>
+<field name="fragment" accessType="inputOutput" type="MFString"></field>
 </ExternProtoDeclare>
-<ProtoDeclare name="flower"><ProtoInterface></ProtoInterface>
-<ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
+<ProtoDeclare name="flower"><ProtoBody><Group><ProtoInstance name="FlowerProto"><fieldValue name="vertex" value="&quot;../shaders/x3dom_flowers_chromatic.vs&quot;"></fieldValue>
 <fieldValue name="fragment" value="&quot;../shaders/common.fs&quot;"></fieldValue>
 </ProtoInstance>
 </Group>
 </ProtoBody>
 </ProtoDeclare>
-<NavigationInfo></NavigationInfo>
-<Background frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></Background>
-<Group><ProtoInstance name="flower"></ProtoInstance>
+<ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>
 <ProtoInstance name="flower"></ProtoInstance>

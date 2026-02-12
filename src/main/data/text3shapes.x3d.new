@@ -1,29 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
 <meta name="title" content="text3shapes.x3d"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d"></meta>
 <meta name="description" content="3 text shapes"></meta>
+<meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><Transform><Shape><Appearance containerField="appearance"><Material containerField="material"></Material>
-</Appearance>
-<Text string="&quot;Node\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+<Scene><Transform><Shape><Text string="&quot;Node\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
 </Text>
-</Shape>
-<Shape><Appearance containerField="appearance"><Material containerField="material"></Material>
+<Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
-<Text string="&quot;Node2&quot; &quot;\\&quot; &quot;\\\\&quot; &quot;Node2&quot;"><FontStyle containerField="fontStyle"></FontStyle>
-</Text>
 </Shape>
-<Shape><Appearance containerField="appearance"><Material containerField="material"></Material>
+<Shape><Text string="&quot;Node2&quot; &quot;\\&quot; &quot;\\\\&quot; &quot;Node2&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material"></Material>
 </Appearance>
-<Text string="&quot;Node3 \\\\ \\ &quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
-</Text>
 </Shape>
-<Script><field accessType="initializeOnly" type="MFString" name="frontUrls" value="&quot;rnl_front.png&quot; &quot;uffizi_front.png&quot;"></field>
+<Shape><Text string="&quot;Node3 \\\\ \\ &quot; &quot;Node3\&quot;\&quot;\&quot;&quot;"><FontStyle containerField="fontStyle"></FontStyle>
+</Text>
+<Appearance containerField="appearance"><Material containerField="material"></Material>
+</Appearance>
+</Shape>
+<Script><field name="frontUrls" type="MFString" accessType="initializeOnly" value="&quot;rnl_front.png&quot; &quot;uffizi_front.png&quot;"></field>
 <![CDATA[ecmascript:
-			    var me = '"1" "\"2" "\n3"';]]></Script>
+			    var me = '"1" ""2" "\n3"';]]></Script>
 </Transform>
 </Scene>
 </X3D>

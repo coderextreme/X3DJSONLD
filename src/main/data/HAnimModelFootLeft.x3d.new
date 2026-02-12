@@ -5,7 +5,7 @@
 <meta name="description" content="Left foot, using high-fidelity definitions for HAnim version 2.0"></meta>
 <meta name="creator" content="Kwan-Hee YOO, Don Brutzman and Joe Williams"></meta>
 <meta name="created" content="26 January 2015"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:11:17 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:10:48 GMT"></meta>
 <meta name="warning" content="not yet to scale"></meta>
 <meta name="warning" content="TODO will X3D HAnim component add a new level to support LOA-4 functionality?"></meta>
 <meta name="info" content="TODO describe how to compute and apply offsets for center values whenever attaching this appendage to a body"></meta>

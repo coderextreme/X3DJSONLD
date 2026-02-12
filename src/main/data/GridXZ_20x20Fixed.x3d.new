@@ -3,7 +3,7 @@
 <X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="GridXZ_20x20Fixed.x3d"></meta>
 <meta name="creator" content="MV4204 class"></meta>
 <meta name="created" content="3 September 2000"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:11:17 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:10:47 GMT"></meta>
 <meta name="reference" content="GridXY_20x20Fixed.x3d"></meta>
 <meta name="reference" content="GridYZ_20x20Fixed.x3d"></meta>
 <meta name="description" content="Line grid authoring tool to enable precise visual measurement of objects in 3D space - fixed position. Oriented along XZ plane, size 20m by 20m, default block size 1m by 1m."></meta>

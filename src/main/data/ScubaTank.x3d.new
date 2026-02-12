@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="ScubaTank.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Interchange" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="ScubaTank.x3d"></meta>
 <meta name="description" content="Scuba gear used by Nancy Diving example."></meta>
 <meta name="creator" content="Etsuko Lippi"></meta>
 <meta name="created" content="24 January 2001"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:12:56 GMT"></meta>
+<meta name="modified" content="23 May 2020"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/ScubaTank.x3d"></meta>
+<meta name="generator" content="X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="ScubaTank.x3d"></WorldInfo>
-<Transform DEF="ScubaTank"><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="tank" ambientIntensity="0.3" diffuseColor="0.3 0.3 0.5" specularColor="0.7 0.7 0.8" shininess="0.1"></Material>
+<Transform DEF="ScubaTank"><Transform><Shape><Appearance containerField="appearance"><Material containerField="material" DEF="tank" ambientIntensity="0.3" diffuseColor="0.3 0.3 0.5" shininess="0.1" specularColor="0.7 0.7 0.8"></Material>
 </Appearance>
 <Cylinder height="0.7" radius="0.1"></Cylinder>
 </Shape>
@@ -23,7 +25,7 @@
 <Cylinder height="0.06" radius="0.115"></Cylinder>
 </Shape>
 </Transform>
-<Group DEF="tankNozzle"><Transform><Transform translation="0 0.45 0"><Shape DEF="pressure"><Appearance containerField="appearance"><Material containerField="material" DEF="pressureColor" ambientIntensity="0.4" diffuseColor="0.91 0.91 0.91" specularColor="0.91 0.9 0.91" shininess="0.16"></Material>
+<Group DEF="tankNozzle"><Transform><Transform translation="0 0.45 0"><Shape DEF="pressure"><Appearance containerField="appearance"><Material containerField="material" DEF="pressureColor" ambientIntensity="0.4" diffuseColor="0.91 0.91 0.91" shininess="0.16" specularColor="0.91 0.9 0.91"></Material>
 </Appearance>
 <Cylinder height="0.1" radius="0.015"></Cylinder>
 </Shape>
@@ -33,7 +35,7 @@
 <Cylinder height="0.02" radius="0.025"></Cylinder>
 </Shape>
 </Transform>
-<Transform translation="-0.028 0.462 0" rotation="0 0 1 1.57"><Transform><Shape DEF="connectorToRegulator"><Appearance containerField="appearance"><Material containerField="material" USE="pressureColor"></Material>
+<Transform rotation="0 0 1 1.57" translation="-0.028 0.462 0"><Transform><Shape DEF="connectorToRegulator"><Appearance containerField="appearance"><Material containerField="material" USE="pressureColor"></Material>
 </Appearance>
 <Cylinder height="0.03" radius="0.01"></Cylinder>
 </Shape>

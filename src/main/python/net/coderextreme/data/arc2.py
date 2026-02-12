@@ -39,7 +39,7 @@ Background8.skyColor = [(0.4, 0.4, 0.4)]
 Scene6.children.append(Background8)
 Transform9 = x3d.Transform(DEF="G1")
 Transform10 = x3d.Transform(DEF="DECLpoint_INSTANCE_node")
-Transform10.translation = [0,4.45,0]
+Transform10.translation = [0,0.995,0]
 Shape11 = x3d.Shape()
 Appearance12 = x3d.Appearance()
 Material13 = x3d.Material()
@@ -105,7 +105,7 @@ Transform9.children.append(Transform10)
 Scene6.children.append(Transform9)
 Transform22 = x3d.Transform(DEF="G2")
 Transform23 = x3d.Transform(DEF="DECLpoint_INSTANCE1000_node")
-Transform23.translation = [0,4.45,0]
+Transform23.translation = [0,0.995,0]
 Shape24 = x3d.Shape()
 Appearance25 = x3d.Appearance()
 Material26 = x3d.Material()

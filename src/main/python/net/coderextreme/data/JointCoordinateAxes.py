@@ -3,158 +3,163 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "converter"
 meta2.content = "x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy"
 
 head1.children.append(meta2)
+meta3 = x3d.meta()
+meta3.name = "converted"
+meta3.content = "Mon, 31 Jul 2023 03:48:04 GMT"
+
+head1.children.append(meta3)
 
 X3D0.head = head1
-Scene3 = x3d.Scene()
-NavigationInfo4 = x3d.NavigationInfo()
-NavigationInfo4.headlight = False
+Scene4 = x3d.Scene()
+NavigationInfo5 = x3d.NavigationInfo()
+NavigationInfo5.headlight = False
 
-Scene3.children.append(NavigationInfo4)
-Group5 = x3d.Group()
-Group6 = x3d.Group(DEF="ARROW")
-Shape7 = x3d.Shape()
-Appearance8 = x3d.Appearance(DEF="ARROW_APPEARANCE")
-Material9 = x3d.Material()
-Material9.diffuseColor = [0.3,0.3,1]
-Material9.emissiveColor = [0.3,0.3,0.33]
+Scene4.children.append(NavigationInfo5)
+Group6 = x3d.Group()
+Group7 = x3d.Group(DEF="ARROW")
+Shape8 = x3d.Shape()
+Appearance9 = x3d.Appearance(DEF="ARROW_APPEARANCE")
+Material10 = x3d.Material()
+Material10.diffuseColor = [0.3,0.3,1]
+Material10.emissiveColor = [0.3,0.3,0.33]
 
-Appearance8.material = Material9
+Appearance9.material = Material10
 
-Shape7.appearance = Appearance8
-Cylinder10 = x3d.Cylinder()
-Cylinder10.top = False
-Cylinder10.bottom = False
-Cylinder10.radius = 0.025
+Shape8.appearance = Appearance9
+Cylinder11 = x3d.Cylinder()
+Cylinder11.top = False
+Cylinder11.bottom = False
+Cylinder11.radius = 0.025
 
-Shape7.geometry = Cylinder10
+Shape8.geometry = Cylinder11
 
-Group6.children.append(Shape7)
-Transform11 = x3d.Transform()
-Transform11.translation = [0,1,0]
-Shape12 = x3d.Shape(DEF="ARROW_POINTER")
-Appearance13 = x3d.Appearance(USE="ARROW_APPEARANCE")
+Group7.children.append(Shape8)
+Transform12 = x3d.Transform()
+Transform12.translation = [0,1,0]
+Shape13 = x3d.Shape(DEF="ARROW_POINTER")
+Appearance14 = x3d.Appearance(USE="ARROW_APPEARANCE")
 
-Shape12.appearance = Appearance13
-Cone14 = x3d.Cone()
-Cone14.height = 0.1
-Cone14.bottomRadius = 0.05
+Shape13.appearance = Appearance14
+Cone15 = x3d.Cone()
+Cone15.height = 0.1
+Cone15.bottomRadius = 0.05
 
-Shape12.geometry = Cone14
+Shape13.geometry = Cone15
 
-Transform11.children.append(Shape12)
+Transform12.children.append(Shape13)
 
-Group6.children.append(Transform11)
-Transform15 = x3d.Transform()
-Transform15.translation = [0,-1,0]
-Transform15.rotation = [1,0,0,3.1416]
-Shape16 = x3d.Shape(USE="ARROW_POINTER")
+Group7.children.append(Transform12)
+Transform16 = x3d.Transform()
+Transform16.translation = [0,-1,0]
+Transform16.rotation = [1,0,0,3.1416]
+Shape17 = x3d.Shape(USE="ARROW_POINTER")
 
-Transform15.children.append(Shape16)
+Transform16.children.append(Shape17)
 
-Group6.children.append(Transform15)
+Group7.children.append(Transform16)
 
-Group5.children.append(Group6)
-Transform17 = x3d.Transform()
-Transform17.translation = [0,1.08,0]
-Billboard18 = x3d.Billboard()
-Shape19 = x3d.Shape()
-Appearance20 = x3d.Appearance(DEF="LABEL_APPEARANCE")
-Material21 = x3d.Material()
-Material21.diffuseColor = [1,1,0.3]
-Material21.emissiveColor = [0.33,0.33,0.1]
+Group6.children.append(Group7)
+Transform18 = x3d.Transform()
+Transform18.translation = [0,1.08,0]
+Billboard19 = x3d.Billboard()
+Shape20 = x3d.Shape()
+Appearance21 = x3d.Appearance(DEF="LABEL_APPEARANCE")
+Material22 = x3d.Material()
+Material22.diffuseColor = [1,1,0.3]
+Material22.emissiveColor = [0.33,0.33,0.1]
 
-Appearance20.material = Material21
+Appearance21.material = Material22
 
-Shape19.appearance = Appearance20
-Text22 = x3d.Text()
-Text22.string = ["Y"]
-FontStyle23 = x3d.FontStyle(DEF="LABEL_FONT")
-FontStyle23.family = ["SANS"]
-FontStyle23.size = 0.2
-FontStyle23.justify = ["MIDDLE"]
+Shape20.appearance = Appearance21
+Text23 = x3d.Text()
+Text23.string = ["Y"]
+FontStyle24 = x3d.FontStyle(DEF="LABEL_FONT")
+FontStyle24.family = ["SANS"]
+FontStyle24.size = 0.2
+FontStyle24.justify = ["MIDDLE"]
 
-Text22.fontStyle = FontStyle23
+Text23.fontStyle = FontStyle24
 
-Shape19.geometry = Text22
+Shape20.geometry = Text23
 
-Billboard18.children.append(Shape19)
+Billboard19.children.append(Shape20)
 
-Transform17.children.append(Billboard18)
+Transform18.children.append(Billboard19)
 
-Group5.children.append(Transform17)
+Group6.children.append(Transform18)
 
-Scene3.children.append(Group5)
-Transform24 = x3d.Transform()
-Transform24.rotation = [0,0,1,-1.5708]
-Group25 = x3d.Group()
-Group26 = x3d.Group(USE="ARROW")
+Scene4.children.append(Group6)
+Transform25 = x3d.Transform()
+Transform25.rotation = [0,0,1,-1.5708]
+Group26 = x3d.Group()
+Group27 = x3d.Group(USE="ARROW")
 
-Group25.children.append(Group26)
-Transform27 = x3d.Transform()
-Transform27.translation = [0.072,1.1,0]
-Transform27.rotation = [0,0,1,1.5708]
-Billboard28 = x3d.Billboard()
-Shape29 = x3d.Shape()
-Appearance30 = x3d.Appearance(USE="LABEL_APPEARANCE")
+Group26.children.append(Group27)
+Transform28 = x3d.Transform()
+Transform28.translation = [0.072,1.1,0]
+Transform28.rotation = [0,0,1,1.5708]
+Billboard29 = x3d.Billboard()
+Shape30 = x3d.Shape()
+Appearance31 = x3d.Appearance(USE="LABEL_APPEARANCE")
 
-Shape29.appearance = Appearance30
-Text31 = x3d.Text()
-Text31.string = ["X"]
-FontStyle32 = x3d.FontStyle(USE="LABEL_FONT")
+Shape30.appearance = Appearance31
+Text32 = x3d.Text()
+Text32.string = ["X"]
+FontStyle33 = x3d.FontStyle(USE="LABEL_FONT")
 
-Text31.fontStyle = FontStyle32
+Text32.fontStyle = FontStyle33
 
-Shape29.geometry = Text31
+Shape30.geometry = Text32
 
-Billboard28.children.append(Shape29)
+Billboard29.children.append(Shape30)
 
-Transform27.children.append(Billboard28)
+Transform28.children.append(Billboard29)
 
-Group25.children.append(Transform27)
+Group26.children.append(Transform28)
 
-Transform24.children.append(Group25)
+Transform25.children.append(Group26)
 
-Scene3.children.append(Transform24)
-Transform33 = x3d.Transform()
-Transform33.rotation = [1,0,0,1.5708]
-Group34 = x3d.Group()
-Group35 = x3d.Group(USE="ARROW")
+Scene4.children.append(Transform25)
+Transform34 = x3d.Transform()
+Transform34.rotation = [1,0,0,1.5708]
+Group35 = x3d.Group()
+Group36 = x3d.Group(USE="ARROW")
 
-Group34.children.append(Group35)
-Transform36 = x3d.Transform()
-Transform36.translation = [0,1.1,0.072]
-Transform36.rotation = [1,0,0,-1.5708]
-Billboard37 = x3d.Billboard()
-Shape38 = x3d.Shape()
-Appearance39 = x3d.Appearance(USE="LABEL_APPEARANCE")
+Group35.children.append(Group36)
+Transform37 = x3d.Transform()
+Transform37.translation = [0,1.1,0.072]
+Transform37.rotation = [1,0,0,-1.5708]
+Billboard38 = x3d.Billboard()
+Shape39 = x3d.Shape()
+Appearance40 = x3d.Appearance(USE="LABEL_APPEARANCE")
 
-Shape38.appearance = Appearance39
-Text40 = x3d.Text()
-Text40.string = ["Z"]
-FontStyle41 = x3d.FontStyle(USE="LABEL_FONT")
+Shape39.appearance = Appearance40
+Text41 = x3d.Text()
+Text41.string = ["Z"]
+FontStyle42 = x3d.FontStyle(USE="LABEL_FONT")
 
-Text40.fontStyle = FontStyle41
+Text41.fontStyle = FontStyle42
 
-Shape38.geometry = Text40
+Shape39.geometry = Text41
 
-Billboard37.children.append(Shape38)
+Billboard38.children.append(Shape39)
 
-Transform36.children.append(Billboard37)
+Transform37.children.append(Billboard38)
 
-Group34.children.append(Transform36)
+Group35.children.append(Transform37)
 
-Transform33.children.append(Group34)
+Transform34.children.append(Group35)
 
-Scene3.children.append(Transform33)
+Scene4.children.append(Transform34)
 
-X3D0.Scene = Scene3
+X3D0.Scene = Scene4
 f = open("../data/JointCoordinateAxes.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

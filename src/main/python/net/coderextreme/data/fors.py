@@ -17,7 +17,7 @@ meta3.content = "December 13 2015"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "modified"
-meta4.content = "Mon, 09 Feb 2026 07:11:19 GMT"
+meta4.content = "Mon, 09 Feb 2026 12:23:02 GMT"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
@@ -277,7 +277,7 @@ ProtoInstance57 = x3d.ProtoInstance(DEF="nodeA")
 ProtoInstance57.name = "node"
 fieldValue58 = x3d.fieldValue()
 fieldValue58.name = "position"
-fieldValue58.value = "0 1.93 0"
+fieldValue58.value = "0 4.698333 0"
 
 ProtoInstance57.fieldValue.append(fieldValue58)
 
@@ -286,7 +286,7 @@ ProtoInstance59 = x3d.ProtoInstance(DEF="nodeB")
 ProtoInstance59.name = "node"
 fieldValue60 = x3d.fieldValue()
 fieldValue60.name = "position"
-fieldValue60.value = "0 1.93 0"
+fieldValue60.value = "0 4.698333 0"
 
 ProtoInstance59.fieldValue.append(fieldValue60)
 
@@ -295,12 +295,12 @@ ProtoInstance61 = x3d.ProtoInstance(DEF="linkA")
 ProtoInstance61.name = "cyl"
 fieldValue62 = x3d.fieldValue()
 fieldValue62.name = "set_positionA"
-fieldValue62.value = "0 1.93 0"
+fieldValue62.value = "0 4.698333 0"
 
 ProtoInstance61.fieldValue.append(fieldValue62)
 fieldValue63 = x3d.fieldValue()
 fieldValue63.name = "set_positionB"
-fieldValue63.value = "0 1.93 0"
+fieldValue63.value = "0 4.698333 0"
 
 ProtoInstance61.fieldValue.append(fieldValue63)
 

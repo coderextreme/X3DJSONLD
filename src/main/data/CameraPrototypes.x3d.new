@@ -4,7 +4,7 @@
 <meta name="description" content="Camera, CameraShot and CameraMovement prototypes that demonstrate storyboard capabilities and precise camera operation. This is a developmental effort for potential X3D Specification improvement."></meta>
 <meta name="creator" content="Don Brutzman and Jeff Weekley"></meta>
 <meta name="created" content="16 March 2009"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:09:51 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:09:34 GMT"></meta>
 <meta name="TODO" content="Schematron rules, backed up by initialize() checks"></meta>
 <meta name="reference" content="BeyondViewpointCameraNodesWeb3D2009.pdf"></meta>
 <meta name="reference" content="https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"></meta>

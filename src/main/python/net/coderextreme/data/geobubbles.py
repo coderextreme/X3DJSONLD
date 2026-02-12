@@ -35,7 +35,7 @@ X3D0.head = head1
 Scene7 = x3d.Scene()
 GeoViewpoint8 = x3d.GeoViewpoint(DEF="Tour")
 GeoViewpoint8.description = "Tour Views"
-GeoViewpoint8.position = [0.000213314646318662,0.00135748535376003,3.99999812897295]
+GeoViewpoint8.position = [0.00062486428455919,0.000945935715638482,3.9999961797148]
 
 Scene7.children.append(GeoViewpoint8)
 Background9 = x3d.Background()

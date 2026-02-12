@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><component name="EnvironmentalEffects" level="3"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><!--<component name='Shape' level='4'></component>--><component name="Scripting" level="1"></component>
+<component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
+<component name="Texturing" level="1"></component>
+<component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
+<component name="Core" level="1"></component>
 <meta name="title" content="geo.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"></meta>
+<meta name="description" content="a sphere"></meta>
 </head>
 <Scene><NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint DEF="Tour" description="Tour Views"></Viewpoint>
-<Background frontUrl="&quot;../resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;" backUrl="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;" leftUrl="&quot;../resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;" rightUrl="&quot;../resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;" topUrl="&quot;../resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;" bottomUrl="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;"></Background>
-<Transform><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="frontTexture" url="&quot;../resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;"></ImageTexture>
-<ImageTexture containerField="backTexture" url="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;"></ImageTexture>
+<!--Viewpoint position='0 0 4' description='sphere in road'/--><Background backUrl="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;" bottomUrl="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;" frontUrl="&quot;../resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;" leftUrl="&quot;../resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;" rightUrl="&quot;../resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;" topUrl="&quot;../resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;"></Background>
+<Transform><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/bBK.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBK.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/bFR.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bFR.png&quot;"></ImageTexture>
 <ImageTexture containerField="leftTexture" url="&quot;../resources/images/bLF.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bLF.png&quot;"></ImageTexture>
 <ImageTexture containerField="rightTexture" url="&quot;../resources/images/bRT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bRT.png&quot;"></ImageTexture>
 <ImageTexture containerField="topTexture" url="&quot;../resources/images/bTP.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bTP.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/bBT.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/bBT.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
-<ComposedShader language="GLSL"><ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;"></ShaderPart>
-<ShaderPart DEF="common" type="FRAGMENT" url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;"></ShaderPart>
-<field accessType="inputOutput" type="SFVec3f" name="chromaticDispertion" value="0.98 1 1.033"></field>
-<field accessType="inputOutput" type="SFNode" name="cube"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+<ComposedShader language="GLSL"><field name="chromaticDispertion" accessType="inputOutput" type="SFVec3f" value="0.98 1 1.033"></field>
+<field name="cube" type="SFNode" accessType="inputOutput"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
 </field>
-<field accessType="inputOutput" type="SFFloat" name="bias" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="scale" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="power" value="2"></field>
+<field name="bias" accessType="inputOutput" type="SFFloat" value="0.5"></field>
+<field name="scale" accessType="inputOutput" type="SFFloat" value="0.5"></field>
+<field name="power" accessType="inputOutput" type="SFFloat" value="2"></field>
+<ShaderPart url="&quot;../shaders/x3dom.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart DEF="common" url="&quot;../shaders/common.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
-<ComposedShader language="GLSL"><ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;"></ShaderPart>
-<ShaderPart type="FRAGMENT" url="&quot;../shaders/x_ite.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&quot;"></ShaderPart>
-<field accessType="initializeOnly" type="SFVec3f" name="chromaticDispertion" value="0.98 1 1.033"></field>
-<field accessType="initializeOnly" type="SFNode" name="cube"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+<ComposedShader language="GLSL"><field name="chromaticDispertion" accessType="initializeOnly" type="SFVec3f" value="0.98 1 1.033"></field>
+<field name="cube" type="SFNode" accessType="initializeOnly"><ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
 </field>
-<field accessType="initializeOnly" type="SFFloat" name="bias" value="0.5"></field>
-<field accessType="initializeOnly" type="SFFloat" name="scale" value="0.5"></field>
-<field accessType="initializeOnly" type="SFFloat" name="power" value="2"></field>
+<field name="bias" accessType="initializeOnly" type="SFFloat" value="0.5"></field>
+<field name="scale" accessType="initializeOnly" type="SFFloat" value="0.5"></field>
+<field name="power" accessType="initializeOnly" type="SFFloat" value="2"></field>
+<ShaderPart url="&quot;../shaders/x_ite.vs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs&quot;" type="VERTEX"></ShaderPart>
+<ShaderPart url="&quot;../shaders/x_ite.fs&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs&quot;" type="FRAGMENT"></ShaderPart>
 </ComposedShader>
 </Appearance>
-<Sphere></Sphere>
 </Shape>
 </Transform>
 </Scene>

@@ -120,7 +120,7 @@ Transform26.children.append(Shape27)
 
 Scene5.children.append(Transform26)
 Transform31 = x3d.Transform(DEF="T_0")
-Transform31.translation = [-10.871,0.2070633,-10.453]
+Transform31.translation = [-10.871,0.4108254,-10.453]
 Shape32 = x3d.Shape()
 Appearance33 = x3d.Appearance()
 PhysicalMaterial34 = x3d.PhysicalMaterial(DEF="M_0")
@@ -202,7 +202,7 @@ Script40.sourceCode = '''ecmascript:\n"+
 
 Scene5.children.append(Script40)
 Transform45 = x3d.Transform(DEF="T_1")
-Transform45.translation = [-10.411,0.2528193,-9.16]
+Transform45.translation = [-10.411,0.4288193,-9.16]
 Shape46 = x3d.Shape()
 Appearance47 = x3d.Appearance()
 PhysicalMaterial48 = x3d.PhysicalMaterial(DEF="M_1")
@@ -267,13 +267,13 @@ Script53.sourceCode = '''ecmascript:\n"+
 
 Scene5.children.append(Script53)
 Transform57 = x3d.Transform(DEF="T_2")
-Transform57.translation = [-10.155,0.4218557,-8.324]
+Transform57.translation = [-10.155,0.5931959,-8.324]
 Shape58 = x3d.Shape()
 Appearance59 = x3d.Appearance()
 PhysicalMaterial60 = x3d.PhysicalMaterial()
 PhysicalMaterial60.roughness = 0.05
 IORMaterialExtension61 = x3d.IORMaterialExtension(DEF="IOR_2")
-IORMaterialExtension61.indexOfRefraction = "1.566392"
+IORMaterialExtension61.indexOfRefraction = "1.694897"
 
 PhysicalMaterial60.materialExtension.append(IORMaterialExtension61)
 
@@ -304,14 +304,14 @@ ScalarInterpolator65.keyValue = [1.4,1.7,1.4]
 
 Scene5.children.append(ScalarInterpolator65)
 Transform66 = x3d.Transform(DEF="T_3")
-Transform66.translation = [-10.518,0.5834667,-7.283]
+Transform66.translation = [-10.518,0.3316,-7.283]
 Shape67 = x3d.Shape()
 Appearance68 = x3d.Appearance()
 PhysicalMaterial69 = x3d.PhysicalMaterial()
 PhysicalMaterial69.roughness = 0.05
 IridescenceMaterialExtension70 = x3d.IridescenceMaterialExtension(DEF="IRI_3")
 IridescenceMaterialExtension70.iridescence = "1"
-IridescenceMaterialExtension70.iridescenceThicknessMaximum = "675.2"
+IridescenceMaterialExtension70.iridescenceThicknessMaximum = "297.4"
 
 PhysicalMaterial69.descenceMaterialExtension.append(IridescenceMaterialExtension70)
 

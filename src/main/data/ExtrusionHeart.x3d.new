@@ -4,7 +4,7 @@
 <meta name="description" content="Simple extrusion of a Valentine heart."></meta>
 <meta name="creator" content="Class participants in course Introduction to VRML/X3D."></meta>
 <meta name="created" content="14 February 2001"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:09:53 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:09:36 GMT"></meta>
 <meta name="identifier" content="https://www.web3d.org/x3d/content/examples/Basic/course/ExtrusionHeart.x3d"></meta>
 </head>
 <Scene><Viewpoint description="Extrusion Heart" position="0 -4 0" orientation="1 0 0 1.57"></Viewpoint>

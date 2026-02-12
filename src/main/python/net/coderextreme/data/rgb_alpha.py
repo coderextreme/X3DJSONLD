@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Interchange"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -67,7 +67,7 @@ meta13.content = "21 January 2001"
 head1.children.append(meta13)
 meta14 = x3d.meta()
 meta14.name = "modified"
-meta14.content = "Mon, 09 Feb 2026 07:12:59 GMT"
+meta14.content = "16 January 2011"
 
 head1.children.append(meta14)
 meta15 = x3d.meta()
@@ -82,98 +82,108 @@ meta16.content = "https://www.web3d.org/x3d/content/examples/ConformanceNist/App
 head1.children.append(meta16)
 meta17 = x3d.meta()
 meta17.name = "generator"
-meta17.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta17.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
 
 head1.children.append(meta17)
+meta18 = x3d.meta()
+meta18.name = "generator"
+meta18.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta18)
+meta19 = x3d.meta()
+meta19.name = "license"
+meta19.content = "../../license.html"
+
+head1.children.append(meta19)
 
 X3D0.head = head1
-Scene18 = x3d.Scene()
-NavigationInfo19 = x3d.NavigationInfo()
-NavigationInfo19.type = ["EXAMINE","WALK","FLY","ANY"]
+Scene20 = x3d.Scene()
+NavigationInfo21 = x3d.NavigationInfo()
+NavigationInfo21.type = ["EXAMINE","WALK","FLY","ANY"]
 
-Scene18.children.append(NavigationInfo19)
-Group20 = x3d.Group()
-Transform21 = x3d.Transform()
-Transform21.translation = [6.14221,0.0694613,-0.000999451]
-Shape22 = x3d.Shape()
-Appearance23 = x3d.Appearance()
-Material24 = x3d.Material()
+Scene20.children.append(NavigationInfo21)
+Group22 = x3d.Group()
+Transform23 = x3d.Transform()
+Transform23.translation = [6.14221,0.0694613,-0.000999451]
+Shape24 = x3d.Shape()
+Appearance25 = x3d.Appearance()
+Material26 = x3d.Material()
 
-Appearance23.material = Material24
-PixelTexture25 = x3d.PixelTexture(DEF="RgbOpacityCheckerboard")
-PixelTexture25.image = [2,2,4,-16776961,-65536,-65536,-16776961]
+Appearance25.material = Material26
+PixelTexture27 = x3d.PixelTexture(DEF="RgbOpacityCheckerboard")
+PixelTexture27.image = [2,2,4,-16776961,-65536,-65536,-16776961]
 
-Appearance23.texture = PixelTexture25
+Appearance25.texture = PixelTexture27
 
-Shape22.appearance = Appearance23
-Box26 = x3d.Box()
+Shape24.appearance = Appearance25
+Box28 = x3d.Box()
 
-Shape22.geometry = Box26
+Shape24.geometry = Box28
 
-Transform21.children.append(Shape22)
+Transform23.children.append(Shape24)
 
-Group20.children.append(Transform21)
-Transform27 = x3d.Transform()
-Transform27.translation = [-4.85443,0.0694381,-0.00149918]
-Shape28 = x3d.Shape()
-Appearance29 = x3d.Appearance()
-Material30 = x3d.Material()
+Group22.children.append(Transform23)
+Transform29 = x3d.Transform()
+Transform29.translation = [-4.85443,0.0694381,-0.00149918]
+Shape30 = x3d.Shape()
+Appearance31 = x3d.Appearance()
+Material32 = x3d.Material()
 
-Appearance29.material = Material30
-PixelTexture31 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
+Appearance31.material = Material32
+PixelTexture33 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
 
-Appearance29.texture = PixelTexture31
+Appearance31.texture = PixelTexture33
 
-Shape28.appearance = Appearance29
-Sphere32 = x3d.Sphere()
+Shape30.appearance = Appearance31
+Sphere34 = x3d.Sphere()
 
-Shape28.geometry = Sphere32
+Shape30.geometry = Sphere34
 
-Transform27.children.append(Shape28)
+Transform29.children.append(Shape30)
 
-Group20.children.append(Transform27)
-Transform33 = x3d.Transform()
-Transform33.translation = [-1.47341,0.036672,-0.00175095]
-Shape34 = x3d.Shape()
-Appearance35 = x3d.Appearance()
-Material36 = x3d.Material()
+Group22.children.append(Transform29)
+Transform35 = x3d.Transform()
+Transform35.translation = [-1.47341,0.036672,-0.00175095]
+Shape36 = x3d.Shape()
+Appearance37 = x3d.Appearance()
+Material38 = x3d.Material()
 
-Appearance35.material = Material36
-PixelTexture37 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
+Appearance37.material = Material38
+PixelTexture39 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
 
-Appearance35.texture = PixelTexture37
+Appearance37.texture = PixelTexture39
 
-Shape34.appearance = Appearance35
-Cone38 = x3d.Cone()
+Shape36.appearance = Appearance37
+Cone40 = x3d.Cone()
 
-Shape34.geometry = Cone38
+Shape36.geometry = Cone40
 
-Transform33.children.append(Shape34)
+Transform35.children.append(Shape36)
 
-Group20.children.append(Transform33)
-Transform39 = x3d.Transform()
-Transform39.translation = [2.31094,0.0694206,-0.00187683]
-Shape40 = x3d.Shape()
-Appearance41 = x3d.Appearance()
-Material42 = x3d.Material()
+Group22.children.append(Transform35)
+Transform41 = x3d.Transform()
+Transform41.translation = [2.31094,0.0694206,-0.00187683]
+Shape42 = x3d.Shape()
+Appearance43 = x3d.Appearance()
+Material44 = x3d.Material()
 
-Appearance41.material = Material42
-PixelTexture43 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
+Appearance43.material = Material44
+PixelTexture45 = x3d.PixelTexture(USE="RgbOpacityCheckerboard")
 
-Appearance41.texture = PixelTexture43
+Appearance43.texture = PixelTexture45
 
-Shape40.appearance = Appearance41
-Cylinder44 = x3d.Cylinder()
+Shape42.appearance = Appearance43
+Cylinder46 = x3d.Cylinder()
 
-Shape40.geometry = Cylinder44
+Shape42.geometry = Cylinder46
 
-Transform39.children.append(Shape40)
+Transform41.children.append(Shape42)
 
-Group20.children.append(Transform39)
+Group22.children.append(Transform41)
 
-Scene18.children.append(Group20)
+Scene20.children.append(Group22)
 
-X3D0.Scene = Scene18
+X3D0.Scene = Scene20
 f = open("../data/rgb_alpha.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

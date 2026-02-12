@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Interchange' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Interchange' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='gridBack.x3d' name='title'/>
     <meta content='Checkerboard grid background for X3D/VRML materials selection.' name='description'/>
     <meta content='David Roussel' name='creator'/>
     <meta content='James Harney, Don Brutzman NPS' name='translator'/>
     <meta content='8 April 2002' name='created'/>
-    <meta content='12 January 2014' name='modified'/>
+    <meta content='Mon, 09 Feb 2026 07:11:21 GMT' name='modified'/>
     <meta content='http://vrmlstuff.free.fr/materials' name='reference'/>
     <meta content='Universal Media Material Library' name='subject'/>
     <meta content='https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json' name='identifier'/>
-    <meta content='Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html' name='generator'/>
-    <meta content='../license.html' name='license'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <Shape>

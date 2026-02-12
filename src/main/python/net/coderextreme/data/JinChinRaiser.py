@@ -42,7 +42,7 @@ meta8.content = "20 September 2022"
 head1.children.append(meta8)
 meta9 = x3d.meta()
 meta9.name = "modified"
-meta9.content = "Mon, 09 Feb 2026 07:11:34 GMT"
+meta9.content = "Mon, 09 Feb 2026 12:24:20 GMT"
 
 head1.children.append(meta9)
 meta10 = x3d.meta()
@@ -139,7 +139,7 @@ HAnimSegment31 = x3d.HAnimSegment(DEF="hanim_Lower_teeth")
 HAnimSegment31.name = "lower_teeth"
 HAnimDisplacer32 = x3d.HAnimDisplacer(DEF="Lower_teeth_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer32.name = "lower_teeth_morphinterpolator"
-HAnimDisplacer32.weight = 0.9212122
+HAnimDisplacer32.weight = 0.6343436
 HAnimDisplacer32.coordIndex = [15,16,17,18,19,20,21,22,28,29,30,37,38,39,40,45,50,51,52,53,54,55,56,57,79,80,81,82,83,84,85,86,107,108,109,110,111,112,113,114,152,153,154,155,156,157,158,159,160,166,167,168,169,170,171,181,182,183,184,185,186,187,188,209,210,211,212,213,214,215,216,220,234,239,240,241,242,243,244,245,246,250,264,275,276,277,278,284,285,286,287,296,297,298,299,301,302,311,312,313,314,315,316,317,318,322,335,340,341,342,343,344,345,346,347,351,368,369,370,371,372,373,374,375,379,392,403,404,405,406,412,413,414,415,423,424,425,426,427,429,430,439,440,441,442,443,444,445,446,450,463,468,469,470,471,472,473,474,475,479,496,497,498,499,500,501,502,503,507,520,539,543,544,545,546,547,548,549,550,555,556,557,563,564,570,571,572,573,585,586,587,588,589,594,595,596,597,598,599,600,601,604,605,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,640,665,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,727,728,729,730,731,732,733,734,756,757,758,759,760,761,762,763,767,780,808,810,811,813,814,815,816,817,818,819,820,821,822,832,834,835,836,837,838,839,840,841,852,853,854,855,856,857,858,863,864,865,866,867,868,869,870,874,897,898,899,900,901,902,903,904,905,906,907,908,909,910,911,912,913,914,915,922,924,952,953,962,963,964,965,966,967,968,969,970,971,972,973,974,975,976,977,984,985,1014,1015,1016,1017,1018,1019,1020,1021,1025,1039,1040]
 HAnimDisplacer32.displacements = [(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.6103, 0.364),(0, 0.4491, 0.199),(0, 0.4097, 0.2),(0, 0.449, 0.199),(0, 0.4246, 0.199),(0, 0.0381, 0),(0, 0.4491, 0.2),(0, 0.4838, 0.2),(0, 0.0381, 0),(0, 0.4096, 0.2),(0, 0.4097, 0.199),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1268, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1267, 0),(0, 0.1864, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.3661, 0.199),(0, 0.3661, 0.2),(0, 0.3661, 0.199),(0, 0.366, 0.199),(0, 0.3661, 0.199),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.366, 0.199),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4491, 0.199),(0, 0.6103, 0.364),(0, 0.4491, 0.2),(0, 0.4097, 0.2),(0, 0.6103, 0.364),(0, 0.0381, 0),(0, 0.4096, 0.2),(0, 0.4097, 0.199),(0, 0.4097, 0.199),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.1864, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.3661, 0.2),(0, 0.3661, 0.199),(0, 0.3661, 0.199),(0, 0.366, 0.199),(0, 0.0381, 0),(0, 0.3661, 0.199),(0, 0.0381, 0),(0, 0.366, 0.199),(0, 0.0381, 0),(0, 0.1458, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.6497, 0.364),(0, 0.4491, 0.2),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.449, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4491, 0.1995),(0, 0.4491, 0.1995),(0, 0.1865, 0),(0, 0.0382, 0),(0, 0.366, 0.2),(0, 0.4097, 0.2),(0, 0.4096, 0.199),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.2207, 0),(0, 0.1865, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.25, 0.117),(0, 0.2501, 0.117),(0, 0.2501, 0.118),(0, 0.25, 0.118),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.2501, 0.117),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.6497, 0.364),(0, 0.4491, 0.2),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.449, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4491, 0.1995),(0, 0.4491, 0.1995),(0, 0.1865, 0),(0, 0.0382, 0),(0, 0.366, 0.2),(0, 0.4097, 0.2),(0, 0.4096, 0.199),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.2207, 0),(0, 0.1865, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.25, 0.117),(0, 0.2501, 0.117),(0, 0.2501, 0.118),(0, 0.25, 0.118),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.2501, 0.117),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.6497, 0.364),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.6843, 0.364),(0, 0.6103, 0.364),(0, 0.449, 0.2),(0, 0.4245, 0.199),(0, 0.0382, 0),(0, 0.4491, 0.2),(0, 0.449, 0.2),(0, 0.1977, 0.082),(0, 0.4491, 0.199),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.4096, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4097, 0.199),(0, 0.4097, 0.2),(0, 0.4246, 0.199),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.4097, 0.1994),(0, 0.4097, 0.1995),(0, 0.4246, 0.1995),(0, 0.4097, 0.2),(0, 0.0381, 0),(0, 0.3661, 0.2),(0, 0.4097, 0.199),(0, 0.4097, 0.2),(0, 0.4097, 0.2),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.4096, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.366, 0.199),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1869, 0),(0, 0.187, 0),(0, 0.1864, 0),(0, 0.1865, 0),(0, 0.187, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1267, 0),(0, 0.1268, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1268, 0),(0, 0.25, 0.117),(0, 0.25, 0.118),(0, 0.2501, 0.118),(0, 0.25, 0.118),(0, 0.2501, 0.118),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.2501, 0.117),(0, 0.3661, 0.2),(0, 0.3661, 0.199),(0, 0.366, 0.2),(0, 0.366, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.3661, 0.199),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.6497, 0.364),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.4491, 0.2),(0, 0.0382, 0),(0, 0.449, 0.2),(0, 0.6103, 0.364),(0, 0.4491, 0.199),(0, 0.4245, 0.199),(0, 0.0381, 0),(0, 0.4097, 0.199),(0, 0.0381, 0),(0, 0.4097, 0.2),(0, 0.4246, 0.199),(0, 0.4096, 0.2),(0, 0.4491, 0.199),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.4097, 0.1994),(0, 0.4097, 0.1995),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1864, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.4097, 0.199),(0, 0.3661, 0.2),(0, 0.3661, 0.2),(0, 0.4097, 0.2),(0, 0.4097, 0.2),(0, 0.3661, 0.199),(0, 0.4097, 0.2),(0, 0.366, 0.2),(0, 0.4097, 0.2),(0, 0.366, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.2036, 0.2),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.211, 0.199),(0, 0.0381, 0),(0, 0.3661, 0.199),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1864, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1458, 0),(0, 0.1457, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.25, 0.118),(0, 0.25, 0.117),(0, 0.2501, 0.118),(0, 0.25, 0.118),(0, 0.0381, 0),(0, 0.2501, 0.118),(0, 0.0381, 0),(0, 0.2501, 0.117),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1457, 0)]
 
@@ -204,7 +204,7 @@ HAnimSegment46 = x3d.HAnimSegment(DEF="hanim_Center_lower_vermillion_lip")
 HAnimSegment46.name = "center_lower_vermillion_lip"
 HAnimDisplacer47 = x3d.HAnimDisplacer(DEF="Center_lower_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer47.name = "center_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer47.weight = 0.9212122
+HAnimDisplacer47.weight = 0.6343436
 HAnimDisplacer47.coordIndex = [0,1,2,3,4,5]
 HAnimDisplacer47.displacements = [(0, 0.1869, 0),(0, 0.7516, 0.364),(0, 0.6497, 0.364),(0, 0.1869, 0),(0, 0.2206, 0),(0, 0.6497, 0.364)]
 
@@ -243,7 +243,7 @@ HAnimSegment55 = x3d.HAnimSegment(DEF="hanim_Chin")
 HAnimSegment55.name = "chin"
 HAnimDisplacer56 = x3d.HAnimDisplacer(DEF="Chin_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer56.name = "chin_morphinterpolator"
-HAnimDisplacer56.weight = 0.9212122
+HAnimDisplacer56.weight = 0.6343436
 HAnimDisplacer56.coordIndex = [6,7,9,12,18,19]
 HAnimDisplacer56.displacements = [(0, 0.751, 0.364),(0, -0.138, 0),(0, 0.65, 0.364),(0, 0.1317, 0),(0, -0.138, 0),(0, 0.65, 0.364)]
 
@@ -282,7 +282,7 @@ HAnimSegment64 = x3d.HAnimSegment(DEF="hanim_Glabella")
 HAnimSegment64.name = "glabella"
 HAnimDisplacer65 = x3d.HAnimDisplacer(DEF="Glabella_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer65.name = "glabella_morphinterpolator"
-HAnimDisplacer65.weight = 0.9212122
+HAnimDisplacer65.weight = 0.6343436
 
 HAnimSegment64.displacers.append(HAnimDisplacer65)
 Coordinate66 = x3d.Coordinate(DEF="Glabella_COORD")
@@ -319,7 +319,7 @@ HAnimSegment73 = x3d.HAnimSegment(DEF="hanim_Left_bulbar_conjunctiva")
 HAnimSegment73.name = "left_bulbar_conjunctiva"
 HAnimDisplacer74 = x3d.HAnimDisplacer(DEF="Left_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer74.name = "left_bulbar_conjunctiva_morphinterpolator"
-HAnimDisplacer74.weight = 0.9212122
+HAnimDisplacer74.weight = 0.6343436
 
 HAnimSegment73.displacers.append(HAnimDisplacer74)
 Coordinate75 = x3d.Coordinate(DEF="Left_bulbar_conjunctiva_COORD")
@@ -356,7 +356,7 @@ HAnimSegment82 = x3d.HAnimSegment(DEF="hanim_Left_cheek")
 HAnimSegment82.name = "left_cheek"
 HAnimDisplacer83 = x3d.HAnimDisplacer(DEF="Left_cheek_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer83.name = "left_cheek_morphinterpolator"
-HAnimDisplacer83.weight = 0.9212122
+HAnimDisplacer83.weight = 0.6343436
 HAnimDisplacer83.coordIndex = [34]
 HAnimDisplacer83.displacements = [(0, -0.137, 0)]
 
@@ -395,7 +395,7 @@ HAnimSegment91 = x3d.HAnimSegment(DEF="hanim_Left_dorsum")
 HAnimSegment91.name = "left_dorsum"
 HAnimDisplacer92 = x3d.HAnimDisplacer(DEF="Left_dorsum_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer92.name = "left_dorsum_morphinterpolator"
-HAnimDisplacer92.weight = 0.9212122
+HAnimDisplacer92.weight = 0.6343436
 
 HAnimSegment91.displacers.append(HAnimDisplacer92)
 Coordinate93 = x3d.Coordinate(DEF="Left_dorsum_COORD")
@@ -432,7 +432,7 @@ HAnimSegment100 = x3d.HAnimSegment(DEF="hanim_Left_ear")
 HAnimSegment100.name = "left_ear"
 HAnimDisplacer101 = x3d.HAnimDisplacer(DEF="Left_ear_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer101.name = "left_ear_morphinterpolator"
-HAnimDisplacer101.weight = 0.9212122
+HAnimDisplacer101.weight = 0.6343436
 
 HAnimSegment100.displacers.append(HAnimDisplacer101)
 Coordinate102 = x3d.Coordinate(DEF="Left_ear_COORD")
@@ -469,7 +469,7 @@ HAnimSegment109 = x3d.HAnimSegment(DEF="hanim_Left_eyebrow")
 HAnimSegment109.name = "left_eyebrow"
 HAnimDisplacer110 = x3d.HAnimDisplacer(DEF="Left_eyebrow_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer110.name = "left_eyebrow_morphinterpolator"
-HAnimDisplacer110.weight = 0.9212122
+HAnimDisplacer110.weight = 0.6343436
 
 HAnimSegment109.displacers.append(HAnimDisplacer110)
 Coordinate111 = x3d.Coordinate(DEF="Left_eyebrow_COORD")
@@ -506,7 +506,7 @@ HAnimSegment118 = x3d.HAnimSegment(DEF="hanim_Left_forehead")
 HAnimSegment118.name = "left_forehead"
 HAnimDisplacer119 = x3d.HAnimDisplacer(DEF="Left_forehead_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer119.name = "left_forehead_morphinterpolator"
-HAnimDisplacer119.weight = 0.9212122
+HAnimDisplacer119.weight = 0.6343436
 
 HAnimSegment118.displacers.append(HAnimDisplacer119)
 Coordinate120 = x3d.Coordinate(DEF="Left_forehead_COORD")
@@ -543,7 +543,7 @@ HAnimSegment127 = x3d.HAnimSegment(DEF="hanim_Left_lower_eyelid")
 HAnimSegment127.name = "left_lower_eyelid"
 HAnimDisplacer128 = x3d.HAnimDisplacer(DEF="Left_lower_eyelid_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer128.name = "left_lower_eyelid_morphinterpolator"
-HAnimDisplacer128.weight = 0.9212122
+HAnimDisplacer128.weight = 0.6343436
 
 HAnimSegment127.displacers.append(HAnimDisplacer128)
 Coordinate129 = x3d.Coordinate(DEF="Left_lower_eyelid_COORD")
@@ -580,7 +580,7 @@ HAnimSegment136 = x3d.HAnimSegment(DEF="hanim_Left_lower_vermillion_lip")
 HAnimSegment136.name = "left_lower_vermillion_lip"
 HAnimDisplacer137 = x3d.HAnimDisplacer(DEF="Left_lower_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer137.name = "left_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer137.weight = 0.9212122
+HAnimDisplacer137.weight = 0.6343436
 HAnimDisplacer137.coordIndex = [0,1,2]
 HAnimDisplacer137.displacements = [(0, 0.187, 0),(0, -0.1372, 0),(0, 0.6497, 0.364)]
 
@@ -619,7 +619,7 @@ HAnimSegment145 = x3d.HAnimSegment(DEF="hanim_Left_nasolabial_cheek")
 HAnimSegment145.name = "left_nasolabial_cheek"
 HAnimDisplacer146 = x3d.HAnimDisplacer(DEF="Left_nasolabial_cheek_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer146.name = "left_nasolabial_cheek_morphinterpolator"
-HAnimDisplacer146.weight = 0.9212122
+HAnimDisplacer146.weight = 0.6343436
 HAnimDisplacer146.coordIndex = [1,2]
 HAnimDisplacer146.displacements = [(0, 0.0967, 0),(0, -0.137, 0)]
 
@@ -658,7 +658,7 @@ HAnimSegment154 = x3d.HAnimSegment(DEF="hanim_Left_nostril")
 HAnimSegment154.name = "left_nostril"
 HAnimDisplacer155 = x3d.HAnimDisplacer(DEF="Left_nostril_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer155.name = "left_nostril_morphinterpolator"
-HAnimDisplacer155.weight = 0.9212122
+HAnimDisplacer155.weight = 0.6343436
 
 HAnimSegment154.displacers.append(HAnimDisplacer155)
 Coordinate156 = x3d.Coordinate(DEF="Left_nostril_COORD")
@@ -695,7 +695,7 @@ HAnimSegment163 = x3d.HAnimSegment(DEF="hanim_Left_pupil")
 HAnimSegment163.name = "left_pupil"
 HAnimDisplacer164 = x3d.HAnimDisplacer(DEF="Left_pupil_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer164.name = "left_pupil_morphinterpolator"
-HAnimDisplacer164.weight = 0.9212122
+HAnimDisplacer164.weight = 0.6343436
 
 HAnimSegment163.displacers.append(HAnimDisplacer164)
 Coordinate165 = x3d.Coordinate(DEF="Left_pupil_COORD")
@@ -732,7 +732,7 @@ HAnimSegment172 = x3d.HAnimSegment(DEF="hanim_Left_temple")
 HAnimSegment172.name = "left_temple"
 HAnimDisplacer173 = x3d.HAnimDisplacer(DEF="Left_temple_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer173.name = "left_temple_morphinterpolator"
-HAnimDisplacer173.weight = 0.9212122
+HAnimDisplacer173.weight = 0.6343436
 
 HAnimSegment172.displacers.append(HAnimDisplacer173)
 Coordinate174 = x3d.Coordinate(DEF="Left_temple_COORD")
@@ -769,7 +769,7 @@ HAnimSegment181 = x3d.HAnimSegment(DEF="hanim_Left_upper_cutaneous_lip")
 HAnimSegment181.name = "left_upper_cutaneous_lip"
 HAnimDisplacer182 = x3d.HAnimDisplacer(DEF="Left_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer182.name = "left_upper_cutaneous_lip_morphinterpolator"
-HAnimDisplacer182.weight = 0.9212122
+HAnimDisplacer182.weight = 0.6343436
 HAnimDisplacer182.coordIndex = [1,3]
 HAnimDisplacer182.displacements = [(0, 0.0967, 0),(0, 0.1405, 0)]
 
@@ -808,7 +808,7 @@ HAnimSegment190 = x3d.HAnimSegment(DEF="hanim_Left_upper_eyelid")
 HAnimSegment190.name = "left_upper_eyelid"
 HAnimDisplacer191 = x3d.HAnimDisplacer(DEF="Left_upper_eyelid_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer191.name = "left_upper_eyelid_morphinterpolator"
-HAnimDisplacer191.weight = 0.9212122
+HAnimDisplacer191.weight = 0.6343436
 
 HAnimSegment190.displacers.append(HAnimDisplacer191)
 Coordinate192 = x3d.Coordinate(DEF="Left_upper_eyelid_COORD")
@@ -845,7 +845,7 @@ HAnimSegment199 = x3d.HAnimSegment(DEF="hanim_Left_upper_vermillion_lip")
 HAnimSegment199.name = "left_upper_vermillion_lip"
 HAnimDisplacer200 = x3d.HAnimDisplacer(DEF="Left_upper_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer200.name = "left_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer200.weight = 0.9212122
+HAnimDisplacer200.weight = 0.6343436
 HAnimDisplacer200.coordIndex = [0,1,2,3]
 HAnimDisplacer200.displacements = [(0, -0.1372, 0),(0, 0.0967, 0),(0, 0.1405, 0),(0, 0.187, 0)]
 
@@ -888,7 +888,7 @@ HAnimSegment209 = x3d.HAnimSegment(DEF="hanim_Mid_forehead")
 HAnimSegment209.name = "mid_forehead"
 HAnimDisplacer210 = x3d.HAnimDisplacer(DEF="Mid_forehead_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer210.name = "mid_forehead_morphinterpolator"
-HAnimDisplacer210.weight = 0.9212122
+HAnimDisplacer210.weight = 0.6343436
 
 HAnimSegment209.displacers.append(HAnimDisplacer210)
 Coordinate211 = x3d.Coordinate(DEF="Mid_forehead_COORD")
@@ -925,7 +925,7 @@ HAnimSegment218 = x3d.HAnimSegment(DEF="hanim_Mid_nasal_dorsum")
 HAnimSegment218.name = "mid_nasal_dorsum"
 HAnimDisplacer219 = x3d.HAnimDisplacer(DEF="Mid_nasal_dorsum_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer219.name = "mid_nasal_dorsum_morphinterpolator"
-HAnimDisplacer219.weight = 0.9212122
+HAnimDisplacer219.weight = 0.6343436
 
 HAnimSegment218.displacers.append(HAnimDisplacer219)
 Coordinate220 = x3d.Coordinate(DEF="Mid_nasal_dorsum_COORD")
@@ -962,7 +962,7 @@ HAnimSegment227 = x3d.HAnimSegment(DEF="hanim_Mid_upper_vermillion_lip")
 HAnimSegment227.name = "mid_upper_vermillion_lip"
 HAnimDisplacer228 = x3d.HAnimDisplacer(DEF="Mid_upper_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer228.name = "mid_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer228.weight = 0.9212122
+HAnimDisplacer228.weight = 0.6343436
 HAnimDisplacer228.coordIndex = [0,1,2,3,4,5]
 HAnimDisplacer228.displacements = [(0, 0.1404, 0),(0, 0.187, 0),(0, 0.187, 0),(0, 0.1404, 0),(0, 0.2285, 0),(0, 0.2207, 0)]
 
@@ -1001,7 +1001,7 @@ HAnimSegment236 = x3d.HAnimSegment(DEF="hanim_Nasal_tip")
 HAnimSegment236.name = "nasal_tip"
 HAnimDisplacer237 = x3d.HAnimDisplacer(DEF="Nasal_tip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer237.name = "nasal_tip_morphinterpolator"
-HAnimDisplacer237.weight = 0.9212122
+HAnimDisplacer237.weight = 0.6343436
 
 HAnimSegment236.displacers.append(HAnimDisplacer237)
 Coordinate238 = x3d.Coordinate(DEF="Nasal_tip_COORD")
@@ -1038,7 +1038,7 @@ HAnimSegment245 = x3d.HAnimSegment(DEF="hanim_Neck")
 HAnimSegment245.name = "neck"
 HAnimDisplacer246 = x3d.HAnimDisplacer(DEF="Neck_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer246.name = "neck_morphinterpolator"
-HAnimDisplacer246.weight = 0.9212122
+HAnimDisplacer246.weight = 0.6343436
 HAnimDisplacer246.coordIndex = [1,4,7,8,10]
 HAnimDisplacer246.displacements = [(0, 0.407, 0.199),(0, -0.009, 0),(0, 0.038, 0),(0, -0.076, 0),(0, -0.076, 0)]
 
@@ -1077,7 +1077,7 @@ HAnimSegment254 = x3d.HAnimSegment(DEF="hanim_Occipital_scalp")
 HAnimSegment254.name = "occipital_scalp"
 HAnimDisplacer255 = x3d.HAnimDisplacer(DEF="Occipital_scalp_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer255.name = "occipital_scalp_morphinterpolator"
-HAnimDisplacer255.weight = 0.9212122
+HAnimDisplacer255.weight = 0.6343436
 HAnimDisplacer255.coordIndex = [82,96,106]
 HAnimDisplacer255.displacements = [(0, 0.7, 0.36),(0, 0.75, 0.3638),(0, 0.11, 0)]
 
@@ -1116,7 +1116,7 @@ HAnimSegment263 = x3d.HAnimSegment(DEF="hanim_Philtrum")
 HAnimSegment263.name = "philtrum"
 HAnimDisplacer264 = x3d.HAnimDisplacer(DEF="Philtrum_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer264.name = "philtrum_morphinterpolator"
-HAnimDisplacer264.weight = 0.9212122
+HAnimDisplacer264.weight = 0.6343436
 HAnimDisplacer264.coordIndex = [1,2,3]
 HAnimDisplacer264.displacements = [(0, 0.2286, 0),(0, 0.1405, 0),(0, 0.1405, 0)]
 
@@ -1155,7 +1155,7 @@ HAnimSegment272 = x3d.HAnimSegment(DEF="hanim_Right_bulbar_conjunctiva")
 HAnimSegment272.name = "right_bulbar_conjunctiva"
 HAnimDisplacer273 = x3d.HAnimDisplacer(DEF="Right_bulbar_conjunctiva_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer273.name = "right_bulbar_conjunctiva_morphinterpolator"
-HAnimDisplacer273.weight = 0.9212122
+HAnimDisplacer273.weight = 0.6343436
 
 HAnimSegment272.displacers.append(HAnimDisplacer273)
 Coordinate274 = x3d.Coordinate(DEF="Right_bulbar_conjunctiva_COORD")
@@ -1192,7 +1192,7 @@ HAnimSegment281 = x3d.HAnimSegment(DEF="hanim_Right_cheek")
 HAnimSegment281.name = "right_cheek"
 HAnimDisplacer282 = x3d.HAnimDisplacer(DEF="Right_cheek_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer282.name = "right_cheek_morphinterpolator"
-HAnimDisplacer282.weight = 0.9212122
+HAnimDisplacer282.weight = 0.6343436
 HAnimDisplacer282.coordIndex = [34]
 HAnimDisplacer282.displacements = [(0, -0.137, 0)]
 
@@ -1231,7 +1231,7 @@ HAnimSegment290 = x3d.HAnimSegment(DEF="hanim_Right_dorsum")
 HAnimSegment290.name = "right_dorsum"
 HAnimDisplacer291 = x3d.HAnimDisplacer(DEF="Right_dorsum_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer291.name = "right_dorsum_morphinterpolator"
-HAnimDisplacer291.weight = 0.9212122
+HAnimDisplacer291.weight = 0.6343436
 
 HAnimSegment290.displacers.append(HAnimDisplacer291)
 Coordinate292 = x3d.Coordinate(DEF="Right_dorsum_COORD")
@@ -1268,7 +1268,7 @@ HAnimSegment299 = x3d.HAnimSegment(DEF="hanim_Right_ear")
 HAnimSegment299.name = "right_ear"
 HAnimDisplacer300 = x3d.HAnimDisplacer(DEF="Right_ear_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer300.name = "right_ear_morphinterpolator"
-HAnimDisplacer300.weight = 0.9212122
+HAnimDisplacer300.weight = 0.6343436
 
 HAnimSegment299.displacers.append(HAnimDisplacer300)
 Coordinate301 = x3d.Coordinate(DEF="Right_ear_COORD")
@@ -1305,7 +1305,7 @@ HAnimSegment308 = x3d.HAnimSegment(DEF="hanim_Right_eyebrow")
 HAnimSegment308.name = "right_eyebrow"
 HAnimDisplacer309 = x3d.HAnimDisplacer(DEF="Right_eyebrow_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer309.name = "right_eyebrow_morphinterpolator"
-HAnimDisplacer309.weight = 0.9212122
+HAnimDisplacer309.weight = 0.6343436
 
 HAnimSegment308.displacers.append(HAnimDisplacer309)
 Coordinate310 = x3d.Coordinate(DEF="Right_eyebrow_COORD")
@@ -1342,7 +1342,7 @@ HAnimSegment317 = x3d.HAnimSegment(DEF="hanim_Right_forehead")
 HAnimSegment317.name = "right_forehead"
 HAnimDisplacer318 = x3d.HAnimDisplacer(DEF="Right_forehead_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer318.name = "right_forehead_morphinterpolator"
-HAnimDisplacer318.weight = 0.9212122
+HAnimDisplacer318.weight = 0.6343436
 
 HAnimSegment317.displacers.append(HAnimDisplacer318)
 Coordinate319 = x3d.Coordinate(DEF="Right_forehead_COORD")
@@ -1379,7 +1379,7 @@ HAnimSegment326 = x3d.HAnimSegment(DEF="hanim_Right_lower_eyelid")
 HAnimSegment326.name = "right_lower_eyelid"
 HAnimDisplacer327 = x3d.HAnimDisplacer(DEF="Right_lower_eyelid_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer327.name = "right_lower_eyelid_morphinterpolator"
-HAnimDisplacer327.weight = 0.9212122
+HAnimDisplacer327.weight = 0.6343436
 
 HAnimSegment326.displacers.append(HAnimDisplacer327)
 Coordinate328 = x3d.Coordinate(DEF="Right_lower_eyelid_COORD")
@@ -1416,7 +1416,7 @@ HAnimSegment335 = x3d.HAnimSegment(DEF="hanim_Right_lower_vermillion_lip")
 HAnimSegment335.name = "right_lower_vermillion_lip"
 HAnimDisplacer336 = x3d.HAnimDisplacer(DEF="Right_lower_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer336.name = "right_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer336.weight = 0.9212122
+HAnimDisplacer336.weight = 0.6343436
 HAnimDisplacer336.coordIndex = [0,1,2]
 HAnimDisplacer336.displacements = [(0, 0.187, 0),(0, -0.1372, 0),(0, 0.6497, 0.364)]
 
@@ -1455,7 +1455,7 @@ HAnimSegment344 = x3d.HAnimSegment(DEF="hanim_Right_nasolabial_cheek")
 HAnimSegment344.name = "right_nasolabial_cheek"
 HAnimDisplacer345 = x3d.HAnimDisplacer(DEF="Right_nasolabial_cheek_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer345.name = "right_nasolabial_cheek_morphinterpolator"
-HAnimDisplacer345.weight = 0.9212122
+HAnimDisplacer345.weight = 0.6343436
 HAnimDisplacer345.coordIndex = [1,2]
 HAnimDisplacer345.displacements = [(0, 0.0967, 0),(0, -0.137, 0)]
 
@@ -1494,7 +1494,7 @@ HAnimSegment353 = x3d.HAnimSegment(DEF="hanim_Right_nostril")
 HAnimSegment353.name = "right_nostril"
 HAnimDisplacer354 = x3d.HAnimDisplacer(DEF="Right_nostril_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer354.name = "right_nostril_morphinterpolator"
-HAnimDisplacer354.weight = 0.9212122
+HAnimDisplacer354.weight = 0.6343436
 
 HAnimSegment353.displacers.append(HAnimDisplacer354)
 Coordinate355 = x3d.Coordinate(DEF="Right_nostril_COORD")
@@ -1531,7 +1531,7 @@ HAnimSegment362 = x3d.HAnimSegment(DEF="hanim_Right_pupil")
 HAnimSegment362.name = "right_pupil"
 HAnimDisplacer363 = x3d.HAnimDisplacer(DEF="Right_pupil_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer363.name = "right_pupil_morphinterpolator"
-HAnimDisplacer363.weight = 0.9212122
+HAnimDisplacer363.weight = 0.6343436
 
 HAnimSegment362.displacers.append(HAnimDisplacer363)
 Coordinate364 = x3d.Coordinate(DEF="Right_pupil_COORD")
@@ -1568,7 +1568,7 @@ HAnimSegment371 = x3d.HAnimSegment(DEF="hanim_Right_temple")
 HAnimSegment371.name = "right_temple"
 HAnimDisplacer372 = x3d.HAnimDisplacer(DEF="Right_temple_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer372.name = "right_temple_morphinterpolator"
-HAnimDisplacer372.weight = 0.9212122
+HAnimDisplacer372.weight = 0.6343436
 
 HAnimSegment371.displacers.append(HAnimDisplacer372)
 Coordinate373 = x3d.Coordinate(DEF="Right_temple_COORD")
@@ -1605,7 +1605,7 @@ HAnimSegment380 = x3d.HAnimSegment(DEF="hanim_Right_upper_cutaneous_lip")
 HAnimSegment380.name = "right_upper_cutaneous_lip"
 HAnimDisplacer381 = x3d.HAnimDisplacer(DEF="Right_upper_cutaneous_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer381.name = "right_upper_cutaneous_lip_morphinterpolator"
-HAnimDisplacer381.weight = 0.9212122
+HAnimDisplacer381.weight = 0.6343436
 HAnimDisplacer381.coordIndex = [1,3]
 HAnimDisplacer381.displacements = [(0, 0.0967, 0),(0, 0.1405, 0)]
 
@@ -1644,7 +1644,7 @@ HAnimSegment389 = x3d.HAnimSegment(DEF="hanim_Right_upper_eyelid")
 HAnimSegment389.name = "right_upper_eyelid"
 HAnimDisplacer390 = x3d.HAnimDisplacer(DEF="Right_upper_eyelid_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer390.name = "right_upper_eyelid_morphinterpolator"
-HAnimDisplacer390.weight = 0.9212122
+HAnimDisplacer390.weight = 0.6343436
 
 HAnimSegment389.displacers.append(HAnimDisplacer390)
 Coordinate391 = x3d.Coordinate(DEF="Right_upper_eyelid_COORD")
@@ -1681,7 +1681,7 @@ HAnimSegment398 = x3d.HAnimSegment(DEF="hanim_Right_upper_vermillion_lip")
 HAnimSegment398.name = "right_upper_vermillion_lip"
 HAnimDisplacer399 = x3d.HAnimDisplacer(DEF="Right_upper_vermillion_lip_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer399.name = "right_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer399.weight = 0.9212122
+HAnimDisplacer399.weight = 0.6343436
 HAnimDisplacer399.coordIndex = [0,1,2,3]
 HAnimDisplacer399.displacements = [(0, -0.1372, 0),(0, 0.0967, 0),(0, 0.1405, 0),(0, 0.187, 0)]
 
@@ -1720,7 +1720,7 @@ HAnimSegment407 = x3d.HAnimSegment(DEF="hanim_Tongue")
 HAnimSegment407.name = "tongue"
 HAnimDisplacer408 = x3d.HAnimDisplacer(DEF="Tongue_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer408.name = "tongue_morphinterpolator"
-HAnimDisplacer408.weight = 0.9212122
+HAnimDisplacer408.weight = 0.6343436
 HAnimDisplacer408.coordIndex = [0,1,4,5,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,37,38,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,60,62,63,65,75,76,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116]
 HAnimDisplacer408.displacements = [(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.112, 0),(0, 0.25, 0.1177),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.2501, 0.118),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.25, 0.1177),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.2501, 0.118),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1615, 0.118),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1614, 0.1175),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.1799, 0),(0, 0.1267, 0),(0, 0.1457, 0),(0, 0.0572, 0),(0, 0.2501, 0.118),(0, 0.1865, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1404, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1614, 0.118),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1615, 0.118),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.0572, 0),(0, 0.25, 0.118),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.25, 0.1177),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.25, 0.118),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1121, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.0572, 0),(0, 0.25, 0.118),(0, 0.1865, 0)]
 
@@ -1759,7 +1759,7 @@ HAnimSegment416 = x3d.HAnimSegment(DEF="hanim_Upper_teeth")
 HAnimSegment416.name = "upper_teeth"
 HAnimDisplacer417 = x3d.HAnimDisplacer(DEF="Upper_teeth_MorphInterpolator_JinChinRaiser")
 HAnimDisplacer417.name = "upper_teeth_morphinterpolator"
-HAnimDisplacer417.weight = 0.9212122
+HAnimDisplacer417.weight = 0.6343436
 HAnimDisplacer417.coordIndex = [16,17,19,20,21,22,28,29,30,37,38,39,40,50,51,52,53,54,55,56,57,61,79,80,81,82,83,84,85,86,107,108,109,110,111,112,113,114,118,152,154,155,156,158,159,166,167,168,169,170,171,181,182,183,184,185,186,187,188,209,210,211,212,213,214,215,216,234,239,240,241,242,243,244,245,246,264,275,276,277,278,284,285,286,287,297,298,299,301,302,311,312,313,314,315,316,317,318,322,340,341,342,343,344,345,346,347,351,368,369,370,371,372,373,374,375,379,392,403,404,405,406,412,413,414,415,425,426,427,429,430,439,440,441,442,443,444,445,446,450,468,469,470,471,472,473,474,475,479,496,497,498,499,500,501,502,503,507,520,539,543,545,546,547,549,550,555,556,557,562,563,564,570,571,572,573,585,586,587,588,589,599,600,601,604,605,617,618,619,620,621,622,623,624,625,626,627,628,629,630,631,632,636,640,665,675,676,677,678,679,680,681,682,683,684,685,686,687,688,689,690,694,698,727,728,729,730,731,732,733,734,738,756,757,758,759,760,761,762,763,767,780,808,811,813,814,816,817,818,819,821,822,832,834,835,836,837,838,839,840,841,857,858,863,864,865,866,867,868,869,870,897,898,899,900,901,902,903,904,905,906,907,908,909,910,911,912,913,914,915,924,952,962,963,964,965,966,967,968,969,970,971,972,973,974,975,976,977,985,1014,1015,1016,1017,1018,1019,1020,1021,1039,1040]
 HAnimDisplacer417.displacements = [(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.0787, 0),(0, 0.2286, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.1799, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1799, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.188, 0),(0, 0.188, 0),(0, 0.0999, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.2285, 0),(0, 0.1, 0),(0, 0.2286, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0999, 0),(0, 0.1405, 0),(0, 0.0999, 0),(0, 0.1404, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0999, 0),(0, 0.0381, 0),(0, 0.1121, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1121, 0),(0, 0.1267, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1267, 0),(0, 0.2286, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0786, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.2285, 0),(0, 0.0999, 0),(0, 0.0999, 0),(0, 0.0349, 0),(0, 0.0381, 0),(0, 0.0349, 0),(0, 0.1, 0),(0, 0.0382, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1864, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, -0.0056, 0),(0, 0.1, 0),(0, 0.1, 0),(0, -0.0055, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.2285, 0),(0, 0.0999, 0),(0, 0.0999, 0),(0, 0.0349, 0),(0, 0.0381, 0),(0, 0.0349, 0),(0, 0.1, 0),(0, 0.0382, 0),(0, 0.1457, 0),(0, 0.1458, 0),(0, 0.1864, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0787, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0786, 0),(0, 0.0999, 0),(0, 0.1, 0),(0, 0.0349, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.2286, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.1404, 0),(0, 0.1881, 0),(0, 0.1881, 0),(0, 0.1405, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0968, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1458, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0999, 0),(0, 0.2286, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.0968, 0),(0, 0.0381, 0),(0, 0.0967, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, -0.0056, 0),(0, 0.0999, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.2286, 0),(0, 0.0381, 0),(0, 0.0349, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1457, 0),(0, 0.1462, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.1268, 0),(0, 0.1, 0),(0, 0.0999, 0),(0, 0.1404, 0),(0, 0.2286, 0),(0, 0.1, 0),(0, 0.2286, 0),(0, 0.1405, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.1, 0),(0, 0.0382, 0),(0, 0.0968, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1, 0),(0, 0.0967, 0),(0, 0.1, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0.0001, 0.1457, 0),(0, 0.1457, 0),(0, 0.1462, 0),(0, 0.1457, 0),(0, 0.1865, 0),(0, 0.1457, 0),(0, 0.1462, 0),(0, 0.1457, 0),(0, 0.0381, 0),(0, 0.0381, 0),(0, 0.1267, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.1267, 0),(0, 0.1458, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0382, 0),(0, 0.0382, 0),(0, 0.0381, 0),(0, 0.0349, 0),(0, 0.0381, 0)]
 

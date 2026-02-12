@@ -20,7 +20,7 @@
           },
           {
             "@name":"modified",
-            "@content":"Mon, 09 Feb 2026 07:11:17 GMT"
+            "@content":"14 December 2025"
           },
           {
             "@name":"creator",
@@ -56,7 +56,15 @@
           },
           {
             "@name":"generator",
-            "@content":"x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+            "@content":"X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+          },
+          {
+            "@name":"identifier",
+            "@content":"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExample.x3d"
+          },
+          {
+            "@name":"license",
+            "@content":"https://www.web3d.org/x3d/content/examples/license.html"
           },
           {
             "@name":"generator",
@@ -98,11 +106,27 @@
             {
               "@DEF":"HandleInlineLoading",
               "-children":[
+                {
+                  "#comment":"Multiple HAnimHumanoid Inline/IMPORT models are available to support testing: Characters/ JinLOA1 JinLOA2 JinLOA3 JinLOA4 ../Skin/JoeKick ../Skin/JoeSkeletonSkinSite ../Skin/BoxMan1 ../Skin/BoxMan2"
+                },
+                {
+                  "#comment":"Also tested satisfactorily: KoreanCharacter01Jin KoreanCharacter02Chul KoreanCharacter03Hyun KoreanCharacter04Young KoreanCharacter05Ju KoreanCharacter06Ga KoreanCharacter07No KoreanCharacter08Da KoreanCharacter09Ru KoreanCharacter10Mi KoreanCharacter11Min KoreanCharacter12Sun"
+                },
                 { "Inline":
                   {
                     "@DEF":"HumanoidInline",
                     "@description":"remote HAnimHumanoid for IMPORT",
                     "@url":["../Skin/JoeSkeletonSkinSite.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSite.x3d"]
+                  }
+                },
+                {
+                  "#comment":"Note that the following importedDEF must match the EXPORT name found in remote file"
+                },
+                { "IMPORT":
+                  {
+                    "@AS":"HumanoidImported",
+                    "@importedDEF":"JoeSkeletonSkinSite",
+                    "@inlineDEF":"HumanoidInline"
                   }
                 },
                 { "LoadSensor":
@@ -127,6 +151,9 @@
               "@position":[0,1,4]
             }
           },
+          {
+            "#comment":"no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc..."
+          },
           { "HAnimPose":
             {
               "@name":"T",
@@ -143,6 +170,9 @@
                 }
               ],
               "-children":[
+                {
+                  "#comment":"test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/"
+                },
                 { "HAnimJoint":
                   {
                     "@name":"l_shoulder",
@@ -300,7 +330,12 @@
               "@DEF":"I_Pose",
               "@description":"arms and legs straight down default binding pose for baseline Humanoid",
               "@loa":1,
-              "@transitionDuration":1.5
+              "@transitionDuration":1.5,
+              "-children":[
+                {
+                  "#comment":"not defining any poseJoint HAnimJoint nodes equals the default \"I\" pose"
+                }
+              ]
             }
           },
           { "HAnimPose":
@@ -310,7 +345,12 @@
               "@description":"TODO experimental pose not yet implemented",
               "@enabled":false,
               "@loa":-1,
-              "@transitionDuration":1.4
+              "@transitionDuration":1.4,
+              "-children":[
+                {
+                  "#comment":"TODO define poseJoint HAnimJoint nodes"
+                }
+              ]
             }
           },
           { "HAnimPose":
@@ -453,6 +493,14 @@
                           "@DEF":"T_PoseTouchSensor",
                           "@description":"select to move shoulders to \"T\" pose, leave other joints unchanged"
                         }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"T_PoseTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"T_Pose"
+                        }
                       }
                     ]
                   }
@@ -486,6 +534,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -504,6 +557,14 @@
                         {
                           "@DEF":"A_PoseTouchSensor",
                           "@description":"select to move shoulders to \"A\" pose, leave other joints unchanged"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"A_PoseTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"A_Pose"
                         }
                       }
                     ]
@@ -538,6 +599,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -556,6 +622,14 @@
                         {
                           "@DEF":"TouchDown_PoseTouchSensor",
                           "@description":"select to transition all joints to TouchDown pose"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"TouchDown_PoseTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"TouchDown_Pose"
                         }
                       }
                     ]
@@ -590,6 +664,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -608,6 +687,14 @@
                         {
                           "@DEF":"I_PoseTouchSensor",
                           "@description":"select to transition all joints to \"I\" pose"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"I_PoseTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"I_Pose"
                         }
                       }
                     ]
@@ -661,6 +748,14 @@
                           "@DEF":"FaceLeftTouchSensor",
                           "@description":"select to rotate body and Face Left, leave other joints unchanged"
                         }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"FaceLeftTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"FaceLeft_Pose"
+                        }
                       }
                     ]
                   }
@@ -694,6 +789,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -712,6 +812,14 @@
                         {
                           "@DEF":"FaceRightTouchSensor",
                           "@description":"select to rotate body and Face Right, leave other joints unchanged"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"FaceRightTouchSensor",
+                          "@toField":"commencePose",
+                          "@toNode":"FaceRight_Pose"
                         }
                       }
                     ]
@@ -752,6 +860,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -772,6 +885,9 @@
                           "@description":"select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events"
                         }
                       },
+                      {
+                        "#comment":"cycleInterval=4 also hard-coded in script execution message"
+                      },
                       { "TimeSensor":
                         {
                           "@DEF":"AnimatePosesClock",
@@ -784,6 +900,30 @@
                           "@DEF":"AnimatePosesLoopInterpolator",
                           "@key":[0,0.05,0.45,0.55,0.95,1],
                           "@keyValue":[0,0,1,1,0,0]
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"touchTime",
+                          "@fromNode":"AnimatePosesTouchSensor",
+                          "@toField":"startTime",
+                          "@toNode":"AnimatePosesClock"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"fraction_changed",
+                          "@fromNode":"AnimatePosesClock",
+                          "@toField":"set_fraction",
+                          "@toNode":"AnimatePosesLoopInterpolator"
+                        }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"value_changed",
+                          "@fromNode":"AnimatePosesLoopInterpolator",
+                          "@toField":"set_fraction",
+                          "@toNode":"I_Pose"
                         }
                       }
                     ]
@@ -818,6 +958,11 @@
                       },
                       { "Shape":
                         {
+                          "-children":[
+                            {
+                              "#comment":"Selectable Text transparent Box for easy user selection"
+                            }
+                          ],
                           "-appearance":
                             { "Appearance":
                               {
@@ -837,6 +982,14 @@
                           "@DEF":"ResetPoseTouchSensor",
                           "@description":"select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event"
                         }
+                      },
+                      { "ROUTE":
+                        {
+                          "@fromField":"isActive",
+                          "@fromNode":"ResetPoseTouchSensor",
+                          "@toField":"resetAllJoints",
+                          "@toNode":"FaceLeft_Pose"
+                        }
                       }
                     ]
                   }
@@ -846,7 +999,65 @@
           },
           { "Group":
             {
-              "@DEF":"HandleInlineLoadsensorRouting"
+              "@DEF":"HandleInlineLoadsensorRouting",
+              "-children":[
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"A_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"H_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"I_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"T_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"FaceLeft_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"FaceRight_Pose"
+                  }
+                },
+                { "ROUTE":
+                  {
+                    "@fromField":"isLoaded",
+                    "@fromNode":"HumanoidInlineLoadSensor",
+                    "@toField":"isLoaded",
+                    "@toNode":"TouchDown_Pose"
+                  }
+                }
+              ]
             }
           },
           { "HAnimHumanoid":
@@ -861,93 +1072,6 @@
                   }
                 }
               ]
-            }
-          },
-          { "IMPORT":
-            {
-              "@AS":"HumanoidImported",
-              "@importedDEF":"JoeSkeletonSkinSite",
-              "@inlineDEF":"HumanoidInline"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"T_PoseTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"T_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"A_PoseTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"A_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"TouchDown_PoseTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"TouchDown_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"I_PoseTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"I_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"FaceLeftTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"FaceLeft_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"FaceRightTouchSensor",
-              "@toField":"commencePose",
-              "@toNode":"FaceRight_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"touchTime",
-              "@fromNode":"AnimatePosesTouchSensor",
-              "@toField":"set_startTime",
-              "@toNode":"AnimatePosesClock"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"fraction_changed",
-              "@fromNode":"AnimatePosesClock",
-              "@toField":"set_fraction",
-              "@toNode":"AnimatePosesLoopInterpolator"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"value_changed",
-              "@fromNode":"AnimatePosesLoopInterpolator",
-              "@toField":"set_fraction",
-              "@toNode":"I_Pose"
-            }
-          },
-          { "ROUTE":
-            {
-              "@fromField":"isActive",
-              "@fromNode":"ResetPoseTouchSensor",
-              "@toField":"resetAllJoints",
-              "@toNode":"FaceLeft_Pose"
             }
           }
         ]

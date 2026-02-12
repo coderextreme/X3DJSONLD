@@ -32,7 +32,7 @@ meta6.content = "7 April 2002"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "Mon, 09 Feb 2026 07:09:43 GMT"
+meta7.content = "Mon, 09 Feb 2026 12:22:57 GMT"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -331,7 +331,7 @@ Viewpoint53.orientation = [0,1,0,3.1416]
 
 Group48.children.append(Viewpoint53)
 Transform54 = x3d.Transform(DEF="Close_travel")
-Transform54.translation = [0,-0.97,0]
+Transform54.translation = [0,0.6883332,0]
 PositionInterpolator55 = x3d.PositionInterpolator(DEF="Close_Mover")
 PositionInterpolator55.key = [0,0.25,0.5,0.75,1]
 PositionInterpolator55.keyValue = [(0, 2.5, 0),(0, 0, 0),(0, -2.5, 0),(0, 0, 0),(0, 2.5, 0)]

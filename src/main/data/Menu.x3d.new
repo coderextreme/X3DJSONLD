@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="Menu.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="Menu.x3d"></meta>
+<meta name="description" content="X3D scene with a Switch of Inlines controlled by a menu"></meta>
 </head>
-<Scene><ProtoDeclare name="Menu"><ProtoInterface><field accessType="initializeOnly" type="MFString" name="menuItems"></field>
+<Scene><!--Viewpoint and any other scene setup--><Viewpoint position="0 20 110"></Viewpoint>
+<!--Menu prototype declaration--><ProtoDeclare name="Menu"><ProtoInterface><field name="menuItems" type="MFString" accessType="initializeOnly"></field>
 </ProtoInterface>
 <ProtoBody><Group><Transform DEF="TextMenuTransform" translation="48 27 0"><TouchSensor DEF="MenuTouchSensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Text DEF="MenuText"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
-<IS><connect nodeField="string" protoField="menuItems"></connect>
+<Text DEF="MenuText"><IS><connect nodeField="string" protoField="menuItems"></connect>
 </IS>
+<FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
 </Text>
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
@@ -49,13 +51,15 @@
 <Inline DEF="OPTION29" url="&quot;../resources/JinBlink.x3d&quot; &quot;JinBlink.x3d&quot;"></Inline>
 <Inline DEF="OPTION30" url="&quot;../resources/JinWink.x3d&quot; &quot;JinWink.x3d&quot;"></Inline>
 </Switch>
-<Script DEF="MenuScript"><field accessType="initializeOnly" type="MFString" name="menuItems"></field>
-<field accessType="outputOnly" type="SFInt32" name="selection"></field>
-<field accessType="inputOnly" type="SFVec3f" name="touchPoint"></field>
-<field accessType="initializeOnly" type="SFFloat" name="spacing" value="1.2"></field>
-<field accessType="initializeOnly" type="SFFloat" name="size" value="2.4"></field>
-<field accessType="initializeOnly" type="SFFloat" name="menuCenterY"></field>
-<field accessType="initializeOnly" type="SFFloat" name="itemHeight"></field>
+<!--Script to handle selection logic--><Script DEF="MenuScript"><field name="menuItems" type="MFString" accessType="initializeOnly"></field>
+<field name="selection" type="SFInt32" accessType="outputOnly"></field>
+<field name="touchPoint" type="SFVec3f" accessType="inputOnly"></field>
+<field name="spacing" type="SFFloat" accessType="initializeOnly" value="1.2"></field>
+<field name="size" type="SFFloat" accessType="initializeOnly" value="2.4"></field>
+<field name="menuCenterY" type="SFFloat" accessType="initializeOnly"></field>
+<field name="itemHeight" type="SFFloat" accessType="initializeOnly"></field>
+<IS><connect nodeField="menuItems" protoField="menuItems"></connect>
+</IS>
 <![CDATA[ecmascript:
         function initialize() {
           selection = 0;
@@ -66,23 +70,22 @@
         }
 
         function touchPoint(value) {
-          Browser.print("Hit "+value+" "+selection+"\n");
+          Browser.print("Hit "+value+" "+selection+"
+");
           var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 
           selection = index - 2;
           if (selection >= 0 && selection < menuItems.length) {
-            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\n");
+            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"
+");
           }
-        }]]><IS><connect nodeField="menuItems" protoField="menuItems"></connect>
-</IS>
-</Script>
+        }]]></Script>
+<!--ROUTEs to connect everything--><ROUTE fromNode="MenuTouchSensor" fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"></ROUTE>
+<ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
 </Group>
-<ROUTE fromNode="MenuTouchSensor" fromField="hitPoint_changed" toNode="MenuScript" toField="touchPoint"></ROUTE>
-<ROUTE fromNode="MenuScript" fromField="selection" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
 </ProtoBody>
 </ProtoDeclare>
-<Viewpoint position="0 20 110"></Viewpoint>
-<ProtoInstance DEF="MainMenu" name="Menu"><fieldValue name="menuItems" value="&quot;JinInnerBrowRaiser.x3d&quot; &quot;JinOuterBrowRaiser.x3d&quot; &quot;JinBrowLowerer.x3d&quot; &quot;JinUpperLidRaiser.x3d&quot; &quot;JinCheekRaiser.x3d&quot; &quot;JinLidTightener.x3d&quot; &quot;JinNoseWrinkler.x3d&quot; &quot;JinUpperLipRaiser.x3d&quot; &quot;JinNasolabialDeepener.x3d&quot; &quot;JinLipCornerPuller.x3d&quot; &quot;JinCheekPuffer.x3d&quot; &quot;JinDimpler.x3d&quot; &quot;JinLipCornerDepressor.x3d&quot; &quot;JinLowerLipDepressor.x3d&quot; &quot;JinChinRaiser.x3d&quot; &quot;JinLipPuckerer.x3d&quot; &quot;JinLipStretcher.x3d&quot; &quot;JinLipFunneler.x3d&quot; &quot;JinLipTightener.x3d&quot; &quot;JinLipPressor.x3d&quot; &quot;JinLipsPart.x3d&quot; &quot;JinJawDrop.x3d&quot; &quot;JinMouthStretch.x3d&quot; &quot;JinLipSuck.x3d&quot; &quot;JinLidDroop.x3d&quot; &quot;JinSlit.x3d&quot; &quot;JinEyesClosed.x3d&quot; &quot;JinSquint.x3d&quot; &quot;JinBlink.x3d&quot; &quot;JinWink.x3d&quot;"></fieldValue>
+<ProtoInstance name="Menu" DEF="MainMenu"><fieldValue name="menuItems" value="&quot;JinInnerBrowRaiser.x3d&quot; &quot;JinOuterBrowRaiser.x3d&quot; &quot;JinBrowLowerer.x3d&quot; &quot;JinUpperLidRaiser.x3d&quot; &quot;JinCheekRaiser.x3d&quot; &quot;JinLidTightener.x3d&quot; &quot;JinNoseWrinkler.x3d&quot; &quot;JinUpperLipRaiser.x3d&quot; &quot;JinNasolabialDeepener.x3d&quot; &quot;JinLipCornerPuller.x3d&quot; &quot;JinCheekPuffer.x3d&quot; &quot;JinDimpler.x3d&quot; &quot;JinLipCornerDepressor.x3d&quot; &quot;JinLowerLipDepressor.x3d&quot; &quot;JinChinRaiser.x3d&quot; &quot;JinLipPuckerer.x3d&quot; &quot;JinLipStretcher.x3d&quot; &quot;JinLipFunneler.x3d&quot; &quot;JinLipTightener.x3d&quot; &quot;JinLipPressor.x3d&quot; &quot;JinLipsPart.x3d&quot; &quot;JinJawDrop.x3d&quot; &quot;JinMouthStretch.x3d&quot; &quot;JinLipSuck.x3d&quot; &quot;JinLidDroop.x3d&quot; &quot;JinSlit.x3d&quot; &quot;JinEyesClosed.x3d&quot; &quot;JinSquint.x3d&quot; &quot;JinBlink.x3d&quot; &quot;JinWink.x3d&quot;"></fieldValue>
 </ProtoInstance>
 </Scene>
 </X3D>

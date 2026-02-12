@@ -330,7 +330,7 @@ ProtoInstance59 = x3d.ProtoInstance(DEF="G1")
 ProtoInstance59.name = "point"
 fieldValue60 = x3d.fieldValue()
 fieldValue60.name = "translation"
-fieldValue60.value = "0 4.376667 0"
+fieldValue60.value = "0 0.9066665 0"
 
 ProtoInstance59.fieldValue.append(fieldValue60)
 
@@ -339,7 +339,7 @@ ProtoInstance61 = x3d.ProtoInstance(DEF="G2")
 ProtoInstance61.name = "point"
 fieldValue62 = x3d.fieldValue()
 fieldValue62.name = "translation"
-fieldValue62.value = "0 4.376667 0"
+fieldValue62.value = "0 0.9066665 0"
 
 ProtoInstance61.fieldValue.append(fieldValue62)
 
@@ -348,7 +348,7 @@ ProtoInstance63 = x3d.ProtoInstance(DEF="G3")
 ProtoInstance63.name = "point"
 fieldValue64 = x3d.fieldValue()
 fieldValue64.name = "translation"
-fieldValue64.value = "0 4.376667 0"
+fieldValue64.value = "0 0.9066665 0"
 
 ProtoInstance63.fieldValue.append(fieldValue64)
 
@@ -357,7 +357,7 @@ ProtoInstance65 = x3d.ProtoInstance(DEF="G4")
 ProtoInstance65.name = "point"
 fieldValue66 = x3d.fieldValue()
 fieldValue66.name = "translation"
-fieldValue66.value = "0 4.376667 0"
+fieldValue66.value = "0 0.9066665 0"
 
 ProtoInstance65.fieldValue.append(fieldValue66)
 

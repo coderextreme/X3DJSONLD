@@ -6,7 +6,7 @@
 <meta name="translator" content="Chul Hee Jung and Myeong Won Lee"></meta>
 <meta name="created" content="31 March 2011"></meta>
 <meta name="translated" content="1 November 2014"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:11:49 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:11:00 GMT"></meta>
 <meta name="modifiers" content="John Carlson and Joe Williams"></meta>
 <meta name="description" content=" Articulated 3D game character designed with a general graphics tool,  then converted into an loa4 X3D HAnim model,  then rescaled 1:1 m all drawn directly in place  in default HAnim coordinate space, and added v2 Sites"></meta>
 <meta name="reference" content="KoreanCharacter00ReadMe.txt"></meta>
@@ -2324,7 +2324,7 @@
 </Transform>
 </Transform>
 </Group>
-<HAnimHumanoid DEF="hanim_humanoid" name="humanoid" version="2.0" loa="4"><HAnimJoint DEF="hanim_humanoid_root" name="humanoid_root" translation="-0.1883727 0.1209318 0.06279546" rotation="-0.999999999999997 0 0 0.500000000000001" center="0 0.77 0" containerField="skeleton"><HAnimSegment DEF="hanim_sacrum" name="sacrum"><Shape DEF="HumanoidAxisLinesShape"><IndexedLineSet colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Color containerField="color" color="1 0 0 0 0.6 0 0 0 1"></Color>
+<HAnimHumanoid DEF="hanim_humanoid" name="humanoid" version="2.0" loa="4"><HAnimJoint DEF="hanim_humanoid_root" name="humanoid_root" translation="-0.1809818 0.1024545 0.007363626" rotation="-0.999999999999997 0 0 0.500000000000001" center="0 0.77 0" containerField="skeleton"><HAnimSegment DEF="hanim_sacrum" name="sacrum"><Shape DEF="HumanoidAxisLinesShape"><IndexedLineSet colorPerVertex="false" colorIndex="0 1 2" coordIndex="0 1 -1 0 2 -1 0 3 -1"><Color containerField="color" color="1 0 0 0 0.6 0 0 0 1"></Color>
 <Coordinate point="0 0 0 0.1 0 0 0 0.1 0 0 0 0.1"></Coordinate>
 </IndexedLineSet>
 </Shape>
@@ -2367,7 +2367,7 @@
 </HAnimSite>
 <Shape USE="sacroiliac-to-buttocks_standing_wall_contact_point_pt"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_hip" name="l_hip" rotation="1 0 0 0.788595063283333" center="0.095 0.8266 -0.0183"><HAnimSegment DEF="hanim_l_thigh" name="l_thigh"><Transform USE="l_hip_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_hip" name="l_hip" rotation="1 0 0 0.654214877340687" center="0.095 0.8266 -0.0183"><HAnimSegment DEF="hanim_l_thigh" name="l_thigh"><Transform USE="l_hip_JointShape"></Transform>
 <Shape USE="l_hip-to-l_knee_Segment"></Shape>
 <HAnimSite DEF="hanim_l_knee_crease_pt" name="l_knee_crease_pt" translation="0.09 0.41 -0.056"><Transform USE="l_knee_crease_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2382,7 +2382,7 @@
 </HAnimSite>
 <Shape USE="l_hip-to-l_suprapatella"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_knee" name="l_knee" rotation="0.982143476849055 0 0.188133439034244 0.933468797029121" center="0.0926 0.4088 -0.01944"><HAnimSegment DEF="hanim_l_calf" name="l_calf"><Transform USE="l_knee_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_knee" name="l_knee" rotation="0.909585162772605 0 0.41551754675818 0.666694838105279" center="0.0926 0.4088 -0.01944"><HAnimSegment DEF="hanim_l_calf" name="l_calf"><Transform USE="l_knee_JointShape"></Transform>
 <Shape USE="l_knee-to-l_talocrural_Segment"></Shape>
 <HAnimSite DEF="hanim_l_tibiale_pt" name="l_tibiale_pt" translation="0.09 0.31 0.038"><Transform USE="l_tibiale_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2394,7 +2394,7 @@
 </HAnimSite>
 <Shape USE="l_knee-to-l_lateral_malleolus"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_talocrural" name="l_talocrural" rotation="1 0 0 0.930181741714477" center="0.0888 0.09545 -0.01045"><HAnimSegment DEF="hanim_l_talus" name="l_talus"><Transform USE="l_talocrural_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_talocrural" name="l_talocrural" rotation="1 0 0 0.478545427322388" center="0.0888 0.09545 -0.01045"><HAnimSegment DEF="hanim_l_talus" name="l_talus"><Transform USE="l_talocrural_JointShape"></Transform>
 <Shape USE="l_talocrural-to-l_talocalcaneonavicular_Segment"></Shape>
 <Shape USE="l_talocrural-to-l_calcaneocuboid_Segment"></Shape>
 <HAnimSite DEF="hanim_l_sphyrion_pt" name="l_sphyrion_pt" translation="0.054 0.065 -0.02"><Transform USE="l_sphyrion_pt_SiteShape"></Transform>
@@ -2546,7 +2546,7 @@
 </HAnimSite>
 <Shape USE="r_hip-to-r_suprapatella"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_knee" name="r_knee" rotation="1 0 0 1.03490912914276" center="-0.0926 0.408825 -0.01944"><HAnimSegment DEF="hanim_r_calf" name="r_calf"><Transform USE="r_knee_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_knee" name="r_knee" rotation="1 0 0 1" center="-0.0926 0.408825 -0.01944"><HAnimSegment DEF="hanim_r_calf" name="r_calf"><Transform USE="r_knee_JointShape"></Transform>
 <Shape USE="r_calf_Segment"></Shape>
 <HAnimSite DEF="hanim_r_tibiale_pt" name="r_tibiale_pt" translation="-0.09 0.31 0.038"><Transform USE="r_tibiale_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2558,7 +2558,7 @@
 </HAnimSite>
 <Shape USE="r_knee-to-r_lateral_malleolu"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_talocrural" name="r_talocrural" rotation="1 0 0 0.965090870857239" center="-0.08845 0.09544 -0.01045"><HAnimSegment DEF="hanim_r_talus" name="r_talus"><Transform USE="r_talocrural_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_talocrural" name="r_talocrural" rotation="1 0 0 1" center="-0.08845 0.09544 -0.01045"><HAnimSegment DEF="hanim_r_talus" name="r_talus"><Transform USE="r_talocrural_JointShape"></Transform>
 <Shape USE="r_talus-to-r_talocalcaneonavicular_Segment"></Shape>
 <Shape USE="r_talus-to-r_calcaneocuboid_Segment"></Shape>
 <HAnimSite DEF="hanim_r_sphyrion_pt" name="r_sphyrion_pt" translation="-0.054 0.065 -0.02"><Transform USE="r_sphyrion_p_SiteShape"></Transform>
@@ -2695,7 +2695,7 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint DEF="hanim_vl5" name="vl5" rotation="1.00000000000003 0 0 0.117454553943688" center="0 0.9254 -0.01376"><HAnimSegment DEF="hanim_l5" name="l5"><Transform USE="vl5_JointShape"></Transform>
+<HAnimJoint DEF="hanim_vl5" name="vl5" rotation="-1.00000000000125 0 0 0.0303636479232868" center="0 0.9254 -0.01376"><HAnimSegment DEF="hanim_l5" name="l5"><Transform USE="vl5_JointShape"></Transform>
 <Shape USE="l5_Segment"></Shape>
 <HAnimSite DEF="hanim_spine_1_middle_back_pt" name="spine_1_middle_back_pt" translation="0 1 -0.1"><Transform USE="spine_1_middle_back_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2713,7 +2713,7 @@
 </HAnimSite>
 <Shape USE="vl5-to-navel"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_vl4" name="vl4" rotation="1.00000000000003 0 0 0.117454553943688" center="0 0.9497 -0.01376"><HAnimSegment DEF="hanim_l4" name="l4"><Transform USE="vl4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_vl4" name="vl4" rotation="-1.00000000000125 0 0 0.0303636479232868" center="0 0.9497 -0.01376"><HAnimSegment DEF="hanim_l4" name="l4"><Transform USE="vl4_JointShape"></Transform>
 <Shape USE="l4_Segment"></Shape>
 </HAnimSegment>
 <HAnimJoint DEF="hanim_vl3" name="vl3" center="0 0.9659 -0.01376"><HAnimSegment DEF="hanim_l3" name="l3"><Transform USE="vl3_JointShape"></Transform>
@@ -2767,10 +2767,10 @@
 <HAnimJoint DEF="hanim_vt8" name="vt8" center="0 1.093 -0.01376"><HAnimSegment DEF="hanim_t8" name="t8"><Transform USE="vt8_JointShape"></Transform>
 <Shape USE="t8_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_vt7" name="vt7" rotation="1.00000000000003 0 0 0.117454553943688" center="0 1.1088 -0.01376"><HAnimSegment DEF="hanim_t7" name="t7"><Transform USE="vt7_JointShape"></Transform>
+<HAnimJoint DEF="hanim_vt7" name="vt7" rotation="-1.00000000000125 0 0 0.0303636479232868" center="0 1.1088 -0.01376"><HAnimSegment DEF="hanim_t7" name="t7"><Transform USE="vt7_JointShape"></Transform>
 <Shape USE="t7_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_vt6" name="vt6" rotation="1.00000000000003 0 0 0.117454553943688" center="0 1.1216 -0.01376"><HAnimSegment DEF="hanim_t6" name="t6"><Transform USE="vt6_JointShape"></Transform>
+<HAnimJoint DEF="hanim_vt6" name="vt6" rotation="-1.00000000000125 0 0 0.0303636479232868" center="0 1.1216 -0.01376"><HAnimSegment DEF="hanim_t6" name="t6"><Transform USE="vt6_JointShape"></Transform>
 <Shape USE="t6_Segment"></Shape>
 </HAnimSegment>
 <HAnimJoint DEF="hanim_vt5" name="vt5" center="0 1.137 -0.01376"><HAnimSegment DEF="hanim_t5" name="t5"><Transform USE="vt5_JointShape"></Transform>
@@ -2811,7 +2811,7 @@
 <HAnimJoint DEF="hanim_vc5" name="vc5" center="0 1.2699 -0.01506"><HAnimSegment DEF="hanim_c5" name="c5"><Transform USE="vc5_JointShape"></Transform>
 <Shape USE="c5_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_vc4" name="vc4" rotation="0.918845247159474 0 0.39461805809218 0.55398734123427" center="0 1.28227 -0.01506"><HAnimSegment DEF="hanim_c4" name="c4"><Transform USE="vc4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_vc4" name="vc4" rotation="0.977316167656325 0 0.211785524617601 0.620748055639013" center="0 1.28227 -0.01506"><HAnimSegment DEF="hanim_c4" name="c4"><Transform USE="vc4_JointShape"></Transform>
 <Shape USE="c4_Segment"></Shape>
 </HAnimSegment>
 <HAnimJoint DEF="hanim_vc3" name="vc3" center="0 1.2951 -0.01506"><HAnimSegment DEF="hanim_c3" name="c3"><Transform USE="vc3_JointShape"></Transform>
@@ -2826,7 +2826,7 @@
 <HAnimJoint DEF="hanim_vc1" name="vc1" center="0 1.3185 -0.0151"><HAnimSegment DEF="hanim_c1" name="c1"><Transform USE="vc1_JointShape"></Transform>
 <Shape USE="c1_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_skullbase" name="skullbase" rotation="0 0.999999999998676 0 0.0174545645714037" center="0 1.3126 -0.0154"><HAnimSegment DEF="hanim_skull" name="skull"><Transform USE="skullbase_JointShape"></Transform>
+<HAnimJoint DEF="hanim_skullbase" name="skullbase" center="0 1.3126 -0.0154"><HAnimSegment DEF="hanim_skull" name="skull"><Transform USE="skullbase_JointShape"></Transform>
 <Shape USE="skull-to-l_eyelid_joint_Segment"></Shape>
 <Shape USE="skull-to-r_eyelid_joint_Segment"></Shape>
 <Shape USE="skull-to-l_eyeball_joint_Segment"></Shape>
@@ -2956,7 +2956,7 @@
 </HAnimSite>
 <Shape USE="l_acromioclavicular-to-l_axilla_posterior_folds"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_shoulder" name="l_shoulder" rotation="-0.484653893465172 0 0.874706009782173 1.57974400506257" center="0.16506 1.17855 -0.00327"><HAnimSegment DEF="hanim_l_upperarm" name="l_upperarm"><Transform USE="l_shoulder_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_shoulder" name="l_shoulder" rotation="-0.303199660684994 0 0.952927051646927 1.51678148372057" center="0.16506 1.17855 -0.00327"><HAnimSegment DEF="hanim_l_upperarm" name="l_upperarm"><Transform USE="l_shoulder_JointShape"></Transform>
 <Shape USE="l_upperarm_Segment"></Shape>
 <HAnimSite DEF="hanim_l_humeral_lateral_epicondyles_pt" name="l_humeral_lateral_epicondyles_pt" translation="0.2 0.95 -0.03"><Transform USE="l_humeral_lateral_epicondyles_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2971,7 +2971,7 @@
 </HAnimSite>
 <Shape USE="l_shoulder-to-l_bideltoid"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_elbow" name="l_elbow" rotation="-0.942565846356259 -0.334020396507024 0 0.57274500479823" center="0.18209 0.9288 -0.00563"><HAnimSegment DEF="hanim_l_forearm" name="l_forearm"><Transform USE="l_elbow_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_elbow" name="l_elbow" rotation="-0.991491108539122 -0.130174427933687 0 0.66218408427455" center="0.18209 0.9288 -0.00563"><HAnimSegment DEF="hanim_l_forearm" name="l_forearm"><Transform USE="l_elbow_JointShape"></Transform>
 <Shape USE="l_forearm_Segment"></Shape>
 <HAnimSite DEF="hanim_l_radial_styloid_pt" name="l_radial_styloid_pt" translation="0.18 0.725 0.025"><Transform USE="l_radial_styloid_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -2980,7 +2980,7 @@
 </HAnimSite>
 <Shape USE="l_elbow-to-l_olecranon"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_l_radiocarpal" name="l_radiocarpal" rotation="0 -0.357454184170338 0.933930675274733 1.16526882419336" center="0.1819 0.72427 -0.005"><HAnimSegment DEF="hanim_l_carpal" name="l_carpal"><Transform USE="l_radiocarpal_JointShape"></Transform>
+<HAnimJoint DEF="hanim_l_radiocarpal" name="l_radiocarpal" rotation="0 0.399839477059073 0.91658518021247 0.767452841176296" center="0.1819 0.72427 -0.005"><HAnimSegment DEF="hanim_l_carpal" name="l_carpal"><Transform USE="l_radiocarpal_JointShape"></Transform>
 <Shape USE="l_carpal-to-l_midcarpal_1_Segment"></Shape>
 <Shape USE="l_carpal-to-l_midcarpal_2_Segment"></Shape>
 <Shape USE="l_carpal-to-l_midcarpal_3_Segment"></Shape>
@@ -3136,7 +3136,7 @@
 </HAnimSite>
 <Shape USE="r_acromioclavicular-to-r_axilla_posterior_folds"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_shoulder" name="r_shoulder" rotation="0 0 -1 1.63372728228569" center="-0.1647 1.17855 -0.00327"><HAnimSegment DEF="hanim_r_upperarm" name="r_upperarm"><Transform USE="r_shoulder_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_shoulder" name="r_shoulder" rotation="0 0 -1 1.5598181784153" center="-0.1647 1.17855 -0.00327"><HAnimSegment DEF="hanim_r_upperarm" name="r_upperarm"><Transform USE="r_shoulder_JointShape"></Transform>
 <Shape USE="r_upperarm_Segment"></Shape>
 <HAnimSite DEF="hanim_r_humeral_lateral_epicondyles_pt" name="r_humeral_lateral_epicondyles_pt" translation="-0.2 0.95 -0.03"><Transform USE="r_humeral_lateral_epicondyles_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -3151,7 +3151,7 @@
 </HAnimSite>
 <Shape USE="r_shoulder-to-r_bideltoid"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_elbow" name="r_elbow" rotation="-0.942565846356259 -0.334020396507024 0 0.57274500479823" center="-0.1817 0.9288 -0.00564"><HAnimSegment DEF="hanim_r_forearm" name="r_forearm"><Transform USE="r_elbow_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_elbow" name="r_elbow" rotation="-0.991491108539122 -0.130174427933687 0 0.66218408427455" center="-0.1817 0.9288 -0.00564"><HAnimSegment DEF="hanim_r_forearm" name="r_forearm"><Transform USE="r_elbow_JointShape"></Transform>
 <Shape USE="r_forearm_Segment"></Shape>
 <HAnimSite DEF="hanim_r_radial_styloid_pt" name="r_radial_styloid_pt" translation="-0.18 0.725 0.025"><Transform USE="r_radial_styloid_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -3160,7 +3160,7 @@
 </HAnimSite>
 <Shape USE="r_elbow-to-SiteName"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_radiocarpal" name="r_radiocarpal" rotation="0 -0.0923055874844659 -0.99573072590894 0.779810327915025" center="-0.1816 0.7242 -0.005"><HAnimSegment DEF="hanim_r_carpal" name="r_carpal"><Transform USE="r_radiocarpal_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_radiocarpal" name="r_radiocarpal" rotation="0 0 -1 0.598181819807399" center="-0.1816 0.7242 -0.005"><HAnimSegment DEF="hanim_r_carpal" name="r_carpal"><Transform USE="r_radiocarpal_JointShape"></Transform>
 <Shape USE="r_carpal-to-r_midcarpal_1_Segment"></Shape>
 <Shape USE="r_carpal-to-r_midcarpal_2_Segment"></Shape>
 <Shape USE="r_carpal-to-r_midcarpal_3_Segment"></Shape>
@@ -3169,20 +3169,20 @@
 </HAnimSite>
 <Shape USE="r_radiocarpal-to-r_ulnar_styloid"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_midcarpal_1" name="r_midcarpal_1" rotation="0 0 1 0.930181741714477" center="-0.18097 0.70605 0.0193"><HAnimSegment DEF="hanim_r_trapezium" name="r_trapezium"><Transform USE="r_midcarpal_1_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_midcarpal_1" name="r_midcarpal_1" rotation="0 0 1 0.478545427322388" center="-0.18097 0.70605 0.0193"><HAnimSegment DEF="hanim_r_trapezium" name="r_trapezium"><Transform USE="r_midcarpal_1_JointShape"></Transform>
 <Shape USE="r_trapezium-to-r_carpometacarpal_1_Segment"></Shape>
 <Shape USE="r_trapezium-to-r_midcarpal_4_5_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpometacarpal_1" name="r_carpometacarpal_1" rotation="0 0 1 1.39527261257172" center="-0.18 0.69255 0.02598"><HAnimSegment DEF="hanim_r_metacarpal_1" name="r_metacarpal_1"><Transform USE="r_carpometacarpal_1_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpometacarpal_1" name="r_carpometacarpal_1" rotation="0 0 1 0.717818140983581" center="-0.18 0.69255 0.02598"><HAnimSegment DEF="hanim_r_metacarpal_1" name="r_metacarpal_1"><Transform USE="r_carpometacarpal_1_JointShape"></Transform>
 <Shape USE="r_metacarpal_1_Segment"></Shape>
 <HAnimSite DEF="hanim_r_metacarpal_phalanx_2_pt" name="r_metacarpal_phalanx_2_pt" translation="-0.2 0.665 0.012"><Transform USE="r_metacarpal_phalanx_2_pt_SiteShape"></Transform>
 </HAnimSite>
 <Shape USE="r_carpometacarpal_1-to-r_metacarpal_phalanx_2"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_metacarpophalangeal_1" name="r_metacarpophalangeal_1" rotation="0 0 1 1.39527261257172" center="-0.18065 0.67275 0.03577"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_1" name="r_carpal_proximal_phalanx_1"><Transform USE="r_metacarpophalangeal_1_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_metacarpophalangeal_1" name="r_metacarpophalangeal_1" rotation="0 0 1 0.717818140983581" center="-0.18065 0.67275 0.03577"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_1" name="r_carpal_proximal_phalanx_1"><Transform USE="r_metacarpophalangeal_1_JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_1_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_interphalangeal_1" name="r_carpal_interphalangeal_1" rotation="0 0 1 1.39527261257172" center="-0.18227 0.654 0.0496"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_1" name="r_carpal_distal_phalanx_1"><Transform USE="r_carpal_interphalangeal_1_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_interphalangeal_1" name="r_carpal_interphalangeal_1" rotation="0 0 1 0.717818140983581" center="-0.18227 0.654 0.0496"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_1" name="r_carpal_distal_phalanx_1"><Transform USE="r_carpal_interphalangeal_1_JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_1_Segment"></Shape>
 <HAnimSite DEF="hanim_r_carpal_distal_phalanx_1_tip" name="r_carpal_distal_phalanx_1_tip" translation="-0.18 0.64 0.06"><Transform USE="r_carpal_distal_phalanx_1_tip_SiteShape"></Transform>
 </HAnimSite>
@@ -3192,19 +3192,19 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint DEF="hanim_r_midcarpal_2" name="r_midcarpal_2" rotation="0 0 1 0.930181741714477" center="-0.18097 0.70695 0.0084"><HAnimSegment DEF="hanim_r_trapezoid" name="r_trapezoid"><Transform USE="r_midcarpal_2_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_midcarpal_2" name="r_midcarpal_2" rotation="0 0 1 0.478545427322388" center="-0.18097 0.70695 0.0084"><HAnimSegment DEF="hanim_r_trapezoid" name="r_trapezoid"><Transform USE="r_midcarpal_2_JointShape"></Transform>
 <Shape USE="r_trapezoid_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpometacarpal_2" name="r_carpometacarpal_2" rotation="0 0 1 1.39527261257172" center="-0.1809 0.6876 0.0097"><HAnimSegment DEF="hanim_r_metacarpal_2" name="r_metacarpal_2"><Transform USE="r_carpometacarpal_2_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpometacarpal_2" name="r_carpometacarpal_2" rotation="0 0 1 0.717818140983581" center="-0.1809 0.6876 0.0097"><HAnimSegment DEF="hanim_r_metacarpal_2" name="r_metacarpal_2"><Transform USE="r_carpometacarpal_2_JointShape"></Transform>
 <Shape USE="r_metacarpal_2_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_metacarpophalangeal_2" name="r_metacarpophalangeal_2" rotation="0 0 1 1.39527261257172" center="-0.18335 0.6372 0.01507"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_2" name="r_carpal_proximal_phalanx_2"><Transform USE="r_metacarpophalangeal_2_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_metacarpophalangeal_2" name="r_metacarpophalangeal_2" rotation="0 0 1 0.717818140983581" center="-0.18335 0.6372 0.01507"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_2" name="r_carpal_proximal_phalanx_2"><Transform USE="r_metacarpophalangeal_2_JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_2_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_2" name="r_carpal_proximal_interphalangeal_2" rotation="0 0 1 1.39527261257172" center="-0.1813 0.6068 0.01418"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_2" name="r_carpal_middle_phalanx_2"><Transform USE="r_carpal_proximal_interphalangeal_2_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_2" name="r_carpal_proximal_interphalangeal_2" rotation="0 0 1 0.717818140983581" center="-0.1813 0.6068 0.01418"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_2" name="r_carpal_middle_phalanx_2"><Transform USE="r_carpal_proximal_interphalangeal_2_JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_2_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_2" name="r_carpal_distal_interphalangeal_2" rotation="0 0 1 1.39527261257172" center="-0.1803 0.5816 0.01338"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_2" name="r_carpal_distal_phalanx_2"><Transform USE="r_carpal_distal_interphalangeal_2_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_2" name="r_carpal_distal_interphalangeal_2" rotation="0 0 1 0.717818140983581" center="-0.1803 0.5816 0.01338"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_2" name="r_carpal_distal_phalanx_2"><Transform USE="r_carpal_distal_interphalangeal_2_JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_2_Segment"></Shape>
 <HAnimSite DEF="hanim_r_dactylion_pt" name="r_dactylion_pt" translation="-0.17 0.558 0.017"><Transform USE="r_dactylion_pt_SiteShape"></Transform>
 </HAnimSite>
@@ -3218,22 +3218,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint DEF="hanim_r_midcarpal_3" name="r_midcarpal_3" rotation="0 0 1 0.930181741714477" center="-0.18072 0.708525 -0.004797"><HAnimSegment DEF="hanim_r_capitate" name="r_capitate"><Transform USE="r_midcarpal_3_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_midcarpal_3" name="r_midcarpal_3" rotation="0 0 1 0.478545427322388" center="-0.18072 0.708525 -0.004797"><HAnimSegment DEF="hanim_r_capitate" name="r_capitate"><Transform USE="r_midcarpal_3_JointShape"></Transform>
 <Shape USE="r_capitate_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpometacarpal_3" name="r_carpometacarpal_3" rotation="0 0 1 0.930181741714477" center="-0.18072 0.6858 -0.00625"><HAnimSegment DEF="hanim_r_metacarpal_3" name="r_metacarpal_3"><Transform USE="r_carpometacarpal_3_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpometacarpal_3" name="r_carpometacarpal_3" rotation="0 0 1 0.478545427322388" center="-0.18072 0.6858 -0.00625"><HAnimSegment DEF="hanim_r_metacarpal_3" name="r_metacarpal_3"><Transform USE="r_carpometacarpal_3_JointShape"></Transform>
 <Shape USE="r_metacarpal_3_Segment"></Shape>
 <HAnimSite DEF="hanim_r_metacarpal_phalanx_3_pt" name="r_metacarpal_phalanx_3_pt" translation="-0.2 0.665 0.016"><Transform USE="r_metacarpal_phalanx_3_pt_SiteShape"></Transform>
 </HAnimSite>
 <Shape USE="r_carpometacarpal_3-to-r_metacarpal_phalanx_3"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_metacarpophalangeal_3" name="r_metacarpophalangeal_3" rotation="0 0 1 1.39527261257172" center="-0.1833 0.63495 -0.0039"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_3" name="r_carpal_proximal_phalanx_3"><Transform USE="r_carpal_proximal_phalanx_3_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_metacarpophalangeal_3" name="r_metacarpophalangeal_3" rotation="0 0 1 0.717818140983581" center="-0.1833 0.63495 -0.0039"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_3" name="r_carpal_proximal_phalanx_3"><Transform USE="r_carpal_proximal_phalanx_3_JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_3_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_3" name="r_carpal_proximal_interphalangeal_3" rotation="0 0 1 1.39527261257172" center="-0.1813 0.6032 -0.0035"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_3" name="r_carpal_middle_phalanx_3"><Transform USE="r_carpal_proximal_interphalangeal_3_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_3" name="r_carpal_proximal_interphalangeal_3" rotation="0 0 1 0.717818140983581" center="-0.1813 0.6032 -0.0035"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_3" name="r_carpal_middle_phalanx_3"><Transform USE="r_carpal_proximal_interphalangeal_3_JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_3_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_3" name="r_carpal_distal_interphalangeal_3" rotation="0 0 1 1.39527261257172" center="-0.18029 0.5753 -0.00375"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_3" name="r_carpal_distal_phalanx_3"><Transform USE="r_carpal_distal_interphalangeal_3_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_3" name="r_carpal_distal_interphalangeal_3" rotation="0 0 1 0.717818140983581" center="-0.18029 0.5753 -0.00375"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_3" name="r_carpal_distal_phalanx_3"><Transform USE="r_carpal_distal_interphalangeal_3_JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_3_Segment"></Shape>
 <HAnimSite DEF="hanim_r_carpal_distal_phalanx_3_tip" name="r_carpal_distal_phalanx_3_tip" translation="-0.17 0.555 -0.006"><Transform USE="r_carpal_distal_phalanx_3_tip_SiteShape"></Transform>
 </HAnimSite>
@@ -3248,16 +3248,16 @@
 <Shape USE="r_hamate-to-r_carpometacarpal_4_Segment"></Shape>
 <Shape USE="r_hamate-to-r_carpometacarpal_5_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpometacarpal_4" name="r_carpometacarpal_4" rotation="0 0 1 0.930181741714477" center="-0.18072 0.68625 -0.01992"><HAnimSegment DEF="hanim_r_metacarpal_4" name="r_metacarpal_4"><Transform USE="r_carpometacarpal_4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpometacarpal_4" name="r_carpometacarpal_4" rotation="0 0 1 0.478545427322388" center="-0.18072 0.68625 -0.01992"><HAnimSegment DEF="hanim_r_metacarpal_4" name="r_metacarpal_4"><Transform USE="r_carpometacarpal_4_JointShape"></Transform>
 <Shape USE="r_metacarpal_4_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_metacarpophalangeal_4" name="r_metacarpophalangeal_4" rotation="0 0 1 1.39527261257172" center="-0.1833 0.63405 -0.02144"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_4" name="r_carpal_proximal_phalanx_4"><Transform USE="r_metacarpophalangeal_4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_metacarpophalangeal_4" name="r_metacarpophalangeal_4" rotation="0 0 1 0.717818140983581" center="-0.1833 0.63405 -0.02144"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_4" name="r_carpal_proximal_phalanx_4"><Transform USE="r_metacarpophalangeal_4_JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_4_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_4" name="r_carpal_proximal_interphalangeal_4" rotation="0 0 1 1.39527261257172" center="-0.1813 0.6066 -0.02064"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_4" name="r_carpal_middle_phalanx_4"><Transform USE="r_carpal_proximal_interphalangeal_4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_4" name="r_carpal_proximal_interphalangeal_4" rotation="0 0 1 0.717818140983581" center="-0.1813 0.6066 -0.02064"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_4" name="r_carpal_middle_phalanx_4"><Transform USE="r_carpal_proximal_interphalangeal_4_JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_4_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_4" name="r_carpal_distal_interphalangeal_4" rotation="0 0 1 1.39527261257172" center="-0.18029 0.5807 -0.01978"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_4" name="r_carpal_distal_phalanx_4"><Transform USE="r_carpal_distal_interphalangeal_4_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_4" name="r_carpal_distal_interphalangeal_4" rotation="0 0 1 0.717818140983581" center="-0.18029 0.5807 -0.01978"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_4" name="r_carpal_distal_phalanx_4"><Transform USE="r_carpal_distal_interphalangeal_4_JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_4_Segment"></Shape>
 <HAnimSite DEF="hanim_r_carpal_distal_phalanx_4_tip" name="r_carpal_distal_phalanx_4_tip" translation="-0.172 0.559 -0.024"><Transform USE="r_carpal_distal_phalanx_4_tip_SiteShape"></Transform>
 </HAnimSite>
@@ -3268,19 +3268,19 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint DEF="hanim_r_carpometacarpal_5" name="r_carpometacarpal_5" rotation="0 0 1 0.930181741714477" center="-0.18126 0.68827 -0.03278"><HAnimSegment DEF="hanim_r_metacarpal_5" name="r_metacarpal_5"><Transform USE="r_carpometacarpal_5_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpometacarpal_5" name="r_carpometacarpal_5" rotation="0 0 1 0.478545427322388" center="-0.18126 0.68827 -0.03278"><HAnimSegment DEF="hanim_r_metacarpal_5" name="r_metacarpal_5"><Transform USE="r_carpometacarpal_5_JointShape"></Transform>
 <Shape USE="r_metacarpal_5_Segment"></Shape>
 <HAnimSite DEF="hanim_r_metacarpal_phalanx_5_pt" name="r_metacarpal_phalanx_5_pt" translation="-0.2 0.665 -0.036"><Transform USE="r_metacarpal_phalanx_5_pt_SiteShape"></Transform>
 </HAnimSite>
 <Shape USE="r_carpometacarpal_5-to-r_metacarpal_phalanx_5"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_metacarpophalangeal_5" name="r_metacarpophalangeal_5" rotation="0 0 1 1.39527261257172" center="-0.18297 0.6381 -0.0371"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_5" name="r_carpal_proximal_phalanx_5"><Transform USE="r_metacarpophalangeal_5_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_metacarpophalangeal_5" name="r_metacarpophalangeal_5" rotation="0 0 1 0.717818140983581" center="-0.18297 0.6381 -0.0371"><HAnimSegment DEF="hanim_r_carpal_proximal_phalanx_5" name="r_carpal_proximal_phalanx_5"><Transform USE="r_metacarpophalangeal_5_JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_5_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_5" name="r_carpal_proximal_interphalangeal_5" rotation="0 0 1 1.39527261257172" center="-0.1813 0.621 -0.03715"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_5" name="r_carpal_middle_phalanx_5"><Transform USE="r_carpal_proximal_interphalangeal_5_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_proximal_interphalangeal_5" name="r_carpal_proximal_interphalangeal_5" rotation="0 0 1 0.717818140983581" center="-0.1813 0.621 -0.03715"><HAnimSegment DEF="hanim_r_carpal_middle_phalanx_5" name="r_carpal_middle_phalanx_5"><Transform USE="r_carpal_proximal_interphalangeal_5_JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_5_Segment"></Shape>
 </HAnimSegment>
-<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_5" name="r_carpal_distal_interphalangeal_5" rotation="0 0 1 1.39527261257172" center="-0.18045 0.602325 -0.03697"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_5" name="r_carpal_distal_phalanx_5"><Transform USE="r_carpal_distal_interphalangeal_5_JointShape"></Transform>
+<HAnimJoint DEF="hanim_r_carpal_distal_interphalangeal_5" name="r_carpal_distal_interphalangeal_5" rotation="0 0 1 0.717818140983581" center="-0.18045 0.602325 -0.03697"><HAnimSegment DEF="hanim_r_carpal_distal_phalanx_5" name="r_carpal_distal_phalanx_5"><Transform USE="r_carpal_distal_interphalangeal_5_JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_5_tip_Segment"></Shape>
 <HAnimSite DEF="hanim_r_carpal_distal_phalanx_5_tip" name="r_carpal_distal_phalanx_5_tip" translation="-0.172 0.58 -0.039"><Transform USE="r_carpal_distal_phalanx_5_tip_SiteShape"></Transform>
 </HAnimSite>

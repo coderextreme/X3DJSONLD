@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -17,190 +17,196 @@ meta3.content = "John Carlson"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "generator"
-meta4.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta4.content = "manual"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.name = "generator"
-meta5.content = "manual"
+meta5.name = "identifier"
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/rubik.x3d"
 
 head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "description"
+meta6.content = "a kind of rubik cube with spheres"
+
+head1.children.append(meta6)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-ProtoDeclare7 = x3d.ProtoDeclare()
-ProtoDeclare7.name = "sphereproto"
-ProtoInterface8 = x3d.ProtoInterface()
-field9 = x3d.field()
-field9.accessType = "inputOutput"
-field9.type = "SFVec3f"
-field9.name = "xtranslation"
+Scene7 = x3d.Scene()
+NavigationInfo8 = x3d.NavigationInfo()
+NavigationInfo8.type = ["ANY","EXAMINE","WALK","FLY","LOOKAT"]
 
-ProtoInterface8.field.append(field9)
+Scene7.children.append(NavigationInfo8)
+Viewpoint9 = x3d.Viewpoint()
+Viewpoint9.description = "Rubiks Cube"
+Viewpoint9.position = [0,0,12]
 
-ProtoDeclare7.ProtoInterface = ProtoInterface8
-ProtoBody10 = x3d.ProtoBody()
-Transform11 = x3d.Transform()
-Shape12 = x3d.Shape()
-Appearance13 = x3d.Appearance()
-Material14 = x3d.Material()
-Material14.diffuseColor = [1,1,1]
+Scene7.children.append(Viewpoint9)
+ProtoDeclare10 = x3d.ProtoDeclare()
+ProtoDeclare10.name = "sphereproto"
+ProtoInterface11 = x3d.ProtoInterface()
+field12 = x3d.field()
+field12.name = "xtranslation"
+field12.accessType = "inputOutput"
+field12.type = "SFVec3f"
+field12.value = [0,0,0]
 
-Appearance13.material = Material14
+ProtoInterface11.field.append(field12)
 
-Shape12.appearance = Appearance13
-Sphere15 = x3d.Sphere()
+ProtoDeclare10.ProtoInterface = ProtoInterface11
+ProtoBody13 = x3d.ProtoBody()
+Transform14 = x3d.Transform()
+IS15 = x3d.IS()
+connect16 = x3d.connect()
+connect16.nodeField = "translation"
+connect16.protoField = "xtranslation"
 
-Shape12.geometry = Sphere15
+IS15.connect.append(connect16)
 
-Transform11.children.append(Shape12)
-IS16 = x3d.IS()
-connect17 = x3d.connect()
-connect17.nodeField = "translation"
-connect17.protoField = "xtranslation"
+Transform14.IS = IS15
+Shape17 = x3d.Shape()
+Sphere18 = x3d.Sphere()
 
-IS16.connect.append(connect17)
+Shape17.geometry = Sphere18
+Appearance19 = x3d.Appearance()
+Material20 = x3d.Material()
+Material20.diffuseColor = [1,1,1]
 
-Transform11.IS = IS16
+Appearance19.material = Material20
 
-ProtoBody10.children.append(Transform11)
+Shape17.appearance = Appearance19
 
-ProtoDeclare7.ProtoBody = ProtoBody10
+Transform14.children.append(Shape17)
 
-Scene6.children.append(ProtoDeclare7)
-ProtoDeclare18 = x3d.ProtoDeclare()
-ProtoDeclare18.name = "three"
-ProtoInterface19 = x3d.ProtoInterface()
-field20 = x3d.field()
-field20.accessType = "inputOutput"
-field20.type = "SFVec3f"
-field20.name = "ytranslation"
+ProtoBody13.children.append(Transform14)
 
-ProtoInterface19.field.append(field20)
+ProtoDeclare10.ProtoBody = ProtoBody13
 
-ProtoDeclare18.ProtoInterface = ProtoInterface19
-ProtoBody21 = x3d.ProtoBody()
-Transform22 = x3d.Transform()
-ProtoInstance23 = x3d.ProtoInstance()
-ProtoInstance23.name = "sphereproto"
+Scene7.children.append(ProtoDeclare10)
+ProtoDeclare21 = x3d.ProtoDeclare()
+ProtoDeclare21.name = "three"
+ProtoInterface22 = x3d.ProtoInterface()
+field23 = x3d.field()
+field23.name = "ytranslation"
+field23.accessType = "inputOutput"
+field23.type = "SFVec3f"
+field23.value = [0,0,0]
 
-Transform22.children.append(ProtoInstance23)
-ProtoInstance24 = x3d.ProtoInstance()
-ProtoInstance24.name = "sphereproto"
-fieldValue25 = x3d.fieldValue()
-fieldValue25.name = "xtranslation"
-fieldValue25.value = "2 0 0"
+ProtoInterface22.field.append(field23)
 
-ProtoInstance24.fieldValue.append(fieldValue25)
+ProtoDeclare21.ProtoInterface = ProtoInterface22
+ProtoBody24 = x3d.ProtoBody()
+Transform25 = x3d.Transform()
+IS26 = x3d.IS()
+connect27 = x3d.connect()
+connect27.nodeField = "translation"
+connect27.protoField = "ytranslation"
 
-Transform22.children.append(ProtoInstance24)
-ProtoInstance26 = x3d.ProtoInstance()
-ProtoInstance26.name = "sphereproto"
-fieldValue27 = x3d.fieldValue()
-fieldValue27.name = "xtranslation"
-fieldValue27.value = "-2 0 0"
+IS26.connect.append(connect27)
 
-ProtoInstance26.fieldValue.append(fieldValue27)
+Transform25.IS = IS26
+ProtoInstance28 = x3d.ProtoInstance()
+ProtoInstance28.name = "sphereproto"
+fieldValue29 = x3d.fieldValue()
+fieldValue29.name = "xtranslation"
+fieldValue29.value = "0 0 0"
 
-Transform22.children.append(ProtoInstance26)
-IS28 = x3d.IS()
-connect29 = x3d.connect()
-connect29.nodeField = "translation"
-connect29.protoField = "ytranslation"
+ProtoInstance28.fieldValue.append(fieldValue29)
 
-IS28.connect.append(connect29)
+Transform25.children.append(ProtoInstance28)
+ProtoInstance30 = x3d.ProtoInstance()
+ProtoInstance30.name = "sphereproto"
+fieldValue31 = x3d.fieldValue()
+fieldValue31.name = "xtranslation"
+fieldValue31.value = "2 0 0"
 
-Transform22.IS = IS28
+ProtoInstance30.fieldValue.append(fieldValue31)
 
-ProtoBody21.children.append(Transform22)
+Transform25.children.append(ProtoInstance30)
+ProtoInstance32 = x3d.ProtoInstance()
+ProtoInstance32.name = "sphereproto"
+fieldValue33 = x3d.fieldValue()
+fieldValue33.name = "xtranslation"
+fieldValue33.value = "-2 0 0"
 
-ProtoDeclare18.ProtoBody = ProtoBody21
+ProtoInstance32.fieldValue.append(fieldValue33)
 
-Scene6.children.append(ProtoDeclare18)
-ProtoDeclare30 = x3d.ProtoDeclare()
-ProtoDeclare30.name = "nine"
-ProtoInterface31 = x3d.ProtoInterface()
-field32 = x3d.field()
-field32.accessType = "inputOutput"
-field32.type = "SFVec3f"
-field32.name = "ztranslation"
+Transform25.children.append(ProtoInstance32)
 
-ProtoInterface31.field.append(field32)
+ProtoBody24.children.append(Transform25)
 
-ProtoDeclare30.ProtoInterface = ProtoInterface31
-ProtoBody33 = x3d.ProtoBody()
-Transform34 = x3d.Transform()
-ProtoInstance35 = x3d.ProtoInstance()
-ProtoInstance35.name = "three"
+ProtoDeclare21.ProtoBody = ProtoBody24
 
-Transform34.children.append(ProtoInstance35)
-ProtoInstance36 = x3d.ProtoInstance()
-ProtoInstance36.name = "three"
-fieldValue37 = x3d.fieldValue()
-fieldValue37.name = "ytranslation"
-fieldValue37.value = "0 2 0"
+Scene7.children.append(ProtoDeclare21)
+ProtoDeclare34 = x3d.ProtoDeclare()
+ProtoDeclare34.name = "nine"
+ProtoInterface35 = x3d.ProtoInterface()
+field36 = x3d.field()
+field36.name = "ztranslation"
+field36.accessType = "inputOutput"
+field36.type = "SFVec3f"
+field36.value = [0,0,0]
 
-ProtoInstance36.fieldValue.append(fieldValue37)
+ProtoInterface35.field.append(field36)
 
-Transform34.children.append(ProtoInstance36)
-ProtoInstance38 = x3d.ProtoInstance()
-ProtoInstance38.name = "three"
-fieldValue39 = x3d.fieldValue()
-fieldValue39.name = "ytranslation"
-fieldValue39.value = "0 -2 0"
+ProtoDeclare34.ProtoInterface = ProtoInterface35
+ProtoBody37 = x3d.ProtoBody()
+Transform38 = x3d.Transform()
+IS39 = x3d.IS()
+connect40 = x3d.connect()
+connect40.nodeField = "translation"
+connect40.protoField = "ztranslation"
 
-ProtoInstance38.fieldValue.append(fieldValue39)
+IS39.connect.append(connect40)
 
-Transform34.children.append(ProtoInstance38)
-IS40 = x3d.IS()
-connect41 = x3d.connect()
-connect41.nodeField = "translation"
-connect41.protoField = "ztranslation"
+Transform38.IS = IS39
+ProtoInstance41 = x3d.ProtoInstance()
+ProtoInstance41.name = "three"
+fieldValue42 = x3d.fieldValue()
+fieldValue42.name = "ytranslation"
+fieldValue42.value = "0 0 0"
 
-IS40.connect.append(connect41)
+ProtoInstance41.fieldValue.append(fieldValue42)
 
-Transform34.IS = IS40
+Transform38.children.append(ProtoInstance41)
+ProtoInstance43 = x3d.ProtoInstance()
+ProtoInstance43.name = "three"
+fieldValue44 = x3d.fieldValue()
+fieldValue44.name = "ytranslation"
+fieldValue44.value = "0 2 0"
 
-ProtoBody33.children.append(Transform34)
+ProtoInstance43.fieldValue.append(fieldValue44)
 
-ProtoDeclare30.ProtoBody = ProtoBody33
+Transform38.children.append(ProtoInstance43)
+ProtoInstance45 = x3d.ProtoInstance()
+ProtoInstance45.name = "three"
+fieldValue46 = x3d.fieldValue()
+fieldValue46.name = "ytranslation"
+fieldValue46.value = "0 -2 0"
 
-Scene6.children.append(ProtoDeclare30)
-ProtoDeclare42 = x3d.ProtoDeclare()
-ProtoDeclare42.name = "twentyseven"
-ProtoInterface43 = x3d.ProtoInterface()
-field44 = x3d.field()
-field44.accessType = "inputOutput"
-field44.type = "SFVec3f"
-field44.name = "ttranslation"
+ProtoInstance45.fieldValue.append(fieldValue46)
 
-ProtoInterface43.field.append(field44)
+Transform38.children.append(ProtoInstance45)
 
-ProtoDeclare42.ProtoInterface = ProtoInterface43
-ProtoBody45 = x3d.ProtoBody()
-Transform46 = x3d.Transform()
-ProtoInstance47 = x3d.ProtoInstance()
-ProtoInstance47.name = "nine"
+ProtoBody37.children.append(Transform38)
 
-Transform46.children.append(ProtoInstance47)
-ProtoInstance48 = x3d.ProtoInstance()
-ProtoInstance48.name = "nine"
-fieldValue49 = x3d.fieldValue()
-fieldValue49.name = "ztranslation"
-fieldValue49.value = "0 0 2"
+ProtoDeclare34.ProtoBody = ProtoBody37
 
-ProtoInstance48.fieldValue.append(fieldValue49)
+Scene7.children.append(ProtoDeclare34)
+ProtoDeclare47 = x3d.ProtoDeclare()
+ProtoDeclare47.name = "twentyseven"
+ProtoInterface48 = x3d.ProtoInterface()
+field49 = x3d.field()
+field49.name = "ttranslation"
+field49.accessType = "inputOutput"
+field49.type = "SFVec3f"
+field49.value = [0,0,0]
 
-Transform46.children.append(ProtoInstance48)
-ProtoInstance50 = x3d.ProtoInstance()
-ProtoInstance50.name = "nine"
-fieldValue51 = x3d.fieldValue()
-fieldValue51.name = "ztranslation"
-fieldValue51.value = "0 0 -2"
+ProtoInterface48.field.append(field49)
 
-ProtoInstance50.fieldValue.append(fieldValue51)
-
-Transform46.children.append(ProtoInstance50)
+ProtoDeclare47.ProtoInterface = ProtoInterface48
+ProtoBody50 = x3d.ProtoBody()
+Transform51 = x3d.Transform()
 IS52 = x3d.IS()
 connect53 = x3d.connect()
 connect53.nodeField = "translation"
@@ -208,28 +214,51 @@ connect53.protoField = "ttranslation"
 
 IS52.connect.append(connect53)
 
-Transform46.IS = IS52
+Transform51.IS = IS52
+ProtoInstance54 = x3d.ProtoInstance()
+ProtoInstance54.name = "nine"
+fieldValue55 = x3d.fieldValue()
+fieldValue55.name = "ztranslation"
+fieldValue55.value = "0 0 0"
 
-ProtoBody45.children.append(Transform46)
+ProtoInstance54.fieldValue.append(fieldValue55)
 
-ProtoDeclare42.ProtoBody = ProtoBody45
-
-Scene6.children.append(ProtoDeclare42)
-NavigationInfo54 = x3d.NavigationInfo()
-NavigationInfo54.type = ["ANY","EXAMINE","WALK","FLY","LOOKAT"]
-
-Scene6.children.append(NavigationInfo54)
-Viewpoint55 = x3d.Viewpoint()
-Viewpoint55.description = "Rubiks Cube"
-Viewpoint55.position = [0,0,12]
-
-Scene6.children.append(Viewpoint55)
+Transform51.children.append(ProtoInstance54)
 ProtoInstance56 = x3d.ProtoInstance()
-ProtoInstance56.name = "twentyseven"
+ProtoInstance56.name = "nine"
+fieldValue57 = x3d.fieldValue()
+fieldValue57.name = "ztranslation"
+fieldValue57.value = "0 0 2"
 
-Scene6.children.append(ProtoInstance56)
+ProtoInstance56.fieldValue.append(fieldValue57)
 
-X3D0.Scene = Scene6
+Transform51.children.append(ProtoInstance56)
+ProtoInstance58 = x3d.ProtoInstance()
+ProtoInstance58.name = "nine"
+fieldValue59 = x3d.fieldValue()
+fieldValue59.name = "ztranslation"
+fieldValue59.value = "0 0 -2"
+
+ProtoInstance58.fieldValue.append(fieldValue59)
+
+Transform51.children.append(ProtoInstance58)
+
+ProtoBody50.children.append(Transform51)
+
+ProtoDeclare47.ProtoBody = ProtoBody50
+
+Scene7.children.append(ProtoDeclare47)
+ProtoInstance60 = x3d.ProtoInstance()
+ProtoInstance60.name = "twentyseven"
+fieldValue61 = x3d.fieldValue()
+fieldValue61.name = "ttranslation"
+fieldValue61.value = "0 0 0"
+
+ProtoInstance60.fieldValue.append(fieldValue61)
+
+Scene7.children.append(ProtoInstance60)
+
+X3D0.Scene = Scene7
 f = open("../data/rubik.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

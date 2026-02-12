@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,7 +22,7 @@ meta4.content = "27 May 2017"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "modified"
-meta5.content = "Mon, 09 Feb 2026 07:13:12 GMT"
+meta5.content = "27 May 2017"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
@@ -70,38 +70,50 @@ meta14.name = "identifier"
 meta14.content = "https://www.web3d.org/x3d/content/examples/Basic/X3dSpecifications/StringArrayEncodingExamples.x3d"
 
 head1.children.append(meta14)
+meta15 = x3d.meta()
+meta15.name = "generator"
+meta15.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta15)
+meta16 = x3d.meta()
+meta16.name = "license"
+meta16.content = "../license.html"
+
+head1.children.append(meta16)
 
 X3D0.head = head1
-Scene15 = x3d.Scene()
-Viewpoint16 = x3d.Viewpoint(DEF="EntryView")
-Viewpoint16.description = "Hello MFString syntax"
+Scene17 = x3d.Scene()
+Viewpoint18 = x3d.Viewpoint(DEF="EntryView")
+Viewpoint18.description = "Hello MFString syntax"
 
-Scene15.children.append(Viewpoint16)
-Background17 = x3d.Background()
-Background17.skyColor = [(0.6, 1, 0.8)]
+Scene17.children.append(Viewpoint18)
+Background19 = x3d.Background()
+Background19.skyColor = [(0.6, 1, 0.8)]
 
-Scene15.children.append(Background17)
-Shape18 = x3d.Shape()
-Appearance19 = x3d.Appearance()
-Material20 = x3d.Material()
-Material20.diffuseColor = [0.6,0.4,0.2]
-
-Appearance19.material = Material20
-
-Shape18.appearance = Appearance19
+Scene17.children.append(Background19)
+Shape20 = x3d.Shape()
 Text21 = x3d.Text()
 Text21.string = ["One, Two, Three","","He said, \"Immel did it!\""]
+Text21.children.append(x3d.Comment("""alternative XML encoding: Text string='\"One, Two, Three\" \"\" \"He said, \\&quot;Immel did it!\\&quot;\"'"""))
+Text21.children.append(x3d.Comment("""alternative Java source: .setString(new String [] {\"One, Two, Three\", \"\", \"He said, \\\"\"Immel did it!\\\"\"\"})"""))
 FontStyle22 = x3d.FontStyle()
-FontStyle22.style = "BOLD"
 FontStyle22.justify = ["MIDDLE","MIDDLE"]
+FontStyle22.style = "BOLD"
 
 Text21.fontStyle = FontStyle22
 
-Shape18.geometry = Text21
+Shape20.geometry = Text21
+Appearance23 = x3d.Appearance()
+Material24 = x3d.Material()
+Material24.diffuseColor = [0.6,0.4,0.2]
 
-Scene15.children.append(Shape18)
+Appearance23.material = Material24
 
-X3D0.Scene = Scene15
+Shape20.appearance = Appearance23
+
+Scene17.children.append(Shape20)
+
+X3D0.Scene = Scene17
 f = open("../data/StringArrayEncodingExamples.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

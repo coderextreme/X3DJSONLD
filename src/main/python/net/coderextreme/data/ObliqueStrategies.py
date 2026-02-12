@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "3 November 2013"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 07:12:54 GMT"
+meta6.content = "10 November 2019"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -150,359 +150,377 @@ meta30.name = "identifier"
 meta30.content = "https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategies.x3d"
 
 head1.children.append(meta30)
+meta31 = x3d.meta()
+meta31.name = "generator"
+meta31.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta31)
+meta32 = x3d.meta()
+meta32.name = "license"
+meta32.content = "../license.html"
+
+head1.children.append(meta32)
 
 X3D0.head = head1
-Scene31 = x3d.Scene()
-WorldInfo32 = x3d.WorldInfo()
-WorldInfo32.title = "ObliqueStrategies.x3d"
+Scene33 = x3d.Scene()
+WorldInfo34 = x3d.WorldInfo()
+WorldInfo34.title = "ObliqueStrategies.x3d"
 
-Scene31.children.append(WorldInfo32)
-NavigationInfo33 = x3d.NavigationInfo()
-NavigationInfo33.type = ["NONE"]
+Scene33.children.append(WorldInfo34)
+NavigationInfo35 = x3d.NavigationInfo()
+NavigationInfo35.type = ["NONE"]
 
-Scene31.children.append(NavigationInfo33)
-Background34 = x3d.Background()
-Background34.skyColor = [(0.419608, 0.427451, 1)]
+Scene33.children.append(NavigationInfo35)
+Background36 = x3d.Background()
+Background36.skyColor = [(0.419608, 0.427451, 1)]
 
-Scene31.children.append(Background34)
-Transform35 = x3d.Transform()
-Transform35.translation = [0,1,0]
-Transform35.scale = [0.4,0.4,0.4]
-TouchSensor36 = x3d.TouchSensor(DEF="RandomTextClickedSensor")
-TouchSensor36.description = "Select to see a new strategy"
+Scene33.children.append(Background36)
+Transform37 = x3d.Transform()
+Transform37.scale = [0.4,0.4,0.4]
+Transform37.translation = [0,1,0]
+TouchSensor38 = x3d.TouchSensor(DEF="RandomTextClickedSensor")
+TouchSensor38.description = "Select to see a new strategy"
 
-Transform35.children.append(TouchSensor36)
-Shape37 = x3d.Shape()
-Appearance38 = x3d.Appearance()
-Material39 = x3d.Material()
-Material39.diffuseColor = [1,1,1]
-
-Appearance38.material = Material39
-
-Shape37.appearance = Appearance38
+Transform37.children.append(TouchSensor38)
+Shape39 = x3d.Shape()
 Text40 = x3d.Text()
 Text40.string = ["Oblique Strategies","","(Over One Hundred Worthwhile Dilemmas)","","by Brian Eno and Peter Schmidt"]
 FontStyle41 = x3d.FontStyle(DEF="MessageFont")
 FontStyle41.family = ["SANS"]
-FontStyle41.style = "BOLD"
 FontStyle41.justify = ["MIDDLE","MIDDLE"]
+FontStyle41.style = "BOLD"
 
 Text40.fontStyle = FontStyle41
 
-Shape37.geometry = Text40
+Shape39.geometry = Text40
+Appearance42 = x3d.Appearance()
+Material43 = x3d.Material()
+Material43.diffuseColor = [1,1,1]
 
-Transform35.children.append(Shape37)
-Transform42 = x3d.Transform()
-Transform42.scale = [10,3,1]
-Shape43 = x3d.Shape(DEF="HeadlineClickSurface")
-Appearance44 = x3d.Appearance()
-Material45 = x3d.Material()
-Material45.ambientIntensity = 0.245763
-Material45.diffuseColor = [0.34773,0.090909,0.005289]
-Material45.specularColor = [0.336735,0.051091,0.051091]
-Material45.shininess = 0.07
-Material45.transparency = 0.8
+Appearance42.material = Material43
 
-Appearance44.material = Material45
+Shape39.appearance = Appearance42
 
-Shape43.appearance = Appearance44
+Transform37.children.append(Shape39)
+Transform44 = x3d.Transform()
+Transform44.scale = [10,3,1]
+Shape45 = x3d.Shape(DEF="HeadlineClickSurface")
 IndexedFaceSet46 = x3d.IndexedFaceSet()
-IndexedFaceSet46.solid = False
 IndexedFaceSet46.coordIndex = [0,1,2,3,-1]
+IndexedFaceSet46.solid = False
 Coordinate47 = x3d.Coordinate()
 Coordinate47.point = [(1, 1, 0),(1, -1, 0),(-1, -1, 0),(-1, 1, 0)]
 
 IndexedFaceSet46.coord = Coordinate47
 
-Shape43.geometry = IndexedFaceSet46
+Shape45.geometry = IndexedFaceSet46
+Appearance48 = x3d.Appearance()
+Material49 = x3d.Material()
+Material49.ambientIntensity = 0.245763
+Material49.diffuseColor = [0.34773,0.090909,0.005289]
+Material49.shininess = 0.07
+Material49.specularColor = [0.336735,0.051091,0.051091]
+Material49.transparency = 0.8
 
-Transform42.children.append(Shape43)
+Appearance48.material = Material49
 
-Transform35.children.append(Transform42)
+Shape45.appearance = Appearance48
 
-Scene31.children.append(Transform35)
-Script48 = x3d.Script(DEF="TextScript")
-Script48.url = ["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]
-field49 = x3d.field()
-field49.accessType = "initializeOnly"
-field49.type = "SFInt32"
-field49.name = "index"
-field49.appinfo = "index for active strategy card, -1 means no selection"
+Transform44.children.append(Shape45)
 
-Script48.field.append(field49)
-field50 = x3d.field()
-field50.accessType = "outputOnly"
-field50.type = "MFString"
-field50.name = "string_changed"
-field50.appinfo = "latest strategy card value"
+Transform37.children.append(Transform44)
 
-Script48.field.append(field50)
+Scene33.children.append(Transform37)
+Script50 = x3d.Script(DEF="TextScript")
+Script50.url = ["ObliqueStrategiesScript.js","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/ObliqueStrategiesScript.js"]
+Script50.children.append(x3d.Comment("""initialize() method includes unit test to printAllStrategies() to console"""))
+Script50.children.append(x3d.Comment("""TODO insert field definitions here (index string_changed previous next random) and then animate!"""))
 field51 = x3d.field()
-field51.accessType = "outputOnly"
-field51.type = "MFString"
-field51.name = "textToSpeechUrl"
-field51.appinfo = "\"url to invoke Google Translate\""
+field51.name = "index"
+field51.accessType = "initializeOnly"
+field51.appinfo = "index for active strategy card, -1 means no selection"
+field51.type = "SFInt32"
+field51.value = 0
 
-Script48.field.append(field51)
+Script50.field.append(field51)
 field52 = x3d.field()
+field52.name = "string_changed"
 field52.accessType = "outputOnly"
-field52.type = "SFTime"
-field52.name = "newCardTime"
-field52.appinfo = "activate Sound node"
+field52.appinfo = "latest strategy card value"
+field52.type = "MFString"
 
-Script48.field.append(field52)
+Script50.field.append(field52)
 field53 = x3d.field()
-field53.accessType = "inputOnly"
-field53.type = "SFBool"
-field53.name = "selectPreviousCard"
+field53.name = "textToSpeechUrl"
+field53.accessType = "outputOnly"
+field53.appinfo = "\"url to invoke Google Translate\""
+field53.type = "MFString"
 
-Script48.field.append(field53)
+Script50.field.append(field53)
 field54 = x3d.field()
-field54.accessType = "inputOnly"
-field54.type = "SFBool"
-field54.name = "selectNextCard"
+field54.name = "newCardTime"
+field54.accessType = "outputOnly"
+field54.appinfo = "activate Sound node"
+field54.type = "SFTime"
 
-Script48.field.append(field54)
+Script50.field.append(field54)
 field55 = x3d.field()
+field55.name = "selectPreviousCard"
 field55.accessType = "inputOnly"
 field55.type = "SFBool"
-field55.name = "selectRandomCard"
 
-Script48.field.append(field55)
+Script50.field.append(field55)
 field56 = x3d.field()
-field56.accessType = "initializeOnly"
+field56.name = "selectNextCard"
+field56.accessType = "inputOnly"
 field56.type = "SFBool"
-field56.name = "traceEnabled"
-field56.value = True
-field56.appinfo = "controls console tracing"
 
-Script48.field.append(field56)
+Script50.field.append(field56)
+field57 = x3d.field()
+field57.name = "selectRandomCard"
+field57.accessType = "inputOnly"
+field57.type = "SFBool"
 
-Scene31.children.append(Script48)
-Transform57 = x3d.Transform(DEF="CardTransform")
-Transform57.translation = [0,-1.5,0]
-Transform57.scale = [0.4,0.4,0.4]
-Shape58 = x3d.Shape()
-Appearance59 = x3d.Appearance()
-Material60 = x3d.Material()
-Material60.diffuseColor = [1,1,1]
+Script50.field.append(field57)
+field58 = x3d.field()
+field58.name = "traceEnabled"
+field58.accessType = "initializeOnly"
+field58.appinfo = "controls console tracing"
+field58.type = "SFBool"
+field58.value = True
 
-Appearance59.material = Material60
+Script50.field.append(field58)
 
-Shape58.appearance = Appearance59
+Scene33.children.append(Script50)
+Transform59 = x3d.Transform(DEF="CardTransform")
+Transform59.scale = [0.4,0.4,0.4]
+Transform59.translation = [0,-1.5,0]
+Shape60 = x3d.Shape()
 Text61 = x3d.Text(DEF="CardText")
 FontStyle62 = x3d.FontStyle()
 FontStyle62.family = ["SANS"]
-FontStyle62.style = "BOLD"
 FontStyle62.justify = ["MIDDLE","MIDDLE"]
+FontStyle62.style = "BOLD"
 
 Text61.fontStyle = FontStyle62
 
-Shape58.geometry = Text61
+Shape60.geometry = Text61
+Appearance63 = x3d.Appearance()
+Material64 = x3d.Material()
+Material64.diffuseColor = [1,1,1]
 
-Transform57.children.append(Shape58)
-Sound63 = x3d.Sound(DEF="CardSoundSpatialization")
-Sound63.minBack = 20
-Sound63.minFront = 20
-Sound63.maxBack = 100
-Sound63.maxFront = 100
-AudioClip64 = x3d.AudioClip(DEF="TextToSpeechAudioClip")
-AudioClip64.description = "sends strategy text google translate"
-AudioClip64.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
+Appearance63.material = Material64
 
-Sound63.source = AudioClip64
+Shape60.appearance = Appearance63
 
-Transform57.children.append(Sound63)
+Transform59.children.append(Shape60)
+ROUTE65 = x3d.ROUTE()
+ROUTE65.fromField = "string_changed"
+ROUTE65.fromNode = "TextScript"
+ROUTE65.toField = "string"
+ROUTE65.toNode = "CardText"
 
-Scene31.children.append(Transform57)
-Transform65 = x3d.Transform()
-Transform65.translation = [-3.2,2.5,0]
-Transform65.scale = [0.4,0.4,0.4]
-TouchSensor66 = x3d.TouchSensor(DEF="PreviousTextClickedSensor")
-TouchSensor66.description = "Select to see previous strategy"
+Transform59.children.append(ROUTE65)
+Sound66 = x3d.Sound(DEF="CardSoundSpatialization")
+Sound66.maxBack = 100
+Sound66.maxFront = 100
+Sound66.minBack = 20
+Sound66.minFront = 20
+Sound66.children.append(x3d.Comment("""Make sure the sound source AudioClip is audible at the user location"""))
+Sound66.children.append(x3d.Comment("""Not all X3D players seem to use the .mp3"""))
+Sound66.children.append(x3d.Comment("""&#38; is ampersand character, avoids escaping problems and inconsistencies in browsers and X3D players"""))
+Sound66.children.append(x3d.Comment("""%20 is space character used in uri/url encoding"""))
+AudioClip67 = x3d.AudioClip(DEF="TextToSpeechAudioClip")
+AudioClip67.description = "sends strategy text google translate"
+AudioClip67.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Feed%20the%20recording%20back%20out%20of%20the%20medium","translate_tts_mp3FileFormatNotSupported.wav","https://x3dgraphics.com/examples/X3dForAdvancedModeling/Inspiration/translate_tts_mp3FileFormatNotSupported.wav"]
 
-Transform65.children.append(TouchSensor66)
-Shape67 = x3d.Shape()
-Appearance68 = x3d.Appearance(DEF="InterfaceAppearance")
-Material69 = x3d.Material()
-Material69.diffuseColor = [1,0,0.6]
+Sound66.source = AudioClip67
 
-Appearance68.material = Material69
+Transform59.children.append(Sound66)
+ROUTE68 = x3d.ROUTE()
+ROUTE68.fromField = "textToSpeechUrl"
+ROUTE68.fromNode = "TextScript"
+ROUTE68.toField = "url"
+ROUTE68.toNode = "TextToSpeechAudioClip"
 
-Shape67.appearance = Appearance68
-Text70 = x3d.Text()
-Text70.string = ["previous"]
-FontStyle71 = x3d.FontStyle(USE="MessageFont")
+Transform59.children.append(ROUTE68)
+ROUTE69 = x3d.ROUTE()
+ROUTE69.fromField = "newCardTime"
+ROUTE69.fromNode = "TextScript"
+ROUTE69.toField = "startTime"
+ROUTE69.toNode = "TextToSpeechAudioClip"
 
-Text70.fontStyle = FontStyle71
+Transform59.children.append(ROUTE69)
 
-Shape67.geometry = Text70
+Scene33.children.append(Transform59)
+Transform70 = x3d.Transform()
+Transform70.scale = [0.4,0.4,0.4]
+Transform70.translation = [-3.2,2.5,0]
+TouchSensor71 = x3d.TouchSensor(DEF="PreviousTextClickedSensor")
+TouchSensor71.description = "Select to see previous strategy"
 
-Transform65.children.append(Shape67)
-Transform72 = x3d.Transform()
-Transform72.scale = [2,0.6,1]
-Shape73 = x3d.Shape(DEF="TransparentClickSurface")
-Appearance74 = x3d.Appearance()
-Material75 = x3d.Material()
-Material75.transparency = 1
+Transform70.children.append(TouchSensor71)
+ROUTE72 = x3d.ROUTE()
+ROUTE72.fromField = "isActive"
+ROUTE72.fromNode = "PreviousTextClickedSensor"
+ROUTE72.toField = "selectPreviousCard"
+ROUTE72.toNode = "TextScript"
 
-Appearance74.material = Material75
+Transform70.children.append(ROUTE72)
+Shape73 = x3d.Shape()
+Text74 = x3d.Text()
+Text74.string = ["previous"]
+FontStyle75 = x3d.FontStyle(USE="MessageFont")
 
-Shape73.appearance = Appearance74
-IndexedFaceSet76 = x3d.IndexedFaceSet()
-IndexedFaceSet76.solid = False
-IndexedFaceSet76.coordIndex = [0,1,2,3,-1]
-Coordinate77 = x3d.Coordinate()
-Coordinate77.point = [(1, 1, 0),(1, -1, 0),(-1, -1, 0),(-1, 1, 0)]
+Text74.fontStyle = FontStyle75
 
-IndexedFaceSet76.coord = Coordinate77
+Shape73.geometry = Text74
+Appearance76 = x3d.Appearance(DEF="InterfaceAppearance")
+Material77 = x3d.Material()
+Material77.diffuseColor = [1,0,0.6]
 
-Shape73.geometry = IndexedFaceSet76
+Appearance76.material = Material77
 
-Transform72.children.append(Shape73)
+Shape73.appearance = Appearance76
 
-Transform65.children.append(Transform72)
-
-Scene31.children.append(Transform65)
+Transform70.children.append(Shape73)
 Transform78 = x3d.Transform()
-Transform78.translation = [3.5,2.5,0]
-Transform78.scale = [0.4,0.4,0.4]
-TouchSensor79 = x3d.TouchSensor(DEF="NextTextClickedSensor")
-TouchSensor79.description = "Select to see next strategy"
+Transform78.scale = [2,0.6,1]
+Shape79 = x3d.Shape(DEF="TransparentClickSurface")
+Shape79.children.append(x3d.Comment("""support Selectable Text with a scalable IFS"""))
+IndexedFaceSet80 = x3d.IndexedFaceSet()
+IndexedFaceSet80.coordIndex = [0,1,2,3,-1]
+IndexedFaceSet80.solid = False
+Coordinate81 = x3d.Coordinate()
+Coordinate81.point = [(1, 1, 0),(1, -1, 0),(-1, -1, 0),(-1, 1, 0)]
 
-Transform78.children.append(TouchSensor79)
-Shape80 = x3d.Shape()
-Appearance81 = x3d.Appearance(USE="InterfaceAppearance")
+IndexedFaceSet80.coord = Coordinate81
 
-Shape80.appearance = Appearance81
-Text82 = x3d.Text()
-Text82.string = ["next"]
-FontStyle83 = x3d.FontStyle(USE="MessageFont")
+Shape79.geometry = IndexedFaceSet80
+Appearance82 = x3d.Appearance()
+Material83 = x3d.Material()
+Material83.transparency = 1
 
-Text82.fontStyle = FontStyle83
+Appearance82.material = Material83
 
-Shape80.geometry = Text82
+Shape79.appearance = Appearance82
 
-Transform78.children.append(Shape80)
+Transform78.children.append(Shape79)
+
+Transform70.children.append(Transform78)
+
+Scene33.children.append(Transform70)
 Transform84 = x3d.Transform()
-Transform84.scale = [1.2,0.6,1]
-Shape85 = x3d.Shape(USE="TransparentClickSurface")
+Transform84.scale = [0.4,0.4,0.4]
+Transform84.translation = [3.5,2.5,0]
+TouchSensor85 = x3d.TouchSensor(DEF="NextTextClickedSensor")
+TouchSensor85.description = "Select to see next strategy"
 
-Transform84.children.append(Shape85)
+Transform84.children.append(TouchSensor85)
+ROUTE86 = x3d.ROUTE()
+ROUTE86.fromField = "isActive"
+ROUTE86.fromNode = "NextTextClickedSensor"
+ROUTE86.toField = "selectNextCard"
+ROUTE86.toNode = "TextScript"
 
-Transform78.children.append(Transform84)
+Transform84.children.append(ROUTE86)
+Shape87 = x3d.Shape()
+Text88 = x3d.Text()
+Text88.string = ["next"]
+FontStyle89 = x3d.FontStyle(USE="MessageFont")
 
-Scene31.children.append(Transform78)
-Transform86 = x3d.Transform()
-Transform86.translation = [-3.3,-0.5,0]
-Transform86.scale = [0.4,0.4,0.4]
-TouchSensor87 = x3d.TouchSensor(USE="RandomTextClickedSensor")
+Text88.fontStyle = FontStyle89
 
-Transform86.children.append(TouchSensor87)
-Shape88 = x3d.Shape()
-Appearance89 = x3d.Appearance(USE="InterfaceAppearance")
+Shape87.geometry = Text88
+Appearance90 = x3d.Appearance(USE="InterfaceAppearance")
 
-Shape88.appearance = Appearance89
-Text90 = x3d.Text()
-Text90.string = ["random"]
-FontStyle91 = x3d.FontStyle(USE="MessageFont")
+Shape87.appearance = Appearance90
 
-Text90.fontStyle = FontStyle91
+Transform84.children.append(Shape87)
+Transform91 = x3d.Transform()
+Transform91.scale = [1.2,0.6,1]
+Shape92 = x3d.Shape(USE="TransparentClickSurface")
 
-Shape88.geometry = Text90
+Transform91.children.append(Shape92)
 
-Transform86.children.append(Shape88)
-Transform92 = x3d.Transform()
-Transform92.scale = [1.8,0.6,1]
-Shape93 = x3d.Shape(USE="TransparentClickSurface")
+Transform84.children.append(Transform91)
 
-Transform92.children.append(Shape93)
+Scene33.children.append(Transform84)
+Transform93 = x3d.Transform()
+Transform93.scale = [0.4,0.4,0.4]
+Transform93.translation = [-3.3,-0.5,0]
+TouchSensor94 = x3d.TouchSensor(USE="RandomTextClickedSensor")
 
-Transform86.children.append(Transform92)
+Transform93.children.append(TouchSensor94)
+ROUTE95 = x3d.ROUTE()
+ROUTE95.fromField = "isActive"
+ROUTE95.fromNode = "RandomTextClickedSensor"
+ROUTE95.toField = "selectRandomCard"
+ROUTE95.toNode = "TextScript"
 
-Scene31.children.append(Transform86)
-Transform94 = x3d.Transform()
-Transform94.translation = [3.3,-0.5,0]
-Transform94.scale = [0.4,0.4,0.4]
-Anchor95 = x3d.Anchor(DEF="TextToSpeechAnchor")
-Anchor95.description = "text to speech in browser"
-Anchor95.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]
-Anchor95.parameter = ["target=_blank"]
+Transform93.children.append(ROUTE95)
 Shape96 = x3d.Shape()
-Appearance97 = x3d.Appearance(USE="InterfaceAppearance")
+Text97 = x3d.Text()
+Text97.string = ["random"]
+FontStyle98 = x3d.FontStyle(USE="MessageFont")
 
-Shape96.appearance = Appearance97
-Text98 = x3d.Text()
-Text98.string = ["speech"]
-FontStyle99 = x3d.FontStyle(USE="MessageFont")
+Text97.fontStyle = FontStyle98
 
-Text98.fontStyle = FontStyle99
+Shape96.geometry = Text97
+Appearance99 = x3d.Appearance(USE="InterfaceAppearance")
 
-Shape96.geometry = Text98
+Shape96.appearance = Appearance99
 
-Anchor95.children.append(Shape96)
+Transform93.children.append(Shape96)
 Transform100 = x3d.Transform()
 Transform100.scale = [1.8,0.6,1]
 Shape101 = x3d.Shape(USE="TransparentClickSurface")
 
 Transform100.children.append(Shape101)
 
-Anchor95.children.append(Transform100)
+Transform93.children.append(Transform100)
 
-Transform94.children.append(Anchor95)
-
-Scene31.children.append(Transform94)
-ROUTE102 = x3d.ROUTE()
-ROUTE102.fromNode = "TextScript"
-ROUTE102.fromField = "string_changed"
-ROUTE102.toNode = "CardText"
-ROUTE102.toField = "set_string"
-
-Scene31.children.append(ROUTE102)
-ROUTE103 = x3d.ROUTE()
-ROUTE103.fromNode = "TextScript"
-ROUTE103.fromField = "textToSpeechUrl"
-ROUTE103.toNode = "TextToSpeechAudioClip"
-ROUTE103.toField = "set_url"
-
-Scene31.children.append(ROUTE103)
+Scene33.children.append(Transform93)
+Transform102 = x3d.Transform()
+Transform102.scale = [0.4,0.4,0.4]
+Transform102.translation = [3.3,-0.5,0]
+Anchor103 = x3d.Anchor(DEF="TextToSpeechAnchor")
+Anchor103.description = "text to speech in browser"
+Anchor103.parameter = ["target=_blank"]
+Anchor103.url = ["http://translate.google.com/translate_tts?tl=en&amp;q=Overtly%20resist%20change"]
 ROUTE104 = x3d.ROUTE()
+ROUTE104.fromField = "textToSpeechUrl"
 ROUTE104.fromNode = "TextScript"
-ROUTE104.fromField = "newCardTime"
-ROUTE104.toNode = "TextToSpeechAudioClip"
-ROUTE104.toField = "set_startTime"
+ROUTE104.toField = "url"
+ROUTE104.toNode = "TextToSpeechAnchor"
 
-Scene31.children.append(ROUTE104)
-ROUTE105 = x3d.ROUTE()
-ROUTE105.fromNode = "PreviousTextClickedSensor"
-ROUTE105.fromField = "isActive"
-ROUTE105.toNode = "TextScript"
-ROUTE105.toField = "selectPreviousCard"
+Anchor103.children.append(ROUTE104)
+Shape105 = x3d.Shape()
+Text106 = x3d.Text()
+Text106.string = ["speech"]
+FontStyle107 = x3d.FontStyle(USE="MessageFont")
 
-Scene31.children.append(ROUTE105)
-ROUTE106 = x3d.ROUTE()
-ROUTE106.fromNode = "NextTextClickedSensor"
-ROUTE106.fromField = "isActive"
-ROUTE106.toNode = "TextScript"
-ROUTE106.toField = "selectNextCard"
+Text106.fontStyle = FontStyle107
 
-Scene31.children.append(ROUTE106)
-ROUTE107 = x3d.ROUTE()
-ROUTE107.fromNode = "RandomTextClickedSensor"
-ROUTE107.fromField = "isActive"
-ROUTE107.toNode = "TextScript"
-ROUTE107.toField = "selectRandomCard"
+Shape105.geometry = Text106
+Appearance108 = x3d.Appearance(USE="InterfaceAppearance")
 
-Scene31.children.append(ROUTE107)
-ROUTE108 = x3d.ROUTE()
-ROUTE108.fromNode = "TextScript"
-ROUTE108.fromField = "textToSpeechUrl"
-ROUTE108.toNode = "TextToSpeechAnchor"
-ROUTE108.toField = "set_url"
+Shape105.appearance = Appearance108
 
-Scene31.children.append(ROUTE108)
+Anchor103.children.append(Shape105)
+Transform109 = x3d.Transform()
+Transform109.scale = [1.8,0.6,1]
+Shape110 = x3d.Shape(USE="TransparentClickSurface")
 
-X3D0.Scene = Scene31
+Transform109.children.append(Shape110)
+
+Anchor103.children.append(Transform109)
+
+Transform102.children.append(Anchor103)
+
+Scene33.children.append(Transform102)
+
+X3D0.Scene = Scene33
 f = open("../data/ObliqueStrategies.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -27,7 +27,7 @@ meta5.content = "24 January 2001"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 07:09:44 GMT"
+meta6.content = "Mon, 09 Feb 2026 12:22:59 GMT"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -101,7 +101,7 @@ PositionInterpolator22.keyValue = [(0, 0, 0),(0.8765, 0.445, 0.00335),(0.3336, 0
 Group11.children.append(PositionInterpolator22)
 Transform23 = x3d.Transform()
 Transform24 = x3d.Transform(DEF="bubble1")
-Transform24.translation = [0.63675,0.63675,0.63675]
+Transform24.translation = [0.9525167,0.95821,0.9508087]
 Shape25 = x3d.Shape()
 Appearance26 = x3d.Appearance()
 Material27 = x3d.Material()
@@ -120,7 +120,7 @@ Transform24.children.append(Shape25)
 
 Transform23.children.append(Transform24)
 Transform29 = x3d.Transform(DEF="bubble2")
-Transform29.translation = [0.2366176,0.4366176,0.3268971]
+Transform29.translation = [0.6495973,0.710114,0.6488536]
 Shape30 = x3d.Shape()
 Appearance31 = x3d.Appearance()
 Material32 = x3d.Material()
@@ -139,7 +139,7 @@ Transform29.children.append(Shape30)
 
 Transform23.children.append(Transform29)
 Transform34 = x3d.Transform(DEF="bubble3")
-Transform34.translation = [0.5281429,0.5817857,0.005427143]
+Transform34.translation = [1.170647,0.9077314,0.006084427]
 Shape35 = x3d.Shape()
 Appearance36 = x3d.Appearance()
 Material37 = x3d.Material()
@@ -158,7 +158,7 @@ Transform34.children.append(Shape35)
 
 Transform23.children.append(Transform34)
 Transform39 = x3d.Transform(DEF="bubble4")
-Transform39.translation = [0.4245,0.4245,0.004245]
+Transform39.translation = [1.1765,0.9806867,0.008037076]
 Shape40 = x3d.Shape()
 Appearance41 = x3d.Appearance()
 Material42 = x3d.Material()
@@ -177,7 +177,7 @@ Transform39.children.append(Shape40)
 
 Transform23.children.append(Transform39)
 Transform44 = x3d.Transform(DEF="bubble5")
-Transform44.translation = [0.63725,0.63725,0.0063725]
+Transform44.translation = [1.441582,1.048398,0.06595119]
 Shape45 = x3d.Shape()
 Appearance46 = x3d.Appearance()
 Material47 = x3d.Material()
@@ -196,7 +196,7 @@ Transform44.children.append(Shape45)
 
 Transform23.children.append(Transform44)
 Transform49 = x3d.Transform(DEF="bubble6")
-Transform49.translation = [0.484277,0.7208818,0.006316758]
+Transform49.translation = [0.9441886,0.951871,0.1015708]
 Shape50 = x3d.Shape()
 Appearance51 = x3d.Appearance()
 Material52 = x3d.Material()
@@ -215,7 +215,7 @@ Transform49.children.append(Shape50)
 
 Transform23.children.append(Transform49)
 Transform54 = x3d.Transform(DEF="bubble7")
-Transform54.translation = [0.6949386,0.4239076,0.006205071]
+Transform54.translation = [0.3506022,0.906749,0.07299909]
 Shape55 = x3d.Shape()
 Appearance56 = x3d.Appearance()
 Material57 = x3d.Material()
@@ -234,7 +234,7 @@ Transform54.children.append(Shape55)
 
 Transform23.children.append(Transform54)
 Transform59 = x3d.Transform(DEF="bubble8")
-Transform59.translation = [0.4369857,0.3220979,0.004296422]
+Transform59.translation = [0.8138443,0.3682124,0.00878497]
 Shape60 = x3d.Shape()
 Appearance61 = x3d.Appearance()
 Material62 = x3d.Material()
@@ -253,7 +253,7 @@ Transform59.children.append(Shape60)
 
 Transform23.children.append(Transform59)
 Transform64 = x3d.Transform(DEF="bubble9")
-Transform64.translation = [0.5285516,0.35995,0.00626]
+Transform64.translation = [1.354919,1.424851,0.1000955]
 Shape65 = x3d.Shape()
 Appearance66 = x3d.Appearance()
 Material67 = x3d.Material()
@@ -272,7 +272,7 @@ Transform64.children.append(Shape65)
 
 Transform23.children.append(Transform64)
 Transform69 = x3d.Transform(DEF="bubble10")
-Transform69.translation = [0.5903308,0.6263468,0.006712895]
+Transform69.translation = [0.9024933,0.8962695,0.0616197]
 Shape70 = x3d.Shape()
 Appearance71 = x3d.Appearance()
 Material72 = x3d.Material()

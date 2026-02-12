@@ -37,7 +37,7 @@ meta7.content = "1 November 2014"
 head1.children.append(meta7)
 meta8 = x3d.meta()
 meta8.name = "modified"
-meta8.content = "Mon, 09 Feb 2026 07:11:49 GMT"
+meta8.content = "Mon, 09 Feb 2026 12:24:31 GMT"
 
 head1.children.append(meta8)
 meta9 = x3d.meta()
@@ -8144,8 +8144,8 @@ HAnimHumanoid2326.version = "2.0"
 HAnimHumanoid2326.loa = 4
 HAnimJoint2327 = x3d.HAnimJoint(DEF="hanim_humanoid_root")
 HAnimJoint2327.name = "humanoid_root"
-HAnimJoint2327.translation = [-0.1883727,0.1209318,0.06279546]
-HAnimJoint2327.rotation = [-0.999999999999997,0,0,0.500000000000001]
+HAnimJoint2327.translation = [0.5069091,0.02058185,-0.5069091]
+HAnimJoint2327.rotation = [1,0,0,0.371272759567606]
 HAnimJoint2327.center = [0,0.77,0]
 HAnimSegment2328 = x3d.HAnimSegment(DEF="hanim_sacrum")
 HAnimSegment2328.name = "sacrum"
@@ -8308,7 +8308,7 @@ HAnimSegment2338.children.append(Shape2371)
 HAnimJoint2337.children.append(HAnimSegment2338)
 HAnimJoint2372 = x3d.HAnimJoint(DEF="hanim_l_hip")
 HAnimJoint2372.name = "l_hip"
-HAnimJoint2372.rotation = [1,0,0,0.788595063283333]
+HAnimJoint2372.rotation = [-1,0,0,0.678181910907676]
 HAnimJoint2372.center = [0.095,0.8266,-0.0183]
 HAnimSegment2373 = x3d.HAnimSegment(DEF="hanim_l_thigh")
 HAnimSegment2373.name = "l_thigh"
@@ -8366,7 +8366,7 @@ HAnimSegment2373.children.append(Shape2387)
 HAnimJoint2372.children.append(HAnimSegment2373)
 HAnimJoint2388 = x3d.HAnimJoint(DEF="hanim_l_knee")
 HAnimJoint2388.name = "l_knee"
-HAnimJoint2388.rotation = [0.982143476849055,0,0.188133439034244,0.933468797029121]
+HAnimJoint2388.rotation = [0.999999999999997,0,0,0.178181898919018]
 HAnimJoint2388.center = [0.0926,0.4088,-0.01944]
 HAnimSegment2389 = x3d.HAnimSegment(DEF="hanim_l_calf")
 HAnimSegment2389.name = "l_calf"
@@ -8413,7 +8413,6 @@ HAnimSegment2389.children.append(Shape2400)
 HAnimJoint2388.children.append(HAnimSegment2389)
 HAnimJoint2401 = x3d.HAnimJoint(DEF="hanim_l_talocrural")
 HAnimJoint2401.name = "l_talocrural"
-HAnimJoint2401.rotation = [1,0,0,0.930181741714477]
 HAnimJoint2401.center = [0.0888,0.09545,-0.01045]
 HAnimSegment2402 = x3d.HAnimSegment(DEF="hanim_l_talus")
 HAnimSegment2402.name = "l_talus"
@@ -8919,7 +8918,7 @@ HAnimJoint2372.children.append(HAnimJoint2388)
 HAnimJoint2337.children.append(HAnimJoint2372)
 HAnimJoint2536 = x3d.HAnimJoint(DEF="hanim_r_hip")
 HAnimJoint2536.name = "r_hip"
-HAnimJoint2536.rotation = [-1,0,0,1]
+HAnimJoint2536.rotation = [1,0,0,1]
 HAnimJoint2536.center = [-0.09466,0.82665,-0.01835]
 HAnimSegment2537 = x3d.HAnimSegment(DEF="hanim_r_thigh")
 HAnimSegment2537.name = "r_thigh"
@@ -8977,7 +8976,7 @@ HAnimSegment2537.children.append(Shape2551)
 HAnimJoint2536.children.append(HAnimSegment2537)
 HAnimJoint2552 = x3d.HAnimJoint(DEF="hanim_r_knee")
 HAnimJoint2552.name = "r_knee"
-HAnimJoint2552.rotation = [1,0,0,1.03490912914276]
+HAnimJoint2552.rotation = [0.999999999999872,0,0,0.0342545509338423]
 HAnimJoint2552.center = [-0.0926,0.408825,-0.01944]
 HAnimSegment2553 = x3d.HAnimSegment(DEF="hanim_r_calf")
 HAnimSegment2553.name = "r_calf"
@@ -9024,7 +9023,7 @@ HAnimSegment2553.children.append(Shape2564)
 HAnimJoint2552.children.append(HAnimSegment2553)
 HAnimJoint2565 = x3d.HAnimJoint(DEF="hanim_r_talocrural")
 HAnimJoint2565.name = "r_talocrural"
-HAnimJoint2565.rotation = [1,0,0,0.965090870857239]
+HAnimJoint2565.rotation = [-0.999999999999999,0,0,0.342545509338379]
 HAnimJoint2565.center = [-0.08845,0.09544,-0.01045]
 HAnimSegment2566 = x3d.HAnimSegment(DEF="hanim_r_talus")
 HAnimSegment2566.name = "r_talus"
@@ -9529,7 +9528,7 @@ HAnimJoint2337.children.append(HAnimJoint2536)
 HAnimJoint2327.children.append(HAnimJoint2337)
 HAnimJoint2699 = x3d.HAnimJoint(DEF="hanim_vl5")
 HAnimJoint2699.name = "vl5"
-HAnimJoint2699.rotation = [1.00000000000003,0,0,0.117454553943688]
+HAnimJoint2699.rotation = [0.999999999999982,0,0,0.136969680111821]
 HAnimJoint2699.center = [0,0.9254,-0.01376]
 HAnimSegment2700 = x3d.HAnimSegment(DEF="hanim_l5")
 HAnimSegment2700.name = "l5"
@@ -9598,7 +9597,7 @@ HAnimSegment2700.children.append(Shape2717)
 HAnimJoint2699.children.append(HAnimSegment2700)
 HAnimJoint2718 = x3d.HAnimJoint(DEF="hanim_vl4")
 HAnimJoint2718.name = "vl4"
-HAnimJoint2718.rotation = [1.00000000000003,0,0,0.117454553943688]
+HAnimJoint2718.rotation = [0.999999999999982,0,0,0.136969680111821]
 HAnimJoint2718.center = [0,0.9497,-0.01376]
 HAnimSegment2719 = x3d.HAnimSegment(DEF="hanim_l4")
 HAnimSegment2719.name = "l4"
@@ -9815,7 +9814,7 @@ HAnimSegment2778.children.append(Shape2780)
 HAnimJoint2777.children.append(HAnimSegment2778)
 HAnimJoint2781 = x3d.HAnimJoint(DEF="hanim_vt7")
 HAnimJoint2781.name = "vt7"
-HAnimJoint2781.rotation = [1.00000000000003,0,0,0.117454553943688]
+HAnimJoint2781.rotation = [0.999999999999982,0,0,0.136969680111821]
 HAnimJoint2781.center = [0,1.1088,-0.01376]
 HAnimSegment2782 = x3d.HAnimSegment(DEF="hanim_t7")
 HAnimSegment2782.name = "t7"
@@ -9829,7 +9828,7 @@ HAnimSegment2782.children.append(Shape2784)
 HAnimJoint2781.children.append(HAnimSegment2782)
 HAnimJoint2785 = x3d.HAnimJoint(DEF="hanim_vt6")
 HAnimJoint2785.name = "vt6"
-HAnimJoint2785.rotation = [1.00000000000003,0,0,0.117454553943688]
+HAnimJoint2785.rotation = [0.999999999999982,0,0,0.136969680111821]
 HAnimJoint2785.center = [0,1.1216,-0.01376]
 HAnimSegment2786 = x3d.HAnimSegment(DEF="hanim_t6")
 HAnimSegment2786.name = "t6"
@@ -9997,7 +9996,7 @@ HAnimSegment2832.children.append(Shape2834)
 HAnimJoint2831.children.append(HAnimSegment2832)
 HAnimJoint2835 = x3d.HAnimJoint(DEF="hanim_vc4")
 HAnimJoint2835.name = "vc4"
-HAnimJoint2835.rotation = [0.918845247159474,0,0.39461805809218,0.55398734123427]
+HAnimJoint2835.rotation = [-0.707106781186581,0,-0.707106781186581,0.0787272322683603]
 HAnimJoint2835.center = [0,1.28227,-0.01506]
 HAnimSegment2836 = x3d.HAnimSegment(DEF="hanim_c4")
 HAnimSegment2836.name = "c4"
@@ -10061,7 +10060,7 @@ HAnimSegment2851.children.append(Shape2853)
 HAnimJoint2850.children.append(HAnimSegment2851)
 HAnimJoint2854 = x3d.HAnimJoint(DEF="hanim_skullbase")
 HAnimJoint2854.name = "skullbase"
-HAnimJoint2854.rotation = [0,0.999999999998676,0,0.0174545645714037]
+HAnimJoint2854.rotation = [0,-0.999999999999885,0,0.0445454747297595]
 HAnimJoint2854.center = [0,1.3126,-0.0154]
 HAnimSegment2855 = x3d.HAnimSegment(DEF="hanim_skull")
 HAnimSegment2855.name = "skull"
@@ -10529,7 +10528,7 @@ HAnimSegment2964.children.append(Shape2978)
 HAnimJoint2963.children.append(HAnimSegment2964)
 HAnimJoint2979 = x3d.HAnimJoint(DEF="hanim_l_shoulder")
 HAnimJoint2979.name = "l_shoulder"
-HAnimJoint2979.rotation = [-0.484653893465172,0,0.874706009782173,1.57974400506257]
+HAnimJoint2979.rotation = [0,0,1,0.616363575810737]
 HAnimJoint2979.center = [0.16506,1.17855,-0.00327]
 HAnimSegment2980 = x3d.HAnimSegment(DEF="hanim_l_upperarm")
 HAnimSegment2980.name = "l_upperarm"
@@ -10587,7 +10586,7 @@ HAnimSegment2980.children.append(Shape2994)
 HAnimJoint2979.children.append(HAnimSegment2980)
 HAnimJoint2995 = x3d.HAnimJoint(DEF="hanim_l_elbow")
 HAnimJoint2995.name = "l_elbow"
-HAnimJoint2995.rotation = [-0.942565846356259,-0.334020396507024,0,0.57274500479823]
+HAnimJoint2995.rotation = [-1,0,0,2.26036369800568]
 HAnimJoint2995.center = [0.18209,0.9288,-0.00563]
 HAnimSegment2996 = x3d.HAnimSegment(DEF="hanim_l_forearm")
 HAnimSegment2996.name = "l_forearm"
@@ -10623,7 +10622,7 @@ HAnimSegment2996.children.append(Shape3004)
 HAnimJoint2995.children.append(HAnimSegment2996)
 HAnimJoint3005 = x3d.HAnimJoint(DEF="hanim_l_radiocarpal")
 HAnimJoint3005.name = "l_radiocarpal"
-HAnimJoint3005.rotation = [0,-0.357454184170338,0.933930675274733,1.16526882419336]
+HAnimJoint3005.rotation = [0,1,0,0.534181765702638]
 HAnimJoint3005.center = [0.1819,0.72427,-0.005]
 HAnimSegment3006 = x3d.HAnimSegment(DEF="hanim_l_carpal")
 HAnimSegment3006.name = "l_carpal"
@@ -11198,7 +11197,7 @@ HAnimSegment3144.children.append(Shape3158)
 HAnimJoint3143.children.append(HAnimSegment3144)
 HAnimJoint3159 = x3d.HAnimJoint(DEF="hanim_r_shoulder")
 HAnimJoint3159.name = "r_shoulder"
-HAnimJoint3159.rotation = [0,0,-1,1.63372728228569]
+HAnimJoint3159.rotation = [0,0,-1,2.17127275466919]
 HAnimJoint3159.center = [-0.1647,1.17855,-0.00327]
 HAnimSegment3160 = x3d.HAnimSegment(DEF="hanim_r_upperarm")
 HAnimSegment3160.name = "r_upperarm"
@@ -11256,7 +11255,7 @@ HAnimSegment3160.children.append(Shape3174)
 HAnimJoint3159.children.append(HAnimSegment3160)
 HAnimJoint3175 = x3d.HAnimJoint(DEF="hanim_r_elbow")
 HAnimJoint3175.name = "r_elbow"
-HAnimJoint3175.rotation = [-0.942565846356259,-0.334020396507024,0,0.57274500479823]
+HAnimJoint3175.rotation = [-1,0,0,2.26036369800568]
 HAnimJoint3175.center = [-0.1817,0.9288,-0.00564]
 HAnimSegment3176 = x3d.HAnimSegment(DEF="hanim_r_forearm")
 HAnimSegment3176.name = "r_forearm"
@@ -11292,7 +11291,7 @@ HAnimSegment3176.children.append(Shape3184)
 HAnimJoint3175.children.append(HAnimSegment3176)
 HAnimJoint3185 = x3d.HAnimJoint(DEF="hanim_r_radiocarpal")
 HAnimJoint3185.name = "r_radiocarpal"
-HAnimJoint3185.rotation = [0,-0.0923055874844659,-0.99573072590894,0.779810327915025]
+HAnimJoint3185.rotation = [0,0.999999999999997,0,0.201381826400757]
 HAnimJoint3185.center = [-0.1816,0.7242,-0.005]
 HAnimSegment3186 = x3d.HAnimSegment(DEF="hanim_r_carpal")
 HAnimSegment3186.name = "r_carpal"
@@ -11326,7 +11325,6 @@ HAnimSegment3186.children.append(Shape3194)
 HAnimJoint3185.children.append(HAnimSegment3186)
 HAnimJoint3195 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_1")
 HAnimJoint3195.name = "r_midcarpal_1"
-HAnimJoint3195.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3195.center = [-0.18097,0.70605,0.0193]
 HAnimSegment3196 = x3d.HAnimSegment(DEF="hanim_r_trapezium")
 HAnimSegment3196.name = "r_trapezium"
@@ -11343,7 +11341,6 @@ HAnimSegment3196.children.append(Shape3199)
 HAnimJoint3195.children.append(HAnimSegment3196)
 HAnimJoint3200 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_1")
 HAnimJoint3200.name = "r_carpometacarpal_1"
-HAnimJoint3200.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3200.center = [-0.18,0.69255,0.02598]
 HAnimSegment3201 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_1")
 HAnimSegment3201.name = "r_metacarpal_1"
@@ -11368,7 +11365,6 @@ HAnimSegment3201.children.append(Shape3206)
 HAnimJoint3200.children.append(HAnimSegment3201)
 HAnimJoint3207 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_1")
 HAnimJoint3207.name = "r_metacarpophalangeal_1"
-HAnimJoint3207.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3207.center = [-0.18065,0.67275,0.03577]
 HAnimSegment3208 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_1")
 HAnimSegment3208.name = "r_carpal_proximal_phalanx_1"
@@ -11382,7 +11378,6 @@ HAnimSegment3208.children.append(Shape3210)
 HAnimJoint3207.children.append(HAnimSegment3208)
 HAnimJoint3211 = x3d.HAnimJoint(DEF="hanim_r_carpal_interphalangeal_1")
 HAnimJoint3211.name = "r_carpal_interphalangeal_1"
-HAnimJoint3211.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3211.center = [-0.18227,0.654,0.0496]
 HAnimSegment3212 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_1")
 HAnimSegment3212.name = "r_carpal_distal_phalanx_1"
@@ -11415,7 +11410,6 @@ HAnimJoint3195.children.append(HAnimJoint3200)
 HAnimJoint3185.children.append(HAnimJoint3195)
 HAnimJoint3218 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_2")
 HAnimJoint3218.name = "r_midcarpal_2"
-HAnimJoint3218.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3218.center = [-0.18097,0.70695,0.0084]
 HAnimSegment3219 = x3d.HAnimSegment(DEF="hanim_r_trapezoid")
 HAnimSegment3219.name = "r_trapezoid"
@@ -11429,7 +11423,6 @@ HAnimSegment3219.children.append(Shape3221)
 HAnimJoint3218.children.append(HAnimSegment3219)
 HAnimJoint3222 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_2")
 HAnimJoint3222.name = "r_carpometacarpal_2"
-HAnimJoint3222.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3222.center = [-0.1809,0.6876,0.0097]
 HAnimSegment3223 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_2")
 HAnimSegment3223.name = "r_metacarpal_2"
@@ -11443,7 +11436,6 @@ HAnimSegment3223.children.append(Shape3225)
 HAnimJoint3222.children.append(HAnimSegment3223)
 HAnimJoint3226 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_2")
 HAnimJoint3226.name = "r_metacarpophalangeal_2"
-HAnimJoint3226.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3226.center = [-0.18335,0.6372,0.01507]
 HAnimSegment3227 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_2")
 HAnimSegment3227.name = "r_carpal_proximal_phalanx_2"
@@ -11457,7 +11449,6 @@ HAnimSegment3227.children.append(Shape3229)
 HAnimJoint3226.children.append(HAnimSegment3227)
 HAnimJoint3230 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_2")
 HAnimJoint3230.name = "r_carpal_proximal_interphalangeal_2"
-HAnimJoint3230.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3230.center = [-0.1813,0.6068,0.01418]
 HAnimSegment3231 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_2")
 HAnimSegment3231.name = "r_carpal_middle_phalanx_2"
@@ -11471,7 +11462,6 @@ HAnimSegment3231.children.append(Shape3233)
 HAnimJoint3230.children.append(HAnimSegment3231)
 HAnimJoint3234 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_2")
 HAnimJoint3234.name = "r_carpal_distal_interphalangeal_2"
-HAnimJoint3234.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3234.center = [-0.1803,0.5816,0.01338]
 HAnimSegment3235 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_2")
 HAnimSegment3235.name = "r_carpal_distal_phalanx_2"
@@ -11517,7 +11507,6 @@ HAnimJoint3218.children.append(HAnimJoint3222)
 HAnimJoint3185.children.append(HAnimJoint3218)
 HAnimJoint3244 = x3d.HAnimJoint(DEF="hanim_r_midcarpal_3")
 HAnimJoint3244.name = "r_midcarpal_3"
-HAnimJoint3244.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3244.center = [-0.18072,0.708525,-0.004797]
 HAnimSegment3245 = x3d.HAnimSegment(DEF="hanim_r_capitate")
 HAnimSegment3245.name = "r_capitate"
@@ -11531,7 +11520,6 @@ HAnimSegment3245.children.append(Shape3247)
 HAnimJoint3244.children.append(HAnimSegment3245)
 HAnimJoint3248 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_3")
 HAnimJoint3248.name = "r_carpometacarpal_3"
-HAnimJoint3248.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3248.center = [-0.18072,0.6858,-0.00625]
 HAnimSegment3249 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_3")
 HAnimSegment3249.name = "r_metacarpal_3"
@@ -11556,7 +11544,6 @@ HAnimSegment3249.children.append(Shape3254)
 HAnimJoint3248.children.append(HAnimSegment3249)
 HAnimJoint3255 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_3")
 HAnimJoint3255.name = "r_metacarpophalangeal_3"
-HAnimJoint3255.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3255.center = [-0.1833,0.63495,-0.0039]
 HAnimSegment3256 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_3")
 HAnimSegment3256.name = "r_carpal_proximal_phalanx_3"
@@ -11570,7 +11557,6 @@ HAnimSegment3256.children.append(Shape3258)
 HAnimJoint3255.children.append(HAnimSegment3256)
 HAnimJoint3259 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_3")
 HAnimJoint3259.name = "r_carpal_proximal_interphalangeal_3"
-HAnimJoint3259.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3259.center = [-0.1813,0.6032,-0.0035]
 HAnimSegment3260 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_3")
 HAnimSegment3260.name = "r_carpal_middle_phalanx_3"
@@ -11584,7 +11570,6 @@ HAnimSegment3260.children.append(Shape3262)
 HAnimJoint3259.children.append(HAnimSegment3260)
 HAnimJoint3263 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_3")
 HAnimJoint3263.name = "r_carpal_distal_interphalangeal_3"
-HAnimJoint3263.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3263.center = [-0.18029,0.5753,-0.00375]
 HAnimSegment3264 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_3")
 HAnimSegment3264.name = "r_carpal_distal_phalanx_3"
@@ -11635,7 +11620,6 @@ HAnimSegment3271.children.append(Shape3274)
 HAnimJoint3270.children.append(HAnimSegment3271)
 HAnimJoint3275 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_4")
 HAnimJoint3275.name = "r_carpometacarpal_4"
-HAnimJoint3275.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3275.center = [-0.18072,0.68625,-0.01992]
 HAnimSegment3276 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_4")
 HAnimSegment3276.name = "r_metacarpal_4"
@@ -11649,7 +11633,6 @@ HAnimSegment3276.children.append(Shape3278)
 HAnimJoint3275.children.append(HAnimSegment3276)
 HAnimJoint3279 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_4")
 HAnimJoint3279.name = "r_metacarpophalangeal_4"
-HAnimJoint3279.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3279.center = [-0.1833,0.63405,-0.02144]
 HAnimSegment3280 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_4")
 HAnimSegment3280.name = "r_carpal_proximal_phalanx_4"
@@ -11663,7 +11646,6 @@ HAnimSegment3280.children.append(Shape3282)
 HAnimJoint3279.children.append(HAnimSegment3280)
 HAnimJoint3283 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_4")
 HAnimJoint3283.name = "r_carpal_proximal_interphalangeal_4"
-HAnimJoint3283.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3283.center = [-0.1813,0.6066,-0.02064]
 HAnimSegment3284 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_4")
 HAnimSegment3284.name = "r_carpal_middle_phalanx_4"
@@ -11677,7 +11659,6 @@ HAnimSegment3284.children.append(Shape3286)
 HAnimJoint3283.children.append(HAnimSegment3284)
 HAnimJoint3287 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_4")
 HAnimJoint3287.name = "r_carpal_distal_interphalangeal_4"
-HAnimJoint3287.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3287.center = [-0.18029,0.5807,-0.01978]
 HAnimSegment3288 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_4")
 HAnimSegment3288.name = "r_carpal_distal_phalanx_4"
@@ -11712,7 +11693,6 @@ HAnimJoint3270.children.append(HAnimJoint3275)
 HAnimJoint3185.children.append(HAnimJoint3270)
 HAnimJoint3294 = x3d.HAnimJoint(DEF="hanim_r_carpometacarpal_5")
 HAnimJoint3294.name = "r_carpometacarpal_5"
-HAnimJoint3294.rotation = [0,0,1,0.930181741714477]
 HAnimJoint3294.center = [-0.18126,0.68827,-0.03278]
 HAnimSegment3295 = x3d.HAnimSegment(DEF="hanim_r_metacarpal_5")
 HAnimSegment3295.name = "r_metacarpal_5"
@@ -11737,7 +11717,6 @@ HAnimSegment3295.children.append(Shape3300)
 HAnimJoint3294.children.append(HAnimSegment3295)
 HAnimJoint3301 = x3d.HAnimJoint(DEF="hanim_r_metacarpophalangeal_5")
 HAnimJoint3301.name = "r_metacarpophalangeal_5"
-HAnimJoint3301.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3301.center = [-0.18297,0.6381,-0.0371]
 HAnimSegment3302 = x3d.HAnimSegment(DEF="hanim_r_carpal_proximal_phalanx_5")
 HAnimSegment3302.name = "r_carpal_proximal_phalanx_5"
@@ -11751,7 +11730,6 @@ HAnimSegment3302.children.append(Shape3304)
 HAnimJoint3301.children.append(HAnimSegment3302)
 HAnimJoint3305 = x3d.HAnimJoint(DEF="hanim_r_carpal_proximal_interphalangeal_5")
 HAnimJoint3305.name = "r_carpal_proximal_interphalangeal_5"
-HAnimJoint3305.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3305.center = [-0.1813,0.621,-0.03715]
 HAnimSegment3306 = x3d.HAnimSegment(DEF="hanim_r_carpal_middle_phalanx_5")
 HAnimSegment3306.name = "r_carpal_middle_phalanx_5"
@@ -11765,7 +11743,6 @@ HAnimSegment3306.children.append(Shape3308)
 HAnimJoint3305.children.append(HAnimSegment3306)
 HAnimJoint3309 = x3d.HAnimJoint(DEF="hanim_r_carpal_distal_interphalangeal_5")
 HAnimJoint3309.name = "r_carpal_distal_interphalangeal_5"
-HAnimJoint3309.rotation = [0,0,1,1.39527261257172]
 HAnimJoint3309.center = [-0.18045,0.602325,-0.03697]
 HAnimSegment3310 = x3d.HAnimSegment(DEF="hanim_r_carpal_distal_phalanx_5")
 HAnimSegment3310.name = "r_carpal_distal_phalanx_5"

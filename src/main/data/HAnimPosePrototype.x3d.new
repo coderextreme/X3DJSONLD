@@ -4,7 +4,7 @@
 <meta name="description" content="Define an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."></meta>
 <meta name="info" content="This model also takes advantage of Inline/IMPORT capabilities (equivalent to USE node) and thus avoids fully copying a large, complex HAnimHumanoid model. Multiple HAnimHumanoid models have been tested satisfactorily, for HAnim version 1 (X3d 3) AND HAnim version 2 (X3D 4)."></meta>
 <meta name="created" content="2 October 2025"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:11:17 GMT"></meta>
+<meta name="modified" content="Mon, 09 Feb 2026 12:10:48 GMT"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="creator" content="Joe Williams"></meta>
 <meta name="contributor" content="Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE"></meta>

@@ -38,7 +38,7 @@ Background8.skyColor = [(0.4, 0.4, 0.4)]
 
 Scene6.children.append(Background8)
 Transform9 = x3d.Transform(DEF="DECLpoint_G1_node")
-Transform9.translation = [0,4.523333,0]
+Transform9.translation = [0,1.075,0]
 Shape10 = x3d.Shape()
 Appearance11 = x3d.Appearance()
 Material12 = x3d.Material()
@@ -102,7 +102,7 @@ Transform9.children.append(TimeSensor20)
 
 Scene6.children.append(Transform9)
 Transform21 = x3d.Transform(DEF="DECLpoint_G2_node")
-Transform21.translation = [0,4.523333,0]
+Transform21.translation = [0,1.075,0]
 Shape22 = x3d.Shape()
 Appearance23 = x3d.Appearance()
 Material24 = x3d.Material()

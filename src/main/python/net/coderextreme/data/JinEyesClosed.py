@@ -42,7 +42,7 @@ meta8.content = "25 April 2022"
 head1.children.append(meta8)
 meta9 = x3d.meta()
 meta9.name = "modified"
-meta9.content = "Mon, 09 Feb 2026 07:11:36 GMT"
+meta9.content = "Mon, 09 Feb 2026 12:24:22 GMT"
 
 head1.children.append(meta9)
 meta10 = x3d.meta()
@@ -139,7 +139,7 @@ HAnimSegment31 = x3d.HAnimSegment(DEF="hanim_Lower_teeth")
 HAnimSegment31.name = "lower_teeth"
 HAnimDisplacer32 = x3d.HAnimDisplacer(DEF="Lower_teeth_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer32.name = "lower_teeth_morphinterpolator"
-HAnimDisplacer32.weight = 0.6585855
+HAnimDisplacer32.weight = 0.7333336
 
 HAnimSegment31.displacers.append(HAnimDisplacer32)
 Coordinate33 = x3d.Coordinate(DEF="Lower_teeth_COORD")
@@ -202,7 +202,7 @@ HAnimSegment46 = x3d.HAnimSegment(DEF="hanim_Center_lower_vermillion_lip")
 HAnimSegment46.name = "center_lower_vermillion_lip"
 HAnimDisplacer47 = x3d.HAnimDisplacer(DEF="Center_lower_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer47.name = "center_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer47.weight = 0.6585855
+HAnimDisplacer47.weight = 0.7333336
 
 HAnimSegment46.displacers.append(HAnimDisplacer47)
 Coordinate48 = x3d.Coordinate(DEF="Center_lower_vermillion_lip_COORD")
@@ -239,7 +239,7 @@ HAnimSegment55 = x3d.HAnimSegment(DEF="hanim_Chin")
 HAnimSegment55.name = "chin"
 HAnimDisplacer56 = x3d.HAnimDisplacer(DEF="Chin_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer56.name = "chin_morphinterpolator"
-HAnimDisplacer56.weight = 0.6585855
+HAnimDisplacer56.weight = 0.7333336
 
 HAnimSegment55.displacers.append(HAnimDisplacer56)
 Coordinate57 = x3d.Coordinate(DEF="Chin_COORD")
@@ -276,7 +276,7 @@ HAnimSegment64 = x3d.HAnimSegment(DEF="hanim_Glabella")
 HAnimSegment64.name = "glabella"
 HAnimDisplacer65 = x3d.HAnimDisplacer(DEF="Glabella_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer65.name = "glabella_morphinterpolator"
-HAnimDisplacer65.weight = 0.6585855
+HAnimDisplacer65.weight = 0.7333336
 
 HAnimSegment64.displacers.append(HAnimDisplacer65)
 Coordinate66 = x3d.Coordinate(DEF="Glabella_COORD")
@@ -313,7 +313,7 @@ HAnimSegment73 = x3d.HAnimSegment(DEF="hanim_Left_bulbar_conjunctiva")
 HAnimSegment73.name = "left_bulbar_conjunctiva"
 HAnimDisplacer74 = x3d.HAnimDisplacer(DEF="Left_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer74.name = "left_bulbar_conjunctiva_morphinterpolator"
-HAnimDisplacer74.weight = 0.6585855
+HAnimDisplacer74.weight = 0.7333336
 
 HAnimSegment73.displacers.append(HAnimDisplacer74)
 Coordinate75 = x3d.Coordinate(DEF="Left_bulbar_conjunctiva_COORD")
@@ -350,7 +350,7 @@ HAnimSegment82 = x3d.HAnimSegment(DEF="hanim_Left_cheek")
 HAnimSegment82.name = "left_cheek"
 HAnimDisplacer83 = x3d.HAnimDisplacer(DEF="Left_cheek_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer83.name = "left_cheek_morphinterpolator"
-HAnimDisplacer83.weight = 0.6585855
+HAnimDisplacer83.weight = 0.7333336
 
 HAnimSegment82.displacers.append(HAnimDisplacer83)
 Coordinate84 = x3d.Coordinate(DEF="Left_cheek_COORD")
@@ -387,7 +387,7 @@ HAnimSegment91 = x3d.HAnimSegment(DEF="hanim_Left_dorsum")
 HAnimSegment91.name = "left_dorsum"
 HAnimDisplacer92 = x3d.HAnimDisplacer(DEF="Left_dorsum_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer92.name = "left_dorsum_morphinterpolator"
-HAnimDisplacer92.weight = 0.6585855
+HAnimDisplacer92.weight = 0.7333336
 
 HAnimSegment91.displacers.append(HAnimDisplacer92)
 Coordinate93 = x3d.Coordinate(DEF="Left_dorsum_COORD")
@@ -424,7 +424,7 @@ HAnimSegment100 = x3d.HAnimSegment(DEF="hanim_Left_ear")
 HAnimSegment100.name = "left_ear"
 HAnimDisplacer101 = x3d.HAnimDisplacer(DEF="Left_ear_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer101.name = "left_ear_morphinterpolator"
-HAnimDisplacer101.weight = 0.6585855
+HAnimDisplacer101.weight = 0.7333336
 
 HAnimSegment100.displacers.append(HAnimDisplacer101)
 Coordinate102 = x3d.Coordinate(DEF="Left_ear_COORD")
@@ -461,7 +461,7 @@ HAnimSegment109 = x3d.HAnimSegment(DEF="hanim_Left_eyebrow")
 HAnimSegment109.name = "left_eyebrow"
 HAnimDisplacer110 = x3d.HAnimDisplacer(DEF="Left_eyebrow_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer110.name = "left_eyebrow_morphinterpolator"
-HAnimDisplacer110.weight = 0.6585855
+HAnimDisplacer110.weight = 0.7333336
 
 HAnimSegment109.displacers.append(HAnimDisplacer110)
 Coordinate111 = x3d.Coordinate(DEF="Left_eyebrow_COORD")
@@ -498,7 +498,7 @@ HAnimSegment118 = x3d.HAnimSegment(DEF="hanim_Left_forehead")
 HAnimSegment118.name = "left_forehead"
 HAnimDisplacer119 = x3d.HAnimDisplacer(DEF="Left_forehead_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer119.name = "left_forehead_morphinterpolator"
-HAnimDisplacer119.weight = 0.6585855
+HAnimDisplacer119.weight = 0.7333336
 
 HAnimSegment118.displacers.append(HAnimDisplacer119)
 Coordinate120 = x3d.Coordinate(DEF="Left_forehead_COORD")
@@ -535,7 +535,7 @@ HAnimSegment127 = x3d.HAnimSegment(DEF="hanim_Left_lower_eyelid")
 HAnimSegment127.name = "left_lower_eyelid"
 HAnimDisplacer128 = x3d.HAnimDisplacer(DEF="Left_lower_eyelid_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer128.name = "left_lower_eyelid_morphinterpolator"
-HAnimDisplacer128.weight = 0.6585855
+HAnimDisplacer128.weight = 0.7333336
 HAnimDisplacer128.coordIndex = [0,1,2,4]
 HAnimDisplacer128.displacements = [(0, 0.1171, 0.1997),(0, 0.2271, 0.251),(0, 0.1444, 0.0565),(-0.164, 0.1045, 0.25)]
 
@@ -574,7 +574,7 @@ HAnimSegment136 = x3d.HAnimSegment(DEF="hanim_Left_lower_vermillion_lip")
 HAnimSegment136.name = "left_lower_vermillion_lip"
 HAnimDisplacer137 = x3d.HAnimDisplacer(DEF="Left_lower_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer137.name = "left_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer137.weight = 0.6585855
+HAnimDisplacer137.weight = 0.7333336
 
 HAnimSegment136.displacers.append(HAnimDisplacer137)
 Coordinate138 = x3d.Coordinate(DEF="Left_lower_vermillion_lip_COORD")
@@ -611,7 +611,7 @@ HAnimSegment145 = x3d.HAnimSegment(DEF="hanim_Left_nasolabial_cheek")
 HAnimSegment145.name = "left_nasolabial_cheek"
 HAnimDisplacer146 = x3d.HAnimDisplacer(DEF="Left_nasolabial_cheek_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer146.name = "left_nasolabial_cheek_morphinterpolator"
-HAnimDisplacer146.weight = 0.6585855
+HAnimDisplacer146.weight = 0.7333336
 
 HAnimSegment145.displacers.append(HAnimDisplacer146)
 Coordinate147 = x3d.Coordinate(DEF="Left_nasolabial_cheek_COORD")
@@ -648,7 +648,7 @@ HAnimSegment154 = x3d.HAnimSegment(DEF="hanim_Left_nostril")
 HAnimSegment154.name = "left_nostril"
 HAnimDisplacer155 = x3d.HAnimDisplacer(DEF="Left_nostril_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer155.name = "left_nostril_morphinterpolator"
-HAnimDisplacer155.weight = 0.6585855
+HAnimDisplacer155.weight = 0.7333336
 
 HAnimSegment154.displacers.append(HAnimDisplacer155)
 Coordinate156 = x3d.Coordinate(DEF="Left_nostril_COORD")
@@ -685,7 +685,7 @@ HAnimSegment163 = x3d.HAnimSegment(DEF="hanim_Left_pupil")
 HAnimSegment163.name = "left_pupil"
 HAnimDisplacer164 = x3d.HAnimDisplacer(DEF="Left_pupil_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer164.name = "left_pupil_morphinterpolator"
-HAnimDisplacer164.weight = 0.6585855
+HAnimDisplacer164.weight = 0.7333336
 
 HAnimSegment163.displacers.append(HAnimDisplacer164)
 Coordinate165 = x3d.Coordinate(DEF="Left_pupil_COORD")
@@ -722,7 +722,7 @@ HAnimSegment172 = x3d.HAnimSegment(DEF="hanim_Left_temple")
 HAnimSegment172.name = "left_temple"
 HAnimDisplacer173 = x3d.HAnimDisplacer(DEF="Left_temple_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer173.name = "left_temple_morphinterpolator"
-HAnimDisplacer173.weight = 0.6585855
+HAnimDisplacer173.weight = 0.7333336
 
 HAnimSegment172.displacers.append(HAnimDisplacer173)
 Coordinate174 = x3d.Coordinate(DEF="Left_temple_COORD")
@@ -759,7 +759,7 @@ HAnimSegment181 = x3d.HAnimSegment(DEF="hanim_Left_upper_cutaneous_lip")
 HAnimSegment181.name = "left_upper_cutaneous_lip"
 HAnimDisplacer182 = x3d.HAnimDisplacer(DEF="Left_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer182.name = "left_upper_cutaneous_lip_morphinterpolator"
-HAnimDisplacer182.weight = 0.6585855
+HAnimDisplacer182.weight = 0.7333336
 
 HAnimSegment181.displacers.append(HAnimDisplacer182)
 Coordinate183 = x3d.Coordinate(DEF="Left_upper_cutaneous_lip_COORD")
@@ -796,7 +796,7 @@ HAnimSegment190 = x3d.HAnimSegment(DEF="hanim_Left_upper_eyelid")
 HAnimSegment190.name = "left_upper_eyelid"
 HAnimDisplacer191 = x3d.HAnimDisplacer(DEF="Left_upper_eyelid_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer191.name = "left_upper_eyelid_morphinterpolator"
-HAnimDisplacer191.weight = 0.6585855
+HAnimDisplacer191.weight = 0.7333336
 HAnimDisplacer191.coordIndex = [1,3,4]
 HAnimDisplacer191.displacements = [(0.2496, -2.0425, -0.987),(1.6453, -2.567, -1.8279),(0.478, -2.36, -1.1421)]
 
@@ -835,7 +835,7 @@ HAnimSegment199 = x3d.HAnimSegment(DEF="hanim_Left_upper_vermillion_lip")
 HAnimSegment199.name = "left_upper_vermillion_lip"
 HAnimDisplacer200 = x3d.HAnimDisplacer(DEF="Left_upper_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer200.name = "left_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer200.weight = 0.6585855
+HAnimDisplacer200.weight = 0.7333336
 
 HAnimSegment199.displacers.append(HAnimDisplacer200)
 Coordinate201 = x3d.Coordinate(DEF="Left_upper_vermillion_lip_COORD")
@@ -876,7 +876,7 @@ HAnimSegment209 = x3d.HAnimSegment(DEF="hanim_Mid_forehead")
 HAnimSegment209.name = "mid_forehead"
 HAnimDisplacer210 = x3d.HAnimDisplacer(DEF="Mid_forehead_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer210.name = "mid_forehead_morphinterpolator"
-HAnimDisplacer210.weight = 0.6585855
+HAnimDisplacer210.weight = 0.7333336
 
 HAnimSegment209.displacers.append(HAnimDisplacer210)
 Coordinate211 = x3d.Coordinate(DEF="Mid_forehead_COORD")
@@ -913,7 +913,7 @@ HAnimSegment218 = x3d.HAnimSegment(DEF="hanim_Mid_nasal_dorsum")
 HAnimSegment218.name = "mid_nasal_dorsum"
 HAnimDisplacer219 = x3d.HAnimDisplacer(DEF="Mid_nasal_dorsum_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer219.name = "mid_nasal_dorsum_morphinterpolator"
-HAnimDisplacer219.weight = 0.6585855
+HAnimDisplacer219.weight = 0.7333336
 
 HAnimSegment218.displacers.append(HAnimDisplacer219)
 Coordinate220 = x3d.Coordinate(DEF="Mid_nasal_dorsum_COORD")
@@ -950,7 +950,7 @@ HAnimSegment227 = x3d.HAnimSegment(DEF="hanim_Mid_upper_vermillion_lip")
 HAnimSegment227.name = "mid_upper_vermillion_lip"
 HAnimDisplacer228 = x3d.HAnimDisplacer(DEF="Mid_upper_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer228.name = "mid_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer228.weight = 0.6585855
+HAnimDisplacer228.weight = 0.7333336
 
 HAnimSegment227.displacers.append(HAnimDisplacer228)
 Coordinate229 = x3d.Coordinate(DEF="Mid_upper_vermillion_lip_COORD")
@@ -987,7 +987,7 @@ HAnimSegment236 = x3d.HAnimSegment(DEF="hanim_Nasal_tip")
 HAnimSegment236.name = "nasal_tip"
 HAnimDisplacer237 = x3d.HAnimDisplacer(DEF="Nasal_tip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer237.name = "nasal_tip_morphinterpolator"
-HAnimDisplacer237.weight = 0.6585855
+HAnimDisplacer237.weight = 0.7333336
 
 HAnimSegment236.displacers.append(HAnimDisplacer237)
 Coordinate238 = x3d.Coordinate(DEF="Nasal_tip_COORD")
@@ -1024,7 +1024,7 @@ HAnimSegment245 = x3d.HAnimSegment(DEF="hanim_Neck")
 HAnimSegment245.name = "neck"
 HAnimDisplacer246 = x3d.HAnimDisplacer(DEF="Neck_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer246.name = "neck_morphinterpolator"
-HAnimDisplacer246.weight = 0.6585855
+HAnimDisplacer246.weight = 0.7333336
 
 HAnimSegment245.displacers.append(HAnimDisplacer246)
 Coordinate247 = x3d.Coordinate(DEF="Neck_COORD")
@@ -1061,7 +1061,7 @@ HAnimSegment254 = x3d.HAnimSegment(DEF="hanim_Occipital_scalp")
 HAnimSegment254.name = "occipital_scalp"
 HAnimDisplacer255 = x3d.HAnimDisplacer(DEF="Occipital_scalp_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer255.name = "occipital_scalp_morphinterpolator"
-HAnimDisplacer255.weight = 0.6585855
+HAnimDisplacer255.weight = 0.7333336
 
 HAnimSegment254.displacers.append(HAnimDisplacer255)
 Coordinate256 = x3d.Coordinate(DEF="Occipital_scalp_COORD")
@@ -1098,7 +1098,7 @@ HAnimSegment263 = x3d.HAnimSegment(DEF="hanim_Philtrum")
 HAnimSegment263.name = "philtrum"
 HAnimDisplacer264 = x3d.HAnimDisplacer(DEF="Philtrum_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer264.name = "philtrum_morphinterpolator"
-HAnimDisplacer264.weight = 0.6585855
+HAnimDisplacer264.weight = 0.7333336
 
 HAnimSegment263.displacers.append(HAnimDisplacer264)
 Coordinate265 = x3d.Coordinate(DEF="Philtrum_COORD")
@@ -1135,7 +1135,7 @@ HAnimSegment272 = x3d.HAnimSegment(DEF="hanim_Right_bulbar_conjunctiva")
 HAnimSegment272.name = "right_bulbar_conjunctiva"
 HAnimDisplacer273 = x3d.HAnimDisplacer(DEF="Right_bulbar_conjunctiva_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer273.name = "right_bulbar_conjunctiva_morphinterpolator"
-HAnimDisplacer273.weight = 0.6585855
+HAnimDisplacer273.weight = 0.7333336
 
 HAnimSegment272.displacers.append(HAnimDisplacer273)
 Coordinate274 = x3d.Coordinate(DEF="Right_bulbar_conjunctiva_COORD")
@@ -1172,7 +1172,7 @@ HAnimSegment281 = x3d.HAnimSegment(DEF="hanim_Right_cheek")
 HAnimSegment281.name = "right_cheek"
 HAnimDisplacer282 = x3d.HAnimDisplacer(DEF="Right_cheek_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer282.name = "right_cheek_morphinterpolator"
-HAnimDisplacer282.weight = 0.6585855
+HAnimDisplacer282.weight = 0.7333336
 
 HAnimSegment281.displacers.append(HAnimDisplacer282)
 Coordinate283 = x3d.Coordinate(DEF="Right_cheek_COORD")
@@ -1209,7 +1209,7 @@ HAnimSegment290 = x3d.HAnimSegment(DEF="hanim_Right_dorsum")
 HAnimSegment290.name = "right_dorsum"
 HAnimDisplacer291 = x3d.HAnimDisplacer(DEF="Right_dorsum_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer291.name = "right_dorsum_morphinterpolator"
-HAnimDisplacer291.weight = 0.6585855
+HAnimDisplacer291.weight = 0.7333336
 
 HAnimSegment290.displacers.append(HAnimDisplacer291)
 Coordinate292 = x3d.Coordinate(DEF="Right_dorsum_COORD")
@@ -1246,7 +1246,7 @@ HAnimSegment299 = x3d.HAnimSegment(DEF="hanim_Right_ear")
 HAnimSegment299.name = "right_ear"
 HAnimDisplacer300 = x3d.HAnimDisplacer(DEF="Right_ear_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer300.name = "right_ear_morphinterpolator"
-HAnimDisplacer300.weight = 0.6585855
+HAnimDisplacer300.weight = 0.7333336
 
 HAnimSegment299.displacers.append(HAnimDisplacer300)
 Coordinate301 = x3d.Coordinate(DEF="Right_ear_COORD")
@@ -1283,7 +1283,7 @@ HAnimSegment308 = x3d.HAnimSegment(DEF="hanim_Right_eyebrow")
 HAnimSegment308.name = "right_eyebrow"
 HAnimDisplacer309 = x3d.HAnimDisplacer(DEF="Right_eyebrow_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer309.name = "right_eyebrow_morphinterpolator"
-HAnimDisplacer309.weight = 0.6585855
+HAnimDisplacer309.weight = 0.7333336
 
 HAnimSegment308.displacers.append(HAnimDisplacer309)
 Coordinate310 = x3d.Coordinate(DEF="Right_eyebrow_COORD")
@@ -1320,7 +1320,7 @@ HAnimSegment317 = x3d.HAnimSegment(DEF="hanim_Right_forehead")
 HAnimSegment317.name = "right_forehead"
 HAnimDisplacer318 = x3d.HAnimDisplacer(DEF="Right_forehead_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer318.name = "right_forehead_morphinterpolator"
-HAnimDisplacer318.weight = 0.6585855
+HAnimDisplacer318.weight = 0.7333336
 
 HAnimSegment317.displacers.append(HAnimDisplacer318)
 Coordinate319 = x3d.Coordinate(DEF="Right_forehead_COORD")
@@ -1357,7 +1357,7 @@ HAnimSegment326 = x3d.HAnimSegment(DEF="hanim_Right_lower_eyelid")
 HAnimSegment326.name = "right_lower_eyelid"
 HAnimDisplacer327 = x3d.HAnimDisplacer(DEF="Right_lower_eyelid_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer327.name = "right_lower_eyelid_morphinterpolator"
-HAnimDisplacer327.weight = 0.6585855
+HAnimDisplacer327.weight = 0.7333336
 HAnimDisplacer327.coordIndex = [0,1,2,4]
 HAnimDisplacer327.displacements = [(0, 0.1171, 0.1997),(0, 0.2271, 0.251),(0, 0.2126, 0.0762),(-0.165, 0.1045, 0)]
 
@@ -1396,7 +1396,7 @@ HAnimSegment335 = x3d.HAnimSegment(DEF="hanim_Right_lower_vermillion_lip")
 HAnimSegment335.name = "right_lower_vermillion_lip"
 HAnimDisplacer336 = x3d.HAnimDisplacer(DEF="Right_lower_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer336.name = "right_lower_vermillion_lip_morphinterpolator"
-HAnimDisplacer336.weight = 0.6585855
+HAnimDisplacer336.weight = 0.7333336
 
 HAnimSegment335.displacers.append(HAnimDisplacer336)
 Coordinate337 = x3d.Coordinate(DEF="Right_lower_vermillion_lip_COORD")
@@ -1433,7 +1433,7 @@ HAnimSegment344 = x3d.HAnimSegment(DEF="hanim_Right_nasolabial_cheek")
 HAnimSegment344.name = "right_nasolabial_cheek"
 HAnimDisplacer345 = x3d.HAnimDisplacer(DEF="Right_nasolabial_cheek_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer345.name = "right_nasolabial_cheek_morphinterpolator"
-HAnimDisplacer345.weight = 0.6585855
+HAnimDisplacer345.weight = 0.7333336
 
 HAnimSegment344.displacers.append(HAnimDisplacer345)
 Coordinate346 = x3d.Coordinate(DEF="Right_nasolabial_cheek_COORD")
@@ -1470,7 +1470,7 @@ HAnimSegment353 = x3d.HAnimSegment(DEF="hanim_Right_nostril")
 HAnimSegment353.name = "right_nostril"
 HAnimDisplacer354 = x3d.HAnimDisplacer(DEF="Right_nostril_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer354.name = "right_nostril_morphinterpolator"
-HAnimDisplacer354.weight = 0.6585855
+HAnimDisplacer354.weight = 0.7333336
 
 HAnimSegment353.displacers.append(HAnimDisplacer354)
 Coordinate355 = x3d.Coordinate(DEF="Right_nostril_COORD")
@@ -1507,7 +1507,7 @@ HAnimSegment362 = x3d.HAnimSegment(DEF="hanim_Right_pupil")
 HAnimSegment362.name = "right_pupil"
 HAnimDisplacer363 = x3d.HAnimDisplacer(DEF="Right_pupil_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer363.name = "right_pupil_morphinterpolator"
-HAnimDisplacer363.weight = 0.6585855
+HAnimDisplacer363.weight = 0.7333336
 
 HAnimSegment362.displacers.append(HAnimDisplacer363)
 Coordinate364 = x3d.Coordinate(DEF="Right_pupil_COORD")
@@ -1544,7 +1544,7 @@ HAnimSegment371 = x3d.HAnimSegment(DEF="hanim_Right_temple")
 HAnimSegment371.name = "right_temple"
 HAnimDisplacer372 = x3d.HAnimDisplacer(DEF="Right_temple_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer372.name = "right_temple_morphinterpolator"
-HAnimDisplacer372.weight = 0.6585855
+HAnimDisplacer372.weight = 0.7333336
 
 HAnimSegment371.displacers.append(HAnimDisplacer372)
 Coordinate373 = x3d.Coordinate(DEF="Right_temple_COORD")
@@ -1581,7 +1581,7 @@ HAnimSegment380 = x3d.HAnimSegment(DEF="hanim_Right_upper_cutaneous_lip")
 HAnimSegment380.name = "right_upper_cutaneous_lip"
 HAnimDisplacer381 = x3d.HAnimDisplacer(DEF="Right_upper_cutaneous_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer381.name = "right_upper_cutaneous_lip_morphinterpolator"
-HAnimDisplacer381.weight = 0.6585855
+HAnimDisplacer381.weight = 0.7333336
 
 HAnimSegment380.displacers.append(HAnimDisplacer381)
 Coordinate382 = x3d.Coordinate(DEF="Right_upper_cutaneous_lip_COORD")
@@ -1618,7 +1618,7 @@ HAnimSegment389 = x3d.HAnimSegment(DEF="hanim_Right_upper_eyelid")
 HAnimSegment389.name = "right_upper_eyelid"
 HAnimDisplacer390 = x3d.HAnimDisplacer(DEF="Right_upper_eyelid_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer390.name = "right_upper_eyelid_morphinterpolator"
-HAnimDisplacer390.weight = 0.6585855
+HAnimDisplacer390.weight = 0.7333336
 HAnimDisplacer390.coordIndex = [1,3,4]
 HAnimDisplacer390.displacements = [(-0.2496, -2.0425, -0.987),(-1.6453, -2.567, -1.8279),(-0.478, -2.36, -1.1421)]
 
@@ -1657,7 +1657,7 @@ HAnimSegment398 = x3d.HAnimSegment(DEF="hanim_Right_upper_vermillion_lip")
 HAnimSegment398.name = "right_upper_vermillion_lip"
 HAnimDisplacer399 = x3d.HAnimDisplacer(DEF="Right_upper_vermillion_lip_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer399.name = "right_upper_vermillion_lip_morphinterpolator"
-HAnimDisplacer399.weight = 0.6585855
+HAnimDisplacer399.weight = 0.7333336
 
 HAnimSegment398.displacers.append(HAnimDisplacer399)
 Coordinate400 = x3d.Coordinate(DEF="Right_upper_vermillion_lip_COORD")
@@ -1694,7 +1694,7 @@ HAnimSegment407 = x3d.HAnimSegment(DEF="hanim_Tongue")
 HAnimSegment407.name = "tongue"
 HAnimDisplacer408 = x3d.HAnimDisplacer(DEF="Tongue_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer408.name = "tongue_morphinterpolator"
-HAnimDisplacer408.weight = 0.6585855
+HAnimDisplacer408.weight = 0.7333336
 
 HAnimSegment407.displacers.append(HAnimDisplacer408)
 Coordinate409 = x3d.Coordinate(DEF="Tongue_COORD")
@@ -1731,7 +1731,7 @@ HAnimSegment416 = x3d.HAnimSegment(DEF="hanim_Upper_teeth")
 HAnimSegment416.name = "upper_teeth"
 HAnimDisplacer417 = x3d.HAnimDisplacer(DEF="Upper_teeth_MorphInterpolator_JinEyesClosed")
 HAnimDisplacer417.name = "upper_teeth_morphinterpolator"
-HAnimDisplacer417.weight = 0.6585855
+HAnimDisplacer417.weight = 0.7333336
 HAnimDisplacer417.coordIndex = [14,576,886]
 HAnimDisplacer417.displacements = [(0, 0.0001, 0),(0, 0.0001, 0),(0, -0.0001, 0)]
 

@@ -3,79 +3,93 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
-meta2 = x3d.meta()
-meta2.name = "title"
-meta2.content = "MyBounce.x3d"
+component2 = x3d.component()
+component2.name = "Scripting"
+component2.level = 1
 
-head1.children.append(meta2)
+head1.children.append(component2)
 meta3 = x3d.meta()
-meta3.name = "creator"
-meta3.content = "John Carlson"
+meta3.name = "title"
+meta3.content = "MyBounce.x3d"
 
 head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.name = "description"
-meta4.content = "3 prismatic spheres"
+meta4.name = "creator"
+meta4.content = "John Carlson"
 
 head1.children.append(meta4)
+meta5 = x3d.meta()
+meta5.name = "description"
+meta5.content = "3 prismatic spheres"
+
+head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "identifier"
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"
+
+head1.children.append(meta6)
 
 X3D0.head = head1
-Scene5 = x3d.Scene()
-NavigationInfo6 = x3d.NavigationInfo()
+Scene7 = x3d.Scene()
+NavigationInfo8 = x3d.NavigationInfo()
 
-Scene5.children.append(NavigationInfo6)
-Transform7 = x3d.Transform(DEF="transform")
-Shape8 = x3d.Shape()
-Appearance9 = x3d.Appearance()
-Material10 = x3d.Material()
-Material10.diffuseColor = [0.7,0.7,0.7]
-Material10.specularColor = [0.5,0.5,0.5]
+Scene7.children.append(NavigationInfo8)
+Transform9 = x3d.Transform(DEF="transform")
+Shape10 = x3d.Shape()
+Appearance11 = x3d.Appearance()
+Material12 = x3d.Material()
+Material12.diffuseColor = [0.7,0.7,0.7]
+Material12.specularColor = [0.5,0.5,0.5]
 
-Appearance9.material = Material10
+Appearance11.material = Material12
 
-Shape8.appearance = Appearance9
-Sphere11 = x3d.Sphere()
+Shape10.appearance = Appearance11
+Sphere13 = x3d.Sphere()
 
-Shape8.geometry = Sphere11
+Shape10.geometry = Sphere13
 
-Transform7.children.append(Shape8)
+Transform9.children.append(Shape10)
 
-Scene5.children.append(Transform7)
-Script12 = x3d.Script(DEF="Bounce2")
-field13 = x3d.field()
-field13.accessType = "inputOnly"
-field13.type = "SFVec3f"
-field13.name = "set_translation"
-
-Script12.field.append(field13)
-field14 = x3d.field()
-field14.accessType = "outputOnly"
-field14.type = "SFVec3f"
-field14.name = "translation_changed"
-
-Script12.field.append(field14)
+Scene7.children.append(Transform9)
+Script14 = x3d.Script(DEF="Bounce2")
 field15 = x3d.field()
-field15.accessType = "inputOutput"
+field15.name = "set_translation"
+field15.accessType = "inputOnly"
 field15.type = "SFVec3f"
-field15.name = "translation"
+field15.value = [0,0,0]
 
-Script12.field.append(field15)
+Script14.field.append(field15)
 field16 = x3d.field()
-field16.accessType = "inputOutput"
+field16.name = "translation_changed"
+field16.accessType = "outputOnly"
 field16.type = "SFVec3f"
-field16.name = "velocity"
+field16.value = [0,0,0]
 
-Script12.field.append(field16)
+Script14.field.append(field16)
 field17 = x3d.field()
-field17.accessType = "inputOnly"
-field17.type = "SFTime"
-field17.name = "set_fraction"
+field17.name = "translation"
+field17.accessType = "inputOutput"
+field17.type = "SFVec3f"
+field17.value = [0,0,0]
 
-Script12.field.append(field17)
+Script14.field.append(field17)
+field18 = x3d.field()
+field18.name = "velocity"
+field18.accessType = "inputOutput"
+field18.type = "SFVec3f"
+field18.value = [0,0,0]
 
-Script12.sourceCode = '''ecmascript:\n"+
+Script14.field.append(field18)
+field19 = x3d.field()
+field19.name = "set_fraction"
+field19.accessType = "inputOnly"
+field19.type = "SFTime"
+
+Script14.field.append(field19)
+
+Script14.sourceCode = '''ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
 "			    velocity = new SFVec3f(\n"+
@@ -107,28 +121,28 @@ Script12.sourceCode = '''ecmascript:\n"+
 "			     newBubble();\n"+
 "			}'''
 
-Scene5.children.append(Script12)
-TimeSensor18 = x3d.TimeSensor(DEF="TourTime")
-TimeSensor18.cycleInterval = 0.15
-TimeSensor18.loop = True
+Scene7.children.append(Script14)
+TimeSensor20 = x3d.TimeSensor(DEF="TourTime")
+TimeSensor20.cycleInterval = 0.15
+TimeSensor20.loop = True
 
-Scene5.children.append(TimeSensor18)
-ROUTE19 = x3d.ROUTE()
-ROUTE19.fromNode = "TourTime"
-ROUTE19.fromField = "cycleTime"
-ROUTE19.toNode = "Bounce2"
-ROUTE19.toField = "set_fraction"
+Scene7.children.append(TimeSensor20)
+ROUTE21 = x3d.ROUTE()
+ROUTE21.fromNode = "TourTime"
+ROUTE21.fromField = "cycleTime"
+ROUTE21.toNode = "Bounce2"
+ROUTE21.toField = "set_fraction"
 
-Scene5.children.append(ROUTE19)
-ROUTE20 = x3d.ROUTE()
-ROUTE20.fromNode = "Bounce2"
-ROUTE20.fromField = "translation_changed"
-ROUTE20.toNode = "transform"
-ROUTE20.toField = "set_translation"
+Scene7.children.append(ROUTE21)
+ROUTE22 = x3d.ROUTE()
+ROUTE22.fromNode = "Bounce2"
+ROUTE22.fromField = "translation_changed"
+ROUTE22.toNode = "transform"
+ROUTE22.toField = "set_translation"
 
-Scene5.children.append(ROUTE20)
+Scene7.children.append(ROUTE22)
 
-X3D0.Scene = Scene5
+X3D0.Scene = Scene7
 f = open("../data/MyBounce.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

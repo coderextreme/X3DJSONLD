@@ -17,7 +17,7 @@ meta3.content = "December 13 2015"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "modified"
-meta4.content = "Mon, 09 Feb 2026 07:11:19 GMT"
+meta4.content = "Mon, 09 Feb 2026 12:23:02 GMT"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
@@ -277,7 +277,7 @@ ProtoInstance57 = x3d.ProtoInstance(DEF="nodeA")
 ProtoInstance57.name = "node"
 fieldValue58 = x3d.fieldValue()
 fieldValue58.name = "position"
-fieldValue58.value = "0 1.818333 0"
+fieldValue58.value = "0 4.643334 0"
 
 ProtoInstance57.fieldValue.append(fieldValue58)
 
@@ -286,7 +286,7 @@ ProtoInstance59 = x3d.ProtoInstance(DEF="nodeB")
 ProtoInstance59.name = "node"
 fieldValue60 = x3d.fieldValue()
 fieldValue60.name = "position"
-fieldValue60.value = "0 1.818333 0"
+fieldValue60.value = "0 4.643334 0"
 
 ProtoInstance59.fieldValue.append(fieldValue60)
 
@@ -295,7 +295,7 @@ ProtoInstance61 = x3d.ProtoInstance(DEF="nodeC")
 ProtoInstance61.name = "node"
 fieldValue62 = x3d.fieldValue()
 fieldValue62.name = "position"
-fieldValue62.value = "0 1.818333 0"
+fieldValue62.value = "0 4.643334 0"
 
 ProtoInstance61.fieldValue.append(fieldValue62)
 
@@ -304,7 +304,7 @@ ProtoInstance63 = x3d.ProtoInstance(DEF="nodeD")
 ProtoInstance63.name = "node"
 fieldValue64 = x3d.fieldValue()
 fieldValue64.name = "position"
-fieldValue64.value = "0 1.818333 0"
+fieldValue64.value = "0 4.643334 0"
 
 ProtoInstance63.fieldValue.append(fieldValue64)
 
@@ -313,12 +313,12 @@ ProtoInstance65 = x3d.ProtoInstance(DEF="linkA")
 ProtoInstance65.name = "cyl"
 fieldValue66 = x3d.fieldValue()
 fieldValue66.name = "set_positionA"
-fieldValue66.value = "0 1.818333 0"
+fieldValue66.value = "0 4.643334 0"
 
 ProtoInstance65.fieldValue.append(fieldValue66)
 fieldValue67 = x3d.fieldValue()
 fieldValue67.name = "set_positionB"
-fieldValue67.value = "0 1.818333 0"
+fieldValue67.value = "0 4.643334 0"
 
 ProtoInstance65.fieldValue.append(fieldValue67)
 
@@ -327,12 +327,12 @@ ProtoInstance68 = x3d.ProtoInstance(DEF="linkB")
 ProtoInstance68.name = "cyl"
 fieldValue69 = x3d.fieldValue()
 fieldValue69.name = "set_positionA"
-fieldValue69.value = "0 1.818333 0"
+fieldValue69.value = "0 4.643334 0"
 
 ProtoInstance68.fieldValue.append(fieldValue69)
 fieldValue70 = x3d.fieldValue()
 fieldValue70.name = "set_positionB"
-fieldValue70.value = "0 1.818333 0"
+fieldValue70.value = "0 4.643334 0"
 
 ProtoInstance68.fieldValue.append(fieldValue70)
 
@@ -341,12 +341,12 @@ ProtoInstance71 = x3d.ProtoInstance(DEF="linkC")
 ProtoInstance71.name = "cyl"
 fieldValue72 = x3d.fieldValue()
 fieldValue72.name = "set_positionA"
-fieldValue72.value = "0 1.818333 0"
+fieldValue72.value = "0 4.643334 0"
 
 ProtoInstance71.fieldValue.append(fieldValue72)
 fieldValue73 = x3d.fieldValue()
 fieldValue73.name = "set_positionB"
-fieldValue73.value = "0 1.818333 0"
+fieldValue73.value = "0 4.643334 0"
 
 ProtoInstance71.fieldValue.append(fieldValue73)
 

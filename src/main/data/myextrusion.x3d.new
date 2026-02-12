@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="creator" content="John W Carlson"></meta>
 <meta name="created" content="December 13 2015"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 07:12:59 GMT"></meta>
+<meta name="modified" content="November 9 2024"></meta>
 <meta name="title" content="myextrusion.x3d"></meta>
 <meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"></meta>
+<meta name="description" content="beginnings of a force directed graph in 3D"></meta>
+<meta name="generator" content="Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"></meta>
 </head>
-<Scene><Group><Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<Scene><Group><Shape><Extrusion DEF="myextrusion" spine="-50 -50 0 50 50 0" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0"></Extrusion>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
-<Extrusion DEF="myextrusion" creaseAngle="0.785" crossSection="1 0 0.92 -0.38 0.71 -0.71 0.38 -0.92 0 -1 -0.38 -0.92 -0.71 -0.71 -0.92 -0.38 -1 0 -0.92 0.38 -0.71 0.71 -0.38 0.92 0 1 0.38 0.92 0.71 0.71 0.92 0.38 1 0" spine="-50 -50 0 50 50 0"></Extrusion>
 </Shape>
 <TimeSensor DEF="TourTime" loop="true"></TimeSensor>
-<Script DEF="MoveCylinder"><field accessType="inputOnly" type="SFTime" name="set_cycle"></field>
-<field accessType="inputOutput" type="MFVec3f" name="spine" value="-50 -50 0 50 50 0"></field>
+<Script DEF="MoveCylinder"><field name="set_cycle" accessType="inputOnly" type="SFTime"></field>
+<field name="spine" accessType="inputOutput" type="MFVec3f" value="-50 -50 0 50 50 0"></field>
 <![CDATA[ecmascript:
 
                 function set_cycle(value) {
@@ -24,8 +26,8 @@
 			tmpspine[1] = endB;
                         spine = tmpspine;
                 }]]></Script>
-</Group>
 <ROUTE fromNode="TourTime" fromField="cycleTime" toNode="MoveCylinder" toField="set_cycle"></ROUTE>
 <ROUTE fromNode="MoveCylinder" fromField="spine_changed" toNode="myextrusion" toField="set_spine"></ROUTE>
+</Group>
 </Scene>
 </X3D>

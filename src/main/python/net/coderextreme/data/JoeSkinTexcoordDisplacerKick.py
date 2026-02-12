@@ -1139,2022 +1139,2016 @@ HAnimHumanoid31.joints.append(HAnimJoint238)
 HAnimJoint239 = x3d.HAnimJoint(USE="Joe_r_wrist")
 
 HAnimHumanoid31.joints.append(HAnimJoint239)
-HAnimSegment240 = x3d.HAnimSegment(USE="Joe_sacrum")
-
-HAnimHumanoid31.segments.append(HAnimSegment240)
-HAnimSite241 = x3d.HAnimSite(USE="Joe_RootFront_view")
-
-HAnimHumanoid31.sites.append(HAnimSite241)
 
 Group30.children.append(HAnimHumanoid31)
 
 Scene19.children.append(Group30)
-Group242 = x3d.Group()
-TimeSensor243 = x3d.TimeSensor(DEF="KickTimer")
-TimeSensor243.cycleInterval = 3.73
-TimeSensor243.loop = True
+Group240 = x3d.Group()
+TimeSensor241 = x3d.TimeSensor(DEF="KickTimer")
+TimeSensor241.cycleInterval = 3.73
+TimeSensor241.loop = True
 
-Group242.children.append(TimeSensor243)
-Group242.children.append(x3d.Comment("""Interpolators"""))
-OrientationInterpolator244 = x3d.OrientationInterpolator(DEF="HumanoidRoot_RotationInterpolator")
-OrientationInterpolator244.key = [0,0.1,0.4,0.6,1]
-OrientationInterpolator244.keyValue = [(1, 0, 0, 0.5),(1, 0, 0, 0.5),(-1, 0, 0, 0.1),(-1, 0, 0, 0.5),(-1, 0, 0, 0.5)]
+Group240.children.append(TimeSensor241)
+Group240.children.append(x3d.Comment("""Interpolators"""))
+OrientationInterpolator242 = x3d.OrientationInterpolator(DEF="HumanoidRoot_RotationInterpolator")
+OrientationInterpolator242.key = [0,0.1,0.4,0.6,1]
+OrientationInterpolator242.keyValue = [(1, 0, 0, 0.5),(1, 0, 0, 0.5),(-1, 0, 0, 0.1),(-1, 0, 0, 0.5),(-1, 0, 0, 0.5)]
 
-Group242.children.append(OrientationInterpolator244)
-PositionInterpolator245 = x3d.PositionInterpolator(DEF="HumanoidRoot_TranslationInterpolator")
-PositionInterpolator245.key = [0,0.2,0.6,1]
-PositionInterpolator245.keyValue = [(1, 0.3, -1),(0.4, -0.04, -0.4),(-0.18, 0.1, 0),(-0.2, 0.15, 0.15)]
+Group240.children.append(OrientationInterpolator242)
+PositionInterpolator243 = x3d.PositionInterpolator(DEF="HumanoidRoot_TranslationInterpolator")
+PositionInterpolator243.key = [0,0.2,0.6,1]
+PositionInterpolator243.keyValue = [(1, 0.3, -1),(0.4, -0.04, -0.4),(-0.18, 0.1, 0),(-0.2, 0.15, 0.15)]
 
-Group242.children.append(PositionInterpolator245)
-OrientationInterpolator246 = x3d.OrientationInterpolator(DEF="sacroiliac_RotationInterpolator")
-OrientationInterpolator246.key = [0,0.5,1]
-OrientationInterpolator246.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(PositionInterpolator243)
+OrientationInterpolator244 = x3d.OrientationInterpolator(DEF="sacroiliac_RotationInterpolator")
+OrientationInterpolator244.key = [0,0.5,1]
+OrientationInterpolator244.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator246)
-OrientationInterpolator247 = x3d.OrientationInterpolator(DEF="l_hip_RotationInterpolator")
-OrientationInterpolator247.key = [0,0.1,0.3,0.45,1]
-OrientationInterpolator247.keyValue = [(-1, 0, 0, 1.5),(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 0.5),(1, 0, 0, 1)]
+Group240.children.append(OrientationInterpolator244)
+OrientationInterpolator245 = x3d.OrientationInterpolator(DEF="l_hip_RotationInterpolator")
+OrientationInterpolator245.key = [0,0.1,0.3,0.45,1]
+OrientationInterpolator245.keyValue = [(-1, 0, 0, 1.5),(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 0.5),(1, 0, 0, 1)]
 
-Group242.children.append(OrientationInterpolator247)
-OrientationInterpolator248 = x3d.OrientationInterpolator(DEF="l_knee_RotationInterpolator")
-OrientationInterpolator248.key = [0,0.2,0.35,0.5,1]
-OrientationInterpolator248.keyValue = [(1, 0, 0, 1),(0, 0, 1, 0),(0, 0, 1, 0.2),(1, 0, 1, 0.5),(1, 0, 0, 1.4)]
+Group240.children.append(OrientationInterpolator245)
+OrientationInterpolator246 = x3d.OrientationInterpolator(DEF="l_knee_RotationInterpolator")
+OrientationInterpolator246.key = [0,0.2,0.35,0.5,1]
+OrientationInterpolator246.keyValue = [(1, 0, 0, 1),(0, 0, 1, 0),(0, 0, 1, 0.2),(1, 0, 1, 0.5),(1, 0, 0, 1.4)]
 
-Group242.children.append(OrientationInterpolator248)
-OrientationInterpolator249 = x3d.OrientationInterpolator(DEF="l_ankle_RotationInterpolator")
-OrientationInterpolator249.key = [0,0.25,1]
-OrientationInterpolator249.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1)]
+Group240.children.append(OrientationInterpolator246)
+OrientationInterpolator247 = x3d.OrientationInterpolator(DEF="l_ankle_RotationInterpolator")
+OrientationInterpolator247.key = [0,0.25,1]
+OrientationInterpolator247.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1)]
 
-Group242.children.append(OrientationInterpolator249)
-OrientationInterpolator250 = x3d.OrientationInterpolator(DEF="l_subtalar_RotationInterpolator")
+Group240.children.append(OrientationInterpolator247)
+OrientationInterpolator248 = x3d.OrientationInterpolator(DEF="l_subtalar_RotationInterpolator")
+OrientationInterpolator248.key = [0,0.5,1]
+OrientationInterpolator248.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+
+Group240.children.append(OrientationInterpolator248)
+OrientationInterpolator249 = x3d.OrientationInterpolator(DEF="l_midtarsal_RotationInterpolator")
+OrientationInterpolator249.key = [0,0.5,1]
+OrientationInterpolator249.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+
+Group240.children.append(OrientationInterpolator249)
+OrientationInterpolator250 = x3d.OrientationInterpolator(DEF="l_metatarsal_RotationInterpolator")
 OrientationInterpolator250.key = [0,0.5,1]
 OrientationInterpolator250.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator250)
-OrientationInterpolator251 = x3d.OrientationInterpolator(DEF="l_midtarsal_RotationInterpolator")
-OrientationInterpolator251.key = [0,0.5,1]
-OrientationInterpolator251.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator250)
+OrientationInterpolator251 = x3d.OrientationInterpolator(DEF="r_hip_RotationInterpolator")
+OrientationInterpolator251.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator251.keyValue = [(1, 0, 0, 1),(1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1)]
 
-Group242.children.append(OrientationInterpolator251)
-OrientationInterpolator252 = x3d.OrientationInterpolator(DEF="l_metatarsal_RotationInterpolator")
-OrientationInterpolator252.key = [0,0.5,1]
-OrientationInterpolator252.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator251)
+OrientationInterpolator252 = x3d.OrientationInterpolator(DEF="r_knee_RotationInterpolator")
+OrientationInterpolator252.key = [0,0.25,0.5,0.75,1]
+OrientationInterpolator252.keyValue = [(1, 0, 0, 0.1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 1.5)]
 
-Group242.children.append(OrientationInterpolator252)
-OrientationInterpolator253 = x3d.OrientationInterpolator(DEF="r_hip_RotationInterpolator")
+Group240.children.append(OrientationInterpolator252)
+OrientationInterpolator253 = x3d.OrientationInterpolator(DEF="r_ankle_RotationInterpolator")
 OrientationInterpolator253.key = [0,0.25,0.5,0.75,1]
-OrientationInterpolator253.keyValue = [(1, 0, 0, 1),(1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1),(-1, 0, 0, 1)]
+OrientationInterpolator253.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 0.5)]
 
-Group242.children.append(OrientationInterpolator253)
-OrientationInterpolator254 = x3d.OrientationInterpolator(DEF="r_knee_RotationInterpolator")
-OrientationInterpolator254.key = [0,0.25,0.5,0.75,1]
-OrientationInterpolator254.keyValue = [(1, 0, 0, 0.1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 1.5)]
+Group240.children.append(OrientationInterpolator253)
+OrientationInterpolator254 = x3d.OrientationInterpolator(DEF="r_subtalar_RotationInterpolator")
+OrientationInterpolator254.key = [0,0.5,1]
+OrientationInterpolator254.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator254)
-OrientationInterpolator255 = x3d.OrientationInterpolator(DEF="r_ankle_RotationInterpolator")
-OrientationInterpolator255.key = [0,0.25,0.5,0.75,1]
-OrientationInterpolator255.keyValue = [(-1, 0, 0, 1),(0, 0, 1, 0),(1, 0, 0, 1),(1, 0, 0, 1),(1, 0, 0, 0.5)]
+Group240.children.append(OrientationInterpolator254)
+OrientationInterpolator255 = x3d.OrientationInterpolator(DEF="r_midtarsal_RotationInterpolator")
+OrientationInterpolator255.key = [0,0.5,1]
+OrientationInterpolator255.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator255)
-OrientationInterpolator256 = x3d.OrientationInterpolator(DEF="r_subtalar_RotationInterpolator")
+Group240.children.append(OrientationInterpolator255)
+OrientationInterpolator256 = x3d.OrientationInterpolator(DEF="r_metatarsal_RotationInterpolator")
 OrientationInterpolator256.key = [0,0.5,1]
 OrientationInterpolator256.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator256)
-OrientationInterpolator257 = x3d.OrientationInterpolator(DEF="r_midtarsal_RotationInterpolator")
+Group240.children.append(OrientationInterpolator256)
+OrientationInterpolator257 = x3d.OrientationInterpolator(DEF="vl5_RotationInterpolator")
 OrientationInterpolator257.key = [0,0.5,1]
 OrientationInterpolator257.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator257)
-OrientationInterpolator258 = x3d.OrientationInterpolator(DEF="r_metatarsal_RotationInterpolator")
+Group240.children.append(OrientationInterpolator257)
+OrientationInterpolator258 = x3d.OrientationInterpolator(DEF="vl4_RotationInterpolator")
 OrientationInterpolator258.key = [0,0.5,1]
 OrientationInterpolator258.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator258)
-OrientationInterpolator259 = x3d.OrientationInterpolator(DEF="vl5_RotationInterpolator")
+Group240.children.append(OrientationInterpolator258)
+OrientationInterpolator259 = x3d.OrientationInterpolator(DEF="vl3_RotationInterpolator")
 OrientationInterpolator259.key = [0,0.5,1]
 OrientationInterpolator259.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator259)
-OrientationInterpolator260 = x3d.OrientationInterpolator(DEF="vl4_RotationInterpolator")
+Group240.children.append(OrientationInterpolator259)
+OrientationInterpolator260 = x3d.OrientationInterpolator(DEF="vl2_RotationInterpolator")
 OrientationInterpolator260.key = [0,0.5,1]
 OrientationInterpolator260.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator260)
-OrientationInterpolator261 = x3d.OrientationInterpolator(DEF="vl3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator260)
+OrientationInterpolator261 = x3d.OrientationInterpolator(DEF="vl1_RotationInterpolator")
 OrientationInterpolator261.key = [0,0.5,1]
 OrientationInterpolator261.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator261)
-OrientationInterpolator262 = x3d.OrientationInterpolator(DEF="vl2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator261)
+OrientationInterpolator262 = x3d.OrientationInterpolator(DEF="vt12_RotationInterpolator")
 OrientationInterpolator262.key = [0,0.5,1]
 OrientationInterpolator262.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator262)
-OrientationInterpolator263 = x3d.OrientationInterpolator(DEF="vl1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator262)
+OrientationInterpolator263 = x3d.OrientationInterpolator(DEF="vt11_RotationInterpolator")
 OrientationInterpolator263.key = [0,0.5,1]
 OrientationInterpolator263.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator263)
-OrientationInterpolator264 = x3d.OrientationInterpolator(DEF="vt12_RotationInterpolator")
+Group240.children.append(OrientationInterpolator263)
+OrientationInterpolator264 = x3d.OrientationInterpolator(DEF="vt10_RotationInterpolator")
 OrientationInterpolator264.key = [0,0.5,1]
 OrientationInterpolator264.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator264)
-OrientationInterpolator265 = x3d.OrientationInterpolator(DEF="vt11_RotationInterpolator")
+Group240.children.append(OrientationInterpolator264)
+OrientationInterpolator265 = x3d.OrientationInterpolator(DEF="vt9_RotationInterpolator")
 OrientationInterpolator265.key = [0,0.5,1]
 OrientationInterpolator265.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator265)
-OrientationInterpolator266 = x3d.OrientationInterpolator(DEF="vt10_RotationInterpolator")
+Group240.children.append(OrientationInterpolator265)
+OrientationInterpolator266 = x3d.OrientationInterpolator(DEF="vt8_RotationInterpolator")
 OrientationInterpolator266.key = [0,0.5,1]
 OrientationInterpolator266.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator266)
-OrientationInterpolator267 = x3d.OrientationInterpolator(DEF="vt9_RotationInterpolator")
+Group240.children.append(OrientationInterpolator266)
+OrientationInterpolator267 = x3d.OrientationInterpolator(DEF="vt7_RotationInterpolator")
 OrientationInterpolator267.key = [0,0.5,1]
 OrientationInterpolator267.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator267)
-OrientationInterpolator268 = x3d.OrientationInterpolator(DEF="vt8_RotationInterpolator")
+Group240.children.append(OrientationInterpolator267)
+OrientationInterpolator268 = x3d.OrientationInterpolator(DEF="vt6_RotationInterpolator")
 OrientationInterpolator268.key = [0,0.5,1]
 OrientationInterpolator268.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator268)
-OrientationInterpolator269 = x3d.OrientationInterpolator(DEF="vt7_RotationInterpolator")
+Group240.children.append(OrientationInterpolator268)
+OrientationInterpolator269 = x3d.OrientationInterpolator(DEF="vt5_RotationInterpolator")
 OrientationInterpolator269.key = [0,0.5,1]
 OrientationInterpolator269.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator269)
-OrientationInterpolator270 = x3d.OrientationInterpolator(DEF="vt6_RotationInterpolator")
+Group240.children.append(OrientationInterpolator269)
+OrientationInterpolator270 = x3d.OrientationInterpolator(DEF="vt4_RotationInterpolator")
 OrientationInterpolator270.key = [0,0.5,1]
 OrientationInterpolator270.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator270)
-OrientationInterpolator271 = x3d.OrientationInterpolator(DEF="vt5_RotationInterpolator")
+Group240.children.append(OrientationInterpolator270)
+OrientationInterpolator271 = x3d.OrientationInterpolator(DEF="vt3_RotationInterpolator")
 OrientationInterpolator271.key = [0,0.5,1]
 OrientationInterpolator271.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator271)
-OrientationInterpolator272 = x3d.OrientationInterpolator(DEF="vt4_RotationInterpolator")
+Group240.children.append(OrientationInterpolator271)
+OrientationInterpolator272 = x3d.OrientationInterpolator(DEF="vt2_RotationInterpolator")
 OrientationInterpolator272.key = [0,0.5,1]
 OrientationInterpolator272.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator272)
-OrientationInterpolator273 = x3d.OrientationInterpolator(DEF="vt3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator272)
+OrientationInterpolator273 = x3d.OrientationInterpolator(DEF="vt1_RotationInterpolator")
 OrientationInterpolator273.key = [0,0.5,1]
 OrientationInterpolator273.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator273)
-OrientationInterpolator274 = x3d.OrientationInterpolator(DEF="vt2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator273)
+OrientationInterpolator274 = x3d.OrientationInterpolator(DEF="vc7_RotationInterpolator")
 OrientationInterpolator274.key = [0,0.5,1]
 OrientationInterpolator274.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator274)
-OrientationInterpolator275 = x3d.OrientationInterpolator(DEF="vt1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator274)
+OrientationInterpolator275 = x3d.OrientationInterpolator(DEF="vc6_RotationInterpolator")
 OrientationInterpolator275.key = [0,0.5,1]
 OrientationInterpolator275.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator275)
-OrientationInterpolator276 = x3d.OrientationInterpolator(DEF="vc7_RotationInterpolator")
+Group240.children.append(OrientationInterpolator275)
+OrientationInterpolator276 = x3d.OrientationInterpolator(DEF="vc5_RotationInterpolator")
 OrientationInterpolator276.key = [0,0.5,1]
 OrientationInterpolator276.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator276)
-OrientationInterpolator277 = x3d.OrientationInterpolator(DEF="vc6_RotationInterpolator")
-OrientationInterpolator277.key = [0,0.5,1]
-OrientationInterpolator277.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator276)
+OrientationInterpolator277 = x3d.OrientationInterpolator(DEF="vc4_RotationInterpolator")
+OrientationInterpolator277.key = [0,0.3,0.4,1]
+OrientationInterpolator277.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 0.35),(1, 0, 0, 0.75),(1, 0, 1, 0.5)]
 
-Group242.children.append(OrientationInterpolator277)
-OrientationInterpolator278 = x3d.OrientationInterpolator(DEF="vc5_RotationInterpolator")
+Group240.children.append(OrientationInterpolator277)
+OrientationInterpolator278 = x3d.OrientationInterpolator(DEF="vc3_RotationInterpolator")
 OrientationInterpolator278.key = [0,0.5,1]
 OrientationInterpolator278.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator278)
-OrientationInterpolator279 = x3d.OrientationInterpolator(DEF="vc4_RotationInterpolator")
-OrientationInterpolator279.key = [0,0.3,0.4,1]
-OrientationInterpolator279.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 0.35),(1, 0, 0, 0.75),(1, 0, 1, 0.5)]
+Group240.children.append(OrientationInterpolator278)
+OrientationInterpolator279 = x3d.OrientationInterpolator(DEF="vc2_RotationInterpolator")
+OrientationInterpolator279.key = [0,0.5,1]
+OrientationInterpolator279.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator279)
-OrientationInterpolator280 = x3d.OrientationInterpolator(DEF="vc3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator279)
+OrientationInterpolator280 = x3d.OrientationInterpolator(DEF="vc1_RotationInterpolator")
 OrientationInterpolator280.key = [0,0.5,1]
 OrientationInterpolator280.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator280)
-OrientationInterpolator281 = x3d.OrientationInterpolator(DEF="vc2_RotationInterpolator")
-OrientationInterpolator281.key = [0,0.5,1]
-OrientationInterpolator281.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator280)
+OrientationInterpolator281 = x3d.OrientationInterpolator(DEF="skullbase_RotationInterpolator")
+OrientationInterpolator281.key = [0,0.2,0.75,1]
+OrientationInterpolator281.keyValue = [(0, -1, 0, 0.5),(0, 0, 1, 0),(0, 0, 1, 0),(0, 1, 0, 0.35)]
 
-Group242.children.append(OrientationInterpolator281)
-OrientationInterpolator282 = x3d.OrientationInterpolator(DEF="vc1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator281)
+OrientationInterpolator282 = x3d.OrientationInterpolator(DEF="l_eyelid_joint_RotationInterpolator")
 OrientationInterpolator282.key = [0,0.5,1]
 OrientationInterpolator282.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator282)
-OrientationInterpolator283 = x3d.OrientationInterpolator(DEF="skullbase_RotationInterpolator")
-OrientationInterpolator283.key = [0,0.2,0.75,1]
-OrientationInterpolator283.keyValue = [(0, -1, 0, 0.5),(0, 0, 1, 0),(0, 0, 1, 0),(0, 1, 0, 0.35)]
+Group240.children.append(OrientationInterpolator282)
+OrientationInterpolator283 = x3d.OrientationInterpolator(DEF="l_eyeball_joint_RotationInterpolator")
+OrientationInterpolator283.key = [0,0.5,1]
+OrientationInterpolator283.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator283)
-OrientationInterpolator284 = x3d.OrientationInterpolator(DEF="l_eyelid_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator283)
+OrientationInterpolator284 = x3d.OrientationInterpolator(DEF="l_eyebrow_joint_RotationInterpolator")
 OrientationInterpolator284.key = [0,0.5,1]
 OrientationInterpolator284.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator284)
-OrientationInterpolator285 = x3d.OrientationInterpolator(DEF="l_eyeball_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator284)
+OrientationInterpolator285 = x3d.OrientationInterpolator(DEF="r_eyelid_joint_RotationInterpolator")
 OrientationInterpolator285.key = [0,0.5,1]
 OrientationInterpolator285.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator285)
-OrientationInterpolator286 = x3d.OrientationInterpolator(DEF="l_eyebrow_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator285)
+OrientationInterpolator286 = x3d.OrientationInterpolator(DEF="r_eyeball_joint_RotationInterpolator")
 OrientationInterpolator286.key = [0,0.5,1]
 OrientationInterpolator286.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator286)
-OrientationInterpolator287 = x3d.OrientationInterpolator(DEF="r_eyelid_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator286)
+OrientationInterpolator287 = x3d.OrientationInterpolator(DEF="r_eyebrow_joint_RotationInterpolator")
 OrientationInterpolator287.key = [0,0.5,1]
 OrientationInterpolator287.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator287)
-OrientationInterpolator288 = x3d.OrientationInterpolator(DEF="r_eyeball_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator287)
+OrientationInterpolator288 = x3d.OrientationInterpolator(DEF="temporomandibular_RotationInterpolator")
 OrientationInterpolator288.key = [0,0.5,1]
 OrientationInterpolator288.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator288)
-OrientationInterpolator289 = x3d.OrientationInterpolator(DEF="r_eyebrow_joint_RotationInterpolator")
+Group240.children.append(OrientationInterpolator288)
+OrientationInterpolator289 = x3d.OrientationInterpolator(DEF="l_sternoclavicular_RotationInterpolator")
 OrientationInterpolator289.key = [0,0.5,1]
 OrientationInterpolator289.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator289)
-OrientationInterpolator290 = x3d.OrientationInterpolator(DEF="temporomandibular_RotationInterpolator")
+Group240.children.append(OrientationInterpolator289)
+OrientationInterpolator290 = x3d.OrientationInterpolator(DEF="l_acromioclavicular_RotationInterpolator")
 OrientationInterpolator290.key = [0,0.5,1]
 OrientationInterpolator290.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator290)
-OrientationInterpolator291 = x3d.OrientationInterpolator(DEF="l_sternoclavicular_RotationInterpolator")
-OrientationInterpolator291.key = [0,0.5,1]
-OrientationInterpolator291.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator290)
+OrientationInterpolator291 = x3d.OrientationInterpolator(DEF="l_shoulder_RotationInterpolator")
+OrientationInterpolator291.key = [0,0.4,1]
+OrientationInterpolator291.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(-1, 0, 1, 1.75)]
 
-Group242.children.append(OrientationInterpolator291)
-OrientationInterpolator292 = x3d.OrientationInterpolator(DEF="l_acromioclavicular_RotationInterpolator")
+Group240.children.append(OrientationInterpolator291)
+OrientationInterpolator292 = x3d.OrientationInterpolator(DEF="l_elbow_RotationInterpolator")
 OrientationInterpolator292.key = [0,0.5,1]
-OrientationInterpolator292.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+OrientationInterpolator292.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
 
-Group242.children.append(OrientationInterpolator292)
-OrientationInterpolator293 = x3d.OrientationInterpolator(DEF="l_shoulder_RotationInterpolator")
-OrientationInterpolator293.key = [0,0.4,1]
-OrientationInterpolator293.keyValue = [(0, 0, 1, 0),(0, 0, 1, 1.5),(-1, 0, 1, 1.75)]
+Group240.children.append(OrientationInterpolator292)
+OrientationInterpolator293 = x3d.OrientationInterpolator(DEF="l_wrist_RotationInterpolator")
+OrientationInterpolator293.key = [0,0.4,0.8,1]
+OrientationInterpolator293.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.3),(0, -0.5, 1, 1.3),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator293)
-OrientationInterpolator294 = x3d.OrientationInterpolator(DEF="l_elbow_RotationInterpolator")
+Group240.children.append(OrientationInterpolator293)
+OrientationInterpolator294 = x3d.OrientationInterpolator(DEF="l_thumb1_RotationInterpolator")
 OrientationInterpolator294.key = [0,0.5,1]
-OrientationInterpolator294.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
+OrientationInterpolator294.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator294)
-OrientationInterpolator295 = x3d.OrientationInterpolator(DEF="l_wrist_RotationInterpolator")
-OrientationInterpolator295.key = [0,0.4,0.8,1]
-OrientationInterpolator295.keyValue = [(0, 0, 1, 0),(0, 1, 0, 1.3),(0, -0.5, 1, 1.3),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator294)
+OrientationInterpolator295 = x3d.OrientationInterpolator(DEF="l_thumb2_RotationInterpolator")
+OrientationInterpolator295.key = [0,0.5,1]
+OrientationInterpolator295.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator295)
-OrientationInterpolator296 = x3d.OrientationInterpolator(DEF="l_thumb1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator295)
+OrientationInterpolator296 = x3d.OrientationInterpolator(DEF="l_thumb3_RotationInterpolator")
 OrientationInterpolator296.key = [0,0.5,1]
 OrientationInterpolator296.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator296)
-OrientationInterpolator297 = x3d.OrientationInterpolator(DEF="l_thumb2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator296)
+OrientationInterpolator297 = x3d.OrientationInterpolator(DEF="l_index0_RotationInterpolator")
 OrientationInterpolator297.key = [0,0.5,1]
 OrientationInterpolator297.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator297)
-OrientationInterpolator298 = x3d.OrientationInterpolator(DEF="l_thumb3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator297)
+OrientationInterpolator298 = x3d.OrientationInterpolator(DEF="l_index1_RotationInterpolator")
 OrientationInterpolator298.key = [0,0.5,1]
 OrientationInterpolator298.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator298)
-OrientationInterpolator299 = x3d.OrientationInterpolator(DEF="l_index0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator298)
+OrientationInterpolator299 = x3d.OrientationInterpolator(DEF="l_index2_RotationInterpolator")
 OrientationInterpolator299.key = [0,0.5,1]
 OrientationInterpolator299.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator299)
-OrientationInterpolator300 = x3d.OrientationInterpolator(DEF="l_index1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator299)
+OrientationInterpolator300 = x3d.OrientationInterpolator(DEF="l_index3_RotationInterpolator")
 OrientationInterpolator300.key = [0,0.5,1]
 OrientationInterpolator300.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator300)
-OrientationInterpolator301 = x3d.OrientationInterpolator(DEF="l_index2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator300)
+OrientationInterpolator301 = x3d.OrientationInterpolator(DEF="l_middle0_RotationInterpolator")
 OrientationInterpolator301.key = [0,0.5,1]
 OrientationInterpolator301.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator301)
-OrientationInterpolator302 = x3d.OrientationInterpolator(DEF="l_index3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator301)
+OrientationInterpolator302 = x3d.OrientationInterpolator(DEF="l_middle1_RotationInterpolator")
 OrientationInterpolator302.key = [0,0.5,1]
 OrientationInterpolator302.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator302)
-OrientationInterpolator303 = x3d.OrientationInterpolator(DEF="l_middle0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator302)
+OrientationInterpolator303 = x3d.OrientationInterpolator(DEF="l_middle2_RotationInterpolator")
 OrientationInterpolator303.key = [0,0.5,1]
 OrientationInterpolator303.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator303)
-OrientationInterpolator304 = x3d.OrientationInterpolator(DEF="l_middle1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator303)
+OrientationInterpolator304 = x3d.OrientationInterpolator(DEF="l_middle3_RotationInterpolator")
 OrientationInterpolator304.key = [0,0.5,1]
 OrientationInterpolator304.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator304)
-OrientationInterpolator305 = x3d.OrientationInterpolator(DEF="l_middle2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator304)
+OrientationInterpolator305 = x3d.OrientationInterpolator(DEF="l_ring0_RotationInterpolator")
 OrientationInterpolator305.key = [0,0.5,1]
 OrientationInterpolator305.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator305)
-OrientationInterpolator306 = x3d.OrientationInterpolator(DEF="l_middle3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator305)
+OrientationInterpolator306 = x3d.OrientationInterpolator(DEF="l_ring1_RotationInterpolator")
 OrientationInterpolator306.key = [0,0.5,1]
 OrientationInterpolator306.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator306)
-OrientationInterpolator307 = x3d.OrientationInterpolator(DEF="l_ring0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator306)
+OrientationInterpolator307 = x3d.OrientationInterpolator(DEF="l_ring2_RotationInterpolator")
 OrientationInterpolator307.key = [0,0.5,1]
 OrientationInterpolator307.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator307)
-OrientationInterpolator308 = x3d.OrientationInterpolator(DEF="l_ring1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator307)
+OrientationInterpolator308 = x3d.OrientationInterpolator(DEF="l_ring3_RotationInterpolator")
 OrientationInterpolator308.key = [0,0.5,1]
 OrientationInterpolator308.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator308)
-OrientationInterpolator309 = x3d.OrientationInterpolator(DEF="l_ring2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator308)
+OrientationInterpolator309 = x3d.OrientationInterpolator(DEF="l_pinky0_RotationInterpolator")
 OrientationInterpolator309.key = [0,0.5,1]
 OrientationInterpolator309.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator309)
-OrientationInterpolator310 = x3d.OrientationInterpolator(DEF="l_ring3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator309)
+OrientationInterpolator310 = x3d.OrientationInterpolator(DEF="l_pinky1_RotationInterpolator")
 OrientationInterpolator310.key = [0,0.5,1]
 OrientationInterpolator310.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator310)
-OrientationInterpolator311 = x3d.OrientationInterpolator(DEF="l_pinky0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator310)
+OrientationInterpolator311 = x3d.OrientationInterpolator(DEF="l_pinky2_RotationInterpolator")
 OrientationInterpolator311.key = [0,0.5,1]
 OrientationInterpolator311.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator311)
-OrientationInterpolator312 = x3d.OrientationInterpolator(DEF="l_pinky1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator311)
+OrientationInterpolator312 = x3d.OrientationInterpolator(DEF="l_pinky3_RotationInterpolator")
 OrientationInterpolator312.key = [0,0.5,1]
 OrientationInterpolator312.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator312)
-OrientationInterpolator313 = x3d.OrientationInterpolator(DEF="l_pinky2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator312)
+OrientationInterpolator313 = x3d.OrientationInterpolator(DEF="r_sternoclavicular_RotationInterpolator")
 OrientationInterpolator313.key = [0,0.5,1]
 OrientationInterpolator313.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator313)
-OrientationInterpolator314 = x3d.OrientationInterpolator(DEF="l_pinky3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator313)
+OrientationInterpolator314 = x3d.OrientationInterpolator(DEF="r_acromioclavicular_RotationInterpolator")
 OrientationInterpolator314.key = [0,0.5,1]
 OrientationInterpolator314.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator314)
-OrientationInterpolator315 = x3d.OrientationInterpolator(DEF="r_sternoclavicular_RotationInterpolator")
+Group240.children.append(OrientationInterpolator314)
+OrientationInterpolator315 = x3d.OrientationInterpolator(DEF="r_shoulder_RotationInterpolator")
 OrientationInterpolator315.key = [0,0.5,1]
-OrientationInterpolator315.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+OrientationInterpolator315.keyValue = [(0, 0, -1, 2.5),(0, 0, -1, 1.5),(0, 0, -1, 1.75)]
 
-Group242.children.append(OrientationInterpolator315)
-OrientationInterpolator316 = x3d.OrientationInterpolator(DEF="r_acromioclavicular_RotationInterpolator")
+Group240.children.append(OrientationInterpolator315)
+OrientationInterpolator316 = x3d.OrientationInterpolator(DEF="r_elbow_RotationInterpolator")
 OrientationInterpolator316.key = [0,0.5,1]
-OrientationInterpolator316.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+OrientationInterpolator316.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
 
-Group242.children.append(OrientationInterpolator316)
-OrientationInterpolator317 = x3d.OrientationInterpolator(DEF="r_shoulder_RotationInterpolator")
-OrientationInterpolator317.key = [0,0.5,1]
-OrientationInterpolator317.keyValue = [(0, 0, -1, 2.5),(0, 0, -1, 1.5),(0, 0, -1, 1.75)]
+Group240.children.append(OrientationInterpolator316)
+OrientationInterpolator317 = x3d.OrientationInterpolator(DEF="r_wrist_RotationInterpolator")
+OrientationInterpolator317.key = [0,0.5,0.7,1]
+OrientationInterpolator317.keyValue = [(0, 1, 0, 0.3),(0, 0, 1, 0),(0, 0, -1, 1),(0, -1, 0, 0.3)]
 
-Group242.children.append(OrientationInterpolator317)
-OrientationInterpolator318 = x3d.OrientationInterpolator(DEF="r_elbow_RotationInterpolator")
+Group240.children.append(OrientationInterpolator317)
+OrientationInterpolator318 = x3d.OrientationInterpolator(DEF="r_thumb1_RotationInterpolator")
 OrientationInterpolator318.key = [0,0.5,1]
-OrientationInterpolator318.keyValue = [(-1, 0, 0, 3),(-1, 0, 0, 0.75),(-1, -1, 0, 0.5)]
+OrientationInterpolator318.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator318)
-OrientationInterpolator319 = x3d.OrientationInterpolator(DEF="r_wrist_RotationInterpolator")
-OrientationInterpolator319.key = [0,0.5,0.7,1]
-OrientationInterpolator319.keyValue = [(0, 1, 0, 0.3),(0, 0, 1, 0),(0, 0, -1, 1),(0, -1, 0, 0.3)]
+Group240.children.append(OrientationInterpolator318)
+OrientationInterpolator319 = x3d.OrientationInterpolator(DEF="r_thumb2_RotationInterpolator")
+OrientationInterpolator319.key = [0,0.5,1]
+OrientationInterpolator319.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator319)
-OrientationInterpolator320 = x3d.OrientationInterpolator(DEF="r_thumb1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator319)
+OrientationInterpolator320 = x3d.OrientationInterpolator(DEF="r_thumb3_RotationInterpolator")
 OrientationInterpolator320.key = [0,0.5,1]
 OrientationInterpolator320.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator320)
-OrientationInterpolator321 = x3d.OrientationInterpolator(DEF="r_thumb2_RotationInterpolator")
-OrientationInterpolator321.key = [0,0.5,1]
-OrientationInterpolator321.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator320)
+OrientationInterpolator321 = x3d.OrientationInterpolator(DEF="r_index0_RotationInterpolator")
+OrientationInterpolator321.key = [0,0.5,0.75,1]
+OrientationInterpolator321.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator321)
-OrientationInterpolator322 = x3d.OrientationInterpolator(DEF="r_thumb3_RotationInterpolator")
-OrientationInterpolator322.key = [0,0.5,1]
-OrientationInterpolator322.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator321)
+OrientationInterpolator322 = x3d.OrientationInterpolator(DEF="r_index1_RotationInterpolator")
+OrientationInterpolator322.key = [0,0.5,0.75,1]
+OrientationInterpolator322.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator322)
-OrientationInterpolator323 = x3d.OrientationInterpolator(DEF="r_index0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator322)
+OrientationInterpolator323 = x3d.OrientationInterpolator(DEF="r_index2_RotationInterpolator")
 OrientationInterpolator323.key = [0,0.5,0.75,1]
-OrientationInterpolator323.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
+OrientationInterpolator323.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator323)
-OrientationInterpolator324 = x3d.OrientationInterpolator(DEF="r_index1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator323)
+OrientationInterpolator324 = x3d.OrientationInterpolator(DEF="r_index3_RotationInterpolator")
 OrientationInterpolator324.key = [0,0.5,0.75,1]
 OrientationInterpolator324.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator324)
-OrientationInterpolator325 = x3d.OrientationInterpolator(DEF="r_index2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator324)
+OrientationInterpolator325 = x3d.OrientationInterpolator(DEF="r_middle0_RotationInterpolator")
 OrientationInterpolator325.key = [0,0.5,0.75,1]
-OrientationInterpolator325.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
+OrientationInterpolator325.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator325)
-OrientationInterpolator326 = x3d.OrientationInterpolator(DEF="r_index3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator325)
+OrientationInterpolator326 = x3d.OrientationInterpolator(DEF="r_middle1_RotationInterpolator")
 OrientationInterpolator326.key = [0,0.5,0.75,1]
 OrientationInterpolator326.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator326)
-OrientationInterpolator327 = x3d.OrientationInterpolator(DEF="r_middle0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator326)
+OrientationInterpolator327 = x3d.OrientationInterpolator(DEF="r_middle2_RotationInterpolator")
 OrientationInterpolator327.key = [0,0.5,0.75,1]
-OrientationInterpolator327.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
+OrientationInterpolator327.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator327)
-OrientationInterpolator328 = x3d.OrientationInterpolator(DEF="r_middle1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator327)
+OrientationInterpolator328 = x3d.OrientationInterpolator(DEF="r_middle3_RotationInterpolator")
 OrientationInterpolator328.key = [0,0.5,0.75,1]
 OrientationInterpolator328.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator328)
-OrientationInterpolator329 = x3d.OrientationInterpolator(DEF="r_middle2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator328)
+OrientationInterpolator329 = x3d.OrientationInterpolator(DEF="r_ring0_RotationInterpolator")
 OrientationInterpolator329.key = [0,0.5,0.75,1]
-OrientationInterpolator329.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
+OrientationInterpolator329.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator329)
-OrientationInterpolator330 = x3d.OrientationInterpolator(DEF="r_middle3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator329)
+OrientationInterpolator330 = x3d.OrientationInterpolator(DEF="r_ring1_RotationInterpolator")
 OrientationInterpolator330.key = [0,0.5,0.75,1]
 OrientationInterpolator330.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator330)
-OrientationInterpolator331 = x3d.OrientationInterpolator(DEF="r_ring0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator330)
+OrientationInterpolator331 = x3d.OrientationInterpolator(DEF="r_ring2_RotationInterpolator")
 OrientationInterpolator331.key = [0,0.5,0.75,1]
-OrientationInterpolator331.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
+OrientationInterpolator331.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator331)
-OrientationInterpolator332 = x3d.OrientationInterpolator(DEF="r_ring1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator331)
+OrientationInterpolator332 = x3d.OrientationInterpolator(DEF="r_ring3_RotationInterpolator")
 OrientationInterpolator332.key = [0,0.5,0.75,1]
 OrientationInterpolator332.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator332)
-OrientationInterpolator333 = x3d.OrientationInterpolator(DEF="r_ring2_RotationInterpolator")
+Group240.children.append(OrientationInterpolator332)
+OrientationInterpolator333 = x3d.OrientationInterpolator(DEF="r_pinky0_RotationInterpolator")
 OrientationInterpolator333.key = [0,0.5,0.75,1]
-OrientationInterpolator333.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
+OrientationInterpolator333.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator333)
-OrientationInterpolator334 = x3d.OrientationInterpolator(DEF="r_ring3_RotationInterpolator")
+Group240.children.append(OrientationInterpolator333)
+OrientationInterpolator334 = x3d.OrientationInterpolator(DEF="r_pinky1_RotationInterpolator")
 OrientationInterpolator334.key = [0,0.5,0.75,1]
 OrientationInterpolator334.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator334)
-OrientationInterpolator335 = x3d.OrientationInterpolator(DEF="r_pinky0_RotationInterpolator")
+Group240.children.append(OrientationInterpolator334)
+OrientationInterpolator335 = x3d.OrientationInterpolator(DEF="r_pinky2_RotationInterpolator")
 OrientationInterpolator335.key = [0,0.5,0.75,1]
-OrientationInterpolator335.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1),(0, 0, 1, 0)]
+OrientationInterpolator335.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator335)
-OrientationInterpolator336 = x3d.OrientationInterpolator(DEF="r_pinky1_RotationInterpolator")
+Group240.children.append(OrientationInterpolator335)
+OrientationInterpolator336 = x3d.OrientationInterpolator(DEF="r_pinky3_RotationInterpolator")
 OrientationInterpolator336.key = [0,0.5,0.75,1]
 OrientationInterpolator336.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
 
-Group242.children.append(OrientationInterpolator336)
-OrientationInterpolator337 = x3d.OrientationInterpolator(DEF="r_pinky2_RotationInterpolator")
-OrientationInterpolator337.key = [0,0.5,0.75,1]
-OrientationInterpolator337.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
+Group240.children.append(OrientationInterpolator336)
 
-Group242.children.append(OrientationInterpolator337)
-OrientationInterpolator338 = x3d.OrientationInterpolator(DEF="r_pinky3_RotationInterpolator")
-OrientationInterpolator338.key = [0,0.5,0.75,1]
-OrientationInterpolator338.keyValue = [(0, 0, 1, 0),(0, 0, 1, 0),(0, 0, 1, 1.5),(0, 0, 1, 0)]
-
-Group242.children.append(OrientationInterpolator338)
-
-Scene19.children.append(Group242)
+Scene19.children.append(Group240)
 Scene19.children.append(x3d.Comment("""TimeSensor to Interpolators"""))
+ROUTE337 = x3d.ROUTE()
+ROUTE337.fromField = "fraction_changed"
+ROUTE337.fromNode = "KickTimer"
+ROUTE337.toField = "set_fraction"
+ROUTE337.toNode = "HumanoidRoot_RotationInterpolator"
+
+Scene19.children.append(ROUTE337)
+ROUTE338 = x3d.ROUTE()
+ROUTE338.fromField = "fraction_changed"
+ROUTE338.fromNode = "KickTimer"
+ROUTE338.toField = "set_fraction"
+ROUTE338.toNode = "HumanoidRoot_TranslationInterpolator"
+
+Scene19.children.append(ROUTE338)
 ROUTE339 = x3d.ROUTE()
 ROUTE339.fromField = "fraction_changed"
 ROUTE339.fromNode = "KickTimer"
 ROUTE339.toField = "set_fraction"
-ROUTE339.toNode = "HumanoidRoot_RotationInterpolator"
+ROUTE339.toNode = "sacroiliac_RotationInterpolator"
 
 Scene19.children.append(ROUTE339)
 ROUTE340 = x3d.ROUTE()
 ROUTE340.fromField = "fraction_changed"
 ROUTE340.fromNode = "KickTimer"
 ROUTE340.toField = "set_fraction"
-ROUTE340.toNode = "HumanoidRoot_TranslationInterpolator"
+ROUTE340.toNode = "l_hip_RotationInterpolator"
 
 Scene19.children.append(ROUTE340)
 ROUTE341 = x3d.ROUTE()
 ROUTE341.fromField = "fraction_changed"
 ROUTE341.fromNode = "KickTimer"
 ROUTE341.toField = "set_fraction"
-ROUTE341.toNode = "sacroiliac_RotationInterpolator"
+ROUTE341.toNode = "l_knee_RotationInterpolator"
 
 Scene19.children.append(ROUTE341)
 ROUTE342 = x3d.ROUTE()
 ROUTE342.fromField = "fraction_changed"
 ROUTE342.fromNode = "KickTimer"
 ROUTE342.toField = "set_fraction"
-ROUTE342.toNode = "l_hip_RotationInterpolator"
+ROUTE342.toNode = "l_ankle_RotationInterpolator"
 
 Scene19.children.append(ROUTE342)
 ROUTE343 = x3d.ROUTE()
 ROUTE343.fromField = "fraction_changed"
 ROUTE343.fromNode = "KickTimer"
 ROUTE343.toField = "set_fraction"
-ROUTE343.toNode = "l_knee_RotationInterpolator"
+ROUTE343.toNode = "l_subtalar_RotationInterpolator"
 
 Scene19.children.append(ROUTE343)
 ROUTE344 = x3d.ROUTE()
 ROUTE344.fromField = "fraction_changed"
 ROUTE344.fromNode = "KickTimer"
 ROUTE344.toField = "set_fraction"
-ROUTE344.toNode = "l_ankle_RotationInterpolator"
+ROUTE344.toNode = "l_midtarsal_RotationInterpolator"
 
 Scene19.children.append(ROUTE344)
 ROUTE345 = x3d.ROUTE()
 ROUTE345.fromField = "fraction_changed"
 ROUTE345.fromNode = "KickTimer"
 ROUTE345.toField = "set_fraction"
-ROUTE345.toNode = "l_subtalar_RotationInterpolator"
+ROUTE345.toNode = "l_metatarsal_RotationInterpolator"
 
 Scene19.children.append(ROUTE345)
 ROUTE346 = x3d.ROUTE()
 ROUTE346.fromField = "fraction_changed"
 ROUTE346.fromNode = "KickTimer"
 ROUTE346.toField = "set_fraction"
-ROUTE346.toNode = "l_midtarsal_RotationInterpolator"
+ROUTE346.toNode = "r_hip_RotationInterpolator"
 
 Scene19.children.append(ROUTE346)
 ROUTE347 = x3d.ROUTE()
 ROUTE347.fromField = "fraction_changed"
 ROUTE347.fromNode = "KickTimer"
 ROUTE347.toField = "set_fraction"
-ROUTE347.toNode = "l_metatarsal_RotationInterpolator"
+ROUTE347.toNode = "r_knee_RotationInterpolator"
 
 Scene19.children.append(ROUTE347)
 ROUTE348 = x3d.ROUTE()
 ROUTE348.fromField = "fraction_changed"
 ROUTE348.fromNode = "KickTimer"
 ROUTE348.toField = "set_fraction"
-ROUTE348.toNode = "r_hip_RotationInterpolator"
+ROUTE348.toNode = "r_ankle_RotationInterpolator"
 
 Scene19.children.append(ROUTE348)
 ROUTE349 = x3d.ROUTE()
 ROUTE349.fromField = "fraction_changed"
 ROUTE349.fromNode = "KickTimer"
 ROUTE349.toField = "set_fraction"
-ROUTE349.toNode = "r_knee_RotationInterpolator"
+ROUTE349.toNode = "r_subtalar_RotationInterpolator"
 
 Scene19.children.append(ROUTE349)
 ROUTE350 = x3d.ROUTE()
 ROUTE350.fromField = "fraction_changed"
 ROUTE350.fromNode = "KickTimer"
 ROUTE350.toField = "set_fraction"
-ROUTE350.toNode = "r_ankle_RotationInterpolator"
+ROUTE350.toNode = "r_midtarsal_RotationInterpolator"
 
 Scene19.children.append(ROUTE350)
 ROUTE351 = x3d.ROUTE()
 ROUTE351.fromField = "fraction_changed"
 ROUTE351.fromNode = "KickTimer"
 ROUTE351.toField = "set_fraction"
-ROUTE351.toNode = "r_subtalar_RotationInterpolator"
+ROUTE351.toNode = "r_metatarsal_RotationInterpolator"
 
 Scene19.children.append(ROUTE351)
 ROUTE352 = x3d.ROUTE()
 ROUTE352.fromField = "fraction_changed"
 ROUTE352.fromNode = "KickTimer"
 ROUTE352.toField = "set_fraction"
-ROUTE352.toNode = "r_midtarsal_RotationInterpolator"
+ROUTE352.toNode = "vl5_RotationInterpolator"
 
 Scene19.children.append(ROUTE352)
 ROUTE353 = x3d.ROUTE()
 ROUTE353.fromField = "fraction_changed"
 ROUTE353.fromNode = "KickTimer"
 ROUTE353.toField = "set_fraction"
-ROUTE353.toNode = "r_metatarsal_RotationInterpolator"
+ROUTE353.toNode = "vl4_RotationInterpolator"
 
 Scene19.children.append(ROUTE353)
 ROUTE354 = x3d.ROUTE()
 ROUTE354.fromField = "fraction_changed"
 ROUTE354.fromNode = "KickTimer"
 ROUTE354.toField = "set_fraction"
-ROUTE354.toNode = "vl5_RotationInterpolator"
+ROUTE354.toNode = "vl3_RotationInterpolator"
 
 Scene19.children.append(ROUTE354)
 ROUTE355 = x3d.ROUTE()
 ROUTE355.fromField = "fraction_changed"
 ROUTE355.fromNode = "KickTimer"
 ROUTE355.toField = "set_fraction"
-ROUTE355.toNode = "vl4_RotationInterpolator"
+ROUTE355.toNode = "vl2_RotationInterpolator"
 
 Scene19.children.append(ROUTE355)
 ROUTE356 = x3d.ROUTE()
 ROUTE356.fromField = "fraction_changed"
 ROUTE356.fromNode = "KickTimer"
 ROUTE356.toField = "set_fraction"
-ROUTE356.toNode = "vl3_RotationInterpolator"
+ROUTE356.toNode = "vl1_RotationInterpolator"
 
 Scene19.children.append(ROUTE356)
 ROUTE357 = x3d.ROUTE()
 ROUTE357.fromField = "fraction_changed"
 ROUTE357.fromNode = "KickTimer"
 ROUTE357.toField = "set_fraction"
-ROUTE357.toNode = "vl2_RotationInterpolator"
+ROUTE357.toNode = "vt12_RotationInterpolator"
 
 Scene19.children.append(ROUTE357)
 ROUTE358 = x3d.ROUTE()
 ROUTE358.fromField = "fraction_changed"
 ROUTE358.fromNode = "KickTimer"
 ROUTE358.toField = "set_fraction"
-ROUTE358.toNode = "vl1_RotationInterpolator"
+ROUTE358.toNode = "vt11_RotationInterpolator"
 
 Scene19.children.append(ROUTE358)
 ROUTE359 = x3d.ROUTE()
 ROUTE359.fromField = "fraction_changed"
 ROUTE359.fromNode = "KickTimer"
 ROUTE359.toField = "set_fraction"
-ROUTE359.toNode = "vt12_RotationInterpolator"
+ROUTE359.toNode = "vt10_RotationInterpolator"
 
 Scene19.children.append(ROUTE359)
 ROUTE360 = x3d.ROUTE()
 ROUTE360.fromField = "fraction_changed"
 ROUTE360.fromNode = "KickTimer"
 ROUTE360.toField = "set_fraction"
-ROUTE360.toNode = "vt11_RotationInterpolator"
+ROUTE360.toNode = "vt9_RotationInterpolator"
 
 Scene19.children.append(ROUTE360)
 ROUTE361 = x3d.ROUTE()
 ROUTE361.fromField = "fraction_changed"
 ROUTE361.fromNode = "KickTimer"
 ROUTE361.toField = "set_fraction"
-ROUTE361.toNode = "vt10_RotationInterpolator"
+ROUTE361.toNode = "vt8_RotationInterpolator"
 
 Scene19.children.append(ROUTE361)
 ROUTE362 = x3d.ROUTE()
 ROUTE362.fromField = "fraction_changed"
 ROUTE362.fromNode = "KickTimer"
 ROUTE362.toField = "set_fraction"
-ROUTE362.toNode = "vt9_RotationInterpolator"
+ROUTE362.toNode = "vt7_RotationInterpolator"
 
 Scene19.children.append(ROUTE362)
 ROUTE363 = x3d.ROUTE()
 ROUTE363.fromField = "fraction_changed"
 ROUTE363.fromNode = "KickTimer"
 ROUTE363.toField = "set_fraction"
-ROUTE363.toNode = "vt8_RotationInterpolator"
+ROUTE363.toNode = "vt6_RotationInterpolator"
 
 Scene19.children.append(ROUTE363)
 ROUTE364 = x3d.ROUTE()
 ROUTE364.fromField = "fraction_changed"
 ROUTE364.fromNode = "KickTimer"
 ROUTE364.toField = "set_fraction"
-ROUTE364.toNode = "vt7_RotationInterpolator"
+ROUTE364.toNode = "vt5_RotationInterpolator"
 
 Scene19.children.append(ROUTE364)
 ROUTE365 = x3d.ROUTE()
 ROUTE365.fromField = "fraction_changed"
 ROUTE365.fromNode = "KickTimer"
 ROUTE365.toField = "set_fraction"
-ROUTE365.toNode = "vt6_RotationInterpolator"
+ROUTE365.toNode = "vt4_RotationInterpolator"
 
 Scene19.children.append(ROUTE365)
 ROUTE366 = x3d.ROUTE()
 ROUTE366.fromField = "fraction_changed"
 ROUTE366.fromNode = "KickTimer"
 ROUTE366.toField = "set_fraction"
-ROUTE366.toNode = "vt5_RotationInterpolator"
+ROUTE366.toNode = "vt3_RotationInterpolator"
 
 Scene19.children.append(ROUTE366)
 ROUTE367 = x3d.ROUTE()
 ROUTE367.fromField = "fraction_changed"
 ROUTE367.fromNode = "KickTimer"
 ROUTE367.toField = "set_fraction"
-ROUTE367.toNode = "vt4_RotationInterpolator"
+ROUTE367.toNode = "vt2_RotationInterpolator"
 
 Scene19.children.append(ROUTE367)
 ROUTE368 = x3d.ROUTE()
 ROUTE368.fromField = "fraction_changed"
 ROUTE368.fromNode = "KickTimer"
 ROUTE368.toField = "set_fraction"
-ROUTE368.toNode = "vt3_RotationInterpolator"
+ROUTE368.toNode = "vt1_RotationInterpolator"
 
 Scene19.children.append(ROUTE368)
 ROUTE369 = x3d.ROUTE()
 ROUTE369.fromField = "fraction_changed"
 ROUTE369.fromNode = "KickTimer"
 ROUTE369.toField = "set_fraction"
-ROUTE369.toNode = "vt2_RotationInterpolator"
+ROUTE369.toNode = "vc7_RotationInterpolator"
 
 Scene19.children.append(ROUTE369)
 ROUTE370 = x3d.ROUTE()
 ROUTE370.fromField = "fraction_changed"
 ROUTE370.fromNode = "KickTimer"
 ROUTE370.toField = "set_fraction"
-ROUTE370.toNode = "vt1_RotationInterpolator"
+ROUTE370.toNode = "vc6_RotationInterpolator"
 
 Scene19.children.append(ROUTE370)
 ROUTE371 = x3d.ROUTE()
 ROUTE371.fromField = "fraction_changed"
 ROUTE371.fromNode = "KickTimer"
 ROUTE371.toField = "set_fraction"
-ROUTE371.toNode = "vc7_RotationInterpolator"
+ROUTE371.toNode = "vc5_RotationInterpolator"
 
 Scene19.children.append(ROUTE371)
 ROUTE372 = x3d.ROUTE()
 ROUTE372.fromField = "fraction_changed"
 ROUTE372.fromNode = "KickTimer"
 ROUTE372.toField = "set_fraction"
-ROUTE372.toNode = "vc6_RotationInterpolator"
+ROUTE372.toNode = "vc4_RotationInterpolator"
 
 Scene19.children.append(ROUTE372)
 ROUTE373 = x3d.ROUTE()
 ROUTE373.fromField = "fraction_changed"
 ROUTE373.fromNode = "KickTimer"
 ROUTE373.toField = "set_fraction"
-ROUTE373.toNode = "vc5_RotationInterpolator"
+ROUTE373.toNode = "vc3_RotationInterpolator"
 
 Scene19.children.append(ROUTE373)
 ROUTE374 = x3d.ROUTE()
 ROUTE374.fromField = "fraction_changed"
 ROUTE374.fromNode = "KickTimer"
 ROUTE374.toField = "set_fraction"
-ROUTE374.toNode = "vc4_RotationInterpolator"
+ROUTE374.toNode = "vc2_RotationInterpolator"
 
 Scene19.children.append(ROUTE374)
 ROUTE375 = x3d.ROUTE()
 ROUTE375.fromField = "fraction_changed"
 ROUTE375.fromNode = "KickTimer"
 ROUTE375.toField = "set_fraction"
-ROUTE375.toNode = "vc3_RotationInterpolator"
+ROUTE375.toNode = "vc1_RotationInterpolator"
 
 Scene19.children.append(ROUTE375)
 ROUTE376 = x3d.ROUTE()
 ROUTE376.fromField = "fraction_changed"
 ROUTE376.fromNode = "KickTimer"
 ROUTE376.toField = "set_fraction"
-ROUTE376.toNode = "vc2_RotationInterpolator"
+ROUTE376.toNode = "skullbase_RotationInterpolator"
 
 Scene19.children.append(ROUTE376)
 ROUTE377 = x3d.ROUTE()
 ROUTE377.fromField = "fraction_changed"
 ROUTE377.fromNode = "KickTimer"
 ROUTE377.toField = "set_fraction"
-ROUTE377.toNode = "vc1_RotationInterpolator"
+ROUTE377.toNode = "l_eyelid_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE377)
 ROUTE378 = x3d.ROUTE()
 ROUTE378.fromField = "fraction_changed"
 ROUTE378.fromNode = "KickTimer"
 ROUTE378.toField = "set_fraction"
-ROUTE378.toNode = "skullbase_RotationInterpolator"
+ROUTE378.toNode = "l_eyeball_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE378)
 ROUTE379 = x3d.ROUTE()
 ROUTE379.fromField = "fraction_changed"
 ROUTE379.fromNode = "KickTimer"
 ROUTE379.toField = "set_fraction"
-ROUTE379.toNode = "l_eyelid_joint_RotationInterpolator"
+ROUTE379.toNode = "l_eyebrow_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE379)
 ROUTE380 = x3d.ROUTE()
 ROUTE380.fromField = "fraction_changed"
 ROUTE380.fromNode = "KickTimer"
 ROUTE380.toField = "set_fraction"
-ROUTE380.toNode = "l_eyeball_joint_RotationInterpolator"
+ROUTE380.toNode = "r_eyelid_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE380)
 ROUTE381 = x3d.ROUTE()
 ROUTE381.fromField = "fraction_changed"
 ROUTE381.fromNode = "KickTimer"
 ROUTE381.toField = "set_fraction"
-ROUTE381.toNode = "l_eyebrow_joint_RotationInterpolator"
+ROUTE381.toNode = "r_eyeball_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE381)
 ROUTE382 = x3d.ROUTE()
 ROUTE382.fromField = "fraction_changed"
 ROUTE382.fromNode = "KickTimer"
 ROUTE382.toField = "set_fraction"
-ROUTE382.toNode = "r_eyelid_joint_RotationInterpolator"
+ROUTE382.toNode = "r_eyebrow_joint_RotationInterpolator"
 
 Scene19.children.append(ROUTE382)
 ROUTE383 = x3d.ROUTE()
 ROUTE383.fromField = "fraction_changed"
 ROUTE383.fromNode = "KickTimer"
 ROUTE383.toField = "set_fraction"
-ROUTE383.toNode = "r_eyeball_joint_RotationInterpolator"
+ROUTE383.toNode = "temporomandibular_RotationInterpolator"
 
 Scene19.children.append(ROUTE383)
 ROUTE384 = x3d.ROUTE()
 ROUTE384.fromField = "fraction_changed"
 ROUTE384.fromNode = "KickTimer"
 ROUTE384.toField = "set_fraction"
-ROUTE384.toNode = "r_eyebrow_joint_RotationInterpolator"
+ROUTE384.toNode = "l_sternoclavicular_RotationInterpolator"
 
 Scene19.children.append(ROUTE384)
 ROUTE385 = x3d.ROUTE()
 ROUTE385.fromField = "fraction_changed"
 ROUTE385.fromNode = "KickTimer"
 ROUTE385.toField = "set_fraction"
-ROUTE385.toNode = "temporomandibular_RotationInterpolator"
+ROUTE385.toNode = "l_acromioclavicular_RotationInterpolator"
 
 Scene19.children.append(ROUTE385)
 ROUTE386 = x3d.ROUTE()
 ROUTE386.fromField = "fraction_changed"
 ROUTE386.fromNode = "KickTimer"
 ROUTE386.toField = "set_fraction"
-ROUTE386.toNode = "l_sternoclavicular_RotationInterpolator"
+ROUTE386.toNode = "l_shoulder_RotationInterpolator"
 
 Scene19.children.append(ROUTE386)
 ROUTE387 = x3d.ROUTE()
 ROUTE387.fromField = "fraction_changed"
 ROUTE387.fromNode = "KickTimer"
 ROUTE387.toField = "set_fraction"
-ROUTE387.toNode = "l_acromioclavicular_RotationInterpolator"
+ROUTE387.toNode = "l_elbow_RotationInterpolator"
 
 Scene19.children.append(ROUTE387)
 ROUTE388 = x3d.ROUTE()
 ROUTE388.fromField = "fraction_changed"
 ROUTE388.fromNode = "KickTimer"
 ROUTE388.toField = "set_fraction"
-ROUTE388.toNode = "l_shoulder_RotationInterpolator"
+ROUTE388.toNode = "l_wrist_RotationInterpolator"
 
 Scene19.children.append(ROUTE388)
 ROUTE389 = x3d.ROUTE()
 ROUTE389.fromField = "fraction_changed"
 ROUTE389.fromNode = "KickTimer"
 ROUTE389.toField = "set_fraction"
-ROUTE389.toNode = "l_elbow_RotationInterpolator"
+ROUTE389.toNode = "l_thumb1_RotationInterpolator"
 
 Scene19.children.append(ROUTE389)
 ROUTE390 = x3d.ROUTE()
 ROUTE390.fromField = "fraction_changed"
 ROUTE390.fromNode = "KickTimer"
 ROUTE390.toField = "set_fraction"
-ROUTE390.toNode = "l_wrist_RotationInterpolator"
+ROUTE390.toNode = "l_thumb2_RotationInterpolator"
 
 Scene19.children.append(ROUTE390)
 ROUTE391 = x3d.ROUTE()
 ROUTE391.fromField = "fraction_changed"
 ROUTE391.fromNode = "KickTimer"
 ROUTE391.toField = "set_fraction"
-ROUTE391.toNode = "l_thumb1_RotationInterpolator"
+ROUTE391.toNode = "l_thumb3_RotationInterpolator"
 
 Scene19.children.append(ROUTE391)
 ROUTE392 = x3d.ROUTE()
 ROUTE392.fromField = "fraction_changed"
 ROUTE392.fromNode = "KickTimer"
 ROUTE392.toField = "set_fraction"
-ROUTE392.toNode = "l_thumb2_RotationInterpolator"
+ROUTE392.toNode = "l_index0_RotationInterpolator"
 
 Scene19.children.append(ROUTE392)
 ROUTE393 = x3d.ROUTE()
 ROUTE393.fromField = "fraction_changed"
 ROUTE393.fromNode = "KickTimer"
 ROUTE393.toField = "set_fraction"
-ROUTE393.toNode = "l_thumb3_RotationInterpolator"
+ROUTE393.toNode = "l_index1_RotationInterpolator"
 
 Scene19.children.append(ROUTE393)
 ROUTE394 = x3d.ROUTE()
 ROUTE394.fromField = "fraction_changed"
 ROUTE394.fromNode = "KickTimer"
 ROUTE394.toField = "set_fraction"
-ROUTE394.toNode = "l_index0_RotationInterpolator"
+ROUTE394.toNode = "l_index2_RotationInterpolator"
 
 Scene19.children.append(ROUTE394)
 ROUTE395 = x3d.ROUTE()
 ROUTE395.fromField = "fraction_changed"
 ROUTE395.fromNode = "KickTimer"
 ROUTE395.toField = "set_fraction"
-ROUTE395.toNode = "l_index1_RotationInterpolator"
+ROUTE395.toNode = "l_index3_RotationInterpolator"
 
 Scene19.children.append(ROUTE395)
 ROUTE396 = x3d.ROUTE()
 ROUTE396.fromField = "fraction_changed"
 ROUTE396.fromNode = "KickTimer"
 ROUTE396.toField = "set_fraction"
-ROUTE396.toNode = "l_index2_RotationInterpolator"
+ROUTE396.toNode = "l_middle0_RotationInterpolator"
 
 Scene19.children.append(ROUTE396)
 ROUTE397 = x3d.ROUTE()
 ROUTE397.fromField = "fraction_changed"
 ROUTE397.fromNode = "KickTimer"
 ROUTE397.toField = "set_fraction"
-ROUTE397.toNode = "l_index3_RotationInterpolator"
+ROUTE397.toNode = "l_middle1_RotationInterpolator"
 
 Scene19.children.append(ROUTE397)
 ROUTE398 = x3d.ROUTE()
 ROUTE398.fromField = "fraction_changed"
 ROUTE398.fromNode = "KickTimer"
 ROUTE398.toField = "set_fraction"
-ROUTE398.toNode = "l_middle0_RotationInterpolator"
+ROUTE398.toNode = "l_middle2_RotationInterpolator"
 
 Scene19.children.append(ROUTE398)
 ROUTE399 = x3d.ROUTE()
 ROUTE399.fromField = "fraction_changed"
 ROUTE399.fromNode = "KickTimer"
 ROUTE399.toField = "set_fraction"
-ROUTE399.toNode = "l_middle1_RotationInterpolator"
+ROUTE399.toNode = "l_middle3_RotationInterpolator"
 
 Scene19.children.append(ROUTE399)
 ROUTE400 = x3d.ROUTE()
 ROUTE400.fromField = "fraction_changed"
 ROUTE400.fromNode = "KickTimer"
 ROUTE400.toField = "set_fraction"
-ROUTE400.toNode = "l_middle2_RotationInterpolator"
+ROUTE400.toNode = "l_ring0_RotationInterpolator"
 
 Scene19.children.append(ROUTE400)
 ROUTE401 = x3d.ROUTE()
 ROUTE401.fromField = "fraction_changed"
 ROUTE401.fromNode = "KickTimer"
 ROUTE401.toField = "set_fraction"
-ROUTE401.toNode = "l_middle3_RotationInterpolator"
+ROUTE401.toNode = "l_ring1_RotationInterpolator"
 
 Scene19.children.append(ROUTE401)
 ROUTE402 = x3d.ROUTE()
 ROUTE402.fromField = "fraction_changed"
 ROUTE402.fromNode = "KickTimer"
 ROUTE402.toField = "set_fraction"
-ROUTE402.toNode = "l_ring0_RotationInterpolator"
+ROUTE402.toNode = "l_ring2_RotationInterpolator"
 
 Scene19.children.append(ROUTE402)
 ROUTE403 = x3d.ROUTE()
 ROUTE403.fromField = "fraction_changed"
 ROUTE403.fromNode = "KickTimer"
 ROUTE403.toField = "set_fraction"
-ROUTE403.toNode = "l_ring1_RotationInterpolator"
+ROUTE403.toNode = "l_ring3_RotationInterpolator"
 
 Scene19.children.append(ROUTE403)
 ROUTE404 = x3d.ROUTE()
 ROUTE404.fromField = "fraction_changed"
 ROUTE404.fromNode = "KickTimer"
 ROUTE404.toField = "set_fraction"
-ROUTE404.toNode = "l_ring2_RotationInterpolator"
+ROUTE404.toNode = "l_pinky0_RotationInterpolator"
 
 Scene19.children.append(ROUTE404)
 ROUTE405 = x3d.ROUTE()
 ROUTE405.fromField = "fraction_changed"
 ROUTE405.fromNode = "KickTimer"
 ROUTE405.toField = "set_fraction"
-ROUTE405.toNode = "l_ring3_RotationInterpolator"
+ROUTE405.toNode = "l_pinky1_RotationInterpolator"
 
 Scene19.children.append(ROUTE405)
 ROUTE406 = x3d.ROUTE()
 ROUTE406.fromField = "fraction_changed"
 ROUTE406.fromNode = "KickTimer"
 ROUTE406.toField = "set_fraction"
-ROUTE406.toNode = "l_pinky0_RotationInterpolator"
+ROUTE406.toNode = "l_pinky2_RotationInterpolator"
 
 Scene19.children.append(ROUTE406)
 ROUTE407 = x3d.ROUTE()
 ROUTE407.fromField = "fraction_changed"
 ROUTE407.fromNode = "KickTimer"
 ROUTE407.toField = "set_fraction"
-ROUTE407.toNode = "l_pinky1_RotationInterpolator"
+ROUTE407.toNode = "l_pinky3_RotationInterpolator"
 
 Scene19.children.append(ROUTE407)
 ROUTE408 = x3d.ROUTE()
 ROUTE408.fromField = "fraction_changed"
 ROUTE408.fromNode = "KickTimer"
 ROUTE408.toField = "set_fraction"
-ROUTE408.toNode = "l_pinky2_RotationInterpolator"
+ROUTE408.toNode = "r_sternoclavicular_RotationInterpolator"
 
 Scene19.children.append(ROUTE408)
 ROUTE409 = x3d.ROUTE()
 ROUTE409.fromField = "fraction_changed"
 ROUTE409.fromNode = "KickTimer"
 ROUTE409.toField = "set_fraction"
-ROUTE409.toNode = "l_pinky3_RotationInterpolator"
+ROUTE409.toNode = "r_acromioclavicular_RotationInterpolator"
 
 Scene19.children.append(ROUTE409)
 ROUTE410 = x3d.ROUTE()
 ROUTE410.fromField = "fraction_changed"
 ROUTE410.fromNode = "KickTimer"
 ROUTE410.toField = "set_fraction"
-ROUTE410.toNode = "r_sternoclavicular_RotationInterpolator"
+ROUTE410.toNode = "r_shoulder_RotationInterpolator"
 
 Scene19.children.append(ROUTE410)
 ROUTE411 = x3d.ROUTE()
 ROUTE411.fromField = "fraction_changed"
 ROUTE411.fromNode = "KickTimer"
 ROUTE411.toField = "set_fraction"
-ROUTE411.toNode = "r_acromioclavicular_RotationInterpolator"
+ROUTE411.toNode = "r_elbow_RotationInterpolator"
 
 Scene19.children.append(ROUTE411)
 ROUTE412 = x3d.ROUTE()
 ROUTE412.fromField = "fraction_changed"
 ROUTE412.fromNode = "KickTimer"
 ROUTE412.toField = "set_fraction"
-ROUTE412.toNode = "r_shoulder_RotationInterpolator"
+ROUTE412.toNode = "r_wrist_RotationInterpolator"
 
 Scene19.children.append(ROUTE412)
 ROUTE413 = x3d.ROUTE()
 ROUTE413.fromField = "fraction_changed"
 ROUTE413.fromNode = "KickTimer"
 ROUTE413.toField = "set_fraction"
-ROUTE413.toNode = "r_elbow_RotationInterpolator"
+ROUTE413.toNode = "r_thumb1_RotationInterpolator"
 
 Scene19.children.append(ROUTE413)
 ROUTE414 = x3d.ROUTE()
 ROUTE414.fromField = "fraction_changed"
 ROUTE414.fromNode = "KickTimer"
 ROUTE414.toField = "set_fraction"
-ROUTE414.toNode = "r_wrist_RotationInterpolator"
+ROUTE414.toNode = "r_thumb2_RotationInterpolator"
 
 Scene19.children.append(ROUTE414)
 ROUTE415 = x3d.ROUTE()
 ROUTE415.fromField = "fraction_changed"
 ROUTE415.fromNode = "KickTimer"
 ROUTE415.toField = "set_fraction"
-ROUTE415.toNode = "r_thumb1_RotationInterpolator"
+ROUTE415.toNode = "r_thumb3_RotationInterpolator"
 
 Scene19.children.append(ROUTE415)
 ROUTE416 = x3d.ROUTE()
 ROUTE416.fromField = "fraction_changed"
 ROUTE416.fromNode = "KickTimer"
 ROUTE416.toField = "set_fraction"
-ROUTE416.toNode = "r_thumb2_RotationInterpolator"
+ROUTE416.toNode = "r_index0_RotationInterpolator"
 
 Scene19.children.append(ROUTE416)
 ROUTE417 = x3d.ROUTE()
 ROUTE417.fromField = "fraction_changed"
 ROUTE417.fromNode = "KickTimer"
 ROUTE417.toField = "set_fraction"
-ROUTE417.toNode = "r_thumb3_RotationInterpolator"
+ROUTE417.toNode = "r_index1_RotationInterpolator"
 
 Scene19.children.append(ROUTE417)
 ROUTE418 = x3d.ROUTE()
 ROUTE418.fromField = "fraction_changed"
 ROUTE418.fromNode = "KickTimer"
 ROUTE418.toField = "set_fraction"
-ROUTE418.toNode = "r_index0_RotationInterpolator"
+ROUTE418.toNode = "r_index2_RotationInterpolator"
 
 Scene19.children.append(ROUTE418)
 ROUTE419 = x3d.ROUTE()
 ROUTE419.fromField = "fraction_changed"
 ROUTE419.fromNode = "KickTimer"
 ROUTE419.toField = "set_fraction"
-ROUTE419.toNode = "r_index1_RotationInterpolator"
+ROUTE419.toNode = "r_index3_RotationInterpolator"
 
 Scene19.children.append(ROUTE419)
 ROUTE420 = x3d.ROUTE()
 ROUTE420.fromField = "fraction_changed"
 ROUTE420.fromNode = "KickTimer"
 ROUTE420.toField = "set_fraction"
-ROUTE420.toNode = "r_index2_RotationInterpolator"
+ROUTE420.toNode = "r_middle0_RotationInterpolator"
 
 Scene19.children.append(ROUTE420)
 ROUTE421 = x3d.ROUTE()
 ROUTE421.fromField = "fraction_changed"
 ROUTE421.fromNode = "KickTimer"
 ROUTE421.toField = "set_fraction"
-ROUTE421.toNode = "r_index3_RotationInterpolator"
+ROUTE421.toNode = "r_middle1_RotationInterpolator"
 
 Scene19.children.append(ROUTE421)
 ROUTE422 = x3d.ROUTE()
 ROUTE422.fromField = "fraction_changed"
 ROUTE422.fromNode = "KickTimer"
 ROUTE422.toField = "set_fraction"
-ROUTE422.toNode = "r_middle0_RotationInterpolator"
+ROUTE422.toNode = "r_middle2_RotationInterpolator"
 
 Scene19.children.append(ROUTE422)
 ROUTE423 = x3d.ROUTE()
 ROUTE423.fromField = "fraction_changed"
 ROUTE423.fromNode = "KickTimer"
 ROUTE423.toField = "set_fraction"
-ROUTE423.toNode = "r_middle1_RotationInterpolator"
+ROUTE423.toNode = "r_middle3_RotationInterpolator"
 
 Scene19.children.append(ROUTE423)
 ROUTE424 = x3d.ROUTE()
 ROUTE424.fromField = "fraction_changed"
 ROUTE424.fromNode = "KickTimer"
 ROUTE424.toField = "set_fraction"
-ROUTE424.toNode = "r_middle2_RotationInterpolator"
+ROUTE424.toNode = "r_ring0_RotationInterpolator"
 
 Scene19.children.append(ROUTE424)
 ROUTE425 = x3d.ROUTE()
 ROUTE425.fromField = "fraction_changed"
 ROUTE425.fromNode = "KickTimer"
 ROUTE425.toField = "set_fraction"
-ROUTE425.toNode = "r_middle3_RotationInterpolator"
+ROUTE425.toNode = "r_ring1_RotationInterpolator"
 
 Scene19.children.append(ROUTE425)
 ROUTE426 = x3d.ROUTE()
 ROUTE426.fromField = "fraction_changed"
 ROUTE426.fromNode = "KickTimer"
 ROUTE426.toField = "set_fraction"
-ROUTE426.toNode = "r_ring0_RotationInterpolator"
+ROUTE426.toNode = "r_ring2_RotationInterpolator"
 
 Scene19.children.append(ROUTE426)
 ROUTE427 = x3d.ROUTE()
 ROUTE427.fromField = "fraction_changed"
 ROUTE427.fromNode = "KickTimer"
 ROUTE427.toField = "set_fraction"
-ROUTE427.toNode = "r_ring1_RotationInterpolator"
+ROUTE427.toNode = "r_ring3_RotationInterpolator"
 
 Scene19.children.append(ROUTE427)
 ROUTE428 = x3d.ROUTE()
 ROUTE428.fromField = "fraction_changed"
 ROUTE428.fromNode = "KickTimer"
 ROUTE428.toField = "set_fraction"
-ROUTE428.toNode = "r_ring2_RotationInterpolator"
+ROUTE428.toNode = "r_pinky0_RotationInterpolator"
 
 Scene19.children.append(ROUTE428)
 ROUTE429 = x3d.ROUTE()
 ROUTE429.fromField = "fraction_changed"
 ROUTE429.fromNode = "KickTimer"
 ROUTE429.toField = "set_fraction"
-ROUTE429.toNode = "r_ring3_RotationInterpolator"
+ROUTE429.toNode = "r_pinky1_RotationInterpolator"
 
 Scene19.children.append(ROUTE429)
 ROUTE430 = x3d.ROUTE()
 ROUTE430.fromField = "fraction_changed"
 ROUTE430.fromNode = "KickTimer"
 ROUTE430.toField = "set_fraction"
-ROUTE430.toNode = "r_pinky0_RotationInterpolator"
+ROUTE430.toNode = "r_pinky2_RotationInterpolator"
 
 Scene19.children.append(ROUTE430)
 ROUTE431 = x3d.ROUTE()
 ROUTE431.fromField = "fraction_changed"
 ROUTE431.fromNode = "KickTimer"
 ROUTE431.toField = "set_fraction"
-ROUTE431.toNode = "r_pinky1_RotationInterpolator"
+ROUTE431.toNode = "r_pinky3_RotationInterpolator"
 
 Scene19.children.append(ROUTE431)
+Scene19.children.append(x3d.Comment("""Routes from Interpolators to Joe_ model Joints"""))
 ROUTE432 = x3d.ROUTE()
-ROUTE432.fromField = "fraction_changed"
-ROUTE432.fromNode = "KickTimer"
-ROUTE432.toField = "set_fraction"
-ROUTE432.toNode = "r_pinky2_RotationInterpolator"
+ROUTE432.fromField = "value_changed"
+ROUTE432.fromNode = "HumanoidRoot_RotationInterpolator"
+ROUTE432.toField = "set_rotation"
+ROUTE432.toNode = "Joe_HumanoidRoot"
 
 Scene19.children.append(ROUTE432)
 ROUTE433 = x3d.ROUTE()
-ROUTE433.fromField = "fraction_changed"
-ROUTE433.fromNode = "KickTimer"
-ROUTE433.toField = "set_fraction"
-ROUTE433.toNode = "r_pinky3_RotationInterpolator"
+ROUTE433.fromField = "value_changed"
+ROUTE433.fromNode = "HumanoidRoot_TranslationInterpolator"
+ROUTE433.toField = "set_translation"
+ROUTE433.toNode = "Joe_HumanoidRoot"
 
 Scene19.children.append(ROUTE433)
-Scene19.children.append(x3d.Comment("""Routes from Interpolators to Joe_ model Joints"""))
 ROUTE434 = x3d.ROUTE()
 ROUTE434.fromField = "value_changed"
-ROUTE434.fromNode = "HumanoidRoot_RotationInterpolator"
+ROUTE434.fromNode = "sacroiliac_RotationInterpolator"
 ROUTE434.toField = "set_rotation"
-ROUTE434.toNode = "Joe_HumanoidRoot"
+ROUTE434.toNode = "Joe_sacroiliac"
 
 Scene19.children.append(ROUTE434)
 ROUTE435 = x3d.ROUTE()
 ROUTE435.fromField = "value_changed"
-ROUTE435.fromNode = "HumanoidRoot_TranslationInterpolator"
-ROUTE435.toField = "set_translation"
-ROUTE435.toNode = "Joe_HumanoidRoot"
+ROUTE435.fromNode = "l_hip_RotationInterpolator"
+ROUTE435.toField = "set_rotation"
+ROUTE435.toNode = "Joe_l_hip"
 
 Scene19.children.append(ROUTE435)
 ROUTE436 = x3d.ROUTE()
 ROUTE436.fromField = "value_changed"
-ROUTE436.fromNode = "sacroiliac_RotationInterpolator"
+ROUTE436.fromNode = "l_knee_RotationInterpolator"
 ROUTE436.toField = "set_rotation"
-ROUTE436.toNode = "Joe_sacroiliac"
+ROUTE436.toNode = "Joe_l_knee"
 
 Scene19.children.append(ROUTE436)
 ROUTE437 = x3d.ROUTE()
 ROUTE437.fromField = "value_changed"
-ROUTE437.fromNode = "l_hip_RotationInterpolator"
+ROUTE437.fromNode = "l_ankle_RotationInterpolator"
 ROUTE437.toField = "set_rotation"
-ROUTE437.toNode = "Joe_l_hip"
+ROUTE437.toNode = "Joe_l_ankle"
 
 Scene19.children.append(ROUTE437)
 ROUTE438 = x3d.ROUTE()
 ROUTE438.fromField = "value_changed"
-ROUTE438.fromNode = "l_knee_RotationInterpolator"
+ROUTE438.fromNode = "l_subtalar_RotationInterpolator"
 ROUTE438.toField = "set_rotation"
-ROUTE438.toNode = "Joe_l_knee"
+ROUTE438.toNode = "Joe_l_subtalar"
 
 Scene19.children.append(ROUTE438)
 ROUTE439 = x3d.ROUTE()
 ROUTE439.fromField = "value_changed"
-ROUTE439.fromNode = "l_ankle_RotationInterpolator"
+ROUTE439.fromNode = "l_midtarsal_RotationInterpolator"
 ROUTE439.toField = "set_rotation"
-ROUTE439.toNode = "Joe_l_ankle"
+ROUTE439.toNode = "Joe_l_midtarsal"
 
 Scene19.children.append(ROUTE439)
 ROUTE440 = x3d.ROUTE()
 ROUTE440.fromField = "value_changed"
-ROUTE440.fromNode = "l_subtalar_RotationInterpolator"
+ROUTE440.fromNode = "l_metatarsal_RotationInterpolator"
 ROUTE440.toField = "set_rotation"
-ROUTE440.toNode = "Joe_l_subtalar"
+ROUTE440.toNode = "Joe_l_metatarsal"
 
 Scene19.children.append(ROUTE440)
 ROUTE441 = x3d.ROUTE()
 ROUTE441.fromField = "value_changed"
-ROUTE441.fromNode = "l_midtarsal_RotationInterpolator"
+ROUTE441.fromNode = "r_hip_RotationInterpolator"
 ROUTE441.toField = "set_rotation"
-ROUTE441.toNode = "Joe_l_midtarsal"
+ROUTE441.toNode = "Joe_r_hip"
 
 Scene19.children.append(ROUTE441)
 ROUTE442 = x3d.ROUTE()
 ROUTE442.fromField = "value_changed"
-ROUTE442.fromNode = "l_metatarsal_RotationInterpolator"
+ROUTE442.fromNode = "r_knee_RotationInterpolator"
 ROUTE442.toField = "set_rotation"
-ROUTE442.toNode = "Joe_l_metatarsal"
+ROUTE442.toNode = "Joe_r_knee"
 
 Scene19.children.append(ROUTE442)
 ROUTE443 = x3d.ROUTE()
 ROUTE443.fromField = "value_changed"
-ROUTE443.fromNode = "r_hip_RotationInterpolator"
+ROUTE443.fromNode = "r_ankle_RotationInterpolator"
 ROUTE443.toField = "set_rotation"
-ROUTE443.toNode = "Joe_r_hip"
+ROUTE443.toNode = "Joe_r_ankle"
 
 Scene19.children.append(ROUTE443)
 ROUTE444 = x3d.ROUTE()
 ROUTE444.fromField = "value_changed"
-ROUTE444.fromNode = "r_knee_RotationInterpolator"
+ROUTE444.fromNode = "r_subtalar_RotationInterpolator"
 ROUTE444.toField = "set_rotation"
-ROUTE444.toNode = "Joe_r_knee"
+ROUTE444.toNode = "Joe_r_subtalar"
 
 Scene19.children.append(ROUTE444)
 ROUTE445 = x3d.ROUTE()
 ROUTE445.fromField = "value_changed"
-ROUTE445.fromNode = "r_ankle_RotationInterpolator"
+ROUTE445.fromNode = "r_midtarsal_RotationInterpolator"
 ROUTE445.toField = "set_rotation"
-ROUTE445.toNode = "Joe_r_ankle"
+ROUTE445.toNode = "Joe_r_midtarsal"
 
 Scene19.children.append(ROUTE445)
 ROUTE446 = x3d.ROUTE()
 ROUTE446.fromField = "value_changed"
-ROUTE446.fromNode = "r_subtalar_RotationInterpolator"
+ROUTE446.fromNode = "r_metatarsal_RotationInterpolator"
 ROUTE446.toField = "set_rotation"
-ROUTE446.toNode = "Joe_r_subtalar"
+ROUTE446.toNode = "Joe_r_metatarsal"
 
 Scene19.children.append(ROUTE446)
 ROUTE447 = x3d.ROUTE()
 ROUTE447.fromField = "value_changed"
-ROUTE447.fromNode = "r_midtarsal_RotationInterpolator"
+ROUTE447.fromNode = "vl5_RotationInterpolator"
 ROUTE447.toField = "set_rotation"
-ROUTE447.toNode = "Joe_r_midtarsal"
+ROUTE447.toNode = "Joe_vl5"
 
 Scene19.children.append(ROUTE447)
 ROUTE448 = x3d.ROUTE()
 ROUTE448.fromField = "value_changed"
-ROUTE448.fromNode = "r_metatarsal_RotationInterpolator"
+ROUTE448.fromNode = "vl4_RotationInterpolator"
 ROUTE448.toField = "set_rotation"
-ROUTE448.toNode = "Joe_r_metatarsal"
+ROUTE448.toNode = "Joe_vl4"
 
 Scene19.children.append(ROUTE448)
 ROUTE449 = x3d.ROUTE()
 ROUTE449.fromField = "value_changed"
-ROUTE449.fromNode = "vl5_RotationInterpolator"
+ROUTE449.fromNode = "vl3_RotationInterpolator"
 ROUTE449.toField = "set_rotation"
-ROUTE449.toNode = "Joe_vl5"
+ROUTE449.toNode = "Joe_vl3"
 
 Scene19.children.append(ROUTE449)
 ROUTE450 = x3d.ROUTE()
 ROUTE450.fromField = "value_changed"
-ROUTE450.fromNode = "vl4_RotationInterpolator"
+ROUTE450.fromNode = "vl2_RotationInterpolator"
 ROUTE450.toField = "set_rotation"
-ROUTE450.toNode = "Joe_vl4"
+ROUTE450.toNode = "Joe_vl2"
 
 Scene19.children.append(ROUTE450)
 ROUTE451 = x3d.ROUTE()
 ROUTE451.fromField = "value_changed"
-ROUTE451.fromNode = "vl3_RotationInterpolator"
+ROUTE451.fromNode = "vl1_RotationInterpolator"
 ROUTE451.toField = "set_rotation"
-ROUTE451.toNode = "Joe_vl3"
+ROUTE451.toNode = "Joe_vl1"
 
 Scene19.children.append(ROUTE451)
 ROUTE452 = x3d.ROUTE()
 ROUTE452.fromField = "value_changed"
-ROUTE452.fromNode = "vl2_RotationInterpolator"
+ROUTE452.fromNode = "vt12_RotationInterpolator"
 ROUTE452.toField = "set_rotation"
-ROUTE452.toNode = "Joe_vl2"
+ROUTE452.toNode = "Joe_vt12"
 
 Scene19.children.append(ROUTE452)
 ROUTE453 = x3d.ROUTE()
 ROUTE453.fromField = "value_changed"
-ROUTE453.fromNode = "vl1_RotationInterpolator"
+ROUTE453.fromNode = "vt11_RotationInterpolator"
 ROUTE453.toField = "set_rotation"
-ROUTE453.toNode = "Joe_vl1"
+ROUTE453.toNode = "Joe_vt11"
 
 Scene19.children.append(ROUTE453)
 ROUTE454 = x3d.ROUTE()
 ROUTE454.fromField = "value_changed"
-ROUTE454.fromNode = "vt12_RotationInterpolator"
+ROUTE454.fromNode = "vt10_RotationInterpolator"
 ROUTE454.toField = "set_rotation"
-ROUTE454.toNode = "Joe_vt12"
+ROUTE454.toNode = "Joe_vt10"
 
 Scene19.children.append(ROUTE454)
 ROUTE455 = x3d.ROUTE()
 ROUTE455.fromField = "value_changed"
-ROUTE455.fromNode = "vt11_RotationInterpolator"
+ROUTE455.fromNode = "vt9_RotationInterpolator"
 ROUTE455.toField = "set_rotation"
-ROUTE455.toNode = "Joe_vt11"
+ROUTE455.toNode = "Joe_vt9"
 
 Scene19.children.append(ROUTE455)
 ROUTE456 = x3d.ROUTE()
 ROUTE456.fromField = "value_changed"
-ROUTE456.fromNode = "vt10_RotationInterpolator"
+ROUTE456.fromNode = "vt8_RotationInterpolator"
 ROUTE456.toField = "set_rotation"
-ROUTE456.toNode = "Joe_vt10"
+ROUTE456.toNode = "Joe_vt8"
 
 Scene19.children.append(ROUTE456)
 ROUTE457 = x3d.ROUTE()
 ROUTE457.fromField = "value_changed"
-ROUTE457.fromNode = "vt9_RotationInterpolator"
+ROUTE457.fromNode = "vt7_RotationInterpolator"
 ROUTE457.toField = "set_rotation"
-ROUTE457.toNode = "Joe_vt9"
+ROUTE457.toNode = "Joe_vt7"
 
 Scene19.children.append(ROUTE457)
 ROUTE458 = x3d.ROUTE()
 ROUTE458.fromField = "value_changed"
-ROUTE458.fromNode = "vt8_RotationInterpolator"
+ROUTE458.fromNode = "vt6_RotationInterpolator"
 ROUTE458.toField = "set_rotation"
-ROUTE458.toNode = "Joe_vt8"
+ROUTE458.toNode = "Joe_vt6"
 
 Scene19.children.append(ROUTE458)
 ROUTE459 = x3d.ROUTE()
 ROUTE459.fromField = "value_changed"
-ROUTE459.fromNode = "vt7_RotationInterpolator"
+ROUTE459.fromNode = "vt5_RotationInterpolator"
 ROUTE459.toField = "set_rotation"
-ROUTE459.toNode = "Joe_vt7"
+ROUTE459.toNode = "Joe_vt5"
 
 Scene19.children.append(ROUTE459)
 ROUTE460 = x3d.ROUTE()
 ROUTE460.fromField = "value_changed"
-ROUTE460.fromNode = "vt6_RotationInterpolator"
+ROUTE460.fromNode = "vt4_RotationInterpolator"
 ROUTE460.toField = "set_rotation"
-ROUTE460.toNode = "Joe_vt6"
+ROUTE460.toNode = "Joe_vt4"
 
 Scene19.children.append(ROUTE460)
 ROUTE461 = x3d.ROUTE()
 ROUTE461.fromField = "value_changed"
-ROUTE461.fromNode = "vt5_RotationInterpolator"
+ROUTE461.fromNode = "vt3_RotationInterpolator"
 ROUTE461.toField = "set_rotation"
-ROUTE461.toNode = "Joe_vt5"
+ROUTE461.toNode = "Joe_vt3"
 
 Scene19.children.append(ROUTE461)
 ROUTE462 = x3d.ROUTE()
 ROUTE462.fromField = "value_changed"
-ROUTE462.fromNode = "vt4_RotationInterpolator"
+ROUTE462.fromNode = "vt2_RotationInterpolator"
 ROUTE462.toField = "set_rotation"
-ROUTE462.toNode = "Joe_vt4"
+ROUTE462.toNode = "Joe_vt2"
 
 Scene19.children.append(ROUTE462)
 ROUTE463 = x3d.ROUTE()
 ROUTE463.fromField = "value_changed"
-ROUTE463.fromNode = "vt3_RotationInterpolator"
+ROUTE463.fromNode = "vt1_RotationInterpolator"
 ROUTE463.toField = "set_rotation"
-ROUTE463.toNode = "Joe_vt3"
+ROUTE463.toNode = "Joe_vt1"
 
 Scene19.children.append(ROUTE463)
 ROUTE464 = x3d.ROUTE()
 ROUTE464.fromField = "value_changed"
-ROUTE464.fromNode = "vt2_RotationInterpolator"
+ROUTE464.fromNode = "vc7_RotationInterpolator"
 ROUTE464.toField = "set_rotation"
-ROUTE464.toNode = "Joe_vt2"
+ROUTE464.toNode = "Joe_vc7"
 
 Scene19.children.append(ROUTE464)
 ROUTE465 = x3d.ROUTE()
 ROUTE465.fromField = "value_changed"
-ROUTE465.fromNode = "vt1_RotationInterpolator"
+ROUTE465.fromNode = "vc6_RotationInterpolator"
 ROUTE465.toField = "set_rotation"
-ROUTE465.toNode = "Joe_vt1"
+ROUTE465.toNode = "Joe_vc6"
 
 Scene19.children.append(ROUTE465)
 ROUTE466 = x3d.ROUTE()
 ROUTE466.fromField = "value_changed"
-ROUTE466.fromNode = "vc7_RotationInterpolator"
+ROUTE466.fromNode = "vc5_RotationInterpolator"
 ROUTE466.toField = "set_rotation"
-ROUTE466.toNode = "Joe_vc7"
+ROUTE466.toNode = "Joe_vc5"
 
 Scene19.children.append(ROUTE466)
 ROUTE467 = x3d.ROUTE()
 ROUTE467.fromField = "value_changed"
-ROUTE467.fromNode = "vc6_RotationInterpolator"
+ROUTE467.fromNode = "vc4_RotationInterpolator"
 ROUTE467.toField = "set_rotation"
-ROUTE467.toNode = "Joe_vc6"
+ROUTE467.toNode = "Joe_vc4"
 
 Scene19.children.append(ROUTE467)
 ROUTE468 = x3d.ROUTE()
 ROUTE468.fromField = "value_changed"
-ROUTE468.fromNode = "vc5_RotationInterpolator"
+ROUTE468.fromNode = "vc3_RotationInterpolator"
 ROUTE468.toField = "set_rotation"
-ROUTE468.toNode = "Joe_vc5"
+ROUTE468.toNode = "Joe_vc3"
 
 Scene19.children.append(ROUTE468)
 ROUTE469 = x3d.ROUTE()
 ROUTE469.fromField = "value_changed"
-ROUTE469.fromNode = "vc4_RotationInterpolator"
+ROUTE469.fromNode = "vc2_RotationInterpolator"
 ROUTE469.toField = "set_rotation"
-ROUTE469.toNode = "Joe_vc4"
+ROUTE469.toNode = "Joe_vc2"
 
 Scene19.children.append(ROUTE469)
 ROUTE470 = x3d.ROUTE()
 ROUTE470.fromField = "value_changed"
-ROUTE470.fromNode = "vc3_RotationInterpolator"
+ROUTE470.fromNode = "vc1_RotationInterpolator"
 ROUTE470.toField = "set_rotation"
-ROUTE470.toNode = "Joe_vc3"
+ROUTE470.toNode = "Joe_vc1"
 
 Scene19.children.append(ROUTE470)
 ROUTE471 = x3d.ROUTE()
 ROUTE471.fromField = "value_changed"
-ROUTE471.fromNode = "vc2_RotationInterpolator"
+ROUTE471.fromNode = "skullbase_RotationInterpolator"
 ROUTE471.toField = "set_rotation"
-ROUTE471.toNode = "Joe_vc2"
+ROUTE471.toNode = "Joe_skullbase"
 
 Scene19.children.append(ROUTE471)
 ROUTE472 = x3d.ROUTE()
 ROUTE472.fromField = "value_changed"
-ROUTE472.fromNode = "vc1_RotationInterpolator"
+ROUTE472.fromNode = "l_eyelid_joint_RotationInterpolator"
 ROUTE472.toField = "set_rotation"
-ROUTE472.toNode = "Joe_vc1"
+ROUTE472.toNode = "Joe_l_eyelid_joint"
 
 Scene19.children.append(ROUTE472)
 ROUTE473 = x3d.ROUTE()
 ROUTE473.fromField = "value_changed"
-ROUTE473.fromNode = "skullbase_RotationInterpolator"
+ROUTE473.fromNode = "l_eyeball_joint_RotationInterpolator"
 ROUTE473.toField = "set_rotation"
-ROUTE473.toNode = "Joe_skullbase"
+ROUTE473.toNode = "Joe_l_eyeball_joint"
 
 Scene19.children.append(ROUTE473)
 ROUTE474 = x3d.ROUTE()
 ROUTE474.fromField = "value_changed"
-ROUTE474.fromNode = "l_eyelid_joint_RotationInterpolator"
+ROUTE474.fromNode = "l_eyebrow_joint_RotationInterpolator"
 ROUTE474.toField = "set_rotation"
-ROUTE474.toNode = "Joe_l_eyelid_joint"
+ROUTE474.toNode = "Joe_l_eyebrow_joint"
 
 Scene19.children.append(ROUTE474)
 ROUTE475 = x3d.ROUTE()
 ROUTE475.fromField = "value_changed"
-ROUTE475.fromNode = "l_eyeball_joint_RotationInterpolator"
+ROUTE475.fromNode = "r_eyelid_joint_RotationInterpolator"
 ROUTE475.toField = "set_rotation"
-ROUTE475.toNode = "Joe_l_eyeball_joint"
+ROUTE475.toNode = "Joe_r_eyelid_joint"
 
 Scene19.children.append(ROUTE475)
 ROUTE476 = x3d.ROUTE()
 ROUTE476.fromField = "value_changed"
-ROUTE476.fromNode = "l_eyebrow_joint_RotationInterpolator"
+ROUTE476.fromNode = "r_eyeball_joint_RotationInterpolator"
 ROUTE476.toField = "set_rotation"
-ROUTE476.toNode = "Joe_l_eyebrow_joint"
+ROUTE476.toNode = "Joe_r_eyeball_joint"
 
 Scene19.children.append(ROUTE476)
 ROUTE477 = x3d.ROUTE()
 ROUTE477.fromField = "value_changed"
-ROUTE477.fromNode = "r_eyelid_joint_RotationInterpolator"
+ROUTE477.fromNode = "r_eyebrow_joint_RotationInterpolator"
 ROUTE477.toField = "set_rotation"
-ROUTE477.toNode = "Joe_r_eyelid_joint"
+ROUTE477.toNode = "Joe_r_eyebrow_joint"
 
 Scene19.children.append(ROUTE477)
 ROUTE478 = x3d.ROUTE()
 ROUTE478.fromField = "value_changed"
-ROUTE478.fromNode = "r_eyeball_joint_RotationInterpolator"
+ROUTE478.fromNode = "temporomandibular_RotationInterpolator"
 ROUTE478.toField = "set_rotation"
-ROUTE478.toNode = "Joe_r_eyeball_joint"
+ROUTE478.toNode = "Joe_temporomandibular"
 
 Scene19.children.append(ROUTE478)
 ROUTE479 = x3d.ROUTE()
 ROUTE479.fromField = "value_changed"
-ROUTE479.fromNode = "r_eyebrow_joint_RotationInterpolator"
+ROUTE479.fromNode = "l_sternoclavicular_RotationInterpolator"
 ROUTE479.toField = "set_rotation"
-ROUTE479.toNode = "Joe_r_eyebrow_joint"
+ROUTE479.toNode = "Joe_l_sternoclavicular"
 
 Scene19.children.append(ROUTE479)
 ROUTE480 = x3d.ROUTE()
 ROUTE480.fromField = "value_changed"
-ROUTE480.fromNode = "temporomandibular_RotationInterpolator"
+ROUTE480.fromNode = "l_acromioclavicular_RotationInterpolator"
 ROUTE480.toField = "set_rotation"
-ROUTE480.toNode = "Joe_temporomandibular"
+ROUTE480.toNode = "Joe_l_acromioclavicular"
 
 Scene19.children.append(ROUTE480)
 ROUTE481 = x3d.ROUTE()
 ROUTE481.fromField = "value_changed"
-ROUTE481.fromNode = "l_sternoclavicular_RotationInterpolator"
+ROUTE481.fromNode = "l_shoulder_RotationInterpolator"
 ROUTE481.toField = "set_rotation"
-ROUTE481.toNode = "Joe_l_sternoclavicular"
+ROUTE481.toNode = "Joe_l_shoulder"
 
 Scene19.children.append(ROUTE481)
 ROUTE482 = x3d.ROUTE()
 ROUTE482.fromField = "value_changed"
-ROUTE482.fromNode = "l_acromioclavicular_RotationInterpolator"
+ROUTE482.fromNode = "l_elbow_RotationInterpolator"
 ROUTE482.toField = "set_rotation"
-ROUTE482.toNode = "Joe_l_acromioclavicular"
+ROUTE482.toNode = "Joe_l_elbow"
 
 Scene19.children.append(ROUTE482)
 ROUTE483 = x3d.ROUTE()
 ROUTE483.fromField = "value_changed"
-ROUTE483.fromNode = "l_shoulder_RotationInterpolator"
+ROUTE483.fromNode = "l_wrist_RotationInterpolator"
 ROUTE483.toField = "set_rotation"
-ROUTE483.toNode = "Joe_l_shoulder"
+ROUTE483.toNode = "Joe_l_wrist"
 
 Scene19.children.append(ROUTE483)
 ROUTE484 = x3d.ROUTE()
 ROUTE484.fromField = "value_changed"
-ROUTE484.fromNode = "l_elbow_RotationInterpolator"
+ROUTE484.fromNode = "l_thumb1_RotationInterpolator"
 ROUTE484.toField = "set_rotation"
-ROUTE484.toNode = "Joe_l_elbow"
+ROUTE484.toNode = "Joe_l_thumb1"
 
 Scene19.children.append(ROUTE484)
 ROUTE485 = x3d.ROUTE()
 ROUTE485.fromField = "value_changed"
-ROUTE485.fromNode = "l_wrist_RotationInterpolator"
+ROUTE485.fromNode = "l_thumb2_RotationInterpolator"
 ROUTE485.toField = "set_rotation"
-ROUTE485.toNode = "Joe_l_wrist"
+ROUTE485.toNode = "Joe_l_thumb2"
 
 Scene19.children.append(ROUTE485)
 ROUTE486 = x3d.ROUTE()
 ROUTE486.fromField = "value_changed"
-ROUTE486.fromNode = "l_thumb1_RotationInterpolator"
+ROUTE486.fromNode = "l_thumb3_RotationInterpolator"
 ROUTE486.toField = "set_rotation"
-ROUTE486.toNode = "Joe_l_thumb1"
+ROUTE486.toNode = "Joe_l_thumb3"
 
 Scene19.children.append(ROUTE486)
 ROUTE487 = x3d.ROUTE()
 ROUTE487.fromField = "value_changed"
-ROUTE487.fromNode = "l_thumb2_RotationInterpolator"
+ROUTE487.fromNode = "l_index0_RotationInterpolator"
 ROUTE487.toField = "set_rotation"
-ROUTE487.toNode = "Joe_l_thumb2"
+ROUTE487.toNode = "Joe_l_index0"
 
 Scene19.children.append(ROUTE487)
 ROUTE488 = x3d.ROUTE()
 ROUTE488.fromField = "value_changed"
-ROUTE488.fromNode = "l_thumb3_RotationInterpolator"
+ROUTE488.fromNode = "l_index1_RotationInterpolator"
 ROUTE488.toField = "set_rotation"
-ROUTE488.toNode = "Joe_l_thumb3"
+ROUTE488.toNode = "Joe_l_index1"
 
 Scene19.children.append(ROUTE488)
 ROUTE489 = x3d.ROUTE()
 ROUTE489.fromField = "value_changed"
-ROUTE489.fromNode = "l_index0_RotationInterpolator"
+ROUTE489.fromNode = "l_index2_RotationInterpolator"
 ROUTE489.toField = "set_rotation"
-ROUTE489.toNode = "Joe_l_index0"
+ROUTE489.toNode = "Joe_l_index2"
 
 Scene19.children.append(ROUTE489)
 ROUTE490 = x3d.ROUTE()
 ROUTE490.fromField = "value_changed"
-ROUTE490.fromNode = "l_index1_RotationInterpolator"
+ROUTE490.fromNode = "l_index3_RotationInterpolator"
 ROUTE490.toField = "set_rotation"
-ROUTE490.toNode = "Joe_l_index1"
+ROUTE490.toNode = "Joe_l_index3"
 
 Scene19.children.append(ROUTE490)
 ROUTE491 = x3d.ROUTE()
 ROUTE491.fromField = "value_changed"
-ROUTE491.fromNode = "l_index2_RotationInterpolator"
+ROUTE491.fromNode = "l_middle0_RotationInterpolator"
 ROUTE491.toField = "set_rotation"
-ROUTE491.toNode = "Joe_l_index2"
+ROUTE491.toNode = "Joe_l_middle0"
 
 Scene19.children.append(ROUTE491)
 ROUTE492 = x3d.ROUTE()
 ROUTE492.fromField = "value_changed"
-ROUTE492.fromNode = "l_index3_RotationInterpolator"
+ROUTE492.fromNode = "l_middle1_RotationInterpolator"
 ROUTE492.toField = "set_rotation"
-ROUTE492.toNode = "Joe_l_index3"
+ROUTE492.toNode = "Joe_l_middle1"
 
 Scene19.children.append(ROUTE492)
 ROUTE493 = x3d.ROUTE()
 ROUTE493.fromField = "value_changed"
-ROUTE493.fromNode = "l_middle0_RotationInterpolator"
+ROUTE493.fromNode = "l_middle2_RotationInterpolator"
 ROUTE493.toField = "set_rotation"
-ROUTE493.toNode = "Joe_l_middle0"
+ROUTE493.toNode = "Joe_l_middle2"
 
 Scene19.children.append(ROUTE493)
 ROUTE494 = x3d.ROUTE()
 ROUTE494.fromField = "value_changed"
-ROUTE494.fromNode = "l_middle1_RotationInterpolator"
+ROUTE494.fromNode = "l_middle3_RotationInterpolator"
 ROUTE494.toField = "set_rotation"
-ROUTE494.toNode = "Joe_l_middle1"
+ROUTE494.toNode = "Joe_l_middle3"
 
 Scene19.children.append(ROUTE494)
 ROUTE495 = x3d.ROUTE()
 ROUTE495.fromField = "value_changed"
-ROUTE495.fromNode = "l_middle2_RotationInterpolator"
+ROUTE495.fromNode = "l_ring0_RotationInterpolator"
 ROUTE495.toField = "set_rotation"
-ROUTE495.toNode = "Joe_l_middle2"
+ROUTE495.toNode = "Joe_l_ring0"
 
 Scene19.children.append(ROUTE495)
 ROUTE496 = x3d.ROUTE()
 ROUTE496.fromField = "value_changed"
-ROUTE496.fromNode = "l_middle3_RotationInterpolator"
+ROUTE496.fromNode = "l_ring1_RotationInterpolator"
 ROUTE496.toField = "set_rotation"
-ROUTE496.toNode = "Joe_l_middle3"
+ROUTE496.toNode = "Joe_l_ring1"
 
 Scene19.children.append(ROUTE496)
 ROUTE497 = x3d.ROUTE()
 ROUTE497.fromField = "value_changed"
-ROUTE497.fromNode = "l_ring0_RotationInterpolator"
+ROUTE497.fromNode = "l_ring2_RotationInterpolator"
 ROUTE497.toField = "set_rotation"
-ROUTE497.toNode = "Joe_l_ring0"
+ROUTE497.toNode = "Joe_l_ring2"
 
 Scene19.children.append(ROUTE497)
 ROUTE498 = x3d.ROUTE()
 ROUTE498.fromField = "value_changed"
-ROUTE498.fromNode = "l_ring1_RotationInterpolator"
+ROUTE498.fromNode = "l_ring3_RotationInterpolator"
 ROUTE498.toField = "set_rotation"
-ROUTE498.toNode = "Joe_l_ring1"
+ROUTE498.toNode = "Joe_l_ring3"
 
 Scene19.children.append(ROUTE498)
 ROUTE499 = x3d.ROUTE()
 ROUTE499.fromField = "value_changed"
-ROUTE499.fromNode = "l_ring2_RotationInterpolator"
+ROUTE499.fromNode = "l_pinky0_RotationInterpolator"
 ROUTE499.toField = "set_rotation"
-ROUTE499.toNode = "Joe_l_ring2"
+ROUTE499.toNode = "Joe_l_pinky0"
 
 Scene19.children.append(ROUTE499)
 ROUTE500 = x3d.ROUTE()
 ROUTE500.fromField = "value_changed"
-ROUTE500.fromNode = "l_ring3_RotationInterpolator"
+ROUTE500.fromNode = "l_pinky1_RotationInterpolator"
 ROUTE500.toField = "set_rotation"
-ROUTE500.toNode = "Joe_l_ring3"
+ROUTE500.toNode = "Joe_l_pinky1"
 
 Scene19.children.append(ROUTE500)
 ROUTE501 = x3d.ROUTE()
 ROUTE501.fromField = "value_changed"
-ROUTE501.fromNode = "l_pinky0_RotationInterpolator"
+ROUTE501.fromNode = "l_pinky2_RotationInterpolator"
 ROUTE501.toField = "set_rotation"
-ROUTE501.toNode = "Joe_l_pinky0"
+ROUTE501.toNode = "Joe_l_pinky2"
 
 Scene19.children.append(ROUTE501)
 ROUTE502 = x3d.ROUTE()
 ROUTE502.fromField = "value_changed"
-ROUTE502.fromNode = "l_pinky1_RotationInterpolator"
+ROUTE502.fromNode = "l_pinky3_RotationInterpolator"
 ROUTE502.toField = "set_rotation"
-ROUTE502.toNode = "Joe_l_pinky1"
+ROUTE502.toNode = "Joe_l_pinky3"
 
 Scene19.children.append(ROUTE502)
 ROUTE503 = x3d.ROUTE()
 ROUTE503.fromField = "value_changed"
-ROUTE503.fromNode = "l_pinky2_RotationInterpolator"
+ROUTE503.fromNode = "r_sternoclavicular_RotationInterpolator"
 ROUTE503.toField = "set_rotation"
-ROUTE503.toNode = "Joe_l_pinky2"
+ROUTE503.toNode = "Joe_r_sternoclavicular"
 
 Scene19.children.append(ROUTE503)
 ROUTE504 = x3d.ROUTE()
 ROUTE504.fromField = "value_changed"
-ROUTE504.fromNode = "l_pinky3_RotationInterpolator"
+ROUTE504.fromNode = "r_acromioclavicular_RotationInterpolator"
 ROUTE504.toField = "set_rotation"
-ROUTE504.toNode = "Joe_l_pinky3"
+ROUTE504.toNode = "Joe_r_acromioclavicular"
 
 Scene19.children.append(ROUTE504)
 ROUTE505 = x3d.ROUTE()
 ROUTE505.fromField = "value_changed"
-ROUTE505.fromNode = "r_sternoclavicular_RotationInterpolator"
+ROUTE505.fromNode = "r_shoulder_RotationInterpolator"
 ROUTE505.toField = "set_rotation"
-ROUTE505.toNode = "Joe_r_sternoclavicular"
+ROUTE505.toNode = "Joe_r_shoulder"
 
 Scene19.children.append(ROUTE505)
 ROUTE506 = x3d.ROUTE()
 ROUTE506.fromField = "value_changed"
-ROUTE506.fromNode = "r_acromioclavicular_RotationInterpolator"
+ROUTE506.fromNode = "r_elbow_RotationInterpolator"
 ROUTE506.toField = "set_rotation"
-ROUTE506.toNode = "Joe_r_acromioclavicular"
+ROUTE506.toNode = "Joe_r_elbow"
 
 Scene19.children.append(ROUTE506)
 ROUTE507 = x3d.ROUTE()
 ROUTE507.fromField = "value_changed"
-ROUTE507.fromNode = "r_shoulder_RotationInterpolator"
+ROUTE507.fromNode = "r_wrist_RotationInterpolator"
 ROUTE507.toField = "set_rotation"
-ROUTE507.toNode = "Joe_r_shoulder"
+ROUTE507.toNode = "Joe_r_wrist"
 
 Scene19.children.append(ROUTE507)
 ROUTE508 = x3d.ROUTE()
 ROUTE508.fromField = "value_changed"
-ROUTE508.fromNode = "r_elbow_RotationInterpolator"
+ROUTE508.fromNode = "r_thumb1_RotationInterpolator"
 ROUTE508.toField = "set_rotation"
-ROUTE508.toNode = "Joe_r_elbow"
+ROUTE508.toNode = "Joe_r_thumb1"
 
 Scene19.children.append(ROUTE508)
 ROUTE509 = x3d.ROUTE()
 ROUTE509.fromField = "value_changed"
-ROUTE509.fromNode = "r_wrist_RotationInterpolator"
+ROUTE509.fromNode = "r_thumb2_RotationInterpolator"
 ROUTE509.toField = "set_rotation"
-ROUTE509.toNode = "Joe_r_wrist"
+ROUTE509.toNode = "Joe_r_thumb2"
 
 Scene19.children.append(ROUTE509)
 ROUTE510 = x3d.ROUTE()
 ROUTE510.fromField = "value_changed"
-ROUTE510.fromNode = "r_thumb1_RotationInterpolator"
+ROUTE510.fromNode = "r_thumb3_RotationInterpolator"
 ROUTE510.toField = "set_rotation"
-ROUTE510.toNode = "Joe_r_thumb1"
+ROUTE510.toNode = "Joe_r_thumb3"
 
 Scene19.children.append(ROUTE510)
 ROUTE511 = x3d.ROUTE()
 ROUTE511.fromField = "value_changed"
-ROUTE511.fromNode = "r_thumb2_RotationInterpolator"
+ROUTE511.fromNode = "r_index0_RotationInterpolator"
 ROUTE511.toField = "set_rotation"
-ROUTE511.toNode = "Joe_r_thumb2"
+ROUTE511.toNode = "Joe_r_index0"
 
 Scene19.children.append(ROUTE511)
 ROUTE512 = x3d.ROUTE()
 ROUTE512.fromField = "value_changed"
-ROUTE512.fromNode = "r_thumb3_RotationInterpolator"
+ROUTE512.fromNode = "r_index1_RotationInterpolator"
 ROUTE512.toField = "set_rotation"
-ROUTE512.toNode = "Joe_r_thumb3"
+ROUTE512.toNode = "Joe_r_index1"
 
 Scene19.children.append(ROUTE512)
 ROUTE513 = x3d.ROUTE()
 ROUTE513.fromField = "value_changed"
-ROUTE513.fromNode = "r_index0_RotationInterpolator"
+ROUTE513.fromNode = "r_index2_RotationInterpolator"
 ROUTE513.toField = "set_rotation"
-ROUTE513.toNode = "Joe_r_index0"
+ROUTE513.toNode = "Joe_r_index2"
 
 Scene19.children.append(ROUTE513)
 ROUTE514 = x3d.ROUTE()
 ROUTE514.fromField = "value_changed"
-ROUTE514.fromNode = "r_index1_RotationInterpolator"
+ROUTE514.fromNode = "r_index3_RotationInterpolator"
 ROUTE514.toField = "set_rotation"
-ROUTE514.toNode = "Joe_r_index1"
+ROUTE514.toNode = "Joe_r_index3"
 
 Scene19.children.append(ROUTE514)
 ROUTE515 = x3d.ROUTE()
 ROUTE515.fromField = "value_changed"
-ROUTE515.fromNode = "r_index2_RotationInterpolator"
+ROUTE515.fromNode = "r_middle0_RotationInterpolator"
 ROUTE515.toField = "set_rotation"
-ROUTE515.toNode = "Joe_r_index2"
+ROUTE515.toNode = "Joe_r_middle0"
 
 Scene19.children.append(ROUTE515)
 ROUTE516 = x3d.ROUTE()
 ROUTE516.fromField = "value_changed"
-ROUTE516.fromNode = "r_index3_RotationInterpolator"
+ROUTE516.fromNode = "r_middle1_RotationInterpolator"
 ROUTE516.toField = "set_rotation"
-ROUTE516.toNode = "Joe_r_index3"
+ROUTE516.toNode = "Joe_r_middle1"
 
 Scene19.children.append(ROUTE516)
 ROUTE517 = x3d.ROUTE()
 ROUTE517.fromField = "value_changed"
-ROUTE517.fromNode = "r_middle0_RotationInterpolator"
+ROUTE517.fromNode = "r_middle2_RotationInterpolator"
 ROUTE517.toField = "set_rotation"
-ROUTE517.toNode = "Joe_r_middle0"
+ROUTE517.toNode = "Joe_r_middle2"
 
 Scene19.children.append(ROUTE517)
 ROUTE518 = x3d.ROUTE()
 ROUTE518.fromField = "value_changed"
-ROUTE518.fromNode = "r_middle1_RotationInterpolator"
+ROUTE518.fromNode = "r_middle3_RotationInterpolator"
 ROUTE518.toField = "set_rotation"
-ROUTE518.toNode = "Joe_r_middle1"
+ROUTE518.toNode = "Joe_r_middle3"
 
 Scene19.children.append(ROUTE518)
 ROUTE519 = x3d.ROUTE()
 ROUTE519.fromField = "value_changed"
-ROUTE519.fromNode = "r_middle2_RotationInterpolator"
+ROUTE519.fromNode = "r_ring0_RotationInterpolator"
 ROUTE519.toField = "set_rotation"
-ROUTE519.toNode = "Joe_r_middle2"
+ROUTE519.toNode = "Joe_r_ring0"
 
 Scene19.children.append(ROUTE519)
 ROUTE520 = x3d.ROUTE()
 ROUTE520.fromField = "value_changed"
-ROUTE520.fromNode = "r_middle3_RotationInterpolator"
+ROUTE520.fromNode = "r_ring1_RotationInterpolator"
 ROUTE520.toField = "set_rotation"
-ROUTE520.toNode = "Joe_r_middle3"
+ROUTE520.toNode = "Joe_r_ring1"
 
 Scene19.children.append(ROUTE520)
 ROUTE521 = x3d.ROUTE()
 ROUTE521.fromField = "value_changed"
-ROUTE521.fromNode = "r_ring0_RotationInterpolator"
+ROUTE521.fromNode = "r_ring2_RotationInterpolator"
 ROUTE521.toField = "set_rotation"
-ROUTE521.toNode = "Joe_r_ring0"
+ROUTE521.toNode = "Joe_r_ring2"
 
 Scene19.children.append(ROUTE521)
 ROUTE522 = x3d.ROUTE()
 ROUTE522.fromField = "value_changed"
-ROUTE522.fromNode = "r_ring1_RotationInterpolator"
+ROUTE522.fromNode = "r_ring3_RotationInterpolator"
 ROUTE522.toField = "set_rotation"
-ROUTE522.toNode = "Joe_r_ring1"
+ROUTE522.toNode = "Joe_r_ring3"
 
 Scene19.children.append(ROUTE522)
 ROUTE523 = x3d.ROUTE()
 ROUTE523.fromField = "value_changed"
-ROUTE523.fromNode = "r_ring2_RotationInterpolator"
+ROUTE523.fromNode = "r_pinky0_RotationInterpolator"
 ROUTE523.toField = "set_rotation"
-ROUTE523.toNode = "Joe_r_ring2"
+ROUTE523.toNode = "Joe_r_pinky0"
 
 Scene19.children.append(ROUTE523)
 ROUTE524 = x3d.ROUTE()
 ROUTE524.fromField = "value_changed"
-ROUTE524.fromNode = "r_ring3_RotationInterpolator"
+ROUTE524.fromNode = "r_pinky1_RotationInterpolator"
 ROUTE524.toField = "set_rotation"
-ROUTE524.toNode = "Joe_r_ring3"
+ROUTE524.toNode = "Joe_r_pinky1"
 
 Scene19.children.append(ROUTE524)
 ROUTE525 = x3d.ROUTE()
 ROUTE525.fromField = "value_changed"
-ROUTE525.fromNode = "r_pinky0_RotationInterpolator"
+ROUTE525.fromNode = "r_pinky2_RotationInterpolator"
 ROUTE525.toField = "set_rotation"
-ROUTE525.toNode = "Joe_r_pinky0"
+ROUTE525.toNode = "Joe_r_pinky2"
 
 Scene19.children.append(ROUTE525)
 ROUTE526 = x3d.ROUTE()
 ROUTE526.fromField = "value_changed"
-ROUTE526.fromNode = "r_pinky1_RotationInterpolator"
+ROUTE526.fromNode = "r_pinky3_RotationInterpolator"
 ROUTE526.toField = "set_rotation"
-ROUTE526.toNode = "Joe_r_pinky1"
+ROUTE526.toNode = "Joe_r_pinky3"
 
 Scene19.children.append(ROUTE526)
-ROUTE527 = x3d.ROUTE()
-ROUTE527.fromField = "value_changed"
-ROUTE527.fromNode = "r_pinky2_RotationInterpolator"
-ROUTE527.toField = "set_rotation"
-ROUTE527.toNode = "Joe_r_pinky2"
+Group527 = x3d.Group(DEF="DisplacersAnimationGroup")
+Group527.children.append(x3d.Comment("""TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"""))
+ScalarInterpolator528 = x3d.ScalarInterpolator(DEF="skull_tipInterpolator")
+ScalarInterpolator528.key = [0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]
+ScalarInterpolator528.keyValue = [0,0,0,0,0.2,0.4,1,0,1,0.4,0]
 
-Scene19.children.append(ROUTE527)
-ROUTE528 = x3d.ROUTE()
-ROUTE528.fromField = "value_changed"
-ROUTE528.fromNode = "r_pinky3_RotationInterpolator"
-ROUTE528.toField = "set_rotation"
-ROUTE528.toNode = "Joe_r_pinky3"
+Group527.children.append(ScalarInterpolator528)
+ROUTE529 = x3d.ROUTE()
+ROUTE529.fromField = "fraction_changed"
+ROUTE529.fromNode = "KickTimer"
+ROUTE529.toField = "set_fraction"
+ROUTE529.toNode = "skull_tipInterpolator"
 
-Scene19.children.append(ROUTE528)
-Group529 = x3d.Group(DEF="DisplacersAnimationGroup")
-Group529.children.append(x3d.Comment("""TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor"""))
-ScalarInterpolator530 = x3d.ScalarInterpolator(DEF="skull_tipInterpolator")
-ScalarInterpolator530.key = [0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]
-ScalarInterpolator530.keyValue = [0,0,0,0,0.2,0.4,1,0,1,0.4,0]
+Group527.children.append(ROUTE529)
+ROUTE530 = x3d.ROUTE()
+ROUTE530.fromField = "value_changed"
+ROUTE530.fromNode = "skull_tipInterpolator"
+ROUTE530.toField = "weight"
+ROUTE530.toNode = "Joe_skull_tip_raiser_action"
 
-Group529.children.append(ScalarInterpolator530)
-ROUTE531 = x3d.ROUTE()
-ROUTE531.fromField = "fraction_changed"
-ROUTE531.fromNode = "KickTimer"
-ROUTE531.toField = "set_fraction"
-ROUTE531.toNode = "skull_tipInterpolator"
+Group527.children.append(ROUTE530)
 
-Group529.children.append(ROUTE531)
-ROUTE532 = x3d.ROUTE()
-ROUTE532.fromField = "value_changed"
-ROUTE532.fromNode = "skull_tipInterpolator"
-ROUTE532.toField = "weight"
-ROUTE532.toNode = "Joe_skull_tip_raiser_action"
+Scene19.children.append(Group527)
+Group531 = x3d.Group(DEF="SkinTextureTransformAnimationGroup")
+ScalarInterpolator532 = x3d.ScalarInterpolator(DEF="SkinTextureTransformInterpolator")
+ScalarInterpolator532.key = [0,0.2,0.4,0.5,0.6,0.7,0.8,1]
+ScalarInterpolator532.keyValue = [0,0,0,0,0,1,2,0]
 
-Group529.children.append(ROUTE532)
+Group531.children.append(ScalarInterpolator532)
+ROUTE533 = x3d.ROUTE()
+ROUTE533.fromField = "fraction_changed"
+ROUTE533.fromNode = "KickTimer"
+ROUTE533.toField = "set_fraction"
+ROUTE533.toNode = "SkinTextureTransformInterpolator"
 
-Scene19.children.append(Group529)
-Group533 = x3d.Group(DEF="SkinTextureTransformAnimationGroup")
-ScalarInterpolator534 = x3d.ScalarInterpolator(DEF="SkinTextureTransformInterpolator")
-ScalarInterpolator534.key = [0,0.2,0.4,0.5,0.6,0.7,0.8,1]
-ScalarInterpolator534.keyValue = [0,0,0,0,0,1,2,0]
+Group531.children.append(ROUTE533)
+ROUTE534 = x3d.ROUTE()
+ROUTE534.fromField = "value_changed"
+ROUTE534.fromNode = "SkinTextureTransformInterpolator"
+ROUTE534.toField = "rotation"
+ROUTE534.toNode = "KickTextureTransform"
 
-Group533.children.append(ScalarInterpolator534)
-ROUTE535 = x3d.ROUTE()
-ROUTE535.fromField = "fraction_changed"
-ROUTE535.fromNode = "KickTimer"
-ROUTE535.toField = "set_fraction"
-ROUTE535.toNode = "SkinTextureTransformInterpolator"
+Group531.children.append(ROUTE534)
 
-Group533.children.append(ROUTE535)
-ROUTE536 = x3d.ROUTE()
-ROUTE536.fromField = "value_changed"
-ROUTE536.fromNode = "SkinTextureTransformInterpolator"
-ROUTE536.toField = "rotation"
-ROUTE536.toNode = "KickTextureTransform"
+Scene19.children.append(Group531)
+Group535 = x3d.Group()
+Transform536 = x3d.Transform(DEF="SBall")
+Transform536.rotation = [0.7,0,0.7,0.1]
+Transform536.scale = [0.23,0.23,0.23]
+Transform536.translation = [-0.916,0.37,-0.92]
+Shape537 = x3d.Shape(DEF="ball_Shape")
+Appearance538 = x3d.Appearance(DEF="ball_Appearance")
+Material539 = x3d.Material(DEF="ball_Material")
+Material539.diffuseColor = [0.3,0.3,1]
+Material539.emissiveColor = [0.3,0.3,0.33]
 
-Group533.children.append(ROUTE536)
+Appearance538.material = Material539
+ImageTexture540 = x3d.ImageTexture(USE="JoeSkinImageTexture")
 
-Scene19.children.append(Group533)
-Group537 = x3d.Group()
-Transform538 = x3d.Transform(DEF="SBall")
-Transform538.rotation = [0.7,0,0.7,0.1]
-Transform538.scale = [0.23,0.23,0.23]
-Transform538.translation = [-0.916,0.37,-0.92]
-Shape539 = x3d.Shape(DEF="ball_Shape")
-Appearance540 = x3d.Appearance(DEF="ball_Appearance")
-Material541 = x3d.Material(DEF="ball_Material")
-Material541.diffuseColor = [0.3,0.3,1]
-Material541.emissiveColor = [0.3,0.3,0.33]
+Appearance538.texture = ImageTexture540
 
-Appearance540.material = Material541
-ImageTexture542 = x3d.ImageTexture(USE="JoeSkinImageTexture")
+Shape537.appearance = Appearance538
+IndexedFaceSet541 = x3d.IndexedFaceSet(DEF="ball_IndexedFaceSet")
+IndexedFaceSet541.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]
+Coordinate542 = x3d.Coordinate(DEF="Ball_Coordinates")
+Coordinate542.point = [(0, 0.4675, 0),(0, 0.4049, -0.2338),(-0.1169, 0.4049, -0.2024),(-0.2024, 0.4049, -0.1169),(-0.2338, 0.4049, 0),(-0.2024, 0.4049, 0.1169),(-0.1169, 0.4049, 0.2024),(0, 0.4049, 0.2338),(0.1169, 0.4049, 0.2024),(0.2024, 0.4049, 0.1169),(0.2338, 0.4049, 0),(0.2024, 0.4049, -0.1169),(0.1169, 0.4049, -0.2024),(0, 0.2338, -0.4049),(-0.2024, 0.2338, -0.3506),(-0.3506, 0.2338, -0.2024),(-0.4049, 0.2338, 0),(-0.3506, 0.2338, 0.2024),(-0.2024, 0.2338, 0.3506),(0, 0.2338, 0.4049),(0.2024, 0.2338, 0.3506),(0.3506, 0.2338, 0.2024),(0.4049, 0.2338, 0),(0.3506, 0.2338, -0.2024),(0.2024, 0.2338, -0.3506),(0, 0, -0.4675),(-0.2338, 0, -0.4049),(-0.4049, 0, -0.2338),(-0.4675, 0, 0),(-0.4049, 0, 0.2338),(-0.2338, 0, 0.4049),(0, 0, 0.4675),(0.2338, 0, 0.4049),(0.4049, 0, 0.2338),(0.4675, 0, 0),(0.4049, 0, -0.2338),(0.2338, 0, -0.4049),(0, -0.2338, -0.4049),(-0.2024, -0.2338, -0.3506),(-0.3506, -0.2338, -0.2024),(-0.4049, -0.2338, 0),(-0.3506, -0.2338, 0.2024),(-0.2024, -0.2338, 0.3506),(0, -0.2338, 0.4049),(0.2024, -0.2338, 0.3506),(0.3506, -0.2338, 0.2024),(0.4049, -0.2338, 0),(0.3506, -0.2338, -0.2024),(0.2024, -0.2338, -0.3506),(0, -0.4049, -0.2338),(-0.1169, -0.4049, -0.2024),(-0.2024, -0.4049, -0.1169),(-0.2338, -0.4049, 0),(-0.2024, -0.4049, 0.1169),(-0.1169, -0.4049, 0.2024),(0, -0.4049, 0.2338),(0.1169, -0.4049, 0.2024),(0.2024, -0.4049, 0.1169),(0.2338, -0.4049, 0),(0.2024, -0.4049, -0.1169),(0.1169, -0.4049, -0.2024),(0, -0.4675, 0)]
 
-Appearance540.texture = ImageTexture542
+IndexedFaceSet541.coord = Coordinate542
 
-Shape539.appearance = Appearance540
-IndexedFaceSet543 = x3d.IndexedFaceSet(DEF="ball_IndexedFaceSet")
-IndexedFaceSet543.coordIndex = [0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]
-Coordinate544 = x3d.Coordinate(DEF="Ball_Coordinates")
-Coordinate544.point = [(0, 0.4675, 0),(0, 0.4049, -0.2338),(-0.1169, 0.4049, -0.2024),(-0.2024, 0.4049, -0.1169),(-0.2338, 0.4049, 0),(-0.2024, 0.4049, 0.1169),(-0.1169, 0.4049, 0.2024),(0, 0.4049, 0.2338),(0.1169, 0.4049, 0.2024),(0.2024, 0.4049, 0.1169),(0.2338, 0.4049, 0),(0.2024, 0.4049, -0.1169),(0.1169, 0.4049, -0.2024),(0, 0.2338, -0.4049),(-0.2024, 0.2338, -0.3506),(-0.3506, 0.2338, -0.2024),(-0.4049, 0.2338, 0),(-0.3506, 0.2338, 0.2024),(-0.2024, 0.2338, 0.3506),(0, 0.2338, 0.4049),(0.2024, 0.2338, 0.3506),(0.3506, 0.2338, 0.2024),(0.4049, 0.2338, 0),(0.3506, 0.2338, -0.2024),(0.2024, 0.2338, -0.3506),(0, 0, -0.4675),(-0.2338, 0, -0.4049),(-0.4049, 0, -0.2338),(-0.4675, 0, 0),(-0.4049, 0, 0.2338),(-0.2338, 0, 0.4049),(0, 0, 0.4675),(0.2338, 0, 0.4049),(0.4049, 0, 0.2338),(0.4675, 0, 0),(0.4049, 0, -0.2338),(0.2338, 0, -0.4049),(0, -0.2338, -0.4049),(-0.2024, -0.2338, -0.3506),(-0.3506, -0.2338, -0.2024),(-0.4049, -0.2338, 0),(-0.3506, -0.2338, 0.2024),(-0.2024, -0.2338, 0.3506),(0, -0.2338, 0.4049),(0.2024, -0.2338, 0.3506),(0.3506, -0.2338, 0.2024),(0.4049, -0.2338, 0),(0.3506, -0.2338, -0.2024),(0.2024, -0.2338, -0.3506),(0, -0.4049, -0.2338),(-0.1169, -0.4049, -0.2024),(-0.2024, -0.4049, -0.1169),(-0.2338, -0.4049, 0),(-0.2024, -0.4049, 0.1169),(-0.1169, -0.4049, 0.2024),(0, -0.4049, 0.2338),(0.1169, -0.4049, 0.2024),(0.2024, -0.4049, 0.1169),(0.2338, -0.4049, 0),(0.2024, -0.4049, -0.1169),(0.1169, -0.4049, -0.2024),(0, -0.4675, 0)]
+Shape537.geometry = IndexedFaceSet541
 
-IndexedFaceSet543.coord = Coordinate544
+Transform536.children.append(Shape537)
+Viewpoint543 = x3d.Viewpoint(DEF="ballView_1")
+Viewpoint543.description = "Ball View"
 
-Shape539.geometry = IndexedFaceSet543
+Transform536.children.append(Viewpoint543)
 
-Transform538.children.append(Shape539)
-Viewpoint545 = x3d.Viewpoint(DEF="ballView_1")
-Viewpoint545.description = "Ball View"
+Group535.children.append(Transform536)
+Group535.children.append(x3d.Comment("""Ball Animation interpolators"""))
+PositionInterpolator544 = x3d.PositionInterpolator(DEF="ball_TranslationInterpolator")
+PositionInterpolator544.key = [0,0.4,0.409,1]
+PositionInterpolator544.keyValue = [(-1, 0.4, -1),(0, 0.07, 0),(0.05, 0.06, 0.05),(2, 4, 10)]
 
-Transform538.children.append(Viewpoint545)
+Group535.children.append(PositionInterpolator544)
+OrientationInterpolator545 = x3d.OrientationInterpolator(DEF="ball_RotationInterpolator")
+OrientationInterpolator545.key = [0,0.4,0.41,0.71,1]
+OrientationInterpolator545.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 1.35),(-1, 1, -1, 3.35),(-1, 0.2, -1, 3),(-1, 0.2, -1, 3)]
 
-Group537.children.append(Transform538)
-Group537.children.append(x3d.Comment("""Ball Animation interpolators"""))
-PositionInterpolator546 = x3d.PositionInterpolator(DEF="ball_TranslationInterpolator")
-PositionInterpolator546.key = [0,0.4,0.409,1]
-PositionInterpolator546.keyValue = [(-1, 0.4, -1),(0, 0.07, 0),(0.05, 0.06, 0.05),(2, 4, 10)]
+Group535.children.append(OrientationInterpolator545)
+Group535.children.append(x3d.Comment("""Ball Animation Routes"""))
+ROUTE546 = x3d.ROUTE()
+ROUTE546.fromField = "fraction_changed"
+ROUTE546.fromNode = "KickTimer"
+ROUTE546.toField = "set_fraction"
+ROUTE546.toNode = "ball_TranslationInterpolator"
 
-Group537.children.append(PositionInterpolator546)
-OrientationInterpolator547 = x3d.OrientationInterpolator(DEF="ball_RotationInterpolator")
-OrientationInterpolator547.key = [0,0.4,0.41,0.71,1]
-OrientationInterpolator547.keyValue = [(1, 0, 1, 0.25),(-1, 0, -1, 1.35),(-1, 1, -1, 3.35),(-1, 0.2, -1, 3),(-1, 0.2, -1, 3)]
+Group535.children.append(ROUTE546)
+ROUTE547 = x3d.ROUTE()
+ROUTE547.fromField = "value_changed"
+ROUTE547.fromNode = "ball_TranslationInterpolator"
+ROUTE547.toField = "set_translation"
+ROUTE547.toNode = "SBall"
 
-Group537.children.append(OrientationInterpolator547)
-Group537.children.append(x3d.Comment("""Ball Animation Routes"""))
+Group535.children.append(ROUTE547)
 ROUTE548 = x3d.ROUTE()
 ROUTE548.fromField = "fraction_changed"
 ROUTE548.fromNode = "KickTimer"
 ROUTE548.toField = "set_fraction"
-ROUTE548.toNode = "ball_TranslationInterpolator"
+ROUTE548.toNode = "ball_RotationInterpolator"
 
-Group537.children.append(ROUTE548)
+Group535.children.append(ROUTE548)
 ROUTE549 = x3d.ROUTE()
 ROUTE549.fromField = "value_changed"
-ROUTE549.fromNode = "ball_TranslationInterpolator"
-ROUTE549.toField = "set_translation"
+ROUTE549.fromNode = "ball_RotationInterpolator"
+ROUTE549.toField = "set_rotation"
 ROUTE549.toNode = "SBall"
 
-Group537.children.append(ROUTE549)
-ROUTE550 = x3d.ROUTE()
-ROUTE550.fromField = "fraction_changed"
-ROUTE550.fromNode = "KickTimer"
-ROUTE550.toField = "set_fraction"
-ROUTE550.toNode = "ball_RotationInterpolator"
+Group535.children.append(ROUTE549)
 
-Group537.children.append(ROUTE550)
-ROUTE551 = x3d.ROUTE()
-ROUTE551.fromField = "value_changed"
-ROUTE551.fromNode = "ball_RotationInterpolator"
-ROUTE551.toField = "set_rotation"
-ROUTE551.toNode = "SBall"
+Scene19.children.append(Group535)
+Group550 = x3d.Group()
+Transform551 = x3d.Transform()
+Transform551.scale = [0.2,0.2,0.2]
+Shape552 = x3d.Shape(USE="AxisLinesShape")
 
-Group537.children.append(ROUTE551)
+Transform551.children.append(Shape552)
 
-Scene19.children.append(Group537)
-Group552 = x3d.Group()
-Transform553 = x3d.Transform()
-Transform553.scale = [0.2,0.2,0.2]
-Shape554 = x3d.Shape(USE="AxisLinesShape")
+Group550.children.append(Transform551)
+Transform553 = x3d.Transform(DEF="Circle0")
+Transform553.scale = [1.175,1,1.175]
+Shape554 = x3d.Shape(DEF="circle_Shape")
+Appearance555 = x3d.Appearance(DEF="circle0_Appearance")
+Material556 = x3d.Material(DEF="circle0_Material")
+Material556.ambientIntensity = 0.9
+Material556.diffuseColor = [0.9,0,0.7]
+Material556.emissiveColor = [0.425,0.486,1]
+
+Appearance555.material = Material556
+
+Shape554.appearance = Appearance555
+IndexedLineSet557 = x3d.IndexedLineSet(DEF="Orbit1")
+IndexedLineSet557.coordIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]
+Coordinate558 = x3d.Coordinate(DEF="circle_Coordinates")
+Coordinate558.point = [(1, 0, 0),(0.995, 0, -0.105),(0.979, 0, -0.208),(0.951, 0, -0.309),(0.914, 0, -0.407),(0.866, 0, -0.5),(0.809, 0, -0.588),(0.743, 0, -0.669),(0.669, 0, -0.743),(0.588, 0, -0.809),(0.5, 0, -0.866),(0.407, 0, -0.914),(0.309, 0, -0.951),(0.208, 0, -0.978),(0.105, 0, -0.995),(0, 0, -1),(-0.105, 0, -0.994522),(-0.208, 0, -0.978),(-0.309, 0, -0.951),(-0.407, 0, -0.914),(-0.5, 0, -0.866),(-0.588, 0, -0.809),(-0.669, 0, -0.743),(-0.743, 0, -0.669),(-0.809, 0, -0.588),(-0.866, 0, -0.5),(-0.914, 0, -0.407),(-0.951, 0, -0.309),(-0.978, 0, -0.208),(-0.995, 0, -0.105),(-1, 0, 0),(-0.995, 0, 0.105),(-0.978, 0, 0.208),(-0.951, 0, 0.309),(-0.914, 0, 0.407),(-0.866, 0, 0.5),(-0.809, 0, 0.588),(-0.743, 0, 0.669),(-0.669, 0, 0.743),(-0.588, 0, 0.809),(-0.5, 0, 0.866),(-0.407, 0, 0.914),(-0.309, 0, 0.951),(-0.208, 0, 0.978),(-0.105, 0, 0.995),(0, 0, 1),(0.105, 0, 0.995),(0.208, 0, 0.978),(0.309, 0, 0.951),(0.407, 0, 0.914),(0.5, 0, 0.866),(0.588, 0, 0.809),(0.669, 0, 0.743),(0.743, 0, 0.669),(0.809, 0, 0.588),(0.866, 0, 0.5),(0.914, 0, 0.407),(0.951, 0, 0.309),(0.978, 0, 0.208),(0.995, 0, 0.104),(1, 0, 0)]
+
+IndexedLineSet557.coord = Coordinate558
+
+Shape554.geometry = IndexedLineSet557
 
 Transform553.children.append(Shape554)
 
-Group552.children.append(Transform553)
-Transform555 = x3d.Transform(DEF="Circle0")
-Transform555.scale = [1.175,1,1.175]
-Shape556 = x3d.Shape(DEF="circle_Shape")
-Appearance557 = x3d.Appearance(DEF="circle0_Appearance")
-Material558 = x3d.Material(DEF="circle0_Material")
-Material558.ambientIntensity = 0.9
-Material558.diffuseColor = [0.9,0,0.7]
-Material558.emissiveColor = [0.425,0.486,1]
+Group550.children.append(Transform553)
+Transform559 = x3d.Transform(DEF="Circle1")
+Transform559.scale = [0.5,1,0.5]
+Shape560 = x3d.Shape(DEF="circle1_Shape")
+Appearance561 = x3d.Appearance(DEF="circle1_Appearance")
+Material562 = x3d.Material(DEF="circle1_Material")
+Material562.diffuseColor = [0.9,0,0.7]
+Material562.emissiveColor = [0.424956,0.483976,1]
 
-Appearance557.material = Material558
+Appearance561.material = Material562
 
-Shape556.appearance = Appearance557
-IndexedLineSet559 = x3d.IndexedLineSet(DEF="Orbit1")
-IndexedLineSet559.coordIndex = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]
-Coordinate560 = x3d.Coordinate(DEF="circle_Coordinates")
-Coordinate560.point = [(1, 0, 0),(0.995, 0, -0.105),(0.979, 0, -0.208),(0.951, 0, -0.309),(0.914, 0, -0.407),(0.866, 0, -0.5),(0.809, 0, -0.588),(0.743, 0, -0.669),(0.669, 0, -0.743),(0.588, 0, -0.809),(0.5, 0, -0.866),(0.407, 0, -0.914),(0.309, 0, -0.951),(0.208, 0, -0.978),(0.105, 0, -0.995),(0, 0, -1),(-0.105, 0, -0.994522),(-0.208, 0, -0.978),(-0.309, 0, -0.951),(-0.407, 0, -0.914),(-0.5, 0, -0.866),(-0.588, 0, -0.809),(-0.669, 0, -0.743),(-0.743, 0, -0.669),(-0.809, 0, -0.588),(-0.866, 0, -0.5),(-0.914, 0, -0.407),(-0.951, 0, -0.309),(-0.978, 0, -0.208),(-0.995, 0, -0.105),(-1, 0, 0),(-0.995, 0, 0.105),(-0.978, 0, 0.208),(-0.951, 0, 0.309),(-0.914, 0, 0.407),(-0.866, 0, 0.5),(-0.809, 0, 0.588),(-0.743, 0, 0.669),(-0.669, 0, 0.743),(-0.588, 0, 0.809),(-0.5, 0, 0.866),(-0.407, 0, 0.914),(-0.309, 0, 0.951),(-0.208, 0, 0.978),(-0.105, 0, 0.995),(0, 0, 1),(0.105, 0, 0.995),(0.208, 0, 0.978),(0.309, 0, 0.951),(0.407, 0, 0.914),(0.5, 0, 0.866),(0.588, 0, 0.809),(0.669, 0, 0.743),(0.743, 0, 0.669),(0.809, 0, 0.588),(0.866, 0, 0.5),(0.914, 0, 0.407),(0.951, 0, 0.309),(0.978, 0, 0.208),(0.995, 0, 0.104),(1, 0, 0)]
+Shape560.appearance = Appearance561
+IndexedLineSet563 = x3d.IndexedLineSet(USE="Orbit1")
 
-IndexedLineSet559.coord = Coordinate560
+Shape560.geometry = IndexedLineSet563
 
-Shape556.geometry = IndexedLineSet559
+Transform559.children.append(Shape560)
 
-Transform555.children.append(Shape556)
+Group550.children.append(Transform559)
+Transform564 = x3d.Transform(DEF="Circle2")
+Transform564.scale = [0.25,1,0.25]
+Shape565 = x3d.Shape(DEF="circle2_Shape")
+Appearance566 = x3d.Appearance(DEF="circle2_Appearance")
+Material567 = x3d.Material(DEF="circle2_Material")
+Material567.diffuseColor = [0.9,0,0.7]
+Material567.emissiveColor = [0.424956,0.483976,1]
 
-Group552.children.append(Transform555)
-Transform561 = x3d.Transform(DEF="Circle1")
-Transform561.scale = [0.5,1,0.5]
-Shape562 = x3d.Shape(DEF="circle1_Shape")
-Appearance563 = x3d.Appearance(DEF="circle1_Appearance")
-Material564 = x3d.Material(DEF="circle1_Material")
-Material564.diffuseColor = [0.9,0,0.7]
-Material564.emissiveColor = [0.424956,0.483976,1]
+Appearance566.material = Material567
 
-Appearance563.material = Material564
+Shape565.appearance = Appearance566
+IndexedLineSet568 = x3d.IndexedLineSet(USE="Orbit1")
 
-Shape562.appearance = Appearance563
-IndexedLineSet565 = x3d.IndexedLineSet(USE="Orbit1")
+Shape565.geometry = IndexedLineSet568
 
-Shape562.geometry = IndexedLineSet565
+Transform564.children.append(Shape565)
 
-Transform561.children.append(Shape562)
+Group550.children.append(Transform564)
 
-Group552.children.append(Transform561)
-Transform566 = x3d.Transform(DEF="Circle2")
-Transform566.scale = [0.25,1,0.25]
-Shape567 = x3d.Shape(DEF="circle2_Shape")
-Appearance568 = x3d.Appearance(DEF="circle2_Appearance")
-Material569 = x3d.Material(DEF="circle2_Material")
-Material569.diffuseColor = [0.9,0,0.7]
-Material569.emissiveColor = [0.424956,0.483976,1]
-
-Appearance568.material = Material569
-
-Shape567.appearance = Appearance568
-IndexedLineSet570 = x3d.IndexedLineSet(USE="Orbit1")
-
-Shape567.geometry = IndexedLineSet570
-
-Transform566.children.append(Shape567)
-
-Group552.children.append(Transform566)
-
-Scene19.children.append(Group552)
+Scene19.children.append(Group550)
 
 X3D0.Scene = Scene19
 f = open("../data/JoeSkinTexcoordDisplacerKick.new.python.x3d", mode="w", encoding="utf-8")

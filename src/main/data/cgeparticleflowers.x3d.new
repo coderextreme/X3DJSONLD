@@ -1,55 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><component name="EnvironmentalEffects" level="3"></component>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><component name="EnvironmentalEffects" level="3"></component>
 <component name="Shaders" level="1"></component>
 <component name="CubeMapTexturing" level="1"></component>
+<component name="Texturing" level="1"></component>
+<component name="Rendering" level="1"></component>
 <component name="Grouping" level="3"></component>
+<component name="Core" level="1"></component>
 <component name="ParticleSystems" level="3"></component>
 <meta name="title" content="particleflowers.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
 <meta name="description" content="A flower proto with configurable shaders"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/particleflowers.x3d"></meta>
 </head>
 <Scene><WorldInfo title="particleflowers.x3d"></WorldInfo>
 <NavigationInfo type="&quot;ANY&quot; &quot;EXAMINE&quot; &quot;FLY&quot; &quot;LOOKAT&quot;"></NavigationInfo>
 <Viewpoint description="Tour Views" position="0 0 12"></Viewpoint>
-<Background frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></Background>
-<Transform><ParticleSystem geometryType="GEOMETRY" maxParticles="20"><ExplosionEmitter containerField="emitter" speed="2" variation="0.75"></ExplosionEmitter>
-<BoundedPhysicsModel><Sphere radius="100"></Sphere>
+<Background backUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;" bottomUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;" frontUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_front.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;" leftUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;" rightUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;" topUrl="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></Background>
+<Transform><ParticleSystem maxParticles="20" geometryType="GEOMETRY"><BoundedPhysicsModel><Sphere radius="100"></Sphere>
 </BoundedPhysicsModel>
+<ExplosionEmitter containerField="emitter" speed="2" variation="0.75"></ExplosionEmitter>
+<Sphere></Sphere>
 <Appearance containerField="appearance"><Material containerField="material" diffuseColor="0.7 0.7 0.7" specularColor="0.5 0.5 0.5"></Material>
-<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_from.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
-<ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ComposedCubeMapTexture containerField="texture" DEF="texture"><ImageTexture containerField="backTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_back.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png&quot;"></ImageTexture>
+<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
+<ImageTexture containerField="frontTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_from.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png&quot;"></ImageTexture>
 <ImageTexture containerField="leftTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_left.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png&quot;"></ImageTexture>
 <ImageTexture containerField="rightTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_right.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png&quot;"></ImageTexture>
 <ImageTexture containerField="topTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_top.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png&quot;"></ImageTexture>
-<ImageTexture containerField="bottomTexture" url="&quot;../resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot; &quot;https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png&quot;"></ImageTexture>
 </ComposedCubeMapTexture>
-<ComposedShader DEF="shader" language="GLSL"><ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;"></ShaderPart>
+<ComposedShader DEF="shader" language="GLSL"><field name="cube" type="SFInt32" accessType="inputOutput" value="0"></field>
+<field name="chromaticDispertion" accessType="initializeOnly" type="SFVec3f" value="0.98 1 1.033"></field>
+<field name="bias" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="scale" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="power" type="SFFloat" accessType="inputOutput" value="2"></field>
+<field name="a" type="SFFloat" accessType="inputOutput" value="2"></field>
+<field name="b" type="SFFloat" accessType="inputOutput" value="1"></field>
+<field name="c" type="SFFloat" accessType="inputOutput" value="5"></field>
+<field name="d" type="SFFloat" accessType="inputOutput" value="5"></field>
+<field name="tdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
+<field name="pdelta" type="SFFloat" accessType="inputOutput" value="0"></field>
+<!--<field name='cube' type='SFNode' accessType="initializeOnly">--><!--<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>--><!--</field>--><ShaderPart url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs&quot;" type="VERTEX"></ShaderPart>
 <ShaderPart type="FRAGMENT" url="&quot;https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs&quot;"></ShaderPart>
-<field accessType="inputOutput" type="SFInt32" name="cube"></field>
-<field accessType="initializeOnly" type="SFVec3f" name="chromaticDispertion" value="0.98 1 1.033"></field>
-<field accessType="inputOutput" type="SFFloat" name="bias" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="scale" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="power" value="2"></field>
-<field accessType="inputOutput" type="SFFloat" name="a" value="2"></field>
-<field accessType="inputOutput" type="SFFloat" name="b" value="1"></field>
-<field accessType="inputOutput" type="SFFloat" name="c" value="5"></field>
-<field accessType="inputOutput" type="SFFloat" name="d" value="5"></field>
-<field accessType="inputOutput" type="SFFloat" name="tdelta"></field>
-<field accessType="inputOutput" type="SFFloat" name="pdelta"></field>
 </ComposedShader>
 </Appearance>
-<Sphere></Sphere>
 </ParticleSystem>
-<Script DEF="Animate"><field accessType="inputOutput" type="SFVec3f" name="translation"></field>
-<field accessType="inputOutput" type="SFVec3f" name="velocity"></field>
-<field accessType="inputOnly" type="SFFloat" name="set_fraction"></field>
-<field accessType="inputOutput" type="SFFloat" name="a" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="b" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="c" value="3"></field>
-<field accessType="inputOutput" type="SFFloat" name="d" value="3"></field>
-<field accessType="inputOutput" type="SFFloat" name="tdelta" value="0.5"></field>
-<field accessType="inputOutput" type="SFFloat" name="pdelta" value="0.5"></field>
+<Script DEF="Animate"><field name="translation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="velocity" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="set_fraction" accessType="inputOnly" type="SFFloat"></field>
+<field name="a" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="b" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="c" type="SFFloat" accessType="inputOutput" value="3"></field>
+<field name="d" type="SFFloat" accessType="inputOutput" value="3"></field>
+<field name="tdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
+<field name="pdelta" type="SFFloat" accessType="inputOutput" value="0.5"></field>
 <![CDATA[ecmascript:
 
 			function initialize() {
@@ -118,13 +122,13 @@
 				}
 			}]]></Script>
 <TimeSensor DEF="TourTime" cycleInterval="5" loop="true"></TimeSensor>
-</Transform>
 <ROUTE fromNode="TourTime" fromField="fraction_changed" toNode="Animate" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="Animate" fromField="a_changed" toNode="shader" toField="set_a"></ROUTE>
-<ROUTE fromNode="Animate" fromField="b_changed" toNode="shader" toField="set_b"></ROUTE>
-<ROUTE fromNode="Animate" fromField="c_changed" toNode="shader" toField="set_c"></ROUTE>
-<ROUTE fromNode="Animate" fromField="d_changed" toNode="shader" toField="set_d"></ROUTE>
-<ROUTE fromNode="Animate" fromField="pdelta_changed" toNode="shader" toField="set_pdelta"></ROUTE>
-<ROUTE fromNode="Animate" fromField="tdelta_changed" toNode="shader" toField="set_tdelta"></ROUTE>
+<ROUTE fromNode="Animate" fromField="a" toNode="shader" toField="a"></ROUTE>
+<ROUTE fromNode="Animate" fromField="b" toNode="shader" toField="b"></ROUTE>
+<ROUTE fromNode="Animate" fromField="c" toNode="shader" toField="c"></ROUTE>
+<ROUTE fromNode="Animate" fromField="d" toNode="shader" toField="d"></ROUTE>
+<ROUTE fromNode="Animate" fromField="pdelta" toNode="shader" toField="pdelta"></ROUTE>
+<ROUTE fromNode="Animate" fromField="tdelta" toNode="shader" toField="tdelta"></ROUTE>
+</Transform>
 </Scene>
 </X3D>

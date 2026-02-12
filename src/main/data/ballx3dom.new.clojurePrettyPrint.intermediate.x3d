@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<!-- This model file was produced using X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html -->
-<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
-    <component name='Scripting' level='1'/>
-    <component name='EnvironmentalEffects' level='3'/>
-    <component name='Shaders' level='1'/>
-    <component name='CubeMapTexturing' level='1'/>
-    <component name='Texturing' level='1'/>
-    <component name='Rendering' level='1'/>
-    <component name='Grouping' level='3'/>
-    <component name='Core' level='1'/>
+    <component level='3' name='EnvironmentalEffects'/>
+    <component level='1' name='Shaders'/>
+    <component level='1' name='CubeMapTexturing'/>
+    <component level='3' name='Grouping'/>
     <meta content='ballx3dom.x3d' name='title'/>
     <meta content='John Carlson' name='creator'/>
+    <meta content='x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy' name='generator'/>
     <meta content='manual' name='generator'/>
-    <meta content='https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d' name='identifier'/>
-    <meta content='a prismatic sphere' name='description'/>
+    <meta content='X3DJSAIL https://www.web3d.org/specifications/java/X3DJSAIL.html' name='generator'/>
   </head>
   <Scene>
     <WorldInfo title='ball.x3d'/>
@@ -27,13 +22,13 @@
         <Appearance>
           <Material diffuseColor='0.7 0.7 0.7' specularColor='0.5 0.5 0.5'/>
           <ComposedShader language='GLSL'>
-            <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'/>
-            <field name='cube' accessType='inputOutput' type='SFNode'>
+            <field accessType='inputOutput' name='chromaticDispertion' type='SFVec3f' value='0.98 1 1.033'/>
+            <field accessType='inputOutput' name='cube' type='SFNode'>
               <ComposedCubeMapTexture USE='texture'/>
             </field>
-            <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'/>
-            <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'/>
-            <field name='power' accessType='inputOutput' type='SFFloat' value='2.0'/>
+            <field accessType='inputOutput' name='bias' type='SFFloat' value='0.5'/>
+            <field accessType='inputOutput' name='scale' type='SFFloat' value='0.5'/>
+            <field accessType='inputOutput' name='power' type='SFFloat' value='2.0'/>
             <ShaderPart url='"../shaders/x3dom.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"'/>
             <ShaderPart DEF='common' type='FRAGMENT' url='"../shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"'/>
           </ComposedShader>

@@ -42,7 +42,7 @@ meta8.content = "16 December 2021"
 head1.children.append(meta8)
 meta9 = x3d.meta()
 meta9.name = "modified"
-meta9.content = "Mon, 09 Feb 2026 07:09:52 GMT"
+meta9.content = "Mon, 09 Feb 2026 12:23:00 GMT"
 
 head1.children.append(meta9)
 meta10 = x3d.meta()
@@ -513,7 +513,7 @@ HAnimSegment124 = x3d.HAnimSegment(DEF="hanim_Left_lower_eyelid")
 HAnimSegment124.name = "left_lower_eyelid"
 HAnimDisplacer125 = x3d.HAnimDisplacer(DEF="Left_lower_eyelid_MorphInterpolator_JinWink")
 HAnimDisplacer125.name = "left_lower_eyelid_morphinterpolator"
-HAnimDisplacer125.weight = 0.7777777
+HAnimDisplacer125.weight = 0.2545457
 HAnimDisplacer125.coordIndex = [0,1,2,3,4,10,11]
 HAnimDisplacer125.displacements = [(0.214, 1.0508, 0.5553),(0, 0.4269, 0.471),(0.093, 0.8476, 0.3331),(-0.3349, 1.0786, 0.7039),(0, 0.8357, 0.707),(0, 0.8975, 0.841),(0, 0, 0.034)]
 
@@ -744,7 +744,7 @@ HAnimSegment181 = x3d.HAnimSegment(DEF="hanim_Left_upper_eyelid")
 HAnimSegment181.name = "left_upper_eyelid"
 HAnimDisplacer182 = x3d.HAnimDisplacer(DEF="Left_upper_eyelid_MorphInterpolator_JinWink")
 HAnimDisplacer182.name = "left_upper_eyelid_morphinterpolator"
-HAnimDisplacer182.weight = 0.7777777
+HAnimDisplacer182.weight = 0.2545457
 HAnimDisplacer182.coordIndex = [1,3,4,5]
 HAnimDisplacer182.displacements = [(0, -1.2176, -0.113),(0, -1.6397, -0.189),(0, -1.4464, -0.1133),(0, 0, 0.033)]
 

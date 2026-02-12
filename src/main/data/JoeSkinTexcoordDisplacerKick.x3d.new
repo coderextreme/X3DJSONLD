@@ -236,8 +236,6 @@
 <HAnimJoint containerField="joints" USE="Joe_r_thumb3"></HAnimJoint>
 <HAnimJoint containerField="joints" USE="Joe_l_wrist"></HAnimJoint>
 <HAnimJoint containerField="joints" USE="Joe_r_wrist"></HAnimJoint>
-<HAnimSegment containerField="segments" USE="Joe_sacrum"></HAnimSegment>
-<HAnimSite containerField="sites" USE="Joe_RootFront_view"></HAnimSite>
 </HAnimHumanoid>
 </Group>
 <Group><TimeSensor DEF="KickTimer" cycleInterval="3.73" loop="true"></TimeSensor>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="Menu.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="Menu.x3d"></meta>
+<meta name="description" content="X3D scene with a Switch of Inlines controlled by a menu"></meta>
 </head>
-<Scene><Viewpoint position="0 20 110"></Viewpoint>
-<Group><Switch DEF="SceneSwitcher" whichChoice="0"><Group><Script DEF="Choice0"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Scene><!--Viewpoint and any other scene setup--><Viewpoint position="0 20 110"></Viewpoint>
+<Group><Switch DEF="SceneSwitcher" whichChoice="0"><Group><Script DEF="Choice0"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 0;
@@ -14,8 +15,8 @@
       }]]></Script>
 <Inline DEF="JinBlink" url="&quot;../resources/JinBlink.x3d&quot; &quot;JinBlink.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice1"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice1"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 1;
@@ -25,8 +26,8 @@
       }]]></Script>
 <Inline DEF="JinBrowLowerer" url="&quot;../resources/JinBrowLowerer.x3d&quot; &quot;JinBrowLowerer.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice2"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice2"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 2;
@@ -36,8 +37,8 @@
       }]]></Script>
 <Inline DEF="JinCheekPuffer" url="&quot;../resources/JinCheekPuffer.x3d&quot; &quot;JinCheekPuffer.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice3"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice3"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 3;
@@ -47,8 +48,8 @@
       }]]></Script>
 <Inline DEF="JinCheekRaiser" url="&quot;../resources/JinCheekRaiser.x3d&quot; &quot;JinCheekRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice4"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice4"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 4;
@@ -58,8 +59,8 @@
       }]]></Script>
 <Inline DEF="JinChinRaiser" url="&quot;../resources/JinChinRaiser.x3d&quot; &quot;JinChinRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice5"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice5"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 5;
@@ -69,8 +70,8 @@
       }]]></Script>
 <Inline DEF="JinDimpler" url="&quot;../resources/JinDimpler.x3d&quot; &quot;JinDimpler.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice6"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice6"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 6;
@@ -80,8 +81,8 @@
       }]]></Script>
 <Inline DEF="JinEyesClosed" url="&quot;../resources/JinEyesClosed.x3d&quot; &quot;JinEyesClosed.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice7"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice7"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 7;
@@ -91,8 +92,8 @@
       }]]></Script>
 <Inline DEF="JinInnerBrowRaiser" url="&quot;../resources/JinInnerBrowRaiser.x3d&quot; &quot;JinInnerBrowRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice8"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice8"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 8;
@@ -102,8 +103,8 @@
       }]]></Script>
 <Inline DEF="JinJawDrop" url="&quot;../resources/JinJawDrop.x3d&quot; &quot;JinJawDrop.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice9"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice9"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 9;
@@ -113,8 +114,8 @@
       }]]></Script>
 <Inline DEF="JinLidDroop" url="&quot;../resources/JinLidDroop.x3d&quot; &quot;JinLidDroop.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice10"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice10"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 10;
@@ -124,8 +125,8 @@
       }]]></Script>
 <Inline DEF="JinLidTightener" url="&quot;../resources/JinLidTightener.x3d&quot; &quot;JinLidTightener.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice11"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice11"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 11;
@@ -135,8 +136,8 @@
       }]]></Script>
 <Inline DEF="JinLipCornerDepressor" url="&quot;../resources/JinLipCornerDepressor.x3d&quot; &quot;JinLipCornerDepressor.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice12"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice12"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 12;
@@ -146,8 +147,8 @@
       }]]></Script>
 <Inline DEF="JinLipCornerPuller" url="&quot;../resources/JinLipCornerPuller.x3d&quot; &quot;JinLipCornerPuller.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice13"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice13"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 13;
@@ -157,8 +158,8 @@
       }]]></Script>
 <Inline DEF="JinLipFunneler" url="&quot;../resources/JinLipFunneler.x3d&quot; &quot;JinLipFunneler.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice14"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice14"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 14;
@@ -168,8 +169,8 @@
       }]]></Script>
 <Inline DEF="JinLipPressor" url="&quot;../resources/JinLipPressor.x3d&quot; &quot;JinLipPressor.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice15"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice15"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 15;
@@ -179,8 +180,8 @@
       }]]></Script>
 <Inline DEF="JinLipPuckerer" url="&quot;../resources/JinLipPuckerer.x3d&quot; &quot;JinLipPuckerer.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice16"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice16"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 16;
@@ -190,8 +191,8 @@
       }]]></Script>
 <Inline DEF="JinLipsPart" url="&quot;../resources/JinLipsPart.x3d&quot; &quot;JinLipsPart.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice17"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice17"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 17;
@@ -201,8 +202,8 @@
       }]]></Script>
 <Inline DEF="JinLipStretcher" url="&quot;../resources/JinLipStretcher.x3d&quot; &quot;JinLipStretcher.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice18"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice18"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 18;
@@ -212,8 +213,8 @@
       }]]></Script>
 <Inline DEF="JinLipSuck" url="&quot;../resources/JinLipSuck.x3d&quot; &quot;JinLipSuck.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice19"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice19"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 19;
@@ -223,8 +224,8 @@
       }]]></Script>
 <Inline DEF="JinLipTightener" url="&quot;../resources/JinLipTightener.x3d&quot; &quot;JinLipTightener.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice20"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice20"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 20;
@@ -234,8 +235,8 @@
       }]]></Script>
 <Inline DEF="JinLowerLipDepressor" url="&quot;../resources/JinLowerLipDepressor.x3d&quot; &quot;JinLowerLipDepressor.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice21"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice21"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 21;
@@ -245,8 +246,8 @@
       }]]></Script>
 <Inline DEF="JinMouthStretch" url="&quot;../resources/JinMouthStretch.x3d&quot; &quot;JinMouthStretch.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice22"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice22"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 22;
@@ -256,8 +257,8 @@
       }]]></Script>
 <Inline DEF="JinNasolabialDeepener" url="&quot;../resources/JinNasolabialDeepener.x3d&quot; &quot;JinNasolabialDeepener.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice23"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice23"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 23;
@@ -267,8 +268,8 @@
       }]]></Script>
 <Inline DEF="JinNoseWrinkler" url="&quot;../resources/JinNoseWrinkler.x3d&quot; &quot;JinNoseWrinkler.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice24"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice24"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 24;
@@ -278,8 +279,8 @@
       }]]></Script>
 <Inline DEF="JinOuterBrowRaiser" url="&quot;../resources/JinOuterBrowRaiser.x3d&quot; &quot;JinOuterBrowRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice25"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice25"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 25;
@@ -289,8 +290,8 @@
       }]]></Script>
 <Inline DEF="JinSlit" url="&quot;../resources/JinSlit.x3d&quot; &quot;JinSlit.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice26"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice26"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 26;
@@ -300,8 +301,8 @@
       }]]></Script>
 <Inline DEF="JinSquint" url="&quot;../resources/JinSquint.x3d&quot; &quot;JinSquint.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice27"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice27"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 27;
@@ -311,8 +312,8 @@
       }]]></Script>
 <Inline DEF="JinUpperLidRaiser" url="&quot;../resources/JinUpperLidRaiser.x3d&quot; &quot;JinUpperLidRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice28"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice28"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 28;
@@ -322,8 +323,8 @@
       }]]></Script>
 <Inline DEF="JinUpperLipRaiser" url="&quot;../resources/JinUpperLipRaiser.x3d&quot; &quot;JinUpperLipRaiser.x3d&quot;"></Inline>
 </Group>
-<Group><Script DEF="Choice29"><field accessType="inputOnly" type="SFTime" name="touchTime"></field>
-<field accessType="outputOnly" type="SFInt32" name="choice"></field>
+<Group><Script DEF="Choice29"><field name="touchTime" type="SFTime" accessType="inputOnly"></field>
+<field name="choice" type="SFInt32" accessType="outputOnly"></field>
 <![CDATA[ecmascript:
       function set_touchTime(value) {
           choice = 29;
@@ -334,7 +335,7 @@
 <Inline DEF="JinWink" url="&quot;../resources/JinWink.x3d&quot; &quot;JinWink.x3d&quot;"></Inline>
 </Group>
 </Switch>
-<Transform translation="48 63.4 0"><TouchSensor DEF="JinBlink_Sensor" description="TSJinBlink"></TouchSensor>
+<Transform translation="48 63.4 0"><TouchSensor description="TSJinBlink" DEF="JinBlink_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinBlink&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -342,11 +343,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 60.4 0"><TouchSensor DEF="JinBrowLowerer_Sensor" description="TSJinBrowLowerer"></TouchSensor>
+<ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Choice0" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice0" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 60.4 0"><TouchSensor description="TSJinBrowLowerer" DEF="JinBrowLowerer_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinBrowLowerer&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -354,11 +357,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 57.4 0"><TouchSensor DEF="JinCheekPuffer_Sensor" description="TSJinCheekPuffer"></TouchSensor>
+<ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Choice1" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice1" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 57.39999999999999 0"><TouchSensor description="TSJinCheekPuffer" DEF="JinCheekPuffer_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinCheekPuffer&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -366,11 +371,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 54.4 0"><TouchSensor DEF="JinCheekRaiser_Sensor" description="TSJinCheekRaiser"></TouchSensor>
+<ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Choice2" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice2" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 54.39999999999999 0"><TouchSensor description="TSJinCheekRaiser" DEF="JinCheekRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinCheekRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -378,11 +385,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 51.4 0"><TouchSensor DEF="JinChinRaiser_Sensor" description="TSJinChinRaiser"></TouchSensor>
+<ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Choice3" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice3" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 51.39999999999999 0"><TouchSensor description="TSJinChinRaiser" DEF="JinChinRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinChinRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -390,11 +399,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 48.4 0"><TouchSensor DEF="JinDimpler_Sensor" description="TSJinDimpler"></TouchSensor>
+<ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Choice4" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice4" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 48.39999999999999 0"><TouchSensor description="TSJinDimpler" DEF="JinDimpler_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinDimpler&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -402,11 +413,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 45.4 0"><TouchSensor DEF="JinEyesClosed_Sensor" description="TSJinEyesClosed"></TouchSensor>
+<ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Choice5" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice5" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 45.39999999999999 0"><TouchSensor description="TSJinEyesClosed" DEF="JinEyesClosed_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinEyesClosed&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -414,11 +427,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 42.4 0"><TouchSensor DEF="JinInnerBrowRaiser_Sensor" description="TSJinInnerBrowRaiser"></TouchSensor>
+<ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Choice6" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice6" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 42.39999999999999 0"><TouchSensor description="TSJinInnerBrowRaiser" DEF="JinInnerBrowRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinInnerBrowRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -426,11 +441,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 39.4 0"><TouchSensor DEF="JinJawDrop_Sensor" description="TSJinJawDrop"></TouchSensor>
+<ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Choice7" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice7" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 39.39999999999999 0"><TouchSensor description="TSJinJawDrop" DEF="JinJawDrop_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinJawDrop&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -438,11 +455,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 36.4 0"><TouchSensor DEF="JinLidDroop_Sensor" description="TSJinLidDroop"></TouchSensor>
+<ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 36.39999999999999 0"><TouchSensor description="TSJinLidDroop" DEF="JinLidDroop_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLidDroop&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -450,11 +469,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 33.4 0"><TouchSensor DEF="JinLidTightener_Sensor" description="TSJinLidTightener"></TouchSensor>
+<ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Choice9" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice9" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 33.39999999999999 0"><TouchSensor description="TSJinLidTightener" DEF="JinLidTightener_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLidTightener&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -462,11 +483,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 30.4 0"><TouchSensor DEF="JinLipCornerDepressor_Sensor" description="TSJinLipCornerDepressor"></TouchSensor>
+<ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Choice10" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice10" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 30.399999999999995 0"><TouchSensor description="TSJinLipCornerDepressor" DEF="JinLipCornerDepressor_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipCornerDepressor&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -474,11 +497,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 27.4 0"><TouchSensor DEF="JinLipCornerPuller_Sensor" description="TSJinLipCornerPuller"></TouchSensor>
+<ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Choice11" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice11" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 27.399999999999995 0"><TouchSensor description="TSJinLipCornerPuller" DEF="JinLipCornerPuller_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipCornerPuller&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -486,11 +511,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 24.4 0"><TouchSensor DEF="JinLipFunneler_Sensor" description="TSJinLipFunneler"></TouchSensor>
+<ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Choice12" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice12" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 24.399999999999995 0"><TouchSensor description="TSJinLipFunneler" DEF="JinLipFunneler_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipFunneler&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -498,11 +525,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 21.4 0"><TouchSensor DEF="JinLipPressor_Sensor" description="TSJinLipPressor"></TouchSensor>
+<ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Choice13" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice13" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 21.399999999999995 0"><TouchSensor description="TSJinLipPressor" DEF="JinLipPressor_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipPressor&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -510,11 +539,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 18.4 0"><TouchSensor DEF="JinLipPuckerer_Sensor" description="TSJinLipPuckerer"></TouchSensor>
+<ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Choice14" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice14" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 18.4 0"><TouchSensor description="TSJinLipPuckerer" DEF="JinLipPuckerer_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipPuckerer&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -522,11 +553,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 15.4 0"><TouchSensor DEF="JinLipsPart_Sensor" description="TSJinLipsPart"></TouchSensor>
+<ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Choice15" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice15" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 15.399999999999997 0"><TouchSensor description="TSJinLipsPart" DEF="JinLipsPart_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipsPart&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -534,11 +567,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 12.4 0"><TouchSensor DEF="JinLipStretcher_Sensor" description="TSJinLipStretcher"></TouchSensor>
+<ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Choice16" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice16" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 12.399999999999999 0"><TouchSensor description="TSJinLipStretcher" DEF="JinLipStretcher_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipStretcher&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -546,11 +581,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 9.4 0"><TouchSensor DEF="JinLipSuck_Sensor" description="TSJinLipSuck"></TouchSensor>
+<ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Choice17" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice17" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 9.399999999999999 0"><TouchSensor description="TSJinLipSuck" DEF="JinLipSuck_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipSuck&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -558,11 +595,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 6.4 0"><TouchSensor DEF="JinLipTightener_Sensor" description="TSJinLipTightener"></TouchSensor>
+<ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Choice18" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice18" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 6.399999999999999 0"><TouchSensor description="TSJinLipTightener" DEF="JinLipTightener_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLipTightener&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -570,11 +609,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 3.4 0"><TouchSensor DEF="JinLowerLipDepressor_Sensor" description="TSJinLowerLipDepressor"></TouchSensor>
+<ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Choice19" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice19" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 3.399999999999995 0"><TouchSensor description="TSJinLowerLipDepressor" DEF="JinLowerLipDepressor_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinLowerLipDepressor&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -582,11 +623,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 0.4 0"><TouchSensor DEF="JinMouthStretch_Sensor" description="TSJinMouthStretch"></TouchSensor>
+<ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Choice20" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice20" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 0.399999999999995 0"><TouchSensor description="TSJinMouthStretch" DEF="JinMouthStretch_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinMouthStretch&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -594,11 +637,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -2.6 0"><TouchSensor DEF="JinNasolabialDeepener_Sensor" description="TSJinNasolabialDeepener"></TouchSensor>
+<ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Choice21" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice21" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -2.6000000000000085 0"><TouchSensor description="TSJinNasolabialDeepener" DEF="JinNasolabialDeepener_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinNasolabialDeepener&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -606,11 +651,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -5.6 0"><TouchSensor DEF="JinNoseWrinkler_Sensor" description="TSJinNoseWrinkler"></TouchSensor>
+<ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Choice22" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice22" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -5.6000000000000085 0"><TouchSensor description="TSJinNoseWrinkler" DEF="JinNoseWrinkler_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinNoseWrinkler&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -618,11 +665,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -8.6 0"><TouchSensor DEF="JinOuterBrowRaiser_Sensor" description="TSJinOuterBrowRaiser"></TouchSensor>
+<ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Choice23" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice23" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -8.600000000000009 0"><TouchSensor description="TSJinOuterBrowRaiser" DEF="JinOuterBrowRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinOuterBrowRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -630,11 +679,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -11.6 0"><TouchSensor DEF="JinSlit_Sensor" description="TSJinSlit"></TouchSensor>
+<ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Choice24" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice24" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -11.600000000000009 0"><TouchSensor description="TSJinSlit" DEF="JinSlit_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinSlit&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -642,11 +693,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -14.6 0"><TouchSensor DEF="JinSquint_Sensor" description="TSJinSquint"></TouchSensor>
+<ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Choice25" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice25" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -14.600000000000001 0"><TouchSensor description="TSJinSquint" DEF="JinSquint_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinSquint&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -654,11 +707,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -17.6 0"><TouchSensor DEF="JinUpperLidRaiser_Sensor" description="TSJinUpperLidRaiser"></TouchSensor>
+<ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Choice26" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice26" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -17.6 0"><TouchSensor description="TSJinUpperLidRaiser" DEF="JinUpperLidRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinUpperLidRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -666,11 +721,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -20.6 0"><TouchSensor DEF="JinUpperLipRaiser_Sensor" description="TSJinUpperLipRaiser"></TouchSensor>
+<ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Choice27" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice27" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -20.6 0"><TouchSensor description="TSJinUpperLipRaiser" DEF="JinUpperLipRaiser_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinUpperLipRaiser&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -678,11 +735,13 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-<Transform translation="48 -23.6 0"><TouchSensor DEF="JinWink_Sensor" description="TSJinWink"></TouchSensor>
+<ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Choice28" toField="touchTime"></ROUTE>
+<ROUTE fromNode="Choice28" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+<Transform translation="48 -23.599999999999994 0"><TouchSensor description="TSJinWink" DEF="JinWink_Sensor"></TouchSensor>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
 <Text string="&quot;JinWink&quot;"><FontStyle containerField="fontStyle" size="2.4" spacing="1.2" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
@@ -690,70 +749,12 @@
 </Shape>
 <Shape><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 0 1"></Material>
 </Appearance>
-<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.383333 -0.1 -20 1.383333 -0.1 -20 -1.616667 -0.1 20 -1.616667 -0.1"></Coordinate>
+<IndexedFaceSet coordIndex="0 1 2 3 -1"><Coordinate point="20 1.3833333333333333 -0.1 -20 1.3833333333333333 -0.1 -20 -1.616666666666667 -0.1 20 -1.616666666666667 -0.1"></Coordinate>
 </IndexedFaceSet>
 </Shape>
 </Transform>
-</Group>
-<ROUTE fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Choice0" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice0" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Choice1" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice1" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Choice2" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice2" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Choice3" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice3" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Choice4" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice4" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Choice5" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice5" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Choice6" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice6" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Choice7" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice7" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Choice9" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice9" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Choice10" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice10" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Choice11" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice11" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Choice12" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice12" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Choice13" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice13" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Choice14" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice14" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Choice15" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice15" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Choice16" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice16" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Choice17" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice17" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Choice18" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice18" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Choice19" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice19" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Choice20" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice20" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Choice21" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice21" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Choice22" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice22" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Choice23" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice23" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Choice24" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice24" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Choice25" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice25" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Choice26" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice26" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Choice27" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice27" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
-<ROUTE fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Choice28" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice28" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
 <ROUTE fromNode="JinWink_Sensor" fromField="touchTime" toNode="Choice29" toField="touchTime"></ROUTE>
-<ROUTE fromNode="Choice29" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"></ROUTE>
+<ROUTE fromNode="Choice29" fromField="choice" toNode="SceneSwitcher" toField="whichChoice"></ROUTE>
+</Group>
 </Scene>
 </X3D>
