@@ -10,7 +10,7 @@ function validateWithXMLSchema(jsobj, path) {
 	  if (!xml) {
 	  	xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 	  }
-	  const result = validator.validateXML(xml, '../../specifications/x3d-4.0.xsd');
+	  const result = validator.validateXML(xml, '../../specifications/x3d-4.1.xsd');
 
 	  return result;
 	} catch (err) {

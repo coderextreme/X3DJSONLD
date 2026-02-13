@@ -114,6 +114,12 @@ convertJSON([
 	folder : "../pascal/net/coderextreme/",
 	extension : ".inc",
 	codeOutput : "../"
+	},
+	{ 
+	serializer : 'GoSerializer',
+	folder : "../go/net/coderextreme/",
+	extension : ".go",
+	codeOutput : "../"
 	}
 	]);
 process.exit(0);

@@ -2,7 +2,7 @@ const fs = require('fs');
 const libxml = require('libxmljs');
 let xmldom = require('@xmldom/xmldom');
 let DOMImplementation = new xmldom.DOMImplementation();
-const xsdString = fs.readFileSync('../../specifications/x3d-4.0.xsd', 'utf-8');
+const xsdString = fs.readFileSync('../../specifications/x3d-4.1.xsd', 'utf-8');
 
 function validateWithXMLSchema(jsobj, path) {
 

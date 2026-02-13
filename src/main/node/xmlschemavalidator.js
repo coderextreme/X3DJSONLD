@@ -1,10 +1,10 @@
-let xmlschema = require('C:/Users/john/X3DJSONLD/node_modules/xmlschema.js/dist/xmlschema.js')
+let xmlschema = require('C:/Users/jcarl/X3DJSONLD/node_modules/xmlschema.js/dist/xmlschema.js')
 let fs = require("fs");
 let validator = require('xsd-schema-validator');
 let X3DJSONLD = require('./X3DJSONLD.js');
 let xmldom = require('@xmldom/xmldom');
 let DOMImplementation = new xmldom.DOMImplementation();
-let xsd = fs.readFileSync('C:/Users/john/X3DJSONLD/src/specifications/x3d-4.0.xsd')
+let xsd = fs.readFileSync('C:/Users/jcarl/X3DJSONLD/src/specifications/x3d-4.1.xsd')
 
 function validateWithXMLSchema(jsobj, path, callback) {
 	try {
@@ -13,7 +13,7 @@ function validateWithXMLSchema(jsobj, path, callback) {
 	  if (!xml) {
 	  	xml = X3DJSONLD.serializeDOM(jsobj, child, true);
 	  }
-	  xmlschema('C:/Users/john/X3DJSONLD/src/specifications/x3d-4.0.xsd').validate(xml, callback);
+	  xmlschema('C:/Users/jcarl/X3DJSONLD/src/specifications/x3d-4.1.xsd').validate(xml, callback);
 
 	} catch (err) {
 	  console.error('validation error', err);
