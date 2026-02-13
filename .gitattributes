@@ -20,6 +20,11 @@ src/main/pascal/net/coderextreme/data/Gramps8Final.inc filter=lfs diff=lfs merge
 blend/gramps_animated_full_1.scaledExportC.x3d filter=lfs diff=lfs merge=lfs -text
 src/main/three2/data/New2TemplateNoBoxes.three2.js filter=lfs diff=lfs merge=lfs -text
 src/main/three2/data/Tufani5Final.three2.js filter=lfs diff=lfs merge=lfs -text
+src/main/data/john.x3dj filter=lfs diff=lfs merge=lfs -text
+src/main/data/john2.x3dj filter=lfs diff=lfs merge=lfs -text
+src/main/data/YehudiMenuJin.x3dj filter=lfs diff=lfs merge=lfs -text
+src/main/data/john3.x3dj filter=lfs diff=lfs merge=lfs -text
+src/main/data/Gramps8Final.x3dj filter=lfs diff=lfs merge=lfs -text
 *.jar filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.nrrd filter=lfs diff=lfs merge=lfs -text
