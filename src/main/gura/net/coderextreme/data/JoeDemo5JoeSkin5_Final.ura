@@ -1,7 +1,6 @@
 X3D:
     profile: "Immersive"
-    version: "4.0"
-    xsi:noNamespaceSchemaLocation: "https://www.web3d.org/specifications/x3d-4.0.xsd"
+    version: "4.1"
     setHead: [
         head: [
             component: [

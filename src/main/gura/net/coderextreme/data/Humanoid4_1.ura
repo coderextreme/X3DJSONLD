@@ -6638,7 +6638,95 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_sacroiliac"
+                    USE: "hanim_l_acromioclavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_calcaneocuboid"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_distal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_distal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_distal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_distal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_interphalangeal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_proximal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_proximal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_proximal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpal_proximal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpometacarpal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpometacarpal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpometacarpal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpometacarpal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_carpometacarpal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_cuneonavicular_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_cuneonavicular_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_cuneonavicular_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_elbow"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_eyeball_joint"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_eyebrow_joint"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_eyelid_joint"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -6650,19 +6738,23 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_talocrural"
+                    USE: "hanim_l_metacarpophalangeal_1"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_talocalcaneonavicular"
+                    USE: "hanim_l_metacarpophalangeal_2"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_cuneonavicular_1"
+                    USE: "hanim_l_metacarpophalangeal_3"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_tarsometatarsal_1"
+                    USE: "hanim_l_metacarpophalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_metacarpophalangeal_5"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -6670,35 +6762,7 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_tarsal_interphalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_cuneonavicular_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsometatarsal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
                     USE: "hanim_l_metatarsophalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsal_proximal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsal_distal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_cuneonavicular_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsometatarsal_3"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -6706,39 +6770,7 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_tarsal_proximal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsal_distal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_calcaneocuboid"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_transversetarsal"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsometatarsal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
                     USE: "hanim_l_metatarsophalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsal_proximal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsal_distal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_tarsometatarsal_5"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -6746,11 +6778,191 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_l_tarsal_proximal_interphalangeal_5"
+                    USE: "hanim_l_midcarpal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_midcarpal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_midcarpal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_midcarpal_4_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_radiocarpal"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_shoulder"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_sternoclavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_talocalcaneonavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_talocrural"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_distal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_distal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_distal_interphalangeal_4"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
                     USE: "hanim_l_tarsal_distal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_interphalangeal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_proximal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_proximal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_proximal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsal_proximal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsometatarsal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsometatarsal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsometatarsal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsometatarsal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_tarsometatarsal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_l_transversetarsal"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_acromioclavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_calcaneocuboid"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_distal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_distal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_distal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_distal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_interphalangeal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_proximal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_proximal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_proximal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpal_proximal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpometacarpal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpometacarpal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpometacarpal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpometacarpal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_carpometacarpal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_cuneonavicular_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_cuneonavicular_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_cuneonavicular_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_elbow"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_eyeball_joint"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_eyebrow_joint"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_eyelid_joint"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -6762,391 +6974,7 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_r_talocrural"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_talocalcaneonavicular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_cuneonavicular_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsometatarsal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_metatarsophalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_interphalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_cuneonavicular_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsometatarsal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_metatarsophalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_proximal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_distal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_cuneonavicular_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsometatarsal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_metatarsophalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_proximal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_distal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_calcaneocuboid"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_transversetarsal"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsometatarsal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_metatarsophalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_proximal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_distal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsometatarsal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_metatarsophalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_proximal_interphalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_tarsal_distal_interphalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vl5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vl4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vl3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vl2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vl1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt12"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt11"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt10"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt9"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt8"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt7"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt6"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vt1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc7"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc6"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_vc1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_skullbase"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_eyelid_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_eyelid_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_eyeball_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_eyeball_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_eyebrow_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_eyebrow_joint"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_temporomandibular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_sternoclavicular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_acromioclavicular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_shoulder"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_elbow"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_radiocarpal"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_midcarpal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpometacarpal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_metacarpophalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_interphalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_midcarpal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpometacarpal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_metacarpophalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_proximal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_distal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_midcarpal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpometacarpal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_metacarpophalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_proximal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_distal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_midcarpal_4_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpometacarpal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_metacarpophalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_proximal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_distal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpometacarpal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_metacarpophalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_proximal_interphalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_l_carpal_distal_interphalangeal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_sternoclavicular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_acromioclavicular"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_shoulder"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_elbow"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_radiocarpal"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_midcarpal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpometacarpal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
                     USE: "hanim_r_metacarpophalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpal_interphalangeal_1"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_midcarpal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpometacarpal_2"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -7154,39 +6982,7 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_r_carpal_proximal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpal_distal_interphalangeal_2"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_midcarpal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpometacarpal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
                     USE: "hanim_r_metacarpophalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpal_proximal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpal_distal_interphalangeal_3"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_midcarpal_4_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpometacarpal_4"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
@@ -7194,975 +6990,231 @@ X3D:
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_r_carpal_proximal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpal_distal_interphalangeal_4"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
-                    USE: "hanim_r_carpometacarpal_5"
-                ],
-                HAnimJoint: [
-                    containerField: "joints"
                     USE: "hanim_r_metacarpophalangeal_5"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_r_carpal_proximal_interphalangeal_5"
+                    USE: "hanim_r_metatarsophalangeal_1"
                 ],
                 HAnimJoint: [
                     containerField: "joints"
-                    USE: "hanim_r_carpal_distal_interphalangeal_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_sacrum"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_pelvis"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_talus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_navicular"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_cuneiform_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metatarsal_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_cuneiform_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metatarsal_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_middle_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_cuneiform_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metatarsal_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_middle_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_calcaneus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_cuboid"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metatarsal_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_middle_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metatarsal_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_middle_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_talus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_navicular"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_cuneiform_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metatarsal_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_cuneiform_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metatarsal_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_middle_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_cuneiform_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metatarsal_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_middle_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_calcaneus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_cuboid"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metatarsal_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_middle_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metatarsal_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_middle_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t12"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t11"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t10"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t9"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t8"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t7"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t6"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_t1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c7"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c6"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_skull"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_clavicle"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_scapula"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_upperarm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_trapezium"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metacarpal_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_proximal_phalanx_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_trapezoid"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metacarpal_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_middle_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_capitate"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metacarpal_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_proximal_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_middle_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_hamate"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metacarpal_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_proximal_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_middle_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_metacarpal_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_proximal_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal_middle_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_clavicle"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_scapula"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_upperarm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_trapezium"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metacarpal_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_proximal_phalanx_1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_trapezoid"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metacarpal_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_middle_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_capitate"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metacarpal_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_proximal_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_middle_phalanx_3"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_hamate"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metacarpal_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_proximal_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_middle_phalanx_4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_metacarpal_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_proximal_phalanx_5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal_middle_phalanx_5"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_buttocks_standing_wall_contact_point_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_crotch_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_asis_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_iliocristale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_psis_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_trochanterion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_asis_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_iliocristale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_psis_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_trochanterion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_navel_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_waist_preferred_anterior_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_waist_preferred_posterior_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_femoral_lateral_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_femoral_medial_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_knee_crease_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_suprapatella_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_femoral_lateral_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_femoral_medial_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_knee_crease_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_suprapatella_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_lateral_malleolus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_medial_malleolus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tibiale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_calcaneus_posterior_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_sphyrion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_metatarsal_phalanx_1_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tarsal_distal_phalanx_1_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tarsal_distal_phalanx_2_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tarsal_distal_phalanx_3_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tarsal_distal_phalanx_4_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_metatarsal_phalanx_5_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tarsal_distal_phalanx_5_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_lateral_malleolus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_medial_malleolus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tibiale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_calcaneus_posterior_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_sphyrion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_metatarsal_phalanx_1_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tarsal_distal_phalanx_1_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tarsal_distal_phalanx_2_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tarsal_distal_phalanx_3_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tarsal_distal_phalanx_4_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_metatarsal_phalanx_5_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tarsal_distal_phalanx_5_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_rib10_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_rib10_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_spine_2_middle_back_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_substernale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_thelion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_thelion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_chest_midsagittal_plane_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_mesosternale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_chest_midsagittal_plane_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_rear_center_midsagittal_plane_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_spine_1_middle_back_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_cervicale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_suprasternale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_neck_base_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_neck_base_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_acromion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_axilla_distal_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_axilla_posterior_folds_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_axilla_proximal_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_clavicale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_acromion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_axilla_distal_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_axilla_posterior_folds_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_axilla_proximal_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_clavicale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_adams_apple_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_glabella_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_ectocanthus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_infraorbitale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_tragion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_nuchale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_opisthocranion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_ectocanthus_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_infraorbitale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_tragion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_sellion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_skull_vertex_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_gonion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_menton_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_gonion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_supramenton_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_bideltoid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_humeral_lateral_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_humeral_medial_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_olecranon_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_radial_styloid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_radiale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_ulnar_styloid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_carpal_distal_phalanx_1_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_metacarpal_phalanx_2_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_carpal_distal_phalanx_2_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_dactylion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_metacarpal_phalanx_3_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_carpal_distal_phalanx_3_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_metacarpal_phalanx_5_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_carpal_distal_phalanx_4_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_l_carpal_distal_phalanx_5_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_bideltoid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_humeral_lateral_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_humeral_medial_epicondyles_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_olecranon_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_radial_styloid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_radiale_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_ulnar_styloid_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_carpal_distal_phalanx_1_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_metacarpal_phalanx_2_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_carpal_distal_phalanx_2_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_dactylion_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_metacarpal_phalanx_3_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_carpal_distal_phalanx_3_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_metacarpal_phalanx_5_pt"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_carpal_distal_phalanx_4_tip"
-                ],
-                HAnimSite: [
-                    containerField: "sites"
-                    USE: "hanim_r_carpal_distal_phalanx_5_tip"
+                    USE: "hanim_r_metatarsophalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_metatarsophalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_metatarsophalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_metatarsophalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_midcarpal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_midcarpal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_midcarpal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_midcarpal_4_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_radiocarpal"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_shoulder"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_sternoclavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_talocalcaneonavicular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_talocrural"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_distal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_distal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_distal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_distal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_interphalangeal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_proximal_interphalangeal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_proximal_interphalangeal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_proximal_interphalangeal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsal_proximal_interphalangeal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsometatarsal_1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsometatarsal_2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsometatarsal_3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsometatarsal_4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_tarsometatarsal_5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_r_transversetarsal"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_sacroiliac"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_skullbase"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_temporomandibular"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc6"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vc7"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vl1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vl2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vl3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vl4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vl5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt1"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt10"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt11"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt12"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt2"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt3"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt4"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt5"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt6"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt7"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt8"
+                ],
+                HAnimJoint: [
+                    containerField: "joints"
+                    USE: "hanim_vt9"
                 ]
             ]
         ]

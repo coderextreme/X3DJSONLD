@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -87,13 +83,10 @@ newModel=X3D(profile='Full',version='4.0',
             ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
             ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT'),
             # TO CONVERT TO A SPHERE
-
             # <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart>
-
             # <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart>
-)]))])])
+            )]))])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

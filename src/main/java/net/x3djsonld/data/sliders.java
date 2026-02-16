@@ -83,7 +83,7 @@ public class sliders
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_1)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))

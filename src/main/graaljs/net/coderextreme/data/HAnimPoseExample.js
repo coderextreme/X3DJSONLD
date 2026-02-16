@@ -181,12 +181,12 @@ function doubleToFloat(d) {
           .addChild(new ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("FaceRight_Pose"))
           .addChild(new ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("TouchDown_Pose")))
         .addChild(new HAnimHumanoid().setName("HumanoidStub").setInfo(Java.to(["humanoidVersion=2.0"], Java.type("java.lang.String[]"))).setVersion("2.0")
-          .addChild(new HAnimPose().setUSE("A_Pose"))
-          .addChild(new HAnimPose().setUSE("T_Pose"))
-          .addChild(new HAnimPose().setUSE("I_Pose"))
-          .addChild(new HAnimPose().setUSE("H_Pose"))
-          .addChild(new HAnimPose().setUSE("FaceLeft_Pose"))
-          .addChild(new HAnimPose().setUSE("FaceRight_Pose"))
-          .addChild(new HAnimPose().setUSE("TouchDown_Pose"))))      ;
+          .setChildren(new HAnimPose().setUSE("A_Pose"))
+          .setChildren(new HAnimPose().setUSE("T_Pose"))
+          .setChildren(new HAnimPose().setUSE("I_Pose"))
+          .setChildren(new HAnimPose().setUSE("H_Pose"))
+          .setChildren(new HAnimPose().setUSE("FaceLeft_Pose"))
+          .setChildren(new HAnimPose().setUSE("FaceRight_Pose"))
+          .setChildren(new HAnimPose().setUSE("TouchDown_Pose"))))      ;
     X3D0.toFileX3D("../data/HAnimPoseExample.new.graal.x3d");
     X3D0.toFileJSON("../data/HAnimPoseExample.new.graal.x3dj");

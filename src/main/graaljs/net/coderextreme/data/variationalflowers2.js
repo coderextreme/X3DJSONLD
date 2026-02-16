@@ -8,7 +8,7 @@ function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
+      var X3D0 =  new X3D().setProfile("Full").setVersion("4.1")
       .setHead(new head()
         .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new component().setName("Shaders").setLevel(1))
@@ -29,7 +29,8 @@ function doubleToFloat(d) {
         .addChild(new Background().setBackUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_back.png"], Java.type("java.lang.String[]"))).setBottomUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"], Java.type("java.lang.String[]"))).setFrontUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_front.png"], Java.type("java.lang.String[]"))).setLeftUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_left.png"], Java.type("java.lang.String[]"))).setRightUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_right.png"], Java.type("java.lang.String[]"))).setTopUrl(Java.to(["../resources/images/all_probes/stpeters_cross/stpeters_top.png"], Java.type("java.lang.String[]"))))
         .addChild(new Transform()
           .addChild(new ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
-            .addComments(new CommentsBlock("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values"))
+            .addComments(new CommentsBlock("* values - array of MFFloats to pass to ComposedShader"))
+            .addComments(new CommentsBlock("* variations in values - array of MFFloats to pass to ComposedShader that varies values"))
             .addVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
             .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
             .setGeometry(new Sphere())

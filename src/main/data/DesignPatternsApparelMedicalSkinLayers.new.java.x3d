@@ -2,6 +2,7 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
 <X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
   <head>
+    <component level='2' name='HAnim'/>
     <meta content='DesignPatternsApparelMedicalSkinLayers.x3d' name='title'/>
     <meta content='Design patterns for skin and apparel using HAnim2 standard in X3D4' name='description'/>
     <meta content='Don Brutzman' name='creator'/>

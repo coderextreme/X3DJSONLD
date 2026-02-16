@@ -240,24 +240,6 @@ function doubleToFloat(d) {
           .addJoints(new HAnimJoint("hanim_JinLOA1").setContainerFieldOverride("joints").setUSE("hanim_l_shoulder"))
           .addJoints(new HAnimJoint("hanim_JinLOA1").setContainerFieldOverride("joints").setUSE("hanim_r_shoulder"))
           .addJoints(new HAnimJoint("hanim_JinLOA1").setContainerFieldOverride("joints").setUSE("hanim_l_talocrural"))
-          .addJoints(new HAnimJoint("hanim_JinLOA1").setContainerFieldOverride("joints").setUSE("hanim_r_talocrural"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_sacrum"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_pelvis"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l5"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_skull"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_calf"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_calf"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_carpal"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_carpal"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_forearm"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_forearm"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_talus"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_talus"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_tarsal_proximal_phalanx_2"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_tarsal_proximal_phalanx_2"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_thigh"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_thigh"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_l_upperarm"))
-          .addSegments(new HAnimSegment("hanim_JinLOA1").setContainerFieldOverride("segments").setUSE("hanim_r_upperarm"))))      ;
+          .addJoints(new HAnimJoint("hanim_JinLOA1").setContainerFieldOverride("joints").setUSE("hanim_r_talocrural"))))      ;
     X3D0.toFileX3D("../data/JinLOA1.new.graal.x3d");
     X3D0.toFileJSON("../data/JinLOA1.new.graal.x3dj");

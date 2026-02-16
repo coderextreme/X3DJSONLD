@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,28 +101,36 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:47:25 GMT"),
+                Content: stringPtr("4 August 2021"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("CHANGELOG.txt"),
             },
             &x3d.Meta{
-                Name: stringPtr("reference"),
-                Content: stringPtr("https://medialab.hmu.gr/minipages/x3domAudio"),
-            },
-            &x3d.Meta{
                 Name: stringPtr("TODO"),
                 Content: stringPtr("credit for audio files"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("https://medialab.hmu.gr/minipages/x3domAudio"),
             },
             &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/InlineSoundSource.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("InlineSoundSource.x3d"),
                 },
@@ -132,22 +140,22 @@ func main() {
                     },
                 },
                 &x3d.Background{
-                    FrontUrl: x3d.MFString{"images/generic/FR1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"},
                     BackUrl: x3d.MFString{"images/generic/BK1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"},
+                    BottomUrl: x3d.MFString{"images/generic/DN1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"},
+                    FrontUrl: x3d.MFString{"images/generic/FR1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"},
                     LeftUrl: x3d.MFString{"images/generic/LF1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"},
                     RightUrl: x3d.MFString{"images/generic/RT1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"},
                     TopUrl: x3d.MFString{"images/generic/UP1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"},
-                    BottomUrl: x3d.MFString{"images/generic/DN1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"},
                 },
                 &x3d.Viewpoint{
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("Camera001"),
                     },
                     Description: stringPtr("Camera001"),
-                    Position: &x3d.SFVec3f{0.0, 2000.0, 3500.0},
-                    Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.523599},
-                    NearDistance: floatPtr(1.0),
                     FarDistance: floatPtr(0.0),
+                    NearDistance: floatPtr(1.0),
+                    Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.523599},
+                    Position: &x3d.SFVec3f{0.0, 2000.0, 3500.0},
                 },
                 &x3d.Transform{
                         CoreX3DNode: x3d.CoreX3DNode{
@@ -168,13 +176,13 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("Box001-GEOMETRY"),
                                 },
-                                Solid: boolPtr(false),
                                 CoordIndex: []int32{0, 1, 2, -1, 3, 4, 5, -1, 6, 7, 8, -1, 9, 10, 11, -1, 12, 13, 14, -1, 15, 16, 17, -1, 18, 19, 20, -1, 21, 22, 23, -1, 24, 25, 26, -1, 27, 28, 29, -1, 30, 31, 32, -1, 33, 34, 35, -1},
-                                Normal: &x3d.Normal{
-                                    Vector: &x3d.MFVec3f{[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0}},
-                                },
+                                Solid: boolPtr(false),
                                 Coord: &x3d.Coordinate{
                                     Point: &x3d.MFVec3f{[3]float32{-1000.0,0.0,1000.0},[3]float32{-1000.0,0.0,-1000.0},[3]float32{1000.0,0.0,-1000.0},[3]float32{1000.0,0.0,-1000.0},[3]float32{1000.0,0.0,1000.0},[3]float32{-1000.0,0.0,1000.0},[3]float32{-1000.0,8.031588,1000.0},[3]float32{1000.0,8.031588,1000.0},[3]float32{1000.0,8.031588,-1000.0},[3]float32{1000.0,8.031588,-1000.0},[3]float32{-1000.0,8.031588,-1000.0},[3]float32{-1000.0,8.031588,1000.0},[3]float32{-1000.0,0.0,1000.0},[3]float32{1000.0,0.0,1000.0},[3]float32{1000.0,8.031588,1000.0},[3]float32{1000.0,8.031588,1000.0},[3]float32{-1000.0,8.031588,1000.0},[3]float32{-1000.0,0.0,1000.0},[3]float32{1000.0,0.0,1000.0},[3]float32{1000.0,0.0,-1000.0},[3]float32{1000.0,8.031588,-1000.0},[3]float32{1000.0,8.031588,-1000.0},[3]float32{1000.0,8.031588,1000.0},[3]float32{1000.0,0.0,1000.0},[3]float32{1000.0,0.0,-1000.0},[3]float32{-1000.0,0.0,-1000.0},[3]float32{-1000.0,8.031588,-1000.0},[3]float32{-1000.0,8.031588,-1000.0},[3]float32{1000.0,8.031588,-1000.0},[3]float32{1000.0,0.0,-1000.0},[3]float32{-1000.0,0.0,-1000.0},[3]float32{-1000.0,0.0,1000.0},[3]float32{-1000.0,8.031588,1000.0},[3]float32{-1000.0,8.031588,1000.0},[3]float32{-1000.0,8.031588,-1000.0},[3]float32{-1000.0,0.0,-1000.0}},
+                                },
+                                Normal: &x3d.Normal{
+                                    Vector: &x3d.MFVec3f{[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,-1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{0.0,0.0,1.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{1.0,0.0,0.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{0.0,0.0,-1.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0},[3]float32{-1.0,0.0,0.0}},
                                 },
                             },
                         },
@@ -211,13 +219,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/InlineSoundSource.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -228,7 +236,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

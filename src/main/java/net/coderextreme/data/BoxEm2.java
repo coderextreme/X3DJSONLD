@@ -60,20 +60,20 @@ ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("BoxEm2.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/BoxEm2.x3d"))
-        .addMeta(new meta().setName("description").setContent("3 boxes")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("BoxEm2.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/BoxEm2.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("3 boxes"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setDescription("Cubes on Fire").setPosition(new float[] {0f ,0f ,12f }))
-        .addChild(new ProtoDeclare().setName("anyShape")
+        .addChild(new Viewpoint().setDescription(new SFString("Cubes on Fire")).setPosition(new float[] {0f ,0f ,12f }))
+        .addChild(new ProtoDeclare().setName(new SFString("anyShape"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("xtranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+            .addField(new field().setType("SFVec3f").setName(new SFString("xtranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("MFNode").setName(new SFString("myShape")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Shape()
                 .setGeometry(new Sphere())
                 .setAppearance(new Appearance()
@@ -81,12 +81,12 @@ ProtoInstance ProtoInstance3 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("xtranslation"))
-                .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
-        .addChild(new ProtoDeclare().setName("three")
+                .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("xtranslation")))
+                .addConnect(new connect().setNodeField(new SFString("children")).setProtoField(new SFString("myShape")))))))
+        .addChild(new ProtoDeclare().setName(new SFString("three"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("ytranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+            .addField(new field().setType("SFVec3f").setName(new SFString("ytranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("MFNode").setName(new SFString("myShape")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Shape()
                 .setGeometry(new Cylinder())
                 .setAppearance(new Appearance()
@@ -94,30 +94,30 @@ ProtoInstance ProtoInstance3 = null;
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("ytranslation")))
-              .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")
+                .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("ytranslation"))))
+              .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("anyShape"))
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(ProtoInstance1 = new ProtoInstance().setName("anyShape")
+                  .addConnect(new connect().setNodeField(new SFString("myShape")).setProtoField(new SFString("myShape")))))
+              .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("anyShape"))
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape"))))
-              .addChild(ProtoInstance2 = new ProtoInstance().setName("anyShape")
+                  .addConnect(new connect().setNodeField(new SFString("myShape")).setProtoField(new SFString("myShape")))))
+              .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("anyShape"))
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("myShape").setProtoField("myShape")))))))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("three").setDEF("threepi"))
+                  .addConnect(new connect().setNodeField(new SFString("myShape")).setProtoField(new SFString("myShape"))))))))
+        .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("three")).setDEF(new SFString("threepi")))
         .addChild(new Transform().setTranslation(new float[] {0f ,2f ,0f })
-          .addChild(new Shape().setUSE("box"))));
+          .addChild(new Shape().setUSE(new SFString("box")))));
 ProtoInstance0
-                .addFieldValue(new fieldValue().setName("xtranslation").setValue("0 0 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("xtranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance1
-                .addFieldValue(new fieldValue().setName("xtranslation").setValue("2 0 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("xtranslation")).setValue(new SFString("2 0 0")));
 ProtoInstance2
-                .addFieldValue(new fieldValue().setName("xtranslation").setValue("-2 0 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("xtranslation")).setValue(new SFString("-2 0 0")));
 ProtoInstance3
-          .addFieldValue(new fieldValue().setName("ytranslation").setValue("0 0 0"));
+          .addFieldValue(new fieldValue().setName(new SFString("ytranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance3
-          .addFieldValue(new fieldValue().setName("myShape")
-            .addChild(new Shape().setDEF("box")
+          .addFieldValue(new fieldValue().setName(new SFString("myShape"))
+            .addChild(new Shape().setDEF(new SFString("box"))
               .setGeometry(new Box().setSize(new float[] {1f ,1f ,1f }))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f })))));

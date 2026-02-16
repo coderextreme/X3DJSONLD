@@ -78,7 +78,7 @@ Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
 Someta8->setName(QString("modified"));
-Someta8->setContent(QString("14 October 2023"));
+Someta8->setContent(QString("29 October 2025"));
 Sohead1->addMeta(*Someta8);
 
 Someta* Someta9 = new Someta();
@@ -93,7 +93,7 @@ Sohead1->addMeta(*Someta10);
 
 Someta* Someta11 = new Someta();
 Someta11->setName(QString("reference"));
-Someta11->setContent(QString("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
+Someta11->setContent(QString("../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
 Sohead1->addMeta(*Someta11);
 
 Someta* Someta12 = new Someta();
@@ -118,7 +118,7 @@ Sohead1->addMeta(*Someta15);
 
 Someta* Someta16 = new Someta();
 Someta16->setName(QString("generator"));
-Someta16->setContent(QString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"));
+Someta16->setContent(QString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"));
 Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
@@ -128,12 +128,12 @@ Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();
 Someta18->setName(QString("generator"));
-Someta18->setContent(QString("Gnu Image Manipulation Program, https://www.gimp.org"));
+Someta18->setContent(QString("Gnu Image Manipulation Program, http://www.gimp.org"));
 Sohead1->addMeta(*Someta18);
 
 Someta* Someta19 = new Someta();
 Someta19->setName(QString("generator"));
-Someta19->setContent(QString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
+Someta19->setContent(QString("X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"));
 Sohead1->addMeta(*Someta19);
 
 Someta* Someta20 = new Someta();

@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -78,6 +78,12 @@ func main() {
         Profile: stringPtr("Immersive"),
         Version: stringPtr("4.0"),
         Head: &x3d.Head{
+            Components: []*x3d.Component{
+                &x3d.Component{
+                    Name: stringPtr("Scripting"),
+                    Level: int32Ptr(1),
+            },
+        },
             Metas: []*x3d.Meta{
                 &x3d.Meta{
                     Name: stringPtr("title"),
@@ -93,7 +99,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:38:06 GMT"),
+                Content: stringPtr("9 November 2024"),
             },
             &x3d.Meta{
                 Name: stringPtr("description"),
@@ -103,159 +109,181 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("manually written"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("https://www.web3d.org/x3d/content/examples/license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
-                &x3d.ProtoDeclare{
-                    Name: stringPtr("orbit"),
-                    ProtoInterface: &x3d.ProtoInterface{
-                        Field: []x3d.X3DNode{
-                            &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("translation"),
-                                Value: stringPtr("-8 0 0"),
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.NavigationInfo{
+                },
+                &x3d.Viewpoint{
+                    Description: stringPtr("Two mathematical orbitals"),
+                    Position: &x3d.SFVec3f{0.0, 0.0, 50.0},
+                },
+                &x3d.Group{
+                    Children: []x3d.X3DNode{
+                        &x3d.DirectionalLight{
+                            Direction: &x3d.SFVec3f{1.0, 1.0, 1.0},
                         },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("diffuseColor"),
-                            Value: stringPtr("1 0.5 0"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("specularColor"),
-                            Value: stringPtr("1 0.5 0"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("transparency"),
-                            Value: stringPtr("0.75"),
-                        },
-                        },
-                    },
-                    ProtoBody: &x3d.ProtoBody{
-                        Children: []x3d.X3DNode{
-                            &x3d.Group{
+                        &x3d.ProtoDeclare{
+                            Name: stringPtr("orbit"),
+                            ProtoInterface: &x3d.ProtoInterface{
+                                Field: []x3d.X3DNode{
+                                    &x3d.Field{
+                                        Name: stringPtr("translation"),
+                                        AccessType: stringPtr("inputOutput"),
+                                        Type: stringPtr("SFVec3f"),
+                                        Value: stringPtr("-8 0 0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("diffuseColor"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Type: stringPtr("SFColor"),
+                                    Value: stringPtr("1 0.5 0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("specularColor"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Type: stringPtr("SFColor"),
+                                    Value: stringPtr("1 0.5 0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("transparency"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Type: stringPtr("SFFloat"),
+                                    Value: stringPtr("0.75"),
+                                },
+                                },
+                            },
+                            ProtoBody: &x3d.ProtoBody{
                                 Children: []x3d.X3DNode{
-                                    &x3d.TimeSensor{
-                                        CoreX3DNode: x3d.CoreX3DNode{
-                                            DEF: stringPtr("Clock"),
-                                        },
-                                        CycleInterval: doublePtr(16.0),
-                                        Loop: boolPtr(true),
-                                    },
-                                    &x3d.OrientationInterpolator{
-                                        CoreX3DNode: x3d.CoreX3DNode{
-                                            DEF: stringPtr("OrbitPath"),
-                                        },
-                                        Key: x3d.MFFloat{0.0, 0.5, 1.0},
-                                        KeyValue: x3d.MFRotation{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 3.14, 1.0, 0.0, 0.0, 6.28},
-                                    },
-                                    &x3d.Transform{
-                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                DEF: stringPtr("OrbitTransform"),
-                                            },
-                                            IS: &x3d.IS{
-                                                Connect: []x3d.X3DNode{
-                                                    &x3d.Connect{
-                                                        NodeField: stringPtr("translation"),
-                                                        ProtoField: stringPtr("translation"),
-                                                },
-                                                },
-                                            },
+                                    &x3d.Group{
                                         Children: []x3d.X3DNode{
-                                            &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    Material: &x3d.Material{
-                                                        IS: &x3d.IS{
-                                                            Material:                                                            Connect: []x3d.X3DNode{
-                                                                &x3d.Connect{
-                                                                    NodeField: stringPtr("diffuseColor"),
-                                                                    ProtoField: stringPtr("diffuseColor"),
-                                                            },
-                                                            Material: &x3d.Connect{
-                                                                NodeField: stringPtr("specularColor"),
-                                                                ProtoField: stringPtr("specularColor"),
-                                                            },
-                                                            Material: &x3d.Connect{
-                                                                NodeField: stringPtr("transparency"),
-                                                                ProtoField: stringPtr("transparency"),
-                                                            },
-                                                            },
-                                                        },
-                                                    },
+                                            &x3d.TimeSensor{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("Clock"),
                                                 },
-                                                Geometry: &x3d.IndexedFaceSet{
+                                                CycleInterval: doublePtr(16.0),
+                                                Loop: boolPtr(true),
+                                            },
+                                            &x3d.OrientationInterpolator{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("OrbitPath"),
+                                                },
+                                                Key: x3d.MFFloat{0.0, 0.5, 1.0},
+                                                KeyValue: x3d.MFRotation{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 3.14, 1.0, 0.0, 0.0, 6.28},
+                                            },
+                                            &x3d.Transform{
                                                     CoreX3DNode: x3d.CoreX3DNode{
-                                                        DEF: stringPtr("Orbit"),
+                                                        DEF: stringPtr("OrbitTransform"),
                                                     },
-                                                    Ccw: boolPtr(false),
-                                                    Convex: boolPtr(false),
-                                                    CoordIndex: []int32{0, 1, 2, -1},
-                                                    Coord: &x3d.Coordinate{
-                                                        CoreX3DNode: x3d.CoreX3DNode{
-                                                            DEF: stringPtr("OrbitCoordinates"),
+                                                    IS: &x3d.IS{
+                                                        Connect: []x3d.X3DNode{
+                                                            &x3d.Connect{
+                                                                NodeField: stringPtr("translation"),
+                                                                ProtoField: stringPtr("translation"),
                                                         },
-                                                        Point: &x3d.MFVec3f{[3]float32{0.0,0.0,1.0},[3]float32{0.0,1.0,0.0},[3]float32{1.0,0.0,0.0}},
+                                                        },
+                                                    },
+                                                Children: []x3d.X3DNode{
+                                                    &x3d.Shape{
+                                                        Appearance: &x3d.Appearance{
+                                                            Material: &x3d.Material{
+                                                                IS: &x3d.IS{
+                                                                    Connect: []x3d.X3DNode{
+                                                                        &x3d.Connect{
+                                                                            NodeField: stringPtr("diffuseColor"),
+                                                                            ProtoField: stringPtr("diffuseColor"),
+                                                                    },
+                                                                    &x3d.Connect{
+                                                                        NodeField: stringPtr("specularColor"),
+                                                                        ProtoField: stringPtr("specularColor"),
+                                                                    },
+                                                                    &x3d.Connect{
+                                                                        NodeField: stringPtr("transparency"),
+                                                                        ProtoField: stringPtr("transparency"),
+                                                                    },
+                                                                    },
+                                                                },
+                                                            },
+                                                        },
+//<IndexedFaceSet DEF="Orbit">
+//<Coordinate DEF="OrbitCoordinates"/>
+//</IndexedFaceSet>
+                                                        Geometry: &x3d.IndexedFaceSet{
+                                                            Ccw: boolPtr(false),
+                                                            Convex: boolPtr(false),
+                                                            CoordIndex: []int32{0, 1, 2, -1},
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                DEF: stringPtr("Orbit"),
+                                                            },
+                                                            Coord: &x3d.Coordinate{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    DEF: stringPtr("OrbitCoordinates"),
+                                                                },
+                                                                Point: &x3d.MFVec3f{[3]float32{0.0,0.0,1.0},[3]float32{0.0,1.0,0.0},[3]float32{1.0,0.0,0.0}},
+                                                            },
+                                                        },
                                                     },
                                                 },
                                             },
-                                        },
-                                    },
-                                    &x3d.Script{
-                                        CoreX3DNode: x3d.CoreX3DNode{
-                                            DEF: stringPtr("OrbitScript"),
-                                        },
-                                        Field: []x3d.X3DNode{
-                                            &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFFloat"),
-                                                Name: stringPtr("set_fraction"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("MFVec3f"),
-                                            Name: stringPtr("coordinates"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("MFInt32"),
-                                            Name: stringPtr("coordIndexes"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("e"),
-                                            Value: stringPtr("5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("f"),
-                                            Value: stringPtr("5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("g"),
-                                            Value: stringPtr("5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("h"),
-                                            Value: stringPtr("5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFInt32"),
-                                            Name: stringPtr("resolution"),
-                                            Value: stringPtr("50"),
-                                        },
+                                            &x3d.Script{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("OrbitScript"),
+                                                },
+                                                Field: []x3d.X3DNode{
+                                                    &x3d.Field{
+                                                        Name: stringPtr("set_fraction"),
+                                                        AccessType: stringPtr("inputOnly"),
+                                                        Type: stringPtr("SFFloat"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("coordinates"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("MFVec3f"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("coordIndexes"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("MFInt32"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("e"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    Value: stringPtr("5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("f"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    Value: stringPtr("5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("g"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    Value: stringPtr("5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("h"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    Value: stringPtr("5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("resolution"),
+                                                    AccessType: stringPtr("inputOutput"),
+                                                    Type: stringPtr("SFInt32"),
+                                                    Value: stringPtr("50"),
+                                                },
 //ecmascript:
 //
 //			function initialize() {
@@ -321,56 +349,63 @@ func main() {
 //				}
 //				generateCoordinates();
 //			}
+                                                },
+                                            },
+                                            &x3d.X3DRoute{
+                                                FromNode: stringPtr("OrbitScript"),
+                                                FromField: stringPtr("coordIndexes"),
+                                                ToNode: stringPtr("Orbit"),
+                                                ToField: stringPtr("set_coordIndex"),
+                                            },
+                                            &x3d.X3DRoute{
+                                                FromNode: stringPtr("OrbitScript"),
+                                                FromField: stringPtr("coordinates"),
+                                                ToNode: stringPtr("OrbitCoordinates"),
+                                                ToField: stringPtr("point"),
+                                            },
+                                            &x3d.X3DRoute{
+                                                FromNode: stringPtr("Clock"),
+                                                FromField: stringPtr("fraction_changed"),
+                                                ToNode: stringPtr("OrbitScript"),
+                                                ToField: stringPtr("set_fraction"),
+                                            },
+                                            &x3d.X3DRoute{
+                                                FromNode: stringPtr("OrbitPath"),
+                                                FromField: stringPtr("value_changed"),
+                                                ToNode: stringPtr("OrbitTransform"),
+                                                ToField: stringPtr("rotation"),
+                                            },
+                                            &x3d.X3DRoute{
+                                                FromNode: stringPtr("Clock"),
+                                                FromField: stringPtr("fraction_changed"),
+                                                ToNode: stringPtr("OrbitPath"),
+                                                ToField: stringPtr("set_fraction"),
+                                            },
                                         },
                                     },
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("OrbitScript"),
-                                FromField: stringPtr("coordIndexes_changed"),
-                                ToNode: stringPtr("Orbit"),
-                                ToField: stringPtr("set_coordIndex"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("OrbitScript"),
-                                FromField: stringPtr("coordinates_changed"),
-                                ToNode: stringPtr("OrbitCoordinates"),
-                                ToField: stringPtr("set_point"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("Clock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("OrbitScript"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("OrbitPath"),
-                                FromField: stringPtr("value_changed"),
-                                ToNode: stringPtr("OrbitTransform"),
-                                ToField: stringPtr("set_rotation"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("Clock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("OrbitPath"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                        },
-                    },
-                },
-                &x3d.NavigationInfo{
-                },
-                &x3d.Viewpoint{
-                    Description: stringPtr("Two mathematical orbitals"),
-                    Position: &x3d.SFVec3f{0.0, 0.0, 50.0},
-                },
-                &x3d.Group{
-                    Children: []x3d.X3DNode{
-                        &x3d.DirectionalLight{
-                            Direction: &x3d.SFVec3f{1.0, 1.0, 1.0},
                         },
                         &x3d.ProtoInstance{
                             Name: stringPtr("orbit"),
+                            FieldValue: []x3d.X3DNode{
+                                &x3d.FieldValue{
+                                    Name: stringPtr("translation"),
+                                    Value: stringPtr("-8 0 0"),
+                            },
+                            &x3d.FieldValue{
+                                Name: stringPtr("diffuseColor"),
+                                Value: stringPtr("1 0.5 0"),
+                            },
+                            &x3d.FieldValue{
+                                Name: stringPtr("specularColor"),
+                                Value: stringPtr("1 0.5 0"),
+                            },
+                            &x3d.FieldValue{
+                                Name: stringPtr("transparency"),
+                                Value: stringPtr("0.75"),
+                            },
+                            },
                         },
                         &x3d.ProtoInstance{
                             Name: stringPtr("orbit"),
@@ -413,13 +448,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/flowers2.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -430,7 +465,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

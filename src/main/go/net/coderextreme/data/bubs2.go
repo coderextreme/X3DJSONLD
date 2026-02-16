@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -78,6 +78,12 @@ func main() {
         Profile: stringPtr("Immersive"),
         Version: stringPtr("4.0"),
         Head: &x3d.Head{
+            Components: []*x3d.Component{
+                &x3d.Component{
+                    Name: stringPtr("Scripting"),
+                    Level: int32Ptr(1),
+            },
+        },
             Metas: []*x3d.Meta{
                 &x3d.Meta{
                     Name: stringPtr("title"),
@@ -96,21 +102,39 @@ func main() {
                 Content: stringPtr("X3D-Edit, https://savage.nps.edu/X3D-Edit"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("translated"),
+                Content: stringPtr("13 March 2016"),
             },
             &x3d.Meta{
                 Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"),
+                Content: stringPtr("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.NavigationInfo{
+                    Type: x3d.MFString{"EXAMINE"},
+                },
+                &x3d.Viewpoint{
+                    Position: &x3d.SFVec3f{0.0, 0.0, 4.0},
+                    Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, 0.0},
+                    Description: stringPtr("Bubbles in action"),
+                },
+                &x3d.Background{
+                    BackUrl: x3d.MFString{"../resources/images/BK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"},
+                    BottomUrl: x3d.MFString{"../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"},
+                    FrontUrl: x3d.MFString{"../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"},
+                    LeftUrl: x3d.MFString{"../resources/images/LF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"},
+                    RightUrl: x3d.MFString{"../resources/images/RT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"},
+                    TopUrl: x3d.MFString{"../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"},
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("Bubble"),
-                    ProtoInterface: &x3d.ProtoInterface{
-                    },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
                             &x3d.Transform{
@@ -119,14 +143,14 @@ func main() {
                                     },
                                 Children: []x3d.X3DNode{
                                     &x3d.Shape{
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.25),
+                                        },
                                         Appearance: &x3d.Appearance{
                                             Material: &x3d.Material{
                                                 DiffuseColor: &x3d.SFColor{1.0, 0.0, 0.0},
                                                 Transparency: floatPtr(0.2),
                                             },
-                                        },
-                                        Geometry: &x3d.Sphere{
-                                            Radius: floatPtr(0.25),
                                         },
                                     },
                                     &x3d.Script{
@@ -135,30 +159,33 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
+                                                Name: stringPtr("scale"),
                                                 AccessType: stringPtr("inputOutput"),
                                                 Type: stringPtr("SFVec3f"),
-                                                Name: stringPtr("scale"),
                                                 Value: stringPtr("1 1 1"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("inputOutput"),
-                                            Type: stringPtr("SFVec3f"),
                                             Name: stringPtr("translation"),
-                                        },
-                                        &x3d.Field{
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("SFVec3f"),
+                                            Value: stringPtr("0 0 0"),
+                                        },
+                                        &x3d.Field{
                                             Name: stringPtr("velocity"),
-                                        },
-                                        &x3d.Field{
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("SFVec3f"),
-                                            Name: stringPtr("scalvel"),
+                                            Value: stringPtr("0 0 0"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("scalvel"),
+                                            AccessType: stringPtr("inputOutput"),
+                                            Type: stringPtr("SFVec3f"),
+                                            Value: stringPtr("0 0 0"),
+                                        },
+                                        &x3d.Field{
+                                            Name: stringPtr("set_fraction"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("set_fraction"),
                                         },
 //ecmascript:
 //function initialize() {
@@ -220,67 +247,52 @@ func main() {
                                         CycleInterval: doublePtr(10.0),
                                         Loop: boolPtr(true),
                                     },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("bounce"),
+                                        FromField: stringPtr("translation_changed"),
+                                        ToNode: stringPtr("body_trans"),
+                                        ToField: stringPtr("set_translation"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("bounce"),
+                                        FromField: stringPtr("scale_changed"),
+                                        ToNode: stringPtr("body_trans"),
+                                        ToField: stringPtr("set_scale"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("bubbleClock"),
+                                        FromField: stringPtr("fraction_changed"),
+                                        ToNode: stringPtr("bounce"),
+                                        ToField: stringPtr("set_fraction"),
+                                    },
                                 },
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("bounce"),
-                                FromField: stringPtr("translation_changed"),
-                                ToNode: stringPtr("body_trans"),
-                                ToField: stringPtr("set_translation"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("bounce"),
-                                FromField: stringPtr("scale_changed"),
-                                ToNode: stringPtr("body_trans"),
-                                ToField: stringPtr("set_scale"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("bubbleClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("bounce"),
-                                ToField: stringPtr("set_fraction"),
                             },
                         },
                     },
                 },
-                &x3d.NavigationInfo{
-                    Type: x3d.MFString{"EXAMINE"},
-                },
-                &x3d.Viewpoint{
-                    Description: stringPtr("Bubbles in action"),
-                    Position: &x3d.SFVec3f{0.0, 0.0, 4.0},
-                },
-                &x3d.Background{
-                    FrontUrl: x3d.MFString{"../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"},
-                    BackUrl: x3d.MFString{"../resources/images/BK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"},
-                    LeftUrl: x3d.MFString{"../resources/images/LF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"},
-                    RightUrl: x3d.MFString{"../resources/images/RT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"},
-                    TopUrl: x3d.MFString{"../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"},
-                    BottomUrl: x3d.MFString{"../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"},
-                },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("Bubble"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("bubbleA"),
                     },
-                    Name: stringPtr("Bubble"),
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("Bubble"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("bubbleB"),
                     },
-                    Name: stringPtr("Bubble"),
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("Bubble"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("bubbleC"),
                     },
-                    Name: stringPtr("Bubble"),
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("Bubble"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("bubbleD"),
                     },
-                    Name: stringPtr("Bubble"),
                 },
             },
         },
@@ -300,13 +312,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/bubs2.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -317,7 +329,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

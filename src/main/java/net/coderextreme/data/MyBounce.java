@@ -56,26 +56,26 @@ public class MyBounce implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("MyBounce.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("3 prismatic spheres"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("MyBounce.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("3 prismatic spheres")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/SFVec3f.x3d"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Transform().setDEF("transform")
+        .addChild(new Transform().setDEF(new SFString("transform"))
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))
             .setGeometry(new Sphere())))
-        .addChild(new Script().setDEF("Bounce2")
-          .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("translation_changed").setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-          .addField(new field().setType("SFTime").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+        .addChild(new Script().setDEF(new SFString("Bounce2"))
+          .addField(new field().setType("SFVec3f").setName(new SFString("set_translation")).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(new SFString("0 0 0")))
+          .addField(new field().setType("SFVec3f").setName(new SFString("translation_changed")).setAccessType(field.ACCESSTYPE_OUTPUTONLY).setValue(new SFString("0 0 0")))
+          .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+          .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+          .addField(new field().setType("SFTime").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
           .setSourceCode("ecmascript:\n"+
 "			function newBubble() {\n"+
 "			    translation = new SFVec3f(0, 0, 0);\n"+
@@ -107,9 +107,9 @@ public class MyBounce implements X3DRoots {
 "			function initialize() {\n"+
 "			     newBubble();\n"+
 "			}"))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(0.15d).setLoop(true))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("Bounce2").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("Bounce2").setFromField("translation_changed").setToNode("transform").setToField("set_translation")));
+        .addChild(new TimeSensor().setDEF(new SFString("TourTime")).setCycleInterval(0.15d).setLoop(true))
+        .addChild(new ROUTE().setFromNode(new SFString("TourTime")).setFromField(new SFString("cycleTime")).setToNode(new SFString("Bounce2")).setToField(new SFString("set_fraction")))
+        .addChild(new ROUTE().setFromNode(new SFString("Bounce2")).setFromField(new SFString("translation_changed")).setToNode(new SFString("transform")).setToField(new SFString("set_translation"))));
     return X3D0;
     }
 }

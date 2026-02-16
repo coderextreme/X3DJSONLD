@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -113,7 +113,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:51:15 GMT"),
+                Content: stringPtr("20 October 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("description"),
@@ -127,17 +127,25 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("jumpcut_loadurl.x3d"),
                 },
                 &x3d.Background{
-                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.0,1.0}},
                     GroundAngle: x3d.MFFloat{1.57},
                     GroundColor: &x3d.MFColor{[3]float32{0.0,0.5,0.0},[3]float32{0.0,0.5,0.0}},
+                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.0,1.0}},
                 },
                 &x3d.NavigationInfo{
                     Type: x3d.MFString{"EXAMINE", "WALK", "FLY", "ANY"},
@@ -153,8 +161,8 @@ func main() {
                         DEF: stringPtr("Top_View"),
                     },
                     Description: stringPtr("Top View"),
-                    Position: &x3d.SFVec3f{0.0, 10.0, 0.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57},
+                    Position: &x3d.SFVec3f{0.0, 10.0, 0.0},
                 },
                 &x3d.TouchSensor{
                     CoreX3DNode: x3d.CoreX3DNode{
@@ -184,29 +192,29 @@ func main() {
                     Url: x3d.MFString{"jumpcut_loadurl.js", "https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.js"},
                     Field: []x3d.X3DNode{
                         &x3d.Field{
+                            Name: stringPtr("myParameter"),
                             AccessType: stringPtr("initializeOnly"),
                             Type: stringPtr("MFString"),
-                            Name: stringPtr("myParameter"),
                             Value: stringPtr("\"Top_View\""),
                     },
                     &x3d.Field{
+                        Name: stringPtr("myUrl"),
                         AccessType: stringPtr("initializeOnly"),
                         Type: stringPtr("MFString"),
-                        Name: stringPtr("myUrl"),
                         Value: stringPtr("\"jumpcut_loadurl.x3d#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.x3d#Top_View\" \"jumpcut_loadurl.wrl#Top_View\" \"https://www.web3d.org/x3d/content/examples/ConformanceNist/BindableNodes/NavigationInfo/jumpcut_loadurl.wrl#Top_View\""),
                     },
                     &x3d.Field{
+                        Name: stringPtr("trigger_event"),
                         AccessType: stringPtr("inputOnly"),
                         Type: stringPtr("SFBool"),
-                        Name: stringPtr("trigger_event"),
                     },
                     },
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("STARTER"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("isActive"),
-                    ToNode: stringPtr("MYSCRIPT"),
+                    FromNode: stringPtr("STARTER"),
                     ToField: stringPtr("trigger_event"),
+                    ToNode: stringPtr("MYSCRIPT"),
                 },
             },
         },
@@ -226,13 +234,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/jumpcut_loadurl.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -243,7 +251,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -10,6 +10,7 @@ function doubleToFloat(d) {
 }
       var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
       .setHead(new head()
+        .addComponent(new component().setName("HAnim").setLevel(2))
         .addMeta(new meta().setName("title").setContent("DesignPatternsApparelMedicalSkinLayers.x3d"))
         .addMeta(new meta().setName("description").setContent("Design patterns for skin and apparel using HAnim2 standard in X3D4"))
         .addMeta(new meta().setName("creator").setContent("Don Brutzman"))

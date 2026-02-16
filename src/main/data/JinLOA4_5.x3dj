@@ -78,7 +78,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 February 2026"
+            "@content":"16 February 2026"
           },
           {
             "@name":"generator",
@@ -166,6 +166,8 @@
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
                     "@center":[0,1631.5555111111114,-31.44888888888889],
+                    "@ulimit":[0,0,0],
+                    "@llimit":[0,0,0],
                     "-children":[
                       { "HAnimSegment":
                         {
@@ -229,6 +231,8 @@
                           "@name":"sacroiliac",
                           "@DEF":"hanim_sacroiliac",
                           "@center":[0,1396.888888888889,-31.44888888888889],
+                          "@ulimit":[0,0,0],
+                          "@llimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -291,6 +295,8 @@
                                 "@name":"l_hip",
                                 "@DEF":"hanim_l_hip",
                                 "@center":[186.9777777777778,1632.8889777777777,-36.24444444444445],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -353,6 +359,8 @@
                                       "@name":"l_knee",
                                       "@DEF":"hanim_l_knee",
                                       "@center":[182.93333333333334,807.5555555555557,-38.39555555555556],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -415,6 +423,8 @@
                                             "@name":"l_talocrural",
                                             "@DEF":"hanim_l_talocrural",
                                             "@center":[175.46666666666667,188.53333333333333,-20.644444444444446],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -477,6 +487,8 @@
                                                   "@name":"l_talocalcaneonavicular",
                                                   "@DEF":"hanim_l_talocalcaneonavicular",
                                                   "@center":[154.66666666666669,72.88888888888889,9.60888888888889],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -539,6 +551,8 @@
                                                         "@name":"l_cuneonavicular_1",
                                                         "@DEF":"hanim_l_cuneonavicular_1",
                                                         "@center":[133.0666666666667,63.422222222222224,36.32888888888889],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -601,6 +615,8 @@
                                                               "@name":"l_tarsometatarsal_1",
                                                               "@DEF":"hanim_l_tarsometatarsal_1",
                                                               "@center":[127.64444444444445,45.91111111111111,87.28888888888889],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -663,6 +679,8 @@
                                                                     "@name":"l_metatarsophalangeal_1",
                                                                     "@DEF":"hanim_l_metatarsophalangeal_1",
                                                                     "@center":[122.71111111111112,28.493333333333336,184.9333333333333],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -725,6 +743,8 @@
                                                                           "@name":"l_tarsal_distal_interphalangeal_1",
                                                                           "@DEF":"hanim_l_tarsal_distal_interphalangeal_1",
                                                                           "@center":[122.71111111111112,23.973333333333333,227.7777777777778],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -799,6 +819,8 @@
                                                         "@name":"l_cuneonavicular_2",
                                                         "@DEF":"hanim_l_cuneonavicular_2",
                                                         "@center":[160.84444444444446,66.22222222222223,42.324444444444445],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -861,6 +883,8 @@
                                                               "@name":"l_tarsometatarsal_2",
                                                               "@DEF":"hanim_l_tarsometatarsal_2",
                                                               "@center":[158.4,51.55555555555556,81.11111111111111],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -923,6 +947,8 @@
                                                                     "@name":"l_metatarsophalangeal_2",
                                                                     "@DEF":"hanim_l_metatarsophalangeal_2",
                                                                     "@center":[163.02222222222224,29.58222222222222,193.24444444444444],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -985,6 +1011,8 @@
                                                                           "@name":"l_tarsal_proximal_interphalangeal_2",
                                                                           "@DEF":"hanim_l_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[166.53333333333333,24.982222222222227,225.20000000000002],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -1047,6 +1075,8 @@
                                                                                 "@name":"l_tarsal_distal_interphalangeal_2",
                                                                                 "@DEF":"hanim_l_tarsal_distal_interphalangeal_2",
                                                                                 "@center":[166.53333333333333,19.40888888888889,243.82222222222222],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -1124,6 +1154,8 @@
                                                         "@name":"l_cuneonavicular_3",
                                                         "@DEF":"hanim_l_cuneonavicular_3",
                                                         "@center":[183.64444444444445,65.95555555555556,39.14666666666667],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -1186,6 +1218,8 @@
                                                               "@name":"l_tarsometatarsal_3",
                                                               "@DEF":"hanim_l_tarsometatarsal_3",
                                                               "@center":[186.84444444444443,51.55555555555556,77.82222222222222],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -1248,6 +1282,8 @@
                                                                     "@name":"l_metatarsophalangeal_3",
                                                                     "@DEF":"hanim_l_metatarsophalangeal_3",
                                                                     "@center":[190.57777777777778,29.742222222222225,188.48888888888888],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -1310,6 +1346,8 @@
                                                                           "@name":"l_tarsal_proximal_interphalangeal_3",
                                                                           "@DEF":"hanim_l_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[195.2888888888889,23.551111111111112,218.22222222222223],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -1372,6 +1410,8 @@
                                                                                 "@name":"l_tarsal_distal_interphalangeal_3",
                                                                                 "@DEF":"hanim_l_tarsal_distal_interphalangeal_3",
                                                                                 "@center":[198.35555555555555,19.40888888888889,236.44444444444446],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -1452,6 +1492,8 @@
                                                   "@name":"l_calcaneocuboid",
                                                   "@DEF":"hanim_l_calcaneocuboid",
                                                   "@center":[176,114.53333333333333,-51.288888888888884],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -1514,6 +1556,8 @@
                                                         "@name":"l_transversetarsal",
                                                         "@DEF":"hanim_l_transversetarsal",
                                                         "@center":[218.53333333333333,69.6888888888889,4.126666666666667],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -1576,6 +1620,8 @@
                                                               "@name":"l_tarsometatarsal_4",
                                                               "@DEF":"hanim_l_tarsometatarsal_4",
                                                               "@center":[210.35555555555555,48.48888888888889,75.91111111111111],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -1638,6 +1684,8 @@
                                                                     "@name":"l_metatarsophalangeal_4",
                                                                     "@DEF":"hanim_l_metatarsophalangeal_4",
                                                                     "@center":[217.02222222222224,28.351111111111113,180.08888888888887],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -1700,6 +1748,8 @@
                                                                           "@name":"l_tarsal_proximal_interphalangeal_4",
                                                                           "@DEF":"hanim_l_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[225.51111111111112,24.186666666666667,210],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -1762,6 +1812,8 @@
                                                                                 "@name":"l_tarsal_distal_interphalangeal_4",
                                                                                 "@DEF":"hanim_l_tarsal_distal_interphalangeal_4",
                                                                                 "@center":[228.4888888888889,18.506666666666668,224.57777777777778],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -1836,6 +1888,8 @@
                                                               "@name":"l_tarsometatarsal_5",
                                                               "@DEF":"hanim_l_tarsometatarsal_5",
                                                               "@center":[238.66666666666669,41.373333333333335,68.62222222222222],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -1898,6 +1952,8 @@
                                                                     "@name":"l_metatarsophalangeal_5",
                                                                     "@DEF":"hanim_l_metatarsophalangeal_5",
                                                                     "@center":[245.0666666666667,27.004444444444445,170.9777777777778],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -1960,6 +2016,8 @@
                                                                           "@name":"l_tarsal_proximal_interphalangeal_5",
                                                                           "@DEF":"hanim_l_tarsal_proximal_interphalangeal_5",
                                                                           "@center":[249.64444444444445,21.444444444444443,185.95555555555558],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -2022,6 +2080,8 @@
                                                                                 "@name":"l_tarsal_distal_interphalangeal_5",
                                                                                 "@DEF":"hanim_l_tarsal_distal_interphalangeal_5",
                                                                                 "@center":[251.42222222222225,16.915555555555557,201.24444444444444],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -2111,6 +2171,8 @@
                                 "@name":"r_hip",
                                 "@DEF":"hanim_r_hip",
                                 "@center":[-186.9777777777778,1632.8889777777777,-36.24444444444445],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -2173,6 +2235,8 @@
                                       "@name":"r_knee",
                                       "@DEF":"hanim_r_knee",
                                       "@center":[-182.93333333333334,807.5555555555557,-38.39555555555556],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -2235,6 +2299,8 @@
                                             "@name":"r_talocrural",
                                             "@DEF":"hanim_r_talocrural",
                                             "@center":[-174.7111111111111,188.53333333333333,-20.644444444444446],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -2297,6 +2363,8 @@
                                                   "@name":"r_talocalcaneonavicular",
                                                   "@DEF":"hanim_r_talocalcaneonavicular",
                                                   "@center":[-153.95555555555555,72.88888888888889,9.60888888888889],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -2359,6 +2427,8 @@
                                                         "@name":"r_cuneonavicular_1",
                                                         "@DEF":"hanim_r_cuneonavicular_1",
                                                         "@center":[-132.3111111111111,63.422222222222224,36.32888888888889],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -2421,6 +2491,8 @@
                                                               "@name":"r_tarsometatarsal_1",
                                                               "@DEF":"hanim_r_tarsometatarsal_1",
                                                               "@center":[-126.93333333333334,45.91111111111111,87.28888888888889],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -2483,6 +2555,8 @@
                                                                     "@name":"r_metatarsophalangeal_1",
                                                                     "@DEF":"hanim_r_metatarsophalangeal_1",
                                                                     "@center":[-122.00000000000001,28.493333333333336,184.9333333333333],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -2545,6 +2619,8 @@
                                                                           "@name":"r_tarsal_distal_interphalangeal_1",
                                                                           "@DEF":"hanim_r_tarsal_distal_interphalangeal_1",
                                                                           "@center":[-121.95555555555556,23.973333333333333,227.7777777777778],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -2619,6 +2695,8 @@
                                                         "@name":"r_cuneonavicular_2",
                                                         "@DEF":"hanim_r_cuneonavicular_2",
                                                         "@center":[-160.0888888888889,66.22222222222223,42.324444444444445],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -2681,6 +2759,8 @@
                                                               "@name":"r_tarsometatarsal_2",
                                                               "@DEF":"hanim_r_tarsometatarsal_2",
                                                               "@center":[-157.6888888888889,51.55555555555556,81.11111111111111],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -2743,6 +2823,8 @@
                                                                     "@name":"r_metatarsophalangeal_2",
                                                                     "@DEF":"hanim_r_metatarsophalangeal_2",
                                                                     "@center":[-162.26666666666665,29.58222222222222,193.24444444444444],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -2805,6 +2887,8 @@
                                                                           "@name":"r_tarsal_proximal_interphalangeal_2",
                                                                           "@DEF":"hanim_r_tarsal_proximal_interphalangeal_2",
                                                                           "@center":[-165.77777777777777,24.982222222222227,225.20000000000002],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -2867,6 +2951,8 @@
                                                                                 "@name":"r_tarsal_distal_interphalangeal_2",
                                                                                 "@DEF":"hanim_r_tarsal_distal_interphalangeal_2",
                                                                                 "@center":[-165.77777777777777,19.40888888888889,243.82222222222222],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -2944,6 +3030,8 @@
                                                         "@name":"r_cuneonavicular_3",
                                                         "@DEF":"hanim_r_cuneonavicular_3",
                                                         "@center":[-182.93333333333334,65.95555555555556,39.14666666666667],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -3006,6 +3094,8 @@
                                                               "@name":"r_tarsometatarsal_3",
                                                               "@DEF":"hanim_r_tarsometatarsal_3",
                                                               "@center":[-186.13333333333333,51.55555555555556,77.82222222222222],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -3068,6 +3158,8 @@
                                                                     "@name":"r_metatarsophalangeal_3",
                                                                     "@DEF":"hanim_r_metatarsophalangeal_3",
                                                                     "@center":[-189.82222222222222,29.742222222222225,188.48888888888888],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -3130,6 +3222,8 @@
                                                                           "@name":"r_tarsal_proximal_interphalangeal_3",
                                                                           "@DEF":"hanim_r_tarsal_proximal_interphalangeal_3",
                                                                           "@center":[-194.57777777777778,23.551111111111112,218.22222222222223],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -3192,6 +3286,8 @@
                                                                                 "@name":"r_tarsal_distal_interphalangeal_3",
                                                                                 "@DEF":"hanim_r_tarsal_distal_interphalangeal_3",
                                                                                 "@center":[-197.6,19.40888888888889,236.44444444444446],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -3272,6 +3368,8 @@
                                                   "@name":"r_calcaneocuboid",
                                                   "@DEF":"hanim_r_calcaneocuboid",
                                                   "@center":[-175.24444444444444,114.53333333333333,-51.288888888888884],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -3334,6 +3432,8 @@
                                                         "@name":"r_transversetarsal",
                                                         "@DEF":"hanim_r_transversetarsal",
                                                         "@center":[-217.82222222222222,69.6888888888889,4.126666666666667],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -3396,6 +3496,8 @@
                                                               "@name":"r_tarsometatarsal_4",
                                                               "@DEF":"hanim_r_tarsometatarsal_4",
                                                               "@center":[-209.64444444444445,48.48888888888889,75.91111111111111],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -3458,6 +3560,8 @@
                                                                     "@name":"r_metatarsophalangeal_4",
                                                                     "@DEF":"hanim_r_metatarsophalangeal_4",
                                                                     "@center":[-216.31111111111113,28.351111111111113,180.08888888888887],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -3520,6 +3624,8 @@
                                                                           "@name":"r_tarsal_proximal_interphalangeal_4",
                                                                           "@DEF":"hanim_r_tarsal_proximal_interphalangeal_4",
                                                                           "@center":[-224.7555555555556,24.186666666666667,210],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -3582,6 +3688,8 @@
                                                                                 "@name":"r_tarsal_distal_interphalangeal_4",
                                                                                 "@DEF":"hanim_r_tarsal_distal_interphalangeal_4",
                                                                                 "@center":[-227.7777777777778,18.506666666666668,224.57777777777778],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -3656,6 +3764,8 @@
                                                               "@name":"r_tarsometatarsal_5",
                                                               "@DEF":"hanim_r_tarsometatarsal_5",
                                                               "@center":[-237.9111111111111,41.373333333333335,68.62222222222222],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -3718,6 +3828,8 @@
                                                                     "@name":"r_metatarsophalangeal_5",
                                                                     "@DEF":"hanim_r_metatarsophalangeal_5",
                                                                     "@center":[-244.3111111111111,27.004444444444445,170.9777777777778],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -3780,6 +3892,8 @@
                                                                           "@name":"r_tarsal_proximal_interphalangeal_5",
                                                                           "@DEF":"hanim_r_tarsal_proximal_interphalangeal_5",
                                                                           "@center":[-248.88888888888889,21.444444444444443,185.95555555555558],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -3842,6 +3956,8 @@
                                                                                 "@name":"r_tarsal_distal_interphalangeal_5",
                                                                                 "@DEF":"hanim_r_tarsal_distal_interphalangeal_5",
                                                                                 "@center":[-250.7111111111111,16.915555555555557,201.24444444444444],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -3931,6 +4047,8 @@
                                 "@name":"vl5",
                                 "@DEF":"hanim_vl5",
                                 "@center":[0,1828.0000444444445,-27.186666666666667],
+                                "@ulimit":[0,0,0],
+                                "@llimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -3993,6 +4111,8 @@
                                       "@name":"vl4",
                                       "@DEF":"hanim_vl4",
                                       "@center":[0,1875.9999555555557,-27.186666666666667],
+                                      "@ulimit":[0,0,0],
+                                      "@llimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -4055,6 +4175,8 @@
                                             "@name":"vl3",
                                             "@DEF":"hanim_vl3",
                                             "@center":[0,1908,-27.186666666666667],
+                                            "@ulimit":[0,0,0],
+                                            "@llimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -4117,6 +4239,8 @@
                                                   "@name":"vl2",
                                                   "@DEF":"hanim_vl2",
                                                   "@center":[0,1940.4444444444443,-27.186666666666667],
+                                                  "@ulimit":[0,0,0],
+                                                  "@llimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -4179,6 +4303,8 @@
                                                         "@name":"vl1",
                                                         "@DEF":"hanim_vl1",
                                                         "@center":[0,1974.6666666666667,-27.186666666666667],
+                                                        "@ulimit":[0,0,0],
+                                                        "@llimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -4241,6 +4367,8 @@
                                                               "@name":"vt12",
                                                               "@DEF":"hanim_vt12",
                                                               "@center":[0,2020.8889333333336,-27.186666666666667],
+                                                              "@ulimit":[0,0,0],
+                                                              "@llimit":[0,0,0],
                                                               "-children":[
                                                                 { "HAnimSegment":
                                                                   {
@@ -4303,6 +4431,8 @@
                                                                     "@name":"vt11",
                                                                     "@DEF":"hanim_vt11",
                                                                     "@center":[0,2067.5555555555557,-27.186666666666667],
+                                                                    "@ulimit":[0,0,0],
+                                                                    "@llimit":[0,0,0],
                                                                     "-children":[
                                                                       { "HAnimSegment":
                                                                         {
@@ -4365,6 +4495,8 @@
                                                                           "@name":"vt10",
                                                                           "@DEF":"hanim_vt10",
                                                                           "@center":[0,2101.333288888889,-27.23111111111111],
+                                                                          "@ulimit":[0,0,0],
+                                                                          "@llimit":[0,0,0],
                                                                           "-children":[
                                                                             { "HAnimSegment":
                                                                               {
@@ -4427,6 +4559,8 @@
                                                                                 "@name":"vt9",
                                                                                 "@DEF":"hanim_vt9",
                                                                                 "@center":[0,2130.222222222222,-27.186666666666667],
+                                                                                "@ulimit":[0,0,0],
+                                                                                "@llimit":[0,0,0],
                                                                                 "-children":[
                                                                                   { "HAnimSegment":
                                                                                     {
@@ -4489,6 +4623,8 @@
                                                                                       "@name":"vt8",
                                                                                       "@DEF":"hanim_vt8",
                                                                                       "@center":[0,2159.1112000000003,-27.186666666666667],
+                                                                                      "@ulimit":[0,0,0],
+                                                                                      "@llimit":[0,0,0],
                                                                                       "-children":[
                                                                                         { "HAnimSegment":
                                                                                           {
@@ -4551,6 +4687,8 @@
                                                                                             "@name":"vt7",
                                                                                             "@DEF":"hanim_vt7",
                                                                                             "@center":[0,2190.2221777777777,-27.186666666666667],
+                                                                                            "@ulimit":[0,0,0],
+                                                                                            "@llimit":[0,0,0],
                                                                                             "-children":[
                                                                                               { "HAnimSegment":
                                                                                                 {
@@ -4613,6 +4751,8 @@
                                                                                                   "@name":"vt6",
                                                                                                   "@DEF":"hanim_vt6",
                                                                                                   "@center":[0,2215.5554666666667,-27.186666666666667],
+                                                                                                  "@ulimit":[0,0,0],
+                                                                                                  "@llimit":[0,0,0],
                                                                                                   "-children":[
                                                                                                     { "HAnimSegment":
                                                                                                       {
@@ -4675,6 +4815,8 @@
                                                                                                         "@name":"vt5",
                                                                                                         "@DEF":"hanim_vt5",
                                                                                                         "@center":[0,2246.2222666666667,-27.186666666666667],
+                                                                                                        "@ulimit":[0,0,0],
+                                                                                                        "@llimit":[0,0,0],
                                                                                                         "-children":[
                                                                                                           { "HAnimSegment":
                                                                                                             {
@@ -4737,6 +4879,8 @@
                                                                                                               "@name":"vt4",
                                                                                                               "@DEF":"hanim_vt4",
                                                                                                               "@center":[0,2276.4444888888893,-27.186666666666667],
+                                                                                                              "@ulimit":[0,0,0],
+                                                                                                              "@llimit":[0,0,0],
                                                                                                               "-children":[
                                                                                                                 { "HAnimSegment":
                                                                                                                   {
@@ -4799,6 +4943,8 @@
                                                                                                                     "@name":"vt3",
                                                                                                                     "@DEF":"hanim_vt3",
                                                                                                                     "@center":[0,2312.888933333333,-27.186666666666667],
+                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                    "@llimit":[0,0,0],
                                                                                                                     "-children":[
                                                                                                                       { "HAnimSegment":
                                                                                                                         {
@@ -4861,6 +5007,8 @@
                                                                                                                           "@name":"vt2",
                                                                                                                           "@DEF":"hanim_vt2",
                                                                                                                           "@center":[0,2361.7777333333333,-27.23111111111111],
+                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                          "@llimit":[0,0,0],
                                                                                                                           "-children":[
                                                                                                                             { "HAnimSegment":
                                                                                                                               {
@@ -4923,6 +5071,8 @@
                                                                                                                                 "@name":"vt1",
                                                                                                                                 "@DEF":"hanim_vt1",
                                                                                                                                 "@center":[0,2408.8889333333336,-27.186666666666667],
+                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                 "-children":[
                                                                                                                                   { "HAnimSegment":
                                                                                                                                     {
@@ -4985,6 +5135,8 @@
                                                                                                                                       "@name":"vc7",
                                                                                                                                       "@DEF":"hanim_vc7",
                                                                                                                                       "@center":[0,2459.999911111111,-29.755555555555556],
+                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                       "-children":[
                                                                                                                                         { "HAnimSegment":
                                                                                                                                           {
@@ -5047,6 +5199,8 @@
                                                                                                                                             "@name":"vc6",
                                                                                                                                             "@DEF":"hanim_vc6",
                                                                                                                                             "@center":[0,2483.999955555556,-29.755555555555556],
+                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                             "-children":[
                                                                                                                                               { "HAnimSegment":
                                                                                                                                                 {
@@ -5109,6 +5263,8 @@
                                                                                                                                                   "@name":"vc5",
                                                                                                                                                   "@DEF":"hanim_vc5",
                                                                                                                                                   "@center":[0,2508.4444000000003,-29.755555555555556],
+                                                                                                                                                  "@ulimit":[0,0,0],
+                                                                                                                                                  "@llimit":[0,0,0],
                                                                                                                                                   "-children":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
@@ -5171,6 +5327,8 @@
                                                                                                                                                         "@name":"vc4",
                                                                                                                                                         "@DEF":"hanim_vc4",
                                                                                                                                                         "@center":[0,2532.8889777777777,-29.755555555555556],
+                                                                                                                                                        "@ulimit":[0,0,0],
+                                                                                                                                                        "@llimit":[0,0,0],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
@@ -5233,6 +5391,8 @@
                                                                                                                                                               "@name":"vc3",
                                                                                                                                                               "@DEF":"hanim_vc3",
                                                                                                                                                               "@center":[0,2558.2222666666667,-29.755555555555556],
+                                                                                                                                                              "@ulimit":[0,0,0],
+                                                                                                                                                              "@llimit":[0,0,0],
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
@@ -5295,6 +5455,8 @@
                                                                                                                                                                     "@name":"vc2",
                                                                                                                                                                     "@DEF":"hanim_vc2",
                                                                                                                                                                     "@center":[0,2581.3334222222225,-29.755555555555556],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -5357,6 +5519,8 @@
                                                                                                                                                                           "@name":"vc1",
                                                                                                                                                                           "@DEF":"hanim_vc1",
                                                                                                                                                                           "@center":[0,2604.444355555556,-29.755555555555556],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -5419,6 +5583,8 @@
                                                                                                                                                                                 "@name":"skullbase",
                                                                                                                                                                                 "@DEF":"hanim_skullbase",
                                                                                                                                                                                 "@center":[0,2592.888888888889,-30.502222222222223],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -5481,6 +5647,8 @@
                                                                                                                                                                                       "@name":"l_eyelid_joint",
                                                                                                                                                                                       "@DEF":"hanim_l_eyelid_joint",
                                                                                                                                                                                       "@center":[99.77777777777779,2813.333288888889,65.06666666666666],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5546,6 +5714,8 @@
                                                                                                                                                                                       "@name":"r_eyelid_joint",
                                                                                                                                                                                       "@DEF":"hanim_r_eyelid_joint",
                                                                                                                                                                                       "@center":[-99.77777777777779,2813.333288888889,65.06666666666666],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5611,6 +5781,8 @@
                                                                                                                                                                                       "@name":"l_eyeball_joint",
                                                                                                                                                                                       "@DEF":"hanim_l_eyeball_joint",
                                                                                                                                                                                       "@center":[95.06666666666666,2775.111066666667,164.04444444444445],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5676,6 +5848,8 @@
                                                                                                                                                                                       "@name":"r_eyeball_joint",
                                                                                                                                                                                       "@DEF":"hanim_r_eyeball_joint",
                                                                                                                                                                                       "@center":[-95.06666666666666,2775.111066666667,164.04444444444445],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5741,6 +5915,8 @@
                                                                                                                                                                                       "@name":"l_eyebrow_joint",
                                                                                                                                                                                       "@DEF":"hanim_l_eyebrow_joint",
                                                                                                                                                                                       "@center":[42.96,2792.888888888889,211.24444444444447],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5806,6 +5982,8 @@
                                                                                                                                                                                       "@name":"r_eyebrow_joint",
                                                                                                                                                                                       "@DEF":"hanim_r_eyebrow_joint",
                                                                                                                                                                                       "@center":[-42.96,2792.888888888889,211.24444444444447],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5871,6 +6049,8 @@
                                                                                                                                                                                       "@name":"temporomandibular",
                                                                                                                                                                                       "@DEF":"hanim_temporomandibular",
                                                                                                                                                                                       "@center":[0,2593.3332444444445,30.37777777777778],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -5960,6 +6140,8 @@
                                                                                                                                       "@name":"l_acromioclavicular",
                                                                                                                                       "@DEF":"hanim_l_acromioclavicular",
                                                                                                                                       "@center":[76,2387.5556,-27.23111111111111],
+                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                       "-children":[
                                                                                                                                         { "HAnimSegment":
                                                                                                                                           {
@@ -6022,6 +6204,8 @@
                                                                                                                                             "@name":"l_sternoclavicular",
                                                                                                                                             "@DEF":"hanim_l_sternoclavicular",
                                                                                                                                             "@center":[242.84444444444446,2354.222266666667,-25.47555555555556],
+                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                             "-children":[
                                                                                                                                               { "HAnimSegment":
                                                                                                                                                 {
@@ -6084,6 +6268,8 @@
                                                                                                                                                   "@name":"l_shoulder",
                                                                                                                                                   "@DEF":"hanim_l_shoulder",
                                                                                                                                                   "@center":[326.0444444444445,2328.0000444444445,-6.453333333333333],
+                                                                                                                                                  "@ulimit":[0,0,0],
+                                                                                                                                                  "@llimit":[0,0,0],
                                                                                                                                                   "-children":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
@@ -6146,6 +6332,8 @@
                                                                                                                                                         "@name":"l_elbow",
                                                                                                                                                         "@DEF":"hanim_l_elbow",
                                                                                                                                                         "@center":[359.6888888888889,1834.666622222222,-11.12],
+                                                                                                                                                        "@ulimit":[0,0,0],
+                                                                                                                                                        "@llimit":[0,0,0],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
@@ -6208,6 +6396,8 @@
                                                                                                                                                               "@name":"l_radiocarpal",
                                                                                                                                                               "@DEF":"hanim_l_radiocarpal",
                                                                                                                                                               "@center":[359.3777777777778,1430.6666222222223,-9.924444444444445],
+                                                                                                                                                              "@ulimit":[0,0,0],
+                                                                                                                                                              "@llimit":[0,0,0],
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
@@ -6270,6 +6460,8 @@
                                                                                                                                                                     "@name":"l_midcarpal_1",
                                                                                                                                                                     "@DEF":"hanim_l_midcarpal_1",
                                                                                                                                                                     "@center":[358.0888888888889,1394.6666222222223,38.17777777777778],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -6332,6 +6524,8 @@
                                                                                                                                                                           "@name":"l_carpometacarpal_1",
                                                                                                                                                                           "@DEF":"hanim_l_carpometacarpal_1",
                                                                                                                                                                           "@center":[356.53333333333336,1368.0000444444445,51.333333333333336],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -6394,6 +6588,8 @@
                                                                                                                                                                                 "@name":"l_metacarpophalangeal_1",
                                                                                                                                                                                 "@DEF":"hanim_l_metacarpophalangeal_1",
                                                                                                                                                                                 "@center":[357.59999999999997,1328.888888888889,70.66666666666667],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -6456,6 +6652,8 @@
                                                                                                                                                                                       "@name":"l_carpal_interphalangeal_1",
                                                                                                                                                                                       "@DEF":"hanim_l_carpal_interphalangeal_1",
                                                                                                                                                                                       "@center":[360.8,1292,98.08888888888889],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -6530,6 +6728,8 @@
                                                                                                                                                                     "@name":"l_midcarpal_2",
                                                                                                                                                                     "@DEF":"hanim_l_midcarpal_2",
                                                                                                                                                                     "@center":[358.0888888888889,1396.4444444444446,16.626666666666665],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -6592,6 +6792,8 @@
                                                                                                                                                                           "@name":"l_carpometacarpal_2",
                                                                                                                                                                           "@DEF":"hanim_l_carpometacarpal_2",
                                                                                                                                                                           "@center":[358.0888888888889,1358.222177777778,19.21777777777778],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -6654,6 +6856,8 @@
                                                                                                                                                                                 "@name":"l_metacarpophalangeal_2",
                                                                                                                                                                                 "@DEF":"hanim_l_metacarpophalangeal_2",
                                                                                                                                                                                 "@center":[362.93333333333334,1258.6666666666667,29.777777777777782],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -6716,6 +6920,8 @@
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                       "@DEF":"hanim_l_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                       "@center":[358.9333333333334,1198.6666222222223,28.017777777777777],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -6778,6 +6984,8 @@
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@DEF":"hanim_l_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@center":[356.88888888888886,1148.888888888889,26.44],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -6855,6 +7063,8 @@
                                                                                                                                                                     "@name":"l_midcarpal_3",
                                                                                                                                                                     "@DEF":"hanim_l_midcarpal_3",
                                                                                                                                                                     "@center":[357.6888888888889,1399.5555555555554,-9.475555555555555],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -6917,6 +7127,8 @@
                                                                                                                                                                           "@name":"l_carpometacarpal_3",
                                                                                                                                                                           "@DEF":"hanim_l_carpometacarpal_3",
                                                                                                                                                                           "@center":[357.6888888888889,1354.6666666666667,-12.351111111111111],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -6979,6 +7191,8 @@
                                                                                                                                                                                 "@name":"l_metacarpophalangeal_3",
                                                                                                                                                                                 "@DEF":"hanim_l_metacarpophalangeal_3",
                                                                                                                                                                                 "@center":[362.84444444444443,1254.222177777778,-7.7377777777777785],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -7041,6 +7255,8 @@
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@DEF":"hanim_l_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@center":[358.9333333333334,1191.5555111111112,-6.986666666666667],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -7103,6 +7319,8 @@
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@DEF":"hanim_l_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@center":[356.88888888888886,1136.4444444444446,-7.426666666666667],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -7180,6 +7398,8 @@
                                                                                                                                                                     "@name":"l_midcarpal_4_5",
                                                                                                                                                                     "@DEF":"hanim_l_midcarpal_4_5",
                                                                                                                                                                     "@center":[357.6888888888889,1394.2222666666667,-50.84444444444444],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -7242,6 +7462,8 @@
                                                                                                                                                                           "@name":"l_carpometacarpal_4",
                                                                                                                                                                           "@DEF":"hanim_l_carpometacarpal_4",
                                                                                                                                                                           "@center":[357.6888888888889,1355.5555555555557,-39.346666666666664],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -7304,6 +7526,8 @@
                                                                                                                                                                                 "@name":"l_metacarpophalangeal_4",
                                                                                                                                                                                 "@DEF":"hanim_l_metacarpophalangeal_4",
                                                                                                                                                                                 "@center":[362.84444444444443,1252.4444444444446,-42.35111111111111],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -7366,6 +7590,8 @@
                                                                                                                                                                                       "@name":"l_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                       "@DEF":"hanim_l_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                       "@center":[358.9333333333334,1198.222177777778,-40.782222222222224],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -7428,6 +7654,8 @@
                                                                                                                                                                                             "@name":"l_carpal_distal_interphalangeal_4",
                                                                                                                                                                                             "@DEF":"hanim_l_carpal_distal_interphalangeal_4",
                                                                                                                                                                                             "@center":[356.88888888888886,1147.1110666666668,-39.06666666666667],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -7505,6 +7733,8 @@
                                                                                                                                                                     "@name":"l_carpometacarpal_5",
                                                                                                                                                                     "@DEF":"hanim_l_carpometacarpal_5",
                                                                                                                                                                     "@center":[358.8,1359.5555555555557,-64.75555555555556],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -7567,6 +7797,8 @@
                                                                                                                                                                           "@name":"l_metacarpophalangeal_5",
                                                                                                                                                                           "@DEF":"hanim_l_metacarpophalangeal_5",
                                                                                                                                                                           "@center":[362.1333333333333,1260.444488888889,-73.2],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -7629,6 +7861,8 @@
                                                                                                                                                                                 "@name":"l_carpal_proximal_interphalangeal_5",
                                                                                                                                                                                 "@DEF":"hanim_l_carpal_proximal_interphalangeal_5",
                                                                                                                                                                                 "@center":[358.84444444444443,1226.6666666666667,-73.37777777777778],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -7691,6 +7925,8 @@
                                                                                                                                                                                       "@name":"l_carpal_distal_interphalangeal_5",
                                                                                                                                                                                       "@DEF":"hanim_l_carpal_distal_interphalangeal_5",
                                                                                                                                                                                       "@center":[357.15555555555557,1189.7777777777778,-73.02222222222223],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -7780,6 +8016,8 @@
                                                                                                                                       "@name":"r_acromioclavicular",
                                                                                                                                       "@DEF":"hanim_r_acromioclavicular",
                                                                                                                                       "@center":[-76,2387.5556,-27.23111111111111],
+                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                       "-children":[
                                                                                                                                         { "HAnimSegment":
                                                                                                                                           {
@@ -7842,6 +8080,8 @@
                                                                                                                                             "@name":"r_sternoclavicular",
                                                                                                                                             "@DEF":"hanim_r_sternoclavicular",
                                                                                                                                             "@center":[-242.84444444444446,2354.222266666667,-25.47555555555556],
+                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                             "-children":[
                                                                                                                                               { "HAnimSegment":
                                                                                                                                                 {
@@ -7904,6 +8144,8 @@
                                                                                                                                                   "@name":"r_shoulder",
                                                                                                                                                   "@DEF":"hanim_r_shoulder",
                                                                                                                                                   "@center":[-325.33333333333337,2328.0000444444445,-6.453333333333333],
+                                                                                                                                                  "@ulimit":[0,0,0],
+                                                                                                                                                  "@llimit":[0,0,0],
                                                                                                                                                   "-children":[
                                                                                                                                                     { "HAnimSegment":
                                                                                                                                                       {
@@ -7966,6 +8208,8 @@
                                                                                                                                                         "@name":"r_elbow",
                                                                                                                                                         "@DEF":"hanim_r_elbow",
                                                                                                                                                         "@center":[-358.9777777777778,1834.666622222222,-11.12],
+                                                                                                                                                        "@ulimit":[0,0,0],
+                                                                                                                                                        "@llimit":[0,0,0],
                                                                                                                                                         "-children":[
                                                                                                                                                           { "HAnimSegment":
                                                                                                                                                             {
@@ -8028,6 +8272,8 @@
                                                                                                                                                               "@name":"r_radiocarpal",
                                                                                                                                                               "@DEF":"hanim_r_radiocarpal",
                                                                                                                                                               "@center":[-358.6666666666667,1430.6666222222223,-9.92],
+                                                                                                                                                              "@ulimit":[0,0,0],
+                                                                                                                                                              "@llimit":[0,0,0],
                                                                                                                                                               "-children":[
                                                                                                                                                                 { "HAnimSegment":
                                                                                                                                                                   {
@@ -8090,6 +8336,8 @@
                                                                                                                                                                     "@name":"r_midcarpal_1",
                                                                                                                                                                     "@DEF":"hanim_r_midcarpal_1",
                                                                                                                                                                     "@center":[-357.46666666666664,1394.6666222222223,38.17777777777778],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -8152,6 +8400,8 @@
                                                                                                                                                                           "@name":"r_carpometacarpal_1",
                                                                                                                                                                           "@DEF":"hanim_r_carpometacarpal_1",
                                                                                                                                                                           "@center":[-355.82222222222225,1368.0000444444445,51.333333333333336],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -8214,6 +8464,8 @@
                                                                                                                                                                                 "@name":"r_metacarpophalangeal_1",
                                                                                                                                                                                 "@DEF":"hanim_r_metacarpophalangeal_1",
                                                                                                                                                                                 "@center":[-356.84444444444443,1328.888888888889,70.66666666666667],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -8276,6 +8528,8 @@
                                                                                                                                                                                       "@name":"r_carpal_interphalangeal_1",
                                                                                                                                                                                       "@DEF":"hanim_r_carpal_interphalangeal_1",
                                                                                                                                                                                       "@center":[-360.0444444444445,1292,98.08888888888889],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -8350,6 +8604,8 @@
                                                                                                                                                                     "@name":"r_midcarpal_2",
                                                                                                                                                                     "@DEF":"hanim_r_midcarpal_2",
                                                                                                                                                                     "@center":[-357.46666666666664,1396.4444444444446,16.626666666666665],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -8412,6 +8668,8 @@
                                                                                                                                                                           "@name":"r_carpometacarpal_2",
                                                                                                                                                                           "@DEF":"hanim_r_carpometacarpal_2",
                                                                                                                                                                           "@center":[-357.3333333333333,1358.222177777778,19.21777777777778],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -8474,6 +8732,8 @@
                                                                                                                                                                                 "@name":"r_metacarpophalangeal_2",
                                                                                                                                                                                 "@DEF":"hanim_r_metacarpophalangeal_2",
                                                                                                                                                                                 "@center":[-362.17777777777775,1258.6666666666667,29.777777777777782],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -8536,6 +8796,8 @@
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                       "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
                                                                                                                                                                                       "@center":[-358.17777777777775,1198.6666222222223,28.017777777777777],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -8598,6 +8860,8 @@
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
                                                                                                                                                                                             "@center":[-356.1333333333333,1148.888888888889,26.44],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -8675,6 +8939,8 @@
                                                                                                                                                                     "@name":"r_midcarpal_3",
                                                                                                                                                                     "@DEF":"hanim_r_midcarpal_3",
                                                                                                                                                                     "@center":[-356.9777777777778,1399.5555555555554,-9.475555555555555],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -8737,6 +9003,8 @@
                                                                                                                                                                           "@name":"r_carpometacarpal_3",
                                                                                                                                                                           "@DEF":"hanim_r_carpometacarpal_3",
                                                                                                                                                                           "@center":[-356.9777777777778,1354.6666666666667,-12.351111111111111],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -8799,6 +9067,8 @@
                                                                                                                                                                                 "@name":"r_metacarpophalangeal_3",
                                                                                                                                                                                 "@DEF":"hanim_r_metacarpophalangeal_3",
                                                                                                                                                                                 "@center":[-362.0888888888889,1254.222177777778,-7.7377777777777785],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -8861,6 +9131,8 @@
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
                                                                                                                                                                                       "@center":[-358.17777777777775,1191.5555111111112,-6.986666666666667],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -8923,6 +9195,8 @@
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
                                                                                                                                                                                             "@center":[-356.1333333333333,1136.4444444444446,-7.426666666666667],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -9000,6 +9274,8 @@
                                                                                                                                                                     "@name":"r_midcarpal_4_5",
                                                                                                                                                                     "@DEF":"hanim_r_midcarpal_4_5",
                                                                                                                                                                     "@center":[-356.9777777777778,1394.2222666666667,-50.84444444444444],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -9062,6 +9338,8 @@
                                                                                                                                                                           "@name":"r_carpometacarpal_4",
                                                                                                                                                                           "@DEF":"hanim_r_carpometacarpal_4",
                                                                                                                                                                           "@center":[-356.9777777777778,1355.5555555555557,-39.346666666666664],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -9124,6 +9402,8 @@
                                                                                                                                                                                 "@name":"r_metacarpophalangeal_4",
                                                                                                                                                                                 "@DEF":"hanim_r_metacarpophalangeal_4",
                                                                                                                                                                                 "@center":[-362.0888888888889,1252.4444444444446,-42.35111111111111],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -9186,6 +9466,8 @@
                                                                                                                                                                                       "@name":"r_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                       "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
                                                                                                                                                                                       "@center":[-358.17777777777775,1198.222177777778,-40.782222222222224],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -9248,6 +9530,8 @@
                                                                                                                                                                                             "@name":"r_carpal_distal_interphalangeal_4",
                                                                                                                                                                                             "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
                                                                                                                                                                                             "@center":[-356.1333333333333,1147.1110666666668,-39.06666666666667],
+                                                                                                                                                                                            "@ulimit":[0,0,0],
+                                                                                                                                                                                            "@llimit":[0,0,0],
                                                                                                                                                                                             "-children":[
                                                                                                                                                                                               { "HAnimSegment":
                                                                                                                                                                                                 {
@@ -9325,6 +9609,8 @@
                                                                                                                                                                     "@name":"r_carpometacarpal_5",
                                                                                                                                                                     "@DEF":"hanim_r_carpometacarpal_5",
                                                                                                                                                                     "@center":[-358.0444444444444,1359.5555555555557,-64.75555555555556],
+                                                                                                                                                                    "@ulimit":[0,0,0],
+                                                                                                                                                                    "@llimit":[0,0,0],
                                                                                                                                                                     "-children":[
                                                                                                                                                                       { "HAnimSegment":
                                                                                                                                                                         {
@@ -9387,6 +9673,8 @@
                                                                                                                                                                           "@name":"r_metacarpophalangeal_5",
                                                                                                                                                                           "@DEF":"hanim_r_metacarpophalangeal_5",
                                                                                                                                                                           "@center":[-361.4222222222222,1260.444488888889,-73.2],
+                                                                                                                                                                          "@ulimit":[0,0,0],
+                                                                                                                                                                          "@llimit":[0,0,0],
                                                                                                                                                                           "-children":[
                                                                                                                                                                             { "HAnimSegment":
                                                                                                                                                                               {
@@ -9449,6 +9737,8 @@
                                                                                                                                                                                 "@name":"r_carpal_proximal_interphalangeal_5",
                                                                                                                                                                                 "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
                                                                                                                                                                                 "@center":[-358.1333333333333,1226.6666666666667,-73.37777777777778],
+                                                                                                                                                                                "@ulimit":[0,0,0],
+                                                                                                                                                                                "@llimit":[0,0,0],
                                                                                                                                                                                 "-children":[
                                                                                                                                                                                   { "HAnimSegment":
                                                                                                                                                                                     {
@@ -9511,6 +9801,8 @@
                                                                                                                                                                                       "@name":"r_carpal_distal_interphalangeal_5",
                                                                                                                                                                                       "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
                                                                                                                                                                                       "@center":[-356.44444444444446,1189.7777777777778,-73.02222222222223],
+                                                                                                                                                                                      "@ulimit":[0,0,0],
+                                                                                                                                                                                      "@llimit":[0,0,0],
                                                                                                                                                                                       "-children":[
                                                                                                                                                                                         { "HAnimSegment":
                                                                                                                                                                                           {
@@ -10382,738 +10674,6 @@
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_transversetarsal"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_sacrum"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_pelvis"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t12"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t11"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t10"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t9"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t8"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t7"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t6"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_t1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c7"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c6"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_c1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_skull"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_jaw"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calcaneus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calcaneus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_calf"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_capitate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_capitate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_carpal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_clavicle"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_clavicle"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuboid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuboid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_cuneiform_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_cuneiform_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyeball"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyeball"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyebrow"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyebrow"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_eyelid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_eyelid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_forearm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_hamate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_hamate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metacarpal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_metatarsal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metatarsal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_navicular"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_navicular"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_scapula"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_scapula"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_talus"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_tarsal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_tarsal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_thigh"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_trapezium"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezium"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_trapezoid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezoid"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_l_upperarm"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_upperarm"
                   }
                 }
               ]

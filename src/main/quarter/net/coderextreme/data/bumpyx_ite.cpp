@@ -271,7 +271,9 @@ SoShaderPart46->setUrl(new QString[]{QString("../shaders/x_ite.fs"), QString("ht
 SoShaderPart46->setType(QString("FRAGMENT"));
 SoComposedShader32->setParts(*SoShaderPart46);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>
 SoVRMLAppearance23->addChild(*SoComposedShader32);
 
 SoShape21->addChild(*SoVRMLAppearance23);

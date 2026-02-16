@@ -285,7 +285,10 @@ X3D:
                         USE: "rotscaleC1"
                     ]
                 ],
-#<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
+#<fieldValue name='set_startpoint'>
+#</fieldValue>
+#<fieldValue name='set_endpoint'>
+#</fieldValue>
             ],
             ROUTE: [
                 fromNode: "G1"

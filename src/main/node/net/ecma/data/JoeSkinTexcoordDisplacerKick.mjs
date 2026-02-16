@@ -1360,13 +1360,7 @@ var X3D0 =  new X3D({
                       USE : new SFString("Joe_l_wrist")}),
 
                     new HAnimJoint({
-                      USE : new SFString("Joe_r_wrist")}),
-                  segments : new MFNode([
-                    new HAnimSegment({
-                      USE : new SFString("Joe_sacrum")}),
-                  viewpoints : new SFNode(
-                    new HAnimSite({
-                      USE : new SFString("Joe_RootFront_view")})])})])}),
+                      USE : new SFString("Joe_r_wrist")})})])}),
 
             new Group({
               children : new MFNode([

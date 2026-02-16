@@ -14,7 +14,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
-      var X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
+      var X3D0 =  new X3D().setProfile("Full").setVersion("4.1")
       .setHead(new head()
         .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
         .addComments(new CommentsBlock("<component name='DIS' level='2'></component>"))
@@ -32,7 +32,9 @@ var ProtoInstance5 = null;
         .addMeta(new meta().setName("identifier").setContent("https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"))
         .addMeta(new meta().setName("generator").setContent("PSPad, http://www.pspad.com/"))
         .addMeta(new meta().setName("license").setContent("license.html")))
-      .addComments(new CommentsBlock("\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""))
+      .addComments(new CommentsBlock("\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,"))
+      .addComments(new CommentsBlock("It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)"))
+      .addComments(new CommentsBlock("open for their \"discussion about the teapot\""))
       .setScene(new Scene()
         .addComments(new CommentsBlock("LayerSet with two layers, navigation happens in layer 1"))
         .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(Java.to([1,2,3], Java.type("int[]")))
@@ -112,7 +114,9 @@ var ProtoInstance5 = null;
                       .addField(new field().setType(field.TYPE_SFFLOAT).setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                       .addParts(new ShaderPart().setType("VERTEX").setUrl(Java.to(["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"], Java.type("java.lang.String[]"))))
                       .addParts(new ShaderPart().setType("FRAGMENT").setUrl(Java.to(["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"], Java.type("java.lang.String[]"))))
-                      .addComments(new CommentsBlock("TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>")))))))
+                      .addComments(new CommentsBlock("TO CONVERT TO A SPHERE"))
+                      .addComments(new CommentsBlock("<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"))
+                      .addComments(new CommentsBlock("<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>")))))))
             .addChild(new Script().setDEF("OrbitScript")
               .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))

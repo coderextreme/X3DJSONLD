@@ -56,29 +56,35 @@ public class flower implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("flower.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d"))
-        .addMeta(new meta().setName("description").setContent("a flower")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("flower.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/flower.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("a flower"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addChild(new DirectionalLight().setDirection(new float[] {0f ,-0.8f ,-0.2f }).setIntensity(0.5f ))
         .addChild(new Background().setSkyColor(new MFColor0().getArray()))
-        .addChild(new Viewpoint().setDescription("One mathematical orbital").setPosition(new float[] {0f ,0f ,50f }))
+        .addChild(new Viewpoint().setDescription(new SFString("One mathematical orbital")).setPosition(new float[] {0f ,0f ,50f }))
         .addChild(new Transform().setTranslation(new float[] {0f ,-1f ,1f }).setRotation(new float[] {0f ,1f ,0f ,3.1415926f }).setScale(new float[] {1.5f ,1.5f ,1.5f })
           .addChild(new Shape()
             .setAppearance(new Appearance()
               .setMaterial(new Material().setTransparency(0.1f ).setDiffuseColor(new float[] {0.9f ,0.3f ,0.3f }).setSpecularColor(new float[] {0.8f ,0.8f ,0.8f }).setShininess(0.145f )))
-            .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF("Orbit")
-              .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f2().getArray())))))
-        .addChild(new Script().setDEF("OrbitScript")
-          .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
+            .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt321().getArray()).setDEF(new SFString("Orbit"))
+              .setCoord(new Coordinate().setDEF(new SFString("OrbitCoordinates")).setPoint(new MFVec3f2().getArray())))))
+        .addChild(new Script().setDEF(new SFString("OrbitScript"))
+          .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("MFVec3f").setName(new SFString("coordinates")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("MFInt32").setName(new SFString("coordIndexes")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+
@@ -155,10 +161,10 @@ public class flower implements X3DRoots {
 "	}\n"+
 "	generateCoordinates(resolution);\n"+
 "}"))
-        .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
-        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
-        .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-        .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction")));
+        .addChild(new TimeSensor().setDEF(new SFString("Clock")).setCycleInterval(16d).setLoop(true))
+        .addChild(new ROUTE().setFromNode(new SFString("OrbitScript")).setFromField(new SFString("coordIndexes")).setToNode(new SFString("Orbit")).setToField(new SFString("set_coordIndex")))
+        .addChild(new ROUTE().setFromNode(new SFString("OrbitScript")).setFromField(new SFString("coordinates")).setToNode(new SFString("OrbitCoordinates")).setToField(new SFString("point")))
+        .addChild(new ROUTE().setFromNode(new SFString("Clock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("OrbitScript")).setToField(new SFString("set_fraction"))));
     return X3D0;
     }
 private class MFColor0 {

@@ -51,7 +51,7 @@ head1.addMeta(&meta7);
 
 meta& meta8 =  meta();
 meta8.setName(CString("modified"));
-meta8.setContent(CString("14 October 2023"));
+meta8.setContent(CString("29 October 2025"));
 head1.addMeta(&meta8);
 
 meta& meta9 =  meta();
@@ -66,7 +66,7 @@ head1.addMeta(&meta10);
 
 meta& meta11 =  meta();
 meta11.setName(CString("reference"));
-meta11.setContent(CString("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
+meta11.setContent(CString("../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
 head1.addMeta(&meta11);
 
 meta& meta12 =  meta();
@@ -91,7 +91,7 @@ head1.addMeta(&meta15);
 
 meta& meta16 =  meta();
 meta16.setName(CString("generator"));
-meta16.setContent(CString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"));
+meta16.setContent(CString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"));
 head1.addMeta(&meta16);
 
 meta& meta17 =  meta();
@@ -101,12 +101,12 @@ head1.addMeta(&meta17);
 
 meta& meta18 =  meta();
 meta18.setName(CString("generator"));
-meta18.setContent(CString("Gnu Image Manipulation Program, https://www.gimp.org"));
+meta18.setContent(CString("Gnu Image Manipulation Program, http://www.gimp.org"));
 head1.addMeta(&meta18);
 
 meta& meta19 =  meta();
 meta19.setName(CString("generator"));
-meta19.setContent(CString("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"));
+meta19.setContent(CString("X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"));
 head1.addMeta(&meta19);
 
 meta& meta20 =  meta();

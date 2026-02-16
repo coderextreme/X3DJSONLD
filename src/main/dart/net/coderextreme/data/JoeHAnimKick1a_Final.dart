@@ -4,8 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
-      xsi:noNamespaceSchemaLocation_ : "https://www.web3d.org/specifications/x3d-4.0.xsd",
+      version_ : SFString('4.1'),
       head_ : 
         head(
           component_ : 

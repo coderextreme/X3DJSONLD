@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,48 +101,56 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:22 GMT"),
+                Content: stringPtr("5 December 2021"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("CHANGELOG.txt"),
             },
             &x3d.Meta{
-                Name: stringPtr("reference"),
-                Content: stringPtr("https://www.medialab.hmu.gr/minipages/x3domAudio"),
-            },
-            &x3d.Meta{
                 Name: stringPtr("TODO"),
                 Content: stringPtr("credit for audio files"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("https://www.medialab.hmu.gr/minipages/x3domAudio"),
             },
             &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/SpatialAudioCameraAnimation.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("SpatialAudioCameraAnimation.x3d"),
                 },
                 &x3d.NavigationInfo{
                 },
                 &x3d.Background{
-                    FrontUrl: x3d.MFString{"images/generic/FR1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"},
                     BackUrl: x3d.MFString{"images/generic/BK1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/BK1.png"},
+                    BottomUrl: x3d.MFString{"images/generic/DN1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"},
+                    FrontUrl: x3d.MFString{"images/generic/FR1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/FR1.png"},
                     LeftUrl: x3d.MFString{"images/generic/LF1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/LF1.png"},
                     RightUrl: x3d.MFString{"images/generic/RT1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/RT1.png"},
                     TopUrl: x3d.MFString{"images/generic/UP1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/UP1.png"},
-                    BottomUrl: x3d.MFString{"images/generic/DN1.png", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/images/generic/DN1.png"},
                 },
                 &x3d.Viewpoint{
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("Camera001"),
                     },
                     Description: stringPtr("Viewpoint is like camera, prepositioned in locations (and directions) of interest. In this example the camera is the \"ears of the user\". So, if the trackCurrentView field from ListenerPointSource is TRUE then position and orientation matches the users current view"),
-                    Position: &x3d.SFVec3f{0.0, 2000.0, 3105.007},
-                    Orientation: &x3d.SFRotation{0.823089519578153, -0.450554808859002, -0.345722442104401, 5.65313938184377},
+                    Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.523599},
+                    Position: &x3d.SFVec3f{0.0, 2000.0, 3500.0},
                 },
                 &x3d.TimeSensor{
                     CoreX3DNode: x3d.CoreX3DNode{
@@ -164,6 +172,30 @@ func main() {
                     },
                     Key: x3d.MFFloat{0.0, 0.25, 0.5, 0.75, 1.0},
                     KeyValue: x3d.MFRotation{1.0, 0.0, 0.0, -0.523599, 0.99999, 0.003554, 0.002727, -1.309007, 0.0, -0.965926, -0.258819, -3.141593, 0.002282, -0.793351, -0.60876, -3.135645, 1.0, -0.000001, 0.0, -0.523599},
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("TIMER"),
+                    ToField: stringPtr("set_fraction"),
+                    ToNode: stringPtr("Camera001-POS-INTERP"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
+                    FromNode: stringPtr("Camera001-POS-INTERP"),
+                    ToField: stringPtr("set_position"),
+                    ToNode: stringPtr("Camera001"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("TIMER"),
+                    ToField: stringPtr("set_fraction"),
+                    ToNode: stringPtr("Camera001-ROT-INTERP"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
+                    FromNode: stringPtr("Camera001-ROT-INTERP"),
+                    ToField: stringPtr("set_orientation"),
+                    ToNode: stringPtr("Camera001"),
                 },
                 &x3d.Transform{
                         CoreX3DNode: x3d.CoreX3DNode{
@@ -190,7 +222,7 @@ func main() {
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("TransformAudio1"),
                         },
-                        Translation: &x3d.SFVec3f{-933.1235, 0.0, -926.2532},
+                        Translation: &x3d.SFVec3f{-933.123474, 0.0, -926.253235},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
                             Appearance: &x3d.Appearance{
@@ -210,17 +242,17 @@ func main() {
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("violin"),
                                     },
-                                    Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                                     Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
                                     Scale: &x3d.SFVec3f{100.0, 100.0, 100.0},
+                                    Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                                 Children: []x3d.X3DNode{
                                     &x3d.Shape{
                                         Appearance: &x3d.Appearance{
                                             Material: &x3d.Material{
                                                 AmbientIntensity: floatPtr(0.0933),
                                                 DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
-                                                SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                                 Shininess: floatPtr(0.51),
+                                                SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                             },
                                         },
                                         Geometry: &x3d.Text{
@@ -243,7 +275,7 @@ func main() {
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("TransformAudio2"),
                         },
-                        Translation: &x3d.SFVec3f{933.4756, 0.0, 924.4232},
+                        Translation: &x3d.SFVec3f{933.475586, 0.0, 924.423218},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
                             Appearance: &x3d.Appearance{
@@ -263,17 +295,17 @@ func main() {
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("saxophone"),
                                     },
-                                    Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                                     Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
                                     Scale: &x3d.SFVec3f{100.0, 100.0, 100.0},
+                                    Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                                 Children: []x3d.X3DNode{
                                     &x3d.Shape{
                                         Appearance: &x3d.Appearance{
                                             Material: &x3d.Material{
                                                 AmbientIntensity: floatPtr(0.0933),
                                                 DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
-                                                SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                                 Shininess: floatPtr(0.51),
+                                                SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                             },
                                         },
                                         Geometry: &x3d.Text{
@@ -301,8 +333,8 @@ func main() {
                         &x3d.Gain{
                             &x3d.AudioClip{
                                 Description: stringPtr("Violin"),
-                                Url: x3d.MFString{"sound/violin.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"},
                                 Loop: boolPtr(true),
+                                Url: x3d.MFString{"sound/violin.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/violin.mp3"},
                             },
                         },
                     },
@@ -313,35 +345,11 @@ func main() {
                         &x3d.Gain{
                             &x3d.AudioClip{
                                 Description: stringPtr("Saxophone"),
-                                Url: x3d.MFString{"sound/saxophone.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"},
                                 Loop: boolPtr(true),
+                                Url: x3d.MFString{"sound/saxophone.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/saxophone.mp3"},
                             },
                         },
                     },
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("TIMER"),
-                    FromField: stringPtr("fraction_changed"),
-                    ToNode: stringPtr("Camera001-POS-INTERP"),
-                    ToField: stringPtr("set_fraction"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Camera001-POS-INTERP"),
-                    FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("Camera001"),
-                    ToField: stringPtr("set_position"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("TIMER"),
-                    FromField: stringPtr("fraction_changed"),
-                    ToNode: stringPtr("Camera001-ROT-INTERP"),
-                    ToField: stringPtr("set_fraction"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Camera001-ROT-INTERP"),
-                    FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("Camera001"),
-                    ToField: stringPtr("set_orientation"),
                 },
             },
         },
@@ -361,13 +369,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/SpatialAudioCameraAnimation.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -378,7 +386,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

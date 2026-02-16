@@ -273,7 +273,9 @@ Sofield47->setAccessType(QString("inputOutput"));
 Sofield47->setValue(QString("0"));
 SoComposedShader36->addChild(*Sofield47);
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"/>
+//</field>
 SoShaderPart* SoShaderPart48 = new SoShaderPart();
 SoShaderPart48->setType(QString("VERTEX"));
 SoIS* SoIS49 = new SoIS();

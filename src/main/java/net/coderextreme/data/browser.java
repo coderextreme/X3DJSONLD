@@ -56,20 +56,20 @@ public class browser implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("browser.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d"))
-        .addMeta(new meta().setName("description").setContent("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \"")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("browser.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("a script test with embedded \\n between single quotes, a double backslash \\\\\\\\ a backslash \\\\ and a closing quote \""))))
       .setScene(new Scene()
-        .addChild(new Script().setDEF("Browser")
+        .addChild(new Script().setDEF(new SFString("Browser"))
           .setSourceCode("ecmascript:\n"+
 "                function initialize() {\n"+
 "		    Browser.print('DUDES\\n'+'\"DUDETTES');\n"+
 "                }"))
-        .addChild(new Script().setDEF("Clouds")
+        .addChild(new Script().setDEF(new SFString("Clouds"))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "\n"+

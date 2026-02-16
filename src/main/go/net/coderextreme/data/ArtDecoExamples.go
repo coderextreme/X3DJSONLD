@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,7 +101,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:37:49 GMT"),
+                Content: stringPtr("19 January 2025"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -115,10 +115,21 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoExamples.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.WorldInfo{
+                    Title: stringPtr("ArtDecoExamples.x3d"),
+                },
                 &x3d.ExternProtoDeclare{
                     Name: stringPtr("ArtDeco00"),
                     Appinfo: stringPtr("UniversalMediaMaterials prototype"),
@@ -329,9 +340,6 @@ func main() {
                     Documentation: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials"),
                     Url: x3d.MFString{"../data/ArtDecoPrototypes.json#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.x3d#ArtDeco34", "ArtDecoPrototypes.wrl#ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.wrl#ArtDeco34"},
                 },
-                &x3d.WorldInfo{
-                    Title: stringPtr("ArtDecoExamples.x3d"),
-                },
                 &x3d.Group{
                     Children: []x3d.X3DNode{
                         &x3d.NavigationInfo{
@@ -349,30 +357,29 @@ func main() {
                                 DEF: stringPtr("PersRight"),
                             },
                             Description: stringPtr("Low Right"),
-                            Position: &x3d.SFVec3f{6.9282, -6.9282, 6.9282},
                             Orientation: &x3d.SFRotation{0.74291, 0.30772, 0.59447, 1.2171},
+                            Position: &x3d.SFVec3f{6.9282, -6.9282, 6.9282},
                         },
                         &x3d.Viewpoint{
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("PersLeft"),
                             },
                             Description: stringPtr("Low Left"),
-                            Position: &x3d.SFVec3f{-6.9282, -6.9282, 6.9282},
                             Orientation: &x3d.SFRotation{0.74291, -0.30772, -0.59447, 1.2171},
+                            Position: &x3d.SFVec3f{-6.9282, -6.9282, 6.9282},
                         },
                         &x3d.Viewpoint{
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("Back"),
                             },
                             Description: stringPtr("Back view"),
-                            Position: &x3d.SFVec3f{0.0, 0.0, -12.0},
                             Orientation: &x3d.SFRotation{0.0, 1.0, 0.0, 3.1416},
+                            Position: &x3d.SFVec3f{0.0, 0.0, -12.0},
                         },
                         &x3d.Transform{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("Close_travel"),
                                 },
-                                Translation: &x3d.SFVec3f{0.0, 0.8508334, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.PositionInterpolator{
                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -401,8 +408,8 @@ func main() {
                             Direction: &x3d.SFVec3f{1.0, -1.0, -1.0},
                         },
                         &x3d.DirectionalLight{
-                            Intensity: floatPtr(0.5),
                             Direction: &x3d.SFVec3f{0.0, 1.0, -0.5},
+                            Intensity: floatPtr(0.5),
                         },
                         &x3d.Anchor{
                             Description: stringPtr("Return to front view"),
@@ -452,8 +459,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco00 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco00"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -471,9 +478,9 @@ func main() {
                                                                 DEF: stringPtr("Style"),
                                                             },
                                                             Family: x3d.MFString{"SANS"},
-                                                            Style: stringPtr("BOLD"),
-                                                            Size: floatPtr(0.3),
                                                             Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                                            Size: floatPtr(0.3),
+                                                            Style: stringPtr("BOLD"),
                                                         },
                                                     },
                                                 },
@@ -516,8 +523,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco01 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco01"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -575,8 +582,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco02 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco02"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -634,8 +641,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco03 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco03"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -693,8 +700,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco04 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco04"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -752,8 +759,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco05 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco05"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -811,8 +818,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco06 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco06"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -870,8 +877,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco07 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco07"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -929,8 +936,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco08 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco08"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -988,8 +995,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco09 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco09"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1047,8 +1054,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco10 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco10"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1106,8 +1113,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco11 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco11"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1165,8 +1172,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco12 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco12"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1224,8 +1231,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco13 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco3", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco13"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1283,8 +1290,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco14 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco4", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco14"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1342,8 +1349,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco15 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco5", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco15"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1401,8 +1408,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco16 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco16"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1460,8 +1467,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco17 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco7", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco17"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1519,8 +1526,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco18 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco18"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1578,8 +1585,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco19 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco9", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco19"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1637,8 +1644,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco20 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco20"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1696,8 +1703,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco21 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco21"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1755,8 +1762,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco22 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco22"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1814,8 +1821,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco23 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco23"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1873,8 +1880,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco24 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco24"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1932,8 +1939,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco25 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco25"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -1991,8 +1998,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco26 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco26"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2050,8 +2057,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco27 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco27"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2109,8 +2116,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco28 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco28"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2168,8 +2175,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco29 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco29"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2227,8 +2234,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco30 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco30"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2286,8 +2293,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco31 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco31"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2345,8 +2352,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco32 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco32"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2404,8 +2411,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco33 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco33"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2463,8 +2470,8 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Anchor{
                                             Description: stringPtr("ArtDeco34 view source documentation"),
-                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"},
                                             Parameter: x3d.MFString{"target=_source"},
+                                            Url: x3d.MFString{"../html/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34", "https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/ArtDecoPrototypes.html#ProtoDeclare_ArtDeco34"},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -2491,17 +2498,17 @@ func main() {
                         },
                     },
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Close_Time"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("fraction_changed"),
-                    ToNode: stringPtr("Close_Mover"),
+                    FromNode: stringPtr("Close_Time"),
                     ToField: stringPtr("set_fraction"),
+                    ToNode: stringPtr("Close_Mover"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Close_Mover"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("Close_travel"),
+                    FromNode: stringPtr("Close_Mover"),
                     ToField: stringPtr("set_translation"),
+                    ToNode: stringPtr("Close_travel"),
                 },
             },
         },
@@ -2521,13 +2528,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/ArtDecoExamples.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -2538,7 +2545,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

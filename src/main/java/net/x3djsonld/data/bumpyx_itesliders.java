@@ -83,7 +83,7 @@ public class bumpyx_itesliders
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_1)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
@@ -91,20 +91,19 @@ public class bumpyx_itesliders
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComments(" <component name='Shape' level='4'></component> ")
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
-    .addComments(new String[] {"",
-"	      <component name='DIS' level='2'></component>"})
+    .addComments(" <component name='DIS' level='2'></component> ")
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("bumpyx_itesliders.x3d"))
     .addMeta(new meta().setName(meta.NAME_DESCRIPTION).setContent("*Bumpy flower with prototype sliders*"))
     .addMeta(new meta().setName(meta.NAME_CREATOR    ).setContent("Doug Sanden, Christoph Valentin, John Carlson"))
     .addMeta(new meta().setName(meta.NAME_IDENTIFIER ).setContent("https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"))
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("PSPad, http://www.pspad.com/"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("license.html")))
-  .addComments(new String[] {" \"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,",
-"     It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)",
-"     open for their \"discussion about the teapot\" "})
+  .addComments(" \"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, ")
+  .addComments(" It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) ")
+  .addComments(" open for their \"discussion about the teapot\" ")
   .setScene(new Scene()
     .addComments(" LayerSet with two layers, navigation happens in layer 1 ")
     .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new int[] {1,2,3})
@@ -152,14 +151,12 @@ public class bumpyx_itesliders
                 .setMaterial(new Material().setUSE("BLUE"))))))
         .addComments(" the model that is being reviewed by the users of this scene ")
         .addChild(new Transform("FlowerTransform")
-          .addComments(new String[] {"",
-"        <Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' />"})
+          .addComments(" <Inline DEF=\"Flower\" url='\"bumpyx_ite.x3d\"' /> ")
           .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
           .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
           .addChild(new Transform()
             .addChild(new Shape()
-              .addComments(new String[] {"",
-"	  <Sphere radius='40'></Sphere>"})
+              .addComments(" <Sphere radius='40'></Sphere> ")
               .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
                 .setCoord(new Coordinate("OrbitCoordinates")))
               .setAppearance(new Appearance()
@@ -186,9 +183,9 @@ public class bumpyx_itesliders
                   .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
                   .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"}))
                   .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))
-                  .addComments(new String[] {" TO CONVERT TO A SPHERE",
-"                  <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>",
-"                  <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"}))))))
+                  .addComments(" TO CONVERT TO A SPHERE ")
+                  .addComments(" <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> ")
+                  .addComments(" <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart> "))))))
         .addChild(new Script("OrbitScript").setSourceCode("""
 ecmascript:
 function initialize() {

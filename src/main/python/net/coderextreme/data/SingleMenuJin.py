@@ -368,12 +368,16 @@ HAnimHumanoid69.name = "humanoid"
 HAnimHumanoid69.version = "2.0"
 HAnimJoint70 = x3d.HAnimJoint(DEF="hanim0_humanoid_root")
 HAnimJoint70.name = "humanoid_root"
+HAnimJoint70.ulimit = [0,0,0]
+HAnimJoint70.llimit = [0,0,0]
 HAnimSegment71 = x3d.HAnimSegment(DEF="hanim0_sacrum")
 HAnimSegment71.name = "sacrum"
 
 HAnimJoint70.children.append(HAnimSegment71)
 HAnimJoint72 = x3d.HAnimJoint(DEF="hanim0_skullbase")
 HAnimJoint72.name = "skullbase"
+HAnimJoint72.ulimit = [0,0,0]
+HAnimJoint72.llimit = [0,0,0]
 HAnimSegment73 = x3d.HAnimSegment(DEF="hanim_sacrum")
 HAnimSegment73.name = "sacrum"
 WorldInfo74 = x3d.WorldInfo()

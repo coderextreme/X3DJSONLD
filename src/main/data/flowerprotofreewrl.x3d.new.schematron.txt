@@ -1,0 +1,26 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader/ShaderPart[1], error]
+&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather
+than a &lt;ComposedShader&gt; node [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Shape/Appearance/ComposedShader/ShaderPart[2], error]
+&lt;Script name='' DEF='Animate'&gt; &lt;field name='set_fraction' value=''/&gt; field declaration
+is missing initialization value [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Script/field[3], error]
+&lt;Script DEF='Animate'&gt; &lt;field name='set_fraction' accessType='inputOutput'/&gt; does
+not send output event via assignment statement set_fraction=___; [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Script/field[3], warning]
+&lt;Script DEF='Animate'&gt; &lt;field name='tdelta' accessType='inputOutput'/&gt; does not send
+output event via assignment statement tdelta=___; [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Script/field[8], warning]
+&lt;Script DEF='Animate'&gt; &lt;field name='pdelta' accessType='inputOutput'/&gt; does not send
+output event via assignment statement pdelta=___; [/X3D/Scene/ProtoDeclare/ProtoBody/Transform/Script/field[9], warning]
+&lt;ProtoInstance name='FlowerProto' DEF=''&gt; &lt;fieldValue name='vertex'/&gt; initialization
+not allowed for accessType inputOnly/outputOnly [/X3D/Scene/ProtoInstance/fieldValue[1], error]
+&lt;ProtoInstance name='FlowerProto' DEF=''&gt; &lt;fieldValue name='vertex' value='"../shaders/freewrl_flowers_chromatic.vs"
+"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"'/&gt;
+with defined type='MFString' accessType='inputOnly' has default value and so this
+fieldValue is optional [/X3D/Scene/ProtoInstance/fieldValue[1], hint]
+&lt;ProtoInstance name='FlowerProto' DEF=''&gt; &lt;fieldValue name='fragment'/&gt; initialization
+not allowed for accessType inputOnly/outputOnly [/X3D/Scene/ProtoInstance/fieldValue[2], error]
+&lt;ProtoInstance name='FlowerProto' DEF=''&gt; &lt;fieldValue name='fragment' value='"../shaders/freewrl.fs"
+"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs"'/&gt; with defined type='MFString'
+accessType='inputOnly' has default value and so this fieldValue is optional [/X3D/Scene/ProtoInstance/fieldValue[2], hint]

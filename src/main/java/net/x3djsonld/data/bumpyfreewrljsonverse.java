@@ -140,7 +140,7 @@ public class bumpyfreewrljsonverse
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_1)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
@@ -148,7 +148,7 @@ public class bumpyfreewrljsonverse
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComments(" <component name='Shape' level='4'></component> ")
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addComponent(new component().setName("DIS").setLevel(2))
@@ -173,9 +173,9 @@ public class bumpyfreewrljsonverse
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("PSPad, http://www.pspad.com/"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("license.html"))
     .addComments(" Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L "))
-  .addComments(new String[] {" \"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,",
-"     It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)",
-"     open for their \"discussion about the teapot\" "})
+  .addComments(" \"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, ")
+  .addComments(" It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) ")
+  .addComments(" open for their \"discussion about the teapot\" ")
   .setScene(new Scene()
     .addComments(" basic nodes, which might be present in any scene ")
     .addChild(new NavigationInfo().setAvatarSize(new double[] {0.25,1.75,0.75}).setType(new String[] {"EXAMINE"}))
@@ -223,14 +223,12 @@ public class bumpyfreewrljsonverse
                 .setMaterial(new Material().setUSE("BLUE"))))))
         .addComments(" the model that is being reviewed by the users of this scene ")
         .addChild(new Transform("FlowerTransform")
-          .addComments(new String[] {"",
-"        <Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"})
+          .addComments(" <Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' /> ")
           .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
           .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
           .addChild(new Transform()
             .addChild(new Shape()
-              .addComments(new String[] {"",
-"	  <Sphere radius='40'></Sphere>"})
+              .addComments(" <Sphere radius='40'></Sphere> ")
               .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
                 .setCoord(new Coordinate("OrbitCoordinates")))
               .setAppearance(new Appearance()
@@ -256,9 +254,9 @@ public class bumpyfreewrljsonverse
                   .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
                   .addParts(new ShaderPart().setUrl(new String[] {"../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"}))
                   .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"}))
-                  .addComments(new String[] {" TO CONVERT TO A SPHERE",
-"                  <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>",
-"                  <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"}))))))
+                  .addComments(" TO CONVERT TO A SPHERE ")
+                  .addComments(" <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> ")
+                  .addComments(" <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart> "))))))
         .addChild(new Script("OrbitScript").setSourceCode("""
 ecmascript:
 function initialize() {
@@ -320,8 +318,8 @@ function initialize() {
           .addChild(new Group("AvatarHolder")))
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("addedEntities").setToNode("AvatarHolder").setToField("addChildren"))
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("removedEntities").setToNode("AvatarHolder").setToField("removeChildren")))
-      .addComments(new String[] {" the second layer contains the sliders that are moved with the user's display",
-"         like a HUD (heads up display) "})
+      .addComments(" the second layer contains the sliders that are moved with the user's display ")
+      .addComments(" like a HUD (heads up display) ")
       .addLayers(new LayoutLayer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" positioning the LayoutLayer ")
         .setLayout(new Layout().setAlign(new String[] {"LEFT","BOTTOM"}).setOffset(new double[] {-0.2,0.19}).setOffsetUnits(new String[] {"WORLD","WORLD"}).setScaleMode(new String[] {"NONE","NONE"}).setSize(new double[] {0.4,0.6}).setSizeUnits(new String[] {"WORLD","WORLD"}))

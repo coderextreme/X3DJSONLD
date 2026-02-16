@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -99,55 +99,59 @@ func main() {
                 Name: stringPtr("description"),
                 Content: stringPtr("3 text shapes"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.Transform{
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
-                            Appearance: &x3d.Appearance{
-                                Material: &x3d.Material{
-                                },
-                            },
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"Node\"\"\""},
                                 FontStyle: &x3d.FontStyle{
                                 },
                             },
-                        },
-                        &x3d.Shape{
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
                                 },
                             },
+                        },
+                        &x3d.Shape{
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"Node2", "\\\\", "\\\\\\\\", "Node2"},
                                 FontStyle: &x3d.FontStyle{
                                 },
                             },
-                        },
-                        &x3d.Shape{
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
                                 },
                             },
+                        },
+                        &x3d.Shape{
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"Node3 \\\\\\\\ \\\\ ", "Node3\"\"\""},
                                 FontStyle: &x3d.FontStyle{
+                                },
+                            },
+                            Appearance: &x3d.Appearance{
+                                Material: &x3d.Material{
                                 },
                             },
                         },
                         &x3d.Script{
                             Field: []x3d.X3DNode{
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("MFString"),
                                     Name: stringPtr("frontUrls"),
+                                    Type: stringPtr("MFString"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Value: stringPtr("\"rnl_front.png\" \"uffizi_front.png\""),
                             },
 //ecmascript:
-//			    var me = '"1" "\\"2" "\\n3"';
+//			    var me = '"1" ""2" "\\n3"';
                             },
                         },
                     },
@@ -170,13 +174,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/text3shapes.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -187,7 +191,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

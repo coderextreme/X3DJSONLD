@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -89,7 +85,6 @@ newModel=X3D(profile='Interchange',version='4.0',
         Viewpoint(DEF='Viewpoint1',description='Sailor Front',orientation=(0,1,0,1.571),position=(2.293,1.66,0)),
         Viewpoint(DEF='Viewpoint2',description='Sailor Back',orientation=(-.185,-.965,-.185,1.605),position=(-1.208,2,0))])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

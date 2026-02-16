@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -91,7 +87,7 @@ newModel=X3D(profile='Immersive',version='4.0',
         MetadataFloat(name='height',value=[1.5]),
         MetadataString(name='humanoidVersion',value=["2.0"])]),
       skeleton=[
-      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.826,-0.016),
+      HAnimJoint(DEF='hanim_humanoid_root',name='humanoid_root',center=(0,0.826,-0.016),ulimit=[0,0,0],llimit=[0,0,0],
         children=[
         HAnimSegment(DEF='hanim_sacrum',name='sacrum',
           children=[
@@ -109,8 +105,9 @@ newModel=X3D(profile='Immersive',version='4.0',
             Comment(' <HAnimSite DEF=\'hanim_sitename_pt\' name=\'sitename_pt\' translation=\'sitename_ptTranslation\'> '),
             Comment(' <TouchSensor description=\'HAnimSite sitename_pt nnfromtable\'/> '),
             Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-            Comment(' </HAnimSite> '),],)]),
-        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.707,-0.016),
+            Comment(' </HAnimSite> ')
+            )]),
+        HAnimJoint(DEF='hanim_sacroiliac',name='sacroiliac',center=(0,0.707,-0.016),ulimit=[0,0,0],llimit=[0,0,0],
           children=[
           HAnimSegment(DEF='hanim_pelvis',name='pelvis',
             children=[
@@ -173,7 +170,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                 children=[
                 TouchSensor(description='HAnimSite buttocks_standing_wall_contact_point_pt 93'),
                 Shape(USE='HAnimSiteShape')])])]),
-          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),
+          HAnimJoint(DEF='hanim_l_hip',name='l_hip',center=(0.095,0.8266,-0.0183),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l_thigh',name='l_thigh',
               children=[
@@ -206,7 +203,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   children=[
                   TouchSensor(description='HAnimSite l_suprapatella_pt 41'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.09261001,0.408825,-0.01943775),
+            HAnimJoint(DEF='hanim_l_knee',name='l_knee',center=(0.09261001,0.408825,-0.01943775),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l_calf',name='l_calf',
                 children=[
@@ -234,7 +231,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     TouchSensor(description='HAnimSite l_lateral_malleolus_pt 49'),
                     Shape(USE='HAnimSiteShape')])])]),
-              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.08883,0.09544501,-0.010451251),
+              HAnimJoint(DEF='hanim_l_talocrural',name='l_talocrural',center=(0.08883,0.09544501,-0.010451251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l_talus',name='l_talus',
                   children=[
@@ -257,7 +254,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       children=[
                       TouchSensor(description='HAnimSite l_calcaneus_posterior_pt 58'),
                       Shape(USE='HAnimSiteShape')])])]),
-                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.07830001,0.036900003,0.0048645),
+                HAnimJoint(DEF='hanim_l_talocalcaneonavicular',name='l_talocalcaneonavicular',center=(0.07830001,0.036900003,0.0048645),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_navicular',name='l_navicular',
                     children=[
@@ -270,8 +267,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         texCoord=TextureCoordinate(point=[(0.2314,0.0879),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2271,0.0958),(0.2224,0.1067),(0.2032,0.149),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.227,0.1089),(0.2165,0.148),(0.2217,0.1285),(0.2407,0.0951),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.21,0.1541),(0.2053,0.1595),(0.2032,0.149),(0.2132,0.1285),(0.2224,0.1067),(0.2314,0.0879),(0.2271,0.0958),(0.2197,0.1123),(0.2163,0.1174),(0.2104,0.1443),(0.227,0.1089),(0.2217,0.1285),(0.2165,0.148),(0.2129,0.1643),(0.2171,0.1588),(0.2178,0.1526),(0.2213,0.1179),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2271,0.0958),(0.2271,0.0958),(0.2314,0.0879)]))),
                     Group(DEF='l_navicular_Sites',
                       children=[
-                      Comment(' None '),],)]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.067365,0.032107502,0.018391501),
+                      Comment(' None ')
+                      )]),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_1',name='l_cuneonavicular_1',center=(0.067365,0.032107502,0.018391501),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_1',name='l_cuneiform_1',
                       children=[
@@ -284,8 +282,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2027,0.1355),(0.2132,0.1171),(0.1958,0.1447),(0.1899,0.1499),(0.2047,0.1286),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2032,0.149),(0.2132,0.1285),(0.2163,0.1174),(0.2047,0.1286),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1171),(0.2059,0.1148),(0.1953,0.1244),(0.1858,0.1369),(0.1864,0.1452),(0.1825,0.1473),(0.1953,0.1244),(0.1953,0.1244),(0.2059,0.1148),(0.2059,0.1148)]))),
                       Group(DEF='l_cuneiform_1_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.06462,0.023242502,0.04419),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_1',name='l_tarsometatarsal_1',center=(0.06462,0.023242502,0.04419),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_1',name='l_metatarsal_1',
                         children=[
@@ -298,8 +297,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.177,0.1457),(0.1567,0.1378),(0.1506,0.1431),(0.1539,0.1386),(0.1751,0.1447),(0.1523,0.1336),(0.1493,0.1348),(0.1463,0.1377),(0.1689,0.1382),(0.1638,0.1444),(0.1645,0.1416),(0.1607,0.138),(0.1731,0.1071),(0.1859,0.1202),(0.175,0.1048),(0.1985,0.1126),(0.1682,0.1025),(0.1699,0.1017),(0.1795,0.1136),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.2059,0.1148),(0.1985,0.1126),(0.175,0.1048),(0.1699,0.1017),(0.1682,0.1025),(0.1731,0.1071),(0.1523,0.1336),(0.1463,0.1377),(0.1493,0.1348),(0.1682,0.1025),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1864,0.1452),(0.1858,0.1369),(0.2059,0.1148),(0.2059,0.1148),(0.1953,0.1244),(0.1953,0.1244),(0.1825,0.1473)]))),
                         Group(DEF='l_metatarsal_1_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621225,0.014424751,0.0936225),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_1',name='l_metatarsophalangeal_1',center=(0.0621225,0.014424751,0.0936225),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_1',name='l_tarsal_proximal_phalanx_1',
                           children=[
@@ -317,7 +317,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                               children=[
                               TouchSensor(description='HAnimSite l_metatarsal_phalanx_1_pt 55'),
                               Shape(USE='HAnimSiteShape')])])]),
-                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),
+                        HAnimJoint(DEF='hanim_l_tarsal_interphalangeal_1',name='l_tarsal_interphalangeal_1',center=(0.062,0.012,0.115),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_1',name='l_tarsal_distal_phalanx_1',
                             children=[
@@ -335,7 +335,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 children=[
                                 TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_1_tip 111'),
                                 Shape(USE='HAnimSiteShape')])])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814275,0.033525,0.02142675),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_2',name='l_cuneonavicular_2',center=(0.0814275,0.033525,0.02142675),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_2',name='l_cuneiform_2',
                       children=[
@@ -348,8 +348,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2179,0.1044),(0.2186,0.1086),(0.2128,0.1035),(0.2098,0.0996),(0.2047,0.1286),(0.2132,0.1171),(0.1953,0.1244),(0.2059,0.1148),(0.2224,0.1067),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.2132,0.1285),(0.2047,0.1286),(0.1953,0.1244),(0.1953,0.1244),(0.2132,0.1171),(0.2163,0.1174),(0.2098,0.0996),(0.2179,0.1044),(0.2224,0.1067),(0.2224,0.1067),(0.2186,0.1086),(0.2128,0.1035),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2224,0.1067),(0.2132,0.1285),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1285),(0.2224,0.1067),(0.2224,0.1067),(0.2224,0.1067)]))),
                       Group(DEF='l_cuneiform_2_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.08019,0.0261,0.041062504),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_2',name='l_tarsometatarsal_2',center=(0.08019,0.0261,0.041062504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_2',name='l_metatarsal_2',
                         children=[
@@ -362,8 +363,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.175,0.1048),(0.1833,0.0898),(0.1856,0.0872),(0.1731,0.1071),(0.1985,0.1126),(0.2017,0.0948),(0.1859,0.1202),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1937,0.091),(0.1795,0.1136),(0.2068,0.0986),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1731,0.1071),(0.2017,0.0948),(0.1859,0.1202),(0.1795,0.1136),(0.1731,0.1071),(0.1682,0.1025),(0.1682,0.1025),(0.1731,0.1071),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.1953,0.1244),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.1856,0.0872),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
                         Group(DEF='l_metatarsal_2_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.08253,0.014976,0.097830005),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_2',name='l_metatarsophalangeal_2',center=(0.08253,0.014976,0.097830005),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_2',name='l_tarsal_proximal_phalanx_2',
                           children=[
@@ -376,8 +378,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2327,0.0796),(0.2439,0.0803),(0.2062,0.05),(0.2147,0.0491),(0.2302,0.0796),(0.2205,0.0532),(0.2301,0.0734),(0.2486,0.0743),(0.2013,0.0552),(0.2187,0.0481),(0.221,0.0541),(0.2293,0.0736),(0.1746,0.075),(0.1709,0.0678),(0.1706,0.0686),(0.1745,0.076),(0.1824,0.0523),(0.1886,0.0572),(0.183,0.0511),(0.1834,0.0508),(0.1882,0.0556),(0.1885,0.0566),(0.1716,0.0676),(0.1748,0.0736),(0.2444,0.0847),(0.2027,0.042),(0.2022,0.0485),(0.2464,0.0799),(0.2486,0.0741),(0.2011,0.0554),(0.2293,0.0837),(0.2177,0.0418),(0.1769,0.0796),(0.1648,0.0986),(0.1632,0.098),(0.1766,0.0777),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.2022,0.0485),(0.2027,0.042),(0.1811,0.0824),(0.1801,0.0847),(0.1769,0.0796),(0.2464,0.0799),(0.2486,0.0741),(0.1632,0.098),(0.2187,0.0481),(0.221,0.0541),(0.2302,0.0796),(0.2293,0.0837),(0.1699,0.1017),(0.1682,0.1025)]))),
                           Group(DEF='l_tarsal_proximal_phalanx_2_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843075,0.012647251,0.1140075),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_2',name='l_tarsal_proximal_interphalangeal_2',center=(0.0843075,0.012647251,0.1140075),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_2',name='l_tarsal_middle_phalanx_2',
                             children=[
@@ -390,8 +393,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1293,0.0261),(0.0949,0.0775),(0.1651,0.0639),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
                             Group(DEF='l_tarsal_middle_phalanx_2_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843075,0.00982575,0.123435006),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_2',name='l_tarsal_distal_interphalangeal_2',center=(0.0843075,0.00982575,0.123435006),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_2',name='l_tarsal_distal_phalanx_2',
                               children=[
@@ -409,7 +413,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_2_tip 112'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])]),
-                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.092970006,0.03339,0.019818),
+                  HAnimJoint(DEF='hanim_l_cuneonavicular_3',name='l_cuneonavicular_3',center=(0.092970006,0.03339,0.019818),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuneiform_3',name='l_cuneiform_3',
                       children=[
@@ -422,8 +426,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2226,0.0828),(0.2197,0.0903),(0.2186,0.1086),(0.2179,0.1044),(0.2314,0.0879),(0.2128,0.1035),(0.2098,0.0996),(0.2271,0.0958),(0.2224,0.1067),(0.2197,0.1123),(0.2224,0.1067),(0.2314,0.0879),(0.2226,0.0828),(0.2314,0.0879),(0.2314,0.0879),(0.2197,0.0903),(0.2179,0.1044),(0.2098,0.0996),(0.2098,0.0996),(0.2186,0.1086),(0.2197,0.1123),(0.2224,0.1067),(0.2098,0.0996),(0.2226,0.0828),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
                       Group(DEF='l_cuneiform_3_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.039397504),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_3',name='l_tarsometatarsal_3',center=(0.09459,0.0261,0.039397504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_3',name='l_metatarsal_3',
                         children=[
@@ -436,8 +441,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.195,0.0629),(0.1801,0.0847),(0.1811,0.0824),(0.1937,0.091),(0.2128,0.1035),(0.2098,0.0996),(0.2197,0.0903),(0.2138,0.0778),(0.1989,0.0701),(0.1984,0.068),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.1937,0.091),(0.2068,0.0986),(0.2138,0.0778),(0.2061,0.0729),(0.2061,0.0729),(0.1989,0.0701),(0.1984,0.068),(0.1952,0.0651),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.2017,0.0948),(0.2017,0.0948),(0.2226,0.0828),(0.2138,0.0778),(0.1937,0.091),(0.1811,0.0824),(0.1856,0.0872),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.2017,0.0948),(0.1937,0.091),(0.1937,0.091),(0.1856,0.0872),(0.1856,0.0872),(0.1811,0.0824),(0.2061,0.0729),(0.2061,0.0729),(0.2138,0.0778),(0.2138,0.0778),(0.2226,0.0828),(0.2226,0.0828),(0.2138,0.0778),(0.2138,0.0778),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.1811,0.0824),(0.1801,0.0847),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828)]))),
                         Group(DEF='l_metatarsal_3_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.096480004,0.015057,0.09542251),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_3',name='l_metatarsophalangeal_3',center=(0.096480004,0.015057,0.09542251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_3',name='l_tarsal_proximal_phalanx_3',
                           children=[
@@ -450,8 +456,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.1706,0.0686),(0.1709,0.0678),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1716,0.0676),(0.1882,0.0556),(0.1745,0.076),(0.1748,0.0736),(0.1886,0.0572),(0.2327,0.0796),(0.2439,0.0803),(0.2076,0.0485),(0.2162,0.0476),(0.2201,0.0466),(0.2302,0.0796),(0.2219,0.0517),(0.2301,0.0734),(0.2486,0.0743),(0.2027,0.0537),(0.2224,0.0526),(0.2293,0.0736),(0.1746,0.075),(0.1885,0.0566),(0.1801,0.0847),(0.1811,0.0824),(0.1952,0.0651),(0.195,0.0629),(0.2293,0.0837),(0.1769,0.0796),(0.2191,0.0403),(0.1766,0.0777),(0.2037,0.047),(0.2486,0.0741),(0.2026,0.0539),(0.2444,0.0847),(0.1915,0.0602),(0.2041,0.0405),(0.1915,0.0578),(0.2464,0.0799),(0.1801,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1811,0.0824),(0.1952,0.0651),(0.1915,0.0602),(0.2464,0.0799),(0.2486,0.0741),(0.2037,0.047),(0.2041,0.0405),(0.195,0.0629),(0.1766,0.0777),(0.2201,0.0466),(0.2224,0.0526),(0.2302,0.0796),(0.2293,0.0837),(0.1801,0.0847),(0.1811,0.0824)]))),
                           Group(DEF='l_tarsal_proximal_phalanx_3_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.098865,0.011922751,0.110475),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_3',name='l_tarsal_proximal_interphalangeal_3',center=(0.098865,0.011922751,0.110475),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_3',name='l_tarsal_middle_phalanx_3',
                             children=[
@@ -464,8 +471,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1651,0.0639),(0.1293,0.0261),(0.0949,0.0775),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
                             Group(DEF='l_tarsal_middle_phalanx_3_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004175,0.00982575,0.11970001),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_3',name='l_tarsal_distal_interphalangeal_3',center=(0.1004175,0.00982575,0.11970001),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_3',name='l_tarsal_distal_phalanx_3',
                               children=[
@@ -483,7 +491,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_3_tip 113'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])]),
-                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.0579825,-0.025965001),
+                HAnimJoint(DEF='hanim_l_calcaneocuboid',name='l_calcaneocuboid',center=(0.0891,0.0579825,-0.025965001),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l_calcaneus',name='l_calcaneus',
                     children=[
@@ -496,8 +504,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         texCoord=TextureCoordinate(point=[(0.2845,0.0964),(0.2768,0.1211),(0.2792,0.1228),(0.2886,0.0939),(0.2493,0.1586),(0.2252,0.161),(0.2241,0.1634),(0.2489,0.1638),(0.2727,0.0786),(0.2746,0.076),(0.2809,0.1238),(0.2914,0.0926),(0.2206,0.1691),(0.249,0.1672),(0.2762,0.0729),(0.2769,0.1234),(0.2869,0.0933),(0.2461,0.1652),(0.2661,0.1399),(0.2685,0.1417),(0.27,0.1429),(0.2661,0.1424),(0.24,0.098),(0.2266,0.1229),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.273,0.1232),(0.2824,0.0941),(0.2433,0.1632),(0.2759,0.0832),(0.2685,0.0797),(0.2623,0.1418),(0.2231,0.166),(0.273,0.1232),(0.2824,0.0941),(0.2759,0.0832),(0.2685,0.0797),(0.2533,0.0835),(0.2165,0.148),(0.2231,0.166),(0.2433,0.1632),(0.2623,0.1418),(0.2665,0.0671),(0.2628,0.0703),(0.2363,0.0929),(0.2213,0.1179),(0.2178,0.1526),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.2664,0.0668)]))),
                     Group(DEF='l_calcaneus_Sites',
                       children=[
-                      Comment(' None '),],)]),
-                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.1106325,0.03528,0.002089125),
+                      Comment(' None ')
+                      )]),
+                  HAnimJoint(DEF='hanim_l_transversetarsal',name='l_transversetarsal',center=(0.1106325,0.03528,0.002089125),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l_cuboid',name='l_cuboid',
                       children=[
@@ -510,8 +519,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2528,0.0622),(0.2585,0.0581),(0.2383,0.0796),(0.2566,0.0607),(0.243,0.0749),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2533,0.0835),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2271,0.0958),(0.2197,0.0903),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2197,0.0903),(0.2271,0.0958),(0.2363,0.0929),(0.2533,0.0835),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2469,0.052),(0.2292,0.0691),(0.2197,0.0903),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828),(0.2342,0.0682),(0.2484,0.051),(0.2512,0.047)]))),
                       Group(DEF='l_cuboid_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.1064925,0.0245475,0.03843),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_4',name='l_tarsometatarsal_4',center=(0.1064925,0.0245475,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_4',name='l_metatarsal_4',
                         children=[
@@ -524,8 +534,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.2117,0.0481),(0.2254,0.0615),(0.2142,0.0508),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.1989,0.0701),(0.1984,0.068),(0.2138,0.0778),(0.1952,0.0651),(0.195,0.0629),(0.2061,0.0729),(0.2292,0.0691),(0.2342,0.0682),(0.2226,0.0828),(0.2129,0.0844),(0.2197,0.0903),(0.2254,0.0615),(0.2061,0.0729),(0.2138,0.0778),(0.2061,0.0729),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.2061,0.0729),(0.2226,0.0828),(0.2226,0.0828),(0.2186,0.0548),(0.2254,0.0615),(0.2342,0.0682),(0.2342,0.0682),(0.2254,0.0615),(0.2117,0.0481),(0.2083,0.0443),(0.2083,0.0443),(0.2117,0.0481),(0.2083,0.0443),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2083,0.0443),(0.2083,0.0443),(0.2083,0.0443),(0.2226,0.0828),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2226,0.0828),(0.2226,0.0828),(0.2226,0.0828)]))),
                         Group(DEF='l_metatarsal_4_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867506,0.01435275,0.091170006),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_4',name='l_metatarsophalangeal_4',center=(0.109867506,0.01435275,0.091170006),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_4',name='l_tarsal_proximal_phalanx_4',
                           children=[
@@ -538,8 +549,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2033,0.0375),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1873,0.048),(0.1915,0.0602),(0.1915,0.0578),(0.1897,0.0535),(0.1888,0.0569),(0.2031,0.037),(0.2012,0.0381),(0.2444,0.0847),(0.2208,0.06),(0.2111,0.0557),(0.2254,0.054),(0.2483,0.0809),(0.2464,0.0799),(0.2587,0.0865),(0.225,0.0604),(0.2239,0.0673),(0.2238,0.0671),(0.267,0.0845),(0.2486,0.0741),(0.2486,0.074),(0.2049,0.059),(0.1896,0.055),(0.2102,0.0461),(0.1952,0.0651),(0.2083,0.0443),(0.195,0.0629),(0.2109,0.0476),(0.2048,0.0404),(0.2576,0.0911),(0.2063,0.0414),(0.2083,0.0537),(0.2612,0.0869),(0.2671,0.0842),(0.2047,0.0593),(0.1952,0.0651),(0.2102,0.0461),(0.2083,0.0443),(0.195,0.0629),(0.2102,0.0461),(0.2063,0.0414),(0.2612,0.0869),(0.2671,0.0842),(0.2083,0.0537),(0.2109,0.0476),(0.2083,0.0443),(0.2444,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1915,0.0578),(0.225,0.0604),(0.2239,0.0673),(0.2464,0.0799)]))),
                           Group(DEF='l_tarsal_proximal_phalanx_4_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.114165,0.0122445,0.1063125),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_4',name='l_tarsal_proximal_interphalangeal_4',center=(0.114165,0.0122445,0.1063125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_4',name='l_tarsal_middle_phalanx_4',
                             children=[
@@ -552,8 +564,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1822,0.0458),(0.1809,0.0434),(0.1953,0.0282),(0.1948,0.024),(0.1933,0.0293),(0.1816,0.0411),(0.1287,0.0243),(0.0943,0.0785),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1322,0.09),(0.157,0.0552),(0.1873,0.048),(0.186,0.0472),(0.1866,0.0487),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.157,0.0552),(0.1822,0.0458),(0.1809,0.0434),(0.1816,0.0411),(0.0943,0.0785),(0.1948,0.024),(0.1953,0.0282)]))),
                             Group(DEF='l_tarsal_middle_phalanx_4_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.1156725,0.009369,0.11369251),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_4',name='l_tarsal_distal_interphalangeal_4',center=(0.1156725,0.009369,0.11369251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_4',name='l_tarsal_distal_phalanx_4',
                               children=[
@@ -571,7 +584,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_4_tip 114'),
                                   Shape(USE='HAnimSiteShape')])])])])])])]),
-                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.120825,0.020945251,0.03474),
+                    HAnimJoint(DEF='hanim_l_tarsometatarsal_5',name='l_tarsometatarsal_5',center=(0.120825,0.020945251,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_l_metatarsal_5',name='l_metatarsal_5',
                         children=[
@@ -584,8 +597,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.2299,0.0317),(0.2316,0.0247),(0.2265,0.0269),(0.241,0.0419),(0.244,0.0359),(0.2401,0.0413),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2333,0.0341),(0.2378,0.0303),(0.2142,0.0508),(0.2117,0.0481),(0.2254,0.0615),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2142,0.0508),(0.2202,0.0585),(0.2292,0.0691),(0.2342,0.0682),(0.2254,0.0615),(0.2186,0.0548),(0.2117,0.0481),(0.2083,0.0443),(0.2102,0.0461),(0.2292,0.0691),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2342,0.0682),(0.2342,0.0682),(0.2292,0.0691),(0.226,0.0221),(0.2245,0.0286),(0.2102,0.0461),(0.2102,0.0461),(0.2083,0.0443),(0.2083,0.0443),(0.2232,0.0245)]))),
                         Group(DEF='l_metatarsal_5_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065004,0.013671,0.0865575),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_l_metatarsophalangeal_5',name='l_metatarsophalangeal_5',center=(0.124065004,0.013671,0.0865575),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_l_tarsal_proximal_phalanx_5',name='l_tarsal_proximal_phalanx_5',
                           children=[
@@ -598,8 +612,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2192,0.0256),(0.2205,0.0195),(0.2048,0.0404),(0.2199,0.022),(0.2063,0.0414),(0.2047,0.0523),(0.1956,0.0462),(0.1979,0.0386),(0.2109,0.0476),(0.277,0.1031),(0.2673,0.0987),(0.263,0.1),(0.2744,0.109),(0.1892,0.0439),(0.1911,0.0375),(0.2576,0.0911),(0.2083,0.0537),(0.263,0.0893),(0.2612,0.0869),(0.2047,0.0593),(0.2048,0.0593),(0.2671,0.0842),(0.2673,0.0839),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2102,0.0461),(0.2083,0.0443),(0.2039,0.0358),(0.2152,0.0224),(0.2154,0.0203),(0.2126,0.0258),(0.2034,0.0366),(0.2033,0.0375),(0.2114,0.0219),(0.2132,0.0168),(0.2123,0.0196),(0.1999,0.0356),(0.201,0.0349),(0.2011,0.0354),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2083,0.0443),(0.2102,0.0461),(0.2576,0.0911),(0.2102,0.0461),(0.2083,0.0443),(0.2048,0.0404),(0.2083,0.0537),(0.2047,0.0593),(0.2612,0.0869)]))),
                           Group(DEF='l_tarsal_proximal_phalanx_5_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.1263825,0.01085625,0.09414),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_l_tarsal_proximal_interphalangeal_5',name='l_tarsal_proximal_interphalangeal_5',center=(0.1263825,0.01085625,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_l_tarsal_middle_phalanx_5',name='l_tarsal_middle_phalanx_5',
                             children=[
@@ -617,7 +632,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 children=[
                                 TouchSensor(description='HAnimSite l_metatarsal_phalanx_5_pt 56'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.1272825,0.008563501,0.10188),
+                          HAnimJoint(DEF='hanim_l_tarsal_distal_interphalangeal_5',name='l_tarsal_distal_interphalangeal_5',center=(0.1272825,0.008563501,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_l_tarsal_distal_phalanx_5',name='l_tarsal_distal_phalanx_5',
                               children=[
@@ -635,7 +650,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite l_tarsal_distal_phalanx_5_tip 115'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.094657496,0.8266501,-0.018348752),
+          HAnimJoint(DEF='hanim_r_hip',name='r_hip',center=(-0.094657496,0.8266501,-0.018348752),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_r_thigh',name='r_thigh',
               children=[
@@ -668,7 +683,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   children=[
                   TouchSensor(description='HAnimSite r_suprapatella_pt 45'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.09261001,0.408825,-0.01943775),
+            HAnimJoint(DEF='hanim_r_knee',name='r_knee',center=(-0.09261001,0.408825,-0.01943775),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_r_calf',name='r_calf',
                 children=[
@@ -696,7 +711,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                     children=[
                     TouchSensor(description='HAnimSite r_lateral_malleolus_pt 53'),
                     Shape(USE='HAnimSiteShape')])])]),
-              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.088447504,0.09544501,-0.010451251),
+              HAnimJoint(DEF='hanim_r_talocrural',name='r_talocrural',center=(-0.088447504,0.09544501,-0.010451251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_r_talus',name='r_talus',
                   children=[
@@ -719,7 +734,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                       children=[
                       TouchSensor(description='HAnimSite r_calcaneus_posterior_pt 62'),
                       Shape(USE='HAnimSiteShape')])])]),
-                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.036900003,0.0048645),
+                HAnimJoint(DEF='hanim_r_talocalcaneonavicular',name='r_talocalcaneonavicular',center=(-0.07794,0.036900003,0.0048645),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_navicular',name='r_navicular',
                     children=[
@@ -732,8 +747,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         texCoord=TextureCoordinate(point=[(0.2314,0.0879),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2271,0.0958),(0.2224,0.1067),(0.2032,0.149),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.227,0.1089),(0.2165,0.148),(0.2217,0.1285),(0.2407,0.0951),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.21,0.1541),(0.2053,0.1595),(0.2032,0.149),(0.2132,0.1285),(0.2224,0.1067),(0.2314,0.0879),(0.2271,0.0958),(0.2197,0.1123),(0.2163,0.1174),(0.2104,0.1443),(0.227,0.1089),(0.2217,0.1285),(0.2165,0.148),(0.2129,0.1643),(0.2171,0.1588),(0.2178,0.1526),(0.2213,0.1179),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2271,0.0958),(0.2271,0.0958),(0.2314,0.0879)]))),
                     Group(DEF='r_navicular_Sites',
                       children=[
-                      Comment(' None '),],)]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.0669825,0.032107502,0.018391501),
+                      Comment(' None ')
+                      )]),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_1',name='r_cuneonavicular_1',center=(-0.0669825,0.032107502,0.018391501),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_1',name='r_cuneiform_1',
                       children=[
@@ -746,8 +762,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2027,0.1355),(0.2132,0.1171),(0.1958,0.1447),(0.1899,0.1499),(0.2047,0.1286),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.21,0.1541),(0.2053,0.1595),(0.2104,0.1443),(0.2032,0.149),(0.2132,0.1285),(0.2163,0.1174),(0.2047,0.1286),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1171),(0.2059,0.1148),(0.1953,0.1244),(0.1858,0.1369),(0.1864,0.1452),(0.1825,0.1473),(0.1953,0.1244),(0.1953,0.1244),(0.2059,0.1148),(0.2059,0.1148)]))),
                       Group(DEF='r_cuneiform_1_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.06426,0.023242502,0.04419),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_1',name='r_tarsometatarsal_1',center=(-0.06426,0.023242502,0.04419),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_1',name='r_metatarsal_1',
                         children=[
@@ -760,8 +777,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.177,0.1457),(0.1567,0.1378),(0.1506,0.1431),(0.1539,0.1386),(0.1751,0.1447),(0.1523,0.1336),(0.1493,0.1348),(0.1463,0.1377),(0.1689,0.1382),(0.1638,0.1444),(0.1645,0.1416),(0.1607,0.138),(0.1731,0.1071),(0.1859,0.1202),(0.175,0.1048),(0.1985,0.1126),(0.1682,0.1025),(0.1699,0.1017),(0.1795,0.1136),(0.1825,0.1473),(0.1858,0.1369),(0.1864,0.1452),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.2059,0.1148),(0.1985,0.1126),(0.175,0.1048),(0.1699,0.1017),(0.1682,0.1025),(0.1731,0.1071),(0.1523,0.1336),(0.1463,0.1377),(0.1493,0.1348),(0.1682,0.1025),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1864,0.1452),(0.1858,0.1369),(0.2059,0.1148),(0.2059,0.1148),(0.1953,0.1244),(0.1953,0.1244),(0.1825,0.1473)]))),
                         Group(DEF='r_metatarsal_1_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.0617625,0.014424751,0.0936225),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_1',name='r_metatarsophalangeal_1',center=(-0.0617625,0.014424751,0.0936225),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_1',name='r_tarsal_proximal_phalanx_1',
                           children=[
@@ -779,7 +797,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                               children=[
                               TouchSensor(description='HAnimSite r_metatarsal_phalanx_1_pt 59'),
                               Shape(USE='HAnimSiteShape')])])]),
-                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121365,0.1153125),
+                        HAnimJoint(DEF='hanim_r_tarsal_interphalangeal_1',name='r_tarsal_interphalangeal_1',center=(-0.06174,0.0121365,0.1153125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_1',name='r_tarsal_distal_phalanx_1',
                             children=[
@@ -797,7 +815,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 children=[
                                 TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_1_tip 116'),
                                 Shape(USE='HAnimSiteShape')])])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081045,0.033525,0.02142675),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_2',name='r_cuneonavicular_2',center=(-0.081045,0.033525,0.02142675),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_2',name='r_cuneiform_2',
                       children=[
@@ -810,8 +828,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2179,0.1044),(0.2186,0.1086),(0.2128,0.1035),(0.2098,0.0996),(0.2047,0.1286),(0.2132,0.1171),(0.1953,0.1244),(0.2059,0.1148),(0.2224,0.1067),(0.2132,0.1285),(0.2197,0.1123),(0.2163,0.1174),(0.2132,0.1285),(0.2047,0.1286),(0.1953,0.1244),(0.1953,0.1244),(0.2132,0.1171),(0.2163,0.1174),(0.2098,0.0996),(0.2179,0.1044),(0.2224,0.1067),(0.2224,0.1067),(0.2186,0.1086),(0.2128,0.1035),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2224,0.1067),(0.2132,0.1285),(0.2132,0.1285),(0.2163,0.1174),(0.2132,0.1285),(0.2224,0.1067),(0.2224,0.1067),(0.2224,0.1067)]))),
                       Group(DEF='r_cuneiform_2_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.079830006,0.0261,0.041062504),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_2',name='r_tarsometatarsal_2',center=(-0.079830006,0.0261,0.041062504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_2',name='r_metatarsal_2',
                         children=[
@@ -824,8 +843,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.175,0.1048),(0.1833,0.0898),(0.1856,0.0872),(0.1731,0.1071),(0.1985,0.1126),(0.2017,0.0948),(0.1859,0.1202),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1937,0.091),(0.1795,0.1136),(0.2068,0.0986),(0.2128,0.1035),(0.2098,0.0996),(0.1953,0.1244),(0.2059,0.1148),(0.1795,0.1136),(0.1859,0.1202),(0.1731,0.1071),(0.2017,0.0948),(0.1859,0.1202),(0.1795,0.1136),(0.1731,0.1071),(0.1682,0.1025),(0.1682,0.1025),(0.1731,0.1071),(0.1795,0.1136),(0.1859,0.1202),(0.1953,0.1244),(0.1953,0.1244),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.1856,0.0872),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1682,0.1025),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.2098,0.0996),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.1953,0.1244),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
                         Group(DEF='r_metatarsal_2_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821475,0.014976,0.097830005),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_2',name='r_metatarsophalangeal_2',center=(-0.0821475,0.014976,0.097830005),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_2',name='r_tarsal_proximal_phalanx_2',
                           children=[
@@ -838,8 +858,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2327,0.0796),(0.2439,0.0803),(0.2062,0.05),(0.2147,0.0491),(0.2302,0.0796),(0.2205,0.0532),(0.2301,0.0734),(0.2486,0.0743),(0.2013,0.0552),(0.2187,0.0481),(0.221,0.0541),(0.2293,0.0736),(0.1746,0.075),(0.1709,0.0678),(0.1706,0.0686),(0.1745,0.076),(0.1824,0.0523),(0.1886,0.0572),(0.183,0.0511),(0.1834,0.0508),(0.1882,0.0556),(0.1885,0.0566),(0.1716,0.0676),(0.1748,0.0736),(0.2444,0.0847),(0.2027,0.042),(0.2022,0.0485),(0.2464,0.0799),(0.2486,0.0741),(0.2011,0.0554),(0.2293,0.0837),(0.2177,0.0418),(0.1769,0.0796),(0.1648,0.0986),(0.1632,0.098),(0.1766,0.0777),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.1699,0.1017),(0.1699,0.1017),(0.1801,0.0847),(0.1811,0.0824),(0.1682,0.1025),(0.2022,0.0485),(0.2027,0.042),(0.1811,0.0824),(0.1801,0.0847),(0.1769,0.0796),(0.2464,0.0799),(0.2486,0.0741),(0.1632,0.098),(0.2187,0.0481),(0.221,0.0541),(0.2302,0.0796),(0.2293,0.0837),(0.1699,0.1017),(0.1682,0.1025)]))),
                           Group(DEF='r_tarsal_proximal_phalanx_2_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.083925,0.012647251,0.1140075),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_2',name='r_tarsal_proximal_interphalangeal_2',center=(-0.083925,0.012647251,0.1140075),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_2',name='r_tarsal_middle_phalanx_2',
                             children=[
@@ -852,8 +873,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1293,0.0261),(0.0949,0.0775),(0.1651,0.0639),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
                             Group(DEF='r_tarsal_middle_phalanx_2_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.083925,0.00982575,0.123435006),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_2',name='r_tarsal_distal_interphalangeal_2',center=(-0.083925,0.00982575,0.123435006),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_2',name='r_tarsal_distal_phalanx_2',
                               children=[
@@ -871,7 +893,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_2_tip 117'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])]),
-                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261001,0.03339,0.019818),
+                  HAnimJoint(DEF='hanim_r_cuneonavicular_3',name='r_cuneonavicular_3',center=(-0.09261001,0.03339,0.019818),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuneiform_3',name='r_cuneiform_3',
                       children=[
@@ -884,8 +906,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2226,0.0828),(0.2197,0.0903),(0.2186,0.1086),(0.2179,0.1044),(0.2314,0.0879),(0.2128,0.1035),(0.2098,0.0996),(0.2271,0.0958),(0.2224,0.1067),(0.2197,0.1123),(0.2224,0.1067),(0.2314,0.0879),(0.2226,0.0828),(0.2314,0.0879),(0.2314,0.0879),(0.2197,0.0903),(0.2179,0.1044),(0.2098,0.0996),(0.2098,0.0996),(0.2186,0.1086),(0.2197,0.1123),(0.2224,0.1067),(0.2098,0.0996),(0.2226,0.0828),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996)]))),
                       Group(DEF='r_cuneiform_3_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423001,0.0261,0.039397504),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_3',name='r_tarsometatarsal_3',center=(-0.09423001,0.0261,0.039397504),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_3',name='r_metatarsal_3',
                         children=[
@@ -898,8 +921,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.195,0.0629),(0.1801,0.0847),(0.1811,0.0824),(0.1937,0.091),(0.2128,0.1035),(0.2098,0.0996),(0.2197,0.0903),(0.2138,0.0778),(0.1989,0.0701),(0.1984,0.068),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.1937,0.091),(0.2068,0.0986),(0.2138,0.0778),(0.2061,0.0729),(0.2061,0.0729),(0.1989,0.0701),(0.1984,0.068),(0.1952,0.0651),(0.2129,0.0844),(0.1833,0.0898),(0.1856,0.0872),(0.2017,0.0948),(0.2017,0.0948),(0.2226,0.0828),(0.2138,0.0778),(0.1937,0.091),(0.1811,0.0824),(0.1856,0.0872),(0.1856,0.0872),(0.1937,0.091),(0.2017,0.0948),(0.2098,0.0996),(0.2098,0.0996),(0.2017,0.0948),(0.2017,0.0948),(0.1937,0.091),(0.1937,0.091),(0.1856,0.0872),(0.1856,0.0872),(0.1811,0.0824),(0.2061,0.0729),(0.2061,0.0729),(0.2138,0.0778),(0.2138,0.0778),(0.2226,0.0828),(0.2226,0.0828),(0.2138,0.0778),(0.2138,0.0778),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.1984,0.068),(0.195,0.0629),(0.1811,0.0824),(0.1801,0.0847),(0.1811,0.0824),(0.1811,0.0824),(0.1811,0.0824),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2226,0.0828),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2098,0.0996),(0.2226,0.0828),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828)]))),
                         Group(DEF='r_metatarsal_3_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0960975,0.015057,0.09542251),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_3',name='r_metatarsophalangeal_3',center=(-0.0960975,0.015057,0.09542251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_3',name='r_tarsal_proximal_phalanx_3',
                           children=[
@@ -912,8 +936,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.1706,0.0686),(0.1709,0.0678),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1716,0.0676),(0.1882,0.0556),(0.1745,0.076),(0.1748,0.0736),(0.1886,0.0572),(0.2327,0.0796),(0.2439,0.0803),(0.2076,0.0485),(0.2162,0.0476),(0.2201,0.0466),(0.2302,0.0796),(0.2219,0.0517),(0.2301,0.0734),(0.2486,0.0743),(0.2027,0.0537),(0.2224,0.0526),(0.2293,0.0736),(0.1746,0.075),(0.1885,0.0566),(0.1801,0.0847),(0.1811,0.0824),(0.1952,0.0651),(0.195,0.0629),(0.2293,0.0837),(0.1769,0.0796),(0.2191,0.0403),(0.1766,0.0777),(0.2037,0.047),(0.2486,0.0741),(0.2026,0.0539),(0.2444,0.0847),(0.1915,0.0602),(0.2041,0.0405),(0.1915,0.0578),(0.2464,0.0799),(0.1801,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1811,0.0824),(0.1952,0.0651),(0.1915,0.0602),(0.2464,0.0799),(0.2486,0.0741),(0.2037,0.047),(0.2041,0.0405),(0.195,0.0629),(0.1766,0.0777),(0.2201,0.0466),(0.2224,0.0526),(0.2302,0.0796),(0.2293,0.0837),(0.1801,0.0847),(0.1811,0.0824)]))),
                           Group(DEF='r_tarsal_proximal_phalanx_3_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.098505,0.011922751,0.110475),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_3',name='r_tarsal_proximal_interphalangeal_3',center=(-0.098505,0.011922751,0.110475),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_3',name='r_tarsal_middle_phalanx_3',
                             children=[
@@ -926,8 +951,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1653,0.0654),(0.1636,0.063),(0.1795,0.0453),(0.1792,0.0409),(0.1786,0.0451),(0.1651,0.0639),(0.1293,0.0261),(0.0949,0.0775),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1291,0.0918),(0.1834,0.0508),(0.1554,0.0532),(0.1716,0.0676),(0.1709,0.0678),(0.1706,0.0686),(0.1824,0.0523),(0.183,0.0511),(0.1834,0.0508),(0.1554,0.0532),(0.1653,0.0654),(0.1636,0.063),(0.1651,0.0639),(0.0949,0.0775),(0.1792,0.0409),(0.1795,0.0453)]))),
                             Group(DEF='r_tarsal_middle_phalanx_3_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035004,0.00982575,0.11970001),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_3',name='r_tarsal_distal_interphalangeal_3',center=(-0.100035004,0.00982575,0.11970001),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_3',name='r_tarsal_distal_phalanx_3',
                               children=[
@@ -945,7 +971,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_3_tip 118'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])]),
-                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717505,0.0579825,-0.025965001),
+                HAnimJoint(DEF='hanim_r_calcaneocuboid',name='r_calcaneocuboid',center=(-0.088717505,0.0579825,-0.025965001),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_r_calcaneus',name='r_calcaneus',
                     children=[
@@ -958,8 +984,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                         texCoord=TextureCoordinate(point=[(0.2845,0.0964),(0.2768,0.1211),(0.2792,0.1228),(0.2886,0.0939),(0.2493,0.1586),(0.2252,0.161),(0.2241,0.1634),(0.2489,0.1638),(0.2727,0.0786),(0.2746,0.076),(0.2809,0.1238),(0.2914,0.0926),(0.2206,0.1691),(0.249,0.1672),(0.2762,0.0729),(0.2769,0.1234),(0.2869,0.0933),(0.2461,0.1652),(0.2661,0.1399),(0.2685,0.1417),(0.27,0.1429),(0.2661,0.1424),(0.24,0.098),(0.2266,0.1229),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2178,0.1526),(0.2363,0.0929),(0.2213,0.1179),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.273,0.1232),(0.2824,0.0941),(0.2433,0.1632),(0.2759,0.0832),(0.2685,0.0797),(0.2623,0.1418),(0.2231,0.166),(0.273,0.1232),(0.2824,0.0941),(0.2759,0.0832),(0.2685,0.0797),(0.2533,0.0835),(0.2165,0.148),(0.2231,0.166),(0.2433,0.1632),(0.2623,0.1418),(0.2665,0.0671),(0.2628,0.0703),(0.2363,0.0929),(0.2213,0.1179),(0.2178,0.1526),(0.2171,0.1588),(0.2129,0.1643),(0.2165,0.148),(0.2533,0.0835),(0.2664,0.0668)]))),
                     Group(DEF='r_calcaneus_Sites',
                       children=[
-                      Comment(' None '),],)]),
-                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.110272504,0.03528,0.002089125),
+                      Comment(' None ')
+                      )]),
+                  HAnimJoint(DEF='hanim_r_transversetarsal',name='r_transversetarsal',center=(-0.110272504,0.03528,0.002089125),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_r_cuboid',name='r_cuboid',
                       children=[
@@ -972,8 +999,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.2528,0.0622),(0.2585,0.0581),(0.2383,0.0796),(0.2566,0.0607),(0.243,0.0749),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2533,0.0835),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2271,0.0958),(0.2197,0.0903),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2363,0.0929),(0.2407,0.0951),(0.2314,0.0879),(0.2226,0.0828),(0.2197,0.0903),(0.2271,0.0958),(0.2363,0.0929),(0.2533,0.0835),(0.2407,0.0951),(0.2407,0.0951),(0.2363,0.0929),(0.2363,0.0929),(0.2628,0.0703),(0.2665,0.0671),(0.2664,0.0668),(0.2469,0.052),(0.2292,0.0691),(0.2197,0.0903),(0.2197,0.0903),(0.2226,0.0828),(0.2226,0.0828),(0.2342,0.0682),(0.2484,0.051),(0.2512,0.047)]))),
                       Group(DEF='r_cuboid_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613251,0.0245475,0.03843),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_4',name='r_tarsometatarsal_4',center=(-0.10613251,0.0245475,0.03843),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_4',name='r_metatarsal_4',
                         children=[
@@ -986,8 +1014,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.2117,0.0481),(0.2254,0.0615),(0.2142,0.0508),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.1989,0.0701),(0.1984,0.068),(0.2138,0.0778),(0.1952,0.0651),(0.195,0.0629),(0.2061,0.0729),(0.2292,0.0691),(0.2342,0.0682),(0.2226,0.0828),(0.2129,0.0844),(0.2197,0.0903),(0.2254,0.0615),(0.2061,0.0729),(0.2138,0.0778),(0.2061,0.0729),(0.1984,0.068),(0.195,0.0629),(0.195,0.0629),(0.1984,0.068),(0.2061,0.0729),(0.2226,0.0828),(0.2226,0.0828),(0.2186,0.0548),(0.2254,0.0615),(0.2342,0.0682),(0.2342,0.0682),(0.2254,0.0615),(0.2117,0.0481),(0.2083,0.0443),(0.2083,0.0443),(0.2117,0.0481),(0.2083,0.0443),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.195,0.0629),(0.2083,0.0443),(0.2083,0.0443),(0.2083,0.0443),(0.2226,0.0828),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2342,0.0682),(0.2226,0.0828),(0.2226,0.0828),(0.2226,0.0828)]))),
                         Group(DEF='r_metatarsal_4_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.10950751,0.01435275,0.091170006),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_4',name='r_metatarsophalangeal_4',center=(-0.10950751,0.01435275,0.091170006),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_4',name='r_tarsal_proximal_phalanx_4',
                           children=[
@@ -1000,8 +1029,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2033,0.0375),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1873,0.048),(0.1915,0.0602),(0.1915,0.0578),(0.1897,0.0535),(0.1888,0.0569),(0.2031,0.037),(0.2012,0.0381),(0.2444,0.0847),(0.2208,0.06),(0.2111,0.0557),(0.2254,0.054),(0.2483,0.0809),(0.2464,0.0799),(0.2587,0.0865),(0.225,0.0604),(0.2239,0.0673),(0.2238,0.0671),(0.267,0.0845),(0.2486,0.0741),(0.2486,0.074),(0.2049,0.059),(0.1896,0.055),(0.2102,0.0461),(0.1952,0.0651),(0.2083,0.0443),(0.195,0.0629),(0.2109,0.0476),(0.2048,0.0404),(0.2576,0.0911),(0.2063,0.0414),(0.2083,0.0537),(0.2612,0.0869),(0.2671,0.0842),(0.2047,0.0593),(0.1952,0.0651),(0.2102,0.0461),(0.2083,0.0443),(0.195,0.0629),(0.2102,0.0461),(0.2063,0.0414),(0.2612,0.0869),(0.2671,0.0842),(0.2083,0.0537),(0.2109,0.0476),(0.2083,0.0443),(0.2444,0.0847),(0.1952,0.0651),(0.195,0.0629),(0.1915,0.0578),(0.225,0.0604),(0.2239,0.0673),(0.2464,0.0799)]))),
                           Group(DEF='r_tarsal_proximal_phalanx_4_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378251,0.0122445,0.1063125),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_4',name='r_tarsal_proximal_interphalangeal_4',center=(-0.11378251,0.0122445,0.1063125),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_4',name='r_tarsal_middle_phalanx_4',
                             children=[
@@ -1014,8 +1044,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 texCoord=TextureCoordinate(point=[(0.1822,0.0458),(0.1809,0.0434),(0.1953,0.0282),(0.1948,0.024),(0.1933,0.0293),(0.1816,0.0411),(0.1287,0.0243),(0.0943,0.0785),(0.1866,0.0487),(0.186,0.0472),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.1322,0.09),(0.157,0.0552),(0.1873,0.048),(0.186,0.0472),(0.1866,0.0487),(0.1969,0.0343),(0.1963,0.0328),(0.1973,0.0341),(0.157,0.0552),(0.1822,0.0458),(0.1809,0.0434),(0.1816,0.0411),(0.0943,0.0785),(0.1948,0.024),(0.1953,0.0282)]))),
                             Group(DEF='r_tarsal_middle_phalanx_4_Sites',
                               children=[
-                              Comment(' None '),],)]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153125,0.009369,0.11369251),
+                              Comment(' None ')
+                              )]),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_4',name='r_tarsal_distal_interphalangeal_4',center=(-0.1153125,0.009369,0.11369251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_4',name='r_tarsal_distal_phalanx_4',
                               children=[
@@ -1033,7 +1064,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_4_tip 119'),
                                   Shape(USE='HAnimSiteShape')])])])])])])]),
-                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044251,0.020945251,0.03474),
+                    HAnimJoint(DEF='hanim_r_tarsometatarsal_5',name='r_tarsometatarsal_5',center=(-0.12044251,0.020945251,0.03474),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_r_metatarsal_5',name='r_metatarsal_5',
                         children=[
@@ -1046,8 +1077,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.2299,0.0317),(0.2316,0.0247),(0.2265,0.0269),(0.241,0.0419),(0.244,0.0359),(0.2401,0.0413),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2333,0.0341),(0.2378,0.0303),(0.2142,0.0508),(0.2117,0.0481),(0.2254,0.0615),(0.2102,0.0461),(0.2083,0.0443),(0.2202,0.0585),(0.2186,0.0548),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2292,0.0691),(0.2342,0.0682),(0.2142,0.0508),(0.2202,0.0585),(0.2292,0.0691),(0.2342,0.0682),(0.2254,0.0615),(0.2186,0.0548),(0.2117,0.0481),(0.2083,0.0443),(0.2102,0.0461),(0.2292,0.0691),(0.2469,0.052),(0.2512,0.047),(0.2484,0.051),(0.2342,0.0682),(0.2342,0.0682),(0.2292,0.0691),(0.226,0.0221),(0.2245,0.0286),(0.2102,0.0461),(0.2102,0.0461),(0.2083,0.0443),(0.2083,0.0443),(0.2232,0.0245)]))),
                         Group(DEF='r_metatarsal__Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368251,0.013671,0.0865575),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_r_metatarsophalangeal_5',name='r_metatarsophalangeal_5',center=(-0.12368251,0.013671,0.0865575),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_r_tarsal_proximal_phalanx_5',name='r_tarsal_proximal_phalanx_5',
                           children=[
@@ -1060,8 +1092,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.2192,0.0256),(0.2205,0.0195),(0.2048,0.0404),(0.2199,0.022),(0.2063,0.0414),(0.2047,0.0523),(0.1956,0.0462),(0.1979,0.0386),(0.2109,0.0476),(0.277,0.1031),(0.2673,0.0987),(0.263,0.1),(0.2744,0.109),(0.1892,0.0439),(0.1911,0.0375),(0.2576,0.0911),(0.2083,0.0537),(0.263,0.0893),(0.2612,0.0869),(0.2047,0.0593),(0.2048,0.0593),(0.2671,0.0842),(0.2673,0.0839),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2102,0.0461),(0.2083,0.0443),(0.2039,0.0358),(0.2152,0.0224),(0.2154,0.0203),(0.2126,0.0258),(0.2034,0.0366),(0.2033,0.0375),(0.2114,0.0219),(0.2132,0.0168),(0.2123,0.0196),(0.1999,0.0356),(0.201,0.0349),(0.2011,0.0354),(0.2245,0.0286),(0.226,0.0221),(0.2232,0.0245),(0.2083,0.0443),(0.2102,0.0461),(0.2576,0.0911),(0.2102,0.0461),(0.2083,0.0443),(0.2048,0.0404),(0.2083,0.0537),(0.2047,0.0593),(0.2612,0.0869)]))),
                           Group(DEF='r_tarsal_proximal_phalanx_5_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01085625,0.09414),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_r_tarsal_proximal_interphalangeal_5',name='r_tarsal_proximal_interphalangeal_5',center=(-0.126,0.01085625,0.09414),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_r_tarsal_middle_phalanx_5',name='r_tarsal_middle_phalanx_5',
                             children=[
@@ -1079,7 +1112,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 children=[
                                 TouchSensor(description='HAnimSite r_metatarsal_phalanx_5_pt 60'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269225,0.008563501,0.10188),
+                          HAnimJoint(DEF='hanim_r_tarsal_distal_interphalangeal_5',name='r_tarsal_distal_interphalangeal_5',center=(-0.1269225,0.008563501,0.10188),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_r_tarsal_distal_phalanx_5',name='r_tarsal_distal_phalanx_5',
                               children=[
@@ -1097,7 +1130,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite r_tarsal_distal_phalanx_5_tip 120'),
                                   Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-          HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.92542505,-0.013763251),
+          HAnimJoint(DEF='hanim_vl5',name='vl5',center=(0,0.92542505,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
             children=[
             HAnimSegment(DEF='hanim_l5',name='l5',
               children=[
@@ -1135,7 +1168,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                   children=[
                   TouchSensor(description='HAnimSite navel 84'),
                   Shape(USE='HAnimSiteShape')])])]),
-            HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.94972503,-0.013763251),
+            HAnimJoint(DEF='hanim_vl4',name='vl4',center=(0,0.94972503,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
               children=[
               HAnimSegment(DEF='hanim_l4',name='l4',
                 children=[
@@ -1148,8 +1181,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                     texCoord=TextureCoordinate(point=[(0.1026,0.2616),(0.1481,0.2604),(0.3503,0.2575),(0.3578,0.2568),(0.0179,0.2574),(0.2289,0.2559),(0.1884,0.2584),(0.0186,0.2582),(0.3542,0.2515),(0.1011,0.241),(0.1445,0.2419),(0.3553,0.2398),(0.3561,0.2404),(0.2369,0.2375),(0.1927,0.24),(0.019,0.2349),(0.3557,0.2401),(0.019,0.2349),(0.019,0.2349),(0.1011,0.241),(0.1026,0.2616),(0.0179,0.2574),(0.1445,0.2419),(0.1481,0.2604),(0.2369,0.2375),(0.3561,0.2404),(0.3503,0.2575),(0.2289,0.2559),(0.1927,0.24),(0.1884,0.2584),(0.019,0.2349),(0.0186,0.2582),(0.3578,0.2568),(0.3553,0.2398),(0.3557,0.2401),(0.3542,0.2515),(0.0179,0.2574),(0.1026,0.2616),(0.1481,0.2604),(0.1884,0.2584),(0.2289,0.2559),(0.3503,0.2575),(0.3542,0.2515),(0.3578,0.2568),(0.2289,0.2559),(0.1884,0.2584),(0.1481,0.2604),(0.1026,0.2616),(0.0179,0.2574),(0.0186,0.2582),(0.1011,0.241),(0.019,0.2349),(0.019,0.2349),(0.019,0.2349),(0.1011,0.241),(0.1445,0.2419),(0.1927,0.24),(0.2369,0.2375),(0.3561,0.2404),(0.3557,0.2401),(0.3553,0.2398),(0.2369,0.2375),(0.1927,0.24),(0.1445,0.2419)]))),
                 Group(DEF='l4_Sites',
                   children=[
-                  Comment(' None '),],)]),
-              HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.96592504,-0.013763251),
+                  Comment(' None ')
+                  )]),
+              HAnimJoint(DEF='hanim_vl3',name='vl3',center=(0,0.96592504,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                 children=[
                 HAnimSegment(DEF='hanim_l3',name='l3',
                   children=[
@@ -1162,8 +1196,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                       texCoord=TextureCoordinate(point=[(0.1041,0.2822),(0.0168,0.2798),(0.1518,0.2789),(0.3444,0.2746),(0.3604,0.2737),(0.221,0.2742),(0.1842,0.2768),(0.3527,0.263),(0.0181,0.2816),(0.1026,0.2616),(0.1481,0.2604),(0.3578,0.2568),(0.3503,0.2575),(0.0179,0.2574),(0.2289,0.2559),(0.1884,0.2584),(0.0186,0.2582),(0.3542,0.2515),(0.3604,0.2737),(0.3578,0.2568),(0.3542,0.2515),(0.3527,0.263),(0.1026,0.2616),(0.1041,0.2822),(0.0168,0.2798),(0.0179,0.2574),(0.1481,0.2604),(0.1518,0.2789),(0.3503,0.2575),(0.3444,0.2746),(0.221,0.2742),(0.2289,0.2559),(0.1842,0.2768),(0.1884,0.2584),(0.0181,0.2816),(0.0186,0.2582),(0.0168,0.2798),(0.1041,0.2822),(0.1518,0.2789),(0.1842,0.2768),(0.221,0.2742),(0.3444,0.2746),(0.3527,0.263),(0.3604,0.2737),(0.221,0.2742),(0.1842,0.2768),(0.1518,0.2789),(0.1041,0.2822),(0.0168,0.2798),(0.0181,0.2816),(0.1026,0.2616),(0.0179,0.2574),(0.0186,0.2582),(0.0179,0.2574),(0.1026,0.2616),(0.1481,0.2604),(0.1884,0.2584),(0.2289,0.2559),(0.3503,0.2575),(0.3542,0.2515),(0.3578,0.2568),(0.2289,0.2559),(0.1884,0.2584),(0.1481,0.2604)]))),
                   Group(DEF='l3_Sites',
                     children=[
-                    Comment(' None '),],)]),
-                HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235005,-0.013763251),
+                    Comment(' None ')
+                    )]),
+                HAnimJoint(DEF='hanim_vl2',name='vl2',center=(0,0.98235005,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                   children=[
                   HAnimSegment(DEF='hanim_l2',name='l2',
                     children=[
@@ -1186,7 +1221,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                         children=[
                         TouchSensor(description='HAnimSite r_rib_10_pt 30'),
                         Shape(USE='HAnimSiteShape')])])]),
-                  HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967504,-0.013763251),
+                  HAnimJoint(DEF='hanim_vl1',name='vl1',center=(0,0.99967504,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                     children=[
                     HAnimSegment(DEF='hanim_l1',name='l1',
                       children=[
@@ -1199,8 +1234,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                           texCoord=TextureCoordinate(point=[(0.0943,0.3233),(0.0192,0.3251),(0.1489,0.3212),(0.3615,0.3195),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.3623,0.3188),(0.0192,0.3251),(0.0982,0.302),(0.1849,0.2961),(0.0177,0.3051),(0.3627,0.2922),(0.1487,0.2975),(0.3633,0.2922),(0.3621,0.2922),(0.2175,0.2944),(0.0177,0.3051),(0.0177,0.3051),(0.0982,0.302),(0.0943,0.3233),(0.0192,0.3251),(0.1487,0.2975),(0.1489,0.3212),(0.2175,0.2944),(0.3621,0.2922),(0.3615,0.3195),(0.2175,0.3185),(0.1849,0.2961),(0.1844,0.32),(0.0177,0.3051),(0.0192,0.3251),(0.3631,0.318),(0.3633,0.2922),(0.3627,0.2922),(0.3623,0.3188),(0.0192,0.3251),(0.0943,0.3233),(0.1489,0.3212),(0.1844,0.32),(0.2175,0.3185),(0.3615,0.3195),(0.3623,0.3188),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.1489,0.3212),(0.0943,0.3233),(0.0192,0.3251),(0.0192,0.3251),(0.0982,0.302),(0.0177,0.3051),(0.0177,0.3051),(0.0177,0.3051),(0.0982,0.302),(0.1487,0.2975),(0.1849,0.2961),(0.2175,0.2944),(0.3621,0.2922),(0.3627,0.2922),(0.3633,0.2922),(0.2175,0.2944),(0.1849,0.2961),(0.1487,0.2975)]))),
                       Group(DEF='l1_Sites',
                         children=[
-                        Comment(' None '),],)]),
-                    HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0230751,-0.013763251),
+                        Comment(' None ')
+                        )]),
+                    HAnimJoint(DEF='hanim_vt12',name='vt12',center=(0,1.0230751,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                       children=[
                       HAnimSegment(DEF='hanim_t12',name='t12',
                         children=[
@@ -1213,8 +1249,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                             texCoord=TextureCoordinate(point=[(0.0903,0.3446),(0.1491,0.3449),(0.0206,0.3452),(0.3608,0.3469),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.3619,0.3454),(0.0206,0.3452),(0.0943,0.3233),(0.0192,0.3251),(0.1489,0.3212),(0.3631,0.318),(0.3615,0.3195),(0.2175,0.3185),(0.1844,0.32),(0.3623,0.3188),(0.0192,0.3251),(0.2175,0.3427),(0.1838,0.3438),(0.1844,0.32),(0.2175,0.3185),(0.3619,0.3454),(0.3629,0.3439),(0.3631,0.318),(0.3623,0.3188),(0.0943,0.3233),(0.0903,0.3446),(0.0206,0.3452),(0.0192,0.3251),(0.1489,0.3212),(0.1491,0.3449),(0.3615,0.3195),(0.3608,0.3469),(0.0206,0.3452),(0.0192,0.3251),(0.0206,0.3452),(0.0903,0.3446),(0.1491,0.3449),(0.1838,0.3438),(0.2175,0.3427),(0.3608,0.3469),(0.3619,0.3454),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.1491,0.3449),(0.0903,0.3446),(0.0206,0.3452),(0.0206,0.3452),(0.0943,0.3233),(0.0192,0.3251),(0.0192,0.3251),(0.0192,0.3251),(0.0943,0.3233),(0.1489,0.3212),(0.1844,0.32),(0.2175,0.3185),(0.3615,0.3195),(0.3623,0.3188),(0.3631,0.318),(0.2175,0.3185),(0.1844,0.32),(0.1489,0.3212)]))),
                         Group(DEF='t12_Sites',
                           children=[
-                          Comment(' None '),],)]),
-                      HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.013763251),
+                          Comment(' None ')
+                          )]),
+                      HAnimJoint(DEF='hanim_vt11',name='vt11',center=(0,1.0467,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                         children=[
                         HAnimSegment(DEF='hanim_t11',name='t11',
                           children=[
@@ -1227,8 +1264,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                               texCoord=TextureCoordinate(point=[(0.0206,0.3452),(0.0903,0.3446),(0.0903,0.3446),(0.1491,0.3449),(0.3629,0.3439),(0.3608,0.3469),(0.2175,0.3427),(0.1838,0.3438),(0.0206,0.3452),(0.3619,0.3454),(0.0206,0.3452),(0.089,0.3604),(0.1508,0.3559),(0.3623,0.3532),(0.3588,0.3561),(0.0232,0.3561),(0.2188,0.3538),(0.1874,0.3541),(0.0232,0.3546),(0.3608,0.3537),(0.2175,0.3427),(0.3608,0.3469),(0.3588,0.3561),(0.2188,0.3538),(0.1838,0.3438),(0.1874,0.3541),(0.1491,0.3449),(0.1508,0.3559),(0.0206,0.3452),(0.0206,0.3452),(0.0232,0.3561),(0.0232,0.3546),(0.0903,0.3446),(0.0206,0.3452),(0.0903,0.3446),(0.089,0.3604),(0.3623,0.3532),(0.3629,0.3439),(0.3619,0.3454),(0.3608,0.3537),(0.0903,0.3446),(0.0206,0.3452),(0.0206,0.3452),(0.0206,0.3452),(0.0903,0.3446),(0.1491,0.3449),(0.1838,0.3438),(0.2175,0.3427),(0.3608,0.3469),(0.3619,0.3454),(0.3629,0.3439),(0.2175,0.3427),(0.1838,0.3438),(0.1491,0.3449),(0.2188,0.3538),(0.3588,0.3561),(0.3608,0.3537),(0.3623,0.3532),(0.2188,0.3538),(0.1874,0.3541),(0.1508,0.3559),(0.089,0.3604),(0.0232,0.3561),(0.0232,0.3546),(0.0232,0.3561),(0.089,0.3604),(0.1508,0.3559),(0.1874,0.3541)]))),
                           Group(DEF='t11_Sites',
                             children=[
-                            Comment(' None '),],)]),
-                        HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.013785751),
+                            Comment(' None ')
+                            )]),
+                        HAnimJoint(DEF='hanim_vt10',name='vt10',center=(0,1.0638,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                           children=[
                           HAnimSegment(DEF='hanim_t10',name='t10',
                             children=[
@@ -1251,7 +1289,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                 children=[
                                 TouchSensor(description='HAnimSite mesosternale_pt 88'),
                                 Shape(USE='HAnimSiteShape')])])]),
-                          HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.078425,-0.013763251),
+                          HAnimJoint(DEF='hanim_vt9',name='vt9',center=(0,1.078425,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                             children=[
                             HAnimSegment(DEF='hanim_t9',name='t9',
                               children=[
@@ -1289,7 +1327,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                   children=[
                                   TouchSensor(description='HAnimSite r_chest_midsagittal_plane_pt 95'),
                                   Shape(USE='HAnimSiteShape')])])]),
-                            HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930501,-0.013763251),
+                            HAnimJoint(DEF='hanim_vt8',name='vt8',center=(0,1.0930501,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                               children=[
                               HAnimSegment(DEF='hanim_t8',name='t8',
                                 children=[
@@ -1302,8 +1340,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                     texCoord=TextureCoordinate(point=[(0.0908,0.3999),(0.0325,0.3879),(0.0306,0.3835),(0.1568,0.3845),(0.3535,0.3812),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.3561,0.3769),(0.0802,0.3883),(0.1575,0.3746),(0.3637,0.3704),(0.356,0.3713),(0.3581,0.3683),(0.0256,0.3731),(0.0261,0.363),(0.2218,0.3729),(0.1941,0.3712),(0.0325,0.3879),(0.0256,0.3731),(0.0802,0.3883),(0.0908,0.3999),(0.3589,0.3783),(0.3637,0.3704),(0.3581,0.3683),(0.3561,0.3769),(0.1575,0.3746),(0.1568,0.3845),(0.356,0.3713),(0.3535,0.3812),(0.2214,0.3832),(0.2218,0.3729),(0.1952,0.3809),(0.1941,0.3712),(0.0306,0.3835),(0.0261,0.363),(0.3637,0.3704),(0.2218,0.3729),(0.1941,0.3712),(0.1575,0.3746),(0.0802,0.3883),(0.0256,0.3731),(0.0261,0.363),(0.0256,0.3731),(0.0802,0.3883),(0.1575,0.3746),(0.1941,0.3712),(0.2218,0.3729),(0.356,0.3713),(0.3581,0.3683),(0.0306,0.3835),(0.0325,0.3879),(0.0908,0.3999),(0.1568,0.3845),(0.1952,0.3809),(0.2214,0.3832),(0.3535,0.3812),(0.3561,0.3769),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.1568,0.3845),(0.0908,0.3999),(0.0325,0.3879)]))),
                                 Group(DEF='t8_Sites',
                                   children=[
-                                  Comment(' None '),],)]),
-                              HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.013763251),
+                                  Comment(' None ')
+                                  )]),
+                              HAnimJoint(DEF='hanim_vt7',name='vt7',center=(0,1.1088,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                 children=[
                                 HAnimSegment(DEF='hanim_t7',name='t7',
                                   children=[
@@ -1316,8 +1355,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                       texCoord=TextureCoordinate(point=[(0.0437,0.4075),(0.2185,0.3912),(0.3484,0.3944),(0.1518,0.3905),(0.1902,0.3894),(0.3503,0.3879),(0.3505,0.3886),(0.0427,0.408),(0.0961,0.4138),(0.0908,0.3999),(0.0325,0.3879),(0.1568,0.3845),(0.3535,0.3812),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.3561,0.3769),(0.0306,0.3835),(0.1568,0.3845),(0.1518,0.3905),(0.0961,0.4138),(0.0908,0.3999),(0.3503,0.3879),(0.3589,0.3783),(0.3561,0.3769),(0.3505,0.3886),(0.0325,0.3879),(0.0437,0.4075),(0.0427,0.408),(0.0306,0.3835),(0.3535,0.3812),(0.3484,0.3944),(0.2185,0.3912),(0.2214,0.3832),(0.1902,0.3894),(0.1952,0.3809),(0.3484,0.3944),(0.3505,0.3886),(0.3503,0.3879),(0.2185,0.3912),(0.1902,0.3894),(0.1518,0.3905),(0.0961,0.4138),(0.0437,0.4075),(0.0427,0.408),(0.0437,0.4075),(0.0961,0.4138),(0.1518,0.3905),(0.1902,0.3894),(0.2185,0.3912),(0.0325,0.3879),(0.0306,0.3835),(0.0325,0.3879),(0.0908,0.3999),(0.1568,0.3845),(0.1952,0.3809),(0.2214,0.3832),(0.3535,0.3812),(0.3561,0.3769),(0.3589,0.3783),(0.2214,0.3832),(0.1952,0.3809),(0.1568,0.3845),(0.0908,0.3999)]))),
                                   Group(DEF='t7_Sites',
                                     children=[
-                                    Comment(' None '),],)]),
-                                HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216251,-0.013763251),
+                                    Comment(' None ')
+                                    )]),
+                                HAnimJoint(DEF='hanim_vt6',name='vt6',center=(0,1.1216251,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                   children=[
                                   HAnimSegment(DEF='hanim_t6',name='t6',
                                     children=[
@@ -1330,8 +1370,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                         texCoord=TextureCoordinate(point=[(0.3061,0.4256),(0.3364,0.4029),(0.1528,0.4078),(0.1843,0.4071),(0.055,0.4216),(0.3325,0.4068),(0.0482,0.4185),(0.221,0.4256),(0.1008,0.4259),(0.1518,0.3905),(0.3506,0.3865),(0.3484,0.3944),(0.0427,0.408),(0.0961,0.4138),(0.3437,0.3934),(0.2185,0.3912),(0.1902,0.3894),(0.0437,0.4075),(0.0437,0.4075),(0.0961,0.4138),(0.1008,0.4259),(0.055,0.4216),(0.1902,0.3894),(0.1843,0.4071),(0.1528,0.4078),(0.1518,0.3905),(0.3364,0.4029),(0.3506,0.3865),(0.3437,0.3934),(0.3325,0.4068),(0.0482,0.4185),(0.0427,0.408),(0.2185,0.3912),(0.221,0.4256),(0.3484,0.3944),(0.3061,0.4256),(0.055,0.4216),(0.1008,0.4259),(0.1528,0.4078),(0.1843,0.4071),(0.221,0.4256),(0.3061,0.4256),(0.3325,0.4068),(0.3364,0.4029),(0.221,0.4256),(0.1843,0.4071),(0.1528,0.4078),(0.1008,0.4259),(0.055,0.4216),(0.0482,0.4185),(0.3437,0.3934),(0.3506,0.3865),(0.2185,0.3912),(0.1902,0.3894),(0.1518,0.3905),(0.0961,0.4138),(0.0437,0.4075),(0.0427,0.408),(0.0437,0.4075),(0.0961,0.4138),(0.1518,0.3905),(0.1902,0.3894),(0.2185,0.3912),(0.3484,0.3944)]))),
                                     Group(DEF='t6_Sites',
                                       children=[
-                                      Comment(' None '),],)]),
-                                  HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.13715,-0.013763251),
+                                      Comment(' None ')
+                                      )]),
+                                  HAnimJoint(DEF='hanim_vt5',name='vt5',center=(0,1.13715,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                     children=[
                                     HAnimSegment(DEF='hanim_t5',name='t5',
                                       children=[
@@ -1344,8 +1385,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                           texCoord=TextureCoordinate(point=[(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.1538,0.4251),(0.1784,0.4249),(0.3223,0.4192),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.3061,0.4256),(0.3364,0.4029),(0.1528,0.4078),(0.1843,0.4071),(0.055,0.4216),(0.3325,0.4068),(0.0482,0.4185),(0.221,0.4256),(0.1008,0.4259),(0.3214,0.4203),(0.3223,0.4192),(0.3364,0.4029),(0.3325,0.4068),(0.0537,0.4289),(0.0482,0.4185),(0.055,0.4216),(0.0663,0.4356),(0.1055,0.438),(0.1008,0.4259),(0.1528,0.4078),(0.1538,0.4251),(0.1784,0.4249),(0.1843,0.4071),(0.221,0.4256),(0.2236,0.46),(0.3061,0.4256),(0.2638,0.4568),(0.0663,0.4356),(0.1055,0.438),(0.1538,0.4251),(0.1784,0.4249),(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.3223,0.4192),(0.2236,0.46),(0.1784,0.4249),(0.1538,0.4251),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.1008,0.4259),(0.055,0.4216),(0.0482,0.4185),(0.055,0.4216),(0.1008,0.4259),(0.1528,0.4078),(0.1843,0.4071),(0.221,0.4256),(0.3061,0.4256),(0.3325,0.4068),(0.3364,0.4029),(0.221,0.4256),(0.1843,0.4071),(0.1528,0.4078)]))),
                                       Group(DEF='t5_Sites',
                                         children=[
-                                        Comment(' None '),],)]),
-                                    HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524501,-0.013763251),
+                                        Comment(' None ')
+                                        )]),
+                                    HAnimJoint(DEF='hanim_vt4',name='vt4',center=(0,1.1524501,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                       children=[
                                       HAnimSegment(DEF='hanim_t4',name='t4',
                                         children=[
@@ -1358,8 +1400,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                             texCoord=TextureCoordinate(point=[(0.0639,0.4488),(0.0777,0.4495),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.2633,0.457),(0.3222,0.4193),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.3223,0.4192),(0.2638,0.4568),(0.1784,0.4249),(0.1784,0.4249),(0.1055,0.438),(0.0663,0.4356),(0.2236,0.46),(0.3214,0.4203),(0.1538,0.4251),(0.0537,0.4289),(0.1538,0.4251),(0.1504,0.4433),(0.1107,0.4532),(0.1055,0.438),(0.0777,0.4495),(0.0663,0.4356),(0.3223,0.4192),(0.3214,0.4203),(0.3214,0.4203),(0.3222,0.4193),(0.2236,0.46),(0.2638,0.4568),(0.2633,0.457),(0.2198,0.4731),(0.0639,0.4488),(0.0537,0.4289),(0.2144,0.4674),(0.1846,0.4438),(0.1784,0.4249),(0.1784,0.4249),(0.1107,0.4532),(0.1504,0.4433),(0.1846,0.4438),(0.2144,0.4674),(0.2198,0.4731),(0.2633,0.457),(0.3214,0.4203),(0.3222,0.4193),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.0777,0.4495),(0.0639,0.4488),(0.0777,0.4495),(0.1055,0.438),(0.0663,0.4356),(0.0537,0.4289),(0.0663,0.4356),(0.1055,0.438),(0.1538,0.4251),(0.1784,0.4249),(0.2236,0.46),(0.2638,0.4568),(0.3214,0.4203),(0.3223,0.4192),(0.2236,0.46),(0.1784,0.4249),(0.1538,0.4251)]))),
                                         Group(DEF='t4_Sites',
                                           children=[
-                                          Comment(' None '),],)]),
-                                      HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709001,-0.013763251),
+                                          Comment(' None ')
+                                          )]),
+                                      HAnimJoint(DEF='hanim_vt3',name='vt3',center=(0,1.1709001,-0.013763251),ulimit=[0,0,0],llimit=[0,0,0],
                                         children=[
                                         HAnimSegment(DEF='hanim_t3',name='t3',
                                           children=[
@@ -1372,8 +1415,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                               texCoord=TextureCoordinate(point=[(0.0763,0.4945),(0.0877,0.4617),(0.0525,0.4715),(0.0399,0.5407),(0.1491,0.4682),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1178,0.4708),(0.2635,0.4569),(0.3223,0.4193),(0.3214,0.4203),(0.0639,0.4488),(0.0777,0.4495),(0.1846,0.4438),(0.1504,0.4433),(0.1107,0.4532),(0.3222,0.4193),(0.2633,0.457),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.2035,0.4795),(0.2169,0.492),(0.2635,0.4569),(0.3214,0.4203),(0.0763,0.4945),(0.1178,0.4708),(0.1491,0.4682),(0.1915,0.4696),(0.1504,0.4433),(0.1107,0.4532),(0.0777,0.4495),(0.0639,0.4488),(0.3214,0.4203),(0.3222,0.4193),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438),(0.0639,0.4488),(0.0877,0.4617),(0.0763,0.4945),(0.0525,0.4715),(0.0777,0.4495),(0.1504,0.4433),(0.1491,0.4682),(0.1178,0.4708),(0.1107,0.4532),(0.3214,0.4203),(0.3214,0.4203),(0.3223,0.4193),(0.3222,0.4193),(0.2035,0.4795),(0.2144,0.4674),(0.2198,0.4731),(0.2169,0.492),(0.1915,0.4696),(0.1846,0.4438),(0.2633,0.457),(0.2635,0.4569),(0.0399,0.5407),(0.2169,0.492),(0.2035,0.4795),(0.2635,0.4569),(0.3214,0.4203),(0.1178,0.4708),(0.0763,0.4945),(0.1491,0.4682),(0.1915,0.4696),(0.1107,0.4532),(0.1504,0.4433),(0.0777,0.4495),(0.0639,0.4488),(0.3222,0.4193),(0.3214,0.4203),(0.2198,0.4731),(0.2144,0.4674),(0.1846,0.4438)]))),
                                           Group(DEF='t3_Sites',
                                             children=[
-                                            Comment(' None '),],)]),
-                                        HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.19565,-0.013785751),
+                                            Comment(' None ')
+                                            )]),
+                                        HAnimJoint(DEF='hanim_vt2',name='vt2',center=(0,1.19565,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                           children=[
                                           HAnimSegment(DEF='hanim_t2',name='t2',
                                             children=[
@@ -1386,8 +1430,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                 texCoord=TextureCoordinate(point=[(0.4473,0.6921),(0.4449,0.6914),(0.4513,0.6918),(0.1025,0.5076),(0.0865,0.5614),(0.0652,0.5465),(0.0786,0.5849),(0.0516,0.5759),(0.1474,0.4856),(0.1963,0.4863),(0.0346,0.5664),(0.3214,0.4203),(0.3223,0.4192),(0.2638,0.4568),(0.2146,0.5039),(0.1227,0.5144),(0.4468,0.6898),(0.4495,0.6881),(0.1491,0.4682),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1178,0.4708),(0.2635,0.4569),(0.3223,0.4193),(0.3214,0.4203),(0.0763,0.4945),(0.0399,0.5407),(0.1474,0.4856),(0.1963,0.4863),(0.2146,0.5039),(0.2638,0.4568),(0.3214,0.4203),(0.2169,0.492),(0.2035,0.4795),(0.1915,0.4696),(0.1491,0.4682),(0.1178,0.4708),(0.0763,0.4945),(0.0399,0.5407),(0.3214,0.4203),(0.3223,0.4193),(0.4473,0.6921),(0.4449,0.6914),(0.4468,0.6898),(0.0763,0.4945),(0.1025,0.5076),(0.0865,0.5614),(0.0652,0.5465),(0.1227,0.5144),(0.0786,0.5849),(0.0516,0.5759),(0.1178,0.4708),(0.1474,0.4856),(0.0346,0.5664),(0.0399,0.5407),(0.2146,0.5039),(0.1963,0.4863),(0.2035,0.4795),(0.2169,0.492),(0.1915,0.4696),(0.2635,0.4569),(0.2638,0.4568),(0.1491,0.4682),(0.3214,0.4203),(0.3214,0.4203),(0.3223,0.4192),(0.3223,0.4193),(0.4495,0.6881),(0.4513,0.6918),(0.1963,0.4863),(0.1474,0.4856),(0.2146,0.5039),(0.2638,0.4568),(0.3214,0.4203),(0.2035,0.4795),(0.2169,0.492),(0.1915,0.4696),(0.1491,0.4682),(0.1178,0.4708),(0.0763,0.4945),(0.0399,0.5407),(0.3223,0.4193),(0.3214,0.4203)]))),
                                             Group(DEF='t2_Sites',
                                               children=[
-                                              Comment(' None '),],)]),
-                                          HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),
+                                              Comment(' None ')
+                                              )]),
+                                          HAnimJoint(DEF='hanim_vt1',name='vt1',center=(0,1.22,-0.0138),ulimit=[0,0,0],llimit=[0,0,0],
                                             children=[
                                             HAnimSegment(DEF='hanim_t1',name='t1',
                                               children=[
@@ -1410,7 +1455,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                   children=[
                                                   TouchSensor(description='HAnimSite cervicale_pt 10'),
                                                   Shape(USE='HAnimSiteShape')])])]),
-                                            HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.245375,-0.015063751),
+                                            HAnimJoint(DEF='hanim_vc7',name='vc7',center=(0,1.245375,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_c7',name='c7',
                                                 children=[
@@ -1433,7 +1478,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     TouchSensor(description='HAnimSite r_neck_base_pt 83'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575251,-0.015063751),
+                                              HAnimJoint(DEF='hanim_vc6',name='vc6',center=(0,1.2575251,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_c6',name='c6',
                                                   children=[
@@ -1446,8 +1491,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       texCoord=TextureCoordinate(point=[(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.3906,0.6507),(0.3807,0.6555),(0.3719,0.6578),(0.3649,0.6576),(0.3906,0.6568),(0.4006,0.6555),(0.3818,0.6565),(0.3706,0.6559),(0.3995,0.6534),(0.4094,0.6549),(0.4164,0.6547),(0.4107,0.6527),(0.3906,0.6475),(0.3807,0.6518),(0.3719,0.6549),(0.3649,0.6547),(0.3906,0.6538),(0.4006,0.6518),(0.3818,0.6534),(0.3706,0.6527),(0.3995,0.6565),(0.3906,0.6568),(0.3818,0.6565),(0.3719,0.6578),(0.3649,0.6576),(0.3706,0.6559),(0.3807,0.6555),(0.3906,0.6507),(0.4006,0.6555),(0.4107,0.6559),(0.4164,0.6576),(0.4094,0.6578),(0.3906,0.6538),(0.3995,0.6534),(0.4094,0.6549),(0.4164,0.6547),(0.4107,0.6527),(0.4006,0.6518),(0.3906,0.6475),(0.3807,0.6518),(0.3706,0.6527),(0.3649,0.6547),(0.3719,0.6549),(0.3818,0.6534)]))),
                                                   Group(DEF='c6_Sites',
                                                     children=[
-                                                    Comment(' None '),],)]),
-                                                HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.015063751),
+                                                    Comment(' None ')
+                                                    )]),
+                                                HAnimJoint(DEF='hanim_vc5',name='vc5',center=(0,1.2699,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_c5',name='c5',
                                                     children=[
@@ -1460,8 +1506,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         texCoord=TextureCoordinate(point=[(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.3906,0.6538),(0.3807,0.6592),(0.3719,0.6606),(0.3649,0.6605),(0.3906,0.6599),(0.4006,0.6592),(0.3818,0.6596),(0.3706,0.6591),(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.3906,0.6507),(0.3807,0.6555),(0.3719,0.6578),(0.3649,0.6576),(0.3906,0.6568),(0.4006,0.6555),(0.3818,0.6565),(0.3706,0.6559),(0.3995,0.6596),(0.3906,0.6599),(0.3818,0.6596),(0.3719,0.6606),(0.3649,0.6605),(0.3706,0.6591),(0.3807,0.6592),(0.3906,0.6538),(0.4006,0.6592),(0.4107,0.6591),(0.4164,0.6605),(0.4094,0.6606),(0.3906,0.6568),(0.3995,0.6565),(0.4094,0.6578),(0.4164,0.6576),(0.4107,0.6559),(0.4006,0.6555),(0.3906,0.6507),(0.3807,0.6555),(0.3706,0.6559),(0.3649,0.6576),(0.3719,0.6578),(0.3818,0.6565)]))),
                                                     Group(DEF='c5_Sites',
                                                       children=[
-                                                      Comment(' None '),],)]),
-                                                  HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.2822751,-0.015063751),
+                                                      Comment(' None ')
+                                                      )]),
+                                                  HAnimJoint(DEF='hanim_vc4',name='vc4',center=(0,1.2822751,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_c4',name='c4',
                                                       children=[
@@ -1474,8 +1521,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           texCoord=TextureCoordinate(point=[(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.3906,0.657),(0.3807,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3906,0.6629),(0.4006,0.6628),(0.3818,0.6628),(0.3706,0.6624),(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.3906,0.6538),(0.3807,0.6592),(0.3719,0.6606),(0.3649,0.6605),(0.3906,0.6599),(0.4006,0.6592),(0.3818,0.6596),(0.3706,0.6591),(0.3995,0.6628),(0.3906,0.6629),(0.3818,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3706,0.6624),(0.3807,0.6628),(0.3906,0.657),(0.4006,0.6628),(0.4107,0.6624),(0.4164,0.6634),(0.4094,0.6635),(0.3906,0.6599),(0.3995,0.6596),(0.4094,0.6606),(0.4164,0.6605),(0.4107,0.6591),(0.4006,0.6592),(0.3906,0.6538),(0.3807,0.6592),(0.3706,0.6591),(0.3649,0.6605),(0.3719,0.6606),(0.3818,0.6596)]))),
                                                       Group(DEF='c4_Sites',
                                                         children=[
-                                                        Comment(' None '),],)]),
-                                                    HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951001,-0.015063751),
+                                                        Comment(' None ')
+                                                        )]),
+                                                    HAnimJoint(DEF='hanim_vc3',name='vc3',center=(0,1.2951001,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_c3',name='c3',
                                                         children=[
@@ -1488,8 +1536,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             texCoord=TextureCoordinate(point=[(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.3906,0.6601),(0.3807,0.6665),(0.3719,0.6664),(0.3649,0.6663),(0.3906,0.666),(0.4006,0.6665),(0.3818,0.6659),(0.3706,0.6656),(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.3906,0.657),(0.3807,0.6628),(0.3719,0.6635),(0.3649,0.6634),(0.3906,0.6629),(0.4006,0.6628),(0.3818,0.6628),(0.3706,0.6624),(0.3995,0.6659),(0.3906,0.666),(0.3818,0.6659),(0.3719,0.6664),(0.3649,0.6663),(0.3706,0.6656),(0.3807,0.6665),(0.3906,0.6601),(0.4006,0.6665),(0.4107,0.6656),(0.4164,0.6663),(0.4094,0.6664),(0.3906,0.6629),(0.3995,0.6628),(0.4094,0.6635),(0.4164,0.6634),(0.4107,0.6624),(0.4006,0.6628),(0.3906,0.657),(0.3807,0.6628),(0.3706,0.6624),(0.3649,0.6634),(0.3719,0.6635),(0.3818,0.6628)]))),
                                                         Group(DEF='c3_Sites',
                                                           children=[
-                                                          Comment(' None '),],)]),
-                                                      HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),
+                                                          Comment(' None ')
+                                                          )]),
+                                                      HAnimJoint(DEF='hanim_vc2',name='vc2',center=(0,1.307,-0.0150),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_c2',name='c2',
                                                           children=[
@@ -1507,7 +1556,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite adams_apple_pt 11'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.015063751),
+                                                        HAnimJoint(DEF='hanim_vc1',name='vc1',center=(0,1.3185,-0.015063751),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_c1',name='c1',
                                                             children=[
@@ -1520,8 +1569,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.3995,0.669),(0.4094,0.6692),(0.4164,0.6692),(0.4107,0.6689),(0.3906,0.6632),(0.3807,0.6702),(0.3719,0.6692),(0.3649,0.6692),(0.3906,0.669),(0.4006,0.6702),(0.3818,0.669),(0.3706,0.6689),(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.3906,0.6601),(0.3807,0.6665),(0.3719,0.6664),(0.3649,0.6663),(0.3906,0.666),(0.4006,0.6665),(0.3818,0.6659),(0.3706,0.6656),(0.3995,0.669),(0.3906,0.669),(0.3818,0.669),(0.3719,0.6692),(0.3649,0.6692),(0.3706,0.6689),(0.3807,0.6702),(0.3906,0.6632),(0.4006,0.6702),(0.4107,0.6689),(0.4164,0.6692),(0.4094,0.6692),(0.3906,0.666),(0.3995,0.6659),(0.4094,0.6664),(0.4164,0.6663),(0.4107,0.6656),(0.4006,0.6665),(0.3906,0.6601),(0.3807,0.6665),(0.3706,0.6656),(0.3649,0.6663),(0.3719,0.6664),(0.3818,0.6659)]))),
                                                             Group(DEF='c1_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126501,-0.01544175),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_skullbase',name='skullbase',center=(0,1.3126501,-0.01544175),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_skull',name='skull',
                                                               children=[
@@ -1589,7 +1639,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   children=[
                                                                   TouchSensor(description='HAnimSite r_ectocanthus_pt 86'),
                                                                   Shape(USE='HAnimSiteShape')])])]),
-                                                            HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505125,1.42425,0.03294),
+                                                            HAnimJoint(DEF='hanim_l_eyelid_joint',name='l_eyelid_joint',center=(0.0505125,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyelid',name='l_eyelid',
                                                                 children=[
@@ -1606,8 +1656,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_l_eyelid_tip_pt\' name=\'l_eyelid_tip_pt\' translation=\'0 2.64 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite l_eyelid_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505125,1.42425,0.03294),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_r_eyelid_joint',name='r_eyelid_joint',center=(-0.0505125,1.42425,0.03294),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyelid',name='r_eyelid',
                                                                 children=[
@@ -1624,8 +1675,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_r_eyelid_tip_pt\' name=\'r_eyelid_tip_pt\' translation=\'0 2.68 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite r_eyelid_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127502,1.4049001,0.0830475),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_l_eyeball_joint',name='l_eyeball_joint',center=(0.048127502,1.4049001,0.0830475),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyeball',name='l_eyeball',
                                                                 children=[
@@ -1642,8 +1694,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_l_eyeball_tip_pt\' name=\'l_eyeball_tip_pt\' translation=\'0 2.72 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite l_eyeball_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.048127502,1.4049001,0.0830475),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_r_eyeball_joint',name='r_eyeball_joint',center=(-0.048127502,1.4049001,0.0830475),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyeball',name='r_eyeball',
                                                                 children=[
@@ -1660,8 +1713,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_r_eyeball_tip_pt\' name=\'r_eyeball_tip_pt\' translation=\'0 2.76 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite r_eyeball_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.021748502,1.4139,0.1069425),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_l_eyebrow_joint',name='l_eyebrow_joint',center=(0.021748502,1.4139,0.1069425),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_eyebrow',name='l_eyebrow',
                                                                 children=[
@@ -1678,8 +1732,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_l_eyebrow_tip_pt\' name=\'l_eyebrow_tip_pt\' translation=\'0 2.8 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite l_eyebrow_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.021748502,1.4139,0.1069425),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_r_eyebrow_joint',name='r_eyebrow_joint',center=(-0.021748502,1.4139,0.1069425),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_eyebrow',name='r_eyebrow',
                                                                 children=[
@@ -1696,8 +1751,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   Comment(' <HAnimSite DEF=\'hanim_r_eyebrow_tip_pt\' name=\'r_eyebrow_tip_pt\' translation=\'0 2.84 0\'> '),
                                                                   Comment(' <TouchSensor description=\'HAnimSite r_eyebrow_tip_pt\'/> '),
                                                                   Comment(' <Shape USE=\'HAnimSiteShape\'/> '),
-                                                                  Comment(' </HAnimSite> '),],)])]),
-                                                            HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.312875,0.015378751),
+                                                                  Comment(' </HAnimSite> ')
+                                                                  )])]),
+                                                            HAnimJoint(DEF='hanim_temporomandibular',name='temporomandibular',center=(0,1.312875,0.015378751),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_jaw',name='jaw',
                                                                 children=[
@@ -1730,7 +1786,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite menton_pt 87'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-                                            HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.038475003,1.2087001,-0.013785751),
+                                            HAnimJoint(DEF='hanim_l_sternoclavicular',name='l_sternoclavicular',center=(0.038475003,1.2087001,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_l_clavicle',name='l_clavicle',
                                                 children=[
@@ -1748,7 +1804,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     TouchSensor(description='HAnimSite l_clavicale_pt 14'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294001,1.191825,-0.012897001),
+                                              HAnimJoint(DEF='hanim_l_acromioclavicular',name='l_acromioclavicular',center=(0.12294001,1.191825,-0.012897001),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_l_scapula',name='l_scapula',
                                                   children=[
@@ -1781,7 +1837,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       TouchSensor(description='HAnimSite l_axilla_posterior_folds_pt 18'),
                                                       Shape(USE='HAnimSiteShape')])])]),
-                                                HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.1785501,-0.0032670002),
+                                                HAnimJoint(DEF='hanim_l_shoulder',name='l_shoulder',center=(0.16506,1.1785501,-0.0032670002),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_l_upperarm',name='l_upperarm',
                                                     children=[
@@ -1814,7 +1870,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         children=[
                                                         TouchSensor(description='HAnimSite l_bideltoid_pt 96'),
                                                         Shape(USE='HAnimSiteShape')])])]),
-                                                  HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209252,0.9288,-0.0056295004),
+                                                  HAnimJoint(DEF='hanim_l_elbow',name='l_elbow',center=(0.18209252,0.9288,-0.0056295004),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_l_forearm',name='l_forearm',
                                                       children=[
@@ -1837,7 +1893,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           children=[
                                                           TouchSensor(description='HAnimSite l_olecranon_pt 65'),
                                                           Shape(USE='HAnimSiteShape')])])]),
-                                                    HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.18193501,0.724275,-0.00502425),
+                                                    HAnimJoint(DEF='hanim_l_radiocarpal',name='l_radiocarpal',center=(0.18193501,0.724275,-0.00502425),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_l_carpal',name='l_carpal',
                                                         children=[
@@ -1855,7 +1911,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             children=[
                                                             TouchSensor(description='HAnimSite l_ulnar_styloid_pt 70'),
                                                             Shape(USE='HAnimSiteShape')])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1812825,0.70605004,0.0193275),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_1',name='l_midcarpal_1',center=(0.1812825,0.70605004,0.0193275),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_trapezium',name='l_trapezium',
                                                           children=[
@@ -1868,8 +1924,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.8327,0.0273),(0.8381,0.0441),(0.8625,0.0344),(0.8476,0.0256),(0.8625,0.0359),(0.8466,0.0257),(0.9122,0.2724),(0.904,0.2568),(0.8948,0.2599),(0.8401,0.0478),(0.8395,0.0482),(0.8319,0.0206),(0.9141,0.2788),(0.844,0.0192),(0.8432,0.0193),(0.8491,0.0466),(0.8611,0.0409),(0.8611,0.0397),(0.8814,0.2691),(0.8989,0.2764),(0.9014,0.2535),(0.9142,0.2789),(0.9026,0.2823),(0.9033,0.2821),(0.8928,0.2563),(0.8819,0.264),(0.8327,0.0273),(0.8381,0.0441),(0.8395,0.0482),(0.8401,0.0478),(0.904,0.2568),(0.9122,0.2724),(0.9141,0.2788),(0.9142,0.2789)]))),
                                                           Group(DEF='l_trapezium_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.18049501,0.69255006,0.0259875),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_1',name='l_carpometacarpal_1',center=(0.18049501,0.69255006,0.0259875),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_1',name='l_metacarpal_1',
                                                             children=[
@@ -1887,7 +1944,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_metacarpal_phalanx_2_pt 75'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181035,0.67275,0.035775002),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_1',name='l_metacarpophalangeal_1',center=(0.181035,0.67275,0.035775002),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_1',name='l_carpal_proximal_phalanx_1',
                                                               children=[
@@ -1900,8 +1957,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8786,0.0507),(0.857,0.0621),(0.8601,0.0649),(0.867,0.0598),(0.8887,0.0786),(0.8747,0.0865),(0.8533,0.0697),(0.876,0.0783),(0.893,0.0688),(0.8992,0.0702),(0.8819,0.0483),(0.8561,0.0728),(0.8736,0.0851),(0.8532,0.0697),(0.8503,0.0646),(0.8986,0.0785),(0.897,0.0809),(0.8914,0.0813),(0.8802,0.0861),(0.8841,0.0856),(0.8821,0.0883),(0.8487,0.0595),(0.8509,0.0581),(0.8683,0.0489),(0.868,0.0507),(0.8608,0.0544),(0.8505,0.0603),(0.8455,0.0706),(0.8468,0.073),(0.8455,0.0707),(0.8437,0.0676),(0.8416,0.0639),(0.8422,0.0648),(0.8729,0.2464),(0.8482,0.2317),(0.8612,0.2211),(0.8847,0.2342),(0.8433,0.2381),(0.8632,0.2548),(0.8814,0.2316),(0.8625,0.2222),(0.8799,0.2506),(0.8891,0.243),(0.8922,0.232),(0.8964,0.2371)]))),
                                                               Group(DEF='l_carpal_proximal_phalanx_1_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.182655,0.654075,0.0496575),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_l_carpal_interphalangeal_1',name='l_carpal_interphalangeal_1',center=(0.182655,0.654075,0.0496575),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_1',name='l_carpal_distal_phalanx_1',
                                                                 children=[
@@ -1919,7 +1977,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite l_carpal_distal_phalanx_1_tip 101'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.1812825,0.70695,0.008417251),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_2',name='l_midcarpal_2',center=(0.1812825,0.70695,0.008417251),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_trapezoid',name='l_trapezoid',
                                                           children=[
@@ -1932,8 +1990,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.813,0.0266),(0.8136,0.0488),(0.8136,0.0488),(0.8133,0.0266),(0.8111,0.0474),(0.8105,0.0283),(0.8108,0.0283),(0.8111,0.0474),(0.8141,0.0525),(0.8141,0.0525),(0.8123,0.0198),(0.8125,0.0198),(0.9273,0.2479),(0.9315,0.2698),(0.9337,0.2676),(0.9301,0.2489),(0.9262,0.2444),(0.9337,0.2762),(0.9335,0.2763),(0.8381,0.0441),(0.904,0.2568),(0.8327,0.0273),(0.9122,0.2724),(0.8401,0.0478),(0.9014,0.2535),(0.8395,0.0482),(0.9142,0.2789),(0.8319,0.0206),(0.9141,0.2788),(0.8381,0.0441),(0.8327,0.0273),(0.8319,0.0206),(0.9141,0.2788),(0.9122,0.2724),(0.904,0.2568),(0.9014,0.2535),(0.8395,0.0482)]))),
                                                           Group(DEF='l_trapezoid_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1812825,0.6876,0.009729),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_2',name='l_carpometacarpal_2',center=(0.1812825,0.6876,0.009729),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_2',name='l_metacarpal_2',
                                                             children=[
@@ -1946,8 +2005,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.8514,0.0953),(0.8526,0.0788),(0.846,0.0768),(0.8466,0.0958),(0.8195,0.0808),(0.8225,0.0994),(0.8225,0.0994),(0.8195,0.0808),(0.8903,0.2261),(0.8467,0.0958),(0.8381,0.0441),(0.8136,0.0488),(0.8561,0.0728),(0.8532,0.0697),(0.8381,0.0441),(0.8136,0.0488),(0.8436,0.0662),(0.8533,0.0697),(0.8503,0.0646),(0.8461,0.0998),(0.8248,0.1027),(0.8248,0.1027),(0.8462,0.0997),(0.8498,0.0994),(0.8184,0.0977),(0.8157,0.0811),(0.8157,0.0809),(0.8184,0.0977),(0.8165,0.0457),(0.8341,0.0424),(0.8341,0.0424),(0.8165,0.0457),(0.844,0.0417),(0.8554,0.0622),(0.8575,0.0659),(0.8594,0.0677),(0.8574,0.0658),(0.844,0.0417),(0.8099,0.0493),(0.8099,0.0493),(0.82,0.101),(0.82,0.101),(0.8821,0.2087),(0.8838,0.2252),(0.9098,0.1997),(0.916,0.2175),(0.8866,0.2074),(0.904,0.2568),(0.9273,0.2479),(0.8814,0.2316),(0.8847,0.2342),(0.9197,0.2166),(0.9083,0.2577),(0.925,0.2515),(0.8813,0.2388),(0.8986,0.2602),(0.931,0.2468)]))),
                                                             Group(DEF='l_metacarpal_2_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.18373501,0.6372,0.015075001),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_2',name='l_metacarpophalangeal_2',center=(0.18373501,0.6372,0.015075001),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_2',name='l_carpal_proximal_phalanx_2',
                                                               children=[
@@ -1960,8 +2020,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8511,0.1006),(0.8514,0.0953),(0.8466,0.0958),(0.8466,0.1011),(0.8225,0.0994),(0.8283,0.1035),(0.9023,0.1969),(0.8225,0.0994),(0.8467,0.0958),(0.8857,0.2021),(0.8231,0.1042),(0.8931,0.1724),(0.8782,0.1769),(0.8338,0.1268),(0.8493,0.125),(0.8543,0.1273),(0.8302,0.1302),(0.8258,0.1072),(0.8236,0.1075),(0.8231,0.1042),(0.8504,0.1328),(0.8508,0.1334),(0.8781,0.1731),(0.8909,0.1692),(0.8352,0.1346),(0.8353,0.1353),(0.8228,0.0929),(0.844,0.0896),(0.8482,0.0889),(0.8441,0.0896),(0.8228,0.0929),(0.8203,0.0995),(0.8207,0.1038),(0.8212,0.1068),(0.8207,0.1037),(0.8203,0.0995),(0.8206,0.0933),(0.8205,0.0933),(0.8815,0.2034),(0.8821,0.2087),(0.9098,0.1997),(0.8866,0.2074),(0.8737,0.1777),(0.8969,0.1707),(0.9052,0.1925),(0.9074,0.1918),(0.9084,0.195),(0.876,0.171),(0.891,0.1665)]))),
                                                               Group(DEF='l_carpal_proximal_phalanx_2_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.606825,0.014184001),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_2',name='l_carpal_proximal_interphalangeal_2',center=(0.18171,0.606825,0.014184001),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_2',name='l_carpal_middle_phalanx_2',
                                                                 children=[
@@ -1974,8 +2035,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.8782,0.1769),(0.8543,0.1273),(0.8574,0.1518),(0.8703,0.1535),(0.8493,0.125),(0.8504,0.1318),(0.8846,0.1491),(0.8931,0.1724),(0.8349,0.1336),(0.8379,0.1515),(0.8533,0.1496),(0.8338,0.1268),(0.8302,0.1302),(0.8351,0.1545),(0.849,0.1233),(0.8336,0.1251),(0.849,0.123),(0.8335,0.1249),(0.8539,0.1573),(0.8543,0.1579),(0.8703,0.1496),(0.8822,0.146),(0.8398,0.159),(0.8399,0.1597),(0.8737,0.1777),(0.8664,0.1541),(0.8969,0.1707),(0.8878,0.1476),(0.8796,0.181),(0.8945,0.1764),(0.8684,0.1475),(0.8822,0.1433)]))),
                                                                 Group(DEF='l_carpal_middle_phalanx_2_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.180675,0.58162504,0.013385251),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_2',name='l_carpal_distal_interphalangeal_2',center=(0.180675,0.58162504,0.013385251),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_2',name='l_carpal_distal_phalanx_2',
                                                                   children=[
@@ -1993,7 +2055,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_2_tip 102'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108001,0.708525,-0.0047970004),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_3',name='l_midcarpal_3',center=(0.18108001,0.708525,-0.0047970004),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_capitate',name='l_capitate',
                                                           children=[
@@ -2006,8 +2068,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.9315,0.2698),(0.8136,0.0488),(0.7924,0.0507),(0.7911,0.0281),(0.8136,0.0488),(0.813,0.0266),(0.791,0.0281),(0.7924,0.0508),(0.7924,0.0543),(0.8143,0.0526),(0.8143,0.0526),(0.7924,0.0543),(0.9335,0.2763),(0.7903,0.0215),(0.7903,0.0215),(0.8123,0.0198),(0.7875,0.03),(0.7875,0.03),(0.7887,0.0494),(0.7887,0.0495),(0.9277,0.2691),(0.8167,0.0279),(0.8173,0.0471),(0.8173,0.0471),(0.9273,0.2479),(0.9479,0.2423),(0.9531,0.2644),(0.9318,0.2697),(0.9473,0.2389),(0.926,0.2443),(0.955,0.2707),(0.9551,0.2707),(0.9337,0.2763),(0.9563,0.262),(0.9518,0.243),(0.928,0.269),(0.924,0.2502),(0.9241,0.2502)]))),
                                                           Group(DEF='l_capitate_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108001,0.6858,-0.0062527503),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_3',name='l_carpometacarpal_3',center=(0.18108001,0.6858,-0.0062527503),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_3',name='l_metacarpal_3',
                                                             children=[
@@ -2025,7 +2088,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite l_metacarpal_phalanx_3 76'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.63495,-0.00391725),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_3',name='l_metacarpophalangeal_3',center=(0.18369,0.63495,-0.00391725),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_3',name='l_carpal_proximal_phalanx_3',
                                                               children=[
@@ -2038,8 +2101,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8168,0.105),(0.8225,0.0994),(0.7939,0.1016),(0.7996,0.1065),(0.9311,0.1887),(0.7939,0.1016),(0.8225,0.0994),(0.9145,0.1932),(0.794,0.107),(0.9232,0.1611),(0.908,0.1649),(0.8025,0.1324),(0.818,0.1313),(0.7986,0.1359),(0.7957,0.11),(0.7939,0.1101),(0.794,0.107),(0.8228,0.1342),(0.8186,0.1401),(0.819,0.1409),(0.9081,0.1606),(0.921,0.1574),(0.8033,0.1412),(0.8033,0.142),(0.8231,0.1042),(0.8212,0.1078),(0.8231,0.1042),(0.8236,0.1075),(0.7948,0.0956),(0.8206,0.0932),(0.8206,0.0932),(0.7948,0.0956),(0.8249,0.0987),(0.8253,0.1032),(0.8258,0.1063),(0.8253,0.1032),(0.8249,0.0987),(0.823,0.0929),(0.823,0.0929),(0.7917,0.1017),(0.7916,0.1064),(0.7918,0.1091),(0.7916,0.1063),(0.7917,0.1017),(0.7927,0.0957),(0.7927,0.0957),(0.9376,0.1925),(0.9098,0.1997),(0.927,0.1595),(0.9344,0.1846),(0.9361,0.1842),(0.9366,0.1872),(0.9035,0.1654),(0.9061,0.1582),(0.9213,0.1544),(0.9096,0.1911),(0.9084,0.195),(0.9074,0.1918)]))),
                                                               Group(DEF='l_carpal_proximal_phalanx_3_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.603225,-0.003537),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_3',name='l_carpal_proximal_interphalangeal_3',center=(0.18171,0.603225,-0.003537),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_3',name='l_carpal_middle_phalanx_3',
                                                                 children=[
@@ -2052,8 +2116,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.908,0.1649),(0.8228,0.1342),(0.8238,0.1612),(0.9018,0.1387),(0.818,0.1313),(0.8186,0.139),(0.9163,0.135),(0.9232,0.1611),(0.8031,0.1401),(0.8044,0.1596),(0.8199,0.1584),(0.8025,0.1324),(0.7986,0.1359),(0.8014,0.1628),(0.8179,0.1294),(0.8023,0.1305),(0.8179,0.1291),(0.8023,0.1302),(0.8199,0.1671),(0.8202,0.1672),(0.902,0.1343),(0.914,0.1313),(0.8058,0.1681),(0.8058,0.1689),(0.9035,0.1654),(0.8978,0.139),(0.927,0.1595),(0.9196,0.1336),(0.9092,0.1696),(0.9243,0.1658),(0.9003,0.1324),(0.9142,0.1283)]))),
                                                                 Group(DEF='l_carpal_middle_phalanx_3_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.180675,0.575325,-0.0037597502),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_3',name='l_carpal_distal_interphalangeal_3',center=(0.180675,0.575325,-0.0037597502),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_3',name='l_carpal_distal_phalanx_3',
                                                                   children=[
@@ -2076,7 +2141,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_3_tip 103'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108001,0.70582503,-0.025740001),
+                                                      HAnimJoint(DEF='hanim_l_midcarpal_4_5',name='l_midcarpal_4_5',center=(0.18108001,0.70582503,-0.025740001),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_hamate',name='l_hamate',
                                                           children=[
@@ -2089,8 +2154,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.7624,0.0345),(0.7525,0.0502),(0.7571,0.0508),(0.7729,0.0334),(0.7734,0.0512),(0.7924,0.0508),(0.791,0.0281),(0.9531,0.2644),(0.9665,0.2386),(0.9827,0.2362),(0.9706,0.2558),(0.9479,0.2423),(0.7736,0.0553),(0.7595,0.0549),(0.7559,0.0544),(0.7596,0.0549),(0.7736,0.0553),(0.7721,0.0268),(0.7644,0.0276),(0.7723,0.0268),(0.7938,0.0298),(0.795,0.0487),(0.9457,0.2448),(0.9501,0.2632),(0.7926,0.0543),(0.7926,0.0544),(0.7903,0.0215),(0.7903,0.0215),(0.9803,0.2531),(0.9874,0.236),(0.9479,0.2423),(0.9532,0.2644),(0.9832,0.2324),(0.9795,0.2325),(0.9656,0.2346),(0.9721,0.2624),(0.9795,0.2602),(0.9719,0.2625),(0.9502,0.2632),(0.9457,0.2447),(0.9471,0.2389),(0.9471,0.2388),(0.9551,0.2707),(0.955,0.2707)]))),
                                                           Group(DEF='l_hamate_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.18108001,0.68625003,-0.01991925),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_l_carpometacarpal_4',name='l_carpometacarpal_4',center=(0.18108001,0.68625003,-0.01991925),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_metacarpal_4',name='l_metacarpal_4',
                                                             children=[
@@ -2103,8 +2169,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.7939,0.1016),(0.7938,0.0824),(0.7694,0.0827),(0.766,0.1014),(0.7924,0.0508),(0.7734,0.0512),(0.7938,0.0824),(0.7939,0.1016),(0.766,0.1015),(0.965,0.2069),(0.7734,0.0512),(0.7924,0.0507),(0.7909,0.1057),(0.7677,0.1056),(0.7677,0.1057),(0.7909,0.1057),(0.9517,0.2441),(0.7765,0.0488),(0.7765,0.0488),(0.789,0.0484),(0.7643,0.0825),(0.7643,0.0824),(0.7614,0.1009),(0.7614,0.1009),(0.7991,0.0823),(0.7971,0.0505),(0.7971,0.0505),(0.7991,0.0824),(0.7688,0.0511),(0.7688,0.0511),(0.7994,0.1003),(0.7994,0.1003),(0.7625,0.1038),(0.7625,0.1038),(0.7972,0.1034),(0.7972,0.1034),(0.9479,0.2423),(0.9665,0.2385),(0.941,0.2114),(0.9376,0.1925),(0.9651,0.1878),(0.9665,0.2386),(0.9479,0.2423),(0.9639,0.2415),(0.9639,0.2415),(0.9517,0.244),(0.9701,0.2063),(0.9698,0.1875),(0.9358,0.2124),(0.9433,0.2434),(0.9433,0.2434),(0.9358,0.2123),(0.9711,0.2379),(0.9711,0.2379)]))),
                                                             Group(DEF='l_metacarpal_4_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144025),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_l_metacarpophalangeal_4',name='l_metacarpophalangeal_4',center=(0.18369,0.63405,-0.02144025),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_4',name='l_carpal_proximal_phalanx_4',
                                                               children=[
@@ -2117,8 +2184,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.7878,0.1071),(0.7939,0.1016),(0.766,0.1014),(0.7709,0.1068),(0.9594,0.1833),(0.766,0.1015),(0.7939,0.1016),(0.9426,0.186),(0.7648,0.1066),(0.9545,0.1568),(0.9398,0.1599),(0.771,0.1315),(0.7861,0.131),(0.767,0.1345),(0.7667,0.1094),(0.7644,0.1092),(0.7648,0.1066),(0.7904,0.1338),(0.786,0.139),(0.7863,0.1397),(0.9402,0.1559),(0.9531,0.1532),(0.7709,0.1396),(0.7709,0.1403),(0.794,0.107),(0.7917,0.1102),(0.794,0.107),(0.7939,0.1101),(0.7675,0.0958),(0.7934,0.0956),(0.7934,0.0956),(0.7675,0.0958),(0.7967,0.1011),(0.7964,0.1056),(0.7964,0.1088),(0.7964,0.1057),(0.7967,0.1011),(0.7958,0.0955),(0.7958,0.0955),(0.7633,0.1008),(0.7625,0.1056),(0.7622,0.1084),(0.7625,0.1055),(0.7633,0.1008),(0.765,0.0957),(0.765,0.0957),(0.9651,0.1878),(0.9376,0.1925),(0.9583,0.1554),(0.963,0.1801),(0.9654,0.1799),(0.9654,0.1826),(0.9354,0.1602),(0.9385,0.1536),(0.9536,0.1504),(0.9383,0.1837),(0.9366,0.1872),(0.9361,0.1842)]))),
                                                               Group(DEF='l_carpal_proximal_phalanx_4_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.18171,0.6066,-0.020646),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_4',name='l_carpal_proximal_interphalangeal_4',center=(0.18171,0.6066,-0.020646),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_4',name='l_carpal_middle_phalanx_4',
                                                                 children=[
@@ -2131,8 +2199,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.9398,0.1599),(0.7904,0.1338),(0.7888,0.1598),(0.9363,0.1341),(0.7861,0.131),(0.7859,0.138),(0.9502,0.1313),(0.9545,0.1568),(0.7712,0.1385),(0.7707,0.1575),(0.7854,0.1571),(0.771,0.1315),(0.767,0.1345),(0.7676,0.1604),(0.786,0.1292),(0.7713,0.1297),(0.786,0.129),(0.7713,0.1294),(0.7847,0.165),(0.7849,0.1652),(0.9369,0.1301),(0.9483,0.1278),(0.7712,0.1654),(0.7712,0.1661),(0.9354,0.1602),(0.9325,0.1343),(0.9583,0.1554),(0.9533,0.1301),(0.9406,0.1642),(0.9551,0.1612),(0.9355,0.1283),(0.9488,0.1251)]))),
                                                                 Group(DEF='l_carpal_middle_phalanx_4_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.180675,0.580725,-0.019777501),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_4',name='l_carpal_distal_interphalangeal_4',center=(0.180675,0.580725,-0.019777501),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_4',name='l_carpal_distal_phalanx_4',
                                                                   children=[
@@ -2150,7 +2219,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite l_carpal_distal_phalanx_4_tip 104'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1816425,0.68827504,-0.032782502),
+                                                      HAnimJoint(DEF='hanim_l_carpometacarpal_5',name='l_carpometacarpal_5',center=(0.1816425,0.68827504,-0.032782502),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_l_metacarpal_5',name='l_metacarpal_5',
                                                           children=[
@@ -2168,7 +2237,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite l_metacarpal_phalanx_5_pt 77'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.18333,0.6381,-0.0370575),
+                                                        HAnimJoint(DEF='hanim_l_metacarpophalangeal_5',name='l_metacarpophalangeal_5',center=(0.18333,0.6381,-0.0370575),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_l_carpal_proximal_phalanx_5',name='l_carpal_proximal_phalanx_5',
                                                             children=[
@@ -2181,8 +2250,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.7578,0.1276),(0.7543,0.1247),(0.753,0.131),(0.7531,0.1316),(0.9854,0.1598),(0.9725,0.1615),(0.9734,0.1584),(0.9844,0.1569),(0.7413,0.123),(0.7403,0.1293),(0.7378,0.1249),(0.7401,0.1299),(0.7405,0.104),(0.7443,0.1047),(0.9859,0.1809),(0.7455,0.0995),(0.766,0.1015),(0.9713,0.1822),(0.7589,0.1059),(0.7648,0.1066),(0.766,0.1014),(0.7622,0.1091),(0.7648,0.1066),(0.7644,0.1092),(0.7455,0.0995),(0.7415,0.0989),(0.7664,0.0954),(0.7667,0.0954),(0.7485,0.0932),(0.7449,0.0928),(0.7484,0.0932),(0.7683,0.1016),(0.7686,0.0957),(0.7683,0.0956),(0.7679,0.1015),(0.7671,0.1055),(0.7666,0.1084),(0.7674,0.1056),(0.9687,0.1615),(0.9723,0.1564),(0.9888,0.1589),(0.9852,0.1547),(0.9898,0.1809),(0.9856,0.1862),(0.9651,0.1878),(0.9675,0.1796),(0.9654,0.1826),(0.9654,0.1799),(0.9897,0.1861)]))),
                                                             Group(DEF='l_carpal_proximal_phalanx_5_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166502,0.62100005,-0.037147503),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_l_carpal_proximal_interphalangeal_5',name='l_carpal_proximal_interphalangeal_5',center=(0.18166502,0.62100005,-0.037147503),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_l_carpal_middle_phalanx_5',name='l_carpal_middle_phalanx_5',
                                                               children=[
@@ -2195,8 +2265,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.9725,0.1615),(0.7578,0.1276),(0.7541,0.1444),(0.9727,0.1441),(0.7543,0.1247),(0.7533,0.1302),(0.9851,0.1424),(0.9854,0.1598),(0.7404,0.1285),(0.7384,0.1404),(0.7513,0.1418),(0.7413,0.123),(0.7378,0.1249),(0.7355,0.1424),(0.7545,0.1231),(0.7416,0.1216),(0.7546,0.1229),(0.7417,0.1214),(0.7496,0.1479),(0.7498,0.1481),(0.9738,0.1409),(0.9839,0.1396),(0.738,0.1467),(0.7381,0.1469),(0.9687,0.1616),(0.9694,0.1441),(0.9888,0.1589),(0.988,0.1416),(0.9725,0.165),(0.9854,0.1633),(0.9728,0.1395),(0.9846,0.1375)]))),
                                                               Group(DEF='l_carpal_middle_phalanx_5_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.18081002,0.602325,-0.0369675),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_l_carpal_distal_interphalangeal_5',name='l_carpal_distal_interphalangeal_5',center=(0.18081002,0.602325,-0.0369675),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_l_carpal_distal_phalanx_5',name='l_carpal_distal_phalanx_5',
                                                                 children=[
@@ -2214,7 +2285,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite l_carpal_distal_phalanx_5_tip 105'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])])])])])])]),
-                                            HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.038475003,1.2087001,-0.013785751),
+                                            HAnimJoint(DEF='hanim_r_sternoclavicular',name='r_sternoclavicular',center=(-0.038475003,1.2087001,-0.013785751),ulimit=[0,0,0],llimit=[0,0,0],
                                               children=[
                                               HAnimSegment(DEF='hanim_r_clavicle',name='r_clavicle',
                                                 children=[
@@ -2233,7 +2304,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                     children=[
                                                     TouchSensor(description='HAnimSite r_clavicale_pt 19'),
                                                     Shape(USE='HAnimSiteShape')])])]),
-                                              HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.12294001,1.191825,-0.012897001),
+                                              HAnimJoint(DEF='hanim_r_acromioclavicular',name='r_acromioclavicular',center=(-0.12294001,1.191825,-0.012897001),ulimit=[0,0,0],llimit=[0,0,0],
                                                 children=[
                                                 HAnimSegment(DEF='hanim_r_scapula',name='r_scapula',
                                                   children=[
@@ -2266,7 +2337,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                       children=[
                                                       TouchSensor(description='HAnimSite r_axilla_posterior_folds_pt 23'),
                                                       Shape(USE='HAnimSiteShape')])])]),
-                                                HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.16470002,1.1785501,-0.0032670002),
+                                                HAnimJoint(DEF='hanim_r_shoulder',name='r_shoulder',center=(-0.16470002,1.1785501,-0.0032670002),ulimit=[0,0,0],llimit=[0,0,0],
                                                   children=[
                                                   HAnimSegment(DEF='hanim_r_upperarm',name='r_upperarm',
                                                     children=[
@@ -2299,7 +2370,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                         children=[
                                                         TouchSensor(description='HAnimSite r_bideltoid_pt 97'),
                                                         Shape(USE='HAnimSiteShape')])])]),
-                                                  HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817325,0.9288,-0.0056295004),
+                                                  HAnimJoint(DEF='hanim_r_elbow',name='r_elbow',center=(-0.1817325,0.9288,-0.0056295004),ulimit=[0,0,0],llimit=[0,0,0],
                                                     children=[
                                                     HAnimSegment(DEF='hanim_r_forearm',name='r_forearm',
                                                       children=[
@@ -2322,7 +2393,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                           children=[
                                                           TouchSensor(description='HAnimSite r_olecranon_pt 68'),
                                                           Shape(USE='HAnimSiteShape')])])]),
-                                                    HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.181575,0.724275,-0.005022),
+                                                    HAnimJoint(DEF='hanim_r_radiocarpal',name='r_radiocarpal',center=(-0.181575,0.724275,-0.005022),ulimit=[0,0,0],llimit=[0,0,0],
                                                       children=[
                                                       HAnimSegment(DEF='hanim_r_carpal',name='r_carpal',
                                                         children=[
@@ -2340,7 +2411,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                             children=[
                                                             TouchSensor(description='HAnimSite r_ulnar_styloid_pt 73'),
                                                             Shape(USE='HAnimSiteShape')])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18096751,0.70605004,0.0193275),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_1',name='r_midcarpal_1',center=(-0.18096751,0.70605004,0.0193275),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_trapezium',name='r_trapezium',
                                                           children=[
@@ -2353,8 +2424,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.8327,0.0273),(0.8381,0.0441),(0.8625,0.0344),(0.8476,0.0256),(0.8625,0.0359),(0.8466,0.0257),(0.9122,0.2724),(0.904,0.2568),(0.8948,0.2599),(0.8401,0.0478),(0.8395,0.0482),(0.8319,0.0206),(0.9141,0.2788),(0.844,0.0192),(0.8432,0.0193),(0.8491,0.0466),(0.8611,0.0409),(0.8611,0.0397),(0.8814,0.2691),(0.8989,0.2764),(0.9014,0.2535),(0.9142,0.2789),(0.9026,0.2823),(0.9033,0.2821),(0.8928,0.2563),(0.8819,0.264),(0.8327,0.0273),(0.8381,0.0441),(0.8395,0.0482),(0.8401,0.0478),(0.904,0.2568),(0.9122,0.2724),(0.9141,0.2788),(0.9142,0.2789)]))),
                                                           Group(DEF='r_trapezium_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.180135,0.69255006,0.0259875),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_1',name='r_carpometacarpal_1',center=(-0.180135,0.69255006,0.0259875),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_1',name='r_metacarpal_1',
                                                             children=[
@@ -2372,7 +2444,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_metacarpal_phalanx_2_pt 78'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065251,0.67275,0.035775002),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_1',name='r_metacarpophalangeal_1',center=(-0.18065251,0.67275,0.035775002),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_1',name='r_carpal_proximal_phalanx_1',
                                                               children=[
@@ -2385,8 +2457,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8786,0.0507),(0.857,0.0621),(0.8601,0.0649),(0.867,0.0598),(0.8887,0.0786),(0.8747,0.0865),(0.8533,0.0697),(0.876,0.0783),(0.893,0.0688),(0.8992,0.0702),(0.8819,0.0483),(0.8561,0.0728),(0.8736,0.0851),(0.8532,0.0697),(0.8503,0.0646),(0.8986,0.0785),(0.897,0.0809),(0.8914,0.0813),(0.8802,0.0861),(0.8841,0.0856),(0.8821,0.0883),(0.8487,0.0595),(0.8509,0.0581),(0.8683,0.0489),(0.868,0.0507),(0.8608,0.0544),(0.8505,0.0603),(0.8455,0.0706),(0.8468,0.073),(0.8455,0.0707),(0.8437,0.0676),(0.8416,0.0639),(0.8422,0.0648),(0.8729,0.2464),(0.8482,0.2317),(0.8612,0.2211),(0.8847,0.2342),(0.8433,0.2381),(0.8632,0.2548),(0.8814,0.2316),(0.8625,0.2222),(0.8799,0.2506),(0.8891,0.243),(0.8922,0.232),(0.8922,0.232)]))),
                                                               Group(DEF='r_carpal_proximal_phalanx_1_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227251,0.654075,0.0496575),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_r_carpal_interphalangeal_1',name='r_carpal_interphalangeal_1',center=(-0.18227251,0.654075,0.0496575),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_1',name='r_carpal_distal_phalanx_1',
                                                                 children=[
@@ -2404,7 +2477,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     children=[
                                                                     TouchSensor(description='HAnimSite r_carpal_distal_phalanx_1_tip 106'),
                                                                     Shape(USE='HAnimSiteShape')])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18096751,0.70695,0.008417251),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_2',name='r_midcarpal_2',center=(-0.18096751,0.70695,0.008417251),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_trapezoid',name='r_trapezoid',
                                                           children=[
@@ -2417,8 +2490,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.813,0.0266),(0.8136,0.0488),(0.8136,0.0488),(0.8133,0.0266),(0.8111,0.0474),(0.8105,0.0283),(0.8108,0.0283),(0.8111,0.0474),(0.8141,0.0525),(0.8141,0.0525),(0.8123,0.0198),(0.8125,0.0198),(0.9273,0.2479),(0.9315,0.2698),(0.9337,0.2676),(0.9301,0.2489),(0.9262,0.2444),(0.9337,0.2762),(0.9335,0.2763),(0.8381,0.0441),(0.904,0.2568),(0.8327,0.0273),(0.9122,0.2724),(0.8401,0.0478),(0.9014,0.2535),(0.8395,0.0482),(0.9142,0.2789),(0.8319,0.0206),(0.9141,0.2788),(0.8381,0.0441),(0.8327,0.0273),(0.8319,0.0206),(0.9141,0.2788),(0.9122,0.2724),(0.904,0.2568),(0.9014,0.2535),(0.8395,0.0482)]))),
                                                           Group(DEF='r_trapezoid_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.18090001,0.6876,0.009729),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_2',name='r_carpometacarpal_2',center=(-0.18090001,0.6876,0.009729),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_2',name='r_metacarpal_2',
                                                             children=[
@@ -2431,8 +2505,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.8514,0.0953),(0.8526,0.0788),(0.846,0.0768),(0.8466,0.0958),(0.8195,0.0808),(0.8225,0.0994),(0.8225,0.0994),(0.8195,0.0808),(0.8903,0.2261),(0.8467,0.0958),(0.8381,0.0441),(0.8136,0.0488),(0.8561,0.0728),(0.8532,0.0697),(0.8381,0.0441),(0.8136,0.0488),(0.8436,0.0662),(0.8533,0.0697),(0.8503,0.0646),(0.8461,0.0998),(0.8248,0.1027),(0.8248,0.1027),(0.8462,0.0997),(0.8498,0.0994),(0.8184,0.0977),(0.8157,0.0811),(0.8157,0.0809),(0.8184,0.0977),(0.8165,0.0457),(0.8341,0.0424),(0.8341,0.0424),(0.8165,0.0457),(0.844,0.0417),(0.8554,0.0622),(0.8575,0.0659),(0.8594,0.0677),(0.8574,0.0658),(0.844,0.0417),(0.8099,0.0493),(0.8099,0.0493),(0.82,0.101),(0.82,0.101),(0.8821,0.2087),(0.8838,0.2252),(0.9098,0.1997),(0.916,0.2175),(0.8866,0.2074),(0.904,0.2568),(0.9273,0.2479),(0.8814,0.2316),(0.8847,0.2342),(0.9197,0.2166),(0.9083,0.2577),(0.925,0.2515),(0.8813,0.2388),(0.8986,0.2602),(0.931,0.2468)]))),
                                                             Group(DEF='r_metacarpal_2_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335252,0.6372,0.015075001),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_2',name='r_metacarpophalangeal_2',center=(-0.18335252,0.6372,0.015075001),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_2',name='r_carpal_proximal_phalanx_2',
                                                               children=[
@@ -2445,8 +2520,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8511,0.1006),(0.8514,0.0953),(0.8466,0.0958),(0.8466,0.1011),(0.8225,0.0994),(0.8283,0.1035),(0.9023,0.1969),(0.8225,0.0994),(0.8467,0.0958),(0.8857,0.2021),(0.8231,0.1042),(0.8931,0.1724),(0.8782,0.1769),(0.8338,0.1268),(0.8493,0.125),(0.8543,0.1273),(0.8302,0.1302),(0.8258,0.1072),(0.8236,0.1075),(0.8231,0.1042),(0.8504,0.1328),(0.8508,0.1334),(0.8781,0.1731),(0.8909,0.1692),(0.8352,0.1346),(0.8353,0.1353),(0.8228,0.0929),(0.844,0.0896),(0.8482,0.0889),(0.8441,0.0896),(0.8228,0.0929),(0.8203,0.0995),(0.8207,0.1038),(0.8212,0.1068),(0.8207,0.1037),(0.8203,0.0995),(0.8206,0.0933),(0.8205,0.0933),(0.8815,0.2034),(0.8821,0.2087),(0.9098,0.1997),(0.8866,0.2074),(0.8737,0.1777),(0.8969,0.1707),(0.9052,0.1925),(0.9074,0.1918),(0.9084,0.195),(0.876,0.171),(0.891,0.1665)]))),
                                                               Group(DEF='r_carpal_proximal_phalanx_2_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813275,0.606825,0.014184001),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_2',name='r_carpal_proximal_interphalangeal_2',center=(-0.1813275,0.606825,0.014184001),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_2',name='r_carpal_middle_phalanx_2',
                                                                 children=[
@@ -2459,8 +2535,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.8782,0.1769),(0.8543,0.1273),(0.8574,0.1518),(0.8703,0.1535),(0.8493,0.125),(0.8504,0.1318),(0.8846,0.1491),(0.8931,0.1724),(0.8349,0.1336),(0.8379,0.1515),(0.8533,0.1496),(0.8338,0.1268),(0.8302,0.1302),(0.8351,0.1545),(0.849,0.1233),(0.8336,0.1251),(0.849,0.123),(0.8335,0.1249),(0.8539,0.1573),(0.8543,0.1579),(0.8703,0.1496),(0.8822,0.146),(0.8398,0.159),(0.8399,0.1597),(0.8737,0.1777),(0.8664,0.1541),(0.8969,0.1707),(0.8878,0.1476),(0.8796,0.181),(0.8945,0.1764),(0.8684,0.1475),(0.8822,0.1433)]))),
                                                                 Group(DEF='r_carpal_middle_phalanx_2_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1802925,0.58162504,0.013385251),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_2',name='r_carpal_distal_interphalangeal_2',center=(-0.1802925,0.58162504,0.013385251),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_2',name='r_carpal_distal_phalanx_2',
                                                                   children=[
@@ -2478,7 +2555,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_carpal_distal_phalanx_2_tip 107'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.0047970004),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_3',name='r_midcarpal_3',center=(-0.18072,0.708525,-0.0047970004),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_capitate',name='r_capitate',
                                                           children=[
@@ -2491,8 +2568,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.9315,0.2698),(0.8136,0.0488),(0.7924,0.0507),(0.7911,0.0281),(0.8136,0.0488),(0.813,0.0266),(0.791,0.0281),(0.7924,0.0508),(0.7924,0.0543),(0.8143,0.0526),(0.8143,0.0526),(0.7924,0.0543),(0.9335,0.2763),(0.7903,0.0215),(0.7903,0.0215),(0.8123,0.0198),(0.7875,0.03),(0.7875,0.03),(0.7887,0.0494),(0.7887,0.0495),(0.9277,0.2691),(0.8167,0.0279),(0.8173,0.0471),(0.8173,0.0471),(0.9273,0.2479),(0.9479,0.2423),(0.9531,0.2644),(0.9318,0.2697),(0.9473,0.2389),(0.926,0.2443),(0.955,0.2707),(0.9551,0.2707),(0.9337,0.2763),(0.9563,0.262),(0.9518,0.243),(0.928,0.269),(0.924,0.2502),(0.9241,0.2502)]))),
                                                           Group(DEF='r_capitate_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.0062527503),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_3',name='r_carpometacarpal_3',center=(-0.18072,0.6858,-0.0062527503),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_3',name='r_metacarpal_3',
                                                             children=[
@@ -2510,7 +2588,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 children=[
                                                                 TouchSensor(description='HAnimSite r_metacarpal_phalanx_3 79'),
                                                                 Shape(USE='HAnimSiteShape')])])]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.18330751,0.63495,-0.00391725),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_3',name='r_metacarpophalangeal_3',center=(-0.18330751,0.63495,-0.00391725),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_3',name='r_carpal_proximal_phalanx_3',
                                                               children=[
@@ -2523,8 +2601,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.8168,0.105),(0.8225,0.0994),(0.7939,0.1016),(0.7996,0.1065),(0.9311,0.1887),(0.7939,0.1016),(0.8225,0.0994),(0.9145,0.1932),(0.794,0.107),(0.9232,0.1611),(0.908,0.1649),(0.8025,0.1324),(0.818,0.1313),(0.7986,0.1359),(0.7957,0.11),(0.7939,0.1101),(0.794,0.107),(0.8228,0.1342),(0.8186,0.1401),(0.819,0.1409),(0.9081,0.1606),(0.921,0.1574),(0.8033,0.1412),(0.8033,0.142),(0.8231,0.1042),(0.8212,0.1078),(0.8231,0.1042),(0.8236,0.1075),(0.7948,0.0956),(0.8206,0.0932),(0.8206,0.0932),(0.7948,0.0956),(0.8249,0.0987),(0.8253,0.1032),(0.8258,0.1063),(0.8253,0.1032),(0.8249,0.0987),(0.823,0.0929),(0.823,0.0929),(0.7917,0.1017),(0.7916,0.1064),(0.7918,0.1091),(0.7916,0.1063),(0.7917,0.1017),(0.7927,0.0957),(0.7927,0.0957),(0.9376,0.1925),(0.9098,0.1997),(0.927,0.1595),(0.9344,0.1846),(0.9361,0.1842),(0.9366,0.1872),(0.9035,0.1654),(0.9061,0.1582),(0.9213,0.1544),(0.9096,0.1911),(0.9084,0.195),(0.9074,0.1918)]))),
                                                               Group(DEF='r_carpal_proximal_phalanx_3_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813275,0.603225,-0.003537),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_3',name='r_carpal_proximal_interphalangeal_3',center=(-0.1813275,0.603225,-0.003537),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_3',name='r_carpal_middle_phalanx_3',
                                                                 children=[
@@ -2537,8 +2616,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.908,0.1649),(0.8228,0.1342),(0.8238,0.1612),(0.9018,0.1387),(0.818,0.1313),(0.8186,0.139),(0.9163,0.135),(0.9232,0.1611),(0.8031,0.1401),(0.8044,0.1596),(0.8199,0.1584),(0.8025,0.1324),(0.7986,0.1359),(0.8014,0.1628),(0.8179,0.1294),(0.8023,0.1305),(0.8179,0.1291),(0.8023,0.1302),(0.8199,0.1671),(0.8202,0.1672),(0.902,0.1343),(0.914,0.1313),(0.8058,0.1681),(0.8058,0.1689),(0.9035,0.1654),(0.8978,0.139),(0.927,0.1595),(0.9196,0.1336),(0.9092,0.1696),(0.9243,0.1658),(0.9003,0.1324),(0.9142,0.1283)]))),
                                                                 Group(DEF='r_carpal_middle_phalanx_3_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1802925,0.575325,-0.0037597502),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_3',name='r_carpal_distal_interphalangeal_3',center=(-0.1802925,0.575325,-0.0037597502),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_3',name='r_carpal_distal_phalanx_3',
                                                                   children=[
@@ -2561,7 +2641,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_dactylion_pt 61'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70582503,-0.025740001),
+                                                      HAnimJoint(DEF='hanim_r_midcarpal_4_5',name='r_midcarpal_4_5',center=(-0.18072,0.70582503,-0.025740001),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_hamate',name='r_hamate',
                                                           children=[
@@ -2574,8 +2654,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               texCoord=TextureCoordinate(point=[(0.7624,0.0345),(0.7525,0.0502),(0.7571,0.0508),(0.7729,0.0334),(0.7734,0.0512),(0.7924,0.0508),(0.791,0.0281),(0.9531,0.2644),(0.9665,0.2386),(0.9827,0.2362),(0.9706,0.2558),(0.9479,0.2423),(0.7736,0.0553),(0.7595,0.0549),(0.7559,0.0544),(0.7596,0.0549),(0.7736,0.0553),(0.7721,0.0268),(0.7644,0.0276),(0.7723,0.0268),(0.7938,0.0298),(0.795,0.0487),(0.9457,0.2448),(0.9501,0.2632),(0.7926,0.0543),(0.7926,0.0544),(0.7903,0.0215),(0.7903,0.0215),(0.9803,0.2531),(0.9874,0.236),(0.9479,0.2423),(0.9532,0.2644),(0.9832,0.2324),(0.9795,0.2325),(0.9656,0.2346),(0.9721,0.2624),(0.9795,0.2602),(0.9719,0.2625),(0.9502,0.2632),(0.9457,0.2447),(0.9471,0.2389),(0.9471,0.2388),(0.9551,0.2707),(0.955,0.2707)]))),
                                                           Group(DEF='r_hamate_Sites',
                                                             children=[
-                                                            Comment(' None '),],)]),
-                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625003,-0.01991925),
+                                                            Comment(' None ')
+                                                            )]),
+                                                        HAnimJoint(DEF='hanim_r_carpometacarpal_4',name='r_carpometacarpal_4',center=(-0.18072,0.68625003,-0.01991925),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_metacarpal_4',name='r_metacarpal_4',
                                                             children=[
@@ -2588,8 +2669,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.7939,0.1016),(0.7938,0.0824),(0.7694,0.0827),(0.766,0.1014),(0.7924,0.0508),(0.7734,0.0512),(0.7938,0.0824),(0.7939,0.1016),(0.766,0.1015),(0.965,0.2069),(0.7734,0.0512),(0.7924,0.0507),(0.7909,0.1057),(0.7677,0.1056),(0.7677,0.1057),(0.7909,0.1057),(0.9517,0.2441),(0.7765,0.0488),(0.7765,0.0488),(0.789,0.0484),(0.7643,0.0825),(0.7643,0.0824),(0.7614,0.1009),(0.7614,0.1009),(0.7991,0.0823),(0.7971,0.0505),(0.7971,0.0505),(0.7991,0.0824),(0.7688,0.0511),(0.7688,0.0511),(0.7994,0.1003),(0.7994,0.1003),(0.7625,0.1038),(0.7625,0.1038),(0.7972,0.1034),(0.7972,0.1034),(0.9479,0.2423),(0.9665,0.2385),(0.941,0.2114),(0.9376,0.1925),(0.9651,0.1878),(0.9665,0.2386),(0.9479,0.2423),(0.9639,0.2415),(0.9639,0.2415),(0.9517,0.244),(0.9701,0.2063),(0.9698,0.1875),(0.9358,0.2124),(0.9433,0.2434),(0.9433,0.2434),(0.9358,0.2123),(0.9711,0.2379),(0.9711,0.2379)]))),
                                                             Group(DEF='r_metacarpal_4_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.18330751,0.63405,-0.02144025),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_r_metacarpophalangeal_4',name='r_metacarpophalangeal_4',center=(-0.18330751,0.63405,-0.02144025),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_4',name='r_carpal_proximal_phalanx_4',
                                                               children=[
@@ -2602,8 +2684,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.7878,0.1071),(0.7939,0.1016),(0.766,0.1014),(0.7709,0.1068),(0.9594,0.1833),(0.766,0.1015),(0.7939,0.1016),(0.9426,0.186),(0.7648,0.1066),(0.9545,0.1568),(0.9398,0.1599),(0.771,0.1315),(0.7861,0.131),(0.767,0.1345),(0.7667,0.1094),(0.7644,0.1092),(0.7648,0.1066),(0.7904,0.1338),(0.786,0.139),(0.7863,0.1397),(0.9402,0.1559),(0.9531,0.1532),(0.7709,0.1396),(0.7709,0.1403),(0.794,0.107),(0.7917,0.1102),(0.794,0.107),(0.7939,0.1101),(0.7675,0.0958),(0.7934,0.0956),(0.7934,0.0956),(0.7675,0.0958),(0.7967,0.1011),(0.7964,0.1056),(0.7964,0.1088),(0.7964,0.1057),(0.7967,0.1011),(0.7958,0.0955),(0.7958,0.0955),(0.7633,0.1008),(0.7625,0.1056),(0.7622,0.1084),(0.7625,0.1055),(0.7633,0.1008),(0.765,0.0957),(0.765,0.0957),(0.9651,0.1878),(0.9376,0.1925),(0.9583,0.1554),(0.963,0.1801),(0.9654,0.1799),(0.9654,0.1826),(0.9354,0.1602),(0.9385,0.1536),(0.9536,0.1504),(0.9383,0.1837),(0.9366,0.1872),(0.9361,0.1842)]))),
                                                               Group(DEF='r_carpal_proximal_phalanx_4_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813275,0.6066,-0.020646),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_4',name='r_carpal_proximal_interphalangeal_4',center=(-0.1813275,0.6066,-0.020646),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_4',name='r_carpal_middle_phalanx_4',
                                                                 children=[
@@ -2616,8 +2699,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                     texCoord=TextureCoordinate(point=[(0.9398,0.1599),(0.7904,0.1338),(0.7888,0.1598),(0.9363,0.1341),(0.7861,0.131),(0.7859,0.138),(0.9502,0.1313),(0.9545,0.1568),(0.7712,0.1385),(0.7707,0.1575),(0.7854,0.1571),(0.771,0.1315),(0.767,0.1345),(0.7676,0.1604),(0.786,0.1292),(0.7713,0.1297),(0.786,0.129),(0.7713,0.1294),(0.7847,0.165),(0.7849,0.1652),(0.9369,0.1301),(0.9483,0.1278),(0.7712,0.1654),(0.7712,0.1661),(0.9354,0.1602),(0.9325,0.1343),(0.9583,0.1554),(0.9533,0.1301),(0.9406,0.1642),(0.9551,0.1612),(0.9355,0.1283),(0.9488,0.1251)]))),
                                                                 Group(DEF='r_carpal_middle_phalanx_4_Sites',
                                                                   children=[
-                                                                  Comment(' None '),],)]),
-                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1802925,0.580725,-0.019777501),
+                                                                  Comment(' None ')
+                                                                  )]),
+                                                              HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_4',name='r_carpal_distal_interphalangeal_4',center=(-0.1802925,0.580725,-0.019777501),ulimit=[0,0,0],llimit=[0,0,0],
                                                                 children=[
                                                                 HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_4',name='r_carpal_distal_phalanx_4',
                                                                   children=[
@@ -2635,7 +2719,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                       children=[
                                                                       TouchSensor(description='HAnimSite r_carpal_distal_phalanx_4_tip 109'),
                                                                       Shape(USE='HAnimSiteShape')])])])])])])])]),
-                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827504,-0.032782502),
+                                                      HAnimJoint(DEF='hanim_r_carpometacarpal_5',name='r_carpometacarpal_5',center=(-0.18126,0.68827504,-0.032782502),ulimit=[0,0,0],llimit=[0,0,0],
                                                         children=[
                                                         HAnimSegment(DEF='hanim_r_metacarpal_5',name='r_metacarpal_5',
                                                           children=[
@@ -2653,7 +2737,7 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                               children=[
                                                               TouchSensor(description='HAnimSite r_metacarpal_phalanx_5_pt 80'),
                                                               Shape(USE='HAnimSiteShape')])])]),
-                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0370575),
+                                                        HAnimJoint(DEF='hanim_r_metacarpophalangeal_5',name='r_metacarpophalangeal_5',center=(-0.18297,0.6381,-0.0370575),ulimit=[0,0,0],llimit=[0,0,0],
                                                           children=[
                                                           HAnimSegment(DEF='hanim_r_carpal_proximal_phalanx_5',name='r_carpal_proximal_phalanx_5',
                                                             children=[
@@ -2666,8 +2750,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                 texCoord=TextureCoordinate(point=[(0.7578,0.1276),(0.7543,0.1247),(0.753,0.131),(0.7531,0.1316),(0.9854,0.1598),(0.9725,0.1615),(0.9734,0.1584),(0.9844,0.1569),(0.7413,0.123),(0.7403,0.1293),(0.7378,0.1249),(0.7401,0.1299),(0.7405,0.104),(0.7443,0.1047),(0.9859,0.1809),(0.7455,0.0995),(0.766,0.1015),(0.9713,0.1822),(0.7589,0.1059),(0.7648,0.1066),(0.766,0.1014),(0.7622,0.1091),(0.7648,0.1066),(0.7644,0.1092),(0.7455,0.0995),(0.7415,0.0989),(0.7664,0.0954),(0.7667,0.0954),(0.7485,0.0932),(0.7449,0.0928),(0.7484,0.0932),(0.7683,0.1016),(0.7686,0.0957),(0.7683,0.0956),(0.7679,0.1015),(0.7671,0.1055),(0.7666,0.1084),(0.7674,0.1056),(0.9687,0.1615),(0.9723,0.1564),(0.9888,0.1589),(0.9852,0.1547),(0.9898,0.1809),(0.9856,0.1862),(0.9651,0.1878),(0.9675,0.1796),(0.9654,0.1826),(0.9654,0.1799),(0.9897,0.1861)]))),
                                                             Group(DEF='r_carpal_proximal_phalanx_5_Sites',
                                                               children=[
-                                                              Comment(' None '),],)]),
-                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.18130499,0.62100005,-0.037147503),
+                                                              Comment(' None ')
+                                                              )]),
+                                                          HAnimJoint(DEF='hanim_r_carpal_proximal_interphalangeal_5',name='r_carpal_proximal_interphalangeal_5',center=(-0.18130499,0.62100005,-0.037147503),ulimit=[0,0,0],llimit=[0,0,0],
                                                             children=[
                                                             HAnimSegment(DEF='hanim_r_carpal_middle_phalanx_5',name='r_carpal_middle_phalanx_5',
                                                               children=[
@@ -2680,8 +2765,9 @@ newModel=X3D(profile='Immersive',version='4.0',
                                                                   texCoord=TextureCoordinate(point=[(0.9725,0.1615),(0.7578,0.1276),(0.7541,0.1444),(0.9727,0.1441),(0.7543,0.1247),(0.7533,0.1302),(0.9851,0.1424),(0.9854,0.1598),(0.7404,0.1285),(0.7384,0.1404),(0.7513,0.1418),(0.7413,0.123),(0.7378,0.1249),(0.7355,0.1424),(0.7545,0.1231),(0.7416,0.1216),(0.7546,0.1229),(0.7417,0.1214),(0.7496,0.1479),(0.7498,0.1481),(0.9738,0.1409),(0.9839,0.1396),(0.738,0.1467),(0.7381,0.1469),(0.9687,0.1616),(0.9694,0.1441),(0.9888,0.1589),(0.988,0.1416),(0.9725,0.165),(0.9854,0.1633),(0.9728,0.1395),(0.9846,0.1375)]))),
                                                               Group(DEF='r_carpal_middle_phalanx_5_Sites',
                                                                 children=[
-                                                                Comment(' None '),],)]),
-                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045002,0.602325,-0.0369675),
+                                                                Comment(' None ')
+                                                                )]),
+                                                            HAnimJoint(DEF='hanim_r_carpal_distal_interphalangeal_5',name='r_carpal_distal_interphalangeal_5',center=(-0.18045002,0.602325,-0.0369675),ulimit=[0,0,0],llimit=[0,0,0],
                                                               children=[
                                                               HAnimSegment(DEF='hanim_r_carpal_distal_phalanx_5',name='r_carpal_distal_phalanx_5',
                                                                 children=[
@@ -3962,7 +4048,6 @@ newModel=X3D(profile='Immersive',version='4.0',
     ROUTE(fromField='touchTime',fromNode='Stop_Touch',toField='set_stopTime',toNode='KickTimer'),
     ROUTE(fromField='touchTime',fromNode='Stop_Touch',toField='set_startTime',toNode='StopTimer')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

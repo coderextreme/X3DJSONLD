@@ -121,10 +121,9 @@ public class flowers2
                       .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
                       .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
                       .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
-                .addComments(new String[] {"",
-"				  <IndexedFaceSet DEF=\"Orbit\">",
-"				    <Coordinate DEF=\"OrbitCoordinates\"/>",
-"				  </IndexedFaceSet>"})
+                .addComments(" <IndexedFaceSet DEF=\"Orbit\"> ")
+                .addComments(" <Coordinate DEF=\"OrbitCoordinates\"/> ")
+                .addComments(" </IndexedFaceSet> ")
                 .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setCcw(false).setConvex(false).setCoordIndex(new int[] {0,1,2,-1})
                   .setCoord(new Coordinate("OrbitCoordinates").setPoint(new MFVec3f(new double[] {0.0,0.0,1.0,0.0,1.0,0.0,1.0,0.0,0.0}))))))
             .addChild(new Script("OrbitScript").setSourceCode("""

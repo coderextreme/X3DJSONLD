@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -32,7 +32,7 @@ meta6.content = "15 December 2014"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "Mon, 09 Feb 2026 12:22:57 GMT"
+meta7.content = "27 November 2015"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -50,402 +50,432 @@ meta10.name = "identifier"
 meta10.content = "http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"
 
 head1.children.append(meta10)
+meta11 = x3d.meta()
+meta11.name = "generator"
+meta11.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta11)
+meta12 = x3d.meta()
+meta12.name = "license"
+meta12.content = "../license.html"
+
+head1.children.append(meta12)
 
 X3D0.head = head1
-Scene11 = x3d.Scene()
-ProtoDeclare12 = x3d.ProtoDeclare()
-ProtoDeclare12.name = "ArchPrototype"
-ProtoDeclare12.appinfo = "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."
-ProtoInterface13 = x3d.ProtoInterface()
-field14 = x3d.field()
-field14.accessType = "inputOutput"
-field14.type = "SFColor"
-field14.name = "diffuseColor"
-field14.value = [0.2,0.8,0.8]
-field14.appinfo = "color of arch"
-
-ProtoInterface13.field.append(field14)
-field15 = x3d.field()
-field15.accessType = "inputOutput"
-field15.type = "SFColor"
-field15.name = "emissiveColor"
-field15.value = [0.2,0.8,0.8]
-field15.appinfo = "color of arch"
-
-ProtoInterface13.field.append(field15)
+Scene13 = x3d.Scene()
+ProtoDeclare14 = x3d.ProtoDeclare()
+ProtoDeclare14.name = "ArchPrototype"
+ProtoDeclare14.appinfo = "Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."
+ProtoInterface15 = x3d.ProtoInterface()
+ProtoInterface15.children.append(x3d.Comment("""COLOR OF ARCH"""))
+ProtoInterface15.children.append(x3d.Comment("""INPUT PARAMETERS"""))
+ProtoInterface15.children.append(x3d.Comment("""General parameters: measures in meters"""))
+ProtoInterface15.children.append(x3d.Comment("""Parameters to create to create shapes related to arch: put true to apply"""))
 field16 = x3d.field()
-field16.accessType = "initializeOnly"
-field16.type = "SFFloat"
-field16.name = "clearSpanWidth"
-field16.value = 4
-field16.appinfo = "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"
+field16.name = "diffuseColor"
+field16.accessType = "inputOutput"
+field16.appinfo = "color of arch"
+field16.type = "SFColor"
+field16.value = [0.2,0.8,0.8]
 
-ProtoInterface13.field.append(field16)
+ProtoInterface15.field.append(field16)
 field17 = x3d.field()
-field17.accessType = "initializeOnly"
-field17.type = "SFFloat"
-field17.name = "riseHeight"
-field17.value = 2
-field17.appinfo = "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"
+field17.name = "emissiveColor"
+field17.accessType = "inputOutput"
+field17.appinfo = "color of arch"
+field17.type = "SFColor"
+field17.value = [0.2,0.8,0.8]
 
-ProtoInterface13.field.append(field17)
+ProtoInterface15.field.append(field17)
 field18 = x3d.field()
+field18.name = "clearSpanWidth"
 field18.accessType = "initializeOnly"
+field18.appinfo = "clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"
 field18.type = "SFFloat"
-field18.name = "depth"
-field18.value = 3
-field18.appinfo = "depth"
+field18.value = 4
 
-ProtoInterface13.field.append(field18)
+ProtoInterface15.field.append(field18)
 field19 = x3d.field()
+field19.name = "riseHeight"
 field19.accessType = "initializeOnly"
+field19.appinfo = "riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"
 field19.type = "SFFloat"
-field19.name = "topAbutmentHeight"
-field19.value = 0.5
-field19.appinfo = "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"
+field19.value = 2
 
-ProtoInterface13.field.append(field19)
+ProtoInterface15.field.append(field19)
 field20 = x3d.field()
+field20.name = "depth"
 field20.accessType = "initializeOnly"
+field20.appinfo = "depth"
 field20.type = "SFFloat"
-field20.name = "pierWidth"
-field20.value = 0.5
-field20.appinfo = "pierWidth:pierWidtht=0 means no pierWidth"
+field20.value = 3
 
-ProtoInterface13.field.append(field20)
+ProtoInterface15.field.append(field20)
 field21 = x3d.field()
+field21.name = "topAbutmentHeight"
 field21.accessType = "initializeOnly"
+field21.appinfo = "topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"
 field21.type = "SFFloat"
-field21.name = "pierHeight"
-field21.value = 1
-field21.appinfo = "pierHeight: pierHeight=0 means no pierHeight"
+field21.value = 0.5
 
-ProtoInterface13.field.append(field21)
+ProtoInterface15.field.append(field21)
 field22 = x3d.field()
+field22.name = "pierWidth"
 field22.accessType = "initializeOnly"
-field22.type = "SFBool"
-field22.name = "archHalf"
-field22.appinfo = "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width"
+field22.appinfo = "pierWidth:pierWidtht=0 means no pierWidth"
+field22.type = "SFFloat"
+field22.value = 0.5
 
-ProtoInterface13.field.append(field22)
+ProtoInterface15.field.append(field22)
 field23 = x3d.field()
+field23.name = "pierHeight"
 field23.accessType = "initializeOnly"
+field23.appinfo = "pierHeight: pierHeight=0 means no pierHeight"
 field23.type = "SFFloat"
-field23.name = "archHalfExtensionWidth"
-field23.appinfo = "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."
+field23.value = 1
 
-ProtoInterface13.field.append(field23)
+ProtoInterface15.field.append(field23)
 field24 = x3d.field()
+field24.name = "archHalf"
 field24.accessType = "initializeOnly"
+field24.appinfo = "archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width"
 field24.type = "SFBool"
-field24.name = "onlyIntrados"
-field24.appinfo = "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true."
+field24.value = False
 
-ProtoInterface13.field.append(field24)
+ProtoInterface15.field.append(field24)
 field25 = x3d.field()
+field25.name = "archHalfExtensionWidth"
 field25.accessType = "initializeOnly"
-field25.type = "SFBool"
-field25.name = "archFilled"
-field25.appinfo = "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose."
+field25.appinfo = "archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."
+field25.type = "SFFloat"
+field25.value = 0
 
-ProtoInterface13.field.append(field25)
+ProtoInterface15.field.append(field25)
 field26 = x3d.field()
+field26.name = "onlyIntrados"
 field26.accessType = "initializeOnly"
+field26.appinfo = "onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true."
 field26.type = "SFBool"
-field26.name = "archHalfFilled"
-field26.appinfo = "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width."
+field26.value = False
 
-ProtoInterface13.field.append(field26)
+ProtoInterface15.field.append(field26)
 field27 = x3d.field()
+field27.name = "archFilled"
 field27.accessType = "initializeOnly"
+field27.appinfo = "archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose."
 field27.type = "SFBool"
-field27.name = "lintel"
-field27.appinfo = "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true."
+field27.value = False
 
-ProtoInterface13.field.append(field27)
+ProtoInterface15.field.append(field27)
+field28 = x3d.field()
+field28.name = "archHalfFilled"
+field28.accessType = "initializeOnly"
+field28.appinfo = "archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width."
+field28.type = "SFBool"
+field28.value = False
 
-ProtoDeclare12.ProtoInterface = ProtoInterface13
-ProtoBody28 = x3d.ProtoBody()
-Transform29 = x3d.Transform(DEF="ArchTransform")
-Shape30 = x3d.Shape(DEF="Arch")
-Appearance31 = x3d.Appearance()
-Material32 = x3d.Material(DEF="MaterialNode")
-IS33 = x3d.IS()
-connect34 = x3d.connect()
-connect34.nodeField = "diffuseColor"
-connect34.protoField = "diffuseColor"
+ProtoInterface15.field.append(field28)
+field29 = x3d.field()
+field29.name = "lintel"
+field29.accessType = "initializeOnly"
+field29.appinfo = "lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true."
+field29.type = "SFBool"
+field29.value = False
 
-IS33.connect.append(connect34)
-connect35 = x3d.connect()
-connect35.nodeField = "emissiveColor"
-connect35.protoField = "emissiveColor"
+ProtoInterface15.field.append(field29)
 
-IS33.connect.append(connect35)
+ProtoDeclare14.ProtoInterface = ProtoInterface15
+ProtoBody30 = x3d.ProtoBody()
+ProtoBody30.children.append(x3d.Comment("""First node determines node type of this prototype"""))
+ProtoBody30.children.append(x3d.Comment("""IndexedFaceset creates arch"""))
+Transform31 = x3d.Transform(DEF="ArchTransform")
+Shape32 = x3d.Shape(DEF="Arch")
+Shape32.children.append(x3d.Comment("""note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"""))
+IndexedFaceSet33 = x3d.IndexedFaceSet(DEF="ArchIndex")
+IndexedFaceSet33.convex = False
+IndexedFaceSet33.solid = False
+Coordinate34 = x3d.Coordinate(DEF="ArchChord")
 
-Material32.IS = IS33
+IndexedFaceSet33.coord = Coordinate34
 
-Appearance31.material = Material32
+Shape32.geometry = IndexedFaceSet33
+Appearance35 = x3d.Appearance()
+Material36 = x3d.Material(DEF="MaterialNode")
+IS37 = x3d.IS()
+connect38 = x3d.connect()
+connect38.nodeField = "emissiveColor"
+connect38.protoField = "emissiveColor"
 
-Shape30.appearance = Appearance31
-IndexedFaceSet36 = x3d.IndexedFaceSet(DEF="ArchIndex")
-IndexedFaceSet36.solid = False
-IndexedFaceSet36.convex = False
-Coordinate37 = x3d.Coordinate(DEF="ArchChord")
+IS37.connect.append(connect38)
+connect39 = x3d.connect()
+connect39.nodeField = "diffuseColor"
+connect39.protoField = "diffuseColor"
 
-IndexedFaceSet36.coord = Coordinate37
+IS37.connect.append(connect39)
 
-Shape30.geometry = IndexedFaceSet36
+Material36.IS = IS37
 
-Transform29.children.append(Shape30)
+Appearance35.material = Material36
 
-ProtoBody28.children.append(Transform29)
-Script38 = x3d.Script(DEF="ArchPrototypeScript")
-Script38.url = ["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]
-field39 = x3d.field()
-field39.accessType = "initializeOnly"
-field39.type = "SFFloat"
-field39.name = "clearSpanWidth"
-field39.appinfo = "user or default input for clearSpanWidth parameter"
+Shape32.appearance = Appearance35
 
-Script38.field.append(field39)
-field40 = x3d.field()
-field40.accessType = "initializeOnly"
-field40.type = "SFFloat"
-field40.name = "riseHeight"
-field40.appinfo = "user or default input for riseHeight parameter"
+Transform31.children.append(Shape32)
 
-Script38.field.append(field40)
+ProtoBody30.children.append(Transform31)
+ProtoBody30.children.append(x3d.Comment("""Subsequent nodes do not render, but still must be a valid X3D subgraph"""))
+ProtoBody30.children.append(x3d.Comment("""This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs"""))
+Script40 = x3d.Script(DEF="ArchPrototypeScript")
+Script40.url = ["../node/ArchPrototypeScript.js","https://coderextreme.net/X3DJSONLD/src/main/node/ArchPrototypeScript.js"]
+Script40.children.append(x3d.Comment("""INPUT PARAMETERS"""))
+Script40.children.append(x3d.Comment("""General parameters"""))
+Script40.children.append(x3d.Comment("""Parameters to create to create shapes related to arch: put true to apply"""))
+Script40.children.append(x3d.Comment("""OUTPUT PARAMETERS"""))
 field41 = x3d.field()
+field41.name = "clearSpanWidth"
 field41.accessType = "initializeOnly"
+field41.appinfo = "user or default input for clearSpanWidth parameter"
 field41.type = "SFFloat"
-field41.name = "depth"
-field41.appinfo = "user or default input for depth parameter"
 
-Script38.field.append(field41)
+Script40.field.append(field41)
 field42 = x3d.field()
+field42.name = "riseHeight"
 field42.accessType = "initializeOnly"
+field42.appinfo = "user or default input for riseHeight parameter"
 field42.type = "SFFloat"
-field42.name = "topAbutmentHeight"
-field42.appinfo = "user or default input for topAbutmentHeight parameter"
 
-Script38.field.append(field42)
+Script40.field.append(field42)
 field43 = x3d.field()
+field43.name = "depth"
 field43.accessType = "initializeOnly"
+field43.appinfo = "user or default input for depth parameter"
 field43.type = "SFFloat"
-field43.name = "pierWidth"
-field43.appinfo = "user or default input for pierWidth parameter"
 
-Script38.field.append(field43)
+Script40.field.append(field43)
 field44 = x3d.field()
+field44.name = "topAbutmentHeight"
 field44.accessType = "initializeOnly"
+field44.appinfo = "user or default input for topAbutmentHeight parameter"
 field44.type = "SFFloat"
-field44.name = "pierHeight"
-field44.appinfo = "user or default input for pierHeight parameter"
 
-Script38.field.append(field44)
+Script40.field.append(field44)
 field45 = x3d.field()
+field45.name = "pierWidth"
 field45.accessType = "initializeOnly"
-field45.type = "SFBool"
-field45.name = "archHalf"
-field45.appinfo = "user or default input for archHalf parameter"
+field45.appinfo = "user or default input for pierWidth parameter"
+field45.type = "SFFloat"
 
-Script38.field.append(field45)
+Script40.field.append(field45)
 field46 = x3d.field()
+field46.name = "pierHeight"
 field46.accessType = "initializeOnly"
+field46.appinfo = "user or default input for pierHeight parameter"
 field46.type = "SFFloat"
-field46.name = "archHalfExtensionWidth"
-field46.appinfo = "user or default input for archHalfExtensionWidth parameter"
 
-Script38.field.append(field46)
+Script40.field.append(field46)
 field47 = x3d.field()
+field47.name = "archHalf"
 field47.accessType = "initializeOnly"
+field47.appinfo = "user or default input for archHalf parameter"
 field47.type = "SFBool"
-field47.name = "onlyIntrados"
-field47.appinfo = "user or default input for onlyIntrados parameter"
 
-Script38.field.append(field47)
+Script40.field.append(field47)
 field48 = x3d.field()
+field48.name = "archHalfExtensionWidth"
 field48.accessType = "initializeOnly"
-field48.type = "SFBool"
-field48.name = "archFilled"
-field48.appinfo = "user or default input for archFilled parameter"
+field48.appinfo = "user or default input for archHalfExtensionWidth parameter"
+field48.type = "SFFloat"
 
-Script38.field.append(field48)
+Script40.field.append(field48)
 field49 = x3d.field()
+field49.name = "onlyIntrados"
 field49.accessType = "initializeOnly"
+field49.appinfo = "user or default input for onlyIntrados parameter"
 field49.type = "SFBool"
-field49.name = "archHalfFilled"
-field49.appinfo = "user or default input for archHalfFilled parameter"
 
-Script38.field.append(field49)
+Script40.field.append(field49)
 field50 = x3d.field()
+field50.name = "archFilled"
 field50.accessType = "initializeOnly"
+field50.appinfo = "user or default input for archFilled parameter"
 field50.type = "SFBool"
-field50.name = "lintel"
-field50.appinfo = "user or default input for lintel parameter"
 
-Script38.field.append(field50)
+Script40.field.append(field50)
 field51 = x3d.field()
-field51.accessType = "outputOnly"
-field51.type = "SFVec3f"
-field51.name = "computedScale"
-field51.appinfo = "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"
+field51.name = "archHalfFilled"
+field51.accessType = "initializeOnly"
+field51.appinfo = "user or default input for archHalfFilled parameter"
+field51.type = "SFBool"
 
-Script38.field.append(field51)
+Script40.field.append(field51)
 field52 = x3d.field()
-field52.accessType = "outputOnly"
-field52.type = "MFVec3f"
-field52.name = "pointOut"
-field52.appinfo = "send computed points to the Coordinate node"
+field52.name = "lintel"
+field52.accessType = "initializeOnly"
+field52.appinfo = "user or default input for lintel parameter"
+field52.type = "SFBool"
 
-Script38.field.append(field52)
+Script40.field.append(field52)
 field53 = x3d.field()
+field53.name = "computedScale"
 field53.accessType = "outputOnly"
-field53.type = "MFInt32"
-field53.name = "indexOut"
-field53.appinfo = "send computed indices to the IndexedFaceSet node"
+field53.appinfo = "computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"
+field53.type = "SFVec3f"
 
-Script38.field.append(field53)
-IS54 = x3d.IS()
-connect55 = x3d.connect()
-connect55.nodeField = "clearSpanWidth"
-connect55.protoField = "clearSpanWidth"
+Script40.field.append(field53)
+field54 = x3d.field()
+field54.name = "pointOut"
+field54.accessType = "outputOnly"
+field54.appinfo = "send computed points to the Coordinate node"
+field54.type = "MFVec3f"
 
-IS54.connect.append(connect55)
-connect56 = x3d.connect()
-connect56.nodeField = "riseHeight"
-connect56.protoField = "riseHeight"
+Script40.field.append(field54)
+field55 = x3d.field()
+field55.name = "indexOut"
+field55.accessType = "outputOnly"
+field55.appinfo = "send computed indices to the IndexedFaceSet node"
+field55.type = "MFInt32"
 
-IS54.connect.append(connect56)
+Script40.field.append(field55)
+IS56 = x3d.IS()
 connect57 = x3d.connect()
-connect57.nodeField = "depth"
-connect57.protoField = "depth"
+connect57.nodeField = "clearSpanWidth"
+connect57.protoField = "clearSpanWidth"
 
-IS54.connect.append(connect57)
+IS56.connect.append(connect57)
 connect58 = x3d.connect()
-connect58.nodeField = "topAbutmentHeight"
-connect58.protoField = "topAbutmentHeight"
+connect58.nodeField = "riseHeight"
+connect58.protoField = "riseHeight"
 
-IS54.connect.append(connect58)
+IS56.connect.append(connect58)
 connect59 = x3d.connect()
-connect59.nodeField = "pierWidth"
-connect59.protoField = "pierWidth"
+connect59.nodeField = "depth"
+connect59.protoField = "depth"
 
-IS54.connect.append(connect59)
+IS56.connect.append(connect59)
 connect60 = x3d.connect()
-connect60.nodeField = "pierHeight"
-connect60.protoField = "pierHeight"
+connect60.nodeField = "pierWidth"
+connect60.protoField = "pierWidth"
 
-IS54.connect.append(connect60)
+IS56.connect.append(connect60)
 connect61 = x3d.connect()
-connect61.nodeField = "archHalf"
-connect61.protoField = "archHalf"
+connect61.nodeField = "topAbutmentHeight"
+connect61.protoField = "topAbutmentHeight"
 
-IS54.connect.append(connect61)
+IS56.connect.append(connect61)
 connect62 = x3d.connect()
-connect62.nodeField = "archHalfExtensionWidth"
-connect62.protoField = "archHalfExtensionWidth"
+connect62.nodeField = "pierHeight"
+connect62.protoField = "pierHeight"
 
-IS54.connect.append(connect62)
+IS56.connect.append(connect62)
 connect63 = x3d.connect()
-connect63.nodeField = "onlyIntrados"
-connect63.protoField = "onlyIntrados"
+connect63.nodeField = "archHalf"
+connect63.protoField = "archHalf"
 
-IS54.connect.append(connect63)
+IS56.connect.append(connect63)
 connect64 = x3d.connect()
-connect64.nodeField = "archFilled"
-connect64.protoField = "archFilled"
+connect64.nodeField = "archHalfExtensionWidth"
+connect64.protoField = "archHalfExtensionWidth"
 
-IS54.connect.append(connect64)
+IS56.connect.append(connect64)
 connect65 = x3d.connect()
-connect65.nodeField = "archHalfFilled"
-connect65.protoField = "archHalfFilled"
+connect65.nodeField = "onlyIntrados"
+connect65.protoField = "onlyIntrados"
 
-IS54.connect.append(connect65)
+IS56.connect.append(connect65)
 connect66 = x3d.connect()
-connect66.nodeField = "lintel"
-connect66.protoField = "lintel"
+connect66.nodeField = "archFilled"
+connect66.protoField = "archFilled"
 
-IS54.connect.append(connect66)
+IS56.connect.append(connect66)
+connect67 = x3d.connect()
+connect67.nodeField = "archHalfFilled"
+connect67.protoField = "archHalfFilled"
 
-Script38.IS = IS54
+IS56.connect.append(connect67)
+connect68 = x3d.connect()
+connect68.nodeField = "lintel"
+connect68.protoField = "lintel"
 
-ProtoBody28.children.append(Script38)
-ROUTE67 = x3d.ROUTE()
-ROUTE67.fromNode = "ArchPrototypeScript"
-ROUTE67.fromField = "computedScale"
-ROUTE67.toNode = "ArchTransform"
-ROUTE67.toField = "set_scale"
+IS56.connect.append(connect68)
 
-ProtoBody28.children.append(ROUTE67)
-ROUTE68 = x3d.ROUTE()
-ROUTE68.fromNode = "ArchPrototypeScript"
-ROUTE68.fromField = "pointOut"
-ROUTE68.toNode = "ArchChord"
-ROUTE68.toField = "set_point"
+Script40.IS = IS56
 
-ProtoBody28.children.append(ROUTE68)
+ProtoBody30.children.append(Script40)
 ROUTE69 = x3d.ROUTE()
+ROUTE69.fromField = "computedScale"
 ROUTE69.fromNode = "ArchPrototypeScript"
-ROUTE69.fromField = "indexOut"
-ROUTE69.toNode = "ArchIndex"
-ROUTE69.toField = "set_coordIndex"
+ROUTE69.toField = "scale"
+ROUTE69.toNode = "ArchTransform"
 
-ProtoBody28.children.append(ROUTE69)
+ProtoBody30.children.append(ROUTE69)
+ROUTE70 = x3d.ROUTE()
+ROUTE70.fromField = "pointOut"
+ROUTE70.fromNode = "ArchPrototypeScript"
+ROUTE70.toField = "point"
+ROUTE70.toNode = "ArchChord"
 
-ProtoDeclare12.ProtoBody = ProtoBody28
+ProtoBody30.children.append(ROUTE70)
+ROUTE71 = x3d.ROUTE()
+ROUTE71.fromField = "indexOut"
+ROUTE71.fromNode = "ArchPrototypeScript"
+ROUTE71.toField = "set_coordIndex"
+ROUTE71.toNode = "ArchIndex"
 
-Scene11.children.append(ProtoDeclare12)
-ProtoInstance70 = x3d.ProtoInstance(DEF="ArchInstance")
-ProtoInstance70.name = "ArchPrototype"
-fieldValue71 = x3d.fieldValue()
-fieldValue71.name = "diffuseColor"
-fieldValue71.value = "0.5 0.3 0.6"
+ProtoBody30.children.append(ROUTE71)
 
-ProtoInstance70.fieldValue.append(fieldValue71)
-fieldValue72 = x3d.fieldValue()
-fieldValue72.name = "emissiveColor"
-fieldValue72.value = "0.5 0.3 0.6"
+ProtoDeclare14.ProtoBody = ProtoBody30
 
-ProtoInstance70.fieldValue.append(fieldValue72)
+Scene13.children.append(ProtoDeclare14)
+ProtoInstance72 = x3d.ProtoInstance(DEF="ArchInstance")
+ProtoInstance72.name = "ArchPrototype"
 fieldValue73 = x3d.fieldValue()
-fieldValue73.name = "clearSpanWidth"
-fieldValue73.value = "5"
+fieldValue73.name = "diffuseColor"
+fieldValue73.value = "0.5 0.3 0.6"
 
-ProtoInstance70.fieldValue.append(fieldValue73)
+ProtoInstance72.fieldValue.append(fieldValue73)
 fieldValue74 = x3d.fieldValue()
-fieldValue74.name = "riseHeight"
-fieldValue74.value = "2.5"
+fieldValue74.name = "emissiveColor"
+fieldValue74.value = "0.5 0.3 0.6"
 
-ProtoInstance70.fieldValue.append(fieldValue74)
+ProtoInstance72.fieldValue.append(fieldValue74)
 fieldValue75 = x3d.fieldValue()
-fieldValue75.name = "depth"
-fieldValue75.value = "2"
+fieldValue75.name = "clearSpanWidth"
+fieldValue75.value = "5"
 
-ProtoInstance70.fieldValue.append(fieldValue75)
+ProtoInstance72.fieldValue.append(fieldValue75)
 fieldValue76 = x3d.fieldValue()
-fieldValue76.name = "topAbutmentHeight"
-fieldValue76.value = "0.6"
+fieldValue76.name = "riseHeight"
+fieldValue76.value = "2.5"
 
-ProtoInstance70.fieldValue.append(fieldValue76)
+ProtoInstance72.fieldValue.append(fieldValue76)
 fieldValue77 = x3d.fieldValue()
-fieldValue77.name = "pierWidth"
-fieldValue77.value = "1"
+fieldValue77.name = "depth"
+fieldValue77.value = "2"
 
-ProtoInstance70.fieldValue.append(fieldValue77)
+ProtoInstance72.fieldValue.append(fieldValue77)
 fieldValue78 = x3d.fieldValue()
-fieldValue78.name = "pierHeight"
-fieldValue78.value = "2"
+fieldValue78.name = "topAbutmentHeight"
+fieldValue78.value = "0.6"
 
-ProtoInstance70.fieldValue.append(fieldValue78)
+ProtoInstance72.fieldValue.append(fieldValue78)
+fieldValue79 = x3d.fieldValue()
+fieldValue79.name = "pierWidth"
+fieldValue79.value = "1"
 
-Scene11.children.append(ProtoInstance70)
-Inline79 = x3d.Inline(DEF="CoordinateAxes")
-Inline79.url = ["../data/CoordinateAxes.x3d"]
+ProtoInstance72.fieldValue.append(fieldValue79)
+fieldValue80 = x3d.fieldValue()
+fieldValue80.name = "pierHeight"
+fieldValue80.value = "2"
 
-Scene11.children.append(Inline79)
+ProtoInstance72.fieldValue.append(fieldValue80)
 
-X3D0.Scene = Scene11
+Scene13.children.append(ProtoInstance72)
+Scene13.children.append(x3d.Comment("""Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)"""))
+Inline81 = x3d.Inline(DEF="CoordinateAxes")
+Inline81.url = ["../data/CoordinateAxes.x3d"]
+
+Scene13.children.append(Inline81)
+
+X3D0.Scene = Scene13
 f = open("../data/ArchPrototype.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

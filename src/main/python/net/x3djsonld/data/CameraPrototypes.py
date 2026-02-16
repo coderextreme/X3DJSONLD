@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -65,8 +61,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(accessType='inputOutput',appinfo='Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]',name='nearClipPlane',type='SFFloat',value=0.25),
         field(accessType='inputOutput',appinfo='Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit',name='farClipPlane',type='SFFloat',value=0.0),
         field(accessType='inputOutput',appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes',name='shots',type='MFNode',
-          children=[
-          Comment(' initialization nodes (if any) go here '),],),
+          # initialization nodes (if any) go here
+          ),
         field(accessType='inputOutput',appinfo='Whether camera headlight is on or off',name='headlight',type='SFBool',value=True),
         field(accessType='inputOutput',appinfo='Camera headlight color',name='headlightColor',type='SFColor',value=(1,1,1)),
         field(accessType='inputOutput',appinfo='Camera headlight intensity',name='headlightIntensity',type='SFFloat',value=1),
@@ -78,8 +74,8 @@ newModel=X3D(profile='Immersive',version='4.0',
         field(accessType='outputOnly',appinfo='Mark start/stop with true/false output respectively useful to trigger external animations',name='isActive',type='SFBool'),
         field(accessType='outputOnly',appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations',name='totalDuration',type='SFTime'),
         field(accessType='inputOutput',appinfo='OfflineRender node',name='offlineRender',type='SFNode',
-          children=[
-          Comment(' initialization node (if any) goes here '),],),
+          # initialization node (if any) goes here
+          ),
         field(accessType='initializeOnly',appinfo='enable console output to trace script computations and prototype progress',name='traceEnabled',type='SFBool',value=False)]),
       ProtoBody=ProtoBody(
         children=[
@@ -99,13 +95,11 @@ newModel=X3D(profile='Immersive',version='4.0',
             connect=[
             connect(nodeField='set_bind',protoField='set_bind'),
             # No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.
-
             connect(nodeField='headlight',protoField='headlight'),
             connect(nodeField='visibilityLimit',protoField='farClipPlane')])),
         Comment(' this DirectionalLight replaces NavigationInfo headlight in order to add color capability '),
         DirectionalLight(DEF='CameraDirectionalLight',global_=True,
           # TODO confirm other default field values match NavigationInfo spec
-
           IS=IS(
             connect=[
             connect(nodeField='on',protoField='headlight'),
@@ -123,7 +117,6 @@ newModel=X3D(profile='Immersive',version='4.0',
         ROUTE(fromField='value_changed',fromNode='CameraOrientationInterpolator',toField='orientation',toNode='CameraViewpoint'),
         Script(DEF='CameraScript',directOutput=True,mustEvaluate=True,
           # binding is controlled externally, all camera operations proceed the same regardless of whether bound or not
-
           field(accessType='inputOutput',appinfo='Text description to be displayed for this Camera',name='description',type='SFString'),
           field(accessType='inputOutput',appinfo='Camera position in local transformation frame',name='position',type='SFVec3f'),
           field(accessType='inputOutput',appinfo='Camera rotation in local transformation frame',name='orientation',type='SFRotation'),
@@ -133,8 +126,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           field(accessType='inputOutput',appinfo='Vector distance to near clipping plane',name='nearClipPlane',type='SFFloat'),
           field(accessType='inputOutput',appinfo='Vector distance to far clipping plane',name='farClipPlane',type='SFFloat'),
           field(accessType='inputOutput',appinfo='Array of CameraShot nodes which in turn contain CameraMovement nodes',name='shots',type='MFNode',
-            children=[
-            Comment(' initialization nodes (if any) go here '),],),
+            # initialization nodes (if any) go here
+            ),
           field(accessType='inputOutput',appinfo='Camera filter color that modifies virtual lens capture',name='filterColor',type='SFColor'),
           field(accessType='inputOutput',appinfo='Camera filter transparency that modifies virtual lens capture',name='filterTransparency',type='SFFloat'),
           field(accessType='inputOutput',appinfo='upVector changes modify camera orientation (and possibly vice versa)',name='upVector',type='SFVec3f'),
@@ -143,8 +136,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           field(accessType='outputOnly',appinfo='Mark start/stop with true/false output respectively useful to trigger external animations',name='isActive',type='SFBool'),
           field(accessType='outputOnly',appinfo='Total duration of contained enabled CameraShot (and thus CameraMovement) move durations',name='totalDuration',type='SFTime'),
           field(accessType='inputOutput',appinfo='OfflineRender node',name='offlineRender',type='SFNode',
-            children=[
-            Comment(' initialization node (if any) goes here '),],),
+            # initialization node (if any) goes here
+            ),
           field(accessType='initializeOnly',appinfo='node reference to permit getting setting fields from within Script',name='ViewpointNode',type='SFNode',
             children=[
             Viewpoint(USE='CameraViewpoint')]),
@@ -543,8 +536,8 @@ function alwaysPrint (outputValue)
         field(accessType='inputOutput',appinfo='Text description to be displayed for this CameraShot',name='description',type='SFString'),
         field(accessType='inputOutput',appinfo='Whether this CameraShot can be activated',name='enabled',type='SFBool',value=True),
         field(accessType='inputOutput',appinfo='Set of CameraMovement nodes',name='moves',type='MFNode',
-          children=[
-          Comment(' initializing CameraMovement nodes are inserted here by scene author using ProtoInstance '),],),
+          # initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
+          ),
         field(accessType='inputOutput',appinfo='Setup to reinitialize camera position for this shot',name='initialPosition',type='SFVec3f',value=(0,0,10)),
         field(accessType='inputOutput',appinfo='Setup to reinitialize camera rotation for this shot',name='initialOrientation',type='SFRotation',value=(0,0,1,0)),
         field(accessType='inputOutput',appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot',name='initialAimPoint',type='SFVec3f',value=(0,0,0)),
@@ -561,8 +554,8 @@ function alwaysPrint (outputValue)
           field(accessType='inputOutput',appinfo='Text description to be displayed for this CameraShot',name='description',type='SFString'),
           field(accessType='inputOutput',appinfo='Whether this CameraShot can be activated',name='enabled',type='SFBool'),
           field(accessType='inputOutput',appinfo='Set of CameraMovement nodes',name='moves',type='MFNode',
-            children=[
-            Comment(' initialization nodes (if any) go here '),],),
+            # initialization nodes (if any) go here
+            ),
           field(accessType='inputOutput',appinfo='Setup to reinitialize camera position for this shot',name='initialPosition',type='SFVec3f'),
           field(accessType='inputOutput',appinfo='Setup to reinitialize camera rotation for this shot',name='initialOrientation',type='SFRotation'),
           field(accessType='inputOutput',appinfo='Setup to reinitialize aimpoint (relative location for camera direction) for this shot',name='initialAimPoint',type='SFVec3f'),
@@ -685,7 +678,8 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraShot] ' + outputString + '\n');
 }
 """),
-        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody '),],)),
+        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody ')
+        )),
     Comment(' =============== CameraMovement ============== '),
     ProtoDeclare(appinfo='CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView.',name='CameraMovement',
       ProtoInterface=ProtoInterface(
@@ -828,7 +822,8 @@ function alwaysPrint (outputValue)
          Browser.print ('[CameraMovement] ' + outputString + '\n');
 }
 """),
-        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody '),],)),
+        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody ')
+        )),
     Comment(' =============== OfflineRender ============== '),
     ProtoDeclare(appinfo='OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot).',name='OfflineRender',
       ProtoInterface=ProtoInterface(
@@ -932,7 +927,8 @@ function alwaysPrint (outputValue)
          Browser.print ('[OfflineRender] ' + outputString + '\n');
 }
 """),
-        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody '),],)),
+        Comment(' Add any ROUTEs here, going from Script to other nodes within ProtoBody ')
+        )),
     Comment(' =============== Launch Prototype Example ============== '),
     Background(skyColor=[(0.282353,0.380392,0.470588)]),
     Anchor(description='launch CameraExample scene',url=["CameraExamples.x3d","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.x3d","CameraExamples.wrl","https://www.web3d.org/x3d/content/examples/Basic/development/CameraExamples.wrl"],
@@ -945,7 +941,6 @@ function alwaysPrint (outputValue)
           appearance=Appearance(
             material=Material(diffuseColor=(1,1,0.2))))])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

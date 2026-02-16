@@ -1,0 +1,17 @@
+X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.[/X3D, diagnostic]
+X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+2.0 Physically Based Rendering (PBR), and Web Audio API.[/X3D, diagnostic]
+Correct url for X3D file should appear in &lt;meta name='identifier' content='https://someAddress/somePath/FileName.x3d'/&gt;
+[/X3D/head, warning]
+It is good practice to identify editor(s) used, for example &lt;meta name='generator'
+content='X3D-Edit, https://savage.nps.edu/X3D-Edit'/&gt; [/X3D/head, info]
+&lt;component&gt; name='X_ITE' has invalid value for level='1' (too high or undefined) [/X3D/head/component, error]
+&lt;PhysicalMaterial DEF=''/&gt; has 1 component statements with X3D profile='Immersive',
+but requires at least &lt;component name='Shape' level='2'/&gt; or &lt;X3D profile='Full'/&gt;
+[/X3D/Scene/Transform[1]/Shape/Appearance/PhysicalMaterial, error]
+&lt;IORMaterialExtension DEF='IOR_2'/&gt; not handled correctly by X3D schematron rule,
+or else node name has unrecognized
+spelling that fails X3D DTD/Schema validation... [/X3D/Scene/Transform[7]/Shape/Appearance/PhysicalMaterial/IORMaterialExtension, error]
+&lt;IridescenceMaterialExtension DEF='IRI_3'/&gt; not handled correctly by X3D schematron
+rule, or else node name has unrecognized
+spelling that fails X3D DTD/Schema validation... [/X3D/Scene/Transform[8]/Shape/Appearance/PhysicalMaterial/IridescenceMaterialExtension, error]

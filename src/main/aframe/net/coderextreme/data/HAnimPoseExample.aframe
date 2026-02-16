@@ -1,0 +1,989 @@
+{ "X3D":
+  {
+    "encoding": "UTF-8",
+    "@profile": "Full",
+    "@version": "4.1",
+    "@xsd:noNamespaceSchemaLocation": "https://www.web3d.org/specifications/x3d-4.1.xsd",
+    "JSON schema": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
+    "head": {
+      "meta": [
+        {
+          "@name": "title",
+          "@content": "HAnimPoseExample.x3d"
+        },
+        {
+          "@name": "description",
+          "@content": "Native XML definition of an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."
+        },
+        {
+          "@name": "created",
+          "@content": "11 December 2025"
+        },
+        {
+          "@name": "modified",
+          "@content": "Mon, 09 Feb 2026 07:11:17 GMT"
+        },
+        {
+          "@name": "creator",
+          "@content": "Don Brutzman"
+        },
+        {
+          "@name": "warning",
+          "@content": "under development for X3D 4.1"
+        },
+        {
+          "@name": "specificationSection",
+          "@content": "HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose"
+        },
+        {
+          "@name": "specificationUrl",
+          "@content": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose"
+        },
+        {
+          "@name": "specificationSection",
+          "@content": "HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.2 Modelling of human-like HAnim figures"
+        },
+        {
+          "@name": "specificationUrl",
+          "@content": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures"
+        },
+        {
+          "@name": "specificationSection",
+          "@content": "HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses"
+        },
+        {
+          "@name": "specificationUrl",
+          "@content": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses"
+        },
+        {
+          "@name": "generator",
+          "@content": "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+        },
+        {
+          "@name": "generator",
+          "@content": "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+        },
+        {
+          "@name": "identifier",
+          "@content": "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExample.x3d"
+        },
+        {
+          "@name": "license",
+          "@content": "https://www.web3d.org/x3d/content/examples/license.html"
+        }
+      ]
+    },
+    "Scene": {
+      "-children": [
+        { "WorldInfo":
+          {
+            "@DEF": "ModelInfo",
+            "@title": "HAnimPoseExample.x3d",
+            "@info": [
+              "Example scene for HAnimPose node"
+            ]
+          }
+        },
+        { "Background":
+          {
+            "@skyColor": [
+              0.8, 0.8, 1
+            ]
+          }
+        },
+        { "NavigationInfo":
+          {
+          }
+        },
+        { "Group":
+          {
+            "@DEF": "HandleInlineLoading",
+            "-children": [
+              { "Inline":
+                {
+                  "@DEF": "HumanoidInline",
+                  "@description": "remote HAnimHumanoid for IMPORT",
+                  "@url": [
+                    "../Skin/JoeSkeletonSkinSite.x3d",
+                    "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/JoeSkeletonSkinSite.x3d"
+                  ]
+                }
+              },
+              { "LoadSensor":
+                {
+                  "@DEF": "HumanoidInlineLoadSensor",
+                  "@timeOut": 2,
+                  "-children": [
+                    { "Inline":
+                      {
+                        "@USE": "HumanoidInline"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        { "Viewpoint":
+          {
+            "@description": "HAnimPose for HumanoidInline IMPORT model",
+            "@position": [ 0, 1, 4 ]
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "T_Pose",
+            "-metadata": { "MetadataString":
+              {
+                "@name": "metadataTest",
+                "@value": [
+                  "hello HAnimPose metadata"
+                ]
+              }
+            },
+            "@description": "arms stretched outward and level similar to letter T",
+            "@name": "T",
+            "@loa": 1,
+            "@transitionDuration": 1.3,
+            "-children": [
+              { "HAnimJoint":
+                {
+                  "@DEF": "PoseJoint_l_shoulder_1",
+                  "@description": "left shoulder",
+                  "@name": "l_shoulder",
+                  "@rotation": [ 0, 0, 1, 1.57 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@DEF": "PoseJoint_r_shoulder_1",
+                  "@description": "right shoulder",
+                  "@name": "r_shoulder",
+                  "@rotation": [ 0, 0, -1, 1.57 ]
+                }
+              }
+            ]
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "A_Pose",
+            "@description": "arms stretched outward and downward similar to letter A",
+            "@name": "A",
+            "@loa": 1,
+            "@transitionDuration": 1.2,
+            "-children": [
+              { "HAnimJoint":
+                {
+                  "@DEF": "PoseJoint_l_shoulder",
+                  "@description": "left shoulder",
+                  "@name": "l_shoulder",
+                  "@rotation": [ 0, 0, 1, 0.5 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@DEF": "PoseJoint_r_shoulder",
+                  "@description": "right shoulder",
+                  "@name": "r_shoulder",
+                  "@rotation": [ 0, 0, -1, 0.5 ]
+                }
+              }
+            ]
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "TouchDown_Pose",
+            "@description": "arms and legs stretched outward providing a TouchDown gesture",
+            "@name": "TouchDown",
+            "@loa": 1,
+            "@transitionDuration": 1.2,
+            "-children": [
+              { "HAnimJoint":
+                {
+                  "@name": "humanoid_root",
+                  "@rotation": [ 0, 1, 0, -0.698132 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_hip",
+                  "@rotation": [ -1, 1, 1, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_knee",
+                  "@rotation": [ 1, 0, 0, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_talocrural",
+                  "@rotation": [ -0.2, -0, 0.1, 0.225 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_hip",
+                  "@rotation": [ -1, -1, -1, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_knee",
+                  "@rotation": [ 1, 0, 0, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_talocrural",
+                  "@rotation": [ -0.2, 0, 0.1, 0.25 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "vl5",
+                  "@rotation": [ 0, 0, 0.01, 0.2 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "vt10",
+                  "@rotation": [ 0, 0, 0.01, 0.1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "vc4",
+                  "@rotation": [ 0, 0, -0.01, 0.15 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_shoulder",
+                  "@rotation": [ -1, 0.5, 1, 2 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_elbow",
+                  "@rotation": [ -1, 0, 0, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "l_radiocarpal"
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_shoulder",
+                  "@rotation": [ -1, -0.5, -1, 2.6 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_elbow",
+                  "@rotation": [ -1, 0, 0, 1 ]
+                }
+              },
+              { "HAnimJoint":
+                {
+                  "@name": "r_radiocarpal"
+                }
+              }
+            ]
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "I_Pose",
+            "@description": "arms and legs straight down default binding pose for baseline Humanoid",
+            "@name": "I",
+            "@loa": 1,
+            "@transitionDuration": 1.5
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "H_Pose",
+            "@description": "TODO experimental pose not yet implemented",
+            "@name": "H",
+            "@enabled": false,
+            "@transitionDuration": 1.4
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "FaceLeft_Pose",
+            "@description": "Only modify humanoid_root Joint node to face left",
+            "@name": "FaceLeft",
+            "@loa": 0,
+            "@transitionDuration": 1.1,
+            "-children": [
+              { "HAnimJoint":
+                {
+                  "@DEF": "FaceLeft_humanoid_root",
+                  "@description": "Only rotate the model",
+                  "@name": "humanoid_root",
+                  "@rotation": [ 0, 1, 0, 1.570796 ]
+                }
+              }
+            ]
+          }
+        },
+        { "HAnimPose":
+          {
+            "@DEF": "FaceRight_Pose",
+            "@description": "Only modify humanoid_root Joint node to face right",
+            "@name": "FaceRight",
+            "@loa": 0,
+            "@transitionDuration": 1.1,
+            "-children": [
+              { "HAnimJoint":
+                {
+                  "@DEF": "FaceRight_humanoid_root",
+                  "@description": "Only rotate the model",
+                  "@name": "humanoid_root",
+                  "@rotation": [ 0, 1, 0, -1.570796 ]
+                }
+              }
+            ]
+          }
+        },
+        { "Group":
+          {
+            "@DEF": "InterfaceButtonsGroup",
+            "-children": [
+              { "Transform":
+                {
+                  "@DEF": "DisplayHeader",
+                  "@translation": [ 0, 2, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@DEF": "PoseTextAppearance",
+                            "-material": { "Material":
+                              {
+                                "@diffuseColor": [ 0.1, 0.5, 0.3 ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "HAnimPosePrototype example implementation"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@DEF": "HeaderFont",
+                                "@family": [
+                                  "SANS"
+                                ],
+                                "@style": "BOLD",
+                                "@size": 0.15,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "T_PoseInterface",
+                  "@translation": [ -1.5, 1.5, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "\"T\" Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@DEF": "SharedFont",
+                                "@family": [
+                                  "SANS"
+                                ],
+                                "@style": "BOLD",
+                                "@size": 0.1,
+                                "@justify": [
+                                  "MIDDLE",
+                                  "MIDDLE"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@DEF": "TransparentAppearance",
+                            "-material": { "Material":
+                              {
+                                "@transparency": 0.8
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.45, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "T_PoseTouchSensor",
+                        "@description": "select to move shoulders to \"T\" pose, leave other joints unchanged"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "A_PoseInterface",
+                  "@translation": [ -1.5, 1, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "\"A\" Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.45, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "A_PoseTouchSensor",
+                        "@description": "select to move shoulders to \"A\" pose, leave other joints unchanged"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "TouchDown_PoseInterface",
+                  "@translation": [ -1.5, 0.5, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "TouchDown Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.85, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "TouchDown_PoseTouchSensor",
+                        "@description": "select to transition all joints to TouchDown pose"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "I_PoseInterface",
+                  "@translation": [ -1.5, 0, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "\"I\" Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.45, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "I_PoseTouchSensor",
+                        "@description": "select to transition all joints to \"I\" pose"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "FaceLeftPoseInterface",
+                  "@translation": [ 1.5, 1.5, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "Face Left Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.9, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "FaceLeftTouchSensor",
+                        "@description": "select to rotate body and Face Left, leave other joints unchanged"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "FaceRightPoseInterface",
+                  "@translation": [ 1.5, 1, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "PoseTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "Face Right Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.9, 0.2, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "FaceRightTouchSensor",
+                        "@description": "select to rotate body and Face Right, leave other joints unchanged"
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "AnimatePosesInterface",
+                  "@translation": [ 1.5, 0.5, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@DEF": "AnimationTextAppearance",
+                            "-material": { "Material":
+                              {
+                                "@diffuseColor": [ 0.1, 0.2, 0.3 ]
+                              }
+                            }
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "Direct animation",
+                              "to, from \"I\" Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.9, 0.25, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "AnimatePosesTouchSensor",
+                        "@description": "select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events"
+                      }
+                    },
+                    { "TimeSensor":
+                      {
+                        "@DEF": "AnimatePosesClock",
+                        "@description": "directly animate several poses",
+                        "@cycleInterval": 4
+                      }
+                    },
+                    { "ScalarInterpolator":
+                      {
+                        "@DEF": "AnimatePosesLoopInterpolator",
+                        "@key": [
+                          0,
+                          0.05,
+                          0.45,
+                          0.55,
+                          0.95,
+                          1
+                        ],
+                        "@keyValue": [
+                          0,
+                          0,
+                          1,
+                          1,
+                          0,
+                          0
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              { "Transform":
+                {
+                  "@DEF": "ResetDefaultPoseInterface",
+                  "@translation": [ 1.5, 0, 0 ],
+                  "-children": [
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "AnimationTextAppearance"
+                          }
+                        },
+                        "-geometry": { "Text":
+                          {
+                            "@string": [
+                              "Reset All Joints",
+                              "to Default \"I\" Pose"
+                            ],
+                            "-fontStyle": { "FontStyle":
+                              {
+                                "@USE": "SharedFont"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    { "Shape":
+                      {
+                        "-appearance": { "Appearance":
+                          {
+                            "@USE": "TransparentAppearance"
+                          }
+                        },
+                        "-geometry": { "Box":
+                          {
+                            "@size": [ 0.9, 0.25, 0.001 ]
+                          }
+                        }
+                      }
+                    },
+                    { "TouchSensor":
+                      {
+                        "@DEF": "ResetPoseTouchSensor",
+                        "@description": "select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        { "Group":
+          {
+            "@DEF": "HandleInlineLoadsensorRouting"
+          }
+        },
+        { "HAnimHumanoid":
+          {
+            "@name": "HumanoidStub",
+            "@info": [
+              "humanoidVersion=2.0"
+            ],
+            "@version": "2.0",
+            "-children": [
+              { "HAnimPose":
+                {
+                  "@USE": "A_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "T_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "I_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "H_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "FaceLeft_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "FaceRight_Pose"
+                }
+              },
+              { "HAnimPose":
+                {
+                  "@USE": "TouchDown_Pose"
+                }
+              }
+            ]
+          }
+        },
+        { "IMPORT":
+          {
+            "@inlineDEF": "HumanoidInline",
+            "@importedDEF": "JoeSkeletonSkinSite",
+            "@AS": "HumanoidImported"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "T_PoseTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "T_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "A_PoseTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "A_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "TouchDown_PoseTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "TouchDown_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "I_PoseTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "I_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "FaceLeftTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "FaceLeft_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "FaceRightTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "FaceRight_Pose",
+            "@toField": "commencePose"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "AnimatePosesTouchSensor",
+            "@fromField": "touchTime",
+            "@toNode": "AnimatePosesClock",
+            "@toField": "set_startTime"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "AnimatePosesClock",
+            "@fromField": "fraction_changed",
+            "@toNode": "AnimatePosesLoopInterpolator",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "AnimatePosesLoopInterpolator",
+            "@fromField": "value_changed",
+            "@toNode": "I_Pose",
+            "@toField": "set_fraction"
+          }
+        },
+        { "ROUTE":
+          {
+            "@fromNode": "ResetPoseTouchSensor",
+            "@fromField": "isActive",
+            "@toNode": "FaceLeft_Pose",
+            "@toField": "resetAllJoints"
+          }
+        }
+      ]
+    }
+  }
+}

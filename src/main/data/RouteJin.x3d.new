@@ -36,8 +36,8 @@
 <ScalarInterpolator DEF="AnimationAdapter_JinUpperLidRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
 <ScalarInterpolator DEF="AnimationAdapter_JinUpperLipRaiser" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
 <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0"></ScalarInterpolator>
-<Group><HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim0_skullbase"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><WorldInfo title="JinFacsAu45BlinkMorpher.x3d"></WorldInfo>
+<Group><HAnimHumanoid name="humanoid" DEF="hanim0_humanoid" version="2.0"><HAnimJoint name="humanoid_root" DEF="hanim0_humanoid_root" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim0_sacrum"></HAnimSegment>
+<HAnimJoint name="skullbase" DEF="hanim0_skullbase" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><WorldInfo title="JinFacsAu45BlinkMorpher.x3d"></WorldInfo>
 <Background skyColor="0.8 0.9 1"></Background>
 <NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
 </HAnimSegment>

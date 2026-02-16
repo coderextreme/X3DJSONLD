@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -97,24 +97,31 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 01:48:39 GMT"),
+                Content: stringPtr("23 Dec 2022"),
             },
             &x3d.Meta{
                 Name: stringPtr("description"),
                 Content: stringPtr("A process pipeline between three spheres (try typing on spheres and blue"),
             },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/x3d/pp3.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("manual"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.ProtoDeclare{
                     Name: stringPtr("Process"),
-                    ProtoInterface: &x3d.ProtoInterface{
-                    },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
                             &x3d.Group{
                                 Children: []x3d.X3DNode{
+//left
                                     &x3d.Transform{
                                             Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
                                         Children: []x3d.X3DNode{
@@ -131,8 +138,10 @@ func main() {
                                                     Spine: &x3d.MFVec3f{[3]float32{-2.5,0.0,0.0},[3]float32{-2.0,0.0,0.0},[3]float32{-1.5,0.0,0.0}},
                                                 },
                                             },
+//<Transform translation="-2.5 0 0"> <Shape> <Text DEF="LeftString" string='"l"'/> </Shape> </Transform> <StringSensor DEF="LeftSensor" enabled="false"/> <TouchSensor DEF="LeftTouch" enabled="true"/>
                                         },
                                     },
+//right
                                     &x3d.Transform{
                                             Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
                                         Children: []x3d.X3DNode{
@@ -177,13 +186,14 @@ func main() {
                                                 Enabled: boolPtr(false),
                                             },
                                             &x3d.TouchSensor{
+                                                Description: stringPtr("touch to activate"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("RightTouch"),
                                                 },
-                                                Description: stringPtr("touch to activate"),
                                             },
                                         },
                                     },
+//up
                                     &x3d.Transform{
                                             Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
                                         Children: []x3d.X3DNode{
@@ -227,13 +237,14 @@ func main() {
                                                 Enabled: boolPtr(false),
                                             },
                                             &x3d.TouchSensor{
+                                                Description: stringPtr("touch to activate"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("UpTouch"),
                                                 },
-                                                Description: stringPtr("touch to activate"),
                                             },
                                         },
                                     },
+//down
                                     &x3d.Transform{
                                             Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
                                         Children: []x3d.X3DNode{
@@ -250,8 +261,10 @@ func main() {
                                                     Spine: &x3d.MFVec3f{[3]float32{0.0,-2.5,0.0},[3]float32{0.0,-2.0,0.0},[3]float32{0.0,-1.5,0.0}},
                                                 },
                                             },
+//<Transform translation="-0.5 -2.5 0"> <Shape> <Text DEF="DownString" string='"d"'/> </Shape> </Transform> <StringSensor DEF="DownSensor" enabled="false"/> <TouchSensor description='touch to activate' DEF="DownTouch" enabled="true"/>
                                         },
                                     },
+//center
                                     &x3d.Transform{
                                         Children: []x3d.X3DNode{
                                             &x3d.Shape{
@@ -264,8 +277,8 @@ func main() {
                                                 },
                                             },
                                             &x3d.Transform{
-                                                    Translation: &x3d.SFVec3f{-0.5, 0.0, 1.0},
                                                     Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
+                                                    Translation: &x3d.SFVec3f{-0.5, 0.0, 1.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.Shape{
                                                         Appearance: &x3d.Appearance{
@@ -290,10 +303,10 @@ func main() {
                                                 Enabled: boolPtr(false),
                                             },
                                             &x3d.TouchSensor{
+                                                Description: stringPtr("touch to activate"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("CenterTouch"),
                                                 },
-                                                Description: stringPtr("touch to activate"),
                                             },
                                         },
                                     },
@@ -305,14 +318,14 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
+                                        Name: stringPtr("set_rightstring"),
                                         AccessType: stringPtr("inputOnly"),
                                         Type: stringPtr("SFString"),
-                                        Name: stringPtr("set_rightstring"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("rightlines"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFString"),
-                                    Name: stringPtr("rightlines"),
                                 },
 //ecmascript:
 //
@@ -331,14 +344,14 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
+                                        Name: stringPtr("set_upstring"),
                                         AccessType: stringPtr("inputOnly"),
                                         Type: stringPtr("SFString"),
-                                        Name: stringPtr("set_upstring"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("uplines"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFString"),
-                                    Name: stringPtr("uplines"),
                                 },
 //ecmascript:
 //
@@ -357,14 +370,14 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
+                                        Name: stringPtr("set_centerstring"),
                                         AccessType: stringPtr("inputOnly"),
                                         Type: stringPtr("SFString"),
-                                        Name: stringPtr("set_centerstring"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("centerlines"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFString"),
-                                    Name: stringPtr("centerlines"),
                                 },
 //ecmascript:
 //
@@ -377,59 +390,59 @@ func main() {
 //}
                                 },
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("enteredText"),
                                 FromNode: stringPtr("CenterSensor"),
-                                FromField: stringPtr("enteredText"),
-                                ToNode: stringPtr("CenterSingleToMultiString"),
                                 ToField: stringPtr("set_centerstring"),
+                                ToNode: stringPtr("CenterSingleToMultiString"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CenterSingleToMultiString"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("centerlines"),
+                                FromNode: stringPtr("CenterSingleToMultiString"),
+                                ToField: stringPtr("set_string"),
                                 ToNode: stringPtr("CenterString"),
-                                ToField: stringPtr("set_string"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("isOver"),
                                 FromNode: stringPtr("CenterTouch"),
-                                FromField: stringPtr("isOver"),
+                                ToField: stringPtr("set_enabled"),
                                 ToNode: stringPtr("CenterSensor"),
-                                ToField: stringPtr("set_enabled"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("enteredText"),
                                 FromNode: stringPtr("RightSensor"),
-                                FromField: stringPtr("enteredText"),
-                                ToNode: stringPtr("RightSingleToMultiString"),
                                 ToField: stringPtr("set_rightstring"),
+                                ToNode: stringPtr("RightSingleToMultiString"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("RightSingleToMultiString"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("rightlines"),
+                                FromNode: stringPtr("RightSingleToMultiString"),
+                                ToField: stringPtr("set_string"),
                                 ToNode: stringPtr("RightString"),
-                                ToField: stringPtr("set_string"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("isOver"),
                                 FromNode: stringPtr("RightTouch"),
-                                FromField: stringPtr("isOver"),
+                                ToField: stringPtr("set_enabled"),
                                 ToNode: stringPtr("RightSensor"),
-                                ToField: stringPtr("set_enabled"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("UpSensor"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("enteredText"),
-                                ToNode: stringPtr("UpSingleToMultiString"),
+                                FromNode: stringPtr("UpSensor"),
                                 ToField: stringPtr("set_upstring"),
+                                ToNode: stringPtr("UpSingleToMultiString"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("UpSingleToMultiString"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("uplines"),
-                                ToNode: stringPtr("UpString"),
+                                FromNode: stringPtr("UpSingleToMultiString"),
                                 ToField: stringPtr("set_string"),
+                                ToNode: stringPtr("UpString"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("UpTouch"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("isOver"),
-                                ToNode: stringPtr("UpSensor"),
+                                FromNode: stringPtr("UpTouch"),
                                 ToField: stringPtr("set_enabled"),
+                                ToNode: stringPtr("UpSensor"),
                             },
                         },
                     },
@@ -438,8 +451,8 @@ func main() {
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Process pipes"),
-                    Position: &x3d.SFVec3f{0.0, 5.0, 12.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.4},
+                    Position: &x3d.SFVec3f{0.0, 5.0, 12.0},
                 },
                 &x3d.Transform{
                         Translation: &x3d.SFVec3f{0.0, -2.5, 0.0},
@@ -482,13 +495,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/pp3.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -499,7 +512,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

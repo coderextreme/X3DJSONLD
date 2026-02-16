@@ -44,7 +44,14 @@ browser.currentScene.children[0] = Transform11;
 let Group16 = browser.currentScene.createNode("Group");
 //DEFS for markers of skeleton joints, segments, and sites
 let Transform17 = browser.currentScene.createNode("Transform");
-//<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
+//<Transform translation='0 2 0'>
+//<Shape DEF='HAnimRootShape'>
+//<Sphere radius='0.02' />
+//<Appearance>
+//<Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>
+//</Appearance>
+//</Shape>
+//</Transform>
 let Transform18 = browser.currentScene.createNode("Transform");
 Transform18.translation = new X3D.SFVec3f([0,2.1,0]);
 let Shape19 = browser.currentScene.createNode("Shape");
@@ -93,7 +100,17 @@ Transform23ZZZ.child[0] = Shape24;
 
 Transform17ZZZ.children[1] = Transform23;
 
-//<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
+//<Transform translation='0 2.1 0'>
+//<Shape DEF='HAnimSiteShape'>
+//<IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>
+//<ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
+//<Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
+//</IndexedFaceSet>
+//<Appearance>
+//<Material diffuseColor='1 1 0' transparency='0.3'/>
+//</Appearance>
+//</Shape>
+//</Transform>
 Group16YYY.children = new X3D.MFNode();
 
 Group16ZZZ.children[0] = Transform17;

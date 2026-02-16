@@ -191,10 +191,9 @@ ecmascript:
       .addField(new field().setName("counter").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
       .addField(new field().setName("node_changed").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("add_node").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(false))
-      .addComments(new String[] {"",
-"            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
-"                <Transform USE=\"HoldsContent\"/>",
-"            </field>"}))
+      .addComments(" <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> ")
+      .addComments(" <Transform USE=\"HoldsContent\"/> ")
+      .addComments(" </field> "))
     .addChild(new ROUTE().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
     .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))
     .addChild(new ROUTE().setFromNode("nodeB").setFromField("position").setToNode("linkA").setToField("set_positionB"))

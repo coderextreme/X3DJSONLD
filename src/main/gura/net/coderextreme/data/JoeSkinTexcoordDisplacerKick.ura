@@ -1422,14 +1422,6 @@ X3D:
                     HAnimJoint: [
                         containerField: "joints"
                         USE: "Joe_r_wrist"
-                    ],
-                    HAnimSegment: [
-                        containerField: "segments"
-                        USE: "Joe_sacrum"
-                    ],
-                    HAnimSite: [
-                        containerField: "sites"
-                        USE: "Joe_RootFront_view"
                     ]
                 ]
             ],

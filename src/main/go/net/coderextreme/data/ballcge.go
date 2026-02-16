@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -88,11 +88,23 @@ func main() {
                 Level: int32Ptr(3),
             },
             &x3d.Component{
+                Name: stringPtr("Rendering"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("Texturing"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
                 Name: stringPtr("Grouping"),
                 Level: int32Ptr(3),
             },
             &x3d.Component{
                 Name: stringPtr("CubeMapTexturing"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("Core"),
                 Level: int32Ptr(1),
             },
         },
@@ -113,108 +125,112 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("manual"),
             },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("a prismatic sphere"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("ball.x3d"),
                 },
                 &x3d.NavigationInfo{
+                    AvatarSize: x3d.MFFloat{0.25, 1.60000002384186, 0.75},
                     Type: x3d.MFString{"ANY", "EXAMINE", "FLY", "LOOKAT"},
                 },
                 &x3d.Viewpoint{
-                    Description: stringPtr("Tour Views"),
                     Position: &x3d.SFVec3f{0.0, 0.0, 12.0},
+                    Description: stringPtr("Tour Views"),
                 },
                 &x3d.Background{
-                    FrontUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
+                    TopUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
                     BackUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
                     LeftUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
+                    FrontUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
                     RightUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
-                    TopUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
                     BottomUrl: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
                 },
                 &x3d.Transform{
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
+                            Geometry: &x3d.Sphere{
+                            },
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
-                                    DiffuseColor: &x3d.SFColor{0.7, 0.7, 0.7},
+                                    DiffuseColor: &x3d.SFColor{0.699999988079071, 0.699999988079071, 0.699999988079071},
                                     SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                 },
-                                Shaders: []x3d.X3DNode{
-                                    &x3d.ComposedShader{
-                                        Language: stringPtr("GLSL"),
-                                        Parts: []x3d.X3DNode{
-                                            &x3d.ShaderPart{
-//file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs
-                                        },
-                                        &x3d.ShaderPart{
-                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                DEF: stringPtr("commonfs"),
-                                            },
-                                            Type: stringPtr("FRAGMENT"),
-//file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs
-                                        },
-                                    },
-                                        Field: []x3d.X3DNode{
-                                            &x3d.Field{
-                                                AccessType: stringPtr("initializeOnly"),
-                                                Type: stringPtr("SFVec3f"),
-                                                Name: stringPtr("chromaticDispertion"),
-                                                Value: stringPtr("0.98 1 1.033"),
-                                        },
+                                &x3d.ComposedShader{
+                                    Language: stringPtr("GLSL"),
+                                    Field: []x3d.X3DNode{
                                         &x3d.Field{
+                                            Name: stringPtr("chromaticDispertion"),
                                             AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFNode"),
-                                            Name: stringPtr("cube"),
-                                            Children: []x3d.X3DNode{
-                                                &x3d.ComposedCubeMapTexture{
-                                                    FrontTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
-                                                    },
-                                                    BackTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
-                                                    },
-                                                    LeftTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
-                                                    },
-                                                    RightTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
-                                                    },
-                                                    TopTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
-                                                    },
-                                                    BottomTexture: &x3d.ImageTexture{
-                                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
-                                                    },
+                                            Type: stringPtr("SFVec3f"),
+                                            Value: stringPtr("0.980000019073486 1 1.03299999237061"),
+                                    },
+                                    &x3d.Field{
+                                        Name: stringPtr("cube"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Type: stringPtr("SFNode"),
+                                        Children: []x3d.X3DNode{
+                                            &x3d.ComposedCubeMapTexture{
+                                                BackTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
+                                                },
+                                                BottomTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
+                                                },
+                                                FrontTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
+                                                },
+                                                LeftTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
+                                                },
+                                                RightTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
+                                                },
+                                                TopTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
                                                 },
                                             },
                                         },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("bias"),
-                                            Value: stringPtr("0.5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("scale"),
-                                            Value: stringPtr("0.5"),
-                                        },
-                                        &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("power"),
-                                            Value: stringPtr("2"),
-                                        },
-                                        },
+                                    },
+                                    &x3d.Field{
+                                        Name: stringPtr("bias"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Type: stringPtr("SFFloat"),
+                                        Value: stringPtr("0.5"),
+                                    },
+                                    &x3d.Field{
+                                        Name: stringPtr("scale"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Type: stringPtr("SFFloat"),
+                                        Value: stringPtr("0.5"),
+                                    },
+                                    &x3d.Field{
+                                        Name: stringPtr("power"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Type: stringPtr("SFFloat"),
+                                        Value: stringPtr("2"),
                                     },
                                 },
-                            },
-                            Geometry: &x3d.Sphere{
+                                    Parts: []x3d.X3DNode{
+                                        &x3d.ShaderPart{
+                                            Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"},
+                                            Type: stringPtr("VERTEX"),
+                                    },
+                                    &x3d.ShaderPart{
+                                        CoreX3DNode: x3d.CoreX3DNode{
+                                            DEF: stringPtr("commonfs"),
+                                        },
+                                        Url: x3d.MFString{"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"},
+                                        Type: stringPtr("FRAGMENT"),
+                                    },
+                                    },
+                                },
                             },
                         },
                     },
@@ -237,13 +253,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/ballcge.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -254,7 +270,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

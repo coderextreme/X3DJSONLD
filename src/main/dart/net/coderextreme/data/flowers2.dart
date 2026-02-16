@@ -128,7 +128,9 @@ var X3D0 =  X3D(
                                                 connect(
                                                   nodeField_ : SFString('transparency'),
                                                   protoField_ : SFString('transparency'))]))),
-                                  /*<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>*/
+                                  /*<IndexedFaceSet DEF=\"Orbit\">*/
+                                  /*<Coordinate DEF=\"OrbitCoordinates\"/>*/
+                                  /*</IndexedFaceSet>*/
                                   geometry_ : 
                                     IndexedFaceSet(
                                       ccw_ : false,

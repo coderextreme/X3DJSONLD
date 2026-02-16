@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -105,23 +105,23 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:09 GMT"),
+                Content: stringPtr("23 May 2020"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("http://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"),
+                Content: stringPtr("https://www.ballreich.net/vrml/HAnim/nancy_HAnim.wrl"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("http://www.HAnim.org"),
+                Content: stringPtr("https://www.HAnim.org"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("http://HAnim.org/Models"),
+                Content: stringPtr("https://HAnim.org/Models"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("http://HAnim.org/Nodes"),
+                Content: stringPtr("https://HAnim.org/Nodes"),
             },
             &x3d.Meta{
                 Name: stringPtr("subject"),
@@ -131,147 +131,159 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/LOA1_RunAnimation.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.WorldInfo{
+                    Title: stringPtr("LOA1_RunAnimation.x3d"),
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("LOA1_RunAnimation"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("cycleInterval"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFTime"),
-                                Name: stringPtr("cycleInterval"),
                                 Value: stringPtr("1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("enabled"),
-                            Value: stringPtr("true"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFBool"),
-                            Name: stringPtr("loop"),
                             Value: stringPtr("true"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("loop"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("startTime"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("startTime"),
                             Value: stringPtr("0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("stopTime"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("stopTime"),
+                            Value: stringPtr("-1"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("fraction_changed"),
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("fraction_changed"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("isActive"),
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFBool"),
-                            Name: stringPtr("isActive"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("HumanoidRoot_translation_changed"),
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFVec3f"),
-                            Name: stringPtr("HumanoidRoot_translation_changed"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("HumanoidRoot_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("lower_body_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_hip_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_knee_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_ankle_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_midtarsal_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_hip_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_knee_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_ankle_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_midtarsal_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("vl5_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("skullbase_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_shoulder_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_elbow_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("l_wrist_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_shoulder_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_elbow_rotation_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("r_wrist_rotation_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         },
                     },
@@ -286,12 +298,12 @@ func main() {
                                         IS: &x3d.IS{
                                             Connect: []x3d.X3DNode{
                                                 &x3d.Connect{
-                                                    NodeField: stringPtr("enabled"),
-                                                    ProtoField: stringPtr("enabled"),
+                                                    NodeField: stringPtr("cycleInterval"),
+                                                    ProtoField: stringPtr("cycleInterval"),
                                             },
                                             &x3d.Connect{
-                                                NodeField: stringPtr("cycleInterval"),
-                                                ProtoField: stringPtr("cycleInterval"),
+                                                NodeField: stringPtr("enabled"),
+                                                ProtoField: stringPtr("enabled"),
                                             },
                                             &x3d.Connect{
                                                 NodeField: stringPtr("loop"),
@@ -306,12 +318,12 @@ func main() {
                                                 ProtoField: stringPtr("stopTime"),
                                             },
                                             &x3d.Connect{
-                                                NodeField: stringPtr("isActive"),
-                                                ProtoField: stringPtr("isActive"),
-                                            },
-                                            &x3d.Connect{
                                                 NodeField: stringPtr("fraction_changed"),
                                                 ProtoField: stringPtr("fraction_changed"),
+                                            },
+                                            &x3d.Connect{
+                                                NodeField: stringPtr("isActive"),
+                                                ProtoField: stringPtr("isActive"),
                                             },
                                             },
                                         },
@@ -603,142 +615,141 @@ func main() {
                                     },
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("HUMANOIDROOT_POSITION_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("HUMANOIDROOT_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("SACROILIAC_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_HIP_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_KNEE_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_ANKLE_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_MIDTARSAL_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_HIP_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_KNEE_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_ANKLE_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_MIDTARSAL_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("VL5_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("SKULLBASE_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_SHOULDER_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_ELBOW_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("L_WRIST_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_SHOULDER_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("TIMER"),
+                                ToField: stringPtr("set_fraction"),
                                 ToNode: stringPtr("R_ELBOW_ANIMATOR"),
-                                ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("TIMER"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("R_WRIST_ANIMATOR"),
+                                FromNode: stringPtr("TIMER"),
                                 ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("R_WRIST_ANIMATOR"),
                             },
                         },
                     },
                 },
-                &x3d.WorldInfo{
-                    Title: stringPtr("LOA1_RunAnimation.x3d"),
-                },
+//======================================
+//Point to example use in case someone inspects this file
                 &x3d.Anchor{
                     Description: stringPtr("InterchangableActorsViaDynamicRouting"),
-                    Url: x3d.MFString{"InterchangableActorsViaDynamicRouting.x3d", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d", "InterchangableActorsViaDynamicRouting.wrl", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"},
                     Parameter: x3d.MFString{"target=_blank"},
+                    Url: x3d.MFString{"InterchangableActorsViaDynamicRouting.x3d", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.x3d", "InterchangableActorsViaDynamicRouting.wrl", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/InterchangableActorsViaDynamicRouting.wrl"},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
-                            Appearance: &x3d.Appearance{
-                                Material: &x3d.Material{
-                                    DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.2},
-                                },
-                            },
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"LOA1_RunAnimation.x3d", "defines a prototype", "for animating a humanoid.", "", "Click this text to see", "InterchangableActorsViaDynamicRouting example."},
                                 FontStyle: &x3d.FontStyle{
-                                    Size: floatPtr(0.8),
                                     Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                    Size: floatPtr(0.8),
+                                },
+                            },
+                            Appearance: &x3d.Appearance{
+                                Material: &x3d.Material{
+                                    DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.2},
                                 },
                             },
                         },
@@ -762,13 +773,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/LOA1_RunAnimation.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -779,7 +790,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><WorldInfoU-a-entity title="AllenBox.x3d"/><NavigationInfoU-a-entity avatarSize="0.15,1.53,0.75" speed="0.5"/><a-entity DEF="Floor" position="0,-0.0125,0" scale="1,0.0125,1"><a-entity><AppearanceU-a-entity><MaterialU-a-entity/></AppearanceU-a-entity><a-entity geometry="primitive: box"/></a-entity></a-entity></a-scene></div></body></html>

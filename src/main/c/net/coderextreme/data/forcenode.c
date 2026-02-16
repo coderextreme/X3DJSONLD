@@ -475,7 +475,9 @@ field73.value = "false";
 field73.type = "SFBool";
 Script70.field[2] = field73;
 
-//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">
+//<Transform USE=\"HoldsContent\"/>
+//</field>
 
 Script70.setSourceCode(`ecmascript:\n"+
 "	function add_node(value) {\n"+

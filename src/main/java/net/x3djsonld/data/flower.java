@@ -172,14 +172,13 @@ function set_fraction(fraction, eventTime) {
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("coordinates").setType(field.TYPE_MFVEC3F).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
       .addField(new field().setName("coordIndexes").setType(field.TYPE_MFINT32).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-      .addComments(new String[] {"",
-"        <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>",
-"        <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>",
-"        <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>",
-"        <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>",
-"        <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>",
-"        <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>",
-"        <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"}))
+      .addComments(" <field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> ")
+      .addComments(" <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/> "))
     .addChild(new TimeSensor("Clock").setCycleInterval(16).setLoop(true))
     .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
     .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))

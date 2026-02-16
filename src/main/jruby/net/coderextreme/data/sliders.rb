@@ -332,7 +332,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);
 x3D0 = X3D.new
     .setProfile("Full")
-    .setVersion("4.0")
+    .setVersion("4.1")
     .setHead(Head.new()
         .addComments(CommentsBlock.new("<component name='Shape' level='4'></component>"))
         .addComponent(Component.new()

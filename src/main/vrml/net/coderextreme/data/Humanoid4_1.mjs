@@ -8495,1532 +8495,584 @@ HAnimJoint1601.USE = "hanim_humanoid_root";
 joints[1] = HAnimJoint1601;
 
 let HAnimJoint1602 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1602.USE = "hanim_sacroiliac";
+HAnimJoint1602.USE = "hanim_l_acromioclavicular";
 joints[2] = HAnimJoint1602;
 
 let HAnimJoint1603 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1603.USE = "hanim_l_hip";
+HAnimJoint1603.USE = "hanim_l_calcaneocuboid";
 joints[3] = HAnimJoint1603;
 
 let HAnimJoint1604 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1604.USE = "hanim_l_knee";
+HAnimJoint1604.USE = "hanim_l_carpal_distal_interphalangeal_2";
 joints[4] = HAnimJoint1604;
 
 let HAnimJoint1605 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1605.USE = "hanim_l_talocrural";
+HAnimJoint1605.USE = "hanim_l_carpal_distal_interphalangeal_3";
 joints[5] = HAnimJoint1605;
 
 let HAnimJoint1606 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1606.USE = "hanim_l_talocalcaneonavicular";
+HAnimJoint1606.USE = "hanim_l_carpal_distal_interphalangeal_4";
 joints[6] = HAnimJoint1606;
 
 let HAnimJoint1607 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1607.USE = "hanim_l_cuneonavicular_1";
+HAnimJoint1607.USE = "hanim_l_carpal_distal_interphalangeal_5";
 joints[7] = HAnimJoint1607;
 
 let HAnimJoint1608 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1608.USE = "hanim_l_tarsometatarsal_1";
+HAnimJoint1608.USE = "hanim_l_carpal_interphalangeal_1";
 joints[8] = HAnimJoint1608;
 
 let HAnimJoint1609 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1609.USE = "hanim_l_metatarsophalangeal_1";
+HAnimJoint1609.USE = "hanim_l_carpal_proximal_interphalangeal_2";
 joints[9] = HAnimJoint1609;
 
 let HAnimJoint1610 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1610.USE = "hanim_l_tarsal_interphalangeal_1";
+HAnimJoint1610.USE = "hanim_l_carpal_proximal_interphalangeal_3";
 joints[10] = HAnimJoint1610;
 
 let HAnimJoint1611 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1611.USE = "hanim_l_cuneonavicular_2";
+HAnimJoint1611.USE = "hanim_l_carpal_proximal_interphalangeal_4";
 joints[11] = HAnimJoint1611;
 
 let HAnimJoint1612 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1612.USE = "hanim_l_tarsometatarsal_2";
+HAnimJoint1612.USE = "hanim_l_carpal_proximal_interphalangeal_5";
 joints[12] = HAnimJoint1612;
 
 let HAnimJoint1613 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1613.USE = "hanim_l_metatarsophalangeal_2";
+HAnimJoint1613.USE = "hanim_l_carpometacarpal_1";
 joints[13] = HAnimJoint1613;
 
 let HAnimJoint1614 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1614.USE = "hanim_l_tarsal_proximal_interphalangeal_2";
+HAnimJoint1614.USE = "hanim_l_carpometacarpal_2";
 joints[14] = HAnimJoint1614;
 
 let HAnimJoint1615 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1615.USE = "hanim_l_tarsal_distal_interphalangeal_2";
+HAnimJoint1615.USE = "hanim_l_carpometacarpal_3";
 joints[15] = HAnimJoint1615;
 
 let HAnimJoint1616 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1616.USE = "hanim_l_cuneonavicular_3";
+HAnimJoint1616.USE = "hanim_l_carpometacarpal_4";
 joints[16] = HAnimJoint1616;
 
 let HAnimJoint1617 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1617.USE = "hanim_l_tarsometatarsal_3";
+HAnimJoint1617.USE = "hanim_l_carpometacarpal_5";
 joints[17] = HAnimJoint1617;
 
 let HAnimJoint1618 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1618.USE = "hanim_l_metatarsophalangeal_3";
+HAnimJoint1618.USE = "hanim_l_cuneonavicular_1";
 joints[18] = HAnimJoint1618;
 
 let HAnimJoint1619 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1619.USE = "hanim_l_tarsal_proximal_interphalangeal_3";
+HAnimJoint1619.USE = "hanim_l_cuneonavicular_2";
 joints[19] = HAnimJoint1619;
 
 let HAnimJoint1620 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1620.USE = "hanim_l_tarsal_distal_interphalangeal_3";
+HAnimJoint1620.USE = "hanim_l_cuneonavicular_3";
 joints[20] = HAnimJoint1620;
 
 let HAnimJoint1621 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1621.USE = "hanim_l_calcaneocuboid";
+HAnimJoint1621.USE = "hanim_l_elbow";
 joints[21] = HAnimJoint1621;
 
 let HAnimJoint1622 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1622.USE = "hanim_l_transversetarsal";
+HAnimJoint1622.USE = "hanim_l_eyeball_joint";
 joints[22] = HAnimJoint1622;
 
 let HAnimJoint1623 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1623.USE = "hanim_l_tarsometatarsal_4";
+HAnimJoint1623.USE = "hanim_l_eyebrow_joint";
 joints[23] = HAnimJoint1623;
 
 let HAnimJoint1624 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1624.USE = "hanim_l_metatarsophalangeal_4";
+HAnimJoint1624.USE = "hanim_l_eyelid_joint";
 joints[24] = HAnimJoint1624;
 
 let HAnimJoint1625 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1625.USE = "hanim_l_tarsal_proximal_interphalangeal_4";
+HAnimJoint1625.USE = "hanim_l_hip";
 joints[25] = HAnimJoint1625;
 
 let HAnimJoint1626 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1626.USE = "hanim_l_tarsal_distal_interphalangeal_4";
+HAnimJoint1626.USE = "hanim_l_knee";
 joints[26] = HAnimJoint1626;
 
 let HAnimJoint1627 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1627.USE = "hanim_l_tarsometatarsal_5";
+HAnimJoint1627.USE = "hanim_l_metacarpophalangeal_1";
 joints[27] = HAnimJoint1627;
 
 let HAnimJoint1628 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1628.USE = "hanim_l_metatarsophalangeal_5";
+HAnimJoint1628.USE = "hanim_l_metacarpophalangeal_2";
 joints[28] = HAnimJoint1628;
 
 let HAnimJoint1629 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1629.USE = "hanim_l_tarsal_proximal_interphalangeal_5";
+HAnimJoint1629.USE = "hanim_l_metacarpophalangeal_3";
 joints[29] = HAnimJoint1629;
 
 let HAnimJoint1630 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1630.USE = "hanim_l_tarsal_distal_interphalangeal_5";
+HAnimJoint1630.USE = "hanim_l_metacarpophalangeal_4";
 joints[30] = HAnimJoint1630;
 
 let HAnimJoint1631 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1631.USE = "hanim_r_hip";
+HAnimJoint1631.USE = "hanim_l_metacarpophalangeal_5";
 joints[31] = HAnimJoint1631;
 
 let HAnimJoint1632 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1632.USE = "hanim_r_knee";
+HAnimJoint1632.USE = "hanim_l_metatarsophalangeal_1";
 joints[32] = HAnimJoint1632;
 
 let HAnimJoint1633 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1633.USE = "hanim_r_talocrural";
+HAnimJoint1633.USE = "hanim_l_metatarsophalangeal_2";
 joints[33] = HAnimJoint1633;
 
 let HAnimJoint1634 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1634.USE = "hanim_r_talocalcaneonavicular";
+HAnimJoint1634.USE = "hanim_l_metatarsophalangeal_3";
 joints[34] = HAnimJoint1634;
 
 let HAnimJoint1635 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1635.USE = "hanim_r_cuneonavicular_1";
+HAnimJoint1635.USE = "hanim_l_metatarsophalangeal_4";
 joints[35] = HAnimJoint1635;
 
 let HAnimJoint1636 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1636.USE = "hanim_r_tarsometatarsal_1";
+HAnimJoint1636.USE = "hanim_l_metatarsophalangeal_5";
 joints[36] = HAnimJoint1636;
 
 let HAnimJoint1637 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1637.USE = "hanim_r_metatarsophalangeal_1";
+HAnimJoint1637.USE = "hanim_l_midcarpal_1";
 joints[37] = HAnimJoint1637;
 
 let HAnimJoint1638 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1638.USE = "hanim_r_tarsal_interphalangeal_1";
+HAnimJoint1638.USE = "hanim_l_midcarpal_2";
 joints[38] = HAnimJoint1638;
 
 let HAnimJoint1639 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1639.USE = "hanim_r_cuneonavicular_2";
+HAnimJoint1639.USE = "hanim_l_midcarpal_3";
 joints[39] = HAnimJoint1639;
 
 let HAnimJoint1640 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1640.USE = "hanim_r_tarsometatarsal_2";
+HAnimJoint1640.USE = "hanim_l_midcarpal_4_5";
 joints[40] = HAnimJoint1640;
 
 let HAnimJoint1641 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1641.USE = "hanim_r_metatarsophalangeal_2";
+HAnimJoint1641.USE = "hanim_l_radiocarpal";
 joints[41] = HAnimJoint1641;
 
 let HAnimJoint1642 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1642.USE = "hanim_r_tarsal_proximal_interphalangeal_2";
+HAnimJoint1642.USE = "hanim_l_shoulder";
 joints[42] = HAnimJoint1642;
 
 let HAnimJoint1643 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1643.USE = "hanim_r_tarsal_distal_interphalangeal_2";
+HAnimJoint1643.USE = "hanim_l_sternoclavicular";
 joints[43] = HAnimJoint1643;
 
 let HAnimJoint1644 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1644.USE = "hanim_r_cuneonavicular_3";
+HAnimJoint1644.USE = "hanim_l_talocalcaneonavicular";
 joints[44] = HAnimJoint1644;
 
 let HAnimJoint1645 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1645.USE = "hanim_r_tarsometatarsal_3";
+HAnimJoint1645.USE = "hanim_l_talocrural";
 joints[45] = HAnimJoint1645;
 
 let HAnimJoint1646 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1646.USE = "hanim_r_metatarsophalangeal_3";
+HAnimJoint1646.USE = "hanim_l_tarsal_distal_interphalangeal_2";
 joints[46] = HAnimJoint1646;
 
 let HAnimJoint1647 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1647.USE = "hanim_r_tarsal_proximal_interphalangeal_3";
+HAnimJoint1647.USE = "hanim_l_tarsal_distal_interphalangeal_3";
 joints[47] = HAnimJoint1647;
 
 let HAnimJoint1648 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1648.USE = "hanim_r_tarsal_distal_interphalangeal_3";
+HAnimJoint1648.USE = "hanim_l_tarsal_distal_interphalangeal_4";
 joints[48] = HAnimJoint1648;
 
 let HAnimJoint1649 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1649.USE = "hanim_r_calcaneocuboid";
+HAnimJoint1649.USE = "hanim_l_tarsal_distal_interphalangeal_5";
 joints[49] = HAnimJoint1649;
 
 let HAnimJoint1650 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1650.USE = "hanim_r_transversetarsal";
+HAnimJoint1650.USE = "hanim_l_tarsal_interphalangeal_1";
 joints[50] = HAnimJoint1650;
 
 let HAnimJoint1651 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1651.USE = "hanim_r_tarsometatarsal_4";
+HAnimJoint1651.USE = "hanim_l_tarsal_proximal_interphalangeal_2";
 joints[51] = HAnimJoint1651;
 
 let HAnimJoint1652 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1652.USE = "hanim_r_metatarsophalangeal_4";
+HAnimJoint1652.USE = "hanim_l_tarsal_proximal_interphalangeal_3";
 joints[52] = HAnimJoint1652;
 
 let HAnimJoint1653 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1653.USE = "hanim_r_tarsal_proximal_interphalangeal_4";
+HAnimJoint1653.USE = "hanim_l_tarsal_proximal_interphalangeal_4";
 joints[53] = HAnimJoint1653;
 
 let HAnimJoint1654 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1654.USE = "hanim_r_tarsal_distal_interphalangeal_4";
+HAnimJoint1654.USE = "hanim_l_tarsal_proximal_interphalangeal_5";
 joints[54] = HAnimJoint1654;
 
 let HAnimJoint1655 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1655.USE = "hanim_r_tarsometatarsal_5";
+HAnimJoint1655.USE = "hanim_l_tarsometatarsal_1";
 joints[55] = HAnimJoint1655;
 
 let HAnimJoint1656 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1656.USE = "hanim_r_metatarsophalangeal_5";
+HAnimJoint1656.USE = "hanim_l_tarsometatarsal_2";
 joints[56] = HAnimJoint1656;
 
 let HAnimJoint1657 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1657.USE = "hanim_r_tarsal_proximal_interphalangeal_5";
+HAnimJoint1657.USE = "hanim_l_tarsometatarsal_3";
 joints[57] = HAnimJoint1657;
 
 let HAnimJoint1658 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1658.USE = "hanim_r_tarsal_distal_interphalangeal_5";
+HAnimJoint1658.USE = "hanim_l_tarsometatarsal_4";
 joints[58] = HAnimJoint1658;
 
 let HAnimJoint1659 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1659.USE = "hanim_vl5";
+HAnimJoint1659.USE = "hanim_l_tarsometatarsal_5";
 joints[59] = HAnimJoint1659;
 
 let HAnimJoint1660 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1660.USE = "hanim_vl4";
+HAnimJoint1660.USE = "hanim_l_transversetarsal";
 joints[60] = HAnimJoint1660;
 
 let HAnimJoint1661 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1661.USE = "hanim_vl3";
+HAnimJoint1661.USE = "hanim_r_acromioclavicular";
 joints[61] = HAnimJoint1661;
 
 let HAnimJoint1662 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1662.USE = "hanim_vl2";
+HAnimJoint1662.USE = "hanim_r_calcaneocuboid";
 joints[62] = HAnimJoint1662;
 
 let HAnimJoint1663 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1663.USE = "hanim_vl1";
+HAnimJoint1663.USE = "hanim_r_carpal_distal_interphalangeal_2";
 joints[63] = HAnimJoint1663;
 
 let HAnimJoint1664 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1664.USE = "hanim_vt12";
+HAnimJoint1664.USE = "hanim_r_carpal_distal_interphalangeal_3";
 joints[64] = HAnimJoint1664;
 
 let HAnimJoint1665 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1665.USE = "hanim_vt11";
+HAnimJoint1665.USE = "hanim_r_carpal_distal_interphalangeal_4";
 joints[65] = HAnimJoint1665;
 
 let HAnimJoint1666 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1666.USE = "hanim_vt10";
+HAnimJoint1666.USE = "hanim_r_carpal_distal_interphalangeal_5";
 joints[66] = HAnimJoint1666;
 
 let HAnimJoint1667 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1667.USE = "hanim_vt9";
+HAnimJoint1667.USE = "hanim_r_carpal_interphalangeal_1";
 joints[67] = HAnimJoint1667;
 
 let HAnimJoint1668 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1668.USE = "hanim_vt8";
+HAnimJoint1668.USE = "hanim_r_carpal_proximal_interphalangeal_2";
 joints[68] = HAnimJoint1668;
 
 let HAnimJoint1669 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1669.USE = "hanim_vt7";
+HAnimJoint1669.USE = "hanim_r_carpal_proximal_interphalangeal_3";
 joints[69] = HAnimJoint1669;
 
 let HAnimJoint1670 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1670.USE = "hanim_vt6";
+HAnimJoint1670.USE = "hanim_r_carpal_proximal_interphalangeal_4";
 joints[70] = HAnimJoint1670;
 
 let HAnimJoint1671 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1671.USE = "hanim_vt5";
+HAnimJoint1671.USE = "hanim_r_carpal_proximal_interphalangeal_5";
 joints[71] = HAnimJoint1671;
 
 let HAnimJoint1672 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1672.USE = "hanim_vt4";
+HAnimJoint1672.USE = "hanim_r_carpometacarpal_1";
 joints[72] = HAnimJoint1672;
 
 let HAnimJoint1673 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1673.USE = "hanim_vt3";
+HAnimJoint1673.USE = "hanim_r_carpometacarpal_2";
 joints[73] = HAnimJoint1673;
 
 let HAnimJoint1674 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1674.USE = "hanim_vt2";
+HAnimJoint1674.USE = "hanim_r_carpometacarpal_3";
 joints[74] = HAnimJoint1674;
 
 let HAnimJoint1675 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1675.USE = "hanim_vt1";
+HAnimJoint1675.USE = "hanim_r_carpometacarpal_4";
 joints[75] = HAnimJoint1675;
 
 let HAnimJoint1676 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1676.USE = "hanim_vc7";
+HAnimJoint1676.USE = "hanim_r_carpometacarpal_5";
 joints[76] = HAnimJoint1676;
 
 let HAnimJoint1677 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1677.USE = "hanim_vc6";
+HAnimJoint1677.USE = "hanim_r_cuneonavicular_1";
 joints[77] = HAnimJoint1677;
 
 let HAnimJoint1678 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1678.USE = "hanim_vc5";
+HAnimJoint1678.USE = "hanim_r_cuneonavicular_2";
 joints[78] = HAnimJoint1678;
 
 let HAnimJoint1679 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1679.USE = "hanim_vc4";
+HAnimJoint1679.USE = "hanim_r_cuneonavicular_3";
 joints[79] = HAnimJoint1679;
 
 let HAnimJoint1680 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1680.USE = "hanim_vc3";
+HAnimJoint1680.USE = "hanim_r_elbow";
 joints[80] = HAnimJoint1680;
 
 let HAnimJoint1681 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1681.USE = "hanim_vc2";
+HAnimJoint1681.USE = "hanim_r_eyeball_joint";
 joints[81] = HAnimJoint1681;
 
 let HAnimJoint1682 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1682.USE = "hanim_vc1";
+HAnimJoint1682.USE = "hanim_r_eyebrow_joint";
 joints[82] = HAnimJoint1682;
 
 let HAnimJoint1683 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1683.USE = "hanim_skullbase";
+HAnimJoint1683.USE = "hanim_r_eyelid_joint";
 joints[83] = HAnimJoint1683;
 
 let HAnimJoint1684 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1684.USE = "hanim_l_eyelid_joint";
+HAnimJoint1684.USE = "hanim_r_hip";
 joints[84] = HAnimJoint1684;
 
 let HAnimJoint1685 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1685.USE = "hanim_r_eyelid_joint";
+HAnimJoint1685.USE = "hanim_r_knee";
 joints[85] = HAnimJoint1685;
 
 let HAnimJoint1686 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1686.USE = "hanim_l_eyeball_joint";
+HAnimJoint1686.USE = "hanim_r_metacarpophalangeal_1";
 joints[86] = HAnimJoint1686;
 
 let HAnimJoint1687 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1687.USE = "hanim_r_eyeball_joint";
+HAnimJoint1687.USE = "hanim_r_metacarpophalangeal_2";
 joints[87] = HAnimJoint1687;
 
 let HAnimJoint1688 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1688.USE = "hanim_l_eyebrow_joint";
+HAnimJoint1688.USE = "hanim_r_metacarpophalangeal_3";
 joints[88] = HAnimJoint1688;
 
 let HAnimJoint1689 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1689.USE = "hanim_r_eyebrow_joint";
+HAnimJoint1689.USE = "hanim_r_metacarpophalangeal_4";
 joints[89] = HAnimJoint1689;
 
 let HAnimJoint1690 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1690.USE = "hanim_temporomandibular";
+HAnimJoint1690.USE = "hanim_r_metacarpophalangeal_5";
 joints[90] = HAnimJoint1690;
 
 let HAnimJoint1691 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1691.USE = "hanim_l_sternoclavicular";
+HAnimJoint1691.USE = "hanim_r_metatarsophalangeal_1";
 joints[91] = HAnimJoint1691;
 
 let HAnimJoint1692 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1692.USE = "hanim_l_acromioclavicular";
+HAnimJoint1692.USE = "hanim_r_metatarsophalangeal_2";
 joints[92] = HAnimJoint1692;
 
 let HAnimJoint1693 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1693.USE = "hanim_l_shoulder";
+HAnimJoint1693.USE = "hanim_r_metatarsophalangeal_3";
 joints[93] = HAnimJoint1693;
 
 let HAnimJoint1694 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1694.USE = "hanim_l_elbow";
+HAnimJoint1694.USE = "hanim_r_metatarsophalangeal_4";
 joints[94] = HAnimJoint1694;
 
 let HAnimJoint1695 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1695.USE = "hanim_l_radiocarpal";
+HAnimJoint1695.USE = "hanim_r_metatarsophalangeal_5";
 joints[95] = HAnimJoint1695;
 
 let HAnimJoint1696 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1696.USE = "hanim_l_midcarpal_1";
+HAnimJoint1696.USE = "hanim_r_midcarpal_1";
 joints[96] = HAnimJoint1696;
 
 let HAnimJoint1697 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1697.USE = "hanim_l_carpometacarpal_1";
+HAnimJoint1697.USE = "hanim_r_midcarpal_2";
 joints[97] = HAnimJoint1697;
 
 let HAnimJoint1698 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1698.USE = "hanim_l_metacarpophalangeal_1";
+HAnimJoint1698.USE = "hanim_r_midcarpal_3";
 joints[98] = HAnimJoint1698;
 
 let HAnimJoint1699 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1699.USE = "hanim_l_carpal_interphalangeal_1";
+HAnimJoint1699.USE = "hanim_r_midcarpal_4_5";
 joints[99] = HAnimJoint1699;
 
 let HAnimJoint1700 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1700.USE = "hanim_l_midcarpal_2";
+HAnimJoint1700.USE = "hanim_r_radiocarpal";
 joints[100] = HAnimJoint1700;
 
 let HAnimJoint1701 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1701.USE = "hanim_l_carpometacarpal_2";
+HAnimJoint1701.USE = "hanim_r_shoulder";
 joints[101] = HAnimJoint1701;
 
 let HAnimJoint1702 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1702.USE = "hanim_l_metacarpophalangeal_2";
+HAnimJoint1702.USE = "hanim_r_sternoclavicular";
 joints[102] = HAnimJoint1702;
 
 let HAnimJoint1703 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1703.USE = "hanim_l_carpal_proximal_interphalangeal_2";
+HAnimJoint1703.USE = "hanim_r_talocalcaneonavicular";
 joints[103] = HAnimJoint1703;
 
 let HAnimJoint1704 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1704.USE = "hanim_l_carpal_distal_interphalangeal_2";
+HAnimJoint1704.USE = "hanim_r_talocrural";
 joints[104] = HAnimJoint1704;
 
 let HAnimJoint1705 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1705.USE = "hanim_l_midcarpal_3";
+HAnimJoint1705.USE = "hanim_r_tarsal_distal_interphalangeal_2";
 joints[105] = HAnimJoint1705;
 
 let HAnimJoint1706 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1706.USE = "hanim_l_carpometacarpal_3";
+HAnimJoint1706.USE = "hanim_r_tarsal_distal_interphalangeal_3";
 joints[106] = HAnimJoint1706;
 
 let HAnimJoint1707 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1707.USE = "hanim_l_metacarpophalangeal_3";
+HAnimJoint1707.USE = "hanim_r_tarsal_distal_interphalangeal_4";
 joints[107] = HAnimJoint1707;
 
 let HAnimJoint1708 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1708.USE = "hanim_l_carpal_proximal_interphalangeal_3";
+HAnimJoint1708.USE = "hanim_r_tarsal_distal_interphalangeal_5";
 joints[108] = HAnimJoint1708;
 
 let HAnimJoint1709 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1709.USE = "hanim_l_carpal_distal_interphalangeal_3";
+HAnimJoint1709.USE = "hanim_r_tarsal_interphalangeal_1";
 joints[109] = HAnimJoint1709;
 
 let HAnimJoint1710 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1710.USE = "hanim_l_midcarpal_4_5";
+HAnimJoint1710.USE = "hanim_r_tarsal_proximal_interphalangeal_2";
 joints[110] = HAnimJoint1710;
 
 let HAnimJoint1711 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1711.USE = "hanim_l_carpometacarpal_4";
+HAnimJoint1711.USE = "hanim_r_tarsal_proximal_interphalangeal_3";
 joints[111] = HAnimJoint1711;
 
 let HAnimJoint1712 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1712.USE = "hanim_l_metacarpophalangeal_4";
+HAnimJoint1712.USE = "hanim_r_tarsal_proximal_interphalangeal_4";
 joints[112] = HAnimJoint1712;
 
 let HAnimJoint1713 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1713.USE = "hanim_l_carpal_proximal_interphalangeal_4";
+HAnimJoint1713.USE = "hanim_r_tarsal_proximal_interphalangeal_5";
 joints[113] = HAnimJoint1713;
 
 let HAnimJoint1714 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1714.USE = "hanim_l_carpal_distal_interphalangeal_4";
+HAnimJoint1714.USE = "hanim_r_tarsometatarsal_1";
 joints[114] = HAnimJoint1714;
 
 let HAnimJoint1715 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1715.USE = "hanim_l_carpometacarpal_5";
+HAnimJoint1715.USE = "hanim_r_tarsometatarsal_2";
 joints[115] = HAnimJoint1715;
 
 let HAnimJoint1716 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1716.USE = "hanim_l_metacarpophalangeal_5";
+HAnimJoint1716.USE = "hanim_r_tarsometatarsal_3";
 joints[116] = HAnimJoint1716;
 
 let HAnimJoint1717 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1717.USE = "hanim_l_carpal_proximal_interphalangeal_5";
+HAnimJoint1717.USE = "hanim_r_tarsometatarsal_4";
 joints[117] = HAnimJoint1717;
 
 let HAnimJoint1718 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1718.USE = "hanim_l_carpal_distal_interphalangeal_5";
+HAnimJoint1718.USE = "hanim_r_tarsometatarsal_5";
 joints[118] = HAnimJoint1718;
 
 let HAnimJoint1719 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1719.USE = "hanim_r_sternoclavicular";
+HAnimJoint1719.USE = "hanim_r_transversetarsal";
 joints[119] = HAnimJoint1719;
 
 let HAnimJoint1720 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1720.USE = "hanim_r_acromioclavicular";
+HAnimJoint1720.USE = "hanim_sacroiliac";
 joints[120] = HAnimJoint1720;
 
 let HAnimJoint1721 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1721.USE = "hanim_r_shoulder";
+HAnimJoint1721.USE = "hanim_skullbase";
 joints[121] = HAnimJoint1721;
 
 let HAnimJoint1722 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1722.USE = "hanim_r_elbow";
+HAnimJoint1722.USE = "hanim_temporomandibular";
 joints[122] = HAnimJoint1722;
 
 let HAnimJoint1723 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1723.USE = "hanim_r_radiocarpal";
+HAnimJoint1723.USE = "hanim_vc1";
 joints[123] = HAnimJoint1723;
 
 let HAnimJoint1724 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1724.USE = "hanim_r_midcarpal_1";
+HAnimJoint1724.USE = "hanim_vc2";
 joints[124] = HAnimJoint1724;
 
 let HAnimJoint1725 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1725.USE = "hanim_r_carpometacarpal_1";
+HAnimJoint1725.USE = "hanim_vc3";
 joints[125] = HAnimJoint1725;
 
 let HAnimJoint1726 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1726.USE = "hanim_r_metacarpophalangeal_1";
+HAnimJoint1726.USE = "hanim_vc4";
 joints[126] = HAnimJoint1726;
 
 let HAnimJoint1727 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1727.USE = "hanim_r_carpal_interphalangeal_1";
+HAnimJoint1727.USE = "hanim_vc5";
 joints[127] = HAnimJoint1727;
 
 let HAnimJoint1728 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1728.USE = "hanim_r_midcarpal_2";
+HAnimJoint1728.USE = "hanim_vc6";
 joints[128] = HAnimJoint1728;
 
 let HAnimJoint1729 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1729.USE = "hanim_r_carpometacarpal_2";
+HAnimJoint1729.USE = "hanim_vc7";
 joints[129] = HAnimJoint1729;
 
 let HAnimJoint1730 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1730.USE = "hanim_r_metacarpophalangeal_2";
+HAnimJoint1730.USE = "hanim_vl1";
 joints[130] = HAnimJoint1730;
 
 let HAnimJoint1731 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1731.USE = "hanim_r_carpal_proximal_interphalangeal_2";
+HAnimJoint1731.USE = "hanim_vl2";
 joints[131] = HAnimJoint1731;
 
 let HAnimJoint1732 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1732.USE = "hanim_r_carpal_distal_interphalangeal_2";
+HAnimJoint1732.USE = "hanim_vl3";
 joints[132] = HAnimJoint1732;
 
 let HAnimJoint1733 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1733.USE = "hanim_r_midcarpal_3";
+HAnimJoint1733.USE = "hanim_vl4";
 joints[133] = HAnimJoint1733;
 
 let HAnimJoint1734 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1734.USE = "hanim_r_carpometacarpal_3";
+HAnimJoint1734.USE = "hanim_vl5";
 joints[134] = HAnimJoint1734;
 
 let HAnimJoint1735 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1735.USE = "hanim_r_metacarpophalangeal_3";
+HAnimJoint1735.USE = "hanim_vt1";
 joints[135] = HAnimJoint1735;
 
 let HAnimJoint1736 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1736.USE = "hanim_r_carpal_proximal_interphalangeal_3";
+HAnimJoint1736.USE = "hanim_vt10";
 joints[136] = HAnimJoint1736;
 
 let HAnimJoint1737 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1737.USE = "hanim_r_carpal_distal_interphalangeal_3";
+HAnimJoint1737.USE = "hanim_vt11";
 joints[137] = HAnimJoint1737;
 
 let HAnimJoint1738 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1738.USE = "hanim_r_midcarpal_4_5";
+HAnimJoint1738.USE = "hanim_vt12";
 joints[138] = HAnimJoint1738;
 
 let HAnimJoint1739 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1739.USE = "hanim_r_carpometacarpal_4";
+HAnimJoint1739.USE = "hanim_vt2";
 joints[139] = HAnimJoint1739;
 
 let HAnimJoint1740 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1740.USE = "hanim_r_metacarpophalangeal_4";
+HAnimJoint1740.USE = "hanim_vt3";
 joints[140] = HAnimJoint1740;
 
 let HAnimJoint1741 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1741.USE = "hanim_r_carpal_proximal_interphalangeal_4";
+HAnimJoint1741.USE = "hanim_vt4";
 joints[141] = HAnimJoint1741;
 
 let HAnimJoint1742 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1742.USE = "hanim_r_carpal_distal_interphalangeal_4";
+HAnimJoint1742.USE = "hanim_vt5";
 joints[142] = HAnimJoint1742;
 
 let HAnimJoint1743 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1743.USE = "hanim_r_carpometacarpal_5";
+HAnimJoint1743.USE = "hanim_vt6";
 joints[143] = HAnimJoint1743;
 
 let HAnimJoint1744 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1744.USE = "hanim_r_metacarpophalangeal_5";
+HAnimJoint1744.USE = "hanim_vt7";
 joints[144] = HAnimJoint1744;
 
 let HAnimJoint1745 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1745.USE = "hanim_r_carpal_proximal_interphalangeal_5";
+HAnimJoint1745.USE = "hanim_vt8";
 joints[145] = HAnimJoint1745;
 
 let HAnimJoint1746 = browser.currentScene.createNode("HAnimJoint");
-HAnimJoint1746.USE = "hanim_r_carpal_distal_interphalangeal_5";
+HAnimJoint1746.USE = "hanim_vt9";
 joints[146] = HAnimJoint1746;
-
-let HAnimSegment1747 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1747.USE = "hanim_sacrum";
-segments[147] = HAnimSegment1747;
-
-let HAnimSegment1748 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1748.USE = "hanim_pelvis";
-segments[148] = HAnimSegment1748;
-
-let HAnimSegment1749 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1749.USE = "hanim_l_thigh";
-segments[149] = HAnimSegment1749;
-
-let HAnimSegment1750 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1750.USE = "hanim_l_calf";
-segments[150] = HAnimSegment1750;
-
-let HAnimSegment1751 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1751.USE = "hanim_l_talus";
-segments[151] = HAnimSegment1751;
-
-let HAnimSegment1752 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1752.USE = "hanim_l_navicular";
-segments[152] = HAnimSegment1752;
-
-let HAnimSegment1753 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1753.USE = "hanim_l_cuneiform_1";
-segments[153] = HAnimSegment1753;
-
-let HAnimSegment1754 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1754.USE = "hanim_l_metatarsal_1";
-segments[154] = HAnimSegment1754;
-
-let HAnimSegment1755 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1755.USE = "hanim_l_tarsal_proximal_phalanx_1";
-segments[155] = HAnimSegment1755;
-
-let HAnimSegment1756 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1756.USE = "hanim_l_cuneiform_2";
-segments[156] = HAnimSegment1756;
-
-let HAnimSegment1757 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1757.USE = "hanim_l_metatarsal_2";
-segments[157] = HAnimSegment1757;
-
-let HAnimSegment1758 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1758.USE = "hanim_l_tarsal_proximal_phalanx_2";
-segments[158] = HAnimSegment1758;
-
-let HAnimSegment1759 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1759.USE = "hanim_l_tarsal_middle_phalanx_2";
-segments[159] = HAnimSegment1759;
-
-let HAnimSegment1760 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1760.USE = "hanim_l_cuneiform_3";
-segments[160] = HAnimSegment1760;
-
-let HAnimSegment1761 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1761.USE = "hanim_l_metatarsal_3";
-segments[161] = HAnimSegment1761;
-
-let HAnimSegment1762 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1762.USE = "hanim_l_tarsal_proximal_phalanx_3";
-segments[162] = HAnimSegment1762;
-
-let HAnimSegment1763 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1763.USE = "hanim_l_tarsal_middle_phalanx_3";
-segments[163] = HAnimSegment1763;
-
-let HAnimSegment1764 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1764.USE = "hanim_l_calcaneus";
-segments[164] = HAnimSegment1764;
-
-let HAnimSegment1765 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1765.USE = "hanim_l_cuboid";
-segments[165] = HAnimSegment1765;
-
-let HAnimSegment1766 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1766.USE = "hanim_l_metatarsal_4";
-segments[166] = HAnimSegment1766;
-
-let HAnimSegment1767 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1767.USE = "hanim_l_tarsal_proximal_phalanx_4";
-segments[167] = HAnimSegment1767;
-
-let HAnimSegment1768 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1768.USE = "hanim_l_tarsal_middle_phalanx_4";
-segments[168] = HAnimSegment1768;
-
-let HAnimSegment1769 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1769.USE = "hanim_l_metatarsal_5";
-segments[169] = HAnimSegment1769;
-
-let HAnimSegment1770 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1770.USE = "hanim_l_tarsal_proximal_phalanx_5";
-segments[170] = HAnimSegment1770;
-
-let HAnimSegment1771 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1771.USE = "hanim_l_tarsal_middle_phalanx_5";
-segments[171] = HAnimSegment1771;
-
-let HAnimSegment1772 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1772.USE = "hanim_r_thigh";
-segments[172] = HAnimSegment1772;
-
-let HAnimSegment1773 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1773.USE = "hanim_r_calf";
-segments[173] = HAnimSegment1773;
-
-let HAnimSegment1774 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1774.USE = "hanim_r_talus";
-segments[174] = HAnimSegment1774;
-
-let HAnimSegment1775 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1775.USE = "hanim_r_navicular";
-segments[175] = HAnimSegment1775;
-
-let HAnimSegment1776 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1776.USE = "hanim_r_cuneiform_1";
-segments[176] = HAnimSegment1776;
-
-let HAnimSegment1777 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1777.USE = "hanim_r_metatarsal_1";
-segments[177] = HAnimSegment1777;
-
-let HAnimSegment1778 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1778.USE = "hanim_r_tarsal_proximal_phalanx_1";
-segments[178] = HAnimSegment1778;
-
-let HAnimSegment1779 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1779.USE = "hanim_r_cuneiform_2";
-segments[179] = HAnimSegment1779;
-
-let HAnimSegment1780 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1780.USE = "hanim_r_metatarsal_2";
-segments[180] = HAnimSegment1780;
-
-let HAnimSegment1781 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1781.USE = "hanim_r_tarsal_proximal_phalanx_2";
-segments[181] = HAnimSegment1781;
-
-let HAnimSegment1782 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1782.USE = "hanim_r_tarsal_middle_phalanx_2";
-segments[182] = HAnimSegment1782;
-
-let HAnimSegment1783 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1783.USE = "hanim_r_cuneiform_3";
-segments[183] = HAnimSegment1783;
-
-let HAnimSegment1784 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1784.USE = "hanim_r_metatarsal_3";
-segments[184] = HAnimSegment1784;
-
-let HAnimSegment1785 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1785.USE = "hanim_r_tarsal_proximal_phalanx_3";
-segments[185] = HAnimSegment1785;
-
-let HAnimSegment1786 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1786.USE = "hanim_r_tarsal_middle_phalanx_3";
-segments[186] = HAnimSegment1786;
-
-let HAnimSegment1787 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1787.USE = "hanim_r_calcaneus";
-segments[187] = HAnimSegment1787;
-
-let HAnimSegment1788 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1788.USE = "hanim_r_cuboid";
-segments[188] = HAnimSegment1788;
-
-let HAnimSegment1789 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1789.USE = "hanim_r_metatarsal_4";
-segments[189] = HAnimSegment1789;
-
-let HAnimSegment1790 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1790.USE = "hanim_r_tarsal_proximal_phalanx_4";
-segments[190] = HAnimSegment1790;
-
-let HAnimSegment1791 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1791.USE = "hanim_r_tarsal_middle_phalanx_4";
-segments[191] = HAnimSegment1791;
-
-let HAnimSegment1792 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1792.USE = "hanim_r_metatarsal_5";
-segments[192] = HAnimSegment1792;
-
-let HAnimSegment1793 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1793.USE = "hanim_r_tarsal_proximal_phalanx_5";
-segments[193] = HAnimSegment1793;
-
-let HAnimSegment1794 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1794.USE = "hanim_r_tarsal_middle_phalanx_5";
-segments[194] = HAnimSegment1794;
-
-let HAnimSegment1795 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1795.USE = "hanim_l5";
-segments[195] = HAnimSegment1795;
-
-let HAnimSegment1796 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1796.USE = "hanim_l4";
-segments[196] = HAnimSegment1796;
-
-let HAnimSegment1797 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1797.USE = "hanim_l3";
-segments[197] = HAnimSegment1797;
-
-let HAnimSegment1798 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1798.USE = "hanim_l2";
-segments[198] = HAnimSegment1798;
-
-let HAnimSegment1799 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1799.USE = "hanim_l1";
-segments[199] = HAnimSegment1799;
-
-let HAnimSegment1800 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1800.USE = "hanim_t12";
-segments[200] = HAnimSegment1800;
-
-let HAnimSegment1801 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1801.USE = "hanim_t11";
-segments[201] = HAnimSegment1801;
-
-let HAnimSegment1802 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1802.USE = "hanim_t10";
-segments[202] = HAnimSegment1802;
-
-let HAnimSegment1803 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1803.USE = "hanim_t9";
-segments[203] = HAnimSegment1803;
-
-let HAnimSegment1804 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1804.USE = "hanim_t8";
-segments[204] = HAnimSegment1804;
-
-let HAnimSegment1805 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1805.USE = "hanim_t7";
-segments[205] = HAnimSegment1805;
-
-let HAnimSegment1806 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1806.USE = "hanim_t6";
-segments[206] = HAnimSegment1806;
-
-let HAnimSegment1807 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1807.USE = "hanim_t5";
-segments[207] = HAnimSegment1807;
-
-let HAnimSegment1808 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1808.USE = "hanim_t4";
-segments[208] = HAnimSegment1808;
-
-let HAnimSegment1809 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1809.USE = "hanim_t3";
-segments[209] = HAnimSegment1809;
-
-let HAnimSegment1810 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1810.USE = "hanim_t2";
-segments[210] = HAnimSegment1810;
-
-let HAnimSegment1811 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1811.USE = "hanim_t1";
-segments[211] = HAnimSegment1811;
-
-let HAnimSegment1812 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1812.USE = "hanim_c7";
-segments[212] = HAnimSegment1812;
-
-let HAnimSegment1813 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1813.USE = "hanim_c6";
-segments[213] = HAnimSegment1813;
-
-let HAnimSegment1814 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1814.USE = "hanim_c5";
-segments[214] = HAnimSegment1814;
-
-let HAnimSegment1815 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1815.USE = "hanim_c4";
-segments[215] = HAnimSegment1815;
-
-let HAnimSegment1816 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1816.USE = "hanim_c3";
-segments[216] = HAnimSegment1816;
-
-let HAnimSegment1817 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1817.USE = "hanim_c2";
-segments[217] = HAnimSegment1817;
-
-let HAnimSegment1818 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1818.USE = "hanim_c1";
-segments[218] = HAnimSegment1818;
-
-let HAnimSegment1819 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1819.USE = "hanim_skull";
-segments[219] = HAnimSegment1819;
-
-let HAnimSegment1820 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1820.USE = "hanim_l_clavicle";
-segments[220] = HAnimSegment1820;
-
-let HAnimSegment1821 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1821.USE = "hanim_l_scapula";
-segments[221] = HAnimSegment1821;
-
-let HAnimSegment1822 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1822.USE = "hanim_l_upperarm";
-segments[222] = HAnimSegment1822;
-
-let HAnimSegment1823 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1823.USE = "hanim_l_forearm";
-segments[223] = HAnimSegment1823;
-
-let HAnimSegment1824 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1824.USE = "hanim_l_carpal";
-segments[224] = HAnimSegment1824;
-
-let HAnimSegment1825 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1825.USE = "hanim_l_trapezium";
-segments[225] = HAnimSegment1825;
-
-let HAnimSegment1826 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1826.USE = "hanim_l_metacarpal_1";
-segments[226] = HAnimSegment1826;
-
-let HAnimSegment1827 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1827.USE = "hanim_l_carpal_proximal_phalanx_1";
-segments[227] = HAnimSegment1827;
-
-let HAnimSegment1828 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1828.USE = "hanim_l_trapezoid";
-segments[228] = HAnimSegment1828;
-
-let HAnimSegment1829 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1829.USE = "hanim_l_metacarpal_2";
-segments[229] = HAnimSegment1829;
-
-let HAnimSegment1830 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1830.USE = "hanim_l_carpal_proximal_phalanx_2";
-segments[230] = HAnimSegment1830;
-
-let HAnimSegment1831 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1831.USE = "hanim_l_carpal_middle_phalanx_2";
-segments[231] = HAnimSegment1831;
-
-let HAnimSegment1832 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1832.USE = "hanim_l_capitate";
-segments[232] = HAnimSegment1832;
-
-let HAnimSegment1833 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1833.USE = "hanim_l_metacarpal_3";
-segments[233] = HAnimSegment1833;
-
-let HAnimSegment1834 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1834.USE = "hanim_l_carpal_proximal_phalanx_3";
-segments[234] = HAnimSegment1834;
-
-let HAnimSegment1835 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1835.USE = "hanim_l_carpal_middle_phalanx_3";
-segments[235] = HAnimSegment1835;
-
-let HAnimSegment1836 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1836.USE = "hanim_l_hamate";
-segments[236] = HAnimSegment1836;
-
-let HAnimSegment1837 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1837.USE = "hanim_l_metacarpal_4";
-segments[237] = HAnimSegment1837;
-
-let HAnimSegment1838 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1838.USE = "hanim_l_carpal_proximal_phalanx_4";
-segments[238] = HAnimSegment1838;
-
-let HAnimSegment1839 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1839.USE = "hanim_l_carpal_middle_phalanx_4";
-segments[239] = HAnimSegment1839;
-
-let HAnimSegment1840 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1840.USE = "hanim_l_metacarpal_5";
-segments[240] = HAnimSegment1840;
-
-let HAnimSegment1841 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1841.USE = "hanim_l_carpal_proximal_phalanx_5";
-segments[241] = HAnimSegment1841;
-
-let HAnimSegment1842 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1842.USE = "hanim_l_carpal_middle_phalanx_5";
-segments[242] = HAnimSegment1842;
-
-let HAnimSegment1843 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1843.USE = "hanim_r_clavicle";
-segments[243] = HAnimSegment1843;
-
-let HAnimSegment1844 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1844.USE = "hanim_r_scapula";
-segments[244] = HAnimSegment1844;
-
-let HAnimSegment1845 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1845.USE = "hanim_r_upperarm";
-segments[245] = HAnimSegment1845;
-
-let HAnimSegment1846 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1846.USE = "hanim_r_forearm";
-segments[246] = HAnimSegment1846;
-
-let HAnimSegment1847 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1847.USE = "hanim_r_carpal";
-segments[247] = HAnimSegment1847;
-
-let HAnimSegment1848 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1848.USE = "hanim_r_trapezium";
-segments[248] = HAnimSegment1848;
-
-let HAnimSegment1849 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1849.USE = "hanim_r_metacarpal_1";
-segments[249] = HAnimSegment1849;
-
-let HAnimSegment1850 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1850.USE = "hanim_r_carpal_proximal_phalanx_1";
-segments[250] = HAnimSegment1850;
-
-let HAnimSegment1851 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1851.USE = "hanim_r_trapezoid";
-segments[251] = HAnimSegment1851;
-
-let HAnimSegment1852 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1852.USE = "hanim_r_metacarpal_2";
-segments[252] = HAnimSegment1852;
-
-let HAnimSegment1853 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1853.USE = "hanim_r_carpal_proximal_phalanx_2";
-segments[253] = HAnimSegment1853;
-
-let HAnimSegment1854 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1854.USE = "hanim_r_carpal_middle_phalanx_2";
-segments[254] = HAnimSegment1854;
-
-let HAnimSegment1855 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1855.USE = "hanim_r_capitate";
-segments[255] = HAnimSegment1855;
-
-let HAnimSegment1856 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1856.USE = "hanim_r_metacarpal_3";
-segments[256] = HAnimSegment1856;
-
-let HAnimSegment1857 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1857.USE = "hanim_r_carpal_proximal_phalanx_3";
-segments[257] = HAnimSegment1857;
-
-let HAnimSegment1858 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1858.USE = "hanim_r_carpal_middle_phalanx_3";
-segments[258] = HAnimSegment1858;
-
-let HAnimSegment1859 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1859.USE = "hanim_r_hamate";
-segments[259] = HAnimSegment1859;
-
-let HAnimSegment1860 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1860.USE = "hanim_r_metacarpal_4";
-segments[260] = HAnimSegment1860;
-
-let HAnimSegment1861 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1861.USE = "hanim_r_carpal_proximal_phalanx_4";
-segments[261] = HAnimSegment1861;
-
-let HAnimSegment1862 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1862.USE = "hanim_r_carpal_middle_phalanx_4";
-segments[262] = HAnimSegment1862;
-
-let HAnimSegment1863 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1863.USE = "hanim_r_metacarpal_5";
-segments[263] = HAnimSegment1863;
-
-let HAnimSegment1864 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1864.USE = "hanim_r_carpal_proximal_phalanx_5";
-segments[264] = HAnimSegment1864;
-
-let HAnimSegment1865 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment1865.USE = "hanim_r_carpal_middle_phalanx_5";
-segments[265] = HAnimSegment1865;
-
-let HAnimSite1866 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1866.USE = "hanim_buttocks_standing_wall_contact_point_pt";
-viewpoints[266] = HAnimSite1866;
-
-let HAnimSite1867 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1867.USE = "hanim_crotch_pt";
-viewpoints[267] = HAnimSite1867;
-
-let HAnimSite1868 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1868.USE = "hanim_l_asis_pt";
-viewpoints[268] = HAnimSite1868;
-
-let HAnimSite1869 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1869.USE = "hanim_l_iliocristale_pt";
-viewpoints[269] = HAnimSite1869;
-
-let HAnimSite1870 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1870.USE = "hanim_l_psis_pt";
-viewpoints[270] = HAnimSite1870;
-
-let HAnimSite1871 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1871.USE = "hanim_l_trochanterion_pt";
-viewpoints[271] = HAnimSite1871;
-
-let HAnimSite1872 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1872.USE = "hanim_r_asis_pt";
-viewpoints[272] = HAnimSite1872;
-
-let HAnimSite1873 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1873.USE = "hanim_r_iliocristale_pt";
-viewpoints[273] = HAnimSite1873;
-
-let HAnimSite1874 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1874.USE = "hanim_r_psis_pt";
-viewpoints[274] = HAnimSite1874;
-
-let HAnimSite1875 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1875.USE = "hanim_r_trochanterion_pt";
-viewpoints[275] = HAnimSite1875;
-
-let HAnimSite1876 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1876.USE = "hanim_navel_pt";
-viewpoints[276] = HAnimSite1876;
-
-let HAnimSite1877 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1877.USE = "hanim_waist_preferred_anterior_pt";
-viewpoints[277] = HAnimSite1877;
-
-let HAnimSite1878 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1878.USE = "hanim_waist_preferred_posterior_pt";
-viewpoints[278] = HAnimSite1878;
-
-let HAnimSite1879 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1879.USE = "hanim_l_femoral_lateral_epicondyles_pt";
-viewpoints[279] = HAnimSite1879;
-
-let HAnimSite1880 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1880.USE = "hanim_l_femoral_medial_epicondyles_pt";
-viewpoints[280] = HAnimSite1880;
-
-let HAnimSite1881 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1881.USE = "hanim_l_knee_crease_pt";
-viewpoints[281] = HAnimSite1881;
-
-let HAnimSite1882 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1882.USE = "hanim_l_suprapatella_pt";
-viewpoints[282] = HAnimSite1882;
-
-let HAnimSite1883 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1883.USE = "hanim_r_femoral_lateral_epicondyles_pt";
-viewpoints[283] = HAnimSite1883;
-
-let HAnimSite1884 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1884.USE = "hanim_r_femoral_medial_epicondyles_pt";
-viewpoints[284] = HAnimSite1884;
-
-let HAnimSite1885 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1885.USE = "hanim_r_knee_crease_pt";
-viewpoints[285] = HAnimSite1885;
-
-let HAnimSite1886 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1886.USE = "hanim_r_suprapatella_pt";
-viewpoints[286] = HAnimSite1886;
-
-let HAnimSite1887 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1887.USE = "hanim_l_lateral_malleolus_pt";
-viewpoints[287] = HAnimSite1887;
-
-let HAnimSite1888 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1888.USE = "hanim_l_medial_malleolus_pt";
-viewpoints[288] = HAnimSite1888;
-
-let HAnimSite1889 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1889.USE = "hanim_l_tibiale_pt";
-viewpoints[289] = HAnimSite1889;
-
-let HAnimSite1890 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1890.USE = "hanim_l_calcaneus_posterior_pt";
-viewpoints[290] = HAnimSite1890;
-
-let HAnimSite1891 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1891.USE = "hanim_l_sphyrion_pt";
-viewpoints[291] = HAnimSite1891;
-
-let HAnimSite1892 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1892.USE = "hanim_l_metatarsal_phalanx_1_pt";
-viewpoints[292] = HAnimSite1892;
-
-let HAnimSite1893 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1893.USE = "hanim_l_tarsal_distal_phalanx_1_tip";
-viewpoints[293] = HAnimSite1893;
-
-let HAnimSite1894 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1894.USE = "hanim_l_tarsal_distal_phalanx_2_tip";
-viewpoints[294] = HAnimSite1894;
-
-let HAnimSite1895 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1895.USE = "hanim_l_tarsal_distal_phalanx_3_tip";
-viewpoints[295] = HAnimSite1895;
-
-let HAnimSite1896 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1896.USE = "hanim_l_tarsal_distal_phalanx_4_tip";
-viewpoints[296] = HAnimSite1896;
-
-let HAnimSite1897 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1897.USE = "hanim_l_metatarsal_phalanx_5_pt";
-viewpoints[297] = HAnimSite1897;
-
-let HAnimSite1898 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1898.USE = "hanim_l_tarsal_distal_phalanx_5_tip";
-viewpoints[298] = HAnimSite1898;
-
-let HAnimSite1899 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1899.USE = "hanim_r_lateral_malleolus_pt";
-viewpoints[299] = HAnimSite1899;
-
-let HAnimSite1900 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1900.USE = "hanim_r_medial_malleolus_pt";
-viewpoints[300] = HAnimSite1900;
-
-let HAnimSite1901 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1901.USE = "hanim_r_tibiale_pt";
-viewpoints[301] = HAnimSite1901;
-
-let HAnimSite1902 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1902.USE = "hanim_r_calcaneus_posterior_pt";
-viewpoints[302] = HAnimSite1902;
-
-let HAnimSite1903 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1903.USE = "hanim_r_sphyrion_pt";
-viewpoints[303] = HAnimSite1903;
-
-let HAnimSite1904 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1904.USE = "hanim_r_metatarsal_phalanx_1_pt";
-viewpoints[304] = HAnimSite1904;
-
-let HAnimSite1905 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1905.USE = "hanim_r_tarsal_distal_phalanx_1_tip";
-viewpoints[305] = HAnimSite1905;
-
-let HAnimSite1906 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1906.USE = "hanim_r_tarsal_distal_phalanx_2_tip";
-viewpoints[306] = HAnimSite1906;
-
-let HAnimSite1907 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1907.USE = "hanim_r_tarsal_distal_phalanx_3_tip";
-viewpoints[307] = HAnimSite1907;
-
-let HAnimSite1908 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1908.USE = "hanim_r_tarsal_distal_phalanx_4_tip";
-viewpoints[308] = HAnimSite1908;
-
-let HAnimSite1909 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1909.USE = "hanim_r_metatarsal_phalanx_5_pt";
-viewpoints[309] = HAnimSite1909;
-
-let HAnimSite1910 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1910.USE = "hanim_r_tarsal_distal_phalanx_5_tip";
-viewpoints[310] = HAnimSite1910;
-
-let HAnimSite1911 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1911.USE = "hanim_l_rib10_pt";
-viewpoints[311] = HAnimSite1911;
-
-let HAnimSite1912 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1912.USE = "hanim_r_rib10_pt";
-viewpoints[312] = HAnimSite1912;
-
-let HAnimSite1913 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1913.USE = "hanim_spine_2_middle_back_pt";
-viewpoints[313] = HAnimSite1913;
-
-let HAnimSite1914 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1914.USE = "hanim_substernale_pt";
-viewpoints[314] = HAnimSite1914;
-
-let HAnimSite1915 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1915.USE = "hanim_l_thelion_pt";
-viewpoints[315] = HAnimSite1915;
-
-let HAnimSite1916 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1916.USE = "hanim_r_thelion_pt";
-viewpoints[316] = HAnimSite1916;
-
-let HAnimSite1917 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1917.USE = "hanim_l_chest_midsagittal_plane_pt";
-viewpoints[317] = HAnimSite1917;
-
-let HAnimSite1918 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1918.USE = "hanim_mesosternale_pt";
-viewpoints[318] = HAnimSite1918;
-
-let HAnimSite1919 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1919.USE = "hanim_r_chest_midsagittal_plane_pt";
-viewpoints[319] = HAnimSite1919;
-
-let HAnimSite1920 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1920.USE = "hanim_rear_center_midsagittal_plane_pt";
-viewpoints[320] = HAnimSite1920;
-
-let HAnimSite1921 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1921.USE = "hanim_spine_1_middle_back_pt";
-viewpoints[321] = HAnimSite1921;
-
-let HAnimSite1922 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1922.USE = "hanim_cervicale_pt";
-viewpoints[322] = HAnimSite1922;
-
-let HAnimSite1923 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1923.USE = "hanim_suprasternale_pt";
-viewpoints[323] = HAnimSite1923;
-
-let HAnimSite1924 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1924.USE = "hanim_l_neck_base_pt";
-viewpoints[324] = HAnimSite1924;
-
-let HAnimSite1925 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1925.USE = "hanim_r_neck_base_pt";
-viewpoints[325] = HAnimSite1925;
-
-let HAnimSite1926 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1926.USE = "hanim_l_acromion_pt";
-viewpoints[326] = HAnimSite1926;
-
-let HAnimSite1927 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1927.USE = "hanim_l_axilla_distal_pt";
-viewpoints[327] = HAnimSite1927;
-
-let HAnimSite1928 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1928.USE = "hanim_l_axilla_posterior_folds_pt";
-viewpoints[328] = HAnimSite1928;
-
-let HAnimSite1929 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1929.USE = "hanim_l_axilla_proximal_pt";
-viewpoints[329] = HAnimSite1929;
-
-let HAnimSite1930 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1930.USE = "hanim_l_clavicale_pt";
-viewpoints[330] = HAnimSite1930;
-
-let HAnimSite1931 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1931.USE = "hanim_r_acromion_pt";
-viewpoints[331] = HAnimSite1931;
-
-let HAnimSite1932 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1932.USE = "hanim_r_axilla_distal_pt";
-viewpoints[332] = HAnimSite1932;
-
-let HAnimSite1933 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1933.USE = "hanim_r_axilla_posterior_folds_pt";
-viewpoints[333] = HAnimSite1933;
-
-let HAnimSite1934 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1934.USE = "hanim_r_axilla_proximal_pt";
-viewpoints[334] = HAnimSite1934;
-
-let HAnimSite1935 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1935.USE = "hanim_r_clavicale_pt";
-viewpoints[335] = HAnimSite1935;
-
-let HAnimSite1936 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1936.USE = "hanim_adams_apple_pt";
-viewpoints[336] = HAnimSite1936;
-
-let HAnimSite1937 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1937.USE = "hanim_glabella_pt";
-viewpoints[337] = HAnimSite1937;
-
-let HAnimSite1938 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1938.USE = "hanim_l_ectocanthus_pt";
-viewpoints[338] = HAnimSite1938;
-
-let HAnimSite1939 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1939.USE = "hanim_l_infraorbitale_pt";
-viewpoints[339] = HAnimSite1939;
-
-let HAnimSite1940 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1940.USE = "hanim_l_tragion_pt";
-viewpoints[340] = HAnimSite1940;
-
-let HAnimSite1941 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1941.USE = "hanim_nuchale_pt";
-viewpoints[341] = HAnimSite1941;
-
-let HAnimSite1942 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1942.USE = "hanim_opisthocranion_pt";
-viewpoints[342] = HAnimSite1942;
-
-let HAnimSite1943 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1943.USE = "hanim_r_ectocanthus_pt";
-viewpoints[343] = HAnimSite1943;
-
-let HAnimSite1944 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1944.USE = "hanim_r_infraorbitale_pt";
-viewpoints[344] = HAnimSite1944;
-
-let HAnimSite1945 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1945.USE = "hanim_r_tragion_pt";
-viewpoints[345] = HAnimSite1945;
-
-let HAnimSite1946 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1946.USE = "hanim_sellion_pt";
-viewpoints[346] = HAnimSite1946;
-
-let HAnimSite1947 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1947.USE = "hanim_skull_vertex_pt";
-viewpoints[347] = HAnimSite1947;
-
-let HAnimSite1948 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1948.USE = "hanim_l_gonion_pt";
-viewpoints[348] = HAnimSite1948;
-
-let HAnimSite1949 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1949.USE = "hanim_menton_pt";
-viewpoints[349] = HAnimSite1949;
-
-let HAnimSite1950 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1950.USE = "hanim_r_gonion_pt";
-viewpoints[350] = HAnimSite1950;
-
-let HAnimSite1951 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1951.USE = "hanim_supramenton_pt";
-viewpoints[351] = HAnimSite1951;
-
-let HAnimSite1952 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1952.USE = "hanim_l_bideltoid_pt";
-viewpoints[352] = HAnimSite1952;
-
-let HAnimSite1953 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1953.USE = "hanim_l_humeral_lateral_epicondyles_pt";
-viewpoints[353] = HAnimSite1953;
-
-let HAnimSite1954 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1954.USE = "hanim_l_humeral_medial_epicondyles_pt";
-viewpoints[354] = HAnimSite1954;
-
-let HAnimSite1955 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1955.USE = "hanim_l_olecranon_pt";
-viewpoints[355] = HAnimSite1955;
-
-let HAnimSite1956 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1956.USE = "hanim_l_radial_styloid_pt";
-viewpoints[356] = HAnimSite1956;
-
-let HAnimSite1957 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1957.USE = "hanim_l_radiale_pt";
-viewpoints[357] = HAnimSite1957;
-
-let HAnimSite1958 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1958.USE = "hanim_l_ulnar_styloid_pt";
-viewpoints[358] = HAnimSite1958;
-
-let HAnimSite1959 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1959.USE = "hanim_l_carpal_distal_phalanx_1_tip";
-viewpoints[359] = HAnimSite1959;
-
-let HAnimSite1960 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1960.USE = "hanim_l_metacarpal_phalanx_2_pt";
-viewpoints[360] = HAnimSite1960;
-
-let HAnimSite1961 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1961.USE = "hanim_l_carpal_distal_phalanx_2_tip";
-viewpoints[361] = HAnimSite1961;
-
-let HAnimSite1962 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1962.USE = "hanim_l_dactylion_pt";
-viewpoints[362] = HAnimSite1962;
-
-let HAnimSite1963 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1963.USE = "hanim_l_metacarpal_phalanx_3_pt";
-viewpoints[363] = HAnimSite1963;
-
-let HAnimSite1964 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1964.USE = "hanim_l_carpal_distal_phalanx_3_tip";
-viewpoints[364] = HAnimSite1964;
-
-let HAnimSite1965 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1965.USE = "hanim_l_metacarpal_phalanx_5_pt";
-viewpoints[365] = HAnimSite1965;
-
-let HAnimSite1966 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1966.USE = "hanim_l_carpal_distal_phalanx_4_tip";
-viewpoints[366] = HAnimSite1966;
-
-let HAnimSite1967 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1967.USE = "hanim_l_carpal_distal_phalanx_5_tip";
-viewpoints[367] = HAnimSite1967;
-
-let HAnimSite1968 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1968.USE = "hanim_r_bideltoid_pt";
-viewpoints[368] = HAnimSite1968;
-
-let HAnimSite1969 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1969.USE = "hanim_r_humeral_lateral_epicondyles_pt";
-viewpoints[369] = HAnimSite1969;
-
-let HAnimSite1970 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1970.USE = "hanim_r_humeral_medial_epicondyles_pt";
-viewpoints[370] = HAnimSite1970;
-
-let HAnimSite1971 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1971.USE = "hanim_r_olecranon_pt";
-viewpoints[371] = HAnimSite1971;
-
-let HAnimSite1972 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1972.USE = "hanim_r_radial_styloid_pt";
-viewpoints[372] = HAnimSite1972;
-
-let HAnimSite1973 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1973.USE = "hanim_r_radiale_pt";
-viewpoints[373] = HAnimSite1973;
-
-let HAnimSite1974 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1974.USE = "hanim_r_ulnar_styloid_pt";
-viewpoints[374] = HAnimSite1974;
-
-let HAnimSite1975 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1975.USE = "hanim_r_carpal_distal_phalanx_1_tip";
-viewpoints[375] = HAnimSite1975;
-
-let HAnimSite1976 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1976.USE = "hanim_r_metacarpal_phalanx_2_pt";
-viewpoints[376] = HAnimSite1976;
-
-let HAnimSite1977 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1977.USE = "hanim_r_carpal_distal_phalanx_2_tip";
-viewpoints[377] = HAnimSite1977;
-
-let HAnimSite1978 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1978.USE = "hanim_r_dactylion_pt";
-viewpoints[378] = HAnimSite1978;
-
-let HAnimSite1979 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1979.USE = "hanim_r_metacarpal_phalanx_3_pt";
-viewpoints[379] = HAnimSite1979;
-
-let HAnimSite1980 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1980.USE = "hanim_r_carpal_distal_phalanx_3_tip";
-viewpoints[380] = HAnimSite1980;
-
-let HAnimSite1981 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1981.USE = "hanim_r_metacarpal_phalanx_5_pt";
-viewpoints[381] = HAnimSite1981;
-
-let HAnimSite1982 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1982.USE = "hanim_r_carpal_distal_phalanx_4_tip";
-viewpoints[382] = HAnimSite1982;
-
-let HAnimSite1983 = browser.currentScene.createNode("HAnimSite");
-HAnimSite1983.USE = "hanim_r_carpal_distal_phalanx_5_tip";
-viewpoints[383] = HAnimSite1983;
 
 browser.currentScene.children[4] = HAnimHumanoid43;
 

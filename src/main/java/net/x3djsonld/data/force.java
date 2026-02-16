@@ -188,11 +188,10 @@ ecmascript:
         }
 """)
       .addField(new field().setName("counter").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-      .addComments(new String[] {"",
-"            <field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>",
-"            <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">",
-"                <Transform USE=\"HoldsContent\"/>",
-"            </field>"})
+      .addComments(" <field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> ")
+      .addComments(" <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> ")
+      .addComments(" <Transform USE=\"HoldsContent\"/> ")
+      .addComments(" </field> ")
       .addField(new field().setName("add_node").setType(field.TYPE_SFBOOL).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(false)))
     .addChild(new ROUTE().setFromNode("clickGenerator").setFromField("isActive").setToNode("clickHandler").setToField("add_node"))
     .addChild(new ROUTE().setFromNode("nodeA").setFromField("position").setToNode("linkA").setToField("set_positionA"))

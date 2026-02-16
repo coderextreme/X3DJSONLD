@@ -79,7 +79,14 @@ children[0] = Transform11;
 Group Group16 = createNode("Group");
 //DEFS for markers of skeleton joints, segments, and sites
 Transform Transform17 = createNode("Transform");
-//<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
+//<Transform translation='0 2 0'>
+//<Shape DEF='HAnimRootShape'>
+//<Sphere radius='0.02' />
+//<Appearance>
+//<Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>
+//</Appearance>
+//</Shape>
+//</Transform>
 Transform Transform18 = createNode("Transform");
 Transform18.translation = new SFVec3f(new float[0,2.1,0]);
 Shape Shape19 = createNode("Shape");
@@ -128,7 +135,17 @@ Transform23.child[0] = Shape24;
 
 Transform17.children[1] = Transform23;
 
-//<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>
+//<Transform translation='0 2.1 0'>
+//<Shape DEF='HAnimSiteShape'>
+//<IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>
+//<ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>
+//<Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>
+//</IndexedFaceSet>
+//<Appearance>
+//<Material diffuseColor='1 1 0' transparency='0.3'/>
+//</Appearance>
+//</Shape>
+//</Transform>
 Group16.children = new MFNode();
 
 Group16.children[0] = Transform17;

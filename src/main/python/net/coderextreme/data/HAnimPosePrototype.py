@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Full"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -27,7 +27,7 @@ meta5.content = "2 October 2025"
 head1.children.append(meta5)
 meta6 = x3d.meta()
 meta6.name = "modified"
-meta6.content = "Mon, 09 Feb 2026 12:24:16 GMT"
+meta6.content = "14 December 2025"
 
 head1.children.append(meta6)
 meta7 = x3d.meta()
@@ -187,1187 +187,1337 @@ meta37.content = "earlier version of this prototype: originals/HAnimPosePrelimin
 head1.children.append(meta37)
 meta38 = x3d.meta()
 meta38.name = "generator"
-meta38.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta38.content = "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
 
 head1.children.append(meta38)
 meta39 = x3d.meta()
 meta39.name = "generator"
-meta39.content = "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+meta39.content = "Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize"
 
 head1.children.append(meta39)
+meta40 = x3d.meta()
+meta40.name = "identifier"
+meta40.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototype.x3d"
+
+head1.children.append(meta40)
+meta41 = x3d.meta()
+meta41.name = "license"
+meta41.content = "https://www.web3d.org/x3d/content/examples/license.html"
+
+head1.children.append(meta41)
 
 X3D0.head = head1
-Scene40 = x3d.Scene()
-ProtoDeclare41 = x3d.ProtoDeclare()
-ProtoDeclare41.name = "HAnimPose"
-ProtoDeclare41.appinfo = "Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."
-ProtoInterface42 = x3d.ProtoInterface()
-field43 = x3d.field()
-field43.accessType = "inputOutput"
-field43.type = "SFNode"
-field43.name = "parentHAnimHumanoid"
-field43.appinfo = "HAnimHumanoid for this Pose to act upon"
+Scene42 = x3d.Scene()
+WorldInfo43 = x3d.WorldInfo(DEF="ModelInfo")
+WorldInfo43.info = ["Design to illustrate a potential HAnimPose node"]
+WorldInfo43.title = "HAnimPosePrototype.x3d"
 
-ProtoInterface42.field.append(field43)
-field44 = x3d.field()
-field44.accessType = "inputOutput"
-field44.type = "SFString"
-field44.name = "name"
-field44.value = "newPoseName"
-field44.appinfo = "name of this pose"
+Scene42.children.append(WorldInfo43)
+Background44 = x3d.Background()
+Background44.skyColor = [(0.8, 0.8, 1)]
 
-ProtoInterface42.field.append(field44)
-field45 = x3d.field()
-field45.accessType = "inputOutput"
-field45.type = "MFNode"
-field45.name = "children"
-field45.appinfo = "joint values to apply to HAnimHumanoid"
+Scene42.children.append(Background44)
+NavigationInfo45 = x3d.NavigationInfo()
 
-ProtoInterface42.field.append(field45)
-field46 = x3d.field()
-field46.accessType = "inputOutput"
-field46.type = "SFString"
-field46.name = "description"
-field46.appinfo = "explanation of purpose"
+Scene42.children.append(NavigationInfo45)
+Group46 = x3d.Group(DEF="HandleInlineLoading")
+Group46.children.append(x3d.Comment("""Multiple HAnimHumanoid Inline/IMPORT models are available to support testing: Characters/ JinLOA1 JinLOA2 JinLOA3 JinLOA4 ../Skin/JoeKick ../Skin/JoeSkeletonSkinSite ../Skin/BoxMan1 ../Skin/BoxMan2"""))
+Group46.children.append(x3d.Comment("""Also tested satisfactorily: KoreanCharacter01Jin KoreanCharacter02Chul KoreanCharacter03Hyun KoreanCharacter04Young KoreanCharacter05Ju KoreanCharacter06Ga KoreanCharacter07No KoreanCharacter08Da KoreanCharacter09Ru KoreanCharacter10Mi KoreanCharacter11Min KoreanCharacter12Sun"""))
+Inline47 = x3d.Inline(DEF="HumanoidInline")
+Inline47.description = "remote HAnimHumanoid for IMPORT"
+Inline47.url = ["../Skin/BoxMan2.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d"]
 
-ProtoInterface42.field.append(field46)
-field47 = x3d.field()
-field47.accessType = "inputOutput"
-field47.type = "SFBool"
-field47.name = "enabled"
-field47.value = True
-field47.appinfo = "default value true"
+Group46.children.append(Inline47)
+Group46.children.append(x3d.Comment("""Note that the following importedDEF must match the EXPORT name found in remote file"""))
+IMPORT48 = x3d.IMPORT()
+IMPORT48.AS = "HumanoidImported"
+IMPORT48.importedDEF = "BoxMan2"
+IMPORT48.inlineDEF = "HumanoidInline"
 
-ProtoInterface42.field.append(field47)
-field48 = x3d.field()
-field48.accessType = "initializeOnly"
-field48.type = "SFInt32"
-field48.name = "loa"
-field48.value = -1
-field48.appinfo = "default is no loa"
+Group46.children.append(IMPORT48)
+LoadSensor49 = x3d.LoadSensor(DEF="HumanoidInlineLoadSensor")
+LoadSensor49.timeOut = 2
+Inline50 = x3d.Inline(USE="HumanoidInline")
 
-ProtoInterface42.field.append(field48)
-field49 = x3d.field()
-field49.accessType = "inputOutput"
-field49.type = "SFTime"
-field49.name = "transitionDuration"
-field49.value = 0
-field49.appinfo = "how many seconds to achieve the pose"
+LoadSensor49.children.append(Inline50)
 
-ProtoInterface42.field.append(field49)
-field50 = x3d.field()
-field50.accessType = "inputOutput"
-field50.type = "SFNode"
-field50.name = "metadata"
-field50.appinfo = "single Metadata* node"
+Group46.children.append(LoadSensor49)
 
-ProtoInterface42.field.append(field50)
-field51 = x3d.field()
-field51.accessType = "outputOnly"
-field51.type = "SFBool"
-field51.name = "isActive"
-field51.appinfo = "event indicating when pose transition is active"
-
-ProtoInterface42.field.append(field51)
-field52 = x3d.field()
-field52.accessType = "inputOnly"
-field52.type = "SFBool"
-field52.name = "commencePose"
-field52.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
-
-ProtoInterface42.field.append(field52)
+Scene42.children.append(Group46)
+ProtoDeclare51 = x3d.ProtoDeclare()
+ProtoDeclare51.name = "HAnimPose"
+ProtoDeclare51.appinfo = "Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."
+ProtoInterface52 = x3d.ProtoInterface()
 field53 = x3d.field()
-field53.accessType = "inputOnly"
-field53.type = "SFBool"
-field53.name = "resetAllJoints"
-field53.appinfo = "reset the skeleton to I pose with all joints zeroed"
+field53.name = "parentHAnimHumanoid"
+field53.accessType = "inputOutput"
+field53.appinfo = "HAnimHumanoid for this Pose to act upon"
+field53.type = "SFNode"
+field53.children.append(x3d.Comment("""HAnimHumanoid initialization node goes here, this field is only used in the prototype implementation"""))
 
-ProtoInterface42.field.append(field53)
+ProtoInterface52.field.append(field53)
 field54 = x3d.field()
-field54.accessType = "inputOnly"
-field54.type = "SFFloat"
-field54.name = "set_fraction"
-field54.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+field54.name = "name"
+field54.accessType = "inputOutput"
+field54.appinfo = "name of this pose"
+field54.type = "SFString"
+field54.value = "newPoseName"
 
-ProtoInterface42.field.append(field54)
+ProtoInterface52.field.append(field54)
 field55 = x3d.field()
-field55.accessType = "inputOnly"
-field55.type = "SFTime"
-field55.name = "set_startTime"
-field55.appinfo = "starts the animation clock"
+field55.name = "children"
+field55.accessType = "inputOutput"
+field55.appinfo = "joint values to apply to HAnimHumanoid"
+field55.type = "MFNode"
+field55.children.append(x3d.Comment("""initializating Joint nodes (if any) go here"""))
 
-ProtoInterface42.field.append(field55)
+ProtoInterface52.field.append(field55)
 field56 = x3d.field()
-field56.accessType = "inputOnly"
-field56.type = "SFBool"
-field56.name = "isLoaded"
-field56.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
+field56.name = "description"
+field56.accessType = "inputOutput"
+field56.appinfo = "explanation of purpose"
+field56.type = "SFString"
 
-ProtoInterface42.field.append(field56)
+ProtoInterface52.field.append(field56)
 field57 = x3d.field()
+field57.name = "enabled"
 field57.accessType = "inputOutput"
+field57.appinfo = "default value true"
 field57.type = "SFBool"
-field57.name = "traceEnabled"
 field57.value = True
-field57.appinfo = "debug trace to Browser output console this is a local prototype field"
 
-ProtoInterface42.field.append(field57)
+ProtoInterface52.field.append(field57)
+field58 = x3d.field()
+field58.name = "loa"
+field58.accessType = "initializeOnly"
+field58.appinfo = "default is no loa"
+field58.type = "SFInt32"
+field58.value = -1
 
-ProtoDeclare41.ProtoInterface = ProtoInterface42
-ProtoBody58 = x3d.ProtoBody()
-TimeSensor59 = x3d.TimeSensor(DEF="ClockTimeSensor")
-TimeSensor59.description = "control timing of pose animation when triggered"
-IS60 = x3d.IS()
-connect61 = x3d.connect()
-connect61.nodeField = "metadata"
-connect61.protoField = "metadata"
+ProtoInterface52.field.append(field58)
+field59 = x3d.field()
+field59.name = "transitionDuration"
+field59.accessType = "inputOutput"
+field59.appinfo = "how many seconds to achieve the pose"
+field59.type = "SFTime"
+field59.value = 0
 
-IS60.connect.append(connect61)
-connect62 = x3d.connect()
-connect62.nodeField = "enabled"
-connect62.protoField = "enabled"
+ProtoInterface52.field.append(field59)
+field60 = x3d.field()
+field60.name = "metadata"
+field60.accessType = "inputOutput"
+field60.appinfo = "single Metadata* node"
+field60.type = "SFNode"
 
-IS60.connect.append(connect62)
-connect63 = x3d.connect()
-connect63.nodeField = "cycleInterval"
-connect63.protoField = "transitionDuration"
+ProtoInterface52.field.append(field60)
+field61 = x3d.field()
+field61.name = "isActive"
+field61.accessType = "outputOnly"
+field61.appinfo = "event indicating when pose transition is active"
+field61.type = "SFBool"
 
-IS60.connect.append(connect63)
-connect64 = x3d.connect()
-connect64.nodeField = "startTime"
-connect64.protoField = "set_startTime"
+ProtoInterface52.field.append(field61)
+field62 = x3d.field()
+field62.name = "commencePose"
+field62.accessType = "inputOnly"
+field62.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
+field62.type = "SFBool"
 
-IS60.connect.append(connect64)
-connect65 = x3d.connect()
-connect65.nodeField = "isActive"
-connect65.protoField = "isActive"
+ProtoInterface52.field.append(field62)
+field63 = x3d.field()
+field63.name = "resetAllJoints"
+field63.accessType = "inputOnly"
+field63.appinfo = "reset the skeleton to I pose with all joints zeroed"
+field63.type = "SFBool"
 
-IS60.connect.append(connect65)
+ProtoInterface52.field.append(field63)
+field64 = x3d.field()
+field64.name = "set_fraction"
+field64.accessType = "inputOnly"
+field64.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+field64.type = "SFFloat"
 
-TimeSensor59.IS = IS60
+ProtoInterface52.field.append(field64)
+field65 = x3d.field()
+field65.name = "set_startTime"
+field65.accessType = "inputOnly"
+field65.appinfo = "starts the animation clock"
+field65.type = "SFTime"
 
-ProtoBody58.children.append(TimeSensor59)
-TimeSensor66 = x3d.TimeSensor(DEF="ResetTimeSensor")
-TimeSensor66.description = "control timing of skeleton reset to \"A\" pose when triggered"
-IS67 = x3d.IS()
-connect68 = x3d.connect()
-connect68.nodeField = "enabled"
-connect68.protoField = "enabled"
+ProtoInterface52.field.append(field65)
+field66 = x3d.field()
+field66.name = "isLoaded"
+field66.accessType = "inputOnly"
+field66.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
+field66.type = "SFBool"
 
-IS67.connect.append(connect68)
-connect69 = x3d.connect()
-connect69.nodeField = "cycleInterval"
-connect69.protoField = "transitionDuration"
+ProtoInterface52.field.append(field66)
+field67 = x3d.field()
+field67.name = "traceEnabled"
+field67.accessType = "inputOutput"
+field67.appinfo = "debug trace to Browser output console this is a local prototype field"
+field67.type = "SFBool"
+field67.value = True
 
-IS67.connect.append(connect69)
-connect70 = x3d.connect()
-connect70.nodeField = "startTime"
-connect70.protoField = "set_startTime"
+ProtoInterface52.field.append(field67)
 
-IS67.connect.append(connect70)
+ProtoDeclare51.ProtoInterface = ProtoInterface52
+ProtoBody68 = x3d.ProtoBody()
+TimeSensor69 = x3d.TimeSensor(DEF="ClockTimeSensor")
+TimeSensor69.description = "control timing of pose animation when triggered"
+IS70 = x3d.IS()
+connect71 = x3d.connect()
+connect71.nodeField = "enabled"
+connect71.protoField = "enabled"
 
-TimeSensor66.IS = IS67
+IS70.connect.append(connect71)
+connect72 = x3d.connect()
+connect72.nodeField = "cycleInterval"
+connect72.protoField = "transitionDuration"
 
-ProtoBody58.children.append(TimeSensor66)
-Group71 = x3d.Group(DEF="PoseInterpolatorGroup")
+IS70.connect.append(connect72)
+connect73 = x3d.connect()
+connect73.nodeField = "isActive"
+connect73.protoField = "isActive"
 
-ProtoBody58.children.append(Group71)
-Group72 = x3d.Group(DEF="ResetInterpolatorGroup")
+IS70.connect.append(connect73)
+connect74 = x3d.connect()
+connect74.nodeField = "startTime"
+connect74.protoField = "set_startTime"
 
-ProtoBody58.children.append(Group72)
-Script73 = x3d.Script(DEF="HAnimPoseScript")
-Script73.url = ["HAnimPosePrototypeScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js"]
-Script73.directOutput = True
-field74 = x3d.field()
-field74.accessType = "inputOutput"
-field74.type = "SFNode"
-field74.name = "parentHAnimHumanoid"
-field74.appinfo = "Humanoid for this Pose to act upon"
+IS70.connect.append(connect74)
+connect75 = x3d.connect()
+connect75.nodeField = "metadata"
+connect75.protoField = "metadata"
 
-Script73.field.append(field74)
-field75 = x3d.field()
-field75.accessType = "inputOutput"
-field75.type = "SFString"
-field75.name = "name"
-field75.appinfo = "name of this pose"
+IS70.connect.append(connect75)
 
-Script73.field.append(field75)
-field76 = x3d.field()
-field76.accessType = "initializeOnly"
-field76.type = "SFInt32"
-field76.name = "loa"
-field76.appinfo = "default is no loa"
+TimeSensor69.IS = IS70
 
-Script73.field.append(field76)
-field77 = x3d.field()
-field77.accessType = "inputOutput"
-field77.type = "SFString"
-field77.name = "description"
-field77.appinfo = "explanation of purpose"
+ProtoBody68.children.append(TimeSensor69)
+TimeSensor76 = x3d.TimeSensor(DEF="ResetTimeSensor")
+TimeSensor76.description = "control timing of skeleton reset to \"A\" pose when triggered"
+IS77 = x3d.IS()
+connect78 = x3d.connect()
+connect78.nodeField = "enabled"
+connect78.protoField = "enabled"
 
-Script73.field.append(field77)
-field78 = x3d.field()
-field78.accessType = "inputOutput"
-field78.type = "SFBool"
-field78.name = "enabled"
-field78.appinfo = "default value true"
+IS77.connect.append(connect78)
+connect79 = x3d.connect()
+connect79.nodeField = "cycleInterval"
+connect79.protoField = "transitionDuration"
 
-Script73.field.append(field78)
-field79 = x3d.field()
-field79.accessType = "inputOnly"
-field79.type = "SFBool"
-field79.name = "resetAllJoints"
-field79.appinfo = "reset the skeleton to I pose with all joints zeroed"
+IS77.connect.append(connect79)
+connect80 = x3d.connect()
+connect80.nodeField = "startTime"
+connect80.protoField = "set_startTime"
 
-Script73.field.append(field79)
-field80 = x3d.field()
-field80.accessType = "inputOutput"
-field80.type = "MFNode"
-field80.name = "children"
-field80.appinfo = "joint values to apply to HAnimHumanoid"
+IS77.connect.append(connect80)
+IS77.children.append(x3d.Comment("""no need to report isActive since that would be duplicative"""))
 
-Script73.field.append(field80)
-field81 = x3d.field()
-field81.accessType = "inputOutput"
-field81.type = "SFTime"
-field81.name = "transitionDuration"
-field81.appinfo = "how many seconds to achieve the pose"
+TimeSensor76.IS = IS77
 
-Script73.field.append(field81)
-field82 = x3d.field()
-field82.accessType = "inputOnly"
-field82.type = "SFBool"
-field82.name = "commencePose"
-field82.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
+ProtoBody68.children.append(TimeSensor76)
+Group81 = x3d.Group(DEF="PoseInterpolatorGroup")
+Group81.children.append(x3d.Comment("""interpolators generated by prototype script appear here at runtime"""))
 
-Script73.field.append(field82)
-field83 = x3d.field()
-field83.accessType = "inputOnly"
-field83.type = "SFFloat"
-field83.name = "set_fraction"
-field83.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+ProtoBody68.children.append(Group81)
+Group82 = x3d.Group(DEF="ResetInterpolatorGroup")
+Group82.children.append(x3d.Comment("""interpolators generated by prototype script appear here at runtime"""))
 
-Script73.field.append(field83)
+ProtoBody68.children.append(Group82)
+Script83 = x3d.Script(DEF="HAnimPoseScript")
+Script83.directOutput = True
+Script83.url = ["HAnimPosePrototypeScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js"]
 field84 = x3d.field()
-field84.accessType = "inputOnly"
-field84.type = "SFTime"
-field84.name = "set_startTime"
-field84.appinfo = "starts the animation clock"
+field84.name = "parentHAnimHumanoid"
+field84.accessType = "inputOutput"
+field84.appinfo = "Humanoid for this Pose to act upon"
+field84.type = "SFNode"
+field84.children.append(x3d.Comment("""initialization node (if any) goes here"""))
 
-Script73.field.append(field84)
+Script83.field.append(field84)
 field85 = x3d.field()
-field85.accessType = "inputOnly"
-field85.type = "SFBool"
-field85.name = "isLoaded"
-field85.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
+field85.name = "name"
+field85.accessType = "inputOutput"
+field85.appinfo = "name of this pose"
+field85.type = "SFString"
 
-Script73.field.append(field85)
+Script83.field.append(field85)
 field86 = x3d.field()
-field86.accessType = "inputOutput"
-field86.type = "SFBool"
-field86.name = "traceEnabled"
-field86.appinfo = "debug trace to Browser output console"
+field86.name = "loa"
+field86.accessType = "initializeOnly"
+field86.appinfo = "default is no loa"
+field86.type = "SFInt32"
 
-Script73.field.append(field86)
+Script83.field.append(field86)
 field87 = x3d.field()
-field87.accessType = "initializeOnly"
-field87.type = "SFInt32"
-field87.name = "numberPoseJoints"
-field87.appinfo = "number of joints found in children field"
+field87.name = "description"
+field87.accessType = "inputOutput"
+field87.appinfo = "explanation of purpose"
+field87.type = "SFString"
 
-Script73.field.append(field87)
+Script83.field.append(field87)
 field88 = x3d.field()
-field88.accessType = "initializeOnly"
-field88.type = "SFInt32"
-field88.name = "numberSkeletonJoints"
-field88.appinfo = "number of joints found in Humanoid"
+field88.name = "enabled"
+field88.accessType = "inputOutput"
+field88.appinfo = "default value true"
+field88.type = "SFBool"
 
-Script73.field.append(field88)
+Script83.field.append(field88)
 field89 = x3d.field()
-field89.accessType = "initializeOnly"
-field89.type = "MFNode"
-field89.name = "jointOrientationInterpolators"
-field89.appinfo = "OrientationInterpolator node array matching number of children"
+field89.name = "resetAllJoints"
+field89.accessType = "inputOnly"
+field89.appinfo = "reset the skeleton to I pose with all joints zeroed"
+field89.type = "SFBool"
 
-Script73.field.append(field89)
-IS90 = x3d.IS()
-connect91 = x3d.connect()
-connect91.nodeField = "parentHAnimHumanoid"
-connect91.protoField = "parentHAnimHumanoid"
+Script83.field.append(field89)
+field90 = x3d.field()
+field90.name = "children"
+field90.accessType = "inputOutput"
+field90.appinfo = "joint values to apply to HAnimHumanoid"
+field90.type = "MFNode"
+field90.children.append(x3d.Comment("""initializating Joint nodes (if any) go here"""))
 
-IS90.connect.append(connect91)
-connect92 = x3d.connect()
-connect92.nodeField = "name"
-connect92.protoField = "name"
+Script83.field.append(field90)
+field91 = x3d.field()
+field91.name = "transitionDuration"
+field91.accessType = "inputOutput"
+field91.appinfo = "how many seconds to achieve the pose"
+field91.type = "SFTime"
 
-IS90.connect.append(connect92)
-connect93 = x3d.connect()
-connect93.nodeField = "loa"
-connect93.protoField = "loa"
+Script83.field.append(field91)
+field92 = x3d.field()
+field92.name = "commencePose"
+field92.accessType = "inputOnly"
+field92.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
+field92.type = "SFBool"
 
-IS90.connect.append(connect93)
-connect94 = x3d.connect()
-connect94.nodeField = "description"
-connect94.protoField = "description"
+Script83.field.append(field92)
+field93 = x3d.field()
+field93.name = "set_fraction"
+field93.accessType = "inputOnly"
+field93.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+field93.type = "SFFloat"
 
-IS90.connect.append(connect94)
-connect95 = x3d.connect()
-connect95.nodeField = "enabled"
-connect95.protoField = "enabled"
+Script83.field.append(field93)
+field94 = x3d.field()
+field94.name = "set_startTime"
+field94.accessType = "inputOnly"
+field94.appinfo = "starts the animation clock"
+field94.type = "SFTime"
 
-IS90.connect.append(connect95)
-connect96 = x3d.connect()
-connect96.nodeField = "resetAllJoints"
-connect96.protoField = "resetAllJoints"
+Script83.field.append(field94)
+field95 = x3d.field()
+field95.name = "isLoaded"
+field95.accessType = "inputOnly"
+field95.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
+field95.type = "SFBool"
 
-IS90.connect.append(connect96)
-connect97 = x3d.connect()
-connect97.nodeField = "children"
-connect97.protoField = "children"
+Script83.field.append(field95)
+field96 = x3d.field()
+field96.name = "traceEnabled"
+field96.accessType = "inputOutput"
+field96.appinfo = "debug trace to Browser output console"
+field96.type = "SFBool"
 
-IS90.connect.append(connect97)
-connect98 = x3d.connect()
-connect98.nodeField = "transitionDuration"
-connect98.protoField = "transitionDuration"
+Script83.field.append(field96)
+field97 = x3d.field()
+field97.name = "numberPoseJoints"
+field97.accessType = "initializeOnly"
+field97.appinfo = "number of joints found in children field"
+field97.type = "SFInt32"
+field97.value = 0
 
-IS90.connect.append(connect98)
-connect99 = x3d.connect()
-connect99.nodeField = "commencePose"
-connect99.protoField = "commencePose"
+Script83.field.append(field97)
+field98 = x3d.field()
+field98.name = "numberSkeletonJoints"
+field98.accessType = "initializeOnly"
+field98.appinfo = "number of joints found in Humanoid"
+field98.type = "SFInt32"
+field98.value = 0
 
-IS90.connect.append(connect99)
-connect100 = x3d.connect()
-connect100.nodeField = "set_fraction"
-connect100.protoField = "set_fraction"
+Script83.field.append(field98)
+field99 = x3d.field()
+field99.name = "jointOrientationInterpolators"
+field99.accessType = "initializeOnly"
+field99.appinfo = "OrientationInterpolator node array matching number of children"
+field99.type = "MFNode"
+field99.children.append(x3d.Comment("""initializating Joint nodes (if any) go here"""))
 
-IS90.connect.append(connect100)
+Script83.field.append(field99)
+IS100 = x3d.IS()
 connect101 = x3d.connect()
-connect101.nodeField = "set_startTime"
-connect101.protoField = "set_startTime"
+connect101.nodeField = "parentHAnimHumanoid"
+connect101.protoField = "parentHAnimHumanoid"
 
-IS90.connect.append(connect101)
+IS100.connect.append(connect101)
 connect102 = x3d.connect()
-connect102.nodeField = "isLoaded"
-connect102.protoField = "isLoaded"
+connect102.nodeField = "name"
+connect102.protoField = "name"
 
-IS90.connect.append(connect102)
+IS100.connect.append(connect102)
 connect103 = x3d.connect()
-connect103.nodeField = "traceEnabled"
-connect103.protoField = "traceEnabled"
+connect103.nodeField = "loa"
+connect103.protoField = "loa"
 
-IS90.connect.append(connect103)
+IS100.connect.append(connect103)
+connect104 = x3d.connect()
+connect104.nodeField = "description"
+connect104.protoField = "description"
 
-Script73.IS = IS90
+IS100.connect.append(connect104)
+connect105 = x3d.connect()
+connect105.nodeField = "enabled"
+connect105.protoField = "enabled"
 
-ProtoBody58.children.append(Script73)
+IS100.connect.append(connect105)
+connect106 = x3d.connect()
+connect106.nodeField = "resetAllJoints"
+connect106.protoField = "resetAllJoints"
 
-ProtoDeclare41.ProtoBody = ProtoBody58
+IS100.connect.append(connect106)
+connect107 = x3d.connect()
+connect107.nodeField = "children"
+connect107.protoField = "children"
 
-Scene40.children.append(ProtoDeclare41)
-WorldInfo104 = x3d.WorldInfo(DEF="ModelInfo")
-WorldInfo104.title = "HAnimPosePrototype.x3d"
-WorldInfo104.info = ["Design to illustrate a potential HAnimPose node"]
+IS100.connect.append(connect107)
+connect108 = x3d.connect()
+connect108.nodeField = "transitionDuration"
+connect108.protoField = "transitionDuration"
 
-Scene40.children.append(WorldInfo104)
-Background105 = x3d.Background()
-Background105.skyColor = [(0.8, 0.8, 1)]
+IS100.connect.append(connect108)
+connect109 = x3d.connect()
+connect109.nodeField = "commencePose"
+connect109.protoField = "commencePose"
 
-Scene40.children.append(Background105)
-NavigationInfo106 = x3d.NavigationInfo()
+IS100.connect.append(connect109)
+connect110 = x3d.connect()
+connect110.nodeField = "set_fraction"
+connect110.protoField = "set_fraction"
 
-Scene40.children.append(NavigationInfo106)
-Group107 = x3d.Group(DEF="HandleInlineLoading")
-Inline108 = x3d.Inline(DEF="HumanoidInline")
-Inline108.description = "remote HAnimHumanoid for IMPORT"
-Inline108.url = ["../Skin/BoxMan2.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d"]
+IS100.connect.append(connect110)
+connect111 = x3d.connect()
+connect111.nodeField = "set_startTime"
+connect111.protoField = "set_startTime"
 
-Group107.children.append(Inline108)
-LoadSensor109 = x3d.LoadSensor(DEF="HumanoidInlineLoadSensor")
-LoadSensor109.timeOut = 2
-Inline110 = x3d.Inline(USE="HumanoidInline")
+IS100.connect.append(connect111)
+connect112 = x3d.connect()
+connect112.nodeField = "isLoaded"
+connect112.protoField = "isLoaded"
 
-LoadSensor109.children.append(Inline110)
+IS100.connect.append(connect112)
+connect113 = x3d.connect()
+connect113.nodeField = "traceEnabled"
+connect113.protoField = "traceEnabled"
 
-Group107.children.append(LoadSensor109)
+IS100.connect.append(connect113)
 
-Scene40.children.append(Group107)
-Viewpoint111 = x3d.Viewpoint()
-Viewpoint111.description = "HAnimPose for HumanoidInline IMPORT model"
-Viewpoint111.position = [0,1,4]
+Script83.IS = IS100
 
-Scene40.children.append(Viewpoint111)
-ProtoInstance112 = x3d.ProtoInstance(DEF="T_Pose")
-ProtoInstance112.name = "HAnimPose"
-fieldValue113 = x3d.fieldValue()
-fieldValue113.name = "parentHAnimHumanoid"
-HAnimHumanoid114 = x3d.HAnimHumanoid(USE="HumanoidImported")
+ProtoBody68.children.append(Script83)
 
-fieldValue113.children.append(HAnimHumanoid114)
+ProtoDeclare51.ProtoBody = ProtoBody68
 
-ProtoInstance112.fieldValue.append(fieldValue113)
-fieldValue115 = x3d.fieldValue()
-fieldValue115.name = "name"
-fieldValue115.value = "T"
+Scene42.children.append(ProtoDeclare51)
+Viewpoint114 = x3d.Viewpoint()
+Viewpoint114.description = "HAnimPose for HumanoidInline IMPORT model"
+Viewpoint114.position = [0,1,4]
 
-ProtoInstance112.fieldValue.append(fieldValue115)
+Scene42.children.append(Viewpoint114)
+Scene42.children.append(x3d.Comment("""no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc..."""))
+ProtoInstance115 = x3d.ProtoInstance(DEF="T_Pose")
+ProtoInstance115.name = "HAnimPose"
 fieldValue116 = x3d.fieldValue()
-fieldValue116.name = "children"
-HAnimJoint117 = x3d.HAnimJoint(DEF="PoseJoint_l_shoulder_1")
-HAnimJoint117.description = "left shoulder"
-HAnimJoint117.name = "l_shoulder"
-HAnimJoint117.rotation = [0,0,1,1.57]
+fieldValue116.name = "name"
+fieldValue116.value = "T"
 
-fieldValue116.children.append(HAnimJoint117)
-HAnimJoint118 = x3d.HAnimJoint(DEF="PoseJoint_r_shoulder_1")
-HAnimJoint118.description = "right shoulder"
-HAnimJoint118.name = "r_shoulder"
-HAnimJoint118.rotation = [0,0,-1,1.57]
+ProtoInstance115.fieldValue.append(fieldValue116)
+fieldValue117 = x3d.fieldValue()
+fieldValue117.name = "enabled"
+fieldValue117.value = "true"
 
-fieldValue116.children.append(HAnimJoint118)
+ProtoInstance115.fieldValue.append(fieldValue117)
+fieldValue118 = x3d.fieldValue()
+fieldValue118.name = "parentHAnimHumanoid"
+fieldValue118.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+fieldValue118.children.append(x3d.Comment("""debug test case for incorrect node type: <HAnimJoint DEF=\"ErrorDiagnosticsTest\" USE='HumanoidImported'/>"""))
+HAnimHumanoid119 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-ProtoInstance112.fieldValue.append(fieldValue116)
-fieldValue119 = x3d.fieldValue()
-fieldValue119.name = "description"
-fieldValue119.value = "arms stretched outward and level similar to letter T"
+fieldValue118.children.append(HAnimHumanoid119)
 
-ProtoInstance112.fieldValue.append(fieldValue119)
+ProtoInstance115.fieldValue.append(fieldValue118)
 fieldValue120 = x3d.fieldValue()
 fieldValue120.name = "loa"
 fieldValue120.value = "1"
 
-ProtoInstance112.fieldValue.append(fieldValue120)
+ProtoInstance115.fieldValue.append(fieldValue120)
 fieldValue121 = x3d.fieldValue()
-fieldValue121.name = "transitionDuration"
-fieldValue121.value = "1.3"
+fieldValue121.name = "description"
+fieldValue121.value = "arms stretched outward and level similar to letter T"
 
-ProtoInstance112.fieldValue.append(fieldValue121)
+ProtoInstance115.fieldValue.append(fieldValue121)
+fieldValue122 = x3d.fieldValue()
+fieldValue122.name = "children"
+HAnimJoint123 = x3d.HAnimJoint(DEF="PoseJoint_l_shoulder_1")
+HAnimJoint123.name = "l_shoulder"
+HAnimJoint123.description = "left shoulder"
+HAnimJoint123.rotation = [0,0,1,1.57]
+HAnimJoint123.ulimit = [0,0,0]
+HAnimJoint123.llimit = [0,0,0]
 
-Scene40.children.append(ProtoInstance112)
-ProtoInstance122 = x3d.ProtoInstance(DEF="A_Pose")
-ProtoInstance122.name = "HAnimPose"
-fieldValue123 = x3d.fieldValue()
-fieldValue123.name = "parentHAnimHumanoid"
-HAnimHumanoid124 = x3d.HAnimHumanoid(USE="HumanoidImported")
+fieldValue122.children.append(HAnimJoint123)
+HAnimJoint124 = x3d.HAnimJoint(DEF="PoseJoint_r_shoulder_1")
+HAnimJoint124.name = "r_shoulder"
+HAnimJoint124.description = "right shoulder"
+HAnimJoint124.rotation = [0,0,-1,1.57]
+HAnimJoint124.ulimit = [0,0,0]
+HAnimJoint124.llimit = [0,0,0]
 
-fieldValue123.children.append(HAnimHumanoid124)
+fieldValue122.children.append(HAnimJoint124)
+fieldValue122.children.append(x3d.Comment("""test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/"""))
 
-ProtoInstance122.fieldValue.append(fieldValue123)
+ProtoInstance115.fieldValue.append(fieldValue122)
 fieldValue125 = x3d.fieldValue()
-fieldValue125.name = "name"
-fieldValue125.value = "A"
+fieldValue125.name = "transitionDuration"
+fieldValue125.value = "1.3"
 
-ProtoInstance122.fieldValue.append(fieldValue125)
-fieldValue126 = x3d.fieldValue()
-fieldValue126.name = "children"
-HAnimJoint127 = x3d.HAnimJoint(DEF="PoseJoint_l_shoulder")
-HAnimJoint127.description = "left shoulder"
-HAnimJoint127.name = "l_shoulder"
-HAnimJoint127.rotation = [0,0,1,0.5]
+ProtoInstance115.fieldValue.append(fieldValue125)
 
-fieldValue126.children.append(HAnimJoint127)
-HAnimJoint128 = x3d.HAnimJoint(DEF="PoseJoint_r_shoulder")
-HAnimJoint128.description = "right shoulder"
-HAnimJoint128.name = "r_shoulder"
-HAnimJoint128.rotation = [0,0,-1,0.5]
+Scene42.children.append(ProtoInstance115)
+ProtoInstance126 = x3d.ProtoInstance(DEF="A_Pose")
+ProtoInstance126.name = "HAnimPose"
+fieldValue127 = x3d.fieldValue()
+fieldValue127.name = "name"
+fieldValue127.value = "A"
 
-fieldValue126.children.append(HAnimJoint128)
+ProtoInstance126.fieldValue.append(fieldValue127)
+fieldValue128 = x3d.fieldValue()
+fieldValue128.name = "enabled"
+fieldValue128.value = "true"
 
-ProtoInstance122.fieldValue.append(fieldValue126)
+ProtoInstance126.fieldValue.append(fieldValue128)
 fieldValue129 = x3d.fieldValue()
-fieldValue129.name = "description"
-fieldValue129.value = "arms stretched outward and downward similar to letter A"
+fieldValue129.name = "parentHAnimHumanoid"
+fieldValue129.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+HAnimHumanoid130 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-ProtoInstance122.fieldValue.append(fieldValue129)
-fieldValue130 = x3d.fieldValue()
-fieldValue130.name = "loa"
-fieldValue130.value = "1"
+fieldValue129.children.append(HAnimHumanoid130)
 
-ProtoInstance122.fieldValue.append(fieldValue130)
+ProtoInstance126.fieldValue.append(fieldValue129)
 fieldValue131 = x3d.fieldValue()
-fieldValue131.name = "transitionDuration"
-fieldValue131.value = "1.2"
+fieldValue131.name = "loa"
+fieldValue131.value = "1"
 
-ProtoInstance122.fieldValue.append(fieldValue131)
+ProtoInstance126.fieldValue.append(fieldValue131)
+fieldValue132 = x3d.fieldValue()
+fieldValue132.name = "description"
+fieldValue132.value = "arms stretched outward and downward similar to letter A"
 
-Scene40.children.append(ProtoInstance122)
-ProtoInstance132 = x3d.ProtoInstance(DEF="TouchDown_Pose")
-ProtoInstance132.name = "HAnimPose"
+ProtoInstance126.fieldValue.append(fieldValue132)
 fieldValue133 = x3d.fieldValue()
-fieldValue133.name = "parentHAnimHumanoid"
-HAnimHumanoid134 = x3d.HAnimHumanoid(USE="HumanoidImported")
+fieldValue133.name = "children"
+HAnimJoint134 = x3d.HAnimJoint(DEF="PoseJoint_l_shoulder")
+HAnimJoint134.name = "l_shoulder"
+HAnimJoint134.description = "left shoulder"
+HAnimJoint134.rotation = [0,0,1,0.5]
+HAnimJoint134.ulimit = [0,0,0]
+HAnimJoint134.llimit = [0,0,0]
 
-fieldValue133.children.append(HAnimHumanoid134)
+fieldValue133.children.append(HAnimJoint134)
+HAnimJoint135 = x3d.HAnimJoint(DEF="PoseJoint_r_shoulder")
+HAnimJoint135.name = "r_shoulder"
+HAnimJoint135.description = "right shoulder"
+HAnimJoint135.rotation = [0,0,-1,0.5]
+HAnimJoint135.ulimit = [0,0,0]
+HAnimJoint135.llimit = [0,0,0]
 
-ProtoInstance132.fieldValue.append(fieldValue133)
-fieldValue135 = x3d.fieldValue()
-fieldValue135.name = "name"
-fieldValue135.value = "TouchDown"
+fieldValue133.children.append(HAnimJoint135)
 
-ProtoInstance132.fieldValue.append(fieldValue135)
+ProtoInstance126.fieldValue.append(fieldValue133)
 fieldValue136 = x3d.fieldValue()
-fieldValue136.name = "children"
-HAnimJoint137 = x3d.HAnimJoint(DEF="_1")
-HAnimJoint137.name = "humanoid_root"
-HAnimJoint137.rotation = [0,1,0,-0.698132]
+fieldValue136.name = "transitionDuration"
+fieldValue136.value = "1.2"
 
-fieldValue136.children.append(HAnimJoint137)
-HAnimJoint138 = x3d.HAnimJoint(DEF="_2")
-HAnimJoint138.name = "l_hip"
-HAnimJoint138.rotation = [-1,1,1,1]
+ProtoInstance126.fieldValue.append(fieldValue136)
+fieldValue137 = x3d.fieldValue()
+fieldValue137.name = "traceEnabled"
+fieldValue137.value = "true"
 
-fieldValue136.children.append(HAnimJoint138)
-HAnimJoint139 = x3d.HAnimJoint(DEF="_3")
-HAnimJoint139.name = "l_knee"
-HAnimJoint139.rotation = [1,0,0,1]
+ProtoInstance126.fieldValue.append(fieldValue137)
 
-fieldValue136.children.append(HAnimJoint139)
-HAnimJoint140 = x3d.HAnimJoint(DEF="_4")
-HAnimJoint140.name = "l_talocrural"
-HAnimJoint140.rotation = [-0.2,0,0.1,0.225]
+Scene42.children.append(ProtoInstance126)
+ProtoInstance138 = x3d.ProtoInstance(DEF="TouchDown_Pose")
+ProtoInstance138.name = "HAnimPose"
+ProtoInstance138.children.append(x3d.Comment("""thanks Joe"""))
+fieldValue139 = x3d.fieldValue()
+fieldValue139.name = "name"
+fieldValue139.value = "TouchDown"
 
-fieldValue136.children.append(HAnimJoint140)
-HAnimJoint141 = x3d.HAnimJoint(DEF="_5")
-HAnimJoint141.name = "r_hip"
-HAnimJoint141.rotation = [-1,-1,-1,1]
+ProtoInstance138.fieldValue.append(fieldValue139)
+fieldValue140 = x3d.fieldValue()
+fieldValue140.name = "enabled"
+fieldValue140.value = "true"
 
-fieldValue136.children.append(HAnimJoint141)
-HAnimJoint142 = x3d.HAnimJoint(DEF="_6")
-HAnimJoint142.name = "r_knee"
-HAnimJoint142.rotation = [1,0,0,1]
+ProtoInstance138.fieldValue.append(fieldValue140)
+fieldValue141 = x3d.fieldValue()
+fieldValue141.name = "parentHAnimHumanoid"
+fieldValue141.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+HAnimHumanoid142 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-fieldValue136.children.append(HAnimJoint142)
-HAnimJoint143 = x3d.HAnimJoint(DEF="_7")
-HAnimJoint143.name = "r_talocrural"
-HAnimJoint143.rotation = [-0.2,0,0.1,0.25]
+fieldValue141.children.append(HAnimHumanoid142)
 
-fieldValue136.children.append(HAnimJoint143)
-HAnimJoint144 = x3d.HAnimJoint(DEF="_8")
-HAnimJoint144.name = "vl5"
-HAnimJoint144.rotation = [0,0,0.01,0.2]
+ProtoInstance138.fieldValue.append(fieldValue141)
+fieldValue143 = x3d.fieldValue()
+fieldValue143.name = "loa"
+fieldValue143.value = "1"
 
-fieldValue136.children.append(HAnimJoint144)
-HAnimJoint145 = x3d.HAnimJoint(DEF="_9")
-HAnimJoint145.name = "vt10"
-HAnimJoint145.rotation = [0,0,0.01,0.1]
+ProtoInstance138.fieldValue.append(fieldValue143)
+fieldValue144 = x3d.fieldValue()
+fieldValue144.name = "description"
+fieldValue144.value = "arms and legs stretched outward providing a TouchDown gesture"
 
-fieldValue136.children.append(HAnimJoint145)
-HAnimJoint146 = x3d.HAnimJoint(DEF="_10")
-HAnimJoint146.name = "vc4"
-HAnimJoint146.rotation = [0,0,-0.01,0.15]
+ProtoInstance138.fieldValue.append(fieldValue144)
+fieldValue145 = x3d.fieldValue()
+fieldValue145.name = "children"
+HAnimJoint146 = x3d.HAnimJoint()
+HAnimJoint146.name = "humanoid_root"
+HAnimJoint146.rotation = [0,1,0,-0.698132]
+HAnimJoint146.ulimit = [0,0,0]
+HAnimJoint146.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint146)
-HAnimJoint147 = x3d.HAnimJoint(DEF="_11")
-HAnimJoint147.name = "l_shoulder"
-HAnimJoint147.rotation = [-1,0.5,1,2]
+fieldValue145.children.append(HAnimJoint146)
+HAnimJoint147 = x3d.HAnimJoint()
+HAnimJoint147.name = "l_hip"
+HAnimJoint147.rotation = [-1,1,1,1]
+HAnimJoint147.ulimit = [0,0,0]
+HAnimJoint147.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint147)
-HAnimJoint148 = x3d.HAnimJoint(DEF="_12")
-HAnimJoint148.name = "l_elbow"
-HAnimJoint148.rotation = [-1,0,0,1]
+fieldValue145.children.append(HAnimJoint147)
+HAnimJoint148 = x3d.HAnimJoint()
+HAnimJoint148.name = "l_knee"
+HAnimJoint148.rotation = [1,0,0,1]
+HAnimJoint148.ulimit = [0,0,0]
+HAnimJoint148.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint148)
-HAnimJoint149 = x3d.HAnimJoint(DEF="_13")
-HAnimJoint149.name = "l_radiocarpal"
+fieldValue145.children.append(HAnimJoint148)
+HAnimJoint149 = x3d.HAnimJoint()
+HAnimJoint149.name = "l_talocrural"
+HAnimJoint149.rotation = [-0.2,0,0.1,0.225]
+HAnimJoint149.ulimit = [0,0,0]
+HAnimJoint149.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint149)
-HAnimJoint150 = x3d.HAnimJoint(DEF="_14")
-HAnimJoint150.name = "r_shoulder"
-HAnimJoint150.rotation = [-1,-0.5,-1,2.6]
+fieldValue145.children.append(HAnimJoint149)
+HAnimJoint150 = x3d.HAnimJoint()
+HAnimJoint150.name = "r_hip"
+HAnimJoint150.rotation = [-1,-1,-1,1]
+HAnimJoint150.ulimit = [0,0,0]
+HAnimJoint150.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint150)
-HAnimJoint151 = x3d.HAnimJoint(DEF="_15")
-HAnimJoint151.name = "r_elbow"
-HAnimJoint151.rotation = [-1,0,0,1]
+fieldValue145.children.append(HAnimJoint150)
+HAnimJoint151 = x3d.HAnimJoint()
+HAnimJoint151.name = "r_knee"
+HAnimJoint151.rotation = [1,0,0,1]
+HAnimJoint151.ulimit = [0,0,0]
+HAnimJoint151.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint151)
-HAnimJoint152 = x3d.HAnimJoint(DEF="_16")
-HAnimJoint152.name = "r_radiocarpal"
+fieldValue145.children.append(HAnimJoint151)
+HAnimJoint152 = x3d.HAnimJoint()
+HAnimJoint152.name = "r_talocrural"
+HAnimJoint152.rotation = [-0.2,0,0.1,0.25]
+HAnimJoint152.ulimit = [0,0,0]
+HAnimJoint152.llimit = [0,0,0]
 
-fieldValue136.children.append(HAnimJoint152)
+fieldValue145.children.append(HAnimJoint152)
+HAnimJoint153 = x3d.HAnimJoint()
+HAnimJoint153.name = "vl5"
+HAnimJoint153.rotation = [0,0,0.01,0.2]
+HAnimJoint153.ulimit = [0,0,0]
+HAnimJoint153.llimit = [0,0,0]
 
-ProtoInstance132.fieldValue.append(fieldValue136)
-fieldValue153 = x3d.fieldValue()
-fieldValue153.name = "description"
-fieldValue153.value = "arms and legs stretched outward providing a TouchDown gesture"
+fieldValue145.children.append(HAnimJoint153)
+HAnimJoint154 = x3d.HAnimJoint()
+HAnimJoint154.name = "vt10"
+HAnimJoint154.rotation = [0,0,0.01,0.1]
+HAnimJoint154.ulimit = [0,0,0]
+HAnimJoint154.llimit = [0,0,0]
 
-ProtoInstance132.fieldValue.append(fieldValue153)
-fieldValue154 = x3d.fieldValue()
-fieldValue154.name = "loa"
-fieldValue154.value = "1"
+fieldValue145.children.append(HAnimJoint154)
+HAnimJoint155 = x3d.HAnimJoint()
+HAnimJoint155.name = "vc4"
+HAnimJoint155.rotation = [0,0,-0.01,0.15]
+HAnimJoint155.ulimit = [0,0,0]
+HAnimJoint155.llimit = [0,0,0]
 
-ProtoInstance132.fieldValue.append(fieldValue154)
-fieldValue155 = x3d.fieldValue()
-fieldValue155.name = "transitionDuration"
-fieldValue155.value = "1.2"
+fieldValue145.children.append(HAnimJoint155)
+HAnimJoint156 = x3d.HAnimJoint()
+HAnimJoint156.name = "l_shoulder"
+HAnimJoint156.rotation = [-1,0.5,1,2]
+HAnimJoint156.ulimit = [0,0,0]
+HAnimJoint156.llimit = [0,0,0]
 
-ProtoInstance132.fieldValue.append(fieldValue155)
+fieldValue145.children.append(HAnimJoint156)
+HAnimJoint157 = x3d.HAnimJoint()
+HAnimJoint157.name = "l_elbow"
+HAnimJoint157.rotation = [-1,0,0,1]
+HAnimJoint157.ulimit = [0,0,0]
+HAnimJoint157.llimit = [0,0,0]
 
-Scene40.children.append(ProtoInstance132)
-ProtoInstance156 = x3d.ProtoInstance(DEF="I_Pose")
-ProtoInstance156.name = "HAnimPose"
-fieldValue157 = x3d.fieldValue()
-fieldValue157.name = "parentHAnimHumanoid"
-HAnimHumanoid158 = x3d.HAnimHumanoid(USE="HumanoidImported")
+fieldValue145.children.append(HAnimJoint157)
+HAnimJoint158 = x3d.HAnimJoint()
+HAnimJoint158.name = "l_radiocarpal"
+HAnimJoint158.ulimit = [0,0,0]
+HAnimJoint158.llimit = [0,0,0]
 
-fieldValue157.children.append(HAnimHumanoid158)
+fieldValue145.children.append(HAnimJoint158)
+HAnimJoint159 = x3d.HAnimJoint()
+HAnimJoint159.name = "r_shoulder"
+HAnimJoint159.rotation = [-1,-0.5,-1,2.6]
+HAnimJoint159.ulimit = [0,0,0]
+HAnimJoint159.llimit = [0,0,0]
 
-ProtoInstance156.fieldValue.append(fieldValue157)
-fieldValue159 = x3d.fieldValue()
-fieldValue159.name = "name"
-fieldValue159.value = "I"
+fieldValue145.children.append(HAnimJoint159)
+HAnimJoint160 = x3d.HAnimJoint()
+HAnimJoint160.name = "r_elbow"
+HAnimJoint160.rotation = [-1,0,0,1]
+HAnimJoint160.ulimit = [0,0,0]
+HAnimJoint160.llimit = [0,0,0]
 
-ProtoInstance156.fieldValue.append(fieldValue159)
-fieldValue160 = x3d.fieldValue()
-fieldValue160.name = "description"
-fieldValue160.value = "arms and legs straight down default binding pose for baseline Humanoid"
+fieldValue145.children.append(HAnimJoint160)
+HAnimJoint161 = x3d.HAnimJoint()
+HAnimJoint161.name = "r_radiocarpal"
+HAnimJoint161.ulimit = [0,0,0]
+HAnimJoint161.llimit = [0,0,0]
 
-ProtoInstance156.fieldValue.append(fieldValue160)
-fieldValue161 = x3d.fieldValue()
-fieldValue161.name = "loa"
-fieldValue161.value = "1"
+fieldValue145.children.append(HAnimJoint161)
 
-ProtoInstance156.fieldValue.append(fieldValue161)
+ProtoInstance138.fieldValue.append(fieldValue145)
 fieldValue162 = x3d.fieldValue()
 fieldValue162.name = "transitionDuration"
-fieldValue162.value = "1.5"
+fieldValue162.value = "1.2"
 
-ProtoInstance156.fieldValue.append(fieldValue162)
+ProtoInstance138.fieldValue.append(fieldValue162)
+fieldValue163 = x3d.fieldValue()
+fieldValue163.name = "traceEnabled"
+fieldValue163.value = "true"
 
-Scene40.children.append(ProtoInstance156)
-ProtoInstance163 = x3d.ProtoInstance(DEF="H_Pose")
-ProtoInstance163.name = "HAnimPose"
-fieldValue164 = x3d.fieldValue()
-fieldValue164.name = "name"
-fieldValue164.value = "H"
+ProtoInstance138.fieldValue.append(fieldValue163)
 
-ProtoInstance163.fieldValue.append(fieldValue164)
+Scene42.children.append(ProtoInstance138)
+ProtoInstance164 = x3d.ProtoInstance(DEF="I_Pose")
+ProtoInstance164.name = "HAnimPose"
 fieldValue165 = x3d.fieldValue()
-fieldValue165.name = "description"
-fieldValue165.value = "TODO experimental pose not yet implemented"
+fieldValue165.name = "name"
+fieldValue165.value = "I"
 
-ProtoInstance163.fieldValue.append(fieldValue165)
+ProtoInstance164.fieldValue.append(fieldValue165)
 fieldValue166 = x3d.fieldValue()
 fieldValue166.name = "enabled"
-fieldValue166.value = "false"
+fieldValue166.value = "true"
 
-ProtoInstance163.fieldValue.append(fieldValue166)
+ProtoInstance164.fieldValue.append(fieldValue166)
 fieldValue167 = x3d.fieldValue()
-fieldValue167.name = "transitionDuration"
-fieldValue167.value = "1.4"
+fieldValue167.name = "parentHAnimHumanoid"
+fieldValue167.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+HAnimHumanoid168 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-ProtoInstance163.fieldValue.append(fieldValue167)
+fieldValue167.children.append(HAnimHumanoid168)
 
-Scene40.children.append(ProtoInstance163)
-ProtoInstance168 = x3d.ProtoInstance(DEF="FaceLeft_Pose")
-ProtoInstance168.name = "HAnimPose"
+ProtoInstance164.fieldValue.append(fieldValue167)
 fieldValue169 = x3d.fieldValue()
-fieldValue169.name = "parentHAnimHumanoid"
-HAnimHumanoid170 = x3d.HAnimHumanoid(USE="HumanoidImported")
+fieldValue169.name = "loa"
+fieldValue169.value = "1"
 
-fieldValue169.children.append(HAnimHumanoid170)
+ProtoInstance164.fieldValue.append(fieldValue169)
+fieldValue170 = x3d.fieldValue()
+fieldValue170.name = "description"
+fieldValue170.value = "arms and legs straight down default binding pose for baseline Humanoid"
 
-ProtoInstance168.fieldValue.append(fieldValue169)
+ProtoInstance164.fieldValue.append(fieldValue170)
 fieldValue171 = x3d.fieldValue()
-fieldValue171.name = "name"
-fieldValue171.value = "FaceLeft"
+fieldValue171.name = "children"
+fieldValue171.children.append(x3d.Comment("""not defining any children equals the default \"I\" pose"""))
 
-ProtoInstance168.fieldValue.append(fieldValue171)
+ProtoInstance164.fieldValue.append(fieldValue171)
 fieldValue172 = x3d.fieldValue()
-fieldValue172.name = "children"
-HAnimJoint173 = x3d.HAnimJoint(DEF="FaceLeft_humanoid_root")
-HAnimJoint173.description = "Only rotate the model"
-HAnimJoint173.name = "humanoid_root"
-HAnimJoint173.rotation = [0,1,0,1.570796]
+fieldValue172.name = "transitionDuration"
+fieldValue172.value = "1.5"
 
-fieldValue172.children.append(HAnimJoint173)
+ProtoInstance164.fieldValue.append(fieldValue172)
+fieldValue173 = x3d.fieldValue()
+fieldValue173.name = "traceEnabled"
+fieldValue173.value = "true"
 
-ProtoInstance168.fieldValue.append(fieldValue172)
-fieldValue174 = x3d.fieldValue()
-fieldValue174.name = "description"
-fieldValue174.value = "Only modify humanoid_root Joint node to face left"
+ProtoInstance164.fieldValue.append(fieldValue173)
 
-ProtoInstance168.fieldValue.append(fieldValue174)
+Scene42.children.append(ProtoInstance164)
+ProtoInstance174 = x3d.ProtoInstance(DEF="H_Pose")
+ProtoInstance174.name = "HAnimPose"
 fieldValue175 = x3d.fieldValue()
-fieldValue175.name = "loa"
-fieldValue175.value = "0"
+fieldValue175.name = "name"
+fieldValue175.value = "H"
 
-ProtoInstance168.fieldValue.append(fieldValue175)
+ProtoInstance174.fieldValue.append(fieldValue175)
 fieldValue176 = x3d.fieldValue()
-fieldValue176.name = "transitionDuration"
-fieldValue176.value = "1.1"
+fieldValue176.name = "enabled"
+fieldValue176.value = "false"
 
-ProtoInstance168.fieldValue.append(fieldValue176)
+ProtoInstance174.fieldValue.append(fieldValue176)
+fieldValue177 = x3d.fieldValue()
+fieldValue177.name = "description"
+fieldValue177.value = "TODO experimental pose not yet implemented"
 
-Scene40.children.append(ProtoInstance168)
-ProtoInstance177 = x3d.ProtoInstance(DEF="FaceRight_Pose")
-ProtoInstance177.name = "HAnimPose"
+ProtoInstance174.fieldValue.append(fieldValue177)
 fieldValue178 = x3d.fieldValue()
-fieldValue178.name = "parentHAnimHumanoid"
-HAnimHumanoid179 = x3d.HAnimHumanoid(USE="HumanoidImported")
+fieldValue178.name = "transitionDuration"
+fieldValue178.value = "1.4"
 
-fieldValue178.children.append(HAnimHumanoid179)
+ProtoInstance174.fieldValue.append(fieldValue178)
+fieldValue179 = x3d.fieldValue()
+fieldValue179.name = "traceEnabled"
+fieldValue179.value = "true"
 
-ProtoInstance177.fieldValue.append(fieldValue178)
-fieldValue180 = x3d.fieldValue()
-fieldValue180.name = "name"
-fieldValue180.value = "FaceRight"
+ProtoInstance174.fieldValue.append(fieldValue179)
+ProtoInstance174.children.append(x3d.Comment("""<fieldValue name='loa' value='1'/>"""))
 
-ProtoInstance177.fieldValue.append(fieldValue180)
+Scene42.children.append(ProtoInstance174)
+ProtoInstance180 = x3d.ProtoInstance(DEF="FaceLeft_Pose")
+ProtoInstance180.name = "HAnimPose"
 fieldValue181 = x3d.fieldValue()
-fieldValue181.name = "children"
-HAnimJoint182 = x3d.HAnimJoint(DEF="FaceRight_humanoid_root")
-HAnimJoint182.description = "Only rotate the model"
-HAnimJoint182.name = "humanoid_root"
-HAnimJoint182.rotation = [0,1,0,-1.570796]
+fieldValue181.name = "name"
+fieldValue181.value = "FaceLeft"
 
-fieldValue181.children.append(HAnimJoint182)
+ProtoInstance180.fieldValue.append(fieldValue181)
+fieldValue182 = x3d.fieldValue()
+fieldValue182.name = "enabled"
+fieldValue182.value = "true"
 
-ProtoInstance177.fieldValue.append(fieldValue181)
+ProtoInstance180.fieldValue.append(fieldValue182)
 fieldValue183 = x3d.fieldValue()
-fieldValue183.name = "description"
-fieldValue183.value = "Only modify humanoid_root Joint node to face right"
+fieldValue183.name = "parentHAnimHumanoid"
+fieldValue183.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+HAnimHumanoid184 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-ProtoInstance177.fieldValue.append(fieldValue183)
-fieldValue184 = x3d.fieldValue()
-fieldValue184.name = "loa"
-fieldValue184.value = "0"
+fieldValue183.children.append(HAnimHumanoid184)
 
-ProtoInstance177.fieldValue.append(fieldValue184)
+ProtoInstance180.fieldValue.append(fieldValue183)
 fieldValue185 = x3d.fieldValue()
-fieldValue185.name = "transitionDuration"
-fieldValue185.value = "1.1"
+fieldValue185.name = "loa"
+fieldValue185.value = "0"
 
-ProtoInstance177.fieldValue.append(fieldValue185)
+ProtoInstance180.fieldValue.append(fieldValue185)
+fieldValue186 = x3d.fieldValue()
+fieldValue186.name = "description"
+fieldValue186.value = "Only modify humanoid_root Joint node to face left"
 
-Scene40.children.append(ProtoInstance177)
-Group186 = x3d.Group(DEF="InterfaceButtonsGroup")
-Transform187 = x3d.Transform(DEF="DisplayHeader")
-Transform187.translation = [0,2,0]
-Shape188 = x3d.Shape()
-Appearance189 = x3d.Appearance(DEF="PoseTextAppearance")
-Material190 = x3d.Material()
-Material190.diffuseColor = [0.1,0.5,0.3]
+ProtoInstance180.fieldValue.append(fieldValue186)
+fieldValue187 = x3d.fieldValue()
+fieldValue187.name = "children"
+HAnimJoint188 = x3d.HAnimJoint(DEF="FaceLeft_humanoid_root")
+HAnimJoint188.name = "humanoid_root"
+HAnimJoint188.description = "Only rotate the model"
+HAnimJoint188.rotation = [0,1,0,1.570796]
+HAnimJoint188.ulimit = [0,0,0]
+HAnimJoint188.llimit = [0,0,0]
 
-Appearance189.material = Material190
+fieldValue187.children.append(HAnimJoint188)
 
-Shape188.appearance = Appearance189
-Text191 = x3d.Text()
-Text191.string = ["HAnimPosePrototype example implementation"]
-FontStyle192 = x3d.FontStyle(DEF="HeaderFont")
-FontStyle192.family = ["SANS"]
-FontStyle192.style = "BOLD"
-FontStyle192.size = 0.15
-FontStyle192.justify = ["MIDDLE","MIDDLE"]
+ProtoInstance180.fieldValue.append(fieldValue187)
+fieldValue189 = x3d.fieldValue()
+fieldValue189.name = "transitionDuration"
+fieldValue189.value = "1.1"
 
-Text191.fontStyle = FontStyle192
+ProtoInstance180.fieldValue.append(fieldValue189)
+fieldValue190 = x3d.fieldValue()
+fieldValue190.name = "traceEnabled"
+fieldValue190.value = "true"
 
-Shape188.geometry = Text191
+ProtoInstance180.fieldValue.append(fieldValue190)
 
-Transform187.children.append(Shape188)
+Scene42.children.append(ProtoInstance180)
+ProtoInstance191 = x3d.ProtoInstance(DEF="FaceRight_Pose")
+ProtoInstance191.name = "HAnimPose"
+fieldValue192 = x3d.fieldValue()
+fieldValue192.name = "name"
+fieldValue192.value = "FaceRight"
 
-Group186.children.append(Transform187)
-Transform193 = x3d.Transform(DEF="T_PoseInterface")
-Transform193.translation = [-1.5,1.5,0]
-Shape194 = x3d.Shape()
-Appearance195 = x3d.Appearance(USE="PoseTextAppearance")
+ProtoInstance191.fieldValue.append(fieldValue192)
+fieldValue193 = x3d.fieldValue()
+fieldValue193.name = "enabled"
+fieldValue193.value = "true"
 
-Shape194.appearance = Appearance195
-Text196 = x3d.Text()
-Text196.string = ["\"T\" Pose"]
-FontStyle197 = x3d.FontStyle(DEF="SharedFont")
-FontStyle197.family = ["SANS"]
-FontStyle197.style = "BOLD"
-FontStyle197.size = 0.1
-FontStyle197.justify = ["MIDDLE","MIDDLE"]
+ProtoInstance191.fieldValue.append(fieldValue193)
+fieldValue194 = x3d.fieldValue()
+fieldValue194.name = "parentHAnimHumanoid"
+fieldValue194.children.append(x3d.Comment("""HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)"""))
+HAnimHumanoid195 = x3d.HAnimHumanoid(USE="HumanoidImported")
 
-Text196.fontStyle = FontStyle197
+fieldValue194.children.append(HAnimHumanoid195)
 
-Shape194.geometry = Text196
+ProtoInstance191.fieldValue.append(fieldValue194)
+fieldValue196 = x3d.fieldValue()
+fieldValue196.name = "loa"
+fieldValue196.value = "0"
 
-Transform193.children.append(Shape194)
-Shape198 = x3d.Shape()
-Appearance199 = x3d.Appearance(DEF="TransparentAppearance")
-Material200 = x3d.Material()
-Material200.transparency = 0.8
+ProtoInstance191.fieldValue.append(fieldValue196)
+fieldValue197 = x3d.fieldValue()
+fieldValue197.name = "description"
+fieldValue197.value = "Only modify humanoid_root Joint node to face right"
 
-Appearance199.material = Material200
+ProtoInstance191.fieldValue.append(fieldValue197)
+fieldValue198 = x3d.fieldValue()
+fieldValue198.name = "children"
+HAnimJoint199 = x3d.HAnimJoint(DEF="FaceRight_humanoid_root")
+HAnimJoint199.name = "humanoid_root"
+HAnimJoint199.description = "Only rotate the model"
+HAnimJoint199.rotation = [0,1,0,-1.570796]
+HAnimJoint199.ulimit = [0,0,0]
+HAnimJoint199.llimit = [0,0,0]
 
-Shape198.appearance = Appearance199
-Box201 = x3d.Box()
-Box201.size = [0.45,0.2,0.001]
+fieldValue198.children.append(HAnimJoint199)
 
-Shape198.geometry = Box201
+ProtoInstance191.fieldValue.append(fieldValue198)
+fieldValue200 = x3d.fieldValue()
+fieldValue200.name = "transitionDuration"
+fieldValue200.value = "1.1"
 
-Transform193.children.append(Shape198)
-TouchSensor202 = x3d.TouchSensor(DEF="T_PoseTouchSensor")
-TouchSensor202.description = "select to move shoulders to \"T\" pose, leave other joints unchanged"
+ProtoInstance191.fieldValue.append(fieldValue200)
+fieldValue201 = x3d.fieldValue()
+fieldValue201.name = "traceEnabled"
+fieldValue201.value = "true"
 
-Transform193.children.append(TouchSensor202)
+ProtoInstance191.fieldValue.append(fieldValue201)
 
-Group186.children.append(Transform193)
-Transform203 = x3d.Transform(DEF="A_PoseInterface")
-Transform203.translation = [-1.5,1,0]
+Scene42.children.append(ProtoInstance191)
+Group202 = x3d.Group(DEF="InterfaceButtonsGroup")
+Transform203 = x3d.Transform(DEF="DisplayHeader")
+Transform203.translation = [0,2,0]
 Shape204 = x3d.Shape()
-Appearance205 = x3d.Appearance(USE="PoseTextAppearance")
+Text205 = x3d.Text()
+Text205.string = ["HAnimPosePrototype example implementation"]
+FontStyle206 = x3d.FontStyle(DEF="HeaderFont")
+FontStyle206.family = ["SANS"]
+FontStyle206.justify = ["MIDDLE","MIDDLE"]
+FontStyle206.size = 0.15
+FontStyle206.style = "BOLD"
 
-Shape204.appearance = Appearance205
-Text206 = x3d.Text()
-Text206.string = ["\"A\" Pose"]
-FontStyle207 = x3d.FontStyle(USE="SharedFont")
+Text205.fontStyle = FontStyle206
 
-Text206.fontStyle = FontStyle207
+Shape204.geometry = Text205
+Appearance207 = x3d.Appearance(DEF="PoseTextAppearance")
+Material208 = x3d.Material()
+Material208.diffuseColor = [0.1,0.5,0.3]
 
-Shape204.geometry = Text206
+Appearance207.material = Material208
+
+Shape204.appearance = Appearance207
 
 Transform203.children.append(Shape204)
-Shape208 = x3d.Shape()
-Appearance209 = x3d.Appearance(USE="TransparentAppearance")
 
-Shape208.appearance = Appearance209
-Box210 = x3d.Box()
-Box210.size = [0.45,0.2,0.001]
+Group202.children.append(Transform203)
+Transform209 = x3d.Transform(DEF="T_PoseInterface")
+Transform209.translation = [-1.5,1.5,0]
+Shape210 = x3d.Shape()
+Text211 = x3d.Text()
+Text211.string = ["\"T\" Pose"]
+FontStyle212 = x3d.FontStyle(DEF="SharedFont")
+FontStyle212.family = ["SANS"]
+FontStyle212.justify = ["MIDDLE","MIDDLE"]
+FontStyle212.size = 0.1
+FontStyle212.style = "BOLD"
 
-Shape208.geometry = Box210
+Text211.fontStyle = FontStyle212
 
-Transform203.children.append(Shape208)
-TouchSensor211 = x3d.TouchSensor(DEF="A_PoseTouchSensor")
-TouchSensor211.description = "select to move shoulders to \"A\" pose, leave other joints unchanged"
+Shape210.geometry = Text211
+Appearance213 = x3d.Appearance(USE="PoseTextAppearance")
 
-Transform203.children.append(TouchSensor211)
+Shape210.appearance = Appearance213
 
-Group186.children.append(Transform203)
-Transform212 = x3d.Transform(DEF="TouchDown_PoseInterface")
-Transform212.translation = [-1.5,0.5,0]
-Shape213 = x3d.Shape()
-Appearance214 = x3d.Appearance(USE="PoseTextAppearance")
+Transform209.children.append(Shape210)
+Shape214 = x3d.Shape()
+Appearance215 = x3d.Appearance(DEF="TransparentAppearance")
+Material216 = x3d.Material()
+Material216.transparency = 0.8
 
-Shape213.appearance = Appearance214
-Text215 = x3d.Text()
-Text215.string = ["TouchDown Pose"]
-FontStyle216 = x3d.FontStyle(USE="SharedFont")
+Appearance215.material = Material216
 
-Text215.fontStyle = FontStyle216
+Shape214.appearance = Appearance215
+Box217 = x3d.Box()
+Box217.size = [0.45,0.2,0.001]
 
-Shape213.geometry = Text215
+Shape214.geometry = Box217
 
-Transform212.children.append(Shape213)
-Shape217 = x3d.Shape()
-Appearance218 = x3d.Appearance(USE="TransparentAppearance")
+Transform209.children.append(Shape214)
+TouchSensor218 = x3d.TouchSensor(DEF="T_PoseTouchSensor")
+TouchSensor218.description = "select to move shoulders to \"T\" pose, leave other joints unchanged"
 
-Shape217.appearance = Appearance218
-Box219 = x3d.Box()
-Box219.size = [0.85,0.2,0.001]
+Transform209.children.append(TouchSensor218)
+ROUTE219 = x3d.ROUTE()
+ROUTE219.fromField = "isActive"
+ROUTE219.fromNode = "T_PoseTouchSensor"
+ROUTE219.toField = "commencePose"
+ROUTE219.toNode = "T_Pose"
 
-Shape217.geometry = Box219
+Transform209.children.append(ROUTE219)
 
-Transform212.children.append(Shape217)
-TouchSensor220 = x3d.TouchSensor(DEF="TouchDown_PoseTouchSensor")
-TouchSensor220.description = "select to transition all joints to TouchDown pose"
+Group202.children.append(Transform209)
+Transform220 = x3d.Transform(DEF="A_PoseInterface")
+Transform220.translation = [-1.5,1,0]
+Shape221 = x3d.Shape()
+Text222 = x3d.Text()
+Text222.string = ["\"A\" Pose"]
+FontStyle223 = x3d.FontStyle(USE="SharedFont")
 
-Transform212.children.append(TouchSensor220)
+Text222.fontStyle = FontStyle223
 
-Group186.children.append(Transform212)
-Transform221 = x3d.Transform(DEF="I_PoseInterface")
-Transform221.translation = [-1.5,0,0]
-Shape222 = x3d.Shape()
-Appearance223 = x3d.Appearance(USE="PoseTextAppearance")
+Shape221.geometry = Text222
+Appearance224 = x3d.Appearance(USE="PoseTextAppearance")
 
-Shape222.appearance = Appearance223
-Text224 = x3d.Text()
-Text224.string = ["\"I\" Pose"]
-FontStyle225 = x3d.FontStyle(USE="SharedFont")
+Shape221.appearance = Appearance224
 
-Text224.fontStyle = FontStyle225
+Transform220.children.append(Shape221)
+Shape225 = x3d.Shape()
+Shape225.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
+Appearance226 = x3d.Appearance(USE="TransparentAppearance")
 
-Shape222.geometry = Text224
+Shape225.appearance = Appearance226
+Box227 = x3d.Box()
+Box227.size = [0.45,0.2,0.001]
 
-Transform221.children.append(Shape222)
-Shape226 = x3d.Shape()
-Appearance227 = x3d.Appearance(USE="TransparentAppearance")
+Shape225.geometry = Box227
 
-Shape226.appearance = Appearance227
-Box228 = x3d.Box()
-Box228.size = [0.45,0.2,0.001]
+Transform220.children.append(Shape225)
+TouchSensor228 = x3d.TouchSensor(DEF="A_PoseTouchSensor")
+TouchSensor228.description = "select to move shoulders to \"A\" pose, leave other joints unchanged"
 
-Shape226.geometry = Box228
+Transform220.children.append(TouchSensor228)
+ROUTE229 = x3d.ROUTE()
+ROUTE229.fromField = "isActive"
+ROUTE229.fromNode = "A_PoseTouchSensor"
+ROUTE229.toField = "commencePose"
+ROUTE229.toNode = "A_Pose"
 
-Transform221.children.append(Shape226)
-TouchSensor229 = x3d.TouchSensor(DEF="I_PoseTouchSensor")
-TouchSensor229.description = "select to transition all joints to \"I\" pose"
+Transform220.children.append(ROUTE229)
 
-Transform221.children.append(TouchSensor229)
-
-Group186.children.append(Transform221)
-Transform230 = x3d.Transform(DEF="FaceLeftPoseInterface")
-Transform230.translation = [1.5,1.5,0]
+Group202.children.append(Transform220)
+Transform230 = x3d.Transform(DEF="TouchDown_PoseInterface")
+Transform230.translation = [-1.5,0.5,0]
 Shape231 = x3d.Shape()
-Appearance232 = x3d.Appearance(USE="PoseTextAppearance")
+Text232 = x3d.Text()
+Text232.string = ["TouchDown Pose"]
+FontStyle233 = x3d.FontStyle(USE="SharedFont")
 
-Shape231.appearance = Appearance232
-Text233 = x3d.Text()
-Text233.string = ["Face Left Pose"]
-FontStyle234 = x3d.FontStyle(USE="SharedFont")
+Text232.fontStyle = FontStyle233
 
-Text233.fontStyle = FontStyle234
+Shape231.geometry = Text232
+Appearance234 = x3d.Appearance(USE="PoseTextAppearance")
 
-Shape231.geometry = Text233
+Shape231.appearance = Appearance234
 
 Transform230.children.append(Shape231)
 Shape235 = x3d.Shape()
+Shape235.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
 Appearance236 = x3d.Appearance(USE="TransparentAppearance")
 
 Shape235.appearance = Appearance236
 Box237 = x3d.Box()
-Box237.size = [0.9,0.2,0.001]
+Box237.size = [0.85,0.2,0.001]
 
 Shape235.geometry = Box237
 
 Transform230.children.append(Shape235)
-TouchSensor238 = x3d.TouchSensor(DEF="FaceLeftTouchSensor")
-TouchSensor238.description = "select to rotate body and Face Left, leave other joints unchanged"
+TouchSensor238 = x3d.TouchSensor(DEF="TouchDown_PoseTouchSensor")
+TouchSensor238.description = "select to transition all joints to TouchDown pose"
 
 Transform230.children.append(TouchSensor238)
+ROUTE239 = x3d.ROUTE()
+ROUTE239.fromField = "isActive"
+ROUTE239.fromNode = "TouchDown_PoseTouchSensor"
+ROUTE239.toField = "commencePose"
+ROUTE239.toNode = "TouchDown_Pose"
 
-Group186.children.append(Transform230)
-Transform239 = x3d.Transform(DEF="FaceRightPoseInterface")
-Transform239.translation = [1.5,1,0]
-Shape240 = x3d.Shape()
-Appearance241 = x3d.Appearance(USE="PoseTextAppearance")
+Transform230.children.append(ROUTE239)
 
-Shape240.appearance = Appearance241
+Group202.children.append(Transform230)
+Transform240 = x3d.Transform(DEF="I_PoseInterface")
+Transform240.translation = [-1.5,0,0]
+Shape241 = x3d.Shape()
 Text242 = x3d.Text()
-Text242.string = ["Face Right Pose"]
+Text242.string = ["\"I\" Pose"]
 FontStyle243 = x3d.FontStyle(USE="SharedFont")
 
 Text242.fontStyle = FontStyle243
 
-Shape240.geometry = Text242
+Shape241.geometry = Text242
+Appearance244 = x3d.Appearance(USE="PoseTextAppearance")
 
-Transform239.children.append(Shape240)
-Shape244 = x3d.Shape()
-Appearance245 = x3d.Appearance(USE="TransparentAppearance")
+Shape241.appearance = Appearance244
 
-Shape244.appearance = Appearance245
-Box246 = x3d.Box()
-Box246.size = [0.9,0.2,0.001]
+Transform240.children.append(Shape241)
+Shape245 = x3d.Shape()
+Shape245.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
+Appearance246 = x3d.Appearance(USE="TransparentAppearance")
 
-Shape244.geometry = Box246
+Shape245.appearance = Appearance246
+Box247 = x3d.Box()
+Box247.size = [0.45,0.2,0.001]
 
-Transform239.children.append(Shape244)
-TouchSensor247 = x3d.TouchSensor(DEF="FaceRightTouchSensor")
-TouchSensor247.description = "select to rotate body and Face Right, leave other joints unchanged"
+Shape245.geometry = Box247
 
-Transform239.children.append(TouchSensor247)
+Transform240.children.append(Shape245)
+TouchSensor248 = x3d.TouchSensor(DEF="I_PoseTouchSensor")
+TouchSensor248.description = "select to transition all joints to \"I\" pose"
 
-Group186.children.append(Transform239)
-Transform248 = x3d.Transform(DEF="AnimatePosesInterface")
-Transform248.translation = [1.5,0.5,0]
-Shape249 = x3d.Shape()
-Appearance250 = x3d.Appearance(DEF="AnimationTextAppearance")
-Material251 = x3d.Material()
-Material251.diffuseColor = [0.1,0.2,0.3]
+Transform240.children.append(TouchSensor248)
+ROUTE249 = x3d.ROUTE()
+ROUTE249.fromField = "isActive"
+ROUTE249.fromNode = "I_PoseTouchSensor"
+ROUTE249.toField = "commencePose"
+ROUTE249.toNode = "I_Pose"
 
-Appearance250.material = Material251
+Transform240.children.append(ROUTE249)
 
-Shape249.appearance = Appearance250
+Group202.children.append(Transform240)
+Transform250 = x3d.Transform(DEF="FaceLeftPoseInterface")
+Transform250.translation = [1.5,1.5,0]
+Shape251 = x3d.Shape()
 Text252 = x3d.Text()
-Text252.string = ["Direct animation","to, from \"I\" Pose"]
+Text252.string = ["Face Left Pose"]
 FontStyle253 = x3d.FontStyle(USE="SharedFont")
 
 Text252.fontStyle = FontStyle253
 
-Shape249.geometry = Text252
+Shape251.geometry = Text252
+Appearance254 = x3d.Appearance(USE="PoseTextAppearance")
 
-Transform248.children.append(Shape249)
-Shape254 = x3d.Shape()
-Appearance255 = x3d.Appearance(USE="TransparentAppearance")
+Shape251.appearance = Appearance254
 
-Shape254.appearance = Appearance255
-Box256 = x3d.Box()
-Box256.size = [0.9,0.25,0.001]
+Transform250.children.append(Shape251)
+Shape255 = x3d.Shape()
+Appearance256 = x3d.Appearance(USE="TransparentAppearance")
 
-Shape254.geometry = Box256
+Shape255.appearance = Appearance256
+Box257 = x3d.Box()
+Box257.size = [0.9,0.2,0.001]
 
-Transform248.children.append(Shape254)
-TouchSensor257 = x3d.TouchSensor(DEF="AnimatePosesTouchSensor")
-TouchSensor257.description = "select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events"
+Shape255.geometry = Box257
 
-Transform248.children.append(TouchSensor257)
-TimeSensor258 = x3d.TimeSensor(DEF="AnimatePosesClock")
-TimeSensor258.description = "directly animate several poses"
-TimeSensor258.cycleInterval = 4
+Transform250.children.append(Shape255)
+TouchSensor258 = x3d.TouchSensor(DEF="FaceLeftTouchSensor")
+TouchSensor258.description = "select to rotate body and Face Left, leave other joints unchanged"
 
-Transform248.children.append(TimeSensor258)
-ScalarInterpolator259 = x3d.ScalarInterpolator(DEF="AnimatePosesLoopInterpolator")
-ScalarInterpolator259.key = [0,0.05,0.45,0.55,0.95,1]
-ScalarInterpolator259.keyValue = [0,0,1,1,0,0]
+Transform250.children.append(TouchSensor258)
+ROUTE259 = x3d.ROUTE()
+ROUTE259.fromField = "isActive"
+ROUTE259.fromNode = "FaceLeftTouchSensor"
+ROUTE259.toField = "commencePose"
+ROUTE259.toNode = "FaceLeft_Pose"
 
-Transform248.children.append(ScalarInterpolator259)
+Transform250.children.append(ROUTE259)
 
-Group186.children.append(Transform248)
-Transform260 = x3d.Transform(DEF="ResetDefaultPoseInterface")
-Transform260.translation = [1.5,0,0]
+Group202.children.append(Transform250)
+Transform260 = x3d.Transform(DEF="FaceRightPoseInterface")
+Transform260.translation = [1.5,1,0]
 Shape261 = x3d.Shape()
-Appearance262 = x3d.Appearance(USE="AnimationTextAppearance")
+Text262 = x3d.Text()
+Text262.string = ["Face Right Pose"]
+FontStyle263 = x3d.FontStyle(USE="SharedFont")
 
-Shape261.appearance = Appearance262
-Text263 = x3d.Text()
-Text263.string = ["Reset All Joints","to Default \"I\" Pose"]
-FontStyle264 = x3d.FontStyle(USE="SharedFont")
+Text262.fontStyle = FontStyle263
 
-Text263.fontStyle = FontStyle264
+Shape261.geometry = Text262
+Appearance264 = x3d.Appearance(USE="PoseTextAppearance")
 
-Shape261.geometry = Text263
+Shape261.appearance = Appearance264
 
 Transform260.children.append(Shape261)
 Shape265 = x3d.Shape()
+Shape265.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
 Appearance266 = x3d.Appearance(USE="TransparentAppearance")
 
 Shape265.appearance = Appearance266
 Box267 = x3d.Box()
-Box267.size = [0.9,0.25,0.001]
+Box267.size = [0.9,0.2,0.001]
 
 Shape265.geometry = Box267
 
 Transform260.children.append(Shape265)
-TouchSensor268 = x3d.TouchSensor(DEF="ResetPoseTouchSensor")
-TouchSensor268.description = "select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event"
+TouchSensor268 = x3d.TouchSensor(DEF="FaceRightTouchSensor")
+TouchSensor268.description = "select to rotate body and Face Right, leave other joints unchanged"
 
 Transform260.children.append(TouchSensor268)
+ROUTE269 = x3d.ROUTE()
+ROUTE269.fromField = "isActive"
+ROUTE269.fromNode = "FaceRightTouchSensor"
+ROUTE269.toField = "commencePose"
+ROUTE269.toNode = "FaceRight_Pose"
 
-Group186.children.append(Transform260)
+Transform260.children.append(ROUTE269)
 
-Scene40.children.append(Group186)
-Group269 = x3d.Group(DEF="HandleInlineLoadsensorRouting")
+Group202.children.append(Transform260)
+Transform270 = x3d.Transform(DEF="AnimatePosesInterface")
+Transform270.translation = [1.5,0.5,0]
+Shape271 = x3d.Shape()
+Text272 = x3d.Text()
+Text272.string = ["Direct animation","to, from \"I\" Pose"]
+FontStyle273 = x3d.FontStyle(USE="SharedFont")
 
-Scene40.children.append(Group269)
-IMPORT270 = x3d.IMPORT()
-IMPORT270.inlineDEF = "HumanoidInline"
-IMPORT270.importedDEF = "BoxMan2"
-IMPORT270.AS = "HumanoidImported"
+Text272.fontStyle = FontStyle273
 
-Scene40.children.append(IMPORT270)
-ROUTE271 = x3d.ROUTE()
-ROUTE271.fromNode = "T_PoseTouchSensor"
-ROUTE271.fromField = "isActive"
-ROUTE271.toNode = "T_Pose"
-ROUTE271.toField = "commencePose"
+Shape271.geometry = Text272
+Appearance274 = x3d.Appearance(DEF="AnimationTextAppearance")
+Material275 = x3d.Material()
+Material275.diffuseColor = [0.1,0.2,0.3]
 
-Scene40.children.append(ROUTE271)
-ROUTE272 = x3d.ROUTE()
-ROUTE272.fromNode = "A_PoseTouchSensor"
-ROUTE272.fromField = "isActive"
-ROUTE272.toNode = "A_Pose"
-ROUTE272.toField = "commencePose"
+Appearance274.material = Material275
 
-Scene40.children.append(ROUTE272)
-ROUTE273 = x3d.ROUTE()
-ROUTE273.fromNode = "TouchDown_PoseTouchSensor"
-ROUTE273.fromField = "isActive"
-ROUTE273.toNode = "TouchDown_Pose"
-ROUTE273.toField = "commencePose"
+Shape271.appearance = Appearance274
 
-Scene40.children.append(ROUTE273)
-ROUTE274 = x3d.ROUTE()
-ROUTE274.fromNode = "I_PoseTouchSensor"
-ROUTE274.fromField = "isActive"
-ROUTE274.toNode = "I_Pose"
-ROUTE274.toField = "commencePose"
+Transform270.children.append(Shape271)
+Shape276 = x3d.Shape()
+Shape276.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
+Appearance277 = x3d.Appearance(USE="TransparentAppearance")
 
-Scene40.children.append(ROUTE274)
-ROUTE275 = x3d.ROUTE()
-ROUTE275.fromNode = "FaceLeftTouchSensor"
-ROUTE275.fromField = "isActive"
-ROUTE275.toNode = "FaceLeft_Pose"
-ROUTE275.toField = "commencePose"
+Shape276.appearance = Appearance277
+Box278 = x3d.Box()
+Box278.size = [0.9,0.25,0.001]
 
-Scene40.children.append(ROUTE275)
-ROUTE276 = x3d.ROUTE()
-ROUTE276.fromNode = "FaceRightTouchSensor"
-ROUTE276.fromField = "isActive"
-ROUTE276.toNode = "FaceRight_Pose"
-ROUTE276.toField = "commencePose"
+Shape276.geometry = Box278
 
-Scene40.children.append(ROUTE276)
-ROUTE277 = x3d.ROUTE()
-ROUTE277.fromNode = "AnimatePosesTouchSensor"
-ROUTE277.fromField = "touchTime"
-ROUTE277.toNode = "AnimatePosesClock"
-ROUTE277.toField = "set_startTime"
+Transform270.children.append(Shape276)
+TouchSensor279 = x3d.TouchSensor(DEF="AnimatePosesTouchSensor")
+TouchSensor279.description = "select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events"
 
-Scene40.children.append(ROUTE277)
-ROUTE278 = x3d.ROUTE()
-ROUTE278.fromNode = "AnimatePosesClock"
-ROUTE278.fromField = "fraction_changed"
-ROUTE278.toNode = "AnimatePosesLoopInterpolator"
-ROUTE278.toField = "set_fraction"
+Transform270.children.append(TouchSensor279)
+Transform270.children.append(x3d.Comment("""cycleInterval=4 also hard-coded in script execution message"""))
+TimeSensor280 = x3d.TimeSensor(DEF="AnimatePosesClock")
+TimeSensor280.cycleInterval = 4
+TimeSensor280.description = "directly animate several poses"
 
-Scene40.children.append(ROUTE278)
-ROUTE279 = x3d.ROUTE()
-ROUTE279.fromNode = "AnimatePosesLoopInterpolator"
-ROUTE279.fromField = "value_changed"
-ROUTE279.toNode = "I_Pose"
-ROUTE279.toField = "set_fraction"
+Transform270.children.append(TimeSensor280)
+ScalarInterpolator281 = x3d.ScalarInterpolator(DEF="AnimatePosesLoopInterpolator")
+ScalarInterpolator281.key = [0,0.05,0.45,0.55,0.95,1]
+ScalarInterpolator281.keyValue = [0,0,1,1,0,0]
 
-Scene40.children.append(ROUTE279)
-ROUTE280 = x3d.ROUTE()
-ROUTE280.fromNode = "ResetPoseTouchSensor"
-ROUTE280.fromField = "isActive"
-ROUTE280.toNode = "FaceLeft_Pose"
-ROUTE280.toField = "resetAllJoints"
-
-Scene40.children.append(ROUTE280)
-ROUTE281 = x3d.ROUTE()
-ROUTE281.fromNode = "HumanoidInlineLoadSensor"
-ROUTE281.fromField = "isLoaded"
-ROUTE281.toNode = "A_Pose"
-ROUTE281.toField = "isLoaded"
-
-Scene40.children.append(ROUTE281)
+Transform270.children.append(ScalarInterpolator281)
 ROUTE282 = x3d.ROUTE()
-ROUTE282.fromNode = "HumanoidInlineLoadSensor"
-ROUTE282.fromField = "isLoaded"
-ROUTE282.toNode = "H_Pose"
-ROUTE282.toField = "isLoaded"
+ROUTE282.fromField = "touchTime"
+ROUTE282.fromNode = "AnimatePosesTouchSensor"
+ROUTE282.toField = "startTime"
+ROUTE282.toNode = "AnimatePosesClock"
 
-Scene40.children.append(ROUTE282)
+Transform270.children.append(ROUTE282)
 ROUTE283 = x3d.ROUTE()
-ROUTE283.fromNode = "HumanoidInlineLoadSensor"
-ROUTE283.fromField = "isLoaded"
-ROUTE283.toNode = "I_Pose"
-ROUTE283.toField = "isLoaded"
+ROUTE283.fromField = "fraction_changed"
+ROUTE283.fromNode = "AnimatePosesClock"
+ROUTE283.toField = "set_fraction"
+ROUTE283.toNode = "AnimatePosesLoopInterpolator"
 
-Scene40.children.append(ROUTE283)
+Transform270.children.append(ROUTE283)
 ROUTE284 = x3d.ROUTE()
-ROUTE284.fromNode = "HumanoidInlineLoadSensor"
-ROUTE284.fromField = "isLoaded"
-ROUTE284.toNode = "T_Pose"
-ROUTE284.toField = "isLoaded"
+ROUTE284.fromField = "value_changed"
+ROUTE284.fromNode = "AnimatePosesLoopInterpolator"
+ROUTE284.toField = "set_fraction"
+ROUTE284.toNode = "I_Pose"
 
-Scene40.children.append(ROUTE284)
-ROUTE285 = x3d.ROUTE()
-ROUTE285.fromNode = "HumanoidInlineLoadSensor"
-ROUTE285.fromField = "isLoaded"
-ROUTE285.toNode = "FaceLeft_Pose"
-ROUTE285.toField = "isLoaded"
+Transform270.children.append(ROUTE284)
 
-Scene40.children.append(ROUTE285)
-ROUTE286 = x3d.ROUTE()
-ROUTE286.fromNode = "HumanoidInlineLoadSensor"
-ROUTE286.fromField = "isLoaded"
-ROUTE286.toNode = "FaceRight_Pose"
-ROUTE286.toField = "isLoaded"
+Group202.children.append(Transform270)
+Transform285 = x3d.Transform(DEF="ResetDefaultPoseInterface")
+Transform285.translation = [1.5,0,0]
+Shape286 = x3d.Shape()
+Text287 = x3d.Text()
+Text287.string = ["Reset All Joints","to Default \"I\" Pose"]
+FontStyle288 = x3d.FontStyle(USE="SharedFont")
 
-Scene40.children.append(ROUTE286)
-ROUTE287 = x3d.ROUTE()
-ROUTE287.fromNode = "HumanoidInlineLoadSensor"
-ROUTE287.fromField = "isLoaded"
-ROUTE287.toNode = "TouchDown_Pose"
-ROUTE287.toField = "isLoaded"
+Text287.fontStyle = FontStyle288
 
-Scene40.children.append(ROUTE287)
+Shape286.geometry = Text287
+Appearance289 = x3d.Appearance(USE="AnimationTextAppearance")
 
-X3D0.Scene = Scene40
+Shape286.appearance = Appearance289
+
+Transform285.children.append(Shape286)
+Shape290 = x3d.Shape()
+Shape290.children.append(x3d.Comment("""Selectable Text transparent Box for easy user selection"""))
+Appearance291 = x3d.Appearance(USE="TransparentAppearance")
+
+Shape290.appearance = Appearance291
+Box292 = x3d.Box()
+Box292.size = [0.9,0.25,0.001]
+
+Shape290.geometry = Box292
+
+Transform285.children.append(Shape290)
+TouchSensor293 = x3d.TouchSensor(DEF="ResetPoseTouchSensor")
+TouchSensor293.description = "select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event"
+
+Transform285.children.append(TouchSensor293)
+ROUTE294 = x3d.ROUTE()
+ROUTE294.fromField = "isActive"
+ROUTE294.fromNode = "ResetPoseTouchSensor"
+ROUTE294.toField = "resetAllJoints"
+ROUTE294.toNode = "FaceLeft_Pose"
+
+Transform285.children.append(ROUTE294)
+
+Group202.children.append(Transform285)
+
+Scene42.children.append(Group202)
+Group295 = x3d.Group(DEF="HandleInlineLoadsensorRouting")
+ROUTE296 = x3d.ROUTE()
+ROUTE296.fromField = "isLoaded"
+ROUTE296.fromNode = "HumanoidInlineLoadSensor"
+ROUTE296.toField = "isLoaded"
+ROUTE296.toNode = "A_Pose"
+
+Group295.children.append(ROUTE296)
+ROUTE297 = x3d.ROUTE()
+ROUTE297.fromField = "isLoaded"
+ROUTE297.fromNode = "HumanoidInlineLoadSensor"
+ROUTE297.toField = "isLoaded"
+ROUTE297.toNode = "H_Pose"
+
+Group295.children.append(ROUTE297)
+ROUTE298 = x3d.ROUTE()
+ROUTE298.fromField = "isLoaded"
+ROUTE298.fromNode = "HumanoidInlineLoadSensor"
+ROUTE298.toField = "isLoaded"
+ROUTE298.toNode = "I_Pose"
+
+Group295.children.append(ROUTE298)
+ROUTE299 = x3d.ROUTE()
+ROUTE299.fromField = "isLoaded"
+ROUTE299.fromNode = "HumanoidInlineLoadSensor"
+ROUTE299.toField = "isLoaded"
+ROUTE299.toNode = "T_Pose"
+
+Group295.children.append(ROUTE299)
+ROUTE300 = x3d.ROUTE()
+ROUTE300.fromField = "isLoaded"
+ROUTE300.fromNode = "HumanoidInlineLoadSensor"
+ROUTE300.toField = "isLoaded"
+ROUTE300.toNode = "FaceLeft_Pose"
+
+Group295.children.append(ROUTE300)
+ROUTE301 = x3d.ROUTE()
+ROUTE301.fromField = "isLoaded"
+ROUTE301.fromNode = "HumanoidInlineLoadSensor"
+ROUTE301.toField = "isLoaded"
+ROUTE301.toNode = "FaceRight_Pose"
+
+Group295.children.append(ROUTE301)
+ROUTE302 = x3d.ROUTE()
+ROUTE302.fromField = "isLoaded"
+ROUTE302.fromNode = "HumanoidInlineLoadSensor"
+ROUTE302.toField = "isLoaded"
+ROUTE302.toNode = "TouchDown_Pose"
+
+Group295.children.append(ROUTE302)
+
+Scene42.children.append(Group295)
+
+X3D0.Scene = Scene42
 f = open("../data/HAnimPosePrototype.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

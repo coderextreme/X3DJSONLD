@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -181,7 +177,6 @@ ecmascript:
     ROUTE(fromNode='C_3',fromField='fraction_changed',toNode='SI_3',toField='set_fraction'),
     ROUTE(fromNode='SI_3',fromField='value_changed',toNode='IRI_3',toField='set_iridescenceThicknessMaximum')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

@@ -79,7 +79,7 @@ public class bumpyfreewrlsliders
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_1)
   .setHead(new head()
     .addComponent(new component().setName("Scripting").setLevel(1))
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
@@ -143,17 +143,15 @@ public class bumpyfreewrlsliders
                 .setMaterial(new Material().setUSE("BLUE"))))))
         .addComments(" the model that is being reviewed by the users of this scene ")
         .addChild(new Transform("FlowerTransform")
-          .addComments(new String[] {"",
-"        <Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"})
+          .addComments(" <Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' /> ")
           .addComments(" Images courtesy of Paul Debevec's Light Probe Image Gallery ")
           .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
           .addChild(new Transform()
             .addChild(new Shape()
               .setGeometry(new Sphere().setRadius(5))
-              .addComments(new String[] {"",
-"                <IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">",
-"                    <Coordinate DEF=\"OrbitCoordinates\"/>",
-"                </IndexedFaceSet>"})
+              .addComments(" <IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> ")
+              .addComments(" <Coordinate DEF=\"OrbitCoordinates\"/> ")
+              .addComments(" </IndexedFaceSet> ")
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(.7,.7,.7).setSpecularColor(.5,.5,.5))
                 .setTexture(new ComposedCubeMapTexture("texture")
@@ -165,10 +163,9 @@ public class bumpyfreewrlsliders
                   .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
                 .addShaders(new ComposedShader("freewrlShader").setLanguage("GLSL")
                   .addField(new field().setName("fw_textureCoordGenType").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-                  .addComments(new String[] {"",
-"                  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"		    <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"})
+                  .addComments(" <field name='cube' type='SFNode' accessType=\"inputOutput\"> ")
+                  .addComments(" <ComposedCubeMapTexture USE=\"texture\"/> ")
+                  .addComments(" </field> ")
                   .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
                   .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
                   .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
@@ -185,78 +182,41 @@ public class bumpyfreewrlsliders
                   .addParts(new ShaderPart().setType("FRAGMENT")
                     .setIS(new IS()
                       .addConnect(new connect().setNodeField("url").setProtoField("fragment")))))
-                .addComments(new String[] {"",
-"               <ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">",
-"                  <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>",
-"                  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>",
-"                  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"                  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"                  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"                  <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>",
-"                  <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>",
-"                  <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>",
-"                  <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>",
-"                  <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
-"                  <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
-"                                <ShaderPart type='VERTEX'>",
-"					<IS>",
-"					<connect nodeField=\"url\" protoField=\"vertex\"/>",
-"					</IS>",
-"                                </ShaderPart>",
-"                                <ShaderPart type='FRAGMENT'>",
-"					<IS>",
-"					<connect nodeField=\"url\" protoField=\"fragment\"/>",
-"					</IS>",
-"                                </ShaderPart>",
-"                    </ComposedShader>"})))))
-        .addComments(new String[] {"",
-"        <Script DEF=\"OrbitScript\">",
-"            <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>",
-"            <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>",
-"	    <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>",
-"	    <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>",
-"	    <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"	    <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"	    <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
-"	    <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>",
-"<![CDATA[ecmascript:",
-"function initialize() {",
-"     var resolution = 300;",
-"     var theta = 0.0;",
-"     var phi = 0.0;",
-"     var delta = (2 * 3.141592653) / (resolution-1);",
-"     var crds = new MFVec3f();",
-"     for ( i = 0; i < resolution; i++) {",
-"     	for ( j = 0; j < resolution; j++) {",
-"		var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta);",
-"		crds.push(new SFVec3f(",
-"			rho * Math.cos(phi) * Math.cos(theta),",
-"			rho * Math.cos(phi) * Math.sin(theta),",
-"			rho * Math.sin(phi)",
-"		));",
-"		theta += delta;",
-"	}",
-"	phi += delta;",
-"     }",
-"     coordinates = crds;",
-"",
-"",
-"     var cis = new MFInt32();",
-"     for ( i = 0; i < resolution-1; i++) {",
-"     	for ( j = 0; j < resolution-1; j++) {",
-"	     cis.push(i*resolution+j);",
-"	     cis.push(i*resolution+j+1);",
-"	     cis.push((i+1)*resolution+j+1);",
-"	     cis.push((i+1)*resolution+j);",
-"	     cis.push(-1);",
-"	}",
-"    }",
-"    coordIndexes = cis;",
-"}",
-"",
-"      ]]></Script>",
-"      <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>",
-"      <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"})
+                .addComments(" <ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> ")
+                .addComments(" <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> ")
+                .addComments(" <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> ")
+                .addComments(" <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+                .addComments(" <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+                .addComments(" <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> ")
+                .addComments(" <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> ")
+                .addComments(" <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> ")
+                .addComments(" <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> ")
+                .addComments(" <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> ")
+                .addComments(" <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> ")
+                .addComments(" <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> ")
+                .addComments(" <ShaderPart type='VERTEX'> ")
+                .addComments(" <IS> ")
+                .addComments(" <connect nodeField=\"url\" protoField=\"vertex\"/> ")
+                .addComments(" </IS> ")
+                .addComments(" </ShaderPart> ")
+                .addComments(" <ShaderPart type='FRAGMENT'> ")
+                .addComments(" <IS> ")
+                .addComments(" <connect nodeField=\"url\" protoField=\"fragment\"/> ")
+                .addComments(" </IS> ")
+                .addComments(" </ShaderPart> ")
+                .addComments(" </ComposedShader> ")))))
+        .addComments(" <Script DEF=\"OrbitScript\"> ")
+        .addComments(" <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> ")
+        .addComments(" <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> ")
+        .addComments(" <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> ")
+        .addComments(" <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> ")
+        .addComments(" <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> ")
+        .addComments(" <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> ")
+        .addComments(" <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> ")
+        .addComments(" <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> ")
+        .addComments(" <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> ")
+        .addComments(" <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> ")
+        .addComments(" <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/> ")
         .addComments(" DIS multiuser facilities ")
         .addChild(new DISEntityManager("EntityManager")
           .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new String[] {"../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"}))
@@ -267,8 +227,8 @@ public class bumpyfreewrlsliders
           .addChild(new Group("AvatarHolder")))
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("addedEntities").setToNode("AvatarHolder").setToField("addChildren"))
         .addChild(new ROUTE().setFromNode("EntityManager").setFromField("removedEntities").setToNode("AvatarHolder").setToField("removeChildren")))
-      .addComments(new String[] {" the second layer contains the sliders that are moved with the user's display",
-"         like a HUD (heads up display) "})
+      .addComments(" the second layer contains the sliders that are moved with the user's display ")
+      .addComments(" like a HUD (heads up display) ")
       .addLayers(new LayoutLayer().setObjectType(new String[] {"ALL"}).setPickable(true)
         .addComments(" positioning the LayoutLayer ")
         .setLayout(new Layout().setAlign(new String[] {"LEFT","BOTTOM"}).setOffset(new double[] {-0.50,0.0}))

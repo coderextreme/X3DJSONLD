@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -57,19 +53,13 @@ newModel=X3D(profile='Immersive',version='4.0',
       field(accessType='outputOnly',name='coordinates',type='MFVec3f'),
       field(accessType='outputOnly',name='coordIndexes',type='MFInt32'),
       # <field accessType="inputOutput" name="e" type="SFFloat" value="5"/>
-
       # <field accessType="inputOutput" name="f" type="SFFloat" value="5"/>
-
       # <field accessType="inputOutput" name="g" type="SFFloat" value="5"/>
-
       # <field accessType="inputOutput" name="h" type="SFFloat" value="5"/>
-
       # <field accessType="inputOutput" name="t" type="SFFloat" value="0"/>
-
       # <field accessType="inputOutput" name="p" type="SFFloat" value="0"/>
-
       # <field accessType="initializeOnly" name="resolution" type="SFInt32" value="100"/>
-,
+      ,
 
     sourceCode="""
 ecmascript:
@@ -154,7 +144,6 @@ function set_fraction(fraction, eventTime) {
     ROUTE(fromNode='OrbitScript',fromField='coordinates',toNode='OrbitCoordinates',toField='point'),
     ROUTE(fromNode='Clock',fromField='fraction_changed',toNode='OrbitScript',toField='set_fraction')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

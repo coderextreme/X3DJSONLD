@@ -7330,1532 +7330,584 @@ HAnimJoint1601.setUSE(CString("hanim_humanoid_root"));
 HAnimHumanoid43.setJoints(&HAnimJoint1601);
 
 HAnimJoint& HAnimJoint1602 =  HAnimJoint();
-HAnimJoint1602.setUSE(CString("hanim_sacroiliac"));
+HAnimJoint1602.setUSE(CString("hanim_l_acromioclavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1602);
 
 HAnimJoint& HAnimJoint1603 =  HAnimJoint();
-HAnimJoint1603.setUSE(CString("hanim_l_hip"));
+HAnimJoint1603.setUSE(CString("hanim_l_calcaneocuboid"));
 HAnimHumanoid43.setJoints(&HAnimJoint1603);
 
 HAnimJoint& HAnimJoint1604 =  HAnimJoint();
-HAnimJoint1604.setUSE(CString("hanim_l_knee"));
+HAnimJoint1604.setUSE(CString("hanim_l_carpal_distal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1604);
 
 HAnimJoint& HAnimJoint1605 =  HAnimJoint();
-HAnimJoint1605.setUSE(CString("hanim_l_talocrural"));
+HAnimJoint1605.setUSE(CString("hanim_l_carpal_distal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1605);
 
 HAnimJoint& HAnimJoint1606 =  HAnimJoint();
-HAnimJoint1606.setUSE(CString("hanim_l_talocalcaneonavicular"));
+HAnimJoint1606.setUSE(CString("hanim_l_carpal_distal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1606);
 
 HAnimJoint& HAnimJoint1607 =  HAnimJoint();
-HAnimJoint1607.setUSE(CString("hanim_l_cuneonavicular_1"));
+HAnimJoint1607.setUSE(CString("hanim_l_carpal_distal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1607);
 
 HAnimJoint& HAnimJoint1608 =  HAnimJoint();
-HAnimJoint1608.setUSE(CString("hanim_l_tarsometatarsal_1"));
+HAnimJoint1608.setUSE(CString("hanim_l_carpal_interphalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1608);
 
 HAnimJoint& HAnimJoint1609 =  HAnimJoint();
-HAnimJoint1609.setUSE(CString("hanim_l_metatarsophalangeal_1"));
+HAnimJoint1609.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1609);
 
 HAnimJoint& HAnimJoint1610 =  HAnimJoint();
-HAnimJoint1610.setUSE(CString("hanim_l_tarsal_interphalangeal_1"));
+HAnimJoint1610.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1610);
 
 HAnimJoint& HAnimJoint1611 =  HAnimJoint();
-HAnimJoint1611.setUSE(CString("hanim_l_cuneonavicular_2"));
+HAnimJoint1611.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1611);
 
 HAnimJoint& HAnimJoint1612 =  HAnimJoint();
-HAnimJoint1612.setUSE(CString("hanim_l_tarsometatarsal_2"));
+HAnimJoint1612.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1612);
 
 HAnimJoint& HAnimJoint1613 =  HAnimJoint();
-HAnimJoint1613.setUSE(CString("hanim_l_metatarsophalangeal_2"));
+HAnimJoint1613.setUSE(CString("hanim_l_carpometacarpal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1613);
 
 HAnimJoint& HAnimJoint1614 =  HAnimJoint();
-HAnimJoint1614.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_2"));
+HAnimJoint1614.setUSE(CString("hanim_l_carpometacarpal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1614);
 
 HAnimJoint& HAnimJoint1615 =  HAnimJoint();
-HAnimJoint1615.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_2"));
+HAnimJoint1615.setUSE(CString("hanim_l_carpometacarpal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1615);
 
 HAnimJoint& HAnimJoint1616 =  HAnimJoint();
-HAnimJoint1616.setUSE(CString("hanim_l_cuneonavicular_3"));
+HAnimJoint1616.setUSE(CString("hanim_l_carpometacarpal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1616);
 
 HAnimJoint& HAnimJoint1617 =  HAnimJoint();
-HAnimJoint1617.setUSE(CString("hanim_l_tarsometatarsal_3"));
+HAnimJoint1617.setUSE(CString("hanim_l_carpometacarpal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1617);
 
 HAnimJoint& HAnimJoint1618 =  HAnimJoint();
-HAnimJoint1618.setUSE(CString("hanim_l_metatarsophalangeal_3"));
+HAnimJoint1618.setUSE(CString("hanim_l_cuneonavicular_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1618);
 
 HAnimJoint& HAnimJoint1619 =  HAnimJoint();
-HAnimJoint1619.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_3"));
+HAnimJoint1619.setUSE(CString("hanim_l_cuneonavicular_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1619);
 
 HAnimJoint& HAnimJoint1620 =  HAnimJoint();
-HAnimJoint1620.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_3"));
+HAnimJoint1620.setUSE(CString("hanim_l_cuneonavicular_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1620);
 
 HAnimJoint& HAnimJoint1621 =  HAnimJoint();
-HAnimJoint1621.setUSE(CString("hanim_l_calcaneocuboid"));
+HAnimJoint1621.setUSE(CString("hanim_l_elbow"));
 HAnimHumanoid43.setJoints(&HAnimJoint1621);
 
 HAnimJoint& HAnimJoint1622 =  HAnimJoint();
-HAnimJoint1622.setUSE(CString("hanim_l_transversetarsal"));
+HAnimJoint1622.setUSE(CString("hanim_l_eyeball_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1622);
 
 HAnimJoint& HAnimJoint1623 =  HAnimJoint();
-HAnimJoint1623.setUSE(CString("hanim_l_tarsometatarsal_4"));
+HAnimJoint1623.setUSE(CString("hanim_l_eyebrow_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1623);
 
 HAnimJoint& HAnimJoint1624 =  HAnimJoint();
-HAnimJoint1624.setUSE(CString("hanim_l_metatarsophalangeal_4"));
+HAnimJoint1624.setUSE(CString("hanim_l_eyelid_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1624);
 
 HAnimJoint& HAnimJoint1625 =  HAnimJoint();
-HAnimJoint1625.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_4"));
+HAnimJoint1625.setUSE(CString("hanim_l_hip"));
 HAnimHumanoid43.setJoints(&HAnimJoint1625);
 
 HAnimJoint& HAnimJoint1626 =  HAnimJoint();
-HAnimJoint1626.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_4"));
+HAnimJoint1626.setUSE(CString("hanim_l_knee"));
 HAnimHumanoid43.setJoints(&HAnimJoint1626);
 
 HAnimJoint& HAnimJoint1627 =  HAnimJoint();
-HAnimJoint1627.setUSE(CString("hanim_l_tarsometatarsal_5"));
+HAnimJoint1627.setUSE(CString("hanim_l_metacarpophalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1627);
 
 HAnimJoint& HAnimJoint1628 =  HAnimJoint();
-HAnimJoint1628.setUSE(CString("hanim_l_metatarsophalangeal_5"));
+HAnimJoint1628.setUSE(CString("hanim_l_metacarpophalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1628);
 
 HAnimJoint& HAnimJoint1629 =  HAnimJoint();
-HAnimJoint1629.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_5"));
+HAnimJoint1629.setUSE(CString("hanim_l_metacarpophalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1629);
 
 HAnimJoint& HAnimJoint1630 =  HAnimJoint();
-HAnimJoint1630.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_5"));
+HAnimJoint1630.setUSE(CString("hanim_l_metacarpophalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1630);
 
 HAnimJoint& HAnimJoint1631 =  HAnimJoint();
-HAnimJoint1631.setUSE(CString("hanim_r_hip"));
+HAnimJoint1631.setUSE(CString("hanim_l_metacarpophalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1631);
 
 HAnimJoint& HAnimJoint1632 =  HAnimJoint();
-HAnimJoint1632.setUSE(CString("hanim_r_knee"));
+HAnimJoint1632.setUSE(CString("hanim_l_metatarsophalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1632);
 
 HAnimJoint& HAnimJoint1633 =  HAnimJoint();
-HAnimJoint1633.setUSE(CString("hanim_r_talocrural"));
+HAnimJoint1633.setUSE(CString("hanim_l_metatarsophalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1633);
 
 HAnimJoint& HAnimJoint1634 =  HAnimJoint();
-HAnimJoint1634.setUSE(CString("hanim_r_talocalcaneonavicular"));
+HAnimJoint1634.setUSE(CString("hanim_l_metatarsophalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1634);
 
 HAnimJoint& HAnimJoint1635 =  HAnimJoint();
-HAnimJoint1635.setUSE(CString("hanim_r_cuneonavicular_1"));
+HAnimJoint1635.setUSE(CString("hanim_l_metatarsophalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1635);
 
 HAnimJoint& HAnimJoint1636 =  HAnimJoint();
-HAnimJoint1636.setUSE(CString("hanim_r_tarsometatarsal_1"));
+HAnimJoint1636.setUSE(CString("hanim_l_metatarsophalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1636);
 
 HAnimJoint& HAnimJoint1637 =  HAnimJoint();
-HAnimJoint1637.setUSE(CString("hanim_r_metatarsophalangeal_1"));
+HAnimJoint1637.setUSE(CString("hanim_l_midcarpal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1637);
 
 HAnimJoint& HAnimJoint1638 =  HAnimJoint();
-HAnimJoint1638.setUSE(CString("hanim_r_tarsal_interphalangeal_1"));
+HAnimJoint1638.setUSE(CString("hanim_l_midcarpal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1638);
 
 HAnimJoint& HAnimJoint1639 =  HAnimJoint();
-HAnimJoint1639.setUSE(CString("hanim_r_cuneonavicular_2"));
+HAnimJoint1639.setUSE(CString("hanim_l_midcarpal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1639);
 
 HAnimJoint& HAnimJoint1640 =  HAnimJoint();
-HAnimJoint1640.setUSE(CString("hanim_r_tarsometatarsal_2"));
+HAnimJoint1640.setUSE(CString("hanim_l_midcarpal_4_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1640);
 
 HAnimJoint& HAnimJoint1641 =  HAnimJoint();
-HAnimJoint1641.setUSE(CString("hanim_r_metatarsophalangeal_2"));
+HAnimJoint1641.setUSE(CString("hanim_l_radiocarpal"));
 HAnimHumanoid43.setJoints(&HAnimJoint1641);
 
 HAnimJoint& HAnimJoint1642 =  HAnimJoint();
-HAnimJoint1642.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_2"));
+HAnimJoint1642.setUSE(CString("hanim_l_shoulder"));
 HAnimHumanoid43.setJoints(&HAnimJoint1642);
 
 HAnimJoint& HAnimJoint1643 =  HAnimJoint();
-HAnimJoint1643.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_2"));
+HAnimJoint1643.setUSE(CString("hanim_l_sternoclavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1643);
 
 HAnimJoint& HAnimJoint1644 =  HAnimJoint();
-HAnimJoint1644.setUSE(CString("hanim_r_cuneonavicular_3"));
+HAnimJoint1644.setUSE(CString("hanim_l_talocalcaneonavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1644);
 
 HAnimJoint& HAnimJoint1645 =  HAnimJoint();
-HAnimJoint1645.setUSE(CString("hanim_r_tarsometatarsal_3"));
+HAnimJoint1645.setUSE(CString("hanim_l_talocrural"));
 HAnimHumanoid43.setJoints(&HAnimJoint1645);
 
 HAnimJoint& HAnimJoint1646 =  HAnimJoint();
-HAnimJoint1646.setUSE(CString("hanim_r_metatarsophalangeal_3"));
+HAnimJoint1646.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1646);
 
 HAnimJoint& HAnimJoint1647 =  HAnimJoint();
-HAnimJoint1647.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_3"));
+HAnimJoint1647.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1647);
 
 HAnimJoint& HAnimJoint1648 =  HAnimJoint();
-HAnimJoint1648.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_3"));
+HAnimJoint1648.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1648);
 
 HAnimJoint& HAnimJoint1649 =  HAnimJoint();
-HAnimJoint1649.setUSE(CString("hanim_r_calcaneocuboid"));
+HAnimJoint1649.setUSE(CString("hanim_l_tarsal_distal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1649);
 
 HAnimJoint& HAnimJoint1650 =  HAnimJoint();
-HAnimJoint1650.setUSE(CString("hanim_r_transversetarsal"));
+HAnimJoint1650.setUSE(CString("hanim_l_tarsal_interphalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1650);
 
 HAnimJoint& HAnimJoint1651 =  HAnimJoint();
-HAnimJoint1651.setUSE(CString("hanim_r_tarsometatarsal_4"));
+HAnimJoint1651.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1651);
 
 HAnimJoint& HAnimJoint1652 =  HAnimJoint();
-HAnimJoint1652.setUSE(CString("hanim_r_metatarsophalangeal_4"));
+HAnimJoint1652.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1652);
 
 HAnimJoint& HAnimJoint1653 =  HAnimJoint();
-HAnimJoint1653.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_4"));
+HAnimJoint1653.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1653);
 
 HAnimJoint& HAnimJoint1654 =  HAnimJoint();
-HAnimJoint1654.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_4"));
+HAnimJoint1654.setUSE(CString("hanim_l_tarsal_proximal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1654);
 
 HAnimJoint& HAnimJoint1655 =  HAnimJoint();
-HAnimJoint1655.setUSE(CString("hanim_r_tarsometatarsal_5"));
+HAnimJoint1655.setUSE(CString("hanim_l_tarsometatarsal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1655);
 
 HAnimJoint& HAnimJoint1656 =  HAnimJoint();
-HAnimJoint1656.setUSE(CString("hanim_r_metatarsophalangeal_5"));
+HAnimJoint1656.setUSE(CString("hanim_l_tarsometatarsal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1656);
 
 HAnimJoint& HAnimJoint1657 =  HAnimJoint();
-HAnimJoint1657.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_5"));
+HAnimJoint1657.setUSE(CString("hanim_l_tarsometatarsal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1657);
 
 HAnimJoint& HAnimJoint1658 =  HAnimJoint();
-HAnimJoint1658.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_5"));
+HAnimJoint1658.setUSE(CString("hanim_l_tarsometatarsal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1658);
 
 HAnimJoint& HAnimJoint1659 =  HAnimJoint();
-HAnimJoint1659.setUSE(CString("hanim_vl5"));
+HAnimJoint1659.setUSE(CString("hanim_l_tarsometatarsal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1659);
 
 HAnimJoint& HAnimJoint1660 =  HAnimJoint();
-HAnimJoint1660.setUSE(CString("hanim_vl4"));
+HAnimJoint1660.setUSE(CString("hanim_l_transversetarsal"));
 HAnimHumanoid43.setJoints(&HAnimJoint1660);
 
 HAnimJoint& HAnimJoint1661 =  HAnimJoint();
-HAnimJoint1661.setUSE(CString("hanim_vl3"));
+HAnimJoint1661.setUSE(CString("hanim_r_acromioclavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1661);
 
 HAnimJoint& HAnimJoint1662 =  HAnimJoint();
-HAnimJoint1662.setUSE(CString("hanim_vl2"));
+HAnimJoint1662.setUSE(CString("hanim_r_calcaneocuboid"));
 HAnimHumanoid43.setJoints(&HAnimJoint1662);
 
 HAnimJoint& HAnimJoint1663 =  HAnimJoint();
-HAnimJoint1663.setUSE(CString("hanim_vl1"));
+HAnimJoint1663.setUSE(CString("hanim_r_carpal_distal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1663);
 
 HAnimJoint& HAnimJoint1664 =  HAnimJoint();
-HAnimJoint1664.setUSE(CString("hanim_vt12"));
+HAnimJoint1664.setUSE(CString("hanim_r_carpal_distal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1664);
 
 HAnimJoint& HAnimJoint1665 =  HAnimJoint();
-HAnimJoint1665.setUSE(CString("hanim_vt11"));
+HAnimJoint1665.setUSE(CString("hanim_r_carpal_distal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1665);
 
 HAnimJoint& HAnimJoint1666 =  HAnimJoint();
-HAnimJoint1666.setUSE(CString("hanim_vt10"));
+HAnimJoint1666.setUSE(CString("hanim_r_carpal_distal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1666);
 
 HAnimJoint& HAnimJoint1667 =  HAnimJoint();
-HAnimJoint1667.setUSE(CString("hanim_vt9"));
+HAnimJoint1667.setUSE(CString("hanim_r_carpal_interphalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1667);
 
 HAnimJoint& HAnimJoint1668 =  HAnimJoint();
-HAnimJoint1668.setUSE(CString("hanim_vt8"));
+HAnimJoint1668.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1668);
 
 HAnimJoint& HAnimJoint1669 =  HAnimJoint();
-HAnimJoint1669.setUSE(CString("hanim_vt7"));
+HAnimJoint1669.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1669);
 
 HAnimJoint& HAnimJoint1670 =  HAnimJoint();
-HAnimJoint1670.setUSE(CString("hanim_vt6"));
+HAnimJoint1670.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1670);
 
 HAnimJoint& HAnimJoint1671 =  HAnimJoint();
-HAnimJoint1671.setUSE(CString("hanim_vt5"));
+HAnimJoint1671.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1671);
 
 HAnimJoint& HAnimJoint1672 =  HAnimJoint();
-HAnimJoint1672.setUSE(CString("hanim_vt4"));
+HAnimJoint1672.setUSE(CString("hanim_r_carpometacarpal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1672);
 
 HAnimJoint& HAnimJoint1673 =  HAnimJoint();
-HAnimJoint1673.setUSE(CString("hanim_vt3"));
+HAnimJoint1673.setUSE(CString("hanim_r_carpometacarpal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1673);
 
 HAnimJoint& HAnimJoint1674 =  HAnimJoint();
-HAnimJoint1674.setUSE(CString("hanim_vt2"));
+HAnimJoint1674.setUSE(CString("hanim_r_carpometacarpal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1674);
 
 HAnimJoint& HAnimJoint1675 =  HAnimJoint();
-HAnimJoint1675.setUSE(CString("hanim_vt1"));
+HAnimJoint1675.setUSE(CString("hanim_r_carpometacarpal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1675);
 
 HAnimJoint& HAnimJoint1676 =  HAnimJoint();
-HAnimJoint1676.setUSE(CString("hanim_vc7"));
+HAnimJoint1676.setUSE(CString("hanim_r_carpometacarpal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1676);
 
 HAnimJoint& HAnimJoint1677 =  HAnimJoint();
-HAnimJoint1677.setUSE(CString("hanim_vc6"));
+HAnimJoint1677.setUSE(CString("hanim_r_cuneonavicular_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1677);
 
 HAnimJoint& HAnimJoint1678 =  HAnimJoint();
-HAnimJoint1678.setUSE(CString("hanim_vc5"));
+HAnimJoint1678.setUSE(CString("hanim_r_cuneonavicular_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1678);
 
 HAnimJoint& HAnimJoint1679 =  HAnimJoint();
-HAnimJoint1679.setUSE(CString("hanim_vc4"));
+HAnimJoint1679.setUSE(CString("hanim_r_cuneonavicular_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1679);
 
 HAnimJoint& HAnimJoint1680 =  HAnimJoint();
-HAnimJoint1680.setUSE(CString("hanim_vc3"));
+HAnimJoint1680.setUSE(CString("hanim_r_elbow"));
 HAnimHumanoid43.setJoints(&HAnimJoint1680);
 
 HAnimJoint& HAnimJoint1681 =  HAnimJoint();
-HAnimJoint1681.setUSE(CString("hanim_vc2"));
+HAnimJoint1681.setUSE(CString("hanim_r_eyeball_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1681);
 
 HAnimJoint& HAnimJoint1682 =  HAnimJoint();
-HAnimJoint1682.setUSE(CString("hanim_vc1"));
+HAnimJoint1682.setUSE(CString("hanim_r_eyebrow_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1682);
 
 HAnimJoint& HAnimJoint1683 =  HAnimJoint();
-HAnimJoint1683.setUSE(CString("hanim_skullbase"));
+HAnimJoint1683.setUSE(CString("hanim_r_eyelid_joint"));
 HAnimHumanoid43.setJoints(&HAnimJoint1683);
 
 HAnimJoint& HAnimJoint1684 =  HAnimJoint();
-HAnimJoint1684.setUSE(CString("hanim_l_eyelid_joint"));
+HAnimJoint1684.setUSE(CString("hanim_r_hip"));
 HAnimHumanoid43.setJoints(&HAnimJoint1684);
 
 HAnimJoint& HAnimJoint1685 =  HAnimJoint();
-HAnimJoint1685.setUSE(CString("hanim_r_eyelid_joint"));
+HAnimJoint1685.setUSE(CString("hanim_r_knee"));
 HAnimHumanoid43.setJoints(&HAnimJoint1685);
 
 HAnimJoint& HAnimJoint1686 =  HAnimJoint();
-HAnimJoint1686.setUSE(CString("hanim_l_eyeball_joint"));
+HAnimJoint1686.setUSE(CString("hanim_r_metacarpophalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1686);
 
 HAnimJoint& HAnimJoint1687 =  HAnimJoint();
-HAnimJoint1687.setUSE(CString("hanim_r_eyeball_joint"));
+HAnimJoint1687.setUSE(CString("hanim_r_metacarpophalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1687);
 
 HAnimJoint& HAnimJoint1688 =  HAnimJoint();
-HAnimJoint1688.setUSE(CString("hanim_l_eyebrow_joint"));
+HAnimJoint1688.setUSE(CString("hanim_r_metacarpophalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1688);
 
 HAnimJoint& HAnimJoint1689 =  HAnimJoint();
-HAnimJoint1689.setUSE(CString("hanim_r_eyebrow_joint"));
+HAnimJoint1689.setUSE(CString("hanim_r_metacarpophalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1689);
 
 HAnimJoint& HAnimJoint1690 =  HAnimJoint();
-HAnimJoint1690.setUSE(CString("hanim_temporomandibular"));
+HAnimJoint1690.setUSE(CString("hanim_r_metacarpophalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1690);
 
 HAnimJoint& HAnimJoint1691 =  HAnimJoint();
-HAnimJoint1691.setUSE(CString("hanim_l_sternoclavicular"));
+HAnimJoint1691.setUSE(CString("hanim_r_metatarsophalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1691);
 
 HAnimJoint& HAnimJoint1692 =  HAnimJoint();
-HAnimJoint1692.setUSE(CString("hanim_l_acromioclavicular"));
+HAnimJoint1692.setUSE(CString("hanim_r_metatarsophalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1692);
 
 HAnimJoint& HAnimJoint1693 =  HAnimJoint();
-HAnimJoint1693.setUSE(CString("hanim_l_shoulder"));
+HAnimJoint1693.setUSE(CString("hanim_r_metatarsophalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1693);
 
 HAnimJoint& HAnimJoint1694 =  HAnimJoint();
-HAnimJoint1694.setUSE(CString("hanim_l_elbow"));
+HAnimJoint1694.setUSE(CString("hanim_r_metatarsophalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1694);
 
 HAnimJoint& HAnimJoint1695 =  HAnimJoint();
-HAnimJoint1695.setUSE(CString("hanim_l_radiocarpal"));
+HAnimJoint1695.setUSE(CString("hanim_r_metatarsophalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1695);
 
 HAnimJoint& HAnimJoint1696 =  HAnimJoint();
-HAnimJoint1696.setUSE(CString("hanim_l_midcarpal_1"));
+HAnimJoint1696.setUSE(CString("hanim_r_midcarpal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1696);
 
 HAnimJoint& HAnimJoint1697 =  HAnimJoint();
-HAnimJoint1697.setUSE(CString("hanim_l_carpometacarpal_1"));
+HAnimJoint1697.setUSE(CString("hanim_r_midcarpal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1697);
 
 HAnimJoint& HAnimJoint1698 =  HAnimJoint();
-HAnimJoint1698.setUSE(CString("hanim_l_metacarpophalangeal_1"));
+HAnimJoint1698.setUSE(CString("hanim_r_midcarpal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1698);
 
 HAnimJoint& HAnimJoint1699 =  HAnimJoint();
-HAnimJoint1699.setUSE(CString("hanim_l_carpal_interphalangeal_1"));
+HAnimJoint1699.setUSE(CString("hanim_r_midcarpal_4_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1699);
 
 HAnimJoint& HAnimJoint1700 =  HAnimJoint();
-HAnimJoint1700.setUSE(CString("hanim_l_midcarpal_2"));
+HAnimJoint1700.setUSE(CString("hanim_r_radiocarpal"));
 HAnimHumanoid43.setJoints(&HAnimJoint1700);
 
 HAnimJoint& HAnimJoint1701 =  HAnimJoint();
-HAnimJoint1701.setUSE(CString("hanim_l_carpometacarpal_2"));
+HAnimJoint1701.setUSE(CString("hanim_r_shoulder"));
 HAnimHumanoid43.setJoints(&HAnimJoint1701);
 
 HAnimJoint& HAnimJoint1702 =  HAnimJoint();
-HAnimJoint1702.setUSE(CString("hanim_l_metacarpophalangeal_2"));
+HAnimJoint1702.setUSE(CString("hanim_r_sternoclavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1702);
 
 HAnimJoint& HAnimJoint1703 =  HAnimJoint();
-HAnimJoint1703.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_2"));
+HAnimJoint1703.setUSE(CString("hanim_r_talocalcaneonavicular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1703);
 
 HAnimJoint& HAnimJoint1704 =  HAnimJoint();
-HAnimJoint1704.setUSE(CString("hanim_l_carpal_distal_interphalangeal_2"));
+HAnimJoint1704.setUSE(CString("hanim_r_talocrural"));
 HAnimHumanoid43.setJoints(&HAnimJoint1704);
 
 HAnimJoint& HAnimJoint1705 =  HAnimJoint();
-HAnimJoint1705.setUSE(CString("hanim_l_midcarpal_3"));
+HAnimJoint1705.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1705);
 
 HAnimJoint& HAnimJoint1706 =  HAnimJoint();
-HAnimJoint1706.setUSE(CString("hanim_l_carpometacarpal_3"));
+HAnimJoint1706.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1706);
 
 HAnimJoint& HAnimJoint1707 =  HAnimJoint();
-HAnimJoint1707.setUSE(CString("hanim_l_metacarpophalangeal_3"));
+HAnimJoint1707.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1707);
 
 HAnimJoint& HAnimJoint1708 =  HAnimJoint();
-HAnimJoint1708.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_3"));
+HAnimJoint1708.setUSE(CString("hanim_r_tarsal_distal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1708);
 
 HAnimJoint& HAnimJoint1709 =  HAnimJoint();
-HAnimJoint1709.setUSE(CString("hanim_l_carpal_distal_interphalangeal_3"));
+HAnimJoint1709.setUSE(CString("hanim_r_tarsal_interphalangeal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1709);
 
 HAnimJoint& HAnimJoint1710 =  HAnimJoint();
-HAnimJoint1710.setUSE(CString("hanim_l_midcarpal_4_5"));
+HAnimJoint1710.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1710);
 
 HAnimJoint& HAnimJoint1711 =  HAnimJoint();
-HAnimJoint1711.setUSE(CString("hanim_l_carpometacarpal_4"));
+HAnimJoint1711.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1711);
 
 HAnimJoint& HAnimJoint1712 =  HAnimJoint();
-HAnimJoint1712.setUSE(CString("hanim_l_metacarpophalangeal_4"));
+HAnimJoint1712.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1712);
 
 HAnimJoint& HAnimJoint1713 =  HAnimJoint();
-HAnimJoint1713.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_4"));
+HAnimJoint1713.setUSE(CString("hanim_r_tarsal_proximal_interphalangeal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1713);
 
 HAnimJoint& HAnimJoint1714 =  HAnimJoint();
-HAnimJoint1714.setUSE(CString("hanim_l_carpal_distal_interphalangeal_4"));
+HAnimJoint1714.setUSE(CString("hanim_r_tarsometatarsal_1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1714);
 
 HAnimJoint& HAnimJoint1715 =  HAnimJoint();
-HAnimJoint1715.setUSE(CString("hanim_l_carpometacarpal_5"));
+HAnimJoint1715.setUSE(CString("hanim_r_tarsometatarsal_2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1715);
 
 HAnimJoint& HAnimJoint1716 =  HAnimJoint();
-HAnimJoint1716.setUSE(CString("hanim_l_metacarpophalangeal_5"));
+HAnimJoint1716.setUSE(CString("hanim_r_tarsometatarsal_3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1716);
 
 HAnimJoint& HAnimJoint1717 =  HAnimJoint();
-HAnimJoint1717.setUSE(CString("hanim_l_carpal_proximal_interphalangeal_5"));
+HAnimJoint1717.setUSE(CString("hanim_r_tarsometatarsal_4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1717);
 
 HAnimJoint& HAnimJoint1718 =  HAnimJoint();
-HAnimJoint1718.setUSE(CString("hanim_l_carpal_distal_interphalangeal_5"));
+HAnimJoint1718.setUSE(CString("hanim_r_tarsometatarsal_5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1718);
 
 HAnimJoint& HAnimJoint1719 =  HAnimJoint();
-HAnimJoint1719.setUSE(CString("hanim_r_sternoclavicular"));
+HAnimJoint1719.setUSE(CString("hanim_r_transversetarsal"));
 HAnimHumanoid43.setJoints(&HAnimJoint1719);
 
 HAnimJoint& HAnimJoint1720 =  HAnimJoint();
-HAnimJoint1720.setUSE(CString("hanim_r_acromioclavicular"));
+HAnimJoint1720.setUSE(CString("hanim_sacroiliac"));
 HAnimHumanoid43.setJoints(&HAnimJoint1720);
 
 HAnimJoint& HAnimJoint1721 =  HAnimJoint();
-HAnimJoint1721.setUSE(CString("hanim_r_shoulder"));
+HAnimJoint1721.setUSE(CString("hanim_skullbase"));
 HAnimHumanoid43.setJoints(&HAnimJoint1721);
 
 HAnimJoint& HAnimJoint1722 =  HAnimJoint();
-HAnimJoint1722.setUSE(CString("hanim_r_elbow"));
+HAnimJoint1722.setUSE(CString("hanim_temporomandibular"));
 HAnimHumanoid43.setJoints(&HAnimJoint1722);
 
 HAnimJoint& HAnimJoint1723 =  HAnimJoint();
-HAnimJoint1723.setUSE(CString("hanim_r_radiocarpal"));
+HAnimJoint1723.setUSE(CString("hanim_vc1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1723);
 
 HAnimJoint& HAnimJoint1724 =  HAnimJoint();
-HAnimJoint1724.setUSE(CString("hanim_r_midcarpal_1"));
+HAnimJoint1724.setUSE(CString("hanim_vc2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1724);
 
 HAnimJoint& HAnimJoint1725 =  HAnimJoint();
-HAnimJoint1725.setUSE(CString("hanim_r_carpometacarpal_1"));
+HAnimJoint1725.setUSE(CString("hanim_vc3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1725);
 
 HAnimJoint& HAnimJoint1726 =  HAnimJoint();
-HAnimJoint1726.setUSE(CString("hanim_r_metacarpophalangeal_1"));
+HAnimJoint1726.setUSE(CString("hanim_vc4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1726);
 
 HAnimJoint& HAnimJoint1727 =  HAnimJoint();
-HAnimJoint1727.setUSE(CString("hanim_r_carpal_interphalangeal_1"));
+HAnimJoint1727.setUSE(CString("hanim_vc5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1727);
 
 HAnimJoint& HAnimJoint1728 =  HAnimJoint();
-HAnimJoint1728.setUSE(CString("hanim_r_midcarpal_2"));
+HAnimJoint1728.setUSE(CString("hanim_vc6"));
 HAnimHumanoid43.setJoints(&HAnimJoint1728);
 
 HAnimJoint& HAnimJoint1729 =  HAnimJoint();
-HAnimJoint1729.setUSE(CString("hanim_r_carpometacarpal_2"));
+HAnimJoint1729.setUSE(CString("hanim_vc7"));
 HAnimHumanoid43.setJoints(&HAnimJoint1729);
 
 HAnimJoint& HAnimJoint1730 =  HAnimJoint();
-HAnimJoint1730.setUSE(CString("hanim_r_metacarpophalangeal_2"));
+HAnimJoint1730.setUSE(CString("hanim_vl1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1730);
 
 HAnimJoint& HAnimJoint1731 =  HAnimJoint();
-HAnimJoint1731.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_2"));
+HAnimJoint1731.setUSE(CString("hanim_vl2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1731);
 
 HAnimJoint& HAnimJoint1732 =  HAnimJoint();
-HAnimJoint1732.setUSE(CString("hanim_r_carpal_distal_interphalangeal_2"));
+HAnimJoint1732.setUSE(CString("hanim_vl3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1732);
 
 HAnimJoint& HAnimJoint1733 =  HAnimJoint();
-HAnimJoint1733.setUSE(CString("hanim_r_midcarpal_3"));
+HAnimJoint1733.setUSE(CString("hanim_vl4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1733);
 
 HAnimJoint& HAnimJoint1734 =  HAnimJoint();
-HAnimJoint1734.setUSE(CString("hanim_r_carpometacarpal_3"));
+HAnimJoint1734.setUSE(CString("hanim_vl5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1734);
 
 HAnimJoint& HAnimJoint1735 =  HAnimJoint();
-HAnimJoint1735.setUSE(CString("hanim_r_metacarpophalangeal_3"));
+HAnimJoint1735.setUSE(CString("hanim_vt1"));
 HAnimHumanoid43.setJoints(&HAnimJoint1735);
 
 HAnimJoint& HAnimJoint1736 =  HAnimJoint();
-HAnimJoint1736.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_3"));
+HAnimJoint1736.setUSE(CString("hanim_vt10"));
 HAnimHumanoid43.setJoints(&HAnimJoint1736);
 
 HAnimJoint& HAnimJoint1737 =  HAnimJoint();
-HAnimJoint1737.setUSE(CString("hanim_r_carpal_distal_interphalangeal_3"));
+HAnimJoint1737.setUSE(CString("hanim_vt11"));
 HAnimHumanoid43.setJoints(&HAnimJoint1737);
 
 HAnimJoint& HAnimJoint1738 =  HAnimJoint();
-HAnimJoint1738.setUSE(CString("hanim_r_midcarpal_4_5"));
+HAnimJoint1738.setUSE(CString("hanim_vt12"));
 HAnimHumanoid43.setJoints(&HAnimJoint1738);
 
 HAnimJoint& HAnimJoint1739 =  HAnimJoint();
-HAnimJoint1739.setUSE(CString("hanim_r_carpometacarpal_4"));
+HAnimJoint1739.setUSE(CString("hanim_vt2"));
 HAnimHumanoid43.setJoints(&HAnimJoint1739);
 
 HAnimJoint& HAnimJoint1740 =  HAnimJoint();
-HAnimJoint1740.setUSE(CString("hanim_r_metacarpophalangeal_4"));
+HAnimJoint1740.setUSE(CString("hanim_vt3"));
 HAnimHumanoid43.setJoints(&HAnimJoint1740);
 
 HAnimJoint& HAnimJoint1741 =  HAnimJoint();
-HAnimJoint1741.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_4"));
+HAnimJoint1741.setUSE(CString("hanim_vt4"));
 HAnimHumanoid43.setJoints(&HAnimJoint1741);
 
 HAnimJoint& HAnimJoint1742 =  HAnimJoint();
-HAnimJoint1742.setUSE(CString("hanim_r_carpal_distal_interphalangeal_4"));
+HAnimJoint1742.setUSE(CString("hanim_vt5"));
 HAnimHumanoid43.setJoints(&HAnimJoint1742);
 
 HAnimJoint& HAnimJoint1743 =  HAnimJoint();
-HAnimJoint1743.setUSE(CString("hanim_r_carpometacarpal_5"));
+HAnimJoint1743.setUSE(CString("hanim_vt6"));
 HAnimHumanoid43.setJoints(&HAnimJoint1743);
 
 HAnimJoint& HAnimJoint1744 =  HAnimJoint();
-HAnimJoint1744.setUSE(CString("hanim_r_metacarpophalangeal_5"));
+HAnimJoint1744.setUSE(CString("hanim_vt7"));
 HAnimHumanoid43.setJoints(&HAnimJoint1744);
 
 HAnimJoint& HAnimJoint1745 =  HAnimJoint();
-HAnimJoint1745.setUSE(CString("hanim_r_carpal_proximal_interphalangeal_5"));
+HAnimJoint1745.setUSE(CString("hanim_vt8"));
 HAnimHumanoid43.setJoints(&HAnimJoint1745);
 
 HAnimJoint& HAnimJoint1746 =  HAnimJoint();
-HAnimJoint1746.setUSE(CString("hanim_r_carpal_distal_interphalangeal_5"));
+HAnimJoint1746.setUSE(CString("hanim_vt9"));
 HAnimHumanoid43.setJoints(&HAnimJoint1746);
-
-HAnimSegment& HAnimSegment1747 =  HAnimSegment();
-HAnimSegment1747.setUSE(CString("hanim_sacrum"));
-HAnimHumanoid43.setSegments(&HAnimSegment1747);
-
-HAnimSegment& HAnimSegment1748 =  HAnimSegment();
-HAnimSegment1748.setUSE(CString("hanim_pelvis"));
-HAnimHumanoid43.setSegments(&HAnimSegment1748);
-
-HAnimSegment& HAnimSegment1749 =  HAnimSegment();
-HAnimSegment1749.setUSE(CString("hanim_l_thigh"));
-HAnimHumanoid43.setSegments(&HAnimSegment1749);
-
-HAnimSegment& HAnimSegment1750 =  HAnimSegment();
-HAnimSegment1750.setUSE(CString("hanim_l_calf"));
-HAnimHumanoid43.setSegments(&HAnimSegment1750);
-
-HAnimSegment& HAnimSegment1751 =  HAnimSegment();
-HAnimSegment1751.setUSE(CString("hanim_l_talus"));
-HAnimHumanoid43.setSegments(&HAnimSegment1751);
-
-HAnimSegment& HAnimSegment1752 =  HAnimSegment();
-HAnimSegment1752.setUSE(CString("hanim_l_navicular"));
-HAnimHumanoid43.setSegments(&HAnimSegment1752);
-
-HAnimSegment& HAnimSegment1753 =  HAnimSegment();
-HAnimSegment1753.setUSE(CString("hanim_l_cuneiform_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1753);
-
-HAnimSegment& HAnimSegment1754 =  HAnimSegment();
-HAnimSegment1754.setUSE(CString("hanim_l_metatarsal_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1754);
-
-HAnimSegment& HAnimSegment1755 =  HAnimSegment();
-HAnimSegment1755.setUSE(CString("hanim_l_tarsal_proximal_phalanx_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1755);
-
-HAnimSegment& HAnimSegment1756 =  HAnimSegment();
-HAnimSegment1756.setUSE(CString("hanim_l_cuneiform_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1756);
-
-HAnimSegment& HAnimSegment1757 =  HAnimSegment();
-HAnimSegment1757.setUSE(CString("hanim_l_metatarsal_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1757);
-
-HAnimSegment& HAnimSegment1758 =  HAnimSegment();
-HAnimSegment1758.setUSE(CString("hanim_l_tarsal_proximal_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1758);
-
-HAnimSegment& HAnimSegment1759 =  HAnimSegment();
-HAnimSegment1759.setUSE(CString("hanim_l_tarsal_middle_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1759);
-
-HAnimSegment& HAnimSegment1760 =  HAnimSegment();
-HAnimSegment1760.setUSE(CString("hanim_l_cuneiform_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1760);
-
-HAnimSegment& HAnimSegment1761 =  HAnimSegment();
-HAnimSegment1761.setUSE(CString("hanim_l_metatarsal_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1761);
-
-HAnimSegment& HAnimSegment1762 =  HAnimSegment();
-HAnimSegment1762.setUSE(CString("hanim_l_tarsal_proximal_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1762);
-
-HAnimSegment& HAnimSegment1763 =  HAnimSegment();
-HAnimSegment1763.setUSE(CString("hanim_l_tarsal_middle_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1763);
-
-HAnimSegment& HAnimSegment1764 =  HAnimSegment();
-HAnimSegment1764.setUSE(CString("hanim_l_calcaneus"));
-HAnimHumanoid43.setSegments(&HAnimSegment1764);
-
-HAnimSegment& HAnimSegment1765 =  HAnimSegment();
-HAnimSegment1765.setUSE(CString("hanim_l_cuboid"));
-HAnimHumanoid43.setSegments(&HAnimSegment1765);
-
-HAnimSegment& HAnimSegment1766 =  HAnimSegment();
-HAnimSegment1766.setUSE(CString("hanim_l_metatarsal_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1766);
-
-HAnimSegment& HAnimSegment1767 =  HAnimSegment();
-HAnimSegment1767.setUSE(CString("hanim_l_tarsal_proximal_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1767);
-
-HAnimSegment& HAnimSegment1768 =  HAnimSegment();
-HAnimSegment1768.setUSE(CString("hanim_l_tarsal_middle_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1768);
-
-HAnimSegment& HAnimSegment1769 =  HAnimSegment();
-HAnimSegment1769.setUSE(CString("hanim_l_metatarsal_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1769);
-
-HAnimSegment& HAnimSegment1770 =  HAnimSegment();
-HAnimSegment1770.setUSE(CString("hanim_l_tarsal_proximal_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1770);
-
-HAnimSegment& HAnimSegment1771 =  HAnimSegment();
-HAnimSegment1771.setUSE(CString("hanim_l_tarsal_middle_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1771);
-
-HAnimSegment& HAnimSegment1772 =  HAnimSegment();
-HAnimSegment1772.setUSE(CString("hanim_r_thigh"));
-HAnimHumanoid43.setSegments(&HAnimSegment1772);
-
-HAnimSegment& HAnimSegment1773 =  HAnimSegment();
-HAnimSegment1773.setUSE(CString("hanim_r_calf"));
-HAnimHumanoid43.setSegments(&HAnimSegment1773);
-
-HAnimSegment& HAnimSegment1774 =  HAnimSegment();
-HAnimSegment1774.setUSE(CString("hanim_r_talus"));
-HAnimHumanoid43.setSegments(&HAnimSegment1774);
-
-HAnimSegment& HAnimSegment1775 =  HAnimSegment();
-HAnimSegment1775.setUSE(CString("hanim_r_navicular"));
-HAnimHumanoid43.setSegments(&HAnimSegment1775);
-
-HAnimSegment& HAnimSegment1776 =  HAnimSegment();
-HAnimSegment1776.setUSE(CString("hanim_r_cuneiform_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1776);
-
-HAnimSegment& HAnimSegment1777 =  HAnimSegment();
-HAnimSegment1777.setUSE(CString("hanim_r_metatarsal_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1777);
-
-HAnimSegment& HAnimSegment1778 =  HAnimSegment();
-HAnimSegment1778.setUSE(CString("hanim_r_tarsal_proximal_phalanx_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1778);
-
-HAnimSegment& HAnimSegment1779 =  HAnimSegment();
-HAnimSegment1779.setUSE(CString("hanim_r_cuneiform_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1779);
-
-HAnimSegment& HAnimSegment1780 =  HAnimSegment();
-HAnimSegment1780.setUSE(CString("hanim_r_metatarsal_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1780);
-
-HAnimSegment& HAnimSegment1781 =  HAnimSegment();
-HAnimSegment1781.setUSE(CString("hanim_r_tarsal_proximal_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1781);
-
-HAnimSegment& HAnimSegment1782 =  HAnimSegment();
-HAnimSegment1782.setUSE(CString("hanim_r_tarsal_middle_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1782);
-
-HAnimSegment& HAnimSegment1783 =  HAnimSegment();
-HAnimSegment1783.setUSE(CString("hanim_r_cuneiform_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1783);
-
-HAnimSegment& HAnimSegment1784 =  HAnimSegment();
-HAnimSegment1784.setUSE(CString("hanim_r_metatarsal_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1784);
-
-HAnimSegment& HAnimSegment1785 =  HAnimSegment();
-HAnimSegment1785.setUSE(CString("hanim_r_tarsal_proximal_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1785);
-
-HAnimSegment& HAnimSegment1786 =  HAnimSegment();
-HAnimSegment1786.setUSE(CString("hanim_r_tarsal_middle_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1786);
-
-HAnimSegment& HAnimSegment1787 =  HAnimSegment();
-HAnimSegment1787.setUSE(CString("hanim_r_calcaneus"));
-HAnimHumanoid43.setSegments(&HAnimSegment1787);
-
-HAnimSegment& HAnimSegment1788 =  HAnimSegment();
-HAnimSegment1788.setUSE(CString("hanim_r_cuboid"));
-HAnimHumanoid43.setSegments(&HAnimSegment1788);
-
-HAnimSegment& HAnimSegment1789 =  HAnimSegment();
-HAnimSegment1789.setUSE(CString("hanim_r_metatarsal_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1789);
-
-HAnimSegment& HAnimSegment1790 =  HAnimSegment();
-HAnimSegment1790.setUSE(CString("hanim_r_tarsal_proximal_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1790);
-
-HAnimSegment& HAnimSegment1791 =  HAnimSegment();
-HAnimSegment1791.setUSE(CString("hanim_r_tarsal_middle_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1791);
-
-HAnimSegment& HAnimSegment1792 =  HAnimSegment();
-HAnimSegment1792.setUSE(CString("hanim_r_metatarsal_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1792);
-
-HAnimSegment& HAnimSegment1793 =  HAnimSegment();
-HAnimSegment1793.setUSE(CString("hanim_r_tarsal_proximal_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1793);
-
-HAnimSegment& HAnimSegment1794 =  HAnimSegment();
-HAnimSegment1794.setUSE(CString("hanim_r_tarsal_middle_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1794);
-
-HAnimSegment& HAnimSegment1795 =  HAnimSegment();
-HAnimSegment1795.setUSE(CString("hanim_l5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1795);
-
-HAnimSegment& HAnimSegment1796 =  HAnimSegment();
-HAnimSegment1796.setUSE(CString("hanim_l4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1796);
-
-HAnimSegment& HAnimSegment1797 =  HAnimSegment();
-HAnimSegment1797.setUSE(CString("hanim_l3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1797);
-
-HAnimSegment& HAnimSegment1798 =  HAnimSegment();
-HAnimSegment1798.setUSE(CString("hanim_l2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1798);
-
-HAnimSegment& HAnimSegment1799 =  HAnimSegment();
-HAnimSegment1799.setUSE(CString("hanim_l1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1799);
-
-HAnimSegment& HAnimSegment1800 =  HAnimSegment();
-HAnimSegment1800.setUSE(CString("hanim_t12"));
-HAnimHumanoid43.setSegments(&HAnimSegment1800);
-
-HAnimSegment& HAnimSegment1801 =  HAnimSegment();
-HAnimSegment1801.setUSE(CString("hanim_t11"));
-HAnimHumanoid43.setSegments(&HAnimSegment1801);
-
-HAnimSegment& HAnimSegment1802 =  HAnimSegment();
-HAnimSegment1802.setUSE(CString("hanim_t10"));
-HAnimHumanoid43.setSegments(&HAnimSegment1802);
-
-HAnimSegment& HAnimSegment1803 =  HAnimSegment();
-HAnimSegment1803.setUSE(CString("hanim_t9"));
-HAnimHumanoid43.setSegments(&HAnimSegment1803);
-
-HAnimSegment& HAnimSegment1804 =  HAnimSegment();
-HAnimSegment1804.setUSE(CString("hanim_t8"));
-HAnimHumanoid43.setSegments(&HAnimSegment1804);
-
-HAnimSegment& HAnimSegment1805 =  HAnimSegment();
-HAnimSegment1805.setUSE(CString("hanim_t7"));
-HAnimHumanoid43.setSegments(&HAnimSegment1805);
-
-HAnimSegment& HAnimSegment1806 =  HAnimSegment();
-HAnimSegment1806.setUSE(CString("hanim_t6"));
-HAnimHumanoid43.setSegments(&HAnimSegment1806);
-
-HAnimSegment& HAnimSegment1807 =  HAnimSegment();
-HAnimSegment1807.setUSE(CString("hanim_t5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1807);
-
-HAnimSegment& HAnimSegment1808 =  HAnimSegment();
-HAnimSegment1808.setUSE(CString("hanim_t4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1808);
-
-HAnimSegment& HAnimSegment1809 =  HAnimSegment();
-HAnimSegment1809.setUSE(CString("hanim_t3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1809);
-
-HAnimSegment& HAnimSegment1810 =  HAnimSegment();
-HAnimSegment1810.setUSE(CString("hanim_t2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1810);
-
-HAnimSegment& HAnimSegment1811 =  HAnimSegment();
-HAnimSegment1811.setUSE(CString("hanim_t1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1811);
-
-HAnimSegment& HAnimSegment1812 =  HAnimSegment();
-HAnimSegment1812.setUSE(CString("hanim_c7"));
-HAnimHumanoid43.setSegments(&HAnimSegment1812);
-
-HAnimSegment& HAnimSegment1813 =  HAnimSegment();
-HAnimSegment1813.setUSE(CString("hanim_c6"));
-HAnimHumanoid43.setSegments(&HAnimSegment1813);
-
-HAnimSegment& HAnimSegment1814 =  HAnimSegment();
-HAnimSegment1814.setUSE(CString("hanim_c5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1814);
-
-HAnimSegment& HAnimSegment1815 =  HAnimSegment();
-HAnimSegment1815.setUSE(CString("hanim_c4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1815);
-
-HAnimSegment& HAnimSegment1816 =  HAnimSegment();
-HAnimSegment1816.setUSE(CString("hanim_c3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1816);
-
-HAnimSegment& HAnimSegment1817 =  HAnimSegment();
-HAnimSegment1817.setUSE(CString("hanim_c2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1817);
-
-HAnimSegment& HAnimSegment1818 =  HAnimSegment();
-HAnimSegment1818.setUSE(CString("hanim_c1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1818);
-
-HAnimSegment& HAnimSegment1819 =  HAnimSegment();
-HAnimSegment1819.setUSE(CString("hanim_skull"));
-HAnimHumanoid43.setSegments(&HAnimSegment1819);
-
-HAnimSegment& HAnimSegment1820 =  HAnimSegment();
-HAnimSegment1820.setUSE(CString("hanim_l_clavicle"));
-HAnimHumanoid43.setSegments(&HAnimSegment1820);
-
-HAnimSegment& HAnimSegment1821 =  HAnimSegment();
-HAnimSegment1821.setUSE(CString("hanim_l_scapula"));
-HAnimHumanoid43.setSegments(&HAnimSegment1821);
-
-HAnimSegment& HAnimSegment1822 =  HAnimSegment();
-HAnimSegment1822.setUSE(CString("hanim_l_upperarm"));
-HAnimHumanoid43.setSegments(&HAnimSegment1822);
-
-HAnimSegment& HAnimSegment1823 =  HAnimSegment();
-HAnimSegment1823.setUSE(CString("hanim_l_forearm"));
-HAnimHumanoid43.setSegments(&HAnimSegment1823);
-
-HAnimSegment& HAnimSegment1824 =  HAnimSegment();
-HAnimSegment1824.setUSE(CString("hanim_l_carpal"));
-HAnimHumanoid43.setSegments(&HAnimSegment1824);
-
-HAnimSegment& HAnimSegment1825 =  HAnimSegment();
-HAnimSegment1825.setUSE(CString("hanim_l_trapezium"));
-HAnimHumanoid43.setSegments(&HAnimSegment1825);
-
-HAnimSegment& HAnimSegment1826 =  HAnimSegment();
-HAnimSegment1826.setUSE(CString("hanim_l_metacarpal_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1826);
-
-HAnimSegment& HAnimSegment1827 =  HAnimSegment();
-HAnimSegment1827.setUSE(CString("hanim_l_carpal_proximal_phalanx_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1827);
-
-HAnimSegment& HAnimSegment1828 =  HAnimSegment();
-HAnimSegment1828.setUSE(CString("hanim_l_trapezoid"));
-HAnimHumanoid43.setSegments(&HAnimSegment1828);
-
-HAnimSegment& HAnimSegment1829 =  HAnimSegment();
-HAnimSegment1829.setUSE(CString("hanim_l_metacarpal_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1829);
-
-HAnimSegment& HAnimSegment1830 =  HAnimSegment();
-HAnimSegment1830.setUSE(CString("hanim_l_carpal_proximal_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1830);
-
-HAnimSegment& HAnimSegment1831 =  HAnimSegment();
-HAnimSegment1831.setUSE(CString("hanim_l_carpal_middle_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1831);
-
-HAnimSegment& HAnimSegment1832 =  HAnimSegment();
-HAnimSegment1832.setUSE(CString("hanim_l_capitate"));
-HAnimHumanoid43.setSegments(&HAnimSegment1832);
-
-HAnimSegment& HAnimSegment1833 =  HAnimSegment();
-HAnimSegment1833.setUSE(CString("hanim_l_metacarpal_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1833);
-
-HAnimSegment& HAnimSegment1834 =  HAnimSegment();
-HAnimSegment1834.setUSE(CString("hanim_l_carpal_proximal_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1834);
-
-HAnimSegment& HAnimSegment1835 =  HAnimSegment();
-HAnimSegment1835.setUSE(CString("hanim_l_carpal_middle_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1835);
-
-HAnimSegment& HAnimSegment1836 =  HAnimSegment();
-HAnimSegment1836.setUSE(CString("hanim_l_hamate"));
-HAnimHumanoid43.setSegments(&HAnimSegment1836);
-
-HAnimSegment& HAnimSegment1837 =  HAnimSegment();
-HAnimSegment1837.setUSE(CString("hanim_l_metacarpal_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1837);
-
-HAnimSegment& HAnimSegment1838 =  HAnimSegment();
-HAnimSegment1838.setUSE(CString("hanim_l_carpal_proximal_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1838);
-
-HAnimSegment& HAnimSegment1839 =  HAnimSegment();
-HAnimSegment1839.setUSE(CString("hanim_l_carpal_middle_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1839);
-
-HAnimSegment& HAnimSegment1840 =  HAnimSegment();
-HAnimSegment1840.setUSE(CString("hanim_l_metacarpal_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1840);
-
-HAnimSegment& HAnimSegment1841 =  HAnimSegment();
-HAnimSegment1841.setUSE(CString("hanim_l_carpal_proximal_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1841);
-
-HAnimSegment& HAnimSegment1842 =  HAnimSegment();
-HAnimSegment1842.setUSE(CString("hanim_l_carpal_middle_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1842);
-
-HAnimSegment& HAnimSegment1843 =  HAnimSegment();
-HAnimSegment1843.setUSE(CString("hanim_r_clavicle"));
-HAnimHumanoid43.setSegments(&HAnimSegment1843);
-
-HAnimSegment& HAnimSegment1844 =  HAnimSegment();
-HAnimSegment1844.setUSE(CString("hanim_r_scapula"));
-HAnimHumanoid43.setSegments(&HAnimSegment1844);
-
-HAnimSegment& HAnimSegment1845 =  HAnimSegment();
-HAnimSegment1845.setUSE(CString("hanim_r_upperarm"));
-HAnimHumanoid43.setSegments(&HAnimSegment1845);
-
-HAnimSegment& HAnimSegment1846 =  HAnimSegment();
-HAnimSegment1846.setUSE(CString("hanim_r_forearm"));
-HAnimHumanoid43.setSegments(&HAnimSegment1846);
-
-HAnimSegment& HAnimSegment1847 =  HAnimSegment();
-HAnimSegment1847.setUSE(CString("hanim_r_carpal"));
-HAnimHumanoid43.setSegments(&HAnimSegment1847);
-
-HAnimSegment& HAnimSegment1848 =  HAnimSegment();
-HAnimSegment1848.setUSE(CString("hanim_r_trapezium"));
-HAnimHumanoid43.setSegments(&HAnimSegment1848);
-
-HAnimSegment& HAnimSegment1849 =  HAnimSegment();
-HAnimSegment1849.setUSE(CString("hanim_r_metacarpal_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1849);
-
-HAnimSegment& HAnimSegment1850 =  HAnimSegment();
-HAnimSegment1850.setUSE(CString("hanim_r_carpal_proximal_phalanx_1"));
-HAnimHumanoid43.setSegments(&HAnimSegment1850);
-
-HAnimSegment& HAnimSegment1851 =  HAnimSegment();
-HAnimSegment1851.setUSE(CString("hanim_r_trapezoid"));
-HAnimHumanoid43.setSegments(&HAnimSegment1851);
-
-HAnimSegment& HAnimSegment1852 =  HAnimSegment();
-HAnimSegment1852.setUSE(CString("hanim_r_metacarpal_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1852);
-
-HAnimSegment& HAnimSegment1853 =  HAnimSegment();
-HAnimSegment1853.setUSE(CString("hanim_r_carpal_proximal_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1853);
-
-HAnimSegment& HAnimSegment1854 =  HAnimSegment();
-HAnimSegment1854.setUSE(CString("hanim_r_carpal_middle_phalanx_2"));
-HAnimHumanoid43.setSegments(&HAnimSegment1854);
-
-HAnimSegment& HAnimSegment1855 =  HAnimSegment();
-HAnimSegment1855.setUSE(CString("hanim_r_capitate"));
-HAnimHumanoid43.setSegments(&HAnimSegment1855);
-
-HAnimSegment& HAnimSegment1856 =  HAnimSegment();
-HAnimSegment1856.setUSE(CString("hanim_r_metacarpal_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1856);
-
-HAnimSegment& HAnimSegment1857 =  HAnimSegment();
-HAnimSegment1857.setUSE(CString("hanim_r_carpal_proximal_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1857);
-
-HAnimSegment& HAnimSegment1858 =  HAnimSegment();
-HAnimSegment1858.setUSE(CString("hanim_r_carpal_middle_phalanx_3"));
-HAnimHumanoid43.setSegments(&HAnimSegment1858);
-
-HAnimSegment& HAnimSegment1859 =  HAnimSegment();
-HAnimSegment1859.setUSE(CString("hanim_r_hamate"));
-HAnimHumanoid43.setSegments(&HAnimSegment1859);
-
-HAnimSegment& HAnimSegment1860 =  HAnimSegment();
-HAnimSegment1860.setUSE(CString("hanim_r_metacarpal_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1860);
-
-HAnimSegment& HAnimSegment1861 =  HAnimSegment();
-HAnimSegment1861.setUSE(CString("hanim_r_carpal_proximal_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1861);
-
-HAnimSegment& HAnimSegment1862 =  HAnimSegment();
-HAnimSegment1862.setUSE(CString("hanim_r_carpal_middle_phalanx_4"));
-HAnimHumanoid43.setSegments(&HAnimSegment1862);
-
-HAnimSegment& HAnimSegment1863 =  HAnimSegment();
-HAnimSegment1863.setUSE(CString("hanim_r_metacarpal_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1863);
-
-HAnimSegment& HAnimSegment1864 =  HAnimSegment();
-HAnimSegment1864.setUSE(CString("hanim_r_carpal_proximal_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1864);
-
-HAnimSegment& HAnimSegment1865 =  HAnimSegment();
-HAnimSegment1865.setUSE(CString("hanim_r_carpal_middle_phalanx_5"));
-HAnimHumanoid43.setSegments(&HAnimSegment1865);
-
-HAnimSite& HAnimSite1866 =  HAnimSite();
-HAnimSite1866.setUSE(CString("hanim_buttocks_standing_wall_contact_point_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1866);
-
-HAnimSite& HAnimSite1867 =  HAnimSite();
-HAnimSite1867.setUSE(CString("hanim_crotch_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1867);
-
-HAnimSite& HAnimSite1868 =  HAnimSite();
-HAnimSite1868.setUSE(CString("hanim_l_asis_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1868);
-
-HAnimSite& HAnimSite1869 =  HAnimSite();
-HAnimSite1869.setUSE(CString("hanim_l_iliocristale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1869);
-
-HAnimSite& HAnimSite1870 =  HAnimSite();
-HAnimSite1870.setUSE(CString("hanim_l_psis_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1870);
-
-HAnimSite& HAnimSite1871 =  HAnimSite();
-HAnimSite1871.setUSE(CString("hanim_l_trochanterion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1871);
-
-HAnimSite& HAnimSite1872 =  HAnimSite();
-HAnimSite1872.setUSE(CString("hanim_r_asis_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1872);
-
-HAnimSite& HAnimSite1873 =  HAnimSite();
-HAnimSite1873.setUSE(CString("hanim_r_iliocristale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1873);
-
-HAnimSite& HAnimSite1874 =  HAnimSite();
-HAnimSite1874.setUSE(CString("hanim_r_psis_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1874);
-
-HAnimSite& HAnimSite1875 =  HAnimSite();
-HAnimSite1875.setUSE(CString("hanim_r_trochanterion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1875);
-
-HAnimSite& HAnimSite1876 =  HAnimSite();
-HAnimSite1876.setUSE(CString("hanim_navel_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1876);
-
-HAnimSite& HAnimSite1877 =  HAnimSite();
-HAnimSite1877.setUSE(CString("hanim_waist_preferred_anterior_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1877);
-
-HAnimSite& HAnimSite1878 =  HAnimSite();
-HAnimSite1878.setUSE(CString("hanim_waist_preferred_posterior_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1878);
-
-HAnimSite& HAnimSite1879 =  HAnimSite();
-HAnimSite1879.setUSE(CString("hanim_l_femoral_lateral_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1879);
-
-HAnimSite& HAnimSite1880 =  HAnimSite();
-HAnimSite1880.setUSE(CString("hanim_l_femoral_medial_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1880);
-
-HAnimSite& HAnimSite1881 =  HAnimSite();
-HAnimSite1881.setUSE(CString("hanim_l_knee_crease_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1881);
-
-HAnimSite& HAnimSite1882 =  HAnimSite();
-HAnimSite1882.setUSE(CString("hanim_l_suprapatella_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1882);
-
-HAnimSite& HAnimSite1883 =  HAnimSite();
-HAnimSite1883.setUSE(CString("hanim_r_femoral_lateral_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1883);
-
-HAnimSite& HAnimSite1884 =  HAnimSite();
-HAnimSite1884.setUSE(CString("hanim_r_femoral_medial_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1884);
-
-HAnimSite& HAnimSite1885 =  HAnimSite();
-HAnimSite1885.setUSE(CString("hanim_r_knee_crease_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1885);
-
-HAnimSite& HAnimSite1886 =  HAnimSite();
-HAnimSite1886.setUSE(CString("hanim_r_suprapatella_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1886);
-
-HAnimSite& HAnimSite1887 =  HAnimSite();
-HAnimSite1887.setUSE(CString("hanim_l_lateral_malleolus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1887);
-
-HAnimSite& HAnimSite1888 =  HAnimSite();
-HAnimSite1888.setUSE(CString("hanim_l_medial_malleolus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1888);
-
-HAnimSite& HAnimSite1889 =  HAnimSite();
-HAnimSite1889.setUSE(CString("hanim_l_tibiale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1889);
-
-HAnimSite& HAnimSite1890 =  HAnimSite();
-HAnimSite1890.setUSE(CString("hanim_l_calcaneus_posterior_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1890);
-
-HAnimSite& HAnimSite1891 =  HAnimSite();
-HAnimSite1891.setUSE(CString("hanim_l_sphyrion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1891);
-
-HAnimSite& HAnimSite1892 =  HAnimSite();
-HAnimSite1892.setUSE(CString("hanim_l_metatarsal_phalanx_1_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1892);
-
-HAnimSite& HAnimSite1893 =  HAnimSite();
-HAnimSite1893.setUSE(CString("hanim_l_tarsal_distal_phalanx_1_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1893);
-
-HAnimSite& HAnimSite1894 =  HAnimSite();
-HAnimSite1894.setUSE(CString("hanim_l_tarsal_distal_phalanx_2_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1894);
-
-HAnimSite& HAnimSite1895 =  HAnimSite();
-HAnimSite1895.setUSE(CString("hanim_l_tarsal_distal_phalanx_3_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1895);
-
-HAnimSite& HAnimSite1896 =  HAnimSite();
-HAnimSite1896.setUSE(CString("hanim_l_tarsal_distal_phalanx_4_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1896);
-
-HAnimSite& HAnimSite1897 =  HAnimSite();
-HAnimSite1897.setUSE(CString("hanim_l_metatarsal_phalanx_5_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1897);
-
-HAnimSite& HAnimSite1898 =  HAnimSite();
-HAnimSite1898.setUSE(CString("hanim_l_tarsal_distal_phalanx_5_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1898);
-
-HAnimSite& HAnimSite1899 =  HAnimSite();
-HAnimSite1899.setUSE(CString("hanim_r_lateral_malleolus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1899);
-
-HAnimSite& HAnimSite1900 =  HAnimSite();
-HAnimSite1900.setUSE(CString("hanim_r_medial_malleolus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1900);
-
-HAnimSite& HAnimSite1901 =  HAnimSite();
-HAnimSite1901.setUSE(CString("hanim_r_tibiale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1901);
-
-HAnimSite& HAnimSite1902 =  HAnimSite();
-HAnimSite1902.setUSE(CString("hanim_r_calcaneus_posterior_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1902);
-
-HAnimSite& HAnimSite1903 =  HAnimSite();
-HAnimSite1903.setUSE(CString("hanim_r_sphyrion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1903);
-
-HAnimSite& HAnimSite1904 =  HAnimSite();
-HAnimSite1904.setUSE(CString("hanim_r_metatarsal_phalanx_1_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1904);
-
-HAnimSite& HAnimSite1905 =  HAnimSite();
-HAnimSite1905.setUSE(CString("hanim_r_tarsal_distal_phalanx_1_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1905);
-
-HAnimSite& HAnimSite1906 =  HAnimSite();
-HAnimSite1906.setUSE(CString("hanim_r_tarsal_distal_phalanx_2_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1906);
-
-HAnimSite& HAnimSite1907 =  HAnimSite();
-HAnimSite1907.setUSE(CString("hanim_r_tarsal_distal_phalanx_3_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1907);
-
-HAnimSite& HAnimSite1908 =  HAnimSite();
-HAnimSite1908.setUSE(CString("hanim_r_tarsal_distal_phalanx_4_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1908);
-
-HAnimSite& HAnimSite1909 =  HAnimSite();
-HAnimSite1909.setUSE(CString("hanim_r_metatarsal_phalanx_5_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1909);
-
-HAnimSite& HAnimSite1910 =  HAnimSite();
-HAnimSite1910.setUSE(CString("hanim_r_tarsal_distal_phalanx_5_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1910);
-
-HAnimSite& HAnimSite1911 =  HAnimSite();
-HAnimSite1911.setUSE(CString("hanim_l_rib10_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1911);
-
-HAnimSite& HAnimSite1912 =  HAnimSite();
-HAnimSite1912.setUSE(CString("hanim_r_rib10_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1912);
-
-HAnimSite& HAnimSite1913 =  HAnimSite();
-HAnimSite1913.setUSE(CString("hanim_spine_2_middle_back_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1913);
-
-HAnimSite& HAnimSite1914 =  HAnimSite();
-HAnimSite1914.setUSE(CString("hanim_substernale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1914);
-
-HAnimSite& HAnimSite1915 =  HAnimSite();
-HAnimSite1915.setUSE(CString("hanim_l_thelion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1915);
-
-HAnimSite& HAnimSite1916 =  HAnimSite();
-HAnimSite1916.setUSE(CString("hanim_r_thelion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1916);
-
-HAnimSite& HAnimSite1917 =  HAnimSite();
-HAnimSite1917.setUSE(CString("hanim_l_chest_midsagittal_plane_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1917);
-
-HAnimSite& HAnimSite1918 =  HAnimSite();
-HAnimSite1918.setUSE(CString("hanim_mesosternale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1918);
-
-HAnimSite& HAnimSite1919 =  HAnimSite();
-HAnimSite1919.setUSE(CString("hanim_r_chest_midsagittal_plane_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1919);
-
-HAnimSite& HAnimSite1920 =  HAnimSite();
-HAnimSite1920.setUSE(CString("hanim_rear_center_midsagittal_plane_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1920);
-
-HAnimSite& HAnimSite1921 =  HAnimSite();
-HAnimSite1921.setUSE(CString("hanim_spine_1_middle_back_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1921);
-
-HAnimSite& HAnimSite1922 =  HAnimSite();
-HAnimSite1922.setUSE(CString("hanim_cervicale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1922);
-
-HAnimSite& HAnimSite1923 =  HAnimSite();
-HAnimSite1923.setUSE(CString("hanim_suprasternale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1923);
-
-HAnimSite& HAnimSite1924 =  HAnimSite();
-HAnimSite1924.setUSE(CString("hanim_l_neck_base_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1924);
-
-HAnimSite& HAnimSite1925 =  HAnimSite();
-HAnimSite1925.setUSE(CString("hanim_r_neck_base_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1925);
-
-HAnimSite& HAnimSite1926 =  HAnimSite();
-HAnimSite1926.setUSE(CString("hanim_l_acromion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1926);
-
-HAnimSite& HAnimSite1927 =  HAnimSite();
-HAnimSite1927.setUSE(CString("hanim_l_axilla_distal_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1927);
-
-HAnimSite& HAnimSite1928 =  HAnimSite();
-HAnimSite1928.setUSE(CString("hanim_l_axilla_posterior_folds_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1928);
-
-HAnimSite& HAnimSite1929 =  HAnimSite();
-HAnimSite1929.setUSE(CString("hanim_l_axilla_proximal_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1929);
-
-HAnimSite& HAnimSite1930 =  HAnimSite();
-HAnimSite1930.setUSE(CString("hanim_l_clavicale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1930);
-
-HAnimSite& HAnimSite1931 =  HAnimSite();
-HAnimSite1931.setUSE(CString("hanim_r_acromion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1931);
-
-HAnimSite& HAnimSite1932 =  HAnimSite();
-HAnimSite1932.setUSE(CString("hanim_r_axilla_distal_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1932);
-
-HAnimSite& HAnimSite1933 =  HAnimSite();
-HAnimSite1933.setUSE(CString("hanim_r_axilla_posterior_folds_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1933);
-
-HAnimSite& HAnimSite1934 =  HAnimSite();
-HAnimSite1934.setUSE(CString("hanim_r_axilla_proximal_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1934);
-
-HAnimSite& HAnimSite1935 =  HAnimSite();
-HAnimSite1935.setUSE(CString("hanim_r_clavicale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1935);
-
-HAnimSite& HAnimSite1936 =  HAnimSite();
-HAnimSite1936.setUSE(CString("hanim_adams_apple_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1936);
-
-HAnimSite& HAnimSite1937 =  HAnimSite();
-HAnimSite1937.setUSE(CString("hanim_glabella_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1937);
-
-HAnimSite& HAnimSite1938 =  HAnimSite();
-HAnimSite1938.setUSE(CString("hanim_l_ectocanthus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1938);
-
-HAnimSite& HAnimSite1939 =  HAnimSite();
-HAnimSite1939.setUSE(CString("hanim_l_infraorbitale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1939);
-
-HAnimSite& HAnimSite1940 =  HAnimSite();
-HAnimSite1940.setUSE(CString("hanim_l_tragion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1940);
-
-HAnimSite& HAnimSite1941 =  HAnimSite();
-HAnimSite1941.setUSE(CString("hanim_nuchale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1941);
-
-HAnimSite& HAnimSite1942 =  HAnimSite();
-HAnimSite1942.setUSE(CString("hanim_opisthocranion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1942);
-
-HAnimSite& HAnimSite1943 =  HAnimSite();
-HAnimSite1943.setUSE(CString("hanim_r_ectocanthus_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1943);
-
-HAnimSite& HAnimSite1944 =  HAnimSite();
-HAnimSite1944.setUSE(CString("hanim_r_infraorbitale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1944);
-
-HAnimSite& HAnimSite1945 =  HAnimSite();
-HAnimSite1945.setUSE(CString("hanim_r_tragion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1945);
-
-HAnimSite& HAnimSite1946 =  HAnimSite();
-HAnimSite1946.setUSE(CString("hanim_sellion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1946);
-
-HAnimSite& HAnimSite1947 =  HAnimSite();
-HAnimSite1947.setUSE(CString("hanim_skull_vertex_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1947);
-
-HAnimSite& HAnimSite1948 =  HAnimSite();
-HAnimSite1948.setUSE(CString("hanim_l_gonion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1948);
-
-HAnimSite& HAnimSite1949 =  HAnimSite();
-HAnimSite1949.setUSE(CString("hanim_menton_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1949);
-
-HAnimSite& HAnimSite1950 =  HAnimSite();
-HAnimSite1950.setUSE(CString("hanim_r_gonion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1950);
-
-HAnimSite& HAnimSite1951 =  HAnimSite();
-HAnimSite1951.setUSE(CString("hanim_supramenton_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1951);
-
-HAnimSite& HAnimSite1952 =  HAnimSite();
-HAnimSite1952.setUSE(CString("hanim_l_bideltoid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1952);
-
-HAnimSite& HAnimSite1953 =  HAnimSite();
-HAnimSite1953.setUSE(CString("hanim_l_humeral_lateral_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1953);
-
-HAnimSite& HAnimSite1954 =  HAnimSite();
-HAnimSite1954.setUSE(CString("hanim_l_humeral_medial_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1954);
-
-HAnimSite& HAnimSite1955 =  HAnimSite();
-HAnimSite1955.setUSE(CString("hanim_l_olecranon_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1955);
-
-HAnimSite& HAnimSite1956 =  HAnimSite();
-HAnimSite1956.setUSE(CString("hanim_l_radial_styloid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1956);
-
-HAnimSite& HAnimSite1957 =  HAnimSite();
-HAnimSite1957.setUSE(CString("hanim_l_radiale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1957);
-
-HAnimSite& HAnimSite1958 =  HAnimSite();
-HAnimSite1958.setUSE(CString("hanim_l_ulnar_styloid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1958);
-
-HAnimSite& HAnimSite1959 =  HAnimSite();
-HAnimSite1959.setUSE(CString("hanim_l_carpal_distal_phalanx_1_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1959);
-
-HAnimSite& HAnimSite1960 =  HAnimSite();
-HAnimSite1960.setUSE(CString("hanim_l_metacarpal_phalanx_2_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1960);
-
-HAnimSite& HAnimSite1961 =  HAnimSite();
-HAnimSite1961.setUSE(CString("hanim_l_carpal_distal_phalanx_2_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1961);
-
-HAnimSite& HAnimSite1962 =  HAnimSite();
-HAnimSite1962.setUSE(CString("hanim_l_dactylion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1962);
-
-HAnimSite& HAnimSite1963 =  HAnimSite();
-HAnimSite1963.setUSE(CString("hanim_l_metacarpal_phalanx_3_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1963);
-
-HAnimSite& HAnimSite1964 =  HAnimSite();
-HAnimSite1964.setUSE(CString("hanim_l_carpal_distal_phalanx_3_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1964);
-
-HAnimSite& HAnimSite1965 =  HAnimSite();
-HAnimSite1965.setUSE(CString("hanim_l_metacarpal_phalanx_5_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1965);
-
-HAnimSite& HAnimSite1966 =  HAnimSite();
-HAnimSite1966.setUSE(CString("hanim_l_carpal_distal_phalanx_4_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1966);
-
-HAnimSite& HAnimSite1967 =  HAnimSite();
-HAnimSite1967.setUSE(CString("hanim_l_carpal_distal_phalanx_5_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1967);
-
-HAnimSite& HAnimSite1968 =  HAnimSite();
-HAnimSite1968.setUSE(CString("hanim_r_bideltoid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1968);
-
-HAnimSite& HAnimSite1969 =  HAnimSite();
-HAnimSite1969.setUSE(CString("hanim_r_humeral_lateral_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1969);
-
-HAnimSite& HAnimSite1970 =  HAnimSite();
-HAnimSite1970.setUSE(CString("hanim_r_humeral_medial_epicondyles_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1970);
-
-HAnimSite& HAnimSite1971 =  HAnimSite();
-HAnimSite1971.setUSE(CString("hanim_r_olecranon_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1971);
-
-HAnimSite& HAnimSite1972 =  HAnimSite();
-HAnimSite1972.setUSE(CString("hanim_r_radial_styloid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1972);
-
-HAnimSite& HAnimSite1973 =  HAnimSite();
-HAnimSite1973.setUSE(CString("hanim_r_radiale_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1973);
-
-HAnimSite& HAnimSite1974 =  HAnimSite();
-HAnimSite1974.setUSE(CString("hanim_r_ulnar_styloid_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1974);
-
-HAnimSite& HAnimSite1975 =  HAnimSite();
-HAnimSite1975.setUSE(CString("hanim_r_carpal_distal_phalanx_1_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1975);
-
-HAnimSite& HAnimSite1976 =  HAnimSite();
-HAnimSite1976.setUSE(CString("hanim_r_metacarpal_phalanx_2_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1976);
-
-HAnimSite& HAnimSite1977 =  HAnimSite();
-HAnimSite1977.setUSE(CString("hanim_r_carpal_distal_phalanx_2_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1977);
-
-HAnimSite& HAnimSite1978 =  HAnimSite();
-HAnimSite1978.setUSE(CString("hanim_r_dactylion_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1978);
-
-HAnimSite& HAnimSite1979 =  HAnimSite();
-HAnimSite1979.setUSE(CString("hanim_r_metacarpal_phalanx_3_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1979);
-
-HAnimSite& HAnimSite1980 =  HAnimSite();
-HAnimSite1980.setUSE(CString("hanim_r_carpal_distal_phalanx_3_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1980);
-
-HAnimSite& HAnimSite1981 =  HAnimSite();
-HAnimSite1981.setUSE(CString("hanim_r_metacarpal_phalanx_5_pt"));
-HAnimHumanoid43.setSites(&HAnimSite1981);
-
-HAnimSite& HAnimSite1982 =  HAnimSite();
-HAnimSite1982.setUSE(CString("hanim_r_carpal_distal_phalanx_4_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1982);
-
-HAnimSite& HAnimSite1983 =  HAnimSite();
-HAnimSite1983.setUSE(CString("hanim_r_carpal_distal_phalanx_5_tip"));
-HAnimHumanoid43.setSites(&HAnimSite1983);
 
 Scene11.addChild(&HAnimHumanoid43);
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="creator" content="Holger Seelig"></meta>
+<meta name="created" content="Tue, 10 Feb 2026 12:09:57 GMT"></meta>
+<meta name="modified" content="Tue, 10 Feb 2026 12:34:21 GMT"></meta>
+<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
+<meta name="generator" content="Sunrize X3D Editor V2.0.2, https://create3000.github.io/sunrize/"></meta>
+</head>
+<Scene><WorldInfo></WorldInfo>
+<Background></Background>
+<Fog></Fog>
+<LocalFog></LocalFog>
+<TextureBackground></TextureBackground>
+<ProximitySensor></ProximitySensor>
+<TransformSensor></TransformSensor>
+<VisibilitySensor></VisibilitySensor>
+<ColorChaser></ColorChaser>
+<ColorDamper></ColorDamper>
+<CoordinateChaser></CoordinateChaser>
+<CoordinateDamper></CoordinateDamper>
+<OrientationChaser></OrientationChaser>
+<OrientationDamper></OrientationDamper>
+<PositionChaser></PositionChaser>
+<PositionChaser2D></PositionChaser2D>
+<PositionDamper></PositionDamper>
+<PositionDamper2D></PositionDamper2D>
+<ScalarChaser></ScalarChaser>
+<ScalarDamper></ScalarDamper>
+<TexCoordChaser2D></TexCoordChaser2D>
+<TexCoordDamper2D></TexCoordDamper2D>
+<Group></Group>
+<StaticGroup></StaticGroup>
+<Switch whichChoice="-1"></Switch>
+<Transform></Transform>
+<ColorInterpolator></ColorInterpolator>
+<CoordinateInterpolator></CoordinateInterpolator>
+<CoordinateInterpolator2D></CoordinateInterpolator2D>
+<EaseInEaseOut></EaseInEaseOut>
+<NormalInterpolator></NormalInterpolator>
+<OrientationInterpolator></OrientationInterpolator>
+<PositionInterpolator></PositionInterpolator>
+<PositionInterpolator2D></PositionInterpolator2D>
+<ScalarInterpolator></ScalarInterpolator>
+<SplinePositionInterpolator></SplinePositionInterpolator>
+<SplinePositionInterpolator2D></SplinePositionInterpolator2D>
+<SplineScalarInterpolator></SplineScalarInterpolator>
+<SquadOrientationInterpolator></SquadOrientationInterpolator>
+<LayerSet></LayerSet>
+<DirectionalLight></DirectionalLight>
+<EnvironmentLight origin="0 0 0" rotation="0 0 1 0"></EnvironmentLight>
+<PointLight></PointLight>
+<SpotLight beamWidth="0.589049"></SpotLight>
+<Billboard></Billboard>
+<Collision></Collision>
+<LOD></LOD>
+<NavigationInfo></NavigationInfo>
+<OrthoViewpoint></OrthoViewpoint>
+<Viewpoint></Viewpoint>
+<ViewpointGroup></ViewpointGroup>
+<Anchor></Anchor>
+<Inline></Inline>
+<LoadSensor></LoadSensor>
+<CylinderSensor></CylinderSensor>
+<PlaneSensor></PlaneSensor>
+<SphereSensor></SphereSensor>
+<TouchSensor></TouchSensor>
+<ClipPlane></ClipPlane>
+<Shape></Shape>
+<Analyser></Analyser>
+<AudioDestination></AudioDestination>
+<BiquadFilter type="LOWPASS"></BiquadFilter>
+<BufferAudioSource></BufferAudioSource>
+<ChannelMerger></ChannelMerger>
+<ChannelSelector></ChannelSelector>
+<ChannelSplitter></ChannelSplitter>
+<Convolver></Convolver>
+<Delay></Delay>
+<DynamicsCompressor></DynamicsCompressor>
+<Gain></Gain>
+<ListenerPointSource></ListenerPointSource>
+<MicrophoneSource></MicrophoneSource>
+<OscillatorSource></OscillatorSource>
+<Sound></Sound>
+<SpatialSound></SpatialSound>
+<StreamAudioDestination></StreamAudioDestination>
+<StreamAudioSource></StreamAudioSource>
+<WaveShaper></WaveShaper>
+<TimeSensor></TimeSensor>
+<CADAssembly></CADAssembly>
+<CADFace></CADFace>
+<CADLayer></CADLayer>
+<CADPart></CADPart>
+<DISEntityManager></DISEntityManager>
+<DISEntityTypeMapping></DISEntityTypeMapping>
+<EspduTransform></EspduTransform>
+<ReceiverPdu></ReceiverPdu>
+<SignalPdu></SignalPdu>
+<TransmitterPdu></TransmitterPdu>
+<BooleanFilter></BooleanFilter>
+<BooleanSequencer></BooleanSequencer>
+<BooleanToggle></BooleanToggle>
+<BooleanTrigger></BooleanTrigger>
+<IntegerSequencer></IntegerSequencer>
+<IntegerTrigger></IntegerTrigger>
+<TimeTrigger></TimeTrigger>
+<KeySensor enabled="false"></KeySensor>
+<StringSensor></StringSensor>
+<TextureProjector ambientIntensity="0" color="1 1 1" fieldOfView="0.7854" intensity="0.7854" upVector="0 1 0"></TextureProjector>
+<TextureProjectorParallel ambientIntensity="0" color="1 1 1" intensity="0.7854" upVector="0 1 0"></TextureProjectorParallel>
+<HAnimHumanoid version="2.0"></HAnimHumanoid>
+<HAnimJoint ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimPose loa="-1" transitionDuration="0"></HAnimPose>
+<HAnimSegment></HAnimSegment>
+<HAnimSite></HAnimSite>
+<ParticleSystem></ParticleSystem>
+<Script></Script>
+<FontLibrary></FontLibrary>
+<CollidableOffset></CollidableOffset>
+<CollidableShape></CollidableShape>
+<CollisionSensor></CollisionSensor>
+<CollisionSpace></CollisionSpace>
+<RigidBodyCollection></RigidBodyCollection>
+<IsoSurfaceVolumeData></IsoSurfaceVolumeData>
+<SegmentedVolumeData></SegmentedVolumeData>
+<VolumeData></VolumeData>
+<GeoLOD></GeoLOD>
+<GeoLocation></GeoLocation>
+<GeoMetadata></GeoMetadata>
+<GeoPositionInterpolator></GeoPositionInterpolator>
+<GeoProximitySensor></GeoProximitySensor>
+<GeoTouchSensor></GeoTouchSensor>
+<GeoTransform></GeoTransform>
+<GeoViewpoint></GeoViewpoint>
+<ContourPolyline2D></ContourPolyline2D>
+<NurbsCurve2D></NurbsCurve2D>
+<NurbsOrientationInterpolator></NurbsOrientationInterpolator>
+<NurbsPositionInterpolator></NurbsPositionInterpolator>
+<NurbsSet></NurbsSet>
+<NurbsSurfaceInterpolator></NurbsSurfaceInterpolator>
+<LayoutGroup></LayoutGroup>
+<ScreenGroup></ScreenGroup>
+<LinePickSensor></LinePickSensor>
+<PickableGroup></PickableGroup>
+<PointPickSensor></PointPickSensor>
+<PrimitivePickSensor></PrimitivePickSensor>
+<VolumePickSensor></VolumePickSensor>
+</Scene>
+</X3D>

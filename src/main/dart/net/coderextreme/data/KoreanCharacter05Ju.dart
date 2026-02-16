@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('23 December 2021')),
+              content_ : SFString('5 November 2025')),
 
             meta(
               name_ : SFString('warning'),
@@ -45,12 +45,16 @@ var X3D0 =  X3D(
               content_ : SFString('Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.')),
 
             meta(
+              name_ : SFString('Image'),
+              content_ : SFString('../Poses/images/HAnimPoseExampleKoreanCharacter05Ju.png')),
+
+            meta(
               name_ : SFString('reference'),
               content_ : SFString('KoreanCharacter00ReadMe.txt')),
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('KoreanCharacterHumanMotion_Infotech2014_140706.pdf')),
+              content_ : SFString('../KoreanCharacterHumanMotion_Infotech2014_140706.pdf')),
 
             meta(
               name_ : SFString('reference'),
@@ -62,7 +66,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview')),
+              content_ : SFString('3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview')),
 
             meta(
               name_ : SFString('generator'),
@@ -70,11 +74,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Gnu Image Manipulation Program, https://www.gimp.org')),
+              content_ : SFString('Gnu Image Manipulation Program, http://www.gimp.org')),
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),
@@ -811,59 +815,9 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_talocrural')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_talocrural')),
-              segments_ : [
-                HAnimSegment(
-                  USE_ : SFString('hanim_l5')),
+                  USE_ : SFString('hanim_r_talocrural'))]),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_pelvis')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_sacrum')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_skull')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_calf')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_calf')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_forearm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_forearm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_talus')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_talus')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_thigh')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_thigh')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_upperarm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_upperarm'))])]));
+            EXPORT(
+              aS_ : SFString('KoreanCharacter05Ju'),
+              localDEF_ : SFString('hanim_Ju'))]));
 void main() { exit(0); }

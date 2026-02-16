@@ -222,12 +222,12 @@ HAnimJoint236: THAnimJointNode;
 HAnimJoint237: THAnimJointNode;
 HAnimJoint238: THAnimJointNode;
 HAnimJoint239: THAnimJointNode;
-HAnimSegment240: THAnimSegmentNode;
-HAnimSite241: THAnimSiteNode;
-Group242: TGroupNode;
-TimeSensor243: TTimeSensorNode;
+Group240: TGroupNode;
+TimeSensor241: TTimeSensorNode;
+OrientationInterpolator242: TOrientationInterpolatorNode;
+PositionInterpolator243: TPositionInterpolatorNode;
 OrientationInterpolator244: TOrientationInterpolatorNode;
-PositionInterpolator245: TPositionInterpolatorNode;
+OrientationInterpolator245: TOrientationInterpolatorNode;
 OrientationInterpolator246: TOrientationInterpolatorNode;
 OrientationInterpolator247: TOrientationInterpolatorNode;
 OrientationInterpolator248: TOrientationInterpolatorNode;
@@ -319,42 +319,40 @@ OrientationInterpolator333: TOrientationInterpolatorNode;
 OrientationInterpolator334: TOrientationInterpolatorNode;
 OrientationInterpolator335: TOrientationInterpolatorNode;
 OrientationInterpolator336: TOrientationInterpolatorNode;
-OrientationInterpolator337: TOrientationInterpolatorNode;
-OrientationInterpolator338: TOrientationInterpolatorNode;
-Group529: TGroupNode;
-ScalarInterpolator530: TScalarInterpolatorNode;
-Group533: TGroupNode;
-ScalarInterpolator534: TScalarInterpolatorNode;
-Group537: TGroupNode;
-Transform538: TTransformNode;
-Shape539: TShapeNode;
-Appearance540: TAppearanceNode;
-Material541: TMaterialNode;
-ImageTexture542: TImageTextureNode;
-IndexedFaceSet543: TIndexedFaceSetNode;
-Coordinate544: TCoordinateNode;
-Viewpoint545: TViewpointNode;
-PositionInterpolator546: TPositionInterpolatorNode;
-OrientationInterpolator547: TOrientationInterpolatorNode;
-Group552: TGroupNode;
+Group527: TGroupNode;
+ScalarInterpolator528: TScalarInterpolatorNode;
+Group531: TGroupNode;
+ScalarInterpolator532: TScalarInterpolatorNode;
+Group535: TGroupNode;
+Transform536: TTransformNode;
+Shape537: TShapeNode;
+Appearance538: TAppearanceNode;
+Material539: TMaterialNode;
+ImageTexture540: TImageTextureNode;
+IndexedFaceSet541: TIndexedFaceSetNode;
+Coordinate542: TCoordinateNode;
+Viewpoint543: TViewpointNode;
+PositionInterpolator544: TPositionInterpolatorNode;
+OrientationInterpolator545: TOrientationInterpolatorNode;
+Group550: TGroupNode;
+Transform551: TTransformNode;
+Shape552: TShapeNode;
 Transform553: TTransformNode;
 Shape554: TShapeNode;
-Transform555: TTransformNode;
-Shape556: TShapeNode;
-Appearance557: TAppearanceNode;
-Material558: TMaterialNode;
-IndexedLineSet559: TIndexedLineSetNode;
-Coordinate560: TCoordinateNode;
-Transform561: TTransformNode;
-Shape562: TShapeNode;
-Appearance563: TAppearanceNode;
-Material564: TMaterialNode;
-IndexedLineSet565: TIndexedLineSetNode;
-Transform566: TTransformNode;
-Shape567: TShapeNode;
-Appearance568: TAppearanceNode;
-Material569: TMaterialNode;
-IndexedLineSet570: TIndexedLineSetNode;
+Appearance555: TAppearanceNode;
+Material556: TMaterialNode;
+IndexedLineSet557: TIndexedLineSetNode;
+Coordinate558: TCoordinateNode;
+Transform559: TTransformNode;
+Shape560: TShapeNode;
+Appearance561: TAppearanceNode;
+Material562: TMaterialNode;
+IndexedLineSet563: TIndexedLineSetNode;
+Transform564: TTransformNode;
+Shape565: TShapeNode;
+Appearance566: TAppearanceNode;
+Material567: TMaterialNode;
+IndexedLineSet568: TIndexedLineSetNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
@@ -1705,1038 +1703,1030 @@ HAnimJoint239 := THAnimJointNode.Create;
 HAnimJoint239 := HAnimJoint117;
 { .AddJoints }
 HAnimHumanoid31.Joints := HAnimJoint239;
-HAnimSegment240 := THAnimSegmentNode.Create;
-HAnimSegment240 := HAnimSegment35;
-{ .AddSegments }
-HAnimHumanoid31.Segments := HAnimSegment240;
-HAnimSite241 := THAnimSiteNode.Create;
-HAnimSite241 := HAnimSite36;
-{ .AddSites }
-HAnimHumanoid31.Sites := HAnimSite241;
 { .AddChildren }
 Group30.AddChildren([HAnimHumanoid31]);
 { .AddChildren }
 Group19.AddChildren([Group30]);
-Group242 := TGroupNode.Create;
-TimeSensor243 := TTimeSensorNode.Create;
-TimeSensor243.CycleInterval := 3.73;
-TimeSensor243.Loop := True;
+Group240 := TGroupNode.Create;
+TimeSensor241 := TTimeSensorNode.Create;
+TimeSensor241.CycleInterval := 3.73;
+TimeSensor241.Loop := True;
 { .AddChildren }
-Group242.AddChildren([TimeSensor243]);
+Group240.AddChildren([TimeSensor241]);
 { Interpolators }
+OrientationInterpolator242 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator242.SetKey([0,0.1,0.4,0.6,1]);
+OrientationInterpolator242.SetKeyValue([Vector4(1,0,0,0.5),Vector4(1,0,0,0.5),Vector4(-1,0,0,0.1),Vector4(-1,0,0,0.5),Vector4(-1,0,0,0.5)]);
+{ .AddChildren }
+Group240.AddChildren([OrientationInterpolator242]);
+PositionInterpolator243 := TPositionInterpolatorNode.Create;
+PositionInterpolator243.SetKey([0,0.2,0.6,1]);
+PositionInterpolator243.SetKeyValue([Vector3(1,0.3,-1),Vector3(0.4,-0.04,-0.4),Vector3(-0.18,0.1,0),Vector3(-0.2,0.15,0.15)]);
+{ .AddChildren }
+Group240.AddChildren([PositionInterpolator243]);
 OrientationInterpolator244 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator244.SetKey([0,0.1,0.4,0.6,1]);
-OrientationInterpolator244.SetKeyValue([Vector4(1,0,0,0.5),Vector4(1,0,0,0.5),Vector4(-1,0,0,0.1),Vector4(-1,0,0,0.5),Vector4(-1,0,0,0.5)]);
+OrientationInterpolator244.SetKey([0,0.5,1]);
+OrientationInterpolator244.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator244]);
-PositionInterpolator245 := TPositionInterpolatorNode.Create;
-PositionInterpolator245.SetKey([0,0.2,0.6,1]);
-PositionInterpolator245.SetKeyValue([Vector3(1,0.3,-1),Vector3(0.4,-0.04,-0.4),Vector3(-0.18,0.1,0),Vector3(-0.2,0.15,0.15)]);
+Group240.AddChildren([OrientationInterpolator244]);
+OrientationInterpolator245 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator245.SetKey([0,0.1,0.3,0.45,1]);
+OrientationInterpolator245.SetKeyValue([Vector4(-1,0,0,1.5),Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,0.5),Vector4(1,0,0,1)]);
 { .AddChildren }
-Group242.AddChildren([PositionInterpolator245]);
+Group240.AddChildren([OrientationInterpolator245]);
 OrientationInterpolator246 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator246.SetKey([0,0.5,1]);
-OrientationInterpolator246.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator246.SetKey([0,0.2,0.35,0.5,1]);
+OrientationInterpolator246.SetKeyValue([Vector4(1,0,0,1),Vector4(0,0,1,0),Vector4(0,0,1,0.2),Vector4(1,0,1,0.5),Vector4(1,0,0,1.4)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator246]);
+Group240.AddChildren([OrientationInterpolator246]);
 OrientationInterpolator247 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator247.SetKey([0,0.1,0.3,0.45,1]);
-OrientationInterpolator247.SetKeyValue([Vector4(-1,0,0,1.5),Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,0.5),Vector4(1,0,0,1)]);
+OrientationInterpolator247.SetKey([0,0.25,1]);
+OrientationInterpolator247.SetKeyValue([Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,1)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator247]);
+Group240.AddChildren([OrientationInterpolator247]);
 OrientationInterpolator248 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator248.SetKey([0,0.2,0.35,0.5,1]);
-OrientationInterpolator248.SetKeyValue([Vector4(1,0,0,1),Vector4(0,0,1,0),Vector4(0,0,1,0.2),Vector4(1,0,1,0.5),Vector4(1,0,0,1.4)]);
+OrientationInterpolator248.SetKey([0,0.5,1]);
+OrientationInterpolator248.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator248]);
+Group240.AddChildren([OrientationInterpolator248]);
 OrientationInterpolator249 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator249.SetKey([0,0.25,1]);
-OrientationInterpolator249.SetKeyValue([Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,1)]);
+OrientationInterpolator249.SetKey([0,0.5,1]);
+OrientationInterpolator249.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator249]);
+Group240.AddChildren([OrientationInterpolator249]);
 OrientationInterpolator250 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator250.SetKey([0,0.5,1]);
 OrientationInterpolator250.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator250]);
+Group240.AddChildren([OrientationInterpolator250]);
 OrientationInterpolator251 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator251.SetKey([0,0.5,1]);
-OrientationInterpolator251.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator251.SetKey([0,0.25,0.5,0.75,1]);
+OrientationInterpolator251.SetKeyValue([Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,1)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator251]);
+Group240.AddChildren([OrientationInterpolator251]);
 OrientationInterpolator252 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator252.SetKey([0,0.5,1]);
-OrientationInterpolator252.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator252.SetKey([0,0.25,0.5,0.75,1]);
+OrientationInterpolator252.SetKeyValue([Vector4(1,0,0,0.1),Vector4(0,0,1,0),Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(1,0,0,1.5)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator252]);
+Group240.AddChildren([OrientationInterpolator252]);
 OrientationInterpolator253 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator253.SetKey([0,0.25,0.5,0.75,1]);
-OrientationInterpolator253.SetKeyValue([Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,1),Vector4(-1,0,0,1)]);
+OrientationInterpolator253.SetKeyValue([Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(1,0,0,0.5)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator253]);
+Group240.AddChildren([OrientationInterpolator253]);
 OrientationInterpolator254 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator254.SetKey([0,0.25,0.5,0.75,1]);
-OrientationInterpolator254.SetKeyValue([Vector4(1,0,0,0.1),Vector4(0,0,1,0),Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(1,0,0,1.5)]);
+OrientationInterpolator254.SetKey([0,0.5,1]);
+OrientationInterpolator254.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator254]);
+Group240.AddChildren([OrientationInterpolator254]);
 OrientationInterpolator255 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator255.SetKey([0,0.25,0.5,0.75,1]);
-OrientationInterpolator255.SetKeyValue([Vector4(-1,0,0,1),Vector4(0,0,1,0),Vector4(1,0,0,1),Vector4(1,0,0,1),Vector4(1,0,0,0.5)]);
+OrientationInterpolator255.SetKey([0,0.5,1]);
+OrientationInterpolator255.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator255]);
+Group240.AddChildren([OrientationInterpolator255]);
 OrientationInterpolator256 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator256.SetKey([0,0.5,1]);
 OrientationInterpolator256.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator256]);
+Group240.AddChildren([OrientationInterpolator256]);
 OrientationInterpolator257 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator257.SetKey([0,0.5,1]);
 OrientationInterpolator257.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator257]);
+Group240.AddChildren([OrientationInterpolator257]);
 OrientationInterpolator258 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator258.SetKey([0,0.5,1]);
 OrientationInterpolator258.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator258]);
+Group240.AddChildren([OrientationInterpolator258]);
 OrientationInterpolator259 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator259.SetKey([0,0.5,1]);
 OrientationInterpolator259.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator259]);
+Group240.AddChildren([OrientationInterpolator259]);
 OrientationInterpolator260 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator260.SetKey([0,0.5,1]);
 OrientationInterpolator260.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator260]);
+Group240.AddChildren([OrientationInterpolator260]);
 OrientationInterpolator261 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator261.SetKey([0,0.5,1]);
 OrientationInterpolator261.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator261]);
+Group240.AddChildren([OrientationInterpolator261]);
 OrientationInterpolator262 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator262.SetKey([0,0.5,1]);
 OrientationInterpolator262.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator262]);
+Group240.AddChildren([OrientationInterpolator262]);
 OrientationInterpolator263 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator263.SetKey([0,0.5,1]);
 OrientationInterpolator263.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator263]);
+Group240.AddChildren([OrientationInterpolator263]);
 OrientationInterpolator264 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator264.SetKey([0,0.5,1]);
 OrientationInterpolator264.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator264]);
+Group240.AddChildren([OrientationInterpolator264]);
 OrientationInterpolator265 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator265.SetKey([0,0.5,1]);
 OrientationInterpolator265.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator265]);
+Group240.AddChildren([OrientationInterpolator265]);
 OrientationInterpolator266 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator266.SetKey([0,0.5,1]);
 OrientationInterpolator266.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator266]);
+Group240.AddChildren([OrientationInterpolator266]);
 OrientationInterpolator267 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator267.SetKey([0,0.5,1]);
 OrientationInterpolator267.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator267]);
+Group240.AddChildren([OrientationInterpolator267]);
 OrientationInterpolator268 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator268.SetKey([0,0.5,1]);
 OrientationInterpolator268.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator268]);
+Group240.AddChildren([OrientationInterpolator268]);
 OrientationInterpolator269 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator269.SetKey([0,0.5,1]);
 OrientationInterpolator269.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator269]);
+Group240.AddChildren([OrientationInterpolator269]);
 OrientationInterpolator270 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator270.SetKey([0,0.5,1]);
 OrientationInterpolator270.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator270]);
+Group240.AddChildren([OrientationInterpolator270]);
 OrientationInterpolator271 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator271.SetKey([0,0.5,1]);
 OrientationInterpolator271.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator271]);
+Group240.AddChildren([OrientationInterpolator271]);
 OrientationInterpolator272 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator272.SetKey([0,0.5,1]);
 OrientationInterpolator272.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator272]);
+Group240.AddChildren([OrientationInterpolator272]);
 OrientationInterpolator273 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator273.SetKey([0,0.5,1]);
 OrientationInterpolator273.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator273]);
+Group240.AddChildren([OrientationInterpolator273]);
 OrientationInterpolator274 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator274.SetKey([0,0.5,1]);
 OrientationInterpolator274.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator274]);
+Group240.AddChildren([OrientationInterpolator274]);
 OrientationInterpolator275 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator275.SetKey([0,0.5,1]);
 OrientationInterpolator275.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator275]);
+Group240.AddChildren([OrientationInterpolator275]);
 OrientationInterpolator276 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator276.SetKey([0,0.5,1]);
 OrientationInterpolator276.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator276]);
+Group240.AddChildren([OrientationInterpolator276]);
 OrientationInterpolator277 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator277.SetKey([0,0.5,1]);
-OrientationInterpolator277.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator277.SetKey([0,0.3,0.4,1]);
+OrientationInterpolator277.SetKeyValue([Vector4(1,0,1,0.25),Vector4(-1,0,-1,0.35),Vector4(1,0,0,0.75),Vector4(1,0,1,0.5)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator277]);
+Group240.AddChildren([OrientationInterpolator277]);
 OrientationInterpolator278 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator278.SetKey([0,0.5,1]);
 OrientationInterpolator278.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator278]);
+Group240.AddChildren([OrientationInterpolator278]);
 OrientationInterpolator279 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator279.SetKey([0,0.3,0.4,1]);
-OrientationInterpolator279.SetKeyValue([Vector4(1,0,1,0.25),Vector4(-1,0,-1,0.35),Vector4(1,0,0,0.75),Vector4(1,0,1,0.5)]);
+OrientationInterpolator279.SetKey([0,0.5,1]);
+OrientationInterpolator279.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator279]);
+Group240.AddChildren([OrientationInterpolator279]);
 OrientationInterpolator280 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator280.SetKey([0,0.5,1]);
 OrientationInterpolator280.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator280]);
+Group240.AddChildren([OrientationInterpolator280]);
 OrientationInterpolator281 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator281.SetKey([0,0.5,1]);
-OrientationInterpolator281.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator281.SetKey([0,0.2,0.75,1]);
+OrientationInterpolator281.SetKeyValue([Vector4(0,-1,0,0.5),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,1,0,0.35)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator281]);
+Group240.AddChildren([OrientationInterpolator281]);
 OrientationInterpolator282 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator282.SetKey([0,0.5,1]);
 OrientationInterpolator282.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator282]);
+Group240.AddChildren([OrientationInterpolator282]);
 OrientationInterpolator283 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator283.SetKey([0,0.2,0.75,1]);
-OrientationInterpolator283.SetKeyValue([Vector4(0,-1,0,0.5),Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,1,0,0.35)]);
+OrientationInterpolator283.SetKey([0,0.5,1]);
+OrientationInterpolator283.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator283]);
+Group240.AddChildren([OrientationInterpolator283]);
 OrientationInterpolator284 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator284.SetKey([0,0.5,1]);
 OrientationInterpolator284.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator284]);
+Group240.AddChildren([OrientationInterpolator284]);
 OrientationInterpolator285 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator285.SetKey([0,0.5,1]);
 OrientationInterpolator285.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator285]);
+Group240.AddChildren([OrientationInterpolator285]);
 OrientationInterpolator286 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator286.SetKey([0,0.5,1]);
 OrientationInterpolator286.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator286]);
+Group240.AddChildren([OrientationInterpolator286]);
 OrientationInterpolator287 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator287.SetKey([0,0.5,1]);
 OrientationInterpolator287.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator287]);
+Group240.AddChildren([OrientationInterpolator287]);
 OrientationInterpolator288 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator288.SetKey([0,0.5,1]);
 OrientationInterpolator288.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator288]);
+Group240.AddChildren([OrientationInterpolator288]);
 OrientationInterpolator289 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator289.SetKey([0,0.5,1]);
 OrientationInterpolator289.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator289]);
+Group240.AddChildren([OrientationInterpolator289]);
 OrientationInterpolator290 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator290.SetKey([0,0.5,1]);
 OrientationInterpolator290.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator290]);
+Group240.AddChildren([OrientationInterpolator290]);
 OrientationInterpolator291 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator291.SetKey([0,0.5,1]);
-OrientationInterpolator291.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator291.SetKey([0,0.4,1]);
+OrientationInterpolator291.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(-1,0,1,1.75)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator291]);
+Group240.AddChildren([OrientationInterpolator291]);
 OrientationInterpolator292 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator292.SetKey([0,0.5,1]);
-OrientationInterpolator292.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator292.SetKeyValue([Vector4(-1,0,0,3),Vector4(-1,0,0,0.75),Vector4(-1,-1,0,0.5)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator292]);
+Group240.AddChildren([OrientationInterpolator292]);
 OrientationInterpolator293 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator293.SetKey([0,0.4,1]);
-OrientationInterpolator293.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(-1,0,1,1.75)]);
+OrientationInterpolator293.SetKey([0,0.4,0.8,1]);
+OrientationInterpolator293.SetKeyValue([Vector4(0,0,1,0),Vector4(0,1,0,1.3),Vector4(0,-0.5,1,1.3),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator293]);
+Group240.AddChildren([OrientationInterpolator293]);
 OrientationInterpolator294 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator294.SetKey([0,0.5,1]);
-OrientationInterpolator294.SetKeyValue([Vector4(-1,0,0,3),Vector4(-1,0,0,0.75),Vector4(-1,-1,0,0.5)]);
+OrientationInterpolator294.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator294]);
+Group240.AddChildren([OrientationInterpolator294]);
 OrientationInterpolator295 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator295.SetKey([0,0.4,0.8,1]);
-OrientationInterpolator295.SetKeyValue([Vector4(0,0,1,0),Vector4(0,1,0,1.3),Vector4(0,-0.5,1,1.3),Vector4(0,0,1,0)]);
+OrientationInterpolator295.SetKey([0,0.5,1]);
+OrientationInterpolator295.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator295]);
+Group240.AddChildren([OrientationInterpolator295]);
 OrientationInterpolator296 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator296.SetKey([0,0.5,1]);
 OrientationInterpolator296.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator296]);
+Group240.AddChildren([OrientationInterpolator296]);
 OrientationInterpolator297 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator297.SetKey([0,0.5,1]);
 OrientationInterpolator297.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator297]);
+Group240.AddChildren([OrientationInterpolator297]);
 OrientationInterpolator298 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator298.SetKey([0,0.5,1]);
 OrientationInterpolator298.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator298]);
+Group240.AddChildren([OrientationInterpolator298]);
 OrientationInterpolator299 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator299.SetKey([0,0.5,1]);
 OrientationInterpolator299.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator299]);
+Group240.AddChildren([OrientationInterpolator299]);
 OrientationInterpolator300 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator300.SetKey([0,0.5,1]);
 OrientationInterpolator300.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator300]);
+Group240.AddChildren([OrientationInterpolator300]);
 OrientationInterpolator301 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator301.SetKey([0,0.5,1]);
 OrientationInterpolator301.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator301]);
+Group240.AddChildren([OrientationInterpolator301]);
 OrientationInterpolator302 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator302.SetKey([0,0.5,1]);
 OrientationInterpolator302.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator302]);
+Group240.AddChildren([OrientationInterpolator302]);
 OrientationInterpolator303 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator303.SetKey([0,0.5,1]);
 OrientationInterpolator303.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator303]);
+Group240.AddChildren([OrientationInterpolator303]);
 OrientationInterpolator304 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator304.SetKey([0,0.5,1]);
 OrientationInterpolator304.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator304]);
+Group240.AddChildren([OrientationInterpolator304]);
 OrientationInterpolator305 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator305.SetKey([0,0.5,1]);
 OrientationInterpolator305.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator305]);
+Group240.AddChildren([OrientationInterpolator305]);
 OrientationInterpolator306 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator306.SetKey([0,0.5,1]);
 OrientationInterpolator306.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator306]);
+Group240.AddChildren([OrientationInterpolator306]);
 OrientationInterpolator307 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator307.SetKey([0,0.5,1]);
 OrientationInterpolator307.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator307]);
+Group240.AddChildren([OrientationInterpolator307]);
 OrientationInterpolator308 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator308.SetKey([0,0.5,1]);
 OrientationInterpolator308.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator308]);
+Group240.AddChildren([OrientationInterpolator308]);
 OrientationInterpolator309 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator309.SetKey([0,0.5,1]);
 OrientationInterpolator309.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator309]);
+Group240.AddChildren([OrientationInterpolator309]);
 OrientationInterpolator310 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator310.SetKey([0,0.5,1]);
 OrientationInterpolator310.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator310]);
+Group240.AddChildren([OrientationInterpolator310]);
 OrientationInterpolator311 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator311.SetKey([0,0.5,1]);
 OrientationInterpolator311.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator311]);
+Group240.AddChildren([OrientationInterpolator311]);
 OrientationInterpolator312 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator312.SetKey([0,0.5,1]);
 OrientationInterpolator312.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator312]);
+Group240.AddChildren([OrientationInterpolator312]);
 OrientationInterpolator313 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator313.SetKey([0,0.5,1]);
 OrientationInterpolator313.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator313]);
+Group240.AddChildren([OrientationInterpolator313]);
 OrientationInterpolator314 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator314.SetKey([0,0.5,1]);
 OrientationInterpolator314.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator314]);
+Group240.AddChildren([OrientationInterpolator314]);
 OrientationInterpolator315 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator315.SetKey([0,0.5,1]);
-OrientationInterpolator315.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator315.SetKeyValue([Vector4(0,0,-1,2.5),Vector4(0,0,-1,1.5),Vector4(0,0,-1,1.75)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator315]);
+Group240.AddChildren([OrientationInterpolator315]);
 OrientationInterpolator316 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator316.SetKey([0,0.5,1]);
-OrientationInterpolator316.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator316.SetKeyValue([Vector4(-1,0,0,3),Vector4(-1,0,0,0.75),Vector4(-1,-1,0,0.5)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator316]);
+Group240.AddChildren([OrientationInterpolator316]);
 OrientationInterpolator317 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator317.SetKey([0,0.5,1]);
-OrientationInterpolator317.SetKeyValue([Vector4(0,0,-1,2.5),Vector4(0,0,-1,1.5),Vector4(0,0,-1,1.75)]);
+OrientationInterpolator317.SetKey([0,0.5,0.7,1]);
+OrientationInterpolator317.SetKeyValue([Vector4(0,1,0,0.3),Vector4(0,0,1,0),Vector4(0,0,-1,1),Vector4(0,-1,0,0.3)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator317]);
+Group240.AddChildren([OrientationInterpolator317]);
 OrientationInterpolator318 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator318.SetKey([0,0.5,1]);
-OrientationInterpolator318.SetKeyValue([Vector4(-1,0,0,3),Vector4(-1,0,0,0.75),Vector4(-1,-1,0,0.5)]);
+OrientationInterpolator318.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator318]);
+Group240.AddChildren([OrientationInterpolator318]);
 OrientationInterpolator319 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator319.SetKey([0,0.5,0.7,1]);
-OrientationInterpolator319.SetKeyValue([Vector4(0,1,0,0.3),Vector4(0,0,1,0),Vector4(0,0,-1,1),Vector4(0,-1,0,0.3)]);
+OrientationInterpolator319.SetKey([0,0.5,1]);
+OrientationInterpolator319.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator319]);
+Group240.AddChildren([OrientationInterpolator319]);
 OrientationInterpolator320 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator320.SetKey([0,0.5,1]);
 OrientationInterpolator320.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator320]);
+Group240.AddChildren([OrientationInterpolator320]);
 OrientationInterpolator321 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator321.SetKey([0,0.5,1]);
-OrientationInterpolator321.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator321.SetKey([0,0.5,0.75,1]);
+OrientationInterpolator321.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator321]);
+Group240.AddChildren([OrientationInterpolator321]);
 OrientationInterpolator322 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator322.SetKey([0,0.5,1]);
-OrientationInterpolator322.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,0)]);
+OrientationInterpolator322.SetKey([0,0.5,0.75,1]);
+OrientationInterpolator322.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator322]);
+Group240.AddChildren([OrientationInterpolator322]);
 OrientationInterpolator323 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator323.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator323.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
+OrientationInterpolator323.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator323]);
+Group240.AddChildren([OrientationInterpolator323]);
 OrientationInterpolator324 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator324.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator324.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator324]);
+Group240.AddChildren([OrientationInterpolator324]);
 OrientationInterpolator325 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator325.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator325.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
+OrientationInterpolator325.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator325]);
+Group240.AddChildren([OrientationInterpolator325]);
 OrientationInterpolator326 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator326.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator326.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator326]);
+Group240.AddChildren([OrientationInterpolator326]);
 OrientationInterpolator327 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator327.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator327.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
+OrientationInterpolator327.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator327]);
+Group240.AddChildren([OrientationInterpolator327]);
 OrientationInterpolator328 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator328.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator328.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator328]);
+Group240.AddChildren([OrientationInterpolator328]);
 OrientationInterpolator329 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator329.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator329.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
+OrientationInterpolator329.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator329]);
+Group240.AddChildren([OrientationInterpolator329]);
 OrientationInterpolator330 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator330.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator330.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator330]);
+Group240.AddChildren([OrientationInterpolator330]);
 OrientationInterpolator331 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator331.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator331.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
+OrientationInterpolator331.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator331]);
+Group240.AddChildren([OrientationInterpolator331]);
 OrientationInterpolator332 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator332.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator332.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator332]);
+Group240.AddChildren([OrientationInterpolator332]);
 OrientationInterpolator333 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator333.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator333.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
+OrientationInterpolator333.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator333]);
+Group240.AddChildren([OrientationInterpolator333]);
 OrientationInterpolator334 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator334.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator334.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator334]);
+Group240.AddChildren([OrientationInterpolator334]);
 OrientationInterpolator335 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator335.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator335.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1),Vector4(0,0,1,0)]);
+OrientationInterpolator335.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator335]);
+Group240.AddChildren([OrientationInterpolator335]);
 OrientationInterpolator336 := TOrientationInterpolatorNode.Create;
 OrientationInterpolator336.SetKey([0,0.5,0.75,1]);
 OrientationInterpolator336.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator336]);
-OrientationInterpolator337 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator337.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator337.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
+Group240.AddChildren([OrientationInterpolator336]);
 { .AddChildren }
-Group242.AddChildren([OrientationInterpolator337]);
-OrientationInterpolator338 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator338.SetKey([0,0.5,0.75,1]);
-OrientationInterpolator338.SetKeyValue([Vector4(0,0,1,0),Vector4(0,0,1,0),Vector4(0,0,1,1.5),Vector4(0,0,1,0)]);
-{ .AddChildren }
-Group242.AddChildren([OrientationInterpolator338]);
-{ .AddChildren }
-Group19.AddChildren([Group242]);
+Group19.AddChildren([Group240]);
 { TimeSensor to Interpolators }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator244.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator242.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, PositionInterpolator245.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, PositionInterpolator243.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator246.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator244.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator247.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator245.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator248.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator246.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator249.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator247.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator250.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator248.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator251.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator249.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator252.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator250.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator253.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator251.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator254.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator252.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator255.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator253.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator256.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator254.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator257.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator255.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator258.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator256.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator259.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator257.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator260.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator258.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator261.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator259.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator262.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator260.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator263.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator261.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator264.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator262.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator265.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator263.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator266.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator264.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator267.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator265.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator268.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator266.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator269.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator267.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator270.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator268.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator271.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator269.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator272.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator270.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator273.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator271.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator274.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator272.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator275.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator273.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator276.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator274.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator277.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator275.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator278.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator276.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator279.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator277.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator280.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator278.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator281.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator279.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator282.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator280.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator283.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator281.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator284.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator282.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator285.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator283.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator286.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator284.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator287.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator285.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator288.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator286.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator289.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator287.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator290.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator288.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator291.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator289.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator292.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator290.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator293.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator291.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator294.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator292.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator295.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator293.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator296.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator294.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator297.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator295.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator298.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator296.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator299.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator297.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator300.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator298.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator301.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator299.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator302.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator300.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator303.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator301.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator304.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator302.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator305.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator303.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator306.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator304.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator307.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator305.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator308.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator306.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator309.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator307.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator310.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator308.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator311.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator309.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator312.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator310.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator313.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator311.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator314.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator312.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator315.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator313.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator316.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator314.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator317.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator315.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator318.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator316.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator319.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator317.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator320.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator318.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator321.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator319.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator322.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator320.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator323.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator321.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator324.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator322.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator325.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator323.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator326.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator324.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator327.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator325.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator328.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator326.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator329.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator327.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator330.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator328.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator331.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator329.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator332.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator330.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator333.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator331.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator334.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator332.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator335.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator333.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator336.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator334.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator337.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator335.EventSet_fraction);
 { .AddX3DRoute }
-Group19.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator338.EventSet_fraction);
+Group19.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator336.EventSet_fraction);
 { .AddX3DRoute }
 { Routes from Interpolators to Joe_ model Joints }
-Group19.AddRoute(OrientationInterpolator244.EventValue_changed, HAnimJoint32.FdRotation);
+Group19.AddRoute(OrientationInterpolator242.EventValue_changed, HAnimJoint32.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(PositionInterpolator245.EventValue_changed, HAnimJoint32.FdTranslation);
+Group19.AddRoute(PositionInterpolator243.EventValue_changed, HAnimJoint32.FdTranslation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator246.EventValue_changed, HAnimJoint43.FdRotation);
+Group19.AddRoute(OrientationInterpolator244.EventValue_changed, HAnimJoint43.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator247.EventValue_changed, HAnimJoint44.FdRotation);
+Group19.AddRoute(OrientationInterpolator245.EventValue_changed, HAnimJoint44.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator248.EventValue_changed, HAnimJoint45.FdRotation);
+Group19.AddRoute(OrientationInterpolator246.EventValue_changed, HAnimJoint45.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator249.EventValue_changed, HAnimJoint46.FdRotation);
+Group19.AddRoute(OrientationInterpolator247.EventValue_changed, HAnimJoint46.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator250.EventValue_changed, HAnimJoint47.FdRotation);
+Group19.AddRoute(OrientationInterpolator248.EventValue_changed, HAnimJoint47.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator251.EventValue_changed, HAnimJoint48.FdRotation);
+Group19.AddRoute(OrientationInterpolator249.EventValue_changed, HAnimJoint48.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator252.EventValue_changed, HAnimJoint49.FdRotation);
+Group19.AddRoute(OrientationInterpolator250.EventValue_changed, HAnimJoint49.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator253.EventValue_changed, HAnimJoint50.FdRotation);
+Group19.AddRoute(OrientationInterpolator251.EventValue_changed, HAnimJoint50.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator254.EventValue_changed, HAnimJoint51.FdRotation);
+Group19.AddRoute(OrientationInterpolator252.EventValue_changed, HAnimJoint51.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator255.EventValue_changed, HAnimJoint52.FdRotation);
+Group19.AddRoute(OrientationInterpolator253.EventValue_changed, HAnimJoint52.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator256.EventValue_changed, HAnimJoint53.FdRotation);
+Group19.AddRoute(OrientationInterpolator254.EventValue_changed, HAnimJoint53.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator257.EventValue_changed, HAnimJoint54.FdRotation);
+Group19.AddRoute(OrientationInterpolator255.EventValue_changed, HAnimJoint54.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator258.EventValue_changed, HAnimJoint55.FdRotation);
+Group19.AddRoute(OrientationInterpolator256.EventValue_changed, HAnimJoint55.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator259.EventValue_changed, HAnimJoint56.FdRotation);
+Group19.AddRoute(OrientationInterpolator257.EventValue_changed, HAnimJoint56.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator260.EventValue_changed, HAnimJoint57.FdRotation);
+Group19.AddRoute(OrientationInterpolator258.EventValue_changed, HAnimJoint57.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator261.EventValue_changed, HAnimJoint58.FdRotation);
+Group19.AddRoute(OrientationInterpolator259.EventValue_changed, HAnimJoint58.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator262.EventValue_changed, HAnimJoint59.FdRotation);
+Group19.AddRoute(OrientationInterpolator260.EventValue_changed, HAnimJoint59.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator263.EventValue_changed, HAnimJoint60.FdRotation);
+Group19.AddRoute(OrientationInterpolator261.EventValue_changed, HAnimJoint60.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator264.EventValue_changed, HAnimJoint61.FdRotation);
+Group19.AddRoute(OrientationInterpolator262.EventValue_changed, HAnimJoint61.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator265.EventValue_changed, HAnimJoint62.FdRotation);
+Group19.AddRoute(OrientationInterpolator263.EventValue_changed, HAnimJoint62.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator266.EventValue_changed, HAnimJoint63.FdRotation);
+Group19.AddRoute(OrientationInterpolator264.EventValue_changed, HAnimJoint63.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator267.EventValue_changed, HAnimJoint64.FdRotation);
+Group19.AddRoute(OrientationInterpolator265.EventValue_changed, HAnimJoint64.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator268.EventValue_changed, HAnimJoint65.FdRotation);
+Group19.AddRoute(OrientationInterpolator266.EventValue_changed, HAnimJoint65.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator269.EventValue_changed, HAnimJoint66.FdRotation);
+Group19.AddRoute(OrientationInterpolator267.EventValue_changed, HAnimJoint66.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator270.EventValue_changed, HAnimJoint67.FdRotation);
+Group19.AddRoute(OrientationInterpolator268.EventValue_changed, HAnimJoint67.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator271.EventValue_changed, HAnimJoint68.FdRotation);
+Group19.AddRoute(OrientationInterpolator269.EventValue_changed, HAnimJoint68.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator272.EventValue_changed, HAnimJoint69.FdRotation);
+Group19.AddRoute(OrientationInterpolator270.EventValue_changed, HAnimJoint69.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator273.EventValue_changed, HAnimJoint70.FdRotation);
+Group19.AddRoute(OrientationInterpolator271.EventValue_changed, HAnimJoint70.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator274.EventValue_changed, HAnimJoint71.FdRotation);
+Group19.AddRoute(OrientationInterpolator272.EventValue_changed, HAnimJoint71.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator275.EventValue_changed, HAnimJoint72.FdRotation);
+Group19.AddRoute(OrientationInterpolator273.EventValue_changed, HAnimJoint72.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator276.EventValue_changed, HAnimJoint73.FdRotation);
+Group19.AddRoute(OrientationInterpolator274.EventValue_changed, HAnimJoint73.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator277.EventValue_changed, HAnimJoint74.FdRotation);
+Group19.AddRoute(OrientationInterpolator275.EventValue_changed, HAnimJoint74.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator278.EventValue_changed, HAnimJoint75.FdRotation);
+Group19.AddRoute(OrientationInterpolator276.EventValue_changed, HAnimJoint75.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator279.EventValue_changed, HAnimJoint76.FdRotation);
+Group19.AddRoute(OrientationInterpolator277.EventValue_changed, HAnimJoint76.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator280.EventValue_changed, HAnimJoint77.FdRotation);
+Group19.AddRoute(OrientationInterpolator278.EventValue_changed, HAnimJoint77.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator281.EventValue_changed, HAnimJoint78.FdRotation);
+Group19.AddRoute(OrientationInterpolator279.EventValue_changed, HAnimJoint78.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator282.EventValue_changed, HAnimJoint79.FdRotation);
+Group19.AddRoute(OrientationInterpolator280.EventValue_changed, HAnimJoint79.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator283.EventValue_changed, HAnimJoint80.FdRotation);
+Group19.AddRoute(OrientationInterpolator281.EventValue_changed, HAnimJoint80.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator284.EventValue_changed, HAnimJoint82.FdRotation);
+Group19.AddRoute(OrientationInterpolator282.EventValue_changed, HAnimJoint82.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator285.EventValue_changed, HAnimJoint83.FdRotation);
+Group19.AddRoute(OrientationInterpolator283.EventValue_changed, HAnimJoint83.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator286.EventValue_changed, HAnimJoint84.FdRotation);
+Group19.AddRoute(OrientationInterpolator284.EventValue_changed, HAnimJoint84.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator287.EventValue_changed, HAnimJoint85.FdRotation);
+Group19.AddRoute(OrientationInterpolator285.EventValue_changed, HAnimJoint85.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator288.EventValue_changed, HAnimJoint86.FdRotation);
+Group19.AddRoute(OrientationInterpolator286.EventValue_changed, HAnimJoint86.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator289.EventValue_changed, HAnimJoint87.FdRotation);
+Group19.AddRoute(OrientationInterpolator287.EventValue_changed, HAnimJoint87.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator290.EventValue_changed, HAnimJoint88.FdRotation);
+Group19.AddRoute(OrientationInterpolator288.EventValue_changed, HAnimJoint88.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator291.EventValue_changed, HAnimJoint89.FdRotation);
+Group19.AddRoute(OrientationInterpolator289.EventValue_changed, HAnimJoint89.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator292.EventValue_changed, HAnimJoint90.FdRotation);
+Group19.AddRoute(OrientationInterpolator290.EventValue_changed, HAnimJoint90.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator293.EventValue_changed, HAnimJoint91.FdRotation);
+Group19.AddRoute(OrientationInterpolator291.EventValue_changed, HAnimJoint91.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator294.EventValue_changed, HAnimJoint92.FdRotation);
+Group19.AddRoute(OrientationInterpolator292.EventValue_changed, HAnimJoint92.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator295.EventValue_changed, HAnimJoint93.FdRotation);
+Group19.AddRoute(OrientationInterpolator293.EventValue_changed, HAnimJoint93.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator296.EventValue_changed, HAnimJoint94.FdRotation);
+Group19.AddRoute(OrientationInterpolator294.EventValue_changed, HAnimJoint94.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator297.EventValue_changed, HAnimJoint95.FdRotation);
+Group19.AddRoute(OrientationInterpolator295.EventValue_changed, HAnimJoint95.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator298.EventValue_changed, HAnimJoint96.FdRotation);
+Group19.AddRoute(OrientationInterpolator296.EventValue_changed, HAnimJoint96.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator299.EventValue_changed, HAnimJoint97.FdRotation);
+Group19.AddRoute(OrientationInterpolator297.EventValue_changed, HAnimJoint97.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator300.EventValue_changed, HAnimJoint98.FdRotation);
+Group19.AddRoute(OrientationInterpolator298.EventValue_changed, HAnimJoint98.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator301.EventValue_changed, HAnimJoint99.FdRotation);
+Group19.AddRoute(OrientationInterpolator299.EventValue_changed, HAnimJoint99.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator302.EventValue_changed, HAnimJoint100.FdRotation);
+Group19.AddRoute(OrientationInterpolator300.EventValue_changed, HAnimJoint100.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator303.EventValue_changed, HAnimJoint101.FdRotation);
+Group19.AddRoute(OrientationInterpolator301.EventValue_changed, HAnimJoint101.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator304.EventValue_changed, HAnimJoint102.FdRotation);
+Group19.AddRoute(OrientationInterpolator302.EventValue_changed, HAnimJoint102.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator305.EventValue_changed, HAnimJoint103.FdRotation);
+Group19.AddRoute(OrientationInterpolator303.EventValue_changed, HAnimJoint103.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator306.EventValue_changed, HAnimJoint104.FdRotation);
+Group19.AddRoute(OrientationInterpolator304.EventValue_changed, HAnimJoint104.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator307.EventValue_changed, HAnimJoint105.FdRotation);
+Group19.AddRoute(OrientationInterpolator305.EventValue_changed, HAnimJoint105.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator308.EventValue_changed, HAnimJoint106.FdRotation);
+Group19.AddRoute(OrientationInterpolator306.EventValue_changed, HAnimJoint106.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator309.EventValue_changed, HAnimJoint107.FdRotation);
+Group19.AddRoute(OrientationInterpolator307.EventValue_changed, HAnimJoint107.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator310.EventValue_changed, HAnimJoint108.FdRotation);
+Group19.AddRoute(OrientationInterpolator308.EventValue_changed, HAnimJoint108.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator311.EventValue_changed, HAnimJoint109.FdRotation);
+Group19.AddRoute(OrientationInterpolator309.EventValue_changed, HAnimJoint109.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator312.EventValue_changed, HAnimJoint110.FdRotation);
+Group19.AddRoute(OrientationInterpolator310.EventValue_changed, HAnimJoint110.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator313.EventValue_changed, HAnimJoint111.FdRotation);
+Group19.AddRoute(OrientationInterpolator311.EventValue_changed, HAnimJoint111.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator314.EventValue_changed, HAnimJoint112.FdRotation);
+Group19.AddRoute(OrientationInterpolator312.EventValue_changed, HAnimJoint112.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator315.EventValue_changed, HAnimJoint113.FdRotation);
+Group19.AddRoute(OrientationInterpolator313.EventValue_changed, HAnimJoint113.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator316.EventValue_changed, HAnimJoint114.FdRotation);
+Group19.AddRoute(OrientationInterpolator314.EventValue_changed, HAnimJoint114.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator317.EventValue_changed, HAnimJoint115.FdRotation);
+Group19.AddRoute(OrientationInterpolator315.EventValue_changed, HAnimJoint115.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator318.EventValue_changed, HAnimJoint116.FdRotation);
+Group19.AddRoute(OrientationInterpolator316.EventValue_changed, HAnimJoint116.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator319.EventValue_changed, HAnimJoint117.FdRotation);
+Group19.AddRoute(OrientationInterpolator317.EventValue_changed, HAnimJoint117.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator320.EventValue_changed, HAnimJoint118.FdRotation);
+Group19.AddRoute(OrientationInterpolator318.EventValue_changed, HAnimJoint118.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator321.EventValue_changed, HAnimJoint119.FdRotation);
+Group19.AddRoute(OrientationInterpolator319.EventValue_changed, HAnimJoint119.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator322.EventValue_changed, HAnimJoint120.FdRotation);
+Group19.AddRoute(OrientationInterpolator320.EventValue_changed, HAnimJoint120.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator323.EventValue_changed, HAnimJoint121.FdRotation);
+Group19.AddRoute(OrientationInterpolator321.EventValue_changed, HAnimJoint121.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint122.FdRotation);
+Group19.AddRoute(OrientationInterpolator322.EventValue_changed, HAnimJoint122.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator325.EventValue_changed, HAnimJoint123.FdRotation);
+Group19.AddRoute(OrientationInterpolator323.EventValue_changed, HAnimJoint123.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator326.EventValue_changed, HAnimJoint124.FdRotation);
+Group19.AddRoute(OrientationInterpolator324.EventValue_changed, HAnimJoint124.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator327.EventValue_changed, HAnimJoint125.FdRotation);
+Group19.AddRoute(OrientationInterpolator325.EventValue_changed, HAnimJoint125.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator328.EventValue_changed, HAnimJoint126.FdRotation);
+Group19.AddRoute(OrientationInterpolator326.EventValue_changed, HAnimJoint126.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator329.EventValue_changed, HAnimJoint127.FdRotation);
+Group19.AddRoute(OrientationInterpolator327.EventValue_changed, HAnimJoint127.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator330.EventValue_changed, HAnimJoint128.FdRotation);
+Group19.AddRoute(OrientationInterpolator328.EventValue_changed, HAnimJoint128.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator331.EventValue_changed, HAnimJoint129.FdRotation);
+Group19.AddRoute(OrientationInterpolator329.EventValue_changed, HAnimJoint129.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator332.EventValue_changed, HAnimJoint130.FdRotation);
+Group19.AddRoute(OrientationInterpolator330.EventValue_changed, HAnimJoint130.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator333.EventValue_changed, HAnimJoint131.FdRotation);
+Group19.AddRoute(OrientationInterpolator331.EventValue_changed, HAnimJoint131.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator334.EventValue_changed, HAnimJoint132.FdRotation);
+Group19.AddRoute(OrientationInterpolator332.EventValue_changed, HAnimJoint132.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator335.EventValue_changed, HAnimJoint133.FdRotation);
+Group19.AddRoute(OrientationInterpolator333.EventValue_changed, HAnimJoint133.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator336.EventValue_changed, HAnimJoint134.FdRotation);
+Group19.AddRoute(OrientationInterpolator334.EventValue_changed, HAnimJoint134.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator337.EventValue_changed, HAnimJoint135.FdRotation);
+Group19.AddRoute(OrientationInterpolator335.EventValue_changed, HAnimJoint135.FdRotation);
 { .AddX3DRoute }
-Group19.AddRoute(OrientationInterpolator338.EventValue_changed, HAnimJoint136.FdRotation);
+Group19.AddRoute(OrientationInterpolator336.EventValue_changed, HAnimJoint136.FdRotation);
 { .AddX3DRoute }
-Group529 := TGroupNode.Create;
+Group527 := TGroupNode.Create;
 { TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor }
-ScalarInterpolator530 := TScalarInterpolatorNode.Create;
-ScalarInterpolator530.SetKey([0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
-ScalarInterpolator530.SetKeyValue([0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
+ScalarInterpolator528 := TScalarInterpolatorNode.Create;
+ScalarInterpolator528.SetKey([0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1]);
+ScalarInterpolator528.SetKeyValue([0,0,0,0,0.2,0.4,1,0,1,0.4,0]);
 { .AddChildren }
-Group529.AddChildren([ScalarInterpolator530]);
-Group529.AddRoute(TimeSensor243.EventFraction_changed, ScalarInterpolator530.EventSet_fraction);
+Group527.AddChildren([ScalarInterpolator528]);
+Group527.AddRoute(TimeSensor241.EventFraction_changed, ScalarInterpolator528.EventSet_fraction);
 { .AddX3DRoute }
-Group529.AddRoute(ScalarInterpolator530.EventValue_changed, HAnimDisplacer81.FdWeight);
-{ .AddX3DRoute }
-{ .AddChildren }
-Group19.AddChildren([Group529]);
-Group533 := TGroupNode.Create;
-ScalarInterpolator534 := TScalarInterpolatorNode.Create;
-ScalarInterpolator534.SetKey([0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
-ScalarInterpolator534.SetKeyValue([0,0,0,0,0,1,2,0]);
-{ .AddChildren }
-Group533.AddChildren([ScalarInterpolator534]);
-Group533.AddRoute(TimeSensor243.EventFraction_changed, ScalarInterpolator534.EventSet_fraction);
-{ .AddX3DRoute }
-Group533.AddRoute(ScalarInterpolator534.EventValue_changed, TextureTransform141.FdRotation);
+Group527.AddRoute(ScalarInterpolator528.EventValue_changed, HAnimDisplacer81.FdWeight);
 { .AddX3DRoute }
 { .AddChildren }
-Group19.AddChildren([Group533]);
-Group537 := TGroupNode.Create;
-Transform538 := TTransformNode.Create;
-Transform538.Rotation := Vector4(0.7,0,0.7,0.1);
-Transform538.Scale := Vector3(0.23,0.23,0.23);
-Transform538.Translation := Vector3(-0.916,0.37,-0.92);
-Shape539 := TShapeNode.Create;
-Appearance540 := TAppearanceNode.Create;
-Material541 := TMaterialNode.Create;
-Material541.DiffuseColor := Vector3(0.3,0.3,1);
-Material541.EmissiveColor := Vector3(0.3,0.3,0.33);
+Group19.AddChildren([Group527]);
+Group531 := TGroupNode.Create;
+ScalarInterpolator532 := TScalarInterpolatorNode.Create;
+ScalarInterpolator532.SetKey([0,0.2,0.4,0.5,0.6,0.7,0.8,1]);
+ScalarInterpolator532.SetKeyValue([0,0,0,0,0,1,2,0]);
+{ .AddChildren }
+Group531.AddChildren([ScalarInterpolator532]);
+Group531.AddRoute(TimeSensor241.EventFraction_changed, ScalarInterpolator532.EventSet_fraction);
+{ .AddX3DRoute }
+Group531.AddRoute(ScalarInterpolator532.EventValue_changed, TextureTransform141.FdRotation);
+{ .AddX3DRoute }
+{ .AddChildren }
+Group19.AddChildren([Group531]);
+Group535 := TGroupNode.Create;
+Transform536 := TTransformNode.Create;
+Transform536.Rotation := Vector4(0.7,0,0.7,0.1);
+Transform536.Scale := Vector3(0.23,0.23,0.23);
+Transform536.Translation := Vector3(-0.916,0.37,-0.92);
+Shape537 := TShapeNode.Create;
+Appearance538 := TAppearanceNode.Create;
+Material539 := TMaterialNode.Create;
+Material539.DiffuseColor := Vector3(0.3,0.3,1);
+Material539.EmissiveColor := Vector3(0.3,0.3,0.33);
 { .SetMaterial }
-Appearance540.Material := Material541;
-ImageTexture542 := TImageTextureNode.Create;
-ImageTexture542 := ImageTexture140;
+Appearance538.Material := Material539;
+ImageTexture540 := TImageTextureNode.Create;
+ImageTexture540 := ImageTexture140;
 { .SetTexture }
-Appearance540.Texture := ImageTexture542;
+Appearance538.Texture := ImageTexture540;
 { .SetAppearance }
-Shape539.Appearance := Appearance540;
-IndexedFaceSet543 := TIndexedFaceSetNode.Create;
-IndexedFaceSet543.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
-Coordinate544 := TCoordinateNode.Create;
-Coordinate544.SetPoint([Vector3(0,0.4675,0),Vector3(0,0.4049,-0.2338),Vector3(-0.1169,0.4049,-0.2024),Vector3(-0.2024,0.4049,-0.1169),Vector3(-0.2338,0.4049,0),Vector3(-0.2024,0.4049,0.1169),Vector3(-0.1169,0.4049,0.2024),Vector3(0,0.4049,0.2338),Vector3(0.1169,0.4049,0.2024),Vector3(0.2024,0.4049,0.1169),Vector3(0.2338,0.4049,0),Vector3(0.2024,0.4049,-0.1169),Vector3(0.1169,0.4049,-0.2024),Vector3(0,0.2338,-0.4049),Vector3(-0.2024,0.2338,-0.3506),Vector3(-0.3506,0.2338,-0.2024),Vector3(-0.4049,0.2338,0),Vector3(-0.3506,0.2338,0.2024),Vector3(-0.2024,0.2338,0.3506),Vector3(0,0.2338,0.4049),Vector3(0.2024,0.2338,0.3506),Vector3(0.3506,0.2338,0.2024),Vector3(0.4049,0.2338,0),Vector3(0.3506,0.2338,-0.2024),Vector3(0.2024,0.2338,-0.3506),Vector3(0,0,-0.4675),Vector3(-0.2338,0,-0.4049),Vector3(-0.4049,0,-0.2338),Vector3(-0.4675,0,0),Vector3(-0.4049,0,0.2338),Vector3(-0.2338,0,0.4049),Vector3(0,0,0.4675),Vector3(0.2338,0,0.4049),Vector3(0.4049,0,0.2338),Vector3(0.4675,0,0),Vector3(0.4049,0,-0.2338),Vector3(0.2338,0,-0.4049),Vector3(0,-0.2338,-0.4049),Vector3(-0.2024,-0.2338,-0.3506),Vector3(-0.3506,-0.2338,-0.2024),Vector3(-0.4049,-0.2338,0),Vector3(-0.3506,-0.2338,0.2024),Vector3(-0.2024,-0.2338,0.3506),Vector3(0,-0.2338,0.4049),Vector3(0.2024,-0.2338,0.3506),Vector3(0.3506,-0.2338,0.2024),Vector3(0.4049,-0.2338,0),Vector3(0.3506,-0.2338,-0.2024),Vector3(0.2024,-0.2338,-0.3506),Vector3(0,-0.4049,-0.2338),Vector3(-0.1169,-0.4049,-0.2024),Vector3(-0.2024,-0.4049,-0.1169),Vector3(-0.2338,-0.4049,0),Vector3(-0.2024,-0.4049,0.1169),Vector3(-0.1169,-0.4049,0.2024),Vector3(0,-0.4049,0.2338),Vector3(0.1169,-0.4049,0.2024),Vector3(0.2024,-0.4049,0.1169),Vector3(0.2338,-0.4049,0),Vector3(0.2024,-0.4049,-0.1169),Vector3(0.1169,-0.4049,-0.2024),Vector3(0,-0.4675,0)]);
+Shape537.Appearance := Appearance538;
+IndexedFaceSet541 := TIndexedFaceSetNode.Create;
+IndexedFaceSet541.SetCoordIndex([0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1]);
+Coordinate542 := TCoordinateNode.Create;
+Coordinate542.SetPoint([Vector3(0,0.4675,0),Vector3(0,0.4049,-0.2338),Vector3(-0.1169,0.4049,-0.2024),Vector3(-0.2024,0.4049,-0.1169),Vector3(-0.2338,0.4049,0),Vector3(-0.2024,0.4049,0.1169),Vector3(-0.1169,0.4049,0.2024),Vector3(0,0.4049,0.2338),Vector3(0.1169,0.4049,0.2024),Vector3(0.2024,0.4049,0.1169),Vector3(0.2338,0.4049,0),Vector3(0.2024,0.4049,-0.1169),Vector3(0.1169,0.4049,-0.2024),Vector3(0,0.2338,-0.4049),Vector3(-0.2024,0.2338,-0.3506),Vector3(-0.3506,0.2338,-0.2024),Vector3(-0.4049,0.2338,0),Vector3(-0.3506,0.2338,0.2024),Vector3(-0.2024,0.2338,0.3506),Vector3(0,0.2338,0.4049),Vector3(0.2024,0.2338,0.3506),Vector3(0.3506,0.2338,0.2024),Vector3(0.4049,0.2338,0),Vector3(0.3506,0.2338,-0.2024),Vector3(0.2024,0.2338,-0.3506),Vector3(0,0,-0.4675),Vector3(-0.2338,0,-0.4049),Vector3(-0.4049,0,-0.2338),Vector3(-0.4675,0,0),Vector3(-0.4049,0,0.2338),Vector3(-0.2338,0,0.4049),Vector3(0,0,0.4675),Vector3(0.2338,0,0.4049),Vector3(0.4049,0,0.2338),Vector3(0.4675,0,0),Vector3(0.4049,0,-0.2338),Vector3(0.2338,0,-0.4049),Vector3(0,-0.2338,-0.4049),Vector3(-0.2024,-0.2338,-0.3506),Vector3(-0.3506,-0.2338,-0.2024),Vector3(-0.4049,-0.2338,0),Vector3(-0.3506,-0.2338,0.2024),Vector3(-0.2024,-0.2338,0.3506),Vector3(0,-0.2338,0.4049),Vector3(0.2024,-0.2338,0.3506),Vector3(0.3506,-0.2338,0.2024),Vector3(0.4049,-0.2338,0),Vector3(0.3506,-0.2338,-0.2024),Vector3(0.2024,-0.2338,-0.3506),Vector3(0,-0.4049,-0.2338),Vector3(-0.1169,-0.4049,-0.2024),Vector3(-0.2024,-0.4049,-0.1169),Vector3(-0.2338,-0.4049,0),Vector3(-0.2024,-0.4049,0.1169),Vector3(-0.1169,-0.4049,0.2024),Vector3(0,-0.4049,0.2338),Vector3(0.1169,-0.4049,0.2024),Vector3(0.2024,-0.4049,0.1169),Vector3(0.2338,-0.4049,0),Vector3(0.2024,-0.4049,-0.1169),Vector3(0.1169,-0.4049,-0.2024),Vector3(0,-0.4675,0)]);
 { .SetCoord }
-IndexedFaceSet543.Coord := Coordinate544;
+IndexedFaceSet541.Coord := Coordinate542;
 { .SetGeometry }
-Shape539.Geometry := IndexedFaceSet543;
+Shape537.Geometry := IndexedFaceSet541;
 { .AddChild }
-Transform538.AddChildren([Shape539]);
-Viewpoint545 := TViewpointNode.Create;
-Viewpoint545.Description := 'Ball View';
+Transform536.AddChildren([Shape537]);
+Viewpoint543 := TViewpointNode.Create;
+Viewpoint543.Description := 'Ball View';
 { .AddChildren }
-Transform538.AddChildren([Viewpoint545]);
+Transform536.AddChildren([Viewpoint543]);
 { .AddChildren }
-Group537.AddChildren([Transform538]);
+Group535.AddChildren([Transform536]);
 { Ball Animation interpolators }
-PositionInterpolator546 := TPositionInterpolatorNode.Create;
-PositionInterpolator546.SetKey([0,0.4,0.409,1]);
-PositionInterpolator546.SetKeyValue([Vector3(-1,0.4,-1),Vector3(0,0.07,0),Vector3(0.05,0.06,0.05),Vector3(2,4,10)]);
+PositionInterpolator544 := TPositionInterpolatorNode.Create;
+PositionInterpolator544.SetKey([0,0.4,0.409,1]);
+PositionInterpolator544.SetKeyValue([Vector3(-1,0.4,-1),Vector3(0,0.07,0),Vector3(0.05,0.06,0.05),Vector3(2,4,10)]);
 { .AddChildren }
-Group537.AddChildren([PositionInterpolator546]);
-OrientationInterpolator547 := TOrientationInterpolatorNode.Create;
-OrientationInterpolator547.SetKey([0,0.4,0.41,0.71,1]);
-OrientationInterpolator547.SetKeyValue([Vector4(1,0,1,0.25),Vector4(-1,0,-1,1.35),Vector4(-1,1,-1,3.35),Vector4(-1,0.2,-1,3),Vector4(-1,0.2,-1,3)]);
+Group535.AddChildren([PositionInterpolator544]);
+OrientationInterpolator545 := TOrientationInterpolatorNode.Create;
+OrientationInterpolator545.SetKey([0,0.4,0.41,0.71,1]);
+OrientationInterpolator545.SetKeyValue([Vector4(1,0,1,0.25),Vector4(-1,0,-1,1.35),Vector4(-1,1,-1,3.35),Vector4(-1,0.2,-1,3),Vector4(-1,0.2,-1,3)]);
 { .AddChildren }
-Group537.AddChildren([OrientationInterpolator547]);
+Group535.AddChildren([OrientationInterpolator545]);
 { Ball Animation Routes }
-Group537.AddRoute(TimeSensor243.EventFraction_changed, PositionInterpolator546.EventSet_fraction);
+Group535.AddRoute(TimeSensor241.EventFraction_changed, PositionInterpolator544.EventSet_fraction);
 { .AddX3DRoute }
-Group537.AddRoute(PositionInterpolator546.EventValue_changed, Transform538.FdTranslation);
+Group535.AddRoute(PositionInterpolator544.EventValue_changed, Transform536.FdTranslation);
 { .AddX3DRoute }
-Group537.AddRoute(TimeSensor243.EventFraction_changed, OrientationInterpolator547.EventSet_fraction);
+Group535.AddRoute(TimeSensor241.EventFraction_changed, OrientationInterpolator545.EventSet_fraction);
 { .AddX3DRoute }
-Group537.AddRoute(OrientationInterpolator547.EventValue_changed, Transform538.FdRotation);
+Group535.AddRoute(OrientationInterpolator545.EventValue_changed, Transform536.FdRotation);
 { .AddX3DRoute }
 { .AddChildren }
-Group19.AddChildren([Group537]);
-Group552 := TGroupNode.Create;
+Group19.AddChildren([Group535]);
+Group550 := TGroupNode.Create;
+Transform551 := TTransformNode.Create;
+Transform551.Scale := Vector3(0.2,0.2,0.2);
+Shape552 := TShapeNode.Create;
+Shape552 := Shape39;
+{ .AddChild }
+Transform551.AddChildren([Shape552]);
+{ .AddChildren }
+Group550.AddChildren([Transform551]);
 Transform553 := TTransformNode.Create;
-Transform553.Scale := Vector3(0.2,0.2,0.2);
+Transform553.Scale := Vector3(1.175,1,1.175);
 Shape554 := TShapeNode.Create;
-Shape554 := Shape39;
+Appearance555 := TAppearanceNode.Create;
+Material556 := TMaterialNode.Create;
+Material556.AmbientIntensity := 0.9;
+Material556.DiffuseColor := Vector3(0.9,0,0.7);
+Material556.EmissiveColor := Vector3(0.425,0.486,1);
+{ .SetMaterial }
+Appearance555.Material := Material556;
+{ .SetAppearance }
+Shape554.Appearance := Appearance555;
+IndexedLineSet557 := TIndexedLineSetNode.Create;
+IndexedLineSet557.SetCoordIndex([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
+Coordinate558 := TCoordinateNode.Create;
+Coordinate558.SetPoint([Vector3(1,0,0),Vector3(0.995,0,-0.105),Vector3(0.979,0,-0.208),Vector3(0.951,0,-0.309),Vector3(0.914,0,-0.407),Vector3(0.866,0,-0.5),Vector3(0.809,0,-0.588),Vector3(0.743,0,-0.669),Vector3(0.669,0,-0.743),Vector3(0.588,0,-0.809),Vector3(0.5,0,-0.866),Vector3(0.407,0,-0.914),Vector3(0.309,0,-0.951),Vector3(0.208,0,-0.978),Vector3(0.105,0,-0.995),Vector3(0,0,-1),Vector3(-0.105,0,-0.994522),Vector3(-0.208,0,-0.978),Vector3(-0.309,0,-0.951),Vector3(-0.407,0,-0.914),Vector3(-0.5,0,-0.866),Vector3(-0.588,0,-0.809),Vector3(-0.669,0,-0.743),Vector3(-0.743,0,-0.669),Vector3(-0.809,0,-0.588),Vector3(-0.866,0,-0.5),Vector3(-0.914,0,-0.407),Vector3(-0.951,0,-0.309),Vector3(-0.978,0,-0.208),Vector3(-0.995,0,-0.105),Vector3(-1,0,0),Vector3(-0.995,0,0.105),Vector3(-0.978,0,0.208),Vector3(-0.951,0,0.309),Vector3(-0.914,0,0.407),Vector3(-0.866,0,0.5),Vector3(-0.809,0,0.588),Vector3(-0.743,0,0.669),Vector3(-0.669,0,0.743),Vector3(-0.588,0,0.809),Vector3(-0.5,0,0.866),Vector3(-0.407,0,0.914),Vector3(-0.309,0,0.951),Vector3(-0.208,0,0.978),Vector3(-0.105,0,0.995),Vector3(0,0,1),Vector3(0.105,0,0.995),Vector3(0.208,0,0.978),Vector3(0.309,0,0.951),Vector3(0.407,0,0.914),Vector3(0.5,0,0.866),Vector3(0.588,0,0.809),Vector3(0.669,0,0.743),Vector3(0.743,0,0.669),Vector3(0.809,0,0.588),Vector3(0.866,0,0.5),Vector3(0.914,0,0.407),Vector3(0.951,0,0.309),Vector3(0.978,0,0.208),Vector3(0.995,0,0.104),Vector3(1,0,0)]);
+{ .SetCoord }
+IndexedLineSet557.Coord := Coordinate558;
+{ .SetGeometry }
+Shape554.Geometry := IndexedLineSet557;
 { .AddChild }
 Transform553.AddChildren([Shape554]);
 { .AddChildren }
-Group552.AddChildren([Transform553]);
-Transform555 := TTransformNode.Create;
-Transform555.Scale := Vector3(1.175,1,1.175);
-Shape556 := TShapeNode.Create;
-Appearance557 := TAppearanceNode.Create;
-Material558 := TMaterialNode.Create;
-Material558.AmbientIntensity := 0.9;
-Material558.DiffuseColor := Vector3(0.9,0,0.7);
-Material558.EmissiveColor := Vector3(0.425,0.486,1);
+Group550.AddChildren([Transform553]);
+Transform559 := TTransformNode.Create;
+Transform559.Scale := Vector3(0.5,1,0.5);
+Shape560 := TShapeNode.Create;
+Appearance561 := TAppearanceNode.Create;
+Material562 := TMaterialNode.Create;
+Material562.DiffuseColor := Vector3(0.9,0,0.7);
+Material562.EmissiveColor := Vector3(0.424956,0.483976,1);
 { .SetMaterial }
-Appearance557.Material := Material558;
+Appearance561.Material := Material562;
 { .SetAppearance }
-Shape556.Appearance := Appearance557;
-IndexedLineSet559 := TIndexedLineSetNode.Create;
-IndexedLineSet559.SetCoordIndex([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1]);
-Coordinate560 := TCoordinateNode.Create;
-Coordinate560.SetPoint([Vector3(1,0,0),Vector3(0.995,0,-0.105),Vector3(0.979,0,-0.208),Vector3(0.951,0,-0.309),Vector3(0.914,0,-0.407),Vector3(0.866,0,-0.5),Vector3(0.809,0,-0.588),Vector3(0.743,0,-0.669),Vector3(0.669,0,-0.743),Vector3(0.588,0,-0.809),Vector3(0.5,0,-0.866),Vector3(0.407,0,-0.914),Vector3(0.309,0,-0.951),Vector3(0.208,0,-0.978),Vector3(0.105,0,-0.995),Vector3(0,0,-1),Vector3(-0.105,0,-0.994522),Vector3(-0.208,0,-0.978),Vector3(-0.309,0,-0.951),Vector3(-0.407,0,-0.914),Vector3(-0.5,0,-0.866),Vector3(-0.588,0,-0.809),Vector3(-0.669,0,-0.743),Vector3(-0.743,0,-0.669),Vector3(-0.809,0,-0.588),Vector3(-0.866,0,-0.5),Vector3(-0.914,0,-0.407),Vector3(-0.951,0,-0.309),Vector3(-0.978,0,-0.208),Vector3(-0.995,0,-0.105),Vector3(-1,0,0),Vector3(-0.995,0,0.105),Vector3(-0.978,0,0.208),Vector3(-0.951,0,0.309),Vector3(-0.914,0,0.407),Vector3(-0.866,0,0.5),Vector3(-0.809,0,0.588),Vector3(-0.743,0,0.669),Vector3(-0.669,0,0.743),Vector3(-0.588,0,0.809),Vector3(-0.5,0,0.866),Vector3(-0.407,0,0.914),Vector3(-0.309,0,0.951),Vector3(-0.208,0,0.978),Vector3(-0.105,0,0.995),Vector3(0,0,1),Vector3(0.105,0,0.995),Vector3(0.208,0,0.978),Vector3(0.309,0,0.951),Vector3(0.407,0,0.914),Vector3(0.5,0,0.866),Vector3(0.588,0,0.809),Vector3(0.669,0,0.743),Vector3(0.743,0,0.669),Vector3(0.809,0,0.588),Vector3(0.866,0,0.5),Vector3(0.914,0,0.407),Vector3(0.951,0,0.309),Vector3(0.978,0,0.208),Vector3(0.995,0,0.104),Vector3(1,0,0)]);
-{ .SetCoord }
-IndexedLineSet559.Coord := Coordinate560;
+Shape560.Appearance := Appearance561;
+IndexedLineSet563 := TIndexedLineSetNode.Create;
+IndexedLineSet563 := IndexedLineSet557;
 { .SetGeometry }
-Shape556.Geometry := IndexedLineSet559;
+Shape560.Geometry := IndexedLineSet563;
 { .AddChild }
-Transform555.AddChildren([Shape556]);
+Transform559.AddChildren([Shape560]);
 { .AddChildren }
-Group552.AddChildren([Transform555]);
-Transform561 := TTransformNode.Create;
-Transform561.Scale := Vector3(0.5,1,0.5);
-Shape562 := TShapeNode.Create;
-Appearance563 := TAppearanceNode.Create;
-Material564 := TMaterialNode.Create;
-Material564.DiffuseColor := Vector3(0.9,0,0.7);
-Material564.EmissiveColor := Vector3(0.424956,0.483976,1);
+Group550.AddChildren([Transform559]);
+Transform564 := TTransformNode.Create;
+Transform564.Scale := Vector3(0.25,1,0.25);
+Shape565 := TShapeNode.Create;
+Appearance566 := TAppearanceNode.Create;
+Material567 := TMaterialNode.Create;
+Material567.DiffuseColor := Vector3(0.9,0,0.7);
+Material567.EmissiveColor := Vector3(0.424956,0.483976,1);
 { .SetMaterial }
-Appearance563.Material := Material564;
+Appearance566.Material := Material567;
 { .SetAppearance }
-Shape562.Appearance := Appearance563;
-IndexedLineSet565 := TIndexedLineSetNode.Create;
-IndexedLineSet565 := IndexedLineSet559;
+Shape565.Appearance := Appearance566;
+IndexedLineSet568 := TIndexedLineSetNode.Create;
+IndexedLineSet568 := IndexedLineSet557;
 { .SetGeometry }
-Shape562.Geometry := IndexedLineSet565;
+Shape565.Geometry := IndexedLineSet568;
 { .AddChild }
-Transform561.AddChildren([Shape562]);
+Transform564.AddChildren([Shape565]);
 { .AddChildren }
-Group552.AddChildren([Transform561]);
-Transform566 := TTransformNode.Create;
-Transform566.Scale := Vector3(0.25,1,0.25);
-Shape567 := TShapeNode.Create;
-Appearance568 := TAppearanceNode.Create;
-Material569 := TMaterialNode.Create;
-Material569.DiffuseColor := Vector3(0.9,0,0.7);
-Material569.EmissiveColor := Vector3(0.424956,0.483976,1);
-{ .SetMaterial }
-Appearance568.Material := Material569;
-{ .SetAppearance }
-Shape567.Appearance := Appearance568;
-IndexedLineSet570 := TIndexedLineSetNode.Create;
-IndexedLineSet570 := IndexedLineSet559;
-{ .SetGeometry }
-Shape567.Geometry := IndexedLineSet570;
-{ .AddChild }
-Transform566.AddChildren([Shape567]);
+Group550.AddChildren([Transform564]);
 { .AddChildren }
-Group552.AddChildren([Transform566]);
-{ .AddChildren }
-Group19.AddChildren([Group552]);
+Group19.AddChildren([Group550]);
 { .AddGroup }
 X3D0.AddChildren([Group19]);
 Result := X3D0;

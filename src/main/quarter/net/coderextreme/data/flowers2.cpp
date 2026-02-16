@@ -189,7 +189,9 @@ SoVRMLAppearance30->addChild(*SoMaterial31);
 
 SoShape29->addChild(*SoVRMLAppearance30);
 
-//<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet DEF=\"Orbit\">
+//<Coordinate DEF=\"OrbitCoordinates\"/>
+//</IndexedFaceSet>
 SoIndexedFaceSet* SoIndexedFaceSet36 = new SoIndexedFaceSet();
 SoIndexedFaceSet36->setCcw(false);
 SoIndexedFaceSet36->setConvex(false);

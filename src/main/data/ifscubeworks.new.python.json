@@ -1,0 +1,90 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Interchange",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"ifscubeworks.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"http://coderextreme.net/X3DJSONLD/src/main/data/ifscubeworks.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Template for an Indexed Face Set",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"4 April 2017",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
+        "@name":"license"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "WorldInfo":
+        {
+      {
+        "@title":"ifscubeworks.x3d"
+      }
+    }
+        "Group":
+        {
+            "Shape":
+            {
+                "IndexedFaceSet":
+                {
+      {
+        "@DEF":"IndexedFaceSet",
+        "@colorIndex":"0 0 0 -1 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1",
+        "@coordIndex":"0 0 1 -1 0 1 1 -1 2 2 3 3 -1 0 3 3 0 -1 0 3 2 1 -1 1 2 2 1 -1 1 2 3 0 -1",
+        "@normalIndex":"0 0 1 2 3 4 5",
+        "@normalPerVertex":"false"
+      }
+                    "Color":
+                    {
+    },
+                    "Coordinate":
+                    {
+    },
+                    "Normal":
+                    {
+    },
+                }            }        }    }}

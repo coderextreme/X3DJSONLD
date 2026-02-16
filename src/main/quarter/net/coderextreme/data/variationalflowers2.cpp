@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
-SoSceneManager0->setVersion(QString("4.0"));
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("EnvironmentalEffects"));
@@ -135,7 +135,8 @@ SoTransform* SoTransform19 = new SoTransform();
 SoParticleSystem* SoParticleSystem20 = new SoParticleSystem();
 SoParticleSystem20->setMaxParticles(20);
 SoParticleSystem20->setGeometryType(QString("GEOMETRY"));
-//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
+//* values - array of MFFloats to pass to ComposedShader
+//* variations in values - array of MFFloats to pass to ComposedShader that varies values
 SoVariationPhysicsModel* SoVariationPhysicsModel21 = new SoVariationPhysicsModel();
 SoVariationPhysicsModel21->setValues(QString("2 2 5 5 0 0"));
 SoVariationPhysicsModel21->setVariations(QString("0.2 0.1 0.3 0.3 0.01 0.01"));

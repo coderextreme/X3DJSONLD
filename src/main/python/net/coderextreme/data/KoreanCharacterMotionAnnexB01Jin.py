@@ -121,6 +121,8 @@ HAnimHumanoid24.version = "2.0"
 HAnimJoint25 = x3d.HAnimJoint(DEF="hanim_HumanoidRoot")
 HAnimJoint25.name = "humanoid_root"
 HAnimJoint25.center = [0,30.53,-0.7076]
+HAnimJoint25.ulimit = [0,0,0]
+HAnimJoint25.llimit = [0,0,0]
 HAnimSegment26 = x3d.HAnimSegment(DEF="hanim_sacrum")
 HAnimSegment26.name = "sacrum"
 Transform27 = x3d.Transform()
@@ -160,6 +162,8 @@ HAnimJoint25.children.append(HAnimSegment26)
 HAnimJoint35 = x3d.HAnimJoint(DEF="hanim_sacroiliac")
 HAnimJoint35.name = "sacroiliac"
 HAnimJoint35.center = [0,35.8,-0.7076]
+HAnimJoint35.ulimit = [0,0,0]
+HAnimJoint35.llimit = [0,0,0]
 HAnimSegment36 = x3d.HAnimSegment(DEF="hanim_pelvis")
 HAnimSegment36.name = "pelvis"
 Transform37 = x3d.Transform()
@@ -198,6 +202,8 @@ HAnimJoint35.children.append(HAnimSegment36)
 HAnimJoint45 = x3d.HAnimJoint(DEF="hanim_l_hip")
 HAnimJoint45.name = "l_hip"
 HAnimJoint45.center = [4.207,32.02,-0.8155]
+HAnimJoint45.ulimit = [0,0,0]
+HAnimJoint45.llimit = [0,0,0]
 HAnimSegment46 = x3d.HAnimSegment(DEF="hanim_l_thigh")
 HAnimSegment46.name = "l_thigh"
 Transform47 = x3d.Transform()
@@ -236,6 +242,8 @@ HAnimJoint45.children.append(HAnimSegment46)
 HAnimJoint55 = x3d.HAnimJoint(DEF="hanim_l_knee")
 HAnimJoint55.name = "l_knee"
 HAnimJoint55.center = [4.116,17.26,-0.8639]
+HAnimJoint55.ulimit = [0,0,0]
+HAnimJoint55.llimit = [0,0,0]
 HAnimSegment56 = x3d.HAnimSegment(DEF="hanim_l_calf")
 HAnimSegment56.name = "l_calf"
 Transform57 = x3d.Transform()
@@ -274,6 +282,8 @@ HAnimJoint55.children.append(HAnimSegment56)
 HAnimJoint65 = x3d.HAnimJoint(DEF="hanim_l_talocrural")
 HAnimJoint65.name = "l_talocrural"
 HAnimJoint65.center = [3.854,3.939,-0.7038]
+HAnimJoint65.ulimit = [0,0,0]
+HAnimJoint65.llimit = [0,0,0]
 HAnimSegment66 = x3d.HAnimSegment(DEF="hanim_l_hindfoot")
 HAnimSegment66.name = "l_hindfoot"
 Transform67 = x3d.Transform()
@@ -312,6 +322,8 @@ HAnimJoint65.children.append(HAnimSegment66)
 HAnimJoint75 = x3d.HAnimJoint(DEF="hanim_l_metatarsophalangeal")
 HAnimJoint75.name = "l_metatarsophalangeal"
 HAnimJoint75.center = [3.854,3.64,0.7402]
+HAnimJoint75.ulimit = [0,0,0]
+HAnimJoint75.llimit = [0,0,0]
 HAnimSegment76 = x3d.HAnimSegment(DEF="hanim_l_middistal")
 HAnimSegment76.name = "l_middistal"
 Transform77 = x3d.Transform()
@@ -358,6 +370,8 @@ HAnimJoint35.children.append(HAnimJoint45)
 HAnimJoint85 = x3d.HAnimJoint(DEF="hanim_r_hip")
 HAnimJoint85.name = "r_hip"
 HAnimJoint85.center = [-4.207,32.02,-0.8155]
+HAnimJoint85.ulimit = [0,0,0]
+HAnimJoint85.llimit = [0,0,0]
 HAnimSegment86 = x3d.HAnimSegment(DEF="hanim_r_thigh")
 HAnimSegment86.name = "r_thigh"
 Transform87 = x3d.Transform()
@@ -396,6 +410,8 @@ HAnimJoint85.children.append(HAnimSegment86)
 HAnimJoint95 = x3d.HAnimJoint(DEF="hanim_r_knee")
 HAnimJoint95.name = "r_knee"
 HAnimJoint95.center = [-4.116,17.26,-0.8639]
+HAnimJoint95.ulimit = [0,0,0]
+HAnimJoint95.llimit = [0,0,0]
 HAnimSegment96 = x3d.HAnimSegment(DEF="hanim_r_calf")
 HAnimSegment96.name = "r_calf"
 Transform97 = x3d.Transform()
@@ -434,6 +450,8 @@ HAnimJoint95.children.append(HAnimSegment96)
 HAnimJoint105 = x3d.HAnimJoint(DEF="hanim_r_talocrural")
 HAnimJoint105.name = "r_talocrural"
 HAnimJoint105.center = [-3.854,3.939,-0.7038]
+HAnimJoint105.ulimit = [0,0,0]
+HAnimJoint105.llimit = [0,0,0]
 HAnimSegment106 = x3d.HAnimSegment(DEF="hanim_r_hindfoot")
 HAnimSegment106.name = "r_hindfoot"
 Transform107 = x3d.Transform()
@@ -472,6 +490,8 @@ HAnimJoint105.children.append(HAnimSegment106)
 HAnimJoint115 = x3d.HAnimJoint(DEF="hanim_r_metatarsophalangeal")
 HAnimJoint115.name = "r_metatarsophalangeal"
 HAnimJoint115.center = [-3.854,3.64,0.7402]
+HAnimJoint115.ulimit = [0,0,0]
+HAnimJoint115.llimit = [0,0,0]
 HAnimSegment116 = x3d.HAnimSegment(DEF="hanim_r_middistal")
 HAnimSegment116.name = "r_middistal"
 Transform117 = x3d.Transform()
@@ -518,6 +538,8 @@ HAnimJoint35.children.append(HAnimJoint85)
 HAnimJoint125 = x3d.HAnimJoint(DEF="hanim_vl5")
 HAnimJoint125.name = "vl5"
 HAnimJoint125.center = [0,40.23,-0.8527]
+HAnimJoint125.ulimit = [0,0,0]
+HAnimJoint125.llimit = [0,0,0]
 HAnimSegment126 = x3d.HAnimSegment(DEF="hanim_l5")
 HAnimSegment126.name = "l5"
 Transform127 = x3d.Transform()
@@ -556,6 +578,8 @@ HAnimJoint125.children.append(HAnimSegment126)
 HAnimJoint135 = x3d.HAnimJoint(DEF="hanim_skullbase")
 HAnimJoint135.name = "skullbase"
 HAnimJoint135.center = [0,57.43,-0.6863]
+HAnimJoint135.ulimit = [0,0,0]
+HAnimJoint135.llimit = [0,0,0]
 HAnimSegment136 = x3d.HAnimSegment(DEF="hanim_skull")
 HAnimSegment136.name = "skull"
 Transform137 = x3d.Transform()
@@ -596,6 +620,8 @@ HAnimJoint125.children.append(HAnimJoint135)
 HAnimJoint145 = x3d.HAnimJoint(DEF="hanim_l_shoulder")
 HAnimJoint145.name = "l_shoulder"
 HAnimJoint145.center = [5.975,52,-0.1452]
+HAnimJoint145.ulimit = [0,0,0]
+HAnimJoint145.llimit = [0,0,0]
 HAnimSegment146 = x3d.HAnimSegment(DEF="hanim_l_upperarm")
 HAnimSegment146.name = "l_upperarm"
 Transform147 = x3d.Transform()
@@ -634,6 +660,8 @@ HAnimJoint145.children.append(HAnimSegment146)
 HAnimJoint155 = x3d.HAnimJoint(DEF="hanim_l_elbow")
 HAnimJoint155.name = "l_elbow"
 HAnimJoint155.center = [8.093,40.38,-0.2502]
+HAnimJoint155.ulimit = [0,0,0]
+HAnimJoint155.llimit = [0,0,0]
 HAnimSegment156 = x3d.HAnimSegment(DEF="hanim_l_forearm")
 HAnimSegment156.name = "l_forearm"
 Transform157 = x3d.Transform()
@@ -672,6 +700,8 @@ HAnimJoint155.children.append(HAnimSegment156)
 HAnimJoint165 = x3d.HAnimJoint(DEF="hanim_l_radiocarpal")
 HAnimJoint165.name = "l_radiocarpal"
 HAnimJoint165.center = [7.808,31.46,-0.05849]
+HAnimJoint165.ulimit = [0,0,0]
+HAnimJoint165.llimit = [0,0,0]
 HAnimSegment166 = x3d.HAnimSegment(DEF="hanim_l_hand")
 HAnimSegment166.name = "l_hand"
 Transform167 = x3d.Transform()
@@ -716,6 +746,8 @@ HAnimJoint125.children.append(HAnimJoint145)
 HAnimJoint175 = x3d.HAnimJoint(DEF="hanim_r_shoulder")
 HAnimJoint175.name = "r_shoulder"
 HAnimJoint175.center = [-5.975,52,-0.1452]
+HAnimJoint175.ulimit = [0,0,0]
+HAnimJoint175.llimit = [0,0,0]
 HAnimSegment176 = x3d.HAnimSegment(DEF="hanim_r_upperarm")
 HAnimSegment176.name = "r_upperarm"
 Transform177 = x3d.Transform()
@@ -754,6 +786,8 @@ HAnimJoint175.children.append(HAnimSegment176)
 HAnimJoint185 = x3d.HAnimJoint(DEF="hanim_r_elbow")
 HAnimJoint185.name = "r_elbow"
 HAnimJoint185.center = [-8.093,40.38,-0.2502]
+HAnimJoint185.ulimit = [0,0,0]
+HAnimJoint185.llimit = [0,0,0]
 HAnimSegment186 = x3d.HAnimSegment(DEF="hanim_r_forearm")
 HAnimSegment186.name = "r_forearm"
 Transform187 = x3d.Transform()
@@ -792,6 +826,8 @@ HAnimJoint185.children.append(HAnimSegment186)
 HAnimJoint195 = x3d.HAnimJoint(DEF="hanim_r_radiocarpal")
 HAnimJoint195.name = "r_radiocarpal"
 HAnimJoint195.center = [-7.808,31.46,-0.05849]
+HAnimJoint195.ulimit = [0,0,0]
+HAnimJoint195.llimit = [0,0,0]
 HAnimSegment196 = x3d.HAnimSegment(DEF="hanim_r_hand")
 HAnimSegment196.name = "r_hand"
 Transform197 = x3d.Transform()

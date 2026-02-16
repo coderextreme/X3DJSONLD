@@ -379,7 +379,10 @@ Script71YYY.field = new X3D.MFNode();
 Script73.getField("add_node").setValue("false");
 Script71YYY.field = new X3D.MFNode();
 
-//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>
+//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">
+//<Transform USE=\"HoldsContent\"/>
+//</field>
 
 Script71.setSourceCode(`ecmascript:\n"+
 "	function add_node(value) {\n"+

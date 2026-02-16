@@ -29,7 +29,7 @@ X3D:
             ],
             meta: [
                 name: "modified"
-                content: "14 October 2023"
+                content: "29 October 2025"
             ],
             meta: [
                 name: "description"
@@ -41,7 +41,7 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
+                content: "../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
             ],
             meta: [
                 name: "reference"
@@ -61,7 +61,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
+                content: "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
             ],
             meta: [
                 name: "generator"
@@ -69,11 +69,11 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "Gnu Image Manipulation Program, https://www.gimp.org"
+                content: "Gnu Image Manipulation Program, http://www.gimp.org"
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
             ],
             meta: [
                 name: "license"

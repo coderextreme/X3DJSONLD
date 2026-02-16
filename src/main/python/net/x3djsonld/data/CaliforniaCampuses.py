@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -61,7 +57,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       Comment(' <Inline load=\'false\' url=\'"http://mmog.ern.nps.edu/California/California.x3d"\'/> '),
       Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d"\'/> '),
       Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d"\'/> '),
-      Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d"\'/> '),],),
+      Comment(' <Inline load=\'false\' url=\'"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d"\'/> ')
+      ),
     NavigationInfo(transitionType=["ANIMATE"]),
     Group(DEF='PlacemarkGroup',
       children=[
@@ -204,9 +201,9 @@ newModel=X3D(profile='Immersive',version='4.0',
     ProtoInstance(DEF='ExampleViewPositionOrientation',name='ViewPositionOrientation',
       fieldValue=[
       fieldValue(name='enabled',value=False)]),
-    Comment(' ==================== '),],])
+    Comment(' ==================== ')
+    )
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

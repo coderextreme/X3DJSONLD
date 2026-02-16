@@ -628,7 +628,10 @@ x3D0 = X3D.new
                 .setValue("false")
                 .setType("SFBool")
             )
-          .addComments(CommentsBlock.new("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
+          .addComments(CommentsBlock.new("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>"))
+          .addComments(CommentsBlock.new("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"))
+          .addComments(CommentsBlock.new("<Transform USE=\"HoldsContent\"/>"))
+          .addComments(CommentsBlock.new("</field>"))
       .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+

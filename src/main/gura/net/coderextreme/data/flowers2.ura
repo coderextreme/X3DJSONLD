@@ -127,7 +127,9 @@ X3D:
                                                 ]
                                             ]
                                         ],
-#<IndexedFaceSet DEF="Orbit"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet>
+#<IndexedFaceSet DEF="Orbit">
+#<Coordinate DEF="OrbitCoordinates"/>
+#</IndexedFaceSet>
                                         setGeometry: [
                                             IndexedFaceSet: [
                                                 ccw: false

@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
-SoSceneManager0->setVersion(QString("4.0"));
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("Scripting"));
@@ -129,7 +129,8 @@ SoLayerSet* SoLayerSet18 = new SoLayerSet();
 SoLayerSet18->setActiveLayer(1);
 SoLayerSet18->setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 SoLayer* SoLayer19 = new SoLayer();
 SoLayer19->setPickable(true);
 SoLayer19->setObjectType(new QString[]{QString("ALL")}, 1);
@@ -304,7 +305,9 @@ SoSphere* SoSphere59 = new SoSphere();
 SoSphere59->setRadius(5);
 SoShape58->setGeometry(*SoSphere59);
 
-//<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">
+//<Coordinate DEF=\"OrbitCoordinates\"/>
+//</IndexedFaceSet>
 SoVRMLAppearance* SoVRMLAppearance60 = new SoVRMLAppearance();
 SoMaterial* SoMaterial61 = new SoMaterial();
 SoMaterial61->setDiffuseColor(new float[]{0.7,0.7,0.7});
@@ -419,7 +422,9 @@ Sofield80->setAccessType(QString("inputOutput"));
 Sofield80->setValue(QString("0"));
 SoComposedShader69->addChild(*Sofield80);
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"/>
+//</field>
 SoShaderPart* SoShaderPart81 = new SoShaderPart();
 SoShaderPart81->setType(QString("VERTEX"));
 SoIS* SoIS82 = new SoIS();
@@ -446,7 +451,29 @@ SoComposedShader69->setParts(*SoShaderPart84);
 
 SoVRMLAppearance60->addChild(*SoComposedShader69);
 
-//<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>
+//<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">
+//<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
+//<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+//<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<ShaderPart type='VERTEX'>
+//<IS>
+//<connect nodeField=\"url\" protoField=\"vertex\"/>
+//</IS>
+//</ShaderPart>
+//<ShaderPart type='FRAGMENT'>
+//<IS>
+//<connect nodeField=\"url\" protoField=\"fragment\"/>
+//</IS>
+//</ShaderPart>
+//</ComposedShader>
 SoShape58->addChild(*SoVRMLAppearance60);
 
 SoTransform57->addChild(*SoShape58);
@@ -455,7 +482,18 @@ SoTransform55->addChild(*SoTransform57);
 
 SoLayer19->addChild(*SoTransform55);
 
-//<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>
+//<Script DEF=\"OrbitScript\">
+//<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>
+//<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>
+//<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>
+//<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>
 //DIS multiuser facilities
 SoDISEntityManager* SoDISEntityManager87 = new SoDISEntityManager();
 SoDISEntityManager87->setDEF(QString("EntityManager"));

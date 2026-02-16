@@ -1,6 +1,6 @@
 X3D:
     profile: "Full"
-    version: "4.0"
+    version: "4.1"
     setHead: [
         head: [
 #<component name='Shape' level='4'></component>
@@ -122,7 +122,9 @@ X3D:
                 content: "license.html"
             ]
         ]
-    ]#"The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot"
+    ]#"The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
+#It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+#open for their "discussion about the teapot"
     setScene: [
         Scene: [
 #basic nodes, which might be present in any scene
@@ -148,7 +150,8 @@ X3D:
                 activeLayer: 1
                 order: [1, 2]
 #the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
-#the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+#the second layer contains the sliders that are moved with the user's display
+#like a HUD (heads up display)
                 Layer: [
                     pickable: true
                     objectType: ["ALL"]
@@ -433,7 +436,9 @@ X3D:
                                                 url: ["../shaders/freewrl.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"]
                                                 type: "FRAGMENT"
                                             ],
-#TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart> <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
+#TO CONVERT TO A SPHERE
+#<ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>
+#<ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
                                         ]
                                     ]
                                 ]

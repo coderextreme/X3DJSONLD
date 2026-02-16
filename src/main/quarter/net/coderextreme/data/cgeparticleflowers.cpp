@@ -264,7 +264,9 @@ Sofield45->setAccessType(QString("inputOutput"));
 Sofield45->setValue(QString("0"));
 SoComposedShader34->addChild(*Sofield45);
 
-//<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
+//<field name='cube' type='SFNode' accessType=\"initializeOnly\">
+//<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+//</field>
 SoShaderPart* SoShaderPart46 = new SoShaderPart();
 SoShaderPart46->setUrl(new QString[]{QString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")}, 1);
 SoShaderPart46->setType(QString("VERTEX"));

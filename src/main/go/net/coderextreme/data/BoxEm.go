@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -92,37 +92,46 @@ func main() {
                 Content: stringPtr("manual"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"),
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/box.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("3 boxes"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.NavigationInfo{
+                    Type: x3d.MFString{"EXAMINE"},
+                },
+                &x3d.Viewpoint{
+                    Description: stringPtr("Cubes on Fire"),
+                    Position: &x3d.SFVec3f{0.0, 0.0, 12.0},
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("anyShape"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("xtranslation"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("xtranslation"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("myShape"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFNode"),
-                            Name: stringPtr("myShape"),
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
-                                    CoreX3DNode: x3d.CoreX3DNode{
-                                        DEF: stringPtr("_1"),
+                                    Geometry: &x3d.Sphere{
                                     },
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                         },
-                                    },
-                                    Geometry: &x3d.Sphere{
                                     },
                                 },
                             },
@@ -155,25 +164,23 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("ytranslation"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("ytranslation"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("myShape"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFNode"),
-                            Name: stringPtr("myShape"),
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
-                                    CoreX3DNode: x3d.CoreX3DNode{
-                                        DEF: stringPtr("_2"),
+                                    Geometry: &x3d.Cylinder{
                                     },
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                         },
-                                    },
-                                    Geometry: &x3d.Cylinder{
                                     },
                                 },
                             },
@@ -201,6 +208,12 @@ func main() {
                                                     ProtoField: stringPtr("myShape"),
                                             },
                                             },
+                                        },
+                                        FieldValue: []x3d.X3DNode{
+                                            &x3d.FieldValue{
+                                                Name: stringPtr("xtranslation"),
+                                                Value: stringPtr("0 0 0"),
+                                        },
                                         },
                                     },
                                     &x3d.ProtoInstance{
@@ -242,36 +255,33 @@ func main() {
                         },
                     },
                 },
-                &x3d.NavigationInfo{
-                    Type: x3d.MFString{"EXAMINE"},
-                },
-                &x3d.Viewpoint{
-                    Description: stringPtr("Cubes on Fire"),
-                    Position: &x3d.SFVec3f{0.0, 0.0, 12.0},
-                },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("three"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("threepi"),
                     },
-                    Name: stringPtr("three"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
-                            Name: stringPtr("myShape"),
-                            Children: []x3d.X3DNode{
-                                &x3d.Shape{
-                                    CoreX3DNode: x3d.CoreX3DNode{
-                                        DEF: stringPtr("box"),
-                                    },
-                                    Appearance: &x3d.Appearance{
-                                        Material: &x3d.Material{
-                                            DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
-                                        },
-                                    },
-                                    Geometry: &x3d.Box{
-                                        Size: &x3d.SFVec3f{1.0, 1.0, 1.0},
+                            Name: stringPtr("ytranslation"),
+                            Value: stringPtr("0 0 0"),
+                    },
+                    &x3d.FieldValue{
+                        Name: stringPtr("myShape"),
+                        Children: []x3d.X3DNode{
+                            &x3d.Shape{
+                                CoreX3DNode: x3d.CoreX3DNode{
+                                    DEF: stringPtr("box"),
+                                },
+                                Geometry: &x3d.Box{
+                                    Size: &x3d.SFVec3f{1.0, 1.0, 1.0},
+                                },
+                                Appearance: &x3d.Appearance{
+                                    Material: &x3d.Material{
+                                        DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
                                     },
                                 },
                             },
+                        },
                     },
                     },
                 },
@@ -303,13 +313,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/BoxEm.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -320,7 +330,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

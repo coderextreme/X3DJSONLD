@@ -7,6 +7,10 @@ var X3D0 =  X3D(
       version_ : SFString('4.0'),
       head_ : 
         head(
+          component_ : 
+            component(
+              name_ : SFString('HAnim'),
+              level_ : 2),
           meta_ : [
             meta(
               name_ : SFString('title'),

@@ -197,14 +197,12 @@ public class JinScaledV2L1LOA4Sites07f
               .setCoord(new Coordinate().setPoint(getCoordinate_8_53_point()))
               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398})))))
           .addChild(new Group("sacrum_Sites")
-            .addComments(new String[] {" ",
-"None ",
-"(example site and site marker code)",
-"<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' ",
-"  translation='sitename_ptTranslation'>",
-"  <TouchSensor description='HAnimSite sitename_pt nnfromtable'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"})))
+            .addComments(" None ")
+            .addComments(" (example site and site marker code) ")
+            .addComments(" <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> ")
+            .addComments(" <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> ")
+            .addComments(" <Shape USE='HAnimSiteShape'/> ")
+            .addComments(" </HAnimSite> ")))
         .addChild(new HAnimJoint("hanim_sacroiliac").setName("sacroiliac").setCenter(0.0,0.707,-0.016).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
           .addChild(new HAnimSegment("hanim_pelvis").setName("pelvis")
             .addChild(new Shape("pelvis_Shape")
@@ -215,17 +213,16 @@ public class JinScaledV2L1LOA4Sites07f
                 .setCoord(new Coordinate().setPoint(getCoordinate_9_62_point()))
                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398})))))
             .addChild(new Group("pelvis_Sites")
-              .addComments(new String[] {" ",
-"(r_iliocristale_pt  '-0.1525 1.0628 0.0035) ",
-"(r_trochanterion_pt  -0.1689 0.8419 0.0352) ",
-"(l_iliocristale_pt  0.1612 1.0537 0.0008)",
-"(l_trochanterion_pt  0.1677 0.8336 0.0303) ",
-"(r_asis_pt  -0.0887 1.0021 0.1112) ",
-"(l_asis_pt  0.0774 1.0190 -0.1151) ",
-"(r_psis_pt  -0.0716 1.0190 -0.1138)",
-"(l_psis_pt  0.0774 1.0190 -0.1151) ",
-"(crotch_pt  0.0034 0.8266 0.0257) ",
-"(buttocks_standing_wall_contact_point x y z)"})
+              .addComments(" (r_iliocristale_pt  '-0.1525 1.0628 0.0035) ")
+              .addComments(" (r_trochanterion_pt  -0.1689 0.8419 0.0352) ")
+              .addComments(" (l_iliocristale_pt  0.1612 1.0537 0.0008) ")
+              .addComments(" (l_trochanterion_pt  0.1677 0.8336 0.0303) ")
+              .addComments(" (r_asis_pt  -0.0887 1.0021 0.1112) ")
+              .addComments(" (l_asis_pt  0.0774 1.0190 -0.1151) ")
+              .addComments(" (r_psis_pt  -0.0716 1.0190 -0.1138) ")
+              .addComments(" (l_psis_pt  0.0774 1.0190 -0.1151) ")
+              .addComments(" (crotch_pt  0.0034 0.8266 0.0257) ")
+              .addComments(" (buttocks_standing_wall_contact_point x y z) ")
               .addChild(new HAnimSite("hanim_r_iliocristale_pt").setName("r_iliocristale_pt").setTranslation(-0.13,0.92,0.0035)
                 .addChild(new TouchSensor().setDescription("HAnimSite r_iliocristale_pt 36"))
                 .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -266,11 +263,10 @@ public class JinScaledV2L1LOA4Sites07f
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_101_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581})))))
               .addChild(new Group("l_thigh_Sites")
-                .addComments(new String[] {"  ",
-"(l_knee_crease_pt  0.0993 0.4881 -0.0309) ",
-"(l_femoral_medial_epicondyles_pt  0.0398 0.4946 0.0303)",
-"(l_femoral_lateral_epicondyles  0.1598 0.4967 0.0297)",
-"(l_suprapatella_pt  x y z) "})
+                .addComments(" (l_knee_crease_pt  0.0993 0.4881 -0.0309) ")
+                .addComments(" (l_femoral_medial_epicondyles_pt  0.0398 0.4946 0.0303) ")
+                .addComments(" (l_femoral_lateral_epicondyles  0.1598 0.4967 0.0297) ")
+                .addComments(" (l_suprapatella_pt  x y z) ")
                 .addChild(new HAnimSite("hanim_l_knee_crease_pt").setName("l_knee_crease_pt").setTranslation(0.09,0.41,-0.056)
                   .addChild(new TouchSensor().setDescription("HAnimSite l_knee_crease_pt 90"))
                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -293,10 +289,9 @@ public class JinScaledV2L1LOA4Sites07f
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_122_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9632,0.3942,0.9402,0.3943,0.8884,0.3943,0.8469,0.3942,0.8469,0.3941,0.8884,0.3941,0.9402,0.3941,0.9325,0.3742,0.9208,0.3742,0.8947,0.3742,0.8737,0.3742,0.8737,0.3741,0.8947,0.3741,0.9208,0.3741})))))
                 .addChild(new Group("l_calf_Sites")
-                  .addComments(new String[] {" ",
-"(l_tibiale_pt  x y z)",
-"(l_medial_malleolus_pt  0.0890 0.0716 -0.0881)",
-"(l_lateral_malleolus_pt  0.1308 0.0597 -0.1032)"})
+                  .addComments(" (l_tibiale_pt  x y z) ")
+                  .addComments(" (l_medial_malleolus_pt  0.0890 0.0716 -0.0881) ")
+                  .addComments(" (l_lateral_malleolus_pt  0.1308 0.0597 -0.1032) ")
                   .addChild(new HAnimSite("hanim_l_tibiale_pt").setName("l_tibiale_pt").setTranslation(0.09,0.31,0.038)
                     .addChild(new TouchSensor().setDescription("HAnimSite l_tibiale_pt 47"))
                     .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -316,9 +311,8 @@ public class JinScaledV2L1LOA4Sites07f
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_140_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.227,0.1089,0.2217,0.1285,0.2533,0.0835,0.273,0.1232,0.2824,0.0941,0.2433,0.1632,0.2685,0.0797,0.2165,0.148,0.2759,0.0832,0.2428,0.156,0.2563,0.142,0.2584,0.1419,0.2431,0.1588,0.2715,0.1062,0.2761,0.1011,0.2698,0.09,0.2775,0.078,0.2629,0.0863,0.248,0.0935,0.2498,0.0895,0.2702,0.0748,0.2296,0.1148,0.2397,0.101,0.2249,0.1266,0.2295,0.1126,0.2207,0.1406,0.2252,0.1591,0.2245,0.1634,0.2202,0.1406,0.2407,0.0951,0.2662,0.1249,0.2599,0.1313,0.2623,0.1418,0.2691,0.1232,0.2231,0.166,0.2217,0.1285,0.227,0.1089,0.2407,0.0951,0.2533,0.0835,0.2685,0.0797,0.2759,0.0832,0.2824,0.0941,0.273,0.1232,0.2623,0.1418,0.2433,0.1632,0.2231,0.166,0.2165,0.148})))))
                   .addChild(new Group("l_talus_Sites")
-                    .addComments(new String[] {" ",
-"(l_sphyrion_pt  0.0890 0.0575 -0.0943)",
-"(l_calcaneus_posterior_pt  0.0974 0.0259 -0.1171)"})
+                    .addComments(" (l_sphyrion_pt  0.0890 0.0575 -0.0943) ")
+                    .addComments(" (l_calcaneus_posterior_pt  0.0974 0.0259 -0.1171) ")
                     .addChild(new HAnimSite("hanim_l_sphyrion_pt").setName("l_sphyrion_pt").setTranslation(0.054,0.065,-0.02)
                       .addChild(new TouchSensor().setDescription("HAnimSite l_sphyrion_pt 50"))
                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -335,8 +329,7 @@ public class JinScaledV2L1LOA4Sites07f
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_155_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2314,0.0879,0.21,0.1541,0.2053,0.1595,0.2104,0.1443,0.2271,0.0958,0.2224,0.1067,0.2032,0.149,0.2132,0.1285,0.2197,0.1123,0.2163,0.1174,0.227,0.1089,0.2165,0.148,0.2217,0.1285,0.2407,0.0951,0.2178,0.1526,0.2363,0.0929,0.2213,0.1179,0.2171,0.1588,0.2129,0.1643,0.21,0.1541,0.2053,0.1595,0.2032,0.149,0.2132,0.1285,0.2224,0.1067,0.2314,0.0879,0.2271,0.0958,0.2197,0.1123,0.2163,0.1174,0.2104,0.1443,0.227,0.1089,0.2217,0.1285,0.2165,0.148,0.2129,0.1643,0.2171,0.1588,0.2178,0.1526,0.2213,0.1179,0.2363,0.0929,0.2407,0.0951,0.2314,0.0879,0.2407,0.0951,0.2407,0.0951,0.2363,0.0929,0.2363,0.0929,0.2271,0.0958,0.2271,0.0958,0.2314,0.0879})))))
                     .addChild(new Group("l_navicular_Sites")
-                      .addComments(new String[] {" ",
-"None "})))
+                      .addComments(" None ")))
                   .addChild(new HAnimJoint("hanim_l_cuneonavicular_1").setName("l_cuneonavicular_1").setCenter(0.067365,0.032107502,0.018391501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_1").setName("l_cuneiform_1")
                       .addChild(new Shape("l_cuneiform_1_Shape")
@@ -347,8 +340,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.06738,0.007155,0.02796,0.0614,0.014805002,0.0285525,0.060390003,0.0377505,0.0273105,0.0741555,0.052677,0.0291915,0.074088,0.0040500015,0.02895075,0.0568935,0.036128253,0.042624,0.060585752,0.0072000013,0.0433215,0.05570775,0.015185252,0.0417465,0.07285275,0.044581503,0.045099,0.072911255,0.0039150007,0.045414,0.062847,0.013655252,0.01451475,0.05983875,0.036999002,0.014085,0.0661185,0.0054900018,0.017685,0.063081004,0.051887255,0.0165015,0.07564725,0.060592502,0.021015,0.07521075,0.0036225005,0.021168001,0.07998075,0.0503325,0.028161,0.08078175,0.053957254,0.02443275,0.080397,0.0065925024,0.02455425,0.0797265,0.0068625016,0.02949525,0.07875,0.006750002,0.0431865,0.078689255,0.042828754,0.042894002,0.061911,0.010012502,0.051466502,0.057933003,0.01576575,0.0500715,0.058986,0.032328002,0.050904002,0.072972,0.03885525,0.053244002,0.07630425,0.037944004,0.0516465,0.0763605,0.009157502,0.051894,0.072567,0.0074925018,0.0535365})))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2027,0.1355,0.2132,0.1171,0.1958,0.1447,0.1899,0.1499,0.2047,0.1286,0.1825,0.1473,0.1858,0.1369,0.1864,0.1452,0.1953,0.1244,0.2059,0.1148,0.21,0.1541,0.2053,0.1595,0.2104,0.1443,0.2032,0.149,0.2132,0.1285,0.2163,0.1174,0.2047,0.1286,0.2132,0.1285,0.2163,0.1174,0.2132,0.1171,0.2059,0.1148,0.1953,0.1244,0.1858,0.1369,0.1864,0.1452,0.1825,0.1473,0.1953,0.1244,0.1953,0.1244,0.2059,0.1148,0.2059,0.1148})))))
                       .addChild(new Group("l_cuneiform_1_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_l_tarsometatarsal_1").setName("l_tarsometatarsal_1").setCenter(0.06462,0.023242502,0.04419).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_1").setName("l_metatarsal_1")
                         .addChild(new Shape("l_metatarsal_1_Shape")
@@ -359,8 +351,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_173_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.177,0.1457,0.1567,0.1378,0.1506,0.1431,0.1539,0.1386,0.1751,0.1447,0.1523,0.1336,0.1493,0.1348,0.1463,0.1377,0.1689,0.1382,0.1638,0.1444,0.1645,0.1416,0.1607,0.138,0.1731,0.1071,0.1859,0.1202,0.175,0.1048,0.1985,0.1126,0.1682,0.1025,0.1699,0.1017,0.1795,0.1136,0.1825,0.1473,0.1858,0.1369,0.1864,0.1452,0.1953,0.1244,0.2059,0.1148,0.1795,0.1136,0.1859,0.1202,0.1953,0.1244,0.2059,0.1148,0.1985,0.1126,0.175,0.1048,0.1699,0.1017,0.1682,0.1025,0.1731,0.1071,0.1523,0.1336,0.1463,0.1377,0.1493,0.1348,0.1682,0.1025,0.1682,0.1025,0.1699,0.1017,0.1699,0.1017,0.1864,0.1452,0.1858,0.1369,0.2059,0.1148,0.2059,0.1148,0.1953,0.1244,0.1953,0.1244,0.1825,0.1473})))))
                         .addChild(new Group("l_metatarsal_1_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_1").setName("l_metatarsophalangeal_1").setCenter(0.0621225,0.014424751,0.0936225).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_1").setName("l_tarsal_proximal_phalanx_1")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_1_Shape")
@@ -371,8 +362,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_182_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.148,0.1294,0.142,0.1322,0.1446,0.131,0.1613,0.0957,0.1341,0.1263,0.1554,0.0919,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889,0.1392,0.1292,0.16,0.0958,0.1443,0.128,0.1415,0.1284,0.1616,0.0962,0.1346,0.0953,0.1273,0.0961,0.126,0.0891,0.1339,0.0889,0.1175,0.0992,0.228,0.0809,0.2186,0.0857,0.2172,0.0848,0.2097,0.0859,0.2098,0.0901,0.2285,0.0738,0.1152,0.1058,0.1523,0.1336,0.1493,0.1348,0.1463,0.1377,0.1682,0.1025,0.1699,0.1017,0.2293,0.0837,0.1648,0.0986,0.112,0.093,0.1632,0.098,0.113,0.0993,0.2302,0.0796,0.1153,0.1053,0.2293,0.0736,0.1463,0.1377,0.1523,0.1336,0.1699,0.1017,0.1682,0.1025,0.1493,0.1348,0.1699,0.1017,0.1648,0.0986,0.2302,0.0796,0.2293,0.0736,0.113,0.0993,0.112,0.093,0.1682,0.1025,0.1341,0.1263,0.1554,0.0919,0.1559,0.0889,0.1571,0.0927,0.1363,0.1268,0.1317,0.1272})))))
                           .addChild(new Group("l_tarsal_proximal_phalanx_1_Sites")
-                            .addComments(new String[] {" ",
-"(l_metatarsal_phalanx_1_pt  0.0816 0.0232 0.0106)"})
+                            .addComments(" (l_metatarsal_phalanx_1_pt  0.0816 0.0232 0.0106) ")
                             .addChild(new HAnimSite("hanim_l_metatarsal_phalanx_1_pt").setName("l_metatarsal_phalanx_1_pt").setTranslation(0.062,0.012,0.1)
                               .addChild(new TouchSensor().setDescription("HAnimSite l_metatarsal_phalanx_1_pt 55"))
                               .addChild(new Shape().setUSE("HAnimSiteShapeB")))))
@@ -386,8 +376,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0698625,0.018261,0.13208626,0.05414625,0.018553501,0.132561,0.0542925,0.01017225,0.13577175,0.05443425,0.0033029998,0.13153726,0.0696375,0.0033029998,0.13094775,0.070056,0.01017225,0.1353735,0.07279425,0.020025,0.12442725,0.0505935,0.020385,0.124416,0.049365,0.0111105,0.12528001,0.050811753,0.0021914996,0.124276504,0.07271325,0.0022252498,0.124544255,0.0746505,0.0083294995,0.12531151,0.07353675,0.02205,0.11549701,0.0503415,0.02240325,0.115803,0.0490275,0.011673,0.11603025,0.05082525,0.0018697499,0.11512125,0.07379775,0.0018697499,0.115179755,0.0752175,0.011412,0.1157805,0.070902,0.019165501,0.109989,0.05298525,0.01943775,0.11025225,0.05206275,0.0118755,0.11055151,0.05331825,0.00501525,0.109719,0.071145,0.0050129998,0.109818004,0.0721125,0.0115065,0.11034901})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1287,0.113,0.1423,0.0921,0.1396,0.0889,0.1257,0.1107,0.1415,0.0903,0.1274,0.1123,0.1297,0.1214,0.15,0.0896,0.1273,0.1223,0.1313,0.1227,0.1521,0.0901,0.1498,0.0859,0.0527,0.151,0.0282,0.1325,0.0446,0.0894,0.0746,0.0899,0.1016,0.0977,0.1554,0.0919,0.0779,0.162,0.1341,0.1263,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889,0.1554,0.0919,0.0779,0.162,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889})))))
                             .addChild(new Group("l_tarsal_distal_phalanx_1_Sites")
-                              .addComments(new String[] {" ",
-"(l_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) "})
+                              .addComments(" (l_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) ")
                               .addChild(new HAnimSite("hanim_l_tarsal_distal_phalanx_1_tip").setName("l_tarsal_distal_phalanx_1_tip").setTranslation(0.062,0.012,0.134)
                                 .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_1_tip 111"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -401,8 +390,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(getCoordinate_14_210_point()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2179,0.1044,0.2186,0.1086,0.2128,0.1035,0.2098,0.0996,0.2047,0.1286,0.2132,0.1171,0.1953,0.1244,0.2059,0.1148,0.2224,0.1067,0.2132,0.1285,0.2197,0.1123,0.2163,0.1174,0.2132,0.1285,0.2047,0.1286,0.1953,0.1244,0.1953,0.1244,0.2132,0.1171,0.2163,0.1174,0.2098,0.0996,0.2179,0.1044,0.2224,0.1067,0.2224,0.1067,0.2186,0.1086,0.2128,0.1035,0.1953,0.1244,0.2098,0.0996,0.2098,0.0996,0.2128,0.1035,0.2098,0.0996,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.2224,0.1067,0.2132,0.1285,0.2132,0.1285,0.2163,0.1174,0.2132,0.1285,0.2224,0.1067,0.2224,0.1067,0.2224,0.1067})))))
                       .addChild(new Group("l_cuneiform_2_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_l_tarsometatarsal_2").setName("l_tarsometatarsal_2").setCenter(0.08019,0.0261,0.041062504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_2").setName("l_metatarsal_2")
                         .addChild(new Shape("l_metatarsal_2_Shape")
@@ -413,8 +401,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_219_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.175,0.1048,0.1833,0.0898,0.1856,0.0872,0.1731,0.1071,0.1985,0.1126,0.2017,0.0948,0.1859,0.1202,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.1699,0.1017,0.1937,0.091,0.1795,0.1136,0.2068,0.0986,0.2128,0.1035,0.2098,0.0996,0.1953,0.1244,0.2059,0.1148,0.1795,0.1136,0.1859,0.1202,0.1731,0.1071,0.2017,0.0948,0.1859,0.1202,0.1795,0.1136,0.1731,0.1071,0.1682,0.1025,0.1682,0.1025,0.1731,0.1071,0.1795,0.1136,0.1859,0.1202,0.1953,0.1244,0.1953,0.1244,0.1856,0.0872,0.1937,0.091,0.2017,0.0948,0.2098,0.0996,0.2098,0.0996,0.2017,0.0948,0.1856,0.0872,0.1811,0.0824,0.1811,0.0824,0.1811,0.0824,0.1682,0.1025,0.1682,0.1025,0.1682,0.1025,0.1682,0.1025,0.1811,0.0824,0.1811,0.0824,0.1811,0.0824,0.2098,0.0996,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.2098,0.0996,0.2098,0.0996,0.2098,0.0996})))))
                         .addChild(new Group("l_metatarsal_2_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_2").setName("l_metatarsophalangeal_2").setCenter(0.08253,0.014976,0.097830005).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_2").setName("l_tarsal_proximal_phalanx_2")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_2_Shape")
@@ -425,8 +412,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_228_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2327,0.0796,0.2439,0.0803,0.2062,0.05,0.2147,0.0491,0.2302,0.0796,0.2205,0.0532,0.2301,0.0734,0.2486,0.0743,0.2013,0.0552,0.2187,0.0481,0.221,0.0541,0.2293,0.0736,0.1746,0.075,0.1709,0.0678,0.1706,0.0686,0.1745,0.076,0.1824,0.0523,0.1886,0.0572,0.183,0.0511,0.1834,0.0508,0.1882,0.0556,0.1885,0.0566,0.1716,0.0676,0.1748,0.0736,0.2444,0.0847,0.2027,0.042,0.2022,0.0485,0.2464,0.0799,0.2486,0.0741,0.2011,0.0554,0.2293,0.0837,0.2177,0.0418,0.1769,0.0796,0.1648,0.0986,0.1632,0.098,0.1766,0.0777,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.1699,0.1017,0.1699,0.1017,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.2022,0.0485,0.2027,0.042,0.1811,0.0824,0.1801,0.0847,0.1769,0.0796,0.2464,0.0799,0.2486,0.0741,0.1632,0.098,0.2187,0.0481,0.221,0.0541,0.2302,0.0796,0.2293,0.0837,0.1699,0.1017,0.1682,0.1025})))))
                           .addChild(new Group("l_tarsal_proximal_phalanx_2_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_2").setName("l_tarsal_proximal_interphalangeal_2").setCenter(0.0843075,0.012647251,0.1140075).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_2").setName("l_tarsal_middle_phalanx_2")
                             .addChild(new Shape("l_tarsal_middle_phalanx_2_Shape")
@@ -437,8 +423,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.077145755,0.0020925,0.124110006,0.07650675,0.010449001,0.12440025,0.091120504,0.0020925,0.122562006,0.09210826,0.010449001,0.122539505,0.090963006,0.017046,0.12259125,0.0777195,0.017561251,0.124182,0.077076,0.01085625,0.11511,0.07809075,0.0026684997,0.114734255,0.08862975,0.0027944997,0.11334825,0.08994375,0.0120577505,0.11371275,0.088706255,0.022911752,0.113404505,0.07793775,0.023202,0.114716254,0.0781695,0.01090575,0.109899,0.078975,0.00437175,0.109548,0.08658225,0.004464,0.108504005,0.0876735,0.01208475,0.1088955,0.08661825,0.0212715,0.10856475,0.078903005,0.02148075,0.10951875,0.0806265,0.0054404996,0.12710701,0.080264255,0.0102780005,0.12734775,0.080905505,0.014067001,0.127179,0.088521756,0.01377,0.12625201,0.089122504,0.010341001,0.126279,0.088542,0.0054404996,0.12627225})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261,0.0949,0.0775,0.1651,0.0639,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1291,0.0918,0.1834,0.0508,0.1554,0.0532,0.1716,0.0676,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1554,0.0532,0.1653,0.0654,0.1636,0.063,0.1651,0.0639,0.0949,0.0775,0.1792,0.0409,0.1795,0.0453})))))
                             .addChild(new Group("l_tarsal_middle_phalanx_2_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_2").setName("l_tarsal_distal_interphalangeal_2").setCenter(0.0843075,0.00982575,0.123435006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_2").setName("l_tarsal_distal_phalanx_2")
                               .addChild(new Shape("l_tarsal_distal_phalanx_2_Shape")
@@ -449,8 +434,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0795195,0.00385875,0.13077226,0.07962525,0.00919575,0.132831,0.09086175,0.00919575,0.13146976,0.08941951,0.00385875,0.12943351,0.09017775,0.014742,0.13012426,0.079841256,0.01503,0.13163851,0.077145755,0.0020902497,0.124098755,0.07650675,0.010449,0.12439126,0.091120504,0.0020902497,0.122553006,0.09210826,0.010449,0.122530505,0.090963006,0.017046,0.12258226,0.0777195,0.017561251,0.12417076,0.078543,0.0103545,0.11991376,0.07897275,0.0046372497,0.119661756,0.0884025,0.0046372497,0.11864926,0.08908425,0.01040175,0.11864926,0.0883485,0.014622751,0.11864026,0.079326004,0.01497375,0.11973376})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1643,0.0579,0.1638,0.0538,0.174,0.0396,0.1747,0.0423,0.1756,0.0403,0.1632,0.0573,0.066,0.0493,0.0915,0.0082,0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.0949,0.0775,0.1293,0.0261,0.1651,0.0639,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261})))))
                               .addChild(new Group("l_tarsal_distal_phalanx_2")
-                                .addComments(new String[] {" ",
-"(l_tarsal_distal_phalanx_2_tip  0.110 0.011 0.19) "})
+                                .addComments(" (l_tarsal_distal_phalanx_2_tip  0.110 0.011 0.19) ")
                                 .addChild(new HAnimSite("hanim_l_tarsal_distal_phalanx_2_tip").setName("l_tarsal_distal_phalanx_2_tip").setTranslation(0.08,0.016,0.14)
                                   .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_2_tip 112"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -464,8 +448,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.100037254,0.047187,0.03966075,0.098388,0.0032399986,0.0394875,0.08685225,0.0038699985,0.0283275,0.08730675,0.057577502,0.027519751,0.098489255,0.054999,0.020137502,0.0868095,0.003555,0.03870225,0.08791425,0.05030325,0.039019503,0.097794004,0.003824999,0.020232001,0.087237,0.063540004,0.01936125,0.08700525,0.0034874994,0.019336501,0.10545976,0.042345002,0.03648825,0.10419975,0.04751775,0.022628251,0.10367326,0.0062999995,0.02270475,0.103932,0.0059175007,0.036339752,0.0822105,0.05565375,0.0262575,0.08276175,0.04905225,0.0367065,0.08171775,0.0060524987,0.0364185,0.081821255,0.0062999995,0.0283905,0.08195625,0.0060300003,0.021795752,0.08214525,0.058905,0.021816,0.087810755,0.04387275,0.046998,0.099369004,0.04125825,0.047695503,0.10329525,0.03753675,0.045558,0.10189351,0.0081899995,0.045423,0.097965,0.006727501,0.0476505,0.0872685,0.006974999,0.046795502,0.083889,0.0084375,0.045288,0.08484975,0.043231502,0.045558})))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2226,0.0828,0.2197,0.0903,0.2186,0.1086,0.2179,0.1044,0.2314,0.0879,0.2128,0.1035,0.2098,0.0996,0.2271,0.0958,0.2224,0.1067,0.2197,0.1123,0.2224,0.1067,0.2314,0.0879,0.2226,0.0828,0.2314,0.0879,0.2314,0.0879,0.2197,0.0903,0.2179,0.1044,0.2098,0.0996,0.2098,0.0996,0.2186,0.1086,0.2197,0.1123,0.2224,0.1067,0.2098,0.0996,0.2226,0.0828,0.2226,0.0828,0.2197,0.0903,0.2226,0.0828,0.2098,0.0996,0.2098,0.0996,0.2098,0.0996})))))
                       .addChild(new Group("l_cuneiform_3_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_l_tarsometatarsal_3").setName("l_tarsometatarsal_3").setCenter(0.09459,0.0261,0.039397504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_3").setName("l_metatarsal_3")
                         .addChild(new Shape("l_metatarsal_3_Shape")
@@ -476,8 +459,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_272_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_15_273_point()))))
                         .addChild(new Group("l_metatarsal_3_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_3").setName("l_metatarsophalangeal_3").setCenter(0.096480004,0.015057,0.09542251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_3").setName("l_tarsal_proximal_phalanx_3")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_3_Shape")
@@ -488,8 +470,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_281_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1706,0.0686,0.1709,0.0678,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1716,0.0676,0.1882,0.0556,0.1745,0.076,0.1748,0.0736,0.1886,0.0572,0.2327,0.0796,0.2439,0.0803,0.2076,0.0485,0.2162,0.0476,0.2201,0.0466,0.2302,0.0796,0.2219,0.0517,0.2301,0.0734,0.2486,0.0743,0.2027,0.0537,0.2224,0.0526,0.2293,0.0736,0.1746,0.075,0.1885,0.0566,0.1801,0.0847,0.1811,0.0824,0.1952,0.0651,0.195,0.0629,0.2293,0.0837,0.1769,0.0796,0.2191,0.0403,0.1766,0.0777,0.2037,0.047,0.2486,0.0741,0.2026,0.0539,0.2444,0.0847,0.1915,0.0602,0.2041,0.0405,0.1915,0.0578,0.2464,0.0799,0.1801,0.0847,0.1952,0.0651,0.195,0.0629,0.1811,0.0824,0.1952,0.0651,0.1915,0.0602,0.2464,0.0799,0.2486,0.0741,0.2037,0.047,0.2041,0.0405,0.195,0.0629,0.1766,0.0777,0.2201,0.0466,0.2224,0.0526,0.2302,0.0796,0.2293,0.0837,0.1801,0.0847,0.1811,0.0824})))))
                           .addChild(new Group("l_tarsal_proximal_phalanx_3_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_3").setName("l_tarsal_proximal_interphalangeal_3").setCenter(0.098865,0.011922751,0.110475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_3").setName("l_tarsal_middle_phalanx_3")
                             .addChild(new Shape("l_tarsal_middle_phalanx_3_Shape")
@@ -500,8 +481,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.092927255,0.010451251,0.12121875,0.09370351,0.0020925007,0.12068325,0.10689525,0.0020925007,0.1179315,0.10788976,0.010451251,0.11788875,0.106875,0.01704825,0.11801025,0.0939645,0.017561251,0.120496504,0.09288,0.012060001,0.11194875,0.094029754,0.00283275,0.111267,0.1030995,0.0029745002,0.109269,0.10458451,0.012060001,0.109071,0.103619255,0.021462752,0.1091205,0.09391501,0.021753,0.111390755,0.093822755,0.0120870005,0.107775,0.094689004,0.0049702507,0.107163,0.10023525,0.0050557503,0.106002,0.101398505,0.012129751,0.10587825,0.10064025,0.0194175,0.105876,0.094608,0.01959975,0.10727325,0.097371005,0.005463001,0.12333825,0.096948005,0.01035675,0.123804,0.09744526,0.01408725,0.12320325,0.104737505,0.013797001,0.121914,0.10526851,0.010395001,0.12188925,0.10466775,0.005463001,0.121842004})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1651,0.0639,0.1293,0.0261,0.0949,0.0775,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1291,0.0918,0.1834,0.0508,0.1554,0.0532,0.1716,0.0676,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1554,0.0532,0.1653,0.0654,0.1636,0.063,0.1651,0.0639,0.0949,0.0775,0.1792,0.0409,0.1795,0.0453})))))
                             .addChild(new Group("l_tarsal_middle_phalanx_3_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_3").setName("l_tarsal_distal_interphalangeal_3").setCenter(0.1004175,0.00982575,0.11970001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_3").setName("l_tarsal_distal_phalanx_3")
                               .addChild(new Shape("l_tarsal_distal_phalanx_3_Shape")
@@ -512,8 +492,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0969255,0.00919575,0.1282905,0.0966825,0.00385875,0.12638927,0.105201,0.00385875,0.12447676,0.10660275,0.00919575,0.12626776,0.10590975,0.014742,0.12506627,0.09702675,0.01503,0.12717001,0.09293625,0.010449,0.12123676,0.0937125,0.0020902497,0.12070126,0.10690425,0.0020902497,0.11794951,0.10789875,0.010449,0.11790676,0.106884,0.017046,0.11802826,0.0939735,0.017561251,0.12051451,0.0945495,0.010368,0.11659051,0.09506025,0.00461025,0.116106756,0.10383075,0.00461025,0.114297755,0.1045305,0.01039725,0.114322506,0.103878,0.014598,0.11436976,0.09518175,0.0149445,0.11595826})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1643,0.0579,0.1747,0.0423,0.174,0.0396,0.1638,0.0538,0.1756,0.0403,0.1632,0.0573,0.0915,0.0082,0.066,0.0493,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.0949,0.0775,0.1293,0.0261,0.1651,0.0639,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261})))))
                               .addChild(new Group("l_tarsal_distal_phalanx_3_Sites")
-                                .addComments(new String[] {" ",
-"(l_tarsal_distal_phalanx_3_tip  0.128 0.011 0.185)   "})
+                                .addComments(" (l_tarsal_distal_phalanx_3_tip  0.128 0.011 0.185) ")
                                 .addChild(new HAnimSite("hanim_l_tarsal_distal_phalanx_3_tip").setName("l_tarsal_distal_phalanx_3_tip").setTranslation(0.1,0.016,0.14)
                                   .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_3_tip 113"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape")))))))))))
@@ -527,8 +506,7 @@ public class JinScaledV2L1LOA4Sites07f
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_317_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2845,0.0964,0.2768,0.1211,0.2792,0.1228,0.2886,0.0939,0.2493,0.1586,0.2252,0.161,0.2241,0.1634,0.2489,0.1638,0.2727,0.0786,0.2746,0.076,0.2809,0.1238,0.2914,0.0926,0.2206,0.1691,0.249,0.1672,0.2762,0.0729,0.2769,0.1234,0.2869,0.0933,0.2461,0.1652,0.2661,0.1399,0.2685,0.1417,0.27,0.1429,0.2661,0.1424,0.24,0.098,0.2266,0.1229,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2178,0.1526,0.2363,0.0929,0.2213,0.1179,0.2171,0.1588,0.2129,0.1643,0.2165,0.148,0.2533,0.0835,0.273,0.1232,0.2824,0.0941,0.2433,0.1632,0.2759,0.0832,0.2685,0.0797,0.2623,0.1418,0.2231,0.166,0.273,0.1232,0.2824,0.0941,0.2759,0.0832,0.2685,0.0797,0.2533,0.0835,0.2165,0.148,0.2231,0.166,0.2433,0.1632,0.2623,0.1418,0.2665,0.0671,0.2628,0.0703,0.2363,0.0929,0.2213,0.1179,0.2178,0.1526,0.2171,0.1588,0.2129,0.1643,0.2165,0.148,0.2533,0.0835,0.2664,0.0668})))))
                     .addChild(new Group("l_calcaneus_Sites")
-                      .addComments(new String[] {" ",
-"None "})))
+                      .addComments(" None ")))
                   .addChild(new HAnimJoint("hanim_l_transversetarsal").setName("l_transversetarsal").setCenter(0.1106325,0.03528,0.002089125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_l_cuboid").setName("l_cuboid")
                       .addChild(new Shape("l_cuboid_Shape")
@@ -539,8 +517,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(getCoordinate_14_326_point()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2528,0.0622,0.2585,0.0581,0.2383,0.0796,0.2566,0.0607,0.243,0.0749,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2292,0.0691,0.2342,0.0682,0.2533,0.0835,0.2407,0.0951,0.2314,0.0879,0.2226,0.0828,0.2271,0.0958,0.2197,0.0903,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2363,0.0929,0.2407,0.0951,0.2314,0.0879,0.2226,0.0828,0.2197,0.0903,0.2271,0.0958,0.2363,0.0929,0.2533,0.0835,0.2407,0.0951,0.2407,0.0951,0.2363,0.0929,0.2363,0.0929,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2469,0.052,0.2292,0.0691,0.2197,0.0903,0.2197,0.0903,0.2226,0.0828,0.2226,0.0828,0.2342,0.0682,0.2484,0.051,0.2512,0.047})))))
                       .addChild(new Group("l_cuboid_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_l_tarsometatarsal_4").setName("l_tarsometatarsal_4").setCenter(0.1064925,0.0245475,0.03843).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_l_metatarsal_4").setName("l_metatarsal_4")
                         .addChild(new Shape("l_metatarsal_4_Shape")
@@ -551,8 +528,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_335_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2117,0.0481,0.2254,0.0615,0.2142,0.0508,0.2102,0.0461,0.2083,0.0443,0.2202,0.0585,0.2186,0.0548,0.1989,0.0701,0.1984,0.068,0.2138,0.0778,0.1952,0.0651,0.195,0.0629,0.2061,0.0729,0.2292,0.0691,0.2342,0.0682,0.2226,0.0828,0.2129,0.0844,0.2197,0.0903,0.2254,0.0615,0.2061,0.0729,0.2138,0.0778,0.2061,0.0729,0.1984,0.068,0.195,0.0629,0.195,0.0629,0.1984,0.068,0.2061,0.0729,0.2226,0.0828,0.2226,0.0828,0.2186,0.0548,0.2254,0.0615,0.2342,0.0682,0.2342,0.0682,0.2254,0.0615,0.2117,0.0481,0.2083,0.0443,0.2083,0.0443,0.2117,0.0481,0.2083,0.0443,0.195,0.0629,0.195,0.0629,0.195,0.0629,0.195,0.0629,0.2083,0.0443,0.2083,0.0443,0.2083,0.0443,0.2226,0.0828,0.2342,0.0682,0.2342,0.0682,0.2342,0.0682,0.2342,0.0682,0.2226,0.0828,0.2226,0.0828,0.2226,0.0828})))))
                         .addChild(new Group("l_metatarsal_4_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_4").setName("l_metatarsophalangeal_4").setCenter(0.109867506,0.01435275,0.091170006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_4").setName("l_tarsal_proximal_phalanx_4")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_4_Shape")
@@ -563,8 +539,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_344_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2033,0.0375,0.1866,0.0487,0.186,0.0472,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.1873,0.048,0.1915,0.0602,0.1915,0.0578,0.1897,0.0535,0.1888,0.0569,0.2031,0.037,0.2012,0.0381,0.2444,0.0847,0.2208,0.06,0.2111,0.0557,0.2254,0.054,0.2483,0.0809,0.2464,0.0799,0.2587,0.0865,0.225,0.0604,0.2239,0.0673,0.2238,0.0671,0.267,0.0845,0.2486,0.0741,0.2486,0.074,0.2049,0.059,0.1896,0.055,0.2102,0.0461,0.1952,0.0651,0.2083,0.0443,0.195,0.0629,0.2109,0.0476,0.2048,0.0404,0.2576,0.0911,0.2063,0.0414,0.2083,0.0537,0.2612,0.0869,0.2671,0.0842,0.2047,0.0593,0.1952,0.0651,0.2102,0.0461,0.2083,0.0443,0.195,0.0629,0.2102,0.0461,0.2063,0.0414,0.2612,0.0869,0.2671,0.0842,0.2083,0.0537,0.2109,0.0476,0.2083,0.0443,0.2444,0.0847,0.1952,0.0651,0.195,0.0629,0.1915,0.0578,0.225,0.0604,0.2239,0.0673,0.2464,0.0799})))))
                           .addChild(new Group("l_tarsal_proximal_phalanx_4_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_4").setName("l_tarsal_proximal_interphalangeal_4").setCenter(0.114165,0.0122445,0.1063125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_4").setName("l_tarsal_middle_phalanx_4")
                             .addChild(new Shape("l_tarsal_middle_phalanx_4_Shape")
@@ -575,8 +550,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.109172255,0.002007,0.115029,0.108081006,0.010451251,0.11555775,0.12057075,0.002007,0.112497754,0.121788,0.010451251,0.11259675,0.120948754,0.01614375,0.112122,0.109107,0.016731001,0.115152754,0.108697504,0.00297,0.107298,0.10740825,0.012060001,0.10752975,0.11800575,0.00240075,0.10500525,0.119052,0.012060001,0.10465875,0.11822625,0.02149425,0.10513125,0.108256504,0.022482002,0.10743975,0.10857825,0.012159,0.102483004,0.10957275,0.00519525,0.1023345,0.11492325,0.0048667504,0.10100475,0.1156995,0.012105,0.100707754,0.11507175,0.019399501,0.10112175,0.1092195,0.01998,0.102429,0.1127655,0.0053955005,0.117645755,0.11214675,0.0104175005,0.118089005,0.1125945,0.013248,0.117839254,0.118845,0.0129375,0.116775006,0.1192185,0.01049625,0.11662875,0.11844675,0.0053955005,0.116406})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1822,0.0458,0.1809,0.0434,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.1816,0.0411,0.1287,0.0243,0.0943,0.0785,0.1866,0.0487,0.186,0.0472,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.1322,0.09,0.157,0.0552,0.1873,0.048,0.186,0.0472,0.1866,0.0487,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.157,0.0552,0.1822,0.0458,0.1809,0.0434,0.1816,0.0411,0.0943,0.0785,0.1948,0.024,0.1953,0.0282})))))
                             .addChild(new Group("l_tarsal_middle_phalanx_4_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_l_tarsal_distal_interphalangeal_4").setName("l_tarsal_distal_interphalangeal_4").setCenter(0.1156725,0.009369,0.11369251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_l_tarsal_distal_phalanx_4").setName("l_tarsal_distal_phalanx_4")
                               .addChild(new Shape("l_tarsal_distal_phalanx_4_Shape")
@@ -587,8 +561,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.112239,0.0039284998,0.11950425,0.119268,0.0039284998,0.117828004,0.119979,0.009729,0.1197315,0.11186775,0.009729,0.12130425,0.11929725,0.0136395,0.11825775,0.11241675,0.013979251,0.119880006,0.10915875,0.002007,0.11502676,0.1080675,0.01045125,0.1155555,0.12055725,0.002007,0.112495504,0.1217745,0.01045125,0.1125945,0.12093525,0.0161415,0.11211976,0.1090935,0.016731,0.115150504,0.1096335,0.0103815,0.11088675,0.11036925,0.0045045,0.11042325,0.11747925,0.0045045,0.1088595,0.1183635,0.01044,0.10905075,0.11782575,0.01369575,0.108524255,0.11022525,0.01407375,0.11059875})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1831,0.0355,0.1904,0.0263,0.1901,0.0243,0.1819,0.0351,0.1913,0.0249,0.182,0.0368,0.088,0.0133,0.0677,0.0461,0.1822,0.0458,0.1809,0.0434,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.0943,0.0785,0.1287,0.0243,0.1816,0.0411,0.1809,0.0434,0.1822,0.0458,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.1287,0.0243})))))
                               .addChild(new Group("l_tarsal_distal_phalanx_4_Sites")
-                                .addComments(new String[] {" ",
-"(l_tarsal_distal_phalanx_4_tip  0.142 0.011 0.178)"})
+                                .addComments(" (l_tarsal_distal_phalanx_4_tip  0.142 0.011 0.178) ")
                                 .addChild(new HAnimSite("hanim_l_tarsal_distal_phalanx_4_tip").setName("l_tarsal_distal_phalanx_4_tip").setTranslation(0.115,0.016,0.13)
                                   .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_4_tip 114"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -602,8 +575,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_378_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2299,0.0317,0.2316,0.0247,0.2265,0.0269,0.241,0.0419,0.244,0.0359,0.2401,0.0413,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2333,0.0341,0.2378,0.0303,0.2142,0.0508,0.2117,0.0481,0.2254,0.0615,0.2102,0.0461,0.2083,0.0443,0.2202,0.0585,0.2186,0.0548,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2292,0.0691,0.2342,0.0682,0.2142,0.0508,0.2202,0.0585,0.2292,0.0691,0.2342,0.0682,0.2254,0.0615,0.2186,0.0548,0.2117,0.0481,0.2083,0.0443,0.2102,0.0461,0.2292,0.0691,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2342,0.0682,0.2342,0.0682,0.2292,0.0691,0.226,0.0221,0.2245,0.0286,0.2102,0.0461,0.2102,0.0461,0.2083,0.0443,0.2083,0.0443,0.2232,0.0245})))))
                         .addChild(new Group("l_metatarsal_5_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_l_metatarsophalangeal_5").setName("l_metatarsophalangeal_5").setCenter(0.124065004,0.013671,0.0865575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_l_tarsal_proximal_phalanx_5").setName("l_tarsal_proximal_phalanx_5")
                           .addChild(new Shape("l_tarsal_proximal_phalanx_5_Shape")
@@ -614,8 +586,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_387_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2192,0.0256,0.2205,0.0195,0.2048,0.0404,0.2199,0.022,0.2063,0.0414,0.2047,0.0523,0.1956,0.0462,0.1979,0.0386,0.2109,0.0476,0.277,0.1031,0.2673,0.0987,0.263,0.1,0.2744,0.109,0.1892,0.0439,0.1911,0.0375,0.2576,0.0911,0.2083,0.0537,0.263,0.0893,0.2612,0.0869,0.2047,0.0593,0.2048,0.0593,0.2671,0.0842,0.2673,0.0839,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2102,0.0461,0.2083,0.0443,0.2039,0.0358,0.2152,0.0224,0.2154,0.0203,0.2126,0.0258,0.2034,0.0366,0.2033,0.0375,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2083,0.0443,0.2102,0.0461,0.2576,0.0911,0.2102,0.0461,0.2083,0.0443,0.2048,0.0404,0.2083,0.0537,0.2047,0.0593,0.2612,0.0869})))))
                           .addChild(new Group("l_tarsal_proximal_phalanx_5_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_l_tarsal_proximal_interphalangeal_5").setName("l_tarsal_proximal_interphalangeal_5").setCenter(0.1263825,0.01085625,0.09414).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_l_tarsal_middle_phalanx_5").setName("l_tarsal_middle_phalanx_5")
                             .addChild(new Shape("l_tarsal_middle_phalanx_5_Shape")
@@ -626,8 +597,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1318005,0.001701,0.10044675,0.13336651,0.007893,0.1001745,0.13247551,0.014760001,0.10041075,0.121169254,0.015426001,0.10263825,0.12035476,0.0078097503,0.103133254,0.122118756,0.0018089998,0.10235926,0.12981376,0.0024795,0.09323326,0.13167901,0.01068975,0.093408756,0.13050675,0.01865025,0.09320851,0.12017701,0.0200115,0.09551475,0.11953126,0.0114187505,0.096588,0.120744005,0.0042232494,0.09544501,0.12726901,0.0051682503,0.090396,0.12858976,0.0107797505,0.090704255,0.12770551,0.01658025,0.09043425,0.12136501,0.01741275,0.0917505,0.120991506,0.011531251,0.09275851,0.121837504,0.0062100003,0.0917055,0.13072501,0.00807525,0.104184,0.12996225,0.0050759995,0.104303256,0.12525076,0.00513,0.105151504,0.12441151,0.00811125,0.10570726,0.124773756,0.0118642505,0.10528875,0.13027501,0.01154025,0.104305506})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2109,0.0133,0.2102,0.0181,0.2093,0.0169,0.1959,0.0354,0.1986,0.0324,0.1989,0.0342,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2109,0.0133,0.2102,0.0181,0.1989,0.0342,0.1986,0.0324,0.1959,0.0354,0.2093,0.0169})))))
                             .addChild(new Group("l_tarsal_middle_phalanx_5_Sites")
-                              .addComments(new String[] {" ",
-"(l_metatarsal_phalanx_5_pt  0.1825 0.0070 0.0928) "})
+                              .addComments(" (l_metatarsal_phalanx_5_pt  0.1825 0.0070 0.0928) ")
                               .addChild(new HAnimSite("hanim_l_metatarsal_phalanx_5_pt").setName("l_metatarsal_phalanx_5_pt").setTranslation(0.12,0.02,0.04)
                                 .addChild(new TouchSensor().setDescription("HAnimSite l_metatarsal_phalanx_5_pt 56"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -641,8 +611,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.13008375,0.001818,0.10640925,0.1321695,0.0076590003,0.1083915,0.13106251,0.01277325,0.107160755,0.12458701,0.01313775,0.10856475,0.12468825,0.00782325,0.109813504,0.12446325,0.001818,0.10743525,0.131796,0.001701,0.10045125,0.13336201,0.007893001,0.100179,0.13247326,0.014760001,0.10041525,0.121164754,0.015426001,0.10264275,0.12035026,0.0078097503,0.103137754,0.122114256,0.0018090005,0.10236375,0.12900826,0.0042705005,0.09676125,0.12997125,0.0080685,0.0966015,0.12941101,0.012384,0.09675225,0.12245851,0.012793501,0.09804825,0.12198376,0.00807525,0.098487005,0.12305476,0.004338,0.097875})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2048,0.0135,0.2053,0.0142,0.1964,0.026,0.1976,0.0232,0.1977,0.0271,0.2052,0.017,0.0639,0.0523,0.0903,0.0107,0.2102,0.0181,0.2109,0.0133,0.2093,0.0169,0.1317,0.0215,0.0951,0.0836,0.1959,0.0354,0.1986,0.0324,0.1989,0.0342,0.2102,0.0181,0.2109,0.0133,0.2093,0.0169,0.0951,0.0836,0.1986,0.0324,0.1989,0.0342})))))
                               .addChild(new Group("l_tarsal_distal_phalanx_5_Sites")
-                                .addComments(new String[] {" ",
-"(l_tarsal_distal_phalanx_5_tip  0.154 0.010 0.168) "})
+                                .addComments(" (l_tarsal_distal_phalanx_5_tip  0.154 0.010 0.168) ")
                                 .addChild(new HAnimSite("hanim_l_tarsal_distal_phalanx_5_tip").setName("l_tarsal_distal_phalanx_5_tip").setTranslation(0.125,0.016,0.115)
                                   .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_5_tip 115"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))))))
@@ -656,11 +625,10 @@ public class JinScaledV2L1LOA4Sites07f
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_429_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581})))))
               .addChild(new Group("r_thigh_Sites")
-                .addComments(new String[] {" ",
-"(r_knee_crease_pt  -0.0825 0.4932 -0.0326)",
-"(r_femoral_medial_epicondyles_pt  -0.0221 0.5014 0.0289)",
-"(r_femoral_lateral_epicondyles_pt  -0.1421 0.4992 0.0310)",
-"(r_suprapatella_pt  x y z) "})
+                .addComments(" (r_knee_crease_pt  -0.0825 0.4932 -0.0326) ")
+                .addComments(" (r_femoral_medial_epicondyles_pt  -0.0221 0.5014 0.0289) ")
+                .addComments(" (r_femoral_lateral_epicondyles_pt  -0.1421 0.4992 0.0310) ")
+                .addComments(" (r_suprapatella_pt  x y z) ")
                 .addChild(new HAnimSite("hanim_r_knee_crease_pt").setName("r_knee_crease_pt").setTranslation(-0.09,0.41,-0.056)
                   .addChild(new TouchSensor().setDescription("HAnimSite r_knee_crease_pt 91"))
                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -683,10 +651,9 @@ public class JinScaledV2L1LOA4Sites07f
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_450_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9632,0.3942,0.9402,0.3943,0.8884,0.3943,0.8469,0.3942,0.8469,0.3941,0.8884,0.3941,0.9402,0.3941,0.9325,0.3742,0.9208,0.3742,0.8947,0.3742,0.8737,0.3742,0.8737,0.3741,0.8947,0.3741,0.9208,0.3741})))))
                 .addChild(new Group("r_calf_Sites")
-                  .addComments(new String[] {" ",
-"(r_tibiale_pt  x y z) ",
-"(r_medial_malleolus_pt  -0.0591 0.0760 -0.0928) ",
-"(r_lateral_malleolus_pt  -0.1006 0.0658 -0.1075)"})
+                  .addComments(" (r_tibiale_pt  x y z) ")
+                  .addComments(" (r_medial_malleolus_pt  -0.0591 0.0760 -0.0928) ")
+                  .addComments(" (r_lateral_malleolus_pt  -0.1006 0.0658 -0.1075) ")
                   .addChild(new HAnimSite("hanim_r_tibiale_pt").setName("r_tibiale_pt").setTranslation(-0.09,0.31,0.038)
                     .addChild(new TouchSensor().setDescription("HAnimSite r_tibiale_pt 51"))
                     .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -706,9 +673,8 @@ public class JinScaledV2L1LOA4Sites07f
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_468_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.227,0.1089,0.2217,0.1285,0.2533,0.0835,0.273,0.1232,0.2824,0.0941,0.2433,0.1632,0.2685,0.0797,0.2165,0.148,0.2759,0.0832,0.2428,0.156,0.2563,0.142,0.2584,0.1419,0.2431,0.1588,0.2715,0.1062,0.2761,0.1011,0.2698,0.09,0.2775,0.078,0.2629,0.0863,0.248,0.0935,0.2498,0.0895,0.2702,0.0748,0.2296,0.1148,0.2397,0.101,0.2249,0.1266,0.2295,0.1126,0.2207,0.1406,0.2252,0.1591,0.2245,0.1634,0.2202,0.1406,0.2407,0.0951,0.2662,0.1249,0.2599,0.1313,0.2623,0.1418,0.2691,0.1232,0.2231,0.166,0.2217,0.1285,0.227,0.1089,0.2407,0.0951,0.2533,0.0835,0.2685,0.0797,0.2759,0.0832,0.2824,0.0941,0.273,0.1232,0.2623,0.1418,0.2433,0.1632,0.2231,0.166,0.2165,0.148})))))
                   .addChild(new Group("r_talus_Sites")
-                    .addComments(new String[] {" ",
-"(r_sphyrion_pt  -0.0603 0.0610 -0.1002) ",
-"(r_calcaneus_posterior_pt  -0.0692 0.0297 -0.1221) "})
+                    .addComments(" (r_sphyrion_pt  -0.0603 0.0610 -0.1002) ")
+                    .addComments(" (r_calcaneus_posterior_pt  -0.0692 0.0297 -0.1221) ")
                     .addChild(new HAnimSite("hanim_r_sphyrion_pt").setName("r_sphyrion_pt").setTranslation(-0.054,0.065,-0.02)
                       .addChild(new TouchSensor().setDescription("HAnimSite r_sphyrion_pt 54"))
                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -725,8 +691,7 @@ public class JinScaledV2L1LOA4Sites07f
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_483_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2314,0.0879,0.21,0.1541,0.2053,0.1595,0.2104,0.1443,0.2271,0.0958,0.2224,0.1067,0.2032,0.149,0.2132,0.1285,0.2197,0.1123,0.2163,0.1174,0.227,0.1089,0.2165,0.148,0.2217,0.1285,0.2407,0.0951,0.2178,0.1526,0.2363,0.0929,0.2213,0.1179,0.2171,0.1588,0.2129,0.1643,0.21,0.1541,0.2053,0.1595,0.2032,0.149,0.2132,0.1285,0.2224,0.1067,0.2314,0.0879,0.2271,0.0958,0.2197,0.1123,0.2163,0.1174,0.2104,0.1443,0.227,0.1089,0.2217,0.1285,0.2165,0.148,0.2129,0.1643,0.2171,0.1588,0.2178,0.1526,0.2213,0.1179,0.2363,0.0929,0.2407,0.0951,0.2314,0.0879,0.2407,0.0951,0.2407,0.0951,0.2363,0.0929,0.2363,0.0929,0.2271,0.0958,0.2271,0.0958,0.2314,0.0879})))))
                     .addChild(new Group("r_navicular_Sites")
-                      .addComments(new String[] {" ",
-"None"})))
+                      .addComments(" None ")))
                   .addChild(new HAnimJoint("hanim_r_cuneonavicular_1").setName("r_cuneonavicular_1").setCenter(-0.0669825,0.032107502,0.018391501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuneiform_1").setName("r_cuneiform_1")
                       .addChild(new Shape("r_cuneiform_1_Shape")
@@ -737,8 +702,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.06699825,0.007155002,0.027960751,-0.061035752,0.014805002,0.0285525,-0.0600075,0.0377505,0.0273105,-0.073773004,0.052677,0.0291915,-0.0737055,0.0040500015,0.02895075,-0.056511004,0.036128253,0.042624,-0.060203254,0.0072000013,0.0433215,-0.05532525,0.015185252,0.0417465,-0.072470255,0.044581503,0.045099,-0.07252875,0.0039150007,0.045414,-0.0624645,0.013655252,0.01451475,-0.05945625,0.036999002,0.014085,-0.065736,0.0054900018,0.017685,-0.062698506,0.051887255,0.0165015,-0.07526475,0.060592502,0.021015,-0.07482825,0.0036225005,0.021168001,-0.079598255,0.0503325,0.028161,-0.08039925,0.053957254,0.02443275,-0.080014504,0.0065925024,0.02455425,-0.079344004,0.0068625016,0.02949525,-0.0783675,0.006750002,0.0431865,-0.07830676,0.042828754,0.042894002,-0.061528504,0.010012502,0.051466502,-0.0575505,0.01576575,0.0500715,-0.058603503,0.032328002,0.050904002,-0.0725895,0.03885525,0.053244002,-0.07592175,0.037944004,0.0516465,-0.075978,0.009157502,0.051894,-0.0721845,0.0074925018,0.0535365})))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2027,0.1355,0.2132,0.1171,0.1958,0.1447,0.1899,0.1499,0.2047,0.1286,0.1825,0.1473,0.1858,0.1369,0.1864,0.1452,0.1953,0.1244,0.2059,0.1148,0.21,0.1541,0.2053,0.1595,0.2104,0.1443,0.2032,0.149,0.2132,0.1285,0.2163,0.1174,0.2047,0.1286,0.2132,0.1285,0.2163,0.1174,0.2132,0.1171,0.2059,0.1148,0.1953,0.1244,0.1858,0.1369,0.1864,0.1452,0.1825,0.1473,0.1953,0.1244,0.1953,0.1244,0.2059,0.1148,0.2059,0.1148})))))
                       .addChild(new Group("r_cuneiform_1_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_r_tarsometatarsal_1").setName("r_tarsometatarsal_1").setCenter(-0.06426,0.023242502,0.04419).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_1").setName("r_metatarsal_1")
                         .addChild(new Shape("r_metatarsal_1_Shape")
@@ -749,8 +713,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_501_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.177,0.1457,0.1567,0.1378,0.1506,0.1431,0.1539,0.1386,0.1751,0.1447,0.1523,0.1336,0.1493,0.1348,0.1463,0.1377,0.1689,0.1382,0.1638,0.1444,0.1645,0.1416,0.1607,0.138,0.1731,0.1071,0.1859,0.1202,0.175,0.1048,0.1985,0.1126,0.1682,0.1025,0.1699,0.1017,0.1795,0.1136,0.1825,0.1473,0.1858,0.1369,0.1864,0.1452,0.1953,0.1244,0.2059,0.1148,0.1795,0.1136,0.1859,0.1202,0.1953,0.1244,0.2059,0.1148,0.1985,0.1126,0.175,0.1048,0.1699,0.1017,0.1682,0.1025,0.1731,0.1071,0.1523,0.1336,0.1463,0.1377,0.1493,0.1348,0.1682,0.1025,0.1682,0.1025,0.1699,0.1017,0.1699,0.1017,0.1864,0.1452,0.1858,0.1369,0.2059,0.1148,0.2059,0.1148,0.1953,0.1244,0.1953,0.1244,0.1825,0.1473})))))
                         .addChild(new Group("r_metatarsal_1_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_1").setName("r_metatarsophalangeal_1").setCenter(-0.0617625,0.014424751,0.0936225).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_1").setName("r_tarsal_proximal_phalanx_1")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_1_Shape")
@@ -761,8 +724,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_510_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.148,0.1294,0.142,0.1322,0.1446,0.131,0.1613,0.0957,0.1341,0.1263,0.1554,0.0919,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889,0.1392,0.1292,0.16,0.0958,0.1443,0.128,0.1415,0.1284,0.1616,0.0962,0.1346,0.0953,0.1273,0.0961,0.126,0.0891,0.1339,0.0889,0.1175,0.0992,0.228,0.0809,0.2186,0.0857,0.2172,0.0848,0.2097,0.0859,0.2098,0.0901,0.2285,0.0738,0.1152,0.1058,0.1523,0.1336,0.1493,0.1348,0.1463,0.1377,0.1682,0.1025,0.1699,0.1017,0.2293,0.0837,0.1648,0.0986,0.112,0.093,0.1632,0.098,0.113,0.0993,0.2302,0.0796,0.1153,0.1053,0.2293,0.0736,0.1463,0.1377,0.1523,0.1336,0.1699,0.1017,0.1682,0.1025,0.1493,0.1348,0.1699,0.1017,0.1648,0.0986,0.2302,0.0796,0.2293,0.0736,0.113,0.0993,0.112,0.093,0.1682,0.1025,0.1341,0.1263,0.1554,0.0919,0.1559,0.0889,0.1571,0.0927,0.1363,0.1268,0.1317,0.1272})))))
                           .addChild(new Group("r_tarsal_proximal_phalanx_1_Sites")
-                            .addComments(new String[] {" ",
-"(r_metatarsal_phalanx_1_pt  0.0816 0.0232 0.0106)"})
+                            .addComments(" (r_metatarsal_phalanx_1_pt  0.0816 0.0232 0.0106) ")
                             .addChild(new HAnimSite("hanim_r_metatarsal_phalanx_1_pt").setName("r_metatarsal_phalanx_1_pt").setTranslation(-0.062,0.012,0.1)
                               .addChild(new TouchSensor().setDescription("HAnimSite r_metatarsal_phalanx_1_pt 59"))
                               .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -776,8 +738,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.06948,0.018261,0.13208626,-0.05376375,0.018553501,0.132561,-0.053910002,0.01017225,0.13577175,-0.054051753,0.0033029998,0.13153726,-0.069255,0.0033029998,0.13094775,-0.0696735,0.01017225,0.1353735,-0.07241175,0.020025,0.12442725,-0.050211,0.020385,0.124416,-0.0489825,0.0111105,0.12528001,-0.05042925,0.0021914996,0.124276504,-0.07233075,0.0022252498,0.124544255,-0.074268006,0.0083294995,0.12531151,-0.073154256,0.02205,0.11549701,-0.049959,0.02240325,0.115803,-0.048645,0.011673,0.11603025,-0.05044275,0.0018697499,0.11512125,-0.07341525,0.0018697499,0.115179755,-0.074835,0.011412,0.1157805,-0.0705195,0.019165501,0.109989,-0.05260275,0.01943775,0.11025225,-0.051680252,0.0118755,0.11055151,-0.052935753,0.00501525,0.109719,-0.0707625,0.0050129998,0.109818004,-0.07173,0.0115065,0.11034901})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1287,0.113,0.1423,0.0921,0.1396,0.0889,0.1257,0.1107,0.1415,0.0903,0.1274,0.1123,0.1297,0.1214,0.15,0.0896,0.1273,0.1223,0.1313,0.1227,0.1521,0.0901,0.1498,0.0859,0.0527,0.151,0.0282,0.1325,0.0446,0.0894,0.0746,0.0899,0.1016,0.0977,0.1554,0.0919,0.0779,0.162,0.1341,0.1263,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889,0.1554,0.0919,0.0779,0.162,0.1317,0.1272,0.1363,0.1268,0.1571,0.0927,0.1559,0.0889})))))
                             .addChild(new Group("r_tarsal_distal_phalanx_1_Sites")
-                              .addComments(new String[] {" ",
-"(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) "})
+                              .addComments(" (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) ")
                               .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_1_tip").setName("r_tarsal_distal_phalanx_1_tip").setTranslation(-0.06,0.012,0.14)
                                 .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_1_tip 116"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -791,8 +752,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(getCoordinate_14_538_point()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2179,0.1044,0.2186,0.1086,0.2128,0.1035,0.2098,0.0996,0.2047,0.1286,0.2132,0.1171,0.1953,0.1244,0.2059,0.1148,0.2224,0.1067,0.2132,0.1285,0.2197,0.1123,0.2163,0.1174,0.2132,0.1285,0.2047,0.1286,0.1953,0.1244,0.1953,0.1244,0.2132,0.1171,0.2163,0.1174,0.2098,0.0996,0.2179,0.1044,0.2224,0.1067,0.2224,0.1067,0.2186,0.1086,0.2128,0.1035,0.1953,0.1244,0.2098,0.0996,0.2098,0.0996,0.2128,0.1035,0.2098,0.0996,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.2224,0.1067,0.2132,0.1285,0.2132,0.1285,0.2163,0.1174,0.2132,0.1285,0.2224,0.1067,0.2224,0.1067,0.2224,0.1067})))))
                       .addChild(new Group("r_cuneiform_2_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_r_tarsometatarsal_2").setName("r_tarsometatarsal_2").setCenter(-0.079830006,0.0261,0.041062504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_2").setName("r_metatarsal_2")
                         .addChild(new Shape("r_metatarsal_2_Shape")
@@ -803,8 +763,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_547_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.175,0.1048,0.1833,0.0898,0.1856,0.0872,0.1731,0.1071,0.1985,0.1126,0.2017,0.0948,0.1859,0.1202,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.1699,0.1017,0.1937,0.091,0.1795,0.1136,0.2068,0.0986,0.2128,0.1035,0.2098,0.0996,0.1953,0.1244,0.2059,0.1148,0.1795,0.1136,0.1859,0.1202,0.1731,0.1071,0.2017,0.0948,0.1859,0.1202,0.1795,0.1136,0.1731,0.1071,0.1682,0.1025,0.1682,0.1025,0.1731,0.1071,0.1795,0.1136,0.1859,0.1202,0.1953,0.1244,0.1953,0.1244,0.1856,0.0872,0.1937,0.091,0.2017,0.0948,0.2098,0.0996,0.2098,0.0996,0.2017,0.0948,0.1856,0.0872,0.1811,0.0824,0.1811,0.0824,0.1811,0.0824,0.1682,0.1025,0.1682,0.1025,0.1682,0.1025,0.1682,0.1025,0.1811,0.0824,0.1811,0.0824,0.1811,0.0824,0.2098,0.0996,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.1953,0.1244,0.2098,0.0996,0.2098,0.0996,0.2098,0.0996})))))
                         .addChild(new Group("r_metatarsal_2_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_2").setName("r_metatarsophalangeal_2").setCenter(-0.0821475,0.014976,0.097830005).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_2").setName("r_tarsal_proximal_phalanx_2")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_2_Shape")
@@ -815,8 +774,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_556_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2327,0.0796,0.2439,0.0803,0.2062,0.05,0.2147,0.0491,0.2302,0.0796,0.2205,0.0532,0.2301,0.0734,0.2486,0.0743,0.2013,0.0552,0.2187,0.0481,0.221,0.0541,0.2293,0.0736,0.1746,0.075,0.1709,0.0678,0.1706,0.0686,0.1745,0.076,0.1824,0.0523,0.1886,0.0572,0.183,0.0511,0.1834,0.0508,0.1882,0.0556,0.1885,0.0566,0.1716,0.0676,0.1748,0.0736,0.2444,0.0847,0.2027,0.042,0.2022,0.0485,0.2464,0.0799,0.2486,0.0741,0.2011,0.0554,0.2293,0.0837,0.2177,0.0418,0.1769,0.0796,0.1648,0.0986,0.1632,0.098,0.1766,0.0777,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.1699,0.1017,0.1699,0.1017,0.1801,0.0847,0.1811,0.0824,0.1682,0.1025,0.2022,0.0485,0.2027,0.042,0.1811,0.0824,0.1801,0.0847,0.1769,0.0796,0.2464,0.0799,0.2486,0.0741,0.1632,0.098,0.2187,0.0481,0.221,0.0541,0.2302,0.0796,0.2293,0.0837,0.1699,0.1017,0.1682,0.1025})))))
                           .addChild(new Group("r_tarsal_proximal_phalanx_2_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_2").setName("r_tarsal_proximal_interphalangeal_2").setCenter(-0.083925,0.012647251,0.1140075).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_2").setName("r_tarsal_middle_phalanx_2")
                             .addChild(new Shape("r_tarsal_middle_phalanx_2_Shape")
@@ -827,8 +785,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.07676325,0.0020925,0.124110006,-0.07612425,0.010449001,0.12440025,-0.090738006,0.0020925,0.122562006,-0.09172575,0.010449001,0.122539505,-0.0905805,0.017046,0.12259125,-0.077337004,0.017561251,0.124182,-0.076693505,0.01085625,0.11511,-0.07770825,0.0026684997,0.114734255,-0.088247254,0.0027944997,0.11334825,-0.089561254,0.0120577505,0.11371275,-0.08832376,0.022911752,0.113404505,-0.077555254,0.023202,0.114716254,-0.077787004,0.01090575,0.109899,-0.0785925,0.00437175,0.109548,-0.08619975,0.004464,0.108504005,-0.087291,0.01208475,0.1088955,-0.086235754,0.0212715,0.10856475,-0.07852051,0.02148075,0.10951875,-0.080244005,0.0054404996,0.12710701,-0.07988175,0.0102780005,0.12734775,-0.08052301,0.014067001,0.127179,-0.08813925,0.01377,0.12625201,-0.088740006,0.010341001,0.126279,-0.0881595,0.0054404996,0.12627225})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261,0.0949,0.0775,0.1651,0.0639,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1291,0.0918,0.1834,0.0508,0.1554,0.0532,0.1716,0.0676,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1554,0.0532,0.1653,0.0654,0.1636,0.063,0.1651,0.0639,0.0949,0.0775,0.1792,0.0409,0.1795,0.0453})))))
                             .addChild(new Group("r_tarsal_middle_phalanx_2_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_2").setName("r_tarsal_distal_interphalangeal_2").setCenter(-0.083925,0.00982575,0.123435006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_2").setName("r_tarsal_distal_phalanx_2")
                               .addChild(new Shape("r_tarsal_distal_phalanx_2_Shape")
@@ -839,8 +796,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.079137005,0.00385875,0.13077226,-0.07924275,0.00919575,0.132831,-0.090479255,0.00919575,0.13146976,-0.089037,0.00385875,0.12943351,-0.089795254,0.014742,0.13012426,-0.07945875,0.01503,0.13163851,-0.07676325,0.0020902497,0.124098755,-0.07612425,0.010449,0.12439126,-0.090738006,0.0020902497,0.122553006,-0.09172575,0.010449,0.122530505,-0.0905805,0.017046,0.12258226,-0.077337004,0.017561251,0.12417076,-0.0781605,0.0103545,0.11991376,-0.07859025,0.0046372497,0.119661756,-0.088020004,0.0046372497,0.11864926,-0.088701755,0.01040175,0.11864926,-0.087966,0.014622751,0.11864026,-0.078943506,0.01497375,0.11973376})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1643,0.0579,0.1638,0.0538,0.174,0.0396,0.1747,0.0423,0.1756,0.0403,0.1632,0.0573,0.066,0.0493,0.0915,0.0082,0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.0949,0.0775,0.1293,0.0261,0.1651,0.0639,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261})))))
                               .addChild(new Group("r_tarsal_distal_phalanx_2_Sites")
-                                .addComments(new String[] {" ",
-"(r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19) "})
+                                .addComments(" (r_tarsal_distal_phalanx_2_tip -0.110 0.011 0.19) ")
                                 .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_2_tip").setName("r_tarsal_distal_phalanx_2_tip").setTranslation(-0.08,0.016,0.14)
                                   .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_2_tip 117"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -854,8 +810,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.09967726,0.047187,0.03966075,-0.098028004,0.0032399986,0.0394875,-0.086492255,0.0038699985,0.0283275,-0.086946756,0.057577502,0.027519751,-0.09812926,0.054999,0.020137502,-0.08644951,0.003555,0.03870225,-0.08755425,0.05030325,0.039019503,-0.09743401,0.003824999,0.020232001,-0.08687701,0.063540004,0.01936125,-0.08664526,0.0034874994,0.019336501,-0.10509976,0.042345002,0.03648825,-0.103839755,0.04751775,0.022628251,-0.10331326,0.0062999995,0.02270475,-0.10357201,0.0059175007,0.036339752,-0.08185051,0.05565375,0.0262575,-0.08240176,0.04905225,0.0367065,-0.081357755,0.0060524987,0.0364185,-0.08146126,0.0062999995,0.0283905,-0.081596255,0.0060300003,0.021795752,-0.081785254,0.058905,0.021816,-0.08745076,0.04387275,0.046998,-0.09900901,0.04125825,0.047695503,-0.102935255,0.03753675,0.045558,-0.10153351,0.0081899995,0.045423,-0.097605005,0.006727501,0.0476505,-0.086908504,0.006974999,0.046795502,-0.08352901,0.0084375,0.045288,-0.084489755,0.043231502,0.045558})))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2226,0.0828,0.2197,0.0903,0.2186,0.1086,0.2179,0.1044,0.2314,0.0879,0.2128,0.1035,0.2098,0.0996,0.2271,0.0958,0.2224,0.1067,0.2197,0.1123,0.2224,0.1067,0.2314,0.0879,0.2226,0.0828,0.2314,0.0879,0.2314,0.0879,0.2197,0.0903,0.2179,0.1044,0.2098,0.0996,0.2098,0.0996,0.2186,0.1086,0.2197,0.1123,0.2224,0.1067,0.2098,0.0996,0.2226,0.0828,0.2226,0.0828,0.2197,0.0903,0.2226,0.0828,0.2098,0.0996,0.2098,0.0996,0.2098,0.0996})))))
                       .addChild(new Group("r_cuneiform_3_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_r_tarsometatarsal_3").setName("r_tarsometatarsal_3").setCenter(-0.09423001,0.0261,0.039397504).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_3").setName("r_metatarsal_3")
                         .addChild(new Shape("r_metatarsal_3_Shape")
@@ -866,8 +821,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_600_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_15_601_point()))))
                         .addChild(new Group("r_metatarsal_3_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_3").setName("r_metatarsophalangeal_3").setCenter(-0.0960975,0.015057,0.09542251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_3").setName("r_tarsal_proximal_phalanx_3")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_3_Shape")
@@ -878,8 +832,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_609_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1706,0.0686,0.1709,0.0678,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1716,0.0676,0.1882,0.0556,0.1745,0.076,0.1748,0.0736,0.1886,0.0572,0.2327,0.0796,0.2439,0.0803,0.2076,0.0485,0.2162,0.0476,0.2201,0.0466,0.2302,0.0796,0.2219,0.0517,0.2301,0.0734,0.2486,0.0743,0.2027,0.0537,0.2224,0.0526,0.2293,0.0736,0.1746,0.075,0.1885,0.0566,0.1801,0.0847,0.1811,0.0824,0.1952,0.0651,0.195,0.0629,0.2293,0.0837,0.1769,0.0796,0.2191,0.0403,0.1766,0.0777,0.2037,0.047,0.2486,0.0741,0.2026,0.0539,0.2444,0.0847,0.1915,0.0602,0.2041,0.0405,0.1915,0.0578,0.2464,0.0799,0.1801,0.0847,0.1952,0.0651,0.195,0.0629,0.1811,0.0824,0.1952,0.0651,0.1915,0.0602,0.2464,0.0799,0.2486,0.0741,0.2037,0.047,0.2041,0.0405,0.195,0.0629,0.1766,0.0777,0.2201,0.0466,0.2224,0.0526,0.2302,0.0796,0.2293,0.0837,0.1801,0.0847,0.1811,0.0824})))))
                           .addChild(new Group("r_tarsal_proximal_phalanx_3_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_3").setName("r_tarsal_proximal_interphalangeal_3").setCenter(-0.098505,0.011922751,0.110475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_3").setName("r_tarsal_middle_phalanx_3")
                             .addChild(new Shape("r_tarsal_middle_phalanx_3_Shape")
@@ -890,8 +843,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.09256725,0.010451251,0.12121875,-0.0933435,0.0020925007,0.12068325,-0.10653525,0.0020925007,0.1179315,-0.10752975,0.010451251,0.11788875,-0.106515,0.01704825,0.11801025,-0.0936045,0.017561251,0.120496504,-0.09252,0.012060001,0.11194875,-0.09366975,0.00283275,0.111267,-0.1027395,0.0029745002,0.109269,-0.1042245,0.012060001,0.109071,-0.10325925,0.021462752,0.1091205,-0.093554996,0.021753,0.111390755,-0.09346275,0.0120870005,0.107775,-0.094329,0.0049702507,0.107163,-0.09987525,0.0050557503,0.106002,-0.1010385,0.012129751,0.10587825,-0.10028025,0.0194175,0.105876,-0.094248,0.01959975,0.10727325,-0.097011,0.005463001,0.12333825,-0.096588,0.01035675,0.123804,-0.09708525,0.01408725,0.12320325,-0.1043775,0.013797001,0.121914,-0.104908496,0.010395001,0.12188925,-0.10430775,0.005463001,0.121842004})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1653,0.0654,0.1636,0.063,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1651,0.0639,0.1293,0.0261,0.0949,0.0775,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1291,0.0918,0.1834,0.0508,0.1554,0.0532,0.1716,0.0676,0.1709,0.0678,0.1706,0.0686,0.1824,0.0523,0.183,0.0511,0.1834,0.0508,0.1554,0.0532,0.1653,0.0654,0.1636,0.063,0.1651,0.0639,0.0949,0.0775,0.1792,0.0409,0.1795,0.0453})))))
                             .addChild(new Group("r_tarsal_middle_phalanx_3_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_3").setName("r_tarsal_distal_interphalangeal_3").setCenter(-0.100035004,0.00982575,0.11970001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_3").setName("r_tarsal_distal_phalanx_3")
                               .addChild(new Shape("r_tarsal_distal_phalanx_3_Shape")
@@ -902,8 +854,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.09654301,0.00919575,0.1282905,-0.096300006,0.00385875,0.12638927,-0.10481851,0.00385875,0.12447676,-0.10622025,0.00919575,0.12626776,-0.10552726,0.014742,0.12506627,-0.09664425,0.01503,0.12717001,-0.09255376,0.010449,0.12123676,-0.09333,0.0020902497,0.12070126,-0.106521755,0.0020902497,0.11794951,-0.10751626,0.010449,0.11790676,-0.106501505,0.017046,0.11802826,-0.093591005,0.017561251,0.12051451,-0.09416701,0.010368,0.11659051,-0.094677754,0.00461025,0.116106756,-0.10344826,0.00461025,0.114297755,-0.10414801,0.01039725,0.114322506,-0.10349551,0.014598,0.11436976,-0.09479926,0.0149445,0.11595826})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1643,0.0579,0.1747,0.0423,0.174,0.0396,0.1638,0.0538,0.1756,0.0403,0.1632,0.0573,0.0915,0.0082,0.066,0.0493,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.0949,0.0775,0.1293,0.0261,0.1651,0.0639,0.1636,0.063,0.1653,0.0654,0.1795,0.0453,0.1792,0.0409,0.1786,0.0451,0.1293,0.0261})))))
                               .addChild(new Group("r_tarsal_distal_phalanx_3_Sites")
-                                .addComments(new String[] {" ",
-"(r_tarsal_distal_phalanx_3_tip  -0.128 0.011 0.185)"})
+                                .addComments(" (r_tarsal_distal_phalanx_3_tip  -0.128 0.011 0.185) ")
                                 .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_3_tip").setName("r_tarsal_distal_phalanx_3_tip").setTranslation(-0.1,0.016,0.14)
                                   .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_3_tip 118"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape")))))))))))
@@ -917,8 +868,7 @@ public class JinScaledV2L1LOA4Sites07f
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_645_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2845,0.0964,0.2768,0.1211,0.2792,0.1228,0.2886,0.0939,0.2493,0.1586,0.2252,0.161,0.2241,0.1634,0.2489,0.1638,0.2727,0.0786,0.2746,0.076,0.2809,0.1238,0.2914,0.0926,0.2206,0.1691,0.249,0.1672,0.2762,0.0729,0.2769,0.1234,0.2869,0.0933,0.2461,0.1652,0.2661,0.1399,0.2685,0.1417,0.27,0.1429,0.2661,0.1424,0.24,0.098,0.2266,0.1229,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2178,0.1526,0.2363,0.0929,0.2213,0.1179,0.2171,0.1588,0.2129,0.1643,0.2165,0.148,0.2533,0.0835,0.273,0.1232,0.2824,0.0941,0.2433,0.1632,0.2759,0.0832,0.2685,0.0797,0.2623,0.1418,0.2231,0.166,0.273,0.1232,0.2824,0.0941,0.2759,0.0832,0.2685,0.0797,0.2533,0.0835,0.2165,0.148,0.2231,0.166,0.2433,0.1632,0.2623,0.1418,0.2665,0.0671,0.2628,0.0703,0.2363,0.0929,0.2213,0.1179,0.2178,0.1526,0.2171,0.1588,0.2129,0.1643,0.2165,0.148,0.2533,0.0835,0.2664,0.0668})))))
                     .addChild(new Group("r_calcaneus_Sites")
-                      .addComments(new String[] {" ",
-"None "})))
+                      .addComments(" None ")))
                   .addChild(new HAnimJoint("hanim_r_transversetarsal").setName("r_transversetarsal").setCenter(-0.110272504,0.03528,0.002089125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                     .addChild(new HAnimSegment("hanim_r_cuboid").setName("r_cuboid")
                       .addChild(new Shape("r_cuboid_Shape")
@@ -929,8 +879,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(getCoordinate_14_654_point()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2528,0.0622,0.2585,0.0581,0.2383,0.0796,0.2566,0.0607,0.243,0.0749,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2292,0.0691,0.2342,0.0682,0.2533,0.0835,0.2407,0.0951,0.2314,0.0879,0.2226,0.0828,0.2271,0.0958,0.2197,0.0903,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2363,0.0929,0.2407,0.0951,0.2314,0.0879,0.2226,0.0828,0.2197,0.0903,0.2271,0.0958,0.2363,0.0929,0.2533,0.0835,0.2407,0.0951,0.2407,0.0951,0.2363,0.0929,0.2363,0.0929,0.2628,0.0703,0.2665,0.0671,0.2664,0.0668,0.2469,0.052,0.2292,0.0691,0.2197,0.0903,0.2197,0.0903,0.2226,0.0828,0.2226,0.0828,0.2342,0.0682,0.2484,0.051,0.2512,0.047})))))
                       .addChild(new Group("r_cuboid_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_r_tarsometatarsal_4").setName("r_tarsometatarsal_4").setCenter(-0.10613251,0.0245475,0.03843).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_r_metatarsal_4").setName("r_metatarsal_4")
                         .addChild(new Shape("r_metatarsal_4_Shape")
@@ -941,8 +890,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_663_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2117,0.0481,0.2254,0.0615,0.2142,0.0508,0.2102,0.0461,0.2083,0.0443,0.2202,0.0585,0.2186,0.0548,0.1989,0.0701,0.1984,0.068,0.2138,0.0778,0.1952,0.0651,0.195,0.0629,0.2061,0.0729,0.2292,0.0691,0.2342,0.0682,0.2226,0.0828,0.2129,0.0844,0.2197,0.0903,0.2254,0.0615,0.2061,0.0729,0.2138,0.0778,0.2061,0.0729,0.1984,0.068,0.195,0.0629,0.195,0.0629,0.1984,0.068,0.2061,0.0729,0.2226,0.0828,0.2226,0.0828,0.2186,0.0548,0.2254,0.0615,0.2342,0.0682,0.2342,0.0682,0.2254,0.0615,0.2117,0.0481,0.2083,0.0443,0.2083,0.0443,0.2117,0.0481,0.2083,0.0443,0.195,0.0629,0.195,0.0629,0.195,0.0629,0.195,0.0629,0.2083,0.0443,0.2083,0.0443,0.2083,0.0443,0.2226,0.0828,0.2342,0.0682,0.2342,0.0682,0.2342,0.0682,0.2342,0.0682,0.2226,0.0828,0.2226,0.0828,0.2226,0.0828})))))
                         .addChild(new Group("r_metatarsal_4_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_4").setName("r_metatarsophalangeal_4").setCenter(-0.10950751,0.01435275,0.091170006).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_4").setName("r_tarsal_proximal_phalanx_4")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_4_Shape")
@@ -953,8 +901,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_672_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2033,0.0375,0.1866,0.0487,0.186,0.0472,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.1873,0.048,0.1915,0.0602,0.1915,0.0578,0.1897,0.0535,0.1888,0.0569,0.2031,0.037,0.2012,0.0381,0.2444,0.0847,0.2208,0.06,0.2111,0.0557,0.2254,0.054,0.2483,0.0809,0.2464,0.0799,0.2587,0.0865,0.225,0.0604,0.2239,0.0673,0.2238,0.0671,0.267,0.0845,0.2486,0.0741,0.2486,0.074,0.2049,0.059,0.1896,0.055,0.2102,0.0461,0.1952,0.0651,0.2083,0.0443,0.195,0.0629,0.2109,0.0476,0.2048,0.0404,0.2576,0.0911,0.2063,0.0414,0.2083,0.0537,0.2612,0.0869,0.2671,0.0842,0.2047,0.0593,0.1952,0.0651,0.2102,0.0461,0.2083,0.0443,0.195,0.0629,0.2102,0.0461,0.2063,0.0414,0.2612,0.0869,0.2671,0.0842,0.2083,0.0537,0.2109,0.0476,0.2083,0.0443,0.2444,0.0847,0.1952,0.0651,0.195,0.0629,0.1915,0.0578,0.225,0.0604,0.2239,0.0673,0.2464,0.0799})))))
                           .addChild(new Group("r_tarsal_proximal_phalanx_4_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_4").setName("r_tarsal_proximal_interphalangeal_4").setCenter(-0.11378251,0.0122445,0.1063125).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_4").setName("r_tarsal_middle_phalanx_4")
                             .addChild(new Shape("r_tarsal_middle_phalanx_4_Shape")
@@ -965,8 +912,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.10878976,0.002007,0.115029,-0.10769851,0.010451251,0.11555775,-0.12018826,0.002007,0.112497754,-0.12140551,0.010451251,0.11259675,-0.12056626,0.01614375,0.112122,-0.108724505,0.016731001,0.115152754,-0.108315006,0.00297,0.107298,-0.10702576,0.012060001,0.10752975,-0.117623255,0.00240075,0.10500525,-0.11866951,0.012060001,0.10465875,-0.117843755,0.02149425,0.10513125,-0.107874006,0.022482002,0.10743975,-0.10819576,0.012159,0.102483004,-0.109190255,0.00519525,0.1023345,-0.114540756,0.0048667504,0.10100475,-0.11531701,0.012105,0.100707754,-0.11468926,0.019399501,0.10112175,-0.10883701,0.01998,0.102429,-0.11238301,0.0053955005,0.117645755,-0.11176426,0.0104175005,0.118089005,-0.11221201,0.013248,0.117839254,-0.11846251,0.0129375,0.116775006,-0.11883601,0.01049625,0.11662875,-0.11806426,0.0053955005,0.116406})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1822,0.0458,0.1809,0.0434,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.1816,0.0411,0.1287,0.0243,0.0943,0.0785,0.1866,0.0487,0.186,0.0472,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.1322,0.09,0.157,0.0552,0.1873,0.048,0.186,0.0472,0.1866,0.0487,0.1969,0.0343,0.1963,0.0328,0.1973,0.0341,0.157,0.0552,0.1822,0.0458,0.1809,0.0434,0.1816,0.0411,0.0943,0.0785,0.1948,0.024,0.1953,0.0282})))))
                             .addChild(new Group("r_tarsal_middle_phalanx_4_Sites")
-                              .addComments(new String[] {" ",
-"None "})))
+                              .addComments(" None ")))
                           .addChild(new HAnimJoint("hanim_r_tarsal_distal_interphalangeal_4").setName("r_tarsal_distal_interphalangeal_4").setCenter(-0.1153125,0.009369,0.11369251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                             .addChild(new HAnimSegment("hanim_r_tarsal_distal_phalanx_4").setName("r_tarsal_distal_phalanx_4")
                               .addChild(new Shape("r_tarsal_distal_phalanx_4_Shape")
@@ -977,8 +923,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.111879006,0.0039284998,0.11950425,-0.118908,0.0039284998,0.117828004,-0.119619004,0.009729,0.1197315,-0.11150775,0.009729,0.12130425,-0.118937254,0.0136395,0.11825775,-0.112056755,0.013979251,0.119880006,-0.10879876,0.002007,0.11502676,-0.10770751,0.01045125,0.1155555,-0.12019725,0.002007,0.112495504,-0.121414505,0.01045125,0.1125945,-0.12057526,0.0161415,0.11211976,-0.108733505,0.016731,0.115150504,-0.1092735,0.0103815,0.11088675,-0.11000925,0.0045045,0.11042325,-0.11711925,0.0045045,0.1088595,-0.1180035,0.01044,0.10905075,-0.11746576,0.01369575,0.108524255,-0.109865256,0.01407375,0.11059875})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1831,0.0355,0.1904,0.0263,0.1901,0.0243,0.1819,0.0351,0.1913,0.0249,0.182,0.0368,0.088,0.0133,0.0677,0.0461,0.1822,0.0458,0.1809,0.0434,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.0943,0.0785,0.1287,0.0243,0.1816,0.0411,0.1809,0.0434,0.1822,0.0458,0.1953,0.0282,0.1948,0.024,0.1933,0.0293,0.1287,0.0243})))))
                               .addChild(new Group("r_tarsal_distal_phalanx_4_Sites")
-                                .addComments(new String[] {" ",
-"(r_tarsal_distal_phalanx_4_tip  -0.142 0.011 0.178)  "})
+                                .addComments(" (r_tarsal_distal_phalanx_4_tip  -0.142 0.011 0.178) ")
                                 .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_4_tip").setName("r_tarsal_distal_phalanx_4_tip").setTranslation(-0.115,0.016,0.13)
                                   .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_4_tip 119"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -992,8 +937,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_706_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2299,0.0317,0.2316,0.0247,0.2265,0.0269,0.241,0.0419,0.244,0.0359,0.2401,0.0413,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2333,0.0341,0.2378,0.0303,0.2142,0.0508,0.2117,0.0481,0.2254,0.0615,0.2102,0.0461,0.2083,0.0443,0.2202,0.0585,0.2186,0.0548,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2292,0.0691,0.2342,0.0682,0.2142,0.0508,0.2202,0.0585,0.2292,0.0691,0.2342,0.0682,0.2254,0.0615,0.2186,0.0548,0.2117,0.0481,0.2083,0.0443,0.2102,0.0461,0.2292,0.0691,0.2469,0.052,0.2512,0.047,0.2484,0.051,0.2342,0.0682,0.2342,0.0682,0.2292,0.0691,0.226,0.0221,0.2245,0.0286,0.2102,0.0461,0.2102,0.0461,0.2083,0.0443,0.2083,0.0443,0.2232,0.0245})))))
                         .addChild(new Group("r_metatarsal__Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_r_metatarsophalangeal_5").setName("r_metatarsophalangeal_5").setCenter(-0.12368251,0.013671,0.0865575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_r_tarsal_proximal_phalanx_5").setName("r_tarsal_proximal_phalanx_5")
                           .addChild(new Shape("r_tarsal_proximal_phalanx_5_Shape")
@@ -1004,8 +948,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_715_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2192,0.0256,0.2205,0.0195,0.2048,0.0404,0.2199,0.022,0.2063,0.0414,0.2047,0.0523,0.1956,0.0462,0.1979,0.0386,0.2109,0.0476,0.277,0.1031,0.2673,0.0987,0.263,0.1,0.2744,0.109,0.1892,0.0439,0.1911,0.0375,0.2576,0.0911,0.2083,0.0537,0.263,0.0893,0.2612,0.0869,0.2047,0.0593,0.2048,0.0593,0.2671,0.0842,0.2673,0.0839,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2102,0.0461,0.2083,0.0443,0.2039,0.0358,0.2152,0.0224,0.2154,0.0203,0.2126,0.0258,0.2034,0.0366,0.2033,0.0375,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2245,0.0286,0.226,0.0221,0.2232,0.0245,0.2083,0.0443,0.2102,0.0461,0.2576,0.0911,0.2102,0.0461,0.2083,0.0443,0.2048,0.0404,0.2083,0.0537,0.2047,0.0593,0.2612,0.0869})))))
                           .addChild(new Group("r_tarsal_proximal_phalanx_5_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_r_tarsal_proximal_interphalangeal_5").setName("r_tarsal_proximal_interphalangeal_5").setCenter(-0.126,0.01085625,0.09414).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_r_tarsal_middle_phalanx_5").setName("r_tarsal_middle_phalanx_5")
                             .addChild(new Shape("r_tarsal_middle_phalanx_5_Shape")
@@ -1016,8 +959,7 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.131418,0.001701,0.10044675,-0.132984,0.007893,0.1001745,-0.132093,0.014760001,0.10041075,-0.12078676,0.015426001,0.10263825,-0.11997225,0.0078097503,0.103133254,-0.12173625,0.0018089998,0.10235926,-0.12943125,0.0024795,0.09323326,-0.1312965,0.01068975,0.093408756,-0.13012426,0.01865025,0.09320851,-0.1197945,0.0200115,0.09551475,-0.11914875,0.0114187505,0.096588,-0.1203615,0.0042232494,0.09544501,-0.1268865,0.0051682503,0.090396,-0.12820725,0.0107797505,0.090704255,-0.127323,0.01658025,0.09043425,-0.120982505,0.01741275,0.0917505,-0.120609,0.011531251,0.09275851,-0.121455,0.0062100003,0.0917055,-0.1303425,0.00807525,0.104184,-0.12957975,0.0050759995,0.104303256,-0.12486825,0.00513,0.105151504,-0.124029,0.00811125,0.10570726,-0.12439125,0.0118642505,0.10528875,-0.1298925,0.01154025,0.104305506})))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2109,0.0133,0.2102,0.0181,0.2093,0.0169,0.1959,0.0354,0.1986,0.0324,0.1989,0.0342,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2114,0.0219,0.2132,0.0168,0.2123,0.0196,0.1999,0.0356,0.201,0.0349,0.2011,0.0354,0.2109,0.0133,0.2102,0.0181,0.1989,0.0342,0.1986,0.0324,0.1959,0.0354,0.2093,0.0169})))))
                             .addChild(new Group("r_tarsal_middle_phalanx_5_Sites")
-                              .addComments(new String[] {" ",
-"(r_metatarsal_phalanx_5_pt  x y z)"})
+                              .addComments(" (r_metatarsal_phalanx_5_pt  x y z) ")
                               .addChild(new HAnimSite("hanim_r_metatarsal_phalanx_5_pt").setName("r_metatarsal_phalanx_5_pt").setTranslation(-0.12,0.02,0.04)
                                 .addChild(new TouchSensor().setDescription("HAnimSite r_metatarsal_phalanx_5_pt 60"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1031,8 +973,7 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.12972376,0.001818,0.10640925,-0.1318095,0.0076590003,0.1083915,-0.1307025,0.01277325,0.107160755,-0.124227,0.01313775,0.10856475,-0.12432825,0.00782325,0.109813504,-0.12410325,0.001818,0.10743525,-0.131436,0.001701,0.10045125,-0.133002,0.007893001,0.100179,-0.13211325,0.014760001,0.10041525,-0.12080475,0.015426001,0.10264275,-0.11999025,0.0078097503,0.103137754,-0.12175425,0.0018090005,0.10236375,-0.12864825,0.0042705005,0.09676125,-0.12961125,0.0080685,0.0966015,-0.129051,0.012384,0.09675225,-0.1220985,0.012793501,0.09804825,-0.12162375,0.00807525,0.098487005,-0.12269475,0.004338,0.097875})))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2048,0.0135,0.2053,0.0142,0.1964,0.026,0.1976,0.0232,0.1977,0.0271,0.2052,0.017,0.0639,0.0523,0.0903,0.0107,0.2102,0.0181,0.2109,0.0133,0.2093,0.0169,0.1317,0.0215,0.0951,0.0836,0.1959,0.0354,0.1986,0.0324,0.1989,0.0342,0.2102,0.0181,0.2109,0.0133,0.2093,0.0169,0.0951,0.0836,0.1986,0.0324,0.1989,0.0342})))))
                               .addChild(new Group("r_tarsal_distal_phalanx_5_Sites")
-                                .addComments(new String[] {" ",
-"(r_tarsal_distal_phalanx_5_tip  -0.154 0.010 0.168)"})
+                                .addComments(" (r_tarsal_distal_phalanx_5_tip  -0.154 0.010 0.168) ")
                                 .addChild(new HAnimSite("hanim_r_tarsal_distal_phalanx_5_tip").setName("r_tarsal_distal_phalanx_5_tip").setTranslation(-0.125,0.016,0.115)
                                   .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_5_tip 120"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))))))
@@ -1046,12 +987,11 @@ public class JinScaledV2L1LOA4Sites07f
                   .setCoord(new Coordinate().setPoint(getCoordinate_10_757_point()))
                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.3553,0.2398,0.3555,0.2151,0.3557,0.2401,0.3545,0.2151,0.3536,0.2151,0.019,0.2349,0.0206,0.2122,0.0206,0.2122,0.1067,0.2154,0.1011,0.241,0.019,0.2349,0.1463,0.2162,0.1445,0.2419,0.227,0.2131,0.3536,0.2151,0.3561,0.2404,0.2369,0.2375,0.1879,0.2143,0.1927,0.24,0.3553,0.2398,0.3555,0.2151,0.3545,0.2151,0.3557,0.2401,0.0206,0.2122,0.019,0.2349,0.3536,0.2151,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.1927,0.24,0.2369,0.2375,0.3561,0.2404,0.3557,0.2401,0.3553,0.2398,0.2369,0.2375,0.1927,0.24,0.1445,0.2419,0.1011,0.241,0.019,0.2349,0.019,0.2349})))))
               .addChild(new Group("l5_Sites")
-                .addComments(new String[] {" ",
-"(spine_1_middle_back  x y z)",
-"(spine_2_lower_back_pt  x y z)",
-"(waist_preferred_anterior_pt  x y z)",
-"(waist_preferred_posterior_pt  0.2900 1.0915 -0.1091) ",
-"(navel  0.0069 1.0966 0.1017)"})
+                .addComments(" (spine_1_middle_back  x y z) ")
+                .addComments(" (spine_2_lower_back_pt  x y z) ")
+                .addComments(" (waist_preferred_anterior_pt  x y z) ")
+                .addComments(" (waist_preferred_posterior_pt  0.2900 1.0915 -0.1091) ")
+                .addComments(" (navel  0.0069 1.0966 0.1017) ")
                 .addChild(new HAnimSite("hanim_spine_1_middle_back_pt").setName("spine_1_middle_back_pt").setTranslation(0.0,1.0,-0.1)
                   .addChild(new TouchSensor().setDescription("HAnimSite spine_1_middle_back_pt 24"))
                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1077,8 +1017,7 @@ public class JinScaledV2L1LOA4Sites07f
                     .setCoord(new Coordinate().setPoint(getCoordinate_11_781_point()))
                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1026,0.2616,0.1481,0.2604,0.3503,0.2575,0.3578,0.2568,0.0179,0.2574,0.2289,0.2559,0.1884,0.2584,0.0186,0.2582,0.3542,0.2515,0.1011,0.241,0.1445,0.2419,0.3553,0.2398,0.3561,0.2404,0.2369,0.2375,0.1927,0.24,0.019,0.2349,0.3557,0.2401,0.019,0.2349,0.019,0.2349,0.1011,0.241,0.1026,0.2616,0.0179,0.2574,0.1445,0.2419,0.1481,0.2604,0.2369,0.2375,0.3561,0.2404,0.3503,0.2575,0.2289,0.2559,0.1927,0.24,0.1884,0.2584,0.019,0.2349,0.0186,0.2582,0.3578,0.2568,0.3553,0.2398,0.3557,0.2401,0.3542,0.2515,0.0179,0.2574,0.1026,0.2616,0.1481,0.2604,0.1884,0.2584,0.2289,0.2559,0.3503,0.2575,0.3542,0.2515,0.3578,0.2568,0.2289,0.2559,0.1884,0.2584,0.1481,0.2604,0.1026,0.2616,0.0179,0.2574,0.0186,0.2582,0.1011,0.241,0.019,0.2349,0.019,0.2349,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.1927,0.24,0.2369,0.2375,0.3561,0.2404,0.3557,0.2401,0.3553,0.2398,0.2369,0.2375,0.1927,0.24,0.1445,0.2419})))))
                 .addChild(new Group("l4_Sites")
-                  .addComments(new String[] {" ",
-"None "})))
+                  .addComments(" None ")))
               .addChild(new HAnimJoint("hanim_vl3").setName("vl3").setCenter(0.0,0.96592504,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                 .addChild(new HAnimSegment("hanim_l3").setName("l3")
                   .addChild(new Shape("l3_Shape")
@@ -1089,8 +1028,7 @@ public class JinScaledV2L1LOA4Sites07f
                       .setCoord(new Coordinate().setPoint(getCoordinate_12_790_point()))
                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1041,0.2822,0.0168,0.2798,0.1518,0.2789,0.3444,0.2746,0.3604,0.2737,0.221,0.2742,0.1842,0.2768,0.3527,0.263,0.0181,0.2816,0.1026,0.2616,0.1481,0.2604,0.3578,0.2568,0.3503,0.2575,0.0179,0.2574,0.2289,0.2559,0.1884,0.2584,0.0186,0.2582,0.3542,0.2515,0.3604,0.2737,0.3578,0.2568,0.3542,0.2515,0.3527,0.263,0.1026,0.2616,0.1041,0.2822,0.0168,0.2798,0.0179,0.2574,0.1481,0.2604,0.1518,0.2789,0.3503,0.2575,0.3444,0.2746,0.221,0.2742,0.2289,0.2559,0.1842,0.2768,0.1884,0.2584,0.0181,0.2816,0.0186,0.2582,0.0168,0.2798,0.1041,0.2822,0.1518,0.2789,0.1842,0.2768,0.221,0.2742,0.3444,0.2746,0.3527,0.263,0.3604,0.2737,0.221,0.2742,0.1842,0.2768,0.1518,0.2789,0.1041,0.2822,0.0168,0.2798,0.0181,0.2816,0.1026,0.2616,0.0179,0.2574,0.0186,0.2582,0.0179,0.2574,0.1026,0.2616,0.1481,0.2604,0.1884,0.2584,0.2289,0.2559,0.3503,0.2575,0.3542,0.2515,0.3578,0.2568,0.2289,0.2559,0.1884,0.2584,0.1481,0.2604})))))
                   .addChild(new Group("l3_Sites")
-                    .addComments(new String[] {" ",
-"None "})))
+                    .addComments(" None ")))
                 .addChild(new HAnimJoint("hanim_vl2").setName("vl2").setCenter(0.0,0.98235005,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                   .addChild(new HAnimSegment("hanim_l2").setName("l2")
                     .addChild(new Shape("l2_Shape")
@@ -1101,9 +1039,8 @@ public class JinScaledV2L1LOA4Sites07f
                         .setCoord(new Coordinate().setPoint(getCoordinate_13_799_point()))
                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.3633,0.2922,0.3627,0.2922,0.0177,0.3051,0.1055,0.2814,0.3697,0.2711,0.3605,0.2757,0.2204,0.275,0.1853,0.2768,0.024,0.2813,0.1448,0.2785,0.3603,0.2745,0.0155,0.2778,0.3633,0.2922,0.3697,0.2711,0.3603,0.2745,0.3627,0.2922,0.1055,0.2814,0.0982,0.302,0.0177,0.3051,0.024,0.2813,0.1448,0.2785,0.1487,0.2975,0.3605,0.2757,0.3621,0.2922,0.2175,0.2944,0.2204,0.275,0.1849,0.2961,0.1853,0.2768,0.0177,0.3051,0.0155,0.2778,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.1849,0.2961,0.2175,0.2944,0.3621,0.2922,0.3627,0.2922,0.3633,0.2922,0.2175,0.2944,0.1849,0.2961,0.1487,0.2975,0.0982,0.302,0.0177,0.3051,0.0177,0.3051,0.1055,0.2814,0.024,0.2813,0.0155,0.2778,0.024,0.2813,0.1055,0.2814,0.1448,0.2785,0.1853,0.2768,0.2204,0.275,0.3605,0.2757,0.3603,0.2745,0.3697,0.2711,0.2204,0.275,0.1853,0.2768,0.1448,0.2785})))))
                     .addChild(new Group("l2_Sites")
-                      .addComments(new String[] {" ",
-"(l_rib_10_pt  0.0871 1.1925 0.0992)",
-"(r_rib_10_pt  -0.0711 1.1941 0.1016)"})
+                      .addComments(" (l_rib_10_pt  0.0871 1.1925 0.0992) ")
+                      .addComments(" (r_rib_10_pt  -0.0711 1.1941 0.1016) ")
                       .addChild(new HAnimSite("hanim_l_rib_10_pt").setName("l_rib_10_pt").setTranslation(0.09,1.0,0.04)
                         .addChild(new TouchSensor().setDescription("HAnimSite l_rib_10_pt 28"))
                         .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1120,8 +1057,7 @@ public class JinScaledV2L1LOA4Sites07f
                           .setCoord(new Coordinate().setPoint(getCoordinate_14_814_point()))
                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0943,0.3233,0.0192,0.3251,0.1489,0.3212,0.3615,0.3195,0.3631,0.318,0.2175,0.3185,0.1844,0.32,0.3623,0.3188,0.0192,0.3251,0.0982,0.302,0.1849,0.2961,0.0177,0.3051,0.3627,0.2922,0.1487,0.2975,0.3633,0.2922,0.3621,0.2922,0.2175,0.2944,0.0177,0.3051,0.0177,0.3051,0.0982,0.302,0.0943,0.3233,0.0192,0.3251,0.1487,0.2975,0.1489,0.3212,0.2175,0.2944,0.3621,0.2922,0.3615,0.3195,0.2175,0.3185,0.1849,0.2961,0.1844,0.32,0.0177,0.3051,0.0192,0.3251,0.3631,0.318,0.3633,0.2922,0.3627,0.2922,0.3623,0.3188,0.0192,0.3251,0.0943,0.3233,0.1489,0.3212,0.1844,0.32,0.2175,0.3185,0.3615,0.3195,0.3623,0.3188,0.3631,0.318,0.2175,0.3185,0.1844,0.32,0.1489,0.3212,0.0943,0.3233,0.0192,0.3251,0.0192,0.3251,0.0982,0.302,0.0177,0.3051,0.0177,0.3051,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.1849,0.2961,0.2175,0.2944,0.3621,0.2922,0.3627,0.2922,0.3633,0.2922,0.2175,0.2944,0.1849,0.2961,0.1487,0.2975})))))
                       .addChild(new Group("l1_Sites")
-                        .addComments(new String[] {" ",
-"None "})))
+                        .addComments(" None ")))
                     .addChild(new HAnimJoint("hanim_vt12").setName("vt12").setCenter(0.0,1.0230751,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                       .addChild(new HAnimSegment("hanim_t12").setName("t12")
                         .addChild(new Shape("t12_Shape")
@@ -1132,8 +1068,7 @@ public class JinScaledV2L1LOA4Sites07f
                             .setCoord(new Coordinate().setPoint(getCoordinate_15_823_point()))
                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0903,0.3446,0.1491,0.3449,0.0206,0.3452,0.3608,0.3469,0.3629,0.3439,0.2175,0.3427,0.1838,0.3438,0.3619,0.3454,0.0206,0.3452,0.0943,0.3233,0.0192,0.3251,0.1489,0.3212,0.3631,0.318,0.3615,0.3195,0.2175,0.3185,0.1844,0.32,0.3623,0.3188,0.0192,0.3251,0.2175,0.3427,0.1838,0.3438,0.1844,0.32,0.2175,0.3185,0.3619,0.3454,0.3629,0.3439,0.3631,0.318,0.3623,0.3188,0.0943,0.3233,0.0903,0.3446,0.0206,0.3452,0.0192,0.3251,0.1489,0.3212,0.1491,0.3449,0.3615,0.3195,0.3608,0.3469,0.0206,0.3452,0.0192,0.3251,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1838,0.3438,0.2175,0.3427,0.3608,0.3469,0.3619,0.3454,0.3629,0.3439,0.2175,0.3427,0.1838,0.3438,0.1491,0.3449,0.0903,0.3446,0.0206,0.3452,0.0206,0.3452,0.0943,0.3233,0.0192,0.3251,0.0192,0.3251,0.0192,0.3251,0.0943,0.3233,0.1489,0.3212,0.1844,0.32,0.2175,0.3185,0.3615,0.3195,0.3623,0.3188,0.3631,0.318,0.2175,0.3185,0.1844,0.32,0.1489,0.3212})))))
                         .addChild(new Group("t12_Sites")
-                          .addComments(new String[] {" ",
-"None "})))
+                          .addComments(" None ")))
                       .addChild(new HAnimJoint("hanim_vt11").setName("vt11").setCenter(0.0,1.0467,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                         .addChild(new HAnimSegment("hanim_t11").setName("t11")
                           .addChild(new Shape("t11_Shape")
@@ -1144,8 +1079,7 @@ public class JinScaledV2L1LOA4Sites07f
                               .setCoord(new Coordinate().setPoint(getCoordinate_16_832_point()))
                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0206,0.3452,0.0903,0.3446,0.0903,0.3446,0.1491,0.3449,0.3629,0.3439,0.3608,0.3469,0.2175,0.3427,0.1838,0.3438,0.0206,0.3452,0.3619,0.3454,0.0206,0.3452,0.089,0.3604,0.1508,0.3559,0.3623,0.3532,0.3588,0.3561,0.0232,0.3561,0.2188,0.3538,0.1874,0.3541,0.0232,0.3546,0.3608,0.3537,0.2175,0.3427,0.3608,0.3469,0.3588,0.3561,0.2188,0.3538,0.1838,0.3438,0.1874,0.3541,0.1491,0.3449,0.1508,0.3559,0.0206,0.3452,0.0206,0.3452,0.0232,0.3561,0.0232,0.3546,0.0903,0.3446,0.0206,0.3452,0.0903,0.3446,0.089,0.3604,0.3623,0.3532,0.3629,0.3439,0.3619,0.3454,0.3608,0.3537,0.0903,0.3446,0.0206,0.3452,0.0206,0.3452,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1838,0.3438,0.2175,0.3427,0.3608,0.3469,0.3619,0.3454,0.3629,0.3439,0.2175,0.3427,0.1838,0.3438,0.1491,0.3449,0.2188,0.3538,0.3588,0.3561,0.3608,0.3537,0.3623,0.3532,0.2188,0.3538,0.1874,0.3541,0.1508,0.3559,0.089,0.3604,0.0232,0.3561,0.0232,0.3546,0.0232,0.3561,0.089,0.3604,0.1508,0.3559,0.1874,0.3541})))))
                           .addChild(new Group("t11_Sites")
-                            .addComments(new String[] {" ",
-"None "})))
+                            .addComments(" None ")))
                         .addChild(new HAnimJoint("hanim_vt10").setName("vt10").setCenter(0.0,1.0638,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                           .addChild(new HAnimSegment("hanim_t10").setName("t10")
                             .addChild(new Shape("t10_Shape")
@@ -1156,9 +1090,8 @@ public class JinScaledV2L1LOA4Sites07f
                                 .setCoord(new Coordinate().setPoint(getCoordinate_17_841_point()))
                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.089,0.3604,0.1508,0.3559,0.3588,0.3561,0.3623,0.3532,0.0232,0.3561,0.2188,0.3538,0.1874,0.3541,0.0232,0.3546,0.3608,0.3537,0.0245,0.3617,0.2207,0.3633,0.1922,0.3628,0.3616,0.3609,0.0859,0.3657,0.1489,0.3665,0.3589,0.3648,0.3617,0.3609,0.0254,0.3626,0.3588,0.3561,0.3589,0.3648,0.2207,0.3633,0.2188,0.3538,0.1922,0.3628,0.1874,0.3541,0.1489,0.3665,0.1508,0.3559,0.0232,0.3561,0.0245,0.3617,0.0254,0.3626,0.0232,0.3546,0.089,0.3604,0.0859,0.3657,0.3617,0.3609,0.3623,0.3532,0.3608,0.3537,0.3616,0.3609,0.3623,0.3532,0.2188,0.3538,0.1874,0.3541,0.1508,0.3559,0.089,0.3604,0.0232,0.3561,0.0232,0.3546,0.0232,0.3561,0.089,0.3604,0.1508,0.3559,0.1874,0.3541,0.2188,0.3538,0.3588,0.3561,0.3608,0.3537,0.0245,0.3617,0.0859,0.3657,0.1489,0.3665,0.1922,0.3628,0.2207,0.3633,0.3589,0.3648,0.3616,0.3609,0.3617,0.3609,0.2207,0.3633,0.1922,0.3628,0.1489,0.3665,0.0859,0.3657,0.0245,0.3617,0.0254,0.3626})))))
                             .addChild(new Group("t10_Sites")
-                              .addComments(new String[] {" ",
-"(substernale_pt  0.0085 1.2995 0.1147) ",
-"(mesosternale_pt x y z) "})
+                              .addComments(" (substernale_pt  0.0085 1.2995 0.1147) ")
+                              .addComments(" (mesosternale_pt x y z) ")
                               .addChild(new HAnimSite("hanim_substernale_pt").setName("substernale_pt").setTranslation(0.0,1.08,0.076)
                                 .addChild(new TouchSensor().setDescription("HAnimSite substernale_pt 13"))
                                 .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1175,12 +1108,11 @@ public class JinScaledV2L1LOA4Sites07f
                                   .setCoord(new Coordinate().setPoint(getCoordinate_18_856_point()))
                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0245,0.3617,0.2207,0.3633,0.1922,0.3628,0.3616,0.3609,0.0859,0.3657,0.1489,0.3665,0.3589,0.3648,0.3617,0.3609,0.0254,0.3626,0.0258,0.3672,0.2227,0.3728,0.1969,0.3716,0.0826,0.3711,0.1469,0.377,0.3589,0.3735,0.3612,0.3687,0.0276,0.3706,0.3625,0.3682,0.0258,0.3672,0.0245,0.3617,0.0859,0.3657,0.0826,0.3711,0.3612,0.3687,0.3617,0.3609,0.3616,0.3609,0.3625,0.3682,0.1489,0.3665,0.1469,0.377,0.3589,0.3648,0.3589,0.3735,0.2227,0.3728,0.2207,0.3633,0.1969,0.3716,0.1922,0.3628,0.0276,0.3706,0.0254,0.3626,0.0859,0.3657,0.0245,0.3617,0.0254,0.3626,0.0245,0.3617,0.0859,0.3657,0.1489,0.3665,0.1922,0.3628,0.2207,0.3633,0.3589,0.3648,0.3616,0.3609,0.3617,0.3609,0.2207,0.3633,0.1922,0.3628,0.1489,0.3665,0.2227,0.3728,0.3589,0.3735,0.3625,0.3682,0.3612,0.3687,0.2227,0.3728,0.1969,0.3716,0.1469,0.377,0.0826,0.3711,0.0258,0.3672,0.0276,0.3706,0.0258,0.3672,0.0826,0.3711,0.1469,0.377,0.1969,0.3716})))))
                               .addChild(new Group("t9_Sites")
-                                .addComments(new String[] {" ",
-"(l_thelion_pt  0.0918 1.3382 0.1192) ",
-"(r_thelion_pt  -0.0736 1.3385 0.1217) ",
-"(rear_center_midsagittal_plane_pt  x y z)",
-"(l_chest_midsagittal_plane_pt  x y z)",
-"(r_chest_midsagittal_plane_pt  x y z)  "})
+                                .addComments(" (l_thelion_pt  0.0918 1.3382 0.1192) ")
+                                .addComments(" (r_thelion_pt  -0.0736 1.3385 0.1217) ")
+                                .addComments(" (rear_center_midsagittal_plane_pt  x y z) ")
+                                .addComments(" (l_chest_midsagittal_plane_pt  x y z) ")
+                                .addComments(" (r_chest_midsagittal_plane_pt  x y z) ")
                                 .addChild(new HAnimSite("hanim_l_thelion_pt").setName("l_thelion_pt").setTranslation(0.07,1.12,0.09)
                                   .addChild(new TouchSensor().setDescription("HAnimSite l_thelion_pt 29"))
                                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1206,8 +1138,7 @@ public class JinScaledV2L1LOA4Sites07f
                                     .setCoord(new Coordinate().setPoint(getCoordinate_19_880_point()))
                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0908,0.3999,0.0325,0.3879,0.0306,0.3835,0.1568,0.3845,0.3535,0.3812,0.3589,0.3783,0.2214,0.3832,0.1952,0.3809,0.3561,0.3769,0.0802,0.3883,0.1575,0.3746,0.3637,0.3704,0.356,0.3713,0.3581,0.3683,0.0256,0.3731,0.0261,0.363,0.2218,0.3729,0.1941,0.3712,0.0325,0.3879,0.0256,0.3731,0.0802,0.3883,0.0908,0.3999,0.3589,0.3783,0.3637,0.3704,0.3581,0.3683,0.3561,0.3769,0.1575,0.3746,0.1568,0.3845,0.356,0.3713,0.3535,0.3812,0.2214,0.3832,0.2218,0.3729,0.1952,0.3809,0.1941,0.3712,0.0306,0.3835,0.0261,0.363,0.3637,0.3704,0.2218,0.3729,0.1941,0.3712,0.1575,0.3746,0.0802,0.3883,0.0256,0.3731,0.0261,0.363,0.0256,0.3731,0.0802,0.3883,0.1575,0.3746,0.1941,0.3712,0.2218,0.3729,0.356,0.3713,0.3581,0.3683,0.0306,0.3835,0.0325,0.3879,0.0908,0.3999,0.1568,0.3845,0.1952,0.3809,0.2214,0.3832,0.3535,0.3812,0.3561,0.3769,0.3589,0.3783,0.2214,0.3832,0.1952,0.3809,0.1568,0.3845,0.0908,0.3999,0.0325,0.3879})))))
                                 .addChild(new Group("t8_Sites")
-                                  .addComments(new String[] {" ",
-"None "})))
+                                  .addComments(" None ")))
                               .addChild(new HAnimJoint("hanim_vt7").setName("vt7").setCenter(0.0,1.1088,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                 .addChild(new HAnimSegment("hanim_t7").setName("t7")
                                   .addChild(new Shape("t7_Shape")
@@ -1218,8 +1149,7 @@ public class JinScaledV2L1LOA4Sites07f
                                       .setCoord(new Coordinate().setPoint(getCoordinate_20_889_point()))
                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0437,0.4075,0.2185,0.3912,0.3484,0.3944,0.1518,0.3905,0.1902,0.3894,0.3503,0.3879,0.3505,0.3886,0.0427,0.408,0.0961,0.4138,0.0908,0.3999,0.0325,0.3879,0.1568,0.3845,0.3535,0.3812,0.3589,0.3783,0.2214,0.3832,0.1952,0.3809,0.3561,0.3769,0.0306,0.3835,0.1568,0.3845,0.1518,0.3905,0.0961,0.4138,0.0908,0.3999,0.3503,0.3879,0.3589,0.3783,0.3561,0.3769,0.3505,0.3886,0.0325,0.3879,0.0437,0.4075,0.0427,0.408,0.0306,0.3835,0.3535,0.3812,0.3484,0.3944,0.2185,0.3912,0.2214,0.3832,0.1902,0.3894,0.1952,0.3809,0.3484,0.3944,0.3505,0.3886,0.3503,0.3879,0.2185,0.3912,0.1902,0.3894,0.1518,0.3905,0.0961,0.4138,0.0437,0.4075,0.0427,0.408,0.0437,0.4075,0.0961,0.4138,0.1518,0.3905,0.1902,0.3894,0.2185,0.3912,0.0325,0.3879,0.0306,0.3835,0.0325,0.3879,0.0908,0.3999,0.1568,0.3845,0.1952,0.3809,0.2214,0.3832,0.3535,0.3812,0.3561,0.3769,0.3589,0.3783,0.2214,0.3832,0.1952,0.3809,0.1568,0.3845,0.0908,0.3999})))))
                                   .addChild(new Group("t7_Sites")
-                                    .addComments(new String[] {" ",
-"None "})))
+                                    .addComments(" None ")))
                                 .addChild(new HAnimJoint("hanim_vt6").setName("vt6").setCenter(0.0,1.1216251,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                   .addChild(new HAnimSegment("hanim_t6").setName("t6")
                                     .addChild(new Shape("t6_Shape")
@@ -1230,8 +1160,7 @@ public class JinScaledV2L1LOA4Sites07f
                                         .setCoord(new Coordinate().setPoint(getCoordinate_21_898_point()))
                                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3061,0.4256,0.3364,0.4029,0.1528,0.4078,0.1843,0.4071,0.055,0.4216,0.3325,0.4068,0.0482,0.4185,0.221,0.4256,0.1008,0.4259,0.1518,0.3905,0.3506,0.3865,0.3484,0.3944,0.0427,0.408,0.0961,0.4138,0.3437,0.3934,0.2185,0.3912,0.1902,0.3894,0.0437,0.4075,0.0437,0.4075,0.0961,0.4138,0.1008,0.4259,0.055,0.4216,0.1902,0.3894,0.1843,0.4071,0.1528,0.4078,0.1518,0.3905,0.3364,0.4029,0.3506,0.3865,0.3437,0.3934,0.3325,0.4068,0.0482,0.4185,0.0427,0.408,0.2185,0.3912,0.221,0.4256,0.3484,0.3944,0.3061,0.4256,0.055,0.4216,0.1008,0.4259,0.1528,0.4078,0.1843,0.4071,0.221,0.4256,0.3061,0.4256,0.3325,0.4068,0.3364,0.4029,0.221,0.4256,0.1843,0.4071,0.1528,0.4078,0.1008,0.4259,0.055,0.4216,0.0482,0.4185,0.3437,0.3934,0.3506,0.3865,0.2185,0.3912,0.1902,0.3894,0.1518,0.3905,0.0961,0.4138,0.0437,0.4075,0.0427,0.408,0.0437,0.4075,0.0961,0.4138,0.1518,0.3905,0.1902,0.3894,0.2185,0.3912,0.3484,0.3944})))))
                                     .addChild(new Group("t6_Sites")
-                                      .addComments(new String[] {" ",
-"None "})))
+                                      .addComments(" None ")))
                                   .addChild(new HAnimJoint("hanim_vt5").setName("vt5").setCenter(0.0,1.13715,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                     .addChild(new HAnimSegment("hanim_t5").setName("t5")
                                       .addChild(new Shape("t5_Shape")
@@ -1242,8 +1171,7 @@ public class JinScaledV2L1LOA4Sites07f
                                           .setCoord(new Coordinate().setPoint(getCoordinate_22_907_point()))
                                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2236,0.46,0.2638,0.4568,0.3214,0.4203,0.1538,0.4251,0.1784,0.4249,0.3223,0.4192,0.1055,0.438,0.0663,0.4356,0.0537,0.4289,0.3061,0.4256,0.3364,0.4029,0.1528,0.4078,0.1843,0.4071,0.055,0.4216,0.3325,0.4068,0.0482,0.4185,0.221,0.4256,0.1008,0.4259,0.3214,0.4203,0.3223,0.4192,0.3364,0.4029,0.3325,0.4068,0.0537,0.4289,0.0482,0.4185,0.055,0.4216,0.0663,0.4356,0.1055,0.438,0.1008,0.4259,0.1528,0.4078,0.1538,0.4251,0.1784,0.4249,0.1843,0.4071,0.221,0.4256,0.2236,0.46,0.3061,0.4256,0.2638,0.4568,0.0663,0.4356,0.1055,0.438,0.1538,0.4251,0.1784,0.4249,0.2236,0.46,0.2638,0.4568,0.3214,0.4203,0.3223,0.4192,0.2236,0.46,0.1784,0.4249,0.1538,0.4251,0.1055,0.438,0.0663,0.4356,0.0537,0.4289,0.1008,0.4259,0.055,0.4216,0.0482,0.4185,0.055,0.4216,0.1008,0.4259,0.1528,0.4078,0.1843,0.4071,0.221,0.4256,0.3061,0.4256,0.3325,0.4068,0.3364,0.4029,0.221,0.4256,0.1843,0.4071,0.1528,0.4078})))))
                                       .addChild(new Group("t5_Sites")
-                                        .addComments(new String[] {" ",
-"None "})))
+                                        .addComments(" None ")))
                                     .addChild(new HAnimJoint("hanim_vt4").setName("vt4").setCenter(0.0,1.1524501,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                       .addChild(new HAnimSegment("hanim_t4").setName("t4")
                                         .addChild(new Shape("t4_Shape")
@@ -1254,8 +1182,7 @@ public class JinScaledV2L1LOA4Sites07f
                                             .setCoord(new Coordinate().setPoint(getCoordinate_23_916_point()))
                                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.0639,0.4488,0.0777,0.4495,0.1846,0.4438,0.1504,0.4433,0.1107,0.4532,0.2633,0.457,0.3222,0.4193,0.3214,0.4203,0.2198,0.4731,0.2144,0.4674,0.3223,0.4192,0.2638,0.4568,0.1784,0.4249,0.1784,0.4249,0.1055,0.438,0.0663,0.4356,0.2236,0.46,0.3214,0.4203,0.1538,0.4251,0.0537,0.4289,0.1538,0.4251,0.1504,0.4433,0.1107,0.4532,0.1055,0.438,0.0777,0.4495,0.0663,0.4356,0.3223,0.4192,0.3214,0.4203,0.3214,0.4203,0.3222,0.4193,0.2236,0.46,0.2638,0.4568,0.2633,0.457,0.2198,0.4731,0.0639,0.4488,0.0537,0.4289,0.2144,0.4674,0.1846,0.4438,0.1784,0.4249,0.1784,0.4249,0.1107,0.4532,0.1504,0.4433,0.1846,0.4438,0.2144,0.4674,0.2198,0.4731,0.2633,0.457,0.3214,0.4203,0.3222,0.4193,0.2198,0.4731,0.2144,0.4674,0.1846,0.4438,0.1504,0.4433,0.1107,0.4532,0.0777,0.4495,0.0639,0.4488,0.0777,0.4495,0.1055,0.438,0.0663,0.4356,0.0537,0.4289,0.0663,0.4356,0.1055,0.438,0.1538,0.4251,0.1784,0.4249,0.2236,0.46,0.2638,0.4568,0.3214,0.4203,0.3223,0.4192,0.2236,0.46,0.1784,0.4249,0.1538,0.4251})))))
                                         .addChild(new Group("t4_Sites")
-                                          .addComments(new String[] {" ",
-"None "})))
+                                          .addComments(" None ")))
                                       .addChild(new HAnimJoint("hanim_vt3").setName("vt3").setCenter(0.0,1.1709001,-0.013763251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                         .addChild(new HAnimSegment("hanim_t3").setName("t3")
                                           .addChild(new Shape("t3_Shape")
@@ -1266,8 +1193,7 @@ public class JinScaledV2L1LOA4Sites07f
                                               .setCoord(new Coordinate().setPoint(getCoordinate_24_925_point()))
                                               .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_24_926_point()))))
                                           .addChild(new Group("t3_Sites")
-                                            .addComments(new String[] {" ",
-"None "})))
+                                            .addComments(" None ")))
                                         .addChild(new HAnimJoint("hanim_vt2").setName("vt2").setCenter(0.0,1.19565,-0.013785751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                           .addChild(new HAnimSegment("hanim_t2").setName("t2")
                                             .addChild(new Shape("t2_Shape")
@@ -1278,8 +1204,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                 .setCoord(new Coordinate().setPoint(getCoordinate_25_934_point()))
                                                 .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_25_935_point()))))
                                             .addChild(new Group("t2_Sites")
-                                              .addComments(new String[] {" ",
-"None "})))
+                                              .addComments(" None ")))
                                           .addChild(new HAnimJoint("hanim_vt1").setName("vt1").setCenter(0.0,1.22,-0.0138).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                             .addChild(new HAnimSegment("hanim_t1").setName("t1")
                                               .addChild(new Shape("t1_Shape")
@@ -1290,9 +1215,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                   .setCoord(new Coordinate().setPoint(getCoordinate_26_943_point()))
                                                   .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_26_944_point()))))
                                               .addChild(new Group("t1_Sites")
-                                                .addComments(new String[] {" ",
-"(suprasternale_pt  0.0084 1.4714 0.0551)",
-"(cervicale_pt  0.0064 1.520 -0.0815) "})
+                                                .addComments(" (suprasternale_pt  0.0084 1.4714 0.0551) ")
+                                                .addComments(" (cervicale_pt  0.0064 1.520 -0.0815) ")
                                                 .addChild(new HAnimSite("hanim_suprasternale_pt").setName("suprasternale_pt").setTranslation(0.0,1.22,0.08)
                                                   .addChild(new TouchSensor().setDescription("HAnimSite suprasternale_pt 12"))
                                                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1309,9 +1233,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                     .setCoord(new Coordinate().setPoint(getCoordinate_27_958_point()))
                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6285,0.3906,0.6293,0.4094,0.632,0.4164,0.6316,0.4107,0.6267,0.3906,0.6224,0.4006,0.6225,0.3818,0.6285,0.3719,0.632,0.3649,0.6316,0.3706,0.6267,0.3807,0.6225,0.3906,0.6293,0.3995,0.6285,0.4094,0.632,0.4164,0.6316,0.4107,0.6267,0.4006,0.6225,0.3906,0.6224,0.3807,0.6225,0.3706,0.6267,0.3649,0.6316,0.3719,0.632,0.3818,0.6285,0.3995,0.6534,0.4094,0.6549,0.4164,0.6547,0.4107,0.6527,0.3906,0.6475,0.3807,0.6518,0.3719,0.6549,0.3649,0.6547,0.3906,0.6538,0.4006,0.6518,0.3818,0.6534,0.3706,0.6527,0.3995,0.6534,0.3906,0.6538,0.3818,0.6534,0.3719,0.6549,0.3649,0.6547,0.3706,0.6527,0.3807,0.6518,0.3906,0.6475,0.4006,0.6518,0.4107,0.6527,0.4164,0.6547,0.4094,0.6549})))))
                                                 .addChild(new Group("c7_Sites")
-                                                  .addComments(new String[] {" ",
-"(l_neck_base_pt  0.0646 1.5141 -0.0380)",
-"(r_neck_base_pt  -0.0419 1.5149 -0.0220) "})
+                                                  .addComments(" (l_neck_base_pt  0.0646 1.5141 -0.0380) ")
+                                                  .addComments(" (r_neck_base_pt  -0.0419 1.5149 -0.0220) ")
                                                   .addChild(new HAnimSite("hanim_l_neck_base_pt").setName("l_neck_base_pt").setTranslation(0.06,1.26,0.0)
                                                     .addChild(new TouchSensor().setDescription("HAnimSite l_neck_base_pt 82"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1328,8 +1251,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                       .setCoord(new Coordinate().setPoint(getCoordinate_28_973_point()))
                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6565,0.4094,0.6578,0.4164,0.6576,0.4107,0.6559,0.3906,0.6507,0.3807,0.6555,0.3719,0.6578,0.3649,0.6576,0.3906,0.6568,0.4006,0.6555,0.3818,0.6565,0.3706,0.6559,0.3995,0.6534,0.4094,0.6549,0.4164,0.6547,0.4107,0.6527,0.3906,0.6475,0.3807,0.6518,0.3719,0.6549,0.3649,0.6547,0.3906,0.6538,0.4006,0.6518,0.3818,0.6534,0.3706,0.6527,0.3995,0.6565,0.3906,0.6568,0.3818,0.6565,0.3719,0.6578,0.3649,0.6576,0.3706,0.6559,0.3807,0.6555,0.3906,0.6507,0.4006,0.6555,0.4107,0.6559,0.4164,0.6576,0.4094,0.6578,0.3906,0.6538,0.3995,0.6534,0.4094,0.6549,0.4164,0.6547,0.4107,0.6527,0.4006,0.6518,0.3906,0.6475,0.3807,0.6518,0.3706,0.6527,0.3649,0.6547,0.3719,0.6549,0.3818,0.6534})))))
                                                   .addChild(new Group("c6_Sites")
-                                                    .addComments(new String[] {" ",
-"None "})))
+                                                    .addComments(" None ")))
                                                 .addChild(new HAnimJoint("hanim_vc5").setName("vc5").setCenter(0.0,1.2699,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                   .addChild(new HAnimSegment("hanim_c5").setName("c5")
                                                     .addChild(new Shape("c5_Shape")
@@ -1340,8 +1262,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                         .setCoord(new Coordinate().setPoint(getCoordinate_29_982_point()))
                                                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6596,0.4094,0.6606,0.4164,0.6605,0.4107,0.6591,0.3906,0.6538,0.3807,0.6592,0.3719,0.6606,0.3649,0.6605,0.3906,0.6599,0.4006,0.6592,0.3818,0.6596,0.3706,0.6591,0.3995,0.6565,0.4094,0.6578,0.4164,0.6576,0.4107,0.6559,0.3906,0.6507,0.3807,0.6555,0.3719,0.6578,0.3649,0.6576,0.3906,0.6568,0.4006,0.6555,0.3818,0.6565,0.3706,0.6559,0.3995,0.6596,0.3906,0.6599,0.3818,0.6596,0.3719,0.6606,0.3649,0.6605,0.3706,0.6591,0.3807,0.6592,0.3906,0.6538,0.4006,0.6592,0.4107,0.6591,0.4164,0.6605,0.4094,0.6606,0.3906,0.6568,0.3995,0.6565,0.4094,0.6578,0.4164,0.6576,0.4107,0.6559,0.4006,0.6555,0.3906,0.6507,0.3807,0.6555,0.3706,0.6559,0.3649,0.6576,0.3719,0.6578,0.3818,0.6565})))))
                                                     .addChild(new Group("c5_Sites")
-                                                      .addComments(new String[] {" ",
-"None "})))
+                                                      .addComments(" None ")))
                                                   .addChild(new HAnimJoint("hanim_vc4").setName("vc4").setCenter(0.0,1.2822751,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                     .addChild(new HAnimSegment("hanim_c4").setName("c4")
                                                       .addChild(new Shape("c4_Shape")
@@ -1352,8 +1273,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                           .setCoord(new Coordinate().setPoint(getCoordinate_30_991_point()))
                                                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6628,0.4094,0.6635,0.4164,0.6634,0.4107,0.6624,0.3906,0.657,0.3807,0.6628,0.3719,0.6635,0.3649,0.6634,0.3906,0.6629,0.4006,0.6628,0.3818,0.6628,0.3706,0.6624,0.3995,0.6596,0.4094,0.6606,0.4164,0.6605,0.4107,0.6591,0.3906,0.6538,0.3807,0.6592,0.3719,0.6606,0.3649,0.6605,0.3906,0.6599,0.4006,0.6592,0.3818,0.6596,0.3706,0.6591,0.3995,0.6628,0.3906,0.6629,0.3818,0.6628,0.3719,0.6635,0.3649,0.6634,0.3706,0.6624,0.3807,0.6628,0.3906,0.657,0.4006,0.6628,0.4107,0.6624,0.4164,0.6634,0.4094,0.6635,0.3906,0.6599,0.3995,0.6596,0.4094,0.6606,0.4164,0.6605,0.4107,0.6591,0.4006,0.6592,0.3906,0.6538,0.3807,0.6592,0.3706,0.6591,0.3649,0.6605,0.3719,0.6606,0.3818,0.6596})))))
                                                       .addChild(new Group("c4_Sites")
-                                                        .addComments(new String[] {" ",
-"None "})))
+                                                        .addComments(" None ")))
                                                     .addChild(new HAnimJoint("hanim_vc3").setName("vc3").setCenter(0.0,1.2951001,-0.015063751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                       .addChild(new HAnimSegment("hanim_c3").setName("c3")
                                                         .addChild(new Shape("c3_Shape")
@@ -1364,8 +1284,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                             .setCoord(new Coordinate().setPoint(getCoordinate_31_1000_point()))
                                                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6659,0.4094,0.6664,0.4164,0.6663,0.4107,0.6656,0.3906,0.6601,0.3807,0.6665,0.3719,0.6664,0.3649,0.6663,0.3906,0.666,0.4006,0.6665,0.3818,0.6659,0.3706,0.6656,0.3995,0.6628,0.4094,0.6635,0.4164,0.6634,0.4107,0.6624,0.3906,0.657,0.3807,0.6628,0.3719,0.6635,0.3649,0.6634,0.3906,0.6629,0.4006,0.6628,0.3818,0.6628,0.3706,0.6624,0.3995,0.6659,0.3906,0.666,0.3818,0.6659,0.3719,0.6664,0.3649,0.6663,0.3706,0.6656,0.3807,0.6665,0.3906,0.6601,0.4006,0.6665,0.4107,0.6656,0.4164,0.6663,0.4094,0.6664,0.3906,0.6629,0.3995,0.6628,0.4094,0.6635,0.4164,0.6634,0.4107,0.6624,0.4006,0.6628,0.3906,0.657,0.3807,0.6628,0.3706,0.6624,0.3649,0.6634,0.3719,0.6635,0.3818,0.6628})))))
                                                         .addChild(new Group("c3_Sites")
-                                                          .addComments(new String[] {" ",
-"None "})))
+                                                          .addComments(" None ")))
                                                       .addChild(new HAnimJoint("hanim_vc2").setName("vc2").setCenter(0.0,1.307,-0.0150).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                         .addChild(new HAnimSegment("hanim_c2").setName("c2")
                                                           .addChild(new Shape("c2_Shape")
@@ -1376,8 +1295,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(getCoordinate_32_1009_point()))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.6721,0.3906,0.6721,0.4094,0.6721,0.4164,0.6721,0.4107,0.6721,0.4006,0.6738,0.3906,0.6664,0.3818,0.6721,0.3719,0.6721,0.3649,0.6721,0.3706,0.6721,0.3807,0.6738,0.3995,0.6721,0.3906,0.6721,0.3818,0.6721,0.3719,0.6721,0.3649,0.6721,0.3706,0.6721,0.3807,0.6738,0.3906,0.6664,0.4006,0.6738,0.4107,0.6721,0.4164,0.6721,0.4094,0.6721,0.3995,0.669,0.4094,0.6692,0.4164,0.6692,0.4107,0.6689,0.3906,0.6632,0.3807,0.6702,0.3719,0.6692,0.3649,0.6692,0.3906,0.669,0.4006,0.6702,0.3818,0.669,0.3706,0.6689,0.3906,0.669,0.3995,0.669,0.4094,0.6692,0.4164,0.6692,0.4107,0.6689,0.4006,0.6702,0.3906,0.6632,0.3807,0.6702,0.3706,0.6689,0.3649,0.6692,0.3719,0.6692,0.3818,0.669})))))
                                                           .addChild(new Group("c2_Sites")
-                                                            .addComments(new String[] {" ",
-"(adams_apple  x y z) "})
+                                                            .addComments(" (adams_apple  x y z) ")
                                                             .addChild(new HAnimSite("hanim_adams_apple_pt").setName("adams_apple_pt").setTranslation(0.0,1.29,0.04)
                                                               .addChild(new TouchSensor().setDescription("HAnimSite adams_apple_pt 11"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1391,8 +1309,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1021_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3995,0.669,0.4094,0.6692,0.4164,0.6692,0.4107,0.6689,0.3906,0.6632,0.3807,0.6702,0.3719,0.6692,0.3649,0.6692,0.3906,0.669,0.4006,0.6702,0.3818,0.669,0.3706,0.6689,0.3995,0.6659,0.4094,0.6664,0.4164,0.6663,0.4107,0.6656,0.3906,0.6601,0.3807,0.6665,0.3719,0.6664,0.3649,0.6663,0.3906,0.666,0.4006,0.6665,0.3818,0.6659,0.3706,0.6656,0.3995,0.669,0.3906,0.669,0.3818,0.669,0.3719,0.6692,0.3649,0.6692,0.3706,0.6689,0.3807,0.6702,0.3906,0.6632,0.4006,0.6702,0.4107,0.6689,0.4164,0.6692,0.4094,0.6692,0.3906,0.666,0.3995,0.6659,0.4094,0.6664,0.4164,0.6663,0.4107,0.6656,0.4006,0.6665,0.3906,0.6601,0.3807,0.6665,0.3706,0.6656,0.3649,0.6663,0.3719,0.6664,0.3818,0.6659})))))
                                                             .addChild(new Group("c1_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_skullbase").setName("skullbase").setCenter(0.0,1.3126501,-0.01544175).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_skull").setName("skull")
                                                               .addChild(new Shape("skull_Shape")
@@ -1403,18 +1320,17 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1030_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(getTextureCoordinate_34_1031_point()))))
                                                               .addChild(new Group("skull_Sites")
-                                                                .addComments(new String[] {" ",
-"(skull_vertex_pt  0.0050 1.7504 0.0055) ",
-"(glabella_pt  x y z)",
-"(sellion_pt 0.0058  1.6316 0.0852) ",
-"(l_infraorbitale_pt  0.0341 1.6171 0.0752) ",
-"(r_infraorbitale_pt  -0.0237 1.6171 0.0752)",
-"(l_tragion_pt  0.0739 1.6348 0.0282)",
-"(r_tragion_pt  -0.0646 1.6347 0.0302)",
-"(nuchale_pt  0.0039 1.5972 -0.0796)",
-"(opisthocranion_pt  x y z)",
-"(l_ectocanthus_pt  x y z)",
-"(r_ectocanthus_pt  x y z)  "})
+                                                                .addComments(" (skull_vertex_pt  0.0050 1.7504 0.0055) ")
+                                                                .addComments(" (glabella_pt  x y z) ")
+                                                                .addComments(" (sellion_pt 0.0058  1.6316 0.0852) ")
+                                                                .addComments(" (l_infraorbitale_pt  0.0341 1.6171 0.0752) ")
+                                                                .addComments(" (r_infraorbitale_pt  -0.0237 1.6171 0.0752) ")
+                                                                .addComments(" (l_tragion_pt  0.0739 1.6348 0.0282) ")
+                                                                .addComments(" (r_tragion_pt  -0.0646 1.6347 0.0302) ")
+                                                                .addComments(" (nuchale_pt  0.0039 1.5972 -0.0796) ")
+                                                                .addComments(" (opisthocranion_pt  x y z) ")
+                                                                .addComments(" (l_ectocanthus_pt  x y z) ")
+                                                                .addComments(" (r_ectocanthus_pt  x y z) ")
                                                                 .addChild(new HAnimSite("hanim_skull_vertex_pt").setName("skull_vertex_pt").setTranslation(0.0,1.612,-0.03)
                                                                   .addChild(new TouchSensor().setDescription("HAnimSite skull_vertex_pt 0"))
                                                                   .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1458,13 +1374,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0680895,1.4455328,0.08745751,0.0484515,1.4517225,0.10122751,0.03489975,1.4487976,0.10656001,0.023489999,1.440351,0.109485,0.082912505,1.4294047,0.0752175,0.06322725,1.4205376,0.0957375,0.0498015,1.424592,0.1037025,0.0380115,1.4295623,0.10766251,0.029985748,1.4340128,0.10881,0.0783675,1.4253458,0.07974,0.075825,1.437795,0.081337504,0.0696285,1.4202473,0.0888075,0.06530175,1.4432063,0.083745,0.046669498,1.4462978,0.095625006,0.03466575,1.4440815,0.1006425,0.023197498,1.4388705,0.106920004,0.0816075,1.4289368,0.0744075,0.06244875,1.4194462,0.09432,0.04914,1.4230418,0.100912504,0.03722175,1.4282686,0.10548,0.029506499,1.4327235,0.10658251,0.0780975,1.4244908,0.0779625,0.07326,1.4361098,0.079132505,0.068616,1.419651,0.0879525,0.06635475,1.4316503,0.09141751,0.04920075,1.4383237,0.10368001,0.03714075,1.4376713,0.10743751,0.07280775,1.4284688,0.0854775})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3562,0.7836,0.3424,0.7815,0.3432,0.7614,0.3553,0.7628,0.3328,0.7723,0.3344,0.7557,0.3248,0.7567,0.3294,0.7475,0.3666,0.7703,0.3614,0.7771,0.3598,0.7618,0.364,0.76,0.3542,0.784,0.3411,0.7782,0.3327,0.7703,0.3246,0.7567,0.3657,0.7703,0.3598,0.7771,0.3534,0.7431,0.3436,0.742,0.3428,0.7423,0.3522,0.7429,0.335,0.743,0.3345,0.743,0.3291,0.7475,0.3576,0.7438,0.3566,0.7438,0.3632,0.7603})))))
                                                                 .addChild(new Group("l_eyelid_Sites")
-                                                                  .addComments(new String[] {" ",
-"(l_eyelid_tip_pt  x y z) ",
-"<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' ",
-"  translation='0 2.64 0'>",
-"  <TouchSensor description='HAnimSite l_eyelid_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (l_eyelid_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_r_eyelid_joint").setName("r_eyelid_joint").setCenter(-0.0505125,1.42425,0.03294).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyelid").setName("r_eyelid")
                                                                 .addChild(new Shape("r_eyelid_Shape")
@@ -1475,13 +1389,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.0680895,1.4455328,0.08745751,-0.0484515,1.4517225,0.10122751,-0.03489975,1.4487976,0.10656001,-0.023489999,1.440351,0.109485,-0.082912505,1.4294047,0.0752175,-0.06322725,1.4205376,0.0957375,-0.0498015,1.424592,0.1037025,-0.0380115,1.4295623,0.10766251,-0.029985748,1.4340128,0.10881,-0.0783675,1.4253458,0.07974,-0.075825,1.437795,0.081337504,-0.0696285,1.4202473,0.0888075,-0.06530175,1.4432063,0.083745,-0.046669498,1.4462978,0.095625006,-0.03466575,1.4440815,0.1006425,-0.023197498,1.4388705,0.106920004,-0.0816075,1.4289368,0.0744075,-0.06244875,1.4194462,0.09432,-0.04914,1.4230418,0.100912504,-0.03722175,1.4282686,0.10548,-0.029506499,1.4327235,0.10658251,-0.0780975,1.4244908,0.0779625,-0.07326,1.4361098,0.079132505,-0.068616,1.419651,0.0879525,-0.06635475,1.4316503,0.09141751,-0.04920075,1.4383237,0.10368001,-0.03714075,1.4376713,0.10743751,-0.07280775,1.4284688,0.0854775})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3562,0.7836,0.3424,0.7815,0.3432,0.7614,0.3553,0.7628,0.3328,0.7723,0.3344,0.7557,0.3248,0.7567,0.3294,0.7475,0.3666,0.7703,0.3614,0.7771,0.3598,0.7618,0.364,0.76,0.3542,0.784,0.3411,0.7782,0.3327,0.7703,0.3246,0.7567,0.3657,0.7703,0.3598,0.7771,0.3534,0.7431,0.3436,0.742,0.3428,0.7423,0.3522,0.7429,0.335,0.743,0.3345,0.743,0.3291,0.7475,0.3576,0.7438,0.3566,0.7438,0.3632,0.7603})))))
                                                                 .addChild(new Group("r_eyelid_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_eyelid_tip_pt  x y z) ",
-"<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' ",
-"  translation='0 2.68 0'>",
-"  <TouchSensor description='HAnimSite r_eyelid_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (r_eyelid_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_l_eyeball_joint").setName("l_eyeball_joint").setCenter(0.048127502,1.4049001,0.0830475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_eyeball").setName("l_eyeball")
                                                                 .addChild(new Shape("l_eyeball_Shape")
@@ -1492,13 +1404,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.035271,1.407843,0.106042504,0.04827375,1.4122688,0.10307925,0.068949,1.393335,0.078867,0.02277,1.4001908,0.1064475,0.02985075,1.3947142,0.10174725,0.072225004,1.3961812,0.076779,0.0676035,1.4155313,0.089601755,0.082575,1.4078475,0.07194375,0.06240825,1.3930538,0.085353754,0.04069125,1.3934723,0.096680254,0.0277155,1.4117355,0.09791326,0.041780252,1.418481,0.09326925,0.06625125,1.3883828,0.069507,0.013522499,1.40049,0.0988605,0.021599999,1.3898183,0.09364501,0.0701415,1.3931887,0.067113005,0.065421,1.4220135,0.080228254,0.080505,1.4098231,0.062649004,0.0588735,1.3877865,0.07619625,0.0340335,1.3880363,0.088218,0.0387135,1.4152567,0.08419275,0.06027975,1.4180603,0.0730845,0.072225004,1.4094428,0.0596025,0.065889,1.3987283,0.06316425,0.061913252,1.395549,0.0653895,0.05586975,1.3950877,0.07102125,0.03096,1.3957515,0.0821655,0.0202275,1.3975043,0.0861435,0.016312499,1.4013765,0.08707275,0.02621925,1.4096116,0.0877455,0.0546795,1.4028931,0.095818505})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3217,0.8278,0.3482,0.8386,0.3916,0.7984,0.3206,0.8292,0.3482,0.8386,0.3916,0.7984,0.2977,0.8092,0.309,0.8013,0.3985,0.8044,0.3868,0.8428,0.4182,0.8265,0.3778,0.7978,0.3319,0.7987,0.3868,0.8428,0.3482,0.8386,0.3206,0.8292,0.3319,0.7987,0.3778,0.7978,0.3916,0.7984,0.309,0.8013,0.3985,0.8029,0.2977,0.8092,0.4182,0.8263,0.3482,0.8386,0.3868,0.8428,0.4182,0.8265,0.3985,0.8044,0.3916,0.7984,0.3778,0.7978,0.3319,0.7987,0.309,0.8013,0.2977,0.8092,0.3206,0.8292,0.2978,0.8092,0.309,0.8013,0.3985,0.8044,0.3868,0.8428,0.4182,0.8265,0.3778,0.7978,0.3319,0.7986,0.3567,0.819})))))
                                                                 .addChild(new Group("l_eyeball_Sites")
-                                                                  .addComments(new String[] {" ",
-"(l_eyeball_tip_pt  x y z) ",
-"<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' ",
-"  translation='0 2.72 0'>",
-"  <TouchSensor description='HAnimSite l_eyeball_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (l_eyeball_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_r_eyeball_joint").setName("r_eyeball_joint").setCenter(-0.048127502,1.4049001,0.0830475).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyeball").setName("r_eyeball")
                                                                 .addChild(new Shape("r_eyeball_Shape")
@@ -1509,13 +1419,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.035271,1.407843,0.106042504,-0.04827375,1.4122688,0.10307925,-0.068949,1.393335,0.078867,-0.02277,1.4001908,0.1064475,-0.02985075,1.3947142,0.10174725,-0.072225004,1.3961812,0.076779,-0.0676035,1.4155313,0.089601755,-0.082575,1.4078475,0.07194375,-0.06240825,1.3930538,0.085353754,-0.04069125,1.3934723,0.096680254,-0.0277155,1.4117355,0.09791326,-0.041780252,1.418481,0.09326925,-0.06625125,1.3883828,0.069507,-0.013522499,1.40049,0.0988605,-0.021599999,1.3898183,0.09364501,-0.0701415,1.3931887,0.067113005,-0.065421,1.4220135,0.080226004,-0.080505,1.4098231,0.062649004,-0.0588735,1.3877865,0.07619625,-0.0340335,1.3880363,0.088218,-0.0387135,1.4152567,0.08419275,-0.06027975,1.4180603,0.0730845,-0.072225004,1.4094428,0.0596025,-0.065889,1.3987283,0.06316425,-0.061913252,1.395549,0.0653895,-0.05586975,1.3950877,0.07102125,-0.03096,1.3957515,0.0821655,-0.0202275,1.3975043,0.0861435,-0.016312499,1.4013765,0.08707275,-0.02621925,1.4096116,0.0877455,-0.0546795,1.4028931,0.095818505})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.3217,0.8278,0.3482,0.8386,0.3916,0.7984,0.3206,0.8292,0.3482,0.8386,0.3916,0.7984,0.2977,0.8092,0.309,0.8013,0.3985,0.8044,0.3868,0.8428,0.4182,0.8265,0.3778,0.7978,0.3319,0.7987,0.3868,0.8428,0.3482,0.8386,0.3206,0.8292,0.3319,0.7987,0.3778,0.7978,0.3916,0.7984,0.309,0.8013,0.3985,0.8029,0.2977,0.8092,0.4182,0.8263,0.3482,0.8386,0.3868,0.8428,0.4182,0.8265,0.3985,0.8044,0.3916,0.7984,0.3778,0.7978,0.3319,0.7987,0.309,0.8013,0.2977,0.8092,0.3206,0.8292,0.2978,0.8092,0.309,0.8013,0.3985,0.8044,0.3868,0.8428,0.4182,0.8265,0.3778,0.7978,0.3319,0.7986,0.3567,0.819})))))
                                                                 .addChild(new Group("r_eyeball_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_eyeball_tip_pt  x y z)",
-"<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' ",
-"  translation='0 2.76 0'>",
-"  <TouchSensor description='HAnimSite r_eyeball_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (r_eyeball_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_l_eyebrow_joint").setName("l_eyebrow_joint").setCenter(0.021748502,1.4139,0.1069425).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_eyebrow").setName("l_eyebrow")
                                                                 .addChild(new Shape("l_eyebrow_Shape")
@@ -1526,13 +1434,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.014508001,1.4087296,0.12278925,0.046116002,1.4273416,0.1154835,0.0464085,1.4234064,0.114228,0.07300351,1.4280931,0.09362475,0.086751,1.4287546,0.0771975,0.02509875,1.420407,0.12194325,0.073521,1.4311485,0.093296245,0.046881,1.4196465,0.1114965,0.0714285,1.4240319,0.09249975,0.01602675,1.4072468,0.120141,0.0863685,1.426707,0.076725,0.0155070005,1.4090401,0.1170135,0.046026003,1.4268713,0.1108215,0.084906004,1.428678,0.075757496,0.02571075,1.4199684,0.1166895,0.072801,1.4305388,0.09049725,0.046746,1.4193541,0.107163,0.0705735,1.423665,0.089759246,0.017172001,1.4074875,0.11459025,0.08429851,1.4261446,0.075307496,0.027978752,1.4166541,0.11952225,0.030271502,1.4138843,0.116379,0.029373752,1.4129685,0.11156175})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.344,0.8611,0.3991,0.8726,0.2757,0.8301,0.4299,0.8749,0.3424,0.8703,0.297,0.8558,0.4,0.8788,0.3445,0.8554,0.397,0.8649,0.2794,0.8281,0.4294,0.8703,0.3456,0.8724,0.3008,0.857,0.3469,0.8565,0.2795,0.829,0.4293,0.8745,0.3996,0.8793,0.3963,0.8659,0.2847,0.831,0.4284,0.8697,0.3046,0.8466,0.3082,0.8407,0.3105,0.8417})))))
                                                                 .addChild(new Group("l_eyebrow_Sites")
-                                                                  .addComments(new String[] {" ",
-"(l_eyebrow_tip_pt  x y z) ",
-"<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' ",
-"  translation='0 2.8 0'>",
-"  <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (l_eyebrow_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_r_eyebrow_joint").setName("r_eyebrow_joint").setCenter(-0.021748502,1.4139,0.1069425).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_eyebrow").setName("r_eyebrow")
                                                                 .addChild(new Shape("r_eyebrow_Shape")
@@ -1543,13 +1449,11 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.014508001,1.4087296,0.12278925,-0.046116002,1.4273416,0.1154835,-0.0464085,1.4234064,0.114228,-0.07300351,1.4280931,0.09362475,-0.086751,1.4287546,0.0771975,-0.02509875,1.420407,0.12194325,-0.073521,1.4311485,0.093296245,-0.046881,1.4196465,0.1114965,-0.0714285,1.4240319,0.09249975,-0.01602675,1.4072468,0.120141,-0.0863685,1.426707,0.076725,-0.0155070005,1.4090401,0.1170135,-0.046026003,1.4268713,0.1108215,-0.084906004,1.428678,0.075757496,-0.02571075,1.4199684,0.1166895,-0.072801,1.4305388,0.09049725,-0.046746,1.4193541,0.107163,-0.0705735,1.423665,0.089759246,-0.017172001,1.4074875,0.11459025,-0.08429851,1.4261446,0.075307496,-0.027978752,1.4166541,0.11952225,-0.030271502,1.4138843,0.116379,-0.029373752,1.4129685,0.11156175})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.344,0.8611,0.3991,0.8726,0.2757,0.8301,0.4299,0.8749,0.3424,0.8703,0.297,0.8558,0.4,0.8788,0.3445,0.8554,0.397,0.8649,0.2794,0.8281,0.4294,0.8703,0.3456,0.8724,0.3008,0.857,0.3469,0.8565,0.2795,0.829,0.4293,0.8745,0.3996,0.8793,0.3963,0.8659,0.2847,0.831,0.4284,0.8697,0.3046,0.8466,0.3082,0.8407,0.3105,0.8417})))))
                                                                 .addChild(new Group("r_eyebrow_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_eyebrow_tip_pt  x y z)",
-"<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' ",
-"  translation='0 2.84 0'>",
-"  <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>",
-"  <Shape USE='HAnimSiteShape'/>",
-"</HAnimSite>"}))))
+                                                                  .addComments(" (r_eyebrow_tip_pt  x y z) ")
+                                                                  .addComments(" <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> ")
+                                                                  .addComments(" <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> ")
+                                                                  .addComments(" <Shape USE='HAnimSiteShape'/> ")
+                                                                  .addComments(" </HAnimSite> "))))
                                                             .addChild(new HAnimJoint("hanim_temporomandibular").setName("temporomandibular").setCenter(0.0,1.312875,0.015378751).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_jaw").setName("jaw")
                                                                 .addChild(new Shape("jaw_Shape")
@@ -1560,11 +1464,10 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,1.2832425,0.080943756,0.02817,1.2966278,0.06899625,0.0243675,1.3078147,0.08656875,0.005049,1.325727,0.10553625,0.026640002,1.3237088,0.09484875,0.005049,1.33623,0.04658625,0.0241425,1.338525,0.045483753,0.005049,1.327131,0.09374625,0.024525002,1.3274056,0.08611876,0.043425,1.3159688,0.031284,0.044797502,1.329039,0.037404,-0.0243675,1.3078147,0.08656875,0.0,1.3077112,0.096041255,0.0,1.3161578,0.105648756,-0.005049,1.325727,0.10553625,0.0,1.325727,0.10553625,-0.026640002,1.3237088,0.09484875,-0.02817,1.2966278,0.06899625,0.0,1.3063005,0.0358605,-0.043425,1.3159688,0.031284,-0.044797502,1.329039,0.037404,-0.0241425,1.338525,0.045483753,-0.024525002,1.3274056,0.08611876,-0.005049,1.327131,0.09374625,0.0,1.327131,0.09374625,-0.005049,1.33623,0.04658625,0.0,1.3339328,0.04741875})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2448,0.6067,0.3051,0.6166,0.2959,0.6259,0.2442,0.6234,0.2438,0.6465,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3051,0.6166,0.3007,0.651,0.6104,0.6278,0.6104,0.661,0.6021,0.661,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3007,0.651,0.6021,0.6278,0.6425,0.6334,0.6294,0.6619,0.3051,0.6166,0.3051,0.6166,0.2442,0.6234,0.2438,0.6465,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.3051,0.6166,0.3051,0.6166,0.3007,0.651,0.3007,0.651,0.2546,0.6556,0.2439,0.6556,0.3007,0.651,0.6104,0.6278,0.6104,0.661,0.6021,0.661,0.6021,0.6278,0.6425,0.6334,0.6294,0.6619,0.3051,0.6166,0.3051,0.6166})))))
                                                                 .addChild(new Group("jaw_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_gonion_pt  -0.0520 1.5529 0.0347)",
-"(l_gonion_pt  0.0631 1.5530 0.0330)",
-"(supramenton_pt  0.0061 1.5410 0.0805) ",
-"(menton_pt  x y z)"})
+                                                                  .addComments(" (r_gonion_pt  -0.0520 1.5529 0.0347) ")
+                                                                  .addComments(" (l_gonion_pt  0.0631 1.5530 0.0330) ")
+                                                                  .addComments(" (supramenton_pt  0.0061 1.5410 0.0805) ")
+                                                                  .addComments(" (menton_pt  x y z) ")
                                                                   .addChild(new HAnimSite("hanim_l_gonion_pt").setName("l_gonion_pt").setTranslation(0.068,1.346,0.033)
                                                                     .addChild(new TouchSensor().setDescription("HAnimSite l_gonion_pt 5"))
                                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1587,8 +1490,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.15075,1.21104,-0.033234753,0.1526175,1.2199343,-0.012728251,0.14436,1.2125138,0.0131692495,0.14267251,1.1677725,0.01105425,0.14166,1.1716201,-0.01659375,0.114435,1.217439,0.026061753,0.1260225,1.2309526,-0.014994,0.1328175,1.152675,-0.026640002,0.137205,1.152675,0.018366752,0.1230975,1.2159855,-0.051855754,0.035691753,1.222902,-0.0180225,0.035691753,1.2154658,-0.034994252,0.035691753,1.1767951,-0.019584,0.035691753,1.1773801,3.082502E-4,0.035691753,1.2145185,0.0046170005})))
                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1911,0.4797,0.171,0.4832,0.1497,0.4806,0.1519,0.4334,0.1831,0.4416,0.1474,0.4856,0.1708,0.4854,0.1784,0.4249,0.1538,0.4251,0.1963,0.4863,0.19,0.5091,0.1847,0.499,0.172,0.4382,0.1568,0.4457,0.1409,0.4926})))))
                                                 .addChild(new Group("l_clavicle_Sites")
-                                                  .addComments(new String[] {" ",
-"(l_clavicale_pt  0.0271 1.4943 0.0394)  "})
+                                                  .addComments(" (l_clavicale_pt  0.0271 1.4943 0.0394) ")
                                                   .addChild(new HAnimSite("hanim_l_clavicale_pt").setName("l_clavicale_pt").setTranslation(0.03,1.2,0.04)
                                                     .addChild(new TouchSensor().setDescription("HAnimSite l_clavicale_pt 14"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1602,11 +1504,10 @@ public class JinScaledV2L1LOA4Sites07f
                                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.16647752,1.2248101,-0.014994,0.15702751,1.2064321,-0.051867,0.15745501,1.2078114,0.0235305,0.11443051,1.2174525,0.026073001,0.1260315,1.230975,-0.014994,0.12311101,1.2159901,-0.0518445,0.14170726,1.156455,0.018378,0.13281976,1.152675,-0.02664225,0.14155877,1.156275,-0.0266175,0.1372095,1.152675,0.018355502,0.09510751,1.2234826,-0.014499,0.08813251,1.2109839,-0.038592,0.10600876,1.1557575,-0.023571001,0.10604026,1.1559376,0.013203,0.088965006,1.21509,0.016263,0.087165006,1.1914089,-0.00985725})))
                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1474,0.4856,0.1708,0.4854,0.1963,0.4863,0.1544,0.4288,0.1782,0.4286,0.1538,0.4251,0.1784,0.4249,0.1544,0.4288,0.1782,0.4286,0.1538,0.4251,0.1784,0.4249,0.1703,0.4865,0.1895,0.487,0.1761,0.4271,0.1552,0.4287,0.1491,0.4835,0.1671,0.4618})))))
                                                   .addChild(new Group("l_scapula_Sites")
-                                                    .addComments(new String[] {" ",
-"(l_acromion_pt  0.2032 1.4760 -0.0490) ",
-"(l_axilla_proximal_pt  0.1777 1.4065 -0.0075)",
-"(l_axilla_distal_pt  0.1706 1.4072 -0.0875) ",
-"(l_axilla_posterior_folds_pt  x y z)"})
+                                                    .addComments(" (l_acromion_pt  0.2032 1.4760 -0.0490) ")
+                                                    .addComments(" (l_axilla_proximal_pt  0.1777 1.4065 -0.0075) ")
+                                                    .addComments(" (l_axilla_distal_pt  0.1706 1.4072 -0.0875) ")
+                                                    .addComments(" (l_axilla_posterior_folds_pt  x y z) ")
                                                     .addChild(new HAnimSite("hanim_l_acromion_pt").setName("l_acromion_pt").setTranslation(0.15,1.222,-0.02)
                                                       .addChild(new TouchSensor().setDescription("HAnimSite l_acromion_pt 15"))
                                                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1629,11 +1530,10 @@ public class JinScaledV2L1LOA4Sites07f
                                                         .setCoord(new Coordinate().setPoint(getCoordinate_29_1195_point()))
                                                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.9467,0.4943,0.9572,0.4943,0.9099,0.4943,0.9193,0.4943,0.9332,0.4943,0.9567,0.4691,0.9455,0.4691,0.9105,0.4691,0.9205,0.4691,0.9332,0.4691,0.9567,0.4913,0.9458,0.4913,0.9102,0.4913,0.9203,0.4913,0.9334,0.4913,0.8898,0.4943,0.9003,0.4943,0.8997,0.4691,0.8997,0.4691,0.8998,0.4913,0.8998,0.4913,0.9003,0.4943,0.3481,0.2114,0.9448,0.4374,0.9561,0.4374,0.8991,0.4374,0.9117,0.4374,0.9198,0.4374,0.9341,0.4374})))))
                                                     .addChild(new Group("l_upperarm_Sites")
-                                                      .addComments(new String[] {" ",
-"(l_humeral_lateral_epicondyles_pt  0.2280 1.1482 -0.1100) ",
-"(l_humeral_medial_epicondyles_pt  0.1735 1.1272 -0.1113) ",
-"(l_radiale_pt  0.2182 1.1212 -0.1167)",
-"(l_bideltoid_pt  x y z) "})
+                                                      .addComments(" (l_humeral_lateral_epicondyles_pt  0.2280 1.1482 -0.1100) ")
+                                                      .addComments(" (l_humeral_medial_epicondyles_pt  0.1735 1.1272 -0.1113) ")
+                                                      .addComments(" (l_radiale_pt  0.2182 1.1212 -0.1167) ")
+                                                      .addComments(" (l_bideltoid_pt  x y z) ")
                                                       .addChild(new HAnimSite("hanim_l_humeral_lateral_epicondyles_pt").setName("l_humeral_lateral_epicondyles_pt").setTranslation(0.2,0.95,-0.03)
                                                         .addChild(new TouchSensor().setDescription("HAnimSite l_humeral_lateral_epicondyles_pt 63"))
                                                         .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1656,9 +1556,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.18693002,0.9356558,-0.0315495,0.20808002,0.9354735,-0.011452501,0.19604027,0.93557924,0.017770499,0.16745627,0.9358245,0.015725251,0.16182451,0.9358718,-0.014751001,0.18533702,0.909792,-0.042192,0.21521252,0.90953773,-0.015239251,0.19821152,0.909684,0.030933002,0.15781501,0.9100305,0.0277155,0.14985001,0.910098,-0.020452501,0.18508051,0.85005003,-0.041787002,0.21699002,0.8497575,-0.015135751,0.19966502,0.8629875,0.030595502,0.15653251,0.86334753,0.027400503,0.14719501,0.850365,-0.020297252,0.18342452,0.7327575,-0.037962,0.20668502,0.732555,-0.008507251,0.19344826,0.73269004,0.028345501,0.16199552,0.73296,0.025353,0.15579002,0.733005,-0.013342501,0.18229951,0.71874,-0.02555325,0.19818902,0.718605,-0.0054405,0.18914627,0.7186725,0.017838,0.16766551,0.7188525,0.015788252,0.16343552,0.71889746,-0.00874125})))
                                                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8857,0.572,0.9344,0.572,0.9377,0.5719,0.8909,0.5718,0.8588,0.5719,0.8849,0.5578,0.8418,0.558,0.9588,0.5579,0.9536,0.5581,0.8765,0.5581,0.885,0.5257,0.8424,0.5258,0.9582,0.5328,0.9531,0.533,0.8768,0.526,0.8957,0.4625,0.8485,0.4627,0.9546,0.4626,0.9498,0.4628,0.8879,0.4628,0.8953,0.4552,0.8684,0.4551,0.9006,0.455,0.9378,0.4551,0.9345,0.4552})))))
                                                       .addChild(new Group("l_forearm_Sites")
-                                                        .addComments(new String[] {" ",
-"(l_radial_styloid_pt  0.1901 0.8645 -0.0415) ",
-"(l_olecranon_pt  -0.1962 1.1375 -0.1123)"})
+                                                        .addComments(" (l_radial_styloid_pt  0.1901 0.8645 -0.0415) ")
+                                                        .addComments(" (l_olecranon_pt  -0.1962 1.1375 -0.1123) ")
                                                         .addChild(new HAnimSite("hanim_l_radial_styloid_pt").setName("l_radial_styloid_pt").setTranslation(0.18,0.725,0.025)
                                                           .addChild(new TouchSensor().setDescription("HAnimSite l_radial_styloid_pt 71"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1675,8 +1574,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                             .setCoord(new Coordinate().setPoint(getCoordinate_31_1231_point()))
                                                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7729,0.0334,0.7695,0.0151,0.7598,0.0161,0.7624,0.0345,0.791,0.0281,0.7896,0.0131,0.8111,0.0113,0.813,0.0266,0.8476,0.0256,0.8461,0.0079,0.8312,0.0091,0.8327,0.0273,0.9162,0.2899,0.8453,0.0081,0.8466,0.0257,0.9122,0.2724,0.9531,0.2644,0.9573,0.2786,0.936,0.2844,0.9315,0.2698,0.9706,0.2558,0.9766,0.2733,0.8032,0.0047,0.8134,0.033,0.8325,0.0338,0.792,0.0345,0.7756,0.0396,0.7675,0.0404,0.9666,0.2503,0.9509,0.2584,0.9297,0.2636,0.9113,0.266,0.8439,0.0324,0.8447,0.0323,0.8081,0.0397,0.986,0.2708,0.9803,0.2531,0.9032,0.2936,0.8989,0.2764,0.9452,0.2896,0.9743,0.2482,0.9004,0.2693,0.9343,0.2559})))))
                                                         .addChild(new Group("l_carpal_Sites")
-                                                          .addComments(new String[] {" ",
-"(l_ulnar_styloid_pt  -0.2142 0.8529 -0.0648)"})
+                                                          .addComments(" (l_ulnar_styloid_pt  -0.2142 0.8529 -0.0648) ")
                                                           .addChild(new HAnimSite("hanim_l_ulnar_styloid_pt").setName("l_ulnar_styloid_pt").setTranslation(0.2,0.725,0.0)
                                                             .addChild(new TouchSensor().setDescription("HAnimSite l_ulnar_styloid_pt 70"))
                                                             .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1690,8 +1588,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.19715177,0.6884955,0.017084252,0.16690727,0.6884955,0.017084252,0.17230727,0.6948585,0.033036754,0.19136927,0.6948383,0.034593754,0.16983001,0.69243526,0.027677251,0.19037926,0.7063628,0.024972752,0.19406252,0.7059195,0.014298751,0.16910776,0.70591724,0.014323501,0.17471926,0.70634925,0.024201002,0.17034976,0.68456703,0.018283501,0.16966125,0.6850215,0.024734251,0.17344576,0.689436,0.032796003,0.18940501,0.69117075,0.03430575,0.19404002,0.684279,0.017797502,0.19088101,0.71277976,0.013095001,0.18594001,0.7130925,0.021753002,0.17669927,0.7130858,0.021181501,0.17110576,0.71273476,0.0131737515,0.19276427,0.705258,0.012624751,0.19572526,0.688554,0.0152865015,0.193356,0.68534327,0.01582425,0.17097527,0.68562,0.016308,0.16831125,0.6886395,0.015264001,0.17042626,0.705384,0.012622501,0.17211376,0.71114624,0.011655001,0.19001476,0.71118677,0.011580751})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8327,0.0273,0.8381,0.0441,0.8625,0.0344,0.8476,0.0256,0.8625,0.0359,0.8466,0.0257,0.9122,0.2724,0.904,0.2568,0.8948,0.2599,0.8401,0.0478,0.8395,0.0482,0.8319,0.0206,0.9141,0.2788,0.844,0.0192,0.8432,0.0193,0.8491,0.0466,0.8611,0.0409,0.8611,0.0397,0.8814,0.2691,0.8989,0.2764,0.9014,0.2535,0.9142,0.2789,0.9026,0.2823,0.9033,0.2821,0.8928,0.2563,0.8819,0.264,0.8327,0.0273,0.8381,0.0441,0.8395,0.0482,0.8401,0.0478,0.904,0.2568,0.9122,0.2724,0.9141,0.2788,0.9142,0.2789})))))
                                                           .addChild(new Group("l_trapezium_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_l_carpometacarpal_1").setName("l_carpometacarpal_1").setCenter(0.18049501,0.69255006,0.0259875).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_1").setName("l_metacarpal_1")
                                                             .addChild(new Shape("l_metacarpal_1_Shape")
@@ -1702,8 +1599,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.16755526,0.6742823,0.03437775,0.17370002,0.6787328,0.04048425,0.18907651,0.6812753,0.042723,0.19660501,0.6722078,0.02954475,0.17226002,0.66453755,0.02409975,0.19891351,0.670122,0.025339501,0.19714051,0.68851805,0.01707975,0.16689827,0.68851805,0.01707975,0.17229602,0.694881,0.0330345,0.19136027,0.6948608,0.03458925,0.16982101,0.6924578,0.02767275,0.18889202,0.66602254,0.032742,0.18843977,0.66456,0.03101175,0.17499377,0.662985,0.0287775,0.17032501,0.66602254,0.034326002,0.17576101,0.6710625,0.040788002,0.18514352,0.67381877,0.04385475,0.17099102,0.6868958,0.013740749,0.17505677,0.6639525,0.01973025,0.19423802,0.66888005,0.020241,0.19362602,0.6868913,0.013734,0.17167051,0.6944108,0.02554875,0.16913252,0.6921765,0.0197415,0.19210726,0.6916703,0.019944001,0.18894826,0.6964133,0.031797,0.1764405,0.6964178,0.030825})))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8819,0.0483,0.8625,0.0359,0.8625,0.0344,0.8786,0.0507,0.8948,0.2599,0.867,0.0598,0.857,0.0621,0.8381,0.0441,0.8533,0.0697,0.8381,0.0441,0.8503,0.0646,0.8419,0.0407,0.8588,0.0334,0.8588,0.0347,0.8467,0.0405,0.8415,0.0402,0.8445,0.0658,0.8331,0.0451,0.8331,0.0451,0.8468,0.0705,0.8593,0.0711,0.8712,0.0644,0.8626,0.068,0.8607,0.0696,0.877,0.0609,0.8798,0.0581,0.8632,0.2548,0.8814,0.2691,0.8729,0.2464,0.8847,0.2342,0.904,0.2568,0.8853,0.2697,0.8962,0.2618,0.9014,0.2613,0.9088,0.2549,0.8909,0.2323})))))
                                                             .addChild(new Group("l_metacarpal_1_Sites")
-                                                              .addComments(new String[] {" ",
-"(l_metacarpal_phalanx_2_pt  0.2009 0.8139 -0.0237) "})
+                                                              .addComments(" (l_metacarpal_phalanx_2_pt  0.2009 0.8139 -0.0237) ")
                                                               .addChild(new HAnimSite("hanim_l_metacarpal_phalanx_2_pt").setName("l_metacarpal_phalanx_2_pt").setTranslation(0.2,0.665,0.012)
                                                                 .addChild(new TouchSensor().setDescription("HAnimSite l_metacarpal_phalanx_2_pt 75"))
                                                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1717,8 +1613,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1264_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8786,0.0507,0.857,0.0621,0.8601,0.0649,0.867,0.0598,0.8887,0.0786,0.8747,0.0865,0.8533,0.0697,0.876,0.0783,0.893,0.0688,0.8992,0.0702,0.8819,0.0483,0.8561,0.0728,0.8736,0.0851,0.8532,0.0697,0.8503,0.0646,0.8986,0.0785,0.897,0.0809,0.8914,0.0813,0.8802,0.0861,0.8841,0.0856,0.8821,0.0883,0.8487,0.0595,0.8509,0.0581,0.8683,0.0489,0.868,0.0507,0.8608,0.0544,0.8505,0.0603,0.8455,0.0706,0.8468,0.073,0.8455,0.0707,0.8437,0.0676,0.8416,0.0639,0.8422,0.0648,0.8729,0.2464,0.8482,0.2317,0.8612,0.2211,0.8847,0.2342,0.8433,0.2381,0.8632,0.2548,0.8814,0.2316,0.8625,0.2222,0.8799,0.2506,0.8891,0.243,0.8922,0.232,0.8964,0.2371})))))
                                                               .addChild(new Group("l_carpal_proximal_phalanx_1_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_l_carpal_interphalangeal_1").setName("l_carpal_interphalangeal_1").setCenter(0.182655,0.654075,0.0496575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_1").setName("l_carpal_distal_phalanx_1")
                                                                 .addChild(new Shape("l_carpal_distal_phalanx_1_Shape")
@@ -1729,8 +1624,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(getCoordinate_35_1273_point()))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8747,0.0865,0.8887,0.0786,0.8299,0.2203,0.8424,0.2111,0.8736,0.0851,0.8939,0.0989,0.8978,0.0975,0.8834,0.0852,0.8992,0.0766,0.9092,0.0888,0.8992,0.0702,0.9115,0.0859,0.876,0.0783,0.893,0.0688,0.9109,0.102,0.9135,0.0996,0.9144,0.0973,0.9172,0.0962,0.8241,0.2146,0.8338,0.2074,0.8247,0.2116,0.8291,0.2083,0.9028,0.1054,0.9046,0.1032,0.9153,0.1012,0.9125,0.1038,0.9081,0.1033,0.9082,0.1057,0.8266,0.2097,0.8885,0.0681,0.8723,0.0776,0.8843,0.0701,0.8696,0.0781,0.8612,0.2211,0.8482,0.2317,0.8625,0.2222,0.8417,0.2109,0.8433,0.2381,0.8245,0.2237,0.8192,0.2167,0.8322,0.2071,0.8195,0.2131,0.8224,0.2103,0.8256,0.2083})))))
                                                                 .addChild(new Group("l_carpal_distal_phalanx_1_Sites")
-                                                                  .addComments(new String[] {" ",
-"(l_carpal_distal_phalanx_1_tip  0.1982 0.8061 0.0759)"})
+                                                                  .addComments(" (l_carpal_distal_phalanx_1_tip  0.1982 0.8061 0.0759) ")
                                                                   .addChild(new HAnimSite("hanim_l_carpal_distal_phalanx_1_tip").setName("l_carpal_distal_phalanx_1_tip").setTranslation(0.18,0.64,0.06)
                                                                     .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_1_tip 101"))
                                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -1744,8 +1638,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.166977,0.6858473,0.0032265,0.19887976,0.6858473,0.0032265,0.19663201,0.70836526,0.00230625,0.16765426,0.70836526,0.00251325,0.16957352,0.68211,0.003339,0.19546652,0.68211,0.003339,0.19281827,0.71530426,0.0018315002,0.170982,0.71531105,0.0019709999,0.16942726,0.706842,7.1774976E-4,0.16802101,0.687564,0.0015682501,0.19680077,0.687564,0.0015817503,0.19487476,0.706842,5.2200013E-4,0.19715177,0.68846405,0.01708425,0.16690727,0.68846405,0.01708425,0.19406252,0.70588803,0.014298751,0.16910776,0.70588577,0.0143235,0.17034976,0.6845355,0.018283501,0.19404002,0.68424755,0.017797502,0.19088101,0.7127483,0.013095001,0.17110576,0.7127033,0.013176001,0.195084,0.68997604,0.01834425,0.19240876,0.70506227,0.01593225,0.18965477,0.71100456,0.0148905,0.17252776,0.7109663,0.014958001,0.17079976,0.70506227,0.015954752,0.16889401,0.68997604,0.01834425,0.17187302,0.68657404,0.0193815,0.19239075,0.6863243,0.018963})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.813,0.0266,0.8136,0.0488,0.8136,0.0488,0.8133,0.0266,0.8111,0.0474,0.8105,0.0283,0.8108,0.0283,0.8111,0.0474,0.8141,0.0525,0.8141,0.0525,0.8123,0.0198,0.8125,0.0198,0.9273,0.2479,0.9315,0.2698,0.9337,0.2676,0.9301,0.2489,0.9262,0.2444,0.9337,0.2762,0.9335,0.2763,0.8381,0.0441,0.904,0.2568,0.8327,0.0273,0.9122,0.2724,0.8401,0.0478,0.9014,0.2535,0.8395,0.0482,0.9142,0.2789,0.8319,0.0206,0.9141,0.2788,0.8381,0.0441,0.8327,0.0273,0.8319,0.0206,0.9141,0.2788,0.9122,0.2724,0.904,0.2568,0.9014,0.2535,0.8395,0.0482})))))
                                                           .addChild(new Group("l_trapezoid_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_l_carpometacarpal_2").setName("l_carpometacarpal_2").setCenter(0.1812825,0.6876,0.009729).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_2").setName("l_metacarpal_2")
                                                             .addChild(new Shape("l_metacarpal_2_Shape")
@@ -1756,8 +1649,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1298_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8514,0.0953,0.8526,0.0788,0.846,0.0768,0.8466,0.0958,0.8195,0.0808,0.8225,0.0994,0.8225,0.0994,0.8195,0.0808,0.8903,0.2261,0.8467,0.0958,0.8381,0.0441,0.8136,0.0488,0.8561,0.0728,0.8532,0.0697,0.8381,0.0441,0.8136,0.0488,0.8436,0.0662,0.8533,0.0697,0.8503,0.0646,0.8461,0.0998,0.8248,0.1027,0.8248,0.1027,0.8462,0.0997,0.8498,0.0994,0.8184,0.0977,0.8157,0.0811,0.8157,0.0809,0.8184,0.0977,0.8165,0.0457,0.8341,0.0424,0.8341,0.0424,0.8165,0.0457,0.844,0.0417,0.8554,0.0622,0.8575,0.0659,0.8594,0.0677,0.8574,0.0658,0.844,0.0417,0.8099,0.0493,0.8099,0.0493,0.82,0.101,0.82,0.101,0.8821,0.2087,0.8838,0.2252,0.9098,0.1997,0.916,0.2175,0.8866,0.2074,0.904,0.2568,0.9273,0.2479,0.8814,0.2316,0.8847,0.2342,0.9197,0.2166,0.9083,0.2577,0.925,0.2515,0.8813,0.2388,0.8986,0.2602,0.931,0.2468})))))
                                                             .addChild(new Group("l_metacarpal_2_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_2").setName("l_metacarpophalangeal_2").setCenter(0.18373501,0.6372,0.015075001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_2").setName("l_carpal_proximal_phalanx_2")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_2_Shape")
@@ -1768,8 +1660,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1307_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8511,0.1006,0.8514,0.0953,0.8466,0.0958,0.8466,0.1011,0.8225,0.0994,0.8283,0.1035,0.9023,0.1969,0.8225,0.0994,0.8467,0.0958,0.8857,0.2021,0.8231,0.1042,0.8931,0.1724,0.8782,0.1769,0.8338,0.1268,0.8493,0.125,0.8543,0.1273,0.8302,0.1302,0.8258,0.1072,0.8236,0.1075,0.8231,0.1042,0.8504,0.1328,0.8508,0.1334,0.8781,0.1731,0.8909,0.1692,0.8352,0.1346,0.8353,0.1353,0.8228,0.0929,0.844,0.0896,0.8482,0.0889,0.8441,0.0896,0.8228,0.0929,0.8203,0.0995,0.8207,0.1038,0.8212,0.1068,0.8207,0.1037,0.8203,0.0995,0.8206,0.0933,0.8205,0.0933,0.8815,0.2034,0.8821,0.2087,0.9098,0.1997,0.8866,0.2074,0.8737,0.1777,0.8969,0.1707,0.9052,0.1925,0.9074,0.1918,0.9084,0.195,0.876,0.171,0.891,0.1665})))))
                                                               .addChild(new Group("l_carpal_proximal_phalanx_2_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_2").setName("l_carpal_proximal_interphalangeal_2").setCenter(0.18171,0.606825,0.014184001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_2").setName("l_carpal_middle_phalanx_2")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_2_Shape")
@@ -1780,8 +1671,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.17981552,0.5814675,0.0060615004,0.17215426,0.581715,0.0187065,0.18831602,0.584235,0.018918,0.19035676,0.6023385,0.01937475,0.19035676,0.60245776,0.007888501,0.17213401,0.607077,0.00793575,0.19116676,0.609426,0.0079605,0.17213401,0.60695773,0.019422,0.19116676,0.609309,0.019444501,0.17627852,0.61142623,0.00798075,0.17627852,0.611307,0.01946475,0.18567227,0.61107075,0.0194625,0.18567227,0.61119,0.007978501,0.18113627,0.6065505,0.0055327504,0.18113627,0.60636604,0.022119751,0.17982227,0.5812875,0.021402001,0.18550576,0.5763825,0.018405002,0.18002251,0.57555,0.0185895,0.17214976,0.5818275,0.0084645,0.17369325,0.57798,0.017784001,0.173691,0.57807,0.00932175,0.18831152,0.584352,0.0082755005,0.18550126,0.576495,0.0086917505,0.18001801,0.57564,0.008667001})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8782,0.1769,0.8543,0.1273,0.8574,0.1518,0.8703,0.1535,0.8493,0.125,0.8504,0.1318,0.8846,0.1491,0.8931,0.1724,0.8349,0.1336,0.8379,0.1515,0.8533,0.1496,0.8338,0.1268,0.8302,0.1302,0.8351,0.1545,0.849,0.1233,0.8336,0.1251,0.849,0.123,0.8335,0.1249,0.8539,0.1573,0.8543,0.1579,0.8703,0.1496,0.8822,0.146,0.8398,0.159,0.8399,0.1597,0.8737,0.1777,0.8664,0.1541,0.8969,0.1707,0.8878,0.1476,0.8796,0.181,0.8945,0.1764,0.8684,0.1475,0.8822,0.1433})))))
                                                                 .addChild(new Group("l_carpal_middle_phalanx_2_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_2").setName("l_carpal_distal_interphalangeal_2").setCenter(0.180675,0.58162504,0.013385251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_2").setName("l_carpal_distal_phalanx_2")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_2_Shape")
@@ -1792,8 +1682,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1325_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8542,0.1553,0.8574,0.1518,0.8533,0.1496,0.8379,0.1515,0.8351,0.1545,0.8388,0.1572,0.8414,0.1663,0.8547,0.1647,0.8578,0.1639,0.8665,0.142,0.8703,0.1535,0.8804,0.1378,0.8846,0.1491,0.8382,0.1663,0.8495,0.1759,0.8523,0.1752,0.8544,0.1737,0.8566,0.1736,0.8658,0.1324,0.8753,0.1296,0.8677,0.1303,0.8725,0.1289,0.842,0.1753,0.8441,0.175,0.8533,0.1759,0.8496,0.1769,0.8467,0.1759,0.846,0.1768,0.87,0.1292,0.8525,0.1477,0.8382,0.1495,0.8525,0.1475,0.8381,0.1492,0.8664,0.1541,0.8878,0.1476,0.8639,0.1422,0.8827,0.1365,0.8634,0.1325,0.8774,0.1283,0.8662,0.1297,0.8697,0.1281,0.8732,0.1275,0.872,0.1575,0.8858,0.1533})))))
                                                                   .addChild(new Group("l_carpal_distal_phalanx_2_Sites")
-                                                                    .addComments(new String[] {" ",
-"(l_carpal_distal_phalanx_2_tip  0.2089 0.6858 -0.0245) "})
+                                                                    .addComments(" (l_carpal_distal_phalanx_2_tip  0.2089 0.6858 -0.0245) ")
                                                                     .addChild(new HAnimSite("hanim_l_carpal_distal_phalanx_2_tip").setName("l_carpal_distal_phalanx_2_tip").setTranslation(0.172,0.558,0.017)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_2_tip 102"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -1807,8 +1696,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.19895177,0.68589,-0.012235501,0.16650002,0.685935,-0.012237751,0.19661626,0.7085138,0.00230625,0.19730927,0.70894355,-0.012406501,0.16780052,0.7089413,-0.01237725,0.16696352,0.6860025,0.0032242502,0.16764076,0.708516,0.00251325,0.19886626,0.6860025,0.0032242502,0.16885127,0.68238,-0.012422251,0.16914827,0.682155,0.0034470002,0.19554977,0.682155,0.0034470002,0.19560602,0.682335,-0.0124200005,0.17095727,0.71546626,0.00198675,0.17106527,0.7156508,-0.01096875,0.19389826,0.715653,-0.010989001,0.19344376,0.715464,0.0018449998,0.16791302,0.6874043,0.00576225,0.16933276,0.70686454,0.0049185003,0.19497602,0.7068623,0.00472275,0.19692002,0.6874043,0.0057735,0.19692676,0.6875753,-0.014348251,0.19551602,0.7073843,-0.0148950005,0.16954426,0.707382,-0.01486575,0.16759576,0.68762255,-0.01435275})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9315,0.2698,0.8136,0.0488,0.7924,0.0507,0.7911,0.0281,0.8136,0.0488,0.813,0.0266,0.791,0.0281,0.7924,0.0508,0.7924,0.0543,0.8143,0.0526,0.8143,0.0526,0.7924,0.0543,0.9335,0.2763,0.7903,0.0215,0.7903,0.0215,0.8123,0.0198,0.7875,0.03,0.7875,0.03,0.7887,0.0494,0.7887,0.0495,0.9277,0.2691,0.8167,0.0279,0.8173,0.0471,0.8173,0.0471,0.9273,0.2479,0.9479,0.2423,0.9531,0.2644,0.9318,0.2697,0.9473,0.2389,0.926,0.2443,0.955,0.2707,0.9551,0.2707,0.9337,0.2763,0.9563,0.262,0.9518,0.243,0.928,0.269,0.924,0.2502,0.9241,0.2502})))))
                                                           .addChild(new Group("l_capitate_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_l_carpometacarpal_3").setName("l_carpometacarpal_3").setCenter(0.18108001,0.6858,-0.0062527503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_3").setName("l_metacarpal_3")
                                                             .addChild(new Shape("l_metacarpal_3_Shape")
@@ -1819,8 +1707,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1351_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8225,0.0994,0.8195,0.0808,0.7938,0.0824,0.7939,0.1016,0.8195,0.0808,0.7938,0.0824,0.7924,0.0507,0.8136,0.0488,0.7939,0.1016,0.8225,0.0994,0.8136,0.0488,0.7924,0.0508,0.7964,0.1053,0.8205,0.103,0.8205,0.103,0.7964,0.1053,0.796,0.0481,0.809,0.0468,0.809,0.0469,0.796,0.048,0.7888,0.0827,0.7888,0.0826,0.7886,0.1011,0.7887,0.1011,0.8243,0.0799,0.8186,0.0479,0.8186,0.0479,0.8243,0.0801,0.7878,0.051,0.7878,0.0509,0.8275,0.0984,0.8275,0.0983,0.7902,0.1036,0.7902,0.1036,0.8264,0.1006,0.8264,0.1006,0.916,0.2175,0.941,0.2114,0.9479,0.2423,0.9273,0.2479,0.9376,0.1925,0.9098,0.1997,0.9479,0.2423,0.9448,0.2456,0.9323,0.249,0.9323,0.249,0.9448,0.2456,0.9459,0.2103,0.9115,0.2191,0.9226,0.2496,0.9226,0.2496,0.9114,0.219,0.9524,0.2413,0.9524,0.2414})))))
                                                             .addChild(new Group("l_metacarpal_3_Sites")
-                                                              .addComments(new String[] {" ",
-"(l_metacarpal_phalanx_3  x y z) "})
+                                                              .addComments(" (l_metacarpal_phalanx_3  x y z) ")
                                                               .addChild(new HAnimSite("hanim_l_metacarpal_phalanx_3").setName("l_metacarpal_phalanx_3").setTranslation(0.2,0.665,-0.039)
                                                                 .addChild(new TouchSensor().setDescription("HAnimSite l_metacarpal_phalanx_3 76"))
                                                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1834,8 +1721,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1363_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8168,0.105,0.8225,0.0994,0.7939,0.1016,0.7996,0.1065,0.9311,0.1887,0.7939,0.1016,0.8225,0.0994,0.9145,0.1932,0.794,0.107,0.9232,0.1611,0.908,0.1649,0.8025,0.1324,0.818,0.1313,0.7986,0.1359,0.7957,0.11,0.7939,0.1101,0.794,0.107,0.8228,0.1342,0.8186,0.1401,0.819,0.1409,0.9081,0.1606,0.921,0.1574,0.8033,0.1412,0.8033,0.142,0.8231,0.1042,0.8212,0.1078,0.8231,0.1042,0.8236,0.1075,0.7948,0.0956,0.8206,0.0932,0.8206,0.0932,0.7948,0.0956,0.8249,0.0987,0.8253,0.1032,0.8258,0.1063,0.8253,0.1032,0.8249,0.0987,0.823,0.0929,0.823,0.0929,0.7917,0.1017,0.7916,0.1064,0.7918,0.1091,0.7916,0.1063,0.7917,0.1017,0.7927,0.0957,0.7927,0.0957,0.9376,0.1925,0.9098,0.1997,0.927,0.1595,0.9344,0.1846,0.9361,0.1842,0.9366,0.1872,0.9035,0.1654,0.9061,0.1582,0.9213,0.1544,0.9096,0.1911,0.9084,0.195,0.9074,0.1918})))))
                                                               .addChild(new Group("l_carpal_proximal_phalanx_3_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_3").setName("l_carpal_proximal_interphalangeal_3").setCenter(0.18171,0.603225,-0.003537).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_3").setName("l_carpal_middle_phalanx_3")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_3_Shape")
@@ -1846,8 +1732,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.18004051,0.575235,-0.01091025,0.17236575,0.57586503,0.0017190003,0.18851851,0.578655,0.0018450001,0.19035676,0.59820527,0.0018742502,0.19035676,0.5980635,-0.00877725,0.17213401,0.603243,-0.00891225,0.19116676,0.60587776,-0.008982,0.17213401,0.60338473,0.0017392504,0.19116676,0.60602176,0.0016695001,0.17627852,0.6081188,-0.0090405,0.17627852,0.6082628,0.0016110002,0.18567227,0.60799724,0.0016177503,0.18567227,0.60785323,-0.00903375,0.18113627,0.60257924,-0.0117247505,0.18113627,0.60280204,0.00487125,0.18003376,0.5754375,0.0044370005,0.18574426,0.569835,0.0016402503,0.18024077,0.5695425,0.0018000003,0.17237025,0.57573,-0.008529751,0.17392276,0.57165754,9.4500027E-4,0.17392726,0.571545,-0.0075195003,0.18852301,0.57852,-0.008802,0.18574876,0.5697,-0.0080775,0.18026777,0.5687775,-0.00807525})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.908,0.1649,0.8228,0.1342,0.8238,0.1612,0.9018,0.1387,0.818,0.1313,0.8186,0.139,0.9163,0.135,0.9232,0.1611,0.8031,0.1401,0.8044,0.1596,0.8199,0.1584,0.8025,0.1324,0.7986,0.1359,0.8014,0.1628,0.8179,0.1294,0.8023,0.1305,0.8179,0.1291,0.8023,0.1302,0.8199,0.1671,0.8202,0.1672,0.902,0.1343,0.914,0.1313,0.8058,0.1681,0.8058,0.1689,0.9035,0.1654,0.8978,0.139,0.927,0.1595,0.9196,0.1336,0.9092,0.1696,0.9243,0.1658,0.9003,0.1324,0.9142,0.1283})))))
                                                                 .addChild(new Group("l_carpal_middle_phalanx_3_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_3").setName("l_carpal_distal_interphalangeal_3").setCenter(0.180675,0.575325,-0.0037597502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_3").setName("l_carpal_distal_phalanx_3")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_3_Shape")
@@ -1858,9 +1743,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1381_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8204,0.1649,0.8238,0.1612,0.8199,0.1584,0.8044,0.1596,0.8014,0.1628,0.8049,0.166,0.807,0.1802,0.8204,0.1792,0.8232,0.1783,0.8982,0.1238,0.9018,0.1387,0.9123,0.1202,0.9163,0.135,0.8038,0.18,0.8141,0.1881,0.8169,0.1876,0.8192,0.1861,0.8213,0.1861,0.8983,0.1142,0.9079,0.1117,0.9004,0.112,0.9052,0.1108,0.8067,0.1872,0.8088,0.1869,0.8179,0.1883,0.8142,0.1891,0.8114,0.188,0.8106,0.1889,0.9027,0.111,0.8192,0.1563,0.8048,0.1573,0.8192,0.156,0.8048,0.1571,0.8978,0.139,0.9196,0.1336,0.8956,0.1239,0.9147,0.119,0.8959,0.1141,0.9101,0.1105,0.8989,0.1113,0.9025,0.1098,0.906,0.1094,0.9033,0.1433,0.9173,0.1398})))))
                                                                   .addChild(new Group("l_carpal_distal_phalanx_3_Sites")
-                                                                    .addComments(new String[] {" ",
-"(l_dactylion_pt  0.2056 0.6743 -0.0482)",
-"(l_carpal_distal_phalanx_3_tip  0.2080 0.6731 -0.0491) "})
+                                                                    .addComments(" (l_dactylion_pt  0.2056 0.6743 -0.0482) ")
+                                                                    .addComments(" (l_carpal_distal_phalanx_3_tip  0.2080 0.6731 -0.0491) ")
                                                                     .addChild(new HAnimSite("hanim_l_dactylion_pt").setName("l_dactylion_pt").setTranslation(0.170,0.555,-0.006)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite l_dactylion_pt 57"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -1877,8 +1761,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.19811927,0.68704206,-0.027623253,0.17081101,0.68900406,-0.037813503,0.16744727,0.6870555,-0.027627753,0.18288451,0.68998057,-0.040864505,0.19411652,0.68892753,-0.037788752,0.17140727,0.70506907,-0.027328502,0.18300152,0.705456,-0.03395025,0.19495127,0.7050758,-0.027317252,0.19730927,0.7088671,-0.012406502,0.19895177,0.6858113,-0.012235502,0.16650002,0.6858653,-0.012237752,0.16780052,0.7088648,-0.012377251,0.19544627,0.6822001,-0.012318752,0.19480726,0.68294257,-0.027729003,0.19135801,0.6845333,-0.03642075,0.18270901,0.68544227,-0.038772,0.17352676,0.68458056,-0.036346503,0.17064677,0.68294257,-0.027713252,0.16916852,0.6822451,-0.012321001,0.17186402,0.7155518,-0.010971001,0.17436151,0.7118955,-0.026010003,0.18283276,0.7122308,-0.030795753,0.19188452,0.7118775,-0.025888503,0.19353376,0.7155653,-0.010993502,0.19522126,0.7069298,-0.010633501,0.19659376,0.6876608,-0.010638002,0.16794452,0.687708,-0.010640251,0.16983676,0.70692754,-0.010606502})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7624,0.0345,0.7525,0.0502,0.7571,0.0508,0.7729,0.0334,0.7734,0.0512,0.7924,0.0508,0.791,0.0281,0.9531,0.2644,0.9665,0.2386,0.9827,0.2362,0.9706,0.2558,0.9479,0.2423,0.7736,0.0553,0.7595,0.0549,0.7559,0.0544,0.7596,0.0549,0.7736,0.0553,0.7721,0.0268,0.7644,0.0276,0.7723,0.0268,0.7938,0.0298,0.795,0.0487,0.9457,0.2448,0.9501,0.2632,0.7926,0.0543,0.7926,0.0544,0.7903,0.0215,0.7903,0.0215,0.9803,0.2531,0.9874,0.236,0.9479,0.2423,0.9532,0.2644,0.9832,0.2324,0.9795,0.2325,0.9656,0.2346,0.9721,0.2624,0.9795,0.2602,0.9719,0.2625,0.9502,0.2632,0.9457,0.2447,0.9471,0.2389,0.9471,0.2388,0.9551,0.2707,0.955,0.2707})))))
                                                           .addChild(new Group("l_hamate_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_l_carpometacarpal_4").setName("l_carpometacarpal_4").setCenter(0.18108001,0.68625003,-0.01991925).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_l_metacarpal_4").setName("l_metacarpal_4")
                                                             .addChild(new Shape("l_metacarpal_4_Shape")
@@ -1889,8 +1772,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1410_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7939,0.1016,0.7938,0.0824,0.7694,0.0827,0.766,0.1014,0.7924,0.0508,0.7734,0.0512,0.7938,0.0824,0.7939,0.1016,0.766,0.1015,0.965,0.2069,0.7734,0.0512,0.7924,0.0507,0.7909,0.1057,0.7677,0.1056,0.7677,0.1057,0.7909,0.1057,0.9517,0.2441,0.7765,0.0488,0.7765,0.0488,0.789,0.0484,0.7643,0.0825,0.7643,0.0824,0.7614,0.1009,0.7614,0.1009,0.7991,0.0823,0.7971,0.0505,0.7971,0.0505,0.7991,0.0824,0.7688,0.0511,0.7688,0.0511,0.7994,0.1003,0.7994,0.1003,0.7625,0.1038,0.7625,0.1038,0.7972,0.1034,0.7972,0.1034,0.9479,0.2423,0.9665,0.2385,0.941,0.2114,0.9376,0.1925,0.9651,0.1878,0.9665,0.2386,0.9479,0.2423,0.9639,0.2415,0.9639,0.2415,0.9517,0.244,0.9701,0.2063,0.9698,0.1875,0.9358,0.2124,0.9433,0.2434,0.9433,0.2434,0.9358,0.2123,0.9711,0.2379,0.9711,0.2379})))))
                                                             .addChild(new Group("l_metacarpal_4_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_l_metacarpophalangeal_4").setName("l_metacarpophalangeal_4").setCenter(0.18369,0.63405,-0.02144025).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_proximal_phalanx_4").setName("l_carpal_proximal_phalanx_4")
                                                               .addChild(new Shape("l_carpal_proximal_phalanx_4_Shape")
@@ -1901,8 +1783,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1419_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7878,0.1071,0.7939,0.1016,0.766,0.1014,0.7709,0.1068,0.9594,0.1833,0.766,0.1015,0.7939,0.1016,0.9426,0.186,0.7648,0.1066,0.9545,0.1568,0.9398,0.1599,0.771,0.1315,0.7861,0.131,0.767,0.1345,0.7667,0.1094,0.7644,0.1092,0.7648,0.1066,0.7904,0.1338,0.786,0.139,0.7863,0.1397,0.9402,0.1559,0.9531,0.1532,0.7709,0.1396,0.7709,0.1403,0.794,0.107,0.7917,0.1102,0.794,0.107,0.7939,0.1101,0.7675,0.0958,0.7934,0.0956,0.7934,0.0956,0.7675,0.0958,0.7967,0.1011,0.7964,0.1056,0.7964,0.1088,0.7964,0.1057,0.7967,0.1011,0.7958,0.0955,0.7958,0.0955,0.7633,0.1008,0.7625,0.1056,0.7622,0.1084,0.7625,0.1055,0.7633,0.1008,0.765,0.0957,0.765,0.0957,0.9651,0.1878,0.9376,0.1925,0.9583,0.1554,0.963,0.1801,0.9654,0.1799,0.9654,0.1826,0.9354,0.1602,0.9385,0.1536,0.9536,0.1504,0.9383,0.1837,0.9366,0.1872,0.9361,0.1842})))))
                                                               .addChild(new Group("l_carpal_proximal_phalanx_4_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_4").setName("l_carpal_proximal_interphalangeal_4").setCenter(0.18171,0.6066,-0.020646).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_4").setName("l_carpal_middle_phalanx_4")
                                                                 .addChild(new Shape("l_carpal_middle_phalanx_4_Shape")
@@ -1913,8 +1794,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.17985827,0.5802075,-0.027360002,0.17218351,0.5808375,-0.0154035,0.18834527,0.5834025,-0.0152955,0.19035676,0.6025095,-0.0154800005,0.19035676,0.6022912,-0.025564501,0.17213401,0.606978,-0.0258795,0.19116676,0.6093742,-0.025956001,0.17213401,0.60722774,-0.01559025,0.19116676,0.609624,-0.015669,0.17627852,0.611433,-0.025884,0.17627852,0.61165124,-0.0157995,0.18567227,0.6114105,-0.0157905,0.18567227,0.6111922,-0.025875,0.18113627,0.6063435,-0.02859075,0.18113627,0.6067327,-0.012561751,0.17984927,0.5804775,-0.01282725,0.18553951,0.57537,-0.01544625,0.18003601,0.5751,-0.0152955,0.17219026,0.5806575,-0.02510775,0.173727,0.57699,-0.01611675,0.1737315,0.576855,-0.02413125,0.18835202,0.5832,-0.02537775,0.18554626,0.5752125,-0.02464875,0.18006301,0.5743575,-0.024642})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9398,0.1599,0.7904,0.1338,0.7888,0.1598,0.9363,0.1341,0.7861,0.131,0.7859,0.138,0.9502,0.1313,0.9545,0.1568,0.7712,0.1385,0.7707,0.1575,0.7854,0.1571,0.771,0.1315,0.767,0.1345,0.7676,0.1604,0.786,0.1292,0.7713,0.1297,0.786,0.129,0.7713,0.1294,0.7847,0.165,0.7849,0.1652,0.9369,0.1301,0.9483,0.1278,0.7712,0.1654,0.7712,0.1661,0.9354,0.1602,0.9325,0.1343,0.9583,0.1554,0.9533,0.1301,0.9406,0.1642,0.9551,0.1612,0.9355,0.1283,0.9488,0.1251})))))
                                                                 .addChild(new Group("l_carpal_middle_phalanx_4_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_4").setName("l_carpal_distal_interphalangeal_4").setCenter(0.180675,0.580725,-0.019777501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_4").setName("l_carpal_distal_phalanx_4")
                                                                   .addChild(new Shape("l_carpal_distal_phalanx_4_Shape")
@@ -1925,8 +1805,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1437_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7853,0.163,0.7888,0.1598,0.7854,0.1571,0.7707,0.1575,0.7676,0.1604,0.7706,0.1634,0.7714,0.1739,0.7841,0.1736,0.787,0.1731,0.9344,0.121,0.9363,0.1341,0.9479,0.1182,0.9502,0.1313,0.7684,0.1736,0.7774,0.1846,0.7801,0.1842,0.7824,0.1828,0.7844,0.1829,0.9351,0.111,0.9443,0.1091,0.9372,0.109,0.9418,0.1081,0.7705,0.1833,0.7725,0.1831,0.781,0.1849,0.7774,0.1856,0.7748,0.1843,0.774,0.1852,0.9395,0.1081,0.7849,0.1552,0.7712,0.1555,0.7849,0.1549,0.7712,0.1553,0.9325,0.1343,0.9533,0.1301,0.9319,0.1209,0.9502,0.1172,0.9329,0.1108,0.9464,0.108,0.9358,0.1082,0.9393,0.1069,0.9427,0.1067,0.9372,0.1384,0.9506,0.1357})))))
                                                                   .addChild(new Group("l_carpal_distal_phalanx_4_Sites")
-                                                                    .addComments(new String[] {" ",
-"(l_carpal_distal_phalanx_4_tip  0.2035 0.6750 -0.0756) "})
+                                                                    .addComments(" (l_carpal_distal_phalanx_4_tip  0.2035 0.6750 -0.0756) ")
                                                                     .addChild(new HAnimSite("hanim_l_carpal_distal_phalanx_4_tip").setName("l_carpal_distal_phalanx_4_tip").setTranslation(0.172,0.559,-0.024)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_4_tip 104"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -1940,8 +1819,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(getCoordinate_32_1454_point()))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.766,0.1014,0.7694,0.0827,0.748,0.0813,0.7455,0.0995,0.7415,0.0989,0.7435,0.0798,0.9864,0.2045,0.7455,0.0995,0.7734,0.0512,0.7571,0.0508,0.7525,0.0502,0.9827,0.2362,0.9665,0.2386,0.7694,0.0827,0.766,0.1015,0.774,0.0829,0.9619,0.2395,0.7782,0.0512,0.774,0.083,0.7619,0.1052,0.7474,0.1039,0.7446,0.1034,0.7473,0.1038,0.7619,0.1052,0.9712,0.2404,0.9799,0.239,0.7566,0.0479,0.7602,0.0485,0.7691,0.0486,0.771,0.1015,0.771,0.1014,0.768,0.1042,0.768,0.1042,0.9897,0.1861,0.991,0.2053,0.9856,0.1862,0.9665,0.2385,0.9874,0.236,0.965,0.2069,0.9651,0.1878,0.9604,0.2075,0.9619,0.2395,0.9604,0.2074,0.9836,0.239,0.98,0.239,0.9712,0.2404})))))
                                                           .addChild(new Group("l_metacarpal_5_Sites")
-                                                            .addComments(new String[] {" ",
-"(l_metacarpal_phalanx_5_pt  0.1929 0.7860 -0.1122)"})
+                                                            .addComments(" (l_metacarpal_phalanx_5_pt  0.1929 0.7860 -0.1122) ")
                                                             .addChild(new HAnimSite("hanim_l_metacarpal_phalanx_5_pt").setName("l_metacarpal_phalanx_5_pt").setTranslation(0.2,0.665,-0.036)
                                                               .addChild(new TouchSensor().setDescription("HAnimSite l_metacarpal_phalanx_5_pt 77"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -1955,8 +1833,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1466_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7578,0.1276,0.7543,0.1247,0.753,0.131,0.7531,0.1316,0.9854,0.1598,0.9725,0.1615,0.9734,0.1584,0.9844,0.1569,0.7413,0.123,0.7403,0.1293,0.7378,0.1249,0.7401,0.1299,0.7405,0.104,0.7443,0.1047,0.9859,0.1809,0.7455,0.0995,0.766,0.1015,0.9713,0.1822,0.7589,0.1059,0.7648,0.1066,0.766,0.1014,0.7622,0.1091,0.7648,0.1066,0.7644,0.1092,0.7455,0.0995,0.7415,0.0989,0.7664,0.0954,0.7667,0.0954,0.7485,0.0932,0.7449,0.0928,0.7484,0.0932,0.7683,0.1016,0.7686,0.0957,0.7683,0.0956,0.7679,0.1015,0.7671,0.1055,0.7666,0.1084,0.7674,0.1056,0.9687,0.1615,0.9723,0.1564,0.9888,0.1589,0.9852,0.1547,0.9898,0.1809,0.9856,0.1862,0.9651,0.1878,0.9675,0.1796,0.9654,0.1826,0.9654,0.1799,0.9897,0.1861})))))
                                                             .addChild(new Group("l_carpal_proximal_phalanx_5_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_l_carpal_proximal_interphalangeal_5").setName("l_carpal_proximal_interphalangeal_5").setCenter(0.18166502,0.62100005,-0.037147503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_l_carpal_middle_phalanx_5").setName("l_carpal_middle_phalanx_5")
                                                               .addChild(new Shape("l_carpal_middle_phalanx_5_Shape")
@@ -1967,8 +1844,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.17999777,0.60232055,-0.043692753,0.17251876,0.6031395,-0.032409,0.18808201,0.6048765,-0.03229875,0.19001701,0.61760026,-0.032555252,0.18999901,0.617796,-0.04163175,0.17289002,0.6213128,-0.041503504,0.19065377,0.623295,-0.04186575,0.17289901,0.6211148,-0.032427,0.19066277,0.6231758,-0.032361753,0.17668127,0.6246968,-0.041807253,0.17669027,0.6245775,-0.0323055,0.18506926,0.62424004,-0.03231225,0.18506026,0.62435704,-0.041814003,0.18058051,0.6209595,-0.044122502,0.18111826,0.6205703,-0.029571751,0.17999777,0.6027593,-0.029904751,0.18599176,0.598572,-0.032463003,0.18277651,0.59814006,-0.0323145,0.17251876,0.60284704,-0.041501254,0.17371577,0.600102,-0.033108752,0.17418377,0.59990406,-0.040461753,0.18811126,0.6045728,-0.04175775,0.18601651,0.59832,-0.04097025,0.18284176,0.5979825,-0.0409635})))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9725,0.1615,0.7578,0.1276,0.7541,0.1444,0.9727,0.1441,0.7543,0.1247,0.7533,0.1302,0.9851,0.1424,0.9854,0.1598,0.7404,0.1285,0.7384,0.1404,0.7513,0.1418,0.7413,0.123,0.7378,0.1249,0.7355,0.1424,0.7545,0.1231,0.7416,0.1216,0.7546,0.1229,0.7417,0.1214,0.7496,0.1479,0.7498,0.1481,0.9738,0.1409,0.9839,0.1396,0.738,0.1467,0.7381,0.1469,0.9687,0.1616,0.9694,0.1441,0.9888,0.1589,0.988,0.1416,0.9725,0.165,0.9854,0.1633,0.9728,0.1395,0.9846,0.1375})))))
                                                               .addChild(new Group("l_carpal_middle_phalanx_5_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_l_carpal_distal_interphalangeal_5").setName("l_carpal_distal_interphalangeal_5").setCenter(0.18081002,0.602325,-0.0369675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_l_carpal_distal_phalanx_5").setName("l_carpal_distal_phalanx_5")
                                                                 .addChild(new Shape("l_carpal_distal_phalanx_5_Shape")
@@ -1979,8 +1855,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(getCoordinate_35_1484_point()))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7505,0.1465,0.7541,0.1444,0.7513,0.1418,0.7384,0.1404,0.7355,0.1424,0.7377,0.1451,0.7372,0.1554,0.7483,0.1563,0.7507,0.1564,0.9726,0.1318,0.9727,0.1441,0.9847,0.1302,0.9851,0.1424,0.7347,0.1548,0.7409,0.1641,0.7434,0.1641,0.7455,0.1632,0.7469,0.164,0.9746,0.124,0.9828,0.1229,0.9766,0.1225,0.9807,0.1219,0.7351,0.1625,0.7369,0.1626,0.7443,0.165,0.7408,0.1649,0.7387,0.1637,0.7379,0.1643,0.9788,0.1219,0.7512,0.1402,0.7392,0.1389,0.7512,0.14,0.7393,0.1388,0.9694,0.1441,0.988,0.1416,0.9705,0.1317,0.9868,0.1295,0.9727,0.1237,0.9848,0.1221,0.9756,0.1218,0.9787,0.1209,0.9817,0.1209,0.973,0.1475,0.9849,0.146})))))
                                                                 .addChild(new Group("l_carpal_distal_phalanx_5_Sites")
-                                                                  .addComments(new String[] {" ",
-"(l_carpal_distal_phalanx_5_tip  0.2014 0.7009 -0.1012)"})
+                                                                  .addComments(" (l_carpal_distal_phalanx_5_tip  0.2014 0.7009 -0.1012) ")
                                                                   .addChild(new HAnimSite("hanim_l_carpal_distal_phalanx_5_tip").setName("l_carpal_distal_phalanx_5_tip").setTranslation(0.172,0.58,-0.039)
                                                                     .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_5_tip 105"))
                                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))))))
@@ -1994,8 +1869,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.15075,1.21104,-0.033234753,-0.1526175,1.2199343,-0.012728251,-0.14436,1.2125138,0.0131692495,-0.14267251,1.1677725,0.01105425,-0.14166,1.1716201,-0.01659375,-0.114435,1.217439,0.026061753,-0.1260225,1.2309526,-0.014994,-0.1328175,1.152675,-0.026640002,-0.137205,1.152675,0.018366752,-0.1230975,1.2159855,-0.051855754,-0.035691753,1.222902,-0.0180225,-0.035691753,1.2154658,-0.034994252,-0.035691753,1.1767951,-0.019584,-0.035691753,1.1773801,3.082502E-4,-0.035691753,1.2145185,0.0046170005})))
                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1911,0.4797,0.171,0.4832,0.1497,0.4806,0.1519,0.4334,0.1831,0.4416,0.1474,0.4856,0.1708,0.4854,0.1784,0.4249,0.1538,0.4251,0.1963,0.4863,0.19,0.5091,0.1847,0.499,0.172,0.4382,0.1568,0.4457,0.1409,0.4926})))))
                                                 .addChild(new Group("r_clavicle_Sites")
-                                                  .addComments(new String[] {" 0.15 1.222 -0.02",
-"(r_clavicale_pt  -0.0115 1.4943 0.0400) "})
+                                                  .addComments(" 0.15 1.222 -0.02 ")
+                                                  .addComments(" (r_clavicale_pt  -0.0115 1.4943 0.0400) ")
                                                   .addChild(new HAnimSite("hanim_r_clavicale_pt").setName("r_clavicale_pt").setTranslation(-0.03,1.2,0.04)
                                                     .addChild(new TouchSensor().setDescription("HAnimSite r_clavicale_pt 19"))
                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -2009,11 +1884,10 @@ public class JinScaledV2L1LOA4Sites07f
                                                       .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.16647752,1.2248101,-0.014994,-0.15702751,1.2064321,-0.051867,-0.15745501,1.2078114,0.0235305,-0.11443051,1.2174525,0.026073001,-0.1260315,1.230975,-0.014994,-0.12311101,1.2159901,-0.0518445,-0.14170726,1.156455,0.018378,-0.13281976,1.152675,-0.02664225,-0.14155877,1.156275,-0.0266175,-0.1372095,1.152675,0.018355502,-0.09510751,1.2234826,-0.014499,-0.08813251,1.2109839,-0.038592,-0.10600876,1.1557575,-0.023571001,-0.10604026,1.1559376,0.013203,-0.088965006,1.21509,0.016263,-0.087165006,1.1914089,-0.00985725})))
                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1474,0.4856,0.1708,0.4854,0.1963,0.4863,0.1544,0.4288,0.1782,0.4286,0.1538,0.4251,0.1784,0.4249,0.1544,0.4288,0.1782,0.4286,0.1538,0.4251,0.1784,0.4249,0.1703,0.4865,0.1895,0.487,0.1761,0.4271,0.1552,0.4287,0.1491,0.4835,0.1671,0.4618})))))
                                                   .addChild(new Group("r_scapula_Sites")
-                                                    .addComments(new String[] {" ",
-"(r_acromion_pt  -0.1905 1.4791 -0.0431) ",
-"(r_axilla_proximal_pt  -0.1626 1.4072 -0.0031)",
-"(r_axilla_distal_pt  -0.1603 1.4098 -0.0826) ",
-"(r_axilla_posterior_folds_pt  x y z) "})
+                                                    .addComments(" (r_acromion_pt  -0.1905 1.4791 -0.0431) ")
+                                                    .addComments(" (r_axilla_proximal_pt  -0.1626 1.4072 -0.0031) ")
+                                                    .addComments(" (r_axilla_distal_pt  -0.1603 1.4098 -0.0826) ")
+                                                    .addComments(" (r_axilla_posterior_folds_pt  x y z) ")
                                                     .addChild(new HAnimSite("hanim_r_acromion_pt").setName("r_acromion_pt").setTranslation(-0.15,1.222,-0.02)
                                                       .addChild(new TouchSensor().setDescription("HAnimSite r_acromion_pt 20"))
                                                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -2036,11 +1910,10 @@ public class JinScaledV2L1LOA4Sites07f
                                                         .setCoord(new Coordinate().setPoint(getCoordinate_29_1538_point()))
                                                         .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.9467,0.4943,0.9572,0.4943,0.9099,0.4943,0.9193,0.4943,0.9332,0.4943,0.9567,0.4691,0.9455,0.4691,0.9105,0.4691,0.9205,0.4691,0.9332,0.4691,0.9567,0.4913,0.9458,0.4913,0.9102,0.4913,0.9203,0.4913,0.9334,0.4913,0.8898,0.4943,0.9003,0.4943,0.8997,0.4691,0.8997,0.4691,0.8998,0.4913,0.8998,0.4913,0.9003,0.4943,0.3481,0.2114,0.9448,0.4374,0.9561,0.4374,0.8991,0.4374,0.9117,0.4374,0.9198,0.4374,0.9341,0.4374})))))
                                                     .addChild(new Group("r_upperarm_Sites")
-                                                      .addComments(new String[] {" ",
-"(r_humeral_lateral_epicondyles_pt  -0.2224 1.1517 -0.1033)",
-"(r_humeral_medial_epicondyles_pt  -0.1680 1.1298 -0.1062)",
-"(r_radiale_pt  -0.2130 1.1305 -0.1091)",
-"(r_bideltoid_pt  x y z) "})
+                                                      .addComments(" (r_humeral_lateral_epicondyles_pt  -0.2224 1.1517 -0.1033) ")
+                                                      .addComments(" (r_humeral_medial_epicondyles_pt  -0.1680 1.1298 -0.1062) ")
+                                                      .addComments(" (r_radiale_pt  -0.2130 1.1305 -0.1091) ")
+                                                      .addComments(" (r_bideltoid_pt  x y z) ")
                                                       .addChild(new HAnimSite("hanim_r_humeral_lateral_epicondyles_pt").setName("r_humeral_lateral_epicondyles_pt").setTranslation(-0.2,0.95,-0.03)
                                                         .addChild(new TouchSensor().setDescription("HAnimSite r_humeral_lateral_epicondyles_pt 66"))
                                                         .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -2063,9 +1936,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                           .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18657,0.9356558,-0.0315495,-0.20772,0.9354735,-0.011452501,-0.19568025,0.93557924,0.017770499,-0.16709624,0.9358245,0.015725251,-0.1614645,0.9358718,-0.014751001,-0.184977,0.909792,-0.042192,-0.2148525,0.90953773,-0.015239251,-0.1978515,0.909684,0.030933002,-0.157455,0.9100305,0.0277155,-0.14949,0.910098,-0.020452501,-0.1847205,0.85005003,-0.041787002,-0.21663,0.8497575,-0.015135751,-0.199305,0.8629875,0.030595502,-0.1561725,0.86334753,0.027400503,-0.146835,0.850365,-0.020297252,-0.1830645,0.7327575,-0.037962,-0.206325,0.732555,-0.008507251,-0.19308825,0.73269004,0.028345501,-0.1616355,0.73296,0.025353,-0.15543,0.733005,-0.013342501,-0.1819395,0.71874,-0.02555325,-0.197829,0.718605,-0.0054405,-0.18878625,0.7186725,0.017838,-0.1673055,0.7188525,0.015788252,-0.16307549,0.71889746,-0.00874125})))
                                                           .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8857,0.572,0.9344,0.572,0.9377,0.5719,0.8909,0.5718,0.8588,0.5719,0.8849,0.5578,0.8418,0.558,0.9588,0.5579,0.9536,0.5581,0.8765,0.5581,0.885,0.5257,0.8424,0.5258,0.9582,0.5328,0.9531,0.533,0.8768,0.526,0.8957,0.4625,0.8485,0.4627,0.9546,0.4626,0.9498,0.4628,0.8879,0.4628,0.8953,0.4552,0.8684,0.4551,0.9006,0.455,0.9378,0.4551,0.9345,0.4552})))))
                                                       .addChild(new Group("r_forearm_Sites")
-                                                        .addComments(new String[] {" ",
-"(r_radial_styloid_pt  -0.1884 0.8676 -0.0360)",
-"(r_olecranon_pt  -0.1907 1.1405 -0.1065) "})
+                                                        .addComments(" (r_radial_styloid_pt  -0.1884 0.8676 -0.0360) ")
+                                                        .addComments(" (r_olecranon_pt  -0.1907 1.1405 -0.1065) ")
                                                         .addChild(new HAnimSite("hanim_r_radial_styloid_pt").setName("r_radial_styloid_pt").setTranslation(-0.18,0.725,0.025)
                                                           .addChild(new TouchSensor().setDescription("HAnimSite r_radial_styloid_pt 74"))
                                                           .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -2082,8 +1954,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                             .setCoord(new Coordinate().setPoint(getCoordinate_31_1574_point()))
                                                             .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7729,0.0334,0.7695,0.0151,0.7598,0.0161,0.7624,0.0345,0.791,0.0281,0.7896,0.0131,0.8111,0.0113,0.813,0.0266,0.8476,0.0256,0.8461,0.0079,0.8312,0.0091,0.8327,0.0273,0.9162,0.2899,0.8453,0.0081,0.8466,0.0257,0.9122,0.2724,0.9531,0.2644,0.9573,0.2786,0.936,0.2844,0.9315,0.2698,0.9706,0.2558,0.9766,0.2733,0.8032,0.0047,0.8134,0.033,0.8325,0.0338,0.792,0.0345,0.7756,0.0396,0.7675,0.0404,0.9666,0.2503,0.9509,0.2584,0.9297,0.2636,0.9113,0.266,0.8439,0.0324,0.8447,0.0323,0.8081,0.0397,0.986,0.2708,0.9803,0.2531,0.9032,0.2936,0.8989,0.2764,0.9452,0.2896,0.9743,0.2482,0.9004,0.2693,0.9343,0.2559})))))
                                                         .addChild(new Group("r_carpal_Sites")
-                                                          .addComments(new String[] {" ",
-"(r_ulnar_styloid_pt  -0.2117 0.8562 -0.0584) "})
+                                                          .addComments(" (r_ulnar_styloid_pt  -0.2117 0.8562 -0.0584) ")
                                                           .addChild(new HAnimSite("hanim_r_ulnar_styloid_pt").setName("r_ulnar_styloid_pt").setTranslation(-0.2,0.725,0.0)
                                                             .addChild(new TouchSensor().setDescription("HAnimSite r_ulnar_styloid_pt 73"))
                                                             .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -2097,8 +1968,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.19683677,0.6884955,0.017084252,-0.16659226,0.6884955,0.017084252,-0.17199226,0.6948585,0.033036754,-0.19105427,0.6948383,0.034593754,-0.16951501,0.69243526,0.027677251,-0.19006427,0.7063628,0.024972752,-0.19374752,0.7059195,0.014298751,-0.16879275,0.70591724,0.014323501,-0.17440426,0.70634925,0.024201002,-0.17003477,0.68456703,0.018283501,-0.16934626,0.6850215,0.024734251,-0.17313077,0.689436,0.032796003,-0.18909001,0.69117075,0.03430575,-0.193725,0.684279,0.017797502,-0.19056602,0.71277976,0.013095001,-0.18562502,0.7130925,0.021753002,-0.17638426,0.7130858,0.021181501,-0.17079076,0.71273476,0.0131737515,-0.19244926,0.705258,0.012624751,-0.19541027,0.688554,0.0152865015,-0.19304101,0.68534327,0.01582425,-0.17066026,0.68562,0.016308,-0.16799626,0.6886395,0.015264001,-0.17011127,0.705384,0.012622501,-0.17179877,0.71114624,0.011655001,-0.18969977,0.71118677,0.011580751})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8327,0.0273,0.8381,0.0441,0.8625,0.0344,0.8476,0.0256,0.8625,0.0359,0.8466,0.0257,0.9122,0.2724,0.904,0.2568,0.8948,0.2599,0.8401,0.0478,0.8395,0.0482,0.8319,0.0206,0.9141,0.2788,0.844,0.0192,0.8432,0.0193,0.8491,0.0466,0.8611,0.0409,0.8611,0.0397,0.8814,0.2691,0.8989,0.2764,0.9014,0.2535,0.9142,0.2789,0.9026,0.2823,0.9033,0.2821,0.8928,0.2563,0.8819,0.264,0.8327,0.0273,0.8381,0.0441,0.8395,0.0482,0.8401,0.0478,0.904,0.2568,0.9122,0.2724,0.9141,0.2788,0.9142,0.2789})))))
                                                           .addChild(new Group("r_trapezium_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_r_carpometacarpal_1").setName("r_carpometacarpal_1").setCenter(-0.180135,0.69255006,0.0259875).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_1").setName("r_metacarpal_1")
                                                             .addChild(new Shape("r_metacarpal_1_Shape")
@@ -2109,8 +1979,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.16719525,0.6742823,0.03437775,-0.17334,0.6787328,0.04048425,-0.1887165,0.6812753,0.042723,-0.196245,0.6722078,0.02954475,-0.1719,0.66453755,0.02409975,-0.1985535,0.670122,0.025339501,-0.1967805,0.68851805,0.01707975,-0.16653825,0.68851805,0.01707975,-0.17193599,0.694881,0.0330345,-0.19100025,0.6948608,0.03458925,-0.169461,0.6924578,0.02767275,-0.188532,0.66602254,0.032742,-0.18807974,0.66456,0.03101175,-0.17463374,0.662985,0.0287775,-0.169965,0.66602254,0.034326002,-0.175401,0.6710625,0.040788002,-0.1847835,0.67381877,0.04385475,-0.17063099,0.6868958,0.013740749,-0.17469674,0.6639525,0.01973025,-0.193878,0.66888005,0.020241,-0.193266,0.6868913,0.013734,-0.1713105,0.6944108,0.02554875,-0.1687725,0.6921765,0.0197415,-0.19174725,0.6916703,0.019944001,-0.18858825,0.6964133,0.031797,-0.1760805,0.6964178,0.030825})))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8819,0.0483,0.8625,0.0359,0.8625,0.0344,0.8786,0.0507,0.8948,0.2599,0.867,0.0598,0.857,0.0621,0.8381,0.0441,0.8533,0.0697,0.8381,0.0441,0.8503,0.0646,0.8419,0.0407,0.8588,0.0334,0.8588,0.0347,0.8467,0.0405,0.8415,0.0402,0.8445,0.0658,0.8331,0.0451,0.8331,0.0451,0.8468,0.0705,0.8593,0.0711,0.8712,0.0644,0.8626,0.068,0.8607,0.0696,0.877,0.0609,0.8798,0.0581,0.8632,0.2548,0.8814,0.2691,0.8729,0.2464,0.8847,0.2342,0.904,0.2568,0.8853,0.2697,0.8962,0.2618,0.9014,0.2613,0.9088,0.2549,0.8909,0.2323})))))
                                                             .addChild(new Group("r_metacarpal_1_Sites")
-                                                              .addComments(new String[] {" ",
-"(r_metacarpal_phalanx_2_pt  -0.1977 0.8169 -0.0177)"})
+                                                              .addComments(" (r_metacarpal_phalanx_2_pt  -0.1977 0.8169 -0.0177) ")
                                                               .addChild(new HAnimSite("hanim_r_metacarpal_phalanx_2_pt").setName("r_metacarpal_phalanx_2_pt").setTranslation(-0.2,0.665,0.012)
                                                                 .addChild(new TouchSensor().setDescription("HAnimSite r_metacarpal_phalanx_2_pt 78"))
                                                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -2124,8 +1993,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1607_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8786,0.0507,0.857,0.0621,0.8601,0.0649,0.867,0.0598,0.8887,0.0786,0.8747,0.0865,0.8533,0.0697,0.876,0.0783,0.893,0.0688,0.8992,0.0702,0.8819,0.0483,0.8561,0.0728,0.8736,0.0851,0.8532,0.0697,0.8503,0.0646,0.8986,0.0785,0.897,0.0809,0.8914,0.0813,0.8802,0.0861,0.8841,0.0856,0.8821,0.0883,0.8487,0.0595,0.8509,0.0581,0.8683,0.0489,0.868,0.0507,0.8608,0.0544,0.8505,0.0603,0.8455,0.0706,0.8468,0.073,0.8455,0.0707,0.8437,0.0676,0.8416,0.0639,0.8422,0.0648,0.8729,0.2464,0.8482,0.2317,0.8612,0.2211,0.8847,0.2342,0.8433,0.2381,0.8632,0.2548,0.8814,0.2316,0.8625,0.2222,0.8799,0.2506,0.8891,0.243,0.8922,0.232,0.8922,0.232})))))
                                                               .addChild(new Group("r_carpal_proximal_phalanx_1_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_interphalangeal_1").setName("r_carpal_interphalangeal_1").setCenter(-0.18227251,0.654075,0.0496575).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_1").setName("r_carpal_distal_phalanx_1")
                                                                 .addChild(new Shape("r_carpal_distal_phalanx_1_Shape")
@@ -2136,8 +2004,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(getCoordinate_35_1616_point()))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8747,0.0865,0.8887,0.0786,0.8299,0.2203,0.8424,0.2111,0.8736,0.0851,0.8939,0.0989,0.8978,0.0975,0.8834,0.0852,0.8992,0.0766,0.9092,0.0888,0.8992,0.0702,0.9115,0.0859,0.876,0.0783,0.893,0.0688,0.9109,0.102,0.9135,0.0996,0.9144,0.0973,0.9172,0.0962,0.8241,0.2146,0.8338,0.2074,0.8247,0.2116,0.8291,0.2083,0.9028,0.1054,0.9046,0.1032,0.9153,0.1012,0.9125,0.1038,0.9081,0.1033,0.9082,0.1057,0.8266,0.2097,0.8885,0.0681,0.8723,0.0776,0.8843,0.0701,0.8696,0.0781,0.8612,0.2211,0.8482,0.2317,0.8625,0.2222,0.8417,0.2109,0.8433,0.2381,0.8245,0.2237,0.8192,0.2167,0.8322,0.2071,0.8195,0.2131,0.8224,0.2103,0.8256,0.2083})))))
                                                                 .addChild(new Group("r_carpal_distal_phalanx_1_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_carpal_distal_phalanx_1_tip  -0.1869 0.8090 0.0820)"})
+                                                                  .addComments(" (r_carpal_distal_phalanx_1_tip  -0.1869 0.8090 0.0820) ")
                                                                   .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_1_tip").setName("r_carpal_distal_phalanx_1_tip").setTranslation(-0.18,0.64,0.06)
                                                                     .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_1_tip 106"))
                                                                     .addChild(new Shape().setUSE("HAnimSiteShape")))))))))
@@ -2151,8 +2018,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.16666201,0.6858473,0.0032265,-0.19856477,0.6858473,0.0032265,-0.19631702,0.70836526,0.00230625,-0.16733927,0.70836526,0.00251325,-0.1692585,0.68211,0.003339,-0.19515151,0.68211,0.003339,-0.19250326,0.71530426,0.0018315002,-0.17066701,0.71531105,0.0019709999,-0.16911227,0.706842,7.1774976E-4,-0.16770601,0.687564,0.0015682501,-0.19648576,0.687564,0.0015817503,-0.19455977,0.706842,5.2200013E-4,-0.19683677,0.68846405,0.01708425,-0.16659226,0.68846405,0.01708425,-0.19374752,0.70588803,0.014298751,-0.16879275,0.70588577,0.0143235,-0.17003477,0.6845355,0.018283501,-0.193725,0.68424755,0.017797502,-0.19056602,0.7127483,0.013095001,-0.17079076,0.7127033,0.013176001,-0.19476901,0.68997604,0.01834425,-0.19209376,0.70506227,0.01593225,-0.18933976,0.71100456,0.0148905,-0.17221276,0.7109663,0.014958001,-0.17048477,0.70506227,0.015954752,-0.16857901,0.68997604,0.01834425,-0.17155801,0.68657404,0.0193815,-0.19207576,0.6863243,0.018963})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.813,0.0266,0.8136,0.0488,0.8136,0.0488,0.8133,0.0266,0.8111,0.0474,0.8105,0.0283,0.8108,0.0283,0.8111,0.0474,0.8141,0.0525,0.8141,0.0525,0.8123,0.0198,0.8125,0.0198,0.9273,0.2479,0.9315,0.2698,0.9337,0.2676,0.9301,0.2489,0.9262,0.2444,0.9337,0.2762,0.9335,0.2763,0.8381,0.0441,0.904,0.2568,0.8327,0.0273,0.9122,0.2724,0.8401,0.0478,0.9014,0.2535,0.8395,0.0482,0.9142,0.2789,0.8319,0.0206,0.9141,0.2788,0.8381,0.0441,0.8327,0.0273,0.8319,0.0206,0.9141,0.2788,0.9122,0.2724,0.904,0.2568,0.9014,0.2535,0.8395,0.0482})))))
                                                           .addChild(new Group("r_trapezoid_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_r_carpometacarpal_2").setName("r_carpometacarpal_2").setCenter(-0.18090001,0.6876,0.009729).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_2").setName("r_metacarpal_2")
                                                             .addChild(new Shape("r_metacarpal_2_Shape")
@@ -2163,8 +2029,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1641_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8514,0.0953,0.8526,0.0788,0.846,0.0768,0.8466,0.0958,0.8195,0.0808,0.8225,0.0994,0.8225,0.0994,0.8195,0.0808,0.8903,0.2261,0.8467,0.0958,0.8381,0.0441,0.8136,0.0488,0.8561,0.0728,0.8532,0.0697,0.8381,0.0441,0.8136,0.0488,0.8436,0.0662,0.8533,0.0697,0.8503,0.0646,0.8461,0.0998,0.8248,0.1027,0.8248,0.1027,0.8462,0.0997,0.8498,0.0994,0.8184,0.0977,0.8157,0.0811,0.8157,0.0809,0.8184,0.0977,0.8165,0.0457,0.8341,0.0424,0.8341,0.0424,0.8165,0.0457,0.844,0.0417,0.8554,0.0622,0.8575,0.0659,0.8594,0.0677,0.8574,0.0658,0.844,0.0417,0.8099,0.0493,0.8099,0.0493,0.82,0.101,0.82,0.101,0.8821,0.2087,0.8838,0.2252,0.9098,0.1997,0.916,0.2175,0.8866,0.2074,0.904,0.2568,0.9273,0.2479,0.8814,0.2316,0.8847,0.2342,0.9197,0.2166,0.9083,0.2577,0.925,0.2515,0.8813,0.2388,0.8986,0.2602,0.931,0.2468})))))
                                                             .addChild(new Group("r_metacarpal_2_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_2").setName("r_metacarpophalangeal_2").setCenter(-0.18335252,0.6372,0.015075001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_2").setName("r_carpal_proximal_phalanx_2")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_2_Shape")
@@ -2175,8 +2040,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1650_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8511,0.1006,0.8514,0.0953,0.8466,0.0958,0.8466,0.1011,0.8225,0.0994,0.8283,0.1035,0.9023,0.1969,0.8225,0.0994,0.8467,0.0958,0.8857,0.2021,0.8231,0.1042,0.8931,0.1724,0.8782,0.1769,0.8338,0.1268,0.8493,0.125,0.8543,0.1273,0.8302,0.1302,0.8258,0.1072,0.8236,0.1075,0.8231,0.1042,0.8504,0.1328,0.8508,0.1334,0.8781,0.1731,0.8909,0.1692,0.8352,0.1346,0.8353,0.1353,0.8228,0.0929,0.844,0.0896,0.8482,0.0889,0.8441,0.0896,0.8228,0.0929,0.8203,0.0995,0.8207,0.1038,0.8212,0.1068,0.8207,0.1037,0.8203,0.0995,0.8206,0.0933,0.8205,0.0933,0.8815,0.2034,0.8821,0.2087,0.9098,0.1997,0.8866,0.2074,0.8737,0.1777,0.8969,0.1707,0.9052,0.1925,0.9074,0.1918,0.9084,0.195,0.876,0.171,0.891,0.1665})))))
                                                               .addChild(new Group("r_carpal_proximal_phalanx_2_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_2").setName("r_carpal_proximal_interphalangeal_2").setCenter(-0.1813275,0.606825,0.014184001).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_2").setName("r_carpal_middle_phalanx_2")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_2_Shape")
@@ -2187,8 +2051,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.179433,0.5814675,0.0060592503,-0.17177176,0.581715,0.0187065,-0.1879335,0.584235,0.018918,-0.18997426,0.6023385,0.01937475,-0.18997426,0.60245776,0.007888501,-0.17175151,0.607077,0.00793575,-0.19078426,0.609426,0.0079605,-0.17175151,0.60695773,0.019422,-0.19078426,0.609309,0.019444501,-0.175896,0.61142623,0.00798075,-0.175896,0.611307,0.01946475,-0.18528976,0.61107075,0.0194625,-0.18528976,0.61119,0.007978501,-0.18075375,0.6065505,0.0055327504,-0.18075375,0.60636604,0.022119751,-0.17943975,0.5812875,0.021402001,-0.18512326,0.5763825,0.018405002,-0.17964001,0.57555,0.0185895,-0.17176726,0.5818275,0.0084645,-0.17331076,0.57798,0.017784001,-0.1733085,0.57807,0.00932175,-0.187929,0.584352,0.0082755005,-0.18511876,0.576495,0.0086917505,-0.17963551,0.57564,0.008667001})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8782,0.1769,0.8543,0.1273,0.8574,0.1518,0.8703,0.1535,0.8493,0.125,0.8504,0.1318,0.8846,0.1491,0.8931,0.1724,0.8349,0.1336,0.8379,0.1515,0.8533,0.1496,0.8338,0.1268,0.8302,0.1302,0.8351,0.1545,0.849,0.1233,0.8336,0.1251,0.849,0.123,0.8335,0.1249,0.8539,0.1573,0.8543,0.1579,0.8703,0.1496,0.8822,0.146,0.8398,0.159,0.8399,0.1597,0.8737,0.1777,0.8664,0.1541,0.8969,0.1707,0.8878,0.1476,0.8796,0.181,0.8945,0.1764,0.8684,0.1475,0.8822,0.1433})))))
                                                                 .addChild(new Group("r_carpal_middle_phalanx_2_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_2").setName("r_carpal_distal_interphalangeal_2").setCenter(-0.1802925,0.58162504,0.013385251).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_2").setName("r_carpal_distal_phalanx_2")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_2_Shape")
@@ -2199,8 +2062,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1668_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8542,0.1553,0.8574,0.1518,0.8533,0.1496,0.8379,0.1515,0.8351,0.1545,0.8388,0.1572,0.8414,0.1663,0.8547,0.1647,0.8578,0.1639,0.8665,0.142,0.8703,0.1535,0.8804,0.1378,0.8846,0.1491,0.8382,0.1663,0.8495,0.1759,0.8523,0.1752,0.8544,0.1737,0.8566,0.1736,0.8658,0.1324,0.8753,0.1296,0.8677,0.1303,0.8725,0.1289,0.842,0.1753,0.8441,0.175,0.8533,0.1759,0.8496,0.1769,0.8467,0.1759,0.846,0.1768,0.87,0.1292,0.8525,0.1477,0.8382,0.1495,0.8525,0.1475,0.8381,0.1492,0.8664,0.1541,0.8878,0.1476,0.8639,0.1422,0.8827,0.1365,0.8634,0.1325,0.8774,0.1283,0.8662,0.1297,0.8697,0.1281,0.8732,0.1275,0.872,0.1575,0.8858,0.1533})))))
                                                                   .addChild(new Group("r_carpal_distal_phalanx_2_Sites")
-                                                                    .addComments(new String[] {" ",
-"(r_carpal_distal_phalanx_2_tip  -0.1980 0.6883 -0.0180) "})
+                                                                    .addComments(" (r_carpal_distal_phalanx_2_tip  -0.1980 0.6883 -0.0180) ")
                                                                     .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_2_tip").setName("r_carpal_distal_phalanx_2_tip").setTranslation(-0.172,0.558,0.017)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_2_tip 107"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -2214,8 +2076,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.19859175,0.68589,-0.012235501,-0.16613999,0.685935,-0.012237751,-0.19625625,0.7085138,0.00230625,-0.19694924,0.70894355,-0.012406501,-0.1674405,0.7089413,-0.01237725,-0.16660349,0.6860025,0.0032242502,-0.16728075,0.708516,0.00251325,-0.19850625,0.6860025,0.0032242502,-0.16849124,0.68238,-0.012422251,-0.16878825,0.682155,0.0034470002,-0.19518974,0.682155,0.0034470002,-0.195246,0.682335,-0.0124200005,-0.17059724,0.71546626,0.00198675,-0.17070524,0.7156508,-0.01096875,-0.19353825,0.715653,-0.010989001,-0.19308375,0.715464,0.0018449998,-0.167553,0.6874043,0.00576225,-0.16897275,0.7068623,0.0049185003,-0.194616,0.7068623,0.00472275,-0.19656,0.6874043,0.0057735,-0.19656675,0.6875753,-0.014348251,-0.195156,0.7073843,-0.0148950005,-0.16918425,0.707382,-0.01486575,-0.16723575,0.68762255,-0.01435275})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9315,0.2698,0.8136,0.0488,0.7924,0.0507,0.7911,0.0281,0.8136,0.0488,0.813,0.0266,0.791,0.0281,0.7924,0.0508,0.7924,0.0543,0.8143,0.0526,0.8143,0.0526,0.7924,0.0543,0.9335,0.2763,0.7903,0.0215,0.7903,0.0215,0.8123,0.0198,0.7875,0.03,0.7875,0.03,0.7887,0.0494,0.7887,0.0495,0.9277,0.2691,0.8167,0.0279,0.8173,0.0471,0.8173,0.0471,0.9273,0.2479,0.9479,0.2423,0.9531,0.2644,0.9318,0.2697,0.9473,0.2389,0.926,0.2443,0.955,0.2707,0.9551,0.2707,0.9337,0.2763,0.9563,0.262,0.9518,0.243,0.928,0.269,0.924,0.2502,0.9241,0.2502})))))
                                                           .addChild(new Group("r_capitate_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_r_carpometacarpal_3").setName("r_carpometacarpal_3").setCenter(-0.18072,0.6858,-0.0062527503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_3").setName("r_metacarpal_3")
                                                             .addChild(new Shape("r_metacarpal_3_Shape")
@@ -2226,8 +2087,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1694_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8225,0.0994,0.8195,0.0808,0.7938,0.0824,0.7939,0.1016,0.8195,0.0808,0.7938,0.0824,0.7924,0.0507,0.8136,0.0488,0.7939,0.1016,0.8225,0.0994,0.8136,0.0488,0.7924,0.0508,0.7964,0.1053,0.8205,0.103,0.8205,0.103,0.7964,0.1053,0.796,0.0481,0.809,0.0468,0.809,0.0469,0.796,0.048,0.7888,0.0827,0.7888,0.0826,0.7886,0.1011,0.7887,0.1011,0.8243,0.0799,0.8186,0.0479,0.8186,0.0479,0.8243,0.0801,0.7878,0.051,0.7878,0.0509,0.8275,0.0984,0.8275,0.0983,0.7902,0.1036,0.7902,0.1036,0.8264,0.1006,0.8264,0.1006,0.916,0.2175,0.941,0.2114,0.9479,0.2423,0.9273,0.2479,0.9376,0.1925,0.9098,0.1997,0.9479,0.2423,0.9448,0.2456,0.9323,0.249,0.9323,0.249,0.9448,0.2456,0.9459,0.2103,0.9115,0.2191,0.9226,0.2496,0.9226,0.2496,0.9114,0.219,0.9524,0.2413,0.9524,0.2414})))))
                                                             .addChild(new Group("r_metacarpal_3_Sites")
-                                                              .addComments(new String[] {" ",
-"(r_metacarpal_phalanx_3  x y z) "})
+                                                              .addComments(" (r_metacarpal_phalanx_3  x y z) ")
                                                               .addChild(new HAnimSite("hanim_r_metacarpal_phalanx_3").setName("r_metacarpal_phalanx_3").setTranslation(-0.2,0.665,0.016)
                                                                 .addChild(new TouchSensor().setDescription("HAnimSite r_metacarpal_phalanx_3 79"))
                                                                 .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -2241,8 +2101,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1706_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8168,0.105,0.8225,0.0994,0.7939,0.1016,0.7996,0.1065,0.9311,0.1887,0.7939,0.1016,0.8225,0.0994,0.9145,0.1932,0.794,0.107,0.9232,0.1611,0.908,0.1649,0.8025,0.1324,0.818,0.1313,0.7986,0.1359,0.7957,0.11,0.7939,0.1101,0.794,0.107,0.8228,0.1342,0.8186,0.1401,0.819,0.1409,0.9081,0.1606,0.921,0.1574,0.8033,0.1412,0.8033,0.142,0.8231,0.1042,0.8212,0.1078,0.8231,0.1042,0.8236,0.1075,0.7948,0.0956,0.8206,0.0932,0.8206,0.0932,0.7948,0.0956,0.8249,0.0987,0.8253,0.1032,0.8258,0.1063,0.8253,0.1032,0.8249,0.0987,0.823,0.0929,0.823,0.0929,0.7917,0.1017,0.7916,0.1064,0.7918,0.1091,0.7916,0.1063,0.7917,0.1017,0.7927,0.0957,0.7927,0.0957,0.9376,0.1925,0.9098,0.1997,0.927,0.1595,0.9344,0.1846,0.9361,0.1842,0.9366,0.1872,0.9035,0.1654,0.9061,0.1582,0.9213,0.1544,0.9096,0.1911,0.9084,0.195,0.9074,0.1918})))))
                                                               .addChild(new Group("r_carpal_proximal_phalanx_3_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_3").setName("r_carpal_proximal_interphalangeal_3").setCenter(-0.1813275,0.603225,-0.003537).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_3").setName("r_carpal_middle_phalanx_3")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_3_Shape")
@@ -2253,8 +2112,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.17965801,0.575235,-0.01091025,-0.17198326,0.57586503,0.0017190003,-0.18813601,0.578655,0.0018450001,-0.18997426,0.59820527,0.0018742502,-0.18997426,0.5980635,-0.00877725,-0.17175151,0.603243,-0.00891225,-0.19078426,0.60587776,-0.008982,-0.17175151,0.60338473,0.0017392504,-0.19078426,0.60602176,0.0016695001,-0.175896,0.6081188,-0.0090405,-0.175896,0.6082628,0.0016110002,-0.18528976,0.60799724,0.0016177503,-0.18528976,0.60785323,-0.00903375,-0.18075375,0.60257924,-0.0117247505,-0.18075375,0.60280204,0.00487125,-0.17965126,0.5754375,0.0044370005,-0.18536176,0.569835,0.0016402503,-0.17985825,0.5695425,0.0018000003,-0.17198776,0.57573,-0.008529751,-0.17354026,0.57165754,9.4500027E-4,-0.17354476,0.571545,-0.0075195003,-0.18814051,0.57852,-0.008802,-0.18536626,0.5697,-0.0080775,-0.17988525,0.5687775,-0.00807525})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.908,0.1649,0.8228,0.1342,0.8238,0.1612,0.9018,0.1387,0.818,0.1313,0.8186,0.139,0.9163,0.135,0.9232,0.1611,0.8031,0.1401,0.8044,0.1596,0.8199,0.1584,0.8025,0.1324,0.7986,0.1359,0.8014,0.1628,0.8179,0.1294,0.8023,0.1305,0.8179,0.1291,0.8023,0.1302,0.8199,0.1671,0.8202,0.1672,0.902,0.1343,0.914,0.1313,0.8058,0.1681,0.8058,0.1689,0.9035,0.1654,0.8978,0.139,0.927,0.1595,0.9196,0.1336,0.9092,0.1696,0.9243,0.1658,0.9003,0.1324,0.9142,0.1283})))))
                                                                 .addChild(new Group("r_carpal_middle_phalanx_3_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_3").setName("r_carpal_distal_interphalangeal_3").setCenter(-0.1802925,0.575325,-0.0037597502).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_3").setName("r_carpal_distal_phalanx_3")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_3_Shape")
@@ -2265,9 +2123,8 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1724_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.8204,0.1649,0.8238,0.1612,0.8199,0.1584,0.8044,0.1596,0.8014,0.1628,0.8049,0.166,0.807,0.1802,0.8204,0.1792,0.8232,0.1783,0.8982,0.1238,0.9018,0.1387,0.9123,0.1202,0.9163,0.135,0.8038,0.18,0.8141,0.1881,0.8169,0.1876,0.8192,0.1861,0.8213,0.1861,0.8983,0.1142,0.9079,0.1117,0.9004,0.112,0.9052,0.1108,0.8067,0.1872,0.8088,0.1869,0.8179,0.1883,0.8142,0.1891,0.8114,0.188,0.8106,0.1889,0.9027,0.111,0.8192,0.1563,0.8048,0.1573,0.8192,0.156,0.8048,0.1571,0.8978,0.139,0.9196,0.1336,0.8956,0.1239,0.9147,0.119,0.8959,0.1141,0.9101,0.1105,0.8989,0.1113,0.9025,0.1098,0.906,0.1094,0.9033,0.1433,0.9173,0.1398})))))
                                                                   .addChild(new Group("r_carpal_distal_phalanx_3_Sites")
-                                                                    .addComments(new String[] {" ",
-"(r_carpal_distal_phalanx_3_tip  -0.1969 0.6758 -0.0427) ",
-"(r_dactylion_pt  -0.1941 0.6772 -0.0423 )"})
+                                                                    .addComments(" (r_carpal_distal_phalanx_3_tip  -0.1969 0.6758 -0.0427) ")
+                                                                    .addComments(" (r_dactylion_pt  -0.1941 0.6772 -0.0423 ) ")
                                                                     .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_3_tip").setName("r_carpal_distal_phalanx_3_tip").setTranslation(-0.170,0.555,-0.006)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_3_tip 108"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape")))
@@ -2284,8 +2141,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.19775926,0.68704206,-0.027623253,-0.170451,0.68900406,-0.037813503,-0.16708724,0.6870555,-0.027627753,-0.1825245,0.68998057,-0.040864505,-0.1937565,0.68892753,-0.037788752,-0.17104724,0.70506907,-0.027328502,-0.18264149,0.705456,-0.03395025,-0.19459125,0.7050758,-0.027317252,-0.19694924,0.7088671,-0.012406502,-0.19859175,0.6858113,-0.012235502,-0.16613999,0.6858653,-0.012237752,-0.1674405,0.7088648,-0.012377251,-0.19508624,0.6822001,-0.012318752,-0.19444725,0.68294257,-0.027729003,-0.190998,0.6845333,-0.03642075,-0.182349,0.68544227,-0.038772,-0.17316675,0.68458056,-0.036346503,-0.17028674,0.68294257,-0.027713252,-0.1688085,0.6822451,-0.012321001,-0.17150399,0.7155518,-0.010971001,-0.1740015,0.7118955,-0.026010003,-0.18247275,0.7122308,-0.030795753,-0.1915245,0.7118775,-0.025888503,-0.19317375,0.7155653,-0.010993502,-0.19486125,0.7069298,-0.010633501,-0.19623375,0.6876608,-0.010638002,-0.1675845,0.687708,-0.010640251,-0.16947675,0.70692754,-0.010606502})))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7624,0.0345,0.7525,0.0502,0.7571,0.0508,0.7729,0.0334,0.7734,0.0512,0.7924,0.0508,0.791,0.0281,0.9531,0.2644,0.9665,0.2386,0.9827,0.2362,0.9706,0.2558,0.9479,0.2423,0.7736,0.0553,0.7595,0.0549,0.7559,0.0544,0.7596,0.0549,0.7736,0.0553,0.7721,0.0268,0.7644,0.0276,0.7723,0.0268,0.7938,0.0298,0.795,0.0487,0.9457,0.2448,0.9501,0.2632,0.7926,0.0543,0.7926,0.0544,0.7903,0.0215,0.7903,0.0215,0.9803,0.2531,0.9874,0.236,0.9479,0.2423,0.9532,0.2644,0.9832,0.2324,0.9795,0.2325,0.9656,0.2346,0.9721,0.2624,0.9795,0.2602,0.9719,0.2625,0.9502,0.2632,0.9457,0.2447,0.9471,0.2389,0.9471,0.2388,0.9551,0.2707,0.955,0.2707})))))
                                                           .addChild(new Group("r_hamate_Sites")
-                                                            .addComments(new String[] {" ",
-"None "})))
+                                                            .addComments(" None ")))
                                                         .addChild(new HAnimJoint("hanim_r_carpometacarpal_4").setName("r_carpometacarpal_4").setCenter(-0.18072,0.68625003,-0.01991925).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                           .addChild(new HAnimSegment("hanim_r_metacarpal_4").setName("r_metacarpal_4")
                                                             .addChild(new Shape("r_metacarpal_4_Shape")
@@ -2296,8 +2152,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1753_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7939,0.1016,0.7938,0.0824,0.7694,0.0827,0.766,0.1014,0.7924,0.0508,0.7734,0.0512,0.7938,0.0824,0.7939,0.1016,0.766,0.1015,0.965,0.2069,0.7734,0.0512,0.7924,0.0507,0.7909,0.1057,0.7677,0.1056,0.7677,0.1057,0.7909,0.1057,0.9517,0.2441,0.7765,0.0488,0.7765,0.0488,0.789,0.0484,0.7643,0.0825,0.7643,0.0824,0.7614,0.1009,0.7614,0.1009,0.7991,0.0823,0.7971,0.0505,0.7971,0.0505,0.7991,0.0824,0.7688,0.0511,0.7688,0.0511,0.7994,0.1003,0.7994,0.1003,0.7625,0.1038,0.7625,0.1038,0.7972,0.1034,0.7972,0.1034,0.9479,0.2423,0.9665,0.2385,0.941,0.2114,0.9376,0.1925,0.9651,0.1878,0.9665,0.2386,0.9479,0.2423,0.9639,0.2415,0.9639,0.2415,0.9517,0.244,0.9701,0.2063,0.9698,0.1875,0.9358,0.2124,0.9433,0.2434,0.9433,0.2434,0.9358,0.2123,0.9711,0.2379,0.9711,0.2379})))))
                                                             .addChild(new Group("r_metacarpal_4_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_r_metacarpophalangeal_4").setName("r_metacarpophalangeal_4").setCenter(-0.18330751,0.63405,-0.02144025).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_proximal_phalanx_4").setName("r_carpal_proximal_phalanx_4")
                                                               .addChild(new Shape("r_carpal_proximal_phalanx_4_Shape")
@@ -2308,8 +2163,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(getCoordinate_34_1762_point()))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7878,0.1071,0.7939,0.1016,0.766,0.1014,0.7709,0.1068,0.9594,0.1833,0.766,0.1015,0.7939,0.1016,0.9426,0.186,0.7648,0.1066,0.9545,0.1568,0.9398,0.1599,0.771,0.1315,0.7861,0.131,0.767,0.1345,0.7667,0.1094,0.7644,0.1092,0.7648,0.1066,0.7904,0.1338,0.786,0.139,0.7863,0.1397,0.9402,0.1559,0.9531,0.1532,0.7709,0.1396,0.7709,0.1403,0.794,0.107,0.7917,0.1102,0.794,0.107,0.7939,0.1101,0.7675,0.0958,0.7934,0.0956,0.7934,0.0956,0.7675,0.0958,0.7967,0.1011,0.7964,0.1056,0.7964,0.1088,0.7964,0.1057,0.7967,0.1011,0.7958,0.0955,0.7958,0.0955,0.7633,0.1008,0.7625,0.1056,0.7622,0.1084,0.7625,0.1055,0.7633,0.1008,0.765,0.0957,0.765,0.0957,0.9651,0.1878,0.9376,0.1925,0.9583,0.1554,0.963,0.1801,0.9654,0.1799,0.9654,0.1826,0.9354,0.1602,0.9385,0.1536,0.9536,0.1504,0.9383,0.1837,0.9366,0.1872,0.9361,0.1842})))))
                                                               .addChild(new Group("r_carpal_proximal_phalanx_4_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_4").setName("r_carpal_proximal_interphalangeal_4").setCenter(-0.1813275,0.6066,-0.020646).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_4").setName("r_carpal_middle_phalanx_4")
                                                                 .addChild(new Shape("r_carpal_middle_phalanx_4_Shape")
@@ -2320,8 +2174,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.17947575,0.5802075,-0.027360002,-0.171801,0.5808375,-0.0154035,-0.18796276,0.5834025,-0.0152955,-0.18997426,0.6025095,-0.0154800005,-0.18997426,0.6022912,-0.025564501,-0.17175151,0.606978,-0.0258795,-0.19078426,0.6093742,-0.025956001,-0.17175151,0.60722774,-0.01559025,-0.19078426,0.609624,-0.015669,-0.175896,0.611433,-0.025884,-0.175896,0.61165124,-0.0157995,-0.18528976,0.6114105,-0.0157905,-0.18528976,0.6111922,-0.025875,-0.18075375,0.6063435,-0.02859075,-0.18075375,0.6067327,-0.012561751,-0.17946675,0.5804775,-0.01282725,-0.185157,0.57537,-0.01544625,-0.17965351,0.5751,-0.0152955,-0.17180775,0.5806575,-0.02510775,-0.17334451,0.57699,-0.01611675,-0.17334901,0.576855,-0.02413125,-0.1879695,0.5832,-0.02537775,-0.18516375,0.5752125,-0.02464875,-0.17968051,0.5743575,-0.024642})))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9398,0.1599,0.7904,0.1338,0.7888,0.1598,0.9363,0.1341,0.7861,0.131,0.7859,0.138,0.9502,0.1313,0.9545,0.1568,0.7712,0.1385,0.7707,0.1575,0.7854,0.1571,0.771,0.1315,0.767,0.1345,0.7676,0.1604,0.786,0.1292,0.7713,0.1297,0.786,0.129,0.7713,0.1294,0.7847,0.165,0.7849,0.1652,0.9369,0.1301,0.9483,0.1278,0.7712,0.1654,0.7712,0.1661,0.9354,0.1602,0.9325,0.1343,0.9583,0.1554,0.9533,0.1301,0.9406,0.1642,0.9551,0.1612,0.9355,0.1283,0.9488,0.1251})))))
                                                                 .addChild(new Group("r_carpal_middle_phalanx_4_Sites")
-                                                                  .addComments(new String[] {" ",
-"None "})))
+                                                                  .addComments(" None ")))
                                                               .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_4").setName("r_carpal_distal_interphalangeal_4").setCenter(-0.1802925,0.580725,-0.019777501).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                                 .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_4").setName("r_carpal_distal_phalanx_4")
                                                                   .addChild(new Shape("r_carpal_distal_phalanx_4_Shape")
@@ -2332,8 +2185,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                       .setCoord(new Coordinate().setPoint(getCoordinate_36_1780_point()))
                                                                       .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7853,0.163,0.7888,0.1598,0.7854,0.1571,0.7707,0.1575,0.7676,0.1604,0.7706,0.1634,0.7714,0.1739,0.7841,0.1736,0.787,0.1731,0.9344,0.121,0.9363,0.1341,0.9479,0.1182,0.9502,0.1313,0.7684,0.1736,0.7774,0.1846,0.7801,0.1842,0.7824,0.1828,0.7844,0.1829,0.9351,0.111,0.9443,0.1091,0.9372,0.109,0.9418,0.1081,0.7705,0.1833,0.7725,0.1831,0.781,0.1849,0.7774,0.1856,0.7748,0.1843,0.774,0.1852,0.9395,0.1081,0.7849,0.1552,0.7712,0.1555,0.7849,0.1549,0.7712,0.1553,0.9325,0.1343,0.9533,0.1301,0.9319,0.1209,0.9502,0.1172,0.9329,0.1108,0.9464,0.108,0.9358,0.1082,0.9393,0.1069,0.9427,0.1067,0.9372,0.1384,0.9506,0.1357})))))
                                                                   .addChild(new Group("hanim_r_carpal_distal_phalanx_4_Sites")
-                                                                    .addComments(new String[] {" ",
-"(r_carpal_distal_phalanx_4_tip  -0.1934 0.6778 -0.0693) "})
+                                                                    .addComments(" (r_carpal_distal_phalanx_4_tip  -0.1934 0.6778 -0.0693) ")
                                                                     .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_4_tip").setName("r_carpal_distal_phalanx_4_tip").setTranslation(-0.172,0.559,-0.024)
                                                                       .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_4_tip 109"))
                                                                       .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))
@@ -2347,8 +2199,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                               .setCoord(new Coordinate().setPoint(getCoordinate_32_1797_point()))
                                                               .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.766,0.1014,0.7694,0.0827,0.748,0.0813,0.7455,0.0995,0.7415,0.0989,0.7435,0.0798,0.9864,0.2045,0.7455,0.0995,0.7734,0.0512,0.7571,0.0508,0.7525,0.0502,0.9827,0.2362,0.9665,0.2386,0.7694,0.0827,0.766,0.1015,0.774,0.0829,0.9619,0.2395,0.7782,0.0512,0.774,0.083,0.7619,0.1052,0.7474,0.1039,0.7446,0.1034,0.7473,0.1038,0.7619,0.1052,0.9712,0.2404,0.9799,0.239,0.7566,0.0479,0.7602,0.0485,0.7691,0.0486,0.771,0.1015,0.771,0.1014,0.768,0.1042,0.768,0.1042,0.9897,0.1861,0.991,0.2053,0.9856,0.1862,0.9665,0.2385,0.9874,0.236,0.965,0.2069,0.9651,0.1878,0.9604,0.2075,0.9619,0.2395,0.9604,0.2074,0.9836,0.239,0.98,0.239,0.9712,0.2404})))))
                                                           .addChild(new Group("r_metacarpal_5_Sites")
-                                                            .addComments(new String[] {" ",
-"(r_metacarpal_phalanx_5_pt  -0.1929 0.7890 -0.1064)  "})
+                                                            .addComments(" (r_metacarpal_phalanx_5_pt  -0.1929 0.7890 -0.1064) ")
                                                             .addChild(new HAnimSite("hanim_r_metacarpal_phalanx_5_pt").setName("r_metacarpal_phalanx_5_pt").setTranslation(-0.2,0.665,-0.036)
                                                               .addChild(new TouchSensor().setDescription("HAnimSite r_metacarpal_phalanx_5_pt 80"))
                                                               .addChild(new Shape().setUSE("HAnimSiteShape")))))
@@ -2362,8 +2213,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                 .setCoord(new Coordinate().setPoint(getCoordinate_33_1809_point()))
                                                                 .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7578,0.1276,0.7543,0.1247,0.753,0.131,0.7531,0.1316,0.9854,0.1598,0.9725,0.1615,0.9734,0.1584,0.9844,0.1569,0.7413,0.123,0.7403,0.1293,0.7378,0.1249,0.7401,0.1299,0.7405,0.104,0.7443,0.1047,0.9859,0.1809,0.7455,0.0995,0.766,0.1015,0.9713,0.1822,0.7589,0.1059,0.7648,0.1066,0.766,0.1014,0.7622,0.1091,0.7648,0.1066,0.7644,0.1092,0.7455,0.0995,0.7415,0.0989,0.7664,0.0954,0.7667,0.0954,0.7485,0.0932,0.7449,0.0928,0.7484,0.0932,0.7683,0.1016,0.7686,0.0957,0.7683,0.0956,0.7679,0.1015,0.7671,0.1055,0.7666,0.1084,0.7674,0.1056,0.9687,0.1615,0.9723,0.1564,0.9888,0.1589,0.9852,0.1547,0.9898,0.1809,0.9856,0.1862,0.9651,0.1878,0.9675,0.1796,0.9654,0.1826,0.9654,0.1799,0.9897,0.1861})))))
                                                             .addChild(new Group("r_carpal_proximal_phalanx_5_Sites")
-                                                              .addComments(new String[] {" ",
-"None "})))
+                                                              .addComments(" None ")))
                                                           .addChild(new HAnimJoint("hanim_r_carpal_proximal_interphalangeal_5").setName("r_carpal_proximal_interphalangeal_5").setCenter(-0.18130499,0.62100005,-0.037147503).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                             .addChild(new HAnimSegment("hanim_r_carpal_middle_phalanx_5").setName("r_carpal_middle_phalanx_5")
                                                               .addChild(new Shape("r_carpal_middle_phalanx_5_Shape")
@@ -2374,8 +2224,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.17963775,0.60232055,-0.043692753,-0.17215875,0.6031395,-0.032409,-0.187722,0.6048765,-0.03229875,-0.189657,0.61760026,-0.032555252,-0.189639,0.617796,-0.04163175,-0.17253,0.6213128,-0.041503504,-0.19029374,0.623295,-0.04186575,-0.172539,0.6211148,-0.032427,-0.19030274,0.6231758,-0.032361753,-0.17632125,0.6246968,-0.041807253,-0.17633025,0.6245775,-0.0323055,-0.18470925,0.62424004,-0.03231225,-0.18470025,0.62435704,-0.041814003,-0.1802205,0.6209595,-0.044122502,-0.18075825,0.6205703,-0.029571751,-0.17963775,0.6027593,-0.029904751,-0.18563175,0.598572,-0.032463003,-0.1824165,0.59814006,-0.0323145,-0.17215875,0.60284704,-0.041501254,-0.17335574,0.600102,-0.033108752,-0.17382374,0.59990406,-0.040461753,-0.18775125,0.6045728,-0.04175775,-0.1856565,0.59832,-0.04097025,-0.18248175,0.5979825,-0.0409635})))
                                                                   .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.9725,0.1615,0.7578,0.1276,0.7541,0.1444,0.9727,0.1441,0.7543,0.1247,0.7533,0.1302,0.9851,0.1424,0.9854,0.1598,0.7404,0.1285,0.7384,0.1404,0.7513,0.1418,0.7413,0.123,0.7378,0.1249,0.7355,0.1424,0.7545,0.1231,0.7416,0.1216,0.7546,0.1229,0.7417,0.1214,0.7496,0.1479,0.7498,0.1481,0.9738,0.1409,0.9839,0.1396,0.738,0.1467,0.7381,0.1469,0.9687,0.1616,0.9694,0.1441,0.9888,0.1589,0.988,0.1416,0.9725,0.165,0.9854,0.1633,0.9728,0.1395,0.9846,0.1375})))))
                                                               .addChild(new Group("r_carpal_middle_phalanx_5_Sites")
-                                                                .addComments(new String[] {" ",
-"None "})))
+                                                                .addComments(" None ")))
                                                             .addChild(new HAnimJoint("hanim_r_carpal_distal_interphalangeal_5").setName("r_carpal_distal_interphalangeal_5").setCenter(-0.18045002,0.602325,-0.0369675).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
                                                               .addChild(new HAnimSegment("hanim_r_carpal_distal_phalanx_5").setName("r_carpal_distal_phalanx_5")
                                                                 .addChild(new Shape("r_carpal_distal_phalanx_5_Shape")
@@ -2386,8 +2235,7 @@ public class JinScaledV2L1LOA4Sites07f
                                                                     .setCoord(new Coordinate().setPoint(getCoordinate_35_1827_point()))
                                                                     .setTexCoord(new TextureCoordinate().setPoint(new MFVec2f(new double[] {0.7505,0.1465,0.7541,0.1444,0.7513,0.1418,0.7384,0.1404,0.7355,0.1424,0.7377,0.1451,0.7372,0.1554,0.7483,0.1563,0.7507,0.1564,0.9726,0.1318,0.9727,0.1441,0.9847,0.1302,0.9851,0.1424,0.7347,0.1548,0.7409,0.1641,0.7434,0.1641,0.7455,0.1632,0.7469,0.164,0.9746,0.124,0.9828,0.1229,0.9766,0.1225,0.9807,0.1219,0.7351,0.1625,0.7369,0.1626,0.7443,0.165,0.7408,0.1649,0.7387,0.1637,0.7379,0.1643,0.9788,0.1219,0.7512,0.1402,0.7392,0.1389,0.7512,0.14,0.7393,0.1388,0.9694,0.1441,0.988,0.1416,0.9705,0.1317,0.9868,0.1295,0.9727,0.1237,0.9848,0.1221,0.9756,0.1218,0.9787,0.1209,0.9817,0.1209,0.973,0.1475,0.9849,0.146})))))
                                                                 .addChild(new Group("r_carpal_distal_phalanx_5_Sites")
-                                                                  .addComments(new String[] {" ",
-"(r_carpal_distal_phalanx_5_tip  -0.1938 0.7035 -0.0949)"})
+                                                                  .addComments(" (r_carpal_distal_phalanx_5_tip  -0.1938 0.7035 -0.0949) ")
                                                                   .addChild(new HAnimSite("hanim_r_carpal_distal_phalanx_5_tip").setName("r_carpal_distal_phalanx_5_tip").setTranslation(-0.172,0.58,-0.039)
                                                                     .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_5_tip 110"))
                                                                     .addChild(new Shape().setUSE("HAnimSiteShape"))))))))))))))))))))))))))))))))))
@@ -3640,7 +3488,7 @@ public class JinScaledV2L1LOA4Sites07f
 	}
 	// end of initialize() method
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_7_53_coordIndex_1()
 		{
 			int[] value = {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1};
@@ -3648,7 +3496,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_7_53_texCoordIndex_1()
 		{
 			int[] value = {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1};
@@ -3657,7 +3505,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_8_62_coordIndex_1()
 		{
 			int[] value = {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1};
@@ -3665,7 +3513,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_8_62_texCoordIndex_1()
 		{
 			int[] value = {0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1};
@@ -3674,7 +3522,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_9_101_coordIndex_1()
 		{
 			int[] value = {47,46,45,-1,45,44,43,-1,45,43,42,-1,47,45,42,-1,48,47,42,-1,0,1,8,-1,8,7,0,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,4,11,-1,11,10,3,-1,4,5,12,-1,12,11,4,-1,5,6,13,-1,13,12,5,-1,6,0,7,-1,7,13,6,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,12,19,-1,19,18,11,-1,12,13,20,-1,20,19,12,-1,13,7,14,-1,14,20,13,-1,14,15,22,-1,22,21,14,-1,15,16,23,-1,23,22,15,-1,16,17,24,-1,24,23,16,-1,17,18,25,-1,25,24,17,-1,18,19,26,-1,26,25,18,-1,19,20,27,-1,27,26,19,-1,20,14,21,-1,21,27,20,-1,56,57,58,-1,58,59,60,-1,58,60,61,-1,56,58,61,-1,62,56,61,-1,29,28,21,-1,21,22,29,-1,30,29,22,-1,22,23,30,-1,31,30,23,-1,23,24,31,-1,32,31,24,-1,24,25,32,-1,33,32,25,-1,25,26,33,-1,34,33,26,-1,26,27,34,-1,28,34,27,-1,27,21,28,-1,36,35,28,-1,28,29,36,-1,37,36,29,-1,29,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,35,41,34,-1,34,28,35,-1,42,43,1,-1,1,0,42,-1,43,44,2,-1,2,1,43,-1,44,45,3,-1,3,2,44,-1,45,46,4,-1,4,3,45,-1,46,47,5,-1,5,4,46,-1,47,48,6,-1,6,5,47,-1,48,42,0,-1,0,6,48,-1,50,49,35,-1,35,36,50,-1,51,50,36,-1,36,37,51,-1,52,51,37,-1,37,38,52,-1,53,52,38,-1,38,39,53,-1,54,53,39,-1,39,40,54,-1,55,54,40,-1,40,41,55,-1,49,55,41,-1,41,35,49,-1,57,56,49,-1,49,50,57,-1,58,57,50,-1,50,51,58,-1,59,58,51,-1,51,52,59,-1,60,59,52,-1,52,53,60,-1,61,60,53,-1,53,54,61,-1,62,61,54,-1,54,55,62,-1,56,62,55,-1,55,49,56,-1};
@@ -3682,7 +3530,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_9_101_texCoordIndex_1()
 		{
 			int[] value = {5,4,3,-1,3,2,0,-1,3,0,1,-1,5,3,1,-1,6,5,1,-1,7,10,8,-1,8,9,7,-1,10,12,11,-1,11,8,10,-1,12,14,13,-1,13,11,12,-1,14,16,15,-1,15,13,14,-1,16,18,17,-1,17,15,16,-1,18,20,19,-1,19,17,18,-1,20,7,9,-1,9,19,20,-1,9,8,21,-1,21,22,9,-1,8,11,23,-1,23,21,8,-1,11,13,24,-1,24,23,11,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,19,9,22,-1,22,27,19,-1,22,21,28,-1,28,29,22,-1,21,23,30,-1,30,28,21,-1,23,24,31,-1,31,30,23,-1,24,25,32,-1,32,31,24,-1,25,26,33,-1,33,32,25,-1,26,27,34,-1,34,33,26,-1,27,22,29,-1,29,34,27,-1,42,43,44,-1,44,45,46,-1,44,46,47,-1,42,44,47,-1,48,42,47,-1,35,36,29,-1,29,28,35,-1,37,35,28,-1,28,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,36,41,34,-1,34,29,36,-1,51,52,49,-1,49,50,51,-1,54,51,50,-1,50,53,54,-1,56,54,53,-1,53,55,56,-1,58,56,55,-1,55,57,58,-1,60,58,57,-1,57,59,60,-1,62,60,59,-1,59,61,62,-1,52,62,61,-1,61,49,52,-1,1,0,10,-1,10,7,1,-1,0,2,12,-1,12,10,0,-1,2,3,14,-1,14,12,2,-1,3,4,16,-1,16,14,3,-1,4,5,18,-1,18,16,4,-1,5,6,20,-1,20,18,5,-1,6,1,7,-1,7,20,6,-1,63,64,52,-1,52,51,63,-1,65,63,51,-1,51,54,65,-1,66,65,54,-1,54,56,66,-1,67,66,56,-1,56,58,67,-1,68,67,58,-1,58,60,68,-1,69,68,60,-1,60,62,69,-1,64,69,62,-1,62,52,64,-1,43,42,64,-1,64,63,43,-1,44,43,63,-1,63,65,44,-1,45,44,65,-1,65,66,45,-1,46,45,66,-1,66,67,46,-1,47,46,67,-1,67,68,47,-1,48,47,68,-1,68,69,48,-1,42,48,69,-1,69,64,42,-1};
@@ -3692,7 +3540,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_140_coordIndex_1()
 		{
 			int[] value = {13,34,21,-1,21,15,13,-1,9,20,21,-1,21,34,9,-1,0,2,14,-1,14,15,0,-1,30,3,16,-1,16,33,30,-1,3,4,25,-1,25,16,3,-1,22,5,18,-1,18,17,22,-1,5,6,29,-1,29,18,5,-1,6,27,19,-1,7,1,21,-1,21,20,7,-1,1,0,15,-1,15,21,1,-1,15,14,32,-1,32,13,15,-1,33,16,12,-1,12,11,33,-1,25,23,12,-1,12,16,25,-1,17,18,10,-1,10,24,17,-1,18,29,28,-1,28,10,18,-1,19,27,26,-1,26,8,19,-1,4,22,17,-1,17,25,4,-1,25,17,24,-1,24,23,25,-1,20,9,26,-1,26,27,20,-1,6,7,20,-1,20,27,6,-1,29,19,8,-1,8,28,29,-1,6,19,29,-1,1,31,0,-1,0,31,2,-1,31,3,30,-1,3,31,4,-1,4,31,22,-1,22,31,5,-1,5,31,6,-1,6,31,7,-1,7,31,1,-1,2,31,30,-1,14,2,30,-1,30,33,14,-1,32,14,33,-1,33,11,32,-1,35,46,45,-1,45,44,43,-1,43,42,41,-1,41,40,39,-1,43,41,39,-1,45,43,39,-1,35,45,39,-1,39,38,37,-1,35,39,37,-1,36,35,37,-1,26,35,36,-1,36,8,26,-1,8,36,37,-1,37,28,8,-1,28,37,38,-1,38,10,28,-1,10,38,39,-1,39,24,10,-1,24,39,40,-1,40,23,24,-1,23,40,41,-1,41,12,23,-1,12,41,42,-1,42,11,12,-1,11,42,43,-1,43,32,11,-1,32,43,44,-1,44,13,32,-1,13,44,45,-1,45,34,13,-1,34,45,46,-1,46,9,34,-1,9,46,35,-1,35,26,9,-1};
@@ -3700,7 +3548,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_140_texCoordIndex_1()
 		{
 			int[] value = {5,34,27,-1,27,12,5,-1,7,28,27,-1,27,34,7,-1,9,10,11,-1,11,12,9,-1,30,13,14,-1,14,33,30,-1,13,15,16,-1,16,14,13,-1,17,18,19,-1,19,20,17,-1,18,21,22,-1,22,19,18,-1,21,23,24,-1,25,26,27,-1,27,28,25,-1,26,9,12,-1,12,27,26,-1,12,11,32,-1,32,5,12,-1,33,14,4,-1,4,3,33,-1,16,8,4,-1,4,14,16,-1,20,19,2,-1,2,6,20,-1,19,22,29,-1,29,2,19,-1,24,23,1,-1,1,0,24,-1,15,17,20,-1,20,16,15,-1,16,20,6,-1,6,8,16,-1,28,7,1,-1,1,23,28,-1,21,25,28,-1,28,23,21,-1,22,24,0,-1,0,29,22,-1,21,24,22,-1,26,31,9,-1,9,31,10,-1,31,13,30,-1,13,31,15,-1,15,31,17,-1,17,31,18,-1,18,31,21,-1,21,31,25,-1,25,31,26,-1,10,31,30,-1,11,10,30,-1,30,33,11,-1,32,11,33,-1,33,3,32,-1,35,46,45,-1,45,44,43,-1,43,42,41,-1,41,40,39,-1,43,41,39,-1,45,43,39,-1,35,45,39,-1,39,38,37,-1,35,39,37,-1,36,35,37,-1,1,35,36,-1,36,0,1,-1,0,36,37,-1,37,29,0,-1,29,37,38,-1,38,2,29,-1,2,38,39,-1,39,6,2,-1,6,39,40,-1,40,8,6,-1,8,40,41,-1,41,4,8,-1,4,41,42,-1,42,3,4,-1,3,42,43,-1,43,32,3,-1,32,43,44,-1,44,5,32,-1,5,44,45,-1,45,34,5,-1,34,45,46,-1,46,7,34,-1,7,46,35,-1,35,1,7,-1};
@@ -3710,7 +3558,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_173_coordIndex_1()
 		{
 			int[] value = {0,11,14,-1,5,7,2,-1,2,0,5,-1,1,10,9,-1,9,2,1,-1,15,8,20,-1,20,23,15,-1,3,4,19,-1,19,21,3,-1,13,4,10,-1,10,18,13,-1,12,1,6,-1,6,16,12,-1,6,1,2,-1,2,7,6,-1,5,0,14,-1,14,17,5,-1,10,4,3,-1,3,9,10,-1,9,11,0,-1,0,2,9,-1,10,1,12,-1,12,18,10,-1,8,11,9,-1,9,3,8,-1,8,15,14,-1,14,11,8,-1,21,20,8,-1,8,3,21,-1,13,22,19,-1,19,4,13,-1,34,33,39,-1,34,39,36,-1,34,36,35,-1,42,41,40,-1,42,40,46,-1,45,42,46,-1,31,30,29,-1,29,32,31,-1,32,29,24,-1,24,29,28,-1,28,25,24,-1,25,28,27,-1,27,26,25,-1,18,24,25,-1,25,13,18,-1,13,25,26,-1,26,22,13,-1,45,44,43,-1,43,42,45,-1,23,27,28,-1,28,15,23,-1,15,28,29,-1,29,14,15,-1,14,29,30,-1,30,17,14,-1,39,38,37,-1,37,36,39,-1,16,31,32,-1,32,12,16,-1,12,32,24,-1,24,18,12,-1,5,33,34,-1,34,7,5,-1,7,34,35,-1,35,6,7,-1,6,35,36,-1,36,16,6,-1,16,36,37,-1,37,31,16,-1,31,37,38,-1,38,30,31,-1,30,38,39,-1,39,17,30,-1,17,39,33,-1,33,5,17,-1,21,40,41,-1,41,20,21,-1,20,41,42,-1,42,23,20,-1,23,42,43,-1,43,27,23,-1,27,43,44,-1,44,26,27,-1,26,44,45,-1,45,22,26,-1,22,45,46,-1,46,19,22,-1,19,46,40,-1,40,21,19,-1};
@@ -3718,7 +3566,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_173_texCoordIndex_1()
 		{
 			int[] value = {1,11,14,-1,5,7,2,-1,2,1,5,-1,3,10,9,-1,9,2,3,-1,15,8,20,-1,20,23,15,-1,0,4,19,-1,19,21,0,-1,13,4,10,-1,10,18,13,-1,12,3,6,-1,6,16,12,-1,6,3,2,-1,2,7,6,-1,5,1,14,-1,14,17,5,-1,10,4,0,-1,0,9,10,-1,9,11,1,-1,1,2,9,-1,10,3,12,-1,12,18,10,-1,8,11,9,-1,9,0,8,-1,8,15,14,-1,14,11,8,-1,21,20,8,-1,8,0,21,-1,13,22,19,-1,19,4,13,-1,34,33,39,-1,34,39,36,-1,34,36,35,-1,42,41,40,-1,42,40,46,-1,45,42,46,-1,31,30,29,-1,29,32,31,-1,32,14,24,-1,24,29,28,-1,28,25,24,-1,25,28,27,-1,27,26,25,-1,18,24,25,-1,25,13,18,-1,13,25,26,-1,26,22,13,-1,45,44,43,-1,43,42,45,-1,23,27,28,-1,28,15,23,-1,15,28,29,-1,29,14,15,-1,14,29,30,-1,30,17,14,-1,39,38,37,-1,37,36,39,-1,16,31,32,-1,32,12,16,-1,12,32,24,-1,24,18,12,-1,5,33,34,-1,34,7,5,-1,7,34,35,-1,35,6,7,-1,6,35,36,-1,36,16,6,-1,16,36,37,-1,37,31,16,-1,31,37,38,-1,38,30,31,-1,30,38,39,-1,39,17,30,-1,17,39,33,-1,33,5,17,-1,21,40,41,-1,41,20,21,-1,20,41,42,-1,42,23,20,-1,23,42,43,-1,43,27,23,-1,27,43,44,-1,44,26,27,-1,26,44,45,-1,45,22,26,-1,22,45,46,-1,46,19,22,-1,19,46,40,-1,40,21,19,-1};
@@ -3729,7 +3577,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_219_coordIndex_1()
 		{
 			int[] value = {12,15,7,-1,7,4,12,-1,0,8,9,-1,9,2,0,-1,1,10,11,-1,11,3,1,-1,5,0,2,-1,2,6,5,-1,8,1,3,-1,3,9,8,-1,14,13,12,-1,12,4,14,-1,18,17,13,-1,13,14,18,-1,42,39,38,-1,38,43,42,-1,46,51,50,-1,50,47,46,-1,29,35,34,-1,34,30,29,-1,19,26,25,-1,25,20,19,-1,28,27,26,-1,26,19,28,-1,21,24,23,-1,23,22,21,-1,37,36,35,-1,35,29,37,-1,30,34,31,-1,20,25,24,-1,24,21,20,-1,31,34,33,-1,33,32,31,-1,3,19,20,-1,20,9,3,-1,9,20,21,-1,21,2,9,-1,2,21,22,-1,22,6,2,-1,42,41,40,-1,40,39,42,-1,7,23,24,-1,24,4,7,-1,4,24,25,-1,25,16,4,-1,16,25,26,-1,26,14,16,-1,14,26,27,-1,27,18,14,-1,50,49,48,-1,48,47,50,-1,11,28,19,-1,19,3,11,-1,0,29,30,-1,30,8,0,-1,8,30,31,-1,31,1,8,-1,1,31,32,-1,32,10,1,-1,46,53,52,-1,52,51,46,-1,17,33,34,-1,34,13,17,-1,13,34,35,-1,35,12,13,-1,12,35,36,-1,36,15,12,-1,38,45,44,-1,44,43,38,-1,5,37,29,-1,29,0,5,-1,15,38,39,-1,39,7,15,-1,7,39,40,-1,40,23,7,-1,23,40,41,-1,41,22,23,-1,22,41,42,-1,42,6,22,-1,6,42,43,-1,43,5,6,-1,5,43,44,-1,44,37,5,-1,37,44,45,-1,45,36,37,-1,36,45,38,-1,38,15,36,-1,10,46,47,-1,47,11,10,-1,11,47,48,-1,48,28,11,-1,28,48,49,-1,49,27,28,-1,27,49,50,-1,50,18,27,-1,18,50,51,-1,51,17,18,-1,17,51,52,-1,52,33,17,-1,33,52,53,-1,53,32,33,-1,32,53,46,-1,46,10,32,-1};
@@ -3737,7 +3585,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_219_texCoordIndex_1()
 		{
 			int[] value = {1,7,10,-1,10,0,1,-1,2,11,12,-1,12,3,2,-1,5,15,16,-1,16,6,5,-1,8,2,3,-1,3,9,8,-1,11,5,6,-1,6,12,11,-1,4,13,1,-1,1,0,4,-1,17,14,13,-1,13,4,17,-1,45,42,41,-1,41,46,45,-1,49,54,53,-1,53,50,49,-1,32,38,37,-1,37,33,32,-1,22,29,28,-1,28,23,22,-1,31,30,29,-1,29,22,31,-1,24,27,26,-1,26,25,24,-1,40,39,38,-1,38,32,40,-1,33,21,34,-1,23,28,27,-1,27,24,23,-1,34,37,36,-1,36,35,34,-1,6,22,23,-1,23,12,6,-1,12,23,24,-1,24,3,12,-1,3,24,25,-1,25,9,3,-1,45,44,43,-1,43,42,45,-1,10,26,27,-1,27,0,10,-1,20,27,28,-1,28,18,20,-1,18,28,29,-1,29,19,18,-1,4,29,30,-1,30,17,4,-1,53,52,51,-1,51,50,53,-1,16,31,22,-1,22,6,16,-1,2,32,33,-1,33,11,2,-1,11,33,34,-1,34,5,11,-1,5,34,35,-1,35,15,5,-1,49,56,55,-1,55,54,49,-1,14,36,37,-1,37,13,14,-1,13,37,38,-1,38,1,13,-1,1,38,39,-1,39,7,1,-1,41,48,47,-1,47,46,41,-1,8,40,32,-1,32,2,8,-1,7,41,42,-1,42,10,7,-1,10,42,43,-1,43,26,10,-1,26,43,44,-1,44,25,26,-1,25,44,45,-1,45,9,25,-1,9,45,46,-1,46,8,9,-1,8,46,47,-1,47,40,8,-1,40,47,48,-1,48,39,40,-1,39,48,41,-1,41,7,39,-1,15,49,50,-1,50,16,15,-1,16,50,51,-1,51,31,16,-1,31,51,52,-1,52,30,31,-1,30,52,53,-1,53,17,30,-1,17,53,54,-1,54,14,17,-1,14,54,55,-1,55,36,14,-1,36,55,56,-1,56,35,36,-1,35,56,49,-1,49,15,35,-1};
@@ -3747,7 +3595,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_272_coordIndex_1()
 		{
 			int[] value = {15,3,13,-1,13,12,15,-1,10,2,0,-1,0,7,10,-1,9,6,14,-1,14,1,9,-1,3,10,7,-1,7,13,3,-1,12,16,5,-1,5,15,12,-1,6,9,17,-1,17,8,6,-1,17,4,11,-1,11,8,17,-1,27,31,28,-1,34,33,32,-1,32,35,34,-1,28,31,30,-1,30,29,28,-1,35,32,31,-1,31,27,35,-1,23,20,24,-1,22,21,20,-1,20,23,22,-1,25,19,18,-1,18,26,25,-1,24,20,19,-1,19,25,24,-1,1,18,19,-1,19,9,1,-1,9,19,20,-1,20,17,9,-1,17,20,21,-1,21,4,17,-1,48,47,46,-1,46,45,48,-1,5,22,23,-1,23,15,5,-1,15,23,24,-1,24,3,15,-1,3,24,25,-1,25,10,3,-1,10,25,26,-1,26,2,10,-1,40,39,38,-1,38,37,40,-1,13,27,28,-1,28,12,13,-1,12,28,29,-1,29,16,12,-1,44,51,50,-1,50,49,44,-1,11,30,31,-1,31,8,11,-1,8,31,32,-1,32,6,8,-1,6,32,33,-1,33,14,6,-1,36,43,42,-1,42,41,36,-1,0,34,35,-1,35,7,0,-1,7,35,27,-1,27,13,7,-1,37,36,41,-1,41,40,37,-1,48,45,44,-1,44,49,48,-1,14,36,37,-1,37,1,14,-1,1,37,38,-1,38,18,1,-1,18,38,39,-1,39,26,18,-1,26,39,40,-1,40,2,26,-1,2,40,41,-1,41,0,2,-1,0,41,42,-1,42,34,0,-1,34,42,43,-1,43,33,34,-1,33,43,36,-1,36,14,33,-1,16,44,45,-1,45,5,16,-1,5,45,46,-1,46,22,5,-1,22,46,47,-1,47,21,22,-1,21,47,48,-1,48,4,21,-1,4,48,49,-1,49,11,4,-1,11,49,50,-1,50,30,11,-1,30,50,51,-1,51,29,30,-1,29,51,44,-1,44,16,29,-1};
@@ -3755,7 +3603,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_272_texCoordIndex_1()
 		{
 			int[] value = {25,3,16,-1,16,7,25,-1,12,2,0,-1,0,9,12,-1,22,18,20,-1,20,1,22,-1,13,23,19,-1,19,17,13,-1,15,26,5,-1,5,24,15,-1,8,11,28,-1,28,21,8,-1,14,4,6,-1,6,10,14,-1,43,27,45,-1,54,53,51,-1,51,55,54,-1,46,50,48,-1,48,47,46,-1,56,52,49,-1,49,44,56,-1,36,28,38,-1,35,34,33,-1,33,37,35,-1,40,30,29,-1,29,42,40,-1,39,32,31,-1,31,41,39,-1,1,29,30,-1,30,22,1,-1,11,31,32,-1,32,28,11,-1,14,33,34,-1,34,4,14,-1,70,69,68,-1,68,67,70,-1,5,35,37,-1,37,24,5,-1,25,36,38,-1,38,3,25,-1,13,39,41,-1,41,23,13,-1,12,40,42,-1,42,2,12,-1,62,61,60,-1,60,58,62,-1,16,43,45,-1,45,7,16,-1,15,46,47,-1,47,26,15,-1,66,74,73,-1,73,71,66,-1,6,48,50,-1,50,10,6,-1,21,49,52,-1,52,8,21,-1,18,51,53,-1,53,20,18,-1,57,65,64,-1,64,63,57,-1,0,54,55,-1,55,9,0,-1,19,56,44,-1,44,17,19,-1,59,57,63,-1,63,62,59,-1,70,67,66,-1,66,72,70,-1,20,57,59,-1,59,1,20,-1,1,58,60,-1,60,29,1,-1,29,60,61,-1,61,42,29,-1,42,61,62,-1,62,2,42,-1,2,62,63,-1,63,0,2,-1,0,63,64,-1,64,54,0,-1,54,64,65,-1,65,53,54,-1,53,65,57,-1,57,20,53,-1,26,66,67,-1,67,5,26,-1,5,67,68,-1,68,35,5,-1,35,68,69,-1,69,34,35,-1,34,69,70,-1,70,4,34,-1,4,70,72,-1,72,6,4,-1,6,71,73,-1,73,48,6,-1,48,73,74,-1,74,47,48,-1,47,74,66,-1,66,26,47,-1};
@@ -3766,7 +3614,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_317_coordIndex_1()
 		{
 			int[] value = {1,2,3,-1,3,0,1,-1,4,5,6,-1,6,7,4,-1,4,7,19,-1,19,18,4,-1,0,3,9,-1,9,8,0,-1,10,11,3,-1,3,2,10,-1,12,13,7,-1,7,6,12,-1,13,20,19,-1,19,7,13,-1,25,9,14,-1,14,26,25,-1,3,11,14,-1,14,9,3,-1,15,16,11,-1,11,10,15,-1,13,17,21,-1,21,20,13,-1,11,16,14,-1,4,18,23,-1,23,5,4,-1,14,37,38,-1,34,35,16,-1,16,15,34,-1,17,36,39,-1,39,21,17,-1,17,13,12,-1,35,37,14,-1,14,16,35,-1,5,27,30,-1,30,6,5,-1,18,1,22,-1,22,23,18,-1,2,1,18,-1,18,19,2,-1,10,2,19,-1,19,20,10,-1,15,10,20,-1,20,21,15,-1,34,15,21,-1,21,39,34,-1,22,1,0,-1,0,8,22,-1,25,24,8,-1,8,9,25,-1,14,38,33,-1,33,26,14,-1,23,29,27,-1,27,5,23,-1,22,28,29,-1,29,23,22,-1,8,24,28,-1,28,22,8,-1,30,31,12,-1,12,6,30,-1,32,40,12,-1,12,31,32,-1,40,36,17,-1,17,12,40,-1,44,43,42,-1,42,41,49,-1,44,42,49,-1,49,48,47,-1,44,49,47,-1,45,44,47,-1,46,45,47,-1,55,54,53,-1,53,52,51,-1,55,53,51,-1,50,55,51,-1,55,50,59,-1,59,56,55,-1,56,59,58,-1,58,57,56,-1,34,41,42,-1,42,35,34,-1,35,42,43,-1,43,37,35,-1,37,43,44,-1,44,38,37,-1,38,44,45,-1,45,33,38,-1,33,45,46,-1,46,32,33,-1,32,46,47,-1,47,40,32,-1,40,47,48,-1,48,36,40,-1,36,48,49,-1,49,39,36,-1,39,49,41,-1,41,34,39,-1,25,50,51,-1,51,24,25,-1,24,51,52,-1,52,28,24,-1,28,52,53,-1,53,29,28,-1,29,53,54,-1,54,27,29,-1,27,54,55,-1,55,30,27,-1,30,55,56,-1,56,31,30,-1,31,56,57,-1,57,32,31,-1,32,57,58,-1,58,33,32,-1,33,58,59,-1,59,26,33,-1,26,59,50,-1,50,25,26,-1};
@@ -3774,7 +3622,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_317_texCoordIndex_1()
 		{
 			int[] value = {1,2,3,-1,3,0,1,-1,4,5,6,-1,6,7,4,-1,4,7,19,-1,19,18,4,-1,0,3,9,-1,9,8,0,-1,10,11,3,-1,3,2,10,-1,12,13,7,-1,7,6,12,-1,13,20,19,-1,19,7,13,-1,25,9,14,-1,14,26,25,-1,3,11,14,-1,14,9,3,-1,15,16,11,-1,11,10,15,-1,13,17,21,-1,21,20,13,-1,11,16,14,-1,4,18,23,-1,23,5,4,-1,14,37,38,-1,34,35,16,-1,16,15,34,-1,17,36,39,-1,39,21,17,-1,17,13,12,-1,35,37,14,-1,14,16,35,-1,5,27,30,-1,30,6,5,-1,18,1,22,-1,22,23,18,-1,2,1,18,-1,18,19,2,-1,10,2,19,-1,19,20,10,-1,15,10,20,-1,20,21,15,-1,34,15,21,-1,21,39,34,-1,22,1,0,-1,0,8,22,-1,25,24,8,-1,8,9,25,-1,14,38,33,-1,33,26,14,-1,23,29,27,-1,27,5,23,-1,22,28,29,-1,29,23,22,-1,8,24,28,-1,28,22,8,-1,30,31,12,-1,12,6,30,-1,32,40,12,-1,12,31,32,-1,40,36,17,-1,17,12,40,-1,44,43,42,-1,42,41,49,-1,44,42,49,-1,49,48,47,-1,44,49,47,-1,45,44,47,-1,46,45,47,-1,55,54,53,-1,53,52,51,-1,55,53,51,-1,50,55,51,-1,55,50,59,-1,59,56,55,-1,56,59,58,-1,58,57,56,-1,34,41,42,-1,42,35,34,-1,35,42,43,-1,43,37,35,-1,37,43,44,-1,44,38,37,-1,38,44,45,-1,45,33,38,-1,33,45,46,-1,46,32,33,-1,32,46,47,-1,47,40,32,-1,40,47,48,-1,48,36,40,-1,36,48,49,-1,49,39,36,-1,39,49,41,-1,41,34,39,-1,25,50,51,-1,51,24,25,-1,24,51,52,-1,52,28,24,-1,28,52,53,-1,53,29,28,-1,29,53,54,-1,54,27,29,-1,27,54,55,-1,55,30,27,-1,30,55,56,-1,56,31,30,-1,31,56,57,-1,57,32,31,-1,32,57,58,-1,58,33,32,-1,33,58,59,-1,59,26,33,-1,26,59,50,-1,50,25,26,-1};
@@ -3784,7 +3632,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_335_coordIndex_1()
 		{
 			int[] value = {11,16,17,-1,17,13,11,-1,10,14,16,-1,16,11,10,-1,5,7,3,-1,3,1,5,-1,0,4,6,-1,6,2,0,-1,14,10,12,-1,12,15,14,-1,7,4,0,-1,0,3,7,-1,8,9,5,-1,5,1,8,-1,40,37,36,-1,36,41,40,-1,48,45,44,-1,44,49,48,-1,27,31,28,-1,28,31,30,-1,30,29,28,-1,34,33,32,-1,32,35,34,-1,35,32,31,-1,31,27,35,-1,18,24,19,-1,26,25,24,-1,24,18,26,-1,20,23,22,-1,22,21,20,-1,19,24,23,-1,23,20,19,-1,5,18,19,-1,19,7,5,-1,7,19,20,-1,20,4,7,-1,4,20,21,-1,21,6,4,-1,40,39,38,-1,38,37,40,-1,15,22,23,-1,23,14,15,-1,14,23,24,-1,24,16,14,-1,16,24,25,-1,25,17,16,-1,44,51,50,-1,50,49,44,-1,9,26,18,-1,18,5,9,-1,3,27,28,-1,28,1,3,-1,1,28,29,-1,29,8,1,-1,48,47,46,-1,46,45,48,-1,13,30,31,-1,31,11,13,-1,11,31,32,-1,32,10,11,-1,10,32,33,-1,33,12,10,-1,36,43,42,-1,42,41,36,-1,2,34,35,-1,35,0,2,-1,0,35,27,-1,27,3,0,-1,12,36,37,-1,37,15,12,-1,15,37,38,-1,38,22,15,-1,22,38,39,-1,39,21,22,-1,21,39,40,-1,40,6,21,-1,6,40,41,-1,41,2,6,-1,2,41,42,-1,42,34,2,-1,34,42,43,-1,43,33,34,-1,33,43,36,-1,36,12,33,-1,17,44,45,-1,45,13,17,-1,13,45,46,-1,46,30,13,-1,30,46,47,-1,47,29,30,-1,29,47,48,-1,48,8,29,-1,8,48,49,-1,49,9,8,-1,9,49,50,-1,50,26,9,-1,26,50,51,-1,51,25,26,-1,25,51,44,-1,44,17,25,-1};
@@ -3792,7 +3640,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_335_texCoordIndex_1()
 		{
 			int[] value = {5,16,17,-1,17,13,5,-1,2,7,16,-1,16,5,2,-1,9,12,6,-1,6,1,9,-1,0,8,11,-1,11,4,0,-1,7,2,3,-1,3,10,7,-1,12,8,0,-1,0,6,12,-1,14,15,9,-1,9,1,14,-1,42,39,38,-1,38,43,42,-1,50,47,46,-1,46,51,50,-1,29,18,30,-1,30,33,32,-1,32,31,30,-1,36,35,34,-1,34,37,36,-1,37,34,33,-1,33,29,37,-1,20,19,21,-1,28,27,26,-1,26,20,28,-1,22,25,24,-1,24,23,22,-1,21,26,25,-1,25,22,21,-1,9,20,21,-1,21,12,9,-1,12,21,22,-1,22,8,12,-1,8,22,23,-1,23,11,8,-1,42,41,40,-1,40,39,42,-1,10,24,25,-1,25,7,10,-1,7,25,26,-1,26,16,7,-1,16,26,27,-1,27,17,16,-1,46,53,52,-1,52,51,46,-1,15,28,20,-1,20,9,15,-1,6,29,30,-1,30,1,6,-1,1,30,31,-1,31,14,1,-1,50,49,48,-1,48,47,50,-1,13,32,33,-1,33,5,13,-1,5,33,34,-1,34,2,5,-1,2,34,35,-1,35,3,2,-1,38,45,44,-1,44,43,38,-1,4,36,37,-1,37,0,4,-1,0,37,29,-1,29,6,0,-1,3,38,39,-1,39,10,3,-1,10,39,40,-1,40,24,10,-1,24,40,41,-1,41,23,24,-1,23,41,42,-1,42,11,23,-1,11,42,43,-1,43,4,11,-1,4,43,44,-1,44,36,4,-1,36,44,45,-1,45,35,36,-1,35,45,38,-1,38,3,35,-1,17,46,47,-1,47,13,17,-1,13,47,48,-1,48,32,13,-1,32,48,49,-1,49,31,32,-1,31,49,50,-1,50,14,31,-1,14,50,51,-1,51,15,14,-1,15,51,52,-1,52,28,15,-1,28,52,53,-1,53,27,28,-1,27,53,46,-1,46,17,27,-1};
@@ -3804,7 +3652,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_9_429_coordIndex_1()
 		{
 			int[] value = {43,44,45,-1,42,43,45,-1,45,46,47,-1,42,45,47,-1,48,42,47,-1,0,7,8,-1,8,1,0,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,11,-1,11,4,3,-1,4,11,12,-1,12,5,4,-1,5,12,13,-1,13,6,5,-1,6,13,7,-1,7,0,6,-1,7,14,15,-1,15,8,7,-1,8,15,16,-1,16,9,8,-1,9,16,17,-1,17,10,9,-1,10,17,18,-1,18,11,10,-1,11,18,19,-1,19,12,11,-1,12,19,20,-1,20,13,12,-1,13,20,14,-1,14,7,13,-1,14,21,22,-1,22,15,14,-1,15,22,23,-1,23,16,15,-1,16,23,24,-1,24,17,16,-1,17,24,25,-1,25,18,17,-1,18,25,26,-1,26,19,18,-1,19,26,27,-1,27,20,19,-1,20,27,21,-1,21,14,20,-1,60,59,58,-1,61,60,58,-1,58,57,56,-1,61,58,56,-1,62,61,56,-1,29,22,21,-1,21,28,29,-1,30,23,22,-1,22,29,30,-1,31,24,23,-1,23,30,31,-1,32,25,24,-1,24,31,32,-1,33,26,25,-1,25,32,33,-1,34,27,26,-1,26,33,34,-1,28,21,27,-1,27,34,28,-1,36,29,28,-1,28,35,36,-1,37,30,29,-1,29,36,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,35,28,34,-1,34,41,35,-1,42,0,1,-1,1,43,42,-1,43,1,2,-1,2,44,43,-1,44,2,3,-1,3,45,44,-1,45,3,4,-1,4,46,45,-1,46,4,5,-1,5,47,46,-1,47,5,6,-1,6,48,47,-1,48,6,0,-1,0,42,48,-1,50,36,35,-1,35,49,50,-1,51,37,36,-1,36,50,51,-1,52,38,37,-1,37,51,52,-1,53,39,38,-1,38,52,53,-1,54,40,39,-1,39,53,54,-1,55,41,40,-1,40,54,55,-1,49,35,41,-1,41,55,49,-1,57,50,49,-1,49,56,57,-1,58,51,50,-1,50,57,58,-1,59,52,51,-1,51,58,59,-1,60,53,52,-1,52,59,60,-1,61,54,53,-1,53,60,61,-1,62,55,54,-1,54,61,62,-1,56,49,55,-1,55,62,56,-1};
@@ -3812,7 +3660,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_9_429_texCoordIndex_1()
 		{
 			int[] value = {0,2,3,-1,1,0,3,-1,3,4,5,-1,1,3,5,-1,6,1,5,-1,7,9,8,-1,8,10,7,-1,10,8,11,-1,11,12,10,-1,12,11,13,-1,13,14,12,-1,14,13,15,-1,15,16,14,-1,16,15,17,-1,17,18,16,-1,18,17,19,-1,19,20,18,-1,20,19,9,-1,9,7,20,-1,9,22,21,-1,21,8,9,-1,8,21,23,-1,23,11,8,-1,11,23,24,-1,24,13,11,-1,13,24,25,-1,25,15,13,-1,15,25,26,-1,26,17,15,-1,17,26,27,-1,27,19,17,-1,19,27,22,-1,22,9,19,-1,22,29,28,-1,28,21,22,-1,21,28,30,-1,30,23,21,-1,23,30,31,-1,31,24,23,-1,24,31,32,-1,32,25,24,-1,25,32,33,-1,33,26,25,-1,26,33,34,-1,34,27,26,-1,27,34,29,-1,29,22,27,-1,46,45,44,-1,47,46,44,-1,44,43,42,-1,47,44,42,-1,48,47,42,-1,35,28,29,-1,29,36,35,-1,37,30,28,-1,28,35,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,36,29,34,-1,34,41,36,-1,51,50,49,-1,49,52,51,-1,54,53,50,-1,50,51,54,-1,56,55,53,-1,53,54,56,-1,58,57,55,-1,55,56,58,-1,60,59,57,-1,57,58,60,-1,62,61,59,-1,59,60,62,-1,52,49,61,-1,61,62,52,-1,1,7,10,-1,10,0,1,-1,0,10,12,-1,12,2,0,-1,2,12,14,-1,14,3,2,-1,3,14,16,-1,16,4,3,-1,4,16,18,-1,18,5,4,-1,5,18,20,-1,20,6,5,-1,6,20,7,-1,7,1,6,-1,63,51,52,-1,52,64,63,-1,65,54,51,-1,51,63,65,-1,66,56,54,-1,54,65,66,-1,67,58,56,-1,56,66,67,-1,68,60,58,-1,58,67,68,-1,69,62,60,-1,60,68,69,-1,64,52,62,-1,62,69,64,-1,43,63,64,-1,64,42,43,-1,44,65,63,-1,63,43,44,-1,45,66,65,-1,65,44,45,-1,46,67,66,-1,66,45,46,-1,47,68,67,-1,67,46,47,-1,48,69,68,-1,68,47,48,-1,42,64,69,-1,69,48,42,-1};
@@ -3822,7 +3670,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_468_coordIndex_1()
 		{
 			int[] value = {13,15,21,-1,21,34,13,-1,9,34,21,-1,21,20,9,-1,0,15,14,-1,14,2,0,-1,30,33,16,-1,16,3,30,-1,3,16,25,-1,25,4,3,-1,22,17,18,-1,18,5,22,-1,5,18,29,-1,29,6,5,-1,6,19,27,-1,7,20,21,-1,21,1,7,-1,1,21,15,-1,15,0,1,-1,15,13,32,-1,32,14,15,-1,33,11,12,-1,12,16,33,-1,25,16,12,-1,12,23,25,-1,17,24,10,-1,10,18,17,-1,18,10,28,-1,28,29,18,-1,19,8,26,-1,26,27,19,-1,4,25,17,-1,17,22,4,-1,25,23,24,-1,24,17,25,-1,20,27,26,-1,26,9,20,-1,6,27,20,-1,20,7,6,-1,29,28,8,-1,8,19,29,-1,6,29,19,-1,1,0,31,-1,0,2,31,-1,31,30,3,-1,3,4,31,-1,4,22,31,-1,22,5,31,-1,5,6,31,-1,6,7,31,-1,7,1,31,-1,2,30,31,-1,14,33,30,-1,30,2,14,-1,32,11,33,-1,33,14,32,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,39,43,45,-1,45,46,35,-1,39,45,35,-1,37,39,35,-1,36,37,35,-1,26,8,36,-1,36,35,26,-1,8,28,37,-1,37,36,8,-1,28,10,38,-1,38,37,28,-1,10,24,39,-1,39,38,10,-1,24,23,40,-1,40,39,24,-1,23,12,41,-1,41,40,23,-1,12,11,42,-1,42,41,12,-1,11,32,43,-1,43,42,11,-1,32,13,44,-1,44,43,32,-1,13,34,45,-1,45,44,13,-1,34,9,46,-1,46,45,34,-1,9,26,35,-1,35,46,9,-1};
@@ -3830,7 +3678,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_468_texCoordIndex_1()
 		{
 			int[] value = {5,12,27,-1,27,34,5,-1,7,34,27,-1,27,28,7,-1,9,12,11,-1,11,10,9,-1,30,33,14,-1,14,13,30,-1,13,14,16,-1,16,15,13,-1,17,20,19,-1,19,18,17,-1,18,19,22,-1,22,21,18,-1,21,24,23,-1,25,28,27,-1,27,26,25,-1,26,27,12,-1,12,9,26,-1,12,5,32,-1,32,11,12,-1,33,3,4,-1,4,14,33,-1,16,14,4,-1,4,8,16,-1,20,6,2,-1,2,19,20,-1,19,2,29,-1,29,22,19,-1,24,0,1,-1,1,23,24,-1,15,16,20,-1,20,17,15,-1,16,8,6,-1,6,20,16,-1,28,23,1,-1,1,7,28,-1,21,23,28,-1,28,25,21,-1,22,29,0,-1,0,24,22,-1,21,22,24,-1,26,9,31,-1,9,10,31,-1,31,30,13,-1,13,15,31,-1,15,17,31,-1,17,18,31,-1,18,21,31,-1,21,25,31,-1,25,26,31,-1,10,30,31,-1,11,33,30,-1,30,10,11,-1,32,3,33,-1,33,11,32,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,39,43,45,-1,45,46,35,-1,39,45,35,-1,37,39,35,-1,36,37,35,-1,1,0,36,-1,36,35,1,-1,0,29,37,-1,37,36,0,-1,29,2,38,-1,38,37,29,-1,2,6,39,-1,39,38,2,-1,6,8,40,-1,40,39,6,-1,8,4,41,-1,41,40,8,-1,4,3,42,-1,42,41,4,-1,3,32,43,-1,43,42,3,-1,32,5,44,-1,44,43,32,-1,5,34,45,-1,45,44,5,-1,34,7,46,-1,46,45,34,-1,7,1,35,-1,35,46,7,-1};
@@ -3840,7 +3688,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_501_coordIndex_1()
 		{
 			int[] value = {0,14,11,-1,5,0,2,-1,2,7,5,-1,1,2,9,-1,9,10,1,-1,15,23,20,-1,20,8,15,-1,3,21,19,-1,19,4,3,-1,13,18,10,-1,10,4,13,-1,12,16,6,-1,6,1,12,-1,6,7,2,-1,2,1,6,-1,5,17,14,-1,14,0,5,-1,10,9,3,-1,3,4,10,-1,9,2,0,-1,0,11,9,-1,10,18,12,-1,12,1,10,-1,8,3,9,-1,9,11,8,-1,8,11,14,-1,14,15,8,-1,21,3,8,-1,8,20,21,-1,13,4,19,-1,19,22,13,-1,34,35,36,-1,34,36,39,-1,34,39,33,-1,40,41,42,-1,46,40,42,-1,45,46,42,-1,31,32,29,-1,29,30,31,-1,32,24,29,-1,24,25,28,-1,28,29,24,-1,25,26,27,-1,27,28,25,-1,18,13,25,-1,25,24,18,-1,13,22,26,-1,26,25,13,-1,45,42,43,-1,43,44,45,-1,23,15,28,-1,28,27,23,-1,15,14,29,-1,29,28,15,-1,14,17,30,-1,30,29,14,-1,39,36,37,-1,37,38,39,-1,16,12,32,-1,32,31,16,-1,12,18,24,-1,24,32,12,-1,5,7,34,-1,34,33,5,-1,7,6,35,-1,35,34,7,-1,6,16,36,-1,36,35,6,-1,16,31,37,-1,37,36,16,-1,31,30,38,-1,38,37,31,-1,30,17,39,-1,39,38,30,-1,17,5,33,-1,33,39,17,-1,21,20,41,-1,41,40,21,-1,20,23,42,-1,42,41,20,-1,23,27,43,-1,43,42,23,-1,27,26,44,-1,44,43,27,-1,26,22,45,-1,45,44,26,-1,22,19,46,-1,46,45,22,-1,19,21,40,-1,40,46,19,-1};
@@ -3848,7 +3696,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_501_texCoordIndex_1()
 		{
 			int[] value = {1,14,11,-1,5,1,2,-1,2,7,5,-1,3,2,9,-1,9,10,3,-1,15,23,20,-1,20,8,15,-1,0,21,19,-1,19,4,0,-1,13,18,10,-1,10,4,13,-1,12,16,6,-1,6,3,12,-1,6,7,2,-1,2,3,6,-1,5,17,14,-1,14,1,5,-1,10,9,0,-1,0,4,10,-1,9,2,1,-1,1,11,9,-1,10,18,12,-1,12,3,10,-1,8,0,9,-1,9,11,8,-1,8,11,14,-1,14,15,8,-1,21,0,8,-1,8,20,21,-1,13,4,19,-1,19,22,13,-1,34,35,36,-1,34,36,39,-1,34,39,33,-1,40,41,42,-1,46,40,42,-1,45,46,42,-1,31,32,29,-1,29,30,31,-1,32,24,14,-1,24,25,28,-1,28,29,24,-1,25,26,27,-1,27,28,25,-1,18,13,25,-1,25,24,18,-1,13,22,26,-1,26,25,13,-1,45,42,43,-1,43,44,45,-1,23,15,28,-1,28,27,23,-1,15,14,29,-1,29,28,15,-1,14,17,30,-1,30,29,14,-1,39,36,37,-1,37,38,39,-1,16,12,32,-1,32,31,16,-1,12,18,24,-1,24,32,12,-1,5,7,34,-1,34,33,5,-1,7,6,35,-1,35,34,7,-1,6,16,36,-1,36,35,6,-1,16,31,37,-1,37,36,16,-1,31,30,38,-1,38,37,31,-1,30,17,39,-1,39,38,30,-1,17,5,33,-1,33,39,17,-1,21,20,41,-1,41,40,21,-1,20,23,42,-1,42,41,20,-1,23,27,43,-1,43,42,23,-1,27,26,44,-1,44,43,27,-1,26,22,45,-1,45,44,26,-1,22,19,46,-1,46,45,22,-1,19,21,40,-1,40,46,19,-1};
@@ -3859,7 +3707,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_547_coordIndex_1()
 		{
 			int[] value = {12,4,7,-1,7,15,12,-1,0,2,9,-1,9,8,0,-1,1,3,11,-1,11,10,1,-1,5,6,2,-1,2,0,5,-1,8,9,3,-1,3,1,8,-1,14,4,12,-1,12,13,14,-1,18,14,13,-1,13,17,18,-1,42,43,38,-1,38,39,42,-1,46,47,50,-1,50,51,46,-1,29,30,34,-1,34,35,29,-1,19,20,25,-1,25,26,19,-1,28,19,26,-1,26,27,28,-1,21,22,23,-1,23,24,21,-1,37,29,35,-1,35,36,37,-1,30,31,34,-1,20,21,24,-1,24,25,20,-1,31,32,33,-1,33,34,31,-1,3,9,20,-1,20,19,3,-1,9,2,21,-1,21,20,9,-1,2,6,22,-1,22,21,2,-1,42,39,40,-1,40,41,42,-1,7,4,24,-1,24,23,7,-1,4,16,25,-1,25,24,4,-1,16,14,26,-1,26,25,16,-1,14,18,27,-1,27,26,14,-1,50,47,48,-1,48,49,50,-1,11,3,19,-1,19,28,11,-1,0,8,30,-1,30,29,0,-1,8,1,31,-1,31,30,8,-1,1,10,32,-1,32,31,1,-1,46,51,52,-1,52,53,46,-1,17,13,34,-1,34,33,17,-1,13,12,35,-1,35,34,13,-1,12,15,36,-1,36,35,12,-1,38,43,44,-1,44,45,38,-1,5,0,29,-1,29,37,5,-1,15,7,39,-1,39,38,15,-1,7,23,40,-1,40,39,7,-1,23,22,41,-1,41,40,23,-1,22,6,42,-1,42,41,22,-1,6,5,43,-1,43,42,6,-1,5,37,44,-1,44,43,5,-1,37,36,45,-1,45,44,37,-1,36,15,38,-1,38,45,36,-1,10,11,47,-1,47,46,10,-1,11,28,48,-1,48,47,11,-1,28,27,49,-1,49,48,28,-1,27,18,50,-1,50,49,27,-1,18,17,51,-1,51,50,18,-1,17,33,52,-1,52,51,17,-1,33,32,53,-1,53,52,33,-1,32,10,46,-1,46,53,32,-1};
@@ -3867,7 +3715,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_547_texCoordIndex_1()
 		{
 			int[] value = {1,0,10,-1,10,7,1,-1,2,3,12,-1,12,11,2,-1,5,6,16,-1,16,15,5,-1,8,9,3,-1,3,2,8,-1,11,12,6,-1,6,5,11,-1,4,0,1,-1,1,13,4,-1,17,4,13,-1,13,14,17,-1,45,46,41,-1,41,42,45,-1,49,50,53,-1,53,54,49,-1,32,33,37,-1,37,38,32,-1,22,23,28,-1,28,29,22,-1,31,22,29,-1,29,30,31,-1,24,25,26,-1,26,27,24,-1,40,32,38,-1,38,39,40,-1,33,34,21,-1,23,24,27,-1,27,28,23,-1,34,35,36,-1,36,37,34,-1,6,12,23,-1,23,22,6,-1,12,3,24,-1,24,23,12,-1,3,9,25,-1,25,24,3,-1,45,42,43,-1,43,44,45,-1,10,0,27,-1,27,26,10,-1,20,18,28,-1,28,27,20,-1,18,19,29,-1,29,28,18,-1,4,17,30,-1,30,29,4,-1,53,50,51,-1,51,52,53,-1,16,6,22,-1,22,31,16,-1,2,11,33,-1,33,32,2,-1,11,5,34,-1,34,33,11,-1,5,15,35,-1,35,34,5,-1,49,54,55,-1,55,56,49,-1,14,13,37,-1,37,36,14,-1,13,1,38,-1,38,37,13,-1,1,7,39,-1,39,38,1,-1,41,46,47,-1,47,48,41,-1,8,2,32,-1,32,40,8,-1,7,10,42,-1,42,41,7,-1,10,26,43,-1,43,42,10,-1,26,25,44,-1,44,43,26,-1,25,9,45,-1,45,44,25,-1,9,8,46,-1,46,45,9,-1,8,40,47,-1,47,46,8,-1,40,39,48,-1,48,47,40,-1,39,7,41,-1,41,48,39,-1,15,16,50,-1,50,49,15,-1,16,31,51,-1,51,50,16,-1,31,30,52,-1,52,51,31,-1,30,17,53,-1,53,52,30,-1,17,14,54,-1,54,53,17,-1,14,36,55,-1,55,54,14,-1,36,35,56,-1,56,55,36,-1,35,15,49,-1,49,56,35,-1};
@@ -3877,7 +3725,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_600_coordIndex_1()
 		{
 			int[] value = {15,12,13,-1,13,3,15,-1,10,7,0,-1,0,2,10,-1,9,1,14,-1,14,6,9,-1,3,13,7,-1,7,10,3,-1,12,15,5,-1,5,16,12,-1,6,8,17,-1,17,9,6,-1,17,8,11,-1,11,4,17,-1,27,28,31,-1,34,35,32,-1,32,33,34,-1,28,29,30,-1,30,31,28,-1,35,27,31,-1,31,32,35,-1,23,24,20,-1,22,23,20,-1,20,21,22,-1,25,26,18,-1,18,19,25,-1,24,25,19,-1,19,20,24,-1,1,9,19,-1,19,18,1,-1,9,17,20,-1,20,19,9,-1,17,4,21,-1,21,20,17,-1,48,45,46,-1,46,47,48,-1,5,15,23,-1,23,22,5,-1,15,3,24,-1,24,23,15,-1,3,10,25,-1,25,24,3,-1,10,2,26,-1,26,25,10,-1,40,37,38,-1,38,39,40,-1,13,12,28,-1,28,27,13,-1,12,16,29,-1,29,28,12,-1,44,49,50,-1,50,51,44,-1,11,8,31,-1,31,30,11,-1,8,6,32,-1,32,31,8,-1,6,14,33,-1,33,32,6,-1,36,41,42,-1,42,43,36,-1,0,7,35,-1,35,34,0,-1,7,13,27,-1,27,35,7,-1,37,40,41,-1,41,36,37,-1,48,49,44,-1,44,45,48,-1,14,1,37,-1,37,36,14,-1,1,18,38,-1,38,37,1,-1,18,26,39,-1,39,38,18,-1,26,2,40,-1,40,39,26,-1,2,0,41,-1,41,40,2,-1,0,34,42,-1,42,41,0,-1,34,33,43,-1,43,42,34,-1,33,14,36,-1,36,43,33,-1,16,5,45,-1,45,44,16,-1,5,22,46,-1,46,45,5,-1,22,21,47,-1,47,46,22,-1,21,4,48,-1,48,47,21,-1,4,11,49,-1,49,48,4,-1,11,30,50,-1,50,49,11,-1,30,29,51,-1,51,50,30,-1,29,16,44,-1,44,51,29,-1};
@@ -3885,7 +3733,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_600_texCoordIndex_1()
 		{
 			int[] value = {25,7,16,-1,16,3,25,-1,12,9,0,-1,0,2,12,-1,22,1,20,-1,20,18,22,-1,13,17,19,-1,19,23,13,-1,15,24,5,-1,5,26,15,-1,8,21,28,-1,28,11,8,-1,14,10,6,-1,6,4,14,-1,43,45,27,-1,54,55,51,-1,51,53,54,-1,46,47,48,-1,48,50,46,-1,56,44,49,-1,49,52,56,-1,36,38,28,-1,35,37,33,-1,33,34,35,-1,40,42,29,-1,29,30,40,-1,39,41,31,-1,31,32,39,-1,1,22,30,-1,30,29,1,-1,11,28,32,-1,32,31,11,-1,14,4,34,-1,34,33,14,-1,70,67,68,-1,68,69,70,-1,5,24,37,-1,37,35,5,-1,25,3,38,-1,38,36,25,-1,13,23,41,-1,41,39,13,-1,12,2,42,-1,42,40,12,-1,62,58,60,-1,60,61,62,-1,16,7,45,-1,45,43,16,-1,15,26,47,-1,47,46,15,-1,66,71,73,-1,73,74,66,-1,6,10,50,-1,50,48,6,-1,21,8,52,-1,52,49,21,-1,18,20,53,-1,53,51,18,-1,57,63,64,-1,64,65,57,-1,0,9,55,-1,55,54,0,-1,19,17,44,-1,44,56,19,-1,59,62,63,-1,63,57,59,-1,70,72,66,-1,66,67,70,-1,20,1,59,-1,59,57,20,-1,1,29,60,-1,60,58,1,-1,29,42,61,-1,61,60,29,-1,42,2,62,-1,62,61,42,-1,2,0,63,-1,63,62,2,-1,0,54,64,-1,64,63,0,-1,54,53,65,-1,65,64,54,-1,53,20,57,-1,57,65,53,-1,26,5,67,-1,67,66,26,-1,5,35,68,-1,68,67,5,-1,35,34,69,-1,69,68,35,-1,34,4,70,-1,70,69,34,-1,4,6,72,-1,72,70,4,-1,6,48,73,-1,73,71,6,-1,48,47,74,-1,74,73,48,-1,47,26,66,-1,66,74,47,-1};
@@ -3896,7 +3744,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_645_coordIndex_1()
 		{
 			int[] value = {1,0,3,-1,3,2,1,-1,4,7,6,-1,6,5,4,-1,4,18,19,-1,19,7,4,-1,0,8,9,-1,9,3,0,-1,10,2,3,-1,3,11,10,-1,12,6,7,-1,7,13,12,-1,13,7,19,-1,19,20,13,-1,25,26,14,-1,14,9,25,-1,3,9,14,-1,14,11,3,-1,15,10,11,-1,11,16,15,-1,13,20,21,-1,21,17,13,-1,11,14,16,-1,4,5,23,-1,23,18,4,-1,14,38,37,-1,34,15,16,-1,16,35,34,-1,17,21,39,-1,39,36,17,-1,17,12,13,-1,35,16,14,-1,14,37,35,-1,5,6,30,-1,30,27,5,-1,18,23,22,-1,22,1,18,-1,2,19,18,-1,18,1,2,-1,10,20,19,-1,19,2,10,-1,15,21,20,-1,20,10,15,-1,34,39,21,-1,21,15,34,-1,22,8,0,-1,0,1,22,-1,25,9,8,-1,8,24,25,-1,14,26,33,-1,33,38,14,-1,23,5,27,-1,27,29,23,-1,22,23,29,-1,29,28,22,-1,8,22,28,-1,28,24,8,-1,30,6,12,-1,12,31,30,-1,32,31,12,-1,12,40,32,-1,40,12,17,-1,17,36,40,-1,47,48,49,-1,49,41,42,-1,42,43,44,-1,49,42,44,-1,47,49,44,-1,47,44,45,-1,46,47,45,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,50,51,55,-1,55,56,59,-1,59,50,55,-1,56,57,58,-1,58,59,56,-1,34,35,42,-1,42,41,34,-1,35,37,43,-1,43,42,35,-1,37,38,44,-1,44,43,37,-1,38,33,45,-1,45,44,38,-1,33,32,46,-1,46,45,33,-1,32,40,47,-1,47,46,32,-1,40,36,48,-1,48,47,40,-1,36,39,49,-1,49,48,36,-1,39,34,41,-1,41,49,39,-1,25,24,51,-1,51,50,25,-1,24,28,52,-1,52,51,24,-1,28,29,53,-1,53,52,28,-1,29,27,54,-1,54,53,29,-1,27,30,55,-1,55,54,27,-1,30,31,56,-1,56,55,30,-1,31,32,57,-1,57,56,31,-1,32,33,58,-1,58,57,32,-1,33,26,59,-1,59,58,33,-1,26,25,50,-1,50,59,26,-1};
@@ -3904,7 +3752,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_645_texCoordIndex_1()
 		{
 			int[] value = {1,0,3,-1,3,2,1,-1,4,7,6,-1,6,5,4,-1,4,18,19,-1,19,7,4,-1,0,8,9,-1,9,3,0,-1,10,2,3,-1,3,11,10,-1,12,6,7,-1,7,13,12,-1,13,7,19,-1,19,20,13,-1,25,26,14,-1,14,9,25,-1,3,9,14,-1,14,11,3,-1,15,10,11,-1,11,16,15,-1,13,20,21,-1,21,17,13,-1,11,14,16,-1,4,5,23,-1,23,18,4,-1,14,38,37,-1,34,15,16,-1,16,35,34,-1,17,21,39,-1,39,36,17,-1,17,12,13,-1,35,16,14,-1,14,37,35,-1,5,6,30,-1,30,27,5,-1,18,23,22,-1,22,1,18,-1,2,19,18,-1,18,1,2,-1,10,20,19,-1,19,2,10,-1,15,21,20,-1,20,10,15,-1,34,39,21,-1,21,15,34,-1,22,8,0,-1,0,1,22,-1,25,9,8,-1,8,24,25,-1,14,26,33,-1,33,38,14,-1,23,5,27,-1,27,29,23,-1,22,23,29,-1,29,28,22,-1,8,22,28,-1,28,24,8,-1,30,6,12,-1,12,31,30,-1,32,31,12,-1,12,40,32,-1,40,12,17,-1,17,36,40,-1,47,48,49,-1,49,41,42,-1,42,43,44,-1,49,42,44,-1,47,49,44,-1,47,44,45,-1,46,47,45,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,50,51,55,-1,55,56,59,-1,59,50,55,-1,56,57,58,-1,58,59,56,-1,34,35,42,-1,42,41,34,-1,35,37,43,-1,43,42,35,-1,37,38,44,-1,44,43,37,-1,38,33,45,-1,45,44,38,-1,33,32,46,-1,46,45,33,-1,32,40,47,-1,47,46,32,-1,40,36,48,-1,48,47,40,-1,36,39,49,-1,49,48,36,-1,39,34,41,-1,41,49,39,-1,25,24,51,-1,51,50,25,-1,24,28,52,-1,52,51,24,-1,28,29,53,-1,53,52,28,-1,29,27,54,-1,54,53,29,-1,27,30,55,-1,55,54,27,-1,30,31,56,-1,56,55,30,-1,31,32,57,-1,57,56,31,-1,32,33,58,-1,58,57,32,-1,33,26,59,-1,59,58,33,-1,26,25,50,-1,50,59,26,-1};
@@ -3914,7 +3762,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_663_coordIndex_1()
 		{
 			int[] value = {11,13,17,-1,17,16,11,-1,10,11,16,-1,16,14,10,-1,5,1,3,-1,3,7,5,-1,0,2,6,-1,6,4,0,-1,14,15,12,-1,12,10,14,-1,7,3,0,-1,0,4,7,-1,8,1,5,-1,5,9,8,-1,40,41,36,-1,36,37,40,-1,48,49,44,-1,44,45,48,-1,27,28,31,-1,28,29,30,-1,30,31,28,-1,34,35,32,-1,32,33,34,-1,35,27,31,-1,31,32,35,-1,18,19,24,-1,26,18,24,-1,24,25,26,-1,20,21,22,-1,22,23,20,-1,19,20,23,-1,23,24,19,-1,5,7,19,-1,19,18,5,-1,7,4,20,-1,20,19,7,-1,4,6,21,-1,21,20,4,-1,40,37,38,-1,38,39,40,-1,15,14,23,-1,23,22,15,-1,14,16,24,-1,24,23,14,-1,16,17,25,-1,25,24,16,-1,44,49,50,-1,50,51,44,-1,9,5,18,-1,18,26,9,-1,3,1,28,-1,28,27,3,-1,1,8,29,-1,29,28,1,-1,48,45,46,-1,46,47,48,-1,13,11,31,-1,31,30,13,-1,11,10,32,-1,32,31,11,-1,10,12,33,-1,33,32,10,-1,36,41,42,-1,42,43,36,-1,2,0,35,-1,35,34,2,-1,0,3,27,-1,27,35,0,-1,12,15,37,-1,37,36,12,-1,15,22,38,-1,38,37,15,-1,22,21,39,-1,39,38,22,-1,21,6,40,-1,40,39,21,-1,6,2,41,-1,41,40,6,-1,2,34,42,-1,42,41,2,-1,34,33,43,-1,43,42,34,-1,33,12,36,-1,36,43,33,-1,17,13,45,-1,45,44,17,-1,13,30,46,-1,46,45,13,-1,30,29,47,-1,47,46,30,-1,29,8,48,-1,48,47,29,-1,8,9,49,-1,49,48,8,-1,9,26,50,-1,50,49,9,-1,26,25,51,-1,51,50,26,-1,25,17,44,-1,44,51,25,-1};
@@ -3922,7 +3770,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_663_texCoordIndex_1()
 		{
 			int[] value = {5,13,17,-1,17,16,5,-1,2,5,16,-1,16,7,2,-1,9,1,6,-1,6,12,9,-1,0,4,11,-1,11,8,0,-1,7,10,3,-1,3,2,7,-1,12,6,0,-1,0,8,12,-1,14,1,9,-1,9,15,14,-1,42,43,38,-1,38,39,42,-1,50,51,46,-1,46,47,50,-1,29,30,18,-1,30,31,32,-1,32,33,30,-1,36,37,34,-1,34,35,36,-1,37,29,33,-1,33,34,37,-1,20,21,19,-1,28,20,26,-1,26,27,28,-1,22,23,24,-1,24,25,22,-1,21,22,25,-1,25,26,21,-1,9,12,21,-1,21,20,9,-1,12,8,22,-1,22,21,12,-1,8,11,23,-1,23,22,8,-1,42,39,40,-1,40,41,42,-1,10,7,25,-1,25,24,10,-1,7,16,26,-1,26,25,7,-1,16,17,27,-1,27,26,16,-1,46,51,52,-1,52,53,46,-1,15,9,20,-1,20,28,15,-1,6,1,30,-1,30,29,6,-1,1,14,31,-1,31,30,1,-1,50,47,48,-1,48,49,50,-1,13,5,33,-1,33,32,13,-1,5,2,34,-1,34,33,5,-1,2,3,35,-1,35,34,2,-1,38,43,44,-1,44,45,38,-1,4,0,37,-1,37,36,4,-1,0,6,29,-1,29,37,0,-1,3,10,39,-1,39,38,3,-1,10,24,40,-1,40,39,10,-1,24,23,41,-1,41,40,24,-1,23,11,42,-1,42,41,23,-1,11,4,43,-1,43,42,11,-1,4,36,44,-1,44,43,4,-1,36,35,45,-1,45,44,36,-1,35,3,38,-1,38,45,35,-1,17,13,47,-1,47,46,17,-1,13,32,48,-1,48,47,13,-1,32,31,49,-1,49,48,32,-1,31,14,50,-1,50,49,31,-1,14,15,51,-1,51,50,14,-1,15,28,52,-1,52,51,15,-1,28,27,53,-1,53,52,28,-1,27,17,46,-1,46,53,27,-1};
@@ -3935,7 +3783,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_10_781_coordIndex_1()
 		{
 			int[] value = {11,6,0,-1,0,3,11,-1,7,1,0,-1,0,6,7,-1,9,8,2,-1,2,4,9,-1,10,9,4,-1,4,5,10,-1,10,5,1,-1,1,7,10,-1,25,11,3,-1,3,26,25,-1,2,8,12,-1,12,27,2,-1,13,16,15,-1,15,14,13,-1,17,14,15,-1,15,18,17,-1,19,22,21,-1,21,20,19,-1,23,24,22,-1,22,19,23,-1,23,17,18,-1,18,24,23,-1,25,26,16,-1,16,13,25,-1,21,27,12,-1,12,20,21,-1,29,30,31,-1,31,32,33,-1,29,31,33,-1,34,35,36,-1,33,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,33,36,40,-1,29,33,40,-1,29,40,41,-1,29,41,28,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,50,-1,48,50,51,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,48,51,55,-1,44,48,55,-1,43,44,55,-1,43,55,42,-1,3,0,29,-1,29,28,3,-1,0,1,30,-1,30,29,0,-1,1,5,31,-1,31,30,1,-1,5,4,32,-1,32,31,5,-1,4,2,33,-1,33,32,4,-1,2,27,34,-1,34,33,2,-1,27,21,35,-1,35,34,27,-1,21,22,36,-1,36,35,21,-1,22,24,37,-1,37,36,22,-1,24,18,38,-1,38,37,24,-1,18,15,39,-1,39,38,18,-1,15,16,40,-1,40,39,15,-1,16,26,41,-1,41,40,16,-1,26,3,28,-1,28,41,26,-1,6,11,43,-1,43,42,6,-1,11,25,44,-1,44,43,11,-1,25,13,45,-1,45,44,25,-1,13,14,46,-1,46,45,13,-1,14,17,47,-1,47,46,14,-1,17,23,48,-1,48,47,17,-1,23,19,49,-1,49,48,23,-1,19,20,50,-1,50,49,19,-1,20,12,51,-1,51,50,20,-1,12,8,52,-1,52,51,12,-1,8,9,53,-1,53,52,8,-1,9,10,54,-1,54,53,9,-1,10,7,55,-1,55,54,10,-1,7,6,42,-1,42,55,7,-1};
@@ -3943,7 +3791,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_10_781_texCoordIndex_1()
 		{
 			int[] value = {15,9,0,-1,0,4,15,-1,10,1,0,-1,0,9,10,-1,13,12,2,-1,2,5,13,-1,14,13,5,-1,5,6,14,-1,14,6,1,-1,1,10,14,-1,17,15,4,-1,4,7,17,-1,3,11,16,-1,16,8,3,-1,18,21,20,-1,20,19,18,-1,22,19,20,-1,20,23,22,-1,24,27,26,-1,26,25,24,-1,28,29,27,-1,27,24,28,-1,28,22,23,-1,23,29,28,-1,30,31,21,-1,21,18,30,-1,32,35,34,-1,34,33,32,-1,37,38,39,-1,39,40,41,-1,37,39,41,-1,42,43,44,-1,41,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,41,44,48,-1,37,41,48,-1,37,48,49,-1,37,49,36,-1,52,53,54,-1,54,55,56,-1,52,54,56,-1,56,57,58,-1,56,58,59,-1,59,60,61,-1,61,62,63,-1,59,61,63,-1,56,59,63,-1,52,56,63,-1,51,52,63,-1,51,63,50,-1,4,0,37,-1,37,36,4,-1,0,1,38,-1,38,37,0,-1,1,6,39,-1,39,38,1,-1,6,5,40,-1,40,39,6,-1,5,2,41,-1,41,40,5,-1,3,8,42,-1,42,41,3,-1,35,32,43,-1,43,42,35,-1,26,27,44,-1,44,43,26,-1,27,29,45,-1,45,44,27,-1,29,23,46,-1,46,45,29,-1,23,20,47,-1,47,46,23,-1,20,21,48,-1,48,47,20,-1,21,31,49,-1,49,48,21,-1,7,4,36,-1,36,49,7,-1,9,15,51,-1,51,50,9,-1,15,17,52,-1,52,51,15,-1,30,18,53,-1,53,52,30,-1,18,19,54,-1,54,53,18,-1,19,22,55,-1,55,54,19,-1,22,28,56,-1,56,55,22,-1,28,24,57,-1,57,56,28,-1,24,25,58,-1,58,57,24,-1,33,34,59,-1,59,58,33,-1,16,11,60,-1,60,59,16,-1,12,13,61,-1,61,60,12,-1,13,14,62,-1,62,61,13,-1,14,10,63,-1,63,62,14,-1,10,9,50,-1,50,63,10,-1};
@@ -3952,7 +3800,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_790_coordIndex_1()
 		{
 			int[] value = {1,8,15,-1,15,16,1,-1,0,4,9,-1,9,6,0,-1,7,5,0,-1,0,6,7,-1,1,2,10,-1,10,8,1,-1,2,3,11,-1,11,10,2,-1,11,3,5,-1,5,7,11,-1,4,27,12,-1,12,9,4,-1,13,16,15,-1,15,14,13,-1,18,17,20,-1,20,19,18,-1,21,17,18,-1,18,22,21,-1,13,14,24,-1,24,23,13,-1,23,24,26,-1,26,25,23,-1,26,21,22,-1,22,25,26,-1,19,20,12,-1,12,27,19,-1,29,30,31,-1,31,32,33,-1,29,31,33,-1,34,35,36,-1,33,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,33,36,40,-1,29,33,40,-1,29,40,41,-1,29,41,28,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,50,-1,48,50,51,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,48,51,55,-1,44,48,55,-1,43,44,55,-1,43,55,42,-1,4,0,29,-1,29,28,4,-1,0,5,30,-1,30,29,0,-1,5,3,31,-1,31,30,5,-1,3,2,32,-1,32,31,3,-1,2,1,33,-1,33,32,2,-1,1,16,34,-1,34,33,1,-1,16,13,35,-1,35,34,16,-1,13,23,36,-1,36,35,13,-1,23,25,37,-1,37,36,23,-1,25,22,38,-1,38,37,25,-1,22,18,39,-1,39,38,22,-1,18,19,40,-1,40,39,18,-1,19,27,41,-1,41,40,19,-1,27,4,28,-1,28,41,27,-1,6,9,43,-1,43,42,6,-1,9,12,44,-1,44,43,9,-1,12,20,45,-1,45,44,12,-1,20,17,46,-1,46,45,20,-1,17,21,47,-1,47,46,17,-1,21,26,48,-1,48,47,21,-1,26,24,49,-1,49,48,26,-1,24,14,50,-1,50,49,24,-1,14,15,51,-1,51,50,14,-1,15,8,52,-1,52,51,15,-1,8,10,53,-1,53,52,8,-1,10,11,54,-1,54,53,10,-1,11,7,55,-1,55,54,11,-1,7,6,42,-1,42,55,7,-1};
@@ -3960,7 +3808,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_11_790_texCoordIndex_1()
 		{
 			int[] value = {4,11,17,-1,17,7,4,-1,0,1,13,-1,13,9,0,-1,10,2,0,-1,0,9,10,-1,3,5,14,-1,14,12,3,-1,5,6,15,-1,15,14,5,-1,15,6,2,-1,2,10,15,-1,1,8,16,-1,16,13,1,-1,18,21,20,-1,20,19,18,-1,23,22,25,-1,25,24,23,-1,26,22,23,-1,23,27,26,-1,29,28,31,-1,31,30,29,-1,30,31,33,-1,33,32,30,-1,33,26,27,-1,27,32,33,-1,24,25,35,-1,35,34,24,-1,37,38,39,-1,39,40,41,-1,37,39,41,-1,42,43,44,-1,41,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,41,44,48,-1,37,41,48,-1,37,48,49,-1,37,49,36,-1,52,53,54,-1,54,55,56,-1,52,54,56,-1,56,57,58,-1,56,58,59,-1,59,60,61,-1,61,62,63,-1,59,61,63,-1,56,59,63,-1,52,56,63,-1,51,52,63,-1,51,63,50,-1,1,0,37,-1,37,36,1,-1,0,2,38,-1,38,37,0,-1,2,6,39,-1,39,38,2,-1,6,5,40,-1,40,39,6,-1,5,3,41,-1,41,40,5,-1,4,7,42,-1,42,41,4,-1,21,18,43,-1,43,42,21,-1,29,30,44,-1,44,43,29,-1,30,32,45,-1,45,44,30,-1,32,27,46,-1,46,45,32,-1,27,23,47,-1,47,46,27,-1,23,24,48,-1,48,47,23,-1,24,34,49,-1,49,48,24,-1,8,1,36,-1,36,49,8,-1,9,13,51,-1,51,50,9,-1,13,16,52,-1,52,51,13,-1,35,25,53,-1,53,52,35,-1,25,22,54,-1,54,53,25,-1,22,26,55,-1,55,54,22,-1,26,33,56,-1,56,55,26,-1,33,31,57,-1,57,56,33,-1,31,28,58,-1,58,57,31,-1,19,20,59,-1,59,58,19,-1,17,11,60,-1,60,59,17,-1,12,14,61,-1,61,60,12,-1,14,15,62,-1,62,61,14,-1,15,10,63,-1,63,62,15,-1,10,9,50,-1,50,63,10,-1};
@@ -3969,7 +3817,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_799_coordIndex_1()
 		{
 			int[] value = {3,7,14,-1,14,15,3,-1,0,5,10,-1,10,6,0,-1,11,2,0,-1,0,6,11,-1,3,4,8,-1,8,7,3,-1,4,1,9,-1,9,8,4,-1,9,1,2,-1,2,11,9,-1,5,26,27,-1,27,10,5,-1,12,15,14,-1,14,13,12,-1,17,16,19,-1,19,18,17,-1,20,16,17,-1,17,21,20,-1,12,13,23,-1,23,22,12,-1,22,23,25,-1,25,24,22,-1,25,20,21,-1,21,24,25,-1,18,19,27,-1,27,26,18,-1,29,30,31,-1,31,32,33,-1,33,34,35,-1,31,33,35,-1,35,36,37,-1,37,38,39,-1,35,37,39,-1,31,35,39,-1,39,40,41,-1,31,39,41,-1,29,31,41,-1,29,41,28,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,50,-1,48,50,51,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,48,51,55,-1,44,48,55,-1,43,44,55,-1,43,55,42,-1,5,0,29,-1,29,28,5,-1,0,2,30,-1,30,29,0,-1,2,1,31,-1,31,30,2,-1,1,4,32,-1,32,31,1,-1,4,3,33,-1,33,32,4,-1,3,15,34,-1,34,33,3,-1,15,12,35,-1,35,34,15,-1,12,22,36,-1,36,35,12,-1,22,24,37,-1,37,36,22,-1,24,21,38,-1,38,37,24,-1,21,17,39,-1,39,38,21,-1,17,18,40,-1,40,39,17,-1,18,26,41,-1,41,40,18,-1,26,5,28,-1,28,41,26,-1,6,10,43,-1,43,42,6,-1,10,27,44,-1,44,43,10,-1,27,19,45,-1,45,44,27,-1,19,16,46,-1,46,45,19,-1,16,20,47,-1,47,46,16,-1,20,25,48,-1,48,47,20,-1,25,23,49,-1,49,48,25,-1,23,13,50,-1,50,49,23,-1,13,14,51,-1,51,50,13,-1,14,7,52,-1,52,51,14,-1,7,8,53,-1,53,52,7,-1,8,9,54,-1,54,53,8,-1,9,11,55,-1,55,54,9,-1,11,6,42,-1,42,55,11,-1};
@@ -3977,7 +3825,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_12_799_texCoordIndex_1()
 		{
 			int[] value = {6,10,16,-1,16,7,6,-1,1,0,14,-1,14,9,1,-1,15,2,1,-1,1,9,15,-1,4,3,12,-1,12,11,4,-1,3,5,13,-1,13,12,3,-1,13,5,2,-1,2,15,13,-1,0,8,17,-1,17,14,0,-1,18,21,20,-1,20,19,18,-1,23,22,25,-1,25,24,23,-1,26,22,23,-1,23,27,26,-1,29,28,31,-1,31,30,29,-1,30,31,33,-1,33,32,30,-1,33,26,27,-1,27,32,33,-1,24,25,35,-1,35,34,24,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,45,46,47,-1,43,45,47,-1,39,43,47,-1,47,48,49,-1,39,47,49,-1,37,39,49,-1,37,49,36,-1,52,53,54,-1,54,55,56,-1,52,54,56,-1,56,57,58,-1,56,58,59,-1,59,60,61,-1,61,62,63,-1,59,61,63,-1,56,59,63,-1,52,56,63,-1,51,52,63,-1,51,63,50,-1,0,1,37,-1,37,36,0,-1,1,2,38,-1,38,37,1,-1,2,5,39,-1,39,38,2,-1,5,3,40,-1,40,39,5,-1,3,4,41,-1,41,40,3,-1,6,7,42,-1,42,41,6,-1,21,18,43,-1,43,42,21,-1,29,30,44,-1,44,43,29,-1,30,32,45,-1,45,44,30,-1,32,27,46,-1,46,45,32,-1,27,23,47,-1,47,46,27,-1,23,24,48,-1,48,47,23,-1,24,34,49,-1,49,48,24,-1,8,0,36,-1,36,49,8,-1,9,14,51,-1,51,50,9,-1,14,17,52,-1,52,51,14,-1,35,25,53,-1,53,52,35,-1,25,22,54,-1,54,53,25,-1,22,26,55,-1,55,54,22,-1,26,33,56,-1,56,55,26,-1,33,31,57,-1,57,56,33,-1,31,28,58,-1,58,57,31,-1,19,20,59,-1,59,58,19,-1,16,10,60,-1,60,59,16,-1,11,12,61,-1,61,60,11,-1,12,13,62,-1,62,61,12,-1,13,15,63,-1,63,62,13,-1,15,9,50,-1,50,63,15,-1};
@@ -3986,7 +3834,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_13_814_coordIndex_1()
 		{
 			int[] value = {7,0,1,-1,1,14,7,-1,11,2,0,-1,0,7,11,-1,13,12,3,-1,3,4,13,-1,8,5,2,-1,2,11,8,-1,14,1,6,-1,6,9,14,-1,8,13,4,-1,4,5,8,-1,12,10,27,-1,27,3,12,-1,16,15,18,-1,18,17,16,-1,19,16,17,-1,17,20,19,-1,21,24,23,-1,23,22,21,-1,25,19,20,-1,20,26,25,-1,15,9,6,-1,6,18,15,-1,25,26,24,-1,24,21,25,-1,22,23,27,-1,27,10,22,-1,29,30,31,-1,31,32,33,-1,33,34,35,-1,31,33,35,-1,35,36,37,-1,37,38,39,-1,35,37,39,-1,31,35,39,-1,39,40,41,-1,31,39,41,-1,29,31,41,-1,29,41,28,-1,44,45,46,-1,43,44,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,46,50,54,-1,43,46,54,-1,43,54,55,-1,43,55,42,-1,1,0,29,-1,29,28,1,-1,0,2,30,-1,30,29,0,-1,2,5,31,-1,31,30,2,-1,5,4,32,-1,32,31,5,-1,4,3,33,-1,33,32,4,-1,3,27,34,-1,34,33,3,-1,27,23,35,-1,35,34,27,-1,23,24,36,-1,36,35,23,-1,24,26,37,-1,37,36,24,-1,26,20,38,-1,38,37,26,-1,20,17,39,-1,39,38,20,-1,17,18,40,-1,40,39,17,-1,18,6,41,-1,41,40,18,-1,6,1,28,-1,28,41,6,-1,7,14,43,-1,43,42,7,-1,14,9,44,-1,44,43,14,-1,9,15,45,-1,45,44,9,-1,15,16,46,-1,46,45,15,-1,16,19,47,-1,47,46,16,-1,19,25,48,-1,48,47,19,-1,25,21,49,-1,49,48,25,-1,21,22,50,-1,50,49,21,-1,22,10,51,-1,51,50,22,-1,10,12,52,-1,52,51,10,-1,12,13,53,-1,53,52,12,-1,13,8,54,-1,54,53,13,-1,8,11,55,-1,55,54,8,-1,11,7,42,-1,42,55,11,-1};
@@ -3994,7 +3842,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_13_814_texCoordIndex_1()
 		{
 			int[] value = {9,0,1,-1,1,17,9,-1,13,2,0,-1,0,9,13,-1,16,15,3,-1,3,5,16,-1,10,6,2,-1,2,13,10,-1,17,1,8,-1,8,11,17,-1,10,16,5,-1,5,6,10,-1,14,12,7,-1,7,4,14,-1,19,18,21,-1,21,20,19,-1,22,19,20,-1,20,23,22,-1,24,27,26,-1,26,25,24,-1,28,22,23,-1,23,29,28,-1,18,30,31,-1,31,21,18,-1,28,29,27,-1,27,24,28,-1,33,32,35,-1,35,34,33,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,45,46,47,-1,43,45,47,-1,39,43,47,-1,47,48,49,-1,39,47,49,-1,37,39,49,-1,37,49,36,-1,52,53,54,-1,51,52,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,54,58,62,-1,51,54,62,-1,51,62,63,-1,51,63,50,-1,1,0,37,-1,37,36,1,-1,0,2,38,-1,38,37,0,-1,2,6,39,-1,39,38,2,-1,6,5,40,-1,40,39,6,-1,5,3,41,-1,41,40,5,-1,4,7,42,-1,42,41,4,-1,35,32,43,-1,43,42,35,-1,26,27,44,-1,44,43,26,-1,27,29,45,-1,45,44,27,-1,29,23,46,-1,46,45,29,-1,23,20,47,-1,47,46,23,-1,20,21,48,-1,48,47,20,-1,21,31,49,-1,49,48,21,-1,8,1,36,-1,36,49,8,-1,9,17,51,-1,51,50,9,-1,17,11,52,-1,52,51,17,-1,30,18,53,-1,53,52,30,-1,18,19,54,-1,54,53,18,-1,19,22,55,-1,55,54,19,-1,22,28,56,-1,56,55,22,-1,28,24,57,-1,57,56,28,-1,24,25,58,-1,58,57,24,-1,33,34,59,-1,59,58,33,-1,12,14,60,-1,60,59,12,-1,15,16,61,-1,61,60,15,-1,16,10,62,-1,62,61,16,-1,10,13,63,-1,63,62,10,-1,13,9,50,-1,50,63,13,-1};
@@ -4003,7 +3851,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_823_coordIndex_1()
 		{
 			int[] value = {4,5,11,-1,11,10,4,-1,17,3,9,-1,9,20,17,-1,6,0,2,-1,2,7,6,-1,8,1,0,-1,0,6,8,-1,3,4,10,-1,10,9,3,-1,5,1,8,-1,8,11,5,-1,2,27,12,-1,12,7,2,-1,13,16,15,-1,15,14,13,-1,17,20,19,-1,19,18,17,-1,21,24,23,-1,23,22,21,-1,25,21,22,-1,22,26,25,-1,18,19,16,-1,16,13,18,-1,14,15,25,-1,25,26,14,-1,23,24,12,-1,12,27,23,-1,29,30,31,-1,31,32,33,-1,33,34,35,-1,31,33,35,-1,35,36,37,-1,37,38,39,-1,35,37,39,-1,31,35,39,-1,39,40,41,-1,31,39,41,-1,29,31,41,-1,29,41,28,-1,44,45,46,-1,43,44,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,46,50,54,-1,43,46,54,-1,43,54,55,-1,43,55,42,-1,2,0,29,-1,29,28,2,-1,0,1,30,-1,30,29,0,-1,1,5,31,-1,31,30,1,-1,5,4,32,-1,32,31,5,-1,4,3,33,-1,33,32,4,-1,3,17,34,-1,34,33,3,-1,17,18,35,-1,35,34,17,-1,18,13,36,-1,36,35,18,-1,13,14,37,-1,37,36,13,-1,14,26,38,-1,38,37,14,-1,26,22,39,-1,39,38,26,-1,22,23,40,-1,40,39,22,-1,23,27,41,-1,41,40,23,-1,27,2,28,-1,28,41,27,-1,6,7,43,-1,43,42,6,-1,7,12,44,-1,44,43,7,-1,12,24,45,-1,45,44,12,-1,24,21,46,-1,46,45,24,-1,21,25,47,-1,47,46,21,-1,25,15,48,-1,48,47,25,-1,15,16,49,-1,49,48,15,-1,16,19,50,-1,50,49,16,-1,19,20,51,-1,51,50,19,-1,20,9,52,-1,52,51,20,-1,9,10,53,-1,53,52,9,-1,10,11,54,-1,54,53,10,-1,11,8,55,-1,55,54,11,-1,8,6,42,-1,42,55,8,-1};
@@ -4011,7 +3859,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_14_823_texCoordIndex_1()
 		{
 			int[] value = {5,6,15,-1,15,14,5,-1,7,4,12,-1,12,16,7,-1,9,0,2,-1,2,10,9,-1,11,1,0,-1,0,9,11,-1,3,5,14,-1,14,13,3,-1,6,1,11,-1,11,15,6,-1,2,8,17,-1,17,10,2,-1,18,21,20,-1,20,19,18,-1,22,25,24,-1,24,23,22,-1,26,29,28,-1,28,27,26,-1,30,26,27,-1,27,31,30,-1,33,32,21,-1,21,18,33,-1,19,20,30,-1,30,31,19,-1,28,29,35,-1,35,34,28,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,45,46,47,-1,43,45,47,-1,39,43,47,-1,47,48,49,-1,39,47,49,-1,37,39,49,-1,37,49,36,-1,52,53,54,-1,51,52,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,54,58,62,-1,51,54,62,-1,51,62,63,-1,51,63,50,-1,2,0,37,-1,37,36,2,-1,0,1,38,-1,38,37,0,-1,1,6,39,-1,39,38,1,-1,6,5,40,-1,40,39,6,-1,5,3,41,-1,41,40,5,-1,4,7,42,-1,42,41,4,-1,22,23,43,-1,43,42,22,-1,33,18,44,-1,44,43,33,-1,18,19,45,-1,45,44,18,-1,19,31,46,-1,46,45,19,-1,31,27,47,-1,47,46,31,-1,27,28,48,-1,48,47,27,-1,28,34,49,-1,49,48,28,-1,8,2,36,-1,36,49,8,-1,9,10,51,-1,51,50,9,-1,10,17,52,-1,52,51,10,-1,35,29,53,-1,53,52,35,-1,29,26,54,-1,54,53,29,-1,26,30,55,-1,55,54,26,-1,30,20,56,-1,56,55,30,-1,20,21,57,-1,57,56,20,-1,21,32,58,-1,58,57,21,-1,24,25,59,-1,59,58,24,-1,16,12,60,-1,60,59,16,-1,13,14,61,-1,61,60,13,-1,14,15,62,-1,62,61,14,-1,15,11,63,-1,63,62,15,-1,11,9,50,-1,50,63,11,-1};
@@ -4020,7 +3868,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_15_832_coordIndex_1()
 		{
 			int[] value = {4,3,10,-1,10,12,4,-1,5,4,12,-1,12,13,5,-1,5,13,9,-1,9,1,5,-1,6,11,14,-1,14,7,6,-1,7,2,0,-1,0,6,7,-1,11,6,0,-1,0,8,11,-1,3,28,29,-1,29,10,3,-1,8,0,1,-1,1,9,8,-1,15,18,17,-1,17,16,15,-1,19,20,18,-1,18,15,19,-1,19,21,22,-1,22,20,19,-1,23,7,14,-1,14,24,23,-1,7,23,25,-1,25,26,7,-1,24,27,25,-1,25,23,24,-1,16,17,29,-1,29,28,16,-1,27,22,21,-1,21,25,27,-1,32,33,34,-1,31,32,34,-1,34,35,36,-1,36,37,38,-1,34,36,38,-1,38,39,40,-1,40,41,42,-1,38,40,42,-1,34,38,42,-1,31,34,42,-1,31,42,43,-1,31,43,30,-1,45,46,47,-1,47,48,49,-1,49,50,51,-1,47,49,51,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,47,51,55,-1,55,56,57,-1,47,55,57,-1,45,47,57,-1,45,57,44,-1,0,2,31,-1,31,30,0,-1,2,7,32,-1,32,31,2,-1,7,26,33,-1,33,32,7,-1,26,25,34,-1,34,33,26,-1,25,21,35,-1,35,34,25,-1,21,19,36,-1,36,35,21,-1,19,15,37,-1,37,36,19,-1,15,16,38,-1,38,37,15,-1,16,28,39,-1,39,38,16,-1,28,3,40,-1,40,39,28,-1,3,4,41,-1,41,40,3,-1,4,5,42,-1,42,41,4,-1,5,1,43,-1,43,42,5,-1,1,0,30,-1,30,43,1,-1,12,10,45,-1,45,44,12,-1,10,29,46,-1,46,45,10,-1,29,17,47,-1,47,46,29,-1,17,18,48,-1,48,47,17,-1,18,20,49,-1,49,48,18,-1,20,22,50,-1,50,49,20,-1,22,27,51,-1,51,50,22,-1,27,24,52,-1,52,51,27,-1,24,14,53,-1,53,52,24,-1,14,11,54,-1,54,53,14,-1,11,8,55,-1,55,54,11,-1,8,9,56,-1,56,55,8,-1,9,13,57,-1,57,56,9,-1,13,12,44,-1,44,57,13,-1};
@@ -4028,7 +3876,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_15_832_texCoordIndex_1()
 		{
 			int[] value = {6,5,14,-1,14,16,6,-1,7,6,16,-1,16,17,7,-1,7,17,12,-1,12,3,7,-1,8,15,18,-1,18,10,8,-1,10,0,1,-1,1,8,10,-1,15,8,2,-1,2,11,15,-1,4,9,19,-1,19,13,4,-1,11,2,3,-1,3,12,11,-1,20,23,22,-1,22,21,20,-1,24,25,23,-1,23,20,24,-1,24,26,27,-1,27,25,24,-1,29,28,31,-1,31,30,29,-1,28,29,32,-1,32,33,28,-1,30,35,34,-1,34,29,30,-1,37,36,39,-1,39,38,37,-1,35,27,26,-1,26,34,35,-1,42,43,44,-1,41,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,50,-1,50,51,52,-1,48,50,52,-1,44,48,52,-1,41,44,52,-1,41,52,53,-1,41,53,40,-1,55,56,57,-1,57,58,59,-1,59,60,61,-1,57,59,61,-1,61,62,63,-1,63,64,65,-1,61,63,65,-1,57,61,65,-1,65,66,67,-1,57,65,67,-1,55,57,67,-1,55,67,54,-1,1,0,41,-1,41,40,1,-1,0,10,42,-1,42,41,0,-1,28,33,43,-1,43,42,28,-1,33,32,44,-1,44,43,33,-1,34,26,45,-1,45,44,34,-1,26,24,46,-1,46,45,26,-1,24,20,47,-1,47,46,24,-1,20,21,48,-1,48,47,20,-1,37,38,49,-1,49,48,37,-1,9,4,50,-1,50,49,9,-1,5,6,51,-1,51,50,5,-1,6,7,52,-1,52,51,6,-1,7,3,53,-1,53,52,7,-1,3,2,40,-1,40,53,3,-1,16,14,55,-1,55,54,16,-1,13,19,56,-1,56,55,13,-1,39,36,57,-1,57,56,39,-1,22,23,58,-1,58,57,22,-1,23,25,59,-1,59,58,23,-1,25,27,60,-1,60,59,25,-1,27,35,61,-1,61,60,27,-1,35,30,62,-1,62,61,35,-1,30,31,63,-1,63,62,30,-1,18,15,64,-1,64,63,18,-1,15,11,65,-1,65,64,15,-1,11,12,66,-1,66,65,11,-1,12,17,67,-1,67,66,12,-1,17,16,54,-1,54,67,17,-1};
@@ -4037,7 +3885,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_16_841_coordIndex_1()
 		{
 			int[] value = {11,7,4,-1,4,2,11,-1,7,8,5,-1,5,4,7,-1,8,10,1,-1,1,5,8,-1,3,6,12,-1,12,23,3,-1,6,3,0,-1,0,9,6,-1,2,26,27,-1,27,11,2,-1,0,1,10,-1,10,9,0,-1,14,13,16,-1,16,15,14,-1,15,16,18,-1,18,17,15,-1,17,18,20,-1,20,19,17,-1,21,23,12,-1,12,22,21,-1,22,25,24,-1,24,21,22,-1,13,14,27,-1,27,26,13,-1,24,25,19,-1,19,20,24,-1,29,30,31,-1,31,32,33,-1,29,31,33,-1,34,35,36,-1,33,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,33,36,40,-1,29,33,40,-1,29,40,41,-1,29,41,28,-1,44,45,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,54,55,42,-1,50,54,42,-1,46,50,42,-1,44,46,42,-1,43,44,42,-1,2,4,29,-1,29,28,2,-1,4,5,30,-1,30,29,4,-1,5,1,31,-1,31,30,5,-1,1,0,32,-1,32,31,1,-1,0,3,33,-1,33,32,0,-1,3,23,34,-1,34,33,3,-1,23,21,35,-1,35,34,23,-1,21,24,36,-1,36,35,21,-1,24,20,37,-1,37,36,24,-1,20,18,38,-1,38,37,20,-1,18,16,39,-1,39,38,18,-1,16,13,40,-1,40,39,16,-1,13,26,41,-1,41,40,13,-1,26,2,28,-1,28,41,26,-1,6,9,43,-1,43,42,6,-1,9,10,44,-1,44,43,9,-1,10,8,45,-1,45,44,10,-1,8,7,46,-1,46,45,8,-1,7,11,47,-1,47,46,7,-1,11,27,48,-1,48,47,11,-1,27,14,49,-1,49,48,27,-1,14,15,50,-1,50,49,14,-1,15,17,51,-1,51,50,15,-1,17,19,52,-1,52,51,17,-1,19,25,53,-1,53,52,19,-1,25,22,54,-1,54,53,25,-1,22,12,55,-1,55,54,22,-1,12,6,42,-1,42,55,12,-1};
@@ -4045,7 +3893,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_16_841_texCoordIndex_1()
 		{
 			int[] value = {15,10,5,-1,5,2,15,-1,10,11,6,-1,6,5,10,-1,11,14,1,-1,1,6,11,-1,4,9,17,-1,17,7,4,-1,9,4,0,-1,0,13,9,-1,3,8,12,-1,12,16,3,-1,0,1,14,-1,14,13,0,-1,19,18,21,-1,21,20,19,-1,20,21,23,-1,23,22,20,-1,22,23,25,-1,25,24,22,-1,26,29,28,-1,28,27,26,-1,27,31,30,-1,30,26,27,-1,33,32,35,-1,35,34,33,-1,30,31,24,-1,24,25,30,-1,37,38,39,-1,39,40,41,-1,37,39,41,-1,42,43,44,-1,41,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,41,44,48,-1,37,41,48,-1,37,48,49,-1,37,49,36,-1,52,53,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,62,63,50,-1,58,62,50,-1,54,58,50,-1,52,54,50,-1,51,52,50,-1,2,5,37,-1,37,36,2,-1,5,6,38,-1,38,37,5,-1,6,1,39,-1,39,38,6,-1,1,0,40,-1,40,39,1,-1,0,4,41,-1,41,40,0,-1,4,7,42,-1,42,41,4,-1,29,26,43,-1,43,42,29,-1,26,30,44,-1,44,43,26,-1,30,25,45,-1,45,44,30,-1,25,23,46,-1,46,45,25,-1,23,21,47,-1,47,46,23,-1,21,18,48,-1,48,47,21,-1,33,34,49,-1,49,48,33,-1,8,3,36,-1,36,49,8,-1,9,13,51,-1,51,50,9,-1,13,14,52,-1,52,51,13,-1,14,11,53,-1,53,52,14,-1,11,10,54,-1,54,53,11,-1,10,15,55,-1,55,54,10,-1,16,12,56,-1,56,55,16,-1,35,32,57,-1,57,56,35,-1,19,20,58,-1,58,57,19,-1,20,22,59,-1,59,58,20,-1,22,24,60,-1,60,59,22,-1,24,31,61,-1,61,60,24,-1,31,27,62,-1,62,61,31,-1,27,28,63,-1,63,62,27,-1,17,9,50,-1,50,63,17,-1};
@@ -4054,7 +3902,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_17_856_coordIndex_1()
 		{
 			int[] value = {7,0,3,-1,3,10,7,-1,5,20,21,-1,21,12,5,-1,3,4,11,-1,11,10,3,-1,12,8,1,-1,1,5,12,-1,8,9,2,-1,2,1,8,-1,9,11,4,-1,4,2,9,-1,0,7,13,-1,13,6,0,-1,14,17,16,-1,16,15,14,-1,19,18,21,-1,21,20,19,-1,16,17,23,-1,23,22,16,-1,18,19,25,-1,25,24,18,-1,24,25,27,-1,27,26,24,-1,26,27,22,-1,22,23,26,-1,15,6,13,-1,13,14,15,-1,30,31,32,-1,32,33,34,-1,34,35,36,-1,32,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,40,41,28,-1,36,40,28,-1,32,36,28,-1,30,32,28,-1,29,30,28,-1,43,44,45,-1,45,46,47,-1,43,45,47,-1,47,48,49,-1,47,49,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,47,50,54,-1,43,47,54,-1,43,54,55,-1,43,55,42,-1,3,0,29,-1,29,28,3,-1,0,6,30,-1,30,29,0,-1,6,15,31,-1,31,30,6,-1,15,16,32,-1,32,31,15,-1,16,22,33,-1,33,32,16,-1,22,27,34,-1,34,33,22,-1,27,25,35,-1,35,34,27,-1,25,19,36,-1,36,35,25,-1,19,20,37,-1,37,36,19,-1,20,5,38,-1,38,37,20,-1,5,1,39,-1,39,38,5,-1,1,2,40,-1,40,39,1,-1,2,4,41,-1,41,40,2,-1,4,3,28,-1,28,41,4,-1,8,12,43,-1,43,42,8,-1,12,21,44,-1,44,43,12,-1,21,18,45,-1,45,44,21,-1,18,24,46,-1,46,45,18,-1,24,26,47,-1,47,46,24,-1,26,23,48,-1,48,47,26,-1,23,17,49,-1,49,48,23,-1,17,14,50,-1,50,49,17,-1,14,13,51,-1,51,50,14,-1,13,7,52,-1,52,51,13,-1,7,10,53,-1,53,52,7,-1,10,11,54,-1,54,53,10,-1,11,9,55,-1,55,54,11,-1,9,8,42,-1,42,55,9,-1};
@@ -4062,7 +3910,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_17_856_texCoordIndex_1()
 		{
 			int[] value = {9,0,4,-1,4,12,9,-1,7,3,17,-1,17,15,7,-1,4,5,13,-1,13,12,4,-1,14,10,1,-1,1,6,14,-1,10,11,2,-1,2,1,10,-1,11,13,5,-1,5,2,11,-1,0,9,16,-1,16,8,0,-1,18,21,20,-1,20,19,18,-1,23,22,25,-1,25,24,23,-1,20,21,27,-1,27,26,20,-1,29,28,31,-1,31,30,29,-1,30,31,33,-1,33,32,30,-1,32,33,26,-1,26,27,32,-1,19,35,34,-1,34,18,19,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,36,-1,44,48,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,51,52,53,-1,53,54,55,-1,51,53,55,-1,55,56,57,-1,55,57,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,55,58,62,-1,51,55,62,-1,51,62,63,-1,51,63,50,-1,4,0,37,-1,37,36,4,-1,0,8,38,-1,38,37,0,-1,35,19,39,-1,39,38,35,-1,19,20,40,-1,40,39,19,-1,20,26,41,-1,41,40,20,-1,26,33,42,-1,42,41,26,-1,33,31,43,-1,43,42,33,-1,31,28,44,-1,44,43,31,-1,23,24,45,-1,45,44,23,-1,3,7,46,-1,46,45,3,-1,6,1,47,-1,47,46,6,-1,1,2,48,-1,48,47,1,-1,2,5,49,-1,49,48,2,-1,5,4,36,-1,36,49,5,-1,10,14,51,-1,51,50,10,-1,15,17,52,-1,52,51,15,-1,25,22,53,-1,53,52,25,-1,29,30,54,-1,54,53,29,-1,30,32,55,-1,55,54,30,-1,32,27,56,-1,56,55,32,-1,27,21,57,-1,57,56,27,-1,21,18,58,-1,58,57,21,-1,18,34,59,-1,59,58,18,-1,16,9,60,-1,60,59,16,-1,9,12,61,-1,61,60,9,-1,12,13,62,-1,62,61,12,-1,13,11,63,-1,63,62,13,-1,11,10,50,-1,50,63,11,-1};
@@ -4071,7 +3919,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_18_880_coordIndex_1()
 		{
 			int[] value = {4,0,9,-1,9,3,4,-1,11,19,20,-1,20,6,11,-1,9,10,5,-1,5,3,9,-1,6,7,1,-1,1,11,6,-1,7,8,2,-1,2,1,7,-1,8,5,10,-1,10,2,8,-1,0,4,12,-1,12,27,0,-1,13,16,15,-1,15,14,13,-1,18,17,20,-1,20,19,18,-1,15,16,22,-1,22,21,15,-1,17,18,24,-1,24,23,17,-1,23,24,26,-1,26,25,23,-1,25,26,21,-1,21,22,25,-1,14,27,12,-1,12,13,14,-1,29,30,31,-1,31,32,33,-1,33,34,35,-1,31,33,35,-1,35,36,37,-1,37,38,39,-1,35,37,39,-1,31,35,39,-1,39,40,41,-1,31,39,41,-1,29,31,41,-1,29,41,28,-1,43,44,45,-1,45,46,47,-1,47,48,49,-1,45,47,49,-1,49,50,51,-1,51,52,53,-1,49,51,53,-1,45,49,53,-1,53,54,55,-1,45,53,55,-1,43,45,55,-1,43,55,42,-1,11,1,29,-1,29,28,11,-1,1,2,30,-1,30,29,1,-1,2,10,31,-1,31,30,2,-1,10,9,32,-1,32,31,10,-1,9,0,33,-1,33,32,9,-1,0,27,34,-1,34,33,0,-1,27,14,35,-1,35,34,27,-1,14,15,36,-1,36,35,14,-1,15,21,37,-1,37,36,15,-1,21,26,38,-1,38,37,21,-1,26,24,39,-1,39,38,26,-1,24,18,40,-1,40,39,24,-1,18,19,41,-1,41,40,18,-1,19,11,28,-1,28,41,19,-1,12,4,43,-1,43,42,12,-1,4,3,44,-1,44,43,4,-1,3,5,45,-1,45,44,3,-1,5,8,46,-1,46,45,5,-1,8,7,47,-1,47,46,8,-1,7,6,48,-1,48,47,7,-1,6,20,49,-1,49,48,6,-1,20,17,50,-1,50,49,20,-1,17,23,51,-1,51,50,17,-1,23,25,52,-1,52,51,23,-1,25,22,53,-1,53,52,25,-1,22,16,54,-1,54,53,22,-1,16,13,55,-1,55,54,16,-1,13,12,42,-1,42,55,13,-1};
@@ -4079,7 +3927,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_18_880_texCoordIndex_1()
 		{
 			int[] value = {1,14,9,-1,9,0,1,-1,11,13,8,-1,8,5,11,-1,9,10,3,-1,3,0,9,-1,4,6,16,-1,16,12,4,-1,6,7,17,-1,17,16,6,-1,7,3,10,-1,10,17,7,-1,14,1,2,-1,2,15,14,-1,18,21,20,-1,20,19,18,-1,23,22,25,-1,25,24,23,-1,20,21,27,-1,27,26,20,-1,29,28,31,-1,31,30,29,-1,30,31,33,-1,33,32,30,-1,32,33,26,-1,26,27,32,-1,19,35,34,-1,34,18,19,-1,37,38,39,-1,39,40,41,-1,41,42,43,-1,39,41,43,-1,43,44,45,-1,45,46,47,-1,43,45,47,-1,39,43,47,-1,47,48,49,-1,39,47,49,-1,37,39,49,-1,37,49,36,-1,51,52,53,-1,53,54,55,-1,55,56,57,-1,53,55,57,-1,57,58,59,-1,59,60,61,-1,57,59,61,-1,53,57,61,-1,61,62,63,-1,53,61,63,-1,51,53,63,-1,51,63,50,-1,12,16,37,-1,37,36,12,-1,16,17,38,-1,38,37,16,-1,17,10,39,-1,39,38,17,-1,10,9,40,-1,40,39,10,-1,9,14,41,-1,41,40,9,-1,14,15,42,-1,42,41,14,-1,35,19,43,-1,43,42,35,-1,19,20,44,-1,44,43,19,-1,20,26,45,-1,45,44,20,-1,26,33,46,-1,46,45,26,-1,33,31,47,-1,47,46,33,-1,31,28,48,-1,48,47,31,-1,23,24,49,-1,49,48,23,-1,13,11,36,-1,36,49,13,-1,2,1,51,-1,51,50,2,-1,1,0,52,-1,52,51,1,-1,0,3,53,-1,53,52,0,-1,3,7,54,-1,54,53,3,-1,7,6,55,-1,55,54,7,-1,6,4,56,-1,56,55,6,-1,5,8,57,-1,57,56,5,-1,25,22,58,-1,58,57,25,-1,29,30,59,-1,59,58,29,-1,30,32,60,-1,60,59,30,-1,32,27,61,-1,61,60,32,-1,27,21,62,-1,62,61,27,-1,21,18,63,-1,63,62,21,-1,18,34,50,-1,50,63,18,-1};
@@ -4088,7 +3936,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_19_889_coordIndex_1()
 		{
 			int[] value = {0,2,6,-1,6,8,0,-1,9,18,19,-1,19,1,9,-1,7,5,22,-1,22,23,7,-1,1,3,10,-1,10,9,1,-1,3,4,11,-1,11,10,3,-1,4,0,8,-1,8,11,4,-1,5,7,6,-1,6,2,5,-1,13,12,15,-1,15,14,13,-1,17,16,19,-1,19,18,17,-1,20,23,22,-1,22,21,20,-1,16,17,25,-1,25,24,16,-1,24,25,27,-1,27,26,24,-1,26,27,12,-1,12,13,26,-1,21,14,15,-1,15,20,21,-1,30,31,32,-1,32,33,34,-1,34,35,36,-1,32,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,40,41,28,-1,36,40,28,-1,32,36,28,-1,30,32,28,-1,29,30,28,-1,44,45,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,46,50,54,-1,54,55,42,-1,46,54,42,-1,44,46,42,-1,43,44,42,-1,1,19,29,-1,29,28,1,-1,19,16,30,-1,30,29,19,-1,16,24,31,-1,31,30,16,-1,24,26,32,-1,32,31,24,-1,26,13,33,-1,33,32,26,-1,13,14,34,-1,34,33,13,-1,14,21,35,-1,35,34,14,-1,21,22,36,-1,36,35,21,-1,22,5,37,-1,37,36,22,-1,5,2,38,-1,38,37,5,-1,2,0,39,-1,39,38,2,-1,0,4,40,-1,40,39,0,-1,4,3,41,-1,41,40,4,-1,3,1,28,-1,28,41,3,-1,7,23,43,-1,43,42,7,-1,23,20,44,-1,44,43,23,-1,20,15,45,-1,45,44,20,-1,15,12,46,-1,46,45,15,-1,12,27,47,-1,47,46,12,-1,27,25,48,-1,48,47,27,-1,25,17,49,-1,49,48,25,-1,17,18,50,-1,50,49,17,-1,18,9,51,-1,51,50,18,-1,9,10,52,-1,52,51,9,-1,10,11,53,-1,53,52,10,-1,11,8,54,-1,54,53,11,-1,8,6,55,-1,55,54,8,-1,6,7,42,-1,42,55,6,-1};
@@ -4096,7 +3944,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_19_889_texCoordIndex_1()
 		{
 			int[] value = {3,8,9,-1,9,11,3,-1,13,16,6,-1,6,5,13,-1,10,0,7,-1,7,17,10,-1,2,1,14,-1,14,12,2,-1,1,4,15,-1,15,14,1,-1,4,3,11,-1,11,15,4,-1,0,10,9,-1,9,8,0,-1,19,18,21,-1,21,20,19,-1,23,22,25,-1,25,24,23,-1,26,29,28,-1,28,27,26,-1,31,30,33,-1,33,32,31,-1,32,33,35,-1,35,34,32,-1,34,35,18,-1,18,19,34,-1,27,20,21,-1,21,26,27,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,36,-1,44,48,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,52,53,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,54,58,62,-1,62,63,50,-1,54,62,50,-1,52,54,50,-1,51,52,50,-1,5,6,37,-1,37,36,5,-1,25,22,38,-1,38,37,25,-1,31,32,39,-1,39,38,31,-1,32,34,40,-1,40,39,32,-1,34,19,41,-1,41,40,34,-1,19,20,42,-1,42,41,19,-1,20,27,43,-1,43,42,20,-1,27,28,44,-1,44,43,27,-1,7,0,45,-1,45,44,7,-1,0,8,46,-1,46,45,0,-1,8,3,47,-1,47,46,8,-1,3,4,48,-1,48,47,3,-1,4,1,49,-1,49,48,4,-1,1,2,36,-1,36,49,1,-1,10,17,51,-1,51,50,10,-1,29,26,52,-1,52,51,29,-1,26,21,53,-1,53,52,26,-1,21,18,54,-1,54,53,21,-1,18,35,55,-1,55,54,18,-1,35,33,56,-1,56,55,35,-1,33,30,57,-1,57,56,33,-1,23,24,58,-1,58,57,23,-1,16,13,59,-1,59,58,16,-1,12,14,60,-1,60,59,12,-1,14,15,61,-1,61,60,14,-1,15,11,62,-1,62,61,15,-1,11,9,63,-1,63,62,11,-1,9,10,50,-1,50,63,9,-1};
@@ -4105,7 +3953,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_20_898_coordIndex_1()
 		{
 			int[] value = {12,9,5,-1,5,3,12,-1,2,1,6,-1,6,11,2,-1,0,7,23,-1,23,24,0,-1,25,8,12,-1,12,3,25,-1,9,6,1,-1,1,5,9,-1,11,10,4,-1,4,2,11,-1,4,10,7,-1,7,0,4,-1,13,16,15,-1,15,14,13,-1,18,17,20,-1,20,19,18,-1,21,24,23,-1,23,22,21,-1,25,16,13,-1,13,8,25,-1,14,15,19,-1,19,20,14,-1,17,18,27,-1,27,26,17,-1,27,21,22,-1,22,26,27,-1,30,31,32,-1,32,33,34,-1,34,35,36,-1,32,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,40,41,28,-1,36,40,28,-1,32,36,28,-1,30,32,28,-1,29,30,28,-1,44,45,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,54,55,42,-1,50,54,42,-1,46,50,42,-1,44,46,42,-1,43,44,42,-1,3,5,29,-1,29,28,3,-1,5,1,30,-1,30,29,5,-1,1,2,31,-1,31,30,1,-1,2,4,32,-1,32,31,2,-1,4,0,33,-1,33,32,4,-1,0,24,34,-1,34,33,0,-1,24,21,35,-1,35,34,24,-1,21,27,36,-1,36,35,21,-1,27,18,37,-1,37,36,27,-1,18,19,38,-1,38,37,18,-1,19,15,39,-1,39,38,19,-1,15,16,40,-1,40,39,15,-1,16,25,41,-1,41,40,16,-1,25,3,28,-1,28,41,25,-1,23,7,43,-1,43,42,23,-1,7,10,44,-1,44,43,7,-1,10,11,45,-1,45,44,10,-1,11,6,46,-1,46,45,11,-1,6,9,47,-1,47,46,6,-1,9,12,48,-1,48,47,9,-1,12,8,49,-1,49,48,12,-1,8,13,50,-1,50,49,8,-1,13,14,51,-1,51,50,13,-1,14,20,52,-1,52,51,14,-1,20,17,53,-1,53,52,20,-1,17,26,54,-1,54,53,17,-1,26,22,55,-1,55,54,26,-1,22,23,42,-1,42,55,22,-1};
@@ -4113,7 +3961,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_20_898_texCoordIndex_1()
 		{
 			int[] value = {17,13,8,-1,8,4,17,-1,3,2,9,-1,9,16,3,-1,1,10,14,-1,14,5,1,-1,6,12,17,-1,17,4,6,-1,13,9,2,-1,2,8,13,-1,16,15,7,-1,7,3,16,-1,7,15,11,-1,11,0,7,-1,18,21,20,-1,20,19,18,-1,23,22,25,-1,25,24,23,-1,26,29,28,-1,28,27,26,-1,30,21,18,-1,18,31,30,-1,19,20,24,-1,24,25,19,-1,22,23,33,-1,33,32,22,-1,33,35,34,-1,34,32,33,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,36,-1,44,48,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,52,53,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,62,63,50,-1,58,62,50,-1,54,58,50,-1,52,54,50,-1,51,52,50,-1,4,8,37,-1,37,36,4,-1,8,2,38,-1,38,37,8,-1,2,3,39,-1,39,38,2,-1,3,7,40,-1,40,39,3,-1,7,0,41,-1,41,40,7,-1,1,5,42,-1,42,41,1,-1,29,26,43,-1,43,42,29,-1,35,33,44,-1,44,43,35,-1,33,23,45,-1,45,44,33,-1,23,24,46,-1,46,45,23,-1,24,20,47,-1,47,46,24,-1,20,21,48,-1,48,47,20,-1,21,30,49,-1,49,48,21,-1,6,4,36,-1,36,49,6,-1,14,10,51,-1,51,50,14,-1,11,15,52,-1,52,51,11,-1,15,16,53,-1,53,52,15,-1,16,9,54,-1,54,53,16,-1,9,13,55,-1,55,54,9,-1,13,17,56,-1,56,55,13,-1,17,12,57,-1,57,56,17,-1,31,18,58,-1,58,57,31,-1,18,19,59,-1,59,58,18,-1,19,25,60,-1,60,59,19,-1,25,22,61,-1,61,60,25,-1,22,32,62,-1,62,61,22,-1,32,34,63,-1,63,62,32,-1,27,28,50,-1,50,63,27,-1};
@@ -4122,7 +3970,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_21_907_coordIndex_1()
 		{
 			int[] value = {0,6,16,-1,16,13,0,-1,17,10,9,-1,9,3,17,-1,12,7,5,-1,5,2,12,-1,8,11,4,-1,4,1,8,-1,4,11,6,-1,6,0,4,-1,2,3,9,-1,9,12,2,-1,1,5,7,-1,7,8,1,-1,14,13,16,-1,16,15,14,-1,17,19,18,-1,18,10,17,-1,21,20,23,-1,23,22,21,-1,25,24,27,-1,27,26,25,-1,27,14,15,-1,15,26,27,-1,20,21,18,-1,18,19,20,-1,24,25,22,-1,22,23,24,-1,30,31,32,-1,32,33,34,-1,34,35,36,-1,32,34,36,-1,36,37,38,-1,38,39,40,-1,36,38,40,-1,40,41,28,-1,36,40,28,-1,32,36,28,-1,30,32,28,-1,29,30,28,-1,44,45,46,-1,46,47,48,-1,48,49,50,-1,46,48,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,54,55,42,-1,50,54,42,-1,46,50,42,-1,44,46,42,-1,43,44,42,-1,3,2,29,-1,29,28,3,-1,2,5,30,-1,30,29,2,-1,5,1,31,-1,31,30,5,-1,1,4,32,-1,32,31,1,-1,4,0,33,-1,33,32,4,-1,0,13,34,-1,34,33,0,-1,13,14,35,-1,35,34,13,-1,14,27,36,-1,36,35,14,-1,27,24,37,-1,37,36,27,-1,24,23,38,-1,38,37,24,-1,23,20,39,-1,39,38,23,-1,20,19,40,-1,40,39,20,-1,19,17,41,-1,41,40,19,-1,17,3,28,-1,28,41,17,-1,12,9,43,-1,43,42,12,-1,9,10,44,-1,44,43,9,-1,10,18,45,-1,45,44,10,-1,18,21,46,-1,46,45,18,-1,21,22,47,-1,47,46,21,-1,22,25,48,-1,48,47,22,-1,25,26,49,-1,49,48,25,-1,26,15,50,-1,50,49,26,-1,15,16,51,-1,51,50,15,-1,16,6,52,-1,52,51,16,-1,6,11,53,-1,53,52,6,-1,11,8,54,-1,54,53,11,-1,8,7,55,-1,55,54,8,-1,7,12,42,-1,42,55,7,-1};
@@ -4130,7 +3978,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_21_907_texCoordIndex_1()
 		{
 			int[] value = {5,10,14,-1,14,2,5,-1,8,15,13,-1,13,7,8,-1,17,11,3,-1,3,6,17,-1,12,16,0,-1,0,4,12,-1,0,16,9,-1,9,1,0,-1,6,7,13,-1,13,17,6,-1,4,3,11,-1,11,12,4,-1,19,18,21,-1,21,20,19,-1,22,25,24,-1,24,23,22,-1,27,26,29,-1,29,28,27,-1,31,30,33,-1,33,32,31,-1,33,35,34,-1,34,32,33,-1,26,27,24,-1,24,25,26,-1,30,31,28,-1,28,29,30,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,48,49,36,-1,44,48,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,52,53,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,60,-1,60,61,62,-1,58,60,62,-1,62,63,50,-1,58,62,50,-1,54,58,50,-1,52,54,50,-1,51,52,50,-1,7,6,37,-1,37,36,7,-1,6,3,38,-1,38,37,6,-1,3,4,39,-1,39,38,3,-1,4,0,40,-1,40,39,4,-1,0,1,41,-1,41,40,0,-1,5,2,42,-1,42,41,5,-1,18,19,43,-1,43,42,18,-1,35,33,44,-1,44,43,35,-1,33,30,45,-1,45,44,33,-1,30,29,46,-1,46,45,30,-1,29,26,47,-1,47,46,29,-1,26,25,48,-1,48,47,26,-1,25,22,49,-1,49,48,25,-1,8,7,36,-1,36,49,8,-1,17,13,51,-1,51,50,17,-1,13,15,52,-1,52,51,13,-1,23,24,53,-1,53,52,23,-1,24,27,54,-1,54,53,24,-1,27,28,55,-1,55,54,27,-1,28,31,56,-1,56,55,28,-1,31,32,57,-1,57,56,31,-1,32,34,58,-1,58,57,32,-1,20,21,59,-1,59,58,20,-1,14,10,60,-1,60,59,14,-1,9,16,61,-1,61,60,9,-1,16,12,62,-1,62,61,16,-1,12,11,63,-1,63,62,12,-1,11,17,50,-1,50,63,11,-1};
@@ -4139,7 +3987,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_22_916_coordIndex_1()
 		{
 			int[] value = {2,3,9,-1,9,12,2,-1,3,0,10,-1,10,9,3,-1,7,20,21,-1,21,4,7,-1,11,7,4,-1,4,5,11,-1,25,26,10,-1,10,0,25,-1,6,11,5,-1,11,6,1,-1,1,8,11,-1,2,12,8,-1,8,1,2,-1,14,13,16,-1,16,15,14,-1,15,16,18,-1,18,17,15,-1,19,22,21,-1,21,20,19,-1,23,24,22,-1,22,19,23,-1,25,17,18,-1,18,26,25,-1,27,24,23,-1,23,29,28,-1,28,27,23,-1,14,28,29,-1,29,13,14,-1,31,32,33,-1,31,33,34,-1,34,35,36,-1,36,37,38,-1,34,36,38,-1,31,34,38,-1,38,39,40,-1,40,41,42,-1,38,40,42,-1,31,38,42,-1,42,43,44,-1,31,42,44,-1,31,44,45,-1,31,45,30,-1,48,49,50,-1,50,51,52,-1,52,53,54,-1,50,52,54,-1,54,55,56,-1,56,57,58,-1,54,56,58,-1,58,59,46,-1,54,58,46,-1,50,54,46,-1,48,50,46,-1,47,48,46,-1,3,2,31,-1,31,30,3,-1,2,1,32,-1,32,31,2,-1,1,6,33,-1,33,32,1,-1,6,5,34,-1,34,33,6,-1,5,4,35,-1,35,34,5,-1,4,21,36,-1,36,35,4,-1,21,22,37,-1,37,36,21,-1,22,24,38,-1,38,37,22,-1,24,27,39,-1,39,38,24,-1,27,28,40,-1,40,39,27,-1,28,14,41,-1,41,40,28,-1,14,15,42,-1,42,41,14,-1,15,17,43,-1,43,42,15,-1,17,25,44,-1,44,43,17,-1,25,0,45,-1,45,44,25,-1,0,3,30,-1,30,45,0,-1,9,10,47,-1,47,46,9,-1,10,26,48,-1,48,47,10,-1,26,18,49,-1,49,48,26,-1,18,16,50,-1,50,49,18,-1,16,13,51,-1,51,50,16,-1,13,29,52,-1,52,51,13,-1,29,23,53,-1,53,52,29,-1,23,19,54,-1,54,53,23,-1,19,20,55,-1,55,54,19,-1,20,7,56,-1,56,55,20,-1,7,11,57,-1,57,56,7,-1,11,8,58,-1,58,57,11,-1,8,12,59,-1,59,58,8,-1,12,9,46,-1,46,59,12,-1};
@@ -4147,7 +3995,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_22_916_texCoordIndex_1()
 		{
 			int[] value = {3,4,14,-1,14,18,3,-1,4,1,15,-1,15,14,4,-1,10,17,7,-1,7,6,10,-1,16,11,5,-1,5,8,16,-1,0,19,15,-1,15,1,0,-1,9,16,8,-1,16,9,2,-1,2,12,16,-1,3,18,13,-1,13,2,3,-1,21,20,23,-1,23,22,21,-1,22,23,25,-1,25,24,22,-1,26,29,28,-1,28,27,26,-1,30,33,32,-1,32,31,30,-1,34,24,25,-1,25,35,34,-1,36,33,30,-1,30,38,37,-1,37,36,30,-1,21,37,39,-1,39,20,21,-1,41,42,43,-1,41,43,44,-1,44,45,46,-1,46,47,48,-1,44,46,48,-1,41,44,48,-1,48,49,50,-1,50,51,52,-1,48,50,52,-1,41,48,52,-1,52,53,54,-1,41,52,54,-1,41,54,55,-1,41,55,40,-1,58,59,60,-1,60,61,62,-1,62,63,64,-1,60,62,64,-1,64,65,66,-1,66,67,68,-1,64,66,68,-1,68,69,56,-1,64,68,56,-1,60,64,56,-1,58,60,56,-1,57,58,56,-1,4,3,41,-1,41,40,4,-1,3,2,42,-1,42,41,3,-1,2,9,43,-1,43,42,2,-1,9,8,44,-1,44,43,9,-1,8,5,45,-1,45,44,8,-1,6,7,46,-1,46,45,6,-1,28,29,47,-1,47,46,28,-1,32,33,48,-1,48,47,32,-1,33,36,49,-1,49,48,33,-1,36,37,50,-1,50,49,36,-1,37,21,51,-1,51,50,37,-1,21,22,52,-1,52,51,21,-1,22,24,53,-1,53,52,22,-1,24,34,54,-1,54,53,24,-1,0,1,55,-1,55,54,0,-1,1,4,40,-1,40,55,1,-1,14,15,57,-1,57,56,14,-1,15,19,58,-1,58,57,15,-1,35,25,59,-1,59,58,35,-1,25,23,60,-1,60,59,25,-1,23,20,61,-1,61,60,23,-1,20,39,62,-1,62,61,20,-1,38,30,63,-1,63,62,38,-1,30,31,64,-1,64,63,30,-1,26,27,65,-1,65,64,26,-1,17,10,66,-1,66,65,17,-1,11,16,67,-1,67,66,11,-1,16,12,68,-1,68,67,16,-1,13,18,69,-1,69,68,13,-1,18,14,56,-1,56,69,18,-1};
@@ -4156,7 +4004,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_23_925_coordIndex_1()
 		{
 			int[] value = {16,15,0,-1,0,7,16,-1,0,15,8,-1,1,5,11,-1,11,10,1,-1,18,6,12,-1,12,17,18,-1,14,13,2,-1,2,3,14,-1,9,14,3,-1,3,4,9,-1,11,5,0,-1,0,8,11,-1,13,12,6,-1,6,2,13,-1,49,16,7,-1,7,0,5,-1,1,10,9,-1,9,4,1,-1,3,2,20,-1,20,19,3,-1,2,6,21,-1,21,20,2,-1,6,18,53,-1,53,21,6,-1,7,5,23,-1,23,22,7,-1,5,1,24,-1,24,23,5,-1,1,4,25,-1,25,24,1,-1,4,3,19,-1,19,25,4,-1,10,11,27,-1,27,26,10,-1,11,8,28,-1,28,27,11,-1,8,15,29,-1,29,28,8,-1,17,12,30,-1,30,62,17,-1,12,13,31,-1,31,30,12,-1,13,14,32,-1,32,31,13,-1,14,9,33,-1,33,32,14,-1,9,10,26,-1,26,33,9,-1,16,35,34,-1,34,15,16,-1,34,36,15,-1,38,37,40,-1,40,39,38,-1,18,17,42,-1,42,41,18,-1,44,43,46,-1,46,45,44,-1,48,47,43,-1,43,44,48,-1,40,36,34,-1,34,39,40,-1,45,46,41,-1,41,42,45,-1,49,35,16,-1,35,39,34,-1,38,47,48,-1,48,37,38,-1,43,51,50,-1,50,46,43,-1,46,50,52,-1,52,41,46,-1,41,52,53,-1,53,18,41,-1,35,55,54,-1,54,39,35,-1,39,54,56,-1,56,38,39,-1,38,56,57,-1,57,47,38,-1,47,57,51,-1,51,43,47,-1,37,59,58,-1,58,40,37,-1,40,58,60,-1,60,36,40,-1,36,60,29,-1,29,15,36,-1,17,62,61,-1,61,42,17,-1,42,61,63,-1,63,45,42,-1,45,63,64,-1,64,44,45,-1,44,64,65,-1,65,48,44,-1,48,65,59,-1,59,37,48,-1,27,28,29,-1,29,60,58,-1,58,59,65,-1,29,58,65,-1,65,64,63,-1,63,61,62,-1,65,63,62,-1,62,30,31,-1,31,32,33,-1,62,31,33,-1,65,62,33,-1,29,65,33,-1,27,29,33,-1,27,33,26,-1};
@@ -4164,7 +4012,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_23_925_texCoordIndex_1()
 		{
 			int[] value = {2,12,1,-1,1,0,2,-1,1,12,13,-1,4,8,16,-1,16,15,4,-1,11,10,17,-1,17,19,11,-1,21,20,5,-1,5,6,21,-1,14,21,6,-1,6,7,14,-1,16,8,1,-1,1,13,16,-1,20,18,9,-1,9,5,20,-1,3,2,0,-1,0,1,8,-1,4,15,14,-1,14,7,4,-1,6,5,23,-1,23,22,6,-1,5,9,24,-1,24,23,5,-1,10,11,25,-1,25,24,10,-1,0,8,27,-1,27,26,0,-1,8,4,28,-1,28,27,8,-1,4,7,29,-1,29,28,4,-1,7,6,22,-1,22,29,7,-1,15,16,31,-1,31,30,15,-1,16,13,32,-1,32,31,16,-1,13,12,33,-1,33,32,13,-1,19,17,35,-1,35,34,19,-1,18,20,36,-1,36,35,18,-1,20,21,37,-1,37,36,20,-1,21,14,38,-1,38,37,21,-1,14,15,30,-1,30,38,14,-1,42,41,40,-1,40,39,42,-1,40,43,39,-1,45,44,47,-1,47,46,45,-1,49,48,51,-1,51,50,49,-1,53,52,55,-1,55,54,53,-1,57,56,52,-1,52,53,57,-1,47,43,40,-1,40,46,47,-1,54,55,59,-1,59,58,54,-1,60,41,42,-1,41,46,40,-1,45,56,57,-1,57,44,45,-1,52,62,61,-1,61,55,52,-1,55,61,63,-1,63,59,55,-1,50,63,64,-1,64,49,50,-1,41,66,65,-1,65,46,41,-1,46,65,67,-1,67,45,46,-1,45,67,68,-1,68,56,45,-1,56,68,62,-1,62,52,56,-1,44,70,69,-1,69,47,44,-1,47,69,71,-1,71,43,47,-1,43,71,72,-1,72,39,43,-1,48,74,73,-1,73,51,48,-1,58,73,75,-1,75,54,58,-1,54,75,76,-1,76,53,54,-1,53,76,77,-1,77,57,53,-1,57,77,70,-1,70,44,57,-1,31,32,33,-1,33,71,69,-1,69,70,77,-1,33,69,77,-1,77,76,75,-1,75,73,74,-1,77,75,74,-1,74,35,36,-1,36,37,38,-1,74,36,38,-1,77,74,38,-1,33,77,38,-1,31,33,38,-1,31,38,30,-1};
@@ -4174,7 +4022,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_24_934_coordIndex_1()
 		{
 			int[] value = {1,5,12,-1,7,2,19,-1,19,0,7,-1,0,11,7,-1,2,7,5,-1,5,1,2,-1,17,0,19,-1,0,17,6,-1,6,11,0,-1,20,2,1,-1,1,4,20,-1,2,20,19,-1,10,9,15,-1,15,14,10,-1,9,16,15,-1,8,10,14,-1,14,18,8,-1,13,6,17,-1,3,8,18,-1,18,21,3,-1,51,4,1,-1,1,12,51,-1,6,13,16,-1,16,9,6,-1,6,9,23,-1,23,22,6,-1,9,10,24,-1,24,23,9,-1,10,8,25,-1,25,24,10,-1,8,3,56,-1,56,25,8,-1,14,15,27,-1,27,26,14,-1,15,16,28,-1,28,27,15,-1,16,13,29,-1,29,28,16,-1,13,17,30,-1,30,29,13,-1,17,19,31,-1,31,30,17,-1,19,20,63,-1,63,31,19,-1,21,18,32,-1,32,65,21,-1,18,14,26,-1,26,32,18,-1,33,35,34,-1,38,37,36,-1,36,39,38,-1,37,38,40,-1,39,33,34,-1,34,38,39,-1,41,36,37,-1,37,40,42,-1,42,41,37,-1,20,4,33,-1,33,39,20,-1,39,36,20,-1,43,46,45,-1,45,44,43,-1,44,45,47,-1,49,48,46,-1,46,43,49,-1,50,41,42,-1,3,21,48,-1,48,49,3,-1,51,35,33,-1,33,4,51,-1,42,44,47,-1,47,50,42,-1,42,53,52,-1,52,44,42,-1,44,52,54,-1,54,43,44,-1,43,54,55,-1,55,49,43,-1,49,55,56,-1,56,3,49,-1,46,58,57,-1,57,45,46,-1,45,57,59,-1,59,47,45,-1,47,59,60,-1,60,50,47,-1,50,60,61,-1,61,41,50,-1,41,61,62,-1,62,36,41,-1,36,62,63,-1,63,20,36,-1,21,65,64,-1,64,48,21,-1,48,64,58,-1,58,46,48,-1,28,29,30,-1,31,63,62,-1,30,31,62,-1,62,61,60,-1,60,59,57,-1,62,60,57,-1,62,57,58,-1,58,64,65,-1,65,32,26,-1,58,65,26,-1,62,58,26,-1,30,62,26,-1,28,30,26,-1,27,28,26,-1};
@@ -4182,7 +4030,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_24_934_texCoordIndex_1()
 		{
 			int[] value = {0,1,16,-1,4,5,26,-1,26,3,4,-1,3,15,4,-1,5,4,6,-1,6,7,5,-1,22,3,26,-1,3,22,8,-1,8,15,3,-1,27,5,7,-1,7,10,27,-1,5,27,26,-1,14,9,20,-1,20,19,14,-1,9,21,20,-1,13,14,19,-1,19,23,13,-1,18,8,22,-1,11,12,24,-1,24,25,11,-1,17,2,0,-1,0,16,17,-1,8,18,21,-1,21,9,8,-1,8,9,29,-1,29,28,8,-1,9,14,30,-1,30,29,9,-1,14,13,31,-1,31,30,14,-1,12,11,32,-1,32,31,12,-1,19,20,34,-1,34,33,19,-1,20,21,35,-1,35,34,20,-1,21,18,36,-1,36,35,21,-1,18,22,37,-1,37,36,18,-1,22,26,38,-1,38,37,22,-1,26,27,39,-1,39,38,26,-1,25,24,41,-1,41,40,25,-1,23,19,33,-1,33,41,23,-1,42,44,43,-1,47,46,45,-1,45,48,47,-1,46,47,49,-1,48,51,50,-1,50,47,48,-1,52,45,46,-1,46,49,53,-1,53,52,46,-1,55,54,51,-1,51,48,55,-1,48,45,55,-1,56,59,58,-1,58,57,56,-1,57,58,60,-1,62,61,59,-1,59,56,62,-1,63,52,53,-1,65,64,67,-1,67,66,65,-1,68,44,42,-1,42,69,68,-1,53,57,60,-1,60,63,53,-1,53,71,70,-1,70,57,53,-1,57,70,72,-1,72,56,57,-1,56,72,73,-1,73,62,56,-1,66,73,74,-1,74,65,66,-1,59,76,75,-1,75,58,59,-1,58,75,77,-1,77,60,58,-1,60,77,78,-1,78,63,60,-1,63,78,79,-1,79,52,63,-1,52,79,80,-1,80,45,52,-1,45,80,81,-1,81,55,45,-1,64,83,82,-1,82,67,64,-1,61,82,76,-1,76,59,61,-1,35,36,37,-1,38,39,80,-1,37,38,80,-1,80,79,78,-1,78,77,75,-1,80,78,75,-1,80,75,76,-1,76,82,83,-1,83,41,33,-1,76,83,33,-1,80,76,33,-1,37,80,33,-1,35,37,33,-1,34,35,33,-1};
@@ -4192,7 +4040,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_25_943_coordIndex_1()
 		{
 			int[] value = {1,5,3,-1,3,2,1,-1,5,6,3,-1,7,27,3,-1,3,6,7,-1,0,1,2,-1,43,11,10,-1,10,4,43,-1,5,1,12,-1,1,0,12,-1,35,26,12,-1,43,4,12,-1,4,5,12,-1,72,28,9,-1,9,28,27,-1,27,7,9,-1,5,4,10,-1,10,6,5,-1,29,72,8,-1,26,35,14,-1,14,49,26,-1,35,0,15,-1,15,14,35,-1,17,16,18,-1,18,19,17,-1,16,27,28,-1,28,18,16,-1,13,2,16,-1,27,16,2,-1,2,3,27,-1,19,18,29,-1,29,8,19,-1,18,28,72,-1,72,29,18,-1,0,13,15,-1,21,20,23,-1,23,61,21,-1,20,22,24,-1,24,23,20,-1,22,17,19,-1,19,24,22,-1,20,21,49,-1,49,14,20,-1,22,20,14,-1,14,15,22,-1,15,17,22,-1,61,23,30,-1,30,25,61,-1,23,24,33,-1,33,30,23,-1,24,19,8,-1,8,33,24,-1,0,2,13,-1,15,13,17,-1,16,17,13,-1,68,69,32,-1,32,31,68,-1,30,33,32,-1,33,8,34,-1,33,34,31,-1,31,32,33,-1,32,69,25,-1,25,30,32,-1,12,0,35,-1,37,36,58,-1,58,38,37,-1,38,58,39,-1,40,39,58,-1,58,41,40,-1,51,36,37,-1,43,42,44,-1,44,11,43,-1,38,12,37,-1,37,12,51,-1,45,12,26,-1,43,12,42,-1,42,12,38,-1,73,47,56,-1,47,40,41,-1,41,56,47,-1,38,39,44,-1,44,42,38,-1,46,59,73,-1,26,49,48,-1,48,45,26,-1,45,48,50,-1,50,51,45,-1,54,53,52,-1,52,55,54,-1,55,52,56,-1,56,41,55,-1,57,55,36,-1,41,58,36,-1,36,55,41,-1,53,59,46,-1,46,52,53,-1,52,46,73,-1,73,56,52,-1,51,50,57,-1,21,61,60,-1,60,62,21,-1,62,60,63,-1,63,64,62,-1,64,63,53,-1,53,54,64,-1,62,48,49,-1,49,21,62,-1,64,50,48,-1,48,62,64,-1,50,64,54,-1,61,25,65,-1,65,60,61,-1,60,65,66,-1,66,63,60,-1,63,66,59,-1,59,53,63,-1,51,57,36,-1,50,54,57,-1,55,57,54,-1,68,67,70,-1,70,69,68,-1,65,70,66,-1,66,71,59,-1,66,70,67,-1,67,71,66,-1,70,65,25,-1,25,69,70,-1,12,45,51,-1,81,82,83,-1,81,83,84,-1,81,84,85,-1,85,86,87,-1,81,85,87,-1,88,89,90,-1,88,90,91,-1,87,88,91,-1,91,74,75,-1,91,75,76,-1,87,91,76,-1,87,76,77,-1,81,87,77,-1,81,77,78,-1,81,78,79,-1,81,79,80,-1,7,6,75,-1,75,74,7,-1,6,10,76,-1,76,75,6,-1,10,11,77,-1,77,76,10,-1,11,44,78,-1,78,77,11,-1,44,39,79,-1,79,78,44,-1,39,40,80,-1,80,79,39,-1,40,47,81,-1,81,80,40,-1,47,73,82,-1,82,81,47,-1,73,59,83,-1,83,82,73,-1,59,71,84,-1,84,83,59,-1,71,67,85,-1,85,84,71,-1,67,68,86,-1,86,85,67,-1,68,31,87,-1,87,86,68,-1,31,34,88,-1,88,87,31,-1,34,8,89,-1,89,88,34,-1,8,72,90,-1,90,89,8,-1,72,9,91,-1,91,90,72,-1,9,7,74,-1,74,91,9,-1};
@@ -4200,7 +4048,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_25_943_texCoordIndex_1()
 		{
 			int[] value = {14,15,0,-1,0,16,14,-1,15,19,0,-1,21,10,11,-1,11,18,21,-1,5,2,1,-1,6,25,24,-1,24,4,6,-1,3,2,13,-1,2,5,13,-1,66,7,13,-1,6,4,17,-1,4,15,17,-1,20,9,23,-1,23,9,10,-1,10,21,23,-1,15,4,24,-1,24,19,15,-1,12,20,22,-1,48,47,26,-1,26,27,48,-1,47,49,28,-1,28,26,47,-1,31,32,29,-1,29,30,31,-1,32,53,54,-1,54,29,32,-1,33,50,32,-1,53,32,50,-1,50,51,53,-1,30,29,55,-1,55,56,30,-1,29,54,52,-1,52,55,29,-1,49,33,28,-1,36,41,40,-1,40,35,36,-1,37,39,38,-1,38,34,37,-1,39,31,30,-1,30,38,39,-1,42,36,43,-1,43,45,42,-1,39,37,26,-1,26,28,39,-1,28,31,39,-1,35,44,57,-1,57,46,35,-1,34,38,65,-1,65,58,34,-1,38,30,56,-1,56,65,38,-1,49,50,33,-1,28,33,31,-1,32,31,33,-1,62,63,64,-1,64,61,62,-1,57,65,64,-1,65,56,60,-1,65,60,61,-1,61,64,65,-1,64,63,59,-1,59,57,64,-1,13,8,66,-1,69,68,67,-1,67,70,69,-1,70,67,71,-1,74,73,72,-1,72,75,74,-1,76,78,77,-1,80,79,82,-1,82,81,80,-1,83,84,77,-1,77,84,76,-1,85,84,86,-1,80,87,79,-1,79,87,70,-1,132,90,89,-1,90,74,75,-1,75,89,90,-1,70,71,82,-1,82,79,70,-1,88,91,132,-1,94,93,92,-1,92,95,94,-1,95,92,96,-1,96,97,95,-1,100,99,98,-1,98,101,100,-1,101,98,102,-1,102,103,101,-1,104,101,105,-1,103,106,105,-1,105,101,103,-1,99,108,107,-1,107,98,99,-1,98,107,109,-1,109,102,98,-1,97,96,104,-1,112,111,110,-1,110,113,112,-1,116,115,114,-1,114,117,116,-1,117,114,99,-1,99,100,117,-1,120,119,118,-1,118,112,120,-1,117,96,92,-1,92,116,117,-1,96,117,100,-1,111,122,121,-1,121,123,111,-1,115,125,124,-1,124,114,115,-1,114,124,108,-1,108,99,114,-1,97,104,105,-1,96,100,104,-1,101,104,100,-1,127,126,129,-1,129,128,127,-1,121,129,124,-1,124,130,108,-1,124,129,126,-1,126,130,124,-1,129,121,131,-1,131,128,129,-1,84,85,133,-1,141,142,143,-1,141,143,144,-1,141,144,145,-1,145,146,147,-1,141,145,147,-1,148,149,150,-1,148,150,151,-1,147,148,151,-1,151,134,135,-1,151,135,136,-1,147,151,136,-1,147,136,137,-1,141,147,137,-1,141,137,138,-1,141,138,139,-1,141,139,140,-1,21,18,135,-1,135,134,21,-1,19,24,136,-1,136,135,19,-1,24,25,137,-1,137,136,24,-1,81,82,138,-1,138,137,81,-1,82,71,139,-1,139,138,82,-1,73,74,140,-1,140,139,73,-1,74,90,141,-1,141,140,74,-1,90,132,142,-1,142,141,90,-1,132,91,143,-1,143,142,132,-1,108,130,144,-1,144,143,108,-1,130,126,145,-1,145,144,130,-1,126,127,146,-1,146,145,126,-1,62,61,147,-1,147,146,62,-1,61,60,148,-1,148,147,61,-1,60,56,149,-1,149,148,60,-1,22,20,150,-1,150,149,22,-1,20,23,151,-1,151,150,20,-1,23,21,134,-1,134,151,23,-1};
@@ -4209,12 +4057,14 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type double[] */
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=1 */
 		private double[] getTextureCoordinate_26_944_point_1()
 		{
 			double[] value = {0.4416,0.6747,0.4535,0.6485,0.4483,0.6438,0.4499,0.6371,0.4594,0.6763,0.4399,0.6472,0.4645,0.6783,0.4385,0.6236,0.4279,0.6258,0.1412,0.5207,0.1108,0.5655,0.1073,0.5839,0.1708,0.4854,0.4376,0.6345,0.4528,0.6648,0.4548,0.6714,0.4459,0.6652,0.4669,0.6678,0.0786,0.5849,0.4476,0.6884,0.1474,0.4856,0.0865,0.5614,0.1963,0.4863,0.1227,0.5144,0.4539,0.6879,0.4621,0.6889,0.2661,0.5914,0.3505,0.5919,0.241,0.592,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.2708,0.4736,0.347,0.4317,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3477,0.431,0.3511,0.5932,0.3206,0.4193,0.2505,0.5754,0.3554,0.5911,0.2112,0.5805,0.1632,0.5887,0.1073,0.5839,0.1474,0.4856,0.1108,0.5655,0.1412,0.5207,0.1708,0.4854,0.1963,0.4863,0.3223,0.4192,0.2638,0.4568,0.3206,0.4193,0.1963,0.4863,0.1963,0.4863,0.1963,0.4863,0.2252,0.4828,0.2252,0.4828,0.2252,0.4828,0.4337,0.6239,0.4689,0.6806,0.4689,0.6702,0.4627,0.667,0.4583,0.6722,0.4578,0.6906,0.1073,0.5839,0.0786,0.5849,0.0865,0.5614,0.1108,0.5655,0.4514,0.6379,0.4463,0.6454,0.4498,0.6514,0.4521,0.6748,0.4466,0.6744,0.4444,0.685,0.4523,0.6875,0.4395,0.6457,0.4393,0.633,0.4295,0.6275,0.4284,0.6322,0.4488,0.6639,0.1708,0.4854,0.1412,0.5207,0.1227,0.5144,0.1963,0.4863,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.1724,0.5255,0.2089,0.5196};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=2 */
 		private double[] getTextureCoordinate_26_944_point_2()
 		{
 			double[] value = {0.2133,0.556,0.1645,0.5709,0.1412,0.5207,0.1108,0.5655,0.2067,0.5908,0.1632,0.5887,0.1073,0.5839,0.1708,0.4854,0.1963,0.4863,0.1474,0.4856,0.3477,0.431,0.347,0.4317,0.3616,0.5328,0.3623,0.5333,0.238,0.493,0.2708,0.4736,0.2733,0.5359,0.249,0.5451,0.3505,0.5919,0.3511,0.5932,0.3623,0.5333,0.3223,0.4192,0.3206,0.4193,0.3477,0.431,0.2252,0.4828,0.2638,0.4568,0.1963,0.4863,0.1963,0.4863,0.2252,0.4828,0.2252,0.4828,0.1963,0.4863,0.3206,0.4193,0.1474,0.4856,0.4323,0.622,0.0865,0.5614,0.0786,0.5849,0.4539,0.6879,0.4621,0.6889,0.4523,0.6875,0.4578,0.6906,0.0865,0.5614,0.1227,0.5144,0.1474,0.4856,0.1474,0.4856,0.1227,0.5144,0.1963,0.4863,0.1963,0.4863,0.1963,0.4863,0.1963,0.4863,0.1999,0.4849,0.1421,0.507,0.1227,0.5144};
@@ -4222,7 +4072,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_26_958_coordIndex_1()
 		{
 			int[] value = {5,6,33,-1,33,28,5,-1,34,32,1,-1,1,7,34,-1,30,34,7,-1,7,8,30,-1,28,29,11,-1,11,5,28,-1,29,35,10,-1,10,11,29,-1,14,15,16,-1,16,17,18,-1,18,19,20,-1,16,18,20,-1,20,21,22,-1,22,23,12,-1,20,22,12,-1,16,20,12,-1,14,16,12,-1,13,14,12,-1,1,0,13,-1,13,12,1,-1,0,2,14,-1,14,13,0,-1,2,3,15,-1,15,14,2,-1,3,4,16,-1,16,15,3,-1,4,6,17,-1,17,16,4,-1,6,5,18,-1,18,17,6,-1,5,11,19,-1,19,18,5,-1,11,10,20,-1,20,19,11,-1,10,9,21,-1,21,20,10,-1,9,8,22,-1,22,21,9,-1,8,7,23,-1,23,22,8,-1,7,1,12,-1,12,23,7,-1,0,1,32,-1,32,24,0,-1,2,0,24,-1,24,25,2,-1,3,2,25,-1,25,26,3,-1,4,3,26,-1,26,27,4,-1,6,4,27,-1,27,33,6,-1,8,9,31,-1,31,30,8,-1,9,10,35,-1,35,31,9,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,24,32,37,-1,37,36,24,-1,32,34,38,-1,38,37,32,-1,34,30,39,-1,39,38,34,-1,30,31,40,-1,40,39,30,-1,31,35,41,-1,41,40,31,-1,35,29,42,-1,42,41,35,-1,29,28,43,-1,43,42,29,-1,28,33,44,-1,44,43,28,-1,33,27,45,-1,45,44,33,-1,27,26,46,-1,46,45,27,-1,26,25,47,-1,47,46,26,-1,25,24,36,-1,36,47,25,-1};
@@ -4230,7 +4080,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_26_958_texCoordIndex_1()
 		{
 			int[] value = {5,6,33,-1,33,28,5,-1,34,32,1,-1,1,7,34,-1,30,34,7,-1,7,8,30,-1,28,29,11,-1,11,5,28,-1,29,35,10,-1,10,11,29,-1,14,15,16,-1,16,17,18,-1,18,19,20,-1,16,18,20,-1,20,21,22,-1,22,23,12,-1,20,22,12,-1,16,20,12,-1,14,16,12,-1,13,14,12,-1,1,0,13,-1,13,12,1,-1,0,2,14,-1,14,13,0,-1,2,3,15,-1,15,14,2,-1,3,4,16,-1,16,15,3,-1,4,6,17,-1,17,16,4,-1,6,5,18,-1,18,17,6,-1,5,11,19,-1,19,18,5,-1,11,10,20,-1,20,19,11,-1,10,9,21,-1,21,20,10,-1,9,8,22,-1,22,21,9,-1,8,7,23,-1,23,22,8,-1,7,1,12,-1,12,23,7,-1,0,1,32,-1,32,24,0,-1,2,0,24,-1,24,25,2,-1,3,2,25,-1,25,26,3,-1,4,3,26,-1,26,27,4,-1,6,4,27,-1,27,33,6,-1,8,9,31,-1,31,30,8,-1,9,10,35,-1,35,31,9,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,24,32,37,-1,37,36,24,-1,32,34,38,-1,38,37,32,-1,34,30,39,-1,39,38,34,-1,30,31,40,-1,40,39,30,-1,31,35,41,-1,41,40,31,-1,35,29,42,-1,42,41,35,-1,29,28,43,-1,43,42,29,-1,28,33,44,-1,44,43,28,-1,33,27,45,-1,45,44,33,-1,27,26,46,-1,46,45,27,-1,26,25,47,-1,47,46,26,-1,25,24,36,-1,36,47,25,-1};
@@ -4239,7 +4089,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_27_973_coordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,16,21,9,-1,9,4,16,-1,20,22,10,-1,10,8,20,-1,22,18,6,-1,6,10,22,-1,17,16,4,-1,4,5,17,-1,23,17,5,-1,5,11,23,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4247,7 +4097,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_27_973_texCoordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,16,21,9,-1,9,4,16,-1,20,22,10,-1,10,8,20,-1,22,18,6,-1,6,10,22,-1,17,16,4,-1,4,5,17,-1,23,17,5,-1,5,11,23,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4256,7 +4106,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_28_982_coordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,16,21,9,-1,9,4,16,-1,20,22,10,-1,10,8,20,-1,22,18,6,-1,6,10,22,-1,17,16,4,-1,4,5,17,-1,23,17,5,-1,5,11,23,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4264,7 +4114,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_28_982_texCoordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,16,21,9,-1,9,4,16,-1,20,22,10,-1,10,8,20,-1,22,18,6,-1,6,10,22,-1,17,16,4,-1,4,5,17,-1,23,17,5,-1,5,11,23,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4273,7 +4123,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_29_991_coordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4281,7 +4131,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_29_991_texCoordIndex_1()
 		{
 			int[] value = {12,20,8,-1,8,0,12,-1,13,12,0,-1,0,1,13,-1,14,13,1,-1,1,2,14,-1,15,14,2,-1,2,3,15,-1,21,15,3,-1,3,9,21,-1,18,19,7,-1,7,6,18,-1,19,23,11,-1,11,7,19,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4290,7 +4140,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_30_1000_coordIndex_1()
 		{
 			int[] value = {8,0,12,-1,12,20,8,-1,0,1,13,-1,13,12,0,-1,1,2,14,-1,14,13,1,-1,2,3,15,-1,15,14,2,-1,3,9,21,-1,21,15,3,-1,7,6,18,-1,18,19,7,-1,11,7,19,-1,19,23,11,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4298,7 +4148,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_30_1000_texCoordIndex_1()
 		{
 			int[] value = {8,0,12,-1,12,20,8,-1,0,1,13,-1,13,12,0,-1,1,2,14,-1,14,13,1,-1,2,3,15,-1,15,14,2,-1,3,9,21,-1,21,15,3,-1,7,6,18,-1,18,19,7,-1,11,7,19,-1,19,23,11,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4307,7 +4157,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_31_1009_coordIndex_1()
 		{
 			int[] value = {14,15,16,-1,16,17,18,-1,18,19,20,-1,16,18,20,-1,20,21,22,-1,22,23,12,-1,20,22,12,-1,16,20,12,-1,14,16,12,-1,13,14,12,-1,0,1,13,-1,13,12,0,-1,1,7,14,-1,14,13,1,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,6,19,-1,19,18,11,-1,6,5,20,-1,20,19,6,-1,5,4,21,-1,21,20,5,-1,4,3,22,-1,22,21,4,-1,3,2,23,-1,23,22,3,-1,2,0,12,-1,12,23,2,-1,1,0,24,-1,24,32,1,-1,0,2,25,-1,25,24,0,-1,2,3,26,-1,26,25,2,-1,3,4,27,-1,27,26,3,-1,4,5,33,-1,33,27,4,-1,9,8,30,-1,30,31,9,-1,10,9,31,-1,31,35,10,-1,5,6,28,-1,28,33,5,-1,7,1,32,-1,32,34,7,-1,8,7,34,-1,34,30,8,-1,6,11,29,-1,29,28,6,-1,11,10,35,-1,35,29,11,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,32,24,37,-1,37,36,32,-1,24,25,38,-1,38,37,24,-1,25,26,39,-1,39,38,25,-1,26,27,40,-1,40,39,26,-1,27,33,41,-1,41,40,27,-1,33,28,42,-1,42,41,33,-1,28,29,43,-1,43,42,28,-1,29,35,44,-1,44,43,29,-1,35,31,45,-1,45,44,35,-1,31,30,46,-1,46,45,31,-1,30,34,47,-1,47,46,30,-1,34,32,36,-1,36,47,34,-1};
@@ -4315,7 +4165,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_31_1009_texCoordIndex_1()
 		{
 			int[] value = {14,15,16,-1,16,17,18,-1,18,19,20,-1,16,18,20,-1,20,21,22,-1,22,23,12,-1,20,22,12,-1,16,20,12,-1,14,16,12,-1,13,14,12,-1,0,1,13,-1,13,12,0,-1,1,7,14,-1,14,13,1,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,6,19,-1,19,18,11,-1,6,5,20,-1,20,19,6,-1,5,4,21,-1,21,20,5,-1,4,3,22,-1,22,21,4,-1,3,2,23,-1,23,22,3,-1,2,0,12,-1,12,23,2,-1,1,0,24,-1,24,32,1,-1,0,2,25,-1,25,24,0,-1,2,3,26,-1,26,25,2,-1,3,4,27,-1,27,26,3,-1,4,5,33,-1,33,27,4,-1,9,8,30,-1,30,31,9,-1,10,9,31,-1,31,35,10,-1,5,6,28,-1,28,33,5,-1,7,1,32,-1,32,34,7,-1,8,7,34,-1,34,30,8,-1,6,11,29,-1,29,28,6,-1,11,10,35,-1,35,29,11,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,32,24,37,-1,37,36,32,-1,24,25,38,-1,38,37,24,-1,25,26,39,-1,39,38,25,-1,26,27,40,-1,40,39,26,-1,27,33,41,-1,41,40,27,-1,33,28,42,-1,42,41,33,-1,28,29,43,-1,43,42,28,-1,29,35,44,-1,44,43,29,-1,35,31,45,-1,45,44,35,-1,31,30,46,-1,46,45,31,-1,30,34,47,-1,47,46,30,-1,34,32,36,-1,36,47,34,-1};
@@ -4324,7 +4174,7 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_32_1021_coordIndex_1()
 		{
 			int[] value = {8,0,12,-1,12,20,8,-1,0,1,13,-1,13,12,0,-1,1,2,14,-1,14,13,1,-1,2,3,15,-1,15,14,2,-1,3,9,21,-1,21,15,3,-1,7,6,18,-1,18,19,7,-1,11,7,19,-1,19,23,11,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4332,7 +4182,7 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_32_1021_texCoordIndex_1()
 		{
 			int[] value = {8,0,12,-1,12,20,8,-1,0,1,13,-1,13,12,0,-1,1,2,14,-1,14,13,1,-1,2,3,15,-1,15,14,2,-1,3,9,21,-1,21,15,3,-1,7,6,18,-1,18,19,7,-1,11,7,19,-1,19,23,11,-1,9,4,16,-1,16,21,9,-1,10,8,20,-1,20,22,10,-1,6,10,22,-1,22,18,6,-1,4,5,17,-1,17,16,4,-1,5,11,23,-1,23,17,5,-1,26,27,28,-1,28,29,30,-1,30,31,32,-1,28,30,32,-1,32,33,34,-1,34,35,24,-1,32,34,24,-1,28,32,24,-1,26,28,24,-1,25,26,24,-1,38,39,40,-1,40,41,42,-1,42,43,44,-1,40,42,44,-1,44,45,46,-1,46,47,36,-1,44,46,36,-1,40,44,36,-1,38,40,36,-1,37,38,36,-1,0,8,25,-1,25,24,0,-1,8,10,26,-1,26,25,8,-1,10,6,27,-1,27,26,10,-1,6,7,28,-1,28,27,6,-1,7,11,29,-1,29,28,7,-1,11,5,30,-1,30,29,11,-1,5,4,31,-1,31,30,5,-1,4,9,32,-1,32,31,4,-1,9,3,33,-1,33,32,9,-1,3,2,34,-1,34,33,3,-1,2,1,35,-1,35,34,2,-1,1,0,24,-1,24,35,1,-1,20,12,37,-1,37,36,20,-1,12,13,38,-1,38,37,12,-1,13,14,39,-1,39,38,13,-1,14,15,40,-1,40,39,14,-1,15,21,41,-1,41,40,15,-1,21,16,42,-1,42,41,21,-1,16,17,43,-1,43,42,16,-1,17,23,44,-1,44,43,17,-1,23,19,45,-1,45,44,23,-1,19,18,46,-1,46,45,19,-1,18,22,47,-1,47,46,18,-1,22,20,36,-1,36,47,22,-1};
@@ -4341,17 +4191,21 @@ public class JinScaledV2L1LOA4Sites07f
 
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_33_1030_coordIndex_1()
 		{
 			int[] value = {51,38,41,-1,41,43,51,-1,43,52,171,-1,171,151,43,-1,49,42,41,-1,41,38,49,-1,44,186,171,-1,171,52,44,-1,78,76,51,-1,51,43,78,-1,189,78,43,-1,43,151,189,-1,9,172,13,-1,13,10,9,-1,73,193,9,-1,9,10,73,-1,11,50,27,-1,16,13,172,-1,13,67,14,-1,68,15,14,-1,7,6,67,-1,13,16,67,-1,7,67,16,-1,16,172,173,-1,7,16,136,-1,7,136,130,-1,131,132,173,-1,68,19,18,-1,18,15,68,-1,20,32,18,-1,17,8,32,-1,15,66,13,-1,13,14,15,-1,32,23,24,-1,24,17,32,-1,21,24,23,-1,21,22,24,-1,24,22,17,-1,27,25,11,-1,25,31,11,-1,22,28,17,-1,27,30,29,-1,12,26,29,-1,26,27,29,-1,27,28,30,-1,30,28,22,-1,6,14,67,-1,1,34,31,-1,34,36,35,-1,34,35,31,-1,34,1,36,-1,49,37,1,-1,1,40,49,-1,39,37,49,-1,49,38,39,-1,37,39,1,-1,42,49,40,-1,40,0,42,-1,44,52,0,-1,186,44,0,-1,0,149,186,-1,51,76,45,-1,45,76,77,-1,53,45,77,-1,1,39,45,-1,45,53,1,-1,45,39,38,-1,38,51,45,-1,53,77,46,-1,77,74,33,-1,33,46,77,-1,1,53,46,-1,46,36,1,-1,46,33,35,-1,35,36,46,-1,74,50,33,-1,8,17,47,-1,11,31,50,-1,35,33,50,-1,31,35,50,-1,50,74,75,-1,47,75,8,-1,27,50,28,-1,28,50,47,-1,28,47,17,-1,75,73,48,-1,48,73,10,-1,66,48,10,-1,10,13,66,-1,75,66,8,-1,66,75,48,-1,8,66,18,-1,18,32,8,-1,15,18,66,-1,47,50,75,-1,41,52,43,-1,42,0,41,-1,0,52,41,-1,0,54,149,-1,244,245,54,-1,0,56,54,-1,0,40,55,-1,55,57,0,-1,3,57,55,-1,0,57,56,-1,3,62,5,-1,5,62,58,-1,3,64,62,-1,2,61,62,-1,62,64,2,-1,3,60,64,-1,55,40,59,-1,64,60,59,-1,64,59,135,-1,149,54,245,-1,5,57,3,-1,54,5,244,-1,152,63,61,-1,153,63,152,-1,63,5,58,-1,153,244,63,-1,244,5,63,-1,58,61,63,-1,58,62,61,-1,56,5,54,-1,56,57,5,-1,60,3,55,-1,60,55,59,-1,1,133,135,-1,59,40,1,-1,59,1,135,-1,65,135,133,-1,2,65,133,-1,2,64,65,-1,64,135,65,-1,73,75,69,-1,263,193,73,-1,73,69,263,-1,69,75,74,-1,74,71,69,-1,71,74,77,-1,77,72,71,-1,69,71,266,-1,266,263,69,-1,72,70,266,-1,266,71,72,-1,78,72,77,-1,77,76,78,-1,189,70,72,-1,72,78,189,-1,138,123,113,-1,79,122,123,-1,122,79,80,-1,137,124,81,-1,137,81,82,-1,137,82,83,-1,83,79,137,-1,79,83,80,-1,84,116,122,-1,124,84,122,-1,84,119,116,-1,123,122,113,-1,113,122,109,-1,115,138,113,-1,113,114,115,-1,117,286,158,-1,158,112,117,-1,122,116,109,-1,79,123,133,-1,133,123,138,-1,133,137,79,-1,129,138,115,-1,110,117,112,-1,111,117,110,-1,2,133,138,-1,109,85,113,-1,86,113,85,-1,107,294,160,-1,160,126,107,-1,107,126,125,-1,125,108,107,-1,125,127,87,-1,87,108,125,-1,108,87,103,-1,103,104,108,-1,114,301,154,-1,154,115,114,-1,302,114,86,-1,86,159,302,-1,114,113,86,-1,116,105,109,-1,109,105,87,-1,85,88,86,-1,109,87,85,-1,104,174,305,-1,305,108,104,-1,305,175,108,-1,105,103,87,-1,307,91,170,-1,170,150,307,-1,174,104,95,-1,95,162,174,-1,311,150,170,-1,170,177,311,-1,116,90,105,-1,89,90,116,-1,94,168,167,-1,167,93,94,-1,105,90,96,-1,97,95,104,-1,104,103,97,-1,120,121,95,-1,95,97,120,-1,105,96,97,-1,97,103,105,-1,120,97,96,-1,96,98,120,-1,121,100,95,-1,163,91,162,-1,93,170,99,-1,98,96,90,-1,90,101,98,-1,99,163,100,-1,110,112,92,-1,101,90,89,-1,89,106,101,-1,92,112,165,-1,165,177,170,-1,175,294,107,-1,107,108,175,-1,119,89,116,-1,118,111,119,-1,118,117,111,-1,152,138,129,-1,2,138,61,-1,61,138,152,-1,87,127,88,-1,88,85,87,-1,124,119,84,-1,119,111,164,-1,111,166,164,-1,111,110,166,-1,92,166,110,-1,133,4,137,-1,133,134,4,-1,160,176,128,-1,128,126,160,-1,126,128,127,-1,127,125,126,-1,80,81,124,-1};
 			return value;
 		}
+
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=2 */
 		private int[] getIndexedFaceSet_33_1030_coordIndex_2()
 		{
 			int[] value = {124,122,80,-1,82,81,80,-1,80,83,82,-1,129,115,154,-1,154,152,129,-1,94,140,139,-1,139,102,94,-1,93,141,140,-1,140,94,93,-1,99,142,141,-1,141,93,99,-1,100,143,142,-1,142,99,100,-1,121,144,143,-1,143,100,121,-1,120,145,144,-1,144,121,120,-1,98,146,145,-1,145,120,98,-1,101,147,146,-1,146,98,101,-1,106,148,147,-1,147,101,106,-1,106,102,139,-1,139,148,106,-1,114,302,301,-1,88,127,155,-1,155,157,88,-1,127,161,156,-1,156,155,127,-1,352,353,156,-1,156,161,352,-1,156,353,354,-1,155,156,354,-1,155,354,157,-1,127,128,161,-1,161,128,176,-1,176,352,161,-1,168,94,102,-1,102,169,168,-1,170,93,167,-1,169,102,106,-1,106,164,169,-1,170,91,99,-1,99,91,163,-1,100,163,162,-1,162,95,100,-1,91,307,174,-1,174,162,91,-1,164,106,89,-1,164,89,119,-1,165,170,167,-1,92,165,167,-1,167,168,92,-1,166,92,168,-1,168,169,166,-1,164,166,169,-1,165,112,177,-1,177,112,158,-1,158,311,177,-1,180,179,178,-1,178,181,180,-1,179,151,171,-1,171,182,179,-1,183,181,178,-1,178,184,183,-1,185,182,171,-1,171,186,185,-1,187,179,180,-1,180,188,187,-1,189,151,179,-1,179,187,189,-1,9,191,190,-1,190,172,9,-1,192,191,9,-1,9,193,192,-1,194,196,195,-1,197,172,190,-1,190,199,198,-1,200,199,201,-1,202,198,203,-1,190,198,197,-1,202,197,198,-1,197,173,172,-1,202,204,197,-1,202,205,204,-1,206,173,207,-1,200,201,208,-1,208,209,200,-1,210,208,211,-1,212,211,213,-1,201,199,190,-1,190,214,201,-1,211,212,215,-1,215,216,211,-1,217,216,215,-1,217,215,218,-1,215,212,218,-1,196,194,219,-1,219,194,220,-1,218,212,221,-1,196,223,222,-1,224,223,225,-1,225,223,196,-1,196,222,221,-1,222,218,221,-1,203,198,199,-1,226,220,227,-1,227,229,228,-1,227,220,229,-1,227,228,226,-1,183,230,226,-1,226,231,183,-1,232,181,183,-1,183,231,232,-1,231,226,232,-1,184,233,230,-1,230,183,184,-1,185,233,182,-1,186,149,233,-1,233,185,186,-1,180,234,188,-1,234,235,188,-1,236,235,234,-1,226,236,234,-1,234,232,226,-1,234,180,181,-1,181,232,234,-1,236,237,235,-1,235,237,238,-1,238,239,235,-1,226,228,237,-1,237,236,226,-1,237,228,229,-1,229,238,237,-1,239,238,195,-1,213,240,212,-1,194,195,220,-1,229,195,238,-1,220,195,229,-1,195,241,239,-1,240,213,241,-1,196,221,195,-1,221,240,195,-1,221,212,240,-1,241,242,192,-1,242,191,192,-1,214,190,191,-1,191,242,214,-1,241,213,214,-1,214,242,241,-1,213,211,208,-1,208,214,213,-1,201,214,208,-1,240,241,195,-1,178,179,182,-1,184,178,233,-1,233,178,182,-1,233,149,243,-1,244,243,245,-1,233,243,246,-1,233,248,247,-1,247,230,233,-1,249,247,248,-1,233,246,248,-1,249,251,250,-1,251,252,250,-1,249,250,253,-1,254,253,250,-1,250,255,254,-1,249,253,256,-1,247,257,230,-1,253,257,256,-1,253,258,257,-1,149,245,243,-1,251,249,248,-1,243,244,251,-1,152,255,259,-1,153,152,259,-1,259,252,251,-1,153,259,244,-1,244,259,251,-1,252,259,255,-1,252,255,250,-1,246,243,251,-1,246,251,248,-1,256,247,249,-1,256,257,247,-1,226,258,260,-1,257,226,230,-1,257,258,226,-1,261,260,258,-1,254,260,261,-1,254,261,253,-1,253,261,258,-1,192,262,241,-1,263,262,192,-1,192,193,263,-1,262,264,239,-1,239,241,262,-1,264,265,235,-1,235,239,264,-1,262,263,266,-1,266,264,262,-1,265,264,266,-1,266,70,265,-1,187,188,235,-1,235,265,187,-1,189,187,265,-1,265,70,189,-1,267,269,268,-1,270,268,271,-1,271,272,270,-1,273,275,274,-1,273,276,275,-1,273,270,277,-1,277,276,273,-1,270,272,277,-1,278,271,279,-1,274,271,278,-1,278,279,280,-1,268,269,271,-1,269,281,271,-1,283,282,269,-1,269,267,283,-1,285,284,158,-1,158,286,285,-1,271,281,279,-1,270,260,268,-1,260,267,268,-1,260,270,273,-1,287,283,267,-1,288,284,285,-1,289,288,285,-1,254,267,260,-1,281,269,290,-1,291,290,269,-1,293,292,160,-1,160,294,293,-1,293,296,295,-1,295,292,293,-1,295,296,297,-1,297,298,295,-1,296,300,299,-1,299,297,296,-1,282,283,154,-1,154,301,282,-1,302,159,291,-1,291,282,302,-1,282,291,269,-1};
 			return value;
 		}
+
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=3 */
 		private int[] getIndexedFaceSet_33_1030_coordIndex_3()
 		{
 			int[] value = {279,281,303,-1,281,297,303,-1,290,291,304,-1,281,290,297,-1,300,296,305,-1,305,174,300,-1,305,296,175,-1,303,297,299,-1,307,150,306,-1,306,308,307,-1,174,310,309,-1,309,300,174,-1,311,312,306,-1,306,150,311,-1,279,303,313,-1,314,279,313,-1,315,318,317,-1,317,316,315,-1,303,319,313,-1,320,299,300,-1,300,309,320,-1,321,320,309,-1,309,322,321,-1,303,299,320,-1,320,319,303,-1,321,323,319,-1,319,320,321,-1,322,309,324,-1,325,310,308,-1,318,326,306,-1,323,327,313,-1,313,319,323,-1,326,324,325,-1,288,328,284,-1,327,329,314,-1,314,313,327,-1,328,330,284,-1,330,306,312,-1,175,293,294,-1,293,175,296,-1,280,279,314,-1,331,280,289,-1,331,289,285,-1,152,287,267,-1,254,255,267,-1,255,152,267,-1,297,290,304,-1,304,298,297,-1,274,278,280,-1,280,332,289,-1,289,332,333,-1,289,333,288,-1,328,288,333,-1,260,273,334,-1,260,334,335,-1,160,292,336,-1,336,176,160,-1,292,295,298,-1,298,336,292,-1,272,271,274,-1,274,275,272,-1,276,277,272,-1,272,275,276,-1,287,152,154,-1,154,283,287,-1,315,337,339,-1,339,338,315,-1,318,315,338,-1,338,340,318,-1,326,318,340,-1,340,341,326,-1,324,326,341,-1,341,342,324,-1,322,324,342,-1,342,343,322,-1,321,322,343,-1,343,344,321,-1,323,321,344,-1,344,345,323,-1,327,323,345,-1,345,346,327,-1,329,327,346,-1,346,347,329,-1,329,347,339,-1,339,337,329,-1,282,301,302,-1,304,349,348,-1,348,298,304,-1,298,348,351,-1,351,350,298,-1,352,350,351,-1,351,353,352,-1,348,349,354,-1,354,353,351,-1,348,354,351,-1,298,350,336,-1,350,352,176,-1,176,336,350,-1,316,355,337,-1,337,315,316,-1,306,317,318,-1,355,332,329,-1,329,337,355,-1,306,326,308,-1,326,325,308,-1,324,309,310,-1,310,325,324,-1,308,310,174,-1,174,307,308,-1,332,314,329,-1,332,280,314,-1,330,317,306,-1,328,316,317,-1,317,330,328,-1,333,355,316,-1,316,328,333,-1,332,355,333,-1,330,312,284,-1,312,311,158,-1,158,284,312,-1};
@@ -4359,17 +4213,21 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type int[] */
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=1 */
 		private int[] getIndexedFaceSet_33_1030_texCoordIndex_1()
 		{
 			int[] value = {0,3,2,-1,2,1,0,-1,1,6,5,-1,5,4,1,-1,7,8,2,-1,2,3,7,-1,9,10,5,-1,5,6,9,-1,11,12,0,-1,0,1,11,-1,13,11,1,-1,1,4,13,-1,14,17,16,-1,16,15,14,-1,18,19,14,-1,14,15,18,-1,22,21,20,-1,23,16,17,-1,16,25,24,-1,27,26,24,-1,29,28,25,-1,16,23,25,-1,29,25,23,-1,31,17,30,-1,29,23,32,-1,33,32,31,-1,33,31,30,-1,27,35,34,-1,34,26,27,-1,37,36,34,-1,39,38,36,-1,26,40,16,-1,16,24,26,-1,36,42,41,-1,41,39,36,-1,43,41,42,-1,43,44,41,-1,41,44,39,-1,20,45,22,-1,45,46,22,-1,44,47,39,-1,20,49,50,-1,48,51,50,-1,51,20,50,-1,20,47,49,-1,49,47,44,-1,28,24,25,-1,53,52,46,-1,52,55,54,-1,52,54,46,-1,52,53,55,-1,7,57,53,-1,53,56,7,-1,58,57,7,-1,7,59,58,-1,57,58,53,-1,8,7,56,-1,56,60,8,-1,9,6,60,-1,10,9,60,-1,60,61,10,-1,0,12,62,-1,62,12,63,-1,64,62,63,-1,53,58,62,-1,62,64,53,-1,62,58,59,-1,59,0,62,-1,64,63,65,-1,63,67,66,-1,66,65,63,-1,53,64,65,-1,65,55,53,-1,65,66,54,-1,54,55,65,-1,67,21,66,-1,38,39,68,-1,22,46,21,-1,54,66,21,-1,46,54,21,-1,21,67,69,-1,68,69,38,-1,20,21,47,-1,47,21,68,-1,47,68,39,-1,69,18,70,-1,70,18,15,-1,40,70,15,-1,15,16,40,-1,69,71,38,-1,71,69,70,-1,38,71,34,-1,34,36,38,-1,26,34,71,-1,68,21,69,-1,2,6,1,-1,8,60,2,-1,60,6,2,-1,74,73,72,-1,77,76,75,-1,74,78,73,-1,74,81,80,-1,80,79,74,-1,82,79,80,-1,74,79,78,-1,82,84,83,-1,83,84,85,-1,82,86,84,-1,87,90,89,-1,89,88,87,-1,92,91,88,-1,80,81,93,-1,88,91,94,-1,86,93,95,-1,72,73,96,-1,83,79,82,-1,73,83,97,-1,100,99,98,-1,103,102,101,-1,99,83,85,-1,104,97,99,-1,97,83,99,-1,105,90,102,-1,105,89,90,-1,107,106,75,-1,107,108,106,-1,109,82,80,-1,109,80,93,-1,112,111,110,-1,93,81,113,-1,93,113,95,-1,114,110,111,-1,115,114,111,-1,87,86,116,-1,86,95,116,-1,18,69,117,-1,118,19,18,-1,18,117,118,-1,117,69,67,-1,67,119,117,-1,119,67,63,-1,63,120,119,-1,117,119,121,-1,121,118,117,-1,120,122,121,-1,121,119,120,-1,11,120,63,-1,63,12,11,-1,13,122,120,-1,120,11,13,-1,125,124,123,-1,127,126,124,-1,126,127,128,-1,131,130,129,-1,131,129,132,-1,131,132,133,-1,133,127,131,-1,127,133,128,-1,135,134,126,-1,130,135,126,-1,135,136,134,-1,124,126,123,-1,123,126,137,-1,138,125,123,-1,123,139,138,-1,140,143,142,-1,142,141,140,-1,126,134,137,-1,127,124,144,-1,144,124,125,-1,144,131,127,-1,145,125,138,-1,146,140,141,-1,147,140,146,-1,148,144,125,-1,137,149,123,-1,150,123,149,-1,153,156,155,-1,155,154,153,-1,153,154,158,-1,158,157,153,-1,158,160,159,-1,159,157,158,-1,157,159,162,-1,162,161,157,-1,139,215,164,-1,164,138,139,-1,163,139,150,-1,150,165,163,-1,139,123,150,-1,168,167,166,-1,166,167,159,-1,169,151,152,-1,166,159,169,-1,161,172,170,-1,170,157,161,-1,170,171,157,-1,167,162,159,-1,173,176,236,-1,236,174,173,-1,172,161,177,-1,177,233,172,-1,241,174,236,-1,236,240,241,-1,168,180,167,-1,181,180,168,-1,183,238,237,-1,237,231,183,-1,167,180,186,-1,187,177,161,-1,161,162,187,-1,188,189,177,-1,177,187,188,-1,167,186,187,-1,187,162,167,-1,188,187,186,-1,186,190,188,-1,189,192,177,-1,234,176,233,-1,231,175,191,-1,190,186,180,-1,180,193,190,-1,191,234,192,-1,146,141,195,-1,193,180,181,-1,181,194,193,-1,195,141,196,-1,196,240,236,-1,171,156,153,-1,153,157,171,-1,197,181,168,-1,198,147,242,-1,198,140,147,-1,199,125,145,-1,148,125,200,-1,200,125,199,-1,159,160,151,-1,151,169,159,-1,130,136,135,-1,242,147,184,-1,147,201,184,-1,147,146,201,-1,195,201,146,-1,144,202,131,-1,144,148,202,-1,155,204,203,-1,203,154,155,-1,154,203,160,-1,160,158,154,-1,205,208,207,-1};
 			return value;
 		}
+
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=2 */
 		private int[] getIndexedFaceSet_33_1030_texCoordIndex_2()
 		{
 			int[] value = {207,206,205,-1,209,208,205,-1,205,210,209,-1,213,214,211,-1,211,212,213,-1,191,191,192,-1,192,192,191,-1,191,191,191,-1,191,191,191,-1,191,191,191,-1,191,191,191,-1,192,192,191,-1,191,191,192,-1,189,189,192,-1,192,192,189,-1,188,188,189,-1,189,189,188,-1,190,190,188,-1,188,188,190,-1,193,193,190,-1,190,190,193,-1,194,194,193,-1,193,193,194,-1,194,232,232,-1,232,194,194,-1,139,163,215,-1,222,223,217,-1,217,216,222,-1,223,229,218,-1,218,217,223,-1,228,219,218,-1,218,229,228,-1,218,219,221,-1,217,218,221,-1,217,221,220,-1,224,225,226,-1,226,225,227,-1,227,230,226,-1,238,183,232,-1,232,239,238,-1,175,231,237,-1,239,232,194,-1,194,178,239,-1,175,176,191,-1,191,176,234,-1,192,234,233,-1,233,177,192,-1,176,173,172,-1,172,233,176,-1,178,194,181,-1,184,235,242,-1,196,236,179,-1,195,196,179,-1,179,182,195,-1,201,195,182,-1,182,185,201,-1,184,201,185,-1,196,141,240,-1,240,141,142,-1,142,241,240,-1,245,244,243,-1,243,246,245,-1,244,248,247,-1,247,249,244,-1,250,246,243,-1,243,251,250,-1,252,249,247,-1,247,253,252,-1,254,244,245,-1,245,255,254,-1,256,248,244,-1,244,254,256,-1,259,258,257,-1,257,260,259,-1,261,258,259,-1,259,262,261,-1,263,265,264,-1,266,260,257,-1,257,268,267,-1,269,268,270,-1,271,267,272,-1,257,267,266,-1,271,266,267,-1,273,274,260,-1,271,275,266,-1,276,273,275,-1,276,274,273,-1,269,270,277,-1,277,278,269,-1,279,277,280,-1,281,280,282,-1,270,268,257,-1,257,283,270,-1,280,281,284,-1,284,285,280,-1,286,285,284,-1,286,284,287,-1,284,281,287,-1,265,263,288,-1,288,263,289,-1,287,281,290,-1,265,292,291,-1,293,292,294,-1,294,292,265,-1,265,291,290,-1,291,287,290,-1,272,267,268,-1,295,289,296,-1,296,298,297,-1,296,289,298,-1,296,297,295,-1,250,299,295,-1,295,300,250,-1,302,301,250,-1,250,300,302,-1,300,295,302,-1,251,303,299,-1,299,250,251,-1,252,303,249,-1,253,304,303,-1,303,252,253,-1,245,305,255,-1,305,306,255,-1,307,306,305,-1,295,307,305,-1,305,302,295,-1,305,245,301,-1,301,302,305,-1,307,308,306,-1,306,308,309,-1,309,310,306,-1,295,297,308,-1,308,307,295,-1,308,297,298,-1,298,309,308,-1,310,309,264,-1,282,311,281,-1,263,264,289,-1,298,264,309,-1,289,264,298,-1,264,312,310,-1,311,282,312,-1,265,290,264,-1,290,311,264,-1,290,281,311,-1,312,313,261,-1,313,258,261,-1,283,257,258,-1,258,313,283,-1,312,282,314,-1,314,313,312,-1,282,280,277,-1,277,314,282,-1,270,314,277,-1,311,312,264,-1,243,244,249,-1,251,243,303,-1,303,243,249,-1,315,317,316,-1,318,320,319,-1,315,316,321,-1,315,323,322,-1,322,324,315,-1,325,322,323,-1,315,321,323,-1,325,327,326,-1,327,328,326,-1,325,326,329,-1,332,331,330,-1,330,333,332,-1,334,331,335,-1,322,336,324,-1,331,337,335,-1,329,338,336,-1,317,339,316,-1,327,325,323,-1,316,340,327,-1,341,343,342,-1,344,346,345,-1,342,328,327,-1,347,342,340,-1,340,342,327,-1,348,345,333,-1,348,333,330,-1,349,320,350,-1,349,350,351,-1,352,322,325,-1,352,336,322,-1,353,355,354,-1,336,356,324,-1,336,338,356,-1,357,354,355,-1,358,354,357,-1,332,359,329,-1,329,359,338,-1,261,360,312,-1,361,360,261,-1,261,262,361,-1,360,362,310,-1,310,312,360,-1,362,363,306,-1,306,310,362,-1,360,361,364,-1,364,362,360,-1,363,362,364,-1,364,365,363,-1,254,255,306,-1,306,363,254,-1,256,254,363,-1,363,365,256,-1,366,368,367,-1,369,367,370,-1,370,371,369,-1,372,374,373,-1,372,375,374,-1,372,369,376,-1,376,375,372,-1,369,371,376,-1,377,370,378,-1,373,370,377,-1,377,378,379,-1,367,368,370,-1,368,380,370,-1,382,381,368,-1,368,366,382,-1,385,384,383,-1,383,386,385,-1,370,380,378,-1,369,387,367,-1,387,366,367,-1,387,369,372,-1,388,382,366,-1,389,384,385,-1,390,389,385,-1,391,366,387,-1,380,368,392,-1,393,392,368,-1,396,395,394,-1,394,397,396,-1,396,399,398,-1,398,395,396,-1,398,399,400,-1,400,401,398,-1,399,403,402,-1,402,400,399,-1,381,382,405,-1,405,404,381,-1,406,407,393,-1,393,381,406,-1,381,393,368,-1};
 			return value;
 		}
+
+		/** Define subarray values using type int[] with $tupleSize=1 and $tupleSplitSize=100 for subarray position()=3 */
 		private int[] getIndexedFaceSet_33_1030_texCoordIndex_3()
 		{
 			int[] value = {408,410,409,-1,410,400,409,-1,411,413,412,-1,410,411,400,-1,403,399,414,-1,414,415,403,-1,414,399,416,-1,409,400,402,-1,419,418,417,-1,417,420,419,-1,415,422,421,-1,421,403,415,-1,423,424,417,-1,417,418,423,-1,408,409,425,-1,426,408,425,-1,427,430,429,-1,429,428,427,-1,409,431,425,-1,432,402,403,-1,403,421,432,-1,433,432,421,-1,421,434,433,-1,409,402,432,-1,432,431,409,-1,433,435,431,-1,431,432,433,-1,434,421,436,-1,437,422,420,-1,430,439,438,-1,435,440,425,-1,425,431,435,-1,439,436,437,-1,389,441,384,-1,440,442,426,-1,426,425,440,-1,441,443,384,-1,443,417,424,-1,416,396,397,-1,396,416,399,-1,444,408,426,-1,445,446,390,-1,445,390,385,-1,447,388,366,-1,391,448,366,-1,448,447,366,-1,400,411,412,-1,412,401,400,-1,373,377,379,-1,446,449,390,-1,390,449,450,-1,390,450,389,-1,441,389,450,-1,387,372,451,-1,387,451,391,-1,394,395,452,-1,452,453,394,-1,395,398,401,-1,401,452,395,-1,456,455,454,-1,454,457,456,-1,459,458,456,-1,456,457,459,-1,462,461,460,-1,460,463,462,-1,439,436,436,-1,436,439,439,-1,439,439,439,-1,439,439,439,-1,439,439,439,-1,439,439,439,-1,436,439,439,-1,439,436,436,-1,434,436,436,-1,436,434,434,-1,433,434,434,-1,434,433,433,-1,435,433,433,-1,433,435,435,-1,440,435,435,-1,435,440,440,-1,442,440,440,-1,440,442,442,-1,442,442,464,-1,464,464,442,-1,381,404,406,-1,465,468,467,-1,467,466,465,-1,466,467,470,-1,470,469,466,-1,471,469,470,-1,470,472,471,-1,467,474,473,-1,473,472,470,-1,467,473,470,-1,475,477,476,-1,477,479,478,-1,478,476,477,-1,428,480,464,-1,464,427,428,-1,438,429,430,-1,480,481,442,-1,442,464,480,-1,438,439,420,-1,439,437,420,-1,436,421,422,-1,422,437,436,-1,420,422,415,-1,415,419,420,-1,481,426,442,-1,449,446,482,-1,443,483,417,-1,441,484,483,-1,483,443,441,-1,450,485,484,-1,484,441,450,-1,449,485,450,-1,443,424,384,-1,424,423,383,-1,383,384,424,-1};
@@ -4377,22 +4235,28 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type double[] */
+		/** Define subarray values using type double[] with $tupleSize=3 and $tupleSplitSize=100 for subarray position()=1 */
 		private double[] getCoordinate_34_1030_point_1()
 		{
 			double[] value = {0.05841,1.3813876,-0.17548425,0.13095,1.4007375,-0.065819256,0.08352,1.3402126,-0.06696675,0.0733725,1.3453425,-0.11111175,0.127305,1.3711276,-0.060059253,0.040950004,1.3416525,-0.13163176,0.0538875,1.424025,0.12734327,0.01746225,1.4231701,0.13942575,0.099180005,1.5197176,0.06720076,0.0,1.565775,0.11168326,0.0500625,1.5576751,0.10389825,0.134145,1.411965,0.01077075,0.090922505,1.3315119,0.06382576,0.044370003,1.5286726,0.12759075,0.0570825,1.4701725,0.12770325,0.083115004,1.4622526,0.10351576,0.01006875,1.4778225,0.15020326,0.108967505,1.4518801,0.061755754,0.087435,1.4609926,0.09595576,0.0828225,1.429515,0.09708075,0.086085,1.4251726,0.08949825,0.07389,1.36827,0.08558325,0.10221751,1.4054401,0.06328575,0.0868275,1.3995225,0.08274825,0.1029375,1.3979701,0.074693255,0.11396251,1.3392676,0.012615751,0.109417506,1.351575,0.03788325,0.11826,1.3732876,0.03009825,0.1248525,1.4371201,0.04562325,0.1161225,1.3584375,0.04580325,0.122445,1.3999051,0.049515754,0.1374975,1.4114026,-0.00951525,0.091395,1.4446801,0.07953076,0.13515751,1.48941,-0.028125001,0.1579725,1.3500226,-0.036045,0.14778,1.4218875,-0.03188475,0.14233501,1.4181975,-0.05031675,0.140175,1.3313318,-0.09286425,0.11198251,1.4333401,-0.14308426,0.14233501,1.41741,-0.081816755,0.09486,1.3897575,-0.13088925,0.07924501,1.4435551,-0.17667675,0.07704,1.3545,-0.17919676,0.055777505,1.4909626,-0.16747425,0.043357503,1.3572226,-0.21546677,0.12564,1.4856975,-0.077991754,0.13169251,1.4855176,-0.05531175,0.11657251,1.50336,0.031898253,0.068355,1.555425,0.08454825,0.11526751,1.3808701,-0.13478175,0.12744,1.4940226,0.004254751,0.10622251,1.4909626,-0.13374676,0.055777505,1.4436,-0.18380925,0.1258875,1.484325,-0.06361425,0.0263925,1.35387,-0.15300675,0.089505,1.36494,-0.119841754,0.06563251,1.2917588,-0.17991675,0.0747675,1.3594501,-0.13628925,0.044280004,1.2775276,-0.12823425,0.1060425,1.36764,-0.09367425,0.09945001,1.306071,-0.11617426,0.0317475,1.3251173,-0.093831755,0.051187504,1.3324658,-0.10010926,0.02116575,1.3286318,-0.11752426,0.08590501,1.3515526,-0.08606925,0.104940005,1.354635,-0.04775175,0.082282506,1.5193801,0.09615826,0.0350775,1.476135,0.14223826,0.0627975,1.4260726,0.11994076,0.055777505,1.59615,0.03385575,0.0,1.5999751,-0.08458425,0.055777505,1.605375,-0.028728,0.055777505,1.5932251,-0.08458425,0.055777505,1.57815,0.06702075,0.106605,1.5630751,-0.028728,0.1030725,1.550925,0.027150752,0.10746001,1.522845,-0.11115676,0.1046475,1.5588001,-0.07610176,0.055777505,1.5507001,-0.14758426,0.113355,1.3596076,-0.00951525,0.1203975,1.3637025,-0.00966375,0.1254375,1.4249926,-0.0044685,0.1295775,1.4096925,-0.030492,0.12762,1.3828275,-0.03093075,0.10388251,1.4008275,0.029130751,0.0564075,1.3174245,0.06256575,0.02817,1.2968168,0.06900075,0.0490725,1.341675,0.09037576,0.0243675,1.3080038,0.086505756,0.09013501,1.4077351,0.062183253,0.086467505,1.391085,0.06272325,0.00588375,1.4015026,0.11557575,0.0459675,1.427265,0.11512575,0.0359775,1.4077126,0.106710754,0.0489375,1.412145,0.10362825,0.0238725,1.3765726,0.102458246,0.0752625,1.3757851,0.074265756,0.059557505,1.3745251,0.085380755,0.069345005,1.3932226,0.07919325,0.023490002,1.4000626,0.10727326};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=3 and $tupleSplitSize=100 for subarray position()=2 */
 		private double[] getCoordinate_34_1030_point_2()
 		{
 			double[] value = {0.03051,1.394595,0.10248076,0.0726075,1.3960576,0.07705575,0.06813001,1.4154075,0.08992576,0.05562,1.3581675,0.09080326,0.0206865,1.365615,0.105653256,0.0790875,1.3621275,0.066255756,0.082912505,1.4077126,0.07210575,0.0032805,1.3383225,0.11881576,0.010332,1.345095,0.10941075,0.0774675,1.3401,0.056580752,0.044370003,1.463085,0.11436076,0.07989751,1.4581801,0.08940825,0.025312502,1.4620726,0.12459826,0.0629775,1.3193123,0.029130751,0.032355,1.2951024,0.050258253,0.047205005,1.3112506,-0.0066802497,0.097695,1.380015,0.040448252,0.044370003,1.5417001,0.10376325,0.0861525,1.4944726,0.07631326,0.106965005,1.4368275,0.051383253,0.062887505,1.39293,0.08574076,0.041287504,1.3933575,0.09730576,0.091665,1.3534425,0.018060751,0.0916425,1.3472326,-0.02108925,0.107955,1.411965,0.01077075,0.009177751,1.3299998,0.11355075,0.005049,1.3306253,0.11602575,0.026640002,1.3239248,0.094695754,0.005049,1.3259408,0.10932076,0.047047503,1.3105283,-0.05209425,0.01006875,1.4778225,0.15020326,0.01746225,1.4231701,0.13942575,0.01006875,1.4778225,0.15020326,0.106515005,1.3642876,-0.02619675,0.08352,1.3402126,-0.06696675,0.127305,1.3711276,-0.060059253,0.011542501,1.4633551,0.14473575,0.113715,1.4114026,-0.00951525,0.08012251,1.3369726,-0.05040675,0.047025,1.4123701,0.06778575,0.036472503,1.41066,0.077325754,0.029970001,1.4071951,0.07944075,0.024075001,1.401075,0.080048256,0.028215,1.3967326,0.07746076,0.034065004,1.3956751,0.07428825,0.045787502,1.394955,0.06686325,0.049545,1.3947076,0.06229575,0.05121,1.3967326,0.060563255,0.056227505,1.405305,0.056130752,0.0,1.3742551,-0.18533926,0.0,1.40697,0.123158254,0.0,1.4909626,-0.18074925,0.0,1.3157438,-0.096261755,0.0,1.2914213,-0.16259176,0.0,1.2983648,0.01902825,0.013063501,1.322028,0.07035075,0.0028980002,1.3222058,0.07482825,0.0125235,1.3076798,0.064433254,0.0,1.4606326,0.13146076,0.0,1.2834226,0.080925755,0.0,1.3306253,0.11602575,0.0047970004,1.3255043,0.10527075,0.0133335,1.391175,0.11015325,0.02079225,1.3973175,0.107655756,0.086467505,1.42767,0.07665075,0.025020001,1.420335,0.12158326,0.0733725,1.431045,0.092918254,0.029857501,1.4143951,0.11638576,0.0470025,1.419705,0.110535756,0.071347505,1.424025,0.09219825,0.0145350015,1.408545,0.122078255,0.0,1.4368275,-0.19465426,0.0,1.5318,0.13888577,0.0,1.48248,0.15117076,0.0,1.380105,0.11667826,0.0,1.3520925,0.13780576,0.0,1.3259408,0.10932076,0.0167085,1.4193676,0.12259576,-0.07924501,1.4435551,-0.17667675,-0.055777505,1.4909626,-0.16747425,-0.10622251,1.4909626,-0.13374676,-0.11198251,1.4333401,-0.14308426,-0.055777505,1.4436,-0.18380925,-0.11526751,1.3808701,-0.13478175,-0.07704,1.3545,-0.17919676,-0.043357503,1.3572226,-0.21546677,0.0,1.3970926,-0.20565677,-0.055777505,1.5507001,-0.14758426,-0.10746001,1.522845,-0.11115676,0.0,1.558125,-0.15188175,-0.044370003,1.5286726,0.12759075,-0.0500625,1.5576751,0.10389825,-0.055777505,1.57815,0.06702075,0.0,1.586925,0.07611075,-0.134145,1.411965,0.01077075,-0.12744,1.4940226,0.004254751,-0.11826,1.3732876,0.03009825,-0.01006875,1.4778225,0.15020326,-0.0350775,1.476135,0.14223826,-0.0570825,1.4701725,0.12770325};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=3 and $tupleSplitSize=100 for subarray position()=3 */
 		private double[] getCoordinate_34_1030_point_3()
 		{
 			double[] value = {-0.0627975,1.4260726,0.11994076,-0.083115004,1.4622526,0.10351576,-0.01746225,1.4231701,0.13942575,-0.0538875,1.424025,0.12734327,-0.011542501,1.4633551,0.14473575,-0.01006875,1.4778225,0.15020326,-0.01746225,1.4231701,0.13942575,-0.01006875,1.4778225,0.15020326,-0.087435,1.4609926,0.09595576,-0.0828225,1.429515,0.09708075,-0.086085,1.4251726,0.08949825,-0.091395,1.4446801,0.07953076,-0.108967505,1.4518801,0.061755754,-0.099180005,1.5197176,0.06720076,-0.082282506,1.5193801,0.09615826,-0.1029375,1.3979701,0.074693255,-0.0868275,1.3995225,0.08274825,-0.07389,1.36827,0.08558325,-0.10221751,1.4054401,0.06328575,-0.11396251,1.3392676,0.012615751,-0.1374975,1.4114026,-0.00951525,-0.1248525,1.4371201,0.04562325,-0.122445,1.3999051,0.049515754,-0.1161225,1.3584375,0.04580325,-0.090922505,1.3315119,0.06382576,-0.109417506,1.351575,0.03788325,-0.13095,1.4007375,-0.065819256,-0.1579725,1.3500226,-0.036045,-0.14233501,1.4181975,-0.05031675,-0.14778,1.4218875,-0.03188475,-0.09486,1.3897575,-0.13088925,-0.140175,1.3313318,-0.09286425,-0.14233501,1.41741,-0.081816755,-0.05841,1.3813876,-0.17548425,-0.12564,1.4856975,-0.077991754,-0.1046475,1.5588001,-0.07610176,-0.1258875,1.484325,-0.06361425,-0.13169251,1.4855176,-0.05531175,-0.13515751,1.48941,-0.028125001,-0.106605,1.5630751,-0.028728,-0.11657251,1.50336,0.031898253,-0.1030725,1.550925,0.027150752,-0.068355,1.555425,0.08454825,-0.0263925,1.35387,-0.15300675,0.0,1.3359375,-0.15113926,0.0,1.3154109,-0.20176426,-0.06563251,1.2917588,-0.17991675,-0.089505,1.36494,-0.119841754,-0.0747675,1.3594501,-0.13628925,-0.0733725,1.3453425,-0.11111175,-0.051187504,1.3324658,-0.10010926,-0.040950004,1.3416525,-0.13163176,-0.044280004,1.2775276,-0.12823425,-0.08590501,1.3515526,-0.08606925,-0.08352,1.3402126,-0.06696675,-0.0317475,1.3251173,-0.093831755,-0.09945001,1.306071,-0.11617426,-0.1060425,1.36764,-0.09367425,-0.127305,1.3711276,-0.060059253,-0.02116575,1.3286318,-0.11752426,-0.106515005,1.3642876,-0.02619675,-0.104940005,1.354635,-0.04775175,-0.055777505,1.59615,0.03385575,0.0,1.6026751,0.03385575,-0.055777505,1.605375,-0.028728,-0.055777505,1.5932251,-0.08458425,0.0,1.612,-0.028728,-0.08012251,1.3369726,-0.05040675,-0.0916425,1.3472326,-0.02108925,-0.0629775,1.3193123,0.029130751,-0.113355,1.3596076,-0.00951525,-0.091665,1.3534425,0.018060751,-0.1203975,1.3637025,-0.00966375,-0.113715,1.4114026,-0.00951525,-0.107955,1.411965,0.01077075,-0.1254375,1.4249926,-0.0044685,-0.1295775,1.4096925,-0.030492,-0.12762,1.3828275,-0.03093075,-0.10388251,1.4008275,0.029130751,-0.097695,1.380015,0.040448252,-0.106965005,1.4368275,0.051383253,-0.0774675,1.3401,0.056580752,-0.032355,1.2951024,0.050258253,-0.047205005,1.3112506,-0.0066802497,-0.025312502,1.4620726,0.12459826,-0.044370003,1.5417001,0.10376325,0.0,1.5339825,0.11505826,-0.047047503,1.3105283,-0.05209425,-0.044370003,1.463085,0.11436076,-0.07989751,1.4581801,0.08940825,-0.0564075,1.3174245,0.06256575,-0.02817,1.2968168,0.06900075,-0.005049,1.3306253,0.11602575,-0.0032805,1.3383225,0.11881576,0.0,1.3383225,0.11883825,-0.009177751,1.3299998,0.11355075,-0.010332,1.345095,0.10941075,-0.0490725,1.341675,0.09037576,-0.026640002,1.3239248,0.094695754,-0.05562,1.3581675,0.09080326};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=3 and $tupleSplitSize=100 for subarray position()=4 */
 		private double[] getCoordinate_34_1030_point_4()
 		{
 			double[] value = {-0.0206865,1.365615,0.105653256,0.0,1.2886876,0.052260753,0.0,1.284975,0.06499575,-0.0790875,1.3621275,0.066255756,-0.0243675,1.3080038,0.086505756,0.0,1.362285,0.12959325,-0.0145350015,1.408545,0.122078255,0.0,1.4015026,0.11557575,-0.00588375,1.4015026,0.11557575,-0.0238725,1.3765726,0.102458246,-0.0133335,1.391175,0.11015325,0.0,1.419075,0.12502575,-0.0167085,1.4193676,0.12259576,-0.086467505,1.391085,0.06272325,-0.09013501,1.4077351,0.062183253,-0.0489375,1.412145,0.10362825,-0.0470025,1.419705,0.110535756,-0.029857501,1.4143951,0.11638576,-0.0359775,1.4077126,0.106710754,-0.0752625,1.3757851,0.074265756,-0.059557505,1.3745251,0.085380755,-0.062887505,1.39293,0.08574076,-0.041287504,1.3933575,0.09730576,-0.069345005,1.3932226,0.07919325,-0.03051,1.394595,0.10248076,-0.02079225,1.3973175,0.107655756,-0.023490002,1.4000626,0.10727326,-0.0726075,1.3960576,0.07705575,-0.0459675,1.427265,0.11512575,-0.082912505,1.4077126,0.07210575,-0.025020001,1.420335,0.12158326,-0.0861525,1.4944726,0.07631326,-0.086467505,1.42767,0.07665075,-0.0733725,1.431045,0.092918254,-0.127305,1.3711276,-0.060059253,-0.08352,1.3402126,-0.06696675,-0.005049,1.3259408,0.10932076,-0.06813001,1.4154075,0.08992576,-0.036472503,1.41066,0.077325754,-0.047025,1.4123701,0.06778575,-0.029970001,1.4071951,0.07944075,-0.024075001,1.401075,0.080048256,-0.028215,1.3967326,0.07746076,-0.034065004,1.3956751,0.07428825,-0.045787502,1.394955,0.06686325,-0.049545,1.3947076,0.06229575,-0.05121,1.3967326,0.060563255,-0.056227505,1.405305,0.056130752,-0.013063501,1.322028,0.07035075,-0.0125235,1.3076798,0.064433254,-0.0047970004,1.3255043,0.10527075,-0.0028980002,1.3222058,0.07482825,0.0,1.3255268,0.10533825,0.0,1.3223386,0.074693255,0.0,1.3067731,0.058493253,-0.071347505,1.424025,0.09219825};
@@ -4400,27 +4264,35 @@ public class JinScaledV2L1LOA4Sites07f
 		}
 
 
-		/** Define subarrays using type double[] */
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=1 */
 		private double[] getTextureCoordinate_34_1031_point_1()
 		{
 			double[] value = {0.9175,0.8974,0.9509,0.8981,0.9421,0.8701,0.924,0.8702,0.9824,0.8971,0.9824,0.8682,0.9541,0.8718,0.9147,0.8129,0.9437,0.8153,0.9638,0.8095,0.9824,0.809,0.9461,0.923,0.9071,0.9135,0.9824,0.9287,0.7343,0.9169,0.7616,0.9147,0.7553,0.8982,0.7343,0.8968,0.7739,0.9327,0.7343,0.9365,0.8187,0.8433,0.8348,0.9045,0.8324,0.8647,0.74,0.8745,0.761,0.8768,0.7497,0.8755,0.777,0.8787,0.7647,0.8593,0.7596,0.8565,0.7438,0.8546,0.7343,0.8756,0.7372,0.8736,0.7394,0.8706,0.7405,0.8536,0.7808,0.8802,0.7786,0.8666,0.7875,0.8787,0.7821,0.8667,0.7952,0.9076,0.8011,0.8823,0.7745,0.9003,0.7939,0.8518,0.7845,0.8549,0.7731,0.8049,0.7979,0.8609,0.8185,0.8054,0.8439,0.8655,0.8131,0.8741,0.786,0.7876,0.8107,0.8538,0.8058,0.8252,0.8096,0.8166,0.8589,0.7975,0.8767,0.8622,0.8568,0.8668,0.8669,0.8674,0.9208,0.8549,0.8792,0.7991,0.8835,0.8633,0.9139,0.8636,0.9513,0.84,0.9824,0.8358,0.8845,0.9021,0.888,0.931,0.8761,0.9036,0.8705,0.9018,0.8544,0.902,0.8538,0.9345,0.8173,0.9068,0.8156,0.9257,0.7753,0.9186,0.7832,0.9041,0.7338,0.8385,0.7279,0.8339,0.7208,0.8401,0.7397,0.7767,0.7338,0.7681,0.7338,0.7727,0.7192,0.8201,0.7171,0.8352,0.7139,0.8364,0.7127,0.8419,0.7175,0.832,0.7247,0.8312,0.7224,0.8292,0.7239,0.8169,0.7146,0.8334,0.7152,0.8309,0.753,0.7762,0.7452,0.772,0.7409,0.7703,0.756,0.7661,0.7502,0.7748,0.7102,0.837,0.7574,0.7798,0.7054,0.8378,0.7338,0.8253,0.7338,0.8299,0.7267,0.8275,0.7291,0.8283};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=2 */
 		private double[] getTextureCoordinate_34_1031_point_2()
 		{
 			double[] value = {0.7338,0.8254,0.7338,0.7682,0.7385,0.7711,0.7338,0.7628,0.7338,0.82,0.7437,0.7597,0.7429,0.774,0.7484,0.7629,0.7505,0.778,0.7116,0.8233,0.7622,0.7806,0.7576,0.779,0.763,0.7872,0.7046,0.8444,0.7572,0.7769,0.7524,0.7737,0.7104,0.8341,0.7881,0.9479,0.7343,0.9577,0.8497,0.9637,0.9158,0.9539,0.7343,0.9872,0.9824,0.9663,0.4263,0.6263,0.4421,0.6351,0.4514,0.6319,0.4298,0.637,0.4385,0.639,0.4385,0.6403,0.4369,0.6596,0.4321,0.6555,0.4385,0.6553,0.4451,0.6548,0.4452,0.6463,0.4227,0.6454,0.4263,0.652,0.4193,0.6633,0.4176,0.6328,0.4376,0.6237,0.4196,0.6187,0.3384,0.9887,0.2934,0.905,0.2441,0.9417,0.2441,0.9723,0.4437,0.6405,0.4519,0.6235,0.3367,0.9059,0.4034,0.9073,0.4566,0.6329,0.4157,0.6257,0.4137,0.6192,0.2959,0.626,0.3051,0.6166,0.2511,0.6816,0.2548,0.6653,0.2441,0.6653,0.2441,0.6816,0.2661,0.696,0.2636,0.664,0.3484,0.6888,0.3007,0.651,0.2881,0.7397,0.3623,0.7239,0.4151,0.6155,0.4295,0.6197,0.4116,0.6201,0.4088,0.6855,0.4123,0.7323,0.4518,0.7703,0.364,0.6372,0.2441,0.7326,0.2441,0.7109,0.2441,0.7705,0.2441,0.816,0.2466,0.8272,0.2826,0.8198,0.263,0.8101,0.3011,0.7644,0.4294,0.848,0.295,0.8569,0.4229,0.7906,0.445,0.8342,0.3273,0.8725,0.3401,0.8443,0.4194,0.891,0.3844,0.8819,0.3962,0.7639,0.3654,0.758,0.3664,0.7923,0.3312,0.7931,0.3858,0.7947,0.2864,0.8094,0.3065,0.7969,0.4051,0.8004,0.4267,0.8291,0.3243,0.8795,0.293,0.8645,0.4715,0.8911,0.431,0.9594,0.4658,0.6252};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=3 */
 		private double[] getTextureCoordinate_34_1031_point_3()
 		{
 			double[] value = {0.465,0.6281,0.3862,0.8876,0.4544,0.6426,0.2548,0.6553,0.2441,0.6553,0.4156,0.6279,0.3783,0.625,0.3984,0.649,0.4325,0.6718,0.4443,0.6446,0.428,0.6022,0.4445,0.6357,0.4021,0.656,0.4052,0.6271,0.4253,0.6199,0.4215,0.6174,0.6418,0.6585,0.6441,0.671,0.6214,0.6731,0.616,0.6731,0.6418,0.6585,0.623,0.6494,0.6418,0.6585,0.6441,0.671,0.3003,0.6509,0.2548,0.6558,0.2549,0.6531,0.2441,0.6558,0.616,0.6731,0.6214,0.6731,0.2441,0.6529,0.314,0.8296,0.3898,0.85,0.2746,0.7881,0.2889,0.7981,0.4442,0.8857,0.2745,0.8415,0.3079,0.8417,0.3393,0.8544,0.3891,0.8542,0.2699,0.8521,0.246,0.853,0.4715,0.8911,0.9421,0.8701,0.9509,0.8981,0.9175,0.8974,0.924,0.8702,0.9824,0.8682,0.9824,0.8971,0.9541,0.8718,0.9147,0.8129,0.9437,0.8153,0.9638,0.8095,0.9824,0.809,0.9461,0.923,0.9071,0.9135,0.9824,0.9287,0.7553,0.8982,0.7616,0.9147,0.7343,0.9169,0.7343,0.8968,0.7739,0.9327,0.7343,0.9365,0.8324,0.8647,0.8348,0.9045,0.8187,0.8433,0.74,0.8745,0.7497,0.8755,0.761,0.8768,0.7647,0.8593,0.777,0.8787,0.7438,0.8546,0.7596,0.8565,0.7372,0.8736,0.7343,0.8756,0.7394,0.8706,0.7405,0.8536,0.7808,0.8802,0.7786,0.8666,0.7821,0.8667,0.7875,0.8787,0.8011,0.8823,0.7952,0.9076,0.7745,0.9003,0.7939,0.8518,0.7845,0.8549,0.7731,0.8049,0.7979,0.8609,0.8185,0.8054,0.8439,0.8655,0.8131,0.8741,0.8107,0.8538,0.8058,0.8252,0.786,0.7876,0.8096,0.8166,0.8767,0.8622,0.8589,0.7975,0.8669,0.8674,0.8568,0.8668,0.9208,0.8549};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=4 */
 		private double[] getTextureCoordinate_34_1031_point_4()
 		{
 			double[] value = {0.8792,0.7991,0.9139,0.8636,0.8835,0.8633,0.9513,0.84,0.9824,0.8358,0.8845,0.9021,0.888,0.931,0.8761,0.9036,0.8705,0.9018,0.8544,0.902,0.8538,0.9345,0.8173,0.9068,0.8156,0.9257,0.7753,0.9186,0.7832,0.9041,0.7208,0.8401,0.7279,0.8339,0.7338,0.8385,0.7338,0.7727,0.7338,0.7681,0.7397,0.7767,0.7192,0.8201,0.7139,0.8364,0.7171,0.8352,0.7127,0.8419,0.7175,0.832,0.7224,0.8292,0.7247,0.8312,0.7239,0.8169,0.7146,0.8334,0.7452,0.772,0.753,0.7762,0.7152,0.8309,0.7409,0.7703,0.7502,0.7748,0.756,0.7661,0.7102,0.837,0.7574,0.7798,0.7054,0.8378,0.7338,0.8253,0.7338,0.8299,0.7338,0.8254,0.7291,0.8283,0.7267,0.8275,0.7338,0.7628,0.7385,0.7711,0.7338,0.7682,0.7338,0.82,0.7437,0.7597,0.7484,0.7629,0.7429,0.774,0.7505,0.778,0.7116,0.8233,0.763,0.7872,0.7576,0.779,0.7622,0.7806,0.7046,0.8444,0.7572,0.7769,0.7524,0.7737,0.7104,0.8341,0.7881,0.9479,0.7343,0.9577,0.8497,0.9637,0.9158,0.9539,0.7343,0.9872,0.9824,0.9663,0.4514,0.6319,0.4421,0.6351,0.4263,0.6263,0.4385,0.639,0.4298,0.637,0.4385,0.6403,0.4385,0.6553,0.4321,0.6555,0.4369,0.6596,0.4451,0.6548,0.4452,0.6463,0.4263,0.652,0.4227,0.6454,0.4193,0.6633,0.4176,0.6328,0.4196,0.6187,0.4376,0.6237,0.2441,0.9417,0.2934,0.905,0.3384,0.9887,0.2441,0.9723,0.4437,0.6405,0.4519,0.6235,0.3367,0.9059,0.4034,0.9073,0.4566,0.6329,0.4157,0.6257,0.4137,0.6192,0.2441,0.6653,0.2548,0.6653,0.2511,0.6816,0.2441,0.6816,0.2636,0.664,0.2661,0.696};
 			return value;
 		}
+
+		/** Define subarray values using type double[] with $tupleSize=2 and $tupleSplitSize=100 for subarray position()=5 */
 		private double[] getTextureCoordinate_34_1031_point_5()
 		{
 			double[] value = {0.3484,0.6888,0.3007,0.651,0.3623,0.7239,0.2881,0.7397,0.4215,0.6174,0.4295,0.6197,0.4151,0.6155,0.4116,0.6201,0.4518,0.7703,0.4123,0.7323,0.4088,0.6855,0.364,0.6372,0.2959,0.626,0.3051,0.6166,0.2441,0.7326,0.2441,0.7705,0.2441,0.7109,0.2745,0.8415,0.2466,0.8272,0.2441,0.816,0.263,0.8101,0.3011,0.7644,0.2746,0.7881,0.246,0.853,0.2699,0.8521,0.4229,0.7906,0.445,0.8342,0.3401,0.8443,0.3393,0.8544,0.3079,0.8417,0.314,0.8296,0.3962,0.7639,0.3654,0.758,0.3664,0.7923,0.3312,0.7931,0.3858,0.7947,0.3065,0.7969,0.2889,0.7981,0.2826,0.8198,0.2864,0.8094,0.4051,0.8004,0.3243,0.8795,0.4267,0.8291,0.293,0.8645,0.4715,0.8911,0.431,0.9594,0.4715,0.8911,0.4658,0.6252,0.465,0.6281,0.4194,0.891,0.3862,0.8876,0.4544,0.6426,0.2548,0.6553,0.2441,0.6553,0.3984,0.649,0.3783,0.625,0.4156,0.6279,0.4325,0.6718,0.428,0.6022,0.4443,0.6446,0.4445,0.6357,0.4021,0.656,0.4052,0.6271,0.4253,0.6199,0.3898,0.85,0.6418,0.6585,0.6441,0.671,0.6441,0.671,0.6418,0.6585,0.6214,0.6731,0.6214,0.6731,0.616,0.6731,0.616,0.6731,0.623,0.6494,0.6418,0.6585,0.3003,0.6509,0.2548,0.6558,0.2549,0.6531,0.2441,0.6558,0.2441,0.6529,0.3891,0.8542,0.4294,0.848,0.4442,0.8857,0.295,0.8569,0.3273,0.8725,0.3844,0.8819};

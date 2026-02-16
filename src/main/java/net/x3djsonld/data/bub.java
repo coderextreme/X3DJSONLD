@@ -82,7 +82,7 @@ public class bub
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComments(" <component name='Shape' level='4'></component> ")
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("bub.x3d"))
@@ -107,27 +107,24 @@ public class bub
                 .setLeftTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}))
                 .setRightTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
                 .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
-              .addComments(new String[] {"",
-"					<ComposedShader DEF='gl' language=\"GLSL\">",
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
-"",
-"					  <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"'></ShaderPart>",
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>",
-"					<ComposedShader DEF='freewrl' language=\"GLSL\">",
-"					  <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
-"",
-"					  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>",
-"					  <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"					</ComposedShader>"})
+              .addComments(" <ComposedShader DEF='gl' language=\"GLSL\"> ")
+              .addComments(" <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> ")
+              .addComments(" <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> ")
+              .addComments(" <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> ")
+              .addComments(" <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"'></ShaderPart> ")
+              .addComments(" <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> ")
+              .addComments(" </ComposedShader> ")
+              .addComments(" <ComposedShader DEF='freewrl' language=\"GLSL\"> ")
+              .addComments(" <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> ")
+              .addComments(" <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> ")
+              .addComments(" <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> ")
+              .addComments(" <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> ")
+              .addComments(" <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> ")
+              .addComments(" </ComposedShader> ")
               .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
                 .addField(new field().setName("cube").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
                 .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFVec3f(0.98,1.0,1.033)))
@@ -136,17 +133,15 @@ public class bub
                 .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2.0))
                 .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x3dom.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom.vs"}))
                 .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/pc_bubbles.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs"})))
-              .addComments(new String[] {"",
-"					<ComposedShader DEF='instant' language=\"GLSL\">",
-"					  <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>",
-"					  <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>",
-"					  <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>",
-"					  <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>",
-"",
-"			      <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart>",
-"			      <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>",
-"                            </ComposedShader>"})
+              .addComments(" <ComposedShader DEF='instant' language=\"GLSL\"> ")
+              .addComments(" <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> ")
+              .addComments(" <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> ")
+              .addComments(" <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> ")
+              .addComments(" <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> ")
+              .addComments(" <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart> ")
+              .addComments(" <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> ")
+              .addComments(" </ComposedShader> ")
               .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")
                 .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
                   .addChild(new ComposedCubeMapTexture().setUSE("texture")))

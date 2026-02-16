@@ -13,7 +13,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.1")
       .setHead(new autoclass.head()
         .addComments((new autoclass.CommentsBlock("<component name='Shape' level='4'></component>")))
         .addComponent(new autoclass.component().setName("Scripting").setLevel(1))

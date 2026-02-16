@@ -17,7 +17,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
-X3D0.setVersion(CString("4.0"));
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("EnvironmentalEffects"));
@@ -108,7 +108,8 @@ Transform& Transform19 =  Transform();
 ParticleSystem& ParticleSystem20 =  ParticleSystem();
 ParticleSystem20.setMaxParticles(20);
 ParticleSystem20.setGeometryType(CString("GEOMETRY"));
-//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
+//* values - array of MFFloats to pass to ComposedShader
+//* variations in values - array of MFFloats to pass to ComposedShader that varies values
 VariationPhysicsModel& VariationPhysicsModel21 =  VariationPhysicsModel();
 VariationPhysicsModel21.setValues(CString("2 2 5 5 0 0"));
 VariationPhysicsModel21.setVariations(CString("0.2 0.1 0.3 0.3 0.01 0.01"));

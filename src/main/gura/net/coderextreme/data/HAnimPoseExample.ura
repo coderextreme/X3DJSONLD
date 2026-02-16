@@ -775,37 +775,37 @@ X3D:
                 name: "HumanoidStub"
                 info: ["humanoidVersion=2.0"]
                 version: "2.0"
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "A_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "T_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "I_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "H_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "FaceLeft_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "FaceRight_Pose"
                     ]
                 ]
-                setPoses: [
+                setChildren: [
                     HAnimPose: [
                         USE: "TouchDown_Pose"
                     ]

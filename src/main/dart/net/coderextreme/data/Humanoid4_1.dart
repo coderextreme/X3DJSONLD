@@ -5732,7 +5732,73 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_humanoid_root')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_sacroiliac')),
+                  USE_ : SFString('hanim_l_acromioclavicular')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_calcaneocuboid')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_interphalangeal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpometacarpal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpometacarpal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpometacarpal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpometacarpal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_carpometacarpal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_cuneonavicular_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_cuneonavicular_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_cuneonavicular_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_elbow')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_eyeball_joint')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_eyebrow_joint')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_eyelid_joint')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_hip')),
@@ -5741,82 +5807,175 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_l_knee')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_talocrural')),
+                  USE_ : SFString('hanim_l_metacarpophalangeal_1')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_talocalcaneonavicular')),
+                  USE_ : SFString('hanim_l_metacarpophalangeal_2')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_cuneonavicular_1')),
+                  USE_ : SFString('hanim_l_metacarpophalangeal_3')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsometatarsal_1')),
+                  USE_ : SFString('hanim_l_metacarpophalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_metacarpophalangeal_5')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_metatarsophalangeal_1')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_interphalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_cuneonavicular_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsometatarsal_2')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_l_metatarsophalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_cuneonavicular_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsometatarsal_3')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_metatarsophalangeal_3')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_calcaneocuboid')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_transversetarsal')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsometatarsal_4')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_l_metatarsophalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsometatarsal_5')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_metatarsophalangeal_5')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_5')),
+                  USE_ : SFString('hanim_l_midcarpal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_midcarpal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_midcarpal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_midcarpal_4_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_radiocarpal')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_shoulder')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_sternoclavicular')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_talocalcaneonavicular')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_talocrural')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_4')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_l_tarsal_distal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_interphalangeal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsal_proximal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsometatarsal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsometatarsal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsometatarsal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsometatarsal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_tarsometatarsal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_l_transversetarsal')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_acromioclavicular')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_calcaneocuboid')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_interphalangeal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpometacarpal_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpometacarpal_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpometacarpal_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpometacarpal_4')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_carpometacarpal_5')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_cuneonavicular_1')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_cuneonavicular_2')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_cuneonavicular_3')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_elbow')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_eyeball_joint')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_eyebrow_joint')),
+
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_eyelid_joint')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_r_hip')),
@@ -5825,1055 +5984,185 @@ var X3D0 =  X3D(
                   USE_ : SFString('hanim_r_knee')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_talocrural')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_talocalcaneonavicular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_cuneonavicular_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsometatarsal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_metatarsophalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_interphalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_cuneonavicular_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsometatarsal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_metatarsophalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_cuneonavicular_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsometatarsal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_metatarsophalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_calcaneocuboid')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_transversetarsal')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsometatarsal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_metatarsophalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsometatarsal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_metatarsophalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vl5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vl4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vl3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vl2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vl1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt12')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt11')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt10')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt9')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt8')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt7')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt6')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vt1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc7')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc6')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_vc1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_skullbase')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_eyelid_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_eyelid_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_eyeball_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_eyeball_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_eyebrow_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_eyebrow_joint')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_temporomandibular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_sternoclavicular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_acromioclavicular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_shoulder')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_elbow')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_radiocarpal')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_midcarpal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpometacarpal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_metacarpophalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_interphalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_midcarpal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpometacarpal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_metacarpophalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_midcarpal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpometacarpal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_metacarpophalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_midcarpal_4_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpometacarpal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_metacarpophalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpometacarpal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_metacarpophalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_proximal_interphalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_l_carpal_distal_interphalangeal_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_sternoclavicular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_acromioclavicular')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_shoulder')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_elbow')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_radiocarpal')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_midcarpal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpometacarpal_1')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_r_metacarpophalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_interphalangeal_1')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_midcarpal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpometacarpal_2')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_r_metacarpophalangeal_2')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_2')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_midcarpal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpometacarpal_3')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_r_metacarpophalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_3')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_midcarpal_4_5')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpometacarpal_4')),
 
                 HAnimJoint(
                   USE_ : SFString('hanim_r_metacarpophalangeal_4')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_4')),
-
-                HAnimJoint(
-                  USE_ : SFString('hanim_r_carpometacarpal_5')),
-
-                HAnimJoint(
                   USE_ : SFString('hanim_r_metacarpophalangeal_5')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_proximal_interphalangeal_5')),
+                  USE_ : SFString('hanim_r_metatarsophalangeal_1')),
 
                 HAnimJoint(
-                  USE_ : SFString('hanim_r_carpal_distal_interphalangeal_5')),
-              segments_ : [
-                HAnimSegment(
-                  USE_ : SFString('hanim_sacrum')),
+                  USE_ : SFString('hanim_r_metatarsophalangeal_2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_pelvis')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_metatarsophalangeal_3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_thigh')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_metatarsophalangeal_4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_calf')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_metatarsophalangeal_5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_talus')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_midcarpal_1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_navicular')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_midcarpal_2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_cuneiform_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_midcarpal_3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metatarsal_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_midcarpal_4_5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_radiocarpal')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_cuneiform_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_shoulder')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metatarsal_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_sternoclavicular')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_talocalcaneonavicular')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_middle_phalanx_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_talocrural')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_cuneiform_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metatarsal_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_middle_phalanx_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_distal_interphalangeal_5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_calcaneus')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_interphalangeal_1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_cuboid')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metatarsal_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_middle_phalanx_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsal_proximal_interphalangeal_5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metatarsal_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsometatarsal_1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_proximal_phalanx_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsometatarsal_2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_tarsal_middle_phalanx_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsometatarsal_3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_thigh')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsometatarsal_4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_calf')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_tarsometatarsal_5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_talus')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_r_transversetarsal')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_navicular')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_sacroiliac')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_cuneiform_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_skullbase')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metatarsal_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_temporomandibular')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_cuneiform_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metatarsal_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_middle_phalanx_2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_cuneiform_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc6')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metatarsal_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vc7')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vl1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_middle_phalanx_3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vl2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_calcaneus')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vl3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_cuboid')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vl4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metatarsal_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vl5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt1')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_middle_phalanx_4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt10')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metatarsal_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt11')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_proximal_phalanx_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt12')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_tarsal_middle_phalanx_5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt2')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l5')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt3')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l4')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt4')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l3')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt5')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l2')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt6')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_l1')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt7')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_t12')),
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt8')),
 
-                HAnimSegment(
-                  USE_ : SFString('hanim_t11')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t10')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t9')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t8')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t7')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t6')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_t1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c7')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c6')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_c1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_skull')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_clavicle')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_scapula')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_upperarm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_forearm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_trapezium')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_trapezoid')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_capitate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_hamate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_metacarpal_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_proximal_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_l_carpal_middle_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_clavicle')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_scapula')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_upperarm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_forearm')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_trapezium')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metacarpal_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_proximal_phalanx_1')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_trapezoid')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metacarpal_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_proximal_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_middle_phalanx_2')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_capitate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metacarpal_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_proximal_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_middle_phalanx_3')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_hamate')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metacarpal_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_proximal_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_middle_phalanx_4')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_metacarpal_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_proximal_phalanx_5')),
-
-                HAnimSegment(
-                  USE_ : SFString('hanim_r_carpal_middle_phalanx_5')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_buttocks_standing_wall_contact_point_pt'))],
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_crotch_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_asis_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_iliocristale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_psis_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_trochanterion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_asis_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_iliocristale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_psis_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_trochanterion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_navel_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_waist_preferred_anterior_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_waist_preferred_posterior_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_femoral_lateral_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_femoral_medial_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_knee_crease_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_suprapatella_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_femoral_lateral_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_femoral_medial_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_knee_crease_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_suprapatella_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_lateral_malleolus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_medial_malleolus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tibiale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_calcaneus_posterior_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_sphyrion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_metatarsal_phalanx_1_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tarsal_distal_phalanx_1_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tarsal_distal_phalanx_2_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tarsal_distal_phalanx_3_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tarsal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_metatarsal_phalanx_5_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tarsal_distal_phalanx_5_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_lateral_malleolus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_medial_malleolus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tibiale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_calcaneus_posterior_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_sphyrion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_metatarsal_phalanx_1_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tarsal_distal_phalanx_1_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tarsal_distal_phalanx_2_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tarsal_distal_phalanx_3_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tarsal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_metatarsal_phalanx_5_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tarsal_distal_phalanx_5_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_rib10_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_rib10_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_spine_2_middle_back_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_substernale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_thelion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_thelion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_chest_midsagittal_plane_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_mesosternale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_chest_midsagittal_plane_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_rear_center_midsagittal_plane_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_spine_1_middle_back_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_cervicale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_suprasternale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_neck_base_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_neck_base_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_acromion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_axilla_distal_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_axilla_posterior_folds_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_axilla_proximal_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_clavicale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_acromion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_distal_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_posterior_folds_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_axilla_proximal_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_clavicale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_adams_apple_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_glabella_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_ectocanthus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_infraorbitale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_tragion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_nuchale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_opisthocranion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_ectocanthus_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_infraorbitale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_tragion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_sellion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_skull_vertex_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_gonion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_menton_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_gonion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_supramenton_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_bideltoid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_humeral_lateral_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_humeral_medial_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_olecranon_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_radial_styloid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_radiale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_ulnar_styloid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_1_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_metacarpal_phalanx_2_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_2_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_dactylion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_metacarpal_phalanx_3_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_3_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_metacarpal_phalanx_5_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_l_carpal_distal_phalanx_5_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_bideltoid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_humeral_lateral_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_humeral_medial_epicondyles_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_olecranon_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_radial_styloid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_radiale_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_ulnar_styloid_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_1_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_metacarpal_phalanx_2_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_2_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_dactylion_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_metacarpal_phalanx_3_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_3_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_metacarpal_phalanx_5_pt')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_4_tip')),
-              viewpoints_ : 
-                HAnimSite(
-                  USE_ : SFString('hanim_r_carpal_distal_phalanx_5_tip')))]));
+                HAnimJoint(
+                  USE_ : SFString('hanim_vt9'))])]));
 void main() { exit(0); }

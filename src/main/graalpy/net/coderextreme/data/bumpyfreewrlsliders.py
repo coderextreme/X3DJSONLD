@@ -6,7 +6,7 @@ x3d.ConfigurationProperties.setStripTrailingZeroes(True)
 x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.setVersion("4.1")
 head1 = x3d.head()
 component2 = x3d.component()
 component2.setName("Scripting")
@@ -94,7 +94,9 @@ LayerSet18.setOrder([1,2])
 
 LayerSet18.addComments(x3d.CommentsBlock("""the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""))
 
-LayerSet18.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""))
+LayerSet18.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display"""))
+
+LayerSet18.addComments(x3d.CommentsBlock("""like a HUD (heads up display)"""))
 Layer19 = x3d.Layer()
 Layer19.setPickable(True)
 Layer19.setObjectType(["ALL"])
@@ -278,7 +280,11 @@ Sphere59.setRadius(5)
 
 Shape58.setGeometry(Sphere59)
 
-Shape58.addComments(x3d.CommentsBlock("""<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""))
+Shape58.addComments(x3d.CommentsBlock("""<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">"""))
+
+Shape58.addComments(x3d.CommentsBlock("""<Coordinate DEF=\"OrbitCoordinates\"/>"""))
+
+Shape58.addComments(x3d.CommentsBlock("""</IndexedFaceSet>"""))
 Appearance60 = x3d.Appearance()
 Material61 = x3d.Material()
 Material61.setDiffuseColor(x3d.doubleToFloat([0.7,0.7,0.7]))
@@ -394,7 +400,11 @@ field80.setValue("0")
 
 ComposedShader69.addField(field80)
 
-ComposedShader69.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
+ComposedShader69.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\">"""))
+
+ComposedShader69.addComments(x3d.CommentsBlock("""<ComposedCubeMapTexture USE=\"texture\"/>"""))
+
+ComposedShader69.addComments(x3d.CommentsBlock("""</field>"""))
 ShaderPart81 = x3d.ShaderPart()
 ShaderPart81.setType("VERTEX")
 IS82 = x3d.IS()
@@ -422,7 +432,51 @@ ComposedShader69.addParts(ShaderPart84)
 
 Appearance60.addShaders(ComposedShader69)
 
-Appearance60.addComments(x3d.CommentsBlock("""<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>"""))
+Appearance60.addComments(x3d.CommentsBlock("""<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<ShaderPart type='VERTEX'>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<IS>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<connect nodeField=\"url\" protoField=\"vertex\"/>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""</IS>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""</ShaderPart>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<ShaderPart type='FRAGMENT'>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<IS>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""<connect nodeField=\"url\" protoField=\"fragment\"/>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""</IS>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""</ShaderPart>"""))
+
+Appearance60.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
 
 Shape58.setAppearance(Appearance60)
 
@@ -432,7 +486,29 @@ Transform55.addChild(Transform57)
 
 Layer19.addChild(Transform55)
 
-Layer19.addComments(x3d.CommentsBlock("""<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
+Layer19.addComments(x3d.CommentsBlock("""<Script DEF=\"OrbitScript\">"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"""))
+
+Layer19.addComments(x3d.CommentsBlock("""<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"""))
 
 Layer19.addComments(x3d.CommentsBlock("""DIS multiuser facilities"""))
 DISEntityManager87 = x3d.DISEntityManager()

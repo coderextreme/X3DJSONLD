@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Full'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           /*<component name='Shape' level='4'></component>*/
@@ -65,7 +65,9 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('license'),
               content_ : SFString('license.html'))]),
-      /*\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"*/
+      /*\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,*/
+      /*It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)*/
+      /*open for their \"discussion about the teapot\"*/
       Scene_ : 
         Scene(
           /*LayerSet with two layers, navigation happens in layer 1*/
@@ -327,7 +329,9 @@ var X3D0 =  X3D(
                                         ShaderPart(
                                           type_ : SFString("FRAGMENT",
                                           url_ : MFString([SFString("../shaders/x_ite.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs")])),
-                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>*/))))]),
+                                      /*TO CONVERT TO A SPHERE*/
+                                      /*<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>*/
+                                      /*<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>*/))))]),
 
                     Script(
                       DEF_ : SFString('OrbitScript'),

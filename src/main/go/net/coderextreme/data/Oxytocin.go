@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -105,7 +105,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 01:48:24 GMT"),
+                Content: stringPtr("2 JAN 2025"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -139,23 +139,32 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("CmlToX3d.xslt"),
             },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/ChemicalMarkupLanguage/Oxytocin.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.ProtoDeclare{
                     Name: stringPtr("Carbon"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -184,8 +193,8 @@ func main() {
                                                             DEF: stringPtr("atoC_mat"),
                                                         },
                                                         DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.0},
-                                                        SpecularColor: &x3d.SFColor{0.29, 0.3, 0.29},
                                                         Shininess: floatPtr(0.8),
+                                                        SpecularColor: &x3d.SFColor{0.29, 0.3, 0.29},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -225,14 +234,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -262,8 +272,8 @@ func main() {
                                                         },
                                                         AmbientIntensity: floatPtr(0.0933),
                                                         DiffuseColor: &x3d.SFColor{0.38, 0.38, 0.42},
-                                                        SpecularColor: &x3d.SFColor{0.53, 0.53, 0.53},
                                                         Shininess: floatPtr(0.5),
+                                                        SpecularColor: &x3d.SFColor{0.53, 0.53, 0.53},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -303,14 +313,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -339,8 +350,8 @@ func main() {
                                                             DEF: stringPtr("atoN_mat"),
                                                         },
                                                         DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.72},
-                                                        SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                                         EmissiveColor: &x3d.SFColor{0.0, 0.0, 0.13},
+                                                        SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -380,14 +391,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -417,6 +429,7 @@ func main() {
                                                         },
                                                         AmbientIntensity: floatPtr(0.487),
                                                         DiffuseColor: &x3d.SFColor{0.54, 0.05, 0.25},
+                                                        Shininess: floatPtr(0.2),
                                                         SpecularColor: &x3d.SFColor{0.81, 0.77, 0.75},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
@@ -457,14 +470,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -533,14 +547,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -568,6 +583,7 @@ func main() {
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("atoSi_mat"),
                                                         },
+                                                        DiffuseColor: &x3d.SFColor{0.8, 0.8, 0.8},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -607,14 +623,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -644,9 +661,9 @@ func main() {
                                                         },
                                                         AmbientIntensity: floatPtr(0.11),
                                                         DiffuseColor: &x3d.SFColor{0.9, 0.41, 0.0},
-                                                        SpecularColor: &x3d.SFColor{0.1, 0.1, 0.1},
                                                         EmissiveColor: &x3d.SFColor{0.1, 0.04, 0.0},
                                                         Shininess: floatPtr(0.8),
+                                                        SpecularColor: &x3d.SFColor{0.1, 0.1, 0.1},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -686,14 +703,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -723,9 +741,9 @@ func main() {
                                                         },
                                                         AmbientIntensity: floatPtr(0.0467),
                                                         DiffuseColor: &x3d.SFColor{0.25, 0.39, 0.25},
-                                                        SpecularColor: &x3d.SFColor{0.11, 0.12, 0.08},
                                                         EmissiveColor: &x3d.SFColor{0.05, 0.08, 0.05},
                                                         Shininess: floatPtr(0.6),
+                                                        SpecularColor: &x3d.SFColor{0.11, 0.12, 0.08},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -765,14 +783,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -801,9 +820,9 @@ func main() {
                                                             DEF: stringPtr("atoCl_mat"),
                                                         },
                                                         DiffuseColor: &x3d.SFColor{0.28, 0.7, 0.0},
-                                                        SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                                         EmissiveColor: &x3d.SFColor{0.06, 0.15, 0.0},
                                                         Shininess: floatPtr(0.8),
+                                                        SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -843,14 +862,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -880,9 +900,9 @@ func main() {
                                                         },
                                                         AmbientIntensity: floatPtr(0.0833),
                                                         DiffuseColor: &x3d.SFColor{0.5, 0.3, 0.19},
-                                                        SpecularColor: &x3d.SFColor{0.08, 0.08, 0.05},
                                                         EmissiveColor: &x3d.SFColor{0.12, 0.13, 0.08},
                                                         Shininess: floatPtr(0.17),
+                                                        SpecularColor: &x3d.SFColor{0.08, 0.08, 0.05},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -922,14 +942,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -958,9 +979,9 @@ func main() {
                                                             DEF: stringPtr("atoI_mat"),
                                                         },
                                                         DiffuseColor: &x3d.SFColor{0.56, 0.37, 0.74},
-                                                        SpecularColor: &x3d.SFColor{0.12, 0.12, 0.12},
                                                         EmissiveColor: &x3d.SFColor{0.15, 0.1, 0.2},
                                                         Shininess: floatPtr(0.09),
+                                                        SpecularColor: &x3d.SFColor{0.12, 0.12, 0.12},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -1000,14 +1021,15 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("position"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("position"),
+                                Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("materialTransparency"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("materialTransparency"),
                             Value: stringPtr("0.6"),
                         },
                         },
@@ -1036,9 +1058,9 @@ func main() {
                                                             DEF: stringPtr("ato__mat"),
                                                         },
                                                         DiffuseColor: &x3d.SFColor{1.0, 1.0, 1.0},
-                                                        SpecularColor: &x3d.SFColor{0.12, 0.12, 0.12},
                                                         EmissiveColor: &x3d.SFColor{0.15, 0.1, 0.2},
                                                         Shininess: floatPtr(0.09),
+                                                        SpecularColor: &x3d.SFColor{0.12, 0.12, 0.12},
                                                         IS: &x3d.IS{
                                                             Connect: []x3d.X3DNode{
                                                                 &x3d.Connect{
@@ -1078,9 +1100,9 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("bond_set"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("MFVec3f"),
-                                Name: stringPtr("bond_set"),
                                 Value: stringPtr("-1 0 0 1 0 0"),
                         },
                         },
@@ -1123,9 +1145,9 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("txt"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("MFString"),
-                                Name: stringPtr("txt"),
                         },
                         },
                     },
@@ -1173,9 +1195,9 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("txt"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("MFString"),
-                                Name: stringPtr("txt"),
                         },
                         },
                     },
@@ -1224,9 +1246,9 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("txt"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("MFString"),
-                                Name: stringPtr("txt"),
                         },
                         },
                     },
@@ -1271,10 +1293,10 @@ func main() {
                     },
                 },
                 &x3d.Background{
-                    SkyAngle: x3d.MFFloat{1.309, 1.570796},
-                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.5,0.8},[3]float32{0.0,0.6,0.7},[3]float32{0.6,0.6,0.7}},
                     GroundAngle: x3d.MFFloat{1.309, 1.570796},
                     GroundColor: &x3d.MFColor{[3]float32{0.0,0.5,0.7},[3]float32{0.0,0.4,0.7},[3]float32{0.6,0.5,0.7}},
+                    SkyAngle: x3d.MFFloat{1.309, 1.570796},
+                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.5,0.8},[3]float32{0.0,0.6,0.7},[3]float32{0.6,0.6,0.7}},
                 },
                 &x3d.PointLight{
                     AmbientIntensity: floatPtr(1.0),
@@ -1288,6 +1310,8 @@ func main() {
                     Description: stringPtr("Inspect Oxytocin"),
                     Position: &x3d.SFVec3f{0.0, 2.0, 20.0},
                 },
+//Copyright by the U.S. Sec. Commerce on behalf of U.S.A. All rights reserved.
+//type="3D" <date day="23" month="11" year="1995"/>
                 &x3d.Transform{
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("infogroupa"),
@@ -1319,10 +1343,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a1"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1335,10 +1359,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a2"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1351,10 +1375,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a3"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1367,10 +1391,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a4"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1383,10 +1407,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a5"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1399,10 +1423,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a6"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1415,10 +1439,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a7"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1431,10 +1455,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a8"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1447,10 +1471,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a9"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1463,10 +1487,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a10"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1479,10 +1503,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a11"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1495,10 +1519,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a12"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1511,10 +1535,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a13"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1527,10 +1551,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a14"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1543,10 +1567,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a15"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1559,10 +1583,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Sulphur"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a16"),
                                     },
-                                    Name: stringPtr("Sulphur"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1575,10 +1599,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a17"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1591,10 +1615,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a18"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1607,10 +1631,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a19"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1623,10 +1647,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a20"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1639,10 +1663,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Sulphur"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a21"),
                                     },
-                                    Name: stringPtr("Sulphur"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1655,10 +1679,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a22"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1671,10 +1695,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a23"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1687,10 +1711,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a24"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1703,10 +1727,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a25"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1719,10 +1743,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a26"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1735,10 +1759,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a27"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1751,10 +1775,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a28"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1767,10 +1791,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a29"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1783,10 +1807,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a30"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1799,10 +1823,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a31"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1815,10 +1839,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a32"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1831,10 +1855,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a33"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1847,10 +1871,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a34"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1863,10 +1887,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a35"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1879,10 +1903,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a36"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1895,10 +1919,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a37"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1911,10 +1935,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a38"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1927,10 +1951,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a39"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1943,10 +1967,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a40"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1959,10 +1983,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a41"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1975,10 +1999,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a42"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -1991,10 +2015,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a43"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2007,10 +2031,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a44"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2023,10 +2047,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a45"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2039,10 +2063,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a46"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2055,10 +2079,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a47"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2071,10 +2095,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a48"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2087,10 +2111,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a49"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2103,10 +2127,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a50"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2119,10 +2143,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a51"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2135,10 +2159,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a52"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2151,10 +2175,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a53"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2167,10 +2191,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a54"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2183,10 +2207,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a55"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2199,10 +2223,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a56"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2215,10 +2239,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Nitrogen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a57"),
                                     },
-                                    Name: stringPtr("Nitrogen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2231,10 +2255,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a58"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2247,10 +2271,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a59"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2263,10 +2287,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a60"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2279,10 +2303,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a61"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2295,10 +2319,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a62"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2311,10 +2335,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a63"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2327,10 +2351,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a64"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2343,10 +2367,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a65"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2359,10 +2383,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a66"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2375,10 +2399,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a67"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2391,10 +2415,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Carbon"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a68"),
                                     },
-                                    Name: stringPtr("Carbon"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2407,10 +2431,10 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.ProtoInstance{
+                                    Name: stringPtr("Oxygen"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("a69"),
                                     },
-                                    Name: stringPtr("Oxygen"),
                                     FieldValue: []x3d.X3DNode{
                                         &x3d.FieldValue{
                                             Name: stringPtr("position"),
@@ -2425,10 +2449,10 @@ func main() {
                 &x3d.Group{
                     Children: []x3d.X3DNode{
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b1"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2437,10 +2461,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2449,10 +2473,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b3"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2461,10 +2485,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b4"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2473,10 +2497,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b5"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2485,10 +2509,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b6"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2497,10 +2521,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b7"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2509,10 +2533,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b7_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2521,10 +2545,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b8"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2533,10 +2557,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b9"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2545,10 +2569,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b10"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2557,22 +2581,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b10_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("-4.629 0.8473 0 -4.1385 -0.6132 0"),
+                                    Value: stringPtr("-4.6290000000000004 0.8473 0 -4.1385000000000005 -0.6132 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b11"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2581,10 +2605,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b12"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2593,10 +2617,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b13"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2605,10 +2629,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b14"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2617,10 +2641,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b15"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2629,10 +2653,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b16"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2641,10 +2665,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b17"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2653,10 +2677,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b18"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2665,10 +2689,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b19"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2677,10 +2701,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b19_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2689,10 +2713,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b20"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2701,10 +2725,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b21"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2713,10 +2737,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b22"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2725,22 +2749,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b22_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("-8.6871 0.3568 0 -9.1888 1.8507 0"),
+                                    Value: stringPtr("-8.687100000000001 0.3568 0 -9.1888 1.8507 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b23"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2749,10 +2773,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b24"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2761,10 +2785,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b25"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2773,10 +2797,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b26"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2785,10 +2809,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b27"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2797,10 +2821,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b28"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2809,10 +2833,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b29"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2821,10 +2845,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b30"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2833,10 +2857,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b31"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2845,10 +2869,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b32"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2857,10 +2881,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b33"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2869,10 +2893,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b34"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2881,34 +2905,34 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b35"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("5.1864 5.4405 0 5.2199 6.9791 0"),
+                                    Value: stringPtr("5.186400000000001 5.4405 0 5.2199 6.9791 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b35_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("5.2264 5.4405 0 5.2599 6.9791 0"),
+                                    Value: stringPtr("5.2264 5.4405 0 5.259899999999999 6.9791 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b36"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2917,10 +2941,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b37"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2929,10 +2953,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b37_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2941,10 +2965,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b38"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2953,10 +2977,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b39"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2965,10 +2989,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b40"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -2977,22 +3001,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b41"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("-12.3504 -1.6054 0 -11.8822 -3.0659 0"),
+                                    Value: stringPtr("-12.350399999999999 -1.6054 0 -11.8822 -3.0659 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b41_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3001,10 +3025,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b42"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3013,10 +3037,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b43"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3025,10 +3049,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b44"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3037,10 +3061,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b45"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3049,22 +3073,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b45_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("6.7426 -4.2253 0 7.222 -5.7193 0"),
+                                    Value: stringPtr("6.7425999999999995 -4.2253 0 7.2219999999999995 -5.7193 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b46"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3073,10 +3097,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b47"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3085,10 +3109,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b48"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3097,10 +3121,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b49"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3109,10 +3133,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b50"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3121,22 +3145,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b50_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("9.2622 3.3669 0 10.4997 4.3034 0"),
+                                    Value: stringPtr("9.2622 3.3669 0 10.499699999999999 4.3034 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b51"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3145,10 +3169,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b52"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3157,10 +3181,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b53"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3169,10 +3193,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b54"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3181,10 +3205,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b55"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3193,10 +3217,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b56"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3205,10 +3229,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b57"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3217,10 +3241,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b57_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3229,10 +3253,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b58"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3241,10 +3265,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b59"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3253,10 +3277,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b59_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3265,10 +3289,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b60"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3277,10 +3301,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b61"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3289,10 +3313,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b62"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3301,34 +3325,34 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b63"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("10.3037 -4.8943 0 11.5412 -5.8085 0"),
+                                    Value: stringPtr("10.303700000000001 -4.8943 0 11.5412 -5.8085 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b63_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("10.3437 -4.8943 0 11.5812 -5.8085 0"),
+                                    Value: stringPtr("10.3437 -4.8943 0 11.581199999999999 -5.8085 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b64"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3337,10 +3361,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b65"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3349,22 +3373,22 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b65_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
-                                    Value: stringPtr("8.9055 -5.5297 0 8.7383 -7.0794 0"),
+                                    Value: stringPtr("8.9055 -5.5297 0 8.738299999999999 -7.0794 0"),
                             },
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b66"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3373,10 +3397,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b67"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3385,10 +3409,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b68"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3397,10 +3421,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b69"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3409,10 +3433,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b70"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3421,10 +3445,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b71"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3433,10 +3457,10 @@ func main() {
                             },
                         },
                         &x3d.ProtoInstance{
+                            Name: stringPtr("line"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b71_2"),
                             },
-                            Name: stringPtr("line"),
                             FieldValue: []x3d.X3DNode{
                                 &x3d.FieldValue{
                                     Name: stringPtr("bond_set"),
@@ -3464,13 +3488,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/Oxytocin.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -3481,7 +3505,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

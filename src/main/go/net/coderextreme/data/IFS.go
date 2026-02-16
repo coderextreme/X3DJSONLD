@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -102,19 +102,28 @@ func main() {
                 Content: stringPtr("h2.pl"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"),
+                Name: stringPtr("modified"),
+                Content: stringPtr("18 Jan 2023"),
             },
             &x3d.Meta{
-                Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:47:14 GMT"),
+                Name: stringPtr("creator"),
+                Content: stringPtr("John Carlson"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("created"),
+                Content: stringPtr("9 November 2020"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.Group{
                     Children: []x3d.X3DNode{
+//DEFS for markers of skeleton joints, segments, and sites
                         &x3d.Transform{
                                 Translation: &x3d.SFVec3f{0.0, 2.1, 0.0},
                             Children: []x3d.X3DNode{
@@ -122,18 +131,12 @@ func main() {
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("HAnimSiteShape"),
                                     },
-                                    Appearance: &x3d.Appearance{
-                                        Material: &x3d.Material{
-                                            DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.0},
-                                            Transparency: floatPtr(0.3),
-                                        },
-                                    },
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("DiamondIFS"),
                                         },
-                                        Solid: boolPtr(false),
                                         CreaseAngle: floatPtr(0.5),
+                                        Solid: boolPtr(false),
                                         CoordIndex: []int32{0, 1, 2, -1, 0, 2, 3, -1, 0, 3, 4, -1, 0, 4, 1, -1, 5, 2, 1, -1, 5, 3, 2, -1, 5, 4, 3, -1, 5, 1, 4, -1},
                                         Color: &x3d.ColorRGBA{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -143,6 +146,12 @@ func main() {
                                         },
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.01,0.0},[3]float32{-0.01,0.0,0.0},[3]float32{0.0,0.0,0.01},[3]float32{0.01,0.0,0.0},[3]float32{0.0,0.0,-0.01},[3]float32{0.0,-0.01,0.0}},
+                                        },
+                                    },
+                                    Appearance: &x3d.Appearance{
+                                        Material: &x3d.Material{
+                                            DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.0},
+                                            Transparency: floatPtr(0.3),
                                         },
                                     },
                                 },
@@ -174,13 +183,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/IFS.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -191,7 +200,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

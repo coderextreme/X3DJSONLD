@@ -236,7 +236,11 @@ field47.setValue("0")
 
 ComposedShader36.addField(field47)
 
-ComposedShader36.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"""))
+ComposedShader36.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\">"""))
+
+ComposedShader36.addComments(x3d.CommentsBlock("""<ComposedCubeMapTexture USE=\"texture\"/>"""))
+
+ComposedShader36.addComments(x3d.CommentsBlock("""</field>"""))
 ShaderPart48 = x3d.ShaderPart()
 ShaderPart48.setType("VERTEX")
 IS49 = x3d.IS()

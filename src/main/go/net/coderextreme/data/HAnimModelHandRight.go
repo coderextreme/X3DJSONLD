@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -95,7 +95,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("creator"),
-                Content: stringPtr("Kwan Hee YOO, Don Brutzman and Joe Williams"),
+                Content: stringPtr("Kwan-Hee YOO, Don Brutzman and Joe Williams"),
             },
             &x3d.Meta{
                 Name: stringPtr("created"),
@@ -103,15 +103,11 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:09 GMT"),
+                Content: stringPtr("23 December 2021"),
             },
             &x3d.Meta{
                 Name: stringPtr("TODO"),
                 Content: stringPtr("fix visible geometry for thumb and index finger, midcarpal_1 and midcarpal_2"),
-            },
-            &x3d.Meta{
-                Name: stringPtr("TODO"),
-                Content: stringPtr("Integrate and confirm Segment/Joint names, Viewpoints."),
             },
             &x3d.Meta{
                 Name: stringPtr("Image"),
@@ -151,60 +147,83 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/hanim.html"),
+                Content: stringPtr("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"),
             },
             &x3d.Meta{
                 Name: stringPtr("subject"),
                 Content: stringPtr("X3D HAnim humanoid animation"),
             },
             &x3d.Meta{
+                Name: stringPtr("TODO"),
+                Content: stringPtr("Integrate and confirm Segment/Joint names, Viewpoints."),
+            },
+            &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelHandRight.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("HAnimModelHandRight.x3d"),
                 },
                 &x3d.HAnimHumanoid{
+                    Name: stringPtr("Hand_Right"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("hanim_Hand_Right"),
                     },
-                    Name: stringPtr("Hand_Right"),
                     Loa: int32Ptr(4),
+                    Version: stringPtr("2.0"),
+//original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'
                     Metadata: &x3d.MetadataSet{
                         Name: stringPtr("HAnimHumanoid.info"),
                         Reference: stringPtr("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
                         &x3d.MetadataString{
                             Name: stringPtr("authorName"),
+                            Value: x3d.MFString{"Kwan-Hee YOO, Don Brutzman and Joe Williams"},
                         },
                     },
                     Skeleton: []x3d.X3DNode{
                         &x3d.HAnimJoint{
+                            Name: stringPtr("humanoid_root"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("hanim_humanoid_root"),
                             },
-                            Name: stringPtr("humanoid_root"),
+                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
+//Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model
                             Children: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
+                                    Name: stringPtr("r_radiocarpal"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("hanim_r_radiocarpal"),
                                     },
                                     Description: stringPtr("connection joint of hand to leg above"),
-                                    Name: stringPtr("r_radiocarpal"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
+                                            Name: stringPtr("r_carpal"),
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("hanim_r_carpal"),
                                             },
-                                            Name: stringPtr("r_carpal"),
                                             &x3d.Transform{
                                                 Children: []x3d.X3DNode{
                                                     &x3d.Shape{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("HAnimJointShape"),
+                                                        },
+                                                        Geometry: &x3d.Sphere{
+                                                            Radius: floatPtr(0.025),
                                                         },
                                                         Appearance: &x3d.Appearance{
                                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -213,9 +232,6 @@ func main() {
                                                             Material: &x3d.Material{
                                                                 DiffuseColor: &x3d.SFColor{0.0, 0.0, 1.0},
                                                             },
-                                                        },
-                                                        Geometry: &x3d.Sphere{
-                                                            Radius: floatPtr(0.025),
                                                         },
                                                     },
                                                 },
@@ -269,25 +285,31 @@ func main() {
                                                 },
                                             },
                                     },
+//MC1
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimJoint{
+                                            Name: stringPtr("r_midcarpal_1"),
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("hanim_r_midcarpal_1"),
                                             },
-                                            Name: stringPtr("r_midcarpal_1"),
                                             Center: &x3d.SFVec3f{-0.14, 0.09, 0.0},
+                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimSegment{
+                                                    Name: stringPtr("r_trapezium"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_r_trapezium"),
                                                     },
-                                                    Name: stringPtr("r_trapezium"),
                                                     &x3d.Transform{
                                                             Translation: &x3d.SFVec3f{-0.14, 0.09, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.Shape{
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("HAnimNewJointShape"),
+                                                                },
+                                                                Geometry: &x3d.Sphere{
+                                                                    Radius: floatPtr(0.025),
                                                                 },
                                                                 Appearance: &x3d.Appearance{
                                                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -296,9 +318,6 @@ func main() {
                                                                     Material: &x3d.Material{
                                                                         DiffuseColor: &x3d.SFColor{1.0, 0.0, 0.0},
                                                                     },
-                                                                },
-                                                                Geometry: &x3d.Sphere{
-                                                                    Radius: floatPtr(0.025),
                                                                 },
                                                             },
                                                         },
@@ -320,19 +339,22 @@ func main() {
                                                         },
                                                     },
                                             },
+//thumb finger
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimJoint{
+                                                    Name: stringPtr("r_carpometacarpal_1"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_r_carpometacarpal_1"),
                                                     },
-                                                    Name: stringPtr("r_carpometacarpal_1"),
                                                     Center: &x3d.SFVec3f{-0.2, 0.15, 0.0},
+                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimSegment{
+                                                            Name: stringPtr("r_metacarpal_1"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_r_metacarpal_1"),
                                                             },
-                                                            Name: stringPtr("r_metacarpal_1"),
                                                             &x3d.Transform{
                                                                     Translation: &x3d.SFVec3f{-0.2, 0.15, 0.0},
                                                                 Children: []x3d.X3DNode{
@@ -362,17 +384,19 @@ func main() {
                                                     },
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimJoint{
+                                                            Name: stringPtr("r_metacarpophalangeal_1"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_r_metacarpophalangeal_1"),
                                                             },
-                                                            Name: stringPtr("r_metacarpophalangeal_1"),
                                                             Center: &x3d.SFVec3f{-0.3, 0.3, 0.0},
+                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimSegment{
+                                                                    Name: stringPtr("r_carpal_proximal_phalanx_1"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_r_carpal_proximal_phalanx_1"),
                                                                     },
-                                                                    Name: stringPtr("r_carpal_proximal_phalanx_1"),
                                                                     &x3d.Transform{
                                                                             Translation: &x3d.SFVec3f{-0.3, 0.3, 0.0},
                                                                         Children: []x3d.X3DNode{
@@ -402,17 +426,19 @@ func main() {
                                                             },
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimJoint{
+                                                                    Name: stringPtr("r_carpal_interphalangeal_1"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_r_carpal_interphalangeal_1"),
                                                                     },
-                                                                    Name: stringPtr("r_carpal_interphalangeal_1"),
                                                                     Center: &x3d.SFVec3f{-0.35, 0.4, 0.0},
+                                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimSegment{
+                                                                            Name: stringPtr("r_carpal_distal_phalanx_1"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_r_carpal_distal_phalanx_1"),
                                                                             },
-                                                                            Name: stringPtr("r_carpal_distal_phalanx_1"),
                                                                             &x3d.Transform{
                                                                                     Translation: &x3d.SFVec3f{-0.35, 0.4, 0.0},
                                                                                 Children: []x3d.X3DNode{
@@ -444,18 +470,21 @@ func main() {
                                                     },
                                             },
                                     },
+//MC2
                                     &x3d.HAnimJoint{
+                                        Name: stringPtr("r_midcarpal_2"),
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("hanim_r_midcarpal_2"),
                                         },
-                                        Name: stringPtr("r_midcarpal_2"),
                                         Center: &x3d.SFVec3f{-0.07, 0.07, 0.0},
+                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimSegment{
+                                                Name: stringPtr("r_trapezoid"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_trapezoid"),
                                                 },
-                                                Name: stringPtr("r_trapezoid"),
                                                 &x3d.Transform{
                                                         Translation: &x3d.SFVec3f{-0.07, 0.07, 0.0},
                                                     Children: []x3d.X3DNode{
@@ -483,19 +512,22 @@ func main() {
                                                     },
                                                 },
                                         },
+//index finger
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("r_carpometacarpal_2"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_carpometacarpal_2"),
                                                 },
-                                                Name: stringPtr("r_carpometacarpal_2"),
                                                 Center: &x3d.SFVec3f{-0.1, 0.2, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("r_metacarpal_2"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpal_2"),
                                                         },
-                                                        Name: stringPtr("r_metacarpal_2"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{-0.1, 0.2, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -525,17 +557,19 @@ func main() {
                                                 },
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("r_metacarpophalangeal_2"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpophalangeal_2"),
                                                         },
-                                                        Name: stringPtr("r_metacarpophalangeal_2"),
                                                         Center: &x3d.SFVec3f{-0.15, 0.5, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("r_carpal_proximal_phalanx_2"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_phalanx_2"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_phalanx_2"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{-0.15, 0.5, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -565,17 +599,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_2"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_interphalangeal_2"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_2"),
                                                                 Center: &x3d.SFVec3f{-0.2, 0.7, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("r_carpal_middle_phalanx_2"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_middle_phalanx_2"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_middle_phalanx_2"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{-0.2, 0.7, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -605,17 +641,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_2"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_distal_interphalangeal_2"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_2"),
                                                                         Center: &x3d.SFVec3f{-0.24, 0.87, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("r_carpal_distal_phalanx_2"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_r_carpal_distal_phalanx_2"),
                                                                                 },
-                                                                                Name: stringPtr("r_carpal_distal_phalanx_2"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{-0.24, 0.87, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -648,18 +686,21 @@ func main() {
                                                 },
                                         },
                                     },
+//MC3
                                     &x3d.HAnimJoint{
+                                        Name: stringPtr("r_midcarpal_3"),
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("hanim_r_midcarpal_3"),
                                         },
-                                        Name: stringPtr("r_midcarpal_3"),
                                         Center: &x3d.SFVec3f{0.0, 0.07, 0.0},
+                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimSegment{
+                                                Name: stringPtr("r_capitate"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_capitate"),
                                                 },
-                                                Name: stringPtr("r_capitate"),
                                                 &x3d.Transform{
                                                         Translation: &x3d.SFVec3f{0.0, 0.07, 0.0},
                                                     Children: []x3d.X3DNode{
@@ -687,19 +728,22 @@ func main() {
                                                     },
                                                 },
                                         },
+//Middle fingle
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("r_carpometacarpal_3"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_carpometacarpal_3"),
                                                 },
-                                                Name: stringPtr("r_carpometacarpal_3"),
                                                 Center: &x3d.SFVec3f{0.0, 0.2, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("r_metacarpal_3"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpal_3"),
                                                         },
-                                                        Name: stringPtr("r_metacarpal_3"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{0.0, 0.2, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -729,17 +773,19 @@ func main() {
                                                 },
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("r_metacarpophalangeal_3"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpophalangeal_3"),
                                                         },
-                                                        Name: stringPtr("r_metacarpophalangeal_3"),
                                                         Center: &x3d.SFVec3f{-0.03, 0.5, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("r_carpal_proximal_phalanx_3"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_phalanx_3"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_phalanx_3"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{-0.03, 0.5, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -769,17 +815,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_3"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_interphalangeal_3"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_3"),
                                                                 Center: &x3d.SFVec3f{-0.05, 0.75, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("r_carpal_middle_phalanx_3"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_middle_phalanx_3"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_middle_phalanx_3"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{-0.05, 0.75, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -809,17 +857,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_3"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_distal_interphalangeal_3"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_3"),
                                                                         Center: &x3d.SFVec3f{-0.08, 0.96, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("r_carpal_distal_phalanx_3"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_r_carpal_distal_phalanx_3"),
                                                                                 },
-                                                                                Name: stringPtr("r_carpal_distal_phalanx_3"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{-0.08, 0.96, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -852,18 +902,21 @@ func main() {
                                                 },
                                         },
                                     },
+//MC4_5
                                     &x3d.HAnimJoint{
+                                        Name: stringPtr("r_midcarpal_4_5"),
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("hanim_r_midcarpal_4_5"),
                                         },
-                                        Name: stringPtr("r_midcarpal_4_5"),
                                         Center: &x3d.SFVec3f{0.1, 0.1, 0.0},
+                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimSegment{
+                                                Name: stringPtr("r_hamate"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_hamate"),
                                                 },
-                                                Name: stringPtr("r_hamate"),
                                                 &x3d.Transform{
                                                         Translation: &x3d.SFVec3f{0.1, 0.1, 0.0},
                                                     Children: []x3d.X3DNode{
@@ -907,19 +960,22 @@ func main() {
                                                     },
                                                 },
                                         },
+//ring finger
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("r_carpometacarpal_4"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_r_carpometacarpal_4"),
                                                 },
-                                                Name: stringPtr("r_carpometacarpal_4"),
                                                 Center: &x3d.SFVec3f{0.1, 0.2, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("r_metacarpal_4"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpal_4"),
                                                         },
-                                                        Name: stringPtr("r_metacarpal_4"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{0.1, 0.2, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -949,17 +1005,19 @@ func main() {
                                                 },
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("r_metacarpophalangeal_4"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_r_metacarpophalangeal_4"),
                                                         },
-                                                        Name: stringPtr("r_metacarpophalangeal_4"),
                                                         Center: &x3d.SFVec3f{0.1, 0.47, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("r_carpal_proximal_phalanx_4"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_phalanx_4"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_phalanx_4"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{0.1, 0.47, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -989,17 +1047,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_4"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_r_carpal_proximal_interphalangeal_4"),
                                                                 },
-                                                                Name: stringPtr("r_carpal_proximal_interphalangeal_4"),
                                                                 Center: &x3d.SFVec3f{0.1, 0.7, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("r_carpal_middle_phalanx_4"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_middle_phalanx_4"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_middle_phalanx_4"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{0.1, 0.7, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -1029,17 +1089,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_4"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_r_carpal_distal_interphalangeal_4"),
                                                                         },
-                                                                        Name: stringPtr("r_carpal_distal_interphalangeal_4"),
                                                                         Center: &x3d.SFVec3f{0.1, 0.93, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("r_carpal_distal_phalanx_4"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_r_carpal_distal_phalanx_4"),
                                                                                 },
-                                                                                Name: stringPtr("r_carpal_distal_phalanx_4"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{0.1, 0.93, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -1071,18 +1133,21 @@ func main() {
                                                         },
                                                 },
                                         },
+//pinky finger
                                         &x3d.HAnimJoint{
+                                            Name: stringPtr("r_carpometacarpal_5"),
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("hanim_r_carpometacarpal_5"),
                                             },
-                                            Name: stringPtr("r_carpometacarpal_5"),
                                             Center: &x3d.SFVec3f{0.15, 0.17, 0.0},
+                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimSegment{
+                                                    Name: stringPtr("r_metacarpal_5"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_r_metacarpal_5"),
                                                     },
-                                                    Name: stringPtr("r_metacarpal_5"),
                                                     &x3d.Transform{
                                                             Translation: &x3d.SFVec3f{0.15, 0.17, 0.0},
                                                         Children: []x3d.X3DNode{
@@ -1112,17 +1177,19 @@ func main() {
                                             },
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimJoint{
+                                                    Name: stringPtr("r_metacarpophalangeal_5"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_r_metacarpophalangeal_5"),
                                                     },
-                                                    Name: stringPtr("r_metacarpophalangeal_5"),
                                                     Center: &x3d.SFVec3f{0.2, 0.4, 0.0},
+                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimSegment{
+                                                            Name: stringPtr("r_carpal_proximal_phalanx_5"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_r_carpal_proximal_phalanx_5"),
                                                             },
-                                                            Name: stringPtr("r_carpal_proximal_phalanx_5"),
                                                             &x3d.Transform{
                                                                     Translation: &x3d.SFVec3f{0.2, 0.4, 0.0},
                                                                 Children: []x3d.X3DNode{
@@ -1152,17 +1219,19 @@ func main() {
                                                     },
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimJoint{
+                                                            Name: stringPtr("r_carpal_proximal_interphalangeal_5"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_r_carpal_proximal_interphalangeal_5"),
                                                             },
-                                                            Name: stringPtr("r_carpal_proximal_interphalangeal_5"),
                                                             Center: &x3d.SFVec3f{0.23, 0.63, 0.0},
+                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimSegment{
+                                                                    Name: stringPtr("r_carpal_middle_phalanx_5"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_r_carpal_middle_phalanx_5"),
                                                                     },
-                                                                    Name: stringPtr("r_carpal_middle_phalanx_5"),
                                                                     &x3d.Transform{
                                                                             Translation: &x3d.SFVec3f{0.23, 0.63, 0.0},
                                                                         Children: []x3d.X3DNode{
@@ -1192,17 +1261,19 @@ func main() {
                                                             },
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimJoint{
+                                                                    Name: stringPtr("r_carpal_distal_interphalangeal_5"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_r_carpal_distal_interphalangeal_5"),
                                                                     },
-                                                                    Name: stringPtr("r_carpal_distal_interphalangeal_5"),
                                                                     Center: &x3d.SFVec3f{0.25, 0.79, 0.0},
+                                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimSegment{
+                                                                            Name: stringPtr("r_carpal_distal_phalanx_5"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_r_carpal_distal_phalanx_5"),
                                                                             },
-                                                                            Name: stringPtr("r_carpal_distal_phalanx_5"),
                                                                             &x3d.Transform{
                                                                                     Translation: &x3d.SFVec3f{0.25, 0.79, 0.0},
                                                                                 Children: []x3d.X3DNode{
@@ -1363,127 +1434,6 @@ func main() {
                             USE: stringPtr("hanim_r_radiocarpal"),
                         },
                     },
-                    Segments: []x3d.X3DNode{
-                        &x3d.HAnimSegment{
-                            CoreX3DNode: x3d.CoreX3DNode{
-                                USE: stringPtr("hanim_r_capitate"),
-                            },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_distal_phalanx_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_distal_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_distal_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_distal_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_distal_phalanx_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_middle_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_middle_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_middle_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_middle_phalanx_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_proximal_phalanx_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_proximal_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_proximal_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_proximal_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_carpal_proximal_phalanx_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_hamate"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_metacarpal_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_metacarpal_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_metacarpal_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_metacarpal_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_metacarpal_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_trapezium"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_r_trapezoid"),
-                        },
-                    },
                 },
             },
         },
@@ -1503,13 +1453,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/HAnimModelHandRight.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -1520,7 +1470,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -337,7 +337,10 @@ Transform61 := Transform25;
 fieldValue60.AddChildren([Transform61]);
 { .AddFieldValue }
 ProtoInstance53.FieldValue := fieldValue60;
-{ <fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue> }
+{ <fieldValue name='set_startpoint'> }
+{ </fieldValue> }
+{ <fieldValue name='set_endpoint'> }
+{ </fieldValue> }
 { .AddChildren }
 Group7.AddChildren([ProtoInstance53]);
 Group7.AddRoute(Transform10.EventTranslation_changed, ProtoInstance53.EventSet_startpoint);

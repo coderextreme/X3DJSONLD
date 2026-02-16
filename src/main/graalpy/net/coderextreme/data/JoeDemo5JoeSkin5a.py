@@ -6,7 +6,7 @@ x3d.ConfigurationProperties.setStripTrailingZeroes(True)
 x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Immersive")
-X3D0.setVersion("4.0")
+X3D0.setVersion("4.1")
 head1 = x3d.head()
 component2 = x3d.component()
 component2.setName("HAnim")
@@ -13880,7 +13880,41 @@ Scene5.addChild(Group1676)
 Group2118 = x3d.Group()
 Group2118.setDEF("Pitch1Animation_loa4")
 
-Group2118.addComments(x3d.CommentsBlock("""Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor."""))
+Group2118.addComments(x3d.CommentsBlock("""Pitch1 example shows Y-axis control of Joint nodes"""))
+
+Group2118.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group2118.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group2118.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group2118.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>"""))
+
+Group2118.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of x-axis"""))
+
+Group2118.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group2118.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group2118.addComments(x3d.CommentsBlock("""0 radians, zero degrees."""))
+
+Group2118.addComments(x3d.CommentsBlock("""x y z scale, all in radians 0 to <+-inf."""))
+
+Group2118.addComments(x3d.CommentsBlock("""Thus, 1 radian in a times scale 1 = +1 radian"""))
+
+Group2118.addComments(x3d.CommentsBlock("""= about 60 degrees"""))
+
+Group2118.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group2118.addComments(x3d.CommentsBlock("""greater than +-6.28 radians range"""))
+
+Group2118.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group2118.addComments(x3d.CommentsBlock("""positive pitch value applied to the"""))
+
+Group2118.addComments(x3d.CommentsBlock("""skullbase Joint would rotate the"""))
+
+Group2118.addComments(x3d.CommentsBlock("""the gaze of model down, toward the floor."""))
 TimeSensor2119 = x3d.TimeSensor()
 TimeSensor2119.setDEF("Pitch1Timer")
 TimeSensor2119.setCycleInterval(10)
@@ -19780,7 +19814,43 @@ Scene5.addChild(Group2560)
 Group3002 = x3d.Group()
 Group3002.setDEF("Yaw1Animation_loa4")
 
-Group3002.addComments(x3d.CommentsBlock("""Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model&apos;s +X direction, the model left over the left shoulder."""))
+Group3002.addComments(x3d.CommentsBlock("""Yaw1 example shows Y-axis control of Joint nodes"""))
+
+Group3002.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group3002.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group3002.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group3002.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>"""))
+
+Group3002.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of y-axis"""))
+
+Group3002.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group3002.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group3002.addComments(x3d.CommentsBlock("""0 radians, zero degrees."""))
+
+Group3002.addComments(x3d.CommentsBlock("""x y z scale, all in radians 0 to <+-inf."""))
+
+Group3002.addComments(x3d.CommentsBlock("""Thus, 1 radian in y times scale 1 = +1 radian"""))
+
+Group3002.addComments(x3d.CommentsBlock("""= about 60 degrees"""))
+
+Group3002.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group3002.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group3002.addComments(x3d.CommentsBlock("""positive yaw value applied to the"""))
+
+Group3002.addComments(x3d.CommentsBlock("""skullbase Joint would move the"""))
+
+Group3002.addComments(x3d.CommentsBlock("""the gaze of model toward the"""))
+
+Group3002.addComments(x3d.CommentsBlock("""model&apos;s +X direction, the model left"""))
+
+Group3002.addComments(x3d.CommentsBlock("""over the left shoulder."""))
 TimeSensor3003 = x3d.TimeSensor()
 TimeSensor3003.setDEF("Yaw1Timer")
 TimeSensor3003.setCycleInterval(10)
@@ -25680,7 +25750,51 @@ Scene5.addChild(Group3444)
 Group3886 = x3d.Group()
 Group3886.setDEF("Roll1Animation_loa4")
 
-Group3886.addComments(x3d.CommentsBlock("""This Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians = zero degrees 2pi radians = 360 degrees. form: x y z scale pitch, yaw, roll right hand rule in radians 0 to <+-inf. actual result = x y z per scale 1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z 1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model&apos;s +X direction, the model left toward the left shoulder."""))
+Group3886.addComments(x3d.CommentsBlock("""This Roll1 example shows Y-axis control of Joint nodes"""))
+
+Group3886.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group3886.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group3886.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group3886.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>"""))
+
+Group3886.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of z-axis"""))
+
+Group3886.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group3886.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group3886.addComments(x3d.CommentsBlock("""0 radians = zero degrees"""))
+
+Group3886.addComments(x3d.CommentsBlock("""2pi radians = 360 degrees."""))
+
+Group3886.addComments(x3d.CommentsBlock("""form: x y z scale"""))
+
+Group3886.addComments(x3d.CommentsBlock("""pitch, yaw, roll right hand rule"""))
+
+Group3886.addComments(x3d.CommentsBlock("""in radians 0 to <+-inf."""))
+
+Group3886.addComments(x3d.CommentsBlock("""actual result = x y z per scale"""))
+
+Group3886.addComments(x3d.CommentsBlock("""1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z"""))
+
+Group3886.addComments(x3d.CommentsBlock("""1 radian = about 60 degrees"""))
+
+Group3886.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group3886.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group3886.addComments(x3d.CommentsBlock("""positive roll value applied to the"""))
+
+Group3886.addComments(x3d.CommentsBlock("""skullbase Joint would rotate the"""))
+
+Group3886.addComments(x3d.CommentsBlock("""the gaze of model ccw toward the"""))
+
+Group3886.addComments(x3d.CommentsBlock("""model&apos;s +X direction, the model left"""))
+
+Group3886.addComments(x3d.CommentsBlock("""toward the left shoulder."""))
 TimeSensor3887 = x3d.TimeSensor()
 TimeSensor3887.setDEF("Roll1Timer")
 TimeSensor3887.setCycleInterval(10)

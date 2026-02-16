@@ -464,30 +464,6 @@
       <HAnimJoint USE='hanim_r_midcarpal_3' containerField='joints'/>
       <HAnimJoint USE='hanim_r_midcarpal_4_5' containerField='joints'/>
       <HAnimJoint USE='hanim_r_radiocarpal' containerField='joints'/>
-      <HAnimSegment USE='hanim_r_capitate' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_distal_phalanx_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_middle_phalanx_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_carpal_proximal_phalanx_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_hamate' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metacarpal_1' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metacarpal_2' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metacarpal_3' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metacarpal_4' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_metacarpal_5' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_trapezium' containerField='segments'/>
-      <HAnimSegment USE='hanim_r_trapezoid' containerField='segments'/>
     </HAnimHumanoid>
   </Scene>
 </X3D>

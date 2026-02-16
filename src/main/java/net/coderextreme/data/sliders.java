@@ -62,81 +62,81 @@ ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
-      X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Full")).setVersion(new SFString("4.1"))
       .setHead(new head()
         .addComments(new CommentsBlock("<component name='Shape' level='4'></component>"))
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
-        .addComponent(new component().setName("Texturing").setLevel(1))
-        .addComponent(new component().setName("Rendering").setLevel(1))
-        .addComponent(new component().setName("Grouping").setLevel(3))
-        .addComponent(new component().setName("Core").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("sliders.x3d"))
-        .addMeta(new meta().setName("created").setContent("8 August 2025"))
-        .addMeta(new meta().setName("description").setContent("*Bumpy flower with prototype sliders*"))
-        .addMeta(new meta().setName("creator").setContent("Doug Sanden, Christoph Valentin, John Carlson"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.coderextreme.net/X3DJSONLD/src/main/data/sliders.x3d"))
-        .addMeta(new meta().setName("license").setContent("license.html"))
-        .addMeta(new meta().setName("generator").setContent("Vim, VI Improved")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addComponent(new component().setName(new SFString("EnvironmentalEffects")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Texturing")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Rendering")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Grouping")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Core")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("sliders.x3d")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("8 August 2025")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("*Bumpy flower with prototype sliders*")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Doug Sanden, Christoph Valentin, John Carlson")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://www.coderextreme.net/X3DJSONLD/src/main/data/sliders.x3d")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("license.html")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("Vim, VI Improved"))))
       .setScene(new Scene()
         .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new MFInt320().getArray())
           .addLayers(new Layer().setPickable(true).setObjectType(new MFString1().getArray())
             .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat2().getArray()))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {0f ,-1f ,0f }))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {-1f ,-0.1f ,-1f }))
-            .addChild(new Viewpoint().setDescription("My Overview").setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,60f }))
+            .addChild(new Viewpoint().setDescription(new SFString("My Overview")).setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,60f }))
             .addChild(new Group()
               .addComments(new CommentsBlock("Arrow X"))
               .addChild(new Transform().setTranslation(new float[] {25f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setDEF("Shaft").setRadius(0.35f ).setHeight(50f ))
+                  .setGeometry(new Cylinder().setDEF(new SFString("Shaft")).setRadius(0.35f ).setHeight(50f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("RED").setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,0f ,0f })))))
+                    .setMaterial(new Material().setDEF(new SFString("RED")).setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,0f ,0f })))))
               .addChild(new Transform().setTranslation(new float[] {50f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setDEF("Tip").setBottomRadius(0.8f ).setHeight(3f ))
+                  .setGeometry(new Cone().setDEF(new SFString("Tip")).setBottomRadius(0.8f ).setHeight(3f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("RED")))))
+                    .setMaterial(new Material().setUSE(new SFString("RED"))))))
               .addComments(new CommentsBlock("Arrow Y"))
               .addChild(new Transform().setTranslation(new float[] {0f ,25f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("Shaft"))
+                  .setGeometry(new Cylinder().setUSE(new SFString("Shaft")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("GREEN").setDiffuseColor(new float[] {0f ,1f ,0f }).setEmissiveColor(new float[] {0f ,1f ,0f })))))
+                    .setMaterial(new Material().setDEF(new SFString("GREEN")).setDiffuseColor(new float[] {0f ,1f ,0f }).setEmissiveColor(new float[] {0f ,1f ,0f })))))
               .addChild(new Transform().setTranslation(new float[] {0f ,50f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setUSE("Tip"))
+                  .setGeometry(new Cone().setUSE(new SFString("Tip")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("GREEN")))))
+                    .setMaterial(new Material().setUSE(new SFString("GREEN"))))))
               .addComments(new CommentsBlock("Arrow Z"))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,25f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("Shaft"))
+                  .setGeometry(new Cylinder().setUSE(new SFString("Shaft")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("BLUE").setDiffuseColor(new float[] {0f ,0f ,1f }).setEmissiveColor(new float[] {0f ,0f ,1f })))))
+                    .setMaterial(new Material().setDEF(new SFString("BLUE")).setDiffuseColor(new float[] {0f ,0f ,1f }).setEmissiveColor(new float[] {0f ,0f ,1f })))))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,50f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setUSE("Tip"))
+                  .setGeometry(new Cone().setUSE(new SFString("Tip")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("BLUE"))))))
+                    .setMaterial(new Material().setUSE(new SFString("BLUE")))))))
             .addComments(new CommentsBlock("the model that is being reviewed by the users of this scene"))
-            .addChild(new Transform().setDEF("FlowerTransform")
+            .addChild(new Transform().setDEF(new SFString("FlowerTransform"))
               .addChild(new Transform()
                 .addChild(new Shape()
-                  .setGeometry(new IndexedFaceSet().setConvex(false).setDEF("Orbit")
-                    .setCoord(new Coordinate().setDEF("OrbitCoordinates")))
+                  .setGeometry(new IndexedFaceSet().setConvex(false).setDEF(new SFString("Orbit"))
+                    .setCoord(new Coordinate().setDEF(new SFString("OrbitCoordinates"))))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))))))
-            .addChild(new Script().setDEF("OrbitScript")
-              .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-              .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-              .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-              .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-              .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-              .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-              .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-              .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-              .addField(new field().setType("SFInt32").setName("resolution").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
+            .addChild(new Script().setDEF(new SFString("OrbitScript"))
+              .addField(new field().setType("MFVec3f").setName(new SFString("coordinates")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+              .addField(new field().setType("MFInt32").setName(new SFString("coordIndexes")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+              .addField(new field().setType("SFFloat").setName(new SFString("a")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+              .addField(new field().setType("SFFloat").setName(new SFString("b")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+              .addField(new field().setType("SFFloat").setName(new SFString("c")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+              .addField(new field().setType("SFFloat").setName(new SFString("d")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+              .addField(new field().setType("SFFloat").setName(new SFString("pdelta")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+              .addField(new field().setType("SFFloat").setName(new SFString("tdelta")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+              .addField(new field().setType("SFInt32").setName(new SFString("resolution")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("50")))
               .setSourceCode("ecmascript:\n"+
 "			function initialize() {\n"+
 "			     generateCoordinates();\n"+
@@ -204,8 +204,8 @@ ProtoInstance ProtoInstance5 = null;
 "				phi += delta;\n"+
 "			     }\n"+
 "			}"))
-            .addChild(new ROUTE().setFromField("coordIndexes").setFromNode("OrbitScript").setToField("set_coordIndex").setToNode("Orbit"))
-            .addChild(new ROUTE().setFromField("coordinates").setFromNode("OrbitScript").setToField("set_point").setToNode("OrbitCoordinates")))
+            .addChild(new ROUTE().setFromField(new SFString("coordIndexes")).setFromNode(new SFString("OrbitScript")).setToField(new SFString("set_coordIndex")).setToNode(new SFString("Orbit")))
+            .addChild(new ROUTE().setFromField(new SFString("coordinates")).setFromNode(new SFString("OrbitScript")).setToField(new SFString("set_point")).setToNode(new SFString("OrbitCoordinates"))))
           .addLayers(new LayoutLayer().setPickable(true).setObjectType(new MFString3().getArray())
             .setLayout(new Layout().setAlign(new MFString4().getArray()).setOffset(new MFFloat5().getArray()).setSize(new MFFloat6().getArray()))
             .setViewport(new Viewport().setClipBoundary(new MFFloat7().getArray()))
@@ -214,49 +214,49 @@ ProtoInstance ProtoInstance5 = null;
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f }).setTransparency(0.7f )))
                 .setGeometry(new Box().setSize(new float[] {100f ,100f ,0.02f }))))
-            .addChild(new Transform().setDEF("equationTransform")
+            .addChild(new Transform().setDEF(new SFString("equationTransform"))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,-20f })
                 .addChild(new Shape()
-                  .setGeometry(new Text().setDEF("equation").setString(new MFString8().getArray())
+                  .setGeometry(new Text().setDEF(new SFString("equation")).setString(new MFString8().getArray())
                     .setFontStyle(new FontStyle().setSize(0.09f )))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0f }))))))
             .addComments(new CommentsBlock("The slider parameters"))
-            .addChild(new ProtoDeclare().setName("SliderProto")
+            .addChild(new ProtoDeclare().setName(new SFString("SliderProto"))
               .setProtoInterface(new ProtoInterface()
-                .addField(new field().setType("SFVec3f").setName("sliderTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("MFString").setName("textString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"x=\""))
-                .addField(new field().setType("SFFloat").setName("parameterScale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("15"))
-                .addField(new field().setType("SFString").setName("parameterName").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("x"))
-                .addField(new field().setType("SFNode").setName("orbScript").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+                .addField(new field().setType("SFVec3f").setName(new SFString("sliderTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+                .addField(new field().setType("MFString").setName(new SFString("textString")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("\"x=\"")))
+                .addField(new field().setType("SFFloat").setName(new SFString("parameterScale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("15")))
+                .addField(new field().setType("SFString").setName(new SFString("parameterName")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("x")))
+                .addField(new field().setType("SFNode").setName(new SFString("orbScript")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
               .setProtoBody(new ProtoBody()
                 .addChild(new Group()
-                  .addChild(new Transform().setDEF("protoSlider").setTranslation(new float[] {0f ,0.7f ,0f })
+                  .addChild(new Transform().setDEF(new SFString("protoSlider")).setTranslation(new float[] {0f ,0.7f ,0f })
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("translation").setProtoField("sliderTranslation")))
-                    .addChild(new Transform().setDEF("protoTransform").setTranslation(new float[] {0f ,0f ,0.1f })
-                      .addChild(new PlaneSensor().setDEF("protoSensor").setDescription("Grab with mouse to adjust slider").setMaxPosition(new float[] {1f ,0f }))
+                      .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("sliderTranslation"))))
+                    .addChild(new Transform().setDEF(new SFString("protoTransform")).setTranslation(new float[] {0f ,0f ,0.1f })
+                      .addChild(new PlaneSensor().setDEF(new SFString("protoSensor")).setDescription(new SFString("Grab with mouse to adjust slider")).setMaxPosition(new float[] {1f ,0f }))
                       .addChild(new Transform().setTranslation(new float[] {0f ,0f ,0f })
-                        .addChild(new TouchSensor().setDescription("Maybe start dragging this?").setDEF("protoTS")))
+                        .addChild(new TouchSensor().setDescription(new SFString("Maybe start dragging this?")).setDEF(new SFString("protoTS"))))
                       .addChild(new Transform()
                         .addChild(new Shape()
-                          .setGeometry(new Text().setDEF("protoText").setString(new MFString9().getArray())
+                          .setGeometry(new Text().setDEF(new SFString("protoText")).setString(new MFString9().getArray())
                             .setIS(new IS()
-                              .addConnect(new connect().setNodeField("string").setProtoField("textString")))
-                            .setFontStyle(new FontStyle().setStyle("BOLD").setSize(0.23f )))
+                              .addConnect(new connect().setNodeField(new SFString("string")).setProtoField(new SFString("textString"))))
+                            .setFontStyle(new FontStyle().setStyle(new SFString("BOLD")).setSize(0.23f )))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material()))))))
-                  .addChild(new Script().setDEF("protoValueTransformerScript")
-                    .addField(new field().setType("SFFloat").setName("protoScale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                    .addField(new field().setType("SFString").setName("protoParameterName").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                    .addField(new field().setType("SFVec3f").setName("newTranslation").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("1 1 1"))
-                    .addField(new field().setType("SFNode").setName("protoScript").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                    .addField(new field().setType("SFFloat").setName("protoValue").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-                    .addField(new field().setType("MFString").setName("protoText").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"1.0\""))
+                  .addChild(new Script().setDEF(new SFString("protoValueTransformerScript"))
+                    .addField(new field().setType("SFFloat").setName(new SFString("protoScale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                    .addField(new field().setType("SFString").setName(new SFString("protoParameterName")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                    .addField(new field().setType("SFVec3f").setName(new SFString("newTranslation")).setAccessType(field.ACCESSTYPE_INPUTONLY).setValue(new SFString("1 1 1")))
+                    .addField(new field().setType("SFNode").setName(new SFString("protoScript")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                    .addField(new field().setType("SFFloat").setName(new SFString("protoValue")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1")))
+                    .addField(new field().setType("MFString").setName(new SFString("protoText")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("\"1.0\"")))
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("protoScale").setProtoField("parameterScale"))
-                      .addConnect(new connect().setNodeField("protoParameterName").setProtoField("parameterName"))
-                      .addConnect(new connect().setNodeField("protoScript").setProtoField("orbScript")))
+                      .addConnect(new connect().setNodeField(new SFString("protoScale")).setProtoField(new SFString("parameterScale")))
+                      .addConnect(new connect().setNodeField(new SFString("protoParameterName")).setProtoField(new SFString("parameterName")))
+                      .addConnect(new connect().setNodeField(new SFString("protoScript")).setProtoField(new SFString("orbScript"))))
                     .setSourceCode("ecmascript:\n"+
 "function set_protoScale(value) {\n"+
 "	protoScale = value;\n"+
@@ -283,83 +283,83 @@ ProtoInstance ProtoInstance5 = null;
 "       	set_protoText(new MFString(protoParameterName+'='+protoValue.toFixed(2)));\n"+
 "	protoScript[protoParameterName] = protoValue;\n"+
 "};"))
-                  .addChild(new ROUTE().setFromField("translation_changed").setFromNode("protoSensor").setToField("set_translation").setToNode("protoTransform"))
-                  .addChild(new ROUTE().setFromField("translation_changed").setFromNode("protoSensor").setToField("newTranslation").setToNode("protoValueTransformerScript"))
-                  .addChild(new ROUTE().setFromField("protoText").setFromNode("protoValueTransformerScript").setToField("string").setToNode("protoText")))))
-            .addChild(ProtoInstance0 = new ProtoInstance().setName("SliderProto").setDEF("aPI"))
-            .addChild(ProtoInstance1 = new ProtoInstance().setName("SliderProto").setDEF("bPI"))
-            .addChild(ProtoInstance2 = new ProtoInstance().setName("SliderProto").setDEF("cPI"))
-            .addChild(ProtoInstance3 = new ProtoInstance().setName("SliderProto").setDEF("dPI"))
-            .addChild(ProtoInstance4 = new ProtoInstance().setName("SliderProto").setDEF("tdeltaPI"))
-            .addChild(ProtoInstance5 = new ProtoInstance().setName("SliderProto").setDEF("pdeltaPI")))
+                  .addChild(new ROUTE().setFromField(new SFString("translation_changed")).setFromNode(new SFString("protoSensor")).setToField(new SFString("set_translation")).setToNode(new SFString("protoTransform")))
+                  .addChild(new ROUTE().setFromField(new SFString("translation_changed")).setFromNode(new SFString("protoSensor")).setToField(new SFString("newTranslation")).setToNode(new SFString("protoValueTransformerScript")))
+                  .addChild(new ROUTE().setFromField(new SFString("protoText")).setFromNode(new SFString("protoValueTransformerScript")).setToField(new SFString("string")).setToNode(new SFString("protoText"))))))
+            .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("aPI")))
+            .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("bPI")))
+            .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("cPI")))
+            .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("dPI")))
+            .addChild(ProtoInstance4 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("tdeltaPI")))
+            .addChild(ProtoInstance5 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("pdeltaPI"))))
           .addLayers(new Layer().setPickable(true).setObjectType(new MFString10().getArray())
-            .addChild(new Viewpoint().setDescription("My Humanoids").setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,80f })))));
+            .addChild(new Viewpoint().setDescription(new SFString("My Humanoids")).setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,80f })))));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.7 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.7 0")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"a=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"a=\"")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("30"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("30")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("a"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("a")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.4 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.4 0")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"b=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"b=\"")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("30"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("30")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("b"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("b")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.1 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.1 0")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"c=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"c=\"")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("20"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("20")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("c"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("c")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.2 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.2 0")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"d=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"d=\"")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("20"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("20")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("d"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("d")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.5 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.5 0")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"tdelta=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"tdelta=\"")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("6.28"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("6.28")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("tdelta"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("tdelta")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.8 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.8 0")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"pdelta=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"pdelta=\"")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("6.28"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("6.28")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("pdelta"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("pdelta")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("orbScript")
-                .addChild(new Script().setUSE("OrbitScript")));
+              .addFieldValue(new fieldValue().setName(new SFString("orbScript"))
+                .addChild(new Script().setUSE(new SFString("OrbitScript"))));
     return X3D0;
     }
 private class MFInt320 {

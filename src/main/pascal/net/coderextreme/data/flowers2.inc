@@ -154,7 +154,9 @@ Material31.IS := IS32;
 Appearance30.Material := Material31;
 { .SetAppearance }
 Shape29.Appearance := Appearance30;
-{ <IndexedFaceSet DEF="Orbit"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> }
+{ <IndexedFaceSet DEF="Orbit"> }
+{ <Coordinate DEF="OrbitCoordinates"/> }
+{ </IndexedFaceSet> }
 IndexedFaceSet36 := TIndexedFaceSetNode.Create;
 IndexedFaceSet36.Ccw := False;
 IndexedFaceSet36.Convex := False;

@@ -788,7 +788,8 @@ let Material161 = browser.currentScene.createNode("Material");
 Material161.USE = "Skin_Color";
 material = Material161;
 
-//clone.gif removed for security reasons <ImageTexture url='\"\" \"\"'/>
+//clone.gif removed for security reasons
+//<ImageTexture url='\"\" \"\"'/>
 appearance = Appearance160;
 
 let IndexedFaceSet162 = browser.currentScene.createNode("IndexedFaceSet");
@@ -929,1961 +930,1902 @@ let HAnimJoint186 = browser.currentScene.createNode("HAnimJoint");
 HAnimJoint186.USE = "hanim_r_wrist";
 joints[18] = HAnimJoint186;
 
-let HAnimSegment187 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment187.USE = "hanim_c4";
-segments[19] = HAnimSegment187;
-
-let HAnimSegment188 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment188.USE = "hanim_l1";
-segments[20] = HAnimSegment188;
-
-let HAnimSegment189 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment189.USE = "hanim_pelvis";
-segments[21] = HAnimSegment189;
-
-let HAnimSegment190 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment190.USE = "hanim_skull";
-segments[22] = HAnimSegment190;
-
-let HAnimSegment191 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment191.USE = "hanim_l_calf";
-segments[23] = HAnimSegment191;
-
-let HAnimSegment192 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment192.USE = "hanim_r_calf";
-segments[24] = HAnimSegment192;
-
-let HAnimSegment193 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment193.USE = "hanim_l_forearm";
-segments[25] = HAnimSegment193;
-
-let HAnimSegment194 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment194.USE = "hanim_r_forearm";
-segments[26] = HAnimSegment194;
-
-let HAnimSegment195 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment195.USE = "hanim_l_hand";
-segments[27] = HAnimSegment195;
-
-let HAnimSegment196 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment196.USE = "hanim_r_hand";
-segments[28] = HAnimSegment196;
-
-let HAnimSegment197 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment197.USE = "hanim_l_hindfoot";
-segments[29] = HAnimSegment197;
-
-let HAnimSegment198 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment198.USE = "hanim_r_hindfoot";
-segments[30] = HAnimSegment198;
-
-let HAnimSegment199 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment199.USE = "hanim_l_thigh";
-segments[31] = HAnimSegment199;
-
-let HAnimSegment200 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment200.USE = "hanim_r_thigh";
-segments[32] = HAnimSegment200;
-
-let HAnimSegment201 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment201.USE = "hanim_l_upperarm";
-segments[33] = HAnimSegment201;
-
-let HAnimSegment202 = browser.currentScene.createNode("HAnimSegment");
-HAnimSegment202.USE = "hanim_r_upperarm";
-segments[34] = HAnimSegment202;
-
 browser.currentScene.children[1] = HAnimHumanoid23;
 
-let NavigationInfo203 = browser.currentScene.createNode("NavigationInfo");
-NavigationInfo203.avatarSize = new X3D.MFFloat([0.15,1.53,0.75]);
-NavigationInfo203.speed = 0.5;
-NavigationInfo203.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);
-browser.currentScene.children[2] = NavigationInfo203;
+let NavigationInfo187 = browser.currentScene.createNode("NavigationInfo");
+NavigationInfo187.avatarSize = new X3D.MFFloat([0.15,1.53,0.75]);
+NavigationInfo187.speed = 0.5;
+NavigationInfo187.type = new X3D.MFString([new X3D.SFString("EXAMINE")]);
+browser.currentScene.children[2] = NavigationInfo187;
 
-let Group204 = browser.currentScene.createNode("Group");
-Group204.DEF = "Interface";
-//<Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform>
-let Collision205 = browser.currentScene.createNode("Collision");
-Collision205.DEF = "HUD";
-let Transform206 = browser.currentScene.createNode("Transform");
-Transform206.DEF = "HudXform";
-//Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
+let Group188 = browser.currentScene.createNode("Group");
+Group188.DEF = "Interface";
+//<Transform>
+//<ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/>
+//</Transform>
+let Collision189 = browser.currentScene.createNode("Collision");
+Collision189.DEF = "HUD";
+let Transform190 = browser.currentScene.createNode("Transform");
+Transform190.DEF = "HudXform";
+//Enable this line if you enabled ProximitySensor
+//<Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
 //Enable this line if you disabled ProximitySensor
-let Transform207 = browser.currentScene.createNode("Transform");
-Transform207.scale = new X3D.SFVec3f([0.5,0.5,0.5]);
-Transform207.rotation = new X3D.SFRotation([0,1,0,0.65]);
-Transform207.translation = new X3D.SFVec3f([0.5,0.1,0]);
-let Transform208 = browser.currentScene.createNode("Transform");
-Transform208.DEF = "Stand_Text";
-let TouchSensor209 = browser.currentScene.createNode("TouchSensor");
-TouchSensor209.DEF = "Stand_Touch";
-TouchSensor209.description = "click for behavior";
-Transform208YYY.children = new X3D.MFNode();
-
-Transform208ZZZ.children[0] = TouchSensor209;
-
-let Shape210 = browser.currentScene.createNode("Shape");
-Shape210.DEF = "Stand";
-let IndexedFaceSet211 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet211.coordIndex = new X3D.MFInt32([1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]);
-let Coordinate212 = browser.currentScene.createNode("Coordinate");
-Coordinate212.point = new X3D.MFVec3f([-3.21,-0.0154,0,-3.15,-0.0154,0,-3.14,-0.0467,0,-3.1,-0.0601,0,-3.05,-0.051,0,-3.04,-0.0254,0,-3.05,-0.00248,0,-3.1,0.0122,0,-3.16,0.03,0,-3.2,0.0684,0,-3.2,0.133,0,-3.16,0.17,0,-3.1,0.182,0,-3.04,0.171,0,-3.01,0.136,0,-3,0.095,0,-3.05,0.095,0,-3.06,0.125,0,-3.1,0.136,0,-3.14,0.126,0,-3.15,0.103,0,-3.14,0.0815,0,-3.1,0.0689,0,-3.04,0.0512,0,-3,0.0249,0,-2.99,-0.0195,0,-3,-0.0708,0,-3.05,-0.104,0,-3.1,-0.108,0,-3.16,-0.0947,0,-3.2,-0.0586,0,-2.86,-0.102,0,-2.9,-0.102,0,-2.94,-0.0832,0,-2.94,-0.0457,0,-2.94,0.0645,0,-2.97,0.0645,0,-2.97,0.103,0,-2.94,0.103,0,-2.94,0.158,0,-2.89,0.158,0,-2.89,0.103,0,-2.86,0.103,0,-2.86,0.0645,0,-2.89,0.0645,0,-2.89,-0.0483,0,-2.88,-0.0608,0,-2.86,-0.0612,0,-2.71,-0.000798,0,-2.71,-0.0373,0,-2.74,-0.0637,0,-2.77,-0.0624,0,-2.78,-0.0416,0,-2.77,-0.0195,0,-2.71,-0.0754,0,-2.74,-0.103,0,-2.79,-0.106,0,-2.82,-0.0865,0,-2.84,-0.0431,0,-2.82,0.000177,0,-2.78,0.0201,0,-2.73,0.0275,0,-2.71,0.0446,0,-2.72,0.0614,0,-2.74,0.0675,0,-2.77,0.0573,0,-2.78,0.039,0,-2.83,0.039,0,-2.82,0.0765,0,-2.78,0.105,0,-2.74,0.11,0,-2.71,0.107,0,-2.67,0.0849,0,-2.66,0.0526,0,-2.66,-0.0763,0,-2.65,-0.101,0,-2.7,-0.101,0,-2.61,-0.101,0,-2.61,0.103,0,-2.56,0.103,0,-2.56,0.0787,0,-2.52,0.104,0,-2.47,0.105,0,-2.43,0.0743,0,-2.43,0.038,0,-2.43,-0.101,0,-2.48,-0.101,0,-2.48,0.0224,0,-2.49,0.0514,0,-2.52,0.0627,0,-2.54,0.0505,0,-2.55,0.02,0,-2.55,-0.101,0,-2.33,0.0279,0,-2.31,0.0587,0,-2.27,0.0589,0,-2.25,0.0281,0,-2.25,-0.0232,0,-2.27,-0.0563,0,-2.31,-0.057,0,-2.33,-0.0245,0,-2.19,0.175,0,-2.19,-0.101,0,-2.25,-0.101,0,-2.25,-0.073,0,-2.26,-0.0913,0,-2.31,-0.108,0,-2.35,-0.0915,0,-2.38,-0.0424,0,-2.39,0.0243,0,-2.37,0.0809,0,-2.32,0.108,0,-2.28,0.106,0,-2.25,0.0776,0,-2.25,0.175,0,-2.48,0.0224,0,-2.43,0.038,0,-2.49,0.0514,0,-2.43,0.0743,0,-2.49,0.0514,0,-2.47,0.105,0,-2.52,0.0627,0,-2.52,0.104,0,-2.54,0.0505,0,-2.56,0.0787,0,-2.55,0.02,0,-2.56,0.0787,0,-2.61,-0.101,0,-2.55,0.02,0,-2.61,-0.101,0,-2.56,0.0787,0,-2.89,0.103,0,-2.94,0.103,0,-2.89,0.0645,0,-2.89,0.103,0,-2.94,0.103,0,-2.94,0.0645,0,-2.89,0.0645,0,-2.94,0.0645,0,-2.89,-0.0483,0,-2.94,-0.0457,0,-2.89,-0.0483,0,-2.94,-0.0832,0,-2.88,-0.0608,0,-2.9,-0.102,0,-3.06,0.125,0,-3.01,0.136,0,-3.06,0.125,0,-3.04,0.171,0,-3.1,0.136,0,-3.1,0.182,0,-3.14,0.126,0,-3.16,0.17,0,-3.15,0.103,0,-3.2,0.133,0,-3.14,0.0815,0,-3.2,0.0684,0,-3.14,0.0815,0,-3.16,0.03,0,-3.1,0.0689,0,-3.1,0.0122,0,-3.04,0.0512,0,-3.05,-0.00248,0,-3,0.0249,0,-3.05,-0.00248,0,-2.99,-0.0195,0,-3.04,-0.0254,0,-3,-0.0708,0,-3.05,-0.051,0,-3.05,-0.104,0,-3.05,-0.051,0,-3.1,-0.108,0,-3.1,-0.0601,0,-3.16,-0.0947,0,-3.14,-0.0467,0,-3.15,-0.0154,0,-3.2,-0.0586,0]);
-coord = Coordinate212;
-
-geometry = IndexedFaceSet211;
-
-let Appearance213 = browser.currentScene.createNode("Appearance");
-let Material214 = browser.currentScene.createNode("Material");
-Material214.DEF = "text_color";
-Material214.ambientIntensity = 0;
-Material214.diffuseColor = new X3D.SFColor([0,0,0]);
-Material214.emissiveColor = new X3D.SFColor([0.819,0.521,0.169]);
-material = Material214;
-
-appearance = Appearance213;
-
-Transform208ZZZ.child[1] = Shape210;
-
-let Transform215 = browser.currentScene.createNode("Transform");
-Transform215.scale = new X3D.SFVec3f([84.89,77.52,77.52]);
-Transform215.translation = new X3D.SFVec3f([0.04092,1.843,3.826]);
-let Shape216 = browser.currentScene.createNode("Shape");
-Shape216.DEF = "Stand_Back";
-let IndexedFaceSet217 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet217.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
-let Coordinate218 = browser.currentScene.createNode("Coordinate");
-Coordinate218.point = new X3D.MFVec3f([-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05]);
-coord = Coordinate218;
-
-geometry = IndexedFaceSet217;
-
-let Appearance219 = browser.currentScene.createNode("Appearance");
-let Material220 = browser.currentScene.createNode("Material");
-Material220.DEF = "Clear";
-Material220.ambientIntensity = 0;
-Material220.diffuseColor = new X3D.SFColor([0,0,0]);
-Material220.transparency = 1;
-material = Material220;
-
-appearance = Appearance219;
-
-Transform215YYY.child = new X3D.undefined();
-
-Transform215ZZZ.child[0] = Shape216;
-
-Transform208ZZZ.children[2] = Transform215;
-
-Transform207YYY.children = new X3D.MFNode();
-
-Transform207ZZZ.children[0] = Transform208;
-
-let Transform221 = browser.currentScene.createNode("Transform");
-Transform221.DEF = "Walk_Text";
-let TouchSensor222 = browser.currentScene.createNode("TouchSensor");
-TouchSensor222.DEF = "Walk_Touch";
-TouchSensor222.description = "click for behavior";
-Transform221YYY.children = new X3D.MFNode();
-
-Transform221ZZZ.children[0] = TouchSensor222;
+let Transform191 = browser.currentScene.createNode("Transform");
+Transform191.scale = new X3D.SFVec3f([0.5,0.5,0.5]);
+Transform191.rotation = new X3D.SFRotation([0,1,0,0.65]);
+Transform191.translation = new X3D.SFVec3f([0.5,0.1,0]);
+let Transform192 = browser.currentScene.createNode("Transform");
+Transform192.DEF = "Stand_Text";
+let TouchSensor193 = browser.currentScene.createNode("TouchSensor");
+TouchSensor193.DEF = "Stand_Touch";
+TouchSensor193.description = "click for behavior";
+Transform192YYY.children = new X3D.MFNode();
+
+Transform192ZZZ.children[0] = TouchSensor193;
+
+let Shape194 = browser.currentScene.createNode("Shape");
+Shape194.DEF = "Stand";
+let IndexedFaceSet195 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet195.coordIndex = new X3D.MFInt32([1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1]);
+let Coordinate196 = browser.currentScene.createNode("Coordinate");
+Coordinate196.point = new X3D.MFVec3f([-3.21,-0.0154,0,-3.15,-0.0154,0,-3.14,-0.0467,0,-3.1,-0.0601,0,-3.05,-0.051,0,-3.04,-0.0254,0,-3.05,-0.00248,0,-3.1,0.0122,0,-3.16,0.03,0,-3.2,0.0684,0,-3.2,0.133,0,-3.16,0.17,0,-3.1,0.182,0,-3.04,0.171,0,-3.01,0.136,0,-3,0.095,0,-3.05,0.095,0,-3.06,0.125,0,-3.1,0.136,0,-3.14,0.126,0,-3.15,0.103,0,-3.14,0.0815,0,-3.1,0.0689,0,-3.04,0.0512,0,-3,0.0249,0,-2.99,-0.0195,0,-3,-0.0708,0,-3.05,-0.104,0,-3.1,-0.108,0,-3.16,-0.0947,0,-3.2,-0.0586,0,-2.86,-0.102,0,-2.9,-0.102,0,-2.94,-0.0832,0,-2.94,-0.0457,0,-2.94,0.0645,0,-2.97,0.0645,0,-2.97,0.103,0,-2.94,0.103,0,-2.94,0.158,0,-2.89,0.158,0,-2.89,0.103,0,-2.86,0.103,0,-2.86,0.0645,0,-2.89,0.0645,0,-2.89,-0.0483,0,-2.88,-0.0608,0,-2.86,-0.0612,0,-2.71,-0.000798,0,-2.71,-0.0373,0,-2.74,-0.0637,0,-2.77,-0.0624,0,-2.78,-0.0416,0,-2.77,-0.0195,0,-2.71,-0.0754,0,-2.74,-0.103,0,-2.79,-0.106,0,-2.82,-0.0865,0,-2.84,-0.0431,0,-2.82,0.000177,0,-2.78,0.0201,0,-2.73,0.0275,0,-2.71,0.0446,0,-2.72,0.0614,0,-2.74,0.0675,0,-2.77,0.0573,0,-2.78,0.039,0,-2.83,0.039,0,-2.82,0.0765,0,-2.78,0.105,0,-2.74,0.11,0,-2.71,0.107,0,-2.67,0.0849,0,-2.66,0.0526,0,-2.66,-0.0763,0,-2.65,-0.101,0,-2.7,-0.101,0,-2.61,-0.101,0,-2.61,0.103,0,-2.56,0.103,0,-2.56,0.0787,0,-2.52,0.104,0,-2.47,0.105,0,-2.43,0.0743,0,-2.43,0.038,0,-2.43,-0.101,0,-2.48,-0.101,0,-2.48,0.0224,0,-2.49,0.0514,0,-2.52,0.0627,0,-2.54,0.0505,0,-2.55,0.02,0,-2.55,-0.101,0,-2.33,0.0279,0,-2.31,0.0587,0,-2.27,0.0589,0,-2.25,0.0281,0,-2.25,-0.0232,0,-2.27,-0.0563,0,-2.31,-0.057,0,-2.33,-0.0245,0,-2.19,0.175,0,-2.19,-0.101,0,-2.25,-0.101,0,-2.25,-0.073,0,-2.26,-0.0913,0,-2.31,-0.108,0,-2.35,-0.0915,0,-2.38,-0.0424,0,-2.39,0.0243,0,-2.37,0.0809,0,-2.32,0.108,0,-2.28,0.106,0,-2.25,0.0776,0,-2.25,0.175,0,-2.48,0.0224,0,-2.43,0.038,0,-2.49,0.0514,0,-2.43,0.0743,0,-2.49,0.0514,0,-2.47,0.105,0,-2.52,0.0627,0,-2.52,0.104,0,-2.54,0.0505,0,-2.56,0.0787,0,-2.55,0.02,0,-2.56,0.0787,0,-2.61,-0.101,0,-2.55,0.02,0,-2.61,-0.101,0,-2.56,0.0787,0,-2.89,0.103,0,-2.94,0.103,0,-2.89,0.0645,0,-2.89,0.103,0,-2.94,0.103,0,-2.94,0.0645,0,-2.89,0.0645,0,-2.94,0.0645,0,-2.89,-0.0483,0,-2.94,-0.0457,0,-2.89,-0.0483,0,-2.94,-0.0832,0,-2.88,-0.0608,0,-2.9,-0.102,0,-3.06,0.125,0,-3.01,0.136,0,-3.06,0.125,0,-3.04,0.171,0,-3.1,0.136,0,-3.1,0.182,0,-3.14,0.126,0,-3.16,0.17,0,-3.15,0.103,0,-3.2,0.133,0,-3.14,0.0815,0,-3.2,0.0684,0,-3.14,0.0815,0,-3.16,0.03,0,-3.1,0.0689,0,-3.1,0.0122,0,-3.04,0.0512,0,-3.05,-0.00248,0,-3,0.0249,0,-3.05,-0.00248,0,-2.99,-0.0195,0,-3.04,-0.0254,0,-3,-0.0708,0,-3.05,-0.051,0,-3.05,-0.104,0,-3.05,-0.051,0,-3.1,-0.108,0,-3.1,-0.0601,0,-3.16,-0.0947,0,-3.14,-0.0467,0,-3.15,-0.0154,0,-3.2,-0.0586,0]);
+coord = Coordinate196;
+
+geometry = IndexedFaceSet195;
+
+let Appearance197 = browser.currentScene.createNode("Appearance");
+let Material198 = browser.currentScene.createNode("Material");
+Material198.DEF = "text_color";
+Material198.ambientIntensity = 0;
+Material198.diffuseColor = new X3D.SFColor([0,0,0]);
+Material198.emissiveColor = new X3D.SFColor([0.819,0.521,0.169]);
+material = Material198;
+
+appearance = Appearance197;
+
+Transform192ZZZ.child[1] = Shape194;
+
+let Transform199 = browser.currentScene.createNode("Transform");
+Transform199.scale = new X3D.SFVec3f([84.89,77.52,77.52]);
+Transform199.translation = new X3D.SFVec3f([0.04092,1.843,3.826]);
+let Shape200 = browser.currentScene.createNode("Shape");
+Shape200.DEF = "Stand_Back";
+let IndexedFaceSet201 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet201.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
+let Coordinate202 = browser.currentScene.createNode("Coordinate");
+Coordinate202.point = new X3D.MFVec3f([-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05]);
+coord = Coordinate202;
+
+geometry = IndexedFaceSet201;
+
+let Appearance203 = browser.currentScene.createNode("Appearance");
+let Material204 = browser.currentScene.createNode("Material");
+Material204.DEF = "Clear";
+Material204.ambientIntensity = 0;
+Material204.diffuseColor = new X3D.SFColor([0,0,0]);
+Material204.transparency = 1;
+material = Material204;
+
+appearance = Appearance203;
+
+Transform199YYY.child = new X3D.undefined();
+
+Transform199ZZZ.child[0] = Shape200;
+
+Transform192ZZZ.children[2] = Transform199;
+
+Transform191YYY.children = new X3D.MFNode();
+
+Transform191ZZZ.children[0] = Transform192;
+
+let Transform205 = browser.currentScene.createNode("Transform");
+Transform205.DEF = "Walk_Text";
+let TouchSensor206 = browser.currentScene.createNode("TouchSensor");
+TouchSensor206.DEF = "Walk_Touch";
+TouchSensor206.description = "click for behavior";
+Transform205YYY.children = new X3D.MFNode();
+
+Transform205ZZZ.children[0] = TouchSensor206;
 
-let Shape223 = browser.currentScene.createNode("Shape");
-Shape223.DEF = "WALK";
-let IndexedFaceSet224 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet224.coordIndex = new X3D.MFInt32([0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]);
-let Coordinate225 = browser.currentScene.createNode("Coordinate");
-Coordinate225.point = new X3D.MFVec3f([-1.88,-0.101,0,-1.96,0.175,0,-1.91,0.175,0,-1.86,-0.0195,0,-1.82,0.175,0,-1.76,0.175,0,-1.72,-0.0195,0,-1.67,0.175,0,-1.61,0.175,0,-1.69,-0.101,0,-1.75,-0.101,0,-1.79,0.111,0,-1.83,-0.101,0,-1.38,-0.101,0,-1.38,0.175,0,-1.32,0.175,0,-1.32,-0.101,0,-1.27,-0.101,0,-1.27,0.175,0,-1.22,0.175,0,-1.22,0.0304,0,-1.16,0.103,0,-1.09,0.103,0,-1.16,0.0272,0,-1.09,-0.101,0,-1.15,-0.101,0,-1.2,-0.0141,0,-1.22,-0.0363,0,-1.22,-0.101,0,-1.48,-0.0754,0,-1.48,-0.0373,0,-1.51,-0.0637,0,-1.51,-0.103,0,-1.47,-0.101,0,-1.42,-0.101,0,-1.43,-0.0763,0,-1.43,0.0526,0,-1.48,-0.000798,0,-1.48,0.0446,0,-1.5,0.0275,0,-1.55,0.0201,0,-1.54,-0.0195,0,-1.59,0.000177,0,-1.61,-0.0431,0,-1.55,-0.0416,0,-1.59,-0.0865,0,-1.54,-0.0624,0,-1.56,-0.106,0,-1.44,0.0849,0,-1.49,0.0614,0,-1.48,0.107,0,-1.51,0.0675,0,-1.52,0.11,0,-1.55,0.105,0,-1.54,0.0573,0,-1.59,0.0765,0,-1.6,0.039,0,-1.55,0.039,0]);
-coord = Coordinate225;
+let Shape207 = browser.currentScene.createNode("Shape");
+Shape207.DEF = "WALK";
+let IndexedFaceSet208 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet208.coordIndex = new X3D.MFInt32([0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1]);
+let Coordinate209 = browser.currentScene.createNode("Coordinate");
+Coordinate209.point = new X3D.MFVec3f([-1.88,-0.101,0,-1.96,0.175,0,-1.91,0.175,0,-1.86,-0.0195,0,-1.82,0.175,0,-1.76,0.175,0,-1.72,-0.0195,0,-1.67,0.175,0,-1.61,0.175,0,-1.69,-0.101,0,-1.75,-0.101,0,-1.79,0.111,0,-1.83,-0.101,0,-1.38,-0.101,0,-1.38,0.175,0,-1.32,0.175,0,-1.32,-0.101,0,-1.27,-0.101,0,-1.27,0.175,0,-1.22,0.175,0,-1.22,0.0304,0,-1.16,0.103,0,-1.09,0.103,0,-1.16,0.0272,0,-1.09,-0.101,0,-1.15,-0.101,0,-1.2,-0.0141,0,-1.22,-0.0363,0,-1.22,-0.101,0,-1.48,-0.0754,0,-1.48,-0.0373,0,-1.51,-0.0637,0,-1.51,-0.103,0,-1.47,-0.101,0,-1.42,-0.101,0,-1.43,-0.0763,0,-1.43,0.0526,0,-1.48,-0.000798,0,-1.48,0.0446,0,-1.5,0.0275,0,-1.55,0.0201,0,-1.54,-0.0195,0,-1.59,0.000177,0,-1.61,-0.0431,0,-1.55,-0.0416,0,-1.59,-0.0865,0,-1.54,-0.0624,0,-1.56,-0.106,0,-1.44,0.0849,0,-1.49,0.0614,0,-1.48,0.107,0,-1.51,0.0675,0,-1.52,0.11,0,-1.55,0.105,0,-1.54,0.0573,0,-1.59,0.0765,0,-1.6,0.039,0,-1.55,0.039,0]);
+coord = Coordinate209;
 
-geometry = IndexedFaceSet224;
-
-let Appearance226 = browser.currentScene.createNode("Appearance");
-let Material227 = browser.currentScene.createNode("Material");
-Material227.USE = "text_color";
-material = Material227;
+geometry = IndexedFaceSet208;
+
+let Appearance210 = browser.currentScene.createNode("Appearance");
+let Material211 = browser.currentScene.createNode("Material");
+Material211.USE = "text_color";
+material = Material211;
 
-appearance = Appearance226;
-
-Transform221ZZZ.child[1] = Shape223;
-
-let Transform228 = browser.currentScene.createNode("Transform");
-Transform228.scale = new X3D.SFVec3f([81.3,81.3,81.31]);
-Transform228.translation = new X3D.SFVec3f([-0.0414,1.941,4.015]);
-let Shape229 = browser.currentScene.createNode("Shape");
-Shape229.DEF = "Walk_Back";
-let IndexedFaceSet230 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet230.coordIndex = new X3D.MFInt32([1,3,0,-1,3,1,2,-1]);
-let Coordinate231 = browser.currentScene.createNode("Coordinate");
-Coordinate231.point = new X3D.MFVec3f([-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05]);
-coord = Coordinate231;
+appearance = Appearance210;
+
+Transform205ZZZ.child[1] = Shape207;
+
+let Transform212 = browser.currentScene.createNode("Transform");
+Transform212.scale = new X3D.SFVec3f([81.3,81.3,81.31]);
+Transform212.translation = new X3D.SFVec3f([-0.0414,1.941,4.015]);
+let Shape213 = browser.currentScene.createNode("Shape");
+Shape213.DEF = "Walk_Back";
+let IndexedFaceSet214 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet214.coordIndex = new X3D.MFInt32([1,3,0,-1,3,1,2,-1]);
+let Coordinate215 = browser.currentScene.createNode("Coordinate");
+Coordinate215.point = new X3D.MFVec3f([-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05]);
+coord = Coordinate215;
 
-geometry = IndexedFaceSet230;
+geometry = IndexedFaceSet214;
 
-let Appearance232 = browser.currentScene.createNode("Appearance");
-let Material233 = browser.currentScene.createNode("Material");
-Material233.USE = "Clear";
-material = Material233;
+let Appearance216 = browser.currentScene.createNode("Appearance");
+let Material217 = browser.currentScene.createNode("Material");
+Material217.USE = "Clear";
+material = Material217;
 
-appearance = Appearance232;
+appearance = Appearance216;
 
-Transform228YYY.child = new X3D.undefined();
+Transform212YYY.child = new X3D.undefined();
 
-Transform228ZZZ.child[0] = Shape229;
+Transform212ZZZ.child[0] = Shape213;
 
-Transform221ZZZ.children[2] = Transform228;
+Transform205ZZZ.children[2] = Transform212;
 
-Transform207ZZZ.children[1] = Transform221;
+Transform191ZZZ.children[1] = Transform205;
 
-let Transform234 = browser.currentScene.createNode("Transform");
-Transform234.DEF = "Run_Text";
-let TouchSensor235 = browser.currentScene.createNode("TouchSensor");
-TouchSensor235.DEF = "Run_Touch";
-TouchSensor235.description = "click for behavior";
-Transform234YYY.children = new X3D.MFNode();
+let Transform218 = browser.currentScene.createNode("Transform");
+Transform218.DEF = "Run_Text";
+let TouchSensor219 = browser.currentScene.createNode("TouchSensor");
+TouchSensor219.DEF = "Run_Touch";
+TouchSensor219.description = "click for behavior";
+Transform218YYY.children = new X3D.MFNode();
 
-Transform234ZZZ.children[0] = TouchSensor235;
+Transform218ZZZ.children[0] = TouchSensor219;
 
-let Shape236 = browser.currentScene.createNode("Shape");
-Shape236.DEF = "Run";
-let IndexedFaceSet237 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet237.coordIndex = new X3D.MFInt32([24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]);
-let Coordinate238 = browser.currentScene.createNode("Coordinate");
-Coordinate238.point = new X3D.MFVec3f([-0.829,-0.101,0,-0.829,0.175,0,-0.662,0.172,0,-0.622,0.148,0,-0.607,0.103,0,-0.62,0.0501,0,-0.648,0.0316,0,-0.615,-0.0063,0,-0.611,-0.0764,0,-0.601,-0.101,0,-0.664,-0.101,0,-0.671,-0.0373,0,-0.68,-0.00372,0,-0.712,0.00648,0,-0.772,0.00648,0,-0.772,-0.101,0,-0.772,0.0546,0,-0.772,0.127,0,-0.703,0.127,0,-0.673,0.118,0,-0.663,0.091,0,-0.674,0.063,0,-0.705,0.0546,0,-0.379,0.103,0,-0.379,-0.101,0,-0.432,-0.101,0,-0.432,-0.0764,0,-0.466,-0.101,0,-0.518,-0.102,0,-0.555,-0.072,0,-0.56,-0.0357,0,-0.56,0.103,0,-0.506,0.103,0,-0.506,-0.0201,0,-0.5,-0.0491,0,-0.472,-0.0604,0,-0.443,-0.0482,0,-0.433,-0.0177,0,-0.433,0.103,0,-0.331,-0.101,0,-0.331,0.103,0,-0.278,0.103,0,-0.278,0.0787,0,-0.244,0.104,0,-0.192,0.105,0,-0.154,0.0743,0,-0.149,0.038,0,-0.149,-0.101,0,-0.203,-0.101,0,-0.203,0.0224,0,-0.209,0.0514,0,-0.238,0.0627,0,-0.266,0.0505,0,-0.277,0.02,0,-0.277,-0.101,0,-0.506,-0.0201,0,-0.56,-0.0357,0,-0.5,-0.0491,0,-0.555,-0.072,0,-0.5,-0.0491,0,-0.518,-0.102,0,-0.472,-0.0604,0,-0.466,-0.101,0,-0.443,-0.0482,0,-0.432,-0.0764,0,-0.433,-0.0177,0,-0.432,-0.0764,0,-0.379,0.103,0,-0.433,-0.0177,0,-0.379,0.103,0,-0.432,-0.0764,0,-0.379,-0.101,0,-0.432,-0.0764,0,-0.203,0.0224,0,-0.149,0.038,0,-0.209,0.0514,0,-0.154,0.0743,0,-0.209,0.0514,0,-0.192,0.105,0,-0.238,0.0627,0,-0.244,0.104,0,-0.266,0.0505,0,-0.278,0.0787,0,-0.278,0.0787,0,-0.331,0.103,0,-0.277,0.02,0,-0.331,-0.101,0,-0.277,0.02,0,-0.278,0.0787,0,-0.277,0.02,0,-0.331,0.103,0]);
-coord = Coordinate238;
+let Shape220 = browser.currentScene.createNode("Shape");
+Shape220.DEF = "Run";
+let IndexedFaceSet221 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet221.coordIndex = new X3D.MFInt32([24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1]);
+let Coordinate222 = browser.currentScene.createNode("Coordinate");
+Coordinate222.point = new X3D.MFVec3f([-0.829,-0.101,0,-0.829,0.175,0,-0.662,0.172,0,-0.622,0.148,0,-0.607,0.103,0,-0.62,0.0501,0,-0.648,0.0316,0,-0.615,-0.0063,0,-0.611,-0.0764,0,-0.601,-0.101,0,-0.664,-0.101,0,-0.671,-0.0373,0,-0.68,-0.00372,0,-0.712,0.00648,0,-0.772,0.00648,0,-0.772,-0.101,0,-0.772,0.0546,0,-0.772,0.127,0,-0.703,0.127,0,-0.673,0.118,0,-0.663,0.091,0,-0.674,0.063,0,-0.705,0.0546,0,-0.379,0.103,0,-0.379,-0.101,0,-0.432,-0.101,0,-0.432,-0.0764,0,-0.466,-0.101,0,-0.518,-0.102,0,-0.555,-0.072,0,-0.56,-0.0357,0,-0.56,0.103,0,-0.506,0.103,0,-0.506,-0.0201,0,-0.5,-0.0491,0,-0.472,-0.0604,0,-0.443,-0.0482,0,-0.433,-0.0177,0,-0.433,0.103,0,-0.331,-0.101,0,-0.331,0.103,0,-0.278,0.103,0,-0.278,0.0787,0,-0.244,0.104,0,-0.192,0.105,0,-0.154,0.0743,0,-0.149,0.038,0,-0.149,-0.101,0,-0.203,-0.101,0,-0.203,0.0224,0,-0.209,0.0514,0,-0.238,0.0627,0,-0.266,0.0505,0,-0.277,0.02,0,-0.277,-0.101,0,-0.506,-0.0201,0,-0.56,-0.0357,0,-0.5,-0.0491,0,-0.555,-0.072,0,-0.5,-0.0491,0,-0.518,-0.102,0,-0.472,-0.0604,0,-0.466,-0.101,0,-0.443,-0.0482,0,-0.432,-0.0764,0,-0.433,-0.0177,0,-0.432,-0.0764,0,-0.379,0.103,0,-0.433,-0.0177,0,-0.379,0.103,0,-0.432,-0.0764,0,-0.379,-0.101,0,-0.432,-0.0764,0,-0.203,0.0224,0,-0.149,0.038,0,-0.209,0.0514,0,-0.154,0.0743,0,-0.209,0.0514,0,-0.192,0.105,0,-0.238,0.0627,0,-0.244,0.104,0,-0.266,0.0505,0,-0.278,0.0787,0,-0.278,0.0787,0,-0.331,0.103,0,-0.277,0.02,0,-0.331,-0.101,0,-0.277,0.02,0,-0.278,0.0787,0,-0.277,0.02,0,-0.331,0.103,0]);
+coord = Coordinate222;
 
-geometry = IndexedFaceSet237;
+geometry = IndexedFaceSet221;
 
-let Appearance239 = browser.currentScene.createNode("Appearance");
-let Material240 = browser.currentScene.createNode("Material");
-Material240.USE = "text_color";
-material = Material240;
+let Appearance223 = browser.currentScene.createNode("Appearance");
+let Material224 = browser.currentScene.createNode("Material");
+Material224.USE = "text_color";
+material = Material224;
 
-appearance = Appearance239;
+appearance = Appearance223;
 
-Transform234ZZZ.child[1] = Shape236;
+Transform218ZZZ.child[1] = Shape220;
 
-let Transform241 = browser.currentScene.createNode("Transform");
-Transform241.scale = new X3D.SFVec3f([82.47,82.47,82.48]);
-Transform241.translation = new X3D.SFVec3f([-0.01579,1.968,4.074]);
-let Shape242 = browser.currentScene.createNode("Shape");
-Shape242.DEF = "Run_Back";
-let IndexedFaceSet243 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet243.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
-let Coordinate244 = browser.currentScene.createNode("Coordinate");
-Coordinate244.point = new X3D.MFVec3f([-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05]);
-coord = Coordinate244;
+let Transform225 = browser.currentScene.createNode("Transform");
+Transform225.scale = new X3D.SFVec3f([82.47,82.47,82.48]);
+Transform225.translation = new X3D.SFVec3f([-0.01579,1.968,4.074]);
+let Shape226 = browser.currentScene.createNode("Shape");
+Shape226.DEF = "Run_Back";
+let IndexedFaceSet227 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet227.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
+let Coordinate228 = browser.currentScene.createNode("Coordinate");
+Coordinate228.point = new X3D.MFVec3f([-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05]);
+coord = Coordinate228;
 
-geometry = IndexedFaceSet243;
+geometry = IndexedFaceSet227;
 
-let Appearance245 = browser.currentScene.createNode("Appearance");
-let Material246 = browser.currentScene.createNode("Material");
-Material246.USE = "Clear";
-material = Material246;
+let Appearance229 = browser.currentScene.createNode("Appearance");
+let Material230 = browser.currentScene.createNode("Material");
+Material230.USE = "Clear";
+material = Material230;
 
-appearance = Appearance245;
+appearance = Appearance229;
 
-Transform241YYY.child = new X3D.undefined();
+Transform225YYY.child = new X3D.undefined();
 
-Transform241ZZZ.child[0] = Shape242;
+Transform225ZZZ.child[0] = Shape226;
 
-Transform234ZZZ.children[2] = Transform241;
+Transform218ZZZ.children[2] = Transform225;
 
-Transform207ZZZ.children[2] = Transform234;
+Transform191ZZZ.children[2] = Transform218;
 
-let Transform247 = browser.currentScene.createNode("Transform");
-Transform247.DEF = "Jump_Text";
-let TouchSensor248 = browser.currentScene.createNode("TouchSensor");
-TouchSensor248.DEF = "Jump_Touch";
-TouchSensor248.description = "click for behavior";
-Transform247YYY.children = new X3D.MFNode();
+let Transform231 = browser.currentScene.createNode("Transform");
+Transform231.DEF = "Jump_Text";
+let TouchSensor232 = browser.currentScene.createNode("TouchSensor");
+TouchSensor232.DEF = "Jump_Touch";
+TouchSensor232.description = "click for behavior";
+Transform231YYY.children = new X3D.MFNode();
 
-Transform247ZZZ.children[0] = TouchSensor248;
+Transform231ZZZ.children[0] = TouchSensor232;
 
-let Shape249 = browser.currentScene.createNode("Shape");
-Shape249.DEF = "Jump";
-let IndexedFaceSet250 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet250.coordIndex = new X3D.MFInt32([1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]);
-let Coordinate251 = browser.currentScene.createNode("Coordinate");
-Coordinate251.point = new X3D.MFVec3f([0.108,0.00195,0,0.163,0.00195,0,0.166,-0.0473,0,0.194,-0.0608,0,0.222,-0.0492,0,0.228,-0.017,0,0.228,0.175,0,0.284,0.175,0,0.284,-0.02,0,0.271,-0.0798,0,0.23,-0.104,0,0.193,-0.108,0,0.155,-0.102,0,0.117,-0.0714,0,0.108,-0.0357,0,0.563,-0.101,0,0.563,0.103,0,0.615,0.103,0,0.615,0.0803,0,0.649,0.105,0,0.696,0.105,0,0.728,0.0788,0,0.76,0.104,0,0.811,0.104,0,0.842,0.081,0,0.853,0.0416,0,0.853,-0.101,0,0.799,-0.101,0,0.799,0.0305,0,0.79,0.0544,0,0.767,0.0616,0,0.743,0.0507,0,0.734,0.0228,0,0.734,-0.101,0,0.681,-0.101,0,0.681,0.0301,0,0.673,0.0532,0,0.65,0.0611,0,0.626,0.0506,0,0.617,0.0224,0,0.617,-0.101,0,0.9,-0.182,0,0.9,0.103,0,0.952,0.103,0,0.952,0.0751,0,0.968,0.0934,0,1.01,0.11,0,1.05,0.103,0,1.07,0.0796,0,1.1,0.0251,0,1.1,-0.0222,0,1.07,-0.0788,0,1.03,-0.106,0,0.988,-0.103,0,0.953,-0.0755,0,0.953,-0.182,0,1.04,-0.000177,0,1.03,-0.0446,0,0.999,-0.0603,0,0.966,-0.0453,0,0.953,-0.000177,0,0.963,0.045,0,0.998,0.063,0,1.03,0.0462,0,0.515,-0.101,0,0.462,-0.0764,0,0.462,-0.101,0,0.388,-0.0201,0,0.388,0.103,0,0.334,0.103,0,0.334,-0.0357,0,0.394,-0.0491,0,0.388,-0.0201,0,0.334,-0.0357,0,0.339,-0.072,0,0.394,-0.0491,0,0.339,-0.072,0,0.376,-0.102,0,0.422,-0.0604,0,0.394,-0.0491,0,0.376,-0.102,0,0.428,-0.101,0,0.451,-0.0482,0,0.422,-0.0604,0,0.428,-0.101,0,0.462,-0.0764,0,0.461,-0.0177,0,0.451,-0.0482,0,0.462,-0.0764,0,0.515,0.103,0,0.461,0.103,0,0.461,-0.0177,0,0.515,0.103,0,0.461,-0.0177,0,0.462,-0.0764,0,0.515,-0.101,0,0.515,0.103,0,0.462,-0.0764,0,0.284,-0.02,0,0.228,-0.017,0,0.271,-0.0798,0,0.222,-0.0492,0,0.23,-0.104,0,0.194,-0.0608,0,0.193,-0.108,0,0.194,-0.0608,0,0.155,-0.102,0,0.166,-0.0473,0,0.117,-0.0714,0,0.166,-0.0473,0,0.108,-0.0357,0,0.166,-0.0473,0,0.799,0.0305,0,0.853,0.0416,0,0.79,0.0544,0,0.842,0.081,0,0.79,0.0544,0,0.811,0.104,0,0.767,0.0616,0,0.76,0.104,0,0.743,0.0507,0,0.728,0.0788,0,0.734,0.0228,0,0.728,0.0788,0,0.681,0.0301,0,0.734,0.0228,0,0.673,0.0532,0,0.728,0.0788,0,0.673,0.0532,0,0.696,0.105,0,0.65,0.0611,0,0.649,0.105,0,0.626,0.0506,0,0.615,0.0803,0,0.617,0.0224,0,0.615,0.0803,0,0.563,-0.101,0,0.617,0.0224,0,0.563,-0.101,0,0.615,0.0803,0]);
-coord = Coordinate251;
+let Shape233 = browser.currentScene.createNode("Shape");
+Shape233.DEF = "Jump";
+let IndexedFaceSet234 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet234.coordIndex = new X3D.MFInt32([1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1]);
+let Coordinate235 = browser.currentScene.createNode("Coordinate");
+Coordinate235.point = new X3D.MFVec3f([0.108,0.00195,0,0.163,0.00195,0,0.166,-0.0473,0,0.194,-0.0608,0,0.222,-0.0492,0,0.228,-0.017,0,0.228,0.175,0,0.284,0.175,0,0.284,-0.02,0,0.271,-0.0798,0,0.23,-0.104,0,0.193,-0.108,0,0.155,-0.102,0,0.117,-0.0714,0,0.108,-0.0357,0,0.563,-0.101,0,0.563,0.103,0,0.615,0.103,0,0.615,0.0803,0,0.649,0.105,0,0.696,0.105,0,0.728,0.0788,0,0.76,0.104,0,0.811,0.104,0,0.842,0.081,0,0.853,0.0416,0,0.853,-0.101,0,0.799,-0.101,0,0.799,0.0305,0,0.79,0.0544,0,0.767,0.0616,0,0.743,0.0507,0,0.734,0.0228,0,0.734,-0.101,0,0.681,-0.101,0,0.681,0.0301,0,0.673,0.0532,0,0.65,0.0611,0,0.626,0.0506,0,0.617,0.0224,0,0.617,-0.101,0,0.9,-0.182,0,0.9,0.103,0,0.952,0.103,0,0.952,0.0751,0,0.968,0.0934,0,1.01,0.11,0,1.05,0.103,0,1.07,0.0796,0,1.1,0.0251,0,1.1,-0.0222,0,1.07,-0.0788,0,1.03,-0.106,0,0.988,-0.103,0,0.953,-0.0755,0,0.953,-0.182,0,1.04,-0.000177,0,1.03,-0.0446,0,0.999,-0.0603,0,0.966,-0.0453,0,0.953,-0.000177,0,0.963,0.045,0,0.998,0.063,0,1.03,0.0462,0,0.515,-0.101,0,0.462,-0.0764,0,0.462,-0.101,0,0.388,-0.0201,0,0.388,0.103,0,0.334,0.103,0,0.334,-0.0357,0,0.394,-0.0491,0,0.388,-0.0201,0,0.334,-0.0357,0,0.339,-0.072,0,0.394,-0.0491,0,0.339,-0.072,0,0.376,-0.102,0,0.422,-0.0604,0,0.394,-0.0491,0,0.376,-0.102,0,0.428,-0.101,0,0.451,-0.0482,0,0.422,-0.0604,0,0.428,-0.101,0,0.462,-0.0764,0,0.461,-0.0177,0,0.451,-0.0482,0,0.462,-0.0764,0,0.515,0.103,0,0.461,0.103,0,0.461,-0.0177,0,0.515,0.103,0,0.461,-0.0177,0,0.462,-0.0764,0,0.515,-0.101,0,0.515,0.103,0,0.462,-0.0764,0,0.284,-0.02,0,0.228,-0.017,0,0.271,-0.0798,0,0.222,-0.0492,0,0.23,-0.104,0,0.194,-0.0608,0,0.193,-0.108,0,0.194,-0.0608,0,0.155,-0.102,0,0.166,-0.0473,0,0.117,-0.0714,0,0.166,-0.0473,0,0.108,-0.0357,0,0.166,-0.0473,0,0.799,0.0305,0,0.853,0.0416,0,0.79,0.0544,0,0.842,0.081,0,0.79,0.0544,0,0.811,0.104,0,0.767,0.0616,0,0.76,0.104,0,0.743,0.0507,0,0.728,0.0788,0,0.734,0.0228,0,0.728,0.0788,0,0.681,0.0301,0,0.734,0.0228,0,0.673,0.0532,0,0.728,0.0788,0,0.673,0.0532,0,0.696,0.105,0,0.65,0.0611,0,0.649,0.105,0,0.626,0.0506,0,0.615,0.0803,0,0.617,0.0224,0,0.615,0.0803,0,0.563,-0.101,0,0.617,0.0224,0,0.563,-0.101,0,0.615,0.0803,0]);
+coord = Coordinate235;
 
-geometry = IndexedFaceSet250;
+geometry = IndexedFaceSet234;
 
-let Appearance252 = browser.currentScene.createNode("Appearance");
-let Material253 = browser.currentScene.createNode("Material");
-Material253.USE = "text_color";
-material = Material253;
+let Appearance236 = browser.currentScene.createNode("Appearance");
+let Material237 = browser.currentScene.createNode("Material");
+Material237.USE = "text_color";
+material = Material237;
 
-appearance = Appearance252;
+appearance = Appearance236;
 
-Transform247ZZZ.child[1] = Shape249;
+Transform231ZZZ.child[1] = Shape233;
 
-let Transform254 = browser.currentScene.createNode("Transform");
-Transform254.scale = new X3D.SFVec3f([83.79,83.79,83.79]);
-Transform254.translation = new X3D.SFVec3f([-0.008979,1.99,4.14]);
-let Shape255 = browser.currentScene.createNode("Shape");
-Shape255.DEF = "Jump_Back";
-let IndexedFaceSet256 = browser.currentScene.createNode("IndexedFaceSet");
-IndexedFaceSet256.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
-let Coordinate257 = browser.currentScene.createNode("Coordinate");
-Coordinate257.point = new X3D.MFVec3f([0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05]);
-coord = Coordinate257;
+let Transform238 = browser.currentScene.createNode("Transform");
+Transform238.scale = new X3D.SFVec3f([83.79,83.79,83.79]);
+Transform238.translation = new X3D.SFVec3f([-0.008979,1.99,4.14]);
+let Shape239 = browser.currentScene.createNode("Shape");
+Shape239.DEF = "Jump_Back";
+let IndexedFaceSet240 = browser.currentScene.createNode("IndexedFaceSet");
+IndexedFaceSet240.coordIndex = new X3D.MFInt32([0,2,3,-1,2,0,1,-1]);
+let Coordinate241 = browser.currentScene.createNode("Coordinate");
+Coordinate241.point = new X3D.MFVec3f([0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05]);
+coord = Coordinate241;
 
-geometry = IndexedFaceSet256;
+geometry = IndexedFaceSet240;
 
-let Appearance258 = browser.currentScene.createNode("Appearance");
-let Material259 = browser.currentScene.createNode("Material");
-Material259.USE = "Clear";
-material = Material259;
+let Appearance242 = browser.currentScene.createNode("Appearance");
+let Material243 = browser.currentScene.createNode("Material");
+Material243.USE = "Clear";
+material = Material243;
 
-appearance = Appearance258;
+appearance = Appearance242;
 
-Transform254YYY.child = new X3D.undefined();
+Transform238YYY.child = new X3D.undefined();
 
-Transform254ZZZ.child[0] = Shape255;
+Transform238ZZZ.child[0] = Shape239;
 
-Transform247ZZZ.children[2] = Transform254;
+Transform231ZZZ.children[2] = Transform238;
 
-Transform207ZZZ.children[3] = Transform247;
+Transform191ZZZ.children[3] = Transform231;
 
-Transform206YYY.children = new X3D.MFNode();
+Transform190YYY.children = new X3D.MFNode();
 
-Transform206ZZZ.children[0] = Transform207;
+Transform190ZZZ.children[0] = Transform191;
 
-proxy = Transform206;
+proxy = Transform190;
 
-Group204YYY.children = new X3D.MFNode();
+Group188YYY.children = new X3D.MFNode();
 
-Group204ZZZ.children[0] = Collision205;
+Group188ZZZ.children[0] = Collision189;
 
-let Transform260 = browser.currentScene.createNode("Transform");
-Transform260.DEF = "Floor";
-Transform260.scale = new X3D.SFVec3f([1,0.0125,1]);
-Transform260.translation = new X3D.SFVec3f([0,-0.0125,0]);
-let Shape261 = browser.currentScene.createNode("Shape");
-let Box262 = browser.currentScene.createNode("Box");
-geometry = Box262;
+let Transform244 = browser.currentScene.createNode("Transform");
+Transform244.DEF = "Floor";
+Transform244.scale = new X3D.SFVec3f([1,0.0125,1]);
+Transform244.translation = new X3D.SFVec3f([0,-0.0125,0]);
+let Shape245 = browser.currentScene.createNode("Shape");
+let Box246 = browser.currentScene.createNode("Box");
+geometry = Box246;
 
-let Appearance263 = browser.currentScene.createNode("Appearance");
-let Material264 = browser.currentScene.createNode("Material");
-material = Material264;
+let Appearance247 = browser.currentScene.createNode("Appearance");
+let Material248 = browser.currentScene.createNode("Material");
+material = Material248;
+
+appearance = Appearance247;
 
-appearance = Appearance263;
+Transform244YYY.child = new X3D.undefined();
+
+Transform244ZZZ.child[0] = Shape245;
+
+Group188ZZZ.children[1] = Transform244;
+
+browser.currentScene.children[3] = Group188;
+
+let Group249 = browser.currentScene.createNode("Group");
+Group249.DEF = "Animations";
+let Group250 = browser.currentScene.createNode("Group");
+Group250.DEF = "Stand_Animation";
+let OrientationInterpolator251 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator251.DEF = "r_ankle_RotationInterpolator_Stand";
+OrientationInterpolator251.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator251.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250YYY.children = new X3D.MFNode();
+
+Group250ZZZ.children[0] = OrientationInterpolator251;
+
+let OrientationInterpolator252 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator252.DEF = "r_knee_RotationInterpolator_Stand";
+OrientationInterpolator252.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator252.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[1] = OrientationInterpolator252;
+
+let OrientationInterpolator253 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator253.DEF = "r_hip_RotationInterpolator_Stand";
+OrientationInterpolator253.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator253.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[2] = OrientationInterpolator253;
+
+let OrientationInterpolator254 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator254.DEF = "l_ankle_RotationInterpolator_Stand";
+OrientationInterpolator254.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator254.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[3] = OrientationInterpolator254;
+
+let OrientationInterpolator255 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator255.DEF = "l_knee_RotationInterpolator_Stand";
+OrientationInterpolator255.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator255.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[4] = OrientationInterpolator255;
+
+let OrientationInterpolator256 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator256.DEF = "l_hip_RotationInterpolator_Stand";
+OrientationInterpolator256.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator256.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[5] = OrientationInterpolator256;
+
+let OrientationInterpolator257 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator257.DEF = "lower_body_RotationInterpolator_Stand";
+OrientationInterpolator257.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator257.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[6] = OrientationInterpolator257;
+
+let OrientationInterpolator258 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator258.DEF = "r_wrist_RotationInterpolator_Stand";
+OrientationInterpolator258.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator258.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[7] = OrientationInterpolator258;
+
+let OrientationInterpolator259 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator259.DEF = "r_elbow_RotationInterpolator_Stand";
+OrientationInterpolator259.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator259.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[8] = OrientationInterpolator259;
+
+let OrientationInterpolator260 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator260.DEF = "r_shoulder_RotationInterpolator_Stand";
+OrientationInterpolator260.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator260.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[9] = OrientationInterpolator260;
+
+let OrientationInterpolator261 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator261.DEF = "l_wrist_RotationInterpolator_Stand";
+OrientationInterpolator261.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator261.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[10] = OrientationInterpolator261;
+
+let OrientationInterpolator262 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator262.DEF = "l_elbow_RotationInterpolator_Stand";
+OrientationInterpolator262.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator262.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[11] = OrientationInterpolator262;
+
+let OrientationInterpolator263 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator263.DEF = "l_shoulder_RotationInterpolator_Stand";
+OrientationInterpolator263.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator263.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[12] = OrientationInterpolator263;
+
+let OrientationInterpolator264 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator264.DEF = "head_RotationInterpolator_Stand";
+OrientationInterpolator264.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator264.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[13] = OrientationInterpolator264;
+
+let OrientationInterpolator265 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator265.DEF = "neck_RotationInterpolator_Stand";
+OrientationInterpolator265.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator265.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[14] = OrientationInterpolator265;
+
+let OrientationInterpolator266 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator266.DEF = "upper_body_RotationInterpolator_Stand";
+OrientationInterpolator266.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator266.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group250ZZZ.children[15] = OrientationInterpolator266;
 
-Transform260YYY.child = new X3D.undefined();
-
-Transform260ZZZ.child[0] = Shape261;
-
-Group204ZZZ.children[1] = Transform260;
-
-browser.currentScene.children[3] = Group204;
-
-let Group265 = browser.currentScene.createNode("Group");
-Group265.DEF = "Animations";
-let Group266 = browser.currentScene.createNode("Group");
-Group266.DEF = "Stand_Animation";
 let OrientationInterpolator267 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator267.DEF = "r_ankle_RotationInterpolator_Stand";
+OrientationInterpolator267.DEF = "whole_body_RotationInterpolator_Stand";
 OrientationInterpolator267.key = new X3D.MFFloat([0,1]);
 OrientationInterpolator267.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266YYY.children = new X3D.MFNode();
+Group250ZZZ.children[16] = OrientationInterpolator267;
 
-Group266ZZZ.children[0] = OrientationInterpolator267;
+let PositionInterpolator268 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator268.DEF = "whole_body_TranslationInterpolator_Stand";
+PositionInterpolator268.key = new X3D.MFFloat([0,1]);
+PositionInterpolator268.keyValue = new X3D.MFVec3f([0,0,0,0,0,0]);
+Group250ZZZ.children[17] = PositionInterpolator268;
 
-let OrientationInterpolator268 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator268.DEF = "r_knee_RotationInterpolator_Stand";
-OrientationInterpolator268.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator268.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[1] = OrientationInterpolator268;
+let TimeSensor269 = browser.currentScene.createNode("TimeSensor");
+TimeSensor269.DEF = "Stand_Time";
+TimeSensor269.cycleInterval = 0.009999999776482582;
+Group250ZZZ.children[18] = TimeSensor269;
 
-let OrientationInterpolator269 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator269.DEF = "r_hip_RotationInterpolator_Stand";
-OrientationInterpolator269.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator269.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[2] = OrientationInterpolator269;
+Group249YYY.children = new X3D.MFNode();
 
-let OrientationInterpolator270 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator270.DEF = "l_ankle_RotationInterpolator_Stand";
-OrientationInterpolator270.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator270.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[3] = OrientationInterpolator270;
+Group249ZZZ.children[0] = Group250;
 
+let Group270 = browser.currentScene.createNode("Group");
+Group270.DEF = "Walk_Animation";
 let OrientationInterpolator271 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator271.DEF = "l_knee_RotationInterpolator_Stand";
-OrientationInterpolator271.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator271.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[4] = OrientationInterpolator271;
+OrientationInterpolator271.DEF = "r_ankle_RotationInterpolator_BasicWalk";
+OrientationInterpolator271.key = new X3D.MFFloat([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]);
+OrientationInterpolator271.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0]);
+Group270YYY.children = new X3D.MFNode();
+
+Group270ZZZ.children[0] = OrientationInterpolator271;
 
 let OrientationInterpolator272 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator272.DEF = "l_hip_RotationInterpolator_Stand";
-OrientationInterpolator272.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator272.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[5] = OrientationInterpolator272;
+OrientationInterpolator272.DEF = "r_knee_RotationInterpolator_BasicWalk";
+OrientationInterpolator272.key = new X3D.MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator272.keyValue = new X3D.MFRotation([1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573]);
+Group270ZZZ.children[1] = OrientationInterpolator272;
 
 let OrientationInterpolator273 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator273.DEF = "lower_body_RotationInterpolator_Stand";
-OrientationInterpolator273.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator273.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[6] = OrientationInterpolator273;
+OrientationInterpolator273.DEF = "r_hip_RotationInterpolator_BasicWalk";
+OrientationInterpolator273.key = new X3D.MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator273.keyValue = new X3D.MFRotation([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]);
+Group270ZZZ.children[2] = OrientationInterpolator273;
 
 let OrientationInterpolator274 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator274.DEF = "r_wrist_RotationInterpolator_Stand";
-OrientationInterpolator274.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator274.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[7] = OrientationInterpolator274;
+OrientationInterpolator274.DEF = "l_ankle_RotationInterpolator_BasicWalk";
+OrientationInterpolator274.key = new X3D.MFFloat([0,0.125,0.2083,0.375,0.6667,0.9167,1]);
+OrientationInterpolator274.keyValue = new X3D.MFRotation([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714]);
+Group270ZZZ.children[3] = OrientationInterpolator274;
 
 let OrientationInterpolator275 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator275.DEF = "r_elbow_RotationInterpolator_Stand";
-OrientationInterpolator275.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator275.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[8] = OrientationInterpolator275;
+OrientationInterpolator275.DEF = "l_knee_RotationInterpolator_BasicWalk";
+OrientationInterpolator275.key = new X3D.MFFloat([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator275.keyValue = new X3D.MFRotation([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226]);
+Group270ZZZ.children[4] = OrientationInterpolator275;
 
 let OrientationInterpolator276 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator276.DEF = "r_shoulder_RotationInterpolator_Stand";
-OrientationInterpolator276.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator276.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[9] = OrientationInterpolator276;
+OrientationInterpolator276.DEF = "l_hip_RotationInterpolator_BasicWalk";
+OrientationInterpolator276.key = new X3D.MFFloat([0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1]);
+OrientationInterpolator276.keyValue = new X3D.MFRotation([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]);
+Group270ZZZ.children[5] = OrientationInterpolator276;
 
 let OrientationInterpolator277 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator277.DEF = "l_wrist_RotationInterpolator_Stand";
-OrientationInterpolator277.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator277.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[10] = OrientationInterpolator277;
+OrientationInterpolator277.DEF = "lower_body_RotationInterpolator_BasicWalk";
+OrientationInterpolator277.key = new X3D.MFFloat([0,0.5,1]);
+OrientationInterpolator277.keyValue = new X3D.MFRotation([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056]);
+Group270ZZZ.children[6] = OrientationInterpolator277;
 
 let OrientationInterpolator278 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator278.DEF = "l_elbow_RotationInterpolator_Stand";
-OrientationInterpolator278.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator278.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[11] = OrientationInterpolator278;
+OrientationInterpolator278.DEF = "r_wrist_RotationInterpolator_BasicWalk";
+OrientationInterpolator278.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator278.keyValue = new X3D.MFRotation([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]);
+Group270ZZZ.children[7] = OrientationInterpolator278;
 
 let OrientationInterpolator279 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator279.DEF = "l_shoulder_RotationInterpolator_Stand";
-OrientationInterpolator279.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator279.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[12] = OrientationInterpolator279;
+OrientationInterpolator279.DEF = "r_elbow_RotationInterpolator_BasicWalk";
+OrientationInterpolator279.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator279.keyValue = new X3D.MFRotation([-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508]);
+Group270ZZZ.children[8] = OrientationInterpolator279;
 
 let OrientationInterpolator280 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator280.DEF = "head_RotationInterpolator_Stand";
-OrientationInterpolator280.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator280.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[13] = OrientationInterpolator280;
+OrientationInterpolator280.DEF = "r_shoulder_RotationInterpolator_BasicWalk";
+OrientationInterpolator280.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator280.keyValue = new X3D.MFRotation([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346]);
+Group270ZZZ.children[9] = OrientationInterpolator280;
 
 let OrientationInterpolator281 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator281.DEF = "neck_RotationInterpolator_Stand";
-OrientationInterpolator281.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator281.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[14] = OrientationInterpolator281;
+OrientationInterpolator281.DEF = "l_wrist_RotationInterpolator_BasicWalk";
+OrientationInterpolator281.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator281.keyValue = new X3D.MFRotation([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076]);
+Group270ZZZ.children[10] = OrientationInterpolator281;
 
 let OrientationInterpolator282 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator282.DEF = "upper_body_RotationInterpolator_Stand";
-OrientationInterpolator282.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator282.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[15] = OrientationInterpolator282;
+OrientationInterpolator282.DEF = "l_elbow_RotationInterpolator_BasicWalk";
+OrientationInterpolator282.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator282.keyValue = new X3D.MFRotation([-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878]);
+Group270ZZZ.children[11] = OrientationInterpolator282;
 
 let OrientationInterpolator283 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator283.DEF = "whole_body_RotationInterpolator_Stand";
-OrientationInterpolator283.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator283.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group266ZZZ.children[16] = OrientationInterpolator283;
+OrientationInterpolator283.DEF = "l_shoulder_RotationInterpolator_BasicWalk";
+OrientationInterpolator283.key = new X3D.MFFloat([0,0.375,0.9167,1]);
+OrientationInterpolator283.keyValue = new X3D.MFRotation([1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189]);
+Group270ZZZ.children[12] = OrientationInterpolator283;
 
-let PositionInterpolator284 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator284.DEF = "whole_body_TranslationInterpolator_Stand";
-PositionInterpolator284.key = new X3D.MFFloat([0,1]);
-PositionInterpolator284.keyValue = new X3D.MFVec3f([0,0,0,0,0,0]);
-Group266ZZZ.children[17] = PositionInterpolator284;
+let OrientationInterpolator284 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator284.DEF = "head_RotationInterpolator_BasicWalk";
+OrientationInterpolator284.key = new X3D.MFFloat([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]);
+OrientationInterpolator284.keyValue = new X3D.MFRotation([0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642]);
+Group270ZZZ.children[13] = OrientationInterpolator284;
 
-let TimeSensor285 = browser.currentScene.createNode("TimeSensor");
-TimeSensor285.DEF = "Stand_Time";
-TimeSensor285.cycleInterval = 0.009999999776482582;
-Group266ZZZ.children[18] = TimeSensor285;
+let OrientationInterpolator285 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator285.DEF = "neck_RotationInterpolator_BasicWalk";
+OrientationInterpolator285.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator285.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group270ZZZ.children[14] = OrientationInterpolator285;
 
-Group265YYY.children = new X3D.MFNode();
+let OrientationInterpolator286 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator286.DEF = "upper_body_RotationInterpolator_BasicWalk";
+OrientationInterpolator286.key = new X3D.MFFloat([0,0.2083,0.375,0.75,0.8333,1]);
+OrientationInterpolator286.keyValue = new X3D.MFRotation([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826]);
+Group270ZZZ.children[15] = OrientationInterpolator286;
 
-Group265ZZZ.children[0] = Group266;
-
-let Group286 = browser.currentScene.createNode("Group");
-Group286.DEF = "Walk_Animation";
 let OrientationInterpolator287 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator287.DEF = "r_ankle_RotationInterpolator_BasicWalk";
-OrientationInterpolator287.key = new X3D.MFFloat([0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1]);
-OrientationInterpolator287.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.3533,-1,0,0,0.1072,1,0,0,0.2612,1,0,0,0.1268,-1,0,0,0.01793,-1,0,0,0.05824,-1,0,0,0.2398,-1,0,0,0.35,-1,0,0,0.3322,0,0,1,0]);
-Group286YYY.children = new X3D.MFNode();
+OrientationInterpolator287.DEF = "whole_body_RotationInterpolator_BasicWalk";
+OrientationInterpolator287.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator287.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group270ZZZ.children[16] = OrientationInterpolator287;
 
-Group286ZZZ.children[0] = OrientationInterpolator287;
+let PositionInterpolator288 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator288.DEF = "whole_body_TranslationInterpolator_BasicWalk";
+PositionInterpolator288.key = new X3D.MFFloat([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]);
+PositionInterpolator288.keyValue = new X3D.MFVec3f([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0]);
+Group270ZZZ.children[17] = PositionInterpolator288;
 
-let OrientationInterpolator288 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator288.DEF = "r_knee_RotationInterpolator_BasicWalk";
-OrientationInterpolator288.key = new X3D.MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
-OrientationInterpolator288.keyValue = new X3D.MFRotation([1,0,0,0.8573,1,0,0,0.8926,1,0,0,0.5351,1,0,0,0.1756,1,0,0,0.1194,1,0,0,0.3153,1,0,0,0.09354,1,0,0,0.08558,1,0,0,0.2475,1,0,0,0.8573]);
-Group286ZZZ.children[1] = OrientationInterpolator288;
+let TimeSensor289 = browser.currentScene.createNode("TimeSensor");
+TimeSensor289.DEF = "Walk_Time";
+TimeSensor289.cycleInterval = 2;
+TimeSensor289.loop = True;
+TimeSensor289.startTime = -1;
+Group270ZZZ.children[18] = TimeSensor289;
 
-let OrientationInterpolator289 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator289.DEF = "r_hip_RotationInterpolator_BasicWalk";
-OrientationInterpolator289.key = new X3D.MFFloat([0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1]);
-OrientationInterpolator289.keyValue = new X3D.MFRotation([-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1,0,0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481]);
-Group286ZZZ.children[2] = OrientationInterpolator289;
+Group249ZZZ.children[1] = Group270;
 
-let OrientationInterpolator290 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator290.DEF = "l_ankle_RotationInterpolator_BasicWalk";
-OrientationInterpolator290.key = new X3D.MFFloat([0,0.125,0.2083,0.375,0.6667,0.9167,1]);
-OrientationInterpolator290.keyValue = new X3D.MFRotation([-1,0,0,0.06714,-1,0,0,0.2152,-1,0,0,0.3184,-1,0,0,0.4717,-1,0,0,0.2912,1,0,0,0.1222,-1,0,0,0.06714]);
-Group286ZZZ.children[3] = OrientationInterpolator290;
-
+let Group290 = browser.currentScene.createNode("Group");
+Group290.DEF = "Run_Animation";
 let OrientationInterpolator291 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator291.DEF = "l_knee_RotationInterpolator_BasicWalk";
-OrientationInterpolator291.key = new X3D.MFFloat([0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1]);
-OrientationInterpolator291.keyValue = new X3D.MFRotation([1,0,0,0.3226,1,0,0,0.1556,1,0,0,0.08678,1,0,0,0.8751,1,0,0,1.131,1,0,0,0.09961,1,0,0,0.3942,1,0,0,0.3226]);
-Group286ZZZ.children[4] = OrientationInterpolator291;
+OrientationInterpolator291.DEF = "r_ankle_RotationInterpolator_Run";
+OrientationInterpolator291.key = new X3D.MFFloat([0,0.4909,0.7091,0.8,0.8182,1]);
+OrientationInterpolator291.keyValue = new X3D.MFRotation([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323]);
+Group290YYY.children = new X3D.MFNode();
+
+Group290ZZZ.children[0] = OrientationInterpolator291;
 
 let OrientationInterpolator292 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator292.DEF = "l_hip_RotationInterpolator_BasicWalk";
-OrientationInterpolator292.key = new X3D.MFFloat([0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1]);
-OrientationInterpolator292.keyValue = new X3D.MFRotation([-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1,0,0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865]);
-Group286ZZZ.children[5] = OrientationInterpolator292;
+OrientationInterpolator292.DEF = "r_knee_RotationInterpolator_Run";
+OrientationInterpolator292.key = new X3D.MFFloat([0,0.03636,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator292.keyValue = new X3D.MFRotation([1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004]);
+Group290ZZZ.children[1] = OrientationInterpolator292;
 
 let OrientationInterpolator293 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator293.DEF = "lower_body_RotationInterpolator_BasicWalk";
-OrientationInterpolator293.key = new X3D.MFFloat([0,0.5,1]);
-OrientationInterpolator293.keyValue = new X3D.MFRotation([0,0,-1,0.1056,0,0,1,0.09018,0,0,-1,0.1056]);
-Group286ZZZ.children[6] = OrientationInterpolator293;
+OrientationInterpolator293.DEF = "r_hip_RotationInterpolator_Run";
+OrientationInterpolator293.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator293.keyValue = new X3D.MFRotation([0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]);
+Group290ZZZ.children[2] = OrientationInterpolator293;
 
 let OrientationInterpolator294 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator294.DEF = "r_wrist_RotationInterpolator_BasicWalk";
-OrientationInterpolator294.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator294.keyValue = new X3D.MFRotation([-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346]);
-Group286ZZZ.children[7] = OrientationInterpolator294;
+OrientationInterpolator294.DEF = "l_ankle_RotationInterpolator_Run";
+OrientationInterpolator294.key = new X3D.MFFloat([0,0.2182,0.3091,0.4909,1]);
+OrientationInterpolator294.keyValue = new X3D.MFRotation([1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543]);
+Group290ZZZ.children[3] = OrientationInterpolator294;
 
 let OrientationInterpolator295 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator295.DEF = "r_elbow_RotationInterpolator_BasicWalk";
-OrientationInterpolator295.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator295.keyValue = new X3D.MFRotation([-1,0,0,0.411508,-1,0,0,0.0925011,-1,0,0,0.572568,-1,0,0,0.411508]);
-Group286ZZZ.children[8] = OrientationInterpolator295;
+OrientationInterpolator295.DEF = "l_knee_RotationInterpolator_Run";
+OrientationInterpolator295.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator295.keyValue = new X3D.MFRotation([1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108]);
+Group290ZZZ.children[4] = OrientationInterpolator295;
 
 let OrientationInterpolator296 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator296.DEF = "r_shoulder_RotationInterpolator_BasicWalk";
-OrientationInterpolator296.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator296.keyValue = new X3D.MFRotation([-1,0,0,0.09346,1,0,0,0.3197,-1,0,0,0.1564,-1,0,0,0.09346]);
-Group286ZZZ.children[9] = OrientationInterpolator296;
+OrientationInterpolator296.DEF = "l_hip_RotationInterpolator_Run";
+OrientationInterpolator296.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator296.keyValue = new X3D.MFRotation([-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]);
+Group290ZZZ.children[5] = OrientationInterpolator296;
 
 let OrientationInterpolator297 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator297.DEF = "l_wrist_RotationInterpolator_BasicWalk";
-OrientationInterpolator297.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator297.keyValue = new X3D.MFRotation([0,-1,0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0,-1,0,0.461076]);
-Group286ZZZ.children[10] = OrientationInterpolator297;
+OrientationInterpolator297.DEF = "lower_body_RotationInterpolator_Run";
+OrientationInterpolator297.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator297.keyValue = new X3D.MFRotation([0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]);
+Group290ZZZ.children[6] = OrientationInterpolator297;
 
 let OrientationInterpolator298 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator298.DEF = "l_elbow_RotationInterpolator_BasicWalk";
-OrientationInterpolator298.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator298.keyValue = new X3D.MFRotation([-1,0,0,0.0659878,-1,0,0,0.488383,-1,0,0,0.0177536,-1,0,0,0.0659878]);
-Group286ZZZ.children[11] = OrientationInterpolator298;
+OrientationInterpolator298.DEF = "r_wrist_RotationInterpolator_Run";
+OrientationInterpolator298.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator298.keyValue = new X3D.MFRotation([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]);
+Group290ZZZ.children[7] = OrientationInterpolator298;
 
 let OrientationInterpolator299 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator299.DEF = "l_shoulder_RotationInterpolator_BasicWalk";
-OrientationInterpolator299.key = new X3D.MFFloat([0,0.375,0.9167,1]);
-OrientationInterpolator299.keyValue = new X3D.MFRotation([1,0,0,0.1189,-1,0,0,0.1861,1,0,0,0.3357,1,0,0,0.1189]);
-Group286ZZZ.children[12] = OrientationInterpolator299;
+OrientationInterpolator299.DEF = "r_elbow_RotationInterpolator_Run";
+OrientationInterpolator299.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator299.keyValue = new X3D.MFRotation([0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]);
+Group290ZZZ.children[8] = OrientationInterpolator299;
 
 let OrientationInterpolator300 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator300.DEF = "head_RotationInterpolator_BasicWalk";
-OrientationInterpolator300.key = new X3D.MFFloat([0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1]);
-OrientationInterpolator300.keyValue = new X3D.MFRotation([0,-1,0,0.08642,0,1,0,0.1825,0,1,0,0.1505,0,1,0,0.1053,0,1,0,0.04391,0,-1,0,0.03119,0,-1,0,0.07936,0,-1,0,0.1616,0,-1,0,0.155,0,-1,0,0.08642]);
-Group286ZZZ.children[13] = OrientationInterpolator300;
+OrientationInterpolator300.DEF = "r_shoulder_RotationInterpolator_Run";
+OrientationInterpolator300.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator300.keyValue = new X3D.MFRotation([-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979]);
+Group290ZZZ.children[9] = OrientationInterpolator300;
 
 let OrientationInterpolator301 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator301.DEF = "neck_RotationInterpolator_BasicWalk";
+OrientationInterpolator301.DEF = "l_wrist_RotationInterpolator_Run";
 OrientationInterpolator301.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator301.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group286ZZZ.children[14] = OrientationInterpolator301;
+OrientationInterpolator301.keyValue = new X3D.MFRotation([-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]);
+Group290ZZZ.children[10] = OrientationInterpolator301;
 
 let OrientationInterpolator302 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator302.DEF = "upper_body_RotationInterpolator_BasicWalk";
-OrientationInterpolator302.key = new X3D.MFFloat([0,0.2083,0.375,0.75,0.8333,1]);
-OrientationInterpolator302.keyValue = new X3D.MFRotation([0,1,0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0,1,0,0.0826]);
-Group286ZZZ.children[15] = OrientationInterpolator302;
+OrientationInterpolator302.DEF = "l_elbow_RotationInterpolator_Run";
+OrientationInterpolator302.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator302.keyValue = new X3D.MFRotation([0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]);
+Group290ZZZ.children[11] = OrientationInterpolator302;
 
 let OrientationInterpolator303 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator303.DEF = "whole_body_RotationInterpolator_BasicWalk";
-OrientationInterpolator303.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator303.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group286ZZZ.children[16] = OrientationInterpolator303;
+OrientationInterpolator303.DEF = "l_shoulder_RotationInterpolator_Run";
+OrientationInterpolator303.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
+OrientationInterpolator303.keyValue = new X3D.MFRotation([0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]);
+Group290ZZZ.children[12] = OrientationInterpolator303;
 
-let PositionInterpolator304 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator304.DEF = "whole_body_TranslationInterpolator_BasicWalk";
-PositionInterpolator304.key = new X3D.MFFloat([0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1]);
-PositionInterpolator304.keyValue = new X3D.MFVec3f([0,-0.00928,0,0,-0.003858,0,0,-0.008847,0,0,-0.01486,0,0,-0.02641,0,0,-0.03934,0,0,-0.0502,0,0,-0.07469,0,0,-0.02732,0,0,-0.01608,0,0,-0.01129,0,0,-0.005819,0,0,-0.002004,0,0,-0.002579,0,0,-0.0143,0,0,-0.03799,0,0,-0.05648,0,0,-0.045,0,0,-0.00928,0]);
-Group286ZZZ.children[17] = PositionInterpolator304;
+let OrientationInterpolator304 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator304.DEF = "head_RotationInterpolator_Run";
+OrientationInterpolator304.key = new X3D.MFFloat([0,0.4909,1]);
+OrientationInterpolator304.keyValue = new X3D.MFRotation([0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]);
+Group290ZZZ.children[13] = OrientationInterpolator304;
 
-let TimeSensor305 = browser.currentScene.createNode("TimeSensor");
-TimeSensor305.DEF = "Walk_Time";
-TimeSensor305.cycleInterval = 2;
-TimeSensor305.loop = True;
-TimeSensor305.startTime = -1;
-Group286ZZZ.children[18] = TimeSensor305;
+let OrientationInterpolator305 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator305.DEF = "neck_RotationInterpolator_Run";
+OrientationInterpolator305.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator305.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group290ZZZ.children[14] = OrientationInterpolator305;
 
-Group265ZZZ.children[1] = Group286;
+let OrientationInterpolator306 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator306.DEF = "upper_body_RotationInterpolator_Run";
+OrientationInterpolator306.key = new X3D.MFFloat([0,0.2545,0.4909,0.7636,1]);
+OrientationInterpolator306.keyValue = new X3D.MFRotation([0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]);
+Group290ZZZ.children[15] = OrientationInterpolator306;
 
-let Group306 = browser.currentScene.createNode("Group");
-Group306.DEF = "Run_Animation";
 let OrientationInterpolator307 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator307.DEF = "r_ankle_RotationInterpolator_Run";
-OrientationInterpolator307.key = new X3D.MFFloat([0,0.4909,0.7091,0.8,0.8182,1]);
-OrientationInterpolator307.keyValue = new X3D.MFRotation([1,0,0,0.2323,-1,0,0,0.07843,-1,0,0,0.09676,-1,0,0,0.3274,-1,0,0,0.3278,1,0,0,0.2323]);
-Group306YYY.children = new X3D.MFNode();
+OrientationInterpolator307.DEF = "whole_body_RotationInterpolator_Run";
+OrientationInterpolator307.key = new X3D.MFFloat([0,1]);
+OrientationInterpolator307.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
+Group290ZZZ.children[16] = OrientationInterpolator307;
 
-Group306ZZZ.children[0] = OrientationInterpolator307;
+let PositionInterpolator308 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator308.DEF = "whole_body_TranslationInterpolator_Run";
+PositionInterpolator308.key = new X3D.MFFloat([0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1]);
+PositionInterpolator308.keyValue = new X3D.MFVec3f([0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0]);
+Group290ZZZ.children[17] = PositionInterpolator308;
 
-let OrientationInterpolator308 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator308.DEF = "r_knee_RotationInterpolator_Run";
-OrientationInterpolator308.key = new X3D.MFFloat([0,0.03636,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator308.keyValue = new X3D.MFRotation([1,0,0,0.7004,1,0,0,1.011,1,0,0,1.892,1,0,0,1.188,1,0,0,0.3964,1,0,0,0.7004]);
-Group306ZZZ.children[1] = OrientationInterpolator308;
+let TimeSensor309 = browser.currentScene.createNode("TimeSensor");
+TimeSensor309.DEF = "Run_Time";
+TimeSensor309.loop = True;
+TimeSensor309.startTime = -1;
+Group290ZZZ.children[18] = TimeSensor309;
 
-let OrientationInterpolator309 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator309.DEF = "r_hip_RotationInterpolator_Run";
-OrientationInterpolator309.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator309.keyValue = new X3D.MFRotation([0.9999,0.00293,-0.00989,0.402,-1,0.004977,-0.00497,0.5943,-1,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402]);
-Group306ZZZ.children[2] = OrientationInterpolator309;
+Group249ZZZ.children[2] = Group290;
 
-let OrientationInterpolator310 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator310.DEF = "l_ankle_RotationInterpolator_Run";
-OrientationInterpolator310.key = new X3D.MFFloat([0,0.2182,0.3091,0.4909,1]);
-OrientationInterpolator310.keyValue = new X3D.MFRotation([1,0,0,0.03543,-1,0,0,0.1037,-1,0,0,0.4328,1,0,0,0.1929,1,0,0,0.03543]);
-Group306ZZZ.children[3] = OrientationInterpolator310;
-
+let Group310 = browser.currentScene.createNode("Group");
+Group310.DEF = "Jump_Animation";
 let OrientationInterpolator311 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator311.DEF = "l_knee_RotationInterpolator_Run";
-OrientationInterpolator311.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator311.keyValue = new X3D.MFRotation([1,0,0,1.108,1,0,0,0.4265,1,0,0,0.7052,1,0,0,2.179,1,0,0,1.108]);
-Group306ZZZ.children[4] = OrientationInterpolator311;
+OrientationInterpolator311.DEF = "r_ankle_RotationInterpolator_Jump";
+OrientationInterpolator311.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);
+OrientationInterpolator311.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,0.3001,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0]);
+Group310YYY.children = new X3D.MFNode();
+
+Group310ZZZ.children[0] = OrientationInterpolator311;
 
 let OrientationInterpolator312 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator312.DEF = "l_hip_RotationInterpolator_Run";
-OrientationInterpolator312.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator312.keyValue = new X3D.MFRotation([-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212]);
-Group306ZZZ.children[5] = OrientationInterpolator312;
+OrientationInterpolator312.DEF = "r_knee_RotationInterpolator_Jump";
+OrientationInterpolator312.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator312.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,2.005,1,0,0,2.005,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0]);
+Group310ZZZ.children[1] = OrientationInterpolator312;
 
 let OrientationInterpolator313 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator313.DEF = "lower_body_RotationInterpolator_Run";
-OrientationInterpolator313.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator313.keyValue = new X3D.MFRotation([0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687]);
-Group306ZZZ.children[6] = OrientationInterpolator313;
+OrientationInterpolator313.DEF = "r_hip_RotationInterpolator_Jump";
+OrientationInterpolator313.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator313.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,4.433,1,0,0,4.433,1,0,0,4.647,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0]);
+Group310ZZZ.children[2] = OrientationInterpolator313;
 
 let OrientationInterpolator314 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator314.DEF = "r_wrist_RotationInterpolator_Run";
-OrientationInterpolator314.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator314.keyValue = new X3D.MFRotation([-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273]);
-Group306ZZZ.children[7] = OrientationInterpolator314;
+OrientationInterpolator314.DEF = "l_ankle_RotationInterpolator_Jump";
+OrientationInterpolator314.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);
+OrientationInterpolator314.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0]);
+Group310ZZZ.children[3] = OrientationInterpolator314;
 
 let OrientationInterpolator315 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator315.DEF = "r_elbow_RotationInterpolator_Run";
-OrientationInterpolator315.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator315.keyValue = new X3D.MFRotation([0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222]);
-Group306ZZZ.children[8] = OrientationInterpolator315;
+OrientationInterpolator315.DEF = "l_knee_RotationInterpolator_Jump";
+OrientationInterpolator315.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator315.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0]);
+Group310ZZZ.children[4] = OrientationInterpolator315;
 
 let OrientationInterpolator316 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator316.DEF = "r_shoulder_RotationInterpolator_Run";
-OrientationInterpolator316.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator316.keyValue = new X3D.MFRotation([-1,0,0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1,0,0,0.6979]);
-Group306ZZZ.children[9] = OrientationInterpolator316;
+OrientationInterpolator316.DEF = "l_hip_RotationInterpolator_Jump";
+OrientationInterpolator316.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]);
+OrientationInterpolator316.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0]);
+Group310ZZZ.children[5] = OrientationInterpolator316;
 
 let OrientationInterpolator317 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator317.DEF = "l_wrist_RotationInterpolator_Run";
-OrientationInterpolator317.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator317.keyValue = new X3D.MFRotation([-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409]);
-Group306ZZZ.children[10] = OrientationInterpolator317;
+OrientationInterpolator317.DEF = "lower_body_RotationInterpolator_Jump";
+OrientationInterpolator317.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator317.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group310ZZZ.children[6] = OrientationInterpolator317;
 
 let OrientationInterpolator318 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator318.DEF = "l_elbow_RotationInterpolator_Run";
-OrientationInterpolator318.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator318.keyValue = new X3D.MFRotation([0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689]);
-Group306ZZZ.children[11] = OrientationInterpolator318;
+OrientationInterpolator318.DEF = "r_wrist_RotationInterpolator_Jump";
+OrientationInterpolator318.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
+OrientationInterpolator318.keyValue = new X3D.MFRotation([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0]);
+Group310ZZZ.children[7] = OrientationInterpolator318;
 
 let OrientationInterpolator319 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator319.DEF = "l_shoulder_RotationInterpolator_Run";
-OrientationInterpolator319.key = new X3D.MFFloat([0,0.2182,0.4909,0.7455,1]);
-OrientationInterpolator319.keyValue = new X3D.MFRotation([0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135]);
-Group306ZZZ.children[12] = OrientationInterpolator319;
+OrientationInterpolator319.DEF = "r_elbow_RotationInterpolator_Jump";
+OrientationInterpolator319.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
+OrientationInterpolator319.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0]);
+Group310ZZZ.children[8] = OrientationInterpolator319;
 
 let OrientationInterpolator320 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator320.DEF = "head_RotationInterpolator_Run";
-OrientationInterpolator320.key = new X3D.MFFloat([0,0.4909,1]);
-OrientationInterpolator320.keyValue = new X3D.MFRotation([0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508]);
-Group306ZZZ.children[13] = OrientationInterpolator320;
+OrientationInterpolator320.DEF = "r_shoulder_RotationInterpolator_Jump";
+OrientationInterpolator320.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
+OrientationInterpolator320.keyValue = new X3D.MFRotation([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0]);
+Group310ZZZ.children[9] = OrientationInterpolator320;
 
 let OrientationInterpolator321 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator321.DEF = "neck_RotationInterpolator_Run";
-OrientationInterpolator321.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator321.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group306ZZZ.children[14] = OrientationInterpolator321;
+OrientationInterpolator321.DEF = "l_wrist_RotationInterpolator_Jump";
+OrientationInterpolator321.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
+OrientationInterpolator321.keyValue = new X3D.MFRotation([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0]);
+Group310ZZZ.children[10] = OrientationInterpolator321;
 
 let OrientationInterpolator322 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator322.DEF = "upper_body_RotationInterpolator_Run";
-OrientationInterpolator322.key = new X3D.MFFloat([0,0.2545,0.4909,0.7636,1]);
-OrientationInterpolator322.keyValue = new X3D.MFRotation([0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712]);
-Group306ZZZ.children[15] = OrientationInterpolator322;
+OrientationInterpolator322.DEF = "l_elbow_RotationInterpolator_Jump";
+OrientationInterpolator322.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
+OrientationInterpolator322.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0]);
+Group310ZZZ.children[11] = OrientationInterpolator322;
 
 let OrientationInterpolator323 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator323.DEF = "whole_body_RotationInterpolator_Run";
-OrientationInterpolator323.key = new X3D.MFFloat([0,1]);
-OrientationInterpolator323.keyValue = new X3D.MFRotation([0,0,1,0,0,0,1,0]);
-Group306ZZZ.children[16] = OrientationInterpolator323;
+OrientationInterpolator323.DEF = "l_shoulder_RotationInterpolator_Jump";
+OrientationInterpolator323.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
+OrientationInterpolator323.keyValue = new X3D.MFRotation([0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0]);
+Group310ZZZ.children[12] = OrientationInterpolator323;
 
-let PositionInterpolator324 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator324.DEF = "whole_body_TranslationInterpolator_Run";
-PositionInterpolator324.key = new X3D.MFFloat([0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1]);
-PositionInterpolator324.keyValue = new X3D.MFVec3f([0,-0.0351,0,0,-0.0351,0,0,-0.04087,0,0,-0.04886,0,0,-0.04051,0,0,-0.03666,0,0,-0.03666,0,0,-0.0351,0]);
-Group306ZZZ.children[17] = PositionInterpolator324;
+let OrientationInterpolator324 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator324.DEF = "head_RotationInterpolator_Jump";
+OrientationInterpolator324.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator324.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0]);
+Group310ZZZ.children[13] = OrientationInterpolator324;
 
-let TimeSensor325 = browser.currentScene.createNode("TimeSensor");
-TimeSensor325.DEF = "Run_Time";
-TimeSensor325.loop = True;
-TimeSensor325.startTime = -1;
-Group306ZZZ.children[18] = TimeSensor325;
+let OrientationInterpolator325 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator325.DEF = "neck_RotationInterpolator_Jump";
+OrientationInterpolator325.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
+OrientationInterpolator325.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0]);
+Group310ZZZ.children[14] = OrientationInterpolator325;
 
-Group265ZZZ.children[2] = Group306;
+let OrientationInterpolator326 = browser.currentScene.createNode("OrientationInterpolator");
+OrientationInterpolator326.DEF = "upper_body_RotationInterpolator_Jump";
+OrientationInterpolator326.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,0.88,1]);
+OrientationInterpolator326.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,1.038,1,0,0,1.038,-1,0,0,0.1057,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0]);
+Group310ZZZ.children[15] = OrientationInterpolator326;
 
-let Group326 = browser.currentScene.createNode("Group");
-Group326.DEF = "Jump_Animation";
 let OrientationInterpolator327 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator327.DEF = "r_ankle_RotationInterpolator_Jump";
-OrientationInterpolator327.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);
-OrientationInterpolator327.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.6735,-1,0,0,0.6735,-1,0,0,0.3527,-1,0,0,0.3038,-1,0,0,0.07964,1,0,0,0.3001,1,0,0,0.6509,1,0,0,0.3001,-1,0,0,0.2087,-1,0,0,0.3756,-1,0,0,0.3279,-1,0,0,0.1193,0,0,1,0]);
-Group326YYY.children = new X3D.MFNode();
+OrientationInterpolator327.DEF = "whole_body_RotationInterpolator_Jump";
+OrientationInterpolator327.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,1]);
+OrientationInterpolator327.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
+Group310ZZZ.children[16] = OrientationInterpolator327;
 
-Group326ZZZ.children[0] = OrientationInterpolator327;
+let PositionInterpolator328 = browser.currentScene.createNode("PositionInterpolator");
+PositionInterpolator328.DEF = "whole_body_TranslationInterpolator_Jump";
+PositionInterpolator328.key = new X3D.MFFloat([0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1]);
+PositionInterpolator328.keyValue = new X3D.MFVec3f([0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0,0.03045,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0]);
+Group310ZZZ.children[17] = PositionInterpolator328;
 
-let OrientationInterpolator328 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator328.DEF = "r_knee_RotationInterpolator_Jump";
-OrientationInterpolator328.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]);
-OrientationInterpolator328.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,2.005,1,0,0,2.005,0,0,1,0,1,0,0,0.9507,1,0,0,0.5845,1,0,0,0.9054,0,0,1,0]);
-Group326ZZZ.children[1] = OrientationInterpolator328;
+let TimeSensor329 = browser.currentScene.createNode("TimeSensor");
+TimeSensor329.DEF = "Jump_Time";
+TimeSensor329.cycleInterval = 2;
+TimeSensor329.startTime = -1;
+Group310ZZZ.children[18] = TimeSensor329;
 
-let OrientationInterpolator329 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator329.DEF = "r_hip_RotationInterpolator_Jump";
-OrientationInterpolator329.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]);
-OrientationInterpolator329.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,4.433,1,0,0,4.433,1,0,0,4.647,-1,0,0,0.8943,-1,0,0,0.3698,0,0,1,0,-1,0,0,0.4963,-1,0,0,0.3829,-1,0,0,0.5169,0,0,1,0]);
-Group326ZZZ.children[2] = OrientationInterpolator329;
+Group249ZZZ.children[3] = Group310;
 
-let OrientationInterpolator330 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator330.DEF = "l_ankle_RotationInterpolator_Jump";
-OrientationInterpolator330.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1]);
-OrientationInterpolator330.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.625,-1,0,0,0.625,-1,0,0,0.3364,-1,0,0,0.2742,-1,0,0,0.05078,1,0,0,0.2833,1,0,0,0.6667,1,0,0,0.2833,-1,0,0,0.2108,-1,0,0,0.375,-1,0,0,0.3146,-1,0,0,0.1174,0,0,1,0]);
-Group326ZZZ.children[3] = OrientationInterpolator330;
+browser.currentScene.children[4] = Group249;
 
-let OrientationInterpolator331 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator331.DEF = "l_knee_RotationInterpolator_Jump";
-OrientationInterpolator331.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,0.88,1]);
-OrientationInterpolator331.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,2.047,1,0,0,2.047,0,0,1,0,1,0,0,1.566,1,0,0,0.5913,1,0,0,0.9235,0,0,1,0]);
-Group326ZZZ.children[4] = OrientationInterpolator331;
+//Enable this if you enable the ProximitySensor
+//<ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+//<ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+let ROUTE330 = browser.currentScene.createNode("ROUTE");
+ROUTE330.fromField = "touchTime";
+ROUTE330.fromNode = "Stand_Touch";
+ROUTE330.toField = "stopTime";
+ROUTE330.toNode = "Walk_Time";
+browser.currentScene.children[5] = ROUTE330;
 
-let OrientationInterpolator332 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator332.DEF = "l_hip_RotationInterpolator_Jump";
-OrientationInterpolator332.key = new X3D.MFFloat([0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1]);
-OrientationInterpolator332.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,4.349,1,0,0,4.349,1,0,0,4.615,-1,0,0,0.9136,-1,0,0,0.3614,0,0,1,0,-1,0,0,0.7869,-1,0,0,0.3918,-1,0,0,0.5433,0,0,1,0]);
-Group326ZZZ.children[5] = OrientationInterpolator332;
+let ROUTE331 = browser.currentScene.createNode("ROUTE");
+ROUTE331.fromField = "touchTime";
+ROUTE331.fromNode = "Stand_Touch";
+ROUTE331.toField = "stopTime";
+ROUTE331.toNode = "Run_Time";
+browser.currentScene.children[6] = ROUTE331;
 
-let OrientationInterpolator333 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator333.DEF = "lower_body_RotationInterpolator_Jump";
-OrientationInterpolator333.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
-OrientationInterpolator333.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,0.1892,1,0,0,0.1892,0,0,1,0,0,0,1,0,0,0,1,0]);
-Group326ZZZ.children[6] = OrientationInterpolator333;
+let ROUTE332 = browser.currentScene.createNode("ROUTE");
+ROUTE332.fromField = "touchTime";
+ROUTE332.fromNode = "Stand_Touch";
+ROUTE332.toField = "stopTime";
+ROUTE332.toNode = "Jump_Time";
+browser.currentScene.children[7] = ROUTE332;
 
-let OrientationInterpolator334 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator334.DEF = "r_wrist_RotationInterpolator_Jump";
-OrientationInterpolator334.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
-OrientationInterpolator334.keyValue = new X3D.MFRotation([0,0,1,0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0,1,0,0.497349,0,0,1,0]);
-Group326ZZZ.children[7] = OrientationInterpolator334;
+let ROUTE333 = browser.currentScene.createNode("ROUTE");
+ROUTE333.fromField = "touchTime";
+ROUTE333.fromNode = "Stand_Touch";
+ROUTE333.toField = "startTime";
+ROUTE333.toNode = "Stand_Time";
+browser.currentScene.children[8] = ROUTE333;
 
-let OrientationInterpolator335 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator335.DEF = "r_elbow_RotationInterpolator_Jump";
-OrientationInterpolator335.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
-OrientationInterpolator335.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.04151,-1,0,0,0.04151,-1,0,0,0.5855,-1,0,0,0.5852,0,0,1,0]);
-Group326ZZZ.children[8] = OrientationInterpolator335;
+let ROUTE334 = browser.currentScene.createNode("ROUTE");
+ROUTE334.fromField = "touchTime";
+ROUTE334.fromNode = "Walk_Touch";
+ROUTE334.toField = "stopTime";
+ROUTE334.toNode = "Stand_Time";
+browser.currentScene.children[9] = ROUTE334;
 
-let OrientationInterpolator336 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator336.DEF = "r_shoulder_RotationInterpolator_Jump";
-OrientationInterpolator336.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
-OrientationInterpolator336.keyValue = new X3D.MFRotation([0,0,1,0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0,0,1,0]);
-Group326ZZZ.children[9] = OrientationInterpolator336;
+let ROUTE335 = browser.currentScene.createNode("ROUTE");
+ROUTE335.fromField = "touchTime";
+ROUTE335.fromNode = "Walk_Touch";
+ROUTE335.toField = "stopTime";
+ROUTE335.toNode = "Run_Time";
+browser.currentScene.children[10] = ROUTE335;
 
-let OrientationInterpolator337 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator337.DEF = "l_wrist_RotationInterpolator_Jump";
-OrientationInterpolator337.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
-OrientationInterpolator337.keyValue = new X3D.MFRotation([0,0,1,0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0,-1,0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0,0,1,0]);
-Group326ZZZ.children[10] = OrientationInterpolator337;
+let ROUTE336 = browser.currentScene.createNode("ROUTE");
+ROUTE336.fromField = "touchTime";
+ROUTE336.fromNode = "Walk_Touch";
+ROUTE336.toField = "stopTime";
+ROUTE336.toNode = "Jump_Time";
+browser.currentScene.children[11] = ROUTE336;
 
-let OrientationInterpolator338 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator338.DEF = "l_elbow_RotationInterpolator_Jump";
-OrientationInterpolator338.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,1]);
-OrientationInterpolator338.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.1229,-1,0,0,0.1229,-1,0,0,0.5976,-1,0,0,0.3917,0,0,1,0]);
-Group326ZZZ.children[11] = OrientationInterpolator338;
+let ROUTE337 = browser.currentScene.createNode("ROUTE");
+ROUTE337.fromField = "touchTime";
+ROUTE337.fromNode = "Walk_Touch";
+ROUTE337.toField = "startTime";
+ROUTE337.toNode = "Walk_Time";
+browser.currentScene.children[12] = ROUTE337;
 
-let OrientationInterpolator339 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator339.DEF = "l_shoulder_RotationInterpolator_Jump";
-OrientationInterpolator339.key = new X3D.MFFloat([0,0.28,0.32,0.64,0.76,0.88,1]);
-OrientationInterpolator339.keyValue = new X3D.MFRotation([0,0,1,0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0,0,1,0]);
-Group326ZZZ.children[12] = OrientationInterpolator339;
+let ROUTE338 = browser.currentScene.createNode("ROUTE");
+ROUTE338.fromField = "touchTime";
+ROUTE338.fromNode = "Run_Touch";
+ROUTE338.toField = "stopTime";
+ROUTE338.toNode = "Stand_Time";
+browser.currentScene.children[13] = ROUTE338;
 
-let OrientationInterpolator340 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator340.DEF = "head_RotationInterpolator_Jump";
-OrientationInterpolator340.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
-OrientationInterpolator340.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.5989,-1,0,0,0.5989,-1,0,0,0.3216,1,0,0,0.06503,0,0,1,0]);
-Group326ZZZ.children[13] = OrientationInterpolator340;
+let ROUTE339 = browser.currentScene.createNode("ROUTE");
+ROUTE339.fromField = "touchTime";
+ROUTE339.fromNode = "Run_Touch";
+ROUTE339.toField = "stopTime";
+ROUTE339.toNode = "Walk_Time";
+browser.currentScene.children[14] = ROUTE339;
 
-let OrientationInterpolator341 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator341.DEF = "neck_RotationInterpolator_Jump";
-OrientationInterpolator341.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,1]);
-OrientationInterpolator341.keyValue = new X3D.MFRotation([0,0,1,0,-1,0,0,0.1942,-1,0,0,0.1942,0,0,1,0,1,0,0,0.2284,0,0,1,0]);
-Group326ZZZ.children[14] = OrientationInterpolator341;
+let ROUTE340 = browser.currentScene.createNode("ROUTE");
+ROUTE340.fromField = "touchTime";
+ROUTE340.fromNode = "Run_Touch";
+ROUTE340.toField = "stopTime";
+ROUTE340.toNode = "Jump_Time";
+browser.currentScene.children[15] = ROUTE340;
 
-let OrientationInterpolator342 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator342.DEF = "upper_body_RotationInterpolator_Jump";
-OrientationInterpolator342.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.76,0.88,1]);
-OrientationInterpolator342.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,1.038,1,0,0,1.038,-1,0,0,0.1057,1,0,0,0.2171,1,0,0,0.3465,0,0,1,0]);
-Group326ZZZ.children[15] = OrientationInterpolator342;
+let ROUTE341 = browser.currentScene.createNode("ROUTE");
+ROUTE341.fromField = "touchTime";
+ROUTE341.fromNode = "Run_Touch";
+ROUTE341.toField = "startTime";
+ROUTE341.toNode = "Run_Time";
+browser.currentScene.children[16] = ROUTE341;
 
-let OrientationInterpolator343 = browser.currentScene.createNode("OrientationInterpolator");
-OrientationInterpolator343.DEF = "whole_body_RotationInterpolator_Jump";
-OrientationInterpolator343.key = new X3D.MFFloat([0,0.28,0.32,0.48,0.64,0.76,1]);
-OrientationInterpolator343.keyValue = new X3D.MFRotation([0,0,1,0,1,0,0,0.3273,1,0,0,0.3273,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0]);
-Group326ZZZ.children[16] = OrientationInterpolator343;
+let ROUTE342 = browser.currentScene.createNode("ROUTE");
+ROUTE342.fromField = "touchTime";
+ROUTE342.fromNode = "Jump_Touch";
+ROUTE342.toField = "stopTime";
+ROUTE342.toNode = "Stand_Time";
+browser.currentScene.children[17] = ROUTE342;
 
-let PositionInterpolator344 = browser.currentScene.createNode("PositionInterpolator");
-PositionInterpolator344.DEF = "whole_body_TranslationInterpolator_Jump";
-PositionInterpolator344.key = new X3D.MFFloat([0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1]);
-PositionInterpolator344.keyValue = new X3D.MFVec3f([0,0,0,0,-0.01264,-0.01289,0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0,0.03045,0.02148,0,-0.01299,-0.01057,0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0,0,0]);
-Group326ZZZ.children[17] = PositionInterpolator344;
+let ROUTE343 = browser.currentScene.createNode("ROUTE");
+ROUTE343.fromField = "touchTime";
+ROUTE343.fromNode = "Jump_Touch";
+ROUTE343.toField = "stopTime";
+ROUTE343.toNode = "Walk_Time";
+browser.currentScene.children[18] = ROUTE343;
 
-let TimeSensor345 = browser.currentScene.createNode("TimeSensor");
-TimeSensor345.DEF = "Jump_Time";
-TimeSensor345.cycleInterval = 2;
-TimeSensor345.startTime = -1;
-Group326ZZZ.children[18] = TimeSensor345;
+let ROUTE344 = browser.currentScene.createNode("ROUTE");
+ROUTE344.fromField = "touchTime";
+ROUTE344.fromNode = "Jump_Touch";
+ROUTE344.toField = "stopTime";
+ROUTE344.toNode = "Run_Time";
+browser.currentScene.children[19] = ROUTE344;
 
-Group265ZZZ.children[3] = Group326;
+let ROUTE345 = browser.currentScene.createNode("ROUTE");
+ROUTE345.fromField = "touchTime";
+ROUTE345.fromNode = "Jump_Touch";
+ROUTE345.toField = "startTime";
+ROUTE345.toNode = "Jump_Time";
+browser.currentScene.children[20] = ROUTE345;
 
-browser.currentScene.children[4] = Group265;
-
-//Enable this if you enable the ProximitySensor <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/> <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
 let ROUTE346 = browser.currentScene.createNode("ROUTE");
-ROUTE346.fromField = "touchTime";
-ROUTE346.fromNode = "Stand_Touch";
-ROUTE346.toField = "stopTime";
-ROUTE346.toNode = "Walk_Time";
-browser.currentScene.children[5] = ROUTE346;
+ROUTE346.fromField = "fraction_changed";
+ROUTE346.fromNode = "Stand_Time";
+ROUTE346.toField = "set_fraction";
+ROUTE346.toNode = "r_ankle_RotationInterpolator_Stand";
+browser.currentScene.children[21] = ROUTE346;
 
 let ROUTE347 = browser.currentScene.createNode("ROUTE");
-ROUTE347.fromField = "touchTime";
-ROUTE347.fromNode = "Stand_Touch";
-ROUTE347.toField = "stopTime";
-ROUTE347.toNode = "Run_Time";
-browser.currentScene.children[6] = ROUTE347;
+ROUTE347.fromField = "fraction_changed";
+ROUTE347.fromNode = "Stand_Time";
+ROUTE347.toField = "set_fraction";
+ROUTE347.toNode = "r_knee_RotationInterpolator_Stand";
+browser.currentScene.children[22] = ROUTE347;
 
 let ROUTE348 = browser.currentScene.createNode("ROUTE");
-ROUTE348.fromField = "touchTime";
-ROUTE348.fromNode = "Stand_Touch";
-ROUTE348.toField = "stopTime";
-ROUTE348.toNode = "Jump_Time";
-browser.currentScene.children[7] = ROUTE348;
+ROUTE348.fromField = "fraction_changed";
+ROUTE348.fromNode = "Stand_Time";
+ROUTE348.toField = "set_fraction";
+ROUTE348.toNode = "r_hip_RotationInterpolator_Stand";
+browser.currentScene.children[23] = ROUTE348;
 
 let ROUTE349 = browser.currentScene.createNode("ROUTE");
-ROUTE349.fromField = "touchTime";
-ROUTE349.fromNode = "Stand_Touch";
-ROUTE349.toField = "startTime";
-ROUTE349.toNode = "Stand_Time";
-browser.currentScene.children[8] = ROUTE349;
+ROUTE349.fromField = "fraction_changed";
+ROUTE349.fromNode = "Stand_Time";
+ROUTE349.toField = "set_fraction";
+ROUTE349.toNode = "l_ankle_RotationInterpolator_Stand";
+browser.currentScene.children[24] = ROUTE349;
 
 let ROUTE350 = browser.currentScene.createNode("ROUTE");
-ROUTE350.fromField = "touchTime";
-ROUTE350.fromNode = "Walk_Touch";
-ROUTE350.toField = "stopTime";
-ROUTE350.toNode = "Stand_Time";
-browser.currentScene.children[9] = ROUTE350;
+ROUTE350.fromField = "fraction_changed";
+ROUTE350.fromNode = "Stand_Time";
+ROUTE350.toField = "set_fraction";
+ROUTE350.toNode = "l_knee_RotationInterpolator_Stand";
+browser.currentScene.children[25] = ROUTE350;
 
 let ROUTE351 = browser.currentScene.createNode("ROUTE");
-ROUTE351.fromField = "touchTime";
-ROUTE351.fromNode = "Walk_Touch";
-ROUTE351.toField = "stopTime";
-ROUTE351.toNode = "Run_Time";
-browser.currentScene.children[10] = ROUTE351;
+ROUTE351.fromField = "fraction_changed";
+ROUTE351.fromNode = "Stand_Time";
+ROUTE351.toField = "set_fraction";
+ROUTE351.toNode = "l_hip_RotationInterpolator_Stand";
+browser.currentScene.children[26] = ROUTE351;
 
 let ROUTE352 = browser.currentScene.createNode("ROUTE");
-ROUTE352.fromField = "touchTime";
-ROUTE352.fromNode = "Walk_Touch";
-ROUTE352.toField = "stopTime";
-ROUTE352.toNode = "Jump_Time";
-browser.currentScene.children[11] = ROUTE352;
+ROUTE352.fromField = "fraction_changed";
+ROUTE352.fromNode = "Stand_Time";
+ROUTE352.toField = "set_fraction";
+ROUTE352.toNode = "lower_body_RotationInterpolator_Stand";
+browser.currentScene.children[27] = ROUTE352;
 
 let ROUTE353 = browser.currentScene.createNode("ROUTE");
-ROUTE353.fromField = "touchTime";
-ROUTE353.fromNode = "Walk_Touch";
-ROUTE353.toField = "startTime";
-ROUTE353.toNode = "Walk_Time";
-browser.currentScene.children[12] = ROUTE353;
+ROUTE353.fromField = "fraction_changed";
+ROUTE353.fromNode = "Stand_Time";
+ROUTE353.toField = "set_fraction";
+ROUTE353.toNode = "r_wrist_RotationInterpolator_Stand";
+browser.currentScene.children[28] = ROUTE353;
 
 let ROUTE354 = browser.currentScene.createNode("ROUTE");
-ROUTE354.fromField = "touchTime";
-ROUTE354.fromNode = "Run_Touch";
-ROUTE354.toField = "stopTime";
-ROUTE354.toNode = "Stand_Time";
-browser.currentScene.children[13] = ROUTE354;
+ROUTE354.fromField = "fraction_changed";
+ROUTE354.fromNode = "Stand_Time";
+ROUTE354.toField = "set_fraction";
+ROUTE354.toNode = "r_elbow_RotationInterpolator_Stand";
+browser.currentScene.children[29] = ROUTE354;
 
 let ROUTE355 = browser.currentScene.createNode("ROUTE");
-ROUTE355.fromField = "touchTime";
-ROUTE355.fromNode = "Run_Touch";
-ROUTE355.toField = "stopTime";
-ROUTE355.toNode = "Walk_Time";
-browser.currentScene.children[14] = ROUTE355;
+ROUTE355.fromField = "fraction_changed";
+ROUTE355.fromNode = "Stand_Time";
+ROUTE355.toField = "set_fraction";
+ROUTE355.toNode = "r_shoulder_RotationInterpolator_Stand";
+browser.currentScene.children[30] = ROUTE355;
 
 let ROUTE356 = browser.currentScene.createNode("ROUTE");
-ROUTE356.fromField = "touchTime";
-ROUTE356.fromNode = "Run_Touch";
-ROUTE356.toField = "stopTime";
-ROUTE356.toNode = "Jump_Time";
-browser.currentScene.children[15] = ROUTE356;
+ROUTE356.fromField = "fraction_changed";
+ROUTE356.fromNode = "Stand_Time";
+ROUTE356.toField = "set_fraction";
+ROUTE356.toNode = "l_wrist_RotationInterpolator_Stand";
+browser.currentScene.children[31] = ROUTE356;
 
 let ROUTE357 = browser.currentScene.createNode("ROUTE");
-ROUTE357.fromField = "touchTime";
-ROUTE357.fromNode = "Run_Touch";
-ROUTE357.toField = "startTime";
-ROUTE357.toNode = "Run_Time";
-browser.currentScene.children[16] = ROUTE357;
+ROUTE357.fromField = "fraction_changed";
+ROUTE357.fromNode = "Stand_Time";
+ROUTE357.toField = "set_fraction";
+ROUTE357.toNode = "l_elbow_RotationInterpolator_Stand";
+browser.currentScene.children[32] = ROUTE357;
 
 let ROUTE358 = browser.currentScene.createNode("ROUTE");
-ROUTE358.fromField = "touchTime";
-ROUTE358.fromNode = "Jump_Touch";
-ROUTE358.toField = "stopTime";
-ROUTE358.toNode = "Stand_Time";
-browser.currentScene.children[17] = ROUTE358;
+ROUTE358.fromField = "fraction_changed";
+ROUTE358.fromNode = "Stand_Time";
+ROUTE358.toField = "set_fraction";
+ROUTE358.toNode = "l_shoulder_RotationInterpolator_Stand";
+browser.currentScene.children[33] = ROUTE358;
 
 let ROUTE359 = browser.currentScene.createNode("ROUTE");
-ROUTE359.fromField = "touchTime";
-ROUTE359.fromNode = "Jump_Touch";
-ROUTE359.toField = "stopTime";
-ROUTE359.toNode = "Walk_Time";
-browser.currentScene.children[18] = ROUTE359;
+ROUTE359.fromField = "fraction_changed";
+ROUTE359.fromNode = "Stand_Time";
+ROUTE359.toField = "set_fraction";
+ROUTE359.toNode = "head_RotationInterpolator_Stand";
+browser.currentScene.children[34] = ROUTE359;
 
 let ROUTE360 = browser.currentScene.createNode("ROUTE");
-ROUTE360.fromField = "touchTime";
-ROUTE360.fromNode = "Jump_Touch";
-ROUTE360.toField = "stopTime";
-ROUTE360.toNode = "Run_Time";
-browser.currentScene.children[19] = ROUTE360;
+ROUTE360.fromField = "fraction_changed";
+ROUTE360.fromNode = "Stand_Time";
+ROUTE360.toField = "set_fraction";
+ROUTE360.toNode = "neck_RotationInterpolator_Stand";
+browser.currentScene.children[35] = ROUTE360;
 
 let ROUTE361 = browser.currentScene.createNode("ROUTE");
-ROUTE361.fromField = "touchTime";
-ROUTE361.fromNode = "Jump_Touch";
-ROUTE361.toField = "startTime";
-ROUTE361.toNode = "Jump_Time";
-browser.currentScene.children[20] = ROUTE361;
+ROUTE361.fromField = "fraction_changed";
+ROUTE361.fromNode = "Stand_Time";
+ROUTE361.toField = "set_fraction";
+ROUTE361.toNode = "upper_body_RotationInterpolator_Stand";
+browser.currentScene.children[36] = ROUTE361;
 
 let ROUTE362 = browser.currentScene.createNode("ROUTE");
 ROUTE362.fromField = "fraction_changed";
 ROUTE362.fromNode = "Stand_Time";
 ROUTE362.toField = "set_fraction";
-ROUTE362.toNode = "r_ankle_RotationInterpolator_Stand";
-browser.currentScene.children[21] = ROUTE362;
+ROUTE362.toNode = "whole_body_RotationInterpolator_Stand";
+browser.currentScene.children[37] = ROUTE362;
 
 let ROUTE363 = browser.currentScene.createNode("ROUTE");
 ROUTE363.fromField = "fraction_changed";
 ROUTE363.fromNode = "Stand_Time";
 ROUTE363.toField = "set_fraction";
-ROUTE363.toNode = "r_knee_RotationInterpolator_Stand";
-browser.currentScene.children[22] = ROUTE363;
+ROUTE363.toNode = "whole_body_TranslationInterpolator_Stand";
+browser.currentScene.children[38] = ROUTE363;
 
 let ROUTE364 = browser.currentScene.createNode("ROUTE");
-ROUTE364.fromField = "fraction_changed";
-ROUTE364.fromNode = "Stand_Time";
-ROUTE364.toField = "set_fraction";
-ROUTE364.toNode = "r_hip_RotationInterpolator_Stand";
-browser.currentScene.children[23] = ROUTE364;
+ROUTE364.fromField = "value_changed";
+ROUTE364.fromNode = "r_ankle_RotationInterpolator_Stand";
+ROUTE364.toField = "set_rotation";
+ROUTE364.toNode = "hanim_r_ankle";
+browser.currentScene.children[39] = ROUTE364;
 
 let ROUTE365 = browser.currentScene.createNode("ROUTE");
-ROUTE365.fromField = "fraction_changed";
-ROUTE365.fromNode = "Stand_Time";
-ROUTE365.toField = "set_fraction";
-ROUTE365.toNode = "l_ankle_RotationInterpolator_Stand";
-browser.currentScene.children[24] = ROUTE365;
+ROUTE365.fromField = "value_changed";
+ROUTE365.fromNode = "r_knee_RotationInterpolator_Stand";
+ROUTE365.toField = "set_rotation";
+ROUTE365.toNode = "hanim_r_knee";
+browser.currentScene.children[40] = ROUTE365;
 
 let ROUTE366 = browser.currentScene.createNode("ROUTE");
-ROUTE366.fromField = "fraction_changed";
-ROUTE366.fromNode = "Stand_Time";
-ROUTE366.toField = "set_fraction";
-ROUTE366.toNode = "l_knee_RotationInterpolator_Stand";
-browser.currentScene.children[25] = ROUTE366;
+ROUTE366.fromField = "value_changed";
+ROUTE366.fromNode = "r_hip_RotationInterpolator_Stand";
+ROUTE366.toField = "set_rotation";
+ROUTE366.toNode = "hanim_r_hip";
+browser.currentScene.children[41] = ROUTE366;
 
 let ROUTE367 = browser.currentScene.createNode("ROUTE");
-ROUTE367.fromField = "fraction_changed";
-ROUTE367.fromNode = "Stand_Time";
-ROUTE367.toField = "set_fraction";
-ROUTE367.toNode = "l_hip_RotationInterpolator_Stand";
-browser.currentScene.children[26] = ROUTE367;
+ROUTE367.fromField = "value_changed";
+ROUTE367.fromNode = "l_ankle_RotationInterpolator_Stand";
+ROUTE367.toField = "set_rotation";
+ROUTE367.toNode = "hanim_l_ankle";
+browser.currentScene.children[42] = ROUTE367;
 
 let ROUTE368 = browser.currentScene.createNode("ROUTE");
-ROUTE368.fromField = "fraction_changed";
-ROUTE368.fromNode = "Stand_Time";
-ROUTE368.toField = "set_fraction";
-ROUTE368.toNode = "lower_body_RotationInterpolator_Stand";
-browser.currentScene.children[27] = ROUTE368;
+ROUTE368.fromField = "value_changed";
+ROUTE368.fromNode = "l_knee_RotationInterpolator_Stand";
+ROUTE368.toField = "set_rotation";
+ROUTE368.toNode = "hanim_l_knee";
+browser.currentScene.children[43] = ROUTE368;
 
 let ROUTE369 = browser.currentScene.createNode("ROUTE");
-ROUTE369.fromField = "fraction_changed";
-ROUTE369.fromNode = "Stand_Time";
-ROUTE369.toField = "set_fraction";
-ROUTE369.toNode = "r_wrist_RotationInterpolator_Stand";
-browser.currentScene.children[28] = ROUTE369;
+ROUTE369.fromField = "value_changed";
+ROUTE369.fromNode = "l_hip_RotationInterpolator_Stand";
+ROUTE369.toField = "set_rotation";
+ROUTE369.toNode = "hanim_l_hip";
+browser.currentScene.children[44] = ROUTE369;
 
 let ROUTE370 = browser.currentScene.createNode("ROUTE");
-ROUTE370.fromField = "fraction_changed";
-ROUTE370.fromNode = "Stand_Time";
-ROUTE370.toField = "set_fraction";
-ROUTE370.toNode = "r_elbow_RotationInterpolator_Stand";
-browser.currentScene.children[29] = ROUTE370;
+ROUTE370.fromField = "value_changed";
+ROUTE370.fromNode = "lower_body_RotationInterpolator_Stand";
+ROUTE370.toField = "set_rotation";
+ROUTE370.toNode = "hanim_sacroiliac";
+browser.currentScene.children[45] = ROUTE370;
 
 let ROUTE371 = browser.currentScene.createNode("ROUTE");
-ROUTE371.fromField = "fraction_changed";
-ROUTE371.fromNode = "Stand_Time";
-ROUTE371.toField = "set_fraction";
-ROUTE371.toNode = "r_shoulder_RotationInterpolator_Stand";
-browser.currentScene.children[30] = ROUTE371;
+ROUTE371.fromField = "value_changed";
+ROUTE371.fromNode = "r_wrist_RotationInterpolator_Stand";
+ROUTE371.toField = "set_rotation";
+ROUTE371.toNode = "hanim_r_wrist";
+browser.currentScene.children[46] = ROUTE371;
 
 let ROUTE372 = browser.currentScene.createNode("ROUTE");
-ROUTE372.fromField = "fraction_changed";
-ROUTE372.fromNode = "Stand_Time";
-ROUTE372.toField = "set_fraction";
-ROUTE372.toNode = "l_wrist_RotationInterpolator_Stand";
-browser.currentScene.children[31] = ROUTE372;
+ROUTE372.fromField = "value_changed";
+ROUTE372.fromNode = "r_elbow_RotationInterpolator_Stand";
+ROUTE372.toField = "set_rotation";
+ROUTE372.toNode = "hanim_r_elbow";
+browser.currentScene.children[47] = ROUTE372;
 
 let ROUTE373 = browser.currentScene.createNode("ROUTE");
-ROUTE373.fromField = "fraction_changed";
-ROUTE373.fromNode = "Stand_Time";
-ROUTE373.toField = "set_fraction";
-ROUTE373.toNode = "l_elbow_RotationInterpolator_Stand";
-browser.currentScene.children[32] = ROUTE373;
+ROUTE373.fromField = "value_changed";
+ROUTE373.fromNode = "r_shoulder_RotationInterpolator_Stand";
+ROUTE373.toField = "set_rotation";
+ROUTE373.toNode = "hanim_r_shoulder";
+browser.currentScene.children[48] = ROUTE373;
 
 let ROUTE374 = browser.currentScene.createNode("ROUTE");
-ROUTE374.fromField = "fraction_changed";
-ROUTE374.fromNode = "Stand_Time";
-ROUTE374.toField = "set_fraction";
-ROUTE374.toNode = "l_shoulder_RotationInterpolator_Stand";
-browser.currentScene.children[33] = ROUTE374;
+ROUTE374.fromField = "value_changed";
+ROUTE374.fromNode = "l_wrist_RotationInterpolator_Stand";
+ROUTE374.toField = "set_rotation";
+ROUTE374.toNode = "hanim_l_wrist";
+browser.currentScene.children[49] = ROUTE374;
 
 let ROUTE375 = browser.currentScene.createNode("ROUTE");
-ROUTE375.fromField = "fraction_changed";
-ROUTE375.fromNode = "Stand_Time";
-ROUTE375.toField = "set_fraction";
-ROUTE375.toNode = "head_RotationInterpolator_Stand";
-browser.currentScene.children[34] = ROUTE375;
+ROUTE375.fromField = "value_changed";
+ROUTE375.fromNode = "l_elbow_RotationInterpolator_Stand";
+ROUTE375.toField = "set_rotation";
+ROUTE375.toNode = "hanim_l_elbow";
+browser.currentScene.children[50] = ROUTE375;
 
 let ROUTE376 = browser.currentScene.createNode("ROUTE");
-ROUTE376.fromField = "fraction_changed";
-ROUTE376.fromNode = "Stand_Time";
-ROUTE376.toField = "set_fraction";
-ROUTE376.toNode = "neck_RotationInterpolator_Stand";
-browser.currentScene.children[35] = ROUTE376;
+ROUTE376.fromField = "value_changed";
+ROUTE376.fromNode = "l_shoulder_RotationInterpolator_Stand";
+ROUTE376.toField = "set_rotation";
+ROUTE376.toNode = "hanim_l_shoulder";
+browser.currentScene.children[51] = ROUTE376;
 
 let ROUTE377 = browser.currentScene.createNode("ROUTE");
-ROUTE377.fromField = "fraction_changed";
-ROUTE377.fromNode = "Stand_Time";
-ROUTE377.toField = "set_fraction";
-ROUTE377.toNode = "upper_body_RotationInterpolator_Stand";
-browser.currentScene.children[36] = ROUTE377;
+ROUTE377.fromField = "value_changed";
+ROUTE377.fromNode = "head_RotationInterpolator_Stand";
+ROUTE377.toField = "set_rotation";
+ROUTE377.toNode = "hanim_skullbase";
+browser.currentScene.children[52] = ROUTE377;
 
 let ROUTE378 = browser.currentScene.createNode("ROUTE");
-ROUTE378.fromField = "fraction_changed";
-ROUTE378.fromNode = "Stand_Time";
-ROUTE378.toField = "set_fraction";
-ROUTE378.toNode = "whole_body_RotationInterpolator_Stand";
-browser.currentScene.children[37] = ROUTE378;
+ROUTE378.fromField = "value_changed";
+ROUTE378.fromNode = "neck_RotationInterpolator_Stand";
+ROUTE378.toField = "set_rotation";
+ROUTE378.toNode = "hanim_vc4";
+browser.currentScene.children[53] = ROUTE378;
 
 let ROUTE379 = browser.currentScene.createNode("ROUTE");
-ROUTE379.fromField = "fraction_changed";
-ROUTE379.fromNode = "Stand_Time";
-ROUTE379.toField = "set_fraction";
-ROUTE379.toNode = "whole_body_TranslationInterpolator_Stand";
-browser.currentScene.children[38] = ROUTE379;
+ROUTE379.fromField = "value_changed";
+ROUTE379.fromNode = "upper_body_RotationInterpolator_Stand";
+ROUTE379.toField = "set_rotation";
+ROUTE379.toNode = "hanim_vl1";
+browser.currentScene.children[54] = ROUTE379;
 
 let ROUTE380 = browser.currentScene.createNode("ROUTE");
 ROUTE380.fromField = "value_changed";
-ROUTE380.fromNode = "r_ankle_RotationInterpolator_Stand";
+ROUTE380.fromNode = "whole_body_RotationInterpolator_Stand";
 ROUTE380.toField = "set_rotation";
-ROUTE380.toNode = "hanim_r_ankle";
-browser.currentScene.children[39] = ROUTE380;
+ROUTE380.toNode = "hanim_humanoid_root";
+browser.currentScene.children[55] = ROUTE380;
 
 let ROUTE381 = browser.currentScene.createNode("ROUTE");
 ROUTE381.fromField = "value_changed";
-ROUTE381.fromNode = "r_knee_RotationInterpolator_Stand";
-ROUTE381.toField = "set_rotation";
-ROUTE381.toNode = "hanim_r_knee";
-browser.currentScene.children[40] = ROUTE381;
+ROUTE381.fromNode = "whole_body_TranslationInterpolator_Stand";
+ROUTE381.toField = "set_translation";
+ROUTE381.toNode = "hanim_humanoid_root";
+browser.currentScene.children[56] = ROUTE381;
 
 let ROUTE382 = browser.currentScene.createNode("ROUTE");
-ROUTE382.fromField = "value_changed";
-ROUTE382.fromNode = "r_hip_RotationInterpolator_Stand";
-ROUTE382.toField = "set_rotation";
-ROUTE382.toNode = "hanim_r_hip";
-browser.currentScene.children[41] = ROUTE382;
+ROUTE382.fromField = "fraction_changed";
+ROUTE382.fromNode = "Walk_Time";
+ROUTE382.toField = "set_fraction";
+ROUTE382.toNode = "r_ankle_RotationInterpolator_BasicWalk";
+browser.currentScene.children[57] = ROUTE382;
 
 let ROUTE383 = browser.currentScene.createNode("ROUTE");
-ROUTE383.fromField = "value_changed";
-ROUTE383.fromNode = "l_ankle_RotationInterpolator_Stand";
-ROUTE383.toField = "set_rotation";
-ROUTE383.toNode = "hanim_l_ankle";
-browser.currentScene.children[42] = ROUTE383;
+ROUTE383.fromField = "fraction_changed";
+ROUTE383.fromNode = "Walk_Time";
+ROUTE383.toField = "set_fraction";
+ROUTE383.toNode = "r_knee_RotationInterpolator_BasicWalk";
+browser.currentScene.children[58] = ROUTE383;
 
 let ROUTE384 = browser.currentScene.createNode("ROUTE");
-ROUTE384.fromField = "value_changed";
-ROUTE384.fromNode = "l_knee_RotationInterpolator_Stand";
-ROUTE384.toField = "set_rotation";
-ROUTE384.toNode = "hanim_l_knee";
-browser.currentScene.children[43] = ROUTE384;
+ROUTE384.fromField = "fraction_changed";
+ROUTE384.fromNode = "Walk_Time";
+ROUTE384.toField = "set_fraction";
+ROUTE384.toNode = "r_hip_RotationInterpolator_BasicWalk";
+browser.currentScene.children[59] = ROUTE384;
 
 let ROUTE385 = browser.currentScene.createNode("ROUTE");
-ROUTE385.fromField = "value_changed";
-ROUTE385.fromNode = "l_hip_RotationInterpolator_Stand";
-ROUTE385.toField = "set_rotation";
-ROUTE385.toNode = "hanim_l_hip";
-browser.currentScene.children[44] = ROUTE385;
+ROUTE385.fromField = "fraction_changed";
+ROUTE385.fromNode = "Walk_Time";
+ROUTE385.toField = "set_fraction";
+ROUTE385.toNode = "l_ankle_RotationInterpolator_BasicWalk";
+browser.currentScene.children[60] = ROUTE385;
 
 let ROUTE386 = browser.currentScene.createNode("ROUTE");
-ROUTE386.fromField = "value_changed";
-ROUTE386.fromNode = "lower_body_RotationInterpolator_Stand";
-ROUTE386.toField = "set_rotation";
-ROUTE386.toNode = "hanim_sacroiliac";
-browser.currentScene.children[45] = ROUTE386;
+ROUTE386.fromField = "fraction_changed";
+ROUTE386.fromNode = "Walk_Time";
+ROUTE386.toField = "set_fraction";
+ROUTE386.toNode = "l_knee_RotationInterpolator_BasicWalk";
+browser.currentScene.children[61] = ROUTE386;
 
 let ROUTE387 = browser.currentScene.createNode("ROUTE");
-ROUTE387.fromField = "value_changed";
-ROUTE387.fromNode = "r_wrist_RotationInterpolator_Stand";
-ROUTE387.toField = "set_rotation";
-ROUTE387.toNode = "hanim_r_wrist";
-browser.currentScene.children[46] = ROUTE387;
+ROUTE387.fromField = "fraction_changed";
+ROUTE387.fromNode = "Walk_Time";
+ROUTE387.toField = "set_fraction";
+ROUTE387.toNode = "l_hip_RotationInterpolator_BasicWalk";
+browser.currentScene.children[62] = ROUTE387;
 
 let ROUTE388 = browser.currentScene.createNode("ROUTE");
-ROUTE388.fromField = "value_changed";
-ROUTE388.fromNode = "r_elbow_RotationInterpolator_Stand";
-ROUTE388.toField = "set_rotation";
-ROUTE388.toNode = "hanim_r_elbow";
-browser.currentScene.children[47] = ROUTE388;
+ROUTE388.fromField = "fraction_changed";
+ROUTE388.fromNode = "Walk_Time";
+ROUTE388.toField = "set_fraction";
+ROUTE388.toNode = "lower_body_RotationInterpolator_BasicWalk";
+browser.currentScene.children[63] = ROUTE388;
 
 let ROUTE389 = browser.currentScene.createNode("ROUTE");
-ROUTE389.fromField = "value_changed";
-ROUTE389.fromNode = "r_shoulder_RotationInterpolator_Stand";
-ROUTE389.toField = "set_rotation";
-ROUTE389.toNode = "hanim_r_shoulder";
-browser.currentScene.children[48] = ROUTE389;
+ROUTE389.fromField = "fraction_changed";
+ROUTE389.fromNode = "Walk_Time";
+ROUTE389.toField = "set_fraction";
+ROUTE389.toNode = "r_wrist_RotationInterpolator_BasicWalk";
+browser.currentScene.children[64] = ROUTE389;
 
 let ROUTE390 = browser.currentScene.createNode("ROUTE");
-ROUTE390.fromField = "value_changed";
-ROUTE390.fromNode = "l_wrist_RotationInterpolator_Stand";
-ROUTE390.toField = "set_rotation";
-ROUTE390.toNode = "hanim_l_wrist";
-browser.currentScene.children[49] = ROUTE390;
+ROUTE390.fromField = "fraction_changed";
+ROUTE390.fromNode = "Walk_Time";
+ROUTE390.toField = "set_fraction";
+ROUTE390.toNode = "r_elbow_RotationInterpolator_BasicWalk";
+browser.currentScene.children[65] = ROUTE390;
 
 let ROUTE391 = browser.currentScene.createNode("ROUTE");
-ROUTE391.fromField = "value_changed";
-ROUTE391.fromNode = "l_elbow_RotationInterpolator_Stand";
-ROUTE391.toField = "set_rotation";
-ROUTE391.toNode = "hanim_l_elbow";
-browser.currentScene.children[50] = ROUTE391;
+ROUTE391.fromField = "fraction_changed";
+ROUTE391.fromNode = "Walk_Time";
+ROUTE391.toField = "set_fraction";
+ROUTE391.toNode = "r_shoulder_RotationInterpolator_BasicWalk";
+browser.currentScene.children[66] = ROUTE391;
 
 let ROUTE392 = browser.currentScene.createNode("ROUTE");
-ROUTE392.fromField = "value_changed";
-ROUTE392.fromNode = "l_shoulder_RotationInterpolator_Stand";
-ROUTE392.toField = "set_rotation";
-ROUTE392.toNode = "hanim_l_shoulder";
-browser.currentScene.children[51] = ROUTE392;
+ROUTE392.fromField = "fraction_changed";
+ROUTE392.fromNode = "Walk_Time";
+ROUTE392.toField = "set_fraction";
+ROUTE392.toNode = "l_wrist_RotationInterpolator_BasicWalk";
+browser.currentScene.children[67] = ROUTE392;
 
 let ROUTE393 = browser.currentScene.createNode("ROUTE");
-ROUTE393.fromField = "value_changed";
-ROUTE393.fromNode = "head_RotationInterpolator_Stand";
-ROUTE393.toField = "set_rotation";
-ROUTE393.toNode = "hanim_skullbase";
-browser.currentScene.children[52] = ROUTE393;
+ROUTE393.fromField = "fraction_changed";
+ROUTE393.fromNode = "Walk_Time";
+ROUTE393.toField = "set_fraction";
+ROUTE393.toNode = "l_elbow_RotationInterpolator_BasicWalk";
+browser.currentScene.children[68] = ROUTE393;
 
 let ROUTE394 = browser.currentScene.createNode("ROUTE");
-ROUTE394.fromField = "value_changed";
-ROUTE394.fromNode = "neck_RotationInterpolator_Stand";
-ROUTE394.toField = "set_rotation";
-ROUTE394.toNode = "hanim_vc4";
-browser.currentScene.children[53] = ROUTE394;
+ROUTE394.fromField = "fraction_changed";
+ROUTE394.fromNode = "Walk_Time";
+ROUTE394.toField = "set_fraction";
+ROUTE394.toNode = "l_shoulder_RotationInterpolator_BasicWalk";
+browser.currentScene.children[69] = ROUTE394;
 
 let ROUTE395 = browser.currentScene.createNode("ROUTE");
-ROUTE395.fromField = "value_changed";
-ROUTE395.fromNode = "upper_body_RotationInterpolator_Stand";
-ROUTE395.toField = "set_rotation";
-ROUTE395.toNode = "hanim_vl1";
-browser.currentScene.children[54] = ROUTE395;
+ROUTE395.fromField = "fraction_changed";
+ROUTE395.fromNode = "Walk_Time";
+ROUTE395.toField = "set_fraction";
+ROUTE395.toNode = "head_RotationInterpolator_BasicWalk";
+browser.currentScene.children[70] = ROUTE395;
 
 let ROUTE396 = browser.currentScene.createNode("ROUTE");
-ROUTE396.fromField = "value_changed";
-ROUTE396.fromNode = "whole_body_RotationInterpolator_Stand";
-ROUTE396.toField = "set_rotation";
-ROUTE396.toNode = "hanim_humanoid_root";
-browser.currentScene.children[55] = ROUTE396;
+ROUTE396.fromField = "fraction_changed";
+ROUTE396.fromNode = "Walk_Time";
+ROUTE396.toField = "set_fraction";
+ROUTE396.toNode = "neck_RotationInterpolator_BasicWalk";
+browser.currentScene.children[71] = ROUTE396;
 
 let ROUTE397 = browser.currentScene.createNode("ROUTE");
-ROUTE397.fromField = "value_changed";
-ROUTE397.fromNode = "whole_body_TranslationInterpolator_Stand";
-ROUTE397.toField = "set_translation";
-ROUTE397.toNode = "hanim_humanoid_root";
-browser.currentScene.children[56] = ROUTE397;
+ROUTE397.fromField = "fraction_changed";
+ROUTE397.fromNode = "Walk_Time";
+ROUTE397.toField = "set_fraction";
+ROUTE397.toNode = "upper_body_RotationInterpolator_BasicWalk";
+browser.currentScene.children[72] = ROUTE397;
 
 let ROUTE398 = browser.currentScene.createNode("ROUTE");
 ROUTE398.fromField = "fraction_changed";
 ROUTE398.fromNode = "Walk_Time";
 ROUTE398.toField = "set_fraction";
-ROUTE398.toNode = "r_ankle_RotationInterpolator_BasicWalk";
-browser.currentScene.children[57] = ROUTE398;
+ROUTE398.toNode = "whole_body_RotationInterpolator_BasicWalk";
+browser.currentScene.children[73] = ROUTE398;
 
 let ROUTE399 = browser.currentScene.createNode("ROUTE");
 ROUTE399.fromField = "fraction_changed";
 ROUTE399.fromNode = "Walk_Time";
 ROUTE399.toField = "set_fraction";
-ROUTE399.toNode = "r_knee_RotationInterpolator_BasicWalk";
-browser.currentScene.children[58] = ROUTE399;
+ROUTE399.toNode = "whole_body_TranslationInterpolator_BasicWalk";
+browser.currentScene.children[74] = ROUTE399;
 
 let ROUTE400 = browser.currentScene.createNode("ROUTE");
-ROUTE400.fromField = "fraction_changed";
-ROUTE400.fromNode = "Walk_Time";
-ROUTE400.toField = "set_fraction";
-ROUTE400.toNode = "r_hip_RotationInterpolator_BasicWalk";
-browser.currentScene.children[59] = ROUTE400;
+ROUTE400.fromField = "value_changed";
+ROUTE400.fromNode = "r_ankle_RotationInterpolator_BasicWalk";
+ROUTE400.toField = "set_rotation";
+ROUTE400.toNode = "hanim_r_ankle";
+browser.currentScene.children[75] = ROUTE400;
 
 let ROUTE401 = browser.currentScene.createNode("ROUTE");
-ROUTE401.fromField = "fraction_changed";
-ROUTE401.fromNode = "Walk_Time";
-ROUTE401.toField = "set_fraction";
-ROUTE401.toNode = "l_ankle_RotationInterpolator_BasicWalk";
-browser.currentScene.children[60] = ROUTE401;
+ROUTE401.fromField = "value_changed";
+ROUTE401.fromNode = "r_knee_RotationInterpolator_BasicWalk";
+ROUTE401.toField = "set_rotation";
+ROUTE401.toNode = "hanim_r_knee";
+browser.currentScene.children[76] = ROUTE401;
 
 let ROUTE402 = browser.currentScene.createNode("ROUTE");
-ROUTE402.fromField = "fraction_changed";
-ROUTE402.fromNode = "Walk_Time";
-ROUTE402.toField = "set_fraction";
-ROUTE402.toNode = "l_knee_RotationInterpolator_BasicWalk";
-browser.currentScene.children[61] = ROUTE402;
+ROUTE402.fromField = "value_changed";
+ROUTE402.fromNode = "r_hip_RotationInterpolator_BasicWalk";
+ROUTE402.toField = "set_rotation";
+ROUTE402.toNode = "hanim_r_hip";
+browser.currentScene.children[77] = ROUTE402;
 
 let ROUTE403 = browser.currentScene.createNode("ROUTE");
-ROUTE403.fromField = "fraction_changed";
-ROUTE403.fromNode = "Walk_Time";
-ROUTE403.toField = "set_fraction";
-ROUTE403.toNode = "l_hip_RotationInterpolator_BasicWalk";
-browser.currentScene.children[62] = ROUTE403;
+ROUTE403.fromField = "value_changed";
+ROUTE403.fromNode = "l_ankle_RotationInterpolator_BasicWalk";
+ROUTE403.toField = "set_rotation";
+ROUTE403.toNode = "hanim_l_ankle";
+browser.currentScene.children[78] = ROUTE403;
 
 let ROUTE404 = browser.currentScene.createNode("ROUTE");
-ROUTE404.fromField = "fraction_changed";
-ROUTE404.fromNode = "Walk_Time";
-ROUTE404.toField = "set_fraction";
-ROUTE404.toNode = "lower_body_RotationInterpolator_BasicWalk";
-browser.currentScene.children[63] = ROUTE404;
+ROUTE404.fromField = "value_changed";
+ROUTE404.fromNode = "l_knee_RotationInterpolator_BasicWalk";
+ROUTE404.toField = "set_rotation";
+ROUTE404.toNode = "hanim_l_knee";
+browser.currentScene.children[79] = ROUTE404;
 
 let ROUTE405 = browser.currentScene.createNode("ROUTE");
-ROUTE405.fromField = "fraction_changed";
-ROUTE405.fromNode = "Walk_Time";
-ROUTE405.toField = "set_fraction";
-ROUTE405.toNode = "r_wrist_RotationInterpolator_BasicWalk";
-browser.currentScene.children[64] = ROUTE405;
+ROUTE405.fromField = "value_changed";
+ROUTE405.fromNode = "l_hip_RotationInterpolator_BasicWalk";
+ROUTE405.toField = "set_rotation";
+ROUTE405.toNode = "hanim_l_hip";
+browser.currentScene.children[80] = ROUTE405;
 
 let ROUTE406 = browser.currentScene.createNode("ROUTE");
-ROUTE406.fromField = "fraction_changed";
-ROUTE406.fromNode = "Walk_Time";
-ROUTE406.toField = "set_fraction";
-ROUTE406.toNode = "r_elbow_RotationInterpolator_BasicWalk";
-browser.currentScene.children[65] = ROUTE406;
+ROUTE406.fromField = "value_changed";
+ROUTE406.fromNode = "lower_body_RotationInterpolator_BasicWalk";
+ROUTE406.toField = "set_rotation";
+ROUTE406.toNode = "hanim_sacroiliac";
+browser.currentScene.children[81] = ROUTE406;
 
 let ROUTE407 = browser.currentScene.createNode("ROUTE");
-ROUTE407.fromField = "fraction_changed";
-ROUTE407.fromNode = "Walk_Time";
-ROUTE407.toField = "set_fraction";
-ROUTE407.toNode = "r_shoulder_RotationInterpolator_BasicWalk";
-browser.currentScene.children[66] = ROUTE407;
+ROUTE407.fromField = "value_changed";
+ROUTE407.fromNode = "r_wrist_RotationInterpolator_BasicWalk";
+ROUTE407.toField = "set_rotation";
+ROUTE407.toNode = "hanim_r_wrist";
+browser.currentScene.children[82] = ROUTE407;
 
 let ROUTE408 = browser.currentScene.createNode("ROUTE");
-ROUTE408.fromField = "fraction_changed";
-ROUTE408.fromNode = "Walk_Time";
-ROUTE408.toField = "set_fraction";
-ROUTE408.toNode = "l_wrist_RotationInterpolator_BasicWalk";
-browser.currentScene.children[67] = ROUTE408;
+ROUTE408.fromField = "value_changed";
+ROUTE408.fromNode = "r_elbow_RotationInterpolator_BasicWalk";
+ROUTE408.toField = "set_rotation";
+ROUTE408.toNode = "hanim_r_elbow";
+browser.currentScene.children[83] = ROUTE408;
 
 let ROUTE409 = browser.currentScene.createNode("ROUTE");
-ROUTE409.fromField = "fraction_changed";
-ROUTE409.fromNode = "Walk_Time";
-ROUTE409.toField = "set_fraction";
-ROUTE409.toNode = "l_elbow_RotationInterpolator_BasicWalk";
-browser.currentScene.children[68] = ROUTE409;
+ROUTE409.fromField = "value_changed";
+ROUTE409.fromNode = "r_shoulder_RotationInterpolator_BasicWalk";
+ROUTE409.toField = "set_rotation";
+ROUTE409.toNode = "hanim_r_shoulder";
+browser.currentScene.children[84] = ROUTE409;
 
 let ROUTE410 = browser.currentScene.createNode("ROUTE");
-ROUTE410.fromField = "fraction_changed";
-ROUTE410.fromNode = "Walk_Time";
-ROUTE410.toField = "set_fraction";
-ROUTE410.toNode = "l_shoulder_RotationInterpolator_BasicWalk";
-browser.currentScene.children[69] = ROUTE410;
+ROUTE410.fromField = "value_changed";
+ROUTE410.fromNode = "l_wrist_RotationInterpolator_BasicWalk";
+ROUTE410.toField = "set_rotation";
+ROUTE410.toNode = "hanim_l_wrist";
+browser.currentScene.children[85] = ROUTE410;
 
 let ROUTE411 = browser.currentScene.createNode("ROUTE");
-ROUTE411.fromField = "fraction_changed";
-ROUTE411.fromNode = "Walk_Time";
-ROUTE411.toField = "set_fraction";
-ROUTE411.toNode = "head_RotationInterpolator_BasicWalk";
-browser.currentScene.children[70] = ROUTE411;
+ROUTE411.fromField = "value_changed";
+ROUTE411.fromNode = "l_elbow_RotationInterpolator_BasicWalk";
+ROUTE411.toField = "set_rotation";
+ROUTE411.toNode = "hanim_l_elbow";
+browser.currentScene.children[86] = ROUTE411;
 
 let ROUTE412 = browser.currentScene.createNode("ROUTE");
-ROUTE412.fromField = "fraction_changed";
-ROUTE412.fromNode = "Walk_Time";
-ROUTE412.toField = "set_fraction";
-ROUTE412.toNode = "neck_RotationInterpolator_BasicWalk";
-browser.currentScene.children[71] = ROUTE412;
+ROUTE412.fromField = "value_changed";
+ROUTE412.fromNode = "l_shoulder_RotationInterpolator_BasicWalk";
+ROUTE412.toField = "set_rotation";
+ROUTE412.toNode = "hanim_l_shoulder";
+browser.currentScene.children[87] = ROUTE412;
 
 let ROUTE413 = browser.currentScene.createNode("ROUTE");
-ROUTE413.fromField = "fraction_changed";
-ROUTE413.fromNode = "Walk_Time";
-ROUTE413.toField = "set_fraction";
-ROUTE413.toNode = "upper_body_RotationInterpolator_BasicWalk";
-browser.currentScene.children[72] = ROUTE413;
+ROUTE413.fromField = "value_changed";
+ROUTE413.fromNode = "head_RotationInterpolator_BasicWalk";
+ROUTE413.toField = "set_rotation";
+ROUTE413.toNode = "hanim_skullbase";
+browser.currentScene.children[88] = ROUTE413;
 
 let ROUTE414 = browser.currentScene.createNode("ROUTE");
-ROUTE414.fromField = "fraction_changed";
-ROUTE414.fromNode = "Walk_Time";
-ROUTE414.toField = "set_fraction";
-ROUTE414.toNode = "whole_body_RotationInterpolator_BasicWalk";
-browser.currentScene.children[73] = ROUTE414;
+ROUTE414.fromField = "value_changed";
+ROUTE414.fromNode = "neck_RotationInterpolator_BasicWalk";
+ROUTE414.toField = "set_rotation";
+ROUTE414.toNode = "hanim_vc4";
+browser.currentScene.children[89] = ROUTE414;
 
 let ROUTE415 = browser.currentScene.createNode("ROUTE");
-ROUTE415.fromField = "fraction_changed";
-ROUTE415.fromNode = "Walk_Time";
-ROUTE415.toField = "set_fraction";
-ROUTE415.toNode = "whole_body_TranslationInterpolator_BasicWalk";
-browser.currentScene.children[74] = ROUTE415;
+ROUTE415.fromField = "value_changed";
+ROUTE415.fromNode = "upper_body_RotationInterpolator_BasicWalk";
+ROUTE415.toField = "set_rotation";
+ROUTE415.toNode = "hanim_vl1";
+browser.currentScene.children[90] = ROUTE415;
 
 let ROUTE416 = browser.currentScene.createNode("ROUTE");
 ROUTE416.fromField = "value_changed";
-ROUTE416.fromNode = "r_ankle_RotationInterpolator_BasicWalk";
+ROUTE416.fromNode = "whole_body_RotationInterpolator_BasicWalk";
 ROUTE416.toField = "set_rotation";
-ROUTE416.toNode = "hanim_r_ankle";
-browser.currentScene.children[75] = ROUTE416;
+ROUTE416.toNode = "hanim_humanoid_root";
+browser.currentScene.children[91] = ROUTE416;
 
 let ROUTE417 = browser.currentScene.createNode("ROUTE");
 ROUTE417.fromField = "value_changed";
-ROUTE417.fromNode = "r_knee_RotationInterpolator_BasicWalk";
-ROUTE417.toField = "set_rotation";
-ROUTE417.toNode = "hanim_r_knee";
-browser.currentScene.children[76] = ROUTE417;
+ROUTE417.fromNode = "whole_body_TranslationInterpolator_BasicWalk";
+ROUTE417.toField = "set_translation";
+ROUTE417.toNode = "hanim_humanoid_root";
+browser.currentScene.children[92] = ROUTE417;
 
 let ROUTE418 = browser.currentScene.createNode("ROUTE");
-ROUTE418.fromField = "value_changed";
-ROUTE418.fromNode = "r_hip_RotationInterpolator_BasicWalk";
-ROUTE418.toField = "set_rotation";
-ROUTE418.toNode = "hanim_r_hip";
-browser.currentScene.children[77] = ROUTE418;
+ROUTE418.fromField = "fraction_changed";
+ROUTE418.fromNode = "Run_Time";
+ROUTE418.toField = "set_fraction";
+ROUTE418.toNode = "r_ankle_RotationInterpolator_Run";
+browser.currentScene.children[93] = ROUTE418;
 
 let ROUTE419 = browser.currentScene.createNode("ROUTE");
-ROUTE419.fromField = "value_changed";
-ROUTE419.fromNode = "l_ankle_RotationInterpolator_BasicWalk";
-ROUTE419.toField = "set_rotation";
-ROUTE419.toNode = "hanim_l_ankle";
-browser.currentScene.children[78] = ROUTE419;
+ROUTE419.fromField = "fraction_changed";
+ROUTE419.fromNode = "Run_Time";
+ROUTE419.toField = "set_fraction";
+ROUTE419.toNode = "r_knee_RotationInterpolator_Run";
+browser.currentScene.children[94] = ROUTE419;
 
 let ROUTE420 = browser.currentScene.createNode("ROUTE");
-ROUTE420.fromField = "value_changed";
-ROUTE420.fromNode = "l_knee_RotationInterpolator_BasicWalk";
-ROUTE420.toField = "set_rotation";
-ROUTE420.toNode = "hanim_l_knee";
-browser.currentScene.children[79] = ROUTE420;
+ROUTE420.fromField = "fraction_changed";
+ROUTE420.fromNode = "Run_Time";
+ROUTE420.toField = "set_fraction";
+ROUTE420.toNode = "r_hip_RotationInterpolator_Run";
+browser.currentScene.children[95] = ROUTE420;
 
 let ROUTE421 = browser.currentScene.createNode("ROUTE");
-ROUTE421.fromField = "value_changed";
-ROUTE421.fromNode = "l_hip_RotationInterpolator_BasicWalk";
-ROUTE421.toField = "set_rotation";
-ROUTE421.toNode = "hanim_l_hip";
-browser.currentScene.children[80] = ROUTE421;
+ROUTE421.fromField = "fraction_changed";
+ROUTE421.fromNode = "Run_Time";
+ROUTE421.toField = "set_fraction";
+ROUTE421.toNode = "l_ankle_RotationInterpolator_Run";
+browser.currentScene.children[96] = ROUTE421;
 
 let ROUTE422 = browser.currentScene.createNode("ROUTE");
-ROUTE422.fromField = "value_changed";
-ROUTE422.fromNode = "lower_body_RotationInterpolator_BasicWalk";
-ROUTE422.toField = "set_rotation";
-ROUTE422.toNode = "hanim_sacroiliac";
-browser.currentScene.children[81] = ROUTE422;
+ROUTE422.fromField = "fraction_changed";
+ROUTE422.fromNode = "Run_Time";
+ROUTE422.toField = "set_fraction";
+ROUTE422.toNode = "l_knee_RotationInterpolator_Run";
+browser.currentScene.children[97] = ROUTE422;
 
 let ROUTE423 = browser.currentScene.createNode("ROUTE");
-ROUTE423.fromField = "value_changed";
-ROUTE423.fromNode = "r_wrist_RotationInterpolator_BasicWalk";
-ROUTE423.toField = "set_rotation";
-ROUTE423.toNode = "hanim_r_wrist";
-browser.currentScene.children[82] = ROUTE423;
+ROUTE423.fromField = "fraction_changed";
+ROUTE423.fromNode = "Run_Time";
+ROUTE423.toField = "set_fraction";
+ROUTE423.toNode = "l_hip_RotationInterpolator_Run";
+browser.currentScene.children[98] = ROUTE423;
 
 let ROUTE424 = browser.currentScene.createNode("ROUTE");
-ROUTE424.fromField = "value_changed";
-ROUTE424.fromNode = "r_elbow_RotationInterpolator_BasicWalk";
-ROUTE424.toField = "set_rotation";
-ROUTE424.toNode = "hanim_r_elbow";
-browser.currentScene.children[83] = ROUTE424;
+ROUTE424.fromField = "fraction_changed";
+ROUTE424.fromNode = "Run_Time";
+ROUTE424.toField = "set_fraction";
+ROUTE424.toNode = "lower_body_RotationInterpolator_Run";
+browser.currentScene.children[99] = ROUTE424;
 
 let ROUTE425 = browser.currentScene.createNode("ROUTE");
-ROUTE425.fromField = "value_changed";
-ROUTE425.fromNode = "r_shoulder_RotationInterpolator_BasicWalk";
-ROUTE425.toField = "set_rotation";
-ROUTE425.toNode = "hanim_r_shoulder";
-browser.currentScene.children[84] = ROUTE425;
+ROUTE425.fromField = "fraction_changed";
+ROUTE425.fromNode = "Run_Time";
+ROUTE425.toField = "set_fraction";
+ROUTE425.toNode = "r_wrist_RotationInterpolator_Run";
+browser.currentScene.children[100] = ROUTE425;
 
 let ROUTE426 = browser.currentScene.createNode("ROUTE");
-ROUTE426.fromField = "value_changed";
-ROUTE426.fromNode = "l_wrist_RotationInterpolator_BasicWalk";
-ROUTE426.toField = "set_rotation";
-ROUTE426.toNode = "hanim_l_wrist";
-browser.currentScene.children[85] = ROUTE426;
+ROUTE426.fromField = "fraction_changed";
+ROUTE426.fromNode = "Run_Time";
+ROUTE426.toField = "set_fraction";
+ROUTE426.toNode = "r_elbow_RotationInterpolator_Run";
+browser.currentScene.children[101] = ROUTE426;
 
 let ROUTE427 = browser.currentScene.createNode("ROUTE");
-ROUTE427.fromField = "value_changed";
-ROUTE427.fromNode = "l_elbow_RotationInterpolator_BasicWalk";
-ROUTE427.toField = "set_rotation";
-ROUTE427.toNode = "hanim_l_elbow";
-browser.currentScene.children[86] = ROUTE427;
+ROUTE427.fromField = "fraction_changed";
+ROUTE427.fromNode = "Run_Time";
+ROUTE427.toField = "set_fraction";
+ROUTE427.toNode = "r_shoulder_RotationInterpolator_Run";
+browser.currentScene.children[102] = ROUTE427;
 
 let ROUTE428 = browser.currentScene.createNode("ROUTE");
-ROUTE428.fromField = "value_changed";
-ROUTE428.fromNode = "l_shoulder_RotationInterpolator_BasicWalk";
-ROUTE428.toField = "set_rotation";
-ROUTE428.toNode = "hanim_l_shoulder";
-browser.currentScene.children[87] = ROUTE428;
+ROUTE428.fromField = "fraction_changed";
+ROUTE428.fromNode = "Run_Time";
+ROUTE428.toField = "set_fraction";
+ROUTE428.toNode = "l_wrist_RotationInterpolator_Run";
+browser.currentScene.children[103] = ROUTE428;
 
 let ROUTE429 = browser.currentScene.createNode("ROUTE");
-ROUTE429.fromField = "value_changed";
-ROUTE429.fromNode = "head_RotationInterpolator_BasicWalk";
-ROUTE429.toField = "set_rotation";
-ROUTE429.toNode = "hanim_skullbase";
-browser.currentScene.children[88] = ROUTE429;
+ROUTE429.fromField = "fraction_changed";
+ROUTE429.fromNode = "Run_Time";
+ROUTE429.toField = "set_fraction";
+ROUTE429.toNode = "l_elbow_RotationInterpolator_Run";
+browser.currentScene.children[104] = ROUTE429;
 
 let ROUTE430 = browser.currentScene.createNode("ROUTE");
-ROUTE430.fromField = "value_changed";
-ROUTE430.fromNode = "neck_RotationInterpolator_BasicWalk";
-ROUTE430.toField = "set_rotation";
-ROUTE430.toNode = "hanim_vc4";
-browser.currentScene.children[89] = ROUTE430;
+ROUTE430.fromField = "fraction_changed";
+ROUTE430.fromNode = "Run_Time";
+ROUTE430.toField = "set_fraction";
+ROUTE430.toNode = "l_shoulder_RotationInterpolator_Run";
+browser.currentScene.children[105] = ROUTE430;
 
 let ROUTE431 = browser.currentScene.createNode("ROUTE");
-ROUTE431.fromField = "value_changed";
-ROUTE431.fromNode = "upper_body_RotationInterpolator_BasicWalk";
-ROUTE431.toField = "set_rotation";
-ROUTE431.toNode = "hanim_vl1";
-browser.currentScene.children[90] = ROUTE431;
+ROUTE431.fromField = "fraction_changed";
+ROUTE431.fromNode = "Run_Time";
+ROUTE431.toField = "set_fraction";
+ROUTE431.toNode = "head_RotationInterpolator_Run";
+browser.currentScene.children[106] = ROUTE431;
 
 let ROUTE432 = browser.currentScene.createNode("ROUTE");
-ROUTE432.fromField = "value_changed";
-ROUTE432.fromNode = "whole_body_RotationInterpolator_BasicWalk";
-ROUTE432.toField = "set_rotation";
-ROUTE432.toNode = "hanim_humanoid_root";
-browser.currentScene.children[91] = ROUTE432;
+ROUTE432.fromField = "fraction_changed";
+ROUTE432.fromNode = "Run_Time";
+ROUTE432.toField = "set_fraction";
+ROUTE432.toNode = "neck_RotationInterpolator_Run";
+browser.currentScene.children[107] = ROUTE432;
 
 let ROUTE433 = browser.currentScene.createNode("ROUTE");
-ROUTE433.fromField = "value_changed";
-ROUTE433.fromNode = "whole_body_TranslationInterpolator_BasicWalk";
-ROUTE433.toField = "set_translation";
-ROUTE433.toNode = "hanim_humanoid_root";
-browser.currentScene.children[92] = ROUTE433;
+ROUTE433.fromField = "fraction_changed";
+ROUTE433.fromNode = "Run_Time";
+ROUTE433.toField = "set_fraction";
+ROUTE433.toNode = "upper_body_RotationInterpolator_Run";
+browser.currentScene.children[108] = ROUTE433;
 
 let ROUTE434 = browser.currentScene.createNode("ROUTE");
 ROUTE434.fromField = "fraction_changed";
 ROUTE434.fromNode = "Run_Time";
 ROUTE434.toField = "set_fraction";
-ROUTE434.toNode = "r_ankle_RotationInterpolator_Run";
-browser.currentScene.children[93] = ROUTE434;
+ROUTE434.toNode = "whole_body_RotationInterpolator_Run";
+browser.currentScene.children[109] = ROUTE434;
 
 let ROUTE435 = browser.currentScene.createNode("ROUTE");
 ROUTE435.fromField = "fraction_changed";
 ROUTE435.fromNode = "Run_Time";
 ROUTE435.toField = "set_fraction";
-ROUTE435.toNode = "r_knee_RotationInterpolator_Run";
-browser.currentScene.children[94] = ROUTE435;
+ROUTE435.toNode = "whole_body_TranslationInterpolator_Run";
+browser.currentScene.children[110] = ROUTE435;
 
 let ROUTE436 = browser.currentScene.createNode("ROUTE");
-ROUTE436.fromField = "fraction_changed";
-ROUTE436.fromNode = "Run_Time";
-ROUTE436.toField = "set_fraction";
-ROUTE436.toNode = "r_hip_RotationInterpolator_Run";
-browser.currentScene.children[95] = ROUTE436;
+ROUTE436.fromField = "value_changed";
+ROUTE436.fromNode = "r_ankle_RotationInterpolator_Run";
+ROUTE436.toField = "set_rotation";
+ROUTE436.toNode = "hanim_r_ankle";
+browser.currentScene.children[111] = ROUTE436;
 
 let ROUTE437 = browser.currentScene.createNode("ROUTE");
-ROUTE437.fromField = "fraction_changed";
-ROUTE437.fromNode = "Run_Time";
-ROUTE437.toField = "set_fraction";
-ROUTE437.toNode = "l_ankle_RotationInterpolator_Run";
-browser.currentScene.children[96] = ROUTE437;
+ROUTE437.fromField = "value_changed";
+ROUTE437.fromNode = "r_knee_RotationInterpolator_Run";
+ROUTE437.toField = "set_rotation";
+ROUTE437.toNode = "hanim_r_knee";
+browser.currentScene.children[112] = ROUTE437;
 
 let ROUTE438 = browser.currentScene.createNode("ROUTE");
-ROUTE438.fromField = "fraction_changed";
-ROUTE438.fromNode = "Run_Time";
-ROUTE438.toField = "set_fraction";
-ROUTE438.toNode = "l_knee_RotationInterpolator_Run";
-browser.currentScene.children[97] = ROUTE438;
+ROUTE438.fromField = "value_changed";
+ROUTE438.fromNode = "r_hip_RotationInterpolator_Run";
+ROUTE438.toField = "set_rotation";
+ROUTE438.toNode = "hanim_r_hip";
+browser.currentScene.children[113] = ROUTE438;
 
 let ROUTE439 = browser.currentScene.createNode("ROUTE");
-ROUTE439.fromField = "fraction_changed";
-ROUTE439.fromNode = "Run_Time";
-ROUTE439.toField = "set_fraction";
-ROUTE439.toNode = "l_hip_RotationInterpolator_Run";
-browser.currentScene.children[98] = ROUTE439;
+ROUTE439.fromField = "value_changed";
+ROUTE439.fromNode = "l_ankle_RotationInterpolator_Run";
+ROUTE439.toField = "set_rotation";
+ROUTE439.toNode = "hanim_l_ankle";
+browser.currentScene.children[114] = ROUTE439;
 
 let ROUTE440 = browser.currentScene.createNode("ROUTE");
-ROUTE440.fromField = "fraction_changed";
-ROUTE440.fromNode = "Run_Time";
-ROUTE440.toField = "set_fraction";
-ROUTE440.toNode = "lower_body_RotationInterpolator_Run";
-browser.currentScene.children[99] = ROUTE440;
+ROUTE440.fromField = "value_changed";
+ROUTE440.fromNode = "l_knee_RotationInterpolator_Run";
+ROUTE440.toField = "set_rotation";
+ROUTE440.toNode = "hanim_l_knee";
+browser.currentScene.children[115] = ROUTE440;
 
 let ROUTE441 = browser.currentScene.createNode("ROUTE");
-ROUTE441.fromField = "fraction_changed";
-ROUTE441.fromNode = "Run_Time";
-ROUTE441.toField = "set_fraction";
-ROUTE441.toNode = "r_wrist_RotationInterpolator_Run";
-browser.currentScene.children[100] = ROUTE441;
+ROUTE441.fromField = "value_changed";
+ROUTE441.fromNode = "l_hip_RotationInterpolator_Run";
+ROUTE441.toField = "set_rotation";
+ROUTE441.toNode = "hanim_l_hip";
+browser.currentScene.children[116] = ROUTE441;
 
 let ROUTE442 = browser.currentScene.createNode("ROUTE");
-ROUTE442.fromField = "fraction_changed";
-ROUTE442.fromNode = "Run_Time";
-ROUTE442.toField = "set_fraction";
-ROUTE442.toNode = "r_elbow_RotationInterpolator_Run";
-browser.currentScene.children[101] = ROUTE442;
+ROUTE442.fromField = "value_changed";
+ROUTE442.fromNode = "lower_body_RotationInterpolator_Run";
+ROUTE442.toField = "set_rotation";
+ROUTE442.toNode = "hanim_sacroiliac";
+browser.currentScene.children[117] = ROUTE442;
 
 let ROUTE443 = browser.currentScene.createNode("ROUTE");
-ROUTE443.fromField = "fraction_changed";
-ROUTE443.fromNode = "Run_Time";
-ROUTE443.toField = "set_fraction";
-ROUTE443.toNode = "r_shoulder_RotationInterpolator_Run";
-browser.currentScene.children[102] = ROUTE443;
+ROUTE443.fromField = "value_changed";
+ROUTE443.fromNode = "r_wrist_RotationInterpolator_Run";
+ROUTE443.toField = "set_rotation";
+ROUTE443.toNode = "hanim_r_wrist";
+browser.currentScene.children[118] = ROUTE443;
 
 let ROUTE444 = browser.currentScene.createNode("ROUTE");
-ROUTE444.fromField = "fraction_changed";
-ROUTE444.fromNode = "Run_Time";
-ROUTE444.toField = "set_fraction";
-ROUTE444.toNode = "l_wrist_RotationInterpolator_Run";
-browser.currentScene.children[103] = ROUTE444;
+ROUTE444.fromField = "value_changed";
+ROUTE444.fromNode = "r_elbow_RotationInterpolator_Run";
+ROUTE444.toField = "set_rotation";
+ROUTE444.toNode = "hanim_r_elbow";
+browser.currentScene.children[119] = ROUTE444;
 
 let ROUTE445 = browser.currentScene.createNode("ROUTE");
-ROUTE445.fromField = "fraction_changed";
-ROUTE445.fromNode = "Run_Time";
-ROUTE445.toField = "set_fraction";
-ROUTE445.toNode = "l_elbow_RotationInterpolator_Run";
-browser.currentScene.children[104] = ROUTE445;
+ROUTE445.fromField = "value_changed";
+ROUTE445.fromNode = "r_shoulder_RotationInterpolator_Run";
+ROUTE445.toField = "set_rotation";
+ROUTE445.toNode = "hanim_r_shoulder";
+browser.currentScene.children[120] = ROUTE445;
 
 let ROUTE446 = browser.currentScene.createNode("ROUTE");
-ROUTE446.fromField = "fraction_changed";
-ROUTE446.fromNode = "Run_Time";
-ROUTE446.toField = "set_fraction";
-ROUTE446.toNode = "l_shoulder_RotationInterpolator_Run";
-browser.currentScene.children[105] = ROUTE446;
+ROUTE446.fromField = "value_changed";
+ROUTE446.fromNode = "l_wrist_RotationInterpolator_Run";
+ROUTE446.toField = "set_rotation";
+ROUTE446.toNode = "hanim_l_wrist";
+browser.currentScene.children[121] = ROUTE446;
 
 let ROUTE447 = browser.currentScene.createNode("ROUTE");
-ROUTE447.fromField = "fraction_changed";
-ROUTE447.fromNode = "Run_Time";
-ROUTE447.toField = "set_fraction";
-ROUTE447.toNode = "head_RotationInterpolator_Run";
-browser.currentScene.children[106] = ROUTE447;
+ROUTE447.fromField = "value_changed";
+ROUTE447.fromNode = "l_elbow_RotationInterpolator_Run";
+ROUTE447.toField = "set_rotation";
+ROUTE447.toNode = "hanim_l_elbow";
+browser.currentScene.children[122] = ROUTE447;
 
 let ROUTE448 = browser.currentScene.createNode("ROUTE");
-ROUTE448.fromField = "fraction_changed";
-ROUTE448.fromNode = "Run_Time";
-ROUTE448.toField = "set_fraction";
-ROUTE448.toNode = "neck_RotationInterpolator_Run";
-browser.currentScene.children[107] = ROUTE448;
+ROUTE448.fromField = "value_changed";
+ROUTE448.fromNode = "l_shoulder_RotationInterpolator_Run";
+ROUTE448.toField = "set_rotation";
+ROUTE448.toNode = "hanim_l_shoulder";
+browser.currentScene.children[123] = ROUTE448;
 
 let ROUTE449 = browser.currentScene.createNode("ROUTE");
-ROUTE449.fromField = "fraction_changed";
-ROUTE449.fromNode = "Run_Time";
-ROUTE449.toField = "set_fraction";
-ROUTE449.toNode = "upper_body_RotationInterpolator_Run";
-browser.currentScene.children[108] = ROUTE449;
+ROUTE449.fromField = "value_changed";
+ROUTE449.fromNode = "head_RotationInterpolator_Run";
+ROUTE449.toField = "set_rotation";
+ROUTE449.toNode = "hanim_skullbase";
+browser.currentScene.children[124] = ROUTE449;
 
 let ROUTE450 = browser.currentScene.createNode("ROUTE");
-ROUTE450.fromField = "fraction_changed";
-ROUTE450.fromNode = "Run_Time";
-ROUTE450.toField = "set_fraction";
-ROUTE450.toNode = "whole_body_RotationInterpolator_Run";
-browser.currentScene.children[109] = ROUTE450;
+ROUTE450.fromField = "value_changed";
+ROUTE450.fromNode = "neck_RotationInterpolator_Run";
+ROUTE450.toField = "set_rotation";
+ROUTE450.toNode = "hanim_vc4";
+browser.currentScene.children[125] = ROUTE450;
 
 let ROUTE451 = browser.currentScene.createNode("ROUTE");
-ROUTE451.fromField = "fraction_changed";
-ROUTE451.fromNode = "Run_Time";
-ROUTE451.toField = "set_fraction";
-ROUTE451.toNode = "whole_body_TranslationInterpolator_Run";
-browser.currentScene.children[110] = ROUTE451;
+ROUTE451.fromField = "value_changed";
+ROUTE451.fromNode = "upper_body_RotationInterpolator_Run";
+ROUTE451.toField = "set_rotation";
+ROUTE451.toNode = "hanim_vl1";
+browser.currentScene.children[126] = ROUTE451;
 
 let ROUTE452 = browser.currentScene.createNode("ROUTE");
 ROUTE452.fromField = "value_changed";
-ROUTE452.fromNode = "r_ankle_RotationInterpolator_Run";
+ROUTE452.fromNode = "whole_body_RotationInterpolator_Run";
 ROUTE452.toField = "set_rotation";
-ROUTE452.toNode = "hanim_r_ankle";
-browser.currentScene.children[111] = ROUTE452;
+ROUTE452.toNode = "hanim_humanoid_root";
+browser.currentScene.children[127] = ROUTE452;
 
 let ROUTE453 = browser.currentScene.createNode("ROUTE");
 ROUTE453.fromField = "value_changed";
-ROUTE453.fromNode = "r_knee_RotationInterpolator_Run";
-ROUTE453.toField = "set_rotation";
-ROUTE453.toNode = "hanim_r_knee";
-browser.currentScene.children[112] = ROUTE453;
+ROUTE453.fromNode = "whole_body_TranslationInterpolator_Run";
+ROUTE453.toField = "set_translation";
+ROUTE453.toNode = "hanim_humanoid_root";
+browser.currentScene.children[128] = ROUTE453;
 
 let ROUTE454 = browser.currentScene.createNode("ROUTE");
-ROUTE454.fromField = "value_changed";
-ROUTE454.fromNode = "r_hip_RotationInterpolator_Run";
-ROUTE454.toField = "set_rotation";
-ROUTE454.toNode = "hanim_r_hip";
-browser.currentScene.children[113] = ROUTE454;
+ROUTE454.fromField = "fraction_changed";
+ROUTE454.fromNode = "Jump_Time";
+ROUTE454.toField = "set_fraction";
+ROUTE454.toNode = "r_ankle_RotationInterpolator_Jump";
+browser.currentScene.children[129] = ROUTE454;
 
 let ROUTE455 = browser.currentScene.createNode("ROUTE");
-ROUTE455.fromField = "value_changed";
-ROUTE455.fromNode = "l_ankle_RotationInterpolator_Run";
-ROUTE455.toField = "set_rotation";
-ROUTE455.toNode = "hanim_l_ankle";
-browser.currentScene.children[114] = ROUTE455;
+ROUTE455.fromField = "fraction_changed";
+ROUTE455.fromNode = "Jump_Time";
+ROUTE455.toField = "set_fraction";
+ROUTE455.toNode = "r_knee_RotationInterpolator_Jump";
+browser.currentScene.children[130] = ROUTE455;
 
 let ROUTE456 = browser.currentScene.createNode("ROUTE");
-ROUTE456.fromField = "value_changed";
-ROUTE456.fromNode = "l_knee_RotationInterpolator_Run";
-ROUTE456.toField = "set_rotation";
-ROUTE456.toNode = "hanim_l_knee";
-browser.currentScene.children[115] = ROUTE456;
+ROUTE456.fromField = "fraction_changed";
+ROUTE456.fromNode = "Jump_Time";
+ROUTE456.toField = "set_fraction";
+ROUTE456.toNode = "r_hip_RotationInterpolator_Jump";
+browser.currentScene.children[131] = ROUTE456;
 
 let ROUTE457 = browser.currentScene.createNode("ROUTE");
-ROUTE457.fromField = "value_changed";
-ROUTE457.fromNode = "l_hip_RotationInterpolator_Run";
-ROUTE457.toField = "set_rotation";
-ROUTE457.toNode = "hanim_l_hip";
-browser.currentScene.children[116] = ROUTE457;
+ROUTE457.fromField = "fraction_changed";
+ROUTE457.fromNode = "Jump_Time";
+ROUTE457.toField = "set_fraction";
+ROUTE457.toNode = "l_ankle_RotationInterpolator_Jump";
+browser.currentScene.children[132] = ROUTE457;
 
 let ROUTE458 = browser.currentScene.createNode("ROUTE");
-ROUTE458.fromField = "value_changed";
-ROUTE458.fromNode = "lower_body_RotationInterpolator_Run";
-ROUTE458.toField = "set_rotation";
-ROUTE458.toNode = "hanim_sacroiliac";
-browser.currentScene.children[117] = ROUTE458;
+ROUTE458.fromField = "fraction_changed";
+ROUTE458.fromNode = "Jump_Time";
+ROUTE458.toField = "set_fraction";
+ROUTE458.toNode = "l_knee_RotationInterpolator_Jump";
+browser.currentScene.children[133] = ROUTE458;
 
 let ROUTE459 = browser.currentScene.createNode("ROUTE");
-ROUTE459.fromField = "value_changed";
-ROUTE459.fromNode = "r_wrist_RotationInterpolator_Run";
-ROUTE459.toField = "set_rotation";
-ROUTE459.toNode = "hanim_r_wrist";
-browser.currentScene.children[118] = ROUTE459;
+ROUTE459.fromField = "fraction_changed";
+ROUTE459.fromNode = "Jump_Time";
+ROUTE459.toField = "set_fraction";
+ROUTE459.toNode = "l_hip_RotationInterpolator_Jump";
+browser.currentScene.children[134] = ROUTE459;
 
 let ROUTE460 = browser.currentScene.createNode("ROUTE");
-ROUTE460.fromField = "value_changed";
-ROUTE460.fromNode = "r_elbow_RotationInterpolator_Run";
-ROUTE460.toField = "set_rotation";
-ROUTE460.toNode = "hanim_r_elbow";
-browser.currentScene.children[119] = ROUTE460;
+ROUTE460.fromField = "fraction_changed";
+ROUTE460.fromNode = "Jump_Time";
+ROUTE460.toField = "set_fraction";
+ROUTE460.toNode = "lower_body_RotationInterpolator_Jump";
+browser.currentScene.children[135] = ROUTE460;
 
 let ROUTE461 = browser.currentScene.createNode("ROUTE");
-ROUTE461.fromField = "value_changed";
-ROUTE461.fromNode = "r_shoulder_RotationInterpolator_Run";
-ROUTE461.toField = "set_rotation";
-ROUTE461.toNode = "hanim_r_shoulder";
-browser.currentScene.children[120] = ROUTE461;
+ROUTE461.fromField = "fraction_changed";
+ROUTE461.fromNode = "Jump_Time";
+ROUTE461.toField = "set_fraction";
+ROUTE461.toNode = "r_wrist_RotationInterpolator_Jump";
+browser.currentScene.children[136] = ROUTE461;
 
 let ROUTE462 = browser.currentScene.createNode("ROUTE");
-ROUTE462.fromField = "value_changed";
-ROUTE462.fromNode = "l_wrist_RotationInterpolator_Run";
-ROUTE462.toField = "set_rotation";
-ROUTE462.toNode = "hanim_l_wrist";
-browser.currentScene.children[121] = ROUTE462;
+ROUTE462.fromField = "fraction_changed";
+ROUTE462.fromNode = "Jump_Time";
+ROUTE462.toField = "set_fraction";
+ROUTE462.toNode = "r_elbow_RotationInterpolator_Jump";
+browser.currentScene.children[137] = ROUTE462;
 
 let ROUTE463 = browser.currentScene.createNode("ROUTE");
-ROUTE463.fromField = "value_changed";
-ROUTE463.fromNode = "l_elbow_RotationInterpolator_Run";
-ROUTE463.toField = "set_rotation";
-ROUTE463.toNode = "hanim_l_elbow";
-browser.currentScene.children[122] = ROUTE463;
+ROUTE463.fromField = "fraction_changed";
+ROUTE463.fromNode = "Jump_Time";
+ROUTE463.toField = "set_fraction";
+ROUTE463.toNode = "r_shoulder_RotationInterpolator_Jump";
+browser.currentScene.children[138] = ROUTE463;
 
 let ROUTE464 = browser.currentScene.createNode("ROUTE");
-ROUTE464.fromField = "value_changed";
-ROUTE464.fromNode = "l_shoulder_RotationInterpolator_Run";
-ROUTE464.toField = "set_rotation";
-ROUTE464.toNode = "hanim_l_shoulder";
-browser.currentScene.children[123] = ROUTE464;
+ROUTE464.fromField = "fraction_changed";
+ROUTE464.fromNode = "Jump_Time";
+ROUTE464.toField = "set_fraction";
+ROUTE464.toNode = "l_wrist_RotationInterpolator_Jump";
+browser.currentScene.children[139] = ROUTE464;
 
 let ROUTE465 = browser.currentScene.createNode("ROUTE");
-ROUTE465.fromField = "value_changed";
-ROUTE465.fromNode = "head_RotationInterpolator_Run";
-ROUTE465.toField = "set_rotation";
-ROUTE465.toNode = "hanim_skullbase";
-browser.currentScene.children[124] = ROUTE465;
+ROUTE465.fromField = "fraction_changed";
+ROUTE465.fromNode = "Jump_Time";
+ROUTE465.toField = "set_fraction";
+ROUTE465.toNode = "l_elbow_RotationInterpolator_Jump";
+browser.currentScene.children[140] = ROUTE465;
 
 let ROUTE466 = browser.currentScene.createNode("ROUTE");
-ROUTE466.fromField = "value_changed";
-ROUTE466.fromNode = "neck_RotationInterpolator_Run";
-ROUTE466.toField = "set_rotation";
-ROUTE466.toNode = "hanim_vc4";
-browser.currentScene.children[125] = ROUTE466;
+ROUTE466.fromField = "fraction_changed";
+ROUTE466.fromNode = "Jump_Time";
+ROUTE466.toField = "set_fraction";
+ROUTE466.toNode = "l_shoulder_RotationInterpolator_Jump";
+browser.currentScene.children[141] = ROUTE466;
 
 let ROUTE467 = browser.currentScene.createNode("ROUTE");
-ROUTE467.fromField = "value_changed";
-ROUTE467.fromNode = "upper_body_RotationInterpolator_Run";
-ROUTE467.toField = "set_rotation";
-ROUTE467.toNode = "hanim_vl1";
-browser.currentScene.children[126] = ROUTE467;
+ROUTE467.fromField = "fraction_changed";
+ROUTE467.fromNode = "Jump_Time";
+ROUTE467.toField = "set_fraction";
+ROUTE467.toNode = "head_RotationInterpolator_Jump";
+browser.currentScene.children[142] = ROUTE467;
 
 let ROUTE468 = browser.currentScene.createNode("ROUTE");
-ROUTE468.fromField = "value_changed";
-ROUTE468.fromNode = "whole_body_RotationInterpolator_Run";
-ROUTE468.toField = "set_rotation";
-ROUTE468.toNode = "hanim_humanoid_root";
-browser.currentScene.children[127] = ROUTE468;
+ROUTE468.fromField = "fraction_changed";
+ROUTE468.fromNode = "Jump_Time";
+ROUTE468.toField = "set_fraction";
+ROUTE468.toNode = "neck_RotationInterpolator_Jump";
+browser.currentScene.children[143] = ROUTE468;
 
 let ROUTE469 = browser.currentScene.createNode("ROUTE");
-ROUTE469.fromField = "value_changed";
-ROUTE469.fromNode = "whole_body_TranslationInterpolator_Run";
-ROUTE469.toField = "set_translation";
-ROUTE469.toNode = "hanim_humanoid_root";
-browser.currentScene.children[128] = ROUTE469;
+ROUTE469.fromField = "fraction_changed";
+ROUTE469.fromNode = "Jump_Time";
+ROUTE469.toField = "set_fraction";
+ROUTE469.toNode = "upper_body_RotationInterpolator_Jump";
+browser.currentScene.children[144] = ROUTE469;
 
 let ROUTE470 = browser.currentScene.createNode("ROUTE");
 ROUTE470.fromField = "fraction_changed";
 ROUTE470.fromNode = "Jump_Time";
 ROUTE470.toField = "set_fraction";
-ROUTE470.toNode = "r_ankle_RotationInterpolator_Jump";
-browser.currentScene.children[129] = ROUTE470;
+ROUTE470.toNode = "whole_body_RotationInterpolator_Jump";
+browser.currentScene.children[145] = ROUTE470;
 
 let ROUTE471 = browser.currentScene.createNode("ROUTE");
 ROUTE471.fromField = "fraction_changed";
 ROUTE471.fromNode = "Jump_Time";
 ROUTE471.toField = "set_fraction";
-ROUTE471.toNode = "r_knee_RotationInterpolator_Jump";
-browser.currentScene.children[130] = ROUTE471;
+ROUTE471.toNode = "whole_body_TranslationInterpolator_Jump";
+browser.currentScene.children[146] = ROUTE471;
 
 let ROUTE472 = browser.currentScene.createNode("ROUTE");
-ROUTE472.fromField = "fraction_changed";
-ROUTE472.fromNode = "Jump_Time";
-ROUTE472.toField = "set_fraction";
-ROUTE472.toNode = "r_hip_RotationInterpolator_Jump";
-browser.currentScene.children[131] = ROUTE472;
+ROUTE472.fromField = "value_changed";
+ROUTE472.fromNode = "r_ankle_RotationInterpolator_Jump";
+ROUTE472.toField = "set_rotation";
+ROUTE472.toNode = "hanim_r_ankle";
+browser.currentScene.children[147] = ROUTE472;
 
 let ROUTE473 = browser.currentScene.createNode("ROUTE");
-ROUTE473.fromField = "fraction_changed";
-ROUTE473.fromNode = "Jump_Time";
-ROUTE473.toField = "set_fraction";
-ROUTE473.toNode = "l_ankle_RotationInterpolator_Jump";
-browser.currentScene.children[132] = ROUTE473;
+ROUTE473.fromField = "value_changed";
+ROUTE473.fromNode = "r_knee_RotationInterpolator_Jump";
+ROUTE473.toField = "set_rotation";
+ROUTE473.toNode = "hanim_r_knee";
+browser.currentScene.children[148] = ROUTE473;
 
 let ROUTE474 = browser.currentScene.createNode("ROUTE");
-ROUTE474.fromField = "fraction_changed";
-ROUTE474.fromNode = "Jump_Time";
-ROUTE474.toField = "set_fraction";
-ROUTE474.toNode = "l_knee_RotationInterpolator_Jump";
-browser.currentScene.children[133] = ROUTE474;
+ROUTE474.fromField = "value_changed";
+ROUTE474.fromNode = "r_hip_RotationInterpolator_Jump";
+ROUTE474.toField = "set_rotation";
+ROUTE474.toNode = "hanim_r_hip";
+browser.currentScene.children[149] = ROUTE474;
 
 let ROUTE475 = browser.currentScene.createNode("ROUTE");
-ROUTE475.fromField = "fraction_changed";
-ROUTE475.fromNode = "Jump_Time";
-ROUTE475.toField = "set_fraction";
-ROUTE475.toNode = "l_hip_RotationInterpolator_Jump";
-browser.currentScene.children[134] = ROUTE475;
+ROUTE475.fromField = "value_changed";
+ROUTE475.fromNode = "l_ankle_RotationInterpolator_Jump";
+ROUTE475.toField = "set_rotation";
+ROUTE475.toNode = "hanim_l_ankle";
+browser.currentScene.children[150] = ROUTE475;
 
 let ROUTE476 = browser.currentScene.createNode("ROUTE");
-ROUTE476.fromField = "fraction_changed";
-ROUTE476.fromNode = "Jump_Time";
-ROUTE476.toField = "set_fraction";
-ROUTE476.toNode = "lower_body_RotationInterpolator_Jump";
-browser.currentScene.children[135] = ROUTE476;
+ROUTE476.fromField = "value_changed";
+ROUTE476.fromNode = "l_knee_RotationInterpolator_Jump";
+ROUTE476.toField = "set_rotation";
+ROUTE476.toNode = "hanim_l_knee";
+browser.currentScene.children[151] = ROUTE476;
 
 let ROUTE477 = browser.currentScene.createNode("ROUTE");
-ROUTE477.fromField = "fraction_changed";
-ROUTE477.fromNode = "Jump_Time";
-ROUTE477.toField = "set_fraction";
-ROUTE477.toNode = "r_wrist_RotationInterpolator_Jump";
-browser.currentScene.children[136] = ROUTE477;
+ROUTE477.fromField = "value_changed";
+ROUTE477.fromNode = "l_hip_RotationInterpolator_Jump";
+ROUTE477.toField = "set_rotation";
+ROUTE477.toNode = "hanim_l_hip";
+browser.currentScene.children[152] = ROUTE477;
 
 let ROUTE478 = browser.currentScene.createNode("ROUTE");
-ROUTE478.fromField = "fraction_changed";
-ROUTE478.fromNode = "Jump_Time";
-ROUTE478.toField = "set_fraction";
-ROUTE478.toNode = "r_elbow_RotationInterpolator_Jump";
-browser.currentScene.children[137] = ROUTE478;
+ROUTE478.fromField = "value_changed";
+ROUTE478.fromNode = "lower_body_RotationInterpolator_Jump";
+ROUTE478.toField = "set_rotation";
+ROUTE478.toNode = "hanim_sacroiliac";
+browser.currentScene.children[153] = ROUTE478;
 
 let ROUTE479 = browser.currentScene.createNode("ROUTE");
-ROUTE479.fromField = "fraction_changed";
-ROUTE479.fromNode = "Jump_Time";
-ROUTE479.toField = "set_fraction";
-ROUTE479.toNode = "r_shoulder_RotationInterpolator_Jump";
-browser.currentScene.children[138] = ROUTE479;
+ROUTE479.fromField = "value_changed";
+ROUTE479.fromNode = "r_wrist_RotationInterpolator_Jump";
+ROUTE479.toField = "set_rotation";
+ROUTE479.toNode = "hanim_r_wrist";
+browser.currentScene.children[154] = ROUTE479;
 
 let ROUTE480 = browser.currentScene.createNode("ROUTE");
-ROUTE480.fromField = "fraction_changed";
-ROUTE480.fromNode = "Jump_Time";
-ROUTE480.toField = "set_fraction";
-ROUTE480.toNode = "l_wrist_RotationInterpolator_Jump";
-browser.currentScene.children[139] = ROUTE480;
+ROUTE480.fromField = "value_changed";
+ROUTE480.fromNode = "r_elbow_RotationInterpolator_Jump";
+ROUTE480.toField = "set_rotation";
+ROUTE480.toNode = "hanim_r_elbow";
+browser.currentScene.children[155] = ROUTE480;
 
 let ROUTE481 = browser.currentScene.createNode("ROUTE");
-ROUTE481.fromField = "fraction_changed";
-ROUTE481.fromNode = "Jump_Time";
-ROUTE481.toField = "set_fraction";
-ROUTE481.toNode = "l_elbow_RotationInterpolator_Jump";
-browser.currentScene.children[140] = ROUTE481;
+ROUTE481.fromField = "value_changed";
+ROUTE481.fromNode = "r_shoulder_RotationInterpolator_Jump";
+ROUTE481.toField = "set_rotation";
+ROUTE481.toNode = "hanim_r_shoulder";
+browser.currentScene.children[156] = ROUTE481;
 
 let ROUTE482 = browser.currentScene.createNode("ROUTE");
-ROUTE482.fromField = "fraction_changed";
-ROUTE482.fromNode = "Jump_Time";
-ROUTE482.toField = "set_fraction";
-ROUTE482.toNode = "l_shoulder_RotationInterpolator_Jump";
-browser.currentScene.children[141] = ROUTE482;
+ROUTE482.fromField = "value_changed";
+ROUTE482.fromNode = "l_wrist_RotationInterpolator_Jump";
+ROUTE482.toField = "set_rotation";
+ROUTE482.toNode = "hanim_l_wrist";
+browser.currentScene.children[157] = ROUTE482;
 
 let ROUTE483 = browser.currentScene.createNode("ROUTE");
-ROUTE483.fromField = "fraction_changed";
-ROUTE483.fromNode = "Jump_Time";
-ROUTE483.toField = "set_fraction";
-ROUTE483.toNode = "head_RotationInterpolator_Jump";
-browser.currentScene.children[142] = ROUTE483;
+ROUTE483.fromField = "value_changed";
+ROUTE483.fromNode = "l_elbow_RotationInterpolator_Jump";
+ROUTE483.toField = "set_rotation";
+ROUTE483.toNode = "hanim_l_elbow";
+browser.currentScene.children[158] = ROUTE483;
 
 let ROUTE484 = browser.currentScene.createNode("ROUTE");
-ROUTE484.fromField = "fraction_changed";
-ROUTE484.fromNode = "Jump_Time";
-ROUTE484.toField = "set_fraction";
-ROUTE484.toNode = "neck_RotationInterpolator_Jump";
-browser.currentScene.children[143] = ROUTE484;
+ROUTE484.fromField = "value_changed";
+ROUTE484.fromNode = "l_shoulder_RotationInterpolator_Jump";
+ROUTE484.toField = "set_rotation";
+ROUTE484.toNode = "hanim_l_shoulder";
+browser.currentScene.children[159] = ROUTE484;
 
 let ROUTE485 = browser.currentScene.createNode("ROUTE");
-ROUTE485.fromField = "fraction_changed";
-ROUTE485.fromNode = "Jump_Time";
-ROUTE485.toField = "set_fraction";
-ROUTE485.toNode = "upper_body_RotationInterpolator_Jump";
-browser.currentScene.children[144] = ROUTE485;
+ROUTE485.fromField = "value_changed";
+ROUTE485.fromNode = "head_RotationInterpolator_Jump";
+ROUTE485.toField = "set_rotation";
+ROUTE485.toNode = "hanim_skullbase";
+browser.currentScene.children[160] = ROUTE485;
 
 let ROUTE486 = browser.currentScene.createNode("ROUTE");
-ROUTE486.fromField = "fraction_changed";
-ROUTE486.fromNode = "Jump_Time";
-ROUTE486.toField = "set_fraction";
-ROUTE486.toNode = "whole_body_RotationInterpolator_Jump";
-browser.currentScene.children[145] = ROUTE486;
+ROUTE486.fromField = "value_changed";
+ROUTE486.fromNode = "neck_RotationInterpolator_Jump";
+ROUTE486.toField = "set_rotation";
+ROUTE486.toNode = "hanim_vc4";
+browser.currentScene.children[161] = ROUTE486;
 
 let ROUTE487 = browser.currentScene.createNode("ROUTE");
-ROUTE487.fromField = "fraction_changed";
-ROUTE487.fromNode = "Jump_Time";
-ROUTE487.toField = "set_fraction";
-ROUTE487.toNode = "whole_body_TranslationInterpolator_Jump";
-browser.currentScene.children[146] = ROUTE487;
+ROUTE487.fromField = "value_changed";
+ROUTE487.fromNode = "upper_body_RotationInterpolator_Jump";
+ROUTE487.toField = "set_rotation";
+ROUTE487.toNode = "hanim_vl1";
+browser.currentScene.children[162] = ROUTE487;
 
 let ROUTE488 = browser.currentScene.createNode("ROUTE");
 ROUTE488.fromField = "value_changed";
-ROUTE488.fromNode = "r_ankle_RotationInterpolator_Jump";
+ROUTE488.fromNode = "whole_body_RotationInterpolator_Jump";
 ROUTE488.toField = "set_rotation";
-ROUTE488.toNode = "hanim_r_ankle";
-browser.currentScene.children[147] = ROUTE488;
+ROUTE488.toNode = "hanim_humanoid_root";
+browser.currentScene.children[163] = ROUTE488;
 
 let ROUTE489 = browser.currentScene.createNode("ROUTE");
 ROUTE489.fromField = "value_changed";
-ROUTE489.fromNode = "r_knee_RotationInterpolator_Jump";
-ROUTE489.toField = "set_rotation";
-ROUTE489.toNode = "hanim_r_knee";
-browser.currentScene.children[148] = ROUTE489;
-
-let ROUTE490 = browser.currentScene.createNode("ROUTE");
-ROUTE490.fromField = "value_changed";
-ROUTE490.fromNode = "r_hip_RotationInterpolator_Jump";
-ROUTE490.toField = "set_rotation";
-ROUTE490.toNode = "hanim_r_hip";
-browser.currentScene.children[149] = ROUTE490;
-
-let ROUTE491 = browser.currentScene.createNode("ROUTE");
-ROUTE491.fromField = "value_changed";
-ROUTE491.fromNode = "l_ankle_RotationInterpolator_Jump";
-ROUTE491.toField = "set_rotation";
-ROUTE491.toNode = "hanim_l_ankle";
-browser.currentScene.children[150] = ROUTE491;
-
-let ROUTE492 = browser.currentScene.createNode("ROUTE");
-ROUTE492.fromField = "value_changed";
-ROUTE492.fromNode = "l_knee_RotationInterpolator_Jump";
-ROUTE492.toField = "set_rotation";
-ROUTE492.toNode = "hanim_l_knee";
-browser.currentScene.children[151] = ROUTE492;
-
-let ROUTE493 = browser.currentScene.createNode("ROUTE");
-ROUTE493.fromField = "value_changed";
-ROUTE493.fromNode = "l_hip_RotationInterpolator_Jump";
-ROUTE493.toField = "set_rotation";
-ROUTE493.toNode = "hanim_l_hip";
-browser.currentScene.children[152] = ROUTE493;
-
-let ROUTE494 = browser.currentScene.createNode("ROUTE");
-ROUTE494.fromField = "value_changed";
-ROUTE494.fromNode = "lower_body_RotationInterpolator_Jump";
-ROUTE494.toField = "set_rotation";
-ROUTE494.toNode = "hanim_sacroiliac";
-browser.currentScene.children[153] = ROUTE494;
-
-let ROUTE495 = browser.currentScene.createNode("ROUTE");
-ROUTE495.fromField = "value_changed";
-ROUTE495.fromNode = "r_wrist_RotationInterpolator_Jump";
-ROUTE495.toField = "set_rotation";
-ROUTE495.toNode = "hanim_r_wrist";
-browser.currentScene.children[154] = ROUTE495;
-
-let ROUTE496 = browser.currentScene.createNode("ROUTE");
-ROUTE496.fromField = "value_changed";
-ROUTE496.fromNode = "r_elbow_RotationInterpolator_Jump";
-ROUTE496.toField = "set_rotation";
-ROUTE496.toNode = "hanim_r_elbow";
-browser.currentScene.children[155] = ROUTE496;
-
-let ROUTE497 = browser.currentScene.createNode("ROUTE");
-ROUTE497.fromField = "value_changed";
-ROUTE497.fromNode = "r_shoulder_RotationInterpolator_Jump";
-ROUTE497.toField = "set_rotation";
-ROUTE497.toNode = "hanim_r_shoulder";
-browser.currentScene.children[156] = ROUTE497;
-
-let ROUTE498 = browser.currentScene.createNode("ROUTE");
-ROUTE498.fromField = "value_changed";
-ROUTE498.fromNode = "l_wrist_RotationInterpolator_Jump";
-ROUTE498.toField = "set_rotation";
-ROUTE498.toNode = "hanim_l_wrist";
-browser.currentScene.children[157] = ROUTE498;
-
-let ROUTE499 = browser.currentScene.createNode("ROUTE");
-ROUTE499.fromField = "value_changed";
-ROUTE499.fromNode = "l_elbow_RotationInterpolator_Jump";
-ROUTE499.toField = "set_rotation";
-ROUTE499.toNode = "hanim_l_elbow";
-browser.currentScene.children[158] = ROUTE499;
-
-let ROUTE500 = browser.currentScene.createNode("ROUTE");
-ROUTE500.fromField = "value_changed";
-ROUTE500.fromNode = "l_shoulder_RotationInterpolator_Jump";
-ROUTE500.toField = "set_rotation";
-ROUTE500.toNode = "hanim_l_shoulder";
-browser.currentScene.children[159] = ROUTE500;
-
-let ROUTE501 = browser.currentScene.createNode("ROUTE");
-ROUTE501.fromField = "value_changed";
-ROUTE501.fromNode = "head_RotationInterpolator_Jump";
-ROUTE501.toField = "set_rotation";
-ROUTE501.toNode = "hanim_skullbase";
-browser.currentScene.children[160] = ROUTE501;
-
-let ROUTE502 = browser.currentScene.createNode("ROUTE");
-ROUTE502.fromField = "value_changed";
-ROUTE502.fromNode = "neck_RotationInterpolator_Jump";
-ROUTE502.toField = "set_rotation";
-ROUTE502.toNode = "hanim_vc4";
-browser.currentScene.children[161] = ROUTE502;
-
-let ROUTE503 = browser.currentScene.createNode("ROUTE");
-ROUTE503.fromField = "value_changed";
-ROUTE503.fromNode = "upper_body_RotationInterpolator_Jump";
-ROUTE503.toField = "set_rotation";
-ROUTE503.toNode = "hanim_vl1";
-browser.currentScene.children[162] = ROUTE503;
-
-let ROUTE504 = browser.currentScene.createNode("ROUTE");
-ROUTE504.fromField = "value_changed";
-ROUTE504.fromNode = "whole_body_RotationInterpolator_Jump";
-ROUTE504.toField = "set_rotation";
-ROUTE504.toNode = "hanim_humanoid_root";
-browser.currentScene.children[163] = ROUTE504;
-
-let ROUTE505 = browser.currentScene.createNode("ROUTE");
-ROUTE505.fromField = "value_changed";
-ROUTE505.fromNode = "whole_body_TranslationInterpolator_Jump";
-ROUTE505.toField = "set_translation";
-ROUTE505.toNode = "hanim_humanoid_root";
-browser.currentScene.children[164] = ROUTE505;
+ROUTE489.fromNode = "whole_body_TranslationInterpolator_Jump";
+ROUTE489.toField = "set_translation";
+ROUTE489.toNode = "hanim_humanoid_root";
+browser.currentScene.children[164] = ROUTE489;
 
 }
 main ();

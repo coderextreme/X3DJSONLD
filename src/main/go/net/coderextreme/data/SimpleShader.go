@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -78,6 +78,7 @@ func main() {
         Profile: stringPtr("Immersive"),
         Version: stringPtr("4.0"),
         Head: &x3d.Head{
+//meta content='under development' name='warning'/
             Components: []*x3d.Component{
                 &x3d.Component{
                     Name: stringPtr("Shaders"),
@@ -111,7 +112,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:20 GMT"),
+                Content: stringPtr("20 October 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -126,6 +127,10 @@ func main() {
                 Content: stringPtr("https://www.web3d.org/x3d/wiki/index.php/X3D_Plugfest"),
             },
             &x3d.Meta{
+                Name: stringPtr("subject"),
+                Content: stringPtr("X3D shader example"),
+            },
+            &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("originals/simpleShader.x3dv"),
             },
@@ -134,37 +139,41 @@ func main() {
                 Content: stringPtr("ShaderTutorialInstantReality.pdf"),
             },
             &x3d.Meta{
-                Name: stringPtr("subject"),
-                Content: stringPtr("X3D shader example"),
-            },
-            &x3d.Meta{
                 Name: stringPtr("generator"),
                 Content: stringPtr("Titania V3.0.3, http://titania.create3000.de"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("info"),
+                Content: stringPtr("World of Titania"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("outputStyle"),
+                Content: stringPtr("nicest"),
             },
             &x3d.Meta{
                 Name: stringPtr("generator"),
                 Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.2.1, https://www.npmjs.com/package/x3d-tidy"),
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/Shaders/SimpleShader.x3d"),
             },
             &x3d.Meta{
-                Name: stringPtr("info"),
-                Content: stringPtr("World of Titania"),
+                Name: stringPtr("license"),
+                Content: stringPtr("../../license.html"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.ProtoDeclare{
                     Name: stringPtr("myPrototype"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("myInputRange"),
                                 AccessType: stringPtr("initializeOnly"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("myInputRange"),
                                 Value: stringPtr("0.95 0.44 0.22"),
                         },
                         },
@@ -181,49 +190,54 @@ func main() {
                                             Material: &x3d.Material{
                                                 DiffuseColor: &x3d.SFColor{0.5, 0.5, 0.9},
                                             },
-                                            Shaders: &x3d.ComposedShader{
+                                            &x3d.ComposedShader{
                                                 Language: stringPtr("GLSL"),
                                                 IS: &x3d.IS{
-                                                    Shaders:                                                    Connect: []x3d.X3DNode{
+                                                    Connect: []x3d.X3DNode{
                                                         &x3d.Connect{
                                                             NodeField: stringPtr("decis"),
                                                             ProtoField: stringPtr("myInputRange"),
                                                     },
                                                     },
                                                 },
-                                                Parts:                                                Parts: []x3d.X3DNode{
-                                                    &x3d.ShaderPart{
-                                                },
-                                                Parts: &x3d.ShaderPart{
-                                                    Type: stringPtr("FRAGMENT"),
-                                                },
-                                                Shaders:                                            },
                                                 Field: []x3d.X3DNode{
                                                     &x3d.Field{
+                                                        Name: stringPtr("decis"),
                                                         AccessType: stringPtr("initializeOnly"),
                                                         Type: stringPtr("SFVec3f"),
-                                                        Name: stringPtr("decis"),
+                                                },
+                                            },
+                                                Parts: []x3d.X3DNode{
+                                                    &x3d.ShaderPart{
+                                                        Type: stringPtr("VERTEX"),
+                                                },
+                                                &x3d.ShaderPart{
+                                                    Type: stringPtr("FRAGMENT"),
                                                 },
                                                 },
                                             },
-                                            Shaders: &x3d.ComposedShader{
+                                            &x3d.ComposedShader{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("Cobweb"),
                                                 },
                                                 Language: stringPtr("GLSL"),
-                                                Parts:                                                Parts: []x3d.X3DNode{
-                                                    &x3d.ShaderPart{
-                                                },
-                                                Parts: &x3d.ShaderPart{
-                                                    Type: stringPtr("FRAGMENT"),
-                                                },
-                                                Shaders:                                            },
                                                 Field: []x3d.X3DNode{
                                                     &x3d.Field{
+                                                        Name: stringPtr("decis"),
                                                         AccessType: stringPtr("initializeOnly"),
                                                         Type: stringPtr("SFVec3f"),
-                                                        Name: stringPtr("decis"),
                                                         Value: stringPtr("0.95 0.77 0.44"),
+                                                },
+                                            },
+                                                Parts: []x3d.X3DNode{
+                                                    &x3d.ShaderPart{
+                                                        Type: stringPtr("VERTEX"),
+                                                },
+                                                &x3d.ShaderPart{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("_1"),
+                                                    },
+                                                    Type: stringPtr("FRAGMENT"),
                                                 },
                                                 },
                                             },
@@ -240,67 +254,68 @@ func main() {
                 &x3d.WorldInfo{
                     Title: stringPtr("SimpleShader"),
                     Metadata: &x3d.MetadataSet{
+                        Name: stringPtr("Titania"),
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("Titania"),
                         },
-                        Name: stringPtr("Titania"),
                         Reference: stringPtr("http://titania.create3000.de"),
                         &x3d.MetadataSet{
+                            Name: stringPtr("Selection"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("Selection"),
                             },
-                            Name: stringPtr("Selection"),
                             Reference: stringPtr("http://titania.create3000.de"),
                             &x3d.MetadataSet{
+                                Name: stringPtr("nodes"),
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("nodes"),
                                 },
-                                Name: stringPtr("nodes"),
                                 Reference: stringPtr("http://titania.create3000.de"),
+//NULL
                             },
                         },
                         &x3d.MetadataSet{
+                            Name: stringPtr("NavigationInfo"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("NavigationInfo"),
                             },
-                            Name: stringPtr("NavigationInfo"),
                             Reference: stringPtr("http://titania.create3000.de"),
                             &x3d.MetadataString{
+                                Name: stringPtr("type"),
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("type"),
                                 },
-                                Name: stringPtr("type"),
                                 Reference: stringPtr("http://titania.create3000.de"),
                                 Value: x3d.MFString{"EXAMINE"},
                             },
                         },
                         &x3d.MetadataSet{
+                            Name: stringPtr("Viewpoint"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("Viewpoint"),
                             },
-                            Name: stringPtr("Viewpoint"),
                             Reference: stringPtr("http://titania.create3000.de"),
                             &x3d.MetadataDouble{
+                                Name: stringPtr("position"),
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("position"),
                                 },
-                                Name: stringPtr("position"),
                                 Reference: stringPtr("http://titania.create3000.de"),
                                 Value: x3d.MFDouble{6.24067728185014, 0.00250837343276661, 2.92117542307615},
                             },
                             &x3d.MetadataDouble{
+                                Name: stringPtr("orientation"),
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("orientation"),
                                 },
-                                Name: stringPtr("orientation"),
                                 Reference: stringPtr("http://titania.create3000.de"),
                                 Value: x3d.MFDouble{-0.110173424710488, 0.990158061907379, -0.0863065984000336, 1.21146676119191},
                             },
                             &x3d.MetadataDouble{
+                                Name: stringPtr("centerOfRotation"),
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("centerOfRotation"),
                                 },
-                                Name: stringPtr("centerOfRotation"),
                                 Reference: stringPtr("http://titania.create3000.de"),
                                 Value: x3d.MFDouble{-0.808320198626341, -0.358072370409949, 0.22817191560906},
                             },
@@ -328,13 +343,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/SimpleShader.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -345,7 +360,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

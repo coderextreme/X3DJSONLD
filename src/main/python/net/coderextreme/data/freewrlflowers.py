@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,102 +22,104 @@ meta4.content = "5 or more prismatic flowers"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "identifier"
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/freewrlflowers.x3d"
+
+head1.children.append(meta6)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-ExternProtoDeclare7 = x3d.ExternProtoDeclare()
-ExternProtoDeclare7.name = "FlowerProto"
-ExternProtoDeclare7.url = ["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]
-field8 = x3d.field()
-field8.accessType = "inputOutput"
-field8.type = "MFString"
-field8.name = "vertex"
+Scene7 = x3d.Scene()
+NavigationInfo8 = x3d.NavigationInfo()
 
-ExternProtoDeclare7.field.append(field8)
-field9 = x3d.field()
-field9.accessType = "inputOutput"
-field9.type = "MFString"
-field9.name = "fragment"
+Scene7.children.append(NavigationInfo8)
+Viewpoint9 = x3d.Viewpoint()
+Viewpoint9.description = "Tour Views"
+Viewpoint9.position = [0,0,50]
 
-ExternProtoDeclare7.field.append(field9)
+Scene7.children.append(Viewpoint9)
+Background10 = x3d.Background()
+Background10.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+Background10.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+Background10.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+Background10.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+Background10.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+Background10.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
 
-Scene6.children.append(ExternProtoDeclare7)
-ProtoDeclare10 = x3d.ProtoDeclare()
-ProtoDeclare10.name = "flower"
-ProtoInterface11 = x3d.ProtoInterface()
+Scene7.children.append(Background10)
+Group11 = x3d.Group()
+ExternProtoDeclare12 = x3d.ExternProtoDeclare()
+ExternProtoDeclare12.name = "FlowerProto"
+ExternProtoDeclare12.url = ["../data/flowerprotofreewrl.x3d#FlowerProto","https://coderextreme.net/X3DJSONLD/src/main/data/flowerprotofreewrl.x3d#FlowerProto"]
+field13 = x3d.field()
+field13.name = "vertex"
+field13.accessType = "inputOutput"
+field13.type = "MFString"
 
-ProtoDeclare10.ProtoInterface = ProtoInterface11
-ProtoBody12 = x3d.ProtoBody()
-Group13 = x3d.Group()
-ProtoInstance14 = x3d.ProtoInstance()
-ProtoInstance14.name = "FlowerProto"
-fieldValue15 = x3d.fieldValue()
-fieldValue15.name = "vertex"
-fieldValue15.value = "\"../shaders/freewrl_flowers_chromatic.vs\""
+ExternProtoDeclare12.field.append(field13)
+field14 = x3d.field()
+field14.name = "fragment"
+field14.accessType = "inputOutput"
+field14.type = "MFString"
 
-ProtoInstance14.fieldValue.append(fieldValue15)
-fieldValue16 = x3d.fieldValue()
-fieldValue16.name = "fragment"
-fieldValue16.value = "\"../shaders/freewrl.fs\""
+ExternProtoDeclare12.field.append(field14)
 
-ProtoInstance14.fieldValue.append(fieldValue16)
+Group11.children.append(ExternProtoDeclare12)
+ProtoDeclare15 = x3d.ProtoDeclare()
+ProtoDeclare15.name = "flower"
+ProtoBody16 = x3d.ProtoBody()
+Group17 = x3d.Group()
+ProtoInstance18 = x3d.ProtoInstance()
+ProtoInstance18.name = "FlowerProto"
+fieldValue19 = x3d.fieldValue()
+fieldValue19.name = "vertex"
+fieldValue19.value = "\"../shaders/freewrl_flowers_chromatic.vs\""
 
-Group13.children.append(ProtoInstance14)
+ProtoInstance18.fieldValue.append(fieldValue19)
+fieldValue20 = x3d.fieldValue()
+fieldValue20.name = "fragment"
+fieldValue20.value = "\"../shaders/freewrl.fs\""
 
-ProtoBody12.children.append(Group13)
+ProtoInstance18.fieldValue.append(fieldValue20)
 
-ProtoDeclare10.ProtoBody = ProtoBody12
+Group17.children.append(ProtoInstance18)
 
-Scene6.children.append(ProtoDeclare10)
-NavigationInfo17 = x3d.NavigationInfo()
+ProtoBody16.children.append(Group17)
 
-Scene6.children.append(NavigationInfo17)
-Viewpoint18 = x3d.Viewpoint()
-Viewpoint18.description = "Tour Views"
-Viewpoint18.position = [0,0,50]
+ProtoDeclare15.ProtoBody = ProtoBody16
 
-Scene6.children.append(Viewpoint18)
-Background19 = x3d.Background()
-Background19.frontUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
-Background19.backUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
-Background19.leftUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
-Background19.rightUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
-Background19.topUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
-Background19.bottomUrl = ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
-
-Scene6.children.append(Background19)
-Group20 = x3d.Group()
+Group11.children.append(ProtoDeclare15)
 ProtoInstance21 = x3d.ProtoInstance()
 ProtoInstance21.name = "flower"
 
-Group20.children.append(ProtoInstance21)
+Group11.children.append(ProtoInstance21)
 ProtoInstance22 = x3d.ProtoInstance()
 ProtoInstance22.name = "flower"
 
-Group20.children.append(ProtoInstance22)
+Group11.children.append(ProtoInstance22)
 ProtoInstance23 = x3d.ProtoInstance()
 ProtoInstance23.name = "flower"
 
-Group20.children.append(ProtoInstance23)
+Group11.children.append(ProtoInstance23)
 ProtoInstance24 = x3d.ProtoInstance()
 ProtoInstance24.name = "flower"
 
-Group20.children.append(ProtoInstance24)
+Group11.children.append(ProtoInstance24)
 ProtoInstance25 = x3d.ProtoInstance()
 ProtoInstance25.name = "flower"
 
-Group20.children.append(ProtoInstance25)
+Group11.children.append(ProtoInstance25)
 ProtoInstance26 = x3d.ProtoInstance()
 ProtoInstance26.name = "flower"
 
-Group20.children.append(ProtoInstance26)
+Group11.children.append(ProtoInstance26)
 
-Scene6.children.append(Group20)
+Scene7.children.append(Group11)
 
-X3D0.Scene = Scene6
+X3D0.Scene = Scene7
 f = open("../data/freewrlflowers.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

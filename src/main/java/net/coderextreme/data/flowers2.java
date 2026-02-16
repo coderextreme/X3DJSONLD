@@ -58,54 +58,56 @@ public class flowers2 implements X3DRoots {
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("flowers2.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("23 January 2005"))
-        .addMeta(new meta().setName("modified").setContent("9 November 2024"))
-        .addMeta(new meta().setName("description").setContent("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d"))
-        .addMeta(new meta().setName("generator").setContent("manually written"))
-        .addMeta(new meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("flowers2.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("23 January 2005")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("9 November 2024")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("2 random mathematical roses in spherical dimensions. rho = a + b * cos(c * theta) * cos(d * phi)")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/flowers2.x3d")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manually written")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("https://www.web3d.org/x3d/content/examples/license.html"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Two mathematical orbitals").setPosition(new float[] {0f ,0f ,50f }))
+        .addChild(new Viewpoint().setDescription(new SFString("Two mathematical orbitals")).setPosition(new float[] {0f ,0f ,50f }))
         .addChild(new Group()
           .addChild(new DirectionalLight().setDirection(new float[] {1f ,1f ,1f }))
-          .addChild(new ProtoDeclare().setName("orbit")
+          .addChild(new ProtoDeclare().setName(new SFString("orbit"))
             .setProtoInterface(new ProtoInterface()
-              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-8 0 0"))
-              .addField(new field().setType("SFColor").setName("diffuseColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new field().setType("SFColor").setName("specularColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 0.5 0"))
-              .addField(new field().setType("SFFloat").setName("transparency").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.75")))
+              .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("-8 0 0")))
+              .addField(new field().setType("SFColor").setName(new SFString("diffuseColor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 0.5 0")))
+              .addField(new field().setType("SFColor").setName(new SFString("specularColor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 0.5 0")))
+              .addField(new field().setType("SFFloat").setName(new SFString("transparency")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.75"))))
             .setProtoBody(new ProtoBody()
               .addChild(new Group()
-                .addChild(new TimeSensor().setDEF("Clock").setCycleInterval(16d).setLoop(true))
-                .addChild(new OrientationInterpolator().setDEF("OrbitPath").setKey(new MFFloat0().getArray()).setKeyValue(new MFRotation1().getArray()))
-                .addChild(new Transform().setDEF("OrbitTransform")
+                .addChild(new TimeSensor().setDEF(new SFString("Clock")).setCycleInterval(16d).setLoop(true))
+                .addChild(new OrientationInterpolator().setDEF(new SFString("OrbitPath")).setKey(new MFFloat0().getArray()).setKeyValue(new MFRotation1().getArray()))
+                .addChild(new Transform().setDEF(new SFString("OrbitTransform"))
                   .setIS(new IS()
-                    .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
+                    .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("translation"))))
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
                       .setMaterial(new Material()
                         .setIS(new IS()
-                          .addConnect(new connect().setNodeField("diffuseColor").setProtoField("diffuseColor"))
-                          .addConnect(new connect().setNodeField("specularColor").setProtoField("specularColor"))
-                          .addConnect(new connect().setNodeField("transparency").setProtoField("transparency")))))
-                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
-                    .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt322().getArray()).setDEF("Orbit")
-                      .setCoord(new Coordinate().setDEF("OrbitCoordinates").setPoint(new MFVec3f3().getArray())))))
-                .addChild(new Script().setDEF("OrbitScript")
-                  .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                  .addField(new field().setType("MFVec3f").setName("coordinates").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                  .addField(new field().setType("MFInt32").setName("coordIndexes").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                  .addField(new field().setType("SFFloat").setName("e").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType("SFFloat").setName("f").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType("SFFloat").setName("g").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType("SFFloat").setName("h").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                  .addField(new field().setType("SFInt32").setName("resolution").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("50"))
+                          .addConnect(new connect().setNodeField(new SFString("diffuseColor")).setProtoField(new SFString("diffuseColor")))
+                          .addConnect(new connect().setNodeField(new SFString("specularColor")).setProtoField(new SFString("specularColor")))
+                          .addConnect(new connect().setNodeField(new SFString("transparency")).setProtoField(new SFString("transparency"))))))
+                    .addComments(new CommentsBlock("<IndexedFaceSet DEF=\"Orbit\">"))
+                    .addComments(new CommentsBlock("<Coordinate DEF=\"OrbitCoordinates\"/>"))
+                    .addComments(new CommentsBlock("</IndexedFaceSet>"))
+                    .setGeometry(new IndexedFaceSet().setCcw(false).setConvex(false).setCoordIndex(new MFInt322().getArray()).setDEF(new SFString("Orbit"))
+                      .setCoord(new Coordinate().setDEF(new SFString("OrbitCoordinates")).setPoint(new MFVec3f3().getArray())))))
+                .addChild(new Script().setDEF(new SFString("OrbitScript"))
+                  .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                  .addField(new field().setType("MFVec3f").setName(new SFString("coordinates")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                  .addField(new field().setType("MFInt32").setName(new SFString("coordIndexes")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                  .addField(new field().setType("SFFloat").setName(new SFString("e")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+                  .addField(new field().setType("SFFloat").setName(new SFString("f")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+                  .addField(new field().setType("SFFloat").setName(new SFString("g")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+                  .addField(new field().setType("SFFloat").setName(new SFString("h")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+                  .addField(new field().setType("SFInt32").setName(new SFString("resolution")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("50")))
                   .setSourceCode("ecmascript:\n"+
 "\n"+
 "			function initialize() {\n"+
@@ -171,29 +173,29 @@ ProtoInstance ProtoInstance1 = null;
 "				}\n"+
 "				generateCoordinates();\n"+
 "			}"))
-                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordIndexes").setToNode("Orbit").setToField("set_coordIndex"))
-                .addChild(new ROUTE().setFromNode("OrbitScript").setFromField("coordinates").setToNode("OrbitCoordinates").setToField("point"))
-                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitScript").setToField("set_fraction"))
-                .addChild(new ROUTE().setFromNode("OrbitPath").setFromField("value_changed").setToNode("OrbitTransform").setToField("rotation"))
-                .addChild(new ROUTE().setFromNode("Clock").setFromField("fraction_changed").setToNode("OrbitPath").setToField("set_fraction")))))
-          .addChild(ProtoInstance0 = new ProtoInstance().setName("orbit"))
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("orbit"))));
+                .addChild(new ROUTE().setFromNode(new SFString("OrbitScript")).setFromField(new SFString("coordIndexes")).setToNode(new SFString("Orbit")).setToField(new SFString("set_coordIndex")))
+                .addChild(new ROUTE().setFromNode(new SFString("OrbitScript")).setFromField(new SFString("coordinates")).setToNode(new SFString("OrbitCoordinates")).setToField(new SFString("point")))
+                .addChild(new ROUTE().setFromNode(new SFString("Clock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("OrbitScript")).setToField(new SFString("set_fraction")))
+                .addChild(new ROUTE().setFromNode(new SFString("OrbitPath")).setFromField(new SFString("value_changed")).setToNode(new SFString("OrbitTransform")).setToField(new SFString("rotation")))
+                .addChild(new ROUTE().setFromNode(new SFString("Clock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("OrbitPath")).setToField(new SFString("set_fraction"))))))
+          .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("orbit")))
+          .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("orbit")))));
 ProtoInstance0
-            .addFieldValue(new fieldValue().setName("translation").setValue("-8 0 0"));
+            .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-8 0 0")));
 ProtoInstance0
-            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("1 0.5 0"));
+            .addFieldValue(new fieldValue().setName(new SFString("diffuseColor")).setValue(new SFString("1 0.5 0")));
 ProtoInstance0
-            .addFieldValue(new fieldValue().setName("specularColor").setValue("1 0.5 0"));
+            .addFieldValue(new fieldValue().setName(new SFString("specularColor")).setValue(new SFString("1 0.5 0")));
 ProtoInstance0
-            .addFieldValue(new fieldValue().setName("transparency").setValue("0.75"));
+            .addFieldValue(new fieldValue().setName(new SFString("transparency")).setValue(new SFString("0.75")));
 ProtoInstance1
-            .addFieldValue(new fieldValue().setName("translation").setValue("8 0 0"));
+            .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("8 0 0")));
 ProtoInstance1
-            .addFieldValue(new fieldValue().setName("diffuseColor").setValue("0 0.5 1"));
+            .addFieldValue(new fieldValue().setName(new SFString("diffuseColor")).setValue(new SFString("0 0.5 1")));
 ProtoInstance1
-            .addFieldValue(new fieldValue().setName("specularColor").setValue("0 0.5 1"));
+            .addFieldValue(new fieldValue().setName(new SFString("specularColor")).setValue(new SFString("0 0.5 1")));
 ProtoInstance1
-            .addFieldValue(new fieldValue().setName("transparency").setValue("0.5"));
+            .addFieldValue(new fieldValue().setName(new SFString("transparency")).setValue(new SFString("0.5")));
     return X3D0;
     }
 private class MFFloat0 {

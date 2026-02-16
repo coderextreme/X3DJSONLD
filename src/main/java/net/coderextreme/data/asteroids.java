@@ -57,24 +57,24 @@ public class asteroids implements X3DRoots {
     }
     public X3D initialize() {
 ProtoInstance ProtoInstance0 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("asteroids.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d"))
-        .addMeta(new meta().setName("description").setContent("asteroids")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("asteroids.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/asteroids.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("asteroids"))))
       .setScene(new Scene()
-        .addChild(new ProtoDeclare().setName("anyShape")
+        .addChild(new ProtoDeclare().setName(new SFString("anyShape"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("MFNode").setName("myShape").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
+            .addField(new field().setType("MFNode").setName(new SFString("myShape")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new Shape()
                 .setGeometry(new Sphere()))))
           .setProtoBody(new ProtoBody()
             .addChild(new Transform()
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("children").setProtoField("myShape"))))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("anyShape")));
+                .addConnect(new connect().setNodeField(new SFString("children")).setProtoField(new SFString("myShape")))))))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("anyShape"))));
     return X3D0;
     }
 }

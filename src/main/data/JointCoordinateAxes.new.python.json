@@ -1,0 +1,212 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"x3d-tidy V1.0.56, https://www.npmjs.com/package/x3d-tidy",
+        "@name":"converter"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Mon, 31 Jul 2023 03:48:04 GMT",
+        "@name":"converted"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+      {
+        "@headlight":"false"
+      }
+    },
+        "Group":
+        {
+            "Group":
+            {
+      {
+        "@DEF":"ARROW"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+      {
+        "@DEF":"ARROW_APPEARANCE"
+      }
+                        "Material":
+                        {
+      {
+        "@diffuseColor":"0.3 0.3 1",
+        "@emissiveColor":"0.3 0.3 0.33"
+      }
+    },
+                    }                    "Cylinder":
+                    {
+      {
+        "@bottom":"false",
+        "@radius":"0.025",
+        "@top":"false"
+      }
+    },
+                }                "Transform":
+                {
+      {
+        "@translation":"0 1 0"
+      }
+                    "Shape":
+                    {
+      {
+        "@DEF":"ARROW_POINTER"
+      }
+                        "Appearance":
+                        {
+      {
+        "@USE":"ARROW_APPEARANCE"
+      }
+    },
+                        "Cone":
+                        {
+      {
+        "@bottomRadius":"0.05",
+        "@height":"0.1"
+      }
+    },
+                    }                }                "Transform":
+                {
+      {
+        "@rotation":"1 0 0 3.1416",
+        "@translation":"0 -1 0"
+      }
+                    "Shape":
+                    {
+      {
+        "@USE":"ARROW_POINTER"
+      }
+    },
+                }            }            "Transform":
+            {
+      {
+        "@translation":"0 1.08 0"
+      }
+                "Billboard":
+                {
+                    "Shape":
+                    {
+                        "Appearance":
+                        {
+      {
+        "@DEF":"LABEL_APPEARANCE"
+      }
+                            "Material":
+                            {
+      {
+        "@diffuseColor":"1 1 0.3",
+        "@emissiveColor":"0.33 0.33 0.1"
+      }
+    },
+                        }                        "Text":
+                        {
+      {
+        "@string":""Y""
+      }
+                            "FontStyle":
+                            {
+      {
+        "@DEF":"LABEL_FONT",
+        "@family":""SANS"",
+        "@justify":""MIDDLE"",
+        "@size":"0.2"
+      }
+    },
+                        }                    }                }            }        }        "Transform":
+        {
+      {
+        "@rotation":"0 0 1 -1.5708"
+      }
+            "Group":
+            {
+                "Group":
+                {
+      {
+        "@USE":"ARROW"
+      }
+    },
+                "Transform":
+                {
+      {
+        "@rotation":"0 0 1 1.5708",
+        "@translation":"0.072 1.1 0"
+      }
+                    "Billboard":
+                    {
+                        "Shape":
+                        {
+                            "Appearance":
+                            {
+      {
+        "@USE":"LABEL_APPEARANCE"
+      }
+    },
+                            "Text":
+                            {
+      {
+        "@string":""X""
+      }
+                                "FontStyle":
+                                {
+      {
+        "@USE":"LABEL_FONT"
+      }
+    },
+                            }                        }                    }                }            }        }        "Transform":
+        {
+      {
+        "@rotation":"1 0 0 1.5708"
+      }
+            "Group":
+            {
+                "Group":
+                {
+      {
+        "@USE":"ARROW"
+      }
+    },
+                "Transform":
+                {
+      {
+        "@rotation":"1 0 0 -1.5708",
+        "@translation":"0 1.1 0.072"
+      }
+                    "Billboard":
+                    {
+                        "Shape":
+                        {
+                            "Appearance":
+                            {
+      {
+        "@USE":"LABEL_APPEARANCE"
+      }
+    },
+                            "Text":
+                            {
+      {
+        "@string":""Z""
+      }
+                                "FontStyle":
+                                {
+      {
+        "@USE":"LABEL_FONT"
+      }
+    },
+                            }                        }                    }                }            }        }    }}

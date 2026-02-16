@@ -154,7 +154,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 { <component name='Shape' level='4'></component> }
 X3D0.Components['Scripting'] := 1;
 X3D0.Components['EnvironmentalEffects'] := 3;

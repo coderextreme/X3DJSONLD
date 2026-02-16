@@ -79,7 +79,13 @@ var X3D0 =  X3D(
                   type_ : SFString("MFInt32"),
                   name_ : SFString('coordIndexes'),
                   accessType_ : SFString("outputOnly")),
-              /*<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>*/
+              /*<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>*/
+              /*<field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>*/
               ],
 ecmascript:eval (0
 

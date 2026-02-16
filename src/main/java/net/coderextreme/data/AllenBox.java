@@ -56,16 +56,16 @@ public class AllenBox implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("AllenBox.x3d"))
-        .addMeta(new meta().setName("creator").setContent("Allen Box"))
-        .addMeta(new meta().setName("created").setContent("8 July 2025"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("AllenBox.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Allen Box")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("8 July 2025")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("../license.html"))))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("AllenBox.x3d"))
+        .addChild(new WorldInfo().setTitle(new SFString("AllenBox.x3d")))
         .addChild(new NavigationInfo().setType("\"EXAMINE\"").setAvatarSize(new MFFloat0().getArray()).setSpeed(0.5f ))
-        .addChild(new Transform().setDEF("Floor").setScale(new float[] {1f ,0.0125f ,1f }).setTranslation(new float[] {0f ,-0.0125f ,0f })
+        .addChild(new Transform().setDEF(new SFString("Floor")).setScale(new float[] {1f ,0.0125f ,1f }).setTranslation(new float[] {0f ,-0.0125f ,0f })
           .addChild(new Shape()
             .setGeometry(new Box())
             .setAppearance(new Appearance()

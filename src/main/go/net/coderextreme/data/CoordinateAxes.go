@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -93,7 +93,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:37:53 GMT"),
+                Content: stringPtr("20 October 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("description"),
@@ -119,10 +119,18 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("CoordinateAxes.x3d"),
                 },
@@ -130,14 +138,26 @@ func main() {
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("DoNotCollideWithVisualizationWidget"),
                     },
+//Invoke CoordinateAxes in other scenes as an Inline child inside a scaling Transform node, at the topmost level of the scene graph.
+//This NavigationInfo allows examine mode and will be overridden by any parent scene.
+//Each arrow goes from +1m to -1m to allow linear scaling to fit a scene
+//Note each label rotates about the scene's vertical Y axis for consistency, enabling local orientation by user
                     &x3d.Group{
                         Children: []x3d.X3DNode{
+//Vertical Y arrow and label
                             &x3d.Group{
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("ArrowGreen"),
                                     },
                                 Children: []x3d.X3DNode{
                                     &x3d.Shape{
+                                        Geometry: &x3d.Cylinder{
+                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                DEF: stringPtr("ArrowCylinder"),
+                                            },
+                                            Radius: floatPtr(0.025),
+                                            Top: boolPtr(false),
+                                        },
                                         Appearance: &x3d.Appearance{
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("Green"),
@@ -147,29 +167,22 @@ func main() {
                                                 EmissiveColor: &x3d.SFColor{0.05, 0.2, 0.05},
                                             },
                                         },
-                                        Geometry: &x3d.Cylinder{
-                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                DEF: stringPtr("ArrowCylinder"),
-                                            },
-                                            Top: boolPtr(false),
-                                            Radius: floatPtr(0.025),
-                                        },
                                     },
                                     &x3d.Transform{
                                             Translation: &x3d.SFVec3f{0.0, 1.0, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("Green"),
-                                                    },
-                                                },
                                                 Geometry: &x3d.Cone{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("ArrowCone"),
                                                     },
-                                                    Height: floatPtr(0.1),
                                                     BottomRadius: floatPtr(0.05),
+                                                    Height: floatPtr(0.1),
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("Green"),
+                                                    },
                                                 },
                                             },
                                         },
@@ -197,8 +210,8 @@ func main() {
                                                         DEF: stringPtr("LABEL_FONT"),
                                                     },
                                                     Family: x3d.MFString{"SANS"},
-                                                    Size: floatPtr(0.2),
                                                     Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                                    Size: floatPtr(0.2),
                                                 },
                                             },
                                         },
@@ -210,6 +223,7 @@ func main() {
                     &x3d.Transform{
                             Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -1.57079},
                         Children: []x3d.X3DNode{
+//Horizontal X arrow and label
                             &x3d.Group{
                                 Children: []x3d.X3DNode{
                                     &x3d.Group{
@@ -218,6 +232,11 @@ func main() {
                                             },
                                         Children: []x3d.X3DNode{
                                             &x3d.Shape{
+                                                Geometry: &x3d.Cylinder{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("ArrowCylinder"),
+                                                    },
+                                                },
                                                 Appearance: &x3d.Appearance{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("Red"),
@@ -227,24 +246,19 @@ func main() {
                                                         EmissiveColor: &x3d.SFColor{0.33, 0.0, 0.0},
                                                     },
                                                 },
-                                                Geometry: &x3d.Cylinder{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("ArrowCylinder"),
-                                                    },
-                                                },
                                             },
                                             &x3d.Transform{
                                                     Translation: &x3d.SFVec3f{0.0, 1.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.Shape{
-                                                        Appearance: &x3d.Appearance{
-                                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                                USE: stringPtr("Red"),
-                                                            },
-                                                        },
                                                         Geometry: &x3d.Cone{
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 USE: stringPtr("ArrowCone"),
+                                                            },
+                                                        },
+                                                        Appearance: &x3d.Appearance{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("Red"),
                                                             },
                                                         },
                                                     },
@@ -253,9 +267,10 @@ func main() {
                                         },
                                     },
                                     &x3d.Transform{
-                                            Translation: &x3d.SFVec3f{0.072, 1.1, 0.0},
                                             Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57079},
+                                            Translation: &x3d.SFVec3f{0.072, 1.1, 0.0},
                                         Children: []x3d.X3DNode{
+//note label rotated back to original coordinate frame
                                             &x3d.Billboard{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -282,6 +297,7 @@ func main() {
                     &x3d.Transform{
                             Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57079},
                         Children: []x3d.X3DNode{
+//Perpendicular Z arrow and label, note right-hand rule
                             &x3d.Group{
                                 Children: []x3d.X3DNode{
                                     &x3d.Group{
@@ -290,6 +306,11 @@ func main() {
                                             },
                                         Children: []x3d.X3DNode{
                                             &x3d.Shape{
+                                                Geometry: &x3d.Cylinder{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("ArrowCylinder"),
+                                                    },
+                                                },
                                                 Appearance: &x3d.Appearance{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("Blue"),
@@ -299,24 +320,19 @@ func main() {
                                                         EmissiveColor: &x3d.SFColor{0.1, 0.1, 0.33},
                                                     },
                                                 },
-                                                Geometry: &x3d.Cylinder{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("ArrowCylinder"),
-                                                    },
-                                                },
                                             },
                                             &x3d.Transform{
                                                     Translation: &x3d.SFVec3f{0.0, 1.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.Shape{
-                                                        Appearance: &x3d.Appearance{
-                                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                                USE: stringPtr("Blue"),
-                                                            },
-                                                        },
                                                         Geometry: &x3d.Cone{
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 USE: stringPtr("ArrowCone"),
+                                                            },
+                                                        },
+                                                        Appearance: &x3d.Appearance{
+                                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                                USE: stringPtr("Blue"),
                                                             },
                                                         },
                                                     },
@@ -325,9 +341,10 @@ func main() {
                                         },
                                     },
                                     &x3d.Transform{
-                                            Translation: &x3d.SFVec3f{0.0, 1.1, 0.072},
                                             Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57079},
+                                            Translation: &x3d.SFVec3f{0.0, 1.1, 0.072},
                                         Children: []x3d.X3DNode{
+//note label rotated back to original coordinate frame
                                             &x3d.Billboard{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -370,13 +387,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/CoordinateAxes.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -387,7 +404,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -6,7 +6,7 @@ x3d.ConfigurationProperties.setStripTrailingZeroes(True)
 x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.setVersion("4.1")
 head1 = x3d.head()
 
 head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
@@ -160,7 +160,11 @@ head1.addMeta(meta30)
 
 X3D0.setHead(head1)
 
-X3D0.addComments(x3d.CommentsBlock("""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""""))
+X3D0.addComments(x3d.CommentsBlock("""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,"""))
+
+X3D0.addComments(x3d.CommentsBlock("""It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)"""))
+
+X3D0.addComments(x3d.CommentsBlock("""open for their \"discussion about the teapot\""""))
 Scene31 = x3d.Scene()
 
 Scene31.addComments(x3d.CommentsBlock("""basic nodes, which might be present in any scene"""))
@@ -193,7 +197,9 @@ LayerSet36.setOrder([1,2])
 
 LayerSet36.addComments(x3d.CommentsBlock("""the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""""))
 
-LayerSet36.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"""))
+LayerSet36.addComments(x3d.CommentsBlock("""the second layer contains the sliders that are moved with the user's display"""))
+
+LayerSet36.addComments(x3d.CommentsBlock("""like a HUD (heads up display)"""))
 Layer37 = x3d.Layer()
 Layer37.setPickable(True)
 Layer37.setObjectType(["ALL"])
@@ -485,7 +491,11 @@ ShaderPart97.setType("FRAGMENT")
 
 ComposedShader84.addParts(ShaderPart97)
 
-ComposedShader84.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
+ComposedShader84.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE"""))
+
+ComposedShader84.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>"""))
+
+ComposedShader84.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance75.addShaders(ComposedShader84)
 

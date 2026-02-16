@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html><body><div><headU-a-entity><metaU-a-entity/></headU-a-entity><a-scene><ViewpointU-a-entity position="0,20,110"/><a-entity><SwitchU-a-entity DEF="SceneSwitcher" whichChoice="0"><a-entity><ScriptU-a-entity DEF="Choice0"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 0;
+      }
+      function touchTime(value) {
+          choice = 0;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinBlink" url="../resources/JinBlink.x3d,JinBlink.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice1"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 1;
+      }
+      function touchTime(value) {
+          choice = 1;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinBrowLowerer" url="../resources/JinBrowLowerer.x3d,JinBrowLowerer.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice2"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 2;
+      }
+      function touchTime(value) {
+          choice = 2;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinCheekPuffer" url="../resources/JinCheekPuffer.x3d,JinCheekPuffer.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice3"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 3;
+      }
+      function touchTime(value) {
+          choice = 3;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinCheekRaiser" url="../resources/JinCheekRaiser.x3d,JinCheekRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice4"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 4;
+      }
+      function touchTime(value) {
+          choice = 4;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinChinRaiser" url="../resources/JinChinRaiser.x3d,JinChinRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice5"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 5;
+      }
+      function touchTime(value) {
+          choice = 5;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinDimpler" url="../resources/JinDimpler.x3d,JinDimpler.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice6"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 6;
+      }
+      function touchTime(value) {
+          choice = 6;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinEyesClosed" url="../resources/JinEyesClosed.x3d,JinEyesClosed.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice7"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 7;
+      }
+      function touchTime(value) {
+          choice = 7;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinInnerBrowRaiser" url="../resources/JinInnerBrowRaiser.x3d,JinInnerBrowRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice8"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 8;
+      }
+      function touchTime(value) {
+          choice = 8;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinJawDrop" url="../resources/JinJawDrop.x3d,JinJawDrop.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice9"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 9;
+      }
+      function touchTime(value) {
+          choice = 9;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLidDroop" url="../resources/JinLidDroop.x3d,JinLidDroop.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice10"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 10;
+      }
+      function touchTime(value) {
+          choice = 10;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLidTightener" url="../resources/JinLidTightener.x3d,JinLidTightener.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice11"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 11;
+      }
+      function touchTime(value) {
+          choice = 11;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipCornerDepressor" url="../resources/JinLipCornerDepressor.x3d,JinLipCornerDepressor.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice12"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 12;
+      }
+      function touchTime(value) {
+          choice = 12;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipCornerPuller" url="../resources/JinLipCornerPuller.x3d,JinLipCornerPuller.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice13"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 13;
+      }
+      function touchTime(value) {
+          choice = 13;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipFunneler" url="../resources/JinLipFunneler.x3d,JinLipFunneler.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice14"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 14;
+      }
+      function touchTime(value) {
+          choice = 14;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipPressor" url="../resources/JinLipPressor.x3d,JinLipPressor.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice15"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 15;
+      }
+      function touchTime(value) {
+          choice = 15;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipPuckerer" url="../resources/JinLipPuckerer.x3d,JinLipPuckerer.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice16"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 16;
+      }
+      function touchTime(value) {
+          choice = 16;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipsPart" url="../resources/JinLipsPart.x3d,JinLipsPart.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice17"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 17;
+      }
+      function touchTime(value) {
+          choice = 17;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipStretcher" url="../resources/JinLipStretcher.x3d,JinLipStretcher.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice18"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 18;
+      }
+      function touchTime(value) {
+          choice = 18;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipSuck" url="../resources/JinLipSuck.x3d,JinLipSuck.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice19"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 19;
+      }
+      function touchTime(value) {
+          choice = 19;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLipTightener" url="../resources/JinLipTightener.x3d,JinLipTightener.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice20"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 20;
+      }
+      function touchTime(value) {
+          choice = 20;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinLowerLipDepressor" url="../resources/JinLowerLipDepressor.x3d,JinLowerLipDepressor.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice21"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 21;
+      }
+      function touchTime(value) {
+          choice = 21;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinMouthStretch" url="../resources/JinMouthStretch.x3d,JinMouthStretch.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice22"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 22;
+      }
+      function touchTime(value) {
+          choice = 22;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinNasolabialDeepener" url="../resources/JinNasolabialDeepener.x3d,JinNasolabialDeepener.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice23"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 23;
+      }
+      function touchTime(value) {
+          choice = 23;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinNoseWrinkler" url="../resources/JinNoseWrinkler.x3d,JinNoseWrinkler.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice24"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 24;
+      }
+      function touchTime(value) {
+          choice = 24;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinOuterBrowRaiser" url="../resources/JinOuterBrowRaiser.x3d,JinOuterBrowRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice25"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 25;
+      }
+      function touchTime(value) {
+          choice = 25;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinSlit" url="../resources/JinSlit.x3d,JinSlit.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice26"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 26;
+      }
+      function touchTime(value) {
+          choice = 26;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinSquint" url="../resources/JinSquint.x3d,JinSquint.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice27"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 27;
+      }
+      function touchTime(value) {
+          choice = 27;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinUpperLidRaiser" url="../resources/JinUpperLidRaiser.x3d,JinUpperLidRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice28"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 28;
+      }
+      function touchTime(value) {
+          choice = 28;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinUpperLipRaiser" url="../resources/JinUpperLipRaiser.x3d,JinUpperLipRaiser.x3d"/></a-entity><a-entity><ScriptU-a-entity DEF="Choice29"><fieldU-a-entity/><![CDATA[
+      ecmascript:
+      function set_touchTime(value) {
+          choice = 29;
+      }
+      function touchTime(value) {
+          choice = 29;
+      }
+      ]]></ScriptU-a-entity><InlineU-a-entity DEF="JinWink" url="../resources/JinWink.x3d,JinWink.x3d"/></a-entity></SwitchU-a-entity><a-entity position="48,63.4,0"><TouchSensorU-a-entity DEF="JinBlink_Sensor" description="TSJinBlink"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinBlink" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,60.4,0"><TouchSensorU-a-entity DEF="JinBrowLowerer_Sensor" description="TSJinBrowLowerer"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinBrowLowerer" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,57.4,0"><TouchSensorU-a-entity DEF="JinCheekPuffer_Sensor" description="TSJinCheekPuffer"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinCheekPuffer" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,54.4,0"><TouchSensorU-a-entity DEF="JinCheekRaiser_Sensor" description="TSJinCheekRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinCheekRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,51.4,0"><TouchSensorU-a-entity DEF="JinChinRaiser_Sensor" description="TSJinChinRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinChinRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,48.4,0"><TouchSensorU-a-entity DEF="JinDimpler_Sensor" description="TSJinDimpler"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinDimpler" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,45.4,0"><TouchSensorU-a-entity DEF="JinEyesClosed_Sensor" description="TSJinEyesClosed"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinEyesClosed" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,42.4,0"><TouchSensorU-a-entity DEF="JinInnerBrowRaiser_Sensor" description="TSJinInnerBrowRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinInnerBrowRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,39.4,0"><TouchSensorU-a-entity DEF="JinJawDrop_Sensor" description="TSJinJawDrop"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinJawDrop" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,36.4,0"><TouchSensorU-a-entity DEF="JinLidDroop_Sensor" description="TSJinLidDroop"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLidDroop" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,33.4,0"><TouchSensorU-a-entity DEF="JinLidTightener_Sensor" description="TSJinLidTightener"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLidTightener" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,30.4,0"><TouchSensorU-a-entity DEF="JinLipCornerDepressor_Sensor" description="TSJinLipCornerDepressor"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipCornerDepressor" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,27.4,0"><TouchSensorU-a-entity DEF="JinLipCornerPuller_Sensor" description="TSJinLipCornerPuller"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipCornerPuller" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,24.4,0"><TouchSensorU-a-entity DEF="JinLipFunneler_Sensor" description="TSJinLipFunneler"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipFunneler" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,21.4,0"><TouchSensorU-a-entity DEF="JinLipPressor_Sensor" description="TSJinLipPressor"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipPressor" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,18.4,0"><TouchSensorU-a-entity DEF="JinLipPuckerer_Sensor" description="TSJinLipPuckerer"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipPuckerer" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,15.4,0"><TouchSensorU-a-entity DEF="JinLipsPart_Sensor" description="TSJinLipsPart"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipsPart" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,12.4,0"><TouchSensorU-a-entity DEF="JinLipStretcher_Sensor" description="TSJinLipStretcher"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipStretcher" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,9.4,0"><TouchSensorU-a-entity DEF="JinLipSuck_Sensor" description="TSJinLipSuck"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipSuck" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,6.4,0"><TouchSensorU-a-entity DEF="JinLipTightener_Sensor" description="TSJinLipTightener"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLipTightener" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,3.4,0"><TouchSensorU-a-entity DEF="JinLowerLipDepressor_Sensor" description="TSJinLowerLipDepressor"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinLowerLipDepressor" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,0.4,0"><TouchSensorU-a-entity DEF="JinMouthStretch_Sensor" description="TSJinMouthStretch"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinMouthStretch" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-2.6,0"><TouchSensorU-a-entity DEF="JinNasolabialDeepener_Sensor" description="TSJinNasolabialDeepener"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinNasolabialDeepener" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-5.6,0"><TouchSensorU-a-entity DEF="JinNoseWrinkler_Sensor" description="TSJinNoseWrinkler"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinNoseWrinkler" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-8.6,0"><TouchSensorU-a-entity DEF="JinOuterBrowRaiser_Sensor" description="TSJinOuterBrowRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinOuterBrowRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-11.6,0"><TouchSensorU-a-entity DEF="JinSlit_Sensor" description="TSJinSlit"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinSlit" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-14.6,0"><TouchSensorU-a-entity DEF="JinSquint_Sensor" description="TSJinSquint"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinSquint" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-17.6,0"><TouchSensorU-a-entity DEF="JinUpperLidRaiser_Sensor" description="TSJinUpperLidRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinUpperLidRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-20.6,0"><TouchSensorU-a-entity DEF="JinUpperLipRaiser_Sensor" description="TSJinUpperLipRaiser"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinUpperLipRaiser" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity><a-entity position="48,-23.6,0"><TouchSensorU-a-entity DEF="JinWink_Sensor" description="TSJinWink"/><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="1,1,1"/></AppearanceU-a-entity><a-entity value="JinWink" geometry="primitive: text"><FontStyleU-a-entity size="2.4" spacing="1.2" justify="MIDDLE,MIDDLE"/></a-entity></a-entity><a-entity><AppearanceU-a-entity><MaterialU-a-entity diffuseColor="0,0,1"/></AppearanceU-a-entity><IndexedFaceSetU-a-entity coordIndex="0,1,2,3,-1"><CoordinateU-a-entity point="20,1.383333,-0.1,-20,1.383333,-0.1,-20,-1.616667,-0.1,20,-1.616667,-0.1"/></IndexedFaceSetU-a-entity></a-entity></a-entity></a-entity><ROUTEU-a-entity fromNode="JinBlink_Sensor" fromField="touchTime" toNode="Choice0" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice0" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinBrowLowerer_Sensor" fromField="touchTime" toNode="Choice1" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice1" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinCheekPuffer_Sensor" fromField="touchTime" toNode="Choice2" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice2" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinCheekRaiser_Sensor" fromField="touchTime" toNode="Choice3" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice3" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinChinRaiser_Sensor" fromField="touchTime" toNode="Choice4" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice4" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinDimpler_Sensor" fromField="touchTime" toNode="Choice5" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice5" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinEyesClosed_Sensor" fromField="touchTime" toNode="Choice6" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice6" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinInnerBrowRaiser_Sensor" fromField="touchTime" toNode="Choice7" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice7" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinJawDrop_Sensor" fromField="touchTime" toNode="Choice8" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice8" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLidDroop_Sensor" fromField="touchTime" toNode="Choice9" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice9" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLidTightener_Sensor" fromField="touchTime" toNode="Choice10" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice10" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipCornerDepressor_Sensor" fromField="touchTime" toNode="Choice11" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice11" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipCornerPuller_Sensor" fromField="touchTime" toNode="Choice12" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice12" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipFunneler_Sensor" fromField="touchTime" toNode="Choice13" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice13" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipPressor_Sensor" fromField="touchTime" toNode="Choice14" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice14" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipPuckerer_Sensor" fromField="touchTime" toNode="Choice15" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice15" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipsPart_Sensor" fromField="touchTime" toNode="Choice16" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice16" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipStretcher_Sensor" fromField="touchTime" toNode="Choice17" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice17" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipSuck_Sensor" fromField="touchTime" toNode="Choice18" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice18" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLipTightener_Sensor" fromField="touchTime" toNode="Choice19" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice19" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinLowerLipDepressor_Sensor" fromField="touchTime" toNode="Choice20" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice20" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinMouthStretch_Sensor" fromField="touchTime" toNode="Choice21" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice21" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinNasolabialDeepener_Sensor" fromField="touchTime" toNode="Choice22" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice22" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinNoseWrinkler_Sensor" fromField="touchTime" toNode="Choice23" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice23" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinOuterBrowRaiser_Sensor" fromField="touchTime" toNode="Choice24" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice24" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinSlit_Sensor" fromField="touchTime" toNode="Choice25" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice25" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinSquint_Sensor" fromField="touchTime" toNode="Choice26" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice26" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinUpperLidRaiser_Sensor" fromField="touchTime" toNode="Choice27" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice27" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinUpperLipRaiser_Sensor" fromField="touchTime" toNode="Choice28" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice28" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/><ROUTEU-a-entity fromNode="JinWink_Sensor" fromField="touchTime" toNode="Choice29" toField="touchTime"/><ROUTEU-a-entity fromNode="Choice29" fromField="choice" toNode="SceneSwitcher" toField="set_whichChoice"/></a-scene></div></body></html>

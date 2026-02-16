@@ -80,7 +80,7 @@ public class bumpyx_ite
     .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
     .addComponent(new component().setName("Texturing").setLevel(1))
     .addComponent(new component().setName("Rendering").setLevel(1))
-    .addComments("<component name='Shape' level='4'></component>")
+    .addComments(" <component name='Shape' level='4'></component> ")
     .addComponent(new component().setName("Grouping").setLevel(3))
     .addComponent(new component().setName("Core").setLevel(1))
     .addMeta(new meta().setName(meta.NAME_TITLE      ).setContent("bumpyx_ite.x3d"))
@@ -121,9 +121,9 @@ public class bumpyx_ite
             .addField(new field().setName("pdelta").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))
-            .addComments(new String[] {" TO CONVERT TO A SPHERE",
-"                  <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart>",
-"                  <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"}))))));
+            .addComments(" TO CONVERT TO A SPHERE ")
+            .addComments(" <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> ")
+            .addComments(" <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart> "))))));
             }
             catch (Exception ex)
             {       

@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -62,7 +58,6 @@ newModel=X3D(profile='Immersive',version='4.0',
     ROUTE(fromNode='si',fromField='value_changed',toNode='ci',toField='set_fraction'),
     ROUTE(fromNode='ts',fromField='fraction_changed',toNode='si',toField='set_fraction')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################
@@ -75,7 +70,7 @@ if        metaDiagnostics(newModel): # built-in utility method in X3D class
 # print('check newModel.XML() serialization...')
 newModelXML= newModel.XML() # test export method XML() for exceptions during export
 newModel.XMLvalidate()
-print(newModelXML) # diagnostic
+# print(newModelXML) # diagnostic
 
 try:
 #   print('check newModel.VRML() serialization...')

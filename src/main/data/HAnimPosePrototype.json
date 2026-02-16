@@ -168,7 +168,7 @@
           },
           {
             "@name":"translated",
-            "@content":"07 February 2026"
+            "@content":"16 February 2026"
           },
           {
             "@name":"generator",
@@ -669,7 +669,9 @@
                         "@name":"l_shoulder",
                         "@DEF":"PoseJoint_l_shoulder_1",
                         "@description":"left shoulder",
-                        "@rotation":[0,0,1,1.57]
+                        "@rotation":[0,0,1,1.57],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
@@ -677,7 +679,9 @@
                         "@name":"r_shoulder",
                         "@DEF":"PoseJoint_r_shoulder_1",
                         "@description":"right shoulder",
-                        "@rotation":[0,0,-1,1.57]
+                        "@rotation":[0,0,-1,1.57],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     {
@@ -734,7 +738,9 @@
                         "@name":"l_shoulder",
                         "@DEF":"PoseJoint_l_shoulder",
                         "@description":"left shoulder",
-                        "@rotation":[0,0,1,0.5]
+                        "@rotation":[0,0,1,0.5],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
@@ -742,7 +748,9 @@
                         "@name":"r_shoulder",
                         "@DEF":"PoseJoint_r_shoulder",
                         "@description":"right shoulder",
-                        "@rotation":[0,0,-1,0.5]
+                        "@rotation":[0,0,-1,0.5],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     }
                   ]
@@ -803,95 +811,127 @@
                     { "HAnimJoint":
                       {
                         "@name":"humanoid_root",
-                        "@rotation":[0,1,0,-0.698132]
+                        "@rotation":[0,1,0,-0.698132],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"l_hip",
-                        "@rotation":[-1,1,1,1]
+                        "@rotation":[-1,1,1,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"l_knee",
-                        "@rotation":[1,0,0,1]
+                        "@rotation":[1,0,0,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"l_talocrural",
-                        "@rotation":[-0.2,-0,0.1,0.225]
+                        "@rotation":[-0.2,-0,0.1,0.225],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"r_hip",
-                        "@rotation":[-1,-1,-1,1]
+                        "@rotation":[-1,-1,-1,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"r_knee",
-                        "@rotation":[1,0,0,1]
+                        "@rotation":[1,0,0,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"r_talocrural",
-                        "@rotation":[-0.2,0,0.1,0.25]
+                        "@rotation":[-0.2,0,0.1,0.25],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"vl5",
-                        "@rotation":[0,0,0.01,0.2]
+                        "@rotation":[0,0,0.01,0.2],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"vt10",
-                        "@rotation":[0,0,0.01,0.1]
+                        "@rotation":[0,0,0.01,0.1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"vc4",
-                        "@rotation":[0,0,-0.01,0.15]
+                        "@rotation":[0,0,-0.01,0.15],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"l_shoulder",
-                        "@rotation":[-1,0.5,1,2]
+                        "@rotation":[-1,0.5,1,2],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"l_elbow",
-                        "@rotation":[-1,0,0,1]
+                        "@rotation":[-1,0,0,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
-                        "@name":"l_radiocarpal"
+                        "@name":"l_radiocarpal",
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"r_shoulder",
-                        "@rotation":[-1,-0.5,-1,2.6]
+                        "@rotation":[-1,-0.5,-1,2.6],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
                         "@name":"r_elbow",
-                        "@rotation":[-1,0,0,1]
+                        "@rotation":[-1,0,0,1],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     },
                     { "HAnimJoint":
                       {
-                        "@name":"r_radiocarpal"
+                        "@name":"r_radiocarpal",
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     }
                   ]
@@ -1035,7 +1075,9 @@
                         "@name":"humanoid_root",
                         "@DEF":"FaceLeft_humanoid_root",
                         "@description":"Only rotate the model",
-                        "@rotation":[0,1,0,1.570796]
+                        "@rotation":[0,1,0,1.570796],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     }
                   ]
@@ -1093,7 +1135,9 @@
                         "@name":"humanoid_root",
                         "@DEF":"FaceRight_humanoid_root",
                         "@description":"Only rotate the model",
-                        "@rotation":[0,1,0,-1.570796]
+                        "@rotation":[0,1,0,-1.570796],
+                        "@ulimit":[0,0,0],
+                        "@llimit":[0,0,0]
                       }
                     }
                   ]

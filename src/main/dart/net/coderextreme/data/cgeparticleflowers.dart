@@ -189,7 +189,9 @@ var X3D0 =  X3D(
                               name_ : SFString('pdelta'),
                               accessType_ : SFString("inputOutput"),
                               value_ : SFString('0')),
-                          /*<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>*/
+                          /*<field name='cube' type='SFNode' accessType=\"initializeOnly\">*/
+                          /*<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>*/
+                          /*</field>*/
                           parts_ : 
                             ShaderPart(
                               type_ : SFString("VERTEX",

@@ -880,31 +880,31 @@ SoHAnimHumanoid158->setInfo(new QString[]{QString("humanoidVersion=2.0")}, 1);
 SoHAnimHumanoid158->setVersion(QString("2.0"));
 SoHAnimPose* SoHAnimPose159 = new SoHAnimPose();
 SoHAnimPose159->setUSE(QString("A_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose159);
+SoHAnimHumanoid158->setChildren(SoHAnimPose159);
 
 SoHAnimPose* SoHAnimPose160 = new SoHAnimPose();
 SoHAnimPose160->setUSE(QString("T_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose160);
+SoHAnimHumanoid158->setChildren(SoHAnimPose160);
 
 SoHAnimPose* SoHAnimPose161 = new SoHAnimPose();
 SoHAnimPose161->setUSE(QString("I_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose161);
+SoHAnimHumanoid158->setChildren(SoHAnimPose161);
 
 SoHAnimPose* SoHAnimPose162 = new SoHAnimPose();
 SoHAnimPose162->setUSE(QString("H_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose162);
+SoHAnimHumanoid158->setChildren(SoHAnimPose162);
 
 SoHAnimPose* SoHAnimPose163 = new SoHAnimPose();
 SoHAnimPose163->setUSE(QString("FaceLeft_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose163);
+SoHAnimHumanoid158->setChildren(SoHAnimPose163);
 
 SoHAnimPose* SoHAnimPose164 = new SoHAnimPose();
 SoHAnimPose164->setUSE(QString("FaceRight_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose164);
+SoHAnimHumanoid158->setChildren(SoHAnimPose164);
 
 SoHAnimPose* SoHAnimPose165 = new SoHAnimPose();
 SoHAnimPose165->setUSE(QString("TouchDown_Pose"));
-SoHAnimHumanoid158->setPoses(SoHAnimPose165);
+SoHAnimHumanoid158->setChildren(SoHAnimPose165);
 
 SoNode17->addChild(*SoHAnimHumanoid158);
 

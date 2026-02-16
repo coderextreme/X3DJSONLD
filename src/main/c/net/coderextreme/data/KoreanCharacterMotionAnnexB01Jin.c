@@ -39,7 +39,7 @@ head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
 meta8.name = "modified";
-meta8.content = "14 October 2023";
+meta8.content = "29 October 2025";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
@@ -54,7 +54,7 @@ head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "reference";
-meta11.content = "KoreanCharacterHumanMotion_Infotech2014_140706.pdf";
+meta11.content = "../KoreanCharacterHumanMotion_Infotech2014_140706.pdf";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
@@ -79,7 +79,7 @@ head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
 meta16.name = "generator";
-meta16.content = "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview";
+meta16.content = "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview";
 head1.meta[14] = meta16;
 
 meta meta17 = createNode("meta");
@@ -89,12 +89,12 @@ head1.meta[15] = meta17;
 
 meta meta18 = createNode("meta");
 meta18.name = "generator";
-meta18.content = "Gnu Image Manipulation Program, https://www.gimp.org";
+meta18.content = "Gnu Image Manipulation Program, http://www.gimp.org";
 head1.meta[16] = meta18;
 
 meta meta19 = createNode("meta");
 meta19.name = "generator";
-meta19.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
+meta19.content = "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit";
 head1.meta[17] = meta19;
 
 meta meta20 = createNode("meta");

@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -62,7 +58,6 @@ newModel=X3D(profile='Immersive',version='4.0',
           material=Material(diffuseColor=(0.9,0.9,0.9)))),
       Shape(DEF='AxisLinesShape',
         # RGB lines showing XYZ axes
-
         geometry=IndexedLineSet(colorIndex=[0,1,2],colorPerVertex=False,coordIndex=[0,1,-1,0,2,-1,0,3,-1],
           coord=Coordinate(point=[(0,0,0),(1.0,0,0),(0,1.0,0),(0,0,1.0)]),
           color=Color(color=[(1,0,0),(0,0.6,0),(0,0,1)])))]),
@@ -101,7 +96,6 @@ newModel=X3D(profile='Immersive',version='4.0',
     ROUTE(fromField='value_changed',fromNode='DiscreteFrameStepper',toField='set_fraction',toNode='Interpolator3'),
     ROUTE(fromField='value_changed',fromNode='Interpolator3',toField='set_rotation',toNode='Transform3')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

@@ -340,7 +340,10 @@ fieldValue60ZZZ.children[0] = Transform61;
 
 ProtoInstance53ZZZ.fieldValue[3] = fieldValue60;
 
-//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
+//<fieldValue name='set_startpoint'>
+//</fieldValue>
+//<fieldValue name='set_endpoint'>
+//</fieldValue>
 browser.currentScene.children[6] = ProtoInstance53;
 
 let ROUTE62 = browser.currentScene.createNode("ROUTE");

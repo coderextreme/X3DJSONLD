@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Interchange"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -77,7 +77,7 @@ meta15.content = "21 January 2001"
 head1.children.append(meta15)
 meta16 = x3d.meta()
 meta16.name = "modified"
-meta16.content = "Mon, 09 Feb 2026 12:24:18 GMT"
+meta16.content = "13 January 2014"
 
 head1.children.append(meta16)
 meta17 = x3d.meta()
@@ -92,88 +92,99 @@ meta18.content = "https://www.web3d.org/x3d/content/examples/ConformanceNist/Geo
 head1.children.append(meta18)
 meta19 = x3d.meta()
 meta19.name = "generator"
-meta19.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta19.content = "Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"
 
 head1.children.append(meta19)
+meta20 = x3d.meta()
+meta20.name = "generator"
+meta20.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta20)
+meta21 = x3d.meta()
+meta21.name = "license"
+meta21.content = "../../license.html"
+
+head1.children.append(meta21)
 
 X3D0.head = head1
-Scene20 = x3d.Scene()
-Viewpoint21 = x3d.Viewpoint()
-Viewpoint21.description = "Front View"
-
-Scene20.children.append(Viewpoint21)
-Viewpoint22 = x3d.Viewpoint()
-Viewpoint22.description = "Rear View"
-Viewpoint22.position = [0,0,-10]
-Viewpoint22.orientation = [0,1,0,3.14]
-
-Scene20.children.append(Viewpoint22)
+Scene22 = x3d.Scene()
 Viewpoint23 = x3d.Viewpoint()
-Viewpoint23.description = "Top View"
-Viewpoint23.position = [0,10,0]
-Viewpoint23.orientation = [1,0,0,-1.57]
+Viewpoint23.description = "Front View"
 
-Scene20.children.append(Viewpoint23)
+Scene22.children.append(Viewpoint23)
 Viewpoint24 = x3d.Viewpoint()
-Viewpoint24.description = "Bottom View"
-Viewpoint24.position = [0,-10,0]
-Viewpoint24.orientation = [1,0,0,1.57]
+Viewpoint24.description = "Rear View"
+Viewpoint24.orientation = [0,1,0,3.14]
+Viewpoint24.position = [0,0,-10]
 
-Scene20.children.append(Viewpoint24)
+Scene22.children.append(Viewpoint24)
 Viewpoint25 = x3d.Viewpoint()
-Viewpoint25.description = "Right View"
-Viewpoint25.position = [10,0,0]
-Viewpoint25.orientation = [0,1,0,1.57]
+Viewpoint25.description = "Top View"
+Viewpoint25.orientation = [1,0,0,-1.57]
+Viewpoint25.position = [0,10,0]
 
-Scene20.children.append(Viewpoint25)
+Scene22.children.append(Viewpoint25)
 Viewpoint26 = x3d.Viewpoint()
-Viewpoint26.description = "Left View"
-Viewpoint26.position = [-10,0,0]
-Viewpoint26.orientation = [0,1,0,-1.57]
+Viewpoint26.description = "Bottom View"
+Viewpoint26.orientation = [1,0,0,1.57]
+Viewpoint26.position = [0,-10,0]
 
-Scene20.children.append(Viewpoint26)
-NavigationInfo27 = x3d.NavigationInfo()
-NavigationInfo27.type = ["EXAMINE","WALK","FLY","ANY"]
+Scene22.children.append(Viewpoint26)
+Viewpoint27 = x3d.Viewpoint()
+Viewpoint27.description = "Right View"
+Viewpoint27.orientation = [0,1,0,1.57]
+Viewpoint27.position = [10,0,0]
 
-Scene20.children.append(NavigationInfo27)
-Shape28 = x3d.Shape()
-Appearance29 = x3d.Appearance()
-Material30 = x3d.Material()
+Scene22.children.append(Viewpoint27)
+Viewpoint28 = x3d.Viewpoint()
+Viewpoint28.description = "Left View"
+Viewpoint28.orientation = [0,1,0,-1.57]
+Viewpoint28.position = [-10,0,0]
 
-Appearance29.material = Material30
-PixelTexture31 = x3d.PixelTexture()
-PixelTexture31.image = [2,2,4,-16776961,16711935,-1,-65281]
-TextureProperties32 = x3d.TextureProperties()
-TextureProperties32.magnificationFilter = "NEAREST_PIXEL"
+Scene22.children.append(Viewpoint28)
+NavigationInfo29 = x3d.NavigationInfo()
+NavigationInfo29.type = ["EXAMINE","WALK","FLY","ANY"]
 
-PixelTexture31.textureProperties = TextureProperties32
+Scene22.children.append(NavigationInfo29)
+Scene22.children.append(x3d.Comment("""<Environment id=\"gamma\" gammaCorrectionDefault=\"none\"></Environment>"""))
+Shape30 = x3d.Shape()
+Appearance31 = x3d.Appearance()
+Material32 = x3d.Material()
 
-Appearance29.texture = PixelTexture31
+Appearance31.material = Material32
+PixelTexture33 = x3d.PixelTexture()
+PixelTexture33.image = [2,2,4,-16776961,16711935,-1,-65281]
+TextureProperties34 = x3d.TextureProperties()
+TextureProperties34.magnificationFilter = "NEAREST_PIXEL"
 
-Shape28.appearance = Appearance29
-IndexedFaceSet33 = x3d.IndexedFaceSet()
-IndexedFaceSet33.creaseAngle = 0.5
-IndexedFaceSet33.colorPerVertex = False
-IndexedFaceSet33.texCoordIndex = [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]
-IndexedFaceSet33.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
-Color34 = x3d.Color()
-Color34.color = [(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0)]
+PixelTexture33.textureProperties = TextureProperties34
 
-IndexedFaceSet33.color = Color34
-TextureCoordinate35 = x3d.TextureCoordinate()
-TextureCoordinate35.point = [(-1, 2),(-1, -1),(2, 2),(2, -1)]
+Appearance31.texture = PixelTexture33
 
-IndexedFaceSet33.texCoord = TextureCoordinate35
-Coordinate36 = x3d.Coordinate()
-Coordinate36.point = [(-2, 1, 1),(-2, -1, 1),(2, 1, 1),(2, -1, 1),(2, 1, -1),(2, -1, -1),(-2, 1, -1),(-2, -1, -1)]
+Shape30.appearance = Appearance31
+IndexedFaceSet35 = x3d.IndexedFaceSet()
+IndexedFaceSet35.colorPerVertex = False
+IndexedFaceSet35.coordIndex = [0,1,3,2,-1,4,5,7,6,-1,6,7,1,0,-1,2,3,5,4,-1,6,0,2,4,-1,1,7,5,3,-1]
+IndexedFaceSet35.creaseAngle = 0.5
+IndexedFaceSet35.texCoordIndex = [0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1,0,1,3,2,-1]
+Color36 = x3d.Color()
+Color36.color = [(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0),(0, 1, 0)]
 
-IndexedFaceSet33.coord = Coordinate36
+IndexedFaceSet35.color = Color36
+Coordinate37 = x3d.Coordinate()
+Coordinate37.point = [(-2, 1, 1),(-2, -1, 1),(2, 1, 1),(2, -1, 1),(2, 1, -1),(2, -1, -1),(-2, 1, -1),(-2, -1, -1)]
 
-Shape28.geometry = IndexedFaceSet33
+IndexedFaceSet35.coord = Coordinate37
+TextureCoordinate38 = x3d.TextureCoordinate()
+TextureCoordinate38.point = [(-1, 2),(-1, -1),(2, 2),(2, -1)]
 
-Scene20.children.append(Shape28)
+IndexedFaceSet35.texCoord = TextureCoordinate38
 
-X3D0.Scene = Scene20
+Shape30.geometry = IndexedFaceSet35
+
+Scene22.children.append(Shape30)
+
+X3D0.Scene = Scene22
 f = open("../data/indexedfaceset_pixeltexture_plus.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

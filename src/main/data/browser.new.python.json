@@ -1,0 +1,86 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"browser.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/browser.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"a script test with embedded \n between single quotes, a double backslash \\ a backslash \ and a closing quote &quot;",
+        "@name":"description"
+      }
+    },
+    }    "Scene":
+    {
+        "Script":
+        {
+      {
+        "@DEF":"Browser",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;                function initialize() {
+&quot;+
+&quot;		    Browser.print('DUDES\n'+'&quot;DUDETTES');
+&quot;+
+&quot;                }"
+      }
+    },
+        "Script":
+        {
+      {
+        "@DEF":"Clouds",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;
+&quot;+
+&quot;function cumulustranslation() // These values designate the boundary location of the cloud
+&quot;+
+&quot;{
+&quot;+
+&quot;var xxx = ' '+' '+
+&quot;+
+&quot;'	Transform		\n'+
+&quot;+
+&quot;'    ' + '               	\n';
+&quot;+
+&quot;
+&quot;+
+&quot;}"
+      }
+    },
+    }}

@@ -217,7 +217,9 @@ field45.AccessType := 'inputOutput';
 field45.Value := '0';
 { .AddField }
 ComposedShader34.Field := field45;
-{ <field name='cube' type='SFNode' accessType="initializeOnly"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field> }
+{ <field name='cube' type='SFNode' accessType="initializeOnly"> }
+{ <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> }
+{ </field> }
 ShaderPart46 := TShaderPartNode.Create;
 ShaderPart46.SetUrl(['https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs']);
 ShaderPart46.Type := 'VERTEX';

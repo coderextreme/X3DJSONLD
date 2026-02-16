@@ -105,7 +105,19 @@ field21.setType("MFInt32")
 
 Script18.addField(field21)
 
-Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"""))
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"""))
+
+Script18.addComments(x3d.CommentsBlock("""<field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>"""))
 
 Script18.setSourceCode('''ecmascript:
 

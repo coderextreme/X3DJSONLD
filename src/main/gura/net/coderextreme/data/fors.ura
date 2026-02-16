@@ -305,7 +305,10 @@ X3D:
                     value: "false"
                     type: "SFBool"
                 ],
-#<field accessType="outputOnly" name="node_changed" type="SFNode"/> <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field>
+#<field accessType="outputOnly" name="node_changed" type="SFNode"/>
+#<field name="ModifiableNode" type="SFNode" accessType="inputOutput">
+#<Transform USE="HoldsContent"/>
+#</field>
 #ecmascript:
 #	function add_node(value) {
 #                // Browser.print('hey ', counter);

@@ -149,9 +149,45 @@ ComposedCubeMapTexture27.setTopTexture(ImageTexture33)
 
 Appearance25.setTexture(ComposedCubeMapTexture27)
 
-Appearance25.addComments(x3d.CommentsBlock("""<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"""))
+Appearance25.addComments(x3d.CommentsBlock("""<ComposedShader language='GLSL'>"""))
 
-Appearance25.addComments(x3d.CommentsBlock("""<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>"""))
+Appearance25.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"inputOutput\">"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""</field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ComposedShader DEF=\"shader\" language=\"GLSL\">"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""<ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>"""))
+
+Appearance25.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
 ComposedShader34 = x3d.ComposedShader()
 ComposedShader34.setLanguage("GLSL")
 field35 = x3d.field()

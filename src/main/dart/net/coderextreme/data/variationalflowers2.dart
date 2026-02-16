@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Full'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           component_ : 
@@ -81,7 +81,8 @@ var X3D0 =  X3D(
                 ParticleSystem(
                   maxParticles_ : 20,
                   geometryType_ : SFString('GEOMETRY'),
-                  /** values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values*/
+                  /** values - array of MFFloats to pass to ComposedShader*/
+                  /** variations in values - array of MFFloats to pass to ComposedShader that varies values*/
                   variationPhysicsModel_ : 
                     VariationPhysicsModel(
                       values_ : SFString('2 2 5 5 0 0'),

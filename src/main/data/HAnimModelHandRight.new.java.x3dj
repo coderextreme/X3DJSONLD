@@ -102,7 +102,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 February 2026"
+            "@content":"16 February 2026"
           },
           {
             "@name":"generator",
@@ -147,6 +147,8 @@
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_humanoid_root",
+                    "@llimit":[0,0,0],
+                    "@ulimit":[0,0,0],
                     "-children":[
                       {
                         "#comment":"Might consider putting a HAnimSegment here, but that doesn't help with re-use of this hand model"
@@ -156,6 +158,8 @@
                           "@name":"r_radiocarpal",
                           "@DEF":"hanim_r_radiocarpal",
                           "@description":"connection joint of hand to leg above",
+                          "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {
@@ -286,6 +290,8 @@
                                 "@name":"r_midcarpal_1",
                                 "@DEF":"hanim_r_midcarpal_1",
                                 "@center":[-0.14,0.09,0],
+                                "@llimit":[0,0,0],
+                                "@ulimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -361,6 +367,8 @@
                                       "@name":"r_carpometacarpal_1",
                                       "@DEF":"hanim_r_carpometacarpal_1",
                                       "@center":[-0.2,0.15,0],
+                                      "@llimit":[0,0,0],
+                                      "@ulimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -415,6 +423,8 @@
                                             "@name":"r_metacarpophalangeal_1",
                                             "@DEF":"hanim_r_metacarpophalangeal_1",
                                             "@center":[-0.3,0.3,0],
+                                            "@llimit":[0,0,0],
+                                            "@ulimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -469,6 +479,8 @@
                                                   "@name":"r_carpal_interphalangeal_1",
                                                   "@DEF":"hanim_r_carpal_interphalangeal_1",
                                                   "@center":[-0.35,0.4,0],
+                                                  "@llimit":[0,0,0],
+                                                  "@ulimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -538,6 +550,8 @@
                                 "@name":"r_midcarpal_2",
                                 "@DEF":"hanim_r_midcarpal_2",
                                 "@center":[-0.07,0.07,0],
+                                "@llimit":[0,0,0],
+                                "@ulimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -595,6 +609,8 @@
                                       "@name":"r_carpometacarpal_2",
                                       "@DEF":"hanim_r_carpometacarpal_2",
                                       "@center":[-0.1,0.2,0],
+                                      "@llimit":[0,0,0],
+                                      "@ulimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -649,6 +665,8 @@
                                             "@name":"r_metacarpophalangeal_2",
                                             "@DEF":"hanim_r_metacarpophalangeal_2",
                                             "@center":[-0.15,0.5,0],
+                                            "@llimit":[0,0,0],
+                                            "@ulimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -703,6 +721,8 @@
                                                   "@name":"r_carpal_proximal_interphalangeal_2",
                                                   "@DEF":"hanim_r_carpal_proximal_interphalangeal_2",
                                                   "@center":[-0.2,0.7,0],
+                                                  "@llimit":[0,0,0],
+                                                  "@ulimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -757,6 +777,8 @@
                                                         "@name":"r_carpal_distal_interphalangeal_2",
                                                         "@DEF":"hanim_r_carpal_distal_interphalangeal_2",
                                                         "@center":[-0.24,0.87,0],
+                                                        "@llimit":[0,0,0],
+                                                        "@ulimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -829,6 +851,8 @@
                                 "@name":"r_midcarpal_3",
                                 "@DEF":"hanim_r_midcarpal_3",
                                 "@center":[0,0.07,0],
+                                "@llimit":[0,0,0],
+                                "@ulimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -886,6 +910,8 @@
                                       "@name":"r_carpometacarpal_3",
                                       "@DEF":"hanim_r_carpometacarpal_3",
                                       "@center":[0,0.2,0],
+                                      "@llimit":[0,0,0],
+                                      "@ulimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -940,6 +966,8 @@
                                             "@name":"r_metacarpophalangeal_3",
                                             "@DEF":"hanim_r_metacarpophalangeal_3",
                                             "@center":[-0.03,0.5,0],
+                                            "@llimit":[0,0,0],
+                                            "@ulimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -994,6 +1022,8 @@
                                                   "@name":"r_carpal_proximal_interphalangeal_3",
                                                   "@DEF":"hanim_r_carpal_proximal_interphalangeal_3",
                                                   "@center":[-0.05,0.75,0],
+                                                  "@llimit":[0,0,0],
+                                                  "@ulimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -1048,6 +1078,8 @@
                                                         "@name":"r_carpal_distal_interphalangeal_3",
                                                         "@DEF":"hanim_r_carpal_distal_interphalangeal_3",
                                                         "@center":[-0.08,0.96,0],
+                                                        "@llimit":[0,0,0],
+                                                        "@ulimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -1120,6 +1152,8 @@
                                 "@name":"r_midcarpal_4_5",
                                 "@DEF":"hanim_r_midcarpal_4_5",
                                 "@center":[0.1,0.1,0],
+                                "@llimit":[0,0,0],
+                                "@ulimit":[0,0,0],
                                 "-children":[
                                   { "HAnimSegment":
                                     {
@@ -1205,6 +1239,8 @@
                                       "@name":"r_carpometacarpal_4",
                                       "@DEF":"hanim_r_carpometacarpal_4",
                                       "@center":[0.1,0.2,0],
+                                      "@llimit":[0,0,0],
+                                      "@ulimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -1259,6 +1295,8 @@
                                             "@name":"r_metacarpophalangeal_4",
                                             "@DEF":"hanim_r_metacarpophalangeal_4",
                                             "@center":[0.1,0.47,0],
+                                            "@llimit":[0,0,0],
+                                            "@ulimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -1313,6 +1351,8 @@
                                                   "@name":"r_carpal_proximal_interphalangeal_4",
                                                   "@DEF":"hanim_r_carpal_proximal_interphalangeal_4",
                                                   "@center":[0.1,0.7,0],
+                                                  "@llimit":[0,0,0],
+                                                  "@ulimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -1367,6 +1407,8 @@
                                                         "@name":"r_carpal_distal_interphalangeal_4",
                                                         "@DEF":"hanim_r_carpal_distal_interphalangeal_4",
                                                         "@center":[0.1,0.93,0],
+                                                        "@llimit":[0,0,0],
+                                                        "@ulimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -1436,6 +1478,8 @@
                                       "@name":"r_carpometacarpal_5",
                                       "@DEF":"hanim_r_carpometacarpal_5",
                                       "@center":[0.15,0.17,0],
+                                      "@llimit":[0,0,0],
+                                      "@ulimit":[0,0,0],
                                       "-children":[
                                         { "HAnimSegment":
                                           {
@@ -1490,6 +1534,8 @@
                                             "@name":"r_metacarpophalangeal_5",
                                             "@DEF":"hanim_r_metacarpophalangeal_5",
                                             "@center":[0.2,0.4,0],
+                                            "@llimit":[0,0,0],
+                                            "@ulimit":[0,0,0],
                                             "-children":[
                                               { "HAnimSegment":
                                                 {
@@ -1544,6 +1590,8 @@
                                                   "@name":"r_carpal_proximal_interphalangeal_5",
                                                   "@DEF":"hanim_r_carpal_proximal_interphalangeal_5",
                                                   "@center":[0.23,0.63,0],
+                                                  "@llimit":[0,0,0],
+                                                  "@ulimit":[0,0,0],
                                                   "-children":[
                                                     { "HAnimSegment":
                                                       {
@@ -1598,6 +1646,8 @@
                                                         "@name":"r_carpal_distal_interphalangeal_5",
                                                         "@DEF":"hanim_r_carpal_distal_interphalangeal_5",
                                                         "@center":[0.25,0.79,0],
+                                                        "@llimit":[0,0,0],
+                                                        "@ulimit":[0,0,0],
                                                         "-children":[
                                                           { "HAnimSegment":
                                                             {
@@ -1798,128 +1848,6 @@
                 { "HAnimJoint":
                   {
                     "@USE":"hanim_r_radiocarpal"
-                  }
-                }
-              ],
-              "-segments":[
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_capitate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_distal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_middle_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_carpal_proximal_phalanx_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_hamate"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_1"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_2"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_3"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_4"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_metacarpal_5"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezium"
-                  }
-                },
-                { "HAnimSegment":
-                  {
-                    "@USE":"hanim_r_trapezoid"
                   }
                 }
               ]

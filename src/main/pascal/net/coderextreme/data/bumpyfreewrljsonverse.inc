@@ -196,7 +196,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 { <component name='Shape' level='4'></component> }
 { Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L }
 X3D0.Components['Scripting'] := 1;
@@ -228,7 +228,9 @@ X3D0.Meta['accessRights'] := '*enter permission statements or url here*';
 X3D0.Meta['identifier'] := '*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*';
 X3D0.Meta['generator'] := 'PSPad, http://www.pspad.com/';
 X3D0.Meta['license'] := 'license.html';
-{ "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot" }
+{ "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, }
+{ It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) }
+{ open for their "discussion about the teapot" }
 Group31 := TGroupNode.Create;
 { basic nodes, which might be present in any scene }
 NavigationInfo32 := TNavigationInfoNode.Create;
@@ -257,7 +259,8 @@ LayerSet36 := TLayerSetNode.Create;
 LayerSet36.ActiveLayer := 1;
 LayerSet36.SetOrder([1,2]);
 { the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" }
-{ the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) }
+{ the second layer contains the sliders that are moved with the user's display }
+{ like a HUD (heads up display) }
 Layer37 := TLayerNode.Create;
 Layer37.Pickable := True;
 Layer37.SetObjectType(['ALL']);
@@ -530,7 +533,9 @@ ShaderPart97.SetUrl(['../shaders/freewrl.fs','https://coderextreme.net/X3DJSONLD
 ShaderPart97.Type := 'FRAGMENT';
 { .AddParts }
 ComposedShader84.Parts := ShaderPart97;
-{ TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart> <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart> }
+{ TO CONVERT TO A SPHERE }
+{ <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart> }
+{ <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart> }
 { .AddShaders }
 Appearance75.Shaders := ComposedShader84;
 { .SetAppearance }

@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -83,10 +83,15 @@ func main() {
                     Name: stringPtr("title"),
                     Content: stringPtr("Menu.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("X3D scene with a Switch of Inlines controlled by a menu"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+//Viewpoint and any other scene setup
                 &x3d.Viewpoint{
                     Position: &x3d.SFVec3f{0.0, 20.0, 110.0},
                 },
@@ -105,14 +110,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -139,14 +144,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -173,14 +178,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -207,14 +212,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -241,14 +246,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -275,14 +280,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -309,14 +314,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -343,14 +348,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -377,14 +382,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -411,14 +416,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -445,14 +450,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -479,14 +484,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -513,14 +518,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -547,14 +552,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -581,14 +586,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -615,14 +620,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -649,14 +654,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -683,14 +688,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -717,14 +722,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -751,14 +756,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -785,14 +790,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -819,14 +824,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -853,14 +858,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -887,14 +892,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -921,14 +926,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -955,14 +960,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -989,14 +994,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -1023,14 +1028,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -1057,14 +1062,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -1091,14 +1096,14 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("inputOnly"),
-                                                Type: stringPtr("SFTime"),
                                                 Name: stringPtr("touchTime"),
+                                                Type: stringPtr("SFTime"),
+                                                AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("choice"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
 //ecmascript:
 //      function set_touchTime(value) {
@@ -1122,10 +1127,10 @@ func main() {
                                 Translation: &x3d.SFVec3f{48.0, 63.4, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinBlink"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinBlink_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinBlink"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1151,20 +1156,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinBlink_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice0"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice0"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
                                 Translation: &x3d.SFVec3f{48.0, 60.4, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinBrowLowerer"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinBrowLowerer_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinBrowLowerer"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1190,20 +1207,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinBrowLowerer_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice1"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice1"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 57.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 57.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinCheekPuffer"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinCheekPuffer_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinCheekPuffer"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1229,20 +1258,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinCheekPuffer_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice2"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice2"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 54.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 54.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinCheekRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinCheekRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinCheekRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1268,20 +1309,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinCheekRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice3"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice3"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 51.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 51.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinChinRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinChinRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinChinRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1307,20 +1360,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinChinRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice4"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice4"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 48.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 48.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinDimpler"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinDimpler_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinDimpler"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1346,20 +1411,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinDimpler_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice5"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice5"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 45.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 45.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinEyesClosed"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinEyesClosed_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinEyesClosed"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1385,20 +1462,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinEyesClosed_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice6"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice6"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 42.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 42.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinInnerBrowRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinInnerBrowRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinInnerBrowRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1424,20 +1513,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinInnerBrowRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice7"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice7"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 39.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 39.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinJawDrop"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinJawDrop_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinJawDrop"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1463,20 +1564,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinJawDrop_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice8"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice8"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 36.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 36.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLidDroop"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLidDroop_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLidDroop"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1502,20 +1615,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLidDroop_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice9"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice9"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 33.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 33.39999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLidTightener"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLidTightener_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLidTightener"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1541,20 +1666,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLidTightener_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice10"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice10"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 30.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 30.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipCornerDepressor"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipCornerDepressor_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipCornerDepressor"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1580,20 +1717,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipCornerDepressor_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice11"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice11"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 27.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 27.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipCornerPuller"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipCornerPuller_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipCornerPuller"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1619,20 +1768,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipCornerPuller_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice12"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice12"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 24.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 24.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipFunneler"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipFunneler_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipFunneler"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1658,20 +1819,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipFunneler_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice13"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice13"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 21.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 21.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipPressor"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipPressor_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipPressor"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1697,20 +1870,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipPressor_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice14"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice14"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
                                 Translation: &x3d.SFVec3f{48.0, 18.4, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipPuckerer"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipPuckerer_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipPuckerer"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1736,20 +1921,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipPuckerer_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice15"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice15"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 15.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 15.399999999999997, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipsPart"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipsPart_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipsPart"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1775,20 +1972,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipsPart_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice16"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice16"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 12.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 12.399999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipStretcher"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipStretcher_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipStretcher"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1814,20 +2023,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipStretcher_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice17"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice17"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 9.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 9.399999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipSuck"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipSuck_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipSuck"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1853,20 +2074,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipSuck_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice18"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice18"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 6.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 6.399999999999999, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLipTightener"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLipTightener_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLipTightener"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1892,20 +2125,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLipTightener_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice19"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice19"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 3.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 3.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinLowerLipDepressor"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinLowerLipDepressor_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinLowerLipDepressor"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1931,20 +2176,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinLowerLipDepressor_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice20"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice20"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, 0.4, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, 0.399999999999995, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinMouthStretch"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinMouthStretch_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinMouthStretch"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -1970,20 +2227,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinMouthStretch_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice21"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice21"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -2.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -2.6000000000000085, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinNasolabialDeepener"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinNasolabialDeepener_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinNasolabialDeepener"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2009,20 +2278,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinNasolabialDeepener_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice22"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice22"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -5.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -5.6000000000000085, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinNoseWrinkler"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinNoseWrinkler_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinNoseWrinkler"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2048,20 +2329,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinNoseWrinkler_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice23"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice23"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -8.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -8.600000000000009, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinOuterBrowRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinOuterBrowRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinOuterBrowRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2087,20 +2380,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinOuterBrowRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice24"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice24"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -11.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -11.600000000000009, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinSlit"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinSlit_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinSlit"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2126,20 +2431,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinSlit_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice25"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice25"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -14.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -14.600000000000001, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinSquint"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinSquint_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinSquint"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2165,20 +2482,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinSquint_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice26"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice26"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
                                 Translation: &x3d.SFVec3f{48.0, -17.6, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinUpperLidRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinUpperLidRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinUpperLidRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2204,20 +2533,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinUpperLidRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice27"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice27"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
                                 Translation: &x3d.SFVec3f{48.0, -20.6, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinUpperLipRaiser"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinUpperLipRaiser_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinUpperLipRaiser"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2243,20 +2584,32 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinUpperLipRaiser_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice28"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice28"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{48.0, -23.6, 0.0},
+                                Translation: &x3d.SFVec3f{48.0, -23.599999999999994, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.TouchSensor{
+                                    Description: stringPtr("TSJinWink"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("JinWink_Sensor"),
                                     },
-                                    Description: stringPtr("TSJinWink"),
                                 },
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -2282,373 +2635,25 @@ func main() {
                                     Geometry: &x3d.IndexedFaceSet{
                                         CoordIndex: []int32{0, 1, 2, 3, -1},
                                         Coord: &x3d.Coordinate{
-                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.383333,-0.1},[3]float32{-20.0,1.383333,-0.1},[3]float32{-20.0,-1.616667,-0.1},[3]float32{20.0,-1.616667,-0.1}},
+                                            Point: &x3d.MFVec3f{[3]float32{20.0,1.3833333333333333,-0.1},[3]float32{-20.0,1.3833333333333333,-0.1},[3]float32{-20.0,-1.616666666666667,-0.1},[3]float32{20.0,-1.616666666666667,-0.1}},
                                         },
                                     },
                                 },
                             },
                         },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("JinWink_Sensor"),
+                            FromField: stringPtr("touchTime"),
+                            ToNode: stringPtr("Choice29"),
+                            ToField: stringPtr("touchTime"),
+                        },
+                        &x3d.X3DRoute{
+                            FromNode: stringPtr("Choice29"),
+                            FromField: stringPtr("choice"),
+                            ToNode: stringPtr("SceneSwitcher"),
+                            ToField: stringPtr("whichChoice"),
+                        },
                     },
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinBlink_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice0"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice0"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinBrowLowerer_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice1"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice1"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinCheekPuffer_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice2"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice2"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinCheekRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice3"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice3"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinChinRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice4"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice4"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinDimpler_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice5"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice5"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinEyesClosed_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice6"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice6"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinInnerBrowRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice7"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice7"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinJawDrop_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice8"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice8"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLidDroop_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice9"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice9"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLidTightener_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice10"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice10"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipCornerDepressor_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice11"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice11"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipCornerPuller_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice12"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice12"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipFunneler_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice13"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice13"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipPressor_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice14"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice14"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipPuckerer_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice15"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice15"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipsPart_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice16"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice16"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipStretcher_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice17"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice17"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipSuck_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice18"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice18"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLipTightener_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice19"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice19"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinLowerLipDepressor_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice20"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice20"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinMouthStretch_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice21"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice21"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinNasolabialDeepener_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice22"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice22"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinNoseWrinkler_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice23"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice23"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinOuterBrowRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice24"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice24"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinSlit_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice25"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice25"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinSquint_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice26"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice26"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinUpperLidRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice27"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice27"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinUpperLipRaiser_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice28"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice28"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("JinWink_Sensor"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("Choice29"),
-                    ToField: stringPtr("touchTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Choice29"),
-                    FromField: stringPtr("choice"),
-                    ToNode: stringPtr("SceneSwitcher"),
-                    ToField: stringPtr("set_whichChoice"),
                 },
             },
         },
@@ -2668,13 +2673,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/MenuJin.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -2685,7 +2690,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -378,7 +378,13 @@ field73.setType("SFBool")
 
 Script71.addField(field73)
 
-Script71.addComments(x3d.CommentsBlock("""<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"""))
+Script71.addComments(x3d.CommentsBlock("""<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>"""))
+
+Script71.addComments(x3d.CommentsBlock("""<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"""))
+
+Script71.addComments(x3d.CommentsBlock("""<Transform USE=\"HoldsContent\"/>"""))
+
+Script71.addComments(x3d.CommentsBlock("""</field>"""))
 
 Script71.setSourceCode('''ecmascript:
 	function add_node(value) {

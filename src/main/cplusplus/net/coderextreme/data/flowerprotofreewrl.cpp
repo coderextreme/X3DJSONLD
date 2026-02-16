@@ -246,7 +246,9 @@ field47.setAccessType(CString("inputOutput"));
 field47.setValue(CString("0"));
 ComposedShader36.addChild(&field47);
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"/>
+//</field>
 ShaderPart& ShaderPart48 =  ShaderPart();
 ShaderPart48.setType(CString("VERTEX"));
 IS& IS49 =  IS();

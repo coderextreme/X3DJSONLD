@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -73,11 +69,8 @@ newModel=X3D(profile='Immersive',version='4.0',
             field=[
             field(name='cube',type='SFInt32',accessType='inputOutput',value=0),
             # <field name='cube' type='SFNode' accessType="initializeOnly">
-
             # <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
-
             # </field>
-
             field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
             field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
             field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
@@ -180,7 +173,6 @@ ecmascript:
       ROUTE(fromNode='Animate',fromField='pdelta',toNode='shader',toField='pdelta'),
       ROUTE(fromNode='Animate',fromField='tdelta',toNode='shader',toField='tdelta')])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

@@ -22,19 +22,13 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
 
 newModel=X3D(profile='Immersive',version='4.0',
   # All head/meta tags are optional, WorldInfo is also optional
-
   # Text node not supported by X3D Interchange profile, use Immersive profile or Text component level 1
-
   head=head(
     children=[
     meta(content='HelloWorldMinimal.x3d',name='title'),
@@ -58,7 +52,6 @@ newModel=X3D(profile='Immersive',version='4.0',
     Shape(
       geometry=Text(string=["hello, world"]))])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

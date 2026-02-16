@@ -145,9 +145,98 @@ var X3D0 =  new X3D({
       Scene : new SFNode(
         new Scene({
           /*https://www.web3d.org/documents/specifications/19774/V2.0/index.html*/
-          /*0 0 0 at floor between feet, default I pose (relaxed attention) model gaze toward +Z, +x to model left, +y up, right-hand rule.*/
-          /*Jin loa4 v2 1:1 Only Landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes that will be used to show the Joint center landmarks with connecting lines to show the skeleton Joint hierarchy, and the surface feature Site landmarks with lines showing the Joints which control their basic motions. The skeleton structure user code is then. example: not up to date since dropping segment geometry <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='JointMarker'/> <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'> <Transform USE='l_psis_pt_SiteShape'/> </HAnimSite> </HAnimSegment> ... entire skeleton hierarchy ... </HAnimJoint> Please Run the example. It generalllystarts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 HAnimLandmarks - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape Site Connections AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointLandmarksAndJointConnections - DEF user code for Joint center location markers and skeleton connection hierarchy. SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry and Site location markers and Site connections. DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation Demo Johncan tbd TimerControls Selection of timer for animation*/
-          /*Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1*/
+          /*0 0 0 at floor between feet,*/
+          /*default I pose (relaxed attention)*/
+          /*model gaze toward +Z,*/
+          /*+x to model left, +y up,*/
+          /*right-hand rule.*/
+          /*Jin loa4 v2 1:1 Only Landmarks*/
+          /*https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4*/
+          /*with v2 Site surface feature point landmarks*/
+          /*https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html*/
+          /*The first part of this x3d xml user code listing*/
+          /*includes definitions for the collection of*/
+          /*Shapes that will be used to show the*/
+          /*Joint center landmarks with connecting lines*/
+          /*to show the skeleton Joint hierarchy, and the*/
+          /*surface feature Site landmarks with lines*/
+          /*showing the Joints which control their basic motions.*/
+          /*The skeleton structure user code is then.*/
+          /*example: not up to date since dropping segment geometry*/
+          /*<HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'>*/
+          /*<HAnimSegment DEF='hanim_sacrum' name='sacrum'>*/
+          /*<Shape USE='JointMarker'/>*/
+          /*<HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'>*/
+          /*<Transform USE='l_psis_pt_SiteShape'/>*/
+          /*</HAnimSite>*/
+          /*</HAnimSegment>*/
+          /*... entire skeleton hierarchy ...*/
+          /*</HAnimJoint>*/
+          /*Please Run the example. It generalllystarts with Kick2.*/
+          /*Select any other Action from the menu.*/
+          /*Animations for Pitch1, Yaw1, and Roll1 show basic*/
+          /*operation by animation of each Joint of the skeleton*/
+          /*that contains one or more Site surface feature landmarks.*/
+          /*A colored sphere marker identifies a V2 Site object.*/
+          /*The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected*/
+          /*from existing x3d HAnim archived example animations.*/
+          /*All these need some work to show full loa4 articulation*/
+          /*and the advantages of this standard skeleton hierarchy.*/
+          /*Contents as follows:*/
+          /*SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0*/
+          /*HAnimLandmarks - set of markers used to show landmarks of the model:*/
+          /*Joint Shape*/
+          /*Joint connections*/
+          /*Site Shape*/
+          /*Site Connections*/
+          /*AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets.*/
+          /*JointLandmarksAndJointConnections - DEF user code for Joint center location markers*/
+          /*and skeleton connection hierarchy.*/
+          /*SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry*/
+          /*and Site location markers and Site connections.*/
+          /*DefaultAnimation_loa4 Default I pose All Joints = 0 0 1 0*/
+          /*TestAnimation_loa4 Modify this set to experiment*/
+          /*PitchAnimation_loa4 Example x-axis rotations*/
+          /*YawAnimation_loa4 Example y-axis rotations*/
+          /*RollAnimation_loa4 Example z-axis rotations*/
+          /*WalkAnimation_loa4 Example Walk animation*/
+          /*RunAnimation_loa4 Example Run animnation*/
+          /*JumpAnimation_loa4 Example Jump animation*/
+          /*KickAnimation_loa4 Example Kick animation*/
+          /*Demo Johncan tbd*/
+          /*TimerControls Selection of timer for animation*/
+          /*Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing*/
+          /*0.02 - 0.08 root translation*/
+          /*0.08 - 0.1 root rotation*/
+          /*0.2 - 0.3 sacro*/
+          /*0.25 - 0.75 eyeball*/
+          /*0.6 - 0.65 hip*/
+          /*0.65 0.70 knee*/
+          /*0.70 - 0.74 talocrural*/
+          /*talocalcaneonavicular (1 2 3)*/
+          /*calcaneocuboid (4 5)*/
+          /*transversetarsal (4 5)*/
+          /*cuneonavicular (1 2 3)*/
+          /*tarsometatarsal (1 2 3 4 5)*/
+          /*metatarsophalangeal (1 2 3 4 5)*/
+          /*tarsal_interphalangeal (1)*/
+          /*tarsal_proximal_interphalangeal (2 3 4 5)*/
+          /*tarsal_distal_interphalangeal (2 3 4 5)*/
+          /*0.3 - 0.5 vl5*/
+          /*0.6 0.6375 vl2*/
+          /*0.6375 - 0.6875 vt10*/
+          /*0.6875 - 0.725 vt9*/
+          /*0.725 - 0.7875 vt5*/
+          /*0.7875 - 0.825 vt1*/
+          /*0.825 - 0.8625 vc7*/
+          /*0.8625 - 0.9 vc2*/
+          /*0.9 - 0.9985 skullbase*/
+          /*0.9 - 0.915 sterno*/
+          /*0.915 - 0.93 acrom*/
+          /*0.93 - 0.945 shoulder*/
+          /*0.945 - 0.96 elbow*/
+          /*0.96 - 0.98 radio*/
+          /*0.98 0.985 angeal_1*/
           children : new MFNode([
             new WorldInfo({
               title : new SFString("11c Jin v2 LOA4 Level 1, Only Joints, Segments, Sites")}),
@@ -700,7 +789,8 @@ var X3D0 =  new X3D({
                       children : new MFNode([
                         new Group({
                           DEF : new SFString("JointLandmarksAndJointConnections"),
-                          /*Following are defined here and used in the skeleton to show Joint center location and connections between Joint centers.*/
+                          /*Following are defined here and used in the skeleton*/
+                          /*to show Joint center location and connections between Joint centers.*/
                           children : new MFNode([
                             new Transform({
                               DEF : new SFString("humanoid_root_JointShape"),
@@ -2732,7 +2822,8 @@ var X3D0 =  new X3D({
                                   coord : new SFNode(
                                     new Coordinate({
                                       point : new MFVec3f([0,1.3126,-0.0154,0,1.3128,0.01538])}))}))}),
-                          /*Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/> <Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape*/
+                          /*Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/>*/
+                          /*<Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape*/
 
                             new Transform({
                               DEF : new SFString("l_eyelid_joint_JointShape"),
@@ -7387,7 +7478,16 @@ var X3D0 =  new X3D({
               DEF : new SFString("hanim_humanoid"),
               loa : new SFInt32(4),
               version : new SFString("2.0"),
-              /*MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/> <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> <MetadataString name='creationDate' value='31 March 2011'/> <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> <MetadataString name='modificationDate' value='25 March 2024'/> <MetadataString name='gender' value='female'/> <MetadataFloat name='height' value='1.5'/> <MetadataString name='humanoidVersion' value='2.0'/> </MetadataSet*/
+              /*MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>*/
+              /*<MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/>*/
+              /*<MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>*/
+              /*<MetadataString name='creationDate' value='31 March 2011'/>*/
+              /*<MetadataString name='John Carlson and Joe Williams' value='Modifiers'/>*/
+              /*<MetadataString name='modificationDate' value='25 March 2024'/>*/
+              /*<MetadataString name='gender' value='female'/>*/
+              /*<MetadataFloat name='height' value='1.5'/>*/
+              /*<MetadataString name='humanoidVersion' value='2.0'/>*/
+              /*</MetadataSet*/
               joints : new MFNode([
                 new HAnimJoint({
                   name : new SFString("humanoid_root"),
@@ -16505,7 +16605,24 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Pitch1Animation_loa4"),
-              /*Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor.*/
+              /*Pitch1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of x-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians, zero degrees.*/
+              /*x y z scale, all in radians 0 to <+-inf.*/
+              /*Thus, 1 radian in a times scale 1 = +1 radian*/
+              /*= about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*greater than +-6.28 radians range*/
+              /*Right hand rule for axes so a*/
+              /*positive pitch value applied to the*/
+              /*skullbase Joint would rotate the*/
+              /*the gaze of model down, toward the floor.*/
               children : new MFNode([
                 new TimeSensor({
                   DEF : new SFString("Pitch1Timer"),
@@ -21524,7 +21641,25 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Yaw1Animation_loa4"),
-              /*Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model's +X direction, the model left over the left shoulder.*/
+              /*Yaw1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of y-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians, zero degrees.*/
+              /*x y z scale, all in radians 0 to <+-inf.*/
+              /*Thus, 1 radian in y times scale 1 = +1 radian*/
+              /*= about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*Right hand rule for axes so a*/
+              /*positive yaw value applied to the*/
+              /*skullbase Joint would move the*/
+              /*the gaze of model toward the*/
+              /*model's +X direction, the model left*/
+              /*over the left shoulder.*/
               children : new MFNode([
                 new TimeSensor({
                   DEF : new SFString("Yaw1Timer"),
@@ -26543,7 +26678,25 @@ var X3D0 =  new X3D({
 
             new Group({
               DEF : new SFString("Roll1Animation_loa4"),
-              /*Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model's +X direction, the model left toward the left shoulder.*/
+              /*Roll1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of z-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians, zero degrees.*/
+              /*x y z scale, all in radians 0 to <+-inf.*/
+              /*Thus, 1 radian in a times scale 1 = +1 radian*/
+              /*= about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*Right hand rule for axes so a*/
+              /*positive roll value applied to the*/
+              /*skullbase Joint would rotate the*/
+              /*the gaze of model ccw toward the*/
+              /*model's +X direction, the model left*/
+              /*toward the left shoulder.*/
               children : new MFNode([
                 new TimeSensor({
                   DEF : new SFString("Roll1Timer"),
@@ -44097,7 +44250,25 @@ var X3D0 =  new X3D({
                   fromNode : new SFString("Kick2_r_carpal_distal_interphalangeal_5_RotationInterpolator"),
                   toField : new SFString("set_rotation"),
                   toNode : new SFString("hanim_r_carpal_distal_interphalangeal_5")})])}),
-          /*Ball for Kick2 not included Group> <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> <Shape DEF='ball_Shape'> <Appearance DEF='ball_Appearance'> <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> </Appearance> <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> </IndexedFaceSet> </Shape> <Viewpoint DEF='ballView_1' description='Ball View'/> </Transform> <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> </Group*/
+          /*Ball for Kick2 not included Group>*/
+          /*<Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'>*/
+          /*<Shape DEF='ball_Shape'>*/
+          /*<Appearance DEF='ball_Appearance'>*/
+          /*<Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/>*/
+          /*</Appearance>*/
+          /*<IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>*/
+          /*<Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/>*/
+          /*</IndexedFaceSet>*/
+          /*</Shape>*/
+          /*<Viewpoint DEF='ballView_1' description='Ball View'/>*/
+          /*</Transform>*/
+          /*<PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/>*/
+          /*<OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/>*/
+          /*<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/>*/
+          /*<ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/>*/
+          /*<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/>*/
+          /*<ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/>*/
+          /*</Group*/
 
             new Group({
               DEF : new SFString("TimerControls"),

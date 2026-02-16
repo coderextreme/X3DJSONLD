@@ -69,14 +69,14 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
     sceneRoot := &x3d.X3D{
         Profile: stringPtr("Immersive"),
-        Version: stringPtr("4.0"),
+        Version: stringPtr("3.0"),
         Head: &x3d.Head{
             Metas: []*x3d.Meta{
                 &x3d.Meta{
@@ -93,7 +93,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:08 GMT"),
+                Content: stringPtr("28 November 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -111,17 +111,25 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/GridXZ_20x20Fixed.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.2, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("GridXZ_20x20Fixed.x3d"),
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("XZ horizontal grid, perpendicular to Y axis (seen from 0 10 25)"),
-                    Position: &x3d.SFVec3f{0.0, 10.0, 25.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.4},
+                    Position: &x3d.SFVec3f{0.0, 10.0, 25.0},
                 },
                 &x3d.Transform{
                         CoreX3DNode: x3d.CoreX3DNode{
@@ -135,17 +143,17 @@ func main() {
                                         DEF: stringPtr("LinesAlignedAlongZ"),
                                     },
                                     Geometry: &x3d.IndexedLineSet{
-                                        ColorPerVertex: boolPtr(false),
                                         ColorIndex: []int32{1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1},
+                                        ColorPerVertex: boolPtr(false),
                                         CoordIndex: []int32{1, 22, -1, 2, 23, -1, 3, 24, -1, 4, 25, -1, 5, 26, -1, 6, 27, -1, 7, 28, -1, 8, 29, -1, 9, 30, -1, 10, 31, -1, 11, 32, -1, 12, 33, -1, 13, 34, -1, 14, 35, -1, 15, 36, -1, 16, 37, -1, 17, 38, -1, 18, 39, -1, 19, 40, -1, 20, 41, -1, 21, 42, -1},
-                                        Color: &x3d.Color{
-                                            Color: &x3d.MFColor{[3]float32{0.4,0.4,0.4},[3]float32{0.8,0.2,0.0},[3]float32{0.4,0.1,0.05}},
-                                        },
                                         Coord: &x3d.Coordinate{
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("EndPoints"),
                                             },
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.0,0.0},[3]float32{-10.0,0.0,10.0},[3]float32{-9.0,0.0,10.0},[3]float32{-8.0,0.0,10.0},[3]float32{-7.0,0.0,10.0},[3]float32{-6.0,0.0,10.0},[3]float32{-5.0,0.0,10.0},[3]float32{-4.0,0.0,10.0},[3]float32{-3.0,0.0,10.0},[3]float32{-2.0,0.0,10.0},[3]float32{-1.0,0.0,10.0},[3]float32{0.0,0.0,10.0},[3]float32{1.0,0.0,10.0},[3]float32{2.0,0.0,10.0},[3]float32{3.0,0.0,10.0},[3]float32{4.0,0.0,10.0},[3]float32{5.0,0.0,10.0},[3]float32{6.0,0.0,10.0},[3]float32{7.0,0.0,10.0},[3]float32{8.0,0.0,10.0},[3]float32{9.0,0.0,10.0},[3]float32{10.0,0.0,10.0},[3]float32{-10.0,0.0,-10.0},[3]float32{-9.0,0.0,-10.0},[3]float32{-8.0,0.0,-10.0},[3]float32{-7.0,0.0,-10.0},[3]float32{-6.0,0.0,-10.0},[3]float32{-5.0,0.0,-10.0},[3]float32{-4.0,0.0,-10.0},[3]float32{-3.0,0.0,-10.0},[3]float32{-2.0,0.0,-10.0},[3]float32{-1.0,0.0,-10.0},[3]float32{0.0,0.0,-10.0},[3]float32{1.0,0.0,-10.0},[3]float32{2.0,0.0,-10.0},[3]float32{3.0,0.0,-10.0},[3]float32{4.0,0.0,-10.0},[3]float32{5.0,0.0,-10.0},[3]float32{6.0,0.0,-10.0},[3]float32{7.0,0.0,-10.0},[3]float32{8.0,0.0,-10.0},[3]float32{9.0,0.0,-10.0},[3]float32{10.0,0.0,-10.0}},
+                                        },
+                                        Color: &x3d.Color{
+                                            Color: &x3d.MFColor{[3]float32{0.4,0.4,0.4},[3]float32{0.8,0.2,0.0},[3]float32{0.4,0.1,0.05}},
                                         },
                                     },
                                 },
@@ -167,13 +175,6 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Billboard{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        DEF: stringPtr("DefaultAppearance"),
-                                                    },
-                                                    Material: &x3d.Material{
-                                                    },
-                                                },
                                                 Geometry: &x3d.Text{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("CenterTextNode"),
@@ -183,8 +184,15 @@ func main() {
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("FS4"),
                                                         },
-                                                        Size: floatPtr(0.4),
                                                         Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                                        Size: floatPtr(0.4),
+                                                    },
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        DEF: stringPtr("DefaultAppearance"),
+                                                    },
+                                                    Material: &x3d.Material{
                                                     },
                                                 },
                                             },
@@ -196,17 +204,17 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Billboard{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("DefaultAppearance"),
-                                                    },
-                                                },
                                                 Geometry: &x3d.Text{
                                                     String: x3d.MFString{"10 0 10"},
                                                     FontStyle: &x3d.FontStyle{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("FS4"),
                                                         },
+                                                    },
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("DefaultAppearance"),
                                                     },
                                                 },
                                             },
@@ -218,17 +226,17 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Billboard{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("DefaultAppearance"),
-                                                    },
-                                                },
                                                 Geometry: &x3d.Text{
                                                     String: x3d.MFString{"10 0 -10"},
                                                     FontStyle: &x3d.FontStyle{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("FS4"),
                                                         },
+                                                    },
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("DefaultAppearance"),
                                                     },
                                                 },
                                             },
@@ -240,17 +248,17 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Billboard{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("DefaultAppearance"),
-                                                    },
-                                                },
                                                 Geometry: &x3d.Text{
                                                     String: x3d.MFString{"-10 0 10"},
                                                     FontStyle: &x3d.FontStyle{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("FS4"),
                                                         },
+                                                    },
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("DefaultAppearance"),
                                                     },
                                                 },
                                             },
@@ -262,17 +270,17 @@ func main() {
                                     Children: []x3d.X3DNode{
                                         &x3d.Billboard{
                                             &x3d.Shape{
-                                                Appearance: &x3d.Appearance{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        USE: stringPtr("DefaultAppearance"),
-                                                    },
-                                                },
                                                 Geometry: &x3d.Text{
                                                     String: x3d.MFString{"-10 0 -10"},
                                                     FontStyle: &x3d.FontStyle{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("FS4"),
                                                         },
+                                                    },
+                                                },
+                                                Appearance: &x3d.Appearance{
+                                                    CoreX3DNode: x3d.CoreX3DNode{
+                                                        USE: stringPtr("DefaultAppearance"),
                                                     },
                                                 },
                                             },
@@ -301,13 +309,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/GridXZ_20x20Fixed.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -318,7 +326,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

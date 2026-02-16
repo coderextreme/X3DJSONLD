@@ -5,400 +5,405 @@ X3D X3D0;
 X3D0.profile = "Immersive";
 X3D0.version = "4.0";
 head head1 = createNode("head");
-meta meta2 = createNode("meta");
-meta2.name = "title";
-meta2.content = "DesignPatternsApparelMedicalSkinLayers.x3d";
-head1.meta = new MFNode();
+component component2 = createNode("component");
+component2.name = "HAnim";
+component2.level = 2;
+head1.component = new MFNode();
 
-head1.meta[0] = meta2;
+head1.component[0] = component2;
 
 meta meta3 = createNode("meta");
-meta3.name = "description";
-meta3.content = "Design patterns for skin and apparel using HAnim2 standard in X3D4";
+meta3.name = "title";
+meta3.content = "DesignPatternsApparelMedicalSkinLayers.x3d";
 head1.meta[1] = meta3;
 
 meta meta4 = createNode("meta");
-meta4.name = "creator";
-meta4.content = "Don Brutzman";
+meta4.name = "description";
+meta4.content = "Design patterns for skin and apparel using HAnim2 standard in X3D4";
 head1.meta[2] = meta4;
 
 meta meta5 = createNode("meta");
 meta5.name = "creator";
-meta5.content = "Joe D. Williams";
+meta5.content = "Don Brutzman";
 head1.meta[3] = meta5;
 
 meta meta6 = createNode("meta");
 meta6.name = "creator";
-meta6.content = "Dick Puk";
+meta6.content = "Joe D. Williams";
 head1.meta[4] = meta6;
 
 meta meta7 = createNode("meta");
-meta7.name = "created";
-meta7.content = "23 December 2022";
+meta7.name = "creator";
+meta7.content = "Dick Puk";
 head1.meta[5] = meta7;
 
 meta meta8 = createNode("meta");
-meta8.name = "modified";
-meta8.content = "2 July 2023";
+meta8.name = "created";
+meta8.content = "23 December 2022";
 head1.meta[6] = meta8;
 
 meta meta9 = createNode("meta");
-meta9.name = "reference";
-meta9.content = "DesignPatternsApparelVariations.txt";
+meta9.name = "modified";
+meta9.content = "2 July 2023";
 head1.meta[7] = meta9;
 
 meta meta10 = createNode("meta");
 meta10.name = "reference";
-meta10.content = "HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject";
+meta10.content = "DesignPatternsApparelVariations.txt";
 head1.meta[8] = meta10;
 
 meta meta11 = createNode("meta");
 meta11.name = "reference";
-meta11.content = "HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile";
+meta11.content = "HAnim2 Part 1, HAnim architecture, 4.3 Humanoid object https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#HumanoidObject";
 head1.meta[9] = meta11;
 
 meta meta12 = createNode("meta");
 meta12.name = "reference";
-meta12.content = "X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid";
+meta12.content = "HAnim2 Part 1, HAnim architecture, E.4 Multiple humanoids per file https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile";
 head1.meta[10] = meta12;
 
 meta meta13 = createNode("meta");
-meta13.name = "warning";
-meta13.content = "Under development. This template example does not produce renderable HAnim models.";
+meta13.name = "reference";
+meta13.content = "X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid";
 head1.meta[11] = meta13;
 
 meta meta14 = createNode("meta");
-meta14.name = "identifier";
-meta14.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d";
+meta14.name = "warning";
+meta14.content = "Under development. This template example does not produce renderable HAnim models.";
 head1.meta[12] = meta14;
 
 meta meta15 = createNode("meta");
-meta15.name = "generator";
-meta15.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
+meta15.name = "identifier";
+meta15.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d";
 head1.meta[13] = meta15;
 
 meta meta16 = createNode("meta");
-meta16.name = "license";
-meta16.content = "../license.html";
+meta16.name = "generator";
+meta16.content = "X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit";
 head1.meta[14] = meta16;
+
+meta meta17 = createNode("meta");
+meta17.name = "license";
+meta17.content = "../license.html";
+head1.meta[15] = meta17;
 
 head = head1;
 
-WorldInfo WorldInfo18 = createNode("WorldInfo");
-WorldInfo18.title = "HAnimHumanoid skin design patterns for apparel, medical";
+WorldInfo WorldInfo19 = createNode("WorldInfo");
+WorldInfo19.title = "HAnimHumanoid skin design patterns for apparel, medical";
 children = new MFNode();
 
-children[0] = WorldInfo18;
+children[0] = WorldInfo19;
 
-Background Background19 = createNode("Background");
-Background19.skyColor = new MFColor(new float[0,0.6,0.6]);
-children[1] = Background19;
+Background Background20 = createNode("Background");
+Background20.skyColor = new MFColor(new float[0,0.6,0.6]);
+children[1] = Background20;
 
-Group Group20 = createNode("Group");
-Group20.DEF = "MultipleHumanoids";
-MetadataString MetadataString21 = createNode("MetadataString");
-MetadataString21.name = "HAnimArchitecture";
-MetadataString21.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile";
-MetadataString21.value = new MFString(new java.lang.String["E.4 Multiple humanoids per file"]);
-Group20.metadata = MetadataString21;
+Group Group21 = createNode("Group");
+Group21.DEF = "MultipleHumanoids";
+MetadataString MetadataString22 = createNode("MetadataString");
+MetadataString22.name = "HAnimArchitecture";
+MetadataString22.reference = "https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile";
+MetadataString22.value = new MFString(new java.lang.String["E.4 Multiple humanoids per file"]);
+Group21.metadata = MetadataString22;
 
 //==============================
-HAnimHumanoid HAnimHumanoid22 = createNode("HAnimHumanoid");
-HAnimHumanoid22.name = "SimpleSkeleton";
-HAnimHumanoid22.DEF = "a_SimpleSkeleton";
-HAnimHumanoid22.version = "2.0";
-HAnimJoint HAnimJoint23 = createNode("HAnimJoint");
-HAnimJoint23.name = "humanoid_root";
-HAnimJoint23.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint23.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment24 = createNode("HAnimSegment");
-HAnimSegment24.name = "sacrum";
-Shape Shape25 = createNode("Shape");
-Shape25.DEF = "JointVisualization";
-HAnimSegment24.children = new MFNode();
-
-HAnimSegment24.children[0] = Shape25;
-
+HAnimHumanoid HAnimHumanoid23 = createNode("HAnimHumanoid");
+HAnimHumanoid23.name = "SimpleSkeleton";
+HAnimHumanoid23.DEF = "a_SimpleSkeleton";
+HAnimHumanoid23.version = "2.0";
+HAnimJoint HAnimJoint24 = createNode("HAnimJoint");
+HAnimJoint24.name = "humanoid_root";
+HAnimJoint24.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint24.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment25 = createNode("HAnimSegment");
+HAnimSegment25.name = "sacrum";
 Shape Shape26 = createNode("Shape");
-Shape26.DEF = "SegmentVisualization";
-HAnimSegment24.children[1] = Shape26;
+Shape26.DEF = "JointVisualization";
+HAnimSegment25.children = new MFNode();
 
-HAnimSite HAnimSite27 = createNode("HAnimSite");
-HAnimSite27.name = "feature01_tip";
-HAnimSite27.DEF = "a_feature01_tip";
-Shape Shape28 = createNode("Shape");
-Shape28.DEF = "SiteVisualization";
-HAnimSite27.children = new MFNode();
+HAnimSegment25.children[0] = Shape26;
 
-HAnimSite27.children[0] = Shape28;
+Shape Shape27 = createNode("Shape");
+Shape27.DEF = "SegmentVisualization";
+HAnimSegment25.children[1] = Shape27;
 
-HAnimSegment24.children[2] = HAnimSite27;
+HAnimSite HAnimSite28 = createNode("HAnimSite");
+HAnimSite28.name = "feature01_tip";
+HAnimSite28.DEF = "a_feature01_tip";
+Shape Shape29 = createNode("Shape");
+Shape29.DEF = "SiteVisualization";
+HAnimSite28.children = new MFNode();
 
-HAnimJoint23.children = new MFNode();
+HAnimSite28.children[0] = Shape29;
 
-HAnimJoint23.children[0] = HAnimSegment24;
+HAnimSegment25.children[2] = HAnimSite28;
 
-HAnimHumanoid22.joints = new MFNode();
+HAnimJoint24.children = new MFNode();
 
-HAnimHumanoid22.joints[0] = HAnimJoint23;
+HAnimJoint24.children[0] = HAnimSegment25;
 
-Group20.children = new MFNode();
+HAnimHumanoid23.joints = new MFNode();
 
-Group20.children[0] = HAnimHumanoid22;
+HAnimHumanoid23.joints[0] = HAnimJoint24;
 
-//==============================
-HAnimHumanoid HAnimHumanoid29 = createNode("HAnimHumanoid");
-HAnimHumanoid29.name = "SimpleSkeletonMesh";
-HAnimHumanoid29.DEF = "b_SimpleSkeletonMesh";
-HAnimHumanoid29.version = "2.0";
-HAnimJoint HAnimJoint30 = createNode("HAnimJoint");
-HAnimJoint30.name = "humanoid_root";
-HAnimJoint30.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint30.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment31 = createNode("HAnimSegment");
-HAnimSegment31.name = "sacrum";
-Shape Shape32 = createNode("Shape");
-IndexedFaceSet IndexedFaceSet33 = createNode("IndexedFaceSet");
-IndexedFaceSet33.DEF = "SegmentBoneMesh";
-Shape32.geometry = IndexedFaceSet33;
+Group21.children = new MFNode();
 
-HAnimSegment31.children = new MFNode();
-
-HAnimSegment31.children[0] = Shape32;
-
-HAnimJoint30.children = new MFNode();
-
-HAnimJoint30.children[0] = HAnimSegment31;
-
-HAnimHumanoid29.joints = new MFNode();
-
-HAnimHumanoid29.joints[0] = HAnimJoint30;
-
-Group20.children[1] = HAnimHumanoid29;
+Group21.children[0] = HAnimHumanoid23;
 
 //==============================
-HAnimHumanoid HAnimHumanoid34 = createNode("HAnimHumanoid");
-HAnimHumanoid34.name = "SkinIndexedGeometry";
-HAnimHumanoid34.DEF = "c_SkinIndexedGeometry";
-HAnimHumanoid34.version = "2.0";
-HAnimJoint HAnimJoint35 = createNode("HAnimJoint");
-HAnimJoint35.name = "humanoid_root";
-HAnimJoint35.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint35.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment36 = createNode("HAnimSegment");
-HAnimSegment36.name = "sacrum";
-HAnimJoint35.children = new MFNode();
+HAnimHumanoid HAnimHumanoid30 = createNode("HAnimHumanoid");
+HAnimHumanoid30.name = "SimpleSkeletonMesh";
+HAnimHumanoid30.DEF = "b_SimpleSkeletonMesh";
+HAnimHumanoid30.version = "2.0";
+HAnimJoint HAnimJoint31 = createNode("HAnimJoint");
+HAnimJoint31.name = "humanoid_root";
+HAnimJoint31.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint31.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment32 = createNode("HAnimSegment");
+HAnimSegment32.name = "sacrum";
+Shape Shape33 = createNode("Shape");
+IndexedFaceSet IndexedFaceSet34 = createNode("IndexedFaceSet");
+IndexedFaceSet34.DEF = "SegmentBoneMesh";
+Shape33.geometry = IndexedFaceSet34;
 
-HAnimJoint35.children[0] = HAnimSegment36;
+HAnimSegment32.children = new MFNode();
 
-HAnimHumanoid34.joints = new MFNode();
+HAnimSegment32.children[0] = Shape33;
 
-HAnimHumanoid34.joints[0] = HAnimJoint35;
+HAnimJoint31.children = new MFNode();
 
-IndexedFaceSet IndexedFaceSet37 = createNode("IndexedFaceSet");
-IndexedFaceSet37.DEF = "SkinMeshIFS";
-HAnimHumanoid34.skin[1] = IndexedFaceSet37;
+HAnimJoint31.children[0] = HAnimSegment32;
 
-Group20.children[2] = HAnimHumanoid34;
+HAnimHumanoid30.joints = new MFNode();
 
-//==============================
-HAnimHumanoid HAnimHumanoid38 = createNode("HAnimHumanoid");
-HAnimHumanoid38.name = "SkinShapeIndexedGeometry";
-HAnimHumanoid38.DEF = "d_SkinShapeIndexedGeometry";
-HAnimHumanoid38.version = "2.0";
-HAnimJoint HAnimJoint39 = createNode("HAnimJoint");
-HAnimJoint39.name = "humanoid_root";
-HAnimJoint39.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint39.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment40 = createNode("HAnimSegment");
-HAnimSegment40.name = "sacrum";
-HAnimJoint39.children = new MFNode();
+HAnimHumanoid30.joints[0] = HAnimJoint31;
 
-HAnimJoint39.children[0] = HAnimSegment40;
-
-HAnimHumanoid38.joints = new MFNode();
-
-HAnimHumanoid38.joints[0] = HAnimJoint39;
-
-Shape Shape41 = createNode("Shape");
-IndexedFaceSet IndexedFaceSet42 = createNode("IndexedFaceSet");
-IndexedFaceSet42.USE = "SkinMeshIFS";
-Shape41.geometry = IndexedFaceSet42;
-
-HAnimHumanoid38.skin[1] = Shape41;
-
-Group20.children[3] = HAnimHumanoid38;
+Group21.children[1] = HAnimHumanoid30;
 
 //==============================
-HAnimHumanoid HAnimHumanoid43 = createNode("HAnimHumanoid");
-HAnimHumanoid43.name = "SkinSwitchShapeIndexedGeometry";
-HAnimHumanoid43.DEF = "e_SkinSwitchShapeIndexedGeometry";
-HAnimHumanoid43.version = "2.0";
-HAnimJoint HAnimJoint44 = createNode("HAnimJoint");
-HAnimJoint44.name = "humanoid_root";
-HAnimJoint44.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint44.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment45 = createNode("HAnimSegment");
-HAnimSegment45.name = "sacrum";
-HAnimJoint44.children = new MFNode();
+HAnimHumanoid HAnimHumanoid35 = createNode("HAnimHumanoid");
+HAnimHumanoid35.name = "SkinIndexedGeometry";
+HAnimHumanoid35.DEF = "c_SkinIndexedGeometry";
+HAnimHumanoid35.version = "2.0";
+HAnimJoint HAnimJoint36 = createNode("HAnimJoint");
+HAnimJoint36.name = "humanoid_root";
+HAnimJoint36.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint36.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment37 = createNode("HAnimSegment");
+HAnimSegment37.name = "sacrum";
+HAnimJoint36.children = new MFNode();
 
-HAnimJoint44.children[0] = HAnimSegment45;
+HAnimJoint36.children[0] = HAnimSegment37;
 
-HAnimHumanoid43.joints = new MFNode();
+HAnimHumanoid35.joints = new MFNode();
 
-HAnimHumanoid43.joints[0] = HAnimJoint44;
+HAnimHumanoid35.joints[0] = HAnimJoint36;
+
+IndexedFaceSet IndexedFaceSet38 = createNode("IndexedFaceSet");
+IndexedFaceSet38.DEF = "SkinMeshIFS";
+HAnimHumanoid35.skin[1] = IndexedFaceSet38;
+
+Group21.children[2] = HAnimHumanoid35;
+
+//==============================
+HAnimHumanoid HAnimHumanoid39 = createNode("HAnimHumanoid");
+HAnimHumanoid39.name = "SkinShapeIndexedGeometry";
+HAnimHumanoid39.DEF = "d_SkinShapeIndexedGeometry";
+HAnimHumanoid39.version = "2.0";
+HAnimJoint HAnimJoint40 = createNode("HAnimJoint");
+HAnimJoint40.name = "humanoid_root";
+HAnimJoint40.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint40.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment41 = createNode("HAnimSegment");
+HAnimSegment41.name = "sacrum";
+HAnimJoint40.children = new MFNode();
+
+HAnimJoint40.children[0] = HAnimSegment41;
+
+HAnimHumanoid39.joints = new MFNode();
+
+HAnimHumanoid39.joints[0] = HAnimJoint40;
+
+Shape Shape42 = createNode("Shape");
+IndexedFaceSet IndexedFaceSet43 = createNode("IndexedFaceSet");
+IndexedFaceSet43.USE = "SkinMeshIFS";
+Shape42.geometry = IndexedFaceSet43;
+
+HAnimHumanoid39.skin[1] = Shape42;
+
+Group21.children[3] = HAnimHumanoid39;
+
+//==============================
+HAnimHumanoid HAnimHumanoid44 = createNode("HAnimHumanoid");
+HAnimHumanoid44.name = "SkinSwitchShapeIndexedGeometry";
+HAnimHumanoid44.DEF = "e_SkinSwitchShapeIndexedGeometry";
+HAnimHumanoid44.version = "2.0";
+HAnimJoint HAnimJoint45 = createNode("HAnimJoint");
+HAnimJoint45.name = "humanoid_root";
+HAnimJoint45.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint45.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment46 = createNode("HAnimSegment");
+HAnimSegment46.name = "sacrum";
+HAnimJoint45.children = new MFNode();
+
+HAnimJoint45.children[0] = HAnimSegment46;
+
+HAnimHumanoid44.joints = new MFNode();
+
+HAnimHumanoid44.joints[0] = HAnimJoint45;
 
 //TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
-Shape Shape46 = createNode("Shape");
-IndexedFaceSet IndexedFaceSet47 = createNode("IndexedFaceSet");
-IndexedFaceSet47.DEF = "IndexedSkinMeshIFS";
-Coordinate Coordinate48 = createNode("Coordinate");
-Coordinate48.DEF = "SkinMeshCoordinate";
-IndexedFaceSet47.coord = Coordinate48;
+Shape Shape47 = createNode("Shape");
+IndexedFaceSet IndexedFaceSet48 = createNode("IndexedFaceSet");
+IndexedFaceSet48.DEF = "IndexedSkinMeshIFS";
+Coordinate Coordinate49 = createNode("Coordinate");
+Coordinate49.DEF = "SkinMeshCoordinate";
+IndexedFaceSet48.coord = Coordinate49;
 
-Shape46.geometry = IndexedFaceSet47;
+Shape47.geometry = IndexedFaceSet48;
 
-HAnimHumanoid43.skin[1] = Shape46;
+HAnimHumanoid44.skin[1] = Shape47;
 
-Group20.children[4] = HAnimHumanoid43;
+Group21.children[4] = HAnimHumanoid44;
 
 //similarly for LOD
 //==============================
-HAnimHumanoid HAnimHumanoid49 = createNode("HAnimHumanoid");
-HAnimHumanoid49.name = "SynthesizedSkinShapeIndexedTwoPartGeometry";
-HAnimHumanoid49.DEF = "f_SynthesizedSkinShapeIndexedTwoPartGeometry";
-HAnimHumanoid49.version = "2.0";
-HAnimJoint HAnimJoint50 = createNode("HAnimJoint");
-HAnimJoint50.name = "humanoid_root";
-HAnimJoint50.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint50.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment51 = createNode("HAnimSegment");
-HAnimSegment51.name = "sacrum";
-HAnimJoint50.children = new MFNode();
+HAnimHumanoid HAnimHumanoid50 = createNode("HAnimHumanoid");
+HAnimHumanoid50.name = "SynthesizedSkinShapeIndexedTwoPartGeometry";
+HAnimHumanoid50.DEF = "f_SynthesizedSkinShapeIndexedTwoPartGeometry";
+HAnimHumanoid50.version = "2.0";
+HAnimJoint HAnimJoint51 = createNode("HAnimJoint");
+HAnimJoint51.name = "humanoid_root";
+HAnimJoint51.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint51.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment52 = createNode("HAnimSegment");
+HAnimSegment52.name = "sacrum";
+HAnimJoint51.children = new MFNode();
 
-HAnimJoint50.children[0] = HAnimSegment51;
+HAnimJoint51.children[0] = HAnimSegment52;
 
-HAnimHumanoid49.joints = new MFNode();
+HAnimHumanoid50.joints = new MFNode();
 
-HAnimHumanoid49.joints[0] = HAnimJoint50;
+HAnimHumanoid50.joints[0] = HAnimJoint51;
 
-Shape Shape52 = createNode("Shape");
-IndexedFaceSet IndexedFaceSet53 = createNode("IndexedFaceSet");
-IndexedFaceSet53.DEF = "TwoPartIndexedSkinMesh";
-Coordinate Coordinate54 = createNode("Coordinate");
-Coordinate54.DEF = "TwoPartSkinMesh";
-IndexedFaceSet53.coord = Coordinate54;
+Shape Shape53 = createNode("Shape");
+IndexedFaceSet IndexedFaceSet54 = createNode("IndexedFaceSet");
+IndexedFaceSet54.DEF = "TwoPartIndexedSkinMesh";
+Coordinate Coordinate55 = createNode("Coordinate");
+Coordinate55.DEF = "TwoPartSkinMesh";
+IndexedFaceSet54.coord = Coordinate55;
 
-Shape52.geometry = IndexedFaceSet53;
+Shape53.geometry = IndexedFaceSet54;
 
-HAnimHumanoid49.skin[1] = Shape52;
+HAnimHumanoid50.skin[1] = Shape53;
 
-Group20.children[5] = HAnimHumanoid49;
+Group21.children[5] = HAnimHumanoid50;
 
 //==============================
-HAnimHumanoid HAnimHumanoid55 = createNode("HAnimHumanoid");
-HAnimHumanoid55.name = "ApparelSkinIndexedGeometryMultipleShapes";
-HAnimHumanoid55.DEF = "g_ApparelSkinIndexedGeometryMultipleShapes";
-HAnimHumanoid55.version = "2.0";
-HAnimJoint HAnimJoint56 = createNode("HAnimJoint");
-HAnimJoint56.name = "humanoid_root";
-HAnimJoint56.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint56.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment57 = createNode("HAnimSegment");
-HAnimSegment57.name = "sacrum";
-HAnimJoint56.children = new MFNode();
+HAnimHumanoid HAnimHumanoid56 = createNode("HAnimHumanoid");
+HAnimHumanoid56.name = "ApparelSkinIndexedGeometryMultipleShapes";
+HAnimHumanoid56.DEF = "g_ApparelSkinIndexedGeometryMultipleShapes";
+HAnimHumanoid56.version = "2.0";
+HAnimJoint HAnimJoint57 = createNode("HAnimJoint");
+HAnimJoint57.name = "humanoid_root";
+HAnimJoint57.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint57.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment58 = createNode("HAnimSegment");
+HAnimSegment58.name = "sacrum";
+HAnimJoint57.children = new MFNode();
 
-HAnimJoint56.children[0] = HAnimSegment57;
+HAnimJoint57.children[0] = HAnimSegment58;
 
-HAnimHumanoid55.joints = new MFNode();
+HAnimHumanoid56.joints = new MFNode();
 
-HAnimHumanoid55.joints[0] = HAnimJoint56;
+HAnimHumanoid56.joints[0] = HAnimJoint57;
 
-Shape Shape58 = createNode("Shape");
-HAnimHumanoid55.skin[1] = Shape58;
+Shape Shape59 = createNode("Shape");
+HAnimHumanoid56.skin[1] = Shape59;
 
 //allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
 //TODO proposed for X3D4.1 <Shape containerField='apparel'/>
-Group20.children[6] = HAnimHumanoid55;
+Group21.children[6] = HAnimHumanoid56;
 
 //==============================
-HAnimHumanoid HAnimHumanoid59 = createNode("HAnimHumanoid");
-HAnimHumanoid59.name = "AnatomySkinIndexedGeometryMultipleShapes";
-HAnimHumanoid59.DEF = "h_AnatomySkinIndexedGeometryMultipleShapes";
-HAnimHumanoid59.version = "2.0";
-HAnimJoint HAnimJoint60 = createNode("HAnimJoint");
-HAnimJoint60.name = "humanoid_root";
-HAnimJoint60.ulimit = new MFFloat(new float[0,0,0]);
-HAnimJoint60.llimit = new MFFloat(new float[0,0,0]);
-HAnimSegment HAnimSegment61 = createNode("HAnimSegment");
-HAnimSegment61.name = "sacrum";
-HAnimJoint60.children = new MFNode();
+HAnimHumanoid HAnimHumanoid60 = createNode("HAnimHumanoid");
+HAnimHumanoid60.name = "AnatomySkinIndexedGeometryMultipleShapes";
+HAnimHumanoid60.DEF = "h_AnatomySkinIndexedGeometryMultipleShapes";
+HAnimHumanoid60.version = "2.0";
+HAnimJoint HAnimJoint61 = createNode("HAnimJoint");
+HAnimJoint61.name = "humanoid_root";
+HAnimJoint61.ulimit = new MFFloat(new float[0,0,0]);
+HAnimJoint61.llimit = new MFFloat(new float[0,0,0]);
+HAnimSegment HAnimSegment62 = createNode("HAnimSegment");
+HAnimSegment62.name = "sacrum";
+HAnimJoint61.children = new MFNode();
 
-HAnimJoint60.children[0] = HAnimSegment61;
+HAnimJoint61.children[0] = HAnimSegment62;
 
-HAnimHumanoid59.joints = new MFNode();
+HAnimHumanoid60.joints = new MFNode();
 
-HAnimHumanoid59.joints[0] = HAnimJoint60;
+HAnimHumanoid60.joints[0] = HAnimJoint61;
 
 //allow multiple Shape nodes with containerField='skin', one for each layer of skin
-Shape Shape62 = createNode("Shape");
-HAnimHumanoid59.skin[1] = Shape62;
+Shape Shape63 = createNode("Shape");
+HAnimHumanoid60.skin[1] = Shape63;
 
-Group20.children[7] = HAnimHumanoid59;
+Group21.children[7] = HAnimHumanoid60;
 
 //==============================
-children[2] = Group20;
+children[2] = Group21;
 
-Viewpoint Viewpoint63 = createNode("Viewpoint");
-Viewpoint63.DEF = "ViewHelpText";
-Viewpoint63.description = "Select text to see website";
-Viewpoint63.position = new SFVec3f(new float[0,0,12]);
-children[3] = Viewpoint63;
+Viewpoint Viewpoint64 = createNode("Viewpoint");
+Viewpoint64.DEF = "ViewHelpText";
+Viewpoint64.description = "Select text to see website";
+Viewpoint64.position = new SFVec3f(new float[0,0,12]);
+children[3] = Viewpoint64;
 
 //Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
-Anchor Anchor64 = createNode("Anchor");
-Anchor64.description = "DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches";
-Anchor64.parameter = new MFString(new java.lang.String["target=blank"]);
-Anchor64.url = new MFString(new java.lang.String["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"]);
-Shape Shape65 = createNode("Shape");
+Anchor Anchor65 = createNode("Anchor");
+Anchor65.description = "DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches";
+Anchor65.parameter = new MFString(new java.lang.String["target=blank"]);
+Anchor65.url = new MFString(new java.lang.String["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"]);
+Shape Shape66 = createNode("Shape");
 //TODO adjust Text string and Box size, then set Material transparency='1'
-Text Text66 = createNode("Text");
-Text66.string = new MFString(new java.lang.String["DesignPatternsApparelMedicalSkinLayers.x3d","","explores potential apparel approaches"]);
-FontStyle FontStyle67 = createNode("FontStyle");
-FontStyle67.family = new MFString(new java.lang.String["SANS"]);
-FontStyle67.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
-FontStyle67.size = 0.6;
-FontStyle67.style = "BOLD";
-Text66.fontStyle = FontStyle67;
+Text Text67 = createNode("Text");
+Text67.string = new MFString(new java.lang.String["DesignPatternsApparelMedicalSkinLayers.x3d","","explores potential apparel approaches"]);
+FontStyle FontStyle68 = createNode("FontStyle");
+FontStyle68.family = new MFString(new java.lang.String["SANS"]);
+FontStyle68.justify = new MFString(new java.lang.String["MIDDLE","MIDDLE"]);
+FontStyle68.size = 0.6;
+FontStyle68.style = "BOLD";
+Text67.fontStyle = FontStyle68;
 
-Shape65.geometry = Text66;
+Shape66.geometry = Text67;
 
-Appearance Appearance68 = createNode("Appearance");
-Material Material69 = createNode("Material");
-Material69.diffuseColor = new SFColor(new float[0.9,0.9,0.9]);
-Appearance68.material = Material69;
+Appearance Appearance69 = createNode("Appearance");
+Material Material70 = createNode("Material");
+Material70.diffuseColor = new SFColor(new float[0.9,0.9,0.9]);
+Appearance69.material = Material70;
 
-Shape65.appearance = Appearance68;
+Shape66.appearance = Appearance69;
 
-Anchor64.children = new MFNode();
+Anchor65.children = new MFNode();
 
-Anchor64.children[0] = Shape65;
+Anchor65.children[0] = Shape66;
 
-Shape Shape70 = createNode("Shape");
+Shape Shape71 = createNode("Shape");
 //Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
-Box Box71 = createNode("Box");
-Box71.size = new SFVec3f(new float[11,2,0.001]);
-Shape70.geometry = Box71;
+Box Box72 = createNode("Box");
+Box72.size = new SFVec3f(new float[11,2,0.001]);
+Shape71.geometry = Box72;
 
-Appearance Appearance72 = createNode("Appearance");
-Material Material73 = createNode("Material");
-Material73.transparency = 1;
-Appearance72.material = Material73;
+Appearance Appearance73 = createNode("Appearance");
+Material Material74 = createNode("Material");
+Material74.transparency = 1;
+Appearance73.material = Material74;
 
-Shape70.appearance = Appearance72;
+Shape71.appearance = Appearance73;
 
-Anchor64.children[1] = Shape70;
+Anchor65.children[1] = Shape71;
 
-children[4] = Anchor64;
+children[4] = Anchor65;
 
 }

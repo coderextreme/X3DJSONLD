@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Full";
-X3D0.version = "4.0";
+X3D0.version = "4.1";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "EnvironmentalEffects";
@@ -97,7 +97,8 @@ Transform Transform19 = createNode("Transform");
 ParticleSystem ParticleSystem20 = createNode("ParticleSystem");
 ParticleSystem20.maxParticles = 20;
 ParticleSystem20.geometryType = "GEOMETRY";
-//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
+//* values - array of MFFloats to pass to ComposedShader
+//* variations in values - array of MFFloats to pass to ComposedShader that varies values
 VariationPhysicsModel VariationPhysicsModel21 = createNode("VariationPhysicsModel");
 VariationPhysicsModel21.values = "2 2 5 5 0 0";
 VariationPhysicsModel21.variations = "0.2 0.1 0.3 0.3 0.01 0.01";

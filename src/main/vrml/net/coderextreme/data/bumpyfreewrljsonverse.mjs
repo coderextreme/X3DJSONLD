@@ -36,7 +36,9 @@ scene.addMetaData("accessRights", "*enter permission statements or url here*");
 scene.addMetaData("identifier", "*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*");
 scene.addMetaData("generator", "PSPad, http://www.pspad.com/");
 scene.addMetaData("license", "license.html");
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 await browser .loadComponents (scene);
 //basic nodes, which might be present in any scene
 let NavigationInfo32 = browser.currentScene.createNode("NavigationInfo");
@@ -67,7 +69,8 @@ let LayerSet36 = browser.currentScene.createNode("LayerSet");
 LayerSet36.activeLayer = 1;
 LayerSet36.order = new X3D.MFInt32([1,2]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 let Layer37 = browser.currentScene.createNode("Layer");
 Layer37.pickable = True;
 Layer37.objectType = new X3D.MFString([new X3D.SFString("ALL")]);
@@ -326,7 +329,9 @@ ShaderPart97.url = new X3D.MFString([new X3D.SFString("../shaders/freewrl.fs"), 
 ShaderPart97.type = "FRAGMENT";
 ComposedShader84ZZZ.parts[1] = ShaderPart97;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75YYY.shaders = new X3D.MFNode();
 
 Appearance75ZZZ.shaders[0] = ComposedShader84;

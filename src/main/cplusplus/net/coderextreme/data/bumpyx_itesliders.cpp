@@ -17,7 +17,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
-X3D0.setVersion(CString("4.0"));
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 //<component name='Shape' level='4'></component>
 //<component name='DIS' level='2'></component>
@@ -93,7 +93,9 @@ head1.addMeta(&meta15);
 
 X3D0.setHead(&head1);
 
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 Scene& Scene16 =  Scene();
 //LayerSet with two layers, navigation happens in layer 1
 LayerSet& LayerSet17 =  LayerSet();
@@ -407,7 +409,9 @@ ShaderPart83.setUrl(new CString[]{CString("../shaders/x_ite.fs"), CString("https
 ShaderPart83.setType(CString("FRAGMENT"));
 ComposedShader69.setParts(&ShaderPart83);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+//<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
 Appearance60.addChild(&ComposedShader69);
 
 Shape57.addChild(&Appearance60);

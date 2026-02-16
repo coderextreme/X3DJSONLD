@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -174,7 +170,8 @@ newModel=X3D(profile='Immersive',version='4.0',
       Transform(DEF='verticalsupport',rotation=(0,0,1,1.57),scale=(.9,1,1),translation=(0,11,0),
         children=[
         Shape(USE='plank'),
-        Comment(' Main Verticle Support '),],),
+        Comment(' Main Verticle Support ')
+        ),
       Transform(DEF='horizontalsupport',scale=(.4,1,1),translation=(0,10,0),
         children=[
         Shape(USE='plank')]),
@@ -219,7 +216,8 @@ newModel=X3D(profile='Immersive',version='4.0',
               appearance=Appearance(DEF='rope',
                 texture=ImageTexture(USE='woodTexture')),
               geometry=Sphere(radius=1.5)),
-            Comment(' knott '),],)]),
+            Comment(' knott ')
+            )]),
         Comment(' The Unicorn '),
         Transform(rotation=(0,0,1,1.2),scale=(.2,.2,.2),translation=(-18.3,0.3,0),
           children=[
@@ -236,7 +234,8 @@ newModel=X3D(profile='Immersive',version='4.0',
               Shape(
                 geometry=Sphere(radius=1.5),
                 appearance=Appearance(USE='rope')),
-              Comment(' Knott '),],)]),
+              Comment(' Knott ')
+              )]),
           Transform(rotation=(0,0,1,1.2),translation=(15,55,-11),
             children=[
             Transform(scale=(5,5,5),
@@ -334,7 +333,8 @@ newModel=X3D(profile='Immersive',version='4.0',
           geometry=Cylinder(height=8,radius=.4),
           appearance=Appearance(
             material=Material(diffuseColor=(0,0,0),specularColor=(1,1,1)))),
-        Comment(' Top Pivot '),],),
+        Comment(' Top Pivot ')
+        ),
       Transform(DEF='verticalweight',
         children=[
         Transform(translation=(4,18,1.8),
@@ -637,7 +637,6 @@ function set_fraction ( fraction, eventTime )
     ROUTE(fromField='fraction_changed',fromNode='clock',toField='set_fraction',toNode='pinpath'),
     ROUTE(fromField='value_changed',fromNode='pinpath',toField='set_translation',toNode='Pin')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

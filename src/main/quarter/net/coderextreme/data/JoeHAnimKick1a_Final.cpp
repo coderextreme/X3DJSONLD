@@ -44,8 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Immersive"));
-SoSceneManager0->setVersion(QString("4.0"));
-SoSceneManager0->setXsi:noNamespaceSchemaLocation("https://www.web3d.org/specifications/x3d-4.0.xsd");
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 Socomponent* Socomponent2 = new Socomponent();
 Socomponent2->setName(QString("HAnim"));

@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -41,9 +37,9 @@ newModel=X3D(profile='Interactive',version='4.0',
   Scene=Scene(
     children=[
     WorldInfo(title='OrientationInterpolator.x3d'),
-    Comment(' <OrientationInterpolator DEF=\'Stop_l_midtarsal_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0 0 0 1 0 0 0 1 0\'/> '),],])
+    Comment(' <OrientationInterpolator DEF=\'Stop_l_midtarsal_RotationInterpolator\' key=\'0 0.5 1\' keyValue=\'0 0 1 0 0 0 1 0 0 0 1 0\'/> ')
+    )
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

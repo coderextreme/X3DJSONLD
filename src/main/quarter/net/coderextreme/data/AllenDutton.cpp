@@ -813,7 +813,8 @@ SoMaterial* SoMaterial161 = new SoMaterial();
 SoMaterial161->setUSE(QString("Skin_Color"));
 SoVRMLAppearance160->addChild(*SoMaterial161);
 
-//clone.gif removed for security reasons <ImageTexture url='\"\" \"\"'/>
+//clone.gif removed for security reasons
+//<ImageTexture url='\"\" \"\"'/>
 SoShape159->addChild(*SoVRMLAppearance160);
 
 SoIndexedFaceSet* SoIndexedFaceSet162 = new SoIndexedFaceSet();
@@ -944,1927 +945,1868 @@ SoHAnimJoint* SoHAnimJoint186 = new SoHAnimJoint();
 SoHAnimJoint186->setUSE(QString("hanim_r_wrist"));
 SoHAnimHumanoid23->setJoints(*SoHAnimJoint186);
 
-SoHAnimSegment* SoHAnimSegment187 = new SoHAnimSegment();
-SoHAnimSegment187->setUSE(QString("hanim_c4"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment187);
-
-SoHAnimSegment* SoHAnimSegment188 = new SoHAnimSegment();
-SoHAnimSegment188->setUSE(QString("hanim_l1"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment188);
-
-SoHAnimSegment* SoHAnimSegment189 = new SoHAnimSegment();
-SoHAnimSegment189->setUSE(QString("hanim_pelvis"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment189);
-
-SoHAnimSegment* SoHAnimSegment190 = new SoHAnimSegment();
-SoHAnimSegment190->setUSE(QString("hanim_skull"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment190);
-
-SoHAnimSegment* SoHAnimSegment191 = new SoHAnimSegment();
-SoHAnimSegment191->setUSE(QString("hanim_l_calf"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment191);
-
-SoHAnimSegment* SoHAnimSegment192 = new SoHAnimSegment();
-SoHAnimSegment192->setUSE(QString("hanim_r_calf"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment192);
-
-SoHAnimSegment* SoHAnimSegment193 = new SoHAnimSegment();
-SoHAnimSegment193->setUSE(QString("hanim_l_forearm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment193);
-
-SoHAnimSegment* SoHAnimSegment194 = new SoHAnimSegment();
-SoHAnimSegment194->setUSE(QString("hanim_r_forearm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment194);
-
-SoHAnimSegment* SoHAnimSegment195 = new SoHAnimSegment();
-SoHAnimSegment195->setUSE(QString("hanim_l_hand"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment195);
-
-SoHAnimSegment* SoHAnimSegment196 = new SoHAnimSegment();
-SoHAnimSegment196->setUSE(QString("hanim_r_hand"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment196);
-
-SoHAnimSegment* SoHAnimSegment197 = new SoHAnimSegment();
-SoHAnimSegment197->setUSE(QString("hanim_l_hindfoot"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment197);
-
-SoHAnimSegment* SoHAnimSegment198 = new SoHAnimSegment();
-SoHAnimSegment198->setUSE(QString("hanim_r_hindfoot"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment198);
-
-SoHAnimSegment* SoHAnimSegment199 = new SoHAnimSegment();
-SoHAnimSegment199->setUSE(QString("hanim_l_thigh"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment199);
-
-SoHAnimSegment* SoHAnimSegment200 = new SoHAnimSegment();
-SoHAnimSegment200->setUSE(QString("hanim_r_thigh"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment200);
-
-SoHAnimSegment* SoHAnimSegment201 = new SoHAnimSegment();
-SoHAnimSegment201->setUSE(QString("hanim_l_upperarm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment201);
-
-SoHAnimSegment* SoHAnimSegment202 = new SoHAnimSegment();
-SoHAnimSegment202->setUSE(QString("hanim_r_upperarm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment202);
-
 SoNode21->addChild(*SoHAnimHumanoid23);
 
-SoNavigationInfo* SoNavigationInfo203 = new SoNavigationInfo();
-SoNavigationInfo203->setAvatarSize(new float[]{0.15,1.53,0.75}, 3);
-SoNavigationInfo203->setSpeed(0.5);
-SoNavigationInfo203->setType(new QString[]{QString("EXAMINE")}, 1);
-SoNode21->addChild(*SoNavigationInfo203);
+SoNavigationInfo* SoNavigationInfo187 = new SoNavigationInfo();
+SoNavigationInfo187->setAvatarSize(new float[]{0.15,1.53,0.75}, 3);
+SoNavigationInfo187->setSpeed(0.5);
+SoNavigationInfo187->setType(new QString[]{QString("EXAMINE")}, 1);
+SoNode21->addChild(*SoNavigationInfo187);
 
-SoGroup* SoGroup204 = new SoGroup();
-SoGroup204->setDEF(QString("Interface"));
-//<Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform>
-SoCollision* SoCollision205 = new SoCollision();
-SoCollision205->setDEF(QString("HUD"));
-SoTransform* SoTransform206 = new SoTransform();
-SoTransform206->setDEF(QString("HudXform"));
-//Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
+SoGroup* SoGroup188 = new SoGroup();
+SoGroup188->setDEF(QString("Interface"));
+//<Transform>
+//<ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/>
+//</Transform>
+SoCollision* SoCollision189 = new SoCollision();
+SoCollision189->setDEF(QString("HUD"));
+SoTransform* SoTransform190 = new SoTransform();
+SoTransform190->setDEF(QString("HudXform"));
+//Enable this line if you enabled ProximitySensor
+//<Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
 //Enable this line if you disabled ProximitySensor
-SoTransform* SoTransform207 = new SoTransform();
-SoTransform207->setScale(new float[]{0.5,0.5,0.5});
-SoTransform207->setRotation(new float[]{0.0,1.0,0.0,0.65});
-SoTransform207->setTranslation(new float[]{0.5,0.1,0.0});
-SoTransform* SoTransform208 = new SoTransform();
-SoTransform208->setDEF(QString("Stand_Text"));
-SoTouchSensor* SoTouchSensor209 = new SoTouchSensor();
-SoTouchSensor209->setDEF(QString("Stand_Touch"));
-SoTouchSensor209->setDescription(QString("click for behavior"));
-SoTransform208->addChild(*SoTouchSensor209);
+SoTransform* SoTransform191 = new SoTransform();
+SoTransform191->setScale(new float[]{0.5,0.5,0.5});
+SoTransform191->setRotation(new float[]{0.0,1.0,0.0,0.65});
+SoTransform191->setTranslation(new float[]{0.5,0.1,0.0});
+SoTransform* SoTransform192 = new SoTransform();
+SoTransform192->setDEF(QString("Stand_Text"));
+SoTouchSensor* SoTouchSensor193 = new SoTouchSensor();
+SoTouchSensor193->setDEF(QString("Stand_Touch"));
+SoTouchSensor193->setDescription(QString("click for behavior"));
+SoTransform192->addChild(*SoTouchSensor193);
 
-SoShape* SoShape210 = new SoShape();
-SoShape210->setDEF(QString("Stand"));
-SoIndexedFaceSet* SoIndexedFaceSet211 = new SoIndexedFaceSet();
-SoIndexedFaceSet211->setCoordIndex(new int32_t[]{1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1}, 448);
-SoCoordinate* SoCoordinate212 = new SoCoordinate();
-SoCoordinate212->setPoint(new float[]{-3.21,-0.0154,0.0,-3.15,-0.0154,0.0,-3.14,-0.0467,0.0,-3.1,-0.0601,0.0,-3.05,-0.051,0.0,-3.04,-0.0254,0.0,-3.05,-0.00248,0.0,-3.1,0.0122,0.0,-3.16,0.03,0.0,-3.2,0.0684,0.0,-3.2,0.133,0.0,-3.16,0.17,0.0,-3.1,0.182,0.0,-3.04,0.171,0.0,-3.01,0.136,0.0,-3.0,0.095,0.0,-3.05,0.095,0.0,-3.06,0.125,0.0,-3.1,0.136,0.0,-3.14,0.126,0.0,-3.15,0.103,0.0,-3.14,0.0815,0.0,-3.1,0.0689,0.0,-3.04,0.0512,0.0,-3.0,0.0249,0.0,-2.99,-0.0195,0.0,-3.0,-0.0708,0.0,-3.05,-0.104,0.0,-3.1,-0.108,0.0,-3.16,-0.0947,0.0,-3.2,-0.0586,0.0,-2.86,-0.102,0.0,-2.9,-0.102,0.0,-2.94,-0.0832,0.0,-2.94,-0.0457,0.0,-2.94,0.0645,0.0,-2.97,0.0645,0.0,-2.97,0.103,0.0,-2.94,0.103,0.0,-2.94,0.158,0.0,-2.89,0.158,0.0,-2.89,0.103,0.0,-2.86,0.103,0.0,-2.86,0.0645,0.0,-2.89,0.0645,0.0,-2.89,-0.0483,0.0,-2.88,-0.0608,0.0,-2.86,-0.0612,0.0,-2.71,-0.000798,0.0,-2.71,-0.0373,0.0,-2.74,-0.0637,0.0,-2.77,-0.0624,0.0,-2.78,-0.0416,0.0,-2.77,-0.0195,0.0,-2.71,-0.0754,0.0,-2.74,-0.103,0.0,-2.79,-0.106,0.0,-2.82,-0.0865,0.0,-2.84,-0.0431,0.0,-2.82,0.000177,0.0,-2.78,0.0201,0.0,-2.73,0.0275,0.0,-2.71,0.0446,0.0,-2.72,0.0614,0.0,-2.74,0.0675,0.0,-2.77,0.0573,0.0,-2.78,0.039,0.0,-2.83,0.039,0.0,-2.82,0.0765,0.0,-2.78,0.105,0.0,-2.74,0.11,0.0,-2.71,0.107,0.0,-2.67,0.0849,0.0,-2.66,0.0526,0.0,-2.66,-0.0763,0.0,-2.65,-0.101,0.0,-2.7,-0.101,0.0,-2.61,-0.101,0.0,-2.61,0.103,0.0,-2.56,0.103,0.0,-2.56,0.0787,0.0,-2.52,0.104,0.0,-2.47,0.105,0.0,-2.43,0.0743,0.0,-2.43,0.038,0.0,-2.43,-0.101,0.0,-2.48,-0.101,0.0,-2.48,0.0224,0.0,-2.49,0.0514,0.0,-2.52,0.0627,0.0,-2.54,0.0505,0.0,-2.55,0.02,0.0,-2.55,-0.101,0.0,-2.33,0.0279,0.0,-2.31,0.0587,0.0,-2.27,0.0589,0.0,-2.25,0.0281,0.0,-2.25,-0.0232,0.0,-2.27,-0.0563,0.0,-2.31,-0.057,0.0,-2.33,-0.0245,0.0,-2.19,0.175,0.0,-2.19,-0.101,0.0,-2.25,-0.101,0.0,-2.25,-0.073,0.0,-2.26,-0.0913,0.0,-2.31,-0.108,0.0,-2.35,-0.0915,0.0,-2.38,-0.0424,0.0,-2.39,0.0243,0.0,-2.37,0.0809,0.0,-2.32,0.108,0.0,-2.28,0.106,0.0,-2.25,0.0776,0.0,-2.25,0.175,0.0,-2.48,0.0224,0.0,-2.43,0.038,0.0,-2.49,0.0514,0.0,-2.43,0.0743,0.0,-2.49,0.0514,0.0,-2.47,0.105,0.0,-2.52,0.0627,0.0,-2.52,0.104,0.0,-2.54,0.0505,0.0,-2.56,0.0787,0.0,-2.55,0.02,0.0,-2.56,0.0787,0.0,-2.61,-0.101,0.0,-2.55,0.02,0.0,-2.61,-0.101,0.0,-2.56,0.0787,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.89,0.0645,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.94,0.0645,0.0,-2.89,0.0645,0.0,-2.94,0.0645,0.0,-2.89,-0.0483,0.0,-2.94,-0.0457,0.0,-2.89,-0.0483,0.0,-2.94,-0.0832,0.0,-2.88,-0.0608,0.0,-2.9,-0.102,0.0,-3.06,0.125,0.0,-3.01,0.136,0.0,-3.06,0.125,0.0,-3.04,0.171,0.0,-3.1,0.136,0.0,-3.1,0.182,0.0,-3.14,0.126,0.0,-3.16,0.17,0.0,-3.15,0.103,0.0,-3.2,0.133,0.0,-3.14,0.0815,0.0,-3.2,0.0684,0.0,-3.14,0.0815,0.0,-3.16,0.03,0.0,-3.1,0.0689,0.0,-3.1,0.0122,0.0,-3.04,0.0512,0.0,-3.05,-0.00248,0.0,-3.0,0.0249,0.0,-3.05,-0.00248,0.0,-2.99,-0.0195,0.0,-3.04,-0.0254,0.0,-3.0,-0.0708,0.0,-3.05,-0.051,0.0,-3.05,-0.104,0.0,-3.05,-0.051,0.0,-3.1,-0.108,0.0,-3.1,-0.0601,0.0,-3.16,-0.0947,0.0,-3.14,-0.0467,0.0,-3.15,-0.0154,0.0,-3.2,-0.0586,0.0}, 531);
-SoIndexedFaceSet211->setCoord(*SoCoordinate212);
+SoShape* SoShape194 = new SoShape();
+SoShape194->setDEF(QString("Stand"));
+SoIndexedFaceSet* SoIndexedFaceSet195 = new SoIndexedFaceSet();
+SoIndexedFaceSet195->setCoordIndex(new int32_t[]{1,30,29,-1,1,29,2,-1,31,47,46,-1,31,46,32,-1,78,77,80,-1,78,80,79,-1,96,113,112,-1,96,112,95,-1,95,112,111,-1,95,111,94,-1,94,111,110,-1,94,110,93,-1,93,110,109,-1,93,109,108,-1,93,108,100,-1,107,99,100,-1,107,100,108,-1,107,106,99,-1,106,105,98,-1,106,98,99,-1,104,97,98,-1,104,98,105,-1,103,102,104,-1,104,102,101,-1,104,101,97,-1,101,96,97,-1,101,97,101,-1,101,101,96,-1,96,101,113,-1,113,101,114,-1,115,86,85,-1,115,85,116,-1,117,87,84,-1,117,84,118,-1,119,83,120,-1,121,88,82,-1,121,82,122,-1,123,89,81,-1,123,81,124,-1,125,90,126,-1,127,92,128,-1,129,91,130,-1,54,49,50,-1,54,50,55,-1,76,75,74,-1,76,74,54,-1,54,74,73,-1,54,73,49,-1,49,73,48,-1,48,73,62,-1,48,62,61,-1,48,61,60,-1,48,60,53,-1,53,60,59,-1,53,59,53,-1,53,59,58,-1,53,58,52,-1,52,58,57,-1,52,57,51,-1,56,51,57,-1,56,55,50,-1,56,50,51,-1,62,73,72,-1,62,72,63,-1,63,72,71,-1,63,71,64,-1,64,71,70,-1,64,70,69,-1,64,69,65,-1,65,69,68,-1,65,68,67,-1,65,67,66,-1,131,40,39,-1,131,39,132,-1,133,43,42,-1,133,42,134,-1,135,37,36,-1,135,36,136,-1,137,41,38,-1,137,38,138,-1,139,44,35,-1,139,35,140,-1,141,34,142,-1,143,45,33,-1,143,33,144,-1,145,16,15,-1,145,15,146,-1,147,14,148,-1,149,17,13,-1,149,13,150,-1,151,18,12,-1,151,12,152,-1,153,19,11,-1,153,11,154,-1,155,20,10,-1,155,10,156,-1,157,9,158,-1,159,21,8,-1,159,8,160,-1,161,22,7,-1,161,7,162,-1,163,23,164,-1,165,24,6,-1,165,6,166,-1,167,25,5,-1,167,5,168,-1,169,26,170,-1,171,27,4,-1,171,4,172,-1,173,28,3,-1,173,3,174,-1,175,0,176,-1}, 448);
+SoCoordinate* SoCoordinate196 = new SoCoordinate();
+SoCoordinate196->setPoint(new float[]{-3.21,-0.0154,0.0,-3.15,-0.0154,0.0,-3.14,-0.0467,0.0,-3.1,-0.0601,0.0,-3.05,-0.051,0.0,-3.04,-0.0254,0.0,-3.05,-0.00248,0.0,-3.1,0.0122,0.0,-3.16,0.03,0.0,-3.2,0.0684,0.0,-3.2,0.133,0.0,-3.16,0.17,0.0,-3.1,0.182,0.0,-3.04,0.171,0.0,-3.01,0.136,0.0,-3.0,0.095,0.0,-3.05,0.095,0.0,-3.06,0.125,0.0,-3.1,0.136,0.0,-3.14,0.126,0.0,-3.15,0.103,0.0,-3.14,0.0815,0.0,-3.1,0.0689,0.0,-3.04,0.0512,0.0,-3.0,0.0249,0.0,-2.99,-0.0195,0.0,-3.0,-0.0708,0.0,-3.05,-0.104,0.0,-3.1,-0.108,0.0,-3.16,-0.0947,0.0,-3.2,-0.0586,0.0,-2.86,-0.102,0.0,-2.9,-0.102,0.0,-2.94,-0.0832,0.0,-2.94,-0.0457,0.0,-2.94,0.0645,0.0,-2.97,0.0645,0.0,-2.97,0.103,0.0,-2.94,0.103,0.0,-2.94,0.158,0.0,-2.89,0.158,0.0,-2.89,0.103,0.0,-2.86,0.103,0.0,-2.86,0.0645,0.0,-2.89,0.0645,0.0,-2.89,-0.0483,0.0,-2.88,-0.0608,0.0,-2.86,-0.0612,0.0,-2.71,-0.000798,0.0,-2.71,-0.0373,0.0,-2.74,-0.0637,0.0,-2.77,-0.0624,0.0,-2.78,-0.0416,0.0,-2.77,-0.0195,0.0,-2.71,-0.0754,0.0,-2.74,-0.103,0.0,-2.79,-0.106,0.0,-2.82,-0.0865,0.0,-2.84,-0.0431,0.0,-2.82,0.000177,0.0,-2.78,0.0201,0.0,-2.73,0.0275,0.0,-2.71,0.0446,0.0,-2.72,0.0614,0.0,-2.74,0.0675,0.0,-2.77,0.0573,0.0,-2.78,0.039,0.0,-2.83,0.039,0.0,-2.82,0.0765,0.0,-2.78,0.105,0.0,-2.74,0.11,0.0,-2.71,0.107,0.0,-2.67,0.0849,0.0,-2.66,0.0526,0.0,-2.66,-0.0763,0.0,-2.65,-0.101,0.0,-2.7,-0.101,0.0,-2.61,-0.101,0.0,-2.61,0.103,0.0,-2.56,0.103,0.0,-2.56,0.0787,0.0,-2.52,0.104,0.0,-2.47,0.105,0.0,-2.43,0.0743,0.0,-2.43,0.038,0.0,-2.43,-0.101,0.0,-2.48,-0.101,0.0,-2.48,0.0224,0.0,-2.49,0.0514,0.0,-2.52,0.0627,0.0,-2.54,0.0505,0.0,-2.55,0.02,0.0,-2.55,-0.101,0.0,-2.33,0.0279,0.0,-2.31,0.0587,0.0,-2.27,0.0589,0.0,-2.25,0.0281,0.0,-2.25,-0.0232,0.0,-2.27,-0.0563,0.0,-2.31,-0.057,0.0,-2.33,-0.0245,0.0,-2.19,0.175,0.0,-2.19,-0.101,0.0,-2.25,-0.101,0.0,-2.25,-0.073,0.0,-2.26,-0.0913,0.0,-2.31,-0.108,0.0,-2.35,-0.0915,0.0,-2.38,-0.0424,0.0,-2.39,0.0243,0.0,-2.37,0.0809,0.0,-2.32,0.108,0.0,-2.28,0.106,0.0,-2.25,0.0776,0.0,-2.25,0.175,0.0,-2.48,0.0224,0.0,-2.43,0.038,0.0,-2.49,0.0514,0.0,-2.43,0.0743,0.0,-2.49,0.0514,0.0,-2.47,0.105,0.0,-2.52,0.0627,0.0,-2.52,0.104,0.0,-2.54,0.0505,0.0,-2.56,0.0787,0.0,-2.55,0.02,0.0,-2.56,0.0787,0.0,-2.61,-0.101,0.0,-2.55,0.02,0.0,-2.61,-0.101,0.0,-2.56,0.0787,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.89,0.0645,0.0,-2.89,0.103,0.0,-2.94,0.103,0.0,-2.94,0.0645,0.0,-2.89,0.0645,0.0,-2.94,0.0645,0.0,-2.89,-0.0483,0.0,-2.94,-0.0457,0.0,-2.89,-0.0483,0.0,-2.94,-0.0832,0.0,-2.88,-0.0608,0.0,-2.9,-0.102,0.0,-3.06,0.125,0.0,-3.01,0.136,0.0,-3.06,0.125,0.0,-3.04,0.171,0.0,-3.1,0.136,0.0,-3.1,0.182,0.0,-3.14,0.126,0.0,-3.16,0.17,0.0,-3.15,0.103,0.0,-3.2,0.133,0.0,-3.14,0.0815,0.0,-3.2,0.0684,0.0,-3.14,0.0815,0.0,-3.16,0.03,0.0,-3.1,0.0689,0.0,-3.1,0.0122,0.0,-3.04,0.0512,0.0,-3.05,-0.00248,0.0,-3.0,0.0249,0.0,-3.05,-0.00248,0.0,-2.99,-0.0195,0.0,-3.04,-0.0254,0.0,-3.0,-0.0708,0.0,-3.05,-0.051,0.0,-3.05,-0.104,0.0,-3.05,-0.051,0.0,-3.1,-0.108,0.0,-3.1,-0.0601,0.0,-3.16,-0.0947,0.0,-3.14,-0.0467,0.0,-3.15,-0.0154,0.0,-3.2,-0.0586,0.0}, 531);
+SoIndexedFaceSet195->setCoord(*SoCoordinate196);
 
-SoShape210->setGeometry(*SoIndexedFaceSet211);
+SoShape194->setGeometry(*SoIndexedFaceSet195);
 
-SoVRMLAppearance* SoVRMLAppearance213 = new SoVRMLAppearance();
-SoMaterial* SoMaterial214 = new SoMaterial();
-SoMaterial214->setDEF(QString("text_color"));
-SoMaterial214->setAmbientIntensity(0);
-SoMaterial214->setDiffuseColor(new float[]{0.0,0.0,0.0});
-SoMaterial214->setEmissiveColor(new float[]{0.819,0.521,0.169});
-SoVRMLAppearance213->addChild(*SoMaterial214);
+SoVRMLAppearance* SoVRMLAppearance197 = new SoVRMLAppearance();
+SoMaterial* SoMaterial198 = new SoMaterial();
+SoMaterial198->setDEF(QString("text_color"));
+SoMaterial198->setAmbientIntensity(0);
+SoMaterial198->setDiffuseColor(new float[]{0.0,0.0,0.0});
+SoMaterial198->setEmissiveColor(new float[]{0.819,0.521,0.169});
+SoVRMLAppearance197->addChild(*SoMaterial198);
 
-SoShape210->addChild(*SoVRMLAppearance213);
+SoShape194->addChild(*SoVRMLAppearance197);
 
-SoTransform208->addChild(*SoShape210);
+SoTransform192->addChild(*SoShape194);
 
-SoTransform* SoTransform215 = new SoTransform();
-SoTransform215->setScale(new float[]{84.89,77.52,77.52});
-SoTransform215->setTranslation(new float[]{0.04092,1.843,3.826});
-SoShape* SoShape216 = new SoShape();
-SoShape216->setDEF(QString("Stand_Back"));
-SoIndexedFaceSet* SoIndexedFaceSet217 = new SoIndexedFaceSet();
-SoIndexedFaceSet217->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
-SoCoordinate* SoCoordinate218 = new SoCoordinate();
-SoCoordinate218->setPoint(new float[]{-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05}, 12);
-SoIndexedFaceSet217->setCoord(*SoCoordinate218);
+SoTransform* SoTransform199 = new SoTransform();
+SoTransform199->setScale(new float[]{84.89,77.52,77.52});
+SoTransform199->setTranslation(new float[]{0.04092,1.843,3.826});
+SoShape* SoShape200 = new SoShape();
+SoShape200->setDEF(QString("Stand_Back"));
+SoIndexedFaceSet* SoIndexedFaceSet201 = new SoIndexedFaceSet();
+SoIndexedFaceSet201->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
+SoCoordinate* SoCoordinate202 = new SoCoordinate();
+SoCoordinate202->setPoint(new float[]{-0.02572,-0.02535,-0.05,-0.02578,-0.02131,-0.05,-0.03871,-0.02131,-0.05,-0.03877,-0.02541,-0.05}, 12);
+SoIndexedFaceSet201->setCoord(*SoCoordinate202);
 
-SoShape216->setGeometry(*SoIndexedFaceSet217);
+SoShape200->setGeometry(*SoIndexedFaceSet201);
 
-SoVRMLAppearance* SoVRMLAppearance219 = new SoVRMLAppearance();
-SoMaterial* SoMaterial220 = new SoMaterial();
-SoMaterial220->setDEF(QString("Clear"));
-SoMaterial220->setAmbientIntensity(0);
-SoMaterial220->setDiffuseColor(new float[]{0.0,0.0,0.0});
-SoMaterial220->setTransparency(1);
-SoVRMLAppearance219->addChild(*SoMaterial220);
+SoVRMLAppearance* SoVRMLAppearance203 = new SoVRMLAppearance();
+SoMaterial* SoMaterial204 = new SoMaterial();
+SoMaterial204->setDEF(QString("Clear"));
+SoMaterial204->setAmbientIntensity(0);
+SoMaterial204->setDiffuseColor(new float[]{0.0,0.0,0.0});
+SoMaterial204->setTransparency(1);
+SoVRMLAppearance203->addChild(*SoMaterial204);
 
-SoShape216->addChild(*SoVRMLAppearance219);
+SoShape200->addChild(*SoVRMLAppearance203);
 
-SoTransform215->addChild(*SoShape216);
+SoTransform199->addChild(*SoShape200);
 
-SoTransform208->addChild(*SoTransform215);
+SoTransform192->addChild(*SoTransform199);
 
-SoTransform207->addChild(*SoTransform208);
+SoTransform191->addChild(*SoTransform192);
 
-SoTransform* SoTransform221 = new SoTransform();
-SoTransform221->setDEF(QString("Walk_Text"));
-SoTouchSensor* SoTouchSensor222 = new SoTouchSensor();
-SoTouchSensor222->setDEF(QString("Walk_Touch"));
-SoTouchSensor222->setDescription(QString("click for behavior"));
-SoTransform221->addChild(*SoTouchSensor222);
+SoTransform* SoTransform205 = new SoTransform();
+SoTransform205->setDEF(QString("Walk_Text"));
+SoTouchSensor* SoTouchSensor206 = new SoTouchSensor();
+SoTouchSensor206->setDEF(QString("Walk_Touch"));
+SoTouchSensor206->setDescription(QString("click for behavior"));
+SoTransform205->addChild(*SoTouchSensor206);
 
-SoShape* SoShape223 = new SoShape();
-SoShape223->setDEF(QString("WALK"));
-SoIndexedFaceSet* SoIndexedFaceSet224 = new SoIndexedFaceSet();
-SoIndexedFaceSet224->setCoordIndex(new int32_t[]{0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1}, 212);
-SoCoordinate* SoCoordinate225 = new SoCoordinate();
-SoCoordinate225->setPoint(new float[]{-1.88,-0.101,0.0,-1.96,0.175,0.0,-1.91,0.175,0.0,-1.86,-0.0195,0.0,-1.82,0.175,0.0,-1.76,0.175,0.0,-1.72,-0.0195,0.0,-1.67,0.175,0.0,-1.61,0.175,0.0,-1.69,-0.101,0.0,-1.75,-0.101,0.0,-1.79,0.111,0.0,-1.83,-0.101,0.0,-1.38,-0.101,0.0,-1.38,0.175,0.0,-1.32,0.175,0.0,-1.32,-0.101,0.0,-1.27,-0.101,0.0,-1.27,0.175,0.0,-1.22,0.175,0.0,-1.22,0.0304,0.0,-1.16,0.103,0.0,-1.09,0.103,0.0,-1.16,0.0272,0.0,-1.09,-0.101,0.0,-1.15,-0.101,0.0,-1.2,-0.0141,0.0,-1.22,-0.0363,0.0,-1.22,-0.101,0.0,-1.48,-0.0754,0.0,-1.48,-0.0373,0.0,-1.51,-0.0637,0.0,-1.51,-0.103,0.0,-1.47,-0.101,0.0,-1.42,-0.101,0.0,-1.43,-0.0763,0.0,-1.43,0.0526,0.0,-1.48,-0.000798,0.0,-1.48,0.0446,0.0,-1.5,0.0275,0.0,-1.55,0.0201,0.0,-1.54,-0.0195,0.0,-1.59,0.000177,0.0,-1.61,-0.0431,0.0,-1.55,-0.0416,0.0,-1.59,-0.0865,0.0,-1.54,-0.0624,0.0,-1.56,-0.106,0.0,-1.44,0.0849,0.0,-1.49,0.0614,0.0,-1.48,0.107,0.0,-1.51,0.0675,0.0,-1.52,0.11,0.0,-1.55,0.105,0.0,-1.54,0.0573,0.0,-1.59,0.0765,0.0,-1.6,0.039,0.0,-1.55,0.039,0.0}, 174);
-SoIndexedFaceSet224->setCoord(*SoCoordinate225);
+SoShape* SoShape207 = new SoShape();
+SoShape207->setDEF(QString("WALK"));
+SoIndexedFaceSet* SoIndexedFaceSet208 = new SoIndexedFaceSet();
+SoIndexedFaceSet208->setCoordIndex(new int32_t[]{0,2,1,-1,3,2,0,-1,12,3,0,-1,4,3,12,-1,11,4,12,-1,5,4,11,-1,10,5,11,-1,6,5,10,-1,9,6,10,-1,7,6,9,-1,8,7,9,-1,15,14,13,-1,16,15,13,-1,19,18,17,-1,20,19,17,-1,27,20,17,-1,28,27,17,-1,26,20,27,-1,23,20,26,-1,21,20,23,-1,25,23,26,-1,22,21,23,-1,24,23,25,-1,29,30,31,-1,29,31,32,-1,33,34,35,-1,33,35,29,-1,29,35,36,-1,29,36,30,-1,30,36,37,-1,37,36,38,-1,37,38,39,-1,37,39,40,-1,37,40,41,-1,41,40,42,-1,41,42,41,-1,41,42,43,-1,41,43,44,-1,44,43,45,-1,44,45,46,-1,47,46,45,-1,47,32,31,-1,47,31,46,-1,38,36,48,-1,38,48,49,-1,49,48,50,-1,49,50,51,-1,51,50,52,-1,51,52,53,-1,51,53,54,-1,54,53,55,-1,54,55,56,-1,54,56,57,-1}, 212);
+SoCoordinate* SoCoordinate209 = new SoCoordinate();
+SoCoordinate209->setPoint(new float[]{-1.88,-0.101,0.0,-1.96,0.175,0.0,-1.91,0.175,0.0,-1.86,-0.0195,0.0,-1.82,0.175,0.0,-1.76,0.175,0.0,-1.72,-0.0195,0.0,-1.67,0.175,0.0,-1.61,0.175,0.0,-1.69,-0.101,0.0,-1.75,-0.101,0.0,-1.79,0.111,0.0,-1.83,-0.101,0.0,-1.38,-0.101,0.0,-1.38,0.175,0.0,-1.32,0.175,0.0,-1.32,-0.101,0.0,-1.27,-0.101,0.0,-1.27,0.175,0.0,-1.22,0.175,0.0,-1.22,0.0304,0.0,-1.16,0.103,0.0,-1.09,0.103,0.0,-1.16,0.0272,0.0,-1.09,-0.101,0.0,-1.15,-0.101,0.0,-1.2,-0.0141,0.0,-1.22,-0.0363,0.0,-1.22,-0.101,0.0,-1.48,-0.0754,0.0,-1.48,-0.0373,0.0,-1.51,-0.0637,0.0,-1.51,-0.103,0.0,-1.47,-0.101,0.0,-1.42,-0.101,0.0,-1.43,-0.0763,0.0,-1.43,0.0526,0.0,-1.48,-0.000798,0.0,-1.48,0.0446,0.0,-1.5,0.0275,0.0,-1.55,0.0201,0.0,-1.54,-0.0195,0.0,-1.59,0.000177,0.0,-1.61,-0.0431,0.0,-1.55,-0.0416,0.0,-1.59,-0.0865,0.0,-1.54,-0.0624,0.0,-1.56,-0.106,0.0,-1.44,0.0849,0.0,-1.49,0.0614,0.0,-1.48,0.107,0.0,-1.51,0.0675,0.0,-1.52,0.11,0.0,-1.55,0.105,0.0,-1.54,0.0573,0.0,-1.59,0.0765,0.0,-1.6,0.039,0.0,-1.55,0.039,0.0}, 174);
+SoIndexedFaceSet208->setCoord(*SoCoordinate209);
 
-SoShape223->setGeometry(*SoIndexedFaceSet224);
+SoShape207->setGeometry(*SoIndexedFaceSet208);
 
-SoVRMLAppearance* SoVRMLAppearance226 = new SoVRMLAppearance();
-SoMaterial* SoMaterial227 = new SoMaterial();
-SoMaterial227->setUSE(QString("text_color"));
-SoVRMLAppearance226->addChild(*SoMaterial227);
+SoVRMLAppearance* SoVRMLAppearance210 = new SoVRMLAppearance();
+SoMaterial* SoMaterial211 = new SoMaterial();
+SoMaterial211->setUSE(QString("text_color"));
+SoVRMLAppearance210->addChild(*SoMaterial211);
 
-SoShape223->addChild(*SoVRMLAppearance226);
+SoShape207->addChild(*SoVRMLAppearance210);
 
-SoTransform221->addChild(*SoShape223);
+SoTransform205->addChild(*SoShape207);
 
-SoTransform* SoTransform228 = new SoTransform();
-SoTransform228->setScale(new float[]{81.3,81.3,81.31});
-SoTransform228->setTranslation(new float[]{-0.0414,1.941,4.015});
-SoShape* SoShape229 = new SoShape();
-SoShape229->setDEF(QString("Walk_Back"));
-SoIndexedFaceSet* SoIndexedFaceSet230 = new SoIndexedFaceSet();
-SoIndexedFaceSet230->setCoordIndex(new int32_t[]{1,3,0,-1,3,1,2,-1}, 8);
-SoCoordinate* SoCoordinate231 = new SoCoordinate();
-SoCoordinate231->setPoint(new float[]{-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05}, 12);
-SoIndexedFaceSet230->setCoord(*SoCoordinate231);
+SoTransform* SoTransform212 = new SoTransform();
+SoTransform212->setScale(new float[]{81.3,81.3,81.31});
+SoTransform212->setTranslation(new float[]{-0.0414,1.941,4.015});
+SoShape* SoShape213 = new SoShape();
+SoShape213->setDEF(QString("Walk_Back"));
+SoIndexedFaceSet* SoIndexedFaceSet214 = new SoIndexedFaceSet();
+SoIndexedFaceSet214->setCoordIndex(new int32_t[]{1,3,0,-1,3,1,2,-1}, 8);
+SoCoordinate* SoCoordinate215 = new SoCoordinate();
+SoCoordinate215->setPoint(new float[]{-0.02381,-0.02541,-0.05,-0.0127,-0.02541,-0.05,-0.01263,-0.02139,-0.05,-0.02381,-0.02146,-0.05}, 12);
+SoIndexedFaceSet214->setCoord(*SoCoordinate215);
 
-SoShape229->setGeometry(*SoIndexedFaceSet230);
+SoShape213->setGeometry(*SoIndexedFaceSet214);
 
-SoVRMLAppearance* SoVRMLAppearance232 = new SoVRMLAppearance();
-SoMaterial* SoMaterial233 = new SoMaterial();
-SoMaterial233->setUSE(QString("Clear"));
-SoVRMLAppearance232->addChild(*SoMaterial233);
+SoVRMLAppearance* SoVRMLAppearance216 = new SoVRMLAppearance();
+SoMaterial* SoMaterial217 = new SoMaterial();
+SoMaterial217->setUSE(QString("Clear"));
+SoVRMLAppearance216->addChild(*SoMaterial217);
 
-SoShape229->addChild(*SoVRMLAppearance232);
+SoShape213->addChild(*SoVRMLAppearance216);
 
-SoTransform228->addChild(*SoShape229);
+SoTransform212->addChild(*SoShape213);
 
-SoTransform221->addChild(*SoTransform228);
+SoTransform205->addChild(*SoTransform212);
 
-SoTransform207->addChild(*SoTransform221);
+SoTransform191->addChild(*SoTransform205);
 
-SoTransform* SoTransform234 = new SoTransform();
-SoTransform234->setDEF(QString("Run_Text"));
-SoTouchSensor* SoTouchSensor235 = new SoTouchSensor();
-SoTouchSensor235->setDEF(QString("Run_Touch"));
-SoTouchSensor235->setDescription(QString("click for behavior"));
-SoTransform234->addChild(*SoTouchSensor235);
+SoTransform* SoTransform218 = new SoTransform();
+SoTransform218->setDEF(QString("Run_Text"));
+SoTouchSensor* SoTouchSensor219 = new SoTouchSensor();
+SoTouchSensor219->setDEF(QString("Run_Touch"));
+SoTouchSensor219->setDescription(QString("click for behavior"));
+SoTransform218->addChild(*SoTouchSensor219);
 
-SoShape* SoShape236 = new SoShape();
-SoShape236->setDEF(QString("Run"));
-SoIndexedFaceSet* SoIndexedFaceSet237 = new SoIndexedFaceSet();
-SoIndexedFaceSet237->setCoordIndex(new int32_t[]{24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1}, 204);
-SoCoordinate* SoCoordinate238 = new SoCoordinate();
-SoCoordinate238->setPoint(new float[]{-0.829,-0.101,0.0,-0.829,0.175,0.0,-0.662,0.172,0.0,-0.622,0.148,0.0,-0.607,0.103,0.0,-0.62,0.0501,0.0,-0.648,0.0316,0.0,-0.615,-0.0063,0.0,-0.611,-0.0764,0.0,-0.601,-0.101,0.0,-0.664,-0.101,0.0,-0.671,-0.0373,0.0,-0.68,-0.00372,0.0,-0.712,0.00648,0.0,-0.772,0.00648,0.0,-0.772,-0.101,0.0,-0.772,0.0546,0.0,-0.772,0.127,0.0,-0.703,0.127,0.0,-0.673,0.118,0.0,-0.663,0.091,0.0,-0.674,0.063,0.0,-0.705,0.0546,0.0,-0.379,0.103,0.0,-0.379,-0.101,0.0,-0.432,-0.101,0.0,-0.432,-0.0764,0.0,-0.466,-0.101,0.0,-0.518,-0.102,0.0,-0.555,-0.072,0.0,-0.56,-0.0357,0.0,-0.56,0.103,0.0,-0.506,0.103,0.0,-0.506,-0.0201,0.0,-0.5,-0.0491,0.0,-0.472,-0.0604,0.0,-0.443,-0.0482,0.0,-0.433,-0.0177,0.0,-0.433,0.103,0.0,-0.331,-0.101,0.0,-0.331,0.103,0.0,-0.278,0.103,0.0,-0.278,0.0787,0.0,-0.244,0.104,0.0,-0.192,0.105,0.0,-0.154,0.0743,0.0,-0.149,0.038,0.0,-0.149,-0.101,0.0,-0.203,-0.101,0.0,-0.203,0.0224,0.0,-0.209,0.0514,0.0,-0.238,0.0627,0.0,-0.266,0.0505,0.0,-0.277,0.02,0.0,-0.277,-0.101,0.0,-0.506,-0.0201,0.0,-0.56,-0.0357,0.0,-0.5,-0.0491,0.0,-0.555,-0.072,0.0,-0.5,-0.0491,0.0,-0.518,-0.102,0.0,-0.472,-0.0604,0.0,-0.466,-0.101,0.0,-0.443,-0.0482,0.0,-0.432,-0.0764,0.0,-0.433,-0.0177,0.0,-0.432,-0.0764,0.0,-0.379,0.103,0.0,-0.433,-0.0177,0.0,-0.379,0.103,0.0,-0.432,-0.0764,0.0,-0.379,-0.101,0.0,-0.432,-0.0764,0.0,-0.203,0.0224,0.0,-0.149,0.038,0.0,-0.209,0.0514,0.0,-0.154,0.0743,0.0,-0.209,0.0514,0.0,-0.192,0.105,0.0,-0.238,0.0627,0.0,-0.244,0.104,0.0,-0.266,0.0505,0.0,-0.278,0.0787,0.0,-0.278,0.0787,0.0,-0.331,0.103,0.0,-0.277,0.02,0.0,-0.331,-0.101,0.0,-0.277,0.02,0.0,-0.278,0.0787,0.0,-0.277,0.02,0.0,-0.331,0.103,0.0}, 273);
-SoIndexedFaceSet237->setCoord(*SoCoordinate238);
+SoShape* SoShape220 = new SoShape();
+SoShape220->setDEF(QString("Run"));
+SoIndexedFaceSet* SoIndexedFaceSet221 = new SoIndexedFaceSet();
+SoIndexedFaceSet221->setCoordIndex(new int32_t[]{24,26,25,-1,53,39,54,-1,17,1,0,-1,17,0,16,-1,0,14,16,-1,0,15,14,-1,14,13,22,-1,14,22,16,-1,13,12,21,-1,13,21,22,-1,12,6,21,-1,12,11,7,-1,12,7,6,-1,11,8,7,-1,10,8,11,-1,10,9,8,-1,6,5,21,-1,5,4,20,-1,5,20,21,-1,4,3,19,-1,4,19,20,-1,3,2,18,-1,3,18,19,-1,18,2,1,-1,18,1,17,-1,55,32,31,-1,55,31,56,-1,57,33,30,-1,57,30,58,-1,59,29,60,-1,61,34,28,-1,61,28,62,-1,63,35,27,-1,63,27,64,-1,65,36,66,-1,67,38,68,-1,69,37,70,-1,71,23,72,-1,73,48,47,-1,73,47,74,-1,75,49,46,-1,75,46,76,-1,77,45,78,-1,79,50,44,-1,79,44,80,-1,81,51,43,-1,81,43,82,-1,83,41,84,-1,85,40,86,-1,87,52,88,-1,89,42,90,-1}, 204);
+SoCoordinate* SoCoordinate222 = new SoCoordinate();
+SoCoordinate222->setPoint(new float[]{-0.829,-0.101,0.0,-0.829,0.175,0.0,-0.662,0.172,0.0,-0.622,0.148,0.0,-0.607,0.103,0.0,-0.62,0.0501,0.0,-0.648,0.0316,0.0,-0.615,-0.0063,0.0,-0.611,-0.0764,0.0,-0.601,-0.101,0.0,-0.664,-0.101,0.0,-0.671,-0.0373,0.0,-0.68,-0.00372,0.0,-0.712,0.00648,0.0,-0.772,0.00648,0.0,-0.772,-0.101,0.0,-0.772,0.0546,0.0,-0.772,0.127,0.0,-0.703,0.127,0.0,-0.673,0.118,0.0,-0.663,0.091,0.0,-0.674,0.063,0.0,-0.705,0.0546,0.0,-0.379,0.103,0.0,-0.379,-0.101,0.0,-0.432,-0.101,0.0,-0.432,-0.0764,0.0,-0.466,-0.101,0.0,-0.518,-0.102,0.0,-0.555,-0.072,0.0,-0.56,-0.0357,0.0,-0.56,0.103,0.0,-0.506,0.103,0.0,-0.506,-0.0201,0.0,-0.5,-0.0491,0.0,-0.472,-0.0604,0.0,-0.443,-0.0482,0.0,-0.433,-0.0177,0.0,-0.433,0.103,0.0,-0.331,-0.101,0.0,-0.331,0.103,0.0,-0.278,0.103,0.0,-0.278,0.0787,0.0,-0.244,0.104,0.0,-0.192,0.105,0.0,-0.154,0.0743,0.0,-0.149,0.038,0.0,-0.149,-0.101,0.0,-0.203,-0.101,0.0,-0.203,0.0224,0.0,-0.209,0.0514,0.0,-0.238,0.0627,0.0,-0.266,0.0505,0.0,-0.277,0.02,0.0,-0.277,-0.101,0.0,-0.506,-0.0201,0.0,-0.56,-0.0357,0.0,-0.5,-0.0491,0.0,-0.555,-0.072,0.0,-0.5,-0.0491,0.0,-0.518,-0.102,0.0,-0.472,-0.0604,0.0,-0.466,-0.101,0.0,-0.443,-0.0482,0.0,-0.432,-0.0764,0.0,-0.433,-0.0177,0.0,-0.432,-0.0764,0.0,-0.379,0.103,0.0,-0.433,-0.0177,0.0,-0.379,0.103,0.0,-0.432,-0.0764,0.0,-0.379,-0.101,0.0,-0.432,-0.0764,0.0,-0.203,0.0224,0.0,-0.149,0.038,0.0,-0.209,0.0514,0.0,-0.154,0.0743,0.0,-0.209,0.0514,0.0,-0.192,0.105,0.0,-0.238,0.0627,0.0,-0.244,0.104,0.0,-0.266,0.0505,0.0,-0.278,0.0787,0.0,-0.278,0.0787,0.0,-0.331,0.103,0.0,-0.277,0.02,0.0,-0.331,-0.101,0.0,-0.277,0.02,0.0,-0.278,0.0787,0.0,-0.277,0.02,0.0,-0.331,0.103,0.0}, 273);
+SoIndexedFaceSet221->setCoord(*SoCoordinate222);
 
-SoShape236->setGeometry(*SoIndexedFaceSet237);
+SoShape220->setGeometry(*SoIndexedFaceSet221);
 
-SoVRMLAppearance* SoVRMLAppearance239 = new SoVRMLAppearance();
-SoMaterial* SoMaterial240 = new SoMaterial();
-SoMaterial240->setUSE(QString("text_color"));
-SoVRMLAppearance239->addChild(*SoMaterial240);
+SoVRMLAppearance* SoVRMLAppearance223 = new SoVRMLAppearance();
+SoMaterial* SoMaterial224 = new SoMaterial();
+SoMaterial224->setUSE(QString("text_color"));
+SoVRMLAppearance223->addChild(*SoMaterial224);
 
-SoShape236->addChild(*SoVRMLAppearance239);
+SoShape220->addChild(*SoVRMLAppearance223);
 
-SoTransform234->addChild(*SoShape236);
+SoTransform218->addChild(*SoShape220);
 
-SoTransform* SoTransform241 = new SoTransform();
-SoTransform241->setScale(new float[]{82.47,82.47,82.48});
-SoTransform241->setTranslation(new float[]{-0.01579,1.968,4.074});
-SoShape* SoShape242 = new SoShape();
-SoShape242->setDEF(QString("Run_Back"));
-SoIndexedFaceSet* SoIndexedFaceSet243 = new SoIndexedFaceSet();
-SoIndexedFaceSet243->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
-SoCoordinate* SoCoordinate244 = new SoCoordinate();
-SoCoordinate244->setPoint(new float[]{-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05}, 12);
-SoIndexedFaceSet243->setCoord(*SoCoordinate244);
+SoTransform* SoTransform225 = new SoTransform();
+SoTransform225->setScale(new float[]{82.47,82.47,82.48});
+SoTransform225->setTranslation(new float[]{-0.01579,1.968,4.074});
+SoShape* SoShape226 = new SoShape();
+SoShape226->setDEF(QString("Run_Back"));
+SoIndexedFaceSet* SoIndexedFaceSet227 = new SoIndexedFaceSet();
+SoIndexedFaceSet227->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
+SoCoordinate* SoCoordinate228 = new SoCoordinate();
+SoCoordinate228->setPoint(new float[]{-0.01009,-0.02534,-0.05,-0.001382,-0.02541,-0.05,-0.001315,-0.02146,-0.05,-0.01022,-0.02146,-0.05}, 12);
+SoIndexedFaceSet227->setCoord(*SoCoordinate228);
 
-SoShape242->setGeometry(*SoIndexedFaceSet243);
+SoShape226->setGeometry(*SoIndexedFaceSet227);
 
-SoVRMLAppearance* SoVRMLAppearance245 = new SoVRMLAppearance();
-SoMaterial* SoMaterial246 = new SoMaterial();
-SoMaterial246->setUSE(QString("Clear"));
-SoVRMLAppearance245->addChild(*SoMaterial246);
+SoVRMLAppearance* SoVRMLAppearance229 = new SoVRMLAppearance();
+SoMaterial* SoMaterial230 = new SoMaterial();
+SoMaterial230->setUSE(QString("Clear"));
+SoVRMLAppearance229->addChild(*SoMaterial230);
 
-SoShape242->addChild(*SoVRMLAppearance245);
+SoShape226->addChild(*SoVRMLAppearance229);
 
-SoTransform241->addChild(*SoShape242);
+SoTransform225->addChild(*SoShape226);
 
-SoTransform234->addChild(*SoTransform241);
+SoTransform218->addChild(*SoTransform225);
 
-SoTransform207->addChild(*SoTransform234);
+SoTransform191->addChild(*SoTransform218);
 
-SoTransform* SoTransform247 = new SoTransform();
-SoTransform247->setDEF(QString("Jump_Text"));
-SoTouchSensor* SoTouchSensor248 = new SoTouchSensor();
-SoTouchSensor248->setDEF(QString("Jump_Touch"));
-SoTouchSensor248->setDescription(QString("click for behavior"));
-SoTransform247->addChild(*SoTouchSensor248);
+SoTransform* SoTransform231 = new SoTransform();
+SoTransform231->setDEF(QString("Jump_Text"));
+SoTouchSensor* SoTouchSensor232 = new SoTouchSensor();
+SoTouchSensor232->setDEF(QString("Jump_Touch"));
+SoTouchSensor232->setDescription(QString("click for behavior"));
+SoTransform231->addChild(*SoTouchSensor232);
 
-SoShape* SoShape249 = new SoShape();
-SoShape249->setDEF(QString("Jump"));
-SoIndexedFaceSet* SoIndexedFaceSet250 = new SoIndexedFaceSet();
-SoIndexedFaceSet250->setCoordIndex(new int32_t[]{1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1}, 296);
-SoCoordinate* SoCoordinate251 = new SoCoordinate();
-SoCoordinate251->setPoint(new float[]{0.108,0.00195,0.0,0.163,0.00195,0.0,0.166,-0.0473,0.0,0.194,-0.0608,0.0,0.222,-0.0492,0.0,0.228,-0.017,0.0,0.228,0.175,0.0,0.284,0.175,0.0,0.284,-0.02,0.0,0.271,-0.0798,0.0,0.23,-0.104,0.0,0.193,-0.108,0.0,0.155,-0.102,0.0,0.117,-0.0714,0.0,0.108,-0.0357,0.0,0.563,-0.101,0.0,0.563,0.103,0.0,0.615,0.103,0.0,0.615,0.0803,0.0,0.649,0.105,0.0,0.696,0.105,0.0,0.728,0.0788,0.0,0.76,0.104,0.0,0.811,0.104,0.0,0.842,0.081,0.0,0.853,0.0416,0.0,0.853,-0.101,0.0,0.799,-0.101,0.0,0.799,0.0305,0.0,0.79,0.0544,0.0,0.767,0.0616,0.0,0.743,0.0507,0.0,0.734,0.0228,0.0,0.734,-0.101,0.0,0.681,-0.101,0.0,0.681,0.0301,0.0,0.673,0.0532,0.0,0.65,0.0611,0.0,0.626,0.0506,0.0,0.617,0.0224,0.0,0.617,-0.101,0.0,0.9,-0.182,0.0,0.9,0.103,0.0,0.952,0.103,0.0,0.952,0.0751,0.0,0.968,0.0934,0.0,1.01,0.11,0.0,1.05,0.103,0.0,1.07,0.0796,0.0,1.1,0.0251,0.0,1.1,-0.0222,0.0,1.07,-0.0788,0.0,1.03,-0.106,0.0,0.988,-0.103,0.0,0.953,-0.0755,0.0,0.953,-0.182,0.0,1.04,-0.000177,0.0,1.03,-0.0446,0.0,0.999,-0.0603,0.0,0.966,-0.0453,0.0,0.953,-0.000177,0.0,0.963,0.045,0.0,0.998,0.063,0.0,1.03,0.0462,0.0,0.515,-0.101,0.0,0.462,-0.0764,0.0,0.462,-0.101,0.0,0.388,-0.0201,0.0,0.388,0.103,0.0,0.334,0.103,0.0,0.334,-0.0357,0.0,0.394,-0.0491,0.0,0.388,-0.0201,0.0,0.334,-0.0357,0.0,0.339,-0.072,0.0,0.394,-0.0491,0.0,0.339,-0.072,0.0,0.376,-0.102,0.0,0.422,-0.0604,0.0,0.394,-0.0491,0.0,0.376,-0.102,0.0,0.428,-0.101,0.0,0.451,-0.0482,0.0,0.422,-0.0604,0.0,0.428,-0.101,0.0,0.462,-0.0764,0.0,0.461,-0.0177,0.0,0.451,-0.0482,0.0,0.462,-0.0764,0.0,0.515,0.103,0.0,0.461,0.103,0.0,0.461,-0.0177,0.0,0.515,0.103,0.0,0.461,-0.0177,0.0,0.462,-0.0764,0.0,0.515,-0.101,0.0,0.515,0.103,0.0,0.462,-0.0764,0.0,0.284,-0.02,0.0,0.228,-0.017,0.0,0.271,-0.0798,0.0,0.222,-0.0492,0.0,0.23,-0.104,0.0,0.194,-0.0608,0.0,0.193,-0.108,0.0,0.194,-0.0608,0.0,0.155,-0.102,0.0,0.166,-0.0473,0.0,0.117,-0.0714,0.0,0.166,-0.0473,0.0,0.108,-0.0357,0.0,0.166,-0.0473,0.0,0.799,0.0305,0.0,0.853,0.0416,0.0,0.79,0.0544,0.0,0.842,0.081,0.0,0.79,0.0544,0.0,0.811,0.104,0.0,0.767,0.0616,0.0,0.76,0.104,0.0,0.743,0.0507,0.0,0.728,0.0788,0.0,0.734,0.0228,0.0,0.728,0.0788,0.0,0.681,0.0301,0.0,0.734,0.0228,0.0,0.673,0.0532,0.0,0.728,0.0788,0.0,0.673,0.0532,0.0,0.696,0.105,0.0,0.65,0.0611,0.0,0.649,0.105,0.0,0.626,0.0506,0.0,0.615,0.0803,0.0,0.617,0.0224,0.0,0.615,0.0803,0.0,0.563,-0.101,0.0,0.617,0.0224,0.0,0.563,-0.101,0.0,0.615,0.0803,0.0}, 420);
-SoIndexedFaceSet250->setCoord(*SoCoordinate251);
+SoShape* SoShape233 = new SoShape();
+SoShape233->setDEF(QString("Jump"));
+SoIndexedFaceSet* SoIndexedFaceSet234 = new SoIndexedFaceSet();
+SoIndexedFaceSet234->setCoordIndex(new int32_t[]{1,0,14,-1,1,14,2,-1,16,15,18,-1,16,18,17,-1,64,65,66,-1,67,68,69,-1,67,69,70,-1,71,72,73,-1,71,73,74,-1,75,76,77,-1,78,79,80,-1,78,80,81,-1,82,83,84,-1,82,84,85,-1,86,87,88,-1,89,90,91,-1,92,93,94,-1,95,96,97,-1,98,7,6,-1,98,6,99,-1,100,8,5,-1,100,5,101,-1,102,9,4,-1,102,4,103,-1,104,10,105,-1,106,11,3,-1,106,3,107,-1,108,12,109,-1,110,13,111,-1,112,27,26,-1,112,26,113,-1,114,28,25,-1,114,25,115,-1,116,24,117,-1,118,29,23,-1,118,23,119,-1,120,30,22,-1,120,22,121,-1,122,31,123,-1,124,34,33,-1,124,33,125,-1,126,35,32,-1,126,32,127,-1,128,21,129,-1,130,36,20,-1,130,20,131,-1,132,37,19,-1,132,19,133,-1,134,38,135,-1,136,40,137,-1,138,39,139,-1,53,58,59,-1,53,59,54,-1,53,52,58,-1,52,51,57,-1,52,57,58,-1,51,50,56,-1,51,56,57,-1,50,49,56,-1,49,48,63,-1,49,63,56,-1,48,47,63,-1,63,47,46,-1,63,46,62,-1,62,46,45,-1,62,45,44,-1,62,44,61,-1,61,44,60,-1,54,59,60,-1,44,43,42,-1,60,44,42,-1,41,55,54,-1,41,54,60,-1,41,60,42,-1}, 296);
+SoCoordinate* SoCoordinate235 = new SoCoordinate();
+SoCoordinate235->setPoint(new float[]{0.108,0.00195,0.0,0.163,0.00195,0.0,0.166,-0.0473,0.0,0.194,-0.0608,0.0,0.222,-0.0492,0.0,0.228,-0.017,0.0,0.228,0.175,0.0,0.284,0.175,0.0,0.284,-0.02,0.0,0.271,-0.0798,0.0,0.23,-0.104,0.0,0.193,-0.108,0.0,0.155,-0.102,0.0,0.117,-0.0714,0.0,0.108,-0.0357,0.0,0.563,-0.101,0.0,0.563,0.103,0.0,0.615,0.103,0.0,0.615,0.0803,0.0,0.649,0.105,0.0,0.696,0.105,0.0,0.728,0.0788,0.0,0.76,0.104,0.0,0.811,0.104,0.0,0.842,0.081,0.0,0.853,0.0416,0.0,0.853,-0.101,0.0,0.799,-0.101,0.0,0.799,0.0305,0.0,0.79,0.0544,0.0,0.767,0.0616,0.0,0.743,0.0507,0.0,0.734,0.0228,0.0,0.734,-0.101,0.0,0.681,-0.101,0.0,0.681,0.0301,0.0,0.673,0.0532,0.0,0.65,0.0611,0.0,0.626,0.0506,0.0,0.617,0.0224,0.0,0.617,-0.101,0.0,0.9,-0.182,0.0,0.9,0.103,0.0,0.952,0.103,0.0,0.952,0.0751,0.0,0.968,0.0934,0.0,1.01,0.11,0.0,1.05,0.103,0.0,1.07,0.0796,0.0,1.1,0.0251,0.0,1.1,-0.0222,0.0,1.07,-0.0788,0.0,1.03,-0.106,0.0,0.988,-0.103,0.0,0.953,-0.0755,0.0,0.953,-0.182,0.0,1.04,-0.000177,0.0,1.03,-0.0446,0.0,0.999,-0.0603,0.0,0.966,-0.0453,0.0,0.953,-0.000177,0.0,0.963,0.045,0.0,0.998,0.063,0.0,1.03,0.0462,0.0,0.515,-0.101,0.0,0.462,-0.0764,0.0,0.462,-0.101,0.0,0.388,-0.0201,0.0,0.388,0.103,0.0,0.334,0.103,0.0,0.334,-0.0357,0.0,0.394,-0.0491,0.0,0.388,-0.0201,0.0,0.334,-0.0357,0.0,0.339,-0.072,0.0,0.394,-0.0491,0.0,0.339,-0.072,0.0,0.376,-0.102,0.0,0.422,-0.0604,0.0,0.394,-0.0491,0.0,0.376,-0.102,0.0,0.428,-0.101,0.0,0.451,-0.0482,0.0,0.422,-0.0604,0.0,0.428,-0.101,0.0,0.462,-0.0764,0.0,0.461,-0.0177,0.0,0.451,-0.0482,0.0,0.462,-0.0764,0.0,0.515,0.103,0.0,0.461,0.103,0.0,0.461,-0.0177,0.0,0.515,0.103,0.0,0.461,-0.0177,0.0,0.462,-0.0764,0.0,0.515,-0.101,0.0,0.515,0.103,0.0,0.462,-0.0764,0.0,0.284,-0.02,0.0,0.228,-0.017,0.0,0.271,-0.0798,0.0,0.222,-0.0492,0.0,0.23,-0.104,0.0,0.194,-0.0608,0.0,0.193,-0.108,0.0,0.194,-0.0608,0.0,0.155,-0.102,0.0,0.166,-0.0473,0.0,0.117,-0.0714,0.0,0.166,-0.0473,0.0,0.108,-0.0357,0.0,0.166,-0.0473,0.0,0.799,0.0305,0.0,0.853,0.0416,0.0,0.79,0.0544,0.0,0.842,0.081,0.0,0.79,0.0544,0.0,0.811,0.104,0.0,0.767,0.0616,0.0,0.76,0.104,0.0,0.743,0.0507,0.0,0.728,0.0788,0.0,0.734,0.0228,0.0,0.728,0.0788,0.0,0.681,0.0301,0.0,0.734,0.0228,0.0,0.673,0.0532,0.0,0.728,0.0788,0.0,0.673,0.0532,0.0,0.696,0.105,0.0,0.65,0.0611,0.0,0.649,0.105,0.0,0.626,0.0506,0.0,0.615,0.0803,0.0,0.617,0.0224,0.0,0.615,0.0803,0.0,0.563,-0.101,0.0,0.617,0.0224,0.0,0.563,-0.101,0.0,0.615,0.0803,0.0}, 420);
+SoIndexedFaceSet234->setCoord(*SoCoordinate235);
 
-SoShape249->setGeometry(*SoIndexedFaceSet250);
+SoShape233->setGeometry(*SoIndexedFaceSet234);
 
-SoVRMLAppearance* SoVRMLAppearance252 = new SoVRMLAppearance();
-SoMaterial* SoMaterial253 = new SoMaterial();
-SoMaterial253->setUSE(QString("text_color"));
-SoVRMLAppearance252->addChild(*SoMaterial253);
+SoVRMLAppearance* SoVRMLAppearance236 = new SoVRMLAppearance();
+SoMaterial* SoMaterial237 = new SoMaterial();
+SoMaterial237->setUSE(QString("text_color"));
+SoVRMLAppearance236->addChild(*SoMaterial237);
 
-SoShape249->addChild(*SoVRMLAppearance252);
+SoShape233->addChild(*SoVRMLAppearance236);
 
-SoTransform247->addChild(*SoShape249);
+SoTransform231->addChild(*SoShape233);
 
-SoTransform* SoTransform254 = new SoTransform();
-SoTransform254->setScale(new float[]{83.79,83.79,83.79});
-SoTransform254->setTranslation(new float[]{-0.008979,1.99,4.14});
-SoShape* SoShape255 = new SoShape();
-SoShape255->setDEF(QString("Jump_Back"));
-SoIndexedFaceSet* SoIndexedFaceSet256 = new SoIndexedFaceSet();
-SoIndexedFaceSet256->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
-SoCoordinate* SoCoordinate257 = new SoCoordinate();
-SoCoordinate257->setPoint(new float[]{0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05}, 12);
-SoIndexedFaceSet256->setCoord(*SoCoordinate257);
+SoTransform* SoTransform238 = new SoTransform();
+SoTransform238->setScale(new float[]{83.79,83.79,83.79});
+SoTransform238->setTranslation(new float[]{-0.008979,1.99,4.14});
+SoShape* SoShape239 = new SoShape();
+SoShape239->setDEF(QString("Jump_Back"));
+SoIndexedFaceSet* SoIndexedFaceSet240 = new SoIndexedFaceSet();
+SoIndexedFaceSet240->setCoordIndex(new int32_t[]{0,2,3,-1,2,0,1,-1}, 8);
+SoCoordinate* SoCoordinate241 = new SoCoordinate();
+SoCoordinate241->setPoint(new float[]{0.001296,-0.02541,-0.05,0.01335,-0.02527,-0.05,0.01328,-0.02152,-0.05,0.001229,-0.02146,-0.05}, 12);
+SoIndexedFaceSet240->setCoord(*SoCoordinate241);
 
-SoShape255->setGeometry(*SoIndexedFaceSet256);
+SoShape239->setGeometry(*SoIndexedFaceSet240);
 
-SoVRMLAppearance* SoVRMLAppearance258 = new SoVRMLAppearance();
-SoMaterial* SoMaterial259 = new SoMaterial();
-SoMaterial259->setUSE(QString("Clear"));
-SoVRMLAppearance258->addChild(*SoMaterial259);
+SoVRMLAppearance* SoVRMLAppearance242 = new SoVRMLAppearance();
+SoMaterial* SoMaterial243 = new SoMaterial();
+SoMaterial243->setUSE(QString("Clear"));
+SoVRMLAppearance242->addChild(*SoMaterial243);
 
-SoShape255->addChild(*SoVRMLAppearance258);
+SoShape239->addChild(*SoVRMLAppearance242);
 
-SoTransform254->addChild(*SoShape255);
+SoTransform238->addChild(*SoShape239);
 
-SoTransform247->addChild(*SoTransform254);
+SoTransform231->addChild(*SoTransform238);
 
-SoTransform207->addChild(*SoTransform247);
+SoTransform191->addChild(*SoTransform231);
 
-SoTransform206->addChild(*SoTransform207);
+SoTransform190->addChild(*SoTransform191);
 
-SoCollision205->addChildren(*SoTransform206);
+SoCollision189->addChildren(*SoTransform190);
 
-SoGroup204->addChild(*SoCollision205);
+SoGroup188->addChild(*SoCollision189);
 
-SoTransform* SoTransform260 = new SoTransform();
-SoTransform260->setDEF(QString("Floor"));
-SoTransform260->setScale(new float[]{1.0,0.0125,1.0});
-SoTransform260->setTranslation(new float[]{0.0,-0.0125,0.0});
-SoShape* SoShape261 = new SoShape();
-SoBox* SoBox262 = new SoBox();
-SoShape261->setGeometry(*SoBox262);
+SoTransform* SoTransform244 = new SoTransform();
+SoTransform244->setDEF(QString("Floor"));
+SoTransform244->setScale(new float[]{1.0,0.0125,1.0});
+SoTransform244->setTranslation(new float[]{0.0,-0.0125,0.0});
+SoShape* SoShape245 = new SoShape();
+SoBox* SoBox246 = new SoBox();
+SoShape245->setGeometry(*SoBox246);
 
-SoVRMLAppearance* SoVRMLAppearance263 = new SoVRMLAppearance();
-SoMaterial* SoMaterial264 = new SoMaterial();
-SoVRMLAppearance263->addChild(*SoMaterial264);
+SoVRMLAppearance* SoVRMLAppearance247 = new SoVRMLAppearance();
+SoMaterial* SoMaterial248 = new SoMaterial();
+SoVRMLAppearance247->addChild(*SoMaterial248);
 
-SoShape261->addChild(*SoVRMLAppearance263);
+SoShape245->addChild(*SoVRMLAppearance247);
 
-SoTransform260->addChild(*SoShape261);
+SoTransform244->addChild(*SoShape245);
 
-SoGroup204->addChild(*SoTransform260);
+SoGroup188->addChild(*SoTransform244);
 
-SoNode21->addChild(*SoGroup204);
+SoNode21->addChild(*SoGroup188);
 
-SoGroup* SoGroup265 = new SoGroup();
-SoGroup265->setDEF(QString("Animations"));
-SoGroup* SoGroup266 = new SoGroup();
-SoGroup266->setDEF(QString("Stand_Animation"));
+SoGroup* SoGroup249 = new SoGroup();
+SoGroup249->setDEF(QString("Animations"));
+SoGroup* SoGroup250 = new SoGroup();
+SoGroup250->setDEF(QString("Stand_Animation"));
+SoOrientationInterpolator* SoOrientationInterpolator251 = new SoOrientationInterpolator();
+SoOrientationInterpolator251->setDEF(QString("r_ankle_RotationInterpolator_Stand"));
+SoOrientationInterpolator251->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator251->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator251);
+
+SoOrientationInterpolator* SoOrientationInterpolator252 = new SoOrientationInterpolator();
+SoOrientationInterpolator252->setDEF(QString("r_knee_RotationInterpolator_Stand"));
+SoOrientationInterpolator252->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator252->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator252);
+
+SoOrientationInterpolator* SoOrientationInterpolator253 = new SoOrientationInterpolator();
+SoOrientationInterpolator253->setDEF(QString("r_hip_RotationInterpolator_Stand"));
+SoOrientationInterpolator253->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator253->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator253);
+
+SoOrientationInterpolator* SoOrientationInterpolator254 = new SoOrientationInterpolator();
+SoOrientationInterpolator254->setDEF(QString("l_ankle_RotationInterpolator_Stand"));
+SoOrientationInterpolator254->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator254->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator254);
+
+SoOrientationInterpolator* SoOrientationInterpolator255 = new SoOrientationInterpolator();
+SoOrientationInterpolator255->setDEF(QString("l_knee_RotationInterpolator_Stand"));
+SoOrientationInterpolator255->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator255->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator255);
+
+SoOrientationInterpolator* SoOrientationInterpolator256 = new SoOrientationInterpolator();
+SoOrientationInterpolator256->setDEF(QString("l_hip_RotationInterpolator_Stand"));
+SoOrientationInterpolator256->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator256->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator256);
+
+SoOrientationInterpolator* SoOrientationInterpolator257 = new SoOrientationInterpolator();
+SoOrientationInterpolator257->setDEF(QString("lower_body_RotationInterpolator_Stand"));
+SoOrientationInterpolator257->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator257->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator257);
+
+SoOrientationInterpolator* SoOrientationInterpolator258 = new SoOrientationInterpolator();
+SoOrientationInterpolator258->setDEF(QString("r_wrist_RotationInterpolator_Stand"));
+SoOrientationInterpolator258->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator258->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator258);
+
+SoOrientationInterpolator* SoOrientationInterpolator259 = new SoOrientationInterpolator();
+SoOrientationInterpolator259->setDEF(QString("r_elbow_RotationInterpolator_Stand"));
+SoOrientationInterpolator259->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator259->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator259);
+
+SoOrientationInterpolator* SoOrientationInterpolator260 = new SoOrientationInterpolator();
+SoOrientationInterpolator260->setDEF(QString("r_shoulder_RotationInterpolator_Stand"));
+SoOrientationInterpolator260->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator260->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator260);
+
+SoOrientationInterpolator* SoOrientationInterpolator261 = new SoOrientationInterpolator();
+SoOrientationInterpolator261->setDEF(QString("l_wrist_RotationInterpolator_Stand"));
+SoOrientationInterpolator261->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator261->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator261);
+
+SoOrientationInterpolator* SoOrientationInterpolator262 = new SoOrientationInterpolator();
+SoOrientationInterpolator262->setDEF(QString("l_elbow_RotationInterpolator_Stand"));
+SoOrientationInterpolator262->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator262->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator262);
+
+SoOrientationInterpolator* SoOrientationInterpolator263 = new SoOrientationInterpolator();
+SoOrientationInterpolator263->setDEF(QString("l_shoulder_RotationInterpolator_Stand"));
+SoOrientationInterpolator263->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator263->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator263);
+
+SoOrientationInterpolator* SoOrientationInterpolator264 = new SoOrientationInterpolator();
+SoOrientationInterpolator264->setDEF(QString("head_RotationInterpolator_Stand"));
+SoOrientationInterpolator264->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator264->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator264);
+
+SoOrientationInterpolator* SoOrientationInterpolator265 = new SoOrientationInterpolator();
+SoOrientationInterpolator265->setDEF(QString("neck_RotationInterpolator_Stand"));
+SoOrientationInterpolator265->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator265->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator265);
+
+SoOrientationInterpolator* SoOrientationInterpolator266 = new SoOrientationInterpolator();
+SoOrientationInterpolator266->setDEF(QString("upper_body_RotationInterpolator_Stand"));
+SoOrientationInterpolator266->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator266->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup250->addChild(*SoOrientationInterpolator266);
+
 SoOrientationInterpolator* SoOrientationInterpolator267 = new SoOrientationInterpolator();
-SoOrientationInterpolator267->setDEF(QString("r_ankle_RotationInterpolator_Stand"));
+SoOrientationInterpolator267->setDEF(QString("whole_body_RotationInterpolator_Stand"));
 SoOrientationInterpolator267->setKey(new float[]{0.0,1.0}, 2);
 SoOrientationInterpolator267->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator267);
+SoGroup250->addChild(*SoOrientationInterpolator267);
 
-SoOrientationInterpolator* SoOrientationInterpolator268 = new SoOrientationInterpolator();
-SoOrientationInterpolator268->setDEF(QString("r_knee_RotationInterpolator_Stand"));
-SoOrientationInterpolator268->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator268->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator268);
+SoPositionInterpolator* SoPositionInterpolator268 = new SoPositionInterpolator();
+SoPositionInterpolator268->setDEF(QString("whole_body_TranslationInterpolator_Stand"));
+SoPositionInterpolator268->setKey(new float[]{0.0,1.0}, 2);
+SoPositionInterpolator268->setKeyValue(new float[]{0.0,0.0,0.0,0.0,0.0,0.0}, 6);
+SoGroup250->addChild(*SoPositionInterpolator268);
 
-SoOrientationInterpolator* SoOrientationInterpolator269 = new SoOrientationInterpolator();
-SoOrientationInterpolator269->setDEF(QString("r_hip_RotationInterpolator_Stand"));
-SoOrientationInterpolator269->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator269->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator269);
+SoTimeSensor* SoTimeSensor269 = new SoTimeSensor();
+SoTimeSensor269->setDEF(QString("Stand_Time"));
+SoTimeSensor269->setCycleInterval(0.009999999776482582);
+SoGroup250->addChild(*SoTimeSensor269);
 
-SoOrientationInterpolator* SoOrientationInterpolator270 = new SoOrientationInterpolator();
-SoOrientationInterpolator270->setDEF(QString("l_ankle_RotationInterpolator_Stand"));
-SoOrientationInterpolator270->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator270->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator270);
+SoGroup249->addChild(*SoGroup250);
 
+SoGroup* SoGroup270 = new SoGroup();
+SoGroup270->setDEF(QString("Walk_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator271 = new SoOrientationInterpolator();
-SoOrientationInterpolator271->setDEF(QString("l_knee_RotationInterpolator_Stand"));
-SoOrientationInterpolator271->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator271->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator271);
+SoOrientationInterpolator271->setDEF(QString("r_ankle_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator271->setKey(new float[]{0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0}, 11);
+SoOrientationInterpolator271->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322,0.0,0.0,1.0,0.0}, 44);
+SoGroup270->addChild(*SoOrientationInterpolator271);
 
 SoOrientationInterpolator* SoOrientationInterpolator272 = new SoOrientationInterpolator();
-SoOrientationInterpolator272->setDEF(QString("l_hip_RotationInterpolator_Stand"));
-SoOrientationInterpolator272->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator272->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator272);
+SoOrientationInterpolator272->setDEF(QString("r_knee_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator272->setKey(new float[]{0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 10);
+SoOrientationInterpolator272->setKeyValue(new float[]{1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573}, 40);
+SoGroup270->addChild(*SoOrientationInterpolator272);
 
 SoOrientationInterpolator* SoOrientationInterpolator273 = new SoOrientationInterpolator();
-SoOrientationInterpolator273->setDEF(QString("lower_body_RotationInterpolator_Stand"));
-SoOrientationInterpolator273->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator273->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator273);
+SoOrientationInterpolator273->setDEF(QString("r_hip_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator273->setKey(new float[]{0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 10);
+SoOrientationInterpolator273->setKeyValue(new float[]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481}, 40);
+SoGroup270->addChild(*SoOrientationInterpolator273);
 
 SoOrientationInterpolator* SoOrientationInterpolator274 = new SoOrientationInterpolator();
-SoOrientationInterpolator274->setDEF(QString("r_wrist_RotationInterpolator_Stand"));
-SoOrientationInterpolator274->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator274->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator274);
+SoOrientationInterpolator274->setDEF(QString("l_ankle_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator274->setKey(new float[]{0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0}, 7);
+SoOrientationInterpolator274->setKeyValue(new float[]{-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714}, 28);
+SoGroup270->addChild(*SoOrientationInterpolator274);
 
 SoOrientationInterpolator* SoOrientationInterpolator275 = new SoOrientationInterpolator();
-SoOrientationInterpolator275->setDEF(QString("r_elbow_RotationInterpolator_Stand"));
-SoOrientationInterpolator275->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator275->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator275);
+SoOrientationInterpolator275->setDEF(QString("l_knee_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator275->setKey(new float[]{0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 8);
+SoOrientationInterpolator275->setKeyValue(new float[]{1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226}, 32);
+SoGroup270->addChild(*SoOrientationInterpolator275);
 
 SoOrientationInterpolator* SoOrientationInterpolator276 = new SoOrientationInterpolator();
-SoOrientationInterpolator276->setDEF(QString("r_shoulder_RotationInterpolator_Stand"));
-SoOrientationInterpolator276->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator276->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator276);
+SoOrientationInterpolator276->setDEF(QString("l_hip_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator276->setKey(new float[]{0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 8);
+SoOrientationInterpolator276->setKeyValue(new float[]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865}, 32);
+SoGroup270->addChild(*SoOrientationInterpolator276);
 
 SoOrientationInterpolator* SoOrientationInterpolator277 = new SoOrientationInterpolator();
-SoOrientationInterpolator277->setDEF(QString("l_wrist_RotationInterpolator_Stand"));
-SoOrientationInterpolator277->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator277->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator277);
+SoOrientationInterpolator277->setDEF(QString("lower_body_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator277->setKey(new float[]{0.0,0.5,1.0}, 3);
+SoOrientationInterpolator277->setKeyValue(new float[]{0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056}, 12);
+SoGroup270->addChild(*SoOrientationInterpolator277);
 
 SoOrientationInterpolator* SoOrientationInterpolator278 = new SoOrientationInterpolator();
-SoOrientationInterpolator278->setDEF(QString("l_elbow_RotationInterpolator_Stand"));
-SoOrientationInterpolator278->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator278->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator278);
+SoOrientationInterpolator278->setDEF(QString("r_wrist_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator278->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator278->setKeyValue(new float[]{-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator278);
 
 SoOrientationInterpolator* SoOrientationInterpolator279 = new SoOrientationInterpolator();
-SoOrientationInterpolator279->setDEF(QString("l_shoulder_RotationInterpolator_Stand"));
-SoOrientationInterpolator279->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator279->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator279);
+SoOrientationInterpolator279->setDEF(QString("r_elbow_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator279->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator279->setKeyValue(new float[]{-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator279);
 
 SoOrientationInterpolator* SoOrientationInterpolator280 = new SoOrientationInterpolator();
-SoOrientationInterpolator280->setDEF(QString("head_RotationInterpolator_Stand"));
-SoOrientationInterpolator280->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator280->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator280);
+SoOrientationInterpolator280->setDEF(QString("r_shoulder_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator280->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator280->setKeyValue(new float[]{-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator280);
 
 SoOrientationInterpolator* SoOrientationInterpolator281 = new SoOrientationInterpolator();
-SoOrientationInterpolator281->setDEF(QString("neck_RotationInterpolator_Stand"));
-SoOrientationInterpolator281->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator281->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator281);
+SoOrientationInterpolator281->setDEF(QString("l_wrist_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator281->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator281->setKeyValue(new float[]{0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator281);
 
 SoOrientationInterpolator* SoOrientationInterpolator282 = new SoOrientationInterpolator();
-SoOrientationInterpolator282->setDEF(QString("upper_body_RotationInterpolator_Stand"));
-SoOrientationInterpolator282->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator282->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator282);
+SoOrientationInterpolator282->setDEF(QString("l_elbow_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator282->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator282->setKeyValue(new float[]{-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator282);
 
 SoOrientationInterpolator* SoOrientationInterpolator283 = new SoOrientationInterpolator();
-SoOrientationInterpolator283->setDEF(QString("whole_body_RotationInterpolator_Stand"));
-SoOrientationInterpolator283->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator283->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup266->addChild(*SoOrientationInterpolator283);
+SoOrientationInterpolator283->setDEF(QString("l_shoulder_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator283->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
+SoOrientationInterpolator283->setKeyValue(new float[]{1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189}, 16);
+SoGroup270->addChild(*SoOrientationInterpolator283);
 
-SoPositionInterpolator* SoPositionInterpolator284 = new SoPositionInterpolator();
-SoPositionInterpolator284->setDEF(QString("whole_body_TranslationInterpolator_Stand"));
-SoPositionInterpolator284->setKey(new float[]{0.0,1.0}, 2);
-SoPositionInterpolator284->setKeyValue(new float[]{0.0,0.0,0.0,0.0,0.0,0.0}, 6);
-SoGroup266->addChild(*SoPositionInterpolator284);
+SoOrientationInterpolator* SoOrientationInterpolator284 = new SoOrientationInterpolator();
+SoOrientationInterpolator284->setDEF(QString("head_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator284->setKey(new float[]{0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0}, 10);
+SoOrientationInterpolator284->setKeyValue(new float[]{0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642}, 40);
+SoGroup270->addChild(*SoOrientationInterpolator284);
 
-SoTimeSensor* SoTimeSensor285 = new SoTimeSensor();
-SoTimeSensor285->setDEF(QString("Stand_Time"));
-SoTimeSensor285->setCycleInterval(0.009999999776482582);
-SoGroup266->addChild(*SoTimeSensor285);
+SoOrientationInterpolator* SoOrientationInterpolator285 = new SoOrientationInterpolator();
+SoOrientationInterpolator285->setDEF(QString("neck_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator285->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator285->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup270->addChild(*SoOrientationInterpolator285);
 
-SoGroup265->addChild(*SoGroup266);
+SoOrientationInterpolator* SoOrientationInterpolator286 = new SoOrientationInterpolator();
+SoOrientationInterpolator286->setDEF(QString("upper_body_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator286->setKey(new float[]{0.0,0.2083,0.375,0.75,0.8333,1.0}, 6);
+SoOrientationInterpolator286->setKeyValue(new float[]{0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826}, 24);
+SoGroup270->addChild(*SoOrientationInterpolator286);
 
-SoGroup* SoGroup286 = new SoGroup();
-SoGroup286->setDEF(QString("Walk_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator287 = new SoOrientationInterpolator();
-SoOrientationInterpolator287->setDEF(QString("r_ankle_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator287->setKey(new float[]{0.0,0.125,0.2083,0.375,0.4583,0.5,0.6667,0.75,0.7917,0.9167,1.0}, 11);
-SoOrientationInterpolator287->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.3533,-1.0,0.0,0.0,0.1072,1.0,0.0,0.0,0.2612,1.0,0.0,0.0,0.1268,-1.0,0.0,0.0,0.01793,-1.0,0.0,0.0,0.05824,-1.0,0.0,0.0,0.2398,-1.0,0.0,0.0,0.35,-1.0,0.0,0.0,0.3322,0.0,0.0,1.0,0.0}, 44);
-SoGroup286->addChild(*SoOrientationInterpolator287);
+SoOrientationInterpolator287->setDEF(QString("whole_body_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator287->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator287->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup270->addChild(*SoOrientationInterpolator287);
 
-SoOrientationInterpolator* SoOrientationInterpolator288 = new SoOrientationInterpolator();
-SoOrientationInterpolator288->setDEF(QString("r_knee_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator288->setKey(new float[]{0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 10);
-SoOrientationInterpolator288->setKeyValue(new float[]{1.0,0.0,0.0,0.8573,1.0,0.0,0.0,0.8926,1.0,0.0,0.0,0.5351,1.0,0.0,0.0,0.1756,1.0,0.0,0.0,0.1194,1.0,0.0,0.0,0.3153,1.0,0.0,0.0,0.09354,1.0,0.0,0.0,0.08558,1.0,0.0,0.0,0.2475,1.0,0.0,0.0,0.8573}, 40);
-SoGroup286->addChild(*SoOrientationInterpolator288);
+SoPositionInterpolator* SoPositionInterpolator288 = new SoPositionInterpolator();
+SoPositionInterpolator288->setDEF(QString("whole_body_TranslationInterpolator_BasicWalk"));
+SoPositionInterpolator288->setKey(new float[]{0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0}, 19);
+SoPositionInterpolator288->setKeyValue(new float[]{0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0}, 57);
+SoGroup270->addChild(*SoPositionInterpolator288);
 
-SoOrientationInterpolator* SoOrientationInterpolator289 = new SoOrientationInterpolator();
-SoOrientationInterpolator289->setDEF(QString("r_hip_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator289->setKey(new float[]{0.0,0.125,0.2083,0.2917,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 10);
-SoOrientationInterpolator289->setKeyValue(new float[]{-0.5831,0.03511,0.8116,0.1481,-0.995,0.02296,0.09674,0.4683,-1.0,0.00192,0.007964,0.4732,-0.998,-0.0158,-0.06102,0.5079,-0.9911,-0.03541,-0.1286,0.5419,-0.9131,-0.06243,-0.403,0.3361,-0.4306,-0.07962,-0.899,0.07038,1.0,0.0,0.0,0.2571,0.9891,-0.02805,0.1444,0.3879,-0.5831,0.03511,0.8116,0.1481}, 40);
-SoGroup286->addChild(*SoOrientationInterpolator289);
+SoTimeSensor* SoTimeSensor289 = new SoTimeSensor();
+SoTimeSensor289->setDEF(QString("Walk_Time"));
+SoTimeSensor289->setCycleInterval(2);
+SoTimeSensor289->setLoop(true);
+SoTimeSensor289->setStartTime(-1);
+SoGroup270->addChild(*SoTimeSensor289);
 
-SoOrientationInterpolator* SoOrientationInterpolator290 = new SoOrientationInterpolator();
-SoOrientationInterpolator290->setDEF(QString("l_ankle_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator290->setKey(new float[]{0.0,0.125,0.2083,0.375,0.6667,0.9167,1.0}, 7);
-SoOrientationInterpolator290->setKeyValue(new float[]{-1.0,0.0,0.0,0.06714,-1.0,0.0,0.0,0.2152,-1.0,0.0,0.0,0.3184,-1.0,0.0,0.0,0.4717,-1.0,0.0,0.0,0.2912,1.0,0.0,0.0,0.1222,-1.0,0.0,0.0,0.06714}, 28);
-SoGroup286->addChild(*SoOrientationInterpolator290);
+SoGroup249->addChild(*SoGroup270);
 
+SoGroup* SoGroup290 = new SoGroup();
+SoGroup290->setDEF(QString("Run_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator291 = new SoOrientationInterpolator();
-SoOrientationInterpolator291->setDEF(QString("l_knee_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator291->setKey(new float[]{0.0,0.2083,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 8);
-SoOrientationInterpolator291->setKeyValue(new float[]{1.0,0.0,0.0,0.3226,1.0,0.0,0.0,0.1556,1.0,0.0,0.0,0.08678,1.0,0.0,0.0,0.8751,1.0,0.0,0.0,1.131,1.0,0.0,0.0,0.09961,1.0,0.0,0.0,0.3942,1.0,0.0,0.0,0.3226}, 32);
-SoGroup286->addChild(*SoOrientationInterpolator291);
+SoOrientationInterpolator291->setDEF(QString("r_ankle_RotationInterpolator_Run"));
+SoOrientationInterpolator291->setKey(new float[]{0.0,0.4909,0.7091,0.8,0.8182,1.0}, 6);
+SoOrientationInterpolator291->setKeyValue(new float[]{1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323}, 24);
+SoGroup290->addChild(*SoOrientationInterpolator291);
 
 SoOrientationInterpolator* SoOrientationInterpolator292 = new SoOrientationInterpolator();
-SoOrientationInterpolator292->setDEF(QString("l_hip_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator292->setKey(new float[]{0.0,0.25,0.375,0.5,0.6667,0.7917,0.9167,1.0}, 8);
-SoOrientationInterpolator292->setKeyValue(new float[]{-0.873,0.06094,0.484,0.2865,0.9963,-0.01057,0.08481,0.2488,0.9965,0.01591,-0.08222,0.3836,-0.7018,-0.03223,-0.7117,0.1289,-1.0,0.0,0.0,0.5518,-0.9964,0.02231,0.0817,0.5351,-0.9809,0.04912,0.1881,0.5204,-0.873,0.06094,0.484,0.2865}, 32);
-SoGroup286->addChild(*SoOrientationInterpolator292);
+SoOrientationInterpolator292->setDEF(QString("r_knee_RotationInterpolator_Run"));
+SoOrientationInterpolator292->setKey(new float[]{0.0,0.03636,0.2182,0.4909,0.7455,1.0}, 6);
+SoOrientationInterpolator292->setKeyValue(new float[]{1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004}, 24);
+SoGroup290->addChild(*SoOrientationInterpolator292);
 
 SoOrientationInterpolator* SoOrientationInterpolator293 = new SoOrientationInterpolator();
-SoOrientationInterpolator293->setDEF(QString("lower_body_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator293->setKey(new float[]{0.0,0.5,1.0}, 3);
-SoOrientationInterpolator293->setKeyValue(new float[]{0.0,0.0,-1.0,0.1056,0.0,0.0,1.0,0.09018,0.0,0.0,-1.0,0.1056}, 12);
-SoGroup286->addChild(*SoOrientationInterpolator293);
+SoOrientationInterpolator293->setDEF(QString("r_hip_RotationInterpolator_Run"));
+SoOrientationInterpolator293->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator293->setKeyValue(new float[]{0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator293);
 
 SoOrientationInterpolator* SoOrientationInterpolator294 = new SoOrientationInterpolator();
-SoOrientationInterpolator294->setDEF(QString("r_wrist_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator294->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator294->setKeyValue(new float[]{-0.8129,0.4759,-0.3357,0.1346,0.1533,-0.9878,0.02582,0.3902,-0.5701,0.7604,-0.311,0.366,-0.8129,0.4759,-0.3357,0.1346}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator294);
+SoOrientationInterpolator294->setDEF(QString("l_ankle_RotationInterpolator_Run"));
+SoOrientationInterpolator294->setKey(new float[]{0.0,0.2182,0.3091,0.4909,1.0}, 5);
+SoOrientationInterpolator294->setKeyValue(new float[]{1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator294);
 
 SoOrientationInterpolator* SoOrientationInterpolator295 = new SoOrientationInterpolator();
-SoOrientationInterpolator295->setDEF(QString("r_elbow_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator295->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator295->setKeyValue(new float[]{-1.0,0.0,0.0,0.411508,-1.0,0.0,0.0,0.0925011,-1.0,0.0,0.0,0.572568,-1.0,0.0,0.0,0.411508}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator295);
+SoOrientationInterpolator295->setDEF(QString("l_knee_RotationInterpolator_Run"));
+SoOrientationInterpolator295->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator295->setKeyValue(new float[]{1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator295);
 
 SoOrientationInterpolator* SoOrientationInterpolator296 = new SoOrientationInterpolator();
-SoOrientationInterpolator296->setDEF(QString("r_shoulder_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator296->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator296->setKeyValue(new float[]{-1.0,0.0,0.0,0.09346,1.0,0.0,0.0,0.3197,-1.0,0.0,0.0,0.1564,-1.0,0.0,0.0,0.09346}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator296);
+SoOrientationInterpolator296->setDEF(QString("l_hip_RotationInterpolator_Run"));
+SoOrientationInterpolator296->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator296->setKeyValue(new float[]{-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator296);
 
 SoOrientationInterpolator* SoOrientationInterpolator297 = new SoOrientationInterpolator();
-SoOrientationInterpolator297->setDEF(QString("l_wrist_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator297->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator297->setKeyValue(new float[]{0.0,-1.0,0.0,0.461076,-0.330195,-0.927451,0.175516,0.538852,0.0327774,-0.999314,-0.0172185,0.492033,0.0,-1.0,0.0,0.461076}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator297);
+SoOrientationInterpolator297->setDEF(QString("lower_body_RotationInterpolator_Run"));
+SoOrientationInterpolator297->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator297->setKeyValue(new float[]{0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687}, 8);
+SoGroup290->addChild(*SoOrientationInterpolator297);
 
 SoOrientationInterpolator* SoOrientationInterpolator298 = new SoOrientationInterpolator();
-SoOrientationInterpolator298->setDEF(QString("l_elbow_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator298->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator298->setKeyValue(new float[]{-1.0,0.0,0.0,0.0659878,-1.0,0.0,0.0,0.488383,-1.0,0.0,0.0,0.0177536,-1.0,0.0,0.0,0.0659878}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator298);
+SoOrientationInterpolator298->setDEF(QString("r_wrist_RotationInterpolator_Run"));
+SoOrientationInterpolator298->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator298->setKeyValue(new float[]{-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273}, 8);
+SoGroup290->addChild(*SoOrientationInterpolator298);
 
 SoOrientationInterpolator* SoOrientationInterpolator299 = new SoOrientationInterpolator();
-SoOrientationInterpolator299->setDEF(QString("l_shoulder_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator299->setKey(new float[]{0.0,0.375,0.9167,1.0}, 4);
-SoOrientationInterpolator299->setKeyValue(new float[]{1.0,0.0,0.0,0.1189,-1.0,0.0,0.0,0.1861,1.0,0.0,0.0,0.3357,1.0,0.0,0.0,0.1189}, 16);
-SoGroup286->addChild(*SoOrientationInterpolator299);
+SoOrientationInterpolator299->setDEF(QString("r_elbow_RotationInterpolator_Run"));
+SoOrientationInterpolator299->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator299->setKeyValue(new float[]{0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator299);
 
 SoOrientationInterpolator* SoOrientationInterpolator300 = new SoOrientationInterpolator();
-SoOrientationInterpolator300->setDEF(QString("head_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator300->setKey(new float[]{0.0,0.375,0.4167,0.5,0.5833,0.6667,0.75,0.8333,0.9167,1.0}, 10);
-SoOrientationInterpolator300->setKeyValue(new float[]{0.0,-1.0,0.0,0.08642,0.0,1.0,0.0,0.1825,0.0,1.0,0.0,0.1505,0.0,1.0,0.0,0.1053,0.0,1.0,0.0,0.04391,0.0,-1.0,0.0,0.03119,0.0,-1.0,0.0,0.07936,0.0,-1.0,0.0,0.1616,0.0,-1.0,0.0,0.155,0.0,-1.0,0.0,0.08642}, 40);
-SoGroup286->addChild(*SoOrientationInterpolator300);
+SoOrientationInterpolator300->setDEF(QString("r_shoulder_RotationInterpolator_Run"));
+SoOrientationInterpolator300->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator300->setKeyValue(new float[]{-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator300);
 
 SoOrientationInterpolator* SoOrientationInterpolator301 = new SoOrientationInterpolator();
-SoOrientationInterpolator301->setDEF(QString("neck_RotationInterpolator_BasicWalk"));
+SoOrientationInterpolator301->setDEF(QString("l_wrist_RotationInterpolator_Run"));
 SoOrientationInterpolator301->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator301->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup286->addChild(*SoOrientationInterpolator301);
+SoOrientationInterpolator301->setKeyValue(new float[]{-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409}, 8);
+SoGroup290->addChild(*SoOrientationInterpolator301);
 
 SoOrientationInterpolator* SoOrientationInterpolator302 = new SoOrientationInterpolator();
-SoOrientationInterpolator302->setDEF(QString("upper_body_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator302->setKey(new float[]{0.0,0.2083,0.375,0.75,0.8333,1.0}, 6);
-SoOrientationInterpolator302->setKeyValue(new float[]{0.0,1.0,0.0,0.0826,-0.01972,-0.5974,0.8017,0.08231,0.009296,-0.9648,0.2627,0.1734,-0.01238,0.9549,-0.2968,0.08732,-0.008125,0.9691,-0.2463,0.158,0.0,1.0,0.0,0.0826}, 24);
-SoGroup286->addChild(*SoOrientationInterpolator302);
+SoOrientationInterpolator302->setDEF(QString("l_elbow_RotationInterpolator_Run"));
+SoOrientationInterpolator302->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator302->setKeyValue(new float[]{0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator302);
 
 SoOrientationInterpolator* SoOrientationInterpolator303 = new SoOrientationInterpolator();
-SoOrientationInterpolator303->setDEF(QString("whole_body_RotationInterpolator_BasicWalk"));
-SoOrientationInterpolator303->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator303->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup286->addChild(*SoOrientationInterpolator303);
+SoOrientationInterpolator303->setDEF(QString("l_shoulder_RotationInterpolator_Run"));
+SoOrientationInterpolator303->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
+SoOrientationInterpolator303->setKeyValue(new float[]{0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator303);
 
-SoPositionInterpolator* SoPositionInterpolator304 = new SoPositionInterpolator();
-SoPositionInterpolator304->setDEF(QString("whole_body_TranslationInterpolator_BasicWalk"));
-SoPositionInterpolator304->setKey(new float[]{0.0,0.04167,0.125,0.1667,0.2083,0.25,0.2917,0.375,0.4583,0.5,0.5417,0.5833,0.625,0.7083,0.75,0.7917,0.875,0.9167,1.0}, 19);
-SoPositionInterpolator304->setKeyValue(new float[]{0.0,-0.00928,0.0,0.0,-0.003858,0.0,0.0,-0.008847,0.0,0.0,-0.01486,0.0,0.0,-0.02641,0.0,0.0,-0.03934,0.0,0.0,-0.0502,0.0,0.0,-0.07469,0.0,0.0,-0.02732,0.0,0.0,-0.01608,0.0,0.0,-0.01129,0.0,0.0,-0.005819,0.0,0.0,-0.002004,0.0,0.0,-0.002579,0.0,0.0,-0.0143,0.0,0.0,-0.03799,0.0,0.0,-0.05648,0.0,0.0,-0.045,0.0,0.0,-0.00928,0.0}, 57);
-SoGroup286->addChild(*SoPositionInterpolator304);
+SoOrientationInterpolator* SoOrientationInterpolator304 = new SoOrientationInterpolator();
+SoOrientationInterpolator304->setDEF(QString("head_RotationInterpolator_Run"));
+SoOrientationInterpolator304->setKey(new float[]{0.0,0.4909,1.0}, 3);
+SoOrientationInterpolator304->setKeyValue(new float[]{0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508}, 12);
+SoGroup290->addChild(*SoOrientationInterpolator304);
 
-SoTimeSensor* SoTimeSensor305 = new SoTimeSensor();
-SoTimeSensor305->setDEF(QString("Walk_Time"));
-SoTimeSensor305->setCycleInterval(2);
-SoTimeSensor305->setLoop(true);
-SoTimeSensor305->setStartTime(-1);
-SoGroup286->addChild(*SoTimeSensor305);
+SoOrientationInterpolator* SoOrientationInterpolator305 = new SoOrientationInterpolator();
+SoOrientationInterpolator305->setDEF(QString("neck_RotationInterpolator_Run"));
+SoOrientationInterpolator305->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator305->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup290->addChild(*SoOrientationInterpolator305);
 
-SoGroup265->addChild(*SoGroup286);
+SoOrientationInterpolator* SoOrientationInterpolator306 = new SoOrientationInterpolator();
+SoOrientationInterpolator306->setDEF(QString("upper_body_RotationInterpolator_Run"));
+SoOrientationInterpolator306->setKey(new float[]{0.0,0.2545,0.4909,0.7636,1.0}, 5);
+SoOrientationInterpolator306->setKeyValue(new float[]{0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712}, 20);
+SoGroup290->addChild(*SoOrientationInterpolator306);
 
-SoGroup* SoGroup306 = new SoGroup();
-SoGroup306->setDEF(QString("Run_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator307 = new SoOrientationInterpolator();
-SoOrientationInterpolator307->setDEF(QString("r_ankle_RotationInterpolator_Run"));
-SoOrientationInterpolator307->setKey(new float[]{0.0,0.4909,0.7091,0.8,0.8182,1.0}, 6);
-SoOrientationInterpolator307->setKeyValue(new float[]{1.0,0.0,0.0,0.2323,-1.0,0.0,0.0,0.07843,-1.0,0.0,0.0,0.09676,-1.0,0.0,0.0,0.3274,-1.0,0.0,0.0,0.3278,1.0,0.0,0.0,0.2323}, 24);
-SoGroup306->addChild(*SoOrientationInterpolator307);
+SoOrientationInterpolator307->setDEF(QString("whole_body_RotationInterpolator_Run"));
+SoOrientationInterpolator307->setKey(new float[]{0.0,1.0}, 2);
+SoOrientationInterpolator307->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
+SoGroup290->addChild(*SoOrientationInterpolator307);
 
-SoOrientationInterpolator* SoOrientationInterpolator308 = new SoOrientationInterpolator();
-SoOrientationInterpolator308->setDEF(QString("r_knee_RotationInterpolator_Run"));
-SoOrientationInterpolator308->setKey(new float[]{0.0,0.03636,0.2182,0.4909,0.7455,1.0}, 6);
-SoOrientationInterpolator308->setKeyValue(new float[]{1.0,0.0,0.0,0.7004,1.0,0.0,0.0,1.011,1.0,0.0,0.0,1.892,1.0,0.0,0.0,1.188,1.0,0.0,0.0,0.3964,1.0,0.0,0.0,0.7004}, 24);
-SoGroup306->addChild(*SoOrientationInterpolator308);
+SoPositionInterpolator* SoPositionInterpolator308 = new SoPositionInterpolator();
+SoPositionInterpolator308->setDEF(QString("whole_body_TranslationInterpolator_Run"));
+SoPositionInterpolator308->setKey(new float[]{0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0}, 8);
+SoPositionInterpolator308->setKeyValue(new float[]{0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0}, 24);
+SoGroup290->addChild(*SoPositionInterpolator308);
 
-SoOrientationInterpolator* SoOrientationInterpolator309 = new SoOrientationInterpolator();
-SoOrientationInterpolator309->setDEF(QString("r_hip_RotationInterpolator_Run"));
-SoOrientationInterpolator309->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator309->setKeyValue(new float[]{0.9999,0.00293,-0.00989,0.402,-1.0,0.004977,-0.00497,0.5943,-1.0,0.003265,-0.001752,1.178,-0.9999,0.00815,-0.01093,0.3031,0.9999,0.00293,-0.00989,0.402}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator309);
+SoTimeSensor* SoTimeSensor309 = new SoTimeSensor();
+SoTimeSensor309->setDEF(QString("Run_Time"));
+SoTimeSensor309->setLoop(true);
+SoTimeSensor309->setStartTime(-1);
+SoGroup290->addChild(*SoTimeSensor309);
 
-SoOrientationInterpolator* SoOrientationInterpolator310 = new SoOrientationInterpolator();
-SoOrientationInterpolator310->setDEF(QString("l_ankle_RotationInterpolator_Run"));
-SoOrientationInterpolator310->setKey(new float[]{0.0,0.2182,0.3091,0.4909,1.0}, 5);
-SoOrientationInterpolator310->setKeyValue(new float[]{1.0,0.0,0.0,0.03543,-1.0,0.0,0.0,0.1037,-1.0,0.0,0.0,0.4328,1.0,0.0,0.0,0.1929,1.0,0.0,0.0,0.03543}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator310);
+SoGroup249->addChild(*SoGroup290);
 
+SoGroup* SoGroup310 = new SoGroup();
+SoGroup310->setDEF(QString("Jump_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator311 = new SoOrientationInterpolator();
-SoOrientationInterpolator311->setDEF(QString("l_knee_RotationInterpolator_Run"));
-SoOrientationInterpolator311->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator311->setKeyValue(new float[]{1.0,0.0,0.0,1.108,1.0,0.0,0.0,0.4265,1.0,0.0,0.0,0.7052,1.0,0.0,0.0,2.179,1.0,0.0,0.0,1.108}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator311);
+SoOrientationInterpolator311->setDEF(QString("r_ankle_RotationInterpolator_Jump"));
+SoOrientationInterpolator311->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0}, 14);
+SoOrientationInterpolator311->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,0.3001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087,-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0}, 56);
+SoGroup310->addChild(*SoOrientationInterpolator311);
 
 SoOrientationInterpolator* SoOrientationInterpolator312 = new SoOrientationInterpolator();
-SoOrientationInterpolator312->setDEF(QString("l_hip_RotationInterpolator_Run"));
-SoOrientationInterpolator312->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator312->setKeyValue(new float[]{-0.9986,0.03354,0.04001,1.212,-0.9889,0.1328,0.06696,0.4025,0.9894,0.1453,0.009351,0.4114,-0.9963,0.07032,0.05003,0.7035,-0.9986,0.03354,0.04001,1.212}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator312);
+SoOrientationInterpolator312->setDEF(QString("r_knee_RotationInterpolator_Jump"));
+SoOrientationInterpolator312->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0}, 8);
+SoOrientationInterpolator312->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0}, 32);
+SoGroup310->addChild(*SoOrientationInterpolator312);
 
 SoOrientationInterpolator* SoOrientationInterpolator313 = new SoOrientationInterpolator();
-SoOrientationInterpolator313->setDEF(QString("lower_body_RotationInterpolator_Run"));
-SoOrientationInterpolator313->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator313->setKeyValue(new float[]{0.9969,-0.05444,0.05596,0.07687,0.9969,-0.05444,0.05596,0.07687}, 8);
-SoGroup306->addChild(*SoOrientationInterpolator313);
+SoOrientationInterpolator313->setDEF(QString("r_hip_RotationInterpolator_Jump"));
+SoOrientationInterpolator313->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0}, 11);
+SoOrientationInterpolator313->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.647,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169,0.0,0.0,1.0,0.0}, 44);
+SoGroup310->addChild(*SoOrientationInterpolator313);
 
 SoOrientationInterpolator* SoOrientationInterpolator314 = new SoOrientationInterpolator();
-SoOrientationInterpolator314->setDEF(QString("r_wrist_RotationInterpolator_Run"));
-SoOrientationInterpolator314->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator314->setKeyValue(new float[]{-0.917742,-0.237244,-0.318536,0.214273,-0.917742,-0.237244,-0.318536,0.214273}, 8);
-SoGroup306->addChild(*SoOrientationInterpolator314);
+SoOrientationInterpolator314->setDEF(QString("l_ankle_RotationInterpolator_Jump"));
+SoOrientationInterpolator314->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0}, 14);
+SoOrientationInterpolator314->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108,-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0}, 56);
+SoGroup310->addChild(*SoOrientationInterpolator314);
 
 SoOrientationInterpolator* SoOrientationInterpolator315 = new SoOrientationInterpolator();
-SoOrientationInterpolator315->setDEF(QString("r_elbow_RotationInterpolator_Run"));
-SoOrientationInterpolator315->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator315->setKeyValue(new float[]{0.9353,-0.2978,-0.191,4.222,-0.9362,0.2924,-0.1952,1.05,0.9941,-0.09719,-0.04725,4.512,-0.9594,0.2653,0.09579,1.525,0.9353,-0.2978,-0.191,4.222}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator315);
+SoOrientationInterpolator315->setDEF(QString("l_knee_RotationInterpolator_Jump"));
+SoOrientationInterpolator315->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0}, 8);
+SoOrientationInterpolator315->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0}, 32);
+SoGroup310->addChild(*SoOrientationInterpolator315);
 
 SoOrientationInterpolator* SoOrientationInterpolator316 = new SoOrientationInterpolator();
-SoOrientationInterpolator316->setDEF(QString("r_shoulder_RotationInterpolator_Run"));
-SoOrientationInterpolator316->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator316->setKeyValue(new float[]{-1.0,0.0,0.0,0.6979,0.9094,0.2062,-0.3613,0.4157,0.9637,0.1537,-0.2185,1.353,0.4864,0.08841,-0.8693,0.1716,-1.0,0.0,0.0,0.6979}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator316);
+SoOrientationInterpolator316->setDEF(QString("l_hip_RotationInterpolator_Jump"));
+SoOrientationInterpolator316->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0}, 11);
+SoOrientationInterpolator316->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433,0.0,0.0,1.0,0.0}, 44);
+SoGroup310->addChild(*SoOrientationInterpolator316);
 
 SoOrientationInterpolator* SoOrientationInterpolator317 = new SoOrientationInterpolator();
-SoOrientationInterpolator317->setDEF(QString("l_wrist_RotationInterpolator_Run"));
-SoOrientationInterpolator317->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator317->setKeyValue(new float[]{-0.0240995,-0.999682,0.00741506,0.120409,-0.0240995,-0.999682,0.00741506,0.120409}, 8);
-SoGroup306->addChild(*SoOrientationInterpolator317);
+SoOrientationInterpolator317->setDEF(QString("lower_body_RotationInterpolator_Jump"));
+SoOrientationInterpolator317->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
+SoOrientationInterpolator317->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator317);
 
 SoOrientationInterpolator* SoOrientationInterpolator318 = new SoOrientationInterpolator();
-SoOrientationInterpolator318->setDEF(QString("l_elbow_RotationInterpolator_Run"));
-SoOrientationInterpolator318->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator318->setKeyValue(new float[]{0.9985,0.03887,0.03802,4.689,-0.965,-0.1889,-0.1821,1.415,0.9758,0.1563,0.1529,4.666,-0.9956,-0.0936,0.009826,1.126,0.9985,0.03887,0.03802,4.689}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator318);
+SoOrientationInterpolator318->setDEF(QString("r_wrist_RotationInterpolator_Jump"));
+SoOrientationInterpolator318->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
+SoOrientationInterpolator318->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator318);
 
 SoOrientationInterpolator* SoOrientationInterpolator319 = new SoOrientationInterpolator();
-SoOrientationInterpolator319->setDEF(QString("l_shoulder_RotationInterpolator_Run"));
-SoOrientationInterpolator319->setKey(new float[]{0.0,0.2182,0.4909,0.7455,1.0}, 5);
-SoOrientationInterpolator319->setKeyValue(new float[]{0.9907,-0.07264,0.115,1.135,0.9291,-0.1222,0.349,0.1695,-0.9892,0.1364,-0.05394,0.5112,0.9942,-0.0002052,0.1073,0.4975,0.9907,-0.07264,0.115,1.135}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator319);
+SoOrientationInterpolator319->setDEF(QString("r_elbow_RotationInterpolator_Jump"));
+SoOrientationInterpolator319->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
+SoOrientationInterpolator319->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator319);
 
 SoOrientationInterpolator* SoOrientationInterpolator320 = new SoOrientationInterpolator();
-SoOrientationInterpolator320->setDEF(QString("head_RotationInterpolator_Run"));
-SoOrientationInterpolator320->setKey(new float[]{0.0,0.4909,1.0}, 3);
-SoOrientationInterpolator320->setKeyValue(new float[]{0.6517,-0.7559,0.06211,0.2508,0.6467,0.7527,-0.1238,0.2344,0.6517,-0.7559,0.06211,0.2508}, 12);
-SoGroup306->addChild(*SoOrientationInterpolator320);
+SoOrientationInterpolator320->setDEF(QString("r_shoulder_RotationInterpolator_Jump"));
+SoOrientationInterpolator320->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
+SoOrientationInterpolator320->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0}, 28);
+SoGroup310->addChild(*SoOrientationInterpolator320);
 
 SoOrientationInterpolator* SoOrientationInterpolator321 = new SoOrientationInterpolator();
-SoOrientationInterpolator321->setDEF(QString("neck_RotationInterpolator_Run"));
-SoOrientationInterpolator321->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator321->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup306->addChild(*SoOrientationInterpolator321);
+SoOrientationInterpolator321->setDEF(QString("l_wrist_RotationInterpolator_Jump"));
+SoOrientationInterpolator321->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
+SoOrientationInterpolator321->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0}, 28);
+SoGroup310->addChild(*SoOrientationInterpolator321);
 
 SoOrientationInterpolator* SoOrientationInterpolator322 = new SoOrientationInterpolator();
-SoOrientationInterpolator322->setDEF(QString("upper_body_RotationInterpolator_Run"));
-SoOrientationInterpolator322->setKey(new float[]{0.0,0.2545,0.4909,0.7636,1.0}, 5);
-SoOrientationInterpolator322->setKeyValue(new float[]{0.7651,0.6382,0.08586,0.2712,0.9999,0.002845,-0.01547,0.3756,0.7459,-0.6505,-0.1432,0.2416,0.9984,0.05536,-0.01154,0.3488,0.7651,0.6382,0.08586,0.2712}, 20);
-SoGroup306->addChild(*SoOrientationInterpolator322);
+SoOrientationInterpolator322->setDEF(QString("l_elbow_RotationInterpolator_Jump"));
+SoOrientationInterpolator322->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
+SoOrientationInterpolator322->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator322);
 
 SoOrientationInterpolator* SoOrientationInterpolator323 = new SoOrientationInterpolator();
-SoOrientationInterpolator323->setDEF(QString("whole_body_RotationInterpolator_Run"));
-SoOrientationInterpolator323->setKey(new float[]{0.0,1.0}, 2);
-SoOrientationInterpolator323->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 8);
-SoGroup306->addChild(*SoOrientationInterpolator323);
+SoOrientationInterpolator323->setDEF(QString("l_shoulder_RotationInterpolator_Jump"));
+SoOrientationInterpolator323->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
+SoOrientationInterpolator323->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0}, 28);
+SoGroup310->addChild(*SoOrientationInterpolator323);
 
-SoPositionInterpolator* SoPositionInterpolator324 = new SoPositionInterpolator();
-SoPositionInterpolator324->setDEF(QString("whole_body_TranslationInterpolator_Run"));
-SoPositionInterpolator324->setKey(new float[]{0.0,0.2182,0.2909,0.3091,0.7091,0.8,0.8182,1.0}, 8);
-SoPositionInterpolator324->setKeyValue(new float[]{0.0,-0.0351,0.0,0.0,-0.0351,0.0,0.0,-0.04087,0.0,0.0,-0.04886,0.0,0.0,-0.04051,0.0,0.0,-0.03666,0.0,0.0,-0.03666,0.0,0.0,-0.0351,0.0}, 24);
-SoGroup306->addChild(*SoPositionInterpolator324);
+SoOrientationInterpolator* SoOrientationInterpolator324 = new SoOrientationInterpolator();
+SoOrientationInterpolator324->setDEF(QString("head_RotationInterpolator_Jump"));
+SoOrientationInterpolator324->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
+SoOrientationInterpolator324->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator324);
 
-SoTimeSensor* SoTimeSensor325 = new SoTimeSensor();
-SoTimeSensor325->setDEF(QString("Run_Time"));
-SoTimeSensor325->setLoop(true);
-SoTimeSensor325->setStartTime(-1);
-SoGroup306->addChild(*SoTimeSensor325);
+SoOrientationInterpolator* SoOrientationInterpolator325 = new SoOrientationInterpolator();
+SoOrientationInterpolator325->setDEF(QString("neck_RotationInterpolator_Jump"));
+SoOrientationInterpolator325->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
+SoOrientationInterpolator325->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0}, 24);
+SoGroup310->addChild(*SoOrientationInterpolator325);
 
-SoGroup265->addChild(*SoGroup306);
+SoOrientationInterpolator* SoOrientationInterpolator326 = new SoOrientationInterpolator();
+SoOrientationInterpolator326->setDEF(QString("upper_body_RotationInterpolator_Jump"));
+SoOrientationInterpolator326->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,0.88,1.0}, 7);
+SoOrientationInterpolator326->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0}, 28);
+SoGroup310->addChild(*SoOrientationInterpolator326);
 
-SoGroup* SoGroup326 = new SoGroup();
-SoGroup326->setDEF(QString("Jump_Animation"));
 SoOrientationInterpolator* SoOrientationInterpolator327 = new SoOrientationInterpolator();
-SoOrientationInterpolator327->setDEF(QString("r_ankle_RotationInterpolator_Jump"));
-SoOrientationInterpolator327->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0}, 14);
-SoOrientationInterpolator327->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.6735,-1.0,0.0,0.0,0.3527,-1.0,0.0,0.0,0.3038,-1.0,0.0,0.0,0.07964,1.0,0.0,0.0,0.3001,1.0,0.0,0.0,0.6509,1.0,0.0,0.0,0.3001,-1.0,0.0,0.0,0.2087,-1.0,0.0,0.0,0.3756,-1.0,0.0,0.0,0.3279,-1.0,0.0,0.0,0.1193,0.0,0.0,1.0,0.0}, 56);
-SoGroup326->addChild(*SoOrientationInterpolator327);
+SoOrientationInterpolator327->setDEF(QString("whole_body_RotationInterpolator_Jump"));
+SoOrientationInterpolator327->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,1.0}, 7);
+SoOrientationInterpolator327->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 28);
+SoGroup310->addChild(*SoOrientationInterpolator327);
 
-SoOrientationInterpolator* SoOrientationInterpolator328 = new SoOrientationInterpolator();
-SoOrientationInterpolator328->setDEF(QString("r_knee_RotationInterpolator_Jump"));
-SoOrientationInterpolator328->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0}, 8);
-SoOrientationInterpolator328->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.005,1.0,0.0,0.0,2.005,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.9507,1.0,0.0,0.0,0.5845,1.0,0.0,0.0,0.9054,0.0,0.0,1.0,0.0}, 32);
-SoGroup326->addChild(*SoOrientationInterpolator328);
+SoPositionInterpolator* SoPositionInterpolator328 = new SoPositionInterpolator();
+SoPositionInterpolator328->setDEF(QString("whole_body_TranslationInterpolator_Jump"));
+SoPositionInterpolator328->setKey(new float[]{0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0}, 21);
+SoPositionInterpolator328->setKeyValue(new float[]{0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0.0,0.03045,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0.0,0.0,0.0}, 63);
+SoGroup310->addChild(*SoPositionInterpolator328);
 
-SoOrientationInterpolator* SoOrientationInterpolator329 = new SoOrientationInterpolator();
-SoOrientationInterpolator329->setDEF(QString("r_hip_RotationInterpolator_Jump"));
-SoOrientationInterpolator329->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0}, 11);
-SoOrientationInterpolator329->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.433,1.0,0.0,0.0,4.647,-1.0,0.0,0.0,0.8943,-1.0,0.0,0.0,0.3698,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.4963,-1.0,0.0,0.0,0.3829,-1.0,0.0,0.0,0.5169,0.0,0.0,1.0,0.0}, 44);
-SoGroup326->addChild(*SoOrientationInterpolator329);
+SoTimeSensor* SoTimeSensor329 = new SoTimeSensor();
+SoTimeSensor329->setDEF(QString("Jump_Time"));
+SoTimeSensor329->setCycleInterval(2);
+SoTimeSensor329->setStartTime(-1);
+SoGroup310->addChild(*SoTimeSensor329);
 
-SoOrientationInterpolator* SoOrientationInterpolator330 = new SoOrientationInterpolator();
-SoOrientationInterpolator330->setDEF(QString("l_ankle_RotationInterpolator_Jump"));
-SoOrientationInterpolator330->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.84,0.88,0.92,0.96,1.0}, 14);
-SoOrientationInterpolator330->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.625,-1.0,0.0,0.0,0.3364,-1.0,0.0,0.0,0.2742,-1.0,0.0,0.0,0.05078,1.0,0.0,0.0,0.2833,1.0,0.0,0.0,0.6667,1.0,0.0,0.0,0.2833,-1.0,0.0,0.0,0.2108,-1.0,0.0,0.0,0.375,-1.0,0.0,0.0,0.3146,-1.0,0.0,0.0,0.1174,0.0,0.0,1.0,0.0}, 56);
-SoGroup326->addChild(*SoOrientationInterpolator330);
+SoGroup249->addChild(*SoGroup310);
 
-SoOrientationInterpolator* SoOrientationInterpolator331 = new SoOrientationInterpolator();
-SoOrientationInterpolator331->setDEF(QString("l_knee_RotationInterpolator_Jump"));
-SoOrientationInterpolator331->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,0.88,1.0}, 8);
-SoOrientationInterpolator331->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,2.047,1.0,0.0,0.0,2.047,0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.566,1.0,0.0,0.0,0.5913,1.0,0.0,0.0,0.9235,0.0,0.0,1.0,0.0}, 32);
-SoGroup326->addChild(*SoOrientationInterpolator331);
+SoNode21->addChild(*SoGroup249);
 
-SoOrientationInterpolator* SoOrientationInterpolator332 = new SoOrientationInterpolator();
-SoOrientationInterpolator332->setDEF(QString("l_hip_RotationInterpolator_Jump"));
-SoOrientationInterpolator332->setKey(new float[]{0.0,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.88,1.0}, 11);
-SoOrientationInterpolator332->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.349,1.0,0.0,0.0,4.615,-1.0,0.0,0.0,0.9136,-1.0,0.0,0.0,0.3614,0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.7869,-1.0,0.0,0.0,0.3918,-1.0,0.0,0.0,0.5433,0.0,0.0,1.0,0.0}, 44);
-SoGroup326->addChild(*SoOrientationInterpolator332);
+//Enable this if you enable the ProximitySensor
+//<ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+//<ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+SoROUTE* SoROUTE330 = new SoROUTE();
+SoROUTE330->setFromField(QString("touchTime"));
+SoROUTE330->setFromNode(QString("Stand_Touch"));
+SoROUTE330->setToField(QString("stopTime"));
+SoROUTE330->setToNode(QString("Walk_Time"));
+SoNode21->addChild(*SoROUTE330);
 
-SoOrientationInterpolator* SoOrientationInterpolator333 = new SoOrientationInterpolator();
-SoOrientationInterpolator333->setDEF(QString("lower_body_RotationInterpolator_Jump"));
-SoOrientationInterpolator333->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
-SoOrientationInterpolator333->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.1892,1.0,0.0,0.0,0.1892,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator333);
+SoROUTE* SoROUTE331 = new SoROUTE();
+SoROUTE331->setFromField(QString("touchTime"));
+SoROUTE331->setFromNode(QString("Stand_Touch"));
+SoROUTE331->setToField(QString("stopTime"));
+SoROUTE331->setToNode(QString("Run_Time"));
+SoNode21->addChild(*SoROUTE331);
 
-SoOrientationInterpolator* SoOrientationInterpolator334 = new SoOrientationInterpolator();
-SoOrientationInterpolator334->setDEF(QString("r_wrist_RotationInterpolator_Jump"));
-SoOrientationInterpolator334->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-SoOrientationInterpolator334->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-0.0585279,0.983903,-0.168849,1.85956,-0.0585279,0.983903,-0.168849,1.85956,-0.00222418,0.99801,-0.0630095,1.46072,0.0,1.0,0.0,0.497349,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator334);
+SoROUTE* SoROUTE332 = new SoROUTE();
+SoROUTE332->setFromField(QString("touchTime"));
+SoROUTE332->setFromNode(QString("Stand_Touch"));
+SoROUTE332->setToField(QString("stopTime"));
+SoROUTE332->setToNode(QString("Jump_Time"));
+SoNode21->addChild(*SoROUTE332);
 
-SoOrientationInterpolator* SoOrientationInterpolator335 = new SoOrientationInterpolator();
-SoOrientationInterpolator335->setDEF(QString("r_elbow_RotationInterpolator_Jump"));
-SoOrientationInterpolator335->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-SoOrientationInterpolator335->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.04151,-1.0,0.0,0.0,0.5855,-1.0,0.0,0.0,0.5852,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator335);
+SoROUTE* SoROUTE333 = new SoROUTE();
+SoROUTE333->setFromField(QString("touchTime"));
+SoROUTE333->setFromNode(QString("Stand_Touch"));
+SoROUTE333->setToField(QString("startTime"));
+SoROUTE333->setToNode(QString("Stand_Time"));
+SoNode21->addChild(*SoROUTE333);
 
-SoOrientationInterpolator* SoOrientationInterpolator336 = new SoOrientationInterpolator();
-SoOrientationInterpolator336->setDEF(QString("r_shoulder_RotationInterpolator_Jump"));
-SoOrientationInterpolator336->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
-SoOrientationInterpolator336->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.9992,0.02042,0.03558,4.688,0.9992,0.02042,0.03558,4.688,0.9989,-0.04623,0.005159,4.079,-0.8687,-0.2525,-0.4261,1.501,-0.941,-0.2893,-0.1754,0.4788,0.0,0.0,1.0,0.0}, 28);
-SoGroup326->addChild(*SoOrientationInterpolator336);
+SoROUTE* SoROUTE334 = new SoROUTE();
+SoROUTE334->setFromField(QString("touchTime"));
+SoROUTE334->setFromNode(QString("Walk_Touch"));
+SoROUTE334->setToField(QString("stopTime"));
+SoROUTE334->setToNode(QString("Stand_Time"));
+SoNode21->addChild(*SoROUTE334);
 
-SoOrientationInterpolator* SoOrientationInterpolator337 = new SoOrientationInterpolator();
-SoOrientationInterpolator337->setDEF(QString("l_wrist_RotationInterpolator_Jump"));
-SoOrientationInterpolator337->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
-SoOrientationInterpolator337->setKeyValue(new float[]{0.0,0.0,1.0,0.0,0.0672928,0.989475,-0.128107,4.15574,0.0672928,0.989475,-0.128107,4.15574,0.00364942,0.999901,0.0135896,4.5822,0.0,-1.0,0.0,0.655922,-0.00050618,-0.999999,0.0012782,1.28397,0.0,0.0,1.0,0.0}, 28);
-SoGroup326->addChild(*SoOrientationInterpolator337);
+SoROUTE* SoROUTE335 = new SoROUTE();
+SoROUTE335->setFromField(QString("touchTime"));
+SoROUTE335->setFromNode(QString("Walk_Touch"));
+SoROUTE335->setToField(QString("stopTime"));
+SoROUTE335->setToNode(QString("Run_Time"));
+SoNode21->addChild(*SoROUTE335);
 
-SoOrientationInterpolator* SoOrientationInterpolator338 = new SoOrientationInterpolator();
-SoOrientationInterpolator338->setDEF(QString("l_elbow_RotationInterpolator_Jump"));
-SoOrientationInterpolator338->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,1.0}, 6);
-SoOrientationInterpolator338->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.1229,-1.0,0.0,0.0,0.5976,-1.0,0.0,0.0,0.3917,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator338);
+SoROUTE* SoROUTE336 = new SoROUTE();
+SoROUTE336->setFromField(QString("touchTime"));
+SoROUTE336->setFromNode(QString("Walk_Touch"));
+SoROUTE336->setToField(QString("stopTime"));
+SoROUTE336->setToNode(QString("Jump_Time"));
+SoNode21->addChild(*SoROUTE336);
 
-SoOrientationInterpolator* SoOrientationInterpolator339 = new SoOrientationInterpolator();
-SoOrientationInterpolator339->setDEF(QString("l_shoulder_RotationInterpolator_Jump"));
-SoOrientationInterpolator339->setKey(new float[]{0.0,0.28,0.32,0.64,0.76,0.88,1.0}, 7);
-SoOrientationInterpolator339->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-0.9987,0.02554,0.04498,1.57,-0.9987,0.02554,0.04498,1.57,1.0,0.0004113,0.003055,4.114,-0.8413,0.3238,0.4329,1.453,-0.877,0.4198,0.2337,0.6009,0.0,0.0,1.0,0.0}, 28);
-SoGroup326->addChild(*SoOrientationInterpolator339);
+SoROUTE* SoROUTE337 = new SoROUTE();
+SoROUTE337->setFromField(QString("touchTime"));
+SoROUTE337->setFromNode(QString("Walk_Touch"));
+SoROUTE337->setToField(QString("startTime"));
+SoROUTE337->setToNode(QString("Walk_Time"));
+SoNode21->addChild(*SoROUTE337);
 
-SoOrientationInterpolator* SoOrientationInterpolator340 = new SoOrientationInterpolator();
-SoOrientationInterpolator340->setDEF(QString("head_RotationInterpolator_Jump"));
-SoOrientationInterpolator340->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
-SoOrientationInterpolator340->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.5989,-1.0,0.0,0.0,0.3216,1.0,0.0,0.0,0.06503,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator340);
+SoROUTE* SoROUTE338 = new SoROUTE();
+SoROUTE338->setFromField(QString("touchTime"));
+SoROUTE338->setFromNode(QString("Run_Touch"));
+SoROUTE338->setToField(QString("stopTime"));
+SoROUTE338->setToNode(QString("Stand_Time"));
+SoNode21->addChild(*SoROUTE338);
 
-SoOrientationInterpolator* SoOrientationInterpolator341 = new SoOrientationInterpolator();
-SoOrientationInterpolator341->setDEF(QString("neck_RotationInterpolator_Jump"));
-SoOrientationInterpolator341->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,1.0}, 6);
-SoOrientationInterpolator341->setKeyValue(new float[]{0.0,0.0,1.0,0.0,-1.0,0.0,0.0,0.1942,-1.0,0.0,0.0,0.1942,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.2284,0.0,0.0,1.0,0.0}, 24);
-SoGroup326->addChild(*SoOrientationInterpolator341);
+SoROUTE* SoROUTE339 = new SoROUTE();
+SoROUTE339->setFromField(QString("touchTime"));
+SoROUTE339->setFromNode(QString("Run_Touch"));
+SoROUTE339->setToField(QString("stopTime"));
+SoROUTE339->setToNode(QString("Walk_Time"));
+SoNode21->addChild(*SoROUTE339);
 
-SoOrientationInterpolator* SoOrientationInterpolator342 = new SoOrientationInterpolator();
-SoOrientationInterpolator342->setDEF(QString("upper_body_RotationInterpolator_Jump"));
-SoOrientationInterpolator342->setKey(new float[]{0.0,0.28,0.32,0.48,0.76,0.88,1.0}, 7);
-SoOrientationInterpolator342->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,1.038,1.0,0.0,0.0,1.038,-1.0,0.0,0.0,0.1057,1.0,0.0,0.0,0.2171,1.0,0.0,0.0,0.3465,0.0,0.0,1.0,0.0}, 28);
-SoGroup326->addChild(*SoOrientationInterpolator342);
+SoROUTE* SoROUTE340 = new SoROUTE();
+SoROUTE340->setFromField(QString("touchTime"));
+SoROUTE340->setFromNode(QString("Run_Touch"));
+SoROUTE340->setToField(QString("stopTime"));
+SoROUTE340->setToNode(QString("Jump_Time"));
+SoNode21->addChild(*SoROUTE340);
 
-SoOrientationInterpolator* SoOrientationInterpolator343 = new SoOrientationInterpolator();
-SoOrientationInterpolator343->setDEF(QString("whole_body_RotationInterpolator_Jump"));
-SoOrientationInterpolator343->setKey(new float[]{0.0,0.28,0.32,0.48,0.64,0.76,1.0}, 7);
-SoOrientationInterpolator343->setKeyValue(new float[]{0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.3273,1.0,0.0,0.0,0.3273,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0}, 28);
-SoGroup326->addChild(*SoOrientationInterpolator343);
+SoROUTE* SoROUTE341 = new SoROUTE();
+SoROUTE341->setFromField(QString("touchTime"));
+SoROUTE341->setFromNode(QString("Run_Touch"));
+SoROUTE341->setToField(QString("startTime"));
+SoROUTE341->setToNode(QString("Run_Time"));
+SoNode21->addChild(*SoROUTE341);
 
-SoPositionInterpolator* SoPositionInterpolator344 = new SoPositionInterpolator();
-SoPositionInterpolator344->setDEF(QString("whole_body_TranslationInterpolator_Jump"));
-SoPositionInterpolator344->setKey(new float[]{0.0,0.04,0.08,0.12,0.16,0.2,0.24,0.28,0.32,0.36,0.4,0.44,0.48,0.64,0.76,0.8,0.84,0.88,0.92,0.96,1.0}, 21);
-SoPositionInterpolator344->setKeyValue(new float[]{0.0,0.0,0.0,0.0,-0.01264,-0.01289,0.0,-0.04712,-0.03738,-0.0003345,-0.1049,-0.05353,-0.0005712,-0.1892,-0.06561,-0.0008233,-0.286,-0.06276,-0.0009591,-0.3795,-0.05148,-0.00106,-0.4484,-0.03656,-0.00106,-0.4484,-0.03656,-0.001122,-0.3269,-0.1499,-0.0008616,-0.13,-0.06358,-0.0005128,-0.03123,-0.05488,0.0004779,0.053,0.02732,0.0001728,0.4148,0.006873,0.0,0.03045,0.02148,0.0,-0.01299,-0.01057,0.0,-0.06932,-0.01064,0.0001365,-0.1037,-0.005059,0.0001279,-0.07198,-0.007596,0.000141,-0.01626,-0.004935,0.0,0.0,0.0}, 63);
-SoGroup326->addChild(*SoPositionInterpolator344);
+SoROUTE* SoROUTE342 = new SoROUTE();
+SoROUTE342->setFromField(QString("touchTime"));
+SoROUTE342->setFromNode(QString("Jump_Touch"));
+SoROUTE342->setToField(QString("stopTime"));
+SoROUTE342->setToNode(QString("Stand_Time"));
+SoNode21->addChild(*SoROUTE342);
 
-SoTimeSensor* SoTimeSensor345 = new SoTimeSensor();
-SoTimeSensor345->setDEF(QString("Jump_Time"));
-SoTimeSensor345->setCycleInterval(2);
-SoTimeSensor345->setStartTime(-1);
-SoGroup326->addChild(*SoTimeSensor345);
+SoROUTE* SoROUTE343 = new SoROUTE();
+SoROUTE343->setFromField(QString("touchTime"));
+SoROUTE343->setFromNode(QString("Jump_Touch"));
+SoROUTE343->setToField(QString("stopTime"));
+SoROUTE343->setToNode(QString("Walk_Time"));
+SoNode21->addChild(*SoROUTE343);
 
-SoGroup265->addChild(*SoGroup326);
+SoROUTE* SoROUTE344 = new SoROUTE();
+SoROUTE344->setFromField(QString("touchTime"));
+SoROUTE344->setFromNode(QString("Jump_Touch"));
+SoROUTE344->setToField(QString("stopTime"));
+SoROUTE344->setToNode(QString("Run_Time"));
+SoNode21->addChild(*SoROUTE344);
 
-SoNode21->addChild(*SoGroup265);
+SoROUTE* SoROUTE345 = new SoROUTE();
+SoROUTE345->setFromField(QString("touchTime"));
+SoROUTE345->setFromNode(QString("Jump_Touch"));
+SoROUTE345->setToField(QString("startTime"));
+SoROUTE345->setToNode(QString("Jump_Time"));
+SoNode21->addChild(*SoROUTE345);
 
-//Enable this if you enable the ProximitySensor <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/> <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
 SoROUTE* SoROUTE346 = new SoROUTE();
-SoROUTE346->setFromField(QString("touchTime"));
-SoROUTE346->setFromNode(QString("Stand_Touch"));
-SoROUTE346->setToField(QString("stopTime"));
-SoROUTE346->setToNode(QString("Walk_Time"));
+SoROUTE346->setFromField(QString("fraction_changed"));
+SoROUTE346->setFromNode(QString("Stand_Time"));
+SoROUTE346->setToField(QString("set_fraction"));
+SoROUTE346->setToNode(QString("r_ankle_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE346);
 
 SoROUTE* SoROUTE347 = new SoROUTE();
-SoROUTE347->setFromField(QString("touchTime"));
-SoROUTE347->setFromNode(QString("Stand_Touch"));
-SoROUTE347->setToField(QString("stopTime"));
-SoROUTE347->setToNode(QString("Run_Time"));
+SoROUTE347->setFromField(QString("fraction_changed"));
+SoROUTE347->setFromNode(QString("Stand_Time"));
+SoROUTE347->setToField(QString("set_fraction"));
+SoROUTE347->setToNode(QString("r_knee_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE347);
 
 SoROUTE* SoROUTE348 = new SoROUTE();
-SoROUTE348->setFromField(QString("touchTime"));
-SoROUTE348->setFromNode(QString("Stand_Touch"));
-SoROUTE348->setToField(QString("stopTime"));
-SoROUTE348->setToNode(QString("Jump_Time"));
+SoROUTE348->setFromField(QString("fraction_changed"));
+SoROUTE348->setFromNode(QString("Stand_Time"));
+SoROUTE348->setToField(QString("set_fraction"));
+SoROUTE348->setToNode(QString("r_hip_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE348);
 
 SoROUTE* SoROUTE349 = new SoROUTE();
-SoROUTE349->setFromField(QString("touchTime"));
-SoROUTE349->setFromNode(QString("Stand_Touch"));
-SoROUTE349->setToField(QString("startTime"));
-SoROUTE349->setToNode(QString("Stand_Time"));
+SoROUTE349->setFromField(QString("fraction_changed"));
+SoROUTE349->setFromNode(QString("Stand_Time"));
+SoROUTE349->setToField(QString("set_fraction"));
+SoROUTE349->setToNode(QString("l_ankle_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE349);
 
 SoROUTE* SoROUTE350 = new SoROUTE();
-SoROUTE350->setFromField(QString("touchTime"));
-SoROUTE350->setFromNode(QString("Walk_Touch"));
-SoROUTE350->setToField(QString("stopTime"));
-SoROUTE350->setToNode(QString("Stand_Time"));
+SoROUTE350->setFromField(QString("fraction_changed"));
+SoROUTE350->setFromNode(QString("Stand_Time"));
+SoROUTE350->setToField(QString("set_fraction"));
+SoROUTE350->setToNode(QString("l_knee_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE350);
 
 SoROUTE* SoROUTE351 = new SoROUTE();
-SoROUTE351->setFromField(QString("touchTime"));
-SoROUTE351->setFromNode(QString("Walk_Touch"));
-SoROUTE351->setToField(QString("stopTime"));
-SoROUTE351->setToNode(QString("Run_Time"));
+SoROUTE351->setFromField(QString("fraction_changed"));
+SoROUTE351->setFromNode(QString("Stand_Time"));
+SoROUTE351->setToField(QString("set_fraction"));
+SoROUTE351->setToNode(QString("l_hip_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE351);
 
 SoROUTE* SoROUTE352 = new SoROUTE();
-SoROUTE352->setFromField(QString("touchTime"));
-SoROUTE352->setFromNode(QString("Walk_Touch"));
-SoROUTE352->setToField(QString("stopTime"));
-SoROUTE352->setToNode(QString("Jump_Time"));
+SoROUTE352->setFromField(QString("fraction_changed"));
+SoROUTE352->setFromNode(QString("Stand_Time"));
+SoROUTE352->setToField(QString("set_fraction"));
+SoROUTE352->setToNode(QString("lower_body_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE352);
 
 SoROUTE* SoROUTE353 = new SoROUTE();
-SoROUTE353->setFromField(QString("touchTime"));
-SoROUTE353->setFromNode(QString("Walk_Touch"));
-SoROUTE353->setToField(QString("startTime"));
-SoROUTE353->setToNode(QString("Walk_Time"));
+SoROUTE353->setFromField(QString("fraction_changed"));
+SoROUTE353->setFromNode(QString("Stand_Time"));
+SoROUTE353->setToField(QString("set_fraction"));
+SoROUTE353->setToNode(QString("r_wrist_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE353);
 
 SoROUTE* SoROUTE354 = new SoROUTE();
-SoROUTE354->setFromField(QString("touchTime"));
-SoROUTE354->setFromNode(QString("Run_Touch"));
-SoROUTE354->setToField(QString("stopTime"));
-SoROUTE354->setToNode(QString("Stand_Time"));
+SoROUTE354->setFromField(QString("fraction_changed"));
+SoROUTE354->setFromNode(QString("Stand_Time"));
+SoROUTE354->setToField(QString("set_fraction"));
+SoROUTE354->setToNode(QString("r_elbow_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE354);
 
 SoROUTE* SoROUTE355 = new SoROUTE();
-SoROUTE355->setFromField(QString("touchTime"));
-SoROUTE355->setFromNode(QString("Run_Touch"));
-SoROUTE355->setToField(QString("stopTime"));
-SoROUTE355->setToNode(QString("Walk_Time"));
+SoROUTE355->setFromField(QString("fraction_changed"));
+SoROUTE355->setFromNode(QString("Stand_Time"));
+SoROUTE355->setToField(QString("set_fraction"));
+SoROUTE355->setToNode(QString("r_shoulder_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE355);
 
 SoROUTE* SoROUTE356 = new SoROUTE();
-SoROUTE356->setFromField(QString("touchTime"));
-SoROUTE356->setFromNode(QString("Run_Touch"));
-SoROUTE356->setToField(QString("stopTime"));
-SoROUTE356->setToNode(QString("Jump_Time"));
+SoROUTE356->setFromField(QString("fraction_changed"));
+SoROUTE356->setFromNode(QString("Stand_Time"));
+SoROUTE356->setToField(QString("set_fraction"));
+SoROUTE356->setToNode(QString("l_wrist_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE356);
 
 SoROUTE* SoROUTE357 = new SoROUTE();
-SoROUTE357->setFromField(QString("touchTime"));
-SoROUTE357->setFromNode(QString("Run_Touch"));
-SoROUTE357->setToField(QString("startTime"));
-SoROUTE357->setToNode(QString("Run_Time"));
+SoROUTE357->setFromField(QString("fraction_changed"));
+SoROUTE357->setFromNode(QString("Stand_Time"));
+SoROUTE357->setToField(QString("set_fraction"));
+SoROUTE357->setToNode(QString("l_elbow_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE357);
 
 SoROUTE* SoROUTE358 = new SoROUTE();
-SoROUTE358->setFromField(QString("touchTime"));
-SoROUTE358->setFromNode(QString("Jump_Touch"));
-SoROUTE358->setToField(QString("stopTime"));
-SoROUTE358->setToNode(QString("Stand_Time"));
+SoROUTE358->setFromField(QString("fraction_changed"));
+SoROUTE358->setFromNode(QString("Stand_Time"));
+SoROUTE358->setToField(QString("set_fraction"));
+SoROUTE358->setToNode(QString("l_shoulder_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE358);
 
 SoROUTE* SoROUTE359 = new SoROUTE();
-SoROUTE359->setFromField(QString("touchTime"));
-SoROUTE359->setFromNode(QString("Jump_Touch"));
-SoROUTE359->setToField(QString("stopTime"));
-SoROUTE359->setToNode(QString("Walk_Time"));
+SoROUTE359->setFromField(QString("fraction_changed"));
+SoROUTE359->setFromNode(QString("Stand_Time"));
+SoROUTE359->setToField(QString("set_fraction"));
+SoROUTE359->setToNode(QString("head_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE359);
 
 SoROUTE* SoROUTE360 = new SoROUTE();
-SoROUTE360->setFromField(QString("touchTime"));
-SoROUTE360->setFromNode(QString("Jump_Touch"));
-SoROUTE360->setToField(QString("stopTime"));
-SoROUTE360->setToNode(QString("Run_Time"));
+SoROUTE360->setFromField(QString("fraction_changed"));
+SoROUTE360->setFromNode(QString("Stand_Time"));
+SoROUTE360->setToField(QString("set_fraction"));
+SoROUTE360->setToNode(QString("neck_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE360);
 
 SoROUTE* SoROUTE361 = new SoROUTE();
-SoROUTE361->setFromField(QString("touchTime"));
-SoROUTE361->setFromNode(QString("Jump_Touch"));
-SoROUTE361->setToField(QString("startTime"));
-SoROUTE361->setToNode(QString("Jump_Time"));
+SoROUTE361->setFromField(QString("fraction_changed"));
+SoROUTE361->setFromNode(QString("Stand_Time"));
+SoROUTE361->setToField(QString("set_fraction"));
+SoROUTE361->setToNode(QString("upper_body_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE361);
 
 SoROUTE* SoROUTE362 = new SoROUTE();
 SoROUTE362->setFromField(QString("fraction_changed"));
 SoROUTE362->setFromNode(QString("Stand_Time"));
 SoROUTE362->setToField(QString("set_fraction"));
-SoROUTE362->setToNode(QString("r_ankle_RotationInterpolator_Stand"));
+SoROUTE362->setToNode(QString("whole_body_RotationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE362);
 
 SoROUTE* SoROUTE363 = new SoROUTE();
 SoROUTE363->setFromField(QString("fraction_changed"));
 SoROUTE363->setFromNode(QString("Stand_Time"));
 SoROUTE363->setToField(QString("set_fraction"));
-SoROUTE363->setToNode(QString("r_knee_RotationInterpolator_Stand"));
+SoROUTE363->setToNode(QString("whole_body_TranslationInterpolator_Stand"));
 SoNode21->addChild(*SoROUTE363);
 
 SoROUTE* SoROUTE364 = new SoROUTE();
-SoROUTE364->setFromField(QString("fraction_changed"));
-SoROUTE364->setFromNode(QString("Stand_Time"));
-SoROUTE364->setToField(QString("set_fraction"));
-SoROUTE364->setToNode(QString("r_hip_RotationInterpolator_Stand"));
+SoROUTE364->setFromField(QString("value_changed"));
+SoROUTE364->setFromNode(QString("r_ankle_RotationInterpolator_Stand"));
+SoROUTE364->setToField(QString("set_rotation"));
+SoROUTE364->setToNode(QString("hanim_r_ankle"));
 SoNode21->addChild(*SoROUTE364);
 
 SoROUTE* SoROUTE365 = new SoROUTE();
-SoROUTE365->setFromField(QString("fraction_changed"));
-SoROUTE365->setFromNode(QString("Stand_Time"));
-SoROUTE365->setToField(QString("set_fraction"));
-SoROUTE365->setToNode(QString("l_ankle_RotationInterpolator_Stand"));
+SoROUTE365->setFromField(QString("value_changed"));
+SoROUTE365->setFromNode(QString("r_knee_RotationInterpolator_Stand"));
+SoROUTE365->setToField(QString("set_rotation"));
+SoROUTE365->setToNode(QString("hanim_r_knee"));
 SoNode21->addChild(*SoROUTE365);
 
 SoROUTE* SoROUTE366 = new SoROUTE();
-SoROUTE366->setFromField(QString("fraction_changed"));
-SoROUTE366->setFromNode(QString("Stand_Time"));
-SoROUTE366->setToField(QString("set_fraction"));
-SoROUTE366->setToNode(QString("l_knee_RotationInterpolator_Stand"));
+SoROUTE366->setFromField(QString("value_changed"));
+SoROUTE366->setFromNode(QString("r_hip_RotationInterpolator_Stand"));
+SoROUTE366->setToField(QString("set_rotation"));
+SoROUTE366->setToNode(QString("hanim_r_hip"));
 SoNode21->addChild(*SoROUTE366);
 
 SoROUTE* SoROUTE367 = new SoROUTE();
-SoROUTE367->setFromField(QString("fraction_changed"));
-SoROUTE367->setFromNode(QString("Stand_Time"));
-SoROUTE367->setToField(QString("set_fraction"));
-SoROUTE367->setToNode(QString("l_hip_RotationInterpolator_Stand"));
+SoROUTE367->setFromField(QString("value_changed"));
+SoROUTE367->setFromNode(QString("l_ankle_RotationInterpolator_Stand"));
+SoROUTE367->setToField(QString("set_rotation"));
+SoROUTE367->setToNode(QString("hanim_l_ankle"));
 SoNode21->addChild(*SoROUTE367);
 
 SoROUTE* SoROUTE368 = new SoROUTE();
-SoROUTE368->setFromField(QString("fraction_changed"));
-SoROUTE368->setFromNode(QString("Stand_Time"));
-SoROUTE368->setToField(QString("set_fraction"));
-SoROUTE368->setToNode(QString("lower_body_RotationInterpolator_Stand"));
+SoROUTE368->setFromField(QString("value_changed"));
+SoROUTE368->setFromNode(QString("l_knee_RotationInterpolator_Stand"));
+SoROUTE368->setToField(QString("set_rotation"));
+SoROUTE368->setToNode(QString("hanim_l_knee"));
 SoNode21->addChild(*SoROUTE368);
 
 SoROUTE* SoROUTE369 = new SoROUTE();
-SoROUTE369->setFromField(QString("fraction_changed"));
-SoROUTE369->setFromNode(QString("Stand_Time"));
-SoROUTE369->setToField(QString("set_fraction"));
-SoROUTE369->setToNode(QString("r_wrist_RotationInterpolator_Stand"));
+SoROUTE369->setFromField(QString("value_changed"));
+SoROUTE369->setFromNode(QString("l_hip_RotationInterpolator_Stand"));
+SoROUTE369->setToField(QString("set_rotation"));
+SoROUTE369->setToNode(QString("hanim_l_hip"));
 SoNode21->addChild(*SoROUTE369);
 
 SoROUTE* SoROUTE370 = new SoROUTE();
-SoROUTE370->setFromField(QString("fraction_changed"));
-SoROUTE370->setFromNode(QString("Stand_Time"));
-SoROUTE370->setToField(QString("set_fraction"));
-SoROUTE370->setToNode(QString("r_elbow_RotationInterpolator_Stand"));
+SoROUTE370->setFromField(QString("value_changed"));
+SoROUTE370->setFromNode(QString("lower_body_RotationInterpolator_Stand"));
+SoROUTE370->setToField(QString("set_rotation"));
+SoROUTE370->setToNode(QString("hanim_sacroiliac"));
 SoNode21->addChild(*SoROUTE370);
 
 SoROUTE* SoROUTE371 = new SoROUTE();
-SoROUTE371->setFromField(QString("fraction_changed"));
-SoROUTE371->setFromNode(QString("Stand_Time"));
-SoROUTE371->setToField(QString("set_fraction"));
-SoROUTE371->setToNode(QString("r_shoulder_RotationInterpolator_Stand"));
+SoROUTE371->setFromField(QString("value_changed"));
+SoROUTE371->setFromNode(QString("r_wrist_RotationInterpolator_Stand"));
+SoROUTE371->setToField(QString("set_rotation"));
+SoROUTE371->setToNode(QString("hanim_r_wrist"));
 SoNode21->addChild(*SoROUTE371);
 
 SoROUTE* SoROUTE372 = new SoROUTE();
-SoROUTE372->setFromField(QString("fraction_changed"));
-SoROUTE372->setFromNode(QString("Stand_Time"));
-SoROUTE372->setToField(QString("set_fraction"));
-SoROUTE372->setToNode(QString("l_wrist_RotationInterpolator_Stand"));
+SoROUTE372->setFromField(QString("value_changed"));
+SoROUTE372->setFromNode(QString("r_elbow_RotationInterpolator_Stand"));
+SoROUTE372->setToField(QString("set_rotation"));
+SoROUTE372->setToNode(QString("hanim_r_elbow"));
 SoNode21->addChild(*SoROUTE372);
 
 SoROUTE* SoROUTE373 = new SoROUTE();
-SoROUTE373->setFromField(QString("fraction_changed"));
-SoROUTE373->setFromNode(QString("Stand_Time"));
-SoROUTE373->setToField(QString("set_fraction"));
-SoROUTE373->setToNode(QString("l_elbow_RotationInterpolator_Stand"));
+SoROUTE373->setFromField(QString("value_changed"));
+SoROUTE373->setFromNode(QString("r_shoulder_RotationInterpolator_Stand"));
+SoROUTE373->setToField(QString("set_rotation"));
+SoROUTE373->setToNode(QString("hanim_r_shoulder"));
 SoNode21->addChild(*SoROUTE373);
 
 SoROUTE* SoROUTE374 = new SoROUTE();
-SoROUTE374->setFromField(QString("fraction_changed"));
-SoROUTE374->setFromNode(QString("Stand_Time"));
-SoROUTE374->setToField(QString("set_fraction"));
-SoROUTE374->setToNode(QString("l_shoulder_RotationInterpolator_Stand"));
+SoROUTE374->setFromField(QString("value_changed"));
+SoROUTE374->setFromNode(QString("l_wrist_RotationInterpolator_Stand"));
+SoROUTE374->setToField(QString("set_rotation"));
+SoROUTE374->setToNode(QString("hanim_l_wrist"));
 SoNode21->addChild(*SoROUTE374);
 
 SoROUTE* SoROUTE375 = new SoROUTE();
-SoROUTE375->setFromField(QString("fraction_changed"));
-SoROUTE375->setFromNode(QString("Stand_Time"));
-SoROUTE375->setToField(QString("set_fraction"));
-SoROUTE375->setToNode(QString("head_RotationInterpolator_Stand"));
+SoROUTE375->setFromField(QString("value_changed"));
+SoROUTE375->setFromNode(QString("l_elbow_RotationInterpolator_Stand"));
+SoROUTE375->setToField(QString("set_rotation"));
+SoROUTE375->setToNode(QString("hanim_l_elbow"));
 SoNode21->addChild(*SoROUTE375);
 
 SoROUTE* SoROUTE376 = new SoROUTE();
-SoROUTE376->setFromField(QString("fraction_changed"));
-SoROUTE376->setFromNode(QString("Stand_Time"));
-SoROUTE376->setToField(QString("set_fraction"));
-SoROUTE376->setToNode(QString("neck_RotationInterpolator_Stand"));
+SoROUTE376->setFromField(QString("value_changed"));
+SoROUTE376->setFromNode(QString("l_shoulder_RotationInterpolator_Stand"));
+SoROUTE376->setToField(QString("set_rotation"));
+SoROUTE376->setToNode(QString("hanim_l_shoulder"));
 SoNode21->addChild(*SoROUTE376);
 
 SoROUTE* SoROUTE377 = new SoROUTE();
-SoROUTE377->setFromField(QString("fraction_changed"));
-SoROUTE377->setFromNode(QString("Stand_Time"));
-SoROUTE377->setToField(QString("set_fraction"));
-SoROUTE377->setToNode(QString("upper_body_RotationInterpolator_Stand"));
+SoROUTE377->setFromField(QString("value_changed"));
+SoROUTE377->setFromNode(QString("head_RotationInterpolator_Stand"));
+SoROUTE377->setToField(QString("set_rotation"));
+SoROUTE377->setToNode(QString("hanim_skullbase"));
 SoNode21->addChild(*SoROUTE377);
 
 SoROUTE* SoROUTE378 = new SoROUTE();
-SoROUTE378->setFromField(QString("fraction_changed"));
-SoROUTE378->setFromNode(QString("Stand_Time"));
-SoROUTE378->setToField(QString("set_fraction"));
-SoROUTE378->setToNode(QString("whole_body_RotationInterpolator_Stand"));
+SoROUTE378->setFromField(QString("value_changed"));
+SoROUTE378->setFromNode(QString("neck_RotationInterpolator_Stand"));
+SoROUTE378->setToField(QString("set_rotation"));
+SoROUTE378->setToNode(QString("hanim_vc4"));
 SoNode21->addChild(*SoROUTE378);
 
 SoROUTE* SoROUTE379 = new SoROUTE();
-SoROUTE379->setFromField(QString("fraction_changed"));
-SoROUTE379->setFromNode(QString("Stand_Time"));
-SoROUTE379->setToField(QString("set_fraction"));
-SoROUTE379->setToNode(QString("whole_body_TranslationInterpolator_Stand"));
+SoROUTE379->setFromField(QString("value_changed"));
+SoROUTE379->setFromNode(QString("upper_body_RotationInterpolator_Stand"));
+SoROUTE379->setToField(QString("set_rotation"));
+SoROUTE379->setToNode(QString("hanim_vl1"));
 SoNode21->addChild(*SoROUTE379);
 
 SoROUTE* SoROUTE380 = new SoROUTE();
 SoROUTE380->setFromField(QString("value_changed"));
-SoROUTE380->setFromNode(QString("r_ankle_RotationInterpolator_Stand"));
+SoROUTE380->setFromNode(QString("whole_body_RotationInterpolator_Stand"));
 SoROUTE380->setToField(QString("set_rotation"));
-SoROUTE380->setToNode(QString("hanim_r_ankle"));
+SoROUTE380->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE380);
 
 SoROUTE* SoROUTE381 = new SoROUTE();
 SoROUTE381->setFromField(QString("value_changed"));
-SoROUTE381->setFromNode(QString("r_knee_RotationInterpolator_Stand"));
-SoROUTE381->setToField(QString("set_rotation"));
-SoROUTE381->setToNode(QString("hanim_r_knee"));
+SoROUTE381->setFromNode(QString("whole_body_TranslationInterpolator_Stand"));
+SoROUTE381->setToField(QString("set_translation"));
+SoROUTE381->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE381);
 
 SoROUTE* SoROUTE382 = new SoROUTE();
-SoROUTE382->setFromField(QString("value_changed"));
-SoROUTE382->setFromNode(QString("r_hip_RotationInterpolator_Stand"));
-SoROUTE382->setToField(QString("set_rotation"));
-SoROUTE382->setToNode(QString("hanim_r_hip"));
+SoROUTE382->setFromField(QString("fraction_changed"));
+SoROUTE382->setFromNode(QString("Walk_Time"));
+SoROUTE382->setToField(QString("set_fraction"));
+SoROUTE382->setToNode(QString("r_ankle_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE382);
 
 SoROUTE* SoROUTE383 = new SoROUTE();
-SoROUTE383->setFromField(QString("value_changed"));
-SoROUTE383->setFromNode(QString("l_ankle_RotationInterpolator_Stand"));
-SoROUTE383->setToField(QString("set_rotation"));
-SoROUTE383->setToNode(QString("hanim_l_ankle"));
+SoROUTE383->setFromField(QString("fraction_changed"));
+SoROUTE383->setFromNode(QString("Walk_Time"));
+SoROUTE383->setToField(QString("set_fraction"));
+SoROUTE383->setToNode(QString("r_knee_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE383);
 
 SoROUTE* SoROUTE384 = new SoROUTE();
-SoROUTE384->setFromField(QString("value_changed"));
-SoROUTE384->setFromNode(QString("l_knee_RotationInterpolator_Stand"));
-SoROUTE384->setToField(QString("set_rotation"));
-SoROUTE384->setToNode(QString("hanim_l_knee"));
+SoROUTE384->setFromField(QString("fraction_changed"));
+SoROUTE384->setFromNode(QString("Walk_Time"));
+SoROUTE384->setToField(QString("set_fraction"));
+SoROUTE384->setToNode(QString("r_hip_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE384);
 
 SoROUTE* SoROUTE385 = new SoROUTE();
-SoROUTE385->setFromField(QString("value_changed"));
-SoROUTE385->setFromNode(QString("l_hip_RotationInterpolator_Stand"));
-SoROUTE385->setToField(QString("set_rotation"));
-SoROUTE385->setToNode(QString("hanim_l_hip"));
+SoROUTE385->setFromField(QString("fraction_changed"));
+SoROUTE385->setFromNode(QString("Walk_Time"));
+SoROUTE385->setToField(QString("set_fraction"));
+SoROUTE385->setToNode(QString("l_ankle_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE385);
 
 SoROUTE* SoROUTE386 = new SoROUTE();
-SoROUTE386->setFromField(QString("value_changed"));
-SoROUTE386->setFromNode(QString("lower_body_RotationInterpolator_Stand"));
-SoROUTE386->setToField(QString("set_rotation"));
-SoROUTE386->setToNode(QString("hanim_sacroiliac"));
+SoROUTE386->setFromField(QString("fraction_changed"));
+SoROUTE386->setFromNode(QString("Walk_Time"));
+SoROUTE386->setToField(QString("set_fraction"));
+SoROUTE386->setToNode(QString("l_knee_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE386);
 
 SoROUTE* SoROUTE387 = new SoROUTE();
-SoROUTE387->setFromField(QString("value_changed"));
-SoROUTE387->setFromNode(QString("r_wrist_RotationInterpolator_Stand"));
-SoROUTE387->setToField(QString("set_rotation"));
-SoROUTE387->setToNode(QString("hanim_r_wrist"));
+SoROUTE387->setFromField(QString("fraction_changed"));
+SoROUTE387->setFromNode(QString("Walk_Time"));
+SoROUTE387->setToField(QString("set_fraction"));
+SoROUTE387->setToNode(QString("l_hip_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE387);
 
 SoROUTE* SoROUTE388 = new SoROUTE();
-SoROUTE388->setFromField(QString("value_changed"));
-SoROUTE388->setFromNode(QString("r_elbow_RotationInterpolator_Stand"));
-SoROUTE388->setToField(QString("set_rotation"));
-SoROUTE388->setToNode(QString("hanim_r_elbow"));
+SoROUTE388->setFromField(QString("fraction_changed"));
+SoROUTE388->setFromNode(QString("Walk_Time"));
+SoROUTE388->setToField(QString("set_fraction"));
+SoROUTE388->setToNode(QString("lower_body_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE388);
 
 SoROUTE* SoROUTE389 = new SoROUTE();
-SoROUTE389->setFromField(QString("value_changed"));
-SoROUTE389->setFromNode(QString("r_shoulder_RotationInterpolator_Stand"));
-SoROUTE389->setToField(QString("set_rotation"));
-SoROUTE389->setToNode(QString("hanim_r_shoulder"));
+SoROUTE389->setFromField(QString("fraction_changed"));
+SoROUTE389->setFromNode(QString("Walk_Time"));
+SoROUTE389->setToField(QString("set_fraction"));
+SoROUTE389->setToNode(QString("r_wrist_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE389);
 
 SoROUTE* SoROUTE390 = new SoROUTE();
-SoROUTE390->setFromField(QString("value_changed"));
-SoROUTE390->setFromNode(QString("l_wrist_RotationInterpolator_Stand"));
-SoROUTE390->setToField(QString("set_rotation"));
-SoROUTE390->setToNode(QString("hanim_l_wrist"));
+SoROUTE390->setFromField(QString("fraction_changed"));
+SoROUTE390->setFromNode(QString("Walk_Time"));
+SoROUTE390->setToField(QString("set_fraction"));
+SoROUTE390->setToNode(QString("r_elbow_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE390);
 
 SoROUTE* SoROUTE391 = new SoROUTE();
-SoROUTE391->setFromField(QString("value_changed"));
-SoROUTE391->setFromNode(QString("l_elbow_RotationInterpolator_Stand"));
-SoROUTE391->setToField(QString("set_rotation"));
-SoROUTE391->setToNode(QString("hanim_l_elbow"));
+SoROUTE391->setFromField(QString("fraction_changed"));
+SoROUTE391->setFromNode(QString("Walk_Time"));
+SoROUTE391->setToField(QString("set_fraction"));
+SoROUTE391->setToNode(QString("r_shoulder_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE391);
 
 SoROUTE* SoROUTE392 = new SoROUTE();
-SoROUTE392->setFromField(QString("value_changed"));
-SoROUTE392->setFromNode(QString("l_shoulder_RotationInterpolator_Stand"));
-SoROUTE392->setToField(QString("set_rotation"));
-SoROUTE392->setToNode(QString("hanim_l_shoulder"));
+SoROUTE392->setFromField(QString("fraction_changed"));
+SoROUTE392->setFromNode(QString("Walk_Time"));
+SoROUTE392->setToField(QString("set_fraction"));
+SoROUTE392->setToNode(QString("l_wrist_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE392);
 
 SoROUTE* SoROUTE393 = new SoROUTE();
-SoROUTE393->setFromField(QString("value_changed"));
-SoROUTE393->setFromNode(QString("head_RotationInterpolator_Stand"));
-SoROUTE393->setToField(QString("set_rotation"));
-SoROUTE393->setToNode(QString("hanim_skullbase"));
+SoROUTE393->setFromField(QString("fraction_changed"));
+SoROUTE393->setFromNode(QString("Walk_Time"));
+SoROUTE393->setToField(QString("set_fraction"));
+SoROUTE393->setToNode(QString("l_elbow_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE393);
 
 SoROUTE* SoROUTE394 = new SoROUTE();
-SoROUTE394->setFromField(QString("value_changed"));
-SoROUTE394->setFromNode(QString("neck_RotationInterpolator_Stand"));
-SoROUTE394->setToField(QString("set_rotation"));
-SoROUTE394->setToNode(QString("hanim_vc4"));
+SoROUTE394->setFromField(QString("fraction_changed"));
+SoROUTE394->setFromNode(QString("Walk_Time"));
+SoROUTE394->setToField(QString("set_fraction"));
+SoROUTE394->setToNode(QString("l_shoulder_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE394);
 
 SoROUTE* SoROUTE395 = new SoROUTE();
-SoROUTE395->setFromField(QString("value_changed"));
-SoROUTE395->setFromNode(QString("upper_body_RotationInterpolator_Stand"));
-SoROUTE395->setToField(QString("set_rotation"));
-SoROUTE395->setToNode(QString("hanim_vl1"));
+SoROUTE395->setFromField(QString("fraction_changed"));
+SoROUTE395->setFromNode(QString("Walk_Time"));
+SoROUTE395->setToField(QString("set_fraction"));
+SoROUTE395->setToNode(QString("head_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE395);
 
 SoROUTE* SoROUTE396 = new SoROUTE();
-SoROUTE396->setFromField(QString("value_changed"));
-SoROUTE396->setFromNode(QString("whole_body_RotationInterpolator_Stand"));
-SoROUTE396->setToField(QString("set_rotation"));
-SoROUTE396->setToNode(QString("hanim_humanoid_root"));
+SoROUTE396->setFromField(QString("fraction_changed"));
+SoROUTE396->setFromNode(QString("Walk_Time"));
+SoROUTE396->setToField(QString("set_fraction"));
+SoROUTE396->setToNode(QString("neck_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE396);
 
 SoROUTE* SoROUTE397 = new SoROUTE();
-SoROUTE397->setFromField(QString("value_changed"));
-SoROUTE397->setFromNode(QString("whole_body_TranslationInterpolator_Stand"));
-SoROUTE397->setToField(QString("set_translation"));
-SoROUTE397->setToNode(QString("hanim_humanoid_root"));
+SoROUTE397->setFromField(QString("fraction_changed"));
+SoROUTE397->setFromNode(QString("Walk_Time"));
+SoROUTE397->setToField(QString("set_fraction"));
+SoROUTE397->setToNode(QString("upper_body_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE397);
 
 SoROUTE* SoROUTE398 = new SoROUTE();
 SoROUTE398->setFromField(QString("fraction_changed"));
 SoROUTE398->setFromNode(QString("Walk_Time"));
 SoROUTE398->setToField(QString("set_fraction"));
-SoROUTE398->setToNode(QString("r_ankle_RotationInterpolator_BasicWalk"));
+SoROUTE398->setToNode(QString("whole_body_RotationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE398);
 
 SoROUTE* SoROUTE399 = new SoROUTE();
 SoROUTE399->setFromField(QString("fraction_changed"));
 SoROUTE399->setFromNode(QString("Walk_Time"));
 SoROUTE399->setToField(QString("set_fraction"));
-SoROUTE399->setToNode(QString("r_knee_RotationInterpolator_BasicWalk"));
+SoROUTE399->setToNode(QString("whole_body_TranslationInterpolator_BasicWalk"));
 SoNode21->addChild(*SoROUTE399);
 
 SoROUTE* SoROUTE400 = new SoROUTE();
-SoROUTE400->setFromField(QString("fraction_changed"));
-SoROUTE400->setFromNode(QString("Walk_Time"));
-SoROUTE400->setToField(QString("set_fraction"));
-SoROUTE400->setToNode(QString("r_hip_RotationInterpolator_BasicWalk"));
+SoROUTE400->setFromField(QString("value_changed"));
+SoROUTE400->setFromNode(QString("r_ankle_RotationInterpolator_BasicWalk"));
+SoROUTE400->setToField(QString("set_rotation"));
+SoROUTE400->setToNode(QString("hanim_r_ankle"));
 SoNode21->addChild(*SoROUTE400);
 
 SoROUTE* SoROUTE401 = new SoROUTE();
-SoROUTE401->setFromField(QString("fraction_changed"));
-SoROUTE401->setFromNode(QString("Walk_Time"));
-SoROUTE401->setToField(QString("set_fraction"));
-SoROUTE401->setToNode(QString("l_ankle_RotationInterpolator_BasicWalk"));
+SoROUTE401->setFromField(QString("value_changed"));
+SoROUTE401->setFromNode(QString("r_knee_RotationInterpolator_BasicWalk"));
+SoROUTE401->setToField(QString("set_rotation"));
+SoROUTE401->setToNode(QString("hanim_r_knee"));
 SoNode21->addChild(*SoROUTE401);
 
 SoROUTE* SoROUTE402 = new SoROUTE();
-SoROUTE402->setFromField(QString("fraction_changed"));
-SoROUTE402->setFromNode(QString("Walk_Time"));
-SoROUTE402->setToField(QString("set_fraction"));
-SoROUTE402->setToNode(QString("l_knee_RotationInterpolator_BasicWalk"));
+SoROUTE402->setFromField(QString("value_changed"));
+SoROUTE402->setFromNode(QString("r_hip_RotationInterpolator_BasicWalk"));
+SoROUTE402->setToField(QString("set_rotation"));
+SoROUTE402->setToNode(QString("hanim_r_hip"));
 SoNode21->addChild(*SoROUTE402);
 
 SoROUTE* SoROUTE403 = new SoROUTE();
-SoROUTE403->setFromField(QString("fraction_changed"));
-SoROUTE403->setFromNode(QString("Walk_Time"));
-SoROUTE403->setToField(QString("set_fraction"));
-SoROUTE403->setToNode(QString("l_hip_RotationInterpolator_BasicWalk"));
+SoROUTE403->setFromField(QString("value_changed"));
+SoROUTE403->setFromNode(QString("l_ankle_RotationInterpolator_BasicWalk"));
+SoROUTE403->setToField(QString("set_rotation"));
+SoROUTE403->setToNode(QString("hanim_l_ankle"));
 SoNode21->addChild(*SoROUTE403);
 
 SoROUTE* SoROUTE404 = new SoROUTE();
-SoROUTE404->setFromField(QString("fraction_changed"));
-SoROUTE404->setFromNode(QString("Walk_Time"));
-SoROUTE404->setToField(QString("set_fraction"));
-SoROUTE404->setToNode(QString("lower_body_RotationInterpolator_BasicWalk"));
+SoROUTE404->setFromField(QString("value_changed"));
+SoROUTE404->setFromNode(QString("l_knee_RotationInterpolator_BasicWalk"));
+SoROUTE404->setToField(QString("set_rotation"));
+SoROUTE404->setToNode(QString("hanim_l_knee"));
 SoNode21->addChild(*SoROUTE404);
 
 SoROUTE* SoROUTE405 = new SoROUTE();
-SoROUTE405->setFromField(QString("fraction_changed"));
-SoROUTE405->setFromNode(QString("Walk_Time"));
-SoROUTE405->setToField(QString("set_fraction"));
-SoROUTE405->setToNode(QString("r_wrist_RotationInterpolator_BasicWalk"));
+SoROUTE405->setFromField(QString("value_changed"));
+SoROUTE405->setFromNode(QString("l_hip_RotationInterpolator_BasicWalk"));
+SoROUTE405->setToField(QString("set_rotation"));
+SoROUTE405->setToNode(QString("hanim_l_hip"));
 SoNode21->addChild(*SoROUTE405);
 
 SoROUTE* SoROUTE406 = new SoROUTE();
-SoROUTE406->setFromField(QString("fraction_changed"));
-SoROUTE406->setFromNode(QString("Walk_Time"));
-SoROUTE406->setToField(QString("set_fraction"));
-SoROUTE406->setToNode(QString("r_elbow_RotationInterpolator_BasicWalk"));
+SoROUTE406->setFromField(QString("value_changed"));
+SoROUTE406->setFromNode(QString("lower_body_RotationInterpolator_BasicWalk"));
+SoROUTE406->setToField(QString("set_rotation"));
+SoROUTE406->setToNode(QString("hanim_sacroiliac"));
 SoNode21->addChild(*SoROUTE406);
 
 SoROUTE* SoROUTE407 = new SoROUTE();
-SoROUTE407->setFromField(QString("fraction_changed"));
-SoROUTE407->setFromNode(QString("Walk_Time"));
-SoROUTE407->setToField(QString("set_fraction"));
-SoROUTE407->setToNode(QString("r_shoulder_RotationInterpolator_BasicWalk"));
+SoROUTE407->setFromField(QString("value_changed"));
+SoROUTE407->setFromNode(QString("r_wrist_RotationInterpolator_BasicWalk"));
+SoROUTE407->setToField(QString("set_rotation"));
+SoROUTE407->setToNode(QString("hanim_r_wrist"));
 SoNode21->addChild(*SoROUTE407);
 
 SoROUTE* SoROUTE408 = new SoROUTE();
-SoROUTE408->setFromField(QString("fraction_changed"));
-SoROUTE408->setFromNode(QString("Walk_Time"));
-SoROUTE408->setToField(QString("set_fraction"));
-SoROUTE408->setToNode(QString("l_wrist_RotationInterpolator_BasicWalk"));
+SoROUTE408->setFromField(QString("value_changed"));
+SoROUTE408->setFromNode(QString("r_elbow_RotationInterpolator_BasicWalk"));
+SoROUTE408->setToField(QString("set_rotation"));
+SoROUTE408->setToNode(QString("hanim_r_elbow"));
 SoNode21->addChild(*SoROUTE408);
 
 SoROUTE* SoROUTE409 = new SoROUTE();
-SoROUTE409->setFromField(QString("fraction_changed"));
-SoROUTE409->setFromNode(QString("Walk_Time"));
-SoROUTE409->setToField(QString("set_fraction"));
-SoROUTE409->setToNode(QString("l_elbow_RotationInterpolator_BasicWalk"));
+SoROUTE409->setFromField(QString("value_changed"));
+SoROUTE409->setFromNode(QString("r_shoulder_RotationInterpolator_BasicWalk"));
+SoROUTE409->setToField(QString("set_rotation"));
+SoROUTE409->setToNode(QString("hanim_r_shoulder"));
 SoNode21->addChild(*SoROUTE409);
 
 SoROUTE* SoROUTE410 = new SoROUTE();
-SoROUTE410->setFromField(QString("fraction_changed"));
-SoROUTE410->setFromNode(QString("Walk_Time"));
-SoROUTE410->setToField(QString("set_fraction"));
-SoROUTE410->setToNode(QString("l_shoulder_RotationInterpolator_BasicWalk"));
+SoROUTE410->setFromField(QString("value_changed"));
+SoROUTE410->setFromNode(QString("l_wrist_RotationInterpolator_BasicWalk"));
+SoROUTE410->setToField(QString("set_rotation"));
+SoROUTE410->setToNode(QString("hanim_l_wrist"));
 SoNode21->addChild(*SoROUTE410);
 
 SoROUTE* SoROUTE411 = new SoROUTE();
-SoROUTE411->setFromField(QString("fraction_changed"));
-SoROUTE411->setFromNode(QString("Walk_Time"));
-SoROUTE411->setToField(QString("set_fraction"));
-SoROUTE411->setToNode(QString("head_RotationInterpolator_BasicWalk"));
+SoROUTE411->setFromField(QString("value_changed"));
+SoROUTE411->setFromNode(QString("l_elbow_RotationInterpolator_BasicWalk"));
+SoROUTE411->setToField(QString("set_rotation"));
+SoROUTE411->setToNode(QString("hanim_l_elbow"));
 SoNode21->addChild(*SoROUTE411);
 
 SoROUTE* SoROUTE412 = new SoROUTE();
-SoROUTE412->setFromField(QString("fraction_changed"));
-SoROUTE412->setFromNode(QString("Walk_Time"));
-SoROUTE412->setToField(QString("set_fraction"));
-SoROUTE412->setToNode(QString("neck_RotationInterpolator_BasicWalk"));
+SoROUTE412->setFromField(QString("value_changed"));
+SoROUTE412->setFromNode(QString("l_shoulder_RotationInterpolator_BasicWalk"));
+SoROUTE412->setToField(QString("set_rotation"));
+SoROUTE412->setToNode(QString("hanim_l_shoulder"));
 SoNode21->addChild(*SoROUTE412);
 
 SoROUTE* SoROUTE413 = new SoROUTE();
-SoROUTE413->setFromField(QString("fraction_changed"));
-SoROUTE413->setFromNode(QString("Walk_Time"));
-SoROUTE413->setToField(QString("set_fraction"));
-SoROUTE413->setToNode(QString("upper_body_RotationInterpolator_BasicWalk"));
+SoROUTE413->setFromField(QString("value_changed"));
+SoROUTE413->setFromNode(QString("head_RotationInterpolator_BasicWalk"));
+SoROUTE413->setToField(QString("set_rotation"));
+SoROUTE413->setToNode(QString("hanim_skullbase"));
 SoNode21->addChild(*SoROUTE413);
 
 SoROUTE* SoROUTE414 = new SoROUTE();
-SoROUTE414->setFromField(QString("fraction_changed"));
-SoROUTE414->setFromNode(QString("Walk_Time"));
-SoROUTE414->setToField(QString("set_fraction"));
-SoROUTE414->setToNode(QString("whole_body_RotationInterpolator_BasicWalk"));
+SoROUTE414->setFromField(QString("value_changed"));
+SoROUTE414->setFromNode(QString("neck_RotationInterpolator_BasicWalk"));
+SoROUTE414->setToField(QString("set_rotation"));
+SoROUTE414->setToNode(QString("hanim_vc4"));
 SoNode21->addChild(*SoROUTE414);
 
 SoROUTE* SoROUTE415 = new SoROUTE();
-SoROUTE415->setFromField(QString("fraction_changed"));
-SoROUTE415->setFromNode(QString("Walk_Time"));
-SoROUTE415->setToField(QString("set_fraction"));
-SoROUTE415->setToNode(QString("whole_body_TranslationInterpolator_BasicWalk"));
+SoROUTE415->setFromField(QString("value_changed"));
+SoROUTE415->setFromNode(QString("upper_body_RotationInterpolator_BasicWalk"));
+SoROUTE415->setToField(QString("set_rotation"));
+SoROUTE415->setToNode(QString("hanim_vl1"));
 SoNode21->addChild(*SoROUTE415);
 
 SoROUTE* SoROUTE416 = new SoROUTE();
 SoROUTE416->setFromField(QString("value_changed"));
-SoROUTE416->setFromNode(QString("r_ankle_RotationInterpolator_BasicWalk"));
+SoROUTE416->setFromNode(QString("whole_body_RotationInterpolator_BasicWalk"));
 SoROUTE416->setToField(QString("set_rotation"));
-SoROUTE416->setToNode(QString("hanim_r_ankle"));
+SoROUTE416->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE416);
 
 SoROUTE* SoROUTE417 = new SoROUTE();
 SoROUTE417->setFromField(QString("value_changed"));
-SoROUTE417->setFromNode(QString("r_knee_RotationInterpolator_BasicWalk"));
-SoROUTE417->setToField(QString("set_rotation"));
-SoROUTE417->setToNode(QString("hanim_r_knee"));
+SoROUTE417->setFromNode(QString("whole_body_TranslationInterpolator_BasicWalk"));
+SoROUTE417->setToField(QString("set_translation"));
+SoROUTE417->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE417);
 
 SoROUTE* SoROUTE418 = new SoROUTE();
-SoROUTE418->setFromField(QString("value_changed"));
-SoROUTE418->setFromNode(QString("r_hip_RotationInterpolator_BasicWalk"));
-SoROUTE418->setToField(QString("set_rotation"));
-SoROUTE418->setToNode(QString("hanim_r_hip"));
+SoROUTE418->setFromField(QString("fraction_changed"));
+SoROUTE418->setFromNode(QString("Run_Time"));
+SoROUTE418->setToField(QString("set_fraction"));
+SoROUTE418->setToNode(QString("r_ankle_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE418);
 
 SoROUTE* SoROUTE419 = new SoROUTE();
-SoROUTE419->setFromField(QString("value_changed"));
-SoROUTE419->setFromNode(QString("l_ankle_RotationInterpolator_BasicWalk"));
-SoROUTE419->setToField(QString("set_rotation"));
-SoROUTE419->setToNode(QString("hanim_l_ankle"));
+SoROUTE419->setFromField(QString("fraction_changed"));
+SoROUTE419->setFromNode(QString("Run_Time"));
+SoROUTE419->setToField(QString("set_fraction"));
+SoROUTE419->setToNode(QString("r_knee_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE419);
 
 SoROUTE* SoROUTE420 = new SoROUTE();
-SoROUTE420->setFromField(QString("value_changed"));
-SoROUTE420->setFromNode(QString("l_knee_RotationInterpolator_BasicWalk"));
-SoROUTE420->setToField(QString("set_rotation"));
-SoROUTE420->setToNode(QString("hanim_l_knee"));
+SoROUTE420->setFromField(QString("fraction_changed"));
+SoROUTE420->setFromNode(QString("Run_Time"));
+SoROUTE420->setToField(QString("set_fraction"));
+SoROUTE420->setToNode(QString("r_hip_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE420);
 
 SoROUTE* SoROUTE421 = new SoROUTE();
-SoROUTE421->setFromField(QString("value_changed"));
-SoROUTE421->setFromNode(QString("l_hip_RotationInterpolator_BasicWalk"));
-SoROUTE421->setToField(QString("set_rotation"));
-SoROUTE421->setToNode(QString("hanim_l_hip"));
+SoROUTE421->setFromField(QString("fraction_changed"));
+SoROUTE421->setFromNode(QString("Run_Time"));
+SoROUTE421->setToField(QString("set_fraction"));
+SoROUTE421->setToNode(QString("l_ankle_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE421);
 
 SoROUTE* SoROUTE422 = new SoROUTE();
-SoROUTE422->setFromField(QString("value_changed"));
-SoROUTE422->setFromNode(QString("lower_body_RotationInterpolator_BasicWalk"));
-SoROUTE422->setToField(QString("set_rotation"));
-SoROUTE422->setToNode(QString("hanim_sacroiliac"));
+SoROUTE422->setFromField(QString("fraction_changed"));
+SoROUTE422->setFromNode(QString("Run_Time"));
+SoROUTE422->setToField(QString("set_fraction"));
+SoROUTE422->setToNode(QString("l_knee_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE422);
 
 SoROUTE* SoROUTE423 = new SoROUTE();
-SoROUTE423->setFromField(QString("value_changed"));
-SoROUTE423->setFromNode(QString("r_wrist_RotationInterpolator_BasicWalk"));
-SoROUTE423->setToField(QString("set_rotation"));
-SoROUTE423->setToNode(QString("hanim_r_wrist"));
+SoROUTE423->setFromField(QString("fraction_changed"));
+SoROUTE423->setFromNode(QString("Run_Time"));
+SoROUTE423->setToField(QString("set_fraction"));
+SoROUTE423->setToNode(QString("l_hip_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE423);
 
 SoROUTE* SoROUTE424 = new SoROUTE();
-SoROUTE424->setFromField(QString("value_changed"));
-SoROUTE424->setFromNode(QString("r_elbow_RotationInterpolator_BasicWalk"));
-SoROUTE424->setToField(QString("set_rotation"));
-SoROUTE424->setToNode(QString("hanim_r_elbow"));
+SoROUTE424->setFromField(QString("fraction_changed"));
+SoROUTE424->setFromNode(QString("Run_Time"));
+SoROUTE424->setToField(QString("set_fraction"));
+SoROUTE424->setToNode(QString("lower_body_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE424);
 
 SoROUTE* SoROUTE425 = new SoROUTE();
-SoROUTE425->setFromField(QString("value_changed"));
-SoROUTE425->setFromNode(QString("r_shoulder_RotationInterpolator_BasicWalk"));
-SoROUTE425->setToField(QString("set_rotation"));
-SoROUTE425->setToNode(QString("hanim_r_shoulder"));
+SoROUTE425->setFromField(QString("fraction_changed"));
+SoROUTE425->setFromNode(QString("Run_Time"));
+SoROUTE425->setToField(QString("set_fraction"));
+SoROUTE425->setToNode(QString("r_wrist_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE425);
 
 SoROUTE* SoROUTE426 = new SoROUTE();
-SoROUTE426->setFromField(QString("value_changed"));
-SoROUTE426->setFromNode(QString("l_wrist_RotationInterpolator_BasicWalk"));
-SoROUTE426->setToField(QString("set_rotation"));
-SoROUTE426->setToNode(QString("hanim_l_wrist"));
+SoROUTE426->setFromField(QString("fraction_changed"));
+SoROUTE426->setFromNode(QString("Run_Time"));
+SoROUTE426->setToField(QString("set_fraction"));
+SoROUTE426->setToNode(QString("r_elbow_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE426);
 
 SoROUTE* SoROUTE427 = new SoROUTE();
-SoROUTE427->setFromField(QString("value_changed"));
-SoROUTE427->setFromNode(QString("l_elbow_RotationInterpolator_BasicWalk"));
-SoROUTE427->setToField(QString("set_rotation"));
-SoROUTE427->setToNode(QString("hanim_l_elbow"));
+SoROUTE427->setFromField(QString("fraction_changed"));
+SoROUTE427->setFromNode(QString("Run_Time"));
+SoROUTE427->setToField(QString("set_fraction"));
+SoROUTE427->setToNode(QString("r_shoulder_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE427);
 
 SoROUTE* SoROUTE428 = new SoROUTE();
-SoROUTE428->setFromField(QString("value_changed"));
-SoROUTE428->setFromNode(QString("l_shoulder_RotationInterpolator_BasicWalk"));
-SoROUTE428->setToField(QString("set_rotation"));
-SoROUTE428->setToNode(QString("hanim_l_shoulder"));
+SoROUTE428->setFromField(QString("fraction_changed"));
+SoROUTE428->setFromNode(QString("Run_Time"));
+SoROUTE428->setToField(QString("set_fraction"));
+SoROUTE428->setToNode(QString("l_wrist_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE428);
 
 SoROUTE* SoROUTE429 = new SoROUTE();
-SoROUTE429->setFromField(QString("value_changed"));
-SoROUTE429->setFromNode(QString("head_RotationInterpolator_BasicWalk"));
-SoROUTE429->setToField(QString("set_rotation"));
-SoROUTE429->setToNode(QString("hanim_skullbase"));
+SoROUTE429->setFromField(QString("fraction_changed"));
+SoROUTE429->setFromNode(QString("Run_Time"));
+SoROUTE429->setToField(QString("set_fraction"));
+SoROUTE429->setToNode(QString("l_elbow_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE429);
 
 SoROUTE* SoROUTE430 = new SoROUTE();
-SoROUTE430->setFromField(QString("value_changed"));
-SoROUTE430->setFromNode(QString("neck_RotationInterpolator_BasicWalk"));
-SoROUTE430->setToField(QString("set_rotation"));
-SoROUTE430->setToNode(QString("hanim_vc4"));
+SoROUTE430->setFromField(QString("fraction_changed"));
+SoROUTE430->setFromNode(QString("Run_Time"));
+SoROUTE430->setToField(QString("set_fraction"));
+SoROUTE430->setToNode(QString("l_shoulder_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE430);
 
 SoROUTE* SoROUTE431 = new SoROUTE();
-SoROUTE431->setFromField(QString("value_changed"));
-SoROUTE431->setFromNode(QString("upper_body_RotationInterpolator_BasicWalk"));
-SoROUTE431->setToField(QString("set_rotation"));
-SoROUTE431->setToNode(QString("hanim_vl1"));
+SoROUTE431->setFromField(QString("fraction_changed"));
+SoROUTE431->setFromNode(QString("Run_Time"));
+SoROUTE431->setToField(QString("set_fraction"));
+SoROUTE431->setToNode(QString("head_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE431);
 
 SoROUTE* SoROUTE432 = new SoROUTE();
-SoROUTE432->setFromField(QString("value_changed"));
-SoROUTE432->setFromNode(QString("whole_body_RotationInterpolator_BasicWalk"));
-SoROUTE432->setToField(QString("set_rotation"));
-SoROUTE432->setToNode(QString("hanim_humanoid_root"));
+SoROUTE432->setFromField(QString("fraction_changed"));
+SoROUTE432->setFromNode(QString("Run_Time"));
+SoROUTE432->setToField(QString("set_fraction"));
+SoROUTE432->setToNode(QString("neck_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE432);
 
 SoROUTE* SoROUTE433 = new SoROUTE();
-SoROUTE433->setFromField(QString("value_changed"));
-SoROUTE433->setFromNode(QString("whole_body_TranslationInterpolator_BasicWalk"));
-SoROUTE433->setToField(QString("set_translation"));
-SoROUTE433->setToNode(QString("hanim_humanoid_root"));
+SoROUTE433->setFromField(QString("fraction_changed"));
+SoROUTE433->setFromNode(QString("Run_Time"));
+SoROUTE433->setToField(QString("set_fraction"));
+SoROUTE433->setToNode(QString("upper_body_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE433);
 
 SoROUTE* SoROUTE434 = new SoROUTE();
 SoROUTE434->setFromField(QString("fraction_changed"));
 SoROUTE434->setFromNode(QString("Run_Time"));
 SoROUTE434->setToField(QString("set_fraction"));
-SoROUTE434->setToNode(QString("r_ankle_RotationInterpolator_Run"));
+SoROUTE434->setToNode(QString("whole_body_RotationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE434);
 
 SoROUTE* SoROUTE435 = new SoROUTE();
 SoROUTE435->setFromField(QString("fraction_changed"));
 SoROUTE435->setFromNode(QString("Run_Time"));
 SoROUTE435->setToField(QString("set_fraction"));
-SoROUTE435->setToNode(QString("r_knee_RotationInterpolator_Run"));
+SoROUTE435->setToNode(QString("whole_body_TranslationInterpolator_Run"));
 SoNode21->addChild(*SoROUTE435);
 
 SoROUTE* SoROUTE436 = new SoROUTE();
-SoROUTE436->setFromField(QString("fraction_changed"));
-SoROUTE436->setFromNode(QString("Run_Time"));
-SoROUTE436->setToField(QString("set_fraction"));
-SoROUTE436->setToNode(QString("r_hip_RotationInterpolator_Run"));
+SoROUTE436->setFromField(QString("value_changed"));
+SoROUTE436->setFromNode(QString("r_ankle_RotationInterpolator_Run"));
+SoROUTE436->setToField(QString("set_rotation"));
+SoROUTE436->setToNode(QString("hanim_r_ankle"));
 SoNode21->addChild(*SoROUTE436);
 
 SoROUTE* SoROUTE437 = new SoROUTE();
-SoROUTE437->setFromField(QString("fraction_changed"));
-SoROUTE437->setFromNode(QString("Run_Time"));
-SoROUTE437->setToField(QString("set_fraction"));
-SoROUTE437->setToNode(QString("l_ankle_RotationInterpolator_Run"));
+SoROUTE437->setFromField(QString("value_changed"));
+SoROUTE437->setFromNode(QString("r_knee_RotationInterpolator_Run"));
+SoROUTE437->setToField(QString("set_rotation"));
+SoROUTE437->setToNode(QString("hanim_r_knee"));
 SoNode21->addChild(*SoROUTE437);
 
 SoROUTE* SoROUTE438 = new SoROUTE();
-SoROUTE438->setFromField(QString("fraction_changed"));
-SoROUTE438->setFromNode(QString("Run_Time"));
-SoROUTE438->setToField(QString("set_fraction"));
-SoROUTE438->setToNode(QString("l_knee_RotationInterpolator_Run"));
+SoROUTE438->setFromField(QString("value_changed"));
+SoROUTE438->setFromNode(QString("r_hip_RotationInterpolator_Run"));
+SoROUTE438->setToField(QString("set_rotation"));
+SoROUTE438->setToNode(QString("hanim_r_hip"));
 SoNode21->addChild(*SoROUTE438);
 
 SoROUTE* SoROUTE439 = new SoROUTE();
-SoROUTE439->setFromField(QString("fraction_changed"));
-SoROUTE439->setFromNode(QString("Run_Time"));
-SoROUTE439->setToField(QString("set_fraction"));
-SoROUTE439->setToNode(QString("l_hip_RotationInterpolator_Run"));
+SoROUTE439->setFromField(QString("value_changed"));
+SoROUTE439->setFromNode(QString("l_ankle_RotationInterpolator_Run"));
+SoROUTE439->setToField(QString("set_rotation"));
+SoROUTE439->setToNode(QString("hanim_l_ankle"));
 SoNode21->addChild(*SoROUTE439);
 
 SoROUTE* SoROUTE440 = new SoROUTE();
-SoROUTE440->setFromField(QString("fraction_changed"));
-SoROUTE440->setFromNode(QString("Run_Time"));
-SoROUTE440->setToField(QString("set_fraction"));
-SoROUTE440->setToNode(QString("lower_body_RotationInterpolator_Run"));
+SoROUTE440->setFromField(QString("value_changed"));
+SoROUTE440->setFromNode(QString("l_knee_RotationInterpolator_Run"));
+SoROUTE440->setToField(QString("set_rotation"));
+SoROUTE440->setToNode(QString("hanim_l_knee"));
 SoNode21->addChild(*SoROUTE440);
 
 SoROUTE* SoROUTE441 = new SoROUTE();
-SoROUTE441->setFromField(QString("fraction_changed"));
-SoROUTE441->setFromNode(QString("Run_Time"));
-SoROUTE441->setToField(QString("set_fraction"));
-SoROUTE441->setToNode(QString("r_wrist_RotationInterpolator_Run"));
+SoROUTE441->setFromField(QString("value_changed"));
+SoROUTE441->setFromNode(QString("l_hip_RotationInterpolator_Run"));
+SoROUTE441->setToField(QString("set_rotation"));
+SoROUTE441->setToNode(QString("hanim_l_hip"));
 SoNode21->addChild(*SoROUTE441);
 
 SoROUTE* SoROUTE442 = new SoROUTE();
-SoROUTE442->setFromField(QString("fraction_changed"));
-SoROUTE442->setFromNode(QString("Run_Time"));
-SoROUTE442->setToField(QString("set_fraction"));
-SoROUTE442->setToNode(QString("r_elbow_RotationInterpolator_Run"));
+SoROUTE442->setFromField(QString("value_changed"));
+SoROUTE442->setFromNode(QString("lower_body_RotationInterpolator_Run"));
+SoROUTE442->setToField(QString("set_rotation"));
+SoROUTE442->setToNode(QString("hanim_sacroiliac"));
 SoNode21->addChild(*SoROUTE442);
 
 SoROUTE* SoROUTE443 = new SoROUTE();
-SoROUTE443->setFromField(QString("fraction_changed"));
-SoROUTE443->setFromNode(QString("Run_Time"));
-SoROUTE443->setToField(QString("set_fraction"));
-SoROUTE443->setToNode(QString("r_shoulder_RotationInterpolator_Run"));
+SoROUTE443->setFromField(QString("value_changed"));
+SoROUTE443->setFromNode(QString("r_wrist_RotationInterpolator_Run"));
+SoROUTE443->setToField(QString("set_rotation"));
+SoROUTE443->setToNode(QString("hanim_r_wrist"));
 SoNode21->addChild(*SoROUTE443);
 
 SoROUTE* SoROUTE444 = new SoROUTE();
-SoROUTE444->setFromField(QString("fraction_changed"));
-SoROUTE444->setFromNode(QString("Run_Time"));
-SoROUTE444->setToField(QString("set_fraction"));
-SoROUTE444->setToNode(QString("l_wrist_RotationInterpolator_Run"));
+SoROUTE444->setFromField(QString("value_changed"));
+SoROUTE444->setFromNode(QString("r_elbow_RotationInterpolator_Run"));
+SoROUTE444->setToField(QString("set_rotation"));
+SoROUTE444->setToNode(QString("hanim_r_elbow"));
 SoNode21->addChild(*SoROUTE444);
 
 SoROUTE* SoROUTE445 = new SoROUTE();
-SoROUTE445->setFromField(QString("fraction_changed"));
-SoROUTE445->setFromNode(QString("Run_Time"));
-SoROUTE445->setToField(QString("set_fraction"));
-SoROUTE445->setToNode(QString("l_elbow_RotationInterpolator_Run"));
+SoROUTE445->setFromField(QString("value_changed"));
+SoROUTE445->setFromNode(QString("r_shoulder_RotationInterpolator_Run"));
+SoROUTE445->setToField(QString("set_rotation"));
+SoROUTE445->setToNode(QString("hanim_r_shoulder"));
 SoNode21->addChild(*SoROUTE445);
 
 SoROUTE* SoROUTE446 = new SoROUTE();
-SoROUTE446->setFromField(QString("fraction_changed"));
-SoROUTE446->setFromNode(QString("Run_Time"));
-SoROUTE446->setToField(QString("set_fraction"));
-SoROUTE446->setToNode(QString("l_shoulder_RotationInterpolator_Run"));
+SoROUTE446->setFromField(QString("value_changed"));
+SoROUTE446->setFromNode(QString("l_wrist_RotationInterpolator_Run"));
+SoROUTE446->setToField(QString("set_rotation"));
+SoROUTE446->setToNode(QString("hanim_l_wrist"));
 SoNode21->addChild(*SoROUTE446);
 
 SoROUTE* SoROUTE447 = new SoROUTE();
-SoROUTE447->setFromField(QString("fraction_changed"));
-SoROUTE447->setFromNode(QString("Run_Time"));
-SoROUTE447->setToField(QString("set_fraction"));
-SoROUTE447->setToNode(QString("head_RotationInterpolator_Run"));
+SoROUTE447->setFromField(QString("value_changed"));
+SoROUTE447->setFromNode(QString("l_elbow_RotationInterpolator_Run"));
+SoROUTE447->setToField(QString("set_rotation"));
+SoROUTE447->setToNode(QString("hanim_l_elbow"));
 SoNode21->addChild(*SoROUTE447);
 
 SoROUTE* SoROUTE448 = new SoROUTE();
-SoROUTE448->setFromField(QString("fraction_changed"));
-SoROUTE448->setFromNode(QString("Run_Time"));
-SoROUTE448->setToField(QString("set_fraction"));
-SoROUTE448->setToNode(QString("neck_RotationInterpolator_Run"));
+SoROUTE448->setFromField(QString("value_changed"));
+SoROUTE448->setFromNode(QString("l_shoulder_RotationInterpolator_Run"));
+SoROUTE448->setToField(QString("set_rotation"));
+SoROUTE448->setToNode(QString("hanim_l_shoulder"));
 SoNode21->addChild(*SoROUTE448);
 
 SoROUTE* SoROUTE449 = new SoROUTE();
-SoROUTE449->setFromField(QString("fraction_changed"));
-SoROUTE449->setFromNode(QString("Run_Time"));
-SoROUTE449->setToField(QString("set_fraction"));
-SoROUTE449->setToNode(QString("upper_body_RotationInterpolator_Run"));
+SoROUTE449->setFromField(QString("value_changed"));
+SoROUTE449->setFromNode(QString("head_RotationInterpolator_Run"));
+SoROUTE449->setToField(QString("set_rotation"));
+SoROUTE449->setToNode(QString("hanim_skullbase"));
 SoNode21->addChild(*SoROUTE449);
 
 SoROUTE* SoROUTE450 = new SoROUTE();
-SoROUTE450->setFromField(QString("fraction_changed"));
-SoROUTE450->setFromNode(QString("Run_Time"));
-SoROUTE450->setToField(QString("set_fraction"));
-SoROUTE450->setToNode(QString("whole_body_RotationInterpolator_Run"));
+SoROUTE450->setFromField(QString("value_changed"));
+SoROUTE450->setFromNode(QString("neck_RotationInterpolator_Run"));
+SoROUTE450->setToField(QString("set_rotation"));
+SoROUTE450->setToNode(QString("hanim_vc4"));
 SoNode21->addChild(*SoROUTE450);
 
 SoROUTE* SoROUTE451 = new SoROUTE();
-SoROUTE451->setFromField(QString("fraction_changed"));
-SoROUTE451->setFromNode(QString("Run_Time"));
-SoROUTE451->setToField(QString("set_fraction"));
-SoROUTE451->setToNode(QString("whole_body_TranslationInterpolator_Run"));
+SoROUTE451->setFromField(QString("value_changed"));
+SoROUTE451->setFromNode(QString("upper_body_RotationInterpolator_Run"));
+SoROUTE451->setToField(QString("set_rotation"));
+SoROUTE451->setToNode(QString("hanim_vl1"));
 SoNode21->addChild(*SoROUTE451);
 
 SoROUTE* SoROUTE452 = new SoROUTE();
 SoROUTE452->setFromField(QString("value_changed"));
-SoROUTE452->setFromNode(QString("r_ankle_RotationInterpolator_Run"));
+SoROUTE452->setFromNode(QString("whole_body_RotationInterpolator_Run"));
 SoROUTE452->setToField(QString("set_rotation"));
-SoROUTE452->setToNode(QString("hanim_r_ankle"));
+SoROUTE452->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE452);
 
 SoROUTE* SoROUTE453 = new SoROUTE();
 SoROUTE453->setFromField(QString("value_changed"));
-SoROUTE453->setFromNode(QString("r_knee_RotationInterpolator_Run"));
-SoROUTE453->setToField(QString("set_rotation"));
-SoROUTE453->setToNode(QString("hanim_r_knee"));
+SoROUTE453->setFromNode(QString("whole_body_TranslationInterpolator_Run"));
+SoROUTE453->setToField(QString("set_translation"));
+SoROUTE453->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE453);
 
 SoROUTE* SoROUTE454 = new SoROUTE();
-SoROUTE454->setFromField(QString("value_changed"));
-SoROUTE454->setFromNode(QString("r_hip_RotationInterpolator_Run"));
-SoROUTE454->setToField(QString("set_rotation"));
-SoROUTE454->setToNode(QString("hanim_r_hip"));
+SoROUTE454->setFromField(QString("fraction_changed"));
+SoROUTE454->setFromNode(QString("Jump_Time"));
+SoROUTE454->setToField(QString("set_fraction"));
+SoROUTE454->setToNode(QString("r_ankle_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE454);
 
 SoROUTE* SoROUTE455 = new SoROUTE();
-SoROUTE455->setFromField(QString("value_changed"));
-SoROUTE455->setFromNode(QString("l_ankle_RotationInterpolator_Run"));
-SoROUTE455->setToField(QString("set_rotation"));
-SoROUTE455->setToNode(QString("hanim_l_ankle"));
+SoROUTE455->setFromField(QString("fraction_changed"));
+SoROUTE455->setFromNode(QString("Jump_Time"));
+SoROUTE455->setToField(QString("set_fraction"));
+SoROUTE455->setToNode(QString("r_knee_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE455);
 
 SoROUTE* SoROUTE456 = new SoROUTE();
-SoROUTE456->setFromField(QString("value_changed"));
-SoROUTE456->setFromNode(QString("l_knee_RotationInterpolator_Run"));
-SoROUTE456->setToField(QString("set_rotation"));
-SoROUTE456->setToNode(QString("hanim_l_knee"));
+SoROUTE456->setFromField(QString("fraction_changed"));
+SoROUTE456->setFromNode(QString("Jump_Time"));
+SoROUTE456->setToField(QString("set_fraction"));
+SoROUTE456->setToNode(QString("r_hip_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE456);
 
 SoROUTE* SoROUTE457 = new SoROUTE();
-SoROUTE457->setFromField(QString("value_changed"));
-SoROUTE457->setFromNode(QString("l_hip_RotationInterpolator_Run"));
-SoROUTE457->setToField(QString("set_rotation"));
-SoROUTE457->setToNode(QString("hanim_l_hip"));
+SoROUTE457->setFromField(QString("fraction_changed"));
+SoROUTE457->setFromNode(QString("Jump_Time"));
+SoROUTE457->setToField(QString("set_fraction"));
+SoROUTE457->setToNode(QString("l_ankle_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE457);
 
 SoROUTE* SoROUTE458 = new SoROUTE();
-SoROUTE458->setFromField(QString("value_changed"));
-SoROUTE458->setFromNode(QString("lower_body_RotationInterpolator_Run"));
-SoROUTE458->setToField(QString("set_rotation"));
-SoROUTE458->setToNode(QString("hanim_sacroiliac"));
+SoROUTE458->setFromField(QString("fraction_changed"));
+SoROUTE458->setFromNode(QString("Jump_Time"));
+SoROUTE458->setToField(QString("set_fraction"));
+SoROUTE458->setToNode(QString("l_knee_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE458);
 
 SoROUTE* SoROUTE459 = new SoROUTE();
-SoROUTE459->setFromField(QString("value_changed"));
-SoROUTE459->setFromNode(QString("r_wrist_RotationInterpolator_Run"));
-SoROUTE459->setToField(QString("set_rotation"));
-SoROUTE459->setToNode(QString("hanim_r_wrist"));
+SoROUTE459->setFromField(QString("fraction_changed"));
+SoROUTE459->setFromNode(QString("Jump_Time"));
+SoROUTE459->setToField(QString("set_fraction"));
+SoROUTE459->setToNode(QString("l_hip_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE459);
 
 SoROUTE* SoROUTE460 = new SoROUTE();
-SoROUTE460->setFromField(QString("value_changed"));
-SoROUTE460->setFromNode(QString("r_elbow_RotationInterpolator_Run"));
-SoROUTE460->setToField(QString("set_rotation"));
-SoROUTE460->setToNode(QString("hanim_r_elbow"));
+SoROUTE460->setFromField(QString("fraction_changed"));
+SoROUTE460->setFromNode(QString("Jump_Time"));
+SoROUTE460->setToField(QString("set_fraction"));
+SoROUTE460->setToNode(QString("lower_body_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE460);
 
 SoROUTE* SoROUTE461 = new SoROUTE();
-SoROUTE461->setFromField(QString("value_changed"));
-SoROUTE461->setFromNode(QString("r_shoulder_RotationInterpolator_Run"));
-SoROUTE461->setToField(QString("set_rotation"));
-SoROUTE461->setToNode(QString("hanim_r_shoulder"));
+SoROUTE461->setFromField(QString("fraction_changed"));
+SoROUTE461->setFromNode(QString("Jump_Time"));
+SoROUTE461->setToField(QString("set_fraction"));
+SoROUTE461->setToNode(QString("r_wrist_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE461);
 
 SoROUTE* SoROUTE462 = new SoROUTE();
-SoROUTE462->setFromField(QString("value_changed"));
-SoROUTE462->setFromNode(QString("l_wrist_RotationInterpolator_Run"));
-SoROUTE462->setToField(QString("set_rotation"));
-SoROUTE462->setToNode(QString("hanim_l_wrist"));
+SoROUTE462->setFromField(QString("fraction_changed"));
+SoROUTE462->setFromNode(QString("Jump_Time"));
+SoROUTE462->setToField(QString("set_fraction"));
+SoROUTE462->setToNode(QString("r_elbow_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE462);
 
 SoROUTE* SoROUTE463 = new SoROUTE();
-SoROUTE463->setFromField(QString("value_changed"));
-SoROUTE463->setFromNode(QString("l_elbow_RotationInterpolator_Run"));
-SoROUTE463->setToField(QString("set_rotation"));
-SoROUTE463->setToNode(QString("hanim_l_elbow"));
+SoROUTE463->setFromField(QString("fraction_changed"));
+SoROUTE463->setFromNode(QString("Jump_Time"));
+SoROUTE463->setToField(QString("set_fraction"));
+SoROUTE463->setToNode(QString("r_shoulder_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE463);
 
 SoROUTE* SoROUTE464 = new SoROUTE();
-SoROUTE464->setFromField(QString("value_changed"));
-SoROUTE464->setFromNode(QString("l_shoulder_RotationInterpolator_Run"));
-SoROUTE464->setToField(QString("set_rotation"));
-SoROUTE464->setToNode(QString("hanim_l_shoulder"));
+SoROUTE464->setFromField(QString("fraction_changed"));
+SoROUTE464->setFromNode(QString("Jump_Time"));
+SoROUTE464->setToField(QString("set_fraction"));
+SoROUTE464->setToNode(QString("l_wrist_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE464);
 
 SoROUTE* SoROUTE465 = new SoROUTE();
-SoROUTE465->setFromField(QString("value_changed"));
-SoROUTE465->setFromNode(QString("head_RotationInterpolator_Run"));
-SoROUTE465->setToField(QString("set_rotation"));
-SoROUTE465->setToNode(QString("hanim_skullbase"));
+SoROUTE465->setFromField(QString("fraction_changed"));
+SoROUTE465->setFromNode(QString("Jump_Time"));
+SoROUTE465->setToField(QString("set_fraction"));
+SoROUTE465->setToNode(QString("l_elbow_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE465);
 
 SoROUTE* SoROUTE466 = new SoROUTE();
-SoROUTE466->setFromField(QString("value_changed"));
-SoROUTE466->setFromNode(QString("neck_RotationInterpolator_Run"));
-SoROUTE466->setToField(QString("set_rotation"));
-SoROUTE466->setToNode(QString("hanim_vc4"));
+SoROUTE466->setFromField(QString("fraction_changed"));
+SoROUTE466->setFromNode(QString("Jump_Time"));
+SoROUTE466->setToField(QString("set_fraction"));
+SoROUTE466->setToNode(QString("l_shoulder_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE466);
 
 SoROUTE* SoROUTE467 = new SoROUTE();
-SoROUTE467->setFromField(QString("value_changed"));
-SoROUTE467->setFromNode(QString("upper_body_RotationInterpolator_Run"));
-SoROUTE467->setToField(QString("set_rotation"));
-SoROUTE467->setToNode(QString("hanim_vl1"));
+SoROUTE467->setFromField(QString("fraction_changed"));
+SoROUTE467->setFromNode(QString("Jump_Time"));
+SoROUTE467->setToField(QString("set_fraction"));
+SoROUTE467->setToNode(QString("head_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE467);
 
 SoROUTE* SoROUTE468 = new SoROUTE();
-SoROUTE468->setFromField(QString("value_changed"));
-SoROUTE468->setFromNode(QString("whole_body_RotationInterpolator_Run"));
-SoROUTE468->setToField(QString("set_rotation"));
-SoROUTE468->setToNode(QString("hanim_humanoid_root"));
+SoROUTE468->setFromField(QString("fraction_changed"));
+SoROUTE468->setFromNode(QString("Jump_Time"));
+SoROUTE468->setToField(QString("set_fraction"));
+SoROUTE468->setToNode(QString("neck_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE468);
 
 SoROUTE* SoROUTE469 = new SoROUTE();
-SoROUTE469->setFromField(QString("value_changed"));
-SoROUTE469->setFromNode(QString("whole_body_TranslationInterpolator_Run"));
-SoROUTE469->setToField(QString("set_translation"));
-SoROUTE469->setToNode(QString("hanim_humanoid_root"));
+SoROUTE469->setFromField(QString("fraction_changed"));
+SoROUTE469->setFromNode(QString("Jump_Time"));
+SoROUTE469->setToField(QString("set_fraction"));
+SoROUTE469->setToNode(QString("upper_body_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE469);
 
 SoROUTE* SoROUTE470 = new SoROUTE();
 SoROUTE470->setFromField(QString("fraction_changed"));
 SoROUTE470->setFromNode(QString("Jump_Time"));
 SoROUTE470->setToField(QString("set_fraction"));
-SoROUTE470->setToNode(QString("r_ankle_RotationInterpolator_Jump"));
+SoROUTE470->setToNode(QString("whole_body_RotationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE470);
 
 SoROUTE* SoROUTE471 = new SoROUTE();
 SoROUTE471->setFromField(QString("fraction_changed"));
 SoROUTE471->setFromNode(QString("Jump_Time"));
 SoROUTE471->setToField(QString("set_fraction"));
-SoROUTE471->setToNode(QString("r_knee_RotationInterpolator_Jump"));
+SoROUTE471->setToNode(QString("whole_body_TranslationInterpolator_Jump"));
 SoNode21->addChild(*SoROUTE471);
 
 SoROUTE* SoROUTE472 = new SoROUTE();
-SoROUTE472->setFromField(QString("fraction_changed"));
-SoROUTE472->setFromNode(QString("Jump_Time"));
-SoROUTE472->setToField(QString("set_fraction"));
-SoROUTE472->setToNode(QString("r_hip_RotationInterpolator_Jump"));
+SoROUTE472->setFromField(QString("value_changed"));
+SoROUTE472->setFromNode(QString("r_ankle_RotationInterpolator_Jump"));
+SoROUTE472->setToField(QString("set_rotation"));
+SoROUTE472->setToNode(QString("hanim_r_ankle"));
 SoNode21->addChild(*SoROUTE472);
 
 SoROUTE* SoROUTE473 = new SoROUTE();
-SoROUTE473->setFromField(QString("fraction_changed"));
-SoROUTE473->setFromNode(QString("Jump_Time"));
-SoROUTE473->setToField(QString("set_fraction"));
-SoROUTE473->setToNode(QString("l_ankle_RotationInterpolator_Jump"));
+SoROUTE473->setFromField(QString("value_changed"));
+SoROUTE473->setFromNode(QString("r_knee_RotationInterpolator_Jump"));
+SoROUTE473->setToField(QString("set_rotation"));
+SoROUTE473->setToNode(QString("hanim_r_knee"));
 SoNode21->addChild(*SoROUTE473);
 
 SoROUTE* SoROUTE474 = new SoROUTE();
-SoROUTE474->setFromField(QString("fraction_changed"));
-SoROUTE474->setFromNode(QString("Jump_Time"));
-SoROUTE474->setToField(QString("set_fraction"));
-SoROUTE474->setToNode(QString("l_knee_RotationInterpolator_Jump"));
+SoROUTE474->setFromField(QString("value_changed"));
+SoROUTE474->setFromNode(QString("r_hip_RotationInterpolator_Jump"));
+SoROUTE474->setToField(QString("set_rotation"));
+SoROUTE474->setToNode(QString("hanim_r_hip"));
 SoNode21->addChild(*SoROUTE474);
 
 SoROUTE* SoROUTE475 = new SoROUTE();
-SoROUTE475->setFromField(QString("fraction_changed"));
-SoROUTE475->setFromNode(QString("Jump_Time"));
-SoROUTE475->setToField(QString("set_fraction"));
-SoROUTE475->setToNode(QString("l_hip_RotationInterpolator_Jump"));
+SoROUTE475->setFromField(QString("value_changed"));
+SoROUTE475->setFromNode(QString("l_ankle_RotationInterpolator_Jump"));
+SoROUTE475->setToField(QString("set_rotation"));
+SoROUTE475->setToNode(QString("hanim_l_ankle"));
 SoNode21->addChild(*SoROUTE475);
 
 SoROUTE* SoROUTE476 = new SoROUTE();
-SoROUTE476->setFromField(QString("fraction_changed"));
-SoROUTE476->setFromNode(QString("Jump_Time"));
-SoROUTE476->setToField(QString("set_fraction"));
-SoROUTE476->setToNode(QString("lower_body_RotationInterpolator_Jump"));
+SoROUTE476->setFromField(QString("value_changed"));
+SoROUTE476->setFromNode(QString("l_knee_RotationInterpolator_Jump"));
+SoROUTE476->setToField(QString("set_rotation"));
+SoROUTE476->setToNode(QString("hanim_l_knee"));
 SoNode21->addChild(*SoROUTE476);
 
 SoROUTE* SoROUTE477 = new SoROUTE();
-SoROUTE477->setFromField(QString("fraction_changed"));
-SoROUTE477->setFromNode(QString("Jump_Time"));
-SoROUTE477->setToField(QString("set_fraction"));
-SoROUTE477->setToNode(QString("r_wrist_RotationInterpolator_Jump"));
+SoROUTE477->setFromField(QString("value_changed"));
+SoROUTE477->setFromNode(QString("l_hip_RotationInterpolator_Jump"));
+SoROUTE477->setToField(QString("set_rotation"));
+SoROUTE477->setToNode(QString("hanim_l_hip"));
 SoNode21->addChild(*SoROUTE477);
 
 SoROUTE* SoROUTE478 = new SoROUTE();
-SoROUTE478->setFromField(QString("fraction_changed"));
-SoROUTE478->setFromNode(QString("Jump_Time"));
-SoROUTE478->setToField(QString("set_fraction"));
-SoROUTE478->setToNode(QString("r_elbow_RotationInterpolator_Jump"));
+SoROUTE478->setFromField(QString("value_changed"));
+SoROUTE478->setFromNode(QString("lower_body_RotationInterpolator_Jump"));
+SoROUTE478->setToField(QString("set_rotation"));
+SoROUTE478->setToNode(QString("hanim_sacroiliac"));
 SoNode21->addChild(*SoROUTE478);
 
 SoROUTE* SoROUTE479 = new SoROUTE();
-SoROUTE479->setFromField(QString("fraction_changed"));
-SoROUTE479->setFromNode(QString("Jump_Time"));
-SoROUTE479->setToField(QString("set_fraction"));
-SoROUTE479->setToNode(QString("r_shoulder_RotationInterpolator_Jump"));
+SoROUTE479->setFromField(QString("value_changed"));
+SoROUTE479->setFromNode(QString("r_wrist_RotationInterpolator_Jump"));
+SoROUTE479->setToField(QString("set_rotation"));
+SoROUTE479->setToNode(QString("hanim_r_wrist"));
 SoNode21->addChild(*SoROUTE479);
 
 SoROUTE* SoROUTE480 = new SoROUTE();
-SoROUTE480->setFromField(QString("fraction_changed"));
-SoROUTE480->setFromNode(QString("Jump_Time"));
-SoROUTE480->setToField(QString("set_fraction"));
-SoROUTE480->setToNode(QString("l_wrist_RotationInterpolator_Jump"));
+SoROUTE480->setFromField(QString("value_changed"));
+SoROUTE480->setFromNode(QString("r_elbow_RotationInterpolator_Jump"));
+SoROUTE480->setToField(QString("set_rotation"));
+SoROUTE480->setToNode(QString("hanim_r_elbow"));
 SoNode21->addChild(*SoROUTE480);
 
 SoROUTE* SoROUTE481 = new SoROUTE();
-SoROUTE481->setFromField(QString("fraction_changed"));
-SoROUTE481->setFromNode(QString("Jump_Time"));
-SoROUTE481->setToField(QString("set_fraction"));
-SoROUTE481->setToNode(QString("l_elbow_RotationInterpolator_Jump"));
+SoROUTE481->setFromField(QString("value_changed"));
+SoROUTE481->setFromNode(QString("r_shoulder_RotationInterpolator_Jump"));
+SoROUTE481->setToField(QString("set_rotation"));
+SoROUTE481->setToNode(QString("hanim_r_shoulder"));
 SoNode21->addChild(*SoROUTE481);
 
 SoROUTE* SoROUTE482 = new SoROUTE();
-SoROUTE482->setFromField(QString("fraction_changed"));
-SoROUTE482->setFromNode(QString("Jump_Time"));
-SoROUTE482->setToField(QString("set_fraction"));
-SoROUTE482->setToNode(QString("l_shoulder_RotationInterpolator_Jump"));
+SoROUTE482->setFromField(QString("value_changed"));
+SoROUTE482->setFromNode(QString("l_wrist_RotationInterpolator_Jump"));
+SoROUTE482->setToField(QString("set_rotation"));
+SoROUTE482->setToNode(QString("hanim_l_wrist"));
 SoNode21->addChild(*SoROUTE482);
 
 SoROUTE* SoROUTE483 = new SoROUTE();
-SoROUTE483->setFromField(QString("fraction_changed"));
-SoROUTE483->setFromNode(QString("Jump_Time"));
-SoROUTE483->setToField(QString("set_fraction"));
-SoROUTE483->setToNode(QString("head_RotationInterpolator_Jump"));
+SoROUTE483->setFromField(QString("value_changed"));
+SoROUTE483->setFromNode(QString("l_elbow_RotationInterpolator_Jump"));
+SoROUTE483->setToField(QString("set_rotation"));
+SoROUTE483->setToNode(QString("hanim_l_elbow"));
 SoNode21->addChild(*SoROUTE483);
 
 SoROUTE* SoROUTE484 = new SoROUTE();
-SoROUTE484->setFromField(QString("fraction_changed"));
-SoROUTE484->setFromNode(QString("Jump_Time"));
-SoROUTE484->setToField(QString("set_fraction"));
-SoROUTE484->setToNode(QString("neck_RotationInterpolator_Jump"));
+SoROUTE484->setFromField(QString("value_changed"));
+SoROUTE484->setFromNode(QString("l_shoulder_RotationInterpolator_Jump"));
+SoROUTE484->setToField(QString("set_rotation"));
+SoROUTE484->setToNode(QString("hanim_l_shoulder"));
 SoNode21->addChild(*SoROUTE484);
 
 SoROUTE* SoROUTE485 = new SoROUTE();
-SoROUTE485->setFromField(QString("fraction_changed"));
-SoROUTE485->setFromNode(QString("Jump_Time"));
-SoROUTE485->setToField(QString("set_fraction"));
-SoROUTE485->setToNode(QString("upper_body_RotationInterpolator_Jump"));
+SoROUTE485->setFromField(QString("value_changed"));
+SoROUTE485->setFromNode(QString("head_RotationInterpolator_Jump"));
+SoROUTE485->setToField(QString("set_rotation"));
+SoROUTE485->setToNode(QString("hanim_skullbase"));
 SoNode21->addChild(*SoROUTE485);
 
 SoROUTE* SoROUTE486 = new SoROUTE();
-SoROUTE486->setFromField(QString("fraction_changed"));
-SoROUTE486->setFromNode(QString("Jump_Time"));
-SoROUTE486->setToField(QString("set_fraction"));
-SoROUTE486->setToNode(QString("whole_body_RotationInterpolator_Jump"));
+SoROUTE486->setFromField(QString("value_changed"));
+SoROUTE486->setFromNode(QString("neck_RotationInterpolator_Jump"));
+SoROUTE486->setToField(QString("set_rotation"));
+SoROUTE486->setToNode(QString("hanim_vc4"));
 SoNode21->addChild(*SoROUTE486);
 
 SoROUTE* SoROUTE487 = new SoROUTE();
-SoROUTE487->setFromField(QString("fraction_changed"));
-SoROUTE487->setFromNode(QString("Jump_Time"));
-SoROUTE487->setToField(QString("set_fraction"));
-SoROUTE487->setToNode(QString("whole_body_TranslationInterpolator_Jump"));
+SoROUTE487->setFromField(QString("value_changed"));
+SoROUTE487->setFromNode(QString("upper_body_RotationInterpolator_Jump"));
+SoROUTE487->setToField(QString("set_rotation"));
+SoROUTE487->setToNode(QString("hanim_vl1"));
 SoNode21->addChild(*SoROUTE487);
 
 SoROUTE* SoROUTE488 = new SoROUTE();
 SoROUTE488->setFromField(QString("value_changed"));
-SoROUTE488->setFromNode(QString("r_ankle_RotationInterpolator_Jump"));
+SoROUTE488->setFromNode(QString("whole_body_RotationInterpolator_Jump"));
 SoROUTE488->setToField(QString("set_rotation"));
-SoROUTE488->setToNode(QString("hanim_r_ankle"));
+SoROUTE488->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE488);
 
 SoROUTE* SoROUTE489 = new SoROUTE();
 SoROUTE489->setFromField(QString("value_changed"));
-SoROUTE489->setFromNode(QString("r_knee_RotationInterpolator_Jump"));
-SoROUTE489->setToField(QString("set_rotation"));
-SoROUTE489->setToNode(QString("hanim_r_knee"));
+SoROUTE489->setFromNode(QString("whole_body_TranslationInterpolator_Jump"));
+SoROUTE489->setToField(QString("set_translation"));
+SoROUTE489->setToNode(QString("hanim_humanoid_root"));
 SoNode21->addChild(*SoROUTE489);
-
-SoROUTE* SoROUTE490 = new SoROUTE();
-SoROUTE490->setFromField(QString("value_changed"));
-SoROUTE490->setFromNode(QString("r_hip_RotationInterpolator_Jump"));
-SoROUTE490->setToField(QString("set_rotation"));
-SoROUTE490->setToNode(QString("hanim_r_hip"));
-SoNode21->addChild(*SoROUTE490);
-
-SoROUTE* SoROUTE491 = new SoROUTE();
-SoROUTE491->setFromField(QString("value_changed"));
-SoROUTE491->setFromNode(QString("l_ankle_RotationInterpolator_Jump"));
-SoROUTE491->setToField(QString("set_rotation"));
-SoROUTE491->setToNode(QString("hanim_l_ankle"));
-SoNode21->addChild(*SoROUTE491);
-
-SoROUTE* SoROUTE492 = new SoROUTE();
-SoROUTE492->setFromField(QString("value_changed"));
-SoROUTE492->setFromNode(QString("l_knee_RotationInterpolator_Jump"));
-SoROUTE492->setToField(QString("set_rotation"));
-SoROUTE492->setToNode(QString("hanim_l_knee"));
-SoNode21->addChild(*SoROUTE492);
-
-SoROUTE* SoROUTE493 = new SoROUTE();
-SoROUTE493->setFromField(QString("value_changed"));
-SoROUTE493->setFromNode(QString("l_hip_RotationInterpolator_Jump"));
-SoROUTE493->setToField(QString("set_rotation"));
-SoROUTE493->setToNode(QString("hanim_l_hip"));
-SoNode21->addChild(*SoROUTE493);
-
-SoROUTE* SoROUTE494 = new SoROUTE();
-SoROUTE494->setFromField(QString("value_changed"));
-SoROUTE494->setFromNode(QString("lower_body_RotationInterpolator_Jump"));
-SoROUTE494->setToField(QString("set_rotation"));
-SoROUTE494->setToNode(QString("hanim_sacroiliac"));
-SoNode21->addChild(*SoROUTE494);
-
-SoROUTE* SoROUTE495 = new SoROUTE();
-SoROUTE495->setFromField(QString("value_changed"));
-SoROUTE495->setFromNode(QString("r_wrist_RotationInterpolator_Jump"));
-SoROUTE495->setToField(QString("set_rotation"));
-SoROUTE495->setToNode(QString("hanim_r_wrist"));
-SoNode21->addChild(*SoROUTE495);
-
-SoROUTE* SoROUTE496 = new SoROUTE();
-SoROUTE496->setFromField(QString("value_changed"));
-SoROUTE496->setFromNode(QString("r_elbow_RotationInterpolator_Jump"));
-SoROUTE496->setToField(QString("set_rotation"));
-SoROUTE496->setToNode(QString("hanim_r_elbow"));
-SoNode21->addChild(*SoROUTE496);
-
-SoROUTE* SoROUTE497 = new SoROUTE();
-SoROUTE497->setFromField(QString("value_changed"));
-SoROUTE497->setFromNode(QString("r_shoulder_RotationInterpolator_Jump"));
-SoROUTE497->setToField(QString("set_rotation"));
-SoROUTE497->setToNode(QString("hanim_r_shoulder"));
-SoNode21->addChild(*SoROUTE497);
-
-SoROUTE* SoROUTE498 = new SoROUTE();
-SoROUTE498->setFromField(QString("value_changed"));
-SoROUTE498->setFromNode(QString("l_wrist_RotationInterpolator_Jump"));
-SoROUTE498->setToField(QString("set_rotation"));
-SoROUTE498->setToNode(QString("hanim_l_wrist"));
-SoNode21->addChild(*SoROUTE498);
-
-SoROUTE* SoROUTE499 = new SoROUTE();
-SoROUTE499->setFromField(QString("value_changed"));
-SoROUTE499->setFromNode(QString("l_elbow_RotationInterpolator_Jump"));
-SoROUTE499->setToField(QString("set_rotation"));
-SoROUTE499->setToNode(QString("hanim_l_elbow"));
-SoNode21->addChild(*SoROUTE499);
-
-SoROUTE* SoROUTE500 = new SoROUTE();
-SoROUTE500->setFromField(QString("value_changed"));
-SoROUTE500->setFromNode(QString("l_shoulder_RotationInterpolator_Jump"));
-SoROUTE500->setToField(QString("set_rotation"));
-SoROUTE500->setToNode(QString("hanim_l_shoulder"));
-SoNode21->addChild(*SoROUTE500);
-
-SoROUTE* SoROUTE501 = new SoROUTE();
-SoROUTE501->setFromField(QString("value_changed"));
-SoROUTE501->setFromNode(QString("head_RotationInterpolator_Jump"));
-SoROUTE501->setToField(QString("set_rotation"));
-SoROUTE501->setToNode(QString("hanim_skullbase"));
-SoNode21->addChild(*SoROUTE501);
-
-SoROUTE* SoROUTE502 = new SoROUTE();
-SoROUTE502->setFromField(QString("value_changed"));
-SoROUTE502->setFromNode(QString("neck_RotationInterpolator_Jump"));
-SoROUTE502->setToField(QString("set_rotation"));
-SoROUTE502->setToNode(QString("hanim_vc4"));
-SoNode21->addChild(*SoROUTE502);
-
-SoROUTE* SoROUTE503 = new SoROUTE();
-SoROUTE503->setFromField(QString("value_changed"));
-SoROUTE503->setFromNode(QString("upper_body_RotationInterpolator_Jump"));
-SoROUTE503->setToField(QString("set_rotation"));
-SoROUTE503->setToNode(QString("hanim_vl1"));
-SoNode21->addChild(*SoROUTE503);
-
-SoROUTE* SoROUTE504 = new SoROUTE();
-SoROUTE504->setFromField(QString("value_changed"));
-SoROUTE504->setFromNode(QString("whole_body_RotationInterpolator_Jump"));
-SoROUTE504->setToField(QString("set_rotation"));
-SoROUTE504->setToNode(QString("hanim_humanoid_root"));
-SoNode21->addChild(*SoROUTE504);
-
-SoROUTE* SoROUTE505 = new SoROUTE();
-SoROUTE505->setFromField(QString("value_changed"));
-SoROUTE505->setFromNode(QString("whole_body_TranslationInterpolator_Jump"));
-SoROUTE505->setToField(QString("set_translation"));
-SoROUTE505->setToNode(QString("hanim_humanoid_root"));
-SoNode21->addChild(*SoROUTE505);
 
 SoSceneManager0->setSceneGraph(*SoNode21);
 

@@ -7,7 +7,7 @@ ConfigurationProperties.xsltEngine = ConfigurationProperties.XSLT_ENGINE_NATIVE_
 ConfigurationProperties.deleteIntermediateFiles = false;
 ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
-      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.1")
       .setHead(new autoclass.head()
         .addComponent(new autoclass.component().setName("EnvironmentalEffects").setLevel(3))
         .addComponent(new autoclass.component().setName("Shaders").setLevel(1))
@@ -28,7 +28,8 @@ ConfigurationProperties.setStripDefaultAttributes(true);
         .addChild(new autoclass.Background().setBackUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_back.png"])).setBottomUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"])).setFrontUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_front.png"])).setLeftUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_left.png"])).setRightUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_right.png"])).setTopUrl(java.newArray("java.lang.String", ["../resources/images/all_probes/stpeters_cross/stpeters_top.png"])))
         .addChild(new autoclass.Transform()
           .addChild(new autoclass.ParticleSystem().setMaxParticles(20).setGeometryType("GEOMETRY")
-            .addComments((new autoclass.CommentsBlock("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values")))
+            .addComments((new autoclass.CommentsBlock("* values - array of MFFloats to pass to ComposedShader")))
+            .addComments((new autoclass.CommentsBlock("* variations in values - array of MFFloats to pass to ComposedShader that varies values")))
             .addVariationPhysicsModel(new autoclass.VariationPhysicsModel().setValues("2 2 5 5 0 0").setVariations("0.2 0.1 0.3 0.3 0.01 0.01"))
             .setEmitter(new autoclass.ExplosionEmitter().setSpeed(java.newFloat(1)).setVariation(java.newFloat(0.75)))
             .setGeometry(new autoclass.Sphere())

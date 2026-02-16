@@ -46,7 +46,8 @@ let Transform19 = browser.currentScene.createNode("Transform");
 let ParticleSystem20 = browser.currentScene.createNode("ParticleSystem");
 ParticleSystem20.maxParticles = 20;
 ParticleSystem20.geometryType = "GEOMETRY";
-//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values
+//* values - array of MFFloats to pass to ComposedShader
+//* variations in values - array of MFFloats to pass to ComposedShader that varies values
 let VariationPhysicsModel21 = browser.currentScene.createNode("VariationPhysicsModel");
 VariationPhysicsModel21.values = "2 2 5 5 0 0";
 VariationPhysicsModel21.variations = "0.2 0.1 0.3 0.3 0.01 0.01";

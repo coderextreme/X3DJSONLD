@@ -3,7 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Full";
-X3D0.version = "4.0";
+X3D0.version = "4.1";
 head head1 = createNode("head");
 //<component name='Shape' level='4'></component>
 //Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
@@ -156,7 +156,9 @@ head1.meta[28] = meta30;
 
 head = head1;
 
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 //basic nodes, which might be present in any scene
 NavigationInfo NavigationInfo32 = createNode("NavigationInfo");
 NavigationInfo32.type = new MFString(new java.lang.String["EXAMINE"]);
@@ -186,7 +188,8 @@ LayerSet LayerSet36 = createNode("LayerSet");
 LayerSet36.activeLayer = 1;
 LayerSet36.order = new MFInt32(new int[1,2]);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 Layer Layer37 = createNode("Layer");
 Layer37.pickable = True;
 Layer37.objectType = new MFString(new java.lang.String["ALL"]);
@@ -489,7 +492,9 @@ ShaderPart97.url = new MFString(new java.lang.String["../shaders/freewrl.fs","ht
 ShaderPart97.type = "FRAGMENT";
 ComposedShader84.parts[12] = ShaderPart97;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75.shaders = new MFNode();
 
 Appearance75.shaders[0] = ComposedShader84;

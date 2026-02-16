@@ -8,7 +8,7 @@ function doubleToFloat(d) {
     if (Float32Array)
 	return new Float32Array(d);
 }
-      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0").setXsi:noNamespaceSchemaLocation("https://www.web3d.org/specifications/x3d-4.0.xsd")
+      var X3D0 =  new X3D().setProfile("Immersive").setVersion("4.1")
       .setHead(new head()
         .addComponent(new component().setName("HAnim").setLevel(1))
         .addMeta(new meta().setName("title").setContent("JoeDemo5JoeSkin5.x3d"))

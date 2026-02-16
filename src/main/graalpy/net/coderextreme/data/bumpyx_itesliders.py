@@ -6,7 +6,7 @@ x3d.ConfigurationProperties.setStripTrailingZeroes(True)
 x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.setVersion("4.1")
 head1 = x3d.head()
 
 head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))
@@ -85,7 +85,11 @@ head1.addMeta(meta15)
 
 X3D0.setHead(head1)
 
-X3D0.addComments(x3d.CommentsBlock("""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\""""))
+X3D0.addComments(x3d.CommentsBlock("""\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,"""))
+
+X3D0.addComments(x3d.CommentsBlock("""It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)"""))
+
+X3D0.addComments(x3d.CommentsBlock("""open for their \"discussion about the teapot\""""))
 Scene16 = x3d.Scene()
 
 Scene16.addComments(x3d.CommentsBlock("""LayerSet with two layers, navigation happens in layer 1"""))
@@ -411,7 +415,11 @@ ShaderPart83.setType("FRAGMENT")
 
 ComposedShader69.addParts(ShaderPart83)
 
-ComposedShader69.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
+ComposedShader69.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE"""))
+
+ComposedShader69.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>"""))
+
+ComposedShader69.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance60.addShaders(ComposedShader69)
 

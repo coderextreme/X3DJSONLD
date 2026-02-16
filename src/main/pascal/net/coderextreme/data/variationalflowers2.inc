@@ -41,7 +41,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 X3D0.Components['EnvironmentalEffects'] := 3;
 X3D0.Components['Shaders'] := 1;
 X3D0.Components['CubeMapTexturing'] := 1;
@@ -81,7 +81,8 @@ Transform19 := TTransformNode.Create;
 ParticleSystem20 := TParticleSystemNode.Create;
 ParticleSystem20.MaxParticles := 20;
 ParticleSystem20.GeometryType := 'GEOMETRY';
-{ * values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values }
+{ * values - array of MFFloats to pass to ComposedShader }
+{ * variations in values - array of MFFloats to pass to ComposedShader that varies values }
 VariationPhysicsModel21 := TVariationPhysicsModelNode.Create;
 VariationPhysicsModel21.Values := '2 2 5 5 0 0';
 VariationPhysicsModel21.Variations := '0.2 0.1 0.3 0.3 0.01 0.01';

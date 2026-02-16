@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -97,7 +97,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:37:52 GMT"),
+                Content: stringPtr("25 October 2016"),
             },
             &x3d.Meta{
                 Name: stringPtr("TODO"),
@@ -112,178 +112,193 @@ func main() {
                 Content: stringPtr("https://www.web3d.org/x3d/specifications/ISO-IEC-FDIS-19775-1.2-X3D-AbstractSpecification/Part01/components/navigation.html"),
             },
             &x3d.Meta{
+                Name: stringPtr("subject"),
+                Content: stringPtr("Camera nodes for Viewpoint navigation control"),
+            },
+            &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("CameraExamples.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"),
             },
             &x3d.Meta{
-                Name: stringPtr("subject"),
-                Content: stringPtr("Camera nodes for Viewpoint navigation control"),
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
             },
             &x3d.Meta{
-                Name: stringPtr("identifier"),
-                Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/development/CameraPrototypes.x3d"),
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+//=============== Camera ==============
                 &x3d.ProtoDeclare{
                     Name: stringPtr("Camera"),
                     Appinfo: stringPtr("Camera node provides direct control of scene view to enable cinematic camera animation shot by shot and move by move along with still digital-photography settings for offline rendering of camera images."),
                     ProtoInterface: &x3d.ProtoInterface{
+//Viewpoint-related fields, NavigationInfo-related fields and Camera-unique fields
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFString"),
                                 Name: stringPtr("description"),
+                                AccessType: stringPtr("inputOutput"),
                                 Appinfo: stringPtr("Text description to be displayed for this Camera"),
+                                Type: stringPtr("SFString"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFVec3f"),
                             Name: stringPtr("position"),
-                            Value: stringPtr("0 0 10"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Camera position in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFRotation"),
-                            Name: stringPtr("orientation"),
-                            Appinfo: stringPtr("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("fieldOfView"),
-                            Value: stringPtr("0.7854"),
-                            Appinfo: stringPtr("pi/4"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("set_fraction"),
-                            Appinfo: stringPtr("input fraction drives interpolators"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("set_bind"),
-                            Appinfo: stringPtr("input event binds or unbinds this Camera"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFTime"),
-                            Name: stringPtr("bindTime"),
-                            Appinfo: stringPtr("output event indicates when this Camera is bound"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("isBound"),
-                            Appinfo: stringPtr("output event indicates whether this Camera is bound or unbound"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("nearClipPlane"),
-                            Value: stringPtr("0.25"),
-                            Appinfo: stringPtr("Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("farClipPlane"),
-                            Appinfo: stringPtr("Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFNode"),
-                            Name: stringPtr("shots"),
-                            Appinfo: stringPtr("Array of CameraShot nodes which in turn contain CameraMovement nodes"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("headlight"),
-                            Value: stringPtr("true"),
-                            Appinfo: stringPtr("Whether camera headlight is on or off"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("headlightColor"),
-                            Value: stringPtr("1 1 1"),
-                            Appinfo: stringPtr("Camera headlight color"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("headlightIntensity"),
-                            Value: stringPtr("1"),
-                            Appinfo: stringPtr("Camera headlight intensity"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("filterColor"),
-                            Value: stringPtr("1 1 1"),
-                            Appinfo: stringPtr("Camera filter color that modifies virtual lens capture"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("filterTransparency"),
-                            Value: stringPtr("1"),
-                            Appinfo: stringPtr("Camera filter transparency that modifies virtual lens capture"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFVec3f"),
-                            Name: stringPtr("upVector"),
-                            Value: stringPtr("0 1 0"),
-                            Appinfo: stringPtr("upVector changes modify camera orientation (and possibly vice versa)"),
+                            Value: stringPtr("0 0 10"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("orientation"),
                             AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("fStop"),
-                            Value: stringPtr("5.6"),
-                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
+                            Appinfo: stringPtr("Camera rotation in local transformation frame, which is default prior to first CameraShot initialPosition getting activated"),
+                            Type: stringPtr("SFRotation"),
+                            Value: stringPtr("0 0 1 0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("fieldOfView"),
                             AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("pi/4"),
                             Type: stringPtr("SFFloat"),
-                            Name: stringPtr("focusDistance"),
-                            Value: stringPtr("10"),
-                            Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                            Value: stringPtr("0.7854"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
+                            Name: stringPtr("set_fraction"),
+                            AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("input fraction drives interpolators"),
+                            Type: stringPtr("SFFloat"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("set_bind"),
+                            AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("input event binds or unbinds this Camera"),
                             Type: stringPtr("SFBool"),
-                            Name: stringPtr("isActive"),
-                            Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("bindTime"),
                             AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("output event indicates when this Camera is bound"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("totalDuration"),
-                            Appinfo: stringPtr("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFNode"),
-                            Name: stringPtr("offlineRender"),
-                            Appinfo: stringPtr("OfflineRender node"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
+                            Name: stringPtr("isBound"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("output event indicates whether this Camera is bound or unbound"),
                             Type: stringPtr("SFBool"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("nearClipPlane"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Vector distance to near clipping plane corresponds to NavigationInfo.avatarSize[0]"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0.25"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("farClipPlane"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Vector distance to far clipping plane corresponds to NavigationInfo.visibilityLimit"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("shots"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Array of CameraShot nodes which in turn contain CameraMovement nodes"),
+                            Type: stringPtr("MFNode"),
+//initialization nodes (if any) go here
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("headlight"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Whether camera headlight is on or off"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("headlightColor"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Camera headlight color"),
+                            Type: stringPtr("SFColor"),
+                            Value: stringPtr("1 1 1"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("headlightIntensity"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Camera headlight intensity"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("1"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("filterColor"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Camera filter color that modifies virtual lens capture"),
+                            Type: stringPtr("SFColor"),
+                            Value: stringPtr("1 1 1"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("filterTransparency"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Camera filter transparency that modifies virtual lens capture"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("1"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("upVector"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("upVector changes modify camera orientation (and possibly vice versa)"),
+                            Type: stringPtr("SFVec3f"),
+                            Value: stringPtr("0 1 0"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("fStop"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("5.6"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("focusDistance"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("10"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("isActive"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
+                            Type: stringPtr("SFBool"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("totalDuration"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"),
+                            Type: stringPtr("SFTime"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("offlineRender"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("OfflineRender node"),
+                            Type: stringPtr("SFNode"),
+//initialization node (if any) goes here
+                        },
+                        &x3d.Field{
                             Name: stringPtr("traceEnabled"),
+                            AccessType: stringPtr("initializeOnly"),
                             Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
@@ -296,12 +311,8 @@ func main() {
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
-                                            NodeField: stringPtr("set_bind"),
-                                            ProtoField: stringPtr("set_bind"),
-                                    },
-                                    &x3d.Connect{
-                                        NodeField: stringPtr("description"),
-                                        ProtoField: stringPtr("description"),
+                                            NodeField: stringPtr("description"),
+                                            ProtoField: stringPtr("description"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("position"),
@@ -316,16 +327,21 @@ func main() {
                                         ProtoField: stringPtr("fieldOfView"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("isBound"),
-                                        ProtoField: stringPtr("isBound"),
+                                        NodeField: stringPtr("set_bind"),
+                                        ProtoField: stringPtr("set_bind"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("bindTime"),
                                         ProtoField: stringPtr("bindTime"),
                                     },
+                                    &x3d.Connect{
+                                        NodeField: stringPtr("isBound"),
+                                        ProtoField: stringPtr("isBound"),
+                                    },
                                     },
                                 },
                             },
+//NavInfo EXAMINE used since some browsers (InstantReality) try to lock view to vertical when flying to avoid disorientation
                             &x3d.NavigationInfo{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("CameraNavInfo"),
@@ -345,9 +361,11 @@ func main() {
                                         NodeField: stringPtr("visibilityLimit"),
                                         ProtoField: stringPtr("farClipPlane"),
                                     },
+//No need to bind outputs bindTime, isBound from NavigationInfo since Viewpoint outputs will suffice. TODO inform BitManagement that bindTime field is missing.
                                     },
                                 },
                             },
+//this DirectionalLight replaces NavigationInfo headlight in order to add color capability
                             &x3d.DirectionalLight{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("CameraDirectionalLight"),
@@ -369,6 +387,7 @@ func main() {
                                     },
                                     },
                                 },
+//TODO confirm other default field values match NavigationInfo spec
                             },
                             &x3d.PositionInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -399,6 +418,18 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("value_changed"),
+                                FromNode: stringPtr("CameraPositionInterpolator"),
+                                ToField: stringPtr("position"),
+                                ToNode: stringPtr("CameraViewpoint"),
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("value_changed"),
+                                FromNode: stringPtr("CameraOrientationInterpolator"),
+                                ToField: stringPtr("orientation"),
+                                ToNode: stringPtr("CameraViewpoint"),
                             },
                             &x3d.Script{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -482,114 +513,117 @@ func main() {
                                     },
                                     },
                                 },
+//binding is controlled externally, all camera operations proceed the same regardless of whether bound or not
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOutput"),
-                                        Type: stringPtr("SFString"),
                                         Name: stringPtr("description"),
+                                        AccessType: stringPtr("inputOutput"),
                                         Appinfo: stringPtr("Text description to be displayed for this Camera"),
+                                        Type: stringPtr("SFString"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFVec3f"),
                                     Name: stringPtr("position"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Camera position in local transformation frame"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFRotation"),
-                                    Name: stringPtr("orientation"),
-                                    Appinfo: stringPtr("Camera rotation in local transformation frame"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOnly"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("set_fraction"),
-                                    Appinfo: stringPtr("input fraction drives interpolators"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOnly"),
-                                    Type: stringPtr("SFBool"),
-                                    Name: stringPtr("set_bind"),
-                                    Appinfo: stringPtr("input event binds or unbinds this Camera"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("fieldOfView"),
-                                    Appinfo: stringPtr("pi/4"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("nearClipPlane"),
-                                    Appinfo: stringPtr("Vector distance to near clipping plane"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("farClipPlane"),
-                                    Appinfo: stringPtr("Vector distance to far clipping plane"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFNode"),
-                                    Name: stringPtr("shots"),
-                                    Appinfo: stringPtr("Array of CameraShot nodes which in turn contain CameraMovement nodes"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFColor"),
-                                    Name: stringPtr("filterColor"),
-                                    Appinfo: stringPtr("Camera filter color that modifies virtual lens capture"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("filterTransparency"),
-                                    Appinfo: stringPtr("Camera filter transparency that modifies virtual lens capture"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
                                     Type: stringPtr("SFVec3f"),
-                                    Name: stringPtr("upVector"),
-                                    Appinfo: stringPtr("upVector changes modify camera orientation (and possibly vice versa)"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("orientation"),
                                     AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("fStop"),
-                                    Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
+                                    Appinfo: stringPtr("Camera rotation in local transformation frame"),
+                                    Type: stringPtr("SFRotation"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
+                                    Name: stringPtr("set_fraction"),
+                                    AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("input fraction drives interpolators"),
                                     Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("focusDistance"),
-                                    Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
+                                    Name: stringPtr("set_bind"),
+                                    AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("input event binds or unbinds this Camera"),
                                     Type: stringPtr("SFBool"),
-                                    Name: stringPtr("isActive"),
-                                    Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFTime"),
-                                    Name: stringPtr("totalDuration"),
-                                    Appinfo: stringPtr("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"),
-                                },
-                                &x3d.Field{
+                                    Name: stringPtr("fieldOfView"),
                                     AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFNode"),
-                                    Name: stringPtr("offlineRender"),
-                                    Appinfo: stringPtr("OfflineRender node"),
+                                    Appinfo: stringPtr("pi/4"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
+                                    Name: stringPtr("nearClipPlane"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Vector distance to near clipping plane"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("farClipPlane"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Vector distance to far clipping plane"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("shots"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Array of CameraShot nodes which in turn contain CameraMovement nodes"),
+                                    Type: stringPtr("MFNode"),
+//initialization nodes (if any) go here
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("filterColor"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Camera filter color that modifies virtual lens capture"),
+                                    Type: stringPtr("SFColor"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("filterTransparency"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Camera filter transparency that modifies virtual lens capture"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("upVector"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("upVector changes modify camera orientation (and possibly vice versa)"),
+                                    Type: stringPtr("SFVec3f"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("fStop"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("focusDistance"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("isActive"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
+                                    Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("totalDuration"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("Total duration of contained enabled CameraShot (and thus CameraMovement) move durations"),
+                                    Type: stringPtr("SFTime"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("offlineRender"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("OfflineRender node"),
                                     Type: stringPtr("SFNode"),
+//initialization node (if any) goes here
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("ViewpointNode"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("node reference to permit getting setting fields from within Script"),
+                                    Type: stringPtr("SFNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.Viewpoint{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -599,10 +633,10 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFNode"),
                                     Name: stringPtr("NavInfoNode"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("node reference to permit getting setting fields from within Script"),
+                                    Type: stringPtr("SFNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.NavigationInfo{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -612,10 +646,10 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFNode"),
                                     Name: stringPtr("CameraPI"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("node reference to permit getting setting fields from within Script"),
+                                    Type: stringPtr("SFNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.PositionInterpolator{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -625,10 +659,10 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFNode"),
                                     Name: stringPtr("CameraOI"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("node reference to permit getting setting fields from within Script"),
+                                    Type: stringPtr("SFNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.OrientationInterpolator{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -638,72 +672,77 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFFloat"),
                                     Name: stringPtr("key"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("key array for interpolators"),
+                                    Type: stringPtr("MFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFVec3f"),
                                     Name: stringPtr("keyValuePosition"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("keyValue array for PositionInterpolator"),
+                                    Type: stringPtr("MFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFRotation"),
                                     Name: stringPtr("keyValueOrientation"),
-                                    Appinfo: stringPtr("keyValue array for OrientationInterpolator"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFBool"),
+                                    Appinfo: stringPtr("keyValue array for OrientationInterpolator"),
+                                    Type: stringPtr("MFRotation"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("animated"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("whether internal CameraShot and CameraMove nodes are tracking or changed via ROUTE events"),
+                                    Type: stringPtr("SFBool"),
+                                    Value: stringPtr("false"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("initialized"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("perform checkShots() function once immediately after initialization"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFInt32"),
-                                    Name: stringPtr("shotCount"),
-                                    Appinfo: stringPtr("how many CameraShot nodes are contained in shots array"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFInt32"),
-                                    Name: stringPtr("movesCount"),
-                                    Appinfo: stringPtr("how many CameraMove nodes are contained in moves array"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("frameCount"),
-                                    Appinfo: stringPtr("how many frames were created in current loop"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFTime"),
-                                    Name: stringPtr("startTime"),
-                                    Value: stringPtr("0"),
-                                    Appinfo: stringPtr("holding variable"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFTime"),
-                                    Name: stringPtr("priorTraceTime"),
-                                    Value: stringPtr("0"),
-                                    Appinfo: stringPtr("holding variable"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFBool"),
+                                    Value: stringPtr("false"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("shotCount"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("how many CameraShot nodes are contained in shots array"),
+                                    Type: stringPtr("SFInt32"),
+                                    Value: stringPtr("0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("movesCount"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("how many CameraMove nodes are contained in moves array"),
+                                    Type: stringPtr("SFInt32"),
+                                    Value: stringPtr("0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("frameCount"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("how many frames were created in current loop"),
+                                    Type: stringPtr("SFFloat"),
+                                    Value: stringPtr("0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("startTime"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("holding variable"),
+                                    Type: stringPtr("SFTime"),
+                                    Value: stringPtr("0"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("priorTraceTime"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("holding variable"),
+                                    Type: stringPtr("SFTime"),
+                                    Value: stringPtr("0"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("traceEnabled"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                                    Type: stringPtr("SFBool"),
                                 },
 //ecmascript:
 //function initialize () // CameraScript
@@ -1047,132 +1086,125 @@ func main() {
 //}
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CameraPositionInterpolator"),
-                                FromField: stringPtr("value_changed"),
-                                ToNode: stringPtr("CameraViewpoint"),
-                                ToField: stringPtr("set_position"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CameraOrientationInterpolator"),
-                                FromField: stringPtr("value_changed"),
-                                ToNode: stringPtr("CameraViewpoint"),
-                                ToField: stringPtr("set_orientation"),
-                            },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("position"),
                                 FromNode: stringPtr("CameraScript"),
-                                FromField: stringPtr("position_changed"),
+                                ToField: stringPtr("position"),
                                 ToNode: stringPtr("CameraViewpoint"),
-                                ToField: stringPtr("set_position"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("orientation"),
                                 FromNode: stringPtr("CameraScript"),
-                                FromField: stringPtr("orientation_changed"),
+                                ToField: stringPtr("orientation"),
                                 ToNode: stringPtr("CameraViewpoint"),
-                                ToField: stringPtr("set_orientation"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CameraScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("isActive"),
-                                ToNode: stringPtr("CameraViewpoint"),
+                                FromNode: stringPtr("CameraScript"),
                                 ToField: stringPtr("set_bind"),
+                                ToNode: stringPtr("CameraViewpoint"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CameraScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("isActive"),
+                                FromNode: stringPtr("CameraScript"),
+                                ToField: stringPtr("set_bind"),
                                 ToNode: stringPtr("CameraNavInfo"),
-                                ToField: stringPtr("set_bind"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CameraScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("isActive"),
+                                FromNode: stringPtr("CameraScript"),
+                                ToField: stringPtr("on"),
                                 ToNode: stringPtr("CameraDirectionalLight"),
-                                ToField: stringPtr("set_on"),
                             },
                         },
                     },
                 },
+//=============== CameraShot ==============
                 &x3d.ProtoDeclare{
                     Name: stringPtr("CameraShot"),
                     Appinfo: stringPtr("CameraShot collects a specific set of CameraMovement animations that make up an individual shot."),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFString"),
                                 Name: stringPtr("description"),
+                                AccessType: stringPtr("inputOutput"),
                                 Appinfo: stringPtr("Text description to be displayed for this CameraShot"),
+                                Type: stringPtr("SFString"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("enabled"),
-                            Value: stringPtr("true"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Whether this CameraShot can be activated"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFNode"),
                             Name: stringPtr("moves"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Set of CameraMovement nodes"),
+                            Type: stringPtr("MFNode"),
+//initializing CameraMovement nodes are inserted here by scene author using ProtoInstance
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFVec3f"),
                             Name: stringPtr("initialPosition"),
-                            Value: stringPtr("0 0 10"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Setup to reinitialize camera position for this shot"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFRotation"),
-                            Name: stringPtr("initialOrientation"),
-                            Appinfo: stringPtr("Setup to reinitialize camera rotation for this shot"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFVec3f"),
+                            Value: stringPtr("0 0 10"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("initialOrientation"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Setup to reinitialize camera rotation for this shot"),
+                            Type: stringPtr("SFRotation"),
+                            Value: stringPtr("0 0 1 0"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("initialAimPoint"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Setup to reinitialize aimpoint (relative location for camera direction) for this shot"),
+                            Type: stringPtr("SFVec3f"),
+                            Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("initialFieldOfView"),
-                            Value: stringPtr("0.7854"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("pi/4"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0.7854"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("initialFStop"),
-                            Value: stringPtr("5.6"),
-                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
                             Type: stringPtr("SFFloat"),
+                            Value: stringPtr("5.6"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("initialFocusDistance"),
-                            Value: stringPtr("10"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("10"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("shotDuration"),
-                            Appinfo: stringPtr("Subtotal duration of contained CameraMovement move durations"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("isActive"),
-                            Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
+                            Appinfo: stringPtr("Subtotal duration of contained CameraMovement move durations"),
+                            Type: stringPtr("SFTime"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
+                            Name: stringPtr("isActive"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
                             Type: stringPtr("SFBool"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("traceEnabled"),
+                            AccessType: stringPtr("initializeOnly"),
                             Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
@@ -1238,94 +1270,95 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOutput"),
-                                        Type: stringPtr("SFString"),
                                         Name: stringPtr("description"),
+                                        AccessType: stringPtr("inputOutput"),
                                         Appinfo: stringPtr("Text description to be displayed for this CameraShot"),
+                                        Type: stringPtr("SFString"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("enabled"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Whether this CameraShot can be activated"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFNode"),
                                     Name: stringPtr("moves"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Set of CameraMovement nodes"),
+                                    Type: stringPtr("MFNode"),
+//initialization nodes (if any) go here
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFVec3f"),
                                     Name: stringPtr("initialPosition"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Setup to reinitialize camera position for this shot"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFRotation"),
-                                    Name: stringPtr("initialOrientation"),
-                                    Appinfo: stringPtr("Setup to reinitialize camera rotation for this shot"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
                                     Type: stringPtr("SFVec3f"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("initialOrientation"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Setup to reinitialize camera rotation for this shot"),
+                                    Type: stringPtr("SFRotation"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("initialAimPoint"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Setup to reinitialize aimpoint (relative location for camera direction) for this shot"),
+                                    Type: stringPtr("SFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("initialFieldOfView"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("pi/4"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("initialFStop"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
                                     Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("initialFocusDistance"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFTime"),
                                     Name: stringPtr("shotDuration"),
-                                    Appinfo: stringPtr("Subtotal duration of contained CameraMovement move durations"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFBool"),
+                                    Appinfo: stringPtr("Subtotal duration of contained CameraMovement move durations"),
+                                    Type: stringPtr("SFTime"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("isActive"),
+                                    AccessType: stringPtr("outputOnly"),
                                     Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("traceEnabled"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFFloat"),
                                     Name: stringPtr("key"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("key array for interpolators"),
+                                    Type: stringPtr("MFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFVec3f"),
                                     Name: stringPtr("keyValuePosition"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("keyValue array for PositionInterpolator"),
+                                    Type: stringPtr("MFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("MFRotation"),
                                     Name: stringPtr("keyValueOrientation"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("keyValue array for OrientationInterpolator"),
+                                    Type: stringPtr("MFRotation"),
                                 },
 //ecmascript:
 //function initialize () // CameraShotScript
@@ -1422,95 +1455,105 @@ func main() {
 //}
                                 },
                             },
+//Add any ROUTEs here, going from Script to other nodes within ProtoBody
                         },
                     },
                 },
+//=============== CameraMovement ==============
                 &x3d.ProtoDeclare{
                     Name: stringPtr("CameraMovement"),
                     Appinfo: stringPtr("CameraMovement node defines a single camera movement animation including goalPosition, goalOrientation, goalAimPoint and goalFieldOfView."),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFString"),
                                 Name: stringPtr("description"),
+                                AccessType: stringPtr("inputOutput"),
                                 Appinfo: stringPtr("Text description to be displayed for this CameraMovement"),
+                                Type: stringPtr("SFString"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("enabled"),
-                            Value: stringPtr("true"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Whether this CameraMovement can be activated"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("duration"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Duration in seconds for this move"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFVec3f"),
                             Name: stringPtr("goalPosition"),
-                            Value: stringPtr("0 0 10"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Goal camera position for this move"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFRotation"),
-                            Name: stringPtr("goalOrientation"),
-                            Appinfo: stringPtr("Goal camera rotation for this move"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("tracking"),
-                            Appinfo: stringPtr("Whether or not camera direction is tracking towards the aimPoint"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFVec3f"),
+                            Value: stringPtr("0 0 10"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("goalOrientation"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Goal camera rotation for this move"),
+                            Type: stringPtr("SFRotation"),
+                            Value: stringPtr("0 0 1 0"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("tracking"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Whether or not camera direction is tracking towards the aimPoint"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("goalAimPoint"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Goal aimPoint for this move, ignored if tracking=false"),
+                            Type: stringPtr("SFVec3f"),
+                            Value: stringPtr("0 0 0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("goalFieldOfView"),
-                            Value: stringPtr("0.7854"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Goal fieldOfView for this move"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0.7854"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("goalFStop"),
-                            Value: stringPtr("5.6"),
-                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
                             Type: stringPtr("SFFloat"),
+                            Value: stringPtr("5.6"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("goalFocusDistance"),
-                            Value: stringPtr("10"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("10"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("isActive"),
+                            AccessType: stringPtr("outputOnly"),
                             Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
+                            Type: stringPtr("SFBool"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("traceEnabled"),
+                            AccessType: stringPtr("initializeOnly"),
                             Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
+//First node determines node type of this prototype
+//Subsequent nodes do not render, but still must be a valid X3D subgraph
+//Script holds CameraMovement initialization values for query by parent CameraShot, and also permits changing values via events
                             &x3d.Script{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("CameraMovementScript"),
@@ -1571,76 +1614,76 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOutput"),
-                                        Type: stringPtr("SFString"),
                                         Name: stringPtr("description"),
+                                        AccessType: stringPtr("inputOutput"),
                                         Appinfo: stringPtr("Text description to be displayed for this CameraMovement"),
+                                        Type: stringPtr("SFString"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("enabled"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Whether this CameraMovement can be activated"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("duration"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Duration in seconds for this move"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFVec3f"),
                                     Name: stringPtr("goalPosition"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Goal camera position for this move"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFRotation"),
-                                    Name: stringPtr("goalOrientation"),
-                                    Appinfo: stringPtr("Goal camera rotation for this move"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFBool"),
-                                    Name: stringPtr("tracking"),
-                                    Appinfo: stringPtr("Whether or not camera direction is tracking towards the aimPoint"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
                                     Type: stringPtr("SFVec3f"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("goalOrientation"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Goal camera rotation for this move"),
+                                    Type: stringPtr("SFRotation"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("tracking"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Whether or not camera direction is tracking towards the aimPoint"),
+                                    Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("goalAimPoint"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Goal aimPoint for this move, ignored if tracking=false"),
+                                    Type: stringPtr("SFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("goalFieldOfView"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Goal fieldOfView for this move"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("goalFStop"),
-                                    Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Focal length divided effective aperture diameter indicating width of focal plane"),
                                     Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("goalFocusDistance"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Distance to focal plane of sharpest focus"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("isActive"),
+                                    AccessType: stringPtr("outputOnly"),
                                     Appinfo: stringPtr("Mark start/stop with true/false output respectively useful to trigger external animations"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("traceEnabled"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                                    Type: stringPtr("SFBool"),
                                 },
 //ecmascript:
 //function initialize () // CameraMovementScript
@@ -1734,90 +1777,96 @@ func main() {
 //}
                                 },
                             },
+//Add any ROUTEs here, going from Script to other nodes within ProtoBody
                         },
                     },
                 },
+//=============== OfflineRender ==============
                 &x3d.ProtoDeclare{
                     Name: stringPtr("OfflineRender"),
                     Appinfo: stringPtr("OfflineRender defines a parameters for offline rendering of Camera animation output to a movie file (or possibly a still shot)."),
                     ProtoInterface: &x3d.ProtoInterface{
+//TODO non-photorealistic rendering (NPR) parameters
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFString"),
                                 Name: stringPtr("description"),
+                                AccessType: stringPtr("inputOutput"),
                                 Appinfo: stringPtr("Text description to be displayed for this OfflineRender"),
+                                Type: stringPtr("SFString"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("enabled"),
-                            Value: stringPtr("true"),
+                            AccessType: stringPtr("inputOutput"),
                             Appinfo: stringPtr("Whether this OfflineRender can be activated"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("frameRate"),
-                            Value: stringPtr("30"),
-                            Appinfo: stringPtr("Frames per second recorded for this rendering"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFVec2f"),
-                            Name: stringPtr("frameSize"),
-                            Value: stringPtr("640 480"),
-                            Appinfo: stringPtr("Size of frame in number of pixels width and height"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("pixelAspectRatio"),
-                            Value: stringPtr("1.33"),
-                            Appinfo: stringPtr("Relative dimensions of pixel height/width typically 1.33 or 1"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFTime"),
-                            Name: stringPtr("set_startTime"),
-                            Appinfo: stringPtr("Begin render operation"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("progress"),
-                            Appinfo: stringPtr("Progress performing render operation (0..1)"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFTime"),
-                            Name: stringPtr("renderCompleteTime"),
-                            Appinfo: stringPtr("Render operation complete"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("MFString"),
-                            Name: stringPtr("movieFormat"),
-                            Value: stringPtr("\"mpeg\""),
-                            Appinfo: stringPtr("Format of rendered output movie (mpeg mp4 etc.), use first supported format"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("MFString"),
-                            Name: stringPtr("imageFormat"),
-                            Value: stringPtr("\"png\""),
-                            Appinfo: stringPtr("Format of rendered output images (png jpeg gif tiff etc.) use first supported format"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
                             Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("frameRate"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Frames per second recorded for this rendering"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("30"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("frameSize"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Size of frame in number of pixels width and height"),
+                            Type: stringPtr("SFVec2f"),
+                            Value: stringPtr("640 480"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("pixelAspectRatio"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("Relative dimensions of pixel height/width typically 1.33 or 1"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("1.33"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("set_startTime"),
+                            AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("Begin render operation"),
+                            Type: stringPtr("SFTime"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("progress"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("Progress performing render operation (0..1)"),
+                            Type: stringPtr("SFFloat"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("renderCompleteTime"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("Render operation complete"),
+                            Type: stringPtr("SFTime"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("movieFormat"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("Format of rendered output movie (mpeg mp4 etc.), use first supported format"),
+                            Type: stringPtr("MFString"),
+                            Value: stringPtr("\"mpeg\""),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("imageFormat"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("Format of rendered output images (png jpeg gif tiff etc.) use first supported format"),
+                            Type: stringPtr("MFString"),
+                            Value: stringPtr("\"png\""),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("traceEnabled"),
+                            AccessType: stringPtr("initializeOnly"),
                             Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
+//First node determines node type of this prototype
+//Subsequent nodes do not render, but still must be a valid X3D subgraph
                             &x3d.Script{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("OfflineRenderScript"),
@@ -1873,70 +1922,70 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOutput"),
-                                        Type: stringPtr("SFString"),
                                         Name: stringPtr("description"),
+                                        AccessType: stringPtr("inputOutput"),
                                         Appinfo: stringPtr("Text description to be displayed for this OfflineRender"),
+                                        Type: stringPtr("SFString"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("enabled"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("Whether this OfflineRender can be activated"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("frameRate"),
-                                    Appinfo: stringPtr("Frames per second recorded for this rendering"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFVec2f"),
-                                    Name: stringPtr("frameSize"),
-                                    Appinfo: stringPtr("Size of frame in number of pixels width and height"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("pixelAspectRatio"),
-                                    Appinfo: stringPtr("Relative dimensions of pixel height/width typically 1.33 or 1"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOnly"),
-                                    Type: stringPtr("SFTime"),
-                                    Name: stringPtr("set_startTime"),
-                                    Appinfo: stringPtr("Begin render operation"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("progress"),
-                                    Appinfo: stringPtr("Progress performing render operation (0..1)"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFTime"),
-                                    Name: stringPtr("renderCompleteTime"),
-                                    Appinfo: stringPtr("Render operation complete"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("MFString"),
-                                    Name: stringPtr("movieFormat"),
-                                    Appinfo: stringPtr("Format of rendered output movie (mpeg mp4 etc.)"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("MFString"),
-                                    Name: stringPtr("imageFormat"),
-                                    Appinfo: stringPtr("Format of rendered output images (png jpeg gif tiff etc.)"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("frameRate"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Frames per second recorded for this rendering"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("frameSize"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Size of frame in number of pixels width and height"),
+                                    Type: stringPtr("SFVec2f"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("pixelAspectRatio"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Appinfo: stringPtr("Relative dimensions of pixel height/width typically 1.33 or 1"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("set_startTime"),
+                                    AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("Begin render operation"),
+                                    Type: stringPtr("SFTime"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("progress"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("Progress performing render operation (0..1)"),
+                                    Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("renderCompleteTime"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("Render operation complete"),
+                                    Type: stringPtr("SFTime"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("movieFormat"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("Format of rendered output movie (mpeg mp4 etc.)"),
+                                    Type: stringPtr("MFString"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("imageFormat"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("Format of rendered output images (png jpeg gif tiff etc.)"),
+                                    Type: stringPtr("MFString"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("traceEnabled"),
+                                    AccessType: stringPtr("initializeOnly"),
                                     Appinfo: stringPtr("enable console output to trace script computations and prototype progress"),
+                                    Type: stringPtr("SFBool"),
                                 },
 //ecmascript:
 //function initialize () // OfflineRenderScript
@@ -1994,9 +2043,11 @@ func main() {
 //}
                                 },
                             },
+//Add any ROUTEs here, going from Script to other nodes within ProtoBody
                         },
                     },
                 },
+//=============== Launch Prototype Example ==============
                 &x3d.Background{
                     SkyColor: &x3d.MFColor{[3]float32{0.282353,0.380392,0.470588}},
                 },
@@ -2007,15 +2058,15 @@ func main() {
                         &x3d.Transform{
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
-                                    Appearance: &x3d.Appearance{
-                                        Material: &x3d.Material{
-                                            DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.2},
-                                        },
-                                    },
                                     Geometry: &x3d.Text{
                                         String: x3d.MFString{"CameraPrototypes.x3d", "defines multiple prototype nodes", "", "Click on this text to see", "CameraExamples.x3d scene"},
                                         FontStyle: &x3d.FontStyle{
                                             Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                        },
+                                    },
+                                    Appearance: &x3d.Appearance{
+                                        Material: &x3d.Material{
+                                            DiffuseColor: &x3d.SFColor{1.0, 1.0, 0.2},
                                         },
                                     },
                                 },
@@ -2041,13 +2092,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/CameraPrototypes.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -2058,7 +2109,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

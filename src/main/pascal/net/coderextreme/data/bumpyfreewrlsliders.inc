@@ -205,7 +205,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 X3D0.Components['Scripting'] := 1;
 X3D0.Components['EnvironmentalEffects'] := 3;
 X3D0.Components['Shaders'] := 1;
@@ -227,7 +227,8 @@ LayerSet18 := TLayerSetNode.Create;
 LayerSet18.ActiveLayer := 1;
 LayerSet18.SetOrder([1,2]);
 { the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)" }
-{ the second layer contains the sliders that are moved with the user's display like a HUD (heads up display) }
+{ the second layer contains the sliders that are moved with the user's display }
+{ like a HUD (heads up display) }
 Layer19 := TLayerNode.Create;
 Layer19.Pickable := True;
 Layer19.SetObjectType(['ALL']);
@@ -396,7 +397,9 @@ Sphere59 := TSphereNode.Create;
 Sphere59.Radius := 5;
 { .SetGeometry }
 Shape58.Geometry := Sphere59;
-{ <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> <Coordinate DEF="OrbitCoordinates"/> </IndexedFaceSet> }
+{ <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0"> }
+{ <Coordinate DEF="OrbitCoordinates"/> }
+{ </IndexedFaceSet> }
 Appearance60 := TAppearanceNode.Create;
 Material61 := TMaterialNode.Create;
 Material61.DiffuseColor := Vector3(0.7,0.7,0.7);
@@ -406,28 +409,28 @@ Appearance60.Material := Material61;
 ComposedCubeMapTexture62 := TComposedCubeMapTextureNode.Create;
 ImageTexture63 := TImageTextureNode.Create;
 ImageTexture63.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBack }
-ComposedCubeMapTexture62.Back := ImageTexture63;
+{ .SetBackTexture }
+ComposedCubeMapTexture62.BackTexture := ImageTexture63;
 ImageTexture64 := TImageTextureNode.Create;
 ImageTexture64.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottom }
-ComposedCubeMapTexture62.Bottom := ImageTexture64;
+{ .SetBottomTexture }
+ComposedCubeMapTexture62.BottomTexture := ImageTexture64;
 ImageTexture65 := TImageTextureNode.Create;
 ImageTexture65.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFront }
-ComposedCubeMapTexture62.Front := ImageTexture65;
+{ .SetFrontTexture }
+ComposedCubeMapTexture62.FrontTexture := ImageTexture65;
 ImageTexture66 := TImageTextureNode.Create;
 ImageTexture66.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeft }
-ComposedCubeMapTexture62.Left := ImageTexture66;
+{ .SetLeftTexture }
+ComposedCubeMapTexture62.LeftTexture := ImageTexture66;
 ImageTexture67 := TImageTextureNode.Create;
 ImageTexture67.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRight }
-ComposedCubeMapTexture62.Right := ImageTexture67;
+{ .SetRightTexture }
+ComposedCubeMapTexture62.RightTexture := ImageTexture67;
 ImageTexture68 := TImageTextureNode.Create;
 ImageTexture68.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTop }
-ComposedCubeMapTexture62.Top := ImageTexture68;
+{ .SetTopTexture }
+ComposedCubeMapTexture62.TopTexture := ImageTexture68;
 { .SetTexture }
 Appearance60.Texture := ComposedCubeMapTexture62;
 ComposedShader69 := TComposedShaderNode.Create;
@@ -509,7 +512,9 @@ field80.AccessType := 'inputOutput';
 field80.Value := '0';
 { .AddField }
 ComposedShader69.Field := field80;
-{ <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> }
+{ <field name='cube' type='SFNode' accessType="inputOutput"> }
+{ <ComposedCubeMapTexture USE="texture"/> }
+{ </field> }
 ShaderPart81 := TShaderPartNode.Create;
 ShaderPart81.Type := 'VERTEX';
 IS82 := TISNode.Create;
@@ -536,7 +541,29 @@ ShaderPart84.IS := IS85;
 ComposedShader69.Parts := ShaderPart84;
 { .AddShaders }
 Appearance60.Shaders := ComposedShader69;
-{ <ComposedShader DEF="freewrlShader" language="GLSL"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField="url" protoField="vertex"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField="url" protoField="fragment"/> </IS> </ShaderPart> </ComposedShader> }
+{ <ComposedShader DEF="freewrlShader" language="GLSL"> }
+{ <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> }
+{ <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> }
+{ <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> }
+{ <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> }
+{ <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> }
+{ <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> }
+{ <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> }
+{ <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> }
+{ <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> }
+{ <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> }
+{ <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> }
+{ <ShaderPart type='VERTEX'> }
+{ <IS> }
+{ <connect nodeField="url" protoField="vertex"/> }
+{ </IS> }
+{ </ShaderPart> }
+{ <ShaderPart type='FRAGMENT'> }
+{ <IS> }
+{ <connect nodeField="url" protoField="fragment"/> }
+{ </IS> }
+{ </ShaderPart> }
+{ </ComposedShader> }
 { .SetAppearance }
 Shape58.Appearance := Appearance60;
 { .AddChild }
@@ -545,7 +572,18 @@ Transform57.AddChildren([Shape58]);
 Transform55.AddChildren([Transform57]);
 { .AddChildren }
 Layer19.AddChildren([Transform55]);
-(* <Script DEF="OrbitScript"> <field accessType="inputOutput" name="coordinates" type="MFVec3f"/> <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/> <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/> *)
+{ <Script DEF="OrbitScript"> }
+{ <field accessType="inputOutput" name="coordinates" type="MFVec3f"/> }
+{ <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/> }
+{ <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> }
+{ <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> }
+{ <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> }
+{ <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> }
+{ <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> }
+{ <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> }
+(* <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> *)
+{ <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/> }
+{ <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/> }
 { DIS multiuser facilities }
 DISEntityManager87 := TDISEntityManagerNode.Create;
 DISEntityTypeMapping88 := TDISEntityTypeMappingNode.Create;

@@ -1,6 +1,6 @@
 X3D:
     profile: "Full"
-    version: "4.0"
+    version: "4.1"
     setHead: [
         head: [
 #<component name='Shape' level='4'></component>

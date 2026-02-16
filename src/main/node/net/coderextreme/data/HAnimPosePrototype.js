@@ -9,182 +9,396 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
 var ProtoInstance0 = null;
 var ProtoInstance1 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
+var ProtoInstance2 = null;
+var ProtoInstance3 = null;
+var ProtoInstance4 = null;
+var ProtoInstance5 = null;
+var ProtoInstance6 = null;
+      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
       .setHead(new autoclass.head()
         .addMeta(new autoclass.meta().setName("title").setContent("HAnimPosePrototype.x3d"))
-        .addMeta(new autoclass.meta().setName("description").setContent("Define an experimental new node to simply capture a single pose for an HAnimHumanoid model."))
-        .addMeta(new autoclass.meta().setName("created").setContent("4 April 2025"))
-        .addMeta(new autoclass.meta().setName("modified").setContent("Mon, 15 Sep 2025 05:20:09 GMT"))
+        .addMeta(new autoclass.meta().setName("description").setContent("Define an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."))
+        .addMeta(new autoclass.meta().setName("info").setContent("This model also takes advantage of Inline/IMPORT capabilities (equivalent to USE node) and thus avoids fully copying a large, complex HAnimHumanoid model. Multiple HAnimHumanoid models have been tested satisfactorily, for HAnim version 1 (X3d 3) AND HAnim version 2 (X3D 4)."))
+        .addMeta(new autoclass.meta().setName("created").setContent("2 October 2025"))
+        .addMeta(new autoclass.meta().setName("modified").setContent("14 December 2025"))
         .addMeta(new autoclass.meta().setName("creator").setContent("Don Brutzman"))
         .addMeta(new autoclass.meta().setName("creator").setContent("Joe Williams"))
-        .addMeta(new autoclass.meta().setName("warning").setContent("under development"))
-        .addMeta(new autoclass.meta().setName("reference").setContent("HAnimPoseDesignNotes19MAR2025.pdf"))
-        .addMeta(new autoclass.meta().setName("reference").setContent("HAnim Architecture volume 1 version 2.0, clause 4.8.2 Modelling of human-like HAnim figures, https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#ModellingOfHumanLikeHAnimFigures"))
-        .addMeta(new autoclass.meta().setName("reference").setContent("HAnim Architecture volume 1 version 2.0, clause 4.8.3 Poses, https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#Poses"))
-        .addMeta(new autoclass.meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/HelloWorldScenes/HAnimPosePrototype.x3d")))
+        .addMeta(new autoclass.meta().setName("contributor").setContent("Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE"))
+        .addMeta(new autoclass.meta().setName("reference").setContent("HAnimPosePrototype.console.txt"))
+        .addMeta(new autoclass.meta().setName("MovingImage").setContent("demonstration video https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeDemoVideo.mp4"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("HAnimPoseExampleTouchDown.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("HAnimPoseExampleTouchDownFaceLeftAPose.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleBoxMan1.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleBoxMan2.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleJoeKick.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleJoeSkeletonSkinSite.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter01Jin.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter02Chul.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter03Hyun.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter04Young.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter05Ju.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter06Ga.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter07No.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter08Da.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter09Ru.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter10Mi.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter11Min.png"))
+        .addMeta(new autoclass.meta().setName("Image").setContent("images/HAnimPoseExampleKoreanCharacter12Sun.png"))
+        .addMeta(new autoclass.meta().setName("specificationSection").setContent("HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose"))
+        .addMeta(new autoclass.meta().setName("specificationUrl").setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose"))
+        .addMeta(new autoclass.meta().setName("specificationSection").setContent("HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.2 Modelling of human-like HAnim figures"))
+        .addMeta(new autoclass.meta().setName("specificationUrl").setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#ModellingHumanLikeHAnimFigures"))
+        .addMeta(new autoclass.meta().setName("specificationSection").setContent("HAnim Architecture volume 1 version 2.1 draft, clause 4 Concepts, section 4.8.3 Poses"))
+        .addMeta(new autoclass.meta().setName("specificationUrl").setContent("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses"))
+        .addMeta(new autoclass.meta().setName("reference").setContent("Direct scene manipulations with Javascript, https://doc.instantreality.org/tutorial/direct-scene-manipulations-with-javascript"))
+        .addMeta(new autoclass.meta().setName("reference").setContent("earlier version of this prototype: originals/HAnimPosePreliminary.x3d"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"))
+        .addMeta(new autoclass.meta().setName("generator").setContent("Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize"))
+        .addMeta(new autoclass.meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototype.x3d"))
+        .addMeta(new autoclass.meta().setName("license").setContent("https://www.web3d.org/x3d/content/examples/license.html")))
       .setScene(new autoclass.Scene()
-        .addChild(new autoclass.ProtoDeclare().setName("HAnimPose").setAppinfo("Assumes HAnimHumanoid configuration must be in I pose, which can be achieved by resetting every HAnimJoint to default values")
+        .addChild(new autoclass.WorldInfo().setDEF("ModelInfo").setInfo(java.newArray("java.lang.String", ["Design to illustrate a potential HAnimPose node"])).setTitle("HAnimPosePrototype.x3d"))
+        .addChild(new autoclass.Background().setSkyColor(java.newArray("float", [java.newFloat(0.8), java.newFloat(0.8), java.newFloat(1)])))
+        .addChild(new autoclass.NavigationInfo())
+        .addChild(new autoclass.Group().setDEF("HandleInlineLoading")
+          .addComments((new autoclass.CommentsBlock("Multiple HAnimHumanoid Inline/IMPORT models are available to support testing: Characters/ JinLOA1 JinLOA2 JinLOA3 JinLOA4 ../Skin/JoeKick ../Skin/JoeSkeletonSkinSite ../Skin/BoxMan1 ../Skin/BoxMan2")))
+          .addComments((new autoclass.CommentsBlock("Also tested satisfactorily: KoreanCharacter01Jin KoreanCharacter02Chul KoreanCharacter03Hyun KoreanCharacter04Young KoreanCharacter05Ju KoreanCharacter06Ga KoreanCharacter07No KoreanCharacter08Da KoreanCharacter09Ru KoreanCharacter10Mi KoreanCharacter11Min KoreanCharacter12Sun")))
+          .addChild(new autoclass.Inline().setDEF("HumanoidInline").setDescription("remote HAnimHumanoid for IMPORT").setUrl(java.newArray("java.lang.String", ["../Skin/BoxMan2.x3d","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d"])))
+          .addComments((new autoclass.CommentsBlock("Note that the following importedDEF must match the EXPORT name found in remote file")))
+          .addChild(new autoclass.IMPORT().setAS("HumanoidImported").setImportedDEF("BoxMan2").setInlineDEF("HumanoidInline"))
+          .addChild(new autoclass.LoadSensor().setDEF("HumanoidInlineLoadSensor").setTimeOut(2)
+            .addChild(new autoclass.Inline().setUSE("HumanoidInline"))))
+        .addChild(new autoclass.ProtoDeclare().setName("HAnimPose").setAppinfo("Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values.")
           .setProtoInterface(new autoclass.ProtoInterface()
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("enabled").setValue("true").setAppinfo("default value true"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("setPose").setAppinfo("this event tells the HAnimPose node to do it's thing!"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name").setValue("PoseName").setAppinfo("name of this pose"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("namesPoseJoints").setValue("\"nameJoint1\" \"nameJoint2\" \"nameJoint3\" \"nameJoint4\"").setAppinfo("names of joints in pose"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("positionsPoseJoints").setAppinfo("positions of joints in pose"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("rotationsPoseJoints").setAppinfo("rotations of joints in pose"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("whichChoice").setAppinfo("selects one of the HAnimHumanoid nodes"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("children").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("addChildren").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("removeChildren").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("traceEnabled").setValue("true").setAppinfo("debug trace to Browser output console")))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("parentHAnimHumanoid").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("HAnimHumanoid for this Pose to act upon")
+              .addComments((new autoclass.CommentsBlock("HAnimHumanoid initialization node goes here, this field is only used in the prototype implementation"))))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("name of this pose").setValue("newPoseName"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setName("children").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("joint values to apply to HAnimHumanoid")
+              .addComments((new autoclass.CommentsBlock("initializating Joint nodes (if any) go here"))))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setName("description").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("explanation of purpose"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("enabled").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("default value true").setValue("true"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("loa").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("default is no loa").setValue("-1"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("transitionDuration").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("how many seconds to achieve the pose").setValue("0"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("metadata").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("single Metadata* node"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("isActive").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY).setAppinfo("event indicating when pose transition is active"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("commencePose").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("resetAllJoints").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("reset the skeleton to I pose with all joints zeroed"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("allows transition to proceed incrementally from fraction [0..10"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("set_startTime").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("starts the animation clock"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("isLoaded").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"))
+            .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("traceEnabled").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("debug trace to Browser output console this is a local prototype field").setValue("true")))
           .setProtoBody(new autoclass.ProtoBody()
-            .addChild(new autoclass.Switch().setDEF("PrototypeRootNode")
-              .setIS(new autoclass.IS()
-                .addConnect(new autoclass.connect().setNodeField("whichChoice").setProtoField("whichChoice"))
-                .addConnect(new autoclass.connect().setNodeField("addChildren").setProtoField("addChildren"))
-                .addConnect(new autoclass.connect().setNodeField("removeChildren").setProtoField("removeChildren"))
-                .addConnect(new autoclass.connect().setNodeField("children").setProtoField("children"))))
-            .addChild(new autoclass.MetadataString().setName("interface").setReference("https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#InterfaceHierarchy").setValue(java.newArray("java.lang.String", ["X3DGroupingNode"])))
-            .addChild(new autoclass.Script().setDEF("HAnimPoseScriptOperations").setDirectOutput(true)
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("enabled").setAppinfo("default value true"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("setPose").setAppinfo("this event tells the HAnimPose node to do it's thing!"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("name").setAppinfo("name of this pose"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFSTRING).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("namesPoseJoints").setAppinfo("names of joints in pose"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("positionsPoseJoints").setAppinfo("positions of joints in pose"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFROTATION).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("rotationsPoseJoints").setAppinfo("rotations of joints in pose"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("whichChoice").setAppinfo("selects one of the HAnimHumanoid nodes"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("children").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("addChildren").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setName("removeChildren").setAppinfo("references one or more HAnimHumanoid nodes, typically via USE references"))
-              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setName("traceEnabled").setAppinfo("debug trace to Browser output console"))
-              .setSourceCode("ecmascript:\n"+
-"\n"+
-"// Needed functionality:\n"+
-"// a. get access to a humanoid\n"+
-"// b. confirm skeletalConfiguration = 'BASIC' so we know that it has a valid default pose\n"+
-"// c. walk the tree for all joints, then set transation, scale, rotation to default values\n"+
-"// d. for each name/position/rotation triplet in the pose arrays, update the appropriate\n"+
-"//    HAnimJoint nodes to that corresponding set of values\n"+
-"\n"+
-"var scriptName='HAnimPoseScript';\n"+
-"\n"+
-"function initialize ()\n"+
-"{\n"+
-"    // TODO author initialization code (if any) goes here\n"+
-"    \n"+
-"    // check that array sizes are identical for namesPoseJoints, positionsPoseJoints, rotationsPoseJoints\n"+
-"    \n"+
-"    // check humanoid connectivity\n"+
-"\n"+
-"    tracePrint ('initialization() successful');\n"+
-"}\n"+
-"function set_enabled (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field enabled\n"+
-"    enabled = eventValue;\n"+
-"    tracePrint ('enabled = ' + enabled);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function setPose (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOnly field setPose\n"+
-"    setPose = eventValue;\n"+
-"\n"+
-"    tracePrint ('setPose = ' + setPose);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function set_name (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field name\n"+
-"    name = eventValue;\n"+
-"    tracePrint ('name = ' + name);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function set_namesPoseJoints (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field namesPoseJoints\n"+
-"    namesPoseJoints = eventValue;\n"+
-"    tracePrint ('namesPoseJoints = ' + namesPoseJoints);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function set_positionsPoseJoints (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field positionsPoseJoints\n"+
-"    positionsPoseJoints = eventValue;\n"+
-"    tracePrint ('positionsPoseJoints = ' + positionsPoseJoints);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function set_rotationsPoseJoints (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field rotationsPoseJoints\n"+
-"    rotationsPoseJoints = eventValue;\n"+
-"    tracePrint ('rotationsPoseJoints = ' + rotationsPoseJoints);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"function set_humanoid (eventValue)\n"+
-"{\n"+
-"    // input eventValue received for inputOutput field humanoid\n"+
-"    humanoid = eventValue;\n"+
-"    tracePrint ('humanoid = ' + humanoid);\n"+
-"\n"+
-"    // TODO author code (if any) goes here\n"+
-"}\n"+
-"// ================== Trace output functions ==================\n"+
-"\n"+
-"function tracePrint (outputString)\n"+
-"{\n"+
-"   // if traceEnabled is true, print outputString on X3D browser console\n"+
-"   if (traceEnabled)\n"+
-"      Browser.println ('[' + scriptName.toString()' ' + name.toString()': ' + outputString.toString() + ']');\n"+
-"}\n"+
-"function alwaysPrint (outputString)\n"+
-"{\n"+
-"      // always print outputString on X3D browser console\n"+
-"      Browser.println ('[' + scriptName.toString()' ' + name.toString()': ' + outputString.toString() + ']');\n"+
-"}\n"+
-"function set_traceEnabled (eventValue)\n"+
-"{\n"+
-"      // input eventValue received for inputOutput field\n"+
-"      traceEnabled = eventValue;\n"+
-"}\n"+
-"// ===========================================================")
+            .addChild(new autoclass.TimeSensor().setDEF("ClockTimeSensor").setDescription("control timing of pose animation when triggered")
               .setIS(new autoclass.IS()
                 .addConnect(new autoclass.connect().setNodeField("enabled").setProtoField("enabled"))
-                .addConnect(new autoclass.connect().setNodeField("setPose").setProtoField("setPose"))
+                .addConnect(new autoclass.connect().setNodeField("cycleInterval").setProtoField("transitionDuration"))
+                .addConnect(new autoclass.connect().setNodeField("isActive").setProtoField("isActive"))
+                .addConnect(new autoclass.connect().setNodeField("startTime").setProtoField("set_startTime"))
+                .addConnect(new autoclass.connect().setNodeField("metadata").setProtoField("metadata"))))
+            .addChild(new autoclass.TimeSensor().setDEF("ResetTimeSensor").setDescription("control timing of skeleton reset to \"A\" pose when triggered")
+              .setIS(new autoclass.IS()
+                .addConnect(new autoclass.connect().setNodeField("enabled").setProtoField("enabled"))
+                .addConnect(new autoclass.connect().setNodeField("cycleInterval").setProtoField("transitionDuration"))
+                .addConnect(new autoclass.connect().setNodeField("startTime").setProtoField("set_startTime"))
+                .addComments((new autoclass.CommentsBlock("no need to report isActive since that would be duplicative")))))
+            .addChild(new autoclass.Group().setDEF("PoseInterpolatorGroup")
+              .addComments((new autoclass.CommentsBlock("interpolators generated by prototype script appear here at runtime"))))
+            .addChild(new autoclass.Group().setDEF("ResetInterpolatorGroup")
+              .addComments((new autoclass.CommentsBlock("interpolators generated by prototype script appear here at runtime"))))
+            .addChild(new autoclass.Script().setDEF("HAnimPoseScript").setDirectOutput(true).setUrl(java.newArray("java.lang.String", ["HAnimPosePrototypeScript.js","https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js"]))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFNODE).setName("parentHAnimHumanoid").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("Humanoid for this Pose to act upon")
+                .addComments((new autoclass.CommentsBlock("initialization node (if any) goes here"))))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setName("name").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("name of this pose"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("loa").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("default is no loa"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFSTRING).setName("description").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("explanation of purpose"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("enabled").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("default value true"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("resetAllJoints").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("reset the skeleton to I pose with all joints zeroed"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setName("children").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("joint values to apply to HAnimHumanoid")
+                .addComments((new autoclass.CommentsBlock("initializating Joint nodes (if any) go here"))))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("transitionDuration").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("how many seconds to achieve the pose"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("commencePose").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("allows transition to proceed incrementally from fraction [0..10"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFTIME).setName("set_startTime").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("starts the animation clock"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("isLoaded").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setAppinfo("possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("traceEnabled").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setAppinfo("debug trace to Browser output console"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("numberPoseJoints").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("number of joints found in children field").setValue("0"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("numberSkeletonJoints").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("number of joints found in Humanoid").setValue("0"))
+              .addField(new autoclass.field().setType(autoclass.field.TYPE_MFNODE).setName("jointOrientationInterpolators").setAccessType(autoclass.field.ACCESSTYPE_INITIALIZEONLY).setAppinfo("OrientationInterpolator node array matching number of children")
+                .addComments((new autoclass.CommentsBlock("initializating Joint nodes (if any) go here"))))
+              .setIS(new autoclass.IS()
+                .addConnect(new autoclass.connect().setNodeField("parentHAnimHumanoid").setProtoField("parentHAnimHumanoid"))
                 .addConnect(new autoclass.connect().setNodeField("name").setProtoField("name"))
-                .addConnect(new autoclass.connect().setNodeField("namesPoseJoints").setProtoField("namesPoseJoints"))
-                .addConnect(new autoclass.connect().setNodeField("positionsPoseJoints").setProtoField("positionsPoseJoints"))
-                .addConnect(new autoclass.connect().setNodeField("rotationsPoseJoints").setProtoField("rotationsPoseJoints"))
-                .addConnect(new autoclass.connect().setNodeField("whichChoice").setProtoField("whichChoice"))
+                .addConnect(new autoclass.connect().setNodeField("loa").setProtoField("loa"))
+                .addConnect(new autoclass.connect().setNodeField("description").setProtoField("description"))
+                .addConnect(new autoclass.connect().setNodeField("enabled").setProtoField("enabled"))
+                .addConnect(new autoclass.connect().setNodeField("resetAllJoints").setProtoField("resetAllJoints"))
                 .addConnect(new autoclass.connect().setNodeField("children").setProtoField("children"))
-                .addConnect(new autoclass.connect().setNodeField("addChildren").setProtoField("addChildren"))
-                .addConnect(new autoclass.connect().setNodeField("removeChildren").setProtoField("removeChildren"))
+                .addConnect(new autoclass.connect().setNodeField("transitionDuration").setProtoField("transitionDuration"))
+                .addConnect(new autoclass.connect().setNodeField("commencePose").setProtoField("commencePose"))
+                .addConnect(new autoclass.connect().setNodeField("set_fraction").setProtoField("set_fraction"))
+                .addConnect(new autoclass.connect().setNodeField("set_startTime").setProtoField("set_startTime"))
+                .addConnect(new autoclass.connect().setNodeField("isLoaded").setProtoField("isLoaded"))
                 .addConnect(new autoclass.connect().setNodeField("traceEnabled").setProtoField("traceEnabled"))))))
-        .addChild(new autoclass.WorldInfo().setDEF("ModelInfo").setTitle("HAnimPose Prototype").setInfo(java.newArray("java.lang.String", ["Design to illustrate a potential HAnimPose node"])))
-        .addChild(new autoclass.NavigationInfo())
-        .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("HAnimPose"))
-        .addChild(ProtoInstance1 = new autoclass.ProtoInstance().setName("HAnimPose")))      ;
+        .addChild(new autoclass.Viewpoint().setDescription("HAnimPose for HumanoidInline IMPORT model").setPosition(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(4)])))
+        .addComments((new autoclass.CommentsBlock("no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc...")))
+        .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("T_Pose"))
+        .addChild(ProtoInstance1 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("A_Pose"))
+        .addChild(ProtoInstance2 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("TouchDown_Pose")
+          .addComments((new autoclass.CommentsBlock("thanks Joe"))))
+        .addChild(ProtoInstance3 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("I_Pose"))
+        .addChild(ProtoInstance4 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("H_Pose")
+          .addComments((new autoclass.CommentsBlock("<fieldValue name='loa' value='1'/>"))))
+        .addChild(ProtoInstance5 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("FaceLeft_Pose"))
+        .addChild(ProtoInstance6 = new autoclass.ProtoInstance().setName("HAnimPose").setDEF("FaceRight_Pose"))
+        .addChild(new autoclass.Group().setDEF("InterfaceButtonsGroup")
+          .addChild(new autoclass.Transform().setDEF("DisplayHeader").setTranslation(java.newArray("float", [java.newFloat(0), java.newFloat(2), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["HAnimPosePrototype example implementation"]))
+                .setFontStyle(new autoclass.FontStyle().setDEF("HeaderFont").setFamily(java.newArray("java.lang.String", ["SANS"])).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(0.15)).setStyle("BOLD")))
+              .setAppearance(new autoclass.Appearance().setDEF("PoseTextAppearance")
+                .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.5), java.newFloat(0.3)]))))))
+          .addChild(new autoclass.Transform().setDEF("T_PoseInterface").setTranslation(java.newArray("float", [java.newFloat(-1.5), java.newFloat(1.5), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["\"T\" Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setDEF("SharedFont").setFamily(java.newArray("java.lang.String", ["SANS"])).setJustify(java.newArray("java.lang.String", ["MIDDLE","MIDDLE"])).setSize(java.newFloat(0.1)).setStyle("BOLD")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .setAppearance(new autoclass.Appearance().setDEF("TransparentAppearance")
+                .setMaterial(new autoclass.Material().setTransparency(java.newFloat(0.8))))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.45), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("T_PoseTouchSensor").setDescription("select to move shoulders to \"T\" pose, leave other joints unchanged"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("T_PoseTouchSensor").setToField("commencePose").setToNode("T_Pose")))
+          .addChild(new autoclass.Transform().setDEF("A_PoseInterface").setTranslation(java.newArray("float", [java.newFloat(-1.5), java.newFloat(1), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["\"A\" Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.45), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("A_PoseTouchSensor").setDescription("select to move shoulders to \"A\" pose, leave other joints unchanged"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("A_PoseTouchSensor").setToField("commencePose").setToNode("A_Pose")))
+          .addChild(new autoclass.Transform().setDEF("TouchDown_PoseInterface").setTranslation(java.newArray("float", [java.newFloat(-1.5), java.newFloat(0.5), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["TouchDown Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.85), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("TouchDown_PoseTouchSensor").setDescription("select to transition all joints to TouchDown pose"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("TouchDown_PoseTouchSensor").setToField("commencePose").setToNode("TouchDown_Pose")))
+          .addChild(new autoclass.Transform().setDEF("I_PoseInterface").setTranslation(java.newArray("float", [java.newFloat(-1.5), java.newFloat(0), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["\"I\" Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.45), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("I_PoseTouchSensor").setDescription("select to transition all joints to \"I\" pose"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("I_PoseTouchSensor").setToField("commencePose").setToNode("I_Pose")))
+          .addChild(new autoclass.Transform().setDEF("FaceLeftPoseInterface").setTranslation(java.newArray("float", [java.newFloat(1.5), java.newFloat(1.5), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["Face Left Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.9), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("FaceLeftTouchSensor").setDescription("select to rotate body and Face Left, leave other joints unchanged"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("FaceLeftTouchSensor").setToField("commencePose").setToNode("FaceLeft_Pose")))
+          .addChild(new autoclass.Transform().setDEF("FaceRightPoseInterface").setTranslation(java.newArray("float", [java.newFloat(1.5), java.newFloat(1), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["Face Right Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("PoseTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.9), java.newFloat(0.2), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("FaceRightTouchSensor").setDescription("select to rotate body and Face Right, leave other joints unchanged"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("FaceRightTouchSensor").setToField("commencePose").setToNode("FaceRight_Pose")))
+          .addChild(new autoclass.Transform().setDEF("AnimatePosesInterface").setTranslation(java.newArray("float", [java.newFloat(1.5), java.newFloat(0.5), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["Direct animation","to, from \"I\" Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setDEF("AnimationTextAppearance")
+                .setMaterial(new autoclass.Material().setDiffuseColor(java.newArray("float", [java.newFloat(0.1), java.newFloat(0.2), java.newFloat(0.3)])))))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.9), java.newFloat(0.25), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("AnimatePosesTouchSensor").setDescription("select to animate current pose to \"I\" pose, then back to original pose, using TimeSensor events"))
+            .addComments((new autoclass.CommentsBlock("cycleInterval=4 also hard-coded in script execution message")))
+            .addChild(new autoclass.TimeSensor().setDEF("AnimatePosesClock").setCycleInterval(4).setDescription("directly animate several poses"))
+            .addChild(new autoclass.ScalarInterpolator().setDEF("AnimatePosesLoopInterpolator").setKey(java.newArray("float", [java.newFloat(0), java.newFloat(0.05), java.newFloat(0.45), java.newFloat(0.55), java.newFloat(0.95), java.newFloat(1)])).setKeyValue(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(1), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.ROUTE().setFromField("touchTime").setFromNode("AnimatePosesTouchSensor").setToField("startTime").setToNode("AnimatePosesClock"))
+            .addChild(new autoclass.ROUTE().setFromField("fraction_changed").setFromNode("AnimatePosesClock").setToField("set_fraction").setToNode("AnimatePosesLoopInterpolator"))
+            .addChild(new autoclass.ROUTE().setFromField("value_changed").setFromNode("AnimatePosesLoopInterpolator").setToField("set_fraction").setToNode("I_Pose")))
+          .addChild(new autoclass.Transform().setDEF("ResetDefaultPoseInterface").setTranslation(java.newArray("float", [java.newFloat(1.5), java.newFloat(0), java.newFloat(0)]))
+            .addChild(new autoclass.Shape()
+              .setGeometry(new autoclass.Text().setString(java.newArray("java.lang.String", ["Reset All Joints","to Default \"I\" Pose"]))
+                .setFontStyle(new autoclass.FontStyle().setUSE("SharedFont")))
+              .setAppearance(new autoclass.Appearance().setUSE("AnimationTextAppearance")))
+            .addChild(new autoclass.Shape()
+              .addComments((new autoclass.CommentsBlock("Selectable Text transparent Box for easy user selection")))
+              .setAppearance(new autoclass.Appearance().setUSE("TransparentAppearance"))
+              .setGeometry(new autoclass.Box().setSize(java.newArray("float", [java.newFloat(0.9), java.newFloat(0.25), java.newFloat(0.001)]))))
+            .addChild(new autoclass.TouchSensor().setDEF("ResetPoseTouchSensor").setDescription("select to immediately Rezero All Joints (to default \"I\" Pose) by sending resetAllJoints event"))
+            .addChild(new autoclass.ROUTE().setFromField("isActive").setFromNode("ResetPoseTouchSensor").setToField("resetAllJoints").setToNode("FaceLeft_Pose"))))
+        .addChild(new autoclass.Group().setDEF("HandleInlineLoadsensorRouting")
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("A_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("H_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("I_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("T_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("FaceLeft_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("FaceRight_Pose"))
+          .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("TouchDown_Pose"))))      ;
 ProtoInstance0
-          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("A"));
-ProtoInstance0
-          .addFieldValue(new autoclass.fieldValue().setName("namesPoseJoints").setValue("\"l_hip\" \"r_hip\""));
-ProtoInstance0
-          .addFieldValue(new autoclass.fieldValue().setName("positionsPoseJoints").setValue("0 0 0 0 0 0"));
-ProtoInstance0
-          .addFieldValue(new autoclass.fieldValue().setName("rotationsPoseJoints").setValue("0 0 1 0.2 0 0 1 -0.2"));
-ProtoInstance1
           .addFieldValue(new autoclass.fieldValue().setName("name").setValue("T"));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addComments((new autoclass.CommentsBlock("debug test case for incorrect node type: <HAnimJoint DEF=\"ErrorDiagnosticsTest\" USE='HumanoidImported'/>")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("1"));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("arms stretched outward and level similar to letter T"));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addChild(new autoclass.HAnimJoint().setName("l_shoulder").setDEF("PoseJoint_l_shoulder_1").setDescription("left shoulder").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(1.57)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_shoulder").setDEF("PoseJoint_r_shoulder_1").setDescription("right shoulder").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(1.57)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addComments((new autoclass.CommentsBlock("test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/"))));
+ProtoInstance0
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.3"));
 ProtoInstance1
-          .addFieldValue(new autoclass.fieldValue().setName("namesPoseJoints").setValue("\"l_shoulder\" \"r_shoulder\""));
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("A"));
 ProtoInstance1
-          .addFieldValue(new autoclass.fieldValue().setName("positionsPoseJoints").setValue("0 0 0 0 0 0"));
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
 ProtoInstance1
-          .addFieldValue(new autoclass.fieldValue().setName("rotationsPoseJoints").setValue("0 0 1 1.57 0 0 1 -1.57"));
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance1
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("1"));
+ProtoInstance1
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("arms stretched outward and downward similar to letter A"));
+ProtoInstance1
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addChild(new autoclass.HAnimJoint().setName("l_shoulder").setDEF("PoseJoint_l_shoulder").setDescription("left shoulder").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(1), java.newFloat(0.5)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_shoulder").setDEF("PoseJoint_r_shoulder").setDescription("right shoulder").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-1), java.newFloat(0.5)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))));
+ProtoInstance1
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.2"));
+ProtoInstance1
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("TouchDown"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("1"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("arms and legs stretched outward providing a TouchDown gesture"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addChild(new autoclass.HAnimJoint().setName("humanoid_root").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(-0.698132)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_hip").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(1), java.newFloat(1), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_knee").setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_talocrural").setRotation(java.newArray("float", [java.newFloat(-0.2), java.newFloat(0), java.newFloat(0.1), java.newFloat(0.225)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_hip").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(-1), java.newFloat(-1), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_knee").setRotation(java.newArray("float", [java.newFloat(1), java.newFloat(0), java.newFloat(0), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_talocrural").setRotation(java.newArray("float", [java.newFloat(-0.2), java.newFloat(0), java.newFloat(0.1), java.newFloat(0.25)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("vl5").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0.01), java.newFloat(0.2)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("vt10").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0.01), java.newFloat(0.1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("vc4").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(-0.01), java.newFloat(0.15)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_shoulder").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(0.5), java.newFloat(1), java.newFloat(2)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_elbow").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("l_radiocarpal").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_shoulder").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(-0.5), java.newFloat(-1), java.newFloat(2.6)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_elbow").setRotation(java.newArray("float", [java.newFloat(-1), java.newFloat(0), java.newFloat(0), java.newFloat(1)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])))
+            .addChild(new autoclass.HAnimJoint().setName("r_radiocarpal").setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.2"));
+ProtoInstance2
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("I"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("1"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("arms and legs straight down default binding pose for baseline Humanoid"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addComments((new autoclass.CommentsBlock("not defining any children equals the default \"I\" pose"))));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.5"));
+ProtoInstance3
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
+ProtoInstance4
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("H"));
+ProtoInstance4
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("false"));
+ProtoInstance4
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("TODO experimental pose not yet implemented"));
+ProtoInstance4
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.4"));
+ProtoInstance4
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("FaceLeft"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("0"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("Only modify humanoid_root Joint node to face left"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addChild(new autoclass.HAnimJoint().setName("humanoid_root").setDEF("FaceLeft_humanoid_root").setDescription("Only rotate the model").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(1.570796)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.1"));
+ProtoInstance5
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("name").setValue("FaceRight"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("enabled").setValue("true"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("parentHAnimHumanoid")
+            .addComments((new autoclass.CommentsBlock("HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)")))
+            .addChild(new autoclass.HAnimHumanoid().setUSE("HumanoidImported")));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("loa").setValue("0"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("description").setValue("Only modify humanoid_root Joint node to face right"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("children")
+            .addChild(new autoclass.HAnimJoint().setName("humanoid_root").setDEF("FaceRight_humanoid_root").setDescription("Only rotate the model").setRotation(java.newArray("float", [java.newFloat(0), java.newFloat(1), java.newFloat(0), java.newFloat(-1.570796)])).setUlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)])).setLlimit(java.newArray("float", [java.newFloat(0), java.newFloat(0), java.newFloat(0)]))));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("transitionDuration").setValue("1.1"));
+ProtoInstance6
+          .addFieldValue(new autoclass.fieldValue().setName("traceEnabled").setValue("true"));
     X3D0.toFileX3D("../data/HAnimPosePrototype.new.node.x3d");
     X3D0.toFileJSON("../data/HAnimPosePrototype.new.node.x3dj");
     process.exit(0);

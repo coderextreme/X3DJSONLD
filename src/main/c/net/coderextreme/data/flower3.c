@@ -102,7 +102,13 @@ field21.accessType = "outputOnly";
 field21.type = "MFInt32";
 Script18.field[2] = field21;
 
-//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
+//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>
+//<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>
+//<field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>
 
 Script18.setSourceCode(`ecmascript:\n"+
 "\n"+

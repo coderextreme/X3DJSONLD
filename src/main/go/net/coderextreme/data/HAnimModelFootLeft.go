@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -95,7 +95,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("creator"),
-                Content: stringPtr("Kwan Hee YOO, Don Brutzman and Joe Williams"),
+                Content: stringPtr("Kwan-Hee YOO, Don Brutzman and Joe Williams"),
             },
             &x3d.Meta{
                 Name: stringPtr("created"),
@@ -103,7 +103,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:09 GMT"),
+                Content: stringPtr("23 December 2021"),
             },
             &x3d.Meta{
                 Name: stringPtr("warning"),
@@ -139,7 +139,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/hanim.html"),
+                Content: stringPtr("https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-WD2/Part01/components/hanim.html"),
             },
             &x3d.Meta{
                 Name: stringPtr("subject"),
@@ -153,50 +153,69 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/HAnimModelFootLeft.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("HAnimModelFootLeft.x3d"),
                 },
                 &x3d.HAnimHumanoid{
+                    Name: stringPtr("Foot_Left"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("hanim_Foot_Left"),
                     },
-                    Name: stringPtr("Foot_Left"),
                     Loa: int32Ptr(4),
+                    Version: stringPtr("2.0"),
+//original HAnimHumanoid info='"authorName=Kwan-Hee YOO, Don Brutzman and Joe Williams"'
                     Metadata: &x3d.MetadataSet{
                         Name: stringPtr("HAnimHumanoid.info"),
                         Reference: stringPtr("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"),
                         &x3d.MetadataString{
                             Name: stringPtr("authorName"),
+                            Value: x3d.MFString{"Kwan-Hee YOO, Don Brutzman and Joe Williams"},
                         },
                     },
                     Skeleton: []x3d.X3DNode{
                         &x3d.HAnimJoint{
+                            Name: stringPtr("humanoid_root"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("hanim_humanoid_root"),
                             },
-                            Name: stringPtr("humanoid_root"),
+                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
+//Might consider putting a HAnimSegment here, but that doesn't help with re-use of this foot model
                             Children: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
+                                    Name: stringPtr("l_talocrural"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("hanim_l_talocrural"),
                                     },
                                     Description: stringPtr("connection joint of foot to leg above"),
-                                    Name: stringPtr("l_talocrural"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
+                                            Name: stringPtr("l_talus"),
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("hanim_l_talus"),
                                             },
-                                            Name: stringPtr("l_talus"),
                                             &x3d.Transform{
                                                 Children: []x3d.X3DNode{
                                                     &x3d.Shape{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("HAnimJointShape"),
+                                                        },
+                                                        Geometry: &x3d.Sphere{
+                                                            Radius: floatPtr(0.025),
                                                         },
                                                         Appearance: &x3d.Appearance{
                                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -205,9 +224,6 @@ func main() {
                                                             Material: &x3d.Material{
                                                                 DiffuseColor: &x3d.SFColor{0.0, 0.0, 1.0},
                                                             },
-                                                        },
-                                                        Geometry: &x3d.Sphere{
-                                                            Radius: floatPtr(0.025),
                                                         },
                                                     },
                                                 },
@@ -245,19 +261,22 @@ func main() {
                                                 },
                                             },
                                     },
+//TCN
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimJoint{
+                                            Name: stringPtr("l_talocalcaneonavicular"),
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("hanim_l_talocalcaneonavicular"),
                                             },
-                                            Name: stringPtr("l_talocalcaneonavicular"),
                                             Center: &x3d.SFVec3f{0.0, -0.3, 0.0},
+                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimSegment{
+                                                    Name: stringPtr("l_navicular"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_l_navicular"),
                                                     },
-                                                    Name: stringPtr("l_navicular"),
                                                     &x3d.Transform{
                                                             Translation: &x3d.SFVec3f{0.0, -0.3, 0.0},
                                                         Children: []x3d.X3DNode{
@@ -317,19 +336,22 @@ func main() {
                                                         },
                                                     },
                                             },
+//CN1
                                             Children: []x3d.X3DNode{
                                                 &x3d.HAnimJoint{
+                                                    Name: stringPtr("l_cuneonavicular_1"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_l_cuneonavicular_1"),
                                                     },
-                                                    Name: stringPtr("l_cuneonavicular_1"),
                                                     Center: &x3d.SFVec3f{-0.1, -0.45, 0.0},
+                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimSegment{
+                                                            Name: stringPtr("l_cuneiform_1"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_l_cuneiform_1"),
                                                             },
-                                                            Name: stringPtr("l_cuneiform_1"),
                                                             &x3d.Transform{
                                                                     Translation: &x3d.SFVec3f{-0.1, -0.45, 0.0},
                                                                 Children: []x3d.X3DNode{
@@ -359,17 +381,19 @@ func main() {
                                                     },
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimJoint{
+                                                            Name: stringPtr("l_tarsometatarsal_1"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_l_tarsometatarsal_1"),
                                                             },
-                                                            Name: stringPtr("l_tarsometatarsal_1"),
                                                             Center: &x3d.SFVec3f{-0.1, -0.6, 0.0},
+                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimSegment{
+                                                                    Name: stringPtr("l_metatarsal_1"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_l_metatarsal_1"),
                                                                     },
-                                                                    Name: stringPtr("l_metatarsal_1"),
                                                                     &x3d.Transform{
                                                                             Translation: &x3d.SFVec3f{-0.1, -0.6, 0.0},
                                                                         Children: []x3d.X3DNode{
@@ -399,17 +423,19 @@ func main() {
                                                             },
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimJoint{
+                                                                    Name: stringPtr("l_metatarsophalangeal_1"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_l_metatarsophalangeal_1"),
                                                                     },
-                                                                    Name: stringPtr("l_metatarsophalangeal_1"),
                                                                     Center: &x3d.SFVec3f{-0.1, -0.9, 0.0},
+                                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimSegment{
+                                                                            Name: stringPtr("l_tarsal_proximal_phalanx_1"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_l_tarsal_proximal_phalanx_1"),
                                                                             },
-                                                                            Name: stringPtr("l_tarsal_proximal_phalanx_1"),
                                                                             &x3d.Transform{
                                                                                     Translation: &x3d.SFVec3f{-0.1, -0.9, 0.0},
                                                                                 Children: []x3d.X3DNode{
@@ -439,17 +465,19 @@ func main() {
                                                                     },
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimJoint{
+                                                                            Name: stringPtr("l_tarsal_interphalangeal_1"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_l_tarsal_interphalangeal_1"),
                                                                             },
-                                                                            Name: stringPtr("l_tarsal_interphalangeal_1"),
                                                                             Center: &x3d.SFVec3f{-0.1, -1.05, 0.0},
+                                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                             Children: []x3d.X3DNode{
                                                                                 &x3d.HAnimSegment{
+                                                                                    Name: stringPtr("l_tarsal_distal_phalanx_1"),
                                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                                         DEF: stringPtr("hanim_l_tarsal_distal_phalanx_1"),
                                                                                     },
-                                                                                    Name: stringPtr("l_tarsal_distal_phalanx_1"),
                                                                                     &x3d.Transform{
                                                                                             Translation: &x3d.SFVec3f{-0.1, -1.05, 0.0},
                                                                                         Children: []x3d.X3DNode{
@@ -481,18 +509,21 @@ func main() {
                                                             },
                                                     },
                                             },
+//CN2
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("l_cuneonavicular_2"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_l_cuneonavicular_2"),
                                                 },
-                                                Name: stringPtr("l_cuneonavicular_2"),
                                                 Center: &x3d.SFVec3f{0.0, -0.45, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("l_cuneiform_2"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_cuneiform_2"),
                                                         },
-                                                        Name: stringPtr("l_cuneiform_2"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{0.0, -0.45, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -522,17 +553,19 @@ func main() {
                                                 },
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("l_tarsometatarsal_2"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_tarsometatarsal_2"),
                                                         },
-                                                        Name: stringPtr("l_tarsometatarsal_2"),
                                                         Center: &x3d.SFVec3f{0.05, -0.6, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("l_metatarsal_2"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsal_2"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsal_2"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{0.05, -0.6, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -562,17 +595,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("l_metatarsophalangeal_2"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsophalangeal_2"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsophalangeal_2"),
                                                                 Center: &x3d.SFVec3f{0.05, -0.9, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_2"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_phalanx_2"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_2"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{0.05, -0.9, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -602,17 +637,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_2"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_interphalangeal_2"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_2"),
                                                                         Center: &x3d.SFVec3f{0.05, -1.05, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("l_tarsal_middle_phalanx_2"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_middle_phalanx_2"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_middle_phalanx_2"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{0.05, -1.05, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -642,17 +679,19 @@ func main() {
                                                                         },
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimJoint{
+                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_2"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_distal_interphalangeal_2"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_2"),
                                                                                 Center: &x3d.SFVec3f{0.05, -1.12, 0.0},
+                                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                                 Children: []x3d.X3DNode{
                                                                                     &x3d.HAnimSegment{
+                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_2"),
                                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                                             DEF: stringPtr("hanim_l_tarsal_distal_phalanx_2"),
                                                                                         },
-                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_2"),
                                                                                         &x3d.Transform{
                                                                                                 Translation: &x3d.SFVec3f{0.05, -1.12, 0.0},
                                                                                             Children: []x3d.X3DNode{
@@ -685,18 +724,21 @@ func main() {
                                                         },
                                                 },
                                             },
+//CN3
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("l_cuneonavicular_3"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_l_cuneonavicular_3"),
                                                 },
-                                                Name: stringPtr("l_cuneonavicular_3"),
                                                 Center: &x3d.SFVec3f{0.1, -0.4, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("l_cuneiform_3"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_cuneiform_3"),
                                                         },
-                                                        Name: stringPtr("l_cuneiform_3"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{0.1, -0.4, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -726,17 +768,19 @@ func main() {
                                                 },
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("l_tarsometatarsal_3"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_tarsometatarsal_3"),
                                                         },
-                                                        Name: stringPtr("l_tarsometatarsal_3"),
                                                         Center: &x3d.SFVec3f{0.15, -0.6, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("l_metatarsal_3"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsal_3"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsal_3"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{0.15, -0.6, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -766,17 +810,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("l_metatarsophalangeal_3"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsophalangeal_3"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsophalangeal_3"),
                                                                 Center: &x3d.SFVec3f{0.15, -0.9, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_3"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_phalanx_3"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_3"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{0.15, -0.9, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -806,17 +852,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_3"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_interphalangeal_3"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_3"),
                                                                         Center: &x3d.SFVec3f{0.15, -1.05, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("l_tarsal_middle_phalanx_3"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_middle_phalanx_3"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_middle_phalanx_3"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{0.15, -1.05, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -846,17 +894,19 @@ func main() {
                                                                         },
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimJoint{
+                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_3"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_distal_interphalangeal_3"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_3"),
                                                                                 Center: &x3d.SFVec3f{0.15, -1.13, 0.0},
+                                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                                 Children: []x3d.X3DNode{
                                                                                     &x3d.HAnimSegment{
+                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_3"),
                                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                                             DEF: stringPtr("hanim_l_tarsal_distal_phalanx_3"),
                                                                                         },
-                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_3"),
                                                                                         &x3d.Transform{
                                                                                                 Translation: &x3d.SFVec3f{0.15, -1.13, 0.0},
                                                                                             Children: []x3d.X3DNode{
@@ -890,18 +940,21 @@ func main() {
                                                 },
                                             },
                                     },
+//CC
                                     &x3d.HAnimJoint{
+                                        Name: stringPtr("l_calcaneocuboid"),
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("hanim_l_calcaneocuboid"),
                                         },
-                                        Name: stringPtr("l_calcaneocuboid"),
                                         Center: &x3d.SFVec3f{0.2, 0.3, 0.0},
+                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimSegment{
+                                                Name: stringPtr("l_calcaneus"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_l_calcaneus"),
                                                 },
-                                                Name: stringPtr("l_calcaneus"),
                                                 &x3d.Transform{
                                                         Translation: &x3d.SFVec3f{0.2, 0.3, 0.0},
                                                     Children: []x3d.X3DNode{
@@ -929,19 +982,22 @@ func main() {
                                                     },
                                                 },
                                         },
+//TT
                                         Children: []x3d.X3DNode{
                                             &x3d.HAnimJoint{
+                                                Name: stringPtr("l_transversetarsal"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("hanim_l_transversetarsal"),
                                                 },
-                                                Name: stringPtr("l_transversetarsal"),
                                                 Center: &x3d.SFVec3f{0.21, -0.3, 0.0},
+                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimSegment{
+                                                        Name: stringPtr("l_cuboid"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_cuboid"),
                                                         },
-                                                        Name: stringPtr("l_cuboid"),
                                                         &x3d.Transform{
                                                                 Translation: &x3d.SFVec3f{0.21, -0.3, 0.0},
                                                             Children: []x3d.X3DNode{
@@ -985,19 +1041,22 @@ func main() {
                                                             },
                                                         },
                                                 },
+//TMT4
                                                 Children: []x3d.X3DNode{
                                                     &x3d.HAnimJoint{
+                                                        Name: stringPtr("l_tarsometatarsal_4"),
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("hanim_l_tarsometatarsal_4"),
                                                         },
-                                                        Name: stringPtr("l_tarsometatarsal_4"),
                                                         Center: &x3d.SFVec3f{0.25, -0.58, 0.0},
+                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimSegment{
+                                                                Name: stringPtr("l_metatarsal_4"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsal_4"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsal_4"),
                                                                 &x3d.Transform{
                                                                         Translation: &x3d.SFVec3f{0.25, -0.58, 0.0},
                                                                     Children: []x3d.X3DNode{
@@ -1027,17 +1086,19 @@ func main() {
                                                         },
                                                         Children: []x3d.X3DNode{
                                                             &x3d.HAnimJoint{
+                                                                Name: stringPtr("l_metatarsophalangeal_4"),
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     DEF: stringPtr("hanim_l_metatarsophalangeal_4"),
                                                                 },
-                                                                Name: stringPtr("l_metatarsophalangeal_4"),
                                                                 Center: &x3d.SFVec3f{0.25, -0.87, 0.0},
+                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimSegment{
+                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_4"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_phalanx_4"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_phalanx_4"),
                                                                         &x3d.Transform{
                                                                                 Translation: &x3d.SFVec3f{0.25, -0.87, 0.0},
                                                                             Children: []x3d.X3DNode{
@@ -1067,17 +1128,19 @@ func main() {
                                                                 },
                                                                 Children: []x3d.X3DNode{
                                                                     &x3d.HAnimJoint{
+                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_4"),
                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                             DEF: stringPtr("hanim_l_tarsal_proximal_interphalangeal_4"),
                                                                         },
-                                                                        Name: stringPtr("l_tarsal_proximal_interphalangeal_4"),
                                                                         Center: &x3d.SFVec3f{0.25, -1.0, 0.0},
+                                                                        Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                        Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimSegment{
+                                                                                Name: stringPtr("l_tarsal_middle_phalanx_4"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_middle_phalanx_4"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_middle_phalanx_4"),
                                                                                 &x3d.Transform{
                                                                                         Translation: &x3d.SFVec3f{0.25, -1.0, 0.0},
                                                                                     Children: []x3d.X3DNode{
@@ -1107,17 +1170,19 @@ func main() {
                                                                         },
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.HAnimJoint{
+                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_4"),
                                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                                     DEF: stringPtr("hanim_l_tarsal_distal_interphalangeal_4"),
                                                                                 },
-                                                                                Name: stringPtr("l_tarsal_distal_interphalangeal_4"),
                                                                                 Center: &x3d.SFVec3f{0.25, -1.1, 0.0},
+                                                                                Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                                Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                                 Children: []x3d.X3DNode{
                                                                                     &x3d.HAnimSegment{
+                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_4"),
                                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                                             DEF: stringPtr("hanim_l_tarsal_distal_phalanx_4"),
                                                                                         },
-                                                                                        Name: stringPtr("l_tarsal_distal_phalanx_4"),
                                                                                         &x3d.Transform{
                                                                                                 Translation: &x3d.SFVec3f{0.25, -1.1, 0.0},
                                                                                             Children: []x3d.X3DNode{
@@ -1149,18 +1214,21 @@ func main() {
                                                                 },
                                                         },
                                                 },
+//TMT5
                                                 &x3d.HAnimJoint{
+                                                    Name: stringPtr("l_tarsometatarsal_5"),
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hanim_l_tarsometatarsal_5"),
                                                     },
-                                                    Name: stringPtr("l_tarsometatarsal_5"),
                                                     Center: &x3d.SFVec3f{0.33, -0.52, 0.0},
+                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimSegment{
+                                                            Name: stringPtr("l_metatarsal_5"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_l_metatarsal_5"),
                                                             },
-                                                            Name: stringPtr("l_metatarsal_5"),
                                                             &x3d.Transform{
                                                                     Translation: &x3d.SFVec3f{0.33, -0.52, 0.0},
                                                                 Children: []x3d.X3DNode{
@@ -1190,17 +1258,19 @@ func main() {
                                                     },
                                                     Children: []x3d.X3DNode{
                                                         &x3d.HAnimJoint{
+                                                            Name: stringPtr("l_metatarsophalangeal_5"),
                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                 DEF: stringPtr("hanim_l_metatarsophalangeal_5"),
                                                             },
-                                                            Name: stringPtr("l_metatarsophalangeal_5"),
                                                             Center: &x3d.SFVec3f{0.34, -0.8, 0.0},
+                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimSegment{
+                                                                    Name: stringPtr("l_tarsal_proximal_phalanx_5"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_l_tarsal_proximal_phalanx_5"),
                                                                     },
-                                                                    Name: stringPtr("l_tarsal_proximal_phalanx_5"),
                                                                     &x3d.Transform{
                                                                             Translation: &x3d.SFVec3f{0.34, -0.8, 0.0},
                                                                         Children: []x3d.X3DNode{
@@ -1230,17 +1300,19 @@ func main() {
                                                             },
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.HAnimJoint{
+                                                                    Name: stringPtr("l_tarsal_proximal_interphalangeal_5"),
                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                         DEF: stringPtr("hanim_l_tarsal_proximal_interphalangeal_5"),
                                                                     },
-                                                                    Name: stringPtr("l_tarsal_proximal_interphalangeal_5"),
                                                                     Center: &x3d.SFVec3f{0.34, -0.95, 0.0},
+                                                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimSegment{
+                                                                            Name: stringPtr("l_tarsal_middle_phalanx_5"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_l_tarsal_middle_phalanx_5"),
                                                                             },
-                                                                            Name: stringPtr("l_tarsal_middle_phalanx_5"),
                                                                             &x3d.Transform{
                                                                                     Translation: &x3d.SFVec3f{0.34, -0.95, 0.0},
                                                                                 Children: []x3d.X3DNode{
@@ -1270,17 +1342,19 @@ func main() {
                                                                     },
                                                                     Children: []x3d.X3DNode{
                                                                         &x3d.HAnimJoint{
+                                                                            Name: stringPtr("l_tarsal_distal_interphalangeal_5"),
                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                 DEF: stringPtr("hanim_l_tarsal_distal_interphalangeal_5"),
                                                                             },
-                                                                            Name: stringPtr("l_tarsal_distal_interphalangeal_5"),
                                                                             Center: &x3d.SFVec3f{0.34, -1.05, 0.0},
+                                                                            Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                                                            Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                                                             Children: []x3d.X3DNode{
                                                                                 &x3d.HAnimSegment{
+                                                                                    Name: stringPtr("l_tarsal_distal_phalanx_5"),
                                                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                                                         DEF: stringPtr("hanim_l_tarsal_distal_phalanx_5"),
                                                                                     },
-                                                                                    Name: stringPtr("l_tarsal_distal_phalanx_5"),
                                                                                     &x3d.Transform{
                                                                                             Translation: &x3d.SFVec3f{0.34, -1.05, 0.0},
                                                                                         Children: []x3d.X3DNode{
@@ -1452,137 +1526,6 @@ func main() {
                             USE: stringPtr("hanim_l_transversetarsal"),
                         },
                     },
-                    Segments: []x3d.X3DNode{
-                        &x3d.HAnimSegment{
-                            CoreX3DNode: x3d.CoreX3DNode{
-                                USE: stringPtr("hanim_l_calcaneus"),
-                            },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_cuboid"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_cuneiform_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_cuneiform_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_cuneiform_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_metatarsal_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_metatarsal_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_metatarsal_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_metatarsal_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_metatarsal_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_navicular"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_talus"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_distal_phalanx_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_distal_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_distal_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_distal_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_distal_phalanx_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_middle_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_middle_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_middle_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_middle_phalanx_5"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_proximal_phalanx_1"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_proximal_phalanx_2"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_proximal_phalanx_3"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_proximal_phalanx_4"),
-                        },
-                    },
-                    &x3d.HAnimSegment{
-                        CoreX3DNode: x3d.CoreX3DNode{
-                            USE: stringPtr("hanim_l_tarsal_proximal_phalanx_5"),
-                        },
-                    },
                 },
             },
         },
@@ -1602,13 +1545,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/HAnimModelFootLeft.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -1619,7 +1562,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -60,33 +60,33 @@ ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("bubs2.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d"))
-        .addMeta(new meta().setName("translated").setContent("13 March 2016"))
-        .addMeta(new meta().setName("generator").setContent("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("bubs2.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("Tour around a prismatic sphere")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/geo.x3d")))
+        .addMeta(new meta().setName(new SFString("translated")).setContent(new SFString("13 March 2016")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("X3dToJson.xslt, https://www.web3d.org/x3d/stylesheets/X3dToJson.html"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Bubbles in action"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription(new SFString("Bubbles in action")))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new ProtoDeclare().setName("Bubble")
+        .addChild(new ProtoDeclare().setName(new SFString("Bubble"))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("body_trans")
+            .addChild(new Transform().setDEF(new SFString("body_trans"))
               .addChild(new Shape()
                 .setGeometry(new Sphere().setRadius(0.25f ))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
-              .addChild(new Script().setDEF("bounce")
-                .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-                .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addChild(new Script().setDEF(new SFString("bounce"))
+                .addField(new field().setType("SFVec3f").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("scalvel")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+                .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -138,14 +138,14 @@ ProtoInstance ProtoInstance3 = null;
 "	initialize();\n"+
 "    }\n"+
 "}"))
-              .addChild(new TimeSensor().setDEF("bubbleClock").setCycleInterval(10d).setLoop(true))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("translation_changed").setToNode("body_trans").setToField("set_translation"))
-              .addChild(new ROUTE().setFromNode("bounce").setFromField("scale_changed").setToNode("body_trans").setToField("set_scale"))
-              .addChild(new ROUTE().setFromNode("bubbleClock").setFromField("fraction_changed").setToNode("bounce").setToField("set_fraction")))))
-        .addChild(ProtoInstance0 = new ProtoInstance().setName("Bubble").setDEF("bubbleA"))
-        .addChild(ProtoInstance1 = new ProtoInstance().setName("Bubble").setDEF("bubbleB"))
-        .addChild(ProtoInstance2 = new ProtoInstance().setName("Bubble").setDEF("bubbleC"))
-        .addChild(ProtoInstance3 = new ProtoInstance().setName("Bubble").setDEF("bubbleD")));
+              .addChild(new TimeSensor().setDEF(new SFString("bubbleClock")).setCycleInterval(10d).setLoop(true))
+              .addChild(new ROUTE().setFromNode(new SFString("bounce")).setFromField(new SFString("translation_changed")).setToNode(new SFString("body_trans")).setToField(new SFString("set_translation")))
+              .addChild(new ROUTE().setFromNode(new SFString("bounce")).setFromField(new SFString("scale_changed")).setToNode(new SFString("body_trans")).setToField(new SFString("set_scale")))
+              .addChild(new ROUTE().setFromNode(new SFString("bubbleClock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("bounce")).setToField(new SFString("set_fraction"))))))
+        .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("Bubble")).setDEF(new SFString("bubbleA")))
+        .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("Bubble")).setDEF(new SFString("bubbleB")))
+        .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("Bubble")).setDEF(new SFString("bubbleC")))
+        .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("Bubble")).setDEF(new SFString("bubbleD"))));
     return X3D0;
     }
 private class MFString0 {

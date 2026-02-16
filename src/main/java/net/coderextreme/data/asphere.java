@@ -56,14 +56,14 @@ public class asphere implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Interchange")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("asphere.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"))
-        .addMeta(new meta().setName("description").setContent("a sphere")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("asphere.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("a sphere"))))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()

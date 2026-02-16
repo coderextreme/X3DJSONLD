@@ -344,7 +344,12 @@ SoHAnimSegment53->addChild(*SoShape54);
 
 SoGroup* SoGroup61 = new SoGroup();
 SoGroup61->setDEF(QString("sacrum_Sites"));
-//None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//None
+//(example site and site marker code)
+//<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>
+//<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment53->addChild(*SoGroup61);
 
 SoHAnimJoint52->addChildren(*SoHAnimSegment53);
@@ -389,7 +394,16 @@ SoHAnimSegment63->addChild(*SoShape64);
 
 SoGroup* SoGroup71 = new SoGroup();
 SoGroup71->setDEF(QString("pelvis_Sites"));
-//(r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z)
+//(r_iliocristale_pt '-0.1525 1.0628 0.0035)
+//(r_trochanterion_pt -0.1689 0.8419 0.0352)
+//(l_iliocristale_pt 0.1612 1.0537 0.0008)
+//(l_trochanterion_pt 0.1677 0.8336 0.0303)
+//(r_asis_pt -0.0887 1.0021 0.1112)
+//(l_asis_pt 0.0774 1.0190 -0.1151)
+//(r_psis_pt -0.0716 1.0190 -0.1138)
+//(l_psis_pt 0.0774 1.0190 -0.1151)
+//(crotch_pt 0.0034 0.8266 0.0257)
+//(buttocks_standing_wall_contact_point x y z)
 SoHAnimSite* SoHAnimSite72 = new SoHAnimSite();
 SoHAnimSite72->X3DNode::setName(QString("r_iliocristale_pt"));
 SoHAnimSite72->setDEF(QString("hanim_r_iliocristale_pt"));
@@ -574,7 +588,10 @@ SoHAnimSegment103->addChild(*SoShape104);
 
 SoGroup* SoGroup111 = new SoGroup();
 SoGroup111->setDEF(QString("l_thigh_Sites"));
-//(l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z)
+//(l_knee_crease_pt 0.0993 0.4881 -0.0309)
+//(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)
+//(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)
+//(l_suprapatella_pt x y z)
 SoHAnimSite* SoHAnimSite112 = new SoHAnimSite();
 SoHAnimSite112->X3DNode::setName(QString("l_knee_crease_pt"));
 SoHAnimSite112->setDEF(QString("hanim_l_knee_crease_pt"));
@@ -675,7 +692,9 @@ SoHAnimSegment125->addChild(*SoShape126);
 
 SoGroup* SoGroup133 = new SoGroup();
 SoGroup133->setDEF(QString("l_calf_Sites"));
-//(l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
+//(l_tibiale_pt x y z)
+//(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)
+//(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
 SoHAnimSite* SoHAnimSite134 = new SoHAnimSite();
 SoHAnimSite134->X3DNode::setName(QString("l_tibiale_pt"));
 SoHAnimSite134->setDEF(QString("hanim_l_tibiale_pt"));
@@ -762,7 +781,8 @@ SoHAnimSegment144->addChild(*SoShape145);
 
 SoGroup* SoGroup152 = new SoGroup();
 SoGroup152->setDEF(QString("l_talus_Sites"));
-//(l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
+//(l_sphyrion_pt 0.0890 0.0575 -0.0943)
+//(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
 SoHAnimSite* SoHAnimSite153 = new SoHAnimSite();
 SoHAnimSite153->X3DNode::setName(QString("l_sphyrion_pt"));
 SoHAnimSite153->setDEF(QString("hanim_l_sphyrion_pt"));
@@ -2114,7 +2134,10 @@ SoHAnimSegment431->addChild(*SoShape432);
 
 SoGroup* SoGroup439 = new SoGroup();
 SoGroup439->setDEF(QString("r_thigh_Sites"));
-//(r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z)
+//(r_knee_crease_pt -0.0825 0.4932 -0.0326)
+//(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)
+//(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)
+//(r_suprapatella_pt x y z)
 SoHAnimSite* SoHAnimSite440 = new SoHAnimSite();
 SoHAnimSite440->X3DNode::setName(QString("r_knee_crease_pt"));
 SoHAnimSite440->setDEF(QString("hanim_r_knee_crease_pt"));
@@ -2215,7 +2238,9 @@ SoHAnimSegment453->addChild(*SoShape454);
 
 SoGroup* SoGroup461 = new SoGroup();
 SoGroup461->setDEF(QString("r_calf_Sites"));
-//(r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
+//(r_tibiale_pt x y z)
+//(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)
+//(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
 SoHAnimSite* SoHAnimSite462 = new SoHAnimSite();
 SoHAnimSite462->X3DNode::setName(QString("r_tibiale_pt"));
 SoHAnimSite462->setDEF(QString("hanim_r_tibiale_pt"));
@@ -2302,7 +2327,8 @@ SoHAnimSegment472->addChild(*SoShape473);
 
 SoGroup* SoGroup480 = new SoGroup();
 SoGroup480->setDEF(QString("r_talus_Sites"));
-//(r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
+//(r_sphyrion_pt -0.0603 0.0610 -0.1002)
+//(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
 SoHAnimSite* SoHAnimSite481 = new SoHAnimSite();
 SoHAnimSite481->X3DNode::setName(QString("r_sphyrion_pt"));
 SoHAnimSite481->setDEF(QString("hanim_r_sphyrion_pt"));
@@ -3654,7 +3680,11 @@ SoHAnimSegment759->addChild(*SoShape760);
 
 SoGroup* SoGroup767 = new SoGroup();
 SoGroup767->setDEF(QString("l5_Sites"));
-//(spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017)
+//(spine_1_middle_back x y z)
+//(spine_2_lower_back_pt x y z)
+//(waist_preferred_anterior_pt x y z)
+//(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)
+//(navel 0.0069 1.0966 0.1017)
 SoHAnimSite* SoHAnimSite768 = new SoHAnimSite();
 SoHAnimSite768->X3DNode::setName(QString("spine_1_middle_back_pt"));
 SoHAnimSite768->setDEF(QString("hanim_spine_1_middle_back_pt"));
@@ -3859,7 +3889,8 @@ SoHAnimSegment804->addChild(*SoShape805);
 
 SoGroup* SoGroup812 = new SoGroup();
 SoGroup812->setDEF(QString("l2_Sites"));
-//(l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016)
+//(l_rib_10_pt 0.0871 1.1925 0.0992)
+//(r_rib_10_pt -0.0711 1.1941 0.1016)
 SoHAnimSite* SoHAnimSite813 = new SoHAnimSite();
 SoHAnimSite813->X3DNode::setName(QString("l_rib_10_pt"));
 SoHAnimSite813->setDEF(QString("hanim_l_rib_10_pt"));
@@ -4067,7 +4098,8 @@ SoHAnimSegment850->addChild(*SoShape851);
 
 SoGroup* SoGroup858 = new SoGroup();
 SoGroup858->setDEF(QString("t10_Sites"));
-//(substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z)
+//(substernale_pt 0.0085 1.2995 0.1147)
+//(mesosternale_pt x y z)
 SoHAnimSite* SoHAnimSite859 = new SoHAnimSite();
 SoHAnimSite859->X3DNode::setName(QString("substernale_pt"));
 SoHAnimSite859->setDEF(QString("hanim_substernale_pt"));
@@ -4140,7 +4172,11 @@ SoHAnimSegment866->addChild(*SoShape867);
 
 SoGroup* SoGroup874 = new SoGroup();
 SoGroup874->setDEF(QString("t9_Sites"));
-//(l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z)
+//(l_thelion_pt 0.0918 1.3382 0.1192)
+//(r_thelion_pt -0.0736 1.3385 0.1217)
+//(rear_center_midsagittal_plane_pt x y z)
+//(l_chest_midsagittal_plane_pt x y z)
+//(r_chest_midsagittal_plane_pt x y z)
 SoHAnimSite* SoHAnimSite875 = new SoHAnimSite();
 SoHAnimSite875->X3DNode::setName(QString("l_thelion_pt"));
 SoHAnimSite875->setDEF(QString("hanim_l_thelion_pt"));
@@ -4570,7 +4606,8 @@ SoHAnimSegment961->addChild(*SoShape962);
 
 SoGroup* SoGroup969 = new SoGroup();
 SoGroup969->setDEF(QString("t1_Sites"));
-//(suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815)
+//(suprasternale_pt 0.0084 1.4714 0.0551)
+//(cervicale_pt 0.0064 1.520 -0.0815)
 SoHAnimSite* SoHAnimSite970 = new SoHAnimSite();
 SoHAnimSite970->X3DNode::setName(QString("suprasternale_pt"));
 SoHAnimSite970->setDEF(QString("hanim_suprasternale_pt"));
@@ -4643,7 +4680,8 @@ SoHAnimSegment977->addChild(*SoShape978);
 
 SoGroup* SoGroup985 = new SoGroup();
 SoGroup985->setDEF(QString("c7_Sites"));
-//(l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220)
+//(l_neck_base_pt 0.0646 1.5141 -0.0380)
+//(r_neck_base_pt -0.0419 1.5149 -0.0220)
 SoHAnimSite* SoHAnimSite986 = new SoHAnimSite();
 SoHAnimSite986->X3DNode::setName(QString("l_neck_base_pt"));
 SoHAnimSite986->setDEF(QString("hanim_l_neck_base_pt"));
@@ -5000,7 +5038,17 @@ SoHAnimSegment1056->addChild(*SoShape1057);
 
 SoGroup* SoGroup1064 = new SoGroup();
 SoGroup1064->setDEF(QString("skull_Sites"));
-//(skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z)
+//(skull_vertex_pt 0.0050 1.7504 0.0055)
+//(glabella_pt x y z)
+//(sellion_pt 0.0058 1.6316 0.0852)
+//(l_infraorbitale_pt 0.0341 1.6171 0.0752)
+//(r_infraorbitale_pt -0.0237 1.6171 0.0752)
+//(l_tragion_pt 0.0739 1.6348 0.0282)
+//(r_tragion_pt -0.0646 1.6347 0.0302)
+//(nuchale_pt 0.0039 1.5972 -0.0796)
+//(opisthocranion_pt x y z)
+//(l_ectocanthus_pt x y z)
+//(r_ectocanthus_pt x y z)
 SoHAnimSite* SoHAnimSite1065 = new SoHAnimSite();
 SoHAnimSite1065->X3DNode::setName(QString("skull_vertex_pt"));
 SoHAnimSite1065->setDEF(QString("hanim_skull_vertex_pt"));
@@ -5199,7 +5247,11 @@ SoHAnimSegment1099->addChild(*SoShape1100);
 
 SoGroup* SoGroup1107 = new SoGroup();
 SoGroup1107->setDEF(QString("l_eyelid_Sites"));
-//(l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>
+//<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1099->addChild(*SoGroup1107);
 
 SoHAnimJoint1098->addChildren(*SoHAnimSegment1099);
@@ -5246,7 +5298,11 @@ SoHAnimSegment1109->addChild(*SoShape1110);
 
 SoGroup* SoGroup1117 = new SoGroup();
 SoGroup1117->setDEF(QString("r_eyelid_Sites"));
-//(r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>
+//<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1109->addChild(*SoGroup1117);
 
 SoHAnimJoint1108->addChildren(*SoHAnimSegment1109);
@@ -5293,7 +5349,11 @@ SoHAnimSegment1119->addChild(*SoShape1120);
 
 SoGroup* SoGroup1127 = new SoGroup();
 SoGroup1127->setDEF(QString("l_eyeball_Sites"));
-//(l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>
+//<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1119->addChild(*SoGroup1127);
 
 SoHAnimJoint1118->addChildren(*SoHAnimSegment1119);
@@ -5340,7 +5400,11 @@ SoHAnimSegment1129->addChild(*SoShape1130);
 
 SoGroup* SoGroup1137 = new SoGroup();
 SoGroup1137->setDEF(QString("r_eyeball_Sites"));
-//(r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>
+//<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1129->addChild(*SoGroup1137);
 
 SoHAnimJoint1128->addChildren(*SoHAnimSegment1129);
@@ -5387,7 +5451,11 @@ SoHAnimSegment1139->addChild(*SoShape1140);
 
 SoGroup* SoGroup1147 = new SoGroup();
 SoGroup1147->setDEF(QString("l_eyebrow_Sites"));
-//(l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>
+//<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1139->addChild(*SoGroup1147);
 
 SoHAnimJoint1138->addChildren(*SoHAnimSegment1139);
@@ -5434,7 +5502,11 @@ SoHAnimSegment1149->addChild(*SoShape1150);
 
 SoGroup* SoGroup1157 = new SoGroup();
 SoGroup1157->setDEF(QString("r_eyebrow_Sites"));
-//(r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>
+//<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 SoHAnimSegment1149->addChild(*SoGroup1157);
 
 SoHAnimJoint1148->addChildren(*SoHAnimSegment1149);
@@ -5481,7 +5553,10 @@ SoHAnimSegment1159->addChild(*SoShape1160);
 
 SoGroup* SoGroup1167 = new SoGroup();
 SoGroup1167->setDEF(QString("jaw_Sites"));
-//(r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z)
+//(r_gonion_pt -0.0520 1.5529 0.0347)
+//(l_gonion_pt 0.0631 1.5530 0.0330)
+//(supramenton_pt 0.0061 1.5410 0.0805)
+//(menton_pt x y z)
 SoHAnimSite* SoHAnimSite1168 = new SoHAnimSite();
 SoHAnimSite1168->X3DNode::setName(QString("l_gonion_pt"));
 SoHAnimSite1168->setDEF(QString("hanim_l_gonion_pt"));
@@ -5659,7 +5734,10 @@ SoHAnimSegment1194->addChild(*SoShape1195);
 
 SoGroup* SoGroup1202 = new SoGroup();
 SoGroup1202->setDEF(QString("l_scapula_Sites"));
-//(l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z)
+//(l_acromion_pt 0.2032 1.4760 -0.0490)
+//(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)
+//(l_axilla_distal_pt 0.1706 1.4072 -0.0875)
+//(l_axilla_posterior_folds_pt x y z)
 SoHAnimSite* SoHAnimSite1203 = new SoHAnimSite();
 SoHAnimSite1203->X3DNode::setName(QString("l_acromion_pt"));
 SoHAnimSite1203->setDEF(QString("hanim_l_acromion_pt"));
@@ -5760,7 +5838,10 @@ SoHAnimSegment1216->addChild(*SoShape1217);
 
 SoGroup* SoGroup1224 = new SoGroup();
 SoGroup1224->setDEF(QString("l_upperarm_Sites"));
-//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z)
+//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)
+//(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)
+//(l_radiale_pt 0.2182 1.1212 -0.1167)
+//(l_bideltoid_pt x y z)
 SoHAnimSite* SoHAnimSite1225 = new SoHAnimSite();
 SoHAnimSite1225->X3DNode::setName(QString("l_humeral_lateral_epicondyles_pt"));
 SoHAnimSite1225->setDEF(QString("hanim_l_humeral_lateral_epicondyles_pt"));
@@ -5861,7 +5942,8 @@ SoHAnimSegment1238->addChild(*SoShape1239);
 
 SoGroup* SoGroup1246 = new SoGroup();
 SoGroup1246->setDEF(QString("l_forearm_Sites"));
-//(l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123)
+//(l_radial_styloid_pt 0.1901 0.8645 -0.0415)
+//(l_olecranon_pt -0.1962 1.1375 -0.1123)
 SoHAnimSite* SoHAnimSite1247 = new SoHAnimSite();
 SoHAnimSite1247->X3DNode::setName(QString("l_radial_styloid_pt"));
 SoHAnimSite1247->setDEF(QString("hanim_l_radial_styloid_pt"));
@@ -6652,7 +6734,8 @@ SoHAnimSegment1409->addChild(*SoShape1410);
 
 SoGroup* SoGroup1417 = new SoGroup();
 SoGroup1417->setDEF(QString("l_carpal_distal_phalanx_3_Sites"));
-//(l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
+//(l_dactylion_pt 0.2056 0.6743 -0.0482)
+//(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 SoHAnimSite* SoHAnimSite1418 = new SoHAnimSite();
 SoHAnimSite1418->X3DNode::setName(QString("l_dactylion_pt"));
 SoHAnimSite1418->setDEF(QString("hanim_l_dactylion_pt"));
@@ -7210,7 +7293,8 @@ SoHAnimSegment1524->addChild(*SoShape1525);
 
 SoGroup* SoGroup1532 = new SoGroup();
 SoGroup1532->setDEF(QString("r_clavicle_Sites"));
-//0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400)
+//0.15 1.222 -0.02
+//(r_clavicale_pt -0.0115 1.4943 0.0400)
 SoHAnimSite* SoHAnimSite1533 = new SoHAnimSite();
 SoHAnimSite1533->X3DNode::setName(QString("r_clavicale_pt"));
 SoHAnimSite1533->setDEF(QString("hanim_r_clavicale_pt"));
@@ -7269,7 +7353,10 @@ SoHAnimSegment1537->addChild(*SoShape1538);
 
 SoGroup* SoGroup1545 = new SoGroup();
 SoGroup1545->setDEF(QString("r_scapula_Sites"));
-//(r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z)
+//(r_acromion_pt -0.1905 1.4791 -0.0431)
+//(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)
+//(r_axilla_distal_pt -0.1603 1.4098 -0.0826)
+//(r_axilla_posterior_folds_pt x y z)
 SoHAnimSite* SoHAnimSite1546 = new SoHAnimSite();
 SoHAnimSite1546->X3DNode::setName(QString("r_acromion_pt"));
 SoHAnimSite1546->setDEF(QString("hanim_r_acromion_pt"));
@@ -7370,7 +7457,10 @@ SoHAnimSegment1559->addChild(*SoShape1560);
 
 SoGroup* SoGroup1567 = new SoGroup();
 SoGroup1567->setDEF(QString("r_upperarm_Sites"));
-//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z)
+//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)
+//(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)
+//(r_radiale_pt -0.2130 1.1305 -0.1091)
+//(r_bideltoid_pt x y z)
 SoHAnimSite* SoHAnimSite1568 = new SoHAnimSite();
 SoHAnimSite1568->X3DNode::setName(QString("r_humeral_lateral_epicondyles_pt"));
 SoHAnimSite1568->setDEF(QString("hanim_r_humeral_lateral_epicondyles_pt"));
@@ -7471,7 +7561,8 @@ SoHAnimSegment1581->addChild(*SoShape1582);
 
 SoGroup* SoGroup1589 = new SoGroup();
 SoGroup1589->setDEF(QString("r_forearm_Sites"));
-//(r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065)
+//(r_radial_styloid_pt -0.1884 0.8676 -0.0360)
+//(r_olecranon_pt -0.1907 1.1405 -0.1065)
 SoHAnimSite* SoHAnimSite1590 = new SoHAnimSite();
 SoHAnimSite1590->X3DNode::setName(QString("r_radial_styloid_pt"));
 SoHAnimSite1590->setDEF(QString("hanim_r_radial_styloid_pt"));
@@ -8262,7 +8353,8 @@ SoHAnimSegment1752->addChild(*SoShape1753);
 
 SoGroup* SoGroup1760 = new SoGroup();
 SoGroup1760->setDEF(QString("r_carpal_distal_phalanx_3_Sites"));
-//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 )
+//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)
+//(r_dactylion_pt -0.1941 0.6772 -0.0423 )
 SoHAnimSite* SoHAnimSite1761 = new SoHAnimSite();
 SoHAnimSite1761->X3DNode::setName(QString("r_carpal_distal_phalanx_3_tip"));
 SoHAnimSite1761->setDEF(QString("hanim_r_carpal_distal_phalanx_3_tip"));

@@ -164,6 +164,8 @@ HAnimHumanoid31.version = "2.0"
 HAnimJoint32 = x3d.HAnimJoint(DEF="Joe_HumanoidRoot")
 HAnimJoint32.name = "HumanoidRoot"
 HAnimJoint32.center = [0,0.875,0]
+HAnimJoint32.ulimit = [0,0,0]
+HAnimJoint32.llimit = [0,0,0]
 MetadataSet33 = x3d.MetadataSet()
 MetadataSet33.name = "warnings"
 MetadataSet33.reference = "HAnim"
@@ -217,36 +219,50 @@ HAnimJoint43.name = "sacroiliac"
 HAnimJoint43.center = [0,0.92,0]
 HAnimJoint43.skinCoordIndex = [17,19,20,21,22,23,26,27,73,82,89,91,93]
 HAnimJoint43.skinCoordWeight = [1,1,1,1,1,1,1,1,1,1,0.35,0.35,1]
+HAnimJoint43.ulimit = [0,0,0]
+HAnimJoint43.llimit = [0,0,0]
 HAnimJoint44 = x3d.HAnimJoint(DEF="Joe_l_hip")
 HAnimJoint44.name = "l_hip"
 HAnimJoint44.center = [0.1,0.92,0]
 HAnimJoint44.skinCoordIndex = [89,90,94,95,96,97]
 HAnimJoint44.skinCoordWeight = [0.65,1,1,1,1,1]
+HAnimJoint44.ulimit = [0,0,0]
+HAnimJoint44.llimit = [0,0,0]
 HAnimJoint45 = x3d.HAnimJoint(DEF="Joe_l_knee")
 HAnimJoint45.name = "l_knee"
 HAnimJoint45.center = [0.115,0.466,0]
 HAnimJoint45.skinCoordIndex = [334,335,336,337,338,339,340,341]
 HAnimJoint45.skinCoordWeight = [1,1,1,1,1,1,1,1]
+HAnimJoint45.ulimit = [0,0,0]
+HAnimJoint45.llimit = [0,0,0]
 HAnimJoint46 = x3d.HAnimJoint(DEF="Joe_l_ankle")
 HAnimJoint46.name = "l_ankle"
 HAnimJoint46.center = [0.115,0.069,0]
 HAnimJoint46.skinCoordIndex = [342,343,344,345]
 HAnimJoint46.skinCoordWeight = [1,1,1,1]
+HAnimJoint46.ulimit = [0,0,0]
+HAnimJoint46.llimit = [0,0,0]
 HAnimJoint47 = x3d.HAnimJoint(DEF="Joe_l_subtalar")
 HAnimJoint47.name = "l_subtalar"
 HAnimJoint47.center = [0.115,0.031,0.03]
 HAnimJoint47.skinCoordIndex = [346,347,348,71]
 HAnimJoint47.skinCoordWeight = [1,1,1,1]
+HAnimJoint47.ulimit = [0,0,0]
+HAnimJoint47.llimit = [0,0,0]
 HAnimJoint48 = x3d.HAnimJoint(DEF="Joe_l_midtarsal")
 HAnimJoint48.name = "l_midtarsal"
 HAnimJoint48.center = [0.115,0.037,0.09]
 HAnimJoint48.skinCoordIndex = [349,350,351,352]
 HAnimJoint48.skinCoordWeight = [1,1,1,1]
+HAnimJoint48.ulimit = [0,0,0]
+HAnimJoint48.llimit = [0,0,0]
 HAnimJoint49 = x3d.HAnimJoint(DEF="Joe_l_metatarsal")
 HAnimJoint49.name = "l_metatarsal"
 HAnimJoint49.center = [0.115,0.02,0.122]
 HAnimJoint49.skinCoordIndex = [353,354,355,356,357,358,359,360,361]
 HAnimJoint49.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint49.ulimit = [0,0,0]
+HAnimJoint49.llimit = [0,0,0]
 
 HAnimJoint48.children.append(HAnimJoint49)
 
@@ -264,31 +280,43 @@ HAnimJoint50.name = "r_hip"
 HAnimJoint50.center = [-0.1,0.92,0]
 HAnimJoint50.skinCoordIndex = [91,92,98,99,100,101,362,363]
 HAnimJoint50.skinCoordWeight = [0.65,1,0.8,1,1,1,0.4,0.8]
+HAnimJoint50.ulimit = [0,0,0]
+HAnimJoint50.llimit = [0,0,0]
 HAnimJoint51 = x3d.HAnimJoint(DEF="Joe_r_knee")
 HAnimJoint51.name = "r_knee"
 HAnimJoint51.center = [-0.05,0.466,0]
 HAnimJoint51.skinCoordIndex = [362,363,364,365,366,367,368,369,98]
 HAnimJoint51.skinCoordWeight = [0.6,0.2,1,1,1,1,1,1,0.2]
+HAnimJoint51.ulimit = [0,0,0]
+HAnimJoint51.llimit = [0,0,0]
 HAnimJoint52 = x3d.HAnimJoint(DEF="Joe_r_ankle")
 HAnimJoint52.name = "r_ankle"
 HAnimJoint52.center = [-0.115,0.069,0]
 HAnimJoint52.skinCoordIndex = [370,371,372,373]
 HAnimJoint52.skinCoordWeight = [1,1,1,1]
+HAnimJoint52.ulimit = [0,0,0]
+HAnimJoint52.llimit = [0,0,0]
 HAnimJoint53 = x3d.HAnimJoint(DEF="Joe_r_subtalar")
 HAnimJoint53.name = "r_subtalar"
 HAnimJoint53.center = [-0.1,0.015,-0.01]
 HAnimJoint53.skinCoordIndex = [374,375,376]
 HAnimJoint53.skinCoordWeight = [1,1,1]
+HAnimJoint53.ulimit = [0,0,0]
+HAnimJoint53.llimit = [0,0,0]
 HAnimJoint54 = x3d.HAnimJoint(DEF="Joe_r_midtarsal")
 HAnimJoint54.name = "r_midtarsal"
 HAnimJoint54.center = [-0.115,0.037,0.09]
 HAnimJoint54.skinCoordIndex = [377,378,379,380]
 HAnimJoint54.skinCoordWeight = [1,1,1,1]
+HAnimJoint54.ulimit = [0,0,0]
+HAnimJoint54.llimit = [0,0,0]
 HAnimJoint55 = x3d.HAnimJoint(DEF="Joe_r_metatarsal")
 HAnimJoint55.name = "r_metatarsal"
 HAnimJoint55.center = [-0.1,0.01,0.14]
 HAnimJoint55.skinCoordIndex = [381,382,383,384,385,386,387,388,389]
 HAnimJoint55.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint55.ulimit = [0,0,0]
+HAnimJoint55.llimit = [0,0,0]
 
 HAnimJoint54.children.append(HAnimJoint55)
 
@@ -308,92 +336,142 @@ HAnimJoint56.name = "vl5"
 HAnimJoint56.center = [0,1.045,-0.095]
 HAnimJoint56.skinCoordIndex = [28,76]
 HAnimJoint56.skinCoordWeight = [1,1]
+HAnimJoint56.ulimit = [0,0,0]
+HAnimJoint56.llimit = [0,0,0]
 HAnimJoint57 = x3d.HAnimJoint(DEF="Joe_vl4")
 HAnimJoint57.name = "vl4"
 HAnimJoint57.center = [0,1.068,-0.085]
+HAnimJoint57.ulimit = [0,0,0]
+HAnimJoint57.llimit = [0,0,0]
 HAnimJoint58 = x3d.HAnimJoint(DEF="Joe_vl3")
 HAnimJoint58.name = "vl3"
 HAnimJoint58.center = [0,1.092,-0.0725]
+HAnimJoint58.ulimit = [0,0,0]
+HAnimJoint58.llimit = [0,0,0]
 HAnimJoint59 = x3d.HAnimJoint(DEF="Joe_vl2")
 HAnimJoint59.name = "vl2"
 HAnimJoint59.center = [0,1.12,-0.065]
 HAnimJoint59.skinCoordIndex = [16,18,25,83,84,85,86,87,88]
 HAnimJoint59.skinCoordWeight = [1,1,1,1,1,1,0.7,1,0.8]
+HAnimJoint59.ulimit = [0,0,0]
+HAnimJoint59.llimit = [0,0,0]
 HAnimJoint60 = x3d.HAnimJoint(DEF="Joe_vl1")
 HAnimJoint60.name = "vl1"
 HAnimJoint60.center = [0,1.1459,-0.0625]
+HAnimJoint60.ulimit = [0,0,0]
+HAnimJoint60.llimit = [0,0,0]
 HAnimJoint61 = x3d.HAnimJoint(DEF="Joe_vt12")
 HAnimJoint61.name = "vt12"
 HAnimJoint61.center = [0,1.179,-0.068]
+HAnimJoint61.ulimit = [0,0,0]
+HAnimJoint61.llimit = [0,0,0]
 HAnimJoint62 = x3d.HAnimJoint(DEF="Joe_vt11")
 HAnimJoint62.name = "vt11"
 HAnimJoint62.center = [0,1.2679,-0.081]
+HAnimJoint62.ulimit = [0,0,0]
+HAnimJoint62.llimit = [0,0,0]
 HAnimJoint63 = x3d.HAnimJoint(DEF="Joe_vt10")
 HAnimJoint63.name = "vt10"
 HAnimJoint63.center = [0,1.242,-0.09]
 HAnimJoint63.skinCoordIndex = [15]
 HAnimJoint63.skinCoordWeight = [1]
+HAnimJoint63.ulimit = [0,0,0]
+HAnimJoint63.llimit = [0,0,0]
 HAnimJoint64 = x3d.HAnimJoint(DEF="Joe_vt9")
 HAnimJoint64.name = "vt9"
 HAnimJoint64.center = [0,1.268,-0.1]
 HAnimJoint64.skinCoordIndex = [13,14]
 HAnimJoint64.skinCoordWeight = [1,1]
+HAnimJoint64.ulimit = [0,0,0]
+HAnimJoint64.llimit = [0,0,0]
 HAnimJoint65 = x3d.HAnimJoint(DEF="Joe_vt8")
 HAnimJoint65.name = "vt8"
 HAnimJoint65.center = [0,1.294,-0.11]
+HAnimJoint65.ulimit = [0,0,0]
+HAnimJoint65.llimit = [0,0,0]
 HAnimJoint66 = x3d.HAnimJoint(DEF="Joe_vt7")
 HAnimJoint66.name = "vt7"
 HAnimJoint66.center = [0,1.323,-0.1155]
+HAnimJoint66.ulimit = [0,0,0]
+HAnimJoint66.llimit = [0,0,0]
 HAnimJoint67 = x3d.HAnimJoint(DEF="Joe_vt6")
 HAnimJoint67.name = "vt6"
 HAnimJoint67.center = [0,1.352,-0.12]
+HAnimJoint67.ulimit = [0,0,0]
+HAnimJoint67.llimit = [0,0,0]
 HAnimJoint68 = x3d.HAnimJoint(DEF="Joe_vt5")
 HAnimJoint68.name = "vt5"
 HAnimJoint68.center = [0,1.381,-0.1235]
+HAnimJoint68.ulimit = [0,0,0]
+HAnimJoint68.llimit = [0,0,0]
 HAnimJoint69 = x3d.HAnimJoint(DEF="Joe_vt4")
 HAnimJoint69.name = "vt4"
 HAnimJoint69.center = [0,1.41,-0.1235]
 HAnimJoint69.skinCoordIndex = [81]
 HAnimJoint69.skinCoordWeight = [1]
+HAnimJoint69.ulimit = [0,0,0]
+HAnimJoint69.llimit = [0,0,0]
 HAnimJoint70 = x3d.HAnimJoint(DEF="Joe_vt3")
 HAnimJoint70.name = "vt3"
 HAnimJoint70.center = [0,1.438,-0.12]
+HAnimJoint70.ulimit = [0,0,0]
+HAnimJoint70.llimit = [0,0,0]
 HAnimJoint71 = x3d.HAnimJoint(DEF="Joe_vt2")
 HAnimJoint71.name = "vt2"
 HAnimJoint71.center = [0,1.468,-0.105]
+HAnimJoint71.ulimit = [0,0,0]
+HAnimJoint71.llimit = [0,0,0]
 HAnimJoint72 = x3d.HAnimJoint(DEF="Joe_vt1")
 HAnimJoint72.name = "vt1"
 HAnimJoint72.center = [0,1.497,-0.09]
 HAnimJoint72.skinCoordIndex = [11,24]
 HAnimJoint72.skinCoordWeight = [1,1]
+HAnimJoint72.ulimit = [0,0,0]
+HAnimJoint72.llimit = [0,0,0]
 HAnimJoint73 = x3d.HAnimJoint(DEF="Joe_vc7")
 HAnimJoint73.name = "vc7"
 HAnimJoint73.center = [0,1.525,-0.072]
 HAnimJoint73.skinCoordIndex = [74,75]
 HAnimJoint73.skinCoordWeight = [1,1]
+HAnimJoint73.ulimit = [0,0,0]
+HAnimJoint73.llimit = [0,0,0]
 HAnimJoint74 = x3d.HAnimJoint(DEF="Joe_vc6")
 HAnimJoint74.name = "vc6"
 HAnimJoint74.center = [0,1.54,-0.05]
+HAnimJoint74.ulimit = [0,0,0]
+HAnimJoint74.llimit = [0,0,0]
 HAnimJoint75 = x3d.HAnimJoint(DEF="Joe_vc5")
 HAnimJoint75.name = "vc5"
 HAnimJoint75.center = [0,1.552,-0.035]
+HAnimJoint75.ulimit = [0,0,0]
+HAnimJoint75.llimit = [0,0,0]
 HAnimJoint76 = x3d.HAnimJoint(DEF="Joe_vc4")
 HAnimJoint76.name = "vc4"
 HAnimJoint76.center = [0,1.5675,-0.0256]
+HAnimJoint76.ulimit = [0,0,0]
+HAnimJoint76.llimit = [0,0,0]
 HAnimJoint77 = x3d.HAnimJoint(DEF="Joe_vc3")
 HAnimJoint77.name = "vc3"
 HAnimJoint77.center = [0,1.58225,-0.0185]
+HAnimJoint77.ulimit = [0,0,0]
+HAnimJoint77.llimit = [0,0,0]
 HAnimJoint78 = x3d.HAnimJoint(DEF="Joe_vc2")
 HAnimJoint78.name = "vc2"
 HAnimJoint78.center = [0,1.595,-0.0175]
+HAnimJoint78.ulimit = [0,0,0]
+HAnimJoint78.llimit = [0,0,0]
 HAnimJoint79 = x3d.HAnimJoint(DEF="Joe_vc1")
 HAnimJoint79.name = "vc1"
 HAnimJoint79.center = [0,1.61,-0.015]
+HAnimJoint79.ulimit = [0,0,0]
+HAnimJoint79.llimit = [0,0,0]
 HAnimJoint80 = x3d.HAnimJoint(DEF="Joe_skullbase")
 HAnimJoint80.name = "skullbase"
 HAnimJoint80.center = [0,1.63,-0.01]
 HAnimJoint80.skinCoordIndex = [0,1,2,3,4,5,6,7,8,9]
 HAnimJoint80.skinCoordWeight = [1,1,1,1,1,1,1,1,1,1]
+HAnimJoint80.ulimit = [0,0,0]
+HAnimJoint80.llimit = [0,0,0]
 HAnimDisplacer81 = x3d.HAnimDisplacer(DEF="Joe_skull_tip_raiser_action")
 HAnimDisplacer81.name = "skull_tip_raiser_action"
 HAnimDisplacer81.coordIndex = [0,1,2,3,4,5,6,7,8,9]
@@ -403,36 +481,50 @@ HAnimJoint80.displacers.append(HAnimDisplacer81)
 HAnimJoint82 = x3d.HAnimJoint(DEF="Joe_l_eyelid_joint")
 HAnimJoint82.name = "l_eyelid_joint"
 HAnimJoint82.center = [0.034,1.659,0.06]
+HAnimJoint82.ulimit = [0,0,0]
+HAnimJoint82.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint82)
 HAnimJoint83 = x3d.HAnimJoint(DEF="Joe_l_eyeball_joint")
 HAnimJoint83.name = "l_eyeball_joint"
 HAnimJoint83.center = [0.034,1.659,0.06]
+HAnimJoint83.ulimit = [0,0,0]
+HAnimJoint83.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint83)
 HAnimJoint84 = x3d.HAnimJoint(DEF="Joe_l_eyebrow_joint")
 HAnimJoint84.name = "l_eyebrow_joint"
 HAnimJoint84.center = [0.034,1.659,0.06]
+HAnimJoint84.ulimit = [0,0,0]
+HAnimJoint84.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint84)
 HAnimJoint85 = x3d.HAnimJoint(DEF="Joe_r_eyelid_joint")
 HAnimJoint85.name = "r_eyelid_joint"
 HAnimJoint85.center = [-0.034,1.659,0.06]
+HAnimJoint85.ulimit = [0,0,0]
+HAnimJoint85.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint85)
 HAnimJoint86 = x3d.HAnimJoint(DEF="Joe_r_eyeball_joint")
 HAnimJoint86.name = "r_eyeball_joint"
 HAnimJoint86.center = [-0.034,1.659,0.06]
+HAnimJoint86.ulimit = [0,0,0]
+HAnimJoint86.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint86)
 HAnimJoint87 = x3d.HAnimJoint(DEF="Joe_r_eyebrow_joint")
 HAnimJoint87.name = "r_eyebrow_joint"
 HAnimJoint87.center = [-0.034,1.659,0.06]
+HAnimJoint87.ulimit = [0,0,0]
+HAnimJoint87.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint87)
 HAnimJoint88 = x3d.HAnimJoint(DEF="Joe_temporomandibular")
 HAnimJoint88.name = "temporomandibular"
 HAnimJoint88.center = [0.034,1.659,0.06]
+HAnimJoint88.ulimit = [0,0,0]
+HAnimJoint88.llimit = [0,0,0]
 
 HAnimJoint80.children.append(HAnimJoint88)
 
@@ -456,41 +548,57 @@ HAnimJoint89.name = "l_sternoclavicular"
 HAnimJoint89.center = [0.082,1.4488,-0.0353]
 HAnimJoint89.skinCoordIndex = [12]
 HAnimJoint89.skinCoordWeight = [1]
+HAnimJoint89.ulimit = [0,0,0]
+HAnimJoint89.llimit = [0,0,0]
 HAnimJoint90 = x3d.HAnimJoint(DEF="Joe_l_acromioclavicular")
 HAnimJoint90.name = "l_acromioclavicular"
 HAnimJoint90.center = [0.0962,1.4269,-0.0424]
 HAnimJoint90.skinCoordIndex = [79]
 HAnimJoint90.skinCoordWeight = [1]
+HAnimJoint90.ulimit = [0,0,0]
+HAnimJoint90.llimit = [0,0,0]
 HAnimJoint91 = x3d.HAnimJoint(DEF="Joe_l_shoulder")
 HAnimJoint91.name = "l_shoulder"
 HAnimJoint91.center = [0.2,1.44,-0.04]
 HAnimJoint91.skinCoordIndex = [41,42,44,80,102,103,104,105]
 HAnimJoint91.skinCoordWeight = [1,1,1,1,1,1,1,1]
+HAnimJoint91.ulimit = [0,0,0]
+HAnimJoint91.llimit = [0,0,0]
 HAnimJoint92 = x3d.HAnimJoint(DEF="Joe_l_elbow")
 HAnimJoint92.name = "l_elbow"
 HAnimJoint92.center = [0.2,1.1388,-0.04]
 HAnimJoint92.skinCoordIndex = [45,46,47,109,110,111,112,113,115,116,117,118]
 HAnimJoint92.skinCoordWeight = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+HAnimJoint92.ulimit = [0,0,0]
+HAnimJoint92.llimit = [0,0,0]
 HAnimJoint93 = x3d.HAnimJoint(DEF="Joe_l_wrist")
 HAnimJoint93.name = "l_wrist"
 HAnimJoint93.center = [0.2,0.87,-0.04]
 HAnimJoint93.skinCoordIndex = [119,120,121,122,123,124,125,126]
 HAnimJoint93.skinCoordWeight = [1,1,1,1,1,1,1,1]
+HAnimJoint93.ulimit = [0,0,0]
+HAnimJoint93.llimit = [0,0,0]
 HAnimJoint94 = x3d.HAnimJoint(DEF="Joe_l_thumb1")
 HAnimJoint94.name = "l_thumb1"
 HAnimJoint94.center = [0.1924,0.8472,-0.0534]
 HAnimJoint94.skinCoordIndex = [127,128]
 HAnimJoint94.skinCoordWeight = [1,1]
+HAnimJoint94.ulimit = [0,0,0]
+HAnimJoint94.llimit = [0,0,0]
 HAnimJoint95 = x3d.HAnimJoint(DEF="Joe_l_thumb2")
 HAnimJoint95.name = "l_thumb2"
 HAnimJoint95.center = [0.1951,0.8226,0.0246]
 HAnimJoint95.skinCoordIndex = [138,139,140,141,142,143]
 HAnimJoint95.skinCoordWeight = [0.5,0.5,0.5,1,1,1]
+HAnimJoint95.ulimit = [0,0,0]
+HAnimJoint95.llimit = [0,0,0]
 HAnimJoint96 = x3d.HAnimJoint(DEF="Joe_l_thumb3")
 HAnimJoint96.name = "l_thumb3"
 HAnimJoint96.center = [0.1955,0.8159,0.0464]
 HAnimJoint96.skinCoordIndex = [144,145,146,147,148,149,150,151,152]
 HAnimJoint96.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint96.ulimit = [0,0,0]
+HAnimJoint96.llimit = [0,0,0]
 
 HAnimJoint95.children.append(HAnimJoint96)
 
@@ -502,21 +610,29 @@ HAnimJoint97.name = "l_index0"
 HAnimJoint97.center = [0.1983,0.8024,-0.028]
 HAnimJoint97.skinCoordIndex = [129,130]
 HAnimJoint97.skinCoordWeight = [1,1]
+HAnimJoint97.ulimit = [0,0,0]
+HAnimJoint97.llimit = [0,0,0]
 HAnimJoint98 = x3d.HAnimJoint(DEF="Joe_l_index1")
 HAnimJoint98.name = "l_index1"
 HAnimJoint98.center = [0.1983,0.7815,-0.028]
 HAnimJoint98.skinCoordIndex = [138,139,140,153,154,155,163]
 HAnimJoint98.skinCoordWeight = [0.5,0.5,0.5,1,1,1,0.5]
+HAnimJoint98.ulimit = [0,0,0]
+HAnimJoint98.llimit = [0,0,0]
 HAnimJoint99 = x3d.HAnimJoint(DEF="Joe_l_index2")
 HAnimJoint99.name = "l_index2"
 HAnimJoint99.center = [0.2017,0.7363,-0.0248]
 HAnimJoint99.skinCoordIndex = [166,167,168,169]
 HAnimJoint99.skinCoordWeight = [1,1,1,1]
+HAnimJoint99.ulimit = [0,0,0]
+HAnimJoint99.llimit = [0,0,0]
 HAnimJoint100 = x3d.HAnimJoint(DEF="Joe_l_index3")
 HAnimJoint100.name = "l_index3"
 HAnimJoint100.center = [0.2028,0.7139,-0.0236]
 HAnimJoint100.skinCoordIndex = [170,171,172,173,174,175,176,177,178]
 HAnimJoint100.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint100.ulimit = [0,0,0]
+HAnimJoint100.llimit = [0,0,0]
 
 HAnimJoint99.children.append(HAnimJoint100)
 
@@ -530,21 +646,29 @@ HAnimJoint101.name = "l_middle0"
 HAnimJoint101.center = [0.1987,0.8029,-0.053]
 HAnimJoint101.skinCoordIndex = [131,132]
 HAnimJoint101.skinCoordWeight = [1,1]
+HAnimJoint101.ulimit = [0,0,0]
+HAnimJoint101.llimit = [0,0,0]
 HAnimJoint102 = x3d.HAnimJoint(DEF="Joe_l_middle1")
 HAnimJoint102.name = "l_middle1"
 HAnimJoint102.center = [0.1987,0.7818,-0.053]
 HAnimJoint102.skinCoordIndex = [156,157,163,164]
 HAnimJoint102.skinCoordWeight = [1,1,0.5,0.5]
+HAnimJoint102.ulimit = [0,0,0]
+HAnimJoint102.llimit = [0,0,0]
 HAnimJoint103 = x3d.HAnimJoint(DEF="Joe_l_middle2")
 HAnimJoint103.name = "l_middle2"
 HAnimJoint103.center = [0.2013,0.7273,-0.0503]
 HAnimJoint103.skinCoordIndex = [179,180,181,182]
 HAnimJoint103.skinCoordWeight = [1,1,1,1]
+HAnimJoint103.ulimit = [0,0,0]
+HAnimJoint103.llimit = [0,0,0]
 HAnimJoint104 = x3d.HAnimJoint(DEF="Joe_l_middle3")
 HAnimJoint104.name = "l_middle3"
 HAnimJoint104.center = [0.2026,0.7011,-0.0494]
 HAnimJoint104.skinCoordIndex = [183,184,185,186,187,188,189,190,191]
 HAnimJoint104.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint104.ulimit = [0,0,0]
+HAnimJoint104.llimit = [0,0,0]
 
 HAnimJoint103.children.append(HAnimJoint104)
 
@@ -558,21 +682,29 @@ HAnimJoint105.name = "l_ring0"
 HAnimJoint105.center = [0.1956,0.8019,-0.0794]
 HAnimJoint105.skinCoordIndex = [133,134]
 HAnimJoint105.skinCoordWeight = [1,1]
+HAnimJoint105.ulimit = [0,0,0]
+HAnimJoint105.llimit = [0,0,0]
 HAnimJoint106 = x3d.HAnimJoint(DEF="Joe_l_ring1")
 HAnimJoint106.name = "l_ring1"
 HAnimJoint106.center = [0.1956,0.7815,-0.0794]
 HAnimJoint106.skinCoordIndex = [158,159,164,165]
 HAnimJoint106.skinCoordWeight = [1,1,0.5,0.5]
+HAnimJoint106.ulimit = [0,0,0]
+HAnimJoint106.llimit = [0,0,0]
 HAnimJoint107 = x3d.HAnimJoint(DEF="Joe_l_ring2")
 HAnimJoint107.name = "l_ring2"
 HAnimJoint107.center = [0.1973,0.7287,-0.0777]
 HAnimJoint107.skinCoordIndex = [192,193,194,195]
 HAnimJoint107.skinCoordWeight = [1,1,1,1]
+HAnimJoint107.ulimit = [0,0,0]
+HAnimJoint107.llimit = [0,0,0]
 HAnimJoint108 = x3d.HAnimJoint(DEF="Joe_l_ring3")
 HAnimJoint108.name = "l_ring3"
 HAnimJoint108.center = [0.1983,0.7045,-0.0767]
 HAnimJoint108.skinCoordIndex = [196,197,198,199,200,201,202,203,204]
 HAnimJoint108.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint108.ulimit = [0,0,0]
+HAnimJoint108.llimit = [0,0,0]
 
 HAnimJoint107.children.append(HAnimJoint108)
 
@@ -586,21 +718,29 @@ HAnimJoint109.name = "l_pinky0"
 HAnimJoint109.center = [0.1925,0.8066,-0.1036]
 HAnimJoint109.skinCoordIndex = [135,136,137,165]
 HAnimJoint109.skinCoordWeight = [1,1,1,0.5]
+HAnimJoint109.ulimit = [0,0,0]
+HAnimJoint109.llimit = [0,0,0]
 HAnimJoint110 = x3d.HAnimJoint(DEF="Joe_l_pinky1")
 HAnimJoint110.name = "l_pinky1"
 HAnimJoint110.center = [0.1925,0.7866,-0.1036]
 HAnimJoint110.skinCoordIndex = [160,161,162]
 HAnimJoint110.skinCoordWeight = [1,1,1]
+HAnimJoint110.ulimit = [0,0,0]
+HAnimJoint110.llimit = [0,0,0]
 HAnimJoint111 = x3d.HAnimJoint(DEF="Joe_l_pinky2")
 HAnimJoint111.name = "l_pinky2"
 HAnimJoint111.center = [0.1938,0.7452,-0.1024]
 HAnimJoint111.skinCoordIndex = [205,206,207,208]
 HAnimJoint111.skinCoordWeight = [1,1,1,1]
+HAnimJoint111.ulimit = [0,0,0]
+HAnimJoint111.llimit = [0,0,0]
 HAnimJoint112 = x3d.HAnimJoint(DEF="Joe_l_pinky3")
 HAnimJoint112.name = "l_pinky3"
 HAnimJoint112.center = [0.1948,0.7277,-0.1017]
 HAnimJoint112.skinCoordIndex = [209,210,211,212,213,214,215,216,217]
 HAnimJoint112.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint112.ulimit = [0,0,0]
+HAnimJoint112.llimit = [0,0,0]
 
 HAnimJoint111.children.append(HAnimJoint112)
 
@@ -624,41 +764,57 @@ HAnimJoint113.name = "r_sternoclavicular"
 HAnimJoint113.center = [-0.03,1.46,0]
 HAnimJoint113.skinCoordIndex = [10]
 HAnimJoint113.skinCoordWeight = [1]
+HAnimJoint113.ulimit = [0,0,0]
+HAnimJoint113.llimit = [0,0,0]
 HAnimJoint114 = x3d.HAnimJoint(DEF="Joe_r_acromioclavicular")
 HAnimJoint114.name = "r_acromioclavicular"
 HAnimJoint114.center = [-0.09,1.41,-0.11]
 HAnimJoint114.skinCoordIndex = [77,29]
 HAnimJoint114.skinCoordWeight = [1,0.9]
+HAnimJoint114.ulimit = [0,0,0]
+HAnimJoint114.llimit = [0,0,0]
 HAnimJoint115 = x3d.HAnimJoint(DEF="Joe_r_shoulder")
 HAnimJoint115.name = "r_shoulder"
 HAnimJoint115.center = [-0.2,1.44,-0.04]
 HAnimJoint115.skinCoordIndex = [29,30,32,78,218,219,220,221,86,88]
 HAnimJoint115.skinCoordWeight = [0.1,1,1,1,1,1,1,1,0.3,0.2]
+HAnimJoint115.ulimit = [0,0,0]
+HAnimJoint115.llimit = [0,0,0]
 HAnimJoint116 = x3d.HAnimJoint(DEF="Joe_r_elbow")
 HAnimJoint116.name = "r_elbow"
 HAnimJoint116.center = [-0.2,1.1388,-0.04]
 HAnimJoint116.skinCoordIndex = [33,34,35,225,226,227,228,229,231,232,233,234]
 HAnimJoint116.skinCoordWeight = [1,1,1,1,1,1,1,1,1,1,1,1]
+HAnimJoint116.ulimit = [0,0,0]
+HAnimJoint116.llimit = [0,0,0]
 HAnimJoint117 = x3d.HAnimJoint(DEF="Joe_r_wrist")
 HAnimJoint117.name = "r_wrist"
 HAnimJoint117.center = [-0.2,0.89,-0.04]
 HAnimJoint117.skinCoordIndex = [235,236,237,238,239,240,241,242]
 HAnimJoint117.skinCoordWeight = [1,1,1,1,1,1,1,1]
+HAnimJoint117.ulimit = [0,0,0]
+HAnimJoint117.llimit = [0,0,0]
 HAnimJoint118 = x3d.HAnimJoint(DEF="Joe_r_thumb1")
 HAnimJoint118.name = "r_thumb1"
 HAnimJoint118.center = [-0.2,0.85,0]
 HAnimJoint118.skinCoordIndex = [243,244]
 HAnimJoint118.skinCoordWeight = [1,1]
+HAnimJoint118.ulimit = [0,0,0]
+HAnimJoint118.llimit = [0,0,0]
 HAnimJoint119 = x3d.HAnimJoint(DEF="Joe_r_thumb2")
 HAnimJoint119.name = "r_thumb2"
 HAnimJoint119.center = [-0.2,0.82,0.03]
 HAnimJoint119.skinCoordIndex = [254,255,256,257,258,259]
 HAnimJoint119.skinCoordWeight = [0.5,0.5,0.5,1,1,1]
+HAnimJoint119.ulimit = [0,0,0]
+HAnimJoint119.llimit = [0,0,0]
 HAnimJoint120 = x3d.HAnimJoint(DEF="Joe_r_thumb3")
 HAnimJoint120.name = "r_thumb3"
 HAnimJoint120.center = [-0.2,0.8,0.05]
 HAnimJoint120.skinCoordIndex = [260,261,262,263,264,265,266,267,268]
 HAnimJoint120.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint120.ulimit = [0,0,0]
+HAnimJoint120.llimit = [0,0,0]
 
 HAnimJoint119.children.append(HAnimJoint120)
 
@@ -670,21 +826,29 @@ HAnimJoint121.name = "r_index0"
 HAnimJoint121.center = [-0.2,0.84,-0.015]
 HAnimJoint121.skinCoordIndex = [245,246]
 HAnimJoint121.skinCoordWeight = [1,1]
+HAnimJoint121.ulimit = [0,0,0]
+HAnimJoint121.llimit = [0,0,0]
 HAnimJoint122 = x3d.HAnimJoint(DEF="Joe_r_index1")
 HAnimJoint122.name = "r_index1"
 HAnimJoint122.center = [-0.2,0.793,-0.015]
 HAnimJoint122.skinCoordIndex = [254,255,256,269,270,271,279]
 HAnimJoint122.skinCoordWeight = [0.5,0.5,0.5,1,1,1,0.5]
+HAnimJoint122.ulimit = [0,0,0]
+HAnimJoint122.llimit = [0,0,0]
 HAnimJoint123 = x3d.HAnimJoint(DEF="Joe_r_index2")
 HAnimJoint123.name = "r_index2"
 HAnimJoint123.center = [-0.2,0.745,-0.015]
 HAnimJoint123.skinCoordIndex = [282,283,284,285]
 HAnimJoint123.skinCoordWeight = [1,1,1,1]
+HAnimJoint123.ulimit = [0,0,0]
+HAnimJoint123.llimit = [0,0,0]
 HAnimJoint124 = x3d.HAnimJoint(DEF="Joe_r_index3")
 HAnimJoint124.name = "r_index3"
 HAnimJoint124.center = [-0.2,0.72,-0.015]
 HAnimJoint124.skinCoordIndex = [286,287,288,289,290,291,292,293,294]
 HAnimJoint124.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint124.ulimit = [0,0,0]
+HAnimJoint124.llimit = [0,0,0]
 
 HAnimJoint123.children.append(HAnimJoint124)
 
@@ -698,21 +862,29 @@ HAnimJoint125.name = "r_middle0"
 HAnimJoint125.center = [-0.2,0.835,-0.04]
 HAnimJoint125.skinCoordIndex = [247,248]
 HAnimJoint125.skinCoordWeight = [1,1]
+HAnimJoint125.ulimit = [0,0,0]
+HAnimJoint125.llimit = [0,0,0]
 HAnimJoint126 = x3d.HAnimJoint(DEF="Joe_r_middle1")
 HAnimJoint126.name = "r_middle1"
 HAnimJoint126.center = [-0.2,0.788,-0.04]
 HAnimJoint126.skinCoordIndex = [272,273,279,280]
 HAnimJoint126.skinCoordWeight = [1,1,0.5,0.5]
+HAnimJoint126.ulimit = [0,0,0]
+HAnimJoint126.llimit = [0,0,0]
 HAnimJoint127 = x3d.HAnimJoint(DEF="Joe_r_middle2")
 HAnimJoint127.name = "r_middle2"
 HAnimJoint127.center = [-0.2,0.74,-0.04]
 HAnimJoint127.skinCoordIndex = [295,296,297,298]
 HAnimJoint127.skinCoordWeight = [1,1,1,1]
+HAnimJoint127.ulimit = [0,0,0]
+HAnimJoint127.llimit = [0,0,0]
 HAnimJoint128 = x3d.HAnimJoint(DEF="Joe_r_middle3")
 HAnimJoint128.name = "r_middle3"
 HAnimJoint128.center = [-0.2,0.7142,-0.04]
 HAnimJoint128.skinCoordIndex = [299,300,301,302,303,304,305,306,307]
 HAnimJoint128.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint128.ulimit = [0,0,0]
+HAnimJoint128.llimit = [0,0,0]
 
 HAnimJoint127.children.append(HAnimJoint128)
 
@@ -726,21 +898,29 @@ HAnimJoint129.name = "r_ring0"
 HAnimJoint129.center = [-0.2,0.835,-0.065]
 HAnimJoint129.skinCoordIndex = [249,250]
 HAnimJoint129.skinCoordWeight = [1,1]
+HAnimJoint129.ulimit = [0,0,0]
+HAnimJoint129.llimit = [0,0,0]
 HAnimJoint130 = x3d.HAnimJoint(DEF="Joe_r_ring1")
 HAnimJoint130.name = "r_ring1"
 HAnimJoint130.center = [-0.2,0.793,-0.065]
 HAnimJoint130.skinCoordIndex = [274,275,280,281]
 HAnimJoint130.skinCoordWeight = [1,1,0.5,0.5]
+HAnimJoint130.ulimit = [0,0,0]
+HAnimJoint130.llimit = [0,0,0]
 HAnimJoint131 = x3d.HAnimJoint(DEF="Joe_r_ring2")
 HAnimJoint131.name = "r_ring2"
 HAnimJoint131.center = [-0.2,0.74,-0.065]
 HAnimJoint131.skinCoordIndex = [308,309,310,311]
 HAnimJoint131.skinCoordWeight = [1,1,1,1]
+HAnimJoint131.ulimit = [0,0,0]
+HAnimJoint131.llimit = [0,0,0]
 HAnimJoint132 = x3d.HAnimJoint(DEF="Joe_r_ring3")
 HAnimJoint132.name = "r_ring3"
 HAnimJoint132.center = [-0.2,0.7177,-0.065]
 HAnimJoint132.skinCoordIndex = [312,313,314,315,316,317,318,319,320]
 HAnimJoint132.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint132.ulimit = [0,0,0]
+HAnimJoint132.llimit = [0,0,0]
 
 HAnimJoint131.children.append(HAnimJoint132)
 
@@ -754,21 +934,29 @@ HAnimJoint133.name = "r_pinky0"
 HAnimJoint133.center = [-0.2,0.84,-0.085]
 HAnimJoint133.skinCoordIndex = [251,252,253,281]
 HAnimJoint133.skinCoordWeight = [1,1,1,0.5]
+HAnimJoint133.ulimit = [0,0,0]
+HAnimJoint133.llimit = [0,0,0]
 HAnimJoint134 = x3d.HAnimJoint(DEF="Joe_r_pinky1")
 HAnimJoint134.name = "r_pinky1"
 HAnimJoint134.center = [-0.2,0.79,-0.085]
 HAnimJoint134.skinCoordIndex = [276,277,278]
 HAnimJoint134.skinCoordWeight = [1,1,1]
+HAnimJoint134.ulimit = [0,0,0]
+HAnimJoint134.llimit = [0,0,0]
 HAnimJoint135 = x3d.HAnimJoint(DEF="Joe_r_pinky2")
 HAnimJoint135.name = "r_pinky2"
 HAnimJoint135.center = [-0.2,0.755,-0.085]
 HAnimJoint135.skinCoordIndex = [321,322,323,324]
 HAnimJoint135.skinCoordWeight = [1,1,1,1]
+HAnimJoint135.ulimit = [0,0,0]
+HAnimJoint135.llimit = [0,0,0]
 HAnimJoint136 = x3d.HAnimJoint(DEF="Joe_r_pinky3")
 HAnimJoint136.name = "r_pinky3"
 HAnimJoint136.center = [-0.2,0.735,-0.09]
 HAnimJoint136.skinCoordIndex = [325,326,327,328,329,330,331,332,333]
 HAnimJoint136.skinCoordWeight = [1,1,1,1,1,1,1,1,1]
+HAnimJoint136.ulimit = [0,0,0]
+HAnimJoint136.llimit = [0,0,0]
 
 HAnimJoint135.children.append(HAnimJoint136)
 

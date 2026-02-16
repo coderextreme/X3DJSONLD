@@ -56,28 +56,28 @@ public class bubs3 implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("bubs3.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("Tour around a prismatic sphere"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("bubs3.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("Tour around a prismatic sphere")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo().setType("\"EXAMINE\""))
-        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Bubbles in action"))
+        .addChild(new Viewpoint().setPosition(new float[] {0f ,0f ,4f }).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription(new SFString("Bubbles in action")))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
-        .addChild(new Transform().setDEF("DECLBubble_transformA")
+        .addChild(new Transform().setDEF(new SFString("DECLBubble_transformA"))
           .addChild(new Shape()
             .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
-          .addChild(new Script().setDEF("DECLBubble_bubbleA_bounce")
-            .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addChild(new Script().setDEF(new SFString("DECLBubble_bubbleA_bounce"))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scalvel")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
             .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -117,21 +117,21 @@ public class bubs3 implements X3DRoots {
 "	initialize();\n"+
 "    }\n"+
 "}"))
-          .addChild(new TimeSensor().setDEF("DECLBubble_bubbleA_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformA").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformA").setToField("set_scale"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleA_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleA_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_transformB")
+          .addChild(new TimeSensor().setDEF(new SFString("DECLBubble_bubbleA_bubbleClock")).setCycleInterval(10d).setLoop(true))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleA_bounce")).setFromField(new SFString("translation_changed")).setToNode(new SFString("DECLBubble_transformA")).setToField(new SFString("set_translation")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleA_bounce")).setFromField(new SFString("scale_changed")).setToNode(new SFString("DECLBubble_transformA")).setToField(new SFString("set_scale")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleA_bubbleClock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("DECLBubble_bubbleA_bounce")).setToField(new SFString("set_fraction"))))
+        .addChild(new Transform().setDEF(new SFString("DECLBubble_transformB"))
           .addChild(new Shape()
             .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
-          .addChild(new Script().setDEF("DECLBubble_bubbleB_bounce")
-            .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addChild(new Script().setDEF(new SFString("DECLBubble_bubbleB_bounce"))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scalvel")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
             .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -171,21 +171,21 @@ public class bubs3 implements X3DRoots {
 "	initialize();\n"+
 "    }\n"+
 "}"))
-          .addChild(new TimeSensor().setDEF("DECLBubble_bubbleB_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformB").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformB").setToField("set_scale"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleB_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleB_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_transformC")
+          .addChild(new TimeSensor().setDEF(new SFString("DECLBubble_bubbleB_bubbleClock")).setCycleInterval(10d).setLoop(true))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleB_bounce")).setFromField(new SFString("translation_changed")).setToNode(new SFString("DECLBubble_transformB")).setToField(new SFString("set_translation")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleB_bounce")).setFromField(new SFString("scale_changed")).setToNode(new SFString("DECLBubble_transformB")).setToField(new SFString("set_scale")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleB_bubbleClock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("DECLBubble_bubbleB_bounce")).setToField(new SFString("set_fraction"))))
+        .addChild(new Transform().setDEF(new SFString("DECLBubble_transformC"))
           .addChild(new Shape()
             .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
-          .addChild(new Script().setDEF("DECLBubble_bubbleC_bounce")
-            .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addChild(new Script().setDEF(new SFString("DECLBubble_bubbleC_bounce"))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scalvel")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
             .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -225,21 +225,21 @@ public class bubs3 implements X3DRoots {
 "	initialize();\n"+
 "    }\n"+
 "}"))
-          .addChild(new TimeSensor().setDEF("DECLBubble_bubbleC_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformC").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformC").setToField("set_scale"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleC_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleC_bounce").setToField("set_fraction")))
-        .addChild(new Transform().setDEF("DECLBubble_transformD")
+          .addChild(new TimeSensor().setDEF(new SFString("DECLBubble_bubbleC_bubbleClock")).setCycleInterval(10d).setLoop(true))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleC_bounce")).setFromField(new SFString("translation_changed")).setToNode(new SFString("DECLBubble_transformC")).setToField(new SFString("set_translation")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleC_bounce")).setFromField(new SFString("scale_changed")).setToNode(new SFString("DECLBubble_transformC")).setToField(new SFString("set_scale")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleC_bubbleClock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("DECLBubble_bubbleC_bounce")).setToField(new SFString("set_fraction"))))
+        .addChild(new Transform().setDEF(new SFString("DECLBubble_transformD"))
           .addChild(new Shape()
             .setGeometry(new Sphere().setRadius(0.25f ))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f }).setTransparency(0.2f ))))
-          .addChild(new Script().setDEF("DECLBubble_bubbleD_bounce")
-            .addField(new field().setType("SFVec3f").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-            .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("velocity").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFVec3f").setName("scalvel").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-            .addField(new field().setType("SFFloat").setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addChild(new Script().setDEF(new SFString("DECLBubble_bubbleD_bounce"))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("velocity")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFVec3f").setName(new SFString("scalvel")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+            .addField(new field().setType("SFFloat").setName(new SFString("set_fraction")).setAccessType(field.ACCESSTYPE_INPUTONLY))
             .setSourceCode("ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
@@ -279,10 +279,10 @@ public class bubs3 implements X3DRoots {
 "	initialize();\n"+
 "    }\n"+
 "}"))
-          .addChild(new TimeSensor().setDEF("DECLBubble_bubbleD_bubbleClock").setCycleInterval(10d).setLoop(true))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("translation_changed").setToNode("DECLBubble_transformD").setToField("set_translation"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bounce").setFromField("scale_changed").setToNode("DECLBubble_transformD").setToField("set_scale"))
-          .addChild(new ROUTE().setFromNode("DECLBubble_bubbleD_bubbleClock").setFromField("fraction_changed").setToNode("DECLBubble_bubbleD_bounce").setToField("set_fraction"))));
+          .addChild(new TimeSensor().setDEF(new SFString("DECLBubble_bubbleD_bubbleClock")).setCycleInterval(10d).setLoop(true))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleD_bounce")).setFromField(new SFString("translation_changed")).setToNode(new SFString("DECLBubble_transformD")).setToField(new SFString("set_translation")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleD_bounce")).setFromField(new SFString("scale_changed")).setToNode(new SFString("DECLBubble_transformD")).setToField(new SFString("set_scale")))
+          .addChild(new ROUTE().setFromNode(new SFString("DECLBubble_bubbleD_bubbleClock")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("DECLBubble_bubbleD_bounce")).setToField(new SFString("set_fraction")))));
     return X3D0;
     }
 private class MFString0 {

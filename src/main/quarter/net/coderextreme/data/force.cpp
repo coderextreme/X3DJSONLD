@@ -414,7 +414,10 @@ Sofield73->setValue(QString("false"));
 Sofield73->setType(QString("SFBool"));
 SoScript71->addChild(*Sofield73);
 
-//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>
+//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">
+//<Transform USE=\"HoldsContent\"/>
+//</field>
 
 //SoScript71->setSourceCode(QString("ecmascript:")+
 //_T("	function add_node(value) {")+

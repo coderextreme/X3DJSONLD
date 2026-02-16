@@ -29,11 +29,15 @@ X3D:
             ],
             meta: [
                 name: "modified"
-                content: "23 December 2021"
+                content: "5 November 2025"
             ],
             meta: [
                 name: "description"
                 content: "Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model."
+            ],
+            meta: [
+                name: "Image"
+                content: "../Poses/images/HAnimPoseExampleKoreanCharacter01Jin.png"
             ],
             meta: [
                 name: "reference"
@@ -41,7 +45,7 @@ X3D:
             ],
             meta: [
                 name: "reference"
-                content: "KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
+                content: "../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"
             ],
             meta: [
                 name: "reference"
@@ -53,7 +57,7 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"
+                content: "3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"
             ],
             meta: [
                 name: "generator"
@@ -61,11 +65,11 @@ X3D:
             ],
             meta: [
                 name: "generator"
-                content: "Gnu Image Manipulation Program, https://www.gimp.org"
+                content: "Gnu Image Manipulation Program, http://www.gimp.org"
             ],
             meta: [
                 name: "generator"
-                content: "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+                content: "X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"
             ],
             meta: [
                 name: "license"
@@ -1041,79 +1045,11 @@ X3D:
                 HAnimJoint: [
                     containerField: "joints"
                     USE: "hanim_r_talocrural"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l5"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_pelvis"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_sacrum"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_skull"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_carpal"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_carpal"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_talus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_talus"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_tarsal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_tarsal_proximal_phalanx_2"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_upperarm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_upperarm"
                 ]
+            ],
+            EXPORT: [
+                AS: "KoreanCharacter01Jin"
+                localDEF: "hanim_Jin"
             ]
         ]
     ]

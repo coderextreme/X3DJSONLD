@@ -204,7 +204,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Full';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 { <component name='Shape' level='4'></component> }
 { <component name='DIS' level='2'></component> }
 X3D0.Components['Scripting'] := 1;
@@ -221,7 +221,9 @@ X3D0.Meta['creator'] := 'Doug Sanden, Christoph Valentin, John Carlson';
 X3D0.Meta['identifier'] := 'https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d';
 X3D0.Meta['generator'] := 'PSPad, http://www.pspad.com/';
 X3D0.Meta['license'] := 'license.html';
-{ "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their "discussion about the teapot" }
+{ "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution, }
+{ It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) }
+{ open for their "discussion about the teapot" }
 Group16 := TGroupNode.Create;
 { LayerSet with two layers, navigation happens in layer 1 }
 LayerSet17 := TLayerSetNode.Create;
@@ -525,7 +527,9 @@ ShaderPart83.SetUrl(['../shaders/x_ite.fs','https://coderextreme.net/X3DJSONLD/s
 ShaderPart83.Type := 'FRAGMENT';
 { .AddParts }
 ComposedShader69.Parts := ShaderPart83;
-{ TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> }
+{ TO CONVERT TO A SPHERE }
+{ <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart> }
+{ <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart> }
 { .AddShaders }
 Appearance60.Shaders := ComposedShader69;
 { .SetAppearance }

@@ -62,118 +62,156 @@ ProtoInstance ProtoInstance2 = null;
 ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
-      X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Full")).setVersion(new SFString("4.1"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
-        .addComponent(new component().setName("Shaders").setLevel(1))
-        .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-        .addComponent(new component().setName("Texturing").setLevel(1))
-        .addComponent(new component().setName("Rendering").setLevel(1))
-        .addComponent(new component().setName("Shape").setLevel(4))
-        .addComponent(new component().setName("Grouping").setLevel(3))
-        .addComponent(new component().setName("Core").setLevel(1))
-        .addComponent(new component().setName("DIS").setLevel(2))
-        .addMeta(new meta().setName("title").setContent("bumpyfreewrlsliders.x3d"))
-        .addMeta(new meta().setName("description").setContent("Bumpy Orbitals with Sliders for FreeWRL"))
-        .addMeta(new meta().setName("creator").setContent("Doug Sanden, Christoph Valentin, John Carlson"))
-        .addMeta(new meta().setName("identifier").setContent("https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d"))
-        .addMeta(new meta().setName("license").setContent("license.html")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addComponent(new component().setName(new SFString("EnvironmentalEffects")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Shaders")).setLevel(1))
+        .addComponent(new component().setName(new SFString("CubeMapTexturing")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Texturing")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Rendering")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Shape")).setLevel(4))
+        .addComponent(new component().setName(new SFString("Grouping")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Core")).setLevel(1))
+        .addComponent(new component().setName(new SFString("DIS")).setLevel(2))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("bumpyfreewrlsliders.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("Bumpy Orbitals with Sliders for FreeWRL")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Doug Sanden, Christoph Valentin, John Carlson")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https:/coderextreme.net/X3DJSONLD/src/main/data/bumpyfreewrlsliders.x3d")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("license.html"))))
       .setScene(new Scene()
         .addComments(new CommentsBlock("LayerSet with two layers, navigation happens in layer 1"))
         .addLayerSet(new LayerSet().setActiveLayer(1).setOrder(new MFInt320().getArray())
           .addComments(new CommentsBlock("the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\""))
-          .addComments(new CommentsBlock("the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)"))
+          .addComments(new CommentsBlock("the second layer contains the sliders that are moved with the user's display"))
+          .addComments(new CommentsBlock("like a HUD (heads up display)"))
           .addLayers(new Layer().setPickable(true).setObjectType(new MFString1().getArray())
             .addComments(new CommentsBlock("basic nodes, which might be present in any scene"))
             .addChild(new NavigationInfo().setType("\"EXAMINE\" \"FLY\" \"LOOKAT\" \"ANY\"").setAvatarSize(new MFFloat2().getArray()))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {0f ,-1f ,0f }))
             .addChild(new DirectionalLight().setAmbientIntensity(0.2f ).setDirection(new float[] {-1f ,-0.1f ,-1f }))
-            .addChild(new Viewpoint().setDescription("My Overview").setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,60f }))
+            .addChild(new Viewpoint().setDescription(new SFString("My Overview")).setFieldOfView(1.570796f ).setPosition(new float[] {0f ,1.75f ,60f }))
             .addComments(new CommentsBlock("this group contains the red/green/blue 3D crosshair"))
             .addChild(new Group()
               .addComments(new CommentsBlock("Arrow X"))
               .addChild(new Transform().setTranslation(new float[] {25f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setDEF("Shaft").setRadius(0.35f ).setHeight(50f ))
+                  .setGeometry(new Cylinder().setDEF(new SFString("Shaft")).setRadius(0.35f ).setHeight(50f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("RED").setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,0f ,0f })))))
+                    .setMaterial(new Material().setDEF(new SFString("RED")).setDiffuseColor(new float[] {1f ,0f ,0f }).setEmissiveColor(new float[] {1f ,0f ,0f })))))
               .addChild(new Transform().setTranslation(new float[] {50f ,0f ,0f }).setRotation(new float[] {0f ,0f ,-1f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setDEF("Tip").setBottomRadius(0.8f ).setHeight(3f ))
+                  .setGeometry(new Cone().setDEF(new SFString("Tip")).setBottomRadius(0.8f ).setHeight(3f ))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("RED")))))
+                    .setMaterial(new Material().setUSE(new SFString("RED"))))))
               .addComments(new CommentsBlock("Arrow Y"))
               .addChild(new Transform().setTranslation(new float[] {0f ,25f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("Shaft"))
+                  .setGeometry(new Cylinder().setUSE(new SFString("Shaft")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("GREEN").setDiffuseColor(new float[] {0f ,1f ,0f }).setEmissiveColor(new float[] {0f ,1f ,0f })))))
+                    .setMaterial(new Material().setDEF(new SFString("GREEN")).setDiffuseColor(new float[] {0f ,1f ,0f }).setEmissiveColor(new float[] {0f ,1f ,0f })))))
               .addChild(new Transform().setTranslation(new float[] {0f ,50f ,0f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setUSE("Tip"))
+                  .setGeometry(new Cone().setUSE(new SFString("Tip")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("GREEN")))))
+                    .setMaterial(new Material().setUSE(new SFString("GREEN"))))))
               .addComments(new CommentsBlock("Arrow Z"))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,25f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cylinder().setUSE("Shaft"))
+                  .setGeometry(new Cylinder().setUSE(new SFString("Shaft")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setDEF("BLUE").setDiffuseColor(new float[] {0f ,0f ,1f }).setEmissiveColor(new float[] {0f ,0f ,1f })))))
+                    .setMaterial(new Material().setDEF(new SFString("BLUE")).setDiffuseColor(new float[] {0f ,0f ,1f }).setEmissiveColor(new float[] {0f ,0f ,1f })))))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,50f }).setRotation(new float[] {1f ,0f ,0f ,1.57f })
                 .addChild(new Shape()
-                  .setGeometry(new Cone().setUSE("Tip"))
+                  .setGeometry(new Cone().setUSE(new SFString("Tip")))
                   .setAppearance(new Appearance()
-                    .setMaterial(new Material().setUSE("BLUE"))))))
+                    .setMaterial(new Material().setUSE(new SFString("BLUE")))))))
             .addComments(new CommentsBlock("the model that is being reviewed by the users of this scene"))
-            .addChild(new Transform().setDEF("FlowerTransform")
+            .addChild(new Transform().setDEF(new SFString("FlowerTransform"))
               .addComments(new CommentsBlock("<Inline DEF=\"Flower\" url='\"bumpyfreewrl.x3d\"' />"))
               .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
               .addChild(new Background().setBackUrl(new MFString3().getArray()).setBottomUrl(new MFString4().getArray()).setFrontUrl(new MFString5().getArray()).setLeftUrl(new MFString6().getArray()).setRightUrl(new MFString7().getArray()).setTopUrl(new MFString8().getArray()))
               .addChild(new Transform()
                 .addChild(new Shape()
                   .setGeometry(new Sphere().setRadius(5f ))
-                  .addComments(new CommentsBlock("<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"))
+                  .addComments(new CommentsBlock("<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">"))
+                  .addComments(new CommentsBlock("<Coordinate DEF=\"OrbitCoordinates\"/>"))
+                  .addComments(new CommentsBlock("</IndexedFaceSet>"))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f }))
-                    .setTexture(new ComposedCubeMapTexture().setDEF("texture")
+                    .setTexture(new ComposedCubeMapTexture().setDEF(new SFString("texture"))
                       .setBackTexture(new ImageTexture().setUrl(new MFString9().getArray()))
                       .setBottomTexture(new ImageTexture().setUrl(new MFString10().getArray()))
                       .setFrontTexture(new ImageTexture().setUrl(new MFString11().getArray()))
                       .setLeftTexture(new ImageTexture().setUrl(new MFString12().getArray()))
                       .setRightTexture(new ImageTexture().setUrl(new MFString13().getArray()))
                       .setTopTexture(new ImageTexture().setUrl(new MFString14().getArray())))
-                    .addShaders(new ComposedShader().setDEF("freewrlShader").setLanguage("GLSL")
-                      .addField(new field().setType("SFInt32").setName("fw_textureCoordGenType").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                      .addField(new field().setType("SFVec3f").setName("chromaticDispertion").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("0.98 1 1.033"))
-                      .addField(new field().setType("SFFloat").setName("bias").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                      .addField(new field().setType("SFFloat").setName("scale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.5"))
-                      .addField(new field().setType("SFFloat").setName("power").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-                      .addField(new field().setType("SFFloat").setName("a").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("15"))
-                      .addField(new field().setType("SFFloat").setName("b").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("5"))
-                      .addField(new field().setType("SFFloat").setName("c").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                      .addField(new field().setType("SFFloat").setName("d").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("20"))
-                      .addField(new field().setType("SFFloat").setName("tdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                      .addField(new field().setType("SFFloat").setName("pdelta").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-                      .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>"))
+                    .addShaders(new ComposedShader().setDEF(new SFString("freewrlShader")).setLanguage(new SFString("GLSL"))
+                      .addField(new field().setType("SFInt32").setName(new SFString("fw_textureCoordGenType")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+                      .addField(new field().setType("SFVec3f").setName(new SFString("chromaticDispertion")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("0.98 1 1.033")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("bias")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.5")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("scale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.5")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("power")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("2")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("a")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("15")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("b")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("5")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("c")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("20")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("d")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("20")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("tdelta")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+                      .addField(new field().setType("SFFloat").setName(new SFString("pdelta")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+                      .addComments(new CommentsBlock("<field name='cube' type='SFNode' accessType=\"inputOutput\">"))
+                      .addComments(new CommentsBlock("<ComposedCubeMapTexture USE=\"texture\"/>"))
+                      .addComments(new CommentsBlock("</field>"))
                       .addParts(new ShaderPart().setType("VERTEX")
                         .setIS(new IS()
-                          .addConnect(new connect().setNodeField("url").setProtoField("vertex"))))
+                          .addConnect(new connect().setNodeField(new SFString("url")).setProtoField(new SFString("vertex")))))
                       .addParts(new ShaderPart().setType("FRAGMENT")
                         .setIS(new IS()
-                          .addConnect(new connect().setNodeField("url").setProtoField("fragment")))))
-                    .addComments(new CommentsBlock("<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>"))))))
-            .addComments(new CommentsBlock("<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))
+                          .addConnect(new connect().setNodeField(new SFString("url")).setProtoField(new SFString("fragment"))))))
+                    .addComments(new CommentsBlock("<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">"))
+                    .addComments(new CommentsBlock("<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>"))
+                    .addComments(new CommentsBlock("<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>"))
+                    .addComments(new CommentsBlock("<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>"))
+                    .addComments(new CommentsBlock("<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>"))
+                    .addComments(new CommentsBlock("<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>"))
+                    .addComments(new CommentsBlock("<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>"))
+                    .addComments(new CommentsBlock("<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>"))
+                    .addComments(new CommentsBlock("<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>"))
+                    .addComments(new CommentsBlock("<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>"))
+                    .addComments(new CommentsBlock("<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"))
+                    .addComments(new CommentsBlock("<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"))
+                    .addComments(new CommentsBlock("<ShaderPart type='VERTEX'>"))
+                    .addComments(new CommentsBlock("<IS>"))
+                    .addComments(new CommentsBlock("<connect nodeField=\"url\" protoField=\"vertex\"/>"))
+                    .addComments(new CommentsBlock("</IS>"))
+                    .addComments(new CommentsBlock("</ShaderPart>"))
+                    .addComments(new CommentsBlock("<ShaderPart type='FRAGMENT'>"))
+                    .addComments(new CommentsBlock("<IS>"))
+                    .addComments(new CommentsBlock("<connect nodeField=\"url\" protoField=\"fragment\"/>"))
+                    .addComments(new CommentsBlock("</IS>"))
+                    .addComments(new CommentsBlock("</ShaderPart>"))
+                    .addComments(new CommentsBlock("</ComposedShader>"))))))
+            .addComments(new CommentsBlock("<Script DEF=\"OrbitScript\">"))
+            .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>"))
+            .addComments(new CommentsBlock("<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>"))
+            .addComments(new CommentsBlock("<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>"))
+            .addComments(new CommentsBlock("<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>"))
+            .addComments(new CommentsBlock("<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>"))
+            .addComments(new CommentsBlock("<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>"))
+            .addComments(new CommentsBlock("<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"))
+            .addComments(new CommentsBlock("<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>"))
+            .addComments(new CommentsBlock("<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>"))
+            .addComments(new CommentsBlock("<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>"))
+            .addComments(new CommentsBlock("<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>"))
             .addComments(new CommentsBlock("DIS multiuser facilities"))
-            .addChild(new DISEntityManager().setDEF("EntityManager")
+            .addChild(new DISEntityManager().setDEF(new SFString("EntityManager"))
               .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(1).setUrl(new MFString15().getArray()))
               .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(2).setUrl(new MFString16().getArray()))
               .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(3).setUrl(new MFString17().getArray()))
               .addChild(new DISEntityTypeMapping().setCategory(77).setSpecific(4).setUrl(new MFString18().getArray())))
             .addChild(new Collision()
-              .addChild(new Group().setDEF("AvatarHolder")))
-            .addChild(new ROUTE().setFromField("addedEntities").setFromNode("EntityManager").setToField("addChildren").setToNode("AvatarHolder"))
-            .addChild(new ROUTE().setFromField("removedEntities").setFromNode("EntityManager").setToField("removeChildren").setToNode("AvatarHolder")))
+              .addChild(new Group().setDEF(new SFString("AvatarHolder"))))
+            .addChild(new ROUTE().setFromField(new SFString("addedEntities")).setFromNode(new SFString("EntityManager")).setToField(new SFString("addChildren")).setToNode(new SFString("AvatarHolder")))
+            .addChild(new ROUTE().setFromField(new SFString("removedEntities")).setFromNode(new SFString("EntityManager")).setToField(new SFString("removeChildren")).setToNode(new SFString("AvatarHolder"))))
           .addLayers(new LayoutLayer().setPickable(true).setObjectType(new MFString19().getArray())
             .addComments(new CommentsBlock("positioning the LayoutLayer"))
             .addComments(new CommentsBlock("clipping the LayoutLayer"))
@@ -184,61 +222,61 @@ ProtoInstance ProtoInstance5 = null;
                 .setAppearance(new Appearance()
                   .setMaterial(new Material().setDiffuseColor(new float[] {0.1f ,0.1f ,0.1f }).setTransparency(1f )))
                 .setGeometry(new Box().setSize(new float[] {100f ,100f ,0.02f }))))
-            .addChild(new Transform().setDEF("equationTransform")
+            .addChild(new Transform().setDEF(new SFString("equationTransform"))
               .addChild(new Transform().setTranslation(new float[] {0f ,0f ,-20f })
                 .addChild(new Shape()
-                  .setGeometry(new Text().setDEF("equation").setString(new MFString20().getArray())
+                  .setGeometry(new Text().setDEF(new SFString("equation")).setString(new MFString20().getArray())
                     .setFontStyle(new FontStyle().setSize(0.09f )))
                   .setAppearance(new Appearance()
                     .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,1f }))))))
-            .addChild(new ProtoDeclare().setName("SliderProto")
+            .addChild(new ProtoDeclare().setName(new SFString("SliderProto"))
               .setProtoInterface(new ProtoInterface()
-                .addField(new field().setType("SFVec3f").setName("sliderTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0.7 0"))
-                .addField(new field().setType("SFVec3f").setName("transformTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0.1"))
-                .addField(new field().setType("SFVec3f").setName("sensorTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0 0 0"))
-                .addField(new field().setType("SFVec3f").setName("numberTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.2 0 0"))
-                .addField(new field().setType("MFString").setName("textString").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"a=\""))
-                .addField(new field().setType("SFString").setName("parameterName").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("a"))
-                .addField(new field().setType("SFFloat").setName("parameterScale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("30"))
-                .addField(new field().setType("SFNode").setName("shaderNode").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+                .addField(new field().setType("SFVec3f").setName(new SFString("sliderTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0.7 0")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("transformTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0.1")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("sensorTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0 0 0")))
+                .addField(new field().setType("SFVec3f").setName(new SFString("numberTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.2 0 0")))
+                .addField(new field().setType("MFString").setName(new SFString("textString")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("\"a=\"")))
+                .addField(new field().setType("SFString").setName(new SFString("parameterName")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("a")))
+                .addField(new field().setType("SFFloat").setName(new SFString("parameterScale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("30")))
+                .addField(new field().setType("SFNode").setName(new SFString("shaderNode")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
               .setProtoBody(new ProtoBody()
                 .addChild(new Group()
-                  .addChild(new Transform().setDEF("protoSlider").setTranslation(new float[] {0f ,0.7f ,0f })
+                  .addChild(new Transform().setDEF(new SFString("protoSlider")).setTranslation(new float[] {0f ,0.7f ,0f })
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("translation").setProtoField("sliderTranslation")))
-                    .addChild(new Transform().setDEF("protoTransform").setTranslation(new float[] {0f ,0f ,0.1f })
+                      .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("sliderTranslation"))))
+                    .addChild(new Transform().setDEF(new SFString("protoTransform")).setTranslation(new float[] {0f ,0f ,0.1f })
                       .setIS(new IS()
-                        .addConnect(new connect().setNodeField("translation").setProtoField("sensorTranslation")))
-                      .addChild(new PlaneSensor().setDEF("protoSensor").setMaxPosition(new float[] {2f ,0f }))
+                        .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("sensorTranslation"))))
+                      .addChild(new PlaneSensor().setDEF(new SFString("protoSensor")).setMaxPosition(new float[] {2f ,0f }))
                       .addChild(new Transform().setTranslation(new float[] {0f ,0f ,0f })
-                        .addChild(new TouchSensor().setDEF("protoTS")))
+                        .addChild(new TouchSensor().setDEF(new SFString("protoTS"))))
                       .addChild(new Transform()
                         .addChild(new Shape()
-                          .setGeometry(new Text().setDEF("protoText").setString(new MFString21().getArray())
+                          .setGeometry(new Text().setDEF(new SFString("protoText")).setString(new MFString21().getArray())
                             .setIS(new IS()
-                              .addConnect(new connect().setNodeField("string").setProtoField("textString")))
+                              .addConnect(new connect().setNodeField(new SFString("string")).setProtoField(new SFString("textString"))))
                             .setFontStyle(new FontStyle().setSize(0.2f )))
                           .setAppearance(new Appearance()
                             .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))
                         .addChild(new Transform()
                           .setIS(new IS()
-                            .addConnect(new connect().setNodeField("translation").setProtoField("numberTranslation")))
+                            .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("numberTranslation"))))
                           .addChild(new Shape()
-                            .setGeometry(new Text().setDEF("protoNumber").setString(new MFString22().getArray())
+                            .setGeometry(new Text().setDEF(new SFString("protoNumber")).setString(new MFString22().getArray())
                               .setFontStyle(new FontStyle().setSize(0.2f )))
                             .setAppearance(new Appearance()
                               .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f }))))))))
-                  .addChild(new Script().setDEF("protoValueTransformerScript").setDirectOutput(true).setMustEvaluate(true)
-                    .addField(new field().setType("SFFloat").setName("protoScale").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("30"))
-                    .addField(new field().setType("SFNode").setName("shader").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-                    .addField(new field().setType("SFVec3f").setName("newTranslation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1 1 1"))
-                    .addField(new field().setType("SFFloat").setName("protoValue_changed").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-                    .addField(new field().setType("MFString").setName("protoNumber_changed").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("\"0.0\""))
-                    .addField(new field().setType("SFString").setName("protoParameterName").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("a"))
+                  .addChild(new Script().setDEF(new SFString("protoValueTransformerScript")).setDirectOutput(true).setMustEvaluate(true)
+                    .addField(new field().setType("SFFloat").setName(new SFString("protoScale")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("30")))
+                    .addField(new field().setType("SFNode").setName(new SFString("shader")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+                    .addField(new field().setType("SFVec3f").setName(new SFString("newTranslation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1 1 1")))
+                    .addField(new field().setType("SFFloat").setName(new SFString("protoValue_changed")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1")))
+                    .addField(new field().setType("MFString").setName(new SFString("protoNumber_changed")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("\"0.0\"")))
+                    .addField(new field().setType("SFString").setName(new SFString("protoParameterName")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("a")))
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("protoScale").setProtoField("parameterScale"))
-                      .addConnect(new connect().setNodeField("protoParameterName").setProtoField("parameterName"))
-                      .addConnect(new connect().setNodeField("shader").setProtoField("shaderNode")))
+                      .addConnect(new connect().setNodeField(new SFString("protoScale")).setProtoField(new SFString("parameterScale")))
+                      .addConnect(new connect().setNodeField(new SFString("protoParameterName")).setProtoField(new SFString("parameterName")))
+                      .addConnect(new connect().setNodeField(new SFString("shader")).setProtoField(new SFString("shaderNode"))))
                     .setSourceCode("ecmascript:\n"+
 "	const newTranslation = function(Value) {\n"+
 "	    protoValue_changed = Value[0] * protoScale;\n"+
@@ -252,119 +290,119 @@ ProtoInstance ProtoInstance5 = null;
 "	    Browser.println(protoParameterName);\n"+
 "					// shader[protoParameterName] = Value[0] * protoScale;\n"+
 "	};"))
-                  .addChild(new ROUTE().setFromField("translation_changed").setFromNode("protoSensor").setToField("set_translation").setToNode("protoTransform"))
-                  .addChild(new ROUTE().setFromField("translation_changed").setFromNode("protoSensor").setToField("newTranslation").setToNode("protoValueTransformerScript"))
-                  .addChild(new ROUTE().setFromField("protoNumber_changed").setFromNode("protoValueTransformerScript").setToField("string").setToNode("protoNumber")))))
-            .addChild(ProtoInstance0 = new ProtoInstance().setName("SliderProto").setDEF("aPI"))
-            .addChild(ProtoInstance1 = new ProtoInstance().setName("SliderProto").setDEF("bPI"))
-            .addChild(ProtoInstance2 = new ProtoInstance().setName("SliderProto").setDEF("cPI"))
-            .addChild(ProtoInstance3 = new ProtoInstance().setName("SliderProto").setDEF("dPI"))
-            .addChild(ProtoInstance4 = new ProtoInstance().setName("SliderProto").setDEF("tdeltaPI"))
-            .addChild(ProtoInstance5 = new ProtoInstance().setName("SliderProto").setDEF("pdeltaPI"))
+                  .addChild(new ROUTE().setFromField(new SFString("translation_changed")).setFromNode(new SFString("protoSensor")).setToField(new SFString("set_translation")).setToNode(new SFString("protoTransform")))
+                  .addChild(new ROUTE().setFromField(new SFString("translation_changed")).setFromNode(new SFString("protoSensor")).setToField(new SFString("newTranslation")).setToNode(new SFString("protoValueTransformerScript")))
+                  .addChild(new ROUTE().setFromField(new SFString("protoNumber_changed")).setFromNode(new SFString("protoValueTransformerScript")).setToField(new SFString("string")).setToNode(new SFString("protoNumber"))))))
+            .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("aPI")))
+            .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("bPI")))
+            .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("cPI")))
+            .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("dPI")))
+            .addChild(ProtoInstance4 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("tdeltaPI")))
+            .addChild(ProtoInstance5 = new ProtoInstance().setName(new SFString("SliderProto")).setDEF(new SFString("pdeltaPI")))
             .setLayout(new Layout().setAlign(new MFString23().getArray()).setOffset(new MFFloat24().getArray()))
             .setViewport(new Viewport()))));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.7 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.7 0")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.3 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.3 0 0")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"a=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"a=\"")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("a"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("a")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("30"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("30")));
 ProtoInstance0
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.4 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.4 0")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.3 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.3 0 0")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"b=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"b=\"")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("b"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("b")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("30"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("30")));
 ProtoInstance1
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 0.1 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 0.1 0")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.3 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.3 0 0")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"c=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"c=\"")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("c"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("c")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("20"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("20")));
 ProtoInstance2
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.2 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.2 0")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.3 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.3 0 0")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"d=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"d=\"")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("d"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("d")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("20"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("20")));
 ProtoInstance3
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.5 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.5 0")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.8 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.8 0 0")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"tdelta=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"tdelta=\"")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("tdelta"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("tdelta")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("6.28"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("6.28")));
 ProtoInstance4
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("sliderTranslation").setValue("0 -0.8 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sliderTranslation")).setValue(new SFString("0 -0.8 0")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("transformTranslation").setValue("0 0 0.1"));
+              .addFieldValue(new fieldValue().setName(new SFString("transformTranslation")).setValue(new SFString("0 0 0.1")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("sensorTranslation").setValue("0 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("sensorTranslation")).setValue(new SFString("0 0 0")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("numberTranslation").setValue("0.8 0 0"));
+              .addFieldValue(new fieldValue().setName(new SFString("numberTranslation")).setValue(new SFString("0.8 0 0")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("textString").setValue("\"pdelta=\""));
+              .addFieldValue(new fieldValue().setName(new SFString("textString")).setValue(new SFString("\"pdelta=\"")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("parameterName").setValue("pdelta"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterName")).setValue(new SFString("pdelta")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("parameterScale").setValue("6.28"));
+              .addFieldValue(new fieldValue().setName(new SFString("parameterScale")).setValue(new SFString("6.28")));
 ProtoInstance5
-              .addFieldValue(new fieldValue().setName("shaderNode")
-                .addChild(new ComposedShader().setUSE("freewrlShader")));
+              .addFieldValue(new fieldValue().setName(new SFString("shaderNode"))
+                .addChild(new ComposedShader().setUSE(new SFString("freewrlShader"))));
     return X3D0;
     }
 private class MFInt320 {

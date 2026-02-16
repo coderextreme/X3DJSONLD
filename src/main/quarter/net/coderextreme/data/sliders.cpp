@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
-SoSceneManager0->setVersion(QString("4.0"));
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 //<component name='Shape' level='4'></component>
 Socomponent* Socomponent2 = new Socomponent();

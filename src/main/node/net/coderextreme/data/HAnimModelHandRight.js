@@ -309,31 +309,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
           .addJoints(new autoclass.HAnimJoint("hanim_Hand_Right").setContainerFieldOverride("joints").setUSE("hanim_r_midcarpal_2"))
           .addJoints(new autoclass.HAnimJoint("hanim_Hand_Right").setContainerFieldOverride("joints").setUSE("hanim_r_midcarpal_3"))
           .addJoints(new autoclass.HAnimJoint("hanim_Hand_Right").setContainerFieldOverride("joints").setUSE("hanim_r_midcarpal_4_5"))
-          .addJoints(new autoclass.HAnimJoint("hanim_Hand_Right").setContainerFieldOverride("joints").setUSE("hanim_r_radiocarpal"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_capitate"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_distal_phalanx_1"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_distal_phalanx_2"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_distal_phalanx_3"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_distal_phalanx_4"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_distal_phalanx_5"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_middle_phalanx_2"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_middle_phalanx_3"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_middle_phalanx_4"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_middle_phalanx_5"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_proximal_phalanx_1"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_proximal_phalanx_2"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_proximal_phalanx_3"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_proximal_phalanx_4"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_carpal_proximal_phalanx_5"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_hamate"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_metacarpal_1"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_metacarpal_2"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_metacarpal_3"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_metacarpal_4"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_metacarpal_5"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_trapezium"))
-          .addSegments(new autoclass.HAnimSegment("hanim_Hand_Right").setContainerFieldOverride("segments").setUSE("hanim_r_trapezoid"))))      ;
+          .addJoints(new autoclass.HAnimJoint("hanim_Hand_Right").setContainerFieldOverride("joints").setUSE("hanim_r_radiocarpal"))))      ;
     X3D0.toFileX3D("../data/HAnimModelHandRight.new.node.x3d");
     X3D0.toFileJSON("../data/HAnimModelHandRight.new.node.x3dj");
     process.exit(0);

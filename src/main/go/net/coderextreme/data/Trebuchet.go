@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -97,7 +97,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:22 GMT"),
+                Content: stringPtr("20 October 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("version"),
@@ -116,6 +116,10 @@ func main() {
                 Content: stringPtr("http://members.home.net/dimona"),
             },
             &x3d.Meta{
+                Name: stringPtr("subject"),
+                Content: stringPtr("trebuchet catapult Monty Python"),
+            },
+            &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("Permission granted for use of the VRML chicken I own a copy of Monty Python and the Holy Grail I have requested permission to use for non profit use. No response received. I will use the sound clips under \"Fair Use\" clause of the DMCA"),
             },
@@ -128,27 +132,31 @@ func main() {
                 Content: stringPtr("http://www.revemonde.net/UniversalMedia/textures/nature/leaves_5.jpg.htm"),
             },
             &x3d.Meta{
-                Name: stringPtr("subject"),
-                Content: stringPtr("trebuchet catapult Monty Python"),
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("Trebuchet.x3d"),
                 },
                 &x3d.Background{
-                    FrontUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"},
                     BackUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_back.jpg"},
-                    LeftUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"},
-                    RightUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"},
-                    TopUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"},
                     BottomUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_bottom.jpg"},
-                    SkyAngle: x3d.MFFloat{1.309, 1.57079},
-                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.2,0.7},[3]float32{0.0,0.5,1.0},[3]float32{1.0,1.0,1.0}},
+                    FrontUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_front.jpg"},
                     GroundAngle: x3d.MFFloat{1.309, 1.570796},
                     GroundColor: &x3d.MFColor{[3]float32{0.1,0.1,0.0},[3]float32{0.4,0.25,0.2},[3]float32{0.6,0.6,0.6}},
+                    LeftUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_left.jpg"},
+                    RightUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_right.jpg"},
+                    SkyAngle: x3d.MFFloat{1.309, 1.57079},
+                    SkyColor: &x3d.MFColor{[3]float32{0.0,0.2,0.7},[3]float32{0.0,0.5,1.0},[3]float32{1.0,1.0,1.0}},
+                    TopUrl: x3d.MFString{"https://www.web3d.org/WorkingGroups/media/textures/panoramas/meadow_2_top.jpg"},
                 },
                 &x3d.Sound{
                     MaxBack: floatPtr(1000.0),
@@ -158,24 +166,24 @@ func main() {
                             DEF: stringPtr("HolyGrail"),
                         },
                         Description: stringPtr("HolyGrail"),
-                        Url: x3d.MFString{"holygral.mp3", "http://www.nps.navy.mil/code32/vrml/holygral.mp3"},
                         Loop: boolPtr(true),
+                        Url: x3d.MFString{"holygral.mp3", "http://www.nps.navy.mil/code32/vrml/holygral.mp3"},
                     },
                 },
                 &x3d.Shape{
+                    Geometry: &x3d.Box{
+                        Size: &x3d.SFVec3f{10000.0, 1.0, 10000.0},
+                    },
                     Appearance: &x3d.Appearance{
                         Texture: &x3d.ImageTexture{
                             Url: x3d.MFString{"grass.jpg", "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/grass.jpg"},
                         },
                     },
-                    Geometry: &x3d.Box{
-                        Size: &x3d.SFVec3f{10000.0, 1.0, 10000.0},
-                    },
                 },
                 &x3d.Transform{
-                        Translation: &x3d.SFVec3f{10.5, 6.5, 4.5},
                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
                         Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
+                        Translation: &x3d.SFVec3f{10.5, 6.5, 4.5},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
                             Appearance: &x3d.Appearance{
@@ -196,9 +204,9 @@ func main() {
                     },
                 },
                 &x3d.Transform{
-                        Translation: &x3d.SFVec3f{11.0, 5.5, 6.0},
                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
                         Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
+                        Translation: &x3d.SFVec3f{11.0, 5.5, 6.0},
                     Children: []x3d.X3DNode{
                         &x3d.Switch{
                             CoreX3DNode: x3d.CoreX3DNode{
@@ -272,13 +280,13 @@ func main() {
                                 Translation: &x3d.SFVec3f{8.0, 0.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
+                                    Geometry: &x3d.Box{
+                                        Size: &x3d.SFVec3f{20.0, 1.0, 1.0},
+                                    },
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             Transparency: floatPtr(1.0),
                                         },
-                                    },
-                                    Geometry: &x3d.Box{
-                                        Size: &x3d.SFVec3f{20.0, 1.0, 1.0},
                                     },
                                 },
                             },
@@ -286,8 +294,8 @@ func main() {
                     },
                 },
                 &x3d.Transform{
-                        Translation: &x3d.SFVec3f{10.0, 0.5, 4.5},
                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
+                        Translation: &x3d.SFVec3f{10.0, 0.5, 4.5},
                     Children: []x3d.X3DNode{
                         &x3d.Transform{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -312,13 +320,13 @@ func main() {
                                             Translation: &x3d.SFVec3f{2.0, 0.3, 0.0},
                                         Children: []x3d.X3DNode{
                                             &x3d.Shape{
+                                                Geometry: &x3d.Box{
+                                                    Size: &x3d.SFVec3f{5.0, 1.0, 1.0},
+                                                },
                                                 Appearance: &x3d.Appearance{
                                                     Material: &x3d.Material{
                                                         Transparency: floatPtr(1.0),
                                                     },
-                                                },
-                                                Geometry: &x3d.Box{
-                                                    Size: &x3d.SFVec3f{5.0, 1.0, 1.0},
                                                 },
                                             },
                                         },
@@ -327,6 +335,7 @@ func main() {
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("PigdogMonk"),
                                         },
+                                        WhichChoice: int32Ptr(-1),
                                         &x3d.Group{
                                             Children: []x3d.X3DNode{
                                                 &x3d.Sound{
@@ -497,6 +506,9 @@ func main() {
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("plank"),
                             },
+                            Geometry: &x3d.Box{
+                                Size: &x3d.SFVec3f{25.0, 1.0, 1.0},
+                            },
                             Appearance: &x3d.Appearance{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("wood"),
@@ -508,16 +520,13 @@ func main() {
                                     Url: x3d.MFString{"wood.gif", "https://www.web3d.org/x3d/content/examples/Basic/StudentProjects/wood.gif"},
                                 },
                             },
-                            Geometry: &x3d.Box{
-                                Size: &x3d.SFVec3f{25.0, 1.0, 1.0},
-                            },
                         },
                         &x3d.Transform{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("angledsupport"),
                                 },
-                                Translation: &x3d.SFVec3f{-5.0, 10.0, 0.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.0},
+                                Translation: &x3d.SFVec3f{-5.0, 10.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -530,8 +539,8 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("angledsupport2"),
                                 },
-                                Translation: &x3d.SFVec3f{5.0, 10.0, 0.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -1.0},
+                                Translation: &x3d.SFVec3f{5.0, 10.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -544,23 +553,24 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("verticalsupport"),
                                 },
-                                Translation: &x3d.SFVec3f{0.0, 11.0, 0.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
                                 Scale: &x3d.SFVec3f{0.9, 1.0, 1.0},
+                                Translation: &x3d.SFVec3f{0.0, 11.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         USE: stringPtr("plank"),
                                     },
                                 },
+//Main Verticle Support
                             },
                         },
                         &x3d.Transform{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("horizontalsupport"),
                                 },
-                                Translation: &x3d.SFVec3f{0.0, 10.0, 0.0},
                                 Scale: &x3d.SFVec3f{0.4, 1.0, 1.0},
+                                Translation: &x3d.SFVec3f{0.0, 10.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -570,9 +580,9 @@ func main() {
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{0.0, 5.0, 10.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
                                 Scale: &x3d.SFVec3f{0.6, 1.0, 1.0},
+                                Translation: &x3d.SFVec3f{0.0, 5.0, 10.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Transform{
                                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 0.4},
@@ -593,36 +603,36 @@ func main() {
                                 Translation: &x3d.SFVec3f{0.0, 18.2, -0.3},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
+                                    Geometry: &x3d.Box{
+                                        Size: &x3d.SFVec3f{5.0, 5.0, 0.5},
+                                    },
                                     Appearance: &x3d.Appearance{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             USE: stringPtr("wood"),
                                         },
                                     },
-                                    Geometry: &x3d.Box{
-                                        Size: &x3d.SFVec3f{5.0, 5.0, 0.5},
-                                    },
                                 },
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{0.0, 0.6, 2.5},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57},
+                                Translation: &x3d.SFVec3f{0.0, 0.6, 2.5},
                             Children: []x3d.X3DNode{
                                 &x3d.Transform{
                                         Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Extrusion{
+                                                BeginCap: boolPtr(false),
+                                                CrossSection: &x3d.MFVec2f{[2]float32{1.0,-0.38},[2]float32{0.92,-0.38},[2]float32{0.71,-0.71},[2]float32{0.38,-0.92},[2]float32{0.0,-1.0},[2]float32{-0.38,-0.92},[2]float32{-0.71,-0.71},[2]float32{-0.92,-0.38},[2]float32{-1.0,-0.38},[2]float32{-1.0,-1.1},[2]float32{1.0,-1.1},[2]float32{1.0,-0.38}},
+                                                EndCap: boolPtr(false),
+                                                Solid: boolPtr(false),
+                                                Spine: &x3d.MFVec3f{[3]float32{0.0,6.0,0.0},[3]float32{0.0,-11.0,0.0}},
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("wood"),
                                                 },
-                                            },
-                                            Geometry: &x3d.Extrusion{
-                                                BeginCap: boolPtr(false),
-                                                EndCap: boolPtr(false),
-                                                Solid: boolPtr(false),
-                                                CrossSection: &x3d.MFVec2f{[2]float32{1.0,-0.38},[2]float32{0.92,-0.38},[2]float32{0.71,-0.71},[2]float32{0.38,-0.92},[2]float32{0.0,-1.0},[2]float32{-0.38,-0.92},[2]float32{-0.71,-0.71},[2]float32{-0.92,-0.38},[2]float32{-1.0,-0.38},[2]float32{-1.0,-1.1},[2]float32{1.0,-1.1},[2]float32{1.0,-0.38}},
-                                                Spine: &x3d.MFVec3f{[3]float32{0.0,6.0,0.0},[3]float32{0.0,-11.0,0.0}},
                                             },
                                         },
                                     },
@@ -633,34 +643,34 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("flinger"),
                                 },
-                                Translation: &x3d.SFVec3f{-7.0, 18.0, 2.5},
+                                Center: &x3d.SFVec3f{7.0, 0.0, 0.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 0.82},
                                 Scale: &x3d.SFVec3f{0.9, 1.0, 1.0},
-                                Center: &x3d.SFVec3f{7.0, 0.0, 0.0},
+                                Translation: &x3d.SFVec3f{-7.0, 18.0, 2.5},
                             Children: []x3d.X3DNode{
                                 &x3d.Transform{
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Box{
+                                                Size: &x3d.SFVec3f{35.0, 1.0, 1.0},
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("wood"),
                                                 },
-                                            },
-                                            Geometry: &x3d.Box{
-                                                Size: &x3d.SFVec3f{35.0, 1.0, 1.0},
                                             },
                                         },
                                         &x3d.Transform{
                                                 Translation: &x3d.SFVec3f{7.0, 0.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
+                                                    Geometry: &x3d.Box{
+                                                        Size: &x3d.SFVec3f{8.0, 2.0, 2.0},
+                                                    },
                                                     Appearance: &x3d.Appearance{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("wood"),
                                                         },
-                                                    },
-                                                    Geometry: &x3d.Box{
-                                                        Size: &x3d.SFVec3f{8.0, 2.0, 2.0},
                                                     },
                                                 },
                                             },
@@ -668,9 +678,9 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{-15.0, -1.0, 0.0},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
                                         Scale: &x3d.SFVec3f{0.2, 0.2, 0.2},
+                                        Translation: &x3d.SFVec3f{-15.0, -1.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -683,10 +693,10 @@ func main() {
                                             },
                                             Geometry: &x3d.Extrusion{
                                                 BeginCap: boolPtr(false),
-                                                EndCap: boolPtr(false),
                                                 Convex: boolPtr(false),
                                                 CreaseAngle: floatPtr(1.57),
                                                 CrossSection: &x3d.MFVec2f{[2]float32{0.9,0.0},[2]float32{0.81,-0.34},[2]float32{0.63,-0.63},[2]float32{0.34,-0.83},[2]float32{0.0,-0.9},[2]float32{-0.34,-0.81},[2]float32{-0.63,-0.63},[2]float32{-0.81,-0.34},[2]float32{-0.9,0.0},[2]float32{-0.81,0.34},[2]float32{-0.63,0.63},[2]float32{-0.34,0.81},[2]float32{0.0,0.9},[2]float32{0.38,0.81},[2]float32{0.63,0.63},[2]float32{0.81,0.34},[2]float32{0.9,0.0}},
+                                                EndCap: boolPtr(false),
                                                 Spine: &x3d.MFVec3f{[3]float32{2.0,0.0,0.0},[3]float32{1.85,0.0,0.77},[3]float32{1.41,0.0,1.41},[3]float32{0.77,0.0,1.85},[3]float32{0.0,0.0,2.0},[3]float32{-0.77,0.0,1.85},[3]float32{-1.41,0.0,1.41},[3]float32{-1.85,0.0,0.77},[3]float32{-2.0,0.0,0.0},[3]float32{-1.85,0.0,-0.77},[3]float32{-1.41,0.0,-1.41},[3]float32{-0.77,0.0,-1.85},[3]float32{0.0,0.0,-2.0},[3]float32{0.77,0.0,-1.85},[3]float32{1.41,0.0,-1.41},[3]float32{1.85,0.0,-0.77},[3]float32{2.0,0.0,0.0}},
                                             },
                                         },
@@ -708,28 +718,31 @@ func main() {
                                                         Radius: floatPtr(1.5),
                                                     },
                                                 },
+//knott
                                             },
                                         },
                                     },
                                 },
+//The Unicorn
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{-18.3, 0.3, 0.0},
                                         Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.2},
                                         Scale: &x3d.SFVec3f{0.2, 0.2, 0.2},
+                                        Translation: &x3d.SFVec3f{-18.3, 0.3, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Cylinder{
+                                                Height: floatPtr(10.0),
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 Material: &x3d.Material{
                                                     SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                                 },
                                             },
-                                            Geometry: &x3d.Cylinder{
-                                                Height: floatPtr(10.0),
-                                            },
                                         },
                                         &x3d.Transform{
                                                 Translation: &x3d.SFVec3f{0.0, -2.5, 0.0},
                                             Children: []x3d.X3DNode{
+//The Unicorn
                                                 &x3d.Shape{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         USE: stringPtr("Torus"),
@@ -739,22 +752,23 @@ func main() {
                                                         Translation: &x3d.SFVec3f{-2.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Shape{
+                                                            Geometry: &x3d.Sphere{
+                                                                Radius: floatPtr(1.5),
+                                                            },
                                                             Appearance: &x3d.Appearance{
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     USE: stringPtr("rope"),
                                                                 },
                                                             },
-                                                            Geometry: &x3d.Sphere{
-                                                                Radius: floatPtr(1.5),
-                                                            },
                                                         },
+//Knott
                                                     },
                                                 },
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{15.0, 55.0, -11.0},
                                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.2},
+                                                Translation: &x3d.SFVec3f{15.0, 55.0, -11.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Transform{
                                                         Scale: &x3d.SFVec3f{5.0, 5.0, 5.0},
@@ -767,10 +781,10 @@ func main() {
                                                             },
                                                             Geometry: &x3d.Extrusion{
                                                                 BeginCap: boolPtr(false),
-                                                                EndCap: boolPtr(false),
-                                                                Solid: boolPtr(false),
                                                                 CreaseAngle: floatPtr(0.76),
                                                                 CrossSection: &x3d.MFVec2f{[2]float32{0.1,0.0},[2]float32{0.092,-0.038},[2]float32{0.071,-0.071},[2]float32{0.038,-0.092},[2]float32{0.0,-0.1},[2]float32{-0.038,-0.092},[2]float32{-0.071,-0.071},[2]float32{-0.092,-0.038},[2]float32{-0.1,0.0},[2]float32{-0.092,0.038},[2]float32{-0.071,0.071},[2]float32{-0.038,0.092},[2]float32{0.0,0.1},[2]float32{0.038,0.092},[2]float32{0.071,0.071},[2]float32{0.092,0.038},[2]float32{0.1,0.0}},
+                                                                EndCap: boolPtr(false),
+                                                                Solid: boolPtr(false),
                                                                 Spine: &x3d.MFVec3f{[3]float32{-15.2,1.4,2.2},[3]float32{-12.0,-0.8,2.2}},
                                                             },
                                                         },
@@ -781,12 +795,13 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{-17.0, -4.5, 0.0},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.7},
+                                        Translation: &x3d.SFVec3f{-17.0, -4.5, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
                                                 Scale: &x3d.SFVec3f{0.2, 0.2, 0.2},
                                             Children: []x3d.X3DNode{
+//Knot
                                                 &x3d.Shape{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         USE: stringPtr("Torus"),
@@ -796,13 +811,13 @@ func main() {
                                                         Translation: &x3d.SFVec3f{-1.0, 0.0, 1.7},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Shape{
+                                                            Geometry: &x3d.Sphere{
+                                                                Radius: floatPtr(1.5),
+                                                            },
                                                             Appearance: &x3d.Appearance{
                                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                                     USE: stringPtr("rope"),
                                                                 },
-                                                            },
-                                                            Geometry: &x3d.Sphere{
-                                                                Radius: floatPtr(1.5),
                                                             },
                                                         },
                                                     },
@@ -822,8 +837,8 @@ func main() {
                                                 },
                                             Children: []x3d.X3DNode{
                                                 &x3d.Transform{
-                                                        Translation: &x3d.SFVec3f{7.0, -26.0, -2.5},
                                                         Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -0.82},
+                                                        Translation: &x3d.SFVec3f{7.0, -26.0, -2.5},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Shape{
                                                             Appearance: &x3d.Appearance{
@@ -833,10 +848,10 @@ func main() {
                                                             },
                                                             Geometry: &x3d.Extrusion{
                                                                 BeginCap: boolPtr(false),
-                                                                EndCap: boolPtr(false),
-                                                                Solid: boolPtr(false),
                                                                 CreaseAngle: floatPtr(0.76),
                                                                 CrossSection: &x3d.MFVec2f{[2]float32{0.1,0.0},[2]float32{0.092,-0.038},[2]float32{0.071,-0.071},[2]float32{0.038,-0.092},[2]float32{0.0,-0.1},[2]float32{-0.038,-0.092},[2]float32{-0.071,-0.071},[2]float32{-0.092,-0.038},[2]float32{-0.1,0.0},[2]float32{-0.092,0.038},[2]float32{-0.071,0.071},[2]float32{-0.038,0.092},[2]float32{0.0,0.1},[2]float32{0.038,0.092},[2]float32{0.071,0.071},[2]float32{0.092,0.038},[2]float32{0.1,0.0}},
+                                                                EndCap: boolPtr(false),
+                                                                Solid: boolPtr(false),
                                                                 Spine: &x3d.MFVec3f{[3]float32{-33.0,0.9,2.5},[3]float32{-18.5,1.9,2.55}},
                                                             },
                                                         },
@@ -848,10 +863,10 @@ func main() {
                                                             },
                                                             Geometry: &x3d.Extrusion{
                                                                 BeginCap: boolPtr(false),
-                                                                EndCap: boolPtr(false),
-                                                                Solid: boolPtr(false),
                                                                 CreaseAngle: floatPtr(0.76),
                                                                 CrossSection: &x3d.MFVec2f{[2]float32{0.1,0.0},[2]float32{0.092,-0.038},[2]float32{0.071,-0.071},[2]float32{0.038,-0.092},[2]float32{0.0,-0.1},[2]float32{-0.038,-0.092},[2]float32{-0.071,-0.071},[2]float32{-0.092,-0.038},[2]float32{-0.1,0.0},[2]float32{-0.092,0.038},[2]float32{-0.071,0.071},[2]float32{-0.038,0.092},[2]float32{0.0,0.1},[2]float32{0.038,0.092},[2]float32{0.071,0.071},[2]float32{0.092,0.038},[2]float32{0.1,0.0}},
+                                                                EndCap: boolPtr(false),
+                                                                Solid: boolPtr(false),
                                                                 Spine: &x3d.MFVec3f{[3]float32{-35.7,-0.8,2.5},[3]float32{-18.8,-0.8,2.55}},
                                                             },
                                                         },
@@ -863,15 +878,15 @@ func main() {
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("sling"),
                                                 },
-                                                Translation: &x3d.SFVec3f{-4.0, -15.3, 0.0},
                                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -0.82},
+                                                Translation: &x3d.SFVec3f{-4.0, -15.3, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Transform{
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Transform{
-                                                                Translation: &x3d.SFVec3f{0.5, 0.0, -1.0},
                                                                 Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, -1.57},
                                                                 Scale: &x3d.SFVec3f{1.0, 1.3, 1.0},
+                                                                Translation: &x3d.SFVec3f{0.5, 0.0, -1.0},
                                                             Children: []x3d.X3DNode{
                                                                 &x3d.Transform{
                                                                         Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
@@ -897,8 +912,8 @@ func main() {
                                                                                     },
                                                                                 },
                                                                                 &x3d.Transform{
-                                                                                        Translation: &x3d.SFVec3f{0.0, -3.5, 11.5},
                                                                                         Scale: &x3d.SFVec3f{0.3, 0.3, 0.3},
+                                                                                        Translation: &x3d.SFVec3f{0.0, -3.5, 11.5},
                                                                                     Children: []x3d.X3DNode{
                                                                                         &x3d.Shape{
                                                                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -925,8 +940,8 @@ func main() {
                                                                             },
                                                                         },
                                                                         &x3d.Transform{
-                                                                                Translation: &x3d.SFVec3f{2.0, 0.0, 0.0},
                                                                                 Scale: &x3d.SFVec3f{0.3, 0.3, 0.3},
+                                                                                Translation: &x3d.SFVec3f{2.0, 0.0, 0.0},
                                                                             Children: []x3d.X3DNode{
                                                                                 &x3d.Shape{
                                                                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -934,8 +949,8 @@ func main() {
                                                                                     },
                                                                                 },
                                                                                 &x3d.Transform{
-                                                                                        Translation: &x3d.SFVec3f{0.0, -3.5, 11.3},
                                                                                         Scale: &x3d.SFVec3f{0.3, 0.3, 0.3},
+                                                                                        Translation: &x3d.SFVec3f{0.0, -3.5, 11.3},
                                                                                     Children: []x3d.X3DNode{
                                                                                         &x3d.Shape{
                                                                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -965,18 +980,18 @@ func main() {
                                                                                 Translation: &x3d.SFVec3f{1.0, -1.0, 0.0},
                                                                             Children: []x3d.X3DNode{
                                                                                 &x3d.Shape{
+                                                                                    Geometry: &x3d.Extrusion{
+                                                                                        BeginCap: boolPtr(false),
+                                                                                        CreaseAngle: floatPtr(0.785),
+                                                                                        CrossSection: &x3d.MFVec2f{[2]float32{1.0,0.0},[2]float32{0.92,-0.38},[2]float32{0.71,-0.71},[2]float32{0.38,-0.92},[2]float32{0.0,-1.0},[2]float32{-0.38,-0.92},[2]float32{-0.71,-0.71},[2]float32{-0.92,-0.38},[2]float32{-1.0,0.0}},
+                                                                                        EndCap: boolPtr(false),
+                                                                                        Solid: boolPtr(false),
+                                                                                        Spine: &x3d.MFVec3f{[3]float32{0.0,-1.0,0.0},[3]float32{0.0,1.0,0.0}},
+                                                                                    },
                                                                                     Appearance: &x3d.Appearance{
                                                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                                                             USE: stringPtr("clear"),
                                                                                         },
-                                                                                    },
-                                                                                    Geometry: &x3d.Extrusion{
-                                                                                        BeginCap: boolPtr(false),
-                                                                                        EndCap: boolPtr(false),
-                                                                                        Solid: boolPtr(false),
-                                                                                        CreaseAngle: floatPtr(0.785),
-                                                                                        CrossSection: &x3d.MFVec2f{[2]float32{1.0,0.0},[2]float32{0.92,-0.38},[2]float32{0.71,-0.71},[2]float32{0.38,-0.92},[2]float32{0.0,-1.0},[2]float32{-0.38,-0.92},[2]float32{-0.71,-0.71},[2]float32{-0.92,-0.38},[2]float32{-1.0,0.0}},
-                                                                                        Spine: &x3d.MFVec3f{[3]float32{0.0,-1.0,0.0},[3]float32{0.0,1.0,0.0}},
                                                                                     },
                                                                                 },
                                                                             },
@@ -1008,6 +1023,9 @@ func main() {
                                                                                     Translation: &x3d.SFVec3f{0.0, 0.7, 0.0},
                                                                                 Children: []x3d.X3DNode{
                                                                                     &x3d.Shape{
+                                                                                        Geometry: &x3d.Sphere{
+                                                                                            Radius: floatPtr(0.7),
+                                                                                        },
                                                                                         Appearance: &x3d.Appearance{
                                                                                             CoreX3DNode: x3d.CoreX3DNode{
                                                                                                 DEF: stringPtr("black"),
@@ -1016,9 +1034,6 @@ func main() {
                                                                                                 DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.0},
                                                                                                 SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                                                                             },
-                                                                                        },
-                                                                                        Geometry: &x3d.Sphere{
-                                                                                            Radius: floatPtr(0.7),
                                                                                         },
                                                                                     },
                                                                                 },
@@ -1039,9 +1054,9 @@ func main() {
                                                                     &x3d.Group{
                                                                         Children: []x3d.X3DNode{
                                                                             &x3d.Transform{
-                                                                                    Translation: &x3d.SFVec3f{0.0, 0.7, 0.0},
                                                                                     Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
                                                                                     Scale: &x3d.SFVec3f{0.4, 0.4, 0.4},
+                                                                                    Translation: &x3d.SFVec3f{0.0, 0.7, 0.0},
                                                                                 Children: []x3d.X3DNode{
                                                                                     &x3d.Inline{
                                                                                         Url: x3d.MFString{"vrml_ginger.wrl", "http://home.inreach.com/ntamura/vrml/vrml_ginger.wrl"},
@@ -1062,21 +1077,22 @@ func main() {
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{0.0, 18.0, 2.5},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                Translation: &x3d.SFVec3f{0.0, 18.0, 2.5},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
+                                    Geometry: &x3d.Cylinder{
+                                        Height: floatPtr(8.0),
+                                        Radius: floatPtr(0.4),
+                                    },
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.0},
                                             SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                         },
                                     },
-                                    Geometry: &x3d.Cylinder{
-                                        Height: floatPtr(8.0),
-                                        Radius: floatPtr(0.4),
-                                    },
                                 },
+//Top Pivot
                             },
                         },
                         &x3d.Transform{
@@ -1088,13 +1104,13 @@ func main() {
                                         Translation: &x3d.SFVec3f{4.0, 18.0, 1.8},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Box{
+                                                Size: &x3d.SFVec3f{1.0, 10.0, 0.5},
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("wood"),
                                                 },
-                                            },
-                                            Geometry: &x3d.Box{
-                                                Size: &x3d.SFVec3f{1.0, 10.0, 0.5},
                                             },
                                         },
                                     },
@@ -1103,13 +1119,13 @@ func main() {
                                         Translation: &x3d.SFVec3f{4.0, 18.0, 3.2},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Box{
+                                                Size: &x3d.SFVec3f{1.0, 10.0, 0.5},
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("wood"),
                                                 },
-                                            },
-                                            Geometry: &x3d.Box{
-                                                Size: &x3d.SFVec3f{1.0, 10.0, 0.5},
                                             },
                                         },
                                     },
@@ -1117,34 +1133,35 @@ func main() {
                                 &x3d.Transform{
                                         Translation: &x3d.SFVec3f{4.0, 14.0, 2.5},
                                     Children: []x3d.X3DNode{
+//CounterWeight
                                         &x3d.Shape{
+                                            Geometry: &x3d.Cylinder{
+                                                Height: floatPtr(4.0),
+                                                Radius: floatPtr(1.5),
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 Material: &x3d.Material{
                                                     DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.0},
                                                     SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                                 },
-                                            },
-                                            Geometry: &x3d.Cylinder{
-                                                Height: floatPtr(4.0),
-                                                Radius: floatPtr(1.5),
                                             },
                                         },
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{4.0, 22.0, 2.5},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                        Translation: &x3d.SFVec3f{4.0, 22.0, 2.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
+                                            Geometry: &x3d.Cylinder{
+                                                Height: floatPtr(2.5),
+                                                Radius: floatPtr(0.3),
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 Material: &x3d.Material{
                                                     DiffuseColor: &x3d.SFColor{0.0, 0.0, 0.0},
                                                     SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                                 },
-                                            },
-                                            Geometry: &x3d.Cylinder{
-                                                Height: floatPtr(2.5),
-                                                Radius: floatPtr(0.3),
                                             },
                                         },
                                     },
@@ -1152,9 +1169,9 @@ func main() {
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{-11.5, -1.0, 2.0},
                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
                                 Scale: &x3d.SFVec3f{0.2, 0.2, 0.2},
+                                Translation: &x3d.SFVec3f{-11.5, -1.0, 2.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Transform{
                                         CoreX3DNode: x3d.CoreX3DNode{
@@ -1168,18 +1185,18 @@ func main() {
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.0, 0.0, 7.0},
                                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57},
+                                                Translation: &x3d.SFVec3f{0.0, 0.0, 7.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
+                                                    Geometry: &x3d.Cylinder{
+                                                        Height: floatPtr(10.0),
+                                                        Radius: floatPtr(0.7),
+                                                    },
                                                     Appearance: &x3d.Appearance{
                                                         Material: &x3d.Material{
                                                             SpecularColor: &x3d.SFColor{1.0, 1.0, 1.0},
                                                         },
-                                                    },
-                                                    Geometry: &x3d.Cylinder{
-                                                        Height: floatPtr(10.0),
-                                                        Radius: floatPtr(0.7),
                                                     },
                                                 },
                                             },
@@ -1198,12 +1215,13 @@ func main() {
                                         },
                                     },
                                 },
+//Release Pin
                                 &x3d.Transform{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("Pin"),
                                         },
-                                        Translation: &x3d.SFVec3f{0.0, 0.0, -3.0},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57},
+                                        Translation: &x3d.SFVec3f{0.0, 0.0, -3.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
                                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -1253,9 +1271,9 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, -11.0, -2.5},
                                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
                                         Scale: &x3d.SFVec3f{0.6, 1.0, 1.0},
+                                        Translation: &x3d.SFVec3f{0.0, -11.0, -2.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
                                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -1267,9 +1285,9 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 5.0, -10.0},
                                         Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -1.57},
                                         Scale: &x3d.SFVec3f{0.6, 1.0, 1.0},
+                                        Translation: &x3d.SFVec3f{0.0, 5.0, -10.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
                                                 Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 0.4},
@@ -1304,43 +1322,43 @@ func main() {
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("Axle"),
                                     },
+                                    Geometry: &x3d.Box{
+                                        Size: &x3d.SFVec3f{1.0, 1.0, 8.0},
+                                    },
                                     Appearance: &x3d.Appearance{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             USE: stringPtr("wood"),
                                         },
                                     },
-                                    Geometry: &x3d.Box{
-                                        Size: &x3d.SFVec3f{1.0, 1.0, 8.0},
-                                    },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 0.0, 4.5},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                        Translation: &x3d.SFVec3f{0.0, 0.0, 4.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("wheel"),
+                                            },
+                                            Geometry: &x3d.Cylinder{
+                                                Radius: floatPtr(2.0),
                                             },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("wood"),
                                                 },
                                             },
-                                            Geometry: &x3d.Cylinder{
-                                                Radius: floatPtr(2.0),
-                                            },
                                         },
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
                                                 DEF: stringPtr("tracks"),
                                             },
+                                            Geometry: &x3d.Sphere{
+                                                Radius: floatPtr(1.5),
+                                            },
                                             Appearance: &x3d.Appearance{
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     USE: stringPtr("black"),
                                                 },
-                                            },
-                                            Geometry: &x3d.Sphere{
-                                                Radius: floatPtr(1.5),
                                             },
                                         },
                                         &x3d.Transform{
@@ -1350,13 +1368,13 @@ func main() {
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("hub"),
                                                     },
+                                                    Geometry: &x3d.Sphere{
+                                                        Radius: floatPtr(1.5),
+                                                    },
                                                     Appearance: &x3d.Appearance{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("black"),
                                                         },
-                                                    },
-                                                    Geometry: &x3d.Sphere{
-                                                        Radius: floatPtr(1.5),
                                                     },
                                                 },
                                             },
@@ -1364,8 +1382,8 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 0.0, -4.5},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                        Translation: &x3d.SFVec3f{0.0, 0.0, -4.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -1400,8 +1418,8 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 0.0, 4.5},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                        Translation: &x3d.SFVec3f{0.0, 0.0, 4.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -1426,8 +1444,8 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 0.0, -4.5},
                                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                                        Translation: &x3d.SFVec3f{0.0, 0.0, -4.5},
                                     Children: []x3d.X3DNode{
                                         &x3d.Shape{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -1452,8 +1470,8 @@ func main() {
                                     },
                                 },
                                 &x3d.Transform{
-                                        Translation: &x3d.SFVec3f{0.0, 100.0, 400.0},
                                         Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, -0.6},
+                                        Translation: &x3d.SFVec3f{0.0, 100.0, 400.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
                                                 Translation: &x3d.SFVec3f{1.0, 3.0, 0.0},
@@ -1486,13 +1504,13 @@ func main() {
                                                         Translation: &x3d.SFVec3f{2.5, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Shape{
+                                                            Geometry: &x3d.Box{
+                                                                Size: &x3d.SFVec3f{5.0, 0.5, 0.5},
+                                                            },
                                                             Appearance: &x3d.Appearance{
                                                                 Material: &x3d.Material{
                                                                     Transparency: floatPtr(1.0),
                                                                 },
-                                                            },
-                                                            Geometry: &x3d.Box{
-                                                                Size: &x3d.SFVec3f{5.0, 0.5, 0.5},
                                                             },
                                                         },
                                                     },
@@ -1500,8 +1518,8 @@ func main() {
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.0, -1.0, 0.0},
                                                 Scale: &x3d.SFVec3f{0.5, 0.5, 0.5},
+                                                Translation: &x3d.SFVec3f{0.0, -1.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.TouchSensor{
                                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -1517,13 +1535,13 @@ func main() {
                                                         Translation: &x3d.SFVec3f{8.0, 0.0, 0.0},
                                                     Children: []x3d.X3DNode{
                                                         &x3d.Shape{
+                                                            Geometry: &x3d.Box{
+                                                                Size: &x3d.SFVec3f{17.0, 1.0, 0.5},
+                                                            },
                                                             Appearance: &x3d.Appearance{
                                                                 Material: &x3d.Material{
                                                                     Transparency: floatPtr(1.0),
                                                                 },
-                                                            },
-                                                            Geometry: &x3d.Box{
-                                                                Size: &x3d.SFVec3f{17.0, 1.0, 0.5},
                                                             },
                                                         },
                                                     },
@@ -1544,8 +1562,8 @@ func main() {
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.0, 1.0, 0.0},
                                                 Rotation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
+                                                Translation: &x3d.SFVec3f{0.0, 1.0, 0.0},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Viewpoint{
                                                     Description: stringPtr("Projectile Cam"),
@@ -1590,19 +1608,19 @@ func main() {
                                     },
                                     Field: []x3d.X3DNode{
                                         &x3d.Field{
+                                            Name: stringPtr("set_boolean"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFBool"),
-                                            Name: stringPtr("set_boolean"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("whichchoice"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFInt32"),
-                                        Name: stringPtr("whichchoice"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("CounterWeight"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFFloat"),
-                                        Name: stringPtr("CounterWeight"),
                                     },
 //ecmascript:
 //
@@ -1635,19 +1653,19 @@ func main() {
                                     },
                                     Field: []x3d.X3DNode{
                                         &x3d.Field{
+                                            Name: stringPtr("set_boolean"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFBool"),
-                                            Name: stringPtr("set_boolean"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("whichchoice"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFInt32"),
-                                        Name: stringPtr("whichchoice"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("ProjectileWeight"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFFloat"),
-                                        Name: stringPtr("ProjectileWeight"),
                                     },
 //ecmascript:
 //
@@ -1670,14 +1688,14 @@ func main() {
                                     },
                                     Field: []x3d.X3DNode{
                                         &x3d.Field{
+                                            Name: stringPtr("set_boolean"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFBool"),
-                                            Name: stringPtr("set_boolean"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("whichchoice"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFInt32"),
-                                        Name: stringPtr("whichchoice"),
                                     },
 //ecmascript:
 //
@@ -1699,41 +1717,41 @@ func main() {
                                     },
                                     Field: []x3d.X3DNode{
                                         &x3d.Field{
+                                            Name: stringPtr("set_fraction"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFFloat"),
-                                            Name: stringPtr("set_fraction"),
                                     },
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOnly"),
-                                        Type: stringPtr("SFFloat"),
                                         Name: stringPtr("set_MassCounterWeight"),
-                                    },
-                                    &x3d.Field{
                                         AccessType: stringPtr("inputOnly"),
                                         Type: stringPtr("SFFloat"),
+                                    },
+                                    &x3d.Field{
                                         Name: stringPtr("set_MassProjectileWeight"),
+                                        AccessType: stringPtr("inputOnly"),
+                                        Type: stringPtr("SFFloat"),
                                     },
                                     &x3d.Field{
-                                        AccessType: stringPtr("initializeOnly"),
-                                        Type: stringPtr("SFFloat"),
                                         Name: stringPtr("MassCounterWeight"),
-                                        Value: stringPtr("1"),
-                                    },
-                                    &x3d.Field{
                                         AccessType: stringPtr("initializeOnly"),
                                         Type: stringPtr("SFFloat"),
-                                        Name: stringPtr("MassProjectileWeight"),
                                         Value: stringPtr("1"),
                                     },
                                     &x3d.Field{
-                                        AccessType: stringPtr("outputOnly"),
-                                        Type: stringPtr("SFVec3f"),
-                                        Name: stringPtr("transparent"),
+                                        Name: stringPtr("MassProjectileWeight"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Type: stringPtr("SFFloat"),
+                                        Value: stringPtr("1"),
                                     },
                                     &x3d.Field{
+                                        Name: stringPtr("transparent"),
                                         AccessType: stringPtr("outputOnly"),
                                         Type: stringPtr("SFVec3f"),
+                                    },
+                                    &x3d.Field{
                                         Name: stringPtr("value_changed"),
+                                        AccessType: stringPtr("outputOnly"),
+                                        Type: stringPtr("SFVec3f"),
                                     },
 //ecmascript:
 //
@@ -1823,161 +1841,161 @@ func main() {
                     Key: x3d.MFFloat{0.0, 0.2, 0.98, 0.99},
                     KeyValue: &x3d.MFVec3f{[3]float32{1.0,1.0,1.0},[3]float32{0.01,0.01,0.01},[3]float32{0.01,0.01,0.01},[3]float32{1.0,1.0,1.0}},
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("clock"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("clock"),
+                    ToField: stringPtr("set_fraction"),
                     ToNode: stringPtr("invisiable"),
-                    ToField: stringPtr("set_fraction"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
                     FromNode: stringPtr("invisiable"),
-                    FromField: stringPtr("value_changed"),
+                    ToField: stringPtr("set_scale"),
                     ToNode: stringPtr("projectiletransform"),
-                    ToField: stringPtr("set_scale"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("WeightScript"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("CounterWeight"),
-                    ToNode: stringPtr("Mover"),
-                    ToField: stringPtr("set_MassCounterWeight"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeScript"),
-                    FromField: stringPtr("ProjectileWeight"),
-                    ToNode: stringPtr("Mover"),
-                    ToField: stringPtr("set_MassProjectileWeight"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("clock"),
-                    FromField: stringPtr("fraction_changed"),
-                    ToNode: stringPtr("Mover"),
-                    ToField: stringPtr("set_fraction"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Mover"),
-                    FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("ProjectileTransform"),
-                    ToField: stringPtr("set_translation"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Mover"),
-                    FromField: stringPtr("transparent"),
-                    ToNode: stringPtr("ProjectileTransform"),
-                    ToField: stringPtr("set_scale"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Launch"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("clock"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Launch"),
-                    FromField: stringPtr("isActive"),
-                    ToNode: stringPtr("PigdogMonkScript"),
-                    ToField: stringPtr("set_boolean"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Launch"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("PigDogSound"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("Launch"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("MonkSound"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("PigdogMonkScript"),
-                    FromField: stringPtr("whichchoice"),
-                    ToNode: stringPtr("PigdogMonk"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeChoice"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("HolyHandGrenadeSound"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeChoice"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("CowSound"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeChoice"),
-                    FromField: stringPtr("touchTime"),
-                    ToNode: stringPtr("HamsterSound"),
-                    ToField: stringPtr("set_startTime"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeChoice"),
-                    FromField: stringPtr("isActive"),
-                    ToNode: stringPtr("LauncheeScript"),
-                    ToField: stringPtr("set_boolean"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeScript"),
-                    FromField: stringPtr("whichchoice"),
-                    ToNode: stringPtr("projectile"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("LauncheeScript"),
-                    FromField: stringPtr("whichchoice"),
-                    ToNode: stringPtr("projectilename"),
-                    ToField: stringPtr("set_whichChoice"),
-                },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("weightselector"),
-                    FromField: stringPtr("isActive"),
-                    ToNode: stringPtr("WeightScript"),
-                    ToField: stringPtr("set_boolean"),
-                },
-                &x3d.ROUTE{
                     FromNode: stringPtr("WeightScript"),
+                    ToField: stringPtr("set_MassCounterWeight"),
+                    ToNode: stringPtr("Mover"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("ProjectileWeight"),
+                    FromNode: stringPtr("LauncheeScript"),
+                    ToField: stringPtr("set_MassProjectileWeight"),
+                    ToNode: stringPtr("Mover"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("clock"),
+                    ToField: stringPtr("set_fraction"),
+                    ToNode: stringPtr("Mover"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
+                    FromNode: stringPtr("Mover"),
+                    ToField: stringPtr("set_translation"),
+                    ToNode: stringPtr("ProjectileTransform"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("transparent"),
+                    FromNode: stringPtr("Mover"),
+                    ToField: stringPtr("set_scale"),
+                    ToNode: stringPtr("ProjectileTransform"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("Launch"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("clock"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("isActive"),
+                    FromNode: stringPtr("Launch"),
+                    ToField: stringPtr("set_boolean"),
+                    ToNode: stringPtr("PigdogMonkScript"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("Launch"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("PigDogSound"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("Launch"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("MonkSound"),
+                },
+                &x3d.X3DRoute{
                     FromField: stringPtr("whichchoice"),
+                    FromNode: stringPtr("PigdogMonkScript"),
+                    ToField: stringPtr("whichChoice"),
+                    ToNode: stringPtr("PigdogMonk"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("LauncheeChoice"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("HolyHandGrenadeSound"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("LauncheeChoice"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("CowSound"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("touchTime"),
+                    FromNode: stringPtr("LauncheeChoice"),
+                    ToField: stringPtr("set_startTime"),
+                    ToNode: stringPtr("HamsterSound"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("isActive"),
+                    FromNode: stringPtr("LauncheeChoice"),
+                    ToField: stringPtr("set_boolean"),
+                    ToNode: stringPtr("LauncheeScript"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("whichchoice"),
+                    FromNode: stringPtr("LauncheeScript"),
+                    ToField: stringPtr("whichChoice"),
+                    ToNode: stringPtr("projectile"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("whichchoice"),
+                    FromNode: stringPtr("LauncheeScript"),
+                    ToField: stringPtr("whichChoice"),
+                    ToNode: stringPtr("projectilename"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("isActive"),
+                    FromNode: stringPtr("weightselector"),
+                    ToField: stringPtr("set_boolean"),
+                    ToNode: stringPtr("WeightScript"),
+                },
+                &x3d.X3DRoute{
+                    FromField: stringPtr("whichchoice"),
+                    FromNode: stringPtr("WeightScript"),
+                    ToField: stringPtr("whichChoice"),
                     ToNode: stringPtr("Weight"),
-                    ToField: stringPtr("set_whichChoice"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("clock"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("clock"),
+                    ToField: stringPtr("set_fraction"),
                     ToNode: stringPtr("flingerangles"),
-                    ToField: stringPtr("set_fraction"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
                     FromNode: stringPtr("flingerangles"),
-                    FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("flinger"),
                     ToField: stringPtr("set_rotation"),
+                    ToNode: stringPtr("flinger"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("clock"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("fraction_changed"),
+                    FromNode: stringPtr("clock"),
+                    ToField: stringPtr("set_fraction"),
                     ToNode: stringPtr("verticalweightpath"),
-                    ToField: stringPtr("set_fraction"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
+                    FromField: stringPtr("value_changed"),
                     FromNode: stringPtr("verticalweightpath"),
-                    FromField: stringPtr("value_changed"),
+                    ToField: stringPtr("set_translation"),
                     ToNode: stringPtr("verticalweight"),
-                    ToField: stringPtr("set_translation"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("clock"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("fraction_changed"),
-                    ToNode: stringPtr("pinpath"),
+                    FromNode: stringPtr("clock"),
                     ToField: stringPtr("set_fraction"),
+                    ToNode: stringPtr("pinpath"),
                 },
-                &x3d.ROUTE{
-                    FromNode: stringPtr("pinpath"),
+                &x3d.X3DRoute{
                     FromField: stringPtr("value_changed"),
-                    ToNode: stringPtr("Pin"),
+                    FromNode: stringPtr("pinpath"),
                     ToField: stringPtr("set_translation"),
+                    ToNode: stringPtr("Pin"),
                 },
             },
         },
@@ -1997,13 +2015,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/Trebuchet.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -2014,7 +2032,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

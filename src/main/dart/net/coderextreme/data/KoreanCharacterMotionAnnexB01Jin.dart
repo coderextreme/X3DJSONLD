@@ -34,7 +34,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('modified'),
-              content_ : SFString('14 October 2023')),
+              content_ : SFString('29 October 2025')),
 
             meta(
               name_ : SFString('description'),
@@ -46,7 +46,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('reference'),
-              content_ : SFString('KoreanCharacterHumanMotion_Infotech2014_140706.pdf')),
+              content_ : SFString('../KoreanCharacterHumanMotion_Infotech2014_140706.pdf')),
 
             meta(
               name_ : SFString('reference'),
@@ -66,7 +66,7 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview')),
+              content_ : SFString('3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview')),
 
             meta(
               name_ : SFString('generator'),
@@ -74,11 +74,11 @@ var X3D0 =  X3D(
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('Gnu Image Manipulation Program, https://www.gimp.org')),
+              content_ : SFString('Gnu Image Manipulation Program, http://www.gimp.org')),
 
             meta(
               name_ : SFString('generator'),
-              content_ : SFString('X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit')),
+              content_ : SFString('X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit')),
 
             meta(
               name_ : SFString('license'),

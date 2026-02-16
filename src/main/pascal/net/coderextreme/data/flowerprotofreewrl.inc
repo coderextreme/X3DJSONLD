@@ -122,28 +122,28 @@ Appearance27.Material := Material28;
 ComposedCubeMapTexture29 := TComposedCubeMapTextureNode.Create;
 ImageTexture30 := TImageTextureNode.Create;
 ImageTexture30.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_back.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png']);
-{ .SetBack }
-ComposedCubeMapTexture29.Back := ImageTexture30;
+{ .SetBackTexture }
+ComposedCubeMapTexture29.BackTexture := ImageTexture30;
 ImageTexture31 := TImageTextureNode.Create;
 ImageTexture31.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_bottom.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png']);
-{ .SetBottom }
-ComposedCubeMapTexture29.Bottom := ImageTexture31;
+{ .SetBottomTexture }
+ComposedCubeMapTexture29.BottomTexture := ImageTexture31;
 ImageTexture32 := TImageTextureNode.Create;
 ImageTexture32.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_front.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png']);
-{ .SetFront }
-ComposedCubeMapTexture29.Front := ImageTexture32;
+{ .SetFrontTexture }
+ComposedCubeMapTexture29.FrontTexture := ImageTexture32;
 ImageTexture33 := TImageTextureNode.Create;
 ImageTexture33.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_left.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png']);
-{ .SetLeft }
-ComposedCubeMapTexture29.Left := ImageTexture33;
+{ .SetLeftTexture }
+ComposedCubeMapTexture29.LeftTexture := ImageTexture33;
 ImageTexture34 := TImageTextureNode.Create;
 ImageTexture34.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_right.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png']);
-{ .SetRight }
-ComposedCubeMapTexture29.Right := ImageTexture34;
+{ .SetRightTexture }
+ComposedCubeMapTexture29.RightTexture := ImageTexture34;
 ImageTexture35 := TImageTextureNode.Create;
 ImageTexture35.SetUrl(['../resources/images/all_probes/stpeters_cross/stpeters_top.png','https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png']);
-{ .SetTop }
-ComposedCubeMapTexture29.Top := ImageTexture35;
+{ .SetTopTexture }
+ComposedCubeMapTexture29.TopTexture := ImageTexture35;
 { .SetTexture }
 Appearance27.Texture := ComposedCubeMapTexture29;
 ComposedShader36 := TComposedShaderNode.Create;
@@ -225,7 +225,9 @@ field47.AccessType := 'inputOutput';
 field47.Value := '0';
 { .AddField }
 ComposedShader36.Field := field47;
-{ <field name='cube' type='SFNode' accessType="inputOutput"> <ComposedCubeMapTexture USE="texture"/> </field> }
+{ <field name='cube' type='SFNode' accessType="inputOutput"> }
+{ <ComposedCubeMapTexture USE="texture"/> }
+{ </field> }
 ShaderPart48 := TShaderPartNode.Create;
 ShaderPart48.Type := 'VERTEX';
 IS49 := TISNode.Create;

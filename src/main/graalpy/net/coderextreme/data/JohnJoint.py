@@ -81,7 +81,21 @@ Group16 = x3d.Group()
 Group16.addComments(x3d.CommentsBlock("""DEFS for markers of skeleton joints, segments, and sites"""))
 Transform17 = x3d.Transform()
 
-Transform17.addComments(x3d.CommentsBlock("""<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"""))
+Transform17.addComments(x3d.CommentsBlock("""<Transform translation='0 2 0'>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Shape DEF='HAnimRootShape'>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Sphere radius='0.02' />"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Appearance>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Appearance>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Shape>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Transform>"""))
 Transform18 = x3d.Transform()
 Transform18.setTranslation(x3d.doubleToFloat([0,2.1,0]))
 Shape19 = x3d.Shape()
@@ -125,7 +139,27 @@ Transform23.addChild(Shape24)
 
 Transform17.addChild(Transform23)
 
-Transform17.addComments(x3d.CommentsBlock("""<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>"""))
+Transform17.addComments(x3d.CommentsBlock("""<Transform translation='0 2.1 0'>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Shape DEF='HAnimSiteShape'>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</IndexedFaceSet>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Appearance>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""<Material diffuseColor='1 1 0' transparency='0.3'/>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Appearance>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Shape>"""))
+
+Transform17.addComments(x3d.CommentsBlock("""</Transform>"""))
 
 Group16.addChild(Transform17)
 

@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -97,7 +97,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:30 GMT"),
+                Content: stringPtr("20 October 2019"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -123,67 +123,81 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter14Prototypes/ViewFrustumPrototype.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.WorldInfo{
+                    Title: stringPtr("ViewFrustumPrototype.x3d"),
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("ViewFrustum"),
                     Appinfo: stringPtr("Display view frustum associated with a given pair of Viewpoint NavigationInfo nodes"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("initializeOnly"),
-                                Type: stringPtr("SFNode"),
                                 Name: stringPtr("ViewpointNode"),
+                                AccessType: stringPtr("initializeOnly"),
                                 Appinfo: stringPtr("required: insert Viewpoint DEF or USE node for view of interest"),
+                                Type: stringPtr("SFNode"),
+//NULL node, ProtoInstance must provide
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFNode"),
                             Name: stringPtr("NavigationInfoNode"),
-                            Appinfo: stringPtr("required: insert NavigationInfo DEF or USE node of interest"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
-                            Name: stringPtr("visible"),
-                            Value: stringPtr("true"),
-                            Appinfo: stringPtr("whether or not frustum geometry is rendered"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("lineColor"),
-                            Value: stringPtr("0.9 0.9 0.9"),
-                            Appinfo: stringPtr("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
-                            Name: stringPtr("frustumColor"),
-                            Value: stringPtr("0.8 0.8 0.8"),
-                            Appinfo: stringPtr("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("transparency"),
-                            Value: stringPtr("0.5"),
-                            Appinfo: stringPtr("transparency of ViewFrustum hull geometry, default value 0.5"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("aspectRatio"),
-                            Value: stringPtr("0.75"),
-                            Appinfo: stringPtr("assumed ratio height/width, default value 0.75"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("required: insert NavigationInfo DEF or USE node of interest"),
+                            Type: stringPtr("SFNode"),
+//NULL node, ProtoInstance must provide
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("visible"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("whether or not frustum geometry is rendered"),
                             Type: stringPtr("SFBool"),
+                            Value: stringPtr("true"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("lineColor"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("RGB color of ViewFrustum outline, default value 0.9 0.9 0.9"),
+                            Type: stringPtr("SFColor"),
+                            Value: stringPtr("0.9 0.9 0.9"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("frustumColor"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("RGB color of ViewFrustum hull geometry, default value 0.8 0.8 0.8"),
+                            Type: stringPtr("SFColor"),
+                            Value: stringPtr("0.8 0.8 0.8"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("transparency"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("transparency of ViewFrustum hull geometry, default value 0.5"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0.5"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("aspectRatio"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("assumed ratio height/width, default value 0.75"),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0.75"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("trace"),
+                            AccessType: stringPtr("initializeOnly"),
                             Appinfo: stringPtr("debug support, default false"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
@@ -193,6 +207,7 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("VisibilitySwitch"),
                                 },
+                                WhichChoice: int32Ptr(-1),
                                 &x3d.Transform{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("PositionTransform"),
@@ -205,18 +220,6 @@ func main() {
                                                 },
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
-                                                    Appearance: &x3d.Appearance{
-                                                        Material: &x3d.Material{
-                                                            IS: &x3d.IS{
-                                                                Material:                                                                Connect: []x3d.X3DNode{
-                                                                    &x3d.Connect{
-                                                                        NodeField: stringPtr("emissiveColor"),
-                                                                        ProtoField: stringPtr("lineColor"),
-                                                                },
-                                                                },
-                                                            },
-                                                        },
-                                                    },
                                                     Geometry: &x3d.IndexedLineSet{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("FrustumLines"),
@@ -229,20 +232,37 @@ func main() {
                                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0},[3]float32{0.0,0.0,0.0}},
                                                         },
                                                     },
+                                                    Appearance: &x3d.Appearance{
+                                                        Material: &x3d.Material{
+                                                            IS: &x3d.IS{
+                                                                Connect: []x3d.X3DNode{
+                                                                    &x3d.Connect{
+                                                                        NodeField: stringPtr("emissiveColor"),
+                                                                        ProtoField: stringPtr("lineColor"),
+                                                                },
+                                                                },
+                                                            },
+                                                        },
+                                                    },
                                                 },
                                                 &x3d.Shape{
+                                                    Geometry: &x3d.Extrusion{
+                                                        CoreX3DNode: x3d.CoreX3DNode{
+                                                            DEF: stringPtr("FrustumExtrusion"),
+                                                        },
+                                                    },
                                                     Appearance: &x3d.Appearance{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             DEF: stringPtr("FrustumAppearance"),
                                                         },
                                                         Material: &x3d.Material{
                                                             IS: &x3d.IS{
-                                                                Material:                                                                Connect: []x3d.X3DNode{
+                                                                Connect: []x3d.X3DNode{
                                                                     &x3d.Connect{
                                                                         NodeField: stringPtr("diffuseColor"),
                                                                         ProtoField: stringPtr("frustumColor"),
                                                                 },
-                                                                Material: &x3d.Connect{
+                                                                &x3d.Connect{
                                                                     NodeField: stringPtr("transparency"),
                                                                     ProtoField: stringPtr("transparency"),
                                                                 },
@@ -250,20 +270,15 @@ func main() {
                                                             },
                                                         },
                                                     },
-                                                    Geometry: &x3d.Extrusion{
-                                                        CoreX3DNode: x3d.CoreX3DNode{
-                                                            DEF: stringPtr("FrustumExtrusion"),
-                                                        },
-                                                    },
                                                 },
                                                 &x3d.Shape{
+                                                    Geometry: &x3d.Sphere{
+                                                        Radius: floatPtr(0.08),
+                                                    },
                                                     Appearance: &x3d.Appearance{
                                                         CoreX3DNode: x3d.CoreX3DNode{
                                                             USE: stringPtr("FrustumAppearance"),
                                                         },
-                                                    },
-                                                    Geometry: &x3d.Sphere{
-                                                        Radius: floatPtr(0.08),
                                                     },
                                                 },
                                             },
@@ -276,6 +291,7 @@ func main() {
                                     DEF: stringPtr("GeometryComputationScript"),
                                 },
                                 DirectOutput: boolPtr(true),
+                                Url: x3d.MFString{"ViewFrustumPrototypeScript.js"},
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
@@ -302,31 +318,33 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("inputOutput"),
-                                        Type: stringPtr("SFBool"),
                                         Name: stringPtr("visible"),
+                                        AccessType: stringPtr("inputOutput"),
                                         Appinfo: stringPtr("Whether or not frustum geometry is rendered"),
+                                        Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFInt32"),
                                     Name: stringPtr("visibilitySwitchSelection"),
+                                    AccessType: stringPtr("outputOnly"),
                                     Appinfo: stringPtr("Adjust Switch selection to make geometry visible or not"),
+                                    Type: stringPtr("SFInt32"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFNode"),
                                     Name: stringPtr("ViewpointNode"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFNode"),
+//initialization node (if any) goes here
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("NavigationInfoNode"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFNode"),
+//initialization node (if any) goes here
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("FrustumCoordinate"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Type: stringPtr("SFNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.Coordinate{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -336,9 +354,9 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("FrustumExtrusion"),
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFNode"),
-                                    Name: stringPtr("FrustumExtrusion"),
                                     Children: []x3d.X3DNode{
                                         &x3d.Extrusion{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -348,91 +366,88 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("recompute"),
                                     AccessType: stringPtr("inputOnly"),
                                     Type: stringPtr("SFBool"),
-                                    Name: stringPtr("recompute"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("aspectRatio"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Appinfo: stringPtr("assumed ratio height/width"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("position_changed"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("SFVec3f"),
-                                    Name: stringPtr("position_changed"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("orientation_changed"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("SFRotation"),
-                                    Name: stringPtr("orientation_changed"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("spine_changed"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFVec3f"),
-                                    Name: stringPtr("spine_changed"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("scale_changed"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFVec2f"),
-                                    Name: stringPtr("scale_changed"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("point_changed"),
                                     AccessType: stringPtr("outputOnly"),
                                     Type: stringPtr("MFVec3f"),
-                                    Name: stringPtr("point_changed"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("trace"),
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFBool"),
-                                    Name: stringPtr("trace"),
                                 },
-//ViewFrustumPrototypeScript.js
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("GeometryComputationScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("visibilitySwitchSelection"),
+                                FromNode: stringPtr("GeometryComputationScript"),
+                                ToField: stringPtr("whichChoice"),
                                 ToNode: stringPtr("VisibilitySwitch"),
-                                ToField: stringPtr("set_whichChoice"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("GeometryComputationScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("position_changed"),
+                                FromNode: stringPtr("GeometryComputationScript"),
+                                ToField: stringPtr("translation"),
                                 ToNode: stringPtr("PositionTransform"),
-                                ToField: stringPtr("set_translation"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("GeometryComputationScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("orientation_changed"),
+                                FromNode: stringPtr("GeometryComputationScript"),
+                                ToField: stringPtr("rotation"),
                                 ToNode: stringPtr("OrientationTransform"),
-                                ToField: stringPtr("set_rotation"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("GeometryComputationScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("spine_changed"),
-                                ToNode: stringPtr("FrustumExtrusion"),
+                                FromNode: stringPtr("GeometryComputationScript"),
                                 ToField: stringPtr("set_spine"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("GeometryComputationScript"),
-                                FromField: stringPtr("scale_changed"),
                                 ToNode: stringPtr("FrustumExtrusion"),
-                                ToField: stringPtr("set_scale"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("scale_changed"),
                                 FromNode: stringPtr("GeometryComputationScript"),
+                                ToField: stringPtr("set_scale"),
+                                ToNode: stringPtr("FrustumExtrusion"),
+                            },
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("point_changed"),
+                                FromNode: stringPtr("GeometryComputationScript"),
+                                ToField: stringPtr("point"),
                                 ToNode: stringPtr("FrustumCoordinate"),
-                                ToField: stringPtr("set_point"),
                             },
                         },
                     },
                 },
-                &x3d.WorldInfo{
-                    Title: stringPtr("ViewFrustumPrototype.x3d"),
-                },
+//Example use is in separate scene
                 &x3d.Anchor{
                     Description: stringPtr("ViewFrustum Example"),
                     Url: x3d.MFString{"ViewFrustumExample.x3d"},
@@ -446,8 +461,8 @@ func main() {
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"ViewFrustumPrototype.x3d", "is a Prototype declaration file.", "For an example scene using the prototype,", "click this text and view", "ViewFrustumExample.x3d"},
                                 FontStyle: &x3d.FontStyle{
-                                    Size: floatPtr(0.8),
                                     Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                    Size: floatPtr(0.8),
                                 },
                             },
                         },
@@ -471,13 +486,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/ViewFrustumPrototype.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -488,7 +503,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

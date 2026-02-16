@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
 component2.name = "Geospatial"
@@ -32,7 +32,7 @@ meta6.content = "4 March 2010"
 head1.children.append(meta6)
 meta7 = x3d.meta()
 meta7.name = "modified"
-meta7.content = "Mon, 09 Feb 2026 12:22:59 GMT"
+meta7.content = "20 October 2019"
 
 head1.children.append(meta7)
 meta8 = x3d.meta()
@@ -82,659 +82,681 @@ meta16.content = "mmog.ern.nps.edu restricted to internal access within NPS fire
 head1.children.append(meta16)
 meta17 = x3d.meta()
 meta17.name = "generator"
-meta17.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta17.content = "KmlToX3dViewpoints.xslt"
 
 head1.children.append(meta17)
+meta18 = x3d.meta()
+meta18.name = "generator"
+meta18.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta18)
+meta19 = x3d.meta()
+meta19.name = "license"
+meta19.content = "https://savage.nps.edu/Savage/license.html"
+
+head1.children.append(meta19)
 
 X3D0.head = head1
-Scene18 = x3d.Scene()
-ExternProtoDeclare19 = x3d.ExternProtoDeclare()
-ExternProtoDeclare19.name = "CrossHair"
-ExternProtoDeclare19.appinfo = "CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point"
-ExternProtoDeclare19.url = ["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"]
-field20 = x3d.field()
-field20.accessType = "initializeOnly"
-field20.type = "SFBool"
-field20.name = "enabled"
-field20.appinfo = "whether CrossHair prototype is enabled or not"
+Scene20 = x3d.Scene()
+WorldInfo21 = x3d.WorldInfo()
+WorldInfo21.title = "CaliforniaCampuses.x3d"
 
-ExternProtoDeclare19.field.append(field20)
-field21 = x3d.field()
-field21.accessType = "inputOnly"
-field21.type = "SFBool"
-field21.name = "set_enabled"
-field21.appinfo = "control whether enabled/disabled"
+Scene20.children.append(WorldInfo21)
+Switch22 = x3d.Switch(DEF="SwitchGlobes")
+Switch22.whichChoice = 0
+Switch22.children.append(x3d.Comment("""Select globe of interest. Warning: may need to keep alternate globes commented out to prevent browser caching."""))
+Inline23 = x3d.Inline()
+Inline23.url = ["http://x3d-earth.nps.edu/osmdemo.x3d"]
 
-ExternProtoDeclare19.field.append(field21)
-field22 = x3d.field()
-field22.accessType = "inputOutput"
-field22.type = "SFColor"
-field22.name = "markerColor"
-field22.appinfo = "color of CrossHair marker"
+Switch22.children.append(Inline23)
+Switch22.children.append(x3d.Comment("""<Inline load='false' url='\"http://mmog.ern.nps.edu/California/California.x3d\"'/>"""))
+Switch22.children.append(x3d.Comment("""<Inline load='false' url='\"http://x3d-earth.nps.edu/7_levels_plus/tiles/0/globe.x3d\"'/>"""))
+Switch22.children.append(x3d.Comment("""<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/MBARI1MinuteBathy/world.x3d\"'/>"""))
+Switch22.children.append(x3d.Comment("""<Inline load='false' url='\"http://x3d-earth.nps.edu/globe/SRTM30Plus/world.x3d\"'/>"""))
 
-ExternProtoDeclare19.field.append(field22)
-field23 = x3d.field()
-field23.accessType = "inputOutput"
-field23.type = "SFVec3f"
-field23.name = "scale"
-field23.appinfo = "size of CrossHair in meters"
+Scene20.children.append(Switch22)
+NavigationInfo24 = x3d.NavigationInfo()
+NavigationInfo24.transitionType = ["ANIMATE"]
 
-ExternProtoDeclare19.field.append(field23)
-field24 = x3d.field()
-field24.accessType = "inputOutput"
-field24.type = "SFVec3f"
-field24.name = "positionOffsetFromCamera"
-field24.appinfo = "distance in front of HUD viewpoint"
+Scene20.children.append(NavigationInfo24)
+Group25 = x3d.Group(DEF="PlacemarkGroup")
+GeoViewpoint26 = x3d.GeoViewpoint(DEF="View01")
+GeoViewpoint26.description = "Naval Postgraduate School"
+GeoViewpoint26.orientation = [1,0,0,-1.57]
+GeoViewpoint26.position = [36.595599,-121.877148,250000]
 
-ExternProtoDeclare19.field.append(field24)
+Group25.children.append(GeoViewpoint26)
+GeoViewpoint27 = x3d.GeoViewpoint(DEF="View02")
+GeoViewpoint27.description = "University of California Davis"
+GeoViewpoint27.orientation = [1,0,0,-1.57]
+GeoViewpoint27.position = [38.53650615157984,-121.7489628616831,250000]
 
-Scene18.children.append(ExternProtoDeclare19)
-ExternProtoDeclare25 = x3d.ExternProtoDeclare()
-ExternProtoDeclare25.name = "HeadsUpDisplay"
-ExternProtoDeclare25.appinfo = "Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location"
-ExternProtoDeclare25.url = ["../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"]
-field26 = x3d.field()
-field26.accessType = "inputOutput"
-field26.type = "MFNode"
-field26.name = "children"
-field26.appinfo = "X3D content positioned at HUD offset"
+Group25.children.append(GeoViewpoint27)
+GeoViewpoint28 = x3d.GeoViewpoint(DEF="View03")
+GeoViewpoint28.description = "University of California Berkeley"
+GeoViewpoint28.orientation = [1,0,0,-1.57]
+GeoViewpoint28.position = [37.86963434512325,-122.2593873127355,250000]
 
-ExternProtoDeclare25.field.append(field26)
-field27 = x3d.field()
-field27.accessType = "inputOutput"
-field27.type = "SFVec3f"
-field27.name = "screenOffset"
-field27.appinfo = "offset position for HUD relative to current view location, default 0 0 -5"
+Group25.children.append(GeoViewpoint28)
+GeoViewpoint29 = x3d.GeoViewpoint(DEF="View04")
+GeoViewpoint29.description = "University of California San Francisco"
+GeoViewpoint29.orientation = [1,0,0,-1.57]
+GeoViewpoint29.position = [37.76340647188392,-122.4582475377715,250000]
 
-ExternProtoDeclare25.field.append(field27)
-field28 = x3d.field()
-field28.accessType = "outputOnly"
-field28.type = "SFVec3f"
-field28.name = "position_changed"
-field28.appinfo = "HUD position update (in world coordinates) relative to original location"
+Group25.children.append(GeoViewpoint29)
+GeoViewpoint30 = x3d.GeoViewpoint(DEF="View05")
+GeoViewpoint30.description = "University of California Santa Cruz"
+GeoViewpoint30.orientation = [1,0,0,-1.57]
+GeoViewpoint30.position = [36.99628443046043,-122.0534325473795,250000]
 
-ExternProtoDeclare25.field.append(field28)
-field29 = x3d.field()
-field29.accessType = "outputOnly"
-field29.type = "SFRotation"
-field29.name = "orientation_changed"
-field29.appinfo = "HUD orientation update relative to original location"
+Group25.children.append(GeoViewpoint30)
+GeoViewpoint31 = x3d.GeoViewpoint(DEF="View06")
+GeoViewpoint31.description = "University of California Merced"
+GeoViewpoint31.orientation = [1,0,0,-1.57]
+GeoViewpoint31.position = [37.365508575977,-120.4252597059142,250000]
 
-ExternProtoDeclare25.field.append(field29)
+Group25.children.append(GeoViewpoint31)
+GeoViewpoint32 = x3d.GeoViewpoint(DEF="View07")
+GeoViewpoint32.description = "University of California Santa Barbara"
+GeoViewpoint32.orientation = [1,0,0,-1.57]
+GeoViewpoint32.position = [34.41124450961521,-119.8479940053906,250000]
 
-Scene18.children.append(ExternProtoDeclare25)
-ExternProtoDeclare30 = x3d.ExternProtoDeclare()
-ExternProtoDeclare30.name = "ViewpointSequencer"
-ExternProtoDeclare30.appinfo = "Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene"
-ExternProtoDeclare30.url = ["../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"]
-field31 = x3d.field()
-field31.accessType = "initializeOnly"
-field31.type = "MFNode"
-field31.name = "viewpoints"
-field31.appinfo = "Viewpoint USE nodes that are sequentially bound"
+Group25.children.append(GeoViewpoint32)
+GeoViewpoint33 = x3d.GeoViewpoint(DEF="View08")
+GeoViewpoint33.description = "University of California Los Angeles"
+GeoViewpoint33.orientation = [1,0,0,-1.57]
+GeoViewpoint33.position = [34.07224474392262,-118.4408472225642,250000]
 
-ExternProtoDeclare30.field.append(field31)
-field32 = x3d.field()
-field32.accessType = "inputOutput"
-field32.type = "SFTime"
-field32.name = "interval"
-field32.appinfo = "number of seconds between viewpoint shifts"
+Group25.children.append(GeoViewpoint33)
+GeoViewpoint34 = x3d.GeoViewpoint(DEF="View09")
+GeoViewpoint34.description = "University of California Irvine"
+GeoViewpoint34.orientation = [1,0,0,-1.57]
+GeoViewpoint34.position = [33.64623283675919,-117.8427064139082,250000]
 
-ExternProtoDeclare30.field.append(field32)
-field33 = x3d.field()
-field33.accessType = "inputOutput"
-field33.type = "SFBool"
-field33.name = "enabled"
-field33.appinfo = "whether ViewpointSequencer is enabled or not"
+Group25.children.append(GeoViewpoint34)
+GeoViewpoint35 = x3d.GeoViewpoint(DEF="View10")
+GeoViewpoint35.description = "University of California Riverside"
+GeoViewpoint35.orientation = [1,0,0,-1.57]
+GeoViewpoint35.position = [33.97350567066717,-117.3281649569839,250000]
 
-ExternProtoDeclare30.field.append(field33)
-field34 = x3d.field()
-field34.accessType = "inputOnly"
-field34.type = "SFBool"
-field34.name = "set_enabled"
-field34.appinfo = "whether ViewpointSequencer is enabled or not"
+Group25.children.append(GeoViewpoint35)
+GeoViewpoint36 = x3d.GeoViewpoint(DEF="View11")
+GeoViewpoint36.description = "University of California San Diego"
+GeoViewpoint36.orientation = [1,0,0,-1.57]
+GeoViewpoint36.position = [32.87612136607509,-117.2367298240259,250000]
 
-ExternProtoDeclare30.field.append(field34)
-field35 = x3d.field()
-field35.accessType = "inputOnly"
-field35.type = "SFBool"
-field35.name = "previous"
-field35.appinfo = "bind previous Viewpoint in list"
+Group25.children.append(GeoViewpoint36)
+GeoViewpoint37 = x3d.GeoViewpoint(DEF="View12")
+GeoViewpoint37.description = "Humboldt State University"
+GeoViewpoint37.orientation = [1,0,0,-1.57]
+GeoViewpoint37.position = [40.87630235623448,-124.0785789217266,250000]
 
-ExternProtoDeclare30.field.append(field35)
-field36 = x3d.field()
-field36.accessType = "inputOnly"
-field36.type = "SFBool"
-field36.name = "next"
-field36.appinfo = "bind next Viewpoint in list"
+Group25.children.append(GeoViewpoint37)
+GeoViewpoint38 = x3d.GeoViewpoint(DEF="View13")
+GeoViewpoint38.description = "California State University, Chico"
+GeoViewpoint38.orientation = [1,0,0,-1.57]
+GeoViewpoint38.position = [39.73031527724385,-121.8453722745223,250000]
 
-ExternProtoDeclare30.field.append(field36)
-field37 = x3d.field()
-field37.accessType = "inputOutput"
-field37.type = "MFString"
-field37.name = "toggleMessage"
-field37.appinfo = "Select message to toggle ViewpointSequencer"
+Group25.children.append(GeoViewpoint38)
+GeoViewpoint39 = x3d.GeoViewpoint(DEF="View14")
+GeoViewpoint39.description = "California State University Sacramento"
+GeoViewpoint39.orientation = [1,0,0,-1.57]
+GeoViewpoint39.position = [38.5626517618963,-121.4244636520556,250000]
 
-ExternProtoDeclare30.field.append(field37)
-field38 = x3d.field()
-field38.accessType = "initializeOnly"
-field38.type = "SFFloat"
-field38.name = "toggleMessageFontSize"
-field38.appinfo = "Color for toggleMessage text"
+Group25.children.append(GeoViewpoint39)
+GeoViewpoint40 = x3d.GeoViewpoint(DEF="View15")
+GeoViewpoint40.description = "Sonoma State University"
+GeoViewpoint40.orientation = [1,0,0,-1.57]
+GeoViewpoint40.position = [38.33922929793606,-122.6744333530031,250000]
 
-ExternProtoDeclare30.field.append(field38)
-field39 = x3d.field()
-field39.accessType = "inputOutput"
-field39.type = "SFColor"
-field39.name = "toggleMessageColor"
-field39.appinfo = "Color for toggleMessage text"
+Group25.children.append(GeoViewpoint40)
+GeoViewpoint41 = x3d.GeoViewpoint(DEF="View16")
+GeoViewpoint41.description = "California Maritime Academy"
+GeoViewpoint41.orientation = [1,0,0,-1.57]
+GeoViewpoint41.position = [38.06907065059484,-122.2309147135222,250000]
 
-ExternProtoDeclare30.field.append(field39)
-field40 = x3d.field()
-field40.accessType = "inputOutput"
-field40.type = "SFBool"
-field40.name = "traceEnabled"
-field40.appinfo = "enable console output"
+Group25.children.append(GeoViewpoint41)
+GeoViewpoint42 = x3d.GeoViewpoint(DEF="View17")
+GeoViewpoint42.description = "San Francisco State University"
+GeoViewpoint42.orientation = [1,0,0,-1.57]
+GeoViewpoint42.position = [37.722876,-122.4781512190666,250000]
 
-ExternProtoDeclare30.field.append(field40)
+Group25.children.append(GeoViewpoint42)
+GeoViewpoint43 = x3d.GeoViewpoint(DEF="View18")
+GeoViewpoint43.description = "California State University, East Bay"
+GeoViewpoint43.orientation = [1,0,0,-1.57]
+GeoViewpoint43.position = [37.65707914139907,-122.0569190659761,250000]
 
-Scene18.children.append(ExternProtoDeclare30)
-ExternProtoDeclare41 = x3d.ExternProtoDeclare()
-ExternProtoDeclare41.name = "ViewPositionOrientation"
-ExternProtoDeclare41.appinfo = "ViewPositionOrientation provides provides console output of local position and orientation as user navigates"
-ExternProtoDeclare41.url = ["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"]
-field42 = x3d.field()
-field42.accessType = "inputOutput"
-field42.type = "SFBool"
-field42.name = "enabled"
-field42.appinfo = "Whether or not ViewPositionOrientation sends output to console"
+Group25.children.append(GeoViewpoint43)
+GeoViewpoint44 = x3d.GeoViewpoint(DEF="View19")
+GeoViewpoint44.description = "California State University Stanislaus"
+GeoViewpoint44.orientation = [1,0,0,-1.57]
+GeoViewpoint44.position = [37.52552478005697,-120.8563508560606,250000]
 
-ExternProtoDeclare41.field.append(field42)
-field43 = x3d.field()
-field43.accessType = "initializeOnly"
-field43.type = "SFBool"
-field43.name = "traceEnabled"
-field43.appinfo = "Output internal trace messages for debugging this node, intended for developer use only"
+Group25.children.append(GeoViewpoint44)
+GeoViewpoint45 = x3d.GeoViewpoint(DEF="View20")
+GeoViewpoint45.description = "San Jose State University"
+GeoViewpoint45.orientation = [1,0,0,-1.57]
+GeoViewpoint45.position = [37.33580940527095,-121.8815343755784,250000]
 
-ExternProtoDeclare41.field.append(field43)
-field44 = x3d.field()
-field44.accessType = "inputOnly"
-field44.type = "SFBool"
-field44.name = "set_traceEnabled"
-field44.appinfo = "Ability to turn output tracing on/off at runtime"
+Group25.children.append(GeoViewpoint45)
+GeoViewpoint46 = x3d.GeoViewpoint(DEF="View21")
+GeoViewpoint46.description = "California State University, Monterey Bay"
+GeoViewpoint46.orientation = [1,0,0,-1.57]
+GeoViewpoint46.position = [36.6538071781493,-121.7984465276711,250000]
 
-ExternProtoDeclare41.field.append(field44)
-field45 = x3d.field()
-field45.accessType = "outputOnly"
-field45.type = "SFVec3f"
-field45.name = "position_changed"
-field45.appinfo = "Output local position"
+Group25.children.append(GeoViewpoint46)
+GeoViewpoint47 = x3d.GeoViewpoint(DEF="View22")
+GeoViewpoint47.description = "Fresno State University"
+GeoViewpoint47.orientation = [1,0,0,-1.57]
+GeoViewpoint47.position = [36.812166,-119.7451552005852,250000]
 
-ExternProtoDeclare41.field.append(field45)
-field46 = x3d.field()
-field46.accessType = "outputOnly"
-field46.type = "SFRotation"
-field46.name = "orientation_changed"
-field46.appinfo = "Output local orientation"
+Group25.children.append(GeoViewpoint47)
+GeoViewpoint48 = x3d.GeoViewpoint(DEF="View23")
+GeoViewpoint48.description = "California State University, Bakersfield"
+GeoViewpoint48.orientation = [1,0,0,-1.57]
+GeoViewpoint48.position = [35.350804,-119.1043226128032,250000]
 
-ExternProtoDeclare41.field.append(field46)
-field47 = x3d.field()
-field47.accessType = "outputOnly"
-field47.type = "MFString"
-field47.name = "outputViewpointString"
-field47.appinfo = "MFString value of new Viewpoint"
+Group25.children.append(GeoViewpoint48)
+GeoViewpoint49 = x3d.GeoViewpoint(DEF="View24")
+GeoViewpoint49.description = "California Polytechnic State University"
+GeoViewpoint49.orientation = [1,0,0,-1.57]
+GeoViewpoint49.position = [35.30115692599171,-120.6595761796351,250000]
 
-ExternProtoDeclare41.field.append(field47)
+Group25.children.append(GeoViewpoint49)
+GeoViewpoint50 = x3d.GeoViewpoint(DEF="View25")
+GeoViewpoint50.description = "California State University, Channel Islands"
+GeoViewpoint50.orientation = [1,0,0,-1.57]
+GeoViewpoint50.position = [34.1624126428852,-119.0425264841287,250000]
 
-Scene18.children.append(ExternProtoDeclare41)
-WorldInfo48 = x3d.WorldInfo()
-WorldInfo48.title = "CaliforniaCampuses.x3d"
+Group25.children.append(GeoViewpoint50)
+GeoViewpoint51 = x3d.GeoViewpoint(DEF="View26")
+GeoViewpoint51.description = "California State University, Northridge"
+GeoViewpoint51.orientation = [1,0,0,-1.57]
+GeoViewpoint51.position = [34.23959265263849,-118.5284272400904,250000]
 
-Scene18.children.append(WorldInfo48)
-Switch49 = x3d.Switch(DEF="SwitchGlobes")
-Switch49.whichChoice = 0
-Inline50 = x3d.Inline()
-Inline50.url = ["http://x3d-earth.nps.edu/osmdemo.x3d"]
+Group25.children.append(GeoViewpoint51)
+GeoViewpoint52 = x3d.GeoViewpoint(DEF="View27")
+GeoViewpoint52.description = "California State University, Los Angeles"
+GeoViewpoint52.orientation = [1,0,0,-1.57]
+GeoViewpoint52.position = [34.06645996626264,-118.1682050902557,250000]
 
-Switch49.children.append(Inline50)
-
-Scene18.children.append(Switch49)
-NavigationInfo51 = x3d.NavigationInfo()
-NavigationInfo51.transitionType = ["ANIMATE"]
-
-Scene18.children.append(NavigationInfo51)
-Group52 = x3d.Group(DEF="PlacemarkGroup")
-GeoViewpoint53 = x3d.GeoViewpoint(DEF="View01")
-GeoViewpoint53.description = "Naval Postgraduate School"
-GeoViewpoint53.position = [36.595599,-121.877148,250000]
+Group25.children.append(GeoViewpoint52)
+GeoViewpoint53 = x3d.GeoViewpoint(DEF="View28")
+GeoViewpoint53.description = "California State Polytechnic University, Pomona"
 GeoViewpoint53.orientation = [1,0,0,-1.57]
+GeoViewpoint53.position = [34.05727150000314,-117.8215320234812,250000]
 
-Group52.children.append(GeoViewpoint53)
-GeoViewpoint54 = x3d.GeoViewpoint(DEF="View02")
-GeoViewpoint54.description = "University of California Davis"
-GeoViewpoint54.position = [38.5365061515798,-121.748962861683,250000]
+Group25.children.append(GeoViewpoint53)
+GeoViewpoint54 = x3d.GeoViewpoint(DEF="View29")
+GeoViewpoint54.description = "California State University, San Bernardino"
 GeoViewpoint54.orientation = [1,0,0,-1.57]
+GeoViewpoint54.position = [34.18180116432101,-117.3243676664719,250000]
 
-Group52.children.append(GeoViewpoint54)
-GeoViewpoint55 = x3d.GeoViewpoint(DEF="View03")
-GeoViewpoint55.description = "University of California Berkeley"
-GeoViewpoint55.position = [37.8696343451233,-122.259387312736,250000]
+Group25.children.append(GeoViewpoint54)
+GeoViewpoint55 = x3d.GeoViewpoint(DEF="View30")
+GeoViewpoint55.description = "California State University, Fullerton"
 GeoViewpoint55.orientation = [1,0,0,-1.57]
+GeoViewpoint55.position = [33.882522,-117.8868367869023,250000]
 
-Group52.children.append(GeoViewpoint55)
-GeoViewpoint56 = x3d.GeoViewpoint(DEF="View04")
-GeoViewpoint56.description = "University of California San Francisco"
-GeoViewpoint56.position = [37.7634064718839,-122.458247537772,250000]
+Group25.children.append(GeoViewpoint55)
+GeoViewpoint56 = x3d.GeoViewpoint(DEF="View31")
+GeoViewpoint56.description = "California State University Dominguez Hills"
 GeoViewpoint56.orientation = [1,0,0,-1.57]
+GeoViewpoint56.position = [33.86463396857103,-118.2553596272055,250000]
 
-Group52.children.append(GeoViewpoint56)
-GeoViewpoint57 = x3d.GeoViewpoint(DEF="View05")
-GeoViewpoint57.description = "University of California Santa Cruz"
-GeoViewpoint57.position = [36.9962844304604,-122.05343254738,250000]
+Group25.children.append(GeoViewpoint56)
+GeoViewpoint57 = x3d.GeoViewpoint(DEF="View32")
+GeoViewpoint57.description = "California State University, Long Beach"
 GeoViewpoint57.orientation = [1,0,0,-1.57]
+GeoViewpoint57.position = [33.78196696470824,-118.112678253688,250000]
 
-Group52.children.append(GeoViewpoint57)
-GeoViewpoint58 = x3d.GeoViewpoint(DEF="View06")
-GeoViewpoint58.description = "University of California Merced"
-GeoViewpoint58.position = [37.365508575977,-120.425259705914,250000]
+Group25.children.append(GeoViewpoint57)
+GeoViewpoint58 = x3d.GeoViewpoint(DEF="View33")
+GeoViewpoint58.description = "California State University, San Marcos"
 GeoViewpoint58.orientation = [1,0,0,-1.57]
+GeoViewpoint58.position = [33.12837619265174,-117.1600194071002,250000]
 
-Group52.children.append(GeoViewpoint58)
-GeoViewpoint59 = x3d.GeoViewpoint(DEF="View07")
-GeoViewpoint59.description = "University of California Santa Barbara"
-GeoViewpoint59.position = [34.4112445096152,-119.847994005391,250000]
+Group25.children.append(GeoViewpoint58)
+GeoViewpoint59 = x3d.GeoViewpoint(DEF="View34")
+GeoViewpoint59.description = "San Diego State University"
 GeoViewpoint59.orientation = [1,0,0,-1.57]
+GeoViewpoint59.position = [32.77593126586385,-117.0722876242553,250000]
 
-Group52.children.append(GeoViewpoint59)
-GeoViewpoint60 = x3d.GeoViewpoint(DEF="View08")
-GeoViewpoint60.description = "University of California Los Angeles"
-GeoViewpoint60.position = [34.0722447439226,-118.440847222564,250000]
+Group25.children.append(GeoViewpoint59)
+GeoViewpoint60 = x3d.GeoViewpoint(DEF="View35")
+GeoViewpoint60.description = "CENIC"
 GeoViewpoint60.orientation = [1,0,0,-1.57]
+GeoViewpoint60.position = [33.879947,-118.027903,250000]
 
-Group52.children.append(GeoViewpoint60)
-GeoViewpoint61 = x3d.GeoViewpoint(DEF="View09")
-GeoViewpoint61.description = "University of California Irvine"
-GeoViewpoint61.position = [33.6462328367592,-117.842706413908,250000]
-GeoViewpoint61.orientation = [1,0,0,-1.57]
+Group25.children.append(GeoViewpoint60)
 
-Group52.children.append(GeoViewpoint61)
-GeoViewpoint62 = x3d.GeoViewpoint(DEF="View10")
-GeoViewpoint62.description = "University of California Riverside"
-GeoViewpoint62.position = [33.9735056706672,-117.328164956984,250000]
-GeoViewpoint62.orientation = [1,0,0,-1.57]
+Scene20.children.append(Group25)
+Scene20.children.append(x3d.Comment("""===================="""))
+ExternProtoDeclare61 = x3d.ExternProtoDeclare()
+ExternProtoDeclare61.name = "CrossHair"
+ExternProtoDeclare61.appinfo = "CrossHair prototype provides a heads-up display (HUD) crosshair at the view center, which is useful for assessing NavigationInfo lookAt point"
+ExternProtoDeclare61.url = ["../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.x3d#CrossHair","../../Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair","https://savage.nps.edu/Savage/Tools/HeadsUpDisplays/CrossHairPrototype.wrl#CrossHair"]
+field62 = x3d.field()
+field62.name = "enabled"
+field62.accessType = "initializeOnly"
+field62.appinfo = "whether CrossHair prototype is enabled or not"
+field62.type = "SFBool"
 
-Group52.children.append(GeoViewpoint62)
-GeoViewpoint63 = x3d.GeoViewpoint(DEF="View11")
-GeoViewpoint63.description = "University of California San Diego"
-GeoViewpoint63.position = [32.8761213660751,-117.236729824026,250000]
-GeoViewpoint63.orientation = [1,0,0,-1.57]
+ExternProtoDeclare61.field.append(field62)
+field63 = x3d.field()
+field63.name = "set_enabled"
+field63.accessType = "inputOnly"
+field63.appinfo = "control whether enabled/disabled"
+field63.type = "SFBool"
 
-Group52.children.append(GeoViewpoint63)
-GeoViewpoint64 = x3d.GeoViewpoint(DEF="View12")
-GeoViewpoint64.description = "Humboldt State University"
-GeoViewpoint64.position = [40.8763023562345,-124.078578921727,250000]
-GeoViewpoint64.orientation = [1,0,0,-1.57]
+ExternProtoDeclare61.field.append(field63)
+field64 = x3d.field()
+field64.name = "markerColor"
+field64.accessType = "inputOutput"
+field64.appinfo = "color of CrossHair marker"
+field64.type = "SFColor"
 
-Group52.children.append(GeoViewpoint64)
-GeoViewpoint65 = x3d.GeoViewpoint(DEF="View13")
-GeoViewpoint65.description = "California State University, Chico"
-GeoViewpoint65.position = [39.7303152772439,-121.845372274522,250000]
-GeoViewpoint65.orientation = [1,0,0,-1.57]
+ExternProtoDeclare61.field.append(field64)
+field65 = x3d.field()
+field65.name = "scale"
+field65.accessType = "inputOutput"
+field65.appinfo = "size of CrossHair in meters"
+field65.type = "SFVec3f"
 
-Group52.children.append(GeoViewpoint65)
-GeoViewpoint66 = x3d.GeoViewpoint(DEF="View14")
-GeoViewpoint66.description = "California State University Sacramento"
-GeoViewpoint66.position = [38.5626517618963,-121.424463652056,250000]
-GeoViewpoint66.orientation = [1,0,0,-1.57]
+ExternProtoDeclare61.field.append(field65)
+field66 = x3d.field()
+field66.name = "positionOffsetFromCamera"
+field66.accessType = "inputOutput"
+field66.appinfo = "distance in front of HUD viewpoint"
+field66.type = "SFVec3f"
 
-Group52.children.append(GeoViewpoint66)
-GeoViewpoint67 = x3d.GeoViewpoint(DEF="View15")
-GeoViewpoint67.description = "Sonoma State University"
-GeoViewpoint67.position = [38.3392292979361,-122.674433353003,250000]
-GeoViewpoint67.orientation = [1,0,0,-1.57]
+ExternProtoDeclare61.field.append(field66)
 
-Group52.children.append(GeoViewpoint67)
-GeoViewpoint68 = x3d.GeoViewpoint(DEF="View16")
-GeoViewpoint68.description = "California Maritime Academy"
-GeoViewpoint68.position = [38.0690706505948,-122.230914713522,250000]
-GeoViewpoint68.orientation = [1,0,0,-1.57]
+Scene20.children.append(ExternProtoDeclare61)
+ProtoInstance67 = x3d.ProtoInstance(DEF="CrossHairInstance")
+ProtoInstance67.name = "CrossHair"
+fieldValue68 = x3d.fieldValue()
+fieldValue68.name = "enabled"
+fieldValue68.value = "true"
 
-Group52.children.append(GeoViewpoint68)
-GeoViewpoint69 = x3d.GeoViewpoint(DEF="View17")
-GeoViewpoint69.description = "San Francisco State University"
-GeoViewpoint69.position = [37.722876,-122.478151219067,250000]
-GeoViewpoint69.orientation = [1,0,0,-1.57]
+ProtoInstance67.fieldValue.append(fieldValue68)
+fieldValue69 = x3d.fieldValue()
+fieldValue69.name = "markerColor"
+fieldValue69.value = "0.1 0.8 0.1"
 
-Group52.children.append(GeoViewpoint69)
-GeoViewpoint70 = x3d.GeoViewpoint(DEF="View18")
-GeoViewpoint70.description = "California State University, East Bay"
-GeoViewpoint70.position = [37.6570791413991,-122.056919065976,250000]
-GeoViewpoint70.orientation = [1,0,0,-1.57]
+ProtoInstance67.fieldValue.append(fieldValue69)
+fieldValue70 = x3d.fieldValue()
+fieldValue70.name = "scale"
+fieldValue70.value = "0.5 0.5 0.5"
 
-Group52.children.append(GeoViewpoint70)
-GeoViewpoint71 = x3d.GeoViewpoint(DEF="View19")
-GeoViewpoint71.description = "California State University Stanislaus"
-GeoViewpoint71.position = [37.525524780057,-120.856350856061,250000]
-GeoViewpoint71.orientation = [1,0,0,-1.57]
+ProtoInstance67.fieldValue.append(fieldValue70)
+fieldValue71 = x3d.fieldValue()
+fieldValue71.name = "positionOffsetFromCamera"
+fieldValue71.value = "0 0 -5"
 
-Group52.children.append(GeoViewpoint71)
-GeoViewpoint72 = x3d.GeoViewpoint(DEF="View20")
-GeoViewpoint72.description = "San Jose State University"
-GeoViewpoint72.position = [37.335809405271,-121.881534375578,250000]
-GeoViewpoint72.orientation = [1,0,0,-1.57]
+ProtoInstance67.fieldValue.append(fieldValue71)
 
-Group52.children.append(GeoViewpoint72)
-GeoViewpoint73 = x3d.GeoViewpoint(DEF="View21")
-GeoViewpoint73.description = "California State University, Monterey Bay"
-GeoViewpoint73.position = [36.6538071781493,-121.798446527671,250000]
-GeoViewpoint73.orientation = [1,0,0,-1.57]
+Scene20.children.append(ProtoInstance67)
+Scene20.children.append(x3d.Comment("""===================="""))
+ExternProtoDeclare72 = x3d.ExternProtoDeclare()
+ExternProtoDeclare72.name = "HeadsUpDisplay"
+ExternProtoDeclare72.appinfo = "Heads-up display (HUD) keeps child geometry aligned on screen in a consistent location"
+ExternProtoDeclare72.url = ["../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.x3d#HeadsUpDisplay","../../../X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter14Prototypes/HeadsUpDisplayPrototype.wrl#HeadsUpDisplay"]
+field73 = x3d.field()
+field73.name = "children"
+field73.accessType = "inputOutput"
+field73.appinfo = "X3D content positioned at HUD offset"
+field73.type = "MFNode"
 
-Group52.children.append(GeoViewpoint73)
-GeoViewpoint74 = x3d.GeoViewpoint(DEF="View22")
-GeoViewpoint74.description = "Fresno State University"
-GeoViewpoint74.position = [36.812166,-119.745155200585,250000]
-GeoViewpoint74.orientation = [1,0,0,-1.57]
+ExternProtoDeclare72.field.append(field73)
+field74 = x3d.field()
+field74.name = "screenOffset"
+field74.accessType = "inputOutput"
+field74.appinfo = "offset position for HUD relative to current view location, default 0 0 -5"
+field74.type = "SFVec3f"
 
-Group52.children.append(GeoViewpoint74)
-GeoViewpoint75 = x3d.GeoViewpoint(DEF="View23")
-GeoViewpoint75.description = "California State University, Bakersfield"
-GeoViewpoint75.position = [35.350804,-119.104322612803,250000]
-GeoViewpoint75.orientation = [1,0,0,-1.57]
+ExternProtoDeclare72.field.append(field74)
+field75 = x3d.field()
+field75.name = "position_changed"
+field75.accessType = "outputOnly"
+field75.appinfo = "HUD position update (in world coordinates) relative to original location"
+field75.type = "SFVec3f"
 
-Group52.children.append(GeoViewpoint75)
-GeoViewpoint76 = x3d.GeoViewpoint(DEF="View24")
-GeoViewpoint76.description = "California Polytechnic State University"
-GeoViewpoint76.position = [35.3011569259917,-120.659576179635,250000]
-GeoViewpoint76.orientation = [1,0,0,-1.57]
+ExternProtoDeclare72.field.append(field75)
+field76 = x3d.field()
+field76.name = "orientation_changed"
+field76.accessType = "outputOnly"
+field76.appinfo = "HUD orientation update relative to original location"
+field76.type = "SFRotation"
 
-Group52.children.append(GeoViewpoint76)
-GeoViewpoint77 = x3d.GeoViewpoint(DEF="View25")
-GeoViewpoint77.description = "California State University, Channel Islands"
-GeoViewpoint77.position = [34.1624126428852,-119.042526484129,250000]
-GeoViewpoint77.orientation = [1,0,0,-1.57]
+ExternProtoDeclare72.field.append(field76)
 
-Group52.children.append(GeoViewpoint77)
-GeoViewpoint78 = x3d.GeoViewpoint(DEF="View26")
-GeoViewpoint78.description = "California State University, Northridge"
-GeoViewpoint78.position = [34.2395926526385,-118.52842724009,250000]
-GeoViewpoint78.orientation = [1,0,0,-1.57]
+Scene20.children.append(ExternProtoDeclare72)
+Scene20.children.append(x3d.Comment("""===================="""))
+ExternProtoDeclare77 = x3d.ExternProtoDeclare()
+ExternProtoDeclare77.name = "ViewpointSequencer"
+ExternProtoDeclare77.appinfo = "Sequentially binds each Viewpoint in a set of Viewpoint USE nodes, creating an automatic tour for a scene"
+ExternProtoDeclare77.url = ["../../Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.x3d#ViewpointSequencer","../../Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer","https://savage.nps.edu/Savage/Tools/Animation/ViewpointSequencerPrototype.wrl#ViewpointSequencer"]
+field78 = x3d.field()
+field78.name = "viewpoints"
+field78.accessType = "initializeOnly"
+field78.appinfo = "Viewpoint USE nodes that are sequentially bound"
+field78.type = "MFNode"
 
-Group52.children.append(GeoViewpoint78)
-GeoViewpoint79 = x3d.GeoViewpoint(DEF="View27")
-GeoViewpoint79.description = "California State University, Los Angeles"
-GeoViewpoint79.position = [34.0664599662626,-118.168205090256,250000]
-GeoViewpoint79.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field78)
+field79 = x3d.field()
+field79.name = "interval"
+field79.accessType = "inputOutput"
+field79.appinfo = "number of seconds between viewpoint shifts"
+field79.type = "SFTime"
 
-Group52.children.append(GeoViewpoint79)
-GeoViewpoint80 = x3d.GeoViewpoint(DEF="View28")
-GeoViewpoint80.description = "California State Polytechnic University, Pomona"
-GeoViewpoint80.position = [34.0572715000031,-117.821532023481,250000]
-GeoViewpoint80.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field79)
+field80 = x3d.field()
+field80.name = "enabled"
+field80.accessType = "inputOutput"
+field80.appinfo = "whether ViewpointSequencer is enabled or not"
+field80.type = "SFBool"
 
-Group52.children.append(GeoViewpoint80)
-GeoViewpoint81 = x3d.GeoViewpoint(DEF="View29")
-GeoViewpoint81.description = "California State University, San Bernardino"
-GeoViewpoint81.position = [34.181801164321,-117.324367666472,250000]
-GeoViewpoint81.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field80)
+field81 = x3d.field()
+field81.name = "set_enabled"
+field81.accessType = "inputOnly"
+field81.appinfo = "whether ViewpointSequencer is enabled or not"
+field81.type = "SFBool"
 
-Group52.children.append(GeoViewpoint81)
-GeoViewpoint82 = x3d.GeoViewpoint(DEF="View30")
-GeoViewpoint82.description = "California State University, Fullerton"
-GeoViewpoint82.position = [33.882522,-117.886836786902,250000]
-GeoViewpoint82.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field81)
+field82 = x3d.field()
+field82.name = "previous"
+field82.accessType = "inputOnly"
+field82.appinfo = "bind previous Viewpoint in list"
+field82.type = "SFBool"
 
-Group52.children.append(GeoViewpoint82)
-GeoViewpoint83 = x3d.GeoViewpoint(DEF="View31")
-GeoViewpoint83.description = "California State University Dominguez Hills"
-GeoViewpoint83.position = [33.864633968571,-118.255359627206,250000]
-GeoViewpoint83.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field82)
+field83 = x3d.field()
+field83.name = "next"
+field83.accessType = "inputOnly"
+field83.appinfo = "bind next Viewpoint in list"
+field83.type = "SFBool"
 
-Group52.children.append(GeoViewpoint83)
-GeoViewpoint84 = x3d.GeoViewpoint(DEF="View32")
-GeoViewpoint84.description = "California State University, Long Beach"
-GeoViewpoint84.position = [33.7819669647082,-118.112678253688,250000]
-GeoViewpoint84.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field83)
+field84 = x3d.field()
+field84.name = "toggleMessage"
+field84.accessType = "inputOutput"
+field84.appinfo = "Select message to toggle ViewpointSequencer"
+field84.type = "MFString"
 
-Group52.children.append(GeoViewpoint84)
-GeoViewpoint85 = x3d.GeoViewpoint(DEF="View33")
-GeoViewpoint85.description = "California State University, San Marcos"
-GeoViewpoint85.position = [33.1283761926517,-117.1600194071,250000]
-GeoViewpoint85.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field84)
+field85 = x3d.field()
+field85.name = "toggleMessageFontSize"
+field85.accessType = "initializeOnly"
+field85.appinfo = "Color for toggleMessage text"
+field85.type = "SFFloat"
 
-Group52.children.append(GeoViewpoint85)
-GeoViewpoint86 = x3d.GeoViewpoint(DEF="View34")
-GeoViewpoint86.description = "San Diego State University"
-GeoViewpoint86.position = [32.7759312658639,-117.072287624255,250000]
-GeoViewpoint86.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field85)
+field86 = x3d.field()
+field86.name = "toggleMessageColor"
+field86.accessType = "inputOutput"
+field86.appinfo = "Color for toggleMessage text"
+field86.type = "SFColor"
 
-Group52.children.append(GeoViewpoint86)
-GeoViewpoint87 = x3d.GeoViewpoint(DEF="View35")
-GeoViewpoint87.description = "CENIC"
-GeoViewpoint87.position = [33.879947,-118.027903,250000]
-GeoViewpoint87.orientation = [1,0,0,-1.57]
+ExternProtoDeclare77.field.append(field86)
+field87 = x3d.field()
+field87.name = "traceEnabled"
+field87.accessType = "inputOutput"
+field87.appinfo = "enable console output"
+field87.type = "SFBool"
 
-Group52.children.append(GeoViewpoint87)
+ExternProtoDeclare77.field.append(field87)
 
-Scene18.children.append(Group52)
-ProtoInstance88 = x3d.ProtoInstance(DEF="CrossHairInstance")
-ProtoInstance88.name = "CrossHair"
+Scene20.children.append(ExternProtoDeclare77)
+ProtoInstance88 = x3d.ProtoInstance(DEF="ViewpointTour")
+ProtoInstance88.name = "ViewpointSequencer"
 fieldValue89 = x3d.fieldValue()
-fieldValue89.name = "enabled"
-fieldValue89.value = "true"
+fieldValue89.name = "interval"
+fieldValue89.value = "30"
 
 ProtoInstance88.fieldValue.append(fieldValue89)
 fieldValue90 = x3d.fieldValue()
-fieldValue90.name = "markerColor"
-fieldValue90.value = "0.1 0.8 0.1"
+fieldValue90.name = "enabled"
+fieldValue90.value = "true"
 
 ProtoInstance88.fieldValue.append(fieldValue90)
 fieldValue91 = x3d.fieldValue()
-fieldValue91.name = "scale"
-fieldValue91.value = "0.5 0.5 0.5"
+fieldValue91.name = "toggleMessage"
+fieldValue91.value = "\"ViewpointSequencer tour\""
 
 ProtoInstance88.fieldValue.append(fieldValue91)
 fieldValue92 = x3d.fieldValue()
-fieldValue92.name = "positionOffsetFromCamera"
-fieldValue92.value = "0 0 -5"
+fieldValue92.name = "viewpoints"
+GeoViewpoint93 = x3d.GeoViewpoint(USE="View01")
+
+fieldValue92.children.append(GeoViewpoint93)
+GeoViewpoint94 = x3d.GeoViewpoint(USE="View02")
+
+fieldValue92.children.append(GeoViewpoint94)
+GeoViewpoint95 = x3d.GeoViewpoint(USE="View03")
+
+fieldValue92.children.append(GeoViewpoint95)
+GeoViewpoint96 = x3d.GeoViewpoint(USE="View04")
+
+fieldValue92.children.append(GeoViewpoint96)
+GeoViewpoint97 = x3d.GeoViewpoint(USE="View05")
+
+fieldValue92.children.append(GeoViewpoint97)
+GeoViewpoint98 = x3d.GeoViewpoint(USE="View06")
+
+fieldValue92.children.append(GeoViewpoint98)
+GeoViewpoint99 = x3d.GeoViewpoint(USE="View07")
+
+fieldValue92.children.append(GeoViewpoint99)
+GeoViewpoint100 = x3d.GeoViewpoint(USE="View08")
+
+fieldValue92.children.append(GeoViewpoint100)
+GeoViewpoint101 = x3d.GeoViewpoint(USE="View09")
+
+fieldValue92.children.append(GeoViewpoint101)
+GeoViewpoint102 = x3d.GeoViewpoint(USE="View10")
+
+fieldValue92.children.append(GeoViewpoint102)
+GeoViewpoint103 = x3d.GeoViewpoint(USE="View11")
+
+fieldValue92.children.append(GeoViewpoint103)
+GeoViewpoint104 = x3d.GeoViewpoint(USE="View12")
+
+fieldValue92.children.append(GeoViewpoint104)
+GeoViewpoint105 = x3d.GeoViewpoint(USE="View13")
+
+fieldValue92.children.append(GeoViewpoint105)
+GeoViewpoint106 = x3d.GeoViewpoint(USE="View14")
+
+fieldValue92.children.append(GeoViewpoint106)
+GeoViewpoint107 = x3d.GeoViewpoint(USE="View15")
+
+fieldValue92.children.append(GeoViewpoint107)
+GeoViewpoint108 = x3d.GeoViewpoint(USE="View16")
+
+fieldValue92.children.append(GeoViewpoint108)
+GeoViewpoint109 = x3d.GeoViewpoint(USE="View17")
+
+fieldValue92.children.append(GeoViewpoint109)
+GeoViewpoint110 = x3d.GeoViewpoint(USE="View18")
+
+fieldValue92.children.append(GeoViewpoint110)
+GeoViewpoint111 = x3d.GeoViewpoint(USE="View19")
+
+fieldValue92.children.append(GeoViewpoint111)
+GeoViewpoint112 = x3d.GeoViewpoint(USE="View20")
+
+fieldValue92.children.append(GeoViewpoint112)
+GeoViewpoint113 = x3d.GeoViewpoint(USE="View21")
+
+fieldValue92.children.append(GeoViewpoint113)
+GeoViewpoint114 = x3d.GeoViewpoint(USE="View22")
+
+fieldValue92.children.append(GeoViewpoint114)
+GeoViewpoint115 = x3d.GeoViewpoint(USE="View23")
+
+fieldValue92.children.append(GeoViewpoint115)
+GeoViewpoint116 = x3d.GeoViewpoint(USE="View24")
+
+fieldValue92.children.append(GeoViewpoint116)
+GeoViewpoint117 = x3d.GeoViewpoint(USE="View25")
+
+fieldValue92.children.append(GeoViewpoint117)
+GeoViewpoint118 = x3d.GeoViewpoint(USE="View26")
+
+fieldValue92.children.append(GeoViewpoint118)
+GeoViewpoint119 = x3d.GeoViewpoint(USE="View27")
+
+fieldValue92.children.append(GeoViewpoint119)
+GeoViewpoint120 = x3d.GeoViewpoint(USE="View28")
+
+fieldValue92.children.append(GeoViewpoint120)
+GeoViewpoint121 = x3d.GeoViewpoint(USE="View29")
+
+fieldValue92.children.append(GeoViewpoint121)
+GeoViewpoint122 = x3d.GeoViewpoint(USE="View30")
+
+fieldValue92.children.append(GeoViewpoint122)
+GeoViewpoint123 = x3d.GeoViewpoint(USE="View31")
+
+fieldValue92.children.append(GeoViewpoint123)
+GeoViewpoint124 = x3d.GeoViewpoint(USE="View32")
+
+fieldValue92.children.append(GeoViewpoint124)
+GeoViewpoint125 = x3d.GeoViewpoint(USE="View33")
+
+fieldValue92.children.append(GeoViewpoint125)
+GeoViewpoint126 = x3d.GeoViewpoint(USE="View34")
+
+fieldValue92.children.append(GeoViewpoint126)
+GeoViewpoint127 = x3d.GeoViewpoint(USE="View35")
+
+fieldValue92.children.append(GeoViewpoint127)
+Viewpoint128 = x3d.Viewpoint(DEF="View4")
+Viewpoint128.description = "View four (-X axis)"
+Viewpoint128.orientation = [0,1,0,-1.57]
+Viewpoint128.position = [-10,0,0]
+
+fieldValue92.children.append(Viewpoint128)
 
 ProtoInstance88.fieldValue.append(fieldValue92)
+ProtoInstance88.children.append(x3d.Comment("""initially enabled is off, scene provides selectable text to activate"""))
 
-Scene18.children.append(ProtoInstance88)
-ProtoInstance93 = x3d.ProtoInstance(DEF="ViewpointTour")
-ProtoInstance93.name = "ViewpointSequencer"
-fieldValue94 = x3d.fieldValue()
-fieldValue94.name = "viewpoints"
-GeoViewpoint95 = x3d.GeoViewpoint(USE="View01")
+Scene20.children.append(ProtoInstance88)
+Scene20.children.append(x3d.Comment("""===================="""))
+GeoLocation129 = x3d.GeoLocation()
+GeoLocation129.geoCoords = [36.595599,-121.877148,624990]
+Billboard130 = x3d.Billboard()
+Billboard130.axisOfRotation = [0,0,0]
+Shape131 = x3d.Shape()
+Text132 = x3d.Text()
+Text132.string = ["ViewpointSequencer tour"]
+FontStyle133 = x3d.FontStyle()
+FontStyle133.justify = ["MIDDLE","MIDDLE"]
 
-fieldValue94.children.append(GeoViewpoint95)
-GeoViewpoint96 = x3d.GeoViewpoint(USE="View02")
+Text132.fontStyle = FontStyle133
 
-fieldValue94.children.append(GeoViewpoint96)
-GeoViewpoint97 = x3d.GeoViewpoint(USE="View03")
+Shape131.geometry = Text132
+Appearance134 = x3d.Appearance()
+Material135 = x3d.Material()
+Material135.ambientIntensity = 0.25
+Material135.diffuseColor = [0.795918,0.505869,0.093315]
+Material135.shininess = 0.39
+Material135.specularColor = [0.923469,0.428866,0.006369]
 
-fieldValue94.children.append(GeoViewpoint97)
-GeoViewpoint98 = x3d.GeoViewpoint(USE="View04")
+Appearance134.material = Material135
 
-fieldValue94.children.append(GeoViewpoint98)
-GeoViewpoint99 = x3d.GeoViewpoint(USE="View05")
+Shape131.appearance = Appearance134
 
-fieldValue94.children.append(GeoViewpoint99)
-GeoViewpoint100 = x3d.GeoViewpoint(USE="View06")
+Billboard130.children.append(Shape131)
 
-fieldValue94.children.append(GeoViewpoint100)
-GeoViewpoint101 = x3d.GeoViewpoint(USE="View07")
+GeoLocation129.children.append(Billboard130)
+TouchSensor136 = x3d.TouchSensor(DEF="TourTouch")
+TouchSensor136.description = "Touch text to turn tour on/off"
 
-fieldValue94.children.append(GeoViewpoint101)
-GeoViewpoint102 = x3d.GeoViewpoint(USE="View08")
+GeoLocation129.children.append(TouchSensor136)
+BooleanToggle137 = x3d.BooleanToggle(DEF="TourToggle")
 
-fieldValue94.children.append(GeoViewpoint102)
-GeoViewpoint103 = x3d.GeoViewpoint(USE="View09")
+GeoLocation129.children.append(BooleanToggle137)
+ROUTE138 = x3d.ROUTE()
+ROUTE138.fromField = "isActive"
+ROUTE138.fromNode = "TourTouch"
+ROUTE138.toField = "set_boolean"
+ROUTE138.toNode = "TourToggle"
 
-fieldValue94.children.append(GeoViewpoint103)
-GeoViewpoint104 = x3d.GeoViewpoint(USE="View10")
+GeoLocation129.children.append(ROUTE138)
+ROUTE139 = x3d.ROUTE()
+ROUTE139.fromField = "toggle"
+ROUTE139.fromNode = "TourToggle"
+ROUTE139.toField = "set_enabled"
+ROUTE139.toNode = "ViewpointTour"
 
-fieldValue94.children.append(GeoViewpoint104)
-GeoViewpoint105 = x3d.GeoViewpoint(USE="View11")
+GeoLocation129.children.append(ROUTE139)
 
-fieldValue94.children.append(GeoViewpoint105)
-GeoViewpoint106 = x3d.GeoViewpoint(USE="View12")
+Scene20.children.append(GeoLocation129)
+Scene20.children.append(x3d.Comment("""===================="""))
+ExternProtoDeclare140 = x3d.ExternProtoDeclare()
+ExternProtoDeclare140.name = "ViewPositionOrientation"
+ExternProtoDeclare140.appinfo = "ViewPositionOrientation provides provides console output of local position and orientation as user navigates"
+ExternProtoDeclare140.url = ["../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.x3d#ViewPositionOrientation","../../Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation","https://savage.nps.edu/Savage/Tools/Authoring/ViewPositionOrientationPrototype.wrl#ViewPositionOrientation"]
+field141 = x3d.field()
+field141.name = "enabled"
+field141.accessType = "inputOutput"
+field141.appinfo = "Whether or not ViewPositionOrientation sends output to console"
+field141.type = "SFBool"
 
-fieldValue94.children.append(GeoViewpoint106)
-GeoViewpoint107 = x3d.GeoViewpoint(USE="View13")
+ExternProtoDeclare140.field.append(field141)
+field142 = x3d.field()
+field142.name = "traceEnabled"
+field142.accessType = "initializeOnly"
+field142.appinfo = "Output internal trace messages for debugging this node, intended for developer use only"
+field142.type = "SFBool"
 
-fieldValue94.children.append(GeoViewpoint107)
-GeoViewpoint108 = x3d.GeoViewpoint(USE="View14")
+ExternProtoDeclare140.field.append(field142)
+field143 = x3d.field()
+field143.name = "set_traceEnabled"
+field143.accessType = "inputOnly"
+field143.appinfo = "Ability to turn output tracing on/off at runtime"
+field143.type = "SFBool"
 
-fieldValue94.children.append(GeoViewpoint108)
-GeoViewpoint109 = x3d.GeoViewpoint(USE="View15")
+ExternProtoDeclare140.field.append(field143)
+field144 = x3d.field()
+field144.name = "position_changed"
+field144.accessType = "outputOnly"
+field144.appinfo = "Output local position"
+field144.type = "SFVec3f"
 
-fieldValue94.children.append(GeoViewpoint109)
-GeoViewpoint110 = x3d.GeoViewpoint(USE="View16")
+ExternProtoDeclare140.field.append(field144)
+field145 = x3d.field()
+field145.name = "orientation_changed"
+field145.accessType = "outputOnly"
+field145.appinfo = "Output local orientation"
+field145.type = "SFRotation"
 
-fieldValue94.children.append(GeoViewpoint110)
-GeoViewpoint111 = x3d.GeoViewpoint(USE="View17")
+ExternProtoDeclare140.field.append(field145)
+field146 = x3d.field()
+field146.name = "outputViewpointString"
+field146.accessType = "outputOnly"
+field146.appinfo = "MFString value of new Viewpoint"
+field146.type = "MFString"
 
-fieldValue94.children.append(GeoViewpoint111)
-GeoViewpoint112 = x3d.GeoViewpoint(USE="View18")
+ExternProtoDeclare140.field.append(field146)
 
-fieldValue94.children.append(GeoViewpoint112)
-GeoViewpoint113 = x3d.GeoViewpoint(USE="View19")
+Scene20.children.append(ExternProtoDeclare140)
+ProtoInstance147 = x3d.ProtoInstance(DEF="ExampleViewPositionOrientation")
+ProtoInstance147.name = "ViewPositionOrientation"
+fieldValue148 = x3d.fieldValue()
+fieldValue148.name = "enabled"
+fieldValue148.value = "false"
 
-fieldValue94.children.append(GeoViewpoint113)
-GeoViewpoint114 = x3d.GeoViewpoint(USE="View20")
+ProtoInstance147.fieldValue.append(fieldValue148)
 
-fieldValue94.children.append(GeoViewpoint114)
-GeoViewpoint115 = x3d.GeoViewpoint(USE="View21")
+Scene20.children.append(ProtoInstance147)
+Scene20.children.append(x3d.Comment("""===================="""))
 
-fieldValue94.children.append(GeoViewpoint115)
-GeoViewpoint116 = x3d.GeoViewpoint(USE="View22")
-
-fieldValue94.children.append(GeoViewpoint116)
-GeoViewpoint117 = x3d.GeoViewpoint(USE="View23")
-
-fieldValue94.children.append(GeoViewpoint117)
-GeoViewpoint118 = x3d.GeoViewpoint(USE="View24")
-
-fieldValue94.children.append(GeoViewpoint118)
-GeoViewpoint119 = x3d.GeoViewpoint(USE="View25")
-
-fieldValue94.children.append(GeoViewpoint119)
-GeoViewpoint120 = x3d.GeoViewpoint(USE="View26")
-
-fieldValue94.children.append(GeoViewpoint120)
-GeoViewpoint121 = x3d.GeoViewpoint(USE="View27")
-
-fieldValue94.children.append(GeoViewpoint121)
-GeoViewpoint122 = x3d.GeoViewpoint(USE="View28")
-
-fieldValue94.children.append(GeoViewpoint122)
-GeoViewpoint123 = x3d.GeoViewpoint(USE="View29")
-
-fieldValue94.children.append(GeoViewpoint123)
-GeoViewpoint124 = x3d.GeoViewpoint(USE="View30")
-
-fieldValue94.children.append(GeoViewpoint124)
-GeoViewpoint125 = x3d.GeoViewpoint(USE="View31")
-
-fieldValue94.children.append(GeoViewpoint125)
-GeoViewpoint126 = x3d.GeoViewpoint(USE="View32")
-
-fieldValue94.children.append(GeoViewpoint126)
-GeoViewpoint127 = x3d.GeoViewpoint(USE="View33")
-
-fieldValue94.children.append(GeoViewpoint127)
-GeoViewpoint128 = x3d.GeoViewpoint(USE="View34")
-
-fieldValue94.children.append(GeoViewpoint128)
-GeoViewpoint129 = x3d.GeoViewpoint(USE="View35")
-
-fieldValue94.children.append(GeoViewpoint129)
-Viewpoint130 = x3d.Viewpoint(DEF="View4")
-Viewpoint130.description = "View four (-X axis)"
-Viewpoint130.position = [-10,0,0]
-Viewpoint130.orientation = [0,1,0,-1.57]
-
-fieldValue94.children.append(Viewpoint130)
-
-ProtoInstance93.fieldValue.append(fieldValue94)
-fieldValue131 = x3d.fieldValue()
-fieldValue131.name = "interval"
-fieldValue131.value = "30"
-
-ProtoInstance93.fieldValue.append(fieldValue131)
-fieldValue132 = x3d.fieldValue()
-fieldValue132.name = "enabled"
-fieldValue132.value = "true"
-
-ProtoInstance93.fieldValue.append(fieldValue132)
-fieldValue133 = x3d.fieldValue()
-fieldValue133.name = "toggleMessage"
-fieldValue133.value = "\"ViewpointSequencer tour\""
-
-ProtoInstance93.fieldValue.append(fieldValue133)
-
-Scene18.children.append(ProtoInstance93)
-GeoLocation134 = x3d.GeoLocation()
-GeoLocation134.geoCoords = [36.595599,-121.877148,624990]
-Billboard135 = x3d.Billboard()
-Billboard135.axisOfRotation = [0,0,0]
-Shape136 = x3d.Shape()
-Appearance137 = x3d.Appearance()
-Material138 = x3d.Material()
-Material138.ambientIntensity = 0.25
-Material138.diffuseColor = [0.795918,0.505869,0.093315]
-Material138.specularColor = [0.923469,0.428866,0.006369]
-Material138.shininess = 0.39
-
-Appearance137.material = Material138
-
-Shape136.appearance = Appearance137
-Text139 = x3d.Text()
-Text139.string = ["ViewpointSequencer tour"]
-FontStyle140 = x3d.FontStyle()
-FontStyle140.justify = ["MIDDLE","MIDDLE"]
-
-Text139.fontStyle = FontStyle140
-
-Shape136.geometry = Text139
-
-Billboard135.children.append(Shape136)
-
-GeoLocation134.children.append(Billboard135)
-TouchSensor141 = x3d.TouchSensor(DEF="TourTouch")
-TouchSensor141.description = "Touch text to turn tour on/off"
-
-GeoLocation134.children.append(TouchSensor141)
-BooleanToggle142 = x3d.BooleanToggle(DEF="TourToggle")
-
-GeoLocation134.children.append(BooleanToggle142)
-
-Scene18.children.append(GeoLocation134)
-ProtoInstance143 = x3d.ProtoInstance(DEF="ExampleViewPositionOrientation")
-ProtoInstance143.name = "ViewPositionOrientation"
-fieldValue144 = x3d.fieldValue()
-fieldValue144.name = "enabled"
-fieldValue144.value = "false"
-
-ProtoInstance143.fieldValue.append(fieldValue144)
-
-Scene18.children.append(ProtoInstance143)
-ROUTE145 = x3d.ROUTE()
-ROUTE145.fromNode = "TourTouch"
-ROUTE145.fromField = "isActive"
-ROUTE145.toNode = "TourToggle"
-ROUTE145.toField = "set_boolean"
-
-Scene18.children.append(ROUTE145)
-ROUTE146 = x3d.ROUTE()
-ROUTE146.fromNode = "TourToggle"
-ROUTE146.fromField = "toggle_changed"
-ROUTE146.toNode = "ViewpointTour"
-ROUTE146.toField = "set_enabled"
-
-Scene18.children.append(ROUTE146)
-
-X3D0.Scene = Scene18
+X3D0.Scene = Scene20
 f = open("../data/CaliforniaCampuses.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

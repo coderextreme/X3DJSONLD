@@ -116,9 +116,135 @@ head1.addMeta(meta21)
 X3D0.setHead(head1)
 Scene22 = x3d.Scene()
 
-Scene22.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/index.html Jin loa4 v2 1:1 https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 with v2 Site surface feature point landmarks https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html The first part of this x3d xml user code listing includes definitions for the collection of Shapes and Sites that will be used to compose the character. This allows the skeleton structure user code to be simplified. example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire sheleton hierarchy ,,, </HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> <HAnimSegment DEF='hanim_sacrum' name='sacrum'> <Shape USE='sacrum_Shape'/> <Group USE='sacrum_Sites'/> </HAnimSegment> ... entire skeleton hierarchy ,,, </HAnimJoint DefaultAnimation_loa4 Default pose All Joints = 0 0 1 0 TestAnimation_loa4 Modify this set to experiment PitchAnimation_loa4 Example x-axis rotations YawAnimation_loa4 Example y-axis rotations RollAnimation_loa4 Example z-axis rotations WalkAnimation_loa4 Example Walk animation RunAnimation_loa4 Example Run animnation JumpAnimation_loa4 Example Jump animation KickAnimation_loa4 Example Kick animation TimerControls Selection of timer for animation"""))
+Scene22.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/index.html"""))
 
-Scene22.addComments(x3d.CommentsBlock("""Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing 0.02 - 0.08 root translation 0.08 - 0.1 root rotation 0.2 - 0.3 sacro 0.25 - 0.75 eyeball 0.6 - 0.65 hip 0.65 0.70 knee 0.70 - 0.74 talocrural talocalcaneonavicular (1 2 3) calcaneocuboid (4 5) transversetarsal (4 5) cuneonavicular (1 2 3) tarsometatarsal (1 2 3 4 5) metatarsophalangeal (1 2 3 4 5) tarsal_interphalangeal (1) tarsal_proximal_interphalangeal (2 3 4 5) tarsal_distal_interphalangeal (2 3 4 5) 0.3 - 0.5 vl5 0.6 0.6375 vl2 0.6375 - 0.6875 vt10 0.6875 - 0.725 vt9 0.725 - 0.7875 vt5 0.7875 - 0.825 vt1 0.825 - 0.8625 vc7 0.8625 - 0.9 vc2 0.9 - 0.9985 skullbase 0.9 - 0.915 sterno 0.915 - 0.93 acrom 0.93 - 0.945 shoulder 0.945 - 0.96 elbow 0.96 - 0.98 radio 0.98 0.985 angeal_1"""))
+Scene22.addComments(x3d.CommentsBlock("""Jin loa4 v2 1:1"""))
+
+Scene22.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4"""))
+
+Scene22.addComments(x3d.CommentsBlock("""with v2 Site surface feature point landmarks"""))
+
+Scene22.addComments(x3d.CommentsBlock("""https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html"""))
+
+Scene22.addComments(x3d.CommentsBlock("""The first part of this x3d xml user code listing"""))
+
+Scene22.addComments(x3d.CommentsBlock("""includes definitions for the collection of"""))
+
+Scene22.addComments(x3d.CommentsBlock("""Shapes and Sites that will be used to compose the character."""))
+
+Scene22.addComments(x3d.CommentsBlock("""This allows the skeleton structure user code to be simplified."""))
+
+Scene22.addComments(x3d.CommentsBlock("""example:"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<HAnimSegment DEF='hanim_sacrum' name='sacrum'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Shape USE='sacrum_Shape'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Group USE='sacrum_Sites'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</HAnimSegment>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""... entire sheleton hierarchy ,,,"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</HAnimJoint Please Run the example. It starts with Kick2. Select any other Action from the menu. Animations for Pitch1, Yaw1, and Roll1 show basic operation by animation of each Joint of the skeleton that contains one or more Site surface feature landmarks. A colored sphere marker identifies a V2 Site object. The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected from existing x3d HAnim archived example animations. All these need some work to show full loa4 articulation and the advantages of this standard skeleton hierarchy. Contents as follows: SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 Markers - set of markers used to show landmarks of the model: Joint Shape Joint connections Site Shape AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. JointsAndConnections - DEF user code for Joint center location markers and connection hierarchy SurfacesAndSites - DEF user code for the various Shape nodes and Site location markers hanim_JinLOA4S - This Humanoid USE assets in JointsAndConnections and SurfacesAndSites example: <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<HAnimSegment DEF='hanim_sacrum' name='sacrum'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Shape USE='sacrum_Shape'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Group USE='sacrum_Sites'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</HAnimSegment>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""... entire skeleton hierarchy ,,,"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</HAnimJoint"""))
+
+Scene22.addComments(x3d.CommentsBlock("""DefaultAnimation_loa4 Default pose All Joints = 0 0 1 0"""))
+
+Scene22.addComments(x3d.CommentsBlock("""TestAnimation_loa4 Modify this set to experiment"""))
+
+Scene22.addComments(x3d.CommentsBlock("""PitchAnimation_loa4 Example x-axis rotations"""))
+
+Scene22.addComments(x3d.CommentsBlock("""YawAnimation_loa4 Example y-axis rotations"""))
+
+Scene22.addComments(x3d.CommentsBlock("""RollAnimation_loa4 Example z-axis rotations"""))
+
+Scene22.addComments(x3d.CommentsBlock("""WalkAnimation_loa4 Example Walk animation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""RunAnimation_loa4 Example Run animnation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""JumpAnimation_loa4 Example Jump animation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""KickAnimation_loa4 Example Kick animation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""TimerControls Selection of timer for animation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.02 - 0.08 root translation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.08 - 0.1 root rotation"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.2 - 0.3 sacro"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.25 - 0.75 eyeball"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.6 - 0.65 hip"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.65 0.70 knee"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.70 - 0.74 talocrural"""))
+
+Scene22.addComments(x3d.CommentsBlock("""talocalcaneonavicular (1 2 3)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""calcaneocuboid (4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""transversetarsal (4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""cuneonavicular (1 2 3)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""tarsometatarsal (1 2 3 4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""metatarsophalangeal (1 2 3 4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""tarsal_interphalangeal (1)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""tarsal_proximal_interphalangeal (2 3 4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""tarsal_distal_interphalangeal (2 3 4 5)"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.3 - 0.5 vl5"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.6 0.6375 vl2"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.6375 - 0.6875 vt10"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.6875 - 0.725 vt9"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.725 - 0.7875 vt5"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.7875 - 0.825 vt1"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.825 - 0.8625 vc7"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.8625 - 0.9 vc2"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.9 - 0.9985 skullbase"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.9 - 0.915 sterno"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.915 - 0.93 acrom"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.93 - 0.945 shoulder"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.945 - 0.96 elbow"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.96 - 0.98 radio"""))
+
+Scene22.addComments(x3d.CommentsBlock("""0.98 0.985 angeal_1"""))
 WorldInfo23 = x3d.WorldInfo()
 WorldInfo23.setTitle("10h Jin v2 LOA4 Level 1, All Joints, Segments, Sites")
 
@@ -302,7 +428,21 @@ Group40.addChild(Transform56)
 
 Scene22.addChild(Group40)
 
-Scene22.addComments(x3d.CommentsBlock("""Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'> <Shape DEF='AxisLines_Shape'> <IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'> <Color color='1 0 0 0 1 0 0 0 1'/> <Coordinate point='0 0 0 1 0 0 0 1 0 0 0 1'/> </IndexedLineSet> </Shape> </Transform"""))
+Scene22.addComments(x3d.CommentsBlock("""Transform DEF='CoordinateSystemFloor' scale='0.1 0.1 0.1'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Shape DEF='AxisLines_Shape'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<IndexedLineSet colorIndex='0 1 2' colorPerVertex='false' coordIndex='0 1 -1 0 2 -1 0 3 -1'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Color color='1 0 0 0 1 0 0 0 1'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Coordinate point='0 0 0 1 0 0 0 1 0 0 0 1'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</IndexedLineSet>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Shape>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Transform"""))
 Group61 = x3d.Group()
 Group61.setDEF("AnimationSelectMenu")
 ProximitySensor62 = x3d.ProximitySensor()
@@ -5533,7 +5673,27 @@ Group1311.addChild(Shape1312)
 Group1319 = x3d.Group()
 Group1319.setDEF("sacrum_Sites")
 
-Group1319.addComments(x3d.CommentsBlock("""*no surface features this Segment) (example site and site landmark code <HAnimSite DEF='hanim_sitename_pt' name='sitename' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename nnfromtable'/> <Shape USE='HAnimSiteLandmark'/> </HAnimSite> <Shape DEF='JointName-to-SiteName'> <LineSet vertexCount='2'><Color DEF='SiteColor' color='0 1 0, 1 0 0'/> <Coordinate point='parentJointCenter, sitename_ptTranslation'/> </LineSet> </Shape>"""))
+Group1319.addComments(x3d.CommentsBlock("""*no surface features this Segment)"""))
+
+Group1319.addComments(x3d.CommentsBlock("""(example site and site landmark code"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<HAnimSite DEF='hanim_sitename_pt' name='sitename' translation='sitename_ptTranslation'>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<TouchSensor description='HAnimSite sitename nnfromtable'/>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<Shape USE='HAnimSiteLandmark'/>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""</HAnimSite>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<Shape DEF='JointName-to-SiteName'>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<LineSet vertexCount='2'><Color DEF='SiteColor' color='0 1 0, 1 0 0'/>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""<Coordinate point='parentJointCenter, sitename_ptTranslation'/>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""</LineSet>"""))
+
+Group1319.addComments(x3d.CommentsBlock("""</Shape>"""))
 
 Group1311.addChild(Group1319)
 Shape1320 = x3d.Shape()
@@ -6453,7 +6613,15 @@ HAnimSite1532.addChild(Shape1534)
 
 Group1531.addChild(HAnimSite1532)
 
-Group1531.addComments(x3d.CommentsBlock("""Shape DEF='l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip'> <LineSet vertexCount='2'><Color USE='SiteColor'/> <Coordinate point='0.062 0.012 0.115, 0.062 0.012 0.134'/> </LineSet> </Shape"""))
+Group1531.addComments(x3d.CommentsBlock("""Shape DEF='l_tarsal_interphalangeal_1-to-l_tarsal_distal_phalanx_1_tip'>"""))
+
+Group1531.addComments(x3d.CommentsBlock("""<LineSet vertexCount='2'><Color USE='SiteColor'/>"""))
+
+Group1531.addComments(x3d.CommentsBlock("""<Coordinate point='0.062 0.012 0.115, 0.062 0.012 0.134'/>"""))
+
+Group1531.addComments(x3d.CommentsBlock("""</LineSet>"""))
+
+Group1531.addComments(x3d.CommentsBlock("""</Shape"""))
 
 Group1311.addChild(Group1531)
 Shape1535 = x3d.Shape()
@@ -14208,7 +14376,25 @@ HAnimHumanoid3344.setDEF("hanim_JinLOA4S")
 HAnimHumanoid3344.setLoa(4)
 HAnimHumanoid3344.setVersion("2.0")
 
-HAnimHumanoid3344.addComments(x3d.CommentsBlock("""MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/> <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> <MetadataString name='creationDate' value='31 March 2011'/> <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> <MetadataString name='modificationDate' value='25 March 2024'/> <MetadataString name='gender' value='female'/> <MetadataFloat name='height' value='1.5'/> <MetadataString name='humanoidVersion' value='2.0'/> </MetadataSet"""))
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='creationDate' value='31 March 2011'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='John Carlson and Joe Williams' value='Modifiers'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='modificationDate' value='25 March 2024'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='gender' value='female'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataFloat name='height' value='1.5'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""<MetadataString name='humanoidVersion' value='2.0'/>"""))
+
+HAnimHumanoid3344.addComments(x3d.CommentsBlock("""</MetadataSet"""))
 HAnimJoint3345 = x3d.HAnimJoint()
 HAnimJoint3345.setName("humanoid_root")
 HAnimJoint3345.setDEF("hanim_humanoid_root")
@@ -24479,7 +24665,41 @@ Scene22.addChild(Group4692)
 Group5135 = x3d.Group()
 Group5135.setDEF("Pitch1Animation_loa4")
 
-Group5135.addComments(x3d.CommentsBlock("""Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor."""))
+Group5135.addComments(x3d.CommentsBlock("""Pitch1 example shows Y-axis control of Joint nodes"""))
+
+Group5135.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group5135.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group5135.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group5135.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>"""))
+
+Group5135.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of x-axis"""))
+
+Group5135.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group5135.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group5135.addComments(x3d.CommentsBlock("""0 radians, zero degrees."""))
+
+Group5135.addComments(x3d.CommentsBlock("""x y z scale, all in radians 0 to <+-inf."""))
+
+Group5135.addComments(x3d.CommentsBlock("""Thus, 1 radian in a times scale 1 = +1 radian"""))
+
+Group5135.addComments(x3d.CommentsBlock("""= about 60 degrees"""))
+
+Group5135.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group5135.addComments(x3d.CommentsBlock("""greater than +-6.28 radians range"""))
+
+Group5135.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group5135.addComments(x3d.CommentsBlock("""positive pitch value applied to the"""))
+
+Group5135.addComments(x3d.CommentsBlock("""skullbase Joint would rotate the"""))
+
+Group5135.addComments(x3d.CommentsBlock("""the gaze of model down, toward the floor."""))
 TimeSensor5136 = x3d.TimeSensor()
 TimeSensor5136.setDEF("Pitch1Timer")
 TimeSensor5136.setCycleInterval(10)
@@ -30389,7 +30609,43 @@ Scene22.addChild(Group5578)
 Group6021 = x3d.Group()
 Group6021.setDEF("Yaw1Animation_loa4")
 
-Group6021.addComments(x3d.CommentsBlock("""Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model's +X direction, the model left over the left shoulder."""))
+Group6021.addComments(x3d.CommentsBlock("""Yaw1 example shows Y-axis control of Joint nodes"""))
+
+Group6021.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group6021.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group6021.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group6021.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>"""))
+
+Group6021.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of y-axis"""))
+
+Group6021.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group6021.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group6021.addComments(x3d.CommentsBlock("""0 radians, zero degrees."""))
+
+Group6021.addComments(x3d.CommentsBlock("""x y z scale, all in radians 0 to <+-inf."""))
+
+Group6021.addComments(x3d.CommentsBlock("""Thus, 1 radian in y times scale 1 = +1 radian"""))
+
+Group6021.addComments(x3d.CommentsBlock("""= about 60 degrees"""))
+
+Group6021.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group6021.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group6021.addComments(x3d.CommentsBlock("""positive yaw value applied to the"""))
+
+Group6021.addComments(x3d.CommentsBlock("""skullbase Joint would move the"""))
+
+Group6021.addComments(x3d.CommentsBlock("""the gaze of model toward the"""))
+
+Group6021.addComments(x3d.CommentsBlock("""model's +X direction, the model left"""))
+
+Group6021.addComments(x3d.CommentsBlock("""over the left shoulder."""))
 TimeSensor6022 = x3d.TimeSensor()
 TimeSensor6022.setDEF("Yaw1Timer")
 TimeSensor6022.setCycleInterval(10)
@@ -36299,7 +36555,43 @@ Scene22.addChild(Group6464)
 Group6907 = x3d.Group()
 Group6907.setDEF("Roll1Animation_loa4")
 
-Group6907.addComments(x3d.CommentsBlock("""Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model's +X direction, the model left toward the left shoulder."""))
+Group6907.addComments(x3d.CommentsBlock("""Roll1 example shows Y-axis control of Joint nodes"""))
+
+Group6907.addComments(x3d.CommentsBlock("""that through the skeleton hierarchy control"""))
+
+Group6907.addComments(x3d.CommentsBlock("""Segment geometry and Site position."""))
+
+Group6907.addComments(x3d.CommentsBlock("""So, the following interpolator:"""))
+
+Group6907.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>"""))
+
+Group6907.addComments(x3d.CommentsBlock("""will start at 0 move to +1 radian of z-axis"""))
+
+Group6907.addComments(x3d.CommentsBlock("""rotation of the Joint, then return to 0."""))
+
+Group6907.addComments(x3d.CommentsBlock("""0 0 1 0 is default value, meaning set to"""))
+
+Group6907.addComments(x3d.CommentsBlock("""0 radians, zero degrees."""))
+
+Group6907.addComments(x3d.CommentsBlock("""x y z scale, all in radians 0 to <+-inf."""))
+
+Group6907.addComments(x3d.CommentsBlock("""Thus, 1 radian in a times scale 1 = +1 radian"""))
+
+Group6907.addComments(x3d.CommentsBlock("""= about 60 degrees"""))
+
+Group6907.addComments(x3d.CommentsBlock("""360 degrees divided by 2 times pi"""))
+
+Group6907.addComments(x3d.CommentsBlock("""Right hand rule for axes so a"""))
+
+Group6907.addComments(x3d.CommentsBlock("""positive roll value applied to the"""))
+
+Group6907.addComments(x3d.CommentsBlock("""skullbase Joint would rotate the"""))
+
+Group6907.addComments(x3d.CommentsBlock("""the gaze of model ccw toward the"""))
+
+Group6907.addComments(x3d.CommentsBlock("""model's +X direction, the model left"""))
+
+Group6907.addComments(x3d.CommentsBlock("""toward the left shoulder."""))
 TimeSensor6908 = x3d.TimeSensor()
 TimeSensor6908.setDEF("Roll1Timer")
 TimeSensor6908.setCycleInterval(10)
@@ -56964,7 +57256,43 @@ Group9565.addChild(ROUTE10007)
 
 Scene22.addChild(Group9565)
 
-Scene22.addComments(x3d.CommentsBlock("""Ball for Kick2 not included Group> <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> <Shape DEF='ball_Shape'> <Appearance DEF='ball_Appearance'> <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> </Appearance> <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> </IndexedFaceSet> </Shape> <Viewpoint DEF='ballView_1' description='Ball View'/> </Transform> <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> </Group"""))
+Scene22.addComments(x3d.CommentsBlock("""Ball for Kick2 not included Group>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Shape DEF='ball_Shape'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Appearance DEF='ball_Appearance'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Appearance>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</IndexedFaceSet>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Shape>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<Viewpoint DEF='ballView_1' description='Ball View'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Transform>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""<ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/>"""))
+
+Scene22.addComments(x3d.CommentsBlock("""</Group"""))
 Group10008 = x3d.Group()
 Group10008.setDEF("TimerControls")
 ROUTE10009 = x3d.ROUTE()

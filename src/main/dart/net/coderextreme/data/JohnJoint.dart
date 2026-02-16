@@ -64,7 +64,14 @@ var X3D0 =  X3D(
               /*DEFS for markers of skeleton joints, segments, and sites*/
               children_ : [
                 Transform(
-                  /*<Transform translation='0 2 0'> <Shape DEF='HAnimRootShape'> <Sphere radius='0.02' /> <Appearance> <Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/
+                  /*<Transform translation='0 2 0'>*/
+                  /*<Shape DEF='HAnimRootShape'>*/
+                  /*<Sphere radius='0.02' />*/
+                  /*<Appearance>*/
+                  /*<Material DEF='HAnimRootMaterial' diffuseColor='0.8 0 0' transparency='0.3'/>*/
+                  /*</Appearance>*/
+                  /*</Shape>*/
+                  /*</Transform>*/
                   children_ : [
                     Transform(
                       translation_ : SFVec3f([SFDouble(0), SFDouble(2.1), SFDouble(0)]),
@@ -97,7 +104,17 @@ var X3D0 =  X3D(
                               coord_ : 
                                 Coordinate(
                                   point_ : MFVec3f([SFVec3f([-0.05,0,0]),SFVec3f([0.05,0,0])]))))),
-                  /*<Transform translation='0 2.1 0'> <Shape DEF='HAnimSiteShape'> <IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'> <ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/> <Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/> </IndexedFaceSet> <Appearance> <Material diffuseColor='1 1 0' transparency='0.3'/> </Appearance> </Shape> </Transform>*/])]),
+                  /*<Transform translation='0 2.1 0'>*/
+                  /*<Shape DEF='HAnimSiteShape'>*/
+                  /*<IndexedFaceSet DEF='DiamondIFS' creaseAngle='0.5' solid='false' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 1 -1 5 2 1 -1 5 3 2 -1 5 4 3 -1 5 1 4 -1'>*/
+                  /*<ColorRGBA DEF='HAnimSiteColorRGBA' color='1 1 0 1 1 1 0 0.1'/>*/
+                  /*<Coordinate point='0 0.01 0 -0.01 0 0 0 0 0.01 0.01 0 0 0 0 -0.01 0 -0.01 0'/>*/
+                  /*</IndexedFaceSet>*/
+                  /*<Appearance>*/
+                  /*<Material diffuseColor='1 1 0' transparency='0.3'/>*/
+                  /*</Appearance>*/
+                  /*</Shape>*/
+                  /*</Transform>*/])]),
 
             NavigationInfo(
               speed_ : 1.5),

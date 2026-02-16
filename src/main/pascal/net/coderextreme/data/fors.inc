@@ -328,7 +328,10 @@ field67.Value := 'false';
 field67.Type := 'SFBool';
 { .AddField }
 Script65.Field := field67;
-{ <field accessType="outputOnly" name="node_changed" type="SFNode"/> <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> <Transform USE="HoldsContent"/> </field> }
+{ <field accessType="outputOnly" name="node_changed" type="SFNode"/> }
+{ <field name="ModifiableNode" type="SFNode" accessType="inputOutput"> }
+{ <Transform USE="HoldsContent"/> }
+{ </field> }
 
 Script65.SetSourceCode('''ecmascript:\n"+
 "	function add_node(value) {\n"+

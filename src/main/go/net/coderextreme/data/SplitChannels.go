@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,28 +101,36 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:39:22 GMT"),
+                Content: stringPtr("23 April 2023"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("CHANGELOG.txt"),
             },
             &x3d.Meta{
-                Name: stringPtr("reference"),
-                Content: stringPtr("http://www.medialab.hmu.gr/minipages/x3domAudio"),
-            },
-            &x3d.Meta{
                 Name: stringPtr("TODO"),
                 Content: stringPtr("credit for audio files"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("http://www.medialab.hmu.gr/minipages/x3domAudio"),
             },
             &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/SplitChannels.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("SplitChannels.x3d"),
                 },
@@ -133,8 +141,8 @@ func main() {
                     SkyColor: &x3d.MFColor{[3]float32{0.2,0.2,0.21}},
                 },
                 &x3d.Viewpoint{
-                    Position: &x3d.SFVec3f{0.0, 500.0, 600.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                    Position: &x3d.SFVec3f{0.0, 500.0, 600.0},
                     RetainUserOffsets: boolPtr(true),
                 },
                 &x3d.Transform{
@@ -144,8 +152,8 @@ func main() {
                         Translation: &x3d.SFVec3f{100.0, 400.0, 400.0},
                     Children: []x3d.X3DNode{
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{0.0, 40.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                                Translation: &x3d.SFVec3f{0.0, 40.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -154,8 +162,8 @@ func main() {
                                         },
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
-                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                             EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                         },
                                     },
                                     Geometry: &x3d.Box{
@@ -165,8 +173,8 @@ func main() {
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{-2.7, 37.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                                Translation: &x3d.SFVec3f{-2.7, 37.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -175,8 +183,8 @@ func main() {
                                         },
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
-                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                             EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                         },
                                         Texture: &x3d.ImageTexture{
                                             Url: x3d.MFString{"images/line.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"},
@@ -192,17 +200,17 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("volumeRight"),
                                 },
-                                Translation: &x3d.SFVec3f{0.0, -10.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
                                 Scale: &x3d.SFVec3f{10.0, 10.0, 10.0},
+                                Translation: &x3d.SFVec3f{0.0, -10.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             AmbientIntensity: floatPtr(0.0933),
                                             DiffuseColor: &x3d.SFColor{0.345, 0.345, 0.882},
-                                            SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                             Shininess: floatPtr(0.51),
+                                            SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                         },
                                     },
                                     Geometry: &x3d.Text{
@@ -227,8 +235,8 @@ func main() {
                         Translation: &x3d.SFVec3f{-100.0, 400.0, 400.0},
                     Children: []x3d.X3DNode{
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{0.0, 40.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                                Translation: &x3d.SFVec3f{0.0, 40.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -237,8 +245,8 @@ func main() {
                                         },
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
-                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                             EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                         },
                                     },
                                     Geometry: &x3d.Box{
@@ -248,8 +256,8 @@ func main() {
                             },
                         },
                         &x3d.Transform{
-                                Translation: &x3d.SFVec3f{13.2, 37.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                                Translation: &x3d.SFVec3f{13.2, 37.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
@@ -258,8 +266,8 @@ func main() {
                                         },
                                         Material: &x3d.Material{
                                             DiffuseColor: &x3d.SFColor{0.0, 1.0, 0.0},
-                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                             EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                            SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                         },
                                         Texture: &x3d.ImageTexture{
                                             Url: x3d.MFString{"images/line.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/line.png"},
@@ -275,17 +283,17 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("volumeLeft"),
                                 },
-                                Translation: &x3d.SFVec3f{0.0, -10.0, 0.0},
                                 Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
                                 Scale: &x3d.SFVec3f{10.0, 10.0, 10.0},
+                                Translation: &x3d.SFVec3f{0.0, -10.0, 0.0},
                             Children: []x3d.X3DNode{
                                 &x3d.Shape{
                                     Appearance: &x3d.Appearance{
                                         Material: &x3d.Material{
                                             AmbientIntensity: floatPtr(0.0933),
                                             DiffuseColor: &x3d.SFColor{0.345, 0.345, 0.882},
-                                            SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                             Shininess: floatPtr(0.51),
+                                            SpecularColor: &x3d.SFColor{0.46, 0.46, 0.46},
                                         },
                                     },
                                     Geometry: &x3d.Text{
@@ -310,8 +318,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.1, 0.1, 0.1},
-                                    SpecularColor: &x3d.SFColor{0.5, 0.6, 0.7},
                                     Shininess: floatPtr(0.8),
+                                    SpecularColor: &x3d.SFColor{0.5, 0.6, 0.7},
                                 },
                             },
                             Geometry: &x3d.Box{
@@ -328,11 +336,17 @@ func main() {
                         &x3d.ChannelMerger{
                             &x3d.ChannelSelector{
                                 &x3d.Gain{
+                                    CoreX3DNode: x3d.CoreX3DNode{
+                                        USE: stringPtr("ChannelSplitter"),
+                                    },
                                 },
                             },
                             &x3d.ChannelSelector{
                                 ChannelSelection: int32Ptr(1),
                                 &x3d.Gain{
+                                    CoreX3DNode: x3d.CoreX3DNode{
+                                        USE: stringPtr("ChannelSplitter"),
+                                    },
                                 },
                             },
                         },
@@ -352,8 +366,8 @@ func main() {
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("Audio3"),
                         },
-                        Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                         Rotation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                        Translation: &x3d.SFVec3f{0.0, 100.0, 0.0},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
                             Appearance: &x3d.Appearance{
@@ -362,8 +376,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.3, 1.0, 0.3},
-                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                     EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                 },
                                 Texture: &x3d.ImageTexture{
                                     Url: x3d.MFString{"images/loudspeaker.png", "https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/AudioSpatialSound/images/loudspeaker.png"},
@@ -393,13 +407,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/SplitChannels.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -410,7 +424,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

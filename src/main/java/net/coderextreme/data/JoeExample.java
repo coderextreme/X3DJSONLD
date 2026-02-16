@@ -56,15 +56,15 @@ public class JoeExample implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("Scripting.x3d")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("Scripting.x3d"))))
       .setScene(new Scene()
-        .addChild(new Script().setDEF("OpenVault")
-          .addField(new field().setType("SFTime").setName("openVault").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType("SFBool").setName("combinationEntered").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType("SFTime").setName("vaultUnlocked").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addField(new field().setType("SFBool").setName("unlocked").setValue("false").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+        .addChild(new Script().setDEF(new SFString("OpenVault"))
+          .addField(new field().setType("SFTime").setName(new SFString("openVault")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFBool").setName(new SFString("combinationEntered")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFTime").setName(new SFString("vaultUnlocked")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+          .addField(new field().setType("SFBool").setName(new SFString("unlocked")).setValue(new SFString("false")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "      function combinationEntered (value) {\n"+
@@ -83,11 +83,11 @@ public class JoeExample implements X3DRoots {
             .setMaterial(new Material().setDiffuseColor(new float[] {1f ,0f ,0f })))
           .setGeometry(new Sphere()))
         .addChild(new Sound().setMaxBack(1000f ).setMaxFront(1000f ).setMinBack(1000f ).setMinFront(1000f )
-          .setSource(new AudioClip().setDEF("Click").setStopTime(1d).setDescription("clicking sound").setUrl(new MFString0().getArray())))
-        .addChild(new TouchSensor().setDEF("TS"))
-        .addChild(new ROUTE().setFromNode("TS").setFromField("isOver").setToNode("OpenVault").setToField("combinationEntered"))
-        .addChild(new ROUTE().setFromNode("TS").setFromField("touchTime").setToNode("OpenVault").setToField("openVault"))
-        .addChild(new ROUTE().setFromNode("OpenVault").setFromField("vaultUnlocked").setToNode("Click").setToField("startTime")));
+          .setSource(new AudioClip().setDEF(new SFString("Click")).setStopTime(1d).setDescription(new SFString("clicking sound")).setUrl(new MFString0().getArray())))
+        .addChild(new TouchSensor().setDEF(new SFString("TS")))
+        .addChild(new ROUTE().setFromNode(new SFString("TS")).setFromField(new SFString("isOver")).setToNode(new SFString("OpenVault")).setToField(new SFString("combinationEntered")))
+        .addChild(new ROUTE().setFromNode(new SFString("TS")).setFromField(new SFString("touchTime")).setToNode(new SFString("OpenVault")).setToField(new SFString("openVault")))
+        .addChild(new ROUTE().setFromNode(new SFString("OpenVault")).setFromField(new SFString("vaultUnlocked")).setToNode(new SFString("Click")).setToField(new SFString("startTime"))));
     return X3D0;
     }
 private class MFString0 {

@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="Filters.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="Filters.x3d"></meta>
 <meta name="description" content="This X3D scene involves three sound sources. Each of them is visualized by a 3D object (in our case is a sphere) that depicts the sound effects. Specifically, we have added filters through of them we are able to manage the different sound effects in an impressive way. Filters can be composed of a number of attributes, frequency, detune, gain and the quality factor which also known as Q. Furthermore, the filters are classified in some specific types, depending on the sound effects that produce. In detail, there is the Low-pass filter which can create more muffled sound. Another one is the High-pass filter, which is used to generate tinny sound. Equally important is the Band-pass filter, which cuts off low and high frequencies and passes through only these within a certain range. On the contrary, the Notch filter has exactly the opposite operation of the Band-pass filter. Then is the Low-shelf filter, its role is to change the amount of bass in a sound, as a result the frequencies that are lower than the current frequency get a boost, while them that are over it remain unchanged. Next, the High-shelf filter is responsible for the quantity of treble in a sound. Moreover, Peaking filter is used in order to handle the amount of midrange in a sound. Lastly, there is the All-pass filter, whose role is to introduce phaser effects."></meta>
 <meta name="info" content="This work presents an innovative solution of the spatial sound in X3DOM framework, that based on a combinational methodology. Specifically, we suggested the enrichment of X3DOM with spatial sound features, using both the X3D sound nodes and the structure of Web Audio API."></meta>
 <meta name="creator" content="Efi Lakka, Athanasios Malamos, Dick Puk, Don Brutzman"></meta>
 <meta name="created" content="28 October 2020"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 12:09:36 GMT"></meta>
+<meta name="modified" content="5 December 2021"></meta>
 <meta name="reference" content="CHANGELOG.txt"></meta>
 <meta name="TODO" content="credit for audio files"></meta>
 <meta name="reference" content="https://www.medialab.hmu.gr/minipages/x3domAudio"></meta>
 <meta name="identifier" content="https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d"></meta>
+<meta name="generator" content="X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"></meta>
+<meta name="license" content="../license.html"></meta>
 </head>
 <Scene><WorldInfo title="Filters.x3d"></WorldInfo>
 <NavigationInfo></NavigationInfo>
 <Background skyColor="0.2 0.2 0.2"></Background>
-<Viewpoint description="View entire audio model" position="0 500 600" orientation="1 0 0 -0.5" retainUserOffsets="true"></Viewpoint>
-<Transform DEF="TransformAudio1" translation="-200 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit"><Material containerField="material" diffuseColor="0.1 0.1 0.1" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
+<Viewpoint description="View entire audio model" orientation="1 0 0 -0.5" position="0 500 600" retainUserOffsets="true"></Viewpoint>
+<Transform DEF="TransformAudio1" translation="-200 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit"><Material containerField="material" diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere radius="30"></Sphere>
 </Shape>
 </Transform>
-<Transform DEF="TransformAudio2" translation="0 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit2"><Material containerField="material" diffuseColor="0.1 0.1 0.1" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
+<Transform DEF="TransformAudio2" translation="0 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit2"><Material containerField="material" diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere radius="30"></Sphere>
 </Shape>
 </Transform>
-<Transform DEF="TransformAudio3" translation="200 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit3"><Material containerField="material" diffuseColor="0.1 0.1 0.1" specularColor="0.01 0.01 0.01" emissiveColor="0.8 0.8 0.8"></Material>
+<Transform DEF="TransformAudio3" translation="200 50 0"><Shape><Appearance containerField="appearance" DEF="audio_emit3"><Material containerField="material" diffuseColor="0.1 0.1 0.1" emissiveColor="0.8 0.8 0.8" specularColor="0.01 0.01 0.01"></Material>
 </Appearance>
 <Sphere radius="30"></Sphere>
 </Shape>
@@ -36,23 +38,23 @@
 <Transform DEF="AnimDataBoxL" translation="30 100 0"></Transform>
 <Transform DEF="AnimDataBoxMM" translation="-15 100 0"></Transform>
 <Transform DEF="AnimDataBoxLM" translation="-30 100 0"></Transform>
-<Transform><Shape><Appearance containerField="appearance" DEF="floor"><Material containerField="material" diffuseColor="0.1 0.1 0.1" specularColor="0.5 0.6 0.7" shininess="0.8"></Material>
+<Transform><Shape><Appearance containerField="appearance" DEF="floor"><Material containerField="material" diffuseColor="0.1 0.1 0.1" shininess="0.8" specularColor="0.5 0.6 0.7"></Material>
 </Appearance>
 <Cylinder radius="500"></Cylinder>
 </Shape>
 </Transform>
 <ListenerPointSource trackCurrentView="true"></ListenerPointSource>
-<StreamAudioDestination><DynamicsCompressor><Gain><SpatialSound DEF="Audio1"><Gain><Analyser><BiquadFilter detune="50" type="ALLPASS" frequency="600" qualityFactor="30"><AudioClip description="Techno beat" url="&quot;sound/techno_beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3&quot;" loop="true"></AudioClip>
+<StreamAudioDestination><DynamicsCompressor><Gain><SpatialSound DEF="Audio1"><Gain><Analyser><BiquadFilter detune="50" frequency="600" qualityFactor="30" type="ALLPASS"><AudioClip description="Techno beat" loop="true" url="&quot;sound/techno_beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound DEF="Audio2"><Gain><Analyser><BiquadFilter detune="15" type="ALLPASS" frequency="600" qualityFactor="15"><AudioClip description="Simple beat" url="&quot;sound/beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3&quot;" loop="true"></AudioClip>
+<SpatialSound DEF="Audio2"><Gain><Analyser><BiquadFilter detune="15" frequency="600" qualityFactor="15" type="ALLPASS"><AudioClip description="Simple beat" loop="true" url="&quot;sound/beat.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>
 </SpatialSound>
-<SpatialSound DEF="Audio3"><Gain><Analyser><BiquadFilter type="ALLPASS" frequency="1000" qualityFactor="0"><AudioClip description="Wobble loop" url="&quot;sound/wobble_loop.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3&quot;" loop="true"></AudioClip>
+<SpatialSound DEF="Audio3"><Gain><Analyser><BiquadFilter frequency="1000" qualityFactor="0" type="ALLPASS"><AudioClip description="Wobble loop" loop="true" url="&quot;sound/wobble_loop.mp3&quot; &quot;https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3&quot;"></AudioClip>
 </BiquadFilter>
 </Analyser>
 </Gain>

@@ -63,43 +63,43 @@ ProtoInstance ProtoInstance3 = null;
 ProtoInstance ProtoInstance4 = null;
 ProtoInstance ProtoInstance5 = null;
 ProtoInstance ProtoInstance6 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Scripting").setLevel(1))
-        .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
-        .addComponent(new component().setName("Shaders").setLevel(1))
-        .addComponent(new component().setName("CubeMapTexturing").setLevel(1))
-        .addComponent(new component().setName("Texturing").setLevel(1))
-        .addComponent(new component().setName("Rendering").setLevel(1))
-        .addComponent(new component().setName("Grouping").setLevel(3))
-        .addComponent(new component().setName("Core").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("x3domflowers.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("description").setContent("5 or more prismatic flowers"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d")))
+        .addComponent(new component().setName(new SFString("Scripting")).setLevel(1))
+        .addComponent(new component().setName(new SFString("EnvironmentalEffects")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Shaders")).setLevel(1))
+        .addComponent(new component().setName(new SFString("CubeMapTexturing")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Texturing")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Rendering")).setLevel(1))
+        .addComponent(new component().setName(new SFString("Grouping")).setLevel(3))
+        .addComponent(new component().setName(new SFString("Core")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("x3domflowers.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("5 or more prismatic flowers")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"))))
       .setScene(new Scene()
         .addChild(new NavigationInfo())
         .addComments(new CommentsBlock("Images courtesy of Paul Debevec's Light Probe Image Gallery"))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Group()
-          .addChild(new ExternProtoDeclare().setName("FlowerProto").setUrl(new MFString6().getArray())
-            .addField(new field().setType("MFString").setName("vertex").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-            .addField(new field().setType("MFString").setName("fragment").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
-          .addChild(new ProtoDeclare().setName("flower")
+          .addChild(new ExternProtoDeclare().setName(new SFString("FlowerProto")).setUrl(new MFString6().getArray())
+            .addField(new field().setType("MFString").setName(new SFString("vertex")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+            .addField(new field().setType("MFString").setName(new SFString("fragment")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+          .addChild(new ProtoDeclare().setName(new SFString("flower"))
             .setProtoBody(new ProtoBody()
               .addChild(new Group()
-                .addChild(ProtoInstance0 = new ProtoInstance().setName("FlowerProto")))))
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance2 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance3 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance4 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance5 = new ProtoInstance().setName("flower"))
-          .addChild(ProtoInstance6 = new ProtoInstance().setName("flower"))));
+                .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("FlowerProto"))))))
+          .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("flower")))
+          .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("flower")))
+          .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("flower")))
+          .addChild(ProtoInstance4 = new ProtoInstance().setName(new SFString("flower")))
+          .addChild(ProtoInstance5 = new ProtoInstance().setName(new SFString("flower")))
+          .addChild(ProtoInstance6 = new ProtoInstance().setName(new SFString("flower")))));
 ProtoInstance0
-                  .addFieldValue(new fieldValue().setName("vertex").setValue("\"../shaders/x3dom_flowers_chromatic.vs\""));
+                  .addFieldValue(new fieldValue().setName(new SFString("vertex")).setValue(new SFString("\"../shaders/x3dom_flowers_chromatic.vs\"")));
 ProtoInstance0
-                  .addFieldValue(new fieldValue().setName("fragment").setValue("\"../shaders/common.fs\""));
+                  .addFieldValue(new fieldValue().setName(new SFString("fragment")).setValue(new SFString("\"../shaders/common.fs\"")));
     return X3D0;
     }
 private class MFString0 {

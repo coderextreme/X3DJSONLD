@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Full"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,7 +22,7 @@ meta4.content = "1 November 2025"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "modified"
-meta5.content = "Mon, 09 Feb 2026 12:24:16 GMT"
+meta5.content = "14 December 2025"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
@@ -77,225 +77,236 @@ meta15.content = "Direct scene manipulations with Javascript, https://doc.instan
 head1.children.append(meta15)
 meta16 = x3d.meta()
 meta16.name = "generator"
-meta16.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta16.content = "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
 
 head1.children.append(meta16)
 meta17 = x3d.meta()
 meta17.name = "generator"
-meta17.content = "X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"
+meta17.content = "Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize"
 
 head1.children.append(meta17)
+meta18 = x3d.meta()
+meta18.name = "identifier"
+meta18.content = "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclare.x3d"
+
+head1.children.append(meta18)
+meta19 = x3d.meta()
+meta19.name = "license"
+meta19.content = "https://www.web3d.org/x3d/content/examples/license.html"
+
+head1.children.append(meta19)
 
 X3D0.head = head1
-Scene18 = x3d.Scene()
-ExternProtoDeclare19 = x3d.ExternProtoDeclare()
-ExternProtoDeclare19.name = "HAnimPose"
-ExternProtoDeclare19.appinfo = "Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."
-ExternProtoDeclare19.url = ["Filename.x3d#HAnimPose","https://some.address.org/Filename.x3d#HAnimPose"]
-field20 = x3d.field()
-field20.accessType = "inputOutput"
-field20.type = "SFNode"
-field20.name = "parentHAnimHumanoid"
-field20.appinfo = "HAnimHumanoid for this Pose to act upon"
+Scene20 = x3d.Scene()
+WorldInfo21 = x3d.WorldInfo(DEF="ModelInfo")
+WorldInfo21.info = ["Design to illustrate a potential HAnimPose node"]
+WorldInfo21.title = "HAnimPoseExternProtoDeclare"
 
-ExternProtoDeclare19.field.append(field20)
-field21 = x3d.field()
-field21.accessType = "inputOutput"
-field21.type = "SFString"
-field21.name = "name"
-field21.appinfo = "name of this pose"
+Scene20.children.append(WorldInfo21)
+Background22 = x3d.Background()
+Background22.skyColor = [(0.6, 0.6, 0.8)]
 
-ExternProtoDeclare19.field.append(field21)
-field22 = x3d.field()
-field22.accessType = "inputOutput"
-field22.type = "MFNode"
-field22.name = "children"
-field22.appinfo = "joint values to apply to HAnimHumanoid"
+Scene20.children.append(Background22)
+NavigationInfo23 = x3d.NavigationInfo()
 
-ExternProtoDeclare19.field.append(field22)
-field23 = x3d.field()
-field23.accessType = "inputOutput"
-field23.type = "SFString"
-field23.name = "description"
-field23.appinfo = "explanation of purpose"
-
-ExternProtoDeclare19.field.append(field23)
-field24 = x3d.field()
-field24.accessType = "inputOutput"
-field24.type = "SFBool"
-field24.name = "enabled"
-field24.appinfo = "default value true"
-
-ExternProtoDeclare19.field.append(field24)
+Scene20.children.append(NavigationInfo23)
+ExternProtoDeclare24 = x3d.ExternProtoDeclare()
+ExternProtoDeclare24.name = "HAnimPose"
+ExternProtoDeclare24.appinfo = "Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."
+ExternProtoDeclare24.url = ["Filename.x3d#HAnimPose","https://some.address.org/Filename.x3d#HAnimPose"]
 field25 = x3d.field()
-field25.accessType = "initializeOnly"
-field25.type = "SFInt32"
-field25.name = "loa"
-field25.appinfo = "default is no loa"
+field25.name = "parentHAnimHumanoid"
+field25.accessType = "inputOutput"
+field25.appinfo = "HAnimHumanoid for this Pose to act upon"
+field25.type = "SFNode"
 
-ExternProtoDeclare19.field.append(field25)
+ExternProtoDeclare24.field.append(field25)
 field26 = x3d.field()
+field26.name = "name"
 field26.accessType = "inputOutput"
-field26.type = "SFTime"
-field26.name = "transitionDuration"
-field26.appinfo = "how many seconds to achieve the pose"
+field26.appinfo = "name of this pose"
+field26.type = "SFString"
 
-ExternProtoDeclare19.field.append(field26)
+ExternProtoDeclare24.field.append(field26)
 field27 = x3d.field()
+field27.name = "children"
 field27.accessType = "inputOutput"
-field27.type = "SFNode"
-field27.name = "metadata"
-field27.appinfo = "single Metadata* node"
+field27.appinfo = "joint values to apply to HAnimHumanoid"
+field27.type = "MFNode"
+field27.children.append(x3d.Comment("""initializating Joint nodes (if any) go here"""))
 
-ExternProtoDeclare19.field.append(field27)
+ExternProtoDeclare24.field.append(field27)
 field28 = x3d.field()
-field28.accessType = "outputOnly"
-field28.type = "SFBool"
-field28.name = "isActive"
-field28.appinfo = "event indicating when pose transition is active"
+field28.name = "description"
+field28.accessType = "inputOutput"
+field28.appinfo = "explanation of purpose"
+field28.type = "SFString"
 
-ExternProtoDeclare19.field.append(field28)
+ExternProtoDeclare24.field.append(field28)
 field29 = x3d.field()
-field29.accessType = "inputOnly"
+field29.name = "enabled"
+field29.accessType = "inputOutput"
+field29.appinfo = "default value true"
 field29.type = "SFBool"
-field29.name = "commencePose"
-field29.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
 
-ExternProtoDeclare19.field.append(field29)
+ExternProtoDeclare24.field.append(field29)
 field30 = x3d.field()
-field30.accessType = "inputOnly"
-field30.type = "SFBool"
-field30.name = "resetAllJoints"
-field30.appinfo = "reset the skeleton to I pose with all joints zeroed"
+field30.name = "loa"
+field30.accessType = "initializeOnly"
+field30.appinfo = "default is no loa"
+field30.type = "SFInt32"
 
-ExternProtoDeclare19.field.append(field30)
+ExternProtoDeclare24.field.append(field30)
 field31 = x3d.field()
-field31.accessType = "inputOnly"
-field31.type = "SFFloat"
-field31.name = "set_fraction"
-field31.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+field31.name = "transitionDuration"
+field31.accessType = "inputOutput"
+field31.appinfo = "how many seconds to achieve the pose"
+field31.type = "SFTime"
 
-ExternProtoDeclare19.field.append(field31)
+ExternProtoDeclare24.field.append(field31)
 field32 = x3d.field()
-field32.accessType = "inputOnly"
-field32.type = "SFTime"
-field32.name = "set_startTime"
-field32.appinfo = "starts the animation clock"
+field32.name = "metadata"
+field32.accessType = "inputOutput"
+field32.appinfo = "single Metadata* node"
+field32.type = "SFNode"
 
-ExternProtoDeclare19.field.append(field32)
+ExternProtoDeclare24.field.append(field32)
 field33 = x3d.field()
-field33.accessType = "inputOnly"
+field33.name = "isActive"
+field33.accessType = "outputOnly"
+field33.appinfo = "event indicating when pose transition is active"
 field33.type = "SFBool"
-field33.name = "isLoaded"
-field33.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
 
-ExternProtoDeclare19.field.append(field33)
+ExternProtoDeclare24.field.append(field33)
 field34 = x3d.field()
-field34.accessType = "inputOutput"
+field34.name = "commencePose"
+field34.accessType = "inputOnly"
+field34.appinfo = "this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"
 field34.type = "SFBool"
-field34.name = "traceEnabled"
-field34.appinfo = "debug trace to Browser output console this is a local prototype field"
 
-ExternProtoDeclare19.field.append(field34)
+ExternProtoDeclare24.field.append(field34)
+field35 = x3d.field()
+field35.name = "resetAllJoints"
+field35.accessType = "inputOnly"
+field35.appinfo = "reset the skeleton to I pose with all joints zeroed"
+field35.type = "SFBool"
 
-Scene18.children.append(ExternProtoDeclare19)
-WorldInfo35 = x3d.WorldInfo(DEF="ModelInfo")
-WorldInfo35.title = "HAnimPoseExternProtoDeclare"
-WorldInfo35.info = ["Design to illustrate a potential HAnimPose node"]
+ExternProtoDeclare24.field.append(field35)
+field36 = x3d.field()
+field36.name = "set_fraction"
+field36.accessType = "inputOnly"
+field36.appinfo = "allows transition to proceed incrementally from fraction [0..10"
+field36.type = "SFFloat"
 
-Scene18.children.append(WorldInfo35)
-Background36 = x3d.Background()
-Background36.skyColor = [(0.6, 0.6, 0.8)]
+ExternProtoDeclare24.field.append(field36)
+field37 = x3d.field()
+field37.name = "set_startTime"
+field37.accessType = "inputOnly"
+field37.appinfo = "starts the animation clock"
+field37.type = "SFTime"
 
-Scene18.children.append(Background36)
-NavigationInfo37 = x3d.NavigationInfo()
+ExternProtoDeclare24.field.append(field37)
+field38 = x3d.field()
+field38.name = "isLoaded"
+field38.accessType = "inputOnly"
+field38.appinfo = "possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"
+field38.type = "SFBool"
 
-Scene18.children.append(NavigationInfo37)
-Viewpoint38 = x3d.Viewpoint()
-Viewpoint38.description = "HAnimPoseExternProtoDeclare description"
-Viewpoint38.position = [0,1,4]
+ExternProtoDeclare24.field.append(field38)
+field39 = x3d.field()
+field39.name = "traceEnabled"
+field39.accessType = "inputOutput"
+field39.appinfo = "debug trace to Browser output console this is a local prototype field"
+field39.type = "SFBool"
 
-Scene18.children.append(Viewpoint38)
-Transform39 = x3d.Transform(DEF="DisplayHeader1")
-Transform39.translation = [0,1.5,0]
-Anchor40 = x3d.Anchor()
-Anchor40.description = "go to HAnimPoseExternProtoDeclareIndex page"
-Anchor40.url = ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclareIndex.html"]
-Anchor40.parameter = ["target=_blank"]
-Shape41 = x3d.Shape()
-Appearance42 = x3d.Appearance(DEF="PoseTextAppearance")
-Material43 = x3d.Material()
-Material43.diffuseColor = [0.1,0.3,0.5]
+ExternProtoDeclare24.field.append(field39)
 
-Appearance42.material = Material43
+Scene20.children.append(ExternProtoDeclare24)
+Viewpoint40 = x3d.Viewpoint()
+Viewpoint40.description = "HAnimPoseExternProtoDeclare description"
+Viewpoint40.position = [0,1,4]
 
-Shape41.appearance = Appearance42
+Scene20.children.append(Viewpoint40)
+Transform41 = x3d.Transform(DEF="DisplayHeader1")
+Transform41.translation = [0,1.5,0]
+Anchor42 = x3d.Anchor()
+Anchor42.description = "go to HAnimPoseExternProtoDeclareIndex page"
+Anchor42.parameter = ["target=_blank"]
+Anchor42.url = ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPoseExternProtoDeclareIndex.html"]
+Shape43 = x3d.Shape()
 Text44 = x3d.Text()
 Text44.string = ["Utility scene","HAnimPoseExternProtoDeclare.x3d"]
 FontStyle45 = x3d.FontStyle(DEF="HeaderFont")
 FontStyle45.family = ["SANS"]
-FontStyle45.style = "BOLD"
-FontStyle45.size = 0.15
 FontStyle45.justify = ["MIDDLE","MIDDLE"]
+FontStyle45.size = 0.15
+FontStyle45.style = "BOLD"
 
 Text44.fontStyle = FontStyle45
 
-Shape41.geometry = Text44
+Shape43.geometry = Text44
+Appearance46 = x3d.Appearance(DEF="PoseTextAppearance")
+Material47 = x3d.Material()
+Material47.diffuseColor = [0.1,0.3,0.5]
 
-Anchor40.children.append(Shape41)
-Shape46 = x3d.Shape()
-Appearance47 = x3d.Appearance(DEF="TransparentAppearance")
-Material48 = x3d.Material()
-Material48.transparency = 1
+Appearance46.material = Material47
 
-Appearance47.material = Material48
+Shape43.appearance = Appearance46
 
-Shape46.appearance = Appearance47
+Anchor42.children.append(Shape43)
+Shape48 = x3d.Shape()
 Box49 = x3d.Box()
 Box49.size = [3.5,0.5,0.001]
 
-Shape46.geometry = Box49
+Shape48.geometry = Box49
+Appearance50 = x3d.Appearance(DEF="TransparentAppearance")
+Material51 = x3d.Material()
+Material51.transparency = 1
 
-Anchor40.children.append(Shape46)
+Appearance50.material = Material51
 
-Transform39.children.append(Anchor40)
+Shape48.appearance = Appearance50
 
-Scene18.children.append(Transform39)
-Transform50 = x3d.Transform(DEF="DisplayHeader2")
-Transform50.translation = [0,0.5,0]
-Anchor51 = x3d.Anchor()
-Anchor51.description = "go to HAnimPosePrototypeIndex page"
-Anchor51.url = ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeIndex.html"]
-Anchor51.parameter = ["target=_blank"]
-Shape52 = x3d.Shape()
-Appearance53 = x3d.Appearance(USE="PoseTextAppearance")
+Anchor42.children.append(Shape48)
 
-Shape52.appearance = Appearance53
-Text54 = x3d.Text()
-Text54.string = ["This model supports","HAnimPosePrototype.x3d"]
-FontStyle55 = x3d.FontStyle(USE="HeaderFont")
+Transform41.children.append(Anchor42)
 
-Text54.fontStyle = FontStyle55
+Scene20.children.append(Transform41)
+Transform52 = x3d.Transform(DEF="DisplayHeader2")
+Transform52.translation = [0,0.5,0]
+Anchor53 = x3d.Anchor()
+Anchor53.description = "go to HAnimPosePrototypeIndex page"
+Anchor53.parameter = ["target=_blank"]
+Anchor53.url = ["https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeIndex.html"]
+Shape54 = x3d.Shape()
+Text55 = x3d.Text()
+Text55.string = ["This model supports","HAnimPosePrototype.x3d"]
+FontStyle56 = x3d.FontStyle(USE="HeaderFont")
 
-Shape52.geometry = Text54
+Text55.fontStyle = FontStyle56
 
-Anchor51.children.append(Shape52)
+Shape54.geometry = Text55
+Appearance57 = x3d.Appearance(USE="PoseTextAppearance")
 
-Transform50.children.append(Anchor51)
-Shape56 = x3d.Shape()
-Appearance57 = x3d.Appearance(USE="TransparentAppearance")
+Shape54.appearance = Appearance57
 
-Shape56.appearance = Appearance57
-Box58 = x3d.Box()
-Box58.size = [2.6,0.5,0.001]
+Anchor53.children.append(Shape54)
 
-Shape56.geometry = Box58
+Transform52.children.append(Anchor53)
+Shape58 = x3d.Shape()
+Box59 = x3d.Box()
+Box59.size = [2.6,0.5,0.001]
 
-Transform50.children.append(Shape56)
+Shape58.geometry = Box59
+Appearance60 = x3d.Appearance(USE="TransparentAppearance")
 
-Scene18.children.append(Transform50)
+Shape58.appearance = Appearance60
 
-X3D0.Scene = Scene18
+Transform52.children.append(Shape58)
+
+Scene20.children.append(Transform52)
+
+X3D0.Scene = Scene20
 f = open("../data/HAnimPoseExternProtoDeclare.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

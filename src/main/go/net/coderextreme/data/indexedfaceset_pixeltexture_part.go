@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -137,7 +137,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 07:41:48 GMT"),
+                Content: stringPtr("13 January 2014"),
             },
             &x3d.Meta{
                 Name: stringPtr("description"),
@@ -151,41 +151,50 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.Viewpoint{
                     Description: stringPtr("Front View"),
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Rear View"),
-                    Position: &x3d.SFVec3f{0.0, 0.0, -10.0},
                     Orientation: &x3d.SFRotation{0.0, 1.0, 0.0, 3.14},
+                    Position: &x3d.SFVec3f{0.0, 0.0, -10.0},
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Top View"),
-                    Position: &x3d.SFVec3f{0.0, 10.0, 0.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -1.57},
+                    Position: &x3d.SFVec3f{0.0, 10.0, 0.0},
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Bottom View"),
-                    Position: &x3d.SFVec3f{0.0, -10.0, 0.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, 1.57},
+                    Position: &x3d.SFVec3f{0.0, -10.0, 0.0},
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Right View"),
-                    Position: &x3d.SFVec3f{10.0, 0.0, 0.0},
                     Orientation: &x3d.SFRotation{0.0, 1.0, 0.0, 1.57},
+                    Position: &x3d.SFVec3f{10.0, 0.0, 0.0},
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("Left View"),
-                    Position: &x3d.SFVec3f{-10.0, 0.0, 0.0},
                     Orientation: &x3d.SFRotation{0.0, 1.0, 0.0, -1.57},
+                    Position: &x3d.SFVec3f{-10.0, 0.0, 0.0},
                 },
                 &x3d.NavigationInfo{
                     Type: x3d.MFString{"EXAMINE", "WALK", "FLY", "ANY"},
                 },
+//<Environment id="gamma" gammaCorrectionDefault="none"></Environment>
                 &x3d.Shape{
                     Appearance: &x3d.Appearance{
                         Material: &x3d.Material{
@@ -198,18 +207,18 @@ func main() {
                         },
                     },
                     Geometry: &x3d.IndexedFaceSet{
-                        CreaseAngle: floatPtr(0.5),
                         ColorPerVertex: boolPtr(false),
-                        TexCoordIndex: []int32{0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1},
                         CoordIndex: []int32{0, 1, 3, 2, -1, 4, 5, 7, 6, -1, 6, 7, 1, 0, -1, 2, 3, 5, 4, -1, 6, 0, 2, 4, -1, 1, 7, 5, 3, -1},
+                        CreaseAngle: floatPtr(0.5),
+                        TexCoordIndex: []int32{0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1, 0, 1, 3, 2, -1},
                         Color: &x3d.Color{
                             Color: &x3d.MFColor{[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0},[3]float32{0.0,1.0,0.0}},
                         },
-                        TexCoord: &x3d.TextureCoordinate{
-                            Point: &x3d.MFVec2f{[2]float32{0.5,1.0},[2]float32{0.5,0.5},[2]float32{1.0,1.0},[2]float32{1.0,0.5}},
-                        },
                         Coord: &x3d.Coordinate{
                             Point: &x3d.MFVec3f{[3]float32{-2.0,1.0,1.0},[3]float32{-2.0,-1.0,1.0},[3]float32{2.0,1.0,1.0},[3]float32{2.0,-1.0,1.0},[3]float32{2.0,1.0,-1.0},[3]float32{2.0,-1.0,-1.0},[3]float32{-2.0,1.0,-1.0},[3]float32{-2.0,-1.0,-1.0}},
+                        },
+                        TexCoord: &x3d.TextureCoordinate{
+                            Point: &x3d.MFVec2f{[2]float32{0.5,1.0},[2]float32{0.5,0.5},[2]float32{1.0,1.0},[2]float32{1.0,0.5}},
                         },
                     },
                 },
@@ -231,13 +240,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/indexedfaceset_pixeltexture_part.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -248,7 +257,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

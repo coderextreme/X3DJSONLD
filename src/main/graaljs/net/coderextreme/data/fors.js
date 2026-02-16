@@ -91,7 +91,10 @@ var ProtoInstance2 = null;
         .addChild(new Script().setDEF("clickHandler")
           .addField(new field().setType(field.TYPE_SFINT32).setName("counter").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new field().setType(field.TYPE_SFBOOL).setName("add_node").setAccessType(field.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addComments(new CommentsBlock("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>"))
+          .addComments(new CommentsBlock("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>"))
+          .addComments(new CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">"))
+          .addComments(new CommentsBlock("<Transform USE=\"HoldsContent\"/>"))
+          .addComments(new CommentsBlock("</field>"))
           .setSourceCode(`ecmascript:
 	function add_node(value) {
                 // Browser.print('hey ', counter);

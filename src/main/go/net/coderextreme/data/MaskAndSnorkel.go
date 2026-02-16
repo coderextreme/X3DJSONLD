@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -97,16 +97,24 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:52:34 GMT"),
+                Content: stringPtr("23 May 2020"),
             },
             &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Legacy/MaskAndSnorkel.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("MaskAndSnorkel.x3d"),
                 },
@@ -133,9 +141,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{0, 1, 13, 12, 0, -1, 1, 2, 14, 13, 1, -1, 2, 3, 15, 14, 2, -1, 3, 4, 16, 15, 3, -1, 4, 5, 17, 16, 4, -1, 5, 6, 18, 17, 5, -1, 18, 6, 25, 19, 0, 12, 18, -1, 0, 19, 20, 11, 0, -1, 10, 11, 20, 21, 10, -1, 9, 10, 21, 22, 9, -1, 8, 9, 22, 23, 8, -1, 23, 24, 7, 8, 23, -1, 6, 7, 24, 25, 6, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0}},
                                         },
@@ -173,8 +181,8 @@ func main() {
                                         Translation: &x3d.SFVec3f{0.0, -0.02, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.035, -0.07, -0.02},
                                                 Scale: &x3d.SFVec3f{0.9, 0.9, 0.9},
+                                                Translation: &x3d.SFVec3f{0.035, -0.07, -0.02},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -194,9 +202,9 @@ func main() {
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.01, -0.04, -0.02},
                                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, 1.57},
                                                 Scale: &x3d.SFVec3f{0.9, 0.9, 0.9},
+                                                Translation: &x3d.SFVec3f{0.01, -0.04, -0.02},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -216,9 +224,9 @@ func main() {
                                             },
                                         },
                                         &x3d.Transform{
-                                                Translation: &x3d.SFVec3f{0.005, -0.01, -0.02},
                                                 Rotation: &x3d.SFRotation{0.0, 0.0, 1.0, -0.85},
                                                 Scale: &x3d.SFVec3f{0.9, 0.9, 0.9},
+                                                Translation: &x3d.SFVec3f{0.005, -0.01, -0.02},
                                             Children: []x3d.X3DNode{
                                                 &x3d.Shape{
                                                     Appearance: &x3d.Appearance{
@@ -255,9 +263,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{12, 13, 14, 15, 16, 17, 18, 12, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0}},
                                         },
@@ -279,9 +287,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{19, 20, 21, 22, 23, 24, 25, 19, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0}},
                                         },
@@ -305,9 +313,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{0, 37, 26, 0, -1, 0, 36, 26, 0, -1, 36, 37, 26, 36, -1, 0, 1, 37, 0, -1, 0, 11, 36, 0, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0},[3]float32{0.0,0.04,0.015},[3]float32{0.05,0.04,-0.03},[3]float32{0.06,0.05,-0.03},[3]float32{0.07,0.095,-0.03},[3]float32{0.055,0.11,-0.03},[3]float32{0.0,0.11,-0.02},[3]float32{-0.055,0.11,-0.03},[3]float32{-0.07,0.095,-0.03},[3]float32{-0.06,0.05,-0.03},[3]float32{-0.05,0.04,-0.03},[3]float32{-0.02,0.04,-0.02},[3]float32{0.02,0.04,-0.02}},
                                         },
@@ -329,9 +337,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{1, 2, 27, 37, 1, -1, 2, 3, 28, 27, 2, -1, 3, 4, 29, 28, 3, -1, 4, 5, 30, 29, 4, -1, 5, 6, 31, 30, 5, -1, 6, 7, 32, 31, 6, -1, 7, 8, 33, 32, 7, -1, 8, 9, 34, 33, 8, -1, 9, 10, 35, 34, 9, -1, 10, 11, 36, 35, 10, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0},[3]float32{0.0,0.05,0.015},[3]float32{0.05,0.04,-0.03},[3]float32{0.06,0.05,-0.03},[3]float32{0.07,0.095,-0.03},[3]float32{0.055,0.11,-0.03},[3]float32{0.0,0.11,-0.02},[3]float32{-0.055,0.11,-0.03},[3]float32{-0.07,0.095,-0.03},[3]float32{-0.06,0.05,-0.03},[3]float32{-0.05,0.04,-0.03},[3]float32{-0.02,0.04,-0.02},[3]float32{0.02,0.04,-0.02}},
                                         },
@@ -353,9 +361,9 @@ func main() {
                                         },
                                     },
                                     Geometry: &x3d.IndexedFaceSet{
-                                        Solid: boolPtr(false),
-                                        CreaseAngle: floatPtr(1.45),
                                         CoordIndex: []int32{3, 4, 39, 38, 3, -1, 8, 9, 40, 41, 8, -1, 38, 39, 42, 43, 38, -1, 40, 41, 44, 45, 40, -1, 42, 43, 47, 46, 42, -1, 44, 45, 47, 46, 44, -1},
+                                        CreaseAngle: floatPtr(1.45),
+                                        Solid: boolPtr(false),
                                         Coord: &x3d.Coordinate{
                                             Point: &x3d.MFVec3f{[3]float32{0.0,0.08,0.0},[3]float32{0.02,0.05,0.0},[3]float32{0.05,0.05,0.0},[3]float32{0.06,0.06,0.0},[3]float32{0.06,0.09,0.0},[3]float32{0.05,0.1,0.0},[3]float32{0.0,0.1,0.0},[3]float32{-0.05,0.1,0.0},[3]float32{-0.06,0.09,0.0},[3]float32{-0.06,0.06,0.0},[3]float32{-0.05,0.05,0.0},[3]float32{-0.02,0.05,0.0},[3]float32{0.005,0.08,0.0},[3]float32{0.02,0.055,0.0},[3]float32{0.05,0.055,0.0},[3]float32{0.055,0.06,0.0},[3]float32{0.055,0.09,0.0},[3]float32{0.045,0.095,0.0},[3]float32{0.005,0.095,0.0},[3]float32{-0.005,0.08,0.0},[3]float32{-0.02,0.055,0.0},[3]float32{-0.05,0.055,0.0},[3]float32{-0.055,0.06,0.0},[3]float32{-0.055,0.09,0.0},[3]float32{-0.045,0.095,0.0},[3]float32{-0.005,0.095,0.0},[3]float32{0.0,0.05,0.015},[3]float32{0.05,0.04,-0.03},[3]float32{0.06,0.05,-0.03},[3]float32{0.07,0.095,-0.03},[3]float32{0.055,0.11,-0.03},[3]float32{0.0,0.11,-0.02},[3]float32{-0.055,0.11,-0.03},[3]float32{-0.07,0.095,-0.03},[3]float32{-0.06,0.05,-0.03},[3]float32{-0.05,0.04,-0.03},[3]float32{-0.02,0.04,-0.02},[3]float32{0.02,0.04,-0.02},[3]float32{0.075,0.06,-0.135},[3]float32{0.075,0.09,-0.135},[3]float32{-0.075,0.06,-0.135},[3]float32{-0.075,0.09,-0.135},[3]float32{0.06,0.09,-0.165},[3]float32{0.06,0.06,-0.165},[3]float32{-0.06,0.09,-0.165},[3]float32{-0.06,0.06,-0.165},[3]float32{0.0,0.09,-0.2},[3]float32{0.0,0.06,-0.175}},
                                         },
@@ -383,13 +391,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/MaskAndSnorkel.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -400,7 +408,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

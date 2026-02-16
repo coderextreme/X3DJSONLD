@@ -78,7 +78,7 @@ Sohead1->addMeta(*Someta7);
 
 Someta* Someta8 = new Someta();
 Someta8->setName(QString("modified"));
-Someta8->setContent(QString("23 December 2021"));
+Someta8->setContent(QString("5 November 2025"));
 Sohead1->addMeta(*Someta8);
 
 Someta* Someta9 = new Someta();
@@ -87,1066 +87,1004 @@ Someta9->setContent(QString("Articulated 3D game character designed with a gener
 Sohead1->addMeta(*Someta9);
 
 Someta* Someta10 = new Someta();
-Someta10->setName(QString("reference"));
-Someta10->setContent(QString("KoreanCharacter00ReadMe.txt"));
+Someta10->setName(QString("Image"));
+Someta10->setContent(QString("../Poses/images/HAnimPoseExampleKoreanCharacter01Jin.png"));
 Sohead1->addMeta(*Someta10);
 
 Someta* Someta11 = new Someta();
 Someta11->setName(QString("reference"));
-Someta11->setContent(QString("KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
+Someta11->setContent(QString("KoreanCharacter00ReadMe.txt"));
 Sohead1->addMeta(*Someta11);
 
 Someta* Someta12 = new Someta();
 Someta12->setName(QString("reference"));
-Someta12->setContent(QString("KoreanCharactersIllustrated.pdf"));
+Someta12->setContent(QString("../KoreanCharacterHumanMotion_Infotech2014_140706.pdf"));
 Sohead1->addMeta(*Someta12);
 
 Someta* Someta13 = new Someta();
-Someta13->setName(QString("identifier"));
-Someta13->setContent(QString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter01Jin.x3d"));
+Someta13->setName(QString("reference"));
+Someta13->setContent(QString("KoreanCharactersIllustrated.pdf"));
 Sohead1->addMeta(*Someta13);
 
 Someta* Someta14 = new Someta();
-Someta14->setName(QString("generator"));
-Someta14->setContent(QString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview"));
+Someta14->setName(QString("identifier"));
+Someta14->setContent(QString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/KoreanCharacter01Jin.x3d"));
 Sohead1->addMeta(*Someta14);
 
 Someta* Someta15 = new Someta();
 Someta15->setName(QString("generator"));
-Someta15->setContent(QString("Suwon University HAnim Editor"));
+Someta15->setContent(QString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview"));
 Sohead1->addMeta(*Someta15);
 
 Someta* Someta16 = new Someta();
 Someta16->setName(QString("generator"));
-Someta16->setContent(QString("Gnu Image Manipulation Program, https://www.gimp.org"));
+Someta16->setContent(QString("Suwon University HAnim Editor"));
 Sohead1->addMeta(*Someta16);
 
 Someta* Someta17 = new Someta();
 Someta17->setName(QString("generator"));
-Someta17->setContent(QString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"));
+Someta17->setContent(QString("Gnu Image Manipulation Program, http://www.gimp.org"));
 Sohead1->addMeta(*Someta17);
 
 Someta* Someta18 = new Someta();
-Someta18->setName(QString("license"));
-Someta18->setContent(QString("../license.html"));
+Someta18->setName(QString("generator"));
+Someta18->setContent(QString("X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit"));
 Sohead1->addMeta(*Someta18);
+
+Someta* Someta19 = new Someta();
+Someta19->setName(QString("license"));
+Someta19->setContent(QString("../license.html"));
+Sohead1->addMeta(*Someta19);
 
 SoSceneManager0->setHead(*Sohead1);
 
-SoNode* SoNode19 = new SoNode();
-SoWorldInfo* SoWorldInfo20 = new SoWorldInfo();
-SoWorldInfo20->setTitle(QString("KoreanCharacter01Jin.x3d"));
-SoNode19->addChild(*SoWorldInfo20);
+SoNode* SoNode20 = new SoNode();
+SoWorldInfo* SoWorldInfo21 = new SoWorldInfo();
+SoWorldInfo21->setTitle(QString("KoreanCharacter01Jin.x3d"));
+SoNode20->addChild(*SoWorldInfo21);
 
-SoNavigationInfo* SoNavigationInfo21 = new SoNavigationInfo();
-SoNavigationInfo21->setSpeed(1.5);
-SoNode19->addChild(*SoNavigationInfo21);
+SoNavigationInfo* SoNavigationInfo22 = new SoNavigationInfo();
+SoNavigationInfo22->setSpeed(1.5);
+SoNode20->addChild(*SoNavigationInfo22);
 
-SoViewpoint* SoViewpoint22 = new SoViewpoint();
-SoViewpoint22->setCenterOfRotation(new float[]{0.0,1.0,0.0});
-SoViewpoint22->setDescription(QString("Jin"));
-SoViewpoint22->setPosition(new float[]{0.0,1.0,3.0});
-SoNode19->addChild(*SoViewpoint22);
+SoViewpoint* SoViewpoint23 = new SoViewpoint();
+SoViewpoint23->setCenterOfRotation(new float[]{0.0,1.0,0.0});
+SoViewpoint23->setDescription(QString("Jin"));
+SoViewpoint23->setPosition(new float[]{0.0,1.0,3.0});
+SoNode20->addChild(*SoViewpoint23);
 
-SoHAnimHumanoid* SoHAnimHumanoid23 = new SoHAnimHumanoid();
-SoHAnimHumanoid23->X3DNode::setName(QString("Jin"));
-SoHAnimHumanoid23->setDEF(QString("hanim_Jin"));
-SoHAnimHumanoid23->setScale(new float[]{0.0225,0.0225,0.0225});
-SoHAnimHumanoid23->setVersion(QString("2.0"));
+SoHAnimHumanoid* SoHAnimHumanoid24 = new SoHAnimHumanoid();
+SoHAnimHumanoid24->X3DNode::setName(QString("Jin"));
+SoHAnimHumanoid24->setDEF(QString("hanim_Jin"));
+SoHAnimHumanoid24->setScale(new float[]{0.0225,0.0225,0.0225});
+SoHAnimHumanoid24->setVersion(QString("2.0"));
 //original HAnimHumanoid info='\"authorName=Chul Hee Jung and Myeong Won Lee\" \"authorEmail=myeongwonlee@gmail.com\" \"creationDate=31 March 2011\" \"humanoidVersion=2.0\" \"gender=female\" \"height=1.5\"'
-SoMetadataSet* SoMetadataSet24 = new SoMetadataSet();
-SoMetadataSet24->X3DNode::setName(QString("HAnimHumanoid.info"));
-SoMetadataSet24->X3DNode::setReference(QString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"));
-SoMetadataString* SoMetadataString25 = new SoMetadataString();
-SoMetadataString25->X3DNode::setName(QString("authorName"));
-SoMetadataString25->setValue(new QString[]{QString("Chul Hee Jung and Myeong Won Lee")}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataString25);
-
+SoMetadataSet* SoMetadataSet25 = new SoMetadataSet();
+SoMetadataSet25->X3DNode::setName(QString("HAnimHumanoid.info"));
+SoMetadataSet25->X3DNode::setReference(QString("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid"));
 SoMetadataString* SoMetadataString26 = new SoMetadataString();
-SoMetadataString26->X3DNode::setName(QString("authorEmail"));
-SoMetadataString26->setValue(new QString[]{QString("myeongwonlee@gmail.com")}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataString26);
+SoMetadataString26->X3DNode::setName(QString("authorName"));
+SoMetadataString26->setValue(new QString[]{QString("Chul Hee Jung and Myeong Won Lee")}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataString26);
 
 SoMetadataString* SoMetadataString27 = new SoMetadataString();
-SoMetadataString27->X3DNode::setName(QString("creationDate"));
-SoMetadataString27->setValue(new QString[]{QString("31 March 2011")}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataString27);
+SoMetadataString27->X3DNode::setName(QString("authorEmail"));
+SoMetadataString27->setValue(new QString[]{QString("myeongwonlee@gmail.com")}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataString27);
 
 SoMetadataString* SoMetadataString28 = new SoMetadataString();
-SoMetadataString28->X3DNode::setName(QString("gender"));
-SoMetadataString28->setValue(new QString[]{QString("female")}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataString28);
-
-SoMetadataFloat* SoMetadataFloat29 = new SoMetadataFloat();
-SoMetadataFloat29->X3DNode::setName(QString("height"));
-SoMetadataFloat29->setValue(new float[]{1.5}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataFloat29);
-
-SoMetadataString* SoMetadataString30 = new SoMetadataString();
-SoMetadataString30->X3DNode::setName(QString("humanoidVersion"));
-SoMetadataString30->setValue(new QString[]{QString("2.0")}, 1);
-SoMetadataSet24->setValue((X3DNode *)&SoMetadataString30);
-
-SoHAnimHumanoid23->setMetadata(*SoMetadataSet24);
-
-SoHAnimJoint* SoHAnimJoint31 = new SoHAnimJoint();
-SoHAnimJoint31->X3DNode::setName(QString("humanoid_root"));
-SoHAnimJoint31->setDEF(QString("hanim_humanoid_root"));
-SoHAnimJoint31->setCenter(new float[]{0.0,35.799999,-0.7076});
-SoHAnimJoint31->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint31->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment32 = new SoHAnimSegment();
-SoHAnimSegment32->X3DNode::setName(QString("sacrum"));
-SoHAnimSegment32->setDEF(QString("hanim_sacrum"));
-SoTransform* SoTransform33 = new SoTransform();
-SoTransform33->setTranslation(new float[]{0.0,35.799999,-0.7076});
-SoShape* SoShape34 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance35 = new SoVRMLAppearance();
-SoMaterial* SoMaterial36 = new SoMaterial();
-SoMaterial36->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance35->addChild(*SoMaterial36);
-
-SoImageTexture* SoImageTexture37 = new SoImageTexture();
-SoImageTexture37->setDEF(QString("JinTextureAtlas"));
-SoImageTexture37->setUrl(new QString[]{QString("images/Jin.png"), QString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png")}, 2);
-SoVRMLAppearance35->addChild(*SoImageTexture37);
-
-SoShape34->addChild(*SoVRMLAppearance35);
-
-SoIndexedFaceSet* SoIndexedFaceSet38 = new SoIndexedFaceSet();
-SoIndexedFaceSet38->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
-SoIndexedFaceSet38->setCreaseAngle(1.57);
-SoIndexedFaceSet38->setTexCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
-SoCoordinate* SoCoordinate39 = new SoCoordinate();
-SoCoordinate39->setPoint(new float[]{0.0,1.053,0.0273,0.0,0.9123,-0.5414,-0.4375,0.9123,-0.4652,-0.7578,0.9123,-0.3733,-0.875,0.9123,0.0273,-0.7578,0.9123,0.4279,-0.4375,0.9123,0.5198,0.0,0.9123,0.596,0.4375,0.9123,0.5198,0.7578,0.9123,0.4279,0.875,0.9123,0.0273,0.7578,0.9123,-0.3733,0.4375,0.9123,-0.4652,0.0,0.5267,-0.8842,-0.5658,0.5267,-0.7621,-0.98,0.5267,-0.4285,-1.132,0.5267,0.0273,-0.98,0.5267,0.483,-0.5658,0.5267,0.6985,0.0,0.5267,0.8206,0.5658,0.5267,0.6985,0.98,0.5267,0.483,1.132,0.5267,0.0273,0.98,0.5267,-0.4285,0.5658,0.5267,-0.7621,0.0,0.0,-0.9616,-0.6534,0.0,-0.8206,-1.132,0.0,-0.4353,-1.307,0.0,0.0273,-1.132,0.0,0.5536,-0.6534,0.0,0.8206,0.0,0.0,0.9616,0.6534,0.0,0.8206,1.132,0.0,0.5536,1.307,0.0,0.0273,1.132,0.0,-0.4353,0.6534,0.0,-0.8206,0.0,-0.5267,-0.8206,-0.5658,-0.5267,-0.6985,-0.98,-0.5267,-0.3648,-1.132,-0.5267,0.0273,-0.98,-0.5267,0.483,-0.5658,-0.5267,0.6985,0.0,-0.5267,0.8206,0.5658,-0.5267,0.6985,0.98,-0.5267,0.483,1.132,-0.5267,0.0273,0.98,-0.5267,-0.3648,0.5658,-0.5267,-0.6985,0.0,-0.9123,-0.4353,-0.3267,-0.9123,-0.3648,-0.5658,-0.9123,-0.2358,-0.6534,-0.9123,0.0273,-0.5658,-0.9123,0.2904,-0.3267,-0.9123,0.483,0.0,-0.9123,0.5536,0.3267,-0.9123,0.483,0.5658,-0.9123,0.2904,0.6534,-0.9123,0.0273,0.5658,-0.9123,-0.2358,0.3267,-0.9123,-0.3648,0.0,-1.053,0.0273}, 186);
-SoIndexedFaceSet38->setCoord(*SoCoordinate39);
-
-SoTextureCoordinate* SoTextureCoordinate40 = new SoTextureCoordinate();
-SoTextureCoordinate40->setPoint(new float[]{0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398}, 124);
-SoIndexedFaceSet38->setTexCoord(*SoTextureCoordinate40);
-
-SoShape34->setGeometry(*SoIndexedFaceSet38);
-
-SoTransform33->addChild(*SoShape34);
-
-SoHAnimSegment32->addChild(*SoTransform33);
-
-SoHAnimJoint31->addChildren(*SoHAnimSegment32);
-
-SoHAnimJoint* SoHAnimJoint41 = new SoHAnimJoint();
-SoHAnimJoint41->X3DNode::setName(QString("l_hip"));
-SoHAnimJoint41->setDEF(QString("hanim_l_hip"));
-SoHAnimJoint41->setCenter(new float[]{4.207,32.02,-0.8155});
-SoHAnimJoint41->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint41->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment42 = new SoHAnimSegment();
-SoHAnimSegment42->X3DNode::setName(QString("l_thigh"));
-SoHAnimSegment42->setDEF(QString("hanim_l_thigh"));
-SoTransform* SoTransform43 = new SoTransform();
-SoTransform43->setTranslation(new float[]{4.207,32.02,-0.8155});
-SoShape* SoShape44 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance45 = new SoVRMLAppearance();
-SoMaterial* SoMaterial46 = new SoMaterial();
-SoMaterial46->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance45->addChild(*SoMaterial46);
-
-SoImageTexture* SoImageTexture47 = new SoImageTexture();
-SoImageTexture47->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance45->addChild(*SoImageTexture47);
-
-SoShape44->addChild(*SoVRMLAppearance45);
-
-SoIndexedFaceSet* SoIndexedFaceSet48 = new SoIndexedFaceSet();
-SoIndexedFaceSet48->setCoordIndex(new int32_t[]{47,46,45,-1,45,44,43,-1,45,43,42,-1,47,45,42,-1,48,47,42,-1,0,1,8,-1,8,7,0,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,4,11,-1,11,10,3,-1,4,5,12,-1,12,11,4,-1,5,6,13,-1,13,12,5,-1,6,0,7,-1,7,13,6,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,12,19,-1,19,18,11,-1,12,13,20,-1,20,19,12,-1,13,7,14,-1,14,20,13,-1,14,15,22,-1,22,21,14,-1,15,16,23,-1,23,22,15,-1,16,17,24,-1,24,23,16,-1,17,18,25,-1,25,24,17,-1,18,19,26,-1,26,25,18,-1,19,20,27,-1,27,26,19,-1,20,14,21,-1,21,27,20,-1,56,57,58,-1,58,59,60,-1,58,60,61,-1,56,58,61,-1,62,56,61,-1,29,28,21,-1,21,22,29,-1,30,29,22,-1,22,23,30,-1,31,30,23,-1,23,24,31,-1,32,31,24,-1,24,25,32,-1,33,32,25,-1,25,26,33,-1,34,33,26,-1,26,27,34,-1,28,34,27,-1,27,21,28,-1,36,35,28,-1,28,29,36,-1,37,36,29,-1,29,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,35,41,34,-1,34,28,35,-1,42,43,1,-1,1,0,42,-1,43,44,2,-1,2,1,43,-1,44,45,3,-1,3,2,44,-1,45,46,4,-1,4,3,45,-1,46,47,5,-1,5,4,46,-1,47,48,6,-1,6,5,47,-1,48,42,0,-1,0,6,48,-1,50,49,35,-1,35,36,50,-1,51,50,36,-1,36,37,51,-1,52,51,37,-1,37,38,52,-1,53,52,38,-1,38,39,53,-1,54,53,39,-1,39,40,54,-1,55,54,40,-1,40,41,55,-1,49,55,41,-1,41,35,49,-1,57,56,49,-1,49,50,57,-1,58,57,50,-1,50,51,58,-1,59,58,51,-1,51,52,59,-1,60,59,52,-1,52,53,60,-1,61,60,53,-1,53,54,61,-1,62,61,54,-1,54,55,62,-1,56,62,55,-1,55,49,56,-1}, 488);
-SoIndexedFaceSet48->setCreaseAngle(1.57);
-SoIndexedFaceSet48->setTexCoordIndex(new int32_t[]{5,4,3,-1,3,2,0,-1,3,0,1,-1,5,3,1,-1,6,5,1,-1,7,10,8,-1,8,9,7,-1,10,12,11,-1,11,8,10,-1,12,14,13,-1,13,11,12,-1,14,16,15,-1,15,13,14,-1,16,18,17,-1,17,15,16,-1,18,20,19,-1,19,17,18,-1,20,7,9,-1,9,19,20,-1,9,8,21,-1,21,22,9,-1,8,11,23,-1,23,21,8,-1,11,13,24,-1,24,23,11,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,19,9,22,-1,22,27,19,-1,22,21,28,-1,28,29,22,-1,21,23,30,-1,30,28,21,-1,23,24,31,-1,31,30,23,-1,24,25,32,-1,32,31,24,-1,25,26,33,-1,33,32,25,-1,26,27,34,-1,34,33,26,-1,27,22,29,-1,29,34,27,-1,42,43,44,-1,44,45,46,-1,44,46,47,-1,42,44,47,-1,48,42,47,-1,35,36,29,-1,29,28,35,-1,37,35,28,-1,28,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,36,41,34,-1,34,29,36,-1,51,52,49,-1,49,50,51,-1,54,51,50,-1,50,53,54,-1,56,54,53,-1,53,55,56,-1,58,56,55,-1,55,57,58,-1,60,58,57,-1,57,59,60,-1,62,60,59,-1,59,61,62,-1,52,62,61,-1,61,49,52,-1,1,0,10,-1,10,7,1,-1,0,2,12,-1,12,10,0,-1,2,3,14,-1,14,12,2,-1,3,4,16,-1,16,14,3,-1,4,5,18,-1,18,16,4,-1,5,6,20,-1,20,18,5,-1,6,1,7,-1,7,20,6,-1,63,64,52,-1,52,51,63,-1,65,63,51,-1,51,54,65,-1,66,65,54,-1,54,56,66,-1,67,66,56,-1,56,58,67,-1,68,67,58,-1,58,60,68,-1,69,68,60,-1,60,62,69,-1,64,69,62,-1,62,52,64,-1,43,42,64,-1,64,63,43,-1,44,43,63,-1,63,65,44,-1,45,44,65,-1,65,66,45,-1,46,45,66,-1,66,67,46,-1,47,46,67,-1,67,68,47,-1,48,47,68,-1,68,69,48,-1,42,48,69,-1,69,64,42,-1}, 488);
-SoCoordinate* SoCoordinate49 = new SoCoordinate();
-SoCoordinate49->setPoint(new float[]{2.96,3.738,0.0,1.643,3.738,3.209,-1.316,3.738,4.002,-3.367,3.738,1.781,-3.367,3.738,-1.781,-1.316,3.738,-4.002,1.643,3.738,-3.209,2.96,-0.0114,0.0,1.643,-0.0114,3.209,-1.316,-0.0114,4.002,-3.367,-0.0114,1.781,-3.367,-0.0114,-1.781,-1.316,-0.0114,-4.002,1.643,-0.0114,-3.209,2.96,-6.507,0.0,1.643,-6.507,3.209,-1.316,-6.507,4.002,-3.367,-6.507,1.781,-3.367,-6.507,-1.781,-1.316,-6.507,-4.002,1.643,-6.507,-3.209,3.367,-13.13,0.0,1.897,-13.13,3.582,-1.407,-13.13,4.467,-3.355,-13.13,1.988,-3.355,-13.13,-1.988,-1.407,-13.13,-4.467,1.897,-13.13,-3.582,2.146,-4.985,0.0,1.136,-4.985,2.462,-1.135,-4.985,3.07,-2.633,-4.985,1.366,-2.633,-4.985,-1.366,-1.135,-4.985,-3.07,1.136,-4.985,-2.462,2.156,-11.45,0.0,1.225,-11.45,1.956,-0.8662,-11.45,2.439,-2.543,-11.45,1.085,-2.543,-11.45,-1.085,-0.8662,-11.45,-2.439,1.225,-11.45,-1.956,2.051,5.729,0.0,1.076,5.729,2.375,-1.114,5.729,2.961,-2.87,5.729,1.318,-2.87,5.729,-1.318,-1.114,5.729,-2.961,1.076,5.729,-2.375,1.842,-15.12,0.0,1.03,-15.12,1.873,-0.7965,-15.12,2.295,-2.261,-15.12,1.113,-2.261,-15.12,-0.9478,-0.7965,-15.12,-2.13,1.03,-15.12,-1.708,0.6277,-16.1,0.0,0.2723,-16.1,0.912,-0.5262,-16.1,1.096,-1.167,-16.1,0.5796,-1.167,-16.1,-0.4145,-0.5262,-16.1,-0.9313,0.2723,-16.1,-0.7469}, 189);
-SoIndexedFaceSet48->setCoord(*SoCoordinate49);
-
-SoTextureCoordinate* SoTextureCoordinate50 = new SoTextureCoordinate();
-SoTextureCoordinate50->setPoint(new float[]{0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581}, 140);
-SoIndexedFaceSet48->setTexCoord(*SoTextureCoordinate50);
-
-SoShape44->setGeometry(*SoIndexedFaceSet48);
-
-SoTransform43->addChild(*SoShape44);
-
-SoHAnimSegment42->addChild(*SoTransform43);
-
-SoHAnimJoint41->addChildren(*SoHAnimSegment42);
-
-SoHAnimJoint* SoHAnimJoint51 = new SoHAnimJoint();
-SoHAnimJoint51->X3DNode::setName(QString("l_knee"));
-SoHAnimJoint51->setDEF(QString("hanim_l_knee"));
-SoHAnimJoint51->setCenter(new float[]{4.116,17.26,-0.8639});
-SoHAnimJoint51->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint51->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment52 = new SoHAnimSegment();
-SoHAnimSegment52->X3DNode::setName(QString("l_calf"));
-SoHAnimSegment52->setDEF(QString("hanim_l_calf"));
-SoTransform* SoTransform53 = new SoTransform();
-SoTransform53->setTranslation(new float[]{4.116,17.26,-0.8639});
-SoShape* SoShape54 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance55 = new SoVRMLAppearance();
-SoMaterial* SoMaterial56 = new SoMaterial();
-SoMaterial56->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance55->addChild(*SoMaterial56);
-
-SoImageTexture* SoImageTexture57 = new SoImageTexture();
-SoImageTexture57->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance55->addChild(*SoImageTexture57);
-
-SoShape54->addChild(*SoVRMLAppearance55);
-
-SoIndexedFaceSet* SoIndexedFaceSet58 = new SoIndexedFaceSet();
-SoIndexedFaceSet58->setCoordIndex(new int32_t[]{4,3,2,-1,5,4,2,-1,2,1,0,-1,5,2,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1}, 300);
-SoIndexedFaceSet58->setCreaseAngle(1.57);
-SoIndexedFaceSet58->setTexCoordIndex(new int32_t[]{4,3,2,-1,5,4,2,-1,2,1,0,-1,5,2,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1}, 300);
-SoCoordinate* SoCoordinate59 = new SoCoordinate();
-SoCoordinate59->setPoint(new float[]{0.7186,0.9688,0.0234,0.3632,0.9688,0.9354,-0.4353,0.9688,1.12,-1.076,0.9688,0.603,-1.076,0.9688,-0.3911,-0.4353,0.9688,-0.9079,0.3632,0.9688,-0.7235,2.337,-4.613,0.0234,1.46,-3.622,2.019,1.236,-1.628,2.42,2.118,-1.912,0.0234,-0.8111,-3.622,2.567,-0.7468,-1.628,2.903,-2.254,-4.613,1.255,-2.337,-1.912,0.9793,-2.254,-5.383,-1.368,-2.337,-1.912,-0.9325,-0.8111,-5.383,-2.903,-0.7468,-1.912,-2.368,1.46,-5.383,-2.355,1.236,-1.912,-1.885,1.121,-0.0032,1.896,1.933,-0.0032,0.0234,-0.7056,-0.0032,2.318,-2.17,-0.0032,1.136,-2.17,-0.0032,-0.9244,-0.7056,-0.0032,-2.061,1.121,-0.0032,-1.64,1.607,-12.92,0.0032,0.9216,-12.91,1.565,-0.619,-12.91,1.951,-1.854,-12.92,0.8701,-1.854,-12.94,-0.9762,-0.619,-12.94,-1.742,0.9216,-12.94,-1.356,0.7072,-14.53,0.0239,0.3604,-14.53,0.814,-0.4188,-14.53,1.009,-1.044,-14.53,0.4624,-1.044,-14.54,-0.4714,-0.4188,-14.54,-0.8587,0.3604,-14.54,-0.6635}, 126);
-SoIndexedFaceSet58->setCoord(*SoCoordinate59);
-
-SoTextureCoordinate* SoTextureCoordinate60 = new SoTextureCoordinate();
-SoTextureCoordinate60->setPoint(new float[]{0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243}, 84);
-SoIndexedFaceSet58->setTexCoord(*SoTextureCoordinate60);
-
-SoShape54->setGeometry(*SoIndexedFaceSet58);
-
-SoTransform53->addChild(*SoShape54);
-
-SoHAnimSegment52->addChild(*SoTransform53);
-
-SoHAnimJoint51->addChildren(*SoHAnimSegment52);
-
-SoHAnimJoint* SoHAnimJoint61 = new SoHAnimJoint();
-SoHAnimJoint61->X3DNode::setName(QString("l_talocrural"));
-SoHAnimJoint61->setDEF(QString("hanim_l_talocrural"));
-SoHAnimJoint61->setCenter(new float[]{3.854,3.939,-0.7038});
-SoHAnimJoint61->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint61->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment62 = new SoHAnimSegment();
-SoHAnimSegment62->X3DNode::setName(QString("l_talus"));
-SoHAnimSegment62->setDEF(QString("hanim_l_talus"));
-SoTransform* SoTransform63 = new SoTransform();
-SoTransform63->setTranslation(new float[]{3.854,3.939,-0.7038});
-SoShape* SoShape64 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance65 = new SoVRMLAppearance();
-SoMaterial* SoMaterial66 = new SoMaterial();
-SoMaterial66->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance65->addChild(*SoMaterial66);
-
-SoImageTexture* SoImageTexture67 = new SoImageTexture();
-SoImageTexture67->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance65->addChild(*SoImageTexture67);
-
-SoShape64->addChild(*SoVRMLAppearance65);
-
-SoIndexedFaceSet* SoIndexedFaceSet68 = new SoIndexedFaceSet();
-SoIndexedFaceSet68->setCoordIndex(new int32_t[]{1,11,14,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,11,1,3,-1,3,6,11,-1,15,2,0,-1,0,12,15,-1,0,1,13,-1,13,12,0,-1,13,1,14,-1,7,18,11,-1,8,6,5,-1,5,9,8,-1,7,8,9,-1,9,10,7,-1,10,9,5,-1,5,2,10,-1,11,6,8,-1,8,7,11,-1,15,16,10,-1,10,2,15,-1,10,16,17,-1,17,7,10,-1,17,18,7,-1,21,22,23,-1,23,24,25,-1,25,26,19,-1,23,25,19,-1,21,23,19,-1,20,21,19,-1,15,12,20,-1,20,19,15,-1,12,13,21,-1,21,20,12,-1,13,14,22,-1,22,21,13,-1,14,11,23,-1,23,22,14,-1,11,18,24,-1,24,23,11,-1,18,17,25,-1,25,24,18,-1,17,16,26,-1,26,25,17,-1,16,15,19,-1,19,26,16,-1,33,31,30,-1,30,27,33,-1,36,27,30,-1,30,38,36,-1,29,33,27,-1,27,28,29,-1,37,28,27,-1,27,36,37,-1,28,37,42,-1,42,29,28,-1,33,32,34,-1,34,31,33,-1,39,40,34,-1,34,32,39,-1,29,35,32,-1,32,33,29,-1,41,39,32,-1,32,35,41,-1,35,29,42,-1,42,41,35,-1,44,45,46,-1,44,46,47,-1,44,47,43,-1,51,52,53,-1,54,48,49,-1,53,54,49,-1,51,53,49,-1,51,49,50,-1,30,31,44,-1,44,43,30,-1,31,34,45,-1,45,44,31,-1,34,40,46,-1,46,45,34,-1,40,38,47,-1,47,46,40,-1,38,30,43,-1,43,47,38,-1,37,36,49,-1,49,48,37,-1,36,38,50,-1,50,49,36,-1,38,40,51,-1,51,50,38,-1,40,39,52,-1,52,51,40,-1,39,41,53,-1,53,52,39,-1,41,42,54,-1,54,53,41,-1,42,37,48,-1,48,54,42,-1}, 408);
-SoIndexedFaceSet68->setCreaseAngle(1.57);
-SoIndexedFaceSet68->setTexCoordIndex(new int32_t[]{1,14,18,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,14,1,3,-1,3,6,14,-1,19,2,0,-1,0,16,19,-1,0,1,17,-1,17,16,0,-1,17,1,18,-1,7,23,15,-1,9,8,11,-1,11,10,9,-1,7,9,10,-1,10,12,7,-1,12,10,11,-1,11,13,12,-1,15,8,9,-1,9,7,15,-1,20,21,12,-1,12,13,20,-1,12,21,22,-1,22,7,12,-1,22,23,7,-1,26,27,28,-1,28,29,30,-1,30,31,24,-1,28,30,24,-1,26,28,24,-1,25,26,24,-1,19,16,25,-1,25,24,19,-1,16,17,26,-1,26,25,16,-1,17,18,27,-1,27,26,17,-1,18,14,28,-1,28,27,18,-1,15,23,29,-1,29,28,15,-1,23,22,30,-1,30,29,23,-1,22,21,31,-1,31,30,22,-1,21,20,24,-1,24,31,21,-1,34,38,37,-1,37,32,34,-1,46,32,37,-1,37,48,46,-1,35,34,32,-1,32,33,35,-1,47,33,32,-1,32,46,47,-1,33,47,53,-1,53,36,33,-1,40,39,42,-1,42,41,40,-1,49,50,42,-1,42,39,49,-1,44,43,39,-1,39,40,44,-1,51,49,39,-1,39,43,51,-1,43,45,52,-1,52,51,43,-1,55,56,57,-1,55,57,58,-1,55,58,54,-1,62,63,64,-1,65,59,60,-1,64,65,60,-1,62,64,60,-1,62,60,61,-1,37,38,55,-1,55,54,37,-1,41,42,56,-1,56,55,41,-1,42,50,57,-1,57,56,42,-1,50,48,58,-1,58,57,50,-1,48,37,54,-1,54,58,48,-1,47,46,60,-1,60,59,47,-1,46,48,61,-1,61,60,46,-1,48,50,62,-1,62,61,48,-1,50,49,63,-1,63,62,50,-1,49,51,64,-1,64,63,49,-1,51,52,65,-1,65,64,51,-1,53,47,59,-1,59,65,53,-1}, 408);
-SoCoordinate* SoCoordinate69 = new SoCoordinate();
-SoCoordinate69->setPoint(new float[]{0.9768,-0.0192,-1.681,1.657,-0.0192,0.4309,0.0,-0.0192,-1.681,1.403,0.7316,0.354,0.8174,0.7316,-1.463,0.0,0.7316,-1.463,0.0,0.7316,1.471,-1.657,-0.0192,0.4309,-1.403,0.7316,0.354,-0.8174,0.7316,-1.463,-0.9768,-0.0192,-1.681,0.0,-0.0192,1.75,1.109,-0.6007,-2.046,2.045,-0.6007,0.4309,1.695,-0.296,1.429,0.0,-0.6007,-2.046,-1.109,-0.6007,-2.046,-2.045,-0.6007,0.4309,-1.695,-0.296,1.429,0.0,-1.207,-1.841,1.023,-1.207,-1.841,1.913,-1.223,0.5161,1.601,-0.9325,1.406,0.0,-0.6582,1.708,-1.601,-0.9325,1.406,-1.913,-1.223,0.5161,-1.023,-1.207,-1.841,1.409,-1.925,-2.878,1.409,-3.947,-1.681,0.0,-3.947,-1.681,1.109,-0.6007,-2.046,0.0,-0.6007,-2.046,-1.409,-1.925,-2.878,0.0,-1.925,-2.878,-1.109,-0.6007,-2.046,-1.409,-3.947,-1.681,2.927,-1.925,0.4309,2.089,-3.947,0.4309,2.045,-0.6007,0.4309,-2.927,-1.925,0.4309,-2.045,-0.6007,0.4309,-2.089,-3.947,0.4309,0.0,-3.947,0.4309,0.9442,-0.3153,-1.692,0.0,-0.3153,-1.692,-0.9442,-0.3153,-1.692,-1.7,-0.3153,0.3093,1.7,-0.3153,0.3093,1.86,-3.793,1.364,2.541,-1.963,1.364,1.861,-0.9431,1.364,-1.861,-0.9431,1.364,-2.541,-1.963,1.364,-1.86,-3.793,1.364,0.0,-3.793,1.364}, 165);
-SoIndexedFaceSet68->setCoord(*SoCoordinate69);
-
-SoTextureCoordinate* SoTextureCoordinate70 = new SoTextureCoordinate();
-SoTextureCoordinate70->setPoint(new float[]{0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186}, 132);
-SoIndexedFaceSet68->setTexCoord(*SoTextureCoordinate70);
-
-SoShape64->setGeometry(*SoIndexedFaceSet68);
-
-SoTransform63->addChild(*SoShape64);
-
-SoHAnimSegment62->addChild(*SoTransform63);
-
-SoHAnimJoint61->addChildren(*SoHAnimSegment62);
-
-SoHAnimJoint* SoHAnimJoint71 = new SoHAnimJoint();
-SoHAnimJoint71->X3DNode::setName(QString("l_metatarsophalangeal_2"));
-SoHAnimJoint71->setDEF(QString("hanim_l_metatarsophalangeal_2"));
-SoHAnimJoint71->setCenter(new float[]{3.854,3.64,0.7402});
-SoHAnimJoint71->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint71->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment72 = new SoHAnimSegment();
-SoHAnimSegment72->X3DNode::setName(QString("l_tarsal_proximal_phalanx_2"));
-SoHAnimSegment72->setDEF(QString("hanim_l_tarsal_proximal_phalanx_2"));
-SoTransform* SoTransform73 = new SoTransform();
-SoTransform73->setTranslation(new float[]{3.854,3.64,0.7402});
-SoShape* SoShape74 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance75 = new SoVRMLAppearance();
-SoMaterial* SoMaterial76 = new SoMaterial();
-SoMaterial76->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance75->addChild(*SoMaterial76);
-
-SoImageTexture* SoImageTexture77 = new SoImageTexture();
-SoImageTexture77->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance75->addChild(*SoImageTexture77);
-
-SoShape74->addChild(*SoVRMLAppearance75);
-
-SoIndexedFaceSet* SoIndexedFaceSet78 = new SoIndexedFaceSet();
-SoIndexedFaceSet78->setCoordIndex(new int32_t[]{3,4,10,-1,3,10,11,-1,0,3,11,-1,1,0,11,-1,11,12,1,-1,1,12,16,-1,16,9,1,-1,2,17,10,-1,10,4,2,-1,13,8,6,-1,14,13,6,-1,5,14,6,-1,7,15,14,-1,14,5,7,-1,7,9,16,-1,16,15,7,-1,2,8,13,-1,13,17,2,-1,20,21,22,-1,20,22,23,-1,20,23,24,-1,19,20,24,-1,19,24,18,-1,0,1,19,-1,19,18,0,-1,1,9,20,-1,20,19,1,-1,9,7,21,-1,21,20,9,-1,7,5,22,-1,22,21,7,-1,5,6,23,-1,23,22,5,-1,6,3,24,-1,24,23,6,-1,3,0,18,-1,18,24,3,-1,6,8,2,-1,3,6,2,-1,4,3,2,-1,28,26,25,-1,25,29,28,-1,35,27,26,-1,26,28,35,-1,27,35,40,-1,25,26,31,-1,31,30,25,-1,31,26,27,-1,27,32,31,-1,32,27,40,-1,40,41,32,-1,42,29,25,-1,25,30,42,-1,28,29,34,-1,34,33,28,-1,35,28,33,-1,33,36,35,-1,36,40,35,-1,34,37,38,-1,38,33,34,-1,38,39,36,-1,36,33,38,-1,39,41,40,-1,40,36,39,-1,42,37,34,-1,34,29,42,-1}, 264);
-SoIndexedFaceSet78->setCreaseAngle(1.57);
-SoIndexedFaceSet78->setTexCoordIndex(new int32_t[]{4,5,12,-1,4,12,13,-1,0,4,13,-1,1,0,13,-1,13,14,1,-1,1,14,19,-1,19,3,1,-1,2,21,12,-1,12,5,2,-1,15,10,7,-1,16,15,7,-1,6,16,7,-1,8,17,16,-1,16,6,8,-1,8,11,18,-1,18,17,8,-1,9,10,15,-1,15,20,9,-1,24,25,26,-1,24,26,27,-1,24,27,28,-1,23,24,28,-1,23,28,22,-1,0,1,23,-1,23,22,0,-1,1,3,24,-1,24,23,1,-1,11,8,25,-1,25,24,11,-1,8,6,26,-1,26,25,8,-1,6,7,27,-1,27,26,6,-1,7,4,28,-1,28,27,7,-1,4,0,22,-1,22,28,4,-1,7,10,9,-1,4,7,9,-1,5,4,9,-1,30,32,31,-1,31,29,30,-1,33,34,32,-1,32,30,33,-1,34,33,35,-1,31,32,37,-1,37,36,31,-1,37,32,34,-1,34,38,37,-1,38,34,35,-1,35,39,38,-1,40,29,31,-1,31,36,40,-1,41,44,43,-1,43,42,41,-1,45,41,42,-1,42,46,45,-1,46,50,45,-1,43,47,48,-1,48,42,43,-1,48,49,46,-1,46,42,48,-1,49,51,50,-1,50,46,49,-1,52,47,43,-1,43,44,52,-1}, 264);
-SoCoordinate* SoCoordinate79 = new SoCoordinate();
-SoCoordinate79->setPoint(new float[]{2.927,-1.627,-1.013,2.089,-3.648,-1.013,0.0,0.2797,0.3064,2.045,-0.3017,-1.013,1.695,0.0029,-0.0151,-2.927,-1.627,-1.013,-2.045,-0.3017,-1.013,-2.089,-3.648,-1.013,-1.695,0.0029,-0.0151,0.0,-3.648,-1.013,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,0.0,-3.648,0.9192,0.0,-0.0274,1.661,2.405,-1.656,-1.915,1.75,-2.942,-1.915,0.0,-2.942,-1.915,-1.75,-2.942,-1.915,-2.405,-1.656,-1.915,-1.742,-0.5681,-1.915,1.742,-0.5681,-1.915,1.784,-0.648,2.332,2.216,-2.267,4.144,2.216,-3.648,3.776,0.0,-2.267,5.463,0.0,-0.5463,3.95,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,-2.216,-2.267,4.144,-1.784,-0.648,2.332,0.0,-3.648,5.096,-2.216,-3.648,3.776,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,0.0,-3.648,3.776,0.0,-3.648,0.9192,0.0,-0.0274,1.661}, 129);
-SoIndexedFaceSet78->setCoord(*SoCoordinate79);
-
-SoTextureCoordinate* SoTextureCoordinate80 = new SoTextureCoordinate();
-SoTextureCoordinate80->setPoint(new float[]{0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432}, 106);
-SoIndexedFaceSet78->setTexCoord(*SoTextureCoordinate80);
-
-SoShape74->setGeometry(*SoIndexedFaceSet78);
-
-SoTransform73->addChild(*SoShape74);
-
-SoHAnimSegment72->addChild(*SoTransform73);
-
-SoHAnimJoint71->addChildren(*SoHAnimSegment72);
-
-SoHAnimJoint61->addChildren(*SoHAnimJoint71);
-
-SoHAnimJoint51->addChildren(*SoHAnimJoint61);
-
-SoHAnimJoint41->addChildren(*SoHAnimJoint51);
-
-SoHAnimJoint31->addChildren(*SoHAnimJoint41);
-
-SoHAnimJoint* SoHAnimJoint81 = new SoHAnimJoint();
-SoHAnimJoint81->X3DNode::setName(QString("r_hip"));
-SoHAnimJoint81->setDEF(QString("hanim_r_hip"));
-SoHAnimJoint81->setCenter(new float[]{-4.207,32.02,-0.8155});
-SoHAnimJoint81->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint81->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment82 = new SoHAnimSegment();
-SoHAnimSegment82->X3DNode::setName(QString("r_thigh"));
-SoHAnimSegment82->setDEF(QString("hanim_r_thigh"));
-SoTransform* SoTransform83 = new SoTransform();
-SoTransform83->setTranslation(new float[]{-4.207,32.02,-0.8155});
-SoShape* SoShape84 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance85 = new SoVRMLAppearance();
-SoMaterial* SoMaterial86 = new SoMaterial();
-SoMaterial86->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance85->addChild(*SoMaterial86);
-
-SoImageTexture* SoImageTexture87 = new SoImageTexture();
-SoImageTexture87->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance85->addChild(*SoImageTexture87);
-
-SoShape84->addChild(*SoVRMLAppearance85);
-
-SoIndexedFaceSet* SoIndexedFaceSet88 = new SoIndexedFaceSet();
-SoIndexedFaceSet88->setCoordIndex(new int32_t[]{43,44,45,-1,42,43,45,-1,45,46,47,-1,42,45,47,-1,48,42,47,-1,0,7,8,-1,8,1,0,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,11,-1,11,4,3,-1,4,11,12,-1,12,5,4,-1,5,12,13,-1,13,6,5,-1,6,13,7,-1,7,0,6,-1,7,14,15,-1,15,8,7,-1,8,15,16,-1,16,9,8,-1,9,16,17,-1,17,10,9,-1,10,17,18,-1,18,11,10,-1,11,18,19,-1,19,12,11,-1,12,19,20,-1,20,13,12,-1,13,20,14,-1,14,7,13,-1,14,21,22,-1,22,15,14,-1,15,22,23,-1,23,16,15,-1,16,23,24,-1,24,17,16,-1,17,24,25,-1,25,18,17,-1,18,25,26,-1,26,19,18,-1,19,26,27,-1,27,20,19,-1,20,27,21,-1,21,14,20,-1,60,59,58,-1,61,60,58,-1,58,57,56,-1,61,58,56,-1,62,61,56,-1,29,22,21,-1,21,28,29,-1,30,23,22,-1,22,29,30,-1,31,24,23,-1,23,30,31,-1,32,25,24,-1,24,31,32,-1,33,26,25,-1,25,32,33,-1,34,27,26,-1,26,33,34,-1,28,21,27,-1,27,34,28,-1,36,29,28,-1,28,35,36,-1,37,30,29,-1,29,36,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,35,28,34,-1,34,41,35,-1,42,0,1,-1,1,43,42,-1,43,1,2,-1,2,44,43,-1,44,2,3,-1,3,45,44,-1,45,3,4,-1,4,46,45,-1,46,4,5,-1,5,47,46,-1,47,5,6,-1,6,48,47,-1,48,6,0,-1,0,42,48,-1,50,36,35,-1,35,49,50,-1,51,37,36,-1,36,50,51,-1,52,38,37,-1,37,51,52,-1,53,39,38,-1,38,52,53,-1,54,40,39,-1,39,53,54,-1,55,41,40,-1,40,54,55,-1,49,35,41,-1,41,55,49,-1,57,50,49,-1,49,56,57,-1,58,51,50,-1,50,57,58,-1,59,52,51,-1,51,58,59,-1,60,53,52,-1,52,59,60,-1,61,54,53,-1,53,60,61,-1,62,55,54,-1,54,61,62,-1,56,49,55,-1,55,62,56,-1}, 488);
-SoIndexedFaceSet88->setCreaseAngle(1.57);
-SoIndexedFaceSet88->setTexCoordIndex(new int32_t[]{0,2,3,-1,1,0,3,-1,3,4,5,-1,1,3,5,-1,6,1,5,-1,7,9,8,-1,8,10,7,-1,10,8,11,-1,11,12,10,-1,12,11,13,-1,13,14,12,-1,14,13,15,-1,15,16,14,-1,16,15,17,-1,17,18,16,-1,18,17,19,-1,19,20,18,-1,20,19,9,-1,9,7,20,-1,9,22,21,-1,21,8,9,-1,8,21,23,-1,23,11,8,-1,11,23,24,-1,24,13,11,-1,13,24,25,-1,25,15,13,-1,15,25,26,-1,26,17,15,-1,17,26,27,-1,27,19,17,-1,19,27,22,-1,22,9,19,-1,22,29,28,-1,28,21,22,-1,21,28,30,-1,30,23,21,-1,23,30,31,-1,31,24,23,-1,24,31,32,-1,32,25,24,-1,25,32,33,-1,33,26,25,-1,26,33,34,-1,34,27,26,-1,27,34,29,-1,29,22,27,-1,46,45,44,-1,47,46,44,-1,44,43,42,-1,47,44,42,-1,48,47,42,-1,35,28,29,-1,29,36,35,-1,37,30,28,-1,28,35,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,36,29,34,-1,34,41,36,-1,51,50,49,-1,49,52,51,-1,54,53,50,-1,50,51,54,-1,56,55,53,-1,53,54,56,-1,58,57,55,-1,55,56,58,-1,60,59,57,-1,57,58,60,-1,62,61,59,-1,59,60,62,-1,52,49,61,-1,61,62,52,-1,1,7,10,-1,10,0,1,-1,0,10,12,-1,12,2,0,-1,2,12,14,-1,14,3,2,-1,3,14,16,-1,16,4,3,-1,4,16,18,-1,18,5,4,-1,5,18,20,-1,20,6,5,-1,6,20,7,-1,7,1,6,-1,63,51,52,-1,52,64,63,-1,65,54,51,-1,51,63,65,-1,66,56,54,-1,54,65,66,-1,67,58,56,-1,56,66,67,-1,68,60,58,-1,58,67,68,-1,69,62,60,-1,60,68,69,-1,64,52,62,-1,62,69,64,-1,43,63,64,-1,64,42,43,-1,44,65,63,-1,63,43,44,-1,45,66,65,-1,65,44,45,-1,46,67,66,-1,66,45,46,-1,47,68,67,-1,67,46,47,-1,48,69,68,-1,68,47,48,-1,42,64,69,-1,69,48,42,-1}, 488);
-SoCoordinate* SoCoordinate89 = new SoCoordinate();
-SoCoordinate89->setPoint(new float[]{-2.96,3.738,0.0,-1.643,3.738,3.209,1.316,3.738,4.002,3.367,3.738,1.781,3.367,3.738,-1.781,1.316,3.738,-4.002,-1.643,3.738,-3.209,-2.96,-0.0114,0.0,-1.643,-0.0114,3.209,1.316,-0.0114,4.002,3.367,-0.0114,1.781,3.367,-0.0114,-1.781,1.316,-0.0114,-4.002,-1.643,-0.0114,-3.209,-2.96,-6.507,0.0,-1.643,-6.507,3.209,1.316,-6.507,4.002,3.367,-6.507,1.781,3.367,-6.507,-1.781,1.316,-6.507,-4.002,-1.643,-6.507,-3.209,-3.367,-13.13,0.0,-1.897,-13.13,3.582,1.407,-13.13,4.467,3.355,-13.13,1.988,3.355,-13.13,-1.988,1.407,-13.13,-4.467,-1.897,-13.13,-3.582,-2.146,-4.985,0.0,-1.136,-4.985,2.462,1.135,-4.985,3.07,2.633,-4.985,1.366,2.633,-4.985,-1.366,1.135,-4.985,-3.07,-1.136,-4.985,-2.462,-2.156,-11.45,0.0,-1.225,-11.45,1.956,0.8662,-11.45,2.439,2.543,-11.45,1.085,2.543,-11.45,-1.085,0.8662,-11.45,-2.439,-1.225,-11.45,-1.956,-2.051,5.729,0.0,-1.076,5.729,2.375,1.114,5.729,2.961,2.87,5.729,1.318,2.87,5.729,-1.318,1.114,5.729,-2.961,-1.076,5.729,-2.375,-1.842,-15.12,0.0,-1.03,-15.12,1.873,0.7965,-15.12,2.295,2.261,-15.12,1.113,2.261,-15.12,-0.9478,0.7965,-15.12,-2.13,-1.03,-15.12,-1.708,-0.6277,-16.1,0.0,-0.2723,-16.1,0.912,0.5262,-16.1,1.096,1.167,-16.1,0.5796,1.167,-16.1,-0.4145,0.5262,-16.1,-0.9313,-0.2723,-16.1,-0.7469}, 189);
-SoIndexedFaceSet88->setCoord(*SoCoordinate89);
-
-SoTextureCoordinate* SoTextureCoordinate90 = new SoTextureCoordinate();
-SoTextureCoordinate90->setPoint(new float[]{0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581}, 140);
-SoIndexedFaceSet88->setTexCoord(*SoTextureCoordinate90);
-
-SoShape84->setGeometry(*SoIndexedFaceSet88);
-
-SoTransform83->addChild(*SoShape84);
-
-SoHAnimSegment82->addChild(*SoTransform83);
-
-SoHAnimJoint81->addChildren(*SoHAnimSegment82);
-
-SoHAnimJoint* SoHAnimJoint91 = new SoHAnimJoint();
-SoHAnimJoint91->X3DNode::setName(QString("r_knee"));
-SoHAnimJoint91->setDEF(QString("hanim_r_knee"));
-SoHAnimJoint91->setCenter(new float[]{-4.116,17.26,-0.8639});
-SoHAnimJoint91->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint91->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment92 = new SoHAnimSegment();
-SoHAnimSegment92->X3DNode::setName(QString("r_calf"));
-SoHAnimSegment92->setDEF(QString("hanim_r_calf"));
-SoTransform* SoTransform93 = new SoTransform();
-SoTransform93->setTranslation(new float[]{-4.116,17.26,-0.8639});
-SoShape* SoShape94 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance95 = new SoVRMLAppearance();
-SoMaterial* SoMaterial96 = new SoMaterial();
-SoMaterial96->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance95->addChild(*SoMaterial96);
-
-SoImageTexture* SoImageTexture97 = new SoImageTexture();
-SoImageTexture97->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance95->addChild(*SoImageTexture97);
-
-SoShape94->addChild(*SoVRMLAppearance95);
-
-SoIndexedFaceSet* SoIndexedFaceSet98 = new SoIndexedFaceSet();
-SoIndexedFaceSet98->setCoordIndex(new int32_t[]{0,1,2,-1,2,3,4,-1,2,4,5,-1,0,2,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1}, 300);
-SoIndexedFaceSet98->setCreaseAngle(1.57);
-SoIndexedFaceSet98->setTexCoordIndex(new int32_t[]{0,1,2,-1,2,3,4,-1,2,4,5,-1,0,2,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1}, 300);
-SoCoordinate* SoCoordinate99 = new SoCoordinate();
-SoCoordinate99->setPoint(new float[]{-0.7186,0.9688,0.0234,-0.3632,0.9688,0.9354,0.4353,0.9688,1.12,1.076,0.9688,0.603,1.076,0.9688,-0.3911,0.4353,0.9688,-0.9079,-0.3632,0.9688,-0.7235,-2.337,-4.613,0.0234,-1.46,-3.622,2.019,-1.236,-1.628,2.42,-2.118,-1.912,0.0234,0.8111,-3.622,2.567,0.7468,-1.628,2.903,2.254,-4.613,1.255,2.337,-1.912,0.9793,2.254,-5.383,-1.368,2.337,-1.912,-0.9325,0.8111,-5.383,-2.903,0.7468,-1.912,-2.368,-1.46,-5.383,-2.355,-1.236,-1.912,-1.885,-1.121,-0.0032,1.896,-1.933,-0.0032,0.0234,0.7056,-0.0032,2.318,2.17,-0.0032,1.136,2.17,-0.0032,-0.9244,0.7056,-0.0032,-2.061,-1.121,-0.0032,-1.64,-1.607,-12.92,0.0032,-0.9216,-12.91,1.565,0.619,-12.91,1.951,1.854,-12.92,0.8701,1.854,-12.94,-0.9762,0.619,-12.94,-1.742,-0.9216,-12.94,-1.356,-0.7072,-14.53,0.0239,-0.3604,-14.53,0.814,0.4188,-14.53,1.009,1.044,-14.53,0.4624,1.044,-14.54,-0.4714,0.4188,-14.54,-0.8587,-0.3604,-14.54,-0.6635}, 126);
-SoIndexedFaceSet98->setCoord(*SoCoordinate99);
-
-SoTextureCoordinate* SoTextureCoordinate100 = new SoTextureCoordinate();
-SoTextureCoordinate100->setPoint(new float[]{0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243}, 84);
-SoIndexedFaceSet98->setTexCoord(*SoTextureCoordinate100);
-
-SoShape94->setGeometry(*SoIndexedFaceSet98);
-
-SoTransform93->addChild(*SoShape94);
-
-SoHAnimSegment92->addChild(*SoTransform93);
-
-SoHAnimJoint91->addChildren(*SoHAnimSegment92);
-
-SoHAnimJoint* SoHAnimJoint101 = new SoHAnimJoint();
-SoHAnimJoint101->X3DNode::setName(QString("r_talocrural"));
-SoHAnimJoint101->setDEF(QString("hanim_r_talocrural"));
-SoHAnimJoint101->setCenter(new float[]{-3.854,3.939,-0.7038});
-SoHAnimJoint101->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint101->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment102 = new SoHAnimSegment();
-SoHAnimSegment102->X3DNode::setName(QString("r_talus"));
-SoHAnimSegment102->setDEF(QString("hanim_r_talus"));
-SoTransform* SoTransform103 = new SoTransform();
-SoTransform103->setTranslation(new float[]{-3.854,3.939,-0.7038});
-SoShape* SoShape104 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance105 = new SoVRMLAppearance();
-SoMaterial* SoMaterial106 = new SoMaterial();
-SoMaterial106->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance105->addChild(*SoMaterial106);
-
-SoImageTexture* SoImageTexture107 = new SoImageTexture();
-SoImageTexture107->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance105->addChild(*SoImageTexture107);
-
-SoShape104->addChild(*SoVRMLAppearance105);
-
-SoIndexedFaceSet* SoIndexedFaceSet108 = new SoIndexedFaceSet();
-SoIndexedFaceSet108->setCoordIndex(new int32_t[]{1,14,11,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,11,6,3,-1,3,1,11,-1,15,12,0,-1,0,2,15,-1,0,12,13,-1,13,1,0,-1,13,14,1,-1,7,11,18,-1,8,9,5,-1,5,6,8,-1,7,10,9,-1,9,8,7,-1,10,2,5,-1,5,9,10,-1,11,7,8,-1,8,6,11,-1,15,2,10,-1,10,16,15,-1,10,7,17,-1,17,16,10,-1,17,7,18,-1,19,26,25,-1,25,24,23,-1,19,25,23,-1,23,22,21,-1,19,23,21,-1,20,19,21,-1,15,19,20,-1,20,12,15,-1,12,20,21,-1,21,13,12,-1,13,21,22,-1,22,14,13,-1,14,22,23,-1,23,11,14,-1,11,23,24,-1,24,18,11,-1,18,24,25,-1,25,17,18,-1,17,25,26,-1,26,16,17,-1,16,26,19,-1,19,15,16,-1,33,27,30,-1,30,31,33,-1,36,38,30,-1,30,27,36,-1,29,28,27,-1,27,33,29,-1,37,36,27,-1,27,28,37,-1,28,29,42,-1,42,37,28,-1,33,31,34,-1,34,32,33,-1,39,32,34,-1,34,40,39,-1,29,33,32,-1,32,35,29,-1,41,35,32,-1,32,39,41,-1,35,41,42,-1,42,29,35,-1,44,43,47,-1,44,47,46,-1,44,46,45,-1,51,50,49,-1,49,48,54,-1,49,54,53,-1,51,49,53,-1,51,53,52,-1,30,43,44,-1,44,31,30,-1,31,44,45,-1,45,34,31,-1,34,45,46,-1,46,40,34,-1,40,46,47,-1,47,38,40,-1,38,47,43,-1,43,30,38,-1,37,48,49,-1,49,36,37,-1,36,49,50,-1,50,38,36,-1,38,50,51,-1,51,40,38,-1,40,51,52,-1,52,39,40,-1,39,52,53,-1,53,41,39,-1,41,53,54,-1,54,42,41,-1,42,54,48,-1,48,37,42,-1}, 408);
-SoIndexedFaceSet108->setCreaseAngle(1.57);
-SoIndexedFaceSet108->setTexCoordIndex(new int32_t[]{1,18,14,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,14,6,3,-1,3,1,14,-1,19,16,0,-1,0,2,19,-1,0,16,17,-1,17,1,0,-1,17,18,1,-1,7,15,23,-1,9,10,11,-1,11,8,9,-1,7,12,10,-1,10,9,7,-1,12,13,11,-1,11,10,12,-1,15,7,9,-1,9,8,15,-1,20,13,12,-1,12,21,20,-1,12,7,22,-1,22,21,12,-1,22,7,23,-1,24,31,30,-1,30,29,28,-1,24,30,28,-1,28,27,26,-1,24,28,26,-1,25,24,26,-1,19,24,25,-1,25,16,19,-1,16,25,26,-1,26,17,16,-1,17,26,27,-1,27,18,17,-1,18,27,28,-1,28,14,18,-1,15,28,29,-1,29,23,15,-1,23,29,30,-1,30,22,23,-1,22,30,31,-1,31,21,22,-1,21,31,24,-1,24,20,21,-1,34,32,37,-1,37,38,34,-1,46,48,37,-1,37,32,46,-1,35,33,32,-1,32,34,35,-1,47,46,32,-1,32,33,47,-1,33,36,53,-1,53,47,33,-1,40,41,42,-1,42,39,40,-1,49,39,42,-1,42,50,49,-1,44,40,39,-1,39,43,44,-1,51,43,39,-1,39,49,51,-1,43,51,52,-1,52,45,43,-1,55,54,58,-1,55,58,57,-1,55,57,56,-1,62,61,60,-1,60,59,65,-1,60,65,64,-1,62,60,64,-1,62,64,63,-1,37,54,55,-1,55,38,37,-1,41,55,56,-1,56,42,41,-1,42,56,57,-1,57,50,42,-1,50,57,58,-1,58,48,50,-1,48,58,54,-1,54,37,48,-1,47,59,60,-1,60,46,47,-1,46,60,61,-1,61,48,46,-1,48,61,62,-1,62,50,48,-1,50,62,63,-1,63,49,50,-1,49,63,64,-1,64,51,49,-1,51,64,65,-1,65,52,51,-1,53,65,59,-1,59,47,53,-1}, 408);
-SoCoordinate* SoCoordinate109 = new SoCoordinate();
-SoCoordinate109->setPoint(new float[]{-0.9768,-0.0192,-1.681,-1.657,-0.0192,0.4309,0.0,-0.0192,-1.681,-1.403,0.7316,0.354,-0.8174,0.7316,-1.463,0.0,0.7316,-1.463,0.0,0.7316,1.471,1.657,-0.0192,0.4309,1.403,0.7316,0.354,0.8174,0.7316,-1.463,0.9768,-0.0192,-1.681,0.0,-0.0192,1.75,-1.109,-0.6007,-2.046,-2.045,-0.6007,0.4309,-1.695,-0.296,1.429,0.0,-0.6007,-2.046,1.109,-0.6007,-2.046,2.045,-0.6007,0.4309,1.695,-0.296,1.429,0.0,-1.207,-1.841,-1.023,-1.207,-1.841,-1.913,-1.223,0.5161,-1.601,-0.9325,1.406,0.0,-0.6582,1.708,1.601,-0.9325,1.406,1.913,-1.223,0.5161,1.023,-1.207,-1.841,-1.409,-1.925,-2.878,-1.409,-3.947,-1.681,0.0,-3.947,-1.681,-1.109,-0.6007,-2.046,0.0,-0.6007,-2.046,1.409,-1.925,-2.878,0.0,-1.925,-2.878,1.109,-0.6007,-2.046,1.409,-3.947,-1.681,-2.927,-1.925,0.4309,-2.089,-3.947,0.4309,-2.045,-0.6007,0.4309,2.927,-1.925,0.4309,2.045,-0.6007,0.4309,2.089,-3.947,0.4309,0.0,-3.947,0.4309,-0.9442,-0.3153,-1.692,0.0,-0.3153,-1.692,0.9442,-0.3153,-1.692,1.7,-0.3153,0.3093,-1.7,-0.3153,0.3093,-1.86,-3.793,1.364,-2.541,-1.963,1.364,-1.861,-0.9431,1.364,1.861,-0.9431,1.364,2.541,-1.963,1.364,1.86,-3.793,1.364,0.0,-3.793,1.364}, 165);
-SoIndexedFaceSet108->setCoord(*SoCoordinate109);
-
-SoTextureCoordinate* SoTextureCoordinate110 = new SoTextureCoordinate();
-SoTextureCoordinate110->setPoint(new float[]{0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186}, 132);
-SoIndexedFaceSet108->setTexCoord(*SoTextureCoordinate110);
-
-SoShape104->setGeometry(*SoIndexedFaceSet108);
-
-SoTransform103->addChild(*SoShape104);
-
-SoHAnimSegment102->addChild(*SoTransform103);
-
-SoHAnimJoint101->addChildren(*SoHAnimSegment102);
-
-SoHAnimJoint* SoHAnimJoint111 = new SoHAnimJoint();
-SoHAnimJoint111->X3DNode::setName(QString("r_metatarsophalangeal_2"));
-SoHAnimJoint111->setDEF(QString("hanim_r_metatarsophalangeal_2"));
-SoHAnimJoint111->setCenter(new float[]{-3.854,3.64,0.7402});
-SoHAnimJoint111->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint111->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment112 = new SoHAnimSegment();
-SoHAnimSegment112->X3DNode::setName(QString("r_tarsal_proximal_phalanx_2"));
-SoHAnimSegment112->setDEF(QString("hanim_r_tarsal_proximal_phalanx_2"));
-SoTransform* SoTransform113 = new SoTransform();
-SoTransform113->setTranslation(new float[]{-3.854,3.64,0.7402});
-SoShape* SoShape114 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance115 = new SoVRMLAppearance();
-SoMaterial* SoMaterial116 = new SoMaterial();
-SoMaterial116->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance115->addChild(*SoMaterial116);
-
-SoImageTexture* SoImageTexture117 = new SoImageTexture();
-SoImageTexture117->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance115->addChild(*SoImageTexture117);
-
-SoShape114->addChild(*SoVRMLAppearance115);
-
-SoIndexedFaceSet* SoIndexedFaceSet118 = new SoIndexedFaceSet();
-SoIndexedFaceSet118->setCoordIndex(new int32_t[]{10,4,3,-1,11,10,3,-1,0,11,3,-1,1,12,11,-1,11,0,1,-1,1,9,16,-1,16,12,1,-1,2,4,10,-1,10,17,2,-1,6,8,13,-1,6,13,14,-1,5,6,14,-1,7,5,14,-1,14,15,7,-1,7,15,16,-1,16,9,7,-1,2,17,13,-1,13,8,2,-1,19,18,24,-1,22,21,20,-1,23,22,20,-1,24,23,20,-1,19,24,20,-1,0,18,19,-1,19,1,0,-1,1,19,20,-1,20,9,1,-1,9,20,21,-1,21,7,9,-1,7,21,22,-1,22,5,7,-1,5,22,23,-1,23,6,5,-1,6,23,24,-1,24,3,6,-1,3,24,18,-1,18,0,3,-1,2,8,6,-1,2,6,3,-1,4,2,3,-1,28,29,25,-1,25,26,28,-1,35,28,26,-1,26,27,35,-1,27,40,35,-1,25,30,31,-1,31,26,25,-1,31,32,27,-1,27,26,31,-1,32,41,40,-1,40,27,32,-1,42,30,25,-1,25,29,42,-1,28,33,34,-1,34,29,28,-1,35,36,33,-1,33,28,35,-1,36,35,40,-1,34,33,38,-1,38,37,34,-1,38,33,36,-1,36,39,38,-1,39,36,40,-1,40,41,39,-1,42,29,34,-1,34,37,42,-1}, 264);
-SoIndexedFaceSet118->setCreaseAngle(1.57);
-SoIndexedFaceSet118->setTexCoordIndex(new int32_t[]{12,5,4,-1,13,12,4,-1,0,13,4,-1,1,14,13,-1,13,0,1,-1,1,3,19,-1,19,14,1,-1,2,5,12,-1,12,21,2,-1,7,10,15,-1,7,15,16,-1,6,7,16,-1,8,6,16,-1,16,17,8,-1,8,17,18,-1,18,11,8,-1,9,20,15,-1,15,10,9,-1,23,22,28,-1,26,25,24,-1,27,26,24,-1,28,27,24,-1,23,28,24,-1,0,22,23,-1,23,1,0,-1,1,23,24,-1,24,3,1,-1,11,24,25,-1,25,8,11,-1,8,25,26,-1,26,6,8,-1,6,26,27,-1,27,7,6,-1,7,27,28,-1,28,4,7,-1,4,28,22,-1,22,0,4,-1,9,10,7,-1,9,7,4,-1,5,9,4,-1,30,29,31,-1,31,32,30,-1,33,30,32,-1,32,34,33,-1,34,35,33,-1,31,36,37,-1,37,32,31,-1,37,38,34,-1,34,32,37,-1,38,39,35,-1,35,34,38,-1,40,36,31,-1,31,29,40,-1,41,42,43,-1,43,44,41,-1,45,46,42,-1,42,41,45,-1,46,45,50,-1,43,42,48,-1,48,47,43,-1,48,42,46,-1,46,49,48,-1,49,46,50,-1,50,51,49,-1,52,44,43,-1,43,47,52,-1}, 264);
-SoCoordinate* SoCoordinate119 = new SoCoordinate();
-SoCoordinate119->setPoint(new float[]{-2.927,-1.627,-1.013,-2.089,-3.648,-1.013,0.0,0.2797,0.3064,-2.045,-0.3017,-1.013,-1.695,0.0029,-0.0151,2.927,-1.627,-1.013,2.045,-0.3017,-1.013,2.089,-3.648,-1.013,1.695,0.0029,-0.0151,0.0,-3.648,-1.013,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,0.0,-3.648,0.9192,0.0,-0.0274,1.661,-2.405,-1.656,-1.915,-1.75,-2.942,-1.915,0.0,-2.942,-1.915,1.75,-2.942,-1.915,2.405,-1.656,-1.915,1.742,-0.5681,-1.915,-1.742,-0.5681,-1.915,-1.784,-0.648,2.332,-2.216,-2.267,4.144,-2.216,-3.648,3.776,0.0,-2.267,5.463,0.0,-0.5463,3.95,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,2.216,-2.267,4.144,1.784,-0.648,2.332,0.0,-3.648,5.096,2.216,-3.648,3.776,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,0.0,-3.648,3.776,0.0,-3.648,0.9192,0.0,-0.0274,1.661}, 129);
-SoIndexedFaceSet118->setCoord(*SoCoordinate119);
-
-SoTextureCoordinate* SoTextureCoordinate120 = new SoTextureCoordinate();
-SoTextureCoordinate120->setPoint(new float[]{0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432}, 106);
-SoIndexedFaceSet118->setTexCoord(*SoTextureCoordinate120);
-
-SoShape114->setGeometry(*SoIndexedFaceSet118);
-
-SoTransform113->addChild(*SoShape114);
-
-SoHAnimSegment112->addChild(*SoTransform113);
-
-SoHAnimJoint111->addChildren(*SoHAnimSegment112);
-
-SoHAnimJoint101->addChildren(*SoHAnimJoint111);
-
-SoHAnimJoint91->addChildren(*SoHAnimJoint101);
-
-SoHAnimJoint81->addChildren(*SoHAnimJoint91);
-
-SoHAnimJoint31->addChildren(*SoHAnimJoint81);
-
-SoHAnimJoint* SoHAnimJoint121 = new SoHAnimJoint();
-SoHAnimJoint121->X3DNode::setName(QString("sacroiliac"));
-SoHAnimJoint121->setDEF(QString("hanim_sacroiliac"));
-SoHAnimJoint121->setCenter(new float[]{0.0,30.530001,-0.7076});
-SoHAnimJoint121->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint121->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment122 = new SoHAnimSegment();
-SoHAnimSegment122->X3DNode::setName(QString("pelvis"));
-SoHAnimSegment122->setDEF(QString("hanim_pelvis"));
-SoTransform* SoTransform123 = new SoTransform();
-SoTransform123->setTranslation(new float[]{0.0,30.530001,-0.7076});
-SoShape* SoShape124 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance125 = new SoVRMLAppearance();
-SoMaterial* SoMaterial126 = new SoMaterial();
-SoMaterial126->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance125->addChild(*SoMaterial126);
-
-SoImageTexture* SoImageTexture127 = new SoImageTexture();
-SoImageTexture127->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance125->addChild(*SoImageTexture127);
-
-SoShape124->addChild(*SoVRMLAppearance125);
-
-SoIndexedFaceSet* SoIndexedFaceSet128 = new SoIndexedFaceSet();
-SoIndexedFaceSet128->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
-SoIndexedFaceSet128->setCreaseAngle(1.57);
-SoIndexedFaceSet128->setTexCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
-SoCoordinate* SoCoordinate129 = new SoCoordinate();
-SoCoordinate129->setPoint(new float[]{0.0,10.79,0.1424,0.0,10.06,-2.825,-2.283,10.06,-2.428,-3.954,10.06,-1.948,-4.566,10.06,0.1424,-3.954,10.06,2.233,-2.283,10.06,2.712,0.0,10.06,3.11,2.283,10.06,2.712,3.954,10.06,2.233,4.566,10.06,0.1424,3.954,10.06,-1.948,2.283,10.06,-2.428,0.0,8.045,-4.614,-2.953,8.045,-3.977,-5.114,8.045,-2.236,-5.905,8.045,0.1424,-5.114,8.045,2.521,-2.953,8.045,3.645,0.0,8.045,4.282,2.953,8.045,3.645,5.114,8.045,2.521,5.905,8.045,0.1424,5.114,8.045,-2.236,2.953,8.045,-3.977,0.0,5.297,-5.018,-3.409,5.297,-4.282,-5.905,5.297,-2.272,-6.819,5.297,0.1424,-5.905,5.297,2.889,-3.409,5.297,4.282,0.0,5.297,5.018,3.409,5.297,4.282,5.905,5.297,2.889,6.819,5.297,0.1424,5.905,5.297,-2.272,3.409,5.297,-4.282,0.0,2.548,-4.282,-2.953,2.548,-3.645,-5.114,2.548,-1.904,-5.905,2.548,0.1424,-5.114,2.548,2.521,-2.953,2.548,3.645,0.0,2.548,4.282,2.953,2.548,3.645,5.114,2.548,2.521,5.905,2.548,0.1424,5.114,2.548,-1.904,2.953,2.548,-3.645,0.0,0.5362,-2.272,-1.705,0.5362,-1.904,-2.953,0.5362,-1.231,-3.409,0.5362,0.1424,-2.953,0.5362,1.516,-1.705,0.5362,2.521,0.0,0.5362,2.889,1.705,0.5362,2.521,2.953,0.5362,1.516,3.409,0.5362,0.1424,2.953,0.5362,-1.231,1.705,0.5362,-1.904,0.0,-0.2003,0.1424}, 186);
-SoIndexedFaceSet128->setCoord(*SoCoordinate129);
-
-SoTextureCoordinate* SoTextureCoordinate130 = new SoTextureCoordinate();
-SoTextureCoordinate130->setPoint(new float[]{0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398}, 124);
-SoIndexedFaceSet128->setTexCoord(*SoTextureCoordinate130);
-
-SoShape124->setGeometry(*SoIndexedFaceSet128);
-
-SoTransform123->addChild(*SoShape124);
-
-SoHAnimSegment122->addChild(*SoTransform123);
-
-SoHAnimJoint121->addChildren(*SoHAnimSegment122);
-
-SoHAnimJoint* SoHAnimJoint131 = new SoHAnimJoint();
-SoHAnimJoint131->X3DNode::setName(QString("l_shoulder"));
-SoHAnimJoint131->setDEF(QString("hanim_l_shoulder"));
-SoHAnimJoint131->setCenter(new float[]{5.975,52.0,-0.1452});
-SoHAnimJoint131->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint131->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment132 = new SoHAnimSegment();
-SoHAnimSegment132->X3DNode::setName(QString("l_upperarm"));
-SoHAnimSegment132->setDEF(QString("hanim_l_upperarm"));
-SoTransform* SoTransform133 = new SoTransform();
-SoTransform133->setTranslation(new float[]{5.975,52.0,-0.1452});
-SoShape* SoShape134 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance135 = new SoVRMLAppearance();
-SoMaterial* SoMaterial136 = new SoMaterial();
-SoMaterial136->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance135->addChild(*SoMaterial136);
-
-SoImageTexture* SoImageTexture137 = new SoImageTexture();
-SoImageTexture137->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance135->addChild(*SoImageTexture137);
-
-SoShape134->addChild(*SoVRMLAppearance135);
-
-SoIndexedFaceSet* SoIndexedFaceSet138 = new SoIndexedFaceSet();
-SoIndexedFaceSet138->setCoordIndex(new int32_t[]{2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,36,37,38,-1,35,36,38,-1,39,35,38,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1,26,25,20,-1,20,21,26,-1,27,26,21,-1,21,22,27,-1,28,27,22,-1,22,23,28,-1,29,28,23,-1,23,24,29,-1,25,29,24,-1,24,20,25,-1,31,30,25,-1,25,26,31,-1,32,31,26,-1,26,27,32,-1,33,32,27,-1,27,28,33,-1,34,33,28,-1,28,29,34,-1,30,34,29,-1,29,25,30,-1,36,35,30,-1,30,31,36,-1,37,36,31,-1,31,32,37,-1,38,37,32,-1,32,33,38,-1,39,38,33,-1,33,34,39,-1,35,39,34,-1,34,30,35,-1}, 304);
-SoIndexedFaceSet138->setCreaseAngle(1.57);
-SoIndexedFaceSet138->setTexCoordIndex(new int32_t[]{2,0,1,-1,3,2,1,-1,61,3,1,-1,1,0,5,-1,5,6,1,-1,0,2,7,-1,7,5,0,-1,2,3,8,-1,8,7,2,-1,25,4,9,-1,9,26,25,-1,4,1,6,-1,6,9,4,-1,6,5,10,-1,10,11,6,-1,5,7,12,-1,12,10,5,-1,7,8,13,-1,13,12,7,-1,27,9,14,-1,14,28,27,-1,9,6,11,-1,11,14,9,-1,11,10,15,-1,15,16,11,-1,10,12,17,-1,17,15,10,-1,12,13,18,-1,18,17,12,-1,29,14,19,-1,19,30,29,-1,14,11,16,-1,16,19,14,-1,54,35,36,-1,53,54,36,-1,37,53,36,-1,20,21,16,-1,16,15,20,-1,22,20,15,-1,15,17,22,-1,23,22,17,-1,17,18,23,-1,24,32,31,-1,31,19,24,-1,21,24,19,-1,19,16,21,-1,40,41,38,-1,38,39,40,-1,43,56,55,-1,55,42,43,-1,45,43,42,-1,42,44,45,-1,47,45,44,-1,44,46,47,-1,41,47,46,-1,46,38,41,-1,48,49,41,-1,41,40,48,-1,50,58,57,-1,57,43,50,-1,51,50,43,-1,43,45,51,-1,52,51,45,-1,45,47,52,-1,49,52,47,-1,47,41,49,-1,34,33,49,-1,49,48,34,-1,35,60,59,-1,59,50,35,-1,36,35,50,-1,50,51,36,-1,37,36,51,-1,51,52,37,-1,33,37,52,-1,52,49,33,-1}, 304);
-SoCoordinate* SoCoordinate139 = new SoCoordinate();
-SoCoordinate139->setPoint(new float[]{2.525,1.246,-1.68,3.681,1.236,0.0337,2.408,1.247,1.663,0.4657,1.264,0.9556,0.5379,1.264,-1.11,2.743,-0.0209,-2.31,4.339,-0.0351,0.057,2.581,-0.0195,2.307,-0.1009,0.0044,1.33,-0.0013,0.0035,-1.523,2.72,-2.534,-2.31,4.317,-2.548,0.057,2.559,-2.533,2.307,-0.1233,-2.509,1.33,-0.0237,-2.51,-1.523,2.759,-3.609,-2.442,4.448,-3.624,0.0619,2.588,-3.608,2.442,-0.2497,-3.583,1.409,-0.1443,-3.583,-1.61,2.245,-1.758,-1.939,3.465,-1.769,-0.4543,2.834,-1.763,1.629,1.223,-1.749,1.432,0.8596,-1.746,-0.7734,2.263,-7.566,-1.569,3.531,-7.577,-0.378,2.875,-7.571,1.293,1.202,-7.556,1.135,0.8242,-7.553,-0.6339,2.267,-11.62,-1.511,3.487,-11.63,-0.3651,2.856,-11.62,1.243,1.245,-11.61,1.091,0.8817,-11.6,-0.6115,2.213,-12.17,-0.8985,2.928,-12.17,-0.2266,2.558,-12.17,0.7161,1.614,-12.16,0.6268,1.401,-12.16,-0.3711}, 120);
-SoIndexedFaceSet138->setCoord(*SoCoordinate139);
-
-SoTextureCoordinate* SoTextureCoordinate140 = new SoTextureCoordinate();
-SoTextureCoordinate140->setPoint(new float[]{0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114}, 124);
-SoIndexedFaceSet138->setTexCoord(*SoTextureCoordinate140);
-
-SoShape134->setGeometry(*SoIndexedFaceSet138);
-
-SoTransform133->addChild(*SoShape134);
-
-SoHAnimSegment132->addChild(*SoTransform133);
-
-SoHAnimJoint131->addChildren(*SoHAnimSegment132);
-
-SoHAnimJoint* SoHAnimJoint141 = new SoHAnimJoint();
-SoHAnimJoint141->X3DNode::setName(QString("l_elbow"));
-SoHAnimJoint141->setDEF(QString("hanim_l_elbow"));
-SoHAnimJoint141->setCenter(new float[]{8.093,40.380001,-0.2502});
-SoHAnimJoint141->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint141->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment142 = new SoHAnimSegment();
-SoHAnimSegment142->X3DNode::setName(QString("l_forearm"));
-SoHAnimSegment142->setDEF(QString("hanim_l_forearm"));
-SoTransform* SoTransform143 = new SoTransform();
-SoTransform143->setTranslation(new float[]{8.093,40.380001,-0.2502});
-SoShape* SoShape144 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance145 = new SoVRMLAppearance();
-SoMaterial* SoMaterial146 = new SoMaterial();
-SoMaterial146->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance145->addChild(*SoMaterial146);
-
-SoImageTexture* SoImageTexture147 = new SoImageTexture();
-SoImageTexture147->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance145->addChild(*SoImageTexture147);
-
-SoShape144->addChild(*SoVRMLAppearance145);
-
-SoIndexedFaceSet* SoIndexedFaceSet148 = new SoIndexedFaceSet();
-SoIndexedFaceSet148->setCoordIndex(new int32_t[]{2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,21,22,23,-1,20,21,23,-1,24,20,23,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1}, 184);
-SoIndexedFaceSet148->setCreaseAngle(1.57);
-SoIndexedFaceSet148->setTexCoordIndex(new int32_t[]{2,25,26,-1,3,2,26,-1,4,3,26,-1,0,1,6,-1,6,5,0,-1,27,2,7,-1,7,28,27,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,29,7,12,-1,12,30,29,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,31,12,17,-1,17,32,31,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,34,22,23,-1,33,34,23,-1,24,33,23,-1,21,20,15,-1,15,16,21,-1,22,36,35,-1,35,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1}, 184);
-SoCoordinate* SoCoordinate149 = new SoCoordinate();
-SoCoordinate149->setPoint(new float[]{0.215,0.3047,-1.152,1.155,0.2966,-0.2588,0.6199,0.3013,1.04,-0.6505,0.3122,0.9491,-0.9008,0.3143,-0.4054,0.1442,-0.8448,-1.625,1.472,-0.8561,-0.4271,0.7164,-0.8496,1.625,-1.079,-0.8342,1.482,-1.433,-0.8312,-0.6588,0.1328,-3.5,-1.607,1.551,-3.513,-0.4225,0.781,-2.925,1.61,-1.136,-2.909,1.468,-1.551,-3.486,-0.6519,0.0592,-8.713,-1.437,1.093,-8.722,-0.1279,0.5047,-8.716,1.51,-0.8932,-8.704,1.377,-1.169,-8.702,-0.3428,0.0092,-9.336,-0.8855,0.7154,-9.342,0.0084,0.3135,-9.339,1.043,-0.6412,-9.331,0.9519,-0.8292,-9.329,-0.1383}, 75);
-SoIndexedFaceSet148->setCoord(*SoCoordinate149);
-
-SoTextureCoordinate* SoTextureCoordinate150 = new SoTextureCoordinate();
-SoTextureCoordinate150->setPoint(new float[]{0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674}, 74);
-SoIndexedFaceSet148->setTexCoord(*SoTextureCoordinate150);
-
-SoShape144->setGeometry(*SoIndexedFaceSet148);
-
-SoTransform143->addChild(*SoShape144);
-
-SoHAnimSegment142->addChild(*SoTransform143);
-
-SoHAnimJoint141->addChildren(*SoHAnimSegment142);
-
-SoHAnimJoint* SoHAnimJoint151 = new SoHAnimJoint();
-SoHAnimJoint151->X3DNode::setName(QString("l_radiocarpal"));
-SoHAnimJoint151->setDEF(QString("hanim_l_radiocarpal"));
-SoHAnimJoint151->setCenter(new float[]{7.808,31.459999,-0.05849});
-SoHAnimJoint151->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint151->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment152 = new SoHAnimSegment();
-SoHAnimSegment152->X3DNode::setName(QString("l_carpal"));
-SoHAnimSegment152->setDEF(QString("hanim_l_carpal"));
-SoTransform* SoTransform153 = new SoTransform();
-SoTransform153->setTranslation(new float[]{7.808,31.459999,-0.05849});
-SoShape* SoShape154 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance155 = new SoVRMLAppearance();
-SoMaterial* SoMaterial156 = new SoMaterial();
-SoMaterial156->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance155->addChild(*SoMaterial156);
-
-SoImageTexture* SoImageTexture157 = new SoImageTexture();
-SoImageTexture157->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance155->addChild(*SoImageTexture157);
-
-SoShape154->addChild(*SoVRMLAppearance155);
-
-SoIndexedFaceSet* SoIndexedFaceSet158 = new SoIndexedFaceSet();
-SoIndexedFaceSet158->setCoordIndex(new int32_t[]{4,5,0,-1,0,2,4,-1,6,7,3,-1,3,1,6,-1,1,0,5,-1,5,6,1,-1,8,9,5,-1,5,4,8,-1,10,11,7,-1,7,6,10,-1,9,10,6,-1,6,5,9,-1,12,13,9,-1,9,8,12,-1,14,15,11,-1,11,10,14,-1,13,14,10,-1,10,9,13,-1,4,2,16,-1,2,3,7,-1,7,16,2,-1,17,19,18,-1,18,20,17,-1,21,16,7,-1,7,11,21,-1,8,21,12,-1,12,21,11,-1,11,15,12,-1,13,12,15,-1,15,14,13,-1,8,4,19,-1,19,17,8,-1,4,16,18,-1,18,19,4,-1,16,21,20,-1,20,18,16,-1,21,8,17,-1,17,20,21,-1,22,27,23,-1,26,25,24,-1}, 160);
-SoIndexedFaceSet158->setCreaseAngle(1.57);
-SoIndexedFaceSet158->setTexCoordIndex(new int32_t[]{4,6,5,-1,5,7,4,-1,2,3,1,-1,1,0,2,-1,14,16,15,-1,15,17,14,-1,8,9,6,-1,6,4,8,-1,38,40,39,-1,39,41,38,-1,18,19,36,-1,36,37,18,-1,10,11,9,-1,9,8,10,-1,42,43,40,-1,40,38,42,-1,20,21,19,-1,19,18,20,-1,22,24,23,-1,24,26,25,-1,25,23,24,-1,27,29,28,-1,28,30,27,-1,31,23,25,-1,25,32,31,-1,33,31,34,-1,34,31,32,-1,32,35,34,-1,20,34,35,-1,35,21,20,-1,8,4,12,-1,12,13,8,-1,22,23,28,-1,28,29,22,-1,23,31,30,-1,30,28,23,-1,31,33,27,-1,27,30,31,-1,14,24,26,-1,14,16,24,-1}, 160);
-SoCoordinate* SoCoordinate159 = new SoCoordinate();
-SoCoordinate159->setPoint(new float[]{1.247,0.07,0.7975,1.209,0.0872,-1.349,-0.7098,-0.0015,0.8912,-0.7183,0.0002,-1.283,-0.9295,-0.613,1.478,1.647,-0.4252,1.388,1.589,-0.3921,-1.989,-1.044,-0.5947,-1.984,-0.8227,-2.521,2.408,1.951,-2.334,2.08,1.892,-2.301,-2.409,-1.192,-2.614,-2.248,-0.5703,-3.958,1.694,0.8836,-4.2,1.75,0.8251,-4.167,-2.071,-0.7842,-3.968,-1.934,-1.037,-0.5968,-0.1872,-1.642,-2.561,1.941,-1.951,-0.9492,0.058,-1.914,-1.016,1.885,-1.649,-2.56,0.1377,-1.066,-2.61,-0.2014,1.209,0.0872,-1.349,-0.7183,0.0002,-1.283,-0.7098,-0.0015,0.8912,1.247,0.07,0.7975,1.209,0.0872,-1.349,-0.7098,-0.0015,0.8912}, 84);
-SoIndexedFaceSet158->setCoord(*SoCoordinate159);
-
-SoTextureCoordinate* SoTextureCoordinate160 = new SoTextureCoordinate();
-SoTextureCoordinate160->setPoint(new float[]{0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857}, 88);
-SoIndexedFaceSet158->setTexCoord(*SoTextureCoordinate160);
-
-SoShape154->setGeometry(*SoIndexedFaceSet158);
-
-SoTransform153->addChild(*SoShape154);
-
-SoHAnimSegment152->addChild(*SoTransform153);
-
-SoHAnimJoint151->addChildren(*SoHAnimSegment152);
-
-SoHAnimJoint141->addChildren(*SoHAnimJoint151);
-
-SoHAnimJoint131->addChildren(*SoHAnimJoint141);
-
-SoHAnimJoint121->addChildren(*SoHAnimJoint131);
-
-SoHAnimJoint* SoHAnimJoint161 = new SoHAnimJoint();
-SoHAnimJoint161->X3DNode::setName(QString("r_shoulder"));
-SoHAnimJoint161->setDEF(QString("hanim_r_shoulder"));
-SoHAnimJoint161->setCenter(new float[]{-5.975,52.0,-0.1452});
-SoHAnimJoint161->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint161->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment162 = new SoHAnimSegment();
-SoHAnimSegment162->X3DNode::setName(QString("r_upperarm"));
-SoHAnimSegment162->setDEF(QString("hanim_r_upperarm"));
-SoTransform* SoTransform163 = new SoTransform();
-SoTransform163->setTranslation(new float[]{-5.975,52.0,-0.1452});
-SoShape* SoShape164 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance165 = new SoVRMLAppearance();
-SoMaterial* SoMaterial166 = new SoMaterial();
-SoMaterial166->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance165->addChild(*SoMaterial166);
-
-SoImageTexture* SoImageTexture167 = new SoImageTexture();
-SoImageTexture167->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance165->addChild(*SoImageTexture167);
-
-SoShape164->addChild(*SoVRMLAppearance165);
-
-SoIndexedFaceSet* SoIndexedFaceSet168 = new SoIndexedFaceSet();
-SoIndexedFaceSet168->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,38,37,36,-1,38,36,35,-1,39,38,35,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1,26,21,20,-1,20,25,26,-1,27,22,21,-1,21,26,27,-1,28,23,22,-1,22,27,28,-1,29,24,23,-1,23,28,29,-1,25,20,24,-1,24,29,25,-1,31,26,25,-1,25,30,31,-1,32,27,26,-1,26,31,32,-1,33,28,27,-1,27,32,33,-1,34,29,28,-1,28,33,34,-1,30,25,29,-1,29,34,30,-1,36,31,30,-1,30,35,36,-1,37,32,31,-1,31,36,37,-1,38,33,32,-1,32,37,38,-1,39,34,33,-1,33,38,39,-1,35,30,34,-1,34,39,35,-1}, 304);
-SoIndexedFaceSet168->setCreaseAngle(1.57);
-SoIndexedFaceSet168->setTexCoordIndex(new int32_t[]{1,0,2,-1,1,2,3,-1,61,1,3,-1,1,6,5,-1,5,0,1,-1,0,5,7,-1,7,2,0,-1,2,7,8,-1,8,3,2,-1,25,26,9,-1,9,4,25,-1,4,9,6,-1,6,1,4,-1,6,11,10,-1,10,5,6,-1,5,10,12,-1,12,7,5,-1,7,12,13,-1,13,8,7,-1,27,28,14,-1,14,9,27,-1,9,14,11,-1,11,6,9,-1,11,16,15,-1,15,10,11,-1,10,15,17,-1,17,12,10,-1,12,17,18,-1,18,13,12,-1,29,30,19,-1,19,14,29,-1,14,19,16,-1,16,11,14,-1,36,35,54,-1,36,54,53,-1,37,36,53,-1,20,15,16,-1,16,21,20,-1,22,17,15,-1,15,20,22,-1,23,18,17,-1,17,22,23,-1,24,19,31,-1,31,32,24,-1,21,16,19,-1,19,24,21,-1,40,39,38,-1,38,41,40,-1,43,42,55,-1,55,56,43,-1,45,44,42,-1,42,43,45,-1,47,46,44,-1,44,45,47,-1,41,38,46,-1,46,47,41,-1,48,40,41,-1,41,49,48,-1,50,43,57,-1,57,58,50,-1,51,45,43,-1,43,50,51,-1,52,47,45,-1,45,51,52,-1,49,41,47,-1,47,52,49,-1,34,48,49,-1,49,33,34,-1,35,50,59,-1,59,60,35,-1,36,51,50,-1,50,35,36,-1,37,52,51,-1,51,36,37,-1,33,49,52,-1,52,37,33,-1}, 304);
-SoCoordinate* SoCoordinate169 = new SoCoordinate();
-SoCoordinate169->setPoint(new float[]{-2.525,1.246,-1.68,-3.681,1.236,0.0337,-2.408,1.247,1.663,-0.4657,1.264,0.9556,-0.5379,1.264,-1.11,-2.743,-0.0209,-2.31,-4.339,-0.0351,0.057,-2.581,-0.0195,2.307,0.1009,0.0044,1.33,0.0013,0.0035,-1.523,-2.72,-2.534,-2.31,-4.317,-2.548,0.057,-2.559,-2.533,2.307,0.1233,-2.509,1.33,0.0237,-2.51,-1.523,-2.759,-3.609,-2.442,-4.448,-3.624,0.0619,-2.588,-3.608,2.442,0.2497,-3.583,1.409,0.1443,-3.583,-1.61,-2.245,-1.758,-1.939,-3.465,-1.769,-0.4543,-2.834,-1.763,1.629,-1.223,-1.749,1.432,-0.8596,-1.746,-0.7734,-2.263,-7.566,-1.569,-3.531,-7.577,-0.378,-2.875,-7.571,1.293,-1.202,-7.556,1.135,-0.8242,-7.553,-0.6339,-2.267,-11.62,-1.511,-3.487,-11.63,-0.3651,-2.856,-11.62,1.243,-1.245,-11.61,1.091,-0.8817,-11.6,-0.6115,-2.213,-12.17,-0.8985,-2.928,-12.17,-0.2266,-2.558,-12.17,0.7161,-1.614,-12.16,0.6268,-1.401,-12.16,-0.3711}, 120);
-SoIndexedFaceSet168->setCoord(*SoCoordinate169);
-
-SoTextureCoordinate* SoTextureCoordinate170 = new SoTextureCoordinate();
-SoTextureCoordinate170->setPoint(new float[]{0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114}, 124);
-SoIndexedFaceSet168->setTexCoord(*SoTextureCoordinate170);
-
-SoShape164->setGeometry(*SoIndexedFaceSet168);
-
-SoTransform163->addChild(*SoShape164);
-
-SoHAnimSegment162->addChild(*SoTransform163);
-
-SoHAnimJoint161->addChildren(*SoHAnimSegment162);
-
-SoHAnimJoint* SoHAnimJoint171 = new SoHAnimJoint();
-SoHAnimJoint171->X3DNode::setName(QString("r_elbow"));
-SoHAnimJoint171->setDEF(QString("hanim_r_elbow"));
-SoHAnimJoint171->setCenter(new float[]{-8.093,40.380001,-0.2502});
-SoHAnimJoint171->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint171->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment172 = new SoHAnimSegment();
-SoHAnimSegment172->X3DNode::setName(QString("r_forearm"));
-SoHAnimSegment172->setDEF(QString("hanim_r_forearm"));
-SoTransform* SoTransform173 = new SoTransform();
-SoTransform173->setTranslation(new float[]{-8.093,40.380001,-0.2502});
-SoShape* SoShape174 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance175 = new SoVRMLAppearance();
-SoMaterial* SoMaterial176 = new SoMaterial();
-SoMaterial176->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance175->addChild(*SoMaterial176);
-
-SoImageTexture* SoImageTexture177 = new SoImageTexture();
-SoImageTexture177->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance175->addChild(*SoImageTexture177);
-
-SoShape174->addChild(*SoVRMLAppearance175);
-
-SoIndexedFaceSet* SoIndexedFaceSet178 = new SoIndexedFaceSet();
-SoIndexedFaceSet178->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,21,-1,23,21,20,-1,24,23,20,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1}, 184);
-SoIndexedFaceSet178->setCreaseAngle(1.57);
-SoIndexedFaceSet178->setTexCoordIndex(new int32_t[]{26,25,2,-1,26,2,3,-1,4,26,3,-1,0,5,6,-1,6,1,0,-1,27,28,7,-1,7,2,27,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,29,30,12,-1,12,7,29,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,31,32,17,-1,17,12,31,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,34,-1,23,34,33,-1,24,23,33,-1,21,16,15,-1,15,20,21,-1,22,17,35,-1,35,36,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1}, 184);
-SoCoordinate* SoCoordinate179 = new SoCoordinate();
-SoCoordinate179->setPoint(new float[]{-0.215,0.3047,-1.152,-1.155,0.2966,-0.2588,-0.6199,0.3013,1.04,0.6505,0.3122,0.9491,0.9008,0.3143,-0.4054,-0.1442,-0.8448,-1.625,-1.472,-0.8561,-0.4271,-0.7164,-0.8496,1.625,1.079,-0.8342,1.482,1.433,-0.8312,-0.6588,-0.1328,-3.5,-1.607,-1.551,-3.513,-0.4225,-0.781,-2.925,1.61,1.136,-2.909,1.468,1.551,-3.486,-0.6519,-0.0592,-8.713,-1.437,-1.093,-8.722,-0.1279,-0.5047,-8.716,1.51,0.8932,-8.704,1.377,1.169,-8.702,-0.3428,-0.0092,-9.336,-0.8855,-0.7154,-9.342,0.0084,-0.3135,-9.339,1.043,0.6412,-9.331,0.9519,0.8292,-9.329,-0.1383}, 75);
-SoIndexedFaceSet178->setCoord(*SoCoordinate179);
-
-SoTextureCoordinate* SoTextureCoordinate180 = new SoTextureCoordinate();
-SoTextureCoordinate180->setPoint(new float[]{0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674}, 74);
-SoIndexedFaceSet178->setTexCoord(*SoTextureCoordinate180);
-
-SoShape174->setGeometry(*SoIndexedFaceSet178);
-
-SoTransform173->addChild(*SoShape174);
-
-SoHAnimSegment172->addChild(*SoTransform173);
-
-SoHAnimJoint171->addChildren(*SoHAnimSegment172);
-
-SoHAnimJoint* SoHAnimJoint181 = new SoHAnimJoint();
-SoHAnimJoint181->X3DNode::setName(QString("r_radiocarpal"));
-SoHAnimJoint181->setDEF(QString("hanim_r_radiocarpal"));
-SoHAnimJoint181->setCenter(new float[]{-7.808,31.459999,-0.05849});
-SoHAnimJoint181->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint181->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment182 = new SoHAnimSegment();
-SoHAnimSegment182->X3DNode::setName(QString("r_carpal"));
-SoHAnimSegment182->setDEF(QString("hanim_r_carpal"));
-SoTransform* SoTransform183 = new SoTransform();
-SoTransform183->setTranslation(new float[]{-7.808,31.459999,-0.05849});
-SoShape* SoShape184 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance185 = new SoVRMLAppearance();
-SoMaterial* SoMaterial186 = new SoMaterial();
-SoMaterial186->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance185->addChild(*SoMaterial186);
-
-SoImageTexture* SoImageTexture187 = new SoImageTexture();
-SoImageTexture187->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance185->addChild(*SoImageTexture187);
-
-SoShape184->addChild(*SoVRMLAppearance185);
-
-SoIndexedFaceSet* SoIndexedFaceSet188 = new SoIndexedFaceSet();
-SoIndexedFaceSet188->setCoordIndex(new int32_t[]{4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1}, 160);
-SoIndexedFaceSet188->setCreaseAngle(1.57);
-SoIndexedFaceSet188->setTexCoordIndex(new int32_t[]{4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1}, 160);
-SoCoordinate* SoCoordinate189 = new SoCoordinate();
-SoCoordinate189->setPoint(new float[]{-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912,0.7183,0.0002,-1.283,0.9295,-0.613,1.478,-1.647,-0.4252,1.388,-1.589,-0.3921,-1.989,1.044,-0.5947,-1.984,0.8227,-2.521,2.408,-1.951,-2.334,2.08,-1.892,-2.301,-2.409,1.192,-2.614,-2.248,0.5703,-3.958,1.694,-0.8836,-4.2,1.75,-0.8251,-4.167,-2.071,0.7842,-3.968,-1.934,1.037,-0.5968,-0.1872,1.642,-2.561,1.941,1.951,-0.9492,0.058,1.914,-1.016,1.885,1.649,-2.56,0.1377,1.066,-2.61,-0.2014,-1.209,0.0872,-1.349,0.7183,0.0002,-1.283,0.7098,-0.0015,0.8912,-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912}, 84);
-SoIndexedFaceSet188->setCoord(*SoCoordinate189);
-
-SoTextureCoordinate* SoTextureCoordinate190 = new SoTextureCoordinate();
-SoTextureCoordinate190->setPoint(new float[]{0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857}, 88);
-SoIndexedFaceSet188->setTexCoord(*SoTextureCoordinate190);
-
-SoShape184->setGeometry(*SoIndexedFaceSet188);
-
-SoTransform183->addChild(*SoShape184);
-
-SoHAnimSegment182->addChild(*SoTransform183);
-
-SoHAnimJoint181->addChildren(*SoHAnimSegment182);
-
-SoHAnimJoint171->addChildren(*SoHAnimJoint181);
-
-SoHAnimJoint161->addChildren(*SoHAnimJoint171);
-
-SoHAnimJoint121->addChildren(*SoHAnimJoint161);
-
-SoHAnimJoint* SoHAnimJoint191 = new SoHAnimJoint();
-SoHAnimJoint191->X3DNode::setName(QString("vl5"));
-SoHAnimJoint191->setDEF(QString("hanim_vl5"));
-SoHAnimJoint191->setCenter(new float[]{0.0,40.23,-0.8527});
-SoHAnimJoint191->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint191->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment192 = new SoHAnimSegment();
-SoHAnimSegment192->X3DNode::setName(QString("l5"));
-SoHAnimSegment192->setDEF(QString("hanim_l5"));
-SoTransform* SoTransform193 = new SoTransform();
-SoTransform193->setTranslation(new float[]{0.0,40.23,-0.8527});
-SoShape* SoShape194 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance195 = new SoVRMLAppearance();
-SoMaterial* SoMaterial196 = new SoMaterial();
-SoMaterial196->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance195->addChild(*SoMaterial196);
-
-SoImageTexture* SoImageTexture197 = new SoImageTexture();
-SoImageTexture197->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance195->addChild(*SoImageTexture197);
-
-SoShape194->addChild(*SoVRMLAppearance195);
-
-SoIndexedFaceSet* SoIndexedFaceSet198 = new SoIndexedFaceSet();
-SoIndexedFaceSet198->setCoordIndex(new int32_t[]{3,4,7,-1,7,5,3,-1,4,66,68,-1,68,8,4,-1,4,8,7,-1,1,0,9,-1,9,10,1,-1,0,2,11,-1,11,9,0,-1,15,71,73,-1,73,16,15,-1,14,15,16,-1,16,17,14,-1,71,15,8,-1,8,68,71,-1,15,14,7,-1,7,8,15,-1,73,72,69,-1,69,70,73,-1,16,73,70,-1,70,12,16,-1,16,12,13,-1,13,17,16,-1,21,20,22,-1,22,23,21,-1,20,14,17,-1,17,22,20,-1,20,21,6,-1,6,5,20,-1,14,20,5,-1,5,7,14,-1,23,22,18,-1,18,19,23,-1,22,17,13,-1,13,18,22,-1,2,6,11,-1,28,27,30,-1,30,31,28,-1,27,29,32,-1,32,30,27,-1,29,21,23,-1,23,32,29,-1,27,28,10,-1,10,9,27,-1,29,27,9,-1,9,11,29,-1,21,29,11,-1,11,6,21,-1,31,30,24,-1,24,25,31,-1,30,32,26,-1,26,24,30,-1,32,23,19,-1,19,26,32,-1,12,70,74,-1,74,33,12,-1,24,26,36,-1,36,35,24,-1,33,74,75,-1,75,37,33,-1,34,33,37,-1,37,38,34,-1,39,12,33,-1,33,34,39,-1,19,40,26,-1,26,40,41,-1,41,36,26,-1,39,34,41,-1,41,40,39,-1,35,36,43,-1,43,42,35,-1,36,41,44,-1,44,43,36,-1,41,34,38,-1,38,44,41,-1,37,75,76,-1,76,45,37,-1,38,37,45,-1,45,46,38,-1,42,43,48,-1,48,47,42,-1,44,38,46,-1,46,49,44,-1,45,76,77,-1,77,50,45,-1,46,45,50,-1,50,51,46,-1,47,48,53,-1,53,52,47,-1,48,49,54,-1,54,53,48,-1,49,46,51,-1,51,54,49,-1,50,77,78,-1,78,55,50,-1,51,50,55,-1,55,56,51,-1,52,53,58,-1,58,57,52,-1,53,54,59,-1,59,58,53,-1,54,51,56,-1,56,59,54,-1,19,18,60,-1,60,61,19,-1,18,13,62,-1,62,60,18,-1,13,39,63,-1,63,62,13,-1,40,19,61,-1,61,64,40,-1,39,40,64,-1,64,63,39,-1,2,3,5,-1,2,5,6,-1,13,12,39,-1,25,24,35,-1,70,69,74,-1,67,68,66,-1,66,65,67,-1,79,71,68,-1,68,67,79,-1,72,73,71,-1,71,79,72,-1,49,48,43,-1,43,44,49,-1,63,64,60,-1,60,62,63,-1,60,64,61,-1,86,83,82,-1,82,84,86,-1,141,140,83,-1,83,87,141,-1,83,86,87,-1,88,80,1,-1,1,10,88,-1,89,81,80,-1,80,88,89,-1,144,143,93,-1,93,94,144,-1,94,93,92,-1,92,95,94,-1,87,93,143,-1,143,141,87,-1,86,92,93,-1,93,87,86,-1,69,72,144,-1,144,142,69,-1,142,144,94,-1,94,90,142,-1,91,90,94,-1,94,95,91,-1,100,98,99,-1,99,101,100,-1,95,92,98,-1,98,100,95,-1,85,99,98,-1,98,84,85,-1,84,98,92,-1,92,86,84,-1,96,100,101,-1,101,97,96,-1,91,95,100,-1,100,96,91,-1,81,89,85,-1,106,104,28,-1,28,31,106,-1,107,105,104,-1,104,106,107,-1,101,99,105,-1,105,107,101,-1,10,28,104,-1,104,88,10,-1,88,104,105,-1,105,89,88,-1,89,105,99,-1,99,85,89,-1,102,106,31,-1,31,25,102,-1,103,107,106,-1,106,102,103,-1,97,101,107,-1,107,103,97,-1,145,142,90,-1,90,108,145,-1,111,103,102,-1,102,110,111,-1,146,145,108,-1,108,112,146,-1,112,108,109,-1,109,113,112,-1,108,90,114,-1,114,109,108,-1,97,103,115,-1,116,115,103,-1,103,111,116,-1,116,109,114,-1,114,115,116,-1,118,111,110,-1,110,117,118,-1,119,116,111,-1,111,118,119,-1,113,109,116,-1,116,119,113,-1,147,146,112,-1,112,120,147,-1,120,112,113,-1,113,121,120,-1,123,118,117,-1,117,122,123,-1,121,113,119,-1,119,124,121,-1,148,147,120,-1,120,125,148,-1,125,120,121,-1,121,126,125,-1,128,123,122,-1,122,127,128,-1,129,124,123,-1,123,128,129,-1,126,121,124,-1,124,129,126,-1,149,148,125,-1,125,130,149,-1,130,125,126,-1,126,131,130,-1,133,128,127,-1,127,132,133,-1,134,129,128,-1,128,133,134,-1,131,126,129,-1,129,134,131,-1,135,96,97,-1,97,136,135,-1,137,91,96,-1,96,135,137,-1,138,114,91,-1,91,137,138,-1,136,97,115,-1,115,139,136,-1,139,115,114,-1,114,138,139,-1,81,84,82,-1,81,85,84,-1,91,114,90,-1,25,110,102,-1,142,145,69,-1,140,141,67,-1,67,65,140,-1,141,143,79,-1,79,67,141,-1,143,144,72,-1,72,79,143,-1,118,123,124,-1,124,119,118,-1,135,139,138,-1,138,137,135,-1,135,136,139,-1,25,35,110,-1,117,110,35,-1,35,42,117,-1,47,122,117,-1,117,42,47,-1,127,122,47,-1,47,52,127,-1,132,127,52,-1,52,57,132,-1,69,145,74,-1,75,74,145,-1,145,146,75,-1,76,75,146,-1,146,147,76,-1,77,76,147,-1,147,148,77,-1,78,77,148,-1,148,149,78,-1,57,78,149,-1,149,132,57,-1,58,55,78,-1,78,57,58,-1,59,56,55,-1,55,58,59,-1,132,149,130,-1,130,133,132,-1,133,130,131,-1,131,134,133,-1,151,150,155,-1,155,156,151,-1,150,152,157,-1,157,155,150,-1,152,153,158,-1,158,157,152,-1,153,154,159,-1,159,158,153,-1,160,161,162,-1,162,163,160,-1,154,160,163,-1,163,159,154,-1,168,164,151,-1,151,156,168,-1,169,165,164,-1,164,168,169,-1,170,166,165,-1,165,169,170,-1,171,167,166,-1,166,170,171,-1,162,161,172,-1,172,173,162,-1,173,172,167,-1,167,171,173,-1,4,3,158,-1,158,159,4,-1,66,4,159,-1,159,163,66,-1,0,1,156,-1,156,155,0,-1,2,0,155,-1,155,157,2,-1,3,2,157,-1,157,158,3,-1,65,66,163,-1,163,162,65,-1,82,83,171,-1,171,170,82,-1,83,140,173,-1,173,171,83,-1,1,80,168,-1,168,156,1,-1,80,81,169,-1,169,168,80,-1,81,82,170,-1,170,169,81,-1,140,65,162,-1,162,173,140,-1}, 1336);
-SoIndexedFaceSet198->setCreaseAngle(1.57);
-SoIndexedFaceSet198->setTexCoordIndex(new int32_t[]{2,3,0,-1,0,1,2,-1,3,6,4,-1,4,5,3,-1,3,5,0,-1,20,21,18,-1,18,19,20,-1,21,23,22,-1,22,18,21,-1,26,27,24,-1,24,25,26,-1,29,26,25,-1,25,28,29,-1,27,26,30,-1,30,31,27,-1,26,29,32,-1,32,30,26,-1,24,35,33,-1,33,34,24,-1,25,24,34,-1,34,36,25,-1,25,36,37,-1,37,28,25,-1,40,41,38,-1,38,39,40,-1,41,29,28,-1,28,38,41,-1,41,40,42,-1,42,43,41,-1,29,41,43,-1,43,32,29,-1,39,38,44,-1,44,45,39,-1,38,28,37,-1,37,44,38,-1,23,42,22,-1,48,162,161,-1,161,47,48,-1,49,51,50,-1,50,46,49,-1,51,40,39,-1,39,50,51,-1,163,48,164,-1,164,181,163,-1,51,49,18,-1,18,22,51,-1,40,51,22,-1,22,42,40,-1,47,166,165,-1,165,53,47,-1,46,50,54,-1,54,52,46,-1,50,39,45,-1,45,54,50,-1,36,34,55,-1,55,56,36,-1,52,54,57,-1,57,58,52,-1,56,55,59,-1,59,60,56,-1,62,56,60,-1,60,61,62,-1,63,36,56,-1,56,62,63,-1,45,64,54,-1,54,64,65,-1,65,57,54,-1,63,62,65,-1,65,64,63,-1,58,57,66,-1,66,67,58,-1,57,65,68,-1,68,66,57,-1,65,62,61,-1,61,68,65,-1,60,59,69,-1,69,70,60,-1,61,60,70,-1,70,71,61,-1,67,66,72,-1,72,73,67,-1,68,61,71,-1,71,74,68,-1,70,69,75,-1,75,76,70,-1,71,70,76,-1,76,77,71,-1,73,72,78,-1,78,79,73,-1,72,74,80,-1,80,78,72,-1,74,71,77,-1,77,80,74,-1,76,75,81,-1,81,82,76,-1,77,76,82,-1,82,83,77,-1,79,78,84,-1,84,85,79,-1,78,80,86,-1,86,84,78,-1,80,77,83,-1,83,86,80,-1,45,44,87,-1,87,88,45,-1,44,37,89,-1,89,87,44,-1,37,63,90,-1,90,89,37,-1,64,45,88,-1,88,91,64,-1,63,64,91,-1,91,90,63,-1,7,2,1,-1,23,43,42,-1,37,36,63,-1,53,167,168,-1,34,33,55,-1,9,4,6,-1,6,8,9,-1,93,27,31,-1,31,92,93,-1,35,24,27,-1,27,93,35,-1,74,72,66,-1,66,68,74,-1,90,91,87,-1,87,89,90,-1,87,91,88,-1,10,11,12,-1,12,13,10,-1,14,15,11,-1,11,16,14,-1,11,10,16,-1,94,95,169,-1,169,170,94,-1,96,97,95,-1,95,94,96,-1,98,101,99,-1,99,100,98,-1,100,99,102,-1,102,103,100,-1,104,99,101,-1,101,105,104,-1,106,102,99,-1,99,104,106,-1,33,35,98,-1,98,107,33,-1,107,98,100,-1,100,108,107,-1,109,108,100,-1,100,103,109,-1,110,113,111,-1,111,112,110,-1,103,102,113,-1,113,110,103,-1,114,111,113,-1,113,115,114,-1,115,113,102,-1,102,106,115,-1,116,110,112,-1,112,117,116,-1,109,103,110,-1,110,116,109,-1,97,96,114,-1,118,119,48,-1,48,47,118,-1,120,121,119,-1,119,118,120,-1,112,111,121,-1,121,120,112,-1,171,48,119,-1,119,94,171,-1,94,119,121,-1,121,96,94,-1,96,121,111,-1,111,114,96,-1,122,118,47,-1,47,53,122,-1,123,120,118,-1,118,122,123,-1,117,112,120,-1,120,123,117,-1,124,107,108,-1,108,125,124,-1,126,123,122,-1,122,127,126,-1,128,124,125,-1,125,129,128,-1,129,125,130,-1,130,131,129,-1,125,108,132,-1,132,130,125,-1,117,123,133,-1,134,133,123,-1,123,126,134,-1,134,130,132,-1,132,133,134,-1,135,126,127,-1,127,136,135,-1,137,134,126,-1,126,135,137,-1,131,130,134,-1,134,137,131,-1,138,128,129,-1,129,139,138,-1,139,129,131,-1,131,140,139,-1,141,135,136,-1,136,142,141,-1,140,131,137,-1,137,143,140,-1,144,138,139,-1,139,145,144,-1,145,139,140,-1,140,146,145,-1,147,141,142,-1,142,148,147,-1,149,143,141,-1,141,147,149,-1,146,140,143,-1,143,149,146,-1,150,144,145,-1,145,151,150,-1,151,145,146,-1,146,152,151,-1,153,147,148,-1,148,154,153,-1,155,149,147,-1,147,153,155,-1,152,146,149,-1,149,155,152,-1,156,116,117,-1,117,157,156,-1,158,109,116,-1,116,156,158,-1,159,132,109,-1,109,158,159,-1,157,117,133,-1,133,160,157,-1,160,133,132,-1,132,159,160,-1,17,13,12,-1,97,114,115,-1,109,132,108,-1,53,127,122,-1,107,124,33,-1,15,14,9,-1,9,8,15,-1,105,101,93,-1,93,92,105,-1,101,98,35,-1,35,93,101,-1,135,141,143,-1,143,137,135,-1,156,160,159,-1,159,158,156,-1,156,157,160,-1,53,172,127,-1,136,127,173,-1,173,174,136,-1,176,142,136,-1,136,175,176,-1,148,142,177,-1,177,178,148,-1,154,148,179,-1,179,180,154,-1,33,124,55,-1,59,55,124,-1,124,128,59,-1,69,59,128,-1,128,138,69,-1,75,69,138,-1,138,144,75,-1,81,75,144,-1,144,150,81,-1,85,81,150,-1,150,182,85,-1,84,82,81,-1,81,85,84,-1,86,83,82,-1,82,84,86,-1,154,150,151,-1,151,153,154,-1,153,151,152,-1,152,155,153,-1,185,186,183,-1,183,184,185,-1,186,188,187,-1,187,183,186,-1,188,190,189,-1,189,187,188,-1,190,192,191,-1,191,189,190,-1,195,196,193,-1,193,194,195,-1,192,195,194,-1,194,191,192,-1,197,198,185,-1,185,184,197,-1,199,200,198,-1,198,197,199,-1,201,202,200,-1,200,199,201,-1,203,204,202,-1,202,201,203,-1,193,196,205,-1,205,206,193,-1,206,205,204,-1,204,203,206,-1,3,2,189,-1,189,191,3,-1,6,3,191,-1,191,194,6,-1,207,208,184,-1,184,183,207,-1,7,207,183,-1,183,187,7,-1,2,7,187,-1,187,189,2,-1,8,6,194,-1,194,193,8,-1,12,11,203,-1,203,201,12,-1,11,15,206,-1,206,203,11,-1,208,209,197,-1,197,184,208,-1,209,17,199,-1,199,197,209,-1,17,12,201,-1,201,199,17,-1,15,8,193,-1,193,206,15,-1}, 1336);
-SoCoordinate* SoCoordinate199 = new SoCoordinate();
-SoCoordinate199->setPoint(new float[]{0.6928,14.56,-1.263,0.0,14.61,-1.355,1.47,14.78,-0.9099,2.016,14.75,0.2814,1.573,14.45,1.11,2.914,14.31,0.3331,2.599,15.21,-1.406,3.187,13.44,1.543,2.239,13.23,3.23,0.9629,15.23,-3.152,0.0,15.21,-3.317,2.035,15.26,-2.815,3.316,12.17,2.97,5.086,12.98,2.011,2.982,14.09,2.181,2.245,13.23,3.821,3.131,12.49,3.9,4.42,13.78,2.105,5.602,13.58,0.1863,5.472,12.91,-1.452,3.439,15.14,0.3672,3.953,14.28,-2.227,5.073,14.62,0.3672,4.655,13.34,-1.78,1.811,9.683,-2.43,0.0,9.378,-2.564,4.241,10.64,-2.043,1.032,12.38,-4.427,0.0,12.39,-4.562,2.39,12.77,-3.914,1.677,9.038,-3.147,0.0,8.716,-3.266,4.12,10.55,-3.032,4.272,7.978,4.186,6.354,8.61,1.543,2.14,8.428,-2.362,4.3,8.531,-1.848,3.695,5.43,2.768,5.081,5.468,1.505,6.096,10.11,1.67,5.904,10.1,-0.3303,5.533,8.564,-0.7796,1.419,5.319,-2.22,3.58,5.374,-1.434,4.793,5.424,-0.2489,3.682,3.438,2.824,5.077,3.477,1.527,1.282,3.149,-2.365,3.586,3.347,-1.437,4.792,3.421,-0.2999,4.178,1.107,3.951,5.76,1.143,1.994,1.52,0.9511,-3.678,3.95,0.9608,-2.536,5.309,1.066,-0.7397,3.789,0.0332,3.209,5.166,0.0649,1.685,1.593,-0.0862,-2.676,3.6,-0.0637,-1.847,4.841,-0.0167,-0.4441,7.399,13.3,0.1863,6.979,12.49,-1.452,6.998,12.55,1.899,6.298,10.26,1.67,6.292,10.26,-0.3303,0.0,14.19,1.73,0.7806,14.19,1.608,0.0,12.0,3.901,1.373,12.54,3.668,0.0,10.9,3.845,1.713,11.65,3.668,1.38,12.54,4.137,0.0,11.29,4.361,1.593,11.97,4.338,1.579,8.583,4.081,1.292,5.399,3.228,1.281,3.232,3.336,1.635,1.077,4.562,1.595,-0.0055,3.645,0.0,12.05,4.06,-0.6928,14.56,-1.263,-1.47,14.78,-0.9099,-2.016,14.75,0.2814,-1.573,14.45,1.11,-2.914,14.31,0.3331,-2.599,15.21,-1.406,-3.187,13.44,1.543,-2.239,13.23,3.23,-0.9629,15.23,-3.152,-2.035,15.26,-2.815,-3.316,12.17,2.97,-5.086,12.98,2.011,-2.982,14.09,2.181,-2.245,13.23,3.821,-3.131,12.49,3.9,-4.42,13.78,2.105,-5.602,13.58,0.1863,-5.472,12.91,-1.452,-3.439,15.14,0.3672,-3.953,14.28,-2.227,-5.073,14.62,0.3672,-4.655,13.34,-1.78,-1.811,9.683,-2.43,-4.241,10.64,-2.043,-1.032,12.38,-4.427,-2.39,12.77,-3.914,-1.677,9.038,-3.147,-4.12,10.55,-3.032,-4.272,7.978,4.186,-6.354,8.61,1.543,-2.14,8.428,-2.362,-4.3,8.531,-1.848,-3.695,5.43,2.768,-5.081,5.468,1.505,-6.096,10.11,1.67,-5.904,10.1,-0.3303,-5.533,8.564,-0.7796,-1.419,5.319,-2.22,-3.58,5.374,-1.434,-4.793,5.424,-0.2489,-3.682,3.438,2.824,-5.077,3.477,1.527,-1.282,3.149,-2.365,-3.586,3.347,-1.437,-4.792,3.421,-0.2999,-4.178,1.107,3.951,-5.76,1.143,1.994,-1.52,0.9511,-3.678,-3.95,0.9608,-2.536,-5.309,1.066,-0.7397,-3.789,0.0332,3.209,-5.166,0.0649,1.685,-1.593,-0.0862,-2.676,-3.6,-0.0637,-1.847,-4.841,-0.0167,-0.4441,-7.399,13.3,0.1863,-6.979,12.49,-1.452,-6.998,12.55,1.899,-6.298,10.26,1.67,-6.292,10.26,-0.3303,-0.7806,14.19,1.608,-1.373,12.54,3.668,-1.713,11.65,3.668,-1.38,12.54,4.137,-1.593,11.97,4.338,-1.579,8.583,4.081,-1.292,5.399,3.228,-1.281,3.232,3.336,-1.635,1.077,4.562,-1.595,-0.0055,3.645,0.5369,17.62,-0.941,0.0,17.62,-1.012,1.139,17.62,-0.6672,1.562,17.62,0.2561,1.219,17.62,0.8985,0.5424,14.56,-0.9523,0.0,14.61,-1.024,1.151,14.78,-0.6757,1.578,14.75,0.257,1.232,14.45,0.9059,0.605,17.75,1.285,0.0,17.19,1.379,0.0,14.19,1.391,0.6111,14.19,1.296,-0.5369,17.62,-0.941,-1.139,17.62,-0.6672,-1.562,17.62,0.2561,-1.219,17.62,0.8985,-0.5424,14.56,-0.9523,-1.151,14.78,-0.6757,-1.578,14.75,0.257,-1.232,14.45,0.9059,-0.605,17.75,1.285,-0.6111,14.19,1.296}, 522);
-SoIndexedFaceSet198->setCoord(*SoCoordinate199);
-
-SoTextureCoordinate* SoTextureCoordinate200 = new SoTextureCoordinate();
-SoTextureCoordinate200->setPoint(new float[]{0.4756,0.618,0.4724,0.6293,0.4618,0.6351,0.4566,0.6312,0.4542,0.6062,0.4644,0.6152,0.4472,0.6278,0.4554,0.6354,0.4381,0.6277,0.4381,0.5991,0.4005,0.618,0.4195,0.6312,0.4143,0.6351,0.4037,0.6293,0.4219,0.6062,0.4289,0.6278,0.4117,0.6152,0.4207,0.6354,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0639,0.4488,0.0877,0.4617,0.0525,0.4715,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.0346,0.5664,0.0399,0.5407,0.2661,0.5914,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.0865,0.5614,0.1025,0.5076,0.0652,0.5465,0.1108,0.5655,0.1412,0.5207,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4857,0.1724,0.5255,0.2133,0.556,0.2089,0.5196,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1525,0.3869,0.1491,0.3449,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.3223,0.4192,0.3518,0.3851,0.3554,0.5911,0.3505,0.5919,0.3505,0.5919,0.3518,0.3851,0.3518,0.3851,0.3629,0.3439,0.3629,0.3439,0.3633,0.2922,0.3633,0.2922,0.3553,0.2398,0.3553,0.2398,0.3555,0.2151,0.3511,0.5932,0.3536,0.2151,0.4444,0.6326,0.4381,0.6333,0.4381,0.6725,0.4444,0.6725,0.4516,0.6354,0.4515,0.6725,0.4566,0.6351,0.4565,0.6725,0.4526,0.6312,0.4524,0.6725,0.4381,0.6277,0.4453,0.6278,0.4452,0.6742,0.4381,0.6669,0.4317,0.6326,0.4317,0.6725,0.4245,0.6354,0.4246,0.6725,0.4195,0.6351,0.4197,0.6725,0.4235,0.6312,0.4237,0.6725,0.4309,0.6742,0.4309,0.6278,0.4462,0.6326,0.4381,0.6333,0.4299,0.6326}, 420);
-SoIndexedFaceSet198->setTexCoord(*SoTextureCoordinate200);
-
-SoShape194->setGeometry(*SoIndexedFaceSet198);
-
-SoTransform193->addChild(*SoShape194);
-
-SoHAnimSegment192->addChild(*SoTransform193);
-
-SoHAnimJoint191->addChildren(*SoHAnimSegment192);
-
-SoHAnimJoint* SoHAnimJoint201 = new SoHAnimJoint();
-SoHAnimJoint201->X3DNode::setName(QString("skullbase"));
-SoHAnimJoint201->setDEF(QString("hanim_skullbase"));
-SoHAnimJoint201->setCenter(new float[]{0.0,57.43,-0.6863});
-SoHAnimJoint201->setUlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimJoint201->setLlimit(new float[]{0.0,0.0,0.0}, 3);
-SoHAnimSegment* SoHAnimSegment202 = new SoHAnimSegment();
-SoHAnimSegment202->X3DNode::setName(QString("skull"));
-SoHAnimSegment202->setDEF(QString("hanim_skull"));
-SoTransform* SoTransform203 = new SoTransform();
-SoTransform203->setTranslation(new float[]{0.0,57.43,-0.6863});
-SoShape* SoShape204 = new SoShape();
-SoVRMLAppearance* SoVRMLAppearance205 = new SoVRMLAppearance();
-SoMaterial* SoMaterial206 = new SoMaterial();
-SoMaterial206->setDiffuseColor(new float[]{0.588,0.588,0.588});
-SoVRMLAppearance205->addChild(*SoMaterial206);
-
-SoImageTexture* SoImageTexture207 = new SoImageTexture();
-SoImageTexture207->setUSE(QString("JinTextureAtlas"));
-SoVRMLAppearance205->addChild(*SoImageTexture207);
-
-SoShape204->addChild(*SoVRMLAppearance205);
-
-SoIndexedFaceSet* SoIndexedFaceSet208 = new SoIndexedFaceSet();
-SoIndexedFaceSet208->setCoordIndex(new int32_t[]{58,44,47,-1,47,49,58,-1,49,60,59,-1,59,1,49,-1,56,48,47,-1,47,44,56,-1,50,51,59,-1,59,60,50,-1,173,168,58,-1,58,49,173,-1,171,173,49,-1,49,1,171,-1,14,12,18,-1,18,15,14,-1,162,160,14,-1,14,15,162,-1,16,57,33,-1,21,18,12,-1,18,79,19,-1,80,20,19,-1,11,10,79,-1,18,21,79,-1,11,79,21,-1,21,12,78,-1,11,21,22,-1,321,345,320,-1,322,323,346,-1,80,25,24,-1,24,20,80,-1,26,38,24,-1,23,13,38,-1,20,77,18,-1,18,19,20,-1,38,29,30,-1,30,23,38,-1,27,30,29,-1,27,28,30,-1,30,28,23,-1,33,31,16,-1,31,37,16,-1,28,34,23,-1,17,35,36,-1,36,28,17,-1,33,36,35,-1,17,32,35,-1,32,33,35,-1,33,34,36,-1,36,34,28,-1,10,19,79,-1,4,40,37,-1,40,42,41,-1,40,41,37,-1,40,4,42,-1,56,43,4,-1,4,46,56,-1,45,43,56,-1,56,44,45,-1,43,45,4,-1,48,56,46,-1,46,3,48,-1,50,60,3,-1,51,50,3,-1,3,2,51,-1,58,168,52,-1,52,168,170,-1,61,52,170,-1,4,45,52,-1,52,61,4,-1,52,45,44,-1,44,58,52,-1,61,170,53,-1,170,165,39,-1,39,53,170,-1,4,61,53,-1,53,42,4,-1,53,39,41,-1,41,42,53,-1,165,57,39,-1,13,23,54,-1,16,37,57,-1,41,39,57,-1,37,41,57,-1,57,165,166,-1,54,166,13,-1,33,57,34,-1,34,57,54,-1,34,54,23,-1,166,162,55,-1,55,162,15,-1,77,55,15,-1,15,18,77,-1,166,77,13,-1,77,166,55,-1,13,77,24,-1,24,38,13,-1,20,24,77,-1,54,57,166,-1,47,60,49,-1,48,3,47,-1,3,60,47,-1,3,63,2,-1,72,62,63,-1,3,65,63,-1,3,46,64,-1,64,66,3,-1,6,66,64,-1,3,66,65,-1,6,73,8,-1,8,73,67,-1,6,75,73,-1,5,71,73,-1,73,75,5,-1,6,70,75,-1,64,46,69,-1,75,70,69,-1,75,69,344,-1,2,63,62,-1,8,66,6,-1,63,8,72,-1,9,74,71,-1,68,74,9,-1,74,8,67,-1,68,72,74,-1,72,8,74,-1,67,71,74,-1,67,73,71,-1,65,8,63,-1,65,66,8,-1,70,6,64,-1,70,64,69,-1,4,0,344,-1,69,46,4,-1,69,4,344,-1,76,344,0,-1,5,76,0,-1,5,75,76,-1,75,344,76,-1,133,125,123,-1,123,120,133,-1,125,1,59,-1,59,134,125,-1,131,120,123,-1,123,124,131,-1,126,134,59,-1,59,51,126,-1,172,125,133,-1,133,167,172,-1,171,1,125,-1,125,172,171,-1,14,91,94,-1,94,12,14,-1,161,91,14,-1,14,160,161,-1,109,132,92,-1,12,94,97,-1,95,149,94,-1,95,96,150,-1,149,88,89,-1,149,97,94,-1,97,149,89,-1,78,12,97,-1,98,97,89,-1,325,348,324,-1,354,326,327,-1,150,96,100,-1,100,101,150,-1,100,114,102,-1,114,90,99,-1,96,95,94,-1,94,148,96,-1,114,99,106,-1,106,105,114,-1,105,106,103,-1,106,104,103,-1,99,104,106,-1,92,107,109,-1,92,113,107,-1,99,110,104,-1,93,104,112,-1,112,111,93,-1,111,112,109,-1,111,108,93,-1,111,109,108,-1,112,110,109,-1,104,110,112,-1,149,95,88,-1,113,116,83,-1,117,118,116,-1,113,117,116,-1,118,83,116,-1,131,122,83,-1,83,119,131,-1,121,120,131,-1,131,119,121,-1,83,121,119,-1,124,82,122,-1,122,131,124,-1,82,134,126,-1,51,2,82,-1,82,126,51,-1,127,167,133,-1,169,167,127,-1,169,127,135,-1,83,135,127,-1,127,121,83,-1,127,133,120,-1,120,121,127,-1,128,169,135,-1,169,128,115,-1,115,163,169,-1,83,118,128,-1,128,135,83,-1,128,118,117,-1,117,115,128,-1,115,132,163,-1,129,99,90,-1,132,113,92,-1,132,115,117,-1,132,117,113,-1,164,163,132,-1,90,164,129,-1,110,132,109,-1,129,132,110,-1,99,129,110,-1,130,161,164,-1,91,161,130,-1,148,94,91,-1,91,130,148,-1,90,148,164,-1,130,164,148,-1,90,114,100,-1,100,148,90,-1,148,100,96,-1,164,132,129,-1,125,134,123,-1,123,82,124,-1,123,134,82,-1,2,136,82,-1,136,62,72,-1,136,138,82,-1,82,139,137,-1,137,122,82,-1,137,139,85,-1,138,139,82,-1,87,144,85,-1,140,144,87,-1,144,146,85,-1,84,146,144,-1,144,143,84,-1,146,142,85,-1,141,122,137,-1,141,142,146,-1,347,141,146,-1,62,136,2,-1,85,139,87,-1,72,87,136,-1,143,145,9,-1,9,145,68,-1,145,140,87,-1,68,145,72,-1,72,145,87,-1,145,143,140,-1,143,144,140,-1,136,87,138,-1,87,139,138,-1,137,85,142,-1,141,137,142,-1,347,81,83,-1,83,122,141,-1,347,83,141,-1,81,347,147,-1,81,147,84,-1,147,146,84,-1,147,347,146,-1,162,166,152,-1,151,160,162,-1,162,152,151,-1,152,166,165,-1,165,154,152,-1,154,165,170,-1,170,156,154,-1,152,154,155,-1,155,151,152,-1,156,153,155,-1,155,154,156,-1,173,156,170,-1,170,168,173,-1,171,153,156,-1,156,173,171,-1,157,164,161,-1,151,157,161,-1,161,160,151,-1,157,158,163,-1,163,164,157,-1,158,159,169,-1,169,163,158,-1,157,151,155,-1,155,158,157,-1,159,158,155,-1,155,153,159,-1,172,167,169,-1,169,159,172,-1,171,172,159,-1,159,153,171,-1,355,237,223,-1,174,236,237,-1,236,174,175,-1,179,238,176,-1,179,176,177,-1,179,177,178,-1,178,174,179,-1,174,178,175,-1,180,226,236,-1,238,180,236,-1,180,230,226,-1,237,236,223,-1,223,236,218,-1,225,355,223,-1,223,224,225,-1,328,329,239,-1,330,331,350,-1,228,227,219,-1,219,222,228,-1,236,226,218,-1,174,237,0,-1,0,237,355,-1,0,179,174,-1,318,355,225,-1,220,228,222,-1,221,228,220,-1,5,0,355,-1,218,182,223,-1,183,223,182,-1,181,183,185,-1,181,185,242,-1,213,212,244,-1,244,246,213,-1,213,246,245,-1,245,214,213,-1,245,247,184,-1,184,214,245,-1,214,184,206,-1,206,207,214,-1,217,319,225,-1,225,224,217,-1,183,181,217,-1,217,224,183,-1,224,223,183,-1,226,209,218,-1,218,209,184,-1,182,185,183,-1,218,184,182,-1,207,208,232,-1,232,214,207,-1,232,215,214,-1,209,206,184,-1,186,192,190,-1,190,188,186,-1,197,192,208,-1,208,207,197,-1,190,222,219,-1,219,188,190,-1,194,195,190,-1,226,189,209,-1,187,189,226,-1,192,186,208,-1,191,216,205,-1,196,205,216,-1,195,196,216,-1,196,195,194,-1,209,189,198,-1,199,197,207,-1,207,206,199,-1,233,234,197,-1,197,199,233,-1,209,198,199,-1,199,206,209,-1,233,199,198,-1,198,200,233,-1,248,194,202,-1,201,205,250,-1,248,249,196,-1,196,194,248,-1,196,249,250,-1,250,205,196,-1,234,203,197,-1,203,192,197,-1,194,190,202,-1,200,198,189,-1,189,204,200,-1,202,190,192,-1,202,192,203,-1,205,210,191,-1,210,205,201,-1,220,222,193,-1,204,189,187,-1,187,210,204,-1,210,201,204,-1,210,187,191,-1,195,211,190,-1,195,193,211,-1,193,222,211,-1,211,222,190,-1,215,212,213,-1,213,214,215,-1,230,187,226,-1,230,191,187,-1,229,221,230,-1,229,228,221,-1,9,355,318,-1,5,355,71,-1,71,355,9,-1,231,247,185,-1,182,231,185,-1,184,231,182,-1,184,247,231,-1,238,230,180,-1,230,221,191,-1,221,235,191,-1,191,235,216,-1,221,220,235,-1,193,235,220,-1,216,235,193,-1,193,195,216,-1,250,249,233,-1,203,234,248,-1,234,233,249,-1,250,233,200,-1,249,248,234,-1,243,241,240,-1,241,243,247,-1,204,201,250,-1,200,204,250,-1,203,248,202,-1,247,243,242,-1,247,242,185,-1,332,333,349,-1,334,335,7,-1,292,304,353,-1,304,303,251,-1,252,251,303,-1,253,305,256,-1,254,253,256,-1,256,251,255,-1,255,254,256,-1,252,255,251,-1,303,295,257,-1,303,257,305,-1,295,298,257,-1,292,303,304,-1,288,303,292,-1,294,352,292,-1,292,353,294,-1,336,337,293,-1,306,338,339,-1,296,291,219,-1,219,227,296,-1,288,295,303,-1,81,304,251,-1,353,304,81,-1,251,256,81,-1,294,353,317,-1,291,296,289,-1,289,296,290,-1,353,81,84,-1,292,258,288,-1,258,292,259,-1,261,259,181,-1,242,261,181,-1,285,309,244,-1,244,212,285,-1,285,286,308,-1,308,309,285,-1,308,286,260,-1,260,310,308,-1,286,281,280,-1,280,260,286,-1,217,352,294,-1,294,319,217,-1,259,352,217,-1,217,181,259,-1,259,292,352,-1,288,282,295,-1,260,282,288,-1,259,261,258,-1,258,260,288,-1,281,286,232,-1,232,208,281,-1,286,215,232,-1,260,280,282,-1,186,188,264,-1,264,266,186,-1,271,281,208,-1,208,266,271,-1,264,188,219,-1,219,291,264,-1,264,269,268,-1,282,263,295,-1,295,263,262,-1,208,186,266,-1,279,287,265,-1,287,279,270,-1,287,270,269,-1,268,269,270,-1,272,263,282,-1,273,280,281,-1,281,271,273,-1,300,273,271,-1,271,301,300,-1,282,280,273,-1,273,272,282,-1,300,274,272,-1,272,273,300,-1,276,268,311,-1,313,279,275,-1,311,268,270,-1,270,312,311,-1,270,279,313,-1,313,312,270,-1,271,277,301,-1,271,266,277,-1,276,264,268,-1,274,278,263,-1,263,272,274,-1,266,264,276,-1,277,266,276,-1,265,283,279,-1,275,279,283,-1,267,291,289,-1,278,283,262,-1,262,263,278,-1,278,275,283,-1,265,262,283,-1,264,284,269,-1,284,267,269,-1,284,291,267,-1,264,291,284,-1,285,212,215,-1,215,286,285,-1,295,262,298,-1,262,265,298,-1,298,290,297,-1,290,296,297,-1,317,353,9,-1,143,353,84,-1,9,353,143,-1,261,310,299,-1,261,299,258,-1,258,299,260,-1,299,310,260,-1,257,298,305,-1,265,290,298,-1,265,302,290,-1,287,302,265,-1,302,289,290,-1,289,302,267,-1,287,269,267,-1,267,302,287,-1,300,312,313,-1,311,301,277,-1,312,300,301,-1,274,300,313,-1,301,311,312,-1,240,307,243,-1,310,243,307,-1,313,275,278,-1,313,278,274,-1,276,311,277,-1,242,243,310,-1,261,242,310,-1,351,340,341,-1,86,342,343,-1,244,314,315,-1,315,246,244,-1,246,315,247,-1,247,245,246,-1,244,309,316,-1,316,314,244,-1,309,308,310,-1,310,316,309,-1,175,176,238,-1,238,236,175,-1,177,176,175,-1,175,178,177,-1,252,303,305,-1,305,253,252,-1,254,255,252,-1,252,253,254,-1,318,225,319,-1,319,9,318,-1,317,9,319,-1,319,294,317,-1}, 2368);
-SoIndexedFaceSet208->setCreaseAngle(1.57);
-SoIndexedFaceSet208->setTexCoordIndex(new int32_t[]{0,3,2,-1,2,1,0,-1,1,6,5,-1,5,4,1,-1,7,8,2,-1,2,3,7,-1,9,10,5,-1,5,6,9,-1,11,12,0,-1,0,1,11,-1,13,11,1,-1,1,4,13,-1,14,17,16,-1,16,15,14,-1,18,19,14,-1,14,15,18,-1,22,21,20,-1,23,16,17,-1,16,25,24,-1,27,26,24,-1,29,28,25,-1,16,23,25,-1,29,25,23,-1,31,17,30,-1,29,23,32,-1,33,32,31,-1,33,31,30,-1,27,35,34,-1,34,26,27,-1,37,36,34,-1,39,38,36,-1,26,40,16,-1,16,24,26,-1,36,42,41,-1,41,39,36,-1,43,41,42,-1,43,44,41,-1,41,44,39,-1,20,45,22,-1,45,46,22,-1,44,47,39,-1,48,50,49,-1,49,44,48,-1,20,49,50,-1,48,51,50,-1,51,20,50,-1,20,47,49,-1,49,47,44,-1,28,24,25,-1,53,52,46,-1,52,55,54,-1,52,54,46,-1,52,53,55,-1,7,57,53,-1,53,56,7,-1,58,57,7,-1,7,59,58,-1,57,58,53,-1,8,7,56,-1,56,60,8,-1,9,6,60,-1,10,9,60,-1,60,61,10,-1,0,12,62,-1,62,12,63,-1,64,62,63,-1,53,58,62,-1,62,64,53,-1,62,58,59,-1,59,0,62,-1,64,63,65,-1,63,67,66,-1,66,65,63,-1,53,64,65,-1,65,55,53,-1,65,66,54,-1,54,55,65,-1,67,21,66,-1,38,39,68,-1,22,46,21,-1,54,66,21,-1,46,54,21,-1,21,67,69,-1,68,69,38,-1,20,21,47,-1,47,21,68,-1,47,68,39,-1,69,18,70,-1,70,18,15,-1,40,70,15,-1,15,16,40,-1,69,71,38,-1,71,69,70,-1,38,71,34,-1,34,36,38,-1,26,34,71,-1,68,21,69,-1,2,6,1,-1,8,60,2,-1,60,6,2,-1,74,73,72,-1,77,76,75,-1,74,78,73,-1,74,81,80,-1,80,79,74,-1,82,79,80,-1,74,79,78,-1,82,84,83,-1,83,84,85,-1,82,86,84,-1,87,90,89,-1,89,88,87,-1,92,91,88,-1,80,81,93,-1,88,91,94,-1,86,93,95,-1,72,73,96,-1,83,79,82,-1,73,83,97,-1,100,99,98,-1,103,102,101,-1,99,83,85,-1,104,97,99,-1,97,83,99,-1,105,90,102,-1,105,89,90,-1,107,106,75,-1,107,108,106,-1,109,82,80,-1,109,80,93,-1,112,111,110,-1,93,81,113,-1,93,113,95,-1,114,110,111,-1,115,114,111,-1,87,86,116,-1,86,95,116,-1,117,120,119,-1,119,118,117,-1,120,123,122,-1,122,121,120,-1,124,118,119,-1,119,125,124,-1,126,121,122,-1,122,127,126,-1,128,120,117,-1,117,129,128,-1,130,123,120,-1,120,128,130,-1,14,132,131,-1,131,17,14,-1,133,132,14,-1,14,19,133,-1,136,135,134,-1,17,131,137,-1,139,138,131,-1,139,141,140,-1,138,143,142,-1,138,137,131,-1,137,138,142,-1,30,17,144,-1,145,137,142,-1,144,145,146,-1,30,144,146,-1,140,141,148,-1,148,147,140,-1,148,150,149,-1,150,152,151,-1,141,139,131,-1,131,153,141,-1,150,151,155,-1,155,154,150,-1,154,155,156,-1,155,157,156,-1,151,157,155,-1,134,158,136,-1,134,159,158,-1,151,160,157,-1,161,157,163,-1,163,162,161,-1,162,163,136,-1,162,164,161,-1,162,136,164,-1,163,160,136,-1,157,160,163,-1,138,139,143,-1,159,166,165,-1,168,167,166,-1,159,168,166,-1,167,165,166,-1,124,170,165,-1,165,169,124,-1,171,172,124,-1,124,169,171,-1,165,171,169,-1,125,173,170,-1,170,124,125,-1,173,121,126,-1,127,174,173,-1,173,126,127,-1,175,129,117,-1,176,129,175,-1,176,175,177,-1,165,177,175,-1,175,171,165,-1,175,117,172,-1,172,171,175,-1,178,176,177,-1,176,178,180,-1,180,179,176,-1,165,167,178,-1,178,177,165,-1,178,167,168,-1,168,180,178,-1,180,135,179,-1,181,151,152,-1,135,159,134,-1,135,180,168,-1,135,168,159,-1,182,179,135,-1,152,182,181,-1,160,135,136,-1,181,135,160,-1,151,181,160,-1,183,133,182,-1,132,133,183,-1,153,131,132,-1,132,183,153,-1,152,184,182,-1,183,182,184,-1,152,150,148,-1,148,184,152,-1,184,148,141,-1,182,135,181,-1,120,121,119,-1,119,173,125,-1,119,121,173,-1,72,186,185,-1,187,76,77,-1,186,188,185,-1,185,191,190,-1,190,189,185,-1,190,191,192,-1,188,191,185,-1,194,193,192,-1,195,193,194,-1,193,196,192,-1,197,200,199,-1,199,198,197,-1,200,202,201,-1,203,189,190,-1,204,202,200,-1,205,203,196,-1,96,186,72,-1,192,191,194,-1,97,194,186,-1,207,206,100,-1,101,208,103,-1,206,195,194,-1,104,206,97,-1,97,206,194,-1,208,198,209,-1,198,199,209,-1,187,211,210,-1,211,212,210,-1,190,192,213,-1,203,190,213,-1,216,215,214,-1,217,189,203,-1,205,217,203,-1,215,216,218,-1,215,218,219,-1,220,196,197,-1,220,205,196,-1,18,69,221,-1,222,19,18,-1,18,221,222,-1,221,69,67,-1,67,223,221,-1,223,67,63,-1,63,224,223,-1,221,223,225,-1,225,222,221,-1,224,226,225,-1,225,223,224,-1,11,224,63,-1,63,12,11,-1,13,226,224,-1,224,11,13,-1,227,182,133,-1,222,227,133,-1,133,19,222,-1,227,228,179,-1,179,182,227,-1,228,229,176,-1,176,179,228,-1,227,222,225,-1,225,228,227,-1,229,228,225,-1,225,230,229,-1,128,129,176,-1,176,229,128,-1,130,128,229,-1,229,230,130,-1,233,232,231,-1,235,234,232,-1,234,235,236,-1,239,238,237,-1,239,237,240,-1,239,240,241,-1,241,235,239,-1,235,241,236,-1,243,242,234,-1,238,243,234,-1,243,244,242,-1,232,234,231,-1,231,234,245,-1,246,233,231,-1,231,247,246,-1,247,246,233,-1,231,247,233,-1,248,251,250,-1,250,249,248,-1,234,242,245,-1,235,232,252,-1,252,232,233,-1,252,239,235,-1,253,233,246,-1,254,248,249,-1,255,248,254,-1,256,252,233,-1,245,257,231,-1,258,231,257,-1,261,260,259,-1,261,259,262,-1,263,266,265,-1,265,264,263,-1,263,264,268,-1,268,267,263,-1,268,270,269,-1,269,267,268,-1,267,269,272,-1,272,271,267,-1,273,274,246,-1,246,247,273,-1,258,275,273,-1,273,247,258,-1,247,231,258,-1,278,277,276,-1,276,277,269,-1,279,259,260,-1,276,269,279,-1,271,281,280,-1,280,267,271,-1,280,282,267,-1,277,272,269,-1,284,287,286,-1,286,285,284,-1,288,287,281,-1,281,271,288,-1,286,249,250,-1,250,285,286,-1,290,289,286,-1,278,291,277,-1,292,291,278,-1,287,284,283,-1,295,294,293,-1,296,293,294,-1,289,296,294,-1,296,289,290,-1,277,291,297,-1,298,288,271,-1,271,272,298,-1,299,300,288,-1,288,298,299,-1,277,297,298,-1,298,272,277,-1,299,298,297,-1,297,301,299,-1,303,290,302,-1,305,293,304,-1,303,306,296,-1,296,290,303,-1,296,306,304,-1,304,293,296,-1,300,307,288,-1,307,287,288,-1,290,286,302,-1,301,297,291,-1,291,308,301,-1,302,286,287,-1,309,287,307,-1,293,310,295,-1,310,293,305,-1,254,249,311,-1,308,291,292,-1,292,310,308,-1,310,305,308,-1,310,292,295,-1,289,312,286,-1,289,311,312,-1,311,249,312,-1,312,249,286,-1,282,266,263,-1,263,267,282,-1,313,292,278,-1,313,295,292,-1,314,255,313,-1,314,248,255,-1,315,233,253,-1,256,233,316,-1,316,233,315,-1,317,270,259,-1,279,317,259,-1,269,317,279,-1,269,270,317,-1,238,244,243,-1,313,255,295,-1,255,318,295,-1,295,318,294,-1,255,254,318,-1,311,318,254,-1,294,318,311,-1,311,289,294,-1,304,306,299,-1,307,300,303,-1,300,299,306,-1,304,299,301,-1,306,303,300,-1,321,320,319,-1,320,321,270,-1,308,305,304,-1,301,308,304,-1,307,303,309,-1,270,321,262,-1,270,262,259,-1,252,322,239,-1,252,256,322,-1,231,232,233,-1,232,234,235,-1,236,235,234,-1,237,238,239,-1,240,237,239,-1,239,235,241,-1,241,240,239,-1,236,241,235,-1,234,242,243,-1,234,243,238,-1,242,244,243,-1,231,234,232,-1,245,234,231,-1,246,247,231,-1,231,233,246,-1,233,246,247,-1,233,247,231,-1,323,324,250,-1,250,251,323,-1,245,242,234,-1,252,232,235,-1,233,232,252,-1,235,239,252,-1,246,233,253,-1,324,323,325,-1,325,323,326,-1,233,252,256,-1,231,257,245,-1,257,231,258,-1,329,328,327,-1,330,329,327,-1,331,332,265,-1,265,266,331,-1,331,334,333,-1,333,332,331,-1,333,334,336,-1,336,335,333,-1,334,338,337,-1,337,336,334,-1,273,247,246,-1,246,274,273,-1,258,247,273,-1,273,275,258,-1,258,231,247,-1,341,340,339,-1,336,340,341,-1,328,329,342,-1,342,336,341,-1,338,334,280,-1,280,343,338,-1,334,282,280,-1,336,337,340,-1,284,285,345,-1,345,344,284,-1,346,338,343,-1,343,344,346,-1,345,285,250,-1,250,324,345,-1,345,348,347,-1,340,349,339,-1,339,349,350,-1,283,284,344,-1,353,352,351,-1,352,353,354,-1,352,354,348,-1,347,348,354,-1,355,349,340,-1,356,337,338,-1,338,346,356,-1,357,356,346,-1,346,358,357,-1,340,337,356,-1,356,355,340,-1,357,359,355,-1,355,356,357,-1,361,347,360,-1,363,353,362,-1,360,347,354,-1,354,364,360,-1,354,353,363,-1,363,364,354,-1,346,365,358,-1,346,344,365,-1,361,345,347,-1,359,366,349,-1,349,355,359,-1,344,345,361,-1,365,344,367,-1,351,368,353,-1,362,353,368,-1,369,324,325,-1,366,368,350,-1,350,349,366,-1,366,362,368,-1,351,350,368,-1,345,370,348,-1,370,369,348,-1,370,324,369,-1,345,324,370,-1,331,266,282,-1,282,334,331,-1,339,350,371,-1,350,351,371,-1,371,326,372,-1,326,323,372,-1,253,233,315,-1,316,233,256,-1,315,233,316,-1,329,335,373,-1,329,373,342,-1,342,373,336,-1,373,335,336,-1,243,244,238,-1,351,326,371,-1,351,374,326,-1,352,374,351,-1,374,325,326,-1,325,374,369,-1,352,348,369,-1,369,374,352,-1,357,364,363,-1,360,358,365,-1,364,357,358,-1,359,357,363,-1,358,360,364,-1,319,376,375,-1,335,375,376,-1,363,362,366,-1,363,366,359,-1,367,360,365,-1,330,375,335,-1,329,330,335,-1,239,322,252,-1,322,256,252,-1,265,378,377,-1,377,264,265,-1,264,377,270,-1,270,268,264,-1,265,332,379,-1,379,378,265,-1,332,333,335,-1,335,379,332,-1,380,383,382,-1,382,381,380,-1,384,383,380,-1,380,385,384,-1,380,381,382,-1,382,383,380,-1,384,385,380,-1,380,383,384,-1,253,246,274,-1,274,100,253,-1,253,100,274,-1,274,246,253,-1}, 2368);
-SoCoordinate* SoCoordinate209 = new SoCoordinate();
-SoCoordinate209->setPoint(new float[]{4.734,2.295,-0.478,0.0,7.925,-7.347,0.0,2.738,-7.551,2.596,3.055,-7.113,5.82,3.915,-2.239,3.712,1.225,-2.29,3.261,1.453,-4.252,5.658,2.599,-1.983,1.82,1.289,-5.164,0.0,0.1375,-3.592,2.395,4.95,6.346,0.7761,4.912,6.883,0.0,9.74,6.859,4.408,9.203,3.673,0.0,11.25,5.65,2.225,10.89,5.304,5.962,4.414,1.165,4.041,0.8383,3.523,1.972,9.601,6.357,2.537,7.001,6.362,3.694,6.649,5.287,0.4475,7.341,7.362,0.513,6.698,7.119,4.843,6.188,3.431,3.886,6.593,4.951,3.681,5.194,5.001,3.826,5.001,4.664,3.284,2.472,4.49,4.543,4.124,3.499,3.859,3.861,4.364,4.575,3.792,4.006,5.065,1.183,1.247,4.863,1.73,2.37,5.256,2.695,2.024,5.549,5.532,2.714,5.161,2.035,2.722,5.442,3.878,2.887,6.111,4.389,0.2634,4.062,5.868,4.221,6.007,7.856,-0.5637,7.021,1.661,-0.9157,6.568,4.855,-0.7308,6.326,4.691,-1.55,6.23,0.8303,-3.441,4.977,5.364,-5.673,6.326,4.656,-2.95,4.216,3.427,-5.131,3.522,5.818,-7.166,3.424,1.86,-7.278,2.479,7.925,-6.757,1.927,1.981,-8.89,0.0,3.753,-8.454,5.584,7.691,-2.78,5.853,7.683,-1.772,5.181,8.476,2.104,3.038,10.79,4.444,5.123,3.032,-5.304,5.664,8.061,0.8754,4.721,7.925,-5.258,0.0,5.519,-7.965,2.479,5.82,-7.483,5.595,7.63,-2.141,0.0,0.1227,-8.281,1.173,1.832,-6.114,3.978,2.324,-4.64,2.917,-0.9285,-7.31,3.323,2.08,-5.371,1.968,-1.561,-5.013,0.0,-0.9435,-6.54,4.713,2.444,-3.477,4.42,-0.2924,-4.477,1.411,0.5541,-3.484,0.0,1.035,-6.031,2.275,0.8807,-3.763,0.9407,0.7103,-4.537,3.818,1.729,-3.139,4.664,1.866,-1.436,3.657,9.188,4.96,0.0,7.548,7.405,1.559,7.266,7.008,2.791,5.041,6.017,-4.734,2.295,-0.478,-2.596,3.055,-7.113,-5.82,3.915,-2.239,-3.712,1.225,-2.29,-3.261,1.453,-4.252,-5.658,2.599,-1.983,-1.82,1.289,-5.164,-2.395,4.95,6.346,-0.7761,4.912,6.883,-4.408,9.203,3.673,-2.225,10.89,5.304,-5.962,4.414,1.165,-4.041,0.8383,3.523,-1.972,9.601,6.357,-2.537,7.001,6.362,-3.694,6.649,5.287,-0.4475,7.341,7.362,-0.513,6.698,7.119,-4.843,6.188,3.431,-3.886,6.593,4.951,-3.681,5.194,5.001,-3.826,5.001,4.664,-3.284,2.472,4.49,-4.543,4.124,3.499,-3.859,3.861,4.364,-4.575,3.792,4.006,-5.065,1.183,1.247,-4.863,1.73,2.37,-5.256,2.695,2.024,-5.549,5.532,2.714,-5.161,2.035,2.722,-5.442,3.878,2.887,-6.111,4.389,0.2634,-4.062,5.868,4.221,-6.007,7.856,-0.5637,-7.021,1.661,-0.9157,-6.568,4.855,-0.7308,-6.326,4.691,-1.55,-6.23,0.8303,-3.441,-4.977,5.364,-5.673,-6.326,4.656,-2.95,-4.216,3.427,-5.131,-3.522,5.818,-7.166,-3.424,1.86,-7.278,-2.479,7.925,-6.757,-1.927,1.981,-8.89,-5.584,7.691,-2.78,-5.853,7.683,-1.772,-5.181,8.476,2.104,-3.038,10.79,4.444,-5.123,3.032,-5.304,-5.664,8.061,0.8754,-4.721,7.925,-5.258,-2.479,5.82,-7.483,-5.595,7.63,-2.141,-1.173,1.832,-6.114,-3.978,2.324,-4.64,-2.917,-0.9285,-7.31,-3.323,2.08,-5.371,-1.968,-1.561,-5.013,-4.713,2.444,-3.477,-4.42,-0.2924,-4.477,-1.411,0.5541,-3.484,-2.275,0.8807,-3.763,-0.9407,0.7103,-4.537,-3.818,1.729,-3.139,-4.664,1.866,-1.436,-3.657,9.188,4.96,-1.559,7.266,7.008,-2.791,5.041,6.017,0.0,12.89,2.191,2.479,12.6,2.191,0.0,12.77,-3.073,2.479,13.01,-0.5905,0.0,13.3,-0.5905,2.479,12.47,-3.073,-2.479,12.6,2.191,-2.479,13.01,-0.5905,-2.479,12.47,-3.073,0.0,12.19,4.069,-2.479,11.8,3.665,2.479,11.8,3.665,-4.738,11.13,-0.5905,-4.581,10.59,1.893,4.738,11.13,-0.5905,4.581,10.59,1.893,-4.776,9.342,-4.254,4.776,9.342,-4.254,-4.651,10.94,-2.696,4.651,10.94,-2.696,0.0,10.91,-6.064,-2.479,10.58,-5.873,2.479,10.58,-5.873,5.038,2.087,0.2634,5.351,2.269,0.2568,5.575,4.993,0.4877,5.759,4.313,-0.6689,5.672,3.119,-0.6884,5.054,4.389,0.2634,4.617,3.919,1.981,0.0,-1.299,4.283,2.507,0.2122,3.467,1.252,-0.7037,3.753,2.181,1.29,4.703,1.083,-0.2065,4.531,0.0,3.949,5.823,4.122,4.752,3.434,0.0,4.457,6.529,3.843,3.486,3.474,0.6247,4.287,6.217,3.884,5.34,4.144,0.2615,3.949,5.823,2.103,4.881,5.78,1.599,4.225,5.429,2.103,4.763,5.713,2.175,4.422,5.292,1.061,2.841,5.24,3.345,2.806,3.987,2.536,2.741,4.559,3.082,3.581,4.206,3.368,4.077,4.055,1.044,3.885,5.454,1.356,3.642,5.241,3.227,3.707,4.111,3.028,4.567,4.683,2.472,2.023,4.722,0.9194,2.354,5.382,0.0,2.998,5.872,3.515,2.199,3.631,3.685,4.225,3.891,1.11,4.559,6.074,0.0,1.141,5.968,0.1458,1.141,5.967,0.4592,1.442,5.549,0.0,1.753,6.811,3.24,5.132,4.832,0.0,-1.23,3.575,3.443,1.22,3.201,0.0,6.577,6.529,1.972,6.686,5.769,3.551,6.468,4.66,1.125,6.641,6.224,2.799,0.2961,1.981,1.438,-0.7799,2.92,2.098,-0.0622,0.3894,4.342,2.994,2.484,0.0,9.837,5.8,1.972,10.18,5.298,3.829,8.081,4.078,4.754,5.519,2.97,1.641,0.4521,4.705,0.0,2.206,6.446,2.795,3.568,4.497,1.835,3.587,5.011,3.243,5.188,4.826,4.074,1.813,1.489,4.073,1.537,-0.251,4.798,4.414,1.165,3.561,1.081,-1.554,0.0,0.5923,5.37,0.2244,0.5923,5.37,0.0,-0.2097,4.949,0.0,0.1669,5.375,0.0,0.7989,5.843,0.4079,0.7711,5.733,0.2244,0.7989,5.843,1.184,0.5011,4.895,1.695,4.1,5.387,2.183,4.262,5.159,2.937,4.372,4.659,-5.038,2.087,0.2634,-5.351,2.269,0.2568,-5.575,4.993,0.4877,-5.759,4.313,-0.6689,-5.672,3.119,-0.6884,-5.054,4.389,0.2634,-4.617,3.919,1.981,-2.507,0.2122,3.467,-1.252,-0.7037,3.753,-2.181,1.29,4.703,-1.083,-0.2065,4.531,-4.122,4.752,3.434,-3.843,3.486,3.474,-0.6247,4.287,6.217,-3.884,5.34,4.144,-0.2615,3.949,5.823,-2.103,4.881,5.78,-1.599,4.225,5.429,-2.103,4.763,5.713,-2.175,4.422,5.292,-1.061,2.841,5.24,-3.345,2.806,3.987,-2.536,2.741,4.559,-3.082,3.581,4.206,-3.368,4.077,4.055,-1.044,3.885,5.454,-1.356,3.642,5.241,-3.227,3.707,4.111,-3.028,4.567,4.683,-2.472,2.023,4.722,-0.9194,2.354,5.382,-3.515,2.199,3.631,-3.685,4.225,3.891,-1.11,4.559,6.074,-0.1458,1.141,5.967,-0.4592,1.442,5.549,-3.24,5.132,4.832,-3.443,1.22,3.201,-1.972,6.686,5.769,-3.551,6.468,4.66,-1.125,6.641,6.224,-2.799,0.2961,1.981,-1.438,-0.7799,2.92,-2.098,-0.0622,0.3894,-4.342,2.994,2.484,-1.972,10.18,5.298,-3.829,8.081,4.078,-4.754,5.519,2.97,-1.641,0.4521,4.705,-2.795,3.568,4.497,-1.835,3.587,5.011,-3.243,5.188,4.826,-4.074,1.813,1.489,-4.073,1.537,-0.251,-4.798,4.414,1.165,-3.561,1.081,-1.554,-0.2244,0.5923,5.37,-0.4079,0.7711,5.733,-0.2244,0.7989,5.843,-1.184,0.5011,4.895,-1.695,4.1,5.387,-2.183,4.262,5.159,-2.937,4.372,4.659,0.0,0.5907,5.545,0.2244,0.5907,5.545,-0.2244,0.5907,5.545,-2.091,-0.0943,-1.629,2.091,-0.0943,-1.629,0.0,-0.6349,1.532,0.4475,7.341,7.362,0.7761,4.912,6.883,0.7761,4.912,6.883,0.4475,7.341,7.362,-0.7761,4.912,6.883,-0.4475,7.341,7.362,-0.4475,7.341,7.362,-0.7761,4.912,6.883,1.438,-0.7799,2.92,2.098,-0.0622,0.3894,2.799,0.2961,1.981,1.438,-0.7799,2.92,4.734,2.295,-0.478,5.658,2.599,-1.983,4.734,2.295,-0.478,3.712,1.225,-2.29,-3.561,1.081,-1.554,-2.098,-0.0622,0.3894,-1.438,-0.7799,2.92,-2.799,0.2961,1.981,-5.658,2.599,-1.983,-4.734,2.295,-0.478,-3.712,1.225,-2.29,-4.734,2.295,-0.478,5.658,2.599,-1.983,0.513,6.698,7.119,0.0,7.548,7.405,-5.658,2.599,-1.983,-0.513,6.698,7.119,5.054,4.389,0.2634,3.561,1.081,-1.554,-5.054,4.389,0.2634,-1.438,-0.7799,2.92,-3.561,1.081,-1.554,0.0,7.548,7.405,3.561,1.081,-1.554}, 1068);
-SoIndexedFaceSet208->setCoord(*SoCoordinate209);
-
-SoTextureCoordinate* SoTextureCoordinate210 = new SoTextureCoordinate();
-SoTextureCoordinate210->setPoint(new float[]{0.9175,0.8974,0.9509,0.8981,0.9421,0.8701,0.924,0.8702,0.9824,0.8971,0.9824,0.8682,0.9541,0.8718,0.9147,0.8129,0.9437,0.8153,0.9638,0.8095,0.9824,0.809,0.9461,0.923,0.9071,0.9135,0.9824,0.9287,0.7343,0.9169,0.7616,0.9147,0.7553,0.8982,0.7343,0.8968,0.7739,0.9327,0.7343,0.9365,0.8187,0.8433,0.8348,0.9045,0.8324,0.8647,0.74,0.8745,0.761,0.8768,0.7497,0.8755,0.777,0.8787,0.7647,0.8593,0.7596,0.8565,0.7438,0.8546,0.7343,0.8756,0.7372,0.8736,0.7394,0.8706,0.7405,0.8536,0.7808,0.8802,0.7786,0.8666,0.7875,0.8787,0.7821,0.8667,0.7952,0.9076,0.8011,0.8823,0.7745,0.9003,0.7939,0.8518,0.7845,0.8549,0.7731,0.8049,0.7979,0.8609,0.8185,0.8054,0.8439,0.8655,0.8131,0.8741,0.786,0.7876,0.8107,0.8538,0.8058,0.8252,0.8096,0.8166,0.8589,0.7975,0.8767,0.8622,0.8568,0.8668,0.8669,0.8674,0.9208,0.8549,0.8792,0.7991,0.8835,0.8633,0.9139,0.8636,0.9513,0.84,0.9824,0.8358,0.8845,0.9021,0.888,0.931,0.8761,0.9036,0.8705,0.9018,0.8544,0.902,0.8538,0.9345,0.8173,0.9068,0.8156,0.9257,0.7753,0.9186,0.7832,0.9041,0.7338,0.8385,0.7279,0.8339,0.7208,0.8401,0.7397,0.7767,0.7338,0.7681,0.7338,0.7727,0.7192,0.8201,0.7171,0.8352,0.7139,0.8364,0.7127,0.8419,0.7175,0.832,0.7247,0.8312,0.7224,0.8292,0.7239,0.8169,0.7146,0.8334,0.7152,0.8309,0.753,0.7762,0.7452,0.772,0.7409,0.7703,0.756,0.7661,0.7502,0.7748,0.7102,0.837,0.7574,0.7798,0.7054,0.8378,0.7338,0.8253,0.7338,0.8299,0.7267,0.8275,0.7291,0.8283,0.7338,0.8254,0.7338,0.7682,0.7385,0.7711,0.7338,0.7628,0.7338,0.82,0.7437,0.7597,0.7429,0.774,0.7484,0.7629,0.7505,0.778,0.7116,0.8233,0.7622,0.7806,0.7576,0.779,0.763,0.7872,0.7046,0.8444,0.7572,0.7769,0.7524,0.7737,0.7104,0.8341,0.5511,0.8974,0.5442,0.8881,0.5261,0.888,0.5173,0.916,0.5142,0.8897,0.4859,0.8861,0.4859,0.915,0.5538,0.8129,0.5221,0.9505,0.5019,0.9448,0.4833,0.9442,0.5221,0.9409,0.5615,0.9135,0.4859,0.9465,0.7132,0.8982,0.707,0.9147,0.6947,0.9327,0.6362,0.8647,0.6338,0.9045,0.6499,0.8433,0.7286,0.8745,0.7189,0.8755,0.7076,0.8768,0.7039,0.8593,0.6916,0.8787,0.7247,0.8546,0.709,0.8565,0.7314,0.8736,0.7292,0.8706,0.728,0.8536,0.69,0.8666,0.6878,0.8802,0.6865,0.8667,0.6811,0.8787,0.6675,0.8823,0.6734,0.9076,0.6941,0.9003,0.6841,0.8549,0.6747,0.8518,0.6955,0.8049,0.6707,0.8609,0.65,0.8054,0.6247,0.8655,0.6555,0.8741,0.6826,0.7876,0.6628,0.8252,0.6579,0.8538,0.659,0.8166,0.5919,0.8622,0.6097,0.7975,0.6017,0.8674,0.6119,0.8668,0.5894,0.7991,0.5477,0.8549,0.5851,0.8633,0.5547,0.8636,0.5069,0.9121,0.4833,0.9711,0.5841,0.9021,0.5806,0.931,0.5925,0.9036,0.5981,0.9018,0.6148,0.9345,0.6142,0.902,0.6513,0.9068,0.653,0.9257,0.6932,0.9186,0.6854,0.9041,0.7468,0.8401,0.7397,0.8339,0.7279,0.7767,0.7484,0.8201,0.7549,0.8419,0.7538,0.8364,0.7505,0.8352,0.7502,0.832,0.7452,0.8292,0.7429,0.8312,0.7437,0.8169,0.753,0.8334,0.7524,0.8309,0.7267,0.7703,0.7224,0.772,0.7146,0.7762,0.7175,0.7748,0.7116,0.7661,0.7574,0.837,0.7102,0.7798,0.7622,0.8378,0.7385,0.8283,0.7409,0.8275,0.7291,0.7711,0.7239,0.7597,0.7192,0.7629,0.7247,0.774,0.7171,0.778,0.756,0.8233,0.7046,0.7872,0.71,0.779,0.7054,0.7806,0.763,0.8444,0.7104,0.7769,0.7152,0.7737,0.7572,0.8341,0.7881,0.9479,0.7343,0.9577,0.8497,0.9637,0.9158,0.9539,0.7343,0.9872,0.9824,0.9663,0.6805,0.9479,0.6189,0.9637,0.5528,0.9539,0.4859,0.9842,0.4263,0.6263,0.4421,0.6351,0.4514,0.6319,0.4298,0.637,0.4385,0.639,0.4385,0.6403,0.4369,0.6596,0.4321,0.6555,0.4385,0.6553,0.4451,0.6548,0.4452,0.6463,0.4227,0.6454,0.4263,0.652,0.4193,0.6633,0.4176,0.6328,0.4376,0.6237,0.4196,0.6187,0.3384,0.9887,0.2979,0.9448,0.2441,0.9417,0.2441,0.9723,0.4437,0.6405,0.4519,0.6235,0.3384,0.9469,0.414,0.9365,0.4566,0.6329,0.4157,0.6257,0.4137,0.6192,0.2959,0.626,0.3051,0.6166,0.258,0.6076,0.2606,0.6259,0.2511,0.6816,0.2548,0.6653,0.2441,0.6653,0.2441,0.6816,0.2661,0.696,0.2636,0.664,0.3484,0.6888,0.3007,0.651,0.2881,0.7397,0.3623,0.7239,0.4151,0.6155,0.4295,0.6197,0.4116,0.6201,0.4088,0.6855,0.4123,0.7323,0.4518,0.7703,0.364,0.6372,0.2441,0.7326,0.2496,0.7705,0.2441,0.7109,0.2441,0.7705,0.2441,0.816,0.2441,0.8403,0.274,0.8322,0.2566,0.816,0.2949,0.763,0.3447,0.8549,0.3206,0.8292,0.4279,0.7939,0.4413,0.8544,0.3889,0.8456,0.3991,0.8726,0.4299,0.8825,0.3482,0.8386,0.4041,0.7613,0.3654,0.7582,0.3778,0.7978,0.3319,0.7987,0.3916,0.7984,0.2943,0.815,0.3252,0.8232,0.3846,0.8362,0.4052,0.8221,0.3485,0.831,0.309,0.8013,0.3985,0.8044,0.2937,0.8109,0.4204,0.8292,0.3447,0.8606,0.2972,0.8452,0.4715,0.8911,0.431,0.9594,0.4658,0.6252,0.465,0.6281,0.3226,0.6487,0.3993,0.8753,0.2441,0.6554,0.2548,0.6554,0.2557,0.6351,0.4544,0.6426,0.1498,0.9887,0.1903,0.9448,0.1498,0.9469,0.0742,0.9365,0.2323,0.6076,0.1853,0.6166,0.1923,0.626,0.2275,0.6259,0.2371,0.6816,0.2334,0.6653,0.2246,0.664,0.2221,0.696,0.1875,0.651,0.1398,0.6888,0.1258,0.7239,0.2001,0.7397,0.0364,0.7703,0.0759,0.7323,0.0794,0.6855,0.1242,0.6372,0.2386,0.7705,0.2316,0.816,0.2142,0.8322,0.1933,0.763,0.1676,0.8292,0.1435,0.8549,0.0602,0.7939,0.0469,0.8544,0.0583,0.8825,0.0891,0.8726,0.0992,0.8456,0.14,0.8386,0.084,0.7613,0.1228,0.7582,0.1104,0.7978,0.1563,0.7987,0.0966,0.7984,0.163,0.8232,0.1939,0.815,0.083,0.8221,0.1036,0.8362,0.1397,0.831,0.1792,0.8013,0.0897,0.8044,0.1944,0.8109,0.0678,0.8292,0.1435,0.8606,0.191,0.8452,0.0166,0.8911,0.0646,0.9594,0.1656,0.6487,0.0889,0.8753,0.2325,0.6351,0.2334,0.6554,0.2548,0.6553,0.2441,0.6553,0.2334,0.6553,0.4156,0.6279,0.3783,0.625,0.3984,0.649,0.4325,0.6718,0.4443,0.6446,0.428,0.6022}, 772);
-SoIndexedFaceSet208->setTexCoord(*SoTextureCoordinate210);
-
-SoShape204->setGeometry(*SoIndexedFaceSet208);
-
-SoTransform203->addChild(*SoShape204);
-
-SoHAnimSegment202->addChild(*SoTransform203);
-
-SoHAnimJoint201->addChildren(*SoHAnimSegment202);
-
-SoHAnimJoint191->addChildren(*SoHAnimJoint201);
-
-SoHAnimJoint121->addChildren(*SoHAnimJoint191);
-
-SoHAnimJoint31->addChildren(*SoHAnimJoint121);
-
-SoHAnimHumanoid23->setSkeleton(*SoHAnimJoint31);
-
-SoHAnimJoint* SoHAnimJoint211 = new SoHAnimJoint();
-SoHAnimJoint211->setUSE(QString("hanim_humanoid_root"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint211);
+SoMetadataString28->X3DNode::setName(QString("creationDate"));
+SoMetadataString28->setValue(new QString[]{QString("31 March 2011")}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataString28);
+
+SoMetadataString* SoMetadataString29 = new SoMetadataString();
+SoMetadataString29->X3DNode::setName(QString("gender"));
+SoMetadataString29->setValue(new QString[]{QString("female")}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataString29);
+
+SoMetadataFloat* SoMetadataFloat30 = new SoMetadataFloat();
+SoMetadataFloat30->X3DNode::setName(QString("height"));
+SoMetadataFloat30->setValue(new float[]{1.5}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataFloat30);
+
+SoMetadataString* SoMetadataString31 = new SoMetadataString();
+SoMetadataString31->X3DNode::setName(QString("humanoidVersion"));
+SoMetadataString31->setValue(new QString[]{QString("2.0")}, 1);
+SoMetadataSet25->setValue((X3DNode *)&SoMetadataString31);
+
+SoHAnimHumanoid24->setMetadata(*SoMetadataSet25);
+
+SoHAnimJoint* SoHAnimJoint32 = new SoHAnimJoint();
+SoHAnimJoint32->X3DNode::setName(QString("humanoid_root"));
+SoHAnimJoint32->setDEF(QString("hanim_humanoid_root"));
+SoHAnimJoint32->setCenter(new float[]{0.0,35.799999,-0.7076});
+SoHAnimJoint32->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint32->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment33 = new SoHAnimSegment();
+SoHAnimSegment33->X3DNode::setName(QString("sacrum"));
+SoHAnimSegment33->setDEF(QString("hanim_sacrum"));
+SoTransform* SoTransform34 = new SoTransform();
+SoTransform34->setTranslation(new float[]{0.0,35.799999,-0.7076});
+SoShape* SoShape35 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance36 = new SoVRMLAppearance();
+SoMaterial* SoMaterial37 = new SoMaterial();
+SoMaterial37->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance36->addChild(*SoMaterial37);
+
+SoImageTexture* SoImageTexture38 = new SoImageTexture();
+SoImageTexture38->setDEF(QString("JinTextureAtlas"));
+SoImageTexture38->setUrl(new QString[]{QString("images/Jin.png"), QString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Characters/images/Jin.png")}, 2);
+SoVRMLAppearance36->addChild(*SoImageTexture38);
+
+SoShape35->addChild(*SoVRMLAppearance36);
+
+SoIndexedFaceSet* SoIndexedFaceSet39 = new SoIndexedFaceSet();
+SoIndexedFaceSet39->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
+SoIndexedFaceSet39->setCreaseAngle(1.57);
+SoIndexedFaceSet39->setTexCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
+SoCoordinate* SoCoordinate40 = new SoCoordinate();
+SoCoordinate40->setPoint(new float[]{0.0,1.053,0.0273,0.0,0.9123,-0.5414,-0.4375,0.9123,-0.4652,-0.7578,0.9123,-0.3733,-0.875,0.9123,0.0273,-0.7578,0.9123,0.4279,-0.4375,0.9123,0.5198,0.0,0.9123,0.596,0.4375,0.9123,0.5198,0.7578,0.9123,0.4279,0.875,0.9123,0.0273,0.7578,0.9123,-0.3733,0.4375,0.9123,-0.4652,0.0,0.5267,-0.8842,-0.5658,0.5267,-0.7621,-0.98,0.5267,-0.4285,-1.132,0.5267,0.0273,-0.98,0.5267,0.483,-0.5658,0.5267,0.6985,0.0,0.5267,0.8206,0.5658,0.5267,0.6985,0.98,0.5267,0.483,1.132,0.5267,0.0273,0.98,0.5267,-0.4285,0.5658,0.5267,-0.7621,0.0,0.0,-0.9616,-0.6534,0.0,-0.8206,-1.132,0.0,-0.4353,-1.307,0.0,0.0273,-1.132,0.0,0.5536,-0.6534,0.0,0.8206,0.0,0.0,0.9616,0.6534,0.0,0.8206,1.132,0.0,0.5536,1.307,0.0,0.0273,1.132,0.0,-0.4353,0.6534,0.0,-0.8206,0.0,-0.5267,-0.8206,-0.5658,-0.5267,-0.6985,-0.98,-0.5267,-0.3648,-1.132,-0.5267,0.0273,-0.98,-0.5267,0.483,-0.5658,-0.5267,0.6985,0.0,-0.5267,0.8206,0.5658,-0.5267,0.6985,0.98,-0.5267,0.483,1.132,-0.5267,0.0273,0.98,-0.5267,-0.3648,0.5658,-0.5267,-0.6985,0.0,-0.9123,-0.4353,-0.3267,-0.9123,-0.3648,-0.5658,-0.9123,-0.2358,-0.6534,-0.9123,0.0273,-0.5658,-0.9123,0.2904,-0.3267,-0.9123,0.483,0.0,-0.9123,0.5536,0.3267,-0.9123,0.483,0.5658,-0.9123,0.2904,0.6534,-0.9123,0.0273,0.5658,-0.9123,-0.2358,0.3267,-0.9123,-0.3648,0.0,-1.053,0.0273}, 186);
+SoIndexedFaceSet39->setCoord(*SoCoordinate40);
+
+SoTextureCoordinate* SoTextureCoordinate41 = new SoTextureCoordinate();
+SoTextureCoordinate41->setPoint(new float[]{0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398}, 124);
+SoIndexedFaceSet39->setTexCoord(*SoTextureCoordinate41);
+
+SoShape35->setGeometry(*SoIndexedFaceSet39);
+
+SoTransform34->addChild(*SoShape35);
+
+SoHAnimSegment33->addChild(*SoTransform34);
+
+SoHAnimJoint32->addChildren(*SoHAnimSegment33);
+
+SoHAnimJoint* SoHAnimJoint42 = new SoHAnimJoint();
+SoHAnimJoint42->X3DNode::setName(QString("l_hip"));
+SoHAnimJoint42->setDEF(QString("hanim_l_hip"));
+SoHAnimJoint42->setCenter(new float[]{4.207,32.02,-0.8155});
+SoHAnimJoint42->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint42->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment43 = new SoHAnimSegment();
+SoHAnimSegment43->X3DNode::setName(QString("l_thigh"));
+SoHAnimSegment43->setDEF(QString("hanim_l_thigh"));
+SoTransform* SoTransform44 = new SoTransform();
+SoTransform44->setTranslation(new float[]{4.207,32.02,-0.8155});
+SoShape* SoShape45 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance46 = new SoVRMLAppearance();
+SoMaterial* SoMaterial47 = new SoMaterial();
+SoMaterial47->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance46->addChild(*SoMaterial47);
+
+SoImageTexture* SoImageTexture48 = new SoImageTexture();
+SoImageTexture48->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance46->addChild(*SoImageTexture48);
+
+SoShape45->addChild(*SoVRMLAppearance46);
+
+SoIndexedFaceSet* SoIndexedFaceSet49 = new SoIndexedFaceSet();
+SoIndexedFaceSet49->setCoordIndex(new int32_t[]{47,46,45,-1,45,44,43,-1,45,43,42,-1,47,45,42,-1,48,47,42,-1,0,1,8,-1,8,7,0,-1,1,2,9,-1,9,8,1,-1,2,3,10,-1,10,9,2,-1,3,4,11,-1,11,10,3,-1,4,5,12,-1,12,11,4,-1,5,6,13,-1,13,12,5,-1,6,0,7,-1,7,13,6,-1,7,8,15,-1,15,14,7,-1,8,9,16,-1,16,15,8,-1,9,10,17,-1,17,16,9,-1,10,11,18,-1,18,17,10,-1,11,12,19,-1,19,18,11,-1,12,13,20,-1,20,19,12,-1,13,7,14,-1,14,20,13,-1,14,15,22,-1,22,21,14,-1,15,16,23,-1,23,22,15,-1,16,17,24,-1,24,23,16,-1,17,18,25,-1,25,24,17,-1,18,19,26,-1,26,25,18,-1,19,20,27,-1,27,26,19,-1,20,14,21,-1,21,27,20,-1,56,57,58,-1,58,59,60,-1,58,60,61,-1,56,58,61,-1,62,56,61,-1,29,28,21,-1,21,22,29,-1,30,29,22,-1,22,23,30,-1,31,30,23,-1,23,24,31,-1,32,31,24,-1,24,25,32,-1,33,32,25,-1,25,26,33,-1,34,33,26,-1,26,27,34,-1,28,34,27,-1,27,21,28,-1,36,35,28,-1,28,29,36,-1,37,36,29,-1,29,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,35,41,34,-1,34,28,35,-1,42,43,1,-1,1,0,42,-1,43,44,2,-1,2,1,43,-1,44,45,3,-1,3,2,44,-1,45,46,4,-1,4,3,45,-1,46,47,5,-1,5,4,46,-1,47,48,6,-1,6,5,47,-1,48,42,0,-1,0,6,48,-1,50,49,35,-1,35,36,50,-1,51,50,36,-1,36,37,51,-1,52,51,37,-1,37,38,52,-1,53,52,38,-1,38,39,53,-1,54,53,39,-1,39,40,54,-1,55,54,40,-1,40,41,55,-1,49,55,41,-1,41,35,49,-1,57,56,49,-1,49,50,57,-1,58,57,50,-1,50,51,58,-1,59,58,51,-1,51,52,59,-1,60,59,52,-1,52,53,60,-1,61,60,53,-1,53,54,61,-1,62,61,54,-1,54,55,62,-1,56,62,55,-1,55,49,56,-1}, 488);
+SoIndexedFaceSet49->setCreaseAngle(1.57);
+SoIndexedFaceSet49->setTexCoordIndex(new int32_t[]{5,4,3,-1,3,2,0,-1,3,0,1,-1,5,3,1,-1,6,5,1,-1,7,10,8,-1,8,9,7,-1,10,12,11,-1,11,8,10,-1,12,14,13,-1,13,11,12,-1,14,16,15,-1,15,13,14,-1,16,18,17,-1,17,15,16,-1,18,20,19,-1,19,17,18,-1,20,7,9,-1,9,19,20,-1,9,8,21,-1,21,22,9,-1,8,11,23,-1,23,21,8,-1,11,13,24,-1,24,23,11,-1,13,15,25,-1,25,24,13,-1,15,17,26,-1,26,25,15,-1,17,19,27,-1,27,26,17,-1,19,9,22,-1,22,27,19,-1,22,21,28,-1,28,29,22,-1,21,23,30,-1,30,28,21,-1,23,24,31,-1,31,30,23,-1,24,25,32,-1,32,31,24,-1,25,26,33,-1,33,32,25,-1,26,27,34,-1,34,33,26,-1,27,22,29,-1,29,34,27,-1,42,43,44,-1,44,45,46,-1,44,46,47,-1,42,44,47,-1,48,42,47,-1,35,36,29,-1,29,28,35,-1,37,35,28,-1,28,30,37,-1,38,37,30,-1,30,31,38,-1,39,38,31,-1,31,32,39,-1,40,39,32,-1,32,33,40,-1,41,40,33,-1,33,34,41,-1,36,41,34,-1,34,29,36,-1,51,52,49,-1,49,50,51,-1,54,51,50,-1,50,53,54,-1,56,54,53,-1,53,55,56,-1,58,56,55,-1,55,57,58,-1,60,58,57,-1,57,59,60,-1,62,60,59,-1,59,61,62,-1,52,62,61,-1,61,49,52,-1,1,0,10,-1,10,7,1,-1,0,2,12,-1,12,10,0,-1,2,3,14,-1,14,12,2,-1,3,4,16,-1,16,14,3,-1,4,5,18,-1,18,16,4,-1,5,6,20,-1,20,18,5,-1,6,1,7,-1,7,20,6,-1,63,64,52,-1,52,51,63,-1,65,63,51,-1,51,54,65,-1,66,65,54,-1,54,56,66,-1,67,66,56,-1,56,58,67,-1,68,67,58,-1,58,60,68,-1,69,68,60,-1,60,62,69,-1,64,69,62,-1,62,52,64,-1,43,42,64,-1,64,63,43,-1,44,43,63,-1,63,65,44,-1,45,44,65,-1,65,66,45,-1,46,45,66,-1,66,67,46,-1,47,46,67,-1,67,68,47,-1,48,47,68,-1,68,69,48,-1,42,48,69,-1,69,64,42,-1}, 488);
+SoCoordinate* SoCoordinate50 = new SoCoordinate();
+SoCoordinate50->setPoint(new float[]{2.96,3.738,0.0,1.643,3.738,3.209,-1.316,3.738,4.002,-3.367,3.738,1.781,-3.367,3.738,-1.781,-1.316,3.738,-4.002,1.643,3.738,-3.209,2.96,-0.0114,0.0,1.643,-0.0114,3.209,-1.316,-0.0114,4.002,-3.367,-0.0114,1.781,-3.367,-0.0114,-1.781,-1.316,-0.0114,-4.002,1.643,-0.0114,-3.209,2.96,-6.507,0.0,1.643,-6.507,3.209,-1.316,-6.507,4.002,-3.367,-6.507,1.781,-3.367,-6.507,-1.781,-1.316,-6.507,-4.002,1.643,-6.507,-3.209,3.367,-13.13,0.0,1.897,-13.13,3.582,-1.407,-13.13,4.467,-3.355,-13.13,1.988,-3.355,-13.13,-1.988,-1.407,-13.13,-4.467,1.897,-13.13,-3.582,2.146,-4.985,0.0,1.136,-4.985,2.462,-1.135,-4.985,3.07,-2.633,-4.985,1.366,-2.633,-4.985,-1.366,-1.135,-4.985,-3.07,1.136,-4.985,-2.462,2.156,-11.45,0.0,1.225,-11.45,1.956,-0.8662,-11.45,2.439,-2.543,-11.45,1.085,-2.543,-11.45,-1.085,-0.8662,-11.45,-2.439,1.225,-11.45,-1.956,2.051,5.729,0.0,1.076,5.729,2.375,-1.114,5.729,2.961,-2.87,5.729,1.318,-2.87,5.729,-1.318,-1.114,5.729,-2.961,1.076,5.729,-2.375,1.842,-15.12,0.0,1.03,-15.12,1.873,-0.7965,-15.12,2.295,-2.261,-15.12,1.113,-2.261,-15.12,-0.9478,-0.7965,-15.12,-2.13,1.03,-15.12,-1.708,0.6277,-16.1,0.0,0.2723,-16.1,0.912,-0.5262,-16.1,1.096,-1.167,-16.1,0.5796,-1.167,-16.1,-0.4145,-0.5262,-16.1,-0.9313,0.2723,-16.1,-0.7469}, 189);
+SoIndexedFaceSet49->setCoord(*SoCoordinate50);
+
+SoTextureCoordinate* SoTextureCoordinate51 = new SoTextureCoordinate();
+SoTextureCoordinate51->setPoint(new float[]{0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581}, 140);
+SoIndexedFaceSet49->setTexCoord(*SoTextureCoordinate51);
+
+SoShape45->setGeometry(*SoIndexedFaceSet49);
+
+SoTransform44->addChild(*SoShape45);
+
+SoHAnimSegment43->addChild(*SoTransform44);
+
+SoHAnimJoint42->addChildren(*SoHAnimSegment43);
+
+SoHAnimJoint* SoHAnimJoint52 = new SoHAnimJoint();
+SoHAnimJoint52->X3DNode::setName(QString("l_knee"));
+SoHAnimJoint52->setDEF(QString("hanim_l_knee"));
+SoHAnimJoint52->setCenter(new float[]{4.116,17.26,-0.8639});
+SoHAnimJoint52->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint52->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment53 = new SoHAnimSegment();
+SoHAnimSegment53->X3DNode::setName(QString("l_calf"));
+SoHAnimSegment53->setDEF(QString("hanim_l_calf"));
+SoTransform* SoTransform54 = new SoTransform();
+SoTransform54->setTranslation(new float[]{4.116,17.26,-0.8639});
+SoShape* SoShape55 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance56 = new SoVRMLAppearance();
+SoMaterial* SoMaterial57 = new SoMaterial();
+SoMaterial57->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance56->addChild(*SoMaterial57);
+
+SoImageTexture* SoImageTexture58 = new SoImageTexture();
+SoImageTexture58->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance56->addChild(*SoImageTexture58);
+
+SoShape55->addChild(*SoVRMLAppearance56);
+
+SoIndexedFaceSet* SoIndexedFaceSet59 = new SoIndexedFaceSet();
+SoIndexedFaceSet59->setCoordIndex(new int32_t[]{4,3,2,-1,5,4,2,-1,2,1,0,-1,5,2,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1}, 300);
+SoIndexedFaceSet59->setCreaseAngle(1.57);
+SoIndexedFaceSet59->setTexCoordIndex(new int32_t[]{4,3,2,-1,5,4,2,-1,2,1,0,-1,5,2,0,-1,6,5,0,-1,9,8,7,-1,7,10,9,-1,12,11,8,-1,8,9,12,-1,14,13,11,-1,11,12,14,-1,16,15,13,-1,13,14,16,-1,18,17,15,-1,15,16,18,-1,20,19,17,-1,17,18,20,-1,10,7,19,-1,19,20,10,-1,21,9,10,-1,10,22,21,-1,23,12,9,-1,9,21,23,-1,24,14,12,-1,12,23,24,-1,25,16,14,-1,14,24,25,-1,26,18,16,-1,16,25,26,-1,27,20,18,-1,18,26,27,-1,22,10,20,-1,20,27,22,-1,1,21,22,-1,22,0,1,-1,2,23,21,-1,21,1,2,-1,3,24,23,-1,23,2,3,-1,4,25,24,-1,24,3,4,-1,5,26,25,-1,25,4,5,-1,6,27,26,-1,26,5,6,-1,0,22,27,-1,27,6,0,-1,8,29,28,-1,28,7,8,-1,11,30,29,-1,29,8,11,-1,13,31,30,-1,30,11,13,-1,15,32,31,-1,31,13,15,-1,17,33,32,-1,32,15,17,-1,19,34,33,-1,33,17,19,-1,7,28,34,-1,34,19,7,-1,29,36,35,-1,35,28,29,-1,30,37,36,-1,36,29,30,-1,31,38,37,-1,37,30,31,-1,32,39,38,-1,38,31,32,-1,33,40,39,-1,39,32,33,-1,34,41,40,-1,40,33,34,-1,28,35,41,-1,41,34,28,-1}, 300);
+SoCoordinate* SoCoordinate60 = new SoCoordinate();
+SoCoordinate60->setPoint(new float[]{0.7186,0.9688,0.0234,0.3632,0.9688,0.9354,-0.4353,0.9688,1.12,-1.076,0.9688,0.603,-1.076,0.9688,-0.3911,-0.4353,0.9688,-0.9079,0.3632,0.9688,-0.7235,2.337,-4.613,0.0234,1.46,-3.622,2.019,1.236,-1.628,2.42,2.118,-1.912,0.0234,-0.8111,-3.622,2.567,-0.7468,-1.628,2.903,-2.254,-4.613,1.255,-2.337,-1.912,0.9793,-2.254,-5.383,-1.368,-2.337,-1.912,-0.9325,-0.8111,-5.383,-2.903,-0.7468,-1.912,-2.368,1.46,-5.383,-2.355,1.236,-1.912,-1.885,1.121,-0.0032,1.896,1.933,-0.0032,0.0234,-0.7056,-0.0032,2.318,-2.17,-0.0032,1.136,-2.17,-0.0032,-0.9244,-0.7056,-0.0032,-2.061,1.121,-0.0032,-1.64,1.607,-12.92,0.0032,0.9216,-12.91,1.565,-0.619,-12.91,1.951,-1.854,-12.92,0.8701,-1.854,-12.94,-0.9762,-0.619,-12.94,-1.742,0.9216,-12.94,-1.356,0.7072,-14.53,0.0239,0.3604,-14.53,0.814,-0.4188,-14.53,1.009,-1.044,-14.53,0.4624,-1.044,-14.54,-0.4714,-0.4188,-14.54,-0.8587,0.3604,-14.54,-0.6635}, 126);
+SoIndexedFaceSet59->setCoord(*SoCoordinate60);
+
+SoTextureCoordinate* SoTextureCoordinate61 = new SoTextureCoordinate();
+SoTextureCoordinate61->setPoint(new float[]{0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243}, 84);
+SoIndexedFaceSet59->setTexCoord(*SoTextureCoordinate61);
+
+SoShape55->setGeometry(*SoIndexedFaceSet59);
+
+SoTransform54->addChild(*SoShape55);
+
+SoHAnimSegment53->addChild(*SoTransform54);
+
+SoHAnimJoint52->addChildren(*SoHAnimSegment53);
+
+SoHAnimJoint* SoHAnimJoint62 = new SoHAnimJoint();
+SoHAnimJoint62->X3DNode::setName(QString("l_talocrural"));
+SoHAnimJoint62->setDEF(QString("hanim_l_talocrural"));
+SoHAnimJoint62->setCenter(new float[]{3.854,3.939,-0.7038});
+SoHAnimJoint62->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint62->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment63 = new SoHAnimSegment();
+SoHAnimSegment63->X3DNode::setName(QString("l_talus"));
+SoHAnimSegment63->setDEF(QString("hanim_l_talus"));
+SoTransform* SoTransform64 = new SoTransform();
+SoTransform64->setTranslation(new float[]{3.854,3.939,-0.7038});
+SoShape* SoShape65 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance66 = new SoVRMLAppearance();
+SoMaterial* SoMaterial67 = new SoMaterial();
+SoMaterial67->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance66->addChild(*SoMaterial67);
+
+SoImageTexture* SoImageTexture68 = new SoImageTexture();
+SoImageTexture68->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance66->addChild(*SoImageTexture68);
+
+SoShape65->addChild(*SoVRMLAppearance66);
+
+SoIndexedFaceSet* SoIndexedFaceSet69 = new SoIndexedFaceSet();
+SoIndexedFaceSet69->setCoordIndex(new int32_t[]{1,11,14,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,11,1,3,-1,3,6,11,-1,15,2,0,-1,0,12,15,-1,0,1,13,-1,13,12,0,-1,13,1,14,-1,7,18,11,-1,8,6,5,-1,5,9,8,-1,7,8,9,-1,9,10,7,-1,10,9,5,-1,5,2,10,-1,11,6,8,-1,8,7,11,-1,15,16,10,-1,10,2,15,-1,10,16,17,-1,17,7,10,-1,17,18,7,-1,21,22,23,-1,23,24,25,-1,25,26,19,-1,23,25,19,-1,21,23,19,-1,20,21,19,-1,15,12,20,-1,20,19,15,-1,12,13,21,-1,21,20,12,-1,13,14,22,-1,22,21,13,-1,14,11,23,-1,23,22,14,-1,11,18,24,-1,24,23,11,-1,18,17,25,-1,25,24,18,-1,17,16,26,-1,26,25,17,-1,16,15,19,-1,19,26,16,-1,33,31,30,-1,30,27,33,-1,36,27,30,-1,30,38,36,-1,29,33,27,-1,27,28,29,-1,37,28,27,-1,27,36,37,-1,28,37,42,-1,42,29,28,-1,33,32,34,-1,34,31,33,-1,39,40,34,-1,34,32,39,-1,29,35,32,-1,32,33,29,-1,41,39,32,-1,32,35,41,-1,35,29,42,-1,42,41,35,-1,44,45,46,-1,44,46,47,-1,44,47,43,-1,51,52,53,-1,54,48,49,-1,53,54,49,-1,51,53,49,-1,51,49,50,-1,30,31,44,-1,44,43,30,-1,31,34,45,-1,45,44,31,-1,34,40,46,-1,46,45,34,-1,40,38,47,-1,47,46,40,-1,38,30,43,-1,43,47,38,-1,37,36,49,-1,49,48,37,-1,36,38,50,-1,50,49,36,-1,38,40,51,-1,51,50,38,-1,40,39,52,-1,52,51,40,-1,39,41,53,-1,53,52,39,-1,41,42,54,-1,54,53,41,-1,42,37,48,-1,48,54,42,-1}, 408);
+SoIndexedFaceSet69->setCreaseAngle(1.57);
+SoIndexedFaceSet69->setTexCoordIndex(new int32_t[]{1,14,18,-1,3,4,5,-1,5,6,3,-1,1,0,4,-1,4,3,1,-1,0,2,5,-1,5,4,0,-1,14,1,3,-1,3,6,14,-1,19,2,0,-1,0,16,19,-1,0,1,17,-1,17,16,0,-1,17,1,18,-1,7,23,15,-1,9,8,11,-1,11,10,9,-1,7,9,10,-1,10,12,7,-1,12,10,11,-1,11,13,12,-1,15,8,9,-1,9,7,15,-1,20,21,12,-1,12,13,20,-1,12,21,22,-1,22,7,12,-1,22,23,7,-1,26,27,28,-1,28,29,30,-1,30,31,24,-1,28,30,24,-1,26,28,24,-1,25,26,24,-1,19,16,25,-1,25,24,19,-1,16,17,26,-1,26,25,16,-1,17,18,27,-1,27,26,17,-1,18,14,28,-1,28,27,18,-1,15,23,29,-1,29,28,15,-1,23,22,30,-1,30,29,23,-1,22,21,31,-1,31,30,22,-1,21,20,24,-1,24,31,21,-1,34,38,37,-1,37,32,34,-1,46,32,37,-1,37,48,46,-1,35,34,32,-1,32,33,35,-1,47,33,32,-1,32,46,47,-1,33,47,53,-1,53,36,33,-1,40,39,42,-1,42,41,40,-1,49,50,42,-1,42,39,49,-1,44,43,39,-1,39,40,44,-1,51,49,39,-1,39,43,51,-1,43,45,52,-1,52,51,43,-1,55,56,57,-1,55,57,58,-1,55,58,54,-1,62,63,64,-1,65,59,60,-1,64,65,60,-1,62,64,60,-1,62,60,61,-1,37,38,55,-1,55,54,37,-1,41,42,56,-1,56,55,41,-1,42,50,57,-1,57,56,42,-1,50,48,58,-1,58,57,50,-1,48,37,54,-1,54,58,48,-1,47,46,60,-1,60,59,47,-1,46,48,61,-1,61,60,46,-1,48,50,62,-1,62,61,48,-1,50,49,63,-1,63,62,50,-1,49,51,64,-1,64,63,49,-1,51,52,65,-1,65,64,51,-1,53,47,59,-1,59,65,53,-1}, 408);
+SoCoordinate* SoCoordinate70 = new SoCoordinate();
+SoCoordinate70->setPoint(new float[]{0.9768,-0.0192,-1.681,1.657,-0.0192,0.4309,0.0,-0.0192,-1.681,1.403,0.7316,0.354,0.8174,0.7316,-1.463,0.0,0.7316,-1.463,0.0,0.7316,1.471,-1.657,-0.0192,0.4309,-1.403,0.7316,0.354,-0.8174,0.7316,-1.463,-0.9768,-0.0192,-1.681,0.0,-0.0192,1.75,1.109,-0.6007,-2.046,2.045,-0.6007,0.4309,1.695,-0.296,1.429,0.0,-0.6007,-2.046,-1.109,-0.6007,-2.046,-2.045,-0.6007,0.4309,-1.695,-0.296,1.429,0.0,-1.207,-1.841,1.023,-1.207,-1.841,1.913,-1.223,0.5161,1.601,-0.9325,1.406,0.0,-0.6582,1.708,-1.601,-0.9325,1.406,-1.913,-1.223,0.5161,-1.023,-1.207,-1.841,1.409,-1.925,-2.878,1.409,-3.947,-1.681,0.0,-3.947,-1.681,1.109,-0.6007,-2.046,0.0,-0.6007,-2.046,-1.409,-1.925,-2.878,0.0,-1.925,-2.878,-1.109,-0.6007,-2.046,-1.409,-3.947,-1.681,2.927,-1.925,0.4309,2.089,-3.947,0.4309,2.045,-0.6007,0.4309,-2.927,-1.925,0.4309,-2.045,-0.6007,0.4309,-2.089,-3.947,0.4309,0.0,-3.947,0.4309,0.9442,-0.3153,-1.692,0.0,-0.3153,-1.692,-0.9442,-0.3153,-1.692,-1.7,-0.3153,0.3093,1.7,-0.3153,0.3093,1.86,-3.793,1.364,2.541,-1.963,1.364,1.861,-0.9431,1.364,-1.861,-0.9431,1.364,-2.541,-1.963,1.364,-1.86,-3.793,1.364,0.0,-3.793,1.364}, 165);
+SoIndexedFaceSet69->setCoord(*SoCoordinate70);
+
+SoTextureCoordinate* SoTextureCoordinate71 = new SoTextureCoordinate();
+SoTextureCoordinate71->setPoint(new float[]{0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186}, 132);
+SoIndexedFaceSet69->setTexCoord(*SoTextureCoordinate71);
+
+SoShape65->setGeometry(*SoIndexedFaceSet69);
+
+SoTransform64->addChild(*SoShape65);
+
+SoHAnimSegment63->addChild(*SoTransform64);
+
+SoHAnimJoint62->addChildren(*SoHAnimSegment63);
+
+SoHAnimJoint* SoHAnimJoint72 = new SoHAnimJoint();
+SoHAnimJoint72->X3DNode::setName(QString("l_metatarsophalangeal_2"));
+SoHAnimJoint72->setDEF(QString("hanim_l_metatarsophalangeal_2"));
+SoHAnimJoint72->setCenter(new float[]{3.854,3.64,0.7402});
+SoHAnimJoint72->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint72->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment73 = new SoHAnimSegment();
+SoHAnimSegment73->X3DNode::setName(QString("l_tarsal_proximal_phalanx_2"));
+SoHAnimSegment73->setDEF(QString("hanim_l_tarsal_proximal_phalanx_2"));
+SoTransform* SoTransform74 = new SoTransform();
+SoTransform74->setTranslation(new float[]{3.854,3.64,0.7402});
+SoShape* SoShape75 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance76 = new SoVRMLAppearance();
+SoMaterial* SoMaterial77 = new SoMaterial();
+SoMaterial77->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance76->addChild(*SoMaterial77);
+
+SoImageTexture* SoImageTexture78 = new SoImageTexture();
+SoImageTexture78->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance76->addChild(*SoImageTexture78);
+
+SoShape75->addChild(*SoVRMLAppearance76);
+
+SoIndexedFaceSet* SoIndexedFaceSet79 = new SoIndexedFaceSet();
+SoIndexedFaceSet79->setCoordIndex(new int32_t[]{3,4,10,-1,3,10,11,-1,0,3,11,-1,1,0,11,-1,11,12,1,-1,1,12,16,-1,16,9,1,-1,2,17,10,-1,10,4,2,-1,13,8,6,-1,14,13,6,-1,5,14,6,-1,7,15,14,-1,14,5,7,-1,7,9,16,-1,16,15,7,-1,2,8,13,-1,13,17,2,-1,20,21,22,-1,20,22,23,-1,20,23,24,-1,19,20,24,-1,19,24,18,-1,0,1,19,-1,19,18,0,-1,1,9,20,-1,20,19,1,-1,9,7,21,-1,21,20,9,-1,7,5,22,-1,22,21,7,-1,5,6,23,-1,23,22,5,-1,6,3,24,-1,24,23,6,-1,3,0,18,-1,18,24,3,-1,6,8,2,-1,3,6,2,-1,4,3,2,-1,28,26,25,-1,25,29,28,-1,35,27,26,-1,26,28,35,-1,27,35,40,-1,25,26,31,-1,31,30,25,-1,31,26,27,-1,27,32,31,-1,32,27,40,-1,40,41,32,-1,42,29,25,-1,25,30,42,-1,28,29,34,-1,34,33,28,-1,35,28,33,-1,33,36,35,-1,36,40,35,-1,34,37,38,-1,38,33,34,-1,38,39,36,-1,36,33,38,-1,39,41,40,-1,40,36,39,-1,42,37,34,-1,34,29,42,-1}, 264);
+SoIndexedFaceSet79->setCreaseAngle(1.57);
+SoIndexedFaceSet79->setTexCoordIndex(new int32_t[]{4,5,12,-1,4,12,13,-1,0,4,13,-1,1,0,13,-1,13,14,1,-1,1,14,19,-1,19,3,1,-1,2,21,12,-1,12,5,2,-1,15,10,7,-1,16,15,7,-1,6,16,7,-1,8,17,16,-1,16,6,8,-1,8,11,18,-1,18,17,8,-1,9,10,15,-1,15,20,9,-1,24,25,26,-1,24,26,27,-1,24,27,28,-1,23,24,28,-1,23,28,22,-1,0,1,23,-1,23,22,0,-1,1,3,24,-1,24,23,1,-1,11,8,25,-1,25,24,11,-1,8,6,26,-1,26,25,8,-1,6,7,27,-1,27,26,6,-1,7,4,28,-1,28,27,7,-1,4,0,22,-1,22,28,4,-1,7,10,9,-1,4,7,9,-1,5,4,9,-1,30,32,31,-1,31,29,30,-1,33,34,32,-1,32,30,33,-1,34,33,35,-1,31,32,37,-1,37,36,31,-1,37,32,34,-1,34,38,37,-1,38,34,35,-1,35,39,38,-1,40,29,31,-1,31,36,40,-1,41,44,43,-1,43,42,41,-1,45,41,42,-1,42,46,45,-1,46,50,45,-1,43,47,48,-1,48,42,43,-1,48,49,46,-1,46,42,48,-1,49,51,50,-1,50,46,49,-1,52,47,43,-1,43,44,52,-1}, 264);
+SoCoordinate* SoCoordinate80 = new SoCoordinate();
+SoCoordinate80->setPoint(new float[]{2.927,-1.627,-1.013,2.089,-3.648,-1.013,0.0,0.2797,0.3064,2.045,-0.3017,-1.013,1.695,0.0029,-0.0151,-2.927,-1.627,-1.013,-2.045,-0.3017,-1.013,-2.089,-3.648,-1.013,-1.695,0.0029,-0.0151,0.0,-3.648,-1.013,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,0.0,-3.648,0.9192,0.0,-0.0274,1.661,2.405,-1.656,-1.915,1.75,-2.942,-1.915,0.0,-2.942,-1.915,-1.75,-2.942,-1.915,-2.405,-1.656,-1.915,-1.742,-0.5681,-1.915,1.742,-0.5681,-1.915,1.784,-0.648,2.332,2.216,-2.267,4.144,2.216,-3.648,3.776,0.0,-2.267,5.463,0.0,-0.5463,3.95,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,-2.216,-2.267,4.144,-1.784,-0.648,2.332,0.0,-3.648,5.096,-2.216,-3.648,3.776,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,0.0,-3.648,3.776,0.0,-3.648,0.9192,0.0,-0.0274,1.661}, 129);
+SoIndexedFaceSet79->setCoord(*SoCoordinate80);
+
+SoTextureCoordinate* SoTextureCoordinate81 = new SoTextureCoordinate();
+SoTextureCoordinate81->setPoint(new float[]{0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432}, 106);
+SoIndexedFaceSet79->setTexCoord(*SoTextureCoordinate81);
+
+SoShape75->setGeometry(*SoIndexedFaceSet79);
+
+SoTransform74->addChild(*SoShape75);
+
+SoHAnimSegment73->addChild(*SoTransform74);
+
+SoHAnimJoint72->addChildren(*SoHAnimSegment73);
+
+SoHAnimJoint62->addChildren(*SoHAnimJoint72);
+
+SoHAnimJoint52->addChildren(*SoHAnimJoint62);
+
+SoHAnimJoint42->addChildren(*SoHAnimJoint52);
+
+SoHAnimJoint32->addChildren(*SoHAnimJoint42);
+
+SoHAnimJoint* SoHAnimJoint82 = new SoHAnimJoint();
+SoHAnimJoint82->X3DNode::setName(QString("r_hip"));
+SoHAnimJoint82->setDEF(QString("hanim_r_hip"));
+SoHAnimJoint82->setCenter(new float[]{-4.207,32.02,-0.8155});
+SoHAnimJoint82->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint82->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment83 = new SoHAnimSegment();
+SoHAnimSegment83->X3DNode::setName(QString("r_thigh"));
+SoHAnimSegment83->setDEF(QString("hanim_r_thigh"));
+SoTransform* SoTransform84 = new SoTransform();
+SoTransform84->setTranslation(new float[]{-4.207,32.02,-0.8155});
+SoShape* SoShape85 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance86 = new SoVRMLAppearance();
+SoMaterial* SoMaterial87 = new SoMaterial();
+SoMaterial87->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance86->addChild(*SoMaterial87);
+
+SoImageTexture* SoImageTexture88 = new SoImageTexture();
+SoImageTexture88->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance86->addChild(*SoImageTexture88);
+
+SoShape85->addChild(*SoVRMLAppearance86);
+
+SoIndexedFaceSet* SoIndexedFaceSet89 = new SoIndexedFaceSet();
+SoIndexedFaceSet89->setCoordIndex(new int32_t[]{43,44,45,-1,42,43,45,-1,45,46,47,-1,42,45,47,-1,48,42,47,-1,0,7,8,-1,8,1,0,-1,1,8,9,-1,9,2,1,-1,2,9,10,-1,10,3,2,-1,3,10,11,-1,11,4,3,-1,4,11,12,-1,12,5,4,-1,5,12,13,-1,13,6,5,-1,6,13,7,-1,7,0,6,-1,7,14,15,-1,15,8,7,-1,8,15,16,-1,16,9,8,-1,9,16,17,-1,17,10,9,-1,10,17,18,-1,18,11,10,-1,11,18,19,-1,19,12,11,-1,12,19,20,-1,20,13,12,-1,13,20,14,-1,14,7,13,-1,14,21,22,-1,22,15,14,-1,15,22,23,-1,23,16,15,-1,16,23,24,-1,24,17,16,-1,17,24,25,-1,25,18,17,-1,18,25,26,-1,26,19,18,-1,19,26,27,-1,27,20,19,-1,20,27,21,-1,21,14,20,-1,60,59,58,-1,61,60,58,-1,58,57,56,-1,61,58,56,-1,62,61,56,-1,29,22,21,-1,21,28,29,-1,30,23,22,-1,22,29,30,-1,31,24,23,-1,23,30,31,-1,32,25,24,-1,24,31,32,-1,33,26,25,-1,25,32,33,-1,34,27,26,-1,26,33,34,-1,28,21,27,-1,27,34,28,-1,36,29,28,-1,28,35,36,-1,37,30,29,-1,29,36,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,35,28,34,-1,34,41,35,-1,42,0,1,-1,1,43,42,-1,43,1,2,-1,2,44,43,-1,44,2,3,-1,3,45,44,-1,45,3,4,-1,4,46,45,-1,46,4,5,-1,5,47,46,-1,47,5,6,-1,6,48,47,-1,48,6,0,-1,0,42,48,-1,50,36,35,-1,35,49,50,-1,51,37,36,-1,36,50,51,-1,52,38,37,-1,37,51,52,-1,53,39,38,-1,38,52,53,-1,54,40,39,-1,39,53,54,-1,55,41,40,-1,40,54,55,-1,49,35,41,-1,41,55,49,-1,57,50,49,-1,49,56,57,-1,58,51,50,-1,50,57,58,-1,59,52,51,-1,51,58,59,-1,60,53,52,-1,52,59,60,-1,61,54,53,-1,53,60,61,-1,62,55,54,-1,54,61,62,-1,56,49,55,-1,55,62,56,-1}, 488);
+SoIndexedFaceSet89->setCreaseAngle(1.57);
+SoIndexedFaceSet89->setTexCoordIndex(new int32_t[]{0,2,3,-1,1,0,3,-1,3,4,5,-1,1,3,5,-1,6,1,5,-1,7,9,8,-1,8,10,7,-1,10,8,11,-1,11,12,10,-1,12,11,13,-1,13,14,12,-1,14,13,15,-1,15,16,14,-1,16,15,17,-1,17,18,16,-1,18,17,19,-1,19,20,18,-1,20,19,9,-1,9,7,20,-1,9,22,21,-1,21,8,9,-1,8,21,23,-1,23,11,8,-1,11,23,24,-1,24,13,11,-1,13,24,25,-1,25,15,13,-1,15,25,26,-1,26,17,15,-1,17,26,27,-1,27,19,17,-1,19,27,22,-1,22,9,19,-1,22,29,28,-1,28,21,22,-1,21,28,30,-1,30,23,21,-1,23,30,31,-1,31,24,23,-1,24,31,32,-1,32,25,24,-1,25,32,33,-1,33,26,25,-1,26,33,34,-1,34,27,26,-1,27,34,29,-1,29,22,27,-1,46,45,44,-1,47,46,44,-1,44,43,42,-1,47,44,42,-1,48,47,42,-1,35,28,29,-1,29,36,35,-1,37,30,28,-1,28,35,37,-1,38,31,30,-1,30,37,38,-1,39,32,31,-1,31,38,39,-1,40,33,32,-1,32,39,40,-1,41,34,33,-1,33,40,41,-1,36,29,34,-1,34,41,36,-1,51,50,49,-1,49,52,51,-1,54,53,50,-1,50,51,54,-1,56,55,53,-1,53,54,56,-1,58,57,55,-1,55,56,58,-1,60,59,57,-1,57,58,60,-1,62,61,59,-1,59,60,62,-1,52,49,61,-1,61,62,52,-1,1,7,10,-1,10,0,1,-1,0,10,12,-1,12,2,0,-1,2,12,14,-1,14,3,2,-1,3,14,16,-1,16,4,3,-1,4,16,18,-1,18,5,4,-1,5,18,20,-1,20,6,5,-1,6,20,7,-1,7,1,6,-1,63,51,52,-1,52,64,63,-1,65,54,51,-1,51,63,65,-1,66,56,54,-1,54,65,66,-1,67,58,56,-1,56,66,67,-1,68,60,58,-1,58,67,68,-1,69,62,60,-1,60,68,69,-1,64,52,62,-1,62,69,64,-1,43,63,64,-1,64,42,43,-1,44,65,63,-1,63,43,44,-1,45,66,65,-1,65,44,45,-1,46,67,66,-1,66,45,46,-1,47,68,67,-1,67,46,47,-1,48,69,68,-1,68,47,48,-1,42,64,69,-1,69,48,42,-1}, 488);
+SoCoordinate* SoCoordinate90 = new SoCoordinate();
+SoCoordinate90->setPoint(new float[]{-2.96,3.738,0.0,-1.643,3.738,3.209,1.316,3.738,4.002,3.367,3.738,1.781,3.367,3.738,-1.781,1.316,3.738,-4.002,-1.643,3.738,-3.209,-2.96,-0.0114,0.0,-1.643,-0.0114,3.209,1.316,-0.0114,4.002,3.367,-0.0114,1.781,3.367,-0.0114,-1.781,1.316,-0.0114,-4.002,-1.643,-0.0114,-3.209,-2.96,-6.507,0.0,-1.643,-6.507,3.209,1.316,-6.507,4.002,3.367,-6.507,1.781,3.367,-6.507,-1.781,1.316,-6.507,-4.002,-1.643,-6.507,-3.209,-3.367,-13.13,0.0,-1.897,-13.13,3.582,1.407,-13.13,4.467,3.355,-13.13,1.988,3.355,-13.13,-1.988,1.407,-13.13,-4.467,-1.897,-13.13,-3.582,-2.146,-4.985,0.0,-1.136,-4.985,2.462,1.135,-4.985,3.07,2.633,-4.985,1.366,2.633,-4.985,-1.366,1.135,-4.985,-3.07,-1.136,-4.985,-2.462,-2.156,-11.45,0.0,-1.225,-11.45,1.956,0.8662,-11.45,2.439,2.543,-11.45,1.085,2.543,-11.45,-1.085,0.8662,-11.45,-2.439,-1.225,-11.45,-1.956,-2.051,5.729,0.0,-1.076,5.729,2.375,1.114,5.729,2.961,2.87,5.729,1.318,2.87,5.729,-1.318,1.114,5.729,-2.961,-1.076,5.729,-2.375,-1.842,-15.12,0.0,-1.03,-15.12,1.873,0.7965,-15.12,2.295,2.261,-15.12,1.113,2.261,-15.12,-0.9478,0.7965,-15.12,-2.13,-1.03,-15.12,-1.708,-0.6277,-16.1,0.0,-0.2723,-16.1,0.912,0.5262,-16.1,1.096,1.167,-16.1,0.5796,1.167,-16.1,-0.4145,0.5262,-16.1,-0.9313,-0.2723,-16.1,-0.7469}, 189);
+SoIndexedFaceSet89->setCoord(*SoCoordinate90);
+
+SoTextureCoordinate* SoTextureCoordinate91 = new SoTextureCoordinate();
+SoTextureCoordinate91->setPoint(new float[]{0.719,0.5576,0.6284,0.5576,0.7414,0.5576,0.6787,0.5576,0.5781,0.5576,0.5154,0.5576,0.5378,0.5576,0.6284,0.5029,0.7509,0.3997,0.6284,0.3997,0.7509,0.5029,0.7811,0.3997,0.7811,0.5029,0.6964,0.3997,0.6964,0.5029,0.5604,0.3997,0.5604,0.5029,0.4756,0.3997,0.4756,0.5029,0.5059,0.3997,0.5059,0.5029,0.7509,0.3197,0.6284,0.3197,0.7811,0.3197,0.6964,0.3197,0.5604,0.3197,0.4756,0.3197,0.5059,0.3197,0.7651,0.2166,0.6284,0.2166,0.7989,0.2166,0.7043,0.2166,0.5525,0.2166,0.4579,0.2166,0.4917,0.2166,0.7224,0.263,0.6284,0.263,0.7456,0.263,0.6805,0.263,0.5762,0.263,0.5112,0.263,0.5344,0.263,0.8705,0.5452,0.8705,0.5383,0.8705,0.5369,0.8705,0.5408,0.8705,0.5483,0.8705,0.5522,0.8705,0.5509,0.917,0.5452,0.917,0.5266,0.89,0.5304,0.89,0.5452,0.917,0.522,0.89,0.5268,0.917,0.5349,0.89,0.537,0.917,0.5555,0.89,0.5534,0.917,0.5684,0.89,0.5636,0.917,0.5638,0.89,0.56,0.8746,0.531,0.8746,0.5452,0.8746,0.5279,0.8746,0.5368,0.8746,0.5524,0.8746,0.5613,0.8746,0.5581}, 140);
+SoIndexedFaceSet89->setTexCoord(*SoTextureCoordinate91);
+
+SoShape85->setGeometry(*SoIndexedFaceSet89);
+
+SoTransform84->addChild(*SoShape85);
+
+SoHAnimSegment83->addChild(*SoTransform84);
+
+SoHAnimJoint82->addChildren(*SoHAnimSegment83);
+
+SoHAnimJoint* SoHAnimJoint92 = new SoHAnimJoint();
+SoHAnimJoint92->X3DNode::setName(QString("r_knee"));
+SoHAnimJoint92->setDEF(QString("hanim_r_knee"));
+SoHAnimJoint92->setCenter(new float[]{-4.116,17.26,-0.8639});
+SoHAnimJoint92->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint92->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment93 = new SoHAnimSegment();
+SoHAnimSegment93->X3DNode::setName(QString("r_calf"));
+SoHAnimSegment93->setDEF(QString("hanim_r_calf"));
+SoTransform* SoTransform94 = new SoTransform();
+SoTransform94->setTranslation(new float[]{-4.116,17.26,-0.8639});
+SoShape* SoShape95 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance96 = new SoVRMLAppearance();
+SoMaterial* SoMaterial97 = new SoMaterial();
+SoMaterial97->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance96->addChild(*SoMaterial97);
+
+SoImageTexture* SoImageTexture98 = new SoImageTexture();
+SoImageTexture98->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance96->addChild(*SoImageTexture98);
+
+SoShape95->addChild(*SoVRMLAppearance96);
+
+SoIndexedFaceSet* SoIndexedFaceSet99 = new SoIndexedFaceSet();
+SoIndexedFaceSet99->setCoordIndex(new int32_t[]{0,1,2,-1,2,3,4,-1,2,4,5,-1,0,2,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1}, 300);
+SoIndexedFaceSet99->setCreaseAngle(1.57);
+SoIndexedFaceSet99->setTexCoordIndex(new int32_t[]{0,1,2,-1,2,3,4,-1,2,4,5,-1,0,2,5,-1,6,0,5,-1,9,10,7,-1,7,8,9,-1,12,9,8,-1,8,11,12,-1,14,12,11,-1,11,13,14,-1,16,14,13,-1,13,15,16,-1,18,16,15,-1,15,17,18,-1,20,18,17,-1,17,19,20,-1,10,20,19,-1,19,7,10,-1,21,22,10,-1,10,9,21,-1,23,21,9,-1,9,12,23,-1,24,23,12,-1,12,14,24,-1,25,24,14,-1,14,16,25,-1,26,25,16,-1,16,18,26,-1,27,26,18,-1,18,20,27,-1,22,27,20,-1,20,10,22,-1,1,0,22,-1,22,21,1,-1,2,1,21,-1,21,23,2,-1,3,2,23,-1,23,24,3,-1,4,3,24,-1,24,25,4,-1,5,4,25,-1,25,26,5,-1,6,5,26,-1,26,27,6,-1,0,6,27,-1,27,22,0,-1,8,7,28,-1,28,29,8,-1,11,8,29,-1,29,30,11,-1,13,11,30,-1,30,31,13,-1,15,13,31,-1,31,32,15,-1,17,15,32,-1,32,33,17,-1,19,17,33,-1,33,34,19,-1,7,19,34,-1,34,28,7,-1,29,28,35,-1,35,36,29,-1,30,29,36,-1,36,37,30,-1,31,30,37,-1,37,38,31,-1,32,31,38,-1,38,39,32,-1,33,32,39,-1,39,40,33,-1,34,33,40,-1,40,41,34,-1,28,34,41,-1,41,35,28,-1}, 300);
+SoCoordinate* SoCoordinate100 = new SoCoordinate();
+SoCoordinate100->setPoint(new float[]{-0.7186,0.9688,0.0234,-0.3632,0.9688,0.9354,0.4353,0.9688,1.12,1.076,0.9688,0.603,1.076,0.9688,-0.3911,0.4353,0.9688,-0.9079,-0.3632,0.9688,-0.7235,-2.337,-4.613,0.0234,-1.46,-3.622,2.019,-1.236,-1.628,2.42,-2.118,-1.912,0.0234,0.8111,-3.622,2.567,0.7468,-1.628,2.903,2.254,-4.613,1.255,2.337,-1.912,0.9793,2.254,-5.383,-1.368,2.337,-1.912,-0.9325,0.8111,-5.383,-2.903,0.7468,-1.912,-2.368,-1.46,-5.383,-2.355,-1.236,-1.912,-1.885,-1.121,-0.0032,1.896,-1.933,-0.0032,0.0234,0.7056,-0.0032,2.318,2.17,-0.0032,1.136,2.17,-0.0032,-0.9244,0.7056,-0.0032,-2.061,-1.121,-0.0032,-1.64,-1.607,-12.92,0.0032,-0.9216,-12.91,1.565,0.619,-12.91,1.951,1.854,-12.92,0.8701,1.854,-12.94,-0.9762,0.619,-12.94,-1.742,-0.9216,-12.94,-1.356,-0.7072,-14.53,0.0239,-0.3604,-14.53,0.814,0.4188,-14.53,1.009,1.044,-14.53,0.4624,1.044,-14.54,-0.4714,0.4188,-14.54,-0.8587,-0.3604,-14.54,-0.6635}, 126);
+SoIndexedFaceSet99->setCoord(*SoCoordinate100);
+
+SoTextureCoordinate* SoTextureCoordinate101 = new SoTextureCoordinate();
+SoTextureCoordinate101->setPoint(new float[]{0.9309,0.5848,0.919,0.5848,0.8921,0.5848,0.8706,0.5848,0.8706,0.5848,0.8921,0.5848,0.919,0.5848,0.9845,0.5321,0.955,0.5475,0.9491,0.5599,0.9788,0.5571,0.8787,0.5475,0.8825,0.5599,0.8302,0.5321,0.8291,0.5571,0.8302,0.52,0.8291,0.5571,0.8787,0.52,0.8825,0.5571,0.955,0.52,0.9491,0.5571,0.9444,0.5755,0.9717,0.5755,0.8831,0.5755,0.8339,0.5755,0.8339,0.5755,0.8831,0.5755,0.9444,0.5755,0.9679,0.2444,0.9449,0.2445,0.8931,0.2445,0.8516,0.2444,0.8516,0.2442,0.8931,0.2442,0.9449,0.2442,0.9372,0.2243,0.9255,0.2244,0.8993,0.2244,0.8783,0.2243,0.8783,0.2243,0.8993,0.2243,0.9255,0.2243}, 84);
+SoIndexedFaceSet99->setTexCoord(*SoTextureCoordinate101);
+
+SoShape95->setGeometry(*SoIndexedFaceSet99);
+
+SoTransform94->addChild(*SoShape95);
+
+SoHAnimSegment93->addChild(*SoTransform94);
+
+SoHAnimJoint92->addChildren(*SoHAnimSegment93);
+
+SoHAnimJoint* SoHAnimJoint102 = new SoHAnimJoint();
+SoHAnimJoint102->X3DNode::setName(QString("r_talocrural"));
+SoHAnimJoint102->setDEF(QString("hanim_r_talocrural"));
+SoHAnimJoint102->setCenter(new float[]{-3.854,3.939,-0.7038});
+SoHAnimJoint102->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint102->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment103 = new SoHAnimSegment();
+SoHAnimSegment103->X3DNode::setName(QString("r_talus"));
+SoHAnimSegment103->setDEF(QString("hanim_r_talus"));
+SoTransform* SoTransform104 = new SoTransform();
+SoTransform104->setTranslation(new float[]{-3.854,3.939,-0.7038});
+SoShape* SoShape105 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance106 = new SoVRMLAppearance();
+SoMaterial* SoMaterial107 = new SoMaterial();
+SoMaterial107->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance106->addChild(*SoMaterial107);
+
+SoImageTexture* SoImageTexture108 = new SoImageTexture();
+SoImageTexture108->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance106->addChild(*SoImageTexture108);
+
+SoShape105->addChild(*SoVRMLAppearance106);
+
+SoIndexedFaceSet* SoIndexedFaceSet109 = new SoIndexedFaceSet();
+SoIndexedFaceSet109->setCoordIndex(new int32_t[]{1,14,11,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,11,6,3,-1,3,1,11,-1,15,12,0,-1,0,2,15,-1,0,12,13,-1,13,1,0,-1,13,14,1,-1,7,11,18,-1,8,9,5,-1,5,6,8,-1,7,10,9,-1,9,8,7,-1,10,2,5,-1,5,9,10,-1,11,7,8,-1,8,6,11,-1,15,2,10,-1,10,16,15,-1,10,7,17,-1,17,16,10,-1,17,7,18,-1,19,26,25,-1,25,24,23,-1,19,25,23,-1,23,22,21,-1,19,23,21,-1,20,19,21,-1,15,19,20,-1,20,12,15,-1,12,20,21,-1,21,13,12,-1,13,21,22,-1,22,14,13,-1,14,22,23,-1,23,11,14,-1,11,23,24,-1,24,18,11,-1,18,24,25,-1,25,17,18,-1,17,25,26,-1,26,16,17,-1,16,26,19,-1,19,15,16,-1,33,27,30,-1,30,31,33,-1,36,38,30,-1,30,27,36,-1,29,28,27,-1,27,33,29,-1,37,36,27,-1,27,28,37,-1,28,29,42,-1,42,37,28,-1,33,31,34,-1,34,32,33,-1,39,32,34,-1,34,40,39,-1,29,33,32,-1,32,35,29,-1,41,35,32,-1,32,39,41,-1,35,41,42,-1,42,29,35,-1,44,43,47,-1,44,47,46,-1,44,46,45,-1,51,50,49,-1,49,48,54,-1,49,54,53,-1,51,49,53,-1,51,53,52,-1,30,43,44,-1,44,31,30,-1,31,44,45,-1,45,34,31,-1,34,45,46,-1,46,40,34,-1,40,46,47,-1,47,38,40,-1,38,47,43,-1,43,30,38,-1,37,48,49,-1,49,36,37,-1,36,49,50,-1,50,38,36,-1,38,50,51,-1,51,40,38,-1,40,51,52,-1,52,39,40,-1,39,52,53,-1,53,41,39,-1,41,53,54,-1,54,42,41,-1,42,54,48,-1,48,37,42,-1}, 408);
+SoIndexedFaceSet109->setCreaseAngle(1.57);
+SoIndexedFaceSet109->setTexCoordIndex(new int32_t[]{1,18,14,-1,3,6,5,-1,5,4,3,-1,1,3,4,-1,4,0,1,-1,0,4,5,-1,5,2,0,-1,14,6,3,-1,3,1,14,-1,19,16,0,-1,0,2,19,-1,0,16,17,-1,17,1,0,-1,17,18,1,-1,7,15,23,-1,9,10,11,-1,11,8,9,-1,7,12,10,-1,10,9,7,-1,12,13,11,-1,11,10,12,-1,15,7,9,-1,9,8,15,-1,20,13,12,-1,12,21,20,-1,12,7,22,-1,22,21,12,-1,22,7,23,-1,24,31,30,-1,30,29,28,-1,24,30,28,-1,28,27,26,-1,24,28,26,-1,25,24,26,-1,19,24,25,-1,25,16,19,-1,16,25,26,-1,26,17,16,-1,17,26,27,-1,27,18,17,-1,18,27,28,-1,28,14,18,-1,15,28,29,-1,29,23,15,-1,23,29,30,-1,30,22,23,-1,22,30,31,-1,31,21,22,-1,21,31,24,-1,24,20,21,-1,34,32,37,-1,37,38,34,-1,46,48,37,-1,37,32,46,-1,35,33,32,-1,32,34,35,-1,47,46,32,-1,32,33,47,-1,33,36,53,-1,53,47,33,-1,40,41,42,-1,42,39,40,-1,49,39,42,-1,42,50,49,-1,44,40,39,-1,39,43,44,-1,51,43,39,-1,39,49,51,-1,43,51,52,-1,52,45,43,-1,55,54,58,-1,55,58,57,-1,55,57,56,-1,62,61,60,-1,60,59,65,-1,60,65,64,-1,62,60,64,-1,62,64,63,-1,37,54,55,-1,55,38,37,-1,41,55,56,-1,56,42,41,-1,42,56,57,-1,57,50,42,-1,50,57,58,-1,58,48,50,-1,48,58,54,-1,54,37,48,-1,47,59,60,-1,60,46,47,-1,46,60,61,-1,61,48,46,-1,48,61,62,-1,62,50,48,-1,50,62,63,-1,63,49,50,-1,49,63,64,-1,64,51,49,-1,51,64,65,-1,65,52,51,-1,53,65,59,-1,59,47,53,-1}, 408);
+SoCoordinate* SoCoordinate110 = new SoCoordinate();
+SoCoordinate110->setPoint(new float[]{-0.9768,-0.0192,-1.681,-1.657,-0.0192,0.4309,0.0,-0.0192,-1.681,-1.403,0.7316,0.354,-0.8174,0.7316,-1.463,0.0,0.7316,-1.463,0.0,0.7316,1.471,1.657,-0.0192,0.4309,1.403,0.7316,0.354,0.8174,0.7316,-1.463,0.9768,-0.0192,-1.681,0.0,-0.0192,1.75,-1.109,-0.6007,-2.046,-2.045,-0.6007,0.4309,-1.695,-0.296,1.429,0.0,-0.6007,-2.046,1.109,-0.6007,-2.046,2.045,-0.6007,0.4309,1.695,-0.296,1.429,0.0,-1.207,-1.841,-1.023,-1.207,-1.841,-1.913,-1.223,0.5161,-1.601,-0.9325,1.406,0.0,-0.6582,1.708,1.601,-0.9325,1.406,1.913,-1.223,0.5161,1.023,-1.207,-1.841,-1.409,-1.925,-2.878,-1.409,-3.947,-1.681,0.0,-3.947,-1.681,-1.109,-0.6007,-2.046,0.0,-0.6007,-2.046,1.409,-1.925,-2.878,0.0,-1.925,-2.878,1.109,-0.6007,-2.046,1.409,-3.947,-1.681,-2.927,-1.925,0.4309,-2.089,-3.947,0.4309,-2.045,-0.6007,0.4309,2.927,-1.925,0.4309,2.045,-0.6007,0.4309,2.089,-3.947,0.4309,0.0,-3.947,0.4309,-0.9442,-0.3153,-1.692,0.0,-0.3153,-1.692,0.9442,-0.3153,-1.692,1.7,-0.3153,0.3093,-1.7,-0.3153,0.3093,-1.86,-3.793,1.364,-2.541,-1.963,1.364,-1.861,-0.9431,1.364,1.861,-0.9431,1.364,2.541,-1.963,1.364,1.86,-3.793,1.364,0.0,-3.793,1.364}, 165);
+SoIndexedFaceSet109->setCoord(*SoCoordinate110);
+
+SoTextureCoordinate* SoTextureCoordinate111 = new SoTextureCoordinate();
+SoTextureCoordinate111->setPoint(new float[]{0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4216,0.1651,0.4637,0.1714,0.4216,0.1651,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.3819,0.171,0.4637,0.1714,0.4637,0.1714,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4394,0.1472,0.4637,0.1714,0.4394,0.1472,0.4244,0.1312,0.3861,0.1398,0.3873,0.0706,0.3871,0.0221,0.3873,0.0706,0.3871,0.0221,0.3871,0.0221,0.3861,0.1398,0.3836,0.1404,0.3873,0.0706,0.3873,0.0706,0.3836,0.1404,0.3861,0.1398,0.3871,0.0221,0.3871,0.0221,0.3871,0.0221,0.433,0.0595,0.4411,0.0186,0.4244,0.1312,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.3861,0.1398,0.3836,0.1404,0.3861,0.1398,0.4244,0.1312,0.4244,0.1312,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.433,0.0595,0.4411,0.0186,0.4411,0.0186}, 132);
+SoIndexedFaceSet109->setTexCoord(*SoTextureCoordinate111);
+
+SoShape105->setGeometry(*SoIndexedFaceSet109);
+
+SoTransform104->addChild(*SoShape105);
+
+SoHAnimSegment103->addChild(*SoTransform104);
+
+SoHAnimJoint102->addChildren(*SoHAnimSegment103);
+
+SoHAnimJoint* SoHAnimJoint112 = new SoHAnimJoint();
+SoHAnimJoint112->X3DNode::setName(QString("r_metatarsophalangeal_2"));
+SoHAnimJoint112->setDEF(QString("hanim_r_metatarsophalangeal_2"));
+SoHAnimJoint112->setCenter(new float[]{-3.854,3.64,0.7402});
+SoHAnimJoint112->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint112->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment113 = new SoHAnimSegment();
+SoHAnimSegment113->X3DNode::setName(QString("r_tarsal_proximal_phalanx_2"));
+SoHAnimSegment113->setDEF(QString("hanim_r_tarsal_proximal_phalanx_2"));
+SoTransform* SoTransform114 = new SoTransform();
+SoTransform114->setTranslation(new float[]{-3.854,3.64,0.7402});
+SoShape* SoShape115 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance116 = new SoVRMLAppearance();
+SoMaterial* SoMaterial117 = new SoMaterial();
+SoMaterial117->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance116->addChild(*SoMaterial117);
+
+SoImageTexture* SoImageTexture118 = new SoImageTexture();
+SoImageTexture118->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance116->addChild(*SoImageTexture118);
+
+SoShape115->addChild(*SoVRMLAppearance116);
+
+SoIndexedFaceSet* SoIndexedFaceSet119 = new SoIndexedFaceSet();
+SoIndexedFaceSet119->setCoordIndex(new int32_t[]{10,4,3,-1,11,10,3,-1,0,11,3,-1,1,12,11,-1,11,0,1,-1,1,9,16,-1,16,12,1,-1,2,4,10,-1,10,17,2,-1,6,8,13,-1,6,13,14,-1,5,6,14,-1,7,5,14,-1,14,15,7,-1,7,15,16,-1,16,9,7,-1,2,17,13,-1,13,8,2,-1,19,18,24,-1,22,21,20,-1,23,22,20,-1,24,23,20,-1,19,24,20,-1,0,18,19,-1,19,1,0,-1,1,19,20,-1,20,9,1,-1,9,20,21,-1,21,7,9,-1,7,21,22,-1,22,5,7,-1,5,22,23,-1,23,6,5,-1,6,23,24,-1,24,3,6,-1,3,24,18,-1,18,0,3,-1,2,8,6,-1,2,6,3,-1,4,2,3,-1,28,29,25,-1,25,26,28,-1,35,28,26,-1,26,27,35,-1,27,40,35,-1,25,30,31,-1,31,26,25,-1,31,32,27,-1,27,26,31,-1,32,41,40,-1,40,27,32,-1,42,30,25,-1,25,29,42,-1,28,33,34,-1,34,29,28,-1,35,36,33,-1,33,28,35,-1,36,35,40,-1,34,33,38,-1,38,37,34,-1,38,33,36,-1,36,39,38,-1,39,36,40,-1,40,41,39,-1,42,29,34,-1,34,37,42,-1}, 264);
+SoIndexedFaceSet119->setCreaseAngle(1.57);
+SoIndexedFaceSet119->setTexCoordIndex(new int32_t[]{12,5,4,-1,13,12,4,-1,0,13,4,-1,1,14,13,-1,13,0,1,-1,1,3,19,-1,19,14,1,-1,2,5,12,-1,12,21,2,-1,7,10,15,-1,7,15,16,-1,6,7,16,-1,8,6,16,-1,16,17,8,-1,8,17,18,-1,18,11,8,-1,9,20,15,-1,15,10,9,-1,23,22,28,-1,26,25,24,-1,27,26,24,-1,28,27,24,-1,23,28,24,-1,0,22,23,-1,23,1,0,-1,1,23,24,-1,24,3,1,-1,11,24,25,-1,25,8,11,-1,8,25,26,-1,26,6,8,-1,6,26,27,-1,27,7,6,-1,7,27,28,-1,28,4,7,-1,4,28,22,-1,22,0,4,-1,9,10,7,-1,9,7,4,-1,5,9,4,-1,30,29,31,-1,31,32,30,-1,33,30,32,-1,32,34,33,-1,34,35,33,-1,31,36,37,-1,37,32,31,-1,37,38,34,-1,34,32,37,-1,38,39,35,-1,35,34,38,-1,40,36,31,-1,31,29,40,-1,41,42,43,-1,43,44,41,-1,45,46,42,-1,42,41,45,-1,46,45,50,-1,43,42,48,-1,48,47,43,-1,48,42,46,-1,46,49,48,-1,49,46,50,-1,50,51,49,-1,52,44,43,-1,43,47,52,-1}, 264);
+SoCoordinate* SoCoordinate120 = new SoCoordinate();
+SoCoordinate120->setPoint(new float[]{-2.927,-1.627,-1.013,-2.089,-3.648,-1.013,0.0,0.2797,0.3064,-2.045,-0.3017,-1.013,-1.695,0.0029,-0.0151,2.927,-1.627,-1.013,2.045,-0.3017,-1.013,2.089,-3.648,-1.013,1.695,0.0029,-0.0151,0.0,-3.648,-1.013,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,0.0,-3.648,0.9192,0.0,-0.0274,1.661,-2.405,-1.656,-1.915,-1.75,-2.942,-1.915,0.0,-2.942,-1.915,1.75,-2.942,-1.915,2.405,-1.656,-1.915,1.742,-0.5681,-1.915,-1.742,-0.5681,-1.915,-1.784,-0.648,2.332,-2.216,-2.267,4.144,-2.216,-3.648,3.776,0.0,-2.267,5.463,0.0,-0.5463,3.95,-1.74,-0.3226,1.158,-2.661,-1.866,0.9192,-2.14,-3.648,0.9192,2.216,-2.267,4.144,1.784,-0.648,2.332,0.0,-3.648,5.096,2.216,-3.648,3.776,1.74,-0.3226,1.158,2.661,-1.866,0.9192,2.14,-3.648,0.9192,0.0,-3.648,3.776,0.0,-3.648,0.9192,0.0,-0.0274,1.661}, 129);
+SoIndexedFaceSet119->setCoord(*SoCoordinate120);
+
+SoTextureCoordinate* SoTextureCoordinate121 = new SoTextureCoordinate();
+SoTextureCoordinate121->setPoint(new float[]{0.433,0.0595,0.4411,0.0186,0.4637,0.1714,0.4411,0.0186,0.4244,0.1312,0.4394,0.1472,0.433,0.0595,0.4244,0.1312,0.4411,0.0186,0.4637,0.1714,0.4394,0.1472,0.4411,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4949,0.0186,0.4868,0.1432,0.4868,0.1432,0.433,0.0595,0.4411,0.0186,0.4411,0.0186,0.4411,0.0186,0.433,0.0595,0.4244,0.1312,0.4244,0.1312,0.532,0.098,0.5645,0.0707,0.4885,0.102,0.5026,0.044,0.5945,0.0186,0.5487,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.4949,0.0186,0.4868,0.1432,0.5645,0.0707,0.5026,0.044,0.4885,0.102,0.532,0.098,0.5945,0.0186,0.5487,0.0186,0.464,0.1246,0.4607,0.0558,0.4904,0.0166,0.5487,0.0186,0.4949,0.0186,0.4868,0.1432}, 106);
+SoIndexedFaceSet119->setTexCoord(*SoTextureCoordinate121);
+
+SoShape115->setGeometry(*SoIndexedFaceSet119);
+
+SoTransform114->addChild(*SoShape115);
+
+SoHAnimSegment113->addChild(*SoTransform114);
+
+SoHAnimJoint112->addChildren(*SoHAnimSegment113);
+
+SoHAnimJoint102->addChildren(*SoHAnimJoint112);
+
+SoHAnimJoint92->addChildren(*SoHAnimJoint102);
+
+SoHAnimJoint82->addChildren(*SoHAnimJoint92);
+
+SoHAnimJoint32->addChildren(*SoHAnimJoint82);
+
+SoHAnimJoint* SoHAnimJoint122 = new SoHAnimJoint();
+SoHAnimJoint122->X3DNode::setName(QString("sacroiliac"));
+SoHAnimJoint122->setDEF(QString("hanim_sacroiliac"));
+SoHAnimJoint122->setCenter(new float[]{0.0,30.530001,-0.7076});
+SoHAnimJoint122->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint122->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment123 = new SoHAnimSegment();
+SoHAnimSegment123->X3DNode::setName(QString("pelvis"));
+SoHAnimSegment123->setDEF(QString("hanim_pelvis"));
+SoTransform* SoTransform124 = new SoTransform();
+SoTransform124->setTranslation(new float[]{0.0,30.530001,-0.7076});
+SoShape* SoShape125 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance126 = new SoVRMLAppearance();
+SoMaterial* SoMaterial127 = new SoMaterial();
+SoMaterial127->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance126->addChild(*SoMaterial127);
+
+SoImageTexture* SoImageTexture128 = new SoImageTexture();
+SoImageTexture128->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance126->addChild(*SoImageTexture128);
+
+SoShape125->addChild(*SoVRMLAppearance126);
+
+SoIndexedFaceSet* SoIndexedFaceSet129 = new SoIndexedFaceSet();
+SoIndexedFaceSet129->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
+SoIndexedFaceSet129->setCreaseAngle(1.57);
+SoIndexedFaceSet129->setTexCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,14,2,1,-1,1,13,14,-1,15,3,2,-1,2,14,15,-1,16,4,3,-1,3,15,16,-1,17,5,4,-1,4,16,17,-1,18,6,5,-1,5,17,18,-1,19,7,6,-1,6,18,19,-1,20,8,7,-1,7,19,20,-1,21,9,8,-1,8,20,21,-1,22,10,9,-1,9,21,22,-1,23,11,10,-1,10,22,23,-1,24,12,11,-1,11,23,24,-1,13,1,12,-1,12,24,13,-1,26,14,13,-1,13,25,26,-1,27,15,14,-1,14,26,27,-1,28,16,15,-1,15,27,28,-1,29,17,16,-1,16,28,29,-1,30,18,17,-1,17,29,30,-1,31,19,18,-1,18,30,31,-1,32,20,19,-1,19,31,32,-1,33,21,20,-1,20,32,33,-1,34,22,21,-1,21,33,34,-1,35,23,22,-1,22,34,35,-1,36,24,23,-1,23,35,36,-1,25,13,24,-1,24,36,25,-1,38,26,25,-1,25,37,38,-1,39,27,26,-1,26,38,39,-1,40,28,27,-1,27,39,40,-1,41,29,28,-1,28,40,41,-1,42,30,29,-1,29,41,42,-1,43,31,30,-1,30,42,43,-1,44,32,31,-1,31,43,44,-1,45,33,32,-1,32,44,45,-1,46,34,33,-1,33,45,46,-1,47,35,34,-1,34,46,47,-1,48,36,35,-1,35,47,48,-1,37,25,36,-1,36,48,37,-1,50,38,37,-1,37,49,50,-1,51,39,38,-1,38,50,51,-1,52,40,39,-1,39,51,52,-1,53,41,40,-1,40,52,53,-1,54,42,41,-1,41,53,54,-1,55,43,42,-1,42,54,55,-1,56,44,43,-1,43,55,56,-1,57,45,44,-1,44,56,57,-1,58,46,45,-1,45,57,58,-1,59,47,46,-1,46,58,59,-1,60,48,47,-1,47,59,60,-1,49,37,48,-1,48,60,49,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
+SoCoordinate* SoCoordinate130 = new SoCoordinate();
+SoCoordinate130->setPoint(new float[]{0.0,10.79,0.1424,0.0,10.06,-2.825,-2.283,10.06,-2.428,-3.954,10.06,-1.948,-4.566,10.06,0.1424,-3.954,10.06,2.233,-2.283,10.06,2.712,0.0,10.06,3.11,2.283,10.06,2.712,3.954,10.06,2.233,4.566,10.06,0.1424,3.954,10.06,-1.948,2.283,10.06,-2.428,0.0,8.045,-4.614,-2.953,8.045,-3.977,-5.114,8.045,-2.236,-5.905,8.045,0.1424,-5.114,8.045,2.521,-2.953,8.045,3.645,0.0,8.045,4.282,2.953,8.045,3.645,5.114,8.045,2.521,5.905,8.045,0.1424,5.114,8.045,-2.236,2.953,8.045,-3.977,0.0,5.297,-5.018,-3.409,5.297,-4.282,-5.905,5.297,-2.272,-6.819,5.297,0.1424,-5.905,5.297,2.889,-3.409,5.297,4.282,0.0,5.297,5.018,3.409,5.297,4.282,5.905,5.297,2.889,6.819,5.297,0.1424,5.905,5.297,-2.272,3.409,5.297,-4.282,0.0,2.548,-4.282,-2.953,2.548,-3.645,-5.114,2.548,-1.904,-5.905,2.548,0.1424,-5.114,2.548,2.521,-2.953,2.548,3.645,0.0,2.548,4.282,2.953,2.548,3.645,5.114,2.548,2.521,5.905,2.548,0.1424,5.114,2.548,-1.904,2.953,2.548,-3.645,0.0,0.5362,-2.272,-1.705,0.5362,-1.904,-2.953,0.5362,-1.231,-3.409,0.5362,0.1424,-2.953,0.5362,1.516,-1.705,0.5362,2.521,0.0,0.5362,2.889,1.705,0.5362,2.521,2.953,0.5362,1.516,3.409,0.5362,0.1424,2.953,0.5362,-1.231,1.705,0.5362,-1.904,0.0,-0.2003,0.1424}, 186);
+SoIndexedFaceSet129->setCoord(*SoCoordinate130);
+
+SoTextureCoordinate* SoTextureCoordinate131 = new SoTextureCoordinate();
+SoTextureCoordinate131->setPoint(new float[]{0.6211,0.5754,0.7851,0.572,0.7614,0.572,0.6907,0.5698,0.62,0.5698,0.6158,0.5702,0.5451,0.5702,0.4167,0.5698,0.5451,0.5702,0.6158,0.5702,0.62,0.5698,0.6907,0.5698,0.7614,0.572,0.8036,0.5346,0.7761,0.5346,0.6989,0.4838,0.6219,0.4428,0.6154,0.4438,0.5492,0.4639,0.4166,0.5346,0.5492,0.4639,0.6154,0.4438,0.6219,0.4428,0.6989,0.4838,0.7761,0.5346,0.7912,0.4044,0.7635,0.4044,0.7042,0.3925,0.6194,0.3907,0.6148,0.3907,0.545,0.3974,0.4163,0.4938,0.545,0.3974,0.6148,0.3907,0.6194,0.3907,0.7042,0.3925,0.7635,0.4044,0.795,0.3772,0.7662,0.3772,0.6945,0.3645,0.6236,0.3695,0.616,0.3695,0.5438,0.378,0.416,0.453,0.5438,0.378,0.616,0.3695,0.6236,0.3695,0.6945,0.3645,0.7662,0.3772,0.7887,0.3451,0.7635,0.3451,0.698,0.3508,0.6262,0.3508,0.6297,0.3503,0.5389,0.3503,0.4181,0.3884,0.5389,0.3503,0.6297,0.3503,0.6262,0.3508,0.698,0.3508,0.7635,0.3451,0.6237,0.3398}, 124);
+SoIndexedFaceSet129->setTexCoord(*SoTextureCoordinate131);
+
+SoShape125->setGeometry(*SoIndexedFaceSet129);
+
+SoTransform124->addChild(*SoShape125);
+
+SoHAnimSegment123->addChild(*SoTransform124);
+
+SoHAnimJoint122->addChildren(*SoHAnimSegment123);
+
+SoHAnimJoint* SoHAnimJoint132 = new SoHAnimJoint();
+SoHAnimJoint132->X3DNode::setName(QString("l_shoulder"));
+SoHAnimJoint132->setDEF(QString("hanim_l_shoulder"));
+SoHAnimJoint132->setCenter(new float[]{5.975,52.0,-0.1452});
+SoHAnimJoint132->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint132->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment133 = new SoHAnimSegment();
+SoHAnimSegment133->X3DNode::setName(QString("l_upperarm"));
+SoHAnimSegment133->setDEF(QString("hanim_l_upperarm"));
+SoTransform* SoTransform134 = new SoTransform();
+SoTransform134->setTranslation(new float[]{5.975,52.0,-0.1452});
+SoShape* SoShape135 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance136 = new SoVRMLAppearance();
+SoMaterial* SoMaterial137 = new SoMaterial();
+SoMaterial137->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance136->addChild(*SoMaterial137);
+
+SoImageTexture* SoImageTexture138 = new SoImageTexture();
+SoImageTexture138->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance136->addChild(*SoImageTexture138);
+
+SoShape135->addChild(*SoVRMLAppearance136);
+
+SoIndexedFaceSet* SoIndexedFaceSet139 = new SoIndexedFaceSet();
+SoIndexedFaceSet139->setCoordIndex(new int32_t[]{2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,36,37,38,-1,35,36,38,-1,39,35,38,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1,26,25,20,-1,20,21,26,-1,27,26,21,-1,21,22,27,-1,28,27,22,-1,22,23,28,-1,29,28,23,-1,23,24,29,-1,25,29,24,-1,24,20,25,-1,31,30,25,-1,25,26,31,-1,32,31,26,-1,26,27,32,-1,33,32,27,-1,27,28,33,-1,34,33,28,-1,28,29,34,-1,30,34,29,-1,29,25,30,-1,36,35,30,-1,30,31,36,-1,37,36,31,-1,31,32,37,-1,38,37,32,-1,32,33,38,-1,39,38,33,-1,33,34,39,-1,35,39,34,-1,34,30,35,-1}, 304);
+SoIndexedFaceSet139->setCreaseAngle(1.57);
+SoIndexedFaceSet139->setTexCoordIndex(new int32_t[]{2,0,1,-1,3,2,1,-1,61,3,1,-1,1,0,5,-1,5,6,1,-1,0,2,7,-1,7,5,0,-1,2,3,8,-1,8,7,2,-1,25,4,9,-1,9,26,25,-1,4,1,6,-1,6,9,4,-1,6,5,10,-1,10,11,6,-1,5,7,12,-1,12,10,5,-1,7,8,13,-1,13,12,7,-1,27,9,14,-1,14,28,27,-1,9,6,11,-1,11,14,9,-1,11,10,15,-1,15,16,11,-1,10,12,17,-1,17,15,10,-1,12,13,18,-1,18,17,12,-1,29,14,19,-1,19,30,29,-1,14,11,16,-1,16,19,14,-1,54,35,36,-1,53,54,36,-1,37,53,36,-1,20,21,16,-1,16,15,20,-1,22,20,15,-1,15,17,22,-1,23,22,17,-1,17,18,23,-1,24,32,31,-1,31,19,24,-1,21,24,19,-1,19,16,21,-1,40,41,38,-1,38,39,40,-1,43,56,55,-1,55,42,43,-1,45,43,42,-1,42,44,45,-1,47,45,44,-1,44,46,47,-1,41,47,46,-1,46,38,41,-1,48,49,41,-1,41,40,48,-1,50,58,57,-1,57,43,50,-1,51,50,43,-1,43,45,51,-1,52,51,45,-1,45,47,52,-1,49,52,47,-1,47,41,49,-1,34,33,49,-1,49,48,34,-1,35,60,59,-1,59,50,35,-1,36,35,50,-1,50,51,36,-1,37,36,51,-1,51,52,37,-1,33,37,52,-1,52,49,33,-1}, 304);
+SoCoordinate* SoCoordinate140 = new SoCoordinate();
+SoCoordinate140->setPoint(new float[]{2.525,1.246,-1.68,3.681,1.236,0.0337,2.408,1.247,1.663,0.4657,1.264,0.9556,0.5379,1.264,-1.11,2.743,-0.0209,-2.31,4.339,-0.0351,0.057,2.581,-0.0195,2.307,-0.1009,0.0044,1.33,-0.0013,0.0035,-1.523,2.72,-2.534,-2.31,4.317,-2.548,0.057,2.559,-2.533,2.307,-0.1233,-2.509,1.33,-0.0237,-2.51,-1.523,2.759,-3.609,-2.442,4.448,-3.624,0.0619,2.588,-3.608,2.442,-0.2497,-3.583,1.409,-0.1443,-3.583,-1.61,2.245,-1.758,-1.939,3.465,-1.769,-0.4543,2.834,-1.763,1.629,1.223,-1.749,1.432,0.8596,-1.746,-0.7734,2.263,-7.566,-1.569,3.531,-7.577,-0.378,2.875,-7.571,1.293,1.202,-7.556,1.135,0.8242,-7.553,-0.6339,2.267,-11.62,-1.511,3.487,-11.63,-0.3651,2.856,-11.62,1.243,1.245,-11.61,1.091,0.8817,-11.6,-0.6115,2.213,-12.17,-0.8985,2.928,-12.17,-0.2266,2.558,-12.17,0.7161,1.614,-12.16,0.6268,1.401,-12.16,-0.3711}, 120);
+SoIndexedFaceSet139->setCoord(*SoCoordinate140);
+
+SoTextureCoordinate* SoTextureCoordinate141 = new SoTextureCoordinate();
+SoTextureCoordinate141->setPoint(new float[]{0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114}, 124);
+SoIndexedFaceSet139->setTexCoord(*SoTextureCoordinate141);
+
+SoShape135->setGeometry(*SoIndexedFaceSet139);
+
+SoTransform134->addChild(*SoShape135);
+
+SoHAnimSegment133->addChild(*SoTransform134);
+
+SoHAnimJoint132->addChildren(*SoHAnimSegment133);
+
+SoHAnimJoint* SoHAnimJoint142 = new SoHAnimJoint();
+SoHAnimJoint142->X3DNode::setName(QString("l_elbow"));
+SoHAnimJoint142->setDEF(QString("hanim_l_elbow"));
+SoHAnimJoint142->setCenter(new float[]{8.093,40.380001,-0.2502});
+SoHAnimJoint142->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint142->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment143 = new SoHAnimSegment();
+SoHAnimSegment143->X3DNode::setName(QString("l_forearm"));
+SoHAnimSegment143->setDEF(QString("hanim_l_forearm"));
+SoTransform* SoTransform144 = new SoTransform();
+SoTransform144->setTranslation(new float[]{8.093,40.380001,-0.2502});
+SoShape* SoShape145 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance146 = new SoVRMLAppearance();
+SoMaterial* SoMaterial147 = new SoMaterial();
+SoMaterial147->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance146->addChild(*SoMaterial147);
+
+SoImageTexture* SoImageTexture148 = new SoImageTexture();
+SoImageTexture148->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance146->addChild(*SoImageTexture148);
+
+SoShape145->addChild(*SoVRMLAppearance146);
+
+SoIndexedFaceSet* SoIndexedFaceSet149 = new SoIndexedFaceSet();
+SoIndexedFaceSet149->setCoordIndex(new int32_t[]{2,1,0,-1,3,2,0,-1,4,3,0,-1,0,1,6,-1,6,5,0,-1,1,2,7,-1,7,6,1,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,6,7,12,-1,12,11,6,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,11,12,17,-1,17,16,11,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,21,22,23,-1,20,21,23,-1,24,20,23,-1,21,20,15,-1,15,16,21,-1,22,21,16,-1,16,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1}, 184);
+SoIndexedFaceSet149->setCreaseAngle(1.57);
+SoIndexedFaceSet149->setTexCoordIndex(new int32_t[]{2,25,26,-1,3,2,26,-1,4,3,26,-1,0,1,6,-1,6,5,0,-1,27,2,7,-1,7,28,27,-1,2,3,8,-1,8,7,2,-1,3,4,9,-1,9,8,3,-1,4,0,5,-1,5,9,4,-1,5,6,11,-1,11,10,5,-1,29,7,12,-1,12,30,29,-1,7,8,13,-1,13,12,7,-1,8,9,14,-1,14,13,8,-1,9,5,10,-1,10,14,9,-1,10,11,16,-1,16,15,10,-1,31,12,17,-1,17,32,31,-1,12,13,18,-1,18,17,12,-1,13,14,19,-1,19,18,13,-1,14,10,15,-1,15,19,14,-1,34,22,23,-1,33,34,23,-1,24,33,23,-1,21,20,15,-1,15,16,21,-1,22,36,35,-1,35,17,22,-1,23,22,17,-1,17,18,23,-1,24,23,18,-1,18,19,24,-1,20,24,19,-1,19,15,20,-1}, 184);
+SoCoordinate* SoCoordinate150 = new SoCoordinate();
+SoCoordinate150->setPoint(new float[]{0.215,0.3047,-1.152,1.155,0.2966,-0.2588,0.6199,0.3013,1.04,-0.6505,0.3122,0.9491,-0.9008,0.3143,-0.4054,0.1442,-0.8448,-1.625,1.472,-0.8561,-0.4271,0.7164,-0.8496,1.625,-1.079,-0.8342,1.482,-1.433,-0.8312,-0.6588,0.1328,-3.5,-1.607,1.551,-3.513,-0.4225,0.781,-2.925,1.61,-1.136,-2.909,1.468,-1.551,-3.486,-0.6519,0.0592,-8.713,-1.437,1.093,-8.722,-0.1279,0.5047,-8.716,1.51,-0.8932,-8.704,1.377,-1.169,-8.702,-0.3428,0.0092,-9.336,-0.8855,0.7154,-9.342,0.0084,0.3135,-9.339,1.043,-0.6412,-9.331,0.9519,-0.8292,-9.329,-0.1383}, 75);
+SoIndexedFaceSet149->setCoord(*SoCoordinate150);
+
+SoTextureCoordinate* SoTextureCoordinate151 = new SoTextureCoordinate();
+SoTextureCoordinate151->setPoint(new float[]{0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674}, 74);
+SoIndexedFaceSet149->setTexCoord(*SoTextureCoordinate151);
+
+SoShape145->setGeometry(*SoIndexedFaceSet149);
+
+SoTransform144->addChild(*SoShape145);
+
+SoHAnimSegment143->addChild(*SoTransform144);
+
+SoHAnimJoint142->addChildren(*SoHAnimSegment143);
+
+SoHAnimJoint* SoHAnimJoint152 = new SoHAnimJoint();
+SoHAnimJoint152->X3DNode::setName(QString("l_radiocarpal"));
+SoHAnimJoint152->setDEF(QString("hanim_l_radiocarpal"));
+SoHAnimJoint152->setCenter(new float[]{7.808,31.459999,-0.05849});
+SoHAnimJoint152->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint152->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment153 = new SoHAnimSegment();
+SoHAnimSegment153->X3DNode::setName(QString("l_carpal"));
+SoHAnimSegment153->setDEF(QString("hanim_l_carpal"));
+SoTransform* SoTransform154 = new SoTransform();
+SoTransform154->setTranslation(new float[]{7.808,31.459999,-0.05849});
+SoShape* SoShape155 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance156 = new SoVRMLAppearance();
+SoMaterial* SoMaterial157 = new SoMaterial();
+SoMaterial157->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance156->addChild(*SoMaterial157);
+
+SoImageTexture* SoImageTexture158 = new SoImageTexture();
+SoImageTexture158->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance156->addChild(*SoImageTexture158);
+
+SoShape155->addChild(*SoVRMLAppearance156);
+
+SoIndexedFaceSet* SoIndexedFaceSet159 = new SoIndexedFaceSet();
+SoIndexedFaceSet159->setCoordIndex(new int32_t[]{4,5,0,-1,0,2,4,-1,6,7,3,-1,3,1,6,-1,1,0,5,-1,5,6,1,-1,8,9,5,-1,5,4,8,-1,10,11,7,-1,7,6,10,-1,9,10,6,-1,6,5,9,-1,12,13,9,-1,9,8,12,-1,14,15,11,-1,11,10,14,-1,13,14,10,-1,10,9,13,-1,4,2,16,-1,2,3,7,-1,7,16,2,-1,17,19,18,-1,18,20,17,-1,21,16,7,-1,7,11,21,-1,8,21,12,-1,12,21,11,-1,11,15,12,-1,13,12,15,-1,15,14,13,-1,8,4,19,-1,19,17,8,-1,4,16,18,-1,18,19,4,-1,16,21,20,-1,20,18,16,-1,21,8,17,-1,17,20,21,-1,22,27,23,-1,26,25,24,-1}, 160);
+SoIndexedFaceSet159->setCreaseAngle(1.57);
+SoIndexedFaceSet159->setTexCoordIndex(new int32_t[]{4,6,5,-1,5,7,4,-1,2,3,1,-1,1,0,2,-1,14,16,15,-1,15,17,14,-1,8,9,6,-1,6,4,8,-1,38,40,39,-1,39,41,38,-1,18,19,36,-1,36,37,18,-1,10,11,9,-1,9,8,10,-1,42,43,40,-1,40,38,42,-1,20,21,19,-1,19,18,20,-1,22,24,23,-1,24,26,25,-1,25,23,24,-1,27,29,28,-1,28,30,27,-1,31,23,25,-1,25,32,31,-1,33,31,34,-1,34,31,32,-1,32,35,34,-1,20,34,35,-1,35,21,20,-1,8,4,12,-1,12,13,8,-1,22,23,28,-1,28,29,22,-1,23,31,30,-1,30,28,23,-1,31,33,27,-1,27,30,31,-1,14,24,26,-1,14,16,24,-1}, 160);
+SoCoordinate* SoCoordinate160 = new SoCoordinate();
+SoCoordinate160->setPoint(new float[]{1.247,0.07,0.7975,1.209,0.0872,-1.349,-0.7098,-0.0015,0.8912,-0.7183,0.0002,-1.283,-0.9295,-0.613,1.478,1.647,-0.4252,1.388,1.589,-0.3921,-1.989,-1.044,-0.5947,-1.984,-0.8227,-2.521,2.408,1.951,-2.334,2.08,1.892,-2.301,-2.409,-1.192,-2.614,-2.248,-0.5703,-3.958,1.694,0.8836,-4.2,1.75,0.8251,-4.167,-2.071,-0.7842,-3.968,-1.934,-1.037,-0.5968,-0.1872,-1.642,-2.561,1.941,-1.951,-0.9492,0.058,-1.914,-1.016,1.885,-1.649,-2.56,0.1377,-1.066,-2.61,-0.2014,1.209,0.0872,-1.349,-0.7183,0.0002,-1.283,-0.7098,-0.0015,0.8912,1.247,0.07,0.7975,1.209,0.0872,-1.349,-0.7098,-0.0015,0.8912}, 84);
+SoIndexedFaceSet159->setCoord(*SoCoordinate160);
+
+SoTextureCoordinate* SoTextureCoordinate161 = new SoTextureCoordinate();
+SoTextureCoordinate161->setPoint(new float[]{0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857}, 88);
+SoIndexedFaceSet159->setTexCoord(*SoTextureCoordinate161);
+
+SoShape155->setGeometry(*SoIndexedFaceSet159);
+
+SoTransform154->addChild(*SoShape155);
+
+SoHAnimSegment153->addChild(*SoTransform154);
+
+SoHAnimJoint152->addChildren(*SoHAnimSegment153);
+
+SoHAnimJoint142->addChildren(*SoHAnimJoint152);
+
+SoHAnimJoint132->addChildren(*SoHAnimJoint142);
+
+SoHAnimJoint122->addChildren(*SoHAnimJoint132);
+
+SoHAnimJoint* SoHAnimJoint162 = new SoHAnimJoint();
+SoHAnimJoint162->X3DNode::setName(QString("r_shoulder"));
+SoHAnimJoint162->setDEF(QString("hanim_r_shoulder"));
+SoHAnimJoint162->setCenter(new float[]{-5.975,52.0,-0.1452});
+SoHAnimJoint162->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint162->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment163 = new SoHAnimSegment();
+SoHAnimSegment163->X3DNode::setName(QString("r_upperarm"));
+SoHAnimSegment163->setDEF(QString("hanim_r_upperarm"));
+SoTransform* SoTransform164 = new SoTransform();
+SoTransform164->setTranslation(new float[]{-5.975,52.0,-0.1452});
+SoShape* SoShape165 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance166 = new SoVRMLAppearance();
+SoMaterial* SoMaterial167 = new SoMaterial();
+SoMaterial167->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance166->addChild(*SoMaterial167);
+
+SoImageTexture* SoImageTexture168 = new SoImageTexture();
+SoImageTexture168->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance166->addChild(*SoImageTexture168);
+
+SoShape165->addChild(*SoVRMLAppearance166);
+
+SoIndexedFaceSet* SoIndexedFaceSet169 = new SoIndexedFaceSet();
+SoIndexedFaceSet169->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,38,37,36,-1,38,36,35,-1,39,38,35,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1,26,21,20,-1,20,25,26,-1,27,22,21,-1,21,26,27,-1,28,23,22,-1,22,27,28,-1,29,24,23,-1,23,28,29,-1,25,20,24,-1,24,29,25,-1,31,26,25,-1,25,30,31,-1,32,27,26,-1,26,31,32,-1,33,28,27,-1,27,32,33,-1,34,29,28,-1,28,33,34,-1,30,25,29,-1,29,34,30,-1,36,31,30,-1,30,35,36,-1,37,32,31,-1,31,36,37,-1,38,33,32,-1,32,37,38,-1,39,34,33,-1,33,38,39,-1,35,30,34,-1,34,39,35,-1}, 304);
+SoIndexedFaceSet169->setCreaseAngle(1.57);
+SoIndexedFaceSet169->setTexCoordIndex(new int32_t[]{1,0,2,-1,1,2,3,-1,61,1,3,-1,1,6,5,-1,5,0,1,-1,0,5,7,-1,7,2,0,-1,2,7,8,-1,8,3,2,-1,25,26,9,-1,9,4,25,-1,4,9,6,-1,6,1,4,-1,6,11,10,-1,10,5,6,-1,5,10,12,-1,12,7,5,-1,7,12,13,-1,13,8,7,-1,27,28,14,-1,14,9,27,-1,9,14,11,-1,11,6,9,-1,11,16,15,-1,15,10,11,-1,10,15,17,-1,17,12,10,-1,12,17,18,-1,18,13,12,-1,29,30,19,-1,19,14,29,-1,14,19,16,-1,16,11,14,-1,36,35,54,-1,36,54,53,-1,37,36,53,-1,20,15,16,-1,16,21,20,-1,22,17,15,-1,15,20,22,-1,23,18,17,-1,17,22,23,-1,24,19,31,-1,31,32,24,-1,21,16,19,-1,19,24,21,-1,40,39,38,-1,38,41,40,-1,43,42,55,-1,55,56,43,-1,45,44,42,-1,42,43,45,-1,47,46,44,-1,44,45,47,-1,41,38,46,-1,46,47,41,-1,48,40,41,-1,41,49,48,-1,50,43,57,-1,57,58,50,-1,51,45,43,-1,43,50,51,-1,52,47,45,-1,45,51,52,-1,49,41,47,-1,47,52,49,-1,34,48,49,-1,49,33,34,-1,35,50,59,-1,59,60,35,-1,36,51,50,-1,50,35,36,-1,37,52,51,-1,51,36,37,-1,33,49,52,-1,52,37,33,-1}, 304);
+SoCoordinate* SoCoordinate170 = new SoCoordinate();
+SoCoordinate170->setPoint(new float[]{-2.525,1.246,-1.68,-3.681,1.236,0.0337,-2.408,1.247,1.663,-0.4657,1.264,0.9556,-0.5379,1.264,-1.11,-2.743,-0.0209,-2.31,-4.339,-0.0351,0.057,-2.581,-0.0195,2.307,0.1009,0.0044,1.33,0.0013,0.0035,-1.523,-2.72,-2.534,-2.31,-4.317,-2.548,0.057,-2.559,-2.533,2.307,0.1233,-2.509,1.33,0.0237,-2.51,-1.523,-2.759,-3.609,-2.442,-4.448,-3.624,0.0619,-2.588,-3.608,2.442,0.2497,-3.583,1.409,0.1443,-3.583,-1.61,-2.245,-1.758,-1.939,-3.465,-1.769,-0.4543,-2.834,-1.763,1.629,-1.223,-1.749,1.432,-0.8596,-1.746,-0.7734,-2.263,-7.566,-1.569,-3.531,-7.577,-0.378,-2.875,-7.571,1.293,-1.202,-7.556,1.135,-0.8242,-7.553,-0.6339,-2.267,-11.62,-1.511,-3.487,-11.63,-0.3651,-2.856,-11.62,1.243,-1.245,-11.61,1.091,-0.8817,-11.6,-0.6115,-2.213,-12.17,-0.8985,-2.928,-12.17,-0.2266,-2.558,-12.17,0.7161,-1.614,-12.16,0.6268,-1.401,-12.16,-0.3711}, 120);
+SoIndexedFaceSet169->setCoord(*SoCoordinate170);
+
+SoTextureCoordinate* SoTextureCoordinate171 = new SoTextureCoordinate();
+SoTextureCoordinate171->setPoint(new float[]{0.2986,0.2114,0.2726,0.2114,0.3201,0.2114,0.3415,0.2114,0.2466,0.2114,0.2979,0.2417,0.2726,0.2417,0.3197,0.2417,0.3418,0.2417,0.2473,0.2417,0.2979,0.3018,0.2726,0.3018,0.3197,0.3018,0.3418,0.3018,0.2473,0.3018,0.2978,0.3276,0.2726,0.3276,0.3197,0.3276,0.3419,0.3276,0.2474,0.3276,0.2932,0.2834,0.2689,0.2834,0.316,0.2834,0.3322,0.2834,0.245,0.2834,0.2251,0.2114,0.2255,0.2417,0.2255,0.2417,0.2255,0.3018,0.2255,0.3018,0.2255,0.3276,0.2255,0.3276,0.2159,0.2834,0.4315,0.6736,0.442,0.6736,0.3947,0.6736,0.4041,0.6736,0.418,0.6736,0.4296,0.6167,0.4409,0.6167,0.4415,0.6485,0.4303,0.6485,0.3965,0.6167,0.3953,0.6485,0.4047,0.6167,0.4053,0.6485,0.4189,0.6167,0.418,0.6485,0.4415,0.6706,0.4306,0.6706,0.395,0.6706,0.4051,0.6706,0.4182,0.6706,0.3746,0.6736,0.3851,0.6736,0.384,0.6167,0.3845,0.6485,0.3845,0.6485,0.3846,0.6706,0.3846,0.6706,0.3851,0.6736,0.3481,0.2114}, 124);
+SoIndexedFaceSet169->setTexCoord(*SoTextureCoordinate171);
+
+SoShape165->setGeometry(*SoIndexedFaceSet169);
+
+SoTransform164->addChild(*SoShape165);
+
+SoHAnimSegment163->addChild(*SoTransform164);
+
+SoHAnimJoint162->addChildren(*SoHAnimSegment163);
+
+SoHAnimJoint* SoHAnimJoint172 = new SoHAnimJoint();
+SoHAnimJoint172->X3DNode::setName(QString("r_elbow"));
+SoHAnimJoint172->setDEF(QString("hanim_r_elbow"));
+SoHAnimJoint172->setCenter(new float[]{-8.093,40.380001,-0.2502});
+SoHAnimJoint172->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint172->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment173 = new SoHAnimSegment();
+SoHAnimSegment173->X3DNode::setName(QString("r_forearm"));
+SoHAnimSegment173->setDEF(QString("hanim_r_forearm"));
+SoTransform* SoTransform174 = new SoTransform();
+SoTransform174->setTranslation(new float[]{-8.093,40.380001,-0.2502});
+SoShape* SoShape175 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance176 = new SoVRMLAppearance();
+SoMaterial* SoMaterial177 = new SoMaterial();
+SoMaterial177->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance176->addChild(*SoMaterial177);
+
+SoImageTexture* SoImageTexture178 = new SoImageTexture();
+SoImageTexture178->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance176->addChild(*SoImageTexture178);
+
+SoShape175->addChild(*SoVRMLAppearance176);
+
+SoIndexedFaceSet* SoIndexedFaceSet179 = new SoIndexedFaceSet();
+SoIndexedFaceSet179->setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,4,0,3,-1,0,5,6,-1,6,1,0,-1,1,6,7,-1,7,2,1,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,6,11,12,-1,12,7,6,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,11,16,17,-1,17,12,11,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,21,-1,23,21,20,-1,24,23,20,-1,21,16,15,-1,15,20,21,-1,22,17,16,-1,16,21,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1}, 184);
+SoIndexedFaceSet179->setCreaseAngle(1.57);
+SoIndexedFaceSet179->setTexCoordIndex(new int32_t[]{26,25,2,-1,26,2,3,-1,4,26,3,-1,0,5,6,-1,6,1,0,-1,27,28,7,-1,7,2,27,-1,2,7,8,-1,8,3,2,-1,3,8,9,-1,9,4,3,-1,4,9,5,-1,5,0,4,-1,5,10,11,-1,11,6,5,-1,29,30,12,-1,12,7,29,-1,7,12,13,-1,13,8,7,-1,8,13,14,-1,14,9,8,-1,9,14,10,-1,10,5,9,-1,10,15,16,-1,16,11,10,-1,31,32,17,-1,17,12,31,-1,12,17,18,-1,18,13,12,-1,13,18,19,-1,19,14,13,-1,14,19,15,-1,15,10,14,-1,23,22,34,-1,23,34,33,-1,24,23,33,-1,21,16,15,-1,15,20,21,-1,22,17,35,-1,35,36,22,-1,23,18,17,-1,17,22,23,-1,24,19,18,-1,18,23,24,-1,20,15,19,-1,19,24,20,-1}, 184);
+SoCoordinate* SoCoordinate180 = new SoCoordinate();
+SoCoordinate180->setPoint(new float[]{-0.215,0.3047,-1.152,-1.155,0.2966,-0.2588,-0.6199,0.3013,1.04,0.6505,0.3122,0.9491,0.9008,0.3143,-0.4054,-0.1442,-0.8448,-1.625,-1.472,-0.8561,-0.4271,-0.7164,-0.8496,1.625,1.079,-0.8342,1.482,1.433,-0.8312,-0.6588,-0.1328,-3.5,-1.607,-1.551,-3.513,-0.4225,-0.781,-2.925,1.61,1.136,-2.909,1.468,1.551,-3.486,-0.6519,-0.0592,-8.713,-1.437,-1.093,-8.722,-0.1279,-0.5047,-8.716,1.51,0.8932,-8.704,1.377,1.169,-8.702,-0.3428,-0.0092,-9.336,-0.8855,-0.7154,-9.342,0.0084,-0.3135,-9.339,1.043,0.6412,-9.331,0.9519,0.8292,-9.329,-0.1383}, 75);
+SoIndexedFaceSet179->setCoord(*SoCoordinate180);
+
+SoTextureCoordinate* SoTextureCoordinate181 = new SoTextureCoordinate();
+SoTextureCoordinate181->setPoint(new float[]{0.4222,0.6201,0.4327,0.6201,0.3884,0.6201,0.3987,0.6201,0.4103,0.6201,0.4213,0.6265,0.4321,0.6265,0.3894,0.6265,0.399,0.6265,0.4105,0.6265,0.4214,0.6413,0.4323,0.6413,0.389,0.6381,0.3992,0.6381,0.4103,0.6413,0.4213,0.6705,0.4336,0.6705,0.3899,0.6705,0.3981,0.6705,0.4094,0.6705,0.4215,0.674,0.4346,0.674,0.3899,0.674,0.398,0.674,0.4083,0.674,0.3787,0.6201,0.3682,0.6201,0.3787,0.6201,0.3782,0.6265,0.3782,0.6265,0.3783,0.6413,0.3783,0.6413,0.3796,0.6705,0.3676,0.674,0.3806,0.674,0.3796,0.6705,0.3806,0.674}, 74);
+SoIndexedFaceSet179->setTexCoord(*SoTextureCoordinate181);
+
+SoShape175->setGeometry(*SoIndexedFaceSet179);
+
+SoTransform174->addChild(*SoShape175);
+
+SoHAnimSegment173->addChild(*SoTransform174);
+
+SoHAnimJoint172->addChildren(*SoHAnimSegment173);
+
+SoHAnimJoint* SoHAnimJoint182 = new SoHAnimJoint();
+SoHAnimJoint182->X3DNode::setName(QString("r_radiocarpal"));
+SoHAnimJoint182->setDEF(QString("hanim_r_radiocarpal"));
+SoHAnimJoint182->setCenter(new float[]{-7.808,31.459999,-0.05849});
+SoHAnimJoint182->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint182->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment183 = new SoHAnimSegment();
+SoHAnimSegment183->X3DNode::setName(QString("r_carpal"));
+SoHAnimSegment183->setDEF(QString("hanim_r_carpal"));
+SoTransform* SoTransform184 = new SoTransform();
+SoTransform184->setTranslation(new float[]{-7.808,31.459999,-0.05849});
+SoShape* SoShape185 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance186 = new SoVRMLAppearance();
+SoMaterial* SoMaterial187 = new SoMaterial();
+SoMaterial187->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance186->addChild(*SoMaterial187);
+
+SoImageTexture* SoImageTexture188 = new SoImageTexture();
+SoImageTexture188->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance186->addChild(*SoImageTexture188);
+
+SoShape185->addChild(*SoVRMLAppearance186);
+
+SoIndexedFaceSet* SoIndexedFaceSet189 = new SoIndexedFaceSet();
+SoIndexedFaceSet189->setCoordIndex(new int32_t[]{4,2,0,-1,0,5,4,-1,6,1,3,-1,3,7,6,-1,1,6,5,-1,5,0,1,-1,8,4,5,-1,5,9,8,-1,10,6,7,-1,7,11,10,-1,9,5,6,-1,6,10,9,-1,12,8,9,-1,9,13,12,-1,14,10,11,-1,11,15,14,-1,13,9,10,-1,10,14,13,-1,4,16,2,-1,2,16,7,-1,7,3,2,-1,17,20,18,-1,18,19,17,-1,21,11,7,-1,7,16,21,-1,8,12,21,-1,12,15,11,-1,11,21,12,-1,13,14,15,-1,15,12,13,-1,8,17,19,-1,19,4,8,-1,4,19,18,-1,18,16,4,-1,16,18,20,-1,20,21,16,-1,21,20,17,-1,17,8,21,-1,22,23,27,-1,26,24,25,-1}, 160);
+SoIndexedFaceSet189->setCreaseAngle(1.57);
+SoIndexedFaceSet189->setTexCoordIndex(new int32_t[]{4,7,5,-1,5,6,4,-1,2,0,1,-1,1,3,2,-1,14,17,15,-1,15,16,14,-1,8,4,6,-1,6,9,8,-1,38,41,39,-1,39,40,38,-1,18,37,36,-1,36,19,18,-1,10,8,9,-1,9,11,10,-1,42,38,40,-1,40,43,42,-1,20,18,19,-1,19,21,20,-1,22,23,24,-1,24,23,25,-1,25,26,24,-1,27,30,28,-1,28,29,27,-1,31,32,25,-1,25,23,31,-1,33,34,31,-1,34,35,32,-1,32,31,34,-1,20,21,35,-1,35,34,20,-1,8,13,12,-1,12,4,8,-1,22,29,28,-1,28,23,22,-1,23,28,30,-1,30,31,23,-1,31,30,27,-1,27,33,31,-1,14,26,24,-1,14,24,16,-1}, 160);
+SoCoordinate* SoCoordinate190 = new SoCoordinate();
+SoCoordinate190->setPoint(new float[]{-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912,0.7183,0.0002,-1.283,0.9295,-0.613,1.478,-1.647,-0.4252,1.388,-1.589,-0.3921,-1.989,1.044,-0.5947,-1.984,0.8227,-2.521,2.408,-1.951,-2.334,2.08,-1.892,-2.301,-2.409,1.192,-2.614,-2.248,0.5703,-3.958,1.694,-0.8836,-4.2,1.75,-0.8251,-4.167,-2.071,0.7842,-3.968,-1.934,1.037,-0.5968,-0.1872,1.642,-2.561,1.941,1.951,-0.9492,0.058,1.914,-1.016,1.885,1.649,-2.56,0.1377,1.066,-2.61,-0.2014,-1.209,0.0872,-1.349,0.7183,0.0002,-1.283,0.7098,-0.0015,0.8912,-1.247,0.07,0.7975,-1.209,0.0872,-1.349,0.7098,-0.0015,0.8912}, 84);
+SoIndexedFaceSet189->setCoord(*SoCoordinate190);
+
+SoTextureCoordinate* SoTextureCoordinate191 = new SoTextureCoordinate();
+SoTextureCoordinate191->setPoint(new float[]{0.8107,0.9924,0.8122,0.9033,0.7694,0.9912,0.7683,0.9026,0.1329,0.0347,0.0307,0.0051,0.0134,0.0353,0.1366,0.0058,0.1249,0.1081,0.0147,0.117,0.1349,0.1856,0.0462,0.1842,0.1559,0.0454,0.148,0.1033,0.3244,0.0096,0.1758,0.0039,0.1759,0.011,0.3241,0.0033,0.173,0.1764,0.3074,0.1757,0.1732,0.1519,0.3074,0.1513,0.1756,0.032,0.2159,0.0368,0.1791,0.0165,0.3169,0.0458,0.3158,0.0193,0.172,0.0594,0.2087,0.0476,0.1736,0.0504,0.2073,0.064,0.2362,0.0821,0.3267,0.0796,0.1717,0.0822,0.1726,0.1297,0.3077,0.1289,0.3074,0.1865,0.1742,0.184,0.0061,0.1086,0.1366,0.0368,0.1241,0.1189,0.0168,0.0309,0.0211,0.1882,0.14,0.1857}, 88);
+SoIndexedFaceSet189->setTexCoord(*SoTextureCoordinate191);
+
+SoShape185->setGeometry(*SoIndexedFaceSet189);
+
+SoTransform184->addChild(*SoShape185);
+
+SoHAnimSegment183->addChild(*SoTransform184);
+
+SoHAnimJoint182->addChildren(*SoHAnimSegment183);
+
+SoHAnimJoint172->addChildren(*SoHAnimJoint182);
+
+SoHAnimJoint162->addChildren(*SoHAnimJoint172);
+
+SoHAnimJoint122->addChildren(*SoHAnimJoint162);
+
+SoHAnimJoint* SoHAnimJoint192 = new SoHAnimJoint();
+SoHAnimJoint192->X3DNode::setName(QString("vl5"));
+SoHAnimJoint192->setDEF(QString("hanim_vl5"));
+SoHAnimJoint192->setCenter(new float[]{0.0,40.23,-0.8527});
+SoHAnimJoint192->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint192->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment193 = new SoHAnimSegment();
+SoHAnimSegment193->X3DNode::setName(QString("l5"));
+SoHAnimSegment193->setDEF(QString("hanim_l5"));
+SoTransform* SoTransform194 = new SoTransform();
+SoTransform194->setTranslation(new float[]{0.0,40.23,-0.8527});
+SoShape* SoShape195 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance196 = new SoVRMLAppearance();
+SoMaterial* SoMaterial197 = new SoMaterial();
+SoMaterial197->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance196->addChild(*SoMaterial197);
+
+SoImageTexture* SoImageTexture198 = new SoImageTexture();
+SoImageTexture198->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance196->addChild(*SoImageTexture198);
+
+SoShape195->addChild(*SoVRMLAppearance196);
+
+SoIndexedFaceSet* SoIndexedFaceSet199 = new SoIndexedFaceSet();
+SoIndexedFaceSet199->setCoordIndex(new int32_t[]{3,4,7,-1,7,5,3,-1,4,66,68,-1,68,8,4,-1,4,8,7,-1,1,0,9,-1,9,10,1,-1,0,2,11,-1,11,9,0,-1,15,71,73,-1,73,16,15,-1,14,15,16,-1,16,17,14,-1,71,15,8,-1,8,68,71,-1,15,14,7,-1,7,8,15,-1,73,72,69,-1,69,70,73,-1,16,73,70,-1,70,12,16,-1,16,12,13,-1,13,17,16,-1,21,20,22,-1,22,23,21,-1,20,14,17,-1,17,22,20,-1,20,21,6,-1,6,5,20,-1,14,20,5,-1,5,7,14,-1,23,22,18,-1,18,19,23,-1,22,17,13,-1,13,18,22,-1,2,6,11,-1,28,27,30,-1,30,31,28,-1,27,29,32,-1,32,30,27,-1,29,21,23,-1,23,32,29,-1,27,28,10,-1,10,9,27,-1,29,27,9,-1,9,11,29,-1,21,29,11,-1,11,6,21,-1,31,30,24,-1,24,25,31,-1,30,32,26,-1,26,24,30,-1,32,23,19,-1,19,26,32,-1,12,70,74,-1,74,33,12,-1,24,26,36,-1,36,35,24,-1,33,74,75,-1,75,37,33,-1,34,33,37,-1,37,38,34,-1,39,12,33,-1,33,34,39,-1,19,40,26,-1,26,40,41,-1,41,36,26,-1,39,34,41,-1,41,40,39,-1,35,36,43,-1,43,42,35,-1,36,41,44,-1,44,43,36,-1,41,34,38,-1,38,44,41,-1,37,75,76,-1,76,45,37,-1,38,37,45,-1,45,46,38,-1,42,43,48,-1,48,47,42,-1,44,38,46,-1,46,49,44,-1,45,76,77,-1,77,50,45,-1,46,45,50,-1,50,51,46,-1,47,48,53,-1,53,52,47,-1,48,49,54,-1,54,53,48,-1,49,46,51,-1,51,54,49,-1,50,77,78,-1,78,55,50,-1,51,50,55,-1,55,56,51,-1,52,53,58,-1,58,57,52,-1,53,54,59,-1,59,58,53,-1,54,51,56,-1,56,59,54,-1,19,18,60,-1,60,61,19,-1,18,13,62,-1,62,60,18,-1,13,39,63,-1,63,62,13,-1,40,19,61,-1,61,64,40,-1,39,40,64,-1,64,63,39,-1,2,3,5,-1,2,5,6,-1,13,12,39,-1,25,24,35,-1,70,69,74,-1,67,68,66,-1,66,65,67,-1,79,71,68,-1,68,67,79,-1,72,73,71,-1,71,79,72,-1,49,48,43,-1,43,44,49,-1,63,64,60,-1,60,62,63,-1,60,64,61,-1,86,83,82,-1,82,84,86,-1,141,140,83,-1,83,87,141,-1,83,86,87,-1,88,80,1,-1,1,10,88,-1,89,81,80,-1,80,88,89,-1,144,143,93,-1,93,94,144,-1,94,93,92,-1,92,95,94,-1,87,93,143,-1,143,141,87,-1,86,92,93,-1,93,87,86,-1,69,72,144,-1,144,142,69,-1,142,144,94,-1,94,90,142,-1,91,90,94,-1,94,95,91,-1,100,98,99,-1,99,101,100,-1,95,92,98,-1,98,100,95,-1,85,99,98,-1,98,84,85,-1,84,98,92,-1,92,86,84,-1,96,100,101,-1,101,97,96,-1,91,95,100,-1,100,96,91,-1,81,89,85,-1,106,104,28,-1,28,31,106,-1,107,105,104,-1,104,106,107,-1,101,99,105,-1,105,107,101,-1,10,28,104,-1,104,88,10,-1,88,104,105,-1,105,89,88,-1,89,105,99,-1,99,85,89,-1,102,106,31,-1,31,25,102,-1,103,107,106,-1,106,102,103,-1,97,101,107,-1,107,103,97,-1,145,142,90,-1,90,108,145,-1,111,103,102,-1,102,110,111,-1,146,145,108,-1,108,112,146,-1,112,108,109,-1,109,113,112,-1,108,90,114,-1,114,109,108,-1,97,103,115,-1,116,115,103,-1,103,111,116,-1,116,109,114,-1,114,115,116,-1,118,111,110,-1,110,117,118,-1,119,116,111,-1,111,118,119,-1,113,109,116,-1,116,119,113,-1,147,146,112,-1,112,120,147,-1,120,112,113,-1,113,121,120,-1,123,118,117,-1,117,122,123,-1,121,113,119,-1,119,124,121,-1,148,147,120,-1,120,125,148,-1,125,120,121,-1,121,126,125,-1,128,123,122,-1,122,127,128,-1,129,124,123,-1,123,128,129,-1,126,121,124,-1,124,129,126,-1,149,148,125,-1,125,130,149,-1,130,125,126,-1,126,131,130,-1,133,128,127,-1,127,132,133,-1,134,129,128,-1,128,133,134,-1,131,126,129,-1,129,134,131,-1,135,96,97,-1,97,136,135,-1,137,91,96,-1,96,135,137,-1,138,114,91,-1,91,137,138,-1,136,97,115,-1,115,139,136,-1,139,115,114,-1,114,138,139,-1,81,84,82,-1,81,85,84,-1,91,114,90,-1,25,110,102,-1,142,145,69,-1,140,141,67,-1,67,65,140,-1,141,143,79,-1,79,67,141,-1,143,144,72,-1,72,79,143,-1,118,123,124,-1,124,119,118,-1,135,139,138,-1,138,137,135,-1,135,136,139,-1,25,35,110,-1,117,110,35,-1,35,42,117,-1,47,122,117,-1,117,42,47,-1,127,122,47,-1,47,52,127,-1,132,127,52,-1,52,57,132,-1,69,145,74,-1,75,74,145,-1,145,146,75,-1,76,75,146,-1,146,147,76,-1,77,76,147,-1,147,148,77,-1,78,77,148,-1,148,149,78,-1,57,78,149,-1,149,132,57,-1,58,55,78,-1,78,57,58,-1,59,56,55,-1,55,58,59,-1,132,149,130,-1,130,133,132,-1,133,130,131,-1,131,134,133,-1,151,150,155,-1,155,156,151,-1,150,152,157,-1,157,155,150,-1,152,153,158,-1,158,157,152,-1,153,154,159,-1,159,158,153,-1,160,161,162,-1,162,163,160,-1,154,160,163,-1,163,159,154,-1,168,164,151,-1,151,156,168,-1,169,165,164,-1,164,168,169,-1,170,166,165,-1,165,169,170,-1,171,167,166,-1,166,170,171,-1,162,161,172,-1,172,173,162,-1,173,172,167,-1,167,171,173,-1,4,3,158,-1,158,159,4,-1,66,4,159,-1,159,163,66,-1,0,1,156,-1,156,155,0,-1,2,0,155,-1,155,157,2,-1,3,2,157,-1,157,158,3,-1,65,66,163,-1,163,162,65,-1,82,83,171,-1,171,170,82,-1,83,140,173,-1,173,171,83,-1,1,80,168,-1,168,156,1,-1,80,81,169,-1,169,168,80,-1,81,82,170,-1,170,169,81,-1,140,65,162,-1,162,173,140,-1}, 1336);
+SoIndexedFaceSet199->setCreaseAngle(1.57);
+SoIndexedFaceSet199->setTexCoordIndex(new int32_t[]{2,3,0,-1,0,1,2,-1,3,6,4,-1,4,5,3,-1,3,5,0,-1,20,21,18,-1,18,19,20,-1,21,23,22,-1,22,18,21,-1,26,27,24,-1,24,25,26,-1,29,26,25,-1,25,28,29,-1,27,26,30,-1,30,31,27,-1,26,29,32,-1,32,30,26,-1,24,35,33,-1,33,34,24,-1,25,24,34,-1,34,36,25,-1,25,36,37,-1,37,28,25,-1,40,41,38,-1,38,39,40,-1,41,29,28,-1,28,38,41,-1,41,40,42,-1,42,43,41,-1,29,41,43,-1,43,32,29,-1,39,38,44,-1,44,45,39,-1,38,28,37,-1,37,44,38,-1,23,42,22,-1,48,162,161,-1,161,47,48,-1,49,51,50,-1,50,46,49,-1,51,40,39,-1,39,50,51,-1,163,48,164,-1,164,181,163,-1,51,49,18,-1,18,22,51,-1,40,51,22,-1,22,42,40,-1,47,166,165,-1,165,53,47,-1,46,50,54,-1,54,52,46,-1,50,39,45,-1,45,54,50,-1,36,34,55,-1,55,56,36,-1,52,54,57,-1,57,58,52,-1,56,55,59,-1,59,60,56,-1,62,56,60,-1,60,61,62,-1,63,36,56,-1,56,62,63,-1,45,64,54,-1,54,64,65,-1,65,57,54,-1,63,62,65,-1,65,64,63,-1,58,57,66,-1,66,67,58,-1,57,65,68,-1,68,66,57,-1,65,62,61,-1,61,68,65,-1,60,59,69,-1,69,70,60,-1,61,60,70,-1,70,71,61,-1,67,66,72,-1,72,73,67,-1,68,61,71,-1,71,74,68,-1,70,69,75,-1,75,76,70,-1,71,70,76,-1,76,77,71,-1,73,72,78,-1,78,79,73,-1,72,74,80,-1,80,78,72,-1,74,71,77,-1,77,80,74,-1,76,75,81,-1,81,82,76,-1,77,76,82,-1,82,83,77,-1,79,78,84,-1,84,85,79,-1,78,80,86,-1,86,84,78,-1,80,77,83,-1,83,86,80,-1,45,44,87,-1,87,88,45,-1,44,37,89,-1,89,87,44,-1,37,63,90,-1,90,89,37,-1,64,45,88,-1,88,91,64,-1,63,64,91,-1,91,90,63,-1,7,2,1,-1,23,43,42,-1,37,36,63,-1,53,167,168,-1,34,33,55,-1,9,4,6,-1,6,8,9,-1,93,27,31,-1,31,92,93,-1,35,24,27,-1,27,93,35,-1,74,72,66,-1,66,68,74,-1,90,91,87,-1,87,89,90,-1,87,91,88,-1,10,11,12,-1,12,13,10,-1,14,15,11,-1,11,16,14,-1,11,10,16,-1,94,95,169,-1,169,170,94,-1,96,97,95,-1,95,94,96,-1,98,101,99,-1,99,100,98,-1,100,99,102,-1,102,103,100,-1,104,99,101,-1,101,105,104,-1,106,102,99,-1,99,104,106,-1,33,35,98,-1,98,107,33,-1,107,98,100,-1,100,108,107,-1,109,108,100,-1,100,103,109,-1,110,113,111,-1,111,112,110,-1,103,102,113,-1,113,110,103,-1,114,111,113,-1,113,115,114,-1,115,113,102,-1,102,106,115,-1,116,110,112,-1,112,117,116,-1,109,103,110,-1,110,116,109,-1,97,96,114,-1,118,119,48,-1,48,47,118,-1,120,121,119,-1,119,118,120,-1,112,111,121,-1,121,120,112,-1,171,48,119,-1,119,94,171,-1,94,119,121,-1,121,96,94,-1,96,121,111,-1,111,114,96,-1,122,118,47,-1,47,53,122,-1,123,120,118,-1,118,122,123,-1,117,112,120,-1,120,123,117,-1,124,107,108,-1,108,125,124,-1,126,123,122,-1,122,127,126,-1,128,124,125,-1,125,129,128,-1,129,125,130,-1,130,131,129,-1,125,108,132,-1,132,130,125,-1,117,123,133,-1,134,133,123,-1,123,126,134,-1,134,130,132,-1,132,133,134,-1,135,126,127,-1,127,136,135,-1,137,134,126,-1,126,135,137,-1,131,130,134,-1,134,137,131,-1,138,128,129,-1,129,139,138,-1,139,129,131,-1,131,140,139,-1,141,135,136,-1,136,142,141,-1,140,131,137,-1,137,143,140,-1,144,138,139,-1,139,145,144,-1,145,139,140,-1,140,146,145,-1,147,141,142,-1,142,148,147,-1,149,143,141,-1,141,147,149,-1,146,140,143,-1,143,149,146,-1,150,144,145,-1,145,151,150,-1,151,145,146,-1,146,152,151,-1,153,147,148,-1,148,154,153,-1,155,149,147,-1,147,153,155,-1,152,146,149,-1,149,155,152,-1,156,116,117,-1,117,157,156,-1,158,109,116,-1,116,156,158,-1,159,132,109,-1,109,158,159,-1,157,117,133,-1,133,160,157,-1,160,133,132,-1,132,159,160,-1,17,13,12,-1,97,114,115,-1,109,132,108,-1,53,127,122,-1,107,124,33,-1,15,14,9,-1,9,8,15,-1,105,101,93,-1,93,92,105,-1,101,98,35,-1,35,93,101,-1,135,141,143,-1,143,137,135,-1,156,160,159,-1,159,158,156,-1,156,157,160,-1,53,172,127,-1,136,127,173,-1,173,174,136,-1,176,142,136,-1,136,175,176,-1,148,142,177,-1,177,178,148,-1,154,148,179,-1,179,180,154,-1,33,124,55,-1,59,55,124,-1,124,128,59,-1,69,59,128,-1,128,138,69,-1,75,69,138,-1,138,144,75,-1,81,75,144,-1,144,150,81,-1,85,81,150,-1,150,182,85,-1,84,82,81,-1,81,85,84,-1,86,83,82,-1,82,84,86,-1,154,150,151,-1,151,153,154,-1,153,151,152,-1,152,155,153,-1,185,186,183,-1,183,184,185,-1,186,188,187,-1,187,183,186,-1,188,190,189,-1,189,187,188,-1,190,192,191,-1,191,189,190,-1,195,196,193,-1,193,194,195,-1,192,195,194,-1,194,191,192,-1,197,198,185,-1,185,184,197,-1,199,200,198,-1,198,197,199,-1,201,202,200,-1,200,199,201,-1,203,204,202,-1,202,201,203,-1,193,196,205,-1,205,206,193,-1,206,205,204,-1,204,203,206,-1,3,2,189,-1,189,191,3,-1,6,3,191,-1,191,194,6,-1,207,208,184,-1,184,183,207,-1,7,207,183,-1,183,187,7,-1,2,7,187,-1,187,189,2,-1,8,6,194,-1,194,193,8,-1,12,11,203,-1,203,201,12,-1,11,15,206,-1,206,203,11,-1,208,209,197,-1,197,184,208,-1,209,17,199,-1,199,197,209,-1,17,12,201,-1,201,199,17,-1,15,8,193,-1,193,206,15,-1}, 1336);
+SoCoordinate* SoCoordinate200 = new SoCoordinate();
+SoCoordinate200->setPoint(new float[]{0.6928,14.56,-1.263,0.0,14.61,-1.355,1.47,14.78,-0.9099,2.016,14.75,0.2814,1.573,14.45,1.11,2.914,14.31,0.3331,2.599,15.21,-1.406,3.187,13.44,1.543,2.239,13.23,3.23,0.9629,15.23,-3.152,0.0,15.21,-3.317,2.035,15.26,-2.815,3.316,12.17,2.97,5.086,12.98,2.011,2.982,14.09,2.181,2.245,13.23,3.821,3.131,12.49,3.9,4.42,13.78,2.105,5.602,13.58,0.1863,5.472,12.91,-1.452,3.439,15.14,0.3672,3.953,14.28,-2.227,5.073,14.62,0.3672,4.655,13.34,-1.78,1.811,9.683,-2.43,0.0,9.378,-2.564,4.241,10.64,-2.043,1.032,12.38,-4.427,0.0,12.39,-4.562,2.39,12.77,-3.914,1.677,9.038,-3.147,0.0,8.716,-3.266,4.12,10.55,-3.032,4.272,7.978,4.186,6.354,8.61,1.543,2.14,8.428,-2.362,4.3,8.531,-1.848,3.695,5.43,2.768,5.081,5.468,1.505,6.096,10.11,1.67,5.904,10.1,-0.3303,5.533,8.564,-0.7796,1.419,5.319,-2.22,3.58,5.374,-1.434,4.793,5.424,-0.2489,3.682,3.438,2.824,5.077,3.477,1.527,1.282,3.149,-2.365,3.586,3.347,-1.437,4.792,3.421,-0.2999,4.178,1.107,3.951,5.76,1.143,1.994,1.52,0.9511,-3.678,3.95,0.9608,-2.536,5.309,1.066,-0.7397,3.789,0.0332,3.209,5.166,0.0649,1.685,1.593,-0.0862,-2.676,3.6,-0.0637,-1.847,4.841,-0.0167,-0.4441,7.399,13.3,0.1863,6.979,12.49,-1.452,6.998,12.55,1.899,6.298,10.26,1.67,6.292,10.26,-0.3303,0.0,14.19,1.73,0.7806,14.19,1.608,0.0,12.0,3.901,1.373,12.54,3.668,0.0,10.9,3.845,1.713,11.65,3.668,1.38,12.54,4.137,0.0,11.29,4.361,1.593,11.97,4.338,1.579,8.583,4.081,1.292,5.399,3.228,1.281,3.232,3.336,1.635,1.077,4.562,1.595,-0.0055,3.645,0.0,12.05,4.06,-0.6928,14.56,-1.263,-1.47,14.78,-0.9099,-2.016,14.75,0.2814,-1.573,14.45,1.11,-2.914,14.31,0.3331,-2.599,15.21,-1.406,-3.187,13.44,1.543,-2.239,13.23,3.23,-0.9629,15.23,-3.152,-2.035,15.26,-2.815,-3.316,12.17,2.97,-5.086,12.98,2.011,-2.982,14.09,2.181,-2.245,13.23,3.821,-3.131,12.49,3.9,-4.42,13.78,2.105,-5.602,13.58,0.1863,-5.472,12.91,-1.452,-3.439,15.14,0.3672,-3.953,14.28,-2.227,-5.073,14.62,0.3672,-4.655,13.34,-1.78,-1.811,9.683,-2.43,-4.241,10.64,-2.043,-1.032,12.38,-4.427,-2.39,12.77,-3.914,-1.677,9.038,-3.147,-4.12,10.55,-3.032,-4.272,7.978,4.186,-6.354,8.61,1.543,-2.14,8.428,-2.362,-4.3,8.531,-1.848,-3.695,5.43,2.768,-5.081,5.468,1.505,-6.096,10.11,1.67,-5.904,10.1,-0.3303,-5.533,8.564,-0.7796,-1.419,5.319,-2.22,-3.58,5.374,-1.434,-4.793,5.424,-0.2489,-3.682,3.438,2.824,-5.077,3.477,1.527,-1.282,3.149,-2.365,-3.586,3.347,-1.437,-4.792,3.421,-0.2999,-4.178,1.107,3.951,-5.76,1.143,1.994,-1.52,0.9511,-3.678,-3.95,0.9608,-2.536,-5.309,1.066,-0.7397,-3.789,0.0332,3.209,-5.166,0.0649,1.685,-1.593,-0.0862,-2.676,-3.6,-0.0637,-1.847,-4.841,-0.0167,-0.4441,-7.399,13.3,0.1863,-6.979,12.49,-1.452,-6.998,12.55,1.899,-6.298,10.26,1.67,-6.292,10.26,-0.3303,-0.7806,14.19,1.608,-1.373,12.54,3.668,-1.713,11.65,3.668,-1.38,12.54,4.137,-1.593,11.97,4.338,-1.579,8.583,4.081,-1.292,5.399,3.228,-1.281,3.232,3.336,-1.635,1.077,4.562,-1.595,-0.0055,3.645,0.5369,17.62,-0.941,0.0,17.62,-1.012,1.139,17.62,-0.6672,1.562,17.62,0.2561,1.219,17.62,0.8985,0.5424,14.56,-0.9523,0.0,14.61,-1.024,1.151,14.78,-0.6757,1.578,14.75,0.257,1.232,14.45,0.9059,0.605,17.75,1.285,0.0,17.19,1.379,0.0,14.19,1.391,0.6111,14.19,1.296,-0.5369,17.62,-0.941,-1.139,17.62,-0.6672,-1.562,17.62,0.2561,-1.219,17.62,0.8985,-0.5424,14.56,-0.9523,-1.151,14.78,-0.6757,-1.578,14.75,0.257,-1.232,14.45,0.9059,-0.605,17.75,1.285,-0.6111,14.19,1.296}, 522);
+SoIndexedFaceSet199->setCoord(*SoCoordinate200);
+
+SoTextureCoordinate* SoTextureCoordinate201 = new SoTextureCoordinate();
+SoTextureCoordinate201->setPoint(new float[]{0.4756,0.618,0.4724,0.6293,0.4618,0.6351,0.4566,0.6312,0.4542,0.6062,0.4644,0.6152,0.4472,0.6278,0.4554,0.6354,0.4381,0.6277,0.4381,0.5991,0.4005,0.618,0.4195,0.6312,0.4143,0.6351,0.4037,0.6293,0.4219,0.6062,0.4289,0.6278,0.4117,0.6152,0.4207,0.6354,0.2661,0.5914,0.3505,0.5919,0.3554,0.5911,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.1025,0.5076,0.0865,0.5614,0.0652,0.5465,0.1412,0.5207,0.1108,0.5655,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0639,0.4488,0.0877,0.4617,0.0525,0.4715,0.1185,0.4741,0.1474,0.4856,0.1724,0.5255,0.2089,0.5196,0.2133,0.556,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.347,0.4316,0.3616,0.5328,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.3214,0.4203,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1491,0.3449,0.1525,0.3869,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.0346,0.5664,0.0399,0.5407,0.2661,0.5914,0.2505,0.5754,0.241,0.592,0.2112,0.5805,0.0763,0.4945,0.0865,0.5614,0.1025,0.5076,0.0652,0.5465,0.1108,0.5655,0.1412,0.5207,0.0786,0.5849,0.0516,0.5759,0.1073,0.5839,0.0877,0.4617,0.1185,0.4741,0.1474,0.4857,0.1724,0.5255,0.2133,0.556,0.2089,0.5196,0.1645,0.5709,0.2067,0.5908,0.1632,0.5887,0.1708,0.4854,0.1963,0.4863,0.2708,0.4736,0.2733,0.5359,0.238,0.493,0.249,0.5451,0.2638,0.4568,0.2252,0.4828,0.042,0.406,0.0909,0.398,0.2183,0.385,0.3504,0.3844,0.0206,0.3452,0.0903,0.3446,0.1525,0.3869,0.1491,0.3449,0.1538,0.4251,0.1784,0.4249,0.1911,0.3858,0.2175,0.3427,0.3608,0.3469,0.1838,0.3438,0.0177,0.3051,0.0982,0.302,0.1487,0.2975,0.2175,0.2944,0.3621,0.2922,0.1849,0.2961,0.019,0.2349,0.1011,0.241,0.1445,0.2419,0.2369,0.2375,0.3561,0.2404,0.1927,0.24,0.0206,0.2122,0.1067,0.2154,0.1463,0.2162,0.227,0.2131,0.3536,0.2151,0.1879,0.2143,0.1715,0.4655,0.1797,0.4646,0.1569,0.4642,0.1544,0.4288,0.1782,0.4286,0.3477,0.431,0.3623,0.5333,0.3623,0.5333,0.3505,0.5919,0.3223,0.4192,0.3477,0.431,0.3223,0.4192,0.3518,0.3851,0.3554,0.5911,0.3505,0.5919,0.3505,0.5919,0.3518,0.3851,0.3518,0.3851,0.3629,0.3439,0.3629,0.3439,0.3633,0.2922,0.3633,0.2922,0.3553,0.2398,0.3553,0.2398,0.3555,0.2151,0.3511,0.5932,0.3536,0.2151,0.4444,0.6326,0.4381,0.6333,0.4381,0.6725,0.4444,0.6725,0.4516,0.6354,0.4515,0.6725,0.4566,0.6351,0.4565,0.6725,0.4526,0.6312,0.4524,0.6725,0.4381,0.6277,0.4453,0.6278,0.4452,0.6742,0.4381,0.6669,0.4317,0.6326,0.4317,0.6725,0.4245,0.6354,0.4246,0.6725,0.4195,0.6351,0.4197,0.6725,0.4235,0.6312,0.4237,0.6725,0.4309,0.6742,0.4309,0.6278,0.4462,0.6326,0.4381,0.6333,0.4299,0.6326}, 420);
+SoIndexedFaceSet199->setTexCoord(*SoTextureCoordinate201);
+
+SoShape195->setGeometry(*SoIndexedFaceSet199);
+
+SoTransform194->addChild(*SoShape195);
+
+SoHAnimSegment193->addChild(*SoTransform194);
+
+SoHAnimJoint192->addChildren(*SoHAnimSegment193);
+
+SoHAnimJoint* SoHAnimJoint202 = new SoHAnimJoint();
+SoHAnimJoint202->X3DNode::setName(QString("skullbase"));
+SoHAnimJoint202->setDEF(QString("hanim_skullbase"));
+SoHAnimJoint202->setCenter(new float[]{0.0,57.43,-0.6863});
+SoHAnimJoint202->setUlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimJoint202->setLlimit(new float[]{0.0,0.0,0.0}, 3);
+SoHAnimSegment* SoHAnimSegment203 = new SoHAnimSegment();
+SoHAnimSegment203->X3DNode::setName(QString("skull"));
+SoHAnimSegment203->setDEF(QString("hanim_skull"));
+SoTransform* SoTransform204 = new SoTransform();
+SoTransform204->setTranslation(new float[]{0.0,57.43,-0.6863});
+SoShape* SoShape205 = new SoShape();
+SoVRMLAppearance* SoVRMLAppearance206 = new SoVRMLAppearance();
+SoMaterial* SoMaterial207 = new SoMaterial();
+SoMaterial207->setDiffuseColor(new float[]{0.588,0.588,0.588});
+SoVRMLAppearance206->addChild(*SoMaterial207);
+
+SoImageTexture* SoImageTexture208 = new SoImageTexture();
+SoImageTexture208->setUSE(QString("JinTextureAtlas"));
+SoVRMLAppearance206->addChild(*SoImageTexture208);
+
+SoShape205->addChild(*SoVRMLAppearance206);
+
+SoIndexedFaceSet* SoIndexedFaceSet209 = new SoIndexedFaceSet();
+SoIndexedFaceSet209->setCoordIndex(new int32_t[]{58,44,47,-1,47,49,58,-1,49,60,59,-1,59,1,49,-1,56,48,47,-1,47,44,56,-1,50,51,59,-1,59,60,50,-1,173,168,58,-1,58,49,173,-1,171,173,49,-1,49,1,171,-1,14,12,18,-1,18,15,14,-1,162,160,14,-1,14,15,162,-1,16,57,33,-1,21,18,12,-1,18,79,19,-1,80,20,19,-1,11,10,79,-1,18,21,79,-1,11,79,21,-1,21,12,78,-1,11,21,22,-1,321,345,320,-1,322,323,346,-1,80,25,24,-1,24,20,80,-1,26,38,24,-1,23,13,38,-1,20,77,18,-1,18,19,20,-1,38,29,30,-1,30,23,38,-1,27,30,29,-1,27,28,30,-1,30,28,23,-1,33,31,16,-1,31,37,16,-1,28,34,23,-1,17,35,36,-1,36,28,17,-1,33,36,35,-1,17,32,35,-1,32,33,35,-1,33,34,36,-1,36,34,28,-1,10,19,79,-1,4,40,37,-1,40,42,41,-1,40,41,37,-1,40,4,42,-1,56,43,4,-1,4,46,56,-1,45,43,56,-1,56,44,45,-1,43,45,4,-1,48,56,46,-1,46,3,48,-1,50,60,3,-1,51,50,3,-1,3,2,51,-1,58,168,52,-1,52,168,170,-1,61,52,170,-1,4,45,52,-1,52,61,4,-1,52,45,44,-1,44,58,52,-1,61,170,53,-1,170,165,39,-1,39,53,170,-1,4,61,53,-1,53,42,4,-1,53,39,41,-1,41,42,53,-1,165,57,39,-1,13,23,54,-1,16,37,57,-1,41,39,57,-1,37,41,57,-1,57,165,166,-1,54,166,13,-1,33,57,34,-1,34,57,54,-1,34,54,23,-1,166,162,55,-1,55,162,15,-1,77,55,15,-1,15,18,77,-1,166,77,13,-1,77,166,55,-1,13,77,24,-1,24,38,13,-1,20,24,77,-1,54,57,166,-1,47,60,49,-1,48,3,47,-1,3,60,47,-1,3,63,2,-1,72,62,63,-1,3,65,63,-1,3,46,64,-1,64,66,3,-1,6,66,64,-1,3,66,65,-1,6,73,8,-1,8,73,67,-1,6,75,73,-1,5,71,73,-1,73,75,5,-1,6,70,75,-1,64,46,69,-1,75,70,69,-1,75,69,344,-1,2,63,62,-1,8,66,6,-1,63,8,72,-1,9,74,71,-1,68,74,9,-1,74,8,67,-1,68,72,74,-1,72,8,74,-1,67,71,74,-1,67,73,71,-1,65,8,63,-1,65,66,8,-1,70,6,64,-1,70,64,69,-1,4,0,344,-1,69,46,4,-1,69,4,344,-1,76,344,0,-1,5,76,0,-1,5,75,76,-1,75,344,76,-1,133,125,123,-1,123,120,133,-1,125,1,59,-1,59,134,125,-1,131,120,123,-1,123,124,131,-1,126,134,59,-1,59,51,126,-1,172,125,133,-1,133,167,172,-1,171,1,125,-1,125,172,171,-1,14,91,94,-1,94,12,14,-1,161,91,14,-1,14,160,161,-1,109,132,92,-1,12,94,97,-1,95,149,94,-1,95,96,150,-1,149,88,89,-1,149,97,94,-1,97,149,89,-1,78,12,97,-1,98,97,89,-1,325,348,324,-1,354,326,327,-1,150,96,100,-1,100,101,150,-1,100,114,102,-1,114,90,99,-1,96,95,94,-1,94,148,96,-1,114,99,106,-1,106,105,114,-1,105,106,103,-1,106,104,103,-1,99,104,106,-1,92,107,109,-1,92,113,107,-1,99,110,104,-1,93,104,112,-1,112,111,93,-1,111,112,109,-1,111,108,93,-1,111,109,108,-1,112,110,109,-1,104,110,112,-1,149,95,88,-1,113,116,83,-1,117,118,116,-1,113,117,116,-1,118,83,116,-1,131,122,83,-1,83,119,131,-1,121,120,131,-1,131,119,121,-1,83,121,119,-1,124,82,122,-1,122,131,124,-1,82,134,126,-1,51,2,82,-1,82,126,51,-1,127,167,133,-1,169,167,127,-1,169,127,135,-1,83,135,127,-1,127,121,83,-1,127,133,120,-1,120,121,127,-1,128,169,135,-1,169,128,115,-1,115,163,169,-1,83,118,128,-1,128,135,83,-1,128,118,117,-1,117,115,128,-1,115,132,163,-1,129,99,90,-1,132,113,92,-1,132,115,117,-1,132,117,113,-1,164,163,132,-1,90,164,129,-1,110,132,109,-1,129,132,110,-1,99,129,110,-1,130,161,164,-1,91,161,130,-1,148,94,91,-1,91,130,148,-1,90,148,164,-1,130,164,148,-1,90,114,100,-1,100,148,90,-1,148,100,96,-1,164,132,129,-1,125,134,123,-1,123,82,124,-1,123,134,82,-1,2,136,82,-1,136,62,72,-1,136,138,82,-1,82,139,137,-1,137,122,82,-1,137,139,85,-1,138,139,82,-1,87,144,85,-1,140,144,87,-1,144,146,85,-1,84,146,144,-1,144,143,84,-1,146,142,85,-1,141,122,137,-1,141,142,146,-1,347,141,146,-1,62,136,2,-1,85,139,87,-1,72,87,136,-1,143,145,9,-1,9,145,68,-1,145,140,87,-1,68,145,72,-1,72,145,87,-1,145,143,140,-1,143,144,140,-1,136,87,138,-1,87,139,138,-1,137,85,142,-1,141,137,142,-1,347,81,83,-1,83,122,141,-1,347,83,141,-1,81,347,147,-1,81,147,84,-1,147,146,84,-1,147,347,146,-1,162,166,152,-1,151,160,162,-1,162,152,151,-1,152,166,165,-1,165,154,152,-1,154,165,170,-1,170,156,154,-1,152,154,155,-1,155,151,152,-1,156,153,155,-1,155,154,156,-1,173,156,170,-1,170,168,173,-1,171,153,156,-1,156,173,171,-1,157,164,161,-1,151,157,161,-1,161,160,151,-1,157,158,163,-1,163,164,157,-1,158,159,169,-1,169,163,158,-1,157,151,155,-1,155,158,157,-1,159,158,155,-1,155,153,159,-1,172,167,169,-1,169,159,172,-1,171,172,159,-1,159,153,171,-1,355,237,223,-1,174,236,237,-1,236,174,175,-1,179,238,176,-1,179,176,177,-1,179,177,178,-1,178,174,179,-1,174,178,175,-1,180,226,236,-1,238,180,236,-1,180,230,226,-1,237,236,223,-1,223,236,218,-1,225,355,223,-1,223,224,225,-1,328,329,239,-1,330,331,350,-1,228,227,219,-1,219,222,228,-1,236,226,218,-1,174,237,0,-1,0,237,355,-1,0,179,174,-1,318,355,225,-1,220,228,222,-1,221,228,220,-1,5,0,355,-1,218,182,223,-1,183,223,182,-1,181,183,185,-1,181,185,242,-1,213,212,244,-1,244,246,213,-1,213,246,245,-1,245,214,213,-1,245,247,184,-1,184,214,245,-1,214,184,206,-1,206,207,214,-1,217,319,225,-1,225,224,217,-1,183,181,217,-1,217,224,183,-1,224,223,183,-1,226,209,218,-1,218,209,184,-1,182,185,183,-1,218,184,182,-1,207,208,232,-1,232,214,207,-1,232,215,214,-1,209,206,184,-1,186,192,190,-1,190,188,186,-1,197,192,208,-1,208,207,197,-1,190,222,219,-1,219,188,190,-1,194,195,190,-1,226,189,209,-1,187,189,226,-1,192,186,208,-1,191,216,205,-1,196,205,216,-1,195,196,216,-1,196,195,194,-1,209,189,198,-1,199,197,207,-1,207,206,199,-1,233,234,197,-1,197,199,233,-1,209,198,199,-1,199,206,209,-1,233,199,198,-1,198,200,233,-1,248,194,202,-1,201,205,250,-1,248,249,196,-1,196,194,248,-1,196,249,250,-1,250,205,196,-1,234,203,197,-1,203,192,197,-1,194,190,202,-1,200,198,189,-1,189,204,200,-1,202,190,192,-1,202,192,203,-1,205,210,191,-1,210,205,201,-1,220,222,193,-1,204,189,187,-1,187,210,204,-1,210,201,204,-1,210,187,191,-1,195,211,190,-1,195,193,211,-1,193,222,211,-1,211,222,190,-1,215,212,213,-1,213,214,215,-1,230,187,226,-1,230,191,187,-1,229,221,230,-1,229,228,221,-1,9,355,318,-1,5,355,71,-1,71,355,9,-1,231,247,185,-1,182,231,185,-1,184,231,182,-1,184,247,231,-1,238,230,180,-1,230,221,191,-1,221,235,191,-1,191,235,216,-1,221,220,235,-1,193,235,220,-1,216,235,193,-1,193,195,216,-1,250,249,233,-1,203,234,248,-1,234,233,249,-1,250,233,200,-1,249,248,234,-1,243,241,240,-1,241,243,247,-1,204,201,250,-1,200,204,250,-1,203,248,202,-1,247,243,242,-1,247,242,185,-1,332,333,349,-1,334,335,7,-1,292,304,353,-1,304,303,251,-1,252,251,303,-1,253,305,256,-1,254,253,256,-1,256,251,255,-1,255,254,256,-1,252,255,251,-1,303,295,257,-1,303,257,305,-1,295,298,257,-1,292,303,304,-1,288,303,292,-1,294,352,292,-1,292,353,294,-1,336,337,293,-1,306,338,339,-1,296,291,219,-1,219,227,296,-1,288,295,303,-1,81,304,251,-1,353,304,81,-1,251,256,81,-1,294,353,317,-1,291,296,289,-1,289,296,290,-1,353,81,84,-1,292,258,288,-1,258,292,259,-1,261,259,181,-1,242,261,181,-1,285,309,244,-1,244,212,285,-1,285,286,308,-1,308,309,285,-1,308,286,260,-1,260,310,308,-1,286,281,280,-1,280,260,286,-1,217,352,294,-1,294,319,217,-1,259,352,217,-1,217,181,259,-1,259,292,352,-1,288,282,295,-1,260,282,288,-1,259,261,258,-1,258,260,288,-1,281,286,232,-1,232,208,281,-1,286,215,232,-1,260,280,282,-1,186,188,264,-1,264,266,186,-1,271,281,208,-1,208,266,271,-1,264,188,219,-1,219,291,264,-1,264,269,268,-1,282,263,295,-1,295,263,262,-1,208,186,266,-1,279,287,265,-1,287,279,270,-1,287,270,269,-1,268,269,270,-1,272,263,282,-1,273,280,281,-1,281,271,273,-1,300,273,271,-1,271,301,300,-1,282,280,273,-1,273,272,282,-1,300,274,272,-1,272,273,300,-1,276,268,311,-1,313,279,275,-1,311,268,270,-1,270,312,311,-1,270,279,313,-1,313,312,270,-1,271,277,301,-1,271,266,277,-1,276,264,268,-1,274,278,263,-1,263,272,274,-1,266,264,276,-1,277,266,276,-1,265,283,279,-1,275,279,283,-1,267,291,289,-1,278,283,262,-1,262,263,278,-1,278,275,283,-1,265,262,283,-1,264,284,269,-1,284,267,269,-1,284,291,267,-1,264,291,284,-1,285,212,215,-1,215,286,285,-1,295,262,298,-1,262,265,298,-1,298,290,297,-1,290,296,297,-1,317,353,9,-1,143,353,84,-1,9,353,143,-1,261,310,299,-1,261,299,258,-1,258,299,260,-1,299,310,260,-1,257,298,305,-1,265,290,298,-1,265,302,290,-1,287,302,265,-1,302,289,290,-1,289,302,267,-1,287,269,267,-1,267,302,287,-1,300,312,313,-1,311,301,277,-1,312,300,301,-1,274,300,313,-1,301,311,312,-1,240,307,243,-1,310,243,307,-1,313,275,278,-1,313,278,274,-1,276,311,277,-1,242,243,310,-1,261,242,310,-1,351,340,341,-1,86,342,343,-1,244,314,315,-1,315,246,244,-1,246,315,247,-1,247,245,246,-1,244,309,316,-1,316,314,244,-1,309,308,310,-1,310,316,309,-1,175,176,238,-1,238,236,175,-1,177,176,175,-1,175,178,177,-1,252,303,305,-1,305,253,252,-1,254,255,252,-1,252,253,254,-1,318,225,319,-1,319,9,318,-1,317,9,319,-1,319,294,317,-1}, 2368);
+SoIndexedFaceSet209->setCreaseAngle(1.57);
+SoIndexedFaceSet209->setTexCoordIndex(new int32_t[]{0,3,2,-1,2,1,0,-1,1,6,5,-1,5,4,1,-1,7,8,2,-1,2,3,7,-1,9,10,5,-1,5,6,9,-1,11,12,0,-1,0,1,11,-1,13,11,1,-1,1,4,13,-1,14,17,16,-1,16,15,14,-1,18,19,14,-1,14,15,18,-1,22,21,20,-1,23,16,17,-1,16,25,24,-1,27,26,24,-1,29,28,25,-1,16,23,25,-1,29,25,23,-1,31,17,30,-1,29,23,32,-1,33,32,31,-1,33,31,30,-1,27,35,34,-1,34,26,27,-1,37,36,34,-1,39,38,36,-1,26,40,16,-1,16,24,26,-1,36,42,41,-1,41,39,36,-1,43,41,42,-1,43,44,41,-1,41,44,39,-1,20,45,22,-1,45,46,22,-1,44,47,39,-1,48,50,49,-1,49,44,48,-1,20,49,50,-1,48,51,50,-1,51,20,50,-1,20,47,49,-1,49,47,44,-1,28,24,25,-1,53,52,46,-1,52,55,54,-1,52,54,46,-1,52,53,55,-1,7,57,53,-1,53,56,7,-1,58,57,7,-1,7,59,58,-1,57,58,53,-1,8,7,56,-1,56,60,8,-1,9,6,60,-1,10,9,60,-1,60,61,10,-1,0,12,62,-1,62,12,63,-1,64,62,63,-1,53,58,62,-1,62,64,53,-1,62,58,59,-1,59,0,62,-1,64,63,65,-1,63,67,66,-1,66,65,63,-1,53,64,65,-1,65,55,53,-1,65,66,54,-1,54,55,65,-1,67,21,66,-1,38,39,68,-1,22,46,21,-1,54,66,21,-1,46,54,21,-1,21,67,69,-1,68,69,38,-1,20,21,47,-1,47,21,68,-1,47,68,39,-1,69,18,70,-1,70,18,15,-1,40,70,15,-1,15,16,40,-1,69,71,38,-1,71,69,70,-1,38,71,34,-1,34,36,38,-1,26,34,71,-1,68,21,69,-1,2,6,1,-1,8,60,2,-1,60,6,2,-1,74,73,72,-1,77,76,75,-1,74,78,73,-1,74,81,80,-1,80,79,74,-1,82,79,80,-1,74,79,78,-1,82,84,83,-1,83,84,85,-1,82,86,84,-1,87,90,89,-1,89,88,87,-1,92,91,88,-1,80,81,93,-1,88,91,94,-1,86,93,95,-1,72,73,96,-1,83,79,82,-1,73,83,97,-1,100,99,98,-1,103,102,101,-1,99,83,85,-1,104,97,99,-1,97,83,99,-1,105,90,102,-1,105,89,90,-1,107,106,75,-1,107,108,106,-1,109,82,80,-1,109,80,93,-1,112,111,110,-1,93,81,113,-1,93,113,95,-1,114,110,111,-1,115,114,111,-1,87,86,116,-1,86,95,116,-1,117,120,119,-1,119,118,117,-1,120,123,122,-1,122,121,120,-1,124,118,119,-1,119,125,124,-1,126,121,122,-1,122,127,126,-1,128,120,117,-1,117,129,128,-1,130,123,120,-1,120,128,130,-1,14,132,131,-1,131,17,14,-1,133,132,14,-1,14,19,133,-1,136,135,134,-1,17,131,137,-1,139,138,131,-1,139,141,140,-1,138,143,142,-1,138,137,131,-1,137,138,142,-1,30,17,144,-1,145,137,142,-1,144,145,146,-1,30,144,146,-1,140,141,148,-1,148,147,140,-1,148,150,149,-1,150,152,151,-1,141,139,131,-1,131,153,141,-1,150,151,155,-1,155,154,150,-1,154,155,156,-1,155,157,156,-1,151,157,155,-1,134,158,136,-1,134,159,158,-1,151,160,157,-1,161,157,163,-1,163,162,161,-1,162,163,136,-1,162,164,161,-1,162,136,164,-1,163,160,136,-1,157,160,163,-1,138,139,143,-1,159,166,165,-1,168,167,166,-1,159,168,166,-1,167,165,166,-1,124,170,165,-1,165,169,124,-1,171,172,124,-1,124,169,171,-1,165,171,169,-1,125,173,170,-1,170,124,125,-1,173,121,126,-1,127,174,173,-1,173,126,127,-1,175,129,117,-1,176,129,175,-1,176,175,177,-1,165,177,175,-1,175,171,165,-1,175,117,172,-1,172,171,175,-1,178,176,177,-1,176,178,180,-1,180,179,176,-1,165,167,178,-1,178,177,165,-1,178,167,168,-1,168,180,178,-1,180,135,179,-1,181,151,152,-1,135,159,134,-1,135,180,168,-1,135,168,159,-1,182,179,135,-1,152,182,181,-1,160,135,136,-1,181,135,160,-1,151,181,160,-1,183,133,182,-1,132,133,183,-1,153,131,132,-1,132,183,153,-1,152,184,182,-1,183,182,184,-1,152,150,148,-1,148,184,152,-1,184,148,141,-1,182,135,181,-1,120,121,119,-1,119,173,125,-1,119,121,173,-1,72,186,185,-1,187,76,77,-1,186,188,185,-1,185,191,190,-1,190,189,185,-1,190,191,192,-1,188,191,185,-1,194,193,192,-1,195,193,194,-1,193,196,192,-1,197,200,199,-1,199,198,197,-1,200,202,201,-1,203,189,190,-1,204,202,200,-1,205,203,196,-1,96,186,72,-1,192,191,194,-1,97,194,186,-1,207,206,100,-1,101,208,103,-1,206,195,194,-1,104,206,97,-1,97,206,194,-1,208,198,209,-1,198,199,209,-1,187,211,210,-1,211,212,210,-1,190,192,213,-1,203,190,213,-1,216,215,214,-1,217,189,203,-1,205,217,203,-1,215,216,218,-1,215,218,219,-1,220,196,197,-1,220,205,196,-1,18,69,221,-1,222,19,18,-1,18,221,222,-1,221,69,67,-1,67,223,221,-1,223,67,63,-1,63,224,223,-1,221,223,225,-1,225,222,221,-1,224,226,225,-1,225,223,224,-1,11,224,63,-1,63,12,11,-1,13,226,224,-1,224,11,13,-1,227,182,133,-1,222,227,133,-1,133,19,222,-1,227,228,179,-1,179,182,227,-1,228,229,176,-1,176,179,228,-1,227,222,225,-1,225,228,227,-1,229,228,225,-1,225,230,229,-1,128,129,176,-1,176,229,128,-1,130,128,229,-1,229,230,130,-1,233,232,231,-1,235,234,232,-1,234,235,236,-1,239,238,237,-1,239,237,240,-1,239,240,241,-1,241,235,239,-1,235,241,236,-1,243,242,234,-1,238,243,234,-1,243,244,242,-1,232,234,231,-1,231,234,245,-1,246,233,231,-1,231,247,246,-1,247,246,233,-1,231,247,233,-1,248,251,250,-1,250,249,248,-1,234,242,245,-1,235,232,252,-1,252,232,233,-1,252,239,235,-1,253,233,246,-1,254,248,249,-1,255,248,254,-1,256,252,233,-1,245,257,231,-1,258,231,257,-1,261,260,259,-1,261,259,262,-1,263,266,265,-1,265,264,263,-1,263,264,268,-1,268,267,263,-1,268,270,269,-1,269,267,268,-1,267,269,272,-1,272,271,267,-1,273,274,246,-1,246,247,273,-1,258,275,273,-1,273,247,258,-1,247,231,258,-1,278,277,276,-1,276,277,269,-1,279,259,260,-1,276,269,279,-1,271,281,280,-1,280,267,271,-1,280,282,267,-1,277,272,269,-1,284,287,286,-1,286,285,284,-1,288,287,281,-1,281,271,288,-1,286,249,250,-1,250,285,286,-1,290,289,286,-1,278,291,277,-1,292,291,278,-1,287,284,283,-1,295,294,293,-1,296,293,294,-1,289,296,294,-1,296,289,290,-1,277,291,297,-1,298,288,271,-1,271,272,298,-1,299,300,288,-1,288,298,299,-1,277,297,298,-1,298,272,277,-1,299,298,297,-1,297,301,299,-1,303,290,302,-1,305,293,304,-1,303,306,296,-1,296,290,303,-1,296,306,304,-1,304,293,296,-1,300,307,288,-1,307,287,288,-1,290,286,302,-1,301,297,291,-1,291,308,301,-1,302,286,287,-1,309,287,307,-1,293,310,295,-1,310,293,305,-1,254,249,311,-1,308,291,292,-1,292,310,308,-1,310,305,308,-1,310,292,295,-1,289,312,286,-1,289,311,312,-1,311,249,312,-1,312,249,286,-1,282,266,263,-1,263,267,282,-1,313,292,278,-1,313,295,292,-1,314,255,313,-1,314,248,255,-1,315,233,253,-1,256,233,316,-1,316,233,315,-1,317,270,259,-1,279,317,259,-1,269,317,279,-1,269,270,317,-1,238,244,243,-1,313,255,295,-1,255,318,295,-1,295,318,294,-1,255,254,318,-1,311,318,254,-1,294,318,311,-1,311,289,294,-1,304,306,299,-1,307,300,303,-1,300,299,306,-1,304,299,301,-1,306,303,300,-1,321,320,319,-1,320,321,270,-1,308,305,304,-1,301,308,304,-1,307,303,309,-1,270,321,262,-1,270,262,259,-1,252,322,239,-1,252,256,322,-1,231,232,233,-1,232,234,235,-1,236,235,234,-1,237,238,239,-1,240,237,239,-1,239,235,241,-1,241,240,239,-1,236,241,235,-1,234,242,243,-1,234,243,238,-1,242,244,243,-1,231,234,232,-1,245,234,231,-1,246,247,231,-1,231,233,246,-1,233,246,247,-1,233,247,231,-1,323,324,250,-1,250,251,323,-1,245,242,234,-1,252,232,235,-1,233,232,252,-1,235,239,252,-1,246,233,253,-1,324,323,325,-1,325,323,326,-1,233,252,256,-1,231,257,245,-1,257,231,258,-1,329,328,327,-1,330,329,327,-1,331,332,265,-1,265,266,331,-1,331,334,333,-1,333,332,331,-1,333,334,336,-1,336,335,333,-1,334,338,337,-1,337,336,334,-1,273,247,246,-1,246,274,273,-1,258,247,273,-1,273,275,258,-1,258,231,247,-1,341,340,339,-1,336,340,341,-1,328,329,342,-1,342,336,341,-1,338,334,280,-1,280,343,338,-1,334,282,280,-1,336,337,340,-1,284,285,345,-1,345,344,284,-1,346,338,343,-1,343,344,346,-1,345,285,250,-1,250,324,345,-1,345,348,347,-1,340,349,339,-1,339,349,350,-1,283,284,344,-1,353,352,351,-1,352,353,354,-1,352,354,348,-1,347,348,354,-1,355,349,340,-1,356,337,338,-1,338,346,356,-1,357,356,346,-1,346,358,357,-1,340,337,356,-1,356,355,340,-1,357,359,355,-1,355,356,357,-1,361,347,360,-1,363,353,362,-1,360,347,354,-1,354,364,360,-1,354,353,363,-1,363,364,354,-1,346,365,358,-1,346,344,365,-1,361,345,347,-1,359,366,349,-1,349,355,359,-1,344,345,361,-1,365,344,367,-1,351,368,353,-1,362,353,368,-1,369,324,325,-1,366,368,350,-1,350,349,366,-1,366,362,368,-1,351,350,368,-1,345,370,348,-1,370,369,348,-1,370,324,369,-1,345,324,370,-1,331,266,282,-1,282,334,331,-1,339,350,371,-1,350,351,371,-1,371,326,372,-1,326,323,372,-1,253,233,315,-1,316,233,256,-1,315,233,316,-1,329,335,373,-1,329,373,342,-1,342,373,336,-1,373,335,336,-1,243,244,238,-1,351,326,371,-1,351,374,326,-1,352,374,351,-1,374,325,326,-1,325,374,369,-1,352,348,369,-1,369,374,352,-1,357,364,363,-1,360,358,365,-1,364,357,358,-1,359,357,363,-1,358,360,364,-1,319,376,375,-1,335,375,376,-1,363,362,366,-1,363,366,359,-1,367,360,365,-1,330,375,335,-1,329,330,335,-1,239,322,252,-1,322,256,252,-1,265,378,377,-1,377,264,265,-1,264,377,270,-1,270,268,264,-1,265,332,379,-1,379,378,265,-1,332,333,335,-1,335,379,332,-1,380,383,382,-1,382,381,380,-1,384,383,380,-1,380,385,384,-1,380,381,382,-1,382,383,380,-1,384,385,380,-1,380,383,384,-1,253,246,274,-1,274,100,253,-1,253,100,274,-1,274,246,253,-1}, 2368);
+SoCoordinate* SoCoordinate210 = new SoCoordinate();
+SoCoordinate210->setPoint(new float[]{4.734,2.295,-0.478,0.0,7.925,-7.347,0.0,2.738,-7.551,2.596,3.055,-7.113,5.82,3.915,-2.239,3.712,1.225,-2.29,3.261,1.453,-4.252,5.658,2.599,-1.983,1.82,1.289,-5.164,0.0,0.1375,-3.592,2.395,4.95,6.346,0.7761,4.912,6.883,0.0,9.74,6.859,4.408,9.203,3.673,0.0,11.25,5.65,2.225,10.89,5.304,5.962,4.414,1.165,4.041,0.8383,3.523,1.972,9.601,6.357,2.537,7.001,6.362,3.694,6.649,5.287,0.4475,7.341,7.362,0.513,6.698,7.119,4.843,6.188,3.431,3.886,6.593,4.951,3.681,5.194,5.001,3.826,5.001,4.664,3.284,2.472,4.49,4.543,4.124,3.499,3.859,3.861,4.364,4.575,3.792,4.006,5.065,1.183,1.247,4.863,1.73,2.37,5.256,2.695,2.024,5.549,5.532,2.714,5.161,2.035,2.722,5.442,3.878,2.887,6.111,4.389,0.2634,4.062,5.868,4.221,6.007,7.856,-0.5637,7.021,1.661,-0.9157,6.568,4.855,-0.7308,6.326,4.691,-1.55,6.23,0.8303,-3.441,4.977,5.364,-5.673,6.326,4.656,-2.95,4.216,3.427,-5.131,3.522,5.818,-7.166,3.424,1.86,-7.278,2.479,7.925,-6.757,1.927,1.981,-8.89,0.0,3.753,-8.454,5.584,7.691,-2.78,5.853,7.683,-1.772,5.181,8.476,2.104,3.038,10.79,4.444,5.123,3.032,-5.304,5.664,8.061,0.8754,4.721,7.925,-5.258,0.0,5.519,-7.965,2.479,5.82,-7.483,5.595,7.63,-2.141,0.0,0.1227,-8.281,1.173,1.832,-6.114,3.978,2.324,-4.64,2.917,-0.9285,-7.31,3.323,2.08,-5.371,1.968,-1.561,-5.013,0.0,-0.9435,-6.54,4.713,2.444,-3.477,4.42,-0.2924,-4.477,1.411,0.5541,-3.484,0.0,1.035,-6.031,2.275,0.8807,-3.763,0.9407,0.7103,-4.537,3.818,1.729,-3.139,4.664,1.866,-1.436,3.657,9.188,4.96,0.0,7.548,7.405,1.559,7.266,7.008,2.791,5.041,6.017,-4.734,2.295,-0.478,-2.596,3.055,-7.113,-5.82,3.915,-2.239,-3.712,1.225,-2.29,-3.261,1.453,-4.252,-5.658,2.599,-1.983,-1.82,1.289,-5.164,-2.395,4.95,6.346,-0.7761,4.912,6.883,-4.408,9.203,3.673,-2.225,10.89,5.304,-5.962,4.414,1.165,-4.041,0.8383,3.523,-1.972,9.601,6.357,-2.537,7.001,6.362,-3.694,6.649,5.287,-0.4475,7.341,7.362,-0.513,6.698,7.119,-4.843,6.188,3.431,-3.886,6.593,4.951,-3.681,5.194,5.001,-3.826,5.001,4.664,-3.284,2.472,4.49,-4.543,4.124,3.499,-3.859,3.861,4.364,-4.575,3.792,4.006,-5.065,1.183,1.247,-4.863,1.73,2.37,-5.256,2.695,2.024,-5.549,5.532,2.714,-5.161,2.035,2.722,-5.442,3.878,2.887,-6.111,4.389,0.2634,-4.062,5.868,4.221,-6.007,7.856,-0.5637,-7.021,1.661,-0.9157,-6.568,4.855,-0.7308,-6.326,4.691,-1.55,-6.23,0.8303,-3.441,-4.977,5.364,-5.673,-6.326,4.656,-2.95,-4.216,3.427,-5.131,-3.522,5.818,-7.166,-3.424,1.86,-7.278,-2.479,7.925,-6.757,-1.927,1.981,-8.89,-5.584,7.691,-2.78,-5.853,7.683,-1.772,-5.181,8.476,2.104,-3.038,10.79,4.444,-5.123,3.032,-5.304,-5.664,8.061,0.8754,-4.721,7.925,-5.258,-2.479,5.82,-7.483,-5.595,7.63,-2.141,-1.173,1.832,-6.114,-3.978,2.324,-4.64,-2.917,-0.9285,-7.31,-3.323,2.08,-5.371,-1.968,-1.561,-5.013,-4.713,2.444,-3.477,-4.42,-0.2924,-4.477,-1.411,0.5541,-3.484,-2.275,0.8807,-3.763,-0.9407,0.7103,-4.537,-3.818,1.729,-3.139,-4.664,1.866,-1.436,-3.657,9.188,4.96,-1.559,7.266,7.008,-2.791,5.041,6.017,0.0,12.89,2.191,2.479,12.6,2.191,0.0,12.77,-3.073,2.479,13.01,-0.5905,0.0,13.3,-0.5905,2.479,12.47,-3.073,-2.479,12.6,2.191,-2.479,13.01,-0.5905,-2.479,12.47,-3.073,0.0,12.19,4.069,-2.479,11.8,3.665,2.479,11.8,3.665,-4.738,11.13,-0.5905,-4.581,10.59,1.893,4.738,11.13,-0.5905,4.581,10.59,1.893,-4.776,9.342,-4.254,4.776,9.342,-4.254,-4.651,10.94,-2.696,4.651,10.94,-2.696,0.0,10.91,-6.064,-2.479,10.58,-5.873,2.479,10.58,-5.873,5.038,2.087,0.2634,5.351,2.269,0.2568,5.575,4.993,0.4877,5.759,4.313,-0.6689,5.672,3.119,-0.6884,5.054,4.389,0.2634,4.617,3.919,1.981,0.0,-1.299,4.283,2.507,0.2122,3.467,1.252,-0.7037,3.753,2.181,1.29,4.703,1.083,-0.2065,4.531,0.0,3.949,5.823,4.122,4.752,3.434,0.0,4.457,6.529,3.843,3.486,3.474,0.6247,4.287,6.217,3.884,5.34,4.144,0.2615,3.949,5.823,2.103,4.881,5.78,1.599,4.225,5.429,2.103,4.763,5.713,2.175,4.422,5.292,1.061,2.841,5.24,3.345,2.806,3.987,2.536,2.741,4.559,3.082,3.581,4.206,3.368,4.077,4.055,1.044,3.885,5.454,1.356,3.642,5.241,3.227,3.707,4.111,3.028,4.567,4.683,2.472,2.023,4.722,0.9194,2.354,5.382,0.0,2.998,5.872,3.515,2.199,3.631,3.685,4.225,3.891,1.11,4.559,6.074,0.0,1.141,5.968,0.1458,1.141,5.967,0.4592,1.442,5.549,0.0,1.753,6.811,3.24,5.132,4.832,0.0,-1.23,3.575,3.443,1.22,3.201,0.0,6.577,6.529,1.972,6.686,5.769,3.551,6.468,4.66,1.125,6.641,6.224,2.799,0.2961,1.981,1.438,-0.7799,2.92,2.098,-0.0622,0.3894,4.342,2.994,2.484,0.0,9.837,5.8,1.972,10.18,5.298,3.829,8.081,4.078,4.754,5.519,2.97,1.641,0.4521,4.705,0.0,2.206,6.446,2.795,3.568,4.497,1.835,3.587,5.011,3.243,5.188,4.826,4.074,1.813,1.489,4.073,1.537,-0.251,4.798,4.414,1.165,3.561,1.081,-1.554,0.0,0.5923,5.37,0.2244,0.5923,5.37,0.0,-0.2097,4.949,0.0,0.1669,5.375,0.0,0.7989,5.843,0.4079,0.7711,5.733,0.2244,0.7989,5.843,1.184,0.5011,4.895,1.695,4.1,5.387,2.183,4.262,5.159,2.937,4.372,4.659,-5.038,2.087,0.2634,-5.351,2.269,0.2568,-5.575,4.993,0.4877,-5.759,4.313,-0.6689,-5.672,3.119,-0.6884,-5.054,4.389,0.2634,-4.617,3.919,1.981,-2.507,0.2122,3.467,-1.252,-0.7037,3.753,-2.181,1.29,4.703,-1.083,-0.2065,4.531,-4.122,4.752,3.434,-3.843,3.486,3.474,-0.6247,4.287,6.217,-3.884,5.34,4.144,-0.2615,3.949,5.823,-2.103,4.881,5.78,-1.599,4.225,5.429,-2.103,4.763,5.713,-2.175,4.422,5.292,-1.061,2.841,5.24,-3.345,2.806,3.987,-2.536,2.741,4.559,-3.082,3.581,4.206,-3.368,4.077,4.055,-1.044,3.885,5.454,-1.356,3.642,5.241,-3.227,3.707,4.111,-3.028,4.567,4.683,-2.472,2.023,4.722,-0.9194,2.354,5.382,-3.515,2.199,3.631,-3.685,4.225,3.891,-1.11,4.559,6.074,-0.1458,1.141,5.967,-0.4592,1.442,5.549,-3.24,5.132,4.832,-3.443,1.22,3.201,-1.972,6.686,5.769,-3.551,6.468,4.66,-1.125,6.641,6.224,-2.799,0.2961,1.981,-1.438,-0.7799,2.92,-2.098,-0.0622,0.3894,-4.342,2.994,2.484,-1.972,10.18,5.298,-3.829,8.081,4.078,-4.754,5.519,2.97,-1.641,0.4521,4.705,-2.795,3.568,4.497,-1.835,3.587,5.011,-3.243,5.188,4.826,-4.074,1.813,1.489,-4.073,1.537,-0.251,-4.798,4.414,1.165,-3.561,1.081,-1.554,-0.2244,0.5923,5.37,-0.4079,0.7711,5.733,-0.2244,0.7989,5.843,-1.184,0.5011,4.895,-1.695,4.1,5.387,-2.183,4.262,5.159,-2.937,4.372,4.659,0.0,0.5907,5.545,0.2244,0.5907,5.545,-0.2244,0.5907,5.545,-2.091,-0.0943,-1.629,2.091,-0.0943,-1.629,0.0,-0.6349,1.532,0.4475,7.341,7.362,0.7761,4.912,6.883,0.7761,4.912,6.883,0.4475,7.341,7.362,-0.7761,4.912,6.883,-0.4475,7.341,7.362,-0.4475,7.341,7.362,-0.7761,4.912,6.883,1.438,-0.7799,2.92,2.098,-0.0622,0.3894,2.799,0.2961,1.981,1.438,-0.7799,2.92,4.734,2.295,-0.478,5.658,2.599,-1.983,4.734,2.295,-0.478,3.712,1.225,-2.29,-3.561,1.081,-1.554,-2.098,-0.0622,0.3894,-1.438,-0.7799,2.92,-2.799,0.2961,1.981,-5.658,2.599,-1.983,-4.734,2.295,-0.478,-3.712,1.225,-2.29,-4.734,2.295,-0.478,5.658,2.599,-1.983,0.513,6.698,7.119,0.0,7.548,7.405,-5.658,2.599,-1.983,-0.513,6.698,7.119,5.054,4.389,0.2634,3.561,1.081,-1.554,-5.054,4.389,0.2634,-1.438,-0.7799,2.92,-3.561,1.081,-1.554,0.0,7.548,7.405,3.561,1.081,-1.554}, 1068);
+SoIndexedFaceSet209->setCoord(*SoCoordinate210);
+
+SoTextureCoordinate* SoTextureCoordinate211 = new SoTextureCoordinate();
+SoTextureCoordinate211->setPoint(new float[]{0.9175,0.8974,0.9509,0.8981,0.9421,0.8701,0.924,0.8702,0.9824,0.8971,0.9824,0.8682,0.9541,0.8718,0.9147,0.8129,0.9437,0.8153,0.9638,0.8095,0.9824,0.809,0.9461,0.923,0.9071,0.9135,0.9824,0.9287,0.7343,0.9169,0.7616,0.9147,0.7553,0.8982,0.7343,0.8968,0.7739,0.9327,0.7343,0.9365,0.8187,0.8433,0.8348,0.9045,0.8324,0.8647,0.74,0.8745,0.761,0.8768,0.7497,0.8755,0.777,0.8787,0.7647,0.8593,0.7596,0.8565,0.7438,0.8546,0.7343,0.8756,0.7372,0.8736,0.7394,0.8706,0.7405,0.8536,0.7808,0.8802,0.7786,0.8666,0.7875,0.8787,0.7821,0.8667,0.7952,0.9076,0.8011,0.8823,0.7745,0.9003,0.7939,0.8518,0.7845,0.8549,0.7731,0.8049,0.7979,0.8609,0.8185,0.8054,0.8439,0.8655,0.8131,0.8741,0.786,0.7876,0.8107,0.8538,0.8058,0.8252,0.8096,0.8166,0.8589,0.7975,0.8767,0.8622,0.8568,0.8668,0.8669,0.8674,0.9208,0.8549,0.8792,0.7991,0.8835,0.8633,0.9139,0.8636,0.9513,0.84,0.9824,0.8358,0.8845,0.9021,0.888,0.931,0.8761,0.9036,0.8705,0.9018,0.8544,0.902,0.8538,0.9345,0.8173,0.9068,0.8156,0.9257,0.7753,0.9186,0.7832,0.9041,0.7338,0.8385,0.7279,0.8339,0.7208,0.8401,0.7397,0.7767,0.7338,0.7681,0.7338,0.7727,0.7192,0.8201,0.7171,0.8352,0.7139,0.8364,0.7127,0.8419,0.7175,0.832,0.7247,0.8312,0.7224,0.8292,0.7239,0.8169,0.7146,0.8334,0.7152,0.8309,0.753,0.7762,0.7452,0.772,0.7409,0.7703,0.756,0.7661,0.7502,0.7748,0.7102,0.837,0.7574,0.7798,0.7054,0.8378,0.7338,0.8253,0.7338,0.8299,0.7267,0.8275,0.7291,0.8283,0.7338,0.8254,0.7338,0.7682,0.7385,0.7711,0.7338,0.7628,0.7338,0.82,0.7437,0.7597,0.7429,0.774,0.7484,0.7629,0.7505,0.778,0.7116,0.8233,0.7622,0.7806,0.7576,0.779,0.763,0.7872,0.7046,0.8444,0.7572,0.7769,0.7524,0.7737,0.7104,0.8341,0.5511,0.8974,0.5442,0.8881,0.5261,0.888,0.5173,0.916,0.5142,0.8897,0.4859,0.8861,0.4859,0.915,0.5538,0.8129,0.5221,0.9505,0.5019,0.9448,0.4833,0.9442,0.5221,0.9409,0.5615,0.9135,0.4859,0.9465,0.7132,0.8982,0.707,0.9147,0.6947,0.9327,0.6362,0.8647,0.6338,0.9045,0.6499,0.8433,0.7286,0.8745,0.7189,0.8755,0.7076,0.8768,0.7039,0.8593,0.6916,0.8787,0.7247,0.8546,0.709,0.8565,0.7314,0.8736,0.7292,0.8706,0.728,0.8536,0.69,0.8666,0.6878,0.8802,0.6865,0.8667,0.6811,0.8787,0.6675,0.8823,0.6734,0.9076,0.6941,0.9003,0.6841,0.8549,0.6747,0.8518,0.6955,0.8049,0.6707,0.8609,0.65,0.8054,0.6247,0.8655,0.6555,0.8741,0.6826,0.7876,0.6628,0.8252,0.6579,0.8538,0.659,0.8166,0.5919,0.8622,0.6097,0.7975,0.6017,0.8674,0.6119,0.8668,0.5894,0.7991,0.5477,0.8549,0.5851,0.8633,0.5547,0.8636,0.5069,0.9121,0.4833,0.9711,0.5841,0.9021,0.5806,0.931,0.5925,0.9036,0.5981,0.9018,0.6148,0.9345,0.6142,0.902,0.6513,0.9068,0.653,0.9257,0.6932,0.9186,0.6854,0.9041,0.7468,0.8401,0.7397,0.8339,0.7279,0.7767,0.7484,0.8201,0.7549,0.8419,0.7538,0.8364,0.7505,0.8352,0.7502,0.832,0.7452,0.8292,0.7429,0.8312,0.7437,0.8169,0.753,0.8334,0.7524,0.8309,0.7267,0.7703,0.7224,0.772,0.7146,0.7762,0.7175,0.7748,0.7116,0.7661,0.7574,0.837,0.7102,0.7798,0.7622,0.8378,0.7385,0.8283,0.7409,0.8275,0.7291,0.7711,0.7239,0.7597,0.7192,0.7629,0.7247,0.774,0.7171,0.778,0.756,0.8233,0.7046,0.7872,0.71,0.779,0.7054,0.7806,0.763,0.8444,0.7104,0.7769,0.7152,0.7737,0.7572,0.8341,0.7881,0.9479,0.7343,0.9577,0.8497,0.9637,0.9158,0.9539,0.7343,0.9872,0.9824,0.9663,0.6805,0.9479,0.6189,0.9637,0.5528,0.9539,0.4859,0.9842,0.4263,0.6263,0.4421,0.6351,0.4514,0.6319,0.4298,0.637,0.4385,0.639,0.4385,0.6403,0.4369,0.6596,0.4321,0.6555,0.4385,0.6553,0.4451,0.6548,0.4452,0.6463,0.4227,0.6454,0.4263,0.652,0.4193,0.6633,0.4176,0.6328,0.4376,0.6237,0.4196,0.6187,0.3384,0.9887,0.2979,0.9448,0.2441,0.9417,0.2441,0.9723,0.4437,0.6405,0.4519,0.6235,0.3384,0.9469,0.414,0.9365,0.4566,0.6329,0.4157,0.6257,0.4137,0.6192,0.2959,0.626,0.3051,0.6166,0.258,0.6076,0.2606,0.6259,0.2511,0.6816,0.2548,0.6653,0.2441,0.6653,0.2441,0.6816,0.2661,0.696,0.2636,0.664,0.3484,0.6888,0.3007,0.651,0.2881,0.7397,0.3623,0.7239,0.4151,0.6155,0.4295,0.6197,0.4116,0.6201,0.4088,0.6855,0.4123,0.7323,0.4518,0.7703,0.364,0.6372,0.2441,0.7326,0.2496,0.7705,0.2441,0.7109,0.2441,0.7705,0.2441,0.816,0.2441,0.8403,0.274,0.8322,0.2566,0.816,0.2949,0.763,0.3447,0.8549,0.3206,0.8292,0.4279,0.7939,0.4413,0.8544,0.3889,0.8456,0.3991,0.8726,0.4299,0.8825,0.3482,0.8386,0.4041,0.7613,0.3654,0.7582,0.3778,0.7978,0.3319,0.7987,0.3916,0.7984,0.2943,0.815,0.3252,0.8232,0.3846,0.8362,0.4052,0.8221,0.3485,0.831,0.309,0.8013,0.3985,0.8044,0.2937,0.8109,0.4204,0.8292,0.3447,0.8606,0.2972,0.8452,0.4715,0.8911,0.431,0.9594,0.4658,0.6252,0.465,0.6281,0.3226,0.6487,0.3993,0.8753,0.2441,0.6554,0.2548,0.6554,0.2557,0.6351,0.4544,0.6426,0.1498,0.9887,0.1903,0.9448,0.1498,0.9469,0.0742,0.9365,0.2323,0.6076,0.1853,0.6166,0.1923,0.626,0.2275,0.6259,0.2371,0.6816,0.2334,0.6653,0.2246,0.664,0.2221,0.696,0.1875,0.651,0.1398,0.6888,0.1258,0.7239,0.2001,0.7397,0.0364,0.7703,0.0759,0.7323,0.0794,0.6855,0.1242,0.6372,0.2386,0.7705,0.2316,0.816,0.2142,0.8322,0.1933,0.763,0.1676,0.8292,0.1435,0.8549,0.0602,0.7939,0.0469,0.8544,0.0583,0.8825,0.0891,0.8726,0.0992,0.8456,0.14,0.8386,0.084,0.7613,0.1228,0.7582,0.1104,0.7978,0.1563,0.7987,0.0966,0.7984,0.163,0.8232,0.1939,0.815,0.083,0.8221,0.1036,0.8362,0.1397,0.831,0.1792,0.8013,0.0897,0.8044,0.1944,0.8109,0.0678,0.8292,0.1435,0.8606,0.191,0.8452,0.0166,0.8911,0.0646,0.9594,0.1656,0.6487,0.0889,0.8753,0.2325,0.6351,0.2334,0.6554,0.2548,0.6553,0.2441,0.6553,0.2334,0.6553,0.4156,0.6279,0.3783,0.625,0.3984,0.649,0.4325,0.6718,0.4443,0.6446,0.428,0.6022}, 772);
+SoIndexedFaceSet209->setTexCoord(*SoTextureCoordinate211);
+
+SoShape205->setGeometry(*SoIndexedFaceSet209);
+
+SoTransform204->addChild(*SoShape205);
+
+SoHAnimSegment203->addChild(*SoTransform204);
+
+SoHAnimJoint202->addChildren(*SoHAnimSegment203);
+
+SoHAnimJoint192->addChildren(*SoHAnimJoint202);
+
+SoHAnimJoint122->addChildren(*SoHAnimJoint192);
+
+SoHAnimJoint32->addChildren(*SoHAnimJoint122);
+
+SoHAnimHumanoid24->setSkeleton(*SoHAnimJoint32);
 
 SoHAnimJoint* SoHAnimJoint212 = new SoHAnimJoint();
-SoHAnimJoint212->setUSE(QString("hanim_sacroiliac"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint212);
+SoHAnimJoint212->setUSE(QString("hanim_humanoid_root"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint212);
 
 SoHAnimJoint* SoHAnimJoint213 = new SoHAnimJoint();
-SoHAnimJoint213->setUSE(QString("hanim_skullbase"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint213);
+SoHAnimJoint213->setUSE(QString("hanim_sacroiliac"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint213);
 
 SoHAnimJoint* SoHAnimJoint214 = new SoHAnimJoint();
-SoHAnimJoint214->setUSE(QString("hanim_vl5"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint214);
+SoHAnimJoint214->setUSE(QString("hanim_skullbase"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint214);
 
 SoHAnimJoint* SoHAnimJoint215 = new SoHAnimJoint();
-SoHAnimJoint215->setUSE(QString("hanim_l_elbow"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint215);
+SoHAnimJoint215->setUSE(QString("hanim_vl5"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint215);
 
 SoHAnimJoint* SoHAnimJoint216 = new SoHAnimJoint();
-SoHAnimJoint216->setUSE(QString("hanim_r_elbow"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint216);
+SoHAnimJoint216->setUSE(QString("hanim_l_elbow"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint216);
 
 SoHAnimJoint* SoHAnimJoint217 = new SoHAnimJoint();
-SoHAnimJoint217->setUSE(QString("hanim_l_hip"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint217);
+SoHAnimJoint217->setUSE(QString("hanim_r_elbow"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint217);
 
 SoHAnimJoint* SoHAnimJoint218 = new SoHAnimJoint();
-SoHAnimJoint218->setUSE(QString("hanim_r_hip"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint218);
+SoHAnimJoint218->setUSE(QString("hanim_l_hip"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint218);
 
 SoHAnimJoint* SoHAnimJoint219 = new SoHAnimJoint();
-SoHAnimJoint219->setUSE(QString("hanim_l_knee"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint219);
+SoHAnimJoint219->setUSE(QString("hanim_r_hip"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint219);
 
 SoHAnimJoint* SoHAnimJoint220 = new SoHAnimJoint();
-SoHAnimJoint220->setUSE(QString("hanim_r_knee"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint220);
+SoHAnimJoint220->setUSE(QString("hanim_l_knee"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint220);
 
 SoHAnimJoint* SoHAnimJoint221 = new SoHAnimJoint();
-SoHAnimJoint221->setUSE(QString("hanim_l_metatarsophalangeal_2"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint221);
+SoHAnimJoint221->setUSE(QString("hanim_r_knee"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint221);
 
 SoHAnimJoint* SoHAnimJoint222 = new SoHAnimJoint();
-SoHAnimJoint222->setUSE(QString("hanim_r_metatarsophalangeal_2"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint222);
+SoHAnimJoint222->setUSE(QString("hanim_l_metatarsophalangeal_2"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint222);
 
 SoHAnimJoint* SoHAnimJoint223 = new SoHAnimJoint();
-SoHAnimJoint223->setUSE(QString("hanim_l_radiocarpal"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint223);
+SoHAnimJoint223->setUSE(QString("hanim_r_metatarsophalangeal_2"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint223);
 
 SoHAnimJoint* SoHAnimJoint224 = new SoHAnimJoint();
-SoHAnimJoint224->setUSE(QString("hanim_r_radiocarpal"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint224);
+SoHAnimJoint224->setUSE(QString("hanim_l_radiocarpal"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint224);
 
 SoHAnimJoint* SoHAnimJoint225 = new SoHAnimJoint();
-SoHAnimJoint225->setUSE(QString("hanim_l_shoulder"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint225);
+SoHAnimJoint225->setUSE(QString("hanim_r_radiocarpal"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint225);
 
 SoHAnimJoint* SoHAnimJoint226 = new SoHAnimJoint();
-SoHAnimJoint226->setUSE(QString("hanim_r_shoulder"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint226);
+SoHAnimJoint226->setUSE(QString("hanim_l_shoulder"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint226);
 
 SoHAnimJoint* SoHAnimJoint227 = new SoHAnimJoint();
-SoHAnimJoint227->setUSE(QString("hanim_l_talocrural"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint227);
+SoHAnimJoint227->setUSE(QString("hanim_r_shoulder"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint227);
 
 SoHAnimJoint* SoHAnimJoint228 = new SoHAnimJoint();
-SoHAnimJoint228->setUSE(QString("hanim_r_talocrural"));
-SoHAnimHumanoid23->setJoints(*SoHAnimJoint228);
+SoHAnimJoint228->setUSE(QString("hanim_l_talocrural"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint228);
 
-SoHAnimSegment* SoHAnimSegment229 = new SoHAnimSegment();
-SoHAnimSegment229->setUSE(QString("hanim_l5"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment229);
+SoHAnimJoint* SoHAnimJoint229 = new SoHAnimJoint();
+SoHAnimJoint229->setUSE(QString("hanim_r_talocrural"));
+SoHAnimHumanoid24->setJoints(*SoHAnimJoint229);
 
-SoHAnimSegment* SoHAnimSegment230 = new SoHAnimSegment();
-SoHAnimSegment230->setUSE(QString("hanim_pelvis"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment230);
+SoNode20->addChild(*SoHAnimHumanoid24);
 
-SoHAnimSegment* SoHAnimSegment231 = new SoHAnimSegment();
-SoHAnimSegment231->setUSE(QString("hanim_sacrum"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment231);
+SoEXPORT* SoEXPORT230 = new SoEXPORT();
+SoEXPORT230->setAS(QString("KoreanCharacter01Jin"));
+SoEXPORT230->setLocalDEF(QString("hanim_Jin"));
+SoNode20->addChild(*SoEXPORT230);
 
-SoHAnimSegment* SoHAnimSegment232 = new SoHAnimSegment();
-SoHAnimSegment232->setUSE(QString("hanim_skull"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment232);
-
-SoHAnimSegment* SoHAnimSegment233 = new SoHAnimSegment();
-SoHAnimSegment233->setUSE(QString("hanim_l_calf"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment233);
-
-SoHAnimSegment* SoHAnimSegment234 = new SoHAnimSegment();
-SoHAnimSegment234->setUSE(QString("hanim_r_calf"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment234);
-
-SoHAnimSegment* SoHAnimSegment235 = new SoHAnimSegment();
-SoHAnimSegment235->setUSE(QString("hanim_l_carpal"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment235);
-
-SoHAnimSegment* SoHAnimSegment236 = new SoHAnimSegment();
-SoHAnimSegment236->setUSE(QString("hanim_r_carpal"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment236);
-
-SoHAnimSegment* SoHAnimSegment237 = new SoHAnimSegment();
-SoHAnimSegment237->setUSE(QString("hanim_l_forearm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment237);
-
-SoHAnimSegment* SoHAnimSegment238 = new SoHAnimSegment();
-SoHAnimSegment238->setUSE(QString("hanim_r_forearm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment238);
-
-SoHAnimSegment* SoHAnimSegment239 = new SoHAnimSegment();
-SoHAnimSegment239->setUSE(QString("hanim_l_talus"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment239);
-
-SoHAnimSegment* SoHAnimSegment240 = new SoHAnimSegment();
-SoHAnimSegment240->setUSE(QString("hanim_r_talus"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment240);
-
-SoHAnimSegment* SoHAnimSegment241 = new SoHAnimSegment();
-SoHAnimSegment241->setUSE(QString("hanim_l_tarsal_proximal_phalanx_2"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment241);
-
-SoHAnimSegment* SoHAnimSegment242 = new SoHAnimSegment();
-SoHAnimSegment242->setUSE(QString("hanim_r_tarsal_proximal_phalanx_2"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment242);
-
-SoHAnimSegment* SoHAnimSegment243 = new SoHAnimSegment();
-SoHAnimSegment243->setUSE(QString("hanim_l_thigh"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment243);
-
-SoHAnimSegment* SoHAnimSegment244 = new SoHAnimSegment();
-SoHAnimSegment244->setUSE(QString("hanim_r_thigh"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment244);
-
-SoHAnimSegment* SoHAnimSegment245 = new SoHAnimSegment();
-SoHAnimSegment245->setUSE(QString("hanim_l_upperarm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment245);
-
-SoHAnimSegment* SoHAnimSegment246 = new SoHAnimSegment();
-SoHAnimSegment246->setUSE(QString("hanim_r_upperarm"));
-SoHAnimHumanoid23->setSegments(*SoHAnimSegment246);
-
-SoNode19->addChild(*SoHAnimHumanoid23);
-
-SoSceneManager0->setSceneGraph(*SoNode19);
+SoSceneManager0->setSceneGraph(*SoNode20);
 
 return 0;
 }

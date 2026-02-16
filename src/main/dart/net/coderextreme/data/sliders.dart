@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Full'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           /*<component name='Shape' level='4'></component>*/

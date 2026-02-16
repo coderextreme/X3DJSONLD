@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -61,50 +57,45 @@ newModel=X3D(profile='Immersive',version='4.0',
         Comment(' Shape begin '),
         Shape(
           # Sphere begin
-
           geometry=Sphere(),
           # Sphere complete, Appearance begin
-
           appearance=Appearance(
             # Material begin
-
             material=Material(DEF='MaterialLightBlue',diffuseColor=(0.1,0.5,1)),
             # Material complete, ImageTexture begin
-
             texture=ImageTexture(DEF='ImageCloudlessEarth',url=["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]),
             # ImageTexture complete
-),
+            ),
           # Appearance complete
-),
-        Comment(' Shape complete '),],),
+          ),
+        Comment(' Shape complete ')
+        ),
       Comment(' Transform complete, Transform begin '),
       Transform(translation=(0,-2,0),
         children=[
         Comment(' Shape begin '),
         Shape(
           # Text begin
-
           geometry=Text(DEF='TextMessage',string=["Hello","world!"],
             # FontStyle begin
-
             fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"]),
             # FontStyle complete
-),
+            ),
           # Text complete, Appearance begin
-
           appearance=Appearance(
             # Material begin
-
             material=Material(USE='MaterialLightBlue'),
             # Material complete
-),
+            ),
           # Appearance complete
-),
-        Comment(' Shape complete '),],),
-      Comment(' Transform complete '),],),
-    Comment(' Group complete '),],])
+          ),
+        Comment(' Shape complete ')
+        ),
+      Comment(' Transform complete ')
+      ),
+    Comment(' Group complete ')
+    )
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

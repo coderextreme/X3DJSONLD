@@ -2152,7 +2152,15 @@ Shape48.Geometry := IndexedFaceSet52;
 HAnimSegment47.AddChildren([Shape48]);
 HAnimSite55 := THAnimSiteNode.Create;
 HAnimSite55.NameField := 'pelvis';
-{ (r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257) }
+{ (r_iliocristale -0.1525 1.0628 0.0035) }
+{ (r_trochanterion -0.1689 0.8419 0.0352) }
+{ (l_iliocristale 0.1612 1.0537 0.0008) }
+{ (l_trochanterion 0.1677 0.8336 0.0303) }
+{ (r_asis -0.0887 1.0021 0.1112) }
+{ (l_asis 0.0774 1.0190 -0.1151) }
+{ (r_psis -0.0716 1.0190 -0.1138) }
+{ (l_psis 0.0774 1.0190 -0.1151) }
+{ (crotch 0.0034 0.8266 0.0257) }
 { .AddChildren }
 HAnimSegment47.AddChildren([HAnimSite55]);
 { .AddChildren }
@@ -2194,7 +2202,10 @@ Shape58.Geometry := IndexedFaceSet62;
 HAnimSegment57.AddChildren([Shape58]);
 HAnimSite65 := THAnimSiteNode.Create;
 HAnimSite65.NameField := 'l_thigh';
-{ (l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z) }
+{ (l_knee_crease 0.0993 0.4881 -0.0309) }
+{ (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) }
+{ (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) }
+{ (l_suprapatella x y z) }
 { .AddChildren }
 HAnimSegment57.AddChildren([HAnimSite65]);
 { .AddChildren }
@@ -2236,7 +2247,9 @@ Shape68.Geometry := IndexedFaceSet72;
 HAnimSegment67.AddChildren([Shape68]);
 HAnimSite75 := THAnimSiteNode.Create;
 HAnimSite75.NameField := 'l_calf';
-{ (l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032) }
+{ (l_tibiale x y z) }
+{ (l_medial_malleolus 0.0890 0.0716 -0.0881) }
+{ (l_lateral_malleolus 0.1308 0.0597 -0.1032) }
 { .AddChildren }
 HAnimSegment67.AddChildren([HAnimSite75]);
 { .AddChildren }
@@ -2278,7 +2291,8 @@ Shape78.Geometry := IndexedFaceSet82;
 HAnimSegment77.AddChildren([Shape78]);
 HAnimSite85 := THAnimSiteNode.Create;
 HAnimSite85.NameField := 'l_talus';
-{ (l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171) }
+{ (l_sphyrion 0.0890 0.0575 -0.0943) }
+{ (l_calcaneous_posterior 0.0974 0.0259 -0.1171) }
 { .AddChildren }
 HAnimSegment77.AddChildren([HAnimSite85]);
 { .AddChildren }
@@ -3426,7 +3440,10 @@ Shape338.Geometry := IndexedFaceSet342;
 HAnimSegment337.AddChildren([Shape338]);
 HAnimSite345 := THAnimSiteNode.Create;
 HAnimSite345.NameField := 'r_thigh';
-{ (r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z) }
+{ (r_knee_crease -0.0825 0.4932 -0.0326) }
+{ (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) }
+{ (r_femoral_medial_epicn -0.0221 0.5014 0.0289) }
+{ (r_suprapatella x y z) }
 { .AddChildren }
 HAnimSegment337.AddChildren([HAnimSite345]);
 { .AddChildren }
@@ -3468,7 +3485,9 @@ Shape348.Geometry := IndexedFaceSet352;
 HAnimSegment347.AddChildren([Shape348]);
 HAnimSite355 := THAnimSiteNode.Create;
 HAnimSite355.NameField := 'r_calf';
-{ (r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075) }
+{ (r_tibiale x y z) }
+{ (r_medial_malleolus -0.0591 0.0760 -0.0928) }
+{ (r_lateral_malleolus -0.1006 0.0658 -0.1075) }
 { .AddChildren }
 HAnimSegment347.AddChildren([HAnimSite355]);
 { .AddChildren }
@@ -3510,7 +3529,8 @@ Shape358.Geometry := IndexedFaceSet362;
 HAnimSegment357.AddChildren([Shape358]);
 HAnimSite365 := THAnimSiteNode.Create;
 HAnimSite365.NameField := 'r_talus';
-{ (r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221) }
+{ (r_sphyrion -0.0603 0.0610 -0.1002) }
+{ (r_calcaneous_posterior -0.0692 0.0297 -0.1221) }
 { .AddChildren }
 HAnimSegment357.AddChildren([HAnimSite365]);
 { .AddChildren }
@@ -3720,7 +3740,8 @@ Shape408.Geometry := IndexedFaceSet412;
 HAnimSegment407.AddChildren([Shape408]);
 HAnimSite415 := THAnimSiteNode.Create;
 HAnimSite415.NameField := 'r_tarsal_distal_phalanx_1';
-{ (r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) }
+{ (r_metatarsal_phalanx_1 x y z) }
+{ (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450) }
 { .AddChildren }
 HAnimSegment407.AddChildren([HAnimSite415]);
 { .AddChildren }
@@ -4658,7 +4679,9 @@ Shape618.Geometry := IndexedFaceSet622;
 HAnimSegment617.AddChildren([Shape618]);
 HAnimSite625 := THAnimSiteNode.Create;
 HAnimSite625.NameField := 'l5';
-{ (spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091) }
+{ (spine_2_lower_back x y z) }
+{ (waist_preferred_anterior x y z) }
+{ (waist_preferred_posterior 0.2900 1.0915 -0.1091) }
 { .AddChildren }
 HAnimSegment617.AddChildren([HAnimSite625]);
 { .AddChildren }
@@ -4784,7 +4807,9 @@ Shape648.Geometry := IndexedFaceSet652;
 HAnimSegment647.AddChildren([Shape648]);
 HAnimSite655 := THAnimSiteNode.Create;
 HAnimSite655.NameField := 'l2';
-{ (l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113) }
+{ (l_rib_10 0.0871 1.1925 0.0992) }
+{ (r_rib_10 -0.0711 1.1941 0.1016) }
+{ (rib_10_midspine 0.0049 1.1908 -0.1113) }
 { .AddChildren }
 HAnimSegment647.AddChildren([HAnimSite655]);
 { .AddChildren }
@@ -4952,7 +4977,8 @@ Shape688.Geometry := IndexedFaceSet692;
 HAnimSegment687.AddChildren([Shape688]);
 HAnimSite695 := THAnimSiteNode.Create;
 HAnimSite695.NameField := 't10';
-{ (substernale 0.0085 1.2995 0.1147) (mesosternale x y z) }
+{ (substernale 0.0085 1.2995 0.1147) }
+{ (mesosternale x y z) }
 { .AddChildren }
 HAnimSegment687.AddChildren([HAnimSite695]);
 { .AddChildren }
@@ -4994,7 +5020,11 @@ Shape698.Geometry := IndexedFaceSet702;
 HAnimSegment697.AddChildren([Shape698]);
 HAnimSite705 := THAnimSiteNode.Create;
 HAnimSite705.NameField := 't9';
-{ (l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z) }
+{ (l_thelion 0.0918 1.3382 0.1192) }
+{ (r_thelion -0.0736 1.3385 0.1217) }
+{ (rear_center_midsagittal_plane x y z) }
+{ (l_chest_midsagittal_plane x y z) }
+{ (r_chest_midsagittal_plane x y z) }
 { .AddChildren }
 HAnimSegment697.AddChildren([HAnimSite705]);
 { .AddChildren }
@@ -5330,7 +5360,8 @@ Shape778.Geometry := IndexedFaceSet782;
 HAnimSegment777.AddChildren([Shape778]);
 HAnimSite785 := THAnimSiteNode.Create;
 HAnimSite785.NameField := 't1';
-{ (suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815) }
+{ (suprasternale 0.0084 1.4714 0.0551) }
+{ (cervicale 0.0064 1.520 -0.0815) }
 { .AddChildren }
 HAnimSegment777.AddChildren([HAnimSite785]);
 { .AddChildren }
@@ -5372,7 +5403,8 @@ Shape788.Geometry := IndexedFaceSet792;
 HAnimSegment787.AddChildren([Shape788]);
 HAnimSite795 := THAnimSiteNode.Create;
 HAnimSite795.NameField := 'c7';
-{ (l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220) }
+{ (l_neck_base 0.0646 1.5141 -0.0380) }
+{ (r_neck_base -0.0419 1.5149 -0.0220) }
 { .AddChildren }
 HAnimSegment787.AddChildren([HAnimSite795]);
 { .AddChildren }
@@ -5666,7 +5698,17 @@ Shape858.Geometry := IndexedFaceSet862;
 HAnimSegment857.AddChildren([Shape858]);
 HAnimSite865 := THAnimSiteNode.Create;
 HAnimSite865.NameField := 'skull';
-{ (skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z) }
+{ (skull_vertex 0.0050 1.7504 0.0055) }
+{ (sellion 0.0058 1.6316 0.0852) }
+{ (r_infraorbitale -0.0237 1.6171 0.0752) }
+{ (l_infraorbitale 0.0341 1.6171 0.0752) }
+{ (r_tragion -0.0646 1.6347 0.0302) }
+{ (l_tragion 0.0739 1.6348 0.0282) }
+{ (nuchale 0.0039 1.5972 -0.0796) }
+{ (opisthocranion x y z) }
+{ (glabella x y z) }
+{ (l_ectocanthus x y z) }
+{ (r_ectocanthus x y z) }
 { .AddChildren }
 HAnimSegment857.AddChildren([HAnimSite865]);
 { .AddChildren }
@@ -5972,7 +6014,10 @@ Shape928.Geometry := IndexedFaceSet932;
 HAnimSegment927.AddChildren([Shape928]);
 HAnimSite935 := THAnimSiteNode.Create;
 HAnimSite935.NameField := 'jaw';
-{ (r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z) }
+{ (r_gonion -0.0520 1.5529 0.0347) }
+{ (l_gonion 0.0631 1.5530 0.0330) }
+{ (supramenton 0.0061 1.5410 0.0805) }
+{ (menton x y z) }
 { .AddChildren }
 HAnimSegment927.AddChildren([HAnimSite935]);
 { .AddChildren }
@@ -6074,7 +6119,10 @@ Shape948.Geometry := IndexedFaceSet952;
 HAnimSegment947.AddChildren([Shape948]);
 HAnimSite955 := THAnimSiteNode.Create;
 HAnimSite955.NameField := 'l_scapula';
-{ (l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z) }
+{ (l_acromion 0.2032 1.4760 -0.0490) }
+{ (l_axilla_proximal 0.1777 1.4065 -0.0075) }
+{ (l_axilla_distal 0.1706 1.4072 -0.0875) }
+{ (l_axilla_posterior_folds x y z) }
 { .AddChildren }
 HAnimSegment947.AddChildren([HAnimSite955]);
 { .AddChildren }
@@ -6116,7 +6164,10 @@ Shape958.Geometry := IndexedFaceSet962;
 HAnimSegment957.AddChildren([Shape958]);
 HAnimSite965 := THAnimSiteNode.Create;
 HAnimSite965.NameField := 'l_upperarm';
-{ (l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z) }
+{ (l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) }
+{ (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) }
+{ (l_radiale 0.2182 1.1212 -0.1167) }
+{ (l_bideltoid x y z) }
 { .AddChildren }
 HAnimSegment957.AddChildren([HAnimSite965]);
 { .AddChildren }
@@ -6158,7 +6209,8 @@ Shape968.Geometry := IndexedFaceSet972;
 HAnimSegment967.AddChildren([Shape968]);
 HAnimSite975 := THAnimSiteNode.Create;
 HAnimSite975.NameField := 'l_forearm';
-{ (l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123) }
+{ (l_radial_styloid 0.1901 0.8645 -0.0415) }
+{ (l_olecranon -0.1962 1.1375 -0.1123) }
 { .AddChildren }
 HAnimSegment967.AddChildren([HAnimSite975]);
 { .AddChildren }
@@ -6806,7 +6858,8 @@ Shape1118.Geometry := IndexedFaceSet1122;
 HAnimSegment1117.AddChildren([Shape1118]);
 HAnimSite1125 := THAnimSiteNode.Create;
 HAnimSite1125.NameField := 'l_carpal_distal_phalanx_3';
-{ (l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491) }
+{ (l_dactylion 0.2056 0.6743 -0.0482) }
+{ (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491) }
 { .AddChildren }
 HAnimSegment1117.AddChildren([HAnimSite1125]);
 { .AddChildren }
@@ -7306,7 +7359,10 @@ Shape1228.Geometry := IndexedFaceSet1232;
 HAnimSegment1227.AddChildren([Shape1228]);
 HAnimSite1235 := THAnimSiteNode.Create;
 HAnimSite1235.NameField := 'r_scapula';
-{ (r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z) }
+{ (r_acromion -0.1905 1.4791 -0.0431) }
+{ (r_axilla_proximal -0.1626 1.4072 -0.0031) }
+{ (r_axilla_distal -0.1603 1.4098 -0.0826) }
+{ (r_axilla_posterior_folds x y z) }
 { .AddChildren }
 HAnimSegment1227.AddChildren([HAnimSite1235]);
 { .AddChildren }
@@ -7348,7 +7404,10 @@ Shape1238.Geometry := IndexedFaceSet1242;
 HAnimSegment1237.AddChildren([Shape1238]);
 HAnimSite1245 := THAnimSiteNode.Create;
 HAnimSite1245.NameField := 'r_upperarm';
-{ (r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z) }
+{ (r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) }
+{ (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) }
+{ (r_radiale -0.2130 1.1305 -0.1091) }
+{ (r_bideltoid x y z) }
 { .AddChildren }
 HAnimSegment1237.AddChildren([HAnimSite1245]);
 { .AddChildren }
@@ -7390,7 +7449,8 @@ Shape1248.Geometry := IndexedFaceSet1252;
 HAnimSegment1247.AddChildren([Shape1248]);
 HAnimSite1255 := THAnimSiteNode.Create;
 HAnimSite1255.NameField := 'r_forearm';
-{ (r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065) }
+{ (r_radial_styloid -0.1884 0.8676 -0.0360) }
+{ (r_olecranon -0.1907 1.1405 -0.1065) }
 { .AddChildren }
 HAnimSegment1247.AddChildren([HAnimSite1255]);
 { .AddChildren }
@@ -8038,7 +8098,8 @@ Shape1398.Geometry := IndexedFaceSet1402;
 HAnimSegment1397.AddChildren([Shape1398]);
 HAnimSite1405 := THAnimSiteNode.Create;
 HAnimSite1405.NameField := 'r_carpal_distal_phalanx_3';
-{ (r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423 }
+{ (r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) }
+{ (r_dactylion -0.1941 0.6772 -0.0423 }
 { .AddChildren }
 HAnimSegment1397.AddChildren([HAnimSite1405]);
 { .AddChildren }

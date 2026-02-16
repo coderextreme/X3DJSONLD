@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,28 +101,36 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:37:49 GMT"),
+                Content: stringPtr("5 December 2021"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
                 Content: stringPtr("CHANGELOG.txt"),
             },
             &x3d.Meta{
-                Name: stringPtr("reference"),
-                Content: stringPtr("https://www.medialab.hmu.gr/minipages/x3domAudio"),
-            },
-            &x3d.Meta{
                 Name: stringPtr("TODO"),
                 Content: stringPtr("credit for audio files"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("reference"),
+                Content: stringPtr("https://www.medialab.hmu.gr/minipages/x3domAudio"),
             },
             &x3d.Meta{
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/Filters.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("Filters.x3d"),
                 },
@@ -133,8 +141,8 @@ func main() {
                 },
                 &x3d.Viewpoint{
                     Description: stringPtr("View entire audio model"),
-                    Position: &x3d.SFVec3f{0.0, 500.0, 600.0},
                     Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, -0.5},
+                    Position: &x3d.SFVec3f{0.0, 500.0, 600.0},
                     RetainUserOffsets: boolPtr(true),
                 },
                 &x3d.Transform{
@@ -150,8 +158,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.1, 0.1, 0.1},
-                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                     EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                 },
                             },
                             Geometry: &x3d.Sphere{
@@ -173,8 +181,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.1, 0.1, 0.1},
-                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                     EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                 },
                             },
                             Geometry: &x3d.Sphere{
@@ -196,8 +204,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.1, 0.1, 0.1},
-                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                     EmissiveColor: &x3d.SFColor{0.8, 0.8, 0.8},
+                                    SpecularColor: &x3d.SFColor{0.01, 0.01, 0.01},
                                 },
                             },
                             Geometry: &x3d.Sphere{
@@ -263,8 +271,8 @@ func main() {
                                 },
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.1, 0.1, 0.1},
-                                    SpecularColor: &x3d.SFColor{0.5, 0.6, 0.7},
                                     Shininess: floatPtr(0.8),
+                                    SpecularColor: &x3d.SFColor{0.5, 0.6, 0.7},
                                 },
                             },
                             Geometry: &x3d.Cylinder{
@@ -287,13 +295,13 @@ func main() {
                                     &x3d.Analyser{
                                         &x3d.BiquadFilter{
                                             Detune: floatPtr(50.0),
-                                            Type: stringPtr("ALLPASS"),
                                             Frequency: floatPtr(600.0),
                                             QualityFactor: floatPtr(30.0),
+                                            Type: stringPtr("ALLPASS"),
                                             &x3d.AudioClip{
                                                 Description: stringPtr("Techno beat"),
-                                                Url: x3d.MFString{"sound/techno_beat.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"},
                                                 Loop: boolPtr(true),
+                                                Url: x3d.MFString{"sound/techno_beat.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/techno_beat.mp3"},
                                             },
                                         },
                                     },
@@ -307,13 +315,13 @@ func main() {
                                     &x3d.Analyser{
                                         &x3d.BiquadFilter{
                                             Detune: floatPtr(15.0),
-                                            Type: stringPtr("ALLPASS"),
                                             Frequency: floatPtr(600.0),
                                             QualityFactor: floatPtr(15.0),
+                                            Type: stringPtr("ALLPASS"),
                                             &x3d.AudioClip{
                                                 Description: stringPtr("Simple beat"),
-                                                Url: x3d.MFString{"sound/beat.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"},
                                                 Loop: boolPtr(true),
+                                                Url: x3d.MFString{"sound/beat.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/beat.mp3"},
                                             },
                                         },
                                     },
@@ -326,13 +334,13 @@ func main() {
                                 &x3d.Gain{
                                     &x3d.Analyser{
                                         &x3d.BiquadFilter{
-                                            Type: stringPtr("ALLPASS"),
                                             Frequency: floatPtr(1000.0),
                                             QualityFactor: floatPtr(0.0),
+                                            Type: stringPtr("ALLPASS"),
                                             &x3d.AudioClip{
                                                 Description: stringPtr("Wobble loop"),
-                                                Url: x3d.MFString{"sound/wobble_loop.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"},
                                                 Loop: boolPtr(true),
+                                                Url: x3d.MFString{"sound/wobble_loop.mp3", "https://x3dgraphics.com/examples/X3dForAdvancedModeling/AudioSpatialSound/sound/wobble_loop.mp3"},
                                             },
                                         },
                                     },
@@ -359,13 +367,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/Filters.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -376,7 +384,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

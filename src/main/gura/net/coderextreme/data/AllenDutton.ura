@@ -767,7 +767,8 @@ X3D:
                                                             USE: "Skin_Color"
                                                         ]
                                                     ],
-#clone.gif removed for security reasons <ImageTexture url='"" ""'/>
+#clone.gif removed for security reasons
+#<ImageTexture url='"" ""'/>
                                                 ]
                                             ]
                                             setGeometry: [
@@ -889,70 +890,6 @@ X3D:
                 HAnimJoint: [
                     containerField: "joints"
                     USE: "hanim_r_wrist"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_c4"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l1"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_pelvis"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_skull"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_calf"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_forearm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_hand"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_hand"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_hindfoot"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_hindfoot"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_thigh"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_l_upperarm"
-                ],
-                HAnimSegment: [
-                    containerField: "segments"
-                    USE: "hanim_r_upperarm"
                 ]
             ],
             NavigationInfo: [
@@ -962,12 +899,15 @@ X3D:
             ],
             Group: [
                 DEF: "Interface"
-#<Transform> <ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/> </Transform>
+#<Transform>
+#<ProximitySensor DEF='HudProx' center='0.0 20.0 0.0' size='500.0 100.0 500.0'/>
+#</Transform>
                 Collision: [
                     DEF: "HUD"
                     Transform: [
                         DEF: "HudXform"
-#Enable this line if you enabled ProximitySensor <Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
+#Enable this line if you enabled ProximitySensor
+#<Transform scale='0.012 0.012 0.012' translation='0.01107 -0.025 -0.08'>
 #Enable this line if you disabled ProximitySensor
                         Transform: [
                             scale: [0.5, 0.5, 0.5]
@@ -1617,7 +1557,9 @@ X3D:
                     ]
                 ]
             ],
-#Enable this if you enable the ProximitySensor <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/> <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+#Enable this if you enable the ProximitySensor
+#<ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+#<ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
             ROUTE: [
                 fromField: "touchTime"
                 fromNode: "Stand_Touch"

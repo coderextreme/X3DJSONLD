@@ -71,7 +71,7 @@ public class variationalflowers2
 	public final void initialize()
 	{
             try { // catch-all
-  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_0)
+  x3dModel = new X3D().setProfile(X3D.PROFILE_FULL).setVersion(X3D.VERSION_4_1)
   .setHead(new head()
     .addComponent(new component().setName("EnvironmentalEffects").setLevel(3))
     .addComponent(new component().setName("Shaders").setLevel(1))
@@ -92,9 +92,8 @@ public class variationalflowers2
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Transform()
       .addChild(new ParticleSystem().setGeometryType("GEOMETRY").setMaxParticles(20)
-        .addComments(new String[] {"",
-"			    * values - array of MFFloats to pass to ComposedShader",
-"			    * variations in values - array of MFFloats to pass to ComposedShader that varies values"})
+        .addComments(" * values - array of MFFloats to pass to ComposedShader ")
+        .addComments(" * variations in values - array of MFFloats to pass to ComposedShader that varies values ")
         .setVariationPhysicsModel(new VariationPhysicsModel().setValues("2 2 5 5 0 0"
 // *** (X3dToJava.xslt error?) Encountered incorrect type, VariationPhysicsModel values: $isNumeric=true, $attributeType=FieldTypeNotFound, value='2 2 5 5 0 0']
 ).setVariations("0.2 0.1 0.3 0.3 0.01 0.01"

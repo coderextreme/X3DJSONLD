@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -60,11 +56,9 @@ newModel=X3D(profile='Immersive',version='3.3',
     Comment(' ================================ '),
     Shape(
       # add a single geometry node here
-
       geometry=IndexedFaceSet(
         texCoord=MultiTextureCoordinate(
           # add multiple TextureCoordinate nodes here, match corresponding MultiTexture child texture nodes
-
           TextureCoordinate(point=[(0,0),(1,0),(1,1),(0,1)]),
           TextureCoordinate(point=[(0,0),(1,0),(1,1),(0,1)]),
           TextureCoordinate(point=[(0,0),(1,0),(1,1),(0,1)])])),
@@ -72,18 +66,15 @@ newModel=X3D(profile='Immersive',version='3.3',
         material=Material(),
         texture=MultiTexture(alpha=0.8,color=(0.9,1,0.2),function=["COMPLEMENT","ALPHAREPLICATE"],mode=["MODULATE","REPLACE","BLENDDIFFUSEALPHA"],source=["DIFFUSE","SPECULAR","FACTOR"],
           # add multiple texture nodes here
-
           ImageTexture(),
           MovieTexture(),
           PixelTexture(),]),
         textureTransform=MultiTextureTransform(
           # add multiple TextureTransform nodes here, match corresponding MultiTexture child texture nodes
-
           TextureTransform(),
           TextureTransform(),
           TextureTransform(),])))])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,7 +101,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:46:23 GMT"),
+                Content: stringPtr("12 January 2014"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -115,10 +115,18 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/Basic/UniversalMediaMaterials/gridBack.json"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("Vrml97ToX3dNist, http://ovrt.nist.gov/v2_x3d.html"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.Shape{
                     Appearance: &x3d.Appearance{
                         Material: &x3d.Material{
@@ -128,15 +136,15 @@ func main() {
                         },
                     },
                     Geometry: &x3d.IndexedFaceSet{
-                        ColorPerVertex: boolPtr(false),
-                        NormalPerVertex: boolPtr(false),
                         ColorIndex: []int32{0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0},
+                        ColorPerVertex: boolPtr(false),
                         CoordIndex: []int32{0, 8, 9, 1, -1, 1, 9, 10, 2, -1, 2, 10, 11, 3, -1, 3, 11, 12, 4, -1, 4, 12, 13, 5, -1, 5, 13, 14, 6, -1, 6, 14, 15, 7, -1, 8, 16, 17, 9, -1, 9, 17, 18, 10, -1, 10, 18, 19, 11, -1, 11, 19, 20, 12, -1, 12, 20, 21, 13, -1, 13, 21, 22, 14, -1, 14, 22, 23, 15, -1, 16, 24, 25, 17, -1, 17, 25, 26, 18, -1, 18, 26, 27, 19, -1, 19, 27, 28, 20, -1, 20, 28, 29, 21, -1, 21, 29, 30, 22, -1, 22, 30, 31, 23, -1, 24, 32, 33, 25, -1, 25, 33, 34, 26, -1, 26, 34, 35, 27, -1, 27, 35, 36, 28, -1, 28, 36, 37, 29, -1, 29, 37, 38, 30, -1, 30, 38, 39, 31, -1, 32, 40, 41, 33, -1, 33, 41, 42, 34, -1, 34, 42, 43, 35, -1, 35, 43, 44, 36, -1, 36, 44, 45, 37, -1, 37, 45, 46, 38, -1, 38, 46, 47, 39, -1, 40, 48, 49, 41, -1, 41, 49, 50, 42, -1, 42, 50, 51, 43, -1, 43, 51, 52, 44, -1, 44, 52, 53, 45, -1, 45, 53, 54, 46, -1, 46, 54, 55, 47, -1, 48, 56, 57, 49, -1, 49, 57, 58, 50, -1, 50, 58, 59, 51, -1, 51, 59, 60, 52, -1, 52, 60, 61, 53, -1, 53, 61, 62, 54, -1, 54, 62, 63, 55, -1},
-                        Color: &x3d.Color{
-                            Color: &x3d.MFColor{[3]float32{0.5,0.5,0.5},[3]float32{0.75,0.75,0.75}},
-                        },
+                        NormalPerVertex: boolPtr(false),
                         Coord: &x3d.Coordinate{
                             Point: &x3d.MFVec3f{[3]float32{-5.25,5.25,0.0},[3]float32{-3.75,5.25,0.0},[3]float32{-2.25,5.25,0.0},[3]float32{-0.75,5.25,0.0},[3]float32{0.75,5.25,0.0},[3]float32{2.25,5.25,0.0},[3]float32{3.75,5.25,0.0},[3]float32{5.25,5.25,0.0},[3]float32{-5.25,3.75,0.0},[3]float32{-3.75,3.75,0.0},[3]float32{-2.25,3.75,0.0},[3]float32{-0.75,3.75,0.0},[3]float32{0.75,3.75,0.0},[3]float32{2.25,3.75,0.0},[3]float32{3.75,3.75,0.0},[3]float32{5.25,3.75,0.0},[3]float32{-5.25,2.25,0.0},[3]float32{-3.75,2.25,0.0},[3]float32{-2.25,2.25,0.0},[3]float32{-0.75,2.25,0.0},[3]float32{0.75,2.25,0.0},[3]float32{2.25,2.25,0.0},[3]float32{3.75,2.25,0.0},[3]float32{5.25,2.25,0.0},[3]float32{-5.25,0.75,0.0},[3]float32{-3.75,0.75,0.0},[3]float32{-2.25,0.75,0.0},[3]float32{-0.75,0.75,0.0},[3]float32{0.75,0.75,0.0},[3]float32{2.25,0.75,0.0},[3]float32{3.75,0.75,0.0},[3]float32{5.25,0.75,0.0},[3]float32{-5.25,-0.75,0.0},[3]float32{-3.75,-0.75,0.0},[3]float32{-2.25,-0.75,0.0},[3]float32{-0.75,-0.75,0.0},[3]float32{0.75,-0.75,0.0},[3]float32{2.25,-0.75,0.0},[3]float32{3.75,-0.75,0.0},[3]float32{5.25,-0.75,0.0},[3]float32{-5.25,-2.25,0.0},[3]float32{-3.75,-2.25,0.0},[3]float32{-2.25,-2.25,0.0},[3]float32{-0.75,-2.25,0.0},[3]float32{0.75,-2.25,0.0},[3]float32{2.25,-2.25,0.0},[3]float32{3.75,-2.25,0.0},[3]float32{5.25,-2.25,0.0},[3]float32{-5.25,-3.75,0.0},[3]float32{-3.75,-3.75,0.0},[3]float32{-2.25,-3.75,0.0},[3]float32{-0.75,-3.75,0.0},[3]float32{0.75,-3.75,0.0},[3]float32{2.25,-3.75,0.0},[3]float32{3.75,-3.75,0.0},[3]float32{5.25,-3.75,0.0},[3]float32{-5.25,-5.25,0.0},[3]float32{-3.75,-5.25,0.0},[3]float32{-2.25,-5.25,0.0},[3]float32{-0.75,-5.25,0.0},[3]float32{0.75,-5.25,0.0},[3]float32{2.25,-5.25,0.0},[3]float32{3.75,-5.25,0.0},[3]float32{5.25,-5.25,0.0}},
+                        },
+                        Color: &x3d.Color{
+                            Color: &x3d.MFColor{[3]float32{0.5,0.5,0.5},[3]float32{0.75,0.75,0.75}},
                         },
                     },
                 },
@@ -158,13 +166,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/gridBack.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -175,7 +183,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

@@ -152,7 +152,11 @@ Appearance30.setMaterial(Material31)
 
 Shape29.setAppearance(Appearance30)
 
-Shape29.addComments(x3d.CommentsBlock("""<IndexedFaceSet DEF=\"Orbit\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>"""))
+Shape29.addComments(x3d.CommentsBlock("""<IndexedFaceSet DEF=\"Orbit\">"""))
+
+Shape29.addComments(x3d.CommentsBlock("""<Coordinate DEF=\"OrbitCoordinates\"/>"""))
+
+Shape29.addComments(x3d.CommentsBlock("""</IndexedFaceSet>"""))
 IndexedFaceSet36 = x3d.IndexedFaceSet()
 IndexedFaceSet36.setCcw(False)
 IndexedFaceSet36.setConvex(False)

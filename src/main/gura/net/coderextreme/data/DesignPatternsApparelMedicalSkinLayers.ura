@@ -3,6 +3,10 @@ X3D:
     version: "4.0"
     setHead: [
         head: [
+            component: [
+                name: "HAnim"
+                level: 2
+            ],
             meta: [
                 name: "title"
                 content: "DesignPatternsApparelMedicalSkinLayers.x3d"

@@ -113,8 +113,7 @@ public class flowers4
             .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(2))
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"}))
             .addParts(new ShaderPart().setType("FRAGMENT").setUrl(new String[] {"../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"}))))
-        .addComments(new String[] {"",
-"                <Sphere>"})
+        .addComments(" <Sphere> ")
         .setGeometry(new IndexedFaceSet("Orbit").setDEF("Orbit").setConvex(false)
           .setCoord(new Coordinate("OrbitCoordinates")))))
     .addChild(new Script("OrbitScript").setSourceCode("""

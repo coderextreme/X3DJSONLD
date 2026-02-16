@@ -86,7 +86,8 @@ texture = ComposedCubeMapTexture24;
 let ComposedShader31 = browser.currentScene.createNode("ComposedShader");
 ComposedShader31.DEF = "x3dom";
 ComposedShader31.language = "GLSL";
-//TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+//TODO VERIFY
+//<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
 ComposedShader32.getField("cube")let ComposedCubeMapTexture33 = browser.currentScene.createNode("ComposedCubeMapTexture");
 ComposedCubeMapTexture33.USE = "texture";
 field32YYY.children = new X3D.MFNode();
@@ -264,7 +265,20 @@ Script62.setSourceCode(`ecmascript:\n"+
 "        }`)
 browser.currentScene.children[4] = Script62;
 
-//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
+//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>
+//<ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
+//<ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
 let Script77 = browser.currentScene.createNode("Script");
 Script77.DEF = "Animate";
 Script77.directOutput = True;

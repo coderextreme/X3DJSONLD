@@ -1,68 +1,69 @@
 function DesignPatternsApparelMedicalSkinLayers: TX3DRootNode;
 var
 X3D0: TX3DRootNode;
-Group17: TGroupNode;
-WorldInfo18: TWorldInfoNode;
-Background19: TBackgroundNode;
-Group20: TGroupNode;
-MetadataString21: TMetadataStringNode;
-HAnimHumanoid22: THAnimHumanoidNode;
-HAnimJoint23: THAnimJointNode;
-HAnimSegment24: THAnimSegmentNode;
-Shape25: TShapeNode;
+Group18: TGroupNode;
+WorldInfo19: TWorldInfoNode;
+Background20: TBackgroundNode;
+Group21: TGroupNode;
+MetadataString22: TMetadataStringNode;
+HAnimHumanoid23: THAnimHumanoidNode;
+HAnimJoint24: THAnimJointNode;
+HAnimSegment25: THAnimSegmentNode;
 Shape26: TShapeNode;
-HAnimSite27: THAnimSiteNode;
-Shape28: TShapeNode;
-HAnimHumanoid29: THAnimHumanoidNode;
-HAnimJoint30: THAnimJointNode;
-HAnimSegment31: THAnimSegmentNode;
-Shape32: TShapeNode;
-IndexedFaceSet33: TIndexedFaceSetNode;
-HAnimHumanoid34: THAnimHumanoidNode;
-HAnimJoint35: THAnimJointNode;
-HAnimSegment36: THAnimSegmentNode;
-IndexedFaceSet37: TIndexedFaceSetNode;
-HAnimHumanoid38: THAnimHumanoidNode;
-HAnimJoint39: THAnimJointNode;
-HAnimSegment40: THAnimSegmentNode;
-Shape41: TShapeNode;
-IndexedFaceSet42: TIndexedFaceSetNode;
-HAnimHumanoid43: THAnimHumanoidNode;
-HAnimJoint44: THAnimJointNode;
-HAnimSegment45: THAnimSegmentNode;
-Shape46: TShapeNode;
-IndexedFaceSet47: TIndexedFaceSetNode;
-Coordinate48: TCoordinateNode;
-HAnimHumanoid49: THAnimHumanoidNode;
-HAnimJoint50: THAnimJointNode;
-HAnimSegment51: THAnimSegmentNode;
-Shape52: TShapeNode;
-IndexedFaceSet53: TIndexedFaceSetNode;
-Coordinate54: TCoordinateNode;
-HAnimHumanoid55: THAnimHumanoidNode;
-HAnimJoint56: THAnimJointNode;
-HAnimSegment57: THAnimSegmentNode;
-Shape58: TShapeNode;
-HAnimHumanoid59: THAnimHumanoidNode;
-HAnimJoint60: THAnimJointNode;
-HAnimSegment61: THAnimSegmentNode;
-Shape62: TShapeNode;
-Viewpoint63: TViewpointNode;
-Anchor64: TAnchorNode;
-Shape65: TShapeNode;
-Text66: TTextNode;
-FontStyle67: TFontStyleNode;
-Appearance68: TAppearanceNode;
-Material69: TMaterialNode;
-Shape70: TShapeNode;
-Box71: TBoxNode;
-Appearance72: TAppearanceNode;
-Material73: TMaterialNode;
+Shape27: TShapeNode;
+HAnimSite28: THAnimSiteNode;
+Shape29: TShapeNode;
+HAnimHumanoid30: THAnimHumanoidNode;
+HAnimJoint31: THAnimJointNode;
+HAnimSegment32: THAnimSegmentNode;
+Shape33: TShapeNode;
+IndexedFaceSet34: TIndexedFaceSetNode;
+HAnimHumanoid35: THAnimHumanoidNode;
+HAnimJoint36: THAnimJointNode;
+HAnimSegment37: THAnimSegmentNode;
+IndexedFaceSet38: TIndexedFaceSetNode;
+HAnimHumanoid39: THAnimHumanoidNode;
+HAnimJoint40: THAnimJointNode;
+HAnimSegment41: THAnimSegmentNode;
+Shape42: TShapeNode;
+IndexedFaceSet43: TIndexedFaceSetNode;
+HAnimHumanoid44: THAnimHumanoidNode;
+HAnimJoint45: THAnimJointNode;
+HAnimSegment46: THAnimSegmentNode;
+Shape47: TShapeNode;
+IndexedFaceSet48: TIndexedFaceSetNode;
+Coordinate49: TCoordinateNode;
+HAnimHumanoid50: THAnimHumanoidNode;
+HAnimJoint51: THAnimJointNode;
+HAnimSegment52: THAnimSegmentNode;
+Shape53: TShapeNode;
+IndexedFaceSet54: TIndexedFaceSetNode;
+Coordinate55: TCoordinateNode;
+HAnimHumanoid56: THAnimHumanoidNode;
+HAnimJoint57: THAnimJointNode;
+HAnimSegment58: THAnimSegmentNode;
+Shape59: TShapeNode;
+HAnimHumanoid60: THAnimHumanoidNode;
+HAnimJoint61: THAnimJointNode;
+HAnimSegment62: THAnimSegmentNode;
+Shape63: TShapeNode;
+Viewpoint64: TViewpointNode;
+Anchor65: TAnchorNode;
+Shape66: TShapeNode;
+Text67: TTextNode;
+FontStyle68: TFontStyleNode;
+Appearance69: TAppearanceNode;
+Material70: TMaterialNode;
+Shape71: TShapeNode;
+Box72: TBoxNode;
+Appearance73: TAppearanceNode;
+Material74: TMaterialNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
 X3D0.ForceVersion.Minor := 0;
+X3D0.Components['HAnim'] := 2;
 X3D0.Meta['title'] := 'DesignPatternsApparelMedicalSkinLayers.x3d';
 X3D0.Meta['description'] := 'Design patterns for skin and apparel using HAnim2 standard in X3D4';
 X3D0.Meta['creator'] := 'Don Brutzman';
@@ -78,262 +79,262 @@ X3D0.Meta['warning'] := 'Under development. This template example does not produ
 X3D0.Meta['identifier'] := 'https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d';
 X3D0.Meta['generator'] := 'X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit';
 X3D0.Meta['license'] := '../license.html';
-Group17 := TGroupNode.Create;
-WorldInfo18 := TWorldInfoNode.Create;
-WorldInfo18.Title := 'HAnimHumanoid skin design patterns for apparel, medical';
+Group18 := TGroupNode.Create;
+WorldInfo19 := TWorldInfoNode.Create;
+WorldInfo19.Title := 'HAnimHumanoid skin design patterns for apparel, medical';
 { .AddChildren }
-Group17.AddChildren([WorldInfo18]);
-Background19 := TBackgroundNode.Create;
-Background19.SetSkyColor([Vector3(0,0.6,0.6)]);
+Group18.AddChildren([WorldInfo19]);
+Background20 := TBackgroundNode.Create;
+Background20.SetSkyColor([Vector3(0,0.6,0.6)]);
 { .AddChildren }
-Group17.AddChildren([Background19]);
-Group20 := TGroupNode.Create;
-MetadataString21 := TMetadataStringNode.Create;
-MetadataString21.NameField := 'HAnimArchitecture';
-MetadataString21.Reference := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile';
-MetadataString21.SetValue(['E.4 Multiple humanoids per file']);
+Group18.AddChildren([Background20]);
+Group21 := TGroupNode.Create;
+MetadataString22 := TMetadataStringNode.Create;
+MetadataString22.NameField := 'HAnimArchitecture';
+MetadataString22.Reference := 'https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile';
+MetadataString22.SetValue(['E.4 Multiple humanoids per file']);
 { .SetMetadata }
-Group20.Metadata := MetadataString21;
+Group21.Metadata := MetadataString22;
 { ============================== }
-HAnimHumanoid22 := THAnimHumanoidNode.Create;
-HAnimHumanoid22.NameField := 'SimpleSkeleton';
-HAnimHumanoid22.Version := '2.0';
-HAnimJoint23 := THAnimJointNode.Create;
-HAnimJoint23.NameField := 'humanoid_root';
-HAnimJoint23.SetUlimit([0,0,0]);
-HAnimJoint23.SetLlimit([0,0,0]);
-HAnimSegment24 := THAnimSegmentNode.Create;
-HAnimSegment24.NameField := 'sacrum';
-Shape25 := TShapeNode.Create;
-{ .AddChildren }
-HAnimSegment24.AddChildren([Shape25]);
+HAnimHumanoid23 := THAnimHumanoidNode.Create;
+HAnimHumanoid23.NameField := 'SimpleSkeleton';
+HAnimHumanoid23.Version := '2.0';
+HAnimJoint24 := THAnimJointNode.Create;
+HAnimJoint24.NameField := 'humanoid_root';
+HAnimJoint24.SetUlimit([0,0,0]);
+HAnimJoint24.SetLlimit([0,0,0]);
+HAnimSegment25 := THAnimSegmentNode.Create;
+HAnimSegment25.NameField := 'sacrum';
 Shape26 := TShapeNode.Create;
 { .AddChildren }
-HAnimSegment24.AddChildren([Shape26]);
-HAnimSite27 := THAnimSiteNode.Create;
-HAnimSite27.NameField := 'feature01_tip';
-Shape28 := TShapeNode.Create;
+HAnimSegment25.AddChildren([Shape26]);
+Shape27 := TShapeNode.Create;
 { .AddChildren }
-HAnimSite27.AddChildren([Shape28]);
+HAnimSegment25.AddChildren([Shape27]);
+HAnimSite28 := THAnimSiteNode.Create;
+HAnimSite28.NameField := 'feature01_tip';
+Shape29 := TShapeNode.Create;
 { .AddChildren }
-HAnimSegment24.AddChildren([HAnimSite27]);
+HAnimSite28.AddChildren([Shape29]);
 { .AddChildren }
-HAnimJoint23.AddChildren([HAnimSegment24]);
+HAnimSegment25.AddChildren([HAnimSite28]);
+{ .AddChildren }
+HAnimJoint24.AddChildren([HAnimSegment25]);
 { .AddSkeleton }
-HAnimHumanoid22.SetSkeleton([HAnimJoint23]);
+HAnimHumanoid23.SetSkeleton([HAnimJoint24]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid22]);
+Group21.AddChildren([HAnimHumanoid23]);
 { ============================== }
-HAnimHumanoid29 := THAnimHumanoidNode.Create;
-HAnimHumanoid29.NameField := 'SimpleSkeletonMesh';
-HAnimHumanoid29.Version := '2.0';
-HAnimJoint30 := THAnimJointNode.Create;
-HAnimJoint30.NameField := 'humanoid_root';
-HAnimJoint30.SetUlimit([0,0,0]);
-HAnimJoint30.SetLlimit([0,0,0]);
-HAnimSegment31 := THAnimSegmentNode.Create;
-HAnimSegment31.NameField := 'sacrum';
-Shape32 := TShapeNode.Create;
-IndexedFaceSet33 := TIndexedFaceSetNode.Create;
+HAnimHumanoid30 := THAnimHumanoidNode.Create;
+HAnimHumanoid30.NameField := 'SimpleSkeletonMesh';
+HAnimHumanoid30.Version := '2.0';
+HAnimJoint31 := THAnimJointNode.Create;
+HAnimJoint31.NameField := 'humanoid_root';
+HAnimJoint31.SetUlimit([0,0,0]);
+HAnimJoint31.SetLlimit([0,0,0]);
+HAnimSegment32 := THAnimSegmentNode.Create;
+HAnimSegment32.NameField := 'sacrum';
+Shape33 := TShapeNode.Create;
+IndexedFaceSet34 := TIndexedFaceSetNode.Create;
 { .SetGeometry }
-Shape32.Geometry := IndexedFaceSet33;
+Shape33.Geometry := IndexedFaceSet34;
 { .AddChildren }
-HAnimSegment31.AddChildren([Shape32]);
+HAnimSegment32.AddChildren([Shape33]);
 { .AddChildren }
-HAnimJoint30.AddChildren([HAnimSegment31]);
+HAnimJoint31.AddChildren([HAnimSegment32]);
 { .AddSkeleton }
-HAnimHumanoid29.SetSkeleton([HAnimJoint30]);
+HAnimHumanoid30.SetSkeleton([HAnimJoint31]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid29]);
+Group21.AddChildren([HAnimHumanoid30]);
 { ============================== }
-HAnimHumanoid34 := THAnimHumanoidNode.Create;
-HAnimHumanoid34.NameField := 'SkinIndexedGeometry';
-HAnimHumanoid34.Version := '2.0';
-HAnimJoint35 := THAnimJointNode.Create;
-HAnimJoint35.NameField := 'humanoid_root';
-HAnimJoint35.SetUlimit([0,0,0]);
-HAnimJoint35.SetLlimit([0,0,0]);
-HAnimSegment36 := THAnimSegmentNode.Create;
-HAnimSegment36.NameField := 'sacrum';
+HAnimHumanoid35 := THAnimHumanoidNode.Create;
+HAnimHumanoid35.NameField := 'SkinIndexedGeometry';
+HAnimHumanoid35.Version := '2.0';
+HAnimJoint36 := THAnimJointNode.Create;
+HAnimJoint36.NameField := 'humanoid_root';
+HAnimJoint36.SetUlimit([0,0,0]);
+HAnimJoint36.SetLlimit([0,0,0]);
+HAnimSegment37 := THAnimSegmentNode.Create;
+HAnimSegment37.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint35.AddChildren([HAnimSegment36]);
+HAnimJoint36.AddChildren([HAnimSegment37]);
 { .AddSkeleton }
-HAnimHumanoid34.SetSkeleton([HAnimJoint35]);
-IndexedFaceSet37 := TIndexedFaceSetNode.Create;
+HAnimHumanoid35.SetSkeleton([HAnimJoint36]);
+IndexedFaceSet38 := TIndexedFaceSetNode.Create;
 { .SetSkin }
-HAnimHumanoid34.SetSkin([IndexedFaceSet37]);
+HAnimHumanoid35.SetSkin([IndexedFaceSet38]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid34]);
+Group21.AddChildren([HAnimHumanoid35]);
 { ============================== }
-HAnimHumanoid38 := THAnimHumanoidNode.Create;
-HAnimHumanoid38.NameField := 'SkinShapeIndexedGeometry';
-HAnimHumanoid38.Version := '2.0';
-HAnimJoint39 := THAnimJointNode.Create;
-HAnimJoint39.NameField := 'humanoid_root';
-HAnimJoint39.SetUlimit([0,0,0]);
-HAnimJoint39.SetLlimit([0,0,0]);
-HAnimSegment40 := THAnimSegmentNode.Create;
-HAnimSegment40.NameField := 'sacrum';
+HAnimHumanoid39 := THAnimHumanoidNode.Create;
+HAnimHumanoid39.NameField := 'SkinShapeIndexedGeometry';
+HAnimHumanoid39.Version := '2.0';
+HAnimJoint40 := THAnimJointNode.Create;
+HAnimJoint40.NameField := 'humanoid_root';
+HAnimJoint40.SetUlimit([0,0,0]);
+HAnimJoint40.SetLlimit([0,0,0]);
+HAnimSegment41 := THAnimSegmentNode.Create;
+HAnimSegment41.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint39.AddChildren([HAnimSegment40]);
+HAnimJoint40.AddChildren([HAnimSegment41]);
 { .AddSkeleton }
-HAnimHumanoid38.SetSkeleton([HAnimJoint39]);
-Shape41 := TShapeNode.Create;
-IndexedFaceSet42 := TIndexedFaceSetNode.Create;
-IndexedFaceSet42 := IndexedFaceSet37;
+HAnimHumanoid39.SetSkeleton([HAnimJoint40]);
+Shape42 := TShapeNode.Create;
+IndexedFaceSet43 := TIndexedFaceSetNode.Create;
+IndexedFaceSet43 := IndexedFaceSet38;
 { .SetGeometry }
-Shape41.Geometry := IndexedFaceSet42;
+Shape42.Geometry := IndexedFaceSet43;
 { .SetSkin }
-HAnimHumanoid38.SetSkin([Shape41]);
+HAnimHumanoid39.SetSkin([Shape42]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid38]);
+Group21.AddChildren([HAnimHumanoid39]);
 { ============================== }
-HAnimHumanoid43 := THAnimHumanoidNode.Create;
-HAnimHumanoid43.NameField := 'SkinSwitchShapeIndexedGeometry';
-HAnimHumanoid43.Version := '2.0';
-HAnimJoint44 := THAnimJointNode.Create;
-HAnimJoint44.NameField := 'humanoid_root';
-HAnimJoint44.SetUlimit([0,0,0]);
-HAnimJoint44.SetLlimit([0,0,0]);
-HAnimSegment45 := THAnimSegmentNode.Create;
-HAnimSegment45.NameField := 'sacrum';
+HAnimHumanoid44 := THAnimHumanoidNode.Create;
+HAnimHumanoid44.NameField := 'SkinSwitchShapeIndexedGeometry';
+HAnimHumanoid44.Version := '2.0';
+HAnimJoint45 := THAnimJointNode.Create;
+HAnimJoint45.NameField := 'humanoid_root';
+HAnimJoint45.SetUlimit([0,0,0]);
+HAnimJoint45.SetLlimit([0,0,0]);
+HAnimSegment46 := THAnimSegmentNode.Create;
+HAnimSegment46.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint44.AddChildren([HAnimSegment45]);
+HAnimJoint45.AddChildren([HAnimSegment46]);
 { .AddSkeleton }
-HAnimHumanoid43.SetSkeleton([HAnimJoint44]);
+HAnimHumanoid44.SetSkeleton([HAnimJoint45]);
 { TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'> }
-Shape46 := TShapeNode.Create;
-IndexedFaceSet47 := TIndexedFaceSetNode.Create;
-Coordinate48 := TCoordinateNode.Create;
+Shape47 := TShapeNode.Create;
+IndexedFaceSet48 := TIndexedFaceSetNode.Create;
+Coordinate49 := TCoordinateNode.Create;
 { .SetCoord }
-IndexedFaceSet47.Coord := Coordinate48;
+IndexedFaceSet48.Coord := Coordinate49;
 { .SetGeometry }
-Shape46.Geometry := IndexedFaceSet47;
+Shape47.Geometry := IndexedFaceSet48;
 { .SetSkin }
-HAnimHumanoid43.SetSkin([Shape46]);
+HAnimHumanoid44.SetSkin([Shape47]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid43]);
+Group21.AddChildren([HAnimHumanoid44]);
 { similarly for LOD }
 { ============================== }
-HAnimHumanoid49 := THAnimHumanoidNode.Create;
-HAnimHumanoid49.NameField := 'SynthesizedSkinShapeIndexedTwoPartGeometry';
-HAnimHumanoid49.Version := '2.0';
-HAnimJoint50 := THAnimJointNode.Create;
-HAnimJoint50.NameField := 'humanoid_root';
-HAnimJoint50.SetUlimit([0,0,0]);
-HAnimJoint50.SetLlimit([0,0,0]);
-HAnimSegment51 := THAnimSegmentNode.Create;
-HAnimSegment51.NameField := 'sacrum';
+HAnimHumanoid50 := THAnimHumanoidNode.Create;
+HAnimHumanoid50.NameField := 'SynthesizedSkinShapeIndexedTwoPartGeometry';
+HAnimHumanoid50.Version := '2.0';
+HAnimJoint51 := THAnimJointNode.Create;
+HAnimJoint51.NameField := 'humanoid_root';
+HAnimJoint51.SetUlimit([0,0,0]);
+HAnimJoint51.SetLlimit([0,0,0]);
+HAnimSegment52 := THAnimSegmentNode.Create;
+HAnimSegment52.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint50.AddChildren([HAnimSegment51]);
+HAnimJoint51.AddChildren([HAnimSegment52]);
 { .AddSkeleton }
-HAnimHumanoid49.SetSkeleton([HAnimJoint50]);
-Shape52 := TShapeNode.Create;
-IndexedFaceSet53 := TIndexedFaceSetNode.Create;
-Coordinate54 := TCoordinateNode.Create;
+HAnimHumanoid50.SetSkeleton([HAnimJoint51]);
+Shape53 := TShapeNode.Create;
+IndexedFaceSet54 := TIndexedFaceSetNode.Create;
+Coordinate55 := TCoordinateNode.Create;
 { .SetCoord }
-IndexedFaceSet53.Coord := Coordinate54;
+IndexedFaceSet54.Coord := Coordinate55;
 { .SetGeometry }
-Shape52.Geometry := IndexedFaceSet53;
+Shape53.Geometry := IndexedFaceSet54;
 { .SetSkin }
-HAnimHumanoid49.SetSkin([Shape52]);
+HAnimHumanoid50.SetSkin([Shape53]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid49]);
+Group21.AddChildren([HAnimHumanoid50]);
 { ============================== }
-HAnimHumanoid55 := THAnimHumanoidNode.Create;
-HAnimHumanoid55.NameField := 'ApparelSkinIndexedGeometryMultipleShapes';
-HAnimHumanoid55.Version := '2.0';
-HAnimJoint56 := THAnimJointNode.Create;
-HAnimJoint56.NameField := 'humanoid_root';
-HAnimJoint56.SetUlimit([0,0,0]);
-HAnimJoint56.SetLlimit([0,0,0]);
-HAnimSegment57 := THAnimSegmentNode.Create;
-HAnimSegment57.NameField := 'sacrum';
+HAnimHumanoid56 := THAnimHumanoidNode.Create;
+HAnimHumanoid56.NameField := 'ApparelSkinIndexedGeometryMultipleShapes';
+HAnimHumanoid56.Version := '2.0';
+HAnimJoint57 := THAnimJointNode.Create;
+HAnimJoint57.NameField := 'humanoid_root';
+HAnimJoint57.SetUlimit([0,0,0]);
+HAnimJoint57.SetLlimit([0,0,0]);
+HAnimSegment58 := THAnimSegmentNode.Create;
+HAnimSegment58.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint56.AddChildren([HAnimSegment57]);
+HAnimJoint57.AddChildren([HAnimSegment58]);
 { .AddSkeleton }
-HAnimHumanoid55.SetSkeleton([HAnimJoint56]);
-Shape58 := TShapeNode.Create;
+HAnimHumanoid56.SetSkeleton([HAnimJoint57]);
+Shape59 := TShapeNode.Create;
 { .SetSkin }
-HAnimHumanoid55.SetSkin([Shape58]);
+HAnimHumanoid56.SetSkin([Shape59]);
 { allow multiple Shape nodes with containerField='apparel', one for each layer of clothing }
 { TODO proposed for X3D4.1 <Shape containerField='apparel'/> }
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid55]);
+Group21.AddChildren([HAnimHumanoid56]);
 { ============================== }
-HAnimHumanoid59 := THAnimHumanoidNode.Create;
-HAnimHumanoid59.NameField := 'AnatomySkinIndexedGeometryMultipleShapes';
-HAnimHumanoid59.Version := '2.0';
-HAnimJoint60 := THAnimJointNode.Create;
-HAnimJoint60.NameField := 'humanoid_root';
-HAnimJoint60.SetUlimit([0,0,0]);
-HAnimJoint60.SetLlimit([0,0,0]);
-HAnimSegment61 := THAnimSegmentNode.Create;
-HAnimSegment61.NameField := 'sacrum';
+HAnimHumanoid60 := THAnimHumanoidNode.Create;
+HAnimHumanoid60.NameField := 'AnatomySkinIndexedGeometryMultipleShapes';
+HAnimHumanoid60.Version := '2.0';
+HAnimJoint61 := THAnimJointNode.Create;
+HAnimJoint61.NameField := 'humanoid_root';
+HAnimJoint61.SetUlimit([0,0,0]);
+HAnimJoint61.SetLlimit([0,0,0]);
+HAnimSegment62 := THAnimSegmentNode.Create;
+HAnimSegment62.NameField := 'sacrum';
 { .AddChildren }
-HAnimJoint60.AddChildren([HAnimSegment61]);
+HAnimJoint61.AddChildren([HAnimSegment62]);
 { .AddSkeleton }
-HAnimHumanoid59.SetSkeleton([HAnimJoint60]);
+HAnimHumanoid60.SetSkeleton([HAnimJoint61]);
 { allow multiple Shape nodes with containerField='skin', one for each layer of skin }
-Shape62 := TShapeNode.Create;
+Shape63 := TShapeNode.Create;
 { .SetSkin }
-HAnimHumanoid59.SetSkin([Shape62]);
+HAnimHumanoid60.SetSkin([Shape63]);
 { .AddChildren }
-Group20.AddChildren([HAnimHumanoid59]);
+Group21.AddChildren([HAnimHumanoid60]);
 { ============================== }
 { .AddChildren }
-Group17.AddChildren([Group20]);
-Viewpoint63 := TViewpointNode.Create;
-Viewpoint63.Description := 'Select text to see website';
-Viewpoint63.Position := Vector3(0,0,12);
+Group18.AddChildren([Group21]);
+Viewpoint64 := TViewpointNode.Create;
+Viewpoint64.Description := 'Select text to see website';
+Viewpoint64.Position := Vector3(0,0,12);
 { .AddChildren }
-Group17.AddChildren([Viewpoint63]);
+Group18.AddChildren([Viewpoint64]);
 { Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip }
-Anchor64 := TAnchorNode.Create;
-Anchor64.Description := 'DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches';
-Anchor64.SetParameter(['target=blank']);
-Anchor64.SetUrl(['https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html']);
-Shape65 := TShapeNode.Create;
+Anchor65 := TAnchorNode.Create;
+Anchor65.Description := 'DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches';
+Anchor65.SetParameter(['target=blank']);
+Anchor65.SetUrl(['https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html']);
+Shape66 := TShapeNode.Create;
 { TODO adjust Text string and Box size, then set Material transparency='1' }
-Text66 := TTextNode.Create;
-Text66.SetText(['DesignPatternsApparelMedicalSkinLayers.x3d','','explores potential apparel approaches']);
-FontStyle67 := TFontStyleNode.Create;
-FontStyle67.Family := ffSans;
-FontStyle67.Justify := fjMiddle;
-FontStyle67.JustifyMinor := fjMiddle;
-FontStyle67.Size := 0.6;
-FontStyle67.Style := 'BOLD';
+Text67 := TTextNode.Create;
+Text67.SetText(['DesignPatternsApparelMedicalSkinLayers.x3d','','explores potential apparel approaches']);
+FontStyle68 := TFontStyleNode.Create;
+FontStyle68.Family := ffSans;
+FontStyle68.Justify := fjMiddle;
+FontStyle68.JustifyMinor := fjMiddle;
+FontStyle68.Size := 0.6;
+FontStyle68.Style := 'BOLD';
 { .SetFontStyle }
-Text66.FontStyle := FontStyle67;
+Text67.FontStyle := FontStyle68;
 { .SetGeometry }
-Shape65.Geometry := Text66;
-Appearance68 := TAppearanceNode.Create;
-Material69 := TMaterialNode.Create;
-Material69.DiffuseColor := Vector3(0.9,0.9,0.9);
+Shape66.Geometry := Text67;
+Appearance69 := TAppearanceNode.Create;
+Material70 := TMaterialNode.Create;
+Material70.DiffuseColor := Vector3(0.9,0.9,0.9);
 { .SetMaterial }
-Appearance68.Material := Material69;
+Appearance69.Material := Material70;
 { .SetAppearance }
-Shape65.Appearance := Appearance68;
+Shape66.Appearance := Appearance69;
 { .AddChildren }
-Anchor64.AddChildren([Shape65]);
-Shape70 := TShapeNode.Create;
+Anchor65.AddChildren([Shape66]);
+Shape71 := TShapeNode.Create;
 { Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible. }
-Box71 := TBoxNode.Create;
-Box71.Size := Vector3(11,2,0.001);
+Box72 := TBoxNode.Create;
+Box72.Size := Vector3(11,2,0.001);
 { .SetGeometry }
-Shape70.Geometry := Box71;
-Appearance72 := TAppearanceNode.Create;
-Material73 := TMaterialNode.Create;
-Material73.Transparency := 1;
+Shape71.Geometry := Box72;
+Appearance73 := TAppearanceNode.Create;
+Material74 := TMaterialNode.Create;
+Material74.Transparency := 1;
 { .SetMaterial }
-Appearance72.Material := Material73;
+Appearance73.Material := Material74;
 { .SetAppearance }
-Shape70.Appearance := Appearance72;
+Shape71.Appearance := Appearance73;
 { .AddChildren }
-Anchor64.AddChildren([Shape70]);
+Anchor65.AddChildren([Shape71]);
 { .AddChildren }
-Group17.AddChildren([Anchor64]);
+Group18.AddChildren([Anchor65]);
 { .AddGroup }
-X3D0.AddChildren([Group17]);
+X3D0.AddChildren([Group18]);
 Result := X3D0;
 end;

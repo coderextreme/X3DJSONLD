@@ -98,35 +98,35 @@ ProtoInstance ProtoInstance38 = null;
 ProtoInstance ProtoInstance39 = null;
 ProtoInstance ProtoInstance40 = null;
 ProtoInstance ProtoInstance41 = null;
-      X3D X3D0 =  new X3D().setProfile("Full").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Full")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("comment").setContent("World of Titania"))
-        .addMeta(new meta().setName("created").setContent("Fri, 04 Sep 2015 10:19:01 GMT"))
-        .addMeta(new meta().setName("creator").setContent("Holger Seelig"))
-        .addMeta(new meta().setName("generator").setContent("Titania V3.0.4, https://titania.create3000.de"))
-        .addMeta(new meta().setName("identifier").setContent("file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d"))
-        .addMeta(new meta().setName("modified").setContent("Tue, 25 Jul 2017 09:42:17 GMT"))
-        .addMeta(new meta().setName("title").setContent("Connectors")))
+        .addMeta(new meta().setName(new SFString("comment")).setContent(new SFString("World of Titania")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("Fri, 04 Sep 2015 10:19:01 GMT")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Holger Seelig")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("Titania V3.0.4, https://titania.create3000.de")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("file:///home/holger/Projekte/Cobweb/excite/tests/Components/Shape/Connectors.x3d")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("Tue, 25 Jul 2017 09:42:17 GMT")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("Connectors"))))
       .setScene(new Scene()
-        .addChild(new ProtoDeclare().setName("RoundedRectangle2D")
+        .addChild(new ProtoDeclare().setName(new SFString("RoundedRectangle2D"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFFloat").setName("cornerRadius").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("1"))
-            .addField(new field().setType("SFVec2f").setName("size").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("2 2"))
-            .addField(new field().setType("SFBool").setName("solid").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("true")))
+            .addField(new field().setType("SFFloat").setName(new SFString("cornerRadius")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("1")))
+            .addField(new field().setType("SFVec2f").setName(new SFString("size")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("2 2")))
+            .addField(new field().setType("SFBool").setName(new SFString("solid")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("true"))))
           .setProtoBody(new ProtoBody()
-            .addChild(new IndexedFaceSet().setDEF("Geometry")
+            .addChild(new IndexedFaceSet().setDEF(new SFString("Geometry"))
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("solid").setProtoField("solid")))
+                .addConnect(new connect().setNodeField(new SFString("solid")).setProtoField(new SFString("solid"))))
               .setCoord(new Coordinate()))
-            .addChild(new Script().setDEF("RoundedRectangle2D").setDirectOutput(true)
-              .addField(new field().setType("SFFloat").setName("cornerDimension").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("10"))
-              .addField(new field().setType("SFFloat").setName("cornerRadius").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-              .addField(new field().setType("SFVec2f").setName("size").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-              .addField(new field().setType("SFNode").setName("geometry").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addChild(new IndexedFaceSet().setUSE("Geometry")))
+            .addChild(new Script().setDEF(new SFString("RoundedRectangle2D")).setDirectOutput(true)
+              .addField(new field().setType("SFFloat").setName(new SFString("cornerDimension")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("10")))
+              .addField(new field().setType("SFFloat").setName(new SFString("cornerRadius")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new field().setType("SFVec2f").setName(new SFString("size")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new field().setType("SFNode").setName(new SFString("geometry")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+                .addChild(new IndexedFaceSet().setUSE(new SFString("Geometry"))))
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("cornerRadius").setProtoField("cornerRadius"))
-                .addConnect(new connect().setNodeField("size").setProtoField("size")))
+                .addConnect(new connect().setNodeField(new SFString("cornerRadius")).setProtoField(new SFString("cornerRadius")))
+                .addConnect(new connect().setNodeField(new SFString("size")).setProtoField(new SFString("size"))))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize ()\n"+
@@ -171,89 +171,89 @@ ProtoInstance ProtoInstance41 = null;
 "\n"+
 "	geometry .coord .point = points;\n"+
 "}"))))
-        .addChild(new ProtoDeclare().setName("Widget")
+        .addChild(new ProtoDeclare().setName(new SFString("Widget"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFColor").setName("fillColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.1 0.1 0.1"))
-            .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.4 0.4 0.4"))
-            .addField(new field().setType("SFFloat").setName("linewidthScaleFactor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("1"))
-            .addField(new field().setType("SFNode").setName("geometry").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+            .addField(new field().setType("SFColor").setName(new SFString("fillColor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.1 0.1 0.1")))
+            .addField(new field().setType("SFColor").setName(new SFString("lineColor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.4 0.4 0.4")))
+            .addField(new field().setType("SFFloat").setName(new SFString("linewidthScaleFactor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("1")))
+            .addField(new field().setType("SFNode").setName(new SFString("geometry")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .setProtoBody(new ProtoBody()
-            .addChild(new Transform().setDEF("Shape")
+            .addChild(new Transform().setDEF(new SFString("Shape"))
               .addChild(new Shape()
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("geometry").setProtoField("geometry")))
+                  .addConnect(new connect().setNodeField(new SFString("geometry")).setProtoField(new SFString("geometry"))))
                 .setAppearance(new Appearance()
                   .setMaterial(new Material()
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("diffuseColor").setProtoField("fillColor"))))))
+                      .addConnect(new connect().setNodeField(new SFString("diffuseColor")).setProtoField(new SFString("fillColor")))))))
               .addChild(new Shape()
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("geometry").setProtoField("geometry")))
+                  .addConnect(new connect().setNodeField(new SFString("geometry")).setProtoField(new SFString("geometry"))))
                 .setAppearance(new Appearance()
                   .setFillProperties(new FillProperties().setFilled(false).setHatched(false))
                   .setLineProperties(new LineProperties()
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
+                      .addConnect(new connect().setNodeField(new SFString("linewidthScaleFactor")).setProtoField(new SFString("linewidthScaleFactor")))))
                   .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f })
                     .setIS(new IS()
-                      .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))))))
-        .addChild(new ProtoDeclare().setName("Node")
+                      .addConnect(new connect().setNodeField(new SFString("emissiveColor")).setProtoField(new SFString("lineColor"))))))))))
+        .addChild(new ProtoDeclare().setName(new SFString("Node"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
+            .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)))
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
-              .addChild(new PlaneSensor().setDEF("PlaneSensor"))
-              .addChild(new Transform().setDEF("Node")
+              .addChild(new PlaneSensor().setDEF(new SFString("PlaneSensor")))
+              .addChild(new Transform().setDEF(new SFString("Node"))
                 .setIS(new IS()
-                  .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
-                .addChild(ProtoInstance0 = new ProtoInstance().setName("Widget"))
-                .addChild(new Transform().setDEF("Input").setTranslation(new float[] {-1f ,0f ,0f })
-                  .addChild(ProtoInstance2 = new ProtoInstance().setName("Widget")))
-                .addChild(new Transform().setDEF("Output").setTranslation(new float[] {1f ,0f ,0f })
-                  .addChild(ProtoInstance3 = new ProtoInstance().setName("Widget")))))
+                  .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("translation"))))
+                .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("Widget")))
+                .addChild(new Transform().setDEF(new SFString("Input")).setTranslation(new float[] {-1f ,0f ,0f })
+                  .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("Widget"))))
+                .addChild(new Transform().setDEF(new SFString("Output")).setTranslation(new float[] {1f ,0f ,0f })
+                  .addChild(ProtoInstance3 = new ProtoInstance().setName(new SFString("Widget"))))))
             .addChild(new Script().setDirectOutput(true)
-              .addField(new field().setType("SFVec3f").setName("translation").setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
-              .addField(new field().setType("SFNode").setName("sensor").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addChild(new PlaneSensor().setUSE("PlaneSensor")))
-              .addField(new field().setType("SFNode").setName("transform").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addChild(new Transform().setUSE("Node")))
+              .addField(new field().setType("SFVec3f").setName(new SFString("translation")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
+              .addField(new field().setType("SFNode").setName(new SFString("sensor")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+                .addChild(new PlaneSensor().setUSE(new SFString("PlaneSensor"))))
+              .addField(new field().setType("SFNode").setName(new SFString("transform")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+                .addChild(new Transform().setUSE(new SFString("Node"))))
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("translation").setProtoField("translation")))
+                .addConnect(new connect().setNodeField(new SFString("translation")).setProtoField(new SFString("translation"))))
               .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
 "	sensor .offset = translation;\n"+
 "}"))
-            .addChild(new ROUTE().setFromNode("PlaneSensor").setFromField("translation_changed").setToNode("Node").setToField("set_translation"))))
-        .addChild(new ProtoDeclare().setName("Route")
+            .addChild(new ROUTE().setFromNode(new SFString("PlaneSensor")).setFromField(new SFString("translation_changed")).setToNode(new SFString("Node")).setToField(new SFString("set_translation")))))
+        .addChild(new ProtoDeclare().setName(new SFString("Route"))
           .setProtoInterface(new ProtoInterface()
-            .addField(new field().setType("SFColor").setName("lineColor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.43 0.43 0.98"))
-            .addField(new field().setType("SFFloat").setName("linewidthScaleFactor").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("2"))
-            .addField(new field().setType("SFNode").setName("output").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-            .addField(new field().setType("SFNode").setName("input").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)))
+            .addField(new field().setType("SFColor").setName(new SFString("lineColor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.43 0.43 0.98")))
+            .addField(new field().setType("SFFloat").setName(new SFString("linewidthScaleFactor")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("2")))
+            .addField(new field().setType("SFNode").setName(new SFString("output")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+            .addField(new field().setType("SFNode").setName(new SFString("input")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)))
           .setProtoBody(new ProtoBody()
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setLineProperties(new LineProperties()
                   .setIS(new IS()
-                    .addConnect(new connect().setNodeField("linewidthScaleFactor").setProtoField("linewidthScaleFactor"))))
+                    .addConnect(new connect().setNodeField(new SFString("linewidthScaleFactor")).setProtoField(new SFString("linewidthScaleFactor")))))
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,0f })
                   .setIS(new IS()
-                    .addConnect(new connect().setNodeField("emissiveColor").setProtoField("lineColor")))))
-              .setGeometry(new LineSet().setDEF("Geometry_1").setVertexCount(new MFInt320().getArray())
+                    .addConnect(new connect().setNodeField(new SFString("emissiveColor")).setProtoField(new SFString("lineColor"))))))
+              .setGeometry(new LineSet().setDEF(new SFString("Geometry_1")).setVertexCount(new MFInt320().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f1().getArray()))))
-            .addChild(new Script().setDEF("Route").setDirectOutput(true)
-              .addField(new field().setType("SFVec3f").setName("set_translation").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("SFInt32").setName("routeDimension").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("21"))
-              .addField(new field().setType("SFNode").setName("output").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-              .addField(new field().setType("SFNode").setName("input").setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
-              .addField(new field().setType("SFNode").setName("geometry").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addChild(new LineSet().setUSE("Geometry_1")))
-              .addField(new field().setType("SFNode").setName("self").setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
-                .addChild(new Script().setUSE("Route")))
+            .addChild(new Script().setDEF(new SFString("Route")).setDirectOutput(true)
+              .addField(new field().setType("SFVec3f").setName(new SFString("set_translation")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("SFInt32").setName(new SFString("routeDimension")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("21")))
+              .addField(new field().setType("SFNode").setName(new SFString("output")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new field().setType("SFNode").setName(new SFString("input")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY))
+              .addField(new field().setType("SFNode").setName(new SFString("geometry")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+                .addChild(new LineSet().setUSE(new SFString("Geometry_1"))))
+              .addField(new field().setType("SFNode").setName(new SFString("self")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
+                .addChild(new Script().setUSE(new SFString("Route"))))
               .setIS(new IS()
-                .addConnect(new connect().setNodeField("output").setProtoField("output"))
-                .addConnect(new connect().setNodeField("input").setProtoField("input")))
+                .addConnect(new connect().setNodeField(new SFString("output")).setProtoField(new SFString("output")))
+                .addConnect(new connect().setNodeField(new SFString("input")).setProtoField(new SFString("input"))))
               .setSourceCode("ecmascript:\n"+
 "function initialize ()\n"+
 "{\n"+
@@ -283,120 +283,120 @@ ProtoInstance ProtoInstance41 = null;
 "}"))))
         .addChild(new NavigationInfo().setType("\"FLY\" \"ANY\""))
         .addChild(new Background().setSkyColor(new MFColor2().getArray()))
-        .addChild(new OrthoViewpoint().setDescription("OthoViewpoint").setPosition(new float[] {-3.13496f ,-4.19776f ,10f }).setCenterOfRotation(new float[] {-3.13496f ,-4.19776f ,0f }).setFieldOfView(new MFFloat3().getArray()))
-        .addChild(new Viewpoint().setDescription("Viewpoint"))
-        .addChild(new Transform().setDEF("Connectors")
-          .addChild(ProtoInstance4 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance7 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance10 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance13 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance16 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance19 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance22 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance25 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance28 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance31 = new ProtoInstance().setName("Route"))
-          .addChild(ProtoInstance34 = new ProtoInstance().setName("Node").setUSE("N1"))
-          .addChild(ProtoInstance35 = new ProtoInstance().setName("Node").setUSE("N2"))
-          .addChild(ProtoInstance36 = new ProtoInstance().setName("Node").setUSE("N3"))
-          .addChild(ProtoInstance37 = new ProtoInstance().setName("Node").setUSE("N4"))
-          .addChild(ProtoInstance38 = new ProtoInstance().setName("Node").setUSE("N5"))
-          .addChild(ProtoInstance39 = new ProtoInstance().setName("Node").setUSE("N6"))
-          .addChild(ProtoInstance40 = new ProtoInstance().setName("Node").setUSE("N7"))
-          .addChild(ProtoInstance41 = new ProtoInstance().setName("Node").setUSE("N8"))));
+        .addChild(new OrthoViewpoint().setDescription(new SFString("OthoViewpoint")).setPosition(new float[] {-3.13496f ,-4.19776f ,10f }).setCenterOfRotation(new float[] {-3.13496f ,-4.19776f ,0f }).setFieldOfView(new MFFloat3().getArray()))
+        .addChild(new Viewpoint().setDescription(new SFString("Viewpoint")))
+        .addChild(new Transform().setDEF(new SFString("Connectors"))
+          .addChild(ProtoInstance4 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance7 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance10 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance13 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance16 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance19 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance22 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance25 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance28 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance31 = new ProtoInstance().setName(new SFString("Route")))
+          .addChild(ProtoInstance34 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N1")))
+          .addChild(ProtoInstance35 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N2")))
+          .addChild(ProtoInstance36 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N3")))
+          .addChild(ProtoInstance37 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N4")))
+          .addChild(ProtoInstance38 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N5")))
+          .addChild(ProtoInstance39 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N6")))
+          .addChild(ProtoInstance40 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N7")))
+          .addChild(ProtoInstance41 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N8")))));
 ProtoInstance0
-                  .addFieldValue(new fieldValue().setName("geometry")
-                    .addChild(ProtoInstance1 = new ProtoInstance().setName("RoundedRectangle2D")));
+                  .addFieldValue(new fieldValue().setName(new SFString("geometry"))
+                    .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("RoundedRectangle2D"))));
 ProtoInstance1
-                      .addFieldValue(new fieldValue().setName("cornerRadius").setValue("0.12"));
+                      .addFieldValue(new fieldValue().setName(new SFString("cornerRadius")).setValue(new SFString("0.12")));
 ProtoInstance1
-                      .addFieldValue(new fieldValue().setName("size").setValue("2 1"));
+                      .addFieldValue(new fieldValue().setName(new SFString("size")).setValue(new SFString("2 1")));
 ProtoInstance2
-                    .addFieldValue(new fieldValue().setName("lineColor").setValue("0.72 0.14 0.23"));
+                    .addFieldValue(new fieldValue().setName(new SFString("lineColor")).setValue(new SFString("0.72 0.14 0.23")));
 ProtoInstance2
-                    .addFieldValue(new fieldValue().setName("geometry")
-                      .addChild(new Disk2D().setDEF("Connector").setOuterRadius(0.2f )));
+                    .addFieldValue(new fieldValue().setName(new SFString("geometry"))
+                      .addChild(new Disk2D().setDEF(new SFString("Connector")).setOuterRadius(0.2f )));
 ProtoInstance3
-                    .addFieldValue(new fieldValue().setName("lineColor").setValue("0.44 0.5 0.72"));
+                    .addFieldValue(new fieldValue().setName(new SFString("lineColor")).setValue(new SFString("0.44 0.5 0.72")));
 ProtoInstance3
-                    .addFieldValue(new fieldValue().setName("geometry")
-                      .addChild(new Disk2D().setUSE("Connector")));
+                    .addFieldValue(new fieldValue().setName(new SFString("geometry"))
+                      .addChild(new Disk2D().setUSE(new SFString("Connector"))));
 ProtoInstance4
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance5 = new ProtoInstance().setName("Node").setDEF("N1")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance5 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N1"))));
 ProtoInstance4
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance6 = new ProtoInstance().setName("Node").setDEF("N2")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance6 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N2"))));
 ProtoInstance5
-                .addFieldValue(new fieldValue().setName("translation").setValue("-3.98323 2.88948 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-3.98323 2.88948 0")));
 ProtoInstance6
-                .addFieldValue(new fieldValue().setName("translation").setValue("-0.0890862 2.96049 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-0.0890862 2.96049 0")));
 ProtoInstance7
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance8 = new ProtoInstance().setName("Node").setUSE("N1")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance8 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N1"))));
 ProtoInstance7
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance9 = new ProtoInstance().setName("Node").setDEF("N3")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance9 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N3"))));
 ProtoInstance9
-                .addFieldValue(new fieldValue().setName("translation").setValue("-0.104169 1.16371 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-0.104169 1.16371 0")));
 ProtoInstance10
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance11 = new ProtoInstance().setName("Node").setUSE("N1")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance11 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N1"))));
 ProtoInstance10
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance12 = new ProtoInstance().setName("Node").setDEF("N4")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance12 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N4"))));
 ProtoInstance12
-                .addFieldValue(new fieldValue().setName("translation").setValue("-0.0998688 -0.40172 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-0.0998688 -0.40172 0")));
 ProtoInstance13
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance14 = new ProtoInstance().setName("Node").setUSE("N1")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance14 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N1"))));
 ProtoInstance13
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance15 = new ProtoInstance().setName("Node").setDEF("N5")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance15 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N5"))));
 ProtoInstance15
-                .addFieldValue(new fieldValue().setName("translation").setValue("-0.0998687 -2.14742 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("-0.0998687 -2.14742 0")));
 ProtoInstance16
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance17 = new ProtoInstance().setName("Node").setUSE("N2")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance17 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N2"))));
 ProtoInstance16
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance18 = new ProtoInstance().setName("Node").setDEF("N6")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance18 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N6"))));
 ProtoInstance18
-                .addFieldValue(new fieldValue().setName("translation").setValue("3.55694 2.4116 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("3.55694 2.4116 0")));
 ProtoInstance19
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance20 = new ProtoInstance().setName("Node").setUSE("N3")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance20 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N3"))));
 ProtoInstance19
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance21 = new ProtoInstance().setName("Node").setUSE("N6")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance21 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N6"))));
 ProtoInstance22
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance23 = new ProtoInstance().setName("Node").setUSE("N4")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance23 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N4"))));
 ProtoInstance22
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance24 = new ProtoInstance().setName("Node").setDEF("N7")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance24 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N7"))));
 ProtoInstance24
-                .addFieldValue(new fieldValue().setName("translation").setValue("3.75106 -0.0794556 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("3.75106 -0.0794556 0")));
 ProtoInstance25
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance26 = new ProtoInstance().setName("Node").setUSE("N5")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance26 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N5"))));
 ProtoInstance25
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance27 = new ProtoInstance().setName("Node").setUSE("N7")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance27 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N7"))));
 ProtoInstance28
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance29 = new ProtoInstance().setName("Node").setUSE("N6")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance29 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N6"))));
 ProtoInstance28
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance30 = new ProtoInstance().setName("Node").setDEF("N8")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance30 = new ProtoInstance().setName(new SFString("Node")).setDEF(new SFString("N8"))));
 ProtoInstance30
-                .addFieldValue(new fieldValue().setName("translation").setValue("7.68077 1.21228 0"));
+                .addFieldValue(new fieldValue().setName(new SFString("translation")).setValue(new SFString("7.68077 1.21228 0")));
 ProtoInstance31
-            .addFieldValue(new fieldValue().setName("output")
-              .addChild(ProtoInstance32 = new ProtoInstance().setName("Node").setUSE("N7")));
+            .addFieldValue(new fieldValue().setName(new SFString("output"))
+              .addChild(ProtoInstance32 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N7"))));
 ProtoInstance31
-            .addFieldValue(new fieldValue().setName("input")
-              .addChild(ProtoInstance33 = new ProtoInstance().setName("Node").setUSE("N8")));
+            .addFieldValue(new fieldValue().setName(new SFString("input"))
+              .addChild(ProtoInstance33 = new ProtoInstance().setName(new SFString("Node")).setUSE(new SFString("N8"))));
     return X3D0;
     }
 private class MFInt320 {

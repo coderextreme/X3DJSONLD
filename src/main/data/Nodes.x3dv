@@ -1,0 +1,540 @@
+#X3D V4.1 utf8 X_ITE V14.0.2
+
+PROFILE Full
+
+META "creator" "Holger Seelig"
+META "created" "Tue, 10 Feb 2026 12:09:57 GMT"
+META "modified" "Tue, 10 Feb 2026 12:09:57 GMT"
+META "generator" "Sunrize X3D Editor V2.0.2, https://create3000.github.io/sunrize/"
+
+MetadataBoolean { }
+
+MetadataDouble { }
+
+MetadataFloat { }
+
+MetadataInteger { }
+
+MetadataSet { }
+
+MetadataString { }
+
+WorldInfo { }
+
+Background { }
+
+Fog { }
+
+FogCoordinate { }
+
+LocalFog { }
+
+TextureBackground { }
+
+ProximitySensor { }
+
+TransformSensor { }
+
+VisibilitySensor { }
+
+ColorChaser { }
+
+ColorDamper { }
+
+CoordinateChaser { }
+
+CoordinateDamper { }
+
+OrientationChaser { }
+
+OrientationDamper { }
+
+PositionChaser { }
+
+PositionChaser2D { }
+
+PositionDamper { }
+
+PositionDamper2D { }
+
+ScalarChaser { }
+
+ScalarDamper { }
+
+TexCoordChaser2D { }
+
+TexCoordDamper2D { }
+
+Box { }
+
+Cone { }
+
+Cylinder { }
+
+ElevationGrid { }
+
+Extrusion { }
+
+IndexedFaceSet { }
+
+Sphere { }
+
+Group { }
+
+StaticGroup { }
+
+Switch { }
+
+Transform { }
+
+ColorInterpolator { }
+
+CoordinateInterpolator { }
+
+CoordinateInterpolator2D { }
+
+EaseInEaseOut { }
+
+NormalInterpolator { }
+
+OrientationInterpolator { }
+
+PositionInterpolator { }
+
+PositionInterpolator2D { }
+
+ScalarInterpolator { }
+
+SplinePositionInterpolator { }
+
+SplinePositionInterpolator2D { }
+
+SplineScalarInterpolator { }
+
+SquadOrientationInterpolator { }
+
+Layer { }
+
+LayerSet { }
+
+Viewport { }
+
+DirectionalLight { }
+
+EnvironmentLight { }
+
+PointLight { }
+
+SpotLight { }
+
+Billboard { }
+
+Collision { }
+
+LOD { }
+
+NavigationInfo { }
+
+OrthoViewpoint { }
+
+Viewpoint { }
+
+ViewpointGroup { }
+
+Anchor { }
+
+Inline { }
+
+LoadSensor { }
+
+CylinderSensor { }
+
+PlaneSensor { }
+
+SphereSensor { }
+
+TouchSensor { }
+
+ClipPlane { }
+
+Color { }
+
+ColorRGBA { }
+
+Coordinate { }
+
+CoordinateDouble { }
+
+IndexedLineSet { }
+
+IndexedTriangleFanSet { }
+
+IndexedTriangleSet { }
+
+IndexedTriangleStripSet { }
+
+LineSet { }
+
+Normal { }
+
+PointSet { }
+
+Tangent { }
+
+TriangleFanSet { }
+
+TriangleSet { }
+
+TriangleStripSet { }
+
+ComposedShader { }
+
+FloatVertexAttribute { }
+
+Matrix3VertexAttribute { }
+
+Matrix4VertexAttribute { }
+
+PackagedShader { }
+
+ProgramShader { }
+
+ShaderPart { }
+
+ShaderProgram { }
+
+AcousticProperties { }
+
+Appearance { }
+
+FillProperties { }
+
+LineProperties { }
+
+Material { }
+
+PhysicalMaterial { }
+
+PointProperties { }
+
+Shape { }
+
+TwoSidedMaterial { }
+
+UnlitMaterial { }
+
+Analyser { }
+
+AudioClip { }
+
+AudioDestination { }
+
+BiquadFilter { }
+
+BufferAudioSource { }
+
+ChannelMerger { }
+
+ChannelSelector { }
+
+ChannelSplitter { }
+
+Convolver { }
+
+Delay { }
+
+DynamicsCompressor { }
+
+Gain { }
+
+ListenerPointSource { }
+
+MicrophoneSource { }
+
+OscillatorSource { }
+
+PeriodicWave { }
+
+Sound { }
+
+SpatialSound { }
+
+StreamAudioDestination { }
+
+StreamAudioSource { }
+
+WaveShaper { }
+
+ImageTexture { }
+
+MovieTexture { }
+
+MultiTexture { }
+
+MultiTextureCoordinate { }
+
+MultiTextureTransform { }
+
+PixelTexture { }
+
+TextureCoordinate { }
+
+TextureCoordinateGenerator { }
+
+TextureProperties { }
+
+TextureTransform { }
+
+TimeSensor { }
+
+CADAssembly { }
+
+CADFace { }
+
+CADLayer { }
+
+CADPart { }
+
+IndexedQuadSet { }
+
+QuadSet { }
+
+DISEntityManager { }
+
+DISEntityTypeMapping { }
+
+EspduTransform { }
+
+ReceiverPdu { }
+
+SignalPdu { }
+
+TransmitterPdu { }
+
+BooleanFilter { }
+
+BooleanSequencer { }
+
+BooleanToggle { }
+
+BooleanTrigger { }
+
+IntegerSequencer { }
+
+IntegerTrigger { }
+
+TimeTrigger { }
+
+KeySensor {
+  enabled FALSE
+}
+
+StringSensor { }
+
+TextureProjector { }
+
+TextureProjectorParallel { }
+
+ComposedCubeMapTexture { }
+
+GeneratedCubeMapTexture { }
+
+ImageCubeMapTexture { }
+
+Arc2D { }
+
+ArcClose2D { }
+
+Circle2D { }
+
+Disk2D { }
+
+Polyline2D { }
+
+Polypoint2D { }
+
+Rectangle2D { }
+
+TriangleSet2D { }
+
+HAnimDisplacer { }
+
+HAnimHumanoid { }
+
+HAnimJoint { }
+
+HAnimMotion {
+  endFrame -1
+}
+
+HAnimPose { }
+
+HAnimSegment { }
+
+HAnimSite { }
+
+BoundedPhysicsModel { }
+
+ConeEmitter { }
+
+ExplosionEmitter { }
+
+ForcePhysicsModel { }
+
+ParticleSystem { }
+
+PointEmitter { }
+
+PolylineEmitter { }
+
+SurfaceEmitter { }
+
+VolumeEmitter { }
+
+WindPhysicsModel { }
+
+Script { }
+
+FontLibrary { }
+
+FontStyle { }
+
+Text { }
+
+ComposedTexture3D { }
+
+ImageTexture3D { }
+
+ImageTextureAtlas { }
+
+PixelTexture3D { }
+
+TextureCoordinate3D { }
+
+TextureCoordinate4D { }
+
+TextureTransform3D { }
+
+TextureTransformMatrix3D { }
+
+BallJoint { }
+
+CollidableOffset { }
+
+CollidableShape { }
+
+CollisionCollection { }
+
+CollisionSensor { }
+
+CollisionSpace { }
+
+Contact { }
+
+DoubleAxisHingeJoint { }
+
+MotorJoint { }
+
+RigidBody { }
+
+RigidBodyCollection { }
+
+SingleAxisHingeJoint { }
+
+SliderJoint { }
+
+UniversalJoint { }
+
+BlendedVolumeStyle { }
+
+BoundaryEnhancementVolumeStyle { }
+
+CartoonVolumeStyle { }
+
+ComposedVolumeStyle { }
+
+EdgeEnhancementVolumeStyle { }
+
+IsoSurfaceVolumeData { }
+
+OpacityMapVolumeStyle { }
+
+ProjectionVolumeStyle { }
+
+SegmentedVolumeData { }
+
+ShadedVolumeStyle { }
+
+SilhouetteEnhancementVolumeStyle { }
+
+ToneMappedVolumeStyle { }
+
+VolumeData { }
+
+GeoCoordinate { }
+
+GeoElevationGrid { }
+
+GeoLOD { }
+
+GeoLocation { }
+
+GeoMetadata { }
+
+GeoOrigin { }
+
+GeoPositionInterpolator { }
+
+GeoProximitySensor { }
+
+GeoTouchSensor { }
+
+GeoTransform { }
+
+GeoViewpoint { }
+
+Contour2D { }
+
+ContourPolyline2D { }
+
+NurbsCurve { }
+
+NurbsCurve2D { }
+
+NurbsOrientationInterpolator { }
+
+NurbsPatchSurface { }
+
+NurbsPositionInterpolator { }
+
+NurbsSet { }
+
+NurbsSurfaceInterpolator { }
+
+NurbsSweptSurface { }
+
+NurbsSwungSurface { }
+
+NurbsTextureCoordinate { }
+
+NurbsTrimmedSurface { }
+
+Layout { }
+
+LayoutGroup { }
+
+LayoutLayer { }
+
+ScreenFontStyle { }
+
+ScreenGroup { }
+
+LinePickSensor { }
+
+PickableGroup { }
+
+PointPickSensor { }
+
+PrimitivePickSensor { }
+
+VolumePickSensor { }

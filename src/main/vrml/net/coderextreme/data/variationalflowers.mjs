@@ -46,8 +46,12 @@ let Transform19 = browser.currentScene.createNode("Transform");
 let ParticleSystem20 = browser.currentScene.createNode("ParticleSystem");
 ParticleSystem20.maxParticles = 100;
 ParticleSystem20.geometryType = "GEOMETRY";
-//* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values * lastFrame - last frame that was rendered (0 for default) * updateRate - update rate is amount of time between frames
-//<VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'> </VariationPhysicsModel>
+//* values - array of MFFloats to pass to ComposedShader
+//* variations in values - array of MFFloats to pass to ComposedShader that varies values
+//* lastFrame - last frame that was rendered (0 for default)
+//* updateRate - update rate is amount of time between frames
+//<VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'>
+//</VariationPhysicsModel>
 let ExplosionEmitter21 = browser.currentScene.createNode("ExplosionEmitter");
 ExplosionEmitter21.speed = 1;
 ExplosionEmitter21.variation = 0.75;
@@ -90,8 +94,26 @@ topTexture = ImageTexture31;
 
 texture = ComposedCubeMapTexture25;
 
-//<ComposedShader language='GLSL'> <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field> <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
-//<ComposedShader DEF=\"shader\" language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> <ShaderPart type='FRAGMENT' url='\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> </ComposedShader>
+//<ComposedShader language='GLSL'>
+//<field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+//</field>
+//<field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+//<field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>
+//<field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>
+//<ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>
+//</ComposedShader>
+//<ComposedShader DEF=\"shader\" language=\"GLSL\">
+//<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+//<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+//<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>
+//<ShaderPart type='FRAGMENT' url='\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>
+//</ComposedShader>
 let ComposedShader32 = browser.currentScene.createNode("ComposedShader");
 ComposedShader32.DEF = "x_ite";
 ComposedShader32.language = "GLSL";

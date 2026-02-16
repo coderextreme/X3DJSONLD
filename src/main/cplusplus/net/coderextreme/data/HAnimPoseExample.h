@@ -842,31 +842,31 @@ HAnimHumanoid158.setInfo(new CString[]{CString("humanoidVersion=2.0")}, 1);
 HAnimHumanoid158.setVersion(CString("2.0"));
 HAnimPose& HAnimPose159 =  HAnimPose();
 HAnimPose159.setUSE(CString("A_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose159);
+HAnimHumanoid158.setChildren(HAnimPose159);
 
 HAnimPose& HAnimPose160 =  HAnimPose();
 HAnimPose160.setUSE(CString("T_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose160);
+HAnimHumanoid158.setChildren(HAnimPose160);
 
 HAnimPose& HAnimPose161 =  HAnimPose();
 HAnimPose161.setUSE(CString("I_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose161);
+HAnimHumanoid158.setChildren(HAnimPose161);
 
 HAnimPose& HAnimPose162 =  HAnimPose();
 HAnimPose162.setUSE(CString("H_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose162);
+HAnimHumanoid158.setChildren(HAnimPose162);
 
 HAnimPose& HAnimPose163 =  HAnimPose();
 HAnimPose163.setUSE(CString("FaceLeft_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose163);
+HAnimHumanoid158.setChildren(HAnimPose163);
 
 HAnimPose& HAnimPose164 =  HAnimPose();
 HAnimPose164.setUSE(CString("FaceRight_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose164);
+HAnimHumanoid158.setChildren(HAnimPose164);
 
 HAnimPose& HAnimPose165 =  HAnimPose();
 HAnimPose165.setUSE(CString("TouchDown_Pose"));
-HAnimHumanoid158.setPoses(HAnimPose165);
+HAnimHumanoid158.setChildren(HAnimPose165);
 
 Scene17.addChild(&HAnimHumanoid158);
 

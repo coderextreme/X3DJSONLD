@@ -133,7 +133,9 @@ ComposedShader34YYY.field = new X3D.MFNode();
 ComposedShader45.getField("pdelta").setValue("0");
 ComposedShader34YYY.field = new X3D.MFNode();
 
-//<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
+//<field name='cube' type='SFNode' accessType=\"initializeOnly\">
+//<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+//</field>
 let ShaderPart46 = browser.currentScene.createNode("ShaderPart");
 ShaderPart46.url = new X3D.MFString([new X3D.SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")]);
 ShaderPart46.type = "VERTEX";

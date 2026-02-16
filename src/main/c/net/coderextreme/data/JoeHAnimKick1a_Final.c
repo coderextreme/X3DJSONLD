@@ -3,8 +3,7 @@ void main(int argc, char ** argv) {
 Browser browser = X3D.getBrowser();
 X3D X3D0;
 X3D0.profile = "Immersive";
-X3D0.version = "4.0";
-X3D0.xsi:noNamespaceSchemaLocation = "https://www.web3d.org/specifications/x3d-4.0.xsd";
+X3D0.version = "4.1";
 head head1 = createNode("head");
 component component2 = createNode("component");
 component2.name = "HAnim";

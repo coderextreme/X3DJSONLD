@@ -1305,13 +1305,7 @@ var X3D0 =  X3D(
                       USE_ : SFString('Joe_l_wrist')),
 
                     HAnimJoint(
-                      USE_ : SFString('Joe_r_wrist')),
-                  segments_ : [
-                    HAnimSegment(
-                      USE_ : SFString('Joe_sacrum')),
-                  viewpoints_ : 
-                    HAnimSite(
-                      USE_ : SFString('Joe_RootFront_view'))])]),
+                      USE_ : SFString('Joe_r_wrist')))]),
 
             Group(
               children_ : [

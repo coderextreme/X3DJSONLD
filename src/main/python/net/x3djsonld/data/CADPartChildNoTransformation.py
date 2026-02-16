@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -55,18 +51,15 @@ newModel=X3D(profile='CADInterchange',version='4.0',
       children=[
       CADPart(name='CADPartExample',
         # the rotation and translation attributes serve to position the bushing within the assembly
-
         CADFace(name='outerSurface',
           shape=Shape(
             # note solid='true' and so one-sided external rendering only
-
             geometry=Cylinder(bottom=False,height=3,radius=2,top=False),
             appearance=Appearance(DEF='AppearanceGrey',
               material=Material(),))),
         CADFace(name='innerSurface',
           shape=Shape(
             # note solid='false' and so two-sided internal + external rendering
-
             geometry=Cylinder(bottom=False,height=3,solid=False,top=False),
             appearance=Appearance(USE='AppearanceGrey'))),
         CADFace(name='topCap',
@@ -80,7 +73,6 @@ newModel=X3D(profile='CADInterchange',version='4.0',
               coord=Coordinate(point=[(2.0000,-1.5000,-0.0000),(1.0000,-1.5000,-0.0000),(1.9616,-1.5000,-0.3902),(0.9808,-1.5000,-0.1951),(1.8478,-1.5000,-0.7654),(0.9239,-1.5000,-0.3827),(1.6629,-1.5000,-1.1111),(0.8315,-1.5000,-0.5556),(1.4142,-1.5000,-1.4142),(0.7071,-1.5000,-0.7071),(1.1111,-1.5000,-1.6629),(0.5556,-1.5000,-0.8315),(0.7654,-1.5000,-1.8478),(0.3827,-1.5000,-0.9239),(0.3902,-1.5000,-1.9616),(0.1951,-1.5000,-0.9808),(0.0000,-1.5000,-2.0000),(0.0000,-1.5000,-1.0000),(-0.3902,-1.5000,-1.9616),(-0.1951,-1.5000,-0.9808),(-0.7654,-1.5000,-1.8478),(-0.3827,-1.5000,-0.9239),(-1.1111,-1.5000,-1.6629),(-0.5556,-1.5000,-0.8315),(-1.4142,-1.5000,-1.4142),(-0.7071,-1.5000,-0.7071),(-1.6629,-1.5000,-1.1111),(-0.8315,-1.5000,-0.5556),(-1.8478,-1.5000,-0.7654),(-0.9239,-1.5000,-0.3827),(-1.9616,-1.5000,-0.3902),(-0.9808,-1.5000,-0.1951),(-2.0000,-1.5000,-0.0000),(-1.0000,-1.5000,-0.0000),(-1.9616,-1.5000,0.3902),(-0.9808,-1.5000,0.1951),(-1.8478,-1.5000,0.7654),(-0.9239,-1.5000,0.3827),(-1.6629,-1.5000,1.1111),(-0.8315,-1.5000,0.5556),(-1.4142,-1.5000,1.4142),(-0.7071,-1.5000,0.7071),(-1.1111,-1.5000,1.6629),(-0.5556,-1.5000,0.8315),(-0.7654,-1.5000,1.8478),(-0.3827,-1.5000,0.9239),(-0.3902,-1.5000,1.9616),(-0.1951,-1.5000,0.9808),(-0.0000,-1.5000,2.0000),(-0.0000,-1.5000,1.0000),(0.3902,-1.5000,1.9616),(0.1951,-1.5000,0.9808),(0.7654,-1.5000,1.8478),(0.3827,-1.5000,0.9239),(1.1111,-1.5000,1.6629),(0.5556,-1.5000,0.8315),(1.4142,-1.5000,1.4142),(0.7071,-1.5000,0.7071),(1.6629,-1.5000,1.1111),(0.8315,-1.5000,0.5556),(1.8478,-1.5000,0.7654),(0.9239,-1.5000,0.3827),(1.9616,-1.5000,0.3902),(0.9808,-1.5000,0.1951),(2.0000,-1.5000,0.0000),(1.0000,-1.5000,0.0000)])),
             appearance=Appearance(USE='AppearanceGrey')))])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

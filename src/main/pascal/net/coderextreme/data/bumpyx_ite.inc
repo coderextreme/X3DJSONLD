@@ -207,7 +207,9 @@ ShaderPart46.SetUrl(['../shaders/x_ite.fs','https://coderextreme.net/X3DJSONLD/s
 ShaderPart46.Type := 'FRAGMENT';
 { .AddParts }
 ComposedShader32.Parts := ShaderPart46;
-{ TO CONVERT TO A SPHERE <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart> }
+{ TO CONVERT TO A SPHERE }
+{ <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"'></ShaderPart> }
+{ <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs"' type='FRAGMENT'></ShaderPart> }
 { .AddShaders }
 Appearance23.Shaders := ComposedShader32;
 { .SetAppearance }

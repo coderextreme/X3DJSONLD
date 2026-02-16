@@ -180,13 +180,13 @@ ConfigurationProperties.setStripDefaultAttributes(true);
           .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("FaceRight_Pose"))
           .addChild(new autoclass.ROUTE().setFromField("isLoaded").setFromNode("HumanoidInlineLoadSensor").setToField("isLoaded").setToNode("TouchDown_Pose")))
         .addChild(new autoclass.HAnimHumanoid().setName("HumanoidStub").setInfo(java.newArray("java.lang.String", ["humanoidVersion=2.0"])).setVersion("2.0")
-          .setPoses(new autoclass.HAnimPose().setUSE("A_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("T_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("I_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("H_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("FaceLeft_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("FaceRight_Pose"))
-          .setPoses(new autoclass.HAnimPose().setUSE("TouchDown_Pose"))))      ;
+          .setChildren(new autoclass.HAnimPose().setUSE("A_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("T_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("I_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("H_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("FaceLeft_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("FaceRight_Pose"))
+          .setChildren(new autoclass.HAnimPose().setUSE("TouchDown_Pose"))))      ;
     X3D0.toFileX3D("../data/HAnimPoseExample.new.node.x3d");
     X3D0.toFileJSON("../data/HAnimPoseExample.new.node.x3dj");
     process.exit(0);

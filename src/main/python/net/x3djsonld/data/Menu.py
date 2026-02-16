@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -137,7 +133,6 @@ ecmascript:
       fieldValue=[
       fieldValue(name='menuItems',value=["JinInnerBrowRaiser.x3d","JinOuterBrowRaiser.x3d","JinBrowLowerer.x3d","JinUpperLidRaiser.x3d","JinCheekRaiser.x3d","JinLidTightener.x3d","JinNoseWrinkler.x3d","JinUpperLipRaiser.x3d","JinNasolabialDeepener.x3d","JinLipCornerPuller.x3d","JinCheekPuffer.x3d","JinDimpler.x3d","JinLipCornerDepressor.x3d","JinLowerLipDepressor.x3d","JinChinRaiser.x3d","JinLipPuckerer.x3d","JinLipStretcher.x3d","JinLipFunneler.x3d","JinLipTightener.x3d","JinLipPressor.x3d","JinLipsPart.x3d","JinJawDrop.x3d","JinMouthStretch.x3d","JinLipSuck.x3d","JinLidDroop.x3d","JinSlit.x3d","JinEyesClosed.x3d","JinSquint.x3d","JinBlink.x3d","JinWink.x3d" ])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

@@ -21,7 +21,9 @@ scene.addMetaData("creator", "Doug Sanden, Christoph Valentin, John Carlson");
 scene.addMetaData("identifier", "https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d");
 scene.addMetaData("generator", "PSPad, http://www.pspad.com/");
 scene.addMetaData("license", "license.html");
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 await browser .loadComponents (scene);
 //LayerSet with two layers, navigation happens in layer 1
 let LayerSet17 = browser.currentScene.createNode("LayerSet");
@@ -313,7 +315,9 @@ ShaderPart83.url = new X3D.MFString([new X3D.SFString("../shaders/x_ite.fs"), ne
 ShaderPart83.type = "FRAGMENT";
 ComposedShader69ZZZ.parts[1] = ShaderPart83;
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+//<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
 Appearance60YYY.shaders = new X3D.MFNode();
 
 Appearance60ZZZ.shaders[0] = ComposedShader69;

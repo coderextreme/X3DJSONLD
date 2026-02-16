@@ -29,7 +29,13 @@ ConfigurationProperties.setStripDefaultAttributes(true);
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
-          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>")))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "var e = 5;\n"+

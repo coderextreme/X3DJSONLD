@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -103,7 +103,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:46:36 GMT"),
+                Content: stringPtr("4 July 2020"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -137,2930 +137,3343 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypes.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.WorldInfo{
+                    Title: stringPtr("HAnimBehaviorPrototypes.x3d"),
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("HAnimBehavior"),
+                    Appinfo: stringPtr("The HAnimBehavior node models a single humanoid behavior either for an entire body or simply parts of a body. It collects a TimeSensor clock with a single PositionInterpolator and multiple OrientationInterpolator nodes to provide a single humanoid behavior."),
+                    Documentation: stringPtr("https://www.web3d.org/files/specifications/19774/V1.0/"),
                     ProtoInterface: &x3d.ProtoInterface{
+//supported Level of Articulation (LOA)
+//shared common input for single TimeSensor animating all interpolators, since different Behaviors may have different cycleInterval durations
+//TODO: add other X3D 3.0 TimeSensor fields (pause etc.)
+//Not supported: animated translation of individual joints
+//pass in key/keyValue array pairs for single PositionInterpolator
+//pass in key/keyValue array pairs and expose named output for each OrientationInterpolator, joint by joint
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFInt32"),
                                 Name: stringPtr("supportedLOA"),
+                                AccessType: stringPtr("inputOutput"),
+                                Appinfo: stringPtr("Supported Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3."),
+                                Type: stringPtr("SFInt32"),
                                 Value: stringPtr("-1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("enabled"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("is this behavior enabled?"),
+                            Type: stringPtr("SFBool"),
                             Value: stringPtr("true"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("cycleInterval"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("how long do these interpolators take to execute?"),
+                            Type: stringPtr("SFTime"),
                             Value: stringPtr("1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("loop"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("whether or not this behavior loops (e.g. walking) or is single shot (e.g. shake hands)."),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("startTime"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("when time now >= startTime isActive becomes true and TimeSensor becomes active"),
+                            Type: stringPtr("SFTime"),
                             Value: stringPtr("0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("stopTime"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("when stopTime becomes <= time now isActive becomes false and TimeSensor becomes inactive"),
+                            Type: stringPtr("SFTime"),
                             Value: stringPtr("0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("pauseTime"),
-                            Value: stringPtr("0"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("when time now >= pauseTime isPaused becomes true and TimeSensor becomes paused"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("resumeTime"),
                             Value: stringPtr("0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
+                            Name: stringPtr("resumeTime"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("when resumeTime becomes <= time now isPaused becomes false and TimeSensor becomes inactive"),
                             Type: stringPtr("SFTime"),
+                            Value: stringPtr("0"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("cycleTime"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("cycleTime sends a time outputOnly at startTime and also at the beginning of each new cycle"),
+                            Type: stringPtr("SFTime"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("isActive"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("isActive true/false events are sent when TimeSensor starts/stops running"),
                             Type: stringPtr("SFBool"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("isPaused"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("isPaused true/false events are sent when TimeSensor is paused/resumed"),
+                            Type: stringPtr("SFBool"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("elapsedTime"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("current elapsed time since TimeSensor activated/running cumulative in seconds and not counting any paused time"),
+                            Type: stringPtr("SFBool"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFTime"),
                             Name: stringPtr("time"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFFloat"),
-                            Name: stringPtr("fraction_changed"),
+                            Appinfo: stringPtr("continuously sends the absolute time (since January 1 1970)"),
+                            Type: stringPtr("SFBool"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("fraction_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("fraction_changed continuously sends value in range [0 1] showing time progress in the current cycle."),
+                            Type: stringPtr("SFFloat"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("HumanoidRoot_translation_key"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFFloat"),
-                            Name: stringPtr("HumanoidRoot_translation_key"),
+//no default value
                         },
                         &x3d.Field{
+                            Name: stringPtr("HumanoidRoot_translation_keyValue"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFVec3f"),
-                            Name: stringPtr("HumanoidRoot_translation_keyValue"),
+//no default value
                         },
                         &x3d.Field{
+                            Name: stringPtr("HumanoidRoot_translation_changed"),
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFVec3f"),
-                            Name: stringPtr("HumanoidRoot_translation_changed"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("HumanoidRoot_rotation_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("HumanoidRoot_rotation_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("HumanoidRoot_rotation_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c6_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c6_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c6_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("c7_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("c7_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("c7_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("jaw_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("jaw_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("jaw_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_acromioclavicular_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_acromioclavicular_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_acromioclavicular_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ankle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ankle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ankle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_calf_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_calf_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_calf_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_clavicle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_clavicle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_clavicle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_elbow_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_elbow_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_elbow_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyeball_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyeball_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyeball_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyeball_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyeball_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyeball_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyebrow_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyebrow_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyebrow_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyebrow_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyebrow_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyebrow_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyelid_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyelid_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyelid_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_eyelid_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_eyelid_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_eyelid_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_forearm_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_forearm_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_forearm_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_forefoot_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_forefoot_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_forefoot_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_hand_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_hand_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_hand_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_hindfoot_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_hindfoot_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_hindfoot_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_hip_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_hip_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_hip_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_index_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_index_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_index_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_knee_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_knee_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_knee_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_metatarsal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_metatarsal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_metatarsal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middistal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middistal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middistal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_middle_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_middle_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_middle_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_midproximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_midproximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_midproximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_midtarsal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_midtarsal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_midtarsal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_pinky_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_pinky_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_pinky_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_ring_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_ring_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_ring_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_scapula_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_scapula_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_scapula_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_shoulder_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_shoulder_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_shoulder_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_sternoclavicular_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_sternoclavicular_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_sternoclavicular_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_subtalar_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_subtalar_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_subtalar_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thigh_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thigh_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thigh_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_thumb_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_thumb_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_thumb_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_upperarm_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_upperarm_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_upperarm_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("l_wrist_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("l_wrist_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("l_wrist_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("pelvis_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("pelvis_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("pelvis_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_acromioclavicular_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_acromioclavicular_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_acromioclavicular_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ankle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ankle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ankle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_calf_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_calf_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_calf_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_clavicle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_clavicle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_clavicle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_elbow_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_elbow_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_elbow_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyeball_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyeball_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyeball_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyeball_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyeball_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyeball_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyebrow_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyebrow_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyebrow_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyebrow_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyebrow_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyebrow_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyelid_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyelid_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyelid_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_eyelid_joint_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_eyelid_joint_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_eyelid_joint_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_forearm_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_forearm_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_forearm_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_forefoot_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_forefoot_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_forefoot_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_hand_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_hand_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_hand_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_hindfoot_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_hindfoot_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_hindfoot_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_hip_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_hip_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_hip_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_index_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_index_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_index_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_knee_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_knee_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_knee_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_metatarsal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_metatarsal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_metatarsal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middistal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middistal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middistal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_middle_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_middle_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_middle_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_midproximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_midproximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_midproximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_midtarsal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_midtarsal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_midtarsal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_pinky_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_pinky_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_pinky_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring0_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring0_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring0_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring_middle_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring_middle_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring_middle_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_ring_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_ring_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_ring_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_scapula_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_scapula_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_scapula_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_shoulder_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_shoulder_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_shoulder_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_sternoclavicular_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_sternoclavicular_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_sternoclavicular_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_subtalar_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_subtalar_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_subtalar_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thigh_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thigh_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thigh_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb_distal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb_distal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb_distal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb_metacarpal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb_metacarpal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb_metacarpal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_thumb_proximal_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_thumb_proximal_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_thumb_proximal_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_upperarm_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_upperarm_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_upperarm_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("r_wrist_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("r_wrist_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("r_wrist_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("sacroiliac_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("sacroiliac_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("sacroiliac_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("sacrum_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("sacrum_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("sacrum_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("skull_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("skull_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("skull_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("skullbase_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("skullbase_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("skullbase_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t10_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t10_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t10_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t11_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t11_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t11_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t12_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t12_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t12_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t6_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t6_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t6_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t7_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t7_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t7_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t8_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t8_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t8_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("t9_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("t9_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("t9_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("temporomandibular_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("temporomandibular_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("temporomandibular_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc6_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc6_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc6_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vc7_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vc7_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vc7_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vl1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vl1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vl1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vl2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vl2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vl2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vl3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vl3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vl3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vl4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vl4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vl4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vl5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vl5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vl5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt10_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt10_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt10_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt11_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt11_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt11_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt12_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt12_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt12_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt1_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt1_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt1_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt2_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt2_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt2_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt3_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt3_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt3_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt4_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt4_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt4_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt5_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt5_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt5_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt6_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt6_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt6_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt7_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
                             Name: stringPtr("vt7_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
                             Name: stringPtr("vt7_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFFloat"),
                             Name: stringPtr("vt8_key"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFRotation"),
-                            Name: stringPtr("vt8_keyValue"),
-                        },
-                        &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFRotation"),
-                            Name: stringPtr("vt8_changed"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFFloat"),
-                            Name: stringPtr("vt9_key"),
+//no default value
                         },
                         &x3d.Field{
+                            Name: stringPtr("vt8_keyValue"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("MFRotation"),
-                            Name: stringPtr("vt9_keyValue"),
+//no default value
                         },
                         &x3d.Field{
+                            Name: stringPtr("vt8_changed"),
                             AccessType: stringPtr("outputOnly"),
                             Type: stringPtr("SFRotation"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("vt9_key"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFFloat"),
+//no default value
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("vt9_keyValue"),
+                            AccessType: stringPtr("inputOutput"),
+                            Type: stringPtr("MFRotation"),
+//no default value
+                        },
+                        &x3d.Field{
                             Name: stringPtr("vt9_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Type: stringPtr("SFRotation"),
                         },
                         },
                     },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
+//design alternative: move TimeSensor out of the prototype, instead expose set_fraction globally to all interpolators
                             &x3d.TimeSensor{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("BehaviorClock"),
@@ -3084,48 +3497,50 @@ func main() {
                                         ProtoField: stringPtr("startTime"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("resumeTime"),
-                                        ProtoField: stringPtr("resumeTime"),
+                                        NodeField: stringPtr("stopTime"),
+                                        ProtoField: stringPtr("stopTime"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("pauseTime"),
                                         ProtoField: stringPtr("pauseTime"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("stopTime"),
-                                        ProtoField: stringPtr("stopTime"),
-                                    },
-                                    &x3d.Connect{
-                                        NodeField: stringPtr("isPaused"),
-                                        ProtoField: stringPtr("isPaused"),
-                                    },
-                                    &x3d.Connect{
-                                        NodeField: stringPtr("isActive"),
-                                        ProtoField: stringPtr("isActive"),
+                                        NodeField: stringPtr("resumeTime"),
+                                        ProtoField: stringPtr("resumeTime"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("cycleTime"),
                                         ProtoField: stringPtr("cycleTime"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("elapsedTime"),
-                                        ProtoField: stringPtr("elapsedTime"),
+                                        NodeField: stringPtr("isActive"),
+                                        ProtoField: stringPtr("isActive"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("fraction_changed"),
-                                        ProtoField: stringPtr("fraction_changed"),
+                                        NodeField: stringPtr("isPaused"),
+                                        ProtoField: stringPtr("isPaused"),
+                                    },
+                                    &x3d.Connect{
+                                        NodeField: stringPtr("elapsedTime"),
+                                        ProtoField: stringPtr("elapsedTime"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("time"),
                                         ProtoField: stringPtr("time"),
                                     },
+                                    &x3d.Connect{
+                                        NodeField: stringPtr("fraction_changed"),
+                                        ProtoField: stringPtr("fraction_changed"),
+                                    },
                                     },
                                 },
                             },
+//note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
                             &x3d.Switch{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("SupportedLoaHolder1"),
                                 },
+                                WhichChoice: int32Ptr(-1),
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
@@ -3156,6 +3571,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("HumanoidRootPI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("HumanoidRootOI"),
@@ -3176,6 +3597,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("HumanoidRootOI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3198,6 +3625,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("c2_OI"),
@@ -3218,6 +3651,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3240,6 +3679,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("c4_OI"),
@@ -3260,6 +3705,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c4_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3282,6 +3733,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c5_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("c6_OI"),
@@ -3302,6 +3759,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c6_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3324,6 +3787,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("c7_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("jaw_OI"),
@@ -3344,6 +3813,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("jaw_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3366,6 +3841,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l2_OI"),
@@ -3386,6 +3867,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3408,6 +3895,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l4_OI"),
@@ -3428,6 +3921,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l4_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3450,6 +3949,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l5_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_acromioclavicular_OI"),
@@ -3470,6 +3975,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_acromioclavicular_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3492,6 +4003,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ankle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_calf_OI"),
@@ -3512,6 +4029,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_calf_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3534,6 +4057,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_clavicle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_elbow_OI"),
@@ -3554,6 +4083,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_elbow_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3576,6 +4111,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyeball_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_eyeball_joint_OI"),
@@ -3596,6 +4137,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyeball_joint_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3618,6 +4165,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyebrow_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_eyebrow_joint_OI"),
@@ -3638,6 +4191,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyebrow_joint_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3660,6 +4219,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyelid_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_eyelid_joint_OI"),
@@ -3680,6 +4245,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_eyelid_joint_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3702,6 +4273,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_forearm_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_forefoot_OI"),
@@ -3722,6 +4299,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_forefoot_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3744,6 +4327,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_hand_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_hindfoot_OI"),
@@ -3764,6 +4353,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_hindfoot_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3786,6 +4381,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_hip_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_index0_OI"),
@@ -3806,6 +4407,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index0_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3828,6 +4435,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_index2_OI"),
@@ -3848,6 +4461,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3870,6 +4489,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_index_distal_OI"),
@@ -3890,6 +4515,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index_distal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3912,6 +4543,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index_metacarpal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_index_middle_OI"),
@@ -3932,6 +4569,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index_middle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3954,6 +4597,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_index_proximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_knee_OI"),
@@ -3974,6 +4623,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_knee_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -3996,6 +4651,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_metatarsal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_middistal_OI"),
@@ -4016,6 +4677,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middistal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4038,6 +4705,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle0_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_middle1_OI"),
@@ -4058,6 +4731,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4080,6 +4759,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_middle3_OI"),
@@ -4100,6 +4785,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4122,6 +4813,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle_distal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_middle_metacarpal_OI"),
@@ -4142,6 +4839,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle_metacarpal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4164,6 +4867,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle_middle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_middle_proximal_OI"),
@@ -4184,6 +4893,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_middle_proximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4206,6 +4921,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_midproximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_midtarsal_OI"),
@@ -4226,6 +4947,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_midtarsal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4248,6 +4975,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky0_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_pinky1_OI"),
@@ -4268,6 +5001,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4290,6 +5029,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_pinky3_OI"),
@@ -4310,6 +5055,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4332,6 +5083,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky_distal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_pinky_metacarpal_OI"),
@@ -4352,6 +5109,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky_metacarpal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4374,6 +5137,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky_middle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_pinky_proximal_OI"),
@@ -4394,6 +5163,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_pinky_proximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4416,6 +5191,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring0_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_ring1_OI"),
@@ -4436,6 +5217,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4458,6 +5245,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_ring3_OI"),
@@ -4478,6 +5271,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4500,6 +5299,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring_distal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_ring_metacarpal_OI"),
@@ -4520,6 +5325,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring_metacarpal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4542,6 +5353,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring_middle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_ring_proximal_OI"),
@@ -4562,6 +5379,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_ring_proximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4584,6 +5407,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_scapula_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_shoulder_OI"),
@@ -4604,6 +5433,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_shoulder_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4626,6 +5461,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_sternoclavicular_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_subtalar_OI"),
@@ -4646,6 +5487,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_subtalar_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4668,6 +5515,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thigh_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_thumb1_OI"),
@@ -4688,6 +5541,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4710,6 +5569,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_thumb3_OI"),
@@ -4730,6 +5595,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4752,6 +5623,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb_distal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_thumb_metacarpal_OI"),
@@ -4772,6 +5649,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb_metacarpal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4794,6 +5677,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_thumb_proximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("l_upperarm_OI"),
@@ -4814,6 +5703,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_upperarm_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4836,6 +5731,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("l_wrist_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("pelvis_OI"),
@@ -4856,6 +5757,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("pelvis_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4878,6 +5785,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_acromioclavicular_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_ankle_OI"),
@@ -4898,6 +5811,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ankle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4920,6 +5839,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_calf_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_clavicle_OI"),
@@ -4940,6 +5865,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_clavicle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -4962,6 +5893,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_elbow_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_eyeball_OI"),
@@ -4982,6 +5919,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyeball_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5004,6 +5947,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyeball_joint_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_eyebrow_OI"),
@@ -5024,6 +5973,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyebrow_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5046,6 +6001,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyebrow_joint_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_eyelid_OI"),
@@ -5066,6 +6027,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyelid_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5088,6 +6055,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_eyelid_joint_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_forearm_OI"),
@@ -5108,6 +6081,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_forearm_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5130,6 +6109,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_forefoot_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_hand_OI"),
@@ -5150,6 +6135,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_hand_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5172,6 +6163,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_hindfoot_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_hip_OI"),
@@ -5192,6 +6189,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_hip_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5214,6 +6217,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index0_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_index1_OI"),
@@ -5234,6 +6243,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5256,6 +6271,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_index3_OI"),
@@ -5276,6 +6297,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5298,6 +6325,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index_distal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_index_metacarpal_OI"),
@@ -5318,6 +6351,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index_metacarpal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5340,6 +6379,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index_middle_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_index_proximal_OI"),
@@ -5360,6 +6405,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_index_proximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5382,6 +6433,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_knee_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_metatarsal_OI"),
@@ -5402,6 +6459,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_metatarsal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5424,6 +6487,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middistal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_middle0_OI"),
@@ -5444,6 +6513,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle0_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5466,6 +6541,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_middle2_OI"),
@@ -5486,6 +6567,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5508,6 +6595,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_middle_distal_OI"),
@@ -5528,6 +6621,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle_distal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5550,6 +6649,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle_metacarpal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_middle_middle_OI"),
@@ -5570,6 +6675,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle_middle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5592,6 +6703,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_middle_proximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_midproximal_OI"),
@@ -5612,6 +6729,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_midproximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5634,6 +6757,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_midtarsal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_pinky0_OI"),
@@ -5654,6 +6783,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky0_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5676,6 +6811,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_pinky2_OI"),
@@ -5696,6 +6837,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5718,6 +6865,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_pinky_distal_OI"),
@@ -5738,6 +6891,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky_distal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5760,6 +6919,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky_metacarpal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_pinky_middle_OI"),
@@ -5780,6 +6945,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky_middle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5802,6 +6973,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_pinky_proximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_ring0_OI"),
@@ -5822,6 +6999,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring0_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5844,6 +7027,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_ring2_OI"),
@@ -5864,6 +7053,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5886,6 +7081,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_ring_distal_OI"),
@@ -5906,6 +7107,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring_distal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5928,6 +7135,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring_metacarpal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_ring_middle_OI"),
@@ -5948,6 +7161,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring_middle_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -5970,6 +7189,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_ring_proximal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_scapula_OI"),
@@ -5990,6 +7215,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_scapula_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6012,6 +7243,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_shoulder_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_sternoclavicular_OI"),
@@ -6032,6 +7269,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_sternoclavicular_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6054,6 +7297,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_subtalar_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_thigh_OI"),
@@ -6074,6 +7323,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thigh_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6096,6 +7351,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_thumb2_OI"),
@@ -6116,6 +7377,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6138,6 +7405,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_thumb_distal_OI"),
@@ -6158,6 +7431,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb_distal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6180,6 +7459,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb_metacarpal_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_thumb_proximal_OI"),
@@ -6200,6 +7485,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_thumb_proximal_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6222,6 +7513,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_upperarm_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("r_wrist_OI"),
@@ -6242,6 +7539,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("r_wrist_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6264,6 +7567,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("sacroiliac_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("sacrum_OI"),
@@ -6284,6 +7593,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("sacrum_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6306,6 +7621,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("skull_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("skullbase_OI"),
@@ -6326,6 +7647,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("skullbase_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6348,6 +7675,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t2_OI"),
@@ -6368,6 +7701,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6390,6 +7729,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t4_OI"),
@@ -6410,6 +7755,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t4_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6432,6 +7783,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t5_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t6_OI"),
@@ -6452,6 +7809,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t6_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6474,6 +7837,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t7_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t8_OI"),
@@ -6494,6 +7863,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t8_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6516,6 +7891,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t9_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t10_OI"),
@@ -6536,6 +7917,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t10_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6558,6 +7945,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t11_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("t12_OI"),
@@ -6578,6 +7971,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("t12_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6600,6 +7999,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("temporomandibular_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vc1_OI"),
@@ -6620,6 +8025,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6642,6 +8053,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vc3_OI"),
@@ -6662,6 +8079,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6684,6 +8107,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc4_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vc5_OI"),
@@ -6704,6 +8133,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc5_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6726,6 +8161,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc6_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vc7_OI"),
@@ -6746,6 +8187,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vc7_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6768,6 +8215,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vl1_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vl2_OI"),
@@ -6788,6 +8241,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vl2_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6810,6 +8269,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vl3_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vl4_OI"),
@@ -6830,6 +8295,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vl4_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6852,6 +8323,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vl5_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt1_OI"),
@@ -6872,6 +8349,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt1_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6894,6 +8377,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt2_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt3_OI"),
@@ -6914,6 +8403,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt3_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6936,6 +8431,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt4_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt5_OI"),
@@ -6956,6 +8457,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt5_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -6978,6 +8485,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt6_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt7_OI"),
@@ -6998,6 +8511,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt7_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -7020,6 +8539,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt8_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt9_OI"),
@@ -7040,6 +8565,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt9_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -7062,6 +8593,12 @@ func main() {
                                     },
                                 },
                             },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt10_OI"),
+                            },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("vt11_OI"),
@@ -7082,6 +8619,12 @@ func main() {
                                     },
                                     },
                                 },
+                            },
+                            &x3d.X3DRoute{
+                                FromField: stringPtr("fraction_changed"),
+                                FromNode: stringPtr("BehaviorClock"),
+                                ToField: stringPtr("set_fraction"),
+                                ToNode: stringPtr("vt11_OI"),
                             },
                             &x3d.OrientationInterpolator{
                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -7104,1204 +8647,95 @@ func main() {
                                     },
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("HumanoidRootPI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("HumanoidRootOI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c6_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("c7_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("jaw_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_acromioclavicular_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ankle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_calf_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_clavicle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_elbow_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyeball_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyeball_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyebrow_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyebrow_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyelid_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_eyelid_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_forearm_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_forefoot_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_hand_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_hindfoot_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_hip_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_index_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_knee_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_metatarsal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middistal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_middle_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_midproximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_midtarsal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_pinky_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_ring_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_scapula_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_shoulder_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_sternoclavicular_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_subtalar_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thigh_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_thumb_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_upperarm_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("l_wrist_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("pelvis_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_acromioclavicular_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ankle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_calf_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_clavicle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_elbow_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyeball_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyeball_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyebrow_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyebrow_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyelid_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_eyelid_joint_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_forearm_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_forefoot_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_hand_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_hindfoot_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_hip_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_index_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_knee_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_metatarsal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middistal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_middle_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_midproximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_midtarsal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_pinky_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring0_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring_middle_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_ring_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_scapula_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_shoulder_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_sternoclavicular_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_subtalar_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thigh_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb_distal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb_metacarpal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_thumb_proximal_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_upperarm_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("r_wrist_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("sacroiliac_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("sacrum_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("skull_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("skullbase_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t6_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t7_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t8_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t9_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t10_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t11_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("t12_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("temporomandibular_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc6_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vc7_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vl1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vl2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vl3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vl4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vl5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt1_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt2_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt3_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt4_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt5_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt6_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt7_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt8_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt9_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt10_OI"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
                                 FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("vt11_OI"),
                                 ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("BehaviorClock"),
-                                FromField: stringPtr("fraction_changed"),
                                 ToNode: stringPtr("vt12_OI"),
-                                ToField: stringPtr("set_fraction"),
                             },
                         },
                     },
                 },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("HAnimBodyBehaviorChooser"),
+                    Appinfo: stringPtr("The HAnimBodyBehaviorChooser node allows an author to select one of several HAnimHumanoid bodies and simultaneously apply multiple HAnimBehavior animations to the active body. Individual behaviors may be enabled or disabled at any time."),
                     ProtoInterface: &x3d.ProtoInterface{
+//TODO: supported Level of Articulation (LOA) might be adapted to more efficiently setup/teardown pertinent ROUTEs
+//accessType="inputOutput" avoided to maintain backwards compatilibility with VRML97 scripting constraints
+//shared common TimeSensor inputs for all BehaviorAnimation nodes, connected via ROUTEs
+//TODO: consider named accessors, e.g. enableBehaviorByName and disableBehaviorByName
+//TODO: consider addBody, removeBody, addBehavior, removeBehavior
+//TODO: consider startBehaviorByIndex, stopBehaviorByIndex, startBehaviorByName, stopBehaviorByName
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFInt32"),
                                 Name: stringPtr("supportedLOA"),
+                                AccessType: stringPtr("inputOutput"),
+                                Appinfo: stringPtr("Level of Articulation (LOA) support needed by authored HAnimBehavior set of OrientationInterpolator values. Legal values 0 1 2 3."),
+                                Type: stringPtr("SFInt32"),
                                 Value: stringPtr("-1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("MFNode"),
                             Name: stringPtr("HumanoidArray"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("[HAnimHumanoid] nodes only"),
+                            Type: stringPtr("MFNode"),
+//default NULL
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFInt32"),
                             Name: stringPtr("whichBody"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("whichBody is selected default is initial member of HumanoidArray"),
+                            Type: stringPtr("SFInt32"),
                             Value: stringPtr("-1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFInt32"),
                             Name: stringPtr("set_whichBody"),
+                            AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("whichBody is selected default is none"),
+                            Type: stringPtr("SFInt32"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("outputOnly"),
-                            Type: stringPtr("SFInt32"),
                             Name: stringPtr("whichBody_changed"),
+                            AccessType: stringPtr("outputOnly"),
+                            Appinfo: stringPtr("whichBody is selected default is none"),
+                            Type: stringPtr("SFInt32"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("MFNode"),
                             Name: stringPtr("hAnimBehaviorNodes"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("MFBool"),
+                            Appinfo: stringPtr("[HAnimBehavior] nodes only some or all of which may be enabled. Warning: do not animate a single joint with more than one interpolator at a given time."),
+                            Type: stringPtr("MFNode"),
+//default NULL
+                        },
+                        &x3d.Field{
                             Name: stringPtr("enabledBehaviorsArray"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("indicate which HAnimBehavior nodes are activated, empty indicates all enabled true"),
+                            Type: stringPtr("MFBool"),
+//no default values
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFInt32"),
                             Name: stringPtr("enableBehavior"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("enable corresponding behavior identified by index number"),
                             Type: stringPtr("SFInt32"),
-                            Name: stringPtr("disableBehavior"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("disableBehavior"),
+                            AccessType: stringPtr("inputOnly"),
+                            Appinfo: stringPtr("disable corresponding behavior identified by index number"),
+                            Type: stringPtr("SFInt32"),
+                        },
+                        &x3d.Field{
+                            Name: stringPtr("startTime"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("startTime"),
                             Value: stringPtr("0"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("stopTime"),
                             AccessType: stringPtr("inputOutput"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("stopTime"),
                             Value: stringPtr("0"),
                         },
                         },
@@ -8312,6 +8746,7 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("BodySwitch"),
                                 },
+                                WhichChoice: int32Ptr(-1),
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
@@ -8325,6 +8760,7 @@ func main() {
                                     },
                                 },
                             },
+//note that other nodes following the first node in the ProtoBody are not rendered but remain active nevertheless
                             &x3d.Group{
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("BehaviorArrayHolder"),
@@ -8361,6 +8797,7 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("SupportedLoaHolder2"),
                                 },
+                                WhichChoice: int32Ptr(-1),
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
@@ -8374,8 +8811,8 @@ func main() {
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("BehaviorSelectionScript"),
                                 },
-                                Url: x3d.MFString{"HAnimBehaviorPrototypesScript.js", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"},
                                 DirectOutput: boolPtr(true),
+                                Url: x3d.MFString{"HAnimBehaviorPrototypesScript.js", "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Prototypes/HAnimBehaviorPrototypesScript.js"},
                                 IS: &x3d.IS{
                                     Connect: []x3d.X3DNode{
                                         &x3d.Connect{
@@ -8414,49 +8851,57 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("initializeOnly"),
-                                        Type: stringPtr("MFNode"),
                                         Name: stringPtr("HumanoidArray"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Appinfo: stringPtr("[HAnimHumanoid] nodes only"),
+                                        Type: stringPtr("MFNode"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFInt32"),
                                     Name: stringPtr("whichBody"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("inputOnly"),
-                                    Type: stringPtr("SFInt32"),
-                                    Name: stringPtr("set_whichBody"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFInt32"),
-                                    Name: stringPtr("whichBody_changed"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("MFNode"),
-                                    Name: stringPtr("hAnimBehaviorNodes"),
+                                    Appinfo: stringPtr("whichBody is selected default is none"),
+                                    Type: stringPtr("SFInt32"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("set_whichBody"),
+                                    AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("whichBody is selected default is none"),
+                                    Type: stringPtr("SFInt32"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("whichBody_changed"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("whichBody is selected default is none"),
+                                    Type: stringPtr("SFInt32"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("hAnimBehaviorNodes"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("[HAnimBehavior] nodes only"),
+                                    Type: stringPtr("MFNode"),
+//TODO: might consider accessType="inputOutput" if VRML97 compatibility not needed
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("enabledBehaviorsArray"),
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("MFBool"),
-                                    Name: stringPtr("enabledBehaviorsArray"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOnly"),
-                                    Type: stringPtr("SFInt32"),
                                     Name: stringPtr("enableBehavior"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("enable corresponding behavior"),
                                     Type: stringPtr("SFInt32"),
-                                    Name: stringPtr("disableBehavior"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("disableBehavior"),
+                                    AccessType: stringPtr("inputOnly"),
+                                    Appinfo: stringPtr("enable corresponding behavior"),
+                                    Type: stringPtr("SFInt32"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("timeSensorNode"),
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFNode"),
-                                    Name: stringPtr("timeSensorNode"),
                                     Children: []x3d.X3DNode{
                                         &x3d.TimeSensor{
                                             CoreX3DNode: x3d.CoreX3DNode{
@@ -8466,15 +8911,16 @@ func main() {
                                     },
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFInt32"),
                                     Name: stringPtr("previousBodyIndex"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("remember prior body index to avoid unnecessary ROUTE teardown and creation"),
+                                    Type: stringPtr("SFInt32"),
                                     Value: stringPtr("-1"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("traceEnabled"),
                                     AccessType: stringPtr("initializeOnly"),
                                     Type: stringPtr("SFBool"),
-                                    Name: stringPtr("traceEnabled"),
                                     Value: stringPtr("true"),
                                 },
                                 },
@@ -8482,14 +8928,14 @@ func main() {
                         },
                     },
                 },
-                &x3d.WorldInfo{
-                    Title: stringPtr("HAnimBehaviorPrototypes.x3d"),
-                },
+//TODO: Goal is to have 3 different ways to present a body: local creation, Inline with IMPORT/EXPORT, or external prototype.
                 &x3d.ProtoInstance{
+                    Name: stringPtr("HAnimBehavior"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("BehaviorTest1"),
                     },
-                    Name: stringPtr("HAnimBehavior"),
+//only one PositionInterpolator key/keyValue definition for entire humanoid - optional
+//must have paired overrides of each key/keyValue array being defined
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("HumanoidRoot_translation_key"),
@@ -8510,20 +8956,20 @@ func main() {
                     },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("HAnimBodyBehaviorChooser"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("ChooserTest"),
                     },
-                    Name: stringPtr("HAnimBodyBehaviorChooser"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("HumanoidArray"),
                             Children: []x3d.X3DNode{
                                 &x3d.HAnimHumanoid{
+                                    Name: stringPtr("DiamondManLOA-1"),
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("hanim_DiamondManLOA-1"),
                                     },
-                                    Name: stringPtr("DiamondManLOA-1"),
-                                    Version: stringPtr("1.0"),
+                                    Version: stringPtr("2.0"),
                                 },
                             },
                     },
@@ -8566,13 +9012,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/HAnimBehaviorPrototypes.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -8583,7 +9029,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

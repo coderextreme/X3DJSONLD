@@ -112,10 +112,9 @@ public class flowerprotofreewrl
                 .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
               .addShaders(new ComposedShader("shader").setLanguage("GLSL")
                 .addField(new field().setName("fw_textureCoordGenType").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0))
-                .addComments(new String[] {"",
-"                  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"		    <ComposedCubeMapTexture USE=\"texture\"/>",
-"		  </field>"})
+                .addComments(" <field name='cube' type='SFNode' accessType=\"inputOutput\"> ")
+                .addComments(" <ComposedCubeMapTexture USE=\"texture\"/> ")
+                .addComments(" </field> ")
                 .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
                 .addField(new field().setName("bias").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))
                 .addField(new field().setName("scale").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(0.5))

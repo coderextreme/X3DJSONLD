@@ -142,7 +142,13 @@ Sofield21->setAccessType(QString("outputOnly"));
 Sofield21->setType(QString("MFInt32"));
 SoScript18->addChild(*Sofield21);
 
-//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
+//<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>
+//<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>
+//<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>
+//<field accessType=\"inputOutput\" name=\"resolution\" type=\"SFInt32\" value=\"150\"/>
 
 //SoScript18->setSourceCode(QString("ecmascript:")+
 //_T("var e = 5;")+

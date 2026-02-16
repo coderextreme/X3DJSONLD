@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -80,8 +80,12 @@ func main() {
         Head: &x3d.Head{
             Components: []*x3d.Component{
                 &x3d.Component{
-                    Name: stringPtr("EnvironmentalEffects"),
-                    Level: int32Ptr(3),
+                    Name: stringPtr("Scripting"),
+                    Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("EnvironmentalEffects"),
+                Level: int32Ptr(3),
             },
             &x3d.Component{
                 Name: stringPtr("Shaders"),
@@ -92,8 +96,20 @@ func main() {
                 Level: int32Ptr(1),
             },
             &x3d.Component{
+                Name: stringPtr("Texturing"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("Rendering"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
                 Name: stringPtr("Grouping"),
                 Level: int32Ptr(3),
+            },
+            &x3d.Component{
+                Name: stringPtr("Core"),
+                Level: int32Ptr(1),
             },
         },
             Metas: []*x3d.Meta{
@@ -113,64 +129,67 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("X3D-Edit, https://savage.nps.edu/X3D-Edit"),
             },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/x3domflowers.x3d"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
-                &x3d.ExternProtoDeclare{
-                    Name: stringPtr("FlowerProto"),
-                    Url: x3d.MFString{"../data/flowerproto.json#FlowerProto"},
-                    Field: []x3d.X3DNode{
-                        &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("MFString"),
-                            Name: stringPtr("vertex"),
-                    },
-                    &x3d.Field{
-                        AccessType: stringPtr("inputOutput"),
-                        Type: stringPtr("MFString"),
-                        Name: stringPtr("fragment"),
-                    },
-                    },
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.NavigationInfo{
                 },
-                &x3d.ProtoDeclare{
-                    Name: stringPtr("flower"),
-                    ProtoInterface: &x3d.ProtoInterface{
-                    },
-                    ProtoBody: &x3d.ProtoBody{
-                        Children: []x3d.X3DNode{
-                            &x3d.Group{
+//Images courtesy of Paul Debevec's Light Probe Image Gallery
+                &x3d.Background{
+                    BackUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
+                    BottomUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
+                    FrontUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
+                    LeftUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
+                    RightUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
+                    TopUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
+                },
+                &x3d.Group{
+                    Children: []x3d.X3DNode{
+                        &x3d.ExternProtoDeclare{
+                            Name: stringPtr("FlowerProto"),
+                            Url: x3d.MFString{"../data/flowerproto.json#FlowerProto"},
+                            Field: []x3d.X3DNode{
+                                &x3d.Field{
+                                    Name: stringPtr("vertex"),
+                                    AccessType: stringPtr("inputOutput"),
+                                    Type: stringPtr("MFString"),
+                            },
+                            &x3d.Field{
+                                Name: stringPtr("fragment"),
+                                AccessType: stringPtr("inputOutput"),
+                                Type: stringPtr("MFString"),
+                            },
+                            },
+                        },
+                        &x3d.ProtoDeclare{
+                            Name: stringPtr("flower"),
+                            ProtoBody: &x3d.ProtoBody{
                                 Children: []x3d.X3DNode{
-                                    &x3d.ProtoInstance{
-                                        Name: stringPtr("FlowerProto"),
-                                        FieldValue: []x3d.X3DNode{
-                                            &x3d.FieldValue{
-                                                Name: stringPtr("vertex"),
-                                                Value: stringPtr("\"../shaders/x3dom_flowers_chromatic.vs\""),
-                                        },
-                                        &x3d.FieldValue{
-                                            Name: stringPtr("fragment"),
-                                            Value: stringPtr("\"../shaders/common.fs\""),
-                                        },
+                                    &x3d.Group{
+                                        Children: []x3d.X3DNode{
+                                            &x3d.ProtoInstance{
+                                                Name: stringPtr("FlowerProto"),
+                                                FieldValue: []x3d.X3DNode{
+                                                    &x3d.FieldValue{
+                                                        Name: stringPtr("vertex"),
+                                                        Value: stringPtr("\"../shaders/x3dom_flowers_chromatic.vs\""),
+                                                },
+                                                &x3d.FieldValue{
+                                                    Name: stringPtr("fragment"),
+                                                    Value: stringPtr("\"../shaders/common.fs\""),
+                                                },
+                                                },
+                                            },
                                         },
                                     },
                                 },
                             },
                         },
-                    },
-                },
-                &x3d.NavigationInfo{
-                },
-                &x3d.Background{
-                    FrontUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
-                    BackUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
-                    LeftUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
-                    RightUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
-                    TopUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
-                    BottomUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
-                },
-                &x3d.Group{
-                    Children: []x3d.X3DNode{
                         &x3d.ProtoInstance{
                             Name: stringPtr("flower"),
                         },
@@ -209,13 +228,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/x3domflowers.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -226,7 +245,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

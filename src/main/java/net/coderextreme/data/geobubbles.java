@@ -56,31 +56,31 @@ public class geobubbles implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("Geospatial").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("geobubbles.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("generator").setContent("manual"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"))
-        .addMeta(new meta().setName("description").setContent("geo bubbles")))
+        .addComponent(new component().setName(new SFString("Geospatial")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("geobubbles.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("geo bubbles"))))
       .setScene(new Scene()
         .addComments(new CommentsBlock("Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/"))
         .addComments(new CommentsBlock("PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/"))
-        .addChild(new GeoViewpoint().setDEF("Tour").setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription("Tour Views"))
+        .addChild(new GeoViewpoint().setDEF(new SFString("Tour")).setPosition(new double[] {0d,0d,4d}).setOrientation(new float[] {1f ,0f ,0f ,0f }).setDescription(new SFString("Tour Views")))
         .addChild(new Background().setBackUrl(new MFString0().getArray()).setBottomUrl(new MFString1().getArray()).setFrontUrl(new MFString2().getArray()).setLeftUrl(new MFString3().getArray()).setRightUrl(new MFString4().getArray()).setTopUrl(new MFString5().getArray()))
         .addChild(new Transform()
           .addChild(new Shape()
             .setGeometry(new Sphere())
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0.7f ,0.7f ,0.7f }).setSpecularColor(new float[] {0.5f ,0.5f ,0.5f })))))
-        .addChild(new TimeSensor().setDEF("TourTime").setCycleInterval(5d).setLoop(true))
-        .addChild(new GeoPositionInterpolator().setDEF("TourPosition").setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3d7().getArray()))
-        .addChild(new Script().setDEF("RandomTourTime")
-          .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-          .addField(new field().setType("SFFloat").setName("val").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
-          .addField(new field().setType("MFVec3d").setName("positions").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
-          .addField(new field().setType("MFVec3d").setName("position").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("0.0015708 0 4 0 0.0015708 4"))
+        .addChild(new TimeSensor().setDEF(new SFString("TourTime")).setCycleInterval(5d).setLoop(true))
+        .addChild(new GeoPositionInterpolator().setDEF(new SFString("TourPosition")).setKey(new MFFloat6().getArray()).setKeyValue(new MFVec3d7().getArray()))
+        .addChild(new Script().setDEF(new SFString("RandomTourTime"))
+          .addField(new field().setType("SFTime").setName(new SFString("set_cycle")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+          .addField(new field().setType("SFFloat").setName(new SFString("val")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0")))
+          .addField(new field().setType("MFVec3d").setName(new SFString("positions")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.0015708 0 4 0 0.0015708 4")))
+          .addField(new field().setType("MFVec3d").setName(new SFString("position")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("0.0015708 0 4 0 0.0015708 4")))
           .setSourceCode("ecmascript:\n"+
 "\n"+
 "               function set_cycle(value) {\n"+
@@ -98,10 +98,10 @@ public class geobubbles implements X3DRoots {
 "                        position[0] = new SFVec3d(positions[ov][0],positions[ov][1],positions[ov][2]);\n"+
 "                        position[1] = new SFVec3d(positions[vc][0],positions[vc][1],positions[vc][2]);\n"+
 "               }"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("RandomTourTime").setToField("set_cycle"))
-        .addChild(new ROUTE().setFromNode("RandomTourTime").setFromField("position").setToNode("TourPosition").setToField("keyValue"))
-        .addChild(new ROUTE().setFromNode("TourTime").setFromField("fraction_changed").setToNode("TourPosition").setToField("set_fraction"))
-        .addChild(new ROUTE().setFromNode("TourPosition").setFromField("geovalue_changed").setToNode("Tour").setToField("set_position")));
+        .addChild(new ROUTE().setFromNode(new SFString("TourTime")).setFromField(new SFString("cycleTime")).setToNode(new SFString("RandomTourTime")).setToField(new SFString("set_cycle")))
+        .addChild(new ROUTE().setFromNode(new SFString("RandomTourTime")).setFromField(new SFString("position")).setToNode(new SFString("TourPosition")).setToField(new SFString("keyValue")))
+        .addChild(new ROUTE().setFromNode(new SFString("TourTime")).setFromField(new SFString("fraction_changed")).setToNode(new SFString("TourPosition")).setToField(new SFString("set_fraction")))
+        .addChild(new ROUTE().setFromNode(new SFString("TourPosition")).setFromField(new SFString("geovalue_changed")).setToNode(new SFString("Tour")).setToField(new SFString("set_position"))));
     return X3D0;
     }
 private class MFString0 {

@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -22,68 +22,83 @@ meta4.content = "Tour around a prismatic sphere"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta5.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "identifier"
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d"
+
+head1.children.append(meta6)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-ProtoDeclare7 = x3d.ProtoDeclare()
-ProtoDeclare7.name = "Bubble"
-ProtoInterface8 = x3d.ProtoInterface()
+Scene7 = x3d.Scene()
+NavigationInfo8 = x3d.NavigationInfo()
+NavigationInfo8.type = ["EXAMINE"]
 
-ProtoDeclare7.ProtoInterface = ProtoInterface8
-ProtoBody9 = x3d.ProtoBody()
-Transform10 = x3d.Transform(DEF="transform")
-Shape11 = x3d.Shape()
-Appearance12 = x3d.Appearance()
-Material13 = x3d.Material()
-Material13.diffuseColor = [1,0,0]
-Material13.transparency = 0.2
+Scene7.children.append(NavigationInfo8)
+Viewpoint9 = x3d.Viewpoint()
+Viewpoint9.position = [0,0,4]
+Viewpoint9.orientation = [1,0,0,0]
+Viewpoint9.description = "Bubble in action"
 
-Appearance12.material = Material13
-
-Shape11.appearance = Appearance12
+Scene7.children.append(Viewpoint9)
+ProtoDeclare10 = x3d.ProtoDeclare()
+ProtoDeclare10.name = "Bubble"
+ProtoBody11 = x3d.ProtoBody()
+Transform12 = x3d.Transform(DEF="transform")
+Shape13 = x3d.Shape()
 Sphere14 = x3d.Sphere()
 Sphere14.radius = 0.25
 
-Shape11.geometry = Sphere14
+Shape13.geometry = Sphere14
+Appearance15 = x3d.Appearance()
+Material16 = x3d.Material()
+Material16.diffuseColor = [1,0,0]
+Material16.transparency = 0.2
 
-Transform10.children.append(Shape11)
-Script15 = x3d.Script(DEF="bounce")
-field16 = x3d.field()
-field16.accessType = "inputOutput"
-field16.type = "SFVec3f"
-field16.name = "scale"
-field16.value = [1,1,1]
+Appearance15.material = Material16
 
-Script15.field.append(field16)
-field17 = x3d.field()
-field17.accessType = "inputOutput"
-field17.type = "SFVec3f"
-field17.name = "translation"
+Shape13.appearance = Appearance15
 
-Script15.field.append(field17)
+Transform12.children.append(Shape13)
+Script17 = x3d.Script(DEF="bounce")
 field18 = x3d.field()
+field18.name = "scale"
 field18.accessType = "inputOutput"
 field18.type = "SFVec3f"
-field18.name = "velocity"
+field18.value = [1,1,1]
 
-Script15.field.append(field18)
+Script17.field.append(field18)
 field19 = x3d.field()
+field19.name = "translation"
 field19.accessType = "inputOutput"
 field19.type = "SFVec3f"
-field19.name = "scalvel"
+field19.value = [0,0,0]
 
-Script15.field.append(field19)
+Script17.field.append(field19)
 field20 = x3d.field()
-field20.accessType = "inputOnly"
-field20.type = "SFFloat"
-field20.name = "set_fraction"
+field20.name = "velocity"
+field20.accessType = "inputOutput"
+field20.type = "SFVec3f"
+field20.value = [0,0,0]
 
-Script15.field.append(field20)
+Script17.field.append(field20)
+field21 = x3d.field()
+field21.name = "scalvel"
+field21.accessType = "inputOutput"
+field21.type = "SFVec3f"
+field21.value = [0,0,0]
 
-Script15.sourceCode = '''ecmascript:\n"+
+Script17.field.append(field21)
+field22 = x3d.field()
+field22.name = "set_fraction"
+field22.accessType = "inputOnly"
+field22.type = "SFFloat"
+
+Script17.field.append(field22)
+
+Script17.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -129,54 +144,45 @@ Script15.sourceCode = '''ecmascript:\n"+
 "	}\n"+
 "}'''
 
-Transform10.children.append(Script15)
-TimeSensor21 = x3d.TimeSensor(DEF="bubbleClock")
-TimeSensor21.cycleInterval = 10
-TimeSensor21.loop = True
+Transform12.children.append(Script17)
+TimeSensor23 = x3d.TimeSensor(DEF="bubbleClock")
+TimeSensor23.cycleInterval = 10
+TimeSensor23.loop = True
 
-Transform10.children.append(TimeSensor21)
-
-ProtoBody9.children.append(Transform10)
-ROUTE22 = x3d.ROUTE()
-ROUTE22.fromNode = "bounce"
-ROUTE22.fromField = "translation_changed"
-ROUTE22.toNode = "transform"
-ROUTE22.toField = "set_translation"
-
-ProtoBody9.children.append(ROUTE22)
-ROUTE23 = x3d.ROUTE()
-ROUTE23.fromNode = "bounce"
-ROUTE23.fromField = "scale_changed"
-ROUTE23.toNode = "transform"
-ROUTE23.toField = "set_scale"
-
-ProtoBody9.children.append(ROUTE23)
+Transform12.children.append(TimeSensor23)
 ROUTE24 = x3d.ROUTE()
-ROUTE24.fromNode = "bubbleClock"
-ROUTE24.fromField = "fraction_changed"
-ROUTE24.toNode = "bounce"
-ROUTE24.toField = "set_fraction"
+ROUTE24.fromNode = "bounce"
+ROUTE24.fromField = "translation_changed"
+ROUTE24.toNode = "transform"
+ROUTE24.toField = "set_translation"
 
-ProtoBody9.children.append(ROUTE24)
+Transform12.children.append(ROUTE24)
+ROUTE25 = x3d.ROUTE()
+ROUTE25.fromNode = "bounce"
+ROUTE25.fromField = "scale_changed"
+ROUTE25.toNode = "transform"
+ROUTE25.toField = "set_scale"
 
-ProtoDeclare7.ProtoBody = ProtoBody9
+Transform12.children.append(ROUTE25)
+ROUTE26 = x3d.ROUTE()
+ROUTE26.fromNode = "bubbleClock"
+ROUTE26.fromField = "fraction_changed"
+ROUTE26.toNode = "bounce"
+ROUTE26.toField = "set_fraction"
 
-Scene6.children.append(ProtoDeclare7)
-NavigationInfo25 = x3d.NavigationInfo()
-NavigationInfo25.type = ["EXAMINE"]
+Transform12.children.append(ROUTE26)
 
-Scene6.children.append(NavigationInfo25)
-Viewpoint26 = x3d.Viewpoint()
-Viewpoint26.description = "Bubble in action"
-Viewpoint26.position = [0,0,4]
+ProtoBody11.children.append(Transform12)
 
-Scene6.children.append(Viewpoint26)
+ProtoDeclare10.ProtoBody = ProtoBody11
+
+Scene7.children.append(ProtoDeclare10)
 ProtoInstance27 = x3d.ProtoInstance(DEF="bubbleA")
 ProtoInstance27.name = "Bubble"
 
-Scene6.children.append(ProtoInstance27)
+Scene7.children.append(ProtoInstance27)
 
-X3D0.Scene = Scene6
+X3D0.Scene = Scene7
 f = open("../data/bubble.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

@@ -93,8 +93,7 @@ public class particleballs
         .setPhysics(new BoundedPhysicsModel()
           .setGeometry(new Sphere().setRadius(100)))
         .setEmitter(new ExplosionEmitter().setSpeed(2).setVariation(0.75))
-        .addComments(new String[] {"",
-"			<Shape>"})
+        .addComments(" <Shape> ")
         .setGeometry(new Sphere())
         .setAppearance(new Appearance()
           .setMaterial(new Material().setDiffuseColor(0.7,0.7,0.7).setSpecularColor(0.5,0.5,0.5))
@@ -105,28 +104,26 @@ public class particleballs
             .setLeftTexture(new ImageTexture().setUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}))
             .setRightTexture(new ImageTexture().setUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
             .setTopTexture(new ImageTexture().setUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
-          .addComments(new String[] {"",
-"                <ComposedShader language='GLSL'>",
-"		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>",
-"		  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>",
-"		  </field>",
-"		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
-"		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
-"		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>",
-"		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>",
-"                </ComposedShader>"})
-          .addComments(new String[] {"",
-"                            <ComposedShader DEF=\"shader\" language=\"GLSL\">",
-"				  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>",
-"				  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>",
-"				  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"				  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"				  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"		  		  <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>",
-"				  <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>",
-"	  		    </ComposedShader>"})
+          .addComments(" <ComposedShader language='GLSL'> ")
+          .addComments(" <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> ")
+          .addComments(" <field name='cube' type='SFNode' accessType=\"inputOutput\"> ")
+          .addComments(" <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> ")
+          .addComments(" </field> ")
+          .addComments(" <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> ")
+          .addComments(" <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> ")
+          .addComments(" <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> ")
+          .addComments(" <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> ")
+          .addComments(" <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart> ")
+          .addComments(" </ComposedShader> ")
+          .addComments(" <ComposedShader DEF=\"shader\" language=\"GLSL\"> ")
+          .addComments(" <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> ")
+          .addComments(" <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> ")
+          .addComments(" <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+          .addComments(" <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+          .addComments(" <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> ")
+          .addComments(" <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> ")
+          .addComments(" <ShaderPart type='FRAGMENT' url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> ")
+          .addComments(" </ComposedShader> ")
           .addShaders(new ComposedShader().setLanguage("GLSL")
             .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
             .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)
@@ -136,8 +133,7 @@ public class particleballs
             .addField(new field().setName("power").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(2))
             .addParts(new ShaderPart().setUrl(new String[] {"../shaders/x_iteparticles.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_iteparticles.vs"}))
             .addParts(new ShaderPart("commonfs").setType("FRAGMENT").setUrl(new String[] {"https://coderextreme.net/X3DJSONLD/src/main/shaders/commonnew.fs"})))))
-      .addComments(new String[] {"",
-"	</Shape>"})));
+      .addComments(" </Shape> ")));
             }
             catch (Exception ex)
             {       

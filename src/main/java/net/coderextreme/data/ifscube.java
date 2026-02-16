@@ -56,17 +56,17 @@ public class ifscube implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("ifscube.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d"))
-        .addMeta(new meta().setName("description").setContent("Template for an Indexed Face Set"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("4 April 2017")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("ifscube.x3d")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("http://coderextreme.net/X3DJSONLD/src/main/data/ifscube.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("Template for an Indexed Face Set")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("4 April 2017"))))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f ).setDEF("IndexedFaceSet").setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
+            .setGeometry(new IndexedFaceSet().setCreaseAngle(1.57f ).setDEF(new SFString("IndexedFaceSet")).setCoordIndex(new MFInt320().getArray()).setNormalIndex(new MFInt321().getArray()).setNormalPerVertex(false).setColorIndex(new MFInt322().getArray())
               .setCoord(new Coordinate().setPoint(new MFVec3f3().getArray()))
               .setNormal(new Normal().setVector(new MFVec3f4().getArray()))
               .setColor(new Color().setColor(new MFColor5().getArray()))))));

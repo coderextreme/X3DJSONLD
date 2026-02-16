@@ -237,7 +237,9 @@ field45.setAccessType(CString("inputOutput"));
 field45.setValue(CString("0"));
 ComposedShader34.addChild(&field45);
 
-//<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
+//<field name='cube' type='SFNode' accessType=\"initializeOnly\">
+//<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+//</field>
 ShaderPart& ShaderPart46 =  ShaderPart();
 ShaderPart46.setUrl(new CString[]{CString("https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs")}, 1);
 ShaderPart46.setType(CString("VERTEX"));

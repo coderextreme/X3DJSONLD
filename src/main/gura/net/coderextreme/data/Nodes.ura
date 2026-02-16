@@ -1,0 +1,327 @@
+X3D:
+    profile: "Full"
+    version: "4.1"
+    setHead: [
+        head: [
+            meta: [
+                name: "creator"
+                content: "Holger Seelig"
+            ],
+            meta: [
+                name: "created"
+                content: "Tue, 10 Feb 2026 12:09:57 GMT"
+            ],
+            meta: [
+                name: "modified"
+                content: "Tue, 10 Feb 2026 12:34:21 GMT"
+            ],
+            meta: [
+                name: "generator"
+                content: "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+            ],
+            meta: [
+                name: "generator"
+                content: "Sunrize X3D Editor V2.0.2, https://create3000.github.io/sunrize/"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [ empty
+            ],
+            Background: [ empty
+            ],
+            Fog: [ empty
+            ],
+            LocalFog: [ empty
+            ],
+            TextureBackground: [ empty
+            ],
+            ProximitySensor: [ empty
+            ],
+            TransformSensor: [ empty
+            ],
+            VisibilitySensor: [ empty
+            ],
+            ColorChaser: [ empty
+            ],
+            ColorDamper: [ empty
+            ],
+            CoordinateChaser: [ empty
+            ],
+            CoordinateDamper: [ empty
+            ],
+            OrientationChaser: [ empty
+            ],
+            OrientationDamper: [ empty
+            ],
+            PositionChaser: [ empty
+            ],
+            PositionChaser2D: [ empty
+            ],
+            PositionDamper: [ empty
+            ],
+            PositionDamper2D: [ empty
+            ],
+            ScalarChaser: [ empty
+            ],
+            ScalarDamper: [ empty
+            ],
+            TexCoordChaser2D: [ empty
+            ],
+            TexCoordDamper2D: [ empty
+            ],
+            Group: [ empty
+            ],
+            StaticGroup: [ empty
+            ],
+            Switch: [
+                whichChoice: -1
+            ],
+            Transform: [ empty
+            ],
+            ColorInterpolator: [ empty
+            ],
+            CoordinateInterpolator: [ empty
+            ],
+            CoordinateInterpolator2D: [ empty
+            ],
+            EaseInEaseOut: [ empty
+            ],
+            NormalInterpolator: [ empty
+            ],
+            OrientationInterpolator: [ empty
+            ],
+            PositionInterpolator: [ empty
+            ],
+            PositionInterpolator2D: [ empty
+            ],
+            ScalarInterpolator: [ empty
+            ],
+            SplinePositionInterpolator: [ empty
+            ],
+            SplinePositionInterpolator2D: [ empty
+            ],
+            SplineScalarInterpolator: [ empty
+            ],
+            SquadOrientationInterpolator: [ empty
+            ],
+            LayerSet: [ empty
+            ],
+            DirectionalLight: [ empty
+            ],
+            EnvironmentLight: [
+                origin: [0, 0, 0]
+                rotation: [0, 0, 1, 0]
+            ],
+            PointLight: [ empty
+            ],
+            SpotLight: [
+                beamWidth: 0.589049
+            ],
+            Billboard: [ empty
+            ],
+            Collision: [ empty
+            ],
+            LOD: [ empty
+            ],
+            NavigationInfo: [ empty
+            ],
+            OrthoViewpoint: [ empty
+            ],
+            Viewpoint: [ empty
+            ],
+            ViewpointGroup: [ empty
+            ],
+            Anchor: [ empty
+            ],
+            Inline: [ empty
+            ],
+            LoadSensor: [ empty
+            ],
+            CylinderSensor: [ empty
+            ],
+            PlaneSensor: [ empty
+            ],
+            SphereSensor: [ empty
+            ],
+            TouchSensor: [ empty
+            ],
+            ClipPlane: [ empty
+            ],
+            Shape: [ empty
+            ],
+            Analyser: [ empty
+            ],
+            AudioDestination: [ empty
+            ],
+            BiquadFilter: [
+                type: "LOWPASS"
+            ],
+            BufferAudioSource: [ empty
+            ],
+            ChannelMerger: [ empty
+            ],
+            ChannelSelector: [ empty
+            ],
+            ChannelSplitter: [ empty
+            ],
+            Convolver: [ empty
+            ],
+            Delay: [ empty
+            ],
+            DynamicsCompressor: [ empty
+            ],
+            Gain: [ empty
+            ],
+            ListenerPointSource: [ empty
+            ],
+            MicrophoneSource: [ empty
+            ],
+            OscillatorSource: [ empty
+            ],
+            Sound: [ empty
+            ],
+            SpatialSound: [ empty
+            ],
+            StreamAudioDestination: [ empty
+            ],
+            StreamAudioSource: [ empty
+            ],
+            WaveShaper: [ empty
+            ],
+            TimeSensor: [ empty
+            ],
+            CADAssembly: [ empty
+            ],
+            CADFace: [ empty
+            ],
+            CADLayer: [ empty
+            ],
+            CADPart: [ empty
+            ],
+            DISEntityManager: [ empty
+            ],
+            DISEntityTypeMapping: [ empty
+            ],
+            EspduTransform: [ empty
+            ],
+            ReceiverPdu: [ empty
+            ],
+            SignalPdu: [ empty
+            ],
+            TransmitterPdu: [ empty
+            ],
+            BooleanFilter: [ empty
+            ],
+            BooleanSequencer: [ empty
+            ],
+            BooleanToggle: [ empty
+            ],
+            BooleanTrigger: [ empty
+            ],
+            IntegerSequencer: [ empty
+            ],
+            IntegerTrigger: [ empty
+            ],
+            TimeTrigger: [ empty
+            ],
+            KeySensor: [
+                enabled: false
+            ],
+            StringSensor: [ empty
+            ],
+            TextureProjector: [
+                ambientIntensity: 0.0
+                color: [1, 1, 1]
+                fieldOfView: 0.7854
+                intensity: 0.7854
+                upVector: [0, 1, 0]
+            ],
+            TextureProjectorParallel: [
+                ambientIntensity: 0.0
+                color: [1, 1, 1]
+                intensity: 0.7854
+                upVector: [0, 1, 0]
+            ],
+            HAnimHumanoid: [
+                version: "2.0"
+            ],
+            HAnimJoint: [
+                ulimit: [0, 0, 0]
+                llimit: [0, 0, 0]
+            ],
+            HAnimPose: [
+                loa: -1
+                transitionDuration: 0.0
+            ],
+            HAnimSegment: [ empty
+            ],
+            HAnimSite: [ empty
+            ],
+            ParticleSystem: [ empty
+            ],
+            Script: [ empty
+            ],
+            FontLibrary: [ empty
+            ],
+            CollidableOffset: [ empty
+            ],
+            CollidableShape: [ empty
+            ],
+            CollisionSensor: [ empty
+            ],
+            CollisionSpace: [ empty
+            ],
+            RigidBodyCollection: [ empty
+            ],
+            IsoSurfaceVolumeData: [ empty
+            ],
+            SegmentedVolumeData: [ empty
+            ],
+            VolumeData: [ empty
+            ],
+            GeoLOD: [ empty
+            ],
+            GeoLocation: [ empty
+            ],
+            GeoMetadata: [ empty
+            ],
+            GeoPositionInterpolator: [ empty
+            ],
+            GeoProximitySensor: [ empty
+            ],
+            GeoTouchSensor: [ empty
+            ],
+            GeoTransform: [ empty
+            ],
+            GeoViewpoint: [ empty
+            ],
+            ContourPolyline2D: [ empty
+            ],
+            NurbsCurve2D: [ empty
+            ],
+            NurbsOrientationInterpolator: [ empty
+            ],
+            NurbsPositionInterpolator: [ empty
+            ],
+            NurbsSet: [ empty
+            ],
+            NurbsSurfaceInterpolator: [ empty
+            ],
+            LayoutGroup: [ empty
+            ],
+            ScreenGroup: [ empty
+            ],
+            LinePickSensor: [ empty
+            ],
+            PickableGroup: [ empty
+            ],
+            PointPickSensor: [ empty
+            ],
+            PrimitivePickSensor: [ empty
+            ],
+            VolumePickSensor: [ empty
+            ]
+        ]
+    ]

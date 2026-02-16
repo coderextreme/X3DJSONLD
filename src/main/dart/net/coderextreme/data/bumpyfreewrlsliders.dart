@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Full'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           component_ : 
@@ -75,7 +75,8 @@ var X3D0 =  X3D(
               activeLayer_ : 1,
               order_ : MFInt32([SFInt32(1), SFInt32(2)]),
               /*the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"*/
-              /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
+              /*the second layer contains the sliders that are moved with the user's display*/
+              /*like a HUD (heads up display)*/
               layers_ : 
                 Layer(
                   pickable_ : true,
@@ -217,7 +218,9 @@ var X3D0 =  X3D(
                               geometry_ : 
                                 Sphere(
                                   radius_ : 5),
-                              /*<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>*/
+                              /*<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">*/
+                              /*<Coordinate DEF=\"OrbitCoordinates\"/>*/
+                              /*</IndexedFaceSet>*/
                               appearance_ : 
                                 Appearance(
                                   material_ : 
@@ -315,7 +318,9 @@ var X3D0 =  X3D(
                                           name_ : SFString('pdelta'),
                                           accessType_ : SFString("inputOutput"),
                                           value_ : SFString('0')),
-                                      /*<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>*/
+                                      /*<field name='cube' type='SFNode' accessType=\"inputOutput\">*/
+                                      /*<ComposedCubeMapTexture USE=\"texture\"/>*/
+                                      /*</field>*/
                                       parts_ : 
                                         ShaderPart(
                                           type_ : SFString("VERTEX",
@@ -334,8 +339,41 @@ var X3D0 =  X3D(
                                                 connect(
                                                   nodeField_ : SFString('url'),
                                                   protoField_ : SFString('fragment'))]))),
-                                  /*<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>*/)))]),
-                  /*<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>*/
+                                  /*<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">*/
+                                  /*<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>*/
+                                  /*<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>*/
+                                  /*<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>*/
+                                  /*<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>*/
+                                  /*<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>*/
+                                  /*<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>*/
+                                  /*<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>*/
+                                  /*<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>*/
+                                  /*<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>*/
+                                  /*<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>*/
+                                  /*<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>*/
+                                  /*<ShaderPart type='VERTEX'>*/
+                                  /*<IS>*/
+                                  /*<connect nodeField=\"url\" protoField=\"vertex\"/>*/
+                                  /*</IS>*/
+                                  /*</ShaderPart>*/
+                                  /*<ShaderPart type='FRAGMENT'>*/
+                                  /*<IS>*/
+                                  /*<connect nodeField=\"url\" protoField=\"fragment\"/>*/
+                                  /*</IS>*/
+                                  /*</ShaderPart>*/
+                                  /*</ComposedShader>*/)))]),
+                  /*<Script DEF=\"OrbitScript\">*/
+                  /*<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>*/
+                  /*<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>*/
+                  /*<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>*/
+                  /*<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>*/
+                  /*<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>*/
+                  /*<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>*/
+                  /*<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>*/
+                  /*<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>*/
+                  /*<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>*/
+                  /*<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>*/
+                  /*<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>*/
                   /*DIS multiuser facilities*/
 
                     DISEntityManager(

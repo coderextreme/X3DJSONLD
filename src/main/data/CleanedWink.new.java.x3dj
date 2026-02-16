@@ -94,7 +94,7 @@
           },
           {
             "@name":"translated",
-            "@content":"08 February 2026"
+            "@content":"16 February 2026"
           },
           {
             "@name":"generator",
@@ -145,6 +145,8 @@
                   {
                     "@name":"humanoid_root",
                     "@DEF":"hanim_root",
+                    "@llimit":[0,0,0],
+                    "@ulimit":[0,0,0],
                     "-children":[
                       { "HAnimSegment":
                         {
@@ -173,6 +175,8 @@
                         {
                           "@name":"skullbase",
                           "@DEF":"hanim_skullbase",
+                          "@llimit":[0,0,0],
+                          "@ulimit":[0,0,0],
                           "-children":[
                             { "HAnimSegment":
                               {

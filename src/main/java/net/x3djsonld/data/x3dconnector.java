@@ -175,11 +175,10 @@ ecmascript:
         .addChild(new Transform().setUSE("transC1")))
       .addFieldValue(new fieldValue().setName("rotscalenode")
         .addChild(new Transform().setUSE("rotscaleC1")))
-      .addComments(new String[] {"",
-"        <fieldValue name='set_startpoint'>",
-"        </fieldValue>",
-"        <fieldValue name='set_endpoint'>",
-"        </fieldValue>"}))
+      .addComments(" <fieldValue name='set_startpoint'> ")
+      .addComments(" </fieldValue> ")
+      .addComments(" <fieldValue name='set_endpoint'> ")
+      .addComments(" </fieldValue> "))
     .addChild(new ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
     .addChild(new ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")));
             }

@@ -30,7 +30,13 @@ function doubleToFloat(d) {
           .addField(new field().setType(field.TYPE_SFFLOAT).setName("set_fraction").setAccessType(field.ACCESSTYPE_INPUTONLY))
           .addField(new field().setType(field.TYPE_MFVEC3F).setName("coordinates").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
           .addField(new field().setType(field.TYPE_MFINT32).setName("coordIndexes").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
-          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/> <field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/> <field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"e\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"f\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"g\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"h\" type=\"SFFloat\" value=\"5\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"t\" type=\"SFFloat\" value=\"0\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"inputOutput\" name=\"p\" type=\"SFFloat\" value=\"0\"/>"))
+          .addComments(new CommentsBlock("<field accessType=\"initializeOnly\" name=\"resolution\" type=\"SFInt32\" value=\"100\"/>"))
           .setSourceCode(`ecmascript:
 
 var e = 5;

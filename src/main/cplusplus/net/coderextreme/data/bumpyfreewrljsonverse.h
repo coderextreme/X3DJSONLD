@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
-X3D0.setVersion(CString("4.0"));
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 //<component name='Shape' level='4'></component>
 //Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
@@ -157,7 +157,9 @@ head1.addMeta(&meta30);
 
 X3D0.setHead(&head1);
 
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 Scene& Scene31 =  Scene();
 //basic nodes, which might be present in any scene
 NavigationInfo& NavigationInfo32 =  NavigationInfo();
@@ -186,7 +188,8 @@ LayerSet& LayerSet36 =  LayerSet();
 LayerSet36.setActiveLayer(1);
 LayerSet36.setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 Layer& Layer37 =  Layer();
 Layer37.setPickable(true);
 Layer37.setObjectType(new CString[]{CString("ALL")}, 1);
@@ -469,7 +472,9 @@ ShaderPart97.setUrl(new CString[]{CString("../shaders/freewrl.fs"), CString("htt
 ShaderPart97.setType(CString("FRAGMENT"));
 ComposedShader84.setParts(&ShaderPart97);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 Appearance75.addChild(&ComposedShader84);
 
 Shape72.addChild(&Appearance75);

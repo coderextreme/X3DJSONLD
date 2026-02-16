@@ -7368,1532 +7368,584 @@ SoHAnimJoint1601->setUSE(QString("hanim_humanoid_root"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1601);
 
 SoHAnimJoint* SoHAnimJoint1602 = new SoHAnimJoint();
-SoHAnimJoint1602->setUSE(QString("hanim_sacroiliac"));
+SoHAnimJoint1602->setUSE(QString("hanim_l_acromioclavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1602);
 
 SoHAnimJoint* SoHAnimJoint1603 = new SoHAnimJoint();
-SoHAnimJoint1603->setUSE(QString("hanim_l_hip"));
+SoHAnimJoint1603->setUSE(QString("hanim_l_calcaneocuboid"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1603);
 
 SoHAnimJoint* SoHAnimJoint1604 = new SoHAnimJoint();
-SoHAnimJoint1604->setUSE(QString("hanim_l_knee"));
+SoHAnimJoint1604->setUSE(QString("hanim_l_carpal_distal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1604);
 
 SoHAnimJoint* SoHAnimJoint1605 = new SoHAnimJoint();
-SoHAnimJoint1605->setUSE(QString("hanim_l_talocrural"));
+SoHAnimJoint1605->setUSE(QString("hanim_l_carpal_distal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1605);
 
 SoHAnimJoint* SoHAnimJoint1606 = new SoHAnimJoint();
-SoHAnimJoint1606->setUSE(QString("hanim_l_talocalcaneonavicular"));
+SoHAnimJoint1606->setUSE(QString("hanim_l_carpal_distal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1606);
 
 SoHAnimJoint* SoHAnimJoint1607 = new SoHAnimJoint();
-SoHAnimJoint1607->setUSE(QString("hanim_l_cuneonavicular_1"));
+SoHAnimJoint1607->setUSE(QString("hanim_l_carpal_distal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1607);
 
 SoHAnimJoint* SoHAnimJoint1608 = new SoHAnimJoint();
-SoHAnimJoint1608->setUSE(QString("hanim_l_tarsometatarsal_1"));
+SoHAnimJoint1608->setUSE(QString("hanim_l_carpal_interphalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1608);
 
 SoHAnimJoint* SoHAnimJoint1609 = new SoHAnimJoint();
-SoHAnimJoint1609->setUSE(QString("hanim_l_metatarsophalangeal_1"));
+SoHAnimJoint1609->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1609);
 
 SoHAnimJoint* SoHAnimJoint1610 = new SoHAnimJoint();
-SoHAnimJoint1610->setUSE(QString("hanim_l_tarsal_interphalangeal_1"));
+SoHAnimJoint1610->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1610);
 
 SoHAnimJoint* SoHAnimJoint1611 = new SoHAnimJoint();
-SoHAnimJoint1611->setUSE(QString("hanim_l_cuneonavicular_2"));
+SoHAnimJoint1611->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1611);
 
 SoHAnimJoint* SoHAnimJoint1612 = new SoHAnimJoint();
-SoHAnimJoint1612->setUSE(QString("hanim_l_tarsometatarsal_2"));
+SoHAnimJoint1612->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1612);
 
 SoHAnimJoint* SoHAnimJoint1613 = new SoHAnimJoint();
-SoHAnimJoint1613->setUSE(QString("hanim_l_metatarsophalangeal_2"));
+SoHAnimJoint1613->setUSE(QString("hanim_l_carpometacarpal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1613);
 
 SoHAnimJoint* SoHAnimJoint1614 = new SoHAnimJoint();
-SoHAnimJoint1614->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_2"));
+SoHAnimJoint1614->setUSE(QString("hanim_l_carpometacarpal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1614);
 
 SoHAnimJoint* SoHAnimJoint1615 = new SoHAnimJoint();
-SoHAnimJoint1615->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_2"));
+SoHAnimJoint1615->setUSE(QString("hanim_l_carpometacarpal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1615);
 
 SoHAnimJoint* SoHAnimJoint1616 = new SoHAnimJoint();
-SoHAnimJoint1616->setUSE(QString("hanim_l_cuneonavicular_3"));
+SoHAnimJoint1616->setUSE(QString("hanim_l_carpometacarpal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1616);
 
 SoHAnimJoint* SoHAnimJoint1617 = new SoHAnimJoint();
-SoHAnimJoint1617->setUSE(QString("hanim_l_tarsometatarsal_3"));
+SoHAnimJoint1617->setUSE(QString("hanim_l_carpometacarpal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1617);
 
 SoHAnimJoint* SoHAnimJoint1618 = new SoHAnimJoint();
-SoHAnimJoint1618->setUSE(QString("hanim_l_metatarsophalangeal_3"));
+SoHAnimJoint1618->setUSE(QString("hanim_l_cuneonavicular_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1618);
 
 SoHAnimJoint* SoHAnimJoint1619 = new SoHAnimJoint();
-SoHAnimJoint1619->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_3"));
+SoHAnimJoint1619->setUSE(QString("hanim_l_cuneonavicular_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1619);
 
 SoHAnimJoint* SoHAnimJoint1620 = new SoHAnimJoint();
-SoHAnimJoint1620->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_3"));
+SoHAnimJoint1620->setUSE(QString("hanim_l_cuneonavicular_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1620);
 
 SoHAnimJoint* SoHAnimJoint1621 = new SoHAnimJoint();
-SoHAnimJoint1621->setUSE(QString("hanim_l_calcaneocuboid"));
+SoHAnimJoint1621->setUSE(QString("hanim_l_elbow"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1621);
 
 SoHAnimJoint* SoHAnimJoint1622 = new SoHAnimJoint();
-SoHAnimJoint1622->setUSE(QString("hanim_l_transversetarsal"));
+SoHAnimJoint1622->setUSE(QString("hanim_l_eyeball_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1622);
 
 SoHAnimJoint* SoHAnimJoint1623 = new SoHAnimJoint();
-SoHAnimJoint1623->setUSE(QString("hanim_l_tarsometatarsal_4"));
+SoHAnimJoint1623->setUSE(QString("hanim_l_eyebrow_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1623);
 
 SoHAnimJoint* SoHAnimJoint1624 = new SoHAnimJoint();
-SoHAnimJoint1624->setUSE(QString("hanim_l_metatarsophalangeal_4"));
+SoHAnimJoint1624->setUSE(QString("hanim_l_eyelid_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1624);
 
 SoHAnimJoint* SoHAnimJoint1625 = new SoHAnimJoint();
-SoHAnimJoint1625->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_4"));
+SoHAnimJoint1625->setUSE(QString("hanim_l_hip"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1625);
 
 SoHAnimJoint* SoHAnimJoint1626 = new SoHAnimJoint();
-SoHAnimJoint1626->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_4"));
+SoHAnimJoint1626->setUSE(QString("hanim_l_knee"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1626);
 
 SoHAnimJoint* SoHAnimJoint1627 = new SoHAnimJoint();
-SoHAnimJoint1627->setUSE(QString("hanim_l_tarsometatarsal_5"));
+SoHAnimJoint1627->setUSE(QString("hanim_l_metacarpophalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1627);
 
 SoHAnimJoint* SoHAnimJoint1628 = new SoHAnimJoint();
-SoHAnimJoint1628->setUSE(QString("hanim_l_metatarsophalangeal_5"));
+SoHAnimJoint1628->setUSE(QString("hanim_l_metacarpophalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1628);
 
 SoHAnimJoint* SoHAnimJoint1629 = new SoHAnimJoint();
-SoHAnimJoint1629->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_5"));
+SoHAnimJoint1629->setUSE(QString("hanim_l_metacarpophalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1629);
 
 SoHAnimJoint* SoHAnimJoint1630 = new SoHAnimJoint();
-SoHAnimJoint1630->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_5"));
+SoHAnimJoint1630->setUSE(QString("hanim_l_metacarpophalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1630);
 
 SoHAnimJoint* SoHAnimJoint1631 = new SoHAnimJoint();
-SoHAnimJoint1631->setUSE(QString("hanim_r_hip"));
+SoHAnimJoint1631->setUSE(QString("hanim_l_metacarpophalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1631);
 
 SoHAnimJoint* SoHAnimJoint1632 = new SoHAnimJoint();
-SoHAnimJoint1632->setUSE(QString("hanim_r_knee"));
+SoHAnimJoint1632->setUSE(QString("hanim_l_metatarsophalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1632);
 
 SoHAnimJoint* SoHAnimJoint1633 = new SoHAnimJoint();
-SoHAnimJoint1633->setUSE(QString("hanim_r_talocrural"));
+SoHAnimJoint1633->setUSE(QString("hanim_l_metatarsophalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1633);
 
 SoHAnimJoint* SoHAnimJoint1634 = new SoHAnimJoint();
-SoHAnimJoint1634->setUSE(QString("hanim_r_talocalcaneonavicular"));
+SoHAnimJoint1634->setUSE(QString("hanim_l_metatarsophalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1634);
 
 SoHAnimJoint* SoHAnimJoint1635 = new SoHAnimJoint();
-SoHAnimJoint1635->setUSE(QString("hanim_r_cuneonavicular_1"));
+SoHAnimJoint1635->setUSE(QString("hanim_l_metatarsophalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1635);
 
 SoHAnimJoint* SoHAnimJoint1636 = new SoHAnimJoint();
-SoHAnimJoint1636->setUSE(QString("hanim_r_tarsometatarsal_1"));
+SoHAnimJoint1636->setUSE(QString("hanim_l_metatarsophalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1636);
 
 SoHAnimJoint* SoHAnimJoint1637 = new SoHAnimJoint();
-SoHAnimJoint1637->setUSE(QString("hanim_r_metatarsophalangeal_1"));
+SoHAnimJoint1637->setUSE(QString("hanim_l_midcarpal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1637);
 
 SoHAnimJoint* SoHAnimJoint1638 = new SoHAnimJoint();
-SoHAnimJoint1638->setUSE(QString("hanim_r_tarsal_interphalangeal_1"));
+SoHAnimJoint1638->setUSE(QString("hanim_l_midcarpal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1638);
 
 SoHAnimJoint* SoHAnimJoint1639 = new SoHAnimJoint();
-SoHAnimJoint1639->setUSE(QString("hanim_r_cuneonavicular_2"));
+SoHAnimJoint1639->setUSE(QString("hanim_l_midcarpal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1639);
 
 SoHAnimJoint* SoHAnimJoint1640 = new SoHAnimJoint();
-SoHAnimJoint1640->setUSE(QString("hanim_r_tarsometatarsal_2"));
+SoHAnimJoint1640->setUSE(QString("hanim_l_midcarpal_4_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1640);
 
 SoHAnimJoint* SoHAnimJoint1641 = new SoHAnimJoint();
-SoHAnimJoint1641->setUSE(QString("hanim_r_metatarsophalangeal_2"));
+SoHAnimJoint1641->setUSE(QString("hanim_l_radiocarpal"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1641);
 
 SoHAnimJoint* SoHAnimJoint1642 = new SoHAnimJoint();
-SoHAnimJoint1642->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_2"));
+SoHAnimJoint1642->setUSE(QString("hanim_l_shoulder"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1642);
 
 SoHAnimJoint* SoHAnimJoint1643 = new SoHAnimJoint();
-SoHAnimJoint1643->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_2"));
+SoHAnimJoint1643->setUSE(QString("hanim_l_sternoclavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1643);
 
 SoHAnimJoint* SoHAnimJoint1644 = new SoHAnimJoint();
-SoHAnimJoint1644->setUSE(QString("hanim_r_cuneonavicular_3"));
+SoHAnimJoint1644->setUSE(QString("hanim_l_talocalcaneonavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1644);
 
 SoHAnimJoint* SoHAnimJoint1645 = new SoHAnimJoint();
-SoHAnimJoint1645->setUSE(QString("hanim_r_tarsometatarsal_3"));
+SoHAnimJoint1645->setUSE(QString("hanim_l_talocrural"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1645);
 
 SoHAnimJoint* SoHAnimJoint1646 = new SoHAnimJoint();
-SoHAnimJoint1646->setUSE(QString("hanim_r_metatarsophalangeal_3"));
+SoHAnimJoint1646->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1646);
 
 SoHAnimJoint* SoHAnimJoint1647 = new SoHAnimJoint();
-SoHAnimJoint1647->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_3"));
+SoHAnimJoint1647->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1647);
 
 SoHAnimJoint* SoHAnimJoint1648 = new SoHAnimJoint();
-SoHAnimJoint1648->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_3"));
+SoHAnimJoint1648->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1648);
 
 SoHAnimJoint* SoHAnimJoint1649 = new SoHAnimJoint();
-SoHAnimJoint1649->setUSE(QString("hanim_r_calcaneocuboid"));
+SoHAnimJoint1649->setUSE(QString("hanim_l_tarsal_distal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1649);
 
 SoHAnimJoint* SoHAnimJoint1650 = new SoHAnimJoint();
-SoHAnimJoint1650->setUSE(QString("hanim_r_transversetarsal"));
+SoHAnimJoint1650->setUSE(QString("hanim_l_tarsal_interphalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1650);
 
 SoHAnimJoint* SoHAnimJoint1651 = new SoHAnimJoint();
-SoHAnimJoint1651->setUSE(QString("hanim_r_tarsometatarsal_4"));
+SoHAnimJoint1651->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1651);
 
 SoHAnimJoint* SoHAnimJoint1652 = new SoHAnimJoint();
-SoHAnimJoint1652->setUSE(QString("hanim_r_metatarsophalangeal_4"));
+SoHAnimJoint1652->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1652);
 
 SoHAnimJoint* SoHAnimJoint1653 = new SoHAnimJoint();
-SoHAnimJoint1653->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_4"));
+SoHAnimJoint1653->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1653);
 
 SoHAnimJoint* SoHAnimJoint1654 = new SoHAnimJoint();
-SoHAnimJoint1654->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_4"));
+SoHAnimJoint1654->setUSE(QString("hanim_l_tarsal_proximal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1654);
 
 SoHAnimJoint* SoHAnimJoint1655 = new SoHAnimJoint();
-SoHAnimJoint1655->setUSE(QString("hanim_r_tarsometatarsal_5"));
+SoHAnimJoint1655->setUSE(QString("hanim_l_tarsometatarsal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1655);
 
 SoHAnimJoint* SoHAnimJoint1656 = new SoHAnimJoint();
-SoHAnimJoint1656->setUSE(QString("hanim_r_metatarsophalangeal_5"));
+SoHAnimJoint1656->setUSE(QString("hanim_l_tarsometatarsal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1656);
 
 SoHAnimJoint* SoHAnimJoint1657 = new SoHAnimJoint();
-SoHAnimJoint1657->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_5"));
+SoHAnimJoint1657->setUSE(QString("hanim_l_tarsometatarsal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1657);
 
 SoHAnimJoint* SoHAnimJoint1658 = new SoHAnimJoint();
-SoHAnimJoint1658->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_5"));
+SoHAnimJoint1658->setUSE(QString("hanim_l_tarsometatarsal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1658);
 
 SoHAnimJoint* SoHAnimJoint1659 = new SoHAnimJoint();
-SoHAnimJoint1659->setUSE(QString("hanim_vl5"));
+SoHAnimJoint1659->setUSE(QString("hanim_l_tarsometatarsal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1659);
 
 SoHAnimJoint* SoHAnimJoint1660 = new SoHAnimJoint();
-SoHAnimJoint1660->setUSE(QString("hanim_vl4"));
+SoHAnimJoint1660->setUSE(QString("hanim_l_transversetarsal"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1660);
 
 SoHAnimJoint* SoHAnimJoint1661 = new SoHAnimJoint();
-SoHAnimJoint1661->setUSE(QString("hanim_vl3"));
+SoHAnimJoint1661->setUSE(QString("hanim_r_acromioclavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1661);
 
 SoHAnimJoint* SoHAnimJoint1662 = new SoHAnimJoint();
-SoHAnimJoint1662->setUSE(QString("hanim_vl2"));
+SoHAnimJoint1662->setUSE(QString("hanim_r_calcaneocuboid"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1662);
 
 SoHAnimJoint* SoHAnimJoint1663 = new SoHAnimJoint();
-SoHAnimJoint1663->setUSE(QString("hanim_vl1"));
+SoHAnimJoint1663->setUSE(QString("hanim_r_carpal_distal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1663);
 
 SoHAnimJoint* SoHAnimJoint1664 = new SoHAnimJoint();
-SoHAnimJoint1664->setUSE(QString("hanim_vt12"));
+SoHAnimJoint1664->setUSE(QString("hanim_r_carpal_distal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1664);
 
 SoHAnimJoint* SoHAnimJoint1665 = new SoHAnimJoint();
-SoHAnimJoint1665->setUSE(QString("hanim_vt11"));
+SoHAnimJoint1665->setUSE(QString("hanim_r_carpal_distal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1665);
 
 SoHAnimJoint* SoHAnimJoint1666 = new SoHAnimJoint();
-SoHAnimJoint1666->setUSE(QString("hanim_vt10"));
+SoHAnimJoint1666->setUSE(QString("hanim_r_carpal_distal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1666);
 
 SoHAnimJoint* SoHAnimJoint1667 = new SoHAnimJoint();
-SoHAnimJoint1667->setUSE(QString("hanim_vt9"));
+SoHAnimJoint1667->setUSE(QString("hanim_r_carpal_interphalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1667);
 
 SoHAnimJoint* SoHAnimJoint1668 = new SoHAnimJoint();
-SoHAnimJoint1668->setUSE(QString("hanim_vt8"));
+SoHAnimJoint1668->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1668);
 
 SoHAnimJoint* SoHAnimJoint1669 = new SoHAnimJoint();
-SoHAnimJoint1669->setUSE(QString("hanim_vt7"));
+SoHAnimJoint1669->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1669);
 
 SoHAnimJoint* SoHAnimJoint1670 = new SoHAnimJoint();
-SoHAnimJoint1670->setUSE(QString("hanim_vt6"));
+SoHAnimJoint1670->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1670);
 
 SoHAnimJoint* SoHAnimJoint1671 = new SoHAnimJoint();
-SoHAnimJoint1671->setUSE(QString("hanim_vt5"));
+SoHAnimJoint1671->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1671);
 
 SoHAnimJoint* SoHAnimJoint1672 = new SoHAnimJoint();
-SoHAnimJoint1672->setUSE(QString("hanim_vt4"));
+SoHAnimJoint1672->setUSE(QString("hanim_r_carpometacarpal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1672);
 
 SoHAnimJoint* SoHAnimJoint1673 = new SoHAnimJoint();
-SoHAnimJoint1673->setUSE(QString("hanim_vt3"));
+SoHAnimJoint1673->setUSE(QString("hanim_r_carpometacarpal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1673);
 
 SoHAnimJoint* SoHAnimJoint1674 = new SoHAnimJoint();
-SoHAnimJoint1674->setUSE(QString("hanim_vt2"));
+SoHAnimJoint1674->setUSE(QString("hanim_r_carpometacarpal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1674);
 
 SoHAnimJoint* SoHAnimJoint1675 = new SoHAnimJoint();
-SoHAnimJoint1675->setUSE(QString("hanim_vt1"));
+SoHAnimJoint1675->setUSE(QString("hanim_r_carpometacarpal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1675);
 
 SoHAnimJoint* SoHAnimJoint1676 = new SoHAnimJoint();
-SoHAnimJoint1676->setUSE(QString("hanim_vc7"));
+SoHAnimJoint1676->setUSE(QString("hanim_r_carpometacarpal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1676);
 
 SoHAnimJoint* SoHAnimJoint1677 = new SoHAnimJoint();
-SoHAnimJoint1677->setUSE(QString("hanim_vc6"));
+SoHAnimJoint1677->setUSE(QString("hanim_r_cuneonavicular_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1677);
 
 SoHAnimJoint* SoHAnimJoint1678 = new SoHAnimJoint();
-SoHAnimJoint1678->setUSE(QString("hanim_vc5"));
+SoHAnimJoint1678->setUSE(QString("hanim_r_cuneonavicular_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1678);
 
 SoHAnimJoint* SoHAnimJoint1679 = new SoHAnimJoint();
-SoHAnimJoint1679->setUSE(QString("hanim_vc4"));
+SoHAnimJoint1679->setUSE(QString("hanim_r_cuneonavicular_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1679);
 
 SoHAnimJoint* SoHAnimJoint1680 = new SoHAnimJoint();
-SoHAnimJoint1680->setUSE(QString("hanim_vc3"));
+SoHAnimJoint1680->setUSE(QString("hanim_r_elbow"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1680);
 
 SoHAnimJoint* SoHAnimJoint1681 = new SoHAnimJoint();
-SoHAnimJoint1681->setUSE(QString("hanim_vc2"));
+SoHAnimJoint1681->setUSE(QString("hanim_r_eyeball_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1681);
 
 SoHAnimJoint* SoHAnimJoint1682 = new SoHAnimJoint();
-SoHAnimJoint1682->setUSE(QString("hanim_vc1"));
+SoHAnimJoint1682->setUSE(QString("hanim_r_eyebrow_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1682);
 
 SoHAnimJoint* SoHAnimJoint1683 = new SoHAnimJoint();
-SoHAnimJoint1683->setUSE(QString("hanim_skullbase"));
+SoHAnimJoint1683->setUSE(QString("hanim_r_eyelid_joint"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1683);
 
 SoHAnimJoint* SoHAnimJoint1684 = new SoHAnimJoint();
-SoHAnimJoint1684->setUSE(QString("hanim_l_eyelid_joint"));
+SoHAnimJoint1684->setUSE(QString("hanim_r_hip"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1684);
 
 SoHAnimJoint* SoHAnimJoint1685 = new SoHAnimJoint();
-SoHAnimJoint1685->setUSE(QString("hanim_r_eyelid_joint"));
+SoHAnimJoint1685->setUSE(QString("hanim_r_knee"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1685);
 
 SoHAnimJoint* SoHAnimJoint1686 = new SoHAnimJoint();
-SoHAnimJoint1686->setUSE(QString("hanim_l_eyeball_joint"));
+SoHAnimJoint1686->setUSE(QString("hanim_r_metacarpophalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1686);
 
 SoHAnimJoint* SoHAnimJoint1687 = new SoHAnimJoint();
-SoHAnimJoint1687->setUSE(QString("hanim_r_eyeball_joint"));
+SoHAnimJoint1687->setUSE(QString("hanim_r_metacarpophalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1687);
 
 SoHAnimJoint* SoHAnimJoint1688 = new SoHAnimJoint();
-SoHAnimJoint1688->setUSE(QString("hanim_l_eyebrow_joint"));
+SoHAnimJoint1688->setUSE(QString("hanim_r_metacarpophalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1688);
 
 SoHAnimJoint* SoHAnimJoint1689 = new SoHAnimJoint();
-SoHAnimJoint1689->setUSE(QString("hanim_r_eyebrow_joint"));
+SoHAnimJoint1689->setUSE(QString("hanim_r_metacarpophalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1689);
 
 SoHAnimJoint* SoHAnimJoint1690 = new SoHAnimJoint();
-SoHAnimJoint1690->setUSE(QString("hanim_temporomandibular"));
+SoHAnimJoint1690->setUSE(QString("hanim_r_metacarpophalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1690);
 
 SoHAnimJoint* SoHAnimJoint1691 = new SoHAnimJoint();
-SoHAnimJoint1691->setUSE(QString("hanim_l_sternoclavicular"));
+SoHAnimJoint1691->setUSE(QString("hanim_r_metatarsophalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1691);
 
 SoHAnimJoint* SoHAnimJoint1692 = new SoHAnimJoint();
-SoHAnimJoint1692->setUSE(QString("hanim_l_acromioclavicular"));
+SoHAnimJoint1692->setUSE(QString("hanim_r_metatarsophalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1692);
 
 SoHAnimJoint* SoHAnimJoint1693 = new SoHAnimJoint();
-SoHAnimJoint1693->setUSE(QString("hanim_l_shoulder"));
+SoHAnimJoint1693->setUSE(QString("hanim_r_metatarsophalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1693);
 
 SoHAnimJoint* SoHAnimJoint1694 = new SoHAnimJoint();
-SoHAnimJoint1694->setUSE(QString("hanim_l_elbow"));
+SoHAnimJoint1694->setUSE(QString("hanim_r_metatarsophalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1694);
 
 SoHAnimJoint* SoHAnimJoint1695 = new SoHAnimJoint();
-SoHAnimJoint1695->setUSE(QString("hanim_l_radiocarpal"));
+SoHAnimJoint1695->setUSE(QString("hanim_r_metatarsophalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1695);
 
 SoHAnimJoint* SoHAnimJoint1696 = new SoHAnimJoint();
-SoHAnimJoint1696->setUSE(QString("hanim_l_midcarpal_1"));
+SoHAnimJoint1696->setUSE(QString("hanim_r_midcarpal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1696);
 
 SoHAnimJoint* SoHAnimJoint1697 = new SoHAnimJoint();
-SoHAnimJoint1697->setUSE(QString("hanim_l_carpometacarpal_1"));
+SoHAnimJoint1697->setUSE(QString("hanim_r_midcarpal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1697);
 
 SoHAnimJoint* SoHAnimJoint1698 = new SoHAnimJoint();
-SoHAnimJoint1698->setUSE(QString("hanim_l_metacarpophalangeal_1"));
+SoHAnimJoint1698->setUSE(QString("hanim_r_midcarpal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1698);
 
 SoHAnimJoint* SoHAnimJoint1699 = new SoHAnimJoint();
-SoHAnimJoint1699->setUSE(QString("hanim_l_carpal_interphalangeal_1"));
+SoHAnimJoint1699->setUSE(QString("hanim_r_midcarpal_4_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1699);
 
 SoHAnimJoint* SoHAnimJoint1700 = new SoHAnimJoint();
-SoHAnimJoint1700->setUSE(QString("hanim_l_midcarpal_2"));
+SoHAnimJoint1700->setUSE(QString("hanim_r_radiocarpal"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1700);
 
 SoHAnimJoint* SoHAnimJoint1701 = new SoHAnimJoint();
-SoHAnimJoint1701->setUSE(QString("hanim_l_carpometacarpal_2"));
+SoHAnimJoint1701->setUSE(QString("hanim_r_shoulder"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1701);
 
 SoHAnimJoint* SoHAnimJoint1702 = new SoHAnimJoint();
-SoHAnimJoint1702->setUSE(QString("hanim_l_metacarpophalangeal_2"));
+SoHAnimJoint1702->setUSE(QString("hanim_r_sternoclavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1702);
 
 SoHAnimJoint* SoHAnimJoint1703 = new SoHAnimJoint();
-SoHAnimJoint1703->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_2"));
+SoHAnimJoint1703->setUSE(QString("hanim_r_talocalcaneonavicular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1703);
 
 SoHAnimJoint* SoHAnimJoint1704 = new SoHAnimJoint();
-SoHAnimJoint1704->setUSE(QString("hanim_l_carpal_distal_interphalangeal_2"));
+SoHAnimJoint1704->setUSE(QString("hanim_r_talocrural"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1704);
 
 SoHAnimJoint* SoHAnimJoint1705 = new SoHAnimJoint();
-SoHAnimJoint1705->setUSE(QString("hanim_l_midcarpal_3"));
+SoHAnimJoint1705->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1705);
 
 SoHAnimJoint* SoHAnimJoint1706 = new SoHAnimJoint();
-SoHAnimJoint1706->setUSE(QString("hanim_l_carpometacarpal_3"));
+SoHAnimJoint1706->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1706);
 
 SoHAnimJoint* SoHAnimJoint1707 = new SoHAnimJoint();
-SoHAnimJoint1707->setUSE(QString("hanim_l_metacarpophalangeal_3"));
+SoHAnimJoint1707->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1707);
 
 SoHAnimJoint* SoHAnimJoint1708 = new SoHAnimJoint();
-SoHAnimJoint1708->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_3"));
+SoHAnimJoint1708->setUSE(QString("hanim_r_tarsal_distal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1708);
 
 SoHAnimJoint* SoHAnimJoint1709 = new SoHAnimJoint();
-SoHAnimJoint1709->setUSE(QString("hanim_l_carpal_distal_interphalangeal_3"));
+SoHAnimJoint1709->setUSE(QString("hanim_r_tarsal_interphalangeal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1709);
 
 SoHAnimJoint* SoHAnimJoint1710 = new SoHAnimJoint();
-SoHAnimJoint1710->setUSE(QString("hanim_l_midcarpal_4_5"));
+SoHAnimJoint1710->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1710);
 
 SoHAnimJoint* SoHAnimJoint1711 = new SoHAnimJoint();
-SoHAnimJoint1711->setUSE(QString("hanim_l_carpometacarpal_4"));
+SoHAnimJoint1711->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1711);
 
 SoHAnimJoint* SoHAnimJoint1712 = new SoHAnimJoint();
-SoHAnimJoint1712->setUSE(QString("hanim_l_metacarpophalangeal_4"));
+SoHAnimJoint1712->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1712);
 
 SoHAnimJoint* SoHAnimJoint1713 = new SoHAnimJoint();
-SoHAnimJoint1713->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_4"));
+SoHAnimJoint1713->setUSE(QString("hanim_r_tarsal_proximal_interphalangeal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1713);
 
 SoHAnimJoint* SoHAnimJoint1714 = new SoHAnimJoint();
-SoHAnimJoint1714->setUSE(QString("hanim_l_carpal_distal_interphalangeal_4"));
+SoHAnimJoint1714->setUSE(QString("hanim_r_tarsometatarsal_1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1714);
 
 SoHAnimJoint* SoHAnimJoint1715 = new SoHAnimJoint();
-SoHAnimJoint1715->setUSE(QString("hanim_l_carpometacarpal_5"));
+SoHAnimJoint1715->setUSE(QString("hanim_r_tarsometatarsal_2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1715);
 
 SoHAnimJoint* SoHAnimJoint1716 = new SoHAnimJoint();
-SoHAnimJoint1716->setUSE(QString("hanim_l_metacarpophalangeal_5"));
+SoHAnimJoint1716->setUSE(QString("hanim_r_tarsometatarsal_3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1716);
 
 SoHAnimJoint* SoHAnimJoint1717 = new SoHAnimJoint();
-SoHAnimJoint1717->setUSE(QString("hanim_l_carpal_proximal_interphalangeal_5"));
+SoHAnimJoint1717->setUSE(QString("hanim_r_tarsometatarsal_4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1717);
 
 SoHAnimJoint* SoHAnimJoint1718 = new SoHAnimJoint();
-SoHAnimJoint1718->setUSE(QString("hanim_l_carpal_distal_interphalangeal_5"));
+SoHAnimJoint1718->setUSE(QString("hanim_r_tarsometatarsal_5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1718);
 
 SoHAnimJoint* SoHAnimJoint1719 = new SoHAnimJoint();
-SoHAnimJoint1719->setUSE(QString("hanim_r_sternoclavicular"));
+SoHAnimJoint1719->setUSE(QString("hanim_r_transversetarsal"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1719);
 
 SoHAnimJoint* SoHAnimJoint1720 = new SoHAnimJoint();
-SoHAnimJoint1720->setUSE(QString("hanim_r_acromioclavicular"));
+SoHAnimJoint1720->setUSE(QString("hanim_sacroiliac"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1720);
 
 SoHAnimJoint* SoHAnimJoint1721 = new SoHAnimJoint();
-SoHAnimJoint1721->setUSE(QString("hanim_r_shoulder"));
+SoHAnimJoint1721->setUSE(QString("hanim_skullbase"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1721);
 
 SoHAnimJoint* SoHAnimJoint1722 = new SoHAnimJoint();
-SoHAnimJoint1722->setUSE(QString("hanim_r_elbow"));
+SoHAnimJoint1722->setUSE(QString("hanim_temporomandibular"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1722);
 
 SoHAnimJoint* SoHAnimJoint1723 = new SoHAnimJoint();
-SoHAnimJoint1723->setUSE(QString("hanim_r_radiocarpal"));
+SoHAnimJoint1723->setUSE(QString("hanim_vc1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1723);
 
 SoHAnimJoint* SoHAnimJoint1724 = new SoHAnimJoint();
-SoHAnimJoint1724->setUSE(QString("hanim_r_midcarpal_1"));
+SoHAnimJoint1724->setUSE(QString("hanim_vc2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1724);
 
 SoHAnimJoint* SoHAnimJoint1725 = new SoHAnimJoint();
-SoHAnimJoint1725->setUSE(QString("hanim_r_carpometacarpal_1"));
+SoHAnimJoint1725->setUSE(QString("hanim_vc3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1725);
 
 SoHAnimJoint* SoHAnimJoint1726 = new SoHAnimJoint();
-SoHAnimJoint1726->setUSE(QString("hanim_r_metacarpophalangeal_1"));
+SoHAnimJoint1726->setUSE(QString("hanim_vc4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1726);
 
 SoHAnimJoint* SoHAnimJoint1727 = new SoHAnimJoint();
-SoHAnimJoint1727->setUSE(QString("hanim_r_carpal_interphalangeal_1"));
+SoHAnimJoint1727->setUSE(QString("hanim_vc5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1727);
 
 SoHAnimJoint* SoHAnimJoint1728 = new SoHAnimJoint();
-SoHAnimJoint1728->setUSE(QString("hanim_r_midcarpal_2"));
+SoHAnimJoint1728->setUSE(QString("hanim_vc6"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1728);
 
 SoHAnimJoint* SoHAnimJoint1729 = new SoHAnimJoint();
-SoHAnimJoint1729->setUSE(QString("hanim_r_carpometacarpal_2"));
+SoHAnimJoint1729->setUSE(QString("hanim_vc7"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1729);
 
 SoHAnimJoint* SoHAnimJoint1730 = new SoHAnimJoint();
-SoHAnimJoint1730->setUSE(QString("hanim_r_metacarpophalangeal_2"));
+SoHAnimJoint1730->setUSE(QString("hanim_vl1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1730);
 
 SoHAnimJoint* SoHAnimJoint1731 = new SoHAnimJoint();
-SoHAnimJoint1731->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_2"));
+SoHAnimJoint1731->setUSE(QString("hanim_vl2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1731);
 
 SoHAnimJoint* SoHAnimJoint1732 = new SoHAnimJoint();
-SoHAnimJoint1732->setUSE(QString("hanim_r_carpal_distal_interphalangeal_2"));
+SoHAnimJoint1732->setUSE(QString("hanim_vl3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1732);
 
 SoHAnimJoint* SoHAnimJoint1733 = new SoHAnimJoint();
-SoHAnimJoint1733->setUSE(QString("hanim_r_midcarpal_3"));
+SoHAnimJoint1733->setUSE(QString("hanim_vl4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1733);
 
 SoHAnimJoint* SoHAnimJoint1734 = new SoHAnimJoint();
-SoHAnimJoint1734->setUSE(QString("hanim_r_carpometacarpal_3"));
+SoHAnimJoint1734->setUSE(QString("hanim_vl5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1734);
 
 SoHAnimJoint* SoHAnimJoint1735 = new SoHAnimJoint();
-SoHAnimJoint1735->setUSE(QString("hanim_r_metacarpophalangeal_3"));
+SoHAnimJoint1735->setUSE(QString("hanim_vt1"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1735);
 
 SoHAnimJoint* SoHAnimJoint1736 = new SoHAnimJoint();
-SoHAnimJoint1736->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_3"));
+SoHAnimJoint1736->setUSE(QString("hanim_vt10"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1736);
 
 SoHAnimJoint* SoHAnimJoint1737 = new SoHAnimJoint();
-SoHAnimJoint1737->setUSE(QString("hanim_r_carpal_distal_interphalangeal_3"));
+SoHAnimJoint1737->setUSE(QString("hanim_vt11"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1737);
 
 SoHAnimJoint* SoHAnimJoint1738 = new SoHAnimJoint();
-SoHAnimJoint1738->setUSE(QString("hanim_r_midcarpal_4_5"));
+SoHAnimJoint1738->setUSE(QString("hanim_vt12"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1738);
 
 SoHAnimJoint* SoHAnimJoint1739 = new SoHAnimJoint();
-SoHAnimJoint1739->setUSE(QString("hanim_r_carpometacarpal_4"));
+SoHAnimJoint1739->setUSE(QString("hanim_vt2"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1739);
 
 SoHAnimJoint* SoHAnimJoint1740 = new SoHAnimJoint();
-SoHAnimJoint1740->setUSE(QString("hanim_r_metacarpophalangeal_4"));
+SoHAnimJoint1740->setUSE(QString("hanim_vt3"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1740);
 
 SoHAnimJoint* SoHAnimJoint1741 = new SoHAnimJoint();
-SoHAnimJoint1741->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_4"));
+SoHAnimJoint1741->setUSE(QString("hanim_vt4"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1741);
 
 SoHAnimJoint* SoHAnimJoint1742 = new SoHAnimJoint();
-SoHAnimJoint1742->setUSE(QString("hanim_r_carpal_distal_interphalangeal_4"));
+SoHAnimJoint1742->setUSE(QString("hanim_vt5"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1742);
 
 SoHAnimJoint* SoHAnimJoint1743 = new SoHAnimJoint();
-SoHAnimJoint1743->setUSE(QString("hanim_r_carpometacarpal_5"));
+SoHAnimJoint1743->setUSE(QString("hanim_vt6"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1743);
 
 SoHAnimJoint* SoHAnimJoint1744 = new SoHAnimJoint();
-SoHAnimJoint1744->setUSE(QString("hanim_r_metacarpophalangeal_5"));
+SoHAnimJoint1744->setUSE(QString("hanim_vt7"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1744);
 
 SoHAnimJoint* SoHAnimJoint1745 = new SoHAnimJoint();
-SoHAnimJoint1745->setUSE(QString("hanim_r_carpal_proximal_interphalangeal_5"));
+SoHAnimJoint1745->setUSE(QString("hanim_vt8"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1745);
 
 SoHAnimJoint* SoHAnimJoint1746 = new SoHAnimJoint();
-SoHAnimJoint1746->setUSE(QString("hanim_r_carpal_distal_interphalangeal_5"));
+SoHAnimJoint1746->setUSE(QString("hanim_vt9"));
 SoHAnimHumanoid43->setJoints(*SoHAnimJoint1746);
-
-SoHAnimSegment* SoHAnimSegment1747 = new SoHAnimSegment();
-SoHAnimSegment1747->setUSE(QString("hanim_sacrum"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1747);
-
-SoHAnimSegment* SoHAnimSegment1748 = new SoHAnimSegment();
-SoHAnimSegment1748->setUSE(QString("hanim_pelvis"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1748);
-
-SoHAnimSegment* SoHAnimSegment1749 = new SoHAnimSegment();
-SoHAnimSegment1749->setUSE(QString("hanim_l_thigh"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1749);
-
-SoHAnimSegment* SoHAnimSegment1750 = new SoHAnimSegment();
-SoHAnimSegment1750->setUSE(QString("hanim_l_calf"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1750);
-
-SoHAnimSegment* SoHAnimSegment1751 = new SoHAnimSegment();
-SoHAnimSegment1751->setUSE(QString("hanim_l_talus"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1751);
-
-SoHAnimSegment* SoHAnimSegment1752 = new SoHAnimSegment();
-SoHAnimSegment1752->setUSE(QString("hanim_l_navicular"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1752);
-
-SoHAnimSegment* SoHAnimSegment1753 = new SoHAnimSegment();
-SoHAnimSegment1753->setUSE(QString("hanim_l_cuneiform_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1753);
-
-SoHAnimSegment* SoHAnimSegment1754 = new SoHAnimSegment();
-SoHAnimSegment1754->setUSE(QString("hanim_l_metatarsal_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1754);
-
-SoHAnimSegment* SoHAnimSegment1755 = new SoHAnimSegment();
-SoHAnimSegment1755->setUSE(QString("hanim_l_tarsal_proximal_phalanx_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1755);
-
-SoHAnimSegment* SoHAnimSegment1756 = new SoHAnimSegment();
-SoHAnimSegment1756->setUSE(QString("hanim_l_cuneiform_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1756);
-
-SoHAnimSegment* SoHAnimSegment1757 = new SoHAnimSegment();
-SoHAnimSegment1757->setUSE(QString("hanim_l_metatarsal_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1757);
-
-SoHAnimSegment* SoHAnimSegment1758 = new SoHAnimSegment();
-SoHAnimSegment1758->setUSE(QString("hanim_l_tarsal_proximal_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1758);
-
-SoHAnimSegment* SoHAnimSegment1759 = new SoHAnimSegment();
-SoHAnimSegment1759->setUSE(QString("hanim_l_tarsal_middle_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1759);
-
-SoHAnimSegment* SoHAnimSegment1760 = new SoHAnimSegment();
-SoHAnimSegment1760->setUSE(QString("hanim_l_cuneiform_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1760);
-
-SoHAnimSegment* SoHAnimSegment1761 = new SoHAnimSegment();
-SoHAnimSegment1761->setUSE(QString("hanim_l_metatarsal_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1761);
-
-SoHAnimSegment* SoHAnimSegment1762 = new SoHAnimSegment();
-SoHAnimSegment1762->setUSE(QString("hanim_l_tarsal_proximal_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1762);
-
-SoHAnimSegment* SoHAnimSegment1763 = new SoHAnimSegment();
-SoHAnimSegment1763->setUSE(QString("hanim_l_tarsal_middle_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1763);
-
-SoHAnimSegment* SoHAnimSegment1764 = new SoHAnimSegment();
-SoHAnimSegment1764->setUSE(QString("hanim_l_calcaneus"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1764);
-
-SoHAnimSegment* SoHAnimSegment1765 = new SoHAnimSegment();
-SoHAnimSegment1765->setUSE(QString("hanim_l_cuboid"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1765);
-
-SoHAnimSegment* SoHAnimSegment1766 = new SoHAnimSegment();
-SoHAnimSegment1766->setUSE(QString("hanim_l_metatarsal_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1766);
-
-SoHAnimSegment* SoHAnimSegment1767 = new SoHAnimSegment();
-SoHAnimSegment1767->setUSE(QString("hanim_l_tarsal_proximal_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1767);
-
-SoHAnimSegment* SoHAnimSegment1768 = new SoHAnimSegment();
-SoHAnimSegment1768->setUSE(QString("hanim_l_tarsal_middle_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1768);
-
-SoHAnimSegment* SoHAnimSegment1769 = new SoHAnimSegment();
-SoHAnimSegment1769->setUSE(QString("hanim_l_metatarsal_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1769);
-
-SoHAnimSegment* SoHAnimSegment1770 = new SoHAnimSegment();
-SoHAnimSegment1770->setUSE(QString("hanim_l_tarsal_proximal_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1770);
-
-SoHAnimSegment* SoHAnimSegment1771 = new SoHAnimSegment();
-SoHAnimSegment1771->setUSE(QString("hanim_l_tarsal_middle_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1771);
-
-SoHAnimSegment* SoHAnimSegment1772 = new SoHAnimSegment();
-SoHAnimSegment1772->setUSE(QString("hanim_r_thigh"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1772);
-
-SoHAnimSegment* SoHAnimSegment1773 = new SoHAnimSegment();
-SoHAnimSegment1773->setUSE(QString("hanim_r_calf"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1773);
-
-SoHAnimSegment* SoHAnimSegment1774 = new SoHAnimSegment();
-SoHAnimSegment1774->setUSE(QString("hanim_r_talus"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1774);
-
-SoHAnimSegment* SoHAnimSegment1775 = new SoHAnimSegment();
-SoHAnimSegment1775->setUSE(QString("hanim_r_navicular"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1775);
-
-SoHAnimSegment* SoHAnimSegment1776 = new SoHAnimSegment();
-SoHAnimSegment1776->setUSE(QString("hanim_r_cuneiform_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1776);
-
-SoHAnimSegment* SoHAnimSegment1777 = new SoHAnimSegment();
-SoHAnimSegment1777->setUSE(QString("hanim_r_metatarsal_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1777);
-
-SoHAnimSegment* SoHAnimSegment1778 = new SoHAnimSegment();
-SoHAnimSegment1778->setUSE(QString("hanim_r_tarsal_proximal_phalanx_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1778);
-
-SoHAnimSegment* SoHAnimSegment1779 = new SoHAnimSegment();
-SoHAnimSegment1779->setUSE(QString("hanim_r_cuneiform_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1779);
-
-SoHAnimSegment* SoHAnimSegment1780 = new SoHAnimSegment();
-SoHAnimSegment1780->setUSE(QString("hanim_r_metatarsal_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1780);
-
-SoHAnimSegment* SoHAnimSegment1781 = new SoHAnimSegment();
-SoHAnimSegment1781->setUSE(QString("hanim_r_tarsal_proximal_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1781);
-
-SoHAnimSegment* SoHAnimSegment1782 = new SoHAnimSegment();
-SoHAnimSegment1782->setUSE(QString("hanim_r_tarsal_middle_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1782);
-
-SoHAnimSegment* SoHAnimSegment1783 = new SoHAnimSegment();
-SoHAnimSegment1783->setUSE(QString("hanim_r_cuneiform_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1783);
-
-SoHAnimSegment* SoHAnimSegment1784 = new SoHAnimSegment();
-SoHAnimSegment1784->setUSE(QString("hanim_r_metatarsal_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1784);
-
-SoHAnimSegment* SoHAnimSegment1785 = new SoHAnimSegment();
-SoHAnimSegment1785->setUSE(QString("hanim_r_tarsal_proximal_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1785);
-
-SoHAnimSegment* SoHAnimSegment1786 = new SoHAnimSegment();
-SoHAnimSegment1786->setUSE(QString("hanim_r_tarsal_middle_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1786);
-
-SoHAnimSegment* SoHAnimSegment1787 = new SoHAnimSegment();
-SoHAnimSegment1787->setUSE(QString("hanim_r_calcaneus"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1787);
-
-SoHAnimSegment* SoHAnimSegment1788 = new SoHAnimSegment();
-SoHAnimSegment1788->setUSE(QString("hanim_r_cuboid"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1788);
-
-SoHAnimSegment* SoHAnimSegment1789 = new SoHAnimSegment();
-SoHAnimSegment1789->setUSE(QString("hanim_r_metatarsal_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1789);
-
-SoHAnimSegment* SoHAnimSegment1790 = new SoHAnimSegment();
-SoHAnimSegment1790->setUSE(QString("hanim_r_tarsal_proximal_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1790);
-
-SoHAnimSegment* SoHAnimSegment1791 = new SoHAnimSegment();
-SoHAnimSegment1791->setUSE(QString("hanim_r_tarsal_middle_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1791);
-
-SoHAnimSegment* SoHAnimSegment1792 = new SoHAnimSegment();
-SoHAnimSegment1792->setUSE(QString("hanim_r_metatarsal_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1792);
-
-SoHAnimSegment* SoHAnimSegment1793 = new SoHAnimSegment();
-SoHAnimSegment1793->setUSE(QString("hanim_r_tarsal_proximal_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1793);
-
-SoHAnimSegment* SoHAnimSegment1794 = new SoHAnimSegment();
-SoHAnimSegment1794->setUSE(QString("hanim_r_tarsal_middle_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1794);
-
-SoHAnimSegment* SoHAnimSegment1795 = new SoHAnimSegment();
-SoHAnimSegment1795->setUSE(QString("hanim_l5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1795);
-
-SoHAnimSegment* SoHAnimSegment1796 = new SoHAnimSegment();
-SoHAnimSegment1796->setUSE(QString("hanim_l4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1796);
-
-SoHAnimSegment* SoHAnimSegment1797 = new SoHAnimSegment();
-SoHAnimSegment1797->setUSE(QString("hanim_l3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1797);
-
-SoHAnimSegment* SoHAnimSegment1798 = new SoHAnimSegment();
-SoHAnimSegment1798->setUSE(QString("hanim_l2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1798);
-
-SoHAnimSegment* SoHAnimSegment1799 = new SoHAnimSegment();
-SoHAnimSegment1799->setUSE(QString("hanim_l1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1799);
-
-SoHAnimSegment* SoHAnimSegment1800 = new SoHAnimSegment();
-SoHAnimSegment1800->setUSE(QString("hanim_t12"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1800);
-
-SoHAnimSegment* SoHAnimSegment1801 = new SoHAnimSegment();
-SoHAnimSegment1801->setUSE(QString("hanim_t11"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1801);
-
-SoHAnimSegment* SoHAnimSegment1802 = new SoHAnimSegment();
-SoHAnimSegment1802->setUSE(QString("hanim_t10"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1802);
-
-SoHAnimSegment* SoHAnimSegment1803 = new SoHAnimSegment();
-SoHAnimSegment1803->setUSE(QString("hanim_t9"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1803);
-
-SoHAnimSegment* SoHAnimSegment1804 = new SoHAnimSegment();
-SoHAnimSegment1804->setUSE(QString("hanim_t8"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1804);
-
-SoHAnimSegment* SoHAnimSegment1805 = new SoHAnimSegment();
-SoHAnimSegment1805->setUSE(QString("hanim_t7"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1805);
-
-SoHAnimSegment* SoHAnimSegment1806 = new SoHAnimSegment();
-SoHAnimSegment1806->setUSE(QString("hanim_t6"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1806);
-
-SoHAnimSegment* SoHAnimSegment1807 = new SoHAnimSegment();
-SoHAnimSegment1807->setUSE(QString("hanim_t5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1807);
-
-SoHAnimSegment* SoHAnimSegment1808 = new SoHAnimSegment();
-SoHAnimSegment1808->setUSE(QString("hanim_t4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1808);
-
-SoHAnimSegment* SoHAnimSegment1809 = new SoHAnimSegment();
-SoHAnimSegment1809->setUSE(QString("hanim_t3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1809);
-
-SoHAnimSegment* SoHAnimSegment1810 = new SoHAnimSegment();
-SoHAnimSegment1810->setUSE(QString("hanim_t2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1810);
-
-SoHAnimSegment* SoHAnimSegment1811 = new SoHAnimSegment();
-SoHAnimSegment1811->setUSE(QString("hanim_t1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1811);
-
-SoHAnimSegment* SoHAnimSegment1812 = new SoHAnimSegment();
-SoHAnimSegment1812->setUSE(QString("hanim_c7"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1812);
-
-SoHAnimSegment* SoHAnimSegment1813 = new SoHAnimSegment();
-SoHAnimSegment1813->setUSE(QString("hanim_c6"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1813);
-
-SoHAnimSegment* SoHAnimSegment1814 = new SoHAnimSegment();
-SoHAnimSegment1814->setUSE(QString("hanim_c5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1814);
-
-SoHAnimSegment* SoHAnimSegment1815 = new SoHAnimSegment();
-SoHAnimSegment1815->setUSE(QString("hanim_c4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1815);
-
-SoHAnimSegment* SoHAnimSegment1816 = new SoHAnimSegment();
-SoHAnimSegment1816->setUSE(QString("hanim_c3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1816);
-
-SoHAnimSegment* SoHAnimSegment1817 = new SoHAnimSegment();
-SoHAnimSegment1817->setUSE(QString("hanim_c2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1817);
-
-SoHAnimSegment* SoHAnimSegment1818 = new SoHAnimSegment();
-SoHAnimSegment1818->setUSE(QString("hanim_c1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1818);
-
-SoHAnimSegment* SoHAnimSegment1819 = new SoHAnimSegment();
-SoHAnimSegment1819->setUSE(QString("hanim_skull"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1819);
-
-SoHAnimSegment* SoHAnimSegment1820 = new SoHAnimSegment();
-SoHAnimSegment1820->setUSE(QString("hanim_l_clavicle"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1820);
-
-SoHAnimSegment* SoHAnimSegment1821 = new SoHAnimSegment();
-SoHAnimSegment1821->setUSE(QString("hanim_l_scapula"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1821);
-
-SoHAnimSegment* SoHAnimSegment1822 = new SoHAnimSegment();
-SoHAnimSegment1822->setUSE(QString("hanim_l_upperarm"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1822);
-
-SoHAnimSegment* SoHAnimSegment1823 = new SoHAnimSegment();
-SoHAnimSegment1823->setUSE(QString("hanim_l_forearm"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1823);
-
-SoHAnimSegment* SoHAnimSegment1824 = new SoHAnimSegment();
-SoHAnimSegment1824->setUSE(QString("hanim_l_carpal"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1824);
-
-SoHAnimSegment* SoHAnimSegment1825 = new SoHAnimSegment();
-SoHAnimSegment1825->setUSE(QString("hanim_l_trapezium"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1825);
-
-SoHAnimSegment* SoHAnimSegment1826 = new SoHAnimSegment();
-SoHAnimSegment1826->setUSE(QString("hanim_l_metacarpal_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1826);
-
-SoHAnimSegment* SoHAnimSegment1827 = new SoHAnimSegment();
-SoHAnimSegment1827->setUSE(QString("hanim_l_carpal_proximal_phalanx_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1827);
-
-SoHAnimSegment* SoHAnimSegment1828 = new SoHAnimSegment();
-SoHAnimSegment1828->setUSE(QString("hanim_l_trapezoid"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1828);
-
-SoHAnimSegment* SoHAnimSegment1829 = new SoHAnimSegment();
-SoHAnimSegment1829->setUSE(QString("hanim_l_metacarpal_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1829);
-
-SoHAnimSegment* SoHAnimSegment1830 = new SoHAnimSegment();
-SoHAnimSegment1830->setUSE(QString("hanim_l_carpal_proximal_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1830);
-
-SoHAnimSegment* SoHAnimSegment1831 = new SoHAnimSegment();
-SoHAnimSegment1831->setUSE(QString("hanim_l_carpal_middle_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1831);
-
-SoHAnimSegment* SoHAnimSegment1832 = new SoHAnimSegment();
-SoHAnimSegment1832->setUSE(QString("hanim_l_capitate"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1832);
-
-SoHAnimSegment* SoHAnimSegment1833 = new SoHAnimSegment();
-SoHAnimSegment1833->setUSE(QString("hanim_l_metacarpal_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1833);
-
-SoHAnimSegment* SoHAnimSegment1834 = new SoHAnimSegment();
-SoHAnimSegment1834->setUSE(QString("hanim_l_carpal_proximal_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1834);
-
-SoHAnimSegment* SoHAnimSegment1835 = new SoHAnimSegment();
-SoHAnimSegment1835->setUSE(QString("hanim_l_carpal_middle_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1835);
-
-SoHAnimSegment* SoHAnimSegment1836 = new SoHAnimSegment();
-SoHAnimSegment1836->setUSE(QString("hanim_l_hamate"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1836);
-
-SoHAnimSegment* SoHAnimSegment1837 = new SoHAnimSegment();
-SoHAnimSegment1837->setUSE(QString("hanim_l_metacarpal_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1837);
-
-SoHAnimSegment* SoHAnimSegment1838 = new SoHAnimSegment();
-SoHAnimSegment1838->setUSE(QString("hanim_l_carpal_proximal_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1838);
-
-SoHAnimSegment* SoHAnimSegment1839 = new SoHAnimSegment();
-SoHAnimSegment1839->setUSE(QString("hanim_l_carpal_middle_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1839);
-
-SoHAnimSegment* SoHAnimSegment1840 = new SoHAnimSegment();
-SoHAnimSegment1840->setUSE(QString("hanim_l_metacarpal_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1840);
-
-SoHAnimSegment* SoHAnimSegment1841 = new SoHAnimSegment();
-SoHAnimSegment1841->setUSE(QString("hanim_l_carpal_proximal_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1841);
-
-SoHAnimSegment* SoHAnimSegment1842 = new SoHAnimSegment();
-SoHAnimSegment1842->setUSE(QString("hanim_l_carpal_middle_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1842);
-
-SoHAnimSegment* SoHAnimSegment1843 = new SoHAnimSegment();
-SoHAnimSegment1843->setUSE(QString("hanim_r_clavicle"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1843);
-
-SoHAnimSegment* SoHAnimSegment1844 = new SoHAnimSegment();
-SoHAnimSegment1844->setUSE(QString("hanim_r_scapula"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1844);
-
-SoHAnimSegment* SoHAnimSegment1845 = new SoHAnimSegment();
-SoHAnimSegment1845->setUSE(QString("hanim_r_upperarm"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1845);
-
-SoHAnimSegment* SoHAnimSegment1846 = new SoHAnimSegment();
-SoHAnimSegment1846->setUSE(QString("hanim_r_forearm"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1846);
-
-SoHAnimSegment* SoHAnimSegment1847 = new SoHAnimSegment();
-SoHAnimSegment1847->setUSE(QString("hanim_r_carpal"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1847);
-
-SoHAnimSegment* SoHAnimSegment1848 = new SoHAnimSegment();
-SoHAnimSegment1848->setUSE(QString("hanim_r_trapezium"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1848);
-
-SoHAnimSegment* SoHAnimSegment1849 = new SoHAnimSegment();
-SoHAnimSegment1849->setUSE(QString("hanim_r_metacarpal_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1849);
-
-SoHAnimSegment* SoHAnimSegment1850 = new SoHAnimSegment();
-SoHAnimSegment1850->setUSE(QString("hanim_r_carpal_proximal_phalanx_1"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1850);
-
-SoHAnimSegment* SoHAnimSegment1851 = new SoHAnimSegment();
-SoHAnimSegment1851->setUSE(QString("hanim_r_trapezoid"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1851);
-
-SoHAnimSegment* SoHAnimSegment1852 = new SoHAnimSegment();
-SoHAnimSegment1852->setUSE(QString("hanim_r_metacarpal_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1852);
-
-SoHAnimSegment* SoHAnimSegment1853 = new SoHAnimSegment();
-SoHAnimSegment1853->setUSE(QString("hanim_r_carpal_proximal_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1853);
-
-SoHAnimSegment* SoHAnimSegment1854 = new SoHAnimSegment();
-SoHAnimSegment1854->setUSE(QString("hanim_r_carpal_middle_phalanx_2"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1854);
-
-SoHAnimSegment* SoHAnimSegment1855 = new SoHAnimSegment();
-SoHAnimSegment1855->setUSE(QString("hanim_r_capitate"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1855);
-
-SoHAnimSegment* SoHAnimSegment1856 = new SoHAnimSegment();
-SoHAnimSegment1856->setUSE(QString("hanim_r_metacarpal_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1856);
-
-SoHAnimSegment* SoHAnimSegment1857 = new SoHAnimSegment();
-SoHAnimSegment1857->setUSE(QString("hanim_r_carpal_proximal_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1857);
-
-SoHAnimSegment* SoHAnimSegment1858 = new SoHAnimSegment();
-SoHAnimSegment1858->setUSE(QString("hanim_r_carpal_middle_phalanx_3"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1858);
-
-SoHAnimSegment* SoHAnimSegment1859 = new SoHAnimSegment();
-SoHAnimSegment1859->setUSE(QString("hanim_r_hamate"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1859);
-
-SoHAnimSegment* SoHAnimSegment1860 = new SoHAnimSegment();
-SoHAnimSegment1860->setUSE(QString("hanim_r_metacarpal_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1860);
-
-SoHAnimSegment* SoHAnimSegment1861 = new SoHAnimSegment();
-SoHAnimSegment1861->setUSE(QString("hanim_r_carpal_proximal_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1861);
-
-SoHAnimSegment* SoHAnimSegment1862 = new SoHAnimSegment();
-SoHAnimSegment1862->setUSE(QString("hanim_r_carpal_middle_phalanx_4"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1862);
-
-SoHAnimSegment* SoHAnimSegment1863 = new SoHAnimSegment();
-SoHAnimSegment1863->setUSE(QString("hanim_r_metacarpal_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1863);
-
-SoHAnimSegment* SoHAnimSegment1864 = new SoHAnimSegment();
-SoHAnimSegment1864->setUSE(QString("hanim_r_carpal_proximal_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1864);
-
-SoHAnimSegment* SoHAnimSegment1865 = new SoHAnimSegment();
-SoHAnimSegment1865->setUSE(QString("hanim_r_carpal_middle_phalanx_5"));
-SoHAnimHumanoid43->setSegments(*SoHAnimSegment1865);
-
-SoHAnimSite* SoHAnimSite1866 = new SoHAnimSite();
-SoHAnimSite1866->setUSE(QString("hanim_buttocks_standing_wall_contact_point_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1866);
-
-SoHAnimSite* SoHAnimSite1867 = new SoHAnimSite();
-SoHAnimSite1867->setUSE(QString("hanim_crotch_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1867);
-
-SoHAnimSite* SoHAnimSite1868 = new SoHAnimSite();
-SoHAnimSite1868->setUSE(QString("hanim_l_asis_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1868);
-
-SoHAnimSite* SoHAnimSite1869 = new SoHAnimSite();
-SoHAnimSite1869->setUSE(QString("hanim_l_iliocristale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1869);
-
-SoHAnimSite* SoHAnimSite1870 = new SoHAnimSite();
-SoHAnimSite1870->setUSE(QString("hanim_l_psis_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1870);
-
-SoHAnimSite* SoHAnimSite1871 = new SoHAnimSite();
-SoHAnimSite1871->setUSE(QString("hanim_l_trochanterion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1871);
-
-SoHAnimSite* SoHAnimSite1872 = new SoHAnimSite();
-SoHAnimSite1872->setUSE(QString("hanim_r_asis_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1872);
-
-SoHAnimSite* SoHAnimSite1873 = new SoHAnimSite();
-SoHAnimSite1873->setUSE(QString("hanim_r_iliocristale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1873);
-
-SoHAnimSite* SoHAnimSite1874 = new SoHAnimSite();
-SoHAnimSite1874->setUSE(QString("hanim_r_psis_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1874);
-
-SoHAnimSite* SoHAnimSite1875 = new SoHAnimSite();
-SoHAnimSite1875->setUSE(QString("hanim_r_trochanterion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1875);
-
-SoHAnimSite* SoHAnimSite1876 = new SoHAnimSite();
-SoHAnimSite1876->setUSE(QString("hanim_navel_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1876);
-
-SoHAnimSite* SoHAnimSite1877 = new SoHAnimSite();
-SoHAnimSite1877->setUSE(QString("hanim_waist_preferred_anterior_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1877);
-
-SoHAnimSite* SoHAnimSite1878 = new SoHAnimSite();
-SoHAnimSite1878->setUSE(QString("hanim_waist_preferred_posterior_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1878);
-
-SoHAnimSite* SoHAnimSite1879 = new SoHAnimSite();
-SoHAnimSite1879->setUSE(QString("hanim_l_femoral_lateral_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1879);
-
-SoHAnimSite* SoHAnimSite1880 = new SoHAnimSite();
-SoHAnimSite1880->setUSE(QString("hanim_l_femoral_medial_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1880);
-
-SoHAnimSite* SoHAnimSite1881 = new SoHAnimSite();
-SoHAnimSite1881->setUSE(QString("hanim_l_knee_crease_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1881);
-
-SoHAnimSite* SoHAnimSite1882 = new SoHAnimSite();
-SoHAnimSite1882->setUSE(QString("hanim_l_suprapatella_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1882);
-
-SoHAnimSite* SoHAnimSite1883 = new SoHAnimSite();
-SoHAnimSite1883->setUSE(QString("hanim_r_femoral_lateral_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1883);
-
-SoHAnimSite* SoHAnimSite1884 = new SoHAnimSite();
-SoHAnimSite1884->setUSE(QString("hanim_r_femoral_medial_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1884);
-
-SoHAnimSite* SoHAnimSite1885 = new SoHAnimSite();
-SoHAnimSite1885->setUSE(QString("hanim_r_knee_crease_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1885);
-
-SoHAnimSite* SoHAnimSite1886 = new SoHAnimSite();
-SoHAnimSite1886->setUSE(QString("hanim_r_suprapatella_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1886);
-
-SoHAnimSite* SoHAnimSite1887 = new SoHAnimSite();
-SoHAnimSite1887->setUSE(QString("hanim_l_lateral_malleolus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1887);
-
-SoHAnimSite* SoHAnimSite1888 = new SoHAnimSite();
-SoHAnimSite1888->setUSE(QString("hanim_l_medial_malleolus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1888);
-
-SoHAnimSite* SoHAnimSite1889 = new SoHAnimSite();
-SoHAnimSite1889->setUSE(QString("hanim_l_tibiale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1889);
-
-SoHAnimSite* SoHAnimSite1890 = new SoHAnimSite();
-SoHAnimSite1890->setUSE(QString("hanim_l_calcaneus_posterior_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1890);
-
-SoHAnimSite* SoHAnimSite1891 = new SoHAnimSite();
-SoHAnimSite1891->setUSE(QString("hanim_l_sphyrion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1891);
-
-SoHAnimSite* SoHAnimSite1892 = new SoHAnimSite();
-SoHAnimSite1892->setUSE(QString("hanim_l_metatarsal_phalanx_1_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1892);
-
-SoHAnimSite* SoHAnimSite1893 = new SoHAnimSite();
-SoHAnimSite1893->setUSE(QString("hanim_l_tarsal_distal_phalanx_1_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1893);
-
-SoHAnimSite* SoHAnimSite1894 = new SoHAnimSite();
-SoHAnimSite1894->setUSE(QString("hanim_l_tarsal_distal_phalanx_2_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1894);
-
-SoHAnimSite* SoHAnimSite1895 = new SoHAnimSite();
-SoHAnimSite1895->setUSE(QString("hanim_l_tarsal_distal_phalanx_3_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1895);
-
-SoHAnimSite* SoHAnimSite1896 = new SoHAnimSite();
-SoHAnimSite1896->setUSE(QString("hanim_l_tarsal_distal_phalanx_4_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1896);
-
-SoHAnimSite* SoHAnimSite1897 = new SoHAnimSite();
-SoHAnimSite1897->setUSE(QString("hanim_l_metatarsal_phalanx_5_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1897);
-
-SoHAnimSite* SoHAnimSite1898 = new SoHAnimSite();
-SoHAnimSite1898->setUSE(QString("hanim_l_tarsal_distal_phalanx_5_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1898);
-
-SoHAnimSite* SoHAnimSite1899 = new SoHAnimSite();
-SoHAnimSite1899->setUSE(QString("hanim_r_lateral_malleolus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1899);
-
-SoHAnimSite* SoHAnimSite1900 = new SoHAnimSite();
-SoHAnimSite1900->setUSE(QString("hanim_r_medial_malleolus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1900);
-
-SoHAnimSite* SoHAnimSite1901 = new SoHAnimSite();
-SoHAnimSite1901->setUSE(QString("hanim_r_tibiale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1901);
-
-SoHAnimSite* SoHAnimSite1902 = new SoHAnimSite();
-SoHAnimSite1902->setUSE(QString("hanim_r_calcaneus_posterior_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1902);
-
-SoHAnimSite* SoHAnimSite1903 = new SoHAnimSite();
-SoHAnimSite1903->setUSE(QString("hanim_r_sphyrion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1903);
-
-SoHAnimSite* SoHAnimSite1904 = new SoHAnimSite();
-SoHAnimSite1904->setUSE(QString("hanim_r_metatarsal_phalanx_1_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1904);
-
-SoHAnimSite* SoHAnimSite1905 = new SoHAnimSite();
-SoHAnimSite1905->setUSE(QString("hanim_r_tarsal_distal_phalanx_1_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1905);
-
-SoHAnimSite* SoHAnimSite1906 = new SoHAnimSite();
-SoHAnimSite1906->setUSE(QString("hanim_r_tarsal_distal_phalanx_2_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1906);
-
-SoHAnimSite* SoHAnimSite1907 = new SoHAnimSite();
-SoHAnimSite1907->setUSE(QString("hanim_r_tarsal_distal_phalanx_3_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1907);
-
-SoHAnimSite* SoHAnimSite1908 = new SoHAnimSite();
-SoHAnimSite1908->setUSE(QString("hanim_r_tarsal_distal_phalanx_4_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1908);
-
-SoHAnimSite* SoHAnimSite1909 = new SoHAnimSite();
-SoHAnimSite1909->setUSE(QString("hanim_r_metatarsal_phalanx_5_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1909);
-
-SoHAnimSite* SoHAnimSite1910 = new SoHAnimSite();
-SoHAnimSite1910->setUSE(QString("hanim_r_tarsal_distal_phalanx_5_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1910);
-
-SoHAnimSite* SoHAnimSite1911 = new SoHAnimSite();
-SoHAnimSite1911->setUSE(QString("hanim_l_rib10_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1911);
-
-SoHAnimSite* SoHAnimSite1912 = new SoHAnimSite();
-SoHAnimSite1912->setUSE(QString("hanim_r_rib10_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1912);
-
-SoHAnimSite* SoHAnimSite1913 = new SoHAnimSite();
-SoHAnimSite1913->setUSE(QString("hanim_spine_2_middle_back_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1913);
-
-SoHAnimSite* SoHAnimSite1914 = new SoHAnimSite();
-SoHAnimSite1914->setUSE(QString("hanim_substernale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1914);
-
-SoHAnimSite* SoHAnimSite1915 = new SoHAnimSite();
-SoHAnimSite1915->setUSE(QString("hanim_l_thelion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1915);
-
-SoHAnimSite* SoHAnimSite1916 = new SoHAnimSite();
-SoHAnimSite1916->setUSE(QString("hanim_r_thelion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1916);
-
-SoHAnimSite* SoHAnimSite1917 = new SoHAnimSite();
-SoHAnimSite1917->setUSE(QString("hanim_l_chest_midsagittal_plane_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1917);
-
-SoHAnimSite* SoHAnimSite1918 = new SoHAnimSite();
-SoHAnimSite1918->setUSE(QString("hanim_mesosternale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1918);
-
-SoHAnimSite* SoHAnimSite1919 = new SoHAnimSite();
-SoHAnimSite1919->setUSE(QString("hanim_r_chest_midsagittal_plane_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1919);
-
-SoHAnimSite* SoHAnimSite1920 = new SoHAnimSite();
-SoHAnimSite1920->setUSE(QString("hanim_rear_center_midsagittal_plane_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1920);
-
-SoHAnimSite* SoHAnimSite1921 = new SoHAnimSite();
-SoHAnimSite1921->setUSE(QString("hanim_spine_1_middle_back_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1921);
-
-SoHAnimSite* SoHAnimSite1922 = new SoHAnimSite();
-SoHAnimSite1922->setUSE(QString("hanim_cervicale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1922);
-
-SoHAnimSite* SoHAnimSite1923 = new SoHAnimSite();
-SoHAnimSite1923->setUSE(QString("hanim_suprasternale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1923);
-
-SoHAnimSite* SoHAnimSite1924 = new SoHAnimSite();
-SoHAnimSite1924->setUSE(QString("hanim_l_neck_base_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1924);
-
-SoHAnimSite* SoHAnimSite1925 = new SoHAnimSite();
-SoHAnimSite1925->setUSE(QString("hanim_r_neck_base_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1925);
-
-SoHAnimSite* SoHAnimSite1926 = new SoHAnimSite();
-SoHAnimSite1926->setUSE(QString("hanim_l_acromion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1926);
-
-SoHAnimSite* SoHAnimSite1927 = new SoHAnimSite();
-SoHAnimSite1927->setUSE(QString("hanim_l_axilla_distal_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1927);
-
-SoHAnimSite* SoHAnimSite1928 = new SoHAnimSite();
-SoHAnimSite1928->setUSE(QString("hanim_l_axilla_posterior_folds_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1928);
-
-SoHAnimSite* SoHAnimSite1929 = new SoHAnimSite();
-SoHAnimSite1929->setUSE(QString("hanim_l_axilla_proximal_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1929);
-
-SoHAnimSite* SoHAnimSite1930 = new SoHAnimSite();
-SoHAnimSite1930->setUSE(QString("hanim_l_clavicale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1930);
-
-SoHAnimSite* SoHAnimSite1931 = new SoHAnimSite();
-SoHAnimSite1931->setUSE(QString("hanim_r_acromion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1931);
-
-SoHAnimSite* SoHAnimSite1932 = new SoHAnimSite();
-SoHAnimSite1932->setUSE(QString("hanim_r_axilla_distal_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1932);
-
-SoHAnimSite* SoHAnimSite1933 = new SoHAnimSite();
-SoHAnimSite1933->setUSE(QString("hanim_r_axilla_posterior_folds_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1933);
-
-SoHAnimSite* SoHAnimSite1934 = new SoHAnimSite();
-SoHAnimSite1934->setUSE(QString("hanim_r_axilla_proximal_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1934);
-
-SoHAnimSite* SoHAnimSite1935 = new SoHAnimSite();
-SoHAnimSite1935->setUSE(QString("hanim_r_clavicale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1935);
-
-SoHAnimSite* SoHAnimSite1936 = new SoHAnimSite();
-SoHAnimSite1936->setUSE(QString("hanim_adams_apple_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1936);
-
-SoHAnimSite* SoHAnimSite1937 = new SoHAnimSite();
-SoHAnimSite1937->setUSE(QString("hanim_glabella_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1937);
-
-SoHAnimSite* SoHAnimSite1938 = new SoHAnimSite();
-SoHAnimSite1938->setUSE(QString("hanim_l_ectocanthus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1938);
-
-SoHAnimSite* SoHAnimSite1939 = new SoHAnimSite();
-SoHAnimSite1939->setUSE(QString("hanim_l_infraorbitale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1939);
-
-SoHAnimSite* SoHAnimSite1940 = new SoHAnimSite();
-SoHAnimSite1940->setUSE(QString("hanim_l_tragion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1940);
-
-SoHAnimSite* SoHAnimSite1941 = new SoHAnimSite();
-SoHAnimSite1941->setUSE(QString("hanim_nuchale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1941);
-
-SoHAnimSite* SoHAnimSite1942 = new SoHAnimSite();
-SoHAnimSite1942->setUSE(QString("hanim_opisthocranion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1942);
-
-SoHAnimSite* SoHAnimSite1943 = new SoHAnimSite();
-SoHAnimSite1943->setUSE(QString("hanim_r_ectocanthus_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1943);
-
-SoHAnimSite* SoHAnimSite1944 = new SoHAnimSite();
-SoHAnimSite1944->setUSE(QString("hanim_r_infraorbitale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1944);
-
-SoHAnimSite* SoHAnimSite1945 = new SoHAnimSite();
-SoHAnimSite1945->setUSE(QString("hanim_r_tragion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1945);
-
-SoHAnimSite* SoHAnimSite1946 = new SoHAnimSite();
-SoHAnimSite1946->setUSE(QString("hanim_sellion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1946);
-
-SoHAnimSite* SoHAnimSite1947 = new SoHAnimSite();
-SoHAnimSite1947->setUSE(QString("hanim_skull_vertex_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1947);
-
-SoHAnimSite* SoHAnimSite1948 = new SoHAnimSite();
-SoHAnimSite1948->setUSE(QString("hanim_l_gonion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1948);
-
-SoHAnimSite* SoHAnimSite1949 = new SoHAnimSite();
-SoHAnimSite1949->setUSE(QString("hanim_menton_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1949);
-
-SoHAnimSite* SoHAnimSite1950 = new SoHAnimSite();
-SoHAnimSite1950->setUSE(QString("hanim_r_gonion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1950);
-
-SoHAnimSite* SoHAnimSite1951 = new SoHAnimSite();
-SoHAnimSite1951->setUSE(QString("hanim_supramenton_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1951);
-
-SoHAnimSite* SoHAnimSite1952 = new SoHAnimSite();
-SoHAnimSite1952->setUSE(QString("hanim_l_bideltoid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1952);
-
-SoHAnimSite* SoHAnimSite1953 = new SoHAnimSite();
-SoHAnimSite1953->setUSE(QString("hanim_l_humeral_lateral_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1953);
-
-SoHAnimSite* SoHAnimSite1954 = new SoHAnimSite();
-SoHAnimSite1954->setUSE(QString("hanim_l_humeral_medial_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1954);
-
-SoHAnimSite* SoHAnimSite1955 = new SoHAnimSite();
-SoHAnimSite1955->setUSE(QString("hanim_l_olecranon_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1955);
-
-SoHAnimSite* SoHAnimSite1956 = new SoHAnimSite();
-SoHAnimSite1956->setUSE(QString("hanim_l_radial_styloid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1956);
-
-SoHAnimSite* SoHAnimSite1957 = new SoHAnimSite();
-SoHAnimSite1957->setUSE(QString("hanim_l_radiale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1957);
-
-SoHAnimSite* SoHAnimSite1958 = new SoHAnimSite();
-SoHAnimSite1958->setUSE(QString("hanim_l_ulnar_styloid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1958);
-
-SoHAnimSite* SoHAnimSite1959 = new SoHAnimSite();
-SoHAnimSite1959->setUSE(QString("hanim_l_carpal_distal_phalanx_1_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1959);
-
-SoHAnimSite* SoHAnimSite1960 = new SoHAnimSite();
-SoHAnimSite1960->setUSE(QString("hanim_l_metacarpal_phalanx_2_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1960);
-
-SoHAnimSite* SoHAnimSite1961 = new SoHAnimSite();
-SoHAnimSite1961->setUSE(QString("hanim_l_carpal_distal_phalanx_2_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1961);
-
-SoHAnimSite* SoHAnimSite1962 = new SoHAnimSite();
-SoHAnimSite1962->setUSE(QString("hanim_l_dactylion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1962);
-
-SoHAnimSite* SoHAnimSite1963 = new SoHAnimSite();
-SoHAnimSite1963->setUSE(QString("hanim_l_metacarpal_phalanx_3_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1963);
-
-SoHAnimSite* SoHAnimSite1964 = new SoHAnimSite();
-SoHAnimSite1964->setUSE(QString("hanim_l_carpal_distal_phalanx_3_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1964);
-
-SoHAnimSite* SoHAnimSite1965 = new SoHAnimSite();
-SoHAnimSite1965->setUSE(QString("hanim_l_metacarpal_phalanx_5_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1965);
-
-SoHAnimSite* SoHAnimSite1966 = new SoHAnimSite();
-SoHAnimSite1966->setUSE(QString("hanim_l_carpal_distal_phalanx_4_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1966);
-
-SoHAnimSite* SoHAnimSite1967 = new SoHAnimSite();
-SoHAnimSite1967->setUSE(QString("hanim_l_carpal_distal_phalanx_5_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1967);
-
-SoHAnimSite* SoHAnimSite1968 = new SoHAnimSite();
-SoHAnimSite1968->setUSE(QString("hanim_r_bideltoid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1968);
-
-SoHAnimSite* SoHAnimSite1969 = new SoHAnimSite();
-SoHAnimSite1969->setUSE(QString("hanim_r_humeral_lateral_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1969);
-
-SoHAnimSite* SoHAnimSite1970 = new SoHAnimSite();
-SoHAnimSite1970->setUSE(QString("hanim_r_humeral_medial_epicondyles_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1970);
-
-SoHAnimSite* SoHAnimSite1971 = new SoHAnimSite();
-SoHAnimSite1971->setUSE(QString("hanim_r_olecranon_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1971);
-
-SoHAnimSite* SoHAnimSite1972 = new SoHAnimSite();
-SoHAnimSite1972->setUSE(QString("hanim_r_radial_styloid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1972);
-
-SoHAnimSite* SoHAnimSite1973 = new SoHAnimSite();
-SoHAnimSite1973->setUSE(QString("hanim_r_radiale_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1973);
-
-SoHAnimSite* SoHAnimSite1974 = new SoHAnimSite();
-SoHAnimSite1974->setUSE(QString("hanim_r_ulnar_styloid_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1974);
-
-SoHAnimSite* SoHAnimSite1975 = new SoHAnimSite();
-SoHAnimSite1975->setUSE(QString("hanim_r_carpal_distal_phalanx_1_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1975);
-
-SoHAnimSite* SoHAnimSite1976 = new SoHAnimSite();
-SoHAnimSite1976->setUSE(QString("hanim_r_metacarpal_phalanx_2_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1976);
-
-SoHAnimSite* SoHAnimSite1977 = new SoHAnimSite();
-SoHAnimSite1977->setUSE(QString("hanim_r_carpal_distal_phalanx_2_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1977);
-
-SoHAnimSite* SoHAnimSite1978 = new SoHAnimSite();
-SoHAnimSite1978->setUSE(QString("hanim_r_dactylion_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1978);
-
-SoHAnimSite* SoHAnimSite1979 = new SoHAnimSite();
-SoHAnimSite1979->setUSE(QString("hanim_r_metacarpal_phalanx_3_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1979);
-
-SoHAnimSite* SoHAnimSite1980 = new SoHAnimSite();
-SoHAnimSite1980->setUSE(QString("hanim_r_carpal_distal_phalanx_3_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1980);
-
-SoHAnimSite* SoHAnimSite1981 = new SoHAnimSite();
-SoHAnimSite1981->setUSE(QString("hanim_r_metacarpal_phalanx_5_pt"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1981);
-
-SoHAnimSite* SoHAnimSite1982 = new SoHAnimSite();
-SoHAnimSite1982->setUSE(QString("hanim_r_carpal_distal_phalanx_4_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1982);
-
-SoHAnimSite* SoHAnimSite1983 = new SoHAnimSite();
-SoHAnimSite1983->setUSE(QString("hanim_r_carpal_distal_phalanx_5_tip"));
-SoHAnimHumanoid43->setSites(*SoHAnimSite1983);
 
 SoNode11->addChild(*SoHAnimHumanoid43);
 

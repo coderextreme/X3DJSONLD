@@ -17,7 +17,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
-X3D0.setVersion(CString("4.0"));
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 //<component name='Shape' level='4'></component>
 component& component2 =  component();

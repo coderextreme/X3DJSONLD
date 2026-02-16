@@ -159,118 +159,99 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
     .addMeta(new meta().setName(meta.NAME_GENERATOR  ).setContent("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"))
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("../license.html")))
   .setScene(new Scene()
-    .addComments(new String[] {" ",
-"https://www.web3d.org/documents/specifications/19774/V2.0/index.html"})
-    .addComments(new String[] {" ",
-"      0 0 0 at floor between feet, ",
-"      default I pose (relaxed attention) ",
-"      model gaze toward +Z, ",
-"      +x to model left, +y up, ",
-"      right-hand rule. "})
-    .addComments(new String[] {" Jin loa4 v2 1:1 Only Landmarks ",
-"",
-"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4",
-"with v2 Site surface feature point landmarks",
-"https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html",
-"",
-"The first part of this x3d xml user code listing ",
-"includes definitions for the collection of ",
-"Shapes that will be used to show the ",
-"Joint center landmarks with connecting lines  ",
-"to show the skeleton Joint hierarchy, and the ",
-"surface feature Site landmarks with lines ",
-"showing the Joints which control their basic motions.  ",
-"  ",
-"The skeleton structure user code is then. ",
-"  ",
-"    example: not up to date since dropping segment geometry",
-"     <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' ",
-"       containerField='skeleton' ",
-"       center='0 0.826 -0.016'>",
-"       <HAnimSegment DEF='hanim_sacrum' name='sacrum'>",
-"         <Shape USE='JointMarker'/>",
-"         <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' ",
-"           translation='0.05 0.84 -0.11'>",
-"           <Transform USE='l_psis_pt_SiteShape'/>",
-"         </HAnimSite>",
-"        </HAnimSegment>",
-"         ... entire skeleton hierarchy ...",
-"     </HAnimJoint>",
-"",
-"Please Run the example. It generalllystarts with Kick2. ",
-"Select any other Action from the menu.  ",
-"    ",
-"Animations for Pitch1, Yaw1, and Roll1 show basic ",
-"operation by animation of each Joint of the skeleton ",
-"that contains one or more Site surface feature landmarks. ",
-"A colored sphere marker identifies a V2 Site object. ",
-"  ",
-"The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected ",
-"from existing x3d HAnim archived example animations. ",
-"All these need some work to show full loa4 articulation ",
-"and the advantages of this standard skeleton hierarchy.  ",
-"   ",
-"Contents as follows:",
-" SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0",
-" HAnimLandmarks - set of markers used to show landmarks of the model:",
-"  Joint Shape ",
-"  Joint connections",
-"  Site Shape ",
-"  Site Connections",
-" ",
-" AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. ",
-" JointLandmarksAndJointConnections - DEF user code for Joint center location markers ",
-"   and skeleton connection hierarchy. ",
-" SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry ",
-"   and Site location markers and Site connections.",
-"",
-" DefaultAnimation_loa4  Default I pose All Joints = 0 0 1 0",
-" TestAnimation_loa4     Modify this set to experiment ",
-" PitchAnimation_loa4    Example x-axis rotations",
-" YawAnimation_loa4      Example y-axis rotations",
-" RollAnimation_loa4     Example z-axis rotations",
-" WalkAnimation_loa4     Example Walk animation",
-" RunAnimation_loa4      Example Run animnation ",
-" JumpAnimation_loa4     Example Jump animation ",
-" KickAnimation_loa4     Example Kick animation ",
-"  Demo Johncan tbd",
-" TimerControls          Selection of timer for animation"})
-    .addComments(new String[] {" Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing ",
-" ",
-"0.02 - 0.08       root translation ",
-"0.08 - 0.1        root rotation",
-"0.2  - 0.3        sacro ",
-"0.25 - 0.75       eyeball",
-"0.6 - 0.65        hip",
-"0.65 0.70         knee ",
-"0.70 - 0.74       talocrural ",
-"                   talocalcaneonavicular  (1 2 3)",
-"                   calcaneocuboid         (4 5)",
-"                    transversetarsal      (4 5)",
-"                      cuneonavicular      (1 2 3)",
-"                       tarsometatarsal    (1 2 3 4 5)",
-"                        metatarsophalangeal       (1 2 3 4 5)",
-"                         tarsal_interphalangeal   (1) ",
-"                         tarsal_proximal_interphalangeal   (2 3 4 5) ",
-"                          tarsal_distal_interphalangeal    (2 3 4 5)",
-"",
-"",
-"",
-"0.3 - 0.5         vl5 ",
-"0.6   0.6375      vl2 ",
-"0.6375 - 0.6875   vt10 ",
-"0.6875 - 0.725    vt9",
-"0.725 - 0.7875    vt5",
-"0.7875 - 0.825    vt1",
-"0.825 - 0.8625    vc7",
-"0.8625 - 0.9      vc2",
-"0.9 - 0.9985      skullbase",
-"0.9 - 0.915       sterno",
-"0.915 - 0.93      acrom ",
-"0.93 - 0.945      shoulder",
-"0.945 - 0.96      elbow ",
-"0.96 - 0.98       radio",
-"0.98 0.985        angeal_1"})
+    .addComments(" https://www.web3d.org/documents/specifications/19774/V2.0/index.html ")
+    .addComments(" 0 0 0 at floor between feet, ")
+    .addComments(" default I pose (relaxed attention) ")
+    .addComments(" model gaze toward +Z, ")
+    .addComments(" +x to model left, +y up, ")
+    .addComments(" right-hand rule. ")
+    .addComments(" Jin loa4 v2 1:1 Only Landmarks ")
+    .addComments(" https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/concepts.html#BasicSetJointHierarchy4 ")
+    .addComments(" with v2 Site surface feature point landmarks ")
+    .addComments(" https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/FeaturePoints.html ")
+    .addComments(" The first part of this x3d xml user code listing ")
+    .addComments(" includes definitions for the collection of ")
+    .addComments(" Shapes that will be used to show the ")
+    .addComments(" Joint center landmarks with connecting lines ")
+    .addComments(" to show the skeleton Joint hierarchy, and the ")
+    .addComments(" surface feature Site landmarks with lines ")
+    .addComments(" showing the Joints which control their basic motions. ")
+    .addComments(" The skeleton structure user code is then. ")
+    .addComments(" example: not up to date since dropping segment geometry ")
+    .addComments(" <HAnimJoint DEF='hanim_humanoid_root' name='humanoid_root' containerField='skeleton' center='0 0.826 -0.016'> ")
+    .addComments(" <HAnimSegment DEF='hanim_sacrum' name='sacrum'> ")
+    .addComments(" <Shape USE='JointMarker'/> ")
+    .addComments(" <HAnimSite DEF='hanim_l_psis_pt' name='l_psis' translation='0.05 0.84 -0.11'> ")
+    .addComments(" <Transform USE='l_psis_pt_SiteShape'/> ")
+    .addComments(" </HAnimSite> ")
+    .addComments(" </HAnimSegment> ")
+    .addComments(" ... entire skeleton hierarchy ... ")
+    .addComments(" </HAnimJoint> ")
+    .addComments(" Please Run the example. It generalllystarts with Kick2. ")
+    .addComments(" Select any other Action from the menu. ")
+    .addComments(" Animations for Pitch1, Yaw1, and Roll1 show basic ")
+    .addComments(" operation by animation of each Joint of the skeleton ")
+    .addComments(" that contains one or more Site surface feature landmarks. ")
+    .addComments(" A colored sphere marker identifies a V2 Site object. ")
+    .addComments(" The Pitch2, Yaw2, Roll2, Jump1, and Jump2 were connected ")
+    .addComments(" from existing x3d HAnim archived example animations. ")
+    .addComments(" All these need some work to show full loa4 articulation ")
+    .addComments(" and the advantages of this standard skeleton hierarchy. ")
+    .addComments(" Contents as follows: ")
+    .addComments(" SceneViewpoints - set of scene viewpoint locations relative to the model 0 0 0 ")
+    .addComments(" HAnimLandmarks - set of markers used to show landmarks of the model: ")
+    .addComments(" Joint Shape ")
+    .addComments(" Joint connections ")
+    .addComments(" Site Shape ")
+    .addComments(" Site Connections ")
+    .addComments(" AnimationSelectMenu - hud selection plus a stationary rendering of DEFed assets. ")
+    .addComments(" JointLandmarksAndJointConnections - DEF user code for Joint center location markers ")
+    .addComments(" and skeleton connection hierarchy. ")
+    .addComments(" SurfaceAndSiteDefinitions - DEF user code for the various Shape nodes for surface geometry ")
+    .addComments(" and Site location markers and Site connections. ")
+    .addComments(" DefaultAnimation_loa4  Default I pose All Joints = 0 0 1 0 ")
+    .addComments(" TestAnimation_loa4     Modify this set to experiment ")
+    .addComments(" PitchAnimation_loa4    Example x-axis rotations ")
+    .addComments(" YawAnimation_loa4      Example y-axis rotations ")
+    .addComments(" RollAnimation_loa4     Example z-axis rotations ")
+    .addComments(" WalkAnimation_loa4     Example Walk animation ")
+    .addComments(" RunAnimation_loa4      Example Run animnation ")
+    .addComments(" JumpAnimation_loa4     Example Jump animation ")
+    .addComments(" KickAnimation_loa4     Example Kick animation ")
+    .addComments(" Demo Johncan tbd ")
+    .addComments(" TimerControls          Selection of timer for animation ")
+    .addComments(" Joint x=Pitch1 y=Yaw1 z=Roll1 rotation timing ")
+    .addComments(" 0.02 - 0.08       root translation ")
+    .addComments(" 0.08 - 0.1        root rotation ")
+    .addComments(" 0.2  - 0.3        sacro ")
+    .addComments(" 0.25 - 0.75       eyeball ")
+    .addComments(" 0.6 - 0.65        hip ")
+    .addComments(" 0.65 0.70         knee ")
+    .addComments(" 0.70 - 0.74       talocrural ")
+    .addComments(" talocalcaneonavicular  (1 2 3) ")
+    .addComments(" calcaneocuboid         (4 5) ")
+    .addComments(" transversetarsal      (4 5) ")
+    .addComments(" cuneonavicular      (1 2 3) ")
+    .addComments(" tarsometatarsal    (1 2 3 4 5) ")
+    .addComments(" metatarsophalangeal       (1 2 3 4 5) ")
+    .addComments(" tarsal_interphalangeal   (1) ")
+    .addComments(" tarsal_proximal_interphalangeal   (2 3 4 5) ")
+    .addComments(" tarsal_distal_interphalangeal    (2 3 4 5) ")
+    .addComments(" 0.3 - 0.5         vl5 ")
+    .addComments(" 0.6   0.6375      vl2 ")
+    .addComments(" 0.6375 - 0.6875   vt10 ")
+    .addComments(" 0.6875 - 0.725    vt9 ")
+    .addComments(" 0.725 - 0.7875    vt5 ")
+    .addComments(" 0.7875 - 0.825    vt1 ")
+    .addComments(" 0.825 - 0.8625    vc7 ")
+    .addComments(" 0.8625 - 0.9      vc2 ")
+    .addComments(" 0.9 - 0.9985      skullbase ")
+    .addComments(" 0.9 - 0.915       sterno ")
+    .addComments(" 0.915 - 0.93      acrom ")
+    .addComments(" 0.93 - 0.945      shoulder ")
+    .addComments(" 0.945 - 0.96      elbow ")
+    .addComments(" 0.96 - 0.98       radio ")
+    .addComments(" 0.98 0.985        angeal_1 ")
     .addChild(new WorldInfo().setTitle("11c Jin v2 LOA4 Level 1, Only Joints, Segments, Sites"))
     .addChild(new NavigationInfo().setHeadlight(false))
     .addChild(new Background("Background1").setGroundColor(new MFColor(new double[] {0.5,0.5,0.5})).setSkyColor(new MFColor(new double[] {0.4,0.4,0.4})))
@@ -302,7 +283,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
       .addChild(new Transform("JointLandmark")
         .addChild(new Shape("HAnimJointLandmark")
           .setGeometry(new Sphere().setRadius(0.0075))
-          .addComments("Box size='0.016 0.016 0.016'/")
+          .addComments(" Box size='0.016 0.016 0.016'/ ")
           .setAppearance(new Appearance()
             .setMaterial(new Material().setDiffuseColor(0.0,0.0,1.0).setEmissiveColor(0.0,0.0,1.0)))))
       .addChild(new Transform("JointShapeB")
@@ -429,12 +410,12 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
             .addChild(new Shape().setUSE("TextBacking"))))
         .addChild(new ROUTE().setFromNode("HudProx").setFromField("position_changed").setToNode("HudXform").setToField("set_translation"))
         .addChild(new ROUTE().setFromNode("HudProx").setFromField("orientation_changed").setToNode("HudXform").setToField("set_rotation"))
-        .addComments("    </Group>  HUD includes DEFs of shapes for Jin, Jin appears near Menu.  ")
-        .addComments(" Joint center and Joint hierarchy connections  ")
+        .addComments(" </Group>  HUD includes DEFs of shapes for Jin, Jin appears near Menu. ")
+        .addComments(" Joint center and Joint hierarchy connections ")
         .addChild(new Transform("AllShapesSitesConnections").setScale(0.1,0.1,0.1).setTranslation(-0.2,-0.1,-0.62)
           .addChild(new Group("JointLandmarksAndJointConnections")
-            .addComments(new String[] {" Following are defined here and used in the skeleton ",
-"to show Joint center location and connections between Joint centers. "})
+            .addComments(" Following are defined here and used in the skeleton ")
+            .addComments(" to show Joint center location and connections between Joint centers. ")
             .addChild(new Transform("humanoid_root_JointShape").setTranslation(0.0,0.77,0.0)
               .addChild(new TouchSensor().setDescription("HAnimJoint humanoid_root"))
               .addChild(new Shape().setUSE("HAnimJointShapeB")))
@@ -1084,8 +1065,8 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
               .setGeometry(new LineSet().setVertexCount(new int[] {2})
                 .setColor(new Color().setUSE("SkeletonColor"))
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,1.3126,-0.0154,0.0,1.3128,0.01538})))))
-            .addComments(new String[] {" Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/>",
-"  <Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape "})
+            .addComments(" Shape DEF='tongue_Segment'><LineSet vertexCount='2'><Color USE='SkeletonColor'/> ")
+            .addComments(" <Coordinate point='0 1.3126 -0.0154, 0 0 0'/></LineSet></Shape ")
             .addChild(new Transform("l_eyelid_joint_JointShape").setTranslation(0.0505,1.42425,0.03294)
               .addChild(new TouchSensor().setDescription("HAnimJoint l_eyelid_join"))
               .addChild(new Shape().setUSE("HAnimJointLandmark")))
@@ -1573,8 +1554,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                 .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18045,0.602325,-0.03697,-0.172,0.58,-0.039}))))))
           .addChild(new Group("SiteLandmarksAndJointConnections")
             .addChild(new Group("sacrum_Sites")
-              .addComments(new String[] {" ",
-"none"}))
+              .addComments(" none "))
             .addChild(new Group("pelvis_Sites")
               .addChild(new Transform("l_iliocristale_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_iliocristale_pt 33"))
@@ -1713,14 +1693,11 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0888,0.09545,-0.01045,0.09,0.03,-0.06}))))))
             .addChild(new Group("l_navicular_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_cuneiform_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metatarsal_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_proximal_phalanx_1_Sites")
               .addChild(new Transform("l_metatarsal_phalanx_1_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_metatarsal_phalanx_1_pt 55"))
@@ -1738,17 +1715,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.062,0.012,0.115,0.062,0.012,0.134}))))))
             .addChild(new Group("l_cuneiform_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metatarsal_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_proximal_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_middle_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_distal_phalanx_2_Sites")
               .addChild(new Transform("l_tarsal_distal_phalanx_2_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_2_tip 112"))
@@ -1758,17 +1731,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0843,0.00982,0.123435,0.08,0.016,0.14}))))))
             .addChild(new Group("l_cuneiform_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metatarsal_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_proximal_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_middle_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_distal_phalanx_3_Sites")
               .addChild(new Transform("l_tarsal_distal_phalanx_3_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_3_tip 113"))
@@ -1778,20 +1747,15 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1004,0.00983,0.1197,0.1,0.016,0.14}))))))
             .addChild(new Group("l_calcaneus_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_cuboid_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metatarsal_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_proximal_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_middle_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_distal_phalanx_4_Sites")
               .addChild(new Transform("l_tarsal_distal_phalanx_4_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_tarsal_distal_phalanx_4_tip 114"))
@@ -1801,11 +1765,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.11567,0.00936,0.11369,0.115,0.016,0.13}))))))
             .addChild(new Group("l_metatarsal_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_proximal_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_tarsal_middle_phalanx_5_Sites")
               .addChild(new Transform("l_metatarsal_phalanx_5_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_metatarsal_phalanx_5_pt 56"))
@@ -1889,14 +1851,11 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.08845,0.09544,-0.01045,-0.09,0.03,-0.06}))))))
             .addChild(new Group("r_navicular_Sites")
-              .addComments(new String[] {" ",
-"None"}))
+              .addComments(" None "))
             .addChild(new Group("r_cuneiform_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metatarsal_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_proximal_phalanx_1_Sites")
               .addChild(new Transform("r_metatarsal_phalanx_1_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_metatarsal_phalanx_1_pt 59"))
@@ -1914,17 +1873,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.06174,0.0121,0.1153,-0.06,0.012,0.14}))))))
             .addChild(new Group("r_cuneiform_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metatarsal_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_proximal_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_middle_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_distal_phalanx_2_Sites")
               .addChild(new Transform("r_tarsal_distal_phalanx_2_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_2_tip 117"))
@@ -1934,17 +1889,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.0839,0.009825,0.123435,-0.08,0.016,0.14}))))))
             .addChild(new Group("r_cuneiform_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metatarsal_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_proximal_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_middle_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_distal_phalanx_3_Sites")
               .addChild(new Transform("r_tarsal_distal_phalanx_3_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_3_tip 118"))
@@ -1954,20 +1905,15 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.100035,0.00982,0.1197,-0.1,0.016,0.14}))))))
             .addChild(new Group("r_calcaneus_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_cuboid_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metatarsal_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_proximal_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_middle_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_distal_phalanx_4_Sites")
               .addChild(new Transform("r_tarsal_distal_phalanx_4_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_tarsal_distal_phalanx_4_tip 119"))
@@ -1977,11 +1923,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1153,0.00937,0.11369,-0.115,0.016,0.13}))))))
             .addChild(new Group("r_metatarsal_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_proximal_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_tarsal_middle_phalanx_5_Sites")
               .addChild(new Transform("r_metatarsal_phalanx_5_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_metatarsal_phalanx_5_pt 60"))
@@ -2035,11 +1979,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.9254,-0.01376,0.0,0.90,-0.1}))))))
             .addChild(new Group("l4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l2_Sites")
               .addChild(new Transform("l_rib_10_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_rib_10_pt 28"))
@@ -2056,14 +1998,11 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,0.98235,-0.01376,-0.09,1.0,0.04}))))))
             .addChild(new Group("l1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t12_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t11_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t10_Sites")
               .addChild(new Transform("substernale_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite substernale_pt 13"))
@@ -2116,26 +2055,19 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,1.0784,-0.01376,-0.13,1.12,0.0}))))))
             .addChild(new Group("t8_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t7_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t6_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("t1_Sites")
               .addChild(new Transform("suprasternale_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite suprasternale_pt 12"))
@@ -2167,17 +2099,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,1.2453,-0.01506,-0.06,1.26,0.0}))))))
             .addChild(new Group("c6_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("c5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("c4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("c3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("c2_Sites")
               .addChild(new Transform("adams_apple_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite adams_apple_pt 11"))
@@ -2187,8 +2115,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.0,1.307,-0.0150,0.0,1.29,0.04}))))))
             .addChild(new Group("c1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("skull_Sites")
               .addChild(new Transform("skull_vertex_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite skull_vertex_pt 0"))
@@ -2434,8 +2361,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1819,0.72427,-0.005,0.2,0.725,0.0}))))))
             .addChild(new Group("l_trapezium_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metacarpal_1_Sites")
               .addChild(new Transform("l_metacarpal_phalanx_2_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_metacarpal_phalanx_2_pt 75"))
@@ -2445,8 +2371,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1805,0.69255,0.026,0.2,0.665,0.012}))))))
             .addChild(new Group("l_carpal_proximal_phalanx_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_distal_phalanx_1_Sites")
               .addChild(new Transform("l_carpal_distal_phalanx_1_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_1_tip 101"))
@@ -2456,17 +2381,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1826,0.654,0.04966,0.18,0.64,0.06}))))))
             .addChild(new Group("l_trapezoid_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metacarpal_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_proximal_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_middle_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_distal_phalanx_2_Sites")
               .addChild(new Transform("l_dactylion_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_dactylion_pt 57"))
@@ -2483,8 +2404,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.18067,0.5816,0.01338,0.172,0.558,0.017}))))))
             .addChild(new Group("l_capitate_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metacarpal_3_Sites")
               .addChild(new Transform("l_metacarpal_phalanx_3_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_metacarpal_phalanx_3_pt 76"))
@@ -2494,11 +2414,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.18108,0.6858,-0.00625,0.2,0.665,-0.039}))))))
             .addChild(new Group("l_carpal_proximal_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_middle_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_distal_phalanx_3_Sites")
               .addChild(new Transform("l_carpal_distal_phalanx_3_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_3_tip 103"))
@@ -2508,17 +2426,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.1807,0.5753,-0.0037,0.172,0.555,-0.006}))))))
             .addChild(new Group("l_hamate_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_metacarpal_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_proximal_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_middle_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_distal_phalanx_4_Sites")
               .addChild(new Transform("l_carpal_distal_phalanx_4_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_4_tip 104"))
@@ -2536,11 +2450,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {0.18164,0.68827,-0.03278,0.2,0.665,-0.036}))))))
             .addChild(new Group("l_carpal_proximal_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_middle_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("l_carpal_distal_phalanx_5_Sites")
               .addChild(new Transform("l_carpal_distal_phalanx_5_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite l_carpal_distal_phalanx_5_tip 105"))
@@ -2639,8 +2551,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1816,0.7242,-0.005,-0.2,0.725,0.0}))))))
             .addChild(new Group("r_trapezium_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metacarpal_1_Sites")
               .addChild(new Transform("r_metacarpal_phalanx_2_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_metacarpal_phalanx_2_pt 78"))
@@ -2650,8 +2561,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18,0.69255,0.02598,-0.2,0.665,0.012}))))))
             .addChild(new Group("r_carpal_proximal_phalanx_1_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_distal_phalanx_1_Sites")
               .addChild(new Transform("r_carpal_distal_phalanx_1_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_1_tip 106"))
@@ -2661,17 +2571,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18227,0.654,0.0496,-0.18,0.64,0.06}))))))
             .addChild(new Group("r_trapezoid_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metacarpal_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_proximal_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_middle_phalanx_2_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_distal_phalanx_2_Sites")
               .addChild(new Transform("r_dactylion_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_dactylion_pt 61"))
@@ -2688,8 +2594,7 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.1803,0.5816,0.01338,-0.172,0.558,0.017}))))))
             .addChild(new Group("r_capitate_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metacarpal_3_Sites")
               .addChild(new Transform("r_metacarpal_phalanx_3_pt_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_metacarpal_phalanx_3_pt 79"))
@@ -2699,11 +2604,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18072,0.6858,-0.00625,-0.2,0.665,0.016}))))))
             .addChild(new Group("r_carpal_proximal_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_middle_phalanx_3_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_distal_phalanx_3_Sites")
               .addChild(new Transform("r_carpal_distal_phalanx_3_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_3_tip 108"))
@@ -2713,17 +2616,13 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18029,0.5753,-0.00375,-0.170,0.555,-0.006}))))))
             .addChild(new Group("r_hamate_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_metacarpal_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_proximal_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_middle_phalanx_4_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_distal_phalanx_4_Sites")
               .addChild(new Transform("r_carpal_distal_phalanx_4_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_4_tip 109"))
@@ -2741,11 +2640,9 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18126,0.68827,-0.03278,-0.2,0.665,-0.036}))))))
             .addChild(new Group("r_carpal_proximal_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_middle_phalanx_5_Sites")
-              .addComments(new String[] {" ",
-"None "}))
+              .addComments(" None "))
             .addChild(new Group("r_carpal_distal_phalanx_5_Sites")
               .addChild(new Transform("r_carpal_distal_phalanx_5_tip_SiteShape")
                 .addChild(new TouchSensor().setDescription("HAnimSite r_carpal_distal_phalanx_5_tip 110"))
@@ -2755,16 +2652,16 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
                   .setColor(new Color().setUSE("SiteColor"))
                   .setCoord(new Coordinate().setPoint(new MFVec3f(new double[] {-0.18045,0.602325,-0.03697,-0.172,0.58,-0.039}))))))))))
     .addChild(new HAnimHumanoid("hanim_humanoid").setName("humanoid").setLoa(4).setVersion("2.0")
-      .addComments(new String[] {" MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>",
-"        <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/>",
-"        <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/>",
-"        <MetadataString name='creationDate' value='31 March 2011'/>",
-"        <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/>",
-"        <MetadataString name='modificationDate' value='25 March 2024'/>",
-"        <MetadataString name='gender' value='female'/>",
-"        <MetadataFloat name='height' value='1.5'/>",
-"        <MetadataString name='humanoidVersion' value='2.0'/>",
-"      </MetadataSet "})
+      .addComments(" MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'> ")
+      .addComments(" <MetadataString name='authorName' value='\"Jin Hoon Lee and Min Joo Lee\"\",\"\" Chul Hee Jung and Myeong Won Lee\"'/> ")
+      .addComments(" <MetadataString name='authorEmail' value='myeongwonlee@gmail.com'/> ")
+      .addComments(" <MetadataString name='creationDate' value='31 March 2011'/> ")
+      .addComments(" <MetadataString name='John Carlson and Joe Williams' value='Modifiers'/> ")
+      .addComments(" <MetadataString name='modificationDate' value='25 March 2024'/> ")
+      .addComments(" <MetadataString name='gender' value='female'/> ")
+      .addComments(" <MetadataFloat name='height' value='1.5'/> ")
+      .addComments(" <MetadataString name='humanoidVersion' value='2.0'/> ")
+      .addComments(" </MetadataSet ")
       .addSkeleton(new HAnimJoint("hanim_humanoid_root").setName("humanoid_root").setCenter(0.0,0.77,0.0).setLlimit(new double[] {0.0,0.0,0.0}).setUlimit(new double[] {0.0,0.0,0.0})
         .addChild(new HAnimSegment("hanim_sacrum").setName("sacrum")
           .addComments(" Shape USE='sacrum_Shape'/ ")
@@ -4794,27 +4691,24 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
       .addChild(new ROUTE().setFromNode("Test_r_carpal_proximal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_proximal_interphalangeal_5").setToField("set_rotation"))
       .addChild(new ROUTE().setFromNode("Test_r_carpal_distal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_distal_interphalangeal_5").setToField("set_rotation")))
     .addChild(new Group("Pitch1Animation_loa4")
-      .addComments(new String[] {" ",
-"Pitch1 example shows Y-axis control of Joint nodes ",
-"that through the skeleton hierarchy control ",
-"Segment geometry and Site position. ",
-"So, the following interpolator:",
-"  <OrientationInterpolator DEF='skullbase_RotationInterpolator' ",
-"    key='0 0.5 1' ",
-"    keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>",
-"will start at 0 move to +1 radian of x-axis ",
-"rotation of the Joint, then return to 0. ",
-"0 0 1 0 is default value, meaning set to ",
-"0 radians, zero degrees. ",
-"x y z scale, all in radians 0 to <+-inf.  ",
-"Thus, 1 radian in a times scale 1 = +1 radian ",
-"= about 60 degrees ",
-"360 degrees divided by 2 times pi ",
-"greater than +-6.28 radians range",
-"Right hand rule for axes so a ",
-"positive pitch value applied to the ",
-"skullbase Joint would rotate the ",
-"the gaze of model down, toward the floor. "})
+      .addComments(" Pitch1 example shows Y-axis control of Joint nodes ")
+      .addComments(" that through the skeleton hierarchy control ")
+      .addComments(" Segment geometry and Site position. ")
+      .addComments(" So, the following interpolator: ")
+      .addComments(" <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> ")
+      .addComments(" will start at 0 move to +1 radian of x-axis ")
+      .addComments(" rotation of the Joint, then return to 0. ")
+      .addComments(" 0 0 1 0 is default value, meaning set to ")
+      .addComments(" 0 radians, zero degrees. ")
+      .addComments(" x y z scale, all in radians 0 to <+-inf. ")
+      .addComments(" Thus, 1 radian in a times scale 1 = +1 radian ")
+      .addComments(" = about 60 degrees ")
+      .addComments(" 360 degrees divided by 2 times pi ")
+      .addComments(" greater than +-6.28 radians range ")
+      .addComments(" Right hand rule for axes so a ")
+      .addComments(" positive pitch value applied to the ")
+      .addComments(" skullbase Joint would rotate the ")
+      .addComments(" the gaze of model down, toward the floor. ")
       .addChild(new TimeSensor("Pitch1Timer").setCycleInterval(10).setLoop(true))
       .addChild(new PositionInterpolator("Pitch1_humanoid_root_TranslationInterpolator").setKey(new double[] {0.0,0.02,0.04,0.06,0.08,0.1,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,-0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Pitch1_humanoid_root_RotationInterpolator").setKey(new double[] {0.0,0.08,0.12,0.15,0.18,0.2,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,1.0,0.0,0.0,0.5,0.0,0.0,1.0,0.0,1.0,0.0,0.0,-0.5,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
@@ -5705,28 +5599,25 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
       .addChild(new ROUTE().setFromNode("Pitch2_r_carpal_proximal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_proximal_interphalangeal_5").setToField("set_rotation"))
       .addChild(new ROUTE().setFromNode("Pitch2_r_carpal_distal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_distal_interphalangeal_5").setToField("set_rotation")))
     .addChild(new Group("Yaw1Animation_loa4")
-      .addComments(new String[] {" ",
-"Yaw1 example shows Y-axis control of Joint nodes ",
-"that through the skeleton hierarchy control ",
-"Segment geometry and Site position. ",
-"So, the following interpolator:",
-"  <OrientationInterpolator DEF='skullbase_RotationInterpolator' ",
-"    key='0 0.5 1' ",
-"    keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>",
-"will start at 0 move to +1 radian of y-axis ",
-"rotation of the Joint, then return to 0. ",
-"0 0 1 0 is default value, meaning set to ",
-"0 radians, zero degrees. ",
-"x y z scale, all in radians 0 to <+-inf.  ",
-"Thus, 1 radian in y times scale 1 = +1 radian ",
-"= about 60 degrees ",
-"360 degrees divided by 2 times pi ",
-"Right hand rule for axes so a ",
-"positive yaw value applied to the ",
-"skullbase Joint would move the ",
-"the gaze of model toward the ",
-"model's +X direction, the model left ",
-"over the left shoulder."})
+      .addComments(" Yaw1 example shows Y-axis control of Joint nodes ")
+      .addComments(" that through the skeleton hierarchy control ")
+      .addComments(" Segment geometry and Site position. ")
+      .addComments(" So, the following interpolator: ")
+      .addComments(" <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> ")
+      .addComments(" will start at 0 move to +1 radian of y-axis ")
+      .addComments(" rotation of the Joint, then return to 0. ")
+      .addComments(" 0 0 1 0 is default value, meaning set to ")
+      .addComments(" 0 radians, zero degrees. ")
+      .addComments(" x y z scale, all in radians 0 to <+-inf. ")
+      .addComments(" Thus, 1 radian in y times scale 1 = +1 radian ")
+      .addComments(" = about 60 degrees ")
+      .addComments(" 360 degrees divided by 2 times pi ")
+      .addComments(" Right hand rule for axes so a ")
+      .addComments(" positive yaw value applied to the ")
+      .addComments(" skullbase Joint would move the ")
+      .addComments(" the gaze of model toward the ")
+      .addComments(" model's +X direction, the model left ")
+      .addComments(" over the left shoulder. ")
       .addChild(new TimeSensor("Yaw1Timer").setCycleInterval(10).setLoop(true))
       .addChild(new PositionInterpolator("Yaw1_humanoid_root_TranslationInterpolator").setKey(new double[] {0.0,0.02,0.04,0.06,0.08,0.1,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,-0.15,0.0,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Yaw1_humanoid_root_RotationInterpolator").setKey(new double[] {0.0,0.08,0.12,0.15,0.18,0.2,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.5,0.0,0.0,1.0,0.0,0.0,1.0,0.0,-0.5,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
@@ -6617,28 +6508,25 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
       .addChild(new ROUTE().setFromNode("Yaw2_r_carpal_proximal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_proximal_interphalangeal_5").setToField("set_rotation"))
       .addChild(new ROUTE().setFromNode("Yaw2_r_carpal_distal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_distal_interphalangeal_5").setToField("set_rotation")))
     .addChild(new Group("Roll1Animation_loa4")
-      .addComments(new String[] {" ",
-"Roll1 example shows Y-axis control of Joint nodes ",
-"that through the skeleton hierarchy control ",
-"Segment geometry and Site position. ",
-"So, the following interpolator:",
-"  <OrientationInterpolator DEF='skullbase_RotationInterpolator' ",
-"    key='0 0.5 1' ",
-"    keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>",
-"will start at 0 move to +1 radian of z-axis ",
-"rotation of the Joint, then return to 0. ",
-"0 0 1 0 is default value, meaning set to ",
-"0 radians, zero degrees. ",
-"x y z scale, all in radians 0 to <+-inf.  ",
-"Thus, 1 radian in a times scale 1 = +1 radian ",
-"= about 60 degrees ",
-"360 degrees divided by 2 times pi ",
-"Right hand rule for axes so a ",
-"positive roll value applied to the ",
-"skullbase Joint would rotate the ",
-"the gaze of model ccw toward the ",
-"model's +X direction, the model left ",
-"toward the left shoulder."})
+      .addComments(" Roll1 example shows Y-axis control of Joint nodes ")
+      .addComments(" that through the skeleton hierarchy control ")
+      .addComments(" Segment geometry and Site position. ")
+      .addComments(" So, the following interpolator: ")
+      .addComments(" <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> ")
+      .addComments(" will start at 0 move to +1 radian of z-axis ")
+      .addComments(" rotation of the Joint, then return to 0. ")
+      .addComments(" 0 0 1 0 is default value, meaning set to ")
+      .addComments(" 0 radians, zero degrees. ")
+      .addComments(" x y z scale, all in radians 0 to <+-inf. ")
+      .addComments(" Thus, 1 radian in a times scale 1 = +1 radian ")
+      .addComments(" = about 60 degrees ")
+      .addComments(" 360 degrees divided by 2 times pi ")
+      .addComments(" Right hand rule for axes so a ")
+      .addComments(" positive roll value applied to the ")
+      .addComments(" skullbase Joint would rotate the ")
+      .addComments(" the gaze of model ccw toward the ")
+      .addComments(" model's +X direction, the model left ")
+      .addComments(" toward the left shoulder. ")
       .addChild(new TimeSensor("Roll1Timer").setCycleInterval(10).setLoop(true))
       .addChild(new PositionInterpolator("Roll1_humanoid_root_TranslationInterpolator").setKey(new double[] {0.0,0.02,0.04,0.06,0.08,0.1,1.0}).setKeyValue(new MFVec3f(new double[] {0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.15,0.0,0.0,0.0,0.0,0.0,-0.15,0.0,0.0,0.0,0.0,0.0,0.0})))
       .addChild(new OrientationInterpolator("Roll1_humanoid_root_RotationInterpolator").setKey(new double[] {0.0,0.08,0.12,0.15,0.18,0.2,1.0}).setKeyValue(new MFRotation(new double[] {0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.5,0.0,0.0,1.0,0.0,0.0,0.0,1.0,-0.5,0.0,0.0,1.0,0.0,0.0,0.0,1.0,0.0})))
@@ -9747,25 +9635,25 @@ public class JinScaledV2L1LOA4OnlyMarkers11g
       .addChild(new ROUTE().setFromNode("Kick2_r_metacarpophalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_metacarpophalangeal_5").setToField("set_rotation"))
       .addChild(new ROUTE().setFromNode("Kick2_r_carpal_proximal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_proximal_interphalangeal_5").setToField("set_rotation"))
       .addChild(new ROUTE().setFromNode("Kick2_r_carpal_distal_interphalangeal_5_RotationInterpolator").setFromField("value_changed").setToNode("hanim_r_carpal_distal_interphalangeal_5").setToField("set_rotation")))
-    .addComments(new String[] {" Ball for Kick2 not included Group> ",
-"      <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'>",
-"        <Shape DEF='ball_Shape'>",
-"          <Appearance DEF='ball_Appearance'>",
-"            <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/>",
-"          </Appearance>",
-"          <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'>",
-"            <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/>",
-"          </IndexedFaceSet>",
-"        </Shape>",
-"        <Viewpoint DEF='ballView_1' description='Ball View'/>",
-"      </Transform>",
-"      <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/>",
-"      <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/>",
-"      <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/>",
-"      <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/>",
-"      <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/>",
-"      <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/>",
-"    </Group "})
+    .addComments(" Ball for Kick2 not included Group> ")
+    .addComments(" <Transform DEF='SBall' rotation='0.7 0 0.7 0.1' scale='0.23 0.23 0.23' translation='-0.916 0.37 -0.92'> ")
+    .addComments(" <Shape DEF='ball_Shape'> ")
+    .addComments(" <Appearance DEF='ball_Appearance'> ")
+    .addComments(" <Material DEF='ball_Material' diffuseColor='0.3 0.3 1' emissiveColor='0.3 0.3 0.33'/> ")
+    .addComments(" </Appearance> ")
+    .addComments(" <IndexedFaceSet DEF='ball_IndexedFaceSet' coordIndex='0 1 2 -1 0 2 3 -1 0 3 4 -1 0 4 5 -1 0 5 6 -1 0 6 7 -1 0 7 8 -1 0 8 9 -1 0 9 10 -1 0 10 11 -1 0 11 12 -1 0 12 1 -1 1 13 14 -1 1 14 2 -1 2 14 15 -1 2 15 3 -1 3 15 16 -1 3 16 4 -1 4 16 17 -1 4 17 5 -1 5 17 18 -1 5 18 6 -1 6 18 19 -1 6 19 7 -1 7 19 20 -1 7 20 8 -1 8 20 21 -1 8 21 9 -1 9 21 22 -1 9 22 10 -1 10 22 23 -1 10 23 11 -1 11 23 24 -1 11 24 12 -1 12 24 13 -1 12 13 1 -1 13 25 26 -1 13 26 14 -1 14 26 27 -1 14 27 15 -1 15 27 28 -1 15 28 16 -1 16 28 29 -1 16 29 17 -1 17 29 30 -1 17 30 18 -1 18 30 31 -1 18 31 19 -1 19 31 32 -1 19 32 20 -1 20 32 33 -1 20 33 21 -1 21 33 34 -1 21 34 22 -1 22 34 35 -1 22 35 23 -1 23 35 36 -1 23 36 24 -1 24 36 25 -1 24 25 13 -1 25 37 38 -1 25 38 26 -1 26 38 39 -1 26 39 27 -1 27 39 40 -1 27 40 28 -1 28 40 41 -1 28 41 29 -1 29 41 42 -1 29 42 30 -1 30 42 43 -1 30 43 31 -1 31 43 44 -1 31 44 32 -1 32 44 45 -1 32 45 33 -1 33 45 46 -1 33 46 34 -1 34 46 47 -1 34 47 35 -1 35 47 48 -1 35 48 36 -1 36 48 37 -1 36 37 25 -1 37 49 50 -1 37 50 38 -1 38 50 51 -1 38 51 39 -1 39 51 52 -1 39 52 40 -1 40 52 53 -1 40 53 41 -1 41 53 54 -1 41 54 42 -1 42 54 55 -1 42 55 43 -1 43 55 56 -1 43 56 44 -1 44 56 57 -1 44 57 45 -1 45 57 58 -1 45 58 46 -1 46 58 59 -1 46 59 47 -1 47 59 60 -1 47 60 48 -1 48 60 49 -1 48 49 37 -1 61 50 49 -1 61 51 50 -1 61 52 51 -1 61 53 52 -1 61 54 53 -1 61 55 54 -1 61 56 55 -1 61 57 56 -1 61 58 57 -1 61 59 58 -1 61 60 59 -1 61 49 60 -1'> ")
+    .addComments(" <Coordinate DEF='Ball_Coordinates' point='0 0.4675 0 0 0.4049 -0.2338 -0.1169 0.4049 -0.2024 -0.2024 0.4049 -0.1169 -0.2338 0.4049 0 -0.2024 0.4049 0.1169 -0.1169 0.4049 0.2024 0 0.4049 0.2338 0.1169 0.4049 0.2024 0.2024 0.4049 0.1169 0.2338 0.4049 0 0.2024 0.4049 -0.1169 0.1169 0.4049 -0.2024 0 0.2338 -0.4049 -0.2024 0.2338 -0.3506 -0.3506 0.2338 -0.2024 -0.4049 0.2338 0 -0.3506 0.2338 0.2024 -0.2024 0.2338 0.3506 0 0.2338 0.4049 0.2024 0.2338 0.3506 0.3506 0.2338 0.2024 0.4049 0.2338 0 0.3506 0.2338 -0.2024 0.2024 0.2338 -0.3506 0 0 -0.4675 -0.2338 0 -0.4049 -0.4049 0 -0.2338 -0.4675 0 0 -0.4049 0 0.2338 -0.2338 0 0.4049 0 0 0.4675 0.2338 0 0.4049 0.4049 0 0.2338 0.4675 0 0 0.4049 0 -0.2338 0.2338 0 -0.4049 0 -0.2338 -0.4049 -0.2024 -0.2338 -0.3506 -0.3506 -0.2338 -0.2024 -0.4049 -0.2338 0 -0.3506 -0.2338 0.2024 -0.2024 -0.2338 0.3506 0 -0.2338 0.4049 0.2024 -0.2338 0.3506 0.3506 -0.2338 0.2024 0.4049 -0.2338 0 0.3506 -0.2338 -0.2024 0.2024 -0.2338 -0.3506 0 -0.4049 -0.2338 -0.1169 -0.4049 -0.2024 -0.2024 -0.4049 -0.1169 -0.2338 -0.4049 0 -0.2024 -0.4049 0.1169 -0.1169 -0.4049 0.2024 0 -0.4049 0.2338 0.1169 -0.4049 0.2024 0.2024 -0.4049 0.1169 0.2338 -0.4049 0 0.2024 -0.4049 -0.1169 0.1169 -0.4049 -0.2024 0 -0.4675 0'/> ")
+    .addComments(" </IndexedFaceSet> ")
+    .addComments(" </Shape> ")
+    .addComments(" <Viewpoint DEF='ballView_1' description='Ball View'/> ")
+    .addComments(" </Transform> ")
+    .addComments(" <PositionInterpolator DEF='ball_TranslationInterpolator' key='0 0.4 0.409 1' keyValue='-1 0.4 -1 0 0.07 0 0.05 0.06 0.05 2 4 10'/> ")
+    .addComments(" <OrientationInterpolator DEF='ball_RotationInterpolator' key='0 0.4 0.41 0.71 1' keyValue='1 0 1 0.25 -1 0 -1 1.35 -1 1 -1 3.35 -1 0.2 -1 3 -1 0.2 -1 3'/> ")
+    .addComments(" <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_TranslationInterpolator'/> ")
+    .addComments(" <ROUTE fromField='value_changed' fromNode='ball_TranslationInterpolator' toField='set_translation' toNode='SBall'/> ")
+    .addComments(" <ROUTE fromField='fraction_changed' fromNode='Kick2Timer' toField='set_fraction' toNode='ball_RotationInterpolator'/> ")
+    .addComments(" <ROUTE fromField='value_changed' fromNode='ball_RotationInterpolator' toField='set_rotation' toNode='SBall'/> ")
+    .addComments(" </Group ")
     .addChild(new Group("TimerControls")
       .addChild(new ROUTE().setFromNode("Default_Touch").setFromField("touchTime").setToNode("TestTimer").setToField("set_stopTime"))
       .addChild(new ROUTE().setFromNode("Default_Touch").setFromField("touchTime").setToNode("Pitch1Timer").setToField("set_stopTime"))

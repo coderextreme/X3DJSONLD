@@ -6,7 +6,7 @@
 //{
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Full"));
-X3D0.setVersion(CString("4.0"));
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("Scripting"));
@@ -91,7 +91,8 @@ LayerSet& LayerSet18 =  LayerSet();
 LayerSet18.setActiveLayer(1);
 LayerSet18.setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 Layer& Layer19 =  Layer();
 Layer19.setPickable(true);
 Layer19.setObjectType(new CString[]{CString("ALL")}, 1);
@@ -266,7 +267,9 @@ Sphere& Sphere59 =  Sphere();
 Sphere59.setRadius(5);
 Shape58.setGeometry(&Sphere59);
 
-//<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\"> <Coordinate DEF=\"OrbitCoordinates\"/> </IndexedFaceSet>
+//<IndexedFaceSet convex=\"false\" DEF=\"Orbit\" creaseAngle=\"0\">
+//<Coordinate DEF=\"OrbitCoordinates\"/>
+//</IndexedFaceSet>
 Appearance& Appearance60 =  Appearance();
 Material& Material61 =  Material();
 Material61.setDiffuseColor(new float[]{0.7,0.7,0.7});
@@ -381,7 +384,9 @@ field80.setAccessType(CString("inputOutput"));
 field80.setValue(CString("0"));
 ComposedShader69.addChild(&field80);
 
-//<field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"/>
+//</field>
 ShaderPart& ShaderPart81 =  ShaderPart();
 ShaderPart81.setType(CString("VERTEX"));
 IS& IS82 =  IS();
@@ -408,7 +413,29 @@ ComposedShader69.setParts(&ShaderPart84);
 
 Appearance60.addChild(&ComposedShader69);
 
-//<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\"> <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart type='VERTEX'> <IS> <connect nodeField=\"url\" protoField=\"vertex\"/> </IS> </ShaderPart> <ShaderPart type='FRAGMENT'> <IS> <connect nodeField=\"url\" protoField=\"fragment\"/> </IS> </ShaderPart> </ComposedShader>
+//<ComposedShader DEF=\"freewrlShader\" language=\"GLSL\">
+//<field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
+//<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+//<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<ShaderPart type='VERTEX'>
+//<IS>
+//<connect nodeField=\"url\" protoField=\"vertex\"/>
+//</IS>
+//</ShaderPart>
+//<ShaderPart type='FRAGMENT'>
+//<IS>
+//<connect nodeField=\"url\" protoField=\"fragment\"/>
+//</IS>
+//</ShaderPart>
+//</ComposedShader>
 Shape58.addChild(&Appearance60);
 
 Transform57.addChild(&Shape58);
@@ -417,7 +444,18 @@ Transform55.addChild(&Transform57);
 
 Layer19.addChild(&Transform55);
 
-//<Script DEF=\"OrbitScript\"> <field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/> <field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script> <ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/> <ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>
+//<Script DEF=\"OrbitScript\">
+//<field accessType=\"inputOutput\" name=\"coordinates\" type=\"MFVec3f\"/>
+//<field accessType=\"outputOnly\" name=\"coordIndexes\" type=\"MFInt32\"/>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>
+//<ROUTE fromField=\"coordIndexes\" fromNode=\"OrbitScript\" toField=\"set_coordIndex\" toNode=\"Orbit\"/>
+//<ROUTE fromField=\"coordinates\" fromNode=\"OrbitScript\" toField=\"set_point\" toNode=\"OrbitCoordinates\"/>
 //DIS multiuser facilities
 DISEntityManager& DISEntityManager87 =  DISEntityManager();
 DISEntityManager87.setDEF(CString("EntityManager"));

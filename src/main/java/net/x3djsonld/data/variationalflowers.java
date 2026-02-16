@@ -92,14 +92,12 @@ public class variationalflowers
     .addChild(new Background().setBackUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_back.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"}).setBottomUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"}).setFrontUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_front.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"}).setLeftUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}).setRightUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}).setTopUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"}))
     .addChild(new Transform()
       .addChild(new ParticleSystem().setGeometryType("GEOMETRY").setMaxParticles(100)
-        .addComments(new String[] {"",
-"			    * values - array of MFFloats to pass to ComposedShader",
-"			    * variations in values - array of MFFloats to pass to ComposedShader that varies values",
-"			    * lastFrame - last frame that was rendered (0 for default)",
-"			    * updateRate - update rate is amount of time between frames"})
-        .addComments(new String[] {"",
-"			<VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'>",
-"			</VariationPhysicsModel>"})
+        .addComments(" * values - array of MFFloats to pass to ComposedShader ")
+        .addComments(" * variations in values - array of MFFloats to pass to ComposedShader that varies values ")
+        .addComments(" * lastFrame - last frame that was rendered (0 for default) ")
+        .addComments(" * updateRate - update rate is amount of time between frames ")
+        .addComments(" <VariationPhysicsModel values=\"2 2 5 5 0 0\" varations=\"2 1 3 3 0.1 0.1\" lastFrame='0' updateRate='0.1'> ")
+        .addComments(" </VariationPhysicsModel> ")
         .setEmitter(new ExplosionEmitter().setSpeed(1).setVariation(0.75))
         .setGeometry(new Sphere())
         .setAppearance(new Appearance()
@@ -111,28 +109,26 @@ public class variationalflowers
             .setLeftTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_left.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"}))
             .setRightTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
             .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
-          .addComments(new String[] {"",
-"                <ComposedShader language='GLSL'>",
-"		  <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field>",
-"		  <field name='cube' type='SFNode' accessType=\"inputOutput\">",
-"			<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>",
-"		  </field>",
-"		  <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
-"		  <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field>",
-"		  <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field>",
-"		  <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>",
-"		  <ShaderPart url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart>",
-"                </ComposedShader>"})
-          .addComments(new String[] {"",
-"                            <ComposedShader DEF=\"shader\" language=\"GLSL\">",
-"				  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>",
-"				  <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>",
-"				  <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"				  <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>",
-"				  <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>",
-"				  <ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/>",
-"				  <ShaderPart type='FRAGMENT' url='\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/>",
-"	  		    </ComposedShader>"})
+          .addComments(" <ComposedShader language='GLSL'> ")
+          .addComments(" <field name='chromaticDispertion' accessType='inputOutput' type='SFVec3f' value='0.98 1 1.033'></field> ")
+          .addComments(" <field name='cube' type='SFNode' accessType=\"inputOutput\"> ")
+          .addComments(" <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> ")
+          .addComments(" </field> ")
+          .addComments(" <field name='bias' accessType='inputOutput' type='SFFloat' value='0.5'></field> ")
+          .addComments(" <field name='scale' accessType='inputOutput' type='SFFloat' value='0.5'></field> ")
+          .addComments(" <field name='power' accessType='inputOutput' type='SFFloat' value='2'></field> ")
+          .addComments(" <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> ")
+          .addComments(" <ShaderPart url='\"../shaders/freewrl.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.fs\"' type='FRAGMENT'></ShaderPart> ")
+          .addComments(" </ComposedShader> ")
+          .addComments(" <ComposedShader DEF=\"shader\" language=\"GLSL\"> ")
+          .addComments(" <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> ")
+          .addComments(" <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> ")
+          .addComments(" <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+          .addComments(" <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> ")
+          .addComments(" <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> ")
+          .addComments(" <ShaderPart url='\"../shaders/castle.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs\"'/> ")
+          .addComments(" <ShaderPart type='FRAGMENT' url='\"../shaders/castle.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.fs\"'/> ")
+          .addComments(" </ComposedShader> ")
           .addShaders(new ComposedShader("x_ite").setLanguage("GLSL")
             .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
             .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INITIALIZEONLY)

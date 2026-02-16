@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Full'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           /*<component name='Shape' level='4'></component>*/
@@ -125,7 +125,9 @@ var X3D0 =  X3D(
             meta(
               name_ : SFString('license'),
               content_ : SFString('license.html'))]),
-      /*\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"*/
+      /*\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,*/
+      /*It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)*/
+      /*open for their \"discussion about the teapot\"*/
       Scene_ : 
         Scene(
           /*basic nodes, which might be present in any scene*/
@@ -152,7 +154,8 @@ var X3D0 =  X3D(
               activeLayer_ : 1,
               order_ : MFInt32([SFInt32(1), SFInt32(2)]),
               /*the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"*/
-              /*the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)*/
+              /*the second layer contains the sliders that are moved with the user's display*/
+              /*like a HUD (heads up display)*/
               layers_ : 
                 Layer(
                   pickable_ : true,
@@ -386,7 +389,9 @@ var X3D0 =  X3D(
                                         ShaderPart(
                                           type_ : SFString("FRAGMENT",
                                           url_ : MFString([SFString("../shaders/freewrl.fs"), SFString("https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs")])),
-                                      /*TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>*/))))]),
+                                      /*TO CONVERT TO A SPHERE*/
+                                      /*<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>*/
+                                      /*<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>*/))))]),
 
                     Script(
                       DEF_ : SFString('OrbitScript'),

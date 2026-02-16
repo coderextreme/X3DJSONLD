@@ -364,7 +364,10 @@ SoField60->addChild(*SoTransform61);
 
 SoProtoInstance53->addChild(*SoField60);
 
-//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
+//<fieldValue name='set_startpoint'>
+//</fieldValue>
+//<fieldValue name='set_endpoint'>
+//</fieldValue>
 SoNode7->addChild(*SoProtoInstance53);
 
 SoROUTE* SoROUTE62 = new SoROUTE();

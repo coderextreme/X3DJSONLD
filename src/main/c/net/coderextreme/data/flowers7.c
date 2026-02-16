@@ -145,7 +145,8 @@ Appearance22.texture = ComposedCubeMapTexture24;
 ComposedShader ComposedShader31 = createNode("ComposedShader");
 ComposedShader31.DEF = "x3dom";
 ComposedShader31.language = "GLSL";
-//TODO VERIFY <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+//TODO VERIFY
+//<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
 field field32 = createNode("field");
 field32.name = "cube";
 field32.type = "SFNode";
@@ -469,7 +470,20 @@ Script62.setSourceCode(`ecmascript:\n"+
 "        }`)
 children[4] = Script62;
 
-//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
+//<TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>
+//<ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>
+//<ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>
+//<ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>
+//<ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>
 Script Script77 = createNode("Script");
 Script77.DEF = "Animate";
 Script77.directOutput = True;

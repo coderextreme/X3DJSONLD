@@ -3,87 +3,116 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
-meta2 = x3d.meta()
-meta2.name = "title"
-meta2.content = "bubs.x3d"
+component2 = x3d.component()
+component2.name = "Scripting"
+component2.level = 1
 
-head1.children.append(meta2)
+head1.children.append(component2)
 meta3 = x3d.meta()
-meta3.name = "creator"
-meta3.content = "John Carlson"
+meta3.name = "title"
+meta3.content = "bubs.x3d"
 
 head1.children.append(meta3)
 meta4 = x3d.meta()
-meta4.name = "description"
-meta4.content = "Tour around a prismatic sphere"
+meta4.name = "creator"
+meta4.content = "John Carlson"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.name = "generator"
-meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta5.name = "description"
+meta5.content = "Tour around a prismatic sphere"
 
 head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "generator"
+meta6.content = "X3D-Edit, https://savage.nps.edu/X3D-Edit"
+
+head1.children.append(meta6)
+meta7 = x3d.meta()
+meta7.name = "identifier"
+meta7.content = "https://coderextreme.net/X3DJSONLD/src/main/data/bubs.x3d"
+
+head1.children.append(meta7)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-ProtoDeclare7 = x3d.ProtoDeclare()
-ProtoDeclare7.name = "Bubble"
-ProtoInterface8 = x3d.ProtoInterface()
+Scene8 = x3d.Scene()
+NavigationInfo9 = x3d.NavigationInfo()
+NavigationInfo9.type = ["EXAMINE"]
 
-ProtoDeclare7.ProtoInterface = ProtoInterface8
-ProtoBody9 = x3d.ProtoBody()
-Transform10 = x3d.Transform(DEF="body_trans")
-Shape11 = x3d.Shape()
-Appearance12 = x3d.Appearance()
-Material13 = x3d.Material()
-Material13.diffuseColor = [1,0,0]
-Material13.transparency = 0.2
+Scene8.children.append(NavigationInfo9)
+Viewpoint10 = x3d.Viewpoint()
+Viewpoint10.position = [0,0,4]
+Viewpoint10.orientation = [1,0,0,0]
+Viewpoint10.description = "Bubbles in action"
 
-Appearance12.material = Material13
+Scene8.children.append(Viewpoint10)
+Background11 = x3d.Background()
+Background11.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
+Background11.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
+Background11.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
+Background11.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
+Background11.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
+Background11.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
 
-Shape11.appearance = Appearance12
-Sphere14 = x3d.Sphere()
-Sphere14.radius = 0.25
+Scene8.children.append(Background11)
+ProtoDeclare12 = x3d.ProtoDeclare()
+ProtoDeclare12.name = "Bubble"
+ProtoBody13 = x3d.ProtoBody()
+Transform14 = x3d.Transform(DEF="body_trans")
+Shape15 = x3d.Shape()
+Sphere16 = x3d.Sphere()
+Sphere16.radius = 0.25
 
-Shape11.geometry = Sphere14
+Shape15.geometry = Sphere16
+Appearance17 = x3d.Appearance()
+Material18 = x3d.Material()
+Material18.diffuseColor = [1,0,0]
+Material18.transparency = 0.2
 
-Transform10.children.append(Shape11)
-Script15 = x3d.Script(DEF="bounce1")
-field16 = x3d.field()
-field16.accessType = "inputOutput"
-field16.type = "SFVec3f"
-field16.name = "scale"
-field16.value = [1,1,1]
+Appearance17.material = Material18
 
-Script15.field.append(field16)
-field17 = x3d.field()
-field17.accessType = "inputOutput"
-field17.type = "SFVec3f"
-field17.name = "translation"
+Shape15.appearance = Appearance17
 
-Script15.field.append(field17)
-field18 = x3d.field()
-field18.accessType = "inputOutput"
-field18.type = "SFVec3f"
-field18.name = "velocity"
-
-Script15.field.append(field18)
-field19 = x3d.field()
-field19.accessType = "inputOutput"
-field19.type = "SFVec3f"
-field19.name = "scalvel"
-
-Script15.field.append(field19)
+Transform14.children.append(Shape15)
+Script19 = x3d.Script(DEF="bounce1")
 field20 = x3d.field()
-field20.accessType = "inputOnly"
-field20.type = "SFFloat"
-field20.name = "set_fraction"
+field20.name = "scale"
+field20.accessType = "inputOutput"
+field20.type = "SFVec3f"
+field20.value = [1,1,1]
 
-Script15.field.append(field20)
+Script19.field.append(field20)
+field21 = x3d.field()
+field21.name = "translation"
+field21.accessType = "inputOutput"
+field21.type = "SFVec3f"
+field21.value = [0,0,0]
 
-Script15.sourceCode = '''ecmascript:\n"+
+Script19.field.append(field21)
+field22 = x3d.field()
+field22.name = "velocity"
+field22.accessType = "inputOutput"
+field22.type = "SFVec3f"
+field22.value = [0,0,0]
+
+Script19.field.append(field22)
+field23 = x3d.field()
+field23.name = "scalvel"
+field23.accessType = "inputOutput"
+field23.type = "SFVec3f"
+field23.value = [0,0,0]
+
+Script19.field.append(field23)
+field24 = x3d.field()
+field24.name = "set_fraction"
+field24.accessType = "inputOnly"
+field24.type = "SFFloat"
+
+Script19.field.append(field24)
+
+Script19.sourceCode = '''ecmascript:\n"+
 "function initialize() {\n"+
 "    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);\n"+
 "\n"+
@@ -123,75 +152,57 @@ Script15.sourceCode = '''ecmascript:\n"+
 "    }\n"+
 "}'''
 
-Transform10.children.append(Script15)
-TimeSensor21 = x3d.TimeSensor(DEF="bubbleClock")
-TimeSensor21.cycleInterval = 10
-TimeSensor21.loop = True
+Transform14.children.append(Script19)
+TimeSensor25 = x3d.TimeSensor(DEF="bubbleClock")
+TimeSensor25.cycleInterval = 10
+TimeSensor25.loop = True
 
-Transform10.children.append(TimeSensor21)
+Transform14.children.append(TimeSensor25)
+ROUTE26 = x3d.ROUTE()
+ROUTE26.fromNode = "bounce1"
+ROUTE26.fromField = "translation_changed"
+ROUTE26.toNode = "body_trans"
+ROUTE26.toField = "set_translation"
 
-ProtoBody9.children.append(Transform10)
-ROUTE22 = x3d.ROUTE()
-ROUTE22.fromNode = "bounce1"
-ROUTE22.fromField = "translation_changed"
-ROUTE22.toNode = "body_trans"
-ROUTE22.toField = "set_translation"
+Transform14.children.append(ROUTE26)
+ROUTE27 = x3d.ROUTE()
+ROUTE27.fromNode = "bounce1"
+ROUTE27.fromField = "scale_changed"
+ROUTE27.toNode = "body_trans"
+ROUTE27.toField = "set_scale"
 
-ProtoBody9.children.append(ROUTE22)
-ROUTE23 = x3d.ROUTE()
-ROUTE23.fromNode = "bounce1"
-ROUTE23.fromField = "scale_changed"
-ROUTE23.toNode = "body_trans"
-ROUTE23.toField = "set_scale"
+Transform14.children.append(ROUTE27)
+ROUTE28 = x3d.ROUTE()
+ROUTE28.fromNode = "bubbleClock"
+ROUTE28.fromField = "fraction_changed"
+ROUTE28.toNode = "bounce1"
+ROUTE28.toField = "set_fraction"
 
-ProtoBody9.children.append(ROUTE23)
-ROUTE24 = x3d.ROUTE()
-ROUTE24.fromNode = "bubbleClock"
-ROUTE24.fromField = "fraction_changed"
-ROUTE24.toNode = "bounce1"
-ROUTE24.toField = "set_fraction"
+Transform14.children.append(ROUTE28)
 
-ProtoBody9.children.append(ROUTE24)
+ProtoBody13.children.append(Transform14)
 
-ProtoDeclare7.ProtoBody = ProtoBody9
+ProtoDeclare12.ProtoBody = ProtoBody13
 
-Scene6.children.append(ProtoDeclare7)
-NavigationInfo25 = x3d.NavigationInfo()
-NavigationInfo25.type = ["EXAMINE"]
-
-Scene6.children.append(NavigationInfo25)
-Viewpoint26 = x3d.Viewpoint()
-Viewpoint26.description = "Bubbles in action"
-Viewpoint26.position = [0,0,4]
-
-Scene6.children.append(Viewpoint26)
-Background27 = x3d.Background()
-Background27.frontUrl = ["../resources/images/FR.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"]
-Background27.backUrl = ["../resources/images/BK.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"]
-Background27.leftUrl = ["../resources/images/LF.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"]
-Background27.rightUrl = ["../resources/images/RT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"]
-Background27.topUrl = ["../resources/images/TP.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"]
-Background27.bottomUrl = ["../resources/images/BT.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"]
-
-Scene6.children.append(Background27)
-ProtoInstance28 = x3d.ProtoInstance(DEF="bubbleA")
-ProtoInstance28.name = "Bubble"
-
-Scene6.children.append(ProtoInstance28)
-ProtoInstance29 = x3d.ProtoInstance(DEF="bubbleB")
+Scene8.children.append(ProtoDeclare12)
+ProtoInstance29 = x3d.ProtoInstance(DEF="bubbleA")
 ProtoInstance29.name = "Bubble"
 
-Scene6.children.append(ProtoInstance29)
-ProtoInstance30 = x3d.ProtoInstance(DEF="bubbleC")
+Scene8.children.append(ProtoInstance29)
+ProtoInstance30 = x3d.ProtoInstance(DEF="bubbleB")
 ProtoInstance30.name = "Bubble"
 
-Scene6.children.append(ProtoInstance30)
-ProtoInstance31 = x3d.ProtoInstance(DEF="bubbleD")
+Scene8.children.append(ProtoInstance30)
+ProtoInstance31 = x3d.ProtoInstance(DEF="bubbleC")
 ProtoInstance31.name = "Bubble"
 
-Scene6.children.append(ProtoInstance31)
+Scene8.children.append(ProtoInstance31)
+ProtoInstance32 = x3d.ProtoInstance(DEF="bubbleD")
+ProtoInstance32.name = "Bubble"
 
-X3D0.Scene = Scene6
+Scene8.children.append(ProtoInstance32)
+
+X3D0.Scene = Scene8
 f = open("../data/bubs.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

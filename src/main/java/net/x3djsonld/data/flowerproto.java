@@ -106,8 +106,7 @@ public class flowerproto
                 .setRightTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"}))
                 .setTopTexture(new ImageTexture().setUrl(new String[] {"../resources/images/all_probes/stpeters_cross/stpeters_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"})))
               .addShaders(new ComposedShader("shader").setLanguage("GLSL")
-                .addComments(new String[] {"",
-"                  <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field>"})
+                .addComments(" <field name='fw_textureCoordGenType' accessType='inputOnly' type='SFInt32' value='0'></field> ")
                 .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTONLY)
                   .addChild(new ComposedCubeMapTexture().setUSE("texture")))
                 .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))

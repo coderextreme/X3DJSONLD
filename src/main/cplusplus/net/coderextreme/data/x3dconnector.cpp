@@ -337,7 +337,10 @@ fieldValue60.addChild(&Transform61);
 
 ProtoInstance53.addChild(&fieldValue60);
 
-//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
+//<fieldValue name='set_startpoint'>
+//</fieldValue>
+//<fieldValue name='set_endpoint'>
+//</fieldValue>
 Scene7.addChild(&ProtoInstance53);
 
 ROUTE& ROUTE62 =  ROUTE();

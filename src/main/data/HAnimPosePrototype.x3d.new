@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="HAnimPosePrototype.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Full" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="HAnimPosePrototype.x3d"></meta>
 <meta name="description" content="Define an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed."></meta>
 <meta name="info" content="This model also takes advantage of Inline/IMPORT capabilities (equivalent to USE node) and thus avoids fully copying a large, complex HAnimHumanoid model. Multiple HAnimHumanoid models have been tested satisfactorily, for HAnim version 1 (X3d 3) AND HAnim version 2 (X3D 4)."></meta>
 <meta name="created" content="2 October 2025"></meta>
-<meta name="modified" content="Mon, 09 Feb 2026 12:10:48 GMT"></meta>
+<meta name="modified" content="14 December 2025"></meta>
 <meta name="creator" content="Don Brutzman"></meta>
 <meta name="creator" content="Joe Williams"></meta>
 <meta name="contributor" content="Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE"></meta>
@@ -36,55 +36,65 @@
 <meta name="specificationUrl" content="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses"></meta>
 <meta name="reference" content="Direct scene manipulations with Javascript, https://doc.instantreality.org/tutorial/direct-scene-manipulations-with-javascript"></meta>
 <meta name="reference" content="earlier version of this prototype: originals/HAnimPosePreliminary.x3d"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit"></meta>
+<meta name="generator" content="Sunrize X3D Editor V1.11.1, https://create3000.github.io/sunrize"></meta>
+<meta name="identifier" content="https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototype.x3d"></meta>
+<meta name="license" content="https://www.web3d.org/x3d/content/examples/license.html"></meta>
 </head>
-<Scene><ProtoDeclare name="HAnimPose" appinfo="Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."><ProtoInterface><field accessType="inputOutput" type="SFNode" name="parentHAnimHumanoid" appinfo="HAnimHumanoid for this Pose to act upon"></field>
-<field accessType="inputOutput" type="SFString" name="name" value="newPoseName" appinfo="name of this pose"></field>
-<field accessType="inputOutput" type="MFNode" name="children" appinfo="joint values to apply to HAnimHumanoid"></field>
-<field accessType="inputOutput" type="SFString" name="description" appinfo="explanation of purpose"></field>
-<field accessType="inputOutput" type="SFBool" name="enabled" value="true" appinfo="default value true"></field>
-<field accessType="initializeOnly" type="SFInt32" name="loa" value="-1" appinfo="default is no loa"></field>
-<field accessType="inputOutput" type="SFTime" name="transitionDuration" value="0" appinfo="how many seconds to achieve the pose"></field>
-<field accessType="inputOutput" type="SFNode" name="metadata" appinfo="single Metadata* node"></field>
-<field accessType="outputOnly" type="SFBool" name="isActive" appinfo="event indicating when pose transition is active"></field>
-<field accessType="inputOnly" type="SFBool" name="commencePose" appinfo="this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"></field>
-<field accessType="inputOnly" type="SFBool" name="resetAllJoints" appinfo="reset the skeleton to I pose with all joints zeroed"></field>
-<field accessType="inputOnly" type="SFFloat" name="set_fraction" appinfo="allows transition to proceed incrementally from fraction [0..10"></field>
-<field accessType="inputOnly" type="SFTime" name="set_startTime" appinfo="starts the animation clock"></field>
-<field accessType="inputOnly" type="SFBool" name="isLoaded" appinfo="possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"></field>
-<field accessType="inputOutput" type="SFBool" name="traceEnabled" value="true" appinfo="debug trace to Browser output console this is a local prototype field"></field>
+<Scene><WorldInfo DEF="ModelInfo" info="&quot;Design to illustrate a potential HAnimPose node&quot;" title="HAnimPosePrototype.x3d"></WorldInfo>
+<Background skyColor="0.8 0.8 1"></Background>
+<NavigationInfo></NavigationInfo>
+<Group DEF="HandleInlineLoading"><!--Multiple HAnimHumanoid Inline/IMPORT models are available to support testing: Characters/ JinLOA1 JinLOA2 JinLOA3 JinLOA4 ../Skin/JoeKick ../Skin/JoeSkeletonSkinSite ../Skin/BoxMan1 ../Skin/BoxMan2--><!--Also tested satisfactorily: KoreanCharacter01Jin KoreanCharacter02Chul KoreanCharacter03Hyun KoreanCharacter04Young KoreanCharacter05Ju KoreanCharacter06Ga KoreanCharacter07No KoreanCharacter08Da KoreanCharacter09Ru KoreanCharacter10Mi KoreanCharacter11Min KoreanCharacter12Sun--><Inline DEF="HumanoidInline" description="remote HAnimHumanoid for IMPORT" url="&quot;../Skin/BoxMan2.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d&quot;"></Inline>
+<!--Note that the following importedDEF must match the EXPORT name found in remote file--><IMPORT AS="HumanoidImported" importedDEF="BoxMan2" inlineDEF="HumanoidInline"></IMPORT>
+<LoadSensor DEF="HumanoidInlineLoadSensor" timeOut="2"><Inline USE="HumanoidInline"></Inline>
+</LoadSensor>
+</Group>
+<ProtoDeclare name="HAnimPose" appinfo="Experimental node to assign joint values to a humanoid and assume a pose. Assumes that baseline HAnimHumanoid configuration must be I pose, which can be achieved by resetting every HAnimJoint to default values."><ProtoInterface><field name="parentHAnimHumanoid" accessType="inputOutput" appinfo="HAnimHumanoid for this Pose to act upon" type="SFNode"><!--HAnimHumanoid initialization node goes here, this field is only used in the prototype implementation--></field>
+<field name="name" accessType="inputOutput" appinfo="name of this pose" type="SFString" value="newPoseName"></field>
+<field name="children" accessType="inputOutput" appinfo="joint values to apply to HAnimHumanoid" type="MFNode"><!--initializating Joint nodes (if any) go here--></field>
+<field name="description" accessType="inputOutput" appinfo="explanation of purpose" type="SFString"></field>
+<field name="enabled" accessType="inputOutput" appinfo="default value true" type="SFBool" value="true"></field>
+<field name="loa" accessType="initializeOnly" appinfo="default is no loa" type="SFInt32" value="-1"></field>
+<field name="transitionDuration" accessType="inputOutput" appinfo="how many seconds to achieve the pose" type="SFTime" value="0"></field>
+<field name="metadata" accessType="inputOutput" appinfo="single Metadata* node" type="SFNode"></field>
+<field name="isActive" accessType="outputOnly" appinfo="event indicating when pose transition is active" type="SFBool"></field>
+<field name="commencePose" accessType="inputOnly" appinfo="this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1" type="SFBool"></field>
+<field name="resetAllJoints" accessType="inputOnly" appinfo="reset the skeleton to I pose with all joints zeroed" type="SFBool"></field>
+<field name="set_fraction" accessType="inputOnly" appinfo="allows transition to proceed incrementally from fraction [0..10" type="SFFloat"></field>
+<field name="set_startTime" accessType="inputOnly" appinfo="starts the animation clock" type="SFTime"></field>
+<field name="isLoaded" accessType="inputOnly" appinfo="possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE" type="SFBool"></field>
+<field name="traceEnabled" accessType="inputOutput" appinfo="debug trace to Browser output console this is a local prototype field" type="SFBool" value="true"></field>
 </ProtoInterface>
-<ProtoBody><TimeSensor DEF="ClockTimeSensor" description="control timing of pose animation when triggered"><IS><connect nodeField="metadata" protoField="metadata"></connect>
-<connect nodeField="enabled" protoField="enabled"></connect>
+<ProtoBody><TimeSensor DEF="ClockTimeSensor" description="control timing of pose animation when triggered"><IS><connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="cycleInterval" protoField="transitionDuration"></connect>
-<connect nodeField="startTime" protoField="set_startTime"></connect>
 <connect nodeField="isActive" protoField="isActive"></connect>
+<connect nodeField="startTime" protoField="set_startTime"></connect>
+<connect nodeField="metadata" protoField="metadata"></connect>
 </IS>
 </TimeSensor>
 <TimeSensor DEF="ResetTimeSensor" description="control timing of skeleton reset to &quot;A&quot; pose when triggered"><IS><connect nodeField="enabled" protoField="enabled"></connect>
 <connect nodeField="cycleInterval" protoField="transitionDuration"></connect>
 <connect nodeField="startTime" protoField="set_startTime"></connect>
-</IS>
+<!--no need to report isActive since that would be duplicative--></IS>
 </TimeSensor>
-<Group DEF="PoseInterpolatorGroup"></Group>
-<Group DEF="ResetInterpolatorGroup"></Group>
-<Script DEF="HAnimPoseScript" url="&quot;HAnimPosePrototypeScript.js&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js&quot;" directOutput="true"><field accessType="inputOutput" type="SFNode" name="parentHAnimHumanoid" appinfo="Humanoid for this Pose to act upon"></field>
-<field accessType="inputOutput" type="SFString" name="name" appinfo="name of this pose"></field>
-<field accessType="initializeOnly" type="SFInt32" name="loa" appinfo="default is no loa"></field>
-<field accessType="inputOutput" type="SFString" name="description" appinfo="explanation of purpose"></field>
-<field accessType="inputOutput" type="SFBool" name="enabled" appinfo="default value true"></field>
-<field accessType="inputOnly" type="SFBool" name="resetAllJoints" appinfo="reset the skeleton to I pose with all joints zeroed"></field>
-<field accessType="inputOutput" type="MFNode" name="children" appinfo="joint values to apply to HAnimHumanoid"></field>
-<field accessType="inputOutput" type="SFTime" name="transitionDuration" appinfo="how many seconds to achieve the pose"></field>
-<field accessType="inputOnly" type="SFBool" name="commencePose" appinfo="this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1"></field>
-<field accessType="inputOnly" type="SFFloat" name="set_fraction" appinfo="allows transition to proceed incrementally from fraction [0..10"></field>
-<field accessType="inputOnly" type="SFTime" name="set_startTime" appinfo="starts the animation clock"></field>
-<field accessType="inputOnly" type="SFBool" name="isLoaded" appinfo="possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE"></field>
-<field accessType="inputOutput" type="SFBool" name="traceEnabled" appinfo="debug trace to Browser output console"></field>
-<field accessType="initializeOnly" type="SFInt32" name="numberPoseJoints" appinfo="number of joints found in children field"></field>
-<field accessType="initializeOnly" type="SFInt32" name="numberSkeletonJoints" appinfo="number of joints found in Humanoid"></field>
-<field accessType="initializeOnly" type="MFNode" name="jointOrientationInterpolators" appinfo="OrientationInterpolator node array matching number of children"></field>
+<Group DEF="PoseInterpolatorGroup"><!--interpolators generated by prototype script appear here at runtime--></Group>
+<Group DEF="ResetInterpolatorGroup"><!--interpolators generated by prototype script appear here at runtime--></Group>
+<Script DEF="HAnimPoseScript" directOutput="true" url="&quot;HAnimPosePrototypeScript.js&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/HAnimPosePrototypeScript.js&quot;"><field name="parentHAnimHumanoid" accessType="inputOutput" appinfo="Humanoid for this Pose to act upon" type="SFNode"><!--initialization node (if any) goes here--></field>
+<field name="name" accessType="inputOutput" appinfo="name of this pose" type="SFString"></field>
+<field name="loa" accessType="initializeOnly" appinfo="default is no loa" type="SFInt32"></field>
+<field name="description" accessType="inputOutput" appinfo="explanation of purpose" type="SFString"></field>
+<field name="enabled" accessType="inputOutput" appinfo="default value true" type="SFBool"></field>
+<field name="resetAllJoints" accessType="inputOnly" appinfo="reset the skeleton to I pose with all joints zeroed" type="SFBool"></field>
+<field name="children" accessType="inputOutput" appinfo="joint values to apply to HAnimHumanoid" type="MFNode"><!--initializating Joint nodes (if any) go here--></field>
+<field name="transitionDuration" accessType="inputOutput" appinfo="how many seconds to achieve the pose" type="SFTime"></field>
+<field name="commencePose" accessType="inputOnly" appinfo="this event tells the HAnimPose node to fully transition, equivalent to set_fraction=1" type="SFBool"></field>
+<field name="set_fraction" accessType="inputOnly" appinfo="allows transition to proceed incrementally from fraction [0..10" type="SFFloat"></field>
+<field name="set_startTime" accessType="inputOnly" appinfo="starts the animation clock" type="SFTime"></field>
+<field name="isLoaded" accessType="inputOnly" appinfo="possible notification from LoadSensor if using HAnimHumanoid Inline/IMPORT AS/USE" type="SFBool"></field>
+<field name="traceEnabled" accessType="inputOutput" appinfo="debug trace to Browser output console" type="SFBool"></field>
+<field name="numberPoseJoints" accessType="initializeOnly" appinfo="number of joints found in children field" type="SFInt32" value="0"></field>
+<field name="numberSkeletonJoints" accessType="initializeOnly" appinfo="number of joints found in Humanoid" type="SFInt32" value="0"></field>
+<field name="jointOrientationInterpolators" accessType="initializeOnly" appinfo="OrientationInterpolator node array matching number of children" type="MFNode"><!--initializating Joint nodes (if any) go here--></field>
 <IS><connect nodeField="parentHAnimHumanoid" protoField="parentHAnimHumanoid"></connect>
 <connect nodeField="name" protoField="name"></connect>
 <connect nodeField="loa" protoField="loa"></connect>
@@ -102,189 +112,194 @@
 </Script>
 </ProtoBody>
 </ProtoDeclare>
-<WorldInfo DEF="ModelInfo" title="HAnimPosePrototype.x3d" info="&quot;Design to illustrate a potential HAnimPose node&quot;"></WorldInfo>
-<Background skyColor="0.8 0.8 1"></Background>
-<NavigationInfo></NavigationInfo>
-<Group DEF="HandleInlineLoading"><Inline DEF="HumanoidInline" description="remote HAnimHumanoid for IMPORT" url="&quot;../Skin/BoxMan2.x3d&quot; &quot;https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/BoxMan2.x3d&quot;"></Inline>
-<LoadSensor DEF="HumanoidInlineLoadSensor" timeOut="2"><Inline USE="HumanoidInline"></Inline>
-</LoadSensor>
-</Group>
 <Viewpoint description="HAnimPose for HumanoidInline IMPORT model" position="0 1 4"></Viewpoint>
-<ProtoInstance DEF="T_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<!--no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc...--><ProtoInstance name="HAnimPose" DEF="T_Pose"><fieldValue name="name" value="T"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><!--debug test case for incorrect node type: <HAnimJoint DEF="ErrorDiagnosticsTest" USE='HumanoidImported'></HAnimJoint>--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="T"></fieldValue>
-<fieldValue name="children"><HAnimJoint DEF="PoseJoint_l_shoulder_1" description="left shoulder" name="l_shoulder" rotation="0 0 1 1.57"></HAnimJoint>
-<HAnimJoint DEF="PoseJoint_r_shoulder_1" description="right shoulder" name="r_shoulder" rotation="0 0 -1 1.57"></HAnimJoint>
-</fieldValue>
-<fieldValue name="description" value="arms stretched outward and level similar to letter T"></fieldValue>
 <fieldValue name="loa" value="1"></fieldValue>
+<fieldValue name="description" value="arms stretched outward and level similar to letter T"></fieldValue>
+<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder_1" description="left shoulder" rotation="0 0 1 1.57" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder_1" description="right shoulder" rotation="0 0 -1 1.57" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<!--test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/--></fieldValue>
 <fieldValue name="transitionDuration" value="1.3"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="A_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<ProtoInstance name="HAnimPose" DEF="A_Pose"><fieldValue name="name" value="A"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="A"></fieldValue>
-<fieldValue name="children"><HAnimJoint DEF="PoseJoint_l_shoulder" description="left shoulder" name="l_shoulder" rotation="0 0 1 0.5"></HAnimJoint>
-<HAnimJoint DEF="PoseJoint_r_shoulder" description="right shoulder" name="r_shoulder" rotation="0 0 -1 0.5"></HAnimJoint>
-</fieldValue>
+<fieldValue name="loa" value="1"></fieldValue>
 <fieldValue name="description" value="arms stretched outward and downward similar to letter A"></fieldValue>
-<fieldValue name="loa" value="1"></fieldValue>
+<fieldValue name="children"><HAnimJoint name="l_shoulder" DEF="PoseJoint_l_shoulder" description="left shoulder" rotation="0 0 1 0.5" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_shoulder" DEF="PoseJoint_r_shoulder" description="right shoulder" rotation="0 0 -1 0.5" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+</fieldValue>
 <fieldValue name="transitionDuration" value="1.2"></fieldValue>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="TouchDown_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<ProtoInstance name="HAnimPose" DEF="TouchDown_Pose"><!--thanks Joe--><fieldValue name="name" value="TouchDown"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="TouchDown"></fieldValue>
-<fieldValue name="children"><HAnimJoint DEF="_1" name="humanoid_root" rotation="0 1 0 -0.698132"></HAnimJoint>
-<HAnimJoint DEF="_2" name="l_hip" rotation="-1 1 1 1"></HAnimJoint>
-<HAnimJoint DEF="_3" name="l_knee" rotation="1 0 0 1"></HAnimJoint>
-<HAnimJoint DEF="_4" name="l_talocrural" rotation="-0.2 0 0.1 0.225"></HAnimJoint>
-<HAnimJoint DEF="_5" name="r_hip" rotation="-1 -1 -1 1"></HAnimJoint>
-<HAnimJoint DEF="_6" name="r_knee" rotation="1 0 0 1"></HAnimJoint>
-<HAnimJoint DEF="_7" name="r_talocrural" rotation="-0.2 0 0.1 0.25"></HAnimJoint>
-<HAnimJoint DEF="_8" name="vl5" rotation="0 0 0.01 0.2"></HAnimJoint>
-<HAnimJoint DEF="_9" name="vt10" rotation="0 0 0.01 0.1"></HAnimJoint>
-<HAnimJoint DEF="_10" name="vc4" rotation="0 0 -0.01 0.15"></HAnimJoint>
-<HAnimJoint DEF="_11" name="l_shoulder" rotation="-1 0.5 1 2"></HAnimJoint>
-<HAnimJoint DEF="_12" name="l_elbow" rotation="-1 0 0 1"></HAnimJoint>
-<HAnimJoint DEF="_13" name="l_radiocarpal"></HAnimJoint>
-<HAnimJoint DEF="_14" name="r_shoulder" rotation="-1 -0.5 -1 2.6"></HAnimJoint>
-<HAnimJoint DEF="_15" name="r_elbow" rotation="-1 0 0 1"></HAnimJoint>
-<HAnimJoint DEF="_16" name="r_radiocarpal"></HAnimJoint>
-</fieldValue>
+<fieldValue name="loa" value="1"></fieldValue>
 <fieldValue name="description" value="arms and legs stretched outward providing a TouchDown gesture"></fieldValue>
-<fieldValue name="loa" value="1"></fieldValue>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" rotation="0 1 0 -0.698132" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_hip" rotation="-1 1 1 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_knee" rotation="1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_talocrural" rotation="-0.2 0 0.1 0.225" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_hip" rotation="-1 -1 -1 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_knee" rotation="1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_talocrural" rotation="-0.2 0 0.1 0.25" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="vl5" rotation="0 0 0.01 0.2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="vt10" rotation="0 0 0.01 0.1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="vc4" rotation="0 0 -0.01 0.15" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_shoulder" rotation="-1 0.5 1 2" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_elbow" rotation="-1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="l_radiocarpal" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_shoulder" rotation="-1 -0.5 -1 2.6" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_elbow" rotation="-1 0 0 1" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+<HAnimJoint name="r_radiocarpal" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+</fieldValue>
 <fieldValue name="transitionDuration" value="1.2"></fieldValue>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="I_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<ProtoInstance name="HAnimPose" DEF="I_Pose"><fieldValue name="name" value="I"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="I"></fieldValue>
-<fieldValue name="description" value="arms and legs straight down default binding pose for baseline Humanoid"></fieldValue>
 <fieldValue name="loa" value="1"></fieldValue>
+<fieldValue name="description" value="arms and legs straight down default binding pose for baseline Humanoid"></fieldValue>
+<fieldValue name="children"><!--not defining any children equals the default "I" pose--></fieldValue>
 <fieldValue name="transitionDuration" value="1.5"></fieldValue>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="H_Pose" name="HAnimPose"><fieldValue name="name" value="H"></fieldValue>
-<fieldValue name="description" value="TODO experimental pose not yet implemented"></fieldValue>
+<ProtoInstance name="HAnimPose" DEF="H_Pose"><fieldValue name="name" value="H"></fieldValue>
 <fieldValue name="enabled" value="false"></fieldValue>
+<fieldValue name="description" value="TODO experimental pose not yet implemented"></fieldValue>
 <fieldValue name="transitionDuration" value="1.4"></fieldValue>
-</ProtoInstance>
-<ProtoInstance DEF="FaceLeft_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
+<!--<fieldValue name='loa' value='1'></fieldValue>--></ProtoInstance>
+<ProtoInstance name="HAnimPose" DEF="FaceLeft_Pose"><fieldValue name="name" value="FaceLeft"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="FaceLeft"></fieldValue>
-<fieldValue name="children"><HAnimJoint DEF="FaceLeft_humanoid_root" description="Only rotate the model" name="humanoid_root" rotation="0 1 0 1.570796"></HAnimJoint>
-</fieldValue>
+<fieldValue name="loa" value="0"></fieldValue>
 <fieldValue name="description" value="Only modify humanoid_root Joint node to face left"></fieldValue>
-<fieldValue name="loa" value="0"></fieldValue>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceLeft_humanoid_root" description="Only rotate the model" rotation="0 1 0 1.570796" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+</fieldValue>
 <fieldValue name="transitionDuration" value="1.1"></fieldValue>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
 </ProtoInstance>
-<ProtoInstance DEF="FaceRight_Pose" name="HAnimPose"><fieldValue name="parentHAnimHumanoid"><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
+<ProtoInstance name="HAnimPose" DEF="FaceRight_Pose"><fieldValue name="name" value="FaceRight"></fieldValue>
+<fieldValue name="enabled" value="true"></fieldValue>
+<fieldValue name="parentHAnimHumanoid"><!--HumanoidImported for Inline/IMPORT (or else USE='hanim_JinLOA1' if copy of original HAnimHumanoid is embedded in this model)--><HAnimHumanoid USE="HumanoidImported"></HAnimHumanoid>
 </fieldValue>
-<fieldValue name="name" value="FaceRight"></fieldValue>
-<fieldValue name="children"><HAnimJoint DEF="FaceRight_humanoid_root" description="Only rotate the model" name="humanoid_root" rotation="0 1 0 -1.570796"></HAnimJoint>
-</fieldValue>
+<fieldValue name="loa" value="0"></fieldValue>
 <fieldValue name="description" value="Only modify humanoid_root Joint node to face right"></fieldValue>
-<fieldValue name="loa" value="0"></fieldValue>
+<fieldValue name="children"><HAnimJoint name="humanoid_root" DEF="FaceRight_humanoid_root" description="Only rotate the model" rotation="0 1 0 -1.570796" ulimit="0 0 0" llimit="0 0 0"></HAnimJoint>
+</fieldValue>
 <fieldValue name="transitionDuration" value="1.1"></fieldValue>
+<fieldValue name="traceEnabled" value="true"></fieldValue>
 </ProtoInstance>
-<Group DEF="InterfaceButtonsGroup"><Transform DEF="DisplayHeader" translation="0 2 0"><Shape><Appearance containerField="appearance" DEF="PoseTextAppearance"><Material containerField="material" diffuseColor="0.1 0.5 0.3"></Material>
-</Appearance>
-<Text string="&quot;HAnimPosePrototype example implementation&quot;"><FontStyle containerField="fontStyle" DEF="HeaderFont" family="&quot;SANS&quot;" style="BOLD" size="0.15" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Group DEF="InterfaceButtonsGroup"><Transform DEF="DisplayHeader" translation="0 2 0"><Shape><Text string="&quot;HAnimPosePrototype example implementation&quot;"><FontStyle containerField="fontStyle" DEF="HeaderFont" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.15" style="BOLD"></FontStyle>
 </Text>
+<Appearance containerField="appearance" DEF="PoseTextAppearance"><Material containerField="material" diffuseColor="0.1 0.5 0.3"></Material>
+</Appearance>
 </Shape>
 </Transform>
-<Transform DEF="T_PoseInterface" translation="-1.5 1.5 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;\&quot;T\&quot; Pose&quot;"><FontStyle containerField="fontStyle" DEF="SharedFont" family="&quot;SANS&quot;" style="BOLD" size="0.1" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;"></FontStyle>
+<Transform DEF="T_PoseInterface" translation="-1.5 1.5 0"><Shape><Text string="&quot;\&quot;T\&quot; Pose&quot;"><FontStyle containerField="fontStyle" DEF="SharedFont" family="&quot;SANS&quot;" justify="&quot;MIDDLE&quot; &quot;MIDDLE&quot;" size="0.1" style="BOLD"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
 <Shape><Appearance containerField="appearance" DEF="TransparentAppearance"><Material containerField="material" transparency="0.8"></Material>
 </Appearance>
 <Box size="0.45 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="T_PoseTouchSensor" description="select to move shoulders to &quot;T&quot; pose, leave other joints unchanged"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="T_PoseTouchSensor" toField="commencePose" toNode="T_Pose"></ROUTE>
 </Transform>
-<Transform DEF="A_PoseInterface" translation="-1.5 1 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;\&quot;A\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="A_PoseInterface" translation="-1.5 1 0"><Shape><Text string="&quot;\&quot;A\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.45 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="A_PoseTouchSensor" description="select to move shoulders to &quot;A&quot; pose, leave other joints unchanged"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="A_PoseTouchSensor" toField="commencePose" toNode="A_Pose"></ROUTE>
 </Transform>
-<Transform DEF="TouchDown_PoseInterface" translation="-1.5 0.5 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;TouchDown Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="TouchDown_PoseInterface" translation="-1.5 0.5 0"><Shape><Text string="&quot;TouchDown Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.85 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="TouchDown_PoseTouchSensor" description="select to transition all joints to TouchDown pose"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="TouchDown_PoseTouchSensor" toField="commencePose" toNode="TouchDown_Pose"></ROUTE>
 </Transform>
-<Transform DEF="I_PoseInterface" translation="-1.5 0 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;\&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="I_PoseInterface" translation="-1.5 0 0"><Shape><Text string="&quot;\&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.45 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="I_PoseTouchSensor" description="select to transition all joints to &quot;I&quot; pose"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="I_PoseTouchSensor" toField="commencePose" toNode="I_Pose"></ROUTE>
 </Transform>
-<Transform DEF="FaceLeftPoseInterface" translation="1.5 1.5 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;Face Left Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="FaceLeftPoseInterface" translation="1.5 1.5 0"><Shape><Text string="&quot;Face Left Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
 <Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.9 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="FaceLeftTouchSensor" description="select to rotate body and Face Left, leave other joints unchanged"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="FaceLeftTouchSensor" toField="commencePose" toNode="FaceLeft_Pose"></ROUTE>
 </Transform>
-<Transform DEF="FaceRightPoseInterface" translation="1.5 1 0"><Shape><Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
-<Text string="&quot;Face Right Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="FaceRightPoseInterface" translation="1.5 1 0"><Shape><Text string="&quot;Face Right Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="PoseTextAppearance"></Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.9 0.2 0.001"></Box>
 </Shape>
 <TouchSensor DEF="FaceRightTouchSensor" description="select to rotate body and Face Right, leave other joints unchanged"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="FaceRightTouchSensor" toField="commencePose" toNode="FaceRight_Pose"></ROUTE>
 </Transform>
-<Transform DEF="AnimatePosesInterface" translation="1.5 0.5 0"><Shape><Appearance containerField="appearance" DEF="AnimationTextAppearance"><Material containerField="material" diffuseColor="0.1 0.2 0.3"></Material>
-</Appearance>
-<Text string="&quot;Direct animation&quot; &quot;to, from \&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="AnimatePosesInterface" translation="1.5 0.5 0"><Shape><Text string="&quot;Direct animation&quot; &quot;to, from \&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" DEF="AnimationTextAppearance"><Material containerField="material" diffuseColor="0.1 0.2 0.3"></Material>
+</Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.9 0.25 0.001"></Box>
 </Shape>
 <TouchSensor DEF="AnimatePosesTouchSensor" description="select to animate current pose to &quot;I&quot; pose, then back to original pose, using TimeSensor events"></TouchSensor>
-<TimeSensor DEF="AnimatePosesClock" description="directly animate several poses" cycleInterval="4"></TimeSensor>
+<!--cycleInterval=4 also hard-coded in script execution message--><TimeSensor DEF="AnimatePosesClock" cycleInterval="4" description="directly animate several poses"></TimeSensor>
 <ScalarInterpolator DEF="AnimatePosesLoopInterpolator" key="0 0.05 0.45 0.55 0.95 1" keyValue="0 0 1 1 0 0"></ScalarInterpolator>
+<ROUTE fromField="touchTime" fromNode="AnimatePosesTouchSensor" toField="startTime" toNode="AnimatePosesClock"></ROUTE>
+<ROUTE fromField="fraction_changed" fromNode="AnimatePosesClock" toField="set_fraction" toNode="AnimatePosesLoopInterpolator"></ROUTE>
+<ROUTE fromField="value_changed" fromNode="AnimatePosesLoopInterpolator" toField="set_fraction" toNode="I_Pose"></ROUTE>
 </Transform>
-<Transform DEF="ResetDefaultPoseInterface" translation="1.5 0 0"><Shape><Appearance containerField="appearance" USE="AnimationTextAppearance"></Appearance>
-<Text string="&quot;Reset All Joints&quot; &quot;to Default \&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
+<Transform DEF="ResetDefaultPoseInterface" translation="1.5 0 0"><Shape><Text string="&quot;Reset All Joints&quot; &quot;to Default \&quot;I\&quot; Pose&quot;"><FontStyle containerField="fontStyle" USE="SharedFont"></FontStyle>
 </Text>
+<Appearance containerField="appearance" USE="AnimationTextAppearance"></Appearance>
 </Shape>
-<Shape><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
+<Shape><!--Selectable Text transparent Box for easy user selection--><Appearance containerField="appearance" USE="TransparentAppearance"></Appearance>
 <Box size="0.9 0.25 0.001"></Box>
 </Shape>
 <TouchSensor DEF="ResetPoseTouchSensor" description="select to immediately Rezero All Joints (to default &quot;I&quot; Pose) by sending resetAllJoints event"></TouchSensor>
+<ROUTE fromField="isActive" fromNode="ResetPoseTouchSensor" toField="resetAllJoints" toNode="FaceLeft_Pose"></ROUTE>
 </Transform>
 </Group>
-<Group DEF="HandleInlineLoadsensorRouting"></Group>
-<IMPORT inlineDEF="HumanoidInline" importedDEF="BoxMan2" AS="HumanoidImported"></IMPORT>
-<ROUTE fromNode="T_PoseTouchSensor" fromField="isActive" toNode="T_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="A_PoseTouchSensor" fromField="isActive" toNode="A_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="TouchDown_PoseTouchSensor" fromField="isActive" toNode="TouchDown_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="I_PoseTouchSensor" fromField="isActive" toNode="I_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="FaceLeftTouchSensor" fromField="isActive" toNode="FaceLeft_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="FaceRightTouchSensor" fromField="isActive" toNode="FaceRight_Pose" toField="commencePose"></ROUTE>
-<ROUTE fromNode="AnimatePosesTouchSensor" fromField="touchTime" toNode="AnimatePosesClock" toField="set_startTime"></ROUTE>
-<ROUTE fromNode="AnimatePosesClock" fromField="fraction_changed" toNode="AnimatePosesLoopInterpolator" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="AnimatePosesLoopInterpolator" fromField="value_changed" toNode="I_Pose" toField="set_fraction"></ROUTE>
-<ROUTE fromNode="ResetPoseTouchSensor" fromField="isActive" toNode="FaceLeft_Pose" toField="resetAllJoints"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="A_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="H_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="I_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="T_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="FaceLeft_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="FaceRight_Pose" toField="isLoaded"></ROUTE>
-<ROUTE fromNode="HumanoidInlineLoadSensor" fromField="isLoaded" toNode="TouchDown_Pose" toField="isLoaded"></ROUTE>
+<Group DEF="HandleInlineLoadsensorRouting"><ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="A_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="H_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="I_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="T_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="FaceLeft_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="FaceRight_Pose"></ROUTE>
+<ROUTE fromField="isLoaded" fromNode="HumanoidInlineLoadSensor" toField="isLoaded" toNode="TouchDown_Pose"></ROUTE>
+</Group>
 </Scene>
 </X3D>

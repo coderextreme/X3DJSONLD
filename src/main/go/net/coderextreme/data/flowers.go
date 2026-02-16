@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -80,8 +80,12 @@ func main() {
         Head: &x3d.Head{
             Components: []*x3d.Component{
                 &x3d.Component{
-                    Name: stringPtr("EnvironmentalEffects"),
-                    Level: int32Ptr(3),
+                    Name: stringPtr("Scripting"),
+                    Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("EnvironmentalEffects"),
+                Level: int32Ptr(3),
             },
             &x3d.Component{
                 Name: stringPtr("Shaders"),
@@ -92,12 +96,24 @@ func main() {
                 Level: int32Ptr(1),
             },
             &x3d.Component{
+                Name: stringPtr("Texturing"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
+                Name: stringPtr("Rendering"),
+                Level: int32Ptr(1),
+            },
+            &x3d.Component{
                 Name: stringPtr("Shape"),
                 Level: int32Ptr(4),
             },
             &x3d.Component{
                 Name: stringPtr("Grouping"),
                 Level: int32Ptr(3),
+            },
+            &x3d.Component{
+                Name: stringPtr("Core"),
+                Level: int32Ptr(1),
             },
         },
             Metas: []*x3d.Meta{
@@ -117,14 +133,27 @@ func main() {
                 Name: stringPtr("generator"),
                 Content: stringPtr("X3D-Edit, https://savage.nps.edu/X3D-Edit"),
             },
+            &x3d.Meta{
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.NavigationInfo{
+                },
+//Images courtesy of Paul Debevec's Light Probe Image Gallery
+                &x3d.Background{
+                    BackUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
+                    BottomUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
+                    FrontUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
+                    LeftUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
+                    RightUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
+                    TopUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("flower"),
-                    ProtoInterface: &x3d.ProtoInterface{
-                    },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
                             &x3d.Transform{
@@ -142,11 +171,14 @@ func main() {
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("texture"),
                                                 },
-                                                FrontTexture: &x3d.ImageTexture{
-                                                    Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
-                                                },
                                                 BackTexture: &x3d.ImageTexture{
                                                     Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
+                                                },
+                                                BottomTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
+                                                },
+                                                FrontTexture: &x3d.ImageTexture{
+                                                    Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
                                                 },
                                                 LeftTexture: &x3d.ImageTexture{
                                                     Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
@@ -157,90 +189,113 @@ func main() {
                                                 TopTexture: &x3d.ImageTexture{
                                                     Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
                                                 },
-                                                BottomTexture: &x3d.ImageTexture{
-                                                    Url: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
-                                                },
                                             },
-                                            Shaders: []x3d.X3DNode{
-                                                &x3d.ComposedShader{
-                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                        DEF: stringPtr("x_ite"),
-                                                    },
-                                                    Language: stringPtr("GLSL"),
-                                                    Parts: []x3d.X3DNode{
-                                                        &x3d.ShaderPart{
-                                                            Url: x3d.MFString{"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"},
-                                                    },
-                                                    &x3d.ShaderPart{
-                                                        Type: stringPtr("FRAGMENT"),
-                                                        Url: x3d.MFString{"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"},
-                                                    },
+//<ComposedShader DEF='x3dom' language="GLSL">
+//<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+//<field name='cube' type='SFNode' accessType="inputOutput">
+//<ComposedCubeMapTexture USE="texture"/>
+//</field>
+//<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+//<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs"'></ShaderPart>
+//<ShaderPart url='"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs"' type='FRAGMENT'></ShaderPart>
+//</ComposedShader>
+                                            &x3d.ComposedShader{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("x_ite"),
                                                 },
-                                                    Field: []x3d.X3DNode{
-                                                        &x3d.Field{
-                                                            AccessType: stringPtr("inputOutput"),
-                                                            Type: stringPtr("SFNode"),
-                                                            Name: stringPtr("cube"),
-                                                            Children: []x3d.X3DNode{
-                                                                &x3d.ComposedCubeMapTexture{
-                                                                    CoreX3DNode: x3d.CoreX3DNode{
-                                                                        USE: stringPtr("texture"),
-                                                                    },
+                                                Language: stringPtr("GLSL"),
+                                                Field: []x3d.X3DNode{
+                                                    &x3d.Field{
+                                                        Name: stringPtr("cube"),
+                                                        Type: stringPtr("SFNode"),
+                                                        AccessType: stringPtr("inputOutput"),
+                                                        Children: []x3d.X3DNode{
+                                                            &x3d.ComposedCubeMapTexture{
+                                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                                    USE: stringPtr("texture"),
                                                                 },
                                                             },
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("initializeOnly"),
-                                                        Type: stringPtr("SFVec3f"),
-                                                        Name: stringPtr("chromaticDispertion"),
-                                                        Value: stringPtr("0.98 1 1.033"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("bias"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("scale"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("power"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("a"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("b"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("c"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("d"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("tdelta"),
-                                                    },
-                                                    &x3d.Field{
-                                                        AccessType: stringPtr("inputOnly"),
-                                                        Type: stringPtr("SFFloat"),
-                                                        Name: stringPtr("pdelta"),
-                                                    },
-                                                    },
+                                                        },
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("chromaticDispertion"),
+                                                    AccessType: stringPtr("initializeOnly"),
+                                                    Type: stringPtr("SFVec3f"),
+                                                    Value: stringPtr("0.98 1 1.033"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("bias"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("0.5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("scale"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("0.5"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("power"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("2"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("a"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("10"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("b"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("1"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("c"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("20"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("d"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("20"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("tdelta"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("0"),
+                                                },
+                                                &x3d.Field{
+                                                    Name: stringPtr("pdelta"),
+                                                    Type: stringPtr("SFFloat"),
+                                                    AccessType: stringPtr("inputOnly"),
+                                                    Value: stringPtr("0"),
+                                                },
+                                            },
+                                                Parts: []x3d.X3DNode{
+                                                    &x3d.ShaderPart{
+                                                        Url: x3d.MFString{"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"},
+                                                        Type: stringPtr("VERTEX"),
+                                                },
+                                                &x3d.ShaderPart{
+                                                    Url: x3d.MFString{"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs", "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"},
+                                                    Type: stringPtr("FRAGMENT"),
+                                                },
                                                 },
                                             },
                                         },
@@ -255,54 +310,56 @@ func main() {
                                 },
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
+                                        Name: stringPtr("translation"),
                                         AccessType: stringPtr("inputOutput"),
                                         Type: stringPtr("SFVec3f"),
-                                        Name: stringPtr("translation"),
+                                        Value: stringPtr("0 0 0"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("velocity"),
                                     AccessType: stringPtr("inputOutput"),
                                     Type: stringPtr("SFVec3f"),
-                                    Name: stringPtr("velocity"),
+                                    Value: stringPtr("0 0 0"),
                                 },
                                 &x3d.Field{
+                                    Name: stringPtr("set_fraction"),
                                     AccessType: stringPtr("inputOnly"),
                                     Type: stringPtr("SFFloat"),
-                                    Name: stringPtr("set_fraction"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("a"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("0.5"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("b"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("0.5"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("c"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("3"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("d"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("3"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("tdelta"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("0.5"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("inputOutput"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("pdelta"),
+                                    Type: stringPtr("SFFloat"),
+                                    AccessType: stringPtr("inputOutput"),
                                     Value: stringPtr("0.5"),
                                 },
 //ecmascript:
@@ -381,66 +438,62 @@ func main() {
                                 CycleInterval: doublePtr(5.0),
                                 Loop: boolPtr(true),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("TourTime"),
                                 FromField: stringPtr("fraction_changed"),
                                 ToNode: stringPtr("Animate"),
                                 ToField: stringPtr("set_fraction"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
                                 FromField: stringPtr("translation_changed"),
                                 ToNode: stringPtr("animate_transform"),
                                 ToField: stringPtr("set_translation"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("a_changed"),
+                                FromField: stringPtr("a"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("a"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("b_changed"),
+                                FromField: stringPtr("b"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("b"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("c_changed"),
+                                FromField: stringPtr("c"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("c"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("d_changed"),
+                                FromField: stringPtr("d"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("d"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("pdelta_changed"),
+                                FromField: stringPtr("pdelta"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("pdelta"),
                             },
-                            &x3d.ROUTE{
+                            &x3d.X3DRoute{
                                 FromNode: stringPtr("Animate"),
-                                FromField: stringPtr("tdelta_changed"),
+                                FromField: stringPtr("tdelta"),
                                 ToNode: stringPtr("x_ite"),
                                 ToField: stringPtr("tdelta"),
                             },
+//<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>
+//<ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>
+//<ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>
+//<ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>
+//<ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>
+//<ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
                         },
                     },
-                },
-                &x3d.NavigationInfo{
-                },
-                &x3d.Background{
-                    FrontUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_front.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"},
-                    BackUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_back.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"},
-                    LeftUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_left.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"},
-                    RightUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_right.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"},
-                    TopUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_top.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"},
-                    BottomUrl: x3d.MFString{"../resources/images/all_probes/stpeters_cross/stpeters_bottom.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"},
                 },
                 &x3d.ProtoInstance{
                     Name: stringPtr("flower"),
@@ -469,13 +522,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/flowers.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -486,7 +539,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

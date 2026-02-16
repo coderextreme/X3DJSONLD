@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -81,7 +81,7 @@ func main() {
             Components: []*x3d.Component{
                 &x3d.Component{
                     Name: stringPtr("HAnim"),
-                    Level: int32Ptr(3),
+                    Level: int32Ptr(2),
             },
         },
             Metas: []*x3d.Meta{
@@ -111,7 +111,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Tue, 09 Sep 2025 19:37:53 GMT"),
+                Content: stringPtr("2 July 2023"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -127,7 +127,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
-                Content: stringPtr("X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/hanim.html#HAnimHumanoid"),
+                Content: stringPtr("X3D4 Architecture, clause 26 HAnim component, 26.3.2 HAnimHumanoid https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4-DIS/Part01/components/hanim.html#HAnimHumanoid"),
             },
             &x3d.Meta{
                 Name: stringPtr("warning"),
@@ -137,10 +137,18 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayers.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 4.0, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("HAnimHumanoid skin design patterns for apparel, medical"),
                 },
@@ -157,14 +165,18 @@ func main() {
                             Reference: stringPtr("https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/Guidelines.html#MultipleHumanoidsPerFile"),
                             Value: x3d.MFString{"E.4 Multiple humanoids per file"},
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SimpleSkeleton"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("a_SimpleSkeleton"),
                             },
-                            Name: stringPtr("SimpleSkeleton"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -179,10 +191,10 @@ func main() {
                                                 },
                                             },
                                             &x3d.HAnimSite{
+                                                Name: stringPtr("feature01_tip"),
                                                 CoreX3DNode: x3d.CoreX3DNode{
                                                     DEF: stringPtr("a_feature01_tip"),
                                                 },
-                                                Name: stringPtr("feature01_tip"),
                                                 &x3d.Shape{
                                                     CoreX3DNode: x3d.CoreX3DNode{
                                                         DEF: stringPtr("SiteVisualization"),
@@ -192,14 +204,18 @@ func main() {
                                     },
                             },
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SimpleSkeletonMesh"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("b_SimpleSkeletonMesh"),
                             },
-                            Name: stringPtr("SimpleSkeletonMesh"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -213,14 +229,18 @@ func main() {
                                     },
                             },
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SkinIndexedGeometry"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("c_SkinIndexedGeometry"),
                             },
-                            Name: stringPtr("SkinIndexedGeometry"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -232,14 +252,18 @@ func main() {
                                 },
                             },
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SkinShapeIndexedGeometry"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("d_SkinShapeIndexedGeometry"),
                             },
-                            Name: stringPtr("SkinShapeIndexedGeometry"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -253,19 +277,24 @@ func main() {
                                 },
                             },
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SkinSwitchShapeIndexedGeometry"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("e_SkinSwitchShapeIndexedGeometry"),
                             },
-                            Name: stringPtr("SkinSwitchShapeIndexedGeometry"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
                                     },
                             },
+//TODO show X3D4.0 addition of <Switch DEF='AlternativeSkins' containerField='skin'>
                             &x3d.Shape{
                                 Geometry: &x3d.IndexedFaceSet{
                                     CoreX3DNode: x3d.CoreX3DNode{
@@ -279,14 +308,19 @@ func main() {
                                 },
                             },
                         },
+//similarly for LOD
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("SynthesizedSkinShapeIndexedTwoPartGeometry"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("f_SynthesizedSkinShapeIndexedTwoPartGeometry"),
                             },
-                            Name: stringPtr("SynthesizedSkinShapeIndexedTwoPartGeometry"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -305,14 +339,18 @@ func main() {
                                 },
                             },
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("ApparelSkinIndexedGeometryMultipleShapes"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("g_ApparelSkinIndexedGeometryMultipleShapes"),
                             },
-                            Name: stringPtr("ApparelSkinIndexedGeometryMultipleShapes"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
@@ -320,23 +358,31 @@ func main() {
                             },
                             &x3d.Shape{
                             },
+//allow multiple Shape nodes with containerField='apparel', one for each layer of clothing
+//TODO proposed for X3D4.1 <Shape containerField='apparel'/>
                         },
+//==============================
                         &x3d.HAnimHumanoid{
+                            Name: stringPtr("AnatomySkinIndexedGeometryMultipleShapes"),
                             CoreX3DNode: x3d.CoreX3DNode{
                                 DEF: stringPtr("h_AnatomySkinIndexedGeometryMultipleShapes"),
                             },
-                            Name: stringPtr("AnatomySkinIndexedGeometryMultipleShapes"),
+                            Version: stringPtr("2.0"),
                             Skeleton: []x3d.X3DNode{
                                 &x3d.HAnimJoint{
                                     Name: stringPtr("humanoid_root"),
+                                    Ulimit: x3d.MFFloat{0.0, 0.0, 0.0},
+                                    Llimit: x3d.MFFloat{0.0, 0.0, 0.0},
                                     Children: []x3d.X3DNode{
                                         &x3d.HAnimSegment{
                                             Name: stringPtr("sacrum"),
                                     },
                             },
+//allow multiple Shape nodes with containerField='skin', one for each layer of skin
                             &x3d.Shape{
                             },
                         },
+//==============================
                     },
                 },
                 &x3d.Viewpoint{
@@ -346,37 +392,40 @@ func main() {
                     Description: stringPtr("Select text to see website"),
                     Position: &x3d.SFVec3f{0.0, 0.0, 12.0},
                 },
+//Selectable Text design pattern has transparent Box and TouchSensor description as a tooltip
                 &x3d.Anchor{
                     Description: stringPtr("DesignPatternsApparelMedicalSkinLayers.x3d explores potential apparel approaches"),
-                    Url: x3d.MFString{"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"},
                     Parameter: x3d.MFString{"target=blank"},
+                    Url: x3d.MFString{"https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Skin/DesignPatternsApparelMedicalSkinLayersIndex.html"},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
-                            Appearance: &x3d.Appearance{
-                                Material: &x3d.Material{
-                                    DiffuseColor: &x3d.SFColor{0.9, 0.9, 0.9},
-                                },
-                            },
+//TODO adjust Text string and Box size, then set Material transparency='1'
                             Geometry: &x3d.Text{
                                 String: x3d.MFString{"DesignPatternsApparelMedicalSkinLayers.x3d", "", "explores potential apparel approaches"},
                                 FontStyle: &x3d.FontStyle{
                                     Family: x3d.MFString{"SANS"},
-                                    Style: stringPtr("BOLD"),
-                                    Size: floatPtr(0.6),
                                     Justify: x3d.MFString{"MIDDLE", "MIDDLE"},
+                                    Size: floatPtr(0.6),
+                                    Style: stringPtr("BOLD"),
+                                },
+                            },
+                            Appearance: &x3d.Appearance{
+                                Material: &x3d.Material{
+                                    DiffuseColor: &x3d.SFColor{0.9, 0.9, 0.9},
                                 },
                             },
                         },
                     },
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
+//Author TODO: to adjust transparent Box as text-selection assist, set width and height to match size, then set transparency='1' to make invisible.
+                            Geometry: &x3d.Box{
+                                Size: &x3d.SFVec3f{11.0, 2.0, 0.001},
+                            },
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
                                     Transparency: floatPtr(1.0),
                                 },
-                            },
-                            Geometry: &x3d.Box{
-                                Size: &x3d.SFVec3f{11.0, 2.0, 0.001},
                             },
                         },
                     },
@@ -399,13 +448,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/DesignPatternsApparelMedicalSkinLayers.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -416,7 +465,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

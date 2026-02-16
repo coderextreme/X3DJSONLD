@@ -332,7 +332,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);
 x3D0 = X3D.new
     .setProfile("Full")
-    .setVersion("4.0")
+    .setVersion("4.1")
     .setHead(Head.new()
         .addComponent(Component.new()
             .setName("EnvironmentalEffects")
@@ -406,7 +406,8 @@ x3D0 = X3D.new
             .addChild(ParticleSystem.new()
                 .setMaxParticles(20)
                 .setGeometryType("GEOMETRY")
-            .addComments(CommentsBlock.new("* values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values"))
+            .addComments(CommentsBlock.new("* values - array of MFFloats to pass to ComposedShader"))
+            .addComments(CommentsBlock.new("* variations in values - array of MFFloats to pass to ComposedShader that varies values"))
                 .addVariationPhysicsModel(VariationPhysicsModel.new()
                     .setValues("2 2 5 5 0 0")
                     .setVariations("0.2 0.1 0.3 0.3 0.01 0.01")

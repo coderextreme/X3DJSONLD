@@ -56,29 +56,29 @@ public class IFS implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addComponent(new component().setName("HAnim").setLevel(1))
-        .addMeta(new meta().setName("title").setContent("IFS.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d"))
-        .addMeta(new meta().setName("description").setContent("An attempt at a standard LOA-4 skeleton"))
-        .addMeta(new meta().setName("generator").setContent("h2.pl"))
-        .addMeta(new meta().setName("modified").setContent("18 Jan 2023"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("9 November 2020"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addComponent(new component().setName(new SFString("HAnim")).setLevel(1))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("IFS.x3d")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://www.web3d.org/x3d/content/examples/HumanoidAnimation/IFS.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("An attempt at a standard LOA-4 skeleton")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("h2.pl")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("18 Jan 2023")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("9 November 2020")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("../license.html"))))
       .setScene(new Scene()
         .addChild(new Group()
           .addComments(new CommentsBlock("DEFS for markers of skeleton joints, segments, and sites"))
           .addChild(new Transform().setTranslation(new float[] {0f ,2.1f ,0f })
-            .addChild(new Shape().setDEF("HAnimSiteShape")
-              .setGeometry(new IndexedFaceSet().setDEF("DiamondIFS").setCreaseAngle(0.5f ).setSolid(false).setCoordIndex(new MFInt320().getArray())
-                .setColor(new ColorRGBA().setDEF("HAnimSiteColorRGBA").setColor(new MFColorRGBA1().getArray()))
+            .addChild(new Shape().setDEF(new SFString("HAnimSiteShape"))
+              .setGeometry(new IndexedFaceSet().setDEF(new SFString("DiamondIFS")).setCreaseAngle(0.5f ).setSolid(false).setCoordIndex(new MFInt320().getArray())
+                .setColor(new ColorRGBA().setDEF(new SFString("HAnimSiteColorRGBA")).setColor(new MFColorRGBA1().getArray()))
                 .setCoord(new Coordinate().setPoint(new MFVec3f2().getArray())))
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,0f }).setTransparency(0.3f ))))))
         .addChild(new NavigationInfo().setSpeed(1.5f ))
-        .addChild(new Viewpoint().setDescription("default")));
+        .addChild(new Viewpoint().setDescription(new SFString("default"))));
     return X3D0;
     }
 private class MFInt320 {

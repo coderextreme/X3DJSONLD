@@ -253,7 +253,12 @@ var X3D0 =  X3D(
 
                         Group(
                           DEF_ : SFString('sacrum_Sites'),
-                          /*None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)]),
+                          /*None*/
+                          /*(example site and site marker code)*/
+                          /*<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>*/
+                          /*<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>*/
+                          /*<Shape USE='HAnimSiteShape'/>*/
+                          /*</HAnimSite>*/)]),
 
                     HAnimJoint(
                       name_ : SFString('sacroiliac'),
@@ -290,7 +295,16 @@ var X3D0 =  X3D(
 
                             Group(
                               DEF_ : SFString('pelvis_Sites'),
-                              /*(r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z)*/
+                              /*(r_iliocristale_pt '-0.1525 1.0628 0.0035)*/
+                              /*(r_trochanterion_pt -0.1689 0.8419 0.0352)*/
+                              /*(l_iliocristale_pt 0.1612 1.0537 0.0008)*/
+                              /*(l_trochanterion_pt 0.1677 0.8336 0.0303)*/
+                              /*(r_asis_pt -0.0887 1.0021 0.1112)*/
+                              /*(l_asis_pt 0.0774 1.0190 -0.1151)*/
+                              /*(r_psis_pt -0.0716 1.0190 -0.1138)*/
+                              /*(l_psis_pt 0.0774 1.0190 -0.1151)*/
+                              /*(crotch_pt 0.0034 0.8266 0.0257)*/
+                              /*(buttocks_standing_wall_contact_point x y z)*/
                               children_ : [
                                 HAnimSite(
                                   name_ : SFString('r_iliocristale_pt'),
@@ -437,7 +451,10 @@ var X3D0 =  X3D(
 
                                 Group(
                                   DEF_ : SFString('l_thigh_Sites'),
-                                  /*(l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z)*/
+                                  /*(l_knee_crease_pt 0.0993 0.4881 -0.0309)*/
+                                  /*(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)*/
+                                  /*(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)*/
+                                  /*(l_suprapatella_pt x y z)*/
                                   children_ : [
                                     HAnimSite(
                                       name_ : SFString('l_knee_crease_pt'),
@@ -518,7 +535,9 @@ var X3D0 =  X3D(
 
                                     Group(
                                       DEF_ : SFString('l_calf_Sites'),
-                                      /*(l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)*/
+                                      /*(l_tibiale_pt x y z)*/
+                                      /*(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)*/
+                                      /*(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)*/
                                       children_ : [
                                         HAnimSite(
                                           name_ : SFString('l_tibiale_pt'),
@@ -588,7 +607,8 @@ var X3D0 =  X3D(
 
                                         Group(
                                           DEF_ : SFString('l_talus_Sites'),
-                                          /*(l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)*/
+                                          /*(l_sphyrion_pt 0.0890 0.0575 -0.0943)*/
+                                          /*(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)*/
                                           children_ : [
                                             HAnimSite(
                                               name_ : SFString('l_sphyrion_pt'),
@@ -1649,7 +1669,10 @@ var X3D0 =  X3D(
 
                                 Group(
                                   DEF_ : SFString('r_thigh_Sites'),
-                                  /*(r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z)*/
+                                  /*(r_knee_crease_pt -0.0825 0.4932 -0.0326)*/
+                                  /*(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)*/
+                                  /*(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)*/
+                                  /*(r_suprapatella_pt x y z)*/
                                   children_ : [
                                     HAnimSite(
                                       name_ : SFString('r_knee_crease_pt'),
@@ -1730,7 +1753,9 @@ var X3D0 =  X3D(
 
                                     Group(
                                       DEF_ : SFString('r_calf_Sites'),
-                                      /*(r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)*/
+                                      /*(r_tibiale_pt x y z)*/
+                                      /*(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)*/
+                                      /*(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)*/
                                       children_ : [
                                         HAnimSite(
                                           name_ : SFString('r_tibiale_pt'),
@@ -1800,7 +1825,8 @@ var X3D0 =  X3D(
 
                                         Group(
                                           DEF_ : SFString('r_talus_Sites'),
-                                          /*(r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)*/
+                                          /*(r_sphyrion_pt -0.0603 0.0610 -0.1002)*/
+                                          /*(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)*/
                                           children_ : [
                                             HAnimSite(
                                               name_ : SFString('r_sphyrion_pt'),
@@ -2861,7 +2887,11 @@ var X3D0 =  X3D(
 
                                 Group(
                                   DEF_ : SFString('l5_Sites'),
-                                  /*(spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017)*/
+                                  /*(spine_1_middle_back x y z)*/
+                                  /*(spine_2_lower_back_pt x y z)*/
+                                  /*(waist_preferred_anterior_pt x y z)*/
+                                  /*(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)*/
+                                  /*(navel 0.0069 1.0966 0.1017)*/
                                   children_ : [
                                     HAnimSite(
                                       name_ : SFString('spine_1_middle_back_pt'),
@@ -3027,7 +3057,8 @@ var X3D0 =  X3D(
 
                                             Group(
                                               DEF_ : SFString('l2_Sites'),
-                                              /*(l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016)*/
+                                              /*(l_rib_10_pt 0.0871 1.1925 0.0992)*/
+                                              /*(r_rib_10_pt -0.0711 1.1941 0.1016)*/
                                               children_ : [
                                                 HAnimSite(
                                                   name_ : SFString('l_rib_10_pt'),
@@ -3197,7 +3228,8 @@ var X3D0 =  X3D(
 
                                                             Group(
                                                               DEF_ : SFString('t10_Sites'),
-                                                              /*(substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z)*/
+                                                              /*(substernale_pt 0.0085 1.2995 0.1147)*/
+                                                              /*(mesosternale_pt x y z)*/
                                                               children_ : [
                                                                 HAnimSite(
                                                                   name_ : SFString('substernale_pt'),
@@ -3256,7 +3288,11 @@ var X3D0 =  X3D(
 
                                                                 Group(
                                                                   DEF_ : SFString('t9_Sites'),
-                                                                  /*(l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z)*/
+                                                                  /*(l_thelion_pt 0.0918 1.3382 0.1192)*/
+                                                                  /*(r_thelion_pt -0.0736 1.3385 0.1217)*/
+                                                                  /*(rear_center_midsagittal_plane_pt x y z)*/
+                                                                  /*(l_chest_midsagittal_plane_pt x y z)*/
+                                                                  /*(r_chest_midsagittal_plane_pt x y z)*/
                                                                   children_ : [
                                                                     HAnimSite(
                                                                       name_ : SFString('l_thelion_pt'),
@@ -3607,7 +3643,8 @@ var X3D0 =  X3D(
 
                                                                                                 Group(
                                                                                                   DEF_ : SFString('t1_Sites'),
-                                                                                                  /*(suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815)*/
+                                                                                                  /*(suprasternale_pt 0.0084 1.4714 0.0551)*/
+                                                                                                  /*(cervicale_pt 0.0064 1.520 -0.0815)*/
                                                                                                   children_ : [
                                                                                                     HAnimSite(
                                                                                                       name_ : SFString('suprasternale_pt'),
@@ -3666,7 +3703,8 @@ var X3D0 =  X3D(
 
                                                                                                     Group(
                                                                                                       DEF_ : SFString('c7_Sites'),
-                                                                                                      /*(l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220)*/
+                                                                                                      /*(l_neck_base_pt 0.0646 1.5141 -0.0380)*/
+                                                                                                      /*(r_neck_base_pt -0.0419 1.5149 -0.0220)*/
                                                                                                       children_ : [
                                                                                                         HAnimSite(
                                                                                                           name_ : SFString('l_neck_base_pt'),
@@ -3958,7 +3996,17 @@ var X3D0 =  X3D(
 
                                                                                                                                 Group(
                                                                                                                                   DEF_ : SFString('skull_Sites'),
-                                                                                                                                  /*(skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z)*/
+                                                                                                                                  /*(skull_vertex_pt 0.0050 1.7504 0.0055)*/
+                                                                                                                                  /*(glabella_pt x y z)*/
+                                                                                                                                  /*(sellion_pt 0.0058 1.6316 0.0852)*/
+                                                                                                                                  /*(l_infraorbitale_pt 0.0341 1.6171 0.0752)*/
+                                                                                                                                  /*(r_infraorbitale_pt -0.0237 1.6171 0.0752)*/
+                                                                                                                                  /*(l_tragion_pt 0.0739 1.6348 0.0282)*/
+                                                                                                                                  /*(r_tragion_pt -0.0646 1.6347 0.0302)*/
+                                                                                                                                  /*(nuchale_pt 0.0039 1.5972 -0.0796)*/
+                                                                                                                                  /*(opisthocranion_pt x y z)*/
+                                                                                                                                  /*(l_ectocanthus_pt x y z)*/
+                                                                                                                                  /*(r_ectocanthus_pt x y z)*/
                                                                                                                                   children_ : [
                                                                                                                                     HAnimSite(
                                                                                                                                       name_ : SFString('skull_vertex_pt'),
@@ -4116,7 +4164,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('l_eyelid_Sites'),
-                                                                                                                                      /*(l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(l_eyelid_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyelid_joint'),
@@ -4153,7 +4205,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('r_eyelid_Sites'),
-                                                                                                                                      /*(r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(r_eyelid_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_eyeball_joint'),
@@ -4190,7 +4246,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('l_eyeball_Sites'),
-                                                                                                                                      /*(l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(l_eyeball_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyeball_joint'),
@@ -4227,7 +4287,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('r_eyeball_Sites'),
-                                                                                                                                      /*(r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(r_eyeball_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('l_eyebrow_joint'),
@@ -4264,7 +4328,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('l_eyebrow_Sites'),
-                                                                                                                                      /*(l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(l_eyebrow_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('r_eyebrow_joint'),
@@ -4301,7 +4369,11 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('r_eyebrow_Sites'),
-                                                                                                                                      /*(r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>*/)])]),
+                                                                                                                                      /*(r_eyebrow_tip_pt x y z)*/
+                                                                                                                                      /*<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>*/
+                                                                                                                                      /*<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>*/
+                                                                                                                                      /*<Shape USE='HAnimSiteShape'/>*/
+                                                                                                                                      /*</HAnimSite>*/)])]),
 
                                                                                                                             HAnimJoint(
                                                                                                                               name_ : SFString('temporomandibular'),
@@ -4338,7 +4410,10 @@ var X3D0 =  X3D(
 
                                                                                                                                     Group(
                                                                                                                                       DEF_ : SFString('jaw_Sites'),
-                                                                                                                                      /*(r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z)*/
+                                                                                                                                      /*(r_gonion_pt -0.0520 1.5529 0.0347)*/
+                                                                                                                                      /*(l_gonion_pt 0.0631 1.5530 0.0330)*/
+                                                                                                                                      /*(supramenton_pt 0.0061 1.5410 0.0805)*/
+                                                                                                                                      /*(menton_pt x y z)*/
                                                                                                                                       children_ : [
                                                                                                                                         HAnimSite(
                                                                                                                                           name_ : SFString('l_gonion_pt'),
@@ -4467,7 +4542,10 @@ var X3D0 =  X3D(
 
                                                                                                         Group(
                                                                                                           DEF_ : SFString('l_scapula_Sites'),
-                                                                                                          /*(l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z)*/
+                                                                                                          /*(l_acromion_pt 0.2032 1.4760 -0.0490)*/
+                                                                                                          /*(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)*/
+                                                                                                          /*(l_axilla_distal_pt 0.1706 1.4072 -0.0875)*/
+                                                                                                          /*(l_axilla_posterior_folds_pt x y z)*/
                                                                                                           children_ : [
                                                                                                             HAnimSite(
                                                                                                               name_ : SFString('l_acromion_pt'),
@@ -4548,7 +4626,10 @@ var X3D0 =  X3D(
 
                                                                                                             Group(
                                                                                                               DEF_ : SFString('l_upperarm_Sites'),
-                                                                                                              /*(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z)*/
+                                                                                                              /*(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)*/
+                                                                                                              /*(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)*/
+                                                                                                              /*(l_radiale_pt 0.2182 1.1212 -0.1167)*/
+                                                                                                              /*(l_bideltoid_pt x y z)*/
                                                                                                               children_ : [
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('l_humeral_lateral_epicondyles_pt'),
@@ -4629,7 +4710,8 @@ var X3D0 =  X3D(
 
                                                                                                                 Group(
                                                                                                                   DEF_ : SFString('l_forearm_Sites'),
-                                                                                                                  /*(l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123)*/
+                                                                                                                  /*(l_radial_styloid_pt 0.1901 0.8645 -0.0415)*/
+                                                                                                                  /*(l_olecranon_pt -0.1962 1.1375 -0.1123)*/
                                                                                                                   children_ : [
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('l_radial_styloid_pt'),
@@ -5261,7 +5343,8 @@ var X3D0 =  X3D(
 
                                                                                                                                         Group(
                                                                                                                                           DEF_ : SFString('l_carpal_distal_phalanx_3_Sites'),
-                                                                                                                                          /*(l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)*/
+                                                                                                                                          /*(l_dactylion_pt 0.2056 0.6743 -0.0482)*/
+                                                                                                                                          /*(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)*/
                                                                                                                                           children_ : [
                                                                                                                                             HAnimSite(
                                                                                                                                               name_ : SFString('l_dactylion_pt'),
@@ -5686,7 +5769,8 @@ var X3D0 =  X3D(
 
                                                                                                     Group(
                                                                                                       DEF_ : SFString('r_clavicle_Sites'),
-                                                                                                      /*0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400)*/
+                                                                                                      /*0.15 1.222 -0.02*/
+                                                                                                      /*(r_clavicale_pt -0.0115 1.4943 0.0400)*/
                                                                                                       children_ : [
                                                                                                         HAnimSite(
                                                                                                           name_ : SFString('r_clavicale_pt'),
@@ -5734,7 +5818,10 @@ var X3D0 =  X3D(
 
                                                                                                         Group(
                                                                                                           DEF_ : SFString('r_scapula_Sites'),
-                                                                                                          /*(r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z)*/
+                                                                                                          /*(r_acromion_pt -0.1905 1.4791 -0.0431)*/
+                                                                                                          /*(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)*/
+                                                                                                          /*(r_axilla_distal_pt -0.1603 1.4098 -0.0826)*/
+                                                                                                          /*(r_axilla_posterior_folds_pt x y z)*/
                                                                                                           children_ : [
                                                                                                             HAnimSite(
                                                                                                               name_ : SFString('r_acromion_pt'),
@@ -5815,7 +5902,10 @@ var X3D0 =  X3D(
 
                                                                                                             Group(
                                                                                                               DEF_ : SFString('r_upperarm_Sites'),
-                                                                                                              /*(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z)*/
+                                                                                                              /*(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)*/
+                                                                                                              /*(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)*/
+                                                                                                              /*(r_radiale_pt -0.2130 1.1305 -0.1091)*/
+                                                                                                              /*(r_bideltoid_pt x y z)*/
                                                                                                               children_ : [
                                                                                                                 HAnimSite(
                                                                                                                   name_ : SFString('r_humeral_lateral_epicondyles_pt'),
@@ -5896,7 +5986,8 @@ var X3D0 =  X3D(
 
                                                                                                                 Group(
                                                                                                                   DEF_ : SFString('r_forearm_Sites'),
-                                                                                                                  /*(r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065)*/
+                                                                                                                  /*(r_radial_styloid_pt -0.1884 0.8676 -0.0360)*/
+                                                                                                                  /*(r_olecranon_pt -0.1907 1.1405 -0.1065)*/
                                                                                                                   children_ : [
                                                                                                                     HAnimSite(
                                                                                                                       name_ : SFString('r_radial_styloid_pt'),
@@ -6528,7 +6619,8 @@ var X3D0 =  X3D(
 
                                                                                                                                         Group(
                                                                                                                                           DEF_ : SFString('r_carpal_distal_phalanx_3_Sites'),
-                                                                                                                                          /*(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 )*/
+                                                                                                                                          /*(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)*/
+                                                                                                                                          /*(r_dactylion_pt -0.1941 0.6772 -0.0423 )*/
                                                                                                                                           children_ : [
                                                                                                                                             HAnimSite(
                                                                                                                                               name_ : SFString('r_carpal_distal_phalanx_3_tip'),

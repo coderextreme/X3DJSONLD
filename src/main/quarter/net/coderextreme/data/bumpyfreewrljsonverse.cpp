@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
-SoSceneManager0->setVersion(QString("4.0"));
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 //<component name='Shape' level='4'></component>
 //Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L
@@ -195,7 +195,9 @@ Sohead1->addMeta(*Someta30);
 
 SoSceneManager0->setHead(*Sohead1);
 
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 SoNode* SoNode31 = new SoNode();
 //basic nodes, which might be present in any scene
 SoNavigationInfo* SoNavigationInfo32 = new SoNavigationInfo();
@@ -224,7 +226,8 @@ SoLayerSet* SoLayerSet36 = new SoLayerSet();
 SoLayerSet36->setActiveLayer(1);
 SoLayerSet36->setOrder(new int32_t[]{1,2}, 2);
 //the first Layer contains the main scenery - \"The Review of the Flower (DIS Multiuser)\"
-//the second layer contains the sliders that are moved with the user's display like a HUD (heads up display)
+//the second layer contains the sliders that are moved with the user's display
+//like a HUD (heads up display)
 SoLayer* SoLayer37 = new SoLayer();
 SoLayer37->setPickable(true);
 SoLayer37->setObjectType(new QString[]{QString("ALL")}, 1);
@@ -507,7 +510,9 @@ SoShaderPart97->setUrl(new QString[]{QString("../shaders/freewrl.fs"), QString("
 SoShaderPart97->setType(QString("FRAGMENT"));
 SoComposedShader84->setParts(*SoShaderPart97);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/freewrl.vs\"'></ShaderPart>
+//<ShaderPart url='\"../shaders/freewrl_bubbles.fs\"' type='FRAGMENT'></ShaderPart>
 SoVRMLAppearance75->addChild(*SoComposedShader84);
 
 SoShape72->addChild(*SoVRMLAppearance75);

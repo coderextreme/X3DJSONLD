@@ -1,0 +1,487 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"EnvironmentalEffects"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Shaders"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"CubeMapTexturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"4",
+        "@name":"Shape"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"flowers4.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"manual",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers4.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"an animated flower",
+        "@name":"description"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
+        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
+        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
+        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+        "Transform":
+        {
+      {
+        "@DEF":"transform"
+      }
+            "Shape":
+            {
+                "Appearance":
+                {
+                    "Material":
+                    {
+      {
+        "@diffuseColor":"0.7 0.7 0.7",
+        "@specularColor":"0.5 0.5 0.5"
+      }
+    },
+                    "ComposedCubeMapTexture":
+                    {
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png""
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+                    }                    "ComposedShader":
+                    {
+      {
+        "@DEF":"shader",
+        "@language":"GLSL"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"cube",
+        "@type":"SFInt32"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"bias",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"scale",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"power",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@url":""../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs""
+      }
+    },
+                        "ShaderPart":
+                        {
+      {
+        "@type":"FRAGMENT",
+        "@url":""../shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs""
+      }
+    },
+                    }                }                "IndexedFaceSet":
+                {
+      {
+        "@DEF":"Orbit",
+        "@convex":"false"
+      }
+                    "Coordinate":
+                    {
+      {
+        "@DEF":"OrbitCoordinates"
+      }
+    },
+                }            }        }        "Script":
+        {
+      {
+        "@DEF":"OrbitScript",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;     var resolution = 100;
+&quot;+
+&quot;     updateCoordinates(resolution);
+&quot;+
+&quot;     var localci = new MFInt32();
+&quot;+
+&quot;     var arrIndex = 0;
+&quot;+
+&quot;     for (var i = 0; i < resolution-1; i++) {
+&quot;+
+&quot;     	for (var j = 0; j < resolution-1; j++) {
+&quot;+
+&quot;	     localci[arrIndex++] = i*resolution+j;
+&quot;+
+&quot;	     localci[arrIndex++] = i*resolution+j+1;
+&quot;+
+&quot;	     localci[arrIndex++] = (i+1)*resolution+j+1;
+&quot;+
+&quot;	     localci[arrIndex++] = (i+1)*resolution+j;
+&quot;+
+&quot;	     localci[arrIndex++] = -1;
+&quot;+
+&quot;	}
+&quot;+
+&quot;    }
+&quot;+
+&quot;    coordIndexes = localci;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function updateCoordinates(resolution) {
+&quot;+
+&quot;     var theta = 0.0;
+&quot;+
+&quot;     var phi = 0.0;
+&quot;+
+&quot;     var delta = (2 * 3.141592653) / (resolution-1);
+&quot;+
+&quot;     var localc = new MFVec3f();
+&quot;+
+&quot;     var arrIndex = 0;
+&quot;+
+&quot;     for (var i = 0; i < resolution; i++) {
+&quot;+
+&quot;     	for (var j = 0; j < resolution; j++) {
+&quot;+
+&quot;		var rho = e + f * Math.cos(g * theta) * Math.cos(h * phi);
+&quot;+
+&quot;		localc[arrIndex++] = new SFVec3f(
+&quot;+
+&quot;			rho * Math.cos(phi) * Math.cos(theta),
+&quot;+
+&quot;			rho * Math.cos(phi) * Math.sin(theta),
+&quot;+
+&quot;			rho * Math.sin(phi)
+&quot;+
+&quot;		);
+&quot;+
+&quot;		theta += delta;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	phi += delta;
+&quot;+
+&quot;     }
+&quot;+
+&quot;     coordinates = localc;
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction(fraction, eventTime) {
+&quot;+
+&quot;	var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;	switch (choice) {
+&quot;+
+&quot;	case 0:
+&quot;+
+&quot;		e += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 1:
+&quot;+
+&quot;		f += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 2:
+&quot;+
+&quot;		g += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	case 3:
+&quot;+
+&quot;		h += Math.floor(Math.random() * 2) * 2 - 1;
+&quot;+
+&quot;		break;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (e < 1) {
+&quot;+
+&quot;		e = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (f < 1) {
+&quot;+
+&quot;		f = 10;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (g < 1) {
+&quot;+
+&quot;		g = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (h < 1) {
+&quot;+
+&quot;		h = 4;
+&quot;+
+&quot;	}
+&quot;+
+&quot;	var resolution = 100;
+&quot;+
+&quot;	updateCoordinates(resolution);
+&quot;+
+&quot;}"
+      }
+            "field":
+            {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_fraction",
+        "@type":"SFFloat"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"coordinates",
+        "@type":"MFVec3f"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"outputOnly",
+        "@name":"coordIndexes",
+        "@type":"MFInt32"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"e",
+        "@type":"SFFloat",
+        "@value":"5"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"f",
+        "@type":"SFFloat",
+        "@value":"5"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"g",
+        "@type":"SFFloat",
+        "@value":"5"
+      }
+    },
+            "field":
+            {
+      {
+        "@accessType":"inputOutput",
+        "@name":"h",
+        "@type":"SFFloat",
+        "@value":"5"
+      }
+    },
+        }        "TimeSensor":
+        {
+      {
+        "@DEF":"Clock",
+        "@cycleInterval":"16",
+        "@loop":"true"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"coordIndexes",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_coordIndex",
+        "@toNode":"Orbit"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"coordinates",
+        "@fromNode":"OrbitScript",
+        "@toField":"set_point",
+        "@toNode":"OrbitCoordinates"
+      }
+    },
+        "ROUTE":
+        {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"Clock",
+        "@toField":"set_fraction",
+        "@toNode":"OrbitScript"
+      }
+    },
+    }}

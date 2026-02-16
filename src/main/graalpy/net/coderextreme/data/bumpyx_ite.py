@@ -236,7 +236,11 @@ ShaderPart46.setType("FRAGMENT")
 
 ComposedShader32.addParts(ShaderPart46)
 
-ComposedShader32.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
+ComposedShader32.addComments(x3d.CommentsBlock("""TO CONVERT TO A SPHERE"""))
+
+ComposedShader32.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"'></ShaderPart>"""))
+
+ComposedShader32.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_itebubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
 
 Appearance23.addShaders(ComposedShader32)
 

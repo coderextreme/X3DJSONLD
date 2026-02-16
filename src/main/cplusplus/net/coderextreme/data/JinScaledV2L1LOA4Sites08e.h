@@ -306,7 +306,12 @@ HAnimSegment53.addChild(&Shape54);
 
 Group& Group61 =  Group();
 Group61.setDEF(CString("sacrum_Sites"));
-//None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//None
+//(example site and site marker code)
+//<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>
+//<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment53.addChild(&Group61);
 
 HAnimJoint52.addChildren(&HAnimSegment53);
@@ -351,7 +356,16 @@ HAnimSegment63.addChild(&Shape64);
 
 Group& Group71 =  Group();
 Group71.setDEF(CString("pelvis_Sites"));
-//(r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z)
+//(r_iliocristale_pt '-0.1525 1.0628 0.0035)
+//(r_trochanterion_pt -0.1689 0.8419 0.0352)
+//(l_iliocristale_pt 0.1612 1.0537 0.0008)
+//(l_trochanterion_pt 0.1677 0.8336 0.0303)
+//(r_asis_pt -0.0887 1.0021 0.1112)
+//(l_asis_pt 0.0774 1.0190 -0.1151)
+//(r_psis_pt -0.0716 1.0190 -0.1138)
+//(l_psis_pt 0.0774 1.0190 -0.1151)
+//(crotch_pt 0.0034 0.8266 0.0257)
+//(buttocks_standing_wall_contact_point x y z)
 HAnimSite& HAnimSite72 =  HAnimSite();
 HAnimSite72.X3DNode::setName(CString("r_iliocristale_pt"));
 HAnimSite72.setDEF(CString("hanim_r_iliocristale_pt"));
@@ -536,7 +550,10 @@ HAnimSegment103.addChild(&Shape104);
 
 Group& Group111 =  Group();
 Group111.setDEF(CString("l_thigh_Sites"));
-//(l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z)
+//(l_knee_crease_pt 0.0993 0.4881 -0.0309)
+//(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)
+//(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)
+//(l_suprapatella_pt x y z)
 HAnimSite& HAnimSite112 =  HAnimSite();
 HAnimSite112.X3DNode::setName(CString("l_knee_crease_pt"));
 HAnimSite112.setDEF(CString("hanim_l_knee_crease_pt"));
@@ -637,7 +654,9 @@ HAnimSegment125.addChild(&Shape126);
 
 Group& Group133 =  Group();
 Group133.setDEF(CString("l_calf_Sites"));
-//(l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
+//(l_tibiale_pt x y z)
+//(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)
+//(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
 HAnimSite& HAnimSite134 =  HAnimSite();
 HAnimSite134.X3DNode::setName(CString("l_tibiale_pt"));
 HAnimSite134.setDEF(CString("hanim_l_tibiale_pt"));
@@ -724,7 +743,8 @@ HAnimSegment144.addChild(&Shape145);
 
 Group& Group152 =  Group();
 Group152.setDEF(CString("l_talus_Sites"));
-//(l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
+//(l_sphyrion_pt 0.0890 0.0575 -0.0943)
+//(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
 HAnimSite& HAnimSite153 =  HAnimSite();
 HAnimSite153.X3DNode::setName(CString("l_sphyrion_pt"));
 HAnimSite153.setDEF(CString("hanim_l_sphyrion_pt"));
@@ -2076,7 +2096,10 @@ HAnimSegment431.addChild(&Shape432);
 
 Group& Group439 =  Group();
 Group439.setDEF(CString("r_thigh_Sites"));
-//(r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z)
+//(r_knee_crease_pt -0.0825 0.4932 -0.0326)
+//(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)
+//(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)
+//(r_suprapatella_pt x y z)
 HAnimSite& HAnimSite440 =  HAnimSite();
 HAnimSite440.X3DNode::setName(CString("r_knee_crease_pt"));
 HAnimSite440.setDEF(CString("hanim_r_knee_crease_pt"));
@@ -2177,7 +2200,9 @@ HAnimSegment453.addChild(&Shape454);
 
 Group& Group461 =  Group();
 Group461.setDEF(CString("r_calf_Sites"));
-//(r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
+//(r_tibiale_pt x y z)
+//(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)
+//(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
 HAnimSite& HAnimSite462 =  HAnimSite();
 HAnimSite462.X3DNode::setName(CString("r_tibiale_pt"));
 HAnimSite462.setDEF(CString("hanim_r_tibiale_pt"));
@@ -2264,7 +2289,8 @@ HAnimSegment472.addChild(&Shape473);
 
 Group& Group480 =  Group();
 Group480.setDEF(CString("r_talus_Sites"));
-//(r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
+//(r_sphyrion_pt -0.0603 0.0610 -0.1002)
+//(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
 HAnimSite& HAnimSite481 =  HAnimSite();
 HAnimSite481.X3DNode::setName(CString("r_sphyrion_pt"));
 HAnimSite481.setDEF(CString("hanim_r_sphyrion_pt"));
@@ -3616,7 +3642,11 @@ HAnimSegment759.addChild(&Shape760);
 
 Group& Group767 =  Group();
 Group767.setDEF(CString("l5_Sites"));
-//(spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017)
+//(spine_1_middle_back x y z)
+//(spine_2_lower_back_pt x y z)
+//(waist_preferred_anterior_pt x y z)
+//(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)
+//(navel 0.0069 1.0966 0.1017)
 HAnimSite& HAnimSite768 =  HAnimSite();
 HAnimSite768.X3DNode::setName(CString("spine_1_middle_back_pt"));
 HAnimSite768.setDEF(CString("hanim_spine_1_middle_back_pt"));
@@ -3821,7 +3851,8 @@ HAnimSegment804.addChild(&Shape805);
 
 Group& Group812 =  Group();
 Group812.setDEF(CString("l2_Sites"));
-//(l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016)
+//(l_rib_10_pt 0.0871 1.1925 0.0992)
+//(r_rib_10_pt -0.0711 1.1941 0.1016)
 HAnimSite& HAnimSite813 =  HAnimSite();
 HAnimSite813.X3DNode::setName(CString("l_rib_10_pt"));
 HAnimSite813.setDEF(CString("hanim_l_rib_10_pt"));
@@ -4029,7 +4060,8 @@ HAnimSegment850.addChild(&Shape851);
 
 Group& Group858 =  Group();
 Group858.setDEF(CString("t10_Sites"));
-//(substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z)
+//(substernale_pt 0.0085 1.2995 0.1147)
+//(mesosternale_pt x y z)
 HAnimSite& HAnimSite859 =  HAnimSite();
 HAnimSite859.X3DNode::setName(CString("substernale_pt"));
 HAnimSite859.setDEF(CString("hanim_substernale_pt"));
@@ -4102,7 +4134,11 @@ HAnimSegment866.addChild(&Shape867);
 
 Group& Group874 =  Group();
 Group874.setDEF(CString("t9_Sites"));
-//(l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z)
+//(l_thelion_pt 0.0918 1.3382 0.1192)
+//(r_thelion_pt -0.0736 1.3385 0.1217)
+//(rear_center_midsagittal_plane_pt x y z)
+//(l_chest_midsagittal_plane_pt x y z)
+//(r_chest_midsagittal_plane_pt x y z)
 HAnimSite& HAnimSite875 =  HAnimSite();
 HAnimSite875.X3DNode::setName(CString("l_thelion_pt"));
 HAnimSite875.setDEF(CString("hanim_l_thelion_pt"));
@@ -4532,7 +4568,8 @@ HAnimSegment961.addChild(&Shape962);
 
 Group& Group969 =  Group();
 Group969.setDEF(CString("t1_Sites"));
-//(suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815)
+//(suprasternale_pt 0.0084 1.4714 0.0551)
+//(cervicale_pt 0.0064 1.520 -0.0815)
 HAnimSite& HAnimSite970 =  HAnimSite();
 HAnimSite970.X3DNode::setName(CString("suprasternale_pt"));
 HAnimSite970.setDEF(CString("hanim_suprasternale_pt"));
@@ -4605,7 +4642,8 @@ HAnimSegment977.addChild(&Shape978);
 
 Group& Group985 =  Group();
 Group985.setDEF(CString("c7_Sites"));
-//(l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220)
+//(l_neck_base_pt 0.0646 1.5141 -0.0380)
+//(r_neck_base_pt -0.0419 1.5149 -0.0220)
 HAnimSite& HAnimSite986 =  HAnimSite();
 HAnimSite986.X3DNode::setName(CString("l_neck_base_pt"));
 HAnimSite986.setDEF(CString("hanim_l_neck_base_pt"));
@@ -4962,7 +5000,17 @@ HAnimSegment1056.addChild(&Shape1057);
 
 Group& Group1064 =  Group();
 Group1064.setDEF(CString("skull_Sites"));
-//(skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z)
+//(skull_vertex_pt 0.0050 1.7504 0.0055)
+//(glabella_pt x y z)
+//(sellion_pt 0.0058 1.6316 0.0852)
+//(l_infraorbitale_pt 0.0341 1.6171 0.0752)
+//(r_infraorbitale_pt -0.0237 1.6171 0.0752)
+//(l_tragion_pt 0.0739 1.6348 0.0282)
+//(r_tragion_pt -0.0646 1.6347 0.0302)
+//(nuchale_pt 0.0039 1.5972 -0.0796)
+//(opisthocranion_pt x y z)
+//(l_ectocanthus_pt x y z)
+//(r_ectocanthus_pt x y z)
 HAnimSite& HAnimSite1065 =  HAnimSite();
 HAnimSite1065.X3DNode::setName(CString("skull_vertex_pt"));
 HAnimSite1065.setDEF(CString("hanim_skull_vertex_pt"));
@@ -5161,7 +5209,11 @@ HAnimSegment1099.addChild(&Shape1100);
 
 Group& Group1107 =  Group();
 Group1107.setDEF(CString("l_eyelid_Sites"));
-//(l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>
+//<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1099.addChild(&Group1107);
 
 HAnimJoint1098.addChildren(&HAnimSegment1099);
@@ -5208,7 +5260,11 @@ HAnimSegment1109.addChild(&Shape1110);
 
 Group& Group1117 =  Group();
 Group1117.setDEF(CString("r_eyelid_Sites"));
-//(r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>
+//<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1109.addChild(&Group1117);
 
 HAnimJoint1108.addChildren(&HAnimSegment1109);
@@ -5255,7 +5311,11 @@ HAnimSegment1119.addChild(&Shape1120);
 
 Group& Group1127 =  Group();
 Group1127.setDEF(CString("l_eyeball_Sites"));
-//(l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>
+//<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1119.addChild(&Group1127);
 
 HAnimJoint1118.addChildren(&HAnimSegment1119);
@@ -5302,7 +5362,11 @@ HAnimSegment1129.addChild(&Shape1130);
 
 Group& Group1137 =  Group();
 Group1137.setDEF(CString("r_eyeball_Sites"));
-//(r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>
+//<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1129.addChild(&Group1137);
 
 HAnimJoint1128.addChildren(&HAnimSegment1129);
@@ -5349,7 +5413,11 @@ HAnimSegment1139.addChild(&Shape1140);
 
 Group& Group1147 =  Group();
 Group1147.setDEF(CString("l_eyebrow_Sites"));
-//(l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>
+//<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1139.addChild(&Group1147);
 
 HAnimJoint1138.addChildren(&HAnimSegment1139);
@@ -5396,7 +5464,11 @@ HAnimSegment1149.addChild(&Shape1150);
 
 Group& Group1157 =  Group();
 Group1157.setDEF(CString("r_eyebrow_Sites"));
-//(r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>
+//<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1149.addChild(&Group1157);
 
 HAnimJoint1148.addChildren(&HAnimSegment1149);
@@ -5443,7 +5515,10 @@ HAnimSegment1159.addChild(&Shape1160);
 
 Group& Group1167 =  Group();
 Group1167.setDEF(CString("jaw_Sites"));
-//(r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z)
+//(r_gonion_pt -0.0520 1.5529 0.0347)
+//(l_gonion_pt 0.0631 1.5530 0.0330)
+//(supramenton_pt 0.0061 1.5410 0.0805)
+//(menton_pt x y z)
 HAnimSite& HAnimSite1168 =  HAnimSite();
 HAnimSite1168.X3DNode::setName(CString("l_gonion_pt"));
 HAnimSite1168.setDEF(CString("hanim_l_gonion_pt"));
@@ -5621,7 +5696,10 @@ HAnimSegment1194.addChild(&Shape1195);
 
 Group& Group1202 =  Group();
 Group1202.setDEF(CString("l_scapula_Sites"));
-//(l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z)
+//(l_acromion_pt 0.2032 1.4760 -0.0490)
+//(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)
+//(l_axilla_distal_pt 0.1706 1.4072 -0.0875)
+//(l_axilla_posterior_folds_pt x y z)
 HAnimSite& HAnimSite1203 =  HAnimSite();
 HAnimSite1203.X3DNode::setName(CString("l_acromion_pt"));
 HAnimSite1203.setDEF(CString("hanim_l_acromion_pt"));
@@ -5722,7 +5800,10 @@ HAnimSegment1216.addChild(&Shape1217);
 
 Group& Group1224 =  Group();
 Group1224.setDEF(CString("l_upperarm_Sites"));
-//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z)
+//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)
+//(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)
+//(l_radiale_pt 0.2182 1.1212 -0.1167)
+//(l_bideltoid_pt x y z)
 HAnimSite& HAnimSite1225 =  HAnimSite();
 HAnimSite1225.X3DNode::setName(CString("l_humeral_lateral_epicondyles_pt"));
 HAnimSite1225.setDEF(CString("hanim_l_humeral_lateral_epicondyles_pt"));
@@ -5823,7 +5904,8 @@ HAnimSegment1238.addChild(&Shape1239);
 
 Group& Group1246 =  Group();
 Group1246.setDEF(CString("l_forearm_Sites"));
-//(l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123)
+//(l_radial_styloid_pt 0.1901 0.8645 -0.0415)
+//(l_olecranon_pt -0.1962 1.1375 -0.1123)
 HAnimSite& HAnimSite1247 =  HAnimSite();
 HAnimSite1247.X3DNode::setName(CString("l_radial_styloid_pt"));
 HAnimSite1247.setDEF(CString("hanim_l_radial_styloid_pt"));
@@ -6614,7 +6696,8 @@ HAnimSegment1409.addChild(&Shape1410);
 
 Group& Group1417 =  Group();
 Group1417.setDEF(CString("l_carpal_distal_phalanx_3_Sites"));
-//(l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
+//(l_dactylion_pt 0.2056 0.6743 -0.0482)
+//(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 HAnimSite& HAnimSite1418 =  HAnimSite();
 HAnimSite1418.X3DNode::setName(CString("l_dactylion_pt"));
 HAnimSite1418.setDEF(CString("hanim_l_dactylion_pt"));
@@ -7172,7 +7255,8 @@ HAnimSegment1524.addChild(&Shape1525);
 
 Group& Group1532 =  Group();
 Group1532.setDEF(CString("r_clavicle_Sites"));
-//0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400)
+//0.15 1.222 -0.02
+//(r_clavicale_pt -0.0115 1.4943 0.0400)
 HAnimSite& HAnimSite1533 =  HAnimSite();
 HAnimSite1533.X3DNode::setName(CString("r_clavicale_pt"));
 HAnimSite1533.setDEF(CString("hanim_r_clavicale_pt"));
@@ -7231,7 +7315,10 @@ HAnimSegment1537.addChild(&Shape1538);
 
 Group& Group1545 =  Group();
 Group1545.setDEF(CString("r_scapula_Sites"));
-//(r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z)
+//(r_acromion_pt -0.1905 1.4791 -0.0431)
+//(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)
+//(r_axilla_distal_pt -0.1603 1.4098 -0.0826)
+//(r_axilla_posterior_folds_pt x y z)
 HAnimSite& HAnimSite1546 =  HAnimSite();
 HAnimSite1546.X3DNode::setName(CString("r_acromion_pt"));
 HAnimSite1546.setDEF(CString("hanim_r_acromion_pt"));
@@ -7332,7 +7419,10 @@ HAnimSegment1559.addChild(&Shape1560);
 
 Group& Group1567 =  Group();
 Group1567.setDEF(CString("r_upperarm_Sites"));
-//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z)
+//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)
+//(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)
+//(r_radiale_pt -0.2130 1.1305 -0.1091)
+//(r_bideltoid_pt x y z)
 HAnimSite& HAnimSite1568 =  HAnimSite();
 HAnimSite1568.X3DNode::setName(CString("r_humeral_lateral_epicondyles_pt"));
 HAnimSite1568.setDEF(CString("hanim_r_humeral_lateral_epicondyles_pt"));
@@ -7433,7 +7523,8 @@ HAnimSegment1581.addChild(&Shape1582);
 
 Group& Group1589 =  Group();
 Group1589.setDEF(CString("r_forearm_Sites"));
-//(r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065)
+//(r_radial_styloid_pt -0.1884 0.8676 -0.0360)
+//(r_olecranon_pt -0.1907 1.1405 -0.1065)
 HAnimSite& HAnimSite1590 =  HAnimSite();
 HAnimSite1590.X3DNode::setName(CString("r_radial_styloid_pt"));
 HAnimSite1590.setDEF(CString("hanim_r_radial_styloid_pt"));
@@ -8224,7 +8315,8 @@ HAnimSegment1752.addChild(&Shape1753);
 
 Group& Group1760 =  Group();
 Group1760.setDEF(CString("r_carpal_distal_phalanx_3_Sites"));
-//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 )
+//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)
+//(r_dactylion_pt -0.1941 0.6772 -0.0423 )
 HAnimSite& HAnimSite1761 =  HAnimSite();
 HAnimSite1761.X3DNode::setName(CString("r_carpal_distal_phalanx_3_tip"));
 HAnimSite1761.setDEF(CString("hanim_r_carpal_distal_phalanx_3_tip"));

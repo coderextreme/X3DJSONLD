@@ -235,7 +235,12 @@ HAnimSegment53ZZZ.children[0] = Shape54;
 
 let Group61 = browser.currentScene.createNode("Group");
 Group61.DEF = "sacrum_Sites";
-//None (example site and site marker code) <HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'> <TouchSensor description='HAnimSite sitename_pt nnfromtable'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//None
+//(example site and site marker code)
+//<HAnimSite DEF='hanim_sitename_pt' name='sitename_pt' translation='sitename_ptTranslation'>
+//<TouchSensor description='HAnimSite sitename_pt nnfromtable'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment53ZZZ.children[1] = Group61;
 
 HAnimJoint52YYY.children = new X3D.MFNode();
@@ -284,7 +289,16 @@ HAnimSegment63ZZZ.children[0] = Shape64;
 
 let Group71 = browser.currentScene.createNode("Group");
 Group71.DEF = "pelvis_Sites";
-//(r_iliocristale_pt '-0.1525 1.0628 0.0035) (r_trochanterion_pt -0.1689 0.8419 0.0352) (l_iliocristale_pt 0.1612 1.0537 0.0008) (l_trochanterion_pt 0.1677 0.8336 0.0303) (r_asis_pt -0.0887 1.0021 0.1112) (l_asis_pt 0.0774 1.0190 -0.1151) (r_psis_pt -0.0716 1.0190 -0.1138) (l_psis_pt 0.0774 1.0190 -0.1151) (crotch_pt 0.0034 0.8266 0.0257) (buttocks_standing_wall_contact_point x y z)
+//(r_iliocristale_pt '-0.1525 1.0628 0.0035)
+//(r_trochanterion_pt -0.1689 0.8419 0.0352)
+//(l_iliocristale_pt 0.1612 1.0537 0.0008)
+//(l_trochanterion_pt 0.1677 0.8336 0.0303)
+//(r_asis_pt -0.0887 1.0021 0.1112)
+//(l_asis_pt 0.0774 1.0190 -0.1151)
+//(r_psis_pt -0.0716 1.0190 -0.1138)
+//(l_psis_pt 0.0774 1.0190 -0.1151)
+//(crotch_pt 0.0034 0.8266 0.0257)
+//(buttocks_standing_wall_contact_point x y z)
 let HAnimSite72 = browser.currentScene.createNode("HAnimSite");
 HAnimSite72.name = "r_iliocristale_pt";
 HAnimSite72.DEF = "hanim_r_iliocristale_pt";
@@ -495,7 +509,10 @@ HAnimSegment103ZZZ.children[0] = Shape104;
 
 let Group111 = browser.currentScene.createNode("Group");
 Group111.DEF = "l_thigh_Sites";
-//(l_knee_crease_pt 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella_pt x y z)
+//(l_knee_crease_pt 0.0993 0.4881 -0.0309)
+//(l_femoral_medial_epicondyles_pt 0.0398 0.4946 0.0303)
+//(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)
+//(l_suprapatella_pt x y z)
 let HAnimSite112 = browser.currentScene.createNode("HAnimSite");
 HAnimSite112.name = "l_knee_crease_pt";
 HAnimSite112.DEF = "hanim_l_knee_crease_pt";
@@ -610,7 +627,9 @@ HAnimSegment125ZZZ.children[0] = Shape126;
 
 let Group133 = browser.currentScene.createNode("Group");
 Group133.DEF = "l_calf_Sites";
-//(l_tibiale_pt x y z) (l_medial_malleolus_pt 0.0890 0.0716 -0.0881) (l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
+//(l_tibiale_pt x y z)
+//(l_medial_malleolus_pt 0.0890 0.0716 -0.0881)
+//(l_lateral_malleolus_pt 0.1308 0.0597 -0.1032)
 let HAnimSite134 = browser.currentScene.createNode("HAnimSite");
 HAnimSite134.name = "l_tibiale_pt";
 HAnimSite134.DEF = "hanim_l_tibiale_pt";
@@ -709,7 +728,8 @@ HAnimSegment144ZZZ.children[0] = Shape145;
 
 let Group152 = browser.currentScene.createNode("Group");
 Group152.DEF = "l_talus_Sites";
-//(l_sphyrion_pt 0.0890 0.0575 -0.0943) (l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
+//(l_sphyrion_pt 0.0890 0.0575 -0.0943)
+//(l_calcaneus_posterior_pt 0.0974 0.0259 -0.1171)
 let HAnimSite153 = browser.currentScene.createNode("HAnimSite");
 HAnimSite153.name = "l_sphyrion_pt";
 HAnimSite153.DEF = "hanim_l_sphyrion_pt";
@@ -2199,7 +2219,10 @@ HAnimSegment431ZZZ.children[0] = Shape432;
 
 let Group439 = browser.currentScene.createNode("Group");
 Group439.DEF = "r_thigh_Sites";
-//(r_knee_crease_pt -0.0825 0.4932 -0.0326) (r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289) (r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310) (r_suprapatella_pt x y z)
+//(r_knee_crease_pt -0.0825 0.4932 -0.0326)
+//(r_femoral_medial_epicondyles_pt -0.0221 0.5014 0.0289)
+//(r_femoral_lateral_epicondyles_pt -0.1421 0.4992 0.0310)
+//(r_suprapatella_pt x y z)
 let HAnimSite440 = browser.currentScene.createNode("HAnimSite");
 HAnimSite440.name = "r_knee_crease_pt";
 HAnimSite440.DEF = "hanim_r_knee_crease_pt";
@@ -2314,7 +2337,9 @@ HAnimSegment453ZZZ.children[0] = Shape454;
 
 let Group461 = browser.currentScene.createNode("Group");
 Group461.DEF = "r_calf_Sites";
-//(r_tibiale_pt x y z) (r_medial_malleolus_pt -0.0591 0.0760 -0.0928) (r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
+//(r_tibiale_pt x y z)
+//(r_medial_malleolus_pt -0.0591 0.0760 -0.0928)
+//(r_lateral_malleolus_pt -0.1006 0.0658 -0.1075)
 let HAnimSite462 = browser.currentScene.createNode("HAnimSite");
 HAnimSite462.name = "r_tibiale_pt";
 HAnimSite462.DEF = "hanim_r_tibiale_pt";
@@ -2413,7 +2438,8 @@ HAnimSegment472ZZZ.children[0] = Shape473;
 
 let Group480 = browser.currentScene.createNode("Group");
 Group480.DEF = "r_talus_Sites";
-//(r_sphyrion_pt -0.0603 0.0610 -0.1002) (r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
+//(r_sphyrion_pt -0.0603 0.0610 -0.1002)
+//(r_calcaneus_posterior_pt -0.0692 0.0297 -0.1221)
 let HAnimSite481 = browser.currentScene.createNode("HAnimSite");
 HAnimSite481.name = "r_sphyrion_pt";
 HAnimSite481.DEF = "hanim_r_sphyrion_pt";
@@ -3903,7 +3929,11 @@ HAnimSegment759ZZZ.children[0] = Shape760;
 
 let Group767 = browser.currentScene.createNode("Group");
 Group767.DEF = "l5_Sites";
-//(spine_1_middle_back x y z) (spine_2_lower_back_pt x y z) (waist_preferred_anterior_pt x y z) (waist_preferred_posterior_pt 0.2900 1.0915 -0.1091) (navel 0.0069 1.0966 0.1017)
+//(spine_1_middle_back x y z)
+//(spine_2_lower_back_pt x y z)
+//(waist_preferred_anterior_pt x y z)
+//(waist_preferred_posterior_pt 0.2900 1.0915 -0.1091)
+//(navel 0.0069 1.0966 0.1017)
 let HAnimSite768 = browser.currentScene.createNode("HAnimSite");
 HAnimSite768.name = "spine_1_middle_back_pt";
 HAnimSite768.DEF = "hanim_spine_1_middle_back_pt";
@@ -4132,7 +4162,8 @@ HAnimSegment804ZZZ.children[0] = Shape805;
 
 let Group812 = browser.currentScene.createNode("Group");
 Group812.DEF = "l2_Sites";
-//(l_rib_10_pt 0.0871 1.1925 0.0992) (r_rib_10_pt -0.0711 1.1941 0.1016)
+//(l_rib_10_pt 0.0871 1.1925 0.0992)
+//(r_rib_10_pt -0.0711 1.1941 0.1016)
 let HAnimSite813 = browser.currentScene.createNode("HAnimSite");
 HAnimSite813.name = "l_rib_10_pt";
 HAnimSite813.DEF = "hanim_l_rib_10_pt";
@@ -4362,7 +4393,8 @@ HAnimSegment850ZZZ.children[0] = Shape851;
 
 let Group858 = browser.currentScene.createNode("Group");
 Group858.DEF = "t10_Sites";
-//(substernale_pt 0.0085 1.2995 0.1147) (mesosternale_pt x y z)
+//(substernale_pt 0.0085 1.2995 0.1147)
+//(mesosternale_pt x y z)
 let HAnimSite859 = browser.currentScene.createNode("HAnimSite");
 HAnimSite859.name = "substernale_pt";
 HAnimSite859.DEF = "hanim_substernale_pt";
@@ -4445,7 +4477,11 @@ HAnimSegment866ZZZ.children[0] = Shape867;
 
 let Group874 = browser.currentScene.createNode("Group");
 Group874.DEF = "t9_Sites";
-//(l_thelion_pt 0.0918 1.3382 0.1192) (r_thelion_pt -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane_pt x y z) (l_chest_midsagittal_plane_pt x y z) (r_chest_midsagittal_plane_pt x y z)
+//(l_thelion_pt 0.0918 1.3382 0.1192)
+//(r_thelion_pt -0.0736 1.3385 0.1217)
+//(rear_center_midsagittal_plane_pt x y z)
+//(l_chest_midsagittal_plane_pt x y z)
+//(r_chest_midsagittal_plane_pt x y z)
 let HAnimSite875 = browser.currentScene.createNode("HAnimSite");
 HAnimSite875.name = "l_thelion_pt";
 HAnimSite875.DEF = "hanim_l_thelion_pt";
@@ -4919,7 +4955,8 @@ HAnimSegment961ZZZ.children[0] = Shape962;
 
 let Group969 = browser.currentScene.createNode("Group");
 Group969.DEF = "t1_Sites";
-//(suprasternale_pt 0.0084 1.4714 0.0551) (cervicale_pt 0.0064 1.520 -0.0815)
+//(suprasternale_pt 0.0084 1.4714 0.0551)
+//(cervicale_pt 0.0064 1.520 -0.0815)
 let HAnimSite970 = browser.currentScene.createNode("HAnimSite");
 HAnimSite970.name = "suprasternale_pt";
 HAnimSite970.DEF = "hanim_suprasternale_pt";
@@ -5002,7 +5039,8 @@ HAnimSegment977ZZZ.children[0] = Shape978;
 
 let Group985 = browser.currentScene.createNode("Group");
 Group985.DEF = "c7_Sites";
-//(l_neck_base_pt 0.0646 1.5141 -0.0380) (r_neck_base_pt -0.0419 1.5149 -0.0220)
+//(l_neck_base_pt 0.0646 1.5141 -0.0380)
+//(r_neck_base_pt -0.0419 1.5149 -0.0220)
 let HAnimSite986 = browser.currentScene.createNode("HAnimSite");
 HAnimSite986.name = "l_neck_base_pt";
 HAnimSite986.DEF = "hanim_l_neck_base_pt";
@@ -5397,7 +5435,17 @@ HAnimSegment1056ZZZ.children[0] = Shape1057;
 
 let Group1064 = browser.currentScene.createNode("Group");
 Group1064.DEF = "skull_Sites";
-//(skull_vertex_pt 0.0050 1.7504 0.0055) (glabella_pt x y z) (sellion_pt 0.0058 1.6316 0.0852) (l_infraorbitale_pt 0.0341 1.6171 0.0752) (r_infraorbitale_pt -0.0237 1.6171 0.0752) (l_tragion_pt 0.0739 1.6348 0.0282) (r_tragion_pt -0.0646 1.6347 0.0302) (nuchale_pt 0.0039 1.5972 -0.0796) (opisthocranion_pt x y z) (l_ectocanthus_pt x y z) (r_ectocanthus_pt x y z)
+//(skull_vertex_pt 0.0050 1.7504 0.0055)
+//(glabella_pt x y z)
+//(sellion_pt 0.0058 1.6316 0.0852)
+//(l_infraorbitale_pt 0.0341 1.6171 0.0752)
+//(r_infraorbitale_pt -0.0237 1.6171 0.0752)
+//(l_tragion_pt 0.0739 1.6348 0.0282)
+//(r_tragion_pt -0.0646 1.6347 0.0302)
+//(nuchale_pt 0.0039 1.5972 -0.0796)
+//(opisthocranion_pt x y z)
+//(l_ectocanthus_pt x y z)
+//(r_ectocanthus_pt x y z)
 let HAnimSite1065 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1065.name = "skull_vertex_pt";
 HAnimSite1065.DEF = "hanim_skull_vertex_pt";
@@ -5624,7 +5672,11 @@ HAnimSegment1099ZZZ.children[0] = Shape1100;
 
 let Group1107 = browser.currentScene.createNode("Group");
 Group1107.DEF = "l_eyelid_Sites";
-//(l_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'> <TouchSensor description='HAnimSite l_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyelid_tip_pt' name='l_eyelid_tip_pt' translation='0 2.64 0'>
+//<TouchSensor description='HAnimSite l_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1099ZZZ.children[1] = Group1107;
 
 HAnimJoint1098YYY.children = new X3D.MFNode();
@@ -5675,7 +5727,11 @@ HAnimSegment1109ZZZ.children[0] = Shape1110;
 
 let Group1117 = browser.currentScene.createNode("Group");
 Group1117.DEF = "r_eyelid_Sites";
-//(r_eyelid_tip_pt x y z) <HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'> <TouchSensor description='HAnimSite r_eyelid_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyelid_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyelid_tip_pt' name='r_eyelid_tip_pt' translation='0 2.68 0'>
+//<TouchSensor description='HAnimSite r_eyelid_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1109ZZZ.children[1] = Group1117;
 
 HAnimJoint1108YYY.children = new X3D.MFNode();
@@ -5726,7 +5782,11 @@ HAnimSegment1119ZZZ.children[0] = Shape1120;
 
 let Group1127 = browser.currentScene.createNode("Group");
 Group1127.DEF = "l_eyeball_Sites";
-//(l_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'> <TouchSensor description='HAnimSite l_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyeball_tip_pt' name='l_eyeball_tip_pt' translation='0 2.72 0'>
+//<TouchSensor description='HAnimSite l_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1119ZZZ.children[1] = Group1127;
 
 HAnimJoint1118YYY.children = new X3D.MFNode();
@@ -5777,7 +5837,11 @@ HAnimSegment1129ZZZ.children[0] = Shape1130;
 
 let Group1137 = browser.currentScene.createNode("Group");
 Group1137.DEF = "r_eyeball_Sites";
-//(r_eyeball_tip_pt x y z) <HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'> <TouchSensor description='HAnimSite r_eyeball_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyeball_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyeball_tip_pt' name='r_eyeball_tip_pt' translation='0 2.76 0'>
+//<TouchSensor description='HAnimSite r_eyeball_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1129ZZZ.children[1] = Group1137;
 
 HAnimJoint1128YYY.children = new X3D.MFNode();
@@ -5828,7 +5892,11 @@ HAnimSegment1139ZZZ.children[0] = Shape1140;
 
 let Group1147 = browser.currentScene.createNode("Group");
 Group1147.DEF = "l_eyebrow_Sites";
-//(l_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'> <TouchSensor description='HAnimSite l_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(l_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_l_eyebrow_tip_pt' name='l_eyebrow_tip_pt' translation='0 2.8 0'>
+//<TouchSensor description='HAnimSite l_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1139ZZZ.children[1] = Group1147;
 
 HAnimJoint1138YYY.children = new X3D.MFNode();
@@ -5879,7 +5947,11 @@ HAnimSegment1149ZZZ.children[0] = Shape1150;
 
 let Group1157 = browser.currentScene.createNode("Group");
 Group1157.DEF = "r_eyebrow_Sites";
-//(r_eyebrow_tip_pt x y z) <HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'> <TouchSensor description='HAnimSite r_eyebrow_tip_pt'/> <Shape USE='HAnimSiteShape'/> </HAnimSite>
+//(r_eyebrow_tip_pt x y z)
+//<HAnimSite DEF='hanim_r_eyebrow_tip_pt' name='r_eyebrow_tip_pt' translation='0 2.84 0'>
+//<TouchSensor description='HAnimSite r_eyebrow_tip_pt'/>
+//<Shape USE='HAnimSiteShape'/>
+//</HAnimSite>
 HAnimSegment1149ZZZ.children[1] = Group1157;
 
 HAnimJoint1148YYY.children = new X3D.MFNode();
@@ -5930,7 +6002,10 @@ HAnimSegment1159ZZZ.children[0] = Shape1160;
 
 let Group1167 = browser.currentScene.createNode("Group");
 Group1167.DEF = "jaw_Sites";
-//(r_gonion_pt -0.0520 1.5529 0.0347) (l_gonion_pt 0.0631 1.5530 0.0330) (supramenton_pt 0.0061 1.5410 0.0805) (menton_pt x y z)
+//(r_gonion_pt -0.0520 1.5529 0.0347)
+//(l_gonion_pt 0.0631 1.5530 0.0330)
+//(supramenton_pt 0.0061 1.5410 0.0805)
+//(menton_pt x y z)
 let HAnimSite1168 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1168.name = "l_gonion_pt";
 HAnimSite1168.DEF = "hanim_l_gonion_pt";
@@ -6130,7 +6205,10 @@ HAnimSegment1194ZZZ.children[0] = Shape1195;
 
 let Group1202 = browser.currentScene.createNode("Group");
 Group1202.DEF = "l_scapula_Sites";
-//(l_acromion_pt 0.2032 1.4760 -0.0490) (l_axilla_proximal_pt 0.1777 1.4065 -0.0075) (l_axilla_distal_pt 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds_pt x y z)
+//(l_acromion_pt 0.2032 1.4760 -0.0490)
+//(l_axilla_proximal_pt 0.1777 1.4065 -0.0075)
+//(l_axilla_distal_pt 0.1706 1.4072 -0.0875)
+//(l_axilla_posterior_folds_pt x y z)
 let HAnimSite1203 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1203.name = "l_acromion_pt";
 HAnimSite1203.DEF = "hanim_l_acromion_pt";
@@ -6245,7 +6323,10 @@ HAnimSegment1216ZZZ.children[0] = Shape1217;
 
 let Group1224 = browser.currentScene.createNode("Group");
 Group1224.DEF = "l_upperarm_Sites";
-//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113) (l_radiale_pt 0.2182 1.1212 -0.1167) (l_bideltoid_pt x y z)
+//(l_humeral_lateral_epicondyles_pt 0.2280 1.1482 -0.1100)
+//(l_humeral_medial_epicondyles_pt 0.1735 1.1272 -0.1113)
+//(l_radiale_pt 0.2182 1.1212 -0.1167)
+//(l_bideltoid_pt x y z)
 let HAnimSite1225 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1225.name = "l_humeral_lateral_epicondyles_pt";
 HAnimSite1225.DEF = "hanim_l_humeral_lateral_epicondyles_pt";
@@ -6360,7 +6441,8 @@ HAnimSegment1238ZZZ.children[0] = Shape1239;
 
 let Group1246 = browser.currentScene.createNode("Group");
 Group1246.DEF = "l_forearm_Sites";
-//(l_radial_styloid_pt 0.1901 0.8645 -0.0415) (l_olecranon_pt -0.1962 1.1375 -0.1123)
+//(l_radial_styloid_pt 0.1901 0.8645 -0.0415)
+//(l_olecranon_pt -0.1962 1.1375 -0.1123)
 let HAnimSite1247 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1247.name = "l_radial_styloid_pt";
 HAnimSite1247.DEF = "hanim_l_radial_styloid_pt";
@@ -7237,7 +7319,8 @@ HAnimSegment1409ZZZ.children[0] = Shape1410;
 
 let Group1417 = browser.currentScene.createNode("Group");
 Group1417.DEF = "l_carpal_distal_phalanx_3_Sites";
-//(l_dactylion_pt 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
+//(l_dactylion_pt 0.2056 0.6743 -0.0482)
+//(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 let HAnimSite1418 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1418.name = "l_dactylion_pt";
 HAnimSite1418.DEF = "hanim_l_dactylion_pt";
@@ -7853,7 +7936,8 @@ HAnimSegment1524ZZZ.children[0] = Shape1525;
 
 let Group1532 = browser.currentScene.createNode("Group");
 Group1532.DEF = "r_clavicle_Sites";
-//0.15 1.222 -0.02 (r_clavicale_pt -0.0115 1.4943 0.0400)
+//0.15 1.222 -0.02
+//(r_clavicale_pt -0.0115 1.4943 0.0400)
 let HAnimSite1533 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1533.name = "r_clavicale_pt";
 HAnimSite1533.DEF = "hanim_r_clavicale_pt";
@@ -7920,7 +8004,10 @@ HAnimSegment1537ZZZ.children[0] = Shape1538;
 
 let Group1545 = browser.currentScene.createNode("Group");
 Group1545.DEF = "r_scapula_Sites";
-//(r_acromion_pt -0.1905 1.4791 -0.0431) (r_axilla_proximal_pt -0.1626 1.4072 -0.0031) (r_axilla_distal_pt -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds_pt x y z)
+//(r_acromion_pt -0.1905 1.4791 -0.0431)
+//(r_axilla_proximal_pt -0.1626 1.4072 -0.0031)
+//(r_axilla_distal_pt -0.1603 1.4098 -0.0826)
+//(r_axilla_posterior_folds_pt x y z)
 let HAnimSite1546 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1546.name = "r_acromion_pt";
 HAnimSite1546.DEF = "hanim_r_acromion_pt";
@@ -8035,7 +8122,10 @@ HAnimSegment1559ZZZ.children[0] = Shape1560;
 
 let Group1567 = browser.currentScene.createNode("Group");
 Group1567.DEF = "r_upperarm_Sites";
-//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062) (r_radiale_pt -0.2130 1.1305 -0.1091) (r_bideltoid_pt x y z)
+//(r_humeral_lateral_epicondyles_pt -0.2224 1.1517 -0.1033)
+//(r_humeral_medial_epicondyles_pt -0.1680 1.1298 -0.1062)
+//(r_radiale_pt -0.2130 1.1305 -0.1091)
+//(r_bideltoid_pt x y z)
 let HAnimSite1568 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1568.name = "r_humeral_lateral_epicondyles_pt";
 HAnimSite1568.DEF = "hanim_r_humeral_lateral_epicondyles_pt";
@@ -8150,7 +8240,8 @@ HAnimSegment1581ZZZ.children[0] = Shape1582;
 
 let Group1589 = browser.currentScene.createNode("Group");
 Group1589.DEF = "r_forearm_Sites";
-//(r_radial_styloid_pt -0.1884 0.8676 -0.0360) (r_olecranon_pt -0.1907 1.1405 -0.1065)
+//(r_radial_styloid_pt -0.1884 0.8676 -0.0360)
+//(r_olecranon_pt -0.1907 1.1405 -0.1065)
 let HAnimSite1590 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1590.name = "r_radial_styloid_pt";
 HAnimSite1590.DEF = "hanim_r_radial_styloid_pt";
@@ -9027,7 +9118,8 @@ HAnimSegment1752ZZZ.children[0] = Shape1753;
 
 let Group1760 = browser.currentScene.createNode("Group");
 Group1760.DEF = "r_carpal_distal_phalanx_3_Sites";
-//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion_pt -0.1941 0.6772 -0.0423 )
+//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)
+//(r_dactylion_pt -0.1941 0.6772 -0.0423 )
 let HAnimSite1761 = browser.currentScene.createNode("HAnimSite");
 HAnimSite1761.name = "r_carpal_distal_phalanx_3_tip";
 HAnimSite1761.DEF = "hanim_r_carpal_distal_phalanx_3_tip";

@@ -145,7 +145,24 @@ ComposedCubeMapTexture25.setTop(ImageTexture31);
 
 Appearance23.addChild(&ComposedCubeMapTexture25);
 
-//<ComposedShader DEF='x3dom' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> <field name='cube' type='SFNode' accessType=\"inputOutput\"> <ComposedCubeMapTexture USE=\"texture\"/> </field> <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field> <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field> <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field> <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field> <field name='b' type='SFFloat' accessType='inputOutput' value='1'></field> <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field> <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"'></ShaderPart> <ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>
+//<ComposedShader DEF='x3dom' language=\"GLSL\">
+//<field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
+//<field name='cube' type='SFNode' accessType=\"inputOutput\">
+//<ComposedCubeMapTexture USE=\"texture\"/>
+//</field>
+//<field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
+//<field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
+//<field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
+//<field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
+//<field name='b' type='SFFloat' accessType='inputOutput' value='1'></field>
+//<field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
+//<field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
+//<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x3dom_flowers_chromatic.vs\"'></ShaderPart>
+//<ShaderPart url='\"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/common.fs\"' type='FRAGMENT'></ShaderPart>
+//</ComposedShader>
 ComposedShader& ComposedShader32 =  ComposedShader();
 ComposedShader32.setDEF(CString("x_ite"));
 ComposedShader32.setLanguage(CString("GLSL"));
@@ -444,7 +461,12 @@ ROUTE66.setToNode(CString("x_ite"));
 ROUTE66.setToField(CString("tdelta"));
 ProtoBody20.addChild(&ROUTE66);
 
-//<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/> <ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/> <ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/> <ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/> <ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/> <ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
+//<ROUTE fromNode='Animate' fromField='a' toNode='x3dom' toField='a'/>
+//<ROUTE fromNode='Animate' fromField='b' toNode='x3dom' toField='b'/>
+//<ROUTE fromNode='Animate' fromField='c' toNode='x3dom' toField='c'/>
+//<ROUTE fromNode='Animate' fromField='d' toNode='x3dom' toField='d'/>
+//<ROUTE fromNode='Animate' fromField='pdelta' toNode='x3dom' toField='pdelta'/>
+//<ROUTE fromNode='Animate' fromField='tdelta' toNode='x3dom' toField='tdelta'/>
 ProtoDeclare19.addChild(&ProtoBody20);
 
 Scene16.addChild(&ProtoDeclare19);

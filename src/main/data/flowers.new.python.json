@@ -1,0 +1,622 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "component":
+        {
+      {
+        "@name":"Scripting"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"EnvironmentalEffects"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Shaders"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"CubeMapTexturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Texturing"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Rendering"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"4",
+        "@name":"Shape"
+      }
+    },
+        "component":
+        {
+      {
+        "@level":"3",
+        "@name":"Grouping"
+      }
+    },
+        "component":
+        {
+      {
+        "@name":"Core"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"flowers.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"5 or more prismatic flowers",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/flowers.x3d",
+        "@name":"identifier"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+    },
+        "Background":
+        {
+      {
+        "@backUrl":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"",
+        "@bottomUrl":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"",
+        "@frontUrl":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"",
+        "@leftUrl":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"",
+        "@rightUrl":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"",
+        "@topUrl":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+        "ProtoDeclare":
+        {
+      {
+        "@name":"flower"
+      }
+            "ProtoBody":
+            {
+                "Transform":
+                {
+      {
+        "@DEF":"animate_transform"
+      }
+                    "Shape":
+                    {
+                        "Appearance":
+                        {
+                            "Material":
+                            {
+      {
+        "@diffuseColor":"0.7 0.7 0.7",
+        "@specularColor":"0.5 0.5 0.5"
+      }
+    },
+                            "ComposedCubeMapTexture":
+                            {
+      {
+        "@DEF":"texture"
+      }
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_back.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png""
+      }
+    },
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_bottom.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png""
+      }
+    },
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_front.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png""
+      }
+    },
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_left.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png""
+      }
+    },
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_right.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png""
+      }
+    },
+                                "ImageTexture":
+                                {
+      {
+        "@url":""../resources/images/all_probes/stpeters_cross/stpeters_top.png" "https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png""
+      }
+    },
+                            }                            "ComposedShader":
+                            {
+      {
+        "@DEF":"x_ite",
+        "@language":"GLSL"
+      }
+                                "field":
+                                {
+      {
+        "@accessType":"inputOutput",
+        "@name":"cube",
+        "@type":"SFNode"
+      }
+                                    "ComposedCubeMapTexture":
+                                    {
+      {
+        "@USE":"texture"
+      }
+    },
+                                }                                "field":
+                                {
+      {
+        "@accessType":"initializeOnly",
+        "@name":"chromaticDispertion",
+        "@type":"SFVec3f",
+        "@value":"[0.98, 1, 1.033]"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"bias",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"scale",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"power",
+        "@type":"SFFloat",
+        "@value":"2"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"a",
+        "@type":"SFFloat",
+        "@value":"10"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"b",
+        "@type":"SFFloat",
+        "@value":"1"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"c",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"d",
+        "@type":"SFFloat",
+        "@value":"20"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"tdelta",
+        "@type":"SFFloat"
+      }
+    },
+                                "field":
+                                {
+      {
+        "@accessType":"inputOnly",
+        "@name":"pdelta",
+        "@type":"SFFloat"
+      }
+    },
+                                "ShaderPart":
+                                {
+      {
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs""
+      }
+    },
+                                "ShaderPart":
+                                {
+      {
+        "@type":"FRAGMENT",
+        "@url":""https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs""
+      }
+    },
+                            }                        }                        "Sphere":
+                        {
+    },
+                    }                }                "Script":
+                {
+      {
+        "@DEF":"Animate",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;
+&quot;+
+&quot;			function initialize() {
+&quot;+
+&quot;			    translation = new SFVec3f(0, 0, 0);
+&quot;+
+&quot;			    velocity = new SFVec3f(
+&quot;+
+&quot;			    	Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5,
+&quot;+
+&quot;				Math.random() - 0.5);
+&quot;+
+&quot;			}
+&quot;+
+&quot;			function set_fraction() {
+&quot;+
+&quot;			    translation = new SFVec3f(
+&quot;+
+&quot;			    	translation.x + velocity.x,
+&quot;+
+&quot;				translation.y + velocity.y,
+&quot;+
+&quot;				translation.z + velocity.z);
+&quot;+
+&quot;			    for (var j = 0; j <= 2; j++) {
+&quot;+
+&quot;				    if (Math.abs(translation.x) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.y) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else if (Math.abs(translation.z) > 10) {
+&quot;+
+&quot;					initialize();
+&quot;+
+&quot;				    } else {
+&quot;+
+&quot;					velocity.x += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.y += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					velocity.z += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;				    }
+&quot;+
+&quot;			    }
+&quot;+
+&quot;			    animate_flowers();
+&quot;+
+&quot;			}
+&quot;+
+&quot;
+&quot;+
+&quot;			function animate_flowers(fraction, eventTime) {
+&quot;+
+&quot;				var choice = Math.floor(Math.random() * 4);
+&quot;+
+&quot;				switch (choice) {
+&quot;+
+&quot;				case 0:
+&quot;+
+&quot;					a += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 1:
+&quot;+
+&quot;					b += Math.random() * 0.2 - 0.1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 2:
+&quot;+
+&quot;					c += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				case 3:
+&quot;+
+&quot;					d += Math.random() * 2 - 1;
+&quot;+
+&quot;					break;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				tdelta = tdelta + 0.5;
+&quot;+
+&quot;				pdelta = pdelta + 0.5;
+&quot;+
+&quot;				if (a > 1) {
+&quot;+
+&quot;					a =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (b > 1) {
+&quot;+
+&quot;					b =  0.5;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c < 1) {
+&quot;+
+&quot;					c =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d < 1) {
+&quot;+
+&quot;					d =  4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (c > 10) {
+&quot;+
+&quot;					c = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;				if (d > 10) {
+&quot;+
+&quot;					d = 4;
+&quot;+
+&quot;				}
+&quot;+
+&quot;			}"
+      }
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"velocity",
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_fraction",
+        "@type":"SFFloat"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"a",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"b",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"c",
+        "@type":"SFFloat",
+        "@value":"3"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"d",
+        "@type":"SFFloat",
+        "@value":"3"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"tdelta",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                    "field":
+                    {
+      {
+        "@accessType":"inputOutput",
+        "@name":"pdelta",
+        "@type":"SFFloat",
+        "@value":"0.5"
+      }
+    },
+                }                "TimeSensor":
+                {
+      {
+        "@DEF":"TourTime",
+        "@cycleInterval":"5",
+        "@loop":"true"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"TourTime",
+        "@toField":"set_fraction",
+        "@toNode":"Animate"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"Animate",
+        "@toField":"set_translation",
+        "@toNode":"animate_transform"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"a",
+        "@fromNode":"Animate",
+        "@toField":"a",
+        "@toNode":"x_ite"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"b",
+        "@fromNode":"Animate",
+        "@toField":"b",
+        "@toNode":"x_ite"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"c",
+        "@fromNode":"Animate",
+        "@toField":"c",
+        "@toNode":"x_ite"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"d",
+        "@fromNode":"Animate",
+        "@toField":"d",
+        "@toNode":"x_ite"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"pdelta",
+        "@fromNode":"Animate",
+        "@toField":"pdelta",
+        "@toNode":"x_ite"
+      }
+    },
+                "ROUTE":
+                {
+      {
+        "@fromField":"tdelta",
+        "@fromNode":"Animate",
+        "@toField":"tdelta",
+        "@toNode":"x_ite"
+      }
+    },
+            }        }        "ProtoInstance":
+        {
+      {
+        "@name":"flower"
+      }
+    },
+        "ProtoInstance":
+        {
+      {
+        "@name":"flower"
+      }
+    },
+        "ProtoInstance":
+        {
+      {
+        "@name":"flower"
+      }
+    },
+    }}

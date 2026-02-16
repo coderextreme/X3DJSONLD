@@ -107,8 +107,8 @@ public class flowers7
             .setRightTexture(new ImageTexture("rightShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_right.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_right.png"}))
             .setTopTexture(new ImageTexture("topShader").setUrl(new String[] {"../resources/images/all_probes/beach_cross/beach_top.png","https://coderextreme.net/X3DJSONLD/src/main/resources/images/all_probes/beach_cross/beach_top.png"})))
           .addShaders(new ComposedShader("x3dom").setLanguage("GLSL")
-            .addComments(new String[] {" TODO VERIFY",
-"                  <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>"})
+            .addComments(" TODO VERIFY ")
+            .addComments(" <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field> ")
             .addField(new field().setName("cube").setType(field.TYPE_SFNODE).setAccessType(field.ACCESSTYPE_INPUTOUTPUT)
               .addChild(new ComposedCubeMapTexture().setUSE("texture")))
             .addField(new field().setName("chromaticDispertion").setType(field.TYPE_SFVEC3F).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFVec3f(0.98,1.0,1.033)))
@@ -171,21 +171,20 @@ ecmascript:
       .addField(new field().setName("bottom").setType(field.TYPE_MFSTRING).setAccessType(field.ACCESSTYPE_INPUTOUTPUT))
       .addField(new field().setName("set_fraction").setType(field.TYPE_SFFLOAT).setAccessType(field.ACCESSTYPE_INPUTONLY))
       .addField(new field().setName("old").setType(field.TYPE_SFINT32).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(-1)))
-    .addComments(new String[] {"",
-"            <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/>",
-"            <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/>",
-"            <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/>"})
+    .addComments(" <TimeSensor DEF=\"Clock\" cycleInterval=\"45\" loop='true'/> ")
+    .addComments(" <ROUTE fromNode='Clock' fromField='fraction_changed' toNode='UrlSelector' toField='set_fraction'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='front' toNode='background' toField='frontUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='back' toNode='background' toField='backUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='left' toNode='background' toField='leftUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='right' toNode='background' toField='rightUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='top' toNode='background' toField='topUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='background' toField='bottomUrl'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='front' toNode='frontShader' toField='url'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='back' toNode='backShader' toField='url'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='left' toNode='leftShader' toField='url'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='right' toNode='rightShader' toField='url'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='top' toNode='topShader' toField='url'/> ")
+    .addComments(" <ROUTE fromNode='UrlSelector' fromField='bottom' toNode='bottomShader' toField='url'/> ")
     .addChild(new Script("Animate").setDirectOutput(true).setSourceCode("""
 ecmascript:
 

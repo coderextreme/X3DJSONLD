@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -92,21 +92,33 @@ func main() {
                 Content: stringPtr("manual"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"),
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/arc.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("a generic proto to connect two objects"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+                &x3d.Viewpoint{
+                    Position: &x3d.SFVec3f{0.0, 0.0, 5.0},
+                    Description: stringPtr("Only Viewpoint"),
+                },
+                &x3d.Background{
+                    SkyColor: &x3d.MFColor{[3]float32{0.4,0.4,0.4}},
+                },
                 &x3d.ProtoDeclare{
                     Name: stringPtr("point"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("translation"),
                                 AccessType: stringPtr("inputOutput"),
                                 Type: stringPtr("SFVec3f"),
-                                Name: stringPtr("translation"),
+                                Value: stringPtr("0 0 0"),
                         },
                         },
                     },
@@ -126,13 +138,13 @@ func main() {
                                     },
                                 Children: []x3d.X3DNode{
                                     &x3d.Shape{
+                                        Geometry: &x3d.Sphere{
+                                            Radius: floatPtr(0.1),
+                                        },
                                         Appearance: &x3d.Appearance{
                                             Material: &x3d.Material{
                                                 DiffuseColor: &x3d.SFColor{1.0, 0.0, 0.0},
                                             },
-                                        },
-                                        Geometry: &x3d.Sphere{
-                                            Radius: floatPtr(0.1),
                                         },
                                     },
                                     &x3d.PositionInterpolator{
@@ -148,25 +160,26 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
+                                                Name: stringPtr("translation"),
                                                 AccessType: stringPtr("inputOutput"),
                                                 Type: stringPtr("SFVec3f"),
-                                                Name: stringPtr("translation"),
                                                 Value: stringPtr("50 50 0"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("old"),
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("SFVec3f"),
-                                            Name: stringPtr("old"),
+                                            Value: stringPtr("0 0 0"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("set_location"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFTime"),
-                                            Name: stringPtr("set_location"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("keyValue"),
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("MFVec3f"),
-                                            Name: stringPtr("keyValue"),
                                             Value: stringPtr("0 0 0 0 5 0"),
                                         },
 //ecmascript:
@@ -185,31 +198,31 @@ func main() {
                                         CycleInterval: doublePtr(3.0),
                                         Loop: boolPtr(true),
                                     },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("CL1"),
+                                        FromField: stringPtr("cycleTime"),
+                                        ToNode: stringPtr("MB1"),
+                                        ToField: stringPtr("set_location"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("CL1"),
+                                        FromField: stringPtr("fraction_changed"),
+                                        ToNode: stringPtr("PI1"),
+                                        ToField: stringPtr("set_fraction"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("MB1"),
+                                        FromField: stringPtr("keyValue"),
+                                        ToNode: stringPtr("PI1"),
+                                        ToField: stringPtr("keyValue"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("PI1"),
+                                        FromField: stringPtr("value_changed"),
+                                        ToNode: stringPtr("node"),
+                                        ToField: stringPtr("set_translation"),
+                                    },
                                 },
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CL1"),
-                                FromField: stringPtr("cycleTime"),
-                                ToNode: stringPtr("MB1"),
-                                ToField: stringPtr("set_location"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("CL1"),
-                                FromField: stringPtr("fraction_changed"),
-                                ToNode: stringPtr("PI1"),
-                                ToField: stringPtr("set_fraction"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("MB1"),
-                                FromField: stringPtr("keyValue_changed"),
-                                ToNode: stringPtr("PI1"),
-                                ToField: stringPtr("set_keyValue"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("PI1"),
-                                FromField: stringPtr("value_changed"),
-                                ToNode: stringPtr("node"),
-                                ToField: stringPtr("set_translation"),
                             },
                         },
                     },
@@ -219,24 +232,24 @@ func main() {
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
+                                Name: stringPtr("startnode"),
                                 AccessType: stringPtr("initializeOnly"),
                                 Type: stringPtr("SFNode"),
-                                Name: stringPtr("startnode"),
                         },
                         &x3d.Field{
+                            Name: stringPtr("endnode"),
                             AccessType: stringPtr("initializeOnly"),
                             Type: stringPtr("SFNode"),
-                            Name: stringPtr("endnode"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOnly"),
-                            Type: stringPtr("SFVec3f"),
                             Name: stringPtr("set_startpoint"),
-                        },
-                        &x3d.Field{
                             AccessType: stringPtr("inputOnly"),
                             Type: stringPtr("SFVec3f"),
+                        },
+                        &x3d.Field{
                             Name: stringPtr("set_endpoint"),
+                            AccessType: stringPtr("inputOnly"),
+                            Type: stringPtr("SFVec3f"),
                         },
                         },
                     },
@@ -295,19 +308,19 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
+                                                Name: stringPtr("startnode"),
                                                 AccessType: stringPtr("initializeOnly"),
                                                 Type: stringPtr("SFNode"),
-                                                Name: stringPtr("startnode"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("endnode"),
                                             AccessType: stringPtr("initializeOnly"),
                                             Type: stringPtr("SFNode"),
-                                            Name: stringPtr("endnode"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("position"),
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("SFNode"),
-                                            Name: stringPtr("position"),
                                             Children: []x3d.X3DNode{
                                                 &x3d.Transform{
                                                         CoreX3DNode: x3d.CoreX3DNode{
@@ -319,9 +332,9 @@ func main() {
                                             },
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("rotscale"),
                                             AccessType: stringPtr("inputOutput"),
                                             Type: stringPtr("SFNode"),
-                                            Name: stringPtr("rotscale"),
                                             Children: []x3d.X3DNode{
                                                 &x3d.Transform{
                                                         CoreX3DNode: x3d.CoreX3DNode{
@@ -333,14 +346,14 @@ func main() {
                                             },
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("set_startpoint"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFVec3f"),
-                                            Name: stringPtr("set_startpoint"),
                                         },
                                         &x3d.Field{
+                                            Name: stringPtr("set_endpoint"),
                                             AccessType: stringPtr("inputOnly"),
                                             Type: stringPtr("SFVec3f"),
-                                            Name: stringPtr("set_endpoint"),
                                         },
 //ecmascript:
 //        function recompute(startpoint,endpoint){
@@ -395,66 +408,35 @@ func main() {
                         },
                     },
                 },
-                &x3d.Viewpoint{
-                    Description: stringPtr("Only Viewpoint"),
-                    Position: &x3d.SFVec3f{0.0, 0.0, 5.0},
-                },
-                &x3d.Background{
-                    SkyColor: &x3d.MFColor{[3]float32{0.4,0.4,0.4}},
-                },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("point"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("G1"),
                     },
-                    Name: stringPtr("point"),
-                    FieldValue: []x3d.X3DNode{
-                        &x3d.FieldValue{
-                            Name: stringPtr("translation"),
-                            Value: stringPtr("0 0.8899999 0"),
-                    },
-                    },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("point"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("G2"),
                     },
-                    Name: stringPtr("point"),
-                    FieldValue: []x3d.X3DNode{
-                        &x3d.FieldValue{
-                            Name: stringPtr("translation"),
-                            Value: stringPtr("0 0.8899999 0"),
-                    },
-                    },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("point"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("G3"),
                     },
-                    Name: stringPtr("point"),
-                    FieldValue: []x3d.X3DNode{
-                        &x3d.FieldValue{
-                            Name: stringPtr("translation"),
-                            Value: stringPtr("0 0.8899999 0"),
-                    },
-                    },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("point"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("G4"),
                     },
-                    Name: stringPtr("point"),
-                    FieldValue: []x3d.X3DNode{
-                        &x3d.FieldValue{
-                            Name: stringPtr("translation"),
-                            Value: stringPtr("0 0.8899999 0"),
-                    },
-                    },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("x3dconnector"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("connector1"),
                     },
-                    Name: stringPtr("x3dconnector"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("startnode"),
@@ -478,13 +460,19 @@ func main() {
                             },
                         },
                     },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_startpoint"),
+                    },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_endpoint"),
+                    },
                     },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("x3dconnector"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("connector2"),
                     },
-                    Name: stringPtr("x3dconnector"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("startnode"),
@@ -508,13 +496,19 @@ func main() {
                             },
                         },
                     },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_startpoint"),
+                    },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_endpoint"),
+                    },
                     },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("x3dconnector"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("connector3"),
                     },
-                    Name: stringPtr("x3dconnector"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("startnode"),
@@ -538,41 +532,47 @@ func main() {
                             },
                         },
                     },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_startpoint"),
+                    },
+                    &x3d.FieldValue{
+                        Name: stringPtr("set_endpoint"),
+                    },
                     },
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G1"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector1"),
                     ToField: stringPtr("set_startpoint"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G2"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector1"),
                     ToField: stringPtr("set_endpoint"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G1"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector2"),
                     ToField: stringPtr("set_startpoint"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G3"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector2"),
                     ToField: stringPtr("set_endpoint"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G1"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector3"),
                     ToField: stringPtr("set_startpoint"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("G4"),
-                    FromField: stringPtr("translation_changed"),
+                    FromField: stringPtr("translation"),
                     ToNode: stringPtr("connector3"),
                     ToField: stringPtr("set_endpoint"),
                 },
@@ -594,13 +594,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/arc.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -611,7 +611,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

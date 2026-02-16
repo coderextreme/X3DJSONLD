@@ -56,26 +56,26 @@ public class ArchHalf implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Interchange").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Interchange")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("ArchHalf.x3d"))
-        .addMeta(new meta().setName("description").setContent("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information."))
-        .addMeta(new meta().setName("creator").setContent("Michele Foti, Don Brutzman"))
-        .addMeta(new meta().setName("created").setContent("15 December 2014"))
-        .addMeta(new meta().setName("modified").setContent("20 October 2019"))
-        .addMeta(new meta().setName("reference").setContent("ArchModelingDiagrams.pdf"))
-        .addMeta(new meta().setName("reference").setContent("https://en.wikipedia.org/wiki/Arch"))
-        .addMeta(new meta().setName("identifier").setContent("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d"))
-        .addMeta(new meta().setName("generator").setContent("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"))
-        .addMeta(new meta().setName("license").setContent("../license.html")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("ArchHalf.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("Create a half arch with parameters clearSpanWidth=4; riseHeight=2; depth=3; topAbutmentHeight=0.5; pierWidth=0.5; pierHeight=1. Parameter clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width. Modify them with Transform scale or by editing the IndexedFileSet node. See the reference file ArchModelingDiagrams.pdf and the ArchScript_more_readable.js script to find further information.")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Michele Foti, Don Brutzman")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("15 December 2014")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("20 October 2019")))
+        .addMeta(new meta().setName(new SFString("reference")).setContent(new SFString("ArchModelingDiagrams.pdf")))
+        .addMeta(new meta().setName(new SFString("reference")).setContent(new SFString("https://en.wikipedia.org/wiki/Arch")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://www.web3d.org/x3d/content/examples/X3dForAdvancedModeling/Buildings/ArchHalf.x3d")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("license")).setContent(new SFString("../license.html"))))
       .setScene(new Scene()
-        .addChild(new WorldInfo().setTitle("ArchHalf.x3d"))
-        .addChild(new Shape().setDEF("Arch")
+        .addChild(new WorldInfo().setTitle(new SFString("ArchHalf.x3d")))
+        .addChild(new Shape().setDEF(new SFString("Arch"))
           .addComments(new CommentsBlock("note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly"))
-          .setGeometry(new IndexedFaceSet().setDEF("ArchIndex").setConvex(false).setCoordIndex(new MFInt320().getArray()).setSolid(false)
-            .setCoord(new Coordinate().setDEF("ArchChord").setPoint(new MFVec3f1().getArray())))
+          .setGeometry(new IndexedFaceSet().setDEF(new SFString("ArchIndex")).setConvex(false).setCoordIndex(new MFInt320().getArray()).setSolid(false)
+            .setCoord(new Coordinate().setDEF(new SFString("ArchChord")).setPoint(new MFVec3f1().getArray())))
           .setAppearance(new Appearance()
-            .setMaterial(new Material().setDEF("MaterialNode").setDiffuseColor(new float[] {1f ,0.75f ,0.25f })))));
+            .setMaterial(new Material().setDEF(new SFString("MaterialNode")).setDiffuseColor(new float[] {1f ,0.75f ,0.25f })))));
     return X3D0;
     }
 private class MFInt320 {

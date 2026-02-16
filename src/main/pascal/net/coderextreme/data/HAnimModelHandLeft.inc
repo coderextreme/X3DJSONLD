@@ -274,30 +274,6 @@ HAnimJoint293: THAnimJointNode;
 HAnimJoint294: THAnimJointNode;
 HAnimJoint295: THAnimJointNode;
 HAnimJoint296: THAnimJointNode;
-HAnimSegment297: THAnimSegmentNode;
-HAnimSegment298: THAnimSegmentNode;
-HAnimSegment299: THAnimSegmentNode;
-HAnimSegment300: THAnimSegmentNode;
-HAnimSegment301: THAnimSegmentNode;
-HAnimSegment302: THAnimSegmentNode;
-HAnimSegment303: THAnimSegmentNode;
-HAnimSegment304: THAnimSegmentNode;
-HAnimSegment305: THAnimSegmentNode;
-HAnimSegment306: THAnimSegmentNode;
-HAnimSegment307: THAnimSegmentNode;
-HAnimSegment308: THAnimSegmentNode;
-HAnimSegment309: THAnimSegmentNode;
-HAnimSegment310: THAnimSegmentNode;
-HAnimSegment311: THAnimSegmentNode;
-HAnimSegment312: THAnimSegmentNode;
-HAnimSegment313: THAnimSegmentNode;
-HAnimSegment314: THAnimSegmentNode;
-HAnimSegment315: THAnimSegmentNode;
-HAnimSegment316: THAnimSegmentNode;
-HAnimSegment317: THAnimSegmentNode;
-HAnimSegment318: THAnimSegmentNode;
-HAnimSegment319: THAnimSegmentNode;
-HAnimSegment320: THAnimSegmentNode;
 begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
@@ -1440,102 +1416,6 @@ HAnimJoint296 := THAnimJointNode.Create;
 HAnimJoint296 := HAnimJoint30;
 { .AddJoints }
 HAnimHumanoid26.Joints := HAnimJoint296;
-HAnimSegment297 := THAnimSegmentNode.Create;
-HAnimSegment297 := HAnimSegment142;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment297;
-HAnimSegment298 := THAnimSegmentNode.Create;
-HAnimSegment298 := HAnimSegment31;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment298;
-HAnimSegment299 := THAnimSegmentNode.Create;
-HAnimSegment299 := HAnimSegment88;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment299;
-HAnimSegment300 := THAnimSegmentNode.Create;
-HAnimSegment300 := HAnimSegment133;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment300;
-HAnimSegment301 := THAnimSegmentNode.Create;
-HAnimSegment301 := HAnimSegment178;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment301;
-HAnimSegment302 := THAnimSegmentNode.Create;
-HAnimSegment302 := HAnimSegment228;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment302;
-HAnimSegment303 := THAnimSegmentNode.Create;
-HAnimSegment303 := HAnimSegment264;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment303;
-HAnimSegment304 := THAnimSegmentNode.Create;
-HAnimSegment304 := HAnimSegment124;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment304;
-HAnimSegment305 := THAnimSegmentNode.Create;
-HAnimSegment305 := HAnimSegment169;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment305;
-HAnimSegment306 := THAnimSegmentNode.Create;
-HAnimSegment306 := HAnimSegment219;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment306;
-HAnimSegment307 := THAnimSegmentNode.Create;
-HAnimSegment307 := HAnimSegment255;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment307;
-HAnimSegment308 := THAnimSegmentNode.Create;
-HAnimSegment308 := HAnimSegment79;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment308;
-HAnimSegment309 := THAnimSegmentNode.Create;
-HAnimSegment309 := HAnimSegment115;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment309;
-HAnimSegment310 := THAnimSegmentNode.Create;
-HAnimSegment310 := HAnimSegment160;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment310;
-HAnimSegment311 := THAnimSegmentNode.Create;
-HAnimSegment311 := HAnimSegment210;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment311;
-HAnimSegment312 := THAnimSegmentNode.Create;
-HAnimSegment312 := HAnimSegment246;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment312;
-HAnimSegment313 := THAnimSegmentNode.Create;
-HAnimSegment313 := HAnimSegment187;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment313;
-HAnimSegment314 := THAnimSegmentNode.Create;
-HAnimSegment314 := HAnimSegment70;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment314;
-HAnimSegment315 := THAnimSegmentNode.Create;
-HAnimSegment315 := HAnimSegment106;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment315;
-HAnimSegment316 := THAnimSegmentNode.Create;
-HAnimSegment316 := HAnimSegment151;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment316;
-HAnimSegment317 := THAnimSegmentNode.Create;
-HAnimSegment317 := HAnimSegment201;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment317;
-HAnimSegment318 := THAnimSegmentNode.Create;
-HAnimSegment318 := HAnimSegment237;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment318;
-HAnimSegment319 := THAnimSegmentNode.Create;
-HAnimSegment319 := HAnimSegment53;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment319;
-HAnimSegment320 := THAnimSegmentNode.Create;
-HAnimSegment320 := HAnimSegment97;
-{ .AddSegments }
-HAnimHumanoid26.Segments := HAnimSegment320;
 { .AddChildren }
 Group24.AddChildren([HAnimHumanoid26]);
 { .AddGroup }

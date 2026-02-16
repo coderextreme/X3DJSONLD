@@ -90,7 +90,10 @@ var ProtoInstance2 = null;
         .addChild(new autoclass.Script().setDEF("clickHandler")
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFINT32).setName("counter").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
           .addField(new autoclass.field().setType(autoclass.field.TYPE_SFBOOL).setName("add_node").setAccessType(autoclass.field.ACCESSTYPE_INPUTONLY).setValue("false"))
-          .addComments((new autoclass.CommentsBlock("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>")))
+          .addComments((new autoclass.CommentsBlock("<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>")))
+          .addComments((new autoclass.CommentsBlock("<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">")))
+          .addComments((new autoclass.CommentsBlock("<Transform USE=\"HoldsContent\"/>")))
+          .addComments((new autoclass.CommentsBlock("</field>")))
           .setSourceCode("ecmascript:\n"+
 "	function add_node(value) {\n"+
 "                // Browser.print('hey ', counter);\n"+

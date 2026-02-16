@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -61,8 +57,8 @@ newModel=X3D(profile='Full',version='4.0',
       field(accessType='inputOutput',appinfo='HAnimHumanoid for this Pose to act upon',name='parentHAnimHumanoid',type='SFNode'),
       field(accessType='inputOutput',appinfo='name of this pose',name='name',type='SFString'),
       field(accessType='inputOutput',appinfo='joint values to apply to HAnimHumanoid',name='children',type='MFNode',
-        children=[
-        Comment(' initializating Joint nodes (if any) go here '),],),
+        # initializating Joint nodes (if any) go here
+        ),
       field(accessType='inputOutput',appinfo='explanation of purpose',name='description',type='SFString'),
       field(accessType='inputOutput',appinfo='default value true',name='enabled',type='SFBool'),
       field(accessType='initializeOnly',appinfo='default is no loa',name='loa',type='SFInt32'),
@@ -101,7 +97,6 @@ newModel=X3D(profile='Full',version='4.0',
         geometry=Box(size=(2.6,0.5,.001)),
         appearance=Appearance(USE='TransparentAppearance'))])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

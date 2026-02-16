@@ -2584,7 +2584,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
+X3D0.ForceVersion.Minor := 1;
 X3D0.Components['HAnim'] := 2;
 X3D0.Meta['title'] := 'JoeDemo5JoeSkin5.x3d';
 X3D0.Meta['description'] := 'joe kick into std anims';
@@ -9705,7 +9705,24 @@ Group1676.AddRoute(OrientationInterpolator1824.EventValue_changed, HAnimJoint253
 { .AddChildren }
 Group5.AddChildren([Group1676]);
 Group2118 := TGroupNode.Create;
-{ Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor. }
+{ Pitch1 example shows Y-axis control of Joint nodes }
+{ that through the skeleton hierarchy control }
+{ Segment geometry and Site position. }
+{ So, the following interpolator: }
+{ <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> }
+{ will start at 0 move to +1 radian of x-axis }
+{ rotation of the Joint, then return to 0. }
+{ 0 0 1 0 is default value, meaning set to }
+{ 0 radians, zero degrees. }
+{ x y z scale, all in radians 0 to <+-inf. }
+{ Thus, 1 radian in a times scale 1 = +1 radian }
+{ = about 60 degrees }
+{ 360 degrees divided by 2 times pi }
+{ greater than +-6.28 radians range }
+{ Right hand rule for axes so a }
+{ positive pitch value applied to the }
+{ skullbase Joint would rotate the }
+{ the gaze of model down, toward the floor. }
 TimeSensor2119 := TTimeSensorNode.Create;
 TimeSensor2119.CycleInterval := 10;
 TimeSensor2119.Loop := True;
@@ -12370,7 +12387,25 @@ Group2560.AddRoute(OrientationInterpolator2708.EventValue_changed, HAnimJoint253
 { .AddChildren }
 Group5.AddChildren([Group2560]);
 Group3002 := TGroupNode.Create;
-{ Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model&apos;s +X direction, the model left over the left shoulder. }
+{ Yaw1 example shows Y-axis control of Joint nodes }
+{ that through the skeleton hierarchy control }
+{ Segment geometry and Site position. }
+{ So, the following interpolator: }
+{ <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> }
+{ will start at 0 move to +1 radian of y-axis }
+{ rotation of the Joint, then return to 0. }
+{ 0 0 1 0 is default value, meaning set to }
+{ 0 radians, zero degrees. }
+{ x y z scale, all in radians 0 to <+-inf. }
+{ Thus, 1 radian in y times scale 1 = +1 radian }
+{ = about 60 degrees }
+{ 360 degrees divided by 2 times pi }
+{ Right hand rule for axes so a }
+{ positive yaw value applied to the }
+{ skullbase Joint would move the }
+{ the gaze of model toward the }
+{ model&apos;s +X direction, the model left }
+{ over the left shoulder. }
 TimeSensor3003 := TTimeSensorNode.Create;
 TimeSensor3003.CycleInterval := 10;
 TimeSensor3003.Loop := True;
@@ -15035,7 +15070,29 @@ Group3444.AddRoute(OrientationInterpolator3592.EventValue_changed, HAnimJoint253
 { .AddChildren }
 Group5.AddChildren([Group3444]);
 Group3886 := TGroupNode.Create;
-{ This Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians = zero degrees 2pi radians = 360 degrees. form: x y z scale pitch, yaw, roll right hand rule in radians 0 to <+-inf. actual result = x y z per scale 1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z 1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model&apos;s +X direction, the model left toward the left shoulder. }
+{ This Roll1 example shows Y-axis control of Joint nodes }
+{ that through the skeleton hierarchy control }
+{ Segment geometry and Site position. }
+{ So, the following interpolator: }
+{ <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> }
+{ will start at 0 move to +1 radian of z-axis }
+{ rotation of the Joint, then return to 0. }
+{ 0 0 1 0 is default value, meaning set to }
+{ 0 radians = zero degrees }
+{ 2pi radians = 360 degrees. }
+{ form: x y z scale }
+{ pitch, yaw, roll right hand rule }
+{ in radians 0 to <+-inf. }
+{ actual result = x y z per scale }
+{ 1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z }
+{ 1 radian = about 60 degrees }
+{ 360 degrees divided by 2 times pi }
+{ Right hand rule for axes so a }
+{ positive roll value applied to the }
+{ skullbase Joint would rotate the }
+{ the gaze of model ccw toward the }
+{ model&apos;s +X direction, the model left }
+{ toward the left shoulder. }
 TimeSensor3887 := TTimeSensorNode.Create;
 TimeSensor3887.CycleInterval := 10;
 TimeSensor3887.Loop := True;

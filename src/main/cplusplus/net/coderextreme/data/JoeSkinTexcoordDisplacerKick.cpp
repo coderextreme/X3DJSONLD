@@ -1552,2150 +1552,2142 @@ HAnimJoint& HAnimJoint239 =  HAnimJoint();
 HAnimJoint239.setUSE(CString("Joe_r_wrist"));
 HAnimHumanoid31.setJoints(&HAnimJoint239);
 
-HAnimSegment& HAnimSegment240 =  HAnimSegment();
-HAnimSegment240.setUSE(CString("Joe_sacrum"));
-HAnimHumanoid31.setSegments(&HAnimSegment240);
-
-HAnimSite& HAnimSite241 =  HAnimSite();
-HAnimSite241.setUSE(CString("Joe_RootFront_view"));
-HAnimHumanoid31.setSites(&HAnimSite241);
-
 Group30.addChild(&HAnimHumanoid31);
 
 Scene19.addChild(&Group30);
 
-Group& Group242 =  Group();
-TimeSensor& TimeSensor243 =  TimeSensor();
-TimeSensor243.setDEF(CString("KickTimer"));
-TimeSensor243.setCycleInterval(3.73);
-TimeSensor243.setLoop(True);
-Group242.addChild(&TimeSensor243);
+Group& Group240 =  Group();
+TimeSensor& TimeSensor241 =  TimeSensor();
+TimeSensor241.setDEF(CString("KickTimer"));
+TimeSensor241.setCycleInterval(3.73);
+TimeSensor241.setLoop(True);
+Group240.addChild(&TimeSensor241);
 
 //Interpolators
-OrientationInterpolator& OrientationInterpolator244 =  OrientationInterpolator();
-OrientationInterpolator244.setDEF(CString("HumanoidRoot_RotationInterpolator"));
-OrientationInterpolator244.setKey(new float[]{0,0.1,0.4,0.6,1}, 5);
-OrientationInterpolator244.setKeyValue(new float[]{1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5}, 20);
-Group242.addChild(&OrientationInterpolator244);
+OrientationInterpolator& OrientationInterpolator242 =  OrientationInterpolator();
+OrientationInterpolator242.setDEF(CString("HumanoidRoot_RotationInterpolator"));
+OrientationInterpolator242.setKey(new float[]{0,0.1,0.4,0.6,1}, 5);
+OrientationInterpolator242.setKeyValue(new float[]{1,0,0,0.5,1,0,0,0.5,-1,0,0,0.1,-1,0,0,0.5,-1,0,0,0.5}, 20);
+Group240.addChild(&OrientationInterpolator242);
 
-PositionInterpolator& PositionInterpolator245 =  PositionInterpolator();
-PositionInterpolator245.setDEF(CString("HumanoidRoot_TranslationInterpolator"));
-PositionInterpolator245.setKey(new float[]{0,0.2,0.6,1}, 4);
-PositionInterpolator245.setKeyValue(new float[]{1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15}, 12);
-Group242.addChild(&PositionInterpolator245);
+PositionInterpolator& PositionInterpolator243 =  PositionInterpolator();
+PositionInterpolator243.setDEF(CString("HumanoidRoot_TranslationInterpolator"));
+PositionInterpolator243.setKey(new float[]{0,0.2,0.6,1}, 4);
+PositionInterpolator243.setKeyValue(new float[]{1,0.3,-1,0.4,-0.04,-0.4,-0.18,0.1,0,-0.2,0.15,0.15}, 12);
+Group240.addChild(&PositionInterpolator243);
+
+OrientationInterpolator& OrientationInterpolator244 =  OrientationInterpolator();
+OrientationInterpolator244.setDEF(CString("sacroiliac_RotationInterpolator"));
+OrientationInterpolator244.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator244.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator244);
+
+OrientationInterpolator& OrientationInterpolator245 =  OrientationInterpolator();
+OrientationInterpolator245.setDEF(CString("l_hip_RotationInterpolator"));
+OrientationInterpolator245.setKey(new float[]{0,0.1,0.3,0.45,1}, 5);
+OrientationInterpolator245.setKeyValue(new float[]{-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1}, 20);
+Group240.addChild(&OrientationInterpolator245);
 
 OrientationInterpolator& OrientationInterpolator246 =  OrientationInterpolator();
-OrientationInterpolator246.setDEF(CString("sacroiliac_RotationInterpolator"));
-OrientationInterpolator246.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator246.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator246);
+OrientationInterpolator246.setDEF(CString("l_knee_RotationInterpolator"));
+OrientationInterpolator246.setKey(new float[]{0,0.2,0.35,0.5,1}, 5);
+OrientationInterpolator246.setKeyValue(new float[]{1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4}, 20);
+Group240.addChild(&OrientationInterpolator246);
 
 OrientationInterpolator& OrientationInterpolator247 =  OrientationInterpolator();
-OrientationInterpolator247.setDEF(CString("l_hip_RotationInterpolator"));
-OrientationInterpolator247.setKey(new float[]{0,0.1,0.3,0.45,1}, 5);
-OrientationInterpolator247.setKeyValue(new float[]{-1,0,0,1.5,-1,0,0,1,0,0,1,0,1,0,0,0.5,1,0,0,1}, 20);
-Group242.addChild(&OrientationInterpolator247);
+OrientationInterpolator247.setDEF(CString("l_ankle_RotationInterpolator"));
+OrientationInterpolator247.setKey(new float[]{0,0.25,1}, 3);
+OrientationInterpolator247.setKeyValue(new float[]{-1,0,0,1,0,0,1,0,1,0,0,1}, 12);
+Group240.addChild(&OrientationInterpolator247);
 
 OrientationInterpolator& OrientationInterpolator248 =  OrientationInterpolator();
-OrientationInterpolator248.setDEF(CString("l_knee_RotationInterpolator"));
-OrientationInterpolator248.setKey(new float[]{0,0.2,0.35,0.5,1}, 5);
-OrientationInterpolator248.setKeyValue(new float[]{1,0,0,1,0,0,1,0,0,0,1,0.2,1,0,1,0.5,1,0,0,1.4}, 20);
-Group242.addChild(&OrientationInterpolator248);
+OrientationInterpolator248.setDEF(CString("l_subtalar_RotationInterpolator"));
+OrientationInterpolator248.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator248.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator248);
 
 OrientationInterpolator& OrientationInterpolator249 =  OrientationInterpolator();
-OrientationInterpolator249.setDEF(CString("l_ankle_RotationInterpolator"));
-OrientationInterpolator249.setKey(new float[]{0,0.25,1}, 3);
-OrientationInterpolator249.setKeyValue(new float[]{-1,0,0,1,0,0,1,0,1,0,0,1}, 12);
-Group242.addChild(&OrientationInterpolator249);
+OrientationInterpolator249.setDEF(CString("l_midtarsal_RotationInterpolator"));
+OrientationInterpolator249.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator249.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator249);
 
 OrientationInterpolator& OrientationInterpolator250 =  OrientationInterpolator();
-OrientationInterpolator250.setDEF(CString("l_subtalar_RotationInterpolator"));
+OrientationInterpolator250.setDEF(CString("l_metatarsal_RotationInterpolator"));
 OrientationInterpolator250.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator250.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator250);
+Group240.addChild(&OrientationInterpolator250);
 
 OrientationInterpolator& OrientationInterpolator251 =  OrientationInterpolator();
-OrientationInterpolator251.setDEF(CString("l_midtarsal_RotationInterpolator"));
-OrientationInterpolator251.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator251.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator251);
+OrientationInterpolator251.setDEF(CString("r_hip_RotationInterpolator"));
+OrientationInterpolator251.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator251.setKeyValue(new float[]{1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1}, 20);
+Group240.addChild(&OrientationInterpolator251);
 
 OrientationInterpolator& OrientationInterpolator252 =  OrientationInterpolator();
-OrientationInterpolator252.setDEF(CString("l_metatarsal_RotationInterpolator"));
-OrientationInterpolator252.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator252.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator252);
+OrientationInterpolator252.setDEF(CString("r_knee_RotationInterpolator"));
+OrientationInterpolator252.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
+OrientationInterpolator252.setKeyValue(new float[]{1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5}, 20);
+Group240.addChild(&OrientationInterpolator252);
 
 OrientationInterpolator& OrientationInterpolator253 =  OrientationInterpolator();
-OrientationInterpolator253.setDEF(CString("r_hip_RotationInterpolator"));
+OrientationInterpolator253.setDEF(CString("r_ankle_RotationInterpolator"));
 OrientationInterpolator253.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
-OrientationInterpolator253.setKeyValue(new float[]{1,0,0,1,1,0,0,1,-1,0,0,1,-1,0,0,1,-1,0,0,1}, 20);
-Group242.addChild(&OrientationInterpolator253);
+OrientationInterpolator253.setKeyValue(new float[]{-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5}, 20);
+Group240.addChild(&OrientationInterpolator253);
 
 OrientationInterpolator& OrientationInterpolator254 =  OrientationInterpolator();
-OrientationInterpolator254.setDEF(CString("r_knee_RotationInterpolator"));
-OrientationInterpolator254.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
-OrientationInterpolator254.setKeyValue(new float[]{1,0,0,0.1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,1.5}, 20);
-Group242.addChild(&OrientationInterpolator254);
+OrientationInterpolator254.setDEF(CString("r_subtalar_RotationInterpolator"));
+OrientationInterpolator254.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator254.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator254);
 
 OrientationInterpolator& OrientationInterpolator255 =  OrientationInterpolator();
-OrientationInterpolator255.setDEF(CString("r_ankle_RotationInterpolator"));
-OrientationInterpolator255.setKey(new float[]{0,0.25,0.5,0.75,1}, 5);
-OrientationInterpolator255.setKeyValue(new float[]{-1,0,0,1,0,0,1,0,1,0,0,1,1,0,0,1,1,0,0,0.5}, 20);
-Group242.addChild(&OrientationInterpolator255);
+OrientationInterpolator255.setDEF(CString("r_midtarsal_RotationInterpolator"));
+OrientationInterpolator255.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator255.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator255);
 
 OrientationInterpolator& OrientationInterpolator256 =  OrientationInterpolator();
-OrientationInterpolator256.setDEF(CString("r_subtalar_RotationInterpolator"));
+OrientationInterpolator256.setDEF(CString("r_metatarsal_RotationInterpolator"));
 OrientationInterpolator256.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator256.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator256);
+Group240.addChild(&OrientationInterpolator256);
 
 OrientationInterpolator& OrientationInterpolator257 =  OrientationInterpolator();
-OrientationInterpolator257.setDEF(CString("r_midtarsal_RotationInterpolator"));
+OrientationInterpolator257.setDEF(CString("vl5_RotationInterpolator"));
 OrientationInterpolator257.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator257.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator257);
+Group240.addChild(&OrientationInterpolator257);
 
 OrientationInterpolator& OrientationInterpolator258 =  OrientationInterpolator();
-OrientationInterpolator258.setDEF(CString("r_metatarsal_RotationInterpolator"));
+OrientationInterpolator258.setDEF(CString("vl4_RotationInterpolator"));
 OrientationInterpolator258.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator258.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator258);
+Group240.addChild(&OrientationInterpolator258);
 
 OrientationInterpolator& OrientationInterpolator259 =  OrientationInterpolator();
-OrientationInterpolator259.setDEF(CString("vl5_RotationInterpolator"));
+OrientationInterpolator259.setDEF(CString("vl3_RotationInterpolator"));
 OrientationInterpolator259.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator259.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator259);
+Group240.addChild(&OrientationInterpolator259);
 
 OrientationInterpolator& OrientationInterpolator260 =  OrientationInterpolator();
-OrientationInterpolator260.setDEF(CString("vl4_RotationInterpolator"));
+OrientationInterpolator260.setDEF(CString("vl2_RotationInterpolator"));
 OrientationInterpolator260.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator260.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator260);
+Group240.addChild(&OrientationInterpolator260);
 
 OrientationInterpolator& OrientationInterpolator261 =  OrientationInterpolator();
-OrientationInterpolator261.setDEF(CString("vl3_RotationInterpolator"));
+OrientationInterpolator261.setDEF(CString("vl1_RotationInterpolator"));
 OrientationInterpolator261.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator261.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator261);
+Group240.addChild(&OrientationInterpolator261);
 
 OrientationInterpolator& OrientationInterpolator262 =  OrientationInterpolator();
-OrientationInterpolator262.setDEF(CString("vl2_RotationInterpolator"));
+OrientationInterpolator262.setDEF(CString("vt12_RotationInterpolator"));
 OrientationInterpolator262.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator262.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator262);
+Group240.addChild(&OrientationInterpolator262);
 
 OrientationInterpolator& OrientationInterpolator263 =  OrientationInterpolator();
-OrientationInterpolator263.setDEF(CString("vl1_RotationInterpolator"));
+OrientationInterpolator263.setDEF(CString("vt11_RotationInterpolator"));
 OrientationInterpolator263.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator263.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator263);
+Group240.addChild(&OrientationInterpolator263);
 
 OrientationInterpolator& OrientationInterpolator264 =  OrientationInterpolator();
-OrientationInterpolator264.setDEF(CString("vt12_RotationInterpolator"));
+OrientationInterpolator264.setDEF(CString("vt10_RotationInterpolator"));
 OrientationInterpolator264.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator264.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator264);
+Group240.addChild(&OrientationInterpolator264);
 
 OrientationInterpolator& OrientationInterpolator265 =  OrientationInterpolator();
-OrientationInterpolator265.setDEF(CString("vt11_RotationInterpolator"));
+OrientationInterpolator265.setDEF(CString("vt9_RotationInterpolator"));
 OrientationInterpolator265.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator265.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator265);
+Group240.addChild(&OrientationInterpolator265);
 
 OrientationInterpolator& OrientationInterpolator266 =  OrientationInterpolator();
-OrientationInterpolator266.setDEF(CString("vt10_RotationInterpolator"));
+OrientationInterpolator266.setDEF(CString("vt8_RotationInterpolator"));
 OrientationInterpolator266.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator266.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator266);
+Group240.addChild(&OrientationInterpolator266);
 
 OrientationInterpolator& OrientationInterpolator267 =  OrientationInterpolator();
-OrientationInterpolator267.setDEF(CString("vt9_RotationInterpolator"));
+OrientationInterpolator267.setDEF(CString("vt7_RotationInterpolator"));
 OrientationInterpolator267.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator267.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator267);
+Group240.addChild(&OrientationInterpolator267);
 
 OrientationInterpolator& OrientationInterpolator268 =  OrientationInterpolator();
-OrientationInterpolator268.setDEF(CString("vt8_RotationInterpolator"));
+OrientationInterpolator268.setDEF(CString("vt6_RotationInterpolator"));
 OrientationInterpolator268.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator268.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator268);
+Group240.addChild(&OrientationInterpolator268);
 
 OrientationInterpolator& OrientationInterpolator269 =  OrientationInterpolator();
-OrientationInterpolator269.setDEF(CString("vt7_RotationInterpolator"));
+OrientationInterpolator269.setDEF(CString("vt5_RotationInterpolator"));
 OrientationInterpolator269.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator269.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator269);
+Group240.addChild(&OrientationInterpolator269);
 
 OrientationInterpolator& OrientationInterpolator270 =  OrientationInterpolator();
-OrientationInterpolator270.setDEF(CString("vt6_RotationInterpolator"));
+OrientationInterpolator270.setDEF(CString("vt4_RotationInterpolator"));
 OrientationInterpolator270.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator270.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator270);
+Group240.addChild(&OrientationInterpolator270);
 
 OrientationInterpolator& OrientationInterpolator271 =  OrientationInterpolator();
-OrientationInterpolator271.setDEF(CString("vt5_RotationInterpolator"));
+OrientationInterpolator271.setDEF(CString("vt3_RotationInterpolator"));
 OrientationInterpolator271.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator271.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator271);
+Group240.addChild(&OrientationInterpolator271);
 
 OrientationInterpolator& OrientationInterpolator272 =  OrientationInterpolator();
-OrientationInterpolator272.setDEF(CString("vt4_RotationInterpolator"));
+OrientationInterpolator272.setDEF(CString("vt2_RotationInterpolator"));
 OrientationInterpolator272.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator272.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator272);
+Group240.addChild(&OrientationInterpolator272);
 
 OrientationInterpolator& OrientationInterpolator273 =  OrientationInterpolator();
-OrientationInterpolator273.setDEF(CString("vt3_RotationInterpolator"));
+OrientationInterpolator273.setDEF(CString("vt1_RotationInterpolator"));
 OrientationInterpolator273.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator273.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator273);
+Group240.addChild(&OrientationInterpolator273);
 
 OrientationInterpolator& OrientationInterpolator274 =  OrientationInterpolator();
-OrientationInterpolator274.setDEF(CString("vt2_RotationInterpolator"));
+OrientationInterpolator274.setDEF(CString("vc7_RotationInterpolator"));
 OrientationInterpolator274.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator274.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator274);
+Group240.addChild(&OrientationInterpolator274);
 
 OrientationInterpolator& OrientationInterpolator275 =  OrientationInterpolator();
-OrientationInterpolator275.setDEF(CString("vt1_RotationInterpolator"));
+OrientationInterpolator275.setDEF(CString("vc6_RotationInterpolator"));
 OrientationInterpolator275.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator275.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator275);
+Group240.addChild(&OrientationInterpolator275);
 
 OrientationInterpolator& OrientationInterpolator276 =  OrientationInterpolator();
-OrientationInterpolator276.setDEF(CString("vc7_RotationInterpolator"));
+OrientationInterpolator276.setDEF(CString("vc5_RotationInterpolator"));
 OrientationInterpolator276.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator276.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator276);
+Group240.addChild(&OrientationInterpolator276);
 
 OrientationInterpolator& OrientationInterpolator277 =  OrientationInterpolator();
-OrientationInterpolator277.setDEF(CString("vc6_RotationInterpolator"));
-OrientationInterpolator277.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator277.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator277);
+OrientationInterpolator277.setDEF(CString("vc4_RotationInterpolator"));
+OrientationInterpolator277.setKey(new float[]{0,0.3,0.4,1}, 4);
+OrientationInterpolator277.setKeyValue(new float[]{1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5}, 16);
+Group240.addChild(&OrientationInterpolator277);
 
 OrientationInterpolator& OrientationInterpolator278 =  OrientationInterpolator();
-OrientationInterpolator278.setDEF(CString("vc5_RotationInterpolator"));
+OrientationInterpolator278.setDEF(CString("vc3_RotationInterpolator"));
 OrientationInterpolator278.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator278.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator278);
+Group240.addChild(&OrientationInterpolator278);
 
 OrientationInterpolator& OrientationInterpolator279 =  OrientationInterpolator();
-OrientationInterpolator279.setDEF(CString("vc4_RotationInterpolator"));
-OrientationInterpolator279.setKey(new float[]{0,0.3,0.4,1}, 4);
-OrientationInterpolator279.setKeyValue(new float[]{1,0,1,0.25,-1,0,-1,0.35,1,0,0,0.75,1,0,1,0.5}, 16);
-Group242.addChild(&OrientationInterpolator279);
+OrientationInterpolator279.setDEF(CString("vc2_RotationInterpolator"));
+OrientationInterpolator279.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator279.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator279);
 
 OrientationInterpolator& OrientationInterpolator280 =  OrientationInterpolator();
-OrientationInterpolator280.setDEF(CString("vc3_RotationInterpolator"));
+OrientationInterpolator280.setDEF(CString("vc1_RotationInterpolator"));
 OrientationInterpolator280.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator280.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator280);
+Group240.addChild(&OrientationInterpolator280);
 
 OrientationInterpolator& OrientationInterpolator281 =  OrientationInterpolator();
-OrientationInterpolator281.setDEF(CString("vc2_RotationInterpolator"));
-OrientationInterpolator281.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator281.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator281);
+OrientationInterpolator281.setDEF(CString("skullbase_RotationInterpolator"));
+OrientationInterpolator281.setKey(new float[]{0,0.2,0.75,1}, 4);
+OrientationInterpolator281.setKeyValue(new float[]{0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35}, 16);
+Group240.addChild(&OrientationInterpolator281);
 
 OrientationInterpolator& OrientationInterpolator282 =  OrientationInterpolator();
-OrientationInterpolator282.setDEF(CString("vc1_RotationInterpolator"));
+OrientationInterpolator282.setDEF(CString("l_eyelid_joint_RotationInterpolator"));
 OrientationInterpolator282.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator282.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator282);
+Group240.addChild(&OrientationInterpolator282);
 
 OrientationInterpolator& OrientationInterpolator283 =  OrientationInterpolator();
-OrientationInterpolator283.setDEF(CString("skullbase_RotationInterpolator"));
-OrientationInterpolator283.setKey(new float[]{0,0.2,0.75,1}, 4);
-OrientationInterpolator283.setKeyValue(new float[]{0,-1,0,0.5,0,0,1,0,0,0,1,0,0,1,0,0.35}, 16);
-Group242.addChild(&OrientationInterpolator283);
+OrientationInterpolator283.setDEF(CString("l_eyeball_joint_RotationInterpolator"));
+OrientationInterpolator283.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator283.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator283);
 
 OrientationInterpolator& OrientationInterpolator284 =  OrientationInterpolator();
-OrientationInterpolator284.setDEF(CString("l_eyelid_joint_RotationInterpolator"));
+OrientationInterpolator284.setDEF(CString("l_eyebrow_joint_RotationInterpolator"));
 OrientationInterpolator284.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator284.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator284);
+Group240.addChild(&OrientationInterpolator284);
 
 OrientationInterpolator& OrientationInterpolator285 =  OrientationInterpolator();
-OrientationInterpolator285.setDEF(CString("l_eyeball_joint_RotationInterpolator"));
+OrientationInterpolator285.setDEF(CString("r_eyelid_joint_RotationInterpolator"));
 OrientationInterpolator285.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator285.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator285);
+Group240.addChild(&OrientationInterpolator285);
 
 OrientationInterpolator& OrientationInterpolator286 =  OrientationInterpolator();
-OrientationInterpolator286.setDEF(CString("l_eyebrow_joint_RotationInterpolator"));
+OrientationInterpolator286.setDEF(CString("r_eyeball_joint_RotationInterpolator"));
 OrientationInterpolator286.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator286.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator286);
+Group240.addChild(&OrientationInterpolator286);
 
 OrientationInterpolator& OrientationInterpolator287 =  OrientationInterpolator();
-OrientationInterpolator287.setDEF(CString("r_eyelid_joint_RotationInterpolator"));
+OrientationInterpolator287.setDEF(CString("r_eyebrow_joint_RotationInterpolator"));
 OrientationInterpolator287.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator287.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator287);
+Group240.addChild(&OrientationInterpolator287);
 
 OrientationInterpolator& OrientationInterpolator288 =  OrientationInterpolator();
-OrientationInterpolator288.setDEF(CString("r_eyeball_joint_RotationInterpolator"));
+OrientationInterpolator288.setDEF(CString("temporomandibular_RotationInterpolator"));
 OrientationInterpolator288.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator288.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator288);
+Group240.addChild(&OrientationInterpolator288);
 
 OrientationInterpolator& OrientationInterpolator289 =  OrientationInterpolator();
-OrientationInterpolator289.setDEF(CString("r_eyebrow_joint_RotationInterpolator"));
+OrientationInterpolator289.setDEF(CString("l_sternoclavicular_RotationInterpolator"));
 OrientationInterpolator289.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator289.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator289);
+Group240.addChild(&OrientationInterpolator289);
 
 OrientationInterpolator& OrientationInterpolator290 =  OrientationInterpolator();
-OrientationInterpolator290.setDEF(CString("temporomandibular_RotationInterpolator"));
+OrientationInterpolator290.setDEF(CString("l_acromioclavicular_RotationInterpolator"));
 OrientationInterpolator290.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator290.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator290);
+Group240.addChild(&OrientationInterpolator290);
 
 OrientationInterpolator& OrientationInterpolator291 =  OrientationInterpolator();
-OrientationInterpolator291.setDEF(CString("l_sternoclavicular_RotationInterpolator"));
-OrientationInterpolator291.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator291.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator291);
+OrientationInterpolator291.setDEF(CString("l_shoulder_RotationInterpolator"));
+OrientationInterpolator291.setKey(new float[]{0,0.4,1}, 3);
+OrientationInterpolator291.setKeyValue(new float[]{0,0,1,0,0,0,1,1.5,-1,0,1,1.75}, 12);
+Group240.addChild(&OrientationInterpolator291);
 
 OrientationInterpolator& OrientationInterpolator292 =  OrientationInterpolator();
-OrientationInterpolator292.setDEF(CString("l_acromioclavicular_RotationInterpolator"));
+OrientationInterpolator292.setDEF(CString("l_elbow_RotationInterpolator"));
 OrientationInterpolator292.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator292.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator292);
+OrientationInterpolator292.setKeyValue(new float[]{-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5}, 12);
+Group240.addChild(&OrientationInterpolator292);
 
 OrientationInterpolator& OrientationInterpolator293 =  OrientationInterpolator();
-OrientationInterpolator293.setDEF(CString("l_shoulder_RotationInterpolator"));
-OrientationInterpolator293.setKey(new float[]{0,0.4,1}, 3);
-OrientationInterpolator293.setKeyValue(new float[]{0,0,1,0,0,0,1,1.5,-1,0,1,1.75}, 12);
-Group242.addChild(&OrientationInterpolator293);
+OrientationInterpolator293.setDEF(CString("l_wrist_RotationInterpolator"));
+OrientationInterpolator293.setKey(new float[]{0,0.4,0.8,1}, 4);
+OrientationInterpolator293.setKeyValue(new float[]{0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator293);
 
 OrientationInterpolator& OrientationInterpolator294 =  OrientationInterpolator();
-OrientationInterpolator294.setDEF(CString("l_elbow_RotationInterpolator"));
+OrientationInterpolator294.setDEF(CString("l_thumb1_RotationInterpolator"));
 OrientationInterpolator294.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator294.setKeyValue(new float[]{-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5}, 12);
-Group242.addChild(&OrientationInterpolator294);
+OrientationInterpolator294.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator294);
 
 OrientationInterpolator& OrientationInterpolator295 =  OrientationInterpolator();
-OrientationInterpolator295.setDEF(CString("l_wrist_RotationInterpolator"));
-OrientationInterpolator295.setKey(new float[]{0,0.4,0.8,1}, 4);
-OrientationInterpolator295.setKeyValue(new float[]{0,0,1,0,0,1,0,1.3,0,-0.5,1,1.3,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator295);
+OrientationInterpolator295.setDEF(CString("l_thumb2_RotationInterpolator"));
+OrientationInterpolator295.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator295.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator295);
 
 OrientationInterpolator& OrientationInterpolator296 =  OrientationInterpolator();
-OrientationInterpolator296.setDEF(CString("l_thumb1_RotationInterpolator"));
+OrientationInterpolator296.setDEF(CString("l_thumb3_RotationInterpolator"));
 OrientationInterpolator296.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator296.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator296);
+Group240.addChild(&OrientationInterpolator296);
 
 OrientationInterpolator& OrientationInterpolator297 =  OrientationInterpolator();
-OrientationInterpolator297.setDEF(CString("l_thumb2_RotationInterpolator"));
+OrientationInterpolator297.setDEF(CString("l_index0_RotationInterpolator"));
 OrientationInterpolator297.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator297.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator297);
+Group240.addChild(&OrientationInterpolator297);
 
 OrientationInterpolator& OrientationInterpolator298 =  OrientationInterpolator();
-OrientationInterpolator298.setDEF(CString("l_thumb3_RotationInterpolator"));
+OrientationInterpolator298.setDEF(CString("l_index1_RotationInterpolator"));
 OrientationInterpolator298.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator298.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator298);
+Group240.addChild(&OrientationInterpolator298);
 
 OrientationInterpolator& OrientationInterpolator299 =  OrientationInterpolator();
-OrientationInterpolator299.setDEF(CString("l_index0_RotationInterpolator"));
+OrientationInterpolator299.setDEF(CString("l_index2_RotationInterpolator"));
 OrientationInterpolator299.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator299.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator299);
+Group240.addChild(&OrientationInterpolator299);
 
 OrientationInterpolator& OrientationInterpolator300 =  OrientationInterpolator();
-OrientationInterpolator300.setDEF(CString("l_index1_RotationInterpolator"));
+OrientationInterpolator300.setDEF(CString("l_index3_RotationInterpolator"));
 OrientationInterpolator300.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator300.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator300);
+Group240.addChild(&OrientationInterpolator300);
 
 OrientationInterpolator& OrientationInterpolator301 =  OrientationInterpolator();
-OrientationInterpolator301.setDEF(CString("l_index2_RotationInterpolator"));
+OrientationInterpolator301.setDEF(CString("l_middle0_RotationInterpolator"));
 OrientationInterpolator301.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator301.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator301);
+Group240.addChild(&OrientationInterpolator301);
 
 OrientationInterpolator& OrientationInterpolator302 =  OrientationInterpolator();
-OrientationInterpolator302.setDEF(CString("l_index3_RotationInterpolator"));
+OrientationInterpolator302.setDEF(CString("l_middle1_RotationInterpolator"));
 OrientationInterpolator302.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator302.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator302);
+Group240.addChild(&OrientationInterpolator302);
 
 OrientationInterpolator& OrientationInterpolator303 =  OrientationInterpolator();
-OrientationInterpolator303.setDEF(CString("l_middle0_RotationInterpolator"));
+OrientationInterpolator303.setDEF(CString("l_middle2_RotationInterpolator"));
 OrientationInterpolator303.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator303.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator303);
+Group240.addChild(&OrientationInterpolator303);
 
 OrientationInterpolator& OrientationInterpolator304 =  OrientationInterpolator();
-OrientationInterpolator304.setDEF(CString("l_middle1_RotationInterpolator"));
+OrientationInterpolator304.setDEF(CString("l_middle3_RotationInterpolator"));
 OrientationInterpolator304.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator304.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator304);
+Group240.addChild(&OrientationInterpolator304);
 
 OrientationInterpolator& OrientationInterpolator305 =  OrientationInterpolator();
-OrientationInterpolator305.setDEF(CString("l_middle2_RotationInterpolator"));
+OrientationInterpolator305.setDEF(CString("l_ring0_RotationInterpolator"));
 OrientationInterpolator305.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator305.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator305);
+Group240.addChild(&OrientationInterpolator305);
 
 OrientationInterpolator& OrientationInterpolator306 =  OrientationInterpolator();
-OrientationInterpolator306.setDEF(CString("l_middle3_RotationInterpolator"));
+OrientationInterpolator306.setDEF(CString("l_ring1_RotationInterpolator"));
 OrientationInterpolator306.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator306.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator306);
+Group240.addChild(&OrientationInterpolator306);
 
 OrientationInterpolator& OrientationInterpolator307 =  OrientationInterpolator();
-OrientationInterpolator307.setDEF(CString("l_ring0_RotationInterpolator"));
+OrientationInterpolator307.setDEF(CString("l_ring2_RotationInterpolator"));
 OrientationInterpolator307.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator307.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator307);
+Group240.addChild(&OrientationInterpolator307);
 
 OrientationInterpolator& OrientationInterpolator308 =  OrientationInterpolator();
-OrientationInterpolator308.setDEF(CString("l_ring1_RotationInterpolator"));
+OrientationInterpolator308.setDEF(CString("l_ring3_RotationInterpolator"));
 OrientationInterpolator308.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator308.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator308);
+Group240.addChild(&OrientationInterpolator308);
 
 OrientationInterpolator& OrientationInterpolator309 =  OrientationInterpolator();
-OrientationInterpolator309.setDEF(CString("l_ring2_RotationInterpolator"));
+OrientationInterpolator309.setDEF(CString("l_pinky0_RotationInterpolator"));
 OrientationInterpolator309.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator309.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator309);
+Group240.addChild(&OrientationInterpolator309);
 
 OrientationInterpolator& OrientationInterpolator310 =  OrientationInterpolator();
-OrientationInterpolator310.setDEF(CString("l_ring3_RotationInterpolator"));
+OrientationInterpolator310.setDEF(CString("l_pinky1_RotationInterpolator"));
 OrientationInterpolator310.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator310.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator310);
+Group240.addChild(&OrientationInterpolator310);
 
 OrientationInterpolator& OrientationInterpolator311 =  OrientationInterpolator();
-OrientationInterpolator311.setDEF(CString("l_pinky0_RotationInterpolator"));
+OrientationInterpolator311.setDEF(CString("l_pinky2_RotationInterpolator"));
 OrientationInterpolator311.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator311.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator311);
+Group240.addChild(&OrientationInterpolator311);
 
 OrientationInterpolator& OrientationInterpolator312 =  OrientationInterpolator();
-OrientationInterpolator312.setDEF(CString("l_pinky1_RotationInterpolator"));
+OrientationInterpolator312.setDEF(CString("l_pinky3_RotationInterpolator"));
 OrientationInterpolator312.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator312.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator312);
+Group240.addChild(&OrientationInterpolator312);
 
 OrientationInterpolator& OrientationInterpolator313 =  OrientationInterpolator();
-OrientationInterpolator313.setDEF(CString("l_pinky2_RotationInterpolator"));
+OrientationInterpolator313.setDEF(CString("r_sternoclavicular_RotationInterpolator"));
 OrientationInterpolator313.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator313.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator313);
+Group240.addChild(&OrientationInterpolator313);
 
 OrientationInterpolator& OrientationInterpolator314 =  OrientationInterpolator();
-OrientationInterpolator314.setDEF(CString("l_pinky3_RotationInterpolator"));
+OrientationInterpolator314.setDEF(CString("r_acromioclavicular_RotationInterpolator"));
 OrientationInterpolator314.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator314.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator314);
+Group240.addChild(&OrientationInterpolator314);
 
 OrientationInterpolator& OrientationInterpolator315 =  OrientationInterpolator();
-OrientationInterpolator315.setDEF(CString("r_sternoclavicular_RotationInterpolator"));
+OrientationInterpolator315.setDEF(CString("r_shoulder_RotationInterpolator"));
 OrientationInterpolator315.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator315.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator315);
+OrientationInterpolator315.setKeyValue(new float[]{0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75}, 12);
+Group240.addChild(&OrientationInterpolator315);
 
 OrientationInterpolator& OrientationInterpolator316 =  OrientationInterpolator();
-OrientationInterpolator316.setDEF(CString("r_acromioclavicular_RotationInterpolator"));
+OrientationInterpolator316.setDEF(CString("r_elbow_RotationInterpolator"));
 OrientationInterpolator316.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator316.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator316);
+OrientationInterpolator316.setKeyValue(new float[]{-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5}, 12);
+Group240.addChild(&OrientationInterpolator316);
 
 OrientationInterpolator& OrientationInterpolator317 =  OrientationInterpolator();
-OrientationInterpolator317.setDEF(CString("r_shoulder_RotationInterpolator"));
-OrientationInterpolator317.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator317.setKeyValue(new float[]{0,0,-1,2.5,0,0,-1,1.5,0,0,-1,1.75}, 12);
-Group242.addChild(&OrientationInterpolator317);
+OrientationInterpolator317.setDEF(CString("r_wrist_RotationInterpolator"));
+OrientationInterpolator317.setKey(new float[]{0,0.5,0.7,1}, 4);
+OrientationInterpolator317.setKeyValue(new float[]{0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3}, 16);
+Group240.addChild(&OrientationInterpolator317);
 
 OrientationInterpolator& OrientationInterpolator318 =  OrientationInterpolator();
-OrientationInterpolator318.setDEF(CString("r_elbow_RotationInterpolator"));
+OrientationInterpolator318.setDEF(CString("r_thumb1_RotationInterpolator"));
 OrientationInterpolator318.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator318.setKeyValue(new float[]{-1,0,0,3,-1,0,0,0.75,-1,-1,0,0.5}, 12);
-Group242.addChild(&OrientationInterpolator318);
+OrientationInterpolator318.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator318);
 
 OrientationInterpolator& OrientationInterpolator319 =  OrientationInterpolator();
-OrientationInterpolator319.setDEF(CString("r_wrist_RotationInterpolator"));
-OrientationInterpolator319.setKey(new float[]{0,0.5,0.7,1}, 4);
-OrientationInterpolator319.setKeyValue(new float[]{0,1,0,0.3,0,0,1,0,0,0,-1,1,0,-1,0,0.3}, 16);
-Group242.addChild(&OrientationInterpolator319);
+OrientationInterpolator319.setDEF(CString("r_thumb2_RotationInterpolator"));
+OrientationInterpolator319.setKey(new float[]{0,0.5,1}, 3);
+OrientationInterpolator319.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
+Group240.addChild(&OrientationInterpolator319);
 
 OrientationInterpolator& OrientationInterpolator320 =  OrientationInterpolator();
-OrientationInterpolator320.setDEF(CString("r_thumb1_RotationInterpolator"));
+OrientationInterpolator320.setDEF(CString("r_thumb3_RotationInterpolator"));
 OrientationInterpolator320.setKey(new float[]{0,0.5,1}, 3);
 OrientationInterpolator320.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator320);
+Group240.addChild(&OrientationInterpolator320);
 
 OrientationInterpolator& OrientationInterpolator321 =  OrientationInterpolator();
-OrientationInterpolator321.setDEF(CString("r_thumb2_RotationInterpolator"));
-OrientationInterpolator321.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator321.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator321);
+OrientationInterpolator321.setDEF(CString("r_index0_RotationInterpolator"));
+OrientationInterpolator321.setKey(new float[]{0,0.5,0.75,1}, 4);
+OrientationInterpolator321.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator321);
 
 OrientationInterpolator& OrientationInterpolator322 =  OrientationInterpolator();
-OrientationInterpolator322.setDEF(CString("r_thumb3_RotationInterpolator"));
-OrientationInterpolator322.setKey(new float[]{0,0.5,1}, 3);
-OrientationInterpolator322.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,0}, 12);
-Group242.addChild(&OrientationInterpolator322);
+OrientationInterpolator322.setDEF(CString("r_index1_RotationInterpolator"));
+OrientationInterpolator322.setKey(new float[]{0,0.5,0.75,1}, 4);
+OrientationInterpolator322.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator322);
 
 OrientationInterpolator& OrientationInterpolator323 =  OrientationInterpolator();
-OrientationInterpolator323.setDEF(CString("r_index0_RotationInterpolator"));
+OrientationInterpolator323.setDEF(CString("r_index2_RotationInterpolator"));
 OrientationInterpolator323.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator323.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator323);
+OrientationInterpolator323.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator323);
 
 OrientationInterpolator& OrientationInterpolator324 =  OrientationInterpolator();
-OrientationInterpolator324.setDEF(CString("r_index1_RotationInterpolator"));
+OrientationInterpolator324.setDEF(CString("r_index3_RotationInterpolator"));
 OrientationInterpolator324.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator324.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator324);
+Group240.addChild(&OrientationInterpolator324);
 
 OrientationInterpolator& OrientationInterpolator325 =  OrientationInterpolator();
-OrientationInterpolator325.setDEF(CString("r_index2_RotationInterpolator"));
+OrientationInterpolator325.setDEF(CString("r_middle0_RotationInterpolator"));
 OrientationInterpolator325.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator325.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator325);
+OrientationInterpolator325.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator325);
 
 OrientationInterpolator& OrientationInterpolator326 =  OrientationInterpolator();
-OrientationInterpolator326.setDEF(CString("r_index3_RotationInterpolator"));
+OrientationInterpolator326.setDEF(CString("r_middle1_RotationInterpolator"));
 OrientationInterpolator326.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator326.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator326);
+Group240.addChild(&OrientationInterpolator326);
 
 OrientationInterpolator& OrientationInterpolator327 =  OrientationInterpolator();
-OrientationInterpolator327.setDEF(CString("r_middle0_RotationInterpolator"));
+OrientationInterpolator327.setDEF(CString("r_middle2_RotationInterpolator"));
 OrientationInterpolator327.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator327.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator327);
+OrientationInterpolator327.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator327);
 
 OrientationInterpolator& OrientationInterpolator328 =  OrientationInterpolator();
-OrientationInterpolator328.setDEF(CString("r_middle1_RotationInterpolator"));
+OrientationInterpolator328.setDEF(CString("r_middle3_RotationInterpolator"));
 OrientationInterpolator328.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator328.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator328);
+Group240.addChild(&OrientationInterpolator328);
 
 OrientationInterpolator& OrientationInterpolator329 =  OrientationInterpolator();
-OrientationInterpolator329.setDEF(CString("r_middle2_RotationInterpolator"));
+OrientationInterpolator329.setDEF(CString("r_ring0_RotationInterpolator"));
 OrientationInterpolator329.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator329.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator329);
+OrientationInterpolator329.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator329);
 
 OrientationInterpolator& OrientationInterpolator330 =  OrientationInterpolator();
-OrientationInterpolator330.setDEF(CString("r_middle3_RotationInterpolator"));
+OrientationInterpolator330.setDEF(CString("r_ring1_RotationInterpolator"));
 OrientationInterpolator330.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator330.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator330);
+Group240.addChild(&OrientationInterpolator330);
 
 OrientationInterpolator& OrientationInterpolator331 =  OrientationInterpolator();
-OrientationInterpolator331.setDEF(CString("r_ring0_RotationInterpolator"));
+OrientationInterpolator331.setDEF(CString("r_ring2_RotationInterpolator"));
 OrientationInterpolator331.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator331.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator331);
+OrientationInterpolator331.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator331);
 
 OrientationInterpolator& OrientationInterpolator332 =  OrientationInterpolator();
-OrientationInterpolator332.setDEF(CString("r_ring1_RotationInterpolator"));
+OrientationInterpolator332.setDEF(CString("r_ring3_RotationInterpolator"));
 OrientationInterpolator332.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator332.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator332);
+Group240.addChild(&OrientationInterpolator332);
 
 OrientationInterpolator& OrientationInterpolator333 =  OrientationInterpolator();
-OrientationInterpolator333.setDEF(CString("r_ring2_RotationInterpolator"));
+OrientationInterpolator333.setDEF(CString("r_pinky0_RotationInterpolator"));
 OrientationInterpolator333.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator333.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator333);
+OrientationInterpolator333.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator333);
 
 OrientationInterpolator& OrientationInterpolator334 =  OrientationInterpolator();
-OrientationInterpolator334.setDEF(CString("r_ring3_RotationInterpolator"));
+OrientationInterpolator334.setDEF(CString("r_pinky1_RotationInterpolator"));
 OrientationInterpolator334.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator334.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator334);
+Group240.addChild(&OrientationInterpolator334);
 
 OrientationInterpolator& OrientationInterpolator335 =  OrientationInterpolator();
-OrientationInterpolator335.setDEF(CString("r_pinky0_RotationInterpolator"));
+OrientationInterpolator335.setDEF(CString("r_pinky2_RotationInterpolator"));
 OrientationInterpolator335.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator335.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator335);
+OrientationInterpolator335.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
+Group240.addChild(&OrientationInterpolator335);
 
 OrientationInterpolator& OrientationInterpolator336 =  OrientationInterpolator();
-OrientationInterpolator336.setDEF(CString("r_pinky1_RotationInterpolator"));
+OrientationInterpolator336.setDEF(CString("r_pinky3_RotationInterpolator"));
 OrientationInterpolator336.setKey(new float[]{0,0.5,0.75,1}, 4);
 OrientationInterpolator336.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator336);
+Group240.addChild(&OrientationInterpolator336);
 
-OrientationInterpolator& OrientationInterpolator337 =  OrientationInterpolator();
-OrientationInterpolator337.setDEF(CString("r_pinky2_RotationInterpolator"));
-OrientationInterpolator337.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator337.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator337);
-
-OrientationInterpolator& OrientationInterpolator338 =  OrientationInterpolator();
-OrientationInterpolator338.setDEF(CString("r_pinky3_RotationInterpolator"));
-OrientationInterpolator338.setKey(new float[]{0,0.5,0.75,1}, 4);
-OrientationInterpolator338.setKeyValue(new float[]{0,0,1,0,0,0,1,0,0,0,1,1.5,0,0,1,0}, 16);
-Group242.addChild(&OrientationInterpolator338);
-
-Scene19.addChild(&Group242);
+Scene19.addChild(&Group240);
 
 //TimeSensor to Interpolators
+ROUTE& ROUTE337 =  ROUTE();
+ROUTE337.setFromField(CString("fraction_changed"));
+ROUTE337.setFromNode(CString("KickTimer"));
+ROUTE337.setToField(CString("set_fraction"));
+ROUTE337.setToNode(CString("HumanoidRoot_RotationInterpolator"));
+Scene19.addChild(&ROUTE337);
+
+ROUTE& ROUTE338 =  ROUTE();
+ROUTE338.setFromField(CString("fraction_changed"));
+ROUTE338.setFromNode(CString("KickTimer"));
+ROUTE338.setToField(CString("set_fraction"));
+ROUTE338.setToNode(CString("HumanoidRoot_TranslationInterpolator"));
+Scene19.addChild(&ROUTE338);
+
 ROUTE& ROUTE339 =  ROUTE();
 ROUTE339.setFromField(CString("fraction_changed"));
 ROUTE339.setFromNode(CString("KickTimer"));
 ROUTE339.setToField(CString("set_fraction"));
-ROUTE339.setToNode(CString("HumanoidRoot_RotationInterpolator"));
+ROUTE339.setToNode(CString("sacroiliac_RotationInterpolator"));
 Scene19.addChild(&ROUTE339);
 
 ROUTE& ROUTE340 =  ROUTE();
 ROUTE340.setFromField(CString("fraction_changed"));
 ROUTE340.setFromNode(CString("KickTimer"));
 ROUTE340.setToField(CString("set_fraction"));
-ROUTE340.setToNode(CString("HumanoidRoot_TranslationInterpolator"));
+ROUTE340.setToNode(CString("l_hip_RotationInterpolator"));
 Scene19.addChild(&ROUTE340);
 
 ROUTE& ROUTE341 =  ROUTE();
 ROUTE341.setFromField(CString("fraction_changed"));
 ROUTE341.setFromNode(CString("KickTimer"));
 ROUTE341.setToField(CString("set_fraction"));
-ROUTE341.setToNode(CString("sacroiliac_RotationInterpolator"));
+ROUTE341.setToNode(CString("l_knee_RotationInterpolator"));
 Scene19.addChild(&ROUTE341);
 
 ROUTE& ROUTE342 =  ROUTE();
 ROUTE342.setFromField(CString("fraction_changed"));
 ROUTE342.setFromNode(CString("KickTimer"));
 ROUTE342.setToField(CString("set_fraction"));
-ROUTE342.setToNode(CString("l_hip_RotationInterpolator"));
+ROUTE342.setToNode(CString("l_ankle_RotationInterpolator"));
 Scene19.addChild(&ROUTE342);
 
 ROUTE& ROUTE343 =  ROUTE();
 ROUTE343.setFromField(CString("fraction_changed"));
 ROUTE343.setFromNode(CString("KickTimer"));
 ROUTE343.setToField(CString("set_fraction"));
-ROUTE343.setToNode(CString("l_knee_RotationInterpolator"));
+ROUTE343.setToNode(CString("l_subtalar_RotationInterpolator"));
 Scene19.addChild(&ROUTE343);
 
 ROUTE& ROUTE344 =  ROUTE();
 ROUTE344.setFromField(CString("fraction_changed"));
 ROUTE344.setFromNode(CString("KickTimer"));
 ROUTE344.setToField(CString("set_fraction"));
-ROUTE344.setToNode(CString("l_ankle_RotationInterpolator"));
+ROUTE344.setToNode(CString("l_midtarsal_RotationInterpolator"));
 Scene19.addChild(&ROUTE344);
 
 ROUTE& ROUTE345 =  ROUTE();
 ROUTE345.setFromField(CString("fraction_changed"));
 ROUTE345.setFromNode(CString("KickTimer"));
 ROUTE345.setToField(CString("set_fraction"));
-ROUTE345.setToNode(CString("l_subtalar_RotationInterpolator"));
+ROUTE345.setToNode(CString("l_metatarsal_RotationInterpolator"));
 Scene19.addChild(&ROUTE345);
 
 ROUTE& ROUTE346 =  ROUTE();
 ROUTE346.setFromField(CString("fraction_changed"));
 ROUTE346.setFromNode(CString("KickTimer"));
 ROUTE346.setToField(CString("set_fraction"));
-ROUTE346.setToNode(CString("l_midtarsal_RotationInterpolator"));
+ROUTE346.setToNode(CString("r_hip_RotationInterpolator"));
 Scene19.addChild(&ROUTE346);
 
 ROUTE& ROUTE347 =  ROUTE();
 ROUTE347.setFromField(CString("fraction_changed"));
 ROUTE347.setFromNode(CString("KickTimer"));
 ROUTE347.setToField(CString("set_fraction"));
-ROUTE347.setToNode(CString("l_metatarsal_RotationInterpolator"));
+ROUTE347.setToNode(CString("r_knee_RotationInterpolator"));
 Scene19.addChild(&ROUTE347);
 
 ROUTE& ROUTE348 =  ROUTE();
 ROUTE348.setFromField(CString("fraction_changed"));
 ROUTE348.setFromNode(CString("KickTimer"));
 ROUTE348.setToField(CString("set_fraction"));
-ROUTE348.setToNode(CString("r_hip_RotationInterpolator"));
+ROUTE348.setToNode(CString("r_ankle_RotationInterpolator"));
 Scene19.addChild(&ROUTE348);
 
 ROUTE& ROUTE349 =  ROUTE();
 ROUTE349.setFromField(CString("fraction_changed"));
 ROUTE349.setFromNode(CString("KickTimer"));
 ROUTE349.setToField(CString("set_fraction"));
-ROUTE349.setToNode(CString("r_knee_RotationInterpolator"));
+ROUTE349.setToNode(CString("r_subtalar_RotationInterpolator"));
 Scene19.addChild(&ROUTE349);
 
 ROUTE& ROUTE350 =  ROUTE();
 ROUTE350.setFromField(CString("fraction_changed"));
 ROUTE350.setFromNode(CString("KickTimer"));
 ROUTE350.setToField(CString("set_fraction"));
-ROUTE350.setToNode(CString("r_ankle_RotationInterpolator"));
+ROUTE350.setToNode(CString("r_midtarsal_RotationInterpolator"));
 Scene19.addChild(&ROUTE350);
 
 ROUTE& ROUTE351 =  ROUTE();
 ROUTE351.setFromField(CString("fraction_changed"));
 ROUTE351.setFromNode(CString("KickTimer"));
 ROUTE351.setToField(CString("set_fraction"));
-ROUTE351.setToNode(CString("r_subtalar_RotationInterpolator"));
+ROUTE351.setToNode(CString("r_metatarsal_RotationInterpolator"));
 Scene19.addChild(&ROUTE351);
 
 ROUTE& ROUTE352 =  ROUTE();
 ROUTE352.setFromField(CString("fraction_changed"));
 ROUTE352.setFromNode(CString("KickTimer"));
 ROUTE352.setToField(CString("set_fraction"));
-ROUTE352.setToNode(CString("r_midtarsal_RotationInterpolator"));
+ROUTE352.setToNode(CString("vl5_RotationInterpolator"));
 Scene19.addChild(&ROUTE352);
 
 ROUTE& ROUTE353 =  ROUTE();
 ROUTE353.setFromField(CString("fraction_changed"));
 ROUTE353.setFromNode(CString("KickTimer"));
 ROUTE353.setToField(CString("set_fraction"));
-ROUTE353.setToNode(CString("r_metatarsal_RotationInterpolator"));
+ROUTE353.setToNode(CString("vl4_RotationInterpolator"));
 Scene19.addChild(&ROUTE353);
 
 ROUTE& ROUTE354 =  ROUTE();
 ROUTE354.setFromField(CString("fraction_changed"));
 ROUTE354.setFromNode(CString("KickTimer"));
 ROUTE354.setToField(CString("set_fraction"));
-ROUTE354.setToNode(CString("vl5_RotationInterpolator"));
+ROUTE354.setToNode(CString("vl3_RotationInterpolator"));
 Scene19.addChild(&ROUTE354);
 
 ROUTE& ROUTE355 =  ROUTE();
 ROUTE355.setFromField(CString("fraction_changed"));
 ROUTE355.setFromNode(CString("KickTimer"));
 ROUTE355.setToField(CString("set_fraction"));
-ROUTE355.setToNode(CString("vl4_RotationInterpolator"));
+ROUTE355.setToNode(CString("vl2_RotationInterpolator"));
 Scene19.addChild(&ROUTE355);
 
 ROUTE& ROUTE356 =  ROUTE();
 ROUTE356.setFromField(CString("fraction_changed"));
 ROUTE356.setFromNode(CString("KickTimer"));
 ROUTE356.setToField(CString("set_fraction"));
-ROUTE356.setToNode(CString("vl3_RotationInterpolator"));
+ROUTE356.setToNode(CString("vl1_RotationInterpolator"));
 Scene19.addChild(&ROUTE356);
 
 ROUTE& ROUTE357 =  ROUTE();
 ROUTE357.setFromField(CString("fraction_changed"));
 ROUTE357.setFromNode(CString("KickTimer"));
 ROUTE357.setToField(CString("set_fraction"));
-ROUTE357.setToNode(CString("vl2_RotationInterpolator"));
+ROUTE357.setToNode(CString("vt12_RotationInterpolator"));
 Scene19.addChild(&ROUTE357);
 
 ROUTE& ROUTE358 =  ROUTE();
 ROUTE358.setFromField(CString("fraction_changed"));
 ROUTE358.setFromNode(CString("KickTimer"));
 ROUTE358.setToField(CString("set_fraction"));
-ROUTE358.setToNode(CString("vl1_RotationInterpolator"));
+ROUTE358.setToNode(CString("vt11_RotationInterpolator"));
 Scene19.addChild(&ROUTE358);
 
 ROUTE& ROUTE359 =  ROUTE();
 ROUTE359.setFromField(CString("fraction_changed"));
 ROUTE359.setFromNode(CString("KickTimer"));
 ROUTE359.setToField(CString("set_fraction"));
-ROUTE359.setToNode(CString("vt12_RotationInterpolator"));
+ROUTE359.setToNode(CString("vt10_RotationInterpolator"));
 Scene19.addChild(&ROUTE359);
 
 ROUTE& ROUTE360 =  ROUTE();
 ROUTE360.setFromField(CString("fraction_changed"));
 ROUTE360.setFromNode(CString("KickTimer"));
 ROUTE360.setToField(CString("set_fraction"));
-ROUTE360.setToNode(CString("vt11_RotationInterpolator"));
+ROUTE360.setToNode(CString("vt9_RotationInterpolator"));
 Scene19.addChild(&ROUTE360);
 
 ROUTE& ROUTE361 =  ROUTE();
 ROUTE361.setFromField(CString("fraction_changed"));
 ROUTE361.setFromNode(CString("KickTimer"));
 ROUTE361.setToField(CString("set_fraction"));
-ROUTE361.setToNode(CString("vt10_RotationInterpolator"));
+ROUTE361.setToNode(CString("vt8_RotationInterpolator"));
 Scene19.addChild(&ROUTE361);
 
 ROUTE& ROUTE362 =  ROUTE();
 ROUTE362.setFromField(CString("fraction_changed"));
 ROUTE362.setFromNode(CString("KickTimer"));
 ROUTE362.setToField(CString("set_fraction"));
-ROUTE362.setToNode(CString("vt9_RotationInterpolator"));
+ROUTE362.setToNode(CString("vt7_RotationInterpolator"));
 Scene19.addChild(&ROUTE362);
 
 ROUTE& ROUTE363 =  ROUTE();
 ROUTE363.setFromField(CString("fraction_changed"));
 ROUTE363.setFromNode(CString("KickTimer"));
 ROUTE363.setToField(CString("set_fraction"));
-ROUTE363.setToNode(CString("vt8_RotationInterpolator"));
+ROUTE363.setToNode(CString("vt6_RotationInterpolator"));
 Scene19.addChild(&ROUTE363);
 
 ROUTE& ROUTE364 =  ROUTE();
 ROUTE364.setFromField(CString("fraction_changed"));
 ROUTE364.setFromNode(CString("KickTimer"));
 ROUTE364.setToField(CString("set_fraction"));
-ROUTE364.setToNode(CString("vt7_RotationInterpolator"));
+ROUTE364.setToNode(CString("vt5_RotationInterpolator"));
 Scene19.addChild(&ROUTE364);
 
 ROUTE& ROUTE365 =  ROUTE();
 ROUTE365.setFromField(CString("fraction_changed"));
 ROUTE365.setFromNode(CString("KickTimer"));
 ROUTE365.setToField(CString("set_fraction"));
-ROUTE365.setToNode(CString("vt6_RotationInterpolator"));
+ROUTE365.setToNode(CString("vt4_RotationInterpolator"));
 Scene19.addChild(&ROUTE365);
 
 ROUTE& ROUTE366 =  ROUTE();
 ROUTE366.setFromField(CString("fraction_changed"));
 ROUTE366.setFromNode(CString("KickTimer"));
 ROUTE366.setToField(CString("set_fraction"));
-ROUTE366.setToNode(CString("vt5_RotationInterpolator"));
+ROUTE366.setToNode(CString("vt3_RotationInterpolator"));
 Scene19.addChild(&ROUTE366);
 
 ROUTE& ROUTE367 =  ROUTE();
 ROUTE367.setFromField(CString("fraction_changed"));
 ROUTE367.setFromNode(CString("KickTimer"));
 ROUTE367.setToField(CString("set_fraction"));
-ROUTE367.setToNode(CString("vt4_RotationInterpolator"));
+ROUTE367.setToNode(CString("vt2_RotationInterpolator"));
 Scene19.addChild(&ROUTE367);
 
 ROUTE& ROUTE368 =  ROUTE();
 ROUTE368.setFromField(CString("fraction_changed"));
 ROUTE368.setFromNode(CString("KickTimer"));
 ROUTE368.setToField(CString("set_fraction"));
-ROUTE368.setToNode(CString("vt3_RotationInterpolator"));
+ROUTE368.setToNode(CString("vt1_RotationInterpolator"));
 Scene19.addChild(&ROUTE368);
 
 ROUTE& ROUTE369 =  ROUTE();
 ROUTE369.setFromField(CString("fraction_changed"));
 ROUTE369.setFromNode(CString("KickTimer"));
 ROUTE369.setToField(CString("set_fraction"));
-ROUTE369.setToNode(CString("vt2_RotationInterpolator"));
+ROUTE369.setToNode(CString("vc7_RotationInterpolator"));
 Scene19.addChild(&ROUTE369);
 
 ROUTE& ROUTE370 =  ROUTE();
 ROUTE370.setFromField(CString("fraction_changed"));
 ROUTE370.setFromNode(CString("KickTimer"));
 ROUTE370.setToField(CString("set_fraction"));
-ROUTE370.setToNode(CString("vt1_RotationInterpolator"));
+ROUTE370.setToNode(CString("vc6_RotationInterpolator"));
 Scene19.addChild(&ROUTE370);
 
 ROUTE& ROUTE371 =  ROUTE();
 ROUTE371.setFromField(CString("fraction_changed"));
 ROUTE371.setFromNode(CString("KickTimer"));
 ROUTE371.setToField(CString("set_fraction"));
-ROUTE371.setToNode(CString("vc7_RotationInterpolator"));
+ROUTE371.setToNode(CString("vc5_RotationInterpolator"));
 Scene19.addChild(&ROUTE371);
 
 ROUTE& ROUTE372 =  ROUTE();
 ROUTE372.setFromField(CString("fraction_changed"));
 ROUTE372.setFromNode(CString("KickTimer"));
 ROUTE372.setToField(CString("set_fraction"));
-ROUTE372.setToNode(CString("vc6_RotationInterpolator"));
+ROUTE372.setToNode(CString("vc4_RotationInterpolator"));
 Scene19.addChild(&ROUTE372);
 
 ROUTE& ROUTE373 =  ROUTE();
 ROUTE373.setFromField(CString("fraction_changed"));
 ROUTE373.setFromNode(CString("KickTimer"));
 ROUTE373.setToField(CString("set_fraction"));
-ROUTE373.setToNode(CString("vc5_RotationInterpolator"));
+ROUTE373.setToNode(CString("vc3_RotationInterpolator"));
 Scene19.addChild(&ROUTE373);
 
 ROUTE& ROUTE374 =  ROUTE();
 ROUTE374.setFromField(CString("fraction_changed"));
 ROUTE374.setFromNode(CString("KickTimer"));
 ROUTE374.setToField(CString("set_fraction"));
-ROUTE374.setToNode(CString("vc4_RotationInterpolator"));
+ROUTE374.setToNode(CString("vc2_RotationInterpolator"));
 Scene19.addChild(&ROUTE374);
 
 ROUTE& ROUTE375 =  ROUTE();
 ROUTE375.setFromField(CString("fraction_changed"));
 ROUTE375.setFromNode(CString("KickTimer"));
 ROUTE375.setToField(CString("set_fraction"));
-ROUTE375.setToNode(CString("vc3_RotationInterpolator"));
+ROUTE375.setToNode(CString("vc1_RotationInterpolator"));
 Scene19.addChild(&ROUTE375);
 
 ROUTE& ROUTE376 =  ROUTE();
 ROUTE376.setFromField(CString("fraction_changed"));
 ROUTE376.setFromNode(CString("KickTimer"));
 ROUTE376.setToField(CString("set_fraction"));
-ROUTE376.setToNode(CString("vc2_RotationInterpolator"));
+ROUTE376.setToNode(CString("skullbase_RotationInterpolator"));
 Scene19.addChild(&ROUTE376);
 
 ROUTE& ROUTE377 =  ROUTE();
 ROUTE377.setFromField(CString("fraction_changed"));
 ROUTE377.setFromNode(CString("KickTimer"));
 ROUTE377.setToField(CString("set_fraction"));
-ROUTE377.setToNode(CString("vc1_RotationInterpolator"));
+ROUTE377.setToNode(CString("l_eyelid_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE377);
 
 ROUTE& ROUTE378 =  ROUTE();
 ROUTE378.setFromField(CString("fraction_changed"));
 ROUTE378.setFromNode(CString("KickTimer"));
 ROUTE378.setToField(CString("set_fraction"));
-ROUTE378.setToNode(CString("skullbase_RotationInterpolator"));
+ROUTE378.setToNode(CString("l_eyeball_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE378);
 
 ROUTE& ROUTE379 =  ROUTE();
 ROUTE379.setFromField(CString("fraction_changed"));
 ROUTE379.setFromNode(CString("KickTimer"));
 ROUTE379.setToField(CString("set_fraction"));
-ROUTE379.setToNode(CString("l_eyelid_joint_RotationInterpolator"));
+ROUTE379.setToNode(CString("l_eyebrow_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE379);
 
 ROUTE& ROUTE380 =  ROUTE();
 ROUTE380.setFromField(CString("fraction_changed"));
 ROUTE380.setFromNode(CString("KickTimer"));
 ROUTE380.setToField(CString("set_fraction"));
-ROUTE380.setToNode(CString("l_eyeball_joint_RotationInterpolator"));
+ROUTE380.setToNode(CString("r_eyelid_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE380);
 
 ROUTE& ROUTE381 =  ROUTE();
 ROUTE381.setFromField(CString("fraction_changed"));
 ROUTE381.setFromNode(CString("KickTimer"));
 ROUTE381.setToField(CString("set_fraction"));
-ROUTE381.setToNode(CString("l_eyebrow_joint_RotationInterpolator"));
+ROUTE381.setToNode(CString("r_eyeball_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE381);
 
 ROUTE& ROUTE382 =  ROUTE();
 ROUTE382.setFromField(CString("fraction_changed"));
 ROUTE382.setFromNode(CString("KickTimer"));
 ROUTE382.setToField(CString("set_fraction"));
-ROUTE382.setToNode(CString("r_eyelid_joint_RotationInterpolator"));
+ROUTE382.setToNode(CString("r_eyebrow_joint_RotationInterpolator"));
 Scene19.addChild(&ROUTE382);
 
 ROUTE& ROUTE383 =  ROUTE();
 ROUTE383.setFromField(CString("fraction_changed"));
 ROUTE383.setFromNode(CString("KickTimer"));
 ROUTE383.setToField(CString("set_fraction"));
-ROUTE383.setToNode(CString("r_eyeball_joint_RotationInterpolator"));
+ROUTE383.setToNode(CString("temporomandibular_RotationInterpolator"));
 Scene19.addChild(&ROUTE383);
 
 ROUTE& ROUTE384 =  ROUTE();
 ROUTE384.setFromField(CString("fraction_changed"));
 ROUTE384.setFromNode(CString("KickTimer"));
 ROUTE384.setToField(CString("set_fraction"));
-ROUTE384.setToNode(CString("r_eyebrow_joint_RotationInterpolator"));
+ROUTE384.setToNode(CString("l_sternoclavicular_RotationInterpolator"));
 Scene19.addChild(&ROUTE384);
 
 ROUTE& ROUTE385 =  ROUTE();
 ROUTE385.setFromField(CString("fraction_changed"));
 ROUTE385.setFromNode(CString("KickTimer"));
 ROUTE385.setToField(CString("set_fraction"));
-ROUTE385.setToNode(CString("temporomandibular_RotationInterpolator"));
+ROUTE385.setToNode(CString("l_acromioclavicular_RotationInterpolator"));
 Scene19.addChild(&ROUTE385);
 
 ROUTE& ROUTE386 =  ROUTE();
 ROUTE386.setFromField(CString("fraction_changed"));
 ROUTE386.setFromNode(CString("KickTimer"));
 ROUTE386.setToField(CString("set_fraction"));
-ROUTE386.setToNode(CString("l_sternoclavicular_RotationInterpolator"));
+ROUTE386.setToNode(CString("l_shoulder_RotationInterpolator"));
 Scene19.addChild(&ROUTE386);
 
 ROUTE& ROUTE387 =  ROUTE();
 ROUTE387.setFromField(CString("fraction_changed"));
 ROUTE387.setFromNode(CString("KickTimer"));
 ROUTE387.setToField(CString("set_fraction"));
-ROUTE387.setToNode(CString("l_acromioclavicular_RotationInterpolator"));
+ROUTE387.setToNode(CString("l_elbow_RotationInterpolator"));
 Scene19.addChild(&ROUTE387);
 
 ROUTE& ROUTE388 =  ROUTE();
 ROUTE388.setFromField(CString("fraction_changed"));
 ROUTE388.setFromNode(CString("KickTimer"));
 ROUTE388.setToField(CString("set_fraction"));
-ROUTE388.setToNode(CString("l_shoulder_RotationInterpolator"));
+ROUTE388.setToNode(CString("l_wrist_RotationInterpolator"));
 Scene19.addChild(&ROUTE388);
 
 ROUTE& ROUTE389 =  ROUTE();
 ROUTE389.setFromField(CString("fraction_changed"));
 ROUTE389.setFromNode(CString("KickTimer"));
 ROUTE389.setToField(CString("set_fraction"));
-ROUTE389.setToNode(CString("l_elbow_RotationInterpolator"));
+ROUTE389.setToNode(CString("l_thumb1_RotationInterpolator"));
 Scene19.addChild(&ROUTE389);
 
 ROUTE& ROUTE390 =  ROUTE();
 ROUTE390.setFromField(CString("fraction_changed"));
 ROUTE390.setFromNode(CString("KickTimer"));
 ROUTE390.setToField(CString("set_fraction"));
-ROUTE390.setToNode(CString("l_wrist_RotationInterpolator"));
+ROUTE390.setToNode(CString("l_thumb2_RotationInterpolator"));
 Scene19.addChild(&ROUTE390);
 
 ROUTE& ROUTE391 =  ROUTE();
 ROUTE391.setFromField(CString("fraction_changed"));
 ROUTE391.setFromNode(CString("KickTimer"));
 ROUTE391.setToField(CString("set_fraction"));
-ROUTE391.setToNode(CString("l_thumb1_RotationInterpolator"));
+ROUTE391.setToNode(CString("l_thumb3_RotationInterpolator"));
 Scene19.addChild(&ROUTE391);
 
 ROUTE& ROUTE392 =  ROUTE();
 ROUTE392.setFromField(CString("fraction_changed"));
 ROUTE392.setFromNode(CString("KickTimer"));
 ROUTE392.setToField(CString("set_fraction"));
-ROUTE392.setToNode(CString("l_thumb2_RotationInterpolator"));
+ROUTE392.setToNode(CString("l_index0_RotationInterpolator"));
 Scene19.addChild(&ROUTE392);
 
 ROUTE& ROUTE393 =  ROUTE();
 ROUTE393.setFromField(CString("fraction_changed"));
 ROUTE393.setFromNode(CString("KickTimer"));
 ROUTE393.setToField(CString("set_fraction"));
-ROUTE393.setToNode(CString("l_thumb3_RotationInterpolator"));
+ROUTE393.setToNode(CString("l_index1_RotationInterpolator"));
 Scene19.addChild(&ROUTE393);
 
 ROUTE& ROUTE394 =  ROUTE();
 ROUTE394.setFromField(CString("fraction_changed"));
 ROUTE394.setFromNode(CString("KickTimer"));
 ROUTE394.setToField(CString("set_fraction"));
-ROUTE394.setToNode(CString("l_index0_RotationInterpolator"));
+ROUTE394.setToNode(CString("l_index2_RotationInterpolator"));
 Scene19.addChild(&ROUTE394);
 
 ROUTE& ROUTE395 =  ROUTE();
 ROUTE395.setFromField(CString("fraction_changed"));
 ROUTE395.setFromNode(CString("KickTimer"));
 ROUTE395.setToField(CString("set_fraction"));
-ROUTE395.setToNode(CString("l_index1_RotationInterpolator"));
+ROUTE395.setToNode(CString("l_index3_RotationInterpolator"));
 Scene19.addChild(&ROUTE395);
 
 ROUTE& ROUTE396 =  ROUTE();
 ROUTE396.setFromField(CString("fraction_changed"));
 ROUTE396.setFromNode(CString("KickTimer"));
 ROUTE396.setToField(CString("set_fraction"));
-ROUTE396.setToNode(CString("l_index2_RotationInterpolator"));
+ROUTE396.setToNode(CString("l_middle0_RotationInterpolator"));
 Scene19.addChild(&ROUTE396);
 
 ROUTE& ROUTE397 =  ROUTE();
 ROUTE397.setFromField(CString("fraction_changed"));
 ROUTE397.setFromNode(CString("KickTimer"));
 ROUTE397.setToField(CString("set_fraction"));
-ROUTE397.setToNode(CString("l_index3_RotationInterpolator"));
+ROUTE397.setToNode(CString("l_middle1_RotationInterpolator"));
 Scene19.addChild(&ROUTE397);
 
 ROUTE& ROUTE398 =  ROUTE();
 ROUTE398.setFromField(CString("fraction_changed"));
 ROUTE398.setFromNode(CString("KickTimer"));
 ROUTE398.setToField(CString("set_fraction"));
-ROUTE398.setToNode(CString("l_middle0_RotationInterpolator"));
+ROUTE398.setToNode(CString("l_middle2_RotationInterpolator"));
 Scene19.addChild(&ROUTE398);
 
 ROUTE& ROUTE399 =  ROUTE();
 ROUTE399.setFromField(CString("fraction_changed"));
 ROUTE399.setFromNode(CString("KickTimer"));
 ROUTE399.setToField(CString("set_fraction"));
-ROUTE399.setToNode(CString("l_middle1_RotationInterpolator"));
+ROUTE399.setToNode(CString("l_middle3_RotationInterpolator"));
 Scene19.addChild(&ROUTE399);
 
 ROUTE& ROUTE400 =  ROUTE();
 ROUTE400.setFromField(CString("fraction_changed"));
 ROUTE400.setFromNode(CString("KickTimer"));
 ROUTE400.setToField(CString("set_fraction"));
-ROUTE400.setToNode(CString("l_middle2_RotationInterpolator"));
+ROUTE400.setToNode(CString("l_ring0_RotationInterpolator"));
 Scene19.addChild(&ROUTE400);
 
 ROUTE& ROUTE401 =  ROUTE();
 ROUTE401.setFromField(CString("fraction_changed"));
 ROUTE401.setFromNode(CString("KickTimer"));
 ROUTE401.setToField(CString("set_fraction"));
-ROUTE401.setToNode(CString("l_middle3_RotationInterpolator"));
+ROUTE401.setToNode(CString("l_ring1_RotationInterpolator"));
 Scene19.addChild(&ROUTE401);
 
 ROUTE& ROUTE402 =  ROUTE();
 ROUTE402.setFromField(CString("fraction_changed"));
 ROUTE402.setFromNode(CString("KickTimer"));
 ROUTE402.setToField(CString("set_fraction"));
-ROUTE402.setToNode(CString("l_ring0_RotationInterpolator"));
+ROUTE402.setToNode(CString("l_ring2_RotationInterpolator"));
 Scene19.addChild(&ROUTE402);
 
 ROUTE& ROUTE403 =  ROUTE();
 ROUTE403.setFromField(CString("fraction_changed"));
 ROUTE403.setFromNode(CString("KickTimer"));
 ROUTE403.setToField(CString("set_fraction"));
-ROUTE403.setToNode(CString("l_ring1_RotationInterpolator"));
+ROUTE403.setToNode(CString("l_ring3_RotationInterpolator"));
 Scene19.addChild(&ROUTE403);
 
 ROUTE& ROUTE404 =  ROUTE();
 ROUTE404.setFromField(CString("fraction_changed"));
 ROUTE404.setFromNode(CString("KickTimer"));
 ROUTE404.setToField(CString("set_fraction"));
-ROUTE404.setToNode(CString("l_ring2_RotationInterpolator"));
+ROUTE404.setToNode(CString("l_pinky0_RotationInterpolator"));
 Scene19.addChild(&ROUTE404);
 
 ROUTE& ROUTE405 =  ROUTE();
 ROUTE405.setFromField(CString("fraction_changed"));
 ROUTE405.setFromNode(CString("KickTimer"));
 ROUTE405.setToField(CString("set_fraction"));
-ROUTE405.setToNode(CString("l_ring3_RotationInterpolator"));
+ROUTE405.setToNode(CString("l_pinky1_RotationInterpolator"));
 Scene19.addChild(&ROUTE405);
 
 ROUTE& ROUTE406 =  ROUTE();
 ROUTE406.setFromField(CString("fraction_changed"));
 ROUTE406.setFromNode(CString("KickTimer"));
 ROUTE406.setToField(CString("set_fraction"));
-ROUTE406.setToNode(CString("l_pinky0_RotationInterpolator"));
+ROUTE406.setToNode(CString("l_pinky2_RotationInterpolator"));
 Scene19.addChild(&ROUTE406);
 
 ROUTE& ROUTE407 =  ROUTE();
 ROUTE407.setFromField(CString("fraction_changed"));
 ROUTE407.setFromNode(CString("KickTimer"));
 ROUTE407.setToField(CString("set_fraction"));
-ROUTE407.setToNode(CString("l_pinky1_RotationInterpolator"));
+ROUTE407.setToNode(CString("l_pinky3_RotationInterpolator"));
 Scene19.addChild(&ROUTE407);
 
 ROUTE& ROUTE408 =  ROUTE();
 ROUTE408.setFromField(CString("fraction_changed"));
 ROUTE408.setFromNode(CString("KickTimer"));
 ROUTE408.setToField(CString("set_fraction"));
-ROUTE408.setToNode(CString("l_pinky2_RotationInterpolator"));
+ROUTE408.setToNode(CString("r_sternoclavicular_RotationInterpolator"));
 Scene19.addChild(&ROUTE408);
 
 ROUTE& ROUTE409 =  ROUTE();
 ROUTE409.setFromField(CString("fraction_changed"));
 ROUTE409.setFromNode(CString("KickTimer"));
 ROUTE409.setToField(CString("set_fraction"));
-ROUTE409.setToNode(CString("l_pinky3_RotationInterpolator"));
+ROUTE409.setToNode(CString("r_acromioclavicular_RotationInterpolator"));
 Scene19.addChild(&ROUTE409);
 
 ROUTE& ROUTE410 =  ROUTE();
 ROUTE410.setFromField(CString("fraction_changed"));
 ROUTE410.setFromNode(CString("KickTimer"));
 ROUTE410.setToField(CString("set_fraction"));
-ROUTE410.setToNode(CString("r_sternoclavicular_RotationInterpolator"));
+ROUTE410.setToNode(CString("r_shoulder_RotationInterpolator"));
 Scene19.addChild(&ROUTE410);
 
 ROUTE& ROUTE411 =  ROUTE();
 ROUTE411.setFromField(CString("fraction_changed"));
 ROUTE411.setFromNode(CString("KickTimer"));
 ROUTE411.setToField(CString("set_fraction"));
-ROUTE411.setToNode(CString("r_acromioclavicular_RotationInterpolator"));
+ROUTE411.setToNode(CString("r_elbow_RotationInterpolator"));
 Scene19.addChild(&ROUTE411);
 
 ROUTE& ROUTE412 =  ROUTE();
 ROUTE412.setFromField(CString("fraction_changed"));
 ROUTE412.setFromNode(CString("KickTimer"));
 ROUTE412.setToField(CString("set_fraction"));
-ROUTE412.setToNode(CString("r_shoulder_RotationInterpolator"));
+ROUTE412.setToNode(CString("r_wrist_RotationInterpolator"));
 Scene19.addChild(&ROUTE412);
 
 ROUTE& ROUTE413 =  ROUTE();
 ROUTE413.setFromField(CString("fraction_changed"));
 ROUTE413.setFromNode(CString("KickTimer"));
 ROUTE413.setToField(CString("set_fraction"));
-ROUTE413.setToNode(CString("r_elbow_RotationInterpolator"));
+ROUTE413.setToNode(CString("r_thumb1_RotationInterpolator"));
 Scene19.addChild(&ROUTE413);
 
 ROUTE& ROUTE414 =  ROUTE();
 ROUTE414.setFromField(CString("fraction_changed"));
 ROUTE414.setFromNode(CString("KickTimer"));
 ROUTE414.setToField(CString("set_fraction"));
-ROUTE414.setToNode(CString("r_wrist_RotationInterpolator"));
+ROUTE414.setToNode(CString("r_thumb2_RotationInterpolator"));
 Scene19.addChild(&ROUTE414);
 
 ROUTE& ROUTE415 =  ROUTE();
 ROUTE415.setFromField(CString("fraction_changed"));
 ROUTE415.setFromNode(CString("KickTimer"));
 ROUTE415.setToField(CString("set_fraction"));
-ROUTE415.setToNode(CString("r_thumb1_RotationInterpolator"));
+ROUTE415.setToNode(CString("r_thumb3_RotationInterpolator"));
 Scene19.addChild(&ROUTE415);
 
 ROUTE& ROUTE416 =  ROUTE();
 ROUTE416.setFromField(CString("fraction_changed"));
 ROUTE416.setFromNode(CString("KickTimer"));
 ROUTE416.setToField(CString("set_fraction"));
-ROUTE416.setToNode(CString("r_thumb2_RotationInterpolator"));
+ROUTE416.setToNode(CString("r_index0_RotationInterpolator"));
 Scene19.addChild(&ROUTE416);
 
 ROUTE& ROUTE417 =  ROUTE();
 ROUTE417.setFromField(CString("fraction_changed"));
 ROUTE417.setFromNode(CString("KickTimer"));
 ROUTE417.setToField(CString("set_fraction"));
-ROUTE417.setToNode(CString("r_thumb3_RotationInterpolator"));
+ROUTE417.setToNode(CString("r_index1_RotationInterpolator"));
 Scene19.addChild(&ROUTE417);
 
 ROUTE& ROUTE418 =  ROUTE();
 ROUTE418.setFromField(CString("fraction_changed"));
 ROUTE418.setFromNode(CString("KickTimer"));
 ROUTE418.setToField(CString("set_fraction"));
-ROUTE418.setToNode(CString("r_index0_RotationInterpolator"));
+ROUTE418.setToNode(CString("r_index2_RotationInterpolator"));
 Scene19.addChild(&ROUTE418);
 
 ROUTE& ROUTE419 =  ROUTE();
 ROUTE419.setFromField(CString("fraction_changed"));
 ROUTE419.setFromNode(CString("KickTimer"));
 ROUTE419.setToField(CString("set_fraction"));
-ROUTE419.setToNode(CString("r_index1_RotationInterpolator"));
+ROUTE419.setToNode(CString("r_index3_RotationInterpolator"));
 Scene19.addChild(&ROUTE419);
 
 ROUTE& ROUTE420 =  ROUTE();
 ROUTE420.setFromField(CString("fraction_changed"));
 ROUTE420.setFromNode(CString("KickTimer"));
 ROUTE420.setToField(CString("set_fraction"));
-ROUTE420.setToNode(CString("r_index2_RotationInterpolator"));
+ROUTE420.setToNode(CString("r_middle0_RotationInterpolator"));
 Scene19.addChild(&ROUTE420);
 
 ROUTE& ROUTE421 =  ROUTE();
 ROUTE421.setFromField(CString("fraction_changed"));
 ROUTE421.setFromNode(CString("KickTimer"));
 ROUTE421.setToField(CString("set_fraction"));
-ROUTE421.setToNode(CString("r_index3_RotationInterpolator"));
+ROUTE421.setToNode(CString("r_middle1_RotationInterpolator"));
 Scene19.addChild(&ROUTE421);
 
 ROUTE& ROUTE422 =  ROUTE();
 ROUTE422.setFromField(CString("fraction_changed"));
 ROUTE422.setFromNode(CString("KickTimer"));
 ROUTE422.setToField(CString("set_fraction"));
-ROUTE422.setToNode(CString("r_middle0_RotationInterpolator"));
+ROUTE422.setToNode(CString("r_middle2_RotationInterpolator"));
 Scene19.addChild(&ROUTE422);
 
 ROUTE& ROUTE423 =  ROUTE();
 ROUTE423.setFromField(CString("fraction_changed"));
 ROUTE423.setFromNode(CString("KickTimer"));
 ROUTE423.setToField(CString("set_fraction"));
-ROUTE423.setToNode(CString("r_middle1_RotationInterpolator"));
+ROUTE423.setToNode(CString("r_middle3_RotationInterpolator"));
 Scene19.addChild(&ROUTE423);
 
 ROUTE& ROUTE424 =  ROUTE();
 ROUTE424.setFromField(CString("fraction_changed"));
 ROUTE424.setFromNode(CString("KickTimer"));
 ROUTE424.setToField(CString("set_fraction"));
-ROUTE424.setToNode(CString("r_middle2_RotationInterpolator"));
+ROUTE424.setToNode(CString("r_ring0_RotationInterpolator"));
 Scene19.addChild(&ROUTE424);
 
 ROUTE& ROUTE425 =  ROUTE();
 ROUTE425.setFromField(CString("fraction_changed"));
 ROUTE425.setFromNode(CString("KickTimer"));
 ROUTE425.setToField(CString("set_fraction"));
-ROUTE425.setToNode(CString("r_middle3_RotationInterpolator"));
+ROUTE425.setToNode(CString("r_ring1_RotationInterpolator"));
 Scene19.addChild(&ROUTE425);
 
 ROUTE& ROUTE426 =  ROUTE();
 ROUTE426.setFromField(CString("fraction_changed"));
 ROUTE426.setFromNode(CString("KickTimer"));
 ROUTE426.setToField(CString("set_fraction"));
-ROUTE426.setToNode(CString("r_ring0_RotationInterpolator"));
+ROUTE426.setToNode(CString("r_ring2_RotationInterpolator"));
 Scene19.addChild(&ROUTE426);
 
 ROUTE& ROUTE427 =  ROUTE();
 ROUTE427.setFromField(CString("fraction_changed"));
 ROUTE427.setFromNode(CString("KickTimer"));
 ROUTE427.setToField(CString("set_fraction"));
-ROUTE427.setToNode(CString("r_ring1_RotationInterpolator"));
+ROUTE427.setToNode(CString("r_ring3_RotationInterpolator"));
 Scene19.addChild(&ROUTE427);
 
 ROUTE& ROUTE428 =  ROUTE();
 ROUTE428.setFromField(CString("fraction_changed"));
 ROUTE428.setFromNode(CString("KickTimer"));
 ROUTE428.setToField(CString("set_fraction"));
-ROUTE428.setToNode(CString("r_ring2_RotationInterpolator"));
+ROUTE428.setToNode(CString("r_pinky0_RotationInterpolator"));
 Scene19.addChild(&ROUTE428);
 
 ROUTE& ROUTE429 =  ROUTE();
 ROUTE429.setFromField(CString("fraction_changed"));
 ROUTE429.setFromNode(CString("KickTimer"));
 ROUTE429.setToField(CString("set_fraction"));
-ROUTE429.setToNode(CString("r_ring3_RotationInterpolator"));
+ROUTE429.setToNode(CString("r_pinky1_RotationInterpolator"));
 Scene19.addChild(&ROUTE429);
 
 ROUTE& ROUTE430 =  ROUTE();
 ROUTE430.setFromField(CString("fraction_changed"));
 ROUTE430.setFromNode(CString("KickTimer"));
 ROUTE430.setToField(CString("set_fraction"));
-ROUTE430.setToNode(CString("r_pinky0_RotationInterpolator"));
+ROUTE430.setToNode(CString("r_pinky2_RotationInterpolator"));
 Scene19.addChild(&ROUTE430);
 
 ROUTE& ROUTE431 =  ROUTE();
 ROUTE431.setFromField(CString("fraction_changed"));
 ROUTE431.setFromNode(CString("KickTimer"));
 ROUTE431.setToField(CString("set_fraction"));
-ROUTE431.setToNode(CString("r_pinky1_RotationInterpolator"));
+ROUTE431.setToNode(CString("r_pinky3_RotationInterpolator"));
 Scene19.addChild(&ROUTE431);
 
+//Routes from Interpolators to Joe_ model Joints
 ROUTE& ROUTE432 =  ROUTE();
-ROUTE432.setFromField(CString("fraction_changed"));
-ROUTE432.setFromNode(CString("KickTimer"));
-ROUTE432.setToField(CString("set_fraction"));
-ROUTE432.setToNode(CString("r_pinky2_RotationInterpolator"));
+ROUTE432.setFromField(CString("value_changed"));
+ROUTE432.setFromNode(CString("HumanoidRoot_RotationInterpolator"));
+ROUTE432.setToField(CString("set_rotation"));
+ROUTE432.setToNode(CString("Joe_HumanoidRoot"));
 Scene19.addChild(&ROUTE432);
 
 ROUTE& ROUTE433 =  ROUTE();
-ROUTE433.setFromField(CString("fraction_changed"));
-ROUTE433.setFromNode(CString("KickTimer"));
-ROUTE433.setToField(CString("set_fraction"));
-ROUTE433.setToNode(CString("r_pinky3_RotationInterpolator"));
+ROUTE433.setFromField(CString("value_changed"));
+ROUTE433.setFromNode(CString("HumanoidRoot_TranslationInterpolator"));
+ROUTE433.setToField(CString("set_translation"));
+ROUTE433.setToNode(CString("Joe_HumanoidRoot"));
 Scene19.addChild(&ROUTE433);
 
-//Routes from Interpolators to Joe_ model Joints
 ROUTE& ROUTE434 =  ROUTE();
 ROUTE434.setFromField(CString("value_changed"));
-ROUTE434.setFromNode(CString("HumanoidRoot_RotationInterpolator"));
+ROUTE434.setFromNode(CString("sacroiliac_RotationInterpolator"));
 ROUTE434.setToField(CString("set_rotation"));
-ROUTE434.setToNode(CString("Joe_HumanoidRoot"));
+ROUTE434.setToNode(CString("Joe_sacroiliac"));
 Scene19.addChild(&ROUTE434);
 
 ROUTE& ROUTE435 =  ROUTE();
 ROUTE435.setFromField(CString("value_changed"));
-ROUTE435.setFromNode(CString("HumanoidRoot_TranslationInterpolator"));
-ROUTE435.setToField(CString("set_translation"));
-ROUTE435.setToNode(CString("Joe_HumanoidRoot"));
+ROUTE435.setFromNode(CString("l_hip_RotationInterpolator"));
+ROUTE435.setToField(CString("set_rotation"));
+ROUTE435.setToNode(CString("Joe_l_hip"));
 Scene19.addChild(&ROUTE435);
 
 ROUTE& ROUTE436 =  ROUTE();
 ROUTE436.setFromField(CString("value_changed"));
-ROUTE436.setFromNode(CString("sacroiliac_RotationInterpolator"));
+ROUTE436.setFromNode(CString("l_knee_RotationInterpolator"));
 ROUTE436.setToField(CString("set_rotation"));
-ROUTE436.setToNode(CString("Joe_sacroiliac"));
+ROUTE436.setToNode(CString("Joe_l_knee"));
 Scene19.addChild(&ROUTE436);
 
 ROUTE& ROUTE437 =  ROUTE();
 ROUTE437.setFromField(CString("value_changed"));
-ROUTE437.setFromNode(CString("l_hip_RotationInterpolator"));
+ROUTE437.setFromNode(CString("l_ankle_RotationInterpolator"));
 ROUTE437.setToField(CString("set_rotation"));
-ROUTE437.setToNode(CString("Joe_l_hip"));
+ROUTE437.setToNode(CString("Joe_l_ankle"));
 Scene19.addChild(&ROUTE437);
 
 ROUTE& ROUTE438 =  ROUTE();
 ROUTE438.setFromField(CString("value_changed"));
-ROUTE438.setFromNode(CString("l_knee_RotationInterpolator"));
+ROUTE438.setFromNode(CString("l_subtalar_RotationInterpolator"));
 ROUTE438.setToField(CString("set_rotation"));
-ROUTE438.setToNode(CString("Joe_l_knee"));
+ROUTE438.setToNode(CString("Joe_l_subtalar"));
 Scene19.addChild(&ROUTE438);
 
 ROUTE& ROUTE439 =  ROUTE();
 ROUTE439.setFromField(CString("value_changed"));
-ROUTE439.setFromNode(CString("l_ankle_RotationInterpolator"));
+ROUTE439.setFromNode(CString("l_midtarsal_RotationInterpolator"));
 ROUTE439.setToField(CString("set_rotation"));
-ROUTE439.setToNode(CString("Joe_l_ankle"));
+ROUTE439.setToNode(CString("Joe_l_midtarsal"));
 Scene19.addChild(&ROUTE439);
 
 ROUTE& ROUTE440 =  ROUTE();
 ROUTE440.setFromField(CString("value_changed"));
-ROUTE440.setFromNode(CString("l_subtalar_RotationInterpolator"));
+ROUTE440.setFromNode(CString("l_metatarsal_RotationInterpolator"));
 ROUTE440.setToField(CString("set_rotation"));
-ROUTE440.setToNode(CString("Joe_l_subtalar"));
+ROUTE440.setToNode(CString("Joe_l_metatarsal"));
 Scene19.addChild(&ROUTE440);
 
 ROUTE& ROUTE441 =  ROUTE();
 ROUTE441.setFromField(CString("value_changed"));
-ROUTE441.setFromNode(CString("l_midtarsal_RotationInterpolator"));
+ROUTE441.setFromNode(CString("r_hip_RotationInterpolator"));
 ROUTE441.setToField(CString("set_rotation"));
-ROUTE441.setToNode(CString("Joe_l_midtarsal"));
+ROUTE441.setToNode(CString("Joe_r_hip"));
 Scene19.addChild(&ROUTE441);
 
 ROUTE& ROUTE442 =  ROUTE();
 ROUTE442.setFromField(CString("value_changed"));
-ROUTE442.setFromNode(CString("l_metatarsal_RotationInterpolator"));
+ROUTE442.setFromNode(CString("r_knee_RotationInterpolator"));
 ROUTE442.setToField(CString("set_rotation"));
-ROUTE442.setToNode(CString("Joe_l_metatarsal"));
+ROUTE442.setToNode(CString("Joe_r_knee"));
 Scene19.addChild(&ROUTE442);
 
 ROUTE& ROUTE443 =  ROUTE();
 ROUTE443.setFromField(CString("value_changed"));
-ROUTE443.setFromNode(CString("r_hip_RotationInterpolator"));
+ROUTE443.setFromNode(CString("r_ankle_RotationInterpolator"));
 ROUTE443.setToField(CString("set_rotation"));
-ROUTE443.setToNode(CString("Joe_r_hip"));
+ROUTE443.setToNode(CString("Joe_r_ankle"));
 Scene19.addChild(&ROUTE443);
 
 ROUTE& ROUTE444 =  ROUTE();
 ROUTE444.setFromField(CString("value_changed"));
-ROUTE444.setFromNode(CString("r_knee_RotationInterpolator"));
+ROUTE444.setFromNode(CString("r_subtalar_RotationInterpolator"));
 ROUTE444.setToField(CString("set_rotation"));
-ROUTE444.setToNode(CString("Joe_r_knee"));
+ROUTE444.setToNode(CString("Joe_r_subtalar"));
 Scene19.addChild(&ROUTE444);
 
 ROUTE& ROUTE445 =  ROUTE();
 ROUTE445.setFromField(CString("value_changed"));
-ROUTE445.setFromNode(CString("r_ankle_RotationInterpolator"));
+ROUTE445.setFromNode(CString("r_midtarsal_RotationInterpolator"));
 ROUTE445.setToField(CString("set_rotation"));
-ROUTE445.setToNode(CString("Joe_r_ankle"));
+ROUTE445.setToNode(CString("Joe_r_midtarsal"));
 Scene19.addChild(&ROUTE445);
 
 ROUTE& ROUTE446 =  ROUTE();
 ROUTE446.setFromField(CString("value_changed"));
-ROUTE446.setFromNode(CString("r_subtalar_RotationInterpolator"));
+ROUTE446.setFromNode(CString("r_metatarsal_RotationInterpolator"));
 ROUTE446.setToField(CString("set_rotation"));
-ROUTE446.setToNode(CString("Joe_r_subtalar"));
+ROUTE446.setToNode(CString("Joe_r_metatarsal"));
 Scene19.addChild(&ROUTE446);
 
 ROUTE& ROUTE447 =  ROUTE();
 ROUTE447.setFromField(CString("value_changed"));
-ROUTE447.setFromNode(CString("r_midtarsal_RotationInterpolator"));
+ROUTE447.setFromNode(CString("vl5_RotationInterpolator"));
 ROUTE447.setToField(CString("set_rotation"));
-ROUTE447.setToNode(CString("Joe_r_midtarsal"));
+ROUTE447.setToNode(CString("Joe_vl5"));
 Scene19.addChild(&ROUTE447);
 
 ROUTE& ROUTE448 =  ROUTE();
 ROUTE448.setFromField(CString("value_changed"));
-ROUTE448.setFromNode(CString("r_metatarsal_RotationInterpolator"));
+ROUTE448.setFromNode(CString("vl4_RotationInterpolator"));
 ROUTE448.setToField(CString("set_rotation"));
-ROUTE448.setToNode(CString("Joe_r_metatarsal"));
+ROUTE448.setToNode(CString("Joe_vl4"));
 Scene19.addChild(&ROUTE448);
 
 ROUTE& ROUTE449 =  ROUTE();
 ROUTE449.setFromField(CString("value_changed"));
-ROUTE449.setFromNode(CString("vl5_RotationInterpolator"));
+ROUTE449.setFromNode(CString("vl3_RotationInterpolator"));
 ROUTE449.setToField(CString("set_rotation"));
-ROUTE449.setToNode(CString("Joe_vl5"));
+ROUTE449.setToNode(CString("Joe_vl3"));
 Scene19.addChild(&ROUTE449);
 
 ROUTE& ROUTE450 =  ROUTE();
 ROUTE450.setFromField(CString("value_changed"));
-ROUTE450.setFromNode(CString("vl4_RotationInterpolator"));
+ROUTE450.setFromNode(CString("vl2_RotationInterpolator"));
 ROUTE450.setToField(CString("set_rotation"));
-ROUTE450.setToNode(CString("Joe_vl4"));
+ROUTE450.setToNode(CString("Joe_vl2"));
 Scene19.addChild(&ROUTE450);
 
 ROUTE& ROUTE451 =  ROUTE();
 ROUTE451.setFromField(CString("value_changed"));
-ROUTE451.setFromNode(CString("vl3_RotationInterpolator"));
+ROUTE451.setFromNode(CString("vl1_RotationInterpolator"));
 ROUTE451.setToField(CString("set_rotation"));
-ROUTE451.setToNode(CString("Joe_vl3"));
+ROUTE451.setToNode(CString("Joe_vl1"));
 Scene19.addChild(&ROUTE451);
 
 ROUTE& ROUTE452 =  ROUTE();
 ROUTE452.setFromField(CString("value_changed"));
-ROUTE452.setFromNode(CString("vl2_RotationInterpolator"));
+ROUTE452.setFromNode(CString("vt12_RotationInterpolator"));
 ROUTE452.setToField(CString("set_rotation"));
-ROUTE452.setToNode(CString("Joe_vl2"));
+ROUTE452.setToNode(CString("Joe_vt12"));
 Scene19.addChild(&ROUTE452);
 
 ROUTE& ROUTE453 =  ROUTE();
 ROUTE453.setFromField(CString("value_changed"));
-ROUTE453.setFromNode(CString("vl1_RotationInterpolator"));
+ROUTE453.setFromNode(CString("vt11_RotationInterpolator"));
 ROUTE453.setToField(CString("set_rotation"));
-ROUTE453.setToNode(CString("Joe_vl1"));
+ROUTE453.setToNode(CString("Joe_vt11"));
 Scene19.addChild(&ROUTE453);
 
 ROUTE& ROUTE454 =  ROUTE();
 ROUTE454.setFromField(CString("value_changed"));
-ROUTE454.setFromNode(CString("vt12_RotationInterpolator"));
+ROUTE454.setFromNode(CString("vt10_RotationInterpolator"));
 ROUTE454.setToField(CString("set_rotation"));
-ROUTE454.setToNode(CString("Joe_vt12"));
+ROUTE454.setToNode(CString("Joe_vt10"));
 Scene19.addChild(&ROUTE454);
 
 ROUTE& ROUTE455 =  ROUTE();
 ROUTE455.setFromField(CString("value_changed"));
-ROUTE455.setFromNode(CString("vt11_RotationInterpolator"));
+ROUTE455.setFromNode(CString("vt9_RotationInterpolator"));
 ROUTE455.setToField(CString("set_rotation"));
-ROUTE455.setToNode(CString("Joe_vt11"));
+ROUTE455.setToNode(CString("Joe_vt9"));
 Scene19.addChild(&ROUTE455);
 
 ROUTE& ROUTE456 =  ROUTE();
 ROUTE456.setFromField(CString("value_changed"));
-ROUTE456.setFromNode(CString("vt10_RotationInterpolator"));
+ROUTE456.setFromNode(CString("vt8_RotationInterpolator"));
 ROUTE456.setToField(CString("set_rotation"));
-ROUTE456.setToNode(CString("Joe_vt10"));
+ROUTE456.setToNode(CString("Joe_vt8"));
 Scene19.addChild(&ROUTE456);
 
 ROUTE& ROUTE457 =  ROUTE();
 ROUTE457.setFromField(CString("value_changed"));
-ROUTE457.setFromNode(CString("vt9_RotationInterpolator"));
+ROUTE457.setFromNode(CString("vt7_RotationInterpolator"));
 ROUTE457.setToField(CString("set_rotation"));
-ROUTE457.setToNode(CString("Joe_vt9"));
+ROUTE457.setToNode(CString("Joe_vt7"));
 Scene19.addChild(&ROUTE457);
 
 ROUTE& ROUTE458 =  ROUTE();
 ROUTE458.setFromField(CString("value_changed"));
-ROUTE458.setFromNode(CString("vt8_RotationInterpolator"));
+ROUTE458.setFromNode(CString("vt6_RotationInterpolator"));
 ROUTE458.setToField(CString("set_rotation"));
-ROUTE458.setToNode(CString("Joe_vt8"));
+ROUTE458.setToNode(CString("Joe_vt6"));
 Scene19.addChild(&ROUTE458);
 
 ROUTE& ROUTE459 =  ROUTE();
 ROUTE459.setFromField(CString("value_changed"));
-ROUTE459.setFromNode(CString("vt7_RotationInterpolator"));
+ROUTE459.setFromNode(CString("vt5_RotationInterpolator"));
 ROUTE459.setToField(CString("set_rotation"));
-ROUTE459.setToNode(CString("Joe_vt7"));
+ROUTE459.setToNode(CString("Joe_vt5"));
 Scene19.addChild(&ROUTE459);
 
 ROUTE& ROUTE460 =  ROUTE();
 ROUTE460.setFromField(CString("value_changed"));
-ROUTE460.setFromNode(CString("vt6_RotationInterpolator"));
+ROUTE460.setFromNode(CString("vt4_RotationInterpolator"));
 ROUTE460.setToField(CString("set_rotation"));
-ROUTE460.setToNode(CString("Joe_vt6"));
+ROUTE460.setToNode(CString("Joe_vt4"));
 Scene19.addChild(&ROUTE460);
 
 ROUTE& ROUTE461 =  ROUTE();
 ROUTE461.setFromField(CString("value_changed"));
-ROUTE461.setFromNode(CString("vt5_RotationInterpolator"));
+ROUTE461.setFromNode(CString("vt3_RotationInterpolator"));
 ROUTE461.setToField(CString("set_rotation"));
-ROUTE461.setToNode(CString("Joe_vt5"));
+ROUTE461.setToNode(CString("Joe_vt3"));
 Scene19.addChild(&ROUTE461);
 
 ROUTE& ROUTE462 =  ROUTE();
 ROUTE462.setFromField(CString("value_changed"));
-ROUTE462.setFromNode(CString("vt4_RotationInterpolator"));
+ROUTE462.setFromNode(CString("vt2_RotationInterpolator"));
 ROUTE462.setToField(CString("set_rotation"));
-ROUTE462.setToNode(CString("Joe_vt4"));
+ROUTE462.setToNode(CString("Joe_vt2"));
 Scene19.addChild(&ROUTE462);
 
 ROUTE& ROUTE463 =  ROUTE();
 ROUTE463.setFromField(CString("value_changed"));
-ROUTE463.setFromNode(CString("vt3_RotationInterpolator"));
+ROUTE463.setFromNode(CString("vt1_RotationInterpolator"));
 ROUTE463.setToField(CString("set_rotation"));
-ROUTE463.setToNode(CString("Joe_vt3"));
+ROUTE463.setToNode(CString("Joe_vt1"));
 Scene19.addChild(&ROUTE463);
 
 ROUTE& ROUTE464 =  ROUTE();
 ROUTE464.setFromField(CString("value_changed"));
-ROUTE464.setFromNode(CString("vt2_RotationInterpolator"));
+ROUTE464.setFromNode(CString("vc7_RotationInterpolator"));
 ROUTE464.setToField(CString("set_rotation"));
-ROUTE464.setToNode(CString("Joe_vt2"));
+ROUTE464.setToNode(CString("Joe_vc7"));
 Scene19.addChild(&ROUTE464);
 
 ROUTE& ROUTE465 =  ROUTE();
 ROUTE465.setFromField(CString("value_changed"));
-ROUTE465.setFromNode(CString("vt1_RotationInterpolator"));
+ROUTE465.setFromNode(CString("vc6_RotationInterpolator"));
 ROUTE465.setToField(CString("set_rotation"));
-ROUTE465.setToNode(CString("Joe_vt1"));
+ROUTE465.setToNode(CString("Joe_vc6"));
 Scene19.addChild(&ROUTE465);
 
 ROUTE& ROUTE466 =  ROUTE();
 ROUTE466.setFromField(CString("value_changed"));
-ROUTE466.setFromNode(CString("vc7_RotationInterpolator"));
+ROUTE466.setFromNode(CString("vc5_RotationInterpolator"));
 ROUTE466.setToField(CString("set_rotation"));
-ROUTE466.setToNode(CString("Joe_vc7"));
+ROUTE466.setToNode(CString("Joe_vc5"));
 Scene19.addChild(&ROUTE466);
 
 ROUTE& ROUTE467 =  ROUTE();
 ROUTE467.setFromField(CString("value_changed"));
-ROUTE467.setFromNode(CString("vc6_RotationInterpolator"));
+ROUTE467.setFromNode(CString("vc4_RotationInterpolator"));
 ROUTE467.setToField(CString("set_rotation"));
-ROUTE467.setToNode(CString("Joe_vc6"));
+ROUTE467.setToNode(CString("Joe_vc4"));
 Scene19.addChild(&ROUTE467);
 
 ROUTE& ROUTE468 =  ROUTE();
 ROUTE468.setFromField(CString("value_changed"));
-ROUTE468.setFromNode(CString("vc5_RotationInterpolator"));
+ROUTE468.setFromNode(CString("vc3_RotationInterpolator"));
 ROUTE468.setToField(CString("set_rotation"));
-ROUTE468.setToNode(CString("Joe_vc5"));
+ROUTE468.setToNode(CString("Joe_vc3"));
 Scene19.addChild(&ROUTE468);
 
 ROUTE& ROUTE469 =  ROUTE();
 ROUTE469.setFromField(CString("value_changed"));
-ROUTE469.setFromNode(CString("vc4_RotationInterpolator"));
+ROUTE469.setFromNode(CString("vc2_RotationInterpolator"));
 ROUTE469.setToField(CString("set_rotation"));
-ROUTE469.setToNode(CString("Joe_vc4"));
+ROUTE469.setToNode(CString("Joe_vc2"));
 Scene19.addChild(&ROUTE469);
 
 ROUTE& ROUTE470 =  ROUTE();
 ROUTE470.setFromField(CString("value_changed"));
-ROUTE470.setFromNode(CString("vc3_RotationInterpolator"));
+ROUTE470.setFromNode(CString("vc1_RotationInterpolator"));
 ROUTE470.setToField(CString("set_rotation"));
-ROUTE470.setToNode(CString("Joe_vc3"));
+ROUTE470.setToNode(CString("Joe_vc1"));
 Scene19.addChild(&ROUTE470);
 
 ROUTE& ROUTE471 =  ROUTE();
 ROUTE471.setFromField(CString("value_changed"));
-ROUTE471.setFromNode(CString("vc2_RotationInterpolator"));
+ROUTE471.setFromNode(CString("skullbase_RotationInterpolator"));
 ROUTE471.setToField(CString("set_rotation"));
-ROUTE471.setToNode(CString("Joe_vc2"));
+ROUTE471.setToNode(CString("Joe_skullbase"));
 Scene19.addChild(&ROUTE471);
 
 ROUTE& ROUTE472 =  ROUTE();
 ROUTE472.setFromField(CString("value_changed"));
-ROUTE472.setFromNode(CString("vc1_RotationInterpolator"));
+ROUTE472.setFromNode(CString("l_eyelid_joint_RotationInterpolator"));
 ROUTE472.setToField(CString("set_rotation"));
-ROUTE472.setToNode(CString("Joe_vc1"));
+ROUTE472.setToNode(CString("Joe_l_eyelid_joint"));
 Scene19.addChild(&ROUTE472);
 
 ROUTE& ROUTE473 =  ROUTE();
 ROUTE473.setFromField(CString("value_changed"));
-ROUTE473.setFromNode(CString("skullbase_RotationInterpolator"));
+ROUTE473.setFromNode(CString("l_eyeball_joint_RotationInterpolator"));
 ROUTE473.setToField(CString("set_rotation"));
-ROUTE473.setToNode(CString("Joe_skullbase"));
+ROUTE473.setToNode(CString("Joe_l_eyeball_joint"));
 Scene19.addChild(&ROUTE473);
 
 ROUTE& ROUTE474 =  ROUTE();
 ROUTE474.setFromField(CString("value_changed"));
-ROUTE474.setFromNode(CString("l_eyelid_joint_RotationInterpolator"));
+ROUTE474.setFromNode(CString("l_eyebrow_joint_RotationInterpolator"));
 ROUTE474.setToField(CString("set_rotation"));
-ROUTE474.setToNode(CString("Joe_l_eyelid_joint"));
+ROUTE474.setToNode(CString("Joe_l_eyebrow_joint"));
 Scene19.addChild(&ROUTE474);
 
 ROUTE& ROUTE475 =  ROUTE();
 ROUTE475.setFromField(CString("value_changed"));
-ROUTE475.setFromNode(CString("l_eyeball_joint_RotationInterpolator"));
+ROUTE475.setFromNode(CString("r_eyelid_joint_RotationInterpolator"));
 ROUTE475.setToField(CString("set_rotation"));
-ROUTE475.setToNode(CString("Joe_l_eyeball_joint"));
+ROUTE475.setToNode(CString("Joe_r_eyelid_joint"));
 Scene19.addChild(&ROUTE475);
 
 ROUTE& ROUTE476 =  ROUTE();
 ROUTE476.setFromField(CString("value_changed"));
-ROUTE476.setFromNode(CString("l_eyebrow_joint_RotationInterpolator"));
+ROUTE476.setFromNode(CString("r_eyeball_joint_RotationInterpolator"));
 ROUTE476.setToField(CString("set_rotation"));
-ROUTE476.setToNode(CString("Joe_l_eyebrow_joint"));
+ROUTE476.setToNode(CString("Joe_r_eyeball_joint"));
 Scene19.addChild(&ROUTE476);
 
 ROUTE& ROUTE477 =  ROUTE();
 ROUTE477.setFromField(CString("value_changed"));
-ROUTE477.setFromNode(CString("r_eyelid_joint_RotationInterpolator"));
+ROUTE477.setFromNode(CString("r_eyebrow_joint_RotationInterpolator"));
 ROUTE477.setToField(CString("set_rotation"));
-ROUTE477.setToNode(CString("Joe_r_eyelid_joint"));
+ROUTE477.setToNode(CString("Joe_r_eyebrow_joint"));
 Scene19.addChild(&ROUTE477);
 
 ROUTE& ROUTE478 =  ROUTE();
 ROUTE478.setFromField(CString("value_changed"));
-ROUTE478.setFromNode(CString("r_eyeball_joint_RotationInterpolator"));
+ROUTE478.setFromNode(CString("temporomandibular_RotationInterpolator"));
 ROUTE478.setToField(CString("set_rotation"));
-ROUTE478.setToNode(CString("Joe_r_eyeball_joint"));
+ROUTE478.setToNode(CString("Joe_temporomandibular"));
 Scene19.addChild(&ROUTE478);
 
 ROUTE& ROUTE479 =  ROUTE();
 ROUTE479.setFromField(CString("value_changed"));
-ROUTE479.setFromNode(CString("r_eyebrow_joint_RotationInterpolator"));
+ROUTE479.setFromNode(CString("l_sternoclavicular_RotationInterpolator"));
 ROUTE479.setToField(CString("set_rotation"));
-ROUTE479.setToNode(CString("Joe_r_eyebrow_joint"));
+ROUTE479.setToNode(CString("Joe_l_sternoclavicular"));
 Scene19.addChild(&ROUTE479);
 
 ROUTE& ROUTE480 =  ROUTE();
 ROUTE480.setFromField(CString("value_changed"));
-ROUTE480.setFromNode(CString("temporomandibular_RotationInterpolator"));
+ROUTE480.setFromNode(CString("l_acromioclavicular_RotationInterpolator"));
 ROUTE480.setToField(CString("set_rotation"));
-ROUTE480.setToNode(CString("Joe_temporomandibular"));
+ROUTE480.setToNode(CString("Joe_l_acromioclavicular"));
 Scene19.addChild(&ROUTE480);
 
 ROUTE& ROUTE481 =  ROUTE();
 ROUTE481.setFromField(CString("value_changed"));
-ROUTE481.setFromNode(CString("l_sternoclavicular_RotationInterpolator"));
+ROUTE481.setFromNode(CString("l_shoulder_RotationInterpolator"));
 ROUTE481.setToField(CString("set_rotation"));
-ROUTE481.setToNode(CString("Joe_l_sternoclavicular"));
+ROUTE481.setToNode(CString("Joe_l_shoulder"));
 Scene19.addChild(&ROUTE481);
 
 ROUTE& ROUTE482 =  ROUTE();
 ROUTE482.setFromField(CString("value_changed"));
-ROUTE482.setFromNode(CString("l_acromioclavicular_RotationInterpolator"));
+ROUTE482.setFromNode(CString("l_elbow_RotationInterpolator"));
 ROUTE482.setToField(CString("set_rotation"));
-ROUTE482.setToNode(CString("Joe_l_acromioclavicular"));
+ROUTE482.setToNode(CString("Joe_l_elbow"));
 Scene19.addChild(&ROUTE482);
 
 ROUTE& ROUTE483 =  ROUTE();
 ROUTE483.setFromField(CString("value_changed"));
-ROUTE483.setFromNode(CString("l_shoulder_RotationInterpolator"));
+ROUTE483.setFromNode(CString("l_wrist_RotationInterpolator"));
 ROUTE483.setToField(CString("set_rotation"));
-ROUTE483.setToNode(CString("Joe_l_shoulder"));
+ROUTE483.setToNode(CString("Joe_l_wrist"));
 Scene19.addChild(&ROUTE483);
 
 ROUTE& ROUTE484 =  ROUTE();
 ROUTE484.setFromField(CString("value_changed"));
-ROUTE484.setFromNode(CString("l_elbow_RotationInterpolator"));
+ROUTE484.setFromNode(CString("l_thumb1_RotationInterpolator"));
 ROUTE484.setToField(CString("set_rotation"));
-ROUTE484.setToNode(CString("Joe_l_elbow"));
+ROUTE484.setToNode(CString("Joe_l_thumb1"));
 Scene19.addChild(&ROUTE484);
 
 ROUTE& ROUTE485 =  ROUTE();
 ROUTE485.setFromField(CString("value_changed"));
-ROUTE485.setFromNode(CString("l_wrist_RotationInterpolator"));
+ROUTE485.setFromNode(CString("l_thumb2_RotationInterpolator"));
 ROUTE485.setToField(CString("set_rotation"));
-ROUTE485.setToNode(CString("Joe_l_wrist"));
+ROUTE485.setToNode(CString("Joe_l_thumb2"));
 Scene19.addChild(&ROUTE485);
 
 ROUTE& ROUTE486 =  ROUTE();
 ROUTE486.setFromField(CString("value_changed"));
-ROUTE486.setFromNode(CString("l_thumb1_RotationInterpolator"));
+ROUTE486.setFromNode(CString("l_thumb3_RotationInterpolator"));
 ROUTE486.setToField(CString("set_rotation"));
-ROUTE486.setToNode(CString("Joe_l_thumb1"));
+ROUTE486.setToNode(CString("Joe_l_thumb3"));
 Scene19.addChild(&ROUTE486);
 
 ROUTE& ROUTE487 =  ROUTE();
 ROUTE487.setFromField(CString("value_changed"));
-ROUTE487.setFromNode(CString("l_thumb2_RotationInterpolator"));
+ROUTE487.setFromNode(CString("l_index0_RotationInterpolator"));
 ROUTE487.setToField(CString("set_rotation"));
-ROUTE487.setToNode(CString("Joe_l_thumb2"));
+ROUTE487.setToNode(CString("Joe_l_index0"));
 Scene19.addChild(&ROUTE487);
 
 ROUTE& ROUTE488 =  ROUTE();
 ROUTE488.setFromField(CString("value_changed"));
-ROUTE488.setFromNode(CString("l_thumb3_RotationInterpolator"));
+ROUTE488.setFromNode(CString("l_index1_RotationInterpolator"));
 ROUTE488.setToField(CString("set_rotation"));
-ROUTE488.setToNode(CString("Joe_l_thumb3"));
+ROUTE488.setToNode(CString("Joe_l_index1"));
 Scene19.addChild(&ROUTE488);
 
 ROUTE& ROUTE489 =  ROUTE();
 ROUTE489.setFromField(CString("value_changed"));
-ROUTE489.setFromNode(CString("l_index0_RotationInterpolator"));
+ROUTE489.setFromNode(CString("l_index2_RotationInterpolator"));
 ROUTE489.setToField(CString("set_rotation"));
-ROUTE489.setToNode(CString("Joe_l_index0"));
+ROUTE489.setToNode(CString("Joe_l_index2"));
 Scene19.addChild(&ROUTE489);
 
 ROUTE& ROUTE490 =  ROUTE();
 ROUTE490.setFromField(CString("value_changed"));
-ROUTE490.setFromNode(CString("l_index1_RotationInterpolator"));
+ROUTE490.setFromNode(CString("l_index3_RotationInterpolator"));
 ROUTE490.setToField(CString("set_rotation"));
-ROUTE490.setToNode(CString("Joe_l_index1"));
+ROUTE490.setToNode(CString("Joe_l_index3"));
 Scene19.addChild(&ROUTE490);
 
 ROUTE& ROUTE491 =  ROUTE();
 ROUTE491.setFromField(CString("value_changed"));
-ROUTE491.setFromNode(CString("l_index2_RotationInterpolator"));
+ROUTE491.setFromNode(CString("l_middle0_RotationInterpolator"));
 ROUTE491.setToField(CString("set_rotation"));
-ROUTE491.setToNode(CString("Joe_l_index2"));
+ROUTE491.setToNode(CString("Joe_l_middle0"));
 Scene19.addChild(&ROUTE491);
 
 ROUTE& ROUTE492 =  ROUTE();
 ROUTE492.setFromField(CString("value_changed"));
-ROUTE492.setFromNode(CString("l_index3_RotationInterpolator"));
+ROUTE492.setFromNode(CString("l_middle1_RotationInterpolator"));
 ROUTE492.setToField(CString("set_rotation"));
-ROUTE492.setToNode(CString("Joe_l_index3"));
+ROUTE492.setToNode(CString("Joe_l_middle1"));
 Scene19.addChild(&ROUTE492);
 
 ROUTE& ROUTE493 =  ROUTE();
 ROUTE493.setFromField(CString("value_changed"));
-ROUTE493.setFromNode(CString("l_middle0_RotationInterpolator"));
+ROUTE493.setFromNode(CString("l_middle2_RotationInterpolator"));
 ROUTE493.setToField(CString("set_rotation"));
-ROUTE493.setToNode(CString("Joe_l_middle0"));
+ROUTE493.setToNode(CString("Joe_l_middle2"));
 Scene19.addChild(&ROUTE493);
 
 ROUTE& ROUTE494 =  ROUTE();
 ROUTE494.setFromField(CString("value_changed"));
-ROUTE494.setFromNode(CString("l_middle1_RotationInterpolator"));
+ROUTE494.setFromNode(CString("l_middle3_RotationInterpolator"));
 ROUTE494.setToField(CString("set_rotation"));
-ROUTE494.setToNode(CString("Joe_l_middle1"));
+ROUTE494.setToNode(CString("Joe_l_middle3"));
 Scene19.addChild(&ROUTE494);
 
 ROUTE& ROUTE495 =  ROUTE();
 ROUTE495.setFromField(CString("value_changed"));
-ROUTE495.setFromNode(CString("l_middle2_RotationInterpolator"));
+ROUTE495.setFromNode(CString("l_ring0_RotationInterpolator"));
 ROUTE495.setToField(CString("set_rotation"));
-ROUTE495.setToNode(CString("Joe_l_middle2"));
+ROUTE495.setToNode(CString("Joe_l_ring0"));
 Scene19.addChild(&ROUTE495);
 
 ROUTE& ROUTE496 =  ROUTE();
 ROUTE496.setFromField(CString("value_changed"));
-ROUTE496.setFromNode(CString("l_middle3_RotationInterpolator"));
+ROUTE496.setFromNode(CString("l_ring1_RotationInterpolator"));
 ROUTE496.setToField(CString("set_rotation"));
-ROUTE496.setToNode(CString("Joe_l_middle3"));
+ROUTE496.setToNode(CString("Joe_l_ring1"));
 Scene19.addChild(&ROUTE496);
 
 ROUTE& ROUTE497 =  ROUTE();
 ROUTE497.setFromField(CString("value_changed"));
-ROUTE497.setFromNode(CString("l_ring0_RotationInterpolator"));
+ROUTE497.setFromNode(CString("l_ring2_RotationInterpolator"));
 ROUTE497.setToField(CString("set_rotation"));
-ROUTE497.setToNode(CString("Joe_l_ring0"));
+ROUTE497.setToNode(CString("Joe_l_ring2"));
 Scene19.addChild(&ROUTE497);
 
 ROUTE& ROUTE498 =  ROUTE();
 ROUTE498.setFromField(CString("value_changed"));
-ROUTE498.setFromNode(CString("l_ring1_RotationInterpolator"));
+ROUTE498.setFromNode(CString("l_ring3_RotationInterpolator"));
 ROUTE498.setToField(CString("set_rotation"));
-ROUTE498.setToNode(CString("Joe_l_ring1"));
+ROUTE498.setToNode(CString("Joe_l_ring3"));
 Scene19.addChild(&ROUTE498);
 
 ROUTE& ROUTE499 =  ROUTE();
 ROUTE499.setFromField(CString("value_changed"));
-ROUTE499.setFromNode(CString("l_ring2_RotationInterpolator"));
+ROUTE499.setFromNode(CString("l_pinky0_RotationInterpolator"));
 ROUTE499.setToField(CString("set_rotation"));
-ROUTE499.setToNode(CString("Joe_l_ring2"));
+ROUTE499.setToNode(CString("Joe_l_pinky0"));
 Scene19.addChild(&ROUTE499);
 
 ROUTE& ROUTE500 =  ROUTE();
 ROUTE500.setFromField(CString("value_changed"));
-ROUTE500.setFromNode(CString("l_ring3_RotationInterpolator"));
+ROUTE500.setFromNode(CString("l_pinky1_RotationInterpolator"));
 ROUTE500.setToField(CString("set_rotation"));
-ROUTE500.setToNode(CString("Joe_l_ring3"));
+ROUTE500.setToNode(CString("Joe_l_pinky1"));
 Scene19.addChild(&ROUTE500);
 
 ROUTE& ROUTE501 =  ROUTE();
 ROUTE501.setFromField(CString("value_changed"));
-ROUTE501.setFromNode(CString("l_pinky0_RotationInterpolator"));
+ROUTE501.setFromNode(CString("l_pinky2_RotationInterpolator"));
 ROUTE501.setToField(CString("set_rotation"));
-ROUTE501.setToNode(CString("Joe_l_pinky0"));
+ROUTE501.setToNode(CString("Joe_l_pinky2"));
 Scene19.addChild(&ROUTE501);
 
 ROUTE& ROUTE502 =  ROUTE();
 ROUTE502.setFromField(CString("value_changed"));
-ROUTE502.setFromNode(CString("l_pinky1_RotationInterpolator"));
+ROUTE502.setFromNode(CString("l_pinky3_RotationInterpolator"));
 ROUTE502.setToField(CString("set_rotation"));
-ROUTE502.setToNode(CString("Joe_l_pinky1"));
+ROUTE502.setToNode(CString("Joe_l_pinky3"));
 Scene19.addChild(&ROUTE502);
 
 ROUTE& ROUTE503 =  ROUTE();
 ROUTE503.setFromField(CString("value_changed"));
-ROUTE503.setFromNode(CString("l_pinky2_RotationInterpolator"));
+ROUTE503.setFromNode(CString("r_sternoclavicular_RotationInterpolator"));
 ROUTE503.setToField(CString("set_rotation"));
-ROUTE503.setToNode(CString("Joe_l_pinky2"));
+ROUTE503.setToNode(CString("Joe_r_sternoclavicular"));
 Scene19.addChild(&ROUTE503);
 
 ROUTE& ROUTE504 =  ROUTE();
 ROUTE504.setFromField(CString("value_changed"));
-ROUTE504.setFromNode(CString("l_pinky3_RotationInterpolator"));
+ROUTE504.setFromNode(CString("r_acromioclavicular_RotationInterpolator"));
 ROUTE504.setToField(CString("set_rotation"));
-ROUTE504.setToNode(CString("Joe_l_pinky3"));
+ROUTE504.setToNode(CString("Joe_r_acromioclavicular"));
 Scene19.addChild(&ROUTE504);
 
 ROUTE& ROUTE505 =  ROUTE();
 ROUTE505.setFromField(CString("value_changed"));
-ROUTE505.setFromNode(CString("r_sternoclavicular_RotationInterpolator"));
+ROUTE505.setFromNode(CString("r_shoulder_RotationInterpolator"));
 ROUTE505.setToField(CString("set_rotation"));
-ROUTE505.setToNode(CString("Joe_r_sternoclavicular"));
+ROUTE505.setToNode(CString("Joe_r_shoulder"));
 Scene19.addChild(&ROUTE505);
 
 ROUTE& ROUTE506 =  ROUTE();
 ROUTE506.setFromField(CString("value_changed"));
-ROUTE506.setFromNode(CString("r_acromioclavicular_RotationInterpolator"));
+ROUTE506.setFromNode(CString("r_elbow_RotationInterpolator"));
 ROUTE506.setToField(CString("set_rotation"));
-ROUTE506.setToNode(CString("Joe_r_acromioclavicular"));
+ROUTE506.setToNode(CString("Joe_r_elbow"));
 Scene19.addChild(&ROUTE506);
 
 ROUTE& ROUTE507 =  ROUTE();
 ROUTE507.setFromField(CString("value_changed"));
-ROUTE507.setFromNode(CString("r_shoulder_RotationInterpolator"));
+ROUTE507.setFromNode(CString("r_wrist_RotationInterpolator"));
 ROUTE507.setToField(CString("set_rotation"));
-ROUTE507.setToNode(CString("Joe_r_shoulder"));
+ROUTE507.setToNode(CString("Joe_r_wrist"));
 Scene19.addChild(&ROUTE507);
 
 ROUTE& ROUTE508 =  ROUTE();
 ROUTE508.setFromField(CString("value_changed"));
-ROUTE508.setFromNode(CString("r_elbow_RotationInterpolator"));
+ROUTE508.setFromNode(CString("r_thumb1_RotationInterpolator"));
 ROUTE508.setToField(CString("set_rotation"));
-ROUTE508.setToNode(CString("Joe_r_elbow"));
+ROUTE508.setToNode(CString("Joe_r_thumb1"));
 Scene19.addChild(&ROUTE508);
 
 ROUTE& ROUTE509 =  ROUTE();
 ROUTE509.setFromField(CString("value_changed"));
-ROUTE509.setFromNode(CString("r_wrist_RotationInterpolator"));
+ROUTE509.setFromNode(CString("r_thumb2_RotationInterpolator"));
 ROUTE509.setToField(CString("set_rotation"));
-ROUTE509.setToNode(CString("Joe_r_wrist"));
+ROUTE509.setToNode(CString("Joe_r_thumb2"));
 Scene19.addChild(&ROUTE509);
 
 ROUTE& ROUTE510 =  ROUTE();
 ROUTE510.setFromField(CString("value_changed"));
-ROUTE510.setFromNode(CString("r_thumb1_RotationInterpolator"));
+ROUTE510.setFromNode(CString("r_thumb3_RotationInterpolator"));
 ROUTE510.setToField(CString("set_rotation"));
-ROUTE510.setToNode(CString("Joe_r_thumb1"));
+ROUTE510.setToNode(CString("Joe_r_thumb3"));
 Scene19.addChild(&ROUTE510);
 
 ROUTE& ROUTE511 =  ROUTE();
 ROUTE511.setFromField(CString("value_changed"));
-ROUTE511.setFromNode(CString("r_thumb2_RotationInterpolator"));
+ROUTE511.setFromNode(CString("r_index0_RotationInterpolator"));
 ROUTE511.setToField(CString("set_rotation"));
-ROUTE511.setToNode(CString("Joe_r_thumb2"));
+ROUTE511.setToNode(CString("Joe_r_index0"));
 Scene19.addChild(&ROUTE511);
 
 ROUTE& ROUTE512 =  ROUTE();
 ROUTE512.setFromField(CString("value_changed"));
-ROUTE512.setFromNode(CString("r_thumb3_RotationInterpolator"));
+ROUTE512.setFromNode(CString("r_index1_RotationInterpolator"));
 ROUTE512.setToField(CString("set_rotation"));
-ROUTE512.setToNode(CString("Joe_r_thumb3"));
+ROUTE512.setToNode(CString("Joe_r_index1"));
 Scene19.addChild(&ROUTE512);
 
 ROUTE& ROUTE513 =  ROUTE();
 ROUTE513.setFromField(CString("value_changed"));
-ROUTE513.setFromNode(CString("r_index0_RotationInterpolator"));
+ROUTE513.setFromNode(CString("r_index2_RotationInterpolator"));
 ROUTE513.setToField(CString("set_rotation"));
-ROUTE513.setToNode(CString("Joe_r_index0"));
+ROUTE513.setToNode(CString("Joe_r_index2"));
 Scene19.addChild(&ROUTE513);
 
 ROUTE& ROUTE514 =  ROUTE();
 ROUTE514.setFromField(CString("value_changed"));
-ROUTE514.setFromNode(CString("r_index1_RotationInterpolator"));
+ROUTE514.setFromNode(CString("r_index3_RotationInterpolator"));
 ROUTE514.setToField(CString("set_rotation"));
-ROUTE514.setToNode(CString("Joe_r_index1"));
+ROUTE514.setToNode(CString("Joe_r_index3"));
 Scene19.addChild(&ROUTE514);
 
 ROUTE& ROUTE515 =  ROUTE();
 ROUTE515.setFromField(CString("value_changed"));
-ROUTE515.setFromNode(CString("r_index2_RotationInterpolator"));
+ROUTE515.setFromNode(CString("r_middle0_RotationInterpolator"));
 ROUTE515.setToField(CString("set_rotation"));
-ROUTE515.setToNode(CString("Joe_r_index2"));
+ROUTE515.setToNode(CString("Joe_r_middle0"));
 Scene19.addChild(&ROUTE515);
 
 ROUTE& ROUTE516 =  ROUTE();
 ROUTE516.setFromField(CString("value_changed"));
-ROUTE516.setFromNode(CString("r_index3_RotationInterpolator"));
+ROUTE516.setFromNode(CString("r_middle1_RotationInterpolator"));
 ROUTE516.setToField(CString("set_rotation"));
-ROUTE516.setToNode(CString("Joe_r_index3"));
+ROUTE516.setToNode(CString("Joe_r_middle1"));
 Scene19.addChild(&ROUTE516);
 
 ROUTE& ROUTE517 =  ROUTE();
 ROUTE517.setFromField(CString("value_changed"));
-ROUTE517.setFromNode(CString("r_middle0_RotationInterpolator"));
+ROUTE517.setFromNode(CString("r_middle2_RotationInterpolator"));
 ROUTE517.setToField(CString("set_rotation"));
-ROUTE517.setToNode(CString("Joe_r_middle0"));
+ROUTE517.setToNode(CString("Joe_r_middle2"));
 Scene19.addChild(&ROUTE517);
 
 ROUTE& ROUTE518 =  ROUTE();
 ROUTE518.setFromField(CString("value_changed"));
-ROUTE518.setFromNode(CString("r_middle1_RotationInterpolator"));
+ROUTE518.setFromNode(CString("r_middle3_RotationInterpolator"));
 ROUTE518.setToField(CString("set_rotation"));
-ROUTE518.setToNode(CString("Joe_r_middle1"));
+ROUTE518.setToNode(CString("Joe_r_middle3"));
 Scene19.addChild(&ROUTE518);
 
 ROUTE& ROUTE519 =  ROUTE();
 ROUTE519.setFromField(CString("value_changed"));
-ROUTE519.setFromNode(CString("r_middle2_RotationInterpolator"));
+ROUTE519.setFromNode(CString("r_ring0_RotationInterpolator"));
 ROUTE519.setToField(CString("set_rotation"));
-ROUTE519.setToNode(CString("Joe_r_middle2"));
+ROUTE519.setToNode(CString("Joe_r_ring0"));
 Scene19.addChild(&ROUTE519);
 
 ROUTE& ROUTE520 =  ROUTE();
 ROUTE520.setFromField(CString("value_changed"));
-ROUTE520.setFromNode(CString("r_middle3_RotationInterpolator"));
+ROUTE520.setFromNode(CString("r_ring1_RotationInterpolator"));
 ROUTE520.setToField(CString("set_rotation"));
-ROUTE520.setToNode(CString("Joe_r_middle3"));
+ROUTE520.setToNode(CString("Joe_r_ring1"));
 Scene19.addChild(&ROUTE520);
 
 ROUTE& ROUTE521 =  ROUTE();
 ROUTE521.setFromField(CString("value_changed"));
-ROUTE521.setFromNode(CString("r_ring0_RotationInterpolator"));
+ROUTE521.setFromNode(CString("r_ring2_RotationInterpolator"));
 ROUTE521.setToField(CString("set_rotation"));
-ROUTE521.setToNode(CString("Joe_r_ring0"));
+ROUTE521.setToNode(CString("Joe_r_ring2"));
 Scene19.addChild(&ROUTE521);
 
 ROUTE& ROUTE522 =  ROUTE();
 ROUTE522.setFromField(CString("value_changed"));
-ROUTE522.setFromNode(CString("r_ring1_RotationInterpolator"));
+ROUTE522.setFromNode(CString("r_ring3_RotationInterpolator"));
 ROUTE522.setToField(CString("set_rotation"));
-ROUTE522.setToNode(CString("Joe_r_ring1"));
+ROUTE522.setToNode(CString("Joe_r_ring3"));
 Scene19.addChild(&ROUTE522);
 
 ROUTE& ROUTE523 =  ROUTE();
 ROUTE523.setFromField(CString("value_changed"));
-ROUTE523.setFromNode(CString("r_ring2_RotationInterpolator"));
+ROUTE523.setFromNode(CString("r_pinky0_RotationInterpolator"));
 ROUTE523.setToField(CString("set_rotation"));
-ROUTE523.setToNode(CString("Joe_r_ring2"));
+ROUTE523.setToNode(CString("Joe_r_pinky0"));
 Scene19.addChild(&ROUTE523);
 
 ROUTE& ROUTE524 =  ROUTE();
 ROUTE524.setFromField(CString("value_changed"));
-ROUTE524.setFromNode(CString("r_ring3_RotationInterpolator"));
+ROUTE524.setFromNode(CString("r_pinky1_RotationInterpolator"));
 ROUTE524.setToField(CString("set_rotation"));
-ROUTE524.setToNode(CString("Joe_r_ring3"));
+ROUTE524.setToNode(CString("Joe_r_pinky1"));
 Scene19.addChild(&ROUTE524);
 
 ROUTE& ROUTE525 =  ROUTE();
 ROUTE525.setFromField(CString("value_changed"));
-ROUTE525.setFromNode(CString("r_pinky0_RotationInterpolator"));
+ROUTE525.setFromNode(CString("r_pinky2_RotationInterpolator"));
 ROUTE525.setToField(CString("set_rotation"));
-ROUTE525.setToNode(CString("Joe_r_pinky0"));
+ROUTE525.setToNode(CString("Joe_r_pinky2"));
 Scene19.addChild(&ROUTE525);
 
 ROUTE& ROUTE526 =  ROUTE();
 ROUTE526.setFromField(CString("value_changed"));
-ROUTE526.setFromNode(CString("r_pinky1_RotationInterpolator"));
+ROUTE526.setFromNode(CString("r_pinky3_RotationInterpolator"));
 ROUTE526.setToField(CString("set_rotation"));
-ROUTE526.setToNode(CString("Joe_r_pinky1"));
+ROUTE526.setToNode(CString("Joe_r_pinky3"));
 Scene19.addChild(&ROUTE526);
 
-ROUTE& ROUTE527 =  ROUTE();
-ROUTE527.setFromField(CString("value_changed"));
-ROUTE527.setFromNode(CString("r_pinky2_RotationInterpolator"));
-ROUTE527.setToField(CString("set_rotation"));
-ROUTE527.setToNode(CString("Joe_r_pinky2"));
-Scene19.addChild(&ROUTE527);
-
-ROUTE& ROUTE528 =  ROUTE();
-ROUTE528.setFromField(CString("value_changed"));
-ROUTE528.setFromNode(CString("r_pinky3_RotationInterpolator"));
-ROUTE528.setToField(CString("set_rotation"));
-ROUTE528.setToNode(CString("Joe_r_pinky3"));
-Scene19.addChild(&ROUTE528);
-
-Group& Group529 =  Group();
-Group529.setDEF(CString("DisplacersAnimationGroup"));
+Group& Group527 =  Group();
+Group527.setDEF(CString("DisplacersAnimationGroup"));
 //TimeSensor DEF='skull_tipInterpolatorTimer' cycleInterval='5.73' loop='true' enabled='true'></TimeSensor
-ScalarInterpolator& ScalarInterpolator530 =  ScalarInterpolator();
-ScalarInterpolator530.setDEF(CString("skull_tipInterpolator"));
-ScalarInterpolator530.setKey(new float[]{0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1}, 11);
-ScalarInterpolator530.setKeyValue(new float[]{0,0,0,0,0.2,0.4,1,0,1,0.4,0}, 11);
-Group529.addChild(&ScalarInterpolator530);
+ScalarInterpolator& ScalarInterpolator528 =  ScalarInterpolator();
+ScalarInterpolator528.setDEF(CString("skull_tipInterpolator"));
+ScalarInterpolator528.setKey(new float[]{0,0.1,0.2,0.35,0.6,0.7,0.85,0.88,0.94,0.97,1}, 11);
+ScalarInterpolator528.setKeyValue(new float[]{0,0,0,0,0.2,0.4,1,0,1,0.4,0}, 11);
+Group527.addChild(&ScalarInterpolator528);
 
-ROUTE& ROUTE531 =  ROUTE();
-ROUTE531.setFromField(CString("fraction_changed"));
-ROUTE531.setFromNode(CString("KickTimer"));
-ROUTE531.setToField(CString("set_fraction"));
-ROUTE531.setToNode(CString("skull_tipInterpolator"));
-Group529.addChild(&ROUTE531);
+ROUTE& ROUTE529 =  ROUTE();
+ROUTE529.setFromField(CString("fraction_changed"));
+ROUTE529.setFromNode(CString("KickTimer"));
+ROUTE529.setToField(CString("set_fraction"));
+ROUTE529.setToNode(CString("skull_tipInterpolator"));
+Group527.addChild(&ROUTE529);
 
-ROUTE& ROUTE532 =  ROUTE();
-ROUTE532.setFromField(CString("value_changed"));
-ROUTE532.setFromNode(CString("skull_tipInterpolator"));
-ROUTE532.setToField(CString("weight"));
-ROUTE532.setToNode(CString("Joe_skull_tip_raiser_action"));
-Group529.addChild(&ROUTE532);
+ROUTE& ROUTE530 =  ROUTE();
+ROUTE530.setFromField(CString("value_changed"));
+ROUTE530.setFromNode(CString("skull_tipInterpolator"));
+ROUTE530.setToField(CString("weight"));
+ROUTE530.setToNode(CString("Joe_skull_tip_raiser_action"));
+Group527.addChild(&ROUTE530);
 
-Scene19.addChild(&Group529);
+Scene19.addChild(&Group527);
 
-Group& Group533 =  Group();
-Group533.setDEF(CString("SkinTextureTransformAnimationGroup"));
-ScalarInterpolator& ScalarInterpolator534 =  ScalarInterpolator();
-ScalarInterpolator534.setDEF(CString("SkinTextureTransformInterpolator"));
-ScalarInterpolator534.setKey(new float[]{0,0.2,0.4,0.5,0.6,0.7,0.8,1}, 8);
-ScalarInterpolator534.setKeyValue(new float[]{0,0,0,0,0,1,2,0}, 8);
-Group533.addChild(&ScalarInterpolator534);
+Group& Group531 =  Group();
+Group531.setDEF(CString("SkinTextureTransformAnimationGroup"));
+ScalarInterpolator& ScalarInterpolator532 =  ScalarInterpolator();
+ScalarInterpolator532.setDEF(CString("SkinTextureTransformInterpolator"));
+ScalarInterpolator532.setKey(new float[]{0,0.2,0.4,0.5,0.6,0.7,0.8,1}, 8);
+ScalarInterpolator532.setKeyValue(new float[]{0,0,0,0,0,1,2,0}, 8);
+Group531.addChild(&ScalarInterpolator532);
 
-ROUTE& ROUTE535 =  ROUTE();
-ROUTE535.setFromField(CString("fraction_changed"));
-ROUTE535.setFromNode(CString("KickTimer"));
-ROUTE535.setToField(CString("set_fraction"));
-ROUTE535.setToNode(CString("SkinTextureTransformInterpolator"));
-Group533.addChild(&ROUTE535);
+ROUTE& ROUTE533 =  ROUTE();
+ROUTE533.setFromField(CString("fraction_changed"));
+ROUTE533.setFromNode(CString("KickTimer"));
+ROUTE533.setToField(CString("set_fraction"));
+ROUTE533.setToNode(CString("SkinTextureTransformInterpolator"));
+Group531.addChild(&ROUTE533);
 
-ROUTE& ROUTE536 =  ROUTE();
-ROUTE536.setFromField(CString("value_changed"));
-ROUTE536.setFromNode(CString("SkinTextureTransformInterpolator"));
-ROUTE536.setToField(CString("rotation"));
-ROUTE536.setToNode(CString("KickTextureTransform"));
-Group533.addChild(&ROUTE536);
+ROUTE& ROUTE534 =  ROUTE();
+ROUTE534.setFromField(CString("value_changed"));
+ROUTE534.setFromNode(CString("SkinTextureTransformInterpolator"));
+ROUTE534.setToField(CString("rotation"));
+ROUTE534.setToNode(CString("KickTextureTransform"));
+Group531.addChild(&ROUTE534);
 
-Scene19.addChild(&Group533);
+Scene19.addChild(&Group531);
 
-Group& Group537 =  Group();
-Transform& Transform538 =  Transform();
-Transform538.setDEF(CString("SBall"));
-Transform538.setRotation(new float[]{0.7,0,0.7,0.1});
-Transform538.setScale(new float[]{0.23,0.23,0.23});
-Transform538.setTranslation(new float[]{-0.916,0.37,-0.92});
-Shape& Shape539 =  Shape();
-Shape539.setDEF(CString("ball_Shape"));
-Appearance& Appearance540 =  Appearance();
-Appearance540.setDEF(CString("ball_Appearance"));
-Material& Material541 =  Material();
-Material541.setDEF(CString("ball_Material"));
-Material541.setDiffuseColor(new float[]{0.3,0.3,1});
-Material541.setEmissiveColor(new float[]{0.3,0.3,0.33});
-Appearance540.addChild(&Material541);
+Group& Group535 =  Group();
+Transform& Transform536 =  Transform();
+Transform536.setDEF(CString("SBall"));
+Transform536.setRotation(new float[]{0.7,0,0.7,0.1});
+Transform536.setScale(new float[]{0.23,0.23,0.23});
+Transform536.setTranslation(new float[]{-0.916,0.37,-0.92});
+Shape& Shape537 =  Shape();
+Shape537.setDEF(CString("ball_Shape"));
+Appearance& Appearance538 =  Appearance();
+Appearance538.setDEF(CString("ball_Appearance"));
+Material& Material539 =  Material();
+Material539.setDEF(CString("ball_Material"));
+Material539.setDiffuseColor(new float[]{0.3,0.3,1});
+Material539.setEmissiveColor(new float[]{0.3,0.3,0.33});
+Appearance538.addChild(&Material539);
 
-ImageTexture& ImageTexture542 =  ImageTexture();
-ImageTexture542.setUSE(CString("JoeSkinImageTexture"));
-Appearance540.addChild(&ImageTexture542);
+ImageTexture& ImageTexture540 =  ImageTexture();
+ImageTexture540.setUSE(CString("JoeSkinImageTexture"));
+Appearance538.addChild(&ImageTexture540);
 
-Shape539.addChild(&Appearance540);
+Shape537.addChild(&Appearance538);
 
-IndexedFaceSet& IndexedFaceSet543 =  IndexedFaceSet();
-IndexedFaceSet543.setDEF(CString("ball_IndexedFaceSet"));
-IndexedFaceSet543.setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
-Coordinate& Coordinate544 =  Coordinate();
-Coordinate544.setDEF(CString("Ball_Coordinates"));
-Coordinate544.setPoint(new float[]{0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0}, 186);
-IndexedFaceSet543.setCoord(&Coordinate544);
+IndexedFaceSet& IndexedFaceSet541 =  IndexedFaceSet();
+IndexedFaceSet541.setDEF(CString("ball_IndexedFaceSet"));
+IndexedFaceSet541.setCoordIndex(new int32_t[]{0,1,2,-1,0,2,3,-1,0,3,4,-1,0,4,5,-1,0,5,6,-1,0,6,7,-1,0,7,8,-1,0,8,9,-1,0,9,10,-1,0,10,11,-1,0,11,12,-1,0,12,1,-1,1,13,14,-1,1,14,2,-1,2,14,15,-1,2,15,3,-1,3,15,16,-1,3,16,4,-1,4,16,17,-1,4,17,5,-1,5,17,18,-1,5,18,6,-1,6,18,19,-1,6,19,7,-1,7,19,20,-1,7,20,8,-1,8,20,21,-1,8,21,9,-1,9,21,22,-1,9,22,10,-1,10,22,23,-1,10,23,11,-1,11,23,24,-1,11,24,12,-1,12,24,13,-1,12,13,1,-1,13,25,26,-1,13,26,14,-1,14,26,27,-1,14,27,15,-1,15,27,28,-1,15,28,16,-1,16,28,29,-1,16,29,17,-1,17,29,30,-1,17,30,18,-1,18,30,31,-1,18,31,19,-1,19,31,32,-1,19,32,20,-1,20,32,33,-1,20,33,21,-1,21,33,34,-1,21,34,22,-1,22,34,35,-1,22,35,23,-1,23,35,36,-1,23,36,24,-1,24,36,25,-1,24,25,13,-1,25,37,38,-1,25,38,26,-1,26,38,39,-1,26,39,27,-1,27,39,40,-1,27,40,28,-1,28,40,41,-1,28,41,29,-1,29,41,42,-1,29,42,30,-1,30,42,43,-1,30,43,31,-1,31,43,44,-1,31,44,32,-1,32,44,45,-1,32,45,33,-1,33,45,46,-1,33,46,34,-1,34,46,47,-1,34,47,35,-1,35,47,48,-1,35,48,36,-1,36,48,37,-1,36,37,25,-1,37,49,50,-1,37,50,38,-1,38,50,51,-1,38,51,39,-1,39,51,52,-1,39,52,40,-1,40,52,53,-1,40,53,41,-1,41,53,54,-1,41,54,42,-1,42,54,55,-1,42,55,43,-1,43,55,56,-1,43,56,44,-1,44,56,57,-1,44,57,45,-1,45,57,58,-1,45,58,46,-1,46,58,59,-1,46,59,47,-1,47,59,60,-1,47,60,48,-1,48,60,49,-1,48,49,37,-1,61,50,49,-1,61,51,50,-1,61,52,51,-1,61,53,52,-1,61,54,53,-1,61,55,54,-1,61,56,55,-1,61,57,56,-1,61,58,57,-1,61,59,58,-1,61,60,59,-1,61,49,60,-1}, 480);
+Coordinate& Coordinate542 =  Coordinate();
+Coordinate542.setDEF(CString("Ball_Coordinates"));
+Coordinate542.setPoint(new float[]{0,0.4675,0,0,0.4049,-0.2338,-0.1169,0.4049,-0.2024,-0.2024,0.4049,-0.1169,-0.2338,0.4049,0,-0.2024,0.4049,0.1169,-0.1169,0.4049,0.2024,0,0.4049,0.2338,0.1169,0.4049,0.2024,0.2024,0.4049,0.1169,0.2338,0.4049,0,0.2024,0.4049,-0.1169,0.1169,0.4049,-0.2024,0,0.2338,-0.4049,-0.2024,0.2338,-0.3506,-0.3506,0.2338,-0.2024,-0.4049,0.2338,0,-0.3506,0.2338,0.2024,-0.2024,0.2338,0.3506,0,0.2338,0.4049,0.2024,0.2338,0.3506,0.3506,0.2338,0.2024,0.4049,0.2338,0,0.3506,0.2338,-0.2024,0.2024,0.2338,-0.3506,0,0,-0.4675,-0.2338,0,-0.4049,-0.4049,0,-0.2338,-0.4675,0,0,-0.4049,0,0.2338,-0.2338,0,0.4049,0,0,0.4675,0.2338,0,0.4049,0.4049,0,0.2338,0.4675,0,0,0.4049,0,-0.2338,0.2338,0,-0.4049,0,-0.2338,-0.4049,-0.2024,-0.2338,-0.3506,-0.3506,-0.2338,-0.2024,-0.4049,-0.2338,0,-0.3506,-0.2338,0.2024,-0.2024,-0.2338,0.3506,0,-0.2338,0.4049,0.2024,-0.2338,0.3506,0.3506,-0.2338,0.2024,0.4049,-0.2338,0,0.3506,-0.2338,-0.2024,0.2024,-0.2338,-0.3506,0,-0.4049,-0.2338,-0.1169,-0.4049,-0.2024,-0.2024,-0.4049,-0.1169,-0.2338,-0.4049,0,-0.2024,-0.4049,0.1169,-0.1169,-0.4049,0.2024,0,-0.4049,0.2338,0.1169,-0.4049,0.2024,0.2024,-0.4049,0.1169,0.2338,-0.4049,0,0.2024,-0.4049,-0.1169,0.1169,-0.4049,-0.2024,0,-0.4675,0}, 186);
+IndexedFaceSet541.setCoord(&Coordinate542);
 
-Shape539.setGeometry(&IndexedFaceSet543);
+Shape537.setGeometry(&IndexedFaceSet541);
 
-Transform538.addChild(&Shape539);
+Transform536.addChild(&Shape537);
 
-Viewpoint& Viewpoint545 =  Viewpoint();
-Viewpoint545.setDEF(CString("ballView_1"));
-Viewpoint545.setDescription(CString("Ball View"));
-Transform538.addChild(&Viewpoint545);
+Viewpoint& Viewpoint543 =  Viewpoint();
+Viewpoint543.setDEF(CString("ballView_1"));
+Viewpoint543.setDescription(CString("Ball View"));
+Transform536.addChild(&Viewpoint543);
 
-Group537.addChild(&Transform538);
+Group535.addChild(&Transform536);
 
 //Ball Animation interpolators
-PositionInterpolator& PositionInterpolator546 =  PositionInterpolator();
-PositionInterpolator546.setDEF(CString("ball_TranslationInterpolator"));
-PositionInterpolator546.setKey(new float[]{0,0.4,0.409,1}, 4);
-PositionInterpolator546.setKeyValue(new float[]{-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10}, 12);
-Group537.addChild(&PositionInterpolator546);
+PositionInterpolator& PositionInterpolator544 =  PositionInterpolator();
+PositionInterpolator544.setDEF(CString("ball_TranslationInterpolator"));
+PositionInterpolator544.setKey(new float[]{0,0.4,0.409,1}, 4);
+PositionInterpolator544.setKeyValue(new float[]{-1,0.4,-1,0,0.07,0,0.05,0.06,0.05,2,4,10}, 12);
+Group535.addChild(&PositionInterpolator544);
 
-OrientationInterpolator& OrientationInterpolator547 =  OrientationInterpolator();
-OrientationInterpolator547.setDEF(CString("ball_RotationInterpolator"));
-OrientationInterpolator547.setKey(new float[]{0,0.4,0.41,0.71,1}, 5);
-OrientationInterpolator547.setKeyValue(new float[]{1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3}, 20);
-Group537.addChild(&OrientationInterpolator547);
+OrientationInterpolator& OrientationInterpolator545 =  OrientationInterpolator();
+OrientationInterpolator545.setDEF(CString("ball_RotationInterpolator"));
+OrientationInterpolator545.setKey(new float[]{0,0.4,0.41,0.71,1}, 5);
+OrientationInterpolator545.setKeyValue(new float[]{1,0,1,0.25,-1,0,-1,1.35,-1,1,-1,3.35,-1,0.2,-1,3,-1,0.2,-1,3}, 20);
+Group535.addChild(&OrientationInterpolator545);
 
 //Ball Animation Routes
+ROUTE& ROUTE546 =  ROUTE();
+ROUTE546.setFromField(CString("fraction_changed"));
+ROUTE546.setFromNode(CString("KickTimer"));
+ROUTE546.setToField(CString("set_fraction"));
+ROUTE546.setToNode(CString("ball_TranslationInterpolator"));
+Group535.addChild(&ROUTE546);
+
+ROUTE& ROUTE547 =  ROUTE();
+ROUTE547.setFromField(CString("value_changed"));
+ROUTE547.setFromNode(CString("ball_TranslationInterpolator"));
+ROUTE547.setToField(CString("set_translation"));
+ROUTE547.setToNode(CString("SBall"));
+Group535.addChild(&ROUTE547);
+
 ROUTE& ROUTE548 =  ROUTE();
 ROUTE548.setFromField(CString("fraction_changed"));
 ROUTE548.setFromNode(CString("KickTimer"));
 ROUTE548.setToField(CString("set_fraction"));
-ROUTE548.setToNode(CString("ball_TranslationInterpolator"));
-Group537.addChild(&ROUTE548);
+ROUTE548.setToNode(CString("ball_RotationInterpolator"));
+Group535.addChild(&ROUTE548);
 
 ROUTE& ROUTE549 =  ROUTE();
 ROUTE549.setFromField(CString("value_changed"));
-ROUTE549.setFromNode(CString("ball_TranslationInterpolator"));
-ROUTE549.setToField(CString("set_translation"));
+ROUTE549.setFromNode(CString("ball_RotationInterpolator"));
+ROUTE549.setToField(CString("set_rotation"));
 ROUTE549.setToNode(CString("SBall"));
-Group537.addChild(&ROUTE549);
+Group535.addChild(&ROUTE549);
 
-ROUTE& ROUTE550 =  ROUTE();
-ROUTE550.setFromField(CString("fraction_changed"));
-ROUTE550.setFromNode(CString("KickTimer"));
-ROUTE550.setToField(CString("set_fraction"));
-ROUTE550.setToNode(CString("ball_RotationInterpolator"));
-Group537.addChild(&ROUTE550);
+Scene19.addChild(&Group535);
 
-ROUTE& ROUTE551 =  ROUTE();
-ROUTE551.setFromField(CString("value_changed"));
-ROUTE551.setFromNode(CString("ball_RotationInterpolator"));
-ROUTE551.setToField(CString("set_rotation"));
-ROUTE551.setToNode(CString("SBall"));
-Group537.addChild(&ROUTE551);
+Group& Group550 =  Group();
+Transform& Transform551 =  Transform();
+Transform551.setScale(new float[]{0.2,0.2,0.2});
+Shape& Shape552 =  Shape();
+Shape552.setUSE(CString("AxisLinesShape"));
+Transform551.addChild(&Shape552);
 
-Scene19.addChild(&Group537);
+Group550.addChild(&Transform551);
 
-Group& Group552 =  Group();
 Transform& Transform553 =  Transform();
-Transform553.setScale(new float[]{0.2,0.2,0.2});
+Transform553.setDEF(CString("Circle0"));
+Transform553.setScale(new float[]{1.175,1,1.175});
 Shape& Shape554 =  Shape();
-Shape554.setUSE(CString("AxisLinesShape"));
+Shape554.setDEF(CString("circle_Shape"));
+Appearance& Appearance555 =  Appearance();
+Appearance555.setDEF(CString("circle0_Appearance"));
+Material& Material556 =  Material();
+Material556.setDEF(CString("circle0_Material"));
+Material556.setAmbientIntensity(0.9);
+Material556.setDiffuseColor(new float[]{0.9,0,0.7});
+Material556.setEmissiveColor(new float[]{0.425,0.486,1});
+Appearance555.addChild(&Material556);
+
+Shape554.addChild(&Appearance555);
+
+IndexedLineSet& IndexedLineSet557 =  IndexedLineSet();
+IndexedLineSet557.setDEF(CString("Orbit1"));
+IndexedLineSet557.setCoordIndex(new int32_t[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1}, 62);
+Coordinate& Coordinate558 =  Coordinate();
+Coordinate558.setDEF(CString("circle_Coordinates"));
+Coordinate558.setPoint(new float[]{1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0}, 183);
+IndexedLineSet557.setCoord(&Coordinate558);
+
+Shape554.setGeometry(&IndexedLineSet557);
+
 Transform553.addChild(&Shape554);
 
-Group552.addChild(&Transform553);
+Group550.addChild(&Transform553);
 
-Transform& Transform555 =  Transform();
-Transform555.setDEF(CString("Circle0"));
-Transform555.setScale(new float[]{1.175,1,1.175});
-Shape& Shape556 =  Shape();
-Shape556.setDEF(CString("circle_Shape"));
-Appearance& Appearance557 =  Appearance();
-Appearance557.setDEF(CString("circle0_Appearance"));
-Material& Material558 =  Material();
-Material558.setDEF(CString("circle0_Material"));
-Material558.setAmbientIntensity(0.9);
-Material558.setDiffuseColor(new float[]{0.9,0,0.7});
-Material558.setEmissiveColor(new float[]{0.425,0.486,1});
-Appearance557.addChild(&Material558);
+Transform& Transform559 =  Transform();
+Transform559.setDEF(CString("Circle1"));
+Transform559.setScale(new float[]{0.5,1,0.5});
+Shape& Shape560 =  Shape();
+Shape560.setDEF(CString("circle1_Shape"));
+Appearance& Appearance561 =  Appearance();
+Appearance561.setDEF(CString("circle1_Appearance"));
+Material& Material562 =  Material();
+Material562.setDEF(CString("circle1_Material"));
+Material562.setDiffuseColor(new float[]{0.9,0,0.7});
+Material562.setEmissiveColor(new float[]{0.424956,0.483976,1});
+Appearance561.addChild(&Material562);
 
-Shape556.addChild(&Appearance557);
+Shape560.addChild(&Appearance561);
 
-IndexedLineSet& IndexedLineSet559 =  IndexedLineSet();
-IndexedLineSet559.setDEF(CString("Orbit1"));
-IndexedLineSet559.setCoordIndex(new int32_t[]{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,-1}, 62);
-Coordinate& Coordinate560 =  Coordinate();
-Coordinate560.setDEF(CString("circle_Coordinates"));
-Coordinate560.setPoint(new float[]{1,0,0,0.995,0,-0.105,0.979,0,-0.208,0.951,0,-0.309,0.914,0,-0.407,0.866,0,-0.5,0.809,0,-0.588,0.743,0,-0.669,0.669,0,-0.743,0.588,0,-0.809,0.5,0,-0.866,0.407,0,-0.914,0.309,0,-0.951,0.208,0,-0.978,0.105,0,-0.995,0,0,-1,-0.105,0,-0.994522,-0.208,0,-0.978,-0.309,0,-0.951,-0.407,0,-0.914,-0.5,0,-0.866,-0.588,0,-0.809,-0.669,0,-0.743,-0.743,0,-0.669,-0.809,0,-0.588,-0.866,0,-0.5,-0.914,0,-0.407,-0.951,0,-0.309,-0.978,0,-0.208,-0.995,0,-0.105,-1,0,0,-0.995,0,0.105,-0.978,0,0.208,-0.951,0,0.309,-0.914,0,0.407,-0.866,0,0.5,-0.809,0,0.588,-0.743,0,0.669,-0.669,0,0.743,-0.588,0,0.809,-0.5,0,0.866,-0.407,0,0.914,-0.309,0,0.951,-0.208,0,0.978,-0.105,0,0.995,0,0,1,0.105,0,0.995,0.208,0,0.978,0.309,0,0.951,0.407,0,0.914,0.5,0,0.866,0.588,0,0.809,0.669,0,0.743,0.743,0,0.669,0.809,0,0.588,0.866,0,0.5,0.914,0,0.407,0.951,0,0.309,0.978,0,0.208,0.995,0,0.104,1,0,0}, 183);
-IndexedLineSet559.setCoord(&Coordinate560);
+IndexedLineSet& IndexedLineSet563 =  IndexedLineSet();
+IndexedLineSet563.setUSE(CString("Orbit1"));
+Shape560.setGeometry(&IndexedLineSet563);
 
-Shape556.setGeometry(&IndexedLineSet559);
+Transform559.addChild(&Shape560);
 
-Transform555.addChild(&Shape556);
+Group550.addChild(&Transform559);
 
-Group552.addChild(&Transform555);
+Transform& Transform564 =  Transform();
+Transform564.setDEF(CString("Circle2"));
+Transform564.setScale(new float[]{0.25,1,0.25});
+Shape& Shape565 =  Shape();
+Shape565.setDEF(CString("circle2_Shape"));
+Appearance& Appearance566 =  Appearance();
+Appearance566.setDEF(CString("circle2_Appearance"));
+Material& Material567 =  Material();
+Material567.setDEF(CString("circle2_Material"));
+Material567.setDiffuseColor(new float[]{0.9,0,0.7});
+Material567.setEmissiveColor(new float[]{0.424956,0.483976,1});
+Appearance566.addChild(&Material567);
 
-Transform& Transform561 =  Transform();
-Transform561.setDEF(CString("Circle1"));
-Transform561.setScale(new float[]{0.5,1,0.5});
-Shape& Shape562 =  Shape();
-Shape562.setDEF(CString("circle1_Shape"));
-Appearance& Appearance563 =  Appearance();
-Appearance563.setDEF(CString("circle1_Appearance"));
-Material& Material564 =  Material();
-Material564.setDEF(CString("circle1_Material"));
-Material564.setDiffuseColor(new float[]{0.9,0,0.7});
-Material564.setEmissiveColor(new float[]{0.424956,0.483976,1});
-Appearance563.addChild(&Material564);
+Shape565.addChild(&Appearance566);
 
-Shape562.addChild(&Appearance563);
+IndexedLineSet& IndexedLineSet568 =  IndexedLineSet();
+IndexedLineSet568.setUSE(CString("Orbit1"));
+Shape565.setGeometry(&IndexedLineSet568);
 
-IndexedLineSet& IndexedLineSet565 =  IndexedLineSet();
-IndexedLineSet565.setUSE(CString("Orbit1"));
-Shape562.setGeometry(&IndexedLineSet565);
+Transform564.addChild(&Shape565);
 
-Transform561.addChild(&Shape562);
+Group550.addChild(&Transform564);
 
-Group552.addChild(&Transform561);
-
-Transform& Transform566 =  Transform();
-Transform566.setDEF(CString("Circle2"));
-Transform566.setScale(new float[]{0.25,1,0.25});
-Shape& Shape567 =  Shape();
-Shape567.setDEF(CString("circle2_Shape"));
-Appearance& Appearance568 =  Appearance();
-Appearance568.setDEF(CString("circle2_Appearance"));
-Material& Material569 =  Material();
-Material569.setDEF(CString("circle2_Material"));
-Material569.setDiffuseColor(new float[]{0.9,0,0.7});
-Material569.setEmissiveColor(new float[]{0.424956,0.483976,1});
-Appearance568.addChild(&Material569);
-
-Shape567.addChild(&Appearance568);
-
-IndexedLineSet& IndexedLineSet570 =  IndexedLineSet();
-IndexedLineSet570.setUSE(CString("Orbit1"));
-Shape567.setGeometry(&IndexedLineSet570);
-
-Transform566.addChild(&Shape567);
-
-Group552.addChild(&Transform566);
-
-Scene19.addChild(&Group552);
+Scene19.addChild(&Group550);
 
 X3D0.setScene(&Scene19);
 

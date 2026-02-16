@@ -41,7 +41,7 @@ var ROUTE = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
-      version : new SFString("4.0"),
+      version : new SFString("4.1"),
       head : new SFNode(
         new head({
           component : new SFNode(
@@ -118,7 +118,8 @@ var X3D0 =  new X3D({
                 new ParticleSystem({
                   maxParticles : new SFInt32(20),
                   geometryType : new SFString("GEOMETRY"),
-                  /** values - array of MFFloats to pass to ComposedShader * variations in values - array of MFFloats to pass to ComposedShader that varies values*/
+                  /** values - array of MFFloats to pass to ComposedShader*/
+                  /** variations in values - array of MFFloats to pass to ComposedShader that varies values*/
                   variationPhysicsModel : new SFNode(
                     new VariationPhysicsModel({
                       values : new SFString("2 2 5 5 0 0"),

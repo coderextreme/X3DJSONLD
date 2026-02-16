@@ -206,7 +206,9 @@ X3D:
                                     accessType: "inputOutput"
                                     value: "0"
                                 ],
-#<field name='cube' type='SFNode' accessType="initializeOnly"> <ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture> </field>
+#<field name='cube' type='SFNode' accessType="initializeOnly">
+#<ComposedCubeMapTexture USE="texture"></ComposedCubeMapTexture>
+#</field>
                                 ShaderPart: [
                                     url: ["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"]
                                     type: "VERTEX"

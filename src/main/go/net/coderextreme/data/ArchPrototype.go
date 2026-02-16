@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -101,7 +101,7 @@ func main() {
             },
             &x3d.Meta{
                 Name: stringPtr("modified"),
-                Content: stringPtr("Mon, 08 Sep 2025 00:42:03 GMT"),
+                Content: stringPtr("27 November 2015"),
             },
             &x3d.Meta{
                 Name: stringPtr("reference"),
@@ -115,96 +115,131 @@ func main() {
                 Name: stringPtr("identifier"),
                 Content: stringPtr("http://X3dGraphics.com/examples/X3dForAdvancedModeling/Buildings/ArchPrototype.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("generator"),
+                Content: stringPtr("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.ProtoDeclare{
                     Name: stringPtr("ArchPrototype"),
+                    Appinfo: stringPtr("Create an arch. Can modify general parameters: clearSpanWidth, riseHeight, depth, topAbutmentHeight, pierWidth, pierHeight. - Possibility to create shapes related to an arch: ArchHalf; IntradosOnly; ArchFilled; ArchHalfFilled; Lintel. See the reference file ArchModelingDiagrams.pdf to find further information. See also ArchPrototypeScript_more_readable.js.js."),
                     ProtoInterface: &x3d.ProtoInterface{
+//COLOR OF ARCH
+//INPUT PARAMETERS
+//General parameters: measures in meters
+//Parameters to create to create shapes related to arch: put true to apply
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("inputOutput"),
-                                Type: stringPtr("SFColor"),
                                 Name: stringPtr("diffuseColor"),
+                                AccessType: stringPtr("inputOutput"),
+                                Appinfo: stringPtr("color of arch"),
+                                Type: stringPtr("SFColor"),
                                 Value: stringPtr("0.2 0.8 0.8"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("inputOutput"),
-                            Type: stringPtr("SFColor"),
                             Name: stringPtr("emissiveColor"),
+                            AccessType: stringPtr("inputOutput"),
+                            Appinfo: stringPtr("color of arch"),
+                            Type: stringPtr("SFColor"),
                             Value: stringPtr("0.2 0.8 0.8"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("clearSpanWidth"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("clearSpanWidth: clearSpanWidth must be double of riseHeight to obtain an half circumference"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("4"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("riseHeight"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("riseHeight: riseHeight must be half of clearSpanWidth to obtain an half circumference"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("2"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("depth"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("depth"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("3"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("topAbutmentHeight"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("topAbutmentHeight:topAbutmentHeight=0 means no topAbutment"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("0.5"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("pierWidth"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("pierWidth:pierWidtht=0 means no pierWidth"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("0.5"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("pierHeight"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("pierHeight: pierHeight=0 means no pierHeight"),
+                            Type: stringPtr("SFFloat"),
                             Value: stringPtr("1"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("archHalf"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("archHalf: can modify also clearSpanWidth, riseHeight, depth, pierWidth, pierHeight, topAbutmentHeight, archHalfExtensionWidth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalf width"),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFFloat"),
                             Name: stringPtr("archHalfExtensionWidth"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("archHalfExtensionWidth: measure in meters, use only if archHalf=true, it is the width of the etension of the abutment of the archHalf. See the reference file ArchModelingDiagrams.pdf to find further information."),
+                            Type: stringPtr("SFFloat"),
+                            Value: stringPtr("0"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("onlyIntrados"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("onlyIntrados: note it is a flat curved surface, can modify also clearSpanWidth, riseHeight, depth at purpose, if needed apply archHalf=true."),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("archFilled"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("archFilled: note it is an half cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose."),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("archHalfFilled"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("archHalfFilled: note it is a quarter cylinder, can modify also clearSpanWidth, riseHeight, depth at purpose, clearSpanWidth measure refers to a full arc, consider clearSpanWidth/2 for the archHalfFilled width."),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         &x3d.Field{
-                            AccessType: stringPtr("initializeOnly"),
-                            Type: stringPtr("SFBool"),
                             Name: stringPtr("lintel"),
+                            AccessType: stringPtr("initializeOnly"),
+                            Appinfo: stringPtr("lintel: no arc is rendered, but a lintel: topAbutmentHeight on pierHeight, total height is pierHeight + topAbutmentHeight, if needed apply archHalf=true."),
+                            Type: stringPtr("SFBool"),
+                            Value: stringPtr("false"),
                         },
                         },
                     },
                     ProtoBody: &x3d.ProtoBody{
                         Children: []x3d.X3DNode{
+//First node determines node type of this prototype
+//IndexedFaceset creates arch
                             &x3d.Transform{
                                     CoreX3DNode: x3d.CoreX3DNode{
                                         DEF: stringPtr("ArchTransform"),
@@ -214,6 +249,19 @@ func main() {
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("Arch"),
                                         },
+//note that convex='false' (meaning concave geometry) is crucial for this IFS of a geometric chord to render properly
+                                        Geometry: &x3d.IndexedFaceSet{
+                                            CoreX3DNode: x3d.CoreX3DNode{
+                                                DEF: stringPtr("ArchIndex"),
+                                            },
+                                            Convex: boolPtr(false),
+                                            Solid: boolPtr(false),
+                                            Coord: &x3d.Coordinate{
+                                                CoreX3DNode: x3d.CoreX3DNode{
+                                                    DEF: stringPtr("ArchChord"),
+                                                },
+                                            },
+                                        },
                                         Appearance: &x3d.Appearance{
                                             Material: &x3d.Material{
                                                 CoreX3DNode: x3d.CoreX3DNode{
@@ -222,32 +270,22 @@ func main() {
                                                 IS: &x3d.IS{
                                                     Connect: []x3d.X3DNode{
                                                         &x3d.Connect{
-                                                            NodeField: stringPtr("diffuseColor"),
-                                                            ProtoField: stringPtr("diffuseColor"),
+                                                            NodeField: stringPtr("emissiveColor"),
+                                                            ProtoField: stringPtr("emissiveColor"),
                                                     },
                                                     &x3d.Connect{
-                                                        NodeField: stringPtr("emissiveColor"),
-                                                        ProtoField: stringPtr("emissiveColor"),
+                                                        NodeField: stringPtr("diffuseColor"),
+                                                        ProtoField: stringPtr("diffuseColor"),
                                                     },
                                                     },
-                                                },
-                                            },
-                                        },
-                                        Geometry: &x3d.IndexedFaceSet{
-                                            CoreX3DNode: x3d.CoreX3DNode{
-                                                DEF: stringPtr("ArchIndex"),
-                                            },
-                                            Solid: boolPtr(false),
-                                            Convex: boolPtr(false),
-                                            Coord: &x3d.Coordinate{
-                                                CoreX3DNode: x3d.CoreX3DNode{
-                                                    DEF: stringPtr("ArchChord"),
                                                 },
                                             },
                                         },
                                     },
                                 },
                             },
+//Subsequent nodes do not render, but still must be a valid X3D subgraph
+//This embedded Script provides the X3D author with additional visibility and control over prototype inputs and outputs
                             &x3d.Script{
                                 CoreX3DNode: x3d.CoreX3DNode{
                                     DEF: stringPtr("ArchPrototypeScript"),
@@ -268,12 +306,12 @@ func main() {
                                         ProtoField: stringPtr("depth"),
                                     },
                                     &x3d.Connect{
-                                        NodeField: stringPtr("topAbutmentHeight"),
-                                        ProtoField: stringPtr("topAbutmentHeight"),
-                                    },
-                                    &x3d.Connect{
                                         NodeField: stringPtr("pierWidth"),
                                         ProtoField: stringPtr("pierWidth"),
+                                    },
+                                    &x3d.Connect{
+                                        NodeField: stringPtr("topAbutmentHeight"),
+                                        ProtoField: stringPtr("topAbutmentHeight"),
                                     },
                                     &x3d.Connect{
                                         NodeField: stringPtr("pierHeight"),
@@ -305,110 +343,129 @@ func main() {
                                     },
                                     },
                                 },
+//INPUT PARAMETERS
+//General parameters
+//Parameters to create to create shapes related to arch: put true to apply
+//OUTPUT PARAMETERS
                                 Field: []x3d.X3DNode{
                                     &x3d.Field{
-                                        AccessType: stringPtr("initializeOnly"),
-                                        Type: stringPtr("SFFloat"),
                                         Name: stringPtr("clearSpanWidth"),
+                                        AccessType: stringPtr("initializeOnly"),
+                                        Appinfo: stringPtr("user or default input for clearSpanWidth parameter"),
+                                        Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("riseHeight"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for riseHeight parameter"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("depth"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for depth parameter"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("topAbutmentHeight"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for topAbutmentHeight parameter"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("pierWidth"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for pierWidth parameter"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFFloat"),
                                     Name: stringPtr("pierHeight"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
-                                    Name: stringPtr("archHalf"),
-                                },
-                                &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for pierHeight parameter"),
                                     Type: stringPtr("SFFloat"),
+                                },
+                                &x3d.Field{
+                                    Name: stringPtr("archHalf"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for archHalf parameter"),
+                                    Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("archHalfExtensionWidth"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for archHalfExtensionWidth parameter"),
+                                    Type: stringPtr("SFFloat"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("onlyIntrados"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for onlyIntrados parameter"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("archFilled"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for archFilled parameter"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("initializeOnly"),
-                                    Type: stringPtr("SFBool"),
                                     Name: stringPtr("archHalfFilled"),
-                                },
-                                &x3d.Field{
                                     AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for archHalfFilled parameter"),
                                     Type: stringPtr("SFBool"),
+                                },
+                                &x3d.Field{
                                     Name: stringPtr("lintel"),
+                                    AccessType: stringPtr("initializeOnly"),
+                                    Appinfo: stringPtr("user or default input for lintel parameter"),
+                                    Type: stringPtr("SFBool"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("SFVec3f"),
                                     Name: stringPtr("computedScale"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("computedScale: modify scale field - NOTE it is not used to modify the whole arch, but to modify clearSpanWidth, riseHeight, depth. It does not affect topAbutmentHeight, pierWidth, pierHeight, archHalfExtensionWidth"),
+                                    Type: stringPtr("SFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("MFVec3f"),
                                     Name: stringPtr("pointOut"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("send computed points to the Coordinate node"),
+                                    Type: stringPtr("MFVec3f"),
                                 },
                                 &x3d.Field{
-                                    AccessType: stringPtr("outputOnly"),
-                                    Type: stringPtr("MFInt32"),
                                     Name: stringPtr("indexOut"),
+                                    AccessType: stringPtr("outputOnly"),
+                                    Appinfo: stringPtr("send computed indices to the IndexedFaceSet node"),
+                                    Type: stringPtr("MFInt32"),
                                 },
                                 },
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("ArchPrototypeScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("computedScale"),
+                                FromNode: stringPtr("ArchPrototypeScript"),
+                                ToField: stringPtr("scale"),
                                 ToNode: stringPtr("ArchTransform"),
-                                ToField: stringPtr("set_scale"),
                             },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("ArchPrototypeScript"),
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("pointOut"),
-                                ToNode: stringPtr("ArchChord"),
-                                ToField: stringPtr("set_point"),
-                            },
-                            &x3d.ROUTE{
                                 FromNode: stringPtr("ArchPrototypeScript"),
+                                ToField: stringPtr("point"),
+                                ToNode: stringPtr("ArchChord"),
+                            },
+                            &x3d.X3DRoute{
                                 FromField: stringPtr("indexOut"),
-                                ToNode: stringPtr("ArchIndex"),
+                                FromNode: stringPtr("ArchPrototypeScript"),
                                 ToField: stringPtr("set_coordIndex"),
+                                ToNode: stringPtr("ArchIndex"),
                             },
                         },
                     },
                 },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("ArchPrototype"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("ArchInstance"),
                     },
-                    Name: stringPtr("ArchPrototype"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("diffuseColor"),
@@ -444,6 +501,7 @@ func main() {
                     },
                     },
                 },
+//Add any ROUTEs here that connect ProtoInstance to/from prior nodes in Scene (and outside of ProtoDeclare)
                 &x3d.Inline{
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("CoordinateAxes"),
@@ -468,13 +526,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/ArchPrototype.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -485,7 +543,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

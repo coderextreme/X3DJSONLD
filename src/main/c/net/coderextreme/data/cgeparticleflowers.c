@@ -230,7 +230,9 @@ field45.accessType = "inputOutput";
 field45.value = "0";
 ComposedShader34.field[10] = field45;
 
-//<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>
+//<field name='cube' type='SFNode' accessType=\"initializeOnly\">
+//<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>
+//</field>
 ShaderPart ShaderPart46 = createNode("ShaderPart");
 ShaderPart46.url = new MFString(new java.lang.String["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"]);
 ShaderPart46.type = "VERTEX";

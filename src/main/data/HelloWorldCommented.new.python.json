@@ -1,0 +1,167 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"HelloWorldCommented.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Numerous comments added to simple X3D scene example for testing JSON encoding alternatives.",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"19 December 2015",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"20 October 2019",
+        "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Don Brutzman",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldCommented.json is most current, HelloWorldCommentedOriginalEncoding.json and HelloWorldCommentedAlternativeEncoding.json were experimental.",
+        "@name":"info"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldCommented.json",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldCommentedOriginalEncoding.json",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"HelloWorldCommentedAlternativeEncoding.json",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://x3dgraphics.com/examples/X3dForAdvancedModeling/HelloWorldScenes/HelloWorldCommented.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://www.web3d.org/x3d/content/examples/license.html",
+        "@name":"license"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+    }    "Scene":
+    {
+        "WorldInfo":
+        {
+      {
+        "@title":"Hello world!"
+      }
+    }
+        "Group":
+        {
+            "Viewpoint":
+            {
+      {
+        "@DEF":"ViewUpClose",
+        "@centerOfRotation":"0 -1 0",
+        "@description":"Hello world!",
+        "@position":"0 -1 7"
+      }
+    },
+            "Transform":
+            {
+      {
+        "@rotation":"0 1 0 3"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@DEF":"MaterialLightBlue",
+        "@diffuseColor":"0.1 0.5 1"
+      }
+    },
+                        "ImageTexture":
+                        {
+      {
+        "@DEF":"ImageCloudlessEarth",
+        "@url":""earth-topo.png" "earth-topo.jpg" "earth-topo-small.gif" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg" "https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif""
+      }
+    },
+                    }                    "Sphere":
+                    {
+    },
+                }            }            "Transform":
+            {
+      {
+        "@translation":"0 -2 0"
+      }
+                "Shape":
+                {
+                    "Appearance":
+                    {
+                        "Material":
+                        {
+      {
+        "@USE":"MaterialLightBlue"
+      }
+    },
+                    }                    "Text":
+                    {
+      {
+        "@DEF":"TextMessage",
+        "@string":""Hello" "world!""
+      }
+                        "FontStyle":
+                        {
+      {
+        "@justify":""MIDDLE" "MIDDLE""
+      }
+    },
+                    }                }            }        }    }}

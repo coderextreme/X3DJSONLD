@@ -22,15 +22,11 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(profile='Full',version='4.1',
   head=head(
     children=[
     component(level=1,name='Scripting'),
@@ -63,13 +59,11 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*',name='identifier'),
     meta(content='PSPad, http://www.pspad.com/',name='generator'),
     meta(content='license.html',name='license'),
-    Comment(' Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L '),]),
+    Comment(' Additional authoring resources for meta-tags: http://www.dublincore.org/documents/dcmi-terms http://www.dublincore.org/documents/dces https://www.w3.org/TR/html4/struct/global.html#h-7.4.4 http://vancouver-webpages.com/META http://vancouver-webpages.com/META/about-mk-metas2.html Additional authoring resources for language codes: ftp://ftp.isi.edu/in-notes/bcp/bcp47.txt http://www.loc.gov/standards/iso639-2/langhome.html http://www.iana.org/numbers.html#L ')
+    ]),
   # "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
-
   # It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
-
   # open for their "discussion about the teapot"
-
   Scene=Scene(
     children=[
     Comment(' basic nodes, which might be present in any scene '),
@@ -80,10 +74,8 @@ newModel=X3D(profile='Full',version='4.0',
     Comment(' LayerSet with two layers, navigation happens in layer 1 '),
     LayerSet(activeLayer=1,order=[1,2],
       # the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
-
       Layer(pickable=True,objectType=["ALL"],
         # this group contains the red/green/blue 3D crosshair
-
         Group(
           children=[
           Comment(' Arrow X '),
@@ -126,7 +118,6 @@ newModel=X3D(profile='Full',version='4.0',
               appearance=Appearance(
                 material=Material(USE='BLUE')))])]),
         # the model that is being reviewed by the users of this scene
-
         Transform(DEF='FlowerTransform',
           children=[
           Comment(' <Inline DEF="Flower" url=\'"bumpyfreewrl.x3d"\' /> '),
@@ -136,7 +127,6 @@ newModel=X3D(profile='Full',version='4.0',
             children=[
             Shape(
               # <Sphere radius='40'></Sphere>
-
               geometry=IndexedFaceSet(convex=False,DEF='Orbit',
                 coord=Coordinate(DEF='OrbitCoordinates')),
               appearance=Appearance(
@@ -166,11 +156,9 @@ newModel=X3D(profile='Full',version='4.0',
                   ShaderPart(url=["../shaders/freewrl_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_flowers_chromatic.vs"]),
                   ShaderPart(url=["../shaders/freewrl.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl_bubbles.fs"],type='FRAGMENT'),
                   # TO CONVERT TO A SPHERE
-
                   # <ShaderPart url='"../shaders/freewrl.vs"'></ShaderPart>
-
                   # <ShaderPart url='"../shaders/freewrl_bubbles.fs"' type='FRAGMENT'></ShaderPart>
-)]))])]),
+                  )]))])]),
         Script(DEF='OrbitScript',
           field=[
           field(accessType='inputOutput',name='coordinates',type='MFVec3f'),
@@ -226,7 +214,6 @@ function initialize() {
         ROUTE(fromField='coordIndexes',fromNode='OrbitScript',toField='set_coordIndex',toNode='Orbit'),
         ROUTE(fromField='coordinates',fromNode='OrbitScript',toField='set_point',toNode='OrbitCoordinates'),
         # DIS multiuser facilities
-
         DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["../data/Gramps8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Gramps8Final.x3d"]),
@@ -239,20 +226,14 @@ function initialize() {
         ROUTE(fromField='addedEntities',fromNode='EntityManager',toField='addChildren',toNode='AvatarHolder'),
         ROUTE(fromField='removedEntities',fromNode='EntityManager',toField='removeChildren',toNode='AvatarHolder')]),
       # the second layer contains the sliders that are moved with the user's display
-
       # like a HUD (heads up display)
-
       LayoutLayer(pickable=True,objectType=["ALL"],
         # positioning the LayoutLayer
-
         layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.2,0.19],offsetUnits=["WORLD","WORLD"],scaleMode=["NONE","NONE"],size=[0.4,0.6],sizeUnits=["WORLD","WORLD"]),
         # clipping the LayoutLayer
-
         viewport=Viewport(clipBoundary=[0,1,0,1]),
         # the content (children) of the LayoutLayer
-
         # first, the slider for scaling the model
-
         Transform(translation=(0,0,-3),
           children=[
           Shape(
@@ -421,7 +402,6 @@ const newTranslation = function(Value) {
             children=[
             ComposedShader(USE='freewrlShader')])])])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

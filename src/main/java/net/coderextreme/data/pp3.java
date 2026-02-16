@@ -59,18 +59,18 @@ public class pp3 implements X3DRoots {
 ProtoInstance ProtoInstance0 = null;
 ProtoInstance ProtoInstance1 = null;
 ProtoInstance ProtoInstance2 = null;
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("pp3.x3d"))
-        .addMeta(new meta().setName("creator").setContent("John Carlson"))
-        .addMeta(new meta().setName("translator").setContent("John Carlson"))
-        .addMeta(new meta().setName("created").setContent("5 May 2015"))
-        .addMeta(new meta().setName("modified").setContent("23 Dec 2022"))
-        .addMeta(new meta().setName("description").setContent("A process pipeline between three spheres (try typing on spheres and blue"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/x3d/pp3.x3d"))
-        .addMeta(new meta().setName("generator").setContent("manual")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("pp3.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("translator")).setContent(new SFString("John Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("5 May 2015")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("23 Dec 2022")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("A process pipeline between three spheres (try typing on spheres and blue")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/x3d/pp3.x3d")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("manual"))))
       .setScene(new Scene()
-        .addChild(new ProtoDeclare().setName("Process")
+        .addChild(new ProtoDeclare().setName(new SFString("Process"))
           .setProtoBody(new ProtoBody()
             .addChild(new Group()
               .addComments(new CommentsBlock("left"))
@@ -89,10 +89,10 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new Transform().setTranslation(new float[] {2f ,0f ,0f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setDEF("MaterialLightBlue").setDiffuseColor(new float[] {1f ,1f ,1f })))
-                    .setGeometry(new Text().setDEF("RightString").setString(new MFString4().getArray()))))
-                .addChild(new StringSensor().setDEF("RightSensor").setEnabled(false))
-                .addChild(new TouchSensor().setDescription("touch to activate").setDEF("RightTouch")))
+                      .setMaterial(new Material().setDEF(new SFString("MaterialLightBlue")).setDiffuseColor(new float[] {1f ,1f ,1f })))
+                    .setGeometry(new Text().setDEF(new SFString("RightString")).setString(new MFString4().getArray()))))
+                .addChild(new StringSensor().setDEF(new SFString("RightSensor")).setEnabled(false))
+                .addChild(new TouchSensor().setDescription(new SFString("touch to activate")).setDEF(new SFString("RightTouch"))))
               .addComments(new CommentsBlock("up"))
               .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
@@ -102,10 +102,10 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new Transform().setTranslation(new float[] {-0.5f ,2f ,0f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setUSE("MaterialLightBlue")))
-                    .setGeometry(new Text().setDEF("UpString").setString(new MFString7().getArray()))))
-                .addChild(new StringSensor().setDEF("UpSensor").setEnabled(false))
-                .addChild(new TouchSensor().setDescription("touch to activate").setDEF("UpTouch")))
+                      .setMaterial(new Material().setUSE(new SFString("MaterialLightBlue"))))
+                    .setGeometry(new Text().setDEF(new SFString("UpString")).setString(new MFString7().getArray()))))
+                .addChild(new StringSensor().setDEF(new SFString("UpSensor")).setEnabled(false))
+                .addChild(new TouchSensor().setDescription(new SFString("touch to activate")).setDEF(new SFString("UpTouch"))))
               .addComments(new CommentsBlock("down"))
               .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f })
                 .addChild(new Shape()
@@ -122,13 +122,13 @@ ProtoInstance ProtoInstance2 = null;
                 .addChild(new Transform().setScale(new float[] {0.5f ,0.5f ,0.5f }).setTranslation(new float[] {-0.5f ,0f ,1f })
                   .addChild(new Shape()
                     .setAppearance(new Appearance()
-                      .setMaterial(new Material().setUSE("MaterialLightBlue")))
-                    .setGeometry(new Text().setDEF("CenterString"))))
-                .addChild(new StringSensor().setDEF("CenterSensor").setEnabled(false))
-                .addChild(new TouchSensor().setDescription("touch to activate").setDEF("CenterTouch"))))
-            .addChild(new Script().setDEF("RightSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_rightstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("rightlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+                      .setMaterial(new Material().setUSE(new SFString("MaterialLightBlue"))))
+                    .setGeometry(new Text().setDEF(new SFString("CenterString")))))
+                .addChild(new StringSensor().setDEF(new SFString("CenterSensor")).setEnabled(false))
+                .addChild(new TouchSensor().setDescription(new SFString("touch to activate")).setDEF(new SFString("CenterTouch")))))
+            .addChild(new Script().setDEF(new SFString("RightSingleToMultiString"))
+              .addField(new field().setType("SFString").setName(new SFString("set_rightstring")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("MFString").setName(new SFString("rightlines")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -138,9 +138,9 @@ ProtoInstance ProtoInstance2 = null;
 "function set_rightstring(rightstr) {\n"+
 "	rightlines = new MFString(rightstr);\n"+
 "}"))
-            .addChild(new Script().setDEF("UpSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_upstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("uplines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+            .addChild(new Script().setDEF(new SFString("UpSingleToMultiString"))
+              .addField(new field().setType("SFString").setName(new SFString("set_upstring")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("MFString").setName(new SFString("uplines")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -150,9 +150,9 @@ ProtoInstance ProtoInstance2 = null;
 "function set_upstring(upstr) {\n"+
 "	uplines = new MFString(upstr);\n"+
 "}"))
-            .addChild(new Script().setDEF("CenterSingleToMultiString")
-              .addField(new field().setType("SFString").setName("set_centerstring").setAccessType(field.ACCESSTYPE_INPUTONLY))
-              .addField(new field().setType("MFString").setName("centerlines").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+            .addChild(new Script().setDEF(new SFString("CenterSingleToMultiString"))
+              .addField(new field().setType("SFString").setName(new SFString("set_centerstring")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+              .addField(new field().setType("MFString").setName(new SFString("centerlines")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
               .setSourceCode("ecmascript:\n"+
 "\n"+
 "function initialize() {\n"+
@@ -162,23 +162,23 @@ ProtoInstance ProtoInstance2 = null;
 "function set_centerstring(centerstr) {\n"+
 "	centerlines = new MFString(centerstr);\n"+
 "}"))
-            .addChild(new ROUTE().setFromField("enteredText").setFromNode("CenterSensor").setToField("set_centerstring").setToNode("CenterSingleToMultiString"))
-            .addChild(new ROUTE().setFromField("centerlines").setFromNode("CenterSingleToMultiString").setToField("set_string").setToNode("CenterString"))
-            .addChild(new ROUTE().setFromField("isOver").setFromNode("CenterTouch").setToField("set_enabled").setToNode("CenterSensor"))
-            .addChild(new ROUTE().setFromField("enteredText").setFromNode("RightSensor").setToField("set_rightstring").setToNode("RightSingleToMultiString"))
-            .addChild(new ROUTE().setFromField("rightlines").setFromNode("RightSingleToMultiString").setToField("set_string").setToNode("RightString"))
-            .addChild(new ROUTE().setFromField("isOver").setFromNode("RightTouch").setToField("set_enabled").setToNode("RightSensor"))
-            .addChild(new ROUTE().setFromField("enteredText").setFromNode("UpSensor").setToField("set_upstring").setToNode("UpSingleToMultiString"))
-            .addChild(new ROUTE().setFromField("uplines").setFromNode("UpSingleToMultiString").setToField("set_string").setToNode("UpString"))
-            .addChild(new ROUTE().setFromField("isOver").setFromNode("UpTouch").setToField("set_enabled").setToNode("UpSensor"))))
+            .addChild(new ROUTE().setFromField(new SFString("enteredText")).setFromNode(new SFString("CenterSensor")).setToField(new SFString("set_centerstring")).setToNode(new SFString("CenterSingleToMultiString")))
+            .addChild(new ROUTE().setFromField(new SFString("centerlines")).setFromNode(new SFString("CenterSingleToMultiString")).setToField(new SFString("set_string")).setToNode(new SFString("CenterString")))
+            .addChild(new ROUTE().setFromField(new SFString("isOver")).setFromNode(new SFString("CenterTouch")).setToField(new SFString("set_enabled")).setToNode(new SFString("CenterSensor")))
+            .addChild(new ROUTE().setFromField(new SFString("enteredText")).setFromNode(new SFString("RightSensor")).setToField(new SFString("set_rightstring")).setToNode(new SFString("RightSingleToMultiString")))
+            .addChild(new ROUTE().setFromField(new SFString("rightlines")).setFromNode(new SFString("RightSingleToMultiString")).setToField(new SFString("set_string")).setToNode(new SFString("RightString")))
+            .addChild(new ROUTE().setFromField(new SFString("isOver")).setFromNode(new SFString("RightTouch")).setToField(new SFString("set_enabled")).setToNode(new SFString("RightSensor")))
+            .addChild(new ROUTE().setFromField(new SFString("enteredText")).setFromNode(new SFString("UpSensor")).setToField(new SFString("set_upstring")).setToNode(new SFString("UpSingleToMultiString")))
+            .addChild(new ROUTE().setFromField(new SFString("uplines")).setFromNode(new SFString("UpSingleToMultiString")).setToField(new SFString("set_string")).setToNode(new SFString("UpString")))
+            .addChild(new ROUTE().setFromField(new SFString("isOver")).setFromNode(new SFString("UpTouch")).setToField(new SFString("set_enabled")).setToNode(new SFString("UpSensor")))))
         .addChild(new NavigationInfo())
-        .addChild(new Viewpoint().setDescription("Process pipes").setOrientation(new float[] {1f ,0f ,0f ,-0.4f }).setPosition(new float[] {0f ,5f ,12f }))
+        .addChild(new Viewpoint().setDescription(new SFString("Process pipes")).setOrientation(new float[] {1f ,0f ,0f ,-0.4f }).setPosition(new float[] {0f ,5f ,12f }))
         .addChild(new Transform().setTranslation(new float[] {0f ,-2.5f ,0f })
-          .addChild(ProtoInstance0 = new ProtoInstance().setName("Process")))
+          .addChild(ProtoInstance0 = new ProtoInstance().setName(new SFString("Process"))))
         .addChild(new Transform()
-          .addChild(ProtoInstance1 = new ProtoInstance().setName("Process")))
+          .addChild(ProtoInstance1 = new ProtoInstance().setName(new SFString("Process"))))
         .addChild(new Transform().setTranslation(new float[] {0f ,2.5f ,0f })
-          .addChild(ProtoInstance2 = new ProtoInstance().setName("Process"))));
+          .addChild(ProtoInstance2 = new ProtoInstance().setName(new SFString("Process")))));
     return X3D0;
     }
 private class MFVec2f0 {

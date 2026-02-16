@@ -275,7 +275,15 @@ var X3D0 =  new X3D({
                             new HAnimSite({
                               name : new SFString("pelvis"),
                               DEF : new SFString("pelvis_Sites"),
-                              /*(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)*/})])}),
+                              /*(r_iliocristale -0.1525 1.0628 0.0035)*/
+                              /*(r_trochanterion -0.1689 0.8419 0.0352)*/
+                              /*(l_iliocristale 0.1612 1.0537 0.0008)*/
+                              /*(l_trochanterion 0.1677 0.8336 0.0303)*/
+                              /*(r_asis -0.0887 1.0021 0.1112)*/
+                              /*(l_asis 0.0774 1.0190 -0.1151)*/
+                              /*(r_psis -0.0716 1.0190 -0.1138)*/
+                              /*(l_psis 0.0774 1.0190 -0.1151)*/
+                              /*(crotch 0.0034 0.8266 0.0257)*/})])}),
 
                         new HAnimJoint({
                           name : new SFString("l_hip"),
@@ -313,7 +321,10 @@ var X3D0 =  new X3D({
                                 new HAnimSite({
                                   name : new SFString("l_thigh"),
                                   DEF : new SFString("l_thigh_Sites"),
-                                  /*(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)*/})])}),
+                                  /*(l_knee_crease 0.0993 0.4881 -0.0309)*/
+                                  /*(l_femoral_medial_epicondyles 0.0398 0.4946 0.0303)*/
+                                  /*(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)*/
+                                  /*(l_suprapatella x y z)*/})])}),
 
                             new HAnimJoint({
                               name : new SFString("l_knee"),
@@ -351,7 +362,9 @@ var X3D0 =  new X3D({
                                     new HAnimSite({
                                       name : new SFString("l_calf"),
                                       DEF : new SFString("l_calf_Sites"),
-                                      /*(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)*/})])}),
+                                      /*(l_tibiale x y z)*/
+                                      /*(l_medial_malleolus 0.0890 0.0716 -0.0881)*/
+                                      /*(l_lateral_malleolus 0.1308 0.0597 -0.1032)*/})])}),
 
                                 new HAnimJoint({
                                   name : new SFString("l_talocrural"),
@@ -389,7 +402,8 @@ var X3D0 =  new X3D({
                                         new HAnimSite({
                                           name : new SFString("l_talus"),
                                           DEF : new SFString("l_talus_Sites"),
-                                          /*(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)*/})])}),
+                                          /*(l_sphyrion 0.0890 0.0575 -0.0943)*/
+                                          /*(l_calcaneous_posterior 0.0974 0.0259 -0.1171)*/})])}),
 
                                     new HAnimJoint({
                                       name : new SFString("l_talocalcaneonavicular"),
@@ -1377,7 +1391,10 @@ var X3D0 =  new X3D({
                                 new HAnimSite({
                                   name : new SFString("r_thigh"),
                                   DEF : new SFString("r_thigh_Sites"),
-                                  /*(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)*/})])}),
+                                  /*(r_knee_crease -0.0825 0.4932 -0.0326)*/
+                                  /*(r_femoral_lateral_epicn -0.1421 0.4992 0.0310)*/
+                                  /*(r_femoral_medial_epicn -0.0221 0.5014 0.0289)*/
+                                  /*(r_suprapatella x y z)*/})])}),
 
                             new HAnimJoint({
                               name : new SFString("r_knee"),
@@ -1415,7 +1432,9 @@ var X3D0 =  new X3D({
                                     new HAnimSite({
                                       name : new SFString("r_calf"),
                                       DEF : new SFString("r_calf_Sites"),
-                                      /*(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)*/})])}),
+                                      /*(r_tibiale x y z)*/
+                                      /*(r_medial_malleolus -0.0591 0.0760 -0.0928)*/
+                                      /*(r_lateral_malleolus -0.1006 0.0658 -0.1075)*/})])}),
 
                                 new HAnimJoint({
                                   name : new SFString("r_talocrural"),
@@ -1453,7 +1472,8 @@ var X3D0 =  new X3D({
                                         new HAnimSite({
                                           name : new SFString("r_talus"),
                                           DEF : new SFString("r_talus_Sites"),
-                                          /*(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)*/})])}),
+                                          /*(r_sphyrion -0.0603 0.0610 -0.1002)*/
+                                          /*(r_calcaneous_posterior -0.0692 0.0297 -0.1221)*/})])}),
 
                                     new HAnimJoint({
                                       name : new SFString("r_talocalcaneonavicular"),
@@ -1643,7 +1663,8 @@ var X3D0 =  new X3D({
                                                             new HAnimSite({
                                                               name : new SFString("r_tarsal_distal_phalanx_1"),
                                                               DEF : new SFString("r_tarsal_distal_phalanx_1_Sites"),
-                                                              /*(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)*/})])})])})])})])})])}),
+                                                              /*(r_metatarsal_phalanx_1 x y z)*/
+                                                              /*(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)*/})])})])})])})])})])}),
 
                                         new HAnimJoint({
                                           name : new SFString("r_cuneonavicular_2"),
@@ -2441,7 +2462,9 @@ var X3D0 =  new X3D({
                                 new HAnimSite({
                                   name : new SFString("l5"),
                                   DEF : new SFString("l5_Sites"),
-                                  /*(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)*/})])}),
+                                  /*(spine_2_lower_back x y z)*/
+                                  /*(waist_preferred_anterior x y z)*/
+                                  /*(waist_preferred_posterior 0.2900 1.0915 -0.1091)*/})])}),
 
                             new HAnimJoint({
                               name : new SFString("vl4"),
@@ -2555,7 +2578,9 @@ var X3D0 =  new X3D({
                                             new HAnimSite({
                                               name : new SFString("l2"),
                                               DEF : new SFString("l2_Sites"),
-                                              /*(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)*/})])}),
+                                              /*(l_rib_10 0.0871 1.1925 0.0992)*/
+                                              /*(r_rib_10 -0.0711 1.1941 0.1016)*/
+                                              /*(rib_10_midspine 0.0049 1.1908 -0.1113)*/})])}),
 
                                         new HAnimJoint({
                                           name : new SFString("vl1"),
@@ -2707,7 +2732,8 @@ var X3D0 =  new X3D({
                                                             new HAnimSite({
                                                               name : new SFString("t10"),
                                                               DEF : new SFString("t10_Sites"),
-                                                              /*(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)*/})])}),
+                                                              /*(substernale 0.0085 1.2995 0.1147)*/
+                                                              /*(mesosternale x y z)*/})])}),
 
                                                         new HAnimJoint({
                                                           name : new SFString("vt9"),
@@ -2745,7 +2771,11 @@ var X3D0 =  new X3D({
                                                                 new HAnimSite({
                                                                   name : new SFString("t9"),
                                                                   DEF : new SFString("t9_Sites"),
-                                                                  /*(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)*/})])}),
+                                                                  /*(l_thelion 0.0918 1.3382 0.1192)*/
+                                                                  /*(r_thelion -0.0736 1.3385 0.1217)*/
+                                                                  /*(rear_center_midsagittal_plane x y z)*/
+                                                                  /*(l_chest_midsagittal_plane x y z)*/
+                                                                  /*(r_chest_midsagittal_plane x y z)*/})])}),
 
                                                             new HAnimJoint({
                                                               name : new SFString("vt8"),
@@ -3049,7 +3079,8 @@ var X3D0 =  new X3D({
                                                                                                 new HAnimSite({
                                                                                                   name : new SFString("t1"),
                                                                                                   DEF : new SFString("t1_Sites"),
-                                                                                                  /*(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)*/})])}),
+                                                                                                  /*(suprasternale 0.0084 1.4714 0.0551)*/
+                                                                                                  /*(cervicale 0.0064 1.520 -0.0815)*/})])}),
 
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("vc7"),
@@ -3087,7 +3118,8 @@ var X3D0 =  new X3D({
                                                                                                     new HAnimSite({
                                                                                                       name : new SFString("c7"),
                                                                                                       DEF : new SFString("c7_Sites"),
-                                                                                                      /*(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)*/})])}),
+                                                                                                      /*(l_neck_base 0.0646 1.5141 -0.0380)*/
+                                                                                                      /*(r_neck_base -0.0419 1.5149 -0.0220)*/})])}),
 
                                                                                                 new HAnimJoint({
                                                                                                   name : new SFString("vc6"),
@@ -3353,7 +3385,17 @@ var X3D0 =  new X3D({
                                                                                                                                 new HAnimSite({
                                                                                                                                   name : new SFString("skull"),
                                                                                                                                   DEF : new SFString("skull_Sites"),
-                                                                                                                                  /*(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)*/})])}),
+                                                                                                                                  /*(skull_vertex 0.0050 1.7504 0.0055)*/
+                                                                                                                                  /*(sellion 0.0058 1.6316 0.0852)*/
+                                                                                                                                  /*(r_infraorbitale -0.0237 1.6171 0.0752)*/
+                                                                                                                                  /*(l_infraorbitale 0.0341 1.6171 0.0752)*/
+                                                                                                                                  /*(r_tragion -0.0646 1.6347 0.0302)*/
+                                                                                                                                  /*(l_tragion 0.0739 1.6348 0.0282)*/
+                                                                                                                                  /*(nuchale 0.0039 1.5972 -0.0796)*/
+                                                                                                                                  /*(opisthocranion x y z)*/
+                                                                                                                                  /*(glabella x y z)*/
+                                                                                                                                  /*(l_ectocanthus x y z)*/
+                                                                                                                                  /*(r_ectocanthus x y z)*/})])}),
 
                                                                                                                             new HAnimJoint({
                                                                                                                               name : new SFString("l_eyelid_joint"),
@@ -3619,7 +3661,10 @@ var X3D0 =  new X3D({
                                                                                                                                     new HAnimSite({
                                                                                                                                       name : new SFString("jaw"),
                                                                                                                                       DEF : new SFString("jaw_Sites"),
-                                                                                                                                      /*(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)*/})])})])})])})])})])})])})])})])})])})])}),
+                                                                                                                                      /*(r_gonion -0.0520 1.5529 0.0347)*/
+                                                                                                                                      /*(l_gonion 0.0631 1.5530 0.0330)*/
+                                                                                                                                      /*(supramenton 0.0061 1.5410 0.0805)*/
+                                                                                                                                      /*(menton x y z)*/})])})])})])})])})])})])})])})])})])})])}),
 
                                                                                             new HAnimJoint({
                                                                                               name : new SFString("l_sternoclavicular"),
@@ -3695,7 +3740,10 @@ var X3D0 =  new X3D({
                                                                                                         new HAnimSite({
                                                                                                           name : new SFString("l_scapula"),
                                                                                                           DEF : new SFString("l_scapula_Sites"),
-                                                                                                          /*(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)*/})])}),
+                                                                                                          /*(l_acromion 0.2032 1.4760 -0.0490)*/
+                                                                                                          /*(l_axilla_proximal 0.1777 1.4065 -0.0075)*/
+                                                                                                          /*(l_axilla_distal 0.1706 1.4072 -0.0875)*/
+                                                                                                          /*(l_axilla_posterior_folds x y z)*/})])}),
 
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("l_shoulder"),
@@ -3733,7 +3781,10 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimSite({
                                                                                                               name : new SFString("l_upperarm"),
                                                                                                               DEF : new SFString("l_upperarm_Sites"),
-                                                                                                              /*(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)*/})])}),
+                                                                                                              /*(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100)*/
+                                                                                                              /*(l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113)*/
+                                                                                                              /*(l_radiale 0.2182 1.1212 -0.1167)*/
+                                                                                                              /*(l_bideltoid x y z)*/})])}),
 
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("l_elbow"),
@@ -3771,7 +3822,8 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("l_forearm"),
                                                                                                                   DEF : new SFString("l_forearm_Sites"),
-                                                                                                                  /*(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)*/})])}),
+                                                                                                                  /*(l_radial_styloid 0.1901 0.8645 -0.0415)*/
+                                                                                                                  /*(l_olecranon -0.1962 1.1375 -0.1123)*/})])}),
 
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("l_radiocarpal"),
@@ -4341,7 +4393,8 @@ var X3D0 =  new X3D({
                                                                                                                                         new HAnimSite({
                                                                                                                                           name : new SFString("l_carpal_distal_phalanx_3"),
                                                                                                                                           DEF : new SFString("l_carpal_distal_phalanx_3_Sites"),
-                                                                                                                                          /*(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)*/})])})])})])})])})])})])}),
+                                                                                                                                          /*(l_dactylion 0.2056 0.6743 -0.0482)*/
+                                                                                                                                          /*(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)*/})])})])})])})])})])})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("l_midcarpal_4_5"),
@@ -4759,7 +4812,10 @@ var X3D0 =  new X3D({
                                                                                                         new HAnimSite({
                                                                                                           name : new SFString("r_scapula"),
                                                                                                           DEF : new SFString("r_scapula_Sites"),
-                                                                                                          /*(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)*/})])}),
+                                                                                                          /*(r_acromion -0.1905 1.4791 -0.0431)*/
+                                                                                                          /*(r_axilla_proximal -0.1626 1.4072 -0.0031)*/
+                                                                                                          /*(r_axilla_distal -0.1603 1.4098 -0.0826)*/
+                                                                                                          /*(r_axilla_posterior_folds x y z)*/})])}),
 
                                                                                                     new HAnimJoint({
                                                                                                       name : new SFString("r_shoulder"),
@@ -4797,7 +4853,10 @@ var X3D0 =  new X3D({
                                                                                                             new HAnimSite({
                                                                                                               name : new SFString("r_upperarm"),
                                                                                                               DEF : new SFString("r_upperarm_Sites"),
-                                                                                                              /*(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)*/})])}),
+                                                                                                              /*(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033)*/
+                                                                                                              /*(r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062)*/
+                                                                                                              /*(r_radiale -0.2130 1.1305 -0.1091)*/
+                                                                                                              /*(r_bideltoid x y z)*/})])}),
 
                                                                                                         new HAnimJoint({
                                                                                                           name : new SFString("r_elbow"),
@@ -4835,7 +4894,8 @@ var X3D0 =  new X3D({
                                                                                                                 new HAnimSite({
                                                                                                                   name : new SFString("r_forearm"),
                                                                                                                   DEF : new SFString("r_forearm_Sites"),
-                                                                                                                  /*(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)*/})])}),
+                                                                                                                  /*(r_radial_styloid -0.1884 0.8676 -0.0360)*/
+                                                                                                                  /*(r_olecranon -0.1907 1.1405 -0.1065)*/})])}),
 
                                                                                                             new HAnimJoint({
                                                                                                               name : new SFString("r_radiocarpal"),
@@ -5405,7 +5465,8 @@ var X3D0 =  new X3D({
                                                                                                                                         new HAnimSite({
                                                                                                                                           name : new SFString("r_carpal_distal_phalanx_3"),
                                                                                                                                           DEF : new SFString("r_carpal_distal_phalanx_3_Sites"),
-                                                                                                                                          /*(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423*/})])})])})])})])})])})])}),
+                                                                                                                                          /*(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)*/
+                                                                                                                                          /*(r_dactylion -0.1941 0.6772 -0.0423*/})])})])})])})])})])})])}),
 
                                                                                                                 new HAnimJoint({
                                                                                                                   name : new SFString("r_midcarpal_4_5"),

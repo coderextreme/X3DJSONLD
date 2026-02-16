@@ -44,7 +44,7 @@ int main(int argc, char ** argv)
   Quarter::clean();
 SoSceneManager* SoSceneManager0 = new SoSceneManager();
 SoSceneManager0->setProfile(QString("Full"));
-SoSceneManager0->setVersion(QString("4.0"));
+SoSceneManager0->setVersion(QString("4.1"));
 Sohead* Sohead1 = new Sohead();
 //<component name='Shape' level='4'></component>
 //<component name='DIS' level='2'></component>
@@ -120,7 +120,9 @@ Sohead1->addMeta(*Someta15);
 
 SoSceneManager0->setHead(*Sohead1);
 
-//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"
+//\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,
+//It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
+//open for their \"discussion about the teapot\"
 SoNode* SoNode16 = new SoNode();
 //LayerSet with two layers, navigation happens in layer 1
 SoLayerSet* SoLayerSet17 = new SoLayerSet();
@@ -434,7 +436,9 @@ SoShaderPart83->setUrl(new QString[]{QString("../shaders/x_ite.fs"), QString("ht
 SoShaderPart83->setType(QString("FRAGMENT"));
 SoComposedShader69->setParts(*SoShaderPart83);
 
-//TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
+//TO CONVERT TO A SPHERE
+//<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>
+//<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>
 SoVRMLAppearance60->addChild(*SoComposedShader69);
 
 SoShape57->addChild(*SoVRMLAppearance60);

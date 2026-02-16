@@ -38,6 +38,7 @@ var Coordinate = require('./x3d.mjs');
 var MFVec3f = require('./x3d.mjs');
 var TextureCoordinate = require('./x3d.mjs');
 var MFVec2f = require('./x3d.mjs');
+var EXPORT = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Immersive"),
@@ -71,11 +72,15 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("modified"),
-              content : new SFString("23 December 2021")}),
+              content : new SFString("5 November 2025")}),
 
             new meta({
               name : new SFString("description"),
               content : new SFString("Articulated 3D game character designed with a general graphics tool, then converted into an X3D HAnim model.")}),
+
+            new meta({
+              name : new SFString("Image"),
+              content : new SFString("../Poses/images/HAnimPoseExampleKoreanCharacter01Jin.png")}),
 
             new meta({
               name : new SFString("reference"),
@@ -83,7 +88,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("reference"),
-              content : new SFString("KoreanCharacterHumanMotion_Infotech2014_140706.pdf")}),
+              content : new SFString("../KoreanCharacterHumanMotion_Infotech2014_140706.pdf")}),
 
             new meta({
               name : new SFString("reference"),
@@ -95,7 +100,7 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("3DS MAX, https://www.autodesk.com/products/autodesk-3ds-max/overview")}),
+              content : new SFString("3DS MAX, http://www.autodesk.com/products/autodesk-3ds-max/overview")}),
 
             new meta({
               name : new SFString("generator"),
@@ -103,11 +108,11 @@ var X3D0 =  new X3D({
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("Gnu Image Manipulation Program, https://www.gimp.org")}),
+              content : new SFString("Gnu Image Manipulation Program, http://www.gimp.org")}),
 
             new meta({
               name : new SFString("generator"),
-              content : new SFString("X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit")}),
+              content : new SFString("X3D-Edit 3.3, https://www.web3d.org/x3d/tools/X3D-Edit")}),
 
             new meta({
               name : new SFString("license"),
@@ -844,59 +849,9 @@ var X3D0 =  new X3D({
                   USE : new SFString("hanim_l_talocrural")}),
 
                 new HAnimJoint({
-                  USE : new SFString("hanim_r_talocrural")}),
-              segments : new MFNode([
-                new HAnimSegment({
-                  USE : new SFString("hanim_l5")}),
+                  USE : new SFString("hanim_r_talocrural")})])}),
 
-                new HAnimSegment({
-                  USE : new SFString("hanim_pelvis")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_sacrum")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_skull")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_calf")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_calf")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_carpal")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_carpal")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_forearm")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_forearm")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_talus")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_talus")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_tarsal_proximal_phalanx_2")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_tarsal_proximal_phalanx_2")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_thigh")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_thigh")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_l_upperarm")}),
-
-                new HAnimSegment({
-                  USE : new SFString("hanim_r_upperarm")})])})])}))});
+            new EXPORT({
+              aS : new SFString("KoreanCharacter01Jin"),
+              localDEF : new SFString("hanim_Jin")})])}))});
 console.log(X3D0.toXMLNode());

@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -91,31 +91,35 @@ func main() {
                 Name: stringPtr("created"),
                 Content: stringPtr("8 July 2025"),
             },
+            &x3d.Meta{
+                Name: stringPtr("license"),
+                Content: stringPtr("../license.html"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
                 &x3d.WorldInfo{
                     Title: stringPtr("AllenBox.x3d"),
                 },
                 &x3d.NavigationInfo{
-                    Type: x3d.MFString{"EXAMINE"},
                     AvatarSize: x3d.MFFloat{0.15, 1.53, 0.75},
                     Speed: floatPtr(0.5),
+                    Type: x3d.MFString{"EXAMINE"},
                 },
                 &x3d.Transform{
                         CoreX3DNode: x3d.CoreX3DNode{
                             DEF: stringPtr("Floor"),
                         },
-                        Translation: &x3d.SFVec3f{0.0, -0.0125, 0.0},
                         Scale: &x3d.SFVec3f{1.0, 0.0125, 1.0},
+                        Translation: &x3d.SFVec3f{0.0, -0.0125, 0.0},
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
+                            Geometry: &x3d.Box{
+                            },
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
                                 },
-                            },
-                            Geometry: &x3d.Box{
                             },
                         },
                     },
@@ -138,13 +142,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/AllenBox.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -155,7 +159,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

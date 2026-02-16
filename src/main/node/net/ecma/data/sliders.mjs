@@ -57,7 +57,7 @@ var fieldValue = require('./x3d.mjs');
 var X3D0 =  new X3D({
 
       profile : new SFString("Full"),
-      version : new SFString("4.0"),
+      version : new SFString("4.1"),
       head : new SFNode(
         new head({
           /*<component name='Shape' level='4'></component>*/

@@ -416,7 +416,10 @@ fieldValue60.children[0] = Transform61;
 
 ProtoInstance53.fieldValue[3] = fieldValue60;
 
-//<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>
+//<fieldValue name='set_startpoint'>
+//</fieldValue>
+//<fieldValue name='set_endpoint'>
+//</fieldValue>
 children[6] = ProtoInstance53;
 
 ROUTE ROUTE62 = createNode("ROUTE");

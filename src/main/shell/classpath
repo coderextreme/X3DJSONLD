@@ -33,7 +33,7 @@ else
   export CLOJURE=clj
 fi
 
-source ${X3DJSONLD}/src/main/python/venv/Scripts/activate
+source ${X3DJSONLD}/src/main/python/venv/bin/activate
 export PIP=pip3
 #source venv/bin/activate
 #export PIP=pipx

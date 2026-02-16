@@ -227,7 +227,11 @@ field45.setValue("0")
 
 ComposedShader34.addField(field45)
 
-ComposedShader34.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"initializeOnly\"> <ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture> </field>"""))
+ComposedShader34.addComments(x3d.CommentsBlock("""<field name='cube' type='SFNode' accessType=\"initializeOnly\">"""))
+
+ComposedShader34.addComments(x3d.CommentsBlock("""<ComposedCubeMapTexture USE=\"texture\"></ComposedCubeMapTexture>"""))
+
+ComposedShader34.addComments(x3d.CommentsBlock("""</field>"""))
 ShaderPart46 = x3d.ShaderPart()
 ShaderPart46.setUrl(["https://coderextreme.net/X3DJSONLD/src/main/shaders/castle.vs"])
 ShaderPart46.setType("VERTEX")

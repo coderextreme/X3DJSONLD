@@ -17,8 +17,7 @@
 int main(int argc, char ** argv) {
 X3D& X3D0 =  X3D();
 X3D0.setProfile(CString("Immersive"));
-X3D0.setVersion(CString("4.0"));
-X3D0.setXsi:noNamespaceSchemaLocation("https://www.web3d.org/specifications/x3d-4.0.xsd");
+X3D0.setVersion(CString("4.1"));
 head& head1 =  head();
 component& component2 =  component();
 component2.setName(CString("HAnim"));

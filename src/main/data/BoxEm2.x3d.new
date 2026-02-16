@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
-<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.1" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.1.xsd" ><head><meta name="title" content="BoxEm2.x3d"></meta>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" profile="Immersive" version="4.0" xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/x3d-4.0.xsd" ><head><meta name="title" content="BoxEm2.x3d"></meta>
 <meta name="creator" content="John Carlson"></meta>
-<meta name="generator" content="x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"></meta>
 <meta name="generator" content="manual"></meta>
+<meta name="identifier" content="https://coderextreme.net/X3DJSONLD/src/main/data/BoxEm2.x3d"></meta>
+<meta name="description" content="3 boxes"></meta>
 </head>
-<Scene><ProtoDeclare name="anyShape"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="xtranslation"></field>
-<field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_1"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<Scene><NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
+<Viewpoint description="Cubes on Fire" position="0 0 12"></Viewpoint>
+<ProtoDeclare name="anyShape"><ProtoInterface><field name="xtranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Sphere></Sphere>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Sphere></Sphere>
 </Shape>
 </field>
 </ProtoInterface>
@@ -18,14 +21,17 @@
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<ProtoDeclare name="three"><ProtoInterface><field accessType="inputOutput" type="SFVec3f" name="ytranslation"></field>
-<field accessType="inputOutput" type="MFNode" name="myShape"><Shape DEF="_2"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
+<ProtoDeclare name="three"><ProtoInterface><field name="ytranslation" accessType="inputOutput" type="SFVec3f" value="0 0 0"></field>
+<field name="myShape" accessType="inputOutput" type="MFNode"><Shape><Cylinder></Cylinder>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="1 1 1"></Material>
 </Appearance>
-<Cylinder></Cylinder>
 </Shape>
 </field>
 </ProtoInterface>
-<ProtoBody><Transform><ProtoInstance name="anyShape"><IS><connect nodeField="myShape" protoField="myShape"></connect>
+<ProtoBody><Transform><IS><connect nodeField="translation" protoField="ytranslation"></connect>
+</IS>
+<ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="0 0 0"></fieldValue>
+<IS><connect nodeField="myShape" protoField="myShape"></connect>
 </IS>
 </ProtoInstance>
 <ProtoInstance name="anyShape"><fieldValue name="xtranslation" value="2 0 0"></fieldValue>
@@ -36,16 +42,13 @@
 <IS><connect nodeField="myShape" protoField="myShape"></connect>
 </IS>
 </ProtoInstance>
-<IS><connect nodeField="translation" protoField="ytranslation"></connect>
-</IS>
 </Transform>
 </ProtoBody>
 </ProtoDeclare>
-<NavigationInfo type="&quot;EXAMINE&quot;"></NavigationInfo>
-<Viewpoint description="Cubes on Fire" position="0 0 12"></Viewpoint>
-<ProtoInstance DEF="threepi" name="three"><fieldValue name="myShape"><Shape DEF="box"><Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
+<ProtoInstance name="three" DEF="threepi"><fieldValue name="ytranslation" value="0 0 0"></fieldValue>
+<fieldValue name="myShape"><Shape DEF="box"><Box size="1 1 1"></Box>
+<Appearance containerField="appearance"><Material containerField="material" diffuseColor="0 1 0"></Material>
 </Appearance>
-<Box size="1 1 1"></Box>
 </Shape>
 </fieldValue>
 </ProtoInstance>

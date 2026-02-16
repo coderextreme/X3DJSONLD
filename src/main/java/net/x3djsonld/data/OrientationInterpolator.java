@@ -69,8 +69,7 @@ public class OrientationInterpolator
     .addMeta(new meta().setName(meta.NAME_LICENSE    ).setContent("license.html")))
   .setScene(new Scene()
     .addChild(new WorldInfo().setTitle("OrientationInterpolator.x3d"))
-    .addComments(new String[] {"",
-"      <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/>"}));
+    .addComments(" <OrientationInterpolator DEF='Stop_l_midtarsal_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0 0 0 1 0 0 0 1 0'/> "));
             }
             catch (Exception ex)
             {       

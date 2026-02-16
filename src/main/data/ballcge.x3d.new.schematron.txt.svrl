@@ -1,0 +1,130 @@
+<svrl:schematron-output xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:schold="http://www.ascc.net/xml/schematron" xmlns:svrl="http://purl.oclc.org/dsdl/svrl" xmlns:xs="http://www.w3.org/2001/XMLSchema" title="X3D Graphics Validity Checks using Schematron" schemaVersion=""><!--   
+		   
+		   
+		 -->
+   <svrl:active-pattern document="file:/C:/Users/jcarl/X3DJSONLD/src/main/shell/../data/ballcge.x3d"/>
+   <svrl:fired-rule context="X3D | *[(upper-case(local-name()) = 'X3D')]"/>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 was approved by Web3D Consortium and ISO in 2023.</svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(@version='4.0')" role="diagnostic" location="/X3D">
+      <svrl:text>X3D version 4.0 offers many new features including interoperability with HTML5, glTF
+         2.0 Physically Based Rendering (PBR), and Web Audio API.</svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="head | *[(lower-case(local-name()) = 'head')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="component | *[(lower-case(local-name()) = 'component')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="meta | *[(lower-case(local-name()) = 'meta')]"/>
+   <svrl:fired-rule context="Scene | *[(lower-case(local-name()) = 'scene')]"/>
+   <svrl:fired-rule context="WorldInfo"/>
+   <svrl:fired-rule context="NavigationInfo"/>
+   <svrl:fired-rule context="Viewpoint | OrthoViewpoint"/>
+   <svrl:fired-rule context="Background"/>
+   <svrl:fired-rule context="Transform"/>
+   <svrl:fired-rule context="Shape"/>
+   <svrl:fired-rule context="Box | Cone | Cylinder | Sphere"/>
+   <svrl:fired-rule context="Appearance"/>
+   <svrl:fired-rule context="Material"/>
+   <svrl:fired-rule context="ComposedShader | ProgramShader"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ComposedCubeMapTexture"/>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[1]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[1]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[1]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[2]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[2]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[2]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[3]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[3]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[3]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[4]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[4]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[4]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[5]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[5]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[5]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ImageTexture | MovieTexture"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[6]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[6]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/field[2]/ComposedCubeMapTexture/ImageTexture[6]">
+      <svrl:text>&lt;ImageTexture DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="field | *[(lower-case(local-name()) = 'field')]"/>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF=''/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF=''/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF=''/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[1]">
+      <svrl:text>&lt;ShaderPart DEF='' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+   <svrl:fired-rule context="ShaderPart | ShaderProgram"/>
+   <svrl:successful-report test="(@url) and not(@USE) and not(contains(@url,'http')) and not((local-name()='Anchor') and contains(@url,'#')) and not((local-name()='Script') and contains(@url,'ecmascript:'))" role="info" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='commonfs'/&gt; url array address(es) missing online http/https references (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,'file:/')" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='commonfs'/&gt; url array contains file:/ local address, not portable across Web servers (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="contains(@url,':/') and not(contains(@url,'://')) and not(contains(@url,'http://')) and not(contains(@url,'https://'))" role="warning" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='commonfs'/&gt; url array contains :/ rather than :// (url='"file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"') </svrl:text>
+   </svrl:successful-report>
+   <svrl:successful-report test="(local-name(.)='ShaderPart') and not(local-name(..)!='ComposedShader')" role="error" location="/X3D/Scene/Transform/Shape/Appearance/ComposedShader/ShaderPart[2]">
+      <svrl:text>&lt;ShaderPart DEF='commonfs' value=''/&gt; needs to be contained by a &lt;ComposedShader&gt; node rather than a &lt;ComposedShader&gt; node </svrl:text>
+   </svrl:successful-report>
+</svrl:schematron-output>

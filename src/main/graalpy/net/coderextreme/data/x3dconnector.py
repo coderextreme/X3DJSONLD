@@ -327,7 +327,13 @@ fieldValue60.addChild(Transform61)
 
 ProtoInstance53.addFieldValue(fieldValue60)
 
-ProtoInstance53.addComments(x3d.CommentsBlock("""<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"""))
+ProtoInstance53.addComments(x3d.CommentsBlock("""<fieldValue name='set_startpoint'>"""))
+
+ProtoInstance53.addComments(x3d.CommentsBlock("""</fieldValue>"""))
+
+ProtoInstance53.addComments(x3d.CommentsBlock("""<fieldValue name='set_endpoint'>"""))
+
+ProtoInstance53.addComments(x3d.CommentsBlock("""</fieldValue>"""))
 
 Scene7.addChild(ProtoInstance53)
 ROUTE62 = x3d.ROUTE()

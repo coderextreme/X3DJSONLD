@@ -103,7 +103,10 @@ var ProtoInstance0 = null;
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }"))))
         .addChild(ProtoInstance0 = new autoclass.ProtoInstance().setName("x3dconnector").setDEF("connector1")
-          .addComments((new autoclass.CommentsBlock("<fieldValue name='set_startpoint'> </fieldValue> <fieldValue name='set_endpoint'> </fieldValue>"))))
+          .addComments((new autoclass.CommentsBlock("<fieldValue name='set_startpoint'>")))
+          .addComments((new autoclass.CommentsBlock("</fieldValue>")))
+          .addComments((new autoclass.CommentsBlock("<fieldValue name='set_endpoint'>")))
+          .addComments((new autoclass.CommentsBlock("</fieldValue>"))))
         .addChild(new autoclass.ROUTE().setFromNode("G1").setFromField("translation_changed").setToNode("connector1").setToField("set_startpoint"))
         .addChild(new autoclass.ROUTE().setFromNode("G2").setFromField("translation_changed").setToNode("connector1").setToField("set_endpoint")))      ;
 ProtoInstance0

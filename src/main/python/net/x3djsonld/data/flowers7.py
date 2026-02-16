@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -68,9 +64,7 @@ newModel=X3D(profile='Immersive',version='4.0',
           shaders=[
           ComposedShader(DEF='x3dom',language='GLSL',
             # TODO VERIFY
-
             # <field name='cube' type='SFInt32' accessType='inputOutput' value='0'></field>
-
             field(name='cube',type='SFNode',accessType='inputOutput',
               children=[
               ComposedCubeMapTexture(USE='texture')]),
@@ -220,7 +214,6 @@ function set_fraction() {
     ROUTE(fromNode='Animate',fromField='pdelta',toNode='x3dom',toField='pdelta'),
     ROUTE(fromNode='Animate',fromField='tdelta',toNode='x3dom',toField='tdelta')])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

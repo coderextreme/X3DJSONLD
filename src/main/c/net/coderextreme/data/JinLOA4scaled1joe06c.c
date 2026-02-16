@@ -276,7 +276,15 @@ HAnimSegment47.children[0] = Shape48;
 HAnimSite HAnimSite55 = createNode("HAnimSite");
 HAnimSite55.name = "pelvis";
 HAnimSite55.DEF = "pelvis_Sites";
-//(r_iliocristale -0.1525 1.0628 0.0035) (r_trochanterion -0.1689 0.8419 0.0352) (l_iliocristale 0.1612 1.0537 0.0008) (l_trochanterion 0.1677 0.8336 0.0303) (r_asis -0.0887 1.0021 0.1112) (l_asis 0.0774 1.0190 -0.1151) (r_psis -0.0716 1.0190 -0.1138) (l_psis 0.0774 1.0190 -0.1151) (crotch 0.0034 0.8266 0.0257)
+//(r_iliocristale -0.1525 1.0628 0.0035)
+//(r_trochanterion -0.1689 0.8419 0.0352)
+//(l_iliocristale 0.1612 1.0537 0.0008)
+//(l_trochanterion 0.1677 0.8336 0.0303)
+//(r_asis -0.0887 1.0021 0.1112)
+//(l_asis 0.0774 1.0190 -0.1151)
+//(r_psis -0.0716 1.0190 -0.1138)
+//(l_psis 0.0774 1.0190 -0.1151)
+//(crotch 0.0034 0.8266 0.0257)
 HAnimSegment47.children[1] = HAnimSite55;
 
 HAnimJoint46.children = new MFNode();
@@ -326,7 +334,10 @@ HAnimSegment57.children[0] = Shape58;
 HAnimSite HAnimSite65 = createNode("HAnimSite");
 HAnimSite65.name = "l_thigh";
 HAnimSite65.DEF = "l_thigh_Sites";
-//(l_knee_crease 0.0993 0.4881 -0.0309) (l_femoral_medial_epicondyles 0.0398 0.4946 0.0303) (l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297) (l_suprapatella x y z)
+//(l_knee_crease 0.0993 0.4881 -0.0309)
+//(l_femoral_medial_epicondyles 0.0398 0.4946 0.0303)
+//(l_femoral_lateral_epicondyles 0.1598 0.4967 0.0297)
+//(l_suprapatella x y z)
 HAnimSegment57.children[1] = HAnimSite65;
 
 HAnimJoint56.children = new MFNode();
@@ -376,7 +387,9 @@ HAnimSegment67.children[0] = Shape68;
 HAnimSite HAnimSite75 = createNode("HAnimSite");
 HAnimSite75.name = "l_calf";
 HAnimSite75.DEF = "l_calf_Sites";
-//(l_tibiale x y z) (l_medial_malleolus 0.0890 0.0716 -0.0881) (l_lateral_malleolus 0.1308 0.0597 -0.1032)
+//(l_tibiale x y z)
+//(l_medial_malleolus 0.0890 0.0716 -0.0881)
+//(l_lateral_malleolus 0.1308 0.0597 -0.1032)
 HAnimSegment67.children[1] = HAnimSite75;
 
 HAnimJoint66.children = new MFNode();
@@ -426,7 +439,8 @@ HAnimSegment77.children[0] = Shape78;
 HAnimSite HAnimSite85 = createNode("HAnimSite");
 HAnimSite85.name = "l_talus";
 HAnimSite85.DEF = "l_talus_Sites";
-//(l_sphyrion 0.0890 0.0575 -0.0943) (l_calcaneous_posterior 0.0974 0.0259 -0.1171)
+//(l_sphyrion 0.0890 0.0575 -0.0943)
+//(l_calcaneous_posterior 0.0974 0.0259 -0.1171)
 HAnimSegment77.children[1] = HAnimSite85;
 
 HAnimJoint76.children = new MFNode();
@@ -1782,7 +1796,10 @@ HAnimSegment337.children[0] = Shape338;
 HAnimSite HAnimSite345 = createNode("HAnimSite");
 HAnimSite345.name = "r_thigh";
 HAnimSite345.DEF = "r_thigh_Sites";
-//(r_knee_crease -0.0825 0.4932 -0.0326) (r_femoral_lateral_epicn -0.1421 0.4992 0.0310) (r_femoral_medial_epicn -0.0221 0.5014 0.0289) (r_suprapatella x y z)
+//(r_knee_crease -0.0825 0.4932 -0.0326)
+//(r_femoral_lateral_epicn -0.1421 0.4992 0.0310)
+//(r_femoral_medial_epicn -0.0221 0.5014 0.0289)
+//(r_suprapatella x y z)
 HAnimSegment337.children[1] = HAnimSite345;
 
 HAnimJoint336.children = new MFNode();
@@ -1832,7 +1849,9 @@ HAnimSegment347.children[0] = Shape348;
 HAnimSite HAnimSite355 = createNode("HAnimSite");
 HAnimSite355.name = "r_calf";
 HAnimSite355.DEF = "r_calf_Sites";
-//(r_tibiale x y z) (r_medial_malleolus -0.0591 0.0760 -0.0928) (r_lateral_malleolus -0.1006 0.0658 -0.1075)
+//(r_tibiale x y z)
+//(r_medial_malleolus -0.0591 0.0760 -0.0928)
+//(r_lateral_malleolus -0.1006 0.0658 -0.1075)
 HAnimSegment347.children[1] = HAnimSite355;
 
 HAnimJoint346.children = new MFNode();
@@ -1882,7 +1901,8 @@ HAnimSegment357.children[0] = Shape358;
 HAnimSite HAnimSite365 = createNode("HAnimSite");
 HAnimSite365.name = "r_talus";
 HAnimSite365.DEF = "r_talus_Sites";
-//(r_sphyrion -0.0603 0.0610 -0.1002) (r_calcaneous_posterior -0.0692 0.0297 -0.1221)
+//(r_sphyrion -0.0603 0.0610 -0.1002)
+//(r_calcaneous_posterior -0.0692 0.0297 -0.1221)
 HAnimSegment357.children[1] = HAnimSite365;
 
 HAnimJoint356.children = new MFNode();
@@ -2132,7 +2152,8 @@ HAnimSegment407.children[0] = Shape408;
 HAnimSite HAnimSite415 = createNode("HAnimSite");
 HAnimSite415.name = "r_tarsal_distal_phalanx_1";
 HAnimSite415.DEF = "r_tarsal_distal_phalanx_1_Sites";
-//(r_metatarsal_phalanx_1 x y z) (r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)
+//(r_metatarsal_phalanx_1 x y z)
+//(r_tarsal_distal_phalanx_1_tip -0.1043 -0.0227 0.1450)
 HAnimSegment407.children[1] = HAnimSite415;
 
 HAnimJoint406.children = new MFNode();
@@ -3238,7 +3259,9 @@ HAnimSegment617.children[0] = Shape618;
 HAnimSite HAnimSite625 = createNode("HAnimSite");
 HAnimSite625.name = "l5";
 HAnimSite625.DEF = "l5_Sites";
-//(spine_2_lower_back x y z) (waist_preferred_anterior x y z) (waist_preferred_posterior 0.2900 1.0915 -0.1091)
+//(spine_2_lower_back x y z)
+//(waist_preferred_anterior x y z)
+//(waist_preferred_posterior 0.2900 1.0915 -0.1091)
 HAnimSegment617.children[1] = HAnimSite625;
 
 HAnimJoint616.children = new MFNode();
@@ -3388,7 +3411,9 @@ HAnimSegment647.children[0] = Shape648;
 HAnimSite HAnimSite655 = createNode("HAnimSite");
 HAnimSite655.name = "l2";
 HAnimSite655.DEF = "l2_Sites";
-//(l_rib_10 0.0871 1.1925 0.0992) (r_rib_10 -0.0711 1.1941 0.1016) (rib_10_midspine 0.0049 1.1908 -0.1113)
+//(l_rib_10 0.0871 1.1925 0.0992)
+//(r_rib_10 -0.0711 1.1941 0.1016)
+//(rib_10_midspine 0.0049 1.1908 -0.1113)
 HAnimSegment647.children[1] = HAnimSite655;
 
 HAnimJoint646.children = new MFNode();
@@ -3588,7 +3613,8 @@ HAnimSegment687.children[0] = Shape688;
 HAnimSite HAnimSite695 = createNode("HAnimSite");
 HAnimSite695.name = "t10";
 HAnimSite695.DEF = "t10_Sites";
-//(substernale 0.0085 1.2995 0.1147) (mesosternale x y z)
+//(substernale 0.0085 1.2995 0.1147)
+//(mesosternale x y z)
 HAnimSegment687.children[1] = HAnimSite695;
 
 HAnimJoint686.children = new MFNode();
@@ -3638,7 +3664,11 @@ HAnimSegment697.children[0] = Shape698;
 HAnimSite HAnimSite705 = createNode("HAnimSite");
 HAnimSite705.name = "t9";
 HAnimSite705.DEF = "t9_Sites";
-//(l_thelion 0.0918 1.3382 0.1192) (r_thelion -0.0736 1.3385 0.1217) (rear_center_midsagittal_plane x y z) (l_chest_midsagittal_plane x y z) (r_chest_midsagittal_plane x y z)
+//(l_thelion 0.0918 1.3382 0.1192)
+//(r_thelion -0.0736 1.3385 0.1217)
+//(rear_center_midsagittal_plane x y z)
+//(l_chest_midsagittal_plane x y z)
+//(r_chest_midsagittal_plane x y z)
 HAnimSegment697.children[1] = HAnimSite705;
 
 HAnimJoint696.children = new MFNode();
@@ -4038,7 +4068,8 @@ HAnimSegment777.children[0] = Shape778;
 HAnimSite HAnimSite785 = createNode("HAnimSite");
 HAnimSite785.name = "t1";
 HAnimSite785.DEF = "t1_Sites";
-//(suprasternale 0.0084 1.4714 0.0551) (cervicale 0.0064 1.520 -0.0815)
+//(suprasternale 0.0084 1.4714 0.0551)
+//(cervicale 0.0064 1.520 -0.0815)
 HAnimSegment777.children[1] = HAnimSite785;
 
 HAnimJoint776.children = new MFNode();
@@ -4088,7 +4119,8 @@ HAnimSegment787.children[0] = Shape788;
 HAnimSite HAnimSite795 = createNode("HAnimSite");
 HAnimSite795.name = "c7";
 HAnimSite795.DEF = "c7_Sites";
-//(l_neck_base 0.0646 1.5141 -0.0380) (r_neck_base -0.0419 1.5149 -0.0220)
+//(l_neck_base 0.0646 1.5141 -0.0380)
+//(r_neck_base -0.0419 1.5149 -0.0220)
 HAnimSegment787.children[1] = HAnimSite795;
 
 HAnimJoint786.children = new MFNode();
@@ -4438,7 +4470,17 @@ HAnimSegment857.children[0] = Shape858;
 HAnimSite HAnimSite865 = createNode("HAnimSite");
 HAnimSite865.name = "skull";
 HAnimSite865.DEF = "skull_Sites";
-//(skull_vertex 0.0050 1.7504 0.0055) (sellion 0.0058 1.6316 0.0852) (r_infraorbitale -0.0237 1.6171 0.0752) (l_infraorbitale 0.0341 1.6171 0.0752) (r_tragion -0.0646 1.6347 0.0302) (l_tragion 0.0739 1.6348 0.0282) (nuchale 0.0039 1.5972 -0.0796) (opisthocranion x y z) (glabella x y z) (l_ectocanthus x y z) (r_ectocanthus x y z)
+//(skull_vertex 0.0050 1.7504 0.0055)
+//(sellion 0.0058 1.6316 0.0852)
+//(r_infraorbitale -0.0237 1.6171 0.0752)
+//(l_infraorbitale 0.0341 1.6171 0.0752)
+//(r_tragion -0.0646 1.6347 0.0302)
+//(l_tragion 0.0739 1.6348 0.0282)
+//(nuchale 0.0039 1.5972 -0.0796)
+//(opisthocranion x y z)
+//(glabella x y z)
+//(l_ectocanthus x y z)
+//(r_ectocanthus x y z)
 HAnimSegment857.children[1] = HAnimSite865;
 
 HAnimJoint856.children = new MFNode();
@@ -4800,7 +4842,10 @@ HAnimSegment927.children[0] = Shape928;
 HAnimSite HAnimSite935 = createNode("HAnimSite");
 HAnimSite935.name = "jaw";
 HAnimSite935.DEF = "jaw_Sites";
-//(r_gonion -0.0520 1.5529 0.0347) (l_gonion 0.0631 1.5530 0.0330) (supramenton 0.0061 1.5410 0.0805) (menton x y z)
+//(r_gonion -0.0520 1.5529 0.0347)
+//(l_gonion 0.0631 1.5530 0.0330)
+//(supramenton 0.0061 1.5410 0.0805)
+//(menton x y z)
 HAnimSegment927.children[1] = HAnimSite935;
 
 HAnimJoint926.children = new MFNode();
@@ -4918,7 +4963,10 @@ HAnimSegment947.children[0] = Shape948;
 HAnimSite HAnimSite955 = createNode("HAnimSite");
 HAnimSite955.name = "l_scapula";
 HAnimSite955.DEF = "l_scapula_Sites";
-//(l_acromion 0.2032 1.4760 -0.0490) (l_axilla_proximal 0.1777 1.4065 -0.0075) (l_axilla_distal 0.1706 1.4072 -0.0875) (l_axilla_posterior_folds x y z)
+//(l_acromion 0.2032 1.4760 -0.0490)
+//(l_axilla_proximal 0.1777 1.4065 -0.0075)
+//(l_axilla_distal 0.1706 1.4072 -0.0875)
+//(l_axilla_posterior_folds x y z)
 HAnimSegment947.children[1] = HAnimSite955;
 
 HAnimJoint946.children = new MFNode();
@@ -4968,7 +5016,10 @@ HAnimSegment957.children[0] = Shape958;
 HAnimSite HAnimSite965 = createNode("HAnimSite");
 HAnimSite965.name = "l_upperarm";
 HAnimSite965.DEF = "l_upperarm_Sites";
-//(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100) (l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113) (l_radiale 0.2182 1.1212 -0.1167) (l_bideltoid x y z)
+//(l_humeral_lateral_epicondyles 0.2280 1.1482 -0.1100)
+//(l_humeral_medial_epicondyles 0.1735 1.1272 -0.1113)
+//(l_radiale 0.2182 1.1212 -0.1167)
+//(l_bideltoid x y z)
 HAnimSegment957.children[1] = HAnimSite965;
 
 HAnimJoint956.children = new MFNode();
@@ -5018,7 +5069,8 @@ HAnimSegment967.children[0] = Shape968;
 HAnimSite HAnimSite975 = createNode("HAnimSite");
 HAnimSite975.name = "l_forearm";
 HAnimSite975.DEF = "l_forearm_Sites";
-//(l_radial_styloid 0.1901 0.8645 -0.0415) (l_olecranon -0.1962 1.1375 -0.1123)
+//(l_radial_styloid 0.1901 0.8645 -0.0415)
+//(l_olecranon -0.1962 1.1375 -0.1123)
 HAnimSegment967.children[1] = HAnimSite975;
 
 HAnimJoint966.children = new MFNode();
@@ -5786,7 +5838,8 @@ HAnimSegment1117.children[0] = Shape1118;
 HAnimSite HAnimSite1125 = createNode("HAnimSite");
 HAnimSite1125.name = "l_carpal_distal_phalanx_3";
 HAnimSite1125.DEF = "l_carpal_distal_phalanx_3_Sites";
-//(l_dactylion 0.2056 0.6743 -0.0482) (l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
+//(l_dactylion 0.2056 0.6743 -0.0482)
+//(l_carpal_distal_phalanx_3_tip 0.2080 0.6731 -0.0491)
 HAnimSegment1117.children[1] = HAnimSite1125;
 
 HAnimJoint1116.children = new MFNode();
@@ -6374,7 +6427,10 @@ HAnimSegment1227.children[0] = Shape1228;
 HAnimSite HAnimSite1235 = createNode("HAnimSite");
 HAnimSite1235.name = "r_scapula";
 HAnimSite1235.DEF = "r_scapula_Sites";
-//(r_acromion -0.1905 1.4791 -0.0431) (r_axilla_proximal -0.1626 1.4072 -0.0031) (r_axilla_distal -0.1603 1.4098 -0.0826) (r_axilla_posterior_folds x y z)
+//(r_acromion -0.1905 1.4791 -0.0431)
+//(r_axilla_proximal -0.1626 1.4072 -0.0031)
+//(r_axilla_distal -0.1603 1.4098 -0.0826)
+//(r_axilla_posterior_folds x y z)
 HAnimSegment1227.children[1] = HAnimSite1235;
 
 HAnimJoint1226.children = new MFNode();
@@ -6424,7 +6480,10 @@ HAnimSegment1237.children[0] = Shape1238;
 HAnimSite HAnimSite1245 = createNode("HAnimSite");
 HAnimSite1245.name = "r_upperarm";
 HAnimSite1245.DEF = "r_upperarm_Sites";
-//(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033) (r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062) (r_radiale -0.2130 1.1305 -0.1091) (r_bideltoid x y z)
+//(r_humeral_lateral_epicondyles -0.2224 1.1517 -0.1033)
+//(r_humeral_medial_epicondyles -0.1680 1.1298 -0.1062)
+//(r_radiale -0.2130 1.1305 -0.1091)
+//(r_bideltoid x y z)
 HAnimSegment1237.children[1] = HAnimSite1245;
 
 HAnimJoint1236.children = new MFNode();
@@ -6474,7 +6533,8 @@ HAnimSegment1247.children[0] = Shape1248;
 HAnimSite HAnimSite1255 = createNode("HAnimSite");
 HAnimSite1255.name = "r_forearm";
 HAnimSite1255.DEF = "r_forearm_Sites";
-//(r_radial_styloid -0.1884 0.8676 -0.0360) (r_olecranon -0.1907 1.1405 -0.1065)
+//(r_radial_styloid -0.1884 0.8676 -0.0360)
+//(r_olecranon -0.1907 1.1405 -0.1065)
 HAnimSegment1247.children[1] = HAnimSite1255;
 
 HAnimJoint1246.children = new MFNode();
@@ -7242,7 +7302,8 @@ HAnimSegment1397.children[0] = Shape1398;
 HAnimSite HAnimSite1405 = createNode("HAnimSite");
 HAnimSite1405.name = "r_carpal_distal_phalanx_3";
 HAnimSite1405.DEF = "r_carpal_distal_phalanx_3_Sites";
-//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427) (r_dactylion -0.1941 0.6772 -0.0423
+//(r_carpal_distal_phalanx_3_tip -0.1969 0.6758 -0.0427)
+//(r_dactylion -0.1941 0.6772 -0.0423
 HAnimSegment1397.children[1] = HAnimSite1405;
 
 HAnimJoint1396.children = new MFNode();

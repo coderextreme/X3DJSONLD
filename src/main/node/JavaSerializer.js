@@ -434,7 +434,7 @@ JavaSerializer.prototype = {
 						if (attr === "accessType") {
 							strval = "field.ACCESSTYPE_"+attrs[a].nodeValue.toUpperCase();
 						} else {
-							strval = '"'+attrs[a].nodeValue.
+							strval = 'new SFString("'+attrs[a].nodeValue.
 								replace(/(\\+)([^&\\"]|$)/g, '$1$1$2').
 								/*
 								replace(/\\/g, '\\\\').
@@ -443,7 +443,7 @@ JavaSerializer.prototype = {
 								replace(/\n/g, ' ').
 								replace(/\r/g, ' ').
 								replace(/\\?"/g, "\\\"")
-								+'"';
+								+'")';
 						}
 					} else if (attrType === "SFInt32") {
 						strval = attrs[a].nodeValue;

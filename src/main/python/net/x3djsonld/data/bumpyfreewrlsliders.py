@@ -22,15 +22,11 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(profile='Full',version='4.1',
   head=head(
     children=[
     component(level=1,name='Scripting'),
@@ -53,16 +49,13 @@ newModel=X3D(profile='Full',version='4.0',
     Comment(' LayerSet with two layers, navigation happens in layer 1 '),
     LayerSet(activeLayer=1,order=[1,2],
       # the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
-
       Layer(pickable=True,objectType=["ALL"],
         # basic nodes, which might be present in any scene
-
         NavigationInfo(type=["EXAMINE","FLY","LOOKAT","ANY"],avatarSize=[0.25,1.75,0.75]),
         DirectionalLight(ambientIntensity=.2,direction=(0,-1,-0)),
         DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
         Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
         # this group contains the red/green/blue 3D crosshair
-
         Group(
           children=[
           Comment(' Arrow X '),
@@ -105,7 +98,6 @@ newModel=X3D(profile='Full',version='4.0',
               appearance=Appearance(
                 material=Material(USE='BLUE')))])]),
         # the model that is being reviewed by the users of this scene
-
         Transform(DEF='FlowerTransform',
           children=[
           Comment(' <Inline DEF="Flower" url=\'"bumpyfreewrl.x3d"\' /> '),
@@ -116,11 +108,8 @@ newModel=X3D(profile='Full',version='4.0',
             Shape(
               geometry=Sphere(radius=5),
               # <IndexedFaceSet convex="false" DEF="Orbit" creaseAngle="0">
-
               # <Coordinate DEF="OrbitCoordinates"/>
-
               # </IndexedFaceSet>
-
               appearance=Appearance(
                 material=Material(diffuseColor=(.7,.7,.7),specularColor=(.5,.5,.5)),
                 texture=ComposedCubeMapTexture(DEF='texture',
@@ -135,11 +124,8 @@ newModel=X3D(profile='Full',version='4.0',
                   field=[
                   field(name='fw_textureCoordGenType',accessType='inputOutput',type='SFInt32',value=0),
                   # <field name='cube' type='SFNode' accessType="inputOutput">
-
                   # <ComposedCubeMapTexture USE="texture"/>
-
                   # </field>
-
                   field(name='chromaticDispertion',accessType='initializeOnly',type='SFVec3f',value=(0.98,1.0,1.033)),
                   field(name='bias',type='SFFloat',accessType='inputOutput',value=0.5),
                   field(name='scale',type='SFFloat',accessType='inputOutput',value=0.5),
@@ -169,77 +155,42 @@ ecmascript:
 
 """)]),],
                 # <ComposedShader DEF="freewrlShader" language="GLSL">
-
                 # <field name='fw_textureCoordGenType' accessType='inputOutput' type='SFInt32' value='0'></field>
-
                 # <field name='chromaticDispertion' accessType='initializeOnly' type='SFVec3f' value='0.98 1.0 1.033'></field>
-
                 # <field name='bias' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-
                 # <field name='scale' type='SFFloat' accessType='inputOutput' value='0.5'></field>
-
                 # <field name='power' type='SFFloat' accessType='inputOutput' value='2'></field>
-
                 # <field name='a' type='SFFloat' accessType='inputOutput' value='15'></field>
-
                 # <field name='b' type='SFFloat' accessType='inputOutput' value='5'></field>
-
                 # <field name='c' type='SFFloat' accessType='inputOutput' value='20'></field>
-
                 # <field name='d' type='SFFloat' accessType='inputOutput' value='20'></field>
-
                 # <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-
                 # <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-
                 # <ShaderPart type='VERTEX'>
-
                 # <IS>
-
                 # <connect nodeField="url" protoField="vertex"/>
-
                 # </IS>
-
                 # </ShaderPart>
-
                 # <ShaderPart type='FRAGMENT'>
-
                 # <IS>
-
                 # <connect nodeField="url" protoField="fragment"/>
-
                 # </IS>
-
                 # </ShaderPart>
-
                 # </ComposedShader>
-))])]),
+                ))])]),
         # <Script DEF="OrbitScript">
-
         # <field accessType="inputOutput" name="coordinates" type="MFVec3f"/>
-
         # <field accessType="outputOnly" name="coordIndexes" type="MFInt32"/>
-
         # <field name='a' type='SFFloat' accessType='inputOutput' value='10'></field>
-
         # <field name='b' type='SFFloat' accessType='inputOutput' value='10'></field>
-
         # <field name='c' type='SFFloat' accessType='inputOutput' value='2'></field>
-
         # <field name='d' type='SFFloat' accessType='inputOutput' value='2'></field>
-
         # <field name='pdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-
         # <field name='tdelta' type='SFFloat' accessType='inputOutput' value='0'></field>
-
         # <![CDATA[ecmascript: function initialize() { var resolution = 300; var theta = 0.0; var phi = 0.0; var delta = (2 * 3.141592653) / (resolution-1); var crds = new MFVec3f(); for ( i = 0; i < resolution; i++) { for ( j = 0; j < resolution; j++) { var rho = a + b * Math.cos(c * theta + tdelta) * Math.cos(d * phi + pdelta); crds.push(new SFVec3f( rho * Math.cos(phi) * Math.cos(theta), rho * Math.cos(phi) * Math.sin(theta), rho * Math.sin(phi) )); theta += delta; } phi += delta; } coordinates = crds; var cis = new MFInt32(); for ( i = 0; i < resolution-1; i++) { for ( j = 0; j < resolution-1; j++) { cis.push(i*resolution+j); cis.push(i*resolution+j+1); cis.push((i+1)*resolution+j+1); cis.push((i+1)*resolution+j); cis.push(-1); } } coordIndexes = cis; } ]]></Script>
-
         # <ROUTE fromField="coordIndexes" fromNode="OrbitScript" toField="set_coordIndex" toNode="Orbit"/>
-
         # <ROUTE fromField="coordinates" fromNode="OrbitScript" toField="set_point" toNode="OrbitCoordinates"/>
-
         # DIS multiuser facilities
-
         DISEntityManager(DEF='EntityManager',
           children=[
           DISEntityTypeMapping(category=77,specific=1,url=["../data/Leif8Final.x3d","https://coderextreme.net/X3DJSONLD/src/main/data/Leif8Final.x3d"]),
@@ -252,20 +203,14 @@ ecmascript:
         ROUTE(fromField='addedEntities',fromNode='EntityManager',toField='addChildren',toNode='AvatarHolder'),
         ROUTE(fromField='removedEntities',fromNode='EntityManager',toField='removeChildren',toNode='AvatarHolder')]),
       # the second layer contains the sliders that are moved with the user's display
-
       # like a HUD (heads up display)
-
       LayoutLayer(pickable=True,objectType=["ALL"],
         # positioning the LayoutLayer
-
         layout=Layout(align=["LEFT","BOTTOM"],offset=[-0.50,0]),
         # clipping the LayoutLayer
-
         viewport=Viewport(),
         # the content (children) of the LayoutLayer
-
         # first, the slider for scaling the model
-
         Transform(translation=(0,0,-3),
           children=[
           Shape(
@@ -438,7 +383,6 @@ ecmascript:
             children=[
             ComposedShader(USE='freewrlShader')])])])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

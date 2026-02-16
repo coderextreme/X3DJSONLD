@@ -332,8 +332,7 @@ ConfigurationProperties.setStripDefaultAttributes(true);
 ConfigurationProperties.setXsltEngine(Java::OrgWeb3dX3dJsail::ConfigurationProperties::XSLT_ENGINE_NATIVE_JAVA);
 x3D0 = X3D.new
     .setProfile("Immersive")
-    .setVersion("4.0")
-    .setXsi:noNamespaceSchemaLocation("https://www.web3d.org/specifications/x3d-4.0.xsd")
+    .setVersion("4.1")
     .setHead(Head.new()
         .addComponent(Component.new()
             .setName("HAnim")

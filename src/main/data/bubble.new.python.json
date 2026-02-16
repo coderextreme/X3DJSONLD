@@ -1,0 +1,271 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"bubble.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"John Carlson",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Tour around a prismatic sphere",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://coderextreme.net/X3DJSONLD/src/main/data/bubble.x3d",
+        "@name":"identifier"
+      }
+    },
+    }    "Scene":
+    {
+        "NavigationInfo":
+        {
+      {
+        "@type":""EXAMINE""
+      }
+    },
+        "Viewpoint":
+        {
+      {
+        "@description":"Bubble in action",
+        "@orientation":"1 0 0 0",
+        "@position":"0 0 4"
+      }
+    },
+        "ProtoDeclare":
+        {
+      {
+        "@name":"Bubble"
+      }
+            "ProtoBody":
+            {
+                "Transform":
+                {
+      {
+        "@DEF":"transform"
+      }
+                    "Shape":
+                    {
+                        "Appearance":
+                        {
+                            "Material":
+                            {
+      {
+        "@diffuseColor":"1 0 0",
+        "@transparency":"0.2"
+      }
+    },
+                        }                        "Sphere":
+                        {
+      {
+        "@radius":"0.25"
+      }
+    },
+                    }                    "Script":
+                    {
+      {
+        "@DEF":"bounce",
+        "@sourceCode":"ecmascript:
+&quot;+
+&quot;function initialize() {
+&quot;+
+&quot;    velocity = new SFVec3f(Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125, Math.random() * 0.25 - 0.125);
+&quot;+
+&quot;
+&quot;+
+&quot;    scalvel = new SFVec3f(Math.random() * 0.4, Math.random() * 0.4, Math.random() * 0.4);
+&quot;+
+&quot;}
+&quot;+
+&quot;
+&quot;+
+&quot;function set_fraction(value) {
+&quot;+
+&quot;	translation = new SFVec3f(
+&quot;+
+&quot;		translation.x + velocity.x,
+&quot;+
+&quot;		translation.y + velocity.y,
+&quot;+
+&quot;		translation.z + velocity.z);
+&quot;+
+&quot;	scale = new SFVec3f(
+&quot;+
+&quot;		scale.x + scalvel.x,
+&quot;+
+&quot;		scale.y + scalvel.y,
+&quot;+
+&quot;		scale.z + scalvel.z);
+&quot;+
+&quot;        // if you get to far away or too big, explode
+&quot;+
+&quot;        if ( Math.abs(translation.x) > 256) {
+&quot;+
+&quot;		translation.x = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;        if ( Math.abs(translation.y) > 256) {
+&quot;+
+&quot;		translation.y = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;        if ( Math.abs(translation.z) > 256) {
+&quot;+
+&quot;		translation.z = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (Math.abs(scale.x) > 20) {
+&quot;+
+&quot;		scale.x = scale.x/2;
+&quot;+
+&quot;		translation.x = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (Math.abs(scale.y) > 20) {
+&quot;+
+&quot;		scale.y = scale.y/2;
+&quot;+
+&quot;		translation.y = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;	if (Math.abs(scale.z) > 20) {
+&quot;+
+&quot;		scale.z = scale.z/2;
+&quot;+
+&quot;		translation.z = 0;
+&quot;+
+&quot;		initialize();
+&quot;+
+&quot;	}
+&quot;+
+&quot;}"
+      }
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"scale",
+        "@type":"SFVec3f",
+        "@value":"[1, 1, 1]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"translation",
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"velocity",
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOutput",
+        "@name":"scalvel",
+        "@type":"SFVec3f",
+        "@value":"[0, 0, 0]"
+      }
+    },
+                        "field":
+                        {
+      {
+        "@accessType":"inputOnly",
+        "@name":"set_fraction",
+        "@type":"SFFloat"
+      }
+    },
+                    }                    "TimeSensor":
+                    {
+      {
+        "@DEF":"bubbleClock",
+        "@cycleInterval":"10",
+        "@loop":"true"
+      }
+    },
+                    "ROUTE":
+                    {
+      {
+        "@fromField":"translation_changed",
+        "@fromNode":"bounce",
+        "@toField":"set_translation",
+        "@toNode":"transform"
+      }
+    },
+                    "ROUTE":
+                    {
+      {
+        "@fromField":"scale_changed",
+        "@fromNode":"bounce",
+        "@toField":"set_scale",
+        "@toNode":"transform"
+      }
+    },
+                    "ROUTE":
+                    {
+      {
+        "@fromField":"fraction_changed",
+        "@fromNode":"bubbleClock",
+        "@toField":"set_fraction",
+        "@toNode":"bounce"
+      }
+    },
+                }            }        }        "ProtoInstance":
+        {
+      {
+        "@DEF":"bubbleA",
+        "@name":"Bubble"
+      }
+    },
+    }}

@@ -243,8 +243,7 @@ begin
 X3D0 := TX3DRootNode.Create;
 X3D0.Profile := 'Immersive';
 X3D0.ForceVersion.Major := 4;
-X3D0.ForceVersion.Minor := 0;
-X3D0.Xsi:noNamespaceSchemaLocation := 'https://www.web3d.org/specifications/x3d-4.0.xsd';
+X3D0.ForceVersion.Minor := 1;
 X3D0.Components['HAnim'] := 1;
 X3D0.Meta['title'] := 'JoeDemo5JoeSkin5.x3d';
 X3D0.Meta['description'] := 'joe kick into std anims';

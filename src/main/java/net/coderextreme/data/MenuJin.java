@@ -56,19 +56,19 @@ public class MenuJin implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("Menu.x3d"))
-        .addMeta(new meta().setName("description").setContent("X3D scene with a Switch of Inlines controlled by a menu")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("Menu.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("X3D scene with a Switch of Inlines controlled by a menu"))))
       .setScene(new Scene()
         .addComments(new CommentsBlock("Viewpoint and any other scene setup"))
         .addChild(new Viewpoint().setPosition(new float[] {0f ,20f ,110f }))
         .addChild(new Group()
-          .addChild(new Switch().setDEF("SceneSwitcher").setWhichChoice(0)
+          .addChild(new Switch().setDEF(new SFString("SceneSwitcher")).setWhichChoice(0)
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice0")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice0"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 0;\n"+
@@ -76,11 +76,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 0;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinBlink").setUrl(new MFString0().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinBlink")).setUrl(new MFString0().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice1")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice1"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 1;\n"+
@@ -88,11 +88,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 1;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinBrowLowerer").setUrl(new MFString1().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinBrowLowerer")).setUrl(new MFString1().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice2")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice2"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 2;\n"+
@@ -100,11 +100,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 2;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinCheekPuffer").setUrl(new MFString2().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinCheekPuffer")).setUrl(new MFString2().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice3")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice3"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 3;\n"+
@@ -112,11 +112,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 3;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinCheekRaiser").setUrl(new MFString3().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinCheekRaiser")).setUrl(new MFString3().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice4")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice4"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 4;\n"+
@@ -124,11 +124,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 4;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinChinRaiser").setUrl(new MFString4().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinChinRaiser")).setUrl(new MFString4().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice5")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice5"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 5;\n"+
@@ -136,11 +136,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 5;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinDimpler").setUrl(new MFString5().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinDimpler")).setUrl(new MFString5().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice6")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice6"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 6;\n"+
@@ -148,11 +148,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 6;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinEyesClosed").setUrl(new MFString6().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinEyesClosed")).setUrl(new MFString6().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice7")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice7"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 7;\n"+
@@ -160,11 +160,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 7;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinInnerBrowRaiser").setUrl(new MFString7().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinInnerBrowRaiser")).setUrl(new MFString7().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice8")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice8"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 8;\n"+
@@ -172,11 +172,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 8;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinJawDrop").setUrl(new MFString8().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinJawDrop")).setUrl(new MFString8().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice9")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice9"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 9;\n"+
@@ -184,11 +184,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 9;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLidDroop").setUrl(new MFString9().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLidDroop")).setUrl(new MFString9().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice10")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice10"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 10;\n"+
@@ -196,11 +196,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 10;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLidTightener").setUrl(new MFString10().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLidTightener")).setUrl(new MFString10().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice11")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice11"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 11;\n"+
@@ -208,11 +208,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 11;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipCornerDepressor").setUrl(new MFString11().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipCornerDepressor")).setUrl(new MFString11().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice12")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice12"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 12;\n"+
@@ -220,11 +220,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 12;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipCornerPuller").setUrl(new MFString12().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipCornerPuller")).setUrl(new MFString12().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice13")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice13"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 13;\n"+
@@ -232,11 +232,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 13;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipFunneler").setUrl(new MFString13().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipFunneler")).setUrl(new MFString13().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice14")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice14"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 14;\n"+
@@ -244,11 +244,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 14;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipPressor").setUrl(new MFString14().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipPressor")).setUrl(new MFString14().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice15")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice15"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 15;\n"+
@@ -256,11 +256,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 15;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipPuckerer").setUrl(new MFString15().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipPuckerer")).setUrl(new MFString15().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice16")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice16"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 16;\n"+
@@ -268,11 +268,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 16;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipsPart").setUrl(new MFString16().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipsPart")).setUrl(new MFString16().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice17")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice17"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 17;\n"+
@@ -280,11 +280,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 17;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipStretcher").setUrl(new MFString17().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipStretcher")).setUrl(new MFString17().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice18")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice18"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 18;\n"+
@@ -292,11 +292,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 18;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipSuck").setUrl(new MFString18().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipSuck")).setUrl(new MFString18().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice19")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice19"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 19;\n"+
@@ -304,11 +304,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 19;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLipTightener").setUrl(new MFString19().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLipTightener")).setUrl(new MFString19().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice20")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice20"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 20;\n"+
@@ -316,11 +316,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 20;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinLowerLipDepressor").setUrl(new MFString20().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinLowerLipDepressor")).setUrl(new MFString20().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice21")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice21"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 21;\n"+
@@ -328,11 +328,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 21;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinMouthStretch").setUrl(new MFString21().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinMouthStretch")).setUrl(new MFString21().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice22")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice22"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 22;\n"+
@@ -340,11 +340,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 22;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinNasolabialDeepener").setUrl(new MFString22().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinNasolabialDeepener")).setUrl(new MFString22().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice23")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice23"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 23;\n"+
@@ -352,11 +352,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 23;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinNoseWrinkler").setUrl(new MFString23().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinNoseWrinkler")).setUrl(new MFString23().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice24")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice24"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 24;\n"+
@@ -364,11 +364,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 24;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinOuterBrowRaiser").setUrl(new MFString24().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinOuterBrowRaiser")).setUrl(new MFString24().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice25")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice25"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 25;\n"+
@@ -376,11 +376,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 25;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinSlit").setUrl(new MFString25().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinSlit")).setUrl(new MFString25().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice26")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice26"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 26;\n"+
@@ -388,11 +388,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 26;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinSquint").setUrl(new MFString26().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinSquint")).setUrl(new MFString26().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice27")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice27"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 27;\n"+
@@ -400,11 +400,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 27;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinUpperLidRaiser").setUrl(new MFString27().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinUpperLidRaiser")).setUrl(new MFString27().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice28")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice28"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 28;\n"+
@@ -412,11 +412,11 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 28;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinUpperLipRaiser").setUrl(new MFString28().getArray())))
+              .addChild(new Inline().setDEF(new SFString("JinUpperLipRaiser")).setUrl(new MFString28().getArray())))
             .addChild(new Group()
-              .addChild(new Script().setDEF("Choice29")
-                .addField(new field().setType("SFTime").setName("touchTime").setAccessType(field.ACCESSTYPE_INPUTONLY))
-                .addField(new field().setType("SFInt32").setName("choice").setAccessType(field.ACCESSTYPE_OUTPUTONLY))
+              .addChild(new Script().setDEF(new SFString("Choice29"))
+                .addField(new field().setType("SFTime").setName(new SFString("touchTime")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+                .addField(new field().setType("SFInt32").setName(new SFString("choice")).setAccessType(field.ACCESSTYPE_OUTPUTONLY))
                 .setSourceCode("ecmascript:\n"+
 "      function set_touchTime(value) {\n"+
 "          choice = 29;\n"+
@@ -424,9 +424,9 @@ public class MenuJin implements X3DRoots {
 "      function touchTime(value) {\n"+
 "          choice = 29;\n"+
 "      }"))
-              .addChild(new Inline().setDEF("JinWink").setUrl(new MFString29().getArray()))))
+              .addChild(new Inline().setDEF(new SFString("JinWink")).setUrl(new MFString29().getArray()))))
           .addChild(new Transform().setTranslation(new float[] {48f ,63.4f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinBlink").setDEF("JinBlink_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinBlink")).setDEF(new SFString("JinBlink_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -437,10 +437,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3232().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f33().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinBlink_Sensor").setFromField("touchTime").setToNode("Choice0").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice0").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinBlink_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice0")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice0")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,60.4f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinBrowLowerer").setDEF("JinBrowLowerer_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinBrowLowerer")).setDEF(new SFString("JinBrowLowerer_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -451,10 +451,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3236().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f37().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinBrowLowerer_Sensor").setFromField("touchTime").setToNode("Choice1").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice1").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinBrowLowerer_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice1")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice1")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,57.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinCheekPuffer").setDEF("JinCheekPuffer_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinCheekPuffer")).setDEF(new SFString("JinCheekPuffer_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -465,10 +465,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3240().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f41().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinCheekPuffer_Sensor").setFromField("touchTime").setToNode("Choice2").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice2").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinCheekPuffer_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice2")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice2")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,54.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinCheekRaiser").setDEF("JinCheekRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinCheekRaiser")).setDEF(new SFString("JinCheekRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -479,10 +479,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3244().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f45().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinCheekRaiser_Sensor").setFromField("touchTime").setToNode("Choice3").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice3").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinCheekRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice3")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice3")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,51.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinChinRaiser").setDEF("JinChinRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinChinRaiser")).setDEF(new SFString("JinChinRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -493,10 +493,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3248().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f49().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinChinRaiser_Sensor").setFromField("touchTime").setToNode("Choice4").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice4").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinChinRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice4")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice4")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,48.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinDimpler").setDEF("JinDimpler_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinDimpler")).setDEF(new SFString("JinDimpler_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -507,10 +507,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3252().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f53().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinDimpler_Sensor").setFromField("touchTime").setToNode("Choice5").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice5").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinDimpler_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice5")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice5")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,45.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinEyesClosed").setDEF("JinEyesClosed_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinEyesClosed")).setDEF(new SFString("JinEyesClosed_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -521,10 +521,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3256().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f57().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinEyesClosed_Sensor").setFromField("touchTime").setToNode("Choice6").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice6").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinEyesClosed_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice6")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice6")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,42.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinInnerBrowRaiser").setDEF("JinInnerBrowRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinInnerBrowRaiser")).setDEF(new SFString("JinInnerBrowRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -535,10 +535,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3260().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f61().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinInnerBrowRaiser_Sensor").setFromField("touchTime").setToNode("Choice7").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice7").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinInnerBrowRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice7")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice7")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,39.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinJawDrop").setDEF("JinJawDrop_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinJawDrop")).setDEF(new SFString("JinJawDrop_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -549,10 +549,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3264().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f65().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinJawDrop_Sensor").setFromField("touchTime").setToNode("Choice8").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice8").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinJawDrop_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice8")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice8")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,36.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLidDroop").setDEF("JinLidDroop_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLidDroop")).setDEF(new SFString("JinLidDroop_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -563,10 +563,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3268().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f69().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLidDroop_Sensor").setFromField("touchTime").setToNode("Choice9").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice9").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLidDroop_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice9")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice9")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,33.39999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLidTightener").setDEF("JinLidTightener_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLidTightener")).setDEF(new SFString("JinLidTightener_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -577,10 +577,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3272().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f73().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLidTightener_Sensor").setFromField("touchTime").setToNode("Choice10").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice10").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLidTightener_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice10")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice10")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,30.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipCornerDepressor").setDEF("JinLipCornerDepressor_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipCornerDepressor")).setDEF(new SFString("JinLipCornerDepressor_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -591,10 +591,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3276().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f77().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipCornerDepressor_Sensor").setFromField("touchTime").setToNode("Choice11").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice11").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipCornerDepressor_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice11")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice11")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,27.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipCornerPuller").setDEF("JinLipCornerPuller_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipCornerPuller")).setDEF(new SFString("JinLipCornerPuller_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -605,10 +605,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3280().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f81().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipCornerPuller_Sensor").setFromField("touchTime").setToNode("Choice12").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice12").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipCornerPuller_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice12")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice12")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,24.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipFunneler").setDEF("JinLipFunneler_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipFunneler")).setDEF(new SFString("JinLipFunneler_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -619,10 +619,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3284().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f85().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipFunneler_Sensor").setFromField("touchTime").setToNode("Choice13").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice13").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipFunneler_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice13")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice13")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,21.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipPressor").setDEF("JinLipPressor_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipPressor")).setDEF(new SFString("JinLipPressor_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -633,10 +633,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3288().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f89().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipPressor_Sensor").setFromField("touchTime").setToNode("Choice14").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice14").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipPressor_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice14")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice14")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,18.4f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipPuckerer").setDEF("JinLipPuckerer_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipPuckerer")).setDEF(new SFString("JinLipPuckerer_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -647,10 +647,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3292().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f93().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipPuckerer_Sensor").setFromField("touchTime").setToNode("Choice15").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice15").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipPuckerer_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice15")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice15")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,15.399999999999997f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipsPart").setDEF("JinLipsPart_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipsPart")).setDEF(new SFString("JinLipsPart_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -661,10 +661,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt3296().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f97().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipsPart_Sensor").setFromField("touchTime").setToNode("Choice16").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice16").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipsPart_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice16")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice16")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,12.399999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipStretcher").setDEF("JinLipStretcher_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipStretcher")).setDEF(new SFString("JinLipStretcher_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -675,10 +675,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32100().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f101().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipStretcher_Sensor").setFromField("touchTime").setToNode("Choice17").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice17").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipStretcher_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice17")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice17")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,9.399999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipSuck").setDEF("JinLipSuck_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipSuck")).setDEF(new SFString("JinLipSuck_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -689,10 +689,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32104().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f105().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipSuck_Sensor").setFromField("touchTime").setToNode("Choice18").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice18").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipSuck_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice18")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice18")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,6.399999999999999f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLipTightener").setDEF("JinLipTightener_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLipTightener")).setDEF(new SFString("JinLipTightener_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -703,10 +703,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32108().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f109().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLipTightener_Sensor").setFromField("touchTime").setToNode("Choice19").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice19").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLipTightener_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice19")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice19")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,3.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinLowerLipDepressor").setDEF("JinLowerLipDepressor_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinLowerLipDepressor")).setDEF(new SFString("JinLowerLipDepressor_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -717,10 +717,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32112().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f113().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinLowerLipDepressor_Sensor").setFromField("touchTime").setToNode("Choice20").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice20").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinLowerLipDepressor_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice20")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice20")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,0.399999999999995f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinMouthStretch").setDEF("JinMouthStretch_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinMouthStretch")).setDEF(new SFString("JinMouthStretch_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -731,10 +731,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32116().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f117().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinMouthStretch_Sensor").setFromField("touchTime").setToNode("Choice21").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice21").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinMouthStretch_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice21")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice21")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-2.6000000000000085f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinNasolabialDeepener").setDEF("JinNasolabialDeepener_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinNasolabialDeepener")).setDEF(new SFString("JinNasolabialDeepener_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -745,10 +745,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32120().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f121().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinNasolabialDeepener_Sensor").setFromField("touchTime").setToNode("Choice22").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice22").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinNasolabialDeepener_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice22")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice22")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-5.6000000000000085f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinNoseWrinkler").setDEF("JinNoseWrinkler_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinNoseWrinkler")).setDEF(new SFString("JinNoseWrinkler_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -759,10 +759,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32124().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f125().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinNoseWrinkler_Sensor").setFromField("touchTime").setToNode("Choice23").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice23").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinNoseWrinkler_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice23")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice23")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-8.600000000000009f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinOuterBrowRaiser").setDEF("JinOuterBrowRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinOuterBrowRaiser")).setDEF(new SFString("JinOuterBrowRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -773,10 +773,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32128().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f129().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinOuterBrowRaiser_Sensor").setFromField("touchTime").setToNode("Choice24").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice24").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinOuterBrowRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice24")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice24")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-11.600000000000009f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinSlit").setDEF("JinSlit_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinSlit")).setDEF(new SFString("JinSlit_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -787,10 +787,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32132().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f133().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinSlit_Sensor").setFromField("touchTime").setToNode("Choice25").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice25").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinSlit_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice25")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice25")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-14.600000000000001f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinSquint").setDEF("JinSquint_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinSquint")).setDEF(new SFString("JinSquint_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -801,10 +801,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32136().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f137().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinSquint_Sensor").setFromField("touchTime").setToNode("Choice26").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice26").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinSquint_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice26")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice26")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-17.6f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinUpperLidRaiser").setDEF("JinUpperLidRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinUpperLidRaiser")).setDEF(new SFString("JinUpperLidRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -815,10 +815,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32140().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f141().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinUpperLidRaiser_Sensor").setFromField("touchTime").setToNode("Choice27").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice27").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinUpperLidRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice27")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice27")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-20.6f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinUpperLipRaiser").setDEF("JinUpperLipRaiser_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinUpperLipRaiser")).setDEF(new SFString("JinUpperLipRaiser_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -829,10 +829,10 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32144().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f145().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinUpperLipRaiser_Sensor").setFromField("touchTime").setToNode("Choice28").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice28").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))
+          .addChild(new ROUTE().setFromNode(new SFString("JinUpperLipRaiser_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice28")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice28")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))
           .addChild(new Transform().setTranslation(new float[] {48f ,-23.599999999999994f ,0f })
-            .addChild(new TouchSensor().setDescription("TSJinWink").setDEF("JinWink_Sensor"))
+            .addChild(new TouchSensor().setDescription(new SFString("TSJinWink")).setDEF(new SFString("JinWink_Sensor")))
             .addChild(new Shape()
               .setAppearance(new Appearance()
                 .setMaterial(new Material().setDiffuseColor(new float[] {1f ,1f ,1f })))
@@ -843,8 +843,8 @@ public class MenuJin implements X3DRoots {
                 .setMaterial(new Material().setDiffuseColor(new float[] {0f ,0f ,1f })))
               .setGeometry(new IndexedFaceSet().setCoordIndex(new MFInt32148().getArray())
                 .setCoord(new Coordinate().setPoint(new MFVec3f149().getArray())))))
-          .addChild(new ROUTE().setFromNode("JinWink_Sensor").setFromField("touchTime").setToNode("Choice29").setToField("touchTime"))
-          .addChild(new ROUTE().setFromNode("Choice29").setFromField("choice").setToNode("SceneSwitcher").setToField("whichChoice"))));
+          .addChild(new ROUTE().setFromNode(new SFString("JinWink_Sensor")).setFromField(new SFString("touchTime")).setToNode(new SFString("Choice29")).setToField(new SFString("touchTime")))
+          .addChild(new ROUTE().setFromNode(new SFString("Choice29")).setFromField(new SFString("choice")).setToNode(new SFString("SceneSwitcher")).setToField(new SFString("whichChoice")))));
     return X3D0;
     }
 private class MFString0 {

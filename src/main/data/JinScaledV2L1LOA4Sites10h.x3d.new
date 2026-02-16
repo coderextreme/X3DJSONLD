@@ -3342,57 +3342,57 @@
 </Transform>
 </Transform>
 </Group>
-<HAnimHumanoid name="JinLOA4S" DEF="hanim_JinLOA4S" loa="4" version="2.0"><!--MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>--><!--<MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"'></MetadataString>--><!--<MetadataString name='authorEmail' value='myeongwonlee@gmail.com'></MetadataString>--><!--<MetadataString name='creationDate' value='31 March 2011'></MetadataString>--><!--<MetadataString name='John Carlson and Joe Williams' value='Modifiers'></MetadataString>--><!--<MetadataString name='modificationDate' value='25 March 2024'></MetadataString>--><!--<MetadataString name='gender' value='female'></MetadataString>--><!--<MetadataFloat name='height' value='1.5'></MetadataFloat>--><!--<MetadataString name='humanoidVersion' value='2.0'></MetadataString>--><!--</MetadataSet--><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.77 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Shape USE="sacrum_Shape"></Shape>
+<HAnimHumanoid name="JinLOA4S" DEF="hanim_JinLOA4S" loa="4" version="2.0"><!--MetadataSet name='HAnimHumanoid.info' containerField='metadata' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>--><!--<MetadataString name='authorName' value='"Jin Hoon Lee and Min Joo Lee"","" Chul Hee Jung and Myeong Won Lee"'></MetadataString>--><!--<MetadataString name='authorEmail' value='myeongwonlee@gmail.com'></MetadataString>--><!--<MetadataString name='creationDate' value='31 March 2011'></MetadataString>--><!--<MetadataString name='John Carlson and Joe Williams' value='Modifiers'></MetadataString>--><!--<MetadataString name='modificationDate' value='25 March 2024'></MetadataString>--><!--<MetadataString name='gender' value='female'></MetadataString>--><!--<MetadataFloat name='height' value='1.5'></MetadataFloat>--><!--<MetadataString name='humanoidVersion' value='2.0'></MetadataString>--><!--</MetadataSet--><HAnimJoint name="humanoid_root" DEF="hanim_humanoid_root" center="0 0.77 0" ulimit="0 0 0" llimit="0 0 0" containerField="skeleton"><HAnimSegment name="sacrum" DEF="hanim_sacrum"><Shape USE="sacrum_Shape"></Shape>
 <Transform USE="humanoid_rootJointShape"></Transform>
 <Shape USE="sacrum-to-sacroiliac_Segment"></Shape>
 <Shape USE="sacrum-to-vl5_Segment"></Shape>
 <Group USE="sacrum_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.826 0.02"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Shape USE="pelvis_Shape"></Shape>
+<HAnimJoint name="sacroiliac" DEF="hanim_sacroiliac" center="0 0.826 0.02" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="pelvis" DEF="hanim_pelvis"><Shape USE="pelvis_Shape"></Shape>
 <Transform USE="sacroiliacJointShape"></Transform>
 <Shape USE="pelvis-to-l_hip_Segment"></Shape>
 <Shape USE="pelvis-to-r_hip_Segment"></Shape>
 <Group USE="pelvis_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.095 0.8266 -0.0183"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Shape USE="l_thigh_Shape"></Shape>
+<HAnimJoint name="l_hip" DEF="hanim_l_hip" center="0.095 0.8266 -0.0183" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_thigh" DEF="hanim_l_thigh"><Shape USE="l_thigh_Shape"></Shape>
 <Transform USE="l_hipJointShape"></Transform>
 <Shape USE="l_thigh_Segment"></Shape>
 <Group USE="l_thigh_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.0926 0.4088 -0.01944"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Shape USE="l_calf_Shape"></Shape>
+<HAnimJoint name="l_knee" DEF="hanim_l_knee" center="0.0926 0.4088 -0.01944" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_calf" DEF="hanim_l_calf"><Shape USE="l_calf_Shape"></Shape>
 <Transform USE="l_kneeJointShape"></Transform>
 <Shape USE="l_calf_Segment"></Shape>
 <Group USE="l_calf_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.0888 0.09545 -0.01045"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Shape USE="l_talus_Shape"></Shape>
+<HAnimJoint name="l_talocrural" DEF="hanim_l_talocrural" center="0.0888 0.09545 -0.01045" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_talus" DEF="hanim_l_talus"><Shape USE="l_talus_Shape"></Shape>
 <Transform USE="l_talocruralJointShape"></Transform>
 <Shape USE="l_talus-to-l_talocalcaneonavicular_Segment"></Shape>
 <Shape USE="l_talus-to-l_calcaneuscuboid_Segment"></Shape>
 <Group USE="l_talus_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_talocalcaneonavicular" DEF="hanim_l_talocalcaneonavicular" center="0.0783 0.0369 0.0049"><HAnimSegment name="l_navicular" DEF="hanim_l_navicular"><Shape USE="l_navicular_Shape"></Shape>
+<HAnimJoint name="l_talocalcaneonavicular" DEF="hanim_l_talocalcaneonavicular" center="0.0783 0.0369 0.0049" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_navicular" DEF="hanim_l_navicular"><Shape USE="l_navicular_Shape"></Shape>
 <Transform USE="l_talocalcaneonavicularJointShape"></Transform>
 <Shape USE="l_navicular-to-l_cuneonavicular_1_Segment"></Shape>
 <Shape USE="l_navicular-to-l_cuneonavicular_2_Segment"></Shape>
 <Shape USE="l_navicular-to-l_cuneonavicular_3_Segment"></Shape>
 <Group USE="l_navicular_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_cuneonavicular_1" DEF="hanim_l_cuneonavicular_1" center="0.0674 0.0321 0.0184"><HAnimSegment name="l_cuneiform_1" DEF="hanim_l_cuneiform_1"><Shape USE="l_cuneiform_1_Shape"></Shape>
+<HAnimJoint name="l_cuneonavicular_1" DEF="hanim_l_cuneonavicular_1" center="0.0674 0.0321 0.0184" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_cuneiform_1" DEF="hanim_l_cuneiform_1"><Shape USE="l_cuneiform_1_Shape"></Shape>
 <Transform USE="l_cuneonavicular_1JointShape"></Transform>
 <Shape USE="l_cuneiform_1_Segment"></Shape>
 <Group USE="l_cuneiform_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_1" DEF="hanim_l_tarsometatarsal_1" center="0.0646 0.02324 0.0442"><HAnimSegment name="l_metatarsal_1" DEF="hanim_l_metatarsal_1"><Shape USE="l_metatarsal_1_Shape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_1" DEF="hanim_l_tarsometatarsal_1" center="0.0646 0.02324 0.0442" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metatarsal_1" DEF="hanim_l_metatarsal_1"><Shape USE="l_metatarsal_1_Shape"></Shape>
 <Transform USE="l_tarsometatarsal_1JointShape"></Transform>
 <Shape USE="l_metatarsal_1_Segment"></Shape>
 <Group USE="l_metatarsal_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_1" DEF="hanim_l_metatarsophalangeal_1" center="0.0621 0.01442 0.0936"><HAnimSegment name="l_tarsal_proximal_phalanx_1" DEF="hanim_l_tarsal_proximal_phalanx_1"><Shape USE="l_tarsal_proximal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_1" DEF="hanim_l_metatarsophalangeal_1" center="0.0621 0.01442 0.0936" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_1" DEF="hanim_l_tarsal_proximal_phalanx_1"><Shape USE="l_tarsal_proximal_phalanx_1_Shape"></Shape>
 <Transform USE="l_metatarsophalangeal_1JointShape"></Transform>
 <Shape USE="l_tarsal_proximal_phalanx_1_Segment"></Shape>
 <Group USE="l_tarsal_proximal_phalanx_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_interphalangeal_1" DEF="hanim_l_tarsal_interphalangeal_1" center="0.062 0.012 0.115"><HAnimSegment name="l_tarsal_distal_phalanx_1" DEF="hanim_l_tarsal_distal_phalanx_1"><Shape USE="l_tarsal_distal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="l_tarsal_interphalangeal_1" DEF="hanim_l_tarsal_interphalangeal_1" center="0.062 0.012 0.115" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_1" DEF="hanim_l_tarsal_distal_phalanx_1"><Shape USE="l_tarsal_distal_phalanx_1_Shape"></Shape>
 <Transform USE="l_tarsal_interphalangeal_1JointShape"></Transform>
 <Shape USE="l_tarsal_distal_phalanx_1_Segment"></Shape>
 <Group USE="l_tarsal_distal_phalanx_1_Sites"></Group>
@@ -3401,27 +3401,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_cuneonavicular_2" DEF="hanim_l_cuneonavicular_2" center="0.0814 0.0335 0.02143"><HAnimSegment name="l_cuneiform_2" DEF="hanim_l_cuneiform_2"><Shape USE="l_cuneiform_2_Shape"></Shape>
+<HAnimJoint name="l_cuneonavicular_2" DEF="hanim_l_cuneonavicular_2" center="0.0814 0.0335 0.02143" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_cuneiform_2" DEF="hanim_l_cuneiform_2"><Shape USE="l_cuneiform_2_Shape"></Shape>
 <Transform USE="l_cuneonavicular_2JointShape"></Transform>
 <Shape USE="l_cuneiform_2_Segment"></Shape>
 <Group USE="l_cuneiform_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.0802 0.0261 0.0411"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Shape USE="l_metatarsal_2_Shape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_2" DEF="hanim_l_tarsometatarsal_2" center="0.0802 0.0261 0.0411" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metatarsal_2" DEF="hanim_l_metatarsal_2"><Shape USE="l_metatarsal_2_Shape"></Shape>
 <Transform USE="l_tarsometatarsal_2JointShape"></Transform>
 <Shape USE="l_metatarsal_2_Segment"></Shape>
 <Group USE="l_metatarsal_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.0825 0.01497 0.09783"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Shape USE="l_tarsal_proximal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_2" DEF="hanim_l_metatarsophalangeal_2" center="0.0825 0.01497 0.09783" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_2" DEF="hanim_l_tarsal_proximal_phalanx_2"><Shape USE="l_tarsal_proximal_phalanx_2_Shape"></Shape>
 <Transform USE="l_metatarsophalangeal_2JointShape"></Transform>
 <Shape USE="l_tarsal_proximal_phalanx_2_Segment"></Shape>
 <Group USE="l_tarsal_proximal_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_2" DEF="hanim_l_tarsal_proximal_interphalangeal_2" center="0.0843 0.01265 0.114"><HAnimSegment name="l_tarsal_middle_phalanx_2" DEF="hanim_l_tarsal_middle_phalanx_2"><Shape USE="l_tarsal_middle_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_2" DEF="hanim_l_tarsal_proximal_interphalangeal_2" center="0.0843 0.01265 0.114" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_2" DEF="hanim_l_tarsal_middle_phalanx_2"><Shape USE="l_tarsal_middle_phalanx_2_Shape"></Shape>
 <Transform USE="l_tarsal_proximal_interphalangeal_2JointShape"></Transform>
 <Shape USE="l_tarsal_middle_phalanx_2_Segment"></Shape>
 <Group USE="l_tarsal_middle_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.0843 0.00982 0.123435"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Shape USE="l_tarsal_distal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_2" DEF="hanim_l_tarsal_distal_interphalangeal_2" center="0.0843 0.00982 0.123435" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_2" DEF="hanim_l_tarsal_distal_phalanx_2"><Shape USE="l_tarsal_distal_phalanx_2_Shape"></Shape>
 <Transform USE="l_tarsal_distal_interphalangeal_2JointShape"></Transform>
 <Shape USE="l_tarsal_distal_phalanx_2_Segment"></Shape>
 <Group USE="l_tarsal_distal_phalanx_2_Sites"></Group>
@@ -3431,27 +3431,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_cuneonavicular_3" DEF="hanim_l_cuneonavicular_3" center="0.09297 0.0334 0.01982"><HAnimSegment name="l_cuneiform_3" DEF="hanim_l_cuneiform_3"><Shape USE="l_cuneiform_3_Shape"></Shape>
+<HAnimJoint name="l_cuneonavicular_3" DEF="hanim_l_cuneonavicular_3" center="0.09297 0.0334 0.01982" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_cuneiform_3" DEF="hanim_l_cuneiform_3"><Shape USE="l_cuneiform_3_Shape"></Shape>
 <Transform USE="l_cuneonavicular_3JointShape"></Transform>
 <Shape USE="l_cuneiform_3_Segment"></Shape>
 <Group USE="l_cuneiform_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_3" DEF="hanim_l_tarsometatarsal_3" center="0.09459 0.0261 0.0394"><HAnimSegment name="l_metatarsal_3" DEF="hanim_l_metatarsal_3"><Shape USE="l_metatarsal_3_Shape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_3" DEF="hanim_l_tarsometatarsal_3" center="0.09459 0.0261 0.0394" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metatarsal_3" DEF="hanim_l_metatarsal_3"><Shape USE="l_metatarsal_3_Shape"></Shape>
 <Transform USE="l_tarsometatarsal_3JointShape"></Transform>
 <Shape USE="l_metatarsal_3_Segment"></Shape>
 <Group USE="l_metatarsal_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_3" DEF="hanim_l_metatarsophalangeal_3" center="0.0965 0.01505 0.0954"><HAnimSegment name="l_tarsal_proximal_phalanx_3" DEF="hanim_l_tarsal_proximal_phalanx_3"><Shape USE="l_tarsal_proximal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_3" DEF="hanim_l_metatarsophalangeal_3" center="0.0965 0.01505 0.0954" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_3" DEF="hanim_l_tarsal_proximal_phalanx_3"><Shape USE="l_tarsal_proximal_phalanx_3_Shape"></Shape>
 <Transform USE="l_metatarsophalangeal_3JointShape"></Transform>
 <Shape USE="l_tarsal_proximal_phalanx_3_Segment"></Shape>
 <Group USE="l_tarsal_proximal_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_3" DEF="hanim_l_tarsal_proximal_interphalangeal_3" center="0.09886 0.01192 0.11047"><HAnimSegment name="l_tarsal_middle_phalanx_3" DEF="hanim_l_tarsal_middle_phalanx_3"><Shape USE="l_tarsal_middle_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_3" DEF="hanim_l_tarsal_proximal_interphalangeal_3" center="0.09886 0.01192 0.11047" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_3" DEF="hanim_l_tarsal_middle_phalanx_3"><Shape USE="l_tarsal_middle_phalanx_3_Shape"></Shape>
 <Transform USE="l_tarsal_proximal_interphalangeal_3JointShape"></Transform>
 <Shape USE="l_tarsal_middle_phalanx_3_Segment"></Shape>
 <Group USE="l_tarsal_middle_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_3" DEF="hanim_l_tarsal_distal_interphalangeal_3" center="0.1004 0.00983 0.1197"><HAnimSegment name="l_tarsal_distal_phalanx_3" DEF="hanim_l_tarsal_distal_phalanx_3"><Shape USE="l_tarsal_distal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_3" DEF="hanim_l_tarsal_distal_interphalangeal_3" center="0.1004 0.00983 0.1197" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_3" DEF="hanim_l_tarsal_distal_phalanx_3"><Shape USE="l_tarsal_distal_phalanx_3_Shape"></Shape>
 <Transform USE="l_tarsal_distal_interphalangeal_3JointShape"></Transform>
 <Shape USE="l_tarsal_distal_phalanx_3_Segment"></Shape>
 <Group USE="l_tarsal_distal_phalanx_3_Sites"></Group>
@@ -3462,33 +3462,33 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_calcaneocuboid" DEF="hanim_l_calcaneocuboid" center="0.0891 0.05798 -0.0259"><HAnimSegment name="l_calcaneus" DEF="hanim_l_calcaneus"><Shape USE="l_calcaneus_Shape"></Shape>
+<HAnimJoint name="l_calcaneocuboid" DEF="hanim_l_calcaneocuboid" center="0.0891 0.05798 -0.0259" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_calcaneus" DEF="hanim_l_calcaneus"><Shape USE="l_calcaneus_Shape"></Shape>
 <Transform USE="l_calcaneocuboidJointShape"></Transform>
 <Shape USE="l_calcaneus_Segment"></Shape>
 <Group USE="l_calcaneus_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_transversetarsal" DEF="hanim_l_transversetarsal" center="0.11063 0.03528 0.0021"><HAnimSegment name="l_cuboid" DEF="hanim_l_cuboid"><Shape USE="l_cuboid_Shape"></Shape>
+<HAnimJoint name="l_transversetarsal" DEF="hanim_l_transversetarsal" center="0.11063 0.03528 0.0021" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_cuboid" DEF="hanim_l_cuboid"><Shape USE="l_cuboid_Shape"></Shape>
 <Transform USE="l_transversetarsalJointShape"></Transform>
 <Shape USE="l_cuboid-to-l_tarsometatarsal_4_Segment"></Shape>
 <Shape USE="l_cuboid-to-l_tarsometatarsal_5_Segment"></Shape>
 <Group USE="l_cuboid_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsometatarsal_4" DEF="hanim_l_tarsometatarsal_4" center="0.10649 0.02454 0.03843"><HAnimSegment name="l_metatarsal_4" DEF="hanim_l_metatarsal_4"><Shape USE="l_metatarsal_4_Shape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_4" DEF="hanim_l_tarsometatarsal_4" center="0.10649 0.02454 0.03843" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metatarsal_4" DEF="hanim_l_metatarsal_4"><Shape USE="l_metatarsal_4_Shape"></Shape>
 <Transform USE="l_tarsometatarsal_4JointShape"></Transform>
 <Shape USE="l_metatarsal_4_Segment"></Shape>
 <Group USE="l_metatarsal_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_4" DEF="hanim_l_metatarsophalangeal_4" center="0.109867 0.01435 0.09117"><HAnimSegment name="l_tarsal_proximal_phalanx_4" DEF="hanim_l_tarsal_proximal_phalanx_4"><Shape USE="l_tarsal_proximal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_4" DEF="hanim_l_metatarsophalangeal_4" center="0.109867 0.01435 0.09117" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_4" DEF="hanim_l_tarsal_proximal_phalanx_4"><Shape USE="l_tarsal_proximal_phalanx_4_Shape"></Shape>
 <Transform USE="l_metatarsophalangeal_4JointShape"></Transform>
 <Shape USE="l_tarsal_proximal_phalanx_4_Segment"></Shape>
 <Group USE="l_tarsal_proximal_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_4" DEF="hanim_l_tarsal_proximal_interphalangeal_4" center="0.11416 0.01224 0.10631"><HAnimSegment name="l_tarsal_middle_phalanx_4" DEF="hanim_l_tarsal_middle_phalanx_4"><Shape USE="l_tarsal_middle_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_4" DEF="hanim_l_tarsal_proximal_interphalangeal_4" center="0.11416 0.01224 0.10631" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_4" DEF="hanim_l_tarsal_middle_phalanx_4"><Shape USE="l_tarsal_middle_phalanx_4_Shape"></Shape>
 <Transform USE="l_tarsal_proximal_interphalangeal_4JointShape"></Transform>
 <Shape USE="l_tarsal_middle_phalanx_4_Segment"></Shape>
 <Group USE="l_tarsal_middle_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_4" DEF="hanim_l_tarsal_distal_interphalangeal_4" center="0.11567 0.00936 0.11369"><HAnimSegment name="l_tarsal_distal_phalanx_4" DEF="hanim_l_tarsal_distal_phalanx_4"><Shape USE="l_tarsal_distal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_4" DEF="hanim_l_tarsal_distal_interphalangeal_4" center="0.11567 0.00936 0.11369" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_4" DEF="hanim_l_tarsal_distal_phalanx_4"><Shape USE="l_tarsal_distal_phalanx_4_Shape"></Shape>
 <Transform USE="l_tarsal_distal_interphalangeal_4JointShape"></Transform>
 <Shape USE="l_tarsal_distal_phalanx_4_Segment"></Shape>
 <Group USE="l_tarsal_distal_phalanx_4_Sites"></Group>
@@ -3497,22 +3497,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_tarsometatarsal_5" DEF="hanim_l_tarsometatarsal_5" center="0.1208 0.02094 0.03474"><HAnimSegment name="l_metatarsal_5" DEF="hanim_l_metatarsal_5"><Shape USE="l_metatarsal_5_Shape"></Shape>
+<HAnimJoint name="l_tarsometatarsal_5" DEF="hanim_l_tarsometatarsal_5" center="0.1208 0.02094 0.03474" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metatarsal_5" DEF="hanim_l_metatarsal_5"><Shape USE="l_metatarsal_5_Shape"></Shape>
 <Transform USE="l_metatarsal_5JointShape"></Transform>
 <Shape USE="l_metatarsal_5_Segment"></Shape>
 <Group USE="l_metatarsal_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metatarsophalangeal_5" DEF="hanim_l_metatarsophalangeal_5" center="0.124065 0.01367 0.08656"><HAnimSegment name="l_tarsal_proximal_phalanx_5" DEF="hanim_l_tarsal_proximal_phalanx_5"><Shape USE="l_tarsal_proximal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_metatarsophalangeal_5" DEF="hanim_l_metatarsophalangeal_5" center="0.124065 0.01367 0.08656" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_proximal_phalanx_5" DEF="hanim_l_tarsal_proximal_phalanx_5"><Shape USE="l_tarsal_proximal_phalanx_5_Shape"></Shape>
 <Transform USE="l_metatarsophalangeal_5JointShape"></Transform>
 <Shape USE="l_tarsal_proximal_phalanx_5_Segment"></Shape>
 <Group USE="l_tarsal_proximal_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_proximal_interphalangeal_5" DEF="hanim_l_tarsal_proximal_interphalangeal_5" center="0.12638 0.01086 0.09414"><HAnimSegment name="l_tarsal_middle_phalanx_5" DEF="hanim_l_tarsal_middle_phalanx_5"><Shape USE="l_tarsal_middle_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_tarsal_proximal_interphalangeal_5" DEF="hanim_l_tarsal_proximal_interphalangeal_5" center="0.12638 0.01086 0.09414" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_middle_phalanx_5" DEF="hanim_l_tarsal_middle_phalanx_5"><Shape USE="l_tarsal_middle_phalanx_5_Shape"></Shape>
 <Transform USE="l_tarsal_proximal_interphalangeal_5JointShape"></Transform>
 <Shape USE="l_tarsal_middle_phalanx_5_Segment"></Shape>
 <Group USE="l_tarsal_middle_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_tarsal_distal_interphalangeal_5" DEF="hanim_l_tarsal_distal_interphalangeal_5" center="0.12728 0.00856 0.10188"><HAnimSegment name="l_tarsal_distal_phalanx_5" DEF="hanim_l_tarsal_distal_phalanx_5"><Shape USE="l_tarsal_distal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_tarsal_distal_interphalangeal_5" DEF="hanim_l_tarsal_distal_interphalangeal_5" center="0.12728 0.00856 0.10188" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_tarsal_distal_phalanx_5" DEF="hanim_l_tarsal_distal_phalanx_5"><Shape USE="l_tarsal_distal_phalanx_5_Shape"></Shape>
 <Transform USE="l_tarsal_distal_interphalangeal_5JointShape"></Transform>
 <Shape USE="l_tarsal_distal_phalanx_5_Segment"></Shape>
 <Group USE="l_tarsal_distal_phalanx_5_Sites"></Group>
@@ -3526,45 +3526,45 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.09466 0.82665 -0.01835"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Shape USE="r_thigh_Shape"></Shape>
+<HAnimJoint name="r_hip" DEF="hanim_r_hip" center="-0.09466 0.82665 -0.01835" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_thigh" DEF="hanim_r_thigh"><Shape USE="r_thigh_Shape"></Shape>
 <Transform USE="r_hipJointShape"></Transform>
 <Shape USE="r_thigh_Segment"></Shape>
 <Group USE="r_thigh_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0926 0.408825 -0.01944"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Shape USE="r_calf_Shape"></Shape>
+<HAnimJoint name="r_knee" DEF="hanim_r_knee" center="-0.0926 0.408825 -0.01944" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_calf" DEF="hanim_r_calf"><Shape USE="r_calf_Shape"></Shape>
 <Transform USE="r_kneeJointShape"></Transform>
 <Shape USE="r_calf_Segment"></Shape>
 <Group USE="r_calf_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.08845 0.09544 -0.01045"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Shape USE="r_talus_Shape"></Shape>
+<HAnimJoint name="r_talocrural" DEF="hanim_r_talocrural" center="-0.08845 0.09544 -0.01045" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_talus" DEF="hanim_r_talus"><Shape USE="r_talus_Shape"></Shape>
 <Transform USE="r_talocruralJointShape"></Transform>
 <Shape USE="r_talus-to-r_talocalcaneonavicular_Segment"></Shape>
 <Shape USE="r_talus-to-r_calcaneocuboid_Segment"></Shape>
 <Group USE="r_talus_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_talocalcaneonavicular" DEF="hanim_r_talocalcaneonavicular" center="-0.07794 0.0369 0.00486"><HAnimSegment name="r_navicular" DEF="hanim_r_navicular"><Shape USE="r_navicular_Shape"></Shape>
+<HAnimJoint name="r_talocalcaneonavicular" DEF="hanim_r_talocalcaneonavicular" center="-0.07794 0.0369 0.00486" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_navicular" DEF="hanim_r_navicular"><Shape USE="r_navicular_Shape"></Shape>
 <Transform USE="r_talocalcaneonavicularJointShape"></Transform>
 <Shape USE="r_navicular-to-r_cuneonavicular_1_Segment"></Shape>
 <Shape USE="r_navicular-to-r_cuneonavicular_2_Segment"></Shape>
 <Shape USE="r_navicular-to-r_cuneonavicular_3_Segment"></Shape>
 <Group USE="r_navicular_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_cuneonavicular_1" DEF="hanim_r_cuneonavicular_1" center="-0.06698 0.032107 0.01839"><HAnimSegment name="r_cuneiform_1" DEF="hanim_r_cuneiform_1"><Shape USE="r_cuneiform_1_Shape"></Shape>
+<HAnimJoint name="r_cuneonavicular_1" DEF="hanim_r_cuneonavicular_1" center="-0.06698 0.032107 0.01839" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_cuneiform_1" DEF="hanim_r_cuneiform_1"><Shape USE="r_cuneiform_1_Shape"></Shape>
 <Transform USE="r_cuneonavicular_1JointShape"></Transform>
 <Shape USE="r_cuneiform_1_Segment"></Shape>
 <Group USE="r_cuneiform_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsometatarsal_1" DEF="hanim_r_tarsometatarsal_1" center="-0.064 0.02324 0.04419"><HAnimSegment name="r_metatarsal_1" DEF="hanim_r_metatarsal_1"><Shape USE="r_metatarsal_1_Shape"></Shape>
+<HAnimJoint name="r_tarsometatarsal_1" DEF="hanim_r_tarsometatarsal_1" center="-0.064 0.02324 0.04419" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metatarsal_1" DEF="hanim_r_metatarsal_1"><Shape USE="r_metatarsal_1_Shape"></Shape>
 <Transform USE="r_tarsometatarsal_1JointShape"></Transform>
 <Shape USE="r_metatarsal_1_Segment"></Shape>
 <Group USE="r_metatarsal_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_1" DEF="hanim_r_metatarsophalangeal_1" center="-0.06176 0.014425 0.09362"><HAnimSegment name="r_tarsal_proximal_phalanx_1" DEF="hanim_r_tarsal_proximal_phalanx_1"><Shape USE="r_tarsal_proximal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="r_metatarsophalangeal_1" DEF="hanim_r_metatarsophalangeal_1" center="-0.06176 0.014425 0.09362" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_1" DEF="hanim_r_tarsal_proximal_phalanx_1"><Shape USE="r_tarsal_proximal_phalanx_1_Shape"></Shape>
 <Transform USE="r_metatarsophalangeal_1JointShape"></Transform>
 <Shape USE="r_tarsal_proximal_phalanx_1_Segment"></Shape>
 <Group USE="r_tarsal_proximal_phalanx_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_interphalangeal_1" DEF="hanim_r_tarsal_interphalangeal_1" center="-0.06174 0.0121 0.1153"><HAnimSegment name="r_tarsal_distal_phalanx_1" DEF="hanim_r_tarsal_distal_phalanx_1"><Shape USE="r_tarsal_distal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="r_tarsal_interphalangeal_1" DEF="hanim_r_tarsal_interphalangeal_1" center="-0.06174 0.0121 0.1153" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_1" DEF="hanim_r_tarsal_distal_phalanx_1"><Shape USE="r_tarsal_distal_phalanx_1_Shape"></Shape>
 <Transform USE="r_tarsal_interphalangeal_1JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_1_Segment"></Shape>
 <Group USE="r_tarsal_distal_phalanx_1_Sites"></Group>
@@ -3573,27 +3573,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_cuneonavicular_2" DEF="hanim_r_cuneonavicular_2" center="-0.081 0.0335 0.02142"><HAnimSegment name="r_cuneiform_2" DEF="hanim_r_cuneiform_2"><Shape USE="r_cuneiform_2_Shape"></Shape>
+<HAnimJoint name="r_cuneonavicular_2" DEF="hanim_r_cuneonavicular_2" center="-0.081 0.0335 0.02142" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_cuneiform_2" DEF="hanim_r_cuneiform_2"><Shape USE="r_cuneiform_2_Shape"></Shape>
 <Transform USE="r_cuneonavicular_2JointShape"></Transform>
 <Shape USE="r_cuneiform_2_Segment"></Shape>
 <Group USE="r_cuneiform_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsometatarsal_2" DEF="hanim_r_tarsometatarsal_2" center="-0.07983 0.0261 0.04106"><HAnimSegment name="r_metatarsal_2" DEF="hanim_r_metatarsal_2"><Shape USE="r_metatarsal_2_Shape"></Shape>
+<HAnimJoint name="r_tarsometatarsal_2" DEF="hanim_r_tarsometatarsal_2" center="-0.07983 0.0261 0.04106" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metatarsal_2" DEF="hanim_r_metatarsal_2"><Shape USE="r_metatarsal_2_Shape"></Shape>
 <Transform USE="r_tarsometatarsal_2JointShape"></Transform>
 <Shape USE="r_metatarsal_2_Segment"></Shape>
 <Group USE="r_metatarsal_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0821 0.01497 0.09783"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><Shape USE="r_tarsal_proximal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_metatarsophalangeal_2" DEF="hanim_r_metatarsophalangeal_2" center="-0.0821 0.01497 0.09783" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_2" DEF="hanim_r_tarsal_proximal_phalanx_2"><Shape USE="r_tarsal_proximal_phalanx_2_Shape"></Shape>
 <Transform USE="r_metatarsophalangeal_2JointShape"></Transform>
 <Shape USE="r_tarsal_proximal_phalanx_2_Segment"></Shape>
 <Group USE="r_tarsal_proximal_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_proximal_interphalangeal_2" DEF="hanim_r_tarsal_proximal_interphalangeal_2" center="-0.0839 0.012647 0.114"><HAnimSegment name="r_tarsal_middle_phalanx_2" DEF="hanim_r_tarsal_middle_phalanx_2"><Shape USE="r_tarsal_middle_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_tarsal_proximal_interphalangeal_2" DEF="hanim_r_tarsal_proximal_interphalangeal_2" center="-0.0839 0.012647 0.114" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_middle_phalanx_2" DEF="hanim_r_tarsal_middle_phalanx_2"><Shape USE="r_tarsal_middle_phalanx_2_Shape"></Shape>
 <Transform USE="r_tarsal_proximal_interphalangeal_2JointShape"></Transform>
 <Shape USE="r_tarsal_middle_phalanx_2_Segment"></Shape>
 <Group USE="r_tarsal_middle_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_distal_interphalangeal_2" DEF="hanim_r_tarsal_distal_interphalangeal_2" center="-0.0839 0.009825 0.123435"><HAnimSegment name="r_tarsal_distal_phalanx_2" DEF="hanim_r_tarsal_distal_phalanx_2"><Shape USE="r_tarsal_distal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_tarsal_distal_interphalangeal_2" DEF="hanim_r_tarsal_distal_interphalangeal_2" center="-0.0839 0.009825 0.123435" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_2" DEF="hanim_r_tarsal_distal_phalanx_2"><Shape USE="r_tarsal_distal_phalanx_2_Shape"></Shape>
 <Transform USE="r_tarsal_distal_interphalangeal_2JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_2_Segment"></Shape>
 <Group USE="r_tarsal_distal_phalanx_2_Sites"></Group>
@@ -3603,27 +3603,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_cuneonavicular_3" DEF="hanim_r_cuneonavicular_3" center="-0.09261 0.03339 0.01982"><HAnimSegment name="r_cuneiform_3" DEF="hanim_r_cuneiform_3"><Shape USE="r_cuneiform_3_Shape"></Shape>
+<HAnimJoint name="r_cuneonavicular_3" DEF="hanim_r_cuneonavicular_3" center="-0.09261 0.03339 0.01982" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_cuneiform_3" DEF="hanim_r_cuneiform_3"><Shape USE="r_cuneiform_3_Shape"></Shape>
 <Transform USE="r_cuneonavicular_3JointShape"></Transform>
 <Shape USE="r_cuneiform_3_Segment"></Shape>
 <Group USE="r_cuneiform_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsometatarsal_3" DEF="hanim_r_tarsometatarsal_3" center="-0.09423 0.0261 0.0394"><HAnimSegment name="r_metatarsal_3" DEF="hanim_r_metatarsal_3"><Shape USE="r_metatarsal_3_Shape"></Shape>
+<HAnimJoint name="r_tarsometatarsal_3" DEF="hanim_r_tarsometatarsal_3" center="-0.09423 0.0261 0.0394" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metatarsal_3" DEF="hanim_r_metatarsal_3"><Shape USE="r_metatarsal_3_Shape"></Shape>
 <Transform USE="r_tarsometatarsal_3JointShape"></Transform>
 <Shape USE="r_metatarsal_3_Segment"></Shape>
 <Group USE="r_metatarsal_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_3" DEF="hanim_r_metatarsophalangeal_3" center="-0.0961 0.01505 0.09542"><HAnimSegment name="r_tarsal_proximal_phalanx_3" DEF="hanim_r_tarsal_proximal_phalanx_3"><Shape USE="r_tarsal_proximal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_metatarsophalangeal_3" DEF="hanim_r_metatarsophalangeal_3" center="-0.0961 0.01505 0.09542" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_3" DEF="hanim_r_tarsal_proximal_phalanx_3"><Shape USE="r_tarsal_proximal_phalanx_3_Shape"></Shape>
 <Transform USE="r_metatarsophalangeal_3JointShape"></Transform>
 <Shape USE="r_tarsal_proximal_phalanx_3_Segment"></Shape>
 <Group USE="r_tarsal_proximal_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_proximal_interphalangeal_3" DEF="hanim_r_tarsal_proximal_interphalangeal_3" center="-0.0985 0.01192 0.11047"><HAnimSegment name="r_tarsal_middle_phalanx_3" DEF="hanim_r_tarsal_middle_phalanx_3"><Shape USE="r_tarsal_middle_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_tarsal_proximal_interphalangeal_3" DEF="hanim_r_tarsal_proximal_interphalangeal_3" center="-0.0985 0.01192 0.11047" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_middle_phalanx_3" DEF="hanim_r_tarsal_middle_phalanx_3"><Shape USE="r_tarsal_middle_phalanx_3_Shape"></Shape>
 <Transform USE="r_tarsal_proximal_interphalangeal_3JointShape"></Transform>
 <Shape USE="r_tarsal_middle_phalanx_3_Segment"></Shape>
 <Group USE="r_tarsal_middle_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_distal_interphalangeal_3" DEF="hanim_r_tarsal_distal_interphalangeal_3" center="-0.100035 0.00982 0.1197"><HAnimSegment name="r_tarsal_distal_phalanx_3" DEF="hanim_r_tarsal_distal_phalanx_3"><Shape USE="r_tarsal_distal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_tarsal_distal_interphalangeal_3" DEF="hanim_r_tarsal_distal_interphalangeal_3" center="-0.100035 0.00982 0.1197" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_3" DEF="hanim_r_tarsal_distal_phalanx_3"><Shape USE="r_tarsal_distal_phalanx_3_Shape"></Shape>
 <Transform USE="r_tarsal_distal_interphalangeal_3JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_3_Segment"></Shape>
 <Group USE="r_tarsal_distal_phalanx_3_Sites"></Group>
@@ -3634,32 +3634,32 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_calcaneocuboid" DEF="hanim_r_calcaneocuboid" center="-0.088717 0.05798 -0.025965"><HAnimSegment name="r_calcaneus" DEF="hanim_r_calcaneus"><Shape USE="r_calcaneus_Shape"></Shape>
+<HAnimJoint name="r_calcaneocuboid" DEF="hanim_r_calcaneocuboid" center="-0.088717 0.05798 -0.025965" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_calcaneus" DEF="hanim_r_calcaneus"><Shape USE="r_calcaneus_Shape"></Shape>
 <Transform USE="r_calcaneocuboidJointShape"></Transform>
 <Shape USE="r_calcaneus_Segment"></Shape>
 <Group USE="r_calcaneus_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_transversetarsal" DEF="hanim_r_transversetarsal" center="-0.11027 0.03528 0.0021"><HAnimSegment name="r_cuboid" DEF="hanim_r_cuboid"><Shape USE="r_cuboid_Shape"></Shape>
+<HAnimJoint name="r_transversetarsal" DEF="hanim_r_transversetarsal" center="-0.11027 0.03528 0.0021" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_cuboid" DEF="hanim_r_cuboid"><Shape USE="r_cuboid_Shape"></Shape>
 <Transform USE="r_transversetarsalJointShape"></Transform>
 <Shape USE="r_cuboid_Segment"></Shape>
 <Group USE="r_cuboid_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsometatarsal_4" DEF="hanim_r_tarsometatarsal_4" center="-0.10613 0.02454 0.03843"><HAnimSegment name="r_metatarsal_4" DEF="hanim_r_metatarsal_4"><Shape USE="r_metatarsal_4_Shape"></Shape>
+<HAnimJoint name="r_tarsometatarsal_4" DEF="hanim_r_tarsometatarsal_4" center="-0.10613 0.02454 0.03843" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metatarsal_4" DEF="hanim_r_metatarsal_4"><Shape USE="r_metatarsal_4_Shape"></Shape>
 <Transform USE="r_tarsometatarsal_4JointShape"></Transform>
 <Shape USE="r_metatarsal_4_Segment"></Shape>
 <Group USE="r_metatarsal_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_4" DEF="hanim_r_metatarsophalangeal_4" center="-0.1095 0.01435 0.09117"><HAnimSegment name="r_tarsal_proximal_phalanx_4" DEF="hanim_r_tarsal_proximal_phalanx_4"><Shape USE="r_tarsal_proximal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_metatarsophalangeal_4" DEF="hanim_r_metatarsophalangeal_4" center="-0.1095 0.01435 0.09117" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_4" DEF="hanim_r_tarsal_proximal_phalanx_4"><Shape USE="r_tarsal_proximal_phalanx_4_Shape"></Shape>
 <Transform USE="r_metatarsophalangeal_4JointShape"></Transform>
 <Shape USE="r_tarsal_proximal_phalanx_4_Segment"></Shape>
 <Group USE="r_tarsal_proximal_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_proximal_interphalangeal_4" DEF="hanim_r_tarsal_proximal_interphalangeal_4" center="-0.11378 0.01224 0.1063"><HAnimSegment name="r_tarsal_middle_phalanx_4" DEF="hanim_r_tarsal_middle_phalanx_4"><Shape USE="r_tarsal_middle_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_tarsal_proximal_interphalangeal_4" DEF="hanim_r_tarsal_proximal_interphalangeal_4" center="-0.11378 0.01224 0.1063" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_middle_phalanx_4" DEF="hanim_r_tarsal_middle_phalanx_4"><Shape USE="r_tarsal_middle_phalanx_4_Shape"></Shape>
 <Transform USE="r_tarsal_proximal_interphalangeal_4JointShape"></Transform>
 <Shape USE="r_tarsal_middle_phalanx_4_Segment"></Shape>
 <Group USE="r_tarsal_middle_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_distal_interphalangeal_4" DEF="hanim_r_tarsal_distal_interphalangeal_4" center="-0.1153 0.00937 0.11369"><HAnimSegment name="r_tarsal_distal_phalanx_4" DEF="hanim_r_tarsal_distal_phalanx_4"><Shape USE="r_tarsal_distal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_tarsal_distal_interphalangeal_4" DEF="hanim_r_tarsal_distal_interphalangeal_4" center="-0.1153 0.00937 0.11369" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_4" DEF="hanim_r_tarsal_distal_phalanx_4"><Shape USE="r_tarsal_distal_phalanx_4_Shape"></Shape>
 <Transform USE="r_tarsal_distal_interphalangeal_4JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_4_Segment"></Shape>
 <Group USE="r_tarsal_distal_phalanx_4_Sites"></Group>
@@ -3668,22 +3668,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_tarsometatarsal_5" DEF="hanim_r_tarsometatarsal_5" center="-0.12044 0.020945 0.03474"><HAnimSegment name="r_metatarsal_5" DEF="hanim_r_metatarsal_5"><Shape USE="r_metatarsal_5_Shape"></Shape>
+<HAnimJoint name="r_tarsometatarsal_5" DEF="hanim_r_tarsometatarsal_5" center="-0.12044 0.020945 0.03474" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metatarsal_5" DEF="hanim_r_metatarsal_5"><Shape USE="r_metatarsal_5_Shape"></Shape>
 <Transform USE="r_tarsometatarsal_5JointShape"></Transform>
 <Shape USE="r_metatarsal_5_Segment"></Shape>
 <Group USE="r_metatarsal_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metatarsophalangeal_5" DEF="hanim_r_metatarsophalangeal_5" center="-0.12368 0.01367 0.08656"><HAnimSegment name="r_tarsal_proximal_phalanx_5" DEF="hanim_r_tarsal_proximal_phalanx_5"><Shape USE="r_tarsal_proximal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_metatarsophalangeal_5" DEF="hanim_r_metatarsophalangeal_5" center="-0.12368 0.01367 0.08656" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_proximal_phalanx_5" DEF="hanim_r_tarsal_proximal_phalanx_5"><Shape USE="r_tarsal_proximal_phalanx_5_Shape"></Shape>
 <Transform USE="r_metatarsophalangeal_5JointShape"></Transform>
 <Shape USE="r_tarsal_proximal_phalanx_5_Segment"></Shape>
 <Group USE="r_tarsal_proximal_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_proximal_interphalangeal_5" DEF="hanim_r_tarsal_proximal_interphalangeal_5" center="-0.126 0.01086 0.09414"><HAnimSegment name="r_tarsal_middle_phalanx_5" DEF="hanim_r_tarsal_middle_phalanx_5"><Shape USE="r_tarsal_middle_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_tarsal_proximal_interphalangeal_5" DEF="hanim_r_tarsal_proximal_interphalangeal_5" center="-0.126 0.01086 0.09414" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_middle_phalanx_5" DEF="hanim_r_tarsal_middle_phalanx_5"><Shape USE="r_tarsal_middle_phalanx_5_Shape"></Shape>
 <Transform USE="r_tarsal_proximal_interphalangeal_5JointShape"></Transform>
 <Shape USE="r_tarsal_middle_phalanx_5_Segment"></Shape>
 <Group USE="r_tarsal_middle_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_tarsal_distal_interphalangeal_5" DEF="hanim_r_tarsal_distal_interphalangeal_5" center="-0.1269 0.00856 0.10188"><HAnimSegment name="r_tarsal_distal_phalanx_5" DEF="hanim_r_tarsal_distal_phalanx_5"><Shape USE="r_tarsal_distal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_tarsal_distal_interphalangeal_5" DEF="hanim_r_tarsal_distal_interphalangeal_5" center="-0.1269 0.00856 0.10188" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_tarsal_distal_phalanx_5" DEF="hanim_r_tarsal_distal_phalanx_5"><Shape USE="r_tarsal_distal_phalanx_5_Shape"></Shape>
 <Transform USE="r_tarsal_distal_interphalangeal_5JointShape"></Transform>
 <Shape USE="r_tarsal_distal_phalanx_5_Segment"></Shape>
 <Group USE="r_tarsal_distal_phalanx_5_Sites"></Group>
@@ -3698,129 +3698,129 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="vl5" DEF="hanim_vl5" center="0 0.9254 -0.01376"><HAnimSegment name="l5" DEF="hanim_l5"><Shape USE="l5_Shape"></Shape>
+<HAnimJoint name="vl5" DEF="hanim_vl5" center="0 0.9254 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l5" DEF="hanim_l5"><Shape USE="l5_Shape"></Shape>
 <Transform USE="vl5JointShape"></Transform>
 <Shape USE="l5_Segment"></Shape>
 <Group USE="l5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vl4" DEF="hanim_vl4" center="0 0.9497 -0.01376"><HAnimSegment name="l4" DEF="hanim_l4"><Shape USE="l4_Shape"></Shape>
+<HAnimJoint name="vl4" DEF="hanim_vl4" center="0 0.9497 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l4" DEF="hanim_l4"><Shape USE="l4_Shape"></Shape>
 <Transform USE="vl4JointShape"></Transform>
 <Shape USE="l4_Segment"></Shape>
 <Group USE="l4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vl3" DEF="hanim_vl3" center="0 0.9659 -0.01376"><HAnimSegment name="l3" DEF="hanim_l3"><Shape USE="l3_Shape"></Shape>
+<HAnimJoint name="vl3" DEF="hanim_vl3" center="0 0.9659 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l3" DEF="hanim_l3"><Shape USE="l3_Shape"></Shape>
 <Transform USE="vl3JointShape"></Transform>
 <Shape USE="l3_Segment"></Shape>
 <Group USE="l3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vl2" DEF="hanim_vl2" center="0 0.98235 -0.01376"><HAnimSegment name="l2" DEF="hanim_l2"><Shape USE="l2_Shape"></Shape>
+<HAnimJoint name="vl2" DEF="hanim_vl2" center="0 0.98235 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l2" DEF="hanim_l2"><Shape USE="l2_Shape"></Shape>
 <Transform USE="vl2JointShape"></Transform>
 <Shape USE="l2_Segment"></Shape>
 <Group USE="l2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vl1" DEF="hanim_vl1" center="0 0.99967 -0.01376"><HAnimSegment name="l1" DEF="hanim_l1"><Shape USE="l1_Shape"></Shape>
+<HAnimJoint name="vl1" DEF="hanim_vl1" center="0 0.99967 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l1" DEF="hanim_l1"><Shape USE="l1_Shape"></Shape>
 <Transform USE="vl1JointShape"></Transform>
 <Shape USE="l1_Segment"></Shape>
 <Group USE="l1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt12" DEF="hanim_vt12" center="0 1.0231 -0.01376"><HAnimSegment name="t12" DEF="hanim_t12"><Shape USE="t12_Shape"></Shape>
+<HAnimJoint name="vt12" DEF="hanim_vt12" center="0 1.0231 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t12" DEF="hanim_t12"><Shape USE="t12_Shape"></Shape>
 <Transform USE="vt12JointShape"></Transform>
 <Shape USE="t12_Segment"></Shape>
 <Group USE="t12_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt11" DEF="hanim_vt11" center="0 1.0467 -0.01376"><HAnimSegment name="t11" DEF="hanim_t11"><Shape USE="t11_Shape"></Shape>
+<HAnimJoint name="vt11" DEF="hanim_vt11" center="0 1.0467 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t11" DEF="hanim_t11"><Shape USE="t11_Shape"></Shape>
 <Transform USE="vt11JointShape"></Transform>
 <Shape USE="t11_Segment"></Shape>
 <Group USE="t11_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt10" DEF="hanim_vt10" center="0 1.0638 -0.01378"><HAnimSegment name="t10" DEF="hanim_t10"><Shape USE="t10_Shape"></Shape>
+<HAnimJoint name="vt10" DEF="hanim_vt10" center="0 1.0638 -0.01378" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t10" DEF="hanim_t10"><Shape USE="t10_Shape"></Shape>
 <Transform USE="vt10JointShape"></Transform>
 <Shape USE="t10_Segment"></Shape>
 <Group USE="t10_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt9" DEF="hanim_vt9" center="0 1.0784 -0.01376"><HAnimSegment name="t9" DEF="hanim_t9"><Shape USE="t9_Shape"></Shape>
+<HAnimJoint name="vt9" DEF="hanim_vt9" center="0 1.0784 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t9" DEF="hanim_t9"><Shape USE="t9_Shape"></Shape>
 <Transform USE="vt9JointShape"></Transform>
 <Shape USE="t9_Segment"></Shape>
 <Group USE="t9_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt8" DEF="hanim_vt8" center="0 1.093 -0.01376"><HAnimSegment name="t8" DEF="hanim_t8"><Shape USE="t8_Shape"></Shape>
+<HAnimJoint name="vt8" DEF="hanim_vt8" center="0 1.093 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t8" DEF="hanim_t8"><Shape USE="t8_Shape"></Shape>
 <Transform USE="vt8JointShape"></Transform>
 <Shape USE="t8_Segment"></Shape>
 <Group USE="t8_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt7" DEF="hanim_vt7" center="0 1.1088 -0.01376"><HAnimSegment name="t7" DEF="hanim_t7"><Shape USE="t7_Shape"></Shape>
+<HAnimJoint name="vt7" DEF="hanim_vt7" center="0 1.1088 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t7" DEF="hanim_t7"><Shape USE="t7_Shape"></Shape>
 <Transform USE="vt7JointShape"></Transform>
 <Shape USE="t7_Segment"></Shape>
 <Group USE="t7_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt6" DEF="hanim_vt6" center="0 1.1216 -0.01376"><HAnimSegment name="t6" DEF="hanim_t6"><Shape USE="t6_Shape"></Shape>
+<HAnimJoint name="vt6" DEF="hanim_vt6" center="0 1.1216 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t6" DEF="hanim_t6"><Shape USE="t6_Shape"></Shape>
 <Transform USE="vt6JointShape"></Transform>
 <Shape USE="t6_Segment"></Shape>
 <Group USE="t6_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt5" DEF="hanim_vt5" center="0 1.137 -0.01376"><HAnimSegment name="t5" DEF="hanim_t5"><Shape USE="t5_Shape"></Shape>
+<HAnimJoint name="vt5" DEF="hanim_vt5" center="0 1.137 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t5" DEF="hanim_t5"><Shape USE="t5_Shape"></Shape>
 <Transform USE="vt5JointShape"></Transform>
 <Shape USE="t5_Segment"></Shape>
 <Group USE="t5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt4" DEF="hanim_vt4" center="0 1.1524 -0.01376"><HAnimSegment name="t4" DEF="hanim_t4"><Shape USE="t4_Shape"></Shape>
+<HAnimJoint name="vt4" DEF="hanim_vt4" center="0 1.1524 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t4" DEF="hanim_t4"><Shape USE="t4_Shape"></Shape>
 <Transform USE="vt4JointShape"></Transform>
 <Shape USE="t4_Segment"></Shape>
 <Group USE="t4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt3" DEF="hanim_vt3" center="0 1.1709 -0.01376"><HAnimSegment name="t3" DEF="hanim_t3"><Shape USE="t3_Shape"></Shape>
+<HAnimJoint name="vt3" DEF="hanim_vt3" center="0 1.1709 -0.01376" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t3" DEF="hanim_t3"><Shape USE="t3_Shape"></Shape>
 <Transform USE="vt3JointShape"></Transform>
 <Shape USE="t3_Segment"></Shape>
 <Group USE="t3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt2" DEF="hanim_vt2" center="0 1.1956 -0.01378"><HAnimSegment name="t2" DEF="hanim_t2"><Shape USE="t2_Shape"></Shape>
+<HAnimJoint name="vt2" DEF="hanim_vt2" center="0 1.1956 -0.01378" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t2" DEF="hanim_t2"><Shape USE="t2_Shape"></Shape>
 <Transform USE="vt2JointShape"></Transform>
 <Shape USE="t2_Segment"></Shape>
 <Group USE="t2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vt1" DEF="hanim_vt1" center="0 1.22 -0.0138"><HAnimSegment name="t1" DEF="hanim_t1"><Shape USE="t1_Shape"></Shape>
+<HAnimJoint name="vt1" DEF="hanim_vt1" center="0 1.22 -0.0138" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="t1" DEF="hanim_t1"><Shape USE="t1_Shape"></Shape>
 <Transform USE="vt1JointShape"></Transform>
 <Shape USE="t1_Segment"></Shape>
 <Group USE="t1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc7" DEF="hanim_vc7" center="0 1.2453 -0.01506"><HAnimSegment name="c7" DEF="hanim_c7"><Shape USE="c7_Shape"></Shape>
+<HAnimJoint name="vc7" DEF="hanim_vc7" center="0 1.2453 -0.01506" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c7" DEF="hanim_c7"><Shape USE="c7_Shape"></Shape>
 <Transform USE="vc7JointShape"></Transform>
 <Shape USE="c7-to-vc6_Segment"></Shape>
 <Shape USE="c7-to-l_sternoclavicular_Segment"></Shape>
 <Shape USE="c7-to-r_sternoclavicular_Segment"></Shape>
 <Group USE="c7_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc6" DEF="hanim_vc6" center="0 1.2575 -0.01506"><HAnimSegment name="c6" DEF="hanim_c6"><Shape USE="c6_Shape"></Shape>
+<HAnimJoint name="vc6" DEF="hanim_vc6" center="0 1.2575 -0.01506" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c6" DEF="hanim_c6"><Shape USE="c6_Shape"></Shape>
 <Transform USE="vc6JointShape"></Transform>
 <Shape USE="c6_Segment"></Shape>
 <Group USE="c6_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc5" DEF="hanim_vc5" center="0 1.2699 -0.01506"><HAnimSegment name="c5" DEF="hanim_c5"><Shape USE="c5_Shape"></Shape>
+<HAnimJoint name="vc5" DEF="hanim_vc5" center="0 1.2699 -0.01506" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c5" DEF="hanim_c5"><Shape USE="c5_Shape"></Shape>
 <Transform USE="vc5JointShape"></Transform>
 <Shape USE="c5_Segment"></Shape>
 <Group USE="c5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc4" DEF="hanim_vc4" center="0 1.28227 -0.01506"><HAnimSegment name="c4" DEF="hanim_c4"><Shape USE="c4_Shape"></Shape>
+<HAnimJoint name="vc4" DEF="hanim_vc4" center="0 1.28227 -0.01506" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c4" DEF="hanim_c4"><Shape USE="c4_Shape"></Shape>
 <Transform USE="vc4JointShape"></Transform>
 <Shape USE="c4_Segment"></Shape>
 <Group USE="c4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc3" DEF="hanim_vc3" center="0 1.2951 -0.01506"><HAnimSegment name="c3" DEF="hanim_c3"><Shape USE="c3_Shape"></Shape>
+<HAnimJoint name="vc3" DEF="hanim_vc3" center="0 1.2951 -0.01506" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c3" DEF="hanim_c3"><Shape USE="c3_Shape"></Shape>
 <Transform USE="vc3JointShape"></Transform>
 <Shape USE="c3_Segment"></Shape>
 <Group USE="c3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc2" DEF="hanim_vc2" center="0 1.307 -0.015"><HAnimSegment name="c2" DEF="hanim_c2"><Shape USE="c2_Shape"></Shape>
+<HAnimJoint name="vc2" DEF="hanim_vc2" center="0 1.307 -0.015" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c2" DEF="hanim_c2"><Shape USE="c2_Shape"></Shape>
 <Transform USE="vc2JointShape"></Transform>
 <Shape USE="c2_Segment"></Shape>
 <Group USE="c2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="vc1" DEF="hanim_vc1" center="0 1.3185 -0.0151"><HAnimSegment name="c1" DEF="hanim_c1"><Shape USE="c1_Shape"></Shape>
+<HAnimJoint name="vc1" DEF="hanim_vc1" center="0 1.3185 -0.0151" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="c1" DEF="hanim_c1"><Shape USE="c1_Shape"></Shape>
 <Transform USE="vc1JointShape"></Transform>
 <Shape USE="c1_Segment"></Shape>
 <Group USE="c1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0 1.3126 -0.0154"><HAnimSegment name="skull" DEF="hanim_skull"><Shape USE="skull_Shape"></Shape>
+<HAnimJoint name="skullbase" DEF="hanim_skullbase" center="0 1.3126 -0.0154" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="skull" DEF="hanim_skull"><Shape USE="skull_Shape"></Shape>
 <Transform USE="skullbaseJointShape"></Transform>
 <Shape USE="skull-to-l_eyelid_joint_Segment"></Shape>
 <Shape USE="skull-to-r_eyelid_joint_Segment"></Shape>
@@ -3831,43 +3831,43 @@
 <Shape USE="skull-to-temporomandibular_Segment"></Shape>
 <!--Shape DEF='skull-to-tongue_joint'/--><Group USE="skull_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0505 1.42425 0.03294"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"><Shape USE="l_eyelid_Shape"></Shape>
+<HAnimJoint name="l_eyelid_joint" DEF="hanim_l_eyelid_joint" center="0.0505 1.42425 0.03294" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_eyelid" DEF="hanim_l_eyelid"><Shape USE="l_eyelid_Shape"></Shape>
 <Transform USE="l_eyelid_jointJointShape"></Transform>
 <Shape USE="l_eyelid_Segment"></Shape>
 <Group USE="l_eyelid_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0505 1.42425 0.03294"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"><Shape USE="r_eyelid_Shape"></Shape>
+<HAnimJoint name="r_eyelid_joint" DEF="hanim_r_eyelid_joint" center="-0.0505 1.42425 0.03294" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_eyelid" DEF="hanim_r_eyelid"><Shape USE="r_eyelid_Shape"></Shape>
 <Transform USE="r_eyelid_jointJointShape"></Transform>
 <Shape USE="r_eyelid_Segment"></Shape>
 <Group USE="r_eyelid_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.048127 1.4049 0.08305"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><Shape USE="l_eyeball_Shape"></Shape>
+<HAnimJoint name="l_eyeball_joint" DEF="hanim_l_eyeball_joint" center="0.048127 1.4049 0.08305" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_eyeball" DEF="hanim_l_eyeball"><Shape USE="l_eyeball_Shape"></Shape>
 <Transform USE="l_eyeball_jointJointShape"></Transform>
 <Shape USE="l_eyeball_Segment"></Shape>
 <Group USE="l_eyeball_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.04813 1.4049 0.08305"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><Shape USE="r_eyeball_Shape"></Shape>
+<HAnimJoint name="r_eyeball_joint" DEF="hanim_r_eyeball_joint" center="-0.04813 1.4049 0.08305" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_eyeball" DEF="hanim_r_eyeball"><Shape USE="r_eyeball_Shape"></Shape>
 <Transform USE="r_eyeball_jointJointShape"></Transform>
 <Shape USE="r_eyeball_Segment"></Shape>
 <Group USE="r_eyeball_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.02175 1.4139 0.1069"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"><Shape USE="l_eyebrow_Shape"></Shape>
+<HAnimJoint name="l_eyebrow_joint" DEF="hanim_l_eyebrow_joint" center="0.02175 1.4139 0.1069" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_eyebrow" DEF="hanim_l_eyebrow"><Shape USE="l_eyebrow_Shape"></Shape>
 <Transform USE="l_eyebrow_jointJointShape"></Transform>
 <Shape USE="l_eyebrow_Segment"></Shape>
 <Group USE="l_eyebrow_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.02175 1.4139 0.10694"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"><Shape USE="r_eyebrow_Shape"></Shape>
+<HAnimJoint name="r_eyebrow_joint" DEF="hanim_r_eyebrow_joint" center="-0.02175 1.4139 0.10694" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_eyebrow" DEF="hanim_r_eyebrow"><Shape USE="r_eyebrow_Shape"></Shape>
 <Transform USE="r_eyebrow_jointJointShape"></Transform>
 <Shape USE="r_eyebrow_Segment"></Shape>
 <Group USE="r_eyebrow_Sites"></Group>
 </HAnimSegment>
 </HAnimJoint>
-<HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.3128 0.01538"><HAnimSegment name="jaw" DEF="hanim_jaw"><Shape USE="jaw_Shape"></Shape>
+<HAnimJoint name="temporomandibular" DEF="hanim_temporomandibular" center="0 1.3128 0.01538" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="jaw" DEF="hanim_jaw"><Shape USE="jaw_Shape"></Shape>
 <Transform USE="temporomandibularJointShape"></Transform>
 <Shape USE="jaw-to-supramenton_Segment"></Shape>
 <Shape USE="jaw-to-menton_Segment"></Shape>
@@ -3882,27 +3882,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.03847 1.2087 -0.01378"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><Shape USE="l_clavicle_Shape"></Shape>
+<HAnimJoint name="l_sternoclavicular" DEF="hanim_l_sternoclavicular" center="0.03847 1.2087 -0.01378" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_clavicle" DEF="hanim_l_clavicle"><Shape USE="l_clavicle_Shape"></Shape>
 <Transform USE="l_sternoclavicularJointShape"></Transform>
 <Shape USE="l_clavicle_Segment"></Shape>
 <Group USE="l_clavicle_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.12294 1.191825 -0.0129"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"><Shape USE="l_scapula_Shape"></Shape>
+<HAnimJoint name="l_acromioclavicular" DEF="hanim_l_acromioclavicular" center="0.12294 1.191825 -0.0129" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_scapula" DEF="hanim_l_scapula"><Shape USE="l_scapula_Shape"></Shape>
 <Transform USE="l_acromioclavicularJointShape"></Transform>
 <Shape USE="l_scapula_Segment"></Shape>
 <Group USE="l_scapula_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.16506 1.17855 -0.00327"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Shape USE="l_upperarm_Shape"></Shape>
+<HAnimJoint name="l_shoulder" DEF="hanim_l_shoulder" center="0.16506 1.17855 -0.00327" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_upperarm" DEF="hanim_l_upperarm"><Shape USE="l_upperarm_Shape"></Shape>
 <Transform USE="l_shoulderJointShape"></Transform>
 <Shape USE="l_upperarm_Segment"></Shape>
 <Group USE="l_upperarm_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.18209 0.9288 -0.00563"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Shape USE="l_forearm_Shape"></Shape>
+<HAnimJoint name="l_elbow" DEF="hanim_l_elbow" center="0.18209 0.9288 -0.00563" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_forearm" DEF="hanim_l_forearm"><Shape USE="l_forearm_Shape"></Shape>
 <Transform USE="l_elbowJointShape"></Transform>
 <Shape USE="l_forearm_Segment"></Shape>
 <Group USE="l_forearm_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1819 0.72427 -0.005"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Shape USE="l_carpal_Shape"></Shape>
+<HAnimJoint name="l_radiocarpal" DEF="hanim_l_radiocarpal" center="0.1819 0.72427 -0.005" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal" DEF="hanim_l_carpal"><Shape USE="l_carpal_Shape"></Shape>
 <Transform USE="l_radiocarpalJointShape"></Transform>
 <Shape USE="l_carpal-to-l_midcarpal_1_Segment"></Shape>
 <Shape USE="l_carpal-to-l_midcarpal_2_Segment"></Shape>
@@ -3910,23 +3910,23 @@
 <Shape USE="l_carpal-to-l_midcarpal_4_Segment"></Shape>
 <Group USE="l_carpal_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.1813 0.706 0.0193"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Shape USE="l_trapezium_Shape"></Shape>
+<HAnimJoint name="l_midcarpal_1" DEF="hanim_l_midcarpal_1" center="0.1813 0.706 0.0193" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_trapezium" DEF="hanim_l_trapezium"><Shape USE="l_trapezium_Shape"></Shape>
 <Transform USE="l_midcarpal_1JointShape"></Transform>
 <Shape USE="l_trapezium-to-l_carpometacarpal_1_Segment"></Shape>
 <Shape USE="l_trapezium-to-l_midcarpal_4_5_Segment"></Shape>
 <Group USE="l_trapezium_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1805 0.69255 0.026"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Shape USE="l_metacarpal_1_Shape"></Shape>
+<HAnimJoint name="l_carpometacarpal_1" DEF="hanim_l_carpometacarpal_1" center="0.1805 0.69255 0.026" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_1" DEF="hanim_l_metacarpal_1"><Shape USE="l_metacarpal_1_Shape"></Shape>
 <Transform USE="l_carpometacarpal_1JointShape"></Transform>
 <Shape USE="l_metacarpal_1_Segment"></Shape>
 <Group USE="l_metacarpal_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.181 0.6727 0.03577"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Shape USE="l_carpal_proximal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_1" DEF="hanim_l_metacarpophalangeal_1" center="0.181 0.6727 0.03577" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_1" DEF="hanim_l_carpal_proximal_phalanx_1"><Shape USE="l_carpal_proximal_phalanx_1_Shape"></Shape>
 <Transform USE="l_metacarpophalangeal_1JointShape"></Transform>
 <Shape USE="l_carpal_proximal_phalanx_1_Segment"></Shape>
 <Group USE="l_carpal_proximal_phalanx_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1826 0.654 0.04966"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Shape USE="l_carpal_distal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="l_carpal_interphalangeal_1" DEF="hanim_l_carpal_interphalangeal_1" center="0.1826 0.654 0.04966" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_1" DEF="hanim_l_carpal_distal_phalanx_1"><Shape USE="l_carpal_distal_phalanx_1_Shape"></Shape>
 <Transform USE="l_carpal_interphalangeal_1JointShape"></Transform>
 <Shape USE="l_carpal_distal_phalanx_1_Segment"></Shape>
 <Group USE="l_carpal_distal_phalanx_1_Sites"></Group>
@@ -3935,27 +3935,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.18128 0.70695 0.00842"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Shape USE="l_trapezoid_Shape"></Shape>
+<HAnimJoint name="l_midcarpal_2" DEF="hanim_l_midcarpal_2" center="0.18128 0.70695 0.00842" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_trapezoid" DEF="hanim_l_trapezoid"><Shape USE="l_trapezoid_Shape"></Shape>
 <Transform USE="l_midcarpal_2JointShape"></Transform>
 <Shape USE="l_trapezoid_Segment"></Shape>
 <Group USE="l_trapezoid_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.18128 0.6876 0.0098"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Shape USE="l_metacarpal_2_Shape"></Shape>
+<HAnimJoint name="l_carpometacarpal_2" DEF="hanim_l_carpometacarpal_2" center="0.18128 0.6876 0.0098" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_2" DEF="hanim_l_metacarpal_2"><Shape USE="l_metacarpal_2_Shape"></Shape>
 <Transform USE="l_carpometacarpal_2JointShape"></Transform>
 <Shape USE="l_metacarpal_2_Segment"></Shape>
 <Group USE="l_metacarpal_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1837 0.6372 0.01507"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Shape USE="l_carpal_proximal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_2" DEF="hanim_l_metacarpophalangeal_2" center="0.1837 0.6372 0.01507" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_2" DEF="hanim_l_carpal_proximal_phalanx_2"><Shape USE="l_carpal_proximal_phalanx_2_Shape"></Shape>
 <Transform USE="l_metacarpophalangeal_2JointShape"></Transform>
 <Shape USE="l_carpal_proximal_phalanx_2_Segment"></Shape>
 <Group USE="l_carpal_proximal_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.18171 0.6068 0.01418"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Shape USE="l_carpal_middle_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_2" DEF="hanim_l_carpal_proximal_interphalangeal_2" center="0.18171 0.6068 0.01418" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_2" DEF="hanim_l_carpal_middle_phalanx_2"><Shape USE="l_carpal_middle_phalanx_2_Shape"></Shape>
 <Transform USE="l_carpal_proximal_interphalangeal_2JointShape"></Transform>
 <Shape USE="l_carpal_middle_phalanx_2_Segment"></Shape>
 <Group USE="l_carpal_middle_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.18067 0.5816 0.01338"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Shape USE="l_carpal_distal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_2" DEF="hanim_l_carpal_distal_interphalangeal_2" center="0.18067 0.5816 0.01338" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_2" DEF="hanim_l_carpal_distal_phalanx_2"><Shape USE="l_carpal_distal_phalanx_2_Shape"></Shape>
 <Transform USE="l_carpal_distal_interphalangeal_2JointShape"></Transform>
 <!--Shape USE='l_carpal_distal_phalanx_2-to-l_dactylion_pt'/--><Shape USE="l_carpal_distal_phalanx_2_Segment"></Shape>
 <Group USE="l_carpal_distal_phalanx_2_Sites"></Group>
@@ -3965,27 +3965,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_midcarpal_3" DEF="hanim_l_midcarpal_3" center="0.18108 0.708525 -0.0048"><HAnimSegment name="l_capitate" DEF="hanim_l_capitate"><Shape USE="l_capitate_Shape"></Shape>
+<HAnimJoint name="l_midcarpal_3" DEF="hanim_l_midcarpal_3" center="0.18108 0.708525 -0.0048" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_capitate" DEF="hanim_l_capitate"><Shape USE="l_capitate_Shape"></Shape>
 <Transform USE="l_midcarpal_3JointShape"></Transform>
 <Shape USE="l_capitate_Segment"></Shape>
 <Group USE="l_capitate_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0.18108 0.6858 -0.00625"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"><Shape USE="l_metacarpal_3_Shape"></Shape>
+<HAnimJoint name="l_carpometacarpal_3" DEF="hanim_l_carpometacarpal_3" center="0.18108 0.6858 -0.00625" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_3" DEF="hanim_l_metacarpal_3"><Shape USE="l_metacarpal_3_Shape"></Shape>
 <Transform USE="l_carpometacarpal_3JointShape"></Transform>
 <Shape USE="l_metacarpal_3_Segment"></Shape>
 <Group USE="l_metacarpal_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.18369 0.6349 -0.0039"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"><Shape USE="l_carpal_proximal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_3" DEF="hanim_l_metacarpophalangeal_3" center="0.18369 0.6349 -0.0039" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_3" DEF="hanim_l_carpal_proximal_phalanx_3"><Shape USE="l_carpal_proximal_phalanx_3_Shape"></Shape>
 <Transform USE="l_metacarpophalangeal_3JointShape"></Transform>
 <Shape USE="l_carpal_proximal_phalanx_3_Segment"></Shape>
 <Group USE="l_carpal_proximal_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.18171 0.6032 -0.0035"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"><Shape USE="l_carpal_middle_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_3" DEF="hanim_l_carpal_proximal_interphalangeal_3" center="0.18171 0.6032 -0.0035" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_3" DEF="hanim_l_carpal_middle_phalanx_3"><Shape USE="l_carpal_middle_phalanx_3_Shape"></Shape>
 <Transform USE="l_carpal_proximal_interphalangeal_3JointShape"></Transform>
 <Shape USE="l_carpal_middle_phalanx_3_Segment"></Shape>
 <Group USE="l_carpal_middle_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.1807 0.5753 -0.0037"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><Shape USE="l_carpal_distal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_3" DEF="hanim_l_carpal_distal_interphalangeal_3" center="0.1807 0.5753 -0.0037" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_3" DEF="hanim_l_carpal_distal_phalanx_3"><Shape USE="l_carpal_distal_phalanx_3_Shape"></Shape>
 <Transform USE="l_carpal_distal_interphalangeal_3JointShape"></Transform>
 <Shape USE="l_carpal_distal_phalanx_3_Segment"></Shape>
 <Group USE="l_carpal_distal_phalanx_3_Sites"></Group>
@@ -3995,28 +3995,28 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_midcarpal_4_5" DEF="hanim_l_midcarpal_4_5" center="0.18108 0.70582 -0.02574"><HAnimSegment name="l_hamate" DEF="hanim_l_hamate"><Shape USE="l_hamate_Shape"></Shape>
+<HAnimJoint name="l_midcarpal_4_5" DEF="hanim_l_midcarpal_4_5" center="0.18108 0.70582 -0.02574" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_hamate" DEF="hanim_l_hamate"><Shape USE="l_hamate_Shape"></Shape>
 <Transform USE="l_midcarpal_4_5JointShape"></Transform>
 <Shape USE="l_hamate-to-l_carpometacarpal_4_Segment"></Shape>
 <Shape USE="l_hamate-to-l_carpometacarpal_5_Segment"></Shape>
 <Group USE="l_hamate_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="0.1811 0.68625 -0.0199"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"><Shape USE="l_metacarpal_4_Shape"></Shape>
+<HAnimJoint name="l_carpometacarpal_4" DEF="hanim_l_carpometacarpal_4" center="0.1811 0.68625 -0.0199" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_4" DEF="hanim_l_metacarpal_4"><Shape USE="l_metacarpal_4_Shape"></Shape>
 <Transform USE="l_carpometacarpal_4JointShape"></Transform>
 <Shape USE="l_metacarpal_4_Segment"></Shape>
 <Group USE="l_metacarpal_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="0.18369 0.63405 -0.02144"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"><Shape USE="l_carpal_proximal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_4" DEF="hanim_l_metacarpophalangeal_4" center="0.18369 0.63405 -0.02144" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_4" DEF="hanim_l_carpal_proximal_phalanx_4"><Shape USE="l_carpal_proximal_phalanx_4_Shape"></Shape>
 <Transform USE="l_metacarpophalangeal_4JointShape"></Transform>
 <Shape USE="l_carpal_proximal_phalanx_4_Segment"></Shape>
 <Group USE="l_carpal_proximal_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="0.1817 0.6066 -0.02064"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"><Shape USE="l_carpal_middle_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_4" DEF="hanim_l_carpal_proximal_interphalangeal_4" center="0.1817 0.6066 -0.02064" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_4" DEF="hanim_l_carpal_middle_phalanx_4"><Shape USE="l_carpal_middle_phalanx_4_Shape"></Shape>
 <Transform USE="l_carpal_proximal_interphalangeal_4JointShape"></Transform>
 <Shape USE="l_carpal_middle_phalanx_4_Segment"></Shape>
 <Group USE="l_carpal_middle_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="0.18067 0.580725 -0.01977"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><Shape USE="l_carpal_distal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_4" DEF="hanim_l_carpal_distal_interphalangeal_4" center="0.18067 0.580725 -0.01977" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_4" DEF="hanim_l_carpal_distal_phalanx_4"><Shape USE="l_carpal_distal_phalanx_4_Shape"></Shape>
 <Transform USE="l_carpal_distal_interphalangeal_4JointShape"></Transform>
 <Shape USE="l_carpal_distal_phalanx_4_Segment"></Shape>
 <Group USE="l_carpal_distal_phalanx_4_Sites"></Group>
@@ -4026,22 +4026,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="0.18164 0.68827 -0.03278"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"><Shape USE="l_metacarpal_5_Shape"></Shape>
+<HAnimJoint name="l_carpometacarpal_5" DEF="hanim_l_carpometacarpal_5" center="0.18164 0.68827 -0.03278" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_metacarpal_5" DEF="hanim_l_metacarpal_5"><Shape USE="l_metacarpal_5_Shape"></Shape>
 <Transform USE="l_carpometacarpal_5JointShape"></Transform>
 <Shape USE="l_metacarpal_5_Segment"></Shape>
 <Group USE="l_metacarpal_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="0.1833 0.6381 -0.037"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"><Shape USE="l_carpal_proximal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_metacarpophalangeal_5" DEF="hanim_l_metacarpophalangeal_5" center="0.1833 0.6381 -0.037" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_proximal_phalanx_5" DEF="hanim_l_carpal_proximal_phalanx_5"><Shape USE="l_carpal_proximal_phalanx_5_Shape"></Shape>
 <Transform USE="l_metacarpophalangeal_5JointShape"></Transform>
 <Shape USE="l_carpal_proximal_phalanx_5_Segment"></Shape>
 <Group USE="l_carpal_proximal_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="0.18166 0.621 -0.03715"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"><Shape USE="l_carpal_middle_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_carpal_proximal_interphalangeal_5" DEF="hanim_l_carpal_proximal_interphalangeal_5" center="0.18166 0.621 -0.03715" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_middle_phalanx_5" DEF="hanim_l_carpal_middle_phalanx_5"><Shape USE="l_carpal_middle_phalanx_5_Shape"></Shape>
 <Transform USE="l_carpal_proximal_interphalangeal_5JointShape"></Transform>
 <Shape USE="l_carpal_middle_phalanx_5_Segment"></Shape>
 <Group USE="l_carpal_middle_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="0.1808 0.6023 -0.0369"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><Shape USE="l_carpal_distal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="l_carpal_distal_interphalangeal_5" DEF="hanim_l_carpal_distal_interphalangeal_5" center="0.1808 0.6023 -0.0369" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="l_carpal_distal_phalanx_5" DEF="hanim_l_carpal_distal_phalanx_5"><Shape USE="l_carpal_distal_phalanx_5_Shape"></Shape>
 <Transform USE="l_carpal_distal_interphalangeal_5JointShape"></Transform>
 <Shape USE="l_carpal_distal_phalanx_5_Segment"></Shape>
 <Group USE="l_carpal_distal_phalanx_5_Sites"></Group>
@@ -4055,27 +4055,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.03847 1.2087 -0.0138"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><Shape USE="r_clavicle_Shape"></Shape>
+<HAnimJoint name="r_sternoclavicular" DEF="hanim_r_sternoclavicular" center="-0.03847 1.2087 -0.0138" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_clavicle" DEF="hanim_r_clavicle"><Shape USE="r_clavicle_Shape"></Shape>
 <Transform USE="r_sternoclavicularJointShape"></Transform>
 <Shape USE="r_clavicle_Segment"></Shape>
 <Group USE="r_clavicle_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.1229 1.19182 -0.0129"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"><Shape USE="r_scapula_Shape"></Shape>
+<HAnimJoint name="r_acromioclavicular" DEF="hanim_r_acromioclavicular" center="-0.1229 1.19182 -0.0129" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_scapula" DEF="hanim_r_scapula"><Shape USE="r_scapula_Shape"></Shape>
 <Transform USE="r_acromioclavicularJointShape"></Transform>
 <Shape USE="r_scapula_Segment"></Shape>
 <Group USE="r_scapula_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1647 1.17855 -0.00327"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Shape USE="r_upperarm_Shape"></Shape>
+<HAnimJoint name="r_shoulder" DEF="hanim_r_shoulder" center="-0.1647 1.17855 -0.00327" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_upperarm" DEF="hanim_r_upperarm"><Shape USE="r_upperarm_Shape"></Shape>
 <Transform USE="r_shoulderJointShape"></Transform>
 <Shape USE="r_upperarm_Segment"></Shape>
 <Group USE="r_upperarm_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1817 0.9288 -0.00564"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Shape USE="r_forearm_Shape"></Shape>
+<HAnimJoint name="r_elbow" DEF="hanim_r_elbow" center="-0.1817 0.9288 -0.00564" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_forearm" DEF="hanim_r_forearm"><Shape USE="r_forearm_Shape"></Shape>
 <Transform USE="r_elbowJointShape"></Transform>
 <Shape USE="r_forearm_Segment"></Shape>
 <Group USE="r_forearm_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1816 0.7242 -0.005"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Shape USE="r_carpal_Shape"></Shape>
+<HAnimJoint name="r_radiocarpal" DEF="hanim_r_radiocarpal" center="-0.1816 0.7242 -0.005" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal" DEF="hanim_r_carpal"><Shape USE="r_carpal_Shape"></Shape>
 <Transform USE="r_radiocarpalJointShape"></Transform>
 <Shape USE="r_carpal-to-r_midcarpal_1_Segment"></Shape>
 <Shape USE="r_carpal-to-r_midcarpal_2_Segment"></Shape>
@@ -4083,23 +4083,23 @@
 <Shape USE="r_carpal-to-r_midcarpal_4_Segment"></Shape>
 <Group USE="r_carpal_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_midcarpal_1" DEF="hanim_r_midcarpal_1" center="-0.18097 0.70605 0.0193"><HAnimSegment name="r_trapezium" DEF="hanim_r_trapezium"><Shape USE="r_trapezium_Shape"></Shape>
+<HAnimJoint name="r_midcarpal_1" DEF="hanim_r_midcarpal_1" center="-0.18097 0.70605 0.0193" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_trapezium" DEF="hanim_r_trapezium"><Shape USE="r_trapezium_Shape"></Shape>
 <Transform USE="r_midcarpal_1JointShape"></Transform>
 <Shape USE="r_trapezium-to-r_carpometacarpal_1_Segment"></Shape>
 <Shape USE="r_trapezium-to-r_midcarpal_4_5_Segment"></Shape>
 <Group USE="r_trapezium_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpometacarpal_1" DEF="hanim_r_carpometacarpal_1" center="-0.18 0.69255 0.02598"><HAnimSegment name="r_metacarpal_1" DEF="hanim_r_metacarpal_1"><Shape USE="r_metacarpal_1_Shape"></Shape>
+<HAnimJoint name="r_carpometacarpal_1" DEF="hanim_r_carpometacarpal_1" center="-0.18 0.69255 0.02598" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metacarpal_1" DEF="hanim_r_metacarpal_1"><Shape USE="r_metacarpal_1_Shape"></Shape>
 <Transform USE="r_carpometacarpal_1JointShape"></Transform>
 <Shape USE="r_metacarpal_1_Segment"></Shape>
 <Group USE="r_metacarpal_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_1" DEF="hanim_r_metacarpophalangeal_1" center="-0.18065 0.67275 0.03577"><HAnimSegment name="r_carpal_proximal_phalanx_1" DEF="hanim_r_carpal_proximal_phalanx_1"><Shape USE="r_carpal_proximal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="r_metacarpophalangeal_1" DEF="hanim_r_metacarpophalangeal_1" center="-0.18065 0.67275 0.03577" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_1" DEF="hanim_r_carpal_proximal_phalanx_1"><Shape USE="r_carpal_proximal_phalanx_1_Shape"></Shape>
 <Transform USE="r_metacarpophalangeal_1JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_1_Segment"></Shape>
 <Group USE="r_carpal_proximal_phalanx_1_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_interphalangeal_1" DEF="hanim_r_carpal_interphalangeal_1" center="-0.18227 0.654 0.0496"><HAnimSegment name="r_carpal_distal_phalanx_1" DEF="hanim_r_carpal_distal_phalanx_1"><Shape USE="r_carpal_distal_phalanx_1_Shape"></Shape>
+<HAnimJoint name="r_carpal_interphalangeal_1" DEF="hanim_r_carpal_interphalangeal_1" center="-0.18227 0.654 0.0496" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_1" DEF="hanim_r_carpal_distal_phalanx_1"><Shape USE="r_carpal_distal_phalanx_1_Shape"></Shape>
 <Transform USE="r_carpal_interphalangeal_1JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_1_Segment"></Shape>
 <Group USE="r_carpal_distal_phalanx_1_Sites"></Group>
@@ -4108,27 +4108,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_midcarpal_2" DEF="hanim_r_midcarpal_2" center="-0.18097 0.70695 0.0084"><HAnimSegment name="r_trapezoid" DEF="hanim_r_trapezoid"><Shape USE="r_trapezoid_Shape"></Shape>
+<HAnimJoint name="r_midcarpal_2" DEF="hanim_r_midcarpal_2" center="-0.18097 0.70695 0.0084" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_trapezoid" DEF="hanim_r_trapezoid"><Shape USE="r_trapezoid_Shape"></Shape>
 <Transform USE="r_midcarpal_2JointShape"></Transform>
 <Shape USE="r_trapezoid_Segment"></Shape>
 <Group USE="r_trapezoid_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpometacarpal_2" DEF="hanim_r_carpometacarpal_2" center="-0.1809 0.6876 0.0097"><HAnimSegment name="r_metacarpal_2" DEF="hanim_r_metacarpal_2"><Shape USE="r_metacarpal_2_Shape"></Shape>
+<HAnimJoint name="r_carpometacarpal_2" DEF="hanim_r_carpometacarpal_2" center="-0.1809 0.6876 0.0097" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metacarpal_2" DEF="hanim_r_metacarpal_2"><Shape USE="r_metacarpal_2_Shape"></Shape>
 <Transform USE="r_carpometacarpal_2JointShape"></Transform>
 <Shape USE="r_metacarpal_2_Segment"></Shape>
 <Group USE="r_metacarpal_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_2" DEF="hanim_r_metacarpophalangeal_2" center="-0.18335 0.6372 0.01507"><HAnimSegment name="r_carpal_proximal_phalanx_2" DEF="hanim_r_carpal_proximal_phalanx_2"><Shape USE="r_carpal_proximal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_metacarpophalangeal_2" DEF="hanim_r_metacarpophalangeal_2" center="-0.18335 0.6372 0.01507" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_2" DEF="hanim_r_carpal_proximal_phalanx_2"><Shape USE="r_carpal_proximal_phalanx_2_Shape"></Shape>
 <Transform USE="r_metacarpophalangeal_2JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_2_Segment"></Shape>
 <Group USE="r_carpal_proximal_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_2" DEF="hanim_r_carpal_proximal_interphalangeal_2" center="-0.1813 0.6068 0.01418"><HAnimSegment name="r_carpal_middle_phalanx_2" DEF="hanim_r_carpal_middle_phalanx_2"><Shape USE="r_carpal_middle_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_2" DEF="hanim_r_carpal_proximal_interphalangeal_2" center="-0.1813 0.6068 0.01418" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_2" DEF="hanim_r_carpal_middle_phalanx_2"><Shape USE="r_carpal_middle_phalanx_2_Shape"></Shape>
 <Transform USE="r_carpal_proximal_interphalangeal_2JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_2_Segment"></Shape>
 <Group USE="r_carpal_middle_phalanx_2_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_2" DEF="hanim_r_carpal_distal_interphalangeal_2" center="-0.1803 0.5816 0.01338"><HAnimSegment name="r_carpal_distal_phalanx_2" DEF="hanim_r_carpal_distal_phalanx_2"><Shape USE="r_carpal_distal_phalanx_2_Shape"></Shape>
+<HAnimJoint name="r_carpal_distal_interphalangeal_2" DEF="hanim_r_carpal_distal_interphalangeal_2" center="-0.1803 0.5816 0.01338" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_2" DEF="hanim_r_carpal_distal_phalanx_2"><Shape USE="r_carpal_distal_phalanx_2_Shape"></Shape>
 <Transform USE="r_carpal_distal_interphalangeal_2JointShape"></Transform>
 <!--Shape USE='r_carpal_distal_interphalangeal_2-to-r_dactylion'/--><Shape USE="r_carpal_distal_phalanx_2_Segment"></Shape>
 <Group USE="r_carpal_distal_phalanx_2_Sites"></Group>
@@ -4138,27 +4138,27 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_midcarpal_3" DEF="hanim_r_midcarpal_3" center="-0.18072 0.708525 -0.004797"><HAnimSegment name="r_capitate" DEF="hanim_r_capitate"><Shape USE="r_capitate_Shape"></Shape>
+<HAnimJoint name="r_midcarpal_3" DEF="hanim_r_midcarpal_3" center="-0.18072 0.708525 -0.004797" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_capitate" DEF="hanim_r_capitate"><Shape USE="r_capitate_Shape"></Shape>
 <Transform USE="r_midcarpal_3JointShape"></Transform>
 <Shape USE="r_capitate_Segment"></Shape>
 <Group USE="r_capitate_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpometacarpal_3" DEF="hanim_r_carpometacarpal_3" center="-0.18072 0.6858 -0.00625"><HAnimSegment name="r_metacarpal_3" DEF="hanim_r_metacarpal_3"><Shape USE="r_metacarpal_3_Shape"></Shape>
+<HAnimJoint name="r_carpometacarpal_3" DEF="hanim_r_carpometacarpal_3" center="-0.18072 0.6858 -0.00625" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metacarpal_3" DEF="hanim_r_metacarpal_3"><Shape USE="r_metacarpal_3_Shape"></Shape>
 <Transform USE="r_carpometacarpal_3JointShape"></Transform>
 <Shape USE="r_metacarpal_3_Segment"></Shape>
 <Group USE="r_metacarpal_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_3" DEF="hanim_r_metacarpophalangeal_3" center="-0.1833 0.63495 -0.0039"><HAnimSegment name="r_carpal_proximal_phalanx_3" DEF="hanim_r_carpal_proximal_phalanx_3"><Shape USE="r_carpal_proximal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_metacarpophalangeal_3" DEF="hanim_r_metacarpophalangeal_3" center="-0.1833 0.63495 -0.0039" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_3" DEF="hanim_r_carpal_proximal_phalanx_3"><Shape USE="r_carpal_proximal_phalanx_3_Shape"></Shape>
 <Transform USE="r_carpal_proximal_phalanx_3JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_3_Segment"></Shape>
 <Group USE="r_carpal_proximal_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_3" DEF="hanim_r_carpal_proximal_interphalangeal_3" center="-0.1813 0.6032 -0.0035"><HAnimSegment name="r_carpal_middle_phalanx_3" DEF="hanim_r_carpal_middle_phalanx_3"><Shape USE="r_carpal_middle_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_3" DEF="hanim_r_carpal_proximal_interphalangeal_3" center="-0.1813 0.6032 -0.0035" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_3" DEF="hanim_r_carpal_middle_phalanx_3"><Shape USE="r_carpal_middle_phalanx_3_Shape"></Shape>
 <Transform USE="r_carpal_proximal_interphalangeal_3JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_3_Segment"></Shape>
 <Group USE="r_carpal_middle_phalanx_3_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_3" DEF="hanim_r_carpal_distal_interphalangeal_3" center="-0.18029 0.5753 -0.00375"><HAnimSegment name="r_carpal_distal_phalanx_3" DEF="hanim_r_carpal_distal_phalanx_3"><Shape USE="r_carpal_distal_phalanx_3_Shape"></Shape>
+<HAnimJoint name="r_carpal_distal_interphalangeal_3" DEF="hanim_r_carpal_distal_interphalangeal_3" center="-0.18029 0.5753 -0.00375" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_3" DEF="hanim_r_carpal_distal_phalanx_3"><Shape USE="r_carpal_distal_phalanx_3_Shape"></Shape>
 <Transform USE="r_carpal_distal_interphalangeal_3JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_3_Segment"></Shape>
 <Group USE="r_carpal_distal_phalanx_3_Sites"></Group>
@@ -4168,28 +4168,28 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_midcarpal_4_5" DEF="hanim_r_midcarpal_4_5" center="-0.18072 0.70583 -0.02574"><HAnimSegment name="r_hamate" DEF="hanim_r_hamate"><Shape USE="r_hamate_Shape"></Shape>
+<HAnimJoint name="r_midcarpal_4_5" DEF="hanim_r_midcarpal_4_5" center="-0.18072 0.70583 -0.02574" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_hamate" DEF="hanim_r_hamate"><Shape USE="r_hamate_Shape"></Shape>
 <Transform USE="r_midcarpal_4_5JointShape"></Transform>
 <Shape USE="r_hamate-to-r_carpometacarpal_4_Segment"></Shape>
 <Shape USE="r_hamate-to-r_carpometacarpal_5_Segment"></Shape>
 <Group USE="r_hamate_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpometacarpal_4" DEF="hanim_r_carpometacarpal_4" center="-0.18072 0.68625 -0.01992"><HAnimSegment name="r_metacarpal_4" DEF="hanim_r_metacarpal_4"><Shape USE="r_metacarpal_4_Shape"></Shape>
+<HAnimJoint name="r_carpometacarpal_4" DEF="hanim_r_carpometacarpal_4" center="-0.18072 0.68625 -0.01992" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metacarpal_4" DEF="hanim_r_metacarpal_4"><Shape USE="r_metacarpal_4_Shape"></Shape>
 <Transform USE="r_carpometacarpal_4JointShape"></Transform>
 <Shape USE="r_metacarpal_4_Segment"></Shape>
 <Group USE="r_metacarpal_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_4" DEF="hanim_r_metacarpophalangeal_4" center="-0.1833 0.63405 -0.02144"><HAnimSegment name="r_carpal_proximal_phalanx_4" DEF="hanim_r_carpal_proximal_phalanx_4"><Shape USE="r_carpal_proximal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_metacarpophalangeal_4" DEF="hanim_r_metacarpophalangeal_4" center="-0.1833 0.63405 -0.02144" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_4" DEF="hanim_r_carpal_proximal_phalanx_4"><Shape USE="r_carpal_proximal_phalanx_4_Shape"></Shape>
 <Transform USE="r_metacarpophalangeal_4JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_4_Segment"></Shape>
 <Group USE="r_carpal_proximal_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_4" DEF="hanim_r_carpal_proximal_interphalangeal_4" center="-0.1813 0.6066 -0.02064"><HAnimSegment name="r_carpal_middle_phalanx_4" DEF="hanim_r_carpal_middle_phalanx_4"><Shape USE="r_carpal_middle_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_4" DEF="hanim_r_carpal_proximal_interphalangeal_4" center="-0.1813 0.6066 -0.02064" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_4" DEF="hanim_r_carpal_middle_phalanx_4"><Shape USE="r_carpal_middle_phalanx_4_Shape"></Shape>
 <Transform USE="r_carpal_proximal_interphalangeal_4JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_4_Segment"></Shape>
 <Group USE="r_carpal_middle_phalanx_4_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_4" DEF="hanim_r_carpal_distal_interphalangeal_4" center="-0.18029 0.5807 -0.01978"><HAnimSegment name="r_carpal_distal_phalanx_4" DEF="hanim_r_carpal_distal_phalanx_4"><Shape USE="r_carpal_distal_phalanx_4_Shape"></Shape>
+<HAnimJoint name="r_carpal_distal_interphalangeal_4" DEF="hanim_r_carpal_distal_interphalangeal_4" center="-0.18029 0.5807 -0.01978" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_4" DEF="hanim_r_carpal_distal_phalanx_4"><Shape USE="r_carpal_distal_phalanx_4_Shape"></Shape>
 <Transform USE="r_carpal_distal_interphalangeal_4JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_4_Segment"></Shape>
 <Group USE="r_carpal_distal_phalanx_4_Sites"></Group>
@@ -4199,22 +4199,22 @@
 </HAnimJoint>
 </HAnimJoint>
 </HAnimJoint>
-<HAnimJoint name="r_carpometacarpal_5" DEF="hanim_r_carpometacarpal_5" center="-0.18126 0.68827 -0.03278"><HAnimSegment name="r_metacarpal_5" DEF="hanim_r_metacarpal_5"><Shape USE="r_metacarpal_5_Shape"></Shape>
+<HAnimJoint name="r_carpometacarpal_5" DEF="hanim_r_carpometacarpal_5" center="-0.18126 0.68827 -0.03278" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_metacarpal_5" DEF="hanim_r_metacarpal_5"><Shape USE="r_metacarpal_5_Shape"></Shape>
 <Transform USE="r_carpometacarpal_5JointShape"></Transform>
 <Shape USE="r_metacarpal_5_Segment"></Shape>
 <Group USE="r_metacarpal_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_metacarpophalangeal_5" DEF="hanim_r_metacarpophalangeal_5" center="-0.18297 0.6381 -0.0371"><HAnimSegment name="r_carpal_proximal_phalanx_5" DEF="hanim_r_carpal_proximal_phalanx_5"><Shape USE="r_carpal_proximal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_metacarpophalangeal_5" DEF="hanim_r_metacarpophalangeal_5" center="-0.18297 0.6381 -0.0371" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_proximal_phalanx_5" DEF="hanim_r_carpal_proximal_phalanx_5"><Shape USE="r_carpal_proximal_phalanx_5_Shape"></Shape>
 <Transform USE="r_metacarpophalangeal_5JointShape"></Transform>
 <Shape USE="r_carpal_proximal_phalanx_5_Segment"></Shape>
 <Group USE="r_carpal_proximal_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_proximal_interphalangeal_5" DEF="hanim_r_carpal_proximal_interphalangeal_5" center="-0.1813 0.621 -0.03715"><HAnimSegment name="r_carpal_middle_phalanx_5" DEF="hanim_r_carpal_middle_phalanx_5"><Shape USE="r_carpal_middle_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_carpal_proximal_interphalangeal_5" DEF="hanim_r_carpal_proximal_interphalangeal_5" center="-0.1813 0.621 -0.03715" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_middle_phalanx_5" DEF="hanim_r_carpal_middle_phalanx_5"><Shape USE="r_carpal_middle_phalanx_5_Shape"></Shape>
 <Transform USE="r_carpal_proximal_interphalangeal_5JointShape"></Transform>
 <Shape USE="r_carpal_middle_phalanx_5_Segment"></Shape>
 <Group USE="r_carpal_middle_phalanx_5_Sites"></Group>
 </HAnimSegment>
-<HAnimJoint name="r_carpal_distal_interphalangeal_5" DEF="hanim_r_carpal_distal_interphalangeal_5" center="-0.18045 0.602325 -0.03697"><HAnimSegment name="r_carpal_distal_phalanx_5" DEF="hanim_r_carpal_distal_phalanx_5"><Shape USE="r_carpal_distal_phalanx_5_Shape"></Shape>
+<HAnimJoint name="r_carpal_distal_interphalangeal_5" DEF="hanim_r_carpal_distal_interphalangeal_5" center="-0.18045 0.602325 -0.03697" ulimit="0 0 0" llimit="0 0 0"><HAnimSegment name="r_carpal_distal_phalanx_5" DEF="hanim_r_carpal_distal_phalanx_5"><Shape USE="r_carpal_distal_phalanx_5_Shape"></Shape>
 <Transform USE="r_carpal_distal_interphalangeal_5JointShape"></Transform>
 <Shape USE="r_carpal_distal_phalanx_5_tip_Segment"></Shape>
 <Group USE="r_carpal_distal_phalanx_5_Sites"></Group>

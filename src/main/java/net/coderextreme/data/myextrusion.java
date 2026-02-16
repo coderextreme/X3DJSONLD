@@ -56,25 +56,25 @@ public class myextrusion implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("creator").setContent("John W Carlson"))
-        .addMeta(new meta().setName("created").setContent("December 13 2015"))
-        .addMeta(new meta().setName("modified").setContent("November 9 2024"))
-        .addMeta(new meta().setName("title").setContent("myextrusion.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d"))
-        .addMeta(new meta().setName("description").setContent("beginnings of a force directed graph in 3D"))
-        .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John W Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("December 13 2015")))
+        .addMeta(new meta().setName(new SFString("modified")).setContent(new SFString("November 9 2024")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("myextrusion.x3d")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/myextrusion.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("beginnings of a force directed graph in 3D")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"))))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()
-            .setGeometry(new Extrusion().setDEF("myextrusion").setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.785f ).setCrossSection(new MFVec2f1().getArray()))
+            .setGeometry(new Extrusion().setDEF(new SFString("myextrusion")).setSpine(new MFVec3f0().getArray()).setCreaseAngle(0.785f ).setCrossSection(new MFVec2f1().getArray()))
             .setAppearance(new Appearance()
               .setMaterial(new Material().setDiffuseColor(new float[] {0f ,1f ,0f }))))
-          .addChild(new TimeSensor().setDEF("TourTime").setLoop(true))
-          .addChild(new Script().setDEF("MoveCylinder")
-            .addField(new field().setType("SFTime").setName("set_cycle").setAccessType(field.ACCESSTYPE_INPUTONLY))
-            .addField(new field().setType("MFVec3f").setName("spine").setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue("-50 -50 0 50 50 0"))
+          .addChild(new TimeSensor().setDEF(new SFString("TourTime")).setLoop(true))
+          .addChild(new Script().setDEF(new SFString("MoveCylinder"))
+            .addField(new field().setType("SFTime").setName(new SFString("set_cycle")).setAccessType(field.ACCESSTYPE_INPUTONLY))
+            .addField(new field().setType("MFVec3f").setName(new SFString("spine")).setAccessType(field.ACCESSTYPE_INPUTOUTPUT).setValue(new SFString("-50 -50 0 50 50 0")))
             .setSourceCode("ecmascript:\n"+
 "\n"+
 "                function set_cycle(value) {\n"+
@@ -86,8 +86,8 @@ public class myextrusion implements X3DRoots {
 "			tmpspine[1] = endB;\n"+
 "                        spine = tmpspine;\n"+
 "                }"))
-          .addChild(new ROUTE().setFromNode("TourTime").setFromField("cycleTime").setToNode("MoveCylinder").setToField("set_cycle"))
-          .addChild(new ROUTE().setFromNode("MoveCylinder").setFromField("spine_changed").setToNode("myextrusion").setToField("set_spine"))));
+          .addChild(new ROUTE().setFromNode(new SFString("TourTime")).setFromField(new SFString("cycleTime")).setToNode(new SFString("MoveCylinder")).setToField(new SFString("set_cycle")))
+          .addChild(new ROUTE().setFromNode(new SFString("MoveCylinder")).setFromField(new SFString("spine_changed")).setToNode(new SFString("myextrusion")).setToField(new SFString("set_spine")))));
     return X3D0;
     }
 private class MFVec3f0 {

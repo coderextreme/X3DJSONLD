@@ -137,9 +137,59 @@ ComposedCubeMapTexture25.setTopTexture(ImageTexture31)
 
 Appearance23.setTexture(ComposedCubeMapTexture25)
 
-Appearance23.addComments(x3d.CommentsBlock("""<ComposedShader DEF='gl' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader> <ComposedShader DEF='freewrl' language=\"GLSL\"> <field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"""))
+Appearance23.addComments(x3d.CommentsBlock("""<ComposedShader DEF='gl' language=\"GLSL\">"""))
 
-Appearance23.addComments(x3d.CommentsBlock("""<ComposedShader DEF='instant' language=\"GLSL\"> <field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/> <field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/> <field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/> <field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/> <ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart> <ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart> </ComposedShader>"""))
+Appearance23.addComments(x3d.CommentsBlock("""<field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/gl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/gl.vs\"'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ComposedShader DEF='freewrl' language=\"GLSL\">"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='fw_textureCoodGenType' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/freewrl.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/freewrl.vs\"'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ComposedShader DEF='instant' language=\"GLSL\">"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='cube' type='SFInt32' accessType=\"inputOutput\" value='0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='chromaticDispertion' type='SFVec3f' accessType=\"inputOutput\" value='0.98 1.0 1.033'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='bias' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='scale' type='SFFloat' accessType=\"inputOutput\" value='0.5'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<field name='power' type='SFFloat' accessType=\"inputOutput\" value='2.0'/>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/instant.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/instant.vs\"'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""<ShaderPart url='\"../shaders/pc_bubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/pc_bubbles.fs\"' type='FRAGMENT'></ShaderPart>"""))
+
+Appearance23.addComments(x3d.CommentsBlock("""</ComposedShader>"""))
 ComposedShader32 = x3d.ComposedShader()
 ComposedShader32.setDEF("x3dom")
 ComposedShader32.setLanguage("GLSL")

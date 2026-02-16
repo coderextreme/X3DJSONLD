@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Interchange"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 component2 = x3d.component()
 component2.name = "Scripting"
@@ -22,35 +22,40 @@ meta4.content = "John Carlson"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "generator"
-meta5.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta5.content = "manual"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
-meta6.name = "generator"
-meta6.content = "manual"
+meta6.name = "identifier"
+meta6.content = "https://coderextreme.net/X3DJSONLD/src/main/data/asphere.x3d"
 
 head1.children.append(meta6)
+meta7 = x3d.meta()
+meta7.name = "description"
+meta7.content = "a sphere"
+
+head1.children.append(meta7)
 
 X3D0.head = head1
-Scene7 = x3d.Scene()
-Group8 = x3d.Group()
-Shape9 = x3d.Shape()
-Appearance10 = x3d.Appearance()
-Material11 = x3d.Material()
-Material11.diffuseColor = [1,1,1]
+Scene8 = x3d.Scene()
+Group9 = x3d.Group()
+Shape10 = x3d.Shape()
+Appearance11 = x3d.Appearance()
+Material12 = x3d.Material()
+Material12.diffuseColor = [1,1,1]
 
-Appearance10.material = Material11
+Appearance11.material = Material12
 
-Shape9.appearance = Appearance10
-Sphere12 = x3d.Sphere()
+Shape10.appearance = Appearance11
+Sphere13 = x3d.Sphere()
 
-Shape9.geometry = Sphere12
+Shape10.geometry = Sphere13
 
-Group8.children.append(Shape9)
+Group9.children.append(Shape10)
 
-Scene7.children.append(Group8)
+Scene8.children.append(Group9)
 
-X3D0.Scene = Scene7
+X3D0.Scene = Scene8
 f = open("../data/asphere.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

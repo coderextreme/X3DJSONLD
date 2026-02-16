@@ -22,10 +22,6 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
@@ -55,14 +51,11 @@ newModel=X3D(profile='Immersive',version='4.0',
     Shape(
       geometry=Text(string=["One, Two, Three","","He said, \"Immel did it!\""],
         # alternative XML encoding: Text string='"One, Two, Three" "" "He said, \&quot;Immel did it!\&quot;"'
-
         # alternative Java source: .setString(new String [] {"One, Two, Three", "", "He said, \"Immel did it!\""})
-
         fontStyle=FontStyle(justify=["MIDDLE","MIDDLE"],style_='BOLD')),
       appearance=Appearance(
         material=Material(diffuseColor=(0.6,0.4,0.2))))])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

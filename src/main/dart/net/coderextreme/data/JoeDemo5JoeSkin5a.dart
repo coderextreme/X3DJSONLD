@@ -4,7 +4,7 @@ import '../x3d.dart';
 var X3D0 =  X3D(
 
       profile_ : SFString('Immersive'),
-      version_ : SFString('4.0'),
+      version_ : SFString('4.1'),
       head_ : 
         head(
           component_ : 
@@ -11656,7 +11656,24 @@ var X3D0 =  X3D(
 
             Group(
               DEF_ : SFString('Pitch1Animation_loa4'),
-              /*Pitch1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of x-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in a times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi greater than +-6.28 radians range Right hand rule for axes so a positive pitch value applied to the skullbase Joint would rotate the the gaze of model down, toward the floor.*/
+              /*Pitch1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 1 0 0 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of x-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians, zero degrees.*/
+              /*x y z scale, all in radians 0 to <+-inf.*/
+              /*Thus, 1 radian in a times scale 1 = +1 radian*/
+              /*= about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*greater than +-6.28 radians range*/
+              /*Right hand rule for axes so a*/
+              /*positive pitch value applied to the*/
+              /*skullbase Joint would rotate the*/
+              /*the gaze of model down, toward the floor.*/
               children_ : [
                 TimeSensor(
                   DEF_ : SFString('Pitch1Timer'),
@@ -16665,7 +16682,25 @@ var X3D0 =  X3D(
 
             Group(
               DEF_ : SFString('Yaw1Animation_loa4'),
-              /*Yaw1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/> will start at 0 move to +1 radian of y-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians, zero degrees. x y z scale, all in radians 0 to <+-inf. Thus, 1 radian in y times scale 1 = +1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive yaw value applied to the skullbase Joint would move the the gaze of model toward the model&apos;s +X direction, the model left over the left shoulder.*/
+              /*Yaw1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 1 0 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of y-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians, zero degrees.*/
+              /*x y z scale, all in radians 0 to <+-inf.*/
+              /*Thus, 1 radian in y times scale 1 = +1 radian*/
+              /*= about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*Right hand rule for axes so a*/
+              /*positive yaw value applied to the*/
+              /*skullbase Joint would move the*/
+              /*the gaze of model toward the*/
+              /*model&apos;s +X direction, the model left*/
+              /*over the left shoulder.*/
               children_ : [
                 TimeSensor(
                   DEF_ : SFString('Yaw1Timer'),
@@ -21674,7 +21709,29 @@ var X3D0 =  X3D(
 
             Group(
               DEF_ : SFString('Roll1Animation_loa4'),
-              /*This Roll1 example shows Y-axis control of Joint nodes that through the skeleton hierarchy control Segment geometry and Site position. So, the following interpolator: <OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/> will start at 0 move to +1 radian of z-axis rotation of the Joint, then return to 0. 0 0 1 0 is default value, meaning set to 0 radians = zero degrees 2pi radians = 360 degrees. form: x y z scale pitch, yaw, roll right hand rule in radians 0 to <+-inf. actual result = x y z per scale 1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z 1 radian = about 60 degrees 360 degrees divided by 2 times pi Right hand rule for axes so a positive roll value applied to the skullbase Joint would rotate the the gaze of model ccw toward the model&apos;s +X direction, the model left toward the left shoulder.*/
+              /*This Roll1 example shows Y-axis control of Joint nodes*/
+              /*that through the skeleton hierarchy control*/
+              /*Segment geometry and Site position.*/
+              /*So, the following interpolator:*/
+              /*<OrientationInterpolator DEF='skullbase_RotationInterpolator' key='0 0.5 1' keyValue='0 0 1 0, 0 0 1 1, 0 0 1 0'/>*/
+              /*will start at 0 move to +1 radian of z-axis*/
+              /*rotation of the Joint, then return to 0.*/
+              /*0 0 1 0 is default value, meaning set to*/
+              /*0 radians = zero degrees*/
+              /*2pi radians = 360 degrees.*/
+              /*form: x y z scale*/
+              /*pitch, yaw, roll right hand rule*/
+              /*in radians 0 to <+-inf.*/
+              /*actual result = x y z per scale*/
+              /*1 0.5 -0.3 0.5 = 0.5x 0.25y -0.05z*/
+              /*1 radian = about 60 degrees*/
+              /*360 degrees divided by 2 times pi*/
+              /*Right hand rule for axes so a*/
+              /*positive roll value applied to the*/
+              /*skullbase Joint would rotate the*/
+              /*the gaze of model ccw toward the*/
+              /*model&apos;s +X direction, the model left*/
+              /*toward the left shoulder.*/
               children_ : [
                 TimeSensor(
                   DEF_ : SFString('Roll1Timer'),

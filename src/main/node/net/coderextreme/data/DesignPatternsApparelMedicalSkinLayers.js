@@ -9,6 +9,7 @@ ConfigurationProperties.setStripTrailingZeroes(true);
 ConfigurationProperties.setStripDefaultAttributes(true);
       var X3D0 =  (new autoclass.X3D()).setProfile("Immersive").setVersion("4.0")
       .setHead(new autoclass.head()
+        .addComponent(new autoclass.component().setName("HAnim").setLevel(2))
         .addMeta(new autoclass.meta().setName("title").setContent("DesignPatternsApparelMedicalSkinLayers.x3d"))
         .addMeta(new autoclass.meta().setName("description").setContent("Design patterns for skin and apparel using HAnim2 standard in X3D4"))
         .addMeta(new autoclass.meta().setName("creator").setContent("Don Brutzman"))

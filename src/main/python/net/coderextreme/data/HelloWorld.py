@@ -3,8 +3,9 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
+head1.children.append(x3d.Comment("""Alternate encodings: VRML97, X3D ClassicVRML Encoding, X3D Compressed Binary Encoding (CBE), X3DOM, JSON"""))
 meta2 = x3d.meta()
 meta2.name = "title"
 meta2.content = "HelloWorld.x3d"
@@ -22,7 +23,7 @@ meta4.content = "30 October 2000"
 head1.children.append(meta4)
 meta5 = x3d.meta()
 meta5.name = "modified"
-meta5.content = "Mon, 09 Feb 2026 12:24:16 GMT"
+meta5.content = "20 October 2019"
 
 head1.children.append(meta5)
 meta6 = x3d.meta()
@@ -92,69 +93,74 @@ meta18.content = "https://www.web3d.org/x3d/content/examples/license.html"
 head1.children.append(meta18)
 meta19 = x3d.meta()
 meta19.name = "generator"
-meta19.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta19.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
 
 head1.children.append(meta19)
 meta20 = x3d.meta()
-meta20.name = "generator"
-meta20.content = "X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit"
+meta20.name = "reference"
+meta20.content = "HelloWorld.wrl"
 
 head1.children.append(meta20)
 meta21 = x3d.meta()
 meta21.name = "reference"
-meta21.content = "HelloWorld.wrl"
+meta21.content = "HelloWorld.x3dv"
 
 head1.children.append(meta21)
 meta22 = x3d.meta()
 meta22.name = "reference"
-meta22.content = "HelloWorld.x3dv"
+meta22.content = "HelloWorld.x3db"
 
 head1.children.append(meta22)
+meta23 = x3d.meta()
+meta23.name = "reference"
+meta23.content = "HelloWorld.xhtml"
+
+head1.children.append(meta23)
+meta24 = x3d.meta()
+meta24.name = "reference"
+meta24.content = "HelloWorld.json"
+
+head1.children.append(meta24)
 
 X3D0.head = head1
-Scene23 = x3d.Scene()
-WorldInfo24 = x3d.WorldInfo()
-WorldInfo24.title = "Hello World!"
-WorldInfo24.info = ["Example scene to illustrate a simple X3D model"]
+Scene25 = x3d.Scene()
+Scene25.children.append(x3d.Comment("""Example scene to illustrate X3D nodes and fields (XML elements and attributes)"""))
+WorldInfo26 = x3d.WorldInfo()
+WorldInfo26.info = ["Example scene to illustrate a simple X3D model"]
+WorldInfo26.title = "Hello World!"
 
-Scene23.children.append(WorldInfo24)
-Group25 = x3d.Group()
-Viewpoint26 = x3d.Viewpoint(DEF="ViewUpClose")
-Viewpoint26.description = "Hello world!"
-Viewpoint26.position = [0,-1,7]
-Viewpoint26.centerOfRotation = [0,-1,0]
+Scene25.children.append(WorldInfo26)
+Group27 = x3d.Group()
+Viewpoint28 = x3d.Viewpoint(DEF="ViewUpClose")
+Viewpoint28.centerOfRotation = [0,-1,0]
+Viewpoint28.description = "Hello world!"
+Viewpoint28.position = [0,-1,7]
 
-Group25.children.append(Viewpoint26)
-Transform27 = x3d.Transform()
-Transform27.rotation = [0,1,0,3]
-Shape28 = x3d.Shape()
-Appearance29 = x3d.Appearance()
-Material30 = x3d.Material(DEF="MaterialLightBlue")
-Material30.diffuseColor = [0.1,0.5,1]
+Group27.children.append(Viewpoint28)
+Transform29 = x3d.Transform()
+Transform29.rotation = [0,1,0,3]
+Shape30 = x3d.Shape()
+Sphere31 = x3d.Sphere()
 
-Appearance29.material = Material30
-ImageTexture31 = x3d.ImageTexture(DEF="ImageCloudlessEarth")
-ImageTexture31.url = ["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
+Shape30.geometry = Sphere31
+Appearance32 = x3d.Appearance()
+Material33 = x3d.Material(DEF="MaterialLightBlue")
+Material33.diffuseColor = [0.1,0.5,1]
 
-Appearance29.texture = ImageTexture31
+Appearance32.material = Material33
+ImageTexture34 = x3d.ImageTexture(DEF="ImageCloudlessEarth")
+ImageTexture34.url = ["earth-topo.png","earth-topo.jpg","earth-topo-small.gif","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.png","https://www.web3d.org/x3d/content/examples/Basic/earth-topo.jpg","https://www.web3d.org/x3d/content/examples/Basic/earth-topo-small.gif"]
 
-Shape28.appearance = Appearance29
-Sphere32 = x3d.Sphere()
+Appearance32.texture = ImageTexture34
 
-Shape28.geometry = Sphere32
+Shape30.appearance = Appearance32
 
-Transform27.children.append(Shape28)
+Transform29.children.append(Shape30)
 
-Group25.children.append(Transform27)
-Transform33 = x3d.Transform()
-Transform33.translation = [0,-2,0]
-Shape34 = x3d.Shape()
-Appearance35 = x3d.Appearance()
-Material36 = x3d.Material(USE="MaterialLightBlue")
-
-Appearance35.material = Material36
-
-Shape34.appearance = Appearance35
+Group27.children.append(Transform29)
+Transform35 = x3d.Transform()
+Transform35.translation = [0,-2,0]
+Shape36 = x3d.Shape()
 Text37 = x3d.Text(DEF="TextMessage")
 Text37.string = ["Hello","world!"]
 FontStyle38 = x3d.FontStyle()
@@ -162,15 +168,21 @@ FontStyle38.justify = ["MIDDLE","MIDDLE"]
 
 Text37.fontStyle = FontStyle38
 
-Shape34.geometry = Text37
+Shape36.geometry = Text37
+Appearance39 = x3d.Appearance()
+Material40 = x3d.Material(USE="MaterialLightBlue")
 
-Transform33.children.append(Shape34)
+Appearance39.material = Material40
 
-Group25.children.append(Transform33)
+Shape36.appearance = Appearance39
 
-Scene23.children.append(Group25)
+Transform35.children.append(Shape36)
 
-X3D0.Scene = Scene23
+Group27.children.append(Transform35)
+
+Scene25.children.append(Group27)
+
+X3D0.Scene = Scene25
 f = open("../data/HelloWorld.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

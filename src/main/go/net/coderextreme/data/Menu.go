@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -83,18 +83,27 @@ func main() {
                     Name: stringPtr("title"),
                     Content: stringPtr("Menu.x3d"),
             },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("X3D scene with a Switch of Inlines controlled by a menu"),
+            },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+//Viewpoint and any other scene setup
+                &x3d.Viewpoint{
+                    Position: &x3d.SFVec3f{0.0, 20.0, 110.0},
+                },
+//Menu prototype declaration
                 &x3d.ProtoDeclare{
                     Name: stringPtr("Menu"),
                     ProtoInterface: &x3d.ProtoInterface{
                         Field: []x3d.X3DNode{
                             &x3d.Field{
-                                AccessType: stringPtr("initializeOnly"),
-                                Type: stringPtr("MFString"),
                                 Name: stringPtr("menuItems"),
+                                Type: stringPtr("MFString"),
+                                AccessType: stringPtr("initializeOnly"),
                         },
                         },
                     },
@@ -342,6 +351,7 @@ func main() {
                                             Url: x3d.MFString{"../resources/JinWink.x3d", "JinWink.x3d"},
                                         },
                                     },
+//Script to handle selection logic
                                     &x3d.Script{
                                         CoreX3DNode: x3d.CoreX3DNode{
                                             DEF: stringPtr("MenuScript"),
@@ -356,41 +366,41 @@ func main() {
                                         },
                                         Field: []x3d.X3DNode{
                                             &x3d.Field{
-                                                AccessType: stringPtr("initializeOnly"),
-                                                Type: stringPtr("MFString"),
                                                 Name: stringPtr("menuItems"),
+                                                Type: stringPtr("MFString"),
+                                                AccessType: stringPtr("initializeOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("outputOnly"),
-                                            Type: stringPtr("SFInt32"),
                                             Name: stringPtr("selection"),
+                                            Type: stringPtr("SFInt32"),
+                                            AccessType: stringPtr("outputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("inputOnly"),
-                                            Type: stringPtr("SFVec3f"),
                                             Name: stringPtr("touchPoint"),
+                                            Type: stringPtr("SFVec3f"),
+                                            AccessType: stringPtr("inputOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
                                             Name: stringPtr("spacing"),
+                                            Type: stringPtr("SFFloat"),
+                                            AccessType: stringPtr("initializeOnly"),
                                             Value: stringPtr("1.2"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
                                             Name: stringPtr("size"),
+                                            Type: stringPtr("SFFloat"),
+                                            AccessType: stringPtr("initializeOnly"),
                                             Value: stringPtr("2.4"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
                                             Name: stringPtr("menuCenterY"),
+                                            Type: stringPtr("SFFloat"),
+                                            AccessType: stringPtr("initializeOnly"),
                                         },
                                         &x3d.Field{
-                                            AccessType: stringPtr("initializeOnly"),
-                                            Type: stringPtr("SFFloat"),
                                             Name: stringPtr("itemHeight"),
+                                            Type: stringPtr("SFFloat"),
+                                            AccessType: stringPtr("initializeOnly"),
                                         },
 //ecmascript:
 //        function initialize() {
@@ -402,41 +412,41 @@ func main() {
 //        }
 //
 //        function touchPoint(value) {
-//          Browser.print("Hit "+value+" "+selection+"\\n");
+//          Browser.print("Hit "+value+" "+selection+"
+//");
 //          var index = Math.floor((menuCenterY - value.y) / itemHeight - 0.5);
 //
 //          selection = index - 2;
 //          if (selection >= 0 && selection < menuItems.length) {
-//            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"\\n");
+//            Browser.print("Selected "+value+" "+selection+" "+menuItems[selection]+"
+//");
 //          }
 //        }
                                         },
                                     },
+//ROUTEs to connect everything
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("MenuTouchSensor"),
+                                        FromField: stringPtr("hitPoint_changed"),
+                                        ToNode: stringPtr("MenuScript"),
+                                        ToField: stringPtr("touchPoint"),
+                                    },
+                                    &x3d.X3DRoute{
+                                        FromNode: stringPtr("MenuScript"),
+                                        FromField: stringPtr("selection"),
+                                        ToNode: stringPtr("SceneSwitcher"),
+                                        ToField: stringPtr("whichChoice"),
+                                    },
                                 },
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("MenuTouchSensor"),
-                                FromField: stringPtr("hitPoint_changed"),
-                                ToNode: stringPtr("MenuScript"),
-                                ToField: stringPtr("touchPoint"),
-                            },
-                            &x3d.ROUTE{
-                                FromNode: stringPtr("MenuScript"),
-                                FromField: stringPtr("selection"),
-                                ToNode: stringPtr("SceneSwitcher"),
-                                ToField: stringPtr("set_whichChoice"),
                             },
                         },
                     },
                 },
-                &x3d.Viewpoint{
-                    Position: &x3d.SFVec3f{0.0, 20.0, 110.0},
-                },
                 &x3d.ProtoInstance{
+                    Name: stringPtr("Menu"),
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("MainMenu"),
                     },
-                    Name: stringPtr("Menu"),
                     FieldValue: []x3d.X3DNode{
                         &x3d.FieldValue{
                             Name: stringPtr("menuItems"),
@@ -462,13 +472,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/Menu.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -479,7 +489,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

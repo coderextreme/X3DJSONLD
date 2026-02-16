@@ -1,0 +1,186 @@
+{
+    "X3D":,
+    {
+        "encoding":"UTF-8",
+        "$id":   "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "@version":"4.0",
+        "@profile":"Immersive",
+    "head":
+    {
+        "meta":
+        {
+      {
+        "@content":"CoordinateAxes.x3d",
+        "@name":"title"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"Don Brutzman, Byounghyun Yoo",
+        "@name":"creator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"14 July 2000",
+        "@name":"created"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"20 October 2019",
+        "@name":"modified"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X Y Z axis arrows and labels in X3D coordinate system. See CoordinateAxesExample for use as an Inline coordinate-system reference frame.",
+        "@name":"description"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxesNSEW.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxes.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://savage.nps.edu/Savage/Tools/Authoring/CoordinateAxesNSEW.x3d",
+        "@name":"reference"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"https://X3dGraphics.com/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d",
+        "@name":"identifier"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"X3D-Edit 3.3, https://savage.nps.edu/X3D-Edit",
+        "@name":"generator"
+      }
+    },
+        "meta":
+        {
+      {
+        "@content":"../license.html",
+        "@name":"license"
+      }
+    },
+    }    "Scene":
+    {
+        "WorldInfo":
+        {
+      {
+        "@title":"CoordinateAxes.x3d"
+      }
+    }
+        "Collision":
+        {
+      {
+        "@DEF":"DoNotCollideWithVisualizationWidget"
+      }
+            "Transform":
+            {
+      {
+        "@rotation":"1 0 0 1.57079"
+      }
+                "Group":
+                {
+                    "Group":
+                    {
+      {
+        "@DEF":"ArrowBlue"
+      }
+                        "Shape":
+                        {
+                            "Appearance":
+                            {
+      {
+        "@DEF":"Blue"
+      }
+                                "Material":
+                                {
+      {
+        "@diffuseColor":"0.3 0.3 1",
+        "@emissiveColor":"0.1 0.1 0.33"
+      }
+    },
+                            }                            "Cylinder":
+                            {
+      {
+        "@USE":"ArrowCylinder"
+      }
+    },
+                        }                        "Transform":
+                        {
+      {
+        "@translation":"0 1 0"
+      }
+                            "Shape":
+                            {
+                                "Appearance":
+                                {
+      {
+        "@USE":"Blue"
+      }
+    },
+                                "Cone":
+                                {
+      {
+        "@USE":"ArrowCone"
+      }
+    },
+                            }                        }                    }                    "Transform":
+                    {
+      {
+        "@rotation":"1 0 0 -1.57079",
+        "@translation":"0 1.1 0.072"
+      }
+                        "Billboard":
+                        {
+                            "Shape":
+                            {
+                                "Appearance":
+                                {
+      {
+        "@USE":"LABEL_APPEARANCE"
+      }
+    },
+                                "Text":
+                                {
+      {
+        "@string":""Z""
+      }
+                                    "FontStyle":
+                                    {
+      {
+        "@USE":"LABEL_FONT"
+      }
+    },
+                                }                            }                        }                    }                }            }        }    }}

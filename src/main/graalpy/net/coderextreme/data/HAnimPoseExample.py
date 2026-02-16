@@ -857,31 +857,31 @@ HAnimHumanoid158.setVersion("2.0")
 HAnimPose159 = x3d.HAnimPose()
 HAnimPose159.setUSE("A_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose159)
+HAnimHumanoid158.setChildren(HAnimPose159)
 HAnimPose160 = x3d.HAnimPose()
 HAnimPose160.setUSE("T_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose160)
+HAnimHumanoid158.setChildren(HAnimPose160)
 HAnimPose161 = x3d.HAnimPose()
 HAnimPose161.setUSE("I_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose161)
+HAnimHumanoid158.setChildren(HAnimPose161)
 HAnimPose162 = x3d.HAnimPose()
 HAnimPose162.setUSE("H_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose162)
+HAnimHumanoid158.setChildren(HAnimPose162)
 HAnimPose163 = x3d.HAnimPose()
 HAnimPose163.setUSE("FaceLeft_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose163)
+HAnimHumanoid158.setChildren(HAnimPose163)
 HAnimPose164 = x3d.HAnimPose()
 HAnimPose164.setUSE("FaceRight_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose164)
+HAnimHumanoid158.setChildren(HAnimPose164)
 HAnimPose165 = x3d.HAnimPose()
 HAnimPose165.setUSE("TouchDown_Pose")
 
-HAnimHumanoid158.addChild(HAnimPose165)
+HAnimHumanoid158.setChildren(HAnimPose165)
 
 Scene17.addChild(HAnimHumanoid158)
 

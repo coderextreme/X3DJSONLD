@@ -22,15 +22,11 @@
 #                       # but python source is very verbose, for example x3d.Material x3d.Shape etc.
 #                       # X3dToPython.xslt stylesheet insertPackagePrefix=true supports this option.
 #
-# Project home page:    # X3D Python Scene Access Interface Library (X3DPSAIL)
-#                       # https://www.web3d.org/x3d/stylesheets/python/python.html
-# Conversion generator: # https://www.web3d.org/x3d/stylesheets/X3dToPython.xslt
-#
 ####################################################################################################
 
 from x3d import *
 
-newModel=X3D(profile='Full',version='4.0',
+newModel=X3D(profile='Full',version='4.1',
   head=head(
     children=[
     component(level=1,name='Scripting'),
@@ -50,26 +46,20 @@ newModel=X3D(profile='Full',version='4.0',
     meta(content='PSPad, http://www.pspad.com/',name='generator'),
     meta(content='license.html',name='license')]),
   # "The Flower Review (TPREV)", a simple MU scene using DIS Sensor Event Distribution,
-
   # It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)
-
   # open for their "discussion about the teapot"
-
   Scene=Scene(
     children=[
     Comment(' LayerSet with two layers, navigation happens in layer 1 '),
     LayerSet(activeLayer=1,order=[1,2,3],
       # the first Layer contains the main scenery - "The Review of the Flower (DIS Multiuser)"
-
       Layer(pickable=True,objectType=["ALL"],
         # basic nodes, which might be present in any scene
-
         NavigationInfo(type=["EXAMINE"],avatarSize=[0.25,1.75,0.75]),
         DirectionalLight(ambientIntensity=.2,direction=(0,-1,-0)),
         DirectionalLight(ambientIntensity=.2,direction=(-1,-.1,-1)),
         Viewpoint(description='My Overview',fieldOfView=1.570796,position=(0,1.75,60)),
         # this group contains the red/green/blue 3D crosshair
-
         Group(
           children=[
           Comment(' Arrow X '),
@@ -112,7 +102,6 @@ newModel=X3D(profile='Full',version='4.0',
               appearance=Appearance(
                 material=Material(USE='BLUE')))])]),
         # the model that is being reviewed by the users of this scene
-
         Transform(DEF='FlowerTransform',
           children=[
           Comment(' <Inline DEF="Flower" url=\'"bumpyx_ite.x3d"\' /> '),
@@ -122,7 +111,6 @@ newModel=X3D(profile='Full',version='4.0',
             children=[
             Shape(
               # <Sphere radius='40'></Sphere>
-
               geometry=IndexedFaceSet(convex=False,DEF='Orbit',
                 coord=Coordinate(DEF='OrbitCoordinates')),
               appearance=Appearance(
@@ -154,11 +142,9 @@ newModel=X3D(profile='Full',version='4.0',
                   ShaderPart(url=["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"]),
                   ShaderPart(url=["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"],type='FRAGMENT'),
                   # TO CONVERT TO A SPHERE
-
                   # <ShaderPart url='"../shaders/x_ite.vs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs"' type="VERTEX" containerField='parts'></ShaderPart>
-
                   # <ShaderPart url='"../shaders/x_itebubbles.fs" "https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs"' containerField='parts' type='FRAGMENT'></ShaderPart>
-)]))])]),
+                  )]))])]),
         Script(DEF='OrbitScript',
           field=[
           field(accessType='inputOutput',name='coordinates',type='MFVec3f'),
@@ -372,7 +358,6 @@ ecmascript:
           children=[
           Group(),])])])])
 )
-
 ### X3D model conversion complete ###
 
 ####################################################################################################

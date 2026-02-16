@@ -307,7 +307,10 @@ ecmascript:eval (0
                   name_ : SFString('add_node'),
                   accessType_ : SFString("inputOnly"),
                   value_ : SFString('false')),
-              /*<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>*/
+              /*<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>*/
+              /*<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">*/
+              /*<Transform USE=\"HoldsContent\"/>*/
+              /*</field>*/
               ],
 ecmascript:eval (0
 	, function add_node(value) {

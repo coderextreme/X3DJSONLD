@@ -387,7 +387,10 @@ field73.setValue(CString("false"));
 field73.setType(CString("SFBool"));
 Script71.addChild(&field73);
 
-//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/> <field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\"> <Transform USE=\"HoldsContent\"/> </field>
+//<field accessType=\"outputOnly\" name=\"node_changed\" type=\"SFNode\"/>
+//<field name=\"ModifiableNode\" type=\"SFNode\" accessType=\"inputOutput\">
+//<Transform USE=\"HoldsContent\"/>
+//</field>
 
 Script71.setSourceCode(CString("ecmascript:")+
 _T("	function add_node(value) {")+

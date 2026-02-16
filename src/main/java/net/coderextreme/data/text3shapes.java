@@ -56,14 +56,14 @@ public class text3shapes implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("creator").setContent("John W Carlson"))
-        .addMeta(new meta().setName("created").setContent("December 13 2015"))
-        .addMeta(new meta().setName("title").setContent("text3shapes.x3d"))
-        .addMeta(new meta().setName("identifier").setContent("https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d"))
-        .addMeta(new meta().setName("description").setContent("3 text shapes"))
-        .addMeta(new meta().setName("generator").setContent("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("John W Carlson")))
+        .addMeta(new meta().setName(new SFString("created")).setContent(new SFString("December 13 2015")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("text3shapes.x3d")))
+        .addMeta(new meta().setName(new SFString("identifier")).setContent(new SFString("https://coderextreme.net/X3DJSONLD/src/main/data/text3shapes.x3d")))
+        .addMeta(new meta().setName(new SFString("description")).setContent(new SFString("3 text shapes")))
+        .addMeta(new meta().setName(new SFString("generator")).setContent(new SFString("Vim, X3D-Edit, https://savage.nps.edu/X3D-Edit"))))
       .setScene(new Scene()
         .addChild(new Transform()
           .addChild(new Shape()
@@ -82,7 +82,7 @@ public class text3shapes implements X3DRoots {
             .setAppearance(new Appearance()
               .setMaterial(new Material())))
           .addChild(new Script()
-            .addField(new field().setType("MFString").setName("frontUrls").setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue("\"rnl_front.png\" \"uffizi_front.png\""))
+            .addField(new field().setType("MFString").setName(new SFString("frontUrls")).setAccessType(field.ACCESSTYPE_INITIALIZEONLY).setValue(new SFString("\"rnl_front.png\" \"uffizi_front.png\"")))
             .setSourceCode("ecmascript:\n"+
 "			    var me = '\"1\" \"\"2\" \"\\n3\"';"))));
     return X3D0;

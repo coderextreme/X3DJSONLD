@@ -56,12 +56,12 @@ public class app implements X3DRoots {
     	return list;
     }
     public X3D initialize() {
-      X3D X3D0 =  new X3D().setProfile("Immersive").setVersion("4.0")
+      X3D X3D0 =  new X3D().setProfile(new SFString("Immersive")).setVersion(new SFString("4.0"))
       .setHead(new head()
-        .addMeta(new meta().setName("title").setContent("app.x3d"))
-        .addMeta(new meta().setName("creator").setContent("Carlson, I"))
-        .addMeta(new meta().setName("creator").setContent("Carlson, II"))
-        .addMeta(new meta().setName("creator").setContent("Carlson, III")))
+        .addMeta(new meta().setName(new SFString("title")).setContent(new SFString("app.x3d")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Carlson, I")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Carlson, II")))
+        .addMeta(new meta().setName(new SFString("creator")).setContent(new SFString("Carlson, III"))))
       .setScene(new Scene()
         .addChild(new Group()
           .addChild(new Shape()

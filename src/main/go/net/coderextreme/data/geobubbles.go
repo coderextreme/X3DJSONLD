@@ -69,8 +69,8 @@ func validateXMLWithSchema(xmlData []byte, schemaPath string) error {
 func main() {
 	fmt.Println("--- Building and Testing an X3D Scene in Go ---")
 
-	const schemaURL = "https://www.web3d.org/specifications/x3d-4.0.xsd"
-	const schemaFilename = "x3d-4.0.xsd"
+	const schemaURL = "https://www.web3d.org/specifications/x3d-4.1.xsd"
+	const schemaFilename = "x3d-4.1.xsd"
 	if err := downloadSchemaIfNotExists(schemaURL, schemaFilename); err != nil {
 		log.Fatalf("Could not prepare schema file: %v", err)
 	}
@@ -98,38 +98,45 @@ func main() {
                 Content: stringPtr("manual"),
             },
             &x3d.Meta{
-                Name: stringPtr("generator"),
-                Content: stringPtr("x3d-tidy V2.1.21, https://www.npmjs.com/package/x3d-tidy"),
+                Name: stringPtr("identifier"),
+                Content: stringPtr("https://coderextreme.net/X3DJSONLD/src/main/data/geobubbles.x3d"),
+            },
+            &x3d.Meta{
+                Name: stringPtr("description"),
+                Content: stringPtr("geo bubbles"),
             },
             },
         },
-        Scene: &x3d.Scene{
-            Children: []x3d.X3DChildNode{
+        &x3d.Group{
+            Children: []x3d.X3DNode{
+//Viewpoint DEF='Tour' position='0 0 4' orientation='1 0 0 0' description='Tour Views'/
+//PositionInterpolator DEF='TourPosition' key='0 1' keyValue='-0.5 -0.5 4 -0.5 0.5 4'/
                 &x3d.GeoViewpoint{
                     CoreX3DNode: x3d.CoreX3DNode{
                         DEF: stringPtr("Tour"),
                     },
+                    Position: &x3d.SFVec3d{0, 0, 4},
+                    Orientation: &x3d.SFRotation{1.0, 0.0, 0.0, 0.0},
                     Description: stringPtr("Tour Views"),
-                    Position: &x3d.SFVec3d{0.000240332395536092, 0.00133046760455211, 3.99999793432653},
                 },
                 &x3d.Background{
-                    FrontUrl: x3d.MFString{"../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"},
                     BackUrl: x3d.MFString{"../resources/images/BK.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BK.png"},
+                    BottomUrl: x3d.MFString{"../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"},
+                    FrontUrl: x3d.MFString{"../resources/images/FR.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/FR.png"},
                     LeftUrl: x3d.MFString{"../resources/images/LF.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/LF.png"},
                     RightUrl: x3d.MFString{"../resources/images/RT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/RT.png"},
                     TopUrl: x3d.MFString{"../resources/images/TP.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/TP.png"},
-                    BottomUrl: x3d.MFString{"../resources/images/BT.png", "https://coderextreme.net/X3DJSONLD/src/main/resources/images/BT.png"},
                 },
                 &x3d.Transform{
                     Children: []x3d.X3DNode{
                         &x3d.Shape{
+                            Geometry: &x3d.Sphere{
+                            },
                             Appearance: &x3d.Appearance{
                                 Material: &x3d.Material{
                                     DiffuseColor: &x3d.SFColor{0.7, 0.7, 0.7},
                                     SpecularColor: &x3d.SFColor{0.5, 0.5, 0.5},
                                 },
-                            },
-                            Geometry: &x3d.Sphere{
                             },
                         },
                     },
@@ -154,25 +161,26 @@ func main() {
                     },
                     Field: []x3d.X3DNode{
                         &x3d.Field{
+                            Name: stringPtr("set_cycle"),
                             AccessType: stringPtr("inputOnly"),
                             Type: stringPtr("SFTime"),
-                            Name: stringPtr("set_cycle"),
                     },
                     &x3d.Field{
+                        Name: stringPtr("val"),
                         AccessType: stringPtr("inputOutput"),
                         Type: stringPtr("SFFloat"),
-                        Name: stringPtr("val"),
+                        Value: stringPtr("0"),
                     },
                     &x3d.Field{
+                        Name: stringPtr("positions"),
                         AccessType: stringPtr("inputOutput"),
                         Type: stringPtr("MFVec3d"),
-                        Name: stringPtr("positions"),
                         Value: stringPtr("0.0015708 0 4 0 0.0015708 4"),
                     },
                     &x3d.Field{
+                        Name: stringPtr("position"),
                         AccessType: stringPtr("inputOutput"),
                         Type: stringPtr("MFVec3d"),
-                        Name: stringPtr("position"),
                         Value: stringPtr("0.0015708 0 4 0 0.0015708 4"),
                     },
 //ecmascript:
@@ -194,25 +202,25 @@ func main() {
 //               }
                     },
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("TourTime"),
                     FromField: stringPtr("cycleTime"),
                     ToNode: stringPtr("RandomTourTime"),
                     ToField: stringPtr("set_cycle"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("RandomTourTime"),
-                    FromField: stringPtr("position_changed"),
+                    FromField: stringPtr("position"),
                     ToNode: stringPtr("TourPosition"),
-                    ToField: stringPtr("set_keyValue"),
+                    ToField: stringPtr("keyValue"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("TourTime"),
                     FromField: stringPtr("fraction_changed"),
                     ToNode: stringPtr("TourPosition"),
                     ToField: stringPtr("set_fraction"),
                 },
-                &x3d.ROUTE{
+                &x3d.X3DRoute{
                     FromNode: stringPtr("TourPosition"),
                     FromField: stringPtr("geovalue_changed"),
                     ToNode: stringPtr("Tour"),
@@ -236,13 +244,13 @@ func main() {
 		log.Fatalf("XML Marshaling failed: %v", err)
 	}
 	/*
-	fmt.Println("\n--- Validating XML against X3D 4.0 Schema (using libxml2) ---")
+	fmt.Println("\n--- Validating XML against X3D 4.1 Schema (using libxml2) ---")
 	err = validateXMLWithSchema(output, schemaFilename)
 	if err != nil {
 		fmt.Printf("--- Invalid Generated XML ---\n%s\n---------------------------\n", string(output))
 		log.Fatalf("Schema validation failed for generated XML: %v", err)
 	}
-	fmt.Println("✅ XML is valid against the X3D 4.0 schema!")
+	fmt.Println("✅ XML is valid against the X3D 4.1 schema!")
 	*/
 	filename := "../data/geobubbles.new.go.x3d"
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY, 0644)
@@ -253,7 +261,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	// Write the string content to the file
-	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n"
+	header := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.1//EN\" \"https://www.web3d.org/specifications/x3d-4.1.dtd\">\n"
 	_, err = file.WriteString(header)
 	if err != nil {
 		fmt.Printf("Error writing header to file: %v\n", err)

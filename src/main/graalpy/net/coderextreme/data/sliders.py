@@ -6,7 +6,7 @@ x3d.ConfigurationProperties.setStripTrailingZeroes(True)
 x3d.ConfigurationProperties.setStripDefaultAttributes(True)
 X3D0 = x3d.X3D()
 X3D0.setProfile("Full")
-X3D0.setVersion("4.0")
+X3D0.setVersion("4.1")
 head1 = x3d.head()
 
 head1.addComments(x3d.CommentsBlock("""<component name='Shape' level='4'></component>"""))

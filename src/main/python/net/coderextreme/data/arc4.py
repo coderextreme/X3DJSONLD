@@ -3,7 +3,7 @@ import x3d
 print('-->')
 X3D0 = x3d.X3D()
 X3D0.profile = "Immersive"
-X3D0.version = "4.1"
+X3D0.version = "4.0"
 head1 = x3d.head()
 meta2 = x3d.meta()
 meta2.name = "title"
@@ -17,75 +17,81 @@ meta3.content = "Lost, Doug Sanden I think"
 head1.children.append(meta3)
 meta4 = x3d.meta()
 meta4.name = "generator"
-meta4.content = "x3d-tidy V3.0.2, https://www.npmjs.com/package/x3d-tidy"
+meta4.content = "manual"
 
 head1.children.append(meta4)
 meta5 = x3d.meta()
-meta5.name = "generator"
-meta5.content = "manual"
+meta5.name = "identifier"
+meta5.content = "https://coderextreme.net/X3DJSONLD/src/main/data/x3dconnectorProto.x3d"
 
 head1.children.append(meta5)
+meta6 = x3d.meta()
+meta6.name = "description"
+meta6.content = "a generic proto to connect two objects"
+
+head1.children.append(meta6)
 
 X3D0.head = head1
-Scene6 = x3d.Scene()
-Viewpoint7 = x3d.Viewpoint()
-Viewpoint7.description = "Only Viewpoint"
-Viewpoint7.position = [0,0,5]
+Scene7 = x3d.Scene()
+Viewpoint8 = x3d.Viewpoint()
+Viewpoint8.position = [0,0,5]
+Viewpoint8.description = "Only Viewpoint"
 
-Scene6.children.append(Viewpoint7)
-Background8 = x3d.Background()
-Background8.skyColor = [(0.4, 0.4, 0.4)]
+Scene7.children.append(Viewpoint8)
+Background9 = x3d.Background()
+Background9.skyColor = [(0.4, 0.4, 0.4)]
 
-Scene6.children.append(Background8)
-Transform9 = x3d.Transform(DEF="DECLpoint_G1_node")
-Transform9.translation = [0,1.075,0]
-Shape10 = x3d.Shape()
-Appearance11 = x3d.Appearance()
-Material12 = x3d.Material()
-Material12.diffuseColor = [1,0,0]
+Scene7.children.append(Background9)
+Transform10 = x3d.Transform(DEF="DECLpoint_G1_node")
+Shape11 = x3d.Shape()
+Sphere12 = x3d.Sphere()
+Sphere12.radius = 0.1
 
-Appearance11.material = Material12
+Shape11.geometry = Sphere12
+Appearance13 = x3d.Appearance()
+Material14 = x3d.Material()
+Material14.diffuseColor = [1,0,0]
 
-Shape10.appearance = Appearance11
-Sphere13 = x3d.Sphere()
-Sphere13.radius = 0.1
+Appearance13.material = Material14
 
-Shape10.geometry = Sphere13
+Shape11.appearance = Appearance13
 
-Transform9.children.append(Shape10)
-PositionInterpolator14 = x3d.PositionInterpolator(DEF="DECLpoint_G1_PI1")
-PositionInterpolator14.key = [0,1]
-PositionInterpolator14.keyValue = [(0, 0, 0),(0, 5, 0)]
+Transform10.children.append(Shape11)
+PositionInterpolator15 = x3d.PositionInterpolator(DEF="DECLpoint_G1_PI1")
+PositionInterpolator15.key = [0,1]
+PositionInterpolator15.keyValue = [(0, 0, 0),(0, 5, 0)]
 
-Transform9.children.append(PositionInterpolator14)
-Script15 = x3d.Script(DEF="DECLpoint_G1_MB1")
-field16 = x3d.field()
-field16.accessType = "inputOutput"
-field16.type = "SFVec3f"
-field16.name = "translation"
-
-Script15.field.append(field16)
+Transform10.children.append(PositionInterpolator15)
+Script16 = x3d.Script(DEF="DECLpoint_G1_MB1")
 field17 = x3d.field()
+field17.name = "translation"
 field17.accessType = "inputOutput"
 field17.type = "SFVec3f"
-field17.name = "old"
+field17.value = [0,0,0]
 
-Script15.field.append(field17)
+Script16.field.append(field17)
 field18 = x3d.field()
-field18.accessType = "inputOnly"
-field18.type = "SFTime"
-field18.name = "set_location"
+field18.name = "old"
+field18.accessType = "inputOutput"
+field18.type = "SFVec3f"
+field18.value = [0,0,0]
 
-Script15.field.append(field18)
+Script16.field.append(field18)
 field19 = x3d.field()
-field19.accessType = "inputOutput"
-field19.type = "MFVec3f"
-field19.name = "keyValue"
-field19.value = [(0, 0, 0),(0, 5, 0)]
+field19.name = "set_location"
+field19.accessType = "inputOnly"
+field19.type = "SFTime"
 
-Script15.field.append(field19)
+Script16.field.append(field19)
+field20 = x3d.field()
+field20.name = "keyValue"
+field20.accessType = "inputOutput"
+field20.type = "MFVec3f"
+field20.value = [(0, 0, 0),(0, 5, 0)]
 
-Script15.sourceCode = '''ecmascript:\n"+
+Script16.field.append(field20)
+
+Script16.sourceCode = '''ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
@@ -93,63 +99,92 @@ Script15.sourceCode = '''ecmascript:\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}'''
 
-Transform9.children.append(Script15)
-TimeSensor20 = x3d.TimeSensor(DEF="DECLpoint_G1_CL1")
-TimeSensor20.cycleInterval = 3
-TimeSensor20.loop = True
+Transform10.children.append(Script16)
+TimeSensor21 = x3d.TimeSensor(DEF="DECLpoint_G1_CL1")
+TimeSensor21.cycleInterval = 3
+TimeSensor21.loop = True
 
-Transform9.children.append(TimeSensor20)
+Transform10.children.append(TimeSensor21)
+ROUTE22 = x3d.ROUTE()
+ROUTE22.fromNode = "DECLpoint_G1_CL1"
+ROUTE22.fromField = "cycleTime"
+ROUTE22.toNode = "DECLpoint_G1_MB1"
+ROUTE22.toField = "set_location"
 
-Scene6.children.append(Transform9)
-Transform21 = x3d.Transform(DEF="DECLpoint_G2_node")
-Transform21.translation = [0,1.075,0]
-Shape22 = x3d.Shape()
-Appearance23 = x3d.Appearance()
-Material24 = x3d.Material()
-Material24.diffuseColor = [1,0,0]
+Transform10.children.append(ROUTE22)
+ROUTE23 = x3d.ROUTE()
+ROUTE23.fromNode = "DECLpoint_G1_CL1"
+ROUTE23.fromField = "fraction_changed"
+ROUTE23.toNode = "DECLpoint_G1_PI1"
+ROUTE23.toField = "set_fraction"
 
-Appearance23.material = Material24
+Transform10.children.append(ROUTE23)
+ROUTE24 = x3d.ROUTE()
+ROUTE24.fromNode = "DECLpoint_G1_MB1"
+ROUTE24.fromField = "keyValue"
+ROUTE24.toNode = "DECLpoint_G1_PI1"
+ROUTE24.toField = "keyValue"
 
-Shape22.appearance = Appearance23
-Sphere25 = x3d.Sphere()
-Sphere25.radius = 0.1
+Transform10.children.append(ROUTE24)
+ROUTE25 = x3d.ROUTE()
+ROUTE25.fromNode = "DECLpoint_G1_PI1"
+ROUTE25.fromField = "value_changed"
+ROUTE25.toNode = "DECLpoint_G1_node"
+ROUTE25.toField = "set_translation"
 
-Shape22.geometry = Sphere25
+Transform10.children.append(ROUTE25)
 
-Transform21.children.append(Shape22)
-PositionInterpolator26 = x3d.PositionInterpolator(DEF="DECLpoint_G2_PI1")
-PositionInterpolator26.key = [0,1]
-PositionInterpolator26.keyValue = [(0, 0, 0),(0, 5, 0)]
+Scene7.children.append(Transform10)
+Transform26 = x3d.Transform(DEF="DECLpoint_G2_node")
+Shape27 = x3d.Shape()
+Sphere28 = x3d.Sphere()
+Sphere28.radius = 0.1
 
-Transform21.children.append(PositionInterpolator26)
-Script27 = x3d.Script(DEF="DECLpoint_G2_MB1")
-field28 = x3d.field()
-field28.accessType = "inputOutput"
-field28.type = "SFVec3f"
-field28.name = "translation"
+Shape27.geometry = Sphere28
+Appearance29 = x3d.Appearance()
+Material30 = x3d.Material()
+Material30.diffuseColor = [1,0,0]
 
-Script27.field.append(field28)
-field29 = x3d.field()
-field29.accessType = "inputOutput"
-field29.type = "SFVec3f"
-field29.name = "old"
+Appearance29.material = Material30
 
-Script27.field.append(field29)
-field30 = x3d.field()
-field30.accessType = "inputOnly"
-field30.type = "SFTime"
-field30.name = "set_location"
+Shape27.appearance = Appearance29
 
-Script27.field.append(field30)
-field31 = x3d.field()
-field31.accessType = "inputOutput"
-field31.type = "MFVec3f"
-field31.name = "keyValue"
-field31.value = [(0, 0, 0),(0, 5, 0)]
+Transform26.children.append(Shape27)
+PositionInterpolator31 = x3d.PositionInterpolator(DEF="DECLpoint_G2_PI1")
+PositionInterpolator31.key = [0,1]
+PositionInterpolator31.keyValue = [(0, 0, 0),(0, 5, 0)]
 
-Script27.field.append(field31)
+Transform26.children.append(PositionInterpolator31)
+Script32 = x3d.Script(DEF="DECLpoint_G2_MB1")
+field33 = x3d.field()
+field33.name = "translation"
+field33.accessType = "inputOutput"
+field33.type = "SFVec3f"
+field33.value = [0,0,0]
 
-Script27.sourceCode = '''ecmascript:\n"+
+Script32.field.append(field33)
+field34 = x3d.field()
+field34.name = "old"
+field34.accessType = "inputOutput"
+field34.type = "SFVec3f"
+field34.value = [0,0,0]
+
+Script32.field.append(field34)
+field35 = x3d.field()
+field35.name = "set_location"
+field35.accessType = "inputOnly"
+field35.type = "SFTime"
+
+Script32.field.append(field35)
+field36 = x3d.field()
+field36.name = "keyValue"
+field36.accessType = "inputOutput"
+field36.type = "MFVec3f"
+field36.value = [(0, 0, 0),(0, 5, 0)]
+
+Script32.field.append(field36)
+
+Script32.sourceCode = '''ecmascript:\n"+
 "		function set_location(value) {\n"+
 "                    old = translation;\n"+
 "		    translation = new SFVec3f(Math.random()*10-5, Math.random()*10-5, Math.random()*10-5);\n"+
@@ -157,81 +192,109 @@ Script27.sourceCode = '''ecmascript:\n"+
 "		    // Browser.println(keyValue);\n"+
 "		}'''
 
-Transform21.children.append(Script27)
-TimeSensor32 = x3d.TimeSensor(DEF="DECLpoint_G2_CL1")
-TimeSensor32.cycleInterval = 3
-TimeSensor32.loop = True
+Transform26.children.append(Script32)
+TimeSensor37 = x3d.TimeSensor(DEF="DECLpoint_G2_CL1")
+TimeSensor37.cycleInterval = 3
+TimeSensor37.loop = True
 
-Transform21.children.append(TimeSensor32)
+Transform26.children.append(TimeSensor37)
+ROUTE38 = x3d.ROUTE()
+ROUTE38.fromNode = "DECLpoint_G2_CL1"
+ROUTE38.fromField = "cycleTime"
+ROUTE38.toNode = "DECLpoint_G2_MB1"
+ROUTE38.toField = "set_location"
 
-Scene6.children.append(Transform21)
-Group33 = x3d.Group()
-Transform34 = x3d.Transform(DEF="DECLx3dconnector_connector1_trans")
-Transform35 = x3d.Transform(DEF="DECLx3dconnector_connector1_rotscale")
-Shape36 = x3d.Shape()
-Appearance37 = x3d.Appearance()
-Material38 = x3d.Material()
-Material38.diffuseColor = [0.2,0.7,0.7]
-Material38.transparency = 0.5
+Transform26.children.append(ROUTE38)
+ROUTE39 = x3d.ROUTE()
+ROUTE39.fromNode = "DECLpoint_G2_CL1"
+ROUTE39.fromField = "fraction_changed"
+ROUTE39.toNode = "DECLpoint_G2_PI1"
+ROUTE39.toField = "set_fraction"
 
-Appearance37.material = Material38
+Transform26.children.append(ROUTE39)
+ROUTE40 = x3d.ROUTE()
+ROUTE40.fromNode = "DECLpoint_G2_MB1"
+ROUTE40.fromField = "keyValue"
+ROUTE40.toNode = "DECLpoint_G2_PI1"
+ROUTE40.toField = "keyValue"
 
-Shape36.appearance = Appearance37
-Cylinder39 = x3d.Cylinder()
-Cylinder39.radius = 0.05
+Transform26.children.append(ROUTE40)
+ROUTE41 = x3d.ROUTE()
+ROUTE41.fromNode = "DECLpoint_G2_PI1"
+ROUTE41.fromField = "value_changed"
+ROUTE41.toNode = "DECLpoint_G2_node"
+ROUTE41.toField = "set_translation"
 
-Shape36.geometry = Cylinder39
+Transform26.children.append(ROUTE41)
 
-Transform35.children.append(Shape36)
+Scene7.children.append(Transform26)
+Group42 = x3d.Group()
+Transform43 = x3d.Transform(DEF="DECLx3dconnector_connector1_trans")
+Transform44 = x3d.Transform(DEF="DECLx3dconnector_connector1_rotscale")
+Shape45 = x3d.Shape()
+Appearance46 = x3d.Appearance()
+Material47 = x3d.Material()
+Material47.diffuseColor = [0.2,0.7,0.7]
+Material47.transparency = 0.5
 
-Transform34.children.append(Transform35)
+Appearance46.material = Material47
 
-Group33.children.append(Transform34)
-Script40 = x3d.Script(DEF="DECLx3dconnector_connector1_S1")
-field41 = x3d.field()
-field41.accessType = "initializeOnly"
-field41.type = "SFNode"
-field41.name = "startnode"
+Shape45.appearance = Appearance46
+Cylinder48 = x3d.Cylinder()
+Cylinder48.radius = 0.05
 
-Script40.field.append(field41)
-field42 = x3d.field()
-field42.accessType = "initializeOnly"
-field42.type = "SFNode"
-field42.name = "endnode"
+Shape45.geometry = Cylinder48
 
-Script40.field.append(field42)
-field43 = x3d.field()
-field43.accessType = "inputOutput"
-field43.type = "SFNode"
-field43.name = "position"
-Transform44 = x3d.Transform(USE="DECLx3dconnector_connector1_trans")
+Transform44.children.append(Shape45)
 
-field43.children.append(Transform44)
+Transform43.children.append(Transform44)
 
-Script40.field.append(field43)
-field45 = x3d.field()
-field45.accessType = "inputOutput"
-field45.type = "SFNode"
-field45.name = "rotscale"
-Transform46 = x3d.Transform(USE="DECLx3dconnector_connector1_rotscale")
+Group42.children.append(Transform43)
+Script49 = x3d.Script(DEF="DECLx3dconnector_connector1_S1")
+field50 = x3d.field()
+field50.name = "startnode"
+field50.accessType = "initializeOnly"
+field50.type = "SFNode"
 
-field45.children.append(Transform46)
+Script49.field.append(field50)
+field51 = x3d.field()
+field51.name = "endnode"
+field51.accessType = "initializeOnly"
+field51.type = "SFNode"
 
-Script40.field.append(field45)
-field47 = x3d.field()
-field47.accessType = "inputOnly"
-field47.type = "SFVec3f"
-field47.name = "set_startpoint"
+Script49.field.append(field51)
+field52 = x3d.field()
+field52.name = "position"
+field52.accessType = "inputOutput"
+field52.type = "SFNode"
+Transform53 = x3d.Transform(USE="DECLx3dconnector_connector1_trans")
 
-Script40.field.append(field47)
-field48 = x3d.field()
-field48.accessType = "inputOnly"
-field48.type = "SFVec3f"
-field48.name = "set_endpoint"
+field52.children.append(Transform53)
 
-Script40.field.append(field48)
+Script49.field.append(field52)
+field54 = x3d.field()
+field54.name = "rotscale"
+field54.accessType = "inputOutput"
+field54.type = "SFNode"
+Transform55 = x3d.Transform(USE="DECLx3dconnector_connector1_rotscale")
 
-Script40.sourceCode = '''ecmascript:\n"+
+field54.children.append(Transform55)
+
+Script49.field.append(field54)
+field56 = x3d.field()
+field56.name = "set_startpoint"
+field56.accessType = "inputOnly"
+field56.type = "SFVec3f"
+
+Script49.field.append(field56)
+field57 = x3d.field()
+field57.name = "set_endpoint"
+field57.accessType = "inputOnly"
+field57.type = "SFVec3f"
+
+Script49.field.append(field57)
+
+Script49.sourceCode = '''ecmascript:\n"+
 "        function recompute(startpoint,endpoint){\n"+
 "	    if (typeof endpoint === 'undefined') {\n"+
 "		    if (typeof Quaternion !== 'undefined') {\n"+
@@ -293,81 +356,25 @@ Script40.sourceCode = '''ecmascript:\n"+
 "            recompute_and_route(startnode.translation,val);\n"+
 "        }'''
 
-Group33.children.append(Script40)
+Group42.children.append(Script49)
 
-Scene6.children.append(Group33)
-ROUTE49 = x3d.ROUTE()
-ROUTE49.fromNode = "DECLpoint_G1_CL1"
-ROUTE49.fromField = "cycleTime"
-ROUTE49.toNode = "DECLpoint_G1_MB1"
-ROUTE49.toField = "set_location"
-
-Scene6.children.append(ROUTE49)
-ROUTE50 = x3d.ROUTE()
-ROUTE50.fromNode = "DECLpoint_G1_CL1"
-ROUTE50.fromField = "fraction_changed"
-ROUTE50.toNode = "DECLpoint_G1_PI1"
-ROUTE50.toField = "set_fraction"
-
-Scene6.children.append(ROUTE50)
-ROUTE51 = x3d.ROUTE()
-ROUTE51.fromNode = "DECLpoint_G1_MB1"
-ROUTE51.fromField = "keyValue_changed"
-ROUTE51.toNode = "DECLpoint_G1_PI1"
-ROUTE51.toField = "set_keyValue"
-
-Scene6.children.append(ROUTE51)
-ROUTE52 = x3d.ROUTE()
-ROUTE52.fromNode = "DECLpoint_G1_PI1"
-ROUTE52.fromField = "value_changed"
-ROUTE52.toNode = "DECLpoint_G1_node"
-ROUTE52.toField = "set_translation"
-
-Scene6.children.append(ROUTE52)
-ROUTE53 = x3d.ROUTE()
-ROUTE53.fromNode = "DECLpoint_G2_CL1"
-ROUTE53.fromField = "cycleTime"
-ROUTE53.toNode = "DECLpoint_G2_MB1"
-ROUTE53.toField = "set_location"
-
-Scene6.children.append(ROUTE53)
-ROUTE54 = x3d.ROUTE()
-ROUTE54.fromNode = "DECLpoint_G2_CL1"
-ROUTE54.fromField = "fraction_changed"
-ROUTE54.toNode = "DECLpoint_G2_PI1"
-ROUTE54.toField = "set_fraction"
-
-Scene6.children.append(ROUTE54)
-ROUTE55 = x3d.ROUTE()
-ROUTE55.fromNode = "DECLpoint_G2_MB1"
-ROUTE55.fromField = "keyValue_changed"
-ROUTE55.toNode = "DECLpoint_G2_PI1"
-ROUTE55.toField = "set_keyValue"
-
-Scene6.children.append(ROUTE55)
-ROUTE56 = x3d.ROUTE()
-ROUTE56.fromNode = "DECLpoint_G2_PI1"
-ROUTE56.fromField = "value_changed"
-ROUTE56.toNode = "DECLpoint_G2_node"
-ROUTE56.toField = "set_translation"
-
-Scene6.children.append(ROUTE56)
-ROUTE57 = x3d.ROUTE()
-ROUTE57.fromNode = "DECLpoint_G1_node"
-ROUTE57.fromField = "translation_changed"
-ROUTE57.toNode = "DECLx3dconnector_connector1_S1"
-ROUTE57.toField = "set_startpoint"
-
-Scene6.children.append(ROUTE57)
+Scene7.children.append(Group42)
 ROUTE58 = x3d.ROUTE()
-ROUTE58.fromNode = "DECLpoint_G2_node"
+ROUTE58.fromNode = "DECLpoint_G1_node"
 ROUTE58.fromField = "translation_changed"
 ROUTE58.toNode = "DECLx3dconnector_connector1_S1"
-ROUTE58.toField = "set_endpoint"
+ROUTE58.toField = "set_startpoint"
 
-Scene6.children.append(ROUTE58)
+Scene7.children.append(ROUTE58)
+ROUTE59 = x3d.ROUTE()
+ROUTE59.fromNode = "DECLpoint_G2_node"
+ROUTE59.fromField = "translation_changed"
+ROUTE59.toNode = "DECLx3dconnector_connector1_S1"
+ROUTE59.toField = "set_endpoint"
 
-X3D0.Scene = Scene6
+Scene7.children.append(ROUTE59)
+
+X3D0.Scene = Scene7
 f = open("../data/arc4.new.python.x3d", mode="w", encoding="utf-8")
 f.write(X3D0.XML())
 f.close()

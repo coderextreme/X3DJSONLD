@@ -13,7 +13,7 @@ var ProtoInstance2 = null;
 var ProtoInstance3 = null;
 var ProtoInstance4 = null;
 var ProtoInstance5 = null;
-      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.0")
+      var X3D0 =  (new autoclass.X3D()).setProfile("Full").setVersion("4.1")
       .setHead(new autoclass.head()
         .addComments((new autoclass.CommentsBlock("<component name='Shape' level='4'></component>")))
         .addComments((new autoclass.CommentsBlock("<component name='DIS' level='2'></component>")))
@@ -31,7 +31,9 @@ var ProtoInstance5 = null;
         .addMeta(new autoclass.meta().setName("identifier").setContent("https://github.com/coderextreme/JSONverse/public/x3d/bumpyx_itesliders.x3d"))
         .addMeta(new autoclass.meta().setName("generator").setContent("PSPad, http://www.pspad.com/"))
         .addMeta(new autoclass.meta().setName("license").setContent("license.html")))
-      .addComments((new autoclass.CommentsBlock("\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution, It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak) open for their \"discussion about the teapot\"")))
+      .addComments((new autoclass.CommentsBlock("\"The Flower Review (TPREV)\", a simple MU scene using DIS Sensor Event Distribution,")))
+      .addComments((new autoclass.CommentsBlock("It is assumed the reviewers (users) have a non-X3D voice channel (e.g. TeamSpeak)")))
+      .addComments((new autoclass.CommentsBlock("open for their \"discussion about the teapot\"")))
       .setScene(new autoclass.Scene()
         .addComments((new autoclass.CommentsBlock("LayerSet with two layers, navigation happens in layer 1")))
         .addLayerSet(new autoclass.LayerSet().setActiveLayer(1).setOrder(java.newArray("int", [1,2,3]))
@@ -111,7 +113,9 @@ var ProtoInstance5 = null;
                       .addField(new autoclass.field().setType(autoclass.field.TYPE_SFFLOAT).setName("pdelta").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT).setValue("0"))
                       .addParts(new autoclass.ShaderPart().setType("VERTEX").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite_flowers_chromatic.vs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite_flowers_chromatic.vs"])))
                       .addParts(new autoclass.ShaderPart().setType("FRAGMENT").setUrl(java.newArray("java.lang.String", ["../shaders/x_ite.fs","https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.fs"])))
-                      .addComments((new autoclass.CommentsBlock("TO CONVERT TO A SPHERE <ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart> <ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))))))))
+                      .addComments((new autoclass.CommentsBlock("TO CONVERT TO A SPHERE")))
+                      .addComments((new autoclass.CommentsBlock("<ShaderPart url='\"../shaders/x_ite.vs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/x_ite.vs\"' type=\"VERTEX\" containerField='parts'></ShaderPart>")))
+                      .addComments((new autoclass.CommentsBlock("<ShaderPart url='\"../shaders/x_itebubbles.fs\" \"https://coderextreme.net/X3DJSONLD/src/main/shaders/xite_bubbles.fs\"' containerField='parts' type='FRAGMENT'></ShaderPart>"))))))))
             .addChild(new autoclass.Script().setDEF("OrbitScript")
               .addField(new autoclass.field().setType(autoclass.field.TYPE_MFVEC3F).setName("coordinates").setAccessType(autoclass.field.ACCESSTYPE_INPUTOUTPUT))
               .addField(new autoclass.field().setType(autoclass.field.TYPE_MFINT32).setName("coordIndexes").setAccessType(autoclass.field.ACCESSTYPE_OUTPUTONLY))
