@@ -14,7 +14,7 @@
     "typescript": "^4.4.2"
   },
   "dependencies": {
-    "qs": "6.14.1",
+    "qs": "^6.14.2",
     "@xmldom/xmldom": "^0.8.8",
     "ajv": "*",
     "ajv-formats": "*",
@@ -47,7 +47,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "rem bash build.sh",
+    "postinstall": "#  bash build.sh",
     "ajv": "bash ajv.sh",
     "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "testxxx": "web-test-runner ./dist/**/*.spec.js",
