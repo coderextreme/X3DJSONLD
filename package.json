@@ -23,7 +23,7 @@
     "antlr4": "^4.13.1-patch-1",
     "buffer": "^6.0.3",
     "esm": "^3.2.25",
-    "express": "^4.21.2",
+    "express": "^4.22.0",
     "glob": "*",
     "gura": "^1.4.4",
     "https-browserify": "*",
