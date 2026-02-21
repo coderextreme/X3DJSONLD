@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Consolidated X3D Viewer</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script type="module">
+window.addEventListener('load', () => {
+  if (window.opener) {
+    window.opener.postMessage('ready', 'https://www.web3d.orrg');
+  }
+});
+
+window.addEventListener('message', (event) => {
+  if (event.origin !== 'https://www.web3d.org') return;
+
+  const { textarea1, textarea2 } = event.data;
+  const textareas = document.querySelectorAll('textarea');
+
+  if (textarea1 && textareas[0]) {
+    textareas[0].value = textarea1;
+    textareas[0].dispatchEvent(new Event('input', { bubbles: true }));
+  }
+
+  if (textarea2 && textareas[1]) {
+    textareas[1].value = textarea2;
+    textareas[1].dispatchEvent(new Event('input', { bubbles: true }));
+  }
+});
+    </script>
+</head>
+<body>
+	<textarea>
+	</textarea>
+	<textarea>
+	</textarea>
+</body>
+</html>
+<!-- Sender site:
+	    <button onclick="openAndFill()">Open and Fill</button>
+
+<script>
+function openAndFill() {
+  const win = window.open('https://coderextreme.net/X3DJSONLD/src/main/html/schemavalidator.html');
+  window.addEventListener('message', (event) => {
+    if (event.origin !== 'https://coderextreme.net') return;
+
+    if (event.data === 'ready') {
+      win.postMessage(
+        { textarea1: 'first content here', textarea2: 'second content here' },
+        'https://www.coderextreme.net'
+      );
+    }
+  });
+}
+</script>
+-->
