@@ -28,7 +28,7 @@
     "gura": "^1.4.4",
     "handlebars": "^4.7.8",
     "https-browserify": "*",
-    "browserify": "^17.0.1",
+    "browserify": "*",
     "jsdom": "^26.1.0",
     "make-dir": "^3.1.0",
     "mutation-observer": "*",
