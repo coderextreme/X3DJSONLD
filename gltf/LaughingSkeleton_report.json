@@ -1,0 +1,1215 @@
+{
+    "uri": "LaughingSkeleton.glb",
+    "mimeType": "model/gltf-binary",
+    "validatorVersion": "2.0.0-dev.3.10",
+    "validatedAt": "2026-03-13T13:52:26.149Z",
+    "issues": {
+        "numErrors": 62,
+        "numWarnings": 0,
+        "numInfos": 138,
+        "numHints": 0,
+        "messages": [
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/extensionsUsed"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/extensionsRequired"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3408/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3408/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3410/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3410/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3412/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3412/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3414/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3414/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3416/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3416/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3418/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3418/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3420/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3420/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3422/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3422/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3424/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3424/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3426/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3426/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3428/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3428/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3430/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3430/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3432/min"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/accessors/3432/max"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/cameras"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/images"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/0/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/1/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/2/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/3/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/4/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/5/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/6/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/7/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/8/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/meshes/9/weights"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/4/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/7/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/10/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/11/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/12/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/13/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/14/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/15/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/16/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/17/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/18/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/19/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/20/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/21/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/22/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/23/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/24/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/25/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/26/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/nodes/27/children"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/samplers"
+            },
+            {
+                "code": "EMPTY_ENTITY",
+                "message": "Entity cannot be empty.",
+                "severity": 0,
+                "pointer": "/textures"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/0/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/1/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/2/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/3/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/4/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/5/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/6/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/7/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/8/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/9/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/10/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/11/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/12/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/13/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/14/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/15/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/16/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/17/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/18/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/19/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/20/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/21/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/22/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/23/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/24/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/25/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/26/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/27/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/28/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/29/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/30/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/31/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/32/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/33/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/34/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/35/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/36/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/37/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/38/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/39/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/40/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/41/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/42/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/43/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/44/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/45/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/46/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/47/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/48/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/49/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/50/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/51/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/52/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/53/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/54/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/55/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/56/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/57/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/58/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/59/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/60/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/61/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/62/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/63/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/64/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/65/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/66/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/67/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/68/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/69/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/70/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/71/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/72/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/73/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/74/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/75/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/76/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/77/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/78/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/79/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/80/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/81/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/82/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/83/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/84/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/85/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/86/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/87/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/88/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/89/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/90/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/91/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/92/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/93/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/94/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/95/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/96/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/97/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/98/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/99/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/100/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/101/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/102/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/103/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/104/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/105/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/106/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/107/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/108/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/109/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/110/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/111/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/112/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/113/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/114/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/115/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/116/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/117/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/118/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/119/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/120/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/121/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/122/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/123/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/124/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/125/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/126/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/127/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/128/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/129/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/130/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/131/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/132/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/133/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/134/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/135/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/136/attributes/TEXCOORD_0"
+            },
+            {
+                "code": "UNUSED_OBJECT",
+                "message": "This object may be unused.",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/137/attributes/TEXCOORD_0"
+            }
+        ],
+        "truncated": true
+    }
+}
