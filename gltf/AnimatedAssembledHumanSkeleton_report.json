@@ -1,0 +1,1215 @@
+{
+    "uri": "AnimatedAssembledHumanSkeleton.glb",
+    "mimeType": "model/gltf-binary",
+    "validatorVersion": "2.0.0-dev.2.7",
+    "validatedAt": "2026-03-13T23:11:30.933Z",
+    "issues": {
+        "numErrors": 0,
+        "numWarnings": 2,
+        "numInfos": 198,
+        "numHints": 0,
+        "messages": [
+            {
+                "code": "UNRESERVED_EXTENSION_PREFIX",
+                "message": "Extension uses unreserved extension prefix 'VRM'.",
+                "severity": 1,
+                "pointer": "/extensionsUsed/0"
+            },
+            {
+                "code": "UNSUPPORTED_EXTENSION",
+                "message": "Cannot validate an extension as it is not supported by the validator: 'VRM'.",
+                "severity": 1,
+                "pointer": "/extensionsUsed/0"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/0/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/1/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/2/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/3/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/4/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/5/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/6/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/7/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/8/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/9/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/10/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/11/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/12/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/13/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/14/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/15/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/16/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/17/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/18/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/19/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/20/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/21/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/22/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/23/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/24/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/25/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/26/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/27/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/28/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/29/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/30/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/31/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/32/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/33/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/34/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/35/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/36/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/37/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/38/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/39/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/40/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/41/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/42/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/43/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/44/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/45/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/46/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/47/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/48/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/49/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/50/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/51/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/52/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/53/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/54/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/55/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/56/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/57/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/58/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/59/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/60/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/61/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/62/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/63/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/64/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/65/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/66/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/67/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/68/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/69/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/70/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/71/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/72/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/73/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/74/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/75/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/76/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/77/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/78/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/79/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/80/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/81/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/82/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/83/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/84/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/85/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/86/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/87/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/88/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/89/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/90/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/91/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/92/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/93/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/94/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/95/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/96/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/97/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/98/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/99/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/100/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/101/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/102/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/103/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/104/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/105/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/106/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/107/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/108/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/109/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/110/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/111/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/112/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/113/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/114/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/115/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/116/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/117/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/118/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/119/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/120/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/121/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/122/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/123/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/124/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/125/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/126/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/127/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/128/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/129/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/130/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/131/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/132/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/133/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/134/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/135/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/136/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/137/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/138/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/139/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/140/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/141/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/142/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/143/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/144/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/145/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/146/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/147/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/148/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/149/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/150/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/151/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/152/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/153/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/154/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/155/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/156/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/157/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/158/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/159/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/160/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/161/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/162/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/163/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/164/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/165/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/166/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/167/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/168/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/169/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/170/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/171/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/172/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/173/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/174/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/175/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/176/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/177/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/178/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/179/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/180/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/181/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/182/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/183/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/184/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/185/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/186/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/187/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/188/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/189/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/190/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/191/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/192/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/193/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/194/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/195/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/196/material"
+            },
+            {
+                "code": "MESH_PRIMITIVE_UNUSED_TEXCOORD",
+                "message": "Material does not use texture coordinates sets with indices (0).",
+                "severity": 2,
+                "pointer": "/meshes/0/primitives/197/material"
+            }
+        ],
+        "truncated": true
+    }
+}

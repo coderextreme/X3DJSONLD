@@ -675,3 +675,4 @@ if __name__ == "__main__":
                                   "LaughingSkeleton.gltf")
         convert_x3d_to_full_gltf(f"{base}/AnimatedAssembledHumanSkeleton.x3d",
                                   "AnimatedAssembledHumanSkeleton.gltf")
+        convert_x3d_to_full_gltf(f"../../medicalbones/0scaled/0skeleton1scaled.x3d", "0skeleton1.gltf")
