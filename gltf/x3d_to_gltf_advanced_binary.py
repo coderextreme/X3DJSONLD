@@ -10,6 +10,11 @@ Fixes applied based on glTF validator report:
     accessors were wasted bytes and caused UNUSED_OBJECT warnings on every primitive.
   • Dummy 1×1 PNG image / sampler / texture removed (unused, caused EMPTY_ENTITY
     on /images when the array remained).
+  • Skinned meshes extracted from joints to explicit root Nodes to avoid NODE_SKINNED_MESH_NON_ROOT.
+  • Skin skeleton assigned to common root node (0) to avoid SKIN_SKELETON_INVALID.
+  • Unreferenced/degenerate vertex normals forced to [1,0,0] to avoid ACCESSOR_VECTOR3_NON_UNIT.
+  • Duplicate animation targets filtered per-animation to avoid ANIMATION_DUPLICATE_TARGETS.
+  • Duplicate/backward time keys deduplicated to avoid ACCESSOR_ANIMATION_INPUT_NON_INCREASING.
 
 GLB format (spec §4):
   [12-byte file header]  magic 0x46546C67 / version 2 / total length
@@ -46,11 +51,6 @@ def to_plain(obj):
     """
     Recursively convert pygltflib dataclasses / objects into plain Python
     dicts / lists so json.dumps never hits a non-serialisable type.
-
-    KEY FIX: skips both None AND empty-list [] field values on dataclasses.
-    This prevents pygltflib's default-[] fields (extensionsUsed,
-    extensionsRequired, cameras, images, meshes[N].weights, accessor min/max)
-    from appearing as invalid EMPTY_ENTITY arrays in the glTF output.
     """
     if obj is None:
         return None
@@ -64,7 +64,6 @@ def to_plain(obj):
         result = {}
         for k in obj.__dataclass_fields__:
             v = getattr(obj, k)
-            # Skip None AND empty lists — both are invalid EMPTY_ENTITY in glTF
             if v is None or v == []:
                 continue
             result[k] = to_plain(v)
@@ -105,7 +104,11 @@ def compute_normals(positions, indices, ccw=True):
     for i in range(3):
         np.add.at(normals, tris[:, i], face_normals)
     norms = np.linalg.norm(normals, axis=1, keepdims=True)
-    norms[norms < 1e-10] = 1.0
+
+    bad_norms = (norms < 1e-10).flatten()
+    normals[bad_norms] = [1.0, 0.0, 0.0]
+    norms[bad_norms] = 1.0
+
     return (normals / norms).astype(np.float32)
 
 
@@ -131,15 +134,6 @@ def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target, add_min_max
 # ---------------------------------------------------------------------------
 
 def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
-    """
-    Write a self-contained .glb file from a plain glTF dict + binary buffer.
-
-    GLB structure:
-      File header  (12 bytes): magic, version, totalLength
-      JSON chunk   (8-byte header + padded UTF-8 JSON, padded with 0x20)
-      BIN  chunk   (8-byte header + padded binary,     padded with 0x00)
-    """
-    # Buffer entry must have byteLength but NO uri (BIN chunk is implicit buffer 0)
     if 'buffers' not in gltf_dict or not gltf_dict['buffers']:
         gltf_dict['buffers'] = [{'byteLength': len(bin_blob)}]
     else:
@@ -158,10 +152,10 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
     total = 12 + 8 + len(json_bytes) + 8 + len(bin_padded)
 
     with open(output_path, 'wb') as f:
-        f.write(struct.pack('<III', 0x46546C67, 2, total))          # file header
-        f.write(struct.pack('<II',  len(json_bytes), 0x4E4F534A))   # JSON chunk header
+        f.write(struct.pack('<III', 0x46546C67, 2, total))
+        f.write(struct.pack('<II',  len(json_bytes), 0x4E4F534A))
         f.write(json_bytes)
-        f.write(struct.pack('<II',  len(bin_padded), 0x004E4942))   # BIN  chunk header
+        f.write(struct.pack('<II',  len(bin_padded), 0x004E4942))
         f.write(bin_padded)
 
 
@@ -170,19 +164,6 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
 # ---------------------------------------------------------------------------
 
 def x3d_material_to_gltf_dict(mat_node):
-    """
-    Convert an X3D <Material> element to a glTF material plain dict.
-
-    Mapping:
-      diffuseColor     → baseColorFactor RGB          (default 0.8 0.8 0.8)
-      transparency     → alpha = 1 - transparency     (default 0)
-      emissiveColor    → emissiveFactor               (default 0 0 0)
-      shininess        → roughnessFactor = 1-shininess (default 0.2)
-      ambientIntensity → slightly brightens baseColor  (default 0.2)
-      specularColor    → metallicFactor heuristic
-
-    transparency > 0.01 → alphaMode BLEND
-    """
     def rgb(attr, default):
         return parse_array(mat_node.get(attr, ''), default=list(default))
 
@@ -299,12 +280,6 @@ def fetch_inline_geometry(url_string, base_path):
 
 
 def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, skin_idx=None):
-    """
-    Build glTF mesh primitives (plain dicts) from X3D shape nodes.
-
-    TEXCOORD_0 is intentionally omitted — we have no textures, so dummy
-    zero-UV accessors were wasted bytes and caused UNUSED_OBJECT warnings.
-    """
     primitives = []
 
     for node in geom_nodes:
@@ -346,8 +321,6 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, s
             pos_acc  = add_accessor(gltf, bin_blob, positions, VEC3,   FLOAT,    ARRAY_BUFFER,         add_min_max=True)
             norm_acc = add_accessor(gltf, bin_blob, normals,   VEC3,   FLOAT,    ARRAY_BUFFER)
 
-            # No TEXCOORD_0 — we have no textures; dummy zero-UV data is wasteful
-            # and causes UNUSED_OBJECT validator warnings on every primitive.
             prim_attrs = {"POSITION": pos_acc, "NORMAL": norm_acc}
 
             if skin_idx is not None:
@@ -376,7 +349,6 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, s
 # ---------------------------------------------------------------------------
 
 def build_route_graph(root):
-    """Returns (fromNode, fromField) → [(toNode, toField), ...]"""
     graph = {}
     for route in root.findall('.//ROUTE'):
         key = (route.get('fromNode'), route.get('fromField'))
@@ -397,17 +369,6 @@ _TS_OUT_FIELDS = ('fraction_changed', 'cycleTime', 'time')
 
 
 def convert_animations(root, gltf, bin_blob, def_to_node_idx):
-    """
-    Build one glTF Animation per TimeSensor by tracing the ROUTE graph:
-
-      TimeSensor.fraction_changed
-          --ROUTE--> Interpolator.set_fraction
-      Interpolator.value_changed
-          --ROUTE--> Node.<translation|rotation|scale>
-
-    Keys (fractions 0–1) × cycleInterval → wall-clock seconds.
-    OrientationInterpolator axis-angle (ax ay az angle) → quaternion (x y z w).
-    """
     routes = build_route_graph(root)
 
     all_interps = {}
@@ -434,6 +395,9 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 
         samplers, channels = [], []
 
+        # Track targets already animated by this TimeSensor to prevent glTF duplication
+        seen_targets = set()
+
         for interp in driven:
             interp_def = interp.get('DEF')
             targets    = routes.get((interp_def, 'value_changed'), [])
@@ -458,6 +422,13 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 
                 node_idx = def_to_node_idx[to_node]
 
+                # Check for duplicate target (node+property) in the same animation
+                target_key = (node_idx, gltf_path)
+                if target_key in seen_targets:
+                    # Ignore the duplicate route to maintain glTF validity
+                    continue
+                seen_targets.add(target_key)
+
                 if interp.tag == 'OrientationInterpolator':
                     raw4 = np.array(kv_raw, dtype=np.float64).reshape(-1, 4)
                     vals = np.array([axis_angle_to_quat(*row) for row in raw4], dtype=np.float32)
@@ -479,22 +450,43 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                           f"({len(keys)} vs {len(vals)}) — skipping")
                     continue
 
+                # FIX: Ensure strictly increasing keys. glTF requires monotonically increasing times.
+                # If there are duplicates (used for step animations in X3D) or invalid reverse times, deduplicate them.
+                unique_keys = []
+                unique_vals = []
+                for idx_k in range(len(keys)):
+                    # If this key has the exact same time as the next one, skip it (we keep the *latest* value for this timestamp)
+                    if idx_k < len(keys) - 1 and keys[idx_k] >= keys[idx_k+1]:
+                        continue
+                    # If this key goes backward compared to the cleaned sequence, ignore it entirely
+                    if unique_keys and keys[idx_k] <= unique_keys[-1]:
+                        continue
+
+                    unique_keys.append(keys[idx_k])
+                    unique_vals.append(vals[idx_k])
+
+                clean_keys = np.array(unique_keys, dtype=np.float32)
+                clean_vals = np.array(unique_vals, dtype=vals.dtype)
+
+                if len(clean_keys) < 2:
+                    continue
+
                 # Time accessor — min/max required by spec for animation inputs
-                t_off, t_len = append_to_buffer(bin_blob, keys.tobytes())
+                t_off, t_len = append_to_buffer(bin_blob, clean_keys.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=t_off, byteLength=t_len))
                 gltf.accessors.append(Accessor(
                     bufferView=len(gltf.bufferViews)-1, componentType=FLOAT,
-                    count=len(keys), type=SCALAR,
-                    min=[float(keys.min())], max=[float(keys.max())]
+                    count=len(clean_keys), type=SCALAR,
+                    min=[float(clean_keys.min())], max=[float(clean_keys.max())]
                 ))
                 acc_t = len(gltf.accessors) - 1
 
                 # Value accessor — min/max not required for animation outputs
-                v_off, v_len = append_to_buffer(bin_blob, vals.tobytes())
+                v_off, v_len = append_to_buffer(bin_blob, clean_vals.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=v_off, byteLength=v_len))
                 gltf.accessors.append(Accessor(
                     bufferView=len(gltf.bufferViews)-1, componentType=FLOAT,
-                    count=len(vals), type=out_type
+                    count=len(clean_vals), type=out_type
                 ))
                 acc_v = len(gltf.accessors) - 1
 
@@ -548,7 +540,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
 
     bin_blob = bytearray()
 
-    # Materials stored as plain dicts for full serialisation control
     mat_list = [{
         "name":        "DefaultMat",
         "doubleSided": True,
@@ -559,8 +550,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         }
     }]
 
-    # No dummy image/sampler/texture — we have no texture coordinates,
-    # so these would become empty arrays and trigger EMPTY_ENTITY errors.
     gltf = GLTF2(
         asset=Asset(generator="X3D-to-GLB Converter", version="2.0"),
         scene=0, scenes=[Scene(nodes=[0])],
@@ -572,7 +561,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
 
     mat_def_map = build_material_def_map(root)
 
-    # ── HAnimJoint skeleton nodes ────────────────────────────────
     parent_map      = {c: p for p in root.iter() for c in p}
     hanim_joints    = root.findall('.//HAnimJoint')
     def_to_node_idx = {}
@@ -604,7 +592,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
             local_trans = center + translation
             gltf.nodes[0].children.append(node_idx)
 
-        # IBM: translate by -center, stored column-major (.T.flatten())
         ibm = np.eye(4, dtype=np.float32)
         ibm[0, 3] = float(-center[0])
         ibm[1, 3] = float(-center[1])
@@ -614,7 +601,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         gltf.nodes.append(Node(name=def_name or f"Joint_{i}",
                                translation=[float(v) for v in local_trans]))
 
-    # ── Geometry per joint ───────────────────────────────────────
     for i, joint in enumerate(hanim_joints):
         geom_nodes = []
         for elem in joint.iter():
@@ -630,10 +616,15 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
                 geom_nodes, gltf, bin_blob, mat_def_map, mat_list, skin_idx=i
             )
             if mesh_idx is not None:
-                gltf.nodes[joint_indices[i]].mesh = mesh_idx
-                gltf.nodes[joint_indices[i]].skin = 0
+                mesh_node_idx = len(gltf.nodes)
+                mesh_name = joint.get('DEF') or f"Joint_{i}"
+                gltf.nodes.append(Node(
+                    name=f"{mesh_name}_Mesh",
+                    mesh=mesh_idx,
+                    skin=0
+                ))
+                gltf.scenes[0].nodes.append(mesh_node_idx)
 
-    # ── Transform nodes (non-HAnim) ──────────────────────────────
     for transform in root.findall('.//Transform'):
         def_name = transform.get('DEF')
         if def_name and def_name not in def_to_node_idx:
@@ -651,7 +642,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
                 scale=[float(v) for v in scale],
             ))
 
-    # ── Skin ─────────────────────────────────────────────────────
     if joint_indices:
         ibm_flat = np.array(ibm_matrices, dtype=np.float32)
         off, length = append_to_buffer(bin_blob, ibm_flat.tobytes())
@@ -664,21 +654,15 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
             name="HAnim_Skin",
             joints=joint_indices,
             inverseBindMatrices=len(gltf.accessors)-1,
-            skeleton=joint_indices[0]
+            skeleton=0
         ))
 
-    # ── Animations ───────────────────────────────────────────────
     convert_animations(root, gltf, bin_blob, def_to_node_idx)
 
     if len(bin_blob) == 0:
         bin_blob.extend(b'\x00' * 4)
 
-    # ── Serialise to GLB ─────────────────────────────────────────
-    # to_plain() skips both None and empty-list [] — prevents pygltflib default
-    # empty arrays from appearing as EMPTY_ENTITY errors in the validator.
     gltf_dict = to_plain(gltf)
-
-    # Patch in our plain-dict materials and mesh primitives
     gltf_dict['materials'] = mat_list
 
     for mesh_plain, mesh_obj in zip(gltf_dict.get('meshes', []), gltf.meshes):

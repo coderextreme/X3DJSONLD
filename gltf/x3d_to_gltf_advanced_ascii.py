@@ -4,12 +4,10 @@ X3D → glTF 2.0 converter with:
   • Full animation pipeline: TimeSensor + ROUTE graph → glTF animations
   • One glTF Animation per TimeSensor (correct independent cycle intervals)
   • OrientationInterpolator axis-angle → quaternion
-  • Full X3D Material → PBR conversion (diffuse, emissive, transparency, shininess)
-  • DEF/USE material lookup
-  • Smooth normals (required by Babylon.js)
-  • doubleSided materials (Babylon.js back-face cull fix)
-  • Column-major Inverse Bind Matrices
-  • Robust JSON serialisation via to_plain()
+  • Full X3D Material → PBR conversion
+  • Smooth normals with robust NaN/Inf/degenerate handling
+  • Root-level nodes for skinned meshes
+  • Strict glTF Compliance (No empty entities, deduplicated targets, monotonic keys, finite floats)
 """
 
 import xml.etree.ElementTree as ET
@@ -36,26 +34,39 @@ def parse_array(val_str, type_cast=float, default=None):
 
 def to_plain(obj):
     """
-    Recursively convert a pygltflib object tree into plain Python dicts/lists
-    so json.dump never encounters a non-serialisable type.
-    Plain dicts (e.g. primitive dicts built manually) pass through unchanged.
+    Recursively convert a pygltflib object tree into plain Python dicts/lists.
+    Strips out empty lists and dicts to comply with glTF validation (EMPTY_ENTITY).
     """
     if obj is None:
         return None
     if isinstance(obj, (bool, int, float, str)):
         return obj
     if isinstance(obj, (list, tuple)):
-        return [to_plain(v) for v in obj if v is not None]
+        res = [to_plain(v) for v in obj]
+        res = [v for v in res if v is not None]
+        return res if len(res) > 0 else None
     if isinstance(obj, dict):
-        return {k: to_plain(v) for k, v in obj.items() if v is not None}
+        res = {k: to_plain(v) for k, v in obj.items()}
+        res = {k: v for k, v in res.items() if v is not None}
+        return res if len(res) > 0 else None
+
+    res = {}
     if hasattr(obj, '__dataclass_fields__'):
-        return {k: to_plain(getattr(obj, k))
-                for k in obj.__dataclass_fields__
-                if getattr(obj, k) is not None}
-    if hasattr(obj, '__dict__'):
-        return {k: to_plain(v) for k, v in obj.__dict__.items()
-                if not k.startswith('_') and v is not None}
-    return obj
+        for k in obj.__dataclass_fields__:
+            v = getattr(obj, k)
+            pv = to_plain(v)
+            if pv is not None:
+                res[k] = pv
+    elif hasattr(obj, '__dict__'):
+        for k, v in obj.__dict__.items():
+            if not k.startswith('_'):
+                pv = to_plain(v)
+                if pv is not None:
+                    res[k] = pv
+    else:
+        return obj
+
+    return res if len(res) > 0 else None
 
 
 def append_to_buffer(buf: bytearray, data: bytes):
@@ -69,29 +80,53 @@ def append_to_buffer(buf: bytearray, data: bytes):
 def axis_angle_to_quat(x, y, z, angle):
     s = math.sin(angle / 2.0)
     length = math.sqrt(x*x + y*y + z*z)
-    if length < 1e-8:
+    if length < 1e-8 or not math.isfinite(length):
         return [0.0, 0.0, 0.0, 1.0]
     return [(x/length)*s, (y/length)*s, (z/length)*s, math.cos(angle / 2.0)]
 
 
 def compute_normals(positions, indices, ccw=True):
-    """Area-weighted per-vertex smooth normals."""
+    """Area-weighted per-vertex smooth normals with Inf/NaN protection."""
     normals = np.zeros_like(positions, dtype=np.float64)
     tris = indices.reshape(-1, 3).astype(np.int64)
     v0 = positions[tris[:, 0]].astype(np.float64)
     v1 = positions[tris[:, 1]].astype(np.float64)
     v2 = positions[tris[:, 2]].astype(np.float64)
+
     face_normals = np.cross(v1 - v0, v2 - v0)
+
+    # Pre-emptively drop any face normals that overflowed to Infinity or NaN
+    invalid_faces = ~np.isfinite(face_normals).any(axis=1)
+    face_normals[invalid_faces] = [0.0, 0.0, 0.0]
+
     if not ccw:
         face_normals = -face_normals
+
     for i in range(3):
         np.add.at(normals, tris[:, i], face_normals)
+
     norms = np.linalg.norm(normals, axis=1, keepdims=True)
-    norms[norms < 1e-10] = 1.0
-    return (normals / norms).astype(np.float32)
+
+    # Catch 0-length, NaN, or Inf norms and enforce a default unit vector
+    invalid_mask = (norms.flatten() < 1e-10) | ~np.isfinite(norms.flatten())
+    normals[invalid_mask] = [0.0, 1.0, 0.0]
+    norms[invalid_mask] = 1.0
+
+    res = (normals / norms).astype(np.float32)
+
+    # Final catch-all for any straggler NaNs
+    bad_final = ~np.isfinite(res).any(axis=1)
+    res[bad_final] = [0.0, 1.0, 0.0]
+
+    return res
 
 
 def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target, add_min_max=False):
+    """Adds data to glTF buffers, strictly policing non-finite numbers."""
+    # Ensure no Inf or NaN leaks into the glTF standard via positions, normals, or animation keys
+    if data.dtype.kind == 'f' and not np.isfinite(data).all():
+        data = np.nan_to_num(data, nan=0.0, posinf=0.0, neginf=0.0)
+
     off, length = append_to_buffer(bin_blob, data.tobytes())
     gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=length, target=target))
     min_v = max_v = None
@@ -113,19 +148,7 @@ def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target, add_min_max
 # ---------------------------------------------------------------------------
 
 def x3d_material_to_gltf_dict(mat_node):
-    """
-    Convert an X3D <Material> element to a glTF material plain dict.
-
-    X3D field mapping:
-      diffuseColor     -> PBR baseColorFactor RGB   (default 0.8 0.8 0.8)
-      transparency     -> alpha = 1 - transparency  (default 0)
-      emissiveColor    -> emissiveFactor             (default 0 0 0)
-      shininess        -> roughnessFactor = 1-shine  (default 0.2)
-      ambientIntensity -> slightly brightens base    (default 0.2)
-      specularColor    -> metallicFactor heuristic
-
-    transparency > 0.01  => alphaMode BLEND
-    """
+    """Convert an X3D <Material> element to a glTF material plain dict."""
     def rgb(attr, default):
         return parse_array(mat_node.get(attr, ''), default=list(default))
 
@@ -170,22 +193,15 @@ def x3d_material_to_gltf_dict(mat_node):
 
 
 def build_material_def_map(root):
-    """Return { DEF_name: <Material element> } for the whole document."""
     return {m.get('DEF'): m for m in root.iter('Material') if m.get('DEF')}
 
 
 def resolve_material(app_node, mat_def_map, mat_list):
-    """
-    Given an <Appearance> element, find or create a material in mat_list.
-    Handles inline <Material> and USE="..." references.
-    Returns integer index into mat_list.
-    """
     if app_node is None:
         return 0
 
     mat_node = app_node.find('Material')
 
-    # USE reference
     if mat_node is None:
         for child in app_node:
             use = child.get('USE')
@@ -253,7 +269,6 @@ def fetch_inline_geometry(url_string, base_path):
 
 
 def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, skin_idx=None):
-    """Build glTF mesh primitives (plain dicts) from X3D shape nodes."""
     primitives = []
 
     for node in geom_nodes:
@@ -325,17 +340,12 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, s
 # ---------------------------------------------------------------------------
 
 def build_route_graph(root):
-    """
-    Returns dict: (fromNode, fromField) -> [(toNode, toField), ...]
-    """
     graph = {}
     for route in root.findall('.//ROUTE'):
         key = (route.get('fromNode'), route.get('fromField'))
         graph.setdefault(key, []).append((route.get('toNode'), route.get('toField')))
     return graph
 
-
-# X3D toField values that map to glTF animation paths
 _FIELD_TO_PATH = {
     'translation':     'translation',
     'set_translation': 'translation',
@@ -344,26 +354,10 @@ _FIELD_TO_PATH = {
     'scale':           'scale',
     'set_scale':       'scale',
 }
-
-# TimeSensor output fields that drive interpolators
 _TS_OUT_FIELDS = ('fraction_changed', 'cycleTime', 'time')
 
 
 def convert_animations(root, gltf, bin_blob, def_to_node_idx):
-    """
-    Build one glTF Animation per TimeSensor.
-
-    X3D animation pipeline reconstructed via ROUTE graph:
-
-      TimeSensor.fraction_changed
-          --ROUTE--> Interpolator.set_fraction
-      Interpolator.value_changed
-          --ROUTE--> Node.<translation|rotation|scale>
-
-    Keys (fractions [0,1]) are scaled by cycleInterval to get wall-clock seconds.
-    OrientationInterpolator keyValues are X3D axis-angle (ax ay az angle)
-      converted to glTF quaternions (x y z w).
-    """
     routes = build_route_graph(root)
 
     all_interps = {}
@@ -379,7 +373,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             continue
         cycle = float(ts.get('cycleInterval', '1.0'))
 
-        # Find interpolators driven by this TimeSensor
         driven = []
         for out_field in _TS_OUT_FIELDS:
             for (to_node, to_field) in routes.get((ts_def, out_field), []):
@@ -390,6 +383,7 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             continue
 
         samplers, channels = [], []
+        animated_targets = set()
 
         for interp in driven:
             interp_def = interp.get('DEF')
@@ -400,8 +394,13 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             keys_raw = parse_array(interp.get('key', ''))
             if len(keys_raw) < 2:
                 continue
-            # Scale fractional keys [0,1] by cycleInterval → wall-clock seconds
+
             keys = np.array(keys_raw, dtype=np.float32) * cycle
+
+            # Ensure strictly increasing sequence
+            for k_idx in range(1, len(keys)):
+                if keys[k_idx] <= keys[k_idx-1]:
+                    keys[k_idx] = keys[k_idx-1] + 0.0001
 
             kv_raw = parse_array(interp.get('keyValue', ''))
             if not kv_raw:
@@ -416,7 +415,10 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 
                 node_idx = def_to_node_idx[to_node]
 
-                # Build typed output values
+                target_key = (node_idx, gltf_path)
+                if target_key in animated_targets:
+                    continue
+
                 if interp.tag == 'OrientationInterpolator':
                     raw4 = np.array(kv_raw, dtype=np.float64).reshape(-1, 4)
                     vals = np.array([axis_angle_to_quat(*row) for row in raw4], dtype=np.float32)
@@ -434,11 +436,10 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                     continue
 
                 if len(vals) != len(keys):
-                    print(f"    WARN: key/value count mismatch for {interp_def} "
-                          f"({len(keys)} vs {len(vals)}) — skipping")
                     continue
 
-                # Time accessor
+                animated_targets.add(target_key)
+
                 t_off, t_len = append_to_buffer(bin_blob, keys.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=t_off, byteLength=t_len))
                 gltf.accessors.append(Accessor(
@@ -448,7 +449,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                 ))
                 acc_t = len(gltf.accessors) - 1
 
-                # Value accessor
                 v_off, v_len = append_to_buffer(bin_blob, vals.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=v_off, byteLength=v_len))
                 gltf.accessors.append(Accessor(
@@ -467,11 +467,8 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
         if channels:
             anim_name = f"Anim_{ts_def}"
             gltf.animations.append(Animation(name=anim_name, samplers=samplers, channels=channels))
-            print(f"    Animation '{anim_name}': {len(channels)} channels, cycleInterval={cycle}s")
 
-    # Fallback dummy animation (Babylon.js requires at least one)
     if not gltf.animations:
-        print("    No animations found — inserting dummy.")
         times = np.array([0.0, 1.0], dtype=np.float32)
         rots  = np.array([[0, 0, 0, 1], [0, 0, 0, 1]], dtype=np.float32)
         t_off, t_len = append_to_buffer(bin_blob, times.tobytes())
@@ -507,7 +504,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
 
     bin_blob = bytearray()
 
-    # Materials stored as plain dicts for full serialisation control
     mat_list = [{
         "name":       "DefaultMat",
         "doubleSided": True,
@@ -529,7 +525,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
 
     mat_def_map = build_material_def_map(root)
 
-    # ── Skeleton / HAnimJoint nodes ──────────────────────────────
     parent_map      = {c: p for p in root.iter() for c in p}
     hanim_joints    = root.findall('.//HAnimJoint')
     def_to_node_idx = {}
@@ -561,7 +556,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
             local_trans = center + translation
             gltf.nodes[0].children.append(node_idx)
 
-        # IBM: translate by -center, column-major
         ibm = np.eye(4, dtype=np.float32)
         ibm[0, 3] = float(-center[0])
         ibm[1, 3] = float(-center[1])
@@ -571,7 +565,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
         gltf.nodes.append(Node(name=def_name or f"Joint_{i}",
                                translation=[float(v) for v in local_trans]))
 
-    # ── Geometry per joint ───────────────────────────────────────
     for i, joint in enumerate(hanim_joints):
         geom_nodes = []
         for elem in joint.iter():
@@ -587,10 +580,11 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
                 geom_nodes, gltf, bin_blob, mat_def_map, mat_list, skin_idx=i
             )
             if mesh_idx is not None:
-                gltf.nodes[joint_indices[i]].mesh = mesh_idx
-                gltf.nodes[joint_indices[i]].skin = 0
+                mesh_node_idx = len(gltf.nodes)
+                mesh_name = f"{joint.get('DEF', f'Joint_{i}')}_Mesh"
+                gltf.nodes.append(Node(name=mesh_name, mesh=mesh_idx, skin=0))
+                gltf.nodes[0].children.append(mesh_node_idx)
 
-    # ── Transform nodes (non-HAnim) ──────────────────────────────
     for transform in root.findall('.//Transform'):
         def_name = transform.get('DEF')
         if def_name and def_name not in def_to_node_idx:
@@ -608,7 +602,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
                 scale=[float(v) for v in scale],
             ))
 
-    # ── Skin ─────────────────────────────────────────────────────
     if joint_indices:
         ibm_flat = np.array(ibm_matrices, dtype=np.float32)
         off, length = append_to_buffer(bin_blob, ibm_flat.tobytes())
@@ -617,17 +610,15 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
             bufferView=len(gltf.bufferViews)-1, componentType=FLOAT,
             count=len(joint_indices), type=MAT4
         ))
+
         gltf.skins.append(Skin(
             name="HAnim_Skin",
             joints=joint_indices,
-            inverseBindMatrices=len(gltf.accessors)-1,
-            skeleton=joint_indices[0]
+            inverseBindMatrices=len(gltf.accessors)-1
         ))
 
-    # ── Animations ───────────────────────────────────────────────
     convert_animations(root, gltf, bin_blob, def_to_node_idx)
 
-    # ── Buffer (embedded base64) ─────────────────────────────────
     if len(bin_blob) == 0:
         bin_blob.extend(b'\x00' * 4)
     b64 = base64.b64encode(bin_blob).decode('ascii')
@@ -636,12 +627,7 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
         byteLength=len(bin_blob)
     ))
 
-    # ── Serialise ────────────────────────────────────────────────
-    # to_plain() converts all pygltflib dataclasses to plain dicts.
-    # Then we patch in our own plain-dict materials and mesh primitives,
-    # which preserves NORMAL, doubleSided, emissiveFactor, alphaMode, etc.
     gltf_dict = to_plain(gltf)
-
     gltf_dict['materials'] = mat_list
 
     for mesh_plain, mesh_obj in zip(gltf_dict.get('meshes', []), gltf.meshes):
@@ -660,8 +646,6 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
           f"nodes={n_nodes}  meshes={n_meshes}  "
           f"materials={len(mat_list)}  animations={n_anim}")
 
-
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     import sys
