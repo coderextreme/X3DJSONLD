@@ -8,6 +8,8 @@ X3D → glTF 2.0 converter with:
   • Smooth normals with robust NaN/Inf/degenerate handling
   • Root-level nodes for skinned meshes
   • Strict glTF Compliance (No empty entities, deduplicated targets, monotonic keys, finite floats)
+  • KHR_materials_punctual_lights extension for X3D Directional/Point/Spot lights
+  • Automatic generation of an X3D wrapper file bridging the lights and the glTF
 """
 
 import xml.etree.ElementTree as ET
@@ -85,6 +87,30 @@ def axis_angle_to_quat(x, y, z, angle):
     return [(x/length)*s, (y/length)*s, (z/length)*s, math.cos(angle / 2.0)]
 
 
+def vector_to_quat(v_dir):
+    """Convert an X3D direction vector to a quaternion rotating from -Z (glTF default light dir)"""
+    v = np.array(v_dir, dtype=np.float64)
+    norm = np.linalg.norm(v)
+    if norm < 1e-8 or not math.isfinite(norm):
+        return [0.0, 0.0, 0.0, 1.0]
+    v = v / norm
+    up = np.array([0.0, 0.0, -1.0])
+    dot = np.dot(up, v)
+
+    if dot > 0.999999:  # Already pointing -Z
+        return [0.0, 0.0, 0.0, 1.0]
+    if dot < -0.999999: # Pointing exactly +Z
+        return [0.0, 1.0, 0.0, 0.0]
+
+    axis = np.cross(up, v)
+    axis_norm = np.linalg.norm(axis)
+    if axis_norm < 1e-8:
+        return [0.0, 1.0, 0.0, 0.0]
+    axis = axis / axis_norm
+    angle = math.acos(dot)
+    return axis_angle_to_quat(axis[0], axis[1], axis[2], angle)
+
+
 def compute_normals(positions, indices, ccw=True):
     """Area-weighted per-vertex smooth normals with Inf/NaN protection."""
     normals = np.zeros_like(positions, dtype=np.float64)
@@ -94,8 +120,6 @@ def compute_normals(positions, indices, ccw=True):
     v2 = positions[tris[:, 2]].astype(np.float64)
 
     face_normals = np.cross(v1 - v0, v2 - v0)
-
-    # Pre-emptively drop any face normals that overflowed to Infinity or NaN
     invalid_faces = ~np.isfinite(face_normals).any(axis=1)
     face_normals[invalid_faces] = [0.0, 0.0, 0.0]
 
@@ -106,24 +130,18 @@ def compute_normals(positions, indices, ccw=True):
         np.add.at(normals, tris[:, i], face_normals)
 
     norms = np.linalg.norm(normals, axis=1, keepdims=True)
-
-    # Catch 0-length, NaN, or Inf norms and enforce a default unit vector
     invalid_mask = (norms.flatten() < 1e-10) | ~np.isfinite(norms.flatten())
     normals[invalid_mask] = [0.0, 1.0, 0.0]
     norms[invalid_mask] = 1.0
 
     res = (normals / norms).astype(np.float32)
-
-    # Final catch-all for any straggler NaNs
     bad_final = ~np.isfinite(res).any(axis=1)
     res[bad_final] = [0.0, 1.0, 0.0]
-
     return res
 
 
 def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target, add_min_max=False):
     """Adds data to glTF buffers, strictly policing non-finite numbers."""
-    # Ensure no Inf or NaN leaks into the glTF standard via positions, normals, or animation keys
     if data.dtype.kind == 'f' and not np.isfinite(data).all():
         data = np.nan_to_num(data, nan=0.0, posinf=0.0, neginf=0.0)
 
@@ -148,7 +166,6 @@ def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target, add_min_max
 # ---------------------------------------------------------------------------
 
 def x3d_material_to_gltf_dict(mat_node):
-    """Convert an X3D <Material> element to a glTF material plain dict."""
     def rgb(attr, default):
         return parse_array(mat_node.get(attr, ''), default=list(default))
 
@@ -167,7 +184,6 @@ def x3d_material_to_gltf_dict(mat_node):
     spec_lum  = 0.2126*specular[0] + 0.7152*specular[1] + 0.0722*specular[2]
     diff_lum  = 0.2126*diffuse[0]  + 0.7152*diffuse[1]  + 0.0722*diffuse[2]
     metallic  = max(0.0, min(0.5, spec_lum - diff_lum)) if spec_lum > diff_lum else 0.0
-
     base = [min(1.0, c * (1.0 + 0.3 * ambient)) for c in diffuse]
 
     mat = {
@@ -217,7 +233,7 @@ def resolve_material(app_node, mat_def_map, mat_list):
 
 
 # ---------------------------------------------------------------------------
-# Geometry helpers
+# Geometry & Animation Pipeline
 # ---------------------------------------------------------------------------
 
 def extract_vertex_colors(geom_node):
@@ -335,10 +351,6 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, s
     return len(gltf.meshes) - 1
 
 
-# ---------------------------------------------------------------------------
-# Animation pipeline
-# ---------------------------------------------------------------------------
-
 def build_route_graph(root):
     graph = {}
     for route in root.findall('.//ROUTE'):
@@ -397,7 +409,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 
             keys = np.array(keys_raw, dtype=np.float32) * cycle
 
-            # Ensure strictly increasing sequence
             for k_idx in range(1, len(keys)):
                 if keys[k_idx] <= keys[k_idx-1]:
                     keys[k_idx] = keys[k_idx-1] + 0.0001
@@ -492,6 +503,35 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 # Main converter
 # ---------------------------------------------------------------------------
 
+def generate_x3d_wrapper(x3d_root, original_gltf_path):
+    """
+    Creates an X3D wrapper file that includes the generated glTF via an Inline,
+    but preserves the lighting from the original file natively.
+    """
+    base_name = os.path.splitext(original_gltf_path)[0]
+    wrapper_path = f"{base_name}_wrapper.x3d"
+
+    with open(wrapper_path, 'w') as wf:
+        wf.write('<?xml version="1.0" encoding="UTF-8"?>\n')
+        wf.write('<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">\n')
+        wf.write('<X3D profile="Immersive" version="4.0">\n')
+        wf.write('  <Scene>\n')
+
+        # Rip existing lights from original X3D
+        for elem in x3d_root.iter():
+            if elem.tag in ('DirectionalLight', 'PointLight', 'SpotLight'):
+                attrs = " ".join([f"{k}='{v}'" for k, v in elem.attrib.items()])
+                wf.write(f'    <{elem.tag} {attrs}/>\n')
+
+        # Inject the glTF inline
+        gltf_filename = os.path.basename(original_gltf_path)
+        wf.write(f'    <Inline url=\'"{gltf_filename}"\'/>\n')
+        wf.write('  </Scene>\n')
+        wf.write('</X3D>\n')
+
+    return wrapper_path
+
+
 def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
     base_path = os.path.dirname(os.path.abspath(x3d_filepath))
     print(f"\nConverting: {x3d_filepath}")
@@ -525,6 +565,7 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
 
     mat_def_map = build_material_def_map(root)
 
+    # Scrape geometry nodes
     parent_map      = {c: p for p in root.iter() for c in p}
     hanim_joints    = root.findall('.//HAnimJoint')
     def_to_node_idx = {}
@@ -619,6 +660,48 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
 
     convert_animations(root, gltf, bin_blob, def_to_node_idx)
 
+    # ── Map X3D Lights to glTF extensions ────────────────────────
+    ext_lights = []
+    light_nodes = []
+
+    for light_elem in root.iter():
+        if light_elem.tag not in ('DirectionalLight', 'PointLight', 'SpotLight'):
+            continue
+
+        name = light_elem.get('DEF', light_elem.tag)
+        intensity = float(light_elem.get('intensity', '1.0'))
+        color = parse_array(light_elem.get('color', '1 1 1'))
+
+        light_def = {"color": color, "intensity": intensity}
+        node_def = {"name": name, "extensions": {"KHR_materials_punctual_lights": {"light": len(ext_lights)}}}
+
+        if light_elem.tag == 'DirectionalLight':
+            light_def["type"] = "directional"
+            direction = parse_array(light_elem.get('direction', '0 0 -1'))
+            node_def["rotation"] = vector_to_quat(direction)
+
+        elif light_elem.tag == 'PointLight':
+            light_def["type"] = "point"
+            location = parse_array(light_elem.get('location', '0 0 0'))
+            node_def["translation"] = location
+
+        elif light_elem.tag == 'SpotLight':
+            light_def["type"] = "spot"
+            location = parse_array(light_elem.get('location', '0 0 0'))
+            direction = parse_array(light_elem.get('direction', '0 0 -1'))
+            cut_off = float(light_elem.get('cutOffAngle', '0.785398'))
+            beam = float(light_elem.get('beamWidth', '1.570796'))
+
+            node_def["translation"] = location
+            node_def["rotation"] = vector_to_quat(direction)
+            light_def["spot"] = {
+                "innerConeAngle": min(beam, cut_off),
+                "outerConeAngle": cut_off
+            }
+
+        ext_lights.append(light_def)
+        light_nodes.append(node_def)
+
     if len(bin_blob) == 0:
         bin_blob.extend(b'\x00' * 4)
     b64 = base64.b64encode(bin_blob).decode('ascii')
@@ -627,6 +710,7 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
         byteLength=len(bin_blob)
     ))
 
+    # Convert to pure nested python dictionaries
     gltf_dict = to_plain(gltf)
     gltf_dict['materials'] = mat_list
 
@@ -636,15 +720,37 @@ def convert_x3d_to_full_gltf(x3d_filepath, gltf_filepath):
             for p in mesh_obj.primitives
         ]
 
+    # Inject Light Extension dicts
+    if ext_lights:
+        if 'extensionsUsed' not in gltf_dict:
+            gltf_dict['extensionsUsed'] = []
+        if 'KHR_materials_punctual_lights' not in gltf_dict['extensionsUsed']:
+            gltf_dict['extensionsUsed'].append('KHR_materials_punctual_lights')
+
+        if 'extensions' not in gltf_dict:
+            gltf_dict['extensions'] = {}
+        gltf_dict['extensions']['KHR_materials_punctual_lights'] = {"lights": ext_lights}
+
+        for l_node in light_nodes:
+            gltf_dict['nodes'].append(l_node)
+            idx = len(gltf_dict['nodes']) - 1
+            if 'children' not in gltf_dict['nodes'][0]:
+                gltf_dict['nodes'][0]['children'] = []
+            gltf_dict['nodes'][0]['children'].append(idx)
+
+    # Save glTF
     with open(gltf_filepath, 'w') as f:
         json.dump(gltf_dict, f, indent=2)
+
+    # Save X3D Wrapper
+    wrapper_path = generate_x3d_wrapper(root, gltf_filepath)
 
     n_anim   = len(gltf_dict.get('animations', []))
     n_nodes  = len(gltf_dict.get('nodes', []))
     n_meshes = len(gltf_dict.get('meshes', []))
-    print(f"  OK: {gltf_filepath} | "
-          f"nodes={n_nodes}  meshes={n_meshes}  "
-          f"materials={len(mat_list)}  animations={n_anim}")
+    n_lights = len(ext_lights)
+    print(f"  OK: {gltf_filepath} | nodes={n_nodes} meshes={n_meshes} materials={len(mat_list)} anims={n_anim} lights={n_lights}")
+    print(f"  OK: Wrapper generated -> {wrapper_path}")
 
 
 if __name__ == "__main__":
@@ -655,8 +761,6 @@ if __name__ == "__main__":
         convert_x3d_to_full_gltf(in_f, out_f)
     else:
         base = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
-        convert_x3d_to_full_gltf(f"{base}/LaughingSkeleton.x3d",
-                                  "LaughingSkeleton.gltf")
-        convert_x3d_to_full_gltf(f"{base}/AnimatedAssembledHumanSkeleton.x3d",
-                                  "AnimatedAssembledHumanSkeleton.gltf")
+        convert_x3d_to_full_gltf(f"{base}/LaughingSkeleton.x3d", "LaughingSkeleton.gltf")
+        convert_x3d_to_full_gltf(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.gltf")
         convert_x3d_to_full_gltf(f"../../medicalbones/0scaled/0skeleton1scaled.x3d", "0skeleton1.gltf")

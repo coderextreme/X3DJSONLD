@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "http://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile="Immersive" version="4.0">
+  <Scene>
+    <DirectionalLight global='true' intensity='0.7'/>
+    <DirectionalLight direction='0 0 1' global='true' intensity='0.8'/>
+    <DirectionalLight direction='0.15 0 0' global='true' intensity='0.5'/>
+    <Inline url='"LaughingSkeleton.gltf"'/>
+  </Scene>
+</X3D>
