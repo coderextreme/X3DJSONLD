@@ -3,25 +3,22 @@ x3d_to_gltf_advanced.py
 X3D → glTF 2.0 Binary (.glb) converter.
 
 Fixes applied based on glTF validator report:
-  • to_plain() now skips empty lists as well as None — stops pygltflib default []
-    fields (extensionsUsed, extensionsRequired, cameras, images, meshes[N].weights,
-    accessor min/max) from appearing as invalid EMPTY_ENTITY arrays in output.
-  • TEXCOORD_0 removed from all primitives — we have no textures, so dummy zero-UV
-    accessors were wasted bytes and caused UNUSED_OBJECT warnings on every primitive.
-  • Dummy 1×1 PNG image / sampler / texture removed (unused, caused EMPTY_ENTITY
-    on /images when the array remained).
-  • Skinned meshes extracted from joints to explicit root Nodes to avoid NODE_SKINNED_MESH_NON_ROOT.
-  • Skin skeleton assigned to common root node (0) to avoid SKIN_SKELETON_INVALID.
-  • Unreferenced/degenerate vertex normals forced to [1,0,0] to avoid ACCESSOR_VECTOR3_NON_UNIT.
-  • Duplicate animation targets filtered per-animation to avoid ANIMATION_DUPLICATE_TARGETS.
+  • to_plain() skips empty lists as well as None fields to prevent EMPTY_ENTITY errors.
+  • Dummy 1×1 PNG image/sampler removed.
+  • Skinned meshes assigned to explicit root Nodes to avoid NODE_SKINNED_MESH_NON_ROOT.
+  • Skin skeleton assigned to root node (0) to avoid SKIN_SKELETON_INVALID.
+  • Unreferenced/degenerate normals mapped to valid vectors to avoid ACCESSOR_VECTOR3_NON_UNIT.
   • Duplicate/backward time keys deduplicated to avoid ACCESSOR_ANIMATION_INPUT_NON_INCREASING.
+
+Lighting Features Added:
+  • KHR_lights_punctual mappings for PointLight, SpotLight, and DirectionalLight.
+  • EXT_lights_image_based mappings for X3D V4 EnvironmentLight node.
+  • Auto-calculates quaternion orientations for correctly aiming -Z oriented glTF lights.
 
 GLB format (spec §4):
   [12-byte file header]  magic 0x46546C67 / version 2 / total length
   [JSON chunk]           chunkLength + 0x4E4F534A + UTF-8 JSON padded with 0x20
   [BIN  chunk]           chunkLength + 0x004E4942 + raw binary padded with 0x00
-
-The JSON buffer entry has no "uri" — the BIN chunk is implicitly buffer 0.
 """
 
 import struct
@@ -89,6 +86,23 @@ def axis_angle_to_quat(x, y, z, angle):
     if length < 1e-8:
         return [0.0, 0.0, 0.0, 1.0]
     return [(x/length)*s, (y/length)*s, (z/length)*s, math.cos(angle / 2.0)]
+
+
+def dir_to_quat(d):
+    """Convert an X3D direction vector to a quaternion rotating glTF [0,0,-1] to d."""
+    norm = math.sqrt(d[0]**2 + d[1]**2 + d[2]**2)
+    if norm < 1e-6:
+        return [0.0, 0.0, 0.0, 1.0]
+    dx, dy, dz = d[0]/norm, d[1]/norm, d[2]/norm
+
+    if dz < -0.99999:
+        return [0.0, 0.0, 0.0, 1.0]  # Already pointing down -Z
+    if dz > 0.99999:
+        return [0.0, 1.0, 0.0, 0.0]  # Pointing +Z, rotate 180 around Y
+
+    cx, cy, cz = dy, -dx, 0.0
+    s = math.sqrt((1.0 - dz) * 2.0)
+    return [cx / s, cy / s, cz / s, s / 2.0]
 
 
 def compute_normals(positions, indices, ccw=True):
@@ -160,7 +174,7 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
 
 
 # ---------------------------------------------------------------------------
-# X3D Material → glTF PBR
+# X3D Material & Lighting Extractors
 # ---------------------------------------------------------------------------
 
 def x3d_material_to_gltf_dict(mat_node):
@@ -225,6 +239,124 @@ def resolve_material(app_node, mat_def_map, mat_list):
         return 0
     mat_list.append(x3d_material_to_gltf_dict(mat_node))
     return len(mat_list) - 1
+
+
+def extract_punctual_lights(root):
+    """Maps X3D PointLight, SpotLight, DirectionalLight to glTF KHR_lights_punctual."""
+    lights = []
+    light_nodes = []
+
+    def get_color(n): return parse_array(n.get('color', '1 1 1'))
+    def get_intensity(n): return float(n.get('intensity', '1.0'))
+
+    # DirectionalLight
+    for dlight in root.findall('.//DirectionalLight'):
+        if dlight.get('on', 'true').lower() in ('false', '0'): continue
+        ldict = {
+            "type": "directional",
+            "color": get_color(dlight),
+            "intensity": get_intensity(dlight)
+        }
+        direction = parse_array(dlight.get('direction', '0 0 -1'))
+        rot = dir_to_quat(direction)
+        light_idx = len(lights)
+        lights.append(ldict)
+
+        node = {"name": dlight.get('DEF', f"DirectionalLight_{light_idx}")}
+        if rot != [0, 0, 0, 1]:
+            node["rotation"] = rot
+        node["extensions"] = {"KHR_lights_punctual": {"light": light_idx}}
+        light_nodes.append(node)
+
+    # PointLight
+    for plight in root.findall('.//PointLight'):
+        if plight.get('on', 'true').lower() in ('false', '0'): continue
+        ldict = {
+            "type": "point",
+            "color": get_color(plight),
+            "intensity": get_intensity(plight)
+        }
+        r_val = float(plight.get('radius', '100'))
+        if r_val > 0: ldict["range"] = r_val
+
+        light_idx = len(lights)
+        lights.append(ldict)
+
+        node = {
+            "name": plight.get('DEF', f"PointLight_{light_idx}"),
+            "translation": parse_array(plight.get('location', '0 0 0')),
+            "extensions": {"KHR_lights_punctual": {"light": light_idx}}
+        }
+        light_nodes.append(node)
+
+    # SpotLight
+    for slight in root.findall('.//SpotLight'):
+        if slight.get('on', 'true').lower() in ('false', '0'): continue
+
+        # glTF logic requires innerConeAngle <= outerConeAngle <= PI/2
+        inner = float(slight.get('beamWidth', '1.570796'))
+        outer = float(slight.get('cutOffAngle', '0.785398'))
+        if inner > outer:
+            inner, outer = outer, inner
+
+        outer = max(0.001, min(outer, 1.570796))
+        inner = max(0.0, min(inner, outer))
+
+        ldict = {
+            "type": "spot",
+            "color": get_color(slight),
+            "intensity": get_intensity(slight),
+            "spot": {
+                "innerConeAngle": inner,
+                "outerConeAngle": outer
+            }
+        }
+        r_val = float(slight.get('radius', '100'))
+        if r_val > 0: ldict["range"] = r_val
+
+        direction = parse_array(slight.get('direction', '0 0 -1'))
+        rot = dir_to_quat(direction)
+
+        light_idx = len(lights)
+        lights.append(ldict)
+
+        node = {
+            "name": slight.get('DEF', f"SpotLight_{light_idx}"),
+            "translation": parse_array(slight.get('location', '0 0 0')),
+            "extensions": {"KHR_lights_punctual": {"light": light_idx}}
+        }
+        if rot != [0, 0, 0, 1]:
+            node["rotation"] = rot
+        light_nodes.append(node)
+
+    return lights, light_nodes
+
+
+def extract_environment_lights(root):
+    """Maps X3D EnvironmentLight to glTF EXT_lights_image_based minimal wrapper."""
+    env_lights = []
+    for elight in root.findall('.//EnvironmentLight'):
+        if elight.get('on', 'true').lower() in ('false', '0'): continue
+        # To satisfy extension schema, provide dummy/zeroed valid arrays.
+        # Signals capability to rendering engines like Sunrize / X_ITE.
+        env_dict = {
+            "intensity": float(elight.get('ambientIntensity', '1.0')),
+            "irradianceCoefficients": [
+                [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0],
+                [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0],
+                [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]
+            ],
+            "specularImageSize": 256,
+            "specularImages": []
+        }
+
+        direction = parse_array(elight.get('direction', '0 0 -1'))
+        rot = dir_to_quat(direction)
+        if rot != [0, 0, 0, 1]:
+            env_dict["rotation"] = rot
+
+        env_lights.append(env_dict)
+    return env_lights
 
 
 # ---------------------------------------------------------------------------
@@ -394,8 +526,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             continue
 
         samplers, channels = [], []
-
-        # Track targets already animated by this TimeSensor to prevent glTF duplication
         seen_targets = set()
 
         for interp in driven:
@@ -407,7 +537,7 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             keys_raw = parse_array(interp.get('key', ''))
             if len(keys_raw) < 2:
                 continue
-            keys = np.array(keys_raw, dtype=np.float32) * cycle  # fractions → seconds
+            keys = np.array(keys_raw, dtype=np.float32) * cycle
 
             kv_raw = parse_array(interp.get('keyValue', ''))
             if not kv_raw:
@@ -422,10 +552,8 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
 
                 node_idx = def_to_node_idx[to_node]
 
-                # Check for duplicate target (node+property) in the same animation
                 target_key = (node_idx, gltf_path)
                 if target_key in seen_targets:
-                    # Ignore the duplicate route to maintain glTF validity
                     continue
                 seen_targets.add(target_key)
 
@@ -450,18 +578,13 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                           f"({len(keys)} vs {len(vals)}) — skipping")
                     continue
 
-                # FIX: Ensure strictly increasing keys. glTF requires monotonically increasing times.
-                # If there are duplicates (used for step animations in X3D) or invalid reverse times, deduplicate them.
                 unique_keys = []
                 unique_vals = []
                 for idx_k in range(len(keys)):
-                    # If this key has the exact same time as the next one, skip it (we keep the *latest* value for this timestamp)
                     if idx_k < len(keys) - 1 and keys[idx_k] >= keys[idx_k+1]:
                         continue
-                    # If this key goes backward compared to the cleaned sequence, ignore it entirely
                     if unique_keys and keys[idx_k] <= unique_keys[-1]:
                         continue
-
                     unique_keys.append(keys[idx_k])
                     unique_vals.append(vals[idx_k])
 
@@ -471,7 +594,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                 if len(clean_keys) < 2:
                     continue
 
-                # Time accessor — min/max required by spec for animation inputs
                 t_off, t_len = append_to_buffer(bin_blob, clean_keys.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=t_off, byteLength=t_len))
                 gltf.accessors.append(Accessor(
@@ -481,7 +603,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
                 ))
                 acc_t = len(gltf.accessors) - 1
 
-                # Value accessor — min/max not required for animation outputs
                 v_off, v_len = append_to_buffer(bin_blob, clean_vals.tobytes())
                 gltf.bufferViews.append(BufferView(buffer=0, byteOffset=v_off, byteLength=v_len))
                 gltf.accessors.append(Accessor(
@@ -502,7 +623,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx):
             gltf.animations.append(Animation(name=anim_name, samplers=samplers, channels=channels))
             print(f"    Animation '{anim_name}': {len(channels)} channels, cycleInterval={cycle}s")
 
-    # Fallback dummy animation (Babylon.js requires at least one)
     if not gltf.animations:
         print("    No animations found — inserting dummy.")
         times = np.array([0.0, 1.0], dtype=np.float32)
@@ -662,6 +782,9 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     if len(bin_blob) == 0:
         bin_blob.extend(b'\x00' * 4)
 
+    # -------------------------------------------------------------
+    # Extracted data mapping immediately before JSON finalisation
+    # -------------------------------------------------------------
     gltf_dict = to_plain(gltf)
     gltf_dict['materials'] = mat_list
 
@@ -671,6 +794,44 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
             for p in mesh_obj.primitives
         ]
 
+    # Process X3D Lighting Extensions
+    punctual_lights, light_nodes = extract_punctual_lights(root)
+    env_lights = extract_environment_lights(root)
+
+    if punctual_lights or env_lights:
+        if 'extensionsUsed' not in gltf_dict: gltf_dict['extensionsUsed'] = []
+        if 'extensions' not in gltf_dict: gltf_dict['extensions'] = {}
+
+    if punctual_lights:
+        if 'KHR_lights_punctual' not in gltf_dict['extensionsUsed']:
+            gltf_dict['extensionsUsed'].append('KHR_lights_punctual')
+
+        gltf_dict['extensions']['KHR_lights_punctual'] = {"lights": punctual_lights}
+
+        # Merge light nodes into node tree
+        start_node_idx = len(gltf_dict.get('nodes', []))
+        if 'nodes' not in gltf_dict: gltf_dict['nodes'] = []
+
+        root_children = gltf_dict['nodes'][0].get('children', [])
+        for i, lnode in enumerate(light_nodes):
+            gltf_dict['nodes'].append(lnode)
+            root_children.append(start_node_idx + i)
+
+        gltf_dict['nodes'][0]['children'] = root_children
+
+    if env_lights:
+        if 'EXT_lights_image_based' not in gltf_dict['extensionsUsed']:
+            gltf_dict['extensionsUsed'].append('EXT_lights_image_based')
+
+        gltf_dict['extensions']['EXT_lights_image_based'] = {"lights": env_lights}
+
+        if 'scenes' in gltf_dict and len(gltf_dict['scenes']) > 0:
+            if 'extensions' not in gltf_dict['scenes'][0]:
+                gltf_dict['scenes'][0]['extensions'] = {}
+            # References the first available parsed environment light structure
+            gltf_dict['scenes'][0]['extensions']['EXT_lights_image_based'] = {"light": 0}
+
+    # Execute glb bin packing
     write_glb(gltf_dict, bin_blob, glb_filepath)
 
     size_kb = os.path.getsize(glb_filepath) / 1024
@@ -678,7 +839,8 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
           f"nodes={len(gltf_dict.get('nodes', []))}  "
           f"meshes={len(gltf_dict.get('meshes', []))}  "
           f"materials={len(mat_list)}  "
-          f"animations={len(gltf_dict.get('animations', []))}")
+          f"animations={len(gltf_dict.get('animations', []))}  "
+          f"lights={len(punctual_lights) + len(env_lights)}")
 
 
 # ---------------------------------------------------------------------------
@@ -693,4 +855,4 @@ if __name__ == "__main__":
         base = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
         convert_x3d_to_glb(f"{base}/LaughingSkeleton.x3d",               "LaughingSkeleton.glb")
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
-        convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1scaled.x3d", "0skeleton1.glb")
+        convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
