@@ -1,5 +1,7 @@
+# --- START OF FILE x3d_to_gltf_advanced_binary.py ---
+
 """
-x3d_to_gltf_advanced.py
+x3d_to_gltf_advanced_binary.py
 X3D → glTF 2.0 Binary (.glb) converter.
 
 Fixes applied based on glTF validator report:
@@ -14,6 +16,10 @@ Lighting Features Added:
   • KHR_lights_punctual mappings for PointLight, SpotLight, and DirectionalLight.
   • EXT_lights_image_based mappings for X3D V4 EnvironmentLight node.
   • Auto-calculates quaternion orientations for correctly aiming -Z oriented glTF lights.
+
+Geometry/Nesting Fixes:
+  • Geometry search correctly stops at nested HAnimJoint boundaries to prevent duplicated
+    overlapping body segments during character animation.
 
 GLB format (spec §4):
   [12-byte file header]  magic 0x46546C67 / version 2 / total length
@@ -721,15 +727,26 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         gltf.nodes.append(Node(name=def_name or f"Joint_{i}",
                                translation=[float(v) for v in local_trans]))
 
+    # --- UPDATED GEOMETRY TRAVERSAL ---
     for i, joint in enumerate(hanim_joints):
         geom_nodes = []
-        for elem in joint.iter():
-            if elem.tag == 'Shape':
-                geom_nodes.append(elem)
-            elif elem.tag in ('InlineGeometry', 'Inline'):
-                ext = fetch_inline_geometry(elem.get('url', ''), base_path)
-                if ext is not None:
-                    geom_nodes.extend(ext.findall('.//Shape') + ext.findall('.//IndexedFaceSet'))
+
+        # Traverse recursively but STOP at nested HAnimJoint nodes.
+        # This prevents a parent joint from grabbing shapes that belong to its children.
+        def collect_geoms(current_node):
+            for child in current_node:
+                if child.tag == 'HAnimJoint':
+                    continue  # Do not pull nested skeleton parts
+                if child.tag == 'Shape':
+                    geom_nodes.append(child)
+                elif child.tag in ('InlineGeometry', 'Inline'):
+                    ext = fetch_inline_geometry(child.get('url', ''), base_path)
+                    if ext is not None:
+                        geom_nodes.extend(ext.findall('.//Shape') + ext.findall('.//IndexedFaceSet'))
+                else:
+                    collect_geoms(child)
+
+        collect_geoms(joint)
 
         if geom_nodes:
             mesh_idx = process_mesh_primitives(
@@ -744,6 +761,7 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
                     skin=0
                 ))
                 gltf.scenes[0].nodes.append(mesh_node_idx)
+    # ----------------------------------
 
     for transform in root.findall('.//Transform'):
         def_name = transform.get('DEF')
