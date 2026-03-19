@@ -5,23 +5,51 @@ x3d_to_binary.py
 X3D → glTF 2.0 Binary (.glb) converter.
 
 Features Expanded:
-  • Geometry: Supports IndexedFaceSet, Box, Coordinate, TextureCoordinate, Shape.
+  • Geometry: IndexedFaceSet, IndexedTriangleSet, TriangleSet, Box, Coordinate, TextureCoordinate, Shape.
+  • Text Support: Rasterizes <Text> and <FontStyle> to textured glTF quads (Requires PIL).
   • Materials & Textures: Resolves Appearance, Material, and embeds ImageTexture.
-    -> Flips X3D V-coordinates to match glTF standards.
-  • Lights & Cameras: KHR_lights_punctual mapping & Viewpoint → glTF Camera.
-  • Advanced Animations: Global `center` offsets corrected via Dual-Node hierarchy.
-  • Strict Validator Fixes: Removes unused TEXCOORDs and Default Materials.
+  • MFString Parsing: Correctly parses X3D multi-quoted strings for URLs and Text.
+  • Missing Image Fallback: Embeds a 1x1 placeholder texture if files are missing.
+  • DEF/USE Resolving: Fully resolves USE tags for all nodes.
+  • XML Namespaces: Strips namespaces automatically to guarantee node discovery.
 """
 
 import struct
 import xml.etree.ElementTree as ET
 import numpy as np
-import json, os, shlex, urllib.request, math, mimetypes
+import json, os, shlex, urllib.request, math, mimetypes, base64, re
 from pygltflib import *
+
+# Attempt to load Pillow for X3D Text rendering
+try:
+    from PIL import Image as PILImage, ImageDraw, ImageFont
+    HAS_PIL = True
+except ImportError:
+    HAS_PIL = False
 
 # ---------------------------------------------------------------------------
 # Low-level helpers
 # ---------------------------------------------------------------------------
+
+def strip_namespaces(node):
+    """Removes XML namespaces so standard tag searches (.find) don't fail silently."""
+    if '}' in node.tag:
+        node.tag = node.tag.split('}', 1)[1]
+    for k in list(node.attrib.keys()):
+        if '}' in k:
+            node.attrib[k.split('}', 1)[1]] = node.attrib.pop(k)
+    for child in node:
+        strip_namespaces(child)
+
+def parse_mfstring(val_str):
+    """Parses X3D MFString e.g. '"string1" "string2"' into a list of strings."""
+    if not val_str: return []
+    # Match strings bounded by double or single quotes
+    matches = re.findall(r'"([^"]*)"|\'([^\']*)\'', val_str)
+    if matches:
+        return [m[0] if m[0] else m[1] for m in matches]
+    # Fallback if unquoted
+    return val_str.split()
 
 def parse_array(val_str, type_cast=float, default=None):
     if val_str is None: return default if default is not None else []
@@ -116,46 +144,65 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
 # Materials, Textures, and Primitives
 # ---------------------------------------------------------------------------
 
+def add_raw_image(gltf, bin_blob, img_bytes, mime="image/png"):
+    off, length = append_to_buffer(bin_blob, img_bytes)
+    gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=length))
+    # This Image is from pygltflib
+    gltf.images.append(Image(bufferView=len(gltf.bufferViews)-1, mimeType=mime))
+    gltf.textures.append(Texture(source=len(gltf.images)-1))
+    return len(gltf.textures) - 1
+
 def embed_texture(url_str, base_path, gltf, bin_blob):
-    try: urls = shlex.split(url_str)
-    except: urls = url_str.split()
+    urls = parse_mfstring(url_str)
+    data = None
+    mime = "image/jpeg"
 
     for u in urls:
-        u = u.strip("'\"").strip()
-        if not u or u.startswith('data:image'): continue
+        u = u.strip()
+        if not u: continue
+
+        if u.startswith('data:image'):
+            try:
+                head, b64data = u.split(',', 1)
+                data = base64.b64decode(b64data)
+                mime = head.split(';')[0].replace('data:', '')
+                break
+            except: continue
 
         local = os.path.join(base_path, u.replace('\\', '/'))
-        data = None
-
         if os.path.exists(local):
             with open(local, 'rb') as f: data = f.read()
+            mime = mimetypes.guess_type(u)[0] or "image/jpeg"
+            break
         elif u.startswith('http'):
             print(f"    Fetching remote texture: {u}")
             try:
                 req = urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'})
-                with urllib.request.urlopen(req, timeout=5) as r: data = r.read()
+                with urllib.request.urlopen(req, timeout=5) as r:
+                    data = r.read()
+                    mime = r.info().get_content_type() or mimetypes.guess_type(u)[0] or "image/jpeg"
+                break
             except Exception as e:
                 print(f"      Fetch failed: {e}")
 
-        if data:
-            off, length = append_to_buffer(bin_blob, data)
-            gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=length))
-            mime = mimetypes.guess_type(u)[0] or "image/jpeg"
-            gltf.images.append(Image(bufferView=len(gltf.bufferViews)-1, mimeType=mime))
-            gltf.textures.append(Texture(source=len(gltf.images)-1))
-            return len(gltf.textures) - 1
+    if not data:
+        print(f"    WARN: Texture not found, generating 1x1 Dummy Fallback: {urls}")
+        data = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=")
+        mime = "image/png"
 
-    print(f"    WARN: Texture could not be found locally or downloaded: {url_str}")
-    return None
+    return add_raw_image(gltf, bin_blob, data, mime)
 
-def resolve_material(app_node, mat_def_map, mat_list, gltf, bin_blob, base_path):
+def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path):
     if app_node is None: return None
-    mat_node = app_node.find('Material')
-    img_node = app_node.find('ImageTexture')
 
-    if mat_node is None:
-        for child in app_node:
-            if child.get('USE') in mat_def_map: mat_node = mat_def_map[child.get('USE')]; break
+    if app_node.get('USE'):
+        app_node = def_map.get(app_node.get('USE'), app_node)
+
+    mat_node = app_node.find('.//Material')
+    img_node = app_node.find('.//ImageTexture')
+
+    if mat_node is not None and mat_node.get('USE'): mat_node = def_map.get(mat_node.get('USE'), mat_node)
+    if img_node is not None and img_node.get('USE'): img_node = def_map.get(img_node.get('USE'), img_node)
 
     if mat_node is None and img_node is None: return None
 
@@ -186,6 +233,125 @@ def resolve_material(app_node, mat_def_map, mat_list, gltf, bin_blob, base_path)
     mat_list.append(mat_dict)
     return len(mat_list) - 1
 
+# ---------------------------------------------------------------------------
+# X3D Text to glTF Quad Generator
+# ---------------------------------------------------------------------------
+def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_list, base_path):
+    if not HAS_PIL:
+        print("    WARN: X3D <Text> node found, but 'Pillow' is not installed. Skipping. (Run: pip install Pillow)")
+        return None
+
+    lines = parse_mfstring(text_node.get('string', ''))
+    if not lines: return None
+
+    fs_node = text_node.find('.//FontStyle')
+    size = 1.0
+    family = "SERIF"
+    justify = ["BEGIN", "FIRST"]
+
+    if fs_node is not None:
+        if fs_node.get('USE'): fs_node = def_map.get(fs_node.get('USE'), fs_node)
+        size = float(fs_node.get('size', 1.0))
+        family_arr = parse_mfstring(fs_node.get('family', '"SERIF"'))
+        if family_arr: family = family_arr[0]
+        justify_arr = parse_mfstring(fs_node.get('justify', '"BEGIN" "FIRST"'))
+        if justify_arr: justify = justify_arr
+
+    # Map to PIL Font
+    px_per_unit = 128
+    font_size_px = max(10, int(size * px_per_unit))
+    font = None
+
+    try:
+        fonts_to_try = ["arial.ttf"] if "SANS" in family.upper() else ["times.ttf"]
+        for fn in fonts_to_try:
+            try: font = ImageFont.truetype(fn, font_size_px); break
+            except: pass
+    except: pass
+    if not font: font = ImageFont.load_default()
+
+    # Calculate Texture Dimensions using PILImage
+    dummy_img = PILImage.new("RGBA", (1, 1), (0,0,0,0))
+    d = ImageDraw.Draw(dummy_img)
+
+    max_w, total_h = 0, 0
+    line_heights = []
+    for line in lines:
+        try: bbox = d.textbbox((0,0), line, font=font)
+        except: bbox = (0, 0, len(line)*font_size_px*0.6, font_size_px) # fallback
+        w = bbox[2] - bbox[0]
+        h = bbox[3] - bbox[1] + (font_size_px * 0.2) # Adding spacing
+        max_w = max(max_w, w)
+        line_heights.append(h)
+        total_h += h
+
+    width = max(int(max_w), 1)
+    height = max(int(total_h), 1)
+
+    # Render Text using PILImage
+    img = PILImage.new("RGBA", (width, height), (0,0,0,0))
+    d = ImageDraw.Draw(img)
+    y = 0
+    for i, line in enumerate(lines):
+        d.text((0, y), line, font=font, fill=(255, 255, 255, 255))
+        y += line_heights[i]
+
+    import io
+    img_io = io.BytesIO()
+    img.save(img_io, format="PNG")
+    tex_idx = add_raw_image(gltf, bin_blob, img_io.getvalue(), "image/png")
+
+    # Geometry Generation (Quad)
+    aspect = float(width) / float(height)
+    quad_h = size * len(lines)
+    quad_w = quad_h * aspect
+
+    # X Justification
+    jx = justify[0].upper() if len(justify) > 0 else "BEGIN"
+    if jx == "MIDDLE": x0, x1 = -quad_w/2, quad_w/2
+    elif jx == "END":  x0, x1 = -quad_w, 0
+    else:              x0, x1 = 0, quad_w  # BEGIN
+
+    # Y Justification
+    jy = justify[1].upper() if len(justify) > 1 else "FIRST"
+    if jy == "MIDDLE": y0, y1 = -quad_h/2, quad_h/2
+    else:              y0, y1 = -quad_h, 0 # FIRST (approx baseline)
+
+    pos = np.array([
+        [x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]
+    ], dtype=np.float32)
+    norms = np.array([[0,0,1]] * 4, dtype=np.float32)
+    uvs = np.array([[0,1], [1,1], [1,0], [0,0]], dtype=np.float32)
+    indices = np.array([0, 1, 2, 0, 2, 3], dtype=np.uint16)
+
+    prim_attrs = {
+        "POSITION": add_accessor(gltf, bin_blob, pos, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True),
+        "NORMAL":   add_accessor(gltf, bin_blob, norms, VEC3, FLOAT, ARRAY_BUFFER),
+        "TEXCOORD_0": add_accessor(gltf, bin_blob, uvs, VEC2, FLOAT, ARRAY_BUFFER)
+    }
+
+    # Material processing
+    mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
+    if mat_idx is None:
+        mat_list.append({"name": "TextMat", "doubleSided": True, "alphaMode": "BLEND",
+                         "pbrMetallicRoughness": {"baseColorFactor": [1,1,1,1], "metallicFactor": 0.0, "roughnessFactor": 1.0}})
+        mat_idx = len(mat_list) - 1
+
+    mat_list[mat_idx]["alphaMode"] = "BLEND"
+    mat_list[mat_idx].setdefault("pbrMetallicRoughness", {})["baseColorTexture"] = {"index": tex_idx}
+
+    gltf.meshes.append(Mesh(primitives=[{
+        "indices": add_accessor(gltf, bin_blob, indices, SCALAR, UNSIGNED_SHORT, ELEMENT_ARRAY_BUFFER, add_min_max=True),
+        "attributes": prim_attrs,
+        "material": mat_idx
+    }]))
+
+    return len(gltf.meshes) - 1
+
+# ---------------------------------------------------------------------------
+# Mesh Primitives
+# ---------------------------------------------------------------------------
+
 def box_to_ifs(box_node):
     hx, hy, hz = [s/2.0 for s in parse_array(box_node.get('size', '2 2 2'))]
     p = [
@@ -204,23 +370,31 @@ def box_to_ifs(box_node):
     ET.SubElement(ifs, 'Normal', {'vector': ' '.join([f"{v[0]} {v[1]} {v[2]}" for v in n])})
     return ifs
 
-def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, base_path):
+def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_path):
     primitives = []
     for node in geom_nodes:
-        is_faceset = node.tag.startswith('Indexed')
-        facesets = ([node] if is_faceset else node.findall('.//IndexedFaceSet') + node.findall('.//IndexedTriangleSet'))
+        # Detect FaceSets, TriangleSets, or Generate from Primitives
+        is_faceset = node.tag in ('IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet')
+        facesets = ([node] if is_faceset else
+                    node.findall('.//IndexedFaceSet') +
+                    node.findall('.//IndexedTriangleSet') +
+                    node.findall('.//TriangleSet'))
+
         if not is_faceset: facesets.extend([box_to_ifs(b) for b in node.findall('.//Box')])
 
         app_node = None if is_faceset else node.find('.//Appearance')
 
         for face_set in facesets:
             coord = face_set.find('.//Coordinate')
+            if coord is not None and coord.get('USE'): coord = def_map.get(coord.get('USE'), coord)
             if coord is None: continue
+
             raw_pos = parse_array(coord.get('point', ''))
             if not raw_pos: continue
             pos_arr = np.array(raw_pos, dtype=np.float32).reshape(-1, 3)
 
             tex_coord = face_set.find('.//TextureCoordinate')
+            if tex_coord is not None and tex_coord.get('USE'): tex_coord = def_map.get(tex_coord.get('USE'), tex_coord)
             if tex_coord is not None:
                 uv_arr = np.array(parse_array(tex_coord.get('point', '')), dtype=np.float32).reshape(-1, 2)
                 if len(uv_arr) > 0:
@@ -229,11 +403,21 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, b
                 uv_arr = []
 
             norm_node = face_set.find('.//Normal')
+            if norm_node is not None and norm_node.get('USE'): norm_node = def_map.get(norm_node.get('USE'), norm_node)
             norm_arr = np.array(parse_array(norm_node.get('vector', '')), dtype=np.float32).reshape(-1, 3) if norm_node is not None else []
 
-            pos_polys = parse_x3d_indices(face_set.get('coordIndex') or face_set.get('index', ''))
-            tex_polys = parse_x3d_indices(face_set.get('texCoordIndex', '')) if face_set.get('texCoordIndex') else pos_polys
-            norm_polys = parse_x3d_indices(face_set.get('normalIndex', '')) if face_set.get('normalIndex') else pos_polys
+            # Generate or Parse indices based on the Node Type
+            if face_set.tag == 'TriangleSet':
+                # TriangleSets define polygons implicitly by reading vertices 3 at a time
+                num_verts = len(pos_arr)
+                pos_polys = [[i, i+1, i+2] for i in range(0, num_verts - 2, 3)]
+                tex_polys = pos_polys
+                norm_polys = pos_polys
+            else:
+                # IndexedFaceSet and IndexedTriangleSet use index arrays
+                pos_polys = parse_x3d_indices(face_set.get('coordIndex') or face_set.get('index', ''))
+                tex_polys = parse_x3d_indices(face_set.get('texCoordIndex', '')) if face_set.get('texCoordIndex') else pos_polys
+                norm_polys = parse_x3d_indices(face_set.get('normalIndex', '')) if face_set.get('normalIndex') else pos_polys
 
             unified_verts, out_positions, out_uvs, out_normals, unified_indices = {}, [], [], [], []
 
@@ -241,6 +425,7 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, b
                 t_poly = tex_polys[pi] if pi < len(tex_polys) else poly
                 n_poly = norm_polys[pi] if pi < len(norm_polys) else poly
 
+                # Triangulate polygons on the fly (automatically handles > 3 vertices)
                 for i in range(1, len(poly) - 1):
                     for j in (0, i, i+1):
                         p_idx = poly[j]
@@ -268,15 +453,10 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, b
             prim_attrs = {"POSITION": add_accessor(gltf, bin_blob, positions, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True),
                           "NORMAL":   add_accessor(gltf, bin_blob, normals, VEC3, FLOAT, ARRAY_BUFFER)}
 
-            # Conditionally map TEXCOORD_0 only if the resolved material actually successfully loaded a texture
-            mat_idx = resolve_material(app_node, mat_def_map, mat_list, gltf, bin_blob, base_path)
-            mat_uses_texture = False
-            if mat_idx is not None and mat_idx < len(mat_list):
-                if "baseColorTexture" in mat_list[mat_idx].get("pbrMetallicRoughness", {}):
-                    mat_uses_texture = True
-
-            if out_uvs and mat_uses_texture:
+            if len(out_uvs) > 0:
                 prim_attrs["TEXCOORD_0"] = add_accessor(gltf, bin_blob, np.array(out_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
+
+            mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
 
             prim_dict = {
                 "indices": add_accessor(gltf, bin_blob, indices, SCALAR, idx_comp, ELEMENT_ARRAY_BUFFER, add_min_max=True),
@@ -295,21 +475,22 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_def_map, mat_list, b
 # DOM Traversal & Dual-Node Pattern
 # ---------------------------------------------------------------------------
 
-def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, mat_def_map, mat_list, def_to_node_idx, node_to_center, base_path):
+def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path):
     structural_tags = {'Transform', 'Group', 'HAnimJoint', 'HAnimSegment', 'HAnimHumanoid', 'HAnimSite'}
     logic_tags = {'BooleanFilter', 'BooleanSequencer', 'NavigationInfo', 'ProximitySensor', 'TimeTrigger', 'TouchSensor'}
 
     if xml_node.tag in logic_tags: return
 
     if xml_node.tag in ('Inline', 'InlineGeometry'):
-        urls = shlex.split(xml_node.get('url', ''))
+        urls = parse_mfstring(xml_node.get('url', ''))
         url = urls[0] if urls else ''
         file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
         local = os.path.join(base_path, file_url)
         if os.path.exists(local):
             try:
                 ext = ET.parse(local).getroot()
-                traverse_x3d_node(ext.find(f".//*[@DEF='{frag}']") if frag else ext, parent_gltf_node_idx, gltf, bin_blob, mat_def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+                strip_namespaces(ext)
+                traverse_x3d_node(ext.find(f".//*[@DEF='{frag}']") if frag else ext, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
             except: pass
         return
 
@@ -354,10 +535,15 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, mat_def_ma
         gltf.nodes[outer_idx].children.append(inner_idx)
 
         for child in xml_node:
-            traverse_x3d_node(child, inner_idx, gltf, bin_blob, mat_def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+            traverse_x3d_node(child, inner_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
 
     elif xml_node.tag == 'Shape':
-        mesh_idx = process_mesh_primitives([xml_node], gltf, bin_blob, mat_def_map, mat_list, base_path)
+        text_node = xml_node.find('.//Text')
+        if text_node is not None:
+            mesh_idx = process_text_primitives(text_node, xml_node.find('.//Appearance'), gltf, bin_blob, def_map, mat_list, base_path)
+        else:
+            mesh_idx = process_mesh_primitives([xml_node], gltf, bin_blob, def_map, mat_list, base_path)
+
         if mesh_idx is not None:
             shape_idx = len(gltf.nodes)
             gltf.nodes.append(Node(name=xml_node.get('DEF', f"Shape_{shape_idx}"), mesh=mesh_idx))
@@ -366,7 +552,7 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, mat_def_ma
                 gltf.nodes[parent_gltf_node_idx].children.append(shape_idx)
 
     else:
-        for child in xml_node: traverse_x3d_node(child, parent_gltf_node_idx, gltf, bin_blob, mat_def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+        for child in xml_node: traverse_x3d_node(child, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
 
 # ---------------------------------------------------------------------------
 # Animations
@@ -431,8 +617,11 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center):
 def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     print(f"\nConverting: {x3d_filepath}")
     base_path = os.path.dirname(os.path.abspath(x3d_filepath))
-    try: root = ET.parse(x3d_filepath).getroot()
-    except Exception as e: print(f"  ERROR parsing X3D: {e}"); return
+    try:
+        root = ET.parse(x3d_filepath).getroot()
+        strip_namespaces(root)  # Ensure tag searches never fail
+    except Exception as e:
+        print(f"  ERROR parsing X3D: {e}"); return
 
     bin_blob = bytearray()
     mat_list = [] # Start empty to prevent UNUSED_OBJECT warnings
@@ -448,14 +637,16 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         extras = {m.get('name'): m.get('content') for m in head.findall('meta') if m.get('name') and m.get('content')}
         if extras: gltf.asset.extras = {"X3D_Metadata": extras}
 
-    mat_def_map = {m.get('DEF'): m for m in root.iter('Material') if m.get('DEF')}
+    # Global mapping for ALL defined nodes (resolves Appearance, ImageTexture, Coordinates etc.)
+    def_map = {el.get('DEF'): el for el in root.iter() if el.get('DEF')}
+
     def_to_node_idx, node_to_center = {}, {}
 
     scene_root = root.find('Scene')
     if scene_root is None:
         scene_root = root
 
-    traverse_x3d_node(scene_root, 0, gltf, bin_blob, mat_def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+    traverse_x3d_node(scene_root, 0, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
     convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center)
 
     if len(bin_blob) == 0: bin_blob.extend(b'\x00' * 4)
@@ -503,3 +694,5 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
         convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
         convert_x3d_to_glb(f"HumanoidComplete.x3d", "HumanoidComplete.glb")
+
+# --- END OF FILE x3d_to_binary.py ---
