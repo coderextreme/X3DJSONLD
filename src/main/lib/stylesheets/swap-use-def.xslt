@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  swap-use-def.xsl  (v2 corrected)
+  swap-use-def.xsl  (v4)
   ==================================
-  Swaps every USE/DEF node pair where ALL of the following hold:
+  Invariant guaranteed in the output:
+    For every value X, the element with DEF="X" precedes all elements
+    with USE="X" in document order, and every USE="X" element carries
+    ONLY the USE attribute (plus containerField if present).  All other
+    attributes on a USE node are spurious and are removed.
 
-    1. Both nodes share the same element tag name (local-name).
-    2. Both nodes share the same attribute value  (USE="X" vs DEF="X").
-    3. The USE node appears BEFORE its DEF partner in document order.
-    4. Only the FIRST USE node for a given tag+value triggers the swap.
-       Subsequent USE nodes with the same value are left unchanged.
+  Three cases are handled for any element carrying @USE:
 
-  v2 fixes vs v1
-    - Added [1] predicate on $defNode and $useNode so that a multi-node
-      set is never passed to xsl:copy-of or xsl:apply-templates when
-      duplicate DEF/USE values exist in the document.
-    - Simplified the DEF template: because $useNode is already [1]
-      (the first match), no separate $earlierUse variable is needed
-      inside that template.
+    A. DEF="X" already precedes USE="X"
+         The USE element is rewritten with only @USE (and @containerField
+         if present).  All other attributes are stripped.
+
+    B. USE="X" precedes DEF="X"  (first such USE only)
+         The two nodes are swapped: the DEF node's content is emitted at
+         the USE position and the USE node's content is emitted at the
+         DEF position.  After the swap DEF is at the earliest position,
+         satisfying the invariant.
+
+    C. Everything else (duplicate USE, no DEF partner, etc.)
+         Identity copy — node is left unchanged.
 
   Requires XSLT 1.0.
   Uses the Kaysian method for document-order comparison (no operator).
@@ -55,13 +60,17 @@
        2. USE NODE TEMPLATE
        Fires for every element carrying a USE attribute.
 
-       Emits the matching DEF node content here ONLY when:
-         (a) a [1] DEF partner with the same tag+value exists
-         (b) no other node with the same tag+USE value precedes this
-             one, i.e. this is the FIRST USE node for that value
-         (c) the DEF partner comes AFTER this node in document order
+       Case A — DEF partner exists and precedes this USE:
+         Emit a clean element with ONLY @USE and @containerField.
+         All other attributes are stripped (they are spurious copies
+         of the DEF node's data that must not appear on a USE node).
 
-       Otherwise falls through to the identity copy.
+       Case B — This USE precedes its DEF partner (first such USE only):
+         Emit the DEF node's content here so that after the paired
+         DEF template fires, DEF will occupy the earlier position.
+
+       Case C — All other situations:
+         Identity copy (duplicate USE, no DEF partner, etc.).
 
        If an element carries BOTH @USE and @DEF the two templates
        have equal priority (0). XSLT 1.0 treats this as a recoverable
@@ -77,6 +86,19 @@
          [1] prevents a multi-node set when duplicate DEFs exist. -->
     <xsl:variable name="defNode"
       select="(//*[local-name() = $tagName and @DEF = $useVal])[1]"/>
+
+    <!--
+      $defPrecedesUse: is the DEF partner earlier in document order
+      than the current USE node?
+
+      Kaysian test: count($defNode | preceding::*)
+                      = count(preceding::*)
+      is TRUE when $defNode lives in the current node's preceding axis.
+    -->
+    <xsl:variable name="defPrecedesUse"
+      select="boolean($defNode and
+                      count($defNode | preceding::*)
+                          = count(preceding::*))"/>
 
     <!--
       $hasEarlierUse: is there any node with the same tag+USE value
@@ -95,18 +117,31 @@
 
     <xsl:choose>
 
-      <!-- All three conditions met: emit DEF node content in this slot -->
+      <!-- Case A: DEF precedes USE — emit a clean USE-only element.
+           @containerField is preserved because it controls where this
+           node sits in the parent's field list, not what it references. -->
+      <xsl:when test="$defPrecedesUse">
+        <xsl:element name="{$tagName}">
+          <xsl:copy-of select="@USE"/>
+          <xsl:if test="@containerField">
+            <xsl:copy-of select="@containerField"/>
+          </xsl:if>
+        </xsl:element>
+      </xsl:when>
+
+      <!-- Case B: USE precedes DEF (first occurrence) — emit DEF content
+           here so DEF occupies the earliest position after the swap. -->
       <xsl:when test="$defNode
                       and not($hasEarlierUse)
                       and count(. | $defNode/preceding::*)
                           = count($defNode/preceding::*)">
         <xsl:element name="{$tagName}">
-          <xsl:copy-of  select="$defNode/@*"/>
+          <xsl:copy-of select="$defNode/@*"/>
           <xsl:apply-templates select="$defNode/node()"/>
         </xsl:element>
       </xsl:when>
 
-      <!-- Conditions not met: copy this node unchanged -->
+      <!-- Case C: identity copy -->
       <xsl:otherwise>
         <xsl:copy>
           <xsl:apply-templates select="@* | node()"/>
@@ -121,14 +156,11 @@
        3. DEF NODE TEMPLATE
        Fires for every element carrying a DEF attribute.
 
-       Emits the matching USE node content here ONLY when:
-         (a) the [1] USE partner with the same tag+value exists
-         (b) that USE partner came BEFORE this node in document order
+       When the [1] USE partner exists and precedes this DEF node
+       (Case B swap), emit the USE node's content here.
 
-       Selecting [1] automatically picks the earliest USE node so no
-       separate "is this the first?" check is required here.
-
-       Otherwise falls through to the identity copy.
+       When DEF already precedes USE (Case A), this node is copied
+       unchanged: it is already in the correct position.
        ============================================================ -->
   <xsl:template match="*[@DEF]">
     <xsl:variable name="defVal"  select="string(@DEF)"/>
@@ -141,17 +173,19 @@
 
     <xsl:choose>
 
-      <!-- USE partner exists and precedes this DEF node -->
+      <!-- USE partner exists and precedes this DEF node (Case B):
+           emit USE content here to complete the swap. -->
       <xsl:when test="$useNode
                       and count($useNode | preceding::*)
                           = count(preceding::*)">
         <xsl:element name="{$tagName}">
-          <xsl:copy-of  select="$useNode/@*"/>
+          <xsl:copy-of select="$useNode/@*"/>
           <xsl:apply-templates select="$useNode/node()"/>
         </xsl:element>
       </xsl:when>
 
-      <!-- Conditions not met: copy this node unchanged -->
+      <!-- DEF already precedes USE (Case A), or no USE partner:
+           copy unchanged. -->
       <xsl:otherwise>
         <xsl:copy>
           <xsl:apply-templates select="@* | node()"/>
