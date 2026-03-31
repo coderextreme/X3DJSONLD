@@ -9,8 +9,6 @@
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4-fix.0",
-    "browserify": "*",
-    "https-browserify": "*",
     "make-dir": "^3.1.0",
     "semver": "^7.5.3",
     "typescript": "^4.4.2"
@@ -28,7 +26,7 @@
     "express": "*",
     "gura": "^1.4.4",
     "handlebars": "^4.7.8",
-    "jsdom": "^26.1.0",
+    "jsdom": "^29.0.1",
     "make-dir": "^3.1.0",
     "mutation-observer": "*",
     "node-rest-client": "*",
@@ -45,11 +43,14 @@
     "xsd-schema-validator": "*",
     "xslt3": "*"
   },
+  "overrides": {
+    "elliptic": "file:elliptic"
+  },
   "scripts": {
     "start": "node app.js",
     "postinstall": "rem bash build.sh",
     "ajv": "bash ajv.sh",
-    "buildthreex3dloader": "browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
+    "buildthreex3dloader": "rem (create browserify, https-browserify dependencies) browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "testxxx": "web-test-runner ./dist/**/*.spec.js",
     "test": "node src/main/node/xml2all.js src/main/data/GrampsAnimations.x3d"
   }
