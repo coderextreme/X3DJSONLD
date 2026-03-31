@@ -471,3 +471,5 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"{base}/LaughingSkeleton.x3d",               "LaughingSkeleton.glb")
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
         convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
+        convert_x3d_to_glb(f"HumanoidComplete.x3d", "HumanoidComplete.glb")
+        convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
