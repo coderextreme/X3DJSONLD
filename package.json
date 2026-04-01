@@ -48,7 +48,6 @@
   },
   "scripts": {
     "start": "node app.js",
-    "postinstall": "rem bash build.sh",
     "ajv": "bash ajv.sh",
     "buildthreex3dloader": "rem (create browserify, https-browserify dependencies) browserify src/main/node/threeLoadFile.js > src/main/node/bundle.js",
     "testxxx": "web-test-runner ./dist/**/*.spec.js",
