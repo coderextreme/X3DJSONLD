@@ -1203,19 +1203,19 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "EnvironmentLight" : {
 	"ambientIntensity" : SFFloat,
 	"color" : SFColor,
-	"diffuse" : SFNode,
 	"diffuseCoefficients" : MFFloat,
 	"diffuseTexture" : SFNode,
 	"global" : SFBool,
 	"intensity" : SFFloat,
 	"IS" : SFNode,
-	"location" : SFVec3f,
 	"metadata" : SFNode,
 	"on" : SFBool,
+	"origin" : SFVec3f,
 	"rotation" : SFRotation,
 	"shadowIntensity" : SFFloat,
 	"shadows" : SFBool,
@@ -1225,6 +1225,18 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"metadata" : SFNode,
+	"global" : SFBool,
+	"on" : SFBool,
+	"color" : SFColor,
+	"intensity" : SFFloat,
+	"ambientIntensity" : SFFloat,
+	"rotation" : SFRotation,
+	"diffuseTexture" : SFNode,
+	"diffuseCoefficients" : MFFloat,
+	"specularTexture" : SFNode,
+	"shadows" : SFBool,
+	"shadowIntensity" : SFFloat,
 },
 "EspduTransform" : {
 	"addChildren" : MFNode,
@@ -1405,6 +1417,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"visibilityStart" : SFFloat,
 },
 "FogCoordinate" : {
 	"depth" : MFFloat,
@@ -1534,6 +1547,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "GeoLocation" : {
 	"addChildren" : MFNode,
@@ -1844,6 +1858,7 @@ X3dFieldTypesLookup = {
 	"style" : SFString,
 },
 "HAnimPose" : {
+	"children" : MFNode,
 	"commencePose" : SFBool,
 	"description" : SFString,
 	"enabled" : SFBool,
@@ -1939,7 +1954,6 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
-	"colorSpaceConversion" : SFBool,
 },
 "ImageTexture3D" : {
 	"autoRefresh" : SFTime,
@@ -1988,6 +2002,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "IndexedLineSet" : {
 	"attrib" : MFNode,
@@ -2007,6 +2022,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "IndexedQuadSet" : {
 	"attrib" : MFNode,
@@ -2029,6 +2045,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "IndexedTriangleFanSet" : {
 	"attrib" : MFNode,
@@ -2051,6 +2068,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "IndexedTriangleSet" : {
 	"attrib" : MFNode,
@@ -2073,6 +2091,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "IndexedTriangleStripSet" : {
 	"attrib" : MFNode,
@@ -2095,6 +2114,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "Inline" : {
 	"autoRefresh" : SFTime,
@@ -2109,6 +2129,20 @@ X3dFieldTypesLookup = {
 	"metadata" : SFNode,
 	"url" : MFString,
 	"visible" : SFBool,
+	"DEF" : SFString,
+	"USE" : SFString,
+	"class" : SFString,
+	"id" : SFString,
+	"style" : SFString,
+},
+"InlineGeometry" : {
+	"autoRefresh" : SFTime,
+	"autoRefreshTimeLimit" : SFTime,
+	"description" : SFString,
+	"IS" : SFNode,
+	"load" : SFBool,
+	"metadata" : SFNode,
+	"url" : MFString,
 	"DEF" : SFString,
 	"USE" : SFString,
 	"class" : SFString,
@@ -2196,6 +2230,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"pointerEvents" : SFBool,
 },
 "LayerSet" : {
 	"activeLayer" : SFInt32,
@@ -2258,6 +2293,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"pointerEvents" : SFBool,
 },
 "LinePickSensor" : {
 	"description" : SFString,
@@ -2307,6 +2343,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "ListenerPointSource" : {
 	"description" : SFString,
@@ -2361,6 +2398,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"visibilityStart" : SFFloat,
 },
 "LOD" : {
 	"addChildren" : MFNode,
@@ -3203,6 +3241,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "Polyline2D" : {
 	"IS" : SFNode,
@@ -3430,6 +3469,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "ReceiverPdu" : {
 	"address" : SFString,
@@ -4099,6 +4139,8 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"metadata" : SFNode,
+	"vector" : MFVec4f,
 },
 "TexCoordChaser2D" : {
 	"duration" : SFTime,
@@ -4510,6 +4552,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "TriangleSet" : {
 	"attrib" : MFNode,
@@ -4530,6 +4573,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "TriangleSet2D" : {
 	"IS" : SFNode,
@@ -4562,6 +4606,7 @@ X3dFieldTypesLookup = {
 	"class" : SFString,
 	"id" : SFString,
 	"style" : SFString,
+	"tangent" : SFNode,
 },
 "TwoSidedMaterial" : {
 	"ambientIntensity" : SFFloat,
@@ -4862,8 +4907,6 @@ X3dFieldTypesLookup = {
 "IORMaterialExtension" : {
 	"metadata" : SFNode,
 	"indexOfRefraction" : SFFloat,
-	"DEF" : SFString,
-	"USE" : SFString,
 },
 "InstancedShape" : {
 	"metadata" : SFNode,
@@ -4891,8 +4934,6 @@ X3dFieldTypesLookup = {
 	"iridescenceThicknessMaximum" : SFFloat,
 	"iridescenceThicknessTextureMapping" : SFString,
 	"iridescenceThicknessTexture" : SFNode,
-	"DEF" : SFString,
-	"USE" : SFString,
 },
 "SheenMaterialExtension" : {
 	"metadata" : SFNode,
@@ -4930,6 +4971,7 @@ X3dFieldTypesLookup = {
 	"specularTextureMapping" : SFString,
 	"specularTexture" : SFNode,
 	"specularColor" : SFColor,
+	"specularStrength" : SFFloat,
 	"specularColorTextureMapping" : SFString,
 	"specularColorTexture" : SFNode,
 },
@@ -4947,6 +4989,13 @@ X3dFieldTypesLookup = {
 	"attenuationDistance" : SFFloat,
 	"attenuationColor" : SFColor,
 },
+"VolumeScatterMaterialExtension" : {
+	"metadata" : SFNode,
+	"multiscatterColor" : SFColor,
+	"multiscatterColorTextureMapping" : SFString,
+	"multiscatterColorTexture" : SFNode,
+	"scatterAnisotropy" : SFFloat,
+},
 "DiffuseTransmissionMaterialExtension" : {
 	"metadata" : SFNode,
 	"diffuseTransmission" : SFFloat,
@@ -4955,6 +5004,26 @@ X3dFieldTypesLookup = {
 	"diffuseTransmissionColor" : SFColor,
 	"diffuseTransmissionColorTextureMapping" : SFString,
 	"diffuseTransmissionColorTexture" : SFNode,
+},
+"RenderedTexture" : {
+	"description" : SFString,
+	"IS" : SFNode,
+	"metadata" : SFNode,
+	"repeatS" : SFBool,
+	"repeatT" : SFBool,
+	"textureProperties" : SFNode,
+	"DEF" : SFString,
+	"USE" : SFString,
+	"class" : SFString,
+	"id" : SFString,
+	"style" : SFString,
+	"update" : SFString,
+	"dimensions" : MFInt32,
+	"depthMap" : SFBool,
+	"background" : SFNode,
+	"fog" : SFNode,
+	"viewpoint" : SFNode,
+	"scene" : SFNode,
 },
 "component" : {
 	"class" : SFString,

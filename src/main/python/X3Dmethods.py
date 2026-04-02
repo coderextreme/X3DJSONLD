@@ -1104,19 +1104,19 @@ X3dMethodLookup = {
 	"class" : ElevationGrid.class_,
 	"id" : ElevationGrid.id_,
 	"style" : ElevationGrid.style_,
+	"tangent" : ElevationGrid.tangent,
 },
 "EnvironmentLight" : {
 	"ambientIntensity" : EnvironmentLight.ambientIntensity,
 	"color" : EnvironmentLight.color,
-	"diffuse" : EnvironmentLight.diffuse,
 	"diffuseCoefficients" : EnvironmentLight.diffuseCoefficients,
 	"diffuseTexture" : EnvironmentLight.diffuseTexture,
 	"global" : EnvironmentLight.global_,
 	"intensity" : EnvironmentLight.intensity,
 	"IS" : EnvironmentLight.IS,
-	"location" : EnvironmentLight.location,
 	"metadata" : EnvironmentLight.metadata,
 	"on" : EnvironmentLight.on,
+	"origin" : EnvironmentLight.origin,
 	"rotation" : EnvironmentLight.rotation,
 	"shadowIntensity" : EnvironmentLight.shadowIntensity,
 	"shadows" : EnvironmentLight.shadows,
@@ -1126,6 +1126,18 @@ X3dMethodLookup = {
 	"class" : EnvironmentLight.class_,
 	"id" : EnvironmentLight.id_,
 	"style" : EnvironmentLight.style_,
+	"metadata" : EnvironmentLight.metadata,
+	"global" : EnvironmentLight.global_,
+	"on" : EnvironmentLight.on,
+	"color" : EnvironmentLight.color,
+	"intensity" : EnvironmentLight.intensity,
+	"ambientIntensity" : EnvironmentLight.ambientIntensity,
+	"rotation" : EnvironmentLight.rotation,
+	"diffuseTexture" : EnvironmentLight.diffuseTexture,
+	"diffuseCoefficients" : EnvironmentLight.diffuseCoefficients,
+	"specularTexture" : EnvironmentLight.specularTexture,
+	"shadows" : EnvironmentLight.shadows,
+	"shadowIntensity" : EnvironmentLight.shadowIntensity,
 },
 "EspduTransform" : {
 	"addChildren" : EspduTransform.children,
@@ -1272,6 +1284,7 @@ X3dMethodLookup = {
 	"class" : Fog.class_,
 	"id" : Fog.id_,
 	"style" : Fog.style_,
+	"visibilityStart" : Fog.visibilityStart,
 },
 "FogCoordinate" : {
 	"depth" : FogCoordinate.depth,
@@ -1396,6 +1409,7 @@ X3dMethodLookup = {
 	"class" : GeoElevationGrid.class_,
 	"id" : GeoElevationGrid.id_,
 	"style" : GeoElevationGrid.style_,
+	"tangent" : GeoElevationGrid.tangent,
 },
 "GeoLocation" : {
 	"addChildren" : GeoLocation.children,
@@ -1679,6 +1693,7 @@ X3dMethodLookup = {
 	"style" : HAnimMotion.style_,
 },
 "HAnimPose" : {
+	"children" : HAnimPose.children,
 	"commencePose" : HAnimPose.commencePose,
 	"description" : HAnimPose.description,
 	"enabled" : HAnimPose.enabled,
@@ -1771,7 +1786,6 @@ X3dMethodLookup = {
 	"class" : ImageTexture.class_,
 	"id" : ImageTexture.id_,
 	"style" : ImageTexture.style_,
-	"colorSpaceConversion" : ImageTexture.colorSpaceConversion,
 },
 "ImageTexture3D" : {
 	"autoRefresh" : ImageTexture3D.autoRefresh,
@@ -1816,6 +1830,7 @@ X3dMethodLookup = {
 	"class" : IndexedFaceSet.class_,
 	"id" : IndexedFaceSet.id_,
 	"style" : IndexedFaceSet.style_,
+	"tangent" : IndexedFaceSet.tangent,
 },
 "IndexedLineSet" : {
 	"attrib" : IndexedLineSet.attrib,
@@ -1833,6 +1848,7 @@ X3dMethodLookup = {
 	"class" : IndexedLineSet.class_,
 	"id" : IndexedLineSet.id_,
 	"style" : IndexedLineSet.style_,
+	"tangent" : IndexedLineSet.tangent,
 },
 "IndexedQuadSet" : {
 	"attrib" : IndexedQuadSet.attrib,
@@ -1854,6 +1870,7 @@ X3dMethodLookup = {
 	"class" : IndexedQuadSet.class_,
 	"id" : IndexedQuadSet.id_,
 	"style" : IndexedQuadSet.style_,
+	"tangent" : IndexedQuadSet.tangent,
 },
 "IndexedTriangleFanSet" : {
 	"attrib" : IndexedTriangleFanSet.attrib,
@@ -1875,6 +1892,7 @@ X3dMethodLookup = {
 	"class" : IndexedTriangleFanSet.class_,
 	"id" : IndexedTriangleFanSet.id_,
 	"style" : IndexedTriangleFanSet.style_,
+	"tangent" : IndexedTriangleFanSet.tangent,
 },
 "IndexedTriangleSet" : {
 	"attrib" : IndexedTriangleSet.attrib,
@@ -1896,6 +1914,7 @@ X3dMethodLookup = {
 	"class" : IndexedTriangleSet.class_,
 	"id" : IndexedTriangleSet.id_,
 	"style" : IndexedTriangleSet.style_,
+	"tangent" : IndexedTriangleSet.tangent,
 },
 "IndexedTriangleStripSet" : {
 	"attrib" : IndexedTriangleStripSet.attrib,
@@ -1917,6 +1936,7 @@ X3dMethodLookup = {
 	"class" : IndexedTriangleStripSet.class_,
 	"id" : IndexedTriangleStripSet.id_,
 	"style" : IndexedTriangleStripSet.style_,
+	"tangent" : IndexedTriangleStripSet.tangent,
 },
 "Inline" : {
 	"autoRefresh" : Inline.autoRefresh,
@@ -1936,6 +1956,20 @@ X3dMethodLookup = {
 	"class" : Inline.class_,
 	"id" : Inline.id_,
 	"style" : Inline.style_,
+},
+"InlineGeometry" : {
+	"autoRefresh" : InlineGeometry.autoRefresh,
+	"autoRefreshTimeLimit" : InlineGeometry.autoRefreshTimeLimit,
+	"description" : InlineGeometry.description,
+	"IS" : InlineGeometry.IS,
+	"load" : InlineGeometry.load,
+	"metadata" : InlineGeometry.metadata,
+	"url" : InlineGeometry.url,
+	"DEF" : InlineGeometry.DEF,
+	"USE" : InlineGeometry.USE,
+	"class" : InlineGeometry.class_,
+	"id" : InlineGeometry.id_,
+	"style" : InlineGeometry.style_,
 },
 "IntegerSequencer" : {
 	"IS" : IntegerSequencer.IS,
@@ -2004,6 +2038,7 @@ X3dMethodLookup = {
 	"class" : Layer.class_,
 	"id" : Layer.id_,
 	"style" : Layer.style_,
+	"pointerEvents" : Layer.pointerEvents,
 },
 "LayerSet" : {
 	"activeLayer" : LayerSet.activeLayer,
@@ -2066,6 +2101,7 @@ X3dMethodLookup = {
 	"class" : LayoutLayer.class_,
 	"id" : LayoutLayer.id_,
 	"style" : LayoutLayer.style_,
+	"pointerEvents" : LayoutLayer.pointerEvents,
 },
 "LinePickSensor" : {
 	"description" : LinePickSensor.description,
@@ -2110,6 +2146,7 @@ X3dMethodLookup = {
 	"class" : LineSet.class_,
 	"id" : LineSet.id_,
 	"style" : LineSet.style_,
+	"tangent" : LineSet.tangent,
 },
 "ListenerPointSource" : {
 	"description" : ListenerPointSource.description,
@@ -2157,6 +2194,7 @@ X3dMethodLookup = {
 	"class" : LocalFog.class_,
 	"id" : LocalFog.id_,
 	"style" : LocalFog.style_,
+	"visibilityStart" : LocalFog.visibilityStart,
 },
 "LOD" : {
 	"addChildren" : LOD.children,
@@ -2945,6 +2983,7 @@ X3dMethodLookup = {
 	"class" : PointSet.class_,
 	"id" : PointSet.id_,
 	"style" : PointSet.style_,
+	"tangent" : PointSet.tangent,
 },
 "Polyline2D" : {
 	"IS" : Polyline2D.IS,
@@ -3140,6 +3179,7 @@ X3dMethodLookup = {
 	"class" : QuadSet.class_,
 	"id" : QuadSet.id_,
 	"style" : QuadSet.style_,
+	"tangent" : QuadSet.tangent,
 },
 "ReceiverPdu" : {
 	"address" : ReceiverPdu.address,
@@ -3760,6 +3800,8 @@ X3dMethodLookup = {
 	"class" : Tangent.class_,
 	"id" : Tangent.id_,
 	"style" : Tangent.style_,
+	"metadata" : Tangent.metadata,
+	"vector" : Tangent.vector,
 },
 "TexCoordChaser2D" : {
 	"duration" : TexCoordChaser2D.duration,
@@ -4130,6 +4172,7 @@ X3dMethodLookup = {
 	"class" : TriangleFanSet.class_,
 	"id" : TriangleFanSet.id_,
 	"style" : TriangleFanSet.style_,
+	"tangent" : TriangleFanSet.tangent,
 },
 "TriangleSet" : {
 	"attrib" : TriangleSet.attrib,
@@ -4150,6 +4193,7 @@ X3dMethodLookup = {
 	"class" : TriangleSet.class_,
 	"id" : TriangleSet.id_,
 	"style" : TriangleSet.style_,
+	"tangent" : TriangleSet.tangent,
 },
 "TriangleSet2D" : {
 	"IS" : TriangleSet2D.IS,
@@ -4182,6 +4226,7 @@ X3dMethodLookup = {
 	"class" : TriangleStripSet.class_,
 	"id" : TriangleStripSet.id_,
 	"style" : TriangleStripSet.style_,
+	"tangent" : TriangleStripSet.tangent,
 },
 "TwoSidedMaterial" : {
 	"ambientIntensity" : TwoSidedMaterial.ambientIntensity,
@@ -4465,8 +4510,6 @@ X3dMethodLookup = {
 "IORMaterialExtension" : {
 	"metadata" : IORMaterialExtension.metadata,
 	"indexOfRefraction" : IORMaterialExtension.indexOfRefraction,
-	"DEF" : IORMaterialExtension.DEF,
-	"USE" : IORMaterialExtension.USE,
 },
 "InstancedShape" : {
 	"metadata" : InstancedShape.metadata,
@@ -4494,8 +4537,6 @@ X3dMethodLookup = {
 	"iridescenceThicknessMaximum" : IridescenceMaterialExtension.iridescenceThicknessMaximum,
 	"iridescenceThicknessTextureMapping" : IridescenceMaterialExtension.iridescenceThicknessTextureMapping,
 	"iridescenceThicknessTexture" : IridescenceMaterialExtension.iridescenceThicknessTexture,
-	"DEF" : IridescenceMaterialExtension.DEF,
-	"USE" : IridescenceMaterialExtension.USE,
 },
 "SheenMaterialExtension" : {
 	"metadata" : SheenMaterialExtension.metadata,
@@ -4533,6 +4574,7 @@ X3dMethodLookup = {
 	"specularTextureMapping" : SpecularMaterialExtension.specularTextureMapping,
 	"specularTexture" : SpecularMaterialExtension.specularTexture,
 	"specularColor" : SpecularMaterialExtension.specularColor,
+	"specularStrength" : SpecularMaterialExtension.specularStrength,
 	"specularColorTextureMapping" : SpecularMaterialExtension.specularColorTextureMapping,
 	"specularColorTexture" : SpecularMaterialExtension.specularColorTexture,
 },
@@ -4550,6 +4592,13 @@ X3dMethodLookup = {
 	"attenuationDistance" : VolumeMaterialExtension.attenuationDistance,
 	"attenuationColor" : VolumeMaterialExtension.attenuationColor,
 },
+"VolumeScatterMaterialExtension" : {
+	"metadata" : VolumeScatterMaterialExtension.metadata,
+	"multiscatterColor" : VolumeScatterMaterialExtension.multiscatterColor,
+	"multiscatterColorTextureMapping" : VolumeScatterMaterialExtension.multiscatterColorTextureMapping,
+	"multiscatterColorTexture" : VolumeScatterMaterialExtension.multiscatterColorTexture,
+	"scatterAnisotropy" : VolumeScatterMaterialExtension.scatterAnisotropy,
+},
 "DiffuseTransmissionMaterialExtension" : {
 	"metadata" : DiffuseTransmissionMaterialExtension.metadata,
 	"diffuseTransmission" : DiffuseTransmissionMaterialExtension.diffuseTransmission,
@@ -4558,6 +4607,26 @@ X3dMethodLookup = {
 	"diffuseTransmissionColor" : DiffuseTransmissionMaterialExtension.diffuseTransmissionColor,
 	"diffuseTransmissionColorTextureMapping" : DiffuseTransmissionMaterialExtension.diffuseTransmissionColorTextureMapping,
 	"diffuseTransmissionColorTexture" : DiffuseTransmissionMaterialExtension.diffuseTransmissionColorTexture,
+},
+"RenderedTexture" : {
+	"description" : RenderedTexture.description,
+	"IS" : RenderedTexture.IS,
+	"metadata" : RenderedTexture.metadata,
+	"repeatS" : RenderedTexture.repeatS,
+	"repeatT" : RenderedTexture.repeatT,
+	"textureProperties" : RenderedTexture.textureProperties,
+	"DEF" : RenderedTexture.DEF,
+	"USE" : RenderedTexture.USE,
+	"class" : RenderedTexture.class_,
+	"id" : RenderedTexture.id_,
+	"style" : RenderedTexture.style_,
+	"update" : RenderedTexture.update,
+	"dimensions" : RenderedTexture.dimensions,
+	"depthMap" : RenderedTexture.depthMap,
+	"background" : RenderedTexture.background,
+	"fog" : RenderedTexture.fog,
+	"viewpoint" : RenderedTexture.viewpoint,
+	"scene" : RenderedTexture.scene,
 },
 "component" : {
 	"class" : component.class_,

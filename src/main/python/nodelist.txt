@@ -56,6 +56,7 @@ X3DSoundNode
 X3DSoundProcessingNode
 X3DSoundSourceNode
 X3DStatement
+X3DTangentNode
 X3DTexture2DNode
 X3DTexture3DNode
 X3DTextureCoordinateNode
@@ -71,8 +72,8 @@ X3DViewportNode
 X3DVolumeDataNode
 X3DVolumeRenderStyleNode
 X3DMaterialExtensionNode
-X3DBoundedObject
 X3DFogObject
+X3DBoundedObject
 X3DMetadataObject
 X3DPickableObject
 X3DProgrammableShaderObject
@@ -147,6 +148,7 @@ DynamicsCompressor
 EaseInEaseOut
 EdgeEnhancementVolumeStyle
 ElevationGrid
+EnvironmentLight
 EspduTransform
 ExplosionEmitter
 Extrusion
@@ -154,6 +156,7 @@ FillProperties
 FloatVertexAttribute
 Fog
 FogCoordinate
+FontLibrary
 FontStyle
 ForcePhysicsModel
 Gain
@@ -174,6 +177,7 @@ HAnimDisplacer
 HAnimHumanoid
 HAnimJoint
 HAnimMotion
+HAnimPose
 HAnimSegment
 HAnimSite
 ImageCubeMapTexture
@@ -186,6 +190,7 @@ IndexedTriangleFanSet
 IndexedTriangleSet
 IndexedTriangleStripSet
 Inline
+InlineGeometry
 IntegerSequencer
 IntegerTrigger
 IsoSurfaceVolumeData
@@ -299,6 +304,7 @@ StreamAudioSource
 StringSensor
 SurfaceEmitter
 Switch
+Tangent
 TexCoordChaser2D
 TexCoordDamper2D
 Text
@@ -337,8 +343,6 @@ VolumePickSensor
 WaveShaper
 WindPhysicsModel
 WorldInfo
-EnvironmentLight
-Tangent
 ImageTextureAtlas
 AnisotropyMaterialExtension
 BlendMode
@@ -354,7 +358,9 @@ SpecularGlossinessMaterial
 SpecularMaterialExtension
 TransmissionMaterialExtension
 VolumeMaterialExtension
+VolumeScatterMaterialExtension
 DiffuseTransmissionMaterialExtension
+RenderedTexture
 component
 connect
 EXPORT

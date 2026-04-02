@@ -1203,19 +1203,19 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "EnvironmentLight" : {
 	"ambientIntensity" : "inputOutput",
 	"color" : "inputOutput",
-	"diffuse" : "inputOutput",
 	"diffuseCoefficients" : "inputOutput",
 	"diffuseTexture" : "inputOutput",
 	"global" : "inputOutput",
 	"intensity" : "inputOutput",
 	"IS" : "inputOutput",
-	"location" : "inputOutput",
 	"metadata" : "inputOutput",
 	"on" : "inputOutput",
+	"origin" : "inputOutput",
 	"rotation" : "inputOutput",
 	"shadowIntensity" : "inputOutput",
 	"shadows" : "inputOutput",
@@ -1225,6 +1225,18 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"metadata" : "inputOutput",
+	"global" : "inputOutput",
+	"on" : "inputOutput",
+	"color" : "inputOutput",
+	"intensity" : "inputOutput",
+	"ambientIntensity" : "inputOutput",
+	"rotation" : "inputOutput",
+	"diffuseTexture" : "inputOutput",
+	"diffuseCoefficients" : "inputOutput",
+	"specularTexture" : "inputOutput",
+	"shadows" : "inputOutput",
+	"shadowIntensity" : "inputOutput",
 },
 "EspduTransform" : {
 	"addChildren" : "inputOnly",
@@ -1405,6 +1417,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"visibilityStart" : "inputOutput",
 },
 "FogCoordinate" : {
 	"depth" : "inputOutput",
@@ -1534,6 +1547,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "GeoLocation" : {
 	"addChildren" : "inputOnly",
@@ -1844,6 +1858,7 @@ X3dAccessTypesLookup = {
 	"style" : "inputOutput",
 },
 "HAnimPose" : {
+	"children" : "inputOutput",
 	"commencePose" : "inputOnly",
 	"description" : "inputOutput",
 	"enabled" : "inputOutput",
@@ -1939,7 +1954,6 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
-	"colorSpaceConversion" : "inputOutput",
 },
 "ImageTexture3D" : {
 	"autoRefresh" : "inputOutput",
@@ -1988,6 +2002,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "IndexedLineSet" : {
 	"attrib" : "inputOutput",
@@ -2007,6 +2022,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "IndexedQuadSet" : {
 	"attrib" : "inputOutput",
@@ -2029,6 +2045,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "IndexedTriangleFanSet" : {
 	"attrib" : "inputOutput",
@@ -2051,6 +2068,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "IndexedTriangleSet" : {
 	"attrib" : "inputOutput",
@@ -2073,6 +2091,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "IndexedTriangleStripSet" : {
 	"attrib" : "inputOutput",
@@ -2095,6 +2114,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "Inline" : {
 	"autoRefresh" : "inputOutput",
@@ -2109,6 +2129,20 @@ X3dAccessTypesLookup = {
 	"metadata" : "inputOutput",
 	"url" : "inputOutput",
 	"visible" : "inputOutput",
+	"DEF" : "inputOutput",
+	"USE" : "inputOutput",
+	"class" : "inputOutput",
+	"id" : "inputOutput",
+	"style" : "inputOutput",
+},
+"InlineGeometry" : {
+	"autoRefresh" : "inputOutput",
+	"autoRefreshTimeLimit" : "inputOutput",
+	"description" : "inputOutput",
+	"IS" : "inputOutput",
+	"load" : "inputOutput",
+	"metadata" : "inputOutput",
+	"url" : "inputOutput",
 	"DEF" : "inputOutput",
 	"USE" : "inputOutput",
 	"class" : "inputOutput",
@@ -2196,6 +2230,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"pointerEvents" : "inputOutput",
 },
 "LayerSet" : {
 	"activeLayer" : "inputOutput",
@@ -2258,6 +2293,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"pointerEvents" : "inputOutput",
 },
 "LinePickSensor" : {
 	"description" : "inputOutput",
@@ -2307,6 +2343,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "ListenerPointSource" : {
 	"description" : "inputOutput",
@@ -2361,6 +2398,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"visibilityStart" : "inputOutput",
 },
 "LOD" : {
 	"addChildren" : "inputOnly",
@@ -3203,6 +3241,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "Polyline2D" : {
 	"IS" : "inputOutput",
@@ -3430,6 +3469,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "ReceiverPdu" : {
 	"address" : "inputOutput",
@@ -4099,6 +4139,8 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"metadata" : "inputOutput",
+	"vector" : "inputOutput",
 },
 "TexCoordChaser2D" : {
 	"duration" : "initializeOnly",
@@ -4510,6 +4552,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "TriangleSet" : {
 	"attrib" : "inputOutput",
@@ -4530,6 +4573,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "TriangleSet2D" : {
 	"IS" : "inputOutput",
@@ -4562,6 +4606,7 @@ X3dAccessTypesLookup = {
 	"class" : "inputOutput",
 	"id" : "inputOutput",
 	"style" : "inputOutput",
+	"tangent" : "inputOutput",
 },
 "TwoSidedMaterial" : {
 	"ambientIntensity" : "inputOutput",
@@ -4862,8 +4907,6 @@ X3dAccessTypesLookup = {
 "IORMaterialExtension" : {
 	"metadata" : "inputOutput",
 	"indexOfRefraction" : "inputOutput",
-	"DEF" : "inputOutput",
-	"USE" : "inputOutput",
 },
 "InstancedShape" : {
 	"metadata" : "inputOutput",
@@ -4891,8 +4934,6 @@ X3dAccessTypesLookup = {
 	"iridescenceThicknessMaximum" : "inputOutput",
 	"iridescenceThicknessTextureMapping" : "inputOutput",
 	"iridescenceThicknessTexture" : "inputOutput",
-	"DEF" : "inputOutput",
-	"USE" : "inputOutput",
 },
 "SheenMaterialExtension" : {
 	"metadata" : "inputOutput",
@@ -4930,6 +4971,7 @@ X3dAccessTypesLookup = {
 	"specularTextureMapping" : "inputOutput",
 	"specularTexture" : "inputOutput",
 	"specularColor" : "inputOutput",
+	"specularStrength" : "inputOutput",
 	"specularColorTextureMapping" : "inputOutput",
 	"specularColorTexture" : "inputOutput",
 },
@@ -4947,6 +4989,13 @@ X3dAccessTypesLookup = {
 	"attenuationDistance" : "inputOutput",
 	"attenuationColor" : "inputOutput",
 },
+"VolumeScatterMaterialExtension" : {
+	"metadata" : "inputOutput",
+	"multiscatterColor" : "inputOutput",
+	"multiscatterColorTextureMapping" : "inputOutput",
+	"multiscatterColorTexture" : "inputOutput",
+	"scatterAnisotropy" : "inputOutput",
+},
 "DiffuseTransmissionMaterialExtension" : {
 	"metadata" : "inputOutput",
 	"diffuseTransmission" : "inputOutput",
@@ -4955,6 +5004,26 @@ X3dAccessTypesLookup = {
 	"diffuseTransmissionColor" : "inputOutput",
 	"diffuseTransmissionColorTextureMapping" : "inputOutput",
 	"diffuseTransmissionColorTexture" : "inputOutput",
+},
+"RenderedTexture" : {
+	"description" : "inputOutput",
+	"IS" : "inputOutput",
+	"metadata" : "inputOutput",
+	"repeatS" : "initializeOnly",
+	"repeatT" : "initializeOnly",
+	"textureProperties" : "initializeOnly",
+	"DEF" : "inputOutput",
+	"USE" : "inputOutput",
+	"class" : "inputOutput",
+	"id" : "inputOutput",
+	"style" : "inputOutput",
+	"update" : "inputOutput",
+	"dimensions" : "inputOutput",
+	"depthMap" : "initializeOnly",
+	"background" : "inputOutput",
+	"fog" : "inputOutput",
+	"viewpoint" : "inputOutput",
+	"scene" : "inputOutput",
 },
 "component" : {
 	"class" : "inputOutput",
