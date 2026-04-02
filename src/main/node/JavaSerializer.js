@@ -46,6 +46,7 @@ JavaSerializer.prototype = {
 			str += "import org.web3d.x3d.jsail.Geospatial.*;\n";
 			str += "import org.web3d.x3d.jsail.Grouping.*;\n";
 			str += "import org.web3d.x3d.jsail.HAnim.*;\n";
+			str += "import org.web3d.x3d.jsail.Interpolation.OrientationInterpolator;\n";
 			str += "import org.web3d.x3d.jsail.Interpolation.*;\n";
 			str += "import org.web3d.x3d.jsail.KeyDeviceSensor.*;\n";
 			str += "import org.web3d.x3d.jsail.Layering.*;\n";
