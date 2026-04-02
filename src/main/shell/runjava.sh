@@ -21,6 +21,10 @@ OVERWRITE=---overwrite
 LOCALTOROOT='s/^\.\.\/x3d-code/\/c\/x3d-code/'
 ROOTTOLOCAL='s/www.web3d.org/www_web3d_org/' 
 
+pushd ../java
+javac -cp ${CLASSPATH} -proc:full net/coderextreme/RunSaxon.java net/coderextreme/X3DRoots.java
+popd
+
 function mydirname {
 	#echo DIR OF "$1"
 	dir=`echo "$1" | sed 's/^"*\(.*\)\/[^\/]*"*$/\1/'`

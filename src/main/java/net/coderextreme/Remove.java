@@ -1,8 +1,9 @@
-package net.coderextreme;
+package net.coderextreme.remove;
 
 import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.stream.Collectors;
 import java.util.List;
 import org.web3d.x3d.jsail.fields.MFNode;
 import org.web3d.x3d.jsail.fields.SFNode;
@@ -64,6 +65,7 @@ import org.web3d.x3d.sai.Sound.X3DSoundNode;
 import org.web3d.x3d.sai.Sound.X3DSoundProcessingNode;
 import org.web3d.x3d.sai.Sound.X3DSoundSourceNode;
 import org.web3d.x3d.sai.Core.X3DStatement;
+import org.web3d.x3d.sai.Rendering.X3DTangentNode;
 import org.web3d.x3d.sai.Texturing.X3DTexture2DNode;
 import org.web3d.x3d.sai.Texturing3D.X3DTexture3DNode;
 import org.web3d.x3d.sai.Texturing.X3DTextureCoordinateNode;
@@ -78,6 +80,8 @@ import org.web3d.x3d.sai.Navigation.X3DViewpointNode;
 import org.web3d.x3d.sai.Layering.X3DViewportNode;
 import org.web3d.x3d.sai.VolumeRendering.X3DVolumeDataNode;
 import org.web3d.x3d.sai.VolumeRendering.X3DVolumeRenderStyleNode;
+import org.web3d.x3d.sai.X_ITE.X3DMaterialExtensionNode;
+import org.web3d.x3d.sai.fields.X3DFogObject;
 import org.web3d.x3d.sai.Grouping.X3DBoundedObject;
 import org.web3d.x3d.sai.EnvironmentalEffects.X3DFogObject;
 import org.web3d.x3d.sai.Core.X3DMetadataObject;
@@ -154,6 +158,7 @@ import org.web3d.x3d.jsail.Sound.DynamicsCompressor;
 import org.web3d.x3d.jsail.Interpolation.EaseInEaseOut;
 import org.web3d.x3d.jsail.VolumeRendering.EdgeEnhancementVolumeStyle;
 import org.web3d.x3d.jsail.Geometry3D.ElevationGrid;
+import org.web3d.x3d.jsail.Lighting.EnvironmentLight;
 import org.web3d.x3d.jsail.DIS.EspduTransform;
 import org.web3d.x3d.jsail.ParticleSystems.ExplosionEmitter;
 import org.web3d.x3d.jsail.Geometry3D.Extrusion;
@@ -161,6 +166,7 @@ import org.web3d.x3d.jsail.Shape.FillProperties;
 import org.web3d.x3d.jsail.Shaders.FloatVertexAttribute;
 import org.web3d.x3d.jsail.EnvironmentalEffects.Fog;
 import org.web3d.x3d.jsail.EnvironmentalEffects.FogCoordinate;
+import org.web3d.x3d.jsail.Text.FontLibrary;
 import org.web3d.x3d.jsail.Text.FontStyle;
 import org.web3d.x3d.jsail.ParticleSystems.ForcePhysicsModel;
 import org.web3d.x3d.jsail.Sound.Gain;
@@ -181,6 +187,7 @@ import org.web3d.x3d.jsail.HAnim.HAnimDisplacer;
 import org.web3d.x3d.jsail.HAnim.HAnimHumanoid;
 import org.web3d.x3d.jsail.HAnim.HAnimJoint;
 import org.web3d.x3d.jsail.HAnim.HAnimMotion;
+import org.web3d.x3d.jsail.HAnim.HAnimPose;
 import org.web3d.x3d.jsail.HAnim.HAnimSegment;
 import org.web3d.x3d.jsail.HAnim.HAnimSite;
 import org.web3d.x3d.jsail.CubeMapTexturing.ImageCubeMapTexture;
@@ -193,6 +200,7 @@ import org.web3d.x3d.jsail.Rendering.IndexedTriangleFanSet;
 import org.web3d.x3d.jsail.Rendering.IndexedTriangleSet;
 import org.web3d.x3d.jsail.Rendering.IndexedTriangleStripSet;
 import org.web3d.x3d.jsail.Networking.Inline;
+import org.web3d.x3d.jsail.Networking.InlineGeometry;
 import org.web3d.x3d.jsail.EventUtilities.IntegerSequencer;
 import org.web3d.x3d.jsail.EventUtilities.IntegerTrigger;
 import org.web3d.x3d.jsail.VolumeRendering.IsoSurfaceVolumeData;
@@ -306,6 +314,7 @@ import org.web3d.x3d.jsail.Sound.StreamAudioSource;
 import org.web3d.x3d.jsail.KeyDeviceSensor.StringSensor;
 import org.web3d.x3d.jsail.ParticleSystems.SurfaceEmitter;
 import org.web3d.x3d.jsail.Grouping.Switch;
+import org.web3d.x3d.jsail.Rendering.Tangent;
 import org.web3d.x3d.jsail.Followers.TexCoordChaser2D;
 import org.web3d.x3d.jsail.Followers.TexCoordDamper2D;
 import org.web3d.x3d.jsail.Text.Text;
@@ -334,7 +343,6 @@ import org.web3d.x3d.jsail.Rendering.TriangleStripSet;
 import org.web3d.x3d.jsail.Shape.TwoSidedMaterial;
 import org.web3d.x3d.jsail.RigidBodyPhysics.UniversalJoint;
 import org.web3d.x3d.jsail.Shape.UnlitMaterial;
-import org.web3d.x3d.jsail.ParticleSystems.VariationPhysicsModel;
 import org.web3d.x3d.jsail.Navigation.Viewpoint;
 import org.web3d.x3d.jsail.Navigation.ViewpointGroup;
 import org.web3d.x3d.jsail.Layering.Viewport;
@@ -345,6 +353,24 @@ import org.web3d.x3d.jsail.Picking.VolumePickSensor;
 import org.web3d.x3d.jsail.Sound.WaveShaper;
 import org.web3d.x3d.jsail.ParticleSystems.WindPhysicsModel;
 import org.web3d.x3d.jsail.Core.WorldInfo;
+import org.web3d.x3d.jsail.Texturing3D.ImageTextureAtlas;
+import org.web3d.x3d.jsail.X_ITE.AnisotropyMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.BlendMode;
+import org.web3d.x3d.jsail.X_ITE.ClearcoatMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.DepthMode;
+import org.web3d.x3d.jsail.X_ITE.DispersionMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.EmissiveStrengthMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.IORMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.InstancedShape;
+import org.web3d.x3d.jsail.X_ITE.IridescenceMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.SheenMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.SpecularGlossinessMaterial;
+import org.web3d.x3d.jsail.X_ITE.SpecularMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.TransmissionMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.VolumeMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.VolumeScatterMaterialExtension;
+import org.web3d.x3d.jsail.X_ITE.DiffuseTransmissionMaterialExtension;
+import org.web3d.x3d.jsail.Texturing.RenderedTexture;
 import org.web3d.x3d.jsail.Core.component;
 import org.web3d.x3d.jsail.Core.connect;
 import org.web3d.x3d.jsail.Networking.EXPORT;
@@ -710,6 +736,8 @@ case NewElevationGrid obj -> {
 		obj.setAttrib(leftOver);
 	}
 }
+case NewEnvironmentLight obj -> {
+}
 case NewEspduTransform obj -> {
 	{
 		X3DNode[] children = obj.getChildren();
@@ -730,6 +758,8 @@ case NewFloatVertexAttribute obj -> {
 case NewFog obj -> {
 }
 case NewFogCoordinate obj -> {
+}
+case NewFontLibrary obj -> {
 }
 case NewFontStyle obj -> {
 }
@@ -812,6 +842,13 @@ case NewHAnimDisplacer obj -> {
 }
 case NewHAnimHumanoid obj -> {
 	{
+		HAnimPose children = obj.getChildren();
+		HAnimPose leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		HAnimPose leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
+		obj.setChildren(leftOver);
+	}
+	{
 		X3DNode[] children = obj.getJoints();
 		X3DNode[] leftOverJoints = this.removeChildren(children, toRemove);
 		obj.setJoints(leftOverJoints);
@@ -878,6 +915,15 @@ case NewHAnimJoint obj -> {
 	}
 }
 case NewHAnimMotion obj -> {
+}
+case NewHAnimPose obj -> {
+	{
+		X3DNode[] children = obj.getChildren();
+		X3DNode[] leftOverChildren = this.removeChildren(children, toRemove);
+		obj.setChildren(leftOverChildren);
+		X3DNode[] leftOver = obj.removeSelectedChildren(leftOverChildren, toRemove);
+		obj.setChildren(leftOver);
+	}
 }
 case NewHAnimSegment obj -> {
 	{
@@ -965,6 +1011,8 @@ case NewIndexedTriangleStripSet obj -> {
 	}
 }
 case NewInline obj -> {
+}
+case NewInlineGeometry obj -> {
 }
 case NewIntegerSequencer obj -> {
 }
@@ -1197,6 +1245,13 @@ case NewParticleSystem obj -> {
 case NewPeriodicWave obj -> {
 }
 case NewPhysicalMaterial obj -> {
+	{
+		X3DMaterialExtensionNode children = obj.getExtensions();
+		X3DMaterialExtensionNode leftOverExtensions = this.removeChildren(children, toRemove);
+		obj.setExtensions(leftOverExtensions);
+		X3DMaterialExtensionNode leftOver = obj.removeSelectedExtensions(leftOverExtensions, toRemove);
+		obj.setExtensions(leftOver);
+	}
 }
 case NewPickableGroup obj -> {
 	{
@@ -1446,6 +1501,8 @@ case NewSwitch obj -> {
 		obj.setChildren(leftOver);
 	}
 }
+case NewTangent obj -> {
+}
 case NewTexCoordChaser2D obj -> {
 }
 case NewTexCoordDamper2D obj -> {
@@ -1530,8 +1587,6 @@ case NewUniversalJoint obj -> {
 }
 case NewUnlitMaterial obj -> {
 }
-case NewVariationPhysicsModel obj -> {
-}
 case NewViewpoint obj -> {
 }
 case NewViewpointGroup obj -> {
@@ -1582,6 +1637,49 @@ case NewWaveShaper obj -> {
 case NewWindPhysicsModel obj -> {
 }
 case NewWorldInfo obj -> {
+}
+case NewImageTextureAtlas obj -> {
+}
+case NewAnisotropyMaterialExtension obj -> {
+}
+case NewBlendMode obj -> {
+}
+case NewClearcoatMaterialExtension obj -> {
+}
+case NewDepthMode obj -> {
+}
+case NewDispersionMaterialExtension obj -> {
+}
+case NewEmissiveStrengthMaterialExtension obj -> {
+}
+case NewIORMaterialExtension obj -> {
+}
+case NewInstancedShape obj -> {
+}
+case NewIridescenceMaterialExtension obj -> {
+}
+case NewSheenMaterialExtension obj -> {
+}
+case NewSpecularGlossinessMaterial obj -> {
+	{
+		X3DMaterialExtensionNode children = obj.getExtensions();
+		X3DMaterialExtensionNode leftOverExtensions = this.removeChildren(children, toRemove);
+		obj.setExtensions(leftOverExtensions);
+		X3DMaterialExtensionNode leftOver = obj.removeSelectedExtensions(leftOverExtensions, toRemove);
+		obj.setExtensions(leftOver);
+	}
+}
+case NewSpecularMaterialExtension obj -> {
+}
+case NewTransmissionMaterialExtension obj -> {
+}
+case NewVolumeMaterialExtension obj -> {
+}
+case NewVolumeScatterMaterialExtension obj -> {
+}
+case NewDiffuseTransmissionMaterialExtension obj -> {
+}
+case NewRenderedTexture obj -> {
 }
 case Newcomponent obj -> {
 }
