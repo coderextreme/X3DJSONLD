@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-  "title": "X3D V4.1 JSON Schema, generated 2026/01/14 05:16:58",
+  "title": "X3D V4.1 JSON Schema, generated 2026/04/02 07:30:44",
   "description": "Experimental JSON Schema for X3D V4.1",
   "license": "Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
@@ -8802,9 +8802,6 @@
                 "type": "number"
               }
             },
-            "-diffuse": {
-              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-            },
             "@diffuseCoefficients": {
               "$comment": "MFFloat inputOutput",
               "type": "array",
@@ -8816,7 +8813,7 @@
               "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
             },
             "@global": {
-              "default": false,
+              "default": true,
               "$comment": "SFBool inputOutput",
               "type": "boolean"
             },
@@ -8829,7 +8826,15 @@
             "IS": {
               "$ref": "#/$defs/IS"
             },
-            "@location": {
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@on": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "@origin": {
               "$comment": "SFVec3f inputOutput",
               "type": "array",
               "minItems": 3,
@@ -8838,14 +8843,6 @@
                 "default": 0,
                 "type": "number"
               }
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@on": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
             },
             "@rotation": {
               "$comment": "SFRotation inputOutput",
@@ -15058,6 +15055,103 @@
         }
       ]
     },
+    "InlineGeometry": {
+      "type": "object",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@USE": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "-children": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "#comment": {
+                    "type": "string",
+                    "$comment": "#comment statements are the only allowed in -children node when using a USE field"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "@USE"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "-children": {
+              "$ref": "#/$defs/-childStatements"
+            },
+            "@autoRefresh": {
+              "minimum": 0,
+              "default": 0,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
+            },
+            "@autoRefreshTimeLimit": {
+              "minimum": 0,
+              "default": 3600,
+              "$comment": "SFTime inputOutput",
+              "type": "number"
+            },
+            "@description": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "IS": {
+              "$ref": "#/$defs/IS"
+            },
+            "@load": {
+              "default": true,
+              "$comment": "SFBool inputOutput",
+              "type": "boolean"
+            },
+            "-metadata": {
+              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
+            },
+            "@url": {
+              "$comment": "MFString inputOutput",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "format": "iri-reference",
+                "type": "string"
+              }
+            },
+            "@DEF": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@class": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@id": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            },
+            "@style": {
+              "$comment": "SFString inputOutput",
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
     "IntegerSequencer": {
       "type": "object",
       "oneOf": [
@@ -15654,9 +15748,9 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "CENTER",
+                    "LEFT",
                     "RIGHT",
-                    "LEFT"
+                    "CENTER"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -15664,8 +15758,8 @@
                 {
                   "enum": [
                     "TOP",
-                    "CENTER",
-                    "BOTTOM"
+                    "BOTTOM",
+                    "CENTER"
                   ],
                   "default": "CENTER",
                   "type": "string"
@@ -15695,18 +15789,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "FRACTION",
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "FRACTION",
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -15722,9 +15816,9 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "FRACTION",
                     "NONE",
                     "PIXEL",
-                    "FRACTION",
                     "STRETCH"
                   ],
                   "default": "NONE",
@@ -15732,9 +15826,9 @@
                 },
                 {
                   "enum": [
+                    "FRACTION",
                     "NONE",
                     "PIXEL",
-                    "FRACTION",
                     "STRETCH"
                   ],
                   "default": "NONE",
@@ -15759,18 +15853,18 @@
               "prefixItems": [
                 {
                   "enum": [
+                    "FRACTION",
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
+                    "FRACTION",
                     "WORLD",
-                    "PIXEL",
-                    "FRACTION"
+                    "PIXEL"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -18558,13 +18652,13 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "FLY",
-                    "WALK",
+                    "LOOKAT",
+                    "EXPLORE",
                     "NONE",
                     "ANY",
-                    "LOOKAT",
                     "EXAMINE",
-                    "EXPLORE"
+                    "WALK",
+                    "FLY"
                   ],
                   "default": "EXAMINE",
                   "type": "string"
@@ -34797,6 +34891,9 @@
         "IndexedLineSet": {
           "$ref": "#/$defs/IndexedLineSet"
         },
+        "InlineGeometry": {
+          "$ref": "#/$defs/InlineGeometry"
+        },
         "LineSet": {
           "$ref": "#/$defs/LineSet"
         },
@@ -35722,24 +35819,6 @@
       },
       "additionalProperties": false
     },
-    "-X3DSingleTextureNodeSFNode": {
-      "type": "object",
-      "properties": {
-        "ImageTexture": {
-          "$ref": "#/$defs/ImageTexture"
-        },
-        "MovieTexture": {
-          "$ref": "#/$defs/MovieTexture"
-        },
-        "PixelTexture": {
-          "$ref": "#/$defs/PixelTexture"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-X3DEnvironmentTextureNodeSFNode": {
       "type": "object",
       "properties": {
@@ -36431,6 +36510,9 @@
           "IndexedLineSet": {
             "$ref": "#/$defs/IndexedLineSet"
           },
+          "InlineGeometry": {
+            "$ref": "#/$defs/InlineGeometry"
+          },
           "LineSet": {
             "$ref": "#/$defs/LineSet"
           },
@@ -37087,6 +37169,9 @@
           "Inline": {
             "$ref": "#/$defs/Inline"
           },
+          "InlineGeometry": {
+            "$ref": "#/$defs/InlineGeometry"
+          },
           "MovieTexture": {
             "$ref": "#/$defs/MovieTexture"
           },
@@ -37105,6 +37190,24 @@
         },
         "additionalProperties": false
       }
+    },
+    "-X3DSingleTextureNodeSFNode": {
+      "type": "object",
+      "properties": {
+        "ImageTexture": {
+          "$ref": "#/$defs/ImageTexture"
+        },
+        "MovieTexture": {
+          "$ref": "#/$defs/MovieTexture"
+        },
+        "PixelTexture": {
+          "$ref": "#/$defs/PixelTexture"
+        },
+        "ProtoInstance": {
+          "$ref": "#/$defs/ProtoInstance"
+        }
+      },
+      "additionalProperties": false
     },
     "-X3DMetadataObjectMFNode": {
       "$comment": "MFNode inputOutput",

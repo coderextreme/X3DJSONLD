@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-3.2-JSONSchema.json",
-        "title": "X3D V3.2 JSON Schema, generated 2026/01/14 05:16:57",
+        "title": "X3D V3.2 JSON Schema, generated 2026/04/02 07:30:43",
         "description": "Experimental JSON Schema for X3D V3.2",
         "license": "Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
@@ -11303,9 +11303,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"CENTER",
 									"RIGHT",
-									"LEFT"
+									"LEFT",
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -11313,9 +11313,9 @@
 							,
 							{
 								"enum": [
+									"BOTTOM",
 									"CENTER",
-									"TOP",
-									"BOTTOM"
+									"TOP"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -11347,8 +11347,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11357,8 +11357,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11414,8 +11414,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -11424,8 +11424,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"FRACTION",
-									"WORLD"
+									"WORLD",
+									"FRACTION"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -13526,13 +13526,13 @@
 						"prefixItems": [
 						{
 							"enum": [
-								"EXAMINE",
-								"FLY",
-								"WALK",
-								"ANY",
-								"EXPLORE",
 								"NONE",
-								"LOOKAT"
+								"ANY",
+								"EXAMINE",
+								"EXPLORE",
+								"LOOKAT",
+								"WALK",
+								"FLY"
 							],
 								"default":"EXAMINE",
 						"type":"string"
