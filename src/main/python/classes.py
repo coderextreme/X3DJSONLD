@@ -89,10 +89,10 @@ f = open("../graaljs/net/coderextreme/data/X3Dautoclass.js", "w")
 f.write(code)
 f.close()
 
-f = open("../graaljs/net/x3djsonld/data/X3Dautoclass.js", "w")
+f = open("../graaljs/net/coderextreme/personal/X3Dautoclass.js", "w")
 f.write(code)
 f.close()
 
-f = open("../graaljs/net/coderextreme/personal/X3Dautoclass.js", "w")
+f = open("../graaljs/net/x3djsonld/data/X3Dautoclass.js", "w")
 f.write(code)
 f.close()
