@@ -8,7 +8,7 @@ x3d_to_glb_command.py
 Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors
 - Employs 4-Node Chain per joint to perfectly match X3D 'center' pivot math.
 - Embeds ImageTextures and maps TextureCoordinates (UVs).
-- Dynamically supplies missing UVs using Bounding Box projections (X3D standard fallback).
+- Dynamically supplies missing UVs using standard X3D Aspect-Ratio Bounding Box mapping.
 - Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
 - Accurately caches and routes TextureTransform animations (Offset, Rotation, Scale).
 """
@@ -124,6 +124,7 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
     gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
     mat_cache[app_key] = mat_idx
 
+    # Capture target paths for KHR_animation_pointer dynamically
     if tx_node is not None and tx_node.get('DEF') and tex_transform_targets is not None:
         if pbr.baseColorTexture is not None:
             base_pointer = f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorTexture/extensions/KHR_texture_transform"
@@ -132,7 +133,8 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
     return mat_idx
 
 def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info, tex_transform_targets, mat_cache):
-    geom = shape_node.find('.//IndexedFaceSet') or shape_node.find('.//IndexedTriangleSet')
+    geom = shape_node.find('.//IndexedFaceSet')
+    if geom is None: geom = shape_node.find('.//IndexedTriangleSet')
     if geom is None: return None
 
     coord = geom.find('.//Coordinate')
@@ -146,7 +148,7 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     uvs = np.array(parse_array(tex_node.get('point')), dtype=np.float32).reshape(-1, 2) if tex_node is not None else []
     if len(uvs) > 0: uvs[:, 1] = 1.0 - uvs[:, 1] # Flip V axis for glTF
 
-    # Detect if texture exists early to force fallback UV generation if values are missing
+    # Determine if fallback TextureCoordinates are necessary
     app = shape_node.find('.//Appearance')
     if app is not None and app.get('USE'): app = def_map.get(app.get('USE'), app)
     has_texture = False
@@ -158,18 +160,23 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     need_uvs = (len(uvs) > 0) or has_texture
 
     if need_uvs:
-        # X3D Standard: synthesize UVs based on longest and second longest bounding box dimensions
+        # ALWAYS build fallback logic in case ANY index is missing or out of bounds
         min_p = np.min(pts, axis=0)
         max_p = np.max(pts, axis=0)
         size = max_p - min_p
 
-        dims = np.argsort(size)[::-1][:2]
-        d1, d2 = min(dims), max(dims) # Standardize S, T mapping directions
-        s_size = size[d1] if size[d1] > 1e-5 else 1.0
-        t_size = size[d2] if size[d2] > 1e-5 else 1.0
+        # Determine X3D dominant S & T mapping dimensions (X > Y > Z preference)
+        size_biased = size + np.array([0.003, 0.002, 0.001])
+        dims = np.argsort(size_biased)[::-1]
+        dimS, dimT = dims[0], dims[1]
+
+        s_size = size[dimS] if size[dimS] > 1e-5 else 1.0
+        t_size = size[dimT] if size[dimT] > 1e-5 else 1.0
 
         def get_fallback_uv(pt):
-            return [(pt[d1] - min_p[d1]) / s_size, 1.0 - (pt[d2] - min_p[d2]) / t_size]
+            s = (pt[dimS] - min_p[dimS]) / s_size
+            t = (pt[dimT] - min_p[dimT]) / t_size
+            return [s, 1.0 - t] # T-flip for glTF compatibility
 
     p_polys = parse_indices_nested(geom.get('coordIndex')) or [[i,i+1,i+2] for i in range(0, len(pts), 3)]
     t_polys = parse_indices_nested(geom.get('texCoordIndex')) or p_polys
@@ -191,11 +198,8 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
                     g_map.append(p_i)
 
                     if need_uvs:
-                        if t_i < len(uvs):
-                            u_uvs.append(uvs[t_i])
-                        else:
-                            # Supply missing UV mapped cleanly over the Bounding Box
-                            u_uvs.append(get_fallback_uv(pts[p_i]))
+                        if t_i < len(uvs): u_uvs.append(uvs[t_i])
+                        else: u_uvs.append(get_fallback_uv(pts[p_i])) # Map dynamically on missing array indices
 
                 u_idx.append(u_verts[v_key])
 
@@ -215,7 +219,6 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     n_idx = len(gltf.nodes)
     gltf.nodes.append(Node(name=f"SkinnedMesh_{mesh_idx}", mesh=mesh_idx))
 
-    # Store g_map so unrolled vertices get correct original skin weights
     skin_prim_info.append((n_idx, mesh_idx, g_map))
     return n_idx
 
@@ -358,7 +361,8 @@ def convert_x3d_to_glb(x3d_path, glb_path):
         else:
             for child in node: traverse(child, p_idx, inside_hanim)
 
-    traverse(root.find('Scene') or root, 0)
+    scene_node = root.find('Scene')
+    traverse(scene_node if scene_node is not None else root, 0)
 
     # Calculate Bind Pose IBMs & Skin Weights
     if joint_weights:
@@ -411,7 +415,7 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                 prim.attributes["JOINTS_0"] = add_acc(gltf, bin_blob, jd, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
                 prim.attributes["WEIGHTS_0"] = add_acc(gltf, bin_blob, wd, VEC4, FLOAT, ARRAY_BUFFER)
 
-    # Process Animation
+    # Process Animation Routes
     interp_drivers, node_targets, tex_transform_anims = {}, [], []
     for route in root.iter('ROUTE'):
         fn, ff, tn, tf = route.get('fromNode'), route.get('fromField'), route.get('toNode'), route.get('toField')
@@ -449,7 +453,7 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                                                   output=add_acc(gltf, bin_blob, v_data, v_type, FLOAT, None, True)))
             anim.channels.append(AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(node=targ_node, path=path)))
 
-        # Process Extracted TextureTransform Animations via KHR_animation_pointer
+        # Process Extracted TextureTransform Animations dynamically via KHR_animation_pointer
         for i_def, pointer, prop in tex_transform_anims:
             i_node = def_map.get(i_def)
             if i_node is None: continue
@@ -459,11 +463,12 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             keys_arr = np.array(parse_array(i_node.get('key')), dtype=np.float32) * dur
             vals_arr = parse_array(i_node.get('keyValue'))
 
+            # Format Data Accessors properly ensuring SCALARs map exactly as 1D
             if prop in ('offset', 'scale'):
                 v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
                 v_type = VEC2
             else:
-                v_data = np.array(vals_arr, dtype=np.float32)
+                v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 1)  # Strict shape for Scalar Rotation targeting
                 v_type = SCALAR
 
             s_idx = len(anim.samplers)
