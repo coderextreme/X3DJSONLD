@@ -170,7 +170,7 @@ def convert_x3d_to_glb(x3d_path, glb_path):
     gltf = GLTF2(scene=0, scenes=[Scene(nodes=[0])], nodes=[Node(name="WorldRoot", children=[])])
     bin_blob, def_to_nidx, def_to_tidx, joint_weights, skin_prim_info = bytearray(), {}, {}, {}, []
 
-    def traverse(node, p_idx):
+    def traverse(node, p_idx, inside_hanim=False):
         if node.tag in ('Transform', 'Group', 'HAnimJoint', 'HAnimHumanoid', 'HAnimSegment'):
             dname = node.get('DEF') or f"{node.tag}_{len(gltf.nodes)}"
             t = parse_array(node.get('translation'), default=[0,0,0])
@@ -206,13 +206,21 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                 idx, wgt = parse_array(node.get('skinCoordIndex'), int), parse_array(node.get('skinCoordWeight'))
                 if idx: joint_weights[node.get('DEF')] = list(zip(idx, wgt))
 
-            for child in node: traverse(child, idx_c_rev)
+            # Once inside HAnimHumanoid, all descendant shapes are skinnable
+            child_inside_hanim = inside_hanim or node.tag == 'HAnimHumanoid'
+            for child in node: traverse(child, idx_c_rev, child_inside_hanim)
 
         elif node.tag == 'Shape':
-            sh_idx = process_shape(node, gltf, bin_blob, def_map, base_dir, skin_prim_info)
+            # Only shapes that are descendants of HAnimHumanoid belong to the
+            # skeleton skin and should receive joint/weight attributes.
+            # Shapes outside the humanoid (e.g. the ball, orbit circles) are
+            # plain scene objects and must NOT be added to skin_prim_info,
+            # or they will be incorrectly deformed by overlapping coord indices.
+            prims_target = skin_prim_info if inside_hanim else []
+            sh_idx = process_shape(node, gltf, bin_blob, def_map, base_dir, prims_target)
             if sh_idx is not None: gltf.nodes[p_idx].children.append(sh_idx)
         else:
-            for child in node: traverse(child, p_idx)
+            for child in node: traverse(child, p_idx, inside_hanim)
 
     traverse(root.find('Scene') or root, 0)
 

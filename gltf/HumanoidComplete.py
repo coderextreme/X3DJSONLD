@@ -313,12 +313,7 @@ if __name__ == "__main__":
         convert_x3d_to_glb(sys.argv[1], sys.argv[2] if len(sys.argv)>2 else "output.glb")
     else:
         base = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
-        convert_x3d_to_glb(f"{base}/LaughingUpperSkeleton.x3d",               "LaughingUpperSkeleton.glb")
-        convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
-        convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
         convert_x3d_to_glb(f"HumanoidComplete.x3d", "HumanoidComplete.glb")
         convert_x3d_to_glb(f"HumanoidCompleteShort.x3d", "HumanoidCompleteShort.glb")
-        convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
-        convert_x3d_to_glb(f"Gramps8Final.x3d", "Gramps8Final.glb")
 
 # --- END OF FILE x3d_to_binary.py ---
