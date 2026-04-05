@@ -1,14 +1,14 @@
 import xml.etree.ElementTree as ET
 import numpy as np
-import os, math, re
+import os, math, re, mimetypes, base64
 from pygltflib import *
 
 """
 x3d_to_glb_command.py
-Flawless HAnim Skinning Converter
+Flawless HAnim Skinning Converter + UV/Textures
 - Employs 4-Node Chain per joint to perfectly match X3D 'center' pivot math.
-- Ensures 1:1 vertex mapping to eliminate "mesh horrors."
-- Automatically routes Interpolators to Translation/Rotation nodes.
+- Embeds ImageTextures and maps TextureCoordinates (UVs).
+- Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
 """
 
 def strip_ns(node):
@@ -21,6 +21,23 @@ def strip_ns(node):
 def parse_array(val, type_cast=float, default=None):
     if val is None or not val.strip(): return default or []
     return [type_cast(x) for x in val.replace(',', ' ').split()]
+
+def parse_mfstring(val_str):
+    if not val_str: return []
+    matches = re.findall(r'"([^"]*)"|\'([^\']*)\'', val_str)
+    if matches: return [m[0] if m[0] else m[1] for m in matches]
+    return val_str.split()
+
+def parse_indices_nested(val):
+    if not val: return []
+    raw = [int(x) for x in val.replace(',', ' ').split()]
+    polys, cur = [], []
+    for i in raw:
+        if i == -1:
+            if cur: polys.append(cur); cur = []
+        else: cur.append(i)
+    if cur: polys.append(cur)
+    return polys
 
 def axis_angle_to_quat(x, y, z, angle):
     s = math.sin(angle / 2.0)
@@ -42,50 +59,114 @@ def add_acc(gltf, buf, data, g_type, c_type, target, min_max=False):
     gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=c_type, count=len(data), type=g_type, min=mn, max=mx))
     return len(gltf.accessors) - 1
 
-def process_shape(shape_node, gltf, bin_blob, def_map, skin_prim_info):
+def embed_texture(url_str, base_path, gltf, bin_blob):
+    urls = parse_mfstring(url_str)
+    data, mime = None, "image/jpeg"
+    for u in urls:
+        u = u.strip()
+        if u.startswith('data:image'):
+            try:
+                head, b64 = u.split(',', 1)
+                data = base64.b64decode(b64); mime = head.split(';')[0].replace('data:', '')
+                break
+            except: continue
+        local = os.path.join(base_path, u.replace('\\', '/'))
+        if os.path.exists(local):
+            with open(local, 'rb') as f: data = f.read()
+            mime = mimetypes.guess_type(u)[0] or "image/jpeg"
+            break
+    if not data: return None
+
+    pad = (4 - len(bin_blob) % 4) % 4
+    bin_blob.extend(b'\x00' * pad)
+    off = len(bin_blob)
+    bin_blob.extend(data)
+    gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=len(data)))
+    gltf.images.append(Image(bufferView=len(gltf.bufferViews)-1, mimeType=mime))
+    gltf.textures.append(Texture(source=len(gltf.images)-1))
+    return len(gltf.textures) - 1
+
+def resolve_material(shape_node, def_map, gltf, bin_blob, base_path):
+    app = shape_node.find('.//Appearance')
+    if app is None: return None
+    mat_node = app.find('.//Material')
+    img_node = app.find('.//ImageTexture')
+
+    diff = parse_array(mat_node.get('diffuseColor', '0.8 0.8 0.8')) if mat_node is not None else [0.8, 0.8, 0.8]
+    pbr = PbrMetallicRoughness(baseColorFactor=diff + [1.0], metallicFactor=0.0, roughnessFactor=0.8)
+
+    if img_node is not None:
+        tex_idx = embed_texture(img_node.get('url', ''), base_path, gltf, bin_blob)
+        if tex_idx is not None:
+            pbr.baseColorTexture = TextureInfo(index=tex_idx)
+            pbr.baseColorFactor = [1.0, 1.0, 1.0, 1.0] # Reset base tint if texture exists
+
+    gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
+    return len(gltf.materials) - 1
+
+def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info):
     geom = shape_node.find('.//IndexedFaceSet') or shape_node.find('.//IndexedTriangleSet')
     if geom is None: return None
+
     coord = geom.find('.//Coordinate')
     if coord is not None and coord.get('USE'): coord = def_map.get(coord.get('USE'))
     if coord is None: return None
 
-    # Preserve original vertices exactly (1:1 mapping for flawless skinning)
     pts = np.array(parse_array(coord.get('point')), dtype=np.float32).reshape(-1, 3)
-    idx_raw = parse_array(geom.get('coordIndex'), int)
 
-    # Triangulate purely via indices without unrolling/duplicating vertices
-    u_idx, poly = [], []
-    for i in idx_raw:
-        if i == -1:
-            for j in range(1, len(poly)-1): u_idx.extend([poly[0], poly[j], poly[j+1]])
-            poly = []
-        else: poly.append(i)
-    if not u_idx and not poly: u_idx = list(range(len(pts)))
+    tex_node = geom.find('.//TextureCoordinate')
+    if tex_node is not None and tex_node.get('USE'): tex_node = def_map.get(tex_node.get('USE'))
+    uvs = np.array(parse_array(tex_node.get('point')), dtype=np.float32).reshape(-1, 2) if tex_node is not None else []
+    if len(uvs) > 0: uvs[:, 1] = 1.0 - uvs[:, 1] # Flip V axis for glTF
 
-    it = UNSIGNED_INT if len(pts) >= 65535 else UNSIGNED_SHORT
-    prim_attrs = {"POSITION": add_acc(gltf, bin_blob, pts, VEC3, FLOAT, ARRAY_BUFFER, True)}
+    p_polys = parse_indices_nested(geom.get('coordIndex')) or [[i,i+1,i+2] for i in range(0, len(pts), 3)]
+    t_polys = parse_indices_nested(geom.get('texCoordIndex')) or p_polys
 
-    app = shape_node.find('.//Appearance')
-    mat_node = app.find('.//Material') if app is not None else None
-    diff = parse_array(mat_node.get('diffuseColor'), default=[0.8,0.8,0.8]) if mat_node is not None else [0.8,0.8,0.8]
-    gltf.materials.append(Material(pbrMetallicRoughness=PbrMetallicRoughness(baseColorFactor=diff+[1.0])))
+    # UNROLLING: Map (PositionIndex, UVIndex) to a unified glTF vertex
+    u_pos, u_uvs, u_idx, g_map, u_verts = [], [], [], [], {}
+    for pi, poly in enumerate(p_polys):
+        t_poly = t_polys[pi] if pi < len(t_polys) else poly
+        # Triangulate N-gons
+        for i in range(1, len(poly)-1):
+            for j in (0, i, i+1):
+                p_i = poly[j]
+                t_i = t_poly[j] if j < len(t_poly) else p_i
+
+                v_key = (p_i, t_i)
+                if v_key not in u_verts:
+                    u_verts[v_key] = len(u_pos)
+                    u_pos.append(pts[p_i])
+                    g_map.append(p_i) # Track original pos index for skinning
+                    if len(uvs) > 0:
+                        u_uvs.append(uvs[t_i] if t_i < len(uvs) else [0,0])
+                u_idx.append(u_verts[v_key])
+
+    if not u_idx: return None
+
+    it = UNSIGNED_INT if len(u_pos) >= 65535 else UNSIGNED_SHORT
+    prim_attrs = {"POSITION": add_acc(gltf, bin_blob, np.array(u_pos, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER, True)}
+    if u_uvs: prim_attrs["TEXCOORD_0"] = add_acc(gltf, bin_blob, np.array(u_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
+
+    m_idx = resolve_material(shape_node, def_map, gltf, bin_blob, base_path)
 
     mesh_idx = len(gltf.meshes)
     gltf.meshes.append(Mesh(primitives=[Primitive(attributes=prim_attrs,
         indices=add_acc(gltf, bin_blob, np.array(u_idx, dtype=np.uint32 if it==UNSIGNED_INT else np.uint16), SCALAR, it, ELEMENT_ARRAY_BUFFER),
-        material=len(gltf.materials)-1)]))
+        material=m_idx)]))
 
     n_idx = len(gltf.nodes)
     gltf.nodes.append(Node(name=f"SkinnedMesh_{mesh_idx}", mesh=mesh_idx))
 
-    # 1:1 mapping array for weights
-    skin_prim_info.append((n_idx, mesh_idx, len(pts)))
+    # Store g_map so unrolled vertices get correct original skin weights
+    skin_prim_info.append((n_idx, mesh_idx, g_map))
     return n_idx
 
 def convert_x3d_to_glb(x3d_path, glb_path):
     print(f"Professional Converting: {x3d_path}")
+    base_dir = os.path.dirname(os.path.abspath(x3d_path))
     root = ET.parse(x3d_path).getroot(); strip_ns(root)
     def_map = {el.get('DEF'): el for el in root.iter() if el.get('DEF') is not None}
+
     gltf = GLTF2(scene=0, scenes=[Scene(nodes=[0])], nodes=[Node(name="WorldRoot", children=[])])
     bin_blob, def_to_nidx, def_to_tidx, joint_weights, skin_prim_info = bytearray(), {}, {}, {}, []
 
@@ -118,30 +199,28 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             gltf.nodes.append(Node(name=f"{dname}_C_rev", translation=[-x for x in c], children=[]))
             gltf.nodes[idx_r].children.append(idx_c_rev)
 
-            # Map DEF for routing & skinning
-            def_to_tidx[node.get('DEF')] = idx_t # Map translation target
-            def_to_nidx[node.get('DEF')] = idx_r # Map rotation target & joint skin
+            def_to_tidx[node.get('DEF')] = idx_t
+            def_to_nidx[node.get('DEF')] = idx_r
 
             if node.tag == 'HAnimJoint' and node.get('DEF'):
                 idx, wgt = parse_array(node.get('skinCoordIndex'), int), parse_array(node.get('skinCoordWeight'))
                 if idx: joint_weights[node.get('DEF')] = list(zip(idx, wgt))
 
-            for child in node: traverse(child, idx_c_rev) # Children attach to Reverse node
+            for child in node: traverse(child, idx_c_rev)
 
         elif node.tag == 'Shape':
-            sh_idx = process_shape(node, gltf, bin_blob, def_map, skin_prim_info)
+            sh_idx = process_shape(node, gltf, bin_blob, def_map, base_dir, skin_prim_info)
             if sh_idx is not None: gltf.nodes[p_idx].children.append(sh_idx)
         else:
             for child in node: traverse(child, p_idx)
 
     traverse(root.find('Scene') or root, 0)
 
-    # Calculate Bind Pose IBMs
+    # Calculate Bind Pose IBMs & Skin Weights
     if joint_weights:
         j_names = sorted(joint_weights.keys(), key=lambda x: def_to_nidx.get(x, 0))
         j_nodes = [def_to_nidx[n] for n in j_names if n in def_to_nidx]
 
-        # Compute World Matrices for all nodes
         world_mats = [np.eye(4, dtype=np.float32) for _ in gltf.nodes]
         def compute_mats(idx, parent_mat):
             n = gltf.nodes[idx]
@@ -158,33 +237,33 @@ def convert_x3d_to_glb(x3d_path, glb_path):
 
         compute_mats(0, np.eye(4, dtype=np.float32))
 
-        # IBM = Inverse of Node 3 (Rotation Joint) at Bind Pose
         ibms = np.array([np.linalg.inv(world_mats[j]).flatten('F') for j in j_nodes], dtype=np.float32)
         s_idx = len(gltf.skins)
         gltf.skins.append(Skin(joints=j_nodes, inverseBindMatrices=add_acc(gltf, bin_blob, ibms, MAT4, FLOAT, None)))
 
-        # Vertex Weight Alignment
         v_map = {}
         for i, name in enumerate(j_names):
             for v_idx, w in joint_weights[name]:
                 v_map.setdefault(v_idx, []).append((i, w))
 
-        for ni, mi, num_pts in skin_prim_info:
+        for ni, mi, gmap in skin_prim_info:
             gltf.nodes[ni].skin = s_idx
 
-            # CRITICAL: Parent mesh to WorldRoot to prevent double-transforming
+            # Prevent double-transforms
             for p in gltf.nodes:
                 if p.children and ni in p.children: p.children.remove(ni)
             gltf.nodes[0].children.append(ni)
 
             for prim in gltf.meshes[mi].primitives:
+                num_pts = len(gmap) # unrolled vertex count
                 jd, wd = np.zeros((num_pts, 4), dtype=np.uint16), np.zeros((num_pts, 4), dtype=np.float32)
                 for i in range(num_pts):
-                    infs = sorted(v_map.get(i, [(0, 1.0)]), key=lambda x: x[1], reverse=True)[:4]
+                    original_idx = gmap[i] # map new vertex back to original weight
+                    infs = sorted(v_map.get(original_idx, [(0, 1.0)]), key=lambda x: x[1], reverse=True)[:4]
                     ws = np.array([max(0, x[1]) for x in infs], dtype=np.float32)
                     sw = ws.sum()
                     ws = ws/sw if sw > 0 else np.array([1,0,0,0], dtype=np.float32)
-                    ws[0] += (1.0 - ws.sum()) # Force sum to exactly 1.0
+                    ws[0] += (1.0 - ws.sum())
                     for k, w in enumerate(ws):
                         jd[i, k], wd[i, k] = (infs[k][0] if w > 0 else 0), w
                 prim.attributes["JOINTS_0"] = add_acc(gltf, bin_blob, jd, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
@@ -197,7 +276,6 @@ def convert_x3d_to_glb(x3d_path, glb_path):
         if ff == 'fraction_changed': interp_drivers[tn] = fn
         if ff == 'value_changed' and tn in def_to_nidx:
             path = 'rotation' if 'rotation' in tf.lower() else 'translation'
-            # If animating Translation, point to Node 1 (def_to_tidx). Otherwise Node 3 (def_to_nidx).
             targ_node = def_to_tidx[tn] if path == 'translation' else def_to_nidx[tn]
             node_targets.append((fn, targ_node, path))
 
