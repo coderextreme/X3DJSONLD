@@ -5,10 +5,11 @@ from pygltflib import *
 
 """
 x3d_to_glb_command.py
-Flawless HAnim Skinning Converter + UV/Textures
+Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors
 - Employs 4-Node Chain per joint to perfectly match X3D 'center' pivot math.
 - Embeds ImageTextures and maps TextureCoordinates (UVs).
 - Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
+- Handles accurate X3D IndexedLineSet materials/vertex coloring.
 """
 
 def strip_ns(node):
@@ -184,7 +185,7 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
       - colorPerVertex=false  → one colour per polyline segment → LINES (mode=1)
                                 with per-vertex colours duplicated for each endpoint
       - colorPerVertex=true   → colour per vertex → LINE_STRIP (mode=3) per polyline
-      - no colour node        → LINE_STRIP with no colour attribute
+      - no colour node        → LINE_STRIP using Shape Material color fallback
     """
     geom = shape_node.find('.//IndexedLineSet')
     if geom is None: return None
@@ -196,14 +197,41 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
     if coord is None: return None
     pts = np.array(parse_array(coord.get('point')), dtype=np.float32).reshape(-1, 3)
 
-    # Optional per-vertex or per-segment colours
+    # Resolve Optional explicit Colour node
     color_node = geom.find('.//Color')
+    if color_node is not None and color_node.get('USE'):
+        color_node = def_map.get(color_node.get('USE'), color_node)
+
     colors = None
     if color_node is not None:
         c = parse_array(color_node.get('color'))
         if c: colors = np.array(c, dtype=np.float32).reshape(-1, 3)
     color_per_vertex = geom.get('colorPerVertex', 'true').lower() != 'false'
     color_index = parse_array(geom.get('colorIndex', ''), int)
+
+    # 1. Fallback to material overall color if explicit vertex coloring is missing
+    base_color = [1.0, 1.0, 1.0, 1.0]
+    if colors is None:
+        app = shape_node.find('.//Appearance')
+        if app is not None and app.get('USE'):
+            app = def_map.get(app.get('USE'), app)
+        if app is not None:
+            mat = app.find('.//Material')
+            if mat is not None and mat.get('USE'):
+                mat = def_map.get(mat.get('USE'), mat)
+            if mat is not None:
+                emissive = parse_array(mat.get('emissiveColor', '0 0 0'))
+                diffuse  = parse_array(mat.get('diffuseColor', '0 0 0'))
+                # For X3D, lines are strictly unlit, primarily utilizing emissiveColor
+                if sum(emissive) > 0.0:
+                    base_color = emissive + [1.0]
+                elif sum(diffuse) > 0.0:
+                    base_color = diffuse + [1.0]
+
+    # 2. Append Material
+    pbr = PbrMetallicRoughness(baseColorFactor=base_color, metallicFactor=0.0, roughnessFactor=1.0)
+    mat_idx = len(gltf.materials)
+    gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
 
     # Split coordIndex on -1 into individual polylines
     raw_idx = parse_array(geom.get('coordIndex', ''), int)
@@ -232,7 +260,7 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
             "POSITION": add_acc(gltf, bin_blob, pos_arr, VEC3, FLOAT, ARRAY_BUFFER, True),
             "COLOR_0":  add_acc(gltf, bin_blob, col_arr, VEC3, FLOAT, ARRAY_BUFFER),
         }
-        primitives = [Primitive(attributes=prim_attrs, mode=1)]  # LINES
+        primitives = [Primitive(attributes=prim_attrs, mode=1, material=mat_idx)]  # LINES
     else:
         # Per-vertex colours or no colour → one LINE_STRIP primitive per polyline
         primitives = []
@@ -242,7 +270,7 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
             if colors is not None and color_per_vertex:
                 vc = np.array([colors[i] if i < len(colors) else [1, 1, 1] for i in poly], dtype=np.float32)
                 prim_attrs["COLOR_0"] = add_acc(gltf, bin_blob, vc, VEC3, FLOAT, ARRAY_BUFFER)
-            primitives.append(Primitive(attributes=prim_attrs, mode=3))  # LINE_STRIP
+            primitives.append(Primitive(attributes=prim_attrs, mode=3, material=mat_idx))  # LINE_STRIP
 
     if not primitives: return None
     mesh_idx = len(gltf.meshes)
@@ -250,7 +278,6 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
     n_idx = len(gltf.nodes)
     gltf.nodes.append(Node(name=f"LineMesh_{mesh_idx}", mesh=mesh_idx))
     return n_idx
-
 
 def convert_x3d_to_glb(x3d_path, glb_path):
     print(f"Professional Converting: {x3d_path}")
@@ -451,5 +478,3 @@ if __name__ == "__main__":
         convert_x3d_to_glb(sys.argv[1], sys.argv[2] if len(sys.argv)>2 else "output.glb")
     else:
         convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
-
-# --- END OF FILE x3d_to_binary.py ---
