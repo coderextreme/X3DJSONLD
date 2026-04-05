@@ -792,15 +792,40 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
                     num_verts = len(p_indices_list)
                     joints_data = np.zeros((num_verts, 4), dtype=np.uint16)
                     weights_data = np.zeros((num_verts, 4), dtype=np.float32)
+
                     has_skin = False
                     for v in range(num_verts):
                         p_idx = p_indices_list[v]
+
+                        # Check if this vertex index exists in our joint influence map
                         if p_idx in per_vertex and per_vertex[p_idx]:
                             has_skin = True
                             infs = per_vertex[p_idx]
-                            for k in range(len(infs)):
+
+                            # Sort by weight descending and take top 4
+                            infs.sort(key=lambda x: x[1], reverse=True)
+
+                            total_w = 0.0
+                            for k in range(min(len(infs), 4)):
                                 joints_data[v, k] = infs[k][0]
                                 weights_data[v, k] = infs[k][1]
+                                total_w += infs[k][1]
+
+                            # MANDATORY: Normalize weights so they sum to exactly 1.0
+                            if total_w > 0:
+                                weights_data[v, :4] /= total_w
+                            else:
+                                # Fallback if weight was 0.0
+                                joints_data[v, 0] = 0
+                                weights_data[v, 0] = 1.0
+                        else:
+                            # FALLBACK: If a vertex has no skinning data,
+                            # pin it to joint index 0 (usually HumanoidRoot)
+                            # This prevents the "webbing" spikes to the origin.
+                            has_skin = True
+                            joints_data[v, 0] = 0
+                            weights_data[v, 0] = 1.0
+
                     if has_skin:
                         joints_acc = add_accessor(gltf, bin_blob, joints_data, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
                         weights_acc = add_accessor(gltf, bin_blob, weights_data, VEC4, FLOAT, ARRAY_BUFFER)
@@ -889,7 +914,7 @@ if __name__ == "__main__":
         convert_x3d_to_glb(in_f, out_f)
     else:
         base = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
-        convert_x3d_to_glb(f"{base}/LaughingSkeleton.x3d",               "LaughingSkeleton.glb")
+        convert_x3d_to_glb(f"{base}/LaughingUpperSkeleton.x3d",               "LaughingUpperSkeleton.glb")
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
         convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
         convert_x3d_to_glb(f"HumanoidComplete.x3d", "HumanoidComplete.glb")
