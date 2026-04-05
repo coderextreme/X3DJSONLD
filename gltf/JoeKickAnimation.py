@@ -11,6 +11,7 @@ Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors
 - Dynamically supplies missing UVs using standard X3D Aspect-Ratio Bounding Box mapping.
 - Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
 - Accurately caches and routes TextureTransform animations (Offset, Rotation, Scale).
+- Maps diffuseColor and emissiveColor for accurate material tinting/glowing.
 """
 
 def strip_ns(node):
@@ -108,6 +109,8 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
     if tx_node is not None and tx_node.get('USE'): tx_node = def_map.get(tx_node.get('USE'), tx_node)
 
     diff = parse_array(mat_node.get('diffuseColor', '0.8 0.8 0.8')) if mat_node is not None else [0.8, 0.8, 0.8]
+    emis = parse_array(mat_node.get('emissiveColor', '0.0 0.0 0.0')) if mat_node is not None else [0.0, 0.0, 0.0]
+
     pbr = PbrMetallicRoughness(baseColorFactor=diff + [1.0], metallicFactor=0.0, roughnessFactor=0.8)
 
     if img_node is not None:
@@ -118,10 +121,15 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
                 ti.extensions = {"KHR_texture_transform": {
                     "offset": [0.0, 0.0], "rotation": 0.0, "scale": [1.0, 1.0]}}
             pbr.baseColorTexture = ti
-            pbr.baseColorFactor = [1.0, 1.0, 1.0, 1.0]
+            # We purposely DO NOT overwrite baseColorFactor here.
+            # This allows the X3D diffuseColor to correctly tint the UV texture!
+
+    mat = Material(pbrMetallicRoughness=pbr, doubleSided=True)
+    if sum(emis) > 0.0:
+        mat.emissiveFactor = emis # Translates X3D emissiveColor into glTF glow
 
     mat_idx = len(gltf.materials)
-    gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
+    gltf.materials.append(mat)
     mat_cache[app_key] = mat_idx
 
     # Capture target paths for KHR_animation_pointer dynamically
@@ -171,11 +179,11 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
         dimS, dimT = dims[0], dims[1]
 
         s_size = size[dimS] if size[dimS] > 1e-5 else 1.0
-        t_size = size[dimT] if size[dimT] > 1e-5 else 1.0
 
         def get_fallback_uv(pt):
+            # X3D Standard: Divide BOTH by the longest dimension to preserve aspect ratio!
             s = (pt[dimS] - min_p[dimS]) / s_size
-            t = (pt[dimT] - min_p[dimT]) / t_size
+            t = (pt[dimT] - min_p[dimT]) / s_size
             return [s, 1.0 - t] # T-flip for glTF compatibility
 
     p_polys = parse_indices_nested(geom.get('coordIndex')) or [[i,i+1,i+2] for i in range(0, len(pts), 3)]
@@ -198,7 +206,7 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
                     g_map.append(p_i)
 
                     if need_uvs:
-                        if t_i < len(uvs): u_uvs.append(uvs[t_i])
+                        if t_i < len(uvs) and t_i >= 0: u_uvs.append(uvs[t_i])
                         else: u_uvs.append(get_fallback_uv(pts[p_i])) # Map dynamically on missing array indices
 
                 u_idx.append(u_verts[v_key])
