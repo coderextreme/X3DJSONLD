@@ -8,8 +8,8 @@ x3d_to_glb_command.py
 Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors
 - Employs 4-Node Chain per joint to perfectly match X3D 'center' pivot math.
 - Embeds ImageTextures and maps TextureCoordinates (UVs).
+- Dynamically supplies missing UVs using Bounding Box projections (X3D standard fallback).
 - Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
-- Handles accurate X3D IndexedLineSet materials/vertex coloring.
 - Accurately caches and routes TextureTransform animations (Offset, Rotation, Scale).
 """
 
@@ -90,19 +90,14 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
 
 def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets, mat_cache):
     app = shape_node.find('.//Appearance')
-
-    # 1. Resolve USE references correctly for the Appearance wrapper itself.
     if app is not None and app.get('USE'):
         app = def_map.get(app.get('USE'), app)
-
     if app is None: return None
 
-    # Check cache to ensure we don't duplicate Materials/Animations (vital for the Ball mirroring the Skin)
     app_key = app.get('DEF') or str(id(app))
     if app_key in mat_cache:
         return mat_cache[app_key]
 
-    # Resolve USE recursively for contents
     mat_node = app.find('.//Material')
     if mat_node is not None and mat_node.get('USE'): mat_node = def_map.get(mat_node.get('USE'), mat_node)
 
@@ -119,18 +114,16 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
         tex_idx = embed_texture(img_node.get('url', ''), base_path, gltf, bin_blob)
         if tex_idx is not None:
             ti = TextureInfo(index=tex_idx)
-            # If a TextureTransform is present, seed KHR_texture_transform defaults
             if tx_node is not None:
                 ti.extensions = {"KHR_texture_transform": {
                     "offset": [0.0, 0.0], "rotation": 0.0, "scale": [1.0, 1.0]}}
             pbr.baseColorTexture = ti
-            pbr.baseColorFactor = [1.0, 1.0, 1.0, 1.0]  # Reset base tint when texture present
+            pbr.baseColorFactor = [1.0, 1.0, 1.0, 1.0]
 
     mat_idx = len(gltf.materials)
     gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
     mat_cache[app_key] = mat_idx
 
-    # Register the TextureTransform DEF so the animation pass can construct full pointer paths
     if tx_node is not None and tx_node.get('DEF') and tex_transform_targets is not None:
         if pbr.baseColorTexture is not None:
             base_pointer = f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorTexture/extensions/KHR_texture_transform"
@@ -153,6 +146,31 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     uvs = np.array(parse_array(tex_node.get('point')), dtype=np.float32).reshape(-1, 2) if tex_node is not None else []
     if len(uvs) > 0: uvs[:, 1] = 1.0 - uvs[:, 1] # Flip V axis for glTF
 
+    # Detect if texture exists early to force fallback UV generation if values are missing
+    app = shape_node.find('.//Appearance')
+    if app is not None and app.get('USE'): app = def_map.get(app.get('USE'), app)
+    has_texture = False
+    if app is not None:
+        img_node = app.find('.//ImageTexture')
+        if img_node is not None and img_node.get('USE'): img_node = def_map.get(img_node.get('USE'), img_node)
+        if img_node is not None: has_texture = True
+
+    need_uvs = (len(uvs) > 0) or has_texture
+
+    if need_uvs:
+        # X3D Standard: synthesize UVs based on longest and second longest bounding box dimensions
+        min_p = np.min(pts, axis=0)
+        max_p = np.max(pts, axis=0)
+        size = max_p - min_p
+
+        dims = np.argsort(size)[::-1][:2]
+        d1, d2 = min(dims), max(dims) # Standardize S, T mapping directions
+        s_size = size[d1] if size[d1] > 1e-5 else 1.0
+        t_size = size[d2] if size[d2] > 1e-5 else 1.0
+
+        def get_fallback_uv(pt):
+            return [(pt[d1] - min_p[d1]) / s_size, 1.0 - (pt[d2] - min_p[d2]) / t_size]
+
     p_polys = parse_indices_nested(geom.get('coordIndex')) or [[i,i+1,i+2] for i in range(0, len(pts), 3)]
     t_polys = parse_indices_nested(geom.get('texCoordIndex')) or p_polys
 
@@ -170,16 +188,22 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
                 if v_key not in u_verts:
                     u_verts[v_key] = len(u_pos)
                     u_pos.append(pts[p_i])
-                    g_map.append(p_i) # Track original pos index for skinning
-                    if len(uvs) > 0:
-                        u_uvs.append(uvs[t_i] if t_i < len(uvs) else [0,0])
+                    g_map.append(p_i)
+
+                    if need_uvs:
+                        if t_i < len(uvs):
+                            u_uvs.append(uvs[t_i])
+                        else:
+                            # Supply missing UV mapped cleanly over the Bounding Box
+                            u_uvs.append(get_fallback_uv(pts[p_i]))
+
                 u_idx.append(u_verts[v_key])
 
     if not u_idx: return None
 
     it = UNSIGNED_INT if len(u_pos) >= 65535 else UNSIGNED_SHORT
     prim_attrs = {"POSITION": add_acc(gltf, bin_blob, np.array(u_pos, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER, True)}
-    if u_uvs: prim_attrs["TEXCOORD_0"] = add_acc(gltf, bin_blob, np.array(u_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
+    if need_uvs: prim_attrs["TEXCOORD_0"] = add_acc(gltf, bin_blob, np.array(u_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
 
     m_idx = resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets, mat_cache)
 
@@ -397,11 +421,9 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             targ_node = def_to_tidx[tn] if path == 'translation' else def_to_nidx[tn]
             node_targets.append((fn, targ_node, path))
         elif ff == 'value_changed' and tn in tex_transform_targets:
-            # Map X3D field targeting correctly
             if 'translation' in tf.lower(): prop = 'offset'
             elif 'scale' in tf.lower(): prop = 'scale'
             else: prop = 'rotation'
-
             pointer = f"{tex_transform_targets[tn]}/{prop}"
             tex_transform_anims.append((fn, pointer, prop))
 
@@ -437,7 +459,6 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             keys_arr = np.array(parse_array(i_node.get('key')), dtype=np.float32) * dur
             vals_arr = parse_array(i_node.get('keyValue'))
 
-            # Format outputs (VEC2 for scale/offset, SCALAR for rotation)
             if prop in ('offset', 'scale'):
                 v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
                 v_type = VEC2
