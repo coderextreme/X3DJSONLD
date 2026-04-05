@@ -10,6 +10,7 @@ Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors
 - Embeds ImageTextures and maps TextureCoordinates (UVs).
 - Unrolls vertices for glTF compatibility while perfectly mirroring skinning weights.
 - Handles accurate X3D IndexedLineSet materials/vertex coloring.
+- Accurately caches and routes TextureTransform animations (Offset, Rotation, Scale).
 """
 
 def strip_ns(node):
@@ -87,12 +88,29 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
     gltf.textures.append(Texture(source=len(gltf.images)-1))
     return len(gltf.textures) - 1
 
-def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets=None):
+def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets, mat_cache):
     app = shape_node.find('.//Appearance')
+
+    # 1. Resolve USE references correctly for the Appearance wrapper itself.
+    if app is not None and app.get('USE'):
+        app = def_map.get(app.get('USE'), app)
+
     if app is None: return None
+
+    # Check cache to ensure we don't duplicate Materials/Animations (vital for the Ball mirroring the Skin)
+    app_key = app.get('DEF') or str(id(app))
+    if app_key in mat_cache:
+        return mat_cache[app_key]
+
+    # Resolve USE recursively for contents
     mat_node = app.find('.//Material')
+    if mat_node is not None and mat_node.get('USE'): mat_node = def_map.get(mat_node.get('USE'), mat_node)
+
     img_node = app.find('.//ImageTexture')
-    tx_node  = app.find('.//TextureTransform')  # e.g. KickTextureTransform
+    if img_node is not None and img_node.get('USE'): img_node = def_map.get(img_node.get('USE'), img_node)
+
+    tx_node  = app.find('.//TextureTransform')
+    if tx_node is not None and tx_node.get('USE'): tx_node = def_map.get(tx_node.get('USE'), tx_node)
 
     diff = parse_array(mat_node.get('diffuseColor', '0.8 0.8 0.8')) if mat_node is not None else [0.8, 0.8, 0.8]
     pbr = PbrMetallicRoughness(baseColorFactor=diff + [1.0], metallicFactor=0.0, roughnessFactor=0.8)
@@ -101,8 +119,7 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
         tex_idx = embed_texture(img_node.get('url', ''), base_path, gltf, bin_blob)
         if tex_idx is not None:
             ti = TextureInfo(index=tex_idx)
-            # If a TextureTransform is present, seed KHR_texture_transform on the
-            # TextureInfo so KHR_animation_pointer has a valid JSON path to target.
+            # If a TextureTransform is present, seed KHR_texture_transform defaults
             if tx_node is not None:
                 ti.extensions = {"KHR_texture_transform": {
                     "offset": [0.0, 0.0], "rotation": 0.0, "scale": [1.0, 1.0]}}
@@ -111,17 +128,17 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
 
     mat_idx = len(gltf.materials)
     gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
+    mat_cache[app_key] = mat_idx
 
-    # Register the TextureTransform DEF so the animation pass can emit a pointer channel
+    # Register the TextureTransform DEF so the animation pass can construct full pointer paths
     if tx_node is not None and tx_node.get('DEF') and tex_transform_targets is not None:
         if pbr.baseColorTexture is not None:
-            pointer = (f"/materials/{mat_idx}/pbrMetallicRoughness"
-                       f"/baseColorTexture/extensions/KHR_texture_transform/rotation")
-            tex_transform_targets[tx_node.get('DEF')] = pointer
+            base_pointer = f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorTexture/extensions/KHR_texture_transform"
+            tex_transform_targets[tx_node.get('DEF')] = base_pointer
 
     return mat_idx
 
-def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info, tex_transform_targets=None):
+def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info, tex_transform_targets, mat_cache):
     geom = shape_node.find('.//IndexedFaceSet') or shape_node.find('.//IndexedTriangleSet')
     if geom is None: return None
 
@@ -164,7 +181,7 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     prim_attrs = {"POSITION": add_acc(gltf, bin_blob, np.array(u_pos, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER, True)}
     if u_uvs: prim_attrs["TEXCOORD_0"] = add_acc(gltf, bin_blob, np.array(u_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
 
-    m_idx = resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets)
+    m_idx = resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets, mat_cache)
 
     mesh_idx = len(gltf.meshes)
     gltf.meshes.append(Mesh(primitives=[Primitive(attributes=prim_attrs,
@@ -179,17 +196,9 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     return n_idx
 
 def process_line_shape(shape_node, gltf, bin_blob, def_map):
-    """Convert an IndexedLineSet Shape into a glTF LINE mesh node.
-
-    Handles two colour modes:
-      - colorPerVertex=false  → one colour per polyline segment → LINES (mode=1)
-                                with per-vertex colours duplicated for each endpoint
-      - colorPerVertex=true   → colour per vertex → LINE_STRIP (mode=3) per polyline
-      - no colour node        → LINE_STRIP using Shape Material color fallback
-    """
+    """Convert an IndexedLineSet Shape into a glTF LINE mesh node."""
     geom = shape_node.find('.//IndexedLineSet')
     if geom is None: return None
-    # Resolve USE (e.g. Circle1 / Circle2 reuse Orbit1)
     if geom.get('USE'): geom = def_map.get(geom.get('USE'), geom)
 
     coord = geom.find('.//Coordinate')
@@ -197,7 +206,6 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
     if coord is None: return None
     pts = np.array(parse_array(coord.get('point')), dtype=np.float32).reshape(-1, 3)
 
-    # Resolve Optional explicit Colour node
     color_node = geom.find('.//Color')
     if color_node is not None and color_node.get('USE'):
         color_node = def_map.get(color_node.get('USE'), color_node)
@@ -209,31 +217,23 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
     color_per_vertex = geom.get('colorPerVertex', 'true').lower() != 'false'
     color_index = parse_array(geom.get('colorIndex', ''), int)
 
-    # 1. Fallback to material overall color if explicit vertex coloring is missing
     base_color = [1.0, 1.0, 1.0, 1.0]
     if colors is None:
         app = shape_node.find('.//Appearance')
-        if app is not None and app.get('USE'):
-            app = def_map.get(app.get('USE'), app)
+        if app is not None and app.get('USE'): app = def_map.get(app.get('USE'), app)
         if app is not None:
             mat = app.find('.//Material')
-            if mat is not None and mat.get('USE'):
-                mat = def_map.get(mat.get('USE'), mat)
+            if mat is not None and mat.get('USE'): mat = def_map.get(mat.get('USE'), mat)
             if mat is not None:
                 emissive = parse_array(mat.get('emissiveColor', '0 0 0'))
                 diffuse  = parse_array(mat.get('diffuseColor', '0 0 0'))
-                # For X3D, lines are strictly unlit, primarily utilizing emissiveColor
-                if sum(emissive) > 0.0:
-                    base_color = emissive + [1.0]
-                elif sum(diffuse) > 0.0:
-                    base_color = diffuse + [1.0]
+                if sum(emissive) > 0.0: base_color = emissive + [1.0]
+                elif sum(diffuse) > 0.0: base_color = diffuse + [1.0]
 
-    # 2. Append Material
     pbr = PbrMetallicRoughness(baseColorFactor=base_color, metallicFactor=0.0, roughnessFactor=1.0)
     mat_idx = len(gltf.materials)
     gltf.materials.append(Material(pbrMetallicRoughness=pbr, doubleSided=True))
 
-    # Split coordIndex on -1 into individual polylines
     raw_idx = parse_array(geom.get('coordIndex', ''), int)
     polylines, cur = [], []
     for i in raw_idx:
@@ -245,8 +245,6 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
     if not polylines: return None
 
     if colors is not None and not color_per_vertex:
-        # Per-segment colour: expand every adjacent pair into a LINES primitive
-        # so each endpoint can carry its segment's colour as a vertex attribute.
         line_pts, line_cols = [], []
         for seg_i, poly in enumerate(polylines):
             cidx = color_index[seg_i] if seg_i < len(color_index) else seg_i
@@ -254,15 +252,12 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
             for k in range(len(poly) - 1):
                 line_pts.extend([pts[poly[k]], pts[poly[k + 1]]])
                 line_cols.extend([c, c])
-        pos_arr = np.array(line_pts, dtype=np.float32)
-        col_arr = np.array(line_cols, dtype=np.float32)
         prim_attrs = {
-            "POSITION": add_acc(gltf, bin_blob, pos_arr, VEC3, FLOAT, ARRAY_BUFFER, True),
-            "COLOR_0":  add_acc(gltf, bin_blob, col_arr, VEC3, FLOAT, ARRAY_BUFFER),
+            "POSITION": add_acc(gltf, bin_blob, np.array(line_pts, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER, True),
+            "COLOR_0":  add_acc(gltf, bin_blob, np.array(line_cols, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER),
         }
-        primitives = [Primitive(attributes=prim_attrs, mode=1, material=mat_idx)]  # LINES
+        primitives = [Primitive(attributes=prim_attrs, mode=1, material=mat_idx)]
     else:
-        # Per-vertex colours or no colour → one LINE_STRIP primitive per polyline
         primitives = []
         for poly in polylines:
             line_pts = np.array([pts[i] for i in poly], dtype=np.float32)
@@ -270,7 +265,7 @@ def process_line_shape(shape_node, gltf, bin_blob, def_map):
             if colors is not None and color_per_vertex:
                 vc = np.array([colors[i] if i < len(colors) else [1, 1, 1] for i in poly], dtype=np.float32)
                 prim_attrs["COLOR_0"] = add_acc(gltf, bin_blob, vc, VEC3, FLOAT, ARRAY_BUFFER)
-            primitives.append(Primitive(attributes=prim_attrs, mode=3, material=mat_idx))  # LINE_STRIP
+            primitives.append(Primitive(attributes=prim_attrs, mode=3, material=mat_idx))
 
     if not primitives: return None
     mesh_idx = len(gltf.meshes)
@@ -287,7 +282,9 @@ def convert_x3d_to_glb(x3d_path, glb_path):
 
     gltf = GLTF2(scene=0, scenes=[Scene(nodes=[0])], nodes=[Node(name="WorldRoot", children=[])])
     bin_blob, def_to_nidx, def_to_tidx, joint_weights, skin_prim_info = bytearray(), {}, {}, {}, []
-    tex_transform_targets = {}  # TextureTransform DEF → KHR_animation_pointer JSON path
+
+    mat_cache = {}
+    tex_transform_targets = {}  # TextureTransform DEF → base KHR_animation_pointer JSON path
 
     def traverse(node, p_idx, inside_hanim=False):
         if node.tag in ('Transform', 'Group', 'HAnimJoint', 'HAnimHumanoid', 'HAnimSegment', 'HAnimSite'):
@@ -297,23 +294,18 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             r = axis_angle_to_quat(*parse_array(node.get('rotation'), default=[0,1,0,0]))
             s = parse_array(node.get('scale'), default=[1,1,1])
 
-            # 4-NODE CHAIN TO REPLICATE X3D MATH (T * C * R * S * -C)
-            # 1. Translation Node (Target for PositionAnim)
             idx_t = len(gltf.nodes)
             gltf.nodes.append(Node(name=f"{dname}_T", translation=t, children=[]))
             gltf.nodes[p_idx].children.append(idx_t)
 
-            # 2. Center-Forward Node
             idx_c_fwd = len(gltf.nodes)
             gltf.nodes.append(Node(name=f"{dname}_C_fwd", translation=c, children=[]))
             gltf.nodes[idx_t].children.append(idx_c_fwd)
 
-            # 3. Rotation Node (THE JOINT - Target for OrientationAnim & Skinning)
             idx_r = len(gltf.nodes)
             gltf.nodes.append(Node(name=dname, rotation=r, scale=s, children=[]))
             gltf.nodes[idx_c_fwd].children.append(idx_r)
 
-            # 4. Center-Reverse Node
             idx_c_rev = len(gltf.nodes)
             gltf.nodes.append(Node(name=f"{dname}_C_rev", translation=[-x for x in c], children=[]))
             gltf.nodes[idx_r].children.append(idx_c_rev)
@@ -325,24 +317,17 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                 idx, wgt = parse_array(node.get('skinCoordIndex'), int), parse_array(node.get('skinCoordWeight'))
                 if idx: joint_weights[node.get('DEF')] = list(zip(idx, wgt))
 
-            # Once inside HAnimHumanoid, all descendant shapes are skinnable
             child_inside_hanim = inside_hanim or node.tag == 'HAnimHumanoid'
             for child in node: traverse(child, idx_c_rev, child_inside_hanim)
 
         elif node.tag == 'Shape':
-            # Resolve USE references — e.g. <Shape USE='AxisLinesShape'/> or
-            # Circle1/2 which carry <IndexedLineSet USE='Orbit1'/> inside them.
-            actual_node = (def_map.get(node.get('USE'), node)
-                           if node.get('USE') and not node.get('DEF') else node)
+            actual_node = (def_map.get(node.get('USE'), node) if node.get('USE') and not node.get('DEF') else node)
 
-            if (actual_node.find('.//IndexedFaceSet') is not None or
-                    actual_node.find('.//IndexedTriangleSet') is not None):
-                # Solid geometry — only enrol in skinning when inside HAnimHumanoid
+            if (actual_node.find('.//IndexedFaceSet') is not None or actual_node.find('.//IndexedTriangleSet') is not None):
                 prims_target = skin_prim_info if inside_hanim else []
                 sh_idx = process_shape(actual_node, gltf, bin_blob, def_map,
-                                       base_dir, prims_target, tex_transform_targets)
+                                       base_dir, prims_target, tex_transform_targets, mat_cache)
             else:
-                # Line / point geometry (IndexedLineSet) — never skinned
                 sh_idx = process_line_shape(actual_node, gltf, bin_blob, def_map)
 
             if sh_idx is not None: gltf.nodes[p_idx].children.append(sh_idx)
@@ -383,17 +368,15 @@ def convert_x3d_to_glb(x3d_path, glb_path):
 
         for ni, mi, gmap in skin_prim_info:
             gltf.nodes[ni].skin = s_idx
-
-            # Prevent double-transforms
             for p in gltf.nodes:
                 if p.children and ni in p.children: p.children.remove(ni)
             gltf.nodes[0].children.append(ni)
 
             for prim in gltf.meshes[mi].primitives:
-                num_pts = len(gmap) # unrolled vertex count
+                num_pts = len(gmap)
                 jd, wd = np.zeros((num_pts, 4), dtype=np.uint16), np.zeros((num_pts, 4), dtype=np.float32)
                 for i in range(num_pts):
-                    original_idx = gmap[i] # map new vertex back to original weight
+                    original_idx = gmap[i]
                     infs = sorted(v_map.get(original_idx, [(0, 1.0)]), key=lambda x: x[1], reverse=True)[:4]
                     ws = np.array([max(0, x[1]) for x in infs], dtype=np.float32)
                     sw = ws.sum()
@@ -414,8 +397,13 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             targ_node = def_to_tidx[tn] if path == 'translation' else def_to_nidx[tn]
             node_targets.append((fn, targ_node, path))
         elif ff == 'value_changed' and tn in tex_transform_targets:
-            # ScalarInterpolator → TextureTransform.rotation (KHR_animation_pointer)
-            tex_transform_anims.append((fn, tex_transform_targets[tn]))
+            # Map X3D field targeting correctly
+            if 'translation' in tf.lower(): prop = 'offset'
+            elif 'scale' in tf.lower(): prop = 'scale'
+            else: prop = 'rotation'
+
+            pointer = f"{tex_transform_targets[tn]}/{prop}"
+            tex_transform_anims.append((fn, pointer, prop))
 
     if node_targets or tex_transform_anims:
         anim = Animation(name="HumanoidAnimation", channels=[], samplers=[])
@@ -439,33 +427,38 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                                                   output=add_acc(gltf, bin_blob, v_data, v_type, FLOAT, None, True)))
             anim.channels.append(AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(node=targ_node, path=path)))
 
-        # TextureTransform rotation animated via KHR_animation_pointer.
-        # The ScalarInterpolator produces a bare float (radians) each frame;
-        # we write it straight into the material's KHR_texture_transform block.
-        for i_def, pointer in tex_transform_anims:
+        # Process Extracted TextureTransform Animations via KHR_animation_pointer
+        for i_def, pointer, prop in tex_transform_anims:
             i_node = def_map.get(i_def)
             if i_node is None: continue
             sensor = def_map.get(interp_drivers.get(i_def))
             dur = float(sensor.get('cycleInterval', '1.0')) if sensor is not None else 1.0
-            keys = np.array(parse_array(i_node.get('key')), dtype=np.float32) * dur
-            vals = np.array(parse_array(i_node.get('keyValue')), dtype=np.float32)
+
+            keys_arr = np.array(parse_array(i_node.get('key')), dtype=np.float32) * dur
+            vals_arr = parse_array(i_node.get('keyValue'))
+
+            # Format outputs (VEC2 for scale/offset, SCALAR for rotation)
+            if prop in ('offset', 'scale'):
+                v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
+                v_type = VEC2
+            else:
+                v_data = np.array(vals_arr, dtype=np.float32)
+                v_type = SCALAR
+
             s_idx = len(anim.samplers)
             anim.samplers.append(AnimationSampler(
-                input=add_acc(gltf, bin_blob, keys, SCALAR, FLOAT, None, True),
-                output=add_acc(gltf, bin_blob, vals, SCALAR, FLOAT, None, True)))
-            chan = AnimationChannel(sampler=s_idx,
-                                   target=AnimationChannelTarget(path="pointer"))
+                input=add_acc(gltf, bin_blob, keys_arr, SCALAR, FLOAT, None, True),
+                output=add_acc(gltf, bin_blob, v_data, v_type, FLOAT, None, True)))
+
+            chan = AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(path="pointer"))
             chan.target.extensions = {"KHR_animation_pointer": {"pointer": pointer}}
             anim.channels.append(chan)
 
         gltf.animations.append(anim)
 
-    # Declare extensions used
     ext_used = []
-    if tex_transform_anims:
-        ext_used += ["KHR_texture_transform", "KHR_animation_pointer"]
-    if ext_used:
-        gltf.extensionsUsed = ext_used
+    if tex_transform_anims: ext_used += ["KHR_texture_transform", "KHR_animation_pointer"]
+    if ext_used: gltf.extensionsUsed = ext_used
 
     gltf.buffers.append(Buffer(byteLength=len(bin_blob)))
     gltf.set_binary_blob(bin_blob)
