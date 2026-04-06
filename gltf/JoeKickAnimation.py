@@ -586,4 +586,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         convert_x3d_to_glb(sys.argv[1], sys.argv[2] if len(sys.argv)>2 else "output.glb")
     else:
+        convert_x3d_to_glb(f"JoeSkinTexcoordDisplacerKick.x3d", "JoeSkinTexcoordDisplacerKick.glb")
         convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
