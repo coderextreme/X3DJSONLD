@@ -11,10 +11,10 @@ Features Expanded:
   • MFString Parsing: Correctly parses X3D multi-quoted strings for URLs and Text.
   • Missing Image Fallback: Embeds a 1x1 placeholder texture if files are missing.
   • Multi-URL Fallbacks: Tries successive URLs in MFStrings if a texture or inline file is missing.
-  • Inline & InlineGeometry: Fully resolves external files/fragments locally or via HTTP.
+  • Lexical DEF/USE Scoping: Every Inline has isolated DEF dictionaries as per X3D Spec.
+  • IMPORT / EXPORT: Resolves bridged DEFs across scopes.
   • Shape-Injected Geometry: Handles <InlineGeometry> acting as a geometry source inside <Shape>.
   • Context-Aware Paths: Handles relative texture paths for Inlines loaded from sub-directories.
-  • XML Namespaces: Strips namespaces automatically to guarantee node discovery.
   • Validator Compliant: Fixes instant-cut animations and missing TEXCOORD_0 arrays automatically.
   • Switch Support: Correctly traverses zero or one choice from children based on whichChoice.
 """
@@ -22,8 +22,13 @@ Features Expanded:
 import struct
 import xml.etree.ElementTree as ET
 import numpy as np
-import json, os, shlex, urllib.request, math, mimetypes, base64, re
+import json, os, urllib.request, math, mimetypes, base64, re
 from pygltflib import *
+
+# Module-level map from id(Element) -> X3DScope.
+# ElementTree.Element (C implementation) does not support arbitrary attribute
+# assignment, so we store scope associations here instead of on the element.
+_element_scope_map: dict = {}
 
 # Attempt to load Pillow for X3D Text rendering
 try:
@@ -47,13 +52,9 @@ def strip_namespaces(node):
         strip_namespaces(child)
 
 def parse_mfstring(val_str):
-    """Parses X3D MFString e.g. '"string1" "string2"' into a list of strings."""
     if not val_str: return []
-    # Match strings bounded by double or single quotes
     matches = re.findall(r'"([^"]*)"|\'([^\']*)\'', val_str)
-    if matches:
-        return [m[0] if m[0] else m[1] for m in matches]
-    # Fallback if unquoted
+    if matches: return [m[0] if m[0] else m[1] for m in matches]
     return val_str.split()
 
 def parse_array(val_str, type_cast=float, default=None):
@@ -146,19 +147,70 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
         f.write(bin_padded)
 
 # ---------------------------------------------------------------------------
-# External Loading (Inlines & InlineGeometry)
+# Scoping & Resolution (DEF, USE, IMPORT, EXPORT)
 # ---------------------------------------------------------------------------
 
-def load_external_x3d(url_str, current_base_path, def_map):
-    """Loads external X3D files/fragments, updates def_map, and returns the target node."""
+class X3DScope:
+    def __init__(self, root, base_path):
+        self.root = root
+        self.base_path = base_path
+        self.def_map = {}
+        self.export_map = {}
+        self.inline_exports = {}
+
+def resolve_use(node):
+    """Safely retrieves the target node from its local lexical scope if it contains a USE tag."""
+    if node is not None and node.get('USE') and id(node) in _element_scope_map:
+        return _element_scope_map[id(node)].def_map.get(node.get('USE'), node)
+    return node
+
+def parse_x3d_scope_tree(root, base_path, inline_cache, scopes_list):
+    strip_namespaces(root)
+    scope = X3DScope(root, base_path)
+    scopes_list.append(scope)
+
+    # Pass 1: Local DEFs and assign structural scope pointer
+    for el in root.iter():
+        _element_scope_map[id(el)] = scope
+        if el.get('DEF'):
+            scope.def_map[el.get('DEF')] = el
+
+    # Pass 2: Inlines (Creates child scopes recursively)
+    for inl in root.iter():
+        if inl.tag in ('Inline', 'InlineGeometry'):
+            url_str = inl.get('url', '')
+            child_scope, frag = load_scope_from_url(url_str, base_path, inline_cache, scopes_list)
+            if child_scope:
+                inline_cache[id(inl)] = (child_scope, frag)
+                inl_def = inl.get('DEF')
+                if inl_def:
+                    scope.inline_exports[inl_def] = child_scope.export_map
+
+    # Pass 3: EXPORTs
+    for exp in root.iter('EXPORT'):
+        loc = exp.get('localDEF')
+        asn = exp.get('AS', loc)
+        if loc in scope.def_map:
+            scope.export_map[asn] = scope.def_map[loc]
+
+    # Pass 4: IMPORTs
+    for imp in root.iter('IMPORT'):
+        inl_def = imp.get('inlineDEF')
+        exp_def = imp.get('exportedDEF')
+        asn = imp.get('AS', exp_def)
+        if inl_def in scope.inline_exports:
+            imported_node = scope.inline_exports[inl_def].get(exp_def)
+            if imported_node is not None:
+                scope.def_map[asn] = imported_node
+
+    return scope
+
+def load_scope_from_url(url_str, current_base_path, inline_cache, scopes_list):
     urls = parse_mfstring(url_str)
     for i, url in enumerate(urls):
         file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
         is_http = file_url.startswith('http')
         local = os.path.join(current_base_path, file_url.replace('\\', '/')) if not is_http else file_url
-
-        ext_root = None
-        ext_base = current_base_path
 
         try:
             if is_http:
@@ -170,24 +222,20 @@ def load_external_x3d(url_str, current_base_path, def_map):
             elif os.path.exists(local):
                 ext_root = ET.parse(local).getroot()
                 ext_base = os.path.dirname(local)
+            else:
+                ext_root = None
+
+            if ext_root is not None:
+                child_scope = parse_x3d_scope_tree(ext_root, ext_base, inline_cache, scopes_list)
+                return child_scope, frag
+
         except Exception as e:
             print(f"    Failed loading external X3D '{local}': {e}")
 
-        if ext_root is not None:
-            strip_namespaces(ext_root)
-            # Inject new paths into loaded elements so their textures load relative to them
-            for el in ext_root.iter():
-                el.set('_base_path', ext_base)
-                if el.get('DEF') and el.get('DEF') not in def_map:
-                    def_map[el.get('DEF')] = el
+        if i < len(urls) - 1:
+            print(f"    Fallback: '{local}' not loaded. Trying next URL...")
 
-            target_node = ext_root.find(f".//*[@DEF='{frag}']") if frag else ext_root
-            return target_node, ext_base
-        else:
-            if i < len(urls) - 1:
-                print(f"    Fallback: '{local}' not loaded. Trying next URL...")
-
-    return None, current_base_path
+    return None, None
 
 # ---------------------------------------------------------------------------
 # Materials, Textures, and Primitives
@@ -231,7 +279,7 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
                     mime = r.info().get_content_type() or mimetypes.guess_type(u)[0] or "image/jpeg"
                 break
             except Exception as e:
-                print(f"      Fetch failed: {e}")
+                pass
 
         if i < len(urls) - 1:
             print(f"    Fallback: '{u}' not found. Trying next URL...")
@@ -243,17 +291,12 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
 
     return add_raw_image(gltf, bin_blob, data, mime)
 
-def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, default_base_path):
+def resolve_material(app_node, mat_list, gltf, bin_blob):
+    app_node = resolve_use(app_node)
     if app_node is None: return None
 
-    if app_node.get('USE'):
-        app_node = def_map.get(app_node.get('USE'), app_node)
-
-    mat_node = app_node.find('.//Material')
-    img_node = app_node.find('.//ImageTexture')
-
-    if mat_node is not None and mat_node.get('USE'): mat_node = def_map.get(mat_node.get('USE'), mat_node)
-    if img_node is not None and img_node.get('USE'): img_node = def_map.get(img_node.get('USE'), img_node)
+    mat_node = resolve_use(app_node.find('.//Material'))
+    img_node = resolve_use(app_node.find('.//ImageTexture'))
 
     if mat_node is None and img_node is None: return None
 
@@ -273,8 +316,8 @@ def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, default_base_p
     }
 
     if img_node is not None:
-        node_base_path = img_node.get('_base_path', default_base_path)
-        tex_idx = embed_texture(img_node.get('url', ''), node_base_path, gltf, bin_blob)
+        # Texture URLs load relative to the file the <ImageTexture> was defined in
+        tex_idx = embed_texture(img_node.get('url', ''), _element_scope_map[id(img_node)].base_path, gltf, bin_blob)
         if tex_idx is not None:
             mat_dict["pbrMetallicRoughness"]["baseColorTexture"] = {"index": tex_idx}
             mat_dict["pbrMetallicRoughness"]["baseColorFactor"] = [1.0, 1.0, 1.0, round(alpha, 5)]
@@ -288,7 +331,7 @@ def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, default_base_p
 # ---------------------------------------------------------------------------
 # X3D Text to glTF Quad Generator
 # ---------------------------------------------------------------------------
-def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_list, base_path):
+def process_text_primitives(text_node, app_node, gltf, bin_blob, mat_list):
     if not HAS_PIL:
         print("    WARN: X3D <Text> node found, but 'Pillow' is not installed. Skipping. (Run: pip install Pillow)")
         return None
@@ -296,13 +339,12 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
     lines = parse_mfstring(text_node.get('string', ''))
     if not lines: return None
 
-    fs_node = text_node.find('.//FontStyle')
+    fs_node = resolve_use(text_node.find('.//FontStyle'))
     size = 1.0
     family = "SERIF"
     justify = ["BEGIN", "FIRST"]
 
     if fs_node is not None:
-        if fs_node.get('USE'): fs_node = def_map.get(fs_node.get('USE'), fs_node)
         size = float(fs_node.get('size', 1.0))
         family_arr = parse_mfstring(fs_node.get('family', '"SERIF"'))
         if family_arr: family = family_arr[0]
@@ -376,7 +418,7 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
         "TEXCOORD_0": add_accessor(gltf, bin_blob, uvs, VEC2, FLOAT, ARRAY_BUFFER)
     }
 
-    mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
+    mat_idx = resolve_material(app_node, mat_list, gltf, bin_blob)
     if mat_idx is None:
         mat_list.append({"name": "TextMat", "doubleSided": True, "alphaMode": "BLEND",
                          "pbrMetallicRoughness": {"baseColorFactor": [1,1,1,1], "metallicFactor": 0.0, "roughnessFactor": 1.0}})
@@ -415,10 +457,9 @@ def box_to_ifs(box_node):
     ET.SubElement(ifs, 'Normal', {'vector': ' '.join([f"{v[0]} {v[1]} {v[2]}" for v in n])})
     return ifs
 
-def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_path):
+def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_list):
     primitives = []
     for node in geom_nodes:
-        # Detect FaceSets, TriangleSets, or Generate from Primitives
         is_faceset = node.tag in ('IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet')
         facesets = ([node] if is_faceset else
                     node.findall('.//IndexedFaceSet') +
@@ -430,16 +471,14 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
         app_node = None if is_faceset else node.find('.//Appearance')
 
         for face_set in facesets:
-            coord = face_set.find('.//Coordinate')
-            if coord is not None and coord.get('USE'): coord = def_map.get(coord.get('USE'), coord)
+            coord = resolve_use(face_set.find('.//Coordinate'))
             if coord is None: continue
 
             raw_pos = parse_array(coord.get('point', ''))
             if not raw_pos: continue
             pos_arr = np.array(raw_pos, dtype=np.float32).reshape(-1, 3)
 
-            tex_coord = face_set.find('.//TextureCoordinate')
-            if tex_coord is not None and tex_coord.get('USE'): tex_coord = def_map.get(tex_coord.get('USE'), tex_coord)
+            tex_coord = resolve_use(face_set.find('.//TextureCoordinate'))
             if tex_coord is not None:
                 uv_arr = np.array(parse_array(tex_coord.get('point', '')), dtype=np.float32).reshape(-1, 2)
                 if len(uv_arr) > 0:
@@ -447,8 +486,7 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
             else:
                 uv_arr = []
 
-            norm_node = face_set.find('.//Normal')
-            if norm_node is not None and norm_node.get('USE'): norm_node = def_map.get(norm_node.get('USE'), norm_node)
+            norm_node = resolve_use(face_set.find('.//Normal'))
             norm_arr = np.array(parse_array(norm_node.get('vector', '')), dtype=np.float32).reshape(-1, 3) if norm_node is not None else []
 
             if face_set.tag == 'TriangleSet':
@@ -497,7 +535,7 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
             if len(out_uvs) > 0:
                 prim_attrs["TEXCOORD_0"] = add_accessor(gltf, bin_blob, np.array(out_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
 
-            mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
+            mat_idx = resolve_material(app_node, mat_list, gltf, bin_blob)
 
             if mat_idx is not None and "baseColorTexture" in mat_list[mat_idx].get("pbrMetallicRoughness", {}):
                 if "TEXCOORD_0" not in prim_attrs:
@@ -518,10 +556,10 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
     return len(gltf.meshes) - 1
 
 # ---------------------------------------------------------------------------
-# DOM Traversal & Dual-Node Pattern
+# DOM Traversal & Scene Graph
 # ---------------------------------------------------------------------------
 
-def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path):
+def traverse_x3d_node(xml_node, parent_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache):
     structural_tags = {'Transform', 'Group', 'HAnimJoint', 'HAnimSegment', 'HAnimHumanoid', 'HAnimSite'}
     logic_tags = {'BooleanFilter', 'BooleanSequencer', 'NavigationInfo', 'ProximitySensor', 'TimeTrigger', 'TouchSensor'}
 
@@ -534,25 +572,25 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
             name=def_name or f"Switch_{switch_idx}",
             children=[]
         ))
-        if def_name: def_to_node_idx[def_name] = switch_idx
+        element_to_gltf_idx[id(xml_node)] = switch_idx
 
-        if parent_gltf_node_idx is not None:
-            if gltf.nodes[parent_gltf_node_idx].children is None: gltf.nodes[parent_gltf_node_idx].children = []
-            gltf.nodes[parent_gltf_node_idx].children.append(switch_idx)
+        if parent_idx is not None:
+            if gltf.nodes[parent_idx].children is None: gltf.nodes[parent_idx].children = []
+            gltf.nodes[parent_idx].children.append(switch_idx)
 
         which_choice = int(xml_node.get('whichChoice', '-1'))
-
-        # Only valid X3DChildNodes count towards the children choice array.
         choices = [c for c in xml_node if c.tag not in ('ROUTE', 'IS') and not c.tag.startswith('Metadata')]
 
         if 0 <= which_choice < len(choices):
-            traverse_x3d_node(choices[which_choice], switch_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+            traverse_x3d_node(choices[which_choice], switch_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache)
         return
 
     if xml_node.tag in ('Inline', 'InlineGeometry'):
-        target_node, ext_base = load_external_x3d(xml_node.get('url', ''), base_path, def_map)
-        if target_node is not None:
-            traverse_x3d_node(target_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, ext_base)
+        if id(xml_node) in inline_cache:
+            child_scope, frag = inline_cache[id(xml_node)]
+            target = child_scope.def_map.get(frag) if frag else child_scope.root
+            if target is not None:
+                traverse_x3d_node(target, parent_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache)
         return
 
     if xml_node.tag == 'Viewpoint':
@@ -568,9 +606,9 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
             rotation=axis_angle_to_quat(*parse_array(xml_node.get('orientation', '0 0 1 0'))),
             camera=cam_idx
         ))
-        if parent_gltf_node_idx is not None:
-            if gltf.nodes[parent_gltf_node_idx].children is None: gltf.nodes[parent_gltf_node_idx].children = []
-            gltf.nodes[parent_gltf_node_idx].children.append(node_idx)
+        if parent_idx is not None:
+            if gltf.nodes[parent_idx].children is None: gltf.nodes[parent_idx].children = []
+            gltf.nodes[parent_idx].children.append(node_idx)
         return
 
     if xml_node.tag in structural_tags:
@@ -584,105 +622,133 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
             rotation=axis_angle_to_quat(*parse_array(xml_node.get('rotation'), default=[0,1,0,0])),
             scale=parse_array(xml_node.get('scale'), default=[1,1,1]), children=[]
         ))
-        if def_name: def_to_node_idx[def_name] = outer_idx
-        node_to_center[outer_idx] = c
 
-        if parent_gltf_node_idx is not None:
-            if gltf.nodes[parent_gltf_node_idx].children is None: gltf.nodes[parent_gltf_node_idx].children = []
-            gltf.nodes[parent_gltf_node_idx].children.append(outer_idx)
+        element_to_gltf_idx[id(xml_node)] = outer_idx
+        element_to_center[id(xml_node)] = c
+
+        if parent_idx is not None:
+            if gltf.nodes[parent_idx].children is None: gltf.nodes[parent_idx].children = []
+            gltf.nodes[parent_idx].children.append(outer_idx)
 
         inner_idx = len(gltf.nodes)
         gltf.nodes.append(Node(name=f"{def_name or xml_node.tag}_Inner", translation=[float(x) for x in -c], children=[]))
         gltf.nodes[outer_idx].children.append(inner_idx)
 
         for child in xml_node:
-            traverse_x3d_node(child, inner_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+            traverse_x3d_node(child, inner_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache)
 
     elif xml_node.tag == 'Shape':
 
         # Resolve any nested Inlines dynamically into the Shape geometry before processing
         for ig in xml_node.findall('.//InlineGeometry') + xml_node.findall('.//Inline'):
-            target_node, ext_base = load_external_x3d(ig.get('url', ''), base_path, def_map)
-            if target_node is not None:
-                xml_node.append(target_node)
+            if id(ig) in inline_cache:
+                child_scope, frag = inline_cache[id(ig)]
+                target = child_scope.def_map.get(frag) if frag else child_scope.root
+                if target is not None:
+                    # Append it so it's structurally part of the Shape for downstream primitives
+                    # DEF/USE references inside it still work via _element_scope_map.
+                    xml_node.append(target)
 
         text_node = xml_node.find('.//Text')
         if text_node is not None:
-            mesh_idx = process_text_primitives(text_node, xml_node.find('.//Appearance'), gltf, bin_blob, def_map, mat_list, base_path)
+            mesh_idx = process_text_primitives(text_node, xml_node.find('.//Appearance'), gltf, bin_blob, mat_list)
         else:
-            mesh_idx = process_mesh_primitives([xml_node], gltf, bin_blob, def_map, mat_list, base_path)
+            mesh_idx = process_mesh_primitives([xml_node], gltf, bin_blob, mat_list)
 
         if mesh_idx is not None:
             shape_idx = len(gltf.nodes)
             gltf.nodes.append(Node(name=xml_node.get('DEF', f"Shape_{shape_idx}"), mesh=mesh_idx))
-            if parent_gltf_node_idx is not None:
-                if gltf.nodes[parent_gltf_node_idx].children is None: gltf.nodes[parent_gltf_node_idx].children = []
-                gltf.nodes[parent_gltf_node_idx].children.append(shape_idx)
+            if parent_idx is not None:
+                if gltf.nodes[parent_idx].children is None: gltf.nodes[parent_idx].children = []
+                gltf.nodes[parent_idx].children.append(shape_idx)
 
     else:
-        for child in xml_node: traverse_x3d_node(child, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+        for child in xml_node: traverse_x3d_node(child, parent_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache)
 
 # ---------------------------------------------------------------------------
 # Animations
 # ---------------------------------------------------------------------------
 
-def convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center):
-    routes = {}
-    for route in root.findall('.//ROUTE'): routes.setdefault((route.get('fromNode'), route.get('fromField')), []).append((route.get('toNode'), route.get('toField')))
-    all_interps = {node.get('DEF'): node for tag in ('PositionInterpolator', 'OrientationInterpolator') for node in root.findall(f'.//{tag}') if node.get('DEF')}
+def convert_animations(scopes_list, gltf, bin_blob, element_to_gltf_idx, element_to_center):
+    """Processes ROUTEs strictly within the lexical scope they were defined in."""
+    for scope in scopes_list:
+        routes = {}
+        # Only process ROUTEs inside this scope's actual XML file
+        for route in scope.root.iter('ROUTE'):
+            f_str, f_fld = route.get('fromNode'), route.get('fromField')
+            t_str, t_fld = route.get('toNode'), route.get('toField')
 
-    for ts in root.findall('.//TimeSensor'):
-        ts_def = ts.get('DEF')
-        if not ts_def: continue
-        cycle = float(ts.get('cycleInterval', '1.0'))
-        driven = [all_interps[to_node] for out_field in ('fraction_changed', 'cycleTime', 'time') for (to_node, to_field) in routes.get((ts_def, out_field), []) if to_field == 'set_fraction' and to_node in all_interps]
+            f_el = scope.def_map.get(f_str)
+            t_el = scope.def_map.get(t_str)
 
-        samplers, channels = [], []
-        seen_targets = set()
+            if f_el is not None and t_el is not None:
+                routes.setdefault((id(f_el), f_fld), []).append((id(t_el), t_fld))
 
-        for interp in driven:
-            targets = routes.get((interp.get('DEF'), 'value_changed'), [])
-            keys = np.array(parse_array(interp.get('key', '')), dtype=np.float32) * cycle
+        all_interps = {id(n): n for tag in ('PositionInterpolator', 'OrientationInterpolator') for n in scope.root.iter(tag)}
 
-            if len(keys) > 1:
-                for k_idx in range(1, len(keys)):
-                    if keys[k_idx] <= keys[k_idx-1]:
-                        keys[k_idx] = keys[k_idx-1] + 1e-5
+        for ts in scope.root.iter('TimeSensor'):
+            ts_id = id(ts)
+            cycle = float(ts.get('cycleInterval', '1.0'))
 
-            kv_raw = parse_array(interp.get('keyValue', ''))
-            if not targets or len(keys) < 2 or not kv_raw: continue
+            driven = []
+            for out_field in ('fraction_changed', 'cycleTime', 'time'):
+                for (t_id, t_fld) in routes.get((ts_id, out_field), []):
+                    if t_fld == 'set_fraction' and t_id in all_interps:
+                        driven.append(all_interps[t_id])
 
-            for (to_node, to_field) in targets:
-                if to_node not in def_to_node_idx: continue
-                gltf_path = {'translation': 'translation', 'set_translation': 'translation', 'rotation': 'rotation', 'set_rotation': 'rotation'}.get(to_field)
-                if not gltf_path: continue
+            samplers, channels = [], []
+            seen_targets = set()
 
-                node_idx = def_to_node_idx[to_node]
-                if (node_idx, gltf_path) in seen_targets: continue
-                seen_targets.add((node_idx, gltf_path))
+            for interp in driven:
+                interp_id = id(interp)
+                targets = routes.get((interp_id, 'value_changed'), [])
 
-                if interp.tag == 'OrientationInterpolator':
-                    vals = np.array([axis_angle_to_quat(*row) for row in np.array(kv_raw, dtype=np.float64).reshape(-1, 4)], dtype=np.float32)
-                    out_type = VEC4
-                else:
-                    vals = np.array(kv_raw, dtype=np.float32).reshape(-1, 3)
-                    if gltf_path == 'translation' and node_idx in node_to_center: vals += node_to_center[node_idx]
-                    out_type = VEC3
+                keys = np.array(parse_array(interp.get('key', '')), dtype=np.float32) * cycle
 
-                if len(vals) != len(keys): continue
-                t_off, t_len = append_to_buffer(bin_blob, keys.tobytes())
-                gltf.bufferViews.append(BufferView(buffer=0, byteOffset=t_off, byteLength=t_len))
-                gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=FLOAT, count=len(keys), type=SCALAR, min=[float(keys.min())], max=[float(keys.max())]))
-                acc_t = len(gltf.accessors) - 1
+                if len(keys) > 1:
+                    for k_idx in range(1, len(keys)):
+                        if keys[k_idx] <= keys[k_idx-1]:
+                            keys[k_idx] = keys[k_idx-1] + 1e-5
 
-                v_off, v_len = append_to_buffer(bin_blob, vals.tobytes())
-                gltf.bufferViews.append(BufferView(buffer=0, byteOffset=v_off, byteLength=v_len))
-                gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=FLOAT, count=len(vals), type=out_type))
+                kv_raw = parse_array(interp.get('keyValue', ''))
+                if not targets or len(keys) < 2 or not kv_raw: continue
 
-                samplers.append(AnimationSampler(input=acc_t, output=len(gltf.accessors)-1, interpolation="LINEAR"))
-                channels.append(AnimationChannel(sampler=len(samplers)-1, target=AnimationChannelTarget(node=node_idx, path=gltf_path)))
+                for (t_id, t_fld) in targets:
+                    gltf_path = {'translation': 'translation', 'set_translation': 'translation', 'rotation': 'rotation', 'set_rotation': 'rotation'}.get(t_fld)
+                    if not gltf_path: continue
 
-        if channels: gltf.animations.append(Animation(name=f"Anim_{ts_def}", samplers=samplers, channels=channels))
+                    # Use gltf internal indexing instead of DEF strings
+                    if t_id not in element_to_gltf_idx: continue
+                    node_idx = element_to_gltf_idx[t_id]
+
+                    if (node_idx, gltf_path) in seen_targets: continue
+                    seen_targets.add((node_idx, gltf_path))
+
+                    if interp.tag == 'OrientationInterpolator':
+                        vals = np.array([axis_angle_to_quat(*row) for row in np.array(kv_raw, dtype=np.float64).reshape(-1, 4)], dtype=np.float32)
+                        out_type = VEC4
+                    else:
+                        vals = np.array(kv_raw, dtype=np.float32).reshape(-1, 3)
+                        if gltf_path == 'translation' and t_id in element_to_center:
+                            vals += element_to_center[t_id]
+                        out_type = VEC3
+
+                    if len(vals) != len(keys): continue
+                    t_off, t_len = append_to_buffer(bin_blob, keys.tobytes())
+                    gltf.bufferViews.append(BufferView(buffer=0, byteOffset=t_off, byteLength=t_len))
+                    gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=FLOAT, count=len(keys), type=SCALAR, min=[float(keys.min())], max=[float(keys.max())]))
+                    acc_t = len(gltf.accessors) - 1
+
+                    v_off, v_len = append_to_buffer(bin_blob, vals.tobytes())
+                    gltf.bufferViews.append(BufferView(buffer=0, byteOffset=v_off, byteLength=v_len))
+                    gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=FLOAT, count=len(vals), type=out_type))
+
+                    samplers.append(AnimationSampler(input=acc_t, output=len(gltf.accessors)-1, interpolation="LINEAR"))
+                    channels.append(AnimationChannel(sampler=len(samplers)-1, target=AnimationChannelTarget(node=node_idx, path=gltf_path)))
+
+            if channels:
+                ts_def = ts.get('DEF', f"TimeSensor_{ts_id}")
+                gltf.animations.append(Animation(name=f"Anim_{ts_def}", samplers=samplers, channels=channels))
 
 # ---------------------------------------------------------------------------
 # Main converter
@@ -693,7 +759,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     base_path = os.path.dirname(os.path.abspath(x3d_filepath))
     try:
         root = ET.parse(x3d_filepath).getroot()
-        strip_namespaces(root)
     except Exception as e:
         print(f"  ERROR parsing X3D: {e}"); return
 
@@ -711,20 +776,23 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         extras = {m.get('name'): m.get('content') for m in head.findall('meta') if m.get('name') and m.get('content')}
         if extras: gltf.asset.extras = {"X3D_Metadata": extras}
 
-    def_map = {}
-    for el in root.iter():
-        el.set('_base_path', base_path)
-        if el.get('DEF'):
-            def_map[el.get('DEF')] = el
+    # Step 1: Pre-process lexical scoping, inline importing, and EXPORT/IMPORT
+    inline_cache = {}
+    scopes_list = []
+    parse_x3d_scope_tree(root, base_path, inline_cache, scopes_list)
 
-    def_to_node_idx, node_to_center = {}, {}
+    # Step 2: Build Scene Graph Structure
+    element_to_gltf_idx = {}
+    element_to_center = {}
 
-    scene_root = root.find('Scene')
+    scene_root = root.find('.//Scene')
     if scene_root is None:
         scene_root = root
 
-    traverse_x3d_node(scene_root, 0, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
-    convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center)
+    traverse_x3d_node(scene_root, 0, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache)
+
+    # Step 3: Resolve Animations using Strict Memory Pointers
+    convert_animations(scopes_list, gltf, bin_blob, element_to_gltf_idx, element_to_center)
 
     if len(bin_blob) == 0: bin_blob.extend(b'\x00' * 4)
 
