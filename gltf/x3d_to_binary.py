@@ -10,7 +10,9 @@ Features Expanded:
   • Materials & Textures: Resolves Appearance, Material, and embeds ImageTexture.
   • MFString Parsing: Correctly parses X3D multi-quoted strings for URLs and Text.
   • Missing Image Fallback: Embeds a 1x1 placeholder texture if files are missing.
-  • DEF/USE Resolving: Fully resolves USE tags for all nodes.
+  • Multi-URL Fallbacks: Tries successive URLs in MFStrings if a texture or inline file is missing.
+  • Inline Support & DEF/USE: Fully resolves USE tags across main and Inlined files dynamically.
+  • Context-Aware Paths: Handles relative texture paths for Inlines loaded from sub-directories.
   • XML Namespaces: Strips namespaces automatically to guarantee node discovery.
 """
 
@@ -157,8 +159,8 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
     data = None
     mime = "image/jpeg"
 
-    for u in urls:
-        u = u.strip()
+    for i, u in enumerate(urls):
+        u = u.strip().rstrip(',') # Clean up any errant commas outside quotes
         if not u: continue
 
         if u.startswith('data:image'):
@@ -185,6 +187,10 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
             except Exception as e:
                 print(f"      Fetch failed: {e}")
 
+        # If we reached here, the URL failed. Loop continues to the next MFString URL.
+        if i < len(urls) - 1:
+            print(f"    Fallback: '{u}' not found. Trying next URL...")
+
     if not data:
         print(f"    WARN: Texture not found, generating 1x1 Dummy Fallback: {urls}")
         data = base64.b64decode("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=")
@@ -192,7 +198,7 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
 
     return add_raw_image(gltf, bin_blob, data, mime)
 
-def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path):
+def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, default_base_path):
     if app_node is None: return None
 
     if app_node.get('USE'):
@@ -222,7 +228,9 @@ def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path):
     }
 
     if img_node is not None:
-        tex_idx = embed_texture(img_node.get('url', ''), base_path, gltf, bin_blob)
+        # Use the node's specific base path (if it came from an Inline in a sub-folder)
+        node_base_path = img_node.get('_base_path', default_base_path)
+        tex_idx = embed_texture(img_node.get('url', ''), node_base_path, gltf, bin_blob)
         if tex_idx is not None:
             mat_dict["pbrMetallicRoughness"]["baseColorTexture"] = {"index": tex_idx}
             mat_dict["pbrMetallicRoughness"]["baseColorFactor"] = [1.0, 1.0, 1.0, round(alpha, 5)]
@@ -483,15 +491,34 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
 
     if xml_node.tag in ('Inline', 'InlineGeometry'):
         urls = parse_mfstring(xml_node.get('url', ''))
-        url = urls[0] if urls else ''
-        file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
-        local = os.path.join(base_path, file_url)
-        if os.path.exists(local):
-            try:
-                ext = ET.parse(local).getroot()
-                strip_namespaces(ext)
-                traverse_x3d_node(ext.find(f".//*[@DEF='{frag}']") if frag else ext, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
-            except: pass
+
+        # Try URLs in order until one succeeds (MFString Fallback)
+        for i, url in enumerate(urls):
+            file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
+            local = os.path.join(base_path, file_url)
+
+            if os.path.exists(local):
+                try:
+                    inline_base_path = os.path.dirname(local)
+                    ext = ET.parse(local).getroot()
+                    strip_namespaces(ext)
+
+                    # Merge Inline DEFs into the global map & assign relative base paths
+                    for el in ext.iter():
+                        el.set('_base_path', inline_base_path)
+                        if el.get('DEF') and el.get('DEF') not in def_map:
+                            def_map[el.get('DEF')] = el
+
+                    target_node = ext.find(f".//*[@DEF='{frag}']") if frag else ext
+                    if target_node is not None:
+                        traverse_x3d_node(target_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, inline_base_path)
+
+                    break  # Success, skip remaining fallback URLs
+                except Exception as e:
+                    print(f"    Failed parsing Inline '{local}': {e}")
+            else:
+                if i < len(urls) - 1:
+                    print(f"    Fallback: Inline '{local}' not found. Trying next URL...")
         return
 
     if xml_node.tag == 'Viewpoint':
@@ -575,6 +602,14 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center):
         for interp in driven:
             targets = routes.get((interp.get('DEF'), 'value_changed'), [])
             keys = np.array(parse_array(interp.get('key', '')), dtype=np.float32) * cycle
+
+            # glTF Validator Fix: Keys must be strictly increasing. X3D allows duplicate
+            # keys for instant 'cuts'. We push duplicates forward by a tiny microsecond fraction.
+            if len(keys) > 1:
+                for k_idx in range(1, len(keys)):
+                    if keys[k_idx] <= keys[k_idx-1]:
+                        keys[k_idx] = keys[k_idx-1] + 1e-5
+
             kv_raw = parse_array(interp.get('keyValue', ''))
             if not targets or len(keys) < 2 or not kv_raw: continue
 
@@ -638,7 +673,12 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         if extras: gltf.asset.extras = {"X3D_Metadata": extras}
 
     # Global mapping for ALL defined nodes (resolves Appearance, ImageTexture, Coordinates etc.)
-    def_map = {el.get('DEF'): el for el in root.iter() if el.get('DEF')}
+    # We also inject '_base_path' directly into the XML elements to ensure correct path resolution
+    def_map = {}
+    for el in root.iter():
+        el.set('_base_path', base_path)
+        if el.get('DEF'):
+            def_map[el.get('DEF')] = el
 
     def_to_node_idx, node_to_center = {}, {}
 
@@ -693,7 +733,6 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"{base}/LaughingUpperSkeleton.x3d",               "LaughingUpperSkeleton.glb")
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
         convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
-        convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
-        convert_x3d_to_glb(f"Gramps8Final.x3d", "Gramps8Final.glb")
+        convert_x3d_to_glb(f"{base}/../Bones/AllBonesLOA5Skeletons.x3d", "AllBonesLOA5Skeletons.glb")
 
 # --- END OF FILE x3d_to_binary.py ---
