@@ -31,7 +31,6 @@
     "mutation-observer": "1.0.3",
     "node-rest-client": "3.1.1",
     "qs": "6.15.0",
-    "saxon-js": "2.7.0",
     "semver": "7.7.4",
     "socket.io": "4.8.3",
     "socket.io-client": "4.8.3",
@@ -40,11 +39,11 @@
     "url": "0.11.4",
     "xml2js": "0.6.2",
     "xmlhttprequest": "1.8.0",
-    "xsd-schema-validator": "0.11.0",
-    "xslt3": "2.7.0"
+    "xsd-schema-validator": "0.11.0"
   },
   "overrides": {
-    "elliptic": "file:elliptic"
+    "elliptic": "file:elliptic",
+    "axios": "1.14.0"
   },
   "scripts": {
     "start": "node app.js",
