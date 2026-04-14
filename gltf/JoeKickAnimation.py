@@ -652,3 +652,4 @@ if __name__ == "__main__":
     else:
         convert_x3d_to_glb(f"JoeSkinTexcoordDisplacerKick.x3d", "JoeSkinTexcoordDisplacerKick.glb")
         convert_x3d_to_glb(f"JoeKickAnimation.x3d", "JoeKickAnimation.glb")
+        convert_x3d_to_glb(f"Gramps8Final.x3d", "Gramps8Final.glb")

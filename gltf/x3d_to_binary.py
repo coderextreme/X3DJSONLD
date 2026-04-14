@@ -11,9 +11,11 @@ Features Expanded:
   • MFString Parsing: Correctly parses X3D multi-quoted strings for URLs and Text.
   • Missing Image Fallback: Embeds a 1x1 placeholder texture if files are missing.
   • Multi-URL Fallbacks: Tries successive URLs in MFStrings if a texture or inline file is missing.
-  • Inline Support & DEF/USE: Fully resolves USE tags across main and Inlined files dynamically.
+  • Inline & InlineGeometry: Fully resolves external files/fragments locally or via HTTP.
+  • Shape-Injected Geometry: Handles <InlineGeometry> acting as a geometry source inside <Shape>.
   • Context-Aware Paths: Handles relative texture paths for Inlines loaded from sub-directories.
   • XML Namespaces: Strips namespaces automatically to guarantee node discovery.
+  • Validator Compliant: Fixes instant-cut animations and missing TEXCOORD_0 arrays automatically.
 """
 
 import struct
@@ -143,6 +145,50 @@ def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
         f.write(bin_padded)
 
 # ---------------------------------------------------------------------------
+# External Loading (Inlines & InlineGeometry)
+# ---------------------------------------------------------------------------
+
+def load_external_x3d(url_str, current_base_path, def_map):
+    """Loads external X3D files/fragments, updates def_map, and returns the target node."""
+    urls = parse_mfstring(url_str)
+    for i, url in enumerate(urls):
+        file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
+        is_http = file_url.startswith('http')
+        local = os.path.join(current_base_path, file_url.replace('\\', '/')) if not is_http else file_url
+
+        ext_root = None
+        ext_base = current_base_path
+
+        try:
+            if is_http:
+                print(f"    Fetching remote X3D: {file_url}")
+                req = urllib.request.Request(file_url, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req, timeout=5) as r:
+                    ext_root = ET.fromstring(r.read())
+                ext_base = os.path.dirname(file_url)
+            elif os.path.exists(local):
+                ext_root = ET.parse(local).getroot()
+                ext_base = os.path.dirname(local)
+        except Exception as e:
+            print(f"    Failed loading external X3D '{local}': {e}")
+
+        if ext_root is not None:
+            strip_namespaces(ext_root)
+            # Inject new paths into loaded elements so their textures load relative to them
+            for el in ext_root.iter():
+                el.set('_base_path', ext_base)
+                if el.get('DEF') and el.get('DEF') not in def_map:
+                    def_map[el.get('DEF')] = el
+
+            target_node = ext_root.find(f".//*[@DEF='{frag}']") if frag else ext_root
+            return target_node, ext_base
+        else:
+            if i < len(urls) - 1:
+                print(f"    Fallback: '{local}' not loaded. Trying next URL...")
+
+    return None, current_base_path
+
+# ---------------------------------------------------------------------------
 # Materials, Textures, and Primitives
 # ---------------------------------------------------------------------------
 
@@ -160,7 +206,7 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
     mime = "image/jpeg"
 
     for i, u in enumerate(urls):
-        u = u.strip().rstrip(',') # Clean up any errant commas outside quotes
+        u = u.strip().rstrip(',')
         if not u: continue
 
         if u.startswith('data:image'):
@@ -187,7 +233,6 @@ def embed_texture(url_str, base_path, gltf, bin_blob):
             except Exception as e:
                 print(f"      Fetch failed: {e}")
 
-        # If we reached here, the URL failed. Loop continues to the next MFString URL.
         if i < len(urls) - 1:
             print(f"    Fallback: '{u}' not found. Trying next URL...")
 
@@ -228,7 +273,6 @@ def resolve_material(app_node, def_map, mat_list, gltf, bin_blob, default_base_p
     }
 
     if img_node is not None:
-        # Use the node's specific base path (if it came from an Inline in a sub-folder)
         node_base_path = img_node.get('_base_path', default_base_path)
         tex_idx = embed_texture(img_node.get('url', ''), node_base_path, gltf, bin_blob)
         if tex_idx is not None:
@@ -265,7 +309,6 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
         justify_arr = parse_mfstring(fs_node.get('justify', '"BEGIN" "FIRST"'))
         if justify_arr: justify = justify_arr
 
-    # Map to PIL Font
     px_per_unit = 128
     font_size_px = max(10, int(size * px_per_unit))
     font = None
@@ -278,7 +321,6 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
     except: pass
     if not font: font = ImageFont.load_default()
 
-    # Calculate Texture Dimensions using PILImage
     dummy_img = PILImage.new("RGBA", (1, 1), (0,0,0,0))
     d = ImageDraw.Draw(dummy_img)
 
@@ -286,9 +328,9 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
     line_heights = []
     for line in lines:
         try: bbox = d.textbbox((0,0), line, font=font)
-        except: bbox = (0, 0, len(line)*font_size_px*0.6, font_size_px) # fallback
+        except: bbox = (0, 0, len(line)*font_size_px*0.6, font_size_px)
         w = bbox[2] - bbox[0]
-        h = bbox[3] - bbox[1] + (font_size_px * 0.2) # Adding spacing
+        h = bbox[3] - bbox[1] + (font_size_px * 0.2)
         max_w = max(max_w, w)
         line_heights.append(h)
         total_h += h
@@ -296,7 +338,6 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
     width = max(int(max_w), 1)
     height = max(int(total_h), 1)
 
-    # Render Text using PILImage
     img = PILImage.new("RGBA", (width, height), (0,0,0,0))
     d = ImageDraw.Draw(img)
     y = 0
@@ -309,21 +350,18 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
     img.save(img_io, format="PNG")
     tex_idx = add_raw_image(gltf, bin_blob, img_io.getvalue(), "image/png")
 
-    # Geometry Generation (Quad)
     aspect = float(width) / float(height)
     quad_h = size * len(lines)
     quad_w = quad_h * aspect
 
-    # X Justification
     jx = justify[0].upper() if len(justify) > 0 else "BEGIN"
     if jx == "MIDDLE": x0, x1 = -quad_w/2, quad_w/2
     elif jx == "END":  x0, x1 = -quad_w, 0
-    else:              x0, x1 = 0, quad_w  # BEGIN
+    else:              x0, x1 = 0, quad_w
 
-    # Y Justification
     jy = justify[1].upper() if len(justify) > 1 else "FIRST"
     if jy == "MIDDLE": y0, y1 = -quad_h/2, quad_h/2
-    else:              y0, y1 = -quad_h, 0 # FIRST (approx baseline)
+    else:              y0, y1 = -quad_h, 0
 
     pos = np.array([
         [x0, y0, 0], [x1, y0, 0], [x1, y1, 0], [x0, y1, 0]
@@ -338,7 +376,6 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, def_map, mat_li
         "TEXCOORD_0": add_accessor(gltf, bin_blob, uvs, VEC2, FLOAT, ARRAY_BUFFER)
     }
 
-    # Material processing
     mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
     if mat_idx is None:
         mat_list.append({"name": "TextMat", "doubleSided": True, "alphaMode": "BLEND",
@@ -414,15 +451,12 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
             if norm_node is not None and norm_node.get('USE'): norm_node = def_map.get(norm_node.get('USE'), norm_node)
             norm_arr = np.array(parse_array(norm_node.get('vector', '')), dtype=np.float32).reshape(-1, 3) if norm_node is not None else []
 
-            # Generate or Parse indices based on the Node Type
             if face_set.tag == 'TriangleSet':
-                # TriangleSets define polygons implicitly by reading vertices 3 at a time
                 num_verts = len(pos_arr)
                 pos_polys = [[i, i+1, i+2] for i in range(0, num_verts - 2, 3)]
                 tex_polys = pos_polys
                 norm_polys = pos_polys
             else:
-                # IndexedFaceSet and IndexedTriangleSet use index arrays
                 pos_polys = parse_x3d_indices(face_set.get('coordIndex') or face_set.get('index', ''))
                 tex_polys = parse_x3d_indices(face_set.get('texCoordIndex', '')) if face_set.get('texCoordIndex') else pos_polys
                 norm_polys = parse_x3d_indices(face_set.get('normalIndex', '')) if face_set.get('normalIndex') else pos_polys
@@ -433,7 +467,6 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
                 t_poly = tex_polys[pi] if pi < len(tex_polys) else poly
                 n_poly = norm_polys[pi] if pi < len(norm_polys) else poly
 
-                # Triangulate polygons on the fly (automatically handles > 3 vertices)
                 for i in range(1, len(poly) - 1):
                     for j in (0, i, i+1):
                         p_idx = poly[j]
@@ -466,6 +499,13 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
 
             mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
 
+            # glTF Validator Fix: If material has a texture, primitive MUST have TEXCOORD_0.
+            # If X3D didn't provide UVs, generate dummy [0, 0] UVs to satisfy the validator.
+            if mat_idx is not None and "baseColorTexture" in mat_list[mat_idx].get("pbrMetallicRoughness", {}):
+                if "TEXCOORD_0" not in prim_attrs:
+                    dummy_uvs = np.zeros((len(positions), 2), dtype=np.float32)
+                    prim_attrs["TEXCOORD_0"] = add_accessor(gltf, bin_blob, dummy_uvs, VEC2, FLOAT, ARRAY_BUFFER)
+
             prim_dict = {
                 "indices": add_accessor(gltf, bin_blob, indices, SCALAR, idx_comp, ELEMENT_ARRAY_BUFFER, add_min_max=True),
                 "attributes": prim_attrs
@@ -490,35 +530,9 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
     if xml_node.tag in logic_tags: return
 
     if xml_node.tag in ('Inline', 'InlineGeometry'):
-        urls = parse_mfstring(xml_node.get('url', ''))
-
-        # Try URLs in order until one succeeds (MFString Fallback)
-        for i, url in enumerate(urls):
-            file_url, frag = (url.split('#', 1) if '#' in url else (url, None))
-            local = os.path.join(base_path, file_url)
-
-            if os.path.exists(local):
-                try:
-                    inline_base_path = os.path.dirname(local)
-                    ext = ET.parse(local).getroot()
-                    strip_namespaces(ext)
-
-                    # Merge Inline DEFs into the global map & assign relative base paths
-                    for el in ext.iter():
-                        el.set('_base_path', inline_base_path)
-                        if el.get('DEF') and el.get('DEF') not in def_map:
-                            def_map[el.get('DEF')] = el
-
-                    target_node = ext.find(f".//*[@DEF='{frag}']") if frag else ext
-                    if target_node is not None:
-                        traverse_x3d_node(target_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, inline_base_path)
-
-                    break  # Success, skip remaining fallback URLs
-                except Exception as e:
-                    print(f"    Failed parsing Inline '{local}': {e}")
-            else:
-                if i < len(urls) - 1:
-                    print(f"    Fallback: Inline '{local}' not found. Trying next URL...")
+        target_node, ext_base = load_external_x3d(xml_node.get('url', ''), base_path, def_map)
+        if target_node is not None:
+            traverse_x3d_node(target_node, parent_gltf_node_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, ext_base)
         return
 
     if xml_node.tag == 'Viewpoint':
@@ -565,6 +579,14 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
             traverse_x3d_node(child, inner_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
 
     elif xml_node.tag == 'Shape':
+
+        # Resolve any nested Inlines dynamically into the Shape geometry before processing
+        for ig in xml_node.findall('.//InlineGeometry') + xml_node.findall('.//Inline'):
+            target_node, ext_base = load_external_x3d(ig.get('url', ''), base_path, def_map)
+            if target_node is not None:
+                # Append to Shape so process_mesh_primitives can seamlessly find the target geometry
+                xml_node.append(target_node)
+
         text_node = xml_node.find('.//Text')
         if text_node is not None:
             mesh_idx = process_text_primitives(text_node, xml_node.find('.//Appearance'), gltf, bin_blob, def_map, mat_list, base_path)
@@ -659,7 +681,7 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         print(f"  ERROR parsing X3D: {e}"); return
 
     bin_blob = bytearray()
-    mat_list = [] # Start empty to prevent UNUSED_OBJECT warnings
+    mat_list = []
 
     gltf = GLTF2(
         asset=Asset(generator="X3D-to-GLB Advanced Converter", version="2.0"),
@@ -672,8 +694,6 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         extras = {m.get('name'): m.get('content') for m in head.findall('meta') if m.get('name') and m.get('content')}
         if extras: gltf.asset.extras = {"X3D_Metadata": extras}
 
-    # Global mapping for ALL defined nodes (resolves Appearance, ImageTexture, Coordinates etc.)
-    # We also inject '_base_path' directly into the XML elements to ensure correct path resolution
     def_map = {}
     for el in root.iter():
         el.set('_base_path', base_path)
