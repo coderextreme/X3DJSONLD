@@ -16,6 +16,7 @@ Features Expanded:
   • Context-Aware Paths: Handles relative texture paths for Inlines loaded from sub-directories.
   • XML Namespaces: Strips namespaces automatically to guarantee node discovery.
   • Validator Compliant: Fixes instant-cut animations and missing TEXCOORD_0 arrays automatically.
+  • Switch Support: Correctly traverses zero or one choice from children based on whichChoice.
 """
 
 import struct
@@ -195,7 +196,6 @@ def load_external_x3d(url_str, current_base_path, def_map):
 def add_raw_image(gltf, bin_blob, img_bytes, mime="image/png"):
     off, length = append_to_buffer(bin_blob, img_bytes)
     gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=length))
-    # This Image is from pygltflib
     gltf.images.append(Image(bufferView=len(gltf.bufferViews)-1, mimeType=mime))
     gltf.textures.append(Texture(source=len(gltf.images)-1))
     return len(gltf.textures) - 1
@@ -499,8 +499,6 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_
 
             mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
 
-            # glTF Validator Fix: If material has a texture, primitive MUST have TEXCOORD_0.
-            # If X3D didn't provide UVs, generate dummy [0, 0] UVs to satisfy the validator.
             if mat_idx is not None and "baseColorTexture" in mat_list[mat_idx].get("pbrMetallicRoughness", {}):
                 if "TEXCOORD_0" not in prim_attrs:
                     dummy_uvs = np.zeros((len(positions), 2), dtype=np.float32)
@@ -528,6 +526,28 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
     logic_tags = {'BooleanFilter', 'BooleanSequencer', 'NavigationInfo', 'ProximitySensor', 'TimeTrigger', 'TouchSensor'}
 
     if xml_node.tag in logic_tags: return
+
+    if xml_node.tag == 'Switch':
+        def_name = xml_node.get('DEF')
+        switch_idx = len(gltf.nodes)
+        gltf.nodes.append(Node(
+            name=def_name or f"Switch_{switch_idx}",
+            children=[]
+        ))
+        if def_name: def_to_node_idx[def_name] = switch_idx
+
+        if parent_gltf_node_idx is not None:
+            if gltf.nodes[parent_gltf_node_idx].children is None: gltf.nodes[parent_gltf_node_idx].children = []
+            gltf.nodes[parent_gltf_node_idx].children.append(switch_idx)
+
+        which_choice = int(xml_node.get('whichChoice', '-1'))
+
+        # Only valid X3DChildNodes count towards the children choice array.
+        choices = [c for c in xml_node if c.tag not in ('ROUTE', 'IS') and not c.tag.startswith('Metadata')]
+
+        if 0 <= which_choice < len(choices):
+            traverse_x3d_node(choices[which_choice], switch_idx, gltf, bin_blob, def_map, mat_list, def_to_node_idx, node_to_center, base_path)
+        return
 
     if xml_node.tag in ('Inline', 'InlineGeometry'):
         target_node, ext_base = load_external_x3d(xml_node.get('url', ''), base_path, def_map)
@@ -584,7 +604,6 @@ def traverse_x3d_node(xml_node, parent_gltf_node_idx, gltf, bin_blob, def_map, m
         for ig in xml_node.findall('.//InlineGeometry') + xml_node.findall('.//Inline'):
             target_node, ext_base = load_external_x3d(ig.get('url', ''), base_path, def_map)
             if target_node is not None:
-                # Append to Shape so process_mesh_primitives can seamlessly find the target geometry
                 xml_node.append(target_node)
 
         text_node = xml_node.find('.//Text')
@@ -625,8 +644,6 @@ def convert_animations(root, gltf, bin_blob, def_to_node_idx, node_to_center):
             targets = routes.get((interp.get('DEF'), 'value_changed'), [])
             keys = np.array(parse_array(interp.get('key', '')), dtype=np.float32) * cycle
 
-            # glTF Validator Fix: Keys must be strictly increasing. X3D allows duplicate
-            # keys for instant 'cuts'. We push duplicates forward by a tiny microsecond fraction.
             if len(keys) > 1:
                 for k_idx in range(1, len(keys)):
                     if keys[k_idx] <= keys[k_idx-1]:
@@ -676,7 +693,7 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     base_path = os.path.dirname(os.path.abspath(x3d_filepath))
     try:
         root = ET.parse(x3d_filepath).getroot()
-        strip_namespaces(root)  # Ensure tag searches never fail
+        strip_namespaces(root)
     except Exception as e:
         print(f"  ERROR parsing X3D: {e}"); return
 
