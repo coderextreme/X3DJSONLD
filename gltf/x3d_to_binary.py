@@ -874,5 +874,6 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"{base}/../Bones/AllBonesLOA5Skeletons.x3d", "AllBonesLOA5Skeletons.glb")
         convert_x3d_to_glb(f"{base}/../FacialAnimation/JinFacsAu27MouthStretchMorpher.x3d", "JinFacsAu27MouthStretchMorpher.glb")
         convert_x3d_to_glb(f"../../ci2had/resources/JinMouthStretch.x3d", "JinMouthStretch.glb")
+        convert_x3d_to_glb(f"../../ci2had/resources/CleanedYouClocks.x3d", "CleanedYouClocks.glb")
 
 # --- END OF FILE x3d_to_binary.py ---
