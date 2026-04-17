@@ -70,8 +70,9 @@ POSSIBILITY OF SUCH DAMAGE.
     <xsl:param name="packageName"			  ><xsl:text></xsl:text></xsl:param>
     <xsl:param name="className"				  ><xsl:text><!-- necessary input, otherwise will use meta title if available --></xsl:text></xsl:param>
     <xsl:param name="subdirectoryPath"	><xsl:text>./</xsl:text></xsl:param>
-    <xsl:param name="tupleSplitSize"	  ><xsl:text>100</xsl:text></xsl:param> <!-- tuples -->
-    <xsl:param name="attributeSplitSize"><xsl:text>1000</xsl:text></xsl:param><!-- characters -->
+    <!-- note larger attributeSplitSize values can result in "code too large" exception, typically in initialize() method -->
+    <xsl:param name="attributeSplitSize"><xsl:text>250</xsl:text></xsl:param><!-- characters -->
+    <xsl:param name="tupleSplitSize"	  ><xsl:text>1000</xsl:text></xsl:param> <!-- tuples in a method, needs to be less than 65K -->
     <xsl:param name="includeLicense"		><xsl:text>false</xsl:text></xsl:param>
     <xsl:param name="strictJava8"		    ><xsl:text>false</xsl:text></xsl:param>
 	
@@ -281,6 +282,7 @@ POSSIBILITY OF SUCH DAMAGE.
             }
 	}
 	// end of initialize() method
+
 ]]></xsl:text>
 			<!-- debug
 			<xsl:message>
@@ -2449,6 +2451,7 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       ((local-name()='ulimit' or local-name()='llimit') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
@@ -4908,7 +4911,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='Appearance'            and (($attributeName='material')       or ($attributeName='texture')          or ($attributeName='textureTransform') or ($attributeName='acousticProperties') or
                     ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
                     ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
-                    ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture')))">
+                    ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture'))) or
+                    (contains($parentElementName,'Viewpoint')    and  $attributeName='navigationInfo')">
 			  <xsl:text>SFNode</xsl:text>
 		  </xsl:when>
 		  <!-- MFNode -->
@@ -5296,6 +5300,7 @@ POSSIBILITY OF SUCH DAMAGE.
 									<xsl:value-of select="$indent"/>
 									<xsl:value-of select="$indent"/>
 									<xsl:text>private </xsl:text>
+                  <!-- <xsl:text>static </xsl:text> attempt to avoid "code too large" problem -->
 									<xsl:choose>
 										<xsl:when test="($attributeJavaType = 'String')">
 											<xsl:text>String</xsl:text>
@@ -5953,7 +5958,6 @@ POSSIBILITY OF SUCH DAMAGE.
 							<xsl:with-param name="dataObjectName" select="$dataObjectName"/>
 							<xsl:with-param name="processingPass"><xsl:text>1.subarrays</xsl:text></xsl:with-param>
 						</xsl:call-template>
-						<xsl:text>&#10;</xsl:text>
 						<!-- <xsl:text>// trace 6.3&#10;</xsl:text> -->
 					</xsl:when>
 					<xsl:when test="($processingPass = '2.finalize')">
@@ -5969,6 +5973,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 						<xsl:value-of select="$indent"/>
 						<xsl:text>private </xsl:text>
+						<!-- <xsl:text>static </xsl:text> attempt to avoid "code too large" problem -->
 						<xsl:value-of select="$attributeType"/>
 						<xsl:text> get</xsl:text><!-- Object -->
 						<xsl:value-of select="$dataObjectName"/>

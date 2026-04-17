@@ -2655,6 +2655,10 @@ EXTERNPROTO TransmitterPdu [
       <xsl:when test="local-name()='NurbsSweptSurface'   or $nodeType='NurbsSweptSurface'   or $EPnodeType='NurbsSweptSurface'   or @nodeType='NurbsSweptSurface'    "><xsl:text>geometry </xsl:text></xsl:when>
       <xsl:when test="local-name()='NurbsSwungSurface'   or $nodeType='NurbsSwungSurface'   or $EPnodeType='NurbsSwungSurface'   or @nodeType='NurbsSwungSurface'    "><xsl:text>geometry </xsl:text></xsl:when>
       <xsl:when test="local-name()='NurbsTrimmedSurface' or $nodeType='NurbsTrimmedSurface' or $EPnodeType='NurbsTrimmedSurface' or @nodeType='NurbsTrimmedSurface'  "><xsl:text>geometry </xsl:text></xsl:when>
+      <xsl:when test="(local-name()='NavigationInfo' or $nodeType='NavigationInfo' or $EPnodeType='NavigationInfo' or @nodeType='NavigationInfo') and
+                      (local-name(..)='Viewpoint')">
+        <xsl:text>navigationInfo </xsl:text>
+      </xsl:when>
       <!-- regular VRML nodes not needing a preceding field name -->
       <!-- (split following test to avoid overflowing lotusxml/Xalan string buffer) -->
       <xsl:when test="
@@ -6486,9 +6490,8 @@ EXTERNPROTO TransmitterPdu [
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       ((local-name()='ulimit' or local-name()='llimit') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='ulimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
-                       (local-name()='llimit' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or

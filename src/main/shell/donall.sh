@@ -6,4 +6,4 @@ IFS=$'\n\t'
 
 . ../shell/classpath
 
-find ~/www.web3d.org/x3d/content/examples/ -name '*.x3d' | xargs -P $PROCESSORS ./don.sh
+find ~/www.web3d.org/x3d/content/examples/ -name '*.x3d' | xargs -P $PROCESSORS ./dona.sh

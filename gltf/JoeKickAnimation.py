@@ -5,13 +5,12 @@ from pygltflib import *
 
 """
 x3d_to_glb_command.py
-Flawless HAnim Skinning Converter + UV/Textures + Accurate Line Colors + Texture Animations
-- Employs 4-Node Chain per joint to perfectly match X3D 'center' pivot math.
-- Embeds ImageTextures and dynamically supplies missing UVs (Aspect-Ratio Bounding Box).
-- Exact Mathematical UV pivot translations injected natively into KHR_texture_transform.
-- Broadcaster handles translating X3D ScalarInterpolators into valid GLTF VEC2 Offsets.
-- Dual-target Emissive/BaseColor synchronization for perfectly glowing texture animations.
-- Promotes Skinned Meshes to Scene Root (Fixes Validator Warning & Sunrize Stack Overflow).
+Flawless HAnim Skinning Converter + UV/Textures + Line Colors + Texture Animations
++ HAnimDisplacer Morph Targets + Interactive TouchSensors & Color Animations
+- Extracts HAnimDisplacer vertices and perfectly maps to glTF Morph Targets (targets).
+- Compiles standard X3D Scalar weight animations into standardized glTF 'weights' tracks.
+- Preserves X3D TouchSensor logic via `extras` metadata for easy engine interaction hooks.
+- Extrapolates Material.diffuseColor & emissiveColor into KHR_animation_pointer animations.
 """
 
 def strip_ns(node):
@@ -48,13 +47,17 @@ def axis_angle_to_quat(x, y, z, angle):
     if l < 1e-8: return [0.0, 0.0, 0.0, 1.0]
     return [(x/l)*s, (y/l)*s, (z/l)*s, math.cos(angle / 2.0)]
 
-def add_acc(gltf, buf, data, g_type, c_type, target, min_max=False):
+def add_acc(gltf, buf, data, g_type, c_type, target=None, min_max=False):
     raw = data.tobytes()
     pad = (4 - len(buf) % 4) % 4
     buf.extend(b'\x00' * pad)
     off = len(buf)
     buf.extend(raw)
-    gltf.bufferViews.append(BufferView(buffer=0, byteOffset=off, byteLength=len(raw), target=target))
+
+    bv_kwargs = {"buffer": 0, "byteOffset": off, "byteLength": len(raw)}
+    if target is not None: bv_kwargs["target"] = target
+    gltf.bufferViews.append(BufferView(**bv_kwargs))
+
     mn, mx = None, None
     if min_max and len(data) > 0:
         if data.ndim == 1: mn, mx = [float(data.min())], [float(data.max())]
@@ -96,8 +99,7 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
     if app is None: return None
 
     app_key = app.get('DEF') or str(id(app))
-    if app_key in mat_cache:
-        return mat_cache[app_key]
+    if app_key in mat_cache: return mat_cache[app_key]
 
     mat_node = app.find('.//Material')
     if mat_node is not None and mat_node.get('USE'): mat_node = def_map.get(mat_node.get('USE'), mat_node)
@@ -123,37 +125,31 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
                 s = parse_array(tx_node.get('scale', '1 1'), float, [1, 1])
                 c = parse_array(tx_node.get('center', '0 0'), float, [0, 0])
 
-                # GLTF Math for Unified Scale/Rotation Pivot alignment
-                cos_r = math.cos(r)
-                sin_r = math.sin(r)
+                cos_r, sin_r = math.cos(r), math.sin(r)
                 off_x = t[0] + c[0] - s[0] * cos_r * c[0] - s[1] * sin_r * (1.0 - c[1])
                 off_y = 1.0 - t[1] - c[1] + s[0] * sin_r * c[0] - s[1] * cos_r * (1.0 - c[1])
 
-                ti.extensions = {"KHR_texture_transform": {
-                    "offset": [off_x, off_y],
-                    "rotation": -r,
-                    "scale": [s[0], s[1]]
-                }}
+                ti.extensions = {"KHR_texture_transform": {"offset": [off_x, off_y], "rotation": -r, "scale": [s[0], s[1]]}}
             else:
                 ti.extensions = {"KHR_texture_transform": {"offset": [0.0, 0.0], "rotation": 0.0, "scale": [1.0, 1.0]}}
-
             pbr.baseColorTexture = ti
 
     mat = Material(pbrMetallicRoughness=pbr, doubleSided=True)
     if sum(emis) > 0.0:
         mat.emissiveFactor = emis
-        # Map active textures to emissive bounds so neon animations glow natively
-        if pbr.baseColorTexture is not None:
-            mat.emissiveTexture = copy.deepcopy(pbr.baseColorTexture)
+        if pbr.baseColorTexture is not None: mat.emissiveTexture = copy.deepcopy(pbr.baseColorTexture)
 
     mat_idx = len(gltf.materials)
     gltf.materials.append(mat)
     mat_cache[app_key] = mat_idx
 
-    # Generate Physical Proxy Nodes and Material Target Pointers
+    # Store Material specific DEF for animation routing
+    if mat_node is not None and mat_node.get('DEF'):
+        mat_cache[mat_node.get('DEF')] = mat_idx
+
+    # Handle Texture Transform Interactivity Target Hooks
     if tx_node is not None and tx_node.get('DEF'):
         tx_def = tx_node.get('DEF')
-
         if tx_def not in tex_transform_nodes:
             t = parse_array(tx_node.get('translation', '0 0'), float, [0, 0])
             r = parse_array(tx_node.get('rotation', '0'), float, [0])[0]
@@ -181,17 +177,13 @@ def resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transfo
 
         if pbr.baseColorTexture is not None:
             if tx_def not in tex_transform_targets: tex_transform_targets[tx_def] = []
-
-            base_ptr = f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorTexture/extensions/KHR_texture_transform"
-            tex_transform_targets[tx_def].append(base_ptr)
-
+            tex_transform_targets[tx_def].append(f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorTexture/extensions/KHR_texture_transform")
             if sum(emis) > 0.0:
-                emis_ptr = f"/materials/{mat_idx}/emissiveTexture/extensions/KHR_texture_transform"
-                tex_transform_targets[tx_def].append(emis_ptr)
+                tex_transform_targets[tx_def].append(f"/materials/{mat_idx}/emissiveTexture/extensions/KHR_texture_transform")
 
     return mat_idx
 
-def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info, tex_transform_targets, tex_transform_nodes, mat_cache):
+def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info, tex_transform_targets, tex_transform_nodes, mat_cache, displacers, global_morph_targets):
     geom = shape_node.find('.//IndexedFaceSet')
     if geom is None: geom = shape_node.find('.//IndexedTriangleSet')
     if geom is None: return None
@@ -218,10 +210,7 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
     need_uvs = (len(uvs) > 0) or has_texture
 
     if need_uvs:
-        min_p = np.min(pts, axis=0)
-        max_p = np.max(pts, axis=0)
-        size = max_p - min_p
-
+        min_p = np.min(pts, axis=0); max_p = np.max(pts, axis=0); size = max_p - min_p
         size_biased = size + np.array([0.003, 0.002, 0.001])
         dims = np.argsort(size_biased)[::-1]
         dimS, dimT = dims[0], dims[1]
@@ -248,14 +237,31 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
                     u_verts[v_key] = len(u_pos)
                     u_pos.append(pts[p_i])
                     g_map.append(p_i)
-
                     if need_uvs:
                         if t_i < len(uvs) and t_i >= 0: u_uvs.append(uvs[t_i])
                         else: u_uvs.append(get_fallback_uv(pts[p_i]))
-
                 u_idx.append(u_verts[v_key])
 
     if not u_idx: return None
+
+    # HAnimDisplacer to glTF Morph Targets Parsing
+    primitive_targets = []
+    target_names = []
+    for d_idx, disp in enumerate(displacers):
+        disp_def = disp.get('DEF')
+        c_idx = parse_array(disp.get('coordIndex'), int)
+        d_val = parse_array(disp.get('displacements'), float)
+        if not c_idx or not d_val: continue
+
+        d_vec = np.array(d_val, dtype=np.float32).reshape(-1, 3)
+        disp_map = {idx: d_vec[i] for i, idx in enumerate(c_idx) if i < len(d_vec)}
+
+        # Translate to unrolled buffer map
+        u_disp = [disp_map.get(og_i, [0.0, 0.0, 0.0]) for og_i in g_map]
+        disp_acc = add_acc(gltf, bin_blob, np.array(u_disp, dtype=np.float32), VEC3, FLOAT, None, True)
+
+        primitive_targets.append({"POSITION": disp_acc})
+        target_names.append(disp_def or f"morph_{d_idx}")
 
     it = UNSIGNED_INT if len(u_pos) >= 65535 else UNSIGNED_SHORT
     prim_attrs = {"POSITION": add_acc(gltf, bin_blob, np.array(u_pos, dtype=np.float32), VEC3, FLOAT, ARRAY_BUFFER, True)}
@@ -263,13 +269,31 @@ def process_shape(shape_node, gltf, bin_blob, def_map, base_path, skin_prim_info
 
     m_idx = resolve_material(shape_node, def_map, gltf, bin_blob, base_path, tex_transform_targets, tex_transform_nodes, mat_cache)
 
+    prim_kwargs = {
+        "attributes": prim_attrs,
+        "indices": add_acc(gltf, bin_blob, np.array(u_idx, dtype=np.uint32 if it==UNSIGNED_INT else np.uint16), SCALAR, it, ELEMENT_ARRAY_BUFFER),
+        "material": m_idx
+    }
+    if primitive_targets:
+        prim_kwargs["targets"] = primitive_targets
+
+    mesh_kwargs = {"primitives": [Primitive(**prim_kwargs)]}
+    if primitive_targets:
+        mesh_kwargs["weights"] = [0.0] * len(primitive_targets)
+        mesh_kwargs["extras"] = {"targetNames": target_names}
+
     mesh_idx = len(gltf.meshes)
-    gltf.meshes.append(Mesh(primitives=[Primitive(attributes=prim_attrs,
-        indices=add_acc(gltf, bin_blob, np.array(u_idx, dtype=np.uint32 if it==UNSIGNED_INT else np.uint16), SCALAR, it, ELEMENT_ARRAY_BUFFER),
-        material=m_idx)]))
+    gltf.meshes.append(Mesh(**mesh_kwargs))
 
     n_idx = len(gltf.nodes)
     gltf.nodes.append(Node(name=f"SkinnedMesh_{mesh_idx}", mesh=mesh_idx))
+
+    # Register successfully compiled morph targets for Animation routing
+    for d_idx, disp in enumerate(displacers):
+        if disp.get('DEF'):
+            global_morph_targets[disp.get('DEF')] = {
+                "n_idx": n_idx, "target_idx": d_idx, "total": len(displacers)
+            }
 
     skin_prim_info.append((n_idx, mesh_idx, g_map))
     return n_idx
@@ -364,8 +388,23 @@ def convert_x3d_to_glb(x3d_path, glb_path):
     mat_cache = {}
     tex_transform_nodes = {}
     tex_transform_targets = {}
+    global_morph_targets = {}
+
+    # EXTRACT ALL DISPLACERS GLOBALLY:
+    # HAnimDisplacers live inside joints, but apply to the Skin Shape sibling.
+    all_displacers = [el for el in root.iter('HAnimDisplacer')]
 
     def traverse(node, p_idx, inside_hanim=False):
+        # Interactive TouchSensor Interception (Writes to Extras for Frontend Web/Game Hooks)
+        if node.tag == 'TouchSensor':
+            if gltf.nodes[p_idx].extras is None: gltf.nodes[p_idx].extras = {}
+            gltf.nodes[p_idx].extras["TouchSensor"] = {
+                "DEF": node.get('DEF', ''),
+                "description": node.get('description', ''),
+                "enabled": node.get('enabled', 'true')
+            }
+            return
+
         if node.tag in ('Transform', 'Group', 'HAnimJoint', 'HAnimHumanoid', 'HAnimSegment', 'HAnimSite'):
             dname = node.get('DEF') or f"{node.tag}_{len(gltf.nodes)}"
             t = parse_array(node.get('translation'), default=[0,0,0])
@@ -402,10 +441,15 @@ def convert_x3d_to_glb(x3d_path, glb_path):
         elif node.tag == 'Shape':
             actual_node = (def_map.get(node.get('USE'), node) if node.get('USE') and not node.get('DEF') else node)
 
+            # Apply all extracted displacers ONLY if this shape is the Humanoid skin
+            is_skin = inside_hanim or actual_node.get('containerField') == 'skin'
+            shape_displacers = all_displacers if is_skin else []
+
             if (actual_node.find('.//IndexedFaceSet') is not None or actual_node.find('.//IndexedTriangleSet') is not None):
                 prims_target = skin_prim_info if inside_hanim else []
                 sh_idx = process_shape(actual_node, gltf, bin_blob, def_map,
-                                       base_dir, prims_target, tex_transform_targets, tex_transform_nodes, mat_cache)
+                                       base_dir, prims_target, tex_transform_targets, tex_transform_nodes, mat_cache,
+                                       shape_displacers, global_morph_targets)
             else:
                 sh_idx = process_line_shape(actual_node, gltf, bin_blob, def_map)
 
@@ -436,10 +480,9 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             for c in n.children or []: compute_mats(c, world_mats[idx])
 
         compute_mats(0, np.eye(4, dtype=np.float32))
-
         ibms = np.array([np.linalg.inv(world_mats[j]).flatten('F') for j in j_nodes], dtype=np.float32)
         s_idx = len(gltf.skins)
-        gltf.skins.append(Skin(joints=j_nodes, inverseBindMatrices=add_acc(gltf, bin_blob, ibms, MAT4, FLOAT, None)))
+        gltf.skins.append(Skin(joints=j_nodes, inverseBindMatrices=add_acc(gltf, bin_blob, ibms, MAT4, FLOAT)))
 
         v_map = {}
         for i, name in enumerate(j_names):
@@ -448,11 +491,9 @@ def convert_x3d_to_glb(x3d_path, glb_path):
 
         for ni, mi, gmap in skin_prim_info:
             gltf.nodes[ni].skin = s_idx
-
             for p in gltf.nodes:
                 if p.children and ni in p.children: p.children.remove(ni)
-            if ni not in gltf.scenes[0].nodes:
-                gltf.scenes[0].nodes.append(ni)
+            if ni not in gltf.scenes[0].nodes: gltf.scenes[0].nodes.append(ni)
 
             for prim in gltf.meshes[mi].primitives:
                 num_pts = len(gmap)
@@ -469,36 +510,61 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                 prim.attributes["JOINTS_0"] = add_acc(gltf, bin_blob, jd, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
                 prim.attributes["WEIGHTS_0"] = add_acc(gltf, bin_blob, wd, VEC4, FLOAT, ARRAY_BUFFER)
 
-    # Process Inter-nodal Routing & Synchronized Textural Animations
-    interp_drivers, node_targets, tex_transform_anims = {}, [], []
+    # Process Inter-nodal Routing & Synchronized Textural/Morph Animations
+    interp_drivers, node_targets = {}, []
+    tex_transform_anims, color_anims_to_process, morph_anim_data = [], [], {}
+
     for route in root.iter('ROUTE'):
         fn, ff, tn, tf = route.get('fromNode'), route.get('fromField'), route.get('toNode'), route.get('toField')
         if ff == 'fraction_changed': interp_drivers[tn] = fn
         if ff == 'value_changed':
             path = 'rotation' if 'rotation' in tf.lower() else 'translation'
 
+            # Skeletal Node Animations
             if tn in def_to_nidx:
                 targ_node = def_to_tidx[tn] if path == 'translation' else def_to_nidx[tn]
                 node_targets.append((fn, targ_node, path, False))
 
+            # Texture Node Target Links
             elif tn in tex_transform_nodes:
                 if 'translation' in tf.lower(): path = 'translation'
                 elif 'scale' in tf.lower(): path = 'scale'
                 else: path = 'rotation'
-
                 targ_node = tex_transform_nodes[tn]['T'] if path == 'translation' else tex_transform_nodes[tn]['R']
                 node_targets.append((fn, targ_node, path, True))
 
                 if tn in tex_transform_targets:
                     for base_ptr in tex_transform_targets[tn]:
                         pointer_prop = 'offset' if path == 'translation' else path
-                        pointer = f"{base_ptr}/{pointer_prop}"
-                        tex_transform_anims.append((fn, pointer, pointer_prop, tn))
+                        tex_transform_anims.append((fn, f"{base_ptr}/{pointer_prop}", pointer_prop, tn))
 
-    if node_targets or tex_transform_anims:
-        anim = Animation(name="HumanoidAnimation", channels=[], samplers=[])
+            # Interactive Material Color Target Links
+            elif tn in mat_cache:
+                mat_idx = mat_cache[tn]
+                if 'diffuseColor' in tf: color_anims_to_process.append((fn, f"/materials/{mat_idx}/pbrMetallicRoughness/baseColorFactor", VEC4))
+                elif 'emissiveColor' in tf: color_anims_to_process.append((fn, f"/materials/{mat_idx}/emissiveFactor", VEC3))
 
-        # 1. Dispatch Skeleton and Proxy Transforms
+            # Displacer Morph Weights Target Links
+            elif tn in global_morph_targets and 'weight' in tf:
+                n_info = global_morph_targets[tn]
+                driver = def_map.get(fn)
+                if driver is not None:
+                    sensor = def_map.get(interp_drivers.get(fn))
+                    dur = float(sensor.get('cycleInterval', '1.0')) if sensor is not None else 1.0
+                    keys = np.array(parse_array(driver.get('key')), dtype=np.float32) * dur
+                    vals = np.array(parse_array(driver.get('keyValue')), dtype=np.float32)
+
+                    n_idx = n_info['n_idx']
+                    if n_idx not in morph_anim_data:
+                        morph_anim_data[n_idx] = {'keys': keys, 'weights': np.zeros((len(keys), n_info['total']), dtype=np.float32)}
+
+                    min_len = min(len(keys), len(vals), len(morph_anim_data[n_idx]['keys']))
+                    morph_anim_data[n_idx]['weights'][:min_len, n_info['target_idx']] = vals[:min_len]
+
+    if node_targets or tex_transform_anims or color_anims_to_process or morph_anim_data:
+        anim = Animation(name="InteractiveAnimation", channels=[], samplers=[])
+
+        # 1. Dispatch Skeleton & Transforms
         for i_def, targ_node, path, is_tx in node_targets:
             i_node = def_map.get(i_def)
             if i_node is None: continue
@@ -519,9 +585,7 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                     if i_node.tag == 'ScalarInterpolator':
                         s_vals = np.array(vals, dtype=np.float32).reshape(-1)
                         v_2d = np.column_stack((s_vals, s_vals))
-                    else:
-                        v_2d = np.array(vals, dtype=np.float32).reshape(-1, 2)
-
+                    else: v_2d = np.array(vals, dtype=np.float32).reshape(-1, 2)
                     v_data = np.zeros((len(v_2d), 3), dtype=np.float32)
                     v_data[:, 0:2] = v_2d
                     if path == 'scale': v_data[:, 2] = 1.0
@@ -546,7 +610,33 @@ def convert_x3d_to_glb(x3d_path, glb_path):
                 output=add_acc(gltf, bin_blob, v_data[:min_len], v_type, FLOAT, None, True)))
             anim.channels.append(AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(node=targ_node, path=path)))
 
-        # 2. Emissive Glow Extrapolated Texture Transform Baking Vectors
+        # 2. Native Weight Arrays for Morph Displacements
+        for n_idx, m_data in morph_anim_data.items():
+            keys = m_data['keys']
+            weights_flat = m_data['weights'].flatten() # Standard demands flat VEC array saved as SCALAR
+            s_idx = len(anim.samplers)
+            anim.samplers.append(AnimationSampler(
+                input=add_acc(gltf, bin_blob, keys, SCALAR, FLOAT, None, True),
+                output=add_acc(gltf, bin_blob, weights_flat, SCALAR, FLOAT, None)
+            ))
+            anim.channels.append(AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(node=n_idx, path="weights")))
+
+        pointer_tracks = []
+        # 3. Process Extrapolated Material Animation Interactivity
+        for i_def, pointer, v_type in color_anims_to_process:
+            i_node = def_map.get(i_def)
+            if not i_node: continue
+            sensor = def_map.get(interp_drivers.get(i_def))
+            dur = float(sensor.get('cycleInterval', '1.0')) if sensor is not None else 1.0
+
+            keys_arr = np.array(parse_array(i_node.get('key')), dtype=np.float32) * dur
+            vals = np.array(parse_array(i_node.get('keyValue')), dtype=np.float32).reshape(-1, 3)
+
+            # Pad diffuseColor vector 3 to baseColorFactor vector 4 (Alpha)
+            if v_type == VEC4: vals = np.column_stack((vals, np.ones(len(vals), dtype=np.float32)))
+            pointer_tracks.append((pointer, vals, v_type, keys_arr))
+
+        # 4. Extrapolated Texture Transform Animations
         for i_def, pointer, prop, tx_def in tex_transform_anims:
             i_node = def_map.get(i_def)
             if i_node is None: continue
@@ -562,83 +652,70 @@ def convert_x3d_to_glb(x3d_path, glb_path):
             base_s = parse_array(tx_node.get('scale', '1 1'), float, [1.0, 1.0]) if tx_node is not None else [1.0, 1.0]
             base_c = parse_array(tx_node.get('center', '0 0'), float, [0.0, 0.0]) if tx_node is not None else [0.0, 0.0]
 
-            tracks_to_add = []
-
             if prop == 'offset':
                 if i_node.tag == 'ScalarInterpolator':
                     scalar_vals = np.array(vals_arr, dtype=np.float32).reshape(-1)
                     v_data = np.column_stack((scalar_vals, scalar_vals))
-                else:
-                    v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
+                else: v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
 
                 tx, ty = v_data[:, 0], v_data[:, 1]
-                cx, cy = base_c
-                sx, sy = base_s
+                cx, cy, sx, sy = base_c[0], base_c[1], base_s[0], base_s[1]
                 cos_r, sin_r = math.cos(base_r), math.sin(base_r)
-
-                off_x = tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy)
-                off_y = 1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
-                out_data = np.column_stack((off_x, off_y))
-
-                tracks_to_add.append((pointer, out_data, VEC2))
+                out_data = np.column_stack((
+                    tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy),
+                    1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
+                ))
+                pointer_tracks.append((pointer, out_data, VEC2, keys_arr))
 
             elif prop == 'scale':
                 if i_node.tag == 'ScalarInterpolator':
                     scalar_vals = np.array(vals_arr, dtype=np.float32).reshape(-1)
                     v_data = np.column_stack((scalar_vals, scalar_vals))
-                else:
-                    v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
+                else: v_data = np.array(vals_arr, dtype=np.float32).reshape(-1, 2)
+                pointer_tracks.append((pointer, v_data, VEC2, keys_arr))
 
-                tracks_to_add.append((pointer, v_data, VEC2))
-
-                base_pointer = pointer.rsplit('/', 1)[0]
-                tx, ty = base_t
-                cx, cy = base_c
+                tx, ty, cx, cy = base_t[0], base_t[1], base_c[0], base_c[1]
                 sx, sy = v_data[:, 0], v_data[:, 1]
                 cos_r, sin_r = math.cos(base_r), math.sin(base_r)
-
-                off_x = tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy)
-                off_y = 1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
-                out_data = np.column_stack((off_x, off_y))
-
-                tracks_to_add.append((f"{base_pointer}/offset", out_data, VEC2))
+                out_data = np.column_stack((
+                    tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy),
+                    1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
+                ))
+                pointer_tracks.append((f"{pointer.rsplit('/', 1)[0]}/offset", out_data, VEC2, keys_arr))
 
             elif prop == 'rotation':
                 r_x3d = np.array(vals_arr, dtype=np.float32).reshape(-1)
-                r_gltf = -r_x3d
-                tracks_to_add.append((pointer, r_gltf.reshape(-1, 1), SCALAR))
+                pointer_tracks.append((pointer, -r_x3d.reshape(-1, 1), SCALAR, keys_arr))
 
-                base_pointer = pointer.rsplit('/', 1)[0]
-                tx, ty = base_t
-                cx, cy = base_c
+                tx, ty, cx, cy = base_t[0], base_t[1], base_c[0], base_c[1]
                 sx, sy = base_s
                 cos_r, sin_r = np.cos(r_x3d), np.sin(r_x3d)
+                out_data = np.column_stack((
+                    tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy),
+                    1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
+                ))
+                pointer_tracks.append((f"{pointer.rsplit('/', 1)[0]}/offset", out_data, VEC2, keys_arr))
 
-                off_x = tx + cx - sx * cos_r * cx - sy * sin_r * (1.0 - cy)
-                off_y = 1.0 - ty - cy + sx * sin_r * cx - sy * cos_r * (1.0 - cy)
-                out_data = np.column_stack((off_x, off_y))
+        for trk_ptr, trk_data, trk_type, keys_arr in pointer_tracks:
+            min_len = min(len(keys_arr), len(trk_data))
+            if min_len == 0: continue
 
-                tracks_to_add.append((f"{base_pointer}/offset", out_data, VEC2))
+            s_idx = len(anim.samplers)
+            anim.samplers.append(AnimationSampler(
+                input=add_acc(gltf, bin_blob, keys_arr[:min_len], SCALAR, FLOAT, None, True),
+                output=add_acc(gltf, bin_blob, trk_data[:min_len], trk_type, FLOAT, None, True)))
 
-            # Commit Safe Synchronized Extension Keyframes
-            for trk_ptr, trk_data, trk_type in tracks_to_add:
-                min_len = min(len(keys_arr), len(trk_data))
-                if min_len == 0: continue
-
-                s_idx = len(anim.samplers)
-                anim.samplers.append(AnimationSampler(
-                    input=add_acc(gltf, bin_blob, keys_arr[:min_len], SCALAR, FLOAT, None, True),
-                    output=add_acc(gltf, bin_blob, trk_data[:min_len], trk_type, FLOAT, None, True)))
-
-                chan = AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(path="pointer"))
-                chan.target.extensions = {"KHR_animation_pointer": {"pointer": trk_ptr}}
-                anim.channels.append(chan)
+            chan = AnimationChannel(sampler=s_idx, target=AnimationChannelTarget(path="pointer"))
+            chan.target.extensions = {"KHR_animation_pointer": {"pointer": trk_ptr}}
+            anim.channels.append(chan)
 
         gltf.animations.append(anim)
 
-    ext_used = []
-    if tex_transform_anims: ext_used += ["KHR_texture_transform", "KHR_animation_pointer"]
-    if ext_used: gltf.extensionsUsed = ext_used
+    # Extension Logging Check
+    ext_used = set(gltf.extensionsUsed or [])
+    if tex_transform_anims or color_anims_to_process: ext_used.add("KHR_animation_pointer")
+    if tex_transform_targets: ext_used.add("KHR_texture_transform")
+    if ext_used: gltf.extensionsUsed = list(ext_used)
 
     gltf.buffers.append(Buffer(byteLength=len(bin_blob)))
     gltf.set_binary_blob(bin_blob)

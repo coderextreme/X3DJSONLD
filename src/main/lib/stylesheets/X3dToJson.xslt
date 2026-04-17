@@ -597,6 +597,8 @@ POSSIBILITY OF SUCH DAMAGE.
                         <xsl:call-template name="print-indent"><xsl:with-param name="indent" select="$indent"/></xsl:call-template>
 
                         <xsl:variable name="SFNodeType" select="
+                            ($fieldName = 'acousticProperties') or ($fieldName = 'baseTexture')        or ($fieldName = 'emissiveTexture')    or 
+                            ($fieldName = 'normalTexture')      or ($fieldName = 'occlusionTexture')   or ($fieldName = 'metallicRoughnessTexture') or 
                             ($fieldName = 'back')               or ($fieldName = 'bottom')             or ($fieldName = 'front')              or 
                             ($fieldName = 'left')               or ($fieldName = 'right')              or ($fieldName = 'top')                or 
                             ($fieldName = 'backTexture')        or ($fieldName = 'bottomTexture')      or ($fieldName = 'frontTexture')       or 
@@ -1056,7 +1058,7 @@ POSSIBILITY OF SUCH DAMAGE.
                         </xsl:call-template>
                         <xsl:text>"</xsl:text>
                     </xsl:when>
-					<!-- string array -->
+                    <!-- string array -->
                     <xsl:when test="($attributeType = 'MFString') or
                                     ((local-name()='value') and ((../@type='MFString') or (contains(local-name(../..),'Proto') and ($fieldValueType='MFString')))) or
                                      (local-name()='url') or ends-with(local-name(),'Url') or
@@ -1074,8 +1076,9 @@ POSSIBILITY OF SUCH DAMAGE.
                                     ((local-name(..)='CollisionCollection') and (local-name()='appliedParameters')) or
                                     ((local-name(..)='GeoViewpoint')        and (local-name()='navType')) or
                                      (local-name()='objectType')">
-                        <!-- debug fieldValue, Text -->
+                    <!-- debug fieldValue, Text, NavigationInfo -->
                     <xsl:if test="$debugTrace">
+                        <!--
                             <xsl:if test="(local-name(..) = 'fieldValue') and (local-name() = 'value')">
                                 <xsl:message>
                                     <xsl:text>[@* MFString handling performed] </xsl:text>
@@ -1098,6 +1101,19 @@ POSSIBILITY OF SUCH DAMAGE.
                                     <xsl:value-of select="$normalizedValue"/>
                                 </xsl:message>
                             </xsl:if>
+                        -->
+                            <xsl:if test="(local-name(..) = 'NavigationInfo') and (local-name() = 'type')">
+                                <xsl:message>
+                                    <xsl:text>[@* MFString handling performed]</xsl:text>
+                                    <xsl:value-of select="local-name(..)"/>
+                                    <xsl:text> string=</xsl:text>
+                                    <xsl:value-of select="$normalizedValue"/>
+                                    <xsl:text> type MFString, $attributeType=</xsl:text>
+                                    <xsl:value-of select="$attributeType"/>
+                                    <xsl:text>, $normalizedValue=</xsl:text>
+                                    <xsl:value-of select="$normalizedValue"/>
+                                </xsl:message>
+                            </xsl:if>
                         </xsl:if>
                         <xsl:text>[</xsl:text>
                         
@@ -1107,7 +1123,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:with-param name="inputType"><xsl:text>MFString</xsl:text></xsl:with-param>
                             </xsl:call-template>
                         </xsl:variable>
-                        <!-- debug-->
+                        <!-- debug  true() or -->
                         <xsl:if test="$debugTrace">
                             <xsl:message>
                                 <xsl:text>[@* confirming] $escape-special-characters-quotes-recurse-result=</xsl:text>
@@ -1136,11 +1152,11 @@ POSSIBILITY OF SUCH DAMAGE.
                                 <xsl:text>&quot;</xsl:text>     
                                 <xsl:call-template name="trace">
                                     <xsl:with-param name="message">
-                                        <xsl:text> warning: wrapped missing &quot;quote marks&quot; around single-string value for MFString @</xsl:text>
+                                        <xsl:text> notification: wrapped missing &quot;quote marks&quot; around single-string value for MFString @</xsl:text>
                                         <xsl:value-of select="local-name()"/>
                                         <xsl:text>='</xsl:text>
                                         <xsl:value-of select="."/>
-                                        <xsl:text>' and be sure to fix source file!</xsl:text>
+                                        <xsl:text>'</xsl:text>
                                         <xsl:if test="($traceScripts = 'true')">
                                             <xsl:text>&#10;</xsl:text>
                                             <xsl:value-of select="."/>
@@ -1489,7 +1505,7 @@ POSSIBILITY OF SUCH DAMAGE.
         <xsl:variable name="inputString" select="string($inputValue)"/>
 
         <!-- debug (also use trace messages below) -->
-        <xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
+        <xsl:variable name="debugTrace" select="true"/><!-- true() false() -->
         <xsl:variable name="debugMessage">
                 <xsl:text>[e-s-c-q-r input][local-name()=</xsl:text>
                 <xsl:value-of select="local-name()"/>
@@ -1542,7 +1558,7 @@ POSSIBILITY OF SUCH DAMAGE.
       </xsl:variable>
 
       <!-- debug (also use trace messages below) -->
-      <xsl:variable name="debugTrace" select="false()"/><!-- true() false() -->
+      <xsl:variable name="debugTrace" select="false()"/><!-- true() false() (local-name() = 'type') -->
       <xsl:variable name="debugMessage">
           <xsl:text>[e-q-c-r input][local-name()=</xsl:text>
           <xsl:value-of select="local-name()"/>
@@ -1800,17 +1816,19 @@ POSSIBILITY OF SUCH DAMAGE.
           <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][4.0]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
           <xsl:text>"</xsl:text>
         </xsl:when>
+        <!-- strip intermediate comma between bracketing quotes in normalized string -->
         <xsl:when test="starts-with(normalize-space($inputString),'&quot; &quot;')  or starts-with(normalize-space($inputString),'&quot;, &quot;') or
                         starts-with(normalize-space($inputString),'&quot; ,&quot;') or starts-with(normalize-space($inputString),'&quot; , &quot;')">
             <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][4.1]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
-            <xsl:text>","</xsl:text>
+            <!-- <xsl:text>","</xsl:text> -->
             <xsl:call-template name="escape-quote-characters-recurse">
+                <!-- follow second quote, skip intermediate comma (if any) -->
                 <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
                 <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
-        <!-- IMPORTANT: starting and ending quotes indicate outer delimiters of MFString array; output " and process/split string values hereafter... -->
+        <!-- IMPORTANT: starting and ending quotes indicate outer delimiters of MFString array elements; output " and process/split string values hereafter... -->
         <xsl:when test="starts-with($inputString,'&quot;') and ends-with($inputString,'&quot;') and not(ends-with($inputString,'\&quot;'))
 		  and not(starts-with(normalize-space($inputString),'&quot;,')) and not(starts-with(normalize-space($inputString),'&quot; ,'))">
             <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][4.2]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
@@ -1941,14 +1959,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
         </xsl:when>
-        <!-- finish quoted SFString value and continue with next quoted SFString value -->
+        <!-- finish quoted SFString value then continue with remaining SFString values -->
         <xsl:when test="($inputType = 'MFString') and contains($inputString,'&quot;') and contains(substring-after($inputString,'&quot;'),'&quot;')">
             <xsl:if test="$debugTrace"><xsl:message><xsl:text>[e-q-c-r][8.2]</xsl:text><xsl:value-of select="$debugMessage"/></xsl:message></xsl:if>
-            <xsl:value-of select="substring-before(substring-after($inputString,'&quot;'),'&quot;')"/>
-            <xsl:text disable-output-escaping="yes">","</xsl:text>
+        <!--<xsl:value-of select="substring-before(substring-after($inputString,'&quot;'),'&quot;')"/> -->
             <xsl:value-of select="substring-before($inputString,'&quot;')"/>
+            <xsl:text disable-output-escaping="yes">","</xsl:text>
             <xsl:call-template name="escape-quote-characters-recurse">
-                <xsl:with-param name="inputText" select="substring-after(substring-after($inputString,'&quot;'),'&quot;')"/>
+                <xsl:with-param name="inputText" select="substring($inputString,string-length(substring-before($inputString,'&quot;')) + 1)"/>
                 <xsl:with-param name="inputType" select="$inputType"/>
                 <xsl:with-param name="firstPass"><xsl:value-of select="false()"/></xsl:with-param>
             </xsl:call-template>
@@ -3185,6 +3203,7 @@ POSSIBILITY OF SUCH DAMAGE.
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
+                       ((local-name()='ulimit' or local-name()='llimit') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
@@ -4421,7 +4440,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='Appearance'            and (($attributeName='material')       or ($attributeName='texture')          or ($attributeName='textureTransform') or ($attributeName='acousticProperties') or
                     ($attributeName='fillProperties') or ($attributeName='lineProperties')  or ($attributeName='pointProperties'))) or
                     ($parentElementName='PhysicalMaterial'      and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture') or ($attributeName='metallicRoughnessTexture') or ($attributeName='normalTexture') or ($attributeName='occlusionTexture'))) or
-                    ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture')))">
+                    ($parentElementName='UnlitMaterial'         and (($attributeName='baseTexture')    or ($attributeName='emissiveTexture')                                                or ($attributeName='normalTexture'))) or
+                    (contains($parentElementName,'Viewpoint')    and  $attributeName='navigationInfo')">
 			  <xsl:text>SFNode</xsl:text>
 		  </xsl:when>
 		  <!-- MFNode -->
