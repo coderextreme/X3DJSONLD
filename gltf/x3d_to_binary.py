@@ -26,6 +26,7 @@ import xml.etree.ElementTree as ET
 import numpy as np
 import json, os, urllib.request, math, mimetypes, base64, re
 from pygltflib import *
+import copy
 
 # Module-level map from id(Element) -> X3DScope.
 _element_scope_map: dict = {}
@@ -36,9 +37,26 @@ try:
 except ImportError:
     HAS_PIL = False
 
+class ProtoFieldDef:
+    def __init__(self, name, accessType, fieldType, default=None):
+        self.name = name
+        self.accessType = accessType  # inputOutput, inputOnly, etc.
+        self.fieldType = fieldType
+        self.default = default
+
+
+class ProtoDef:
+    def __init__(self, name, interface_fields, body_root):
+        self.name = name
+        self.interface_fields = interface_fields  # dict[name] = ProtoFieldDef
+        self.body_root = body_root
+
 # ---------------------------------------------------------------------------
 # Low-level helpers
 # ---------------------------------------------------------------------------
+
+def deep_clone(elem):
+    return copy.deepcopy(elem)
 
 def strip_namespaces(node):
     if '}' in node.tag: node.tag = node.tag.split('}', 1)[1]
@@ -129,6 +147,85 @@ def add_accessor(gltf, bin_blob, data, gltf_type, comp_type, target=None, add_mi
     gltf.accessors.append(Accessor(bufferView=len(gltf.bufferViews)-1, componentType=comp_type, count=len(data), type=gltf_type, min=min_v, max=max_v))
     return len(gltf.accessors) - 1
 
+
+
+def resolve_is_connects(proto_instance_fields, proto_def, instance_root, global_routes):
+    """
+    proto_instance_fields: dict[name -> value]
+    proto_def: ProtoDef
+    instance_root: cloned ProtoBody root
+    global_routes: your existing route structure
+    """
+
+    for is_node in instance_root.findall('.//IS'):
+        for conn in is_node.findall('connect'):
+            proto_field = conn.get('protoField')
+            node_field = conn.get('nodeField')
+
+            if not proto_field or not node_field:
+                continue
+
+            # Find parent node (the node containing this IS)
+            parent = None
+            for p in instance_root.iter():
+                if is_node in list(p):
+                    parent = p
+                    break
+
+            if parent is None:
+                continue
+
+            # 1️⃣ Direct field assignment if value exists
+            if proto_field in proto_instance_fields:
+                parent.set(node_field, proto_instance_fields[proto_field])
+                continue
+
+            # 2️⃣ Otherwise create ROUTE bindings (event wiring)
+            # emulate:
+            # protoField → nodeField
+            # and nodeField → protoField (bidirectional if needed)
+
+            # Represent protoField as virtual node
+            proto_node_id = f"__proto_{id(instance_root)}_{proto_field}"
+
+            # Forward route
+            global_routes.setdefault((proto_node_id, proto_field), []).append(
+                (parent, node_field)
+            )
+
+            # Reverse route (for output fields)
+            global_routes.setdefault((id(parent), node_field), []).append(
+                (proto_node_id, proto_field)
+            )
+
+def collect_protos(root):
+    protos = {}
+
+    for proto in root.findall('.//ProtoDeclare'):
+        name = proto.get('name')
+        if not name:
+            continue
+
+        interface = {}
+        pi = proto.find('ProtoInterface')
+        if pi is not None:
+            for f in pi.findall('field'):
+                fname = f.get('name')
+                interface[fname] = ProtoFieldDef(
+                    name=fname,
+                    accessType=f.get('accessType', 'inputOutput'),
+                    fieldType=f.get('type'),
+                    default=f.get('value')
+                )
+
+        body = proto.find('ProtoBody')
+        if body is None:
+            continue
+
+        protos[name] = ProtoDef(name, interface, body)
+
+    return protos
+
 def write_glb(gltf_dict: dict, bin_blob: bytearray, output_path: str):
     if 'buffers' not in gltf_dict or not gltf_dict['buffers']: gltf_dict['buffers'] = [{'byteLength': len(bin_blob)}]
     else: gltf_dict['buffers'][0]['byteLength'] = len(bin_blob)
@@ -159,6 +256,55 @@ def resolve_use(node):
     if node is not None and node.get('USE') and id(node) in _element_scope_map:
         return _element_scope_map[id(node)].def_map.get(node.get('USE'), node)
     return node
+
+def expand_protos(root, global_routes):
+    protos = collect_protos(root)
+
+    for inst in list(root.findall('.//ProtoInstance')):
+        name = inst.get('name')
+        if name not in protos:
+            continue
+
+        proto_def = protos[name]
+
+        # Collect fieldValue overrides
+        field_values = {}
+        for fv in inst.findall('fieldValue'):
+            fname = fv.get('name')
+            val = fv.get('value')
+            if fname and val is not None:
+                field_values[fname] = val
+
+        # Apply defaults
+        for fname, fdef in proto_def.interface_fields.items():
+            if fname not in field_values and fdef.default is not None:
+                field_values[fname] = fdef.default
+
+        # Clone ProtoBody
+        cloned_body = deep_clone(proto_def.body_root)
+
+        # Resolve IS/connect
+        resolve_is_connects(field_values, proto_def, cloned_body, global_routes)
+
+        # Insert into parent
+        parent = None
+        for p in root.iter():
+            if inst in list(p):
+                parent = p
+                break
+
+        if parent is None:
+            continue
+
+        idx = list(parent).index(inst)
+
+        for child in list(cloned_body):
+            parent.insert(idx, child)
+            idx += 1
+
+        parent.remove(inst)
+
+    return root
 
 def parse_x3d_scope_tree(root, base_path, inline_cache, scopes_list):
     strip_namespaces(root)
@@ -304,6 +450,31 @@ def resolve_material(app_node, mat_list, gltf, bin_blob):
 # Mesh Primitives & Morph Targets
 # ---------------------------------------------------------------------------
 
+def rectangle2d_to_ifs(rect_node):
+    size = parse_array(rect_node.get('size', '2 2'))
+    sx, sy = size[0] / 2.0, size[1] / 2.0
+
+    coords = [
+        -sx, -sy, 0,
+         sx, -sy, 0,
+         sx,  sy, 0,
+        -sx,  sy, 0
+    ]
+
+    ifs = ET.Element('IndexedFaceSet', {
+        'coordIndex': '0 1 2 3 -1'
+    })
+
+    ET.SubElement(ifs, 'Coordinate', {
+        'point': ' '.join(map(str, coords))
+    })
+
+    ET.SubElement(ifs, 'TextureCoordinate', {
+        'point': '0 0  1 0  1 1  0 1'
+    })
+
+    return ifs
+
 def box_to_ifs(box_node):
     hx, hy, hz =[s/2.0 for s in parse_array(box_node.get('size', '2 2 2'))]
     p = [[ hx,  hy,  hz], [-hx,  hy,  hz], [-hx, -hy,  hz],[ hx, -hy,  hz],
@@ -331,7 +502,8 @@ def process_mesh_primitives(geom_nodes, gltf, bin_blob, mat_list, current_displa
                     node.findall('.//IndexedFaceSet') +
                     node.findall('.//IndexedTriangleSet') +
                     node.findall('.//TriangleSet'))
-        if not is_faceset: facesets.extend([box_to_ifs(b) for b in node.findall('.//Box')])
+        facesets.extend([box_to_ifs(b) for b in node.findall('.//Box')])
+        facesets.extend([rectangle2d_to_ifs(r) for r in node.findall('.//Rectangle2D')])
 
         app_node = None if is_faceset else node.find('.//Appearance')
 
@@ -544,8 +716,53 @@ def process_text_primitives(text_node, app_node, gltf, bin_blob, mat_list):
 # ---------------------------------------------------------------------------
 
 def traverse_x3d_node(xml_node, parent_idx, gltf, bin_blob, mat_list, element_to_gltf_idx, element_to_center, inline_cache, current_displacers, global_inverse_routes, node_to_morph_targets):
-    logic_tags = {'BooleanFilter', 'BooleanSequencer', 'NavigationInfo', 'ProximitySensor', 'TimeTrigger', 'TouchSensor'}
+    logic_tags = { 'BooleanFilter', 'BooleanSequencer', 'IntegerSequencer', 'ScalarInterpolator', 'TimeSensor', 'TimeTrigger', 'NavigationInfo' }
     if xml_node.tag in logic_tags: return
+
+
+    if xml_node.tag == 'ProximitySensor':
+        center = parse_array(xml_node.get('center', '0 0 0'))
+        size = parse_array(xml_node.get('size', '0 0 0'))
+
+        if parent_idx is not None:
+            node = gltf.nodes[parent_idx]
+            if not hasattr(node, 'extensions'): node.extensions = {}
+
+            node.extensions['KHR_interactivity'] = {
+                "interactions": [{
+                    "id": xml_node.get('DEF', 'Prox_Default'),
+                    "type": "proximity",
+                    "shape": {
+                        "type": "box",
+                        "size": size,
+                        "translation": center
+                    }
+                }]
+            }
+        return
+
+    if xml_node.tag == 'TouchSensor':
+        sensor_def = xml_node.get('DEF', 'TouchSensor_Default')
+        # We need the node that actually contains the mesh (the child)
+        # If traverse_x3d_node is at a Shape node, parent_idx is the parent transform.
+        # Let's attach to the node currently being processed:
+        target_node_idx = parent_idx
+
+        node = gltf.nodes[target_node_idx]
+        if not hasattr(node, 'extensions'): node.extensions = {}
+
+        # Modern KHR_interactivity structure
+        node.extensions['KHR_interactivity'] = {
+            "interactions": [{
+                "id": sensor_def,
+                "type": "pointer",
+                "actions": [{
+                    "id": "select_action",
+                    "type": "click" # More universal than 'select'
+                }]
+            }]
+        }
+        return
 
     if xml_node.tag == 'Switch':
         switch_idx = len(gltf.nodes)
@@ -586,7 +803,10 @@ def traverse_x3d_node(xml_node, parent_idx, gltf, bin_blob, mat_list, element_to
     if xml_node.tag == 'HAnimSegment':
         current_displacers = get_local_displacers(xml_node)
 
-    if xml_node.tag in {'Transform', 'Group', 'HAnimJoint', 'HAnimSegment', 'HAnimHumanoid', 'HAnimSite'}:
+    if xml_node.tag in {'IS', 'connect', 'field', 'fieldValue', 'ProtoInterface', 'ProtoBody'}:
+        return
+
+    if xml_node.tag in { 'Transform', 'Group', 'Switch', 'Layer', 'LayerSet', 'HAnimJoint', 'HAnimSegment', 'HAnimHumanoid', 'HAnimSite' }:
         t = np.array(parse_array(xml_node.get('translation'), default=[0,0,0]))
         c = np.array(parse_array(xml_node.get('center'), default=[0,0,0]))
         outer_idx = len(gltf.nodes)
@@ -796,6 +1016,8 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     try: root = ET.parse(x3d_filepath).getroot()
     except Exception as e: print(f"  ERROR parsing X3D: {e}"); return
 
+    # root = expand_protos(root)
+
     bin_blob = bytearray()
     mat_list =[]
 
@@ -810,10 +1032,32 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
         extras = {m.get('name'): m.get('content') for m in head.findall('meta') if m.get('name') and m.get('content')}
         if extras: gltf.asset.extras = {"X3D_Metadata": extras}
 
+    bg = root.find('.//Background')
+    if bg is not None:
+        sky = parse_array(bg.get('skyColor', '0 0 0'))
+        if sky:
+            gltf.asset.extras = gltf.asset.extras or {}
+            gltf.asset.extras["background"] = {
+                "skyColor": sky[:3]
+            }
+
+    wi = root.find('.//WorldInfo')
+    if wi is not None:
+        title = wi.get('title')
+        if title:
+            gltf.asset.extras = gltf.asset.extras or {}
+            gltf.asset.extras["title"] = title
+
     inline_cache, scopes_list = {},[]
+
+    global_inverse_routes = {}
+    global_forward_routes = {}
+
+    root = expand_protos(root, global_forward_routes)
+    for (k, v) in global_forward_routes.items():
+        global_forward_routes.setdefault(k, []).extend(v)
     parse_x3d_scope_tree(root, base_path, inline_cache, scopes_list)
 
-    global_inverse_routes, global_forward_routes = {}, {}
     for scope in scopes_list:
         for route in scope.root.iter('ROUTE'):
             f_str, f_fld = route.get('fromNode'), route.get('fromField')
@@ -835,6 +1079,12 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     if len(bin_blob) == 0: bin_blob.extend(b'\x00' * 4)
 
     gltf_dict = to_plain(gltf)
+
+    for i, node in enumerate(gltf.nodes):
+        if hasattr(node, 'extensions') and node.extensions:
+            gltf_dict['nodes'][i]['extensions'] = node.extensions
+
+    gltf_dict.setdefault('extensionsUsed', []).append('KHR_interactivity')
     if mat_list: gltf_dict['materials'] = mat_list
 
     for mesh_plain, mesh_obj in zip(gltf_dict.get('meshes',[]), gltf.meshes):
