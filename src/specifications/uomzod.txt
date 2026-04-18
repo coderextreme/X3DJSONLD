@@ -1,0 +1,2595 @@
+/**
+ * X3D Unified Object Model 4.1 — Zod Schema
+ *
+ * Generated from: https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.1.xml
+ * Standard: ISO/IEC 19775-1:2023 (X3D 4.1)
+ * Schema compliance: Standard Schema (standardschema.dev)
+ *
+ * Organisation:
+ *   1.  Primitive field types  (SF* / MF*)
+ *   2.  Abstract base types
+ *   3.  Component schemas (Core, Grouping, Rendering, Geometry3D, Shape,
+ *       Lighting, Texturing, Navigation, Animation, EventUtilities,
+ *       Scripting, Networking, Sound, EnvironmentalEffects, HAnim,
+ *       NURBS, CAD, ParticleSystems, RigidBodyPhysics, Followers,
+ *       PointingDeviceSensor, KeyDeviceSensor, EnvironmentalSensor,
+ *       Layout, Picking, VolumeRendering, GeoSpatial, DIS)
+ *   4.  Document root (X3D / Scene / ROUTE / PROTO)
+ */
+
+import { z } from "zod";
+
+// ============================================================
+// §1  PRIMITIVE FIELD TYPES
+// ============================================================
+
+// ----- Scalars -----
+
+/** Single-valued Boolean */
+export const SFBool = z.boolean();
+
+/** Single-valued 32-bit integer */
+export const SFInt32 = z.number().int();
+
+/** Single-valued single-precision float */
+export const SFFloat = z.number();
+
+/** Single-valued double-precision float */
+export const SFDouble = z.number();
+
+/** Single-valued time (seconds since epoch) */
+export const SFTime = z.number();
+
+/** Single-valued UTF-8 string */
+export const SFString = z.string();
+
+// ----- Compound scalars -----
+
+/** RGB colour [0,1]^3 */
+export const SFColor = z
+  .tuple([z.number().min(0).max(1), z.number().min(0).max(1), z.number().min(0).max(1)])
+  .describe("SFColor – RGB triple, each component in [0, 1]");
+
+/** RGBA colour [0,1]^4 */
+export const SFColorRGBA = z
+  .tuple([
+    z.number().min(0).max(1),
+    z.number().min(0).max(1),
+    z.number().min(0).max(1),
+    z.number().min(0).max(1),
+  ])
+  .describe("SFColorRGBA – RGBA quadruple, each component in [0, 1]");
+
+/** Axis-angle rotation [ax, ay, az, angle-radians] */
+export const SFRotation = z
+  .tuple([z.number(), z.number(), z.number(), z.number()])
+  .describe("SFRotation – axis (x,y,z) + angle in radians");
+
+/** 2-D single-precision vector */
+export const SFVec2f = z.tuple([z.number(), z.number()]);
+
+/** 2-D double-precision vector */
+export const SFVec2d = z.tuple([z.number(), z.number()]);
+
+/** 3-D single-precision vector */
+export const SFVec3f = z.tuple([z.number(), z.number(), z.number()]);
+
+/** 3-D double-precision vector */
+export const SFVec3d = z.tuple([z.number(), z.number(), z.number()]);
+
+/** 4-D single-precision vector */
+export const SFVec4f = z.tuple([z.number(), z.number(), z.number(), z.number()]);
+
+/** 4-D double-precision vector */
+export const SFVec4d = z.tuple([z.number(), z.number(), z.number(), z.number()]);
+
+/** 3×3 single-precision matrix (row-major, 9 values) */
+export const SFMatrix3f = z.tuple([
+  z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(),
+]);
+
+/** 3×3 double-precision matrix */
+export const SFMatrix3d = z.tuple([
+  z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(),
+]);
+
+/** 4×4 single-precision matrix (row-major, 16 values) */
+export const SFMatrix4f = z.tuple([
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+]);
+
+/** 4×4 double-precision matrix */
+export const SFMatrix4d = z.tuple([
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+  z.number(), z.number(), z.number(), z.number(),
+]);
+
+/**
+ * SFImage – raw pixel image: width, height, numComponents, then pixel words.
+ * Represented as a flat number array with at least 3 header values.
+ */
+export const SFImage = z
+  .array(z.number().int())
+  .refine((a: number[]) => a.length >= 3, { message: "SFImage requires at least [width, height, components]" });
+
+// ----- Multi-valued (MF) field types -----
+
+export const MFBool    = z.array(SFBool);
+export const MFInt32   = z.array(SFInt32);
+export const MFFloat   = z.array(SFFloat);
+export const MFDouble  = z.array(SFDouble);
+export const MFTime    = z.array(SFTime);
+export const MFString  = z.array(SFString);
+export const MFColor   = z.array(SFColor);
+export const MFColorRGBA = z.array(SFColorRGBA);
+export const MFRotation = z.array(SFRotation);
+export const MFVec2f   = z.array(SFVec2f);
+export const MFVec2d   = z.array(SFVec2d);
+export const MFVec3f   = z.array(SFVec3f);
+export const MFVec3d   = z.array(SFVec3d);
+export const MFVec4f   = z.array(SFVec4f);
+export const MFVec4d   = z.array(SFVec4d);
+export const MFMatrix3f = z.array(SFMatrix3f);
+export const MFMatrix3d = z.array(SFMatrix3d);
+export const MFMatrix4f = z.array(SFMatrix4f);
+export const MFMatrix4d = z.array(SFMatrix4d);
+
+// ============================================================
+// §2  ABSTRACT BASE HELPERS
+// ============================================================
+
+/**
+ * Every X3D node may carry DEF/USE/class/id attributes plus optional metadata.
+ * Note: the `metadata` field references MetadataNodeUnion which is declared later;
+ * concrete nodes that need it add it via .extend() with z.lazy().
+ */
+export const X3DNodeAttribs = z.object({
+  DEF:   z.string().optional(),
+  USE:   z.string().optional(),
+  class: z.string().optional(),
+  id:    z.string().optional(),
+});
+
+// ============================================================
+// §3  COMPONENT SCHEMAS
+// ============================================================
+
+// -------- 3.1  Core ----------------------------------------
+
+export const MetadataBoolean = X3DNodeAttribs.extend({
+  type:      z.literal("MetadataBoolean"),
+  name:      z.string().default(""),
+  reference: z.string().default(""),
+  value:     MFBool.default([]),
+});
+
+export const MetadataDouble = X3DNodeAttribs.extend({
+  type:      z.literal("MetadataDouble"),
+  name:      z.string().default(""),
+  reference: z.string().default(""),
+  value:     MFDouble.default([]),
+});
+
+export const MetadataFloat = X3DNodeAttribs.extend({
+  type:      z.literal("MetadataFloat"),
+  name:      z.string().default(""),
+  reference: z.string().default(""),
+  value:     MFFloat.default([]),
+});
+
+export const MetadataInteger = X3DNodeAttribs.extend({
+  type:      z.literal("MetadataInteger"),
+  name:      z.string().default(""),
+  reference: z.string().default(""),
+  value:     MFInt32.default([]),
+});
+
+export const MetadataString = X3DNodeAttribs.extend({
+  type:      z.literal("MetadataString"),
+  name:      z.string().default(""),
+  reference: z.string().default(""),
+  value:     MFString.default([]),
+});
+
+interface MetadataSetShape {
+  type: "MetadataSet";
+  DEF?: string; USE?: string; class?: string; id?: string;
+  name: string;
+  reference: string;
+  value: MetadataNodeUnionShape[];
+}
+type MetadataNodeUnionShape =
+  | z.infer<typeof MetadataBoolean>
+  | z.infer<typeof MetadataDouble>
+  | z.infer<typeof MetadataFloat>
+  | z.infer<typeof MetadataInteger>
+  | z.infer<typeof MetadataString>
+  | MetadataSetShape;
+
+export const MetadataSet: z.ZodType<MetadataSetShape> = z.lazy(() =>
+  X3DNodeAttribs.extend({
+    type:      z.literal("MetadataSet"),
+    name:      z.string().default(""),
+    reference: z.string().default(""),
+    value:     z.array(MetadataNodeUnion).default([]),
+  })
+) as unknown as z.ZodType<MetadataSetShape>;
+
+export const MetadataNodeUnion: z.ZodType<MetadataNodeUnionShape> = z.union([
+  MetadataBoolean,
+  MetadataDouble,
+  MetadataFloat,
+  MetadataInteger,
+  MetadataString,
+  MetadataSet,
+]) as unknown as z.ZodType<MetadataNodeUnionShape>;
+
+export const WorldInfo = X3DNodeAttribs.extend({
+  type:  z.literal("WorldInfo"),
+  title: z.string().default(""),
+  info:  MFString.default([]),
+});
+
+// -------- 3.2  Grouping ------------------------------------
+
+// Forward-declare child node union (filled at the end)
+export type ChildNode = z.infer<typeof ChildNodeUnion>;
+// lazy wrapper used inside grouping nodes
+const lazyChild = () => z.lazy(() => ChildNodeUnion);
+const MFChild   = () => z.array(z.lazy(() => ChildNodeUnion)).default([]);
+
+export const Group = X3DNodeAttribs.extend({
+  type:          z.literal("Group"),
+  bboxCenter:    SFVec3f.default([0, 0, 0]),
+  bboxSize:      SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:   z.boolean().default(false),
+  visible:       z.boolean().default(true),
+  children:      z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const StaticGroup = X3DNodeAttribs.extend({
+  type:        z.literal("StaticGroup"),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const Switch = X3DNodeAttribs.extend({
+  type:         z.literal("Switch"),
+  whichChoice:  z.number().int().default(-1),
+  bboxCenter:   SFVec3f.default([0, 0, 0]),
+  bboxSize:     SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:  z.boolean().default(false),
+  visible:      z.boolean().default(true),
+  children:     z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const Transform = X3DNodeAttribs.extend({
+  type:              z.literal("Transform"),
+  translation:       SFVec3f.default([0, 0, 0]),
+  rotation:          SFRotation.default([0, 0, 1, 0]),
+  scale:             SFVec3f.default([1, 1, 1]),
+  scaleOrientation:  SFRotation.default([0, 0, 1, 0]),
+  center:            SFVec3f.default([0, 0, 0]),
+  bboxCenter:        SFVec3f.default([0, 0, 0]),
+  bboxSize:          SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:       z.boolean().default(false),
+  visible:           z.boolean().default(true),
+  children:          z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+// -------- 3.3  Rendering -----------------------------------
+
+export const Coordinate = X3DNodeAttribs.extend({
+  type:  z.literal("Coordinate"),
+  point: MFVec3f.default([]),
+});
+
+export const CoordinateDouble = X3DNodeAttribs.extend({
+  type:  z.literal("CoordinateDouble"),
+  point: MFVec3d.default([]),
+});
+
+export const Color = X3DNodeAttribs.extend({
+  type:  z.literal("Color"),
+  color: MFColor.default([]),
+});
+
+export const ColorRGBA = X3DNodeAttribs.extend({
+  type:  z.literal("ColorRGBA"),
+  color: MFColorRGBA.default([]),
+});
+
+export const Normal = X3DNodeAttribs.extend({
+  type:   z.literal("Normal"),
+  vector: MFVec3f.default([]),
+});
+
+export const ClipPlane = X3DNodeAttribs.extend({
+  type:    z.literal("ClipPlane"),
+  enabled: z.boolean().default(true),
+  plane:   SFVec4f.default([0, 1, 0, 0]),
+});
+
+export const PointSet = X3DNodeAttribs.extend({
+  type:       z.literal("PointSet"),
+  attrib:     z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:      z.union([Color, ColorRGBA]).optional(),
+  coord:      z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:   z.lazy(() => FogCoordinate).optional(),
+  normal:     Normal.optional(),
+});
+
+export const LineSet = X3DNodeAttribs.extend({
+  type:          z.literal("LineSet"),
+  vertexCount:   MFInt32.default([]),
+  attrib:        z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:         z.union([Color, ColorRGBA]).optional(),
+  coord:         z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:      z.lazy(() => FogCoordinate).optional(),
+  normal:        Normal.optional(),
+});
+
+export const IndexedLineSet = X3DNodeAttribs.extend({
+  type:            z.literal("IndexedLineSet"),
+  colorIndex:      MFInt32.default([]),
+  colorPerVertex:  z.boolean().default(true),
+  coordIndex:      MFInt32.default([]),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+});
+
+export const TriangleSet = X3DNodeAttribs.extend({
+  type:           z.literal("TriangleSet"),
+  ccw:            z.boolean().default(true),
+  colorPerVertex: z.boolean().default(true),
+  normalPerVertex:z.boolean().default(true),
+  solid:          z.boolean().default(true),
+  attrib:         z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:          z.union([Color, ColorRGBA]).optional(),
+  coord:          z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:       z.lazy(() => FogCoordinate).optional(),
+  normal:         Normal.optional(),
+  texCoord:       z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const IndexedTriangleSet = X3DNodeAttribs.extend({
+  type:            z.literal("IndexedTriangleSet"),
+  index:           MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const TriangleFanSet = X3DNodeAttribs.extend({
+  type:            z.literal("TriangleFanSet"),
+  fanCount:        MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const TriangleStripSet = X3DNodeAttribs.extend({
+  type:            z.literal("TriangleStripSet"),
+  stripCount:      MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const IndexedTriangleFanSet = X3DNodeAttribs.extend({
+  type:            z.literal("IndexedTriangleFanSet"),
+  index:           MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const IndexedTriangleStripSet = X3DNodeAttribs.extend({
+  type:            z.literal("IndexedTriangleStripSet"),
+  index:           MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(z.lazy(() => VertexAttributeUnion)).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        z.lazy(() => FogCoordinate).optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const FogCoordinate = X3DNodeAttribs.extend({
+  type:  z.literal("FogCoordinate"),
+  depth: MFFloat.default([]),
+});
+
+export const FloatVertexAttribute = X3DNodeAttribs.extend({
+  type:          z.literal("FloatVertexAttribute"),
+  name:          z.string().default(""),
+  numComponents: z.number().int().min(1).max(4).default(4),
+  value:         MFFloat.default([]),
+});
+
+export const Matrix3VertexAttribute = X3DNodeAttribs.extend({
+  type:  z.literal("Matrix3VertexAttribute"),
+  name:  z.string().default(""),
+  value: MFMatrix3f.default([]),
+});
+
+export const Matrix4VertexAttribute = X3DNodeAttribs.extend({
+  type:  z.literal("Matrix4VertexAttribute"),
+  name:  z.string().default(""),
+  value: MFMatrix4f.default([]),
+});
+
+export const VertexAttributeUnion = z.discriminatedUnion("type", [
+  FloatVertexAttribute,
+  Matrix3VertexAttribute,
+  Matrix4VertexAttribute,
+]);
+
+// -------- 3.4  Geometry3D ----------------------------------
+
+export const Box = X3DNodeAttribs.extend({
+  type:  z.literal("Box"),
+  size:  SFVec3f.default([2, 2, 2]),
+  solid: z.boolean().default(true),
+});
+
+export const Cone = X3DNodeAttribs.extend({
+  type:        z.literal("Cone"),
+  bottomRadius: z.number().min(0).default(1),
+  height:       z.number().min(0).default(2),
+  bottom:       z.boolean().default(true),
+  side:         z.boolean().default(true),
+  solid:        z.boolean().default(true),
+});
+
+export const Cylinder = X3DNodeAttribs.extend({
+  type:   z.literal("Cylinder"),
+  radius: z.number().min(0).default(1),
+  height: z.number().min(0).default(2),
+  bottom: z.boolean().default(true),
+  side:   z.boolean().default(true),
+  top:    z.boolean().default(true),
+  solid:  z.boolean().default(true),
+});
+
+export const Sphere = X3DNodeAttribs.extend({
+  type:   z.literal("Sphere"),
+  radius: z.number().min(0).default(1),
+  solid:  z.boolean().default(true),
+});
+
+export const ElevationGrid = X3DNodeAttribs.extend({
+  type:            z.literal("ElevationGrid"),
+  xDimension:      z.number().int().min(0).default(0),
+  zDimension:      z.number().int().min(0).default(0),
+  xSpacing:        z.number().default(1),
+  zSpacing:        z.number().default(1),
+  height:          MFFloat.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  creaseAngle:     z.number().min(0).default(0),
+  attrib:          z.array(VertexAttributeUnion).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        FogCoordinate.optional(),
+  normal:          Normal.optional(),
+  texCoord:        z.lazy(() => TexCoordUnion).optional(),
+});
+
+export const Extrusion = X3DNodeAttribs.extend({
+  type:             z.literal("Extrusion"),
+  beginCap:         z.boolean().default(true),
+  endCap:           z.boolean().default(true),
+  ccw:              z.boolean().default(true),
+  convex:           z.boolean().default(true),
+  solid:            z.boolean().default(true),
+  creaseAngle:      z.number().min(0).default(0),
+  crossSection:     MFVec2f.default([[1,1],[1,-1],[-1,-1],[-1,1],[1,1]]),
+  orientation:      MFRotation.default([[0,0,1,0]]),
+  scale:            MFVec2f.default([[1,1]]),
+  spine:            MFVec3f.default([[0,0,0],[0,1,0]]),
+});
+
+export const IndexedFaceSet = X3DNodeAttribs.extend({
+  type:             z.literal("IndexedFaceSet"),
+  colorIndex:       MFInt32.default([]),
+  colorPerVertex:   z.boolean().default(true),
+  convex:           z.boolean().default(true),
+  coordIndex:       MFInt32.default([]),
+  creaseAngle:      z.number().min(0).default(0),
+  normalIndex:      MFInt32.default([]),
+  normalPerVertex:  z.boolean().default(true),
+  solid:            z.boolean().default(true),
+  texCoordIndex:    MFInt32.default([]),
+  ccw:              z.boolean().default(true),
+  attrib:           z.array(VertexAttributeUnion).default([]),
+  color:            z.union([Color, ColorRGBA]).optional(),
+  coord:            z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:         FogCoordinate.optional(),
+  normal:           Normal.optional(),
+  texCoord:         z.lazy(() => TexCoordUnion).optional(),
+});
+
+// Text / FontStyle
+
+export const FontStyle = X3DNodeAttribs.extend({
+  type:       z.literal("FontStyle"),
+  family:     MFString.default(["SERIF"]),
+  horizontal: z.boolean().default(true),
+  justify:    MFString.default(["BEGIN"]),
+  language:   z.string().default(""),
+  leftToRight:z.boolean().default(true),
+  size:       z.number().min(0).default(1),
+  spacing:    z.number().min(0).default(1),
+  style:      z.enum(["PLAIN","BOLD","ITALIC","BOLDITALIC"]).default("PLAIN"),
+  topToBottom:z.boolean().default(true),
+});
+
+export const ScreenFontStyle = X3DNodeAttribs.extend({
+  type:       z.literal("ScreenFontStyle"),
+  family:     MFString.default(["SERIF"]),
+  horizontal: z.boolean().default(true),
+  justify:    MFString.default(["BEGIN"]),
+  language:   z.string().default(""),
+  leftToRight:z.boolean().default(true),
+  pointSize:  z.number().min(0).default(12),
+  spacing:    z.number().min(0).default(1),
+  style:      z.enum(["PLAIN","BOLD","ITALIC","BOLDITALIC"]).default("PLAIN"),
+  topToBottom:z.boolean().default(true),
+});
+
+export const Text = X3DNodeAttribs.extend({
+  type:       z.literal("Text"),
+  string:     MFString.default([]),
+  length:     MFFloat.default([]),
+  maxExtent:  z.number().default(0),
+  solid:      z.boolean().default(false),
+  lineBounds: MFVec2f.default([]),
+  origin:     SFVec3f.default([0,0,0]),
+  textBounds: SFVec2f.default([0,0]),
+  fontStyle:  z.union([FontStyle, ScreenFontStyle]).optional(),
+});
+
+// -------- 3.5  Shape ---------------------------------------
+
+export const Material = X3DNodeAttribs.extend({
+  type:             z.literal("Material"),
+  ambientIntensity: z.number().min(0).max(1).default(0.2),
+  diffuseColor:     SFColor.default([0.8, 0.8, 0.8]),
+  emissiveColor:    SFColor.default([0, 0, 0]),
+  shininess:        z.number().min(0).max(1).default(0.2),
+  specularColor:    SFColor.default([0, 0, 0]),
+  transparency:     z.number().min(0).max(1).default(0),
+});
+
+export const TwoSidedMaterial = X3DNodeAttribs.extend({
+  type:                    z.literal("TwoSidedMaterial"),
+  ambientIntensity:        z.number().min(0).max(1).default(0.2),
+  backAmbientIntensity:    z.number().min(0).max(1).default(0.2),
+  backDiffuseColor:        SFColor.default([0.8, 0.8, 0.8]),
+  backEmissiveColor:       SFColor.default([0, 0, 0]),
+  backShininess:           z.number().min(0).max(1).default(0.2),
+  backSpecularColor:       SFColor.default([0, 0, 0]),
+  backTransparency:        z.number().min(0).max(1).default(0),
+  diffuseColor:            SFColor.default([0.8, 0.8, 0.8]),
+  emissiveColor:           SFColor.default([0, 0, 0]),
+  separateBackColor:       z.boolean().default(false),
+  shininess:               z.number().min(0).max(1).default(0.2),
+  specularColor:           SFColor.default([0, 0, 0]),
+  transparency:            z.number().min(0).max(1).default(0),
+});
+
+export const PhysicalMaterial = X3DNodeAttribs.extend({
+  type:               z.literal("PhysicalMaterial"),
+  baseColor:          SFColor.default([1, 1, 1]),
+  baseColorFactor:    SFColor.default([1, 1, 1]),
+  emissiveColor:      SFColor.default([0, 0, 0]),
+  emissiveFactor:     SFColor.default([0, 0, 0]),
+  metallic:           z.number().min(0).max(1).default(1),
+  metallicFactor:     z.number().min(0).max(1).default(1),
+  roughness:          z.number().min(0).max(1).default(1),
+  roughnessFactor:    z.number().min(0).max(1).default(1),
+  transparency:       z.number().min(0).max(1).default(0),
+  alphaCutoff:        z.number().min(0).max(1).default(0.5),
+  alphaMode:          z.enum(["AUTO","OPAQUE","MASK","BLEND"]).default("OPAQUE"),
+  baseColorTexture:         z.lazy(() => TextureNodeUnion).optional(),
+  emissiveTexture:          z.lazy(() => TextureNodeUnion).optional(),
+  metallicRoughnessTexture: z.lazy(() => TextureNodeUnion).optional(),
+  normalTexture:            z.lazy(() => TextureNodeUnion).optional(),
+  occlusionTexture:         z.lazy(() => TextureNodeUnion).optional(),
+});
+
+export const FillProperties = X3DNodeAttribs.extend({
+  type:        z.literal("FillProperties"),
+  filled:      z.boolean().default(true),
+  hatched:     z.boolean().default(true),
+  hatchColor:  SFColor.default([1, 1, 1]),
+  hatchStyle:  z.number().int().default(1),
+});
+
+export const LineProperties = X3DNodeAttribs.extend({
+  type:              z.literal("LineProperties"),
+  applied:           z.boolean().default(true),
+  linetype:          z.number().int().default(1),
+  linewidthScaleFactor: z.number().default(0),
+});
+
+export const Appearance = X3DNodeAttribs.extend({
+  type:            z.literal("Appearance"),
+  alphaMode:       z.enum(["AUTO","OPAQUE","MASK","BLEND"]).default("AUTO"),
+  alphaCutoff:     z.number().min(0).max(1).default(0.5),
+  fillProperties:  FillProperties.optional(),
+  lineProperties:  LineProperties.optional(),
+  material:        z.union([Material, TwoSidedMaterial, PhysicalMaterial]).optional(),
+  shaders:         z.array(z.lazy(() => ShaderUnion)).default([]),
+  texture:         z.lazy(() => TextureNodeUnion).optional(),
+  textureTransform:z.lazy(() => TextureTransformUnion).optional(),
+});
+
+export const Shape = X3DNodeAttribs.extend({
+  type:        z.literal("Shape"),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  castShadow:  z.boolean().default(true),
+  visible:     z.boolean().default(true),
+  appearance:  Appearance.optional(),
+  geometry:    z.lazy(() => GeometryNodeUnion).optional(),
+});
+
+// -------- 3.6  Lighting ------------------------------------
+
+export const DirectionalLight = X3DNodeAttribs.extend({
+  type:          z.literal("DirectionalLight"),
+  ambientIntensity: z.number().min(0).max(1).default(0),
+  color:         SFColor.default([1, 1, 1]),
+  direction:     SFVec3f.default([0, 0, -1]),
+  global:        z.boolean().default(false),
+  intensity:     z.number().min(0).max(1).default(1),
+  on:            z.boolean().default(true),
+  shadowIntensity: z.number().min(0).max(1).default(1),
+  shadows:       z.boolean().default(false),
+});
+
+export const PointLight = X3DNodeAttribs.extend({
+  type:            z.literal("PointLight"),
+  ambientIntensity:z.number().min(0).max(1).default(0),
+  attenuation:     SFVec3f.default([1, 0, 0]),
+  color:           SFColor.default([1, 1, 1]),
+  global:          z.boolean().default(true),
+  intensity:       z.number().min(0).max(1).default(1),
+  location:        SFVec3f.default([0, 0, 0]),
+  on:              z.boolean().default(true),
+  radius:          z.number().min(0).default(100),
+  shadowIntensity: z.number().min(0).max(1).default(1),
+  shadows:         z.boolean().default(false),
+});
+
+export const SpotLight = X3DNodeAttribs.extend({
+  type:             z.literal("SpotLight"),
+  ambientIntensity: z.number().min(0).max(1).default(0),
+  attenuation:      SFVec3f.default([1, 0, 0]),
+  beamWidth:        z.number().min(0).default(0.7854),
+  color:            SFColor.default([1, 1, 1]),
+  cutOffAngle:      z.number().min(0).default(1.5708),
+  direction:        SFVec3f.default([0, 0, -1]),
+  global:           z.boolean().default(true),
+  intensity:        z.number().min(0).max(1).default(1),
+  location:         SFVec3f.default([0, 0, 0]),
+  on:               z.boolean().default(true),
+  radius:           z.number().min(0).default(100),
+  shadowIntensity:  z.number().min(0).max(1).default(1),
+  shadows:          z.boolean().default(false),
+});
+
+// -------- 3.7  Texturing -----------------------------------
+
+export const TextureCoordinate = X3DNodeAttribs.extend({
+  type:  z.literal("TextureCoordinate"),
+  point: MFVec2f.default([]),
+});
+
+export const TextureCoordinate3D = X3DNodeAttribs.extend({
+  type:  z.literal("TextureCoordinate3D"),
+  point: MFVec3f.default([]),
+});
+
+export const TextureCoordinate4D = X3DNodeAttribs.extend({
+  type:  z.literal("TextureCoordinate4D"),
+  point: MFVec4f.default([]),
+});
+
+export const TextureCoordinateGenerator = X3DNodeAttribs.extend({
+  type:      z.literal("TextureCoordinateGenerator"),
+  mode:      z.string().default("SPHERE"),
+  parameter: MFFloat.default([]),
+});
+
+export const MultiTextureCoordinate = X3DNodeAttribs.extend({
+  type:     z.literal("MultiTextureCoordinate"),
+  texCoord: z.array(z.union([
+    TextureCoordinate,
+    TextureCoordinate3D,
+    TextureCoordinate4D,
+    TextureCoordinateGenerator,
+  ])).default([]),
+});
+
+export const TexCoordUnion = z.union([
+  TextureCoordinate,
+  TextureCoordinate3D,
+  TextureCoordinate4D,
+  TextureCoordinateGenerator,
+  MultiTextureCoordinate,
+]);
+
+export const TextureTransform = X3DNodeAttribs.extend({
+  type:        z.literal("TextureTransform"),
+  center:      SFVec2f.default([0, 0]),
+  rotation:    z.number().default(0),
+  scale:       SFVec2f.default([1, 1]),
+  translation: SFVec2f.default([0, 0]),
+});
+
+export const TextureTransform3D = X3DNodeAttribs.extend({
+  type:        z.literal("TextureTransform3D"),
+  center:      SFVec3f.default([0, 0, 0]),
+  rotation:    SFRotation.default([0, 0, 1, 0]),
+  scale:       SFVec3f.default([1, 1, 1]),
+  translation: SFVec3f.default([0, 0, 0]),
+});
+
+export const MultiTextureTransform = X3DNodeAttribs.extend({
+  type:         z.literal("MultiTextureTransform"),
+  textureTransform: z.array(z.union([TextureTransform, TextureTransform3D])).default([]),
+});
+
+export const TextureTransformUnion = z.union([
+  TextureTransform,
+  TextureTransform3D,
+  MultiTextureTransform,
+]);
+
+export const ImageTexture = X3DNodeAttribs.extend({
+  type:          z.literal("ImageTexture"),
+  url:           MFString.default([]),
+  repeatS:       z.boolean().default(true),
+  repeatT:       z.boolean().default(true),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const PixelTexture = X3DNodeAttribs.extend({
+  type:    z.literal("PixelTexture"),
+  image:   SFImage.default([0, 0, 0]),
+  repeatS: z.boolean().default(true),
+  repeatT: z.boolean().default(true),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const MovieTexture = X3DNodeAttribs.extend({
+  type:          z.literal("MovieTexture"),
+  url:           MFString.default([]),
+  description:   z.string().default(""),
+  loop:          z.boolean().default(false),
+  pauseTime:     z.number().default(0),
+  pitch:         z.number().default(1),
+  resumeTime:    z.number().default(0),
+  speed:         z.number().default(1),
+  startTime:     z.number().default(0),
+  stopTime:      z.number().default(0),
+  repeatS:       z.boolean().default(true),
+  repeatT:       z.boolean().default(true),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const ImageTexture3D = X3DNodeAttribs.extend({
+  type:    z.literal("ImageTexture3D"),
+  url:     MFString.default([]),
+  repeatS: z.boolean().default(false),
+  repeatT: z.boolean().default(false),
+  repeatR: z.boolean().default(false),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const PixelTexture3D = X3DNodeAttribs.extend({
+  type:    z.literal("PixelTexture3D"),
+  image:   MFFloat.default([0, 0, 0, 0]),
+  repeatS: z.boolean().default(false),
+  repeatT: z.boolean().default(false),
+  repeatR: z.boolean().default(false),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const ComposedTexture3D = X3DNodeAttribs.extend({
+  type:     z.literal("ComposedTexture3D"),
+  repeatS:  z.boolean().default(false),
+  repeatT:  z.boolean().default(false),
+  repeatR:  z.boolean().default(false),
+  texture:  z.array(z.union([ImageTexture, PixelTexture])).default([]),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const GeneratedCubeMapTexture = X3DNodeAttribs.extend({
+  type:    z.literal("GeneratedCubeMapTexture"),
+  update:  z.enum(["NONE","NEXT_FRAME_ONLY","ALWAYS"]).default("NONE"),
+  size:    z.number().int().default(128),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const ImageCubeMapTexture = X3DNodeAttribs.extend({
+  type:    z.literal("ImageCubeMapTexture"),
+  url:     MFString.default([]),
+  textureProperties: z.lazy(() => TextureProperties).optional(),
+});
+
+export const MultiTexture = X3DNodeAttribs.extend({
+  type:    z.literal("MultiTexture"),
+  alpha:   z.number().min(0).max(1).default(1),
+  color:   SFColor.default([1, 1, 1]),
+  function:MFString.default([]),
+  mode:    MFString.default([]),
+  source:  MFString.default([]),
+  texture: z.array(z.union([ImageTexture, PixelTexture, MovieTexture])).default([]),
+});
+
+export const TextureProperties = X3DNodeAttribs.extend({
+  type:                z.literal("TextureProperties"),
+  anisotropicDegree:   z.number().min(1).default(1),
+  borderColor:         SFColorRGBA.default([0, 0, 0, 0]),
+  borderWidth:         z.number().int().default(0),
+  boundaryModeS:       z.string().default("REPEAT"),
+  boundaryModeT:       z.string().default("REPEAT"),
+  boundaryModeR:       z.string().default("REPEAT"),
+  generateMipMaps:     z.boolean().default(false),
+  magnificationFilter: z.string().default("FASTEST"),
+  minificationFilter:  z.string().default("FASTEST"),
+  textureCompression:  z.string().default("FASTEST"),
+  texturePriority:     z.number().min(0).max(1).default(0),
+});
+
+export const TextureNodeUnion = z.union([
+  ImageTexture,
+  PixelTexture,
+  MovieTexture,
+  MultiTexture,
+  ImageTexture3D,
+  PixelTexture3D,
+  ComposedTexture3D,
+  GeneratedCubeMapTexture,
+  ImageCubeMapTexture,
+]);
+
+// -------- 3.8  Navigation ----------------------------------
+
+export const Viewpoint = X3DNodeAttribs.extend({
+  type:             z.literal("Viewpoint"),
+  centerOfRotation: SFVec3f.default([0, 0, 0]),
+  description:      z.string().default(""),
+  fieldOfView:      z.number().min(0).default(0.7854),
+  jump:             z.boolean().default(true),
+  orientation:      SFRotation.default([0, 0, 1, 0]),
+  position:         SFVec3f.default([0, 0, 10]),
+  retainUserOffsets:z.boolean().default(false),
+});
+
+export const OrthoViewpoint = X3DNodeAttribs.extend({
+  type:             z.literal("OrthoViewpoint"),
+  centerOfRotation: SFVec3f.default([0, 0, 0]),
+  description:      z.string().default(""),
+  fieldOfView:      MFFloat.default([-1,-1,1,1]),
+  jump:             z.boolean().default(true),
+  orientation:      SFRotation.default([0, 0, 1, 0]),
+  position:         SFVec3f.default([0, 0, 10]),
+  retainUserOffsets:z.boolean().default(false),
+});
+
+interface ViewpointGroupShape {
+  type: "ViewpointGroup";
+  DEF?: string; USE?: string; class?: string; id?: string;
+  center: [number,number,number];
+  description: string;
+  displayed: boolean;
+  retainUserOffsets: boolean;
+  size: [number,number,number];
+  children: (z.infer<typeof Viewpoint> | z.infer<typeof OrthoViewpoint> | ViewpointGroupShape)[];
+}
+
+export const ViewpointGroup: z.ZodType<ViewpointGroupShape> = z.lazy(() =>
+  X3DNodeAttribs.extend({
+    type:          z.literal("ViewpointGroup"),
+    center:        SFVec3f.default([0, 0, 0]),
+    description:   z.string().default(""),
+    displayed:     z.boolean().default(true),
+    retainUserOffsets: z.boolean().default(false),
+    size:          SFVec3f.default([0, 0, 0]),
+    children:      z.array(z.union([Viewpoint, OrthoViewpoint, ViewpointGroup])).default([]),
+  }) as unknown as z.ZodType<ViewpointGroupShape>
+);
+
+export const NavigationInfo = X3DNodeAttribs.extend({
+  type:          z.literal("NavigationInfo"),
+  avatarSize:    MFFloat.default([0.25, 1.6, 0.75]),
+  headlight:     z.boolean().default(true),
+  speed:         z.number().default(1),
+  transitionTime:z.number().default(1),
+  transitionType:MFString.default(["LINEAR"]),
+  /** Navigation type(s) e.g. ["EXAMINE","ANY"] – renamed from X3D 'type' to avoid clash */
+  navType:       MFString.default(["EXAMINE","ANY"]),
+  visibilityLimit:z.number().default(0),
+});
+
+export const Billboard = X3DNodeAttribs.extend({
+  type:        z.literal("Billboard"),
+  axisOfRotation: SFVec3f.default([0, 1, 0]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const Collision = X3DNodeAttribs.extend({
+  type:        z.literal("Collision"),
+  enabled:     z.boolean().default(true),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  proxy:       z.lazy(() => GeometryNodeUnion).optional(),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const LOD = X3DNodeAttribs.extend({
+  type:        z.literal("LOD"),
+  center:      SFVec3f.default([0, 0, 0]),
+  forceTransitions: z.boolean().default(false),
+  range:       MFFloat.default([]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+// -------- 3.9  Animation / Interpolation -------------------
+
+export const TimeSensor = X3DNodeAttribs.extend({
+  type:          z.literal("TimeSensor"),
+  cycleInterval: z.number().default(1),
+  description:   z.string().default(""),
+  enabled:       z.boolean().default(true),
+  loop:          z.boolean().default(false),
+  pauseTime:     z.number().default(0),
+  resumeTime:    z.number().default(0),
+  startTime:     z.number().default(0),
+  stopTime:      z.number().default(0),
+});
+
+const InterpolatorBase = X3DNodeAttribs.extend({
+  key: MFFloat.default([]),
+});
+
+export const ColorInterpolator = InterpolatorBase.extend({
+  type:      z.literal("ColorInterpolator"),
+  keyValue:  MFColor.default([]),
+});
+
+export const CoordinateInterpolator = InterpolatorBase.extend({
+  type:      z.literal("CoordinateInterpolator"),
+  keyValue:  MFVec3f.default([]),
+});
+
+export const CoordinateInterpolator2D = InterpolatorBase.extend({
+  type:      z.literal("CoordinateInterpolator2D"),
+  keyValue:  MFVec2f.default([]),
+});
+
+export const NormalInterpolator = InterpolatorBase.extend({
+  type:      z.literal("NormalInterpolator"),
+  keyValue:  MFVec3f.default([]),
+});
+
+export const OrientationInterpolator = InterpolatorBase.extend({
+  type:      z.literal("OrientationInterpolator"),
+  keyValue:  MFRotation.default([]),
+});
+
+export const PositionInterpolator = InterpolatorBase.extend({
+  type:      z.literal("PositionInterpolator"),
+  keyValue:  MFVec3f.default([]),
+});
+
+export const PositionInterpolator2D = InterpolatorBase.extend({
+  type:      z.literal("PositionInterpolator2D"),
+  keyValue:  MFVec2f.default([]),
+});
+
+export const ScalarInterpolator = InterpolatorBase.extend({
+  type:      z.literal("ScalarInterpolator"),
+  keyValue:  MFFloat.default([]),
+});
+
+export const SplinePositionInterpolator = InterpolatorBase.extend({
+  type:             z.literal("SplinePositionInterpolator"),
+  keyValue:         MFVec3f.default([]),
+  keyVelocity:      MFVec3f.default([]),
+  closed:           z.boolean().default(false),
+  normalizeVelocity:z.boolean().default(false),
+});
+
+export const SplinePositionInterpolator2D = InterpolatorBase.extend({
+  type:             z.literal("SplinePositionInterpolator2D"),
+  keyValue:         MFVec2f.default([]),
+  keyVelocity:      MFVec2f.default([]),
+  closed:           z.boolean().default(false),
+  normalizeVelocity:z.boolean().default(false),
+});
+
+export const SplineScalarInterpolator = InterpolatorBase.extend({
+  type:             z.literal("SplineScalarInterpolator"),
+  keyValue:         MFFloat.default([]),
+  keyVelocity:      MFFloat.default([]),
+  closed:           z.boolean().default(false),
+  normalizeVelocity:z.boolean().default(false),
+});
+
+export const SquadOrientationInterpolator = InterpolatorBase.extend({
+  type:             z.literal("SquadOrientationInterpolator"),
+  keyValue:         MFRotation.default([]),
+  closed:           z.boolean().default(false),
+  normalizeVelocity:z.boolean().default(false),
+});
+
+export const EaseInEaseOut = InterpolatorBase.extend({
+  type:        z.literal("EaseInEaseOut"),
+  easeInEaseOut: MFVec2f.default([]),
+});
+
+// -------- 3.10  Event Utilities ----------------------------
+
+export const BooleanFilter = X3DNodeAttribs.extend({
+  type: z.literal("BooleanFilter"),
+});
+
+export const BooleanSequencer = X3DNodeAttribs.extend({
+  type:     z.literal("BooleanSequencer"),
+  key:      MFFloat.default([]),
+  keyValue: MFBool.default([]),
+});
+
+export const BooleanToggle = X3DNodeAttribs.extend({
+  type:   z.literal("BooleanToggle"),
+  toggle: z.boolean().default(false),
+});
+
+export const BooleanTrigger = X3DNodeAttribs.extend({
+  type: z.literal("BooleanTrigger"),
+});
+
+export const IntegerSequencer = X3DNodeAttribs.extend({
+  type:     z.literal("IntegerSequencer"),
+  key:      MFFloat.default([]),
+  keyValue: MFInt32.default([]),
+});
+
+export const IntegerTrigger = X3DNodeAttribs.extend({
+  type:          z.literal("IntegerTrigger"),
+  integerKey:    z.number().int().default(-1),
+});
+
+export const TimeTrigger = X3DNodeAttribs.extend({
+  type: z.literal("TimeTrigger"),
+});
+
+// -------- 3.11  Scripting ----------------------------------
+
+export const Script = X3DNodeAttribs.extend({
+  type:          z.literal("Script"),
+  url:           MFString.default([]),
+  directOutput:  z.boolean().default(false),
+  mustEvaluate:  z.boolean().default(false),
+  fields:        z.array(z.object({
+    accessType:  z.enum(["initializeOnly","inputOnly","outputOnly","inputOutput"]),
+    type:        z.string(),
+    name:        z.string(),
+    value:       z.unknown().optional(),
+  })).default([]),
+});
+
+// -------- 3.12  Shaders ------------------------------------
+
+export const ComposedShader = X3DNodeAttribs.extend({
+  type:     z.literal("ComposedShader"),
+  language: z.string().default(""),
+  parts:    z.array(z.lazy(() => ShaderPart)).default([]),
+  fields:   z.array(z.object({ name: z.string(), type: z.string(), value: z.unknown().optional() })).default([]),
+});
+
+export const PackagedShader = X3DNodeAttribs.extend({
+  type:     z.literal("PackagedShader"),
+  language: z.string().default(""),
+  url:      MFString.default([]),
+  fields:   z.array(z.object({ name: z.string(), type: z.string(), value: z.unknown().optional() })).default([]),
+});
+
+export const ProgramShader = X3DNodeAttribs.extend({
+  type:     z.literal("ProgramShader"),
+  language: z.string().default(""),
+  programs: z.array(z.lazy(() => ShaderProgram)).default([]),
+});
+
+export const ShaderPart = X3DNodeAttribs.extend({
+  type:  z.literal("ShaderPart"),
+  url:   MFString.default([]),
+  partType: z.enum(["VERTEX","FRAGMENT"]).default("VERTEX"),
+});
+
+export const ShaderProgram = X3DNodeAttribs.extend({
+  type:    z.literal("ShaderProgram"),
+  url:     MFString.default([]),
+  partType:z.enum(["VERTEX","FRAGMENT"]).default("VERTEX"),
+});
+
+export const ShaderUnion = z.union([ComposedShader, PackagedShader, ProgramShader]);
+
+// -------- 3.13  Networking ---------------------------------
+
+export const Anchor = X3DNodeAttribs.extend({
+  type:        z.literal("Anchor"),
+  description: z.string().default(""),
+  parameter:   MFString.default([]),
+  url:         MFString.default([]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const Inline = X3DNodeAttribs.extend({
+  type:        z.literal("Inline"),
+  url:         MFString.default([]),
+  description: z.string().default(""),
+  load:        z.boolean().default(true),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+});
+
+export const LoadSensor = X3DNodeAttribs.extend({
+  type:       z.literal("LoadSensor"),
+  enabled:    z.boolean().default(true),
+  timeOut:    z.number().default(0),
+  watchList:  z.array(z.union([ImageTexture, Inline])).default([]),
+});
+
+// -------- 3.14  Sound --------------------------------------
+
+export const AudioClip = X3DNodeAttribs.extend({
+  type:        z.literal("AudioClip"),
+  description: z.string().default(""),
+  loop:        z.boolean().default(false),
+  pauseTime:   z.number().default(0),
+  pitch:       z.number().default(1),
+  resumeTime:  z.number().default(0),
+  startTime:   z.number().default(0),
+  stopTime:    z.number().default(0),
+  url:         MFString.default([]),
+});
+
+export const Sound = X3DNodeAttribs.extend({
+  type:       z.literal("Sound"),
+  direction:  SFVec3f.default([0, 0, 1]),
+  intensity:  z.number().min(0).max(1).default(1),
+  location:   SFVec3f.default([0, 0, 0]),
+  maxBack:    z.number().min(0).default(10),
+  maxFront:   z.number().min(0).default(10),
+  minBack:    z.number().min(0).default(1),
+  minFront:   z.number().min(0).default(1),
+  priority:   z.number().min(0).max(1).default(0),
+  spatialize: z.boolean().default(true),
+  source:     AudioClip.optional(),
+});
+
+// -------- 3.15  Environmental Effects ----------------------
+
+export const Background = X3DNodeAttribs.extend({
+  type:            z.literal("Background"),
+  groundAngle:     MFFloat.default([]),
+  groundColor:     MFColor.default([]),
+  skyAngle:        MFFloat.default([]),
+  skyColor:        MFColor.default([[0,0,0]]),
+  backUrl:         MFString.default([]),
+  bottomUrl:       MFString.default([]),
+  frontUrl:        MFString.default([]),
+  leftUrl:         MFString.default([]),
+  rightUrl:        MFString.default([]),
+  topUrl:          MFString.default([]),
+  transparency:    z.number().min(0).max(1).default(0),
+});
+
+export const TextureBackground = X3DNodeAttribs.extend({
+  type:            z.literal("TextureBackground"),
+  groundAngle:     MFFloat.default([]),
+  groundColor:     MFColor.default([]),
+  skyAngle:        MFFloat.default([]),
+  skyColor:        MFColor.default([[0,0,0]]),
+  transparency:    z.number().min(0).max(1).default(0),
+  backTexture:     TextureNodeUnion.optional(),
+  bottomTexture:   TextureNodeUnion.optional(),
+  frontTexture:    TextureNodeUnion.optional(),
+  leftTexture:     TextureNodeUnion.optional(),
+  rightTexture:    TextureNodeUnion.optional(),
+  topTexture:      TextureNodeUnion.optional(),
+});
+
+export const Fog = X3DNodeAttribs.extend({
+  type:            z.literal("Fog"),
+  color:           SFColor.default([1, 1, 1]),
+  fogType:         z.enum(["LINEAR","EXPONENTIAL"]).default("LINEAR"),
+  visibilityRange: z.number().min(0).default(0),
+});
+
+export const LocalFog = X3DNodeAttribs.extend({
+  type:            z.literal("LocalFog"),
+  color:           SFColor.default([1, 1, 1]),
+  enabled:         z.boolean().default(true),
+  fogType:         z.enum(["LINEAR","EXPONENTIAL"]).default("LINEAR"),
+  visibilityRange: z.number().min(0).default(0),
+});
+
+export const FogCoord = X3DNodeAttribs.extend({
+  type:  z.literal("FogCoord"),
+  depth: MFFloat.default([]),
+});
+
+// -------- 3.16  Pointing-Device Sensors --------------------
+
+export const CylinderSensor = X3DNodeAttribs.extend({
+  type:           z.literal("CylinderSensor"),
+  autoOffset:     z.boolean().default(true),
+  axisRotation:   SFRotation.default([0,1,0,0]),
+  description:    z.string().default(""),
+  diskAngle:      z.number().default(0.2618),
+  enabled:        z.boolean().default(true),
+  maxAngle:       z.number().default(-1),
+  minAngle:       z.number().default(0),
+  offset:         z.number().default(0),
+});
+
+export const PlaneSensor = X3DNodeAttribs.extend({
+  type:           z.literal("PlaneSensor"),
+  autoOffset:     z.boolean().default(true),
+  axisRotation:   SFRotation.default([0,1,0,0]),
+  description:    z.string().default(""),
+  enabled:        z.boolean().default(true),
+  maxPosition:    SFVec2f.default([-1,-1]),
+  minPosition:    SFVec2f.default([0,0]),
+  offset:         SFVec3f.default([0,0,0]),
+});
+
+export const SphereSensor = X3DNodeAttribs.extend({
+  type:        z.literal("SphereSensor"),
+  autoOffset:  z.boolean().default(true),
+  description: z.string().default(""),
+  enabled:     z.boolean().default(true),
+  offset:      SFRotation.default([0,1,0,0]),
+});
+
+export const TouchSensor = X3DNodeAttribs.extend({
+  type:        z.literal("TouchSensor"),
+  description: z.string().default(""),
+  enabled:     z.boolean().default(true),
+});
+
+// -------- 3.17  Key Device Sensors -------------------------
+
+export const KeySensor = X3DNodeAttribs.extend({
+  type:    z.literal("KeySensor"),
+  enabled: z.boolean().default(true),
+});
+
+export const StringSensor = X3DNodeAttribs.extend({
+  type:             z.literal("StringSensor"),
+  deletionAllowed:  z.boolean().default(true),
+  enabled:          z.boolean().default(true),
+});
+
+// -------- 3.18  Environmental Sensors ----------------------
+
+export const ProximitySensor = X3DNodeAttribs.extend({
+  type:    z.literal("ProximitySensor"),
+  center:  SFVec3f.default([0, 0, 0]),
+  enabled: z.boolean().default(true),
+  size:    SFVec3f.default([0, 0, 0]),
+});
+
+export const TransformSensor = X3DNodeAttribs.extend({
+  type:    z.literal("TransformSensor"),
+  center:  SFVec3f.default([0, 0, 0]),
+  enabled: z.boolean().default(true),
+  size:    SFVec3f.default([0, 0, 0]),
+  targetObject: z.lazy(() => ChildNodeUnion).optional(),
+});
+
+export const VisibilitySensor = X3DNodeAttribs.extend({
+  type:    z.literal("VisibilitySensor"),
+  center:  SFVec3f.default([0, 0, 0]),
+  enabled: z.boolean().default(true),
+  size:    SFVec3f.default([0, 0, 0]),
+});
+
+// -------- 3.19  HAnim --------------------------------------
+
+export const HAnimDisplacer = X3DNodeAttribs.extend({
+  type:        z.literal("HAnimDisplacer"),
+  name:        z.string().default(""),
+  coordIndex:  MFInt32.default([]),
+  displacements: MFVec3f.default([]),
+  weight:      z.number().default(0),
+});
+
+export const HAnimSegment = X3DNodeAttribs.extend({
+  type:          z.literal("HAnimSegment"),
+  name:          z.string().default(""),
+  bboxCenter:    SFVec3f.default([0, 0, 0]),
+  bboxSize:      SFVec3f.default([-1, -1, -1]),
+  centerOfMass:  SFVec3f.default([0, 0, 0]),
+  displacers:    z.array(HAnimDisplacer).default([]),
+  mass:          z.number().default(0),
+  momentsOfInertia: MFFloat.default([0,0,0,0,0,0,0,0,0]),
+  coord:         z.union([Coordinate, CoordinateDouble]).optional(),
+  children:      z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const HAnimSite = X3DNodeAttribs.extend({
+  type:        z.literal("HAnimSite"),
+  name:        z.string().default(""),
+  center:      SFVec3f.default([0, 0, 0]),
+  rotation:    SFRotation.default([0, 0, 1, 0]),
+  scale:       SFVec3f.default([1, 1, 1]),
+  scaleOrientation: SFRotation.default([0, 0, 1, 0]),
+  translation: SFVec3f.default([0, 0, 0]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const HAnimJoint = X3DNodeAttribs.extend({
+  type:              z.literal("HAnimJoint"),
+  name:              z.string().default(""),
+  center:            SFVec3f.default([0, 0, 0]),
+  rotation:          SFRotation.default([0, 0, 1, 0]),
+  scale:             SFVec3f.default([1, 1, 1]),
+  scaleOrientation:  SFRotation.default([0, 0, 1, 0]),
+  translation:       SFVec3f.default([0, 0, 0]),
+  llimit:            MFFloat.default([]),
+  ulimit:            MFFloat.default([]),
+  limitOrientation:  SFRotation.default([0, 0, 1, 0]),
+  skinCoordIndex:    MFInt32.default([]),
+  skinCoordWeight:   MFFloat.default([]),
+  stiffness:         MFFloat.default([0,0,0]),
+  bboxCenter:        SFVec3f.default([0, 0, 0]),
+  bboxSize:          SFVec3f.default([-1, -1, -1]),
+  displacers:        z.array(HAnimDisplacer).default([]),
+  children:          z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const HAnimMotion = X3DNodeAttribs.extend({
+  type:       z.literal("HAnimMotion"),
+  channels:   z.string().default(""),
+  channelsEnabled: MFBool.default([]),
+  description:z.string().default(""),
+  enabled:    z.boolean().default(true),
+  endFrame:   z.number().int().default(0),
+  frameCount: z.number().int().default(0),
+  frameDuration: z.number().default(0.1),
+  frameIndex: z.number().int().default(0),
+  joints:     MFString.default([]),
+  loa:        z.number().int().default(-1),
+  loop:       z.boolean().default(false),
+  startFrame: z.number().int().default(0),
+  values:     MFFloat.default([]),
+});
+
+export const HAnimHumanoid = X3DNodeAttribs.extend({
+  type:            z.literal("HAnimHumanoid"),
+  name:            z.string().default(""),
+  version:         z.string().default("2.0"),
+  description:     z.string().default(""),
+  center:          SFVec3f.default([0, 0, 0]),
+  rotation:        SFRotation.default([0, 0, 1, 0]),
+  scale:           SFVec3f.default([1, 1, 1]),
+  scaleOrientation:SFRotation.default([0, 0, 1, 0]),
+  translation:     SFVec3f.default([0, 0, 0]),
+  bboxCenter:      SFVec3f.default([0, 0, 0]),
+  bboxSize:        SFVec3f.default([-1, -1, -1]),
+  info:            MFString.default([]),
+  jointBindingPositions: MFVec3f.default([]),
+  jointBindingRotations: MFRotation.default([]),
+  jointBindingScales:    MFVec3f.default([]),
+  loa:             z.number().int().default(-1),
+  joints:          z.array(HAnimJoint).default([]),
+  motions:         z.array(HAnimMotion).default([]),
+  segments:        z.array(HAnimSegment).default([]),
+  sites:           z.array(HAnimSite).default([]),
+  skeleton:        z.array(HAnimJoint).default([]),
+  skin:            z.array(z.lazy(() => ChildNodeUnion)).default([]),
+  skinCoord:       z.union([Coordinate, CoordinateDouble]).optional(),
+  skinNormal:      Normal.optional(),
+  viewpoints:      z.array(z.union([Viewpoint, OrthoViewpoint])).default([]),
+});
+
+// -------- 3.20  CAD ----------------------------------------
+
+export const CADLayer = X3DNodeAttribs.extend({
+  type:        z.literal("CADLayer"),
+  name:        z.string().default(""),
+  visible:     MFBool.default([]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const CADFace = X3DNodeAttribs.extend({
+  type:        z.literal("CADFace"),
+  name:        z.string().default(""),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  shape:       Shape.optional(),
+});
+
+export const CADPart = X3DNodeAttribs.extend({
+  type:             z.literal("CADPart"),
+  name:             z.string().default(""),
+  center:           SFVec3f.default([0, 0, 0]),
+  rotation:         SFRotation.default([0, 0, 1, 0]),
+  scale:            SFVec3f.default([1, 1, 1]),
+  scaleOrientation: SFRotation.default([0, 0, 1, 0]),
+  translation:      SFVec3f.default([0, 0, 0]),
+  bboxCenter:       SFVec3f.default([0, 0, 0]),
+  bboxSize:         SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:      z.boolean().default(false),
+  visible:          z.boolean().default(true),
+  children:         z.array(CADFace).default([]),
+});
+
+interface CADAssemblyShape {
+  type: "CADAssembly";
+  DEF?: string; USE?: string; class?: string; id?: string;
+  name: string;
+  bboxCenter: [number,number,number];
+  bboxSize: [number,number,number];
+  bboxDisplay: boolean;
+  visible: boolean;
+  children: (z.infer<typeof CADPart> | z.infer<typeof CADLayer> | CADAssemblyShape)[];
+}
+
+export const CADAssembly: z.ZodType<CADAssemblyShape> = z.lazy(() =>
+  X3DNodeAttribs.extend({
+    type:        z.literal("CADAssembly"),
+    name:        z.string().default(""),
+    bboxCenter:  SFVec3f.default([0, 0, 0]),
+    bboxSize:    SFVec3f.default([-1, -1, -1]),
+    bboxDisplay: z.boolean().default(false),
+    visible:     z.boolean().default(true),
+    children:    z.array(z.union([CADPart, CADLayer, CADAssembly])).default([]),
+  }) as unknown as z.ZodType<CADAssemblyShape>
+);
+
+export const QuadSet = X3DNodeAttribs.extend({
+  type:            z.literal("QuadSet"),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(VertexAttributeUnion).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        FogCoordinate.optional(),
+  normal:          Normal.optional(),
+  texCoord:        TexCoordUnion.optional(),
+});
+
+export const IndexedQuadSet = X3DNodeAttribs.extend({
+  type:            z.literal("IndexedQuadSet"),
+  index:           MFInt32.default([]),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  attrib:          z.array(VertexAttributeUnion).default([]),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  coord:           z.union([Coordinate, CoordinateDouble]).optional(),
+  fogCoord:        FogCoordinate.optional(),
+  normal:          Normal.optional(),
+  texCoord:        TexCoordUnion.optional(),
+});
+
+// -------- 3.21  NURBS --------------------------------------
+
+export const Contour2D = X3DNodeAttribs.extend({
+  type:     z.literal("Contour2D"),
+  children: z.array(z.lazy(() => NurbsContourChildUnion)).default([]),
+});
+
+export const ContourPolyline2D = X3DNodeAttribs.extend({
+  type:        z.literal("ContourPolyline2D"),
+  lineSegments: MFVec2d.default([]),
+});
+
+export const NurbsCurve = X3DNodeAttribs.extend({
+  type:      z.literal("NurbsCurve"),
+  closed:    z.boolean().default(false),
+  knot:      MFDouble.default([]),
+  order:     z.number().int().default(3),
+  tessellation: z.number().int().default(0),
+  weight:    MFDouble.default([]),
+  controlPoint: z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const NurbsCurve2D = X3DNodeAttribs.extend({
+  type:         z.literal("NurbsCurve2D"),
+  closed:       z.boolean().default(false),
+  knot:         MFDouble.default([]),
+  order:        z.number().int().default(3),
+  tessellation: z.number().int().default(0),
+  weight:       MFDouble.default([]),
+  controlPoint: z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const NurbsContourChildUnion = z.union([NurbsCurve2D, ContourPolyline2D]);
+
+export const NurbsPatchSurface = X3DNodeAttribs.extend({
+  type:          z.literal("NurbsPatchSurface"),
+  uClosed:       z.boolean().default(false),
+  vClosed:       z.boolean().default(false),
+  uDimension:    z.number().int().default(0),
+  vDimension:    z.number().int().default(0),
+  uKnot:         MFDouble.default([]),
+  vKnot:         MFDouble.default([]),
+  uOrder:        z.number().int().default(3),
+  vOrder:        z.number().int().default(3),
+  uTessellation: z.number().int().default(0),
+  vTessellation: z.number().int().default(0),
+  weight:        MFDouble.default([]),
+  solid:         z.boolean().default(true),
+  controlPoint:  z.union([Coordinate, CoordinateDouble]).optional(),
+  texCoord:      TexCoordUnion.optional(),
+});
+
+export const NurbsTrimmedSurface = X3DNodeAttribs.extend({
+  type:          z.literal("NurbsTrimmedSurface"),
+  uClosed:       z.boolean().default(false),
+  vClosed:       z.boolean().default(false),
+  uDimension:    z.number().int().default(0),
+  vDimension:    z.number().int().default(0),
+  uKnot:         MFDouble.default([]),
+  vKnot:         MFDouble.default([]),
+  uOrder:        z.number().int().default(3),
+  vOrder:        z.number().int().default(3),
+  uTessellation: z.number().int().default(0),
+  vTessellation: z.number().int().default(0),
+  weight:        MFDouble.default([]),
+  solid:         z.boolean().default(true),
+  addTrimmingContour:    z.array(Contour2D).default([]),
+  removeTrimmingContour: z.array(Contour2D).default([]),
+  trimmingContour:       z.array(Contour2D).default([]),
+  controlPoint:          z.union([Coordinate, CoordinateDouble]).optional(),
+  texCoord:              TexCoordUnion.optional(),
+});
+
+export const NurbsSweptSurface = X3DNodeAttribs.extend({
+  type:          z.literal("NurbsSweptSurface"),
+  ccw:           z.boolean().default(true),
+  solid:         z.boolean().default(true),
+  crossSectionCurve: NurbsCurve2D.optional(),
+  trajectoryCurve:   NurbsCurve.optional(),
+});
+
+export const NurbsSwungSurface = X3DNodeAttribs.extend({
+  type:             z.literal("NurbsSwungSurface"),
+  ccw:              z.boolean().default(true),
+  solid:            z.boolean().default(true),
+  profileCurve:     NurbsCurve2D.optional(),
+  trajectoryCurve:  NurbsCurve2D.optional(),
+});
+
+export const NurbsSet = X3DNodeAttribs.extend({
+  type:           z.literal("NurbsSet"),
+  tessellationScale: z.number().default(1),
+  bboxCenter:     SFVec3f.default([0, 0, 0]),
+  bboxSize:       SFVec3f.default([-1, -1, -1]),
+  geometry:       z.array(z.union([NurbsPatchSurface, NurbsTrimmedSurface])).default([]),
+});
+
+export const NurbsPositionInterpolator = X3DNodeAttribs.extend({
+  type:         z.literal("NurbsPositionInterpolator"),
+  order:        z.number().int().default(3),
+  knot:         MFDouble.default([]),
+  weight:       MFDouble.default([]),
+  controlPoint: z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const NurbsOrientationInterpolator = X3DNodeAttribs.extend({
+  type:         z.literal("NurbsOrientationInterpolator"),
+  order:        z.number().int().default(3),
+  knot:         MFDouble.default([]),
+  weight:       MFDouble.default([]),
+  controlPoint: z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const NurbsSurfaceInterpolator = X3DNodeAttribs.extend({
+  type:         z.literal("NurbsSurfaceInterpolator"),
+  uDimension:   z.number().int().default(0),
+  vDimension:   z.number().int().default(0),
+  uKnot:        MFDouble.default([]),
+  vKnot:        MFDouble.default([]),
+  uOrder:       z.number().int().default(3),
+  vOrder:       z.number().int().default(3),
+  weight:       MFDouble.default([]),
+  controlPoint: z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const NurbsTextureCoordinate = X3DNodeAttribs.extend({
+  type:         z.literal("NurbsTextureCoordinate"),
+  uDimension:   z.number().int().default(0),
+  vDimension:   z.number().int().default(0),
+  uKnot:        MFDouble.default([]),
+  vKnot:        MFDouble.default([]),
+  uOrder:       z.number().int().default(3),
+  vOrder:       z.number().int().default(3),
+  weight:       MFDouble.default([]),
+  controlPoint: MFVec2f.default([]),
+});
+
+// -------- 3.22  Particle Systems ---------------------------
+
+export const ParticleSystem = X3DNodeAttribs.extend({
+  type:          z.literal("ParticleSystem"),
+  createParticles: z.boolean().default(true),
+  enabled:       z.boolean().default(true),
+  geometryType:  z.enum(["LINE","POINT","QUAD","SPRITE","TRIANGLE","GEOMETRY"]).default("QUAD"),
+  lifetimeVariation: z.number().default(0.25),
+  maxParticles:  z.number().int().default(200),
+  particleLifetime: z.number().default(5),
+  particleSize:  SFVec2f.default([0.02, 0.02]),
+  bboxCenter:    SFVec3f.default([0, 0, 0]),
+  bboxSize:      SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:   z.boolean().default(false),
+  visible:       z.boolean().default(true),
+  colorRamp:     z.union([Color, ColorRGBA]).optional(),
+  colorKey:      MFFloat.default([]),
+  emitter:       z.lazy(() => ParticleEmitterUnion).optional(),
+  geometry:      z.lazy(() => GeometryNodeUnion).optional(),
+  physics:       z.array(z.lazy(() => ParticlePhysicsUnion)).default([]),
+  texCoord:      TexCoordUnion.optional(),
+  sizeRamp:      z.union([Coordinate, CoordinateDouble]).optional(),
+  sizeKey:       MFFloat.default([]),
+  appearance:    Appearance.optional(),
+});
+
+export const ConeEmitter = X3DNodeAttribs.extend({
+  type:          z.literal("ConeEmitter"),
+  angle:         z.number().default(0.7854),
+  direction:     SFVec3f.default([0, 1, 0]),
+  mass:          z.number().default(0),
+  position:      SFVec3f.default([0, 0, 0]),
+  speed:         z.number().default(0),
+  surfaceArea:   z.number().default(0),
+  variation:     z.number().default(0.25),
+});
+
+export const ExplosionEmitter = X3DNodeAttribs.extend({
+  type:        z.literal("ExplosionEmitter"),
+  mass:        z.number().default(0),
+  position:    SFVec3f.default([0, 0, 0]),
+  speed:       z.number().default(0),
+  surfaceArea: z.number().default(0),
+  variation:   z.number().default(0.25),
+});
+
+export const PointEmitter = X3DNodeAttribs.extend({
+  type:        z.literal("PointEmitter"),
+  direction:   SFVec3f.default([0, 1, 0]),
+  mass:        z.number().default(0),
+  position:    SFVec3f.default([0, 0, 0]),
+  speed:       z.number().default(0),
+  surfaceArea: z.number().default(0),
+  variation:   z.number().default(0.25),
+});
+
+export const PolylineEmitter = X3DNodeAttribs.extend({
+  type:        z.literal("PolylineEmitter"),
+  direction:   SFVec3f.default([0, 1, 0]),
+  mass:        z.number().default(0),
+  speed:       z.number().default(0),
+  surfaceArea: z.number().default(0),
+  variation:   z.number().default(0.25),
+  coordIndex:  MFInt32.default([-1]),
+  coord:       z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const SurfaceEmitter = X3DNodeAttribs.extend({
+  type:        z.literal("SurfaceEmitter"),
+  mass:        z.number().default(0),
+  speed:       z.number().default(0),
+  surfaceArea: z.number().default(0),
+  variation:   z.number().default(0.25),
+  coordIndex:  MFInt32.default([-1]),
+  surface:     z.lazy(() => GeometryNodeUnion).optional(),
+});
+
+export const VolumeEmitter = X3DNodeAttribs.extend({
+  type:        z.literal("VolumeEmitter"),
+  direction:   SFVec3f.default([0, 1, 0]),
+  internal:    z.boolean().default(true),
+  mass:        z.number().default(0),
+  speed:       z.number().default(0),
+  surfaceArea: z.number().default(0),
+  variation:   z.number().default(0.25),
+  coordIndex:  MFInt32.default([-1]),
+  coord:       z.union([Coordinate, CoordinateDouble]).optional(),
+});
+
+export const ParticleEmitterUnion = z.union([
+  ConeEmitter, ExplosionEmitter, PointEmitter,
+  PolylineEmitter, SurfaceEmitter, VolumeEmitter,
+]);
+
+export const BoundedPhysicsModel = X3DNodeAttribs.extend({
+  type:     z.literal("BoundedPhysicsModel"),
+  enabled:  z.boolean().default(true),
+  geometry: z.lazy(() => GeometryNodeUnion).optional(),
+});
+
+export const ForcePhysicsModel = X3DNodeAttribs.extend({
+  type:     z.literal("ForcePhysicsModel"),
+  enabled:  z.boolean().default(true),
+  force:    SFVec3f.default([0, -9.8, 0]),
+});
+
+export const WindPhysicsModel = X3DNodeAttribs.extend({
+  type:        z.literal("WindPhysicsModel"),
+  direction:   SFVec3f.default([1, 0, 0]),
+  enabled:     z.boolean().default(true),
+  gustiness:   z.number().default(0.1),
+  speed:       z.number().default(0.1),
+  turbulence:  z.number().default(0),
+});
+
+export const ParticlePhysicsUnion = z.union([
+  BoundedPhysicsModel,
+  ForcePhysicsModel,
+  WindPhysicsModel,
+]);
+
+// -------- 3.23  Rigid Body Physics -------------------------
+
+export const CollisionCollection = X3DNodeAttribs.extend({
+  type:                  z.literal("CollisionCollection"),
+  appliedParameters:     MFString.default(["BOUNCE"]),
+  bounce:                z.number().default(0),
+  enabled:               z.boolean().default(true),
+  frictionCoefficients:  SFVec2f.default([0, 0]),
+  minBounceSpeed:        z.number().default(0.1),
+  slipFactors:           SFVec2f.default([0, 0]),
+  softnessConstantForceMix: z.number().default(0.0001),
+  softnessErrorCorrection:  z.number().default(0.8),
+  surfaceSpeed:          SFVec2f.default([0, 0]),
+  collidables:           z.array(z.lazy(() => CollidableUnion)).default([]),
+});
+
+interface CollidableOffsetShape {
+  type: "CollidableOffset";
+  DEF?: string; USE?: string; class?: string; id?: string;
+  enabled: boolean;
+  rotation: [number,number,number,number];
+  translation: [number,number,number];
+  bboxCenter: [number,number,number];
+  bboxSize: [number,number,number];
+  collidable?: CollidableOffsetShape | z.infer<typeof CollidableShape>;
+}
+
+export const CollidableOffset: z.ZodType<CollidableOffsetShape> = z.lazy(() =>
+  X3DNodeAttribs.extend({
+    type:        z.literal("CollidableOffset"),
+    enabled:     z.boolean().default(true),
+    rotation:    SFRotation.default([0, 0, 1, 0]),
+    translation: SFVec3f.default([0, 0, 0]),
+    bboxCenter:  SFVec3f.default([0, 0, 0]),
+    bboxSize:    SFVec3f.default([-1, -1, -1]),
+    collidable:  z.union([CollidableOffset, CollidableShape]).optional(),
+  }) as unknown as z.ZodType<CollidableOffsetShape>
+);
+
+export const CollidableShape = X3DNodeAttribs.extend({
+  type:        z.literal("CollidableShape"),
+  enabled:     z.boolean().default(true),
+  rotation:    SFRotation.default([0, 0, 1, 0]),
+  translation: SFVec3f.default([0, 0, 0]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  shape:       Shape.optional(),
+});
+
+export const CollidableUnion = z.union([CollidableOffset, CollidableShape]);
+
+export const RigidBody = X3DNodeAttribs.extend({
+  type:                  z.literal("RigidBody"),
+  angularDampingFactor:  z.number().default(0.001),
+  angularVelocity:       SFVec3f.default([0, 0, 0]),
+  autoDamp:              z.boolean().default(false),
+  autoDisable:           z.boolean().default(false),
+  centerOfMass:          SFVec3f.default([0, 0, 0]),
+  disableAngularSpeed:   z.number().default(0),
+  disableLinearSpeed:    z.number().default(0),
+  disableTime:           z.number().default(0),
+  enabled:               z.boolean().default(true),
+  finiteRotationAxis:    SFVec3f.default([0, 0, 0]),
+  fixed:                 z.boolean().default(false),
+  forces:                MFVec3f.default([]),
+  inertia:               SFMatrix3f.default([1,0,0, 0,1,0, 0,0,1]),
+  linearDampingFactor:   z.number().default(0.001),
+  linearVelocity:        SFVec3f.default([0, 0, 0]),
+  mass:                  z.number().default(1),
+  massDensityModel:      z.lazy(() => GeometryNodeUnion).optional(),
+  orientation:           SFRotation.default([0, 0, 1, 0]),
+  position:              SFVec3f.default([0, 0, 0]),
+  torques:               MFVec3f.default([]),
+  useFiniteRotation:     z.boolean().default(false),
+  useGlobalGravity:      z.boolean().default(true),
+  geometry:              z.array(CollidableShape).default([]),
+});
+
+export const RigidBodyCollection = X3DNodeAttribs.extend({
+  type:                     z.literal("RigidBodyCollection"),
+  autoDisable:              z.boolean().default(false),
+  constantForceMix:         z.number().default(0.0001),
+  contactSurfaceThickness:  z.number().default(0),
+  disableAngularSpeed:      z.number().default(0),
+  disableLinearSpeed:       z.number().default(0),
+  disableTime:              z.number().default(0),
+  enabled:                  z.boolean().default(true),
+  errorCorrection:          z.number().default(0.8),
+  gravity:                  SFVec3f.default([0, -9.8, 0]),
+  iterations:               z.number().int().default(10),
+  maxCorrectionSpeed:       z.number().default(-1),
+  preferAccuracy:           z.boolean().default(false),
+  bodies:                   z.array(RigidBody).default([]),
+  collider:                 CollisionCollection.optional(),
+  joints:                   z.array(z.lazy(() => RigidBodyJointUnion)).default([]),
+});
+
+const JointBase = X3DNodeAttribs.extend({
+  forceOutput: MFString.default(["NONE"]),
+  body1:       RigidBody.optional(),
+  body2:       RigidBody.optional(),
+});
+
+export const BallJoint = JointBase.extend({
+  type:          z.literal("BallJoint"),
+  anchorPoint:   SFVec3f.default([0, 0, 0]),
+});
+
+export const DoubleAxisHingeJoint = JointBase.extend({
+  type:                     z.literal("DoubleAxisHingeJoint"),
+  anchorPoint:              SFVec3f.default([0, 0, 0]),
+  axis1:                    SFVec3f.default([1, 0, 0]),
+  axis2:                    SFVec3f.default([0, 1, 0]),
+  desiredAngularVelocity1:  z.number().default(0),
+  desiredAngularVelocity2:  z.number().default(0),
+  maxAngle1:                z.number().default(3.1416),
+  maxTorque1:               z.number().default(0),
+  maxTorque2:               z.number().default(0),
+  minAngle1:                z.number().default(-3.1416),
+  stopBounce1:              z.number().default(0),
+  stopConstantForceMix1:    z.number().default(0.001),
+  stopErrorCorrection1:     z.number().default(0.8),
+  suspensionErrorCorrection:z.number().default(0.8),
+  suspensionForce:          z.number().default(0),
+});
+
+export const MotorJoint = JointBase.extend({
+  type:                    z.literal("MotorJoint"),
+  autoCalc:                z.boolean().default(false),
+  axis1Angle:              z.number().default(0),
+  axis1Torque:             z.number().default(0),
+  axis2Angle:              z.number().default(0),
+  axis2Torque:             z.number().default(0),
+  axis3Angle:              z.number().default(0),
+  axis3Torque:             z.number().default(0),
+  enabledAxes:             z.number().int().default(1),
+  motor1Axis:              SFVec3f.default([0, 0, 0]),
+  motor2Axis:              SFVec3f.default([0, 0, 0]),
+  motor3Axis:              SFVec3f.default([0, 0, 0]),
+  stop1Bounce:             z.number().default(0),
+  stop1ErrorCorrection:    z.number().default(0.8),
+  stop2Bounce:             z.number().default(0),
+  stop2ErrorCorrection:    z.number().default(0.8),
+  stop3Bounce:             z.number().default(0),
+  stop3ErrorCorrection:    z.number().default(0.8),
+});
+
+export const SingleAxisHingeJoint = JointBase.extend({
+  type:               z.literal("SingleAxisHingeJoint"),
+  anchorPoint:        SFVec3f.default([0, 0, 0]),
+  axis:               SFVec3f.default([0, 0, 0]),
+  maxAngle:           z.number().default(3.1416),
+  minAngle:           z.number().default(-3.1416),
+  stopBounce:         z.number().default(0),
+  stopErrorCorrection:z.number().default(0.8),
+});
+
+export const SliderJoint = JointBase.extend({
+  type:               z.literal("SliderJoint"),
+  axis:               SFVec3f.default([0, 1, 0]),
+  maxSeparation:      z.number().default(1),
+  minSeparation:      z.number().default(0),
+  sliderForce:        z.number().default(0),
+  stopBounce:         z.number().default(0),
+  stopErrorCorrection:z.number().default(1),
+});
+
+export const UniversalJoint = JointBase.extend({
+  type:               z.literal("UniversalJoint"),
+  anchorPoint:        SFVec3f.default([0, 0, 0]),
+  axis1:              SFVec3f.default([0, 0, 1]),
+  axis2:              SFVec3f.default([0, 1, 0]),
+  stop1Bounce:        z.number().default(0),
+  stop1ErrorCorrection:z.number().default(0.8),
+  stop2Bounce:        z.number().default(0),
+  stop2ErrorCorrection:z.number().default(0.8),
+});
+
+export const RigidBodyJointUnion = z.union([
+  BallJoint, DoubleAxisHingeJoint, MotorJoint,
+  SingleAxisHingeJoint, SliderJoint, UniversalJoint,
+]);
+
+// -------- 3.24  Followers ----------------------------------
+
+export const ColorChaser = X3DNodeAttribs.extend({
+  type:              z.literal("ColorChaser"),
+  duration:          z.number().default(1),
+  initialDestination:SFColor.default([0.8, 0.8, 0.8]),
+  initialValue:      SFColor.default([0.8, 0.8, 0.8]),
+});
+
+export const ColorDamper = X3DNodeAttribs.extend({
+  type:              z.literal("ColorDamper"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  initialDestination:SFColor.default([0.8, 0.8, 0.8]),
+  initialValue:      SFColor.default([0.8, 0.8, 0.8]),
+});
+
+export const CoordinateChaser = X3DNodeAttribs.extend({
+  type:              z.literal("CoordinateChaser"),
+  duration:          z.number().default(1),
+  initialDestination:MFVec3f.default([]),
+  initialValue:      MFVec3f.default([]),
+});
+
+export const CoordinateDamper = X3DNodeAttribs.extend({
+  type:              z.literal("CoordinateDamper"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:MFVec3f.default([]),
+  initialValue:      MFVec3f.default([]),
+});
+
+export const OrientationChaser = X3DNodeAttribs.extend({
+  type:              z.literal("OrientationChaser"),
+  duration:          z.number().default(1),
+  initialDestination:SFRotation.default([0,1,0,0]),
+  initialValue:      SFRotation.default([0,1,0,0]),
+});
+
+export const OrientationDamper = X3DNodeAttribs.extend({
+  type:              z.literal("OrientationDamper"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:SFRotation.default([0,1,0,0]),
+  initialValue:      SFRotation.default([0,1,0,0]),
+});
+
+export const PositionChaser = X3DNodeAttribs.extend({
+  type:              z.literal("PositionChaser"),
+  duration:          z.number().default(1),
+  initialDestination:SFVec3f.default([0,0,0]),
+  initialValue:      SFVec3f.default([0,0,0]),
+});
+
+export const PositionChaser2D = X3DNodeAttribs.extend({
+  type:              z.literal("PositionChaser2D"),
+  duration:          z.number().default(1),
+  initialDestination:SFVec2f.default([0,0]),
+  initialValue:      SFVec2f.default([0,0]),
+});
+
+export const PositionDamper = X3DNodeAttribs.extend({
+  type:              z.literal("PositionDamper"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:SFVec3f.default([0,0,0]),
+  initialValue:      SFVec3f.default([0,0,0]),
+});
+
+export const PositionDamper2D = X3DNodeAttribs.extend({
+  type:              z.literal("PositionDamper2D"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:SFVec2f.default([0,0]),
+  initialValue:      SFVec2f.default([0,0]),
+});
+
+export const ScalarChaser = X3DNodeAttribs.extend({
+  type:              z.literal("ScalarChaser"),
+  duration:          z.number().default(1),
+  initialDestination:z.number().default(0),
+  initialValue:      z.number().default(0),
+});
+
+export const ScalarDamper = X3DNodeAttribs.extend({
+  type:              z.literal("ScalarDamper"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:z.number().default(0),
+  initialValue:      z.number().default(0),
+});
+
+export const TexCoordChaser2D = X3DNodeAttribs.extend({
+  type:              z.literal("TexCoordChaser2D"),
+  duration:          z.number().default(1),
+  initialDestination:MFVec2f.default([]),
+  initialValue:      MFVec2f.default([]),
+});
+
+export const TexCoordDamper2D = X3DNodeAttribs.extend({
+  type:              z.literal("TexCoordDamper2D"),
+  tau:               z.number().default(0.3),
+  tolerance:         z.number().default(0.001),
+  order:             z.number().int().default(3),
+  initialDestination:MFVec2f.default([]),
+  initialValue:      MFVec2f.default([]),
+});
+
+// -------- 3.25  Layout -------------------------------------
+
+export const ScreenGroup = X3DNodeAttribs.extend({
+  type:        z.literal("ScreenGroup"),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const LayoutGroup = X3DNodeAttribs.extend({
+  type:        z.literal("LayoutGroup"),
+  viewport:    z.lazy(() => Viewport).optional(),
+  layout:      z.lazy(() => LayoutNode).optional(),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const Layout = X3DNodeAttribs.extend({
+  type:       z.literal("Layout"),
+  align:      MFString.default(["CENTER","CENTER"]),
+  offset:     MFFloat.default([0, 0]),
+  offsetUnits:MFString.default(["WORLD","WORLD"]),
+  scaleMode:  MFString.default(["NONE","NONE"]),
+  size:       MFFloat.default([1, 1]),
+  sizeUnits:  MFString.default(["WORLD","WORLD"]),
+});
+
+export const LayoutNode = Layout; // alias
+
+export const Viewport = X3DNodeAttribs.extend({
+  type:          z.literal("Viewport"),
+  clipBoundary:  MFFloat.default([0, 1, 0, 1]),
+  description:   z.string().default(""),
+  bboxCenter:    SFVec3f.default([0, 0, 0]),
+  bboxSize:      SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:   z.boolean().default(false),
+  visible:       z.boolean().default(true),
+  children:      z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+// -------- 3.26  Picking ------------------------------------
+
+export const LinePickSensor = X3DNodeAttribs.extend({
+  type:              z.literal("LinePickSensor"),
+  enabled:           z.boolean().default(true),
+  intersectionType:  z.enum(["GEOMETRY","BOUNDS"]).default("GEOMETRY"),
+  matchCriterion:    z.enum(["MATCH_ANY","MATCH_EVERY","MATCH_ONLY_ONE"]).default("MATCH_ANY"),
+  objectType:        MFString.default(["ALL"]),
+  pickingGeometry:   z.lazy(() => GeometryNodeUnion).optional(),
+  pickTarget:        z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const PointPickSensor = X3DNodeAttribs.extend({
+  type:             z.literal("PointPickSensor"),
+  enabled:          z.boolean().default(true),
+  intersectionType: z.enum(["GEOMETRY","BOUNDS"]).default("GEOMETRY"),
+  matchCriterion:   z.enum(["MATCH_ANY","MATCH_EVERY","MATCH_ONLY_ONE"]).default("MATCH_ANY"),
+  objectType:       MFString.default(["ALL"]),
+  pickingGeometry:  z.union([Coordinate, CoordinateDouble]).optional(),
+  pickTarget:       z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const PrimitivePickSensor = X3DNodeAttribs.extend({
+  type:             z.literal("PrimitivePickSensor"),
+  enabled:          z.boolean().default(true),
+  intersectionType: z.enum(["GEOMETRY","BOUNDS"]).default("GEOMETRY"),
+  matchCriterion:   z.enum(["MATCH_ANY","MATCH_EVERY","MATCH_ONLY_ONE"]).default("MATCH_ANY"),
+  objectType:       MFString.default(["ALL"]),
+  pickingGeometry:  z.lazy(() => GeometryNodeUnion).optional(),
+  pickTarget:       z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const VolumePickSensor = X3DNodeAttribs.extend({
+  type:             z.literal("VolumePickSensor"),
+  enabled:          z.boolean().default(true),
+  intersectionType: z.enum(["GEOMETRY","BOUNDS"]).default("GEOMETRY"),
+  matchCriterion:   z.enum(["MATCH_ANY","MATCH_EVERY","MATCH_ONLY_ONE"]).default("MATCH_ANY"),
+  objectType:       MFString.default(["ALL"]),
+  pickingGeometry:  z.lazy(() => GeometryNodeUnion).optional(),
+  pickTarget:       z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+// -------- 3.27  GeoSpatial (core subset) -------------------
+
+export const GeoOrigin = X3DNodeAttribs.extend({
+  type:        z.literal("GeoOrigin"),
+  geoCoords:   SFVec3d.default([0, 0, 0]),
+  geoSystem:   MFString.default(["GD","WE"]),
+  rotateYUp:   z.boolean().default(false),
+});
+
+export const GeoCoordinate = X3DNodeAttribs.extend({
+  type:      z.literal("GeoCoordinate"),
+  geoSystem: MFString.default(["GD","WE"]),
+  point:     MFVec3d.default([]),
+  geoOrigin: GeoOrigin.optional(),
+});
+
+export const GeoTransform = X3DNodeAttribs.extend({
+  type:              z.literal("GeoTransform"),
+  geoCenter:         SFVec3d.default([0, 0, 0]),
+  geoSystem:         MFString.default(["GD","WE"]),
+  rotation:          SFRotation.default([0, 0, 1, 0]),
+  scale:             SFVec3f.default([1, 1, 1]),
+  scaleOrientation:  SFRotation.default([0, 0, 1, 0]),
+  translation:       SFVec3f.default([0, 0, 0]),
+  bboxCenter:        SFVec3f.default([0, 0, 0]),
+  bboxSize:          SFVec3f.default([-1, -1, -1]),
+  bboxDisplay:       z.boolean().default(false),
+  visible:           z.boolean().default(true),
+  geoOrigin:         GeoOrigin.optional(),
+  children:          z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const GeoViewpoint = X3DNodeAttribs.extend({
+  type:             z.literal("GeoViewpoint"),
+  centerOfRotation: SFVec3d.default([0, 0, 0]),
+  description:      z.string().default(""),
+  fieldOfView:      z.number().default(0.7854),
+  geoSystem:        MFString.default(["GD","WE"]),
+  jump:             z.boolean().default(true),
+  orientation:      SFRotation.default([0, 0, 1, 0]),
+  position:         SFVec3d.default([0, 0, 100000]),
+  retainUserOffsets:z.boolean().default(false),
+  speedFactor:      z.number().default(1),
+  geoOrigin:        GeoOrigin.optional(),
+});
+
+export const GeoLocation = X3DNodeAttribs.extend({
+  type:        z.literal("GeoLocation"),
+  geoCoords:   SFVec3d.default([0, 0, 0]),
+  geoSystem:   MFString.default(["GD","WE"]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  geoOrigin:   GeoOrigin.optional(),
+  children:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const GeoLOD = X3DNodeAttribs.extend({
+  type:        z.literal("GeoLOD"),
+  center:      SFVec3d.default([0, 0, 0]),
+  child1Url:   MFString.default([]),
+  child2Url:   MFString.default([]),
+  child3Url:   MFString.default([]),
+  child4Url:   MFString.default([]),
+  geoSystem:   MFString.default(["GD","WE"]),
+  range:       z.number().default(10),
+  rootUrl:     MFString.default([]),
+  bboxCenter:  SFVec3f.default([0, 0, 0]),
+  bboxSize:    SFVec3f.default([-1, -1, -1]),
+  bboxDisplay: z.boolean().default(false),
+  visible:     z.boolean().default(true),
+  geoOrigin:   GeoOrigin.optional(),
+  rootNode:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+});
+
+export const GeoPositionInterpolator = X3DNodeAttribs.extend({
+  type:      z.literal("GeoPositionInterpolator"),
+  key:       MFFloat.default([]),
+  keyValue:  MFVec3d.default([]),
+  geoSystem: MFString.default(["GD","WE"]),
+  geoOrigin: GeoOrigin.optional(),
+});
+
+export const GeoProximitySensor = X3DNodeAttribs.extend({
+  type:      z.literal("GeoProximitySensor"),
+  center:    SFVec3d.default([0, 0, 0]),
+  enabled:   z.boolean().default(true),
+  geoCenter: SFVec3d.default([0, 0, 0]),
+  geoSystem: MFString.default(["GD","WE"]),
+  size:      SFVec3f.default([0, 0, 0]),
+  geoOrigin: GeoOrigin.optional(),
+});
+
+export const GeoTouchSensor = X3DNodeAttribs.extend({
+  type:        z.literal("GeoTouchSensor"),
+  description: z.string().default(""),
+  enabled:     z.boolean().default(true),
+  geoSystem:   MFString.default(["GD","WE"]),
+  geoOrigin:   GeoOrigin.optional(),
+});
+
+export const GeoMetadata = X3DNodeAttribs.extend({
+  type:    z.literal("GeoMetadata"),
+  data:    z.array(z.lazy(() => ChildNodeUnion)).default([]),
+  summary: MFString.default([]),
+  url:     MFString.default([]),
+});
+
+export const GeoElevationGrid = X3DNodeAttribs.extend({
+  type:            z.literal("GeoElevationGrid"),
+  ccw:             z.boolean().default(true),
+  colorPerVertex:  z.boolean().default(true),
+  creaseAngle:     z.number().default(0),
+  geoGridOrigin:   SFVec3d.default([0, 0, 0]),
+  geoSystem:       MFString.default(["GD","WE"]),
+  height:          MFDouble.default([0, 0]),
+  normalPerVertex: z.boolean().default(true),
+  solid:           z.boolean().default(true),
+  xDimension:      z.number().int().default(0),
+  xSpacing:        z.number().default(1),
+  yScale:          z.number().default(1),
+  zDimension:      z.number().int().default(0),
+  zSpacing:        z.number().default(1),
+  geoOrigin:       GeoOrigin.optional(),
+  color:           z.union([Color, ColorRGBA]).optional(),
+  normal:          Normal.optional(),
+  texCoord:        TexCoordUnion.optional(),
+});
+
+// ============================================================
+// §4  GEOMETRY, CHILD NODE AND DOCUMENT-ROOT UNIONS
+// ============================================================
+
+export const GeometryNodeUnion = z.union([
+  // Geometry3D
+  Box, Cone, Cylinder, Sphere, ElevationGrid, Extrusion, IndexedFaceSet, Text,
+  // Rendering
+  PointSet, LineSet, IndexedLineSet,
+  TriangleSet, IndexedTriangleSet, TriangleFanSet, TriangleStripSet,
+  IndexedTriangleFanSet, IndexedTriangleStripSet,
+  // CAD
+  QuadSet, IndexedQuadSet,
+  // NURBS
+  NurbsCurve, NurbsPatchSurface, NurbsTrimmedSurface,
+  NurbsSweptSurface, NurbsSwungSurface,
+  // Geo
+  GeoElevationGrid,
+]);
+
+/**
+ * ChildNodeUnion — all node types that can appear as children of grouping nodes.
+ * Uses z.union rather than z.discriminatedUnion because several sub-unions are
+ * themselves unions without a discriminant at the same nesting level.
+ */
+export const ChildNodeUnion: z.ZodType<unknown> = z.lazy(() =>
+  z.union([
+    // Grouping
+    Group, StaticGroup, Switch, Transform,
+    Billboard, Collision, LOD,
+    // Geometry/Shape
+    Shape,
+    // Lighting
+    DirectionalLight, PointLight, SpotLight,
+    // Navigation
+    Viewpoint, OrthoViewpoint, ViewpointGroup, NavigationInfo,
+    // Sensors – pointing device
+    CylinderSensor, PlaneSensor, SphereSensor, TouchSensor,
+    // Sensors – key
+    KeySensor, StringSensor,
+    // Sensors – environmental
+    ProximitySensor, TransformSensor, VisibilitySensor,
+    // Animation
+    TimeSensor,
+    ColorInterpolator, CoordinateInterpolator, CoordinateInterpolator2D,
+    NormalInterpolator, OrientationInterpolator, PositionInterpolator,
+    PositionInterpolator2D, ScalarInterpolator,
+    SplinePositionInterpolator, SplinePositionInterpolator2D,
+    SplineScalarInterpolator, SquadOrientationInterpolator, EaseInEaseOut,
+    // Event utilities
+    BooleanFilter, BooleanSequencer, BooleanToggle, BooleanTrigger,
+    IntegerSequencer, IntegerTrigger, TimeTrigger,
+    // Scripting
+    Script,
+    // Networking
+    Anchor, Inline, LoadSensor,
+    // Sound
+    Sound,
+    // Background / Fog
+    Background, TextureBackground, Fog, LocalFog,
+    // Metadata
+    MetadataBoolean, MetadataDouble, MetadataFloat,
+    MetadataInteger, MetadataString, MetadataSet,
+    WorldInfo,
+    // HAnim
+    HAnimHumanoid, HAnimJoint, HAnimSegment, HAnimSite,
+    // CAD
+    CADAssembly, CADLayer, CADPart, CADFace,
+    // NURBS
+    NurbsSet, NurbsCurve,
+    NurbsPositionInterpolator, NurbsOrientationInterpolator, NurbsSurfaceInterpolator,
+    // Particle Systems
+    ParticleSystem,
+    // Rigid Body
+    RigidBodyCollection,
+    // Followers
+    ColorChaser, ColorDamper, CoordinateChaser, CoordinateDamper,
+    OrientationChaser, OrientationDamper,
+    PositionChaser, PositionChaser2D, PositionDamper, PositionDamper2D,
+    ScalarChaser, ScalarDamper, TexCoordChaser2D, TexCoordDamper2D,
+    // Layout
+    ScreenGroup, LayoutGroup, Viewport,
+    // Picking
+    LinePickSensor, PointPickSensor, PrimitivePickSensor, VolumePickSensor,
+    // GeoSpatial
+    GeoTransform, GeoLocation, GeoLOD, GeoViewpoint,
+    GeoProximitySensor, GeoTouchSensor, GeoMetadata,
+    // Clip
+    ClipPlane,
+  ])
+);
+
+// ============================================================
+// §5  PROTO / ROUTE / DOCUMENT ROOT
+// ============================================================
+
+export const IS = z.object({
+  connect: z.array(z.object({
+    nodeField:      z.string(),
+    protoField:     z.string(),
+  })).default([]),
+});
+
+export const field = z.object({
+  accessType: z.enum(["initializeOnly","inputOnly","outputOnly","inputOutput"]),
+  type:       z.string(),
+  name:       z.string(),
+  value:      z.unknown().optional(),
+  appinfo:    z.string().optional(),
+  documentation: z.string().optional(),
+});
+
+export const ProtoInterface = z.object({
+  field: z.array(field).default([]),
+});
+
+export const ProtoBody = z.object({
+  children: z.array(ChildNodeUnion).default([]),
+});
+
+export const ProtoDeclare = z.object({
+  type:          z.literal("ProtoDeclare"),
+  name:          z.string(),
+  appinfo:       z.string().optional(),
+  documentation: z.string().optional(),
+  ProtoInterface: ProtoInterface.optional(),
+  ProtoBody:     ProtoBody,
+});
+
+export const ExternProtoDeclare = z.object({
+  type:          z.literal("ExternProtoDeclare"),
+  name:          z.string(),
+  url:           MFString.default([]),
+  appinfo:       z.string().optional(),
+  documentation: z.string().optional(),
+  field:         z.array(field).default([]),
+});
+
+export const ROUTE = z.object({
+  type:       z.literal("ROUTE"),
+  fromNode:   z.string(),
+  fromField:  z.string(),
+  toNode:     z.string(),
+  toField:    z.string(),
+});
+
+export const IMPORT = z.object({
+  type:       z.literal("IMPORT"),
+  inlineDEF:  z.string(),
+  exportedDEF:z.string(),
+  AS:         z.string().optional(),
+});
+
+export const EXPORT = z.object({
+  type:       z.literal("EXPORT"),
+  localDEF:   z.string(),
+  AS:         z.string().optional(),
+});
+
+export const SceneStatementUnion = z.union([
+  ChildNodeUnion as z.ZodType<unknown>,
+  ProtoDeclare,
+  ExternProtoDeclare,
+  ROUTE,
+  IMPORT,
+  EXPORT,
+]);
+
+export const Scene = z.object({
+  type:     z.literal("Scene"),
+  children: z.array(z.lazy(() => SceneStatementUnion)).default([]),
+});
+
+/** X3D root document element */
+export const X3DDocument = z.object({
+  type:        z.literal("X3D"),
+  profile:     z.enum([
+    "Core","Interchange","CADInterchange","Interactive","Immersive",
+    "MedicalInterchange","MPEG4Interactive","Full",
+  ]).default("Immersive"),
+  version:     z.string().default("4.1"),
+  Scene:       Scene,
+  head: z.object({
+    component: z.array(z.object({
+      name:  z.string(),
+      level: z.number().int(),
+    })).default([]),
+    unit: z.array(z.object({
+      category:     z.string(),
+      name:         z.string(),
+      conversionFactor: z.number(),
+    })).default([]),
+    meta: z.array(z.object({
+      name:    z.string(),
+      content: z.string(),
+      dir:     z.string().optional(),
+      http_equiv: z.string().optional(),
+      lang:    z.string().optional(),
+      scheme:  z.string().optional(),
+    })).default([]),
+  }).optional(),
+});
+
+// ============================================================
+// §6  INFERRED TYPESCRIPT TYPES  (Standard Schema compliant)
+// ============================================================
+
+export type SFBool    = z.infer<typeof SFBool>;
+export type SFInt32   = z.infer<typeof SFInt32>;
+export type SFFloat   = z.infer<typeof SFFloat>;
+export type SFDouble  = z.infer<typeof SFDouble>;
+export type SFTime    = z.infer<typeof SFTime>;
+export type SFString  = z.infer<typeof SFString>;
+export type SFColor   = z.infer<typeof SFColor>;
+export type SFColorRGBA = z.infer<typeof SFColorRGBA>;
+export type SFRotation  = z.infer<typeof SFRotation>;
+export type SFVec2f   = z.infer<typeof SFVec2f>;
+export type SFVec2d   = z.infer<typeof SFVec2d>;
+export type SFVec3f   = z.infer<typeof SFVec3f>;
+export type SFVec3d   = z.infer<typeof SFVec3d>;
+export type SFVec4f   = z.infer<typeof SFVec4f>;
+export type SFVec4d   = z.infer<typeof SFVec4d>;
+export type SFMatrix3f = z.infer<typeof SFMatrix3f>;
+export type SFMatrix4f = z.infer<typeof SFMatrix4f>;
+export type MFBool    = z.infer<typeof MFBool>;
+export type MFInt32   = z.infer<typeof MFInt32>;
+export type MFFloat   = z.infer<typeof MFFloat>;
+export type MFString  = z.infer<typeof MFString>;
+export type MFColor   = z.infer<typeof MFColor>;
+export type MFRotation = z.infer<typeof MFRotation>;
+export type MFVec3f   = z.infer<typeof MFVec3f>;
+
+// Node types
+export type MetadataBoolean = z.infer<typeof MetadataBoolean>;
+export type MetadataDouble  = z.infer<typeof MetadataDouble>;
+export type MetadataFloat   = z.infer<typeof MetadataFloat>;
+export type MetadataInteger = z.infer<typeof MetadataInteger>;
+export type MetadataString  = z.infer<typeof MetadataString>;
+export type MetadataSet     = z.infer<typeof MetadataSet>;
+export type WorldInfo       = z.infer<typeof WorldInfo>;
+export type Group           = z.infer<typeof Group>;
+export type Switch          = z.infer<typeof Switch>;
+export type Transform       = z.infer<typeof Transform>;
+export type Shape           = z.infer<typeof Shape>;
+export type Appearance      = z.infer<typeof Appearance>;
+export type Material        = z.infer<typeof Material>;
+export type PhysicalMaterial= z.infer<typeof PhysicalMaterial>;
+export type DirectionalLight= z.infer<typeof DirectionalLight>;
+export type PointLight      = z.infer<typeof PointLight>;
+export type SpotLight       = z.infer<typeof SpotLight>;
+export type TimeSensor      = z.infer<typeof TimeSensor>;
+export type Viewpoint       = z.infer<typeof Viewpoint>;
+export type NavigationInfo  = z.infer<typeof NavigationInfo>;
+export type Transform_      = z.infer<typeof Transform>;
+export type HAnimHumanoid   = z.infer<typeof HAnimHumanoid>;
+export type RigidBodyCollection = z.infer<typeof RigidBodyCollection>;
+export type ParticleSystem  = z.infer<typeof ParticleSystem>;
+export type X3DDocument     = z.infer<typeof X3DDocument>;
+export type Scene           = z.infer<typeof Scene>;
+export type ProtoDeclare    = z.infer<typeof ProtoDeclare>;
+export type ExternProtoDeclare = z.infer<typeof ExternProtoDeclare>;
+export type ROUTE           = z.infer<typeof ROUTE>;
+
