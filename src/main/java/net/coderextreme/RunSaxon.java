@@ -68,7 +68,7 @@ protected static class ExitException extends SecurityException
 	public static void main(String args[]) throws URISyntaxException, MalformedURLException, IOException {
 		try {
 			String stylesheet = "src/main/lib/stylesheets/X3dToJson.xslt";
-			String extension = "json";
+			String extension = "x3dj";
 			boolean overwrite = false;
 			boolean silent = false;
 			boolean commandline = false;
