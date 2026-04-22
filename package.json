@@ -14,7 +14,7 @@
     "typescript": "6.0.2"
   },
   "dependencies": {
-    "@xmldom/xmldom": "0.9.9",
+    "@xmldom/xmldom": "0.9.10",
     "ajv": "8.18.0",
     "ajv-formats": "3.0.1",
     "ajv-formats-draft2019": "1.6.1",
