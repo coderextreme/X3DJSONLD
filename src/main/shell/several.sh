@@ -22,7 +22,7 @@ DATATONODE='s/\/data\//\/node\/net\/coderextreme\/data\//'
 DATATOGRAAL='s/\/data\//\/graaljs\/net\/coderextreme\/data\//' 
 DATATOGRAALPY='s/\/data\//\/graalpy\/net\/coderextreme\/data\//' 
 DATATOPYTHON='s/\/data\//\/python\/net\/coderextreme\/data\//' 
-DATATOJRUBY='s/\/data\//\/jruby\/net\/coderextreme\/data\//' 
+DATATOTRUFFLERUBY='s/\/data\//\/truffleruby\/net\/coderextreme\/data\//' 
 
 PERSONALTOCLOJURE='s/\/personal\//\/clojure\/net\/coderextreme\/personal\//' 
 PERSONALTOJAVA='s/\/personal\//\/java\/net\/coderextreme\/personal\//' 
@@ -30,7 +30,7 @@ PERSONALTONODE='s/\/personal\//\/node\/net\/coderextreme\/personal\//'
 PERSONALTOGRAAL='s/\/personal\//\/graaljs\/net\/coderextreme\/personal\//' 
 PERSONALTOGRAALPY='s/\/personal\//\/graalpy\/net\/coderextreme\/personal\//' 
 PERSONALTOPYTHON='s/\/personal\//\/python\/net\/coderextreme\/personal\//' 
-PERSONALTOJRUBY='s/\/personal\//\/jruby\/net\/coderextreme\/personal\//' 
+PERSONALTOTRUFFLERUBY='s/\/personal\//\/truffleruby\/net\/coderextreme\/personal\//' 
 
 EXTOCLOJURE='s/\/Library\//\/clojure\/net\/coderextreme\/Library\//' 
 EXTOJAVA='s/\/Library\//\/java\/net\/coderextreme\/Library\//' 
@@ -38,7 +38,7 @@ EXTONODE='s/\/Library\//\/node\/net\/coderextreme\/Library\//'
 EXTOGRAAL='s/\/Library\//\/graaljs\/net\/coderextreme\/Library\//' 
 EXTOGRAALPY='s/\/Library\//\/graalpy\/net\/coderextreme\/Library\//' 
 EXTOPYTHON='s/\/Library\//\/python\/net\/coderextreme\/Library\//' 
-EXTOJRUBY='s/\/Library\//\/jruby\/net\/coderextreme\/Library\//' 
+EXTOTRUFFLERUBY='s/\/Library\//\/truffleruby\/net\/coderextreme\/Library\//' 
 
 ROOTTOCLOJURE='s/\/x3d_code\/www.web3d.org\//\/clojure\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOJAVA='s/\/x3d_code\/www.web3d.org\//\/java\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
@@ -46,7 +46,7 @@ ROOTTONODE='s/\/x3d_code\/www.web3d.org\//\/node\/net\/coderextreme\/x3d_code\/w
 ROOTTOGRAAL='s/\/x3d_code\/www.web3d.org\//\/graaljs\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOGRAALPY='s/\/x3d_code\/www.web3d.org\//\/graalpy\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 ROOTTOPYTHON='s/\/x3d_code\/www.web3d.org\//\/python\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
-ROOTTOJRUBY='s/\/x3d_code\/www.web3d.org\//\/jruby\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
+ROOTTOTRUFFLERUBY='s/\/x3d_code\/www.web3d.org\//\/truffleruby\/net\/coderextreme\/x3d_code\/www_web3d_org\//' 
 
 # OVERWRITE=
 OVERWRITE=---overwrite
@@ -79,7 +79,7 @@ function mybasename {
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -${JSONEXT} | sed 's/^/Created /'
 #echo  "ls -d $@ | grep -v intermediate | grep -v  '\.new'  | tr '\n' '\0'| xargs -0 -P $PROCESSORS java net.coderextreme.RunSaxon --- ${OVERWRITE} --${STYLESHEETDIR}/X3dToJson.xslt -${JSONEXT} | sed 's/^\(.*\)\$/\"\1\"/' | xargs -P $PROCESSORS ${NODE} ../node/json2all.js"
 ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -P "$PROCESSORS" java net.coderextreme.RunSaxon --- "${OVERWRITE}" --"${STYLESHEETDIR}/X3dToJson.xslt" -${JSONEXT} | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "../node/json2all.js"
-# puts compoent after meta TODO
+# puts component after meta TODO
 #ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -L 33 -P "$PROCESSORS" bash runtidy.sh | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "../node/json2all.js"
 
 echo Running Clojure
@@ -116,11 +116,11 @@ done
 export CLASSPATH=${OLDCLASSPATH}
 
 echo Running JRuby
-pushd ../jruby
-ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
+pushd ../truffleruby
+ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOTRUFFLERUBY" -e "$DATATOTRUFFLERUBY" -e "$ROOTTOTRUFFLERUBY" -e "$PERSONALTOTRUFFLERUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$JRUBY -J-Xss1g -J-Xmx19g $i"
-	$JRUBY -J-Xss1g -J-Xmx19g $i
+	echo "$TRUFFLERUBY -J-Xss1g -J-Xmx19g $i"
+	$TRUFFLERUBY -J-Xss1g -J-Xmx19g $i
 done
 popd
 export CLASSPATH=${OLDCLASSPATH}

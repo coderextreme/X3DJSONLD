@@ -20,6 +20,7 @@ import DartSerializer from './DartSerializer.js';
 import DOMSerializer from './DOMSerializer.js';
 import ECMAScriptSerializer from './ECMAScriptSerializer.js';
 import JRubySerializer from './JRubySerializer.js';
+import TruffleRubySerializer from './TruffleRubySerializer.js';
 import GuraSerializer from './GuraSerializer.js';
 import GoSerializer from './GoSerializer.js';
 import JavaScriptSerializer from './JavaScriptSerializer.js';

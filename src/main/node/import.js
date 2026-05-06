@@ -1,5 +1,6 @@
 import('./GuraSerializer.js')
 import('./JRubySerializer.js')
+import('./TruffleRubySerializer.js')
 import('./JavaSerializer.js')
 import('./DartSerializer.js')
 import('./ECMAScriptSerializer.js')

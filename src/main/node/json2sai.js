@@ -9,6 +9,12 @@ import convertJSON from "./convertJSON.js";
 
 convertJSON([
 	{ 
+	serializer : "TruffleRubySerializer",
+	folder : "./",
+	extension : ".truffle.rb",
+	codeOutput : "../"
+	},
+	{ 
 	serializer : "JRubySerializer",
 	folder : "./",
 	extension : ".rb",
