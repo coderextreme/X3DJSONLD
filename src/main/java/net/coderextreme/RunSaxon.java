@@ -67,6 +67,16 @@ protected static class ExitException extends SecurityException
 
 	public static void main(String args[]) throws URISyntaxException, MalformedURLException, IOException {
 		try {
+    			StackTraceElement[] stack = Thread.currentThread().getStackTrace();
+			System.err.print("java -cp "+System.getProperty("java.class.path")+" "+stack[stack.length - 1].getClassName());
+
+			for (int ar = 0; ar < args.length; ar++) {
+				if (ar > 0) {
+					System.err.print(" ");
+					System.err.print(args[ar]);
+				}
+			}
+			System.err.println();
 			String stylesheet = "src/main/lib/stylesheets/X3dToJson.xslt";
 			String extension = "x3dj";
 			boolean overwrite = false;
