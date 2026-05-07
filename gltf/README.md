@@ -1,15 +1,8 @@
-<<<<<<< Updated upstream
 ## HumanoidComplete.py -- First working skinned models
 ## JoeKickAnimation.py -- an attempt to get rid of stack overflow
 ## JoeKickAnimationRecursive.py -- problems with stack overflow in Sunrize
 ## x3d_to_binary.py - Primary skeleton-based geometry converter
 ## x3d_to_gltf_advanced_ascii.py - preliminary conversion to .gltf
-=======
-HumanoidComplete.py -- First working skinned models
-JoeKickAnimation.py -- a attempt to get rid of stack overflow
-JoeKickAnimationRecursive.py -- problems with stacak overflow in Sunrize
-x3d_to_binary.py - Primary skeleton-based geometry converter
-x3d_to_gltf_advanced_ascii.py - to .gltf
 
 To ensure you get the best assistance from an AI—or to document the project for contributors—here is a structured, comprehensive prompt you can use.
 
@@ -61,4 +54,3 @@ Develop and maintain a robust Python-based converter that transforms X3D (XML) s
 ### How to use this prompt:
 *   **To get code fixes:** Paste the prompt above, then append: *"I am currently facing issues with [specific issue, e.g., morph target weight animation]. Please analyze the attached `x3d_to_binary.py` and provide a solution."*
 *   **To document the project:** Use this text in a `README.md` file to give context to anyone who helps you maintain the tool.
->>>>>>> Stashed changes
