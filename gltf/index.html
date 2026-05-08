@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.7.0/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#000000"></a-sky>
+      <a-assets>
+	    <a-asset-item id="skeletonModel" src="LaughingUpperSkeleton.glb"></a-asset-item>
+      </a-assets>
+      <a-entity
+        gltf-model="#skeletonModel"
+	animation-mixer="clip: *; loop: repeat; clampWhenFinished: false"
+        position="0 0 -3"
+        scale="1 1 1">
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
