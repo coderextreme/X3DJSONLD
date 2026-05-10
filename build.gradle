@@ -49,7 +49,7 @@ dependencies {
 }
 
 group = 'net.coderextreme'
-version = '11.0-SNAPSHOT'
+version = '12.0-SNAPSHOT'
 description = 'X3DJSONLD'
 java.sourceCompatibility = JavaVersion.VERSION_23
 
