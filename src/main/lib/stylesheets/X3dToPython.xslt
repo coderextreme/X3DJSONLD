@@ -1046,6 +1046,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='shadows' and string(.)='false') and
                       not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='smooth' and string(.)='true') and
                       not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -1145,7 +1146,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                       not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                       not( local-name(..)='Inline'        and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='InlineGeometry' and ((local-name()='load' and string(.)='true') or (local-name()='solid' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -2113,7 +2115,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                             (local-name(..) = 'Text') or (local-name(..) = 'IS') or (local-name(..) = 'connect') or
                             starts-with(local-name(..), 'Indexed') or starts-with(local-name(..), 'Coordinate')">
                 <!-- TODO not yet supported by Comment class -->
-                <!-- debug -->
+                <!-- debug
                 <xsl:message>
                   <xsl:text>*** [debug1] </xsl:text>
                   <xsl:value-of select="local-name(..)"/>
@@ -2122,15 +2124,15 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                   <xsl:text>'</xsl:text>
                   <xsl:if test="(string-length(.) gt 40)">
                     <xsl:text> ...</xsl:text>
-                  </xsl:if>
+                  </xsl:if> -->
                   <!--
                   <xsl:text>&#10;</xsl:text>
                   <xsl:text>    &lt;-</xsl:text><xsl:text>- </xsl:text>
                   <xsl:value-of select="."/>
-                  <xsl:text> -</xsl:text><xsl:text>-&gt;</xsl:text>-->
-                </xsl:message>
+                  <xsl:text> -</xsl:text><xsl:text>-&gt;</xsl:text>
+                </xsl:message>-->
                 <xsl:value-of select="$indent"/>
-                <xsl:text># </xsl:text>
+                <xsl:text> # </xsl:text>
                 <xsl:value-of select="normalize-space(.)"/>
                 <xsl:text>&#10;</xsl:text><!-- ensure no hiding of follow-on source code -->
             </xsl:when>
@@ -2174,7 +2176,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 </xsl:choose>
             </xsl:when>
             <xsl:otherwise>
-                <!-- debug -->
+                <!-- debug
                 <xsl:message>
                   <xsl:text>*** [debug2] </xsl:text> 
                   <xsl:value-of select="local-name(..)"/>
@@ -2184,9 +2186,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                   <xsl:if test="(string-length(.) gt 40)">
                     <xsl:text> ...</xsl:text>
                   </xsl:if>
-                </xsl:message>
+                </xsl:message> -->
                 <!-- transient comment, not a persistent part of the X3D model -->
-                <xsl:text># </xsl:text>
+                <xsl:text> # </xsl:text>
                 <xsl:value-of select="normalize-space(.)"/>
                 <xsl:text>&#10;</xsl:text><!-- ensure no hiding of follow-on source code -->
                 <!-- <xsl:value-of select="$indent"/>
@@ -2655,6 +2657,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($attributeName='pickable')          or
                     ($attributeName='rtpHeaderExpected') or
                     ($attributeName='shadows')           or
+                    ($attributeName='smooth')            or
                     ($attributeName='solid')             or
                     ($attributeName='spatialize')        or
                     ($attributeName='trackCurrentView')  or

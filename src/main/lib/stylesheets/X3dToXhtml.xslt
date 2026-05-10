@@ -1788,6 +1788,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         and
                         <a href="https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter07EventAnimationInterpolation/Chapter07EventAnimationInterpolation-EventTracing.pdf" target="_blank">Event Tracing</a>
                         hint sheets.
+                        <br />
                         Have fun with X3D!
                         <xsl:text>&#128512;</xsl:text><!-- smiley face 😊 -->
                     </div>
@@ -1856,9 +1857,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     <xsl:text>_top</xsl:text>
                                 </xsl:attribute>
                                 <xsl:attribute name="title">
-                                    <xsl:text>go to X3D Example Archives model page</xsl:text>
+                                    <xsl:text>go to online X3D Example Archives model page</xsl:text>
                                 </xsl:attribute>
-                                <!-- useing firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                                <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                                 <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                                 <!-- X3DtextIcon16.png -->
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
@@ -1879,7 +1880,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>_top</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
-                            <xsl:text>go to X3D Example Archives model page</xsl:text>
+                            <xsl:text>go to online X3D Example Archives model page</xsl:text>
                             </xsl:attribute>
                             <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
                         </xsl:element>
@@ -3837,10 +3838,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
                         <xsl:attribute name="title">
-                            <xsl:text>go to X3D Example Archives model page for </xsl:text>
+                            <xsl:text>go to online X3D Example Archives model page for </xsl:text>
                             <xsl:value-of select="$inlineModelName"/>
                         </xsl:attribute>
-                        <!-- useing firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                        <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                         <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                         <!-- X3DtextIcon16.png -->
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
@@ -4573,6 +4574,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='shadows' and string(.)='false') and
                       not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='smooth' and string(.)='true') and
                       not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -4672,7 +4674,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                       not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='Inline'         and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='InlineGeometry' and ((local-name()='load' and string(.)='true') or (local-name()='solid' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -6410,6 +6413,74 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
               <hr style="width:100%"/>
             </div>
             <xsl:text>&#10;</xsl:text>
+
+                <!-- Event Graph ROUTE Table -->
+                <xsl:if test="//*[@DEF]">
+                    <xsl:text>&#10;</xsl:text>
+
+                    <xsl:if test="$showEventGraphRouteTable">
+                        <p style="background-color:#DDEEFF; text-align:center;">
+                                <b>
+                                    <xsl:element name="a">
+                                        <xsl:attribute name="title">
+                                            <xsl:text>Event Graph ROUTE Table shows event connections</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="href">
+                                            <xsl:text>#EventGraph</xsl:text>
+                                        </xsl:attribute>
+                                        <xsl:text disable-output-escaping="yes">Event&amp;#160;Graph ROUTE&amp;#160;Table</xsl:text><!-- &nbsp; -->
+                                    </xsl:element>
+                                </b>
+                                <xsl:text> shows event connections.</xsl:text>
+                        </p>
+                        <xsl:text>&#10;</xsl:text>
+                    </xsl:if>
+                </xsl:if>
+                
+                <!-- HAnimHumanoid model visualization report -->
+                <xsl:if test="//HAnimHumanoid[string-length(@name) > 0]">
+                  <xsl:text>&#10;</xsl:text>
+                  <p style="text-align:center;">
+                    <xsl:text>&#10;</xsl:text>
+                    <b>
+                        <xsl:text>HAnimHumanoid model visualization report</xsl:text>
+                        <xsl:if test="count(//HAnimHumanoid[string-length(@name) > 0]) > 1">
+                            <xsl:text>s</xsl:text>
+                        </xsl:if>
+                    </b>
+                    <xsl:text>: </xsl:text>
+                    <xsl:for-each select="//HAnimHumanoid[string-length(@name) > 0]">
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:variable name="hAnimHumanoidID">
+                            <xsl:value-of select="@name"/>
+                            <xsl:text>HAnimHumanoidReport</xsl:text>
+                        </xsl:variable>
+                        <xsl:element name="a">
+                            <xsl:attribute name="title">
+                                <xsl:text>go to the </xsl:text>
+                                <xsl:text>HAnimHumanoid report</xsl:text>
+                                <xsl:value-of select="@name"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="href">
+                                <xsl:text>#</xsl:text>
+                                <xsl:value-of select="@name"/>
+                                <xsl:text>HAnimHumanoidReport</xsl:text>
+                            </xsl:attribute>
+                            <xsl:attribute name="class">
+                                <xsl:text>idName</xsl:text>
+                            </xsl:attribute>
+                            <!-- visible part of anchor -->
+                            <xsl:value-of select="@name"/>
+                            <xsl:text> HAnimHumanoid Report</xsl:text>
+                        </xsl:element>
+                        <xsl:if test="not(position()=last())">
+                            <xsl:text>,</xsl:text>
+                        </xsl:if>
+                    </xsl:for-each>
+                    <xsl:text>&#10;</xsl:text>
+                  </p>
+                  <xsl:text>&#10;</xsl:text>
+                </xsl:if>
                 
                 <xsl:if test="//IMPORT">
                     <xsl:text>&#10;</xsl:text>
@@ -6497,50 +6568,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                   </p>
                   <xsl:text>&#10;</xsl:text>
                 </xsl:if>
-                
-                <xsl:if test="//HAnimHumanoid[string-length(@name) > 0]">
-                  <xsl:text>&#10;</xsl:text>
-                  <p style="text-align:center;">
-                    <xsl:text>&#10;</xsl:text>
-                    <b>
-                        <xsl:text>HAnimHumanoid model visualization report</xsl:text>
-                        <xsl:if test="count(//HAnimHumanoid[string-length(@name) > 0]) > 1">
-                            <xsl:text>s</xsl:text>
-                        </xsl:if>
-                    </b>
-                    <xsl:text>: </xsl:text>
-                    <xsl:for-each select="//HAnimHumanoid[string-length(@name) > 0]">
-                        <xsl:text>&#10;</xsl:text>
-                        <xsl:variable name="hAnimHumanoidID">
-                            <xsl:value-of select="@name"/>
-                            <xsl:text>HAnimHumanoidReport</xsl:text>
-                        </xsl:variable>
-                        <xsl:element name="a">
-                            <xsl:attribute name="title">
-                                <xsl:text>go to the </xsl:text>
-                                <xsl:text>HAnimHumanoid report</xsl:text>
-                                <xsl:value-of select="@name"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="href">
-                                <xsl:text>#</xsl:text>
-                                <xsl:value-of select="@name"/>
-                                <xsl:text>HAnimHumanoidReport</xsl:text>
-                            </xsl:attribute>
-                            <xsl:attribute name="class">
-                                <xsl:text>idName</xsl:text>
-                            </xsl:attribute>
-                            <!-- visible part of anchor -->
-                            <xsl:value-of select="@name"/>
-                            <xsl:text> HAnimHumanoid Report</xsl:text>
-                        </xsl:element>
-                        <xsl:if test="not(position()=last())">
-                            <xsl:text>,</xsl:text>
-                        </xsl:if>
-                    </xsl:for-each>
-                    <xsl:text>&#10;</xsl:text>
-                  </p>
-                  <xsl:text>&#10;</xsl:text>
-                </xsl:if>
 
                 <!-- these two variables are repeatedly defined in different contexts -->
                 <xsl:variable name="hasProtoInstanceFieldControl"
@@ -6555,29 +6582,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>, $showEventGraphRouteTable=</xsl:text>
                         <xsl:value-of select="$showEventGraphRouteTable"/>
                 </xsl:message> -->
-
-                <xsl:if test="//*[@DEF]">
-                    <xsl:text>&#10;</xsl:text>
-
-                    <xsl:if test="$showEventGraphRouteTable">
-                        <p style="background-color:#DDEEFF; text-align:center;">
-                                <b>
-                                    <xsl:element name="a">
-                                        <xsl:attribute name="title">
-                                            <xsl:text>Event Graph ROUTE Table shows event connections</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="href">
-                                            <xsl:text>#EventGraph</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:text disable-output-escaping="yes">Event&amp;#160;Graph ROUTE&amp;#160;Table</xsl:text><!-- &nbsp; -->
-                                    </xsl:element>
-                                </b>
-                                <xsl:text> shows event connections.</xsl:text>
-                        </p>
-                        <xsl:text>&#10;</xsl:text>
-                    </xsl:if>
-                </xsl:if>
-
+                
+                <!-- DEF node index -->
                   <p style="text-align:center;">
                     <!-- hidden comment characters for compatible copy/paste -->
                     <span style="color:white"><xsl:text>--&gt;</xsl:text></span>
@@ -9356,6 +9362,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     ($attributeName='pickable')          or
                     ($attributeName='rtpHeaderExpected') or
                     ($attributeName='shadows')           or
+                    ($attributeName='smooth')            or
                     ($attributeName='solid')             or
                     ($attributeName='spatialize')        or
                     ($attributeName='trackCurrentView')  or
@@ -10172,7 +10179,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="title">
                             <xsl:value-of select="$shortcutIconTooltip"/>
                         </xsl:attribute>
-                        <!-- useing firefox for conversion: Inspector > Copy > Image-Data-URL -->
+                        <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                         <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                         <!-- X3DtextIcon16.png -->
                         <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>

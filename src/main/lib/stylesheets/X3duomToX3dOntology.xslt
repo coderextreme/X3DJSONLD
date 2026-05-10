@@ -11,7 +11,7 @@
 -->
 
 <!--
-Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
+Copyright (c) 2001-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -52,9 +52,16 @@ POSSIBILITY OF SUCH DAMAGE.
     
     <!-- ======================================================= -->
     
+    <xsl:variable name="x3dVersion" select="//X3dUnifiedObjectModel/@version"/>
+    
     <xsl:template match="/"> <!-- process root of input document -->
+    
+    <xsl:message>
+      <xsl:text>$x3dVersion=</xsl:text>
+      <xsl:value-of select="$x3dVersion"/>
+    </xsl:message>
         
-	 <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <https://www.web3d.org/specifications/X3dOntology4.0#> .
+    <xsl:text disable-output-escaping="yes"><![CDATA[@prefix : <https://www.web3d.org/specifications/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 @prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -72,7 +79,7 @@ POSSIBILITY OF SUCH DAMAGE.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vidont: <http://vidont.org/> .
 
-@prefix x3d: <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
+@prefix x3d: <https://www.web3d.org/specifications/x3d-4.1.xsd#> .
 -->
         <!-- process elements as things etc. -->
         
@@ -81,23 +88,23 @@ POSSIBILITY OF SUCH DAMAGE.
 
 # X3D Ontology
 
-<https://www.web3d.org/specifications/X3dOntology4.0> a owl:Ontology ;
+<https://www.web3d.org/specifications/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[> a owl:Ontology ;
   dcterms:title       "X3D Ontology"@en ;
   dcterms:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of X3D models." ;
   dcterms:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" .
   # TODO include further provenance information
             
 # Maintained at
-#	https://www.web3d.org/specifications/X3dOntology4.0.ttl
-#	https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.0.ttl
+#	https://www.web3d.org/specifications/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[.ttl
+#	https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[.ttl
 #
 # Support
 #   https://www.web3d.org/x3d/content/semantics/semantics.html
 #
 # Version control
 #	https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/semantics/
-#	https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/semantics/ontologies/X3dOntology4.0.ttl
-#	https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/semantics/ontologies/X3dOntology4.0.ttl?format=raw
+#	https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/semantics/ontologies/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[.ttl
+#	https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/semantics/ontologies/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[.ttl?format=raw
 
 ###############################################
 

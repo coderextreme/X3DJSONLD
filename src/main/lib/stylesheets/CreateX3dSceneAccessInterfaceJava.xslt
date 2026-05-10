@@ -819,7 +819,7 @@ Additional references of interest:
                 <xsl:when test="($nodeTypeBase = 'X3DViewpointNode') or ($nodeTypeBase = 'ViewpointNode') or ($nodeTypeBase = 'NavigationInfo')">
                     <xsl:text>Navigation</xsl:text>
                 </xsl:when>
-                <xsl:when test="($nodeTypeBase = 'X3DNetworkSensorNode') or ($nodeTypeBase = 'X3DUrlObject')">
+                <xsl:when test="($nodeTypeBase = 'X3DNetworkSensorNode') or ($nodeTypeBase = 'X3DUrlObject') or ($nodeTypeBase = 'X3DUrlOutputObject')">
                     <xsl:text>Networking</xsl:text>
                 </xsl:when>
                 <xsl:when test="($nodeTypeBase = 'X3DNurbsControlCurveNode') or ($nodeTypeBase = 'X3DParametricGeometryNode') or ($nodeTypeBase = 'X3DNurbsSurfaceGeometryNode') or
@@ -3983,7 +3983,7 @@ import org.web3d.x3d.jsail.*; // again making sure #4
                                                 <xsl:text>, "skinNormal", "skinBindingNormal" /*HAnimHumanoid parent*/</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="($name = 'Shape')">
-                                                <xsl:text>, "proxy" /*Collision parent*/, "shape", "rootNode" /*GeoLOD parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
+                                                <xsl:text>, "proxy" /*Collision parent*/, "shape" /*CADFace or CollidableShape parent*/, "rootNode" /*GeoLOD parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
                                         </xsl:when>
                                         <xsl:when test="($name = 'LOD') or ($name = 'Transform')">
                                                 <xsl:text>, "proxy" /*Collision parent*/, "shape"/*CADFace or CollidableShape parent*/, "skin" /*HAnimHumanoid parent*/</xsl:text>
@@ -5094,10 +5094,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			boolean foundX3dJsailJar = false;
 			if    ( systemClassPath.contains("X3DJSAIL"))
 			{
-					 currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
-				if ((systemClassPath.indexOf("X3DJSAIL") > 0) &&
-					(currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar) > 0))
-					 currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar));
+            currentX3dJsailJarName = systemClassPath.substring(systemClassPath.indexOf("X3DJSAIL"));
+            if ((systemClassPath.indexOf("X3DJSAIL") > 0) &&
+              (currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar) > 0))
+               currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar));
+            if (currentX3dJsailJarName.contains(";"))
+                currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(";"));
+            if (currentX3dJsailJarName.contains(":"))
+                currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(":"));
 				// X3DJSAIL.*.jar now extracted as currentX3dJsailJarName
 				for (String nextX3dJsailJar : ConfigurationProperties.X3DJSAIL_JAR_RELEASE_VERSIONS)
 				{
@@ -5110,12 +5114,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 			}
 			if (!foundX3dJsailJar)
 			{
-				errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL .jar archive " + currentX3dJsailJarName
-								+ " not found in\n  CLASSPATH=" + systemClassPath+ "\n";
+				errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " toFileStylesheetConversion() warning: X3DJSAIL .jar archive '" + currentX3dJsailJarName
+								+ "' not found in\n  CLASSPATH=" + systemClassPath+ "\n";
                                 errorNotice += "  invoked from toFileStylesheetConversion(" + stylesheetName + ", " + fileName
                                          + ", " + parameterName1 + ", " + parameterValue1 + ", " + parameterName2 + ", " + parameterValue2 + ")\n";
                                 validationResult.append(errorNotice);
-//				throw new InvalidFieldValueException(errorNotice); // don't exit, let checkBlenderPath() work...
                                 System.err.println(errorNotice);
 			}
 
@@ -5293,6 +5296,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             if ((systemClassPath.indexOf("X3DJSAIL") > 0) &&
                 (currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar) > 0))
                  currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(java.io.File.pathSeparatorChar));
+            if (currentX3dJsailJarName.contains(";"))
+                currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(";"));
+            if (currentX3dJsailJarName.contains(":"))
+                currentX3dJsailJarName = currentX3dJsailJarName.substring(0,currentX3dJsailJarName.indexOf(":"));
             // X3DJSAIL.*.jar now extracted as currentX3dJsailJarName
             for (String nextX3dJsailJar : ConfigurationProperties.X3DJSAIL_JAR_RELEASE_VERSIONS)
             {
@@ -5305,11 +5312,10 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
         }
         if (!foundX3dJsailJar)
         {
-            errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " X3DJSAIL jar archive \"" + currentX3dJsailJarName
-                            + "\" not found in CLASSPATH=" + systemClassPath + "\n";
+            errorNotice = ConfigurationProperties.ERROR_CONFIGURATION_X3DJSAIL + " getTempFileFromX3dJsailJar(String() warning: X3DJSAIL jar archive '" + currentX3dJsailJarName
+                            + "' not found in CLASSPATH=" + systemClassPath + "\n";
             errorNotice += "  invoked from getTempFileFromX3dJsailJar(" + internalPath + ", " + fileName + ")\n";
            	System.out.println(errorNotice);
-// TODO     throw new InvalidFieldValueException(errorNotice);
         }
 
         // TODO jar flexibility, once working
@@ -5408,7 +5414,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
 	public String toStringJSON()
 	{
-		String temporaryFileName = "temporaryJsonOutputFile.json";
+		String temporaryFileName = "temporaryJsonOutputFile.x3dj";
 
 		try
 		{
@@ -5803,7 +5809,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see ConfigurationProperties#STYLESHEET_JSON
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJson.xslt" target="_blank">X3dToJson.xslt</a>
-	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.json" target="_blank">examples/HelloWorldProgramOutput.json</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.x3dj" target="_blank">examples/HelloWorldProgramOutput.x3dj</a>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">X3D to JSON Stylesheet Converter</a>
 	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding" target="_blank">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
@@ -8176,7 +8182,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 
 								<xsl:if test="((@type='MFNode') or (@type='MFString') or (@type='MFBool') or (@type = 'MFInt32') or (@type = 'SFImage') or (@type = 'MFImage') or (@type='MFFloat') or (@type='MFDouble') or (@type='MFTime'))
 											   and (not($isInterface = 'true') and not($isX3dStatement = 'true') and not($isClassX3dStatement = 'true') or
-                                                                                                (($name = 'ExternProtoDeclare') and (@name = 'url')))">
+                             (($name = 'ExternProtoDeclare') and (@name = 'url')))">
 									<xsl:text>	/**</xsl:text>
 									<xsl:text>&#10;</xsl:text>
 									<xsl:text>	 * Utility method to get ArrayList </xsl:text>
@@ -34881,7 +34887,7 @@ import javax.script.ScriptException;</xsl:text>
                 return;
             }
 			// otherwise
-            System.out.println("Parsing using Document Object Model (DOM) based X3DLoaderDOM...");
+            System.out.println("Parsing XML-encoded file using Document Object Model (DOM) based X3DLoaderDOM...");
             X3DLoaderDOM x3dLoader = new X3DLoaderDOM();
             boolean successfulLoad = x3dLoader.loadModelFromFileX3D(         sourceFileName);
 //          boolean successfulLoad = x3dLoader.loadModelFromFileX3D(new File(sourceFileName)); // alternate form, tested OK
@@ -36034,7 +36040,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJson.xslt" target="_blank">X3dToJson.xslt</a>
-	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.json" target="_blank">examples/HelloWorldProgramOutput.json</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.x3dj" target="_blank">examples/HelloWorldProgramOutput.x3dj</a>
 	 */
 	public static final String STYLESHEET_JSON   = "X3dToJson.xslt";
 
@@ -36370,8 +36376,8 @@ showing default attribute values, and other custom settings.</p>
 		}
 		catch (IOException ioe)
 		{
-            System.out.println (ERROR_CONFIGURATION_X3DJSAIL + ": " + ioe.getMessage());
-            ioe.printStackTrace(System.err); // further diagnosis needed
+      System.out.println (ERROR_CONFIGURATION_X3DJSAIL + ": " + ioe.getMessage());
+      ioe.printStackTrace(System.err); // further diagnosis needed
 		}
 		System.out.print (getPropertiesFileName() + " includes " + loadedProperties.size());
 		if (loadedProperties.isEmpty())
@@ -38878,7 +38884,9 @@ import org.web3d.x3d.sai.X3DException;
                                 if (!(elementObject instanceof X3DGroupingNode))
                                 {
                                     errorNotice = "[error] X3DLoaderDOM: Parent-child node relationship not found! (parent " + nodeName + ", child " + childElementName +
-                                                   ", containerField='" + containerField + "') Please report this problem to don.brutzman@gmail.com";
+                                                   ", containerField='" + containerField + "')" + "\n";
+
+                                    errorNotice += "Please report this problem to don.brutzman@gmail.com";
                                     validationResult.append(errorNotice);
                                     System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
                                 }
@@ -38893,9 +38901,12 @@ import org.web3d.x3d.sai.X3DException;
 							errorNotice = "[error] X3DLoaderDOM: Incorrectly handled X3DJSAIL object construction, current elementObject=" + nodeName +
 										  " (" + elementObject.getElementName() + "), child=\"" + childElementName +
 										  "\", containerField=\"" + containerField + "\", " + ex + "\n";
-							errorNotice+= "    This error can be caused by incorrect parent-child node relationships or incorrect containerField values." + "\n";
-							errorNotice+= "    X3D node typing is strict, check or validate your scene graph!" + "\n";
-							errorNotice+= "    This error can also be caused by X3DLoaderDOM DOM omissions in X3DJSAIL. Please report mysterious problems, thank you." + "\n";
+							errorNotice += "   This error can be caused by" + "\n";
+              errorNotice += "   a. an internal error in Xj3DJSAIL X3DloaderDOM, or" + "\n";
+              errorNotice += "   b. model error, incorrect parent-child node relationships, or" + "\n";
+              errorNotice += "   c. incorrect containerField values in the XML model source." + "\n";
+							errorNotice += "   X3D node typing is strict, make sure you check or validate your scene graph!" + "\n";
+							errorNotice += "   Please report mysterious problems, thank you." + "\n";
 							validationResult.append(errorNotice);
 							System.out.println(errorNotice); // avoiding System.err due to redirection difficulties
 							ex.printStackTrace(System.err); // further diagnosis needed, DOM loader errors are tricky

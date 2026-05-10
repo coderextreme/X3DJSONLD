@@ -1227,6 +1227,7 @@ POSSIBILITY OF SUCH DAMAGE.
                       not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='shadows' and string(.)='false') and
                       not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='smooth' and string(.)='true') and
                       not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -1326,7 +1327,8 @@ POSSIBILITY OF SUCH DAMAGE.
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='Inline'         and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='InlineGeometry' and ((local-name()='load' and string(.)='true') or (local-name()='solid' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -2815,15 +2817,15 @@ POSSIBILITY OF SUCH DAMAGE.
 </xsl:template>
 
 <xsl:template name="list-component-imports">
-	<xsl:text>import java from 'java';</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>var java = require('java');</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>java.asyncOptions = {</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  asyncSuffix: undefined,     // Don't generate node-style methods taking callbacks</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  syncSuffix: "",              // Sync methods use the base name(!!)</xsl:text><xsl:text>&#10;</xsl:text>
 	<xsl:text>  promiseSuffix: "Promise",   // Generate methods returning promises, using the suffix Promise.</xsl:text><xsl:text>&#10;</xsl:text>
-	<xsl:text>  promisify: import('util').promisify, // Needs Node.js version 8 or greater, see comment below</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>  promisify: require('util').promisify, // Needs Node.js version 8 or greater, see comment below</xsl:text><xsl:text>&#10;</xsl:text>
 <xsl:text>  ifReadOnlySuffix: "_alt"</xsl:text><xsl:text>&#10;</xsl:text>
 <xsl:text>};</xsl:text><xsl:text>&#10;</xsl:text>
-	<xsl:text>import autoclass from './X3Dautoclass';</xsl:text><xsl:text>&#10;</xsl:text>
+	<xsl:text>var autoclass = require('./X3Dautoclass');</xsl:text><xsl:text>&#10;</xsl:text>
 </xsl:template>
 
 <xsl:template name="tuple-size">
@@ -2987,6 +2989,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($attributeName='pickable')          or
                     ($attributeName='rtpHeaderExpected') or
                     ($attributeName='shadows') or
+                    ($attributeName='smooth')            or
                     ($attributeName='solid') or
                     ($attributeName='uClosed') or ($attributeName='vClosed') or
                     ($attributeName='useFiniteRotation') or ($attributeName='useGlobalGravity') or

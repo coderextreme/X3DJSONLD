@@ -60,7 +60,7 @@ Recommended tools:
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
-<xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
+<xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon fn"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds ="http://www.w3.org/2000/09/xmldsig#"
 		xmlns:fn ="http://www.w3.org/2005/xpath-functions"
@@ -72,33 +72,37 @@ Recommended tools:
                 xmlns:fn="http://www.w3.org/2005/xpath-functions" -->
     
     <!-- Default parameter values can be overridden when invoking this stylesheet -->
-    <xsl:param name="conversionRequired"           ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="title"                        ><xsl:text><!-- default title value for file name is empty --></xsl:text></xsl:param>
-    <xsl:param name="modifyX3dVersion"             ><xsl:text>false</xsl:text></xsl:param>
-    <xsl:param name="revisedX3dVersion"            ><xsl:text></xsl:text></xsl:param><!-- empty for no change, otherwise 3.0 3.1 3.2 3.3 4.0 -->
-    <xsl:param name="reviseCurrentDate"            ><xsl:text>false</xsl:text></xsl:param>
-    <xsl:param name="fixDateFormats"               ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="fixMFStringQuotes"            ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="fixGeoSystemMetadata"         ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="conversionRequired"               ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="title"                            ><xsl:text><!-- default title value for file name is empty --></xsl:text></xsl:param>
+    <xsl:param name="archive.name"                     ><xsl:text><!-- default archive.name value is empty --></xsl:text></xsl:param>
+    <xsl:param name="modifyX3dVersion"                 ><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="revisedX3dVersion"                ><xsl:text></xsl:text></xsl:param><!-- empty for no change, otherwise 3.0 3.1 3.2 3.3 4.0 -->
+    <xsl:param name="reviseCurrentDate"                ><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="fixDateFormats"                   ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="fixMFStringQuotes"                ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="fixGeoSystemMetadata"             ><xsl:text>true</xsl:text></xsl:param>
     <!-- TODO fixHAnimHumanoidMetadataDefault -->
-    <xsl:param name="fixMetaNamesMatchDublinCore"  ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="omitNegativeScaleValues"      ><xsl:text>false</xsl:text></xsl:param>
-    <xsl:param name="omitObsoleteAttributes"       ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
+    <xsl:param name="fixMetaNamesMatchDublinCore"      ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="omitNegativeScaleValues"          ><xsl:text>false</xsl:text></xsl:param>
+    <xsl:param name="omitObsoleteAttributes"           ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
     <!-- prependWorldInfoIfMissing values: true, false, or can also provide name to use -->
-    <xsl:param name="prependWorldInfoIfMissing"    ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
-    <xsl:param name="replaceBlackEmissiveColor"    ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="prependWorldInfoIfMissing"        ><xsl:text>true</xsl:text></xsl:param><!-- TODO add to X3D-Edit -->
+    <xsl:param name="replaceBlackEmissiveColor"        ><xsl:text>true</xsl:text></xsl:param>
     <!-- Expand local url array to include online addresses -->
-    <xsl:param name="fixUrlAdditionHttpAddresses"  ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="fixUrlAdditionHttpAddresses"      ><xsl:text>true</xsl:text></xsl:param>
     <!-- note that url quotes are always appended if needed -->
-    <xsl:param name="appendWrlAfterX3dAddresses"   ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="prependX3dBeforeWrlAddresses" ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="defaultUrlAddress"            ><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+    <xsl:param name="appendWrlAfterX3dAddresses"       ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="prependX3dBeforeWrlAddresses"     ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="defaultUrlAddress"                ><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
     <!-- baseUrlAvailable false means that stylesheet is being used by servlet, or else styled results won't be in original directory: -->
-    <xsl:param name="baseUrlAvailable"             ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="changeJavascriptEcmascript"   ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="insertMissingEcmascript"      ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="insertMissingMetaLicense"     ><xsl:text>true</xsl:text></xsl:param>
-    <xsl:param name="licenseLink"                  ><xsl:text>https://www.web3d.org/x3d/content/examples/license.html</xsl:text></xsl:param>
+    <xsl:param name="baseUrlAvailable"                 ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="changeJavascriptEcmascript"       ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="insertMissingEcmascript"          ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="insertMissingMetaLicense"         ><xsl:text>true</xsl:text></xsl:param>
+    <xsl:param name="licenseLink"                      ><xsl:text>https://www.web3d.org/x3d/content/examples/license.html</xsl:text></xsl:param>
+    <xsl:param name="numberSignificantDigitsEnabled"   ><xsl:text>true</xsl:text></xsl:param><!-- true or false -->
+    <xsl:param name="numberSignificantDigitsPrecision" ><xsl:text>4</xsl:text></xsl:param>
+    <xsl:param name="appendTrailingZeros"              ><xsl:text>false</xsl:text></xsl:param>
     
     <xsl:param name="removeDuplicateIndexesIFS_ILS"><xsl:text>true</xsl:text></xsl:param>
     <!-- watch out, the following two settings can interact if applied simultaneously, may need to run twice.  TODO fix.  -->
@@ -117,6 +121,34 @@ Recommended tools:
     <xsl:param name="siteViewpointColor"           ><xsl:text>0 0 1</xsl:text></xsl:param>
     <!-- TODO unimplemented -->
     <xsl:param name="HAnimAddBoneSegments"         ><xsl:text>false</xsl:text></xsl:param>
+            
+    <!-- https://www.w3.org/TR/xslt-30/#regex-examples "use of doubled curly brackets because the regex attribute is an attribute value template" -->
+    <xsl:variable name="reducePrecisionRegex">
+        <!-- <xsl:text>^</xsl:text>anchored, see p.236 in XSLT 2.0 4th edition by Michael Kay -->
+        <!-- numeric filter, significant digits precision, https://regex101.com/r/mjYeZe/1
+             regular expression  \s*([+-]?\d*)(\.\d{0,4})?\d*([Ee][+-]?\d+)?\s*[,]?
+                with test cases  +123.456789E+0 ,  5  +66 -77. 88.E-8 1.570796 -->
+        <!-- 
+        <xsl:text>(.*)</xsl:text> is test to collect all values
+           NB do not use {{double brackets}} around selection \d{0,4}
+        -->
+        <xsl:text>\s*([+-]?\d*)(\.\d{0,</xsl:text>
+        <xsl:value-of select="$numberSignificantDigitsPrecision"/>
+        <xsl:text>})?\d*([Ee][+-]?\d+)?\s*[,]?</xsl:text>
+        <!-- <xsl:text>$</xsl:text>anchored, see p.236 in XSLT 2.0 4th edition by Michael Kay -->
+    </xsl:variable>
+    <xsl:variable name="roundoffPrefix">
+        <xsl:call-template name="reducePrecisionSingleValue">
+            <xsl:with-param name="inputValue">
+              <!-- apply regex and return modified first value -->
+              <xsl:text>0.1111111111</xsl:text>
+            </xsl:with-param>
+        </xsl:call-template>
+    </xsl:variable>
+    <xsl:variable name="roundoffValue">
+      <xsl:value-of select="replace($roundoffPrefix,'1','0')"/>
+      <xsl:text>5</xsl:text>
+    </xsl:variable>
     
     <!-- TODO other X3D-Edit visualization parameters -->
     
@@ -224,6 +256,25 @@ Recommended tools:
             <xsl:text>)=</xsl:text>
             <xsl:value-of select="substring($base-address,string-length($base-address))"/> 
             -->
+            
+        <xsl:if test="($numberSignificantDigitsEnabled = 'true') and (count(//unit) gt 0)">
+          <xsl:message>
+            <xsl:text>*** Warning: be sure that $numberSignificantDigitsPrecision=</xsl:text>
+            <xsl:value-of select="$numberSignificantDigitsPrecision"/>
+            <xsl:text> is satisfactory when </xsl:text>
+            <xsl:text disable-output-escaping="yes">&lt;unit/&gt;</xsl:text>
+            <xsl:text> conversion statement</xsl:text>
+            <xsl:choose>
+              <xsl:when test="(count(//unit) gt 1)">
+                <xsl:text>s are present</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text> is present</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:message>
+        </xsl:if>
+        
         <xsl:call-template name="X3dDocument"/>
 
     </xsl:template>
@@ -544,7 +595,7 @@ Recommended tools:
         <!-- first root node within Scene: if no WorldInfo with title (for window display) found, then add one -->
         <xsl:if test="(local-name(..)='Scene') and (count(preceding-sibling::*) = 0) and 
                       ((count(//WorldInfo) = 0) or (local-name() = 'WorldInfo')) and 
-                      (string-length($prependWorldInfoIfMissing) > 0) and not($prependWorldInfoIfMissing = 'false') ">
+                      (string-length($prependWorldInfoIfMissing) > 0) and not($prependWorldInfoIfMissing = 'false')">
             <xsl:variable name="WorldInfoTitle">
                 <xsl:choose>
                     <xsl:when test="($prependWorldInfoIfMissing = 'true') and preceding::meta[@name = 'title']">
@@ -560,7 +611,7 @@ Recommended tools:
                         <xsl:value-of select="$prependWorldInfoIfMissing"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:text>*TODO add title*</xsl:text>
+                        <xsl:text>*TODO_add_title*</xsl:text>
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:variable>
@@ -1202,6 +1253,78 @@ Recommended tools:
 
                         <!-- handle current node and its children, if any -->
                         <xsl:choose>
+                            <xsl:when test="(local-name() = 'X3D') and (count(//head) = 0)">
+                                <xsl:variable name="metaTitle">
+                                  <xsl:choose>
+                                    <xsl:when test="(string-length($title) > 0)">
+                                        <xsl:value-of select="$title"/>
+                                        <xsl:if test="not(contains($title,'.'))">
+                                            <xsl:text>.x3d</xsl:text>
+                                        </xsl:if>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>*enter FileNameWithNoAbbreviations.x3d here*</xsl:text>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </xsl:variable>
+                                
+                                <xsl:variable name="metaIdentifier">
+                                  <xsl:choose>
+                                    <xsl:when test="(string-length($title) > 0)">
+                                      <xsl:choose>
+                                        <xsl:when test="(string-length($archive.name) > 0)">
+                                            <xsl:text>https://www.web3d.org/x3d/content/examples/</xsl:text>
+                                            <xsl:value-of select="$archive.name"/>
+                                            <xsl:text>/Skeleton/</xsl:text><!-- TODO handle subdirectory path -->
+                                        </xsl:when>
+                                        <xsl:when test="(string-length($defaultUrlAddress) > 0)">
+                                            <xsl:value-of select="$defaultUrlAddress"/>
+                                            <xsl:if test="not(ends-with($defaultUrlAddress,'/'))">
+                                              <xsl:text>/</xsl:text>
+                                            </xsl:if>
+                                        </xsl:when>
+                                      </xsl:choose>
+                                      <xsl:value-of select="$title"/>
+                                      <xsl:if test="not(contains($title,'.'))">
+                                          <xsl:text>.x3d</xsl:text>
+                                      </xsl:if>
+                                    </xsl:when>
+                                    <xsl:otherwise>
+                                        <xsl:text>*enter online Uniform Resource Identifier (URI) or Uniform Resource Locator (URL) address for this file here*</xsl:text>
+                                    </xsl:otherwise>
+                                  </xsl:choose>
+                                </xsl:variable>
+                                <xsl:message>
+                                    <xsl:text disable-output-escaping="yes">*** insert: head and default meta elements</xsl:text>
+                                </xsl:message>
+  <head>
+    <!-- Authors need to replace asterisked values or delete unneeded meta tags as appropriate -->
+    <meta content='{$title}.x3d' name='title'/>
+    <meta content='*enter description here, short-sentence summaries preferred*' name='description'/>
+    <!--
+    <meta content='Joe Williams, Damon Hernandez' name='creator'/>
+    <meta content='Don Brutzman' name='translator'/>
+    <meta content='5 December 2013' name='created'/>
+    <meta content='5 March 2026' name='translated'/>
+    -->
+    <meta content='*enter name of original author here, with separate entries for multiple authors*' name='creator'/>
+    <meta content='*if translating from another format, enter name of person translating here*' name='translator'/>
+    <meta content='*enter date of initial version here*' name='created'/>
+    <meta content='*enter date of translation here*' name='translated'/>
+    <meta content='{$todaysDate}' name='modified'/>
+    <meta content='originals/TODO.x3d' name='reference'/>
+    <meta content='*enter reference citation or relative/online url here*' name='reference'/>
+    <meta content='*note any hints to authors here*' name='hint'/>
+    <meta content='*note any additional information here*' name='info'/>
+    <meta content='*note any known warnings or issues here*' name='warning'/>
+    <meta content='*note any known errors or problems here*' name='error'/>
+    <meta content='X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
+    <meta content='X3D Tidy, https://www.web3d.org/x3d/stylesheets/X3dTidy.html' name='generator'/>
+    <meta content='{$metaIdentifier}' name='identifier'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+                                <xsl:apply-templates select="* | comment()"/>
+                            </xsl:when>
                             <xsl:when test="(local-name()='Script') and (string-length(normalize-space(text())) > 0) and not(string-length(@USE) > 0)">
                                 <!-- handle Script nodes -->
 
@@ -2834,6 +2957,18 @@ Recommended tools:
                 <xsl:apply-templates select="@nodeField"/>
                 <xsl:apply-templates select="@protoField"/>
             </xsl:when>
+            <!-- first top-level TouchSensor node within Scene: if no description found, then add title as description -->
+            <xsl:when test="(local-name()='TouchSensor') and (local-name(..)='Scene') and (count(preceding-sibling::TouchSensor) = 0) and 
+                            (string-length(@description) = 0)">
+                <xsl:text> description="</xsl:text>
+                <xsl:value-of select="$title"/>
+                <xsl:text>"</xsl:text>
+                <xsl:message>
+                    <xsl:text>*** add &lt;TouchSensor description='</xsl:text>
+                    <xsl:value-of select="$title"/>
+                    <xsl:text>'/&gt;</xsl:text>
+                </xsl:message>
+            </xsl:when>
             <!-- otherwise not a special case, process DEF first and urls/containerField last -->
             <xsl:otherwise>
                 <xsl:apply-templates select="@DEF">
@@ -3478,10 +3613,10 @@ Recommended tools:
             </xsl:if>
         </xsl:variable>
         
-        <xsl:if test="(starts-with(local-name(..),'HAnim') or (local-name(..) = 'ROUTE ')) and (($isHAnim1 = true()) or ($isHAnim2 = true())) and 
-                      ((local-name() = 'DEF') or (local-name() = 'USE') or (local-name() = 'name') or (local-name() = 'fromNode') or (local-name() = 'toNode'))">
 			<!-- debug 
-            <xsl:message>
+      <xsl:if test="(starts-with(local-name(..),'HAnim') or (local-name(..) = 'ROUTE ')) and (($isHAnim1 = true()) or ($isHAnim2 = true())) and 
+                      ((local-name() = 'DEF') or (local-name() = 'USE') or (local-name() = 'name') or (local-name() = 'fromNode') or (local-name() = 'toNode'))">
+      <xsl:message>
 				<xsl:text>*** [debug] @* processing for </xsl:text>
 				<xsl:value-of select="$nodeName"/>
 				<xsl:text> </xsl:text>
@@ -3513,8 +3648,8 @@ Recommended tools:
                     <xsl:text>'</xsl:text>
                 </xsl:if>
 			</xsl:message>
-            -->
-        </xsl:if>
+      </xsl:if>
+      -->
 		<xsl:choose>
 			<xsl:when test="(contains(local-name(), 'otation') or contains(local-name(), 'rientation')) and ((. = '0 0 0 0') or (. = '0.0 0.0 0.0 0.0') or
                                (. = '-0 0 0 0') or (. = '0 -0 0 0') or (. = '0 0 -0 0') or (. = '0 0 0 -0'))">
@@ -3612,6 +3747,7 @@ Recommended tools:
                       not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='shadows' and string(.)='false') and
                       not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='smooth' and string(.)='true') and
                       not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -3711,7 +3847,8 @@ Recommended tools:
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='Inline'         and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='InlineGeometry' and ((local-name()='load' and string(.)='true') or (local-name()='solid' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -4223,8 +4360,8 @@ Recommended tools:
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
                        (local-name()='scaleOrientation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
-                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        ((local-name()='ulimit' or local-name()='llimit') and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
+                       (local-name()='stiffness' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='translation' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')))) and
                       not( local-name(..)='HAnimSegment' and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -4734,12 +4871,16 @@ Recommended tools:
             <!-- attribute of interest found, show it -->
             <xsl:text> </xsl:text>
 			
-            <xsl:variable name="attributeName"     select="local-name()"/>
-            <xsl:variable name="parentElementName" select="local-name(..)"/>
-            <xsl:variable name="attributeValue"    select="."/>
-            <xsl:variable name="fieldValueName"    select="../@name"/>
-            <xsl:variable name="protoInstanceName" select="(../../@name)"/>
-            <xsl:variable name="fieldValueType1"   select="      //ProtoDeclare[@name = $protoInstanceName][1]/ProtoInterface/field[@name=$fieldValueName][1]/@type"/>
+            <xsl:variable name="attributeName"      select="local-name()"/>
+            <xsl:variable name="parentElementName"  select="local-name(..)"/>
+            <xsl:variable name="attributeValue"     select="."/>
+            <xsl:variable name="embeddedSpaceCount" select="string-length(normalize-space(string(.))) - string-length(translate(string(.),' ',''))"/>
+            <!-- X3D permits commas as whitespace in numeric arrays -->
+            <xsl:variable name="isNumeric"          select="(string-length(translate(string(.),'0123456789+-Ee., ','')) = 0)"/>
+        
+            <xsl:variable name="fieldValueName"     select="../@name"/>
+            <xsl:variable name="protoInstanceName"  select="(../../@name)"/>
+            <xsl:variable name="fieldValueType1"    select="      //ProtoDeclare[@name = $protoInstanceName][1]/ProtoInterface/field[@name=$fieldValueName][1]/@type"/>
             <xsl:variable name="fieldValueType2"   select="//ExternProtoDeclare[@name = $protoInstanceName][1]               /field[@name=$fieldValueName][1]/@type"/>
             <!-- only one of these should be available -->
             <xsl:variable name="fieldValueType"    select="concat($fieldValueType1,$fieldValueType2)"/>
@@ -4788,6 +4929,7 @@ Recommended tools:
                 <xsl:value-of select="$isMFString"/>
             </xsl:message>
             -->
+
             <xsl:if test="(local-name(..)='X3D' and local-name()='noNamespaceSchemaLocation')">
                 <!-- xmlns:xsd attribute typically not seen, so insert it -->
                 <xsl:text>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'</xsl:text>
@@ -5452,6 +5594,38 @@ Recommended tools:
             <!-- keep output form simple, consistent, canonical -->
             <!-- *** apply attribute value overrides, if any *** -->
             <xsl:choose>
+                <xsl:when test="($isNumeric) and ($embeddedSpaceCount ge 0) and contains(.,'.') and ($numberSignificantDigitsEnabled = 'true') and
+                                not(local-name() = 'version') and not(starts-with(local-name(..), 'Metadata')) and not(contains(../@name, 'ersion'))">
+                    <xsl:variable name="regexResult">
+                      <xsl:call-template name="reduceNumberSignificantDigits">
+                          <xsl:with-param name="inputString" select="."/>
+                      </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:value-of select="normalize-space($regexResult)"/><!-- trim leading space character -->
+                    <!-- debug -->
+                    <xsl:if test="not(. = normalize-space($regexResult))">
+                      <xsl:message>
+                        <xsl:text>*** floating-point precision change: </xsl:text>
+                        <xsl:value-of select='local-name(..)'/>
+                        <xsl:text> </xsl:text>
+                        <xsl:value-of select='local-name()'/>
+                        <xsl:text>='</xsl:text>
+                        <xsl:value-of select='substring(., 1, 40)'/><!-- trim leading space character, truncate long arrays in debug log -->
+                        <xsl:if test="(string-length(.) > 40)">
+                            <xsl:text> [...]</xsl:text>
+                        </xsl:if>
+                        <xsl:text>'</xsl:text>
+                        <xsl:text> to </xsl:text>
+                        <xsl:text>'</xsl:text>
+                        <xsl:value-of select='substring(normalize-space($regexResult), 1, 40)'/><!-- trim leading space character -->
+                        <xsl:if test="(string-length(normalize-space($regexResult)) > 40)">
+                            <!-- truncate long arrays in debug log -->
+                            <xsl:text> [...]</xsl:text>
+                        </xsl:if>
+                        <xsl:text>'</xsl:text>
+                      </xsl:message>
+                    </xsl:if>
+                </xsl:when>
                 <xsl:when test="(normalize-space(string(.)) = 'TRUE') or (normalize-space(string(.)) = 'FALSE')">
                     <xsl:value-of select='lower-case(.)'/>
                     <xsl:message>
@@ -6593,6 +6767,7 @@ Recommended tools:
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
+                
                 <!-- TODO how to handle case where generateMipMaps is not defined and has devalue value of false? -->
                 <!-- *** new fixes: other new attribute-value rules go here *** -->
                 
@@ -8361,6 +8536,323 @@ Recommended tools:
                     <xsl:text> with containerField='texCoordRamp' rather than 'texCoord', which is the only allowed value in X3D4</xsl:text>
                 </xsl:message>
             </xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="reduceNumberSignificantDigits">
+        <xsl:param name="inputString"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        
+        <!-- debug
+        <xsl:message>
+          <xsl:text>*** reduceNumberSignificantDigits</xsl:text>
+          <xsl:text> $roundoffValue='</xsl:text>
+          <xsl:value-of select="$roundoffValue"/>
+          <xsl:text>'</xsl:text>
+        </xsl:message>
+        -->
+        <xsl:choose>
+          <xsl:when test="(string-length(normalize-space($inputString)) = 0)">
+            <!-- nothing here, return -->
+          </xsl:when>
+          <xsl:when test="not(contains($inputString,' '))">
+              <!-- now processing last element, termination condition -->
+              <xsl:variable name="roundedValue">
+                <xsl:choose>
+                  <xsl:when test="(number(normalize-space($inputString)) lt 0)">
+                    <!-- round down, negative number -->
+                    <xsl:value-of select="string(number(normalize-space($inputString)) - number($roundoffValue))"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <!-- round up, positive number -->
+                    <xsl:value-of select="string(number(normalize-space($inputString)) + number($roundoffValue))"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:variable name="reducedResult">
+                <xsl:call-template name="reducePrecisionSingleValue">
+                    <xsl:with-param name="inputValue">
+                      <!-- apply regex and return value -->
+                      <xsl:value-of select="$roundedValue"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+              </xsl:variable>
+              <!-- debug 
+                <xsl:text> $numberSignificantDigitsPrecision=</xsl:text>
+                <xsl:value-of select="$numberSignificantDigitsPrecision"/>
+              
+              <xsl:message>
+                <xsl:text>*** reduceNumberSignificantDigits (branch 1, no space character)</xsl:text>
+                <xsl:text>, $inputString='</xsl:text>
+                <xsl:value-of select="$inputString"/>
+                <xsl:text>', $roundedValue=</xsl:text>
+                <xsl:value-of select="$roundedValue"/>
+                <xsl:text>, $reducedResult=</xsl:text>
+                <xsl:value-of select="normalize-space($reducedResult)"/>
+                <xsl:text>, $appendTrailingZeros=</xsl:text>
+                <xsl:value-of select="$appendTrailingZeros"/>
+              </xsl:message>
+              -->
+              <xsl:choose>
+                <xsl:when test="($appendTrailingZeros = 'true')">
+                    <!-- trailing zeros are already produced as byproduct of the roundoff process, so no further manipulation needed -->
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="$reducedResult"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- eliminate trailing zeros and decimal point, if any -->
+                    <xsl:if test='starts-with($reducedResult," ")'>
+                      <xsl:text> </xsl:text>
+                    </xsl:if>
+                    <xsl:call-template name="escape-trailing-zeros-decimal-point">
+                        <xsl:with-param name="inputValue" select="$reducedResult"/>
+                    </xsl:call-template>
+                </xsl:otherwise>
+              </xsl:choose>
+          </xsl:when>
+          <xsl:otherwise>
+              <!-- process and return first element, then recurse on remainder -->
+              <xsl:variable name="initialValue" select="substring-before(normalize-space($inputString),' ')"/>
+              <xsl:variable name="roundedValue">
+                <xsl:choose>
+                  <xsl:when test="(number(normalize-space($initialValue)) lt 0)">
+                    <!-- round down, negative number -->
+                    <xsl:value-of select="string(number(normalize-space($initialValue)) - number($roundoffValue))"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <!-- round up, positive number -->
+                    <xsl:value-of select="string(number(normalize-space($initialValue)) + number($roundoffValue))"/>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </xsl:variable>
+              <xsl:variable name="reducedResult">
+                <xsl:call-template name="reducePrecisionSingleValue">
+                    <xsl:with-param name="inputValue">
+                      <!-- apply regex and return value -->
+                      <xsl:value-of select="$roundedValue"/>
+                    </xsl:with-param>
+                </xsl:call-template>
+              </xsl:variable>
+              <!-- debug 
+              <xsl:message>
+                <xsl:text>*** reduceNumberSignificantDigits (branch 2, contains space character)</xsl:text>
+                <xsl:text> $initialValue='</xsl:text>
+                <xsl:value-of select="$initialValue"/>
+                <xsl:text>', $roundedValue=</xsl:text>
+                <xsl:value-of select="$roundedValue"/>
+                <xsl:text>, $reducedResult=</xsl:text>
+                <xsl:value-of select="normalize-space($reducedResult)"/>
+                <xsl:text>, $appendTrailingZeros=</xsl:text>
+                <xsl:value-of select="$appendTrailingZeros"/>
+              </xsl:message>
+              -->
+              <xsl:choose>
+                  <xsl:when test="($appendTrailingZeros = 'true')">
+                      <!-- debug 
+                      <xsl:message>
+                        <xsl:text>*** ($appendTrailingZeros = 'true') </xsl:text>
+                        <xsl:value-of select="normalize-space($reducedResult)"/>
+                      </xsl:message>
+                      -->
+                      <xsl:if test='starts-with($reducedResult," ")'>
+                        <xsl:text> </xsl:text>
+                      </xsl:if>
+                      <xsl:call-template name="append-trailing-zeros-decimal-point">
+                          <xsl:with-param name="inputValue" select="$reducedResult"/>
+                      </xsl:call-template>
+                      <!-- recurse on remainder, if any -->
+                      <xsl:call-template name="reduceNumberSignificantDigits">
+                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString, ' '))"/>
+                      </xsl:call-template>
+                  </xsl:when>
+                  <xsl:otherwise>
+                      <!-- default case is usually best ($appendTrailingZeros = 'true') -->
+                      <!-- debug
+                      <xsl:message>
+                        <xsl:text>*** ($appendTrailingZeros = '</xsl:text>
+                        <xsl:value-of select="$appendTrailingZeros"/>
+                        <xsl:text>') (default case) </xsl:text>
+                        <xsl:value-of select="normalize-space($reducedResult)"/>
+                      </xsl:message>
+                      -->
+                      <xsl:call-template name="escape-trailing-zeros-decimal-point">
+                          <xsl:with-param name="inputValue" select="$reducedResult"/>
+                      </xsl:call-template>
+                      <!-- recurse on remainder, if any -->
+                      <xsl:call-template name="reduceNumberSignificantDigits">
+                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString, ' '))"/>
+                      </xsl:call-template>
+                  </xsl:otherwise>
+              </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:template>
+
+    <xsl:template name="reducePrecisionSingleValue">
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+           
+        <xsl:choose>
+          <xsl:when test="not($numberSignificantDigitsEnabled = 'true')">
+              <!-- no conversion is enabled, simply return string value -->
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="$inputValue"/>
+              <xsl:message>
+                <xsl:text>($numberSignificantDigitsEnabled = '</xsl:text>
+                <xsl:value-of select="$numberSignificantDigitsEnabled"/>
+                <xsl:text>'), no conversion is enabled</xsl:text>
+              </xsl:message>
+          </xsl:when>
+          <xsl:otherwise>
+            <!-- https://www.saxonica.com/html/documentation12/xsl-elements/analyze-string.html -->
+            <!-- XSLT 3.0 xsl:analyze-string      https://www.w3.org/TR/xslt-30/#analyze-string -->
+            <!-- XSLT 3.0 regex matching examples https://www.w3.org/TR/xslt-30/#regex-examples -->
+            <!-- Saxonica issue report https://saxonica.plan.io/issues/7018 -->
+            <xsl:analyze-string select="normalize-space($inputValue)" regex="{$reducePrecisionRegex}" flags="i">
+              <xsl:matching-substring>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="regex-group(1)"/><!-- significand, no decimal point -->
+                <xsl:value-of select="regex-group(2)"/><!-- mantissa, reduced-precision floats with leading decimal point -->
+                <xsl:value-of select="regex-group(3)"/><!-- scientific notation exponent, for example E+01 -->
+                <!-- debug
+                <xsl:text> found match! </xsl:text>
+                <xsl:message>
+                    <xsl:text>*** match: regex=</xsl:text>
+                    <xsl:value-of select="$reducePrecisionRegex"/>
+                    <xsl:text> precision=</xsl:text>
+                    <xsl:value-of select="$numberSignificantDigitsPrecision"/>
+                    <xsl:text>, convert </xsl:text>
+                    <xsl:value-of select="$inputValue"/>
+                    <xsl:text> to </xsl:text>
+                    <xsl:value-of select="regex-group(1)"/>
+                    <xsl:value-of select="regex-group(2)"/>
+                    <xsl:value-of select="regex-group(3)"/>
+                </xsl:message>
+                -->
+              </xsl:matching-substring>
+              <!-- non-matching should not occur if numeric value received -->
+              <xsl:non-matching-substring>
+                <xsl:text> </xsl:text>
+                <xsl:value-of select="$inputValue"/>
+                <xsl:message>
+                    <xsl:text>*** nonmatch: regex=</xsl:text>
+                    <xsl:value-of select="$reducePrecisionRegex"/>
+                    <xsl:text> precision=</xsl:text>
+                    <xsl:value-of select="$numberSignificantDigitsPrecision"/>
+                    <xsl:text> value=</xsl:text>
+                    <xsl:value-of select="$inputValue"/>
+                </xsl:message>
+              </xsl:non-matching-substring>
+            </xsl:analyze-string>
+          </xsl:otherwise>
+        </xsl:choose>
+        
+    </xsl:template>
+
+    <xsl:template name="escape-trailing-zeros-decimal-point">
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
+        <!-- debug:
+        <xsl:if test='contains($inputString,".")'>
+             <xsl:message>
+                    <xsl:text>*** escape-trailing-zeros-decimal-point: received </xsl:text>
+                    <xsl:value-of select='$inputString'/>
+             </xsl:message>
+        </xsl:if>
+        -->
+        <xsl:choose>
+            <xsl:when test='starts-with($inputString,".")'>
+                <!-- prepend 0 to decimal point and try again -->
+                <xsl:message>
+                       <xsl:text>*** float value starts-with . so prepend 0 to decimal point and try again, </xsl:text>
+                       <xsl:value-of select='concat("0",$inputString)'/>
+                </xsl:message>
+                <xsl:call-template name="escape-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat("0",$inputString)'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test='starts-with($inputString," .")'>
+                <!-- prepend 0 to decimal point and try again -->
+                <xsl:message>
+                       <xsl:text>*** float value starts-with "[blank].+ so prepend 0 to decimal point and try again,</xsl:text>
+                       <xsl:value-of select='concat(" 0",normalize-space($inputString))'/>
+                </xsl:message>
+                <xsl:call-template name="escape-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat(" 0",normalize-space($inputString))'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test='ends-with($inputString,".")'>
+                <!-- return everything prior to solitary trailing decimal point, all done -->
+                <xsl:value-of select='substring($inputString,1,string-length($inputString) - 1)'/>
+            </xsl:when>
+            <xsl:when test='not(contains($inputString,".")) or (string-length($inputString) le 1) or contains($inputString,"E") or contains($inputString,"e")'>
+                <!-- no decimal point, short values or values with scientific exponents are ignored: return original, all done -->
+                <xsl:value-of select='$inputString' disable-output-escaping="yes"/>
+            </xsl:when>
+            <xsl:when test='ends-with($inputString,"0")'>
+                <!-- strip trailing zero and recurse -->
+                <xsl:call-template name="escape-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='substring($inputString,1,string-length($inputString) - 1)'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- return original, all done -->
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+
+    <xsl:template name="append-trailing-zeros-decimal-point">
+        <xsl:param name="inputValue"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
+        <xsl:variable name="inputString" select="string($inputValue)"/>
+        <!-- debug:
+        <xsl:if test='contains($inputString,".") and (string-length(substring-after($inputString,".")) lt number($numberSignificantDigitsPrecision))'>
+             <xsl:message>
+                    <xsl:text>*** append-trailing-zeros-decimal-point received </xsl:text>
+                    <xsl:value-of select='$inputString'/>
+             </xsl:message>
+        </xsl:if>
+        -->
+        <xsl:choose>
+            <xsl:when test='starts-with($inputString,".")'>
+                <!-- prepend 0 to decimal point and try again -->
+                <xsl:message>
+                       <xsl:text>*** starts-with . so prepend 0 to decimal point and try again, </xsl:text>
+                       <xsl:value-of select='concat("0",$inputString)'/>
+                </xsl:message>
+                <xsl:call-template name="append-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat("0",$inputString)'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test='starts-with($inputString," .")'>
+                <!-- prepend 0 to decimal point and try again -->
+                <xsl:message>
+                       <xsl:text>*** float value starts-with "[blank].+ so prepend 0 to decimal point and try again,</xsl:text>
+                       <xsl:value-of select='concat(" 0",normalize-space($inputString))'/>
+                </xsl:message>
+                <xsl:call-template name="append-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat(" 0",normalize-space($inputString))'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test='contains($inputString,"E") or contains($inputString,"e")'>
+                <!-- values with scientific exponents are ignored: return original, all done -->
+                <xsl:value-of select='$inputString' disable-output-escaping="yes"/>
+            </xsl:when>
+            <xsl:when test='not(contains($inputString,".")) or (string-length($inputString) le 1)'>
+                <!-- no decimal point, short values: append decimal point and try again -->
+                <xsl:call-template name="append-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat(" ",normalize-space($inputString),".")'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:when test='(string-length(substring-after($inputString,".")) lt number($numberSignificantDigitsPrecision))'>
+                <!-- add trailing zero and recurse -->
+                <xsl:call-template name="append-trailing-zeros-decimal-point"> <!-- tail recursion -->
+                    <xsl:with-param name="inputValue" select='concat($inputString,"0")'/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise>
+                <!-- return original, all done -->
+                <xsl:value-of select="$inputString" disable-output-escaping="yes"/>
+            </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
 

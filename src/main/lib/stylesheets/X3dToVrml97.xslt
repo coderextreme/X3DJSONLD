@@ -5876,6 +5876,7 @@ EXTERNPROTO TransmitterPdu [
                       not( local-name()='tailTime' and (string(.)='0' or string(.)='0.0')) and
                       not( local-name()='shadows' and string(.)='false') and
                       not( local-name()='shadowIntensity' and (string(.)='1' or string(.)='1.0')) and
+                      not( local-name()='smooth' and string(.)='true') and
                       not( local-name()='visible' and string(.)='true') and
                       not( local-name(..)='AudioClip'	and
                       ((local-name()='loop' and string(.)='false') or
@@ -5975,7 +5976,8 @@ EXTERNPROTO TransmitterPdu [
                       (local-name()='solid' and string(.)='true') or
                       (local-name()='creaseAngle' and (string(.)='0' or string(.)='0.0')))) and
                       not( local-name(..)='IndexedLineSet' and local-name()='colorPerVertex' and string(.)='true') and
-                      not( local-name(..)='Inline' and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='Inline'         and ((local-name()='load' and string(.)='true') or (local-name()='global' and string(.)='false'))) and
+                      not( local-name(..)='InlineGeometry' and ((local-name()='load' and string(.)='true') or (local-name()='solid' and string(.)='false'))) and
                       not( local-name(..)='LoadSensor' and
                       ((local-name()='enabled' and string(.)='true') or
                       (local-name()='timeOut' and (string(.)='0' or string(.)='0.0')))) and
@@ -7604,6 +7606,7 @@ EXTERNPROTO TransmitterPdu [
 			($attributeName='load')     or
 			($attributeName='loop') or
       			($attributeName='solid') or
+                    ($attributeName='smooth')            or
       			($parentElementName='AudioClip' and $attributeName='loop') or
 			($parentElementName='BooleanToggle' and $attributeName='toggle') or
       			($parentElementName='Collision' and $attributeName='enabled') or

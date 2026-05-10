@@ -1233,19 +1233,19 @@ Recommended tool:
                             <!-- avoid duplicating overrides (e.g. UnlitMaterial emissiveColor) -->
                             <xsl:choose>
                                 <xsl:when test="($concreteNodeName = 'UnlitMaterial') and (@name = 'emissiveColor') and (@default = '0 0 0')">
-                                <xsl:message>
-                                    <!-- hack filter -->
-                                    <xsl:text>****** skipping overridded UnlitMaterial emissiveColor '0 0 0' </xsl:text>
-                                </xsl:message>
-                                <xsl:text>&#10;</xsl:text>
-                                <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
-                                <xsl:text>&#10;</xsl:text>
-                                    <xsl:call-template name="doField">
-                                        <xsl:with-param name="containerName" select="$concreteNodeName"/>
-                                    </xsl:call-template>
-                                <xsl:text>&#10;</xsl:text>
-                                <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
-                                <xsl:text>&#10;</xsl:text>
+                                    <xsl:message>
+                                        <!-- hack filter -->
+                                        <xsl:text>****** skipping overridden UnlitMaterial emissiveColor '0 0 0' </xsl:text>
+                                    </xsl:message>
+                                    <xsl:text>&#10;</xsl:text>
+                                    <xsl:text disable-output-escaping="yes">&lt;!--</xsl:text>
+                                    <xsl:text>&#10;</xsl:text>
+                                        <xsl:call-template name="doField">
+                                            <xsl:with-param name="containerName" select="$concreteNodeName"/>
+                                        </xsl:call-template>
+                                    <xsl:text>&#10;</xsl:text>
+                                    <xsl:text disable-output-escaping="yes">--&gt;</xsl:text>
+                                    <xsl:text>&#10;</xsl:text>
                                 </xsl:when>
                                 <xsl:when test="(count(preceding-sibling::*[@name = $fieldName]) = 0)">
                                     <xsl:call-template name="doField">
