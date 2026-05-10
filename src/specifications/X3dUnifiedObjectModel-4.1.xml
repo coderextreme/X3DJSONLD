@@ -2,7 +2,7 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.1 of X3D -->
-<!-- Generated 2026-05-01-07:00 08:36:03.2070357-07:00 -->
+<!-- Generated 2026-05-05-07:00 19:39:54.4311219-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.1"
                        xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
@@ -3557,6 +3557,7 @@
          <enumeration value="rootUrl"/>
          <enumeration value="rotateYUp"/>
          <enumeration value="size"/>
+         <enumeration value="smooth"/>
          <enumeration value="sortOrder"/>
          <enumeration value="spatialize"/>
          <enumeration value="specific"/>
@@ -3668,6 +3669,7 @@
          <enumeration value="backUrl"/>
          <enumeration value="baseColor"/>
          <enumeration value="baseTextureMapping"/>
+         <enumeration value="bboxDisplay"/>
          <enumeration value="beamWidth"/>
          <enumeration value="bottom"/>
          <enumeration value="bottomTexture"/>
@@ -3692,9 +3694,9 @@
          <enumeration value="channelInterpretation"/>
          <enumeration value="channelSelection"/>
          <enumeration value="channelsEnabled"/>
-         <enumeration value="gain"/>
          <enumeration value="collisionType"/>
          <enumeration value="color"/>
+         <enumeration value="colorDepth"/>
          <enumeration value="colorSteps"/>
          <enumeration value="coneInnerAngle"/>
          <enumeration value="coneOuterAngle"/>
@@ -3717,6 +3719,7 @@
          <enumeration value="delayTime"/>
          <enumeration value="deletionAllowed"/>
          <enumeration value="depth"/>
+         <enumeration value="depthMap"/>
          <enumeration value="description"/>
          <enumeration value="desiredAngularVelocity1"/>
          <enumeration value="desiredAngularVelocity2"/>
@@ -3735,8 +3738,6 @@
          <enumeration value="disableTime"/>
          <enumeration value="diskAngle"/>
          <enumeration value="displacements"/>
-         <enumeration value="bboxDisplay"/>
-         <enumeration value="detune"/>
          <enumeration value="displayed"/>
          <enumeration value="distanceModel"/>
          <enumeration value="easeInEaseOut"/>
@@ -3862,6 +3863,7 @@
          <enumeration value="maxDistance"/>
          <enumeration value="maxExtent"/>
          <enumeration value="maxFront"/>
+         <enumeration value="maxNumberFrames"/>
          <enumeration value="maxParticles"/>
          <enumeration value="maxPosition"/>
          <enumeration value="maxSeparation"/>
@@ -3954,6 +3956,7 @@
          <enumeration value="refraction"/>
          <enumeration value="relativeAntennaLocation"/>
          <enumeration value="release"/>
+         <enumeration value="replaceImage"/>
          <enumeration value="retainedOpacity"/>
          <enumeration value="retainUserOffsets"/>
          <enumeration value="resumeTime"/>
@@ -3978,6 +3981,7 @@
          <enumeration value="silhouetteBoundaryOpacity"/>
          <enumeration value="silhouetteRetainedOpacity"/>
          <enumeration value="silhouetteSharpness"/>
+         <enumeration value="singleFrame"/>
          <enumeration value="siteID"/>
          <enumeration value="size"/>
          <enumeration value="sizeUnits"/>
@@ -4057,6 +4061,7 @@
          <enumeration value="ulimit"/>
          <enumeration value="upVector"/>
          <enumeration value="update"/>
+         <enumeration value="updateInterval"/>
          <enumeration value="url"/>
          <enumeration value="useFiniteRotation"/>
          <enumeration value="useGeometry"/>
@@ -4083,6 +4088,7 @@
          <enumeration value="weightFunction2"/>
          <enumeration value="whichChoice"/>
          <enumeration value="whichGeometry"/>
+         <enumeration value="width"/>
          <enumeration value="writeInterval"/>
          <enumeration value="yScale"/>
       </SimpleType>
@@ -5330,11 +5336,6 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/networking.html#X3DUrlOutputObject"
                               appinfo="X3DUrlOutputObject indicates that a node publish data on the local file system or to a network address.">
             <componentInfo name="Networking" level="4"/>
-            <field name="description" type="SFString" accessType="inputOutput"/>
-            <field name="enabled"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="true"/>
             <field name="url" type="MFString" accessType="inputOutput">
                <componentInfo name="Networking" level="4"/>
             </field>
@@ -9451,6 +9452,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -14747,6 +14749,7 @@
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="ProtoInstance"/>
                <NodeContentModel name="TextureProperties"/>
@@ -14933,8 +14936,9 @@
                <NodeContentModel name="TextureProperties"/>
                <NodeContentModel name="ProtoInstance"/>
                <NodeContentModel name="ImageTexture"/>
-               <NodeContentModel name="PixelTexture"/>
                <NodeContentModel name="MovieTexture"/>
+               <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -25048,11 +25052,13 @@
                    minInclusive="0"
                    inheritedFrom="X3DUrlObject"
                    description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur."/>
+            <field name="colorDepth" type="SFInt32" accessType="outputOnly"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DTextureNode"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
+            <field name="height" type="SFInt32" accessType="outputOnly"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -25098,6 +25104,7 @@
                    description="Location and filename of image.">
                <componentInfo name="Networking" level="4"/>
             </field>
+            <field name="width" type="SFInt32" accessType="outputOnly"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -25155,11 +25162,14 @@
                    minInclusive="0"
                    inheritedFrom="X3DUrlObject"
                    description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur."/>
+            <field name="colorDepth" type="SFInt32" accessType="outputOnly"/>
+            <field name="depth" type="SFInt32" accessType="outputOnly"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
                    inheritedFrom="X3DTextureNode"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
+            <field name="height" type="SFInt32" accessType="outputOnly"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -25211,6 +25221,7 @@
                    description="Location and filename of image.">
                <componentInfo name="Networking" level="4"/>
             </field>
+            <field name="width" type="SFInt32" accessType="outputOnly"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -26264,7 +26275,7 @@
                    description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
             <field name="smooth"
                    type="SFBool"
-                   accessType="inputOutput"
+                   accessType="initializeOnly"
                    default="true"
                    description="The smooth field provides a hint to the browser whether smooth rendering is preferred for a retrieved polygonal mesh."/>
             <field name="solid"
@@ -28202,6 +28213,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -29072,6 +29084,7 @@
                    minInclusive="0"
                    inheritedFrom="X3DUrlObject"
                    description="autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur."/>
+            <field name="colorDepth" type="SFInt32" accessType="outputOnly"/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -29100,6 +29113,8 @@
                    default="1"
                    inheritedFrom="X3DSoundSourceNode"
                    description="The gain field is a factor that represents the amount of linear amplification to apply to the output of the node."/>
+            <field name="hasSound" type="SFInt32" accessType="outputOnly"/>
+            <field name="height" type="SFInt32" accessType="outputOnly"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -29200,6 +29215,7 @@
                    description="Location and filename of movie file or stream.">
                <componentInfo name="Networking" level="4"/>
             </field>
+            <field name="width" type="SFInt32" accessType="outputOnly"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -29365,6 +29381,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ComposedCubeMapTexture"/>
                <NodeContentModel name="GeneratedCubeMapTexture"/>
                <NodeContentModel name="ImageCubeMapTexture"/>
@@ -32076,6 +32093,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -34694,14 +34712,16 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
-<!--
       <ConcreteNode name="RenderedTexture">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#RenderedTexture"
                               appinfo="RenderedTexture is a texture node that renders the view from a local viewpoint or separate scene into an offscreen buffer, producing an image or depth map that can be rendered from model geometry in real time.">
             <componentInfo name="Texturing" level="4"/>
             <Inheritance baseType="X3DTexture2DNode"/>
             <AdditionalInheritance baseType="X3DUrlOutputObject"/>
-            <AdditionalInheritance baseType="X3DNetworkSensorNode"/>
+            <field name="colorDepth"
+                   type="SFInt32"
+                   accessType="inputOutput"
+                   default="4"/>
             <field name="depthMap"
                    type="SFBool"
                    accessType="inputOutput"
@@ -34712,24 +34732,22 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DTextureNode"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
-            <field name="dimensions"
-                   type="MFInt32"
-                   accessType="inputOutput"
-                   default="128 128 4"
-                   description="sets values for width, height, and number of color components [1."/>
-            <field name="enabled"
-                   type="SFBool"
-                   accessType="inputOutput"
-                   default="true"
-                   inheritedFrom="X3DUrlOutputObject,X3DUrlOutputObject,X3DNetworkSensorNode"
-                   description="Enables/disables node operation."/>
+            <field name="height"
+                   type="SFInt32"
+                   accessType="initializeOnly"
+                   default="128"/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="IS"
                    inheritedFrom="X3DNode"/>
-            <field name="maximumNumberFrames"
+            <field name="isActive"
+                   type="SFBool"
+                   accessType="outputOnly"
+                   inheritedFrom="X3DUrlOutputObject"
+                   description="provides a TRUE event when the data output process becomes active, and a FALSE event when the data output process is stopped."/>
+            <field name="maxNumberFrames"
                    type="SFInt32"
                    accessType="inputOutput"
                    default="1000"
@@ -34758,6 +34776,10 @@
                    accessType="inputOutput"
                    default="true"
                    description="Whether only a single updated image file or multiple image files can be saved."/>
+            <field name="singleFrame"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"/>
             <field name="textureProperties"
                    type="SFNode"
                    accessType="initializeOnly"
@@ -34789,6 +34811,10 @@
                    description="The url field typically defines a relative address to a file name that can be used for storing one or more rendered textures, and can also provide a destination for output of successive image files as a video file or video stream.">
                <componentInfo name="Networking" level="4"/>
             </field>
+            <field name="width"
+                   type="SFInt32"
+                   accessType="inputOutput"
+                   default="128"/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -34826,7 +34852,6 @@
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
--->
       <ConcreteNode name="RigidBody">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rigidBodyPhysics.html#RigidBody"
                               appinfo="RigidBody describes a collection of shapes with a mass distribution that is affected by the physics model.">
@@ -39382,6 +39407,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
@@ -39545,6 +39571,7 @@
                <NodeContentModel name="ImageTexture"/>
                <NodeContentModel name="MovieTexture"/>
                <NodeContentModel name="PixelTexture"/>
+               <NodeContentModel name="RenderedTexture"/>
                <NodeContentModel name="ProtoInstance"/>
             </ContentModel>
          </InterfaceDefinition>
