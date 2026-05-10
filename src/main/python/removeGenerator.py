@@ -187,10 +187,10 @@ class ClassPrinter:
             astr += "\t}\n"
             jstr += astr
             jstr += "}\n"
-            java = open("C:/Users/jcarl/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
+            java = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
             java.write(jstr)
             java.close()
-            java = open("C:/Users/jcarl/X3DJSONLD/src/main/java/net/coderextreme/New"+self.node.get("name")+".java", "w")
+            java = open("/home/yottzumm/X3DJSONLD/src/main/java/net/coderextreme/remove/New"+self.node.get("name")+".java", "w")
             java.write(jstr)
             java.close()
         self.printed = True
@@ -262,9 +262,9 @@ code += '''
 '''
 code += "}\n"
 
-f = open("C:/Users/jcarl/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
+f = open("/home/yottzumm/jaminate/Jaminate/app/src/main/java/net/coderextreme/remove/Remove.java", "w")
 f.write(code)
 f.close()
-f = open("C:/Users/jcarl/X3DJSONLD/src/main/java/net/coderextreme/Remove.java", "w")
+f = open("/home/yottzumm/X3DJSONLD/src/main/java/net/coderextreme/remove/Remove.java", "w")
 f.write(code)
 f.close()
