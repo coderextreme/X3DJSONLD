@@ -312,7 +312,7 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         convert_x3d_to_glb(sys.argv[1], sys.argv[2] if len(sys.argv)>2 else "output.glb")
     else:
-        base = "C:/Users/jcarl/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
+        base = "/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
         convert_x3d_to_glb(f"HumanoidComplete.x3d", "HumanoidComplete.glb")
         convert_x3d_to_glb(f"HumanoidCompleteShort.x3d", "HumanoidCompleteShort.glb")
 
