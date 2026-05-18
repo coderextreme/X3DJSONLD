@@ -4,7 +4,7 @@
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		xmlns:fn="http://www.w3.org/2005/xpath-functions"
         xmlns:saxon="http://saxon.sf.net"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+        xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance">
             <!--
         extension-element-prefixes="saxon xs">
                 saxon:trace="true"

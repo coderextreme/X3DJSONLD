@@ -4932,7 +4932,7 @@ Recommended tools:
 
             <xsl:if test="(local-name(..)='X3D' and local-name()='noNamespaceSchemaLocation')">
                 <!-- xmlns:xsd attribute typically not seen, so insert it -->
-                <xsl:text>xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance'</xsl:text>
+                <xsl:text>xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance'</xsl:text>
                 <!-- insert namespace prefix -->
                 <xsl:text> xsd:</xsl:text>
             </xsl:if>

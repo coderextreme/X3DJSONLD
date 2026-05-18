@@ -1455,7 +1455,7 @@ POSSIBILITY OF SUCH DAMAGE.
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>
-                                <!-- HAnimMotion -->
+        <!-- HAnimMotion -->
 				<xsl:when test="(local-name(..) = 'HAnimHumanoid') and ($containerField = 'motions')">
 					<xsl:text>.addMotions(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
@@ -1510,6 +1510,11 @@ POSSIBILITY OF SUCH DAMAGE.
 				<xsl:when test="(local-name(..) = 'Scene') and (local-name() = 'LayerSet')">
 					<!-- special handling for Scene.addLayerSet -->
 					<xsl:text>.addLayerSet(</xsl:text>
+					<xsl:apply-templates select="."/><!-- handle this node -->
+					<xsl:text>)</xsl:text>
+				</xsl:when>
+				<xsl:when test="ends-with(local-name(..), 'Viewpoint') and (local-name() = 'NavigationInfo')">
+					<xsl:text>.setNavigationInfo(</xsl:text>
 					<xsl:apply-templates select="."/><!-- handle this node -->
 					<xsl:text>)</xsl:text>
 				</xsl:when>

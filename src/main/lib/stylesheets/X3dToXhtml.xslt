@@ -5615,12 +5615,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <!-- note formatting is to avoid HTML space within linked quoted reference -->
                             <xsl:text>='</xsl:text><xsl:element name="a">
                             <xsl:attribute name="href">
-                                <xsl:text>http://www.w3.org/2001/XMLSchema-instance</xsl:text>
+                                <xsl:text>https://www.w3.org/2001/XMLSchema-instance</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
                                 <xsl:text>_blank</xsl:text>
                             </xsl:attribute>
-                            <xsl:text>http://www.w3.org/2001/XMLSchema-instance</xsl:text></xsl:element><xsl:text>'&#10;</xsl:text>
+                            <xsl:text>https://www.w3.org/2001/XMLSchema-instance</xsl:text></xsl:element><xsl:text>'&#10;</xsl:text>
                         </xsl:if>
                     </span>
                     <!-- debug

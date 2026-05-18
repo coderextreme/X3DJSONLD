@@ -263,7 +263,7 @@ Invocation:
 		  <xsl:value-of select="$elementName"/>
 		  <xsl:text> attribute '</xsl:text>
 		  <xsl:value-of select="$attributeName"/>
-		  <xsl:text>' has no corresponding *AccessTypes enumeration defined</xsl:text>
+		  <xsl:text>' has no corresponding *AccessTypes enumeration defined in .xsd schema</xsl:text>
 		 </xsl:message>
 	</xsl:when>
 	<!-- corresponding accessType is found here -->
