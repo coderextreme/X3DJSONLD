@@ -38,9 +38,15 @@ class ClassPrinter:
             self.statementContentModel = None
             self.groupContentModel = None
             self.nodeContentModel = None
+            self.appinfo = "A really abstract string thing called "+self.name
         else:
             self.name = node.get("name")
             self.node = node
+            nodeInterface = self.node.find(".//InterfaceDefinition")
+            if nodeInterface is not None:
+                self.appinfo = nodeInterface.get("appinfo").replace('"', r'\"')
+            else:
+                self.appinfo = "This node, "+self.name+", has no InterfaceDefinition.appinfo."
             self.statementContentModel = self.node.findall(".//StatementContentModel")
             self.nodeContentModel = self.node.findall(".//NodeContentModel")
             self.groupContentModel = self.node.findall(".//GroupContentModel")
@@ -146,14 +152,16 @@ class ClassPrinter:
 '''
             return str
         str = '\t\t\t\t\t"@' + field.get(namesyn) + '" : {\n'
-        #try:
-        #    if regex[field.get("type")] is not None:
-        #        str += '\t\t\t\t\t\t"pattern" : "^' + regex[field.get("type")].replace("\\", "\\\\") + '$",\n'
-        #except KeyError:
-        #    pass
+        try:
+            if field.get("type") == "SFString" and regex[field.get("type")] is not None and field.get(namesyn) != "value":
+                str += '\t\t\t\t\t\t"pattern" : "^' + regex[field.get("type")].replace("\\", "\\\\") + '$",\n'
+        except KeyError:
+            pass
+        if field.get(namesyn) == 'DEF':
+            str += '\t\t\t\t\t\t"pattern": "^[a-zA-Z_][\\\\w.-]*$",'
 
         if field.get(namesyn) != "value" or  (self.name != 'field' and self.name != 'fieldValue'):
-            if not field.get("type").startswith("MF"):
+            if field.get(namesyn) not in ('attenuation', 'size', 'direction', 'frictionCoefficients', 'scale', 'particleSize', 'plane', 'dimensions') and not field.get("type").startswith("MF") and not "Color" in field.get("type"):
                 try:
                     str += '\t\t\t\t\t\t"exclusiveMaximum" : '+field.get("maxExclusive") + ',\n'
                 except:
@@ -299,6 +307,9 @@ class ClassPrinter:
                     str += '\t\t\t\t\t\t"maxItems" : 4,\n'
                 elif field.get("type") == "MFVec4d":
                     str += '\t\t\t\t\t\t"minItems" : 4,\n'
+                elif field.get("type") == "SFMatrix4f":
+                    str += '\t\t\t\t\t\t"minItems" : 16,\n'
+                    str += '\t\t\t\t\t\t"maxItems" : 16,\n'
                 elif field.get("type") == "SFColor":
                     str += '\t\t\t\t\t\t"minItems" : 3,\n'
                     str += '\t\t\t\t\t\t"maxItems" : 3,\n'
@@ -363,12 +374,12 @@ class ClassPrinter:
                                     allTheSame = False
                 except:
                     pass
-                if allTheSame and field.get(namesyn) not in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits'):  # or an exception was thrown
+                if allTheSame and field.get(namesyn) not in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits') and not 'SFColor' in field.get('type'):  # or an exception was thrown
 
                     str += '\t\t\t\t\t\t"items": '
                     str += '{\n'
                     if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
-                        str += '\t\t\t\t\t\t"format":"iri-reference",\n'
+                        str += '\t\t\t\t\t\t"format":"uri-reference",\n'
                     if enums != []:
                         if field.get('additionalEnumerationValuesAllowed') == "true":
                             str += '\t\t\t\t\t\t"anyOf" : [ {\n'
@@ -389,6 +400,10 @@ class ClassPrinter:
                             str += '\t\t\t\t\t\t\t"default":'+firstValue+',\n'
                     str += self.printTypeMinMax(field)
                     str += '\t\t\t\t\t\t}'
+                elif field.get(namesyn) == "crossSection":
+                    str += '"default":[1, 1, 1, -1, -1, -1, -1, 1, 1, 1 ]'
+                elif field.get(namesyn) in ('avatarSize', 'orientation', 'type', 'fieldOfView', 'clipBoundary', 'spine', 'inertia'):
+                    pass
                 else:
                     str += '\t\t\t\t\t\t"prefixItems": '
                     firstTime = True
@@ -404,55 +419,57 @@ class ClassPrinter:
                                     enumobjects[s].append(sections[s])
                         else:
                             enumobjects = []
-                        for item in field.get("default")[1:-1].split('" "'):
-                            if not firstTime and len(enumobjects) <= 1:
-                               str += ',\n'
-                            if len(enumobjects) <= 1:
-                                str += '\t\t\t\t\t\t{\n'
-                            if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
-                                str += '\t\t\t\t\t\t\t\t"format":"iri-reference",\n'
-                            if enums != [] and firstTime:
-                                if len(enumobjects) > 1:
-                                    for e, en in enumerate(enumobjects):
-                                        # print(f"e = {e}", file=sys.stderr)
-                                        if e > 0:
-                                            str += '\t\t\t\t\t\t\t,\n'
-                                        str += '\t\t\t\t\t\t\t{\n'
-                                        str += '\t\t\t\t\t\t\t\t"enum": [\n'
-                                        str += '\t\t\t\t\t\t\t\t\t'
-                                        str += ',\n\t\t\t\t\t\t\t\t\t'.join(set(en))
-                                        str += '\n\t\t\t\t\t\t\t\t],\n'
+                        if field.get("default"):
+                            for item in field.get("default")[1:-1].split('" "'):
+                                if not firstTime and len(enumobjects) <= 1:
+                                   str += ',\n'
+                                if len(enumobjects) <= 1:
+                                    str += '\t\t\t\t\t\t{\n'
+                                if field.get(namesyn).endswith("url") or field.get(namesyn).endswith("Url"):
+                                    str += '\t\t\t\t\t\t\t\t"format":"uri-reference",\n'
+                                if enums != [] and firstTime:
+                                    if len(enumobjects) > 1:
+                                        for e, en in enumerate(enumobjects):
+                                            # print(f"e = {e}", file=sys.stderr)
+                                            if e > 0:
+                                                str += '\t\t\t\t\t\t\t,\n'
+                                            str += '\t\t\t\t\t\t\t{\n'
+                                            str += '\t\t\t\t\t\t\t\t"enum": [\n'
+                                            str += '\t\t\t\t\t\t\t\t\t'
+                                            str += ',\n\t\t\t\t\t\t\t\t\t'.join(set(en))
+                                            str += '\n\t\t\t\t\t\t\t\t],\n'
+                                            str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
+                                            str += '\t\t'+self.printTypeMinMax(field)
+                                            str += '\t\t\t\t\t\t\t}\n'
+                                    else:
+                                        str += '\t\t\t\t\t\t\t"enum": [\n'
+                                        str += '\t\t\t\t\t\t\t\t'
+                                        str += ',\n\t\t\t\t\t\t\t\t'.join(set(enums))
+                                        str += '\n\t\t\t\t\t\t\t],\n'
                                         str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
-                                        str += '\t\t'+self.printTypeMinMax(field)
-                                        str += '\t\t\t\t\t\t\t}\n'
-                                else:
-                                    str += '\t\t\t\t\t\t\t"enum": [\n'
-                                    str += '\t\t\t\t\t\t\t\t'
-                                    str += ',\n\t\t\t\t\t\t\t\t'.join(set(enums))
-                                    str += '\n\t\t\t\t\t\t\t],\n'
+                                        str += self.printTypeMinMax(field)
+                                elif enums == []:
                                     str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
                                     str += self.printTypeMinMax(field)
-                            elif enums == []:
-                                str += '\t\t\t\t\t\t\t\t"default":"'+item+'",\n'
-                                str += self.printTypeMinMax(field)
-                            if len(enumobjects) <= 1:
-                                str += '\t\t\t\t\t\t}'
-                            firstTime = False
-                    else:
-                        for item in field.get("default").split(' '):
-                            if firstTime:
+                                if len(enumobjects) <= 1:
+                                    str += '\t\t\t\t\t\t}'
                                 firstTime = False
-                            else:
-                                str += ',\n'
-                            str += '\t\t\t\t\t\t{\n'
-                            if enums != []:
-                                str += '\t\t\t\t\t\t\t"enum": [\n'
-                                str += '\t\t\t\t\t\t\t\t'
-                                str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
-                                str += '\n\t\t\t\t\t\t\t],\n'
-                            str += '\t\t\t\t\t\t\t"default":'+item+',\n'
-                            str += self.printTypeMinMax(field)
-                            str += '\t\t\t\t\t\t}\n'
+                    else:
+                        if field.get("default"):
+                            for item in field.get("default").split(' '):
+                                if firstTime:
+                                    firstTime = False
+                                else:
+                                    str += ',\n'
+                                str += '\t\t\t\t\t\t{\n'
+                                if enums != []:
+                                    str += '\t\t\t\t\t\t\t"enum": [\n'
+                                    str += '\t\t\t\t\t\t\t\t'
+                                    str += ',\n\t\t\t\t\t\t\t\t'.join(enums)
+                                    str += '\n\t\t\t\t\t\t\t],\n'
+                                str += '\t\t\t\t\t\t\t"default":'+item+',\n'
+                                str += self.printTypeMinMax(field)
+                                str += '\t\t\t\t\t\t}\n'
                     str += '\t\t\t\t\t\t],\n'
                     str += '\t\t\t\t\t\t"items": '
                     if field.get('type').startswith("SF") or field.get(namesyn) in ('align', 'offsetUnits', 'scaleMode', 'sizeUnits'):
@@ -485,6 +502,7 @@ class ClassPrinter:
             cf += '\t\t\t\t\t\t"$comment":"MFNode '+"Unknown access type"+'",\n'
             cf += '\t\t\t\t\t\t"type": "array",\n'
             cf += '\t\t\t\t\t\t"minItems": 1,\n'
+            # cf += '\t\t\t\t\t\t"maxProperties": 1,\n'
             cf += '\t\t\t\t\t\t"items": {\n'
             cf += '\t\t\t\t\t\t\t"type": "object",\n'
             cf += '\t\t\t\t\t\t\t"properties": {\n'
@@ -528,11 +546,17 @@ class ClassPrinter:
             return cf
 
     def addContainerField(self, field):
-        cf = '\t\t\t\t\t"-' + field.get("acceptableNodeTypes").replace("|", "-") + field.get("type") + '" : {\n'
-        if field.get("type") == "MFNode":
-            cf += '\t\t\t\t\t\t"$comment":"'+field.get("type")+' '+field.get("accessType")+'",\n'
+        accNodeTypes = field.get("acceptableNodeTypes").replace("|", "-") 
+        cf = '\t\t\t\t\t"-' + accNodeTypes + field.get("type") + '" : {\n'
+        if field.get("type") == "SFNode":
+            cf += '\t\t\t"title" : "'+accNodeTypes+'",\n'
+            cf += '\t\t\t\t\t\t"$comment":"'+field.get('type')+' '+field.get("accessType")+'",\n'
+        elif field.get("type") == "MFNode":
+            cf += '\t\t\t"title" : "'+accNodeTypes+'",\n'
+            cf += '\t\t\t\t\t\t"$comment":"'+field.get('type')+' '+field.get("accessType")+'",\n'
             cf += '\t\t\t\t\t\t"type": "array",\n'
             cf += '\t\t\t\t\t\t"minItems": 1,\n'
+            # cf += '\t\t\t\t\t\t"maxProperties": 1,\n'
             cf += '\t\t\t\t\t\t"items": {\n'
         cf += '\t\t\t\t\t\t\t"type": "object",\n'
         cf += '\t\t\t\t\t\t\t"properties": {\n'
@@ -540,7 +564,7 @@ class ClassPrinter:
             cf += '\t\t\t\t\t\t\t\t"#comment": {\n'
             cf += '\t\t\t\t\t\t\t\t\t"type": "string"\n'
             cf += '\t\t\t\t\t\t\t\t},\n'
-        acnts = field.get("acceptableNodeTypes").split("|")
+        acnts = accNodeTypes.split("-")
         acnts.append("ProtoInstance")
         doList = {}
         for acnt in acnts:
@@ -567,6 +591,8 @@ class ClassPrinter:
             except:
                 pass
         str += '\t\t"'+self.name+'" : {\n'
+        str += '\t\t\t"title" : "'+self.name+'",\n'
+        str += '\t\t\t"description" : "'+self.appinfo+'",\n'
         if self.name == "meta" or self.name == 'component' or self.name == 'connect' or self.name == 'unit' or self.name == 'field' or self.name == 'fieldValue':
             str += '\t\t\t"type" : "array",\n'
             str += '\t\t\t"items" : {\n'
@@ -583,78 +609,36 @@ class ClassPrinter:
         if foundUse:
 	    # #comment is allowed alongside @USE as a child
             str += '''\
-			"type": "object",
 			"oneOf": [
-				{
-					"type": "object",
-					"properties": {
-						"@class": {
-                            "$comment": "SFString inputOutput",
-                            "type": "string"
-                        },
 '''
-
-            if self.name == 'ProtoInstance':
-                str += '''\
-                           "@name": {
-                              "$comment": "SFString inputOutput",
-                              "type": "string"
-                           },
-'''
-
+            if self.name == 'ProtoInstance' and sys.argv[1] in ("4.0", "4.1"):
+                str += '{"$ref": "#/$defs/-NamedUSEField" },'
+            else:
+                str += '{"$ref": "#/$defs/-USEField" },'
             str += '''\
-                           "@USE": {
-                              "$comment": "SFString inputOutput",
-                               "type": "string"
-                            },
-                            "-children": {
-                                    "type": "array",
-                                    "minItems": 1,
-                                    "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                    "#comment": { "type": "string", "$comment": "#comment statements are the only allowed in -children node when using a USE field" }
-                                            },
-                                            "additionalProperties": false
-                                    }
-                            }
-                    },
-                    "required": [
-'''
-
-            if self.name == 'ProtoInstance' and sys.argv[1] == "4.0":
-                str += '''\
-                        "@name",
-'''
-
-            str += '''\
-                        "@USE"
-                    ],
-					"additionalProperties": false
-				},
 				{
 '''
-        if self.statementContentModel:
-            str += '\t\t"x-orderOf": {'
-            str += '\t\t\t"type": "object",\n'
-            str += '\t\t\t\t"properties": {\n'
-            scms = []
-            for scm in self.statementContentModel:
-                scmstr = ""
-                scmname = scm.get('name')
-                scmmin = scm.get('minOccurs')
-                scmmax = scm.get('maxOccurs')
-                scmstr += '\t\t\t\t\t"@'+scmname+'": {\n'
-                scmstr += '\t\t\t\t\t\t"$comment": "x-orderOf-StatementContentModel"'
-                if scmmin:
-                    scmstr += ',\n\t\t\t\t\t\t"minOccurs": "'+scmmin+'"'
-                if scmmax:
-                    scmstr += ',\t\t\n\t\t\t\t"maxOccurs": "'+scmmax+'"'
-                scmstr += '\n\t\t\t\t}\n'
-                scms.append(scmstr)
-            str += ",\n".join(scms)
-            str += '\n\t\t\t}\n'
-            str += '\t\t},\n'
+#        if self.statementContentModel:
+#            str += '\t\t"x-orderOf": {'
+#            str += '\t\t\t"type": "object",\n'
+#            str += '\t\t\t\t"properties": {\n'
+#            scms = []
+#            for scm in self.statementContentModel:
+#                scmstr = ""
+#                scmname = scm.get('name')
+#                scmmin = scm.get('minOccurs')
+#                scmmax = scm.get('maxOccurs')
+#                scmstr += '\t\t\t\t\t"@'+scmname+'": {\n'
+#                scmstr += '\t\t\t\t\t\t"description": "x-orderOf-StatementContentModel"'
+#                if scmmin:
+#                    scmstr += ',\n\t\t\t\t\t\t"minOccurs": "'+scmmin+'"'
+#                if scmmax:
+#                    scmstr += ',\t\t\n\t\t\t\t"maxOccurs": "'+scmmax+'"'
+#                scmstr += '\n\t\t\t\t}\n'
+#                scms.append(scmstr)
+#            str += ",\n".join(scms)
+#            str += '\n\t\t\t}\n'
+#            str += '\t\t},\n'
 
         str += '''\
                                  "type": "object",
@@ -710,7 +694,7 @@ class ClassPrinter:
             str += '''\
                                 "@xsd:noNamespaceSchemaLocation": {
                                         "type": "string",
-                                        "format": "iri"
+                                        "format": "uri"
                                 },
                                 "JSON schema": {
                                         "type": "string"
@@ -746,7 +730,7 @@ class ClassPrinter:
 #             self.name != "fieldValue" and self.name != 'head' and \
 #             self.name != "meta" and self.name != "CADLayer" and \
 #             self.name != "unit" and self.name != 'component':
-        if self.name == 'ProtoInstance':
+        if self.name == 'ProtoInstance' or self.name == "IS":
             str += '''\
 				"-children": {
 					"type": "array",
@@ -846,8 +830,7 @@ code = '''{
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-'''+sys.argv[1]+'''-JSONSchema.json",
         "title": "X3D V'''+sys.argv[1]+' JSON Schema, generated '+datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')+'''",
-        "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''",
-        "license": "Web3D Consortium License: https://www.web3d.org/license",
+        "description": "Experimental JSON Schema for X3D V'''+sys.argv[1]+'''.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
                 "X3D": {
@@ -860,7 +843,8 @@ code = '''{
         "additionalProperties": false,
         "$defs": {
                 "-childStatements": {
-                        "description": "Comments and ROUTEs",
+                        "title": "Child statements and comments",
+                        "description": "Child statements and comments",
                         "type": "array",
                         "minItems": 1,
                         "items": {
@@ -888,899 +872,158 @@ code = '''{
                                 "additionalProperties": false
                         }
                 },
-		"@geoSystem": {
-			"description": "Attempts to validate all possible combinations",
-			"oneOf": [
-				{
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 3,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GD",
-								"GDC"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						],
-						"default": "WE"
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 1,
-					"maxItems": 3,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GD",
-								"GDC"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							],
-							"default": "WE"
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"S",
-							"N"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"S",
-							"N"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 3,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 4,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"WGS84"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"AM",
-							"AN",
-							"BN",
-							"BR",
-							"CC",
-							"CD",
-							"EA",
-							"EB",
-							"EC",
-							"ED",
-							"EE",
-							"EF",
-							"FA",
-							"HE",
-							"HO",
-							"ID",
-							"IN",
-							"KA",
-							"RF",
-							"SA",
-							"WD",
-							"WE"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 2,
-					"maxItems": 5,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"UTM"
-							],
-							"default": "GD"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"Z01",
-								"Z1",
-								"Z02",
-								"Z2",
-								"Z03",
-								"Z3",
-								"Z04",
-								"Z4",
-								"Z05",
-								"Z5",
-								"Z06",
-								"Z6",
-								"Z07",
-								"Z7",
-								"Z08",
-								"Z8",
-								"Z09",
-								"Z9",
-								"Z10",
-								"Z11",
-								"Z12",
-								"Z13",
-								"Z14",
-								"Z15",
-								"Z16",
-								"Z17",
-								"Z18",
-								"Z19",
-								"Z20",
-								"Z21",
-								"Z22",
-								"Z23",
-								"Z24",
-								"Z25",
-								"Z26",
-								"Z27",
-								"Z28",
-								"Z29",
-								"Z30",
-								"Z31",
-								"Z32",
-								"Z33",
-								"Z34",
-								"Z35",
-								"Z36",
-								"Z37",
-								"Z38",
-								"Z39",
-								"Z40",
-								"Z41",
-								"Z42",
-								"Z43",
-								"Z44",
-								"Z45",
-								"Z46",
-								"Z47",
-								"Z48",
-								"Z49",
-								"Z50",
-								"Z51",
-								"Z52",
-								"Z53",
-								"Z54",
-								"Z55",
-								"Z56",
-								"Z57",
-								"Z58",
-								"Z59",
-								"Z60"
-							],
-							"default": "WE"
-						},
-						{
-							"type": "string",
-							"enum": [
-								"S",
-								"N"
-							]
-						},
-						{
-							"type": "string",
-							"enum": [
-								"AM",
-								"AN",
-								"BN",
-								"BR",
-								"CC",
-								"CD",
-								"EA",
-								"EB",
-								"EC",
-								"ED",
-								"EE",
-								"EF",
-								"FA",
-								"HE",
-								"HO",
-								"ID",
-								"IN",
-								"KA",
-								"RF",
-								"SA",
-								"WD",
-								"WE"
-							]
-						}
-					],
-					"items": {
-						"type": "string",
-						"enum": [
-							"WGS84"
-						]
-					}
-				},
-				{
-					"type": "array",
-					"minItems": 1,
-					"maxItems": 1,
-					"prefixItems": [
-						{
-							"type": "string",
-							"enum": [
-								"GC",
-								"GCC"
-							],
-							"default": "GD"
-						}
-					],
-					"items": false
-				}
-			]
-		},
+        "-NamedUSEField": {
+            "title": "NamedUSEField",
+            "description": "A USE field with a @name field",
+		    "type": "object",
+			"properties": {
+				"@class": {
+                    "$comment": "SFString inputOutput",
+                    "type": "string"
+                },
+                "@name": {
+                    "$comment": "SFString inputOutput",
+                    "type": "string"
+                },
+                "@USE": {
+                    "$comment": "SFString inputOutput",
+                    "pattern": "^[a-zA-Z_][\\\\w.-]*$",
+                    "type": "string"
+               },
+               "-children": {
+                   "type": "array",
+                   "minItems": 1,
+                   "items": {
+                       "type": "object",
+                       "properties": {
+                           "#comment": {
+                               "type": "string",
+                               "description": "#comment statements are the only allowed in -children node when using a USE field"
+                           }
+                       },
+                       "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "@name",
+                "@USE"
+            ],
+            "additionalProperties": false
+        },
+        "-USEField": {
+            "title": "USENode",
+            "description": "A USE field without a @name field",
+		    "type": "object",
+		    "properties": {
+		        "@class": {
+                    "$comment": "SFString inputOutput",
+                    "type": "string"
+                },
+                "@USE": {
+                    "$comment": "SFString inputOutput",
+                    "pattern": "^[a-zA-Z_][\\\\w.-]*$",
+                    "type": "string"
+                },
+                "-children": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "#comment": {
+                                "type": "string",
+                                "description": "#comment statements are the only allowed in -children node when using a USE field"
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "required": [
+                "@USE"
+            ],
+		    "additionalProperties": false
+        },
+        "@geoSystem": {
+            "$comment": "Coordinate reference system identifier tokens. Exactly one of three systems: GD/GDC (geographic degrees), UTM (universal transverse mercator), or GC/GCC (geocentric).",
+            "oneOf": [
+                { "$ref": "#/$defs/@geoSystem-GD"  },
+                { "$ref": "#/$defs/@geoSystem-UTM" },
+                { "$ref": "#/$defs/@geoSystem-GC"  }
+            ]
+        },
+        "@geoSystem-GD": {
+            "title": "geoSystem GD/GDC — Geographic Degrees",
+            "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "prefixItems": [
+                {
+                    "type": "string",
+                    "enum": ["GD", "GDC"],
+                    "default": "GD"
+                },
+                { "$ref": "#/$defs/@geoSystem-ellipsoid" }
+            ],
+            "items": false
+        },
+        "@geoSystem-UTM": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 5,
+            "prefixItems": [
+                {
+                    "type": "string",
+                    "const": "UTM"
+                },
+                { "$ref": "#/$defs/@geoSystem-UTM-zone" }
+            ],
+            "items": {
+                "type": "string",
+                "enum": ["N", "S", "WGS84",
+                     "AM", "AN", "BN", "BR", "CC", "CD", "EA", "EB",
+                     "EC", "ED", "EE", "EF", "FA", "HE", "HO", "ID",
+                     "IN", "KA", "RF", "SA", "WD", "WE"]
+            },
+            "if": {
+                "contains": { "const": "N" }
+            },
+            "then": {
+                "not": { "contains": { "const": "S" } }
+            }
+        },
+        "@geoSystem-GC": {
+            "title": "geoSystem GC/GCC — Geocentric",
+            "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 1,
+            "prefixItems": [
+                {
+                "type": "string",
+                "enum": ["GC", "GCC"]
+                }
+            ],
+            "items": false
+        },
+        "@geoSystem-ellipsoid": {
+            "title": "geoSystem ellipsoid datum",
+            "$comment": "Reference ellipsoid. WGS84 is the datum name; the 22 two-letter codes are ellipsoid identifiers. Defaults to WE.",
+            "type": "string",
+            "default": "WE",
+            "enum": ["WGS84",
+                "AM", "AN", "BN", "BR", "CC", "CD", "EA", "EB",
+                "EC", "ED", "EE", "EF", "FA", "HE", "HO", "ID",
+                "IN", "KA", "RF", "SA", "WD", "WE"]
+        },
+        "@geoSystem-UTM-zone": {
+            "title": "UTM zone number",
+            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "type": "string",
+            "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
+        },
 '''
 
 
