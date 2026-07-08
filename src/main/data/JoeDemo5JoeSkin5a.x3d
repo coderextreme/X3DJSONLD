@@ -212,6 +212,7 @@
             stiffness="0 0 0"
             name="humanoid_root"
             center="0 0.875 0">
+            <HAnimSegment>
             <HAnimSite DEF="Joe_RootView1"
                name="RootFront">
                <Transform DEF="HAnimCoordSys"
@@ -222,6 +223,7 @@
                      description="HAnim 0 0 0 View" />
                </Transform>
             </HAnimSite>
+            </HAnimSegment>
             <HAnimJoint DEF="Joe_sacroiliac"
                stiffness="0 0 0"
                name="sacroiliac"

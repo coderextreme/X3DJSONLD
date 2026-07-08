@@ -365,7 +365,7 @@
         <MetadataSet containerField="metadata" name="HAnimHumanoid.info" reference="https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid">
         <MetadataString name="humanoidVersion" reference="validation testing" value="&quot;2.0&quot;" />
       </MetadataSet>
-	  <CollisionCollection containerField="collider" appliedParameters="&quot;FRICTION_COEFFICIENT_1&quot; &quot;SLIP_COEFFICIENTS&quot;" />
+	  <CollisionCollection containerField="collider" appliedParameters="&quot;FRICTION_COEFFICIENT_2&quot; &quot;SLIP_1&quot;" />
      <RigidBody DEF="sphere_rb" containerField="bodies" mass="0">
 	  <CollidableShape DEF="sphere_cs" containerField="geometry">
 	  	<Shape DEF="box" containerField="shape">

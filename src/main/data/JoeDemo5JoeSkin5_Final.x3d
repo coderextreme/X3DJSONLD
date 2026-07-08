@@ -37,12 +37,14 @@
    <Group DEF="Joe_Humanoid">
       <HAnimHumanoid DEF="JoeHuman">
          <HAnimJoint DEF="hanim_humanoid_root" containerField="joints" stiffness="0 0 0" name="humanoid_root" center="0 0.875 0">
+	    <HAnimSegment>
             <HAnimSite DEF="Joe_RootView1" name="RootFront">
                <Transform DEF="HAnimCoordSys" scale="0.17 0.17 0.17">
                   <Inline url="&quot;JointCoordinateAxes.x3dv&quot;" />
                   <Viewpoint DEF="HAnimCoordSysView" description="HAnim 0 0 0 View" />
                </Transform>
             </HAnimSite>
+            </HAnimSegment>
             <HAnimJoint DEF="Joe_sacroiliac" stiffness="0 0 0" name="sacroiliac" center="0 0.920000016689301 0" skinCoordIndex="17 19 20 21 22 23 26 27 73 82 89 91 93" skinCoordWeight="1 1 1 1 1 1 1 1 1 1 0.349999994039536 0.349999994039536 1">
                <HAnimJoint DEF="hanim_l_hip" stiffness="0 0 0" name="l_hip" center="0.100000001490116 0.920000016689301 0" skinCoordIndex="89 90 94 95 96 97" skinCoordWeight="0.649999976158142 1 1 1 1 1">
                   <HAnimJoint DEF="hanim_l_knee" stiffness="0 0 0" name="l_knee" center="0.115000002086163 0.465999990701675 0" skinCoordIndex="334 335 336 337 338 339 340 341" skinCoordWeight="1 1 1 1 1 1 1 1">
