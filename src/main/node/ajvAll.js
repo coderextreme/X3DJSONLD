@@ -12008,7 +12008,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 },{}],108:[function(require,module,exports){
 const Ajv2020 = require("ajv/dist/2020");
-const addFormats = require("ajv-formats-draft2019");
+const addFormats = require("ajv-formats");
 
 if (typeof window !== 'undefined') {
 	window.Ajv2020 = Ajv2020;
@@ -12022,4 +12022,4 @@ module.exports = {
 
 var myAjv2020 = module.exports;
 
-},{"ajv-formats-draft2019":8,"ajv/dist/2020":9}]},{},[108]);
+},{"ajv-formats":8,"ajv/dist/2020":9}]},{},[108]);

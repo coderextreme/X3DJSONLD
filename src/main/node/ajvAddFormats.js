@@ -4533,7 +4533,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 
 },{}],18:[function(require,module,exports){
-const addFormats = require("ajv-formats-draft2019");
+const addFormats = require("ajv-formats");
 
 if (typeof window !== 'undefined') {
 	window.addFormats = addFormats;
@@ -4541,7 +4541,7 @@ if (typeof window !== 'undefined') {
 
 module.exports = addFormats;
 
-},{"ajv-formats-draft2019":7}],19:[function(require,module,exports){
+},{"ajv-formats":7}],19:[function(require,module,exports){
 (function (global){(function (){
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 ;(function(root) {

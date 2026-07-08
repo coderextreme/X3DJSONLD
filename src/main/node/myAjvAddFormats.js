@@ -1,4 +1,4 @@
-const addFormats = require("ajv-formats-draft2019");
+const addFormats = require("ajv-formats");
 
 if (typeof window !== 'undefined') {
 	window.addFormats = addFormats;
