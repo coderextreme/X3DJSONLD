@@ -26,7 +26,7 @@
     "express": "5.2.1",
     "gura": "1.4.4",
     "handlebars": "4.7.9",
-    "jsdom": "29.0.1",
+    "jsdom": "29.1.1",
     "make-dir": "3.1.0",
     "mutation-observer": "1.0.3",
     "node-rest-client": "3.1.1",
@@ -38,8 +38,7 @@
     "three": "0.183.2",
     "url": "0.11.4",
     "xml2js": "0.6.2",
-    "xmlhttprequest": "1.8.0",
-    "xsd-schema-validator": "0.11.0"
+    "xmlhttprequest": "1.8.0"
   },
   "overrides": {
     "elliptic": "file:elliptic",
