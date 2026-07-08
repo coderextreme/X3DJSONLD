@@ -190,7 +190,7 @@
                     <tr>
                         <td>
                             Current File: <strong id="currentFileName">None</strong><br>
-                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.json or personal/*">
+                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.x3dj or personal/*">
                         </td>
                         <td>
                             X3DOM Version:
@@ -338,7 +338,7 @@
 
     // --- Page Actions ---
     window.reloadX3DOM = () => { const iframe = getX3DOMIFrame(); if (iframe) { prepareForX3DOMReload(); const url = document.getElementById('x3domVersion').value; iframe.src = `iframe_x3dom_content.html?x3dom_url=${encodeURIComponent(url)}`; } };
-    window.doJsonActions = async () => { const text = $('#json').val(); if(text) { try { await updateFromJson(JSON.parse(text), $('#currentFileName').text() || "from_textarea.json"); } catch(e) { alert("Invalid JSON"); console.error(e); } } else { alert("JSON textarea empty."); } };
+    window.doJsonActions = async () => { const text = $('#json').val(); if(text) { try { await updateFromJson(JSON.parse(text), $('#currentFileName').text() || "from_textarea.x3dj"); } catch(e) { alert("Invalid JSON"); console.error(e); } } else { alert("JSON textarea empty."); } };
     window.doXmlActions = async () => { const text = $('#xml').val(); if(text) { await updateFromXml(text, $('#currentFileName').text() || "from_textarea.xml"); } else { alert("XML textarea empty."); } };
     window.doExiActions = () => { decodeJSON(); setTimeout(window.doJsonActions, 150); };
     window.doStlActions = async () => { const text = $('#stl').val(); if(text) { await updateFromStl(text, "from_textarea.stl"); } else { alert("STL textarea empty."); } };

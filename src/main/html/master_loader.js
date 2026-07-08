@@ -307,7 +307,7 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
 export async function updateFromStl(stlText, sourceFileName) {
     try {
         const jsonObj = convertStlToJson(stlText);
-        await updateFromJson(jsonObj, sourceFileName.replace(/\.stl$/i, ".json"));
+        await updateFromJson(jsonObj, sourceFileName.replace(/\.stl$/i, ".x3dj"));
         $('#stl').val(stlText);
     } catch (e) {
         alert("Error converting STL: " + e.message);
@@ -318,7 +318,7 @@ export async function updateFromPly(plyText, sourceFileName) {
     try {
         const jsonObj = convertPlyToJson(plyText);
 	if (jsonObj !== null) {
-        	await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".json"));
+        	await updateFromJson(jsonObj, sourceFileName.replace(/\.ply$/i, ".x3dj"));
 	}
 	if (plyText.length > 10000) {
         	$('#ply').val("TOO BIG, TRUNCATED!"+plyText.substring(0, 10000));

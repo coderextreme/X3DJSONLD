@@ -379,7 +379,7 @@
                     <tr>
                         <td>
                             Current File: <strong id="currentFileName">None</strong><br>
-                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.json or personal/*">
+                            Server Filter Pattern: <input type="text" id="filter" onchange="window.fetchAndUpdateHierarchicalMenu(event);return false;" placeholder="e.g., *.x3dj or personal/*">
                         </td>
                         <td>
                             X3DOM Version:
@@ -520,7 +520,7 @@
             if (jsonText) {
                 try {
                     const jsonObj = JSON.parse(jsonText);
-                    await updateFromJson(jsonObj, document.getElementById('currentFileName').textContent || "from_textarea.json");
+                    await updateFromJson(jsonObj, document.getElementById('currentFileName').textContent || "from_textarea.x3dj");
                 } catch (e) {
                     alert("Invalid JSON in textarea."); console.error(e);
                 }
