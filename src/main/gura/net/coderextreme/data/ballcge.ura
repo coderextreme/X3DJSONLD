@@ -1,0 +1,169 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            component: [
+                name: "Shaders"
+                level: 1
+            ],
+            component: [
+                name: "EnvironmentalEffects"
+                level: 3
+            ],
+            component: [
+                name: "Rendering"
+                level: 1
+            ],
+            component: [
+                name: "Texturing"
+                level: 1
+            ],
+            component: [
+                name: "Grouping"
+                level: 3
+            ],
+            component: [
+                name: "CubeMapTexturing"
+                level: 1
+            ],
+            component: [
+                name: "Core"
+                level: 1
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/ball.x3d"
+            ],
+            meta: [
+                name: "title"
+                content: "ball.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "description"
+                content: "a prismatic sphere"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            WorldInfo: [
+                title: "ball.x3d"
+            ],
+            NavigationInfo: [
+                avatarSize: [0.25, 1.60000002384186, 0.75]
+                type: ["ANY", "EXAMINE", "FLY", "LOOKAT"]
+            ],
+            Viewpoint: [
+                position: [0, 0, 12]
+                description: "Tour Views"
+            ],
+            Background: [
+                topUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                backUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                leftUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                frontUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                rightUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                bottomUrl: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+            ],
+            Transform: [
+                Shape: [
+                    setGeometry: [
+                        Sphere: [ empty
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [0.699999988079071, 0.699999988079071, 0.699999988079071]
+                                    specularColor: [0.5, 0.5, 0.5]
+                                ]
+                            ],
+                            ComposedShader: [
+                                language: "GLSL"
+                                field: [
+                                    name: "chromaticDispertion"
+                                    accessType: "initializeOnly"
+                                    type: "SFVec3f"
+                                    value: "0.980000019073486 1 1.03299999237061"
+                                ],
+                                field: [
+                                    name: "cube"
+                                    accessType: "initializeOnly"
+                                    type: "SFNode"
+                                    ComposedCubeMapTexture: [
+                                        setBackTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_back.png"]
+                                            ]
+                                        ]
+                                        setBottomTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_bottom.png"]
+                                            ]
+                                        ]
+                                        setFrontTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_front.png"]
+                                            ]
+                                        ]
+                                        setLeftTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_left.png"]
+                                            ]
+                                        ]
+                                        setRightTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_right.png"]
+                                            ]
+                                        ]
+                                        setTopTexture: [
+                                            ImageTexture: [
+                                                url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/resources/images/all_probes/stpeters_cross/stpeters_top.png"]
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                field: [
+                                    name: "bias"
+                                    accessType: "initializeOnly"
+                                    type: "SFFloat"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "scale"
+                                    accessType: "initializeOnly"
+                                    type: "SFFloat"
+                                    value: "0.5"
+                                ],
+                                field: [
+                                    name: "power"
+                                    accessType: "initializeOnly"
+                                    type: "SFFloat"
+                                    value: "2"
+                                ],
+                                ShaderPart: [
+                                    url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.vs"]
+                                    type: "VERTEX"
+                                ],
+                                ShaderPart: [
+                                    DEF: "commonfs"
+                                    url: ["file:/C:/Users/jcarl/X3DJSONLD/src/main/shaders/castle.fs"]
+                                    type: "FRAGMENT"
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ]
+    ]

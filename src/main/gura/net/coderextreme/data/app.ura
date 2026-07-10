@@ -1,0 +1,49 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "app.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "Carlson, I"
+            ],
+            meta: [
+                name: "creator"
+                content: "Carlson, II"
+            ],
+            meta: [
+                name: "creator"
+                content: "Carlson, III"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            Group: [
+                Shape: [
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [1, 0, 0]
+                                ]
+                            ]
+                        ]
+                    ]
+                    setGeometry: [
+                        Box: [ empty
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                rotation: [7, 8, 9, 3.14]
+                scale: [4, 5, 6]
+                translation: [1, 2, 3]
+            ]
+        ]
+    ]
