@@ -1,0 +1,69 @@
+X3D:
+    profile: "Immersive"
+    version: "4.0"
+    setHead: [
+        head: [
+            meta: [
+                name: "title"
+                content: "ThreeInARow.x3d"
+            ],
+            meta: [
+                name: "creator"
+                content: "John Carlson"
+            ],
+            meta: [
+                name: "generator"
+                content: "manual"
+            ],
+            meta: [
+                name: "identifier"
+                content: "https://coderextreme.net/X3DJSONLD/src/main/data/ThreeInARow.x3d"
+            ],
+            meta: [
+                name: "description"
+                content: "3 boxes"
+            ]
+        ]
+    ]
+    setScene: [
+        Scene: [
+            NavigationInfo: [
+                type: ["EXAMINE"]
+            ],
+            Viewpoint: [
+                description: "Cubes"
+                position: [0, 0, 12]
+            ],
+            Transform: [
+                DEF: "first"
+                translation: [0, 2, 0]
+                Shape: [
+                    DEF: "ball"
+                    setGeometry: [
+                        Sphere: [ empty
+                        ]
+                    ]
+                    setAppearance: [
+                        Appearance: [
+                            setMaterial: [
+                                Material: [
+                                    diffuseColor: [1, 1, 1]
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ],
+            Transform: [
+                Shape: [
+                    USE: "ball"
+                ]
+            ],
+            Transform: [
+                translation: [0, -2, 0]
+                Shape: [
+                    USE: "ball"
+                ]
+            ]
+        ]
+    ]
