@@ -41,7 +41,7 @@ dependencies {
 */
 
     implementation gradleApi()
-    implementation 'net.sf.saxon:Saxon-HE:12.5'
+    implementation 'net.sf.saxon:Saxon-HE:12.10'
     implementation 'xml-resolver:xml-resolver:1.2'
     implementation "org.web3d.x3d:X3DJSAIL:4.0.classes"
     // saxon 'net.sf.saxon:Saxon-HE:9.9.1-5'
