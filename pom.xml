@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.coderextreme</groupId>
 	<artifactId>X3DJSONLD</artifactId>
-	<version>12.0-SNAPSHOT</version>
+	<version>14.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>X3DJSONLD</name>
@@ -25,6 +25,8 @@
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-surefire-plugin.version>2.22.22</maven-surefire-plugin.version>
 		<xml-maven-plugin.version>1.0.2</xml-maven-plugin.version>
+		<!-- Use a recent stable version matching your environment -->
+		<graalvm.version>25.4.4.1.1</graalvm.version>
 	</properties>
 	<licenses>
 		<license>
@@ -69,14 +71,50 @@
     <version>0.5.238</version>
 </dependency>
 		<!-- https://mvnrepository.com/artifact/org.graalvm.polyglot/js-community -->
+<!--
 <dependency>
     <groupId>org.graalvm.polyglot</groupId>
     <artifactId>js-community</artifactId>
-    <version>24.0.0</version>
+    <version>${graalvm.version}</version>
     <type>pom</type>
     <scope>runtime</scope>
 </dependency>
+-->
+    <!-- Core Polyglot API -->
+    <dependency>
+        <groupId>org.graalvm.polyglot</groupId>
+        <artifactId>polyglot</artifactId>
+        <version>${graalvm.version}</version>
+    </dependency>
 
+    <!-- Language Runtime (e.g., JavaScript) -->
+    <!-- Available artifactIds: js, python, ruby, wasm, llvm, java -->
+    <dependency>
+        <groupId>org.graalvm.polyglot</groupId>
+        <artifactId>js</artifactId>
+        <version>${graalvm.version}</version>
+        <type>pom</type> 
+    </dependency>
+    <dependency>
+        <groupId>org.graalvm.polyglot</groupId>
+        <artifactId>python</artifactId>
+        <version>${graalvm.version}</version>
+        <type>pom</type> 
+    </dependency>
+    <!--
+    <dependency>
+        <groupId>org.graalvm.polyglot</groupId>
+        <artifactId>ruby</artifactId>
+        <version>${graalvm.version}</version>
+        <type>pom</type> 
+    </dependency>
+    -->
+    <dependency>
+        <groupId>org.graalvm.polyglot</groupId>
+        <artifactId>java</artifactId>
+        <version>${graalvm.version}</version>
+        <type>pom</type> 
+    </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -124,11 +162,13 @@
 		    <artifactId>javax.json</artifactId>
 		    <version>1.0.4</version>
 		</dependency>
+		<!--
 		<dependency>
 		    <groupId>org.graalvm.js</groupId>
 		    <artifactId>js</artifactId>
 		    <version>20.2.0</version>
 		</dependency>
+		-->
 	</dependencies>
 
 	<build>
@@ -143,7 +183,10 @@
 					<target>20</target>
 					<fork>true</fork>
 					<maxmem>4096m</maxmem>
+					<executable>/home/yottzumm/Downloads/graalvm-25.4.4.1.1+1.1/bin/javac</executable>
+					<!--
 					<executable>C:/graalvm-jdk-22_windows-x64_bin/graalvm-jdk-22+36.1/bin/javac.exe</executable>
+					-->
 
 
 
@@ -292,7 +335,7 @@
 					<dependency>
 					    <groupId>net.sf.saxon</groupId>
 					    <artifactId>Saxon-HE</artifactId>
-					    <version>10.6</version>
+		    			    <version>12.10</version>
 					</dependency>
 				</dependencies>
 			</plugin>

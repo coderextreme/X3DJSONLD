@@ -62,8 +62,8 @@ JavaScriptSerializer.prototype = {
 				str += this.postcode[postno];
 			}
 		}
-		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.graal.x3d\");\n";
-		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.graal.x3dj\");\n";
+		str += "    "+element.nodeName+0+".toFileX3D(\""+clazz+".new.graaljs.x3d\");\n";
+		str += "    "+element.nodeName+0+".toFileJSON(\""+clazz+".new.graaljs.x3dj\");\n";
 
 		return str;
 	},
