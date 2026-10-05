@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"18 June 2026"
+            "@content":"05 October 2026"
           },
           {
             "@name":"generator",
@@ -142,7 +142,6 @@
                         {
                           "@name":"Tufani_WS",
                           "@DEF":"Tufani",
-                          "@version":"2.0",
                           "-skeleton":[
                             { "HAnimJoint":
                               {
