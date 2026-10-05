@@ -2,9 +2,9 @@
 #
 # X3D Web3D Extensions Public Schema:
 #
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
 #
-#	   this version:  4.0 draft
+#	this version:     4.0 draft
 #	current version:  3.3
 #
 #	created:          14 September 2004
@@ -19,15 +19,15 @@
 # x3d-4.0-Web3dExtensionsPrivate.xsd
 #
 # X3D Specification Schemas:
-#	http://www.web3d.org/specifications/x3d-4.0.xsd
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
+#	https://www.web3d.org/specifications/x3d-4.0.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
 #
 # Web3D extensions update URL:
-#	http://www.web3d.org/x3d/content/x3d-4.0-Web3dExtensionsPublic.xsd
+#	https://www.web3d.org/x3d/content/x3d-4.0-Web3dExtensionsPublic.xsd
 #
 # changelog:
-#	http://www.web3d.org/specifications/x3d-schema-changelog.txt
+#	https://www.web3d.org/specifications/x3d-schema-changelog.txt
 #
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="4.0.0">

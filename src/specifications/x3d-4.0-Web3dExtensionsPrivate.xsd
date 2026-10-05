@@ -2,9 +2,9 @@
 #
 # X3D Web3D Extensions Private Schema:
 #
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
 #
-#	   this version:  4.0 draft
+#	this version:     4.0 draft
 #	current version:  3.3
 #
 #	created:          30 April 2005
@@ -19,12 +19,12 @@
 # x3d-4.0-Web3dExtensionsPrivate.xsd
 #
 # X3D Specification Schemas:
-#	http://www.web3d.org/specifications/x3d-4.0.xsd
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
-#	http://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
+#	https://www.web3d.org/specifications/x3d-4.0.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPublic.xsd
+#	https://www.web3d.org/specifications/x3d-4.0-Web3dExtensionsPrivate.xsd
 #
 # changelog:
-#	http://www.web3d.org/specifications/x3d-schema-changelog.txt
+#	https://www.web3d.org/specifications/x3d-schema-changelog.txt
 #
 -->
 

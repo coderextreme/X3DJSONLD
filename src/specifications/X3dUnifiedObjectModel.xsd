@@ -77,6 +77,8 @@ Design summary:
 			<xs:enumeration value="MFVec3f"/>
 			<xs:enumeration value="MFVec4d"/>
 			<xs:enumeration value="MFVec4f"/>
+			<xs:enumeration value="SFQuaternion"/>
+			<xs:enumeration value="MFQuaternion"/>
 			<xs:enumeration value="xs:NMTOKEN"/>
 			<xs:enumeration value="xs:string"/><!-- allowed for sourceCode CDATA blocks -->
 		</xs:restriction>
@@ -88,6 +90,7 @@ Design summary:
 			<xs:enumeration value="3.2"/>
 			<xs:enumeration value="3.3"/>
 			<xs:enumeration value="4.0"/>
+			<xs:enumeration value="4.1"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="vrml97SupportValues">
@@ -230,12 +233,43 @@ Design summary:
 			<xs:attribute name="documentation" type="xs:string" default=""/>
 			<xs:attribute name="index" type="xs:string" default=""/>
 			<xs:attribute name="alias" type="xs:string" default="">
-                            <xs:annotation>
-                                <xs:appinfo>alias provides equivalent enumeration name(s) that supports equivalence between different metadata vocabularies.  Multiple names are separated by commas.</xs:appinfo>
-                            </xs:annotation>
-                        </xs:attribute>
-			<xs:attribute name="loa" type="xs:string" default=""/>
-			<xs:attribute name="parent" type="xs:string" default=""/>
+                <xs:annotation>
+                    <xs:appinfo>alias provides equivalent enumeration name(s) that supports equivalence between different metadata vocabularies.  Multiple names are separated by commas.</xs:appinfo>
+                </xs:annotation>
+            </xs:attribute>
+			<xs:attribute name="latin" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>latin name provides equivalent term suitable for medical use</xs:appinfo>
+                    <xs:documentation>http://terminologia-anatomica.org/en</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+			<xs:attribute name="latinURI" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>latinURI provides associated URI documenting latin name and medical terminoology</xs:appinfo>
+                    <xs:documentation>http://terminologia-anatomica.org/en</xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="loa" type="xs:string" default=""/>
+			<xs:attribute name="parent" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>HAnim loa4 parent</xs:appinfo>
+                </xs:annotation>
+            </xs:attribute>
+			<xs:attribute name="parentLOA3" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>HAnim loa3 parent, if different from loa4</xs:appinfo>
+                </xs:annotation>
+            </xs:attribute>
+			<xs:attribute name="parentLOA2" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>HAnim loa2 parent, if different from prior loa parent</xs:appinfo>
+                </xs:annotation>
+            </xs:attribute>
+			<xs:attribute name="parentLOA1" type="xs:string" default="">
+                <xs:annotation>
+                    <xs:appinfo>HAnim loa1 parent, if different from prior loa parent</xs:appinfo>
+                </xs:annotation>
+            </xs:attribute>
 			<xs:attribute name="description" type="xs:string" default=""/>
 			<xs:attribute name="default" type="xs:string" default=""/><!-- default value -->
 			<!-- xs:appinfo/xs:documentation/@source -->
@@ -445,7 +479,7 @@ Design summary:
 				<xs:element ref="ConcreteNodes" minOccurs="0"/>
 				<xs:element ref="Statements" minOccurs="0"/>
 			</xs:sequence>
-			<xs:attribute name="version" type="versionValues" default="3.3"/>
+			<xs:attribute name="version" type="versionValues" default="4.0"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

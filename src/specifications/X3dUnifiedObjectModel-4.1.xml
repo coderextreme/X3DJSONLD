@@ -2,10 +2,10 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.1.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.1.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.1 of X3D -->
-<!-- Generated 2026-05-05-07:00 19:39:54.4311219-07:00 -->
+<!-- Generated 2026-09-27-07:00 13:37:43.7598179-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.1"
-                       xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
+                       xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/X3dUnifiedObjectModel.xsd">
    <SimpleTypeEnumerations>
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
@@ -66,15 +66,15 @@
          <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
          <enumeration value="&#34;USER_FRICTION&#34;"
                       appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-         <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+         <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                       appinfo="Apply frictionCoefficients values"/>
          <enumeration value="&#34;ERROR_REDUCTION&#34;" appinfo="Apply softnessErrorCorrection value"/>
          <enumeration value="&#34;CONSTANT_FORCE&#34;" appinfo="Apply softnessConstantForceMix value"/>
-         <enumeration value="&#34;SPEED-1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
-         <enumeration value="&#34;SPEED-2&#34;"
+         <enumeration value="&#34;SPEED_1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
+         <enumeration value="&#34;SPEED_2&#34;"
                       appinfo="Apply second component of surfaceSpeed array"/>
-         <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array"/>
-         <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array"/>
+         <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array"/>
+         <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array"/>
       </SimpleType>
       <SimpleType name="bboxSizeType"
                   baseType="SFVec3f"
@@ -156,6 +156,17 @@
          <enumeration value="CHORD"
                       appinfo="Connects arc endpoints directly to each other, as in chord on a circle"/>
       </SimpleType>
+      <SimpleType name="colorSpaceChoices"
+                  baseType="SFString"
+                  appinfo="Permitted values for GaussianSplats colorSpace field, indicating color space of the reconstructed color values. This list is bounded, no additional values are allowed."
+                  documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/GaussianSplats.html#GaussianSplats">
+         <enumeration value="SRGB_REC709_DISPLAY"
+                      appinfo="color space of the reconstructed color values"
+                      documentation="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_gaussian_splatting/README.md#color-space"/>
+         <enumeration value="LIN_REC709_DISPLAY"
+                      appinfo="color space of the reconstructed color values"
+                      documentation="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_gaussian_splatting/README.md#color-space"/>
+      </SimpleType>
       <SimpleType name="componentNameChoices"
                   baseType="xs:NMTOKEN"
                   appinfo="componentNameChoices are enumeration constants used to identify the profile for each scene-graph node, and also utilized by X3D element to identify the components required by the contained Scene. This list is bounded, no additional values are allowed."
@@ -184,6 +195,9 @@
          <enumeration value="Followers"
                       appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
                       documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/followers.html"/>
+         <enumeration value="GaussianSplats"
+                      appinfo="The GaussianSplats component supports real-time radiance field rendering, based on volume rendering techniques that directly renders specially prepared volume data without converting into surface or line primitives."
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/gaussianSplats.html"/>
          <enumeration value="Geometry2D"
                       appinfo="The Geometry2D component defines how two-dimensional geometry is specified and what shapes are available."
                       documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry2D.html"/>
@@ -365,6 +379,15 @@
                       appinfo="this node provides metadata information regarding its parent node."/>
          <enumeration value="value"
                       appinfo="parent node is MetadataSet, this node is providing information as part of a MetadataSet collection."/>
+      </SimpleType>
+      <SimpleType name="containerFieldChoicesNavigationInfo"
+                  baseType="xs:NMTOKEN"
+                  appinfo="containerFieldChoicesNavigationInfo lists the allowed containerField enumeration values for NavigationInfo nodes: &#34;navigationInfo&#34; ifsupporting a parent X3DViewpointNode, otherwise default &#34;children&#34;."
+                  documentation="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#containerField">
+         <enumeration value="children"
+                      appinfo="this node provides navigation information for its parent node."/>
+         <enumeration value="navigationInfo"
+                      appinfo="this node provides navigation information for its parent X3DViewpointNode."/>
       </SimpleType>
       <SimpleType name="containerFieldChoicesPackagedShader"
                   baseType="xs:NMTOKEN"
@@ -578,6 +601,9 @@
          <enumeration value="MFInt32" appinfo="Multiple Field (list) 32-bit integer"/>
          <enumeration value="SFNode" appinfo="Single Field (singleton) node"/>
          <enumeration value="MFNode" appinfo="Multiple Field (list) nodes"/>
+         <enumeration value="SFQuaternion"
+                      appinfo="Single Field (singleton) quaternion value"/>
+         <enumeration value="MFQuaternion" appinfo="Multiple Field (list) quaternion values"/>
          <enumeration value="SFRotation"
                       appinfo="Single Field (singleton) rotation value using 3-tuple axis, radian angle"/>
          <enumeration value="MFRotation"
@@ -621,7 +647,7 @@
          <enumeration value="SFMatrix4d"
                       appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers"/>
          <enumeration value="MFMatrix4d"
-                      appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers"/>
+                      appinfo="Multiple Field (list) 4×4 matrix of double-precision floating point numbers"/>
          <enumeration value="SFMatrix4f"
                       appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers"/>
          <enumeration value="MFMatrix4f"
@@ -673,7 +699,7 @@
       <SimpleType name="geoMetadataSummaryKeyValues"
                   baseType="xs:NMTOKEN"
                   appinfo="The enumeration keys for the GeoMetadata summary field. This list is unbounded, additional enumeration values are allowed."
-                  documentation="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#t-keywordsandvalues">
+                  documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geospatial.html#t-keywordsandvalues">
          <enumeration value="title"
                       appinfo="A name to succinctly identify the dataset to user. For example, &#34;San Francisco, California&#34;."/>
          <enumeration value="description"
@@ -3697,6 +3723,7 @@
          <enumeration value="collisionType"/>
          <enumeration value="color"/>
          <enumeration value="colorDepth"/>
+         <enumeration value="colorSpace"/>
          <enumeration value="colorSteps"/>
          <enumeration value="coneInnerAngle"/>
          <enumeration value="coneOuterAngle"/>
@@ -3913,10 +3940,12 @@
          <enumeration value="offset"/>
          <enumeration value="offsetUnits"/>
          <enumeration value="on"/>
+         <enumeration value="opacities"/>
          <enumeration value="opacityFactor"/>
          <enumeration value="optionsImag"/>
          <enumeration value="optionsReal"/>
          <enumeration value="orientation"/>
+         <enumeration value="orientations"/>
          <enumeration value="origin"/>
          <enumeration value="orthogonalColor"/>
          <enumeration value="oversample"/>
@@ -3930,12 +3959,14 @@
          <enumeration value="plane"/>
          <enumeration value="playbackRate"/>
          <enumeration value="point"/>
+         <enumeration value="pointerEvents"/>
          <enumeration value="pointSize"/>
          <enumeration value="pointSizeScaleFactor"/>
          <enumeration value="pointSizeMinValue"/>
          <enumeration value="pointSizeMaxValue"/>
          <enumeration value="port"/>
          <enumeration value="position"/>
+         <enumeration value="positions"/>
          <enumeration value="power"/>
          <enumeration value="preferAccuracy"/>
          <enumeration value="priority"/>
@@ -3969,6 +4000,7 @@
          <enumeration value="sampleRate"/>
          <enumeration value="samples"/>
          <enumeration value="scale"/>
+         <enumeration value="scales"/>
          <enumeration value="scaleMode"/>
          <enumeration value="scaleOrientation"/>
          <enumeration value="segmentEnabled"/>
@@ -4003,6 +4035,22 @@
          <enumeration value="specularColor"/>
          <enumeration value="specularTextureMapping"/>
          <enumeration value="speed"/>
+         <enumeration value="sphericalHarmonicsDegree0Coef0"/>
+         <enumeration value="sphericalHarmonicsDegree1Coef0"/>
+         <enumeration value="sphericalHarmonicsDegree1Coef1"/>
+         <enumeration value="sphericalHarmonicsDegree1Coef2"/>
+         <enumeration value="sphericalHarmonicsDegree2Coef0"/>
+         <enumeration value="sphericalHarmonicsDegree2Coef1"/>
+         <enumeration value="sphericalHarmonicsDegree2Coef2"/>
+         <enumeration value="sphericalHarmonicsDegree2Coef3"/>
+         <enumeration value="sphericalHarmonicsDegree2Coef4"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef0"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef1"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef2"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef3"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef4"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef5"/>
+         <enumeration value="sphericalHarmonicsDegree3Coef6"/>
          <enumeration value="startFrame"/>
          <enumeration value="startTime"/>
          <enumeration value="stiffness"/>
@@ -4097,11 +4145,11 @@
                   appinfo="intersectionTypeValues are supported enumeration values for X3DPickSensorNode type intersectionType field. This list is unbounded, additional enumeration values are allowed."
                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="BOUNDS"
-                      appinfo="TODO undefined in X3D specification"
-                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                      appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
          <enumeration value="GEOMETRY"
-                      appinfo="TODO undefined in X3D specification"
-                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                      appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
       </SimpleType>
       <SimpleType name="justifyChoices"
                   baseType="MFString"
@@ -4334,34 +4382,34 @@
                   appinfo="multiTextureFunctionValues are supported enumeration values for the MultiTexture node function attribute, one per each texture. An empty string indicates no function is applied. Multiple optional values, but cannot be extended."
                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#t-ValuesForFunctionField">
          <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)"/>
-         <enumeration value="&#34;ALPHAREPLICATE&#34;"
-                      appinfo="Replicate alpha information to all color channels before operation completes."/>
+         <enumeration value="&#34;ALPHA_REPLICATE&#34;"
+                      appinfo="Replicate alpha information to all color channels before operation completes. (previously no underscore in X3D 3.0-4.0)"/>
          <enumeration value="&#34;&#34;"
                       appinfo="No function is applied - empty SFString is allowed value within MFString array"/>
       </SimpleType>
       <SimpleType name="multiTextureModeValues"
                   baseType="MFString"
-                  appinfo="multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended."
+                  appinfo="multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended. (previously no underscores in X3D 3.0-4.0)"
                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#t-MultitextureModes">
          <enumeration value="&#34;ADD&#34;"/>
-         <enumeration value="&#34;ADDSIGNED&#34;"/>
-         <enumeration value="&#34;ADDSIGNED2X&#34;"/>
-         <enumeration value="&#34;ADDSMOOTH&#34;"/>
-         <enumeration value="&#34;BLENDCURRENTALPHA&#34;"/>
-         <enumeration value="&#34;BLENDDIFFUSEALPHA&#34;"/>
-         <enumeration value="&#34;BLENDFACTORALPHA&#34;"/>
-         <enumeration value="&#34;BLENDTEXTUREALPHA&#34;"/>
-         <enumeration value="&#34;DOTPRODUCT3&#34;"/>
+         <enumeration value="&#34;ADD_SIGNED&#34;"/>
+         <enumeration value="&#34;ADD_SIGNED_2X&#34;"/>
+         <enumeration value="&#34;ADD_SMOOTH&#34;"/>
+         <enumeration value="&#34;BLEND_CURRENT_ALPHA&#34;"/>
+         <enumeration value="&#34;BLEND_DIFFUSE_ALPHA&#34;"/>
+         <enumeration value="&#34;BLEND_FACTOR_ALPHA&#34;"/>
+         <enumeration value="&#34;BLEND_TEXTURE_ALPHA&#34;"/>
+         <enumeration value="&#34;DOT_PRODUCT_3&#34;"/>
          <enumeration value="&#34;MODULATE&#34;"/>
-         <enumeration value="&#34;MODULATE2X&#34;"/>
-         <enumeration value="&#34;MODULATE4X&#34;"/>
-         <enumeration value="&#34;MODULATEALPHA_ADDCOLOR&#34;"/>
-         <enumeration value="&#34;MODULATEINVALPHA_ADDCOLOR&#34;"/>
-         <enumeration value="&#34;MODULATEINVCOLOR_ADDALPHA&#34;"/>
+         <enumeration value="&#34;MODULATE_2X&#34;"/>
+         <enumeration value="&#34;MODULATE_4X&#34;"/>
+         <enumeration value="&#34;MODULATE_ALPHA_ADD_COLOR&#34;"/>
+         <enumeration value="&#34;MODULATE_INV_ALPHA_ADD_COLOR&#34;"/>
+         <enumeration value="&#34;MODULATE_INV_COLOR_ADD_ALPHA&#34;"/>
          <enumeration value="&#34;OFF&#34;"/>
          <enumeration value="&#34;REPLACE&#34;"/>
-         <enumeration value="&#34;SELECTARG1&#34;"/>
-         <enumeration value="&#34;SELECTARG2&#34;"/>
+         <enumeration value="&#34;SELECT_ARG1&#34;"/>
+         <enumeration value="&#34;SELECT_ARG2&#34;"/>
          <enumeration value="&#34;SUBTRACT&#34;"/>
       </SimpleType>
       <SimpleType name="multiTextureSourceValues"
@@ -4674,24 +4722,25 @@
                   documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#t-Texturecoordgeneration">
          <enumeration value="SPHERE"
                       appinfo="Creates texture coordinates for a spherical environment"/>
-         <enumeration value="CAMERASPACENORMAL"
-                      appinfo="Use vertex normal, transformed to camera space, as input texture coordinates"/>
-         <enumeration value="CAMERASPACEPOSITION"
-                      appinfo="Use vertex position, transformed to camera space, as input texture coordinates"/>
-         <enumeration value="CAMERASPACEREFLECTIONVECTOR"
-                      appinfo="Use reflection vector, transformed to camera space, as input texture coordinates"/>
-         <enumeration value="SPHERE-LOCAL" appinfo="Sphere mapping but in local coordinates"/>
+         <enumeration value="CAMERA_SPACE_NORMAL"
+                      appinfo="Use vertex normal, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)"/>
+         <enumeration value="CAMERA_SPACE_POSITION"
+                      appinfo="Use vertex position, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)"/>
+         <enumeration value="CAMERA_SPACE_REFLECTION_VECTOR"
+                      appinfo="Use reflection vector, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)"/>
+         <enumeration value="SPHERE_LOCAL"
+                      appinfo="Sphere mapping but in local coordinates. (previously hypenated in X3D 3.0-4.0)"/>
          <enumeration value="COORD" appinfo="Use vertex coordinates"/>
-         <enumeration value="COORD-EYE"
-                      appinfo="Use vertex coordinates transformed to camera space"/>
+         <enumeration value="COORD_EYE"
+                      appinfo="Use vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)"/>
          <enumeration value="NOISE"
                       appinfo="Apply Perlin solid noise function on vertex coordinates"/>
-         <enumeration value="NOISE-EYE"
-                      appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space"/>
-         <enumeration value="SPHERE-REFLECT"
-                      appinfo="similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction"/>
-         <enumeration value="SPHERE-REFLECT-LOCAL"
-                      appinfo="Similar to SPHERE-REFLECT transformed to camera space"/>
+         <enumeration value="NOISE_EYE"
+                      appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)"/>
+         <enumeration value="SPHERE_REFLECT"
+                      appinfo="similar to CAMERA_SPACE_REFLECTION_VECTOR with optional index of refraction. (previously hypenated in X3D 3.0-4.0)"/>
+         <enumeration value="SPHERE_REFLECT_LOCAL"
+                      appinfo="Similar to SPHERE_REFLECT transformed to camera space. (previously hypenated in X3D 3.0-4.0)"/>
       </SimpleType>
       <SimpleType name="textureMagnificationModeChoices"
                   baseType="xs:NMTOKEN"
@@ -5022,6 +5071,26 @@
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/fieldTypes.html#SFNodeAndMFNode"
                               appinfo="MFNode specifies zero or more nodes; the default value of an MFNode field is the empty list.">
             <Inheritance baseType="SFString" x3dType="X3DArrayField"/>
+         </InterfaceDefinition>
+      </FieldType>
+      <FieldType type="SFQuaternion"
+                 tupleSize="4"
+                 isArray="false"
+                 defaultValue="0.0 0.0 0.0 0.0"
+                 regex="\s*(([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/fieldTypes.html#SFQuaternionAndMFQuaternion"
+                              appinfo="SFQuaternion is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector. Warning: comma characters within singleton values do not pass strict XML validation.">
+            <Inheritance baseType="xs:string" x3dType="X3DField"/>
+         </InterfaceDefinition>
+      </FieldType>
+      <FieldType type="MFQuaternion"
+                 tupleSize="4"
+                 isArray="true"
+                 defaultValue=""
+                 regex="\s*((([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s+){3}([+-]?((0|[1-9][0-9]*)(\.[0-9]*)?|\.[0-9]+)([Ee][+-]?[0-9]+)?)\s*,?\s*)*">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/fieldTypes.html#SFQuaternionAndMFQuaternion"
+                              appinfo="MFQuaternion is zero or more SFQuaternion values. Individual singleton SFQuaternion array values are optionally separated by commas in XML syntax.">
+            <Inheritance baseType="xs:string" x3dType="X3DArrayField"/>
          </InterfaceDefinition>
       </FieldType>
       <FieldType type="SFRotation"
@@ -7697,11 +7766,11 @@
                    simpleType="intersectionTypeValues"
                    baseType="xs:NMTOKEN">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -11528,7 +11597,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   minInclusive="0"
                    description="The detune field, measured in cents, modulates the speed at which the the audio stream is rendered."/>
             <field name="elapsedTime"
                    type="SFTime"
@@ -12392,7 +12460,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   minInclusive="0"
                    description="The detune field, measured in cents, modulates the speed at which the the audio stream is rendered."/>
             <field name="elapsedTime"
                    type="SFTime"
@@ -13909,18 +13976,18 @@
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-               <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+               <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                             appinfo="Apply frictionCoefficients values."/>
                <enumeration value="&#34;ERROR_REDUCTION&#34;"
                             appinfo="Apply softnessErrorCorrection value."/>
                <enumeration value="&#34;CONSTANT_FORCE&#34;"
                             appinfo="Apply softnessConstantForceMix value."/>
-               <enumeration value="&#34;SPEED-1&#34;"
+               <enumeration value="&#34;SPEED_1&#34;"
                             appinfo="Apply first component of surfaceSpeed array."/>
-               <enumeration value="&#34;SPEED-2&#34;"
+               <enumeration value="&#34;SPEED_2&#34;"
                             appinfo="Apply second component of surfaceSpeed array."/>
-               <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array."/>
-               <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array."/>
             </field>
             <field name="bboxCenter"
                    type="SFVec3f"
@@ -15210,18 +15277,18 @@
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-               <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+               <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                             appinfo="Apply frictionCoefficients values."/>
                <enumeration value="&#34;ERROR_REDUCTION&#34;"
                             appinfo="Apply softnessErrorCorrection value."/>
                <enumeration value="&#34;CONSTANT_FORCE&#34;"
                             appinfo="Apply softnessConstantForceMix value."/>
-               <enumeration value="&#34;SPEED-1&#34;"
+               <enumeration value="&#34;SPEED_1&#34;"
                             appinfo="Apply first component of surfaceSpeed array."/>
-               <enumeration value="&#34;SPEED-2&#34;"
+               <enumeration value="&#34;SPEED_2&#34;"
                             appinfo="Apply second component of surfaceSpeed array."/>
-               <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array."/>
-               <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array."/>
             </field>
             <field name="body1"
                    type="SFNode"
@@ -18828,19 +18895,9 @@
                    inheritedFrom="X3DUrlObject"
                    description="Author-provided prose that describes intended purpose of the url asset."/>
             <field name="family"
-                   type="MFString"
+                   type="SFString"
                    accessType="inputOutput"
-                   additionalEnumerationValuesAllowed="true"
-                   simpleType="fontFamilyValues"
-                   baseType="MFString"
-                   description="Array of quoted font family names in preference order, browsers use the first supported family.">
-               <enumeration value="&#34;SANS&#34;"
-                            appinfo="default font family for sans-serif font such as Helvetica."/>
-               <enumeration value="&#34;SERIF&#34;"
-                            appinfo="default font family for serif font such as Times-Roman."/>
-               <enumeration value="&#34;TYPEWRITER&#34;"
-                            appinfo="default font family for a fixed-pitch font such as Courier."/>
-            </field>
+                   description="The family field provides an identifying alias for the font in the associated file, if that file only contains a single font family (possibly with multiple styles)."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -19271,6 +19328,190 @@
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
                <GroupContentModel name="AudioGraphContentModel" minOccurs="0" maxOccurs="unbounded"/>
+            </ContentModel>
+         </InterfaceDefinition>
+      </ConcreteNode>
+      <ConcreteNode name="GaussianSplats">
+         <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/gaussianSplats.html#GaussianSplats"
+                              appinfo="The GaussianSplats node adds basic support for direct real-time radiance field rendering of volume data without converting into surface or line primitives.">
+            <componentInfo name="GaussianSplats" level="1"/>
+            <Inheritance baseType="X3DChildNode"/>
+            <AdditionalInheritance baseType="X3DBoundedObject"/>
+            <field name="bboxCenter"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="0 0 0"
+                   inheritedFrom="X3DBoundedObject"
+                   description="Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system."/>
+            <field name="bboxDisplay"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="false"
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether to display bounding box for associated geometry, aligned with world coordinates."/>
+            <field name="bboxSize"
+                   type="SFVec3f"
+                   accessType="initializeOnly"
+                   default="-1 -1 -1"
+                   inheritedFrom="X3DBoundedObject"
+                   baseType="bboxSizeType"
+                   description="Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost."/>
+            <field name="castShadow"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   description="castShadow defines whether this GaussianSplats node casts shadows as produced by lighting nodes."/>
+            <field name="colorSpace"
+                   type="SFString"
+                   accessType="inputOutput"
+                   default="SRGB_REC709_DISPLAY"
+                   additionalEnumerationValuesAllowed="false"
+                   simpleType="colorSpaceChoices"
+                   baseType="SFString"
+                   description="The color space of the reconstructed color values, either SRGB_REC709_DISPLAY or LIN_REC709_DISPLAY Hint: for details see https://github.">
+               <enumeration value="SRGB_REC709_DISPLAY"
+                            appinfo="color space of the reconstructed color values."
+                            documentation="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_gaussian_splatting/README.md#color-space"/>
+               <enumeration value="LIN_REC709_DISPLAY"
+                            appinfo="color space of the reconstructed color values."
+                            documentation="https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_gaussian_splatting/README.md#color-space"/>
+            </field>
+            <field name="IS"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="IS"
+                   inheritedFrom="X3DNode"/>
+            <field name="metadata"
+                   type="SFNode"
+                   accessType="inputOutput"
+                   default="NULL"
+                   acceptableNodeTypes="X3DMetadataObject"
+                   inheritedFrom="X3DNode"
+                   description="Information about this node can be contained in a MetadataBoolean, MetadataDouble, MetadataFloat, MetadataInteger, MetadataString or MetadataSet node."/>
+            <field name="opacities"
+                   type="MFFloat"
+                   accessType="inputOutput"
+                   description="The opacities field defines the opacity of each individual Gaussian splat."/>
+            <field name="orientations"
+                   type="MFQuaternion"
+                   accessType="inputOutput"
+                   description="The orientations field values correspond to the orientation of those axes in local space."/>
+            <field name="pointerEvents"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   description="indicates whether this GaussianSplats node is a target for pointer events, if FALSE then it is ignored during pointer picking."/>
+            <field name="positions"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="The mean vector for the Gaussian splat is provided by the positions of the mesh primitive."/>
+            <field name="scales"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="The values in the scales field correspond to the spread of the Gaussian along its local principal axes."/>
+            <field name="sphericalHarmonicsDegree0Coef0"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree1Coef0"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree1Coef1"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree1Coef2"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree2Coef0"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree2Coef1"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree2Coef2"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree2Coef3"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree2Coef4"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef0"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef1"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef2"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef3"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef4"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef5"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="sphericalHarmonicsDegree3Coef6"
+                   type="MFVec3f"
+                   accessType="inputOutput"
+                   description="spherical harmonics data."/>
+            <field name="visible"
+                   type="SFBool"
+                   accessType="inputOutput"
+                   default="true"
+                   inheritedFrom="X3DBoundedObject"
+                   description="Whether or not renderable content within this node is visually displayed."/>
+            <field name="DEF"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:ID"
+                   description="DEF defines a unique ID name for this node, referenceable by other nodes."/>
+            <field name="USE"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:IDREF"
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+            <field name="class"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKENS"
+                   description="The class attribute on each X3D node and statement is a space-separated list of classes, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+            <field name="id"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   baseType="xs:NMTOKEN"
+                   description="The id attribute on each X3D node and statement is considered a unique identifier when used as part of an encompassing HTML/DOM context."/>
+            <field name="style"
+                   type="SFString"
+                   accessType="inputOutput"
+                   inheritedFrom="X3DNode"
+                   description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
+            <containerField default="children" type="xs:NMTOKEN"/>
+            <ContentModel>
+               <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
          </InterfaceDefinition>
       </ConcreteNode>
@@ -20751,13 +20992,13 @@
       </ConcreteNode>
       <ConcreteNode name="HAnimDisplacer">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/hanim.html#HAnimDisplacer"
-                              appinfo="HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimJoint or HAnimSegment nodes.">
+                              appinfo="HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimSegment or ancestor HAnimHumanoid nodes.">
             <componentInfo name="HAnim" level="1"/>
             <Inheritance baseType="X3DGeometricPropertyNode"/>
             <field name="coordIndex"
                    type="MFInt32"
                    accessType="inputOutput"
-                   description="Defines index values into the parent HAnimSegment or HAnimBody/HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
+                   description="Defines index values into the parent HAnimSegment or ancestor HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -21611,6 +21852,10 @@
                    type="SFString"
                    accessType="inputOutput"
                    description="Author-provided prose that describes intended purpose of this node."/>
+            <field name="displacers"
+                   type="MFNode"
+                   accessType="inputOutput"
+                   acceptableNodeTypes="HAnimDisplacer"/>
             <field name="info"
                    type="MFString"
                    accessType="inputOutput"
@@ -21740,11 +21985,11 @@
             <field name="version"
                    type="SFString"
                    accessType="inputOutput"
-                   default="2.0"
+                   use="required"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN"
-                   description="HAnimHumanoid version, where allowed value is 2.">
+                   description="HAnimHumanoid version is required, where allowed value is 2.">
                <enumeration value="2.0"
                             appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                             documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
@@ -21795,6 +22040,7 @@
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="HAnimDisplacer" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimJoint" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSegment" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSite" minOccurs="0" maxOccurs="unbounded"/>
@@ -27243,11 +27489,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -27711,7 +27957,7 @@
       </ConcreteNode>
       <ConcreteNode name="LoadSensor">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/networking.html#LoadSensor"
-                              appinfo="LoadSensor generates events as watchList child nodes are either loaded or fail to load.">
+                              appinfo="LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.">
             <componentInfo name="Networking" level="3"/>
             <Inheritance baseType="X3DNetworkSensorNode"/>
             <field name="children"
@@ -27745,7 +27991,7 @@
             <field name="isLoaded"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Notify when all watchList child nodes are loaded, or at least one has failed."/>
+                   description="Notify when all children/watchList child nodes are loaded, or at least one has failed."/>
             <field name="loadTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -28647,7 +28893,7 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DMetadataObject"
-                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is determined by the name field."/>
+                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is each determined by their respective name field."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -29281,10 +29527,10 @@
                    additionalEnumerationValuesAllowed="true"
                    simpleType="multiTextureFunctionValues"
                    baseType="MFString"
-                   description="function operators COMPLEMENT or ALPHAREPLICATE can be applied after the mode blending operation.">
+                   description="function operators COMPLEMENT or ALPHA_REPLICATE can be applied after the mode blending operation.">
                <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)."/>
-               <enumeration value="&#34;ALPHAREPLICATE&#34;"
-                            appinfo="Replicate alpha information to all color channels before operation completes."/>
+               <enumeration value="&#34;ALPHA_REPLICATE&#34;"
+                            appinfo="Replicate alpha information to all color channels before operation completes. (previously no underscore in X3D 3.0-4.0)."/>
                <enumeration value="&#34;&#34;"
                             appinfo="No function is applied - empty SFString is allowed value within MFString array."/>
             </field>
@@ -29309,24 +29555,24 @@
                    baseType="MFString"
                    description="mode field indicates the type of blending operation, both for color and for alpha channel.">
                <enumeration value="&#34;ADD&#34;"/>
-               <enumeration value="&#34;ADDSIGNED&#34;"/>
-               <enumeration value="&#34;ADDSIGNED2X&#34;"/>
-               <enumeration value="&#34;ADDSMOOTH&#34;"/>
-               <enumeration value="&#34;BLENDCURRENTALPHA&#34;"/>
-               <enumeration value="&#34;BLENDDIFFUSEALPHA&#34;"/>
-               <enumeration value="&#34;BLENDFACTORALPHA&#34;"/>
-               <enumeration value="&#34;BLENDTEXTUREALPHA&#34;"/>
-               <enumeration value="&#34;DOTPRODUCT3&#34;"/>
+               <enumeration value="&#34;ADD_SIGNED&#34;"/>
+               <enumeration value="&#34;ADD_SIGNED_2X&#34;"/>
+               <enumeration value="&#34;ADD_SMOOTH&#34;"/>
+               <enumeration value="&#34;BLEND_CURRENT_ALPHA&#34;"/>
+               <enumeration value="&#34;BLEND_DIFFUSE_ALPHA&#34;"/>
+               <enumeration value="&#34;BLEND_FACTOR_ALPHA&#34;"/>
+               <enumeration value="&#34;BLEND_TEXTURE_ALPHA&#34;"/>
+               <enumeration value="&#34;DOT_PRODUCT_3&#34;"/>
                <enumeration value="&#34;MODULATE&#34;"/>
-               <enumeration value="&#34;MODULATE2X&#34;"/>
-               <enumeration value="&#34;MODULATE4X&#34;"/>
-               <enumeration value="&#34;MODULATEALPHA_ADDCOLOR&#34;"/>
-               <enumeration value="&#34;MODULATEINVALPHA_ADDCOLOR&#34;"/>
-               <enumeration value="&#34;MODULATEINVCOLOR_ADDALPHA&#34;"/>
+               <enumeration value="&#34;MODULATE_2X&#34;"/>
+               <enumeration value="&#34;MODULATE_4X&#34;"/>
+               <enumeration value="&#34;MODULATE_ALPHA_ADD_COLOR&#34;"/>
+               <enumeration value="&#34;MODULATE_INV_ALPHA_ADD_COLOR&#34;"/>
+               <enumeration value="&#34;MODULATE_INV_COLOR_ADD_ALPHA&#34;"/>
                <enumeration value="&#34;OFF&#34;"/>
                <enumeration value="&#34;REPLACE&#34;"/>
-               <enumeration value="&#34;SELECTARG1&#34;"/>
-               <enumeration value="&#34;SELECTARG2&#34;"/>
+               <enumeration value="&#34;SELECT_ARG1&#34;"/>
+               <enumeration value="&#34;SELECT_ARG2&#34;"/>
                <enumeration value="&#34;SUBTRACT&#34;"/>
             </field>
             <field name="source"
@@ -29648,7 +29894,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    description="The style attribute on each X3D node and statement provides an inline block of CSS source for element styling, reserved for use by Cascading Style Sheets (CSS) and XML stylesheets."/>
-            <containerField default="children" type="xs:NMTOKEN"/>
+            <containerField default="children" type="containerFieldChoicesNavigationInfo"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
             </ContentModel>
@@ -31378,7 +31624,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   minInclusive="0"
                    description="The detune field, measured in cents, modulates the speed at which the the audio stream is rendered."/>
             <field name="elapsedTime"
                    type="SFTime"
@@ -32754,11 +32999,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -33818,11 +34063,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -34721,7 +34966,8 @@
             <field name="colorDepth"
                    type="SFInt32"
                    accessType="inputOutput"
-                   default="4"/>
+                   default="4"
+                   description="number of color components for the rendered texture."/>
             <field name="depthMap"
                    type="SFBool"
                    accessType="inputOutput"
@@ -34735,7 +34981,8 @@
             <field name="height"
                    type="SFInt32"
                    accessType="initializeOnly"
-                   default="128"/>
+                   default="128"
+                   description="image height in pixels."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -34779,7 +35026,8 @@
             <field name="singleFrame"
                    type="SFBool"
                    accessType="inputOutput"
-                   default="true"/>
+                   default="true"
+                   description="if TRUE only a single image is captured, otherwise continuous updates are captured."/>
             <field name="textureProperties"
                    type="SFNode"
                    accessType="initializeOnly"
@@ -34787,18 +35035,6 @@
                    acceptableNodeTypes="TextureProperties"
                    inheritedFrom="X3DTexture2DNode"
                    description="Optional single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images."/>
-            <field name="update"
-                   type="SFString"
-                   accessType="inputOutput"
-                   default="NONE"
-                   additionalEnumerationValuesAllowed="false"
-                   simpleType="generatedCubeMapTextureUpdateChoices"
-                   baseType="xs:NMTOKEN"
-                   description="update controls when the next texture is captured.">
-               <enumeration value="NONE" appinfo="no further texture updates are rendered."/>
-               <enumeration value="NEXT_FRAME_ONLY" appinfo="render texture once at end of frame."/>
-               <enumeration value="ALWAYS" appinfo="texture to be rendered every frame."/>
-            </field>
             <field name="updateInterval"
                    type="SFTime"
                    accessType="inputOutput"
@@ -34814,7 +35050,8 @@
             <field name="width"
                    type="SFInt32"
                    accessType="inputOutput"
-                   default="128"/>
+                   default="128"
+                   description="image height in pixels."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -39188,24 +39425,25 @@
                    description="parameter field defines the algorithm used to compute texture coordinates.">
                <enumeration value="SPHERE"
                             appinfo="Creates texture coordinates for a spherical environment."/>
-               <enumeration value="CAMERASPACENORMAL"
-                            appinfo="Use vertex normal, transformed to camera space, as input texture coordinates."/>
-               <enumeration value="CAMERASPACEPOSITION"
-                            appinfo="Use vertex position, transformed to camera space, as input texture coordinates."/>
-               <enumeration value="CAMERASPACEREFLECTIONVECTOR"
-                            appinfo="Use reflection vector, transformed to camera space, as input texture coordinates."/>
-               <enumeration value="SPHERE-LOCAL" appinfo="Sphere mapping but in local coordinates."/>
+               <enumeration value="CAMERA_SPACE_NORMAL"
+                            appinfo="Use vertex normal, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)."/>
+               <enumeration value="CAMERA_SPACE_POSITION"
+                            appinfo="Use vertex position, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)."/>
+               <enumeration value="CAMERA_SPACE_REFLECTION_VECTOR"
+                            appinfo="Use reflection vector, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)."/>
+               <enumeration value="SPHERE_LOCAL"
+                            appinfo="Sphere mapping but in local coordinates. (previously hypenated in X3D 3.0-4.0)."/>
                <enumeration value="COORD" appinfo="Use vertex coordinates."/>
-               <enumeration value="COORD-EYE"
-                            appinfo="Use vertex coordinates transformed to camera space."/>
+               <enumeration value="COORD_EYE"
+                            appinfo="Use vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)."/>
                <enumeration value="NOISE"
                             appinfo="Apply Perlin solid noise function on vertex coordinates."/>
-               <enumeration value="NOISE-EYE"
-                            appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space."/>
-               <enumeration value="SPHERE-REFLECT"
-                            appinfo="similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction."/>
-               <enumeration value="SPHERE-REFLECT-LOCAL"
-                            appinfo="Similar to SPHERE-REFLECT transformed to camera space."/>
+               <enumeration value="NOISE_EYE"
+                            appinfo="Apply Perlin solid noise function on vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)."/>
+               <enumeration value="SPHERE_REFLECT"
+                            appinfo="similar to CAMERA_SPACE_REFLECTION_VECTOR with optional index of refraction. (previously hypenated in X3D 3.0-4.0)."/>
+               <enumeration value="SPHERE_REFLECT_LOCAL"
+                            appinfo="Similar to SPHERE_REFLECT transformed to camera space. (previously hypenated in X3D 3.0-4.0)."/>
             </field>
             <field name="parameter"
                    type="MFFloat"
@@ -42439,11 +42677,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -42967,6 +43205,9 @@
                <enumeration value="Followers"
                             appinfo="The Follower nodes (Chasers and Dampers) support dynamic creation of smooth parameter transitions at run time."
                             documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/followers.html"/>
+               <enumeration value="GaussianSplats"
+                            appinfo="The GaussianSplats component supports real-time radiance field rendering, based on volume rendering techniques that directly renders specially prepared volume data without converting into surface or line primitives."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/gaussianSplats.html"/>
                <enumeration value="Geometry2D"
                             appinfo="The Geometry2D component defines how two-dimensional geometry is specified and what shapes are available."
                             documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry2D.html"/>
@@ -43274,6 +43515,9 @@
                <enumeration value="MFInt32" appinfo="Multiple Field (list) 32-bit integer."/>
                <enumeration value="SFNode" appinfo="Single Field (singleton) node."/>
                <enumeration value="MFNode" appinfo="Multiple Field (list) nodes."/>
+               <enumeration value="SFQuaternion"
+                            appinfo="Single Field (singleton) quaternion value."/>
+               <enumeration value="MFQuaternion" appinfo="Multiple Field (list) quaternion values."/>
                <enumeration value="SFRotation"
                             appinfo="Single Field (singleton) rotation value using 3-tuple axis, radian angle."/>
                <enumeration value="MFRotation"
@@ -43318,7 +43562,7 @@
                <enumeration value="SFMatrix4d"
                             appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers."/>
                <enumeration value="MFMatrix4d"
-                            appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers."/>
+                            appinfo="Multiple Field (list) 4×4 matrix of double-precision floating point numbers."/>
                <enumeration value="SFMatrix4f"
                             appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers."/>
                <enumeration value="MFMatrix4f"
@@ -43696,7 +43940,7 @@
       </Statement>
       <Statement name="ProtoDeclare">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
-                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.">
+                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.">
             <componentInfo name="Core" level="2"/>
             <field name="appinfo"
                    type="SFString"
