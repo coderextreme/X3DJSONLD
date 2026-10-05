@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-3.1-JSONSchema.json",
-  "title": "X3D V3.1 JSON Schema, generated 2026/07/07 21:39:03",
+  "title": "X3D V3.1 JSON Schema, generated 2026/10/05 12:11:01",
   "description": "Experimental JSON Schema for X3D V3.1.  License: Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
@@ -132,7 +132,7 @@
       ]
     },
     "@geoSystem-GD": {
-      "title": "geoSystem GD/GDC � Geographic Degrees",
+      "title": "geoSystem GD/GDC — Geographic Degrees",
       "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
       "type": "array",
       "minItems": 1,
@@ -209,7 +209,7 @@
       }
     },
     "@geoSystem-GC": {
-      "title": "geoSystem GC/GCC � Geocentric",
+      "title": "geoSystem GC/GCC — Geocentric",
       "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
       "type": "array",
       "minItems": 1,
@@ -258,7 +258,7 @@
     },
     "@geoSystem-UTM-zone": {
       "title": "UTM zone number",
-      "$comment": "Zone 1�60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+      "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
       "type": "string",
       "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
     },
@@ -3290,7 +3290,7 @@
     },
     "FillProperties": {
       "title": "FillProperties",
-      "description": "FillProperties indicates whether appearance is filled or hatched for associated geometry nodes inside the same Shape.",
+      "description": "FillProperties indicates whether appearance is filled or hatched for associated geometry inside the same Shape.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -3885,7 +3885,7 @@
     },
     "GeoLocation": {
       "title": "GeoLocation",
-      "description": "GeoLocation positions a regular X3D model onto earth's surface.",
+      "description": "GeoLocation positions a regular X3D model onto the earth's surface.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -4771,7 +4771,6 @@
                 "1.0",
                 "2.0"
               ],
-              "default": "1.0",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -4789,6 +4788,9 @@
               "type": "string"
             }
           },
+          "required": [
+            "@version"
+          ],
           "additionalProperties": false
         }
       ]
@@ -6461,7 +6463,7 @@
     },
     "LineProperties": {
       "title": "LineProperties",
-      "description": "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry nodes inside the same Shape.",
+      "description": "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry inside the same Shape.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -6565,7 +6567,7 @@
     },
     "LoadSensor": {
       "title": "LoadSensor",
-      "description": "LoadSensor generates events as watchList child nodes are either loaded or fail to load.",
+      "description": "LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -6771,7 +6773,7 @@
     },
     "Material": {
       "title": "Material",
-      "description": "Material specifies surface rendering properties for associated geometry nodes.",
+      "description": "Material specifies surface rendering properties for associated geometry.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -7757,7 +7759,7 @@
     },
     "Normal": {
       "title": "Normal",
-      "description": "Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate|CoordinateDouble node, or else to a parent ElevationGrid node.",
+      "description": "Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate | CoordinateDouble node, or else to a parent ElevationGrid node.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -9411,7 +9413,7 @@
     },
     "ProtoDeclare": {
       "title": "ProtoDeclare",
-      "description": "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.",
+      "description": "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.",
       "type": "object",
       "properties": {
         "-children": {
@@ -10866,7 +10868,7 @@
     },
     "StringSensor": {
       "title": "StringSensor",
-      "description": "StringSensor generates events as the user presses keys on the keyboard.",
+      "description": "StringSensor generates events as the user enters strings on the keyboard.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"

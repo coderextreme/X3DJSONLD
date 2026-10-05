@@ -2,16 +2,16 @@ import java from 'node-java';
 java.options.push("-Djava.awt.headless=true");
 java.options.push("-Xmx1000m");
 //java.options.push("-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005");
-java.classpath.push("C:/Users/jcarl/pythonSAI/X3DJSAIL.4.0.full.jar");
+java.classpath.push("C:/Users/jcarl/X3DJSONLD/X3DJSAIL.4.0.full.jar");
 java.classpath.push("X3DJSAIL.4.0.full.jar");
-java.classpath.push("pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
-java.classpath.push("../../../../../../../pythonSAI/X3DJSAIL.4.0.full.jar");
+java.classpath.push("X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
+java.classpath.push("../../../../../../../X3DJSONLD/X3DJSAIL.4.0.full.jar");
 java.classpath.push("../classes");
 java.classpath.push("../../classes");
 java.classpath.push("jars/X3DJSAIL.4.0.full.jar");
@@ -102,6 +102,7 @@ FontLibrary : java.import('org.web3d.x3d.jsail.Text.FontLibrary'),
 FontStyle : java.import('org.web3d.x3d.jsail.Text.FontStyle'),
 ForcePhysicsModel : java.import('org.web3d.x3d.jsail.ParticleSystems.ForcePhysicsModel'),
 Gain : java.import('org.web3d.x3d.jsail.Sound.Gain'),
+GaussianSplats : java.import('org.web3d.x3d.jsail.GaussianSplats.GaussianSplats'),
 GeneratedCubeMapTexture : java.import('org.web3d.x3d.jsail.CubeMapTexturing.GeneratedCubeMapTexture'),
 GeoCoordinate : java.import('org.web3d.x3d.jsail.Geospatial.GeoCoordinate'),
 GeoElevationGrid : java.import('org.web3d.x3d.jsail.Geospatial.GeoElevationGrid'),
@@ -214,6 +215,7 @@ ProximitySensor : java.import('org.web3d.x3d.jsail.EnvironmentalSensor.Proximity
 QuadSet : java.import('org.web3d.x3d.jsail.CADGeometry.QuadSet'),
 ReceiverPdu : java.import('org.web3d.x3d.jsail.DIS.ReceiverPdu'),
 Rectangle2D : java.import('org.web3d.x3d.jsail.Geometry2D.Rectangle2D'),
+RenderedTexture : java.import('org.web3d.x3d.jsail.Texturing.RenderedTexture'),
 RigidBody : java.import('org.web3d.x3d.jsail.RigidBodyPhysics.RigidBody'),
 RigidBodyCollection : java.import('org.web3d.x3d.jsail.RigidBodyPhysics.RigidBodyCollection'),
 ScalarChaser : java.import('org.web3d.x3d.jsail.Followers.ScalarChaser'),
@@ -285,24 +287,6 @@ VolumePickSensor : java.import('org.web3d.x3d.jsail.Picking.VolumePickSensor'),
 WaveShaper : java.import('org.web3d.x3d.jsail.Sound.WaveShaper'),
 WindPhysicsModel : java.import('org.web3d.x3d.jsail.ParticleSystems.WindPhysicsModel'),
 WorldInfo : java.import('org.web3d.x3d.jsail.Core.WorldInfo'),
-ImageTextureAtlas : java.import('org.web3d.x3d.jsail.Texturing3D.ImageTextureAtlas'),
-AnisotropyMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.AnisotropyMaterialExtension'),
-BlendMode : java.import('org.web3d.x3d.jsail.X_ITE.BlendMode'),
-ClearcoatMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.ClearcoatMaterialExtension'),
-DepthMode : java.import('org.web3d.x3d.jsail.X_ITE.DepthMode'),
-DispersionMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.DispersionMaterialExtension'),
-EmissiveStrengthMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.EmissiveStrengthMaterialExtension'),
-IORMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.IORMaterialExtension'),
-InstancedShape : java.import('org.web3d.x3d.jsail.X_ITE.InstancedShape'),
-IridescenceMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.IridescenceMaterialExtension'),
-SheenMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.SheenMaterialExtension'),
-SpecularGlossinessMaterial : java.import('org.web3d.x3d.jsail.X_ITE.SpecularGlossinessMaterial'),
-SpecularMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.SpecularMaterialExtension'),
-TransmissionMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.TransmissionMaterialExtension'),
-VolumeMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.VolumeMaterialExtension'),
-VolumeScatterMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.VolumeScatterMaterialExtension'),
-DiffuseTransmissionMaterialExtension : java.import('org.web3d.x3d.jsail.X_ITE.DiffuseTransmissionMaterialExtension'),
-RenderedTexture : java.import('org.web3d.x3d.jsail.Texturing.RenderedTexture'),
 component : java.import('org.web3d.x3d.jsail.Core.component'),
 connect : java.import('org.web3d.x3d.jsail.Core.connect'),
 EXPORT : java.import('org.web3d.x3d.jsail.Networking.EXPORT'),
@@ -345,6 +329,8 @@ MFMatrix4f : java.import('org.web3d.x3d.jsail.fields.MFMatrix4f'),
 SFString : java.import('org.web3d.x3d.jsail.fields.SFString'),
 SFNode : java.import('org.web3d.x3d.jsail.fields.SFNode'),
 MFNode : java.import('org.web3d.x3d.jsail.fields.MFNode'),
+SFQuaternion : java.import('org.web3d.x3d.jsail.fields.SFQuaternion'),
+MFQuaternion : java.import('org.web3d.x3d.jsail.fields.MFQuaternion'),
 SFRotation : java.import('org.web3d.x3d.jsail.fields.SFRotation'),
 MFRotation : java.import('org.web3d.x3d.jsail.fields.MFRotation'),
 MFString : java.import('org.web3d.x3d.jsail.fields.MFString'),

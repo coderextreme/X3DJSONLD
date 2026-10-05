@@ -44,6 +44,7 @@
 		<Transform DEF="TufaniHumanoid"
 			rotation="0 1 0 3.14159274101257">
 			<HAnimHumanoid DEF="Tufani"
+				version="2.0"
 				name="Tufani_WS">
 				<HAnimJoint DEF="Tufani_humanoid_root" containerField="skeleton"
 					stiffness="0 0 0"
@@ -1588,3 +1589,4 @@
 	<ROUTE fromNode="Tufani_Stand016NEGATERBooleanFilter" fromField="inputNegate" toNode="Tufani_Stand016BooleanSequencer" toField="next" />
 </Scene>
 </X3D>
+

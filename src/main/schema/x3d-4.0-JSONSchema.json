@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://www.web3d.org/specifications/x3d-4.0-JSONSchema.json",
-  "title": "X3D V4.0 JSON Schema, generated 2026/07/07 21:39:03",
+  "title": "X3D V4.0 JSON Schema, generated 2026/10/05 12:11:02",
   "description": "Experimental JSON Schema for X3D V4.0.  License: Web3D Consortium License: https://www.web3d.org/license",
   "type": "object",
   "properties": {
@@ -132,7 +132,7 @@
       ]
     },
     "@geoSystem-GD": {
-      "title": "geoSystem GD/GDC � Geographic Degrees",
+      "title": "geoSystem GD/GDC — Geographic Degrees",
       "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
       "type": "array",
       "minItems": 1,
@@ -209,7 +209,7 @@
       }
     },
     "@geoSystem-GC": {
-      "title": "geoSystem GC/GCC � Geocentric",
+      "title": "geoSystem GC/GCC — Geocentric",
       "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
       "type": "array",
       "minItems": 1,
@@ -258,7 +258,7 @@
     },
     "@geoSystem-UTM-zone": {
       "title": "UTM zone number",
-      "$comment": "Zone 1�60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+      "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
       "type": "string",
       "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
     },
@@ -674,12 +674,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-blendMode": {
-              "$ref": "#/$defs/-BlendModeSFNode"
-            },
-            "-depthMode": {
-              "$ref": "#/$defs/-DepthModeSFNode"
             }
           },
           "additionalProperties": false
@@ -1394,7 +1388,6 @@
               "type": "string"
             },
             "@detune": {
-              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -1907,12 +1900,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@damping": {
-              "minimum": 0,
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
             }
           },
           "additionalProperties": false
@@ -2045,7 +2032,6 @@
               "type": "string"
             },
             "@detune": {
-              "minimum": 0,
               "default": 0,
               "$comment": "SFFloat inputOutput",
               "type": "number"
@@ -3405,13 +3391,13 @@
                 "enum": [
                   "BOUNCE",
                   "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
+                  "FRICTION_COEFFICIENT_2",
                   "ERROR_REDUCTION",
                   "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
+                  "SPEED_1",
+                  "SPEED_2",
+                  "SLIP_1",
+                  "SLIP_2"
                 ],
                 "default": "BOUNCE",
                 "type": "string"
@@ -4573,13 +4559,13 @@
                 "enum": [
                   "BOUNCE",
                   "USER_FRICTION",
-                  "FRICTION_COEFFICIENT-2",
+                  "FRICTION_COEFFICIENT_2",
                   "ERROR_REDUCTION",
                   "CONSTANT_FORCE",
-                  "SPEED-1",
-                  "SPEED-2",
-                  "SLIP-1",
-                  "SLIP-2"
+                  "SPEED_1",
+                  "SPEED_2",
+                  "SLIP_1",
+                  "SLIP_2"
                 ],
                 "default": "BOUNCE",
                 "type": "string"
@@ -6588,9 +6574,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -7269,7 +7252,7 @@
     },
     "FillProperties": {
       "title": "FillProperties",
-      "description": "FillProperties indicates whether appearance is filled or hatched for associated geometry nodes inside the same Shape.",
+      "description": "FillProperties indicates whether appearance is filled or hatched for associated geometry inside the same Shape.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -8139,9 +8122,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -8150,7 +8130,7 @@
     },
     "GeoLocation": {
       "title": "GeoLocation",
-      "description": "GeoLocation positions a regular X3D model onto earth's surface.",
+      "description": "GeoLocation positions a regular X3D model onto the earth's surface.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -9114,7 +9094,7 @@
     },
     "HAnimDisplacer": {
       "title": "HAnimDisplacer",
-      "description": "HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimJoint or HAnimSegment nodes.",
+      "description": "HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimSegment or ancestor HAnimHumanoid nodes.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -9366,6 +9346,9 @@
               "$comment": "SFString inputOutput",
               "type": "string"
             },
+            "-displacers": {
+              "$ref": "#/$defs/-HAnimDisplacerMFNode"
+            },
             "@info": {
               "$comment": "MFString inputOutput",
               "type": "array",
@@ -9534,7 +9517,6 @@
               "enum": [
                 "2.0"
               ],
-              "default": "2.0",
               "$comment": "SFString inputOutput",
               "type": "string"
             },
@@ -9567,6 +9549,9 @@
               "type": "string"
             }
           },
+          "required": [
+            "@version"
+          ],
           "additionalProperties": false
         }
       ]
@@ -10806,11 +10791,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@colorSpaceConversion": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
             }
           },
           "additionalProperties": false
@@ -11029,9 +11009,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -11112,9 +11089,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -11205,9 +11179,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -11298,9 +11269,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -11391,9 +11359,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -11484,9 +11449,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -12034,17 +11996,17 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "RIGHT",
+                    "CENTER",
                     "LEFT",
-                    "CENTER"
+                    "RIGHT"
                   ],
                   "default": "CENTER",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "BOTTOM",
                     "TOP",
+                    "BOTTOM",
                     "CENTER"
                   ],
                   "default": "CENTER",
@@ -12075,18 +12037,18 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "WORLD",
+                    "FRACTION",
                     "PIXEL",
-                    "FRACTION"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "WORLD",
+                    "FRACTION",
                     "PIXEL",
-                    "FRACTION"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -12102,9 +12064,9 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "STRETCH",
-                    "PIXEL",
                     "FRACTION",
+                    "PIXEL",
+                    "STRETCH",
                     "NONE"
                   ],
                   "default": "NONE",
@@ -12112,9 +12074,9 @@
                 },
                 {
                   "enum": [
-                    "STRETCH",
-                    "PIXEL",
                     "FRACTION",
+                    "PIXEL",
+                    "STRETCH",
                     "NONE"
                   ],
                   "default": "NONE",
@@ -12139,18 +12101,18 @@
               "prefixItems": [
                 {
                   "enum": [
-                    "WORLD",
+                    "FRACTION",
                     "PIXEL",
-                    "FRACTION"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
                 },
                 {
                   "enum": [
-                    "WORLD",
+                    "FRACTION",
                     "PIXEL",
-                    "FRACTION"
+                    "WORLD"
                   ],
                   "default": "WORLD",
                   "type": "string"
@@ -12477,7 +12439,7 @@
     },
     "LineProperties": {
       "title": "LineProperties",
-      "description": "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry nodes inside the same Shape.",
+      "description": "LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry inside the same Shape.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -12614,9 +12576,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -12736,7 +12695,7 @@
     },
     "LoadSensor": {
       "title": "LoadSensor",
-      "description": "LoadSensor generates events as watchList child nodes are either loaded or fail to load.",
+      "description": "LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -12987,7 +12946,7 @@
     },
     "Material": {
       "title": "Material",
-      "description": "Material specifies surface rendering properties for associated geometry nodes.",
+      "description": "Material specifies surface rendering properties for associated geometry.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -14452,7 +14411,7 @@
     },
     "Normal": {
       "title": "Normal",
-      "description": "Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate|CoordinateDouble node, or else to a parent ElevationGrid node.",
+      "description": "Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate | CoordinateDouble node, or else to a parent ElevationGrid node.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -16300,11 +16259,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@pointerEvents": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
             }
           },
           "additionalProperties": false
@@ -16394,7 +16348,7 @@
     },
     "PhysicalMaterial": {
       "title": "PhysicalMaterial",
-      "description": "PhysicalMaterial specifies surface rendering properties for associated geometry nodes.",
+      "description": "PhysicalMaterial specifies Physically Based Rendering (PBR) properties for associated geometry.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -16558,9 +16512,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-extensions": {
-              "$ref": "#/$defs/-X3DMaterialExtensionNodeMFNode"
             }
           },
           "additionalProperties": false
@@ -17446,9 +17397,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -18570,9 +18518,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -20200,11 +20145,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "@pointerEvents": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
             }
           },
           "additionalProperties": false
@@ -21907,7 +21847,7 @@
     },
     "StringSensor": {
       "title": "StringSensor",
-      "description": "StringSensor generates events as the user presses keys on the keyboard.",
+      "description": "StringSensor generates events as the user enters strings on the keyboard.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -24463,9 +24403,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -24548,9 +24485,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -24698,9 +24632,6 @@
               "pattern": "^(\\s|\\S)*$",
               "$comment": "SFString inputOutput",
               "type": "string"
-            },
-            "-tangent": {
-              "$ref": "#/$defs/-TangentSFNode"
             }
           },
           "additionalProperties": false
@@ -24709,7 +24640,7 @@
     },
     "TwoSidedMaterial": {
       "title": "TwoSidedMaterial",
-      "description": "TwoSidedMaterial specifies surface rendering properties for associated geometry nodes, for outer (front) and inner (back) sides of polygons.",
+      "description": "TwoSidedMaterial specifies surface rendering properties for associated geometry, for outer (front) and inner (back) sides of polygons.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -25111,7 +25042,7 @@
     },
     "UnlitMaterial": {
       "title": "UnlitMaterial",
-      "description": "UnlitMaterial specifies surface rendering properties for associated geometry nodes.",
+      "description": "UnlitMaterial specifies surface rendering properties for associated geometry that is unaffected by scene lighting.",
       "oneOf": [
         {
           "$ref": "#/$defs/-USEField"
@@ -26169,1270 +26100,6 @@
         }
       ]
     },
-    "EnvironmentLight": {
-      "title": "EnvironmentLight",
-      "description": "EnvironmentLight ... This node only affects the PhysicalMaterial and SpecularGlossinessMaterial nodes.",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/-USEField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@global": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@on": {
-              "default": true,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@color": {
-              "$comment": "SFColor inputOutput",
-              "type": "array",
-              "minItems": 3,
-              "maxItems": 3,
-              "prefixItems": [
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "maximum": 1,
-                  "minimum": 0,
-                  "type": "number"
-                }
-              ],
-              "items": false
-            },
-            "@intensity": {
-              "minimum": 0,
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@ambientIntensity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 0,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@rotation": {
-              "minimum": -1,
-              "$comment": "SFRotation inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "maxItems": 4,
-              "prefixItems": [
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 1,
-                  "minimum": -1,
-                  "type": "number"
-                },
-                {
-                  "default": 0,
-                  "minimum": -1,
-                  "type": "number"
-                }
-              ],
-              "items": false
-            },
-            "-diffuseTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@diffuseCoefficients": {
-              "$comment": "MFFloat inputOutput",
-              "type": "array",
-              "items": {
-                "type": "number"
-              }
-            },
-            "-specularTexture": {
-              "$ref": "#/$defs/-X3DEnvironmentTextureNodeSFNode"
-            },
-            "@shadows": {
-              "default": false,
-              "$comment": "SFBool inputOutput",
-              "type": "boolean"
-            },
-            "@shadowIntensity": {
-              "maximum": 1,
-              "minimum": 0,
-              "default": 1,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@DEF": {
-              "pattern": "^[a-zA-Z_][\\w.-]*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "Tangent": {
-      "title": "Tangent",
-      "description": "Tangent.",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/-USEField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@vector": {
-              "$comment": "MFVec4f inputOutput",
-              "type": "array",
-              "minItems": 4,
-              "items": {
-                "maximum": 1,
-                "minimum": -1,
-                "type": "number"
-              }
-            },
-            "@DEF": {
-              "pattern": "^[a-zA-Z_][\\w.-]*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "ImageTextureAtlas": {
-      "title": "ImageTextureAtlas",
-      "description": "ImageTextureAtlas defines a 3D image-based texture map by specifying a single image file that contains slices for complete 3D data.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@description": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@load": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@url": {
-          "$comment": "MFString inputOutput",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "format": "uri-reference",
-            "type": "string"
-          }
-        },
-        "@autoRefresh": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFTime inputOutput",
-          "type": "number"
-        },
-        "@autoRefreshTimeLimit": {
-          "minimum": 0,
-          "default": 3600,
-          "$comment": "SFTime inputOutput",
-          "type": "number"
-        },
-        "@slicesOverX": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFInt32 inputOutput",
-          "type": "integer"
-        },
-        "@slicesOverY": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFInt32 inputOutput",
-          "type": "integer"
-        },
-        "@numberOfSlices": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFInt32 inputOutput",
-          "type": "integer"
-        },
-        "@repeatS": {
-          "default": false,
-          "$comment": "SFBool initializeOnly",
-          "type": "boolean"
-        },
-        "@repeatT": {
-          "default": false,
-          "$comment": "SFBool initializeOnly",
-          "type": "boolean"
-        },
-        "@repeatR": {
-          "default": false,
-          "$comment": "SFBool initializeOnly",
-          "type": "boolean"
-        },
-        "-textureProperties": {
-          "$ref": "#/$defs/-TexturePropertiesSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "AnisotropyMaterialExtension": {
-      "title": "AnisotropyMaterialExtension",
-      "description": "AnisotropyMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@anisotropyStrength": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@anisotropyRotation": {
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@anisotropyTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-anisotropyTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "BlendMode": {
-      "title": "BlendMode",
-      "description": "BlendMode controls how pixels of an objects are drawn. Pixels can be drawn using a function that blends the incoming (source) RGBA values with the RGBA values that are already in the frame buffer (the destination values). BlendMode is an X3DAppearanceChildNode node that handles blend operations.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@blendColor": {
-          "$comment": "SFColorRGBA inputOutput",
-          "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
-          "prefixItems": [
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@sourceColorFactor": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "ZERO",
-            "ONE",
-            "SRC_COLOR",
-            "ONE_MINUS_SRC_COLOR",
-            "DST_COLOR",
-            "ONE_MINUS_DST_COLOR",
-            "SRC_ALPHA",
-            "ONE_MINUS_SRC_ALPHA",
-            "DST_ALPHA",
-            "ONE_MINUS_DST_ALPHA",
-            "CONSTANT_COLOR",
-            "ONE_MINUS_CONSTANT_COLOR",
-            "CONSTANT_ALPHA",
-            "ONE_MINUS_CONSTANT_ALPHA"
-          ],
-          "default": "SRC_ALPHA",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@sourceAlphaFactor": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "ZERO",
-            "ONE",
-            "SRC_COLOR",
-            "ONE_MINUS_SRC_COLOR",
-            "DST_COLOR",
-            "ONE_MINUS_DST_COLOR",
-            "SRC_ALPHA",
-            "ONE_MINUS_SRC_ALPHA",
-            "DST_ALPHA",
-            "ONE_MINUS_DST_ALPHA",
-            "CONSTANT_COLOR",
-            "ONE_MINUS_CONSTANT_COLOR",
-            "CONSTANT_ALPHA",
-            "ONE_MINUS_CONSTANT_ALPHA"
-          ],
-          "default": "ONE",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@destinationColorFactor": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "ZERO",
-            "ONE",
-            "SRC_COLOR",
-            "ONE_MINUS_SRC_COLOR",
-            "DST_COLOR",
-            "ONE_MINUS_DST_COLOR",
-            "SRC_ALPHA",
-            "ONE_MINUS_SRC_ALPHA",
-            "DST_ALPHA",
-            "ONE_MINUS_DST_ALPHA",
-            "CONSTANT_COLOR",
-            "ONE_MINUS_CONSTANT_COLOR",
-            "CONSTANT_ALPHA",
-            "ONE_MINUS_CONSTANT_ALPHA"
-          ],
-          "default": "ONE_MINUS_SRC_ALPHA",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@destinationAlphaFactor": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "ZERO",
-            "ONE",
-            "SRC_COLOR",
-            "ONE_MINUS_SRC_COLOR",
-            "DST_COLOR",
-            "ONE_MINUS_DST_COLOR",
-            "SRC_ALPHA",
-            "ONE_MINUS_SRC_ALPHA",
-            "DST_ALPHA",
-            "ONE_MINUS_DST_ALPHA",
-            "CONSTANT_COLOR",
-            "ONE_MINUS_CONSTANT_COLOR",
-            "CONSTANT_ALPHA",
-            "ONE_MINUS_CONSTANT_ALPHA"
-          ],
-          "default": "ONE_MINUS_SRC_ALPHA",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@colorEquation": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "FUNC_ADD",
-            "FUNC_SUBTRACT",
-            "FUNC_REVERSE_SUBTRACT"
-          ],
-          "default": "FUNC_ADD",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@alphaEquation": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "FUNC_ADD",
-            "FUNC_SUBTRACT",
-            "FUNC_REVERSE_SUBTRACT"
-          ],
-          "default": "FUNC_ADD",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-    "ClearcoatMaterialExtension": {
-      "title": "ClearcoatMaterialExtension",
-      "description": "ClearcoatMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@clearcoat": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@clearcoatTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-clearcoatTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@clearcoatRoughness": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@clearcoatRoughnessTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-clearcoatRoughnessTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@clearcoatNormalTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-clearcoatNormalTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "DepthMode": {
-      "title": "DepthMode",
-      "description": "DepthMode contains parameters that are specific for depth control, like the value used for depth buffer comparisons.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@polygonOffset": {
-          "$comment": "SFVec2f inputOutput",
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "items": {
-            "default": 0,
-            "type": "number"
-          }
-        },
-        "@depthRange": {
-          "maximum": 1,
-          "minimum": 0,
-          "$comment": "SFVec2f inputOutput",
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 2,
-          "prefixItems": [
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@depthTest": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@depthFunction": {
-          "pattern": "^(\\s|\\S)*$",
-          "enum": [
-            "NEVER",
-            "LESS",
-            "EQUAL",
-            "LESS_EQUAL",
-            "GREATER",
-            "NOT_EQUAL",
-            "GREATER_EQUAL",
-            "ALWAYS"
-          ],
-          "default": "LESS_EQUAL",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "@depthMask": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        }
-      },
-      "additionalProperties": false
-    },
-    "DispersionMaterialExtension": {
-      "title": "DispersionMaterialExtension",
-      "description": "DispersionMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@dispersion": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        }
-      },
-      "additionalProperties": false
-    },
-    "EmissiveStrengthMaterialExtension": {
-      "title": "EmissiveStrengthMaterialExtension",
-      "description": "EmissiveStrengthMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@emissiveStrength": {
-          "minimum": 0,
-          "default": 1,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        }
-      },
-      "additionalProperties": false
-    },
-    "IORMaterialExtension": {
-      "title": "IORMaterialExtension",
-      "description": "IORMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/-USEField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@indexOfRefraction": {
-              "minimum": 1,
-              "default": 1.5,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@DEF": {
-              "pattern": "^[a-zA-Z_][\\w.-]*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "InstancedShape": {
-      "title": "InstancedShape",
-      "description": "InstancedShape can appear under any grouping node. InstancedShape can contain an Appearance node and a geometry node (for example one of the primitives Box Cone Cylinder Sphere Text, one of ElevationGrid Extrusion IndexedFaceSet IndexedLineSet LineSet PointSet, or one of the other geometry nodes) and this geometry node is instantiated as often as transformations are provided.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@translations": {
-          "$comment": "MFVec3f inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "items": {
-            "type": "number"
-          }
-        },
-        "@rotations": {
-          "$comment": "MFRotation inputOutput",
-          "type": "array",
-          "minItems": 4,
-          "items": {
-            "type": "number"
-          }
-        },
-        "@scales": {
-          "$comment": "MFVec3f inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "items": {
-            "type": "number"
-          }
-        },
-        "@scaleOrientations": {
-          "$comment": "MFRotation inputOutput",
-          "type": "array",
-          "minItems": 4,
-          "items": {
-            "type": "number"
-          }
-        },
-        "@centers": {
-          "$comment": "MFVec3f inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "items": {
-            "type": "number"
-          }
-        },
-        "@pointerEvents": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@castShadow": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@visible": {
-          "default": true,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@bboxDisplay": {
-          "default": false,
-          "$comment": "SFBool inputOutput",
-          "type": "boolean"
-        },
-        "@bboxSize": {
-          "minimum": 0,
-          "$comment": "SFVec3f initializeOnly",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": {
-            "default": -1,
-            "minimum": 0,
-            "type": "number"
-          }
-        },
-        "@bboxCenter": {
-          "$comment": "SFVec3f initializeOnly",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "items": {
-            "default": 0,
-            "type": "number"
-          }
-        },
-        "-appearance": {
-          "$ref": "#/$defs/-X3DAppearanceNodeSFNode"
-        },
-        "-geometry": {
-          "$ref": "#/$defs/-X3DGeometryNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "IridescenceMaterialExtension": {
-      "title": "IridescenceMaterialExtension",
-      "description": "IridescenceMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "oneOf": [
-        {
-          "$ref": "#/$defs/-USEField"
-        },
-        {
-          "type": "object",
-          "properties": {
-            "-children": {
-              "$ref": "#/$defs/-childStatements"
-            },
-            "-metadata": {
-              "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-            },
-            "@iridescence": {
-              "minimum": 0,
-              "default": 0,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@iridescenceTextureMapping": {
-              "pattern": "^(\\s|\\S)*$",
-              "default": "",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "-iridescenceTexture": {
-              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-            },
-            "@iridescenceIndexOfRefraction": {
-              "minimum": 1,
-              "default": 1.3,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@iridescenceThicknessMinimum": {
-              "minimum": 0,
-              "default": 100,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@iridescenceThicknessMaximum": {
-              "minimum": 0,
-              "default": 400,
-              "$comment": "SFFloat inputOutput",
-              "type": "number"
-            },
-            "@iridescenceThicknessTextureMapping": {
-              "pattern": "^(\\s|\\S)*$",
-              "default": "",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            },
-            "-iridescenceThicknessTexture": {
-              "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-            },
-            "@DEF": {
-              "pattern": "^[a-zA-Z_][\\w.-]*$",
-              "$comment": "SFString inputOutput",
-              "type": "string"
-            }
-          },
-          "additionalProperties": false
-        }
-      ]
-    },
-    "SheenMaterialExtension": {
-      "title": "SheenMaterialExtension",
-      "description": "SheenMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@sheenColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@sheenColorTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-sheenColorTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@sheenRoughness": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@sheenRoughnessTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-sheenRoughnessTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "SpecularGlossinessMaterial": {
-      "title": "SpecularGlossinessMaterial",
-      "description": "SpecularGlossinessMaterial specifies surface rendering properties for associated geometry nodes. Material attributes are used by the X3D lighting equations during rendering.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@diffuseColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@diffuseTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-diffuseTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@specularColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@glossiness": {
-          "maximum": 1,
-          "minimum": 0,
-          "default": 1,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@specularGlossinessTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-specularGlossinessTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@emissiveColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 0,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@emissiveTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-emissiveTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@occlusionStrength": {
-          "maximum": 1,
-          "minimum": 0,
-          "default": 1,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@occlusionTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-occlusionTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@normalScale": {
-          "minimum": 0,
-          "default": 1,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@normalTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-normalTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@transparency": {
-          "maximum": 1,
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "-extensions": {
-          "$ref": "#/$defs/-X3DMaterialExtensionNodeMFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "SpecularMaterialExtension": {
-      "title": "SpecularMaterialExtension",
-      "description": "SpecularMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@specular": {
-          "minimum": 0,
-          "default": 1,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@specularTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-specularTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@specularColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@specularColorTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-specularColorTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "TransmissionMaterialExtension": {
-      "title": "TransmissionMaterialExtension",
-      "description": "TransmissionMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@transmission": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@transmissionTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-transmissionTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
-    "VolumeMaterialExtension": {
-      "title": "VolumeMaterialExtension",
-      "description": "VolumeMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@thickness": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@thicknessTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-thicknessTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@attenuationDistance": {
-          "minimum": 0,
-          "default": 1000000,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@attenuationColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "DiffuseTransmissionMaterialExtension": {
-      "title": "DiffuseTransmissionMaterialExtension",
-      "description": "DiffuseTransmissionMaterialExtension is an extension for the PhysicalMaterial and SpecularGlossinessMaterial nodes. For this node to have an effect, add an EnvironmentLight node.",
-      "type": "object",
-      "properties": {
-        "-children": {
-          "$ref": "#/$defs/-childStatements"
-        },
-        "-metadata": {
-          "$ref": "#/$defs/-X3DMetadataObjectSFNode"
-        },
-        "@diffuseTransmission": {
-          "minimum": 0,
-          "default": 0,
-          "$comment": "SFFloat inputOutput",
-          "type": "number"
-        },
-        "@diffuseTransmissionTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-diffuseTransmissionTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        },
-        "@diffuseTransmissionColor": {
-          "$comment": "SFColor inputOutput",
-          "type": "array",
-          "minItems": 3,
-          "maxItems": 3,
-          "prefixItems": [
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            },
-            {
-              "default": 1,
-              "maximum": 1,
-              "minimum": 0,
-              "type": "number"
-            }
-          ],
-          "items": false
-        },
-        "@diffuseTransmissionColorTextureMapping": {
-          "pattern": "^(\\s|\\S)*$",
-          "default": "",
-          "$comment": "SFString inputOutput",
-          "type": "string"
-        },
-        "-diffuseTransmissionColorTexture": {
-          "$ref": "#/$defs/-X3DSingleTextureNodeSFNode"
-        }
-      },
-      "additionalProperties": false
-    },
     "component": {
       "title": "component",
       "description": "Functional summary: each added component statement indicates needed scene functionality support above the given X3D profile.",
@@ -27499,8 +26166,7 @@
               "Texturing",
               "Texturing3D",
               "Time",
-              "VolumeRendering",
-              "X_ITE"
+              "VolumeRendering"
             ],
             "$comment": "SFString inputOutput",
             "type": "string"
@@ -28071,7 +26737,7 @@
     },
     "ProtoDeclare": {
       "title": "ProtoDeclare",
-      "description": "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.",
+      "description": "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.",
       "type": "object",
       "properties": {
         "-children": {
@@ -28686,9 +27352,6 @@
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
           },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
-          },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
           },
@@ -28775,9 +27438,6 @@
           },
           "Shape": {
             "$ref": "#/$defs/Shape"
-          },
-          "InstancedShape": {
-            "$ref": "#/$defs/InstancedShape"
           },
           "ChannelMerger": {
             "$ref": "#/$defs/ChannelMerger"
@@ -28958,9 +27618,6 @@
         "UnlitMaterial": {
           "$ref": "#/$defs/UnlitMaterial"
         },
-        "SpecularGlossinessMaterial": {
-          "$ref": "#/$defs/SpecularGlossinessMaterial"
-        },
         "TwoSidedMaterial": {
           "$ref": "#/$defs/TwoSidedMaterial"
         },
@@ -29071,9 +27728,6 @@
         "PixelTexture3D": {
           "$ref": "#/$defs/PixelTexture3D"
         },
-        "ImageTextureAtlas": {
-          "$ref": "#/$defs/ImageTextureAtlas"
-        },
         "MultiTexture": {
           "$ref": "#/$defs/MultiTexture"
         },
@@ -29099,34 +27753,6 @@
         },
         "MultiTextureTransform": {
           "$ref": "#/$defs/MultiTextureTransform"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-BlendModeSFNode": {
-      "title": "BlendMode",
-      "$comment": "SFNode inputOutput",
-      "type": "object",
-      "properties": {
-        "BlendMode": {
-          "$ref": "#/$defs/BlendMode"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-DepthModeSFNode": {
-      "title": "DepthMode",
-      "$comment": "SFNode inputOutput",
-      "type": "object",
-      "properties": {
-        "DepthMode": {
-          "$ref": "#/$defs/DepthMode"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -29199,9 +27825,6 @@
         },
         "PixelTexture3D": {
           "$ref": "#/$defs/PixelTexture3D"
-        },
-        "ImageTextureAtlas": {
-          "$ref": "#/$defs/ImageTextureAtlas"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -29686,9 +28309,6 @@
         "SpotLight": {
           "$ref": "#/$defs/SpotLight"
         },
-        "EnvironmentLight": {
-          "$ref": "#/$defs/EnvironmentLight"
-        },
         "CollidableOffset": {
           "$ref": "#/$defs/CollidableOffset"
         },
@@ -29775,9 +28395,6 @@
         },
         "Shape": {
           "$ref": "#/$defs/Shape"
-        },
-        "InstancedShape": {
-          "$ref": "#/$defs/InstancedShape"
         },
         "ChannelMerger": {
           "$ref": "#/$defs/ChannelMerger"
@@ -30262,20 +28879,6 @@
       },
       "additionalProperties": false
     },
-    "-TangentSFNode": {
-      "title": "Tangent",
-      "$comment": "SFNode inputOutput",
-      "type": "object",
-      "properties": {
-        "Tangent": {
-          "$ref": "#/$defs/Tangent"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
     "-GeoOriginSFNode": {
       "title": "GeoOrigin",
       "$comment": "SFNode initializeOnly",
@@ -30309,9 +28912,6 @@
           },
           "UnlitMaterial": {
             "$ref": "#/$defs/UnlitMaterial"
-          },
-          "SpecularGlossinessMaterial": {
-            "$ref": "#/$defs/SpecularGlossinessMaterial"
           },
           "TwoSidedMaterial": {
             "$ref": "#/$defs/TwoSidedMaterial"
@@ -30352,9 +28952,6 @@
           "PixelTexture3D": {
             "$ref": "#/$defs/PixelTexture3D"
           },
-          "ImageTextureAtlas": {
-            "$ref": "#/$defs/ImageTextureAtlas"
-          },
           "MultiTexture": {
             "$ref": "#/$defs/MultiTexture"
           },
@@ -30381,12 +28978,6 @@
           },
           "PointProperties": {
             "$ref": "#/$defs/PointProperties"
-          },
-          "BlendMode": {
-            "$ref": "#/$defs/BlendMode"
-          },
-          "DepthMode": {
-            "$ref": "#/$defs/DepthMode"
           },
           "Appearance": {
             "$ref": "#/$defs/Appearance"
@@ -30592,9 +29183,6 @@
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
           },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
-          },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
           },
@@ -30681,9 +29269,6 @@
           },
           "Shape": {
             "$ref": "#/$defs/Shape"
-          },
-          "InstancedShape": {
-            "$ref": "#/$defs/InstancedShape"
           },
           "ChannelMerger": {
             "$ref": "#/$defs/ChannelMerger"
@@ -30883,9 +29468,6 @@
           "HAnimDisplacer": {
             "$ref": "#/$defs/HAnimDisplacer"
           },
-          "Tangent": {
-            "$ref": "#/$defs/Tangent"
-          },
           "IndexedFaceSet": {
             "$ref": "#/$defs/IndexedFaceSet"
           },
@@ -31075,39 +29657,6 @@
           "ProjectionVolumeStyle": {
             "$ref": "#/$defs/ProjectionVolumeStyle"
           },
-          "AnisotropyMaterialExtension": {
-            "$ref": "#/$defs/AnisotropyMaterialExtension"
-          },
-          "ClearcoatMaterialExtension": {
-            "$ref": "#/$defs/ClearcoatMaterialExtension"
-          },
-          "DispersionMaterialExtension": {
-            "$ref": "#/$defs/DispersionMaterialExtension"
-          },
-          "EmissiveStrengthMaterialExtension": {
-            "$ref": "#/$defs/EmissiveStrengthMaterialExtension"
-          },
-          "IORMaterialExtension": {
-            "$ref": "#/$defs/IORMaterialExtension"
-          },
-          "IridescenceMaterialExtension": {
-            "$ref": "#/$defs/IridescenceMaterialExtension"
-          },
-          "SheenMaterialExtension": {
-            "$ref": "#/$defs/SheenMaterialExtension"
-          },
-          "SpecularMaterialExtension": {
-            "$ref": "#/$defs/SpecularMaterialExtension"
-          },
-          "TransmissionMaterialExtension": {
-            "$ref": "#/$defs/TransmissionMaterialExtension"
-          },
-          "VolumeMaterialExtension": {
-            "$ref": "#/$defs/VolumeMaterialExtension"
-          },
-          "DiffuseTransmissionMaterialExtension": {
-            "$ref": "#/$defs/DiffuseTransmissionMaterialExtension"
-          },
           "Contact": {
             "$ref": "#/$defs/Contact"
           },
@@ -31167,6 +29716,27 @@
         }
       },
       "additionalProperties": false
+    },
+    "-HAnimDisplacerMFNode": {
+      "title": "HAnimDisplacer",
+      "$comment": "MFNode inputOutput",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "#comment": {
+            "type": "string"
+          },
+          "HAnimDisplacer": {
+            "$ref": "#/$defs/HAnimDisplacer"
+          },
+          "ProtoInstance": {
+            "$ref": "#/$defs/ProtoInstance"
+          }
+        },
+        "additionalProperties": false
+      }
     },
     "-HAnimJointMFNode": {
       "title": "HAnimJoint",
@@ -31339,27 +29909,6 @@
           },
           "HAnimSegment": {
             "$ref": "#/$defs/HAnimSegment"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
-    },
-    "-HAnimDisplacerMFNode": {
-      "title": "HAnimDisplacer",
-      "$comment": "MFNode inputOutput",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "HAnimDisplacer": {
-            "$ref": "#/$defs/HAnimDisplacer"
           },
           "ProtoInstance": {
             "$ref": "#/$defs/ProtoInstance"
@@ -31587,9 +30136,6 @@
           },
           "Shape": {
             "$ref": "#/$defs/Shape"
-          },
-          "InstancedShape": {
-            "$ref": "#/$defs/InstancedShape"
           },
           "Inline": {
             "$ref": "#/$defs/Inline"
@@ -31935,9 +30481,6 @@
         "PixelTexture3D": {
           "$ref": "#/$defs/PixelTexture3D"
         },
-        "ImageTextureAtlas": {
-          "$ref": "#/$defs/ImageTextureAtlas"
-        },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         }
@@ -32044,57 +30587,6 @@
         }
       },
       "additionalProperties": false
-    },
-    "-X3DMaterialExtensionNodeMFNode": {
-      "title": "X3DMaterialExtensionNode",
-      "$comment": "MFNode inputOutput",
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "properties": {
-          "#comment": {
-            "type": "string"
-          },
-          "AnisotropyMaterialExtension": {
-            "$ref": "#/$defs/AnisotropyMaterialExtension"
-          },
-          "ClearcoatMaterialExtension": {
-            "$ref": "#/$defs/ClearcoatMaterialExtension"
-          },
-          "DispersionMaterialExtension": {
-            "$ref": "#/$defs/DispersionMaterialExtension"
-          },
-          "EmissiveStrengthMaterialExtension": {
-            "$ref": "#/$defs/EmissiveStrengthMaterialExtension"
-          },
-          "IORMaterialExtension": {
-            "$ref": "#/$defs/IORMaterialExtension"
-          },
-          "IridescenceMaterialExtension": {
-            "$ref": "#/$defs/IridescenceMaterialExtension"
-          },
-          "SheenMaterialExtension": {
-            "$ref": "#/$defs/SheenMaterialExtension"
-          },
-          "SpecularMaterialExtension": {
-            "$ref": "#/$defs/SpecularMaterialExtension"
-          },
-          "TransmissionMaterialExtension": {
-            "$ref": "#/$defs/TransmissionMaterialExtension"
-          },
-          "VolumeMaterialExtension": {
-            "$ref": "#/$defs/VolumeMaterialExtension"
-          },
-          "DiffuseTransmissionMaterialExtension": {
-            "$ref": "#/$defs/DiffuseTransmissionMaterialExtension"
-          },
-          "ProtoInstance": {
-            "$ref": "#/$defs/ProtoInstance"
-          }
-        },
-        "additionalProperties": false
-      }
     },
     "-ShaderProgramMFNode": {
       "title": "ShaderProgram",
@@ -32334,9 +30826,6 @@
         "Shape": {
           "$ref": "#/$defs/Shape"
         },
-        "InstancedShape": {
-          "$ref": "#/$defs/InstancedShape"
-        },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
         }
@@ -32407,26 +30896,6 @@
         },
         "ProjectionVolumeStyle": {
           "$ref": "#/$defs/ProjectionVolumeStyle"
-        },
-        "ProtoInstance": {
-          "$ref": "#/$defs/ProtoInstance"
-        }
-      },
-      "additionalProperties": false
-    },
-    "-X3DEnvironmentTextureNodeSFNode": {
-      "title": "X3DEnvironmentTextureNode",
-      "$comment": "SFNode inputOutput",
-      "type": "object",
-      "properties": {
-        "ComposedCubeMapTexture": {
-          "$ref": "#/$defs/ComposedCubeMapTexture"
-        },
-        "GeneratedCubeMapTexture": {
-          "$ref": "#/$defs/GeneratedCubeMapTexture"
-        },
-        "ImageCubeMapTexture": {
-          "$ref": "#/$defs/ImageCubeMapTexture"
         },
         "ProtoInstance": {
           "$ref": "#/$defs/ProtoInstance"
@@ -32646,9 +31115,6 @@
           "SpotLight": {
             "$ref": "#/$defs/SpotLight"
           },
-          "EnvironmentLight": {
-            "$ref": "#/$defs/EnvironmentLight"
-          },
           "CollidableOffset": {
             "$ref": "#/$defs/CollidableOffset"
           },
@@ -32735,9 +31201,6 @@
           },
           "Shape": {
             "$ref": "#/$defs/Shape"
-          },
-          "InstancedShape": {
-            "$ref": "#/$defs/InstancedShape"
           },
           "ChannelMerger": {
             "$ref": "#/$defs/ChannelMerger"

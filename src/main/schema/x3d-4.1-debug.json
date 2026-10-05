@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/07/07 21:39:03",
+        "title": "X3D V4.1 JSON Schema, generated 2026/10/05 12:11:03",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -126,7 +126,7 @@
             ]
         },
         "@geoSystem-GD": {
-            "title": "geoSystem GD/GDC — Geographic Degrees",
+            "title": "geoSystem GD/GDC â€” Geographic Degrees",
             "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
             "type": "array",
             "minItems": 1,
@@ -167,7 +167,7 @@
             }
         },
         "@geoSystem-GC": {
-            "title": "geoSystem GC/GCC — Geocentric",
+            "title": "geoSystem GC/GCC â€” Geocentric",
             "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
             "type": "array",
             "minItems": 1,
@@ -192,7 +192,7 @@
         },
         "@geoSystem-UTM-zone": {
             "title": "UTM zone number",
-            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "$comment": "Zone 1â€“60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
             "type": "string",
             "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
         },
@@ -1306,7 +1306,6 @@
 						"type":"string"
 					},
 					"@detune" : {
-						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -1928,7 +1927,6 @@
 						"type":"string"
 					},
 					"@detune" : {
-						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -3303,13 +3301,13 @@
 							"enum": [
 								"BOUNCE",
 								"USER_FRICTION",
-								"FRICTION_COEFFICIENT-2",
+								"FRICTION_COEFFICIENT_2",
 								"ERROR_REDUCTION",
 								"CONSTANT_FORCE",
-								"SPEED-1",
-								"SPEED-2",
-								"SLIP-1",
-								"SLIP-2"
+								"SPEED_1",
+								"SPEED_2",
+								"SLIP_1",
+								"SLIP_2"
 							]
 ,
 							"default":"BOUNCE",
@@ -4462,13 +4460,13 @@
 							"enum": [
 								"BOUNCE",
 								"USER_FRICTION",
-								"FRICTION_COEFFICIENT-2",
+								"FRICTION_COEFFICIENT_2",
 								"ERROR_REDUCTION",
 								"CONSTANT_FORCE",
-								"SPEED-1",
-								"SPEED-2",
-								"SLIP-1",
-								"SLIP-2"
+								"SPEED_1",
+								"SPEED_2",
+								"SLIP_1",
+								"SLIP_2"
 							]
 ,
 							"default":"BOUNCE",
@@ -7659,22 +7657,10 @@
 						"type":"string"
 					},
 					"@family" : {
-						"$comment":"MFString inputOutput",
-						"type":"array",
-						"$comment":"MFString inputOutput",
-						"type":"array",
-						"items": {
-						"anyOf" : [ {
-							"enum": [
-								"SANS",
-								"SERIF",
-								"TYPEWRITER"
-							]
-						},
-						{ "type" : "string" }
-						],
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
 						"type":"string"
-						}					},
+					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
 					},
@@ -7997,6 +7983,277 @@
 						"default":0,
 						"$comment":"SFTime inputOutput",
 						"type":"number"
+					},
+					"@DEF" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"pattern": "^[a-zA-Z_][\\w.-]*$",						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@class" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@id" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"@style" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					}
+				},
+				"additionalProperties": false
+			}
+		]
+		},
+		"GaussianSplats" : {
+			"title" : "GaussianSplats",
+			"description" : "The GaussianSplats node adds basic support for direct real-time radiance field rendering of volume data without converting into surface or line primitives.",
+			"oneOf": [
+{"$ref": "#/$defs/-USEField" },				{
+                                 "type": "object",
+                                 "properties": {
+                                "-children": {
+                                        "$ref": "#/$defs/-childStatements"
+                                },
+					"@bboxCenter" : {
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":0,
+						"type":"number"
+						}					},
+					"@bboxDisplay" : {
+						"default":false,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@bboxSize" : {
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"$comment":"SFVec3f initializeOnly",
+						"type":"array",
+						"minItems" : 3,
+						"maxItems" : 3,
+						"items": {
+							"default":-1,
+						"type":"number"
+						}					},
+					"@castShadow" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@colorSpace" : {
+						"pattern" : "^(\\s|\\S)*$",
+						"enum": [
+							"SRGB_REC709_DISPLAY",
+							"LIN_REC709_DISPLAY"
+						],
+						"default":"SRGB_REC709_DISPLAY",
+						"$comment":"SFString inputOutput",
+						"type":"string"
+					},
+					"IS" : {
+						"$ref":"#/$defs/IS"
+					},
+					"-metadata" : {
+						"$ref":"#/$defs/-X3DMetadataObjectSFNode"
+					},
+					"@opacities" : {
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"$comment":"MFFloat inputOutput",
+						"type":"array",
+						"items": {
+						"type":"number"
+						}					},
+					"@orientations" : {
+						"$comment":"MFQuaternion inputOutput",
+						"type":"array",
+						"$comment":"MFQuaternion inputOutput",
+						"type":"array",
+						"items": {
+						"type":"number"
+						}					},
+					"@pointerEvents" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
+					},
+					"@positions" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@scales" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree0Coef0" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree1Coef0" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree1Coef1" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree1Coef2" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree2Coef0" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree2Coef1" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree2Coef2" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree2Coef3" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree2Coef4" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef0" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef1" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef2" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef3" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef4" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef5" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@sphericalHarmonicsDegree3Coef6" : {
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"$comment":"MFVec3f inputOutput",
+						"type":"array",
+						"minItems" : 3,
+						"items": {
+						"type":"number"
+						}					},
+					"@visible" : {
+						"default":true,
+						"$comment":"SFBool inputOutput",
+						"type":"boolean"
 					},
 					"@DEF" : {
 						"pattern" : "^(\\s|\\S)*$",
@@ -9254,7 +9511,7 @@
 		},
 		"HAnimDisplacer" : {
 			"title" : "HAnimDisplacer",
-			"description" : "HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimJoint or HAnimSegment nodes.",
+			"description" : "HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimSegment or ancestor HAnimHumanoid nodes.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -9501,6 +9758,9 @@
 						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
+					"-displacers" : {
+						"$ref":"#/$defs/-HAnimDisplacerMFNode"
+					},
 					"@info" : {
 						"$comment":"MFString inputOutput",
 						"type":"array",
@@ -9687,7 +9947,6 @@
 							"2.0",
 							"2.1"
 						],
-						"default":"2.0",
 						"$comment":"SFString inputOutput",
 						"type":"string"
 					},
@@ -9720,6 +9979,9 @@
 						"type":"string"
 					}
 				},
+				"required": [
+					"@version"
+				],
 				"additionalProperties": false
 			}
 		]
@@ -12325,9 +12587,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"RIGHT",
 									"CENTER",
-									"LEFT",
-									"RIGHT"
+									"LEFT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12335,9 +12597,9 @@
 							,
 							{
 								"enum": [
-									"CENTER",
+									"TOP",
 									"BOTTOM",
-									"TOP"
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12369,8 +12631,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"WORLD",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12379,8 +12641,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"WORLD",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12396,10 +12658,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"STRETCH",
-									"NONE",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"STRETCH",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12407,10 +12669,10 @@
 							,
 							{
 								"enum": [
-									"STRETCH",
-									"NONE",
 									"PIXEL",
-									"FRACTION"
+									"FRACTION",
+									"STRETCH",
+									"NONE"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12436,8 +12698,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"WORLD",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12446,8 +12708,8 @@
 							{
 								"enum": [
 									"PIXEL",
-									"WORLD",
-									"FRACTION"
+									"FRACTION",
+									"WORLD"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -13004,7 +13266,7 @@
 		},
 		"LoadSensor" : {
 			"title" : "LoadSensor",
-			"description" : "LoadSensor generates events as watchList child nodes are either loaded or fail to load.",
+			"description" : "LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -14425,7 +14687,7 @@
 						"anyOf" : [ {
 							"enum": [
 								"COMPLEMENT",
-								"ALPHAREPLICATE",
+								"ALPHA_REPLICATE",
 								""
 							]
 						},
@@ -14448,24 +14710,24 @@
 						"anyOf" : [ {
 							"enum": [
 								"ADD",
-								"ADDSIGNED",
-								"ADDSIGNED2X",
-								"ADDSMOOTH",
-								"BLENDCURRENTALPHA",
-								"BLENDDIFFUSEALPHA",
-								"BLENDFACTORALPHA",
-								"BLENDTEXTUREALPHA",
-								"DOTPRODUCT3",
+								"ADD_SIGNED",
+								"ADD_SIGNED_2X",
+								"ADD_SMOOTH",
+								"BLEND_CURRENT_ALPHA",
+								"BLEND_DIFFUSE_ALPHA",
+								"BLEND_FACTOR_ALPHA",
+								"BLEND_TEXTURE_ALPHA",
+								"DOT_PRODUCT_3",
 								"MODULATE",
-								"MODULATE2X",
-								"MODULATE4X",
-								"MODULATEALPHA_ADDCOLOR",
-								"MODULATEINVALPHA_ADDCOLOR",
-								"MODULATEINVCOLOR_ADDALPHA",
+								"MODULATE_2X",
+								"MODULATE_4X",
+								"MODULATE_ALPHA_ADD_COLOR",
+								"MODULATE_INV_ALPHA_ADD_COLOR",
+								"MODULATE_INV_COLOR_ADD_ALPHA",
 								"OFF",
 								"REPLACE",
-								"SELECTARG1",
-								"SELECTARG2",
+								"SELECT_ARG1",
+								"SELECT_ARG2",
 								"SUBTRACT"
 							]
 						},
@@ -16208,7 +16470,6 @@
 						"type":"string"
 					},
 					"@detune" : {
-						"minimum" : 0,
 						"default":0,
 						"$comment":"SFFloat inputOutput",
 						"type":"number"
@@ -19093,17 +19354,6 @@
 					},
 					"-textureProperties" : {
 						"$ref":"#/$defs/-TexturePropertiesSFNode"
-					},
-					"@update" : {
-						"pattern" : "^(\\s|\\S)*$",
-						"enum": [
-							"NONE",
-							"NEXT_FRAME_ONLY",
-							"ALWAYS"
-						],
-						"default":"NONE",
-						"$comment":"SFString inputOutput",
-						"type":"string"
 					},
 					"@updateInterval" : {
 						"default":0.1,
@@ -22978,16 +23228,16 @@
 						"pattern" : "^(\\s|\\S)*$",
 						"enum": [
 							"SPHERE",
-							"CAMERASPACENORMAL",
-							"CAMERASPACEPOSITION",
-							"CAMERASPACEREFLECTIONVECTOR",
-							"SPHERE-LOCAL",
+							"CAMERA_SPACE_NORMAL",
+							"CAMERA_SPACE_POSITION",
+							"CAMERA_SPACE_REFLECTION_VECTOR",
+							"SPHERE_LOCAL",
 							"COORD",
-							"COORD-EYE",
+							"COORD_EYE",
 							"NOISE",
-							"NOISE-EYE",
-							"SPHERE-REFLECT",
-							"SPHERE-REFLECT-LOCAL"
+							"NOISE_EYE",
+							"SPHERE_REFLECT",
+							"SPHERE_REFLECT_LOCAL"
 						],
 						"default":"SPHERE",
 						"$comment":"SFString inputOutput",
@@ -26602,6 +26852,7 @@
 							"EnvironmentalSensor",
 							"EventUtilities",
 							"Followers",
+							"GaussianSplats",
 							"Geometry2D",
 							"Geometry3D",
 							"Geospatial",
@@ -26863,6 +27114,8 @@
 							"MFInt32",
 							"SFNode",
 							"MFNode",
+							"SFQuaternion",
+							"MFQuaternion",
 							"SFRotation",
 							"MFRotation",
 							"SFString",
@@ -27210,7 +27463,7 @@
 		},
 		"ProtoDeclare" : {
 			"title" : "ProtoDeclare",
-			"description" : "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.",
+			"description" : "ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.",
                                  "type": "object",
                                  "properties": {
                                 "-children": {
@@ -28020,6 +28273,9 @@
 								},
 								"FontLibrary" : {
 									"$ref":"#/$defs/FontLibrary"
+								},
+								"GaussianSplats" : {
+									"$ref":"#/$defs/GaussianSplats"
 								},
 								"GeoLOD" : {
 									"$ref":"#/$defs/GeoLOD"
@@ -28996,6 +29252,9 @@
 								"FontLibrary" : {
 									"$ref":"#/$defs/FontLibrary"
 								},
+								"GaussianSplats" : {
+									"$ref":"#/$defs/GaussianSplats"
+								},
 								"GeoLOD" : {
 									"$ref":"#/$defs/GeoLOD"
 								},
@@ -29902,6 +30161,9 @@
 								"FontLibrary" : {
 									"$ref":"#/$defs/FontLibrary"
 								},
+								"GaussianSplats" : {
+									"$ref":"#/$defs/GaussianSplats"
+								},
 								"GeoLOD" : {
 									"$ref":"#/$defs/GeoLOD"
 								},
@@ -30280,6 +30542,27 @@
 							"additionalProperties": false
 						}
 					},
+					"-HAnimDisplacerMFNode" : {
+			"title" : "HAnimDisplacer",
+						"$comment":"MFNode inputOutput",
+						"type": "array",
+						"minItems": 1,
+						"items": {
+							"type": "object",
+							"properties": {
+								"#comment": {
+									"type": "string"
+								},
+								"HAnimDisplacer" : {
+									"$ref":"#/$defs/HAnimDisplacer"
+								},
+								"ProtoInstance" : {
+									"$ref":"#/$defs/ProtoInstance"
+								}
+							},
+							"additionalProperties": false
+						}
+					},
 					"-HAnimJointMFNode" : {
 			"title" : "HAnimJoint",
 						"$comment":"MFNode inputOutput",
@@ -30451,27 +30734,6 @@
 								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
-								},
-								"ProtoInstance" : {
-									"$ref":"#/$defs/ProtoInstance"
-								}
-							},
-							"additionalProperties": false
-						}
-					},
-					"-HAnimDisplacerMFNode" : {
-			"title" : "HAnimDisplacer",
-						"$comment":"MFNode inputOutput",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "object",
-							"properties": {
-								"#comment": {
-									"type": "string"
-								},
-								"HAnimDisplacer" : {
-									"$ref":"#/$defs/HAnimDisplacer"
 								},
 								"ProtoInstance" : {
 									"$ref":"#/$defs/ProtoInstance"
@@ -31904,6 +32166,9 @@
 								},
 								"FontLibrary" : {
 									"$ref":"#/$defs/FontLibrary"
+								},
+								"GaussianSplats" : {
+									"$ref":"#/$defs/GaussianSplats"
 								},
 								"GeoLOD" : {
 									"$ref":"#/$defs/GeoLOD"
