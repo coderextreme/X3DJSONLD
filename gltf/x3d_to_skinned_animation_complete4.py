@@ -1665,5 +1665,5 @@ if __name__ == "__main__":
         convert_x3d_to_glb("JoeKickAnimation.x3d", "JoeKickAnimation.glb")
         convert_x3d_to_glb("Gramps8Final.x3d", "Gramps8Final.glb")
         convert_x3d_to_glb(f"/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/AllCharactersMainStage.x3d", "AllCharactersMainStage.glb")
-        convert_x3d_to_glb(f"/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/AllKindaRepairedMainStage.x3d", "AllKindaRepairedMainStage.x3d")
+        convert_x3d_to_glb(f"/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/AllKindaRepairedMainStage.x3d", "AllKindaRepairedMainStage.glb")
 
