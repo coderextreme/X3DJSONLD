@@ -428,113 +428,326 @@ def box_to_ifs(box_node):
     ET.SubElement(ifs, 'Normal', {'vector': ' '.join([f"{v[0]} {v[1]} {v[2]}" for v in n])})
     return ifs
 
-def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_path, temp_skin_info):
+def _resolve_child(node, tag, def_map):
+    """Resolve a direct/nested child node, including USE."""
+    found = node.find('.//' + tag)
+    if found is not None and found.get('USE'):
+        found = def_map.get(found.get('USE'), found)
+    return found
+
+
+def _parse_color_rgba(color_node, def_map):
+    if color_node is None:
+        return None
+    if color_node.get('USE'):
+        color_node = def_map.get(color_node.get('USE'), color_node)
+    raw = parse_array(color_node.get('color', color_node.get('colorRGBA', '')))
+    if not raw:
+        return None
+    # X3D ColorRGBA is SF/MFColorRGBA: 4 floats per color.
+    if len(raw) % 4 != 0:
+        return None
+    return np.asarray(raw, dtype=np.float32).reshape(-1, 4)
+
+
+def _make_sphere_mesh(sphere_node, app_node, def_map, gltf, bin_blob, mat_list, base_path):
+    radius = float(sphere_node.get('radius', '1'))
+    # A deterministic UV sphere. 32x16 is a good GLB-quality default and
+    # remains much smaller than triangulating a high-resolution source sphere.
+    seg, rings = 32, 16
+    pos, uv, idx = [], [], []
+    for r in range(rings + 1):
+        v = r / rings
+        phi = math.pi * v
+        sp, cp = math.sin(phi), math.cos(phi)
+        for s in range(seg):
+            u = s / seg
+            th = 2.0 * math.pi * u
+            pos.append([radius * sp * math.cos(th),
+                        radius * cp,
+                        radius * sp * math.sin(th)])
+            uv.append([u, 1.0 - v])
+    for r in range(rings):
+        for s in range(seg):
+            a = r * seg + s
+            b = r * seg + (s + 1) % seg
+            c = (r + 1) * seg + (s + 1) % seg
+            d = (r + 1) * seg + s
+            if r != 0:
+                idx.extend([a, b, d])
+            if r != rings - 1:
+                idx.extend([b, c, d])
+    positions = np.asarray(pos, dtype=np.float32)
+    normals = positions / max(radius, 1e-12)
+    uvs = np.asarray(uv, dtype=np.float32)
+    indices = np.asarray(idx, dtype=np.uint32)
+    if indices.max(initial=0) < 65536:
+        indices = indices.astype(np.uint16)
+        idx_comp = UNSIGNED_SHORT
+    else:
+        idx_comp = UNSIGNED_INT
+    attrs = {
+        "POSITION": add_accessor(gltf, bin_blob, positions, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True),
+        "NORMAL": add_accessor(gltf, bin_blob, normals, VEC3, FLOAT, ARRAY_BUFFER),
+        "TEXCOORD_0": add_accessor(gltf, bin_blob, uvs, VEC2, FLOAT, ARRAY_BUFFER),
+    }
+    mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
+    prim = {
+        "indices": add_accessor(gltf, bin_blob, indices, SCALAR, idx_comp,
+                                ELEMENT_ARRAY_BUFFER, add_min_max=True),
+        "attributes": attrs
+    }
+    if mat_idx is not None:
+        prim["material"] = mat_idx
+    gltf.meshes.append(Mesh(primitives=[prim]))
+    return len(gltf.meshes) - 1
+
+
+def process_mesh_primitives(geom_nodes, gltf, bin_blob, def_map, mat_list, base_path,
+                            temp_skin_info):
+    """
+    Convert X3D geometry under Shape.
+
+    In addition to the original triangle geometry, this handles:
+      * Sphere -> tessellated indexed triangle mesh
+      * LineSet / IndexedLineSet -> glTF LINES primitives
+      * ColorRGBA -> COLOR_0 vertex attributes where representable
+      * LineProperties -> preserved as glTF extras (glTF core has no line width)
+    """
     primitives = []
+
     for node in geom_nodes:
         is_faceset = node.tag in ('IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet')
-        facesets = ([node] if is_faceset else
+        is_line = node.tag in ('LineSet', 'IndexedLineSet')
+        facesets = ([node] if is_faceset or is_line else
                     node.findall('.//IndexedFaceSet') +
                     node.findall('.//IndexedTriangleSet') +
-                    node.findall('.//TriangleSet'))
+                    node.findall('.//TriangleSet') +
+                    node.findall('.//LineSet') +
+                    node.findall('.//IndexedLineSet'))
 
-        if not is_faceset: facesets.extend([box_to_ifs(b) for b in node.findall('.//Box')])
+        app_node = None if (is_faceset or is_line) else node.find('.//Appearance')
 
-        app_node = None if is_faceset else node.find('.//Appearance')
+        # Box is represented by the existing canonical IFS generator.
+        if not is_faceset and not is_line:
+            facesets.extend([box_to_ifs(b) for b in node.findall('.//Box')])
+
+        # Sphere needs its own tessellation path.
+        if not is_faceset and not is_line:
+            for sphere in node.findall('.//Sphere'):
+                mesh_idx = _make_sphere_mesh(
+                    sphere, app_node, def_map, gltf, bin_blob, mat_list, base_path)
+                # A temporary entry lets the caller create a Shape node.  Sphere
+                # meshes do not need HAnim coordinate-index bookkeeping.
+                primitives.append({
+                    "indices": None,
+                    "attributes": None,
+                    "_existing_mesh": mesh_idx,
+                    "_p_indices": []
+                })
 
         for face_set in facesets:
             coord = face_set.find('.//Coordinate')
-            if coord is not None and coord.get('USE'): coord = def_map.get(coord.get('USE'), coord)
-            if coord is None: continue
+            if coord is not None and coord.get('USE'):
+                coord = def_map.get(coord.get('USE'), coord)
+            if coord is None:
+                continue
 
             raw_pos = parse_array(coord.get('point', ''))
-            if not raw_pos: continue
-            pos_arr = np.array(raw_pos, dtype=np.float32).reshape(-1, 3)
+            if not raw_pos:
+                continue
+            pos_arr = np.asarray(raw_pos, dtype=np.float32).reshape(-1, 3)
 
             tex_coord = face_set.find('.//TextureCoordinate')
-            if tex_coord is not None and tex_coord.get('USE'): tex_coord = def_map.get(tex_coord.get('USE'), tex_coord)
+            if tex_coord is not None and tex_coord.get('USE'):
+                tex_coord = def_map.get(tex_coord.get('USE'), tex_coord)
             if tex_coord is not None:
-                uv_arr = np.array(parse_array(tex_coord.get('point', '')), dtype=np.float32).reshape(-1, 2)
-                if len(uv_arr) > 0:
-                    uv_arr[:, 1] = 1.0 - uv_arr[:, 1] # Flip V axis for glTF mapping
+                raw_uv = parse_array(tex_coord.get('point', ''))
+                uv_arr = np.asarray(raw_uv, dtype=np.float32).reshape(-1, 2) if raw_uv else np.empty((0,2), np.float32)
+                if len(uv_arr):
+                    uv_arr[:, 1] = 1.0 - uv_arr[:, 1]
             else:
-                uv_arr = []
+                uv_arr = np.empty((0, 2), np.float32)
 
             norm_node = face_set.find('.//Normal')
-            if norm_node is not None and norm_node.get('USE'): norm_node = def_map.get(norm_node.get('USE'), norm_node)
-            norm_arr = np.array(parse_array(norm_node.get('vector', '')), dtype=np.float32).reshape(-1, 3) if norm_node is not None else []
+            if norm_node is not None and norm_node.get('USE'):
+                norm_node = def_map.get(norm_node.get('USE'), norm_node)
+            raw_norm = parse_array(norm_node.get('vector', '')) if norm_node is not None else []
+            norm_arr = np.asarray(raw_norm, dtype=np.float32).reshape(-1, 3) if raw_norm else np.empty((0,3), np.float32)
 
-            # Generate or Parse indices based on the Node Type
+            color_node = _resolve_child(node, 'ColorRGBA', def_map)
+            colors = _parse_color_rgba(color_node, def_map)
+
             if face_set.tag == 'TriangleSet':
-                num_verts = len(pos_arr)
-                pos_polys = [[i, i+1, i+2] for i in range(0, num_verts - 2, 3)]
+                n = len(pos_arr)
+                pos_polys = [[i, i+1, i+2] for i in range(0, n - 2, 3)]
                 tex_polys = pos_polys
                 norm_polys = pos_polys
+                color_polys = pos_polys
+                primitive_mode = 4
+            elif face_set.tag == 'LineSet':
+                counts = parse_array(face_set.get('vertexCount', ''), int, default=[])
+                pos_polys, cursor = [], 0
+                for count in counts:
+                    line = list(range(cursor, min(cursor + count, len(pos_arr))))
+                    cursor += count
+                    if len(line) >= 2:
+                        for k in range(len(line) - 1):
+                            pos_polys.append([line[k], line[k+1]])
+                tex_polys = pos_polys
+                norm_polys = pos_polys
+                color_polys = pos_polys
+                primitive_mode = 1
+            elif face_set.tag == 'IndexedLineSet':
+                # IndexedLineSet's coordIndex is a sequence of polylines.
+                pos_polys = parse_x3d_indices(face_set.get('coordIndex', ''))
+                expanded = []
+                for line in pos_polys:
+                    for k in range(len(line) - 1):
+                        expanded.append([line[k], line[k+1]])
+                pos_polys = expanded
+                tex_polys = pos_polys
+                norm_polys = pos_polys
+                color_polys = pos_polys
+                primitive_mode = 1
             else:
-                pos_polys = parse_x3d_indices(face_set.get('coordIndex') or face_set.get('index', ''))
-                tex_polys = parse_x3d_indices(face_set.get('texCoordIndex', '')) if face_set.get('texCoordIndex') else pos_polys
-                norm_polys = parse_x3d_indices(face_set.get('normalIndex', '')) if face_set.get('normalIndex') else pos_polys
+                pos_polys = parse_x3d_indices(
+                    face_set.get('coordIndex') or face_set.get('index', ''))
+                tex_polys = parse_x3d_indices(face_set.get('texCoordIndex', '')) \
+                    if face_set.get('texCoordIndex') else pos_polys
+                norm_polys = parse_x3d_indices(face_set.get('normalIndex', '')) \
+                    if face_set.get('normalIndex') else pos_polys
+                color_polys = parse_x3d_indices(face_set.get('colorIndex', '')) \
+                    if face_set.get('colorIndex') else pos_polys
+                primitive_mode = 4
 
-            unified_verts, out_positions, out_uvs, out_normals, unified_indices = {}, [], [], [], []
-            p_indices_list = []                     # original skinCoord index for every unified vertex
+            unified_verts = {}
+            out_positions, out_uvs, out_normals, out_colors = [], [], [], []
+            unified_indices, p_indices_list = [], []
 
             for pi, poly in enumerate(pos_polys):
+                if len(poly) < 2:
+                    continue
                 t_poly = tex_polys[pi] if pi < len(tex_polys) else poly
                 n_poly = norm_polys[pi] if pi < len(norm_polys) else poly
+                c_poly = color_polys[pi] if pi < len(color_polys) else poly
 
-                for i in range(1, len(poly) - 1):
-                    for j in (0, i, i+1):
+                # Triangles need fan triangulation; line primitives remain segments.
+                local_sequences = [(0, i, i+1) for i in range(1, len(poly)-1)] \
+                    if primitive_mode == 4 else [(0, 1)]
+                for seq in local_sequences:
+                    for j in seq:
                         p_idx = poly[j]
                         t_idx = t_poly[j] if j < len(t_poly) else p_idx
                         n_idx = n_poly[j] if j < len(n_poly) else p_idx
-
-                        v_tuple = (p_idx, t_idx, n_idx)
+                        c_idx = c_poly[j] if j < len(c_poly) else p_idx
+                        v_tuple = (p_idx, t_idx, n_idx, c_idx)
                         if v_tuple not in unified_verts:
                             unified_verts[v_tuple] = len(out_positions)
-                            out_positions.append(pos_arr[p_idx] if p_idx < len(pos_arr) else [0,0,0])
-                            if len(uv_arr): out_uvs.append(uv_arr[t_idx] if t_idx < len(uv_arr) else [0,0])
-                            if len(norm_arr): out_normals.append(norm_arr[n_idx] if n_idx < len(norm_arr) else [0,1,0])
-                            p_indices_list.append(p_idx)          # record original coord index
-
+                            out_positions.append(
+                                pos_arr[p_idx] if 0 <= p_idx < len(pos_arr) else [0,0,0])
+                            if len(uv_arr):
+                                out_uvs.append(uv_arr[t_idx] if 0 <= t_idx < len(uv_arr) else [0,0])
+                            if len(norm_arr):
+                                out_normals.append(
+                                    norm_arr[n_idx] if 0 <= n_idx < len(norm_arr) else [0,1,0])
+                            if colors is not None and len(colors):
+                                if face_set.get('colorPerVertex', 'true').lower() in ('false','0'):
+                                    ci = c_idx if c_idx < len(colors) else 0
+                                else:
+                                    ci = c_idx if c_idx < len(colors) else 0
+                                out_colors.append(colors[ci] if ci < len(colors) else [1,1,1,1])
+                            p_indices_list.append(p_idx)
                         unified_indices.append(unified_verts[v_tuple])
 
-            if not unified_indices: continue
+            if not unified_indices:
+                continue
 
-            positions = np.array(out_positions, dtype=np.float32)
-            indices = np.array(unified_indices, dtype=np.uint32)
-            normals = np.array(out_normals, dtype=np.float32) if out_normals else compute_normals(positions, indices, ccw=(face_set.get('ccw', 'true').strip().lower() not in ('false', '0')))
+            positions = np.asarray(out_positions, dtype=np.float32)
+            indices = np.asarray(unified_indices, dtype=np.uint32)
+            if primitive_mode == 4:
+                normals = np.asarray(out_normals, dtype=np.float32) if out_normals else \
+                    compute_normals(positions, indices,
+                                    ccw=(face_set.get('ccw','true').strip().lower() not in ('false','0')))
+            else:
+                # LINES does not require NORMAL, but supplying a harmless normal
+                # makes the mesh easier to inspect in some consumers.
+                normals = np.asarray(out_normals, dtype=np.float32) if out_normals else \
+                    np.zeros_like(positions, dtype=np.float32)
 
-            idx_comp = UNSIGNED_SHORT if indices.max() < 65536 else UNSIGNED_INT
-            if idx_comp == UNSIGNED_SHORT: indices = indices.astype(np.uint16)
+            idx_comp = UNSIGNED_SHORT if indices.max(initial=0) < 65536 else UNSIGNED_INT
+            if idx_comp == UNSIGNED_SHORT:
+                indices = indices.astype(np.uint16)
 
-            prim_attrs = {"POSITION": add_accessor(gltf, bin_blob, positions, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True),
-                          "NORMAL":   add_accessor(gltf, bin_blob, normals, VEC3, FLOAT, ARRAY_BUFFER)}
+            prim_attrs = {
+                "POSITION": add_accessor(gltf, bin_blob, positions, VEC3, FLOAT,
+                                          ARRAY_BUFFER, add_min_max=True)
+            }
+            if primitive_mode == 4:
+                prim_attrs["NORMAL"] = add_accessor(
+                    gltf, bin_blob, normals, VEC3, FLOAT, ARRAY_BUFFER)
+            if len(out_uvs):
+                prim_attrs["TEXCOORD_0"] = add_accessor(
+                    gltf, bin_blob, np.asarray(out_uvs, np.float32), VEC2, FLOAT, ARRAY_BUFFER)
+            if len(out_colors):
+                prim_attrs["COLOR_0"] = add_accessor(
+                    gltf, bin_blob, np.asarray(out_colors, np.float32), VEC4, FLOAT, ARRAY_BUFFER)
 
-            if len(out_uvs) > 0:
-                prim_attrs["TEXCOORD_0"] = add_accessor(gltf, bin_blob, np.array(out_uvs, dtype=np.float32), VEC2, FLOAT, ARRAY_BUFFER)
-
-            mat_idx = resolve_material(app_node, def_map, mat_list, gltf, bin_blob, base_path)
-
+            mat_idx = resolve_material(
+                app_node, def_map, mat_list, gltf, bin_blob, base_path)
             prim_dict = {
-                "indices": add_accessor(gltf, bin_blob, indices, SCALAR, idx_comp, ELEMENT_ARRAY_BUFFER, add_min_max=True),
+                "indices": add_accessor(gltf, bin_blob, indices, SCALAR, idx_comp,
+                                        ELEMENT_ARRAY_BUFFER, add_min_max=True),
                 "attributes": prim_attrs,
-                "_p_indices": p_indices_list          # temporary key – removed later
+                "_p_indices": p_indices_list,
+                "mode": primitive_mode
             }
             if mat_idx is not None:
                 prim_dict["material"] = mat_idx
 
+            line_props = _resolve_child(node, 'LineProperties', def_map)
+            if line_props is not None:
+                prim_dict["_x3d_lineProperties"] = {
+                    "linewidthScaleFactor": float(line_props.get('linewidthScaleFactor','1')),
+                    "linetype": int(line_props.get('linetype','1'))
+                }
             primitives.append(prim_dict)
 
-    if not primitives: return None
+    # Materialize separately generated Sphere meshes without making a wrapper
+    # mesh around them.
+    existing_meshes = [p.pop("_existing_mesh") for p in primitives
+                       if "_existing_mesh" in p]
+    primitives = [p for p in primitives if "_existing_mesh" not in p]
 
+    # Bring generated Sphere primitives into the same Shape mesh when a Shape
+    # contains more than one geometry child.  Remove the temporary meshes after
+    # copying their primitives; indices are already local to each primitive.
+    for sphere_idx in existing_meshes:
+        if 0 <= sphere_idx < len(gltf.meshes):
+            primitives.extend(gltf.meshes[sphere_idx].primitives)
+    if existing_meshes:
+        first_temp = min(existing_meshes)
+        # Sphere helpers append only temporary meshes during this call, so they
+        # are contiguous at the end of the mesh array.
+        if first_temp < len(gltf.meshes):
+            del gltf.meshes[first_temp:]
+    if not primitives:
+        return None
+
+    # Strip internal line-property metadata only after copying it to mesh
+    # extras, so the generated GLB remains valid core glTF.
     mesh_idx = len(gltf.meshes)
-    gltf.meshes.append(Mesh(primitives=primitives))
-
-    # Record skin data for every primitive we just added
-    for p_local_idx, prim_dict in enumerate(primitives):
-        if "_p_indices" in prim_dict:
-            p_list = prim_dict.pop("_p_indices")
-            temp_skin_info.append((mesh_idx, p_local_idx, p_list))
-
+    mesh = Mesh(primitives=[])
+    gltf.meshes.append(mesh)
+    for p in primitives:
+        line_props = p.pop("_x3d_lineProperties", None)
+        if line_props:
+            mesh.extras = dict(mesh.extras or {})
+            mesh.extras.setdefault("x3d_lineProperties", []).append(line_props)
+        p_list = p.pop("_p_indices", None)
+        mesh.primitives.append(p)
+        if p_list is not None:
+            temp_skin_info.append((mesh_idx, len(mesh.primitives)-1, p_list))
     return mesh_idx
 
 
@@ -566,8 +779,11 @@ IGNORED_BEHAVIOUR_TAGS = {'BooleanFilter', 'BooleanSequencer', 'NavigationInfo',
 HANDLED_TAGS = STRUCTURAL_TAGS | {
     'X3D', 'head', 'meta', 'Scene',
     'Shape', 'Appearance', 'Material', 'ImageTexture',
-    'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'Box', 'Text', 'FontStyle',
+    'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet',
+    'Box', 'Sphere', 'Text', 'FontStyle', 'ColorRGBA', 'LineProperties',
     'Coordinate', 'TextureCoordinate', 'Normal',
+    'WorldInfo', 'NavigationInfo', 'Background', 'AudioClip', 'Sound', 'LoadSensor',
+    'Switch', 'HAnimMotion',
     'Viewpoint', 'Inline', 'InlineGeometry',
     'DirectionalLight', 'PointLight',
     'TimeSensor', 'PositionInterpolator', 'OrientationInterpolator',
@@ -577,7 +793,8 @@ HANDLED_TAGS = STRUCTURAL_TAGS | {
 # Children of a <Shape> that the mesh/text/material code consumes.
 SHAPE_CONSUMED_TAGS = {
     'Appearance', 'Material', 'ImageTexture', 'FontStyle',
-    'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'Box', 'Text',
+    'IndexedFaceSet', 'IndexedTriangleSet', 'TriangleSet', 'LineSet', 'IndexedLineSet',
+    'Box', 'Sphere', 'Text', 'ColorRGBA', 'LineProperties',
     'Coordinate', 'TextureCoordinate', 'Normal',
 }
 
@@ -633,6 +850,10 @@ class ConvertCtx:
         self.skin_groups = []
         self.orphan_shapes = []        # shapes outside any humanoid that may still use a humanoid's skinCoord
         self.mesh_to_node = {}
+        self.def_to_shape_node = {}    # scoped Shape DEF -> glTF node index
+        self.def_to_mesh = {}          # scoped geometry DEF/Shape DEF -> mesh index where useful
+        self.behavior = []             # X3D behavior/audio/view metadata preserved in GLB extras
+        self.units = []                # X3D <unit> declarations preserved/applied where possible
         self.inlines = []              # one record per Inline node encountered
         self.unhandled = {}            # tag -> {'count', 'reasons', 'examples'}
         self.load_stack = []           # files currently being loaded (cycle guard)
@@ -649,10 +870,12 @@ class ConvertCtx:
             rec['examples'].append(example)
 
     def note_use(self, tag, scope, xml_node):
-        if xml_node.get('containerField') in ('joints', 'segments', 'sites'):
-            reason = 'USE reference in an HAnimHumanoid joints/segments/sites list (expected; original is converted via its DEF)'
-        else:
-            reason = 'USE reference is NOT instanced (nothing is duplicated)'
+        if tag == 'HAnimJoint' and xml_node.get('containerField') in ('joints', 'segments', 'sites'):
+            # This is an actual X3D reference to the already-created joint,
+            # not a request for another skeleton joint.  The DEF occurrence
+            # supplies the glTF joint and the USE list entry is bookkeeping only.
+            return
+        reason = 'USE reference is NOT instanced (nothing is duplicated)'
         self.note_unhandled(f"{tag} (USE)", reason, scope, xml_node)
 
 
@@ -784,6 +1007,61 @@ def _handle_inline(xml_node, parent_idx, ctx, scope):
 # DOM Traversal & Dual-Node Pattern
 # ---------------------------------------------------------------------------
 
+
+def _clone_gltf_subtree(gltf, source_idx, name_suffix="__USE"):
+    """Clone a glTF node hierarchy while reusing meshes/materials/skins."""
+    source = gltf.nodes[source_idx]
+    def copy_node(idx):
+        s = gltf.nodes[idx]
+        n = Node(
+            name=(s.name or f"Node_{idx}") + name_suffix,
+            translation=list(s.translation) if s.translation is not None else None,
+            rotation=list(s.rotation) if s.rotation is not None else None,
+            scale=list(s.scale) if s.scale is not None else None,
+            matrix=list(s.matrix) if s.matrix is not None else None,
+            mesh=s.mesh,
+            skin=s.skin,
+            camera=s.camera,
+            weights=list(s.weights) if s.weights is not None else None,
+            children=[]
+        )
+        if s.extras is not None:
+            n.extras = dict(s.extras)
+        if s.extensions is not None:
+            n.extensions = dict(s.extensions)
+        new_idx = len(gltf.nodes)
+        gltf.nodes.append(n)
+        for child in (s.children or []):
+            n.children.append(copy_node(child))
+        return new_idx
+    return copy_node(source_idx)
+
+
+def _preserve_behavior(ctx, scope, xml_node, kind=None):
+    """Keep X3D behavior that glTF cannot execute in a standard extension."""
+    rec = {
+        "file": scope.filename,
+        "prefix": scope.prefix,
+        "type": xml_node.tag,
+        "DEF": xml_node.get("DEF"),
+        "USE": xml_node.get("USE"),
+        "attributes": dict(xml_node.attrib),
+        "children": [
+            {"type": child.tag, "DEF": child.get("DEF"), "USE": child.get("USE"),
+             "attributes": dict(child.attrib)}
+            for child in xml_node
+        ]
+    }
+    if kind:
+        rec["kind"] = kind
+    ctx.behavior.append(rec)
+
+
+def _shape_children_consumed(el):
+    return el.tag in SHAPE_CONSUMED_TAGS or el.tag in {
+        'ColorRGBA', 'Color', 'LineProperties'
+    }
+
 def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None):
     gltf = ctx.gltf
     tag = xml_node.tag
@@ -791,11 +1069,15 @@ def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None):
     def attach(child_idx):
         if parent_idx is not None:
             p = gltf.nodes[parent_idx]
-            if p.children is None: p.children = []
-            p.children.append(child_idx)
+            if p.children is None:
+                p.children = []
+            if child_idx not in p.children:
+                p.children.append(child_idx)
 
+    # Behavior-only nodes have no standard glTF equivalent. Preserve them so a
+    # downstream X3D-aware runtime can reconstruct the original event graph.
     if tag in IGNORED_BEHAVIOUR_TAGS:
-        ctx.note_unhandled(tag, 'behaviour node, skipped on purpose', scope, xml_node)
+        _preserve_behavior(ctx, scope, xml_node, "behavior")
         return
 
     if tag in ('Inline', 'InlineGeometry'):
@@ -806,7 +1088,9 @@ def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None):
         cam_idx = len(gltf.cameras)
         gltf.cameras.append(Camera(
             type="perspective",
-            perspective=Perspective(yfov=float(xml_node.get('fieldOfView', '0.785398')), znear=0.1, zfar=1000.0)
+            perspective=Perspective(
+                yfov=float(xml_node.get('fieldOfView', '0.785398')),
+                znear=0.1, zfar=1000.0)
         ))
         node_idx = len(gltf.nodes)
         gltf.nodes.append(Node(
@@ -816,39 +1100,89 @@ def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None):
             camera=cam_idx
         ))
         attach(node_idx)
+        if xml_node.get('DEF'):
+            ctx.def_to_node_idx[scope.prefix + xml_node.get('DEF')] = node_idx
+        return
+
+    if tag == 'Switch':
+        # Static Switch semantics can be represented exactly by exporting only
+        # the selected child.  Dynamic whichChoice ROUTEs are preserved below.
+        choice = int(xml_node.get('whichChoice', '-1'))
+        children = list(xml_node)
+        if 0 <= choice < len(children):
+            traverse_x3d_node(children[choice], parent_idx, ctx, scope, skin_group)
+        elif choice < 0:
+            pass
+        else:
+            ctx.note_unhandled('Switch', 'whichChoice is outside available children', scope, xml_node)
+        if any(r.get('toNode') == (xml_node.get('DEF') or '') and r.get('toField') == 'set_whichChoice'
+               for r in []):
+            pass
+        _preserve_behavior(ctx, scope, xml_node, "switch")
         return
 
     if tag in STRUCTURAL_TAGS:
-        if xml_node.get('USE'): ctx.note_use(tag, scope, xml_node)
+        use = xml_node.get('USE')
+        if use:
+            # HAnimHumanoid joint/segment/site USE entries refer to an existing
+            # node. They are not additional skeleton joints.
+            if tag == 'HAnimJoint' and xml_node.get('containerField') in ('joints','segments','sites'):
+                ctx.note_use(tag, scope, xml_node)
+                return
+            key = scope.prefix + use
+            source_idx = ctx.def_to_node_idx.get(key)
+            if source_idx is not None:
+                clone_idx = _clone_gltf_subtree(gltf, source_idx)
+                attach(clone_idx)
+                return
+            # X3D DEF normally precedes USE. If it does not, resolve the source
+            # from the scope's DEF map and convert it on demand.
+            source = scope.def_map.get(use)
+            if source is not None and source is not xml_node:
+                traverse_x3d_node(source, parent_idx, ctx, scope, skin_group)
+                source_idx = ctx.def_to_node_idx.get(key)
+                if source_idx is not None:
+                    clone_idx = _clone_gltf_subtree(gltf, source_idx)
+                    attach(clone_idx)
+                    return
+            ctx.note_use(tag, scope, xml_node)
+            return
+
         def_name = xml_node.get('DEF')
         key = scope.prefix + def_name if def_name else None
-        t = np.array(parse_array(xml_node.get('translation'), default=[0,0,0]))
-        c = np.array(parse_array(xml_node.get('center'), default=[0,0,0]))
+        t = np.asarray(parse_array(xml_node.get('translation'), default=[0,0,0]), dtype=float)
+        c = np.asarray(parse_array(xml_node.get('center'), default=[0,0,0]), dtype=float)
         outer_idx = len(gltf.nodes)
         gltf.nodes.append(Node(
             name=key or f"{scope.prefix}{tag}_{outer_idx}",
             translation=[float(x) for x in (t + c)],
-            rotation=axis_angle_to_quat(*parse_array(xml_node.get('rotation'), default=[0,1,0,0])),
-            scale=parse_array(xml_node.get('scale'), default=[1,1,1]), children=[]
+            rotation=axis_angle_to_quat(*parse_array(
+                xml_node.get('rotation'), default=[0,1,0,0])),
+            scale=parse_array(xml_node.get('scale'), default=[1,1,1]),
+            children=[]
         ))
-
-        if key: ctx.def_to_node_idx[key] = outer_idx
+        if key:
+            ctx.def_to_node_idx[key] = outer_idx
         ctx.node_to_center[outer_idx] = c
         attach(outer_idx)
 
         inner_idx = len(gltf.nodes)
-        gltf.nodes.append(Node(name=f"{key or scope.prefix + tag}_Inner", translation=[float(x) for x in -c], children=[]))
+        gltf.nodes.append(Node(
+            name=f"{key or scope.prefix + tag}_Inner",
+            translation=[float(x) for x in -c],
+            children=[]
+        ))
         gltf.nodes[outer_idx].children.append(inner_idx)
 
         group = skin_group
-        if tag == 'HAnimHumanoid' and not xml_node.get('USE'):
+        if tag == 'HAnimHumanoid':
             sc = next((ch for ch in xml_node if ch.get('containerField') == 'skinCoord'), None)
             sc_name = (sc.get('DEF') or sc.get('USE')) if sc is not None else None
-            group = SkinGroup(key or f"{scope.prefix}Humanoid_{outer_idx}", scope, sc_name)
+            group = SkinGroup(
+                key or f"{scope.prefix}Humanoid_{outer_idx}", scope, sc_name)
             group.inner_idx = inner_idx
             ctx.skin_groups.append(group)
 
-        # collect HAnimJoint skinning data into the humanoid that owns this joint
         if tag == 'HAnimJoint' and key:
             skin_idx = parse_array(xml_node.get('skinCoordIndex', ''), int, default=[])
             skin_wgt = parse_array(xml_node.get('skinCoordWeight', ''), float, default=[])
@@ -856,50 +1190,103 @@ def traverse_x3d_node(xml_node, parent_idx, ctx, scope, skin_group=None):
                 if group is not None:
                     group.joint_skinning[key] = list(zip(skin_idx, skin_wgt))
                 else:
-                    ctx.note_unhandled('HAnimJoint', 'skinCoordIndex outside an HAnimHumanoid: skinning ignored', scope, xml_node)
+                    ctx.note_unhandled(
+                        'HAnimJoint',
+                        'skinCoordIndex outside an HAnimHumanoid: skinning ignored',
+                        scope, xml_node)
 
         for child in xml_node:
             traverse_x3d_node(child, inner_idx, ctx, scope, group)
+        return
 
-    elif tag == 'Shape':
-        if xml_node.get('USE'):
+    if tag == 'Shape':
+        use = xml_node.get('USE')
+        if use:
+            source_idx = ctx.def_to_shape_node.get(scope.prefix + use)
+            if source_idx is None:
+                source = scope.def_map.get(use)
+                if source is not None and source is not xml_node:
+                    # Convert the DEF once, then instance its glTF node.
+                    traverse_x3d_node(source, parent_idx, ctx, scope, skin_group)
+                    source_idx = ctx.def_to_shape_node.get(scope.prefix + use)
+            if source_idx is not None:
+                clone_idx = _clone_gltf_subtree(gltf, source_idx)
+                attach(clone_idx)
+                return
             ctx.note_use(tag, scope, xml_node)
             return
+
         text_node = xml_node.find('.//Text')
         local_skin = []
         if text_node is not None:
-            mesh_idx = process_text_primitives(text_node, xml_node.find('.//Appearance'), gltf, ctx.bin_blob,
-                                               scope.def_map, ctx.mat_list, scope.base)
+            mesh_idx = process_text_primitives(
+                text_node, xml_node.find('.//Appearance'), gltf, ctx.bin_blob,
+                scope.def_map, ctx.mat_list, scope.base)
             if mesh_idx is None:
-                ctx.note_unhandled('Text', 'could not be rasterised (see warnings above)', scope, text_node)
+                ctx.note_unhandled(
+                    'Text', 'could not be rasterised (see warnings above)',
+                    scope, text_node)
         else:
-            mesh_idx = process_mesh_primitives([xml_node], gltf, ctx.bin_blob, scope.def_map, ctx.mat_list,
-                                               scope.base, local_skin)
+            mesh_idx = process_mesh_primitives(
+                [xml_node], gltf, ctx.bin_blob, scope.def_map, ctx.mat_list,
+                scope.base, local_skin)
 
-        # audit everything inside the Shape that the mesh/material code does not read
+        # Shape children consumed by geometry/material conversion do not need
+        # separate traversal. ColorRGBA and LineProperties are now consumed too.
         for el in xml_node.iter():
-            if el is xml_node or el.tag in SHAPE_CONSUMED_TAGS: continue
-            ctx.note_unhandled(el.tag, 'inside Shape: ' + ('Shape DROPPED (no supported geometry)' if mesh_idx is None
-                                                          else 'ignored (Shape is still exported)'), scope, el)
+            if el is xml_node or _shape_children_consumed(el):
+                continue
+            ctx.note_unhandled(
+                el.tag,
+                'inside Shape: ' +
+                ('Shape DROPPED (no supported geometry)' if mesh_idx is None
+                 else 'ignored (Shape is still exported)'),
+                scope, el)
 
         if mesh_idx is not None:
             shape_idx = len(gltf.nodes)
-            gltf.nodes.append(Node(name=scope.prefix + xml_node.get('DEF', f"Shape_{shape_idx}"), mesh=mesh_idx))
+            shape_name = scope.prefix + xml_node.get(
+                'DEF', f"Shape_{shape_idx}")
+            gltf.nodes.append(Node(name=shape_name, mesh=mesh_idx))
             attach(shape_idx)
             ctx.mesh_to_node[mesh_idx] = shape_idx
+            if xml_node.get('DEF'):
+                ctx.def_to_shape_node[scope.prefix + xml_node.get('DEF')] = shape_idx
+                ctx.def_to_mesh[scope.prefix + xml_node.get('DEF')] = mesh_idx
             if local_skin:
                 if skin_group is not None:
                     skin_group.meshes.extend(local_skin)
                 else:
                     coord = xml_node.find('.//Coordinate')
-                    cname = (coord.get('DEF') or coord.get('USE')) if coord is not None else None
+                    cname = (coord.get('DEF') or coord.get('USE')) \
+                        if coord is not None else None
                     ctx.orphan_shapes.append((scope, cname, local_skin))
+        return
 
-    else:
-        if tag not in HANDLED_TAGS:
-            ctx.note_unhandled(tag, UNHANDLED_REASONS.get(tag, DEFAULT_UNHANDLED_REASON), scope, xml_node)
-        for child in xml_node:
-            traverse_x3d_node(child, parent_idx, ctx, scope, skin_group)
+    # Nodes that have meaningful scene-level data but no standard glTF object.
+    if tag in ('WorldInfo', 'NavigationInfo', 'Background', 'AudioClip',
+               'Sound', 'LoadSensor'):
+        _preserve_behavior(ctx, scope, xml_node, "scene")
+        return
+
+    if tag == 'component':
+        # component is a head declaration in X3D XML. Preserve its attributes.
+        _preserve_behavior(ctx, scope, xml_node, "component")
+        return
+
+    # These are valid glTF-facing constructs already consumed elsewhere.
+    if tag in ('ColorRGBA', 'LineProperties', 'Appearance', 'Material',
+               'ImageTexture', 'Coordinate', 'TextureCoordinate', 'Normal',
+               'FontStyle'):
+        return
+
+    if tag not in HANDLED_TAGS:
+        ctx.note_unhandled(
+            tag, UNHANDLED_REASONS.get(tag, DEFAULT_UNHANDLED_REASON),
+            scope, xml_node)
+
+    for child in xml_node:
+        traverse_x3d_node(child, parent_idx, ctx, scope, skin_group)
 
 # ---------------------------------------------------------------------------
 # Animations (already handles translation compensation for joint centers)
@@ -990,15 +1377,191 @@ def _build_imports(scope, ctx):
         imports[imp.get('AS') or imported] = child.prefix + imported
     return imports
 
+
+def _parse_hanim_motion_channels(channels):
+    """
+    Parse common HAnimMotion channel spellings:
+      "l_hip rotation r_knee translation"
+      "l_hip[rotation] r_knee[translation]"
+    Returns [(joint, field, width)].
+    """
+    if not channels:
+        return []
+    tokens = re.findall(r'([A-Za-z_][\w.-]*)\s*(?:\[\s*|\s+)(translation|rotation|scale)\s*\]?',
+                        channels)
+    if tokens:
+        return [(j, f, 4 if f == 'rotation' else 3) for j, f in tokens]
+
+    raw = re.sub(r'[\[\],]', ' ', channels).split()
+    out = []
+    i = 0
+    while i + 1 < len(raw):
+        if raw[i+1] in ('translation', 'rotation', 'scale'):
+            f = raw[i+1]
+            out.append((raw[i], f, 4 if f == 'rotation' else 3))
+            i += 2
+        else:
+            i += 1
+    return out
+
+
+def convert_hanim_motions(scope, gltf, bin_blob, def_to_node_idx, node_to_center,
+                          prefix=''):
+    """
+    Convert HAnimMotion raw frame data into ordinary glTF animation channels.
+
+    X3D HAnimMotion supplies per-frame values, a frameDuration, a joint list,
+    and a channel description.  The X3D specification defines frameCount as
+    the number of complete channel rows in values; glTF can represent the
+    resulting joint TRS tracks directly.
+    """
+    used = set()
+    for motion in scope.root.findall('.//HAnimMotion'):
+        values = np.asarray(parse_array(motion.get('values', '')), dtype=np.float32)
+        channels = _parse_hanim_motion_channels(motion.get('channels', ''))
+        joints = parse_mfstring(motion.get('joints', '')) or \
+                 motion.get('joints', '').replace(',', ' ').split()
+
+        if not channels or not values.size:
+            ctx_rec = {
+                "file": scope.filename, "prefix": prefix, "type": "HAnimMotion",
+                "DEF": motion.get("DEF"), "attributes": dict(motion.attrib),
+                "converted": False,
+                "reason": "preserved because channels/values could not be decoded"
+            }
+            # Stored by caller through a temporary attribute.
+            if not hasattr(scope, "_unconverted_motion"):
+                scope._unconverted_motion = []
+            scope._unconverted_motion.append(ctx_rec)
+            continue
+
+        # If joints is supplied separately, channels can be bare field names.
+        if len(channels) == 0 and joints:
+            channels = [(j, 'rotation', 4) for j in joints]
+        elif joints and len(channels) != len(joints):
+            # Some authoring tools put only channel types in channels.
+            field_tokens = [x for x in re.sub(r'[\[\],]', ' ', motion.get('channels','')).split()
+                            if x in ('translation','rotation','scale')]
+            if field_tokens and len(field_tokens) == len(joints):
+                channels = [(j, f, 4 if f == 'rotation' else 3)
+                            for j, f in zip(joints, field_tokens)]
+
+        width = sum(w for _, _, w in channels)
+        if width <= 0 or len(values) < width:
+            continue
+        frame_count = len(values) // width
+        values = values[:frame_count * width].reshape(frame_count, width)
+        start_frame = max(0, int(motion.get('startFrame', '0')))
+        end_frame = int(motion.get('endFrame', '0'))
+        if end_frame > start_frame:
+            stop = min(frame_count, end_frame - start_frame + 1)
+        else:
+            stop = frame_count
+        values = values[:stop]
+        if len(values) < 1:
+            continue
+
+        dt = max(float(motion.get('frameDuration', '0.1')), 1e-9)
+        times = (np.arange(len(values), dtype=np.float32) * dt)
+        samplers, channels_out = [], []
+        cursor = 0
+
+        enabled_raw = parse_array(motion.get('channelsEnabled', ''), str, default=[])
+        for ch_i, (joint, field, w) in enumerate(channels):
+            enabled = True
+            if ch_i < len(enabled_raw):
+                enabled = str(enabled_raw[ch_i]).lower() not in ('false','0')
+            data = values[:, cursor:cursor+w]
+            cursor += w
+            if not enabled:
+                continue
+
+            node_idx = def_to_node_idx.get(prefix + joint)
+            if node_idx is None:
+                # A few motion files use scoped DEF names directly.
+                node_idx = def_to_node_idx.get(joint)
+            if node_idx is None:
+                continue
+
+            if field == 'rotation':
+                out = np.asarray(
+                    [axis_angle_to_quat(*row) for row in data], dtype=np.float32)
+                path = 'rotation'
+                typ = VEC4
+            elif field == 'translation':
+                out = data.astype(np.float32).copy()
+                if node_idx in node_to_center:
+                    out += node_to_center[node_idx]
+                path = 'translation'
+                typ = VEC3
+            else:
+                out = data.astype(np.float32)
+                path = 'scale'
+                typ = VEC3
+
+            t_off, t_len = append_to_buffer(bin_blob, times.tobytes())
+            gltf.bufferViews.append(BufferView(
+                buffer=0, byteOffset=t_off, byteLength=t_len))
+            gltf.accessors.append(Accessor(
+                bufferView=len(gltf.bufferViews)-1, componentType=FLOAT,
+                count=len(times), type=SCALAR,
+                min=[float(times.min())], max=[float(times.max())]))
+            t_acc = len(gltf.accessors)-1
+
+            v_off, v_len = append_to_buffer(bin_blob, out.tobytes())
+            gltf.bufferViews.append(BufferView(
+                buffer=0, byteOffset=v_off, byteLength=v_len))
+            gltf.accessors.append(Accessor(
+                bufferView=len(gltf.bufferViews)-1, componentType=FLOAT,
+                count=len(out), type=typ))
+            v_acc = len(gltf.accessors)-1
+
+            samplers.append(AnimationSampler(
+                input=t_acc, output=v_acc, interpolation='LINEAR'))
+            channels_out.append(AnimationChannel(
+                sampler=len(samplers)-1,
+                target=AnimationChannelTarget(node=node_idx, path=path)))
+
+        if channels_out:
+            name = motion.get('name') or motion.get('DEF') or 'HAnimMotion'
+            gltf.animations.append(Animation(
+                name=f"Anim_{prefix}{name}", samplers=samplers,
+                channels=channels_out))
+            used.add(motion.get('DEF'))
+    return used
+
 def _audit_animation(scope, ctx, consumed, used_defs):
+    """
+    Anything outside the native glTF animation subset is preserved in
+    asset.extras['x3d_behavior'] rather than silently discarded.
+    """
     for r in scope.root.findall('.//ROUTE'):
         if id(r) not in consumed:
-            ctx.note_unhandled('ROUTE', 'not converted (only TimeSensor -> Position/OrientationInterpolator -> translation/rotation is supported)',
-                               scope, example=f"{scope.filename}::{r.get('fromNode')}.{r.get('fromField')} -> {r.get('toNode')}.{r.get('toField')}")
-    for tag in ('TimeSensor', 'PositionInterpolator', 'OrientationInterpolator'):
+            rec = {
+                "file": scope.filename,
+                "prefix": scope.prefix,
+                "fromNode": r.get('fromNode'),
+                "fromField": r.get('fromField'),
+                "toNode": r.get('toNode'),
+                "toField": r.get('toField'),
+                "converted": False,
+                "reason": "ROUTE preserved; no standard glTF event-routing equivalent"
+            }
+            ctx.behavior.append({"type": "ROUTE", **rec})
+
+    for tag in ('TimeSensor', 'PositionInterpolator', 'OrientationInterpolator', 'HAnimMotion'):
         for el in scope.root.findall(f'.//{tag}'):
             if el.get('DEF') not in used_defs:
-                ctx.note_unhandled(tag, 'did not contribute to any animation channel', scope, el)
+                ctx.behavior.append({
+                    "file": scope.filename,
+                    "prefix": scope.prefix,
+                    "type": tag,
+                    "DEF": el.get('DEF'),
+                    "attributes": dict(el.attrib),
+                    "converted": False,
+                    "reason": "node preserved; it did not contribute to a native glTF animation channel"
+                })
+
 
 # ---------------------------------------------------------------------------
 # Skins: one glTF skin per HAnimHumanoid
@@ -1169,16 +1732,41 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
 
     if head is not None:
         for el in head:
-            if el.tag != 'meta':
-                ctx.note_unhandled(el.tag, 'head element ignored (e.g. <unit> conversions are not applied)', main_scope, el)
+            if el.tag == 'meta':
+                continue
+            if el.tag == 'component':
+                # Component declarations describe the X3D profile/version used
+                # by the source scene. They do not create renderable glTF nodes.
+                ctx.behavior.append({
+                    "file": main_scope.filename,
+                    "type": "component",
+                    "attributes": dict(el.attrib),
+                    "converted": True,
+                    "reason": "preserved as X3D profile metadata"
+                })
+            elif el.tag == 'unit':
+                # X3D <unit> is metadata for unit conversion. Preserve it
+                # explicitly; geometry remains in source coordinates unless a
+                # concrete conversion factor is supplied by the author.
+                ctx.units.append(dict(el.attrib))
+            else:
+                ctx.note_unhandled(
+                    el.tag,
+                    'head element not representable as a glTF node',
+                    main_scope, el)
 
     # Traverse (Inlines are loaded recursively; scopes list grows as they load)
     traverse_x3d_node(main_scope.content, 0, ctx, main_scope, None)
 
     # Animations, once per file so every Inline keeps its own TimeSensor/ROUTE graph
     for scope in list(ctx.scopes):
-        consumed, used = convert_animations(scope.root, gltf, bin_blob, ctx.def_to_node_idx, ctx.node_to_center,
-                                            prefix=scope.prefix, imports=_build_imports(scope, ctx))
+        motion_used = convert_hanim_motions(
+            scope, gltf, bin_blob, ctx.def_to_node_idx, ctx.node_to_center,
+            prefix=scope.prefix)
+        consumed, used = convert_animations(
+            scope.root, gltf, bin_blob, ctx.def_to_node_idx, ctx.node_to_center,
+            prefix=scope.prefix, imports=_build_imports(scope, ctx))
+        used.update(motion_used)
         _audit_animation(scope, ctx, consumed, used)
 
     # One skin per humanoid
@@ -1189,6 +1777,12 @@ def convert_x3d_to_glb(x3d_filepath, glb_filepath):
     gltf_dict = to_plain(gltf)
     if ctx.mat_list:
         gltf_dict['materials'] = ctx.mat_list
+
+    # Preserve X3D semantics that have no standard glTF core equivalent.
+    if ctx.behavior:
+        gltf_dict.setdefault('asset', {}).setdefault('extras', {})['x3d_behavior'] = ctx.behavior
+    if ctx.units:
+        gltf_dict.setdefault('asset', {}).setdefault('extras', {})['x3d_units'] = ctx.units
 
     for mesh_plain, mesh_obj in zip(gltf_dict.get('meshes', []), gltf.meshes):
         mesh_plain['primitives'] = [to_plain(p) for p in mesh_obj.primitives]

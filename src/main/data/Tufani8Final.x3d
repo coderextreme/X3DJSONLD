@@ -409,7 +409,8 @@
 				<Shape DEF="babyskin" containerField="skin">
 					<Appearance>
 						<ImageTexture
-							url='"TUFANI SKIN 2.png"' />
+							url='"Tufani_skin_2_flat.png"' />
+
 						<Material
 							shininess="0.5" />
 					</Appearance>

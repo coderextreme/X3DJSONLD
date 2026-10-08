@@ -124,8 +124,8 @@ echo Running TruffleRuby
 pushd ../truffleruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOTRUFFLERUBY" -e "$DATATOTRUFFLERUBY" -e "$ROOTTOTRUFFLERUBY" -e "$PERSONALTOTRUFFLERUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$TRUFFLERUBY --vm.Xss1g --vm.Xmx19g -vm.cp='$CLASSPAth" $i"
-	$TRUFFLERUBY --vm.Xss1g --vm.Xmx19g -vm.cp='$CLASSPAth" $i
+	echo "$TRUFFLERUBY -vm.cp='$CLASSPAth" $i"
+	$TRUFFLERUBY -vm.cp='$CLASSPAth" $i
 done
 popd
 
