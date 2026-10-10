@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<head>
+ <component level='2' name='HAnim'/>
+</head>
+<Scene>
+    <NavigationInfo headlight='false' speed='0.5'/>
+    <Viewpoint DEF='Joe_FrontView_1' centerOfRotation='0 1.5675 -0.0256' description='Joe_Front View' position='0 1.55 1.2'/>
+    <Viewpoint DEF='Joe_SideView' description='Joe_Side View' orientation='0 1 0 1.5708' position='2 1.3 0'/>
+    <Viewpoint DEF='Joe_TopView' description='Joe_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
+    <Viewpoint DEF='Joe_FrontView' centerOfRotation='0 1.5675 -0.0256' description='Joe2_Front View' position='0 1.55 0.55'/>
+    <Viewpoint DEF='Joe_InclinedView' description='Joe_Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.75 1.76'/>
+    <DirectionalLight global='true' intensity='0.7'/>
+    <DirectionalLight direction='0 0 1' global='true' intensity='0.8'/>
+    <DirectionalLight direction='0.15 0 0' global='true' intensity='0.5'/>
+    <Inline DEF="LaughingUpperSkeleton" url='"LaughingUpperSkeleton.glb"'/>
+    <IMPORT inlineDEF='LaughingUpperSkeleton' importedDEF='Anim_n_Time' AS='n_Time'/>
+    <BooleanToggle DEF='ToggleTouch'/>
+    <Transform DEF='Box' scale='0.35 0.35 0.35' translation='0 2 -0.5'>
+      <TouchSensor DEF='GoTimer'/>
+      <Shape>
+        <Appearance>
+          <Material diffuseColor='0.9 0 0.7' emissiveColor='0.424956 0.483976 1'/>
+        </Appearance>
+        <Box size='1.5 0.35 1'/>
+      </Shape>
+    </Transform>
+    <ROUTE fromField='isOver' fromNode='GoTimer' toField='set_boolean' toNode='ToggleTouch'/>
+    <ROUTE fromField='toggle_changed' fromNode='ToggleTouch' toField='set_enabled' toNode='n_Time'/>
+    <ROUTE fromField='toggle_changed' fromNode='ToggleTouch' toField='set_loop' toNode='n_Time'/>
+</Scene>
+</X3D>
