@@ -411,6 +411,9 @@ PythonSerializer.prototype = {
 					if (attr === "class") {
 						method = "cssClass";
 					}
+					if (attr === "id") {
+						method = "htmlId";
+					}
 					if (attr === "global") {
 						method = "global_";
 					}

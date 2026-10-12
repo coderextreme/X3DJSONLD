@@ -299,6 +299,9 @@ VRMLScriptSerializer.prototype = {
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
 					switch (element.nodeName) {
 					case "meta":
 					case "component":

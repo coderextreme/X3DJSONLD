@@ -313,7 +313,7 @@ JavaSerializer.prototype = {
 			method = "Child";
 			addpre = "add";
 		}
-		if (addpre+method === "setValue") {
+		if (addpre+method === "setValue") {                                                                                                      
 			method = "Value";
 			addpre = "add";
 		}
@@ -354,6 +354,10 @@ JavaSerializer.prototype = {
 			addpre = "set";
 		}
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
+			method = "Metadata";
+			addpre = "set";
+		}
+		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
 			method = "Metadata";
 			addpre = "set";
 		}
@@ -526,6 +530,9 @@ JavaSerializer.prototype = {
 					}
 					if (attr === "class") {
 						method = "setCssClass";
+					}
+					if (attr === "id") {
+						method = "setHtmlId";
 					}
 					if (attr === "style" && element.nodeName != "FontStyle" ) {
 						method = "setCssStyle";
@@ -830,6 +837,9 @@ JavaSerializer.prototype = {
 						}
 						if (attr === "class") {
 							method = "setCssClass";
+						}
+						if (attr === "id") {
+							method = "setHtmlId";
 						}
 						if (attr === "style" && element.nodeName != "FontStyle" ) {
 							method = "setCssStyle";

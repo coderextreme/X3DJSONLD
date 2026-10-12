@@ -409,6 +409,9 @@ using namespace SIM::Coin3D::Quarter;
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
 					str += maptag(element.nodeName)+stack[0];
 					let startshim = "";
 					switch (element.nodeName) {

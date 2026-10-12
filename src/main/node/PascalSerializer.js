@@ -494,6 +494,9 @@ PascalSerializer.prototype = {
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
 					if (attr === "name") {
 						method = "NameField";
 					}

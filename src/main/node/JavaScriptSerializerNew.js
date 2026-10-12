@@ -166,6 +166,10 @@ JavaScriptSerializer.prototype = {
 			method = "Skin"
 			addpre = "add";
 		}
+		if (addpre+method === "setValue") {                                                                                                      
+			method = "Value";
+			addpre = "add";
+		}
 		if (addpre+method === "setBack") {
 			method = "BackTexture"
 			addpre = "set";
@@ -196,6 +200,10 @@ JavaScriptSerializer.prototype = {
 		}
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
+			addpre = "set";
+		}
+		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
+			method = "Metdata";
 			addpre = "set";
 		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
@@ -412,6 +420,12 @@ JavaScriptSerializer.prototype = {
 					}
 					if (attr === "class") {
 						method = "setCssClass";
+					}
+					if (attr === "id") {
+						method = "setHtmlId";
+					}
+					if (attr === "style" && element.nodeName != "FontStyle" ) {
+						method = "setCssStyle";
 					}
 					
 					str += '.'+method+"("+strval+")";

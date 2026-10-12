@@ -170,8 +170,8 @@ GraalPySerializer.prototype = {
 			method = "Child"
 			addpre = "add";
 		}
-		if (addpre+method === "setValue") {
-			method = "Value"
+		if (addpre+method === "setValue") {                                                                                                      
+			method = "Value";
 			addpre = "add";
 		}
 		if (addpre+method === "setBack") {
@@ -212,6 +212,10 @@ GraalPySerializer.prototype = {
 		}
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
+			addpre = "set";
+		}
+		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
+			method = "Metadata";
 			addpre = "set";
 		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
@@ -373,6 +377,12 @@ GraalPySerializer.prototype = {
 					method = method.charAt(0).toUpperCase() + method.slice(1);
 					if (attr === "class") {
 						method = "CssClass";
+					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
+					if (attr === "style" && element.nodeName != "FontStyle" ) {
+						method = "CssStyle";
 					}
 					str += element.nodeName+stack[0];
 					str += '.set'+method+"("+strval+")\n";

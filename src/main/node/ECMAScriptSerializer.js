@@ -280,6 +280,9 @@ ECMAScriptSerializer.prototype = {
 					if (attr === "class") {
 						method = "cssClass";
 					}
+					if (attr === "id") {
+						method = "htmlId";
+					}
 					
 					var prepre = "\n"+("  ".repeat(n));
 					childs.push(prepre+method+" : new "+attrType +"("+strval+")");

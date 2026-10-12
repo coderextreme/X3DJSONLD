@@ -675,6 +675,9 @@ func main() {
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
 					if (attr === 'DEF' || attr === 'USE') {
 						str += "    ".repeat(n+indent)+"CoreX3DNode: x3d.CoreX3DNode"+begin;
 						indent++;

@@ -302,6 +302,9 @@ DartSerializer.prototype = {
 					if (attr === "class") {
 						method = "cssClass";
 					}
+					if (attr === "id") {
+						method = "htmlId";
+					}
 					
 					var prepre = "\n"+("  ".repeat(n));
 					if (attrType === "SFString") {

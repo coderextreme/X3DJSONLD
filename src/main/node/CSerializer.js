@@ -280,6 +280,9 @@ CScriptSerializer.prototype = {
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
 					str += element.nodeName+stack[0];
 					str += '.'+method+" = "+strval+";\n";
 				}

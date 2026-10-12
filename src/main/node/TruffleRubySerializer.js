@@ -191,8 +191,8 @@ TruffleRubySerializer.prototype = {
 			method = "Child"
 			addpre = "add";
 		}
-		if (addpre+method === "setValue") {
-			method = "Value"
+		if (addpre+method === "setValue") {                                                                                                      
+			method = "Value";
 			addpre = "add";
 		}
 		if (addpre+method === "setBack") {
@@ -235,6 +235,10 @@ TruffleRubySerializer.prototype = {
 		*/
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
 			method = "Metadata"
+			addpre = "set";
+		}
+		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
+			method = "Metadata";
 			addpre = "set";
 		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
@@ -417,6 +421,9 @@ TruffleRubySerializer.prototype = {
 					method = method.charAt(0).toUpperCase() + method.slice(1);
 					if (attr === "class") {
 						method = "CssClass";
+					}
+					if (attr === "id") {
+						method = "HtmlId";
 					}
 					str += "    ".repeat(n)+'.set'+method+"("+strval+")\n";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {

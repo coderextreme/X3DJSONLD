@@ -388,6 +388,9 @@ NodeSerializer.prototype = {
 					if (attr === "class") {
 						method = "setCssClass";
 					}
+					if (attr === "id") {
+						method = "setHtmlId";
+					}
 					if (attr === "style" && element.nodeName != "FontStyle" ) {
 						method = "setCssStyle";
 					}

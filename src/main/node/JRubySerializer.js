@@ -235,6 +235,14 @@ JRubySerializer.prototype = {
 			method = "Metadata"
 			addpre = "set";
 		}
+		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
+			method = "Metadata";
+			addpre = "set";
+		}
+		if (addpre+method === "setValue") {                                                                                                      
+			method = "Value";
+			addpre = "add";
+		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
 			addpre = "add";
@@ -415,6 +423,12 @@ JRubySerializer.prototype = {
 					method = method.charAt(0).toUpperCase() + method.slice(1);
 					if (attr === "class") {
 						method = "CssClass";
+					}
+					if (attr === "id") {
+						method = "HtmlId";
+					}
+					if (attr === "style" && element.nodeName != "FontStyle" ) {
+						method = "CssStyle";
 					}
 					str += "    ".repeat(n)+'.set'+method+"("+strval+")\n";
 					if (attr === 'containerFieldOverride' && (attrs[a].nodeValue === "joints" || attrs[a].nodeValue === "segments" || attrs[a].nodeValue === "viewpoints" || attrs[a].nodeValue === "skinCoord" || attrs[a].nodeValue === "skin" || attrs[a].nodeValue === "sites")) {
