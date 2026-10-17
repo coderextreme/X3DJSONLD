@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<head>
+ <component level='2' name='HAnim'/>
+</head>
+<Scene>
+    <Viewpoint centerOfRotation='0 0 0' description='Humanoid LOA 3 FrontCloser' position='0 1 3'/>
+    <Inline DEF="InlinedAnimations" url='"JinLOA4Animated.glb"'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_DefaultTimer' AS='DefaultTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_PitchTimer' AS='PitchTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_YawTimer' AS='YawTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_RollTimer' AS='RollTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_WalkTimer' AS='WalkTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_RunTimer' AS='RunTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_JumpTimer' AS='JumpTimer'/>
+    <IMPORT inlineDEF='InlinedAnimations' importedDEF='Anim_KickTimer' AS='KickTimer'/>
+    <Group>
+      <ProximitySensor DEF='HudProx' size='50 50 50'/>
+      <Transform DEF='HudXform' rotation='0 1 0 0.78' translation='2 2 2'>
+        <Transform scale='0.0225 0.0225 0.0225' translation='-0.28 0.055 -0.75'>
+          <Transform DEF='Stand_Text'>
+            <TouchSensor DEF='Stand_Touch'/>
+            <Shape DEF='StandText'>
+              <Appearance>
+                <Material DEF='text_color' ambientIntensity='1' diffuseColor='0.819 0.521 0.169' emissiveColor='0.819 0.521 0.169' specularColor='0.819 0.521 0.169'/>
+              </Appearance>
+              <Text string='"Stand"'>
+                <FontStyle DEF='text_font' family='"SANS"'/>
+              </Text>
+            </Shape>
+            <Shape DEF='Default_Back'>
+              <Appearance>
+                <Material DEF='Clear' ambientIntensity='1' diffuseColor='0 0.5 0' emissiveColor='0 0.5 0' transparency='0.8'/>
+              </Appearance>
+              <IndexedFaceSet DEF='Backing' coordIndex='0 1 2 3 -1'>
+                <Coordinate point='-0.2 -0.25 -0.01 3 -0.25 -0.01 3 1 -0.01 -0.2 1 -0.01'/>
+              </IndexedFaceSet>
+            </Shape>
+          </Transform>
+          <Transform DEF='Pitch_Text' translation='0 -1.4 0'>
+            <TouchSensor DEF='Pitch_Touch'/>
+            <Shape DEF='PitchText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Pitch"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Yaw_Text' translation='0 -2.8 0'>
+            <TouchSensor DEF='Yaw_Touch'/>
+            <Shape DEF='YawText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Yaw"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Roll_Text' translation='0 -4.2 0'>
+            <TouchSensor DEF='Roll_Touch'/>
+            <Shape DEF='RollText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Roll"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Walk_Text' translation='0 -5.6 0'>
+            <TouchSensor DEF='Walk_Touch'/>
+            <Shape DEF='WalkText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Walk"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Run_Text' translation='0 -7 0'>
+            <TouchSensor DEF='Run_Touch'/>
+            <Shape DEF='RunText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Run"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Jump_Text' translation='0 -8.4 0'>
+            <TouchSensor DEF='Jump_Touch'/>
+            <Shape DEF='JumpText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Jump"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Kick_Text' translation='0 -9.8 0'>
+            <TouchSensor DEF='Kick_Touch'/>
+            <Shape DEF='KickText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Kick"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='Stop_Text' translation='0 -11.2 0'>
+            <TouchSensor DEF='Stop_Touch'/>
+            <Shape DEF='StopText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"Stop"'>
+                <FontStyle USE='text_font'/>
+              </Text>
+            </Shape>
+            <Shape USE='Default_Back'/>
+          </Transform>
+          <Transform DEF='SceneLabel' translation='1.3 3 0'>
+            <Shape DEF='SceneLabelText'>
+              <Appearance>
+                <Material USE='text_color'/>
+              </Appearance>
+              <Text string='"JinLOA4" "Animations"'>
+                <FontStyle family='"SANS"' justify='"MIDDLE" "MIDDLE"'/>
+              </Text>
+            </Shape>
+          </Transform>
+        </Transform>
+      </Transform>
+    </Group>
+    <ROUTE fromField='position_changed' fromNode='HudProx' toField='set_translation' toNode='HudXform'/>
+    <ROUTE fromField='orientation_changed' fromNode='HudProx' toField='set_rotation' toNode='HudXform'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stand_Touch' toField='set_startTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Pitch_Touch' toField='set_startTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Yaw_Touch' toField='set_startTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Walk_Touch' toField='set_startTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Roll_Touch' toField='set_startTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Run_Touch' toField='set_startTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_stopTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Jump_Touch' toField='set_startTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Kick_Touch' toField='set_startTime' toNode='KickTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='DefaultTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='PitchTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='YawTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='RollTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='WalkTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='RunTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='JumpTimer'/>
+    <ROUTE fromField='touchTime' fromNode='Stop_Touch' toField='set_stopTime' toNode='KickTimer'/>
+</Scene>
+</X3D>

@@ -1,33 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Immersive' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
-<head>
- <component level='2' name='HAnim'/>
-</head>
-<Scene>
-    <NavigationInfo headlight='false' speed='0.5'/>
-    <Viewpoint DEF='Joe_FrontView_1' centerOfRotation='0 1.5675 -0.0256' description='Joe_Front View' position='0 1.55 1.2'/>
-    <Viewpoint DEF='Joe_SideView' description='Joe_Side View' orientation='0 1 0 1.5708' position='2 1.3 0'/>
-    <Viewpoint DEF='Joe_TopView' description='Joe_Top View' orientation='1 0 0 -1.5708' position='0 3.5 0'/>
-    <Viewpoint DEF='Joe_FrontView' centerOfRotation='0 1.5675 -0.0256' description='Joe2_Front View' position='0 1.55 0.55'/>
-    <Viewpoint DEF='Joe_InclinedView' description='Joe_Inclined View' orientation='-0.113 0.993 0.0347 0.671' position='1.62 1.75 1.76'/>
-    <DirectionalLight global='true' intensity='0.7'/>
-    <DirectionalLight direction='0 0 1' global='true' intensity='0.8'/>
-    <DirectionalLight direction='0.15 0 0' global='true' intensity='0.5'/>
-    <Inline DEF="LaughingUpperSkeleton" url='"LaughingUpperSkeleton.glb"'/>
-    <IMPORT inlineDEF='LaughingUpperSkeleton' importedDEF='Anim_n_Time' AS='n_Time'/>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Interchange' version='4.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
+  <head>
+    <component name='EventUtilities' level='1'/>
+    <component name='Networking' level='2'/>
+    <component name='PointingDeviceSensor' level='1'/>
+    <meta name='creator' content='John Carlson'/>
+    <meta name='created' content='Thu, 15 Oct 2026 11:57:01 GMT'/>
+    <meta name='modified' content='Thu, 15 Oct 2026 11:57:01 GMT'/>
+    <meta name='generator' content='Sunrize X3D Editor V2.5.1, https://create3000.github.io/sunrize/'/>
+  </head>
+  <Scene>
+    <NavigationInfo
+        speed='0.5'
+        headlight='false'/>
+    <Viewpoint DEF='Joe_FrontView_1'
+        description='Joe_Front View'
+        position='0 1.55 1.2'
+        centerOfRotation='0 1.5675 -0.0256'/>
+    <Viewpoint DEF='Joe_SideView'
+        description='Joe_Side View'
+        position='2 1.3 0'
+        orientation='0 1 0 1.5708'/>
+    <Viewpoint DEF='Joe_TopView'
+        description='Joe_Top View'
+        position='0 3.5 0'
+        orientation='1 0 0 -1.5708'/>
+    <Viewpoint DEF='Joe_InclinedView'
+        description='Joe_Inclined View'
+        position='1.62 1.75 1.76'
+        orientation='-0.113 0.993 0.0347 0.671'/>
+    <DirectionalLight
+        global='true'
+        intensity='0.7'/>
+    <DirectionalLight
+        global='true'
+        intensity='0.8'
+        direction='0 0 1'/>
+    <DirectionalLight
+        global='true'
+        intensity='0.5'
+        direction='0.15 0 0'/>
+    <Viewpoint DEF='Joe_FrontView'
+        description='Joe2_Front View'
+        position='0 1.55 0.55'
+        centerOfRotation='0 1.5675 -0.0256'/>
+    <Inline DEF='LaughingUpperSkeleton'
+        url='"LaughingUpperSkeleton.glb"'/>
     <BooleanToggle DEF='ToggleTouch'/>
-    <Transform DEF='Box' scale='0.35 0.35 0.35' translation='0 2 -0.5'>
+    <Transform DEF='Box'
+        translation='0 2 -0.5'
+        scale='0.35 0.35 0.35'>
       <TouchSensor DEF='GoTimer'/>
       <Shape>
         <Appearance>
-          <Material diffuseColor='0.9 0 0.7' emissiveColor='0.424956 0.483976 1'/>
+          <Material
+              diffuseColor='0.9 0 0.7'
+              emissiveColor='0.424956 0.483976 1'/>
         </Appearance>
-        <Box size='1.5 0.35 1'/>
+        <Box
+            size='1.5 0.35 1'/>
       </Shape>
     </Transform>
-    <ROUTE fromField='isOver' fromNode='GoTimer' toField='set_boolean' toNode='ToggleTouch'/>
-    <ROUTE fromField='toggle_changed' fromNode='ToggleTouch' toField='set_enabled' toNode='n_Time'/>
-    <ROUTE fromField='toggle_changed' fromNode='ToggleTouch' toField='set_loop' toNode='n_Time'/>
-</Scene>
+    <IMPORT inlineDEF='LaughingUpperSkeleton' importedDEF='Anim_n_Time' AS='n_Time'/>
+    <IMPORT inlineDEF='LaughingUpperSkeleton' importedDEF='Timer1' AS='n_Time'/>
+    <ROUTE fromNode='GoTimer' fromField='isOver' toNode='ToggleTouch' toField='set_boolean'/>
+    <ROUTE fromNode='ToggleTouch' fromField='toggle_changed' toNode='n_Time' toField='set_enabled'/>
+    <ROUTE fromNode='ToggleTouch' fromField='toggle_changed' toNode='n_Time' toField='set_loop'/>
+  </Scene>
 </X3D>
