@@ -1119,6 +1119,7 @@ if __name__ == "__main__":
     else:
         base = "/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical"
         convert_x3d_to_glb(f"{base}/../Characters/JinLOA4Animated.x3d",               "JinLOA4Animated.glb")
+        convert_x3d_to_glb(f"{base}/../Bones/AllBonesLOA5SkeletonsInlineAnimation.x3d", "AllBonesLOA5SkeletonsInlineAnimation.glb")
         convert_x3d_to_glb(f"{base}/LaughingUpperSkeleton.x3d",               "LaughingUpperSkeleton.glb")
         convert_x3d_to_glb(f"{base}/AnimatedAssembledHumanSkeleton.x3d", "AnimatedAssembledHumanSkeleton.glb")
         convert_x3d_to_glb(f"../../medicalbones/0scaled/0skeleton1AImapped.x3d", "0skeleton1.glb")
@@ -1126,5 +1127,5 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"{base}/../FacialAnimation/JinFacsAu27MouthStretchMorpher.x3d", "JinFacsAu27MouthStretchMorpher.glb")
         convert_x3d_to_glb(f"../../ci2had/resources/JinMouthStretch.x3d", "JinMouthStretch.glb")
         convert_x3d_to_glb(f"../../ci2had/resources/CleanedYouClocks.x3d", "CleanedYouClocks.glb")
+        convert_x3d_to_glb(f"{base}/../Bones/AllBonesCollection.x3d", "AllBonesCollection.glb")
 
-# --- END OF FILE x3d_to_binary.py ---

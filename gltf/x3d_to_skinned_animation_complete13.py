@@ -2452,3 +2452,5 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/AllCharactersMainStage.x3d", "AllCharactersMainStage.glb")
         convert_x3d_to_glb(f"/home/yottzumm/www.web3d.org/x3d/content/examples/HumanoidAnimation/WinterAndSpring/AllKindaRepairedMainStage.x3d", "AllKindaRepairedMainStage.x3d")
         convert_x3d_to_glb(f"{base}/../Characters/JinLOA4Animated.x3d",               "JinLOA4Animated.glb")
+        convert_x3d_to_glb(f"../../ci2had/resources/JinMouthStretch.x3d", "JinMouthStretch.glb")
+        convert_x3d_to_glb(f"../../ci2had/resources/CleanedYouClocks.x3d", "CleanedYouClocks.glb")
