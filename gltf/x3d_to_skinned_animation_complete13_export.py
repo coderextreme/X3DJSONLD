@@ -1843,7 +1843,7 @@ def _audit_animation(scope, ctx, consumed, used_defs):
 # ---------------------------------------------------------------------------
 
 # When several looping TimeSensors of one button group would all auto-start, start only the first.
-EXCLUSIVE_AUTOSTART = True
+EXCLUSIVE_AUTOSTART = False
 
 def build_khr_interactivity(ctx):
     """
@@ -2487,3 +2487,4 @@ if __name__ == "__main__":
         convert_x3d_to_glb(f"../../ci2had/resources/JinMouthStretch.x3d", "JinMouthStretch.glb")
         convert_x3d_to_glb(f"../../ci2had/resources/CleanedYouClocks.x3d", "CleanedYouClocks.glb")
         convert_x3d_to_glb(f"{base}/../Bones/AllBonesCollection.x3d", "AllBonesCollection.glb")
+        convert_x3d_to_glb(f"{base}/../Bones/AllBonesLOA5SkeletonsInlineAnimation.x3d", "AllBonesLOA5SkeletonsInlineAnimation.glb")
