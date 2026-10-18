@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
     title       : X3dToPython.xslt
     created     : 21 July 2019
     creator     : Don Brutzman
@@ -44,7 +77,7 @@
     
     <xsl:variable name="modelFileName">
         <xsl:choose>
-            <xsl:when test="(string-length(//meta[@name = 'title']/@content) > 0)">
+            <xsl:when test="(string-length(//meta[@name = 'title']/@content) gt 0)">
                 <xsl:value-of select="concat(substring-before(//meta[@name = 'title']/@content,'.'),'.py')"/>
             </xsl:when>
             <xsl:otherwise>
@@ -129,7 +162,7 @@ sys.exit()
             </xsl:when>
         </xsl:choose>
         
-        <!-- process all elements and comments -->
+        <!-- process all child elements (head and Scene) and comments -->
         <xsl:apply-templates select="* | comment()"/>
         
         <xsl:text>&#10;</xsl:text>
@@ -144,7 +177,7 @@ sys.exit()
 </xsl:text>
         <xsl:text>
 print('Self-test diagnostics</xsl:text>
-        <xsl:if test="(string-length($modelFileName) > 0)">
+        <xsl:if test="(string-length($modelFileName) gt 0)">
             <xsl:text> for </xsl:text>
             <xsl:value-of select="$modelFileName"/>
         </xsl:if>
@@ -152,8 +185,8 @@ print('Self-test diagnostics</xsl:text>
         <xsl:choose>
             <xsl:when test="($insertPackagePrefix = 'true')">
                 <xsl:text>
-if        x3d.metaDiagnostics(newModel): # built-in utility method in X3D class to show
-    print(x3d.metaDiagnostics(newModel)) # ('info', 'hint', 'warning', 'error', 'TODO')
+if        x3d.metaDiagnostics(newModel):            # built-in utility method in X3D class to show
+    print(x3d.metaDiagnostics(newModel),flush=True) # ('info', 'hint', 'warning', 'error', 'TODO')
 </xsl:text>
             </xsl:when>
             <xsl:otherwise>
@@ -180,12 +213,12 @@ newModel.XMLvalidate()
 # print(newModelXML) # diagnostic
 
 try:
-#   print('check newModel.VRML() serialization...')
+#   print('check newModel.VRML() serialization...') ### verbose
     newModelVRML=newModel.VRML() # test export method VRML() for exceptions during export
-    # print(prependLineNumbers(newModelVRML)) # debug</xsl:text>
+#   print(prependLineNumbers(newModelVRML)) ### debug</xsl:text>
    <!--<xsl:text>
 # debug ============
-#   print(prependLineNumbers(newModelVRML)) # debug
+#   print(prependLineNumbers(newModelVRML)) ### debug
 #   vrmlfile = open("</xsl:text>
 #     <xsl:value-of select="substring-before($modelFileName,'.')"/>
 #     <xsl:text>PythonToJSON.wrl","wt")
@@ -198,16 +231,16 @@ try:
 except Exception as err: # usually BaseException
     # https://stackoverflow.com/questions/18176602/how-to-get-the-name-of-an-exception-that-was-caught-in-python
     print("*** Python-to-VRML export of VRML output failed:", type(err).__name__, err)
-    if newModelVRML: # may have failed to generate
+    if newModelVRML: # check that VRML model was successfully generated
         print(prependLineNumbers(newModelVRML, err.lineno))
 
 try:
 #   print('check newModel.JSON() serialization...')
     newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
-#   print(prependLineNumbers(newModelJSON)) # debug</xsl:text>
+#   print(prependLineNumbers(newModelJSON)) ### debug</xsl:text>
    <!--<xsl:text>
 # debug ============
-#   print(prependLineNumbers(newModelJSON)) # debug
+#   print(prependLineNumbers(newModelJSON)) ### debug
 #   jsonfile = open("</xsl:text>
 #     <xsl:value-of select="substring-before($modelFileName,'.')"/>
 #     <xsl:text>PythonToJSON.json","wt")
@@ -219,15 +252,15 @@ try:
     print("Python-to-JSON export of JSON output successful (under development)")
 except Exception as err: # usually SyntaxError
     print("*** Python-to-JSON export of JSON output failed:", type(err).__name__, err)
-    if newModelJSON: # may have failed to generate
+    if newModelJSON: #  check that VRML model was successfully generated
         print(prependLineNumbers(newModelJSON,err.lineno))
 
 print("python</xsl:text>
-        <xsl:if test="(string-length($modelFileName) > 0)">
+        <xsl:if test="(string-length($modelFileName) gt 0)">
             <xsl:text> </xsl:text>
             <xsl:value-of select="$modelFileName"/>
         </xsl:if>
-        <xsl:text> load and self-test diagnostics complete.")
+        <xsl:text> model loading and self-test diagnostics complete.")
 </xsl:text>
 <!--
 TODO print meta warnings, errors etc. as part of validation
@@ -257,12 +290,99 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>  </xsl:text>
             </xsl:for-each>
         </xsl:variable>
-        <xsl:value-of select="$indent"/>
+        <xsl:if test="not((local-name(..) = 'HAnimHumanoid') and starts-with(local-name(), 'Metadata'))">
+            <xsl:value-of select="$indent"/>
+        </xsl:if>
+        
+        <!-- only check some special cases that are unambiguously fixable -->
+        <xsl:variable name="expectedContainerField">
+            <xsl:choose>
+                <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
+                    <xsl:text>rootNode</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimMotion')">
+                    <xsl:text>motions</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimPose')">
+                    <xsl:text>children</xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
+                    <xsl:text>segments</xsl:text>
+                </xsl:when>
+                <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
+                <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
+                <!-- HAnimHumanoid can contain X3DCoordinateNode [Coordinate|CoordinateDouble] with containerField = skinCoord or skinBindingCoords -->
+                <!-- HAnimHumanoid can contain X3DNormalNode [Normal] with containerField = skinNormal or skinBindingNormals -->
+                <xsl:when test="(local-name(..) = 'MetadataSet') and starts-with(local-name(), 'Metadata') and (@containerField = 'metadata') and
+                                (count(../*[starts-with(local-name(), 'Metadata') and (@containerField = 'metadata')]) gt 1)">
+                    <xsl:text>value</xsl:text>
+                    <xsl:message>
+                        <xsl:text>*** </xsl:text>
+                        <xsl:value-of select="local-name()"/>
+                        <xsl:if test="(string-length(@DEF) gt 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@USE) gt 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:text> name='</xsl:text>
+                        <xsl:value-of select="@name"/>
+                        <xsl:text>'</xsl:text>
+                        <xsl:text> has containerField='</xsl:text>
+                        <xsl:value-of select="@containerField"/>
+                        <xsl:text>' but parent MetadataSet</xsl:text>
+                        <xsl:if test="(string-length(../@DEF) gt 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="../@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:text> contains multiple Metadata* nodes with containerField='metadata' which is not allowed.</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>    Applying containerField='value' instead. See X3D Tooltips: MetadataSet for more information.</xsl:text>
+                        <xsl:text>&#10;</xsl:text>
+                        <xsl:text>    https://www.web3d.org/x3d/tooltips/X3dTooltips.html#MetadataSet</xsl:text>
+                    </xsl:message>
+                </xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="(string-length($expectedContainerField) gt 0) and not(@containerField = $expectedContainerField)">
+            <xsl:message>
+                <xsl:text>*** containerField mismatch for </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:if test="(string-length(@DEF) gt 0)">
+                    <xsl:text> DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:if test="(string-length(@USE) gt 0)">
+                    <xsl:text> USE='</xsl:text>
+                    <xsl:value-of select="@USE"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:if test="(string-length(@name) gt 0)">
+                    <xsl:text> name='</xsl:text>
+                    <xsl:value-of select="@name"/>
+                    <xsl:text>'</xsl:text>
+                </xsl:if>
+                <xsl:text> found containerField='</xsl:text>
+                <xsl:value-of select="@containerField"/>
+                <xsl:text>' but expected containerField='</xsl:text>
+                <xsl:value-of select="$expectedContainerField"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
+        </xsl:if>
         
         <!-- $containerField value is needed as field name for relational field definitions, avoiding positional syntax errors -->
-        <!-- TODO careful thinking about provided containerField, currently this approach can override non-default values -->
+        <!-- Careful thinking about provided containerField is always necessary, this approach can override non-default values -->
         <xsl:variable name="containerField">
             <xsl:choose>
+                <xsl:when test="(string-length($expectedContainerField) gt 0)">
+                    <xsl:value-of select="$expectedContainerField"/>
+                </xsl:when>
                 <xsl:when test="(local-name() = 'X3D') or (local-name() = 'meta')">
                     <xsl:text></xsl:text><!-- none, n/a -->
                 </xsl:when>
@@ -277,7 +397,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                 (local-name(..) = 'Scene')        or (local-name(..) = 'ProtoBody')  or 
                                 (local-name(..) = 'field')        or (local-name(..) = 'fieldValue') or
                                 (local-name()   = 'component')    or (local-name()   = 'unit')    or
-                                (local-name()   = 'ProtoDeclare') or (local-name()   = 'ExternProtoDeclare')">
+                                (local-name()   = 'ProtoDeclare') or (local-name()   = 'ExternProtoDeclare') or (local-name()   = 'ProtoInstance')">
                     <xsl:text>children</xsl:text>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'ProtoInterface') or (local-name() = 'ProtoBody')  or
@@ -286,8 +406,11 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:value-of select="local-name()"/>
                 </xsl:when>
                 <!-- X3D Scene Authoring Hints, X3D4 Field name changes planned for improved consistency https://x3d-code/www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#fieldNameChanges -->
-                <xsl:when test="(local-name(..) = 'LoadSensor')">
-                    <xsl:text>children</xsl:text>
+                <xsl:when test="(local-name(..) = 'LoadSensor') and $isX3D4">
+                    <xsl:text>children</xsl:text><!-- vice watchList for X3D3 models -->
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'LoadSensor') and $isX3D3">
+                    <xsl:text>children</xsl:text><!-- vice children for X3D4 models -->
                 </xsl:when>
                 <xsl:when test="(local-name(..) = 'ComposedCubeMapTexture') and not(ends-with(@containerField,'Texture'))">
                     <xsl:value-of select="@containerField"/>
@@ -327,7 +450,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:when test="contains(local-name(), 'Material')">
                   <!-- Appearance can contain both material and backMaterial fields -->
                   <xsl:choose>
-                      <xsl:when test="(string-length(@containerField) > 0)">
+                      <xsl:when test="(string-length(@containerField) gt 0)">
                         <xsl:value-of select="@containerField"/>
                       </xsl:when>
                       <xsl:otherwise>
@@ -345,18 +468,48 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <!-- TextureBackground may contain multiple ImageTexture nodes, each with different containerField -->
                     <xsl:value-of select="@containerField"/>
                 </xsl:when>
-                <xsl:when test="((local-name() = 'AudioClip') or (local-name() = 'MovieTexture')) and
-                                ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'OscillatorSource') or (local-name(..) = 'SpatialSound') or (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
-                    <xsl:text>children</xsl:text>
-                    <xsl:if test="(@containerField = 'source') or (string-length(@containerField) = 0)">
+                <xsl:when test="(local-name(..) = 'Sound') and 
+                                ((local-name() = 'AudioClip') or (local-name() = 'MovieTexture'))">
+                    <!-- legacy approach -->
+                    <xsl:text>source</xsl:text>
+                    <xsl:if test="not(@containerField = 'source') or ((string-length(@containerField) eq 0) and not(@containerField = 'children'))">
                         <xsl:message>
-                            <xsl:text>*** containerField incorrect for </xsl:text>
+                            <xsl:text>*** containerField=</xsl:text>
+                            <xsl:value-of select="@containerField"/>
+                            <xsl:text> is incorrect for </xsl:text>
                             <xsl:value-of select="local-name()"/>
                             <xsl:text> with parent </xsl:text>
                             <xsl:value-of select="local-name(..)"/>
-                            <xsl:text>, reset to children</xsl:text>
+                            <xsl:text>, reset to containerField=source</xsl:text>
                         </xsl:message>
                     </xsl:if>
+                </xsl:when>
+                <xsl:when test="
+                            (local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or 
+                            (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or 
+                            (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or 
+                            (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or 
+                            (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'SpatialSound') or 
+                            (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper')">
+                    <xsl:text>children</xsl:text>
+                    <xsl:if test="(@containerField = 'source') or ((string-length(@containerField) eq 0) and not(@containerField = 'children'))">
+                        <xsl:message>
+                            <xsl:text>*** containerField=</xsl:text>
+                            <xsl:value-of select="@containerField"/>
+                            <xsl:text> is incorrect for </xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text> with parent </xsl:text>
+                            <xsl:value-of select="local-name(..)"/>
+                            <xsl:text>, reset to containerField=children</xsl:text>
+                        </xsl:message>
+                    </xsl:if>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'Scene') and starts-with(local-name(),'Metadata') and
+                                (count(preceding-sibling::*) + count(preceding-sibling::comment()) eq 0)">
+                    <xsl:text>children</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here7&#10;</xsl:text> -->
+                    <xsl:value-of select="$indent"/>
                 </xsl:when>
                 <xsl:when test="$isX3D4 and starts-with(local-name(),'Metadata') and not(@containerField = 'metadata') and
                                  not((local-name(..)='MetadataSet') or (local-name(..)='field') or (local-name(..)='fieldValue'))">
@@ -364,12 +517,12 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:message>
                         <xsl:text>*** error in X3D4 model, overriding </xsl:text>
                         <xsl:value-of select="local-name()"/>
-                        <xsl:if test="(string-length(@DEF) > 0)">
+                        <xsl:if test="(string-length(@DEF) gt 0)">
                             <xsl:text> DEF='</xsl:text>
                             <xsl:value-of select="@DEF"/>
                             <xsl:text>'</xsl:text>
                         </xsl:if>
-                        <xsl:if test="(string-length(@USE) > 0)">
+                        <xsl:if test="(string-length(@USE) gt 0)">
                             <xsl:text> USE='</xsl:text>
                             <xsl:value-of select="@USE"/>
                             <xsl:text>'</xsl:text>
@@ -379,7 +532,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                         <xsl:text>' with corrected containerField='metadata' since </xsl:text>
                         <xsl:text> parent node is </xsl:text>
                         <xsl:value-of select="local-name(..)"/>
-                        <xsl:if test="(string-length(../@DEF) > 0)">
+                        <xsl:if test="(string-length(../@DEF) gt 0)">
                             <xsl:text> DEF='</xsl:text>
                             <xsl:value-of select="../@DEF"/>
                             <xsl:text>'</xsl:text>
@@ -389,7 +542,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 </xsl:when>
                 <xsl:when test="(local-name(..) = 'DISEntityManager') and (local-name() = 'DISEntityTypeMapping')">
                     <xsl:text>children</xsl:text>
-                    <xsl:if test="not(@containerField = 'children') or (string-length(@containerField) = 0)">
+                    <xsl:if test="not(@containerField = 'children') or (string-length(@containerField) eq 0)">
                         <xsl:message>
                             <xsl:text>*** default containerField for </xsl:text>
                             <xsl:value-of select="local-name(..)"/>
@@ -399,7 +552,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                         </xsl:message>
                     </xsl:if>
                 </xsl:when>
-                <xsl:when test="(string-length(@containerField) > 0)">
+                <xsl:when test="(string-length(@containerField) gt 0)">
                     <xsl:value-of select="@containerField"/>
                 </xsl:when>
                 <xsl:otherwise>
@@ -416,9 +569,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:variable name="attributesList">
             <xsl:apply-templates select="@*[local-name() != 'containerField'][local-name() != 'noNamespaceSchemaLocation']"/> <!-- process attributes for this element -->
         </xsl:variable>
-        <xsl:variable name="hasChild"        select="(count(*) + count(comment()) > 0)"/>
-        <xsl:variable name="hasAttributes"   select="(string-length($attributesList) > 0)"/>
-        <xsl:variable name="isNode"          select="(string-length(@containerField) > 0)"/>
+        <xsl:variable name="hasChild"        select="(count(*) + count(comment()) gt 0)"/>
+        <xsl:variable name="hasAttributes"   select="(string-length($attributesList) gt 0)"/>
+        <xsl:variable name="isNode"          select="(string-length(@containerField) gt 0)"/>
         <xsl:variable name="isComment"       select="(count(self::comment()) gt 0)"/>
         <xsl:variable name="isStatement"     select="not($isNode) and not($isComment)"/> <!-- comments are processed by a different template -->
         <xsl:variable name="isInMFNodeList"  select="(count(self::comment()) gt 0)         or
@@ -436,7 +589,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                      ($containerField = 'physics')         or
                                                      ($containerField = 'pickTarget')      or
                                                      ($containerField = 'programs')        or
-                                                     ($containerField = 'renderStyle')     or
+                                                     (((local-name(..) = 'ComposedVolumeStyle') or (local-name(..) = 'IsoSurfaceVolumeData') or 
+                                                       (local-name(..) = 'SegmentedVolumeData')) and ($containerField = 'renderStyle'))   or
                                                      ($containerField = 'rootNode')        or
                                                      ($containerField = 'segments')        or
                                                      ($containerField = 'shaders')         or
@@ -449,13 +603,20 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                      ((local-name(..) = 'DISEntityManager')       and (($containerField = 'mapping') or ($containerField = 'children'))) or
                                                      ((local-name(..) = 'GeoLOD')                 and ($containerField = 'rootNode'))         or
                                                      ((local-name(..) = 'ComposedTexture3D')      and ($containerField = 'texture'))          or
+                                                     ((local-name(..) = 'GeoLocation')            and ($containerField = 'children'))         or
+                                                     ((local-name(..) = 'GeoTransform')           and ($containerField = 'children'))         or
+                                                     ((local-name(..) = 'HAnimJoint')             and ($containerField = 'children'))         or
+                                                     ((local-name(..) = 'HAnimSegment')           and ($containerField = 'children'))         or
+                                                     ((local-name(..) = 'HAnimSite')              and ($containerField = 'children'))         or
+                                                     ((local-name(..) = 'MetadataSet')            and ($containerField = 'value'))            or
                                                      ((local-name(..) = 'MultiTexture')           and ($containerField = 'texture'))          or
                                                      ((local-name(..) = 'MultiTextureCoordinate') and ($containerField = 'texCoord'))         or
                                                      ((local-name(..) = 'MultiTextureTransform')  and ($containerField = 'textureTransform')) or
                                                      ((local-name(..) = 'NurbsSet')               and ($containerField = 'geometry'))         or
                                                      ((local-name(..) = 'MetadataSet') and not(local-name() = 'IS') and not($containerField = 'metadata'))  or
                                                      ((local-name(..) = 'ParticleSystem')         and (($containerField = 'color') or ($containerField = 'colorRamp'))) or
-                                                     ((local-name(..) = 'RigidBody')              and ($containerField = 'geometry')) or
+                                                     ((local-name(..) = 'RigidBody')              and ($containerField = 'geometry'))         or
+                                                     ((local-name(..) = 'ViewpointGroup')         and ($containerField = 'children'))         or
                                                      (local-name(..)  = 'field')           or
                                                      (local-name(..)  = 'fieldValue')      or
                                                      (local-name()    = 'field')           or
@@ -463,69 +624,74 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                      (local-name()    = 'connect')"/>
         <!-- sibling field nodes have same containerField name. ignore IS which must be first element and never has a sibling. -->
         <!-- note that all nodes with ProtoBody parent have $containerField children -->
+        <xsl:variable name="isFirstElementAfterMetadataIS" select="
+                                                      (count(preceding-sibling::*[not(starts-with(local-name(),'Metadata')) and not(local-name() = 'IS')])  eq 0) and
+                                                      (count(preceding-sibling::*[starts-with(local-name(),'Metadata') and (@containerField = 'metadata')]) le 1) and
+                                                      (count(preceding-sibling::*[starts-with(local-name(),'Metadata') and (local-name(..)    = 'Scene')   ]) le 1) and
+                                                      (count(preceding-sibling::*[(local-name() = 'IS')])                                                   le 1)"/>
         <xsl:variable name="isFirstSibling"  select="(($isNode or $isComment) and not($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = $containerField]) +
-                                                       count(preceding-sibling::comment()) = 0) or
-                                                     (starts-with(local-name(),'HAnim') and (string-length(@USE) > 0) and
-                                                      (count(preceding-sibling::*[@containerField = $containerField][string-length(@USE) > 0]) = 0)) or
+                                                       count(preceding-sibling::comment()) eq 0) or
+                                                     (starts-with(local-name(),'HAnim') and (string-length(@USE) gt 0) and
+                                                      (count(preceding-sibling::*[(@containerField = $containerField) or (string-length(@USE) gt 0)]) eq 0)) or
                                                      ((local-name(..)='HAnimHumanoid') and (count(self::comment()) gt 0) and
-                                                      (count(preceding-sibling::comment()) = 0)) or
+                                                      (count(preceding-sibling::comment()) eq 0)) or
                                                      (($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = $containerField]) +
                                                        count(preceding-sibling::*[@containerField = 'mapping']) +
                                                        count(preceding-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody') or (local-name(..) = 'Scene')]) +
                                                        count(preceding-sibling::comment()) +
-                                                       count(preceding-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) = 0)) or
+                                                       count(preceding-sibling::*[(string-length(@containerField) eq 0) or (local-name() != 'IS')]) eq 0)) or
                                                      ((local-name() = 'field') and
                                                       (count(preceding-sibling::field) +
-                                                       count(preceding-sibling::comment()) = 0)) or
+                                                       count(preceding-sibling::comment()) eq 0)) or
                                                      ((local-name() = 'fieldValue') and
                                                       (count(preceding-sibling::fieldValue) +
-                                                       count(preceding-sibling::comment()) = 0)) or
+                                                       count(preceding-sibling::comment()) eq 0)) or
                                                      ((local-name() = 'connect') and
                                                       (count(preceding-sibling::connect) +
-                                                       count(preceding-sibling::comment()) = 0)) or
+                                                       count(preceding-sibling::comment()) eq 0)) or
                                                      ((local-name(..) = 'field') and
                                                       (count(preceding-sibling::*) +
-                                                       count(preceding-sibling::comment()) = 0)) or
+                                                       count(preceding-sibling::comment()) eq 0)) or
                                                      ((local-name(..) = 'fieldValue') and
                                                       (count(preceding-sibling::*) +
-                                                       count(preceding-sibling::comment())) = 0))"/>
-        <xsl:variable name="isLastSibling"   select="(($isNode or $isComment) and not($containerField = 'children') and
+                                                       count(preceding-sibling::comment())) eq 0))"/>
+        <xsl:variable name="isLastSibling"   select="(($isNode or $isStatement or $isComment) and not($containerField = 'children') and
                                                       (count(following-sibling::*) +
-                                                       count(following-sibling::comment()) = 0)) or
-                                                     (starts-with(local-name(),'HAnim') and (string-length(@USE) > 0) and
-                                                      (count(following-sibling::*[@containerField = $containerField][string-length(@USE) > 0]) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
+                                                     (starts-with(local-name(),'HAnim') and (string-length(@USE) gt 0) and
+                                                      (count(following-sibling::*[(@containerField = $containerField) or (string-length(@USE) gt 0)]) eq 0)) or
                                                      (($containerField = 'children') and
                                                       (count(following-sibling::*[@containerField = 'children']) +
                                                        count(following-sibling::*[@containerField = 'mapping']) +
                                                        count(following-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody') or (local-name(..) = 'Scene')]) +
-                                                       count(following-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::*[(string-length(@containerField) eq 0) or (local-name() != 'IS')]) +
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name() = 'field') and
                                                       (count(following-sibling::field) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name() = 'fieldValue') and
                                                       (count(following-sibling::fieldValue) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name(..) = 'field') and
                                                       (count(following-sibling::*) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name(..) = 'fieldValue') and
                                                       (count(following-sibling::*) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name() = 'connect') and
                                                       (count(following-sibling::connect) +
-                                                       count(following-sibling::comment()) = 0)) or
+                                                       count(following-sibling::comment()) eq 0)) or
                                                      ((local-name(..) = 'field') and
                                                       (count(following-sibling::*) +
-                                                       count(following-sibling::comment()) = 0)) or
-                                                     ((local-name(..) = 'fieldValue') and
+                                                       count(following-sibling::comment()) eq 0)) or
+                                                     (((local-name(..) = 'fieldValue') or (local-name(..) = 'connect')) and
                                                       (count(following-sibling::*) +
-                                                       count(following-sibling::comment()) = 0))"/>
+                                                       count(following-sibling::comment()) eq 0))"/>
         <xsl:variable name="hasSiblingField" select="(($isNode or $isComment) and not($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = $containerField]) +
-                                                       count(following-sibling::*[@containerField = $containerField]) > 0)) or
+                                                       count(following-sibling::*[@containerField = $containerField]) gt 0)) or
                                                      (($containerField = 'children') and
                                                       (count(preceding-sibling::*[@containerField = 'children']) +
                                                        count(following-sibling::*[@containerField = 'children']) +
@@ -533,54 +699,89 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                                                        count(following-sibling::*[@containerField = 'mapping']) +
                                                        count(preceding-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody')] or (local-name(..) = 'Scene')) +
                                                        count(following-sibling::*[(local-name(..) = 'field') or (local-name(..) = 'fieldValue') or (local-name(..) = 'ProtoBody')] or (local-name(..) = 'Scene')) +
-                                                       count(preceding-sibling::*[string-length(@containerField) = 0][local-name() != 'IS']) +
+                                                       count(preceding-sibling::*[(string-length(@containerField) eq 0) or (local-name() != 'IS')]) +
                                                        count(following-sibling::*[string-length(@containerField) = 0]) + 
                                                        count(preceding-sibling::comment()) + 
-                                                       count(following-sibling::comment()) > 0)) or
+                                                       count(following-sibling::comment()) gt 0)) or
                                                      ((local-name() = 'field') and
                                                       (count(preceding-sibling::field) +
                                                        count(preceding-sibling::comment()) +
                                                        count(following-sibling::field) +
-                                                       count(following-sibling::comment()) > 0)) or
+                                                       count(following-sibling::comment()) gt 0)) or
                                                      ((local-name() = 'fieldValue') and
                                                       (count(preceding-sibling::fieldValue) +
                                                        count(preceding-sibling::comment()) +
                                                        count(following-sibling::fieldValue) +
-                                                       count(following-sibling::comment()) > 0)) or
+                                                       count(following-sibling::comment()) gt 0)) or
                                                      ((local-name() = 'connect') and
                                                       (count(preceding-sibling::connect) +
-                                                       count(following-sibling::connect) > 0)) or
+                                                       count(following-sibling::connect) gt 0)) or
                                                      ((local-name(..) = 'field') and
                                                       (count(preceding-sibling::*) +
                                                        count(preceding-sibling::comment()) +
                                                        count(following-sibling::*) +
-                                                       count(following-sibling::comment()) > 0)) or
+                                                       count(following-sibling::comment()) gt 0)) or
                                                      ((local-name(..) = 'fieldValue') and
                                                       (count(preceding-sibling::*) +
                                                        count(preceding-sibling::comment()) +
                                                        count(following-sibling::*) +
-                                                       count(following-sibling::comment()) > 0))"/>
-        <xsl:variable name="hasFollowingElement" select="(count(following-sibling::*) + count(following-sibling::comment()) > 0)"/><!-- do not ignore comments -->
-        <!-- debug properties
-        <xsl:if test="(local-name() = 'HAnimJoint') and (string-length(@USE) > 0)">
+                                                       count(following-sibling::comment()) gt 0))"/>
+        <xsl:variable name="hasFollowingSiblingElement" select="(count(following-sibling::*) + count(following-sibling::comment()) gt 0)"/><!-- do not ignore comments -->
+        
+        <!-- TODO more general solution, ticket 82 https://sourceforge.net/p/x3d/tickets/82 -->
+        <xsl:variable name="isChildrenElement"
+                    select="starts-with(local-name(..),'Proto') or
+                            (local-name(..) = 'field') or 
+                            (local-name(..) = 'fieldValue') or
+                            starts-with(local-name(..),'HAnim') or
+                            (local-name(..) = 'Anchor') or 
+                            (local-name(..) = 'Billboard') or 
+                            (local-name(..) = 'Collision') or 
+                            (local-name(..) = 'GeoLocation') or 
+                            (local-name(..) = 'GeoTransform') or 
+                            (local-name(..) = 'LoadSensor') or 
+                            (local-name(..) = 'Group') or 
+                            (local-name(..) = 'LOD') or 
+                            (local-name(..) = 'RigidBodyCollection') or 
+                            (local-name(..) = 'Switch') or 
+                            (local-name(..) = 'Transform') or
+                            (local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or 
+                            (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or 
+                            (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or 
+                            (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or 
+                            (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'SpatialSound') or 
+                            (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper')"/>
+        
+        <xsl:variable name="hasPrecedingSiblingComment" select="(count(preceding-sibling::comment()) gt 0)"/>
+        
+        <xsl:variable name="hasPrecedingSiblingNode" 
+                   select="(count(preceding-sibling::*[not(starts-with(local-name(),'Metadata') and (@containerField = 'metadata'))][not(local-name() = 'IS')]) gt 0)"/>
+        
+        <!-- debug diagnostic  (local-name() = 'ROUTE') and (position() = last())  and (@DEF = 'TEST'
+                              ((local-name(..) = 'GeoLocation') or (local-name(..) = 'GeoTransform')) and 
+        <xsl:if test="(local-name(..) = 'RigidBodyCollection')">
             <xsl:message>
+                <xsl:text>*** element </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text> </xsl:text>
-                <xsl:if test="(string-length(@DEF) > 0)">
+                <xsl:if test="(string-length(@DEF) gt 0)">
                     <xsl:text>DEF='</xsl:text>
                     <xsl:value-of select="@DEF"/>
                     <xsl:text>' </xsl:text>
                 </xsl:if>
-                <xsl:if test="(string-length(@USE) > 0)">
+                <xsl:if test="(string-length(@USE) gt 0)">
                     <xsl:text>USE='</xsl:text>
                     <xsl:value-of select="@USE"/>
                     <xsl:text>' </xsl:text>
                 </xsl:if>
-                <xsl:if test="(string-length(@name) > 0)">
+                <xsl:if test="(string-length(@name) gt 0)">
                     <xsl:text>name='</xsl:text>
                     <xsl:value-of select="@name"/>
                     <xsl:text>' </xsl:text>
                 </xsl:if>
+                <xsl:text>(parent </xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text>) </xsl:text>
                 <xsl:text>$attributesList=[</xsl:text>
                 <xsl:value-of select="$attributesList"/>
                 <xsl:text>]</xsl:text>
@@ -596,14 +797,18 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:value-of select="$hasAttributes"/>
                 <xsl:text>', $hasChild='</xsl:text>
                 <xsl:value-of select="$hasChild"/>
+                <xsl:text>', $hasPrecedingSiblingNode='</xsl:text>
+                <xsl:value-of select="$hasPrecedingSiblingNode"/>
+                <xsl:text>', $isFirstElementAfterMetadataIS='</xsl:text>
+                <xsl:value-of select="$isFirstElementAfterMetadataIS"/>
                 <xsl:text>', $isFirstSibling='</xsl:text>
                 <xsl:value-of select="$isFirstSibling"/>
                 <xsl:text>', $isLastSibling='</xsl:text>
                 <xsl:value-of select="$isLastSibling"/>
                 <xsl:text>', $hasSiblingField='</xsl:text>
                 <xsl:value-of select="$hasSiblingField"/>
-                <xsl:text>', $hasFollowingElement='</xsl:text>
-                <xsl:value-of select="$hasFollowingElement"/>
+                <xsl:text>', $hasFollowingSiblingElement='</xsl:text>
+                <xsl:value-of select="$hasFollowingSiblingElement"/>
                 <xsl:text>', $isInMFNodeList='</xsl:text>
                 <xsl:value-of select="$isInMFNodeList"/>
                 <xsl:text>'</xsl:text>
@@ -611,69 +816,96 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         </xsl:if>
         -->
         
-        <!-- check some special cases that are unambiguously fixable -->
-        <xsl:variable name="expectedContainerField">
-            <xsl:choose>
-                <xsl:when test="(local-name(..) = 'GeoLOD') and not(local-name() = 'GeoOrigin') and not(starts-with(local-name(), 'Metadata'))">
-                    <xsl:text>rootNode</xsl:text>
-                </xsl:when>
-                <xsl:when test="(local-name(..) = 'HAnimHumanoid') and (local-name() = 'HAnimSegment')">
-                    <xsl:text>segments</xsl:text>
-                </xsl:when>
-                <!-- HAnimHumanoid can contain HAnimJoint with containerField = joints or skeleton -->
-                <!-- HAnimHumanoid can contain HAnimSite  with containerField = sites, skeleton or viewpoints -->
-                <!-- HAnimHumanoid can contain X3DCoordinateNode with containerField = skinCoord or skinBindingCoords -->
-                <!-- HAnimHumanoid can contain X3DNormalNode with containerField = skinNormal or skinBindingNormals -->
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:if test="(string-length($expectedContainerField) > 0) and not($containerField = $expectedContainerField)">
-            <xsl:message>
-                <xsl:text>... containerField mismatch for </xsl:text>
-                <xsl:value-of select="local-name()"/>
-                <xsl:if test="(string-length(@DEF) > 0) or not(string-length(@USE) > 0)">
-                <xsl:text> DEF='</xsl:text>
-                <xsl:value-of select="@DEF"/>
-                <xsl:text>'</xsl:text>
-                </xsl:if>
-                <xsl:if test="(string-length(@USE) > 0)">
-                    <xsl:text> USE='</xsl:text>
-                    <xsl:value-of select="@USE"/>
-                    <xsl:text>'</xsl:text>
-                </xsl:if>
-                <xsl:if test="(string-length(@name) > 0)">
-                    <xsl:text> name='</xsl:text>
-                    <xsl:value-of select="@name"/>
-                    <xsl:text>'</xsl:text>
-                </xsl:if>
-                <xsl:text> found containerField='</xsl:text>
-                <xsl:value-of select="$containerField"/>
-                <xsl:text>' but expected containerField='</xsl:text>
-                <xsl:value-of select="$expectedContainerField"/>
-                <xsl:text>'</xsl:text>
-            </xsl:message>
+            <!-- debug -->
+        <xsl:if test="(local-name(..)='HAnimSegment') and starts-with(local-name(),'Coordinate') and
+                       (count(preceding-sibling::*[(@containerField = 'children') or (@containerField = 'displacers')]) gt 0) and
+                       (count(following-sibling::*[(@containerField = 'children') or (@containerField = 'displacers')]) eq 0)">
+            <xsl:text>]</xsl:text>
+            <xsl:text>,</xsl:text>
+            <!-- debug
+            <xsl:text> #here31a&#10;</xsl:text> -->
+            <xsl:value-of select="$indent"/>
         </xsl:if>
         
-        <!-- TODO more general solution, ticket 82 https://sourceforge.net/p/x3d/tickets/82 -->
-        <xsl:variable name="isChildrenElement"
-                    select="starts-with(local-name(..),'Proto') or
-                            (local-name(..)='field') or (local-name(..)='fieldValue') or
-                            starts-with(local-name(..),'HAnim') or
-                            (local-name(..)='Anchor') or (local-name(..)='Billboard') or (local-name(..)='Collision') or 
-                            (local-name(..)='Group') or (local-name(..)='LOD') or (local-name(..)='Switch') or (local-name(..)='Transform')"/>
-<!--   -->
+        <xsl:if test="((local-name(..)='HAnimJoint') or (local-name(..)='HAnimSegment')) and 
+                       ((local-name()='HAnimDisplacer') and (@containerField = 'displacers') and 
+                       (count(preceding-sibling::*[local-name() = 'HAnimDisplacer']) eq 0)) and
+                       (count(preceding-sibling::*[(@containerField = 'children') or (@containerField = 'displacers')]) gt 0) and
+                       (count(following-sibling::*[(@containerField = 'children') or (@containerField = 'displacers')]) eq 0)">
+            <!-- checking to ensure MFNode children field is complete prior to MFNode displacers field; 
+                 TODO would prefer that displacers appear first can these get sorted elsewhere? -->
+            <xsl:text>]</xsl:text>
+            <xsl:text>,</xsl:text>
+            <!-- debug
+            <xsl:text> #here31b&#10;</xsl:text> -->
+            <xsl:value-of select="$indent"/>
+        </xsl:if>
+        
         <xsl:choose>
             <xsl:when test="(local-name() = 'X3D')">
                 <xsl:text>newModel</xsl:text><!-- unofficial name, whatever works, reused later -->
                 <xsl:text>=</xsl:text>
             </xsl:when>
-            <xsl:when test="(($isFirstSibling or not($hasSiblingField)) and not(local-name() = 'X3D') and not(local-name(..) = 'head')) or
-                            (($isFirstSibling or not($hasSiblingField)) and $isChildrenElement)">  
+            <xsl:when test="(local-name(..) = 'head')">
+                <!-- handled separately -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'X3D') and (local-name() = 'Scene')">
+                <xsl:text>Scene=</xsl:text>
+                <!-- debug
+                <xsl:text> #here29a&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'Scene') and $isFirstSibling and (count(preceding-sibling::comment()) eq 0)">
+                <xsl:text>children=[</xsl:text>
+                <!-- debug
+                <xsl:text> #here29b&#10;</xsl:text> -->
+                <xsl:value-of select="$indent"/>
+            </xsl:when>
+            <xsl:when test="(local-name(..)='HAnimHumanoid')">
+                <!-- handled elsewhere -->
+            </xsl:when>
+            <xsl:when test="(local-name()='ProtoInstance') and not(@containerField = 'children')">
+                <xsl:value-of select="@containerField"/>
+                <xsl:text>=</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here29c&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="((local-name() = 'field') or (local-name() = 'fieldValue')) and 
+                            not($isFirstSibling)">
+                <!-- handled separately -->
+            </xsl:when>
+            <xsl:when test="(count(preceding-sibling::comment()) gt 0) and ($isInMFNodeList)">
+                <!-- preceding Comments objects (not nodes) handled separately -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MetadataSet') and starts-with(local-name(),'Metadata') and 
+                            (count(../*[starts-with(local-name(),'Metadata')][@containerField = 'metadata']) gt 1) and
+                            (count(preceding-sibling::*[starts-with(local-name(),'Metadata')]) eq 0)">
+                <!-- special case, handling multiple containerField='metadata' Metadata* node(s) within MetadataSet -->
+                <xsl:text>value=[</xsl:text>
+                        <!-- debug
+                        <xsl:text> #here29d&#10;</xsl:text> -->
+                        <xsl:value-of select="$indent"/>
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MetadataSet') and starts-with(local-name(),'Metadata') and 
+                            (count(../*[starts-with(local-name(),'Metadata')][@containerField = 'metadata']) gt 1) and
+                            (count(preceding-sibling::*[starts-with(local-name(),'Metadata')]) gt 0)">
+                <!-- skip, only handle first occurrence of multiple containerField='metadata' Metadata* node(s) within MetadataSet -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MetadataSet') and starts-with(local-name(),'Metadata') and 
+                            (count(preceding-sibling::*[starts-with(local-name(),'Metadata')][@containerField = 'value']) ge 1)">
+                <!-- skip, only handle first occurrence of Metadata* node within MetadataSet -->
+            </xsl:when>
+            <xsl:when test="not($isInMFNodeList) or
+                            (count(preceding-sibling::*) + count(preceding-sibling::comment()) eq 0) or
+                            (($isNode or $isStatement) and ($isFirstSibling or $isFirstElementAfterMetadataIS)) or
+                            (($isFirstSibling or not($hasSiblingField)) and $isChildrenElement)">
                 <!-- python field assignment by name, prefer relational definition rather than positional errors -->
                 <xsl:value-of select="$containerField"/>
                 <xsl:text>=</xsl:text>
                 <xsl:choose>
                     <xsl:when test="$isInMFNodeList"><!-- MFNode -->
                         <xsl:text>[</xsl:text>
+                        <!-- debug
+                        <xsl:text> #here29e&#10;</xsl:text> -->
                         <xsl:value-of select="$indent"/>
                     </xsl:when>
                 </xsl:choose>
@@ -687,7 +919,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>(</xsl:text>
             </xsl:when>
-            <xsl:when test="((local-name() = 'head') or (local-name() = 'Scene')) and (count(*) > 0)">
+            <xsl:when test="((local-name() = 'head') or (local-name() = 'Scene')) and (count(*) gt 0)">
                 <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>(</xsl:text>
@@ -696,9 +928,13 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                   <xsl:text>local-name(child::node()[1])=</xsl:text>
                   <xsl:value-of select="local-name(child::node()[1])"/>
                 </xsl:message> -->
-                <xsl:if test="(local-name() = 'head') and ((count(child::comment()) = 0) or (count(child::node()[1][self::comment()]) eq 0))">
+                <xsl:if test="(local-name() = 'head') and ((count(child::comment()) eq 0) or (count(child::node()[1][self::comment()]) eq 0))">
                     <xsl:value-of select="$indent"/><xsl:text>  </xsl:text>
-                    <xsl:text>children=[</xsl:text>
+                    <xsl:text>children=[</xsl:text> 
+                    <!-- debug
+                    <xsl:text> #here26a </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text> -->
                 </xsl:if>
             </xsl:when>
             <xsl:when test="(local-name() = 'meta') or (local-name() = 'component') or (local-name() = 'unit')">
@@ -707,22 +943,94 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>(</xsl:text>
             </xsl:when>
             <xsl:when test="(local-name(..) = 'Scene')">
+                <xsl:if test="$isFirstSibling and not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment) and (starts-with(local-name(),'Metadata'))">
+                    <!-- containerField is ignored when Metadata* node is a root node under Scene -->
+                    <xsl:text>children=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26b </xsl:text>
+                    <xsl:value-of select="local-name()"/> -->
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                </xsl:if>
+                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>(</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26c </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="((local-name(..) = 'GeoLocation') or (local-name(..) = 'GeoTransform')) and not(local-name() = 'GeoOrigin') and
+                            (count(preceding-sibling::*[@containerField = 'children']) + count(preceding-sibling::comment()) eq 0) and
+                            (count(../*[local-name() = 'GeoOrigin']) gt 0)">
+                <xsl:text>children=[</xsl:text>
+                <!-- debug
+                    <xsl:text> #here26d </xsl:text>
+                    <xsl:value-of select="local-name()"/> -->
+                <xsl:value-of select="$indent"/>
                 <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>(</xsl:text>
             </xsl:when>
+            <xsl:when test="(local-name(..) = 'Collision')      or (local-name(..) = 'HAnimJoint') or
+                            (local-name(..) = 'HAnimSegment')   or (local-name(..) = 'HAnimSite')  or
+                            (local-name(..) = 'EspduTransform') or ends-with(local-name(..), 'Pdu')">
+                <xsl:if test="($isNode) and ($containerField = 'children') and (count(preceding-sibling::comment()) eq 0) and 
+                              (count(preceding-sibling::*[(@containerField = 'proxy') or (@containerField = 'displacers')]) + count(preceding-sibling::comment()) gt 0) and
+                              (count(preceding-sibling::*[@containerField = 'children']) eq 0) and
+                               not(starts-with(local-name(), 'Metadata'))">
+                    <xsl:text>children=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26e </xsl:text> -->
+                    <xsl:value-of select="$indent"/>
+                </xsl:if>
+                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>(</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26f </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MultiTextureCoordinate')">
+                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>(</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26g </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+                    <!-- debug
+            <xsl:when test="$isFirstSibling and not(local-name() = 'PeriodicWave') and
+                           ((local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or 
+                            (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or 
+                            (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or 
+                            (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or 
+                            (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'SpatialSound') or 
+                            (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper'))">
+                    <xsl:value-of select="$indent"/><xsl:text>  </xsl:text>
+                    <xsl:text>children=[</xsl:text> 
+                    <xsl:text> #here32 </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text>
+           </xsl:when> -->
             <!-- 
-            <xsl:when test="(string-length(@containerField) > 0)">
+            <xsl:when test="(string-length(@containerField) gt 0)">
                 <xsl:value-of select="@containerField"/>
                 <xsl:text>=</xsl:text>
                 <xsl:text>(</xsl:text>
             </xsl:when>
             -->
-            <!-- statements don't have containerField, so field name is eponymous -->
+            <!-- statements don't have containerField attribute, so field name is eponymous -->
             <xsl:otherwise>
                 <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>(</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here26h </xsl:text>
+                    <xsl:value-of select="local-name()"/>
+                    <xsl:text>&#10;</xsl:text> -->
             </xsl:otherwise>
         </xsl:choose>
         <!-- output attributes -->
@@ -738,17 +1046,23 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             <xsl:text>,</xsl:text> <!-- these attributes(if any) are followed by additional node(s) -->
         </xsl:if>
         
-        
         <!-- TODO more general solution, ticket 82 https://sourceforge.net/p/x3d/tickets/82
         <xsl:variable name="isChildrenElement"
                     select="(local-name(..)='head') or (local-name(..)='Scene') or (local-name(..)='field') or (local-name(..)='fieldValue') or
                             starts-with(local-name(..),'Proto') or
                             starts-with(local-name(..),'HAnim') or
                             (local-name(..)='Anchor') or (local-name(..)='Billboard') or (local-name(..)='Collision') or 
-                            (local-name(..)='Group') or (local-name(..)='LOD') or (local-name(..)='Switch') or (local-name(..)='Transform')"/>
+                            (local-name(..)='Group') or (local-name(..)='LOD') or (local-name(..)='Switch') or (local-name(..)='Transform') or
+                            (local-name(..)='LoadSensor') or 
+                            (local-name(..) = 'Analyser') or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or 
+                            (local-name(..) = 'BufferAudioSource') or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or 
+                            (local-name(..) = 'ChannelSplitter') or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or 
+                            (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or 
+                            (local-name(..) = 'MicrophoneSource') or (local-name(..) = 'SpatialSound') or 
+                            (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper')"/>
         
             <xsl:when test="($isChildrenElement) and 
-                            ((count(*) > 0) or (count(comment()) > 0))">
+                            ((count(*) gt 0) or (count(comment()) gt 0))">
                 <xsl:value-of select="$packagePrefix"/>< ! - - usually empty - - >
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>(</xsl:text>
@@ -757,55 +1071,157 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             </xsl:when>
          -->
         
+        <!-- explicitly handle HAnimHumanoid children, since there are so many and order-related interdependencies exist -->
         <xsl:choose>
             <xsl:when test="(local-name() = 'HAnimHumanoid')">
-                <xsl:if test="(count(comment()) > 0)">
-                  <!-- comments go in HAnimHumanoid 'children' field -->
-                    <xsl:apply-templates select="comment()"/>
-                    <xsl:text>],</xsl:text>
+                <xsl:variable name="indent2" select="concat($indent,'  ')"/>
+                <!-- do not refactor these carefully sequenced xsl:if statements as an xsl:choose> block! -->
+                <xsl:if test="(count(*[starts-with(local-name(),'Metadata')]) gt 0)">
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>metadata=</xsl:text>
+                    <xsl:apply-templates select="*[starts-with(local-name(),'Metadata')]"/>
+                    <xsl:text>,</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[starts-with(local-name(),'Metadata') or (@containerField = 'skeleton')]) > 0)">
-                    <xsl:apply-templates select="*[starts-with(local-name(),'Metadata') or (@containerField = 'skeleton')]"/>
-                    <xsl:text>],</xsl:text>
+                <xsl:if test="(count(*[@containerField = 'skeleton']) + count(comment()) gt 0)">
+                    <!-- child comments go in HAnimHumanoid 'skeleton' field -->
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skeleton=[</xsl:text>
+                    <xsl:apply-templates select="*[@containerField = 'skeleton'] | comment()"/>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'joints']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'joints']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30a -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>joints=[</xsl:text>
                     <xsl:apply-templates select="*[@containerField = 'joints']"/>
-                    <xsl:text>],</xsl:text>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'segments']) > 0)">
-                    <!--<xsl:value-of select="$indent"/>
-                    <xsl:text>segments=[</xsl:text>-->
+                <xsl:if test="(count(*[@containerField = 'segments']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30b -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>segments=[</xsl:text>
                     <xsl:apply-templates select="*[@containerField = 'segments']"/>
-                    <xsl:text>],</xsl:text>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'sites']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'sites']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30c -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>sites=[</xsl:text>
+                    <xsl:value-of select="$indent2"/>
                     <xsl:apply-templates select="*[@containerField = 'sites']"/>
-                    <xsl:text>],</xsl:text>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'viewpoints']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'viewpoints']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30d -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>viewpoints=[</xsl:text>
+                    <xsl:value-of select="$indent2"/>
                     <xsl:apply-templates select="*[@containerField = 'viewpoints']"/>
-                    <xsl:text>],</xsl:text>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'skin']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'skin']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30e -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skin=[</xsl:text>
+                    <xsl:value-of select="$indent2"/>
                     <xsl:apply-templates select="*[@containerField = 'skin']"/>
-                    <xsl:text>],</xsl:text>
+                    <xsl:text>]</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'skinCoord']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'skinCoord']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30f -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skinCoord=</xsl:text><!-- SFNode -->
+                    <xsl:value-of select="$indent2"/>
                     <xsl:apply-templates select="*[@containerField = 'skinCoord']"/>
-                    <xsl:text>],</xsl:text>
                 </xsl:if>
-                <xsl:if test="(count(*[@containerField = 'skinNormal']) > 0)">
+                <xsl:if test="(count(*[@containerField = 'skinNormal']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30g -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skinNormal=</xsl:text><!-- SFNode -->
+                    <xsl:value-of select="$indent2"/>
                     <xsl:apply-templates select="*[@containerField = 'skinNormal']"/>
-                    <xsl:text>],</xsl:text>
                 </xsl:if>
-                <!-- <xsl:text>]</xsl:text>TODO fix, this is a hack -->
+                <xsl:if test="(count(*[@containerField = 'skinBindingCoord']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30h -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skinBindingCoord=</xsl:text><!-- SFNode -->
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:apply-templates select="*[@containerField = 'skinBindingCoord']"/>
+                </xsl:if>
+                <xsl:if test="(count(*[@containerField = 'skinBindingNormals']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30i -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>skinBindingNormals=</xsl:text><!-- SFNode -->
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:apply-templates select="*[@containerField = 'skinBindingNormal']"/>
+                </xsl:if>
+                <xsl:if test="(count(*[@containerField = 'motions']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30j -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>motions=[</xsl:text>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:apply-templates select="*[@containerField = 'motions']"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:if>
+                <xsl:if test="(count(*[local-name() = 'HAnimPose']) gt 0)">
+                    <xsl:if test="(count(*[@containerField = 'skeleton']) + count(*[self::comment()]) gt 0)">
+                        <xsl:text>,</xsl:text><!-- #here30k -->
+                    </xsl:if>
+                    <xsl:value-of select="$indent2"/>
+                    <xsl:text>children=[</xsl:text>
+                    <xsl:apply-templates select="*[local-name() = 'HAnimPose']"/>
+                    <xsl:text>]</xsl:text>
+                </xsl:if>
             </xsl:when>
             <xsl:when test="$hasChild">
-                <!-- sort SFNode/MFNode fields together, keep statements and comments with children -->
-                <!-- process non-children X3D nodes for this element -->
-                <xsl:apply-templates select="* | comment()">
-                    <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
-                </xsl:apply-templates>
+                <!-- recurse on child node, statements and comments -->
+                <xsl:choose>
+                    <xsl:when test="(local-name() = 'Scene') or (local-name() = 'ProtoBody')">
+                        <xsl:apply-templates select="* | comment()">  <!-- process child elements (X3D nodes, statements) and comments for this element -->
+                            <!-- no sorting of nodes under Scene or ProtoBody since Metadata nodes are allowed in any order there -->
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- sort nodes to ensure metadata and proxy are first -->
+                        <!-- sort SFNode/MFNode fields together, keep statements and comments with children -->
+                        <!-- process non-children X3D nodes for this element -->
+                        <xsl:apply-templates select="* | comment()">
+                            <!-- TODO trial
+                            <xsl:sort select="(not(@containerField = 'proxy') and not(starts-with(local-name(),'Metadata'))) or (count(self::comment()) gt 0)"/>
+                            <xsl:sort select="starts-with(local-name(),'Metadata')"/>
+                            -->
+                            <!-- ensure RigidBodyCollection RigidBody bodies field (and joints field) are each together -->
+                            <xsl:sort select="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'joints')"/>
+                            <xsl:sort select="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'bodies')"/>
+                            <!-- ensure proxy field first so that it doesn't appear in the midst of children, especially if comments present -->
+                            <xsl:sort select="not(@containerField = 'proxy') and not(@containerField = 'metadata') and not(@containerField = 'geoOrigin')"/>
+                            <!-- geoOrigin must precede other children -->
+                            <xsl:sort select="(@containerField = 'geoOrigin')"/>
+                            <xsl:sort select="(@containerField = 'proxy')"/>
+                            <xsl:sort select="(@containerField = 'metadata')"/>
+                        </xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
                 <xsl:variable name="containedSourceText">
                     <xsl:value-of select="(string-join(child::text(),' '))" disable-output-escaping="yes"/>
                 </xsl:variable>       
@@ -830,11 +1246,11 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 </xsl:if>
                 
                 <!-- alternative attempt: sorting alike fields together, which can reorder scene graph and lead to other problems>
-                <xsl:apply-templates select="*[not(@containerField = 'children') and (string-length(@containerField) > 0)]">  
+                <xsl:apply-templates select="*[not(@containerField = 'children') and (string-length(@containerField) gt 0)]">  
                     <xsl:sort select="@containerField" order="ascending"/>
                 </xsl:apply-templates>
                 process child elements (X3D nodes, statements) and comments for this element
-                <xsl:apply-templates select="*[(@containerField = 'children') or (string-length(@containerField) = 0)] | comment()"/> -->
+                <xsl:apply-templates select="*[(@containerField = 'children') or (string-length(@containerField) eq 0)] | comment()"/> -->
                 
                 <!-- debug
                 <xsl:message>
@@ -844,12 +1260,30 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 </xsl:message> -->
             </xsl:when>
             <xsl:otherwise>
-                <xsl:apply-templates select="* | comment()">  <!-- process child elements (X3D nodes, statements) and comments for this element -->
-                    <!-- <xsl:sort select="@containerField" order="ascending"/> avoid sorting, some nodes have empty containerField -->
-                </xsl:apply-templates>
+                <!-- recurse on child node, statements and comments -->
+                <xsl:choose>
+                    <xsl:when test="(local-name() = 'Scene')">
+                        <xsl:apply-templates select="* | comment()">  <!-- process child elements (X3D nodes, statements) and comments for this element -->
+                            <!-- no sorting of nodes under Scene since Metadata nodes are allowed in any order there -->
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- sort nodes to ensure metadata and proxy are first -->
+                        <xsl:apply-templates select="* | comment()">  <!-- process child elements (X3D nodes, statements) and comments for this element -->
+                            <!-- ensure RigidBodyCollection RigidBody bodies field (and joints field) are each together -->
+                            <xsl:sort select="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'joints')"/>
+                            <xsl:sort select="(local-name(..) = 'RigidBodyCollection') and (@containerField = 'bodies')"/>
+                            <!-- ensure proxy field first so that it doesn't appear in the midst of children, especially if comments present -->
+                            <xsl:sort select="not(@containerField = 'proxy') and not(@containerField = 'metadata') and not(@containerField = 'geoOrigin')"/>
+                            <!-- geoOrigin must precede other children -->
+                            <xsl:sort select="(@containerField = 'geoOrigin')"/>
+                            <xsl:sort select="(@containerField = 'proxy')"/>
+                            <xsl:sort select="(@containerField = 'metadata')"/>
+                        </xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
-        
         
         <!-- TODO better test based on SFNode/MFNode
         <xsl:if test="(count(*) > 1)">
@@ -860,7 +1294,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:if test="(count(*) > 1)">
             <xsl:text>]</xsl:text>
         </xsl:if> -->
-        
+           
         <!-- common final processing for each element -->
         <xsl:choose>
             <xsl:when test="(local-name() = 'X3D')">
@@ -869,28 +1303,63 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>)</xsl:text>
                 <xsl:text>&#10;</xsl:text>
             </xsl:when>
-            <xsl:when test="((local-name() = 'head') or (local-name() = 'Scene')) and ((count(*) > 0) or (count(comment()) > 0))">
-                <xsl:if test="(local-name() = 'head') or (local-name() = 'Scene')">
-                <!--<xsl:value-of select="$indent"/><xsl:text>  </xsl:text> #here11&#10;-->
+            <xsl:when test="(local-name() = 'head') or (local-name() = 'Scene')">
+            <!--<xsl:value-of select="$indent"/><xsl:text>  </xsl:text> #here11&#10;-->
+                <xsl:if test="(count(*) + count(comment()) gt 0)">
                     <xsl:text>]</xsl:text>
                 </xsl:if>
                 <xsl:text>)</xsl:text>
+                <!-- debug
+                <xsl:text> #here24a /</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name() = 'ProtoDeclare')">
+            <!--<xsl:value-of select="$indent"/><xsl:text>  </xsl:text> #here11&#10;-->
+                <xsl:text>)</xsl:text>
+                <!-- debug  
+                <xsl:text> #here24b /</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name() = 'ProtoBody')">
+            <!--<xsl:value-of select="$indent"/><xsl:text>  </xsl:text> #here11&#10;-->
+                <xsl:text>)</xsl:text>
+                <!-- debug  
+                <xsl:text> #here24c </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(count(*) gt 0) or (count(comment()) gt 0)">
+                <xsl:text>)</xsl:text>
+                <!-- debug  
+                <xsl:text> #here24d /</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#10;</xsl:text> -->
             </xsl:when>
             <xsl:when test="(local-name() = 'meta') or (local-name() = 'component') or (local-name() = 'unit')">
                 <!-- part of a head list -->
                 <xsl:text>)</xsl:text>
             </xsl:when>
             <!--
-            <xsl:when test="(string-length(@containerField) > 0)">
+            <xsl:when test="(string-length(@containerField) gt 0)">
                 <xsl:text>)</xsl:text>
             </xsl:when>
             -->
             <xsl:otherwise>
                 <!-- statements don't have containerField, so field name is eponymous -->
                 <xsl:text>)</xsl:text>
+                <!-- debug
+                <xsl:text> #here24e /</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>&#10;</xsl:text> -->
             </xsl:otherwise>
         </xsl:choose>
-            
+        <!-- debug
+        <xsl:text> #here20 /</xsl:text>
+        <xsl:value-of select="local-name()"/>
+        <xsl:text>&#10;</xsl:text> -->
+        
         <!-- TODO fix: selectively append commas, avoid last entry, only needed if attributes present -->
         <xsl:choose>
             <xsl:when test="($isNode or $isComment) and not($hasSiblingField) and (position() != last())">
@@ -918,49 +1387,80 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>,</xsl:text> <!-- HH this element is followed by a Comment -->
             </xsl:when>
         </xsl:choose>
+        
         <!-- debug diagnostic 
-            (../@containerField = 'children')
-        <xsl:if test="(local-name(..) = 'HAnimHumanoid') and (string-length(@USE) > 0)">
+            (../@containerField = 'children') and (string-length(@USE) gt 0)
+        <xsl:if test="(local-name() = 'Inline')">
             <xsl:message>
-                <xsl:text>*** </xsl:text>
-                    <xsl:text>local-name(..)='</xsl:text>
-                    <xsl:value-of select="local-name(..)"/>
-                    <xsl:text>', local-name()='</xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text>', @name='</xsl:text>
-                    <xsl:value-of select="@name"/>
-                    <xsl:text>', @USE='</xsl:text>
-                    <xsl:value-of select="@USE"/>
-                    <xsl:text>', @containerField='</xsl:text>
-                    <xsl:value-of select="@containerField"/>
-                    <xsl:text>', $isLastSibling='</xsl:text>
-                    <xsl:value-of select="$isLastSibling"/>
-                    <xsl:text>', $hasSiblingField='</xsl:text>
-                    <xsl:value-of select="$hasSiblingField"/>
-                    <xsl:text>', $isInMFNodeList='</xsl:text>
-                    <xsl:value-of select="$isInMFNodeList"/>
-                    <xsl:text>'</xsl:text>
+                <xsl:text>*** local-name(..)='</xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                <xsl:text>', local-name()='</xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:text>', @name='</xsl:text>
+                <xsl:value-of select="@name"/>
+                <xsl:text>', @USE='</xsl:text>
+                <xsl:value-of select="@USE"/>
+                <xsl:text>', @containerField = '</xsl:text>
+                <xsl:value-of select="@containerField"/>
+                <xsl:text>', $isLastSibling='</xsl:text>
+                <xsl:value-of select="$isLastSibling"/>
+                <xsl:text>', $hasSiblingField='</xsl:text>
+                <xsl:value-of select="$hasSiblingField"/>
+                <xsl:text>', $hasFollowingSiblingElement='</xsl:text>
+                <xsl:value-of select="$hasFollowingSiblingElement"/>
+                <xsl:text>', $isInMFNodeList='</xsl:text>
+                <xsl:value-of select="$isInMFNodeList"/>
+                <xsl:text>'</xsl:text>
             </xsl:message>
         </xsl:if>
         -->
-        <xsl:if test="not(local-name() = 'X3D') and not(local-name(..) = 'head') and not(local-name(..) = 'Scene') and not(local-name(..) = 'HAnimHumanoid')">
+        <xsl:if test="not(local-name() = 'X3D') and 
+                      not(local-name(..) = 'head') and not(local-name(..) = 'Scene') and not(local-name(..) = 'HAnimHumanoid')">
             <xsl:choose>
-                <!--<xsl:value-of select="$indent"/>
-                <xsl:when test="not($hasFollowingElement) and ($containerField = 'children')">
-                    <xsl:text>]</xsl:text>
-                </xsl:when>--> 
-                <xsl:when test="($isLastSibling or not($hasSiblingField)) and $isInMFNodeList"><!-- MFNode -->
-                    <xsl:text>]</xsl:text>
-                    <!-- debug  
-                    <xsl:text> #here4&#10;</xsl:text>
+                <xsl:when test="(local-name(..) = 'MetadataSet') and starts-with(local-name(),'Metadata') and 
+                                (count(../*[starts-with(local-name(),'Metadata')][@containerField = 'metadata']) gt 1) and
+                                (count(following-sibling::*[starts-with(local-name(),'Metadata')]) gt 0)">
+                    <!-- special case, handling multiple containerField='metadata' Metadata* node(s) within MetadataSet -->
+                    <!-- debug
+                    <xsl:text> #here4a&#10;</xsl:text> -->
+                    <xsl:text></xsl:text>
+                </xsl:when>
+                <xsl:when test="(local-name(..) = 'MetadataSet') and (../*|../comment())[last()][self::comment()]">
+                    <!-- adapted from https://stackoverflow.com/a/2613276 -->
+                    <!-- last node within parent MetadataSet was a comment, already handled -->
+                    <!-- special case, handling multiple containerField='metadata' Metadata* node(s) within MetadataSet -->
+                    <xsl:text></xsl:text>
+                    <!-- debug
+                    <xsl:text> #here4b&#10;</xsl:text> -->
+                </xsl:when>
+                <xsl:when test="(local-name()='ProtoInstance') and not(@containerField = 'children')"><!-- checking for SFNode ProtoInstance -->
+                    <xsl:text></xsl:text>
+                    <!-- debug 
+                    <xsl:text>,</xsl:text>
+                    <xsl:text> #here4c&#10;</xsl:text>
                     -->
-                    <xsl:if test="$hasFollowingElement"> <!-- HH this element is last in a children [array] -->
+                </xsl:when>
+                <xsl:when test="(local-name(..)='RigidBodyCollection') and (@containerField = 'bodies') and
+                                (count(following-sibling::*[@containerField = 'bodies']) eq 0) and
+                                (count(following-sibling::*[@containerField = 'joints']) gt 0)">
+                    <!-- checking to ensure MFNode bodies field is complete prior to MFNode joints field, these are sorted elsewhere -->
+                    <xsl:text>]</xsl:text>
+                    <xsl:text>,</xsl:text>
+                    <!-- debug 
+                    <xsl:text> #here4d&#10;</xsl:text> -->
+                </xsl:when>
+                <xsl:when test="($isLastSibling or not($hasSiblingField)) and $isInMFNodeList"><!-- checking for MFNode -->
+                    <xsl:text>]</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here4e&#10;</xsl:text> -->
+                    <xsl:if test="$hasFollowingSiblingElement"> <!-- HH this element is last in a children [array] -->
                         <xsl:text>,</xsl:text>
+                        <!-- debug
+                        <xsl:text> #here4f&#10;</xsl:text> -->
                     </xsl:if>
                 </xsl:when>
             </xsl:choose>
         </xsl:if>
-
     </xsl:template>
 
     <xsl:template name="fieldNameNormalizedPython">
@@ -1172,9 +1672,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       (local-name()='backSpecularColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='backTransparency' and (string(.)='0' or string(.)='0.0')))) and
                       not(ends-with(local-name(..),'Material')	and
-                      ((ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      ((ends-with(local-name(),'Mapping') and (string-length(string(.)) eq 0)) or
                       (local-name()='baseColor' and ((string(.)='1 1 1') or (string(.)='1. 1. 1.') or (string(.)='1.0 1.0 1.0'))) or
-                      (ends-with(local-name(),'Mapping') and (string-length(string(.)) = 0)) or
+                      (ends-with(local-name(),'Mapping') and (string-length(string(.)) eq 0)) or
                       (local-name()='emissiveColor' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                       (local-name()='metallic' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
                       (local-name()='normalScale' and ((string(.)='1') or (string(.)='1.') or (string(.)='1.0'))) or
@@ -1330,9 +1830,9 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='alpha' and (string(.)='1' or string(.)='1.0')) or
                       (local-name()='color' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')))) and
                       not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
+                      ((local-name() = 'mapping') and (string-length(string(.)) eq 0))) and
                       not( contains(local-name(..),'Texture') and
-                      ((local-name() = 'mapping') and (string-length(string(.)) = 0))) and
+                      ((local-name() = 'mapping') and (string-length(string(.)) eq 0))) and
                       not( local-name(..)='TextureCoordinateGenerator' and
                       ((local-name()='mode' and string(.)='SPHERE'))) and
                       not((local-name(..)='ComposedTexture3D' or local-name(..)='ImageTexture3D' or local-name(..)='PixelTexture3D') and
@@ -1627,6 +2127,11 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       not(local-name(..)='DISEntityTypeMapping' and 
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -1650,7 +2155,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                       ((local-name()='rotateYUp' and (string(.)='false')) or
                       (local-name()='containerField' and (string(.)='geoOrigin')) or
                       (local-name()='geoSystem' and (translate(string(.),',','')='&quot;GD&quot; &quot;WE&quot;'))))" />
-        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) = 0)]"/>
+        <xsl:variable name="isHAnim1" select="$isX3D3 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'1') or (string-length(@version) eq 0)]"/>
         <xsl:variable name="isHAnim2" select="$isX3D4 and ancestor-or-self::*[local-name() = 'HAnimHumanoid'][starts-with(@version,'2')] and not($isHAnim1 = true())"/>
         <xsl:variable name="notDefaultHAnim1"
                       select="not( local-name(..)='HAnimJoint' and
@@ -1685,7 +2190,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                        (local-name()='bboxSize' and (string(.)='-1 -1 -1' or string(.)='-1.0 -1.0 -1.0')) or
                        (local-name()='center' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
                        (local-name()='loa' and (string(.)='-1')) or
-                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) = 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
+                       (local-name()='version' and (($isHAnim1 = true() and (string(.)='1.0' or (string-length(string(.)) eq 0))) or ($isHAnim2 = true() and string(.)='2.0'))) or
                        (local-name()='skeletalConfiguration' and (string(.)='BASIC')) or
                        (local-name()='rotation' and (string(.)='0 0 1 0' or string(.)='0.0 0.0 1.0 0.0' or string(.)='0 1 0 0' or string(.)='0.0 1.0 0.0 0.0' or string(.)='0 1 0 0.0'  or string(.)='0 0 1 0.0')) or
                        (local-name()='scale' and (string(.)='1 1 1' or string(.)='1.0 1.0 1.0')) or
@@ -1918,36 +2423,37 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <!-- note that if digital signature is present, all attributes are included (including default values) and
                        order of attributes may change, but that should be OK according to Post Schema Validation Infoset (PSVI) -->
         <xsl:if test="
-                (count(//ds:Signature) > 0) or
+                (count(//ds:Signature) gt 0) or
                 (local-name(..)='HAnimHumanoid' and local-name()='version') or
                 (
-                $notImplicitEvent1 and
-                $notImplicitEvent2 and
-                $notImplicitEvent3 and
-                $notDefaultFieldValue1 and
-                $notDefaultFieldValue1a and
-                $notDefaultFieldValue2 and
-                $notDefaultFieldValue3 and
-                $notDefaultFieldValue4 and
-                $notDefaultFieldValue5 and
-                $notDefaultFieldValue6 and
-                $notDefaultFieldValue7 and
-                $notDefaultFieldValue8 and
-                $notDefaultFieldValue9 and
-                $notDefaultFieldValue10 and
-                $notDefaultCAD         and
-                $notDefaultDIS1        and
-                $notDefaultDIS2        and
-                $notDefaultDIS3        and
-                $notDefaultDIS4        and
-                $notDefaultGeo         and
-                $notDefaultHAnim1      and
-                $notDefaultHAnim2      and
-                $notDefaultNurbs       and
-                $notDefaultGeometry2D  and
-                $notDefaultVolume      and
-                $notDefaultFollower    and
-                $notDefaultShader      and
+                $notImplicitEvent1          and
+                $notImplicitEvent2          and
+                $notImplicitEvent3          and
+                $notDefaultFieldValue1      and
+                $notDefaultFieldValue1a     and
+                $notDefaultFieldValue2      and
+                $notDefaultFieldValue3      and
+                $notDefaultFieldValue4      and
+                $notDefaultFieldValue5      and
+                $notDefaultFieldValue6      and
+                $notDefaultFieldValue7      and
+                $notDefaultFieldValue8      and
+                $notDefaultFieldValue9      and
+                $notDefaultFieldValue10     and
+                $notDefaultCAD              and
+                $notDefaultDIS1             and
+                $notDefaultDIS2             and
+                $notDefaultDIS3             and
+                $notDefaultDIS4             and
+                $notDefaultGaussianSplats   and
+                $notDefaultGeo              and
+                $notDefaultHAnim1           and
+                $notDefaultHAnim2           and
+                $notDefaultNurbs            and
+                $notDefaultGeometry2D       and
+                $notDefaultVolume           and
+                $notDefaultFollower         and
+                $notDefaultShader           and
                 $notDefaultRigidBodyPhysics and
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
@@ -2030,6 +2536,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             <!-- selectively append commas, avoid last entry -->
             <xsl:if test="(position() != last())">
                 <xsl:text>,</xsl:text> <!-- may be followed by child node(s) -->
+                    <!-- debug
+                    <xsl:text> #here27a&#10;</xsl:text> -->
             </xsl:if>
             
         </xsl:if>
@@ -2046,42 +2554,72 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             </xsl:for-each>
         </xsl:variable>
         
-        <xsl:variable name="hasFollowingSibling" select="(count(following-sibling::*) + 
-                            count(following-sibling::comment()) gt 0)"/>
+        <xsl:variable name="hasPrecedingSiblingComment" select="(count(preceding-sibling::comment()) gt 0)"/>
         
-        <xsl:variable name="hasPrecedingComment" select="(count(preceding-sibling::comment()) gt 0)"/>
+        <xsl:variable name="hasPrecedingSiblingNode"    
+                    select="(count(preceding-sibling::*[not(starts-with(local-name(), 'Metadata'))][not(local-name() = 'GeoOrigin')][not(local-name() = 'IS')]) gt 0)"/>
         
         <xsl:variable name="hasPrecedingChildNode" select="(count(preceding-sibling::*[@containerField = 'children']) gt 0)"/>
+        
+        <xsl:variable name="hasFollowingSibling" select="(count(following-sibling::*) + count(following-sibling::comment()) gt 0)"/>
         
         <xsl:variable name="hasFollowingComment" select="(count(following-sibling::comment()) gt 0)"/>
         
         <!-- TODO more general solution for supporting Comment class, ticket 82 https://sourceforge.net/p/x3d/tickets/82 -->
-        <xsl:variable name="isChildrenElement"
-                    select="(local-name(..)='Scene') or (local-name(..)='head') or
-                            starts-with(local-name(..),'Proto') or starts-with(local-name(..),'field') or starts-with(local-name(..),'fieldValue') or
-                            starts-with(local-name(..),'HAnim') or
-                            (local-name(..)='Anchor') or (local-name(..)='Billboard') or (local-name(..)='Collision') or 
-                            (local-name(..)='Group')  or (local-name(..)='LOD')       or (local-name(..)='Switch')    or (local-name(..)='Transform')"/>
-    
+        <xsl:variable name="isChildComment"
+                    select="(local-name(..)='Scene')                or (local-name(..)='head') or
+                            (contains(local-name(..),'Proto') and not(local-name(..) = 'ProtoDeclare'))       or 
+                            starts-with(local-name(..),'field') or starts-with(local-name(..),'fieldValue') or
+                            (local-name(..) = 'EspduTransform')     or ends-with(local-name(..), 'Pdu') or
+                            starts-with(local-name(..),'HAnim')     or
+                            (local-name(..) = 'CADAssembly')        or (local-name(..) = 'CADLayer')  or (local-name(..) = 'CADPart')    or
+                            (local-name(..) = 'GeoLocation')        or (local-name(..) = 'GeoLOD')    or (local-name(..) = 'GeoTransform')    or
+                            (local-name(..) = 'Anchor')             or (local-name(..) = 'Billboard')   or 
+                            (local-name(..) = 'Collision')          or (local-name(..) = 'Group') or
+                            (local-name(..) = 'LOD')                or (local-name(..) = 'Script')      or 
+                            (local-name(..) = 'NurbsSet')           or (local-name(..) = 'Contour2D') or 
+                            (local-name(..) = 'Switch')             or (local-name(..) = 'Transform')   or
+                            (local-name(..) = 'LoadSensor')         or (local-name(..) = 'MetadataSet') or (local-name(..)='IS') or 
+                            (local-name(..) = 'ViewpointGroup')     or (local-name(..) = 'DISEntityManager') or
+                            (local-name(..) = 'Analyser')           or (local-name(..) = 'AudioDestination') or (local-name(..) = 'BiquadFilter') or 
+                            (local-name(..) = 'BufferAudioSource')  or (local-name(..) = 'ChannelMerger') or (local-name(..) = 'ChannelSelector') or 
+                            (local-name(..) = 'ChannelSplitter')    or (local-name(..) = 'Convolver') or (local-name(..) = 'Delay') or 
+                            (local-name(..) = 'DynamicsCompressor') or (local-name(..) = 'Gain') or (local-name(..) = 'ListenerPointSource') or 
+                            (local-name(..) = 'MicrophoneSource')   or (local-name(..) = 'SpatialSound') or 
+                            (local-name(..) = 'StreamAudioDestination') or (local-name(..) = 'StreamAudioSource') or (local-name(..) = 'WaveShaper')"/>
         <!-- debug diagnostic 
-        <xsl:if test="(local-name(..) = 'HAnimJoint')">
+        <xsl:if test="(local-name(..) = 'Collision')">
             <xsl:message>
-                <xsl:text>*** found comment, (count(self::comment()) gt 0)=</xsl:text>
+                <xsl:text>*** found comment (count(self::comment()) gt 0)=</xsl:text>
                 <xsl:value-of select="(count(self::comment()) gt 0)"/>
+                <xsl:text>, parent local-name(..)=</xsl:text>
+                <xsl:value-of select="local-name(..)"/>
+                        <xsl:if test="(string-length(@DEF) gt 0)">
+                            <xsl:text> DEF='</xsl:text>
+                            <xsl:value-of select="@DEF"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                        <xsl:if test="(string-length(@USE) gt 0)">
+                            <xsl:text> USE='</xsl:text>
+                            <xsl:value-of select="@USE"/>
+                            <xsl:text>'</xsl:text>
+                        </xsl:if>
+                <xsl:text>, $isChildComment=</xsl:text>
+                <xsl:value-of select="$isChildComment"/>
+                <xsl:text>, $hasPrecedingSiblingNode=</xsl:text>
+                <xsl:value-of select="$hasPrecedingSiblingNode"/>
                 <xsl:text>, $hasFollowingSibling=</xsl:text>
                 <xsl:value-of select="$hasFollowingSibling"/>
-                <xsl:text>, $hasPrecedingComment=</xsl:text>
-                <xsl:value-of select="$hasPrecedingComment"/>
+                <xsl:text>, $hasPrecedingSiblingComment=</xsl:text>
+                <xsl:value-of select="$hasPrecedingSiblingComment"/>
                 <xsl:text>, $hasFollowingComment=</xsl:text>
                 <xsl:value-of select="$hasFollowingComment"/>
-                <xsl:text>, parent=</xsl:text>
-                <xsl:value-of select="local-name(..)"/>
-                <xsl:text> DEF=</xsl:text>
-                <xsl:value-of select="(../@DEF)"/>
                 <xsl:text>, # preceding-sibling comments=</xsl:text>
                 <xsl:value-of select="count(preceding-sibling::comment())"/>
                 <xsl:text>, # following-sibling comments=</xsl:text>
                 <xsl:value-of select="count(following-sibling::comment())"/>
+                <xsl:text>, comment=</xsl:text>
+                <xsl:value-of select="."/>
             </xsl:message>
             <xsl:message>
                 <xsl:text>    </xsl:text>
@@ -2091,71 +2629,125 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         -->
         
         <xsl:choose>
-            <xsl:when test="((local-name(..)='Script') or (local-name(..)='ProtoInterface') or (local-name(..)='ExternProtoDeclare')) and 
-                            not($hasPrecedingComment) and (count(preceding-sibling::*) eq 0)">  
+            <xsl:when test="(local-name(..) = 'Scene')">
+                <xsl:if test="not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                    <xsl:text>children=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27b&#10;</xsl:text> -->
+                </xsl:if>
+            </xsl:when>
+            <xsl:when test="(local-name(..)='HAnimHumanoid')">
+                <!-- handled elsewhere -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MultiTexture')">
+                <xsl:if test="not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                    <xsl:text>texture=[</xsl:text>
+                </xsl:if>
+                    <!-- debug
+                    <xsl:text> #here27c&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MultiTextureCoordinate')">
+                <xsl:if test="not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                    <xsl:text>texCoord=[</xsl:text>
+                </xsl:if>
+                    <!-- debug
+                    <xsl:text> #here27d&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MultiTextureTransform')">
+                <xsl:if test="not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)">
+                    <xsl:text>&#10;</xsl:text>
+                    <xsl:value-of select="$indent"/>
+                    <xsl:text>textureTransform=[</xsl:text>
+                </xsl:if>
+                    <!-- debug
+                    <xsl:text> #here27e&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="((local-name(..)='Script') or (local-name(..)='ProtoInterface') or (local-name(..)='ExternProtoDeclare') or
+                             (local-name(..)='ComposedShader') or (local-name(..)='PackagedShader')) and 
+                            not($hasPrecedingSiblingComment) and (count(preceding-sibling::*) eq 0)">  
                 <!-- python field assignment by name -->
                 <xsl:text>&#10;</xsl:text>
                 <xsl:value-of select="$indent"/>
                 <xsl:text>field=[</xsl:text>
             </xsl:when>
-            <xsl:when test="((count(preceding-sibling::*[not(starts-with(local-name(),'Metadata'))]) + count(preceding-sibling::comment()) = 0) and $isChildrenElement) or
-                          ((local-name(..)='HAnimHumanoid') and not($hasPrecedingComment))">  
+            <xsl:when test="(local-name(..)='ProtoDeclare')">
+                <!-- TODO ProtoDeclare troubleshooting in progress -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='ProtoInstance') and not($hasPrecedingSiblingComment) and not($hasPrecedingSiblingNode)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>fieldValue=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27f&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='MetadataSet') and
+                            not($hasPrecedingSiblingComment) and not($hasPrecedingSiblingNode) and 
+                            not(count(preceding-sibling::*[starts-with(local-name(),'Metadata') and (@containerField = 'value')]) gt 0)">
+                <!-- avoid being overrestrictive, might have isolated comment and no (following-sibling::*[1]/@containerField = 'value') -->
+                <xsl:text>&#10;</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>value=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27g&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='MetadataSet') and 
+                            (count(preceding-sibling::comment()) eq 0) and
+                            (count(preceding-sibling::*[starts-with(local-name(),'Metadata')][@containerField = 'metadata']) +
+                             count(following-sibling::*[starts-with(local-name(),'Metadata')][@containerField = 'metadata']) eq 1)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>value=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27h&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='MetadataSet')">
+                <!-- special cases are already handled, no further action needed -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='IS') and
+                            not($hasPrecedingSiblingComment) and not($hasPrecedingSiblingNode)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>connect=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27i&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..)='GeoLOD') and
+                            not($hasPrecedingSiblingComment) and 
+                            (count(preceding-sibling::*[(@containerField = 'rootNode') or (@containerField = 'metadata') or (local-name() = 'IS') or (local-name() = 'proxy')]) eq 0)">
+                <xsl:text>&#10;</xsl:text>
+                <xsl:value-of select="$indent"/>
+                <xsl:text>rootNode=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27j&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="not(local-name(..) = 'GeoLOD') and
+                          (((count(preceding-sibling::*[not(starts-with(local-name(),'Metadata'))][not(local-name() = 'IS')][not(local-name() = 'GeoOrigin')][not(@containerField = 'proxy')]) + 
+                             count(preceding-sibling::comment()) eq 0) and 
+                             $isChildComment) and not(local-name(..) = 'Scene')) or
+                          ( (local-name(..) = 'GeoLocation') and not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)) or
+                          ( (local-name(..) = 'GeoTransform' and not($hasPrecedingSiblingNode)) and not($hasPrecedingSiblingComment)) or
+                          ( (local-name(..) = 'HAnimHumanoid') and not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment)) or
+                          (((local-name(..) = 'EspduTransform') or ends-with(local-name(..), 'Pdu')) 
+                                                               and not($hasPrecedingSiblingNode) and not($hasPrecedingSiblingComment))">  
                 <!-- python field assignment by name -->
                 <xsl:text>&#10;</xsl:text>
                 <xsl:value-of select="$indent"/>
                 <xsl:text>children=[</xsl:text>
+                    <!-- debug
+                    <xsl:text> #here27k&#10;</xsl:text> -->
             </xsl:when>
         </xsl:choose>
         <xsl:text>&#10;</xsl:text>
         
+        <!-- handle embedded comments either as Comments object or else plain #comment depending on parent object type -->
         <xsl:choose>
-            <xsl:when test="(local-name(..) = 'Appearance') or ends-with(local-name(..), 'Set') or (local-name(..) = 'Shape') or 
-                            (local-name(..) = 'Material') or (local-name(..) = 'WorldInfo') or (local-name(..) = 'ProtoInstance') or 
-                            (local-name(..) = 'DISEntityTypeMapping') or (local-name(..) = 'ESPDUTransform') or (local-name(..) = 'WorldInfo') or
-                            (local-name(..) = 'Text') or (local-name(..) = 'IS') or (local-name(..) = 'connect') or
-                            starts-with(local-name(..), 'Indexed') or starts-with(local-name(..), 'Coordinate')">
-                <!-- TODO not yet supported by Comment class -->
-                <!-- debug
-                <xsl:message>
-                  <xsl:text>*** [debug1] </xsl:text>
-                  <xsl:value-of select="local-name(..)"/>
-                  <xsl:text> node found containing comment: '</xsl:text>
-                  <xsl:value-of select="substring(.,1,40)"/>
-                  <xsl:text>'</xsl:text>
-                  <xsl:if test="(string-length(.) gt 40)">
-                    <xsl:text> ...</xsl:text>
-                  </xsl:if> -->
-                  <!--
-                  <xsl:text>&#10;</xsl:text>
-                  <xsl:text>    &lt;-</xsl:text><xsl:text>- </xsl:text>
-                  <xsl:value-of select="."/>
-                  <xsl:text> -</xsl:text><xsl:text>-&gt;</xsl:text>
-                </xsl:message>-->
-                <xsl:value-of select="$indent"/>
-                <xsl:text> # </xsl:text>
-                <xsl:value-of select="normalize-space(.)"/>
-                <xsl:text>&#10;</xsl:text><!-- ensure no hiding of follow-on source code -->
-            </xsl:when>
-            <xsl:when test="(local-name(..) = 'Script') or (local-name(..) = 'ProtoDeclare') or (local-name(..) = 'ExternProtoDeclare') or
-                            (local-name(..) = 'ProtoInterface') or (local-name(..) = 'ProtoBody')">
-                <xsl:value-of select="$indent"/>
-                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
-                <xsl:text>Comment('</xsl:text>
-                <xsl:call-template name="escape-apostrophes-recurse">
-                    <xsl:with-param name="inputValue" select="normalize-space(.)"/>
-                </xsl:call-template>
-                <xsl:text>'),</xsl:text>
-            </xsl:when>
-            <xsl:when test="(count(preceding-sibling::*[local-name() = 'X3D']) gt 0) or (count(following-sibling::*[local-name() = 'X3D']) gt 0)">
-                <xsl:value-of select="$indent"/>
-                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
-                <xsl:text>Comment('</xsl:text>
-                <xsl:call-template name="escape-apostrophes-recurse">
-                    <xsl:with-param name="inputValue" select="normalize-space(.)"/>
-                </xsl:call-template>
-                <xsl:text>'),</xsl:text>
-            </xsl:when>
-            <xsl:when test="$isChildrenElement">
+            <xsl:when test="$isChildComment">
                 <xsl:value-of select="$indent"/>
                 <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
                 <xsl:text>Comment('</xsl:text>
@@ -2169,11 +2761,71 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     </xsl:when>
                     <xsl:otherwise>
                       <xsl:text>)</xsl:text><!-- close Comment #here8&#10; -->
-                      <xsl:if test="(count(parent::*) > 0)">
+                      <xsl:if test="(count(following-sibling::comment()) gt 0)">
                            <xsl:text>,</xsl:text><!-- trailing comma after close Comment #here12&#10; -->
                       </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'Script')         or (local-name(..) = 'ComposedShader') or
+                            (local-name(..) = 'PackagedShader') or (local-name(..) = 'ExternProtoDeclare') or
+                            (local-name(..) = 'ProtoInstance')  or (local-name(..) = 'ProtoInterface') or (local-name(..) = 'ProtoBody') or
+                            (local-name(..) = 'MetadataSet')    or (local-name(..) = 'IS')">
+                <!-- special cases that support Comment class -->
+                <xsl:value-of select="$indent"/>
+                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
+                <xsl:text>Comment('</xsl:text>
+                <xsl:call-template name="escape-apostrophes-recurse">
+                    <xsl:with-param name="inputValue" select="normalize-space(.)"/>
+                </xsl:call-template>
+                <xsl:text>'),</xsl:text>
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'X3D')            or (local-name(..) = 'Appearance')     or 
+                            (local-name(..) = 'CADFace')        or (local-name(..) = 'Extrusion')      or (local-name(..) = 'ImageTexture')      or
+                            (local-name(..) = 'Shape')          or ends-with(local-name(..), 'Set')    or 
+                            (local-name(..) = 'GeoMetadata')    or (local-name(..) = 'DISEntityTypeMapping') or 
+                            (local-name(..) = 'Inline')         or (local-name(..) = 'InlineGeometry') or 
+                            (local-name(..) = 'FillProperties') or (local-name(..) = 'LineProperties') or 
+                            (local-name(..) = 'Material')       or (local-name(..) = 'NavigationInfo') or (local-name(..) = 'Sound') or
+                            (local-name(..) = 'ProtoDeclare')   or 
+                            (local-name(..) = 'Text')           or (local-name(..) = 'IS')             or (local-name(..) = 'connect') or
+                            contains(local-name(..), 'Viewpoint') or (local-name(..) = 'ViewpointGroup') or (local-name(..) = 'WorldInfo') or 
+                              ends-with(local-name(..),'Light') or
+                            starts-with(local-name(..), 'Geo')  or
+                            starts-with(local-name(..), 'Metadata') or
+                            starts-with(local-name(..), 'MultiTexture') or
+                            starts-with(local-name(..), 'Nurbs') or (local-name(..) = 'ContourPolyline2D')   or
+                            starts-with(local-name(..), 'Indexed') or starts-with(local-name(..), 'Coordinate')">
+                <!-- the above nodes do not have any MFNode children and do not supported Comment class -->
+                <!-- debug
+                <xsl:message>
+                  <xsl:text>*** [debug1] </xsl:text>
+                  <xsl:value-of select="local-name(..)"/>
+                  <xsl:text> node found containing comment: '</xsl:text>
+                  <xsl:value-of select="substring(.,1,40)"/>
+                  <xsl:text>'</xsl:text>
+                  <xsl:if test="(string-length(.) gt 40)">
+                    <xsl:text> ...</xsl:text>
+                  </xsl:if>
+                </xsl:message> -->
+                
+                <xsl:value-of select="$indent"/>
+                <xsl:text># </xsl:text>
+                <xsl:value-of select="normalize-space(.)"/>
+                <xsl:if test="(count(following-sibling::*) + count(following-sibling::comment()) eq 0) or
+                              (count(preceding-sibling::*[starts-with(local-name(),'Metadata')]) + count(following-sibling::*[starts-with(local-name(),'Metadata')]) gt 0)">
+                    <xsl:text>&#10;</xsl:text> <!-- ensure no hiding of follow-on source code -->
+                </xsl:if>
+                <xsl:value-of select="$indent"/>
+            </xsl:when>
+            <xsl:when test="(count(preceding-sibling::*[local-name() = 'X3D']) gt 0) or (count(following-sibling::*[local-name() = 'X3D']) gt 0)">
+                <xsl:value-of select="$indent"/>
+                <xsl:value-of select="$packagePrefix"/><!-- usually empty -->
+                <xsl:text>Comment('</xsl:text>
+                <xsl:call-template name="escape-apostrophes-recurse">
+                    <xsl:with-param name="inputValue" select="normalize-space(.)"/>
+                </xsl:call-template>
+                <xsl:text>'),</xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <!-- debug
@@ -2187,10 +2839,12 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:text> ...</xsl:text>
                   </xsl:if>
                 </xsl:message> -->
-                <!-- transient comment, not a persistent part of the X3D model -->
-                <xsl:text> # </xsl:text>
+                <!-- transient comment, not a persistent object as part of the X3D model -->
+                <xsl:value-of select="$indent"/>
+                <xsl:text># </xsl:text>
                 <xsl:value-of select="normalize-space(.)"/>
                 <xsl:text>&#10;</xsl:text><!-- ensure no hiding of follow-on source code -->
+                <xsl:value-of select="$indent"/>
                 <!-- <xsl:value-of select="$indent"/>
                 <xsl:value-of select="$packagePrefix"/>usually empty
                 <xsl:text>Comment('</xsl:text>
@@ -2200,21 +2854,86 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <xsl:text>'),</xsl:text> -->
             </xsl:otherwise>
         </xsl:choose>
-            <!--  and not($hasPrecedingChildNode) -->
-        <xsl:if test="($isChildrenElement and not($hasFollowingSibling) and
-                       not(local-name(..) = 'head') and not(local-name(..) = 'Scene') and not(local-name(..) = 'HAnimHumanoid'))">  
-            <!-- HAnimHumanoid top-level Comments are alone as children field -->
-            <!-- python field assignment by name; head element and children elements have separate logic for closing ] 
-            <xsl:text> #here9&#10;</xsl:text>-->
-            <xsl:text>],</xsl:text>
-        </xsl:if>
+        
+        <!-- special-case checks for closing bracket -->
+        <xsl:choose>
+            <xsl:when test="(local-name(..) = 'MetadataSet') and $isChildComment and not($hasFollowingSibling)"> 
+                <xsl:text>]</xsl:text>
+                <!-- debug
+                <xsl:text> #here9a&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="$isChildComment and not($hasFollowingSibling) and
+                           not(local-name(..) = 'head') and not(local-name(..) = 'Scene') and not(local-name(..) = 'ProtoInstance') and 
+                           not(local-name(..) = 'HAnimHumanoid')">  
+                <!-- HAnimHumanoid top-level Comments are alone as children field -->
+                <!-- python field assignment by name; head element and children elements have separate logic for closing ] -->
+                <xsl:text>]</xsl:text>
+                <xsl:if test="(count(following-sibling::*) + count(following-sibling::comment()) gt 0) ">
+                    <xsl:text>,</xsl:text>
+                </xsl:if>
+                <!-- debug
+                <xsl:text> #here9b&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'MultiTextureCoordinate') and not($hasFollowingSibling)"> 
+                <xsl:text>]</xsl:text>
+                <!-- debug
+                <xsl:text> #here9c&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="$isChildComment and not(local-name(..) = 'Scene') and not(local-name(..) = 'head') and 
+                           not(local-name(..) = 'ProtoBody') and not(local-name(..) = 'HAnimHumanoid') and 
+                           (count(following-sibling::*[not(starts-with(local-name(),'Metadata') and (@containerField = 'metadata'))][not(local-name() = 'IS')]) + 
+                            count(following-sibling::comment()) eq 0)">
+                <!-- ignore solitary adjacent Metadata node with containerField = 'metadata' since it gets resorted from source order to appear first -->
+                <xsl:text>]</xsl:text>
+                <xsl:if test="(count(following-sibling::*) + count(following-sibling::comment()) gt 0) ">
+                    <xsl:text>,</xsl:text>
+                </xsl:if>
+                <!-- debug
+                <xsl:text> #here9d&#10;</xsl:text> -->
+            </xsl:when>
+        </xsl:choose>
+        <!-- TODO perform regression tests to determine whether these similar adjacent xsl:choose blocks can be merged -->
         <!--
-        <xsl:if test="(count(following-sibling::*) + count(following-sibling::comment()) = 0)">
+        <xsl:if test="(count(following-sibling::*) + count(following-sibling::comment()) eq 0)">
             <xsl:value-of select="$indent"/>
         </xsl:if>
+        
+        <xsl:variable name="isComment"       select="(count(self::comment()) gt 0)"/>
+            <xsl:text> # $isComment=</xsl:text><xsl:value-of select="$isComment"/>
+            <xsl:text> #here21&#10;</xsl:text>
         -->
+        <xsl:choose>
+            <!-- special handling to finish field/fieldValue array ending with Comment
+            <xsl:when test="(position() = last()) and (count(preceding-sibling::*[(local-name() = 'field')]) gt 0)">
+                <xsl:text>]</xsl:text>
+                    <xsl:text> #here22a&#10;</xsl:text>
+            </xsl:when> -->
+            <!--<xsl:value-of select="$indent"/><xsl:text>  </xsl:text> #here11&#10;-->
+            <!-- no longer needed: (local-name(..) = 'ExternProtoDeclare') or -->
+            <xsl:when test="((local-name(..) = 'MultiTextureCooredinate')) and
+                            (count(following-sibling::*) eq 0) and (count(following-sibling::comment()) eq 0)">
+                <!-- intent is to close list of comments within elements that do not have children field -->
+                <!-- TODO ProtoDeclare children field not yet working; (local-name(..) = 'ProtoDeclare') or -->
+                <xsl:text>]</xsl:text>
+                <!-- debug
+                <xsl:text> #here22b&#10;</xsl:text> -->
+            </xsl:when>
+            <xsl:when test="(local-name(..) = 'ProtoInstance') and 
+                            (count(following-sibling::*[local-name() = 'fieldValue']) eq 0) and (count(following-sibling::comment()) eq 0)">
+                <xsl:if test="false()">
+                    <!-- TODO this breaks Web3dTimeline.py but might be needed elsewhere -->
+                <!-- intent is to close list of comment(s) following a (possibly empty) fieldValue array -->
+                <xsl:text>]</xsl:text>
+                <xsl:if test="(count(../preceding-sibling::*[local-name() = 'IS']) + count(../following-sibling::*[local-name() = 'IS']) eq 0) ">
+                    <xsl:text>,</xsl:text><!-- special ordering, IS follows fieldValue -->
+                </xsl:if>
+                <!-- debug
+                <xsl:text> #here22c&#10;</xsl:text> -->
+                </xsl:if>
+            </xsl:when>
+        </xsl:choose>
 
-    </xsl:template>
+    </xsl:template><!-- <xsl:template match="comment()"> -->
 
     <!-- ===================================================== -->
 
@@ -2251,7 +2970,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 							($type = 'SFColor') or ($type = 'MFColor')">
 				<xsl:text>3</xsl:text>
 			</xsl:when>
-			<xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
+			<xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or contains($type,'FQuaternion') or
 							($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
 				<xsl:text>4</xsl:text>
 			</xsl:when>
@@ -2267,7 +2986,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     <xsl:text>*** Error: tuple-size not found for type '</xsl:text>
                     <xsl:value-of select="$type"/>
                     <xsl:text>'</xsl:text>
-                    <xsl:if test="(string-length($type) = 0)">
+                    <xsl:if test="(string-length($type) eq 0)">
                         <xsl:text> (type value missing)</xsl:text>
                     </xsl:if> 
                     <xsl:text> value='</xsl:text>
@@ -2291,7 +3010,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         
         <xsl:variable name="parentElementName">
             <xsl:choose>
-                <xsl:when test="(string-length($parentElementType) > 0)">
+                <xsl:when test="(string-length($parentElementType) gt 0)">
                     <xsl:value-of select="$parentElementType"/>
                 </xsl:when>
                 <xsl:when test="(count(//*[@DEF = $parentElementDEF]) = 1)">
@@ -2363,7 +3082,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:variable name="normalizeSpaceValue" select="normalize-space(string(.))"/>
         <xsl:variable name="localFieldType"> <!-- locally defined field -->
             <xsl:choose>
-                <xsl:when test="(($parentElementName = 'field') or ($parentElementName = 'fieldValue')) and
+                <xsl:when test="(($parentElementName = 'field')   or ($parentElementName = 'fieldValue')) and
                                 (($attributeNameFull = 'name')    or ($attributeNameFull = 'type') or ($attributeNameFull = 'accessType') or 
                                  ($attributeNameFull = 'appinfo') or ($attributeNameFull = 'documentation'))">
                     <xsl:text>SFString</xsl:text>
@@ -2425,21 +3144,21 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     -->
                     <xsl:choose>
                         <xsl:when test="($prototypeDefinition = 'ProtoDeclare') and 
-                                   (string-length(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]/@type) > 0)">
+                                   (string-length(//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]/@type) gt 0)">
                             <xsl:value-of select="//ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]/@type"/>
                         </xsl:when>
                         <xsl:when test="($prototypeDefinition = 'ProtoInstance') and
-                                        (count(      //ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]) = 0) and
-                                        (count(//ExternProtoDeclare[@name = $prototypeName]               /field[@name = $attributeName]) > 0)">
+                                        (count(      //ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]) eq 0) and
+                                        (count(//ExternProtoDeclare[@name = $prototypeName]               /field[@name = $attributeName]) gt 0)">
                             <xsl:text>UnknownFieldTypeExternProtoDeclare</xsl:text>
                         </xsl:when>
                         <xsl:when test="($prototypeDefinition = 'ProtoInstance') and
-                                        (count(      //ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]) = 0) and
-                                        (count(//ExternProtoDeclare[@name = $prototypeName]               /field[@name = $attributeName]) = 0)">
+                                        (count(      //ProtoDeclare[@name = $prototypeName]/ProtoInterface/field[@name = $attributeName]) eq 0) and
+                                        (count(//ExternProtoDeclare[@name = $prototypeName]               /field[@name = $attributeName]) eq 0)">
                             <xsl:text>UnknownFieldTypeProtoInstance</xsl:text>
                         </xsl:when>
                         <xsl:when test="($prototypeDefinition = 'ExternProtoDeclare') and 
-                                   (string-length(//ExternProtoDeclare[@name = $prototypeName]/field[@name = $attributeName]/@type) > 0)">
+                                   (string-length(//ExternProtoDeclare[@name = $prototypeName]/field[@name = $attributeName]/@type) gt 0)">
                             <xsl:value-of select="//ExternProtoDeclare[@name = $prototypeName]/field[@name = $attributeName]/@type"/>
                         </xsl:when>
                         <xsl:when test="($prototypeDefinition = 'ProtoDeclare')">
@@ -2454,7 +3173,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                         </xsl:otherwise>
                     </xsl:choose>
                 </xsl:when>
-                <xsl:when test="(string-length(normalize-space(../@type)) > 0)"><!-- field -->
+                <xsl:when test="(string-length(normalize-space(../@type)) gt 0)"><!-- field -->
                     <xsl:value-of select="normalize-space(../@type)"/>
                 </xsl:when>
                 <xsl:when test="($parentElementName = 'fieldValue')"><!-- fieldValue -->
@@ -2517,7 +3236,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		<xsl:choose>
                   <!-- Explicitly defined types -->
                   <xsl:when test="(($parentElementName='Script') or ($parentElementName='ProtoInstance') or ($parentElementName='field') or ($parentElementName='fieldValue')) and
-                                    ((string-length($localFieldType) > 0) and not($localFieldType = 'FieldTypeNotFound'))">
+                                    ((string-length($localFieldType) gt 0) and not($localFieldType = 'FieldTypeNotFound'))">
                         <xsl:value-of select="$localFieldType"/>
                   </xsl:when>
 		  <!-- SFString -->
@@ -2571,14 +3290,15 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                             ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                             ($parentElementName='WorldInfo'                  and $attributeName='title') or
 			    ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                            ($parentElementName='GaussianSplats'             and ($attributeName='colorSpace')) or
                             ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
 		  <!-- Statements: xs:integer as SFInt32 - TODO schema/spec change? -->
 		  <!-- SFInt32 -->
-		  <xsl:when test="($localFieldType='SFInt32')           or 
-                    ($parentElementName='HAnimHumanoid'              and $attributeName='loa') or
-                          (($parentElementName='component')                and $attributeName='level')">
+		  <xsl:when test="($localFieldType='SFInt32')                                   or 
+                          ($parentElementName='HAnimHumanoid' and $attributeName='loa') or
+                          (($parentElementName='component')   and $attributeName='level')">
 			  <xsl:text>SFInt32</xsl:text>
 		  </xsl:when>
 		  <!-- SFDouble -->
@@ -2709,6 +3429,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($parentElementName='TimeSensor' and $attributeName='loop') or
                     ($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
                     (contains($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets' or $attributeName='displayed')) or
+                    ($parentElementName='GaussianSplats' and ($attributeName='pointerEvents')) or
                     ($parentElementName='VolumeEmitter' and $attributeName='internal')">
 			  <xsl:text>SFBool</xsl:text>
 		  </xsl:when>
@@ -2933,6 +3654,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
                     ($parentElementName='Viewport' and $attributeName='clipBoundary') or
                     ($parentElementName='WaveShaper' and $attributeName='curve') or
+                    ($parentElementName='GaussianSplats' and ($attributeName='opacities')) or
                     ($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
 			  <xsl:text>MFFloat</xsl:text>
 		  </xsl:when>
@@ -3104,6 +3826,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     (contains($parentElementName,'Coordinate')       and $attributeName='point') or
                     ($parentElementName='Extrusion'                  and $attributeName='spine') or
                     ($parentElementName='HAnimDisplacer'             and $attributeName='displacements') or
+                    ($parentElementName='GaussianSplats'             and (($attributeName='positions') or ($attributeName='scales') or 
+                                                                           starts-with($attributeName,'sphericalHarmonicsDegree'))) or
                     ($parentElementName='XvlShell'                   and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
 			  <xsl:text>MFVec3f</xsl:text>
 		  </xsl:when>
@@ -3120,6 +3844,17 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($localFieldType='MFVec4f') or
                     ($parentElementName='Tangent'                    and $attributeName='vector')">
 			  <xsl:text>MFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- SFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='SFQuaternion')">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='MFQuaternion')    or 
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
@@ -3176,7 +3911,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  <!-- SFNode -->
 		  <xsl:when test="
                     ($localFieldType='SFNode')    or 
-                    ($attributeName='attrib') or ($attributeName='color') or ($attributeName='coord') or ($attributeName='normal') or ($attributeName='tangent') or ($attributeName='texCoord') or 
+                    ($attributeName='attrib') or ($attributeName='color') or ($attributeName='coord') or ($attributeName='normal') or ($attributeName='tangent') or ($attributeName='skinCoord') or ($attributeName='texCoord') or 
                     ($attributeName='body1')  or ($attributeName='body2') or ($attributeName='geometry1')  or ($attributeName='geometry2') or 
                     (($parentElementName='MetadataSet')         and  $attributeName='metadata') or
                     (($parentElementName='CollidableOffset')    and  $attributeName='collidable') or
@@ -3200,7 +3935,8 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     ($attributeName='bodies') or ($attributeName='collidables') or ($attributeName='contacts') or
                     (($parentElementName='RigidBodyCollection') and  $attributeName='joints') or
                     ($parentElementName='MetadataSet' and $attributeName='metadata') or
-                    ($parentElementName='Appearance'  and $attributeName='shaders')">
+                    ($parentElementName='Appearance'  and $attributeName='shaders')or
+                    ($parentElementName='MultiTextureCoordinate'  and (($attributeName='texCoord') or contains(local-name(),'TextureCoordinate')))">
 			  <xsl:text>MFNode</xsl:text>
 		  </xsl:when>
 		  <!-- MFInt32 --> <!-- must precede SFInt32 -->
@@ -3280,7 +4016,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
 		  </xsl:when>
 		  <xsl:otherwise>
 			  <xsl:choose>
-				<xsl:when test="(string-length($localFieldType) > 0)">
+				<xsl:when test="(string-length($localFieldType) gt 0)">
                                     <xsl:value-of select="$localFieldType"/>
 				</xsl:when>
 				<xsl:when test="($parentElementName='field') or ($parentElementName='fieldValue')">
@@ -3338,9 +4074,11 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             <xsl:when test="($x3dFieldType = 'MFNode')">
                 <xsl:text>list</xsl:text>
             </xsl:when>
-            <xsl:when test="contains($x3dFieldType,'Float') or contains($x3dFieldType,'Double')   or
-                            contains($x3dFieldType,'Color') or contains($x3dFieldType,'Image') or contains($x3dFieldType,'Rotation') or contains($x3dFieldType,'Vec')  or contains($x3dFieldType,'Matrix')">
-                <!-- SF/MF Float, Double, Vec, Matrix -->
+            <xsl:when test="contains($x3dFieldType,'Float')      or contains($x3dFieldType,'Double')   or
+                            contains($x3dFieldType,'Color')      or contains($x3dFieldType,'Image')    or 
+                            contains($x3dFieldType,'Quaternion') or contains($x3dFieldType,'Rotation') or 
+                            contains($x3dFieldType,'Vec')        or contains($x3dFieldType,'Matrix')">
+                <!-- SF/MF Float, Double, Vec, Matrix etc. -->
                 <xsl:text>float</xsl:text>
             </xsl:when>
             <!-- SFNode, MFNode not accounted for here -->
@@ -3354,7 +4092,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:param name="x3dValue"><xsl:text></xsl:text></xsl:param>
         <xsl:param name="x3dType">SFString</xsl:param><!-- default if x3dType is unknown -->
         <xsl:param name="localName"></xsl:param>
-        <xsl:variable name="isTuple"         select="contains($x3dType,'Vec') or contains($x3dType,'Rotation') or contains($x3dType,'Color') or contains($x3dType,'Matrix')"/>
+        <xsl:variable name="isTuple"         select="contains($x3dType,'Vec') or contains($x3dType,'Quaternion') or contains($x3dType,'Rotation') or contains($x3dType,'Color') or contains($x3dType,'Matrix')"/>
         <xsl:variable name="isList"          select="starts-with($x3dType,'MF') or ($x3dType = 'SFImage')"/>
         <xsl:variable name="isString"        select="($x3dType = 'SFString') or ($x3dType ='xs:string') or ($x3dType ='xs:NMTOKEN')"/>
         <xsl:variable name="tupleSize">
@@ -3375,7 +4113,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:choose>
             <xsl:when test="$isList">
                 <xsl:text>[</xsl:text>
-                <xsl:if test="$isTuple and (string-length(string($x3dValue)) > 0) and not(starts-with(normalize-space($x3dValue),'('))">
+                <xsl:if test="$isTuple and (string-length(string($x3dValue)) gt 0) and not(starts-with(normalize-space($x3dValue),'('))">
                     <!-- list containing a tuple -->
                     <xsl:text>(</xsl:text>
                 </xsl:if>
@@ -3431,7 +4169,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                     </xsl:otherwise>
                 </xsl:choose>
             </xsl:when>
-            <xsl:when test="$isString and (string-length($x3dValue) > 0)">
+            <xsl:when test="$isString and (string-length($x3dValue) gt 0)">
                 <xsl:value-of select="$x3dValue"/>
             </xsl:when>
             <xsl:when test="$isString"><!-- empty -->
@@ -3449,7 +4187,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
                 <!-- TODO combination of ' and " in same value -->
             </xsl:when>
             <!-- insert commas between values in numeric arrays -->
-            <xsl:when test="not($x3dType = 'SFString') and not($x3dType = 'MFString') and (string-length(string($x3dValue)) > 0)">
+            <xsl:when test="not($x3dType = 'SFString') and not($x3dType = 'MFString') and (string-length(string($x3dValue)) gt 0)">
                 <xsl:call-template name="insert-tuple-breaks-recurse">
                     <xsl:with-param name="inputValue">
                         <xsl:value-of select="translate(normalize-space(translate(string($x3dValue),',',' ')),' ',',')"/>
@@ -3464,14 +4202,14 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <!-- append delimiter if appropriate -->
         <xsl:choose>
             <xsl:when test="$isList">
-                <xsl:if test="$isTuple and (string-length(string($x3dValue)) > 0) and not(ends-with(normalize-space(string($x3dValue)),')'))">
+                <xsl:if test="$isTuple and (string-length(string($x3dValue)) gt 0) and not(ends-with(normalize-space(string($x3dValue)),')'))">
                     <!-- list containing a tuple -->
                     <xsl:text>)</xsl:text>
                 </xsl:if>
-                    <!-- debug  
+                <xsl:text>]</xsl:text>
+                    <!-- debug 
                     <xsl:text> #here5&#10;</xsl:text>
                     -->
-                <xsl:text>]</xsl:text>
             </xsl:when>
             <xsl:when test="$isTuple">
                 <xsl:text>)</xsl:text>
@@ -3504,7 +4242,7 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
         <xsl:otherwise>
           <xsl:value-of select="substring-before($inputString,',')"/>
           <xsl:choose>
-            <xsl:when test="(($index mod $tupleSize) = 0)">
+            <xsl:when test="(($index mod $tupleSize) eq 0)">
                  <xsl:text>)</xsl:text>
                  <xsl:if test="contains(substring-after($inputString,','),',')">
                      <xsl:text>,(</xsl:text>
@@ -3563,15 +4301,15 @@ print ('str(newModel.Scene)   =', str(newModel.Scene))
             - - >
         </xsl:message> -->
       <xsl:choose>
-        <xsl:when test="(string-length(normalize-space($inputString)) = 0)">
+        <xsl:when test="(string-length(normalize-space($inputString)) eq 0)">
             <xsl:text></xsl:text>
         </xsl:when>
-        <xsl:when test="(string-length(normalize-space($firstChar)) = 0)">
+        <xsl:when test="(string-length(normalize-space($firstChar)) eq 0)">
             <xsl:call-template name="trim-whitespace-recurse">
               <xsl:with-param name="inputValue" select="substring($inputString,2)"/>
             </xsl:call-template>
         </xsl:when>
-        <xsl:when test="(string-length(normalize-space($lastChar)) = 0)">
+        <xsl:when test="(string-length(normalize-space($lastChar)) eq 0)">
             <xsl:call-template name="trim-whitespace-recurse">
               <xsl:with-param name="inputValue" select="substring($inputString,1,string-length($inputString)-1)"/>
             </xsl:call-template>

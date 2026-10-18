@@ -20,7 +20,9 @@
 	<xsl:param name="disableIndent"><xsl:text>false</xsl:text></xsl:param>
 
 <!--
-Copyright (c) 2000-2024 held by the author(s). All rights reserved.
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -32,9 +34,7 @@ are met:
       notice, this list of conditions and the following disclaimer
       in the documentation and/or other materials provided with the
       distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and https://www.MovesInstitute.org)
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -4058,7 +4058,7 @@ EXTERNPROTO TransmitterPdu [
           <xsl:text>skinNormal </xsl:text>
           <xsl:apply-templates select="Normal[@containerField='skinNormal']"><xsl:with-param name="indent" select="$indent + 2"/></xsl:apply-templates>
         </xsl:if>
-        <!-- warn that joints, segments and sites should be USE nodes -->
+        <!-- no longer required: warn that HAnimHumanoid joints, segments and sites should also be provided as USE nodes
         <xsl:for-each select="*[(local-name()='HAnimJoint'   and @containerField='joints')  or
         			(local-name()='HAnimSegment' and @containerField='segment') or
         			(local-name()='HAnimJoint'   and @containerField='sites')][not(@USE) or (string-length(@USE) = 0)]">
@@ -4088,7 +4088,7 @@ EXTERNPROTO TransmitterPdu [
             </xsl:with-param>
             <xsl:with-param name="DEF"  select="@DEF"/>
           </xsl:call-template>
-        </xsl:for-each>
+        </xsl:for-each> -->
         <!-- errors/warnings for nonconformant containerField children -->
         <xsl:for-each select="HAnimJoint[not(@containerField='skeleton' or @containerField='joints' or @containerField='children')]">
           <xsl:call-template name="output-error">
@@ -6384,6 +6384,7 @@ EXTERNPROTO TransmitterPdu [
                       local-name(..)='PointSet' or
                       local-name(..)='Sphere' or
                       local-name(..)='Text' or
+                      local-name(..)='GaussianSplats' or
                       local-name(..)='XvlShell'))" />
         <xsl:variable name="notDefaultContainerField2"
                       select="not((local-name()='containerField' and string(.)='source')   and (local-name(..)='AudioClip')) and
@@ -6459,6 +6460,11 @@ EXTERNPROTO TransmitterPdu [
                       not(local-name(..)='DISEntityTypeMapping' and 
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats') and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -6761,33 +6767,34 @@ EXTERNPROTO TransmitterPdu [
                 not(local-name(..)='ProtoInstance' and local-name()='name') and
                 not( local-name(..)='IndexedLineSet' and local-name()='lineWidth') and
                 not(local-name(..)='USE' and local-name()='node') and
-                $notImplicitEvent1 and
-                $notImplicitEvent2 and
-                $notImplicitEvent3 and
-                $notDefaultFieldValue1 and
-                $notDefaultFieldValue1a and
-                $notDefaultFieldValue2 and
-                $notDefaultFieldValue3 and
-                $notDefaultFieldValue4 and
-                $notDefaultFieldValue5 and
-                $notDefaultFieldValue6 and
-                $notDefaultFieldValue7 and
-                $notDefaultFieldValue8 and
-                $notDefaultFieldValue9 and
-                $notDefaultFieldValue10 and
-                $notDefaultCAD         and
-                $notDefaultDIS1        and
-                $notDefaultDIS2        and
-                $notDefaultDIS3        and
-                $notDefaultDIS4        and
-                $notDefaultGeo         and
-                $notDefaultHAnim1      and
-                $notDefaultHAnim2      and
-                $notDefaultNurbs       and
-                $notDefaultGeometry2D  and
-                $notDefaultVolume      and
-                $notDefaultFollower    and
-                $notDefaultShader      and
+                $notImplicitEvent1          and
+                $notImplicitEvent2          and
+                $notImplicitEvent3          and
+                $notDefaultFieldValue1      and
+                $notDefaultFieldValue1a     and
+                $notDefaultFieldValue2      and
+                $notDefaultFieldValue3      and
+                $notDefaultFieldValue4      and
+                $notDefaultFieldValue5      and
+                $notDefaultFieldValue6      and
+                $notDefaultFieldValue7      and
+                $notDefaultFieldValue8      and
+                $notDefaultFieldValue9      and
+                $notDefaultFieldValue10     and
+                $notDefaultCAD              and
+                $notDefaultDIS1             and
+                $notDefaultDIS2             and
+                $notDefaultDIS3             and
+                $notDefaultDIS4             and
+                $notDefaultGaussianSplats   and
+                $notDefaultGeo              and
+                $notDefaultHAnim1           and
+                $notDefaultHAnim2           and
+                $notDefaultNurbs            and
+                $notDefaultGeometry2D       and
+                $notDefaultVolume           and
+                $notDefaultFollower         and
+                $notDefaultShader           and
                 $notDefaultRigidBodyPhysics and
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
@@ -8774,6 +8781,15 @@ EXTERNPROTO TransmitterPdu [
           <xsl:with-param name="value"><xsl:value-of select="."/></xsl:with-param>
         </xsl:call-template>
       </xsl:when>
+		  <!-- SFQuaternion: no native fields yet defined with this type -->
+		  <xsl:when test="false()">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
+		  </xsl:when>
       <!-- SFRotation -->
       <xsl:when test="	(not($parentElementName='Extrusion') and ($attributeName='orientation')) or
                         ($parentElementName='PlaneSensor' and $attributeName='axisRotation') or

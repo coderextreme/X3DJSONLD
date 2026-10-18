@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2026 held by the author(s).  All rights reserved.
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -12,9 +14,7 @@ are met:
       notice, this list of conditions and the following disclaimer
       in the documentation and/or other materials provided with the
       distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and https://www.MovesInstitute.org)
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -52,7 +52,7 @@ Recommended tools:
 
 <xsl:stylesheet version="2.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns="http://www.w3.org/TR/xhtml1/strict"
+                xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
                 xmlns:saxon="http://saxon.sf.net/">
 
@@ -108,12 +108,14 @@ Recommended tools:
 
     <xsl:variable name="showEventGraphRouteTable"
         select="((count(//*[string-length(@DEF) gt 0]) gt 0) and 
-                 (count(//ROUTE)    gt 0)) or
-                ((count(//Inline)        gt 0) and (count(//IMPORT) gt 0)) or
-                 (count(//EXPORT)        gt 0) or
-                 (count(//ProtoInstance) gt 0) or
-                 (count(//Script)        gt 0) or
-                 (count(//TouchSensor)   gt 0) or
+                 (count(//ROUTE)          gt 0)) or
+                ((count(//Inline)         gt 0) and (count(//IMPORT) gt 0)) or
+                 (count(//EXPORT)         gt 0) or
+                 (count(//HAnimDisplacer) gt 0) or
+                 (count(//ProtoInstance)  gt 0) or
+                 (count(//Script)         gt 0) or
+                 (count(//TimeSensor)     gt 0) or
+                 (count(//TouchSensor)    gt 0) or
                  (count(//Anchor[string-length(@description) gt 0]) gt 0)"/>
 
     <xsl:variable name="MAX_ROUTE_DEPTH_CONSTANT" select="8"/>
@@ -155,10 +157,18 @@ Recommended tools:
     <xsl:variable name="identifier" select="//meta[@name = 'identifier']/@content"/>
     <xsl:variable name="publishedInX3dModelArchives" 
                 select="(string-length($identifier) > 0) and ends-with($identifier,'.x3d') and
-                         starts-with($identifier,'https://www.web3d.org/x3d/content/examples/')"/>
+                         contains($identifier,'www.web3d.org/x3d/content/examples/')"/>
 
     <!-- start - - - - - - - - - - - - - - - - - - - - - - - -->
     <xsl:template match="/">
+        
+        <!-- debug
+        <xsl:message>
+            <xsl:text>[initialize] $identifier=</xsl:text>
+            <xsl:value-of select="$identifier"/>
+            <xsl:text>, $publishedInX3dModelArchives=</xsl:text>
+            <xsl:value-of select="$publishedInX3dModelArchives"/>
+        </xsl:message> -->
 
         <!-- line break after this document's XML header line -->
         <xsl:text>&#10;</xsl:text>
@@ -176,10 +186,10 @@ Recommended tools:
                     <xsl:choose>
                         <xsl:when test="$fileName!='*enter FileNameWithNoAbbreviations.x3d here*' ">
                             <xsl:value-of select="$fileName"/>
-                            <xsl:text> (X3D Documentation)</xsl:text>
+                            <xsl:text> (X3D Model Documentation)</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
-                            <xsl:text>(X3D Documentation)</xsl:text>
+                            <xsl:text>(X3D Model Documentation)</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
                 </title>
@@ -216,16 +226,18 @@ b.error {color: #CC0000}
 /* https://stackoverflow.com/questions/10769016/display-image-on-text-link-hover-css-only
     position: relative;
     left: 20px;*/
+                    
 .child {
+    height: 20px;
+    vertical-align: middle;
+}
+.child:hover {
     float: right;
-    height: 0px;
+    background-color: lightyellow;
+    height: 200px;
 }
 .parent:hover {
     background-color: lightyellow;
-}
-.parent:hover .child {
-    background-color: lightyellow;
-    height: 200px;
 }
 ]]>
                 </style>
@@ -244,7 +256,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <meta name="generator" content="XSLT processor {system-property('xsl:vendor')}"/>
                 <meta name="generator" content="https://www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
                 <meta name="generator" content="https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/stylesheets/X3dToXhtml.xslt"/>
-                <link rel="shortcut icon" href="https://www.web3d.org/x3d/content/icons/X3DtextIcon16.png" title="X3D" />
+                <xsl:choose>
+                  <xsl:when test="contains(//meta[@name = 'identifier']/@content,'ComputerGraphicsHistory')">
+                      <link rel="shortcut icon" href="https://www.web3d.org/x3d/content/examples/ComputerGraphicsHistory/CGHI.32x19.png" type="image/png" title="CGHI"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                      <link rel="shortcut icon" href="https://www.web3d.org/x3d/content/icons/X3DtextIcon16.png" title="X3D" />
+                  </xsl:otherwise>
+                </xsl:choose>
             </head>
             <body>
 
@@ -256,9 +275,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:text>&#10;</xsl:text>
                 <tr class='lineNumber'>
                     <td class='lineNumber'>
-                        <a id='1'><xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; --></a><!-- bookmark, must include internal whitespace -->
+                        <a id='line1'><xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; --></a><!-- bookmark, must include internal whitespace -->
                         <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text><!-- leading whitespace for alignment -->
-                        <a href='#1'>  <!-- bookmark link -->
+                        <a href='#line1'>  <!-- bookmark link -->
                             <xsl:text>1</xsl:text>
                         </a>
                         <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
@@ -269,9 +288,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </tr>
                 <tr class='lineNumber'>
                     <td class='lineNumber'>
-                        <a id='2'><xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; --></a><!-- bookmark, must include internal whitespace -->
+                        <a id='line2'><xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; --></a><!-- bookmark, must include internal whitespace -->
                         <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text><!-- leading whitespace for alignment -->
-                        <a href='#2'>  <!-- bookmark link -->
+                        <a href='#line2'>  <!-- bookmark link -->
                             <xsl:text>2</xsl:text>
                         </a>
                         <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
@@ -699,15 +718,15 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:if test="(preceding-sibling::*[@toNode = $toNode][@toField = $toField]) and not(following-sibling::*[@toNode = $toNode][@toField = $toField])">
                             <!-- only report multiple fan-in when it is going to same field -->
                             <xsl:message>
-                                <xsl:text>*** Multiple event fan-in to same node/@field (via different ROUTEs) may occur during same timestamp. When that happens,</xsl:text>
+                                <xsl:text>*** Multiple event fan-in to same node/@field (via different ROUTEs) may occur during same timestamp.</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
-                                <xsl:text>    then those events are considered to arrive simultaneously (but in unsorted, nondeterministic order).</xsl:text>
+                                <xsl:text>     When that happens, events are considered to arrive simultaneously (but in unsorted, nondeterministic order).</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
-                                <xsl:text>    Avoid event-arrival logic thAt is order-dependent for those kinds of multiple-path event chains.</xsl:text>
+                                <xsl:text>    Avoid event-arrival logic that is order-dependent for those kinds of multiple-path event chains.</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
                                 <xsl:text>    Therefore be careful of event-routing loops from event triggers and logical sequencing</xsl:text>
                                 <xsl:text>&#10;</xsl:text>
-                                <xsl:text>    for the following destination: </xsl:text>
+                                <xsl:text>    for the following node destination: </xsl:text>
                                 <xsl:value-of select="local-name(//*[@DEF = $toNode])"/>
                                 <xsl:text> DEF='</xsl:text>
                                 <xsl:value-of select="$toNode"/>
@@ -742,13 +761,22 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                          //EspduTransform[not(../field) and not(../fieldValue) and not(string-length(@USE) > 0)] |
                                          //*[ends-with(local-name(), 'Sensor')][not(../field) and not(../fieldValue) and not(string-length(@USE) > 0)] |
                                          //*[ends-with(local-name(), 'Source')][not(../field) and not(../fieldValue) and not(string-length(@USE) > 0)] |
+                                         //*[ends-with(local-name(), 'Filter')]    |
+                                         //*[ends-with(local-name(), 'Sequencer')] |
+                                         //*[ends-with(local-name(), 'Trigger')]   |
                                          //*[ends-with(local-name(), 'Pdu')] |
                                          //Inline        [not(../field) and not(../fieldValue) and not(string-length(@USE) > 0) and
                                                           (string-length(@DEF) > 0) and (count(//IMPORT) > 0)] |
                                          //EXPORT |
                                          //IMPORT)
                                          "/>
-
+                    <xsl:variable name="hoverHintsCount" 
+                                select="count(//*[(local-name()='Anchor') or (local-name()='TouchSensor')][not(../field) and not(../fieldValue) and not(string-length(@USE) > 0)][string-length(@description) gt 0])"/>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>$hoverHintsCount=</xsl:text>
+                        <xsl:value-of select="$hoverHintsCount"/>
+                    </xsl:message> -->
                     <!-- debug
                     <xsl:message>
                         <xsl:text>$eventProducingNodes=</xsl:text>
@@ -809,6 +837,10 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
                     <!-- Event Graph ROUTE Table header -->
                     <p style="text-align:center;">
+                            <!-- Unicode Character 'BOOKMARK' (U+1F516) https://www.fileformat.info/info/unicode/char/1f516/index.htm -->
+                            <a id="EventGraph"></a><a id="EventGraphRouteTable"></a><a id="EventGraphROUTETable"></a>
+                            <a href="#EventGraph">&#128278;</a>
+                            <xsl:text disable-output-escaping="yes"> &amp;#160; </xsl:text> <!-- &nbsp; --> 
                         <b>
                         <xsl:element name="a">
                             <xsl:attribute name="id">
@@ -823,14 +855,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <xsl:text> entries</xsl:text>
                         </xsl:if>
                         <xsl:text> with </xsl:text>
-                        <xsl:value-of select="count(//ROUTE)"/>
+                        <xsl:value-of select="$routeTableCount"/>
                         <xsl:text> </xsl:text>
                         <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#ROUTE" title="X3D Tooltips: ROUTE" target="_tooltip_type">ROUTE</a>
                         <xsl:text> connection</xsl:text>
                         <xsl:if test="(not(count(//ROUTE) = 1))">
                             <xsl:text>s</xsl:text>
                         </xsl:if>
-                        <xsl:text> total, showing </xsl:text>
+                        <xsl:if test="($hoverHintsCount gt 0)">
+                            <xsl:if test="(count(//ROUTE) gt 0)">
+                                <xsl:text> and </xsl:text>
+                            </xsl:if>
+                            <xsl:value-of select="$hoverHintsCount"/>
+                            <xsl:choose>
+                                <xsl:when test="(count(//Anchor[string-length(@description) gt 0]) gt 0) and (count(//TouchSensor[string-length(@description) gt 0]) gt 0)">
+                                    <xsl:text> Anchor, TouchSensor</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(count(//Anchor[string-length(@description) gt 0]) gt 0)">
+                                    <xsl:text> Anchor</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="(count(//TouchSensor[string-length(@description) gt 0]) gt 0)">
+                                    <xsl:text> TouchSensor</xsl:text>
+                                </xsl:when>
+                            </xsl:choose>
+                            <xsl:text> hover hint</xsl:text>
+                            <xsl:if test="($hoverHintsCount gt 1)">
+                                <xsl:text>s</xsl:text>
+                            </xsl:if>
+                        </xsl:if>
+                        <xsl:text>, showing </xsl:text>
                         <a href="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#Eventmodel" target="_blank" title="X3D 4.0 Architecture, Concepts, Event Model">
                             <xsl:text>X3D event-model relationships</xsl:text>
                         </a>
@@ -838,7 +891,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </b>
                     </p>
                     <p style="text-align:center;">
-                        <xsl:text>Each row shows an </xsl:text>
+                        <xsl:text>Each row with a ROUTE statement shows an </xsl:text>
                         <xsl:element name="a">
                             <xsl:attribute name="href">
                                 <xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/glossary.html#EventCascade</xsl:text>
@@ -858,7 +911,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:attribute>
                             <xsl:text>timestamp</xsl:text>
                         </xsl:element>
-                        <xsl:text> interval between frame renderings, as part of the </xsl:text>
+                        <xsl:text> interval between frame renderings, performed as part of the </xsl:text>
                         <xsl:element name="a">
                             <xsl:attribute name="href">
                                 <xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/concepts.html#ExecutionModel</xsl:text>
@@ -872,7 +925,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </p>
 
                     <!-- debug ROUTE statements $trace -->
-                    <xsl:if test="true">
+                    <xsl:if test="false()">
                         <xsl:message>
                             <xsl:text>*** Processing all candidate event-originating nodes, count($eventProducingNodes)=</xsl:text>
                             <xsl:value-of select="count($eventProducingNodes)"/>
@@ -895,8 +948,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <!-- all candidate event-originating nodes are listed in first column of table, then event chains follow -->
                     <!-- can also list solitary Anchor and TouchSensor nodes, if they have a description, since they provide interactivity -->
                     <xsl:for-each select="$eventProducingNodes">
-                        <xsl:sort select="local-name()" order="descending" case-order="upper-first" data-type="text"/>
-                        <xsl:sort select="@DEF"         order="ascending" case-order="upper-first" data-type="text"/>
+                        <xsl:sort select="not(local-name() = 'LoadSensor')" order="ascending" case-order="upper-first" data-type="text"/>
+                        <xsl:sort select="   (local-name() = 'LoadSensor')" order="ascending" case-order="upper-first" data-type="text"/>
+                        <xsl:sort select="(local-name() = 'TouchSensor') and (string-length(@description) > 0)" order="ascending" case-order="upper-first" data-type="text"/>
+                        <!-- <xsl:sort select="@DEF"                             order="ascending" case-order="upper-first" data-type="text"/> -->
+                        <!-- sorted by DEF with hover hints first and LoadSensor nodes second -->
 
                         <xsl:variable name="DEFname" select="@DEF"/>
                         <xsl:variable name="nodeName" select="local-name()"/>
@@ -920,8 +976,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             </xsl:choose>
                         </xsl:variable>
 
-                        <!-- debug ROUTE statements -->
-                        <xsl:if test="true">
+                        <!-- debug ROUTE statements
+                        <xsl:if test="true()">
                             <xsl:message>
                                 <xsl:text>*** Processing started for eventProducingNode #</xsl:text>
                                 <xsl:value-of select="position()"/>
@@ -937,19 +993,19 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:text>, SelfRoutes=</xsl:text>
                                 <xsl:value-of select="count($SelfRoutes)"/>
                             </xsl:message>
-                        </xsl:if>
+                        </xsl:if> -->
 
                         <!-- first column in each table row only starts with event-producing nodes, having no input events and some output events
-                                      ((local-name() = 'TimeSensor')    and (@loop = 'false')) or
-                                      ((local-name() = 'TimeSensor')    and (@loop = 'true')) or -->
-                        <xsl:if test="((count($IncomingRoutes) eq 0)    and    (count($OutgoingRoutes) gt 0)) or
-                                      ((local-name() = 'Anchor')        and    (string-length(@description) gt 0)) or
-                                      ((local-name() = 'TimeSensor')    and not(count($IncomingRoutes) gt 0) and (count($OutgoingRoutes) gt 0)) or
-                                      ((local-name() = 'TimeSensor')    and    (count($OutgoingRoutes) eq 0)) or
-                                      ((local-name() = 'TouchSensor'))  or
-                                      ((local-name() = 'Viewpoint')     and    (count($OutgoingRoutes) > 0))   or
-                                      ((local-name() = 'Script')        and    (contains(text(),'function initialize()') or contains(text(),'function initialize ()') or contains(@url,'.js'))) or
-                                      ((local-name() = 'Inline')        and    (string-length(@DEF) > 0) and (count(//IMPORT) > 0)) or
+                                      ((local-name() = 'TimeSensor')     and (@loop = 'false')) or
+                                      ((local-name() = 'TimeSensor')     and (@loop = 'true')) or -->
+                        <xsl:if test="((count($IncomingRoutes) eq 0)     and    (count($OutgoingRoutes) gt 0)) or
+                                      ((local-name() = 'Anchor')         and    (string-length(@description) gt 0)) or
+                                      ((local-name() = 'HAnimDisplacer') and    (count($IncomingRoutes) eq 0))  or
+                                      ((local-name() = 'TimeSensor')     and    (count($OutgoingRoutes) ge 0)) or
+                                      ((local-name() = 'TouchSensor'))   or
+                                      ((local-name() = 'Viewpoint')      and    (count($OutgoingRoutes) gt 0))   or
+                                      ((local-name() = 'Script')         and    (contains(text(),'function initialize()') or contains(text(),'function initialize ()') or contains(@url,'.js'))) or
+                                      ((local-name() = 'Inline')         and    (string-length(@DEF) > 0) and (count(//IMPORT) > 0)) or
                                       ((local-name() = 'EXPORT'))  or
                                       ((local-name() = 'IMPORT'))  or
                                       ((local-name() = 'ProtoInstance'))"> <!--  and (count($IncomingRoutes) eq 0) --> <!-- show all; and $hasProtoInstanceFieldControl -->
@@ -983,7 +1039,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 </xsl:if>
 
                                 <!-- avoid column skipping for TimeSensor and ProtoInstance, each of which can initiate an event chain -->
-                                <xsl:if test="not(ends-with($nodeName, 'Sensor')) and not(ends-with($nodeName, 'ProtoInstance')) and 
+                                <xsl:if test="not(ends-with($nodeName, 'Sensor')) and not(ends-with($nodeName, 'ProtoInstance')) and not(ends-with($nodeName, 'HAnimDisplacer')) and
                                               not(count($IncomingRoutes) = 0)">
                                     <!-- skip first columns, TODO match depth -->
                                     <td>
@@ -1030,6 +1086,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                             <xsl:choose>
                                                 <xsl:when test="(string-length(@DEF) > 0)">
                                                     <xsl:element name="a">
+                                                        <xsl:attribute name="title">
+                                                            <xsl:text>DEF name</xsl:text>
+                                                        </xsl:attribute>
                                                         <xsl:attribute name="href">
                                                             <xsl:text>#</xsl:text>
                                                             <xsl:value-of select="$DEFname"/>
@@ -1042,7 +1101,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <!-- this variable is defined multiple times -->
         <xsl:variable name="lineNumber"     select="3 + count(ancestor::*) + count(preceding::node()) + count(preceding::*[child::node()])"/>
                                                     <xsl:text>line </xsl:text>
-                                                    <a href='#{$lineNumber}'>
+                                                    <a href='#line{$lineNumber}'>
                                                         <xsl:value-of select="$lineNumber"/>
                                                     </a>
                                                 </xsl:otherwise>
@@ -1052,40 +1111,56 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <xsl:value-of select="$nodeName"/>
                                             </b>
                                             <br />
-                                            <xsl:if test="($nodeName = 'ProtoInstance')">
-                                                <xsl:variable name="PrototypeName">
-                                                    <xsl:value-of select="@name"/>
-                                                </xsl:variable>
-                                                <xsl:element name="a">
-                                                    <xsl:attribute name="title">
-                                                        <xsl:choose>
-                                                            <xsl:when test="//ProtoDeclare[@name=$PrototypeName]">
-                                                                <xsl:text>go to the defining ProtoDeclare for this prototype instance</xsl:text>
-                                                            </xsl:when>
-                                                            <xsl:when test="//ExternProtoDeclare[@name=$PrototypeName]">
-                                                                <xsl:text>go to the defining ExternProtoDeclare for this prototype instance</xsl:text>
-                                                            </xsl:when>
-                                                        </xsl:choose>
-                                                    </xsl:attribute>
-                                                    <xsl:attribute name="href">
-                                                        <!-- build correct bookmark link for ProtoInstance name -->
-                                                        <xsl:text>#</xsl:text>
-                                                        <xsl:choose>
-                                                            <xsl:when test="//ProtoDeclare[@name=$PrototypeName]">
-                                                                <xsl:text>ProtoDeclare_</xsl:text>
-                                                            </xsl:when>
-                                                            <xsl:when test="//ExternProtoDeclare[@name=$PrototypeName]">
-                                                                <xsl:text>ExternProtoDeclare_</xsl:text>
-                                                            </xsl:when>
-                                                        </xsl:choose>
-                                                        <xsl:value-of select="$PrototypeName"/>
-                                                    </xsl:attribute>
-                                                    <xsl:attribute name="class">
-                                                        <xsl:text>prototype</xsl:text>
-                                                    </xsl:attribute>
-                                                    <xsl:value-of select="$PrototypeName"></xsl:value-of>
-                                                </xsl:element>
-                                            </xsl:if>
+                                            <xsl:choose>
+                                                <xsl:when test="($nodeName = 'ProtoInstance')">
+                                                    <xsl:variable name="PrototypeName">
+                                                        <xsl:value-of select="@name"/>
+                                                    </xsl:variable>
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="title">
+                                                            <xsl:choose>
+                                                                <xsl:when test="//ProtoDeclare[@name=$PrototypeName]">
+                                                                    <xsl:text>go to the defining ProtoDeclare for this prototype instance</xsl:text>
+                                                                </xsl:when>
+                                                                <xsl:when test="//ExternProtoDeclare[@name=$PrototypeName]">
+                                                                    <xsl:text>go to the defining ExternProtoDeclare for this prototype instance</xsl:text>
+                                                                </xsl:when>
+                                                            </xsl:choose>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="href">
+                                                            <!-- build correct bookmark link for ProtoInstance name -->
+                                                            <xsl:text>#</xsl:text>
+                                                            <xsl:choose>
+                                                                <xsl:when test="//ProtoDeclare[@name=$PrototypeName]">
+                                                                    <xsl:text>ProtoDeclare_</xsl:text>
+                                                                </xsl:when>
+                                                                <xsl:when test="//ExternProtoDeclare[@name=$PrototypeName]">
+                                                                    <xsl:text>ExternProtoDeclare_</xsl:text>
+                                                                </xsl:when>
+                                                            </xsl:choose>
+                                                            <xsl:value-of select="$PrototypeName"/>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="class">
+                                                            <xsl:text>prototype</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:value-of select="$PrototypeName"></xsl:value-of>
+                                                    </xsl:element>
+                                                </xsl:when>
+                                                <xsl:when test="($nodeName = 'HAnimDisplacer')">
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="title">
+                                                        <xsl:text>X3D Tooltips: field HAnimDisplacer.coordIndex</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="target">
+                                                            <xsl:text>_tooltip_type</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="href">
+                                                            <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#HAnimDisplacer.coordIndex</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:text>coordIndex</xsl:text>
+                                                    </xsl:element>
+                                                </xsl:when>
+                                            </xsl:choose>
                                         </td>
                                         <td>
                                             <xsl:if test="(string-length(@description) > 0)">
@@ -1136,6 +1211,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <xsl:text>*** isInlineImport=</xsl:text>
                                                 <xsl:value-of select="$isInlineImport"/>
                                             </xsl:message> -->
+                                            <xsl:choose>
+                                                <xsl:when test="(local-name() = 'TouchSensor') and (string-length(@description) > 0)">
+                                                    <xsl:text>This TouchSensor node is an author-provided hover hint for peer geometry.</xsl:text>
+                                                    <xsl:text>&#10;</xsl:text>
+                                                    <br />
+                                                    <xsl:text>&#10;</xsl:text>
+                                                </xsl:when>
+                                            </xsl:choose>
                                                 
                                             <xsl:choose>
                                                 <xsl:when test="($nodeName = 'Inline') and $isInlineImport">
@@ -1293,6 +1376,132 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 </xsl:when>
                                                 <xsl:otherwise>
                                                     <xsl:text>No direct ROUTE connection found for events to/from this node.</xsl:text>
+                                                    <xsl:if test="($nodeName = 'HAnimDisplacer')">
+                                                        <br />
+                                                        <xsl:text>HAnimDisplacer coordIndex references modify mesh vertices</xsl:text>
+                                                        <br />
+                                                        <xsl:text>in corresponding Coordinate node</xsl:text>
+                                                        <!-- ... continued by $meshNodeDescription below -->
+                <xsl:if test="($nodeName = 'HAnimDisplacer')">
+                    <xsl:variable name="localDEF" select="@localDEF"/>
+                    <!-- this block is duplicated in the Event Graph ROUTE table and HAnimDisplacer eventProducingNodes table -->
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>[debug] here 11b! </xsl:text>
+                        <xsl:text>$nodeName=</xsl:text>
+                        <xsl:value-of select="$nodeName"/>
+                    </xsl:message> -->
+                    <xsl:variable name="hanimDisplacerNode" select="//*[local-name()='HAnimDisplacer'][@DEF=$localDEF][1]"/>
+                    <td style="vertical-align:middle; text-align:right; background-color:LightYellow;">
+                        <xsl:text>modifies</xsl:text>
+                        <br />
+                        <xsl:text>HAnimHumanoid</xsl:text>
+                        <br />
+                        <i><xsl:text>skinCoord</xsl:text></i>
+                        <br />
+                        <xsl:text>vertices</xsl:text>
+                    </td>                   
+                    <xsl:variable name="meshDEF">
+                        <xsl:choose>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(preceding-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="preceding-sibling::*[starts-with(local-name(),'Coordinate')]/@DEF"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(following-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="following-sibling::*[starts-with(local-name(),'Coordinate')]/@DEF"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment')">
+                                <xsl:value-of select="../@DEF"/>
+                            </xsl:when>
+                            <!-- note that HAnimHumanoid might be direct parent -->
+                            <xsl:when test="(local-name(..) = 'HAnimHumanoid')">
+                                <xsl:value-of select="../@DEF"/>
+                            </xsl:when>
+                            <xsl:when test="   (count(ancestor::*[local-name() = 'HAnimHumanoid']/*[@containerField='skin']) ge 1)">
+                                <xsl:value-of select="ancestor::*[local-name() = 'HAnimHumanoid']/*[@containerField='skin']/@DEF"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>no Coordinate mesh found</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="meshNodeName">
+                        <xsl:choose>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(preceding-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="local-name(preceding-sibling::*[starts-with(local-name(),'Coordinate')])"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(following-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="local-name(following-sibling::*[starts-with(local-name(),'Coordinate')])"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment')">
+                                <xsl:text>HAnimSegment</xsl:text>
+                            </xsl:when>
+                            <!-- note that HAnimHumanoid might be direct parent -->
+                            <xsl:when test="(local-name(..) = 'HAnimHumanoid')">
+                                <xsl:text>HAnimHumanoid</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="              (count(ancestor::*[local-name() = 'HAnimHumanoid']/*[@containerField='skin']) ge 1)">
+                                <xsl:value-of select="local-name(ancestor::*[local-name() = 'HAnimHumanoid']/*[@containerField='skin'])"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text></xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="meshNodeDescription">
+                        <xsl:choose>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(preceding-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:text>sibling </xsl:text>
+                                <xsl:value-of select="$meshNodeName"/>
+                                <xsl:text> node</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment') and (count(following-sibling::*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:text>sibling </xsl:text>
+                                <xsl:value-of select="$meshNodeName"/>
+                                <xsl:text> node</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimSegment')">
+                                <xsl:text>sibling Coordinate node (not found) TODO ancestor HanimHumanoid?</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(local-name(..) = 'HAnimHumanoid')">
+                                <xsl:text>HAnimHumanoid is immediate parent node</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="   (count(ancestor::*[local-name() = 'HAnimHumanoid']/*[@containerField='skin']) ge 1)">
+                                <xsl:text>ancestor HAnimHumanoid skin,</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>ancestor HAnimHumanoid node skinCoord field</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <td style="vertical-align:middle; text-align:left; background-color:LightYellow;">
+                        <xsl:choose>
+                            <xsl:when test="($meshDEF = 'no Coordinate mesh found')">
+                                <xsl:text>no Coordinate mesh found!</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:element name="a">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#</xsl:text>
+                                        <xsl:value-of select="$meshDEF"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="title">
+                                        <xsl:text>DEF name</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:value-of select="$meshDEF"/>
+                                </xsl:element>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <br />
+                        <b><xsl:value-of select="$meshNodeName"/></b>
+                        <br />
+                        <xsl:value-of select="$meshNodeDescription"/>
+                        <xsl:if test="($meshNodeDescription = 'ancestor HAnimHumanoid skin,')">
+                            <br />
+                            <xsl:text>see contained child mesh</xsl:text>
+                        </xsl:if>
+                    </td>
+                </xsl:if>
+                                                    </xsl:if>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                             <xsl:choose>
@@ -1375,13 +1584,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 <br />
                                                 <xsl:text>direct access to other nodes, and thus has potential to produce run-time animation.</xsl:text>
                                             </xsl:if>
-                                            <xsl:choose>
-                                                <xsl:when test="(local-name() = 'TouchSensor') and (string-length(@description) > 0)">
-                                                    <br />
-                                                    <xsl:text>This TouchSensor node is an author-provided hint for peer geometry.</xsl:text>
-                                                    <xsl:text>&#10;</xsl:text>
-                                                </xsl:when>
-                                            </xsl:choose>
                                             <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
                                         </td>
                                     </xsl:when>
@@ -1699,64 +1901,48 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                 </xsl:if>
                                             </xsl:if>
 
-                                            <xsl:choose>
-                                                <xsl:when test="(position() le number($MAX_ROUTE_DEPTH_CONSTANT))">
-
-                                                    <xsl:call-template name="eventGraphTableElementEntries">
-                                                        <xsl:with-param name="DEFname"      ><xsl:value-of select="$DEFname"/></xsl:with-param>
-                                                        <xsl:with-param name="nodeName"     ><xsl:value-of select="$nodeName"/></xsl:with-param>
-                                                        <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
-                                                        <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
-                                                        <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
-                                                        <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
-                                                        <xsl:with-param name="depth"        ><xsl:text>1</xsl:text></xsl:with-param><!-- top -->
-                                                    </xsl:call-template>
+                                            <xsl:call-template name="eventGraphTableElementEntries">
+                                                <xsl:with-param name="DEFname"      ><xsl:value-of select="$DEFname"/></xsl:with-param>
+                                                <xsl:with-param name="nodeName"     ><xsl:value-of select="$nodeName"/></xsl:with-param>
+                                                <xsl:with-param name="fromFieldName"><xsl:value-of select="$fromFieldName"/></xsl:with-param>
+                                                <xsl:with-param name="toNodeDEF"    ><xsl:value-of select="$toNodeDEF"/></xsl:with-param>
+                                                <xsl:with-param name="toNodeName"   ><xsl:value-of select="$toNodeName"/></xsl:with-param>
+                                                <xsl:with-param name="toFieldName"  ><xsl:value-of select="$toFieldName"/></xsl:with-param>
+                                                <xsl:with-param name="depth"        ><xsl:text>1</xsl:text></xsl:with-param><!-- top -->
+                                            </xsl:call-template>
         <!-- debug
         <xsl:message>
             <xsl:text>[debug] here 8b!</xsl:text>
         </xsl:message> -->
 
-                                                    <!-- row finished -->
-                                                    <xsl:comment>row finished</xsl:comment>
-                                                    <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
-                                                    <xsl:if test="not(position() = last())">
-                                                        <!-- saxon:assign not available in HE Home Edition
-                                                        https://www.saxonica.com/html/documentation12/extensions/instructions/assign.html
-                                                        https://stackoverflow.com/questions/9608432/incrementing-and-checking-the-counter-variable-in-xslt
-                                                        <saxon:assign name="rowCounter" select="$rowCounter+1"/>
-                                                        <xsl:message>
-                                                            <xsl:text>starting new row </xsl:text>
-                                                            <xsl:value-of select="$rowCounter"/>
-                                                        </xsl:message>
-                                                        -->
-                                                        <!-- debug
-                                                        <xsl:comment>
-                                                            <xsl:text>starting new row </xsl:text>
-                                                            <xsl:value-of select="$rowCounter"/>
-                                                        </xsl:comment>
-                                                        -->
+                                            <!-- row finished -->
+                                            <xsl:comment>row finished</xsl:comment>
+                                            <xsl:text disable-output-escaping="yes">&#10;&lt;/tr>&#10;</xsl:text>
+                                            <xsl:if test="not(position() = last())">
+                                                <!-- saxon:assign not available in HE Home Edition
+                                                https://www.saxonica.com/html/documentation12/extensions/instructions/assign.html
+                                                https://stackoverflow.com/questions/9608432/incrementing-and-checking-the-counter-variable-in-xslt
+                                                <saxon:assign name="rowCounter" select="$rowCounter+1"/>
+                                                <xsl:message>
+                                                    <xsl:text>starting new row </xsl:text>
+                                                    <xsl:value-of select="$rowCounter"/>
+                                                </xsl:message>
+                                                -->
+                                                <!-- debug
+                                                <xsl:comment>
+                                                    <xsl:text>starting new row </xsl:text>
+                                                    <xsl:value-of select="$rowCounter"/>
+                                                </xsl:comment>
+                                                -->
 
-                                                        <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
-                                                        <xsl:text disable-output-escaping="yes">         </xsl:text>
-                                                        <!-- TODO row counter for each table
-                                                        <td>
+                                                <xsl:text disable-output-escaping="yes">&#10;&lt;tr>&#10;</xsl:text>
+                                                <xsl:text disable-output-escaping="yes">         </xsl:text>
+                                                <!-- TODO row counter for each table
+                                                <td>
 
-                                                        </td> -->
-                                                    </xsl:if>
-                                                </xsl:when>
-                                                <xsl:when test="$trace">
-                                                    <!-- too many columns will get here -->
-                                                    <xsl:message>
-                                                        <xsl:text>[debug] first-level outer-loop trace, column #</xsl:text>
-                                                        <xsl:value-of select="position()"/>
-                                                        <xsl:text> is greater than $MAX_ROUTE_DEPTH_CONSTANT=</xsl:text>
-                                                        <xsl:value-of select="position()"/>
-                                                    </xsl:message>
-                                                </xsl:when>
-                                                <xsl:otherwise>
-                                                    <!-- continue -->
-                                                </xsl:otherwise>
-                                            </xsl:choose>
+                                                </td> -->
+                                            </xsl:if>
+                                            
                                         </xsl:for-each>
                                     </xsl:otherwise>
                                 </xsl:choose>
@@ -1804,11 +1990,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             </xsl:message> -->
 
                 <xsl:text>&#10;</xsl:text>
-                <span style="color:white">--></span>
+                <div style="color:white">--></div>
                 <xsl:text>&#10;</xsl:text>
 
                 <xsl:variable name="identifierUrl" select="normalize-space(substring-before(//head/meta[@name='identifier']/@content,'.x3d'))"/>
-		<xsl:variable name="versionControlUrl">
+                <xsl:variable name="versionControlUrl">
                     <xsl:choose>
                         <xsl:when test="starts-with($identifierUrl,'https://www.web3d.org/x3d/content/examples/')">
                             <xsl:text>https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/x3d/content/examples/</xsl:text>
@@ -1854,15 +2040,16 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                     <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
                                 </xsl:attribute>
                                 <xsl:attribute name="target">
-                                    <xsl:text>_top</xsl:text>
+                                    <xsl:text>_blank</xsl:text>
                                 </xsl:attribute>
                                 <xsl:attribute name="title">
-                                    <xsl:text>go to online X3D Example Archives model page</xsl:text>
+                                    <xsl:text>go to online X3D Example Archives model page for </xsl:text>
+                                    <xsl:value-of select="//meta[@name='title']/@content"/>
                                 </xsl:attribute>
                                 <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                                 <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                                 <!-- X3DtextIcon16.png -->
-                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg==" alt="go to online X3D Example Archives model page"/>
                             </xsl:element>
                         </span>
                         <xsl:text>&#10;</xsl:text>
@@ -1877,9 +2064,9 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
                             </xsl:attribute>
                             <xsl:attribute name="target">
-                                <xsl:text>_top</xsl:text>
+                                <xsl:text>_blank</xsl:text>
                             </xsl:attribute>
-                            <xsl:attribute name="target">
+                            <xsl:attribute name="title">
                             <xsl:text>go to online X3D Example Archives model page</xsl:text>
                             </xsl:attribute>
                             <xsl:value-of select="$identifierUrl"/><xsl:text>Index.html</xsl:text>
@@ -1937,7 +2124,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>X3dNode</xsl:text>
                     </span>
                     <xsl:if test="(count(//*[@DEF]) > 0)">
-                        <xsl:text disable-output-escaping="true">&amp;#160;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text>
                         <span class="idName">
                             <xsl:text>DEF</xsl:text>
                         </span>
@@ -1966,7 +2153,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>XmlElement</xsl:text>
                     </span>
                     <xsl:if test="//*[@DEF]">
-                        <xsl:text disable-output-escaping="true">&amp;#160</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160</xsl:text>
                         <span class="idName">
                             <xsl:text>DEF</xsl:text>
                         </span>
@@ -2034,7 +2221,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <span class="prototype">
                             <xsl:text>field</xsl:text>
                         </span>
-                        <xsl:text disable-output-escaping="true">&amp;#160;</xsl:text>
+                        <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text>
                         <span class="attribute">
                             <xsl:text>name</xsl:text>
                         </span>
@@ -2058,7 +2245,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
                 <p style="text-align:center; background-color:white">
                     <xsl:text>&#10;</xsl:text>
-                    <a href="#">
+                    <a href="#"><!-- to top -->
                        <img src="https://www.web3d.org/x3d/content/examples/images/x3d2-s.gif" width="50" height="32" title="to top" alt="to top" style="border:0; float:right"/>
                     </a>
                     <xsl:text>&#10;</xsl:text>
@@ -2740,14 +2927,21 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="lineNumber"     select="3 + count(ancestor::*) + count(preceding::node()) + count(preceding::*[child::node()])"/>
         <!-- audio component nodes typically exchange information via parent-child relationships, rather than ROUTE events -->
         <!-- TODO consider checking ProtoInstance ROUTE connections also -->
-        <xsl:variable name="usualEventReceiver" select="(local-name() = 'BooleanFilter') or (local-name() = 'EaseInEaseOut') or
-                                                         (local-name() = 'HAnimMotion')   or (local-name() = 'HAnimPose')     or
+        <xsl:variable name="usualEventReceiver" select="(local-name() = 'BooleanSequencer') or (local-name() = 'IntegerSequencer') or 
+                                                        (local-name() = 'BooleanFilter') or (local-name() = 'EaseInEaseOut') or
+                                                        (local-name() = 'HAnimMotion')   or (local-name() = 'HAnimPose')     or (local-name() = 'HAnimDisplacer') or
                                                           contains(local-name(), 'Interpolator') or ends-with(local-name(), 'Sequencer') or
                                                           contains(local-name(), 'Damper') or ends-with(local-name(), 'Follower') or
                                                           ends-with(local-name(), 'Trigger') or 
                                                          ((local-name() = 'ProtoInstance') and (count(//ProtoDeclare[@name = $nameAttribute]/field[@accessType = 'inputOnly']) > 0))"/>
-        <xsl:variable name="usualEventProducer" select=" ends-with(local-name(), 'Sensor') or $usualEventReceiver or 
-                                                         ((local-name() = 'ProtoInstance') and (count(//ProtoDeclare[@name = $nameAttribute]/field[@accessType = 'outputOnly']) > 0))"/>
+        <xsl:variable name="usualEventProducer" select="(local-name() = 'BooleanSequencer') or (local-name() = 'IntegerSequencer') or 
+                                                        (local-name() = 'BooleanFilter') or (local-name() = 'EaseInEaseOut') or
+                                                        (local-name() = 'HAnimMotion')   or (local-name() = 'HAnimPose')     or (local-name() = 'HAnimDisplacer') or
+                                                          contains(local-name(), 'Interpolator') or ends-with(local-name(), 'Sequencer') or
+                                                          contains(local-name(), 'Damper') or ends-with(local-name(), 'Follower') or
+                                                          ends-with(local-name(), 'Trigger') or 
+                                                        ends-with(local-name(), 'Sensor') or $usualEventReceiver or 
+                                                        ((local-name() = 'ProtoInstance') and (count(//ProtoDeclare[@name = $nameAttribute]/field[@accessType = 'outputOnly']) > 0))"/>
         
         <!-- debug  true() false() ($USEcount > 0) or (string-length(@USE) > 0) -->
         <xsl:if test="false()">
@@ -2797,14 +2991,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <tr class='lineNumber'>
             <td class='lineNumber'>
                 <xsl:value-of select="$spacing" disable-output-escaping="yes"/>
-                <a href='#{$lineNumber}'>
+                <a href='#line{$lineNumber}'>
                     <xsl:value-of select="$lineNumber"/>
                 </a>
                 <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
             </td>
             <td>
                 <!-- put bookmark prior to actual data to preserve vertical alignment, since lineNumber can appear lower on the page when centered on a multi-line element -->
-                <a id='{$lineNumber}'>
+                <a id='line{$lineNumber}'>
                     <xsl:text> </xsl:text>
                 </a>
                 <xsl:text>&#10;</xsl:text>
@@ -2941,6 +3135,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="$hasIMPORT_AS"/>
                 </xsl:message>
             </xsl:if> -->
+            
             <xsl:if test="$hasROUTEs or $hasUSE or $hasIMPORT or $hasEXPORT or $hasImportedDEF or $hasIMPORT_AS or $usualEventReceiver or $usualEventProducer">
                 <!-- wrap a box around this element to show event connections -->
                 <!-- addedDocumentationColor.HTML -->
@@ -3015,7 +3210,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:value-of select="count(//ROUTE)"/>
                 </xsl:message> -->
                 <!-- debug
-                <xsl:if test="$hasDEF">
+                <xsl:if test="$hasDEF and (local-name() = 'BooleanSequencer')">
                     <xsl:message>
                         <xsl:text>*** </xsl:text>
                         <xsl:value-of select="local-name()"/>
@@ -3156,6 +3351,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:for-each>
                 </xsl:if>
                 <xsl:if test="$usualEventReceiver and (count($IncomingRoutes) = 0) and (count(IS/connect) = 0)">
+                    <xsl:if test="not(local-name() = 'HAnimDisplacer')">
                     <!-- warn if missing input ROUTE -->
                     <xsl:variable name="missingRouteWarning">
                         <xsl:text>no  input ROUTE found</xsl:text>
@@ -3175,19 +3371,34 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:value-of select="local-name()"/>
                         <xsl:text>, such a node typically receives events</xsl:text>
                     </xsl:message>
+                    </xsl:if>
                 </xsl:if>
                 <xsl:if test="$usualEventProducer and (count($OutgoingRoutes) = 0) and (count(IS/connect) = 0) and
                               not((local-name() = 'TouchSensor') and (string-length(@description) > 0))"> <!-- no warning for TouchSensor tooltip hints -->
                     <!-- warn if missing output ROUTE -->
                     <xsl:variable name="missingRouteWarning">
-                        <xsl:text>no output ROUTE found</xsl:text>
+                        <xsl:choose>
+                            <xsl:when test="(local-name() = 'HAnimDisplacer')">
+                                <xsl:text>[HAnimDisplacer modifies mesh vertices matching peer/parent HAnimJoint skin indices]</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>no output ROUTE found</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
                     </xsl:variable>
                     <xsl:text> </xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;span&gt;&lt;b class='warning' title='</xsl:text>
-                    <xsl:value-of select="local-name()"/>
-                    <xsl:text disable-output-escaping="yes"> node typically produces events'&gt;[</xsl:text>
-                    <xsl:value-of select="$missingRouteWarning"/>
-                    <xsl:text disable-output-escaping="yes">]&lt;/b&gt;&lt;/span&gt;</xsl:text>
+                    <xsl:choose>
+                        <xsl:when test="(local-name() = 'HAnimDisplacer')">
+                            <xsl:value-of select="$missingRouteWarning"/>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:text disable-output-escaping="yes">&lt;span&gt;&lt;b class='warning' title='</xsl:text>
+                            <xsl:value-of select="local-name()"/>
+                            <xsl:text disable-output-escaping="yes"> node typically produces events'&gt;[</xsl:text>
+                            <xsl:value-of select="$missingRouteWarning"/>
+                            <xsl:text disable-output-escaping="yes">]&lt;/b&gt;&lt;/span&gt;</xsl:text>
+                        </xsl:otherwise>
+                    </xsl:choose>
                     <xsl:message>
                         <xsl:text>*** [warning] </xsl:text>
                         <xsl:value-of select="$missingRouteWarning"/>
@@ -3782,14 +3993,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         ((local-name()='field') and (local-name(..)='Script')) or
                         contains(local-name(),'Filter') or contains(local-name(),'Interpolator') or contains(local-name(),'Sensor') or
                         contains(local-name(),'Sequencer') or contains(local-name(),'Trigger')"/>
-        <!-- debug -->
-        <xsl:if test="isBehaviorNode">
+        <!-- debug 
+        <xsl:if test="$isBehaviorNode and contains(local-name(),'Sequencer')">
             <xsl:message>
                     <xsl:value-of select="local-name()"/>
                 <xsl:text> $isBehaviorNode=</xsl:text>
                 <xsl:value-of select="$isBehaviorNode"/>
             </xsl:message>
-        </xsl:if>
+        </xsl:if> -->
         <xsl:variable name="isExtensibleNode"
                     select="(local-name()='component') or
                             contains(local-name(),'Proto') or
@@ -3818,21 +4029,25 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:variable name="shortcutIconUrl">
                     <xsl:value-of select="normalize-space(translate(concat(substring-before(@url,'.x3d'),'Index.html'),'&quot;',''))"/>
                 </xsl:variable>
+                <xsl:variable name="modelUrl" select="normalize-space(concat('http',substring-before(substring-after(@url,'http'),'.x3d')))"/>
                 <!-- debug
                 <xsl:if test="$publishedInX3dModelArchives">
                     <xsl:message>
-                        <xsl:text>*** $publishedInX3dModelArchives=</xsl:text>
-                        <xsl:value-of select="$publishedInX3dModelArchives"/>
-                        <xsl:text> $inlineModelNamel=</xsl:text>
+                        <xsl:text>*** $inlineModelName=</xsl:text>
                         <xsl:value-of select="$inlineModelName"/>
-                        <xsl:text> $shortcutIconUrl=</xsl:text>
+                        <xsl:text>, $publishedInX3dModelArchives=</xsl:text>
+                        <xsl:value-of select="$publishedInX3dModelArchives"/>
+                        <xsl:text>, $shortcutIconUrl=</xsl:text>
                         <xsl:value-of select="$shortcutIconUrl"/>
+                        <xsl:text>, $modelUrl=</xsl:text>
+                        <xsl:value-of select="$modelUrl"/>
                     </xsl:message>
                 </xsl:if> -->
                 <span style="position: relative; float: right; margin-right: 10px; font-size: smaller">
                     <xsl:element name="a">
                         <xsl:attribute name="href">
-                            <xsl:value-of select="$shortcutIconUrl"/>
+                            <xsl:value-of select="$modelUrl"/>
+                            <xsl:text>Index.html</xsl:text>
                         </xsl:attribute>
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
@@ -3844,7 +4059,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                         <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                         <!-- X3DtextIcon16.png -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg==" alt="go to online X3D Example Archives model page"/>
                     </xsl:element>
                 </span>
             </xsl:if>
@@ -3924,8 +4139,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:if>
                     <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes) or $hasUSE">
                         <xsl:text>&#10;</xsl:text>
-                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-                        <xsl:comment>div.boxedBlock</xsl:comment>
+                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text><xsl:comment>/div.boxedBlock</xsl:comment>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
 
@@ -3945,7 +4159,8 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <!--<xsl:text>&#10;</xsl:text>
                     <xsl:comment>indented children, if any</xsl:comment>-->
                     <xsl:text>&#10;</xsl:text>
-                    <xsl:text disable-output-escaping="yes">&lt;/td&gt;&lt;/tr&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;/td&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">&lt;/tr&gt;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <!--
                     <xsl:text disable-output-escaping="yes">&lt;tr&gt;&lt;td&gt;</xsl:text>
@@ -4008,7 +4223,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:when>
                     </xsl:choose>
                     <xsl:text>&#10;</xsl:text>
-
+ 
                     <!-- close tag for this element -->
                     <xsl:text>&#10;</xsl:text>
                     <xsl:comment>insert another row and cell for closing tag</xsl:comment>
@@ -4053,7 +4268,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:choose>
                 </xsl:variable>
 
-                <a id='{$closingElementLineNumber}'>
+                <a id='line{$closingElementLineNumber}'>
                     <xsl:text> </xsl:text>
                 </a>
                 <xsl:value-of select="$closingSpacing" disable-output-escaping="yes"/>
@@ -4119,8 +4334,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
                     </xsl:if>
                     <xsl:if test="boolean($IncomingRoutes | $OutgoingRoutes | $SelfRoutes)">
-                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text>
-                        <xsl:comment>div.boxedBlock</xsl:comment>
+                        <xsl:text disable-output-escaping="yes">&lt;/div&gt;</xsl:text><xsl:comment>/div.boxedBlock</xsl:comment>
                         <xsl:text>&#10;</xsl:text>
                     </xsl:if>
                 </xsl:otherwise>
@@ -4293,11 +4507,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                                     ends-with(lower-case(@content), '.wav')  or
                                                                     ends-with(lower-case(@content), '.wma'))"/>
                 <!-- unwrap hover help -->
-                <xsl:if test="((@name='image') or (@name='Image') or (@name='reference') or (@name='Reference')) and 
+                <xsl:if test="((@name='image') or (@name='Image') or (@name='reference') or (@name='Reference') or contains(lower-case(@name),'url')) and 
                                $isDisplayableImage">
                     <xsl:text disable-output-escaping="yes">&lt;img src="</xsl:text>
                     <xsl:value-of select="@content"/>
-                    <xsl:text disable-output-escaping="yes">" class="child"/&gt;</xsl:text>
+                    <xsl:text disable-output-escaping="yes">" class="child" alt="image preview"/&gt;</xsl:text>
                     <!-- be very careful here or the CSS breaks! -->
                     <xsl:text disable-output-escaping="yes">&lt;/span&gt;</xsl:text>
                 <!--<xsl:text disable-output-escaping="yes">/&gt;</xsl:text> superflouos, breaks link-->
@@ -4306,23 +4520,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:text>*** closing span tag class="child" for Image</xsl:text>
                     </xsl:message>
                     -->
-                </xsl:if>
-                <xsl:if test="$isPlayableAudio">
-                    <xsl:text>&#10;</xsl:text>
-                    <xsl:element name="audio">
-                        <xsl:attribute name="controls">
-                            <xsl:text>true</xsl:text>
-                        </xsl:attribute>
-                        <xsl:attribute name="style">
-                            <xsl:text>vertical-align: middle; float: right; margin-right: 10px;</xsl:text>
-                        </xsl:attribute>
-                        <xsl:element name="source">
-                            <xsl:attribute name="src">
-                                <xsl:value-of select="@content"/>
-                            </xsl:attribute>
-                            <p>This widget needs a browser supporting the &lt;audio&gt; element.</p>
-                        </xsl:element>
-                    </xsl:element>
                 </xsl:if>
             </xsl:when>
             <xsl:when test="local-name()='ROUTE'">
@@ -5157,6 +5354,11 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                       not(local-name(..)='DISEntityTypeMapping' and
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -5444,33 +5646,37 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="notFieldSpace"
                       select="not(local-name(..)='field'  and	(local-name()='space' or local-name()='xml:space')) and
                       not(local-name(..)='Script' and	(local-name()='space' or local-name()='xml:space'))" />
-        <xsl:if test="$notImplicitEvent1 and
-                $notImplicitEvent2 and
-                $notImplicitEvent3 and
-                $notDefaultFieldValue1 and
-                $notDefaultFieldValue1a and
-                $notDefaultFieldValue2 and
-                $notDefaultFieldValue3 and
-                $notDefaultFieldValue4 and
-                $notDefaultFieldValue5 and
-                $notDefaultFieldValue6 and
-                $notDefaultFieldValue7 and
-                $notDefaultFieldValue8 and
-                $notDefaultFieldValue9 and
-                $notDefaultFieldValue10 and
-                $notDefaultCAD         and
-                $notDefaultDIS1        and
-                $notDefaultDIS2        and
-                $notDefaultDIS3        and
-                $notDefaultDIS4        and
-                $notDefaultGeo         and
-                $notDefaultHAnim1      and
-                $notDefaultHAnim2      and
-                $notDefaultNurbs       and
-                $notDefaultGeometry2D  and
-                $notDefaultVolume      and
-                $notDefaultFollower    and
-                $notDefaultShader      and
+        <xsl:variable name="ensureDisplayed"
+                      select="((local-name(..)='TimeSensor') and	((local-name()='cycleInterval') or (local-name()='loop') or (local-name()='enabled')))" />
+        <xsl:if test="(
+                $notImplicitEvent1          and
+                $notImplicitEvent2          and
+                $notImplicitEvent3          and
+                $notDefaultFieldValue1      and
+                $notDefaultFieldValue1a     and
+                $notDefaultFieldValue2      and
+                $notDefaultFieldValue3      and
+                $notDefaultFieldValue4      and
+                $notDefaultFieldValue5      and
+                $notDefaultFieldValue6      and
+                $notDefaultFieldValue7      and
+                $notDefaultFieldValue8      and
+                $notDefaultFieldValue9      and
+                $notDefaultFieldValue10     and
+                $notDefaultCAD              and
+                $notDefaultDIS1             and
+                $notDefaultDIS2             and
+                $notDefaultDIS3             and
+                $notDefaultDIS4             and
+                $notDefaultGaussianSplats   and
+                $notDefaultGeo              and
+                $notDefaultHAnim1           and
+                $notDefaultHAnim2           and
+                $notDefaultNurbs            and
+                $notDefaultGeometry2D       and
+                $notDefaultVolume           and
+                $notDefaultFollower         and
+                $notDefaultShader           and
                 $notDefaultRigidBodyPhysics and
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
@@ -5482,7 +5688,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 not(contains(local-name(),'_changed')) and
                 not($isX3D3 and starts-with(local-name(..),'Metadata') and (local-name()='containerField') and (string(.)='metadata')) and
                 not($isX3D4 and starts-with(local-name(..),'Metadata') and (local-name()='containerField') and (string(.)='value')) and
-                ." >
+                .) or $ensureDisplayed" >
             <xsl:variable name="attributeTooltip">
                 <xsl:choose>
                     <xsl:when test="(local-name(..)='X3D') and (local-name()='profile')">
@@ -5545,35 +5751,35 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 				</xsl:choose>
 			</xsl:variable>
             <!-- XSLT alert, this construct appears twice -->
-            <xsl:variable name="endsWithFileExtension" select="not(starts-with(., 'urn:')) and
-                                                               not(starts-with(., '.')) and
-                                                            (ends-with(., '.pdf')  or
-                                                             ends-with(., '.ppt')  or
-                                                             ends-with(., '.pptx') or
-                                                             ends-with(., '.au')   or
-                                                             ends-with(., '.aiff') or
-                                                             ends-with(., '.mid')  or
-                                                             ends-with(., '.midi') or
-                                                             ends-with(., '.au')   or
-                                                             ends-with(., '.aiff') or
-                                                             ends-with(., '.wav') or
-                                                             ends-with(., '.mp3')  or
-                                                             ends-with(., '.mp4')  or
-                                                             ends-with(., '.m4a')  or
-                                                             ends-with(., '.mpeg') or
-                                                             ends-with(., '.rdf')  or
-                                                             ends-with(., '.owl')  or
-                                                             ends-with(., '.ttl')  or
-                                                             ends-with(., '.xml')  or
-                                                             ends-with(., '.xslt') or
-                                                             ends-with(., '.java') or
-                                                             ends-with(., '.json') or
-                                                             ends-with(., '.py')   or
-                                                             ends-with(., '.x3d')  or
-                                                             ends-with(., '.html') or
-                                                             ends-with(., '.htm')  or
-                                                             ends-with(., '.svg')  or
-                                                             ends-with(., '.txt'))"/>
+            <xsl:variable name="endsWithFileExtension" select="not(starts-with(string(.), 'urn:')) and
+                                                               not(starts-with(string(.), '.')) and
+                                                            (ends-with(string(.), '.pdf')  or
+                                                             ends-with(string(.), '.ppt')  or
+                                                             ends-with(string(.), '.pptx') or
+                                                             ends-with(string(.), '.au')   or
+                                                             ends-with(string(.), '.aiff') or
+                                                             ends-with(string(.), '.mid')  or
+                                                             ends-with(string(.), '.midi') or
+                                                             ends-with(string(.), '.au')   or
+                                                             ends-with(string(.), '.aiff') or
+                                                             ends-with(string(.), '.wav') or
+                                                             ends-with(string(.), '.mp3')  or
+                                                             ends-with(string(.), '.mp4')  or
+                                                             ends-with(string(.), '.m4a')  or
+                                                             ends-with(string(.), '.mpeg') or
+                                                             ends-with(string(.), '.rdf')  or
+                                                             ends-with(string(.), '.owl')  or
+                                                             ends-with(string(.), '.ttl')  or
+                                                             ends-with(string(.), '.xml')  or
+                                                             ends-with(string(.), '.xslt') or
+                                                             ends-with(string(.), '.java') or
+                                                             ends-with(string(.), '.json') or
+                                                             ends-with(string(.), '.py')   or
+                                                             ends-with(string(.), '.x3d')  or
+                                                             ends-with(string(.), '.html') or
+                                                             ends-with(string(.), '.htm')  or
+                                                             ends-with(string(.), '.svg')  or
+                                                             ends-with(string(.), '.txt'))"/>
             <!-- good attribute found, output it -->
             <xsl:choose>
                 <xsl:when test="(local-name()='url') or contains(local-name(), 'Url')">
@@ -5748,12 +5954,22 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:call-template></span>
                 </xsl:when>
                 <xsl:when test="local-name(..)='meta' and local-name()='content' and
-                                (starts-with(normalize-space(string(.)),'*') and ends-with(normalize-space(string(.)),'*') or
-                                 contains(string(.),'TODO'))">
+                                (starts-with(normalize-space(string(.)),'*') and ends-with(normalize-space(string(.)),'*'))">
                     <!-- *default example values* -->
                     <!-- debug -->
                     <xsl:message>
                         <xsl:text>[debug] highlight: </xsl:text>
+                        <xsl:value-of select="."/>
+                    </xsl:message>
+                    <span class="highlight">
+                        <xsl:value-of select="."/>
+                    </span>
+                </xsl:when>
+                <xsl:when test="local-name(..)='meta' and local-name()='content' and
+                                 contains(string(.),'TODO')">
+                    <!-- debug -->
+                    <xsl:message>
+                        <xsl:text>[TODO] </xsl:text>
                         <xsl:value-of select="."/>
                     </xsl:message>
                     <span class="highlight">
@@ -6069,6 +6285,14 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     </xsl:if>
                     -->
                     <xsl:variable name="isUrlField" select="(local-name()='url' or contains(local-name(), 'Url'))"/>
+                    <xsl:variable name="isPlayableAudio"    select="(contains(lower-case(string(.)), '.au')   or
+                                                                     contains(lower-case(string(.)), '.aiff') or
+                                                                     contains(lower-case(string(.)), '.ogg')  or
+                                                                     contains(lower-case(string(.)), '.mp3')  or
+                                                                     contains(lower-case(string(.)), '.m4a')  or
+                                                                     contains(lower-case(string(.)), '.midi') or
+                                                                     contains(lower-case(string(.)), '.wav')  or
+                                                                     contains(lower-case(string(.)), '.wma'))"/>
                     <xsl:choose>
                         <xsl:when test="contains(../@name,'specificationSection')">
                             <span class="value">
@@ -6084,7 +6308,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                             <!-- debug
                             <xsl:text>($isUrlField=</xsl:text><xsl:value-of select="$isUrlField"/><xsl:text>)</xsl:text>
                             -->
-                            <xsl:text> </xsl:text><!-- non-canonical courtesy space between ' and " -->
+                            <xsl:text> </xsl:text><!-- non-canonical user-courtesy space between ' and " -->
                             <xsl:call-template name="URL-ize-MFString-elements">
                                 <xsl:with-param name="list" select="."/>
                                 <xsl:with-param name="includesUrlsOnly"><xsl:value-of select="$isUrlField"/></xsl:with-param>
@@ -6331,7 +6555,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <tr class='lineNumber'>
             <td class='lineNumber'>
                 <xsl:value-of select="$spacing" disable-output-escaping="yes"/>
-                <a href='#{$lineNumber}'>
+                <a href='#line{$lineNumber}'>
                     <xsl:value-of select="$lineNumber"/>
                 </a>
                 <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
@@ -6341,7 +6565,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:call-template name="indent-cell"/>
                 <xsl:text>&#10;</xsl:text>
                 <!-- put bookmark prior to actual data to preserve vertical alignment, since lineNumber can appear lower on the page when centered on a multi-line element -->
-                <a id='{$lineNumber}'>
+                <a id='line{$lineNumber}'>
                     <xsl:text> </xsl:text>
                 </a>
                 <xsl:text>&#10;</xsl:text>
@@ -6407,7 +6631,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <!-- output bookmark index:  ExternProtoDeclare, ProtoDeclare, DEF -->
         <xsl:if test="boolean((//*[@DEF]) | (//HAnimHumanoid) | (//*[local-name()='ProtoDeclare']) | (//*[local-name()='ExternProtoDeclare']) | (//Viewpoint))">
             <!-- hidden comment characters for compatible copy/paste -->
-            <span style="color:white"><xsl:text>&lt;!--</xsl:text></span>
+            <div style="color:white"><xsl:text>&lt;!--</xsl:text></div>
             <xsl:text>&#10;</xsl:text>
             <div class="center">
               <hr style="width:100%"/>
@@ -6599,7 +6823,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <!-- hidden comment characters for compatible copy/paste -->
                     <span style="color:white"><xsl:text>&lt;!--</xsl:text></span>
                     <xsl:text>&#10;</xsl:text>
-                    <a href="#">
+                    <a href="#"><!-- to top -->
                        <img src="https://www.web3d.org/x3d/content/examples/images/x3d2-s.gif" width="50" height="32" title="to top" alt="to top" style="border:0; float:right"/>
                     </a>
                     <xsl:text>&#10;</xsl:text>
@@ -6821,7 +7045,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
 
             <xsl:text>&#10;</xsl:text>
             <!-- hidden comment characters for compatible copy/paste -->
-            <span style="color:white"><xsl:text>--&gt;</xsl:text></span>
+            <div style="color:white"><xsl:text>--&gt;</xsl:text></div>
             <xsl:text>&#10;</xsl:text>
         </xsl:if>
     </xsl:template>
@@ -6839,6 +7063,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <b>
                     <i><xsl:text>X3D Tooltips element index: </xsl:text></i>
                 </b>
+                <xsl:text>&#10;</xsl:text>
+                
+                <xsl:text>&#10;</xsl:text>
+                <a href="#"><!-- to top -->
+                   <img src="https://www.web3d.org/x3d/content/examples/images/x3d2-s.gif" width="50" height="32" title="to top" alt="to top" style="border:0; float:right"/>
+                </a>
                 <xsl:text>&#10;</xsl:text>
 
                 <xsl:for-each select="(//*)">
@@ -6991,19 +7221,20 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:param name="insertBreaks"><xsl:text>true</xsl:text></xsl:param>
 
         <xsl:variable name="parentElement" select="local-name(..)"/>
-        <xsl:variable name="hasImagePreview" select="($parentElement = 'ImageTexture')   or
+        <xsl:variable name="hasImagePreview" select="($parentElement = 'meta')   or
+                                                     ($parentElement = 'ImageTexture')   or
                                                      ($parentElement = 'Background')     or
                                                      ($parentElement = 'MetadataString') or
                                                      ($parentElement = 'Anchor')"/>
         <!-- debug: <xsl:message><xsl:value-of select="$parentElement"/><xsl:text> $hasImagePreview=</xsl:text><xsl:value-of select="$hasImagePreview"/></xsl:message> -->
 
         <xsl:variable name="wlist" select="concat(normalize-space(string($list)),' ')"/>
-        <xsl:if test="contains($list,'https://')">
+        <!-- <xsl:if test="contains($list,'https://')"> -->
             <!-- debug: <xsl:message><xsl:text>&#10;*** $wlist=[</xsl:text><xsl:value-of select="$wlist" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text></xsl:message> -->
             <!-- debug: <xsl:message><xsl:text>    $includesUrlsOnly=</xsl:text><xsl:value-of select="$includesUrlsOnly"/>
                                             <xsl:text> $insertBreaks=</xsl:text><xsl:value-of select="$insertBreaks"/>
             </xsl:message> -->
-        </xsl:if>
+        <!-- </xsl:if> -->
         <!-- debug: 
         <xsl:if test="contains($list,'../')">
           <xsl:message>
@@ -7079,6 +7310,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 </xsl:message>
             </xsl:if> -->
             <!-- ignore movie formats as questionable since mouseover might provoke an inadvertent large download -->
+            <!-- https://en.wikipedia.org/wiki/Video_file_format -->
+            <xsl:variable name="isDisplayableMovie" select="not(starts-with($nextURLunquoted, 'urn:'))    and
+                                                               (ends-with(lower-case($nextURLunquoted), '.3gp')  or
+                                                                ends-with(lower-case($nextURLunquoted), '.avi')  or
+                                                                ends-with(lower-case($nextURLunquoted), '.mov')  or
+                                                                ends-with(lower-case($nextURLunquoted), '.mpg')  or
+                                                                ends-with(lower-case($nextURLunquoted), '.mpeg') or
+                                                                ends-with(lower-case($nextURLunquoted), '.ogg')  or
+                                                                ends-with(lower-case($nextURLunquoted), '.oggv') or  
+                                                                ends-with(lower-case($nextURLunquoted), '.qt')   or  
+                                                                ends-with(lower-case($nextURLunquoted), '.webm'))"/>
             <xsl:variable name="isDisplayableImage" select="not(starts-with($nextURLunquoted, 'urn:'))    and
                                                             not(ends-with(lower-case($nextURLunquoted), '.vsdx')) and
                                                                (ends-with(lower-case($nextURLunquoted), '.png')  or
@@ -7121,6 +7363,36 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
             <!-- stack overflow problems when taking substring after $nextURL -->
             <xsl:variable name="restURLs" select="substring-after($wlist,' ')"/>
             <!-- debug: <xsl:message><xsl:text>$restURLs=[</xsl:text><xsl:value-of select="$restURLs" disable-output-escaping="yes"/><xsl:text>]&#10;</xsl:text></xsl:message> -->
+            <xsl:if test="$isPlayableAudio">
+                <!-- <xsl:if test="$restURLs!=''">
+                </xsl:if> -->
+                <!-- for multiple url addresses, this widget can be quite wide, so skip a line before next url in list -->
+                <xsl:if test="not($parentElement = 'meta')">
+                    <br />
+                </xsl:if>
+                <xsl:element name="audio">
+                    <xsl:attribute name="controls">
+                        <xsl:text>true</xsl:text>
+                    </xsl:attribute>
+                    <xsl:attribute name="style">
+                        <xsl:text>vertical-align: middle; height: 20px; </xsl:text>
+                    </xsl:attribute>
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$nextURLunquoted"/>
+                    </xsl:attribute>
+                    <xsl:element name="source">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="$nextURLunquoted"/>
+                        </xsl:attribute>
+                        <p>This widget needs a browser supporting the &lt;audio&gt; element.</p>
+                    </xsl:element>
+                </xsl:element>
+                <xsl:text> </xsl:text>
+            </xsl:if>
+            <!-- not working well
+            <xsl:if test="$isDisplayableMovie">
+                <br />
+            </xsl:if> -->
             <xsl:choose>
                 <xsl:when test="$endsWithFileExtension and not(contains($nextURLunquoted, '://'))">
                     <!-- debug
@@ -7149,7 +7421,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                         <xsl:if test="(string-length(normalize-space($restURLs)) > 0)">
-                            <xsl:text> </xsl:text>
                         </xsl:if>
                     </xsl:if>
                     <!-- debug
@@ -7184,50 +7455,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                 <xsl:attribute name="target">
                                     <xsl:text>_blank</xsl:text>
                                 </xsl:attribute>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <!-- debug
-                                    <xsl:message>
-                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
-                                    </xsl:message> -->
-                                    <xsl:attribute name="class">
-                                        <xsl:text>parent</xsl:text>
-                                    </xsl:attribute>
-                                </xsl:if>
                                 <xsl:value-of select="$nextURLunquoted"/>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <xsl:element name="img">
-                                        <xsl:attribute name="class">
-                                            <xsl:text>child</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="src">
-                                            <xsl:value-of select="$nextURLunquoted"/>
-                                        </xsl:attribute>
-                                    </xsl:element>
-                                </xsl:if>
-                                <xsl:if test="$isPlayableAudio">
-                                    <xsl:text>&#10;</xsl:text>
-                                    <xsl:element name="audio">
-                                        <xsl:attribute name="controls">
-                                            <xsl:text>true</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="style">
-                                            <xsl:text>vertical-align: middle; position: relative; float: right; margin-right: 10px; </xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:element name="source">
-                                            <xsl:attribute name="src">
-                                                <xsl:value-of select="$nextURLunquoted"/>
-                                            </xsl:attribute>
-                                            <p>This widget needs a browser supporting the &lt;audio&gt; element.</p>
-                                        </xsl:element>
-                                    </xsl:element>
-                                </xsl:if>
                                 <!-- TODO problem with newline character getting inserted into HTML here before </a> -->
                                 <!-- likely need to avoid xsl:element and craft via characters, as done with meta links -->
                             </xsl:element>
                             <xsl:if test="($isQuoted='true')">
                                 <xsl:text>&quot;</xsl:text>
                             </xsl:if>
-                            <xsl:text> </xsl:text>
                             <xsl:if test="($insertBreaks='true') and not($includesUrlsOnly) and not(starts-with(normalize-space($restURLs),'ftp://')) and not(starts-with(normalize-space($restURLs),'sftp://')) and not(starts-with(normalize-space($restURLs),'http://')) and not(local-name(..) = 'MetadataString')">
                                     <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                             </xsl:if>
@@ -7259,7 +7493,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
-                    <xsl:text> </xsl:text>
                     <xsl:if test="($insertBreaks='true') and not($includesUrlsOnly) and not(starts-with(normalize-space($restURLs),'sftp://')) and not(starts-with(normalize-space($restURLs),'http://'))">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                     </xsl:if>
@@ -7285,7 +7518,6 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
-                    <xsl:text> </xsl:text>
                     <xsl:if test="($insertBreaks='true') and not($includesUrlsOnly) and not(starts-with(normalize-space($restURLs),'ftp://')) and not(starts-with(normalize-space($restURLs),'http://'))">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                     </xsl:if>
@@ -7305,32 +7537,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <!-- debug
-                                    <xsl:message>
-                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
-                                    </xsl:message> -->
-                                    <xsl:attribute name="class">
-                                        <xsl:text>parent</xsl:text>
-                                    </xsl:attribute>
-                                </xsl:if>
                         <xsl:text>http://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'http://'))"/>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <xsl:element name="img">
-                                        <xsl:attribute name="class">
-                                            <xsl:text>child</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="src">
-                                            <xsl:value-of select="$nextURLunquoted"/>
-                                        </xsl:attribute>
-                                    </xsl:element>
-                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
-                    <xsl:text> </xsl:text>
                     <xsl:if test="($insertBreaks='true') and not($includesUrlsOnly) and not(starts-with(normalize-space($restURLs),'ftp://')) and not(starts-with(normalize-space($restURLs),'http://'))">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                     </xsl:if>
@@ -7350,32 +7562,12 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <!-- debug
-                                    <xsl:message>
-                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
-                                    </xsl:message> -->
-                                    <xsl:attribute name="class">
-                                        <xsl:text>parent</xsl:text>
-                                    </xsl:attribute>
-                                </xsl:if>
                         <xsl:text>https://</xsl:text>
                         <xsl:value-of select="normalize-space(substring-after($nextURLunquoted,'https://'))"/>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <xsl:element name="img">
-                                        <xsl:attribute name="class">
-                                            <xsl:text>child</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="src">
-                                            <xsl:value-of select="$nextURLunquoted"/>
-                                        </xsl:attribute>
-                                    </xsl:element>
-                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
-                    <xsl:text> </xsl:text>
                     <xsl:if test="($insertBreaks='true') and not($includesUrlsOnly) and not(starts-with(normalize-space($restURLs),'ftp://')) and not(starts-with(normalize-space($restURLs),'http://'))">
                         <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
                     </xsl:if>
@@ -7415,32 +7607,52 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <xsl:attribute name="target">
                             <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <!-- debug
-                                    <xsl:message>
-                                        <xsl:text>*** opening span tag class="parent" for Image</xsl:text>
-                                    </xsl:message> -->
-                                    <xsl:attribute name="class">
-                                        <xsl:text>parent</xsl:text>
-                                    </xsl:attribute>
-                                </xsl:if>
                         <xsl:value-of select="$nextURLunquoted"/>
-                                <xsl:if test="$hasImagePreview and $isDisplayableImage">
-                                    <xsl:element name="img">
-                                        <xsl:attribute name="class">
-                                            <xsl:text>child</xsl:text>
-                                        </xsl:attribute>
-                                        <xsl:attribute name="src">
-                                            <xsl:value-of select="$nextURLunquoted"/>
-                                        </xsl:attribute>
-                                    </xsl:element>
-                                </xsl:if>
                     </xsl:element>
                     <xsl:if test="($isQuoted='true')">
                         <xsl:text>&quot;</xsl:text>
                     </xsl:if>
                 </xsl:otherwise>
             </xsl:choose>
+            <xsl:if test="$hasImagePreview and $isDisplayableImage">
+                <xsl:text></xsl:text>
+                <xsl:element name="img">
+                    <xsl:attribute name="class">
+                        <xsl:text>child</xsl:text>
+                    </xsl:attribute>
+                    <xsl:attribute name="src">
+                        <xsl:value-of select="$nextURLunquoted"/>
+                    </xsl:attribute>
+                    <xsl:attribute name="alt">
+                        <xsl:text>image preview</xsl:text>
+                    </xsl:attribute>
+                </xsl:element>
+                <xsl:text> </xsl:text>
+            </xsl:if>
+            <!-- not working well
+            <xsl:if test="$isDisplayableMovie">
+                <xsl:text> </xsl:text>
+                <xsl:element name="video">
+                    <xsl:attribute name="controls">
+                        <xsl:text>true</xsl:text>
+                    </xsl:attribute>
+                    <xsl:attribute name="style">
+                        <xsl:text>float: right; margin-right: 10px; vertical-align: top; </xsl:text>
+                    </xsl:attribute>
+                    <xsl:attribute name="title">
+                        <xsl:value-of select="$nextURLunquoted"/>
+                    </xsl:attribute>
+                    <xsl:element name="source">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="$nextURLunquoted"/>
+                        </xsl:attribute>
+                        <p>This widget needs a browser supporting the &lt;video&gt; element.</p>
+                    </xsl:element>
+                </xsl:element>
+                <br />
+                <xsl:text> </xsl:text>
+            </xsl:if>
+            -->
             <!-- tail recurse on remainder of list of URLs, otherwise done -->
             <xsl:if test="$restURLs!=''">
                 <xsl:text> </xsl:text>
@@ -8487,6 +8699,177 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         </xsl:element>
                     </xsl:element>
                 </td>
+                <xsl:if test="($toNodeName = 'HAnimDisplacer')">
+                    <!-- this block is duplicated in the Event Graph ROUTE table and HAnimDisplacer eventProducingNodes table -->
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>[debug] here 11! </xsl:text>
+                        <xsl:text>$toNodeName=</xsl:text>
+                        <xsl:value-of select="$toNodeName"/>
+                    </xsl:message> -->
+                    <td style="vertical-align:middle; text-align:right; background-color:{$cellBackgroundColorToNode};">
+                        <!-- destination node DEF -->
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:text>#</xsl:text>
+                                <xsl:value-of select="$toNodeDEF"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="title">
+                                <xsl:text>DEF name</xsl:text>
+                            </xsl:attribute>
+                            <xsl:value-of select="$toNodeDEF"/>
+                        </xsl:element>
+                        <br />
+                        <b><xsl:value-of select="$toNodeName"/></b>
+                        <br />
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="title">
+                                                        <xsl:text>X3D Tooltips: field HAnimDisplacer.coordIndex</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="target">
+                                                            <xsl:text>_tooltip_type</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="href">
+                                                            <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#HAnimDisplacer.coordIndex</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:text>coordIndex</xsl:text>
+                                                    </xsl:element>
+                        <br />
+                                                    <xsl:element name="a">
+                                                        <xsl:attribute name="title">
+                                                        <xsl:text>X3D Tooltips: field HAnimDisplacer.displacements</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="target">
+                                                            <xsl:text>_tooltip_type</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:attribute name="href">
+                                                            <xsl:text>https://www.web3d.org/x3d/content/X3dTooltips.html#HAnimDisplacer.displacements</xsl:text>
+                                                        </xsl:attribute>
+                                                        <xsl:text>displacements</xsl:text>
+                                                    </xsl:element>
+                    </td>                   
+                    <td style="vertical-align:right; text-align:center; background-color:{$cellBackgroundColorFromNode};">
+                        <span title="(no ROUTE)">
+                            <xsl:text>directly modifies</xsl:text>
+                        </span>
+                        <br />
+                        <xsl:variable name="humanoidDEF" select="//HAnimHumanoid[//*[@DEF = $toNodeDEF]]/@DEF"/>
+                        <xsl:element name="a">
+                            <xsl:attribute name="href">
+                                <xsl:text>#</xsl:text>
+                                <xsl:value-of select="$humanoidDEF"/>
+                            </xsl:attribute>
+                            <xsl:attribute name="title">
+                                <xsl:text>DEF name</xsl:text>
+                            </xsl:attribute>
+                            <xsl:value-of select="$humanoidDEF"/>
+                        </xsl:element>
+                        <br />
+                        <b><xsl:text>HAnimHumanoid</xsl:text></b>
+                        <br />
+                        <i><xsl:text>skinCoord</xsl:text></i><xsl:text disable-output-escaping="yes">&amp;#160;vertices</xsl:text> <!-- &nbsp; -->
+                        <br />
+                    </td>
+                    <xsl:variable name="hanimDisplacerNode"    select="//*[local-name()='HAnimDisplacer'][@DEF=$toNodeDEF][1]"/>
+                    <xsl:variable name="hanimDisplacerParent"  select="//*[local-name()='HAnimDisplacer'][@DEF=$toNodeDEF][1]/.."/>
+                    <xsl:variable name="hanimHumanoidAncestor" select="//*[local-name()='HAnimHumanoid'][count(descendant::*[@DEF = $hanimDisplacerNode/@DEF]) ge 1]"/>
+                    <!-- debug
+                    <xsl:message>
+                        <xsl:text>$hanimDisplacerNode DEF=</xsl:text>
+                        <xsl:value-of select="$hanimDisplacerNode/@DEF"/>
+                        <xsl:text>, $hanimDisplacerParent DEF=</xsl:text>
+                        <xsl:value-of select="$hanimDisplacerParent/@DEF"/>
+                        <xsl:text>, $hanimHumanoidAncestor DEF=</xsl:text>
+                        <xsl:value-of select="$hanimHumanoidAncestor/@DEF"/>
+                    </xsl:message> -->
+                    <xsl:variable name="meshDEF">
+                        <xsl:choose>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment') and (count($hanimDisplacerParent/*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="$hanimDisplacerParent/*[starts-with(local-name(),'Coordinate')]/@DEF"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment')">
+                                <xsl:value-of select="$hanimDisplacerParent/@DEF"/>
+                            </xsl:when>
+                            <!-- note that HAnimHumanoid is likely ancestor but might be direct parent
+                        <xsl:text>here... </xsl:text> -->
+                            <xsl:when test="   (count($hanimHumanoidAncestor/*[@containerField='skinCoord'][string-length(@DEF) gt 0]) ge 1)">
+                                <xsl:value-of select="$hanimHumanoidAncestor/*[@containerField='skinCoord']/@DEF"/>
+                            </xsl:when>
+                            <!-- or -->
+                            <xsl:when test="   (count($hanimHumanoidAncestor/*[@containerField='skinCoord'][string-length(@USE) gt 0]) ge 1)">
+                                <xsl:value-of select="$hanimHumanoidAncestor/*[@containerField='skinCoord']/@USE"/>
+                                <xsl:text>_USE_1</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text>no Coordinate mesh found</xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="meshNodeName">
+                        <xsl:choose>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment') and (count($hanimDisplacerParent/*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:value-of select="local-name($hanimDisplacerParent/*[starts-with(local-name(),'Coordinate')])"/>
+                            </xsl:when>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment')">
+                                <xsl:value-of select="local-name($hanimDisplacerParent)"/>
+                            </xsl:when>
+                            <!-- note that HAnimHumanoid is likely ancestor but might be direct parent -->
+                            <xsl:when test="              (count($hanimHumanoidAncestor/*[@containerField='skinCoord']) ge 1)">
+                                <xsl:value-of select="local-name($hanimHumanoidAncestor/*[@containerField='skinCoord'])"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text></xsl:text>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <xsl:variable name="meshNodeDescription">
+                        <xsl:choose>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment') and (count($hanimDisplacerParent/*[starts-with(local-name(),'Coordinate')]) gt 0)">
+                                <xsl:text>sibling </xsl:text>
+                                <xsl:value-of select="$meshNodeName"/>
+                                <xsl:text> node</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimSegment')">
+                                <xsl:text>sibling Coordinate node (not found) TODO ancestor HanimHumanoid?</xsl:text>
+                            </xsl:when>
+                            <xsl:when test="(local-name($hanimDisplacerParent) = 'HAnimHumanoid')">
+                                <xsl:text>HAnimHumanoid is immediate parent node</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:text disable-output-escaping="yes">(ancestor HAnimHumanoid</xsl:text>
+                                <!-- note continuation below -->
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:variable>
+                    <td style="vertical-align:middle; text-align:left; background-color:LightYellow;">
+                        <xsl:choose>
+                            <xsl:when test="($meshDEF = 'no Coordinate mesh found')">
+                                <xsl:text>no Coordinate mesh found!</xsl:text>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:element name="a">
+                                    <xsl:attribute name="href">
+                                        <xsl:text>#</xsl:text>
+                                        <xsl:value-of select="$meshDEF"/>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="title">
+                                        <xsl:text>DEF name</xsl:text>
+                                    </xsl:attribute>
+                                    <xsl:value-of select="$meshDEF"/>
+                                </xsl:element>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                        <br />
+                        <b><xsl:value-of select="$meshNodeName"/></b>
+                        <br />
+                        <xsl:value-of select="$meshNodeDescription"/>
+                        <xsl:if test="($meshNodeDescription = '(ancestor HAnimHumanoid')">
+                            <br />
+                            <xsl:text disable-output-escaping="yes">&#160;</xsl:text>
+                            <i><xsl:text>skinCoord</xsl:text></i><xsl:text disable-output-escaping="yes">&#160;vertices)</xsl:text>
+                        </xsl:if>
+                    </td>
+                </xsl:if>
         <!-- debug
         <xsl:message>
             <xsl:text>[debug] here 5!</xsl:text>
@@ -8592,18 +8975,13 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                                                         <xsl:attribute name="title">
                                                             <xsl:text>same node receives input event on left, and then responds by sending a different output event on right</xsl:text>
                                                         </xsl:attribute>
-                                                        <xsl:text>then</xsl:text>
+                                                        <xsl:text>then</xsl:text><br />
+                                                        <xsl:text>from</xsl:text><br />
+                                                        <xsl:text>same</xsl:text><br />
+                                                        <xsl:text>node</xsl:text>
                                                     </xsl:element>
                                                 </i>
                                             </span>
-                                            <br />
-                                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                                            <xsl:text>&#10;</xsl:text>
-                                            <br />
-                                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
-                                            <xsl:text>&#10;</xsl:text>
-                                            <br />
-                                            <xsl:text disable-output-escaping="yes">&amp;#160;</xsl:text> <!-- &nbsp; -->
                                             <xsl:text>&#10;</xsl:text>
                                         </td>
 
@@ -9826,6 +10204,17 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                     ($parentElementName='Tangent' and $attributeName='vector')">
 			  <xsl:text>MFVec4f</xsl:text>
 		  </xsl:when>
+		  <!-- SFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='SFQuaternion')">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='MFQuaternion')    or 
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
+		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
 		  <xsl:when test="
@@ -10151,7 +10540,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
         <xsl:variable name="shortcutIconTarget">
             <xsl:choose>
                 <xsl:when test="$publishedInX3dModelArchives">
-                    <xsl:text>_top</xsl:text>
+                    <xsl:text>#</xsl:text><!-- to top -->
                 </xsl:when>
                 <xsl:otherwise>
                     <xsl:text>_blank</xsl:text>
@@ -10168,13 +10557,26 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                 <xsl:text>X3D Model Documentation: </xsl:text>
                 <xsl:value-of select="$titleString"/>
                 <!-- add shortcut link to upper right corner of page -->
+                <!-- debug
+                <xsl:if test="$publishedInX3dModelArchives">
+                    <xsl:message>
+                        <xsl:text>*** meta title=</xsl:text>
+                        <xsl:value-of select="//meta[@name = 'title']/@content"/>
+                        <xsl:text>, $publishedInX3dModelArchives=</xsl:text>
+                        <xsl:value-of select="$publishedInX3dModelArchives"/>
+                        <xsl:text>, $shortcutIconUrl=</xsl:text>
+                        <xsl:value-of select="$shortcutIconUrl"/>
+                        <xsl:text>, $shortcutIconTooltip=</xsl:text>
+                        <xsl:value-of select="$shortcutIconTooltip"/>
+                    </xsl:message>
+                </xsl:if> -->
                 <span style="position: relative; float: right; margin-right: 10px; font-size: smaller">
                     <xsl:element name="a">
                         <xsl:attribute name="href">
                             <xsl:value-of select="$shortcutIconUrl"/>
                         </xsl:attribute>
                         <xsl:attribute name="target">
-                            <xsl:text>_top</xsl:text>
+                            <xsl:text>_blank</xsl:text>
                         </xsl:attribute>
                         <xsl:attribute name="title">
                             <xsl:value-of select="$shortcutIconTooltip"/>
@@ -10182,7 +10584,7 @@ span.unit      {title: 'unit defines scene scaling factors for length, angle, ma
                         <!-- using firefox for conversion: Inspector > Copy > Image-Data-URL -->
                         <!-- https://stackoverflow.com/questions/10942312/how-to-generate-a-data-uri -->
                         <!-- X3DtextIcon16.png -->
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg=="/>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABpUlEQVQ4T2NsuZD///f/XwzkAsbM9aH/f/75Rq5+Bsb/QEC2bqBGyg34uHf3fz4nF7gj3sybxSCSlMaw5upisFiIdiyY3rvvMsO58/fBbCNDRQZnJ10wm/Ghtep/scU7GDgUlRgeh3oysFs6MCy3/M1w8MYmiGIle4Ya+24GL992hocPXjHIK4gxXLlwn8EnwIxh2uQUBsbXc2f+/75mIQN/SSPDh+YiBrn9lxhaDpaCNYGAzwx9hi0ZF8EGODpoM5QW+4HFRThjGd58XwwJA5DN/5/eYhBbuhvsEhB4/Okhw9QTbQxff35imOy7HMMAmIFgA54VZDD8ObWbQe7YXXhYHH9yiGHOiS4wf27IFtwGfL939/+rWA8GNudghr+P7zNIz1uBEqu4vKCtW8hQWOjDwPjI0+o/Z0g8OOQfOeoxCNT2MSQ8rGIode1hsJSxwxoG9++/ZDDVKoGEAcgA2W1HwbZ+2rcHHJCnppQyLDjcAxaz0HSDx8KpPdfgruuYmsCQkuRMhYREcVIuzNnw/8f33ygBRwqHccHcU/9//fpLih4UtQCM2snm2Klv7gAAAABJRU5ErkJggg==" alt="go to online X3D Example Archives model page"/>
                     </xsl:element>
                 </span>
             </h3>

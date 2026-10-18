@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
   <head>
    <meta name="title"       content="X3dToX3domX_ITE.xslt" />
    <meta name="author"      content="Don Brutzman" />
@@ -23,39 +56,6 @@ X3DOM references
 - Node support  https://doc.x3dom.org/author/nodes.html
 -               https://andreasplesch.github.io/x3dom/dist/doc/author/nodes.html
 
--->
-<!--
-Copyright (c) 2001-2024 held by the author(s).  All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and https://www.MovesInstitute.org)
-      nor the names of its contributors may be used to endorse or
-      promote products derived from this software without specific
-      prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
 -->
 <xsl:stylesheet version="2.0" xmlns='http://www.w3.org/1999/xhtml' xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <!-- default parameter values that can be overridden when invoking this stylesheet -->
@@ -1913,6 +1913,11 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                       not(local-name(..)='DISEntityTypeMapping' and
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats') and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY')))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -2220,6 +2225,7 @@ On 6/19/2013 7:12 AM, Jung, Yvonne wrote:
                 $notDefaultDIS2        and
                 $notDefaultDIS3        and
                 $notDefaultDIS4        and
+                $notDefaultGaussianSplats   and
                 $notDefaultGeo         and
                 $notDefaultHAnim1      and
                 $notDefaultHAnim2      and

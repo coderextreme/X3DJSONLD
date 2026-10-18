@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-Copyright (c) 2001-2026 held by the author(s).  All rights reserved.
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -12,9 +14,7 @@ are met:
       notice, this list of conditions and the following disclaimer
       in the documentation and/or other materials provided with the
       distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and https://www.MovesInstitute.org)
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
       nor the names of its contributors may be used to endorse or
       promote products derived from this software without specific
       prior written permission.
@@ -1209,20 +1209,22 @@ POSSIBILITY OF SUCH DAMAGE.
                                         starts-with($attributeType,'SFVec') or starts-with($attributeType,'MFVec') or contains($attributeType,'Matrix') or 
                                     ((local-name()='value') and 
                                         starts-with($attributeType, 'SFVec') or starts-with($attributeType, 'MFVec')   or
-                                        contains($attributeType, 'Color')  or    contains($attributeType, 'Rotation')) or
+                                        contains($attributeType, 'Color')  or    contains($attributeType, 'Rotation')  or contains($attributeType, 'Quaternion')) or
                                     contains($attributeType, 'Matrix')  or
                                     ((local-name()='value') and 
-                                        (          (../@type='MFFloat')    or  
-                                                   (../@type='MFDouble')   or            (../@type='MFTime')         or
-                                                   (../@type='SFRotation') or            (../@type='MFRotation')     or
-                                        starts-with(../@type,'SFVec')      or starts-with(../@type,'MFVec')          or
-                                           contains(../@type,'Color')      or    contains(../@type,'Matrix')))       or
+                                        (          (../@type='MFFloat')      or  
+                                                   (../@type='MFDouble')     or            (../@type='MFTime')          or
+                                                   (../@type='SFQuaternion') or            (../@type='MFQuaternion')    or
+                                                   (../@type='SFRotation')   or            (../@type='MFRotation')      or
+                                        starts-with(../@type,'SFVec')        or starts-with(../@type,'MFVec')           or
+                                           contains(../@type,'Color')        or    contains(../@type,'Matrix')))        or
                                     (contains(local-name(../..),'Proto') and 
-                                        (  ($fieldValueType='MFFloat')     or
-                                           ($fieldValueType='MFDouble')    or        ($fieldValueType='MFTime')      or
-                                           ($fieldValueType='SFRotation')  or        ($fieldValueType='MFRotation')  or
-                                starts-with($fieldValueType,'SFVec')       or starts-with($fieldValueType,'MFVec')   or
-                                   contains($fieldValueType,'Color')       or    contains($fieldValueType,'Matrix')))">
+                                        (  ($fieldValueType='MFFloat')       or
+                                           ($fieldValueType='MFDouble')      or        ($fieldValueType='MFTime')       or
+                                           ($fieldValueType='SFQuaternion')  or        ($fieldValueType='MFQuaternion') or
+                                           ($fieldValueType='SFRotation')    or        ($fieldValueType='MFRotation')   or
+                                starts-with($fieldValueType,'SFVec')         or starts-with($fieldValueType,'MFVec')    or
+                                   contains($fieldValueType,'Color')         or    contains($fieldValueType,'Matrix')))">
                         <xsl:text>[</xsl:text>
                         <!--  array values require comma between values in JSON encoding -->
                         <xsl:call-template name="output-reals">
@@ -3172,6 +3174,11 @@ POSSIBILITY OF SUCH DAMAGE.
                       not(local-name(..)='DISEntityTypeMapping' and 
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -3467,33 +3474,34 @@ POSSIBILITY OF SUCH DAMAGE.
                 (count(//ds:Signature) > 0) or
                 (local-name(..)='HAnimHumanoid' and local-name()='version') or(count(//ds:Signature) > 0) or
                 (
-                $notImplicitEvent1 and
-                $notImplicitEvent2 and
-                $notImplicitEvent3 and
-                $notDefaultFieldValue1 and
-                $notDefaultFieldValue1a and
-                $notDefaultFieldValue2 and
-                $notDefaultFieldValue3 and
-                $notDefaultFieldValue4 and
-                $notDefaultFieldValue5 and
-                $notDefaultFieldValue6 and
-                $notDefaultFieldValue7 and
-                $notDefaultFieldValue8 and
-                $notDefaultFieldValue9 and
-                $notDefaultFieldValue10 and
-                $notDefaultCAD         and
-                $notDefaultDIS1        and
-                $notDefaultDIS2        and
-                $notDefaultDIS3        and
-                $notDefaultDIS4        and
-                $notDefaultGeo         and
-                $notDefaultHAnim1      and
-                $notDefaultHAnim2      and
-                $notDefaultNurbs       and
-                $notDefaultGeometry2D  and
-                $notDefaultVolume      and
-                $notDefaultFollower    and
-                $notDefaultShader      and
+                $notImplicitEvent1          and
+                $notImplicitEvent2          and
+                $notImplicitEvent3          and
+                $notDefaultFieldValue1      and
+                $notDefaultFieldValue1a     and
+                $notDefaultFieldValue2      and
+                $notDefaultFieldValue3      and
+                $notDefaultFieldValue4      and
+                $notDefaultFieldValue5      and
+                $notDefaultFieldValue6      and
+                $notDefaultFieldValue7      and
+                $notDefaultFieldValue8      and
+                $notDefaultFieldValue9      and
+                $notDefaultFieldValue10     and
+                $notDefaultCAD              and
+                $notDefaultDIS1             and
+                $notDefaultDIS2             and
+                $notDefaultDIS3             and
+                $notDefaultDIS4             and
+                $notDefaultGaussianSplats   and
+                $notDefaultGeo              and
+                $notDefaultHAnim1           and
+                $notDefaultHAnim2           and
+                $notDefaultNurbs            and
+                $notDefaultGeometry2D       and
+                $notDefaultVolume           and
+                $notDefaultFollower         and
+                $notDefaultShader           and
                 $notDefaultRigidBodyPhysics and
                 $notDefaultContainerField1  and
                 $notDefaultContainerField2  and
@@ -4375,6 +4383,17 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($localFieldType='MFVec4f') or
                     ($parentElementName='Tangent'                    and $attributeName='vector')">
 			  <xsl:text>MFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- SFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='SFQuaternion')">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='MFQuaternion')    or 
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->

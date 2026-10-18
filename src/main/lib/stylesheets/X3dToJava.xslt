@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
   <head>
    <meta name="title"       content="X3dToJava.xslt" />
    <meta name="creator"     content="Don Brutzman" />
@@ -22,40 +55,6 @@ Recommended tools:
 
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
-
-<!--
-Copyright (c) 1995-2024 held by the author(s).  All rights reserved.
-
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions
-are met:
-
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above copyright
-      notice, this list of conditions and the following disclaimer
-      in the documentation and/or other materials provided with the
-      distribution.
-    * Neither the names of the Naval Postgraduate School (NPS)
-      Modeling Virtual Environments and Simulation (MOVES) Institute
-      (https://www.nps.edu and https://www.MovesInstitute.org)
-      nor the names of its contributors may be used to endorse or
-      promote products derived from this software without specific
-      prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
-FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
-COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
-INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
-BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
-ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
-POSSIBILITY OF SUCH DAMAGE.
--->
 
 <xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -1067,6 +1066,15 @@ POSSIBILITY OF SUCH DAMAGE.
             <xsl:value-of select="@containerField"/>
             <xsl:text>")</xsl:text>            
         </xsl:if>
+        <!-- debug
+            <xsl:message>
+                <xsl:text>***:process-attributes-in-order </xsl:text>
+                <xsl:value-of select="local-name()"/>
+                <xsl:if test="(string-length(@DEF) gt 0)">
+                    <xsl:text> @DEF='</xsl:text>
+                    <xsl:value-of select="@DEF"/>
+                </xsl:if>
+            </xsl:message> -->
 		<!-- handle attribute(s) if any -->
 		<xsl:call-template name="process-attributes-in-order">
 			<xsl:with-param name="indent"><xsl:value-of select="$indent"/></xsl:with-param>
@@ -2425,6 +2433,11 @@ POSSIBILITY OF SUCH DAMAGE.
                       not(local-name(..)='DISEntityTypeMapping' and 
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -2739,6 +2752,14 @@ POSSIBILITY OF SUCH DAMAGE.
                 <xsl:text>'</xsl:text>
             </xsl:message>
         </xsl:if>
+            <xsl:message>
+                <xsl:text>$notDefaultGaussianSplats='</xsl:text>
+                <xsl:value-of select="$notDefaultGaussianSplats"/>
+                <xsl:text>'</xsl:text>
+                <xsl:text> $notImplicitEvent1='</xsl:text>
+                <xsl:value-of select="$notImplicitEvent1"/>
+                <xsl:text>'</xsl:text>
+            </xsl:message>
         -->
                     
         <!-- provide attribute output only if it is not a default value, or if scene has a digital signature -->
@@ -2767,6 +2788,7 @@ POSSIBILITY OF SUCH DAMAGE.
                 $notDefaultDIS2        and
                 $notDefaultDIS3        and
                 $notDefaultDIS4        and
+                $notDefaultGaussianSplats   and
                 $notDefaultGeo         and
                 $notDefaultHAnim1      and
                 $notDefaultHAnim2      and
@@ -3781,6 +3803,10 @@ POSSIBILITY OF SUCH DAMAGE.
 			<xsl:text>import org.web3d.x3d.jsail.Followers.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
 		</xsl:if>
+		<xsl:if test="//*[name()='GaussianSplats']">
+			<xsl:text>import org.web3d.x3d.jsail.GaussianSplats.*;</xsl:text>
+			<xsl:text>&#10;</xsl:text>
+		</xsl:if>
 		<xsl:if test="//*[contains(local-name(),'2D')]">
 			<xsl:text>import org.web3d.x3d.jsail.Geometry2D.*;</xsl:text>
 			<xsl:text>&#10;</xsl:text>
@@ -3940,7 +3966,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                             ($type = 'SFColor') or ($type = 'MFColor')">
                     <xsl:text>3</xsl:text>
             </xsl:when>
-            <xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or
+            <xsl:when test=" contains($type,'FVec4') or contains($type,'FRotation') or contains($type,'FQuaternion') or
                                             ($type = 'SFColorRGBA')  or ($type = 'MFColorRGBA')">
                     <xsl:text>4</xsl:text>
             </xsl:when>
@@ -3951,9 +3977,10 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:text>16</xsl:text>
             </xsl:when>
             <!-- now test and report incorrect-case variants -->
-            <xsl:when test="contains($lowerCaseType,'fbool')   or contains($lowerCaseType,'fint32') or contains($lowerCaseType,'ffloat') or
-                            contains($lowerCaseType,'fdouble') or contains($lowerCaseType,'ftime')  or contains($lowerCaseType,'fstring') or
-                            contains($lowerCaseType,'fimage')  or contains($lowerCaseType,'fnode')">
+            <xsl:when test="(contains($lowerCaseType,'fbool')   or contains($lowerCaseType,'fint32') or contains($lowerCaseType,'ffloat') or
+                             contains($lowerCaseType,'fdouble') or contains($lowerCaseType,'ftime')  or contains($lowerCaseType,'fstring') or
+                             contains($lowerCaseType,'fimage')  or contains($lowerCaseType,'fnode') or contains($lowerCaseType,'fquaternion')) and
+                            not(starts-with($type,'M') or starts-with($type,'S'))">
                     <xsl:text>1</xsl:text>
                     <xsl:message>
                         <xsl:text>*** Error: Incorrect capitalization of type name ('</xsl:text><xsl:value-of select="$type"/><xsl:text>')</xsl:text>
@@ -3969,7 +3996,7 @@ POSSIBILITY OF SUCH DAMAGE.
                                             ($type = 'sfcolor') or ($type = 'mfcolor')">
                     <xsl:text>3</xsl:text>
             </xsl:when>
-            <xsl:when test=" contains($lowerCaseType,'fvec4') or contains($lowerCaseType,'frotation') or
+            <xsl:when test=" contains($lowerCaseType,'fvec4') or contains($lowerCaseType,'frotation') or contains($lowerCaseType,'fquaternion') or
                                             ($type = 'sfcolorrgba')  or ($type = 'mfcolorrgba')">
                     <xsl:text>4</xsl:text>
                     <xsl:message>
@@ -4303,6 +4330,7 @@ POSSIBILITY OF SUCH DAMAGE.
                             ($parentElementName='TextureProperties'          and (starts-with($attributeName,'boundaryMode') or ($attributeName='magnificationFilter') or ($attributeName='minificationFilter') or ($attributeName='textureCompression'))) or
                             ($parentElementName='WorldInfo'                  and $attributeName='title') or
 			    ($parentElementName='X3D'                        and (($attributeName='profile') or ($attributeName='version') or ($attributeName='noNamespaceSchemaLocation'))) or
+                            ($parentElementName='GaussianSplats'             and ($attributeName='colorSpace')) or
                             ($parentElementName='XvlShell'                   and $attributeName='shellType')">
 			  <xsl:text>SFString</xsl:text>
 		  </xsl:when>
@@ -4441,6 +4469,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='TimeSensor' and $attributeName='loop') or
                     ($parentElementName='TwoSidedMaterial' and $attributeName='separateBackColor') or
                     (contains($parentElementName,'Viewpoint') and ($attributeName='jump' or $attributeName='retainUserOffsets' or $attributeName='displayed')) or
+                    ($parentElementName='GaussianSplats' and ($attributeName='pointerEvents')) or
                     ($parentElementName='VolumeEmitter' and $attributeName='internal')">
 			  <xsl:text>SFBool</xsl:text>
 		  </xsl:when>
@@ -4665,6 +4694,7 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($parentElementName='TextureCoordinateGenerator' and $attributeName='parameter') or
                     ($parentElementName='Viewport' and $attributeName='clipBoundary') or
                     ($parentElementName='WaveShaper' and $attributeName='curve') or
+                    ($parentElementName='GaussianSplats' and ($attributeName='opacities')) or
                     ($parentElementName='XvlShell' and ($attributeName='vertexRound' or $attributeName='edgeRound'))">
 			  <xsl:text>MFFloat</xsl:text>
 		  </xsl:when>
@@ -4836,6 +4866,8 @@ POSSIBILITY OF SUCH DAMAGE.
                     (contains($parentElementName,'Coordinate')       and $attributeName='point') or
                     ($parentElementName='Extrusion'                  and $attributeName='spine') or
                     ($parentElementName='HAnimDisplacer'             and $attributeName='displacements') or
+                    ($parentElementName='GaussianSplats'             and (($attributeName='positions') or ($attributeName='scales') or 
+                                                                           starts-with($attributeName,'sphericalHarmonicsDegree'))) or
                     ($parentElementName='XvlShell' and ($attributeName='edgeBeginVector' or $attributeName='edgeEndVector'))">
 			  <xsl:text>MFVec3f</xsl:text>
 		  </xsl:when>
@@ -4851,6 +4883,17 @@ POSSIBILITY OF SUCH DAMAGE.
                     ($localFieldType='MFVec4f') or
                     ($parentElementName='Tangent'                    and $attributeName='vector')">
 			  <xsl:text>MFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- SFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='SFQuaternion')">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='MFQuaternion')    or 
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->

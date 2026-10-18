@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
+Web3D Consortium Open-Source License for Models and Software
+
+Copyright (c) 1995-2026 held by the author(s).  All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer
+      in the documentation and/or other materials provided with the
+      distribution.
+    * Neither the name of the Web3D Consortium (https://www.web3D.org)
+      nor the names of its contributors may be used to endorse or
+      promote products derived from this software without specific
+      prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+-->
+<!--
     title       : X3dToTurtle.xslt
     created     : 16 September 2019
     creator     : Jakub Flotyński and Don Brutzman
@@ -20,6 +53,8 @@
     <!-- https://www.saxonica.com/html/documentation12/extensions/attributes -->
 
     <xsl:param name="defaultModelPrefix"><xsl:text></xsl:text></xsl:param>
+    
+    <!-- TODO parameterize X3D version for stylesheet in order to match SPARQL queries of interest -->
 
     <xsl:variable name="x3dVersion" select="normalize-space(//X3D/@version)"/>
     <xsl:variable name="isX3D3" select="starts-with($x3dVersion,'3')"/>
@@ -81,13 +116,13 @@
 @prefix schema:  <http://schema.org/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.0.xsd#> .
-@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.0#> .
+@prefix x3d:     <https://www.web3d.org/specifications/x3d-4.1.xsd#> .
+@prefix x3do:    <https://www.web3d.org/specifications/X3dOntology4.1#> .
 
 ]]></xsl:text>
 <!--
 [ rdf:type owl:Ontology ;
-   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.0.ttl>
+   owl:imports <file:/E:/Rackstation-SVN/Papers/2019/IC3D-X3D/Paper/Files/X3dOntology4.1.ttl>
  ] .
 -->
 		<xsl:apply-templates select="/X3D" >
@@ -841,6 +876,11 @@
                                   not(local-name(..)='DISEntityTypeMapping' and
                                   ((local-name()='containerField') and (string(.)='mapping')) or
                                   ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
                     <xsl:variable name="notDefaultGeo"
                                   select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and
                                   ((local-name()='geoCenter' and (string(.)='0 0 0' or string(.)='0.0 0.0 0.0')) or
@@ -1135,33 +1175,34 @@
                             (count(//ds:Signature) > 0) or
                             (local-name(..)='HAnimHumanoid' and local-name()='version') or
                             (
-                            $notImplicitEvent1 and
-                            $notImplicitEvent2 and
-                            $notImplicitEvent3 and
-                            $notDefaultFieldValue1 and
-                            $notDefaultFieldValue1a and
-                            $notDefaultFieldValue2 and
-                            $notDefaultFieldValue3 and
-                            $notDefaultFieldValue4 and
-                            $notDefaultFieldValue5 and
-                            $notDefaultFieldValue6 and
-                            $notDefaultFieldValue7 and
-                            $notDefaultFieldValue8 and
-                            $notDefaultFieldValue9 and
-                            $notDefaultFieldValue10 and
-                            $notDefaultCAD         and
-                            $notDefaultDIS1        and
-                            $notDefaultDIS2        and
-                            $notDefaultDIS3        and
-                            $notDefaultDIS4        and
-                            $notDefaultGeo         and
-                            $notDefaultHAnim1      and
-                            $notDefaultHAnim2      and
-                            $notDefaultNurbs       and
-                            $notDefaultGeometry2D  and
-                            $notDefaultVolume      and
-                            $notDefaultFollower    and
-                            $notDefaultShader      and
+                            $notImplicitEvent1          and
+                            $notImplicitEvent2          and
+                            $notImplicitEvent3          and
+                            $notDefaultFieldValue1      and
+                            $notDefaultFieldValue1a     and
+                            $notDefaultFieldValue2      and
+                            $notDefaultFieldValue3      and
+                            $notDefaultFieldValue4      and
+                            $notDefaultFieldValue5      and
+                            $notDefaultFieldValue6      and
+                            $notDefaultFieldValue7      and
+                            $notDefaultFieldValue8      and
+                            $notDefaultFieldValue9      and
+                            $notDefaultFieldValue10     and
+                            $notDefaultCAD              and
+                            $notDefaultDIS1             and
+                            $notDefaultDIS2             and
+                            $notDefaultDIS3             and
+                            $notDefaultDIS4             and
+                            $notDefaultGaussianSplats   and
+                            $notDefaultGeo              and
+                            $notDefaultHAnim1           and
+                            $notDefaultHAnim2           and
+                            $notDefaultNurbs            and
+                            $notDefaultGeometry2D       and
+                            $notDefaultVolume           and
+                            $notDefaultFollower         and
+                            $notDefaultShader           and
                             $notDefaultRigidBodyPhysics and
                             $notDefaultContainerField1  and
                             $notDefaultContainerField2  and
@@ -2484,6 +2525,17 @@
                     ($localFieldType='MFVec4f') or
                     ($parentElementName='Tangent'                    and $attributeName='vector')">
 			  <xsl:text>MFVec4f</xsl:text>
+		  </xsl:when>
+		  <!-- SFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='SFQuaternion')">
+			  <xsl:text>SFQuaternion</xsl:text>
+		  </xsl:when>
+		  <!-- MFQuaternion -->
+		  <xsl:when test="
+                    ($localFieldType='MFQuaternion')    or 
+                    ($parentElementName='GaussianSplats' and ($attributeName='orientations'))">
+			  <xsl:text>MFQuaternion</xsl:text>
 		  </xsl:when>
 		  <!-- SFRotation -->
 		  <!-- note TextureTransform tests must precede these default checks -->
