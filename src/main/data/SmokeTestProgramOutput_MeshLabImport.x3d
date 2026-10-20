@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.1//EN" "https://www.web3d.org/specifications/x3d-3.1.dtd">
+<X3D profile='Immersive' version='3.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-3.1.xsd'>
+  <head>
+    <meta content='CleatClamp.MeshLab.x3d' name='title'/>
+    <meta content='Generated from Meshlab X3D Exported' name='description'/>
+    <meta content='9 June 2021' name='created'/>
+    <meta content='Meshlab X3D Exported, http://meshlab.sourceforge.net' name='generator'/>
+  </head>
+  <Scene>
+    <Shape>
+      <IndexedFaceSet solid='false'>
+        <Coordinate/>
+      </IndexedFaceSet>
+    </Shape>
+  </Scene>
+</X3D>
