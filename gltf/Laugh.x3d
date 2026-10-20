@@ -46,6 +46,7 @@
         position='0 1.55 0.55'
         centerOfRotation='0 1.5675 -0.0256'/>
     <Inline DEF='LaughingUpperSkeleton'
+        global='true'
         url='"LaughingUpperSkeleton.glb"'/>
     <BooleanToggle DEF='ToggleTouch'/>
     <Transform DEF='Box'
