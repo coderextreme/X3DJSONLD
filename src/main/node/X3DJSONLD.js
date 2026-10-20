@@ -370,7 +370,11 @@ ConvertObject : function(xmlDoc, key, object, element, path, containerField) {
 			});
 			*/
 		} else if (key === '#sourceCode') {
-			X3DJSONLD.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
+			if (process.platform === "win32") {
+				X3DJSONLD.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
+			} else {
+				X3DJSONLD.CDATACreateFunction(xmlDoc, element, object[key].join("\n")+"\n");
+			}
 		} else {
 			if (key === 'connect' || key === 'fieldValue' || key === 'field' || key === 'meta' || key === 'component' || key === 'unit') {
 				/*
