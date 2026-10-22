@@ -269,7 +269,11 @@ ConvertChildren : function(xmlDoc, parentkey, object, element, path) {
 },
 
 jsonSetContainerField : function(object, containerField) {
-	object["@containerField"] = containerField;
+	if (
+	    containerField !== "texCoord" // &&
+	) {
+		object["@containerField"] = containerField;
+	}
 },
 
 /**
@@ -299,6 +303,15 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		    containerField !== "source" &&
 		    containerField !== "texture" &&
 		    containerField !== "value" &&
+		    containerField !== "color" &&
+		    containerField !== "emitter" &&
+		    containerField !== "fillProperties" &&
+		    containerField !== "geoOrigin" &&
+		    containerField !== "lineProperties" &&
+		    containerField !== "tangent" &&
+		    containerField !== "texCoord" &&
+		    containerField !== "textureProperties" &&
+		    containerField !== "textureTransform" &&
 		    containerField !== 'coord') {
 
 			X3DJSONLD.elementSetAttribute(child, 'containerField', containerField);
@@ -315,6 +328,7 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
 		.replace(/&amp;/g, "&");
+	/*
 	do {
 		str = y;
 		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
@@ -322,6 +336,7 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 			// console.error("CDATA Replacing",str,"with",y);
 		}
 	} while (y != str);
+	*/
 	var cdata = xmlDoc.createCDATASection(y);
 	element .appendChild(cdata);
 },
@@ -741,3 +756,14 @@ setDocument : function(doc) {
 var Browser = X3DJSONLD.Browser;
 
 export default X3DJSONLD;
+>"children"
+>"color"
+>"emitter"
+>"fillProperties"
+>"geoOrigin"
+>"lineProperties"
+>"tangent"
+>"texCoord"
+>"textureProperties"
+>"textureTransform"
+>"value"
