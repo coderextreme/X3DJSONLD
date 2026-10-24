@@ -756,14 +756,3 @@ setDocument : function(doc) {
 var Browser = X3DJSONLD.Browser;
 
 export default X3DJSONLD;
->"children"
->"color"
->"emitter"
->"fillProperties"
->"geoOrigin"
->"lineProperties"
->"tangent"
->"texCoord"
->"textureProperties"
->"textureTransform"
->"value"

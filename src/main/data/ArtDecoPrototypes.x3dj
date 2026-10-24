@@ -52,7 +52,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 October 2026"
+            "@content":"24 October 2026"
           },
           {
             "@name":"generator",
@@ -750,7 +750,7 @@
             {
               "@description":"ArtDecoPrototypeExample",
               "@parameter":["target=_blank"],
-              "@url":["../data/ArtDecoExamples.json","../data/ArtDecoExamples.x3d","ArtDecoExamples.json","ArtDecoExamples.x3d"],
+              "@url":["../data/ArtDecoExamples.x3dj","../data/ArtDecoExamples.json","../data/ArtDecoExamples.x3d","ArtDecoExamples.x3dj","ArtDecoExamples.json","ArtDecoExamples.x3d"],
               "-children":[
                 { "Shape":
                   {
