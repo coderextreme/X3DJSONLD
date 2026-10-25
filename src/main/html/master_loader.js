@@ -128,6 +128,7 @@ async function processPendingXmlToJson() {
 			[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
 			$('#xml').val(xmlString);
 		    } catch (e) {
+			console.trace(e);
 			$('#xml').val("Error converting JSON to XML: " + e.message);
 			return;
 		    }
@@ -259,6 +260,7 @@ export async function updateFromJson(jsonObj, sourceFileName, urlForX3dom = null
 		[ element, xmlString] = X3DJSONLD.loadJsonIntoXml(document.implementation, jsonObj, sourceFileName);
 		$('#xml').val(xmlString);
 	    } catch (e) {
+		console.trace(e);
 		$('#xml').val("Error converting JSON to XML: " + e.message);
 		return;
 	    }
