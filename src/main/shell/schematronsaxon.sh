@@ -1,0 +1,5 @@
+#!/bin/bash
+STYLESHEETS=/home/yottzumm/www.web3d.org/x3d/stylesheets
+TEMP=/tmp/schematron.$$
+java -Xmx2g -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.totalEntitySizeLimit=50000000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -cp ${STYLESHEETS}/lib/xmlresolver-5.3.3.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3-data.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3-data.jar:${STYLESHEETS}/java/lib/saxon-he-12.9.jar net.sf.saxon.Transform -s:"$1" -xsl:${STYLESHEETS}/java/lib/stylesheets/X3dSchematronValidityChecks.xslt  -o:"${TEMP}"
+java -Xmx2g -Djdk.xml.entityExpansionLimit=120000 -Djdk.xml.totalEntitySizeLimit=50000000 -Djdk.xml.maxGeneralEntitySizeLimit=50000000 -cp ${STYLESHEETS}/lib/xmlresolver-5.3.3.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3-data.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3.jar:${STYLESHEETS}/lib/xmlresolver-5.3.3-data.jar:${STYLESHEETS}/java/lib/saxon-he-12.9.jar net.sf.saxon.Transform -s:"${TEMP}" -xsl:${STYLESHEETS}/java/lib/stylesheets/SvrlReportText.xslt -o:"$1".new.schematron.txt
