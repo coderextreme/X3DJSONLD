@@ -5,6 +5,7 @@ python nodeclasses.py
 python pyclasses.py
 python rubyclasses.py
 python truffleruby.py
+python clojure.py
 # HAnimSets.py:with open("Joints.txt", "w") as f:
 # HAnimSets.py:with open("Sites.txt", "w") as f:
 # HAnimSets.py:with open("Segments.txt", "w") as f:
