@@ -76,6 +76,7 @@ var initialFileData = [
             ]},
             { name: "Proto Examples (proto.html)", files: [
 		"../data/ArtDecoExamples.x3dj",
+		"../data/ArtDecoExamples.x3d",
 		"../data/ArtDecoPrototypes.x3dj",
 		"../data/asmallbox.x3dj",
 		"../data/bub.x3dj",

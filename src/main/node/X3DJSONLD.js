@@ -297,7 +297,6 @@ CreateElement : function(xmlDoc, key, x3djsonNS, containerField) {
 		    containerField !== 'geometry' &&
 		    containerField !== "appearance" &&
 		    containerField !== "fontStyle" &&
-		    containerField !== "material" &&
 		    containerField !== "metadata" &&
 		    containerField !== "normal" &&
 		    containerField !== "source" &&
