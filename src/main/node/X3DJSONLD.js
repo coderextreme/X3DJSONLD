@@ -385,7 +385,7 @@ ConvertObject : function(xmlDoc, key, object, element, path, containerField) {
 			});
 			*/
 		} else if (key === '#sourceCode') {
-			if (process.platform === "win32") {
+			if (typeof process !== 'undefined' && process.platform === "win32") {
 				X3DJSONLD.CDATACreateFunction(xmlDoc, element, object[key].join("\r\n")+"\r\n");
 			} else {
 				X3DJSONLD.CDATACreateFunction(xmlDoc, element, object[key].join("\n")+"\n");

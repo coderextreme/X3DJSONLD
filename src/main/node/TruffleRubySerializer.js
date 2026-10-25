@@ -59,7 +59,8 @@ TruffleRubySerializer.prototype = {
 			document.getElementById('truffleruby').value = str;
 			return str;
 		      } catch (error) {
-			console.trace('Error loading Ruby file:', error);
+			console.trace(error);
+			console.error('Error loading Ruby file:', error);
 			document.getElementById('truffleruby').value = 'Error loading file: ' + error.message;
 		      }
 		    })(this);
