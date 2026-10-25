@@ -7,6 +7,7 @@ import ClojureSerializer from '../node/ClojureSerializer.js';
 import JavaSerializer from '../node/JavaSerializer.js';
 import GraalPySerializer from '../node/GraalPySerializer.js';
 import JRubySerializer from '../node/JRubySerializer.js';
+import TruffleRubySerializer from '../node/TruffleRubySerializer.js';
 import convertJsonToStl from '../node/convertJsonToStl.js';
 import convertStlToJson from '../node/convertStlToJson.js';
 import convertPlyToJson from '../node/convertPlyToJson.js';
@@ -92,6 +93,14 @@ async function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes
         let jRubySerializer = new JRubySerializer();
         $('#jruby').val(jRubySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
     } catch (e) { $('#jruby').val("Error generating JRuby: " + e.message); }
+
+    try {
+        let truffleRubySerializer = new TruffleRubySerializer();
+        $('#truffleruby').val(truffleRubySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) {
+	    $('#truffleruby').val("Error generating TruffleRuby: " + e.message);
+	    console.trace(e);
+    }
 
 }
 
@@ -284,6 +293,7 @@ export async function updateFromXml(xmlString, sourceFileName, urlForX3dom) {
     $('#cpp').val('');
     $('#clojure').val('');
     $('#jruby').val('');
+    $('#truffleruby').val('');
     $('#ply').val('');
 
     // --- FIX START ---
