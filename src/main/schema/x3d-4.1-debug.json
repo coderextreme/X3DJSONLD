@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/10/05 12:11:03",
+        "title": "X3D V4.1 JSON Schema, generated 2026/10/25 02:24:58",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -12587,8 +12587,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"RIGHT",
 									"CENTER",
+									"RIGHT",
 									"LEFT"
 								],
 								"default":"CENTER",
@@ -12597,8 +12597,8 @@
 							,
 							{
 								"enum": [
-									"TOP",
 									"BOTTOM",
+									"TOP",
 									"CENTER"
 								],
 								"default":"CENTER",
@@ -12630,8 +12630,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
+									"PIXEL",
 									"WORLD"
 								],
 								"default":"WORLD",
@@ -12640,8 +12640,8 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
+									"PIXEL",
 									"WORLD"
 								],
 								"default":"WORLD",
@@ -12658,10 +12658,10 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
-									"FRACTION",
 									"STRETCH",
-									"NONE"
+									"PIXEL",
+									"NONE",
+									"FRACTION"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12669,10 +12669,10 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
-									"FRACTION",
 									"STRETCH",
-									"NONE"
+									"PIXEL",
+									"NONE",
+									"FRACTION"
 								],
 								"default":"NONE",
 								"type":"string"
@@ -12697,8 +12697,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
+									"PIXEL",
 									"WORLD"
 								],
 								"default":"WORLD",
@@ -12707,8 +12707,8 @@
 							,
 							{
 								"enum": [
-									"PIXEL",
 									"FRACTION",
+									"PIXEL",
 									"WORLD"
 								],
 								"default":"WORLD",
