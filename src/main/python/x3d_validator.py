@@ -872,7 +872,7 @@ def main() -> None:
 
     args = parser.parse_args()
 
-    validate(args.json, None, args.input_file, args.model_file)
+    validateX3DJSON(args.json, None, args.input_file, args.model_file)
 
 def validateX3DJSON(args_json=True, args_input_string=None, args_input_file=None, args_model_file="X3dUnifiedObjectModel-4.1.xml"):
     # Load Model
