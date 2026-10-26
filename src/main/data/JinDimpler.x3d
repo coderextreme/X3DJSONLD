@@ -29,7 +29,7 @@
     <TimeSensor DEF="JinDimpler_Clock" cycleInterval="0.99" enabled="true" loop="true" />
     <EXPORT localDEF="JinDimpler_Clock" AS="JinDimpler_Clock" />
 <ScalarInterpolator DEF="AnimationAdapter_JinDimpler" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
-    <HAnimHumanoid DEF="hanim_humanoid" name="humanoid">
+    <HAnimHumanoid version="2.0" DEF="hanim_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim_sacrum" name="sacrum">
 <WorldInfo title="JinFacsAu14DimplerMorpher.x3d" />

@@ -5,7 +5,7 @@
     <meta content='HAnimPoseExternProtoDeclare.x3d' name='title'/>
     <meta content='Define ExternProtoDeclare for an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed.' name='description'/>
     <meta content='1 November 2025' name='created'/>
-    <meta content='14 December 2025' name='modified'/>
+    <meta content='24 February 2026' name='modified'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='Joe Williams' name='creator'/>
     <meta content='Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE' name='contributor'/>
@@ -56,7 +56,7 @@
           </Appearance>
         </Shape>
         <Shape>
-          <Box size='3.5 0.5 .001'/>
+          <Box size='3.5 0.5 0.001'/>
           <Appearance DEF='TransparentAppearance'>
             <Material transparency='1'/>
           </Appearance>
@@ -73,7 +73,7 @@
         </Shape>
       </Anchor>
       <Shape>
-        <Box size='2.6 0.5 .001'/>
+        <Box size='2.6 0.5 0.001'/>
         <Appearance USE='TransparentAppearance'/>
       </Shape>
     </Transform>

@@ -35,7 +35,7 @@
                </Transform>
 
    <Group DEF="Joe_Humanoid">
-      <HAnimHumanoid DEF="JoeHuman">
+      <HAnimHumanoid version="2.0" DEF="JoeHuman">
          <HAnimJoint DEF="hanim_humanoid_root" containerField="joints" stiffness="0 0 0" name="humanoid_root" center="0 0.875 0">
 	    <HAnimSegment>
             <HAnimSite DEF="Joe_RootView1" name="RootFront">

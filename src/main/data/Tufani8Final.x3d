@@ -39,7 +39,7 @@
 				url='"JointCoordinateAxes.x3dv"' />
 		</Transform>
 		<Group DEF="TufaniHumanoid">
-			<HAnimHumanoid DEF="Tufani"
+			<HAnimHumanoid version="2.0" DEF="Tufani"
 				name="Tufani_WS"
 				version="2.0">
 				<HAnimJoint DEF="Tufani_humanoid_root" containerField="skeleton"

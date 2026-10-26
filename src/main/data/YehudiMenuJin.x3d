@@ -71,7 +71,7 @@
     <ScalarInterpolator DEF="AnimationAdapter_JinWink" key="0 0.25 0.5 0.75 1" keyValue="0 0.5 1 0.5 0" />
     <Switch DEF="SceneSwitcher" whichChoice="0">
 <Group>
-<HAnimHumanoid DEF="hanim0_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" version="2.0" DEF="hanim0_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim0_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim0_sacrum" name="sacrum">
 </HAnimSegment>
@@ -656,7 +656,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim1_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim1_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim1_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim1_sacrum" name="sacrum">
 </HAnimSegment>
@@ -1241,7 +1241,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim2_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim2_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim2_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim2_sacrum" name="sacrum">
 </HAnimSegment>
@@ -1826,7 +1826,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim3_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim3_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim3_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim3_sacrum" name="sacrum">
 </HAnimSegment>
@@ -2412,7 +2412,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim4_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim4_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim4_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim4_sacrum" name="sacrum">
 </HAnimSegment>
@@ -2997,7 +2997,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim5_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim5_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim5_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim5_sacrum" name="sacrum">
 </HAnimSegment>
@@ -3582,7 +3582,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim6_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim6_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim6_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim6_sacrum" name="sacrum">
 </HAnimSegment>
@@ -4167,7 +4167,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim7_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim7_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim7_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim7_sacrum" name="sacrum">
 </HAnimSegment>
@@ -4752,7 +4752,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim8_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim8_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim8_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim8_sacrum" name="sacrum">
 </HAnimSegment>
@@ -5337,7 +5337,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim9_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim9_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim9_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim9_sacrum" name="sacrum">
 </HAnimSegment>
@@ -5922,7 +5922,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim10_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim10_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim10_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim10_sacrum" name="sacrum">
 </HAnimSegment>
@@ -6507,7 +6507,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim11_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim11_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim11_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim11_sacrum" name="sacrum">
 </HAnimSegment>
@@ -7092,7 +7092,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim12_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim12_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim12_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim12_sacrum" name="sacrum">
 </HAnimSegment>
@@ -7688,7 +7688,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim13_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim13_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim13_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim13_sacrum" name="sacrum">
 </HAnimSegment>
@@ -8273,7 +8273,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim14_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim14_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim14_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim14_sacrum" name="sacrum">
 </HAnimSegment>
@@ -8858,7 +8858,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim15_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim15_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim15_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim15_sacrum" name="sacrum">
 </HAnimSegment>
@@ -9442,7 +9442,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim16_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim16_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim16_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim16_sacrum" name="sacrum">
 </HAnimSegment>
@@ -10028,7 +10028,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim17_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim17_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim17_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim17_sacrum" name="sacrum">
 </HAnimSegment>
@@ -10613,7 +10613,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim18_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim18_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim18_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim18_sacrum" name="sacrum">
 </HAnimSegment>
@@ -11198,7 +11198,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim19_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim19_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim19_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim19_sacrum" name="sacrum">
 </HAnimSegment>
@@ -11783,7 +11783,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim20_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim20_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim20_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim20_sacrum" name="sacrum">
 </HAnimSegment>
@@ -12368,7 +12368,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim21_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim21_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim21_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim21_sacrum" name="sacrum">
 </HAnimSegment>
@@ -12953,7 +12953,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim22_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim22_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim22_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim22_sacrum" name="sacrum">
 </HAnimSegment>
@@ -13538,7 +13538,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim23_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim23_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim23_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim23_sacrum" name="sacrum">
 </HAnimSegment>
@@ -14123,7 +14123,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim24_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim24_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim24_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim24_sacrum" name="sacrum">
 </HAnimSegment>
@@ -14708,7 +14708,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim25_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim25_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim25_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim25_sacrum" name="sacrum">
 </HAnimSegment>
@@ -15293,7 +15293,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim26_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim26_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim26_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim26_sacrum" name="sacrum">
 </HAnimSegment>
@@ -15878,7 +15878,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim27_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim27_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim27_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim27_sacrum" name="sacrum">
 </HAnimSegment>
@@ -16463,7 +16463,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim28_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim28_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim28_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim28_sacrum" name="sacrum">
 </HAnimSegment>
@@ -17048,7 +17048,7 @@
 </HAnimHumanoid>
 </Group>
 <Group>
-<HAnimHumanoid DEF="hanim29_humanoid" name="humanoid">
+<HAnimHumanoid version="2.0" DEF="hanim29_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim29_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim29_sacrum" name="sacrum">
 </HAnimSegment>

@@ -42,7 +42,7 @@
 				url='"JointCoordinateAxes.x3dv"' />
 		</Transform>
 		<Group DEF="LilyHumanoid">
-			<HAnimHumanoid DEF="Lily"
+			<HAnimHumanoid version="2.0" DEF="Lily"
 				name="Lily_WS"
 				scale="1 1 1">
 				<HAnimJoint DEF="Lily_humanoid_root" containerField="skeleton"

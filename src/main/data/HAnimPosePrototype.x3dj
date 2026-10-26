@@ -24,7 +24,7 @@
           },
           {
             "@name":"modified",
-            "@content":"14 December 2025"
+            "@content":"26 April 2026"
           },
           {
             "@name":"creator",
@@ -168,7 +168,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 October 2026"
+            "@content":"26 October 2026"
           },
           {
             "@name":"generator",
@@ -1773,6 +1773,58 @@
                     "@fromNode":"HumanoidInlineLoadSensor",
                     "@toField":"isLoaded",
                     "@toNode":"TouchDown_Pose"
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@DEF":"CoordinateAxesAdjustedScale",
+              "@scale":[0.05,0.05,0.05],
+              "-children":[
+                { "Inline":
+                  {
+                    "@DEF":"CoordinateAxes",
+                    "@url":["../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","../../../Savage/Tools/Authoring/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d","https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.x3d","../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","../../../Savage/Tools/Authoring/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl","https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.wrl"]
+                  }
+                }
+              ]
+            }
+          },
+          { "Transform":
+            {
+              "@translation":[0,-0.15,0],
+              "-children":[
+                { "Shape":
+                  {
+                    "@DEF":"TextShape",
+                    "-geometry":
+                      { "Text":
+                        {
+                          "@string":["humanoid","origin"],
+                          "-fontStyle":
+                            { "FontStyle":
+                              {
+                                "@family":["SANS"],
+                                "@justify":["MIDDLE","MIDDLE"],
+                                "@size":0.05,
+                                "@style":"BOLD"
+                              }
+                            }
+                        }
+                      },
+                    "-appearance":
+                      { "Appearance":
+                        {
+                          "-material":
+                            { "Material":
+                              {
+                                "@diffuseColor":[0.3,0.3,0.3]
+                              }
+                            }
+                        }
+                      }
                   }
                 }
               ]

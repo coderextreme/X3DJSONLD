@@ -21,6 +21,7 @@ GraalPySerializer.prototype = {
 		// str += "# -*- coding: "+json.X3D.encoding+" -*-\n";
 
 		str += "import x3dpsail as x3d\n\n";
+		str += "from x3d_validator import validateX3DJSON\n";           
 
 		stack.unshift(this.preno);
 		this.preno++;
@@ -36,6 +37,9 @@ GraalPySerializer.prototype = {
 		str += bodystr;
 		str += element.nodeName+stack[0]+".toFileX3D(\""+clazz+".new.graalpy.x3d\")\n";
 		str += element.nodeName+stack[0]+".toFileJSON(\""+clazz+".new.graalpy.x3dj\")\n";
+		str += "x3djson = "+element.nodeName+stack[0]+".toStringJSON()\n";
+		str += "validateX3DJSON(False, x3djson)\n";                     
+
 		stack.shift();
 		return str;
 	},

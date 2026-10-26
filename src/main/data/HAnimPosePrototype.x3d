@@ -6,7 +6,7 @@
     <meta content='Define an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed.' name='description'/>
     <meta content='This model also takes advantage of Inline/IMPORT capabilities (equivalent to USE node) and thus avoids fully copying a large, complex HAnimHumanoid model. Multiple HAnimHumanoid models have been tested satisfactorily, for HAnim version 1 (X3d 3) AND HAnim version 2 (X3D 4).' name='info'/>
     <meta content='2 October 2025' name='created'/>
-    <meta content='14 December 2025' name='modified'/>
+    <meta content='26 April 2026' name='modified'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='Joe Williams' name='creator'/>
     <meta content='Holger Seelig for X_ITE, Sunrize on Windows, scripting guidance, and Inline IMPORT functionality as node-reference equivalent to USE' name='contributor'/>
@@ -145,7 +145,7 @@
       </ProtoBody>
     </ProtoDeclare>
     <Viewpoint description='HAnimPose for HumanoidInline IMPORT model' position='0 1 4'/>
-    <!-- no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
+    <!-- no longer required: including full model <HAnimHumanoid version="2.0" DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
     <ProtoInstance DEF='T_Pose' name='HAnimPose'>
       <fieldValue name='name' value='T'/>
       <fieldValue name='enabled' value='true'/>
@@ -411,5 +411,18 @@
       <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='FaceRight_Pose'/>
       <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='TouchDown_Pose'/>
     </Group>
+    <Transform DEF='CoordinateAxesAdjustedScale' scale='0.05 0.05 0.05'>
+      <Inline DEF='CoordinateAxes' url='"../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "../../../Savage/Tools/Authoring/CoordinateAxes.x3d" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.x3d" "https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.x3d" "../../X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "../../../Savage/Tools/Authoring/CoordinateAxes.wrl" "https://www.web3d.org/x3d/content/examples/X3dForWebAuthors/Chapter03Grouping/CoordinateAxes.wrl" "https://www.web3d.org/x3d/content/examples/Savage/Tools/Authoring/CoordinateAxes.wrl"'/>
+    </Transform>
+    <Transform translation='0 -0.15 0'>
+      <Shape DEF='TextShape'>
+        <Text solid='false' string='"humanoid" "origin"'>
+          <FontStyle family='"SANS"' justify='"MIDDLE" "MIDDLE"' size='0.05' style='BOLD'/>
+        </Text>
+        <Appearance>
+          <Material diffuseColor='0.3 0.3 0.3'/>
+        </Appearance>
+      </Shape>
+    </Transform>
   </Scene>
 </X3D>

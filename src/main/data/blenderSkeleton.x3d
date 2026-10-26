@@ -34,7 +34,7 @@
       <Viewpoint DEF='CA_Camera' fieldOfView='0.6911112070083618' orientation='-3.627339850709177e-08 -0.4730778932571411 -0.8810206651687622 0.0' position='-3.927080456378462e-07 -2.123415470123291e-07 2.384185791015625e-07'/>
     </Transform>
     <Transform DEF='Armature_TRANSFORM' rotation='0.0 1.0 0.0 0.0' scale='1.0 1.0 1.0'>
-      <HAnimHumanoid DEF='hanim_humanoid' name='humanoid'>
+      <HAnimHumanoid version="2.0" DEF='hanim_humanoid' name='humanoid'>
         <HAnimJoint containerField='skeleton' DEF='hanim_Armature' center='0.0 0.0 0.0' name='Armature'>
           <HAnimSegment DEF='hanim_SEGMENT_FOR_Armature' name='SEGMENT_FOR_Armature'>
             <TouchSensor description='joint Armature segment SEGMENT_FOR_Armature'/>

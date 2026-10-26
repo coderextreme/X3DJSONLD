@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
-<X3D profile='Full' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Full' version='4.1' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
   <head>
     <meta content='HAnimPoseExample.x3d' name='title'/>
     <meta content='Native XML definition of an experimental new node to simply capture a single pose for an HAnimHumanoid model. Expected usage is to allow HAnimHumanoid to contain multiple Pose nodes which can be activated and composed.' name='description'/>
     <meta content='11 December 2025' name='created'/>
-    <meta content='14 December 2025' name='modified'/>
+    <meta content='19 July 2026' name='modified'/>
     <meta content='Don Brutzman' name='creator'/>
     <meta content='under development for X3D 4.1' name='warning'/>
     <meta content='HAnim Architecture volume 1 version 2.1 draft, clause 6 Object interfaces, section 6.4 Pose' name='specificationSection'/>
@@ -33,7 +33,7 @@
       </LoadSensor>
     </Group>
     <Viewpoint description='HAnimPose for HumanoidInline IMPORT model' position='0 1 4'/>
-    <!-- no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
+    <!-- no longer required: including full model <HAnimHumanoid version="2.0" DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
     <HAnimPose DEF='T_Pose' description='arms stretched outward and level similar to letter T' enabled='true' loa='1' name='T' transitionDuration='1.3'>
       <MetadataString containerField='metadata' name='metadataTest' value='"hello HAnimPose metadata"'/>
       <!-- test case for illegal child triggers validation reports without problem: HAnimSegment DEF='TestCase' description='confirm type checking' name='specialTestCase'/ -->
@@ -213,16 +213,17 @@
         <ROUTE fromField='isActive' fromNode='ResetPoseTouchSensor' toField='resetAllJoints' toNode='FaceLeft_Pose'/>
       </Transform>
     </Group>
+    <!-- not needed for native node implementation
     <Group DEF='HandleInlineLoadsensorRouting'>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='A_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='H_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='I_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='T_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='FaceLeft_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='FaceRight_Pose'/>
-      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='isLoaded' toNode='TouchDown_Pose'/>
-    </Group>
-    <HAnimHumanoid info='"humanoidVersion=2.0"' loa='-1' name='HumanoidStub' skeletalConfiguration='BASIC' version='2.0'>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='A_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='H_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='I_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='T_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='FaceLeft_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='FaceRight_Pose'/>
+      <ROUTE fromField='isLoaded' fromNode='HumanoidInlineLoadSensor' toField='commencePose' toNode='TouchDown_Pose'/>
+    </Group> -->
+    <HAnimHumanoid version="2.0" info='"humanoidVersion=2.0"' loa='-1' name='HumanoidStub' skeletalConfiguration='BASIC' version='2.1'>
       <HAnimPose USE='A_Pose'/>
       <HAnimPose USE='T_Pose'/>
       <HAnimPose USE='I_Pose'/>

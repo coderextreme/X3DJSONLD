@@ -42,7 +42,7 @@
 				url='"JointCoordinateAxes.x3dv"' />
 		</Transform>
 		<Group DEF="LeifHumanoid">
-			<HAnimHumanoid DEF="Leif"
+			<HAnimHumanoid version="2.0" DEF="Leif"
 				name="Leif_WS"
 				scale="1 1 1">
 				<HAnimJoint DEF="Leif_humanoid_root" containerField="skeleton"

@@ -43,7 +43,7 @@
 		</Transform>
 		<Transform DEF="LeifHumanoid"
 			rotation="0 1 0 3.14159274101257">
-			<HAnimHumanoid DEF="Leif"
+			<HAnimHumanoid version="2.0" DEF="Leif"
 				name="Leif_WS">
 				<HAnimJoint DEF="Leif_humanoid_root" containerField="skeleton"
 					stiffness="0 0 0"

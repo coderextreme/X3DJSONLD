@@ -43,7 +43,7 @@
 		</Transform>
 		<Transform DEF="LilyHumanoid"
 			rotation="0 1 0 3.14159274101257">
-			<HAnimHumanoid DEF="Lily"
+			<HAnimHumanoid version="2.0" DEF="Lily"
 				name="Lily_WS">
 				<HAnimJoint DEF="Lily_humanoid_root" containerField="skeleton"
 					stiffness="0 0 0"

@@ -70,7 +70,7 @@
     <TimeSensor DEF="JinCheekPuffer_Clock" cycleInterval="0.99" enabled="false" loop="true" />
     <TimeSensor DEF="JinBrowLowerer_Clock" cycleInterval="0.99" enabled="false" loop="true" />
     <TimeSensor DEF="JinBlink_Clock" cycleInterval="0.99" enabled="false" loop="true" />
-    <HAnimHumanoid DEF="hanim0_humanoid" name="humanoid">
+    <HAnimHumanoid version="2.0" DEF="hanim0_humanoid" name="humanoid">
 <HAnimJoint DEF="hanim0_humanoid_root" name="humanoid_root" containerField="skeleton">
 <HAnimSegment DEF="hanim0_sacrum" name="sacrum">
 </HAnimSegment>

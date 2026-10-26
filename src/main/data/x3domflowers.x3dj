@@ -62,7 +62,7 @@
           },
           {
             "@name":"translated",
-            "@content":"20 October 2026"
+            "@content":"26 October 2026"
           },
           {
             "@name":"generator",
@@ -99,7 +99,7 @@
                 { "ExternProtoDeclare":
                   {
                     "@name":"FlowerProto",
-                    "@url":["../data/flowerproto.json#FlowerProto"],
+                    "@url":["../data/flowerproto.x3dj#FlowerProto","../data/flowerproto.json#FlowerProto"],
                     "field": [
                       {
                         "@name":"vertex",

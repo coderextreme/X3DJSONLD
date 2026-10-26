@@ -43,7 +43,7 @@
 		</Transform>
 		<Transform DEF="ToddlerHumanoid"
 			rotation="0 1 0 3.14159274101257">
-			<HAnimHumanoid DEF="Toddler"
+			<HAnimHumanoid version="2.0" DEF="Toddler"
 				name="Toddler_WS">
 				<HAnimJoint DEF="Toddler_humanoid_root" containerField="skeleton"
 					stiffness="0 0 0"
