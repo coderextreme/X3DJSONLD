@@ -23,6 +23,7 @@ PythonSerializer.prototype = {
 		// str += "print('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')\n";
 		str += "print('<!--')\n";
 		str += "import x3d\n";
+		str += "from x3d_validator import validateX3DJSON\n";
 		str += "print('-->')\n";
 
 		stack.unshift(this.preno);
@@ -45,7 +46,9 @@ PythonSerializer.prototype = {
 		str += "f.write("+element.nodeName+stack[0]+".VRML())\n";
 		str += "f.close()\n";
 		str += "f = open(\""+clazz+".new.python.x3dj\", mode=\"w\", encoding=\"utf-8\")\n";
-		str += "f.write("+element.nodeName+stack[0]+".JSON())\n";
+		str += "x3djson = "+element.nodeName+stack[0]+".JSON()\n";
+		str += "f.write(x3djson)\n";
+		str += "validateX3DJSON(False, x3djson)\n";
 		str += "f.close()\n";
 		stack.shift();
 		return str;
@@ -534,7 +537,8 @@ PythonSerializer.prototype = {
 					method === '.layout' ||
 					method === ".proxy" ||
 					method === ".ProtoInterface" ||
-					method === ".ProtoBody") {
+					method === ".ProtoBody" ||
+					method === ".navigationInfo") {
 					ch += element.nodeName+stack[1]+method+" = "+node.nodeName+stack[0]+"\n";
 				} else if (method === ".sourceCode") {
 					ch += element.nodeName+stack[1]+method+" = "+node.nodeName.substring(1)+stack[0]+"\n";
@@ -567,7 +571,7 @@ PythonSerializer.prototype = {
 				let y = node.nodeValue.
 					replace(/\\/g, '\\\\').
 					replace(/"/g, '\\"');
-				str += element.nodeName+stack[0]+".children.append(x3d.Comment(\"\"\""+y+"\"\"\"))\n";
+				str += "# "+element.nodeName+stack[0]+".children.append(x3d.Comment(\"\"\""+y+"\"\"\"))\n";
 				/*
 				str += y.split("\r\n").map(function(x) {
 					return x.replace(/^/g, '"""');

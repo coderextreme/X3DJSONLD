@@ -90,8 +90,16 @@ POSSIBILITY OF SUCH DAMAGE.
 
 <https://www.web3d.org/specifications/X3dOntology]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[> a owl:Ontology ;
   dcterms:title       "X3D Ontology"@en ;
-  dcterms:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of X3D models." ;
-  dcterms:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" .
+  dcterms:description "The X3D Ontology for Semantic Web provides terms of reference for semantic query of Extensible 3D (X3D) Graphics models." ;
+  dcterms:reference   "https://www.web3d.org/x3d/content/semantics/semantics.html" ;
+  dcterms:reference   "https://www.web3D.org" ;
+  dcterms:creator     "Don Brutzman" ;
+  dcterms:creator     "Jakub Flotyński" ;
+  dcterms:created     "29 September 2026" ; # originally "17 June 2019" ;
+  dcterms:modified    "29 September 2026" ;
+  dcterms:identifier  "https://www.web3d.org/x3d/content/semantics/ontologies/X3dOntology4.1.ttl" ;
+  dcterms:license     "https://www.web3d.org/x3d/content/semantics/license.html" ;
+  dcterms:version     "]]></xsl:text><xsl:value-of select="$x3dVersion"/><xsl:text disable-output-escaping="yes"><![CDATA[" .
   # TODO include further provenance information
             
 # Maintained at
@@ -695,16 +703,17 @@ POSSIBILITY OF SUCH DAMAGE.
                     <xsl:variable name="abstractNodeTypeName" select="ancestor::AbstractNodeType/@name"/>
                     <xsl:text>:</xsl:text>
                     <xsl:choose>
-                        <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata')">
+                        <xsl:when test="($fieldName = 'IS') or ($fieldName = 'metadata') or contains(@type,'Node')">
                             <!-- for IS, do not overload node-name classes as DatatypeProperty definitions, aka "punning" -->
                             <xsl:text>has</xsl:text>
                             <xsl:value-of select="$upperFieldName"/>
+                            <xsl:text> a owl:ObjectProperty ;</xsl:text>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:value-of select="$fieldName"/>
+                            <xsl:text> a owl:DatatypeProperty ;</xsl:text>
                         </xsl:otherwise>
                     </xsl:choose>
-                    <xsl:text> a owl:DatatypeProperty ;</xsl:text>
                     <xsl:text>&#10;</xsl:text>
                     <xsl:text>  rdfs:label </xsl:text>
                     <xsl:text>"</xsl:text>

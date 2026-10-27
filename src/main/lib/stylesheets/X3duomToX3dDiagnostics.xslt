@@ -1320,7 +1320,7 @@ Invocation:
 	<div class="CenterDiv">
 		<p class="HeadingPart"><a href="HAnimArchitecture.html" title="to index"><img class='x3dlogo' src='../Images/HAnimLogo.png' alt='HAnim logo' style='border-width: 0px; width: 229px; height: 83px'/></a></p>
         <p class="HeadingPart">
-            <xsl:text disable-output-escaping="true">Part 1:&amp;nbsp; Humanoid animation (HAnim) architecture</xsl:text>
+            <xsl:text disable-output-escaping="yes">Part 1:&amp;nbsp; Humanoid animation (HAnim) architecture</xsl:text>
         </p>
 		<p class="AnnexHeadingBottom"><a id="FeaturePointForTheHumanBody"></a>Annex C</p>
 		<p class="AnnexType">(informative)</p>

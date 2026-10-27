@@ -327,7 +327,6 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 		.replace(/&lt;/g, "<")
 		.replace(/&gt;/g, ">")
 		.replace(/&amp;/g, "&");
-	/*
 	do {
 		str = y;
 		y = str.replace(/'([^'\r\n]*)\n([^']*)'/g, "'$1\\n$2'");
@@ -335,7 +334,6 @@ CDATACreateFunction : function(xmlDoc, element, str) {
 			// console.error("CDATA Replacing",str,"with",y);
 		}
 	} while (y != str);
-	*/
 	var cdata = xmlDoc.createCDATASection(y);
 	element .appendChild(cdata);
 },

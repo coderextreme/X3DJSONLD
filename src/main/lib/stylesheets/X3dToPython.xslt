@@ -129,11 +129,13 @@ POSSIBILITY OF SUCH DAMAGE.
                 <!-- default -->
                 <xsl:text>
 import x3d
+from x3d_validator  import validateX3DJSON
 </xsl:text>
             </xsl:when>
             <xsl:otherwise>
                 <xsl:text>
 from x3d import *
+from x3d_validator  import validateX3DJSON
 </xsl:text>
             </xsl:otherwise>
         </xsl:choose>
@@ -237,6 +239,7 @@ except Exception as err: # usually BaseException
 try:
 #   print('check newModel.JSON() serialization...')
     newModelJSON=newModel.JSON() # test export method JSON() for exceptions during export
+    validateX3DJSON(False, newModelJSON);
 #   print(prependLineNumbers(newModelJSON)) ### debug</xsl:text>
    <!--<xsl:text>
 # debug ============

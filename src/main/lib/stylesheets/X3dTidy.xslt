@@ -60,7 +60,7 @@ Recommended tools:
 <!--	xmlns:fo="http://www.w3.org/1999/XSL/Format"	-->
 <!--	xmlns:saxon="http://icl.com/saxon" saxon:trace="true"	-->
 
-<xsl:stylesheet version="2.0" exclude-result-prefixes="ds saxon fn"
+<xsl:stylesheet version="3.0" exclude-result-prefixes="ds saxon fn"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:ds ="http://www.w3.org/2000/09/xmldsig#"
 		xmlns:fn ="http://www.w3.org/2005/xpath-functions"
@@ -194,9 +194,9 @@ Recommended tools:
     <!-- not used:  
     <xsl:variable name="fixableUrlFound"
                   select="count(//*[(string-length(string(.)) > 0) and 
-                                    ((not(contains(.,'&quot;'))) or 
-                                     (not(contains(.,'http') or contains(.,'https') or
-                                          contains(.,'ftp')  or contains(.,'sftp'))))]) > 0"/>
+                                    ((not(contains(string(.),'&quot;'))) or 
+                                     (not(contains(string(.),'http') or contains(string(.),'https') or
+                                          contains(string(.),'ftp')  or contains(string(.),'sftp'))))]) > 0"/>
                                           
     and ($fixableUrlFound='true')-->
     <xsl:variable name="performUrlModifications"
@@ -1361,12 +1361,12 @@ Recommended tools:
                                             <xsl:choose>
                                                 <xsl:when test="starts-with(normalize-space(string(.)),'ecmascript:')">
                                                     <xsl:text>ecmascript:</xsl:text>
-                                                    <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript:')" disable-output-escaping="yes"/>
+                                                    <xsl:value-of select="substring-after(substring(string(.),1,$scriptLength),'ecmascript:')" disable-output-escaping="yes"/>
                                                 </xsl:when>
                                                 <!-- append missing colon -->
                                                 <xsl:when test="starts-with(normalize-space(string(.)),'ecmascript ')">
                                                     <xsl:text>ecmascript:</xsl:text>
-                                                    <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
+                                                    <xsl:value-of select="substring-after(substring(string(.),1,$scriptLength),'ecmascript')" disable-output-escaping="yes"/>
                                                     <xsl:message>
                                                         <xsl:text>*** error: change </xsl:text>
                                                         <xsl:value-of select="$ScriptReference" disable-output-escaping="yes"/>
@@ -1378,11 +1378,11 @@ Recommended tools:
                                                     <xsl:text>ecmascript:</xsl:text>
                                                     <xsl:choose>
                                                         <xsl:when test="starts-with(normalize-space(string(.)),'javascript:')">
-                                                            <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript:')" disable-output-escaping="yes"/>
+                                                            <xsl:value-of select="substring-after(substring(string(.),1,$scriptLength),'javascript:')" disable-output-escaping="yes"/>
                                                         </xsl:when>
                                                         <!-- otherwise started with javascript but no colon -->
                                                         <xsl:otherwise>
-                                                             <xsl:value-of select="substring-after(substring(.,1,$scriptLength),'javascript')" disable-output-escaping="yes"/>
+                                                             <xsl:value-of select="substring-after(substring(string(.),1,$scriptLength),'javascript')" disable-output-escaping="yes"/>
                                                         </xsl:otherwise>
                                                     </xsl:choose>
                                                     <xsl:message>
@@ -1794,7 +1794,7 @@ Recommended tools:
                                     <xsl:when test="ancestor::HAnimHumanoid">
                                         <!-- handle only HAnim children of current node (including USE node), stripping Shape and Grouping nodes, etc. -->
                                         <xsl:apply-templates select="*[starts-with(local-name(),'HAnim')] | Viewpoint |
-                                                                     comment()[not(contains(.,'visualization shape')) and not(contains(.,'visualization sphere')) and not(contains(.,'visualization line segment'))]"/> <!--  | text() -->
+                                                                     comment()[not(contains(string(.),'visualization shape')) and not(contains(string(.),'visualization sphere')) and not(contains(string(.),'visualization line segment'))]"/> <!--  | text() -->
                                     </xsl:when>
                                     <xsl:otherwise>
                                         <!-- handle children of current node (including USE node) without special treatment -->
@@ -2478,13 +2478,18 @@ Recommended tools:
                     <!-- <xsl:message><xsl:text>test5</xsl:text></xsl:message> -->
                 </xsl:when>
                 <xsl:when test="(string-length($nameValue) = 0) and ((local-name() = 'USE') or (local-name() = 'fromNode') or (local-name() = 'toNode'))">
-                    <xsl:value-of select="."/>
+                    <xsl:value-of select="concat($prefixHAnimHumanoidName,.)"/>
                     <!-- <xsl:message><xsl:text>test6</xsl:text></xsl:message> -->
                 </xsl:when>
+                <!--
                 <xsl:when test="(string-length($nameValue) = 0)">
-                    <xsl:value-of select="."/>
-                    <!-- <xsl:message><xsl:text>test7</xsl:text></xsl:message> -->
+                    <xsl:value-of select="concat($prefixHAnimHumanoidName,'_UNKNOWN')"/>
+                    <xsl:message>
+                        <xsl:text>*** uncertain name conversion: </xsl:text>
+                        <xsl:value-of select="concat($prefixHAnimHumanoidName,'_UNKNOWN')"/>
+                    </xsl:message>
                 </xsl:when>
+                -->
                 <xsl:otherwise>
                     <xsl:value-of select="concat($prefixHAnimHumanoidName,$hanimAliasReplacementName)"/>
                     <!-- <xsl:message><xsl:text>test8</xsl:text></xsl:message> -->
@@ -3083,7 +3088,7 @@ Recommended tools:
 
     <xsl:template match="@url | @backUrl | @frontUrl | @leftUrl | @rightUrl | @topUrl | @bottomUrl " >
         <xsl:variable name="result">
-            <xsl:variable name="containsQuote" select="contains(.,'&quot;')"/>
+            <xsl:variable name="containsQuote" select="contains(string(.),'&quot;')"/>
             <xsl:variable name="quoteCount"    select="string-length(string(.)) - string-length(translate(string(.), '&quot;', ''))"/>
             <!-- debug
             <xsl:message>
@@ -3097,8 +3102,8 @@ Recommended tools:
                 <xsl:value-of select="$quoteCount"/>
             </xsl:message>
             -->
-            <xsl:variable name="isX3D" select="contains(.,'.x3d')  or contains(.,'.wrl') or contains(.,'.x3dv') or contains(.,'.x3db') or contains(.,'.json') or contains(.,'.x3de') or
-                                               contains(.,'.x3dz') or contains(.,'.wrz') or contains(.,'.x3d.gz') or contains(.,'.wrl.gz')"/>
+            <xsl:variable name="isX3D" select="contains(string(.),'.x3d')  or contains(string(.),'.wrl') or contains(string(.),'.x3dv') or contains(string(.),'.x3db') or contains(string(.),'.json') or contains(string(.),'.x3de') or
+                                               contains(string(.),'.x3dz') or contains(string(.),'.wrz') or contains(string(.),'.x3d.gz') or contains(string(.),'.wrl.gz')"/>
             <xsl:variable name="basepathname">
                 <xsl:choose>
                     <xsl:when test="not($isX3D)">
@@ -3119,7 +3124,7 @@ Recommended tools:
             <xsl:variable name="containsSimpleX3dBookmark" select="starts-with(normalize-space(string(.)),'#') or starts-with(normalize-space(string(.)),'&quot;#')"/>
             <xsl:variable name="X3dBookmark">
                 <xsl:choose>
-                    <xsl:when test="not(contains(.,'#'))">
+                    <xsl:when test="not(contains(string(.),'#'))">
                         <xsl:text></xsl:text><!-- default value is empty -->
                     </xsl:when>
                     <xsl:otherwise>
@@ -3143,8 +3148,8 @@ Recommended tools:
                 </xsl:when>
                 <xsl:when test="not($performUrlModifications) or not($fixUrlAdditionHttpAddresses='true') or
                                 (string-length($basepathname) = 0) or (string-length($defaultUrlLocation) = 0) or
-                                contains(.,'ecmascript:') or contains(.,'javascript:') or contains(.,'vrmlscript:') or
-                                contains(.,'http://') or contains(.,'https://') or contains(.,'ftp://') or contains(.,'sftp://') or contains(.,'mailto:')">
+                                contains(string(.),'ecmascript:') or contains(string(.),'javascript:') or contains(string(.),'vrmlscript:') or
+                                contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'ftp://') or contains(string(.),'sftp://') or contains(string(.),'mailto:')">
                     <!-- this covers several base cases: no change in url -->
                     <xsl:text> </xsl:text>
                     <xsl:value-of select="local-name()"/>
@@ -3187,7 +3192,7 @@ Recommended tools:
                     <!-- similar output blocks found in @url, @* -->
                     <xsl:choose>
                         <!-- TODO test if this case is malformed, then maybe do not touch? -->
-                        <xsl:when test='contains(.,"&apos;") and not($containsQuote)'>
+                        <xsl:when test='contains(string(.),"&apos;") and not($containsQuote)'>
                             <xsl:text>" </xsl:text>
                             <xsl:call-template name="escape-special-characters">
                                 <xsl:with-param name="inputValue" select="$basepathname"/>
@@ -3195,13 +3200,13 @@ Recommended tools:
                             <xsl:text>"</xsl:text>
                         </xsl:when>
                         <!-- image, sound, movie or other non-X3D asset -->
-                        <xsl:when test="not(contains(.,'.wrl')) and not(contains(.,'.x3d'))">
+                        <xsl:when test="not(contains(string(.),'.wrl')) and not(contains(string(.),'.x3d'))">
                             <xsl:text>"</xsl:text>
                             <xsl:call-template name="escape-special-characters">
                                 <xsl:with-param name="inputValue" select="$basepathname"/>
                             </xsl:call-template>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="not(contains(.,'http://') or contains(.,'https://') or contains(.,'ftp://') or contains(.,'sftp://'))">
+                            <xsl:if test="not(contains(string(.),'http://') or contains(string(.),'https://') or contains(string(.),'ftp://') or contains(string(.),'sftp://'))">
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
                                 <xsl:value-of select="$basepathname"/>
@@ -3210,7 +3215,7 @@ Recommended tools:
                             <xsl:text>'</xsl:text>
                         </xsl:when>
                         <xsl:when test="not($containsQuote)">
-                            <xsl:if test="(substring(.,string-length(string(.))-3,4) = '.wrl') or (contains(.,'.wrl#')) and not(contains(.,'.x3d')) and 
+                            <xsl:if test="(substring(string(.),string-length(string(.))-3,4) = '.wrl') or (contains(string(.),'.wrl#')) and not(contains(string(.),'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
                                 <xsl:text>"</xsl:text>
@@ -3218,7 +3223,7 @@ Recommended tools:
                                 <xsl:text>.x3d</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -3234,17 +3239,17 @@ Recommended tools:
                             </xsl:call-template>
                             <xsl:if test="$isX3D">
                                 <xsl:choose>
-                                    <xsl:when test="contains(.,'.x3d')">
+                                    <xsl:when test="contains(string(.),'.x3d')">
                                         <xsl:text>.x3d</xsl:text>
                                     </xsl:when>
-                                    <xsl:when test="contains(.,'.wrl')">
+                                    <xsl:when test="contains(string(.),'.wrl')">
                                         <xsl:text>.wrl</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                             </xsl:if>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                 <!-- append online address -->
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
@@ -3253,10 +3258,10 @@ Recommended tools:
                                 </xsl:call-template>
                                 <xsl:if test="$isX3D">
                                     <xsl:choose>
-                                        <xsl:when test="contains(.,'.x3d')">
+                                        <xsl:when test="contains(string(.),'.x3d')">
                                             <xsl:text>.x3d</xsl:text>
                                         </xsl:when>
-                                        <xsl:when test="contains(.,'.wrl')">
+                                        <xsl:when test="contains(string(.),'.wrl')">
                                             <xsl:text>.wrl</xsl:text>
                                         </xsl:when>
                                     </xsl:choose>
@@ -3264,7 +3269,7 @@ Recommended tools:
                                 </xsl:if>
                                 <xsl:text>"</xsl:text>
                             </xsl:if>
-                            <xsl:if test="(substring(.,string-length(string(.))-3,4) = '.x3d') or (contains(.,'.x3d#')) and not(contains(.,'.wrl')) and 
+                            <xsl:if test="(substring(string(.),string-length(string(.))-3,4) = '.x3d') or (contains(string(.),'.x3d#')) and not(contains(string(.),'.wrl')) and 
                                           ($appendWrlAfterX3dAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'appendWrlAfterX3dAddresses=false')]))">
                                 <xsl:text> "</xsl:text>
@@ -3272,7 +3277,7 @@ Recommended tools:
                                 <xsl:text>.wrl</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -3284,8 +3289,8 @@ Recommended tools:
                             </xsl:if>
                             <xsl:text>'</xsl:text>
                         </xsl:when>
-                        <xsl:when test="$containsQuote and not(contains(.,':/'))">
-                            <xsl:if test="((substring(translate(string(.), '&quot;', ''),string-length(translate(string(.), '&quot;', ''))-3,4) = '.wrl') or (contains(.,'.wrl#'))) and not(contains(.,'.x3d')) and 
+                        <xsl:when test="$containsQuote and not(contains(string(.),':/'))">
+                            <xsl:if test="((substring(translate(string(.), '&quot;', ''),string-length(translate(string(.), '&quot;', ''))-3,4) = '.wrl') or (contains(string(.),'.wrl#'))) and not(contains(string(.),'.x3d')) and 
                                           ($prependX3dBeforeWrlAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'prependX3dBeforeWrlAddresses=false')]))">
                                 <xsl:text>"</xsl:text>
@@ -3293,7 +3298,7 @@ Recommended tools:
                                 <xsl:text>.x3d</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -3309,17 +3314,17 @@ Recommended tools:
                             </xsl:call-template>
                             <xsl:if test="$isX3D">
                                 <xsl:choose>
-                                    <xsl:when test="contains(.,'.x3d')">
+                                    <xsl:when test="contains(string(.),'.x3d')">
                                         <xsl:text>.x3d</xsl:text>
                                     </xsl:when>
-                                    <xsl:when test="contains(.,'.wrl')">
+                                    <xsl:when test="contains(string(.),'.wrl')">
                                         <xsl:text>.wrl</xsl:text>
                                     </xsl:when>
                                 </xsl:choose>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                             </xsl:if>
                             <xsl:text>"</xsl:text>
-                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                            <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                 <xsl:text> "</xsl:text>
                                 <xsl:value-of select="$defaultUrlLocation"/>
                                     <!-- assumes a well-quoted string, omit leading quote substring(normalize-space(string(.)),2)-->
@@ -3330,10 +3335,10 @@ Recommended tools:
                                 <xsl:value-of select="translate($basepathname,'&quot;','')"/>
                                 <xsl:if test="$isX3D">
                                     <xsl:choose>
-                                        <xsl:when test="contains(.,'.x3d')">
+                                        <xsl:when test="contains(string(.),'.x3d')">
                                             <xsl:text>.x3d</xsl:text>
                                         </xsl:when>
-                                        <xsl:when test="contains(.,'.wrl')">
+                                        <xsl:when test="contains(string(.),'.wrl')">
                                             <xsl:text>.wrl</xsl:text>
                                         </xsl:when>
                                     </xsl:choose>
@@ -3342,7 +3347,7 @@ Recommended tools:
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
                             </xsl:if>
-                            <xsl:if test="(substring(.,string-length(string(.))-4,4) = '.x3d') or (contains(.,'.x3d#')) and 
+                            <xsl:if test="(substring(string(.),string-length(string(.))-4,4) = '.x3d') or (contains(string(.),'.x3d#')) and 
                                           ($appendWrlAfterX3dAddresses='true') and
                                           (not(//meta[contains(@name,'Tidy')][contains(@content,'appendWrlAfterX3dAddresses=false')]))">
                                 <xsl:text> "</xsl:text>
@@ -3350,7 +3355,7 @@ Recommended tools:
                                 <xsl:text>.wrl</xsl:text>
                                 <xsl:value-of select="$X3dBookmark"/><!-- if any -->
                                 <xsl:text>"</xsl:text>
-                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(.,':/'))">
+                                <xsl:if test="($fixUrlAdditionHttpAddresses = 'true') and (string-length($defaultUrlLocation) > 0) and not(contains(string(.),':/'))">
                                     <!-- append online address -->
                                     <xsl:text> "</xsl:text>
                                     <xsl:value-of select="$defaultUrlLocation"/>
@@ -3433,7 +3438,7 @@ Recommended tools:
                 <xsl:text> </xsl:text>
                 <xsl:value-of select="local-name()"/>
                 <xsl:text>='</xsl:text>
-                <xsl:value-of select="substring(.,1,20)"/>
+                <xsl:value-of select="substring(string(.),1,20)"/>
                 <xsl:text>'</xsl:text>
             </xsl:message>
         </xsl:if>
@@ -3442,7 +3447,7 @@ Recommended tools:
         <xsl:variable name="USE"      select="@USE"/>
         <xsl:variable name="fromNode" select="@fromNode"/>
         <xsl:variable name="toNode"   select="@toNode"/>
-        <xsl:variable name="attributeValue"  select="."/>
+        <xsl:variable name="attributeValue"  select="string(.)"/>
         <xsl:variable name="nodeName"  select="local-name(..)"/>
         <xsl:variable name="nameValue">
             <xsl:choose>
@@ -4328,6 +4333,11 @@ Recommended tools:
                       not(local-name(..)='DISEntityTypeMapping' and 
                       ((local-name()='containerField') and (string(.)='mapping')) or
                       ((local-name()='category' or local-name()='country' or local-name()='domain' or local-name()='extra' or local-name()='kind' or local-name()='specific' or local-name()='subcategory') and (string(.)='0')))" />
+        <xsl:variable name="notDefaultGaussianSplats"
+                      select="not(local-name(..)='GaussianSplats' and
+                      ((local-name()='containerField' and (string(.)='children')) or
+                       ((local-name()='pointerEvents') and (string(.)='true')) or
+                       ((local-name()='colorSpace') and (string(.)='SRGB_REC709_DISPLAY' or string(.)='LIN_REC709_DISPLAY'))))" />
         <xsl:variable name="notDefaultGeo"
                       select="not((starts-with(local-name(..),'Geo') or (local-name(..)='EspduTransform') or contains(local-name(..),'Pdu')) and 
                       ((local-name()='containerField' and (string(.)='children')) or
@@ -5594,24 +5604,24 @@ Recommended tools:
             <!-- keep output form simple, consistent, canonical -->
             <!-- *** apply attribute value overrides, if any *** -->
             <xsl:choose>
-                <xsl:when test="($isNumeric) and ($embeddedSpaceCount ge 0) and contains(.,'.') and ($numberSignificantDigitsEnabled = 'true') and
+                <xsl:when test="($isNumeric) and ($embeddedSpaceCount ge 0) and contains(string(.),'.') and ($numberSignificantDigitsEnabled = 'true') and
                                 not(local-name() = 'version') and not(starts-with(local-name(..), 'Metadata')) and not(contains(../@name, 'ersion'))">
                     <xsl:variable name="regexResult">
                       <xsl:call-template name="reduceNumberSignificantDigits">
-                          <xsl:with-param name="inputString" select="."/>
+                          <xsl:with-param name="inputString" select="string(.)"/>
                       </xsl:call-template>
                     </xsl:variable>
                     <xsl:value-of select="normalize-space($regexResult)"/><!-- trim leading space character -->
                     <!-- debug -->
-                    <xsl:if test="not(. = normalize-space($regexResult))">
+                    <xsl:if test="not(string(.) = normalize-space($regexResult))">
                       <xsl:message>
                         <xsl:text>*** floating-point precision change: </xsl:text>
                         <xsl:value-of select='local-name(..)'/>
                         <xsl:text> </xsl:text>
                         <xsl:value-of select='local-name()'/>
                         <xsl:text>='</xsl:text>
-                        <xsl:value-of select='substring(., 1, 40)'/><!-- trim leading space character, truncate long arrays in debug log -->
-                        <xsl:if test="(string-length(.) > 40)">
+                        <xsl:value-of select='substring(string(.), 1, 40)'/><!-- trim leading space character, truncate long arrays in debug log -->
+                        <xsl:if test="(string-length(string(.)) > 40)">
                             <xsl:text> [...]</xsl:text>
                         </xsl:if>
                         <xsl:text>'</xsl:text>
@@ -5675,8 +5685,8 @@ Recommended tools:
                     <xsl:value-of select="$x3dVersionNeeded"/>
                 </xsl:when>
                 <xsl:when test="(local-name(..)='X3D') and (local-name()='noNamespaceSchemaLocation') and
-                                (not(starts-with(.,'https://www.web3d.org/specifications/x3d-')) or
-                                 not(  ends-with(.,'https://www.web3d.org/specifications/x3d-')))">
+                                (not(starts-with(string(.),'https://www.web3d.org/specifications/x3d-')) or
+                                 not(  ends-with(string(.),'https://www.web3d.org/specifications/x3d-')))">
                     <xsl:text>https://www.web3d.org/specifications/x3d-</xsl:text>
                     <xsl:value-of select="$x3dVersionNeeded"/>
                     <xsl:text>.xsd</xsl:text>
@@ -5736,21 +5746,21 @@ Recommended tools:
                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'fixGeoSystemMetadata=false')]))">
                     <xsl:variable name="newGeoSystem">
                         <!-- geoSystem is type MFString so ensure that it is quoted -->
-                        <xsl:if test="not(starts-with(.,'&quot;'))">
+                        <xsl:if test="not(starts-with(string(.),'&quot;'))">
                             <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                         </xsl:if>
                         <xsl:choose>
                             <!-- GCC may become deprecated, use GC. https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes -->
-                            <xsl:when test="contains(.,'GCC')">
-                                <xsl:value-of select="substring-before(.,'GCC')"/>
+                            <xsl:when test="contains(string(.),'GCC')">
+                                <xsl:value-of select="substring-before(string(.),'GCC')"/>
                                 <xsl:text>GC</xsl:text>
-                                <xsl:value-of select="substring-after (.,'GCC')"/>
+                                <xsl:value-of select="substring-after (string(.),'GCC')"/>
                             </xsl:when>
                             <!-- GDC may become deprecated, use GD. https://www.web3d.org/files/specifications/19775-1/V3.3/Part01/components/geodata.html#Spatialreferenceframes -->
-                            <xsl:when test="contains(.,'GDC')">
-                                <xsl:value-of select="substring-before(.,'GDC')"/>
+                            <xsl:when test="contains(string(.),'GDC')">
+                                <xsl:value-of select="substring-before(string(.),'GDC')"/>
                                 <xsl:text>GD</xsl:text>
-                                <xsl:value-of select="substring-after (.,'GDC')"/>
+                                <xsl:value-of select="substring-after (string(.),'GDC')"/>
                             </xsl:when>
                             <xsl:otherwise>
                                 <!-- no change -->
@@ -5758,7 +5768,7 @@ Recommended tools:
                             </xsl:otherwise>
                         </xsl:choose>
                         <!-- TODO ensure intermediate values are also quoted -->
-                        <xsl:if test="not(substring(., string-length(string(.))) = '&quot;')"> <!-- ends-with -->
+                        <xsl:if test="not(substring(string(.), string-length(string(.))) = '&quot;')"> <!-- ends-with -->
                             <xsl:text disable-output-escaping="yes">&quot;</xsl:text>
                         </xsl:if>
                     </xsl:variable>
@@ -5805,12 +5815,12 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup following conversion -->
-                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE') or (local-name()='fromNode') or (local-name()='toNode')) and contains(.,'__')">
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE') or (local-name()='fromNode') or (local-name()='toNode')) and contains(string(.),'__')">
                     <xsl:variable name="newName">
                         <!-- fix double underscore -->
-                        <xsl:value-of select="substring-before(.,'__')"/>
+                        <xsl:value-of select="substring-before(string(.),'__')"/>
                         <xsl:text>_</xsl:text>
-                        <xsl:value-of select="substring-after(.,'__')"/>
+                        <xsl:value-of select="substring-after(string(.),'__')"/>
                     </xsl:variable>
                     <xsl:value-of select='$newName'/>
                     <xsl:message>
@@ -5826,10 +5836,10 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup of common error -->
-                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE') or (local-name()='fromNode') or (local-name()='toNode')) and contains(.,'_45')">
+                <xsl:when test="starts-with(local-name(..),'HAnim') and ((local-name()='name') or (local-name()='DEF') or (local-name()='USE') or (local-name()='fromNode') or (local-name()='toNode')) and contains(string(.),'_45')">
                     <xsl:variable name="newName">
                         <!-- fix double underscore -->
-                        <xsl:value-of select="substring-before(.,'_45')"/>
+                        <xsl:value-of select="substring-before(string(.),'_45')"/>
                         <xsl:text>_4_5</xsl:text>
                     </xsl:variable>
                     <xsl:value-of select='$newName'/>
@@ -5846,9 +5856,9 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- HAnim special-case cleanup -->
-                <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and contains(.,'transverse_tarsal')">
+                <xsl:when test="(local-name(..)='HAnimJoint') and (local-name()='name') and contains(string(.),'transverse_tarsal')">
                     <xsl:variable name="newName">
-                        <xsl:value-of select="substring-before(.,'_tarsal')"/>
+                        <xsl:value-of select="substring-before(string(.),'_tarsal')"/>
                         <!-- omit underscore -->
                         <xsl:text>tarsal</xsl:text>
                     </xsl:variable>
@@ -5863,7 +5873,7 @@ Recommended tools:
                 </xsl:when>
                 <!-- HAnimSite checks for allowed suffix values -->
                 <!-- TODO also change DEF, USE, fromNode, toNode -->
-                <xsl:when test="(local-name(..)='HAnimSite') and (local-name()='name') and not(ends-with(.,'_tip') or ends-with(.,'_pt') or ends-with(.,'_view'))">
+                <xsl:when test="(local-name(..)='HAnimSite') and (local-name()='name') and not(ends-with(string(.),'_tip') or ends-with(string(.),'_pt') or ends-with(string(.),'_view'))">
                     
                     <xsl:variable name="hanimSuffixDEF">
                         <xsl:choose>
@@ -5880,13 +5890,13 @@ Recommended tools:
                     </xsl:variable>
                     <xsl:variable name="hanimSuffixName">
                         <xsl:choose>
-                            <xsl:when test="(local-name()='HAnimSite') and ends-with(.,'_pt')">
+                            <xsl:when test="(local-name()='HAnimSite') and ends-with(string(.),'_pt')">
                                 <xsl:text>_pt</xsl:text>
                             </xsl:when>
-                            <xsl:when test="(local-name()='HAnimSite') and ends-with(.,'_tip')">
+                            <xsl:when test="(local-name()='HAnimSite') and ends-with(string(.),'_tip')">
                                 <xsl:text>_tip</xsl:text>
                             </xsl:when>
-                            <xsl:when test="(local-name()='HAnimSite') and ends-with(.,'_view')">
+                            <xsl:when test="(local-name()='HAnimSite') and ends-with(string(.),'_view')">
                                 <xsl:text>_view</xsl:text>
                             </xsl:when>
                         </xsl:choose>
@@ -5935,7 +5945,7 @@ Recommended tools:
                                 </xsl:message>
                             </xsl:if>
                         </xsl:when>
-                        <xsl:when test="not(ends-with(.,'_tip') or ends-with(.,'_pt') or ends-with(.,'_view'))">
+                        <xsl:when test="not(ends-with(string(.),'_tip') or ends-with(string(.),'_pt') or ends-with(string(.),'_view'))">
                             <xsl:variable name="newName">
                                 <xsl:value-of select="."/>
                                 <xsl:text>_pt</xsl:text>
@@ -5988,9 +5998,9 @@ Recommended tools:
                                 </xsl:call-template>
                             </xsl:variable>
                             <xsl:choose>
-                                <xsl:when test="not(substring-after(.,'_') = $hanimAliasReplacementName)">
+                                <xsl:when test="not(substring-after(string(.),'_') = $hanimAliasReplacementName)">
                                     <!-- provide value -->                      
-                                    <xsl:value-of select="substring-before(.,'_')"/>
+                                    <xsl:value-of select="substring-before(string(.),'_')"/>
                                     <xsl:text>_</xsl:text>
                                     <xsl:value-of select='$hanimAliasReplacementName'/>
                                     <xsl:message>
@@ -6004,7 +6014,7 @@ Recommended tools:
                                         <xsl:text> with updated </xsl:text>
                                         <xsl:value-of select="local-name()"/>
                                         <xsl:text>='</xsl:text>
-                                        <xsl:value-of select="substring-before(.,'_')"/>
+                                        <xsl:value-of select="substring-before(string(.),'_')"/>
                                         <xsl:text>_</xsl:text>
                                         <xsl:value-of select='$hanimAliasReplacementName'/>
                                         <xsl:text>'</xsl:text>
@@ -6026,22 +6036,21 @@ Recommended tools:
                 <!-- fix common meta-name misnomers, needs to follow HAnim2 upgrade rules to avoid false positives -->
                 <!-- insert missing underscore prior to number at end of HAnim name -->
                 <xsl:when test="((local-name(..)='HAnimJoint') or (local-name(..)='HAnimSegment')) and ((local-name()='name') or (local-name()='DEF') or (local-name()='fromNode') or (local-name()='toNode')) and 
-                               (contains(.,'_cuneonavicular')       and not(contains(.,'_cuneonavicular_'))) or
-                               (contains(.,'_cuneiform')            and not(contains(.,'_cuneiform_'))) or
-                               (contains(.,'_tarsometatarsal')      and not(contains(.,'_tarsometatarsal_'))) or
-                               (contains(.,'_metatarsal')           and not(contains(.,'_metatarsal_'))) or
-                               (contains(.,'_metatarsophalangeal')  and not(contains(.,'_metatarsophalangeal_'))) or
-                               (contains(.,'_phalanx')              and not(contains(.,'_phalanx_'))) or
-                               (contains(.,'_interphalangeal')      and not(contains(.,'_interphalangeal_'))) or
-                               
-                               (contains(.,'_midcarpal')            and not(contains(.,'_midcarpal_'))) or
-                               (contains(.,'_carpometacarpal')      and not(contains(.,'_carpometacarpal_'))) or
-                               (contains(.,'_metacarpal')           and not(contains(.,'_metacarpal_'))) or
-                               (contains(.,'l_metacarpophalangeal') and not(contains(.,'l_metacarpophalangeal_')))">
+                               (contains(string(.),'_cuneonavicular')       and not(contains(string(.),'_cuneonavicular_'))) or
+                               (contains(string(.),'_cuneiform')            and not(contains(string(.),'_cuneiform_'))) or
+                               (contains(string(.),'_tarsometatarsal')      and not(contains(string(.),'_tarsometatarsal_'))) or
+                               (contains(string(.),'_metatarsal')           and not(contains(string(.),'_metatarsal_'))) or
+                               (contains(string(.),'_metatarsophalangeal')  and not(contains(string(.),'_metatarsophalangeal_'))) or
+                               (contains(string(.),'_phalanx')              and not(contains(string(.),'_phalanx_'))) or
+                               (contains(string(.),'_interphalangeal')      and not(contains(string(.),'_interphalangeal_'))) or
+                               (contains(string(.),'_midcarpal')            and not(contains(string(.),'_midcarpal_'))) or
+                               (contains(string(.),'_carpometacarpal')      and not(contains(string(.),'_carpometacarpal_'))) or
+                               (contains(string(.),'_metacarpal')           and not(contains(string(.),'_metacarpal_'))) or
+                               (contains(string(.),'l_metacarpophalangeal') and not(contains(string(.),'l_metacarpophalangeal_')))">
                     
-                    <xsl:variable name="lastCharacter" select="substring(., string-length(string(.)), 1)"/>
+                    <xsl:variable name="lastCharacter" select="substring(string(.), string-length(string(.)), 1)"/>
                     <xsl:variable name="newName">
-                        <xsl:value-of select="substring(.,1,string-length(string(.)) - 1)"/>
+                        <xsl:value-of select="substring(string(.),1,string-length(string(.)) - 1)"/>
                         <xsl:text>_</xsl:text>
                         <xsl:value-of select="$lastCharacter"/>
                     </xsl:variable>
@@ -6124,7 +6133,7 @@ Recommended tools:
                         <xsl:text>' to name='identifier'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and ((string(.)='image') or starts-with(.,'texture') or starts-with(.,'Texture'))">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and ((string(.)='image') or starts-with(string(.),'texture') or starts-with(string(.),'Texture'))">
                     <xsl:text>Image</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -6132,7 +6141,7 @@ Recommended tools:
                         <xsl:text>' to name='Image'</xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (starts-with(.,'sound') or starts-with(.,'Sounds'))">
+                <xsl:when test="(local-name(..)='meta') and (local-name()='name') and (starts-with(string(.),'sound') or starts-with(string(.),'Sounds'))">
                     <xsl:text>Sound</xsl:text>
                     <xsl:message>
                         <xsl:text>*** fixMetaNamesMatchDublinCore: change meta name='</xsl:text>
@@ -6150,11 +6159,11 @@ Recommended tools:
                         </xsl:message>
                     </xsl:if>
                 </xsl:when>
-                <!-- fix meta dates  and contains(substring-after(.,'/'),'/')-->
+                <!-- fix meta dates  and contains(substring-after(string(.),'/'),'/')-->
                 <xsl:when test="($fixDateFormats='true') and (local-name(..)='meta') and (local-name()='content') and 
                                 ((../@name='created') or (../@name='translated') or (../@name='modified')) and
                                 (not(//meta[contains(@name,'Tidy')][contains(@content,'fixDateFormats=false')])) and
-                                not(starts-with(.,'*enter date of '))"> <!-- default values from newScene.x3d -->
+                                not(starts-with(string(.),'*enter date of '))"> <!-- default values from newScene.x3d -->
                     <xsl:variable name="newDate">
                         <xsl:call-template name="fix-date-format">
                             <xsl:with-param name="value" select="normalize-space(string(.))"/>
@@ -6187,13 +6196,13 @@ Recommended tools:
                     <xsl:message>
                         <xsl:text>*** found wrapper quotation marks around SFString value, removing them (hint: use &amp;quot; to sidestep this check if needed)</xsl:text>
                         <xsl:text>(firstCharacter=</xsl:text>
-                        <xsl:value-of select="substring(.,1,1)"/>
+                        <xsl:value-of select="substring(string(.),1,1)"/>
                         <xsl:text>, lastCharacter=</xsl:text>
-                        <xsl:value-of select="substring(.,string-length(string(.)))"/>
+                        <xsl:value-of select="substring(string(.),string-length(string(.)))"/>
                         <xsl:text>)</xsl:text>
                     </xsl:message>
                     <xsl:call-template name="escape-special-characters">
-                        <xsl:with-param name="inputValue" select="substring(.,2,(string-length(string(.))-2))"/>
+                        <xsl:with-param name="inputValue" select="substring(string(.),2,(string-length(string(.))-2))"/>
                     </xsl:call-template>
                     <xsl:message>
                         <xsl:text>*** fixWrapperQuotes: remove extraneous initial/final quote marks from SFString field, now </xsl:text>
@@ -6202,7 +6211,7 @@ Recommended tools:
                         <xsl:text> </xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text disable-output-escaping="yes">='</xsl:text>
-                        <xsl:value-of select="substring(.,2,(string-length(string(.))-2))"/>
+                        <xsl:value-of select="substring(string(.),2,(string-length(string(.))-2))"/>
                         <xsl:text disable-output-escaping="yes">'</xsl:text>
                         <xsl:text disable-output-escaping="yes">/&gt;</xsl:text>
                     </xsl:message>
@@ -6227,7 +6236,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <!-- fix unquoted MFString - relaxed this requirement per Mantis 1320 https://www.web3d.org/index.php/folder/id/3?id=1320
-                <xsl:when test="$isMFString and not(contains(.,'&quot;'))">
+                <xsl:when test="$isMFString and not(contains(string(.),'&quot;'))">
 					<xsl:text disable-output-escaping="yes">&quot;</xsl:text>
 					<xsl:value-of select="."/>
 					<xsl:text disable-output-escaping="yes">&quot;</xsl:text>
@@ -6322,13 +6331,13 @@ Recommended tools:
                     </xsl:choose>
                 </xsl:when>
                 <!-- fix index values when -1 sentinel is missing follow-on space character -->
-                <xsl:when test="((local-name()='index') or ends-with(local-name(),'Index')) and (contains(., '-11') or contains(., '-12') or contains(., '-13') or contains(., '-14') or contains(., '-15') or contains(., '-16') or contains(., '-17') or contains(., '-18') or contains(., '-19') or contains(., '-10'))">
+                <xsl:when test="((local-name()='index') or ends-with(local-name(),'Index')) and (contains(string(.), '-11') or contains(string(.), '-12') or contains(string(.), '-13') or contains(string(.), '-14') or contains(string(.), '-15') or contains(string(.), '-16') or contains(string(.), '-17') or contains(string(.), '-18') or contains(string(.), '-19') or contains(string(.), '-10'))">
 					<xsl:variable name="result">
-						<xsl:for-each select="tokenize(., '\s')">
+						<xsl:for-each select="tokenize(string(.), '\s')">
 							<xsl:choose>
-								<xsl:when test="starts-with(.,'-1')">
+								<xsl:when test="starts-with(string(.),'-1')">
 									<xsl:text>-1 </xsl:text><!-- insert space -->
-									<xsl:value-of select="substring-after(.,'-1')"/>
+									<xsl:value-of select="substring-after(string(.),'-1')"/>
 									<xsl:text> </xsl:text>
 								</xsl:when>
 								<xsl:otherwise>
@@ -6404,10 +6413,10 @@ Recommended tools:
                         <xsl:value-of select="."/>
                 </xsl:when>
                 <xsl:when test="(local-name() = 'scale') and ((local-name(..) = 'Transform') or (local-name(..) = 'GeoTransform')) and
-                                contains(.,'-') and (($omitNegativeScaleValues = 'true') or ($x3dVersionNeeded = '3.0'))">
+                                contains(string(.),'-') and (($omitNegativeScaleValues = 'true') or ($x3dVersionNeeded = '3.0'))">
                     <!-- negative scale values first allowed in X3D 3.1 -->
                     <!-- https://www.web3d.org/documents/specifications/19775-1/V3.1/Part01/components/group.html -->
-                    <xsl:variable name="newScale" select="normalize-space(translate(.,'-',' '))"/>
+                    <xsl:variable name="newScale" select="normalize-space(translate(string(.),'-',' '))"/>
                     <xsl:value-of select="$newScale"/>
                     <xsl:message>
                         <xsl:text disable-output-escaping="yes">*** omitNegativeScaleValues: &lt;</xsl:text>
@@ -6446,7 +6455,7 @@ Recommended tools:
                 <xsl:when test="((local-name() = 'DEF') or (local-name() = 'USE') or
                                  ((local-name() = 'name') and (starts-with(local-name(..),'HAnim') or starts-with(local-name(..),'Matrix') or
                                                                starts-with(local-name(..),'Proto')))) and 
-                                 (contains(.,' ') or contains(normalize-space(string(.)),' '))">
+                                 (contains(string(.),' ') or contains(normalize-space(string(.)),' '))">
                         <!-- ID or IDREF contains whitespace -->
                         <xsl:message>
                             <xsl:text disable-output-escaping="yes">*** error: &lt;</xsl:text>
@@ -6465,7 +6474,7 @@ Recommended tools:
                         <xsl:value-of select="translate(normalize-space(string(.)),' ','')"/>
                 </xsl:when>
                 <!-- remove whitespace from selected name fields -->
-                <xsl:when test="(local-name(..) = 'NavigationInfo') and (local-name() = 'type') and (string-length(string(.)) > 0) and contains(.,'ALL')">
+                <xsl:when test="(local-name(..) = 'NavigationInfo') and (local-name() = 'type') and (string-length(string(.)) > 0) and contains(string(.),'ALL')">
                     <xsl:message>
                         <xsl:text disable-output-escaping="yes">*** error: &lt;NavigationInfo DEF='</xsl:text>
                         <xsl:value-of select="../@DEF"/>
@@ -6508,7 +6517,7 @@ Recommended tools:
                     <xsl:text>https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/geospatial.html#GeoMetadata</xsl:text>
                 </xsl:when>
                 <!-- TODO more fields: change apostrophes to quotation marks in selected MFString enumerations -->
-                <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(.,$quot))">
+                <xsl:when test="(local-name(..)='FontStyle') and (local-name()='justify') and not(contains(string(.),$quot))">
                     <xsl:variable name="strippedJustify" select="normalize-space(translate(upper-case(.),$apos,''))"/>
                     <xsl:variable name="correctedJustify">
                         <xsl:choose>
@@ -6587,19 +6596,19 @@ Recommended tools:
                 </xsl:when>
                 <xsl:when test="((local-name(..)='CollisionCollection') or (local-name(..)='Contact')) and (local-name() = 'appliedParameters')">
                     <xsl:variable name="correctedAppliedParameters">
-                        <xsl:if test="contains(.,'FRICTION_COEFFICIENT-2')">
+                        <xsl:if test="contains(string(.),'FRICTION_COEFFICIENT-2')">
                             <xsl:text>replace FRICTION_COEFFICIENT-2 with FRICTION_COEFFICIENT_2; </xsl:text>
                         </xsl:if>
-                        <xsl:if test="contains(.,'SPEED-1')">
+                        <xsl:if test="contains(string(.),'SPEED-1')">
                             <xsl:text>replace SPEED-1 with SPEED_1; </xsl:text>
                         </xsl:if>
-                        <xsl:if test="contains(.,'SPEED-2')">
+                        <xsl:if test="contains(string(.),'SPEED-2')">
                             <xsl:text>replace SPEED-2 with SPEED_2; </xsl:text>
                         </xsl:if>
-                        <xsl:if test="contains(.,'SLIP-1')">
+                        <xsl:if test="contains(string(.),'SLIP-1')">
                             <xsl:text>replace SLIP-1 with SLIP_1; </xsl:text>
                         </xsl:if>
-                        <xsl:if test="contains(.,'SLIP-2')">
+                        <xsl:if test="contains(string(.),'SLIP-2')">
                             <xsl:text>replace SLIP-2 with SLIP_2; </xsl:text>
                         </xsl:if>
                     </xsl:variable>
@@ -6614,7 +6623,7 @@ Recommended tools:
                         <xsl:text> (no change applied) </xsl:text>
                     </xsl:message>
                 </xsl:when>
-                <xsl:when test="(local-name(..)='FontStyle') and ((local-name()='family') or (local-name()='justify')) and contains(.,$apos)">
+                <xsl:when test="(local-name(..)='FontStyle') and ((local-name()='family') or (local-name()='justify')) and contains(string(.),$apos)">
                     <xsl:value-of select="translate(string(.),$apos,$quot)"/>
                     <xsl:message>
                         <xsl:text>*** replace apostrophe characters with quote characters, </xsl:text>
@@ -6631,7 +6640,7 @@ Recommended tools:
                     </xsl:message>
                 </xsl:when>
                 <xsl:when test="(local-name(../..)='Scene') and (local-name(..)='WorldInfo') and (local-name()='title') and (string-length(.) > 0) and 
-                                ends-with($fileName,'.x3d') and ends-with(.,'.x3d') and ends-with($fileName,'.x3d') and 
+                                ends-with($fileName,'.x3d') and ends-with(string(.),'.x3d') and ends-with($fileName,'.x3d') and 
                                 not(. = $fileName)">
                     <xsl:value-of select="$fileName"/>
                     <xsl:message>
@@ -6782,9 +6791,9 @@ Recommended tools:
             <!-- attribute value overrides complete -->
             <xsl:text>'</xsl:text>
             <!-- similar output blocks found in @url, @*
-            <xsl:variable name="containsQuote" select="contains(.,'&quot;')"/>
+            <xsl:variable name="containsQuote" select="contains(string(.),'&quot;')"/>
             <xsl:choose>
-                <xsl:when test='contains(.,"&apos;") and not($containsQuote)'>
+                <xsl:when test='contains(string(.),"&apos;") and not($containsQuote)'>
                     <xsl:text>"</xsl:text>
                     <xsl:call-template name="escape-lessthan-characters">
                         <xsl:with-param name="inputValue" select="."/>
@@ -8220,79 +8229,79 @@ Recommended tools:
         <xsl:variable name="newName">
             <!-- find preferred value for this alias -->
             <xsl:choose>
-                <xsl:when test="starts-with(.,'skull_tip')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'vertex')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_clavicale')"><xsl:text>l_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_clavicale')"><xsl:text>r_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'middle back')"><xsl:text>spine_1_middle_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'lower back')"><xsl:text>spine_2_lower_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'waist_preferred_ant') and not(contains(.,'waist_preferred_anterior'))"><xsl:text>waist_preferred_anterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'waist_preferred_post') and not(contains(.,'waist_preferred_posterior'))"><xsl:text>waist_preferred_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Left Bustpoint')"><xsl:text>l_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Right Bustpoint')"><xsl:text>r_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Left Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_femoral_lateral_epicondyles')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_femoral_medial_epicondyles')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_kneecap')"><xsl:text>l_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_femoral_lateral_epicondyles')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_femoral_medial_epicondyles')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_kneecap')"><xsl:text>r_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_trochanter') and not(contains(.,'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_calcaneous_post')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_calcaneous_post')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_humeral_lateral_epicondyles')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_humeral_medial_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_humeral_medial_epicondyles')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_humeral_lateral_epicondyles')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_humeral_medial_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_humeral_medial_epicondyles')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metacarpal_phalanx') and not(contains(.,'phalanx_'))"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'nuchal') and not(contains(.,'nuchale'))"><xsl:text>nuchale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'belly button')"><xsl:text>navel</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_canthus')"><xsl:text>l_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_canthus')"><xsl:text>r_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'chin')"><xsl:text>menton</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'mesosternum')"><xsl:text>mesosternale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'l_tarsal_distal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
-                <xsl:when test="starts-with(.,'r_tarsal_distal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'skull_tip')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'vertex')"><xsl:text>skull_vertex</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_clavicale')"><xsl:text>l_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_axilla_ant')"><xsl:text>l_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_axilla_post')"><xsl:text>l_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_clavicale')"><xsl:text>r_clavicle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_axilla_ant')"><xsl:text>r_axilla_proximal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_axilla_post')"><xsl:text>r_axilla_distal</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'middle back')"><xsl:text>spine_1_middle_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'lower back')"><xsl:text>spine_2_lower_back</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'waist_preferred_ant') and not(contains(string(.),'waist_preferred_anterior'))"><xsl:text>waist_preferred_anterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'waist_preferred_post') and not(contains(string(.),'waist_preferred_posterior'))"><xsl:text>waist_preferred_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_rib10_midspine')"><xsl:text>l_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Left Bustpoint')"><xsl:text>l_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_rib10_midspine')"><xsl:text>r_rib10</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Right Bustpoint')"><xsl:text>r_thelion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Left Anterior Superior Iliac Spine')"><xsl:text>l_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Left Posterior Superior Iliac Spine')"><xsl:text>l_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Right Anterior Superior Iliac Spine')"><xsl:text>r_asis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'Right Posterior Superior Iliac Spine')"><xsl:text>r_psis</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_femoral_lateral_epicn')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_femoral_lateral_epicondyles')"><xsl:text>l_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_femoral_medial_epicn')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_femoral_medial_epicondyles')"><xsl:text>l_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_kneecap')"><xsl:text>l_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_trochanter') and not(contains(string(.),'trochanterion'))"><xsl:text>l_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_femoral_lateral_epicn')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_femoral_lateral_epicondyles')"><xsl:text>r_femoral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_femoral_medial_epicn')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_femoral_medial_epicondyles')"><xsl:text>r_femoral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_kneecap')"><xsl:text>r_suprapatella</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_trochanter') and not(contains(string(.),'trochanterion'))"><xsl:text>r_trochanterion</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_metatarsal_pha1')"><xsl:text>l_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_metatarsal_pha5')"><xsl:text>l_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_calcaneous_post')"><xsl:text>l_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_metatarsal_pha1')"><xsl:text>r_metatarsal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_metatarsal_pha5')"><xsl:text>r_metatarsal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_calcaneous_post')"><xsl:text>r_calcaneus_posterior</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_humeral_lateral_epicn')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_humeral_lateral_epicondyles')"><xsl:text>l_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_humeral_medial_epicn')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_humeral_medial_epicondyles')"><xsl:text>l_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_humeral_lateral_epicn')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_humeral_lateral_epicondyles')"><xsl:text>r_humeral_lateral_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_humeral_medial_epicn')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_humeral_medial_epicondyles')"><xsl:text>r_humeral_medial_epicondyle</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_metacarpal_pha2')"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_metacarpal_phalanx') and not(contains(string(.),'phalanx_'))"><xsl:text>l_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_metacarpal_pha5')"><xsl:text>l_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_metacarpal_pha2')"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_metacarpal_phalanx') and not(contains(string(.),'phalanx_'))"><xsl:text>r_metacarpal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_metacarpal_pha5')"><xsl:text>r_metacarpal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'nuchal') and not(contains(string(.),'nuchale'))"><xsl:text>nuchale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'belly button')"><xsl:text>navel</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_canthus')"><xsl:text>l_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_canthus')"><xsl:text>r_ectocanthus</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'chin')"><xsl:text>menton</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'mesosternum')"><xsl:text>mesosternale</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'median plane')"><xsl:text>rear_center_midsagittal_plane</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_thumb_distal')"><xsl:text>l_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_index_distal')"><xsl:text>l_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_middle_distal')"><xsl:text>l_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_ring_distal')"><xsl:text>l_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_pinky_distal')"><xsl:text>l_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_thumb_distal')"><xsl:text>r_carpal_distal_phalanx_1</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_index_distal')"><xsl:text>r_carpal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_middle_distal')"><xsl:text>r_carpal_distal_phalanx_3</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_ring_distal')"><xsl:text>r_carpal_distal_phalanx_4</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_pinky_distal')"><xsl:text>r_carpal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_digit2')"><xsl:text>l_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'l_tarsal_distal_pha5')"><xsl:text>l_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_digit2')"><xsl:text>r_tarsal_distal_phalanx_2</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
+                <xsl:when test="starts-with(string(.),'r_tarsal_distal_pha5')"><xsl:text>r_tarsal_distal_phalanx_5</xsl:text><xsl:value-of select="$suffix"/></xsl:when>
                 <!-- ***   next: HAnim2 HAnimSite alias test matching HAnimSegment alias names, which may match -->
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_hindfoot')"><xsl:value-of select="substring-before(../@name,'l_hindfoot')"/><xsl:text>l_talus</xsl:text><xsl:value-of select="substring-after(../@name,'l_hindfoot')"/></xsl:when>
                 <xsl:when test="(local-name(..)='HAnimSegment') and contains(../@name,'l_cuneiform')"><xsl:value-of select="substring-before(../@name,'l_cuneiform')"/><xsl:text>l_cuneiform_2</xsl:text><xsl:value-of select="substring-after(../@name,'l_cuneiform')"/></xsl:when>
@@ -8542,6 +8551,9 @@ Recommended tools:
     <xsl:template name="reduceNumberSignificantDigits">
         <xsl:param name="inputString"><xsl:text><!-- default value is empty --></xsl:text></xsl:param>
         
+        <!-- handle overzealous XMLSpy pickiness -->
+        <xsl:variable name="inputString2" select="string($inputString)"/>
+        
         <!-- debug
         <xsl:message>
           <xsl:text>*** reduceNumberSignificantDigits</xsl:text>
@@ -8551,20 +8563,20 @@ Recommended tools:
         </xsl:message>
         -->
         <xsl:choose>
-          <xsl:when test="(string-length(normalize-space($inputString)) = 0)">
+          <xsl:when test="(string-length(normalize-space($inputString2)) = 0)">
             <!-- nothing here, return -->
           </xsl:when>
-          <xsl:when test="not(contains($inputString,' '))">
+          <xsl:when test="not(contains($inputString2,' '))">
               <!-- now processing last element, termination condition -->
               <xsl:variable name="roundedValue">
                 <xsl:choose>
-                  <xsl:when test="(number(normalize-space($inputString)) lt 0)">
+                  <xsl:when test="(number(normalize-space($inputString2)) lt 0)">
                     <!-- round down, negative number -->
-                    <xsl:value-of select="string(number(normalize-space($inputString)) - number($roundoffValue))"/>
+                    <xsl:value-of select="string(number(normalize-space($inputString2)) - number($roundoffValue))"/>
                   </xsl:when>
                   <xsl:otherwise>
                     <!-- round up, positive number -->
-                    <xsl:value-of select="string(number(normalize-space($inputString)) + number($roundoffValue))"/>
+                    <xsl:value-of select="string(number(normalize-space($inputString2)) + number($roundoffValue))"/>
                   </xsl:otherwise>
                 </xsl:choose>
               </xsl:variable>
@@ -8582,8 +8594,8 @@ Recommended tools:
               
               <xsl:message>
                 <xsl:text>*** reduceNumberSignificantDigits (branch 1, no space character)</xsl:text>
-                <xsl:text>, $inputString='</xsl:text>
-                <xsl:value-of select="$inputString"/>
+                <xsl:text>, $inputString2='</xsl:text>
+                <xsl:value-of select="$inputString2"/>
                 <xsl:text>', $roundedValue=</xsl:text>
                 <xsl:value-of select="$roundedValue"/>
                 <xsl:text>, $reducedResult=</xsl:text>
@@ -8611,7 +8623,7 @@ Recommended tools:
           </xsl:when>
           <xsl:otherwise>
               <!-- process and return first element, then recurse on remainder -->
-              <xsl:variable name="initialValue" select="substring-before(normalize-space($inputString),' ')"/>
+              <xsl:variable name="initialValue" select="substring-before(normalize-space($inputString2),' ')"/>
               <xsl:variable name="roundedValue">
                 <xsl:choose>
                   <xsl:when test="(number(normalize-space($initialValue)) lt 0)">
@@ -8661,7 +8673,7 @@ Recommended tools:
                       </xsl:call-template>
                       <!-- recurse on remainder, if any -->
                       <xsl:call-template name="reduceNumberSignificantDigits">
-                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString, ' '))"/>
+                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString2, ' '))"/>
                       </xsl:call-template>
                   </xsl:when>
                   <xsl:otherwise>
@@ -8679,7 +8691,7 @@ Recommended tools:
                       </xsl:call-template>
                       <!-- recurse on remainder, if any -->
                       <xsl:call-template name="reduceNumberSignificantDigits">
-                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString, ' '))"/>
+                          <xsl:with-param name="inputString" select="normalize-space(substring-after($inputString2, ' '))"/>
                       </xsl:call-template>
                   </xsl:otherwise>
               </xsl:choose>
@@ -8699,7 +8711,17 @@ Recommended tools:
               <xsl:message>
                 <xsl:text>($numberSignificantDigitsEnabled = '</xsl:text>
                 <xsl:value-of select="$numberSignificantDigitsEnabled"/>
-                <xsl:text>'), no conversion is enabled</xsl:text>
+                <xsl:text>'), no conversion by template reducePrecisionSingleValue is enabled</xsl:text>
+              </xsl:message>
+          </xsl:when>
+          <xsl:when test="(string-length($reducePrecisionRegex) = 0)">
+              <!-- no conversion is possible, simply return string value -->
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="$inputValue"/>
+              <xsl:message>
+                <xsl:text>($reducePrecisionRegex = '</xsl:text>
+                <xsl:value-of select="$reducePrecisionRegex"/>
+                <xsl:text>'), no conversion by template reducePrecisionSingleValue is possible for this attribute value</xsl:text>
               </xsl:message>
           </xsl:when>
           <xsl:otherwise>

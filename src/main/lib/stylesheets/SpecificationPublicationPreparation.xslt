@@ -182,7 +182,7 @@
             <xsl:when test="(@class = 'proposedDeletion')">
                 <xsl:if test="($verbose = 'true')">
                     <xsl:message>
-                        <xsl:text disable-output-escaping="false">*** omitted [</xsl:text>
+                        <xsl:text disable-output-escaping="no">*** omitted [</xsl:text>
                         <xsl:value-of select="local-name()"/>
                         <xsl:text> class='</xsl:text>
                         <xsl:value-of select="@class"/>

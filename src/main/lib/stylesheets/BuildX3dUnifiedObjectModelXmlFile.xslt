@@ -4,7 +4,7 @@
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
 		xmlns:fn="http://www.w3.org/2005/xpath-functions"
         xmlns:saxon="http://saxon.sf.net"
-        xmlns:xsd="https://www.w3.org/2001/XMLSchema-instance">
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
             <!--
         extension-element-prefixes="saxon xs">
                 saxon:trace="true"
@@ -123,7 +123,7 @@ Recommended tool:
 
     <xsl:element name="X3dUnifiedObjectModel">
         <xsl:attribute name="version" select="$schemaVersionNumber"/>
-        <xsl:attribute name="xsd:noNamespaceSchemaLocation">X3dUnifiedObjectModel.xsd</xsl:attribute>
+        <xsl:attribute name="xsd:noNamespaceSchemaLocation">https://www.web3d.org/specifications/X3dUnifiedObjectModel.xsd</xsl:attribute>
         
         <xsl:element name="SimpleTypeEnumerations">
             <xsl:text>&#10;</xsl:text>
@@ -688,7 +688,7 @@ Recommended tool:
                             <xsl:when test="contains($fieldType,'Int32')">
                                 <xsl:text>1</xsl:text>
                             </xsl:when>
-                            <xsl:when test="contains($fieldType,'4') or contains($fieldType,'ColorRGBA') or contains($fieldType,'Rotation')">
+                            <xsl:when test="contains($fieldType,'4') or contains($fieldType,'ColorRGBA') or contains($fieldType,'Rotation') or contains($fieldType,'Quaternion')">
                                 <xsl:text>4</xsl:text>
                             </xsl:when>
                             <xsl:when test="contains($fieldType,'3') or contains($fieldType,'Color')">

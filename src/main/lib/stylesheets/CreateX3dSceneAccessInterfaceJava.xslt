@@ -221,8 +221,8 @@ Additional references of interest:
 			<xsl:when test="($x3dType = 'MFFloat') or ($baseType = 'MFFloat')">
 				<xsl:text disable-output-escaping="yes">ArrayList&lt;Float&gt;</xsl:text>
 			</xsl:when>
-			<xsl:when test="contains( $x3dType,'FVec2f') or contains( $x3dType,'FVec3f') or (@baseType='bboxSizeType') or contains( $x3dType,'FVec4f') or contains( $x3dType,'FRotation') or contains( $x3dType,'FColor') or
-                                        contains($baseType,'FVec2f') or contains($baseType,'FVec3f') or ($baseType='bboxSizeType') or contains($baseType,'FVec4f') or contains($baseType,'FRotation') or contains($baseType,'FColor')">
+			<xsl:when test="contains( $x3dType,'FVec2f') or contains( $x3dType,'FVec3f') or (@baseType='bboxSizeType') or contains( $x3dType,'FVec4f') or contains( $x3dType,'FRotation') or contains( $x3dType,'FColor') or contains($x3dType,'Quaternion') or
+                                        contains($baseType,'FVec2f') or contains($baseType,'FVec3f') or ($baseType='bboxSizeType') or contains($baseType,'FVec4f') or contains($baseType,'FRotation') or contains($baseType,'FQuaternion') or contains($baseType,'FColor')">
 				<xsl:text>float[]</xsl:text>
 			</xsl:when>
 			<xsl:when test="( $x3dType = 'SFMatrix3f') or ( $x3dType = 'MFMatrix3f') or ( $x3dType = 'SFMatrix4f') or ($ x3dType = 'MFMatrix4f') or
@@ -640,7 +640,7 @@ Additional references of interest:
 				<xsl:text>}</xsl:text>
 			</xsl:when> -->
 			 <!-- ======================================== -->
-			<xsl:when test="contains($x3dType,'FVec2f') or contains($x3dType,'FVec3f') or contains($x3dType,'FVec4f') or contains($x3dType,'FRotation') or contains($x3dType,'FColor')">
+			<xsl:when test="contains($x3dType,'FVec2f') or contains($x3dType,'FVec3f') or contains($x3dType,'FVec4f') or contains($x3dType,'FRotation') or contains($x3dType,'FQuaternion') or contains($x3dType,'FColor')">
 				<xsl:text>{</xsl:text>
 				<!-- Java float constants have 'f' appended, e.g. 1.0f -->
 				<xsl:call-template name="append-f-to-float-values-recurse">
@@ -714,7 +714,7 @@ Additional references of interest:
                 <xsl:when test="contains($x3dType,'FVec3') or ends-with($x3dType,'FColor') or (@baseType='bboxSizeType')">
                     <xsl:text>3</xsl:text>
                 </xsl:when>
-                <xsl:when test="contains($x3dType,'FVec4') or contains($x3dType,'Rotation') or ends-with($x3dType,'FColorRGBA')">
+                <xsl:when test="contains($x3dType,'FVec4') or contains($x3dType,'Rotation') or ends-with($x3dType,'FColorRGBA') or contains($x3dType,'Quaternion')">
                     <xsl:text>4</xsl:text>
                 </xsl:when>
                 <xsl:when test="contains($x3dType,'FMatrix3')">
@@ -4561,12 +4561,12 @@ import org.web3d.x3d.jsail.*; // again making sure #4
 	public static final String FILE_EXTENSION_JAVASCRIPT = ".js";
 
 	/**
-	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.x3dj</i>
+	 * File extension for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.json</i>
 	 * @see FILE_EXTENSION_X3DJ
 	 * @see <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">JavaScript Object Notation (JSON)</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#JSON" target="_blank">X3D Scene Authoring Hints: JSON</a>
 	 */
-	public static final String FILE_EXTENSION_JSON = ".x3dj";
+	public static final String FILE_EXTENSION_JSON = ".json";
 
 	/**
 	 * File extension alternative to <i>.json</i> for JavaScript Object Notation (JSON) source data, with dot prepended: <i>.x3dj</i>
@@ -5433,7 +5433,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 */
 	public String toStringJSON()
 	{
-		String temporaryFileName = "temporaryJsonOutputFile.x3dj";
+		String temporaryFileName = "temporaryJsonOutputFile.json";
 
 		try
 		{
@@ -5829,7 +5829,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @see ConfigurationProperties#STYLESHEET_JSON
 	 * @see ConfigurationProperties#isNormalizeCommentWhitespace()
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJson.xslt" target="_blank">X3dToJson.xslt</a>
-	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.x3dj" target="_blank">examples/HelloWorldProgramOutput.x3dj</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.json" target="_blank">examples/HelloWorldProgramOutput.json</a>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding" target="_blank">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html" target="_blank">X3D to JSON Stylesheet Converter</a>
 	 * @see <a href="https://www.saxonica.com/documentation/index.html#!using-xsl/embedding" target="_blank">Saxonica &gt; Saxon &gt; Using XSLT &gt; Invoking XSLT from an application</a>
@@ -6761,7 +6761,11 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             boolean x3dLoaderSuccess = x3dLoader.loadModelFromFileX3D(x3dFile);
             if (x3dLoaderSuccess)
                 return replace((X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[) x3dLoader.getX3dObjectTree());
-            else return false;
+            else
+            {
+                System.err.println("*** X3D.loadModelFromFileX3D(" + x3dFile.getPath() + ") did not load successfully");
+                return false;
+            }
 	}
 
 	/** Replaces current X3D object with new X3D object.
@@ -6771,9 +6775,19 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	public boolean replace (X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ newX3DObject)
 	{
             if (newX3DObject == null)
+            {
+                System.err.println("*** X3D.replace() received null newX3DObject, ignored");
                 return false;
-            setHead (newX3DObject.getHead());
-            setScene(newX3DObject.getScene());
+            }
+            // attributes
+            setProfile  (newX3DObject.getProfile());
+            setVersion  (newX3DObject.getVersion());
+            setCssClass (newX3DObject.getCssClass());
+            setCssStyle (newX3DObject.getCssStyle());
+            setHtmlId   (newX3DObject.getHtmlId());
+            // contained nodes
+            setHead    (newX3DObject.getHead());
+            setScene   (newX3DObject.getScene());
             return true;
 	}
 
@@ -7545,7 +7559,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 							</xsl:variable>
 							<xsl:variable name="isArrayType">
 								<!-- TODO remove restrictions when ArrayList types added -->
-								<xsl:value-of select="starts-with(@type,'MF') and not(contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or contains(@type,'Matrix')) and contains($javaType,'[]')"/>
+								<xsl:value-of select="starts-with(@type,'MF') and not(contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or contains(@type,'Quaternion') or contains(@type,'Matrix')) and contains($javaType,'[]')"/>
 							</xsl:variable>
 							<xsl:variable name="isArrayListType">
 								<xsl:value-of select="contains($javaType,'&lt;')"/>
@@ -7585,7 +7599,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:when test="contains($type,'FVec3') or ends-with($type,'FColor') or (@baseType='bboxSizeType')">
 										<xsl:text>3-tuple </xsl:text>
 									</xsl:when>
-									<xsl:when test="contains($type,'FVec4') or ends-with($type,'FRotation') or contains($type,'FColorRGBA')">
+									<xsl:when test="contains($type,'FVec4') or ends-with($type,'FRotation') or ends-with($type,'FQuaternion') or contains($type,'FColorRGBA')">
 										<xsl:text>4-tuple </xsl:text>
 									</xsl:when>
 									<xsl:when test="starts-with($type,'MF')">
@@ -8760,7 +8774,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 								<xsl:text>	 */</xsl:text><!-- end javadoc -->
                                                                 <xsl:text>&#10;</xsl:text>
 								<xsl:variable name="isSingleValueType">
-									<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
+									<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Quaternion')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 								</xsl:variable>
 								<xsl:variable name="newValueNullExceptionCheck">
 									<!-- TODO avoid null-value checks by replacing with empty values instead, where possible -->
@@ -9370,7 +9384,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:when test="contains(@type,'Int32') or contains(@type,'Image')">
 										<xsl:text>valueArrayInteger</xsl:text>
 									</xsl:when>
-									<xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or
+									<xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or
 													ends-with(@type,'f') or (@type = 'bboxSizeType')">
 										<xsl:text>valueArrayFloat</xsl:text>
 									</xsl:when>
@@ -9857,7 +9871,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                                 <xsl:when test="contains(@type,'Int32') or contains(@type,'Image')">
                                                     <xsl:text>valueArrayInteger</xsl:text>
                                                 </xsl:when>
-                                                <xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or
+                                                <xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or
                                                                 ends-with(@type,'f')    or (@type = 'bboxSizeType')">
                                                     <xsl:text>valueArrayFloat</xsl:text>
                                                 </xsl:when>
@@ -9937,7 +9951,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
             </xsl:text>
             <xsl:value-of select="$baseVariable"/><xsl:text> = newArray;</xsl:text>
                                             </xsl:when>
-                                            <xsl:when test="starts-with(@type,'MF') or contains(@type,'FColor') or contains(@type,'FRotation') or contains(@type,'FVec') or contains(@type,'FMatrix') or contains(@type,'FImage')">
+                                            <xsl:when test="starts-with(@type,'MF') or contains(@type,'FColor') or contains(@type,'FRotation') or contains(@type,'FQuaternion') or contains(@type,'FVec') or contains(@type,'FMatrix') or contains(@type,'FImage')">
                                         <xsl:text disable-output-escaping="yes"><![CDATA[
         if ( getType().equals(field.TYPE_]]></xsl:text><xsl:value-of select="upper-case(@type)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
              getType().equals(field.TYPE_]]></xsl:text><xsl:value-of select="upper-case($nameSFType)"/><xsl:text disable-output-escaping="yes"><![CDATA[) ||
@@ -9954,7 +9968,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
                                             </xsl:when>
                                             <xsl:otherwise>
                                                 <xsl:message>
-                                                    <xsl:text>** unhandled type=</xsl:text>
+                                                    <xsl:text>*** unhandled type=</xsl:text>
                                                     <xsl:value-of select="@type"/>
                                                 </xsl:message>
                                             </xsl:otherwise>
@@ -10292,7 +10306,7 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 									<xsl:text>&#10;</xsl:text>
                                                                 
 									<xsl:if test="(@type = 'SFVec2f') or (@type = 'SFVec3f') or (@type = 'SFVec4f') or
-												  (@type = 'SFColor') or (@type = 'SFColorRGBA') or (@type = 'SFRotation')">
+												  (@type = 'SFColor') or (@type = 'SFColorRGBA') or (@type = 'SFRotation') or (@type = 'Quaternion')">
 										<xsl:text>
 	/**
 	 * Assign values to </xsl:text>
@@ -10346,6 +10360,14 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 	 * @param y second component of axis
 	 * @param z third component of axis
 	 * @param angleRadians fourth component of rotation around axis
+</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@type = 'SFQuaternion')">
+												<xsl:text>
+	 * @param x first component 
+	 * @param y second component
+	 * @param z third component 
+	 * @param w fourth component 
 </xsl:text>
 											</xsl:when>
 										</xsl:choose>
@@ -10425,6 +10447,18 @@ public static boolean fileNameMeetsX3dNamingConventions(String fileName)
 		set</xsl:text>
 										<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 										<xsl:text>(new float[] {x, y, z, angleRadians});
+		return this;
+	}
+</xsl:text>
+											</xsl:when>
+											<xsl:when test="(@type = 'SFQuaternion')">
+											<xsl:text> set</xsl:text>
+										<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+										<xsl:text>(float x, float y, float z, float w)
+	{
+		set</xsl:text>
+										<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+										<xsl:text>(new float[] {x, y, z, w});
 		return this;
 	}
 </xsl:text>
@@ -12719,8 +12753,8 @@ setAttribute method invocations).
 													or (@name = 'GeoLOD')"> <!-- GeoLOD has outputOnly children field -->
 										<xsl:text>
 	/**
-	 * Add comment as CommentsBlock to children field
-	 * @param newComment initial value
+	 * Append single comment as CommentsBlock to children field
+	 * @param newComment single comment string
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -12732,8 +12766,8 @@ setAttribute method invocations).
 		return this;
 	}
 	/**
-	 * Add comments as String[] array to children field
-	 * @param newComments array of comments
+	 * Append comments as CommentsBlock to children field
+	 * @param newComments array of comment strings
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive
 setAttribute method invocations).
 	 */
@@ -12745,7 +12779,7 @@ setAttribute method invocations).
 		return this;
 	}
 	/**
-	 * Add CommentsBlock to children field
+	 * Append CommentsBlock to children field
 	 * @param newCommentsBlock block of comments to add
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
@@ -12761,7 +12795,7 @@ setAttribute method invocations).
 	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
 	 */
 	/* @Override */
-	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="true"><![CDATA[ clearComments ()
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ clearComments ()
 	{
 // problematic, leads to java.util.ConcurrentModificationException
 //        Iterator<org.web3d.x3d.sai.Core.X3DNode> iterator = children.iterator();
@@ -12780,7 +12814,33 @@ setAttribute method invocations).
       children = newChildren;
       return this;
 	}
-										]]></xsl:text>
+	/**
+	 * Retrieve comments from children field as a list of CommentsBlock lists, without modifying children field
+	 * @return list of all available CommentsBlock entries in children field
+	 */
+	public ArrayList<CommentsBlock> getCommentsBlockList ()
+	{
+      ArrayList<CommentsBlock> newCommentsBlockList = new ArrayList<>();
+      for (org.web3d.x3d.sai.Core.X3DNode nextChild : children)
+      {
+          if (nextChild instanceof CommentsBlock)
+              newCommentsBlockList.add((CommentsBlock) nextChild);
+      }
+      return newCommentsBlockList;
+	}
+	/**
+	 * Append single CommentsBlock list to children field, replacing other comments
+	 * @param newCommentsBlock block of comments to add
+	 * @return {@link ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public ]]></xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[ setComments (CommentsBlock newCommentsBlock)
+	{
+		if (newCommentsBlock == null) return this;
+        clearComments();
+		children.add(newCommentsBlock);
+		return this;
+	}
+]]></xsl:text>
 									</xsl:when>
 								</xsl:choose>
 
@@ -12956,6 +13016,51 @@ setAttribute method invocations).
 									<xsl:text> set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
 									<xsl:text>(double x, double y, double z, double angleRadians)
+	{
+		return set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(new </xsl:text>
+									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(x, y, z, angleRadians));
+	}
+	/**
+	 * Utility method: double-precision set-array accessor for X3D floating-point type, similar to {@link #set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(float[])}.
+	 * @param newArray is new value for field
+	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public ]]></xsl:text>
+									<xsl:value-of select="$thisClassName"/>
+									<xsl:text> set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(double[] newArray)
+	{
+		return set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(new </xsl:text>
+									<xsl:value-of select="$type"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(newArray));
+	}
+</xsl:text>
+                                </xsl:when>
+                                <xsl:when test="($type = 'SFQuaternion')">
+                                    <xsl:text>
+	/**
+	 * Utility method: double-precision set-parameters accessor for X3D floating-point type, similar to {@link #set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(float[])}.
+	 * @param x first component
+	 * @param y second component
+	 * @param z third component
+	 * @param w fourth component
+	 * @return {@link </xsl:text><xsl:value-of select="$thisClassName"/><xsl:text disable-output-escaping="yes"><![CDATA[} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public ]]></xsl:text>
+									<xsl:value-of select="$thisClassName"/>
+									<xsl:text> set</xsl:text>
+									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
+									<xsl:text>(double x, double y, double z, double w)
 	{
 		return set</xsl:text>
 									<xsl:value-of select="translate($CamelCaseName,'-','_')"/> <!-- translate name here to avoid xpath problems -->
@@ -13359,8 +13464,8 @@ setAttribute method invocations).
 							<xsl:when test="($name = 'meta')">
 								<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
-	 * Utility constructor that assigns name-value pair for name and content attributes.
-	 * @param newName  name for this meta element
+	 * Utility constructor that assigns name, content for name and content attributes.
+	 * @param newName name field (usually an enumeration) for this meta element
 	 * @param newContent content value for this meta element
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
 	 * @see <a href="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#metaStatements" target="_blank">X3D Scene Authoring Hints: meta Statements</a>
@@ -13370,6 +13475,7 @@ setAttribute method invocations).
 			<xsl:value-of select="$thisClassName"/>
 	<xsl:text disable-output-escaping="yes"><![CDATA[ (String newName, String newContent)
 	{
+		super(); // constructor invocation and corresponding initialize()
 		initialize();
 		setName   (newName);
 		setContent(newContent);
@@ -14545,7 +14651,7 @@ setAttribute method invocations).
                 </xsl:if>
 				<xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
 				<xsl:variable name="isSingleValueType">
-					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
+					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Quaternion')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 				</xsl:variable>
 				<xsl:variable name="CamelCaseName"><!-- upper camel case -->
 					<xsl:choose>
@@ -15495,7 +15601,7 @@ setAttribute method invocations).
 
         <xsl:variable name="fieldName" select="translate(@name,'-','_')"/><!-- handle http-equiv etc. -->
 				<xsl:variable name="isSingleValueType">
-					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
+					<xsl:value-of select="starts-with(@type,'SF') and not(contains(@type, 'Vec')) and not(contains(@type, 'Rotation')) and not(contains(@type, 'Quaternion')) and not(contains(@type, 'Color')) and not(contains(@type, 'Matrix'))"/>
 				</xsl:variable>
 				<xsl:variable name="CamelCaseName"><!-- upper camel case -->
 					<xsl:choose>
@@ -17631,6 +17737,104 @@ setAttribute method invocations).
 
 						<xsl:choose><!-- utility methods for node-unique and statement-unique functionality -->
 
+							<xsl:when test="($name = 'head')">
+								<xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Find first contained meta statement having a given name enumeration, if present.
+	 * @param metaName is NMTOKEN name enumeration attribute of interest
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
+	 */
+	public meta findMetaByName (String metaName)
+	{
+		for (meta element : metaList)
+		{
+			 if (element.getName().trim().equalsIgnoreCase(metaName.trim()))
+				 return element;
+		}
+		return null;
+	}
+	/**
+	 * Determine whether relevant meta statement is present by checking name enumeration.
+	 * @param metaName is name enumeration attribute for meta statement of interest
+	 * @return whether meta is found.
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
+	 */
+	public boolean hasMeta (String metaName)
+	{
+		return (findMetaByName(metaName) != null);
+	}
+	/**
+	 * Determine whether relevant meta statement is already present by checking both name enumeration and content value
+	 * @param metaName is name enumeration attribute for meta statement of interest, case-insensitive
+	 * @param metaContent is content attribute for meta statement of interest, case-insensitive
+	 * @return whether meta is found
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
+	 */
+	public boolean hasMeta (String metaName, String metaContent)
+	{
+		for (meta element : metaList)
+		{
+			 if (element.getName().equalsIgnoreCase(metaName) && 
+                 element.getContent().trim().equalsIgnoreCase(metaContent.trim()))
+				 return true;
+		}
+        return false; // not found
+	}
+                                    
+	/**
+	 * Find contained component statement by name, if present.
+	 * @param componentName name for component statement
+	 * @return component reference of interest, null otherwise
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#component">X3D Tooltips: component</a>
+	 */
+	public component findComponentByName (String componentName)
+	{
+		for (component element : componentList)
+		{
+			 if (element.getName().equalsIgnoreCase(componentName))
+				 return element;
+		}
+		return null;
+	}
+	/**
+	 * Determine whether relevant component statement is present.
+	 * @param componentName name for component statement
+	 * @return whether component is found.
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#component">X3D Tooltips: component</a>
+	 */
+	public boolean hasComponent (String componentName)
+	{
+		return (findComponentByName(componentName) != null);
+	}
+
+	/**
+	 * Find contained unit statement by name, if present.
+	 * @param unitName is name attribute for unit statement of interest
+	 * @return unit object reference of interest, null otherwise
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#unit">X3D Tooltips: unit</a>
+	 */
+	public unit findUnitByName (String unitName)
+	{
+		for (unit element : unitList)
+		{
+			 if (element.getName().equalsIgnoreCase(unitName))
+				 return element;
+		}
+		return null;
+	}
+	/**
+	 * Determine whether relevant unit statement is present.
+	 * @param unitName is name attribute for unit statement of interest
+	 * @return whether unit is found.
+	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#unit">X3D Tooltips: unit</a>
+	 */
+	public boolean hasUnit (String unitName)
+	{
+		return (findUnitByName(unitName) != null);
+	}
+]]></xsl:text>
+							</xsl:when>
 							<xsl:when test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ComposedShader') or ($name = 'PackagedShader') or ($name = 'ShaderPart')">
 								<!-- field utilities -->
 							<xsl:if test="($name = 'Script') or ($name = 'ShaderProgram') or ($name = 'ComposedShader') or ($name = 'PackagedShader')">
@@ -18196,88 +18400,6 @@ setAttribute method invocations).
 	}
 ]]></xsl:text>
 							</xsl:when>
-							<xsl:when test="($name = 'head')">
-								<xsl:text disable-output-escaping="yes"><![CDATA[
-	/**
-	 * Find contained meta statement by name, if present.
-	 * @param metaName is NMTOKEN name attribute for meta statement of interest
-	 * @return meta reference of interest, null otherwise
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#NMTOKEN">X3D Tooltips: type NMTOKEN</a>
-	 */
-	public meta findMetaByName (String metaName)
-	{
-		for (meta element : metaList)
-		{
-			 if (element.getName().equalsIgnoreCase(metaName))
-				 return element;
-		}
-		return null;
-	}
-	/**
-	 * Determine whether relevant meta statement is present.
-	 * @param metaName is name attribute for meta statement of interest
-	 * @return whether meta is found.
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#meta">X3D Tooltips: meta statement</a>
-	 */
-	public boolean hasMeta (String metaName)
-	{
-		return (findMetaByName(metaName) != null);
-	}
-
-	/**
-	 * Find contained component statement by name, if present.
-	 * @param componentName name for component statement
-	 * @return component reference of interest, null otherwise
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#component">X3D Tooltips: component</a>
-	 */
-	public component findComponentByName (String componentName)
-	{
-		for (component element : componentList)
-		{
-			 if (element.getName().equalsIgnoreCase(componentName))
-				 return element;
-		}
-		return null;
-	}
-	/**
-	 * Determine whether relevant component statement is present.
-	 * @param componentName name for component statement
-	 * @return whether component is found.
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#component">X3D Tooltips: component</a>
-	 */
-	public boolean hasComponent (String componentName)
-	{
-		return (findComponentByName(componentName) != null);
-	}
-
-	/**
-	 * Find contained unit statement by name, if present.
-	 * @param unitName is name attribute for unit statement of interest
-	 * @return unit object reference of interest, null otherwise
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#unit">X3D Tooltips: unit</a>
-	 */
-	public unit findUnitByName (String unitName)
-	{
-		for (unit element : unitList)
-		{
-			 if (element.getName().equalsIgnoreCase(unitName))
-				 return element;
-		}
-		return null;
-	}
-	/**
-	 * Determine whether relevant unit statement is present.
-	 * @param unitName is name attribute for unit statement of interest
-	 * @return whether unit is found.
-	 * @see <a href="https://www.web3d.org/x3d/content/X3dTooltips.html#unit">X3D Tooltips: unit</a>
-	 */
-	public boolean hasUnit (String unitName)
-	{
-		return (findUnitByName(unitName) != null);
-	}
-]]></xsl:text>
-							</xsl:when>
                             <xsl:when test="($name = 'Extrusion')">
                                     <xsl:text disable-output-escaping="yes"><![CDATA[
 /**
@@ -18684,7 +18806,7 @@ public File toFileSvgCrossSection(String fileName)
 									<xsl:when test="contains(@type,'Int32') or contains(@type,'Image')">
 										<xsl:text>valueArrayInteger</xsl:text>
 									</xsl:when>
-									<xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or
+									<xsl:when test="contains(@type,'Float') or contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or
 													ends-with(@type,'f') or (@type = 'bboxSizeType')">
 										<xsl:text>valueArrayFloat</xsl:text>
 									</xsl:when>
@@ -20088,7 +20210,7 @@ public String getAccessType(String fieldName)
 	{
 		super(); // constructor invocation and corresponding initialize()
 		initialize();
-    loadModelFromFileX3D (x3dFile);
+		loadModelFromFileX3D (x3dFile);
 	}
 
 	/** Constructor for X3D object to load model from path, fileName.
@@ -20099,7 +20221,7 @@ public String getAccessType(String fieldName)
 	{
 		super(); // constructor invocation and corresponding initialize()
 		initialize();
-    loadModelFromFileX3D (path, fileName);
+		loadModelFromFileX3D (path, fileName);
 	}
 
 	/** Constructor for X3D object to load model from file.
@@ -20109,7 +20231,7 @@ public String getAccessType(String fieldName)
 	{
 		super(); // constructor invocation and corresponding initialize()
 		initialize();
-    loadModelFromFileX3D ("", fileName);
+		loadModelFromFileX3D ("", fileName);
 	}
 ]]></xsl:text>
             </xsl:if>
@@ -20780,7 +20902,7 @@ shall not include the underlying field's values at that point in time.
 					<xsl:text>import java.util.ArrayList;</xsl:text>
 					<xsl:text>&#10;</xsl:text>
 				</xsl:if>
-				<xsl:if test="starts-with($fieldName, 'MF') or starts-with($fieldName, 'SFVec') or starts-with($fieldName, 'SFRotation') or 
+				<xsl:if test="starts-with($fieldName, 'MF') or starts-with($fieldName, 'SFVec') or starts-with($fieldName, 'SFRotation') or starts-with($fieldName, 'SFQuaternion') or 
                               starts-with($fieldName, 'SFColor') or ($fieldName = 'SFImage') or starts-with($fieldName, 'SFMatrix')">
 					<xsl:text>import java.util.Arrays;</xsl:text>
 					<xsl:text>&#10;</xsl:text>
@@ -20860,7 +20982,7 @@ shall not include the underlying field's values at that point in time.
 </xsl:variable>
 <xsl:variable name="isArrayType">
     <!-- TODO remove restrictions when ArrayList types added -->
-    <xsl:value-of select="starts-with(@type,'MF') or (contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or contains(@type,'Matrix')) and contains($javaType,'[]')"/>
+    <xsl:value-of select="starts-with(@type,'MF') or (contains(@type,'Color') or contains(@type,'Vec') or contains(@type,'Rotation') or contains(@type,'Quaternion') or contains(@type,'Matrix')) and contains($javaType,'[]')"/>
 </xsl:variable>
 
 <!-- debug
@@ -20963,6 +21085,9 @@ shall not include the underlying field's values at that point in time.
 					<xsl:when test="($fieldName = 'SFBool')">
 						<xsl:text disable-output-escaping="yes"><![CDATA[ is a <i>true</i> value]]></xsl:text>
 					</xsl:when>
+					<xsl:when test="($fieldName = 'SFQuaternion')">
+						<xsl:text disable-output-escaping="yes"><![CDATA[ is a <i>0 0 0 0</i> identity-quaternion value]]></xsl:text>
+					</xsl:when>
 					<xsl:when test="($fieldName = 'SFRotation')">
 						<xsl:text disable-output-escaping="yes"><![CDATA[ is a <i>0 0 1 0</i> identity-rotation value]]></xsl:text>
 					</xsl:when>
@@ -21042,6 +21167,9 @@ shall not include the underlying field's values at that point in time.
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFVec4f')">
 						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 1.0f};</xsl:text>
+					</xsl:when>
+					<xsl:when test="($fieldName = 'SFQuaternion')">
+						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 0.0f, 0.0f};</xsl:text>
 					</xsl:when>
 					<xsl:when test="($fieldName = 'SFRotation')">
 						<xsl:text>	public static final float[] DEFAULT_VALUE = {0.0f, 0.0f, 1.0f, 0.0f};</xsl:text>
@@ -22049,7 +22177,7 @@ shall not include the underlying field's values at that point in time.
                 return false;
             // TODO continue improving character regex checks.  Not identical to NMTOKEN.
             boolean result = // value.matches(NameFilter) &&             // XML Name
-                                value.matches("[a-zA-Z_][a-zA-Z0-9_]*"); // X3D SAH, TODO Internationalization (I18N)
+                                value.matches("[a-zA-Z_][a-zA-Z0-9_]*"); // X3D Scene Authoring Hints, TODO Internationalization (I18N)
 
 /* original was simpler and not strictly correct
                 boolean result = value.matches("[a-zA-Z_][a-zA-Z0-9_]*"); // NMTOKEN character regex check
@@ -22480,7 +22608,7 @@ method invocations on the same node object).
 
 				<!-- epsilon definitions for concrete fields, float and double precision -->
 				<xsl:choose>
-					<xsl:when test="contains($fieldName, 'Float') or contains($fieldName,'Color') or contains($fieldName,'Rotation') or ends-with($fieldName,'f')">
+					<xsl:when test="contains($fieldName, 'Float') or contains($fieldName,'Color') or contains($fieldName,'Rotation') or contains($fieldName,'Quaternion') or ends-with($fieldName,'f')">
 				<xsl:text><![CDATA[
     /** Current error bound for numerical comparison of values for equality */
     private float epsilon = (float) ConfigurationProperties.EPSILON_DEFAULT;
@@ -22524,8 +22652,9 @@ method invocations on the same node object).
         </xsl:choose>
 
 				<xsl:choose>
-					<xsl:when test="contains($fieldName, 'Float') or contains($fieldName,'Color') or contains($fieldName,'Rotation') or ends-with($fieldName,'f') or
-                          contains($fieldName, 'Double') or contains($fieldName, 'Time') or ends-with($fieldName,'d')">
+					<xsl:when test="contains($fieldName, 'Float') or contains($fieldName,'Color') or contains($fieldName,'Rotation') or 
+                                    contains($fieldName,'Quaternion') or ends-with($fieldName,'f') or
+                                    contains($fieldName, 'Double') or contains($fieldName, 'Time') or ends-with($fieldName,'d')">
 				<xsl:text><![CDATA[
     /** DecimalFormat matching local number of significant digits for floating-point and double-precision String output */
     public static DecimalFormat formatPrecision = new DecimalFormat ("#0.0000"); // ConfigurationProperties.formatPrecision4;
@@ -22594,10 +22723,10 @@ method invocations on the same node object).
 	 * @param comparisonValue </xsl:text>
             <xsl:value-of select="$javaPrimitiveType"/>
             <xsl:if test="$isArrayType and not(@type = 'MFBool') and not(@type = 'MFInt32') and not(@type = 'MFFloat') and not(@type = 'MFDouble') and not(@type = 'MFString') and not(@type = 'MFTime') and not(@type = 'MFNode')">
-                <xsl:text>[]</xsl:text>
+                <xsl:text>[] array to compare</xsl:text>
             </xsl:if>
-            <xsl:text> array to compare
-	 * @return true if equivalent, false otherwise
+            <xsl:text>
+	 * @return true if equal, false otherwise
 	 */
 	public boolean equals(</xsl:text><xsl:value-of select="$javaPrimitiveType"/>
             <xsl:if test="$isJavaArray">
@@ -22608,10 +22737,10 @@ method invocations on the same node object).
             <xsl:choose>
 					<xsl:when test="($fieldName = 'SFFloat') or ($fieldName = 'SFDouble') or ($fieldName = 'SFTime')">
 				<xsl:text><![CDATA[
-            return  (Math.abs(getPrimitiveValue() - comparisonValue) > epsilon);
+            return  (Math.abs(getPrimitiveValue() - comparisonValue) <= epsilon);
 ]]></xsl:text>
           </xsl:when>
-					<xsl:when test="contains($fieldName,'Color') or contains($fieldName,'Rotation') or ($fieldName = 'MFTime') or ends-with($fieldName,'f') or ends-with($fieldName,'d')">
+					<xsl:when test="contains($fieldName,'Color') or contains($fieldName,'Rotation')  or contains($fieldName,'Quaternion') or ($fieldName = 'MFTime') or ends-with($fieldName,'f') or ends-with($fieldName,'d')">
               <xsl:text><![CDATA[
             if (comparisonValue == null)
                  return false; // null means not initialized and therefore not comparable
@@ -22625,7 +22754,7 @@ method invocations on the same node object).
             return true; // all paired values compared OK
 ]]></xsl:text>
                 </xsl:when>
-                <xsl:when test="contains($fieldName, 'MFInt32') or contains($fieldName, 'Image')">
+                <xsl:when test="contains($fieldName, 'MFBool') or contains($fieldName, 'MFInt32') or contains($fieldName, 'MFFloat') or contains($fieldName, 'MFDouble') or contains($fieldName, 'Image')">
                     <!-- debug
                     <xsl:message>
                         <xsl:text>*** Array comparison for type </xsl:text>
@@ -22638,9 +22767,23 @@ method invocations on the same node object).
             // https://stackoverflow.com/questions/8777257/equals-vs-arrays-equals-in-java
             else return Arrays.equals(getPrimitiveValue(), comparisonValue);</xsl:text>
                 </xsl:when>
+                <xsl:when test="starts-with($fieldName, 'MF')">
+                    <xsl:text>
+            if (</xsl:text><xsl:value-of select="$fieldName"/><xsl:text> == null || </xsl:text><xsl:value-of select="$fieldName"/><xsl:text disable-output-escaping="yes"><![CDATA[.length == 0) return false; // Handle null or empty arrays
+            for (int i = 1; i < ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:text>.length; i++) 
+            {
+                if (!</xsl:text><xsl:value-of select="$fieldName"/><xsl:text>[i].equals(comparisonValue[i])) 
+                {
+                    return false; // Return false if any element differs
+                }
+            }
+            return true; // All elements are equal
+</xsl:text>
+                </xsl:when>
                 <xsl:otherwise> <!-- simple SF types can use direct comparison -->
                     <xsl:text>
-            return (getPrimitiveValue() == comparisonValue);</xsl:text>
+            return (getPrimitiveValue() == comparisonValue);
+</xsl:text>
                 </xsl:otherwise>
             </xsl:choose>
             
@@ -22681,11 +22824,19 @@ method invocations on the same node object).
             <xsl:when test="contains($fieldName, 'FString')">
                 <xsl:text>return (validateRegex());</xsl:text>
             </xsl:when>
+            <xsl:when test="($fieldName = 'SFBool') or ($fieldName = 'SFInt32') or ($fieldName = 'SFFloat') or ($fieldName = 'SFDouble') or ($fieldName = 'SFTime')">
+                <xsl:text>// validation via get/set checks and comparison
+        </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> tempHold = new </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(getPrimitiveValue());
+        if  (this.getPrimitiveValue() != tempHold.getPrimitiveValue())
+             return "</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> validate() error: failed get/set round-trip test, original getPrimitiveValue()=" + getPrimitiveValue() + " while reinitialization.getPrimitiveValue()=" + tempHold.getPrimitiveValue();
+        else return "";
+        </xsl:text>
+            </xsl:when>
             <xsl:otherwise>
                 <xsl:text>// validation via get/set checks and comparison
         </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> tempHold = new </xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(getPrimitiveValue());
-        if  (!this.equals(tempHold))
-             return "</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> validate() error: failed get/set round-trip test";
+        if  (!this.getPrimitiveValue().equals(tempHold.getPrimitiveValue()))
+             return "</xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text> validate() error: failed get/set round-trip test, original getPrimitiveValue()=" + getPrimitiveValue() + " while reinitialization.getPrimitiveValue()=" + tempHold.getPrimitiveValue();
         else return "";
         </xsl:text>
             </xsl:otherwise>
@@ -23071,6 +23222,21 @@ method invocations on the same node object).
 			SFVec4f[2] = Float.parseFloat(newValues[2]);
 			SFVec4f[3] = Float.parseFloat(newValues[3]);</xsl:text>
 				</xsl:when>
+				<xsl:when test="($fieldName = 'SFQuaternion')">
+					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
+			if (newValues.length != 4)
+			{
+				String errorNotice = "*** illegal number of values in initialization string, new </xsl:text>
+			<xsl:value-of select="$fieldName"/>
+			<xsl:value-of select="$jsaiClassSuffix"/><xsl:text>(" + newValue + ")";
+				validationResult.append(errorNotice).append("\n");
+				throw new InvalidFieldValueException(errorNotice);
+			}
+			SFQuaternion[0] = Float.parseFloat(newValues[0]);
+			SFQuaternion[1] = Float.parseFloat(newValues[1]);
+			SFQuaternion[2] = Float.parseFloat(newValues[2]);
+			SFQuaternion[3] = Float.parseFloat(newValues[3]);</xsl:text>
+				</xsl:when>
 				<xsl:when test="($fieldName = 'SFRotation')">
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");
 			if (newValues.length != 4)
@@ -23293,7 +23459,7 @@ method invocations on the same node object).
 			}</xsl:text>
 				</xsl:when>
 				<xsl:when test="($fieldName = 'MFFloat') or
-                                                (contains($fieldName, 'FColor')) or (contains($fieldName, 'FRotation')) or
+                                                (contains($fieldName, 'FColor')) or (contains($fieldName, 'FRotation')) or (contains($fieldName, 'FQuaternion')) or
                                                 (starts-with($fieldName, 'MFVec') and ends-with($fieldName, 'f')) or
                                                 (  contains($fieldName, 'Matrix') and ends-with($fieldName, 'f'))">
 					<xsl:text>String[] newValues = newValue.replace(","," ").trim().split("\\s+");</xsl:text>
@@ -23331,7 +23497,7 @@ method invocations on the same node object).
 				</xsl:when>
 				<!-- TODO extraneous?? -->
 				<xsl:when test="starts-with($fieldName,'MF')">
-					<xsl:text> TODO extraneous?? </xsl:text>
+					<xsl:text> // TODO extraneous?? </xsl:text>
 				</xsl:when>
 			</xsl:choose>
 	<xsl:if test="not(contains($fieldName, 'FString')) and not(contains($fieldName, 'FBool'))">
@@ -23417,7 +23583,7 @@ method invocations on the same node object).
 		<xsl:when test="contains(@type,'FVec') and ends-with(@type,'d')">
 			<xsl:text>setValue(newValue.toDoubleArray()); // create array</xsl:text>
 		</xsl:when>
-		<xsl:when test="contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'FVec') or starts-with(@type,'SFMatrix')">
+		<xsl:when test="contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or contains(@type,'FVec') or starts-with(@type,'SFMatrix')">
 			<xsl:text>setValue(newValue.toFloatArray()); // create array</xsl:text>
 		</xsl:when>
 		<xsl:when test="starts-with(@type,'MFMatrix') or (@type = 'MFImage')">
@@ -24340,6 +24506,11 @@ TODO: also MFColor.
 	}
 ]]></xsl:text>
 			</xsl:when>
+			<xsl:when test="(@type='SFQuaternion')">
+				<xsl:text disable-output-escaping="yes"><![CDATA[
+    // TODO utility methods for SFQuaternion
+]]></xsl:text>
+			</xsl:when>
 			<xsl:when test="(@type='SFRotation')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
@@ -24932,6 +25103,60 @@ TODO: also MFColor.
 	}
 ]]></xsl:text>
 			</xsl:when>
+			<xsl:when test="(@type='SFQuaternion')">
+				<xsl:text disable-output-escaping="yes"><![CDATA[
+	/**
+	 * Assign a new value to this field.
+	 * @param x first component 
+	 * @param y second component 
+	 * @param z third component 
+	 * @param w fourth component 
+	 * @return {@link SFQuaternion} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public SFQuaternion]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(float x, float y, float z, float w)
+	{
+		float[] floatArray = new float[4];
+		floatArray[0] = x;
+		floatArray[1] = y;
+		floatArray[2] = z;
+		floatArray[3] = w;
+
+		setValue(floatArray); // perform checks
+        return this;
+	}
+	/**
+	 * Assign a new value to this field.
+	 * @param x first component 
+	 * @param y second component 
+	 * @param z third component 
+	 * @param  fourth component 
+	 * @return {@link SFQuaternion} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public SFQuaternion]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double x, double y, double z, double w)
+	{
+		setValue((float) x, (float) y, (float) z, (float) w); // perform checks
+        return this;
+	}
+	/**
+	 * Assign a new value to this field.
+	 * <i>Warning:</i> newValue array length must correspond to tuple size for base type SFQuaternion tuple size of <i>4</i>.
+	 * @see X3DConcreteField#getTupleSize(String)
+	 * @param newValue The replacement value to assign.
+	 * @return {@link SFQuaternion} - namely <i>this</i> same object to allow sequential method pipelining (i.e. consecutive method invocations on the same object).
+	 */
+	public SFQuaternion]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ setValue(double[] newValue)
+	{
+		float            x = (float) newValue[0];
+		float            y = (float) newValue[1];
+		float            z = (float) newValue[2];
+		float            w = (float) newValue[3];
+
+		setValue(x, y, z, w); // perform checks
+        return this;
+	}
+]]></xsl:text>
+            <!-- vararg methods -->
+			</xsl:when>
 			<xsl:when test="(@type='SFRotation')">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
@@ -25000,7 +25225,7 @@ TODO: also MFColor.
 			<xsl:when test="(@type = 'MFFloat') or (@type = 'MFVec2f') or (@type = 'MFVec3f') or (@type = 'MFVec4f') or
 							                       (@type = 'SFVec2f') or (@type = 'SFVec3f') or (@type = 'SFVec4f') or
 							(@type = 'SFColor') or (@type = 'SFColorRGBA') or (@type = 'MFColor') or (@type = 'MFColorRGBA') or
-							(@type = 'SFRotation') or (@type = 'MFRotation')">
+							(@type = 'SFRotation') or (@type = 'MFRotation') or (@type = 'SFQuaternion') or (@type = 'MFQuaternion')">
 		<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Utility constructor for ]]></xsl:text><xsl:value-of select="$fieldName"/><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[ using an alternatively typed Java double[] array as new initial value.
@@ -25036,7 +25261,7 @@ TODO: also MFColor.
 	 * @param value The value to convert to a String
 	 * @see <a href="https://www.web3d.org/x3d/tooltips/X3dTooltips.html#type">X3D Tooltips: type</a>]]></xsl:text>
 		<xsl:choose>
-			<xsl:when test="(@type='MFFloat') or (@type='SFRotation') or (@type='MFRotation') or
+			<xsl:when test="(@type='MFFloat') or (@type='SFRotation') or (@type='MFRotation') or (@type='SFQuaternion') or (@type='MFQuaternion') or
 							contains(@type, 'Color') or
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'f'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -25071,10 +25296,6 @@ TODO: also MFColor.
 	<xsl:text> value)
 	{</xsl:text>
 	<xsl:choose>
-		<xsl:when test="not(contains($javaType,'[]'))">
-			<xsl:text>
-		return String.valueOf(value);</xsl:text>
-		</xsl:when>
 		<xsl:when test="(@type='MFString')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		String result = new String();
@@ -25095,14 +25316,26 @@ TODO: also MFColor.
 		return (result.trim());]]></xsl:text>
 
 		</xsl:when>
-		<xsl:when test="(@type='SFFloat') or (@type='MFFloat') or contains(@type,'Rotation') or contains(@type, 'Color') or
-						 ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
+		<xsl:when test="(@type='SFFloat') or (@type='SFDouble') or (@type='SFTime')">
+			<xsl:text disable-output-escaping="yes"><![CDATA[        if (formatPrecision == null)
+            formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+        String stringValue = formatPrecision.format(value);
+        if  (ConfigurationProperties.isStripTrailingZeroes())
+        {
+             if (stringValue.contains(".") && !stringValue.contains("E") && !stringValue.contains("e"))
+                     // regex to strip trailing zeroes, then strip trailing decimal point (if no other fractional part remains)
+                     stringValue = stringValue.replaceAll("[0]*$", "").replaceAll("\\.$", "") ;
+        }
+        return stringValue;]]></xsl:text>
+		</xsl:when>
+		<xsl:when test="(@type='MFFloat') or contains(@type,'Rotation') or contains(@type,'Quaternion') or contains(@type, 'Color') or
+						        ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		String result = new String();
 		for (int i=0; i < value.length; i++)
 		{
       if (formatPrecision == null)
-          formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+          formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug static initializer
 			String stringValue = formatPrecision.format(value[i]);
 			if  (ConfigurationProperties.isStripTrailingZeroes())
 			{
@@ -25116,14 +25349,14 @@ TODO: also MFColor.
 		}
 		return result.trim();]]></xsl:text>
 		</xsl:when>
-		<xsl:when test="(@type='SFDouble') or (@type='MFDouble') or (@type='MFTime') or
-						 ends-with(@type,'2d') or ends-with(@type,'3d') or ends-with(@type,'4d')">
+		<xsl:when test="(@type='MFDouble') or (@type='MFTime') or
+						         ends-with(@type,'2d') or ends-with(@type,'3d') or ends-with(@type,'4d')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		String result = new String();
 		for (int i=0; i < value.length; i++)
 		{
 			if (formatPrecision == null)
-			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug static initializer
 			String stringValue = formatPrecision.format(value[i]);
 			if  (ConfigurationProperties.isStripTrailingZeroes())
 			{
@@ -25136,6 +25369,10 @@ TODO: also MFColor.
 			else result += stringValue + " ";
 		}
 		return result.trim();]]></xsl:text>
+		</xsl:when>
+		<xsl:when test="not(contains($javaType,'[]'))">
+			<xsl:text>
+		return String.valueOf(value);</xsl:text>
 		</xsl:when>
 		<xsl:otherwise>
 			<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -25407,7 +25644,7 @@ TODO: also MFColor.
 				<xsl:value-of select="$fieldName"/><xsl:text><![CDATA[">X3D Tooltips: type ]]></xsl:text>
 				<xsl:value-of select="$fieldName"/><xsl:text><![CDATA[</a>]]></xsl:text>
 		<xsl:choose>
-			<xsl:when test="(@type='MFFloat') or (@type='SFRotation') or (@type='MFRotation') or
+			<xsl:when test="(@type='MFFloat') or (@type='SFRotation') or (@type='MFRotation') or (@type='SFQuaternion') or (@type='MFQuaternion') or
 							contains(@type, 'Color') or
 							((contains(@type,'Vec') or contains(@type,'Matrix')) and ends-with(@type,'f'))">
 				<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -25446,7 +25683,7 @@ TODO: also MFColor.
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text>;</xsl:text>
 		</xsl:when>
-		<xsl:when test="(@type = 'SFBool') or (@type = 'SFInt32') or (@type = 'SFDouble') or (@type = 'SFFloat') or (@type = 'SFTime')">
+		<xsl:when test="(@type = 'SFBool') or (@type = 'SFInt32')">
 			<xsl:text>return String.valueOf(</xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text>);</xsl:text>
@@ -25498,15 +25735,29 @@ TODO: also MFColor.
 		}
 		return result.toString();</xsl:text>
 		</xsl:when>
-		<xsl:when test="(@type = 'SFFloat') or (@type = 'MFFloat') or contains(@type,'Color') or contains(@type,'Rotation') or
-                         ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
+		<xsl:when test="(@type='SFFloat') or (@type='SFDouble') or (@type='SFTime')">
+			<xsl:text disable-output-escaping="yes"><![CDATA[        if (formatPrecision == null)
+            formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+        String stringValue = formatPrecision.format(]]></xsl:text>
+			<xsl:value-of select="$fieldName"/>
+			<xsl:text disable-output-escaping="yes"><![CDATA[);
+        if  (ConfigurationProperties.isStripTrailingZeroes())
+        {
+             if (stringValue.contains(".") && !stringValue.contains("E") && !stringValue.contains("e"))
+                     // regex to strip trailing zeroes, then strip trailing decimal point (if no other fractional part remains)
+                     stringValue = stringValue.replaceAll("[0]*$", "").replaceAll("\\.$", "") ;
+        }
+        return stringValue;]]></xsl:text>
+		</xsl:when>
+		<xsl:when test="(@type = 'MFFloat') or contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or
+                    ends-with(@type,'2f') or ends-with(@type,'3f') or ends-with(@type,'4f')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[StringBuilder result = new StringBuilder();
 		for (int i = 0; i < ]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text>.length; i++)
 		{
 			if (formatPrecision == null)
-			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug static initializer
 			String stringValue = formatPrecision.format(</xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[[i]);
@@ -25521,14 +25772,14 @@ TODO: also MFColor.
 		return result.toString();</xsl:text>
 		</xsl:when>
 		<xsl:when test="(@type = 'MFDouble') or (@type = 'MFTime') or
-                         ends-with(@type,'2d') or ends-with(@type,'3d') or ends-with(@type,'4d')">
+                     ends-with(@type,'2d') or ends-with(@type,'3d') or ends-with(@type,'4d')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[StringBuilder result = new StringBuilder();
 		for (int i = 0; i < ]]></xsl:text>
 			<xsl:value-of select="$fieldName"/>
 			<xsl:text>.length; i++)
 		{
 			if (formatPrecision == null)
-			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug with static initializer
+			    formatPrecision = new DecimalFormat ("#0.0000"); // use default if problem has occurred - TODO debug static initializer
 			String stringValue = formatPrecision.format(</xsl:text>
 				<xsl:value-of select="$fieldName"/>
 				<xsl:text disable-output-escaping="yes"><![CDATA[[i]);
@@ -25739,6 +25990,14 @@ TODO: also MFColor.
 			</xsl:otherwise>
 		</xsl:choose>
 		<xsl:choose>
+			<xsl:when test="(@type = 'SFQuaternion')">
+			<xsl:text disable-output-escaping="yes"><![CDATA[
+		float            x = newValue[0];
+		float            y = newValue[1];
+		float            z = newValue[2];
+		float            w = newValue[3];
+		]]></xsl:text>
+			</xsl:when>
 			<xsl:when test="(@type = 'SFRotation')">
 			<xsl:text disable-output-escaping="yes"><![CDATA[
 		float            x = newValue[0];
@@ -26072,7 +26331,7 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 }
 ]]></xsl:text>
 	</xsl:if>
-	<xsl:if test="(@type = 'MFRotation') or contains(@type,'FVec')">
+	<xsl:if test="(@type = 'MFRotation') or (@type = 'MFQuaternion') or contains(@type,'FVec')">
 		<!-- also add methods for square arrays -->
 <xsl:text disable-output-escaping="yes"><![CDATA[
   /**
@@ -26172,7 +26431,7 @@ public void setValue(]]></xsl:text><xsl:value-of select="$javaType"/><xsl:text><
 	<xsl:choose>
 		<xsl:when test="(@type = 'MFFloat') or (@type = 'MFVec2f') or (@type = 'MFVec3f') or (@type = 'MFVec4f') or
 						(@type = 'SFColor') or (@type = 'SFColorRGBA') or (@type = 'MFColor') or (@type = 'MFColorRGBA') or
-						(@type = 'SFRotation') or (@type = 'MFRotation')">
+						(@type = 'SFRotation') or (@type = 'MFRotation') or (@type = 'SFQuaternion') or (@type = 'MFQuaternion')">
             <!-- or
 						(@type = 'MFMatrix3f') or (@type = 'MFMatrix4f') or (@type = 'MFMatrix3d') or (@type = 'MFMatrix4d') -->
 			<xsl:text disable-output-escaping="yes"><![CDATA[
@@ -26289,7 +26548,7 @@ public ]]></xsl:text>
 			<xsl:when test="contains(@type,'FVec') and ends-with(@type,'d')">
 				<xsl:text>setValue(newValue.toDoubleArray()); // create array</xsl:text>
 			</xsl:when>
-			<xsl:when test="contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'FVec') or starts-with(@type,'SFMatrix')">
+			<xsl:when test="contains(@type,'Color') or contains(@type,'Rotation') or contains(@type,'Quaternion') or contains(@type,'FVec') or starts-with(@type,'SFMatrix')">
 				<xsl:text>setValue(newValue.toFloatArray()); // create array
 		</xsl:text>
 			</xsl:when>
@@ -28846,7 +29105,8 @@ setAttribute method invocations).
 					<xsl:choose>
 						<xsl:when test="contains(@type,'FVec2f')    or contains(@type,'FVec3f')    or contains(@type,'FVec4f')    or
 										contains(@type,'FMatrix2f') or contains(@type,'FMatrix3f') or contains(@type,'FMatrix4f') or
-										contains(@type,'MFFloat')   or contains(@type,'FColor')    or contains(@type,'FRotation')">
+										contains(@type,'MFFloat')   or contains(@type,'FColor')    or contains(@type,'FRotation') or 
+                                        contains(@type,'Quaternion') ">
 							<xsl:text disable-output-escaping="yes"><![CDATA[
 	/**
 	 * Provide float array for this field type.
@@ -29052,7 +29312,7 @@ setAttribute method invocations).
         return </xsl:text>
             <xsl:choose>
                 <xsl:when test="starts-with($fieldName, 'MF')    or contains($fieldName, 'Vec')   or contains($fieldName, 'Matrix') or
-                                   contains($fieldName, 'Color') or contains($fieldName, 'Image') or contains($fieldName, 'Rotation')">
+                                   contains($fieldName, 'Color') or contains($fieldName, 'Image') or contains($fieldName, 'Rotation') or contains($fieldName, 'Quaternion')">
                     <xsl:text>java.util.Arrays.equals(</xsl:text>
                     <xsl:value-of select="$fieldName"/>
                     <xsl:text>, DEFAULT_VALUE);</xsl:text>
@@ -29714,6 +29974,12 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 					<xsl:when test="($name = 'MFRotation')">
 						<xsl:text>B.4.32</xsl:text>
 					</xsl:when>
+					<xsl:when test="($name = 'SFQuaternion')">
+						<xsl:text>B.4.TODO</xsl:text>
+					</xsl:when>
+					<xsl:when test="($name = 'MFQuaternion')">
+						<xsl:text>B.4.TODO</xsl:text>
+					</xsl:when>
 					<xsl:when test="($name = 'SFString')">
 						<xsl:text>B.4.33</xsl:text>
 					</xsl:when>
@@ -29881,6 +30147,12 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'MFNode')">
 						<xsl:text>5.3.12 SFNode and MFNode</xsl:text>
+					</xsl:when>
+					<xsl:when test="($name = 'SFQuaternion')">
+						<xsl:text>5.3.22 SFQuaternion and MFQuaternion</xsl:text>
+					</xsl:when>
+					<xsl:when test="($name = 'MFQuaternion')">
+						<xsl:text>5.3.22 SFQuaternion and MFQuaternion</xsl:text>
 					</xsl:when>
 					<xsl:when test="($name = 'SFRotation')">
 						<xsl:text>5.3.13 SFRotation and MFRotation</xsl:text>
@@ -30944,7 +31216,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	public void insertValue(int imageIndex, org.web3d.x3d.sai.Core.X3DNode newValue);
 ]]></xsl:text>
 					</xsl:when>
-					<xsl:when test="($name = 'SFRotation')">
+					<xsl:when test="($name = 'SFRotation') or ($name = 'SFQuaternion')">
 						<xsl:text><![CDATA[
     /**
      * Write out the current value of this field into the external valueDestination array.
@@ -30961,7 +31233,7 @@ import org.web3d.x3d.sai.Core.X3DNode;</xsl:text>
 	public void setValue(float[] newValue);
 ]]></xsl:text>
 					</xsl:when>
-					<xsl:when test="($name = 'MFRotation')">
+					<xsl:when test="($name = 'MFRotation') or ($name = 'MFQuaternion')">
 						<xsl:text><![CDATA[
     /**
      * Write out the current value of this field into the external valueDestination array.
@@ -34391,7 +34663,7 @@ import javax.script.ScriptException;</xsl:text>
         "-toXML                            # output in .xml (X3D) format" + "\n" +
         "-toClassicVrml                    # output in .x3dv (ClassicVrml) X3D format" + "\n" +
         "-toJava                           # output in .java source code using X3DJSAIL" + "\n" +
-        "-toJSON                           # output in .x3dj (JavaScript Object Notation) format" + "\n" +
+        "-toJSON                           # output in .json (JavaScript Object Notation) format" + "\n" +
         "-toPython                         # output in .py Python source code" + "\n" +
         "-toVRML97                         # output in .wrl  (VRML97) format" + "\n" +
         "-toHTML                           # output in .html  pretty-print documentation" + "\n" +
@@ -36358,7 +36630,7 @@ showing default attribute values, and other custom settings.</p>
 	 * @see <a href="https://www.web3d.org/wiki/index.php/X3D_JSON_Encoding">X3D JSON Encoding</a>
 	 * @see <a href="https://www.web3d.org/x3d/stylesheets/X3dToJson.html">X3D to JSON Stylesheet Converter</a>
 	 * @see <a href="../../../../../../lib/stylesheets/X3dToJson.xslt" target="_blank">X3dToJson.xslt</a>
-	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.x3dj" target="_blank">examples/HelloWorldProgramOutput.x3dj</a>
+	 * @see <a href="../../../../../../examples/HelloWorldProgramOutput.json" target="_blank">examples/HelloWorldProgramOutput.json</a>
 	 */
 	public static final String STYLESHEET_JSON   = "X3dToJson.xslt";
 
@@ -36401,15 +36673,25 @@ showing default attribute values, and other custom settings.</p>
      */
     public static final int    SIGNIFICANT_DIGITS_OUTPUT_DEFAULT = 4;
         
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision0 = new DecimalFormat ("#0");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision1 = new DecimalFormat ("#0.0");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision2 = new DecimalFormat ("#0.00");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision3 = new DecimalFormat ("#0.000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision4 = new DecimalFormat ("#0.0000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision5 = new DecimalFormat ("#0.00000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision6 = new DecimalFormat ("#0.000000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision7 = new DecimalFormat ("#0.0000000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision8 = new DecimalFormat ("#0.00000000");
+    /** DecimalFormat object for given precision */ 
     public static final DecimalFormat formatPrecision9 = new DecimalFormat ("#0.000000000");
         
     /**
@@ -38069,7 +38351,7 @@ import org.web3d.x3d.sai.X3DException;
                      "ISO//Web3D//DTD X3D 4.0//EN", "https://www.web3d.org/specifications/x3d-4.0.dtd");
                 // TODO how to attach to the document where it is needed?
             
-                String message = "[warning] This X3D document has no DOCTYPE statement which helps with scene validation, suggest adding it.\n" +
+                String message = "[warning] This X3D document has no DOCTYPE statement which helps with scene validation, suggest adding it:\n" +
                                  "          <!DOCTYPE X3D PUBLIC \"ISO//Web3D//DTD X3D 4.0//EN\" \"https://www.web3d.org/specifications/x3d-4.0.dtd\">\n" +
                                  "          https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#Validation";
                 System.err.println(message);
@@ -38078,7 +38360,12 @@ import org.web3d.x3d.sai.X3DException;
 			X3DConcreteElement concreteElement =  toX3dModelInstance(document);
             if (!concreteElement.getElementName().equals(X3D]]></xsl:text><xsl:value-of select="$jsaiClassSuffix"/><xsl:text disable-output-escaping="yes"><![CDATA[.NAME))
             {
-                System.out.println ("[warning] loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has root element=" + concreteElement.getElementName());
+                System.out.println ("[warning] loadModelFromFileX3D(\"" + x3dFile.getPath() + "\") has unexpected root element=" + concreteElement.getElementName());
+            }
+            else
+            {
+                X3D newX3D = (X3D) concreteElement;
+//              System.out.println ("[debug] X3DLoaderDom().loadModelFromFileX3D() found <X3D profile='" + newX3D.getProfile() + "' version='" + newX3D.getVersion() + "'>");
             }
 		}
 		catch (ParserConfigurationException parserConfigurationException)
@@ -38208,14 +38495,20 @@ import org.web3d.x3d.sai.X3DException;
 					String attributeValue = new String();
 					if (current.getNodeValue() != null)
 						attributeValue = current.getNodeValue();
-					// looks like no conversion needed when reading from DOM!
+                
+					// looks like no special-character conversions are needed when reading from DOM!
 //					if (attributeValue.contains("\\"))
 //						attributeValue = attributeValue.replaceAll("\\\\","\\\\"); // replace literal \ with \\
 //					if (attributeValue.contains("\""))
 //						attributeValue = attributeValue.replaceAll("\"","\\\"");   // replace literal " with \"
 //					if (attributeValue.contains("Immel")) // trace
 //						System.out.println (attributeValue);
+                
 					result.append(" ").append(current.getNodeName()).append("=\'").append(attributeValue).append("\'");
+                
+                    // check X3D profile, version
+//                  if (name.equals("X3D"))
+//                      System.out.println ("[debug] X3DLoaderDOM().toStringX3D() found X3D " + current.getNodeName() + "='" + attributeValue + "'");
 				}
 
 				// determine if any actual element child nodes are present
