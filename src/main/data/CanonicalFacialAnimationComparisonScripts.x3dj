@@ -288,6 +288,7 @@
                 { "HAnimHumanoid":
                   {
                     "@name":"humanoid",
+                    "@version":"2.0",
                     "@DEF":"hanim0_humanoid",
                     "-skeleton":[
                       { "HAnimJoint":

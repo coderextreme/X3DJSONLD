@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Immersive' version='4.1' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.1.xsd'>
+  <head>
+    <meta content='PoseCollection.x3d' name='title'/>
+    <meta content='Collection of reusable HAnimPose nodes' name='description'/>
+    <meta content='Joe Williams' name='creator'/>
+    <meta content='Joe Williams' name='creator'/>
+    <meta content='23 February 2026' name='created'/>
+    <meta content='23 February 2026' name='modified'/>
+    <meta content='how to negate right-side values used for left-side orientations?' name='TODO'/>
+    <meta content='HAnim 2.1 Architecture, ISO/IEC 19774-1:202x, clause 4 Concepts, 4.8.3 Poses' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/concepts.html#Poses' name='specificationUrl'/>
+    <meta content='HAnim 2.1 Architecture, ISO/IEC 19774-1:202x, clause 6 Object interfaces, 6.5 Pose' name='specificationSection'/>
+    <meta content='https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19774/ISO-IEC19774-1/ISO-IEC19774-1v2.1/ISO-IEC19774-1v2.1-WD/Architecture/ObjectInterfaces.html#Pose' name='specificationUrl'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Poses/PoseCollection.x3d' name='identifier'/>
+    <meta content='X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='PoseCollection.x3d'/>
+    <HAnimPose description='Standing position, I pose' loa='1' name='Stand'>
+      <HAnimJoint description='right wrist' name='r_wrist' rotation='0 -0.2 0 0.25'/>
+      <HAnimJoint description='right elbow' name='r_elbow' rotation='-0.75 1 1 1.6'/>
+      <HAnimJoint description='right shoulder' name='r_shoulder' rotation='-0.1 0 -0.02 0.25'/>
+      <HAnimJoint description='right acromioclavicular' name='r_acromioclavicular' rotation='0 0.05 0 0.05'/>
+      <HAnimJoint description='right sternoclavicular' name='r_sternoclavicular' rotation='0 0.05 0 0.05'/>
+      <HAnimJoint description='left wrist' name='l_wrist' rotation='0 -0.2 0 0.25'/>
+      <HAnimJoint description='left elbow' name='l_elbow' rotation='-0.75 1 1 1.6'/>
+      <HAnimJoint description='left shoulder' name='l_shoulder' rotation='-0.1 0 -0.02 0.25'/>
+      <HAnimJoint description='left acromioclavicular' name='l_acromioclavicular' rotation='0 0.05 0 0.05'/>
+      <HAnimJoint description='left sternoclavicular' name='l_sternoclavicular' rotation='0 0.05 0 0.05'/>
+    </HAnimPose>
+  </Scene>
+</X3D>

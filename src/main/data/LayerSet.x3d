@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name="Grouping" level="1" />
+    <component name="EnvironmentalSensor" level="1" />
+    <component name="Text" level="1" />
+    <meta name="title" content="LayerSetProximity.x3d" />
+    <meta name="description" content="A ProximitySensor keeps the Text locked in front of the viewer, centered over the Box. Mouse or trackpad navigation rotates the Box; the Text does not rotate." />
+    <meta name="created" content="27 October 2026" />
+    <meta name="creator" content="John Carlson" />
+  </head>
+  <Scene>
+        <LayerSet activeLayer="1" order="1 2">
+          <!-- Layer 0: Base 3D Model -->
+          <Layer DEF="Layer0">
+            <Background skyColor="0.1 0.1 0.15"></Background>
+            <NavigationInfo type='"EXAMINE" "ANY"' headlight="true"></NavigationInfo>
+            <Viewpoint DEF="VP_XITE" position="0 0 8" description="MainVP"></Viewpoint>
+            
+            <Transform DEF="BoxGeom" translation="0 0 0">
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor="0.2 0.7 0.9"></Material>
+                </Appearance>
+                <Box size="1.5 1.5 1.5"></Box>
+              </Shape>
+            </Transform>
+          </Layer>
+
+          <!-- Layer 1: Foreground HUD Layer -->
+          <Layer DEF="Layer1">
+            <NavigationInfo headlight="true" type='"NONE"'></NavigationInfo>
+            <Viewpoint DEF="VP_Layer1" position="0 0 8" description="Layer1VP"></Viewpoint>
+        
+            <Transform translation="0 0 0.8">
+              <Shape>
+                <Appearance>
+                  <Material diffuseColor="1 1 1" emissiveColor="1 1 1"></Material>
+                </Appearance>
+                <Text string='"Layer 1" "Overlay Text"' solid="false">
+                  <FontStyle 
+                    family='"Arial" "Helvetica" "SANS"' 
+                    style="PLAIN" 
+                    spacing="0.95" 
+                    justify='"MIDDLE" "MIDDLE"' 
+                    size="0.45">
+                  </FontStyle>
+                </Text>
+              </Shape>
+            </Transform>
+          </Layer>
+        </LayerSet>
+  </Scene>
+</X3D>
