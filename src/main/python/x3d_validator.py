@@ -695,15 +695,19 @@ class X3DValidator:
             for item in obj:
                 self._collect_protos(item)
 
+    # Node types whose ROUTE-able fields include user <field> declarations
+    USER_FIELD_NODES = ("Script", "ComposedShader", "PackagedShader", "ShaderProgram")
+
     def _route_fields(self, info: Dict[str, Any], spec: X3DNodeSpec) -> Optional[Dict[str, X3DFieldSpec]]:
         """Fields a ROUTE may reference on a DEF'd node, or None if they cannot be determined.
 
-        Script: built-in fields plus the node's own <field> declarations.
+        Script / ComposedShader / PackagedShader / ShaderProgram (see USER_FIELD_NODES): built-in fields plus the node's own
+        <field> declarations.
         ProtoInstance: built-in fields plus the proto's declared interface; None when the
         proto is not declared in this document (e.g. IMPORTed), so no false errors are raised.
         """
         node_type = info["type"]
-        if node_type == "Script":
+        if node_type in self.USER_FIELD_NODES:
             return {**spec.fields, **self._declared_fields(info.get("body"))}
         if node_type == "ProtoInstance":
             body = info.get("body")

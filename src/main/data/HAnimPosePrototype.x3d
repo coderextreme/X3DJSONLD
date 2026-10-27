@@ -145,7 +145,7 @@
       </ProtoBody>
     </ProtoDeclare>
     <Viewpoint description='HAnimPose for HumanoidInline IMPORT model' position='0 1 4'/>
-    <!-- no longer required: including full model <HAnimHumanoid version="2.0" DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
+    <!-- no longer required: including full model <HAnimHumanoid DEF='hanim_JinLOA1' loa='2' name='JinLOA1' scale='0.0225 0.0225 0.0225'> etc... -->
     <ProtoInstance DEF='T_Pose' name='HAnimPose'>
       <fieldValue name='name' value='T'/>
       <fieldValue name='enabled' value='true'/>

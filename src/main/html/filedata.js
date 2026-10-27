@@ -48,7 +48,8 @@ var initialFileData = [
 		"../personal/rubikOnFire.x3dj", "../data/rubikPly.x3dj",
                 "../personal/app.x3d", "../personal/asmallbox.x3d", "../personal/BoxEm.x3d", "../personal/ifscubeworks.x3d",
                 "../personal/pp3.x3d", "../personal/rubik.x3d", "../personal/rubikFurnace.x3d",
-		"../personal/rubikOnFire.x3d", "../data/rubikPly.x3d"
+		"../personal/rubikOnFire.x3d", "../data/rubikPly.x3d",
+		"../data/LayerSet.x3d"
             ]},
             { name: "STL Files (index3dom.html)", files: [
                 "../stl/cleat_clamp.stl", "../stl/example.stl", "../stl/UavBeehive.stl"
