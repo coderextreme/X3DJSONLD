@@ -231,13 +231,15 @@ done
 #	     "${NODE}" "../node/jsondiff.js" "$SAXGEND" "$XSLTGEND"
 #done
 
+cat /dev/null > errors.txt
+
 echo Running graalpy code
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT}/" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	GPY=`echo "$i" | sed -e "$DATATOGRAALPY" -e "$PERSONALTOGRAALPY" -e "$ROOTTOGRAALPY" -e "s/\.${JSONEXT}/.py/"`
 	X3D=`echo "$i" | sed -e "s/\.${JSONEXT}/.new.graalpy.x3d/"`
 	echo "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY"
-	( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY") &
+	( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY" 2>&1 | grep -A 4 ERROR >> errors.txt ) &
 	JOB_PID=$!
 	wait $JOB_PID
 done
