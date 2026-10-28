@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D class='x3dModel.class' id='x3dModel.id' profile='Full' style='x3dModel.style' version='4.0' xmlns:xsd='https://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component level='1' name='Grouping'/>
+    <meta content='SmokeTestProgramOutput.x3d' name='title'/>
+    <meta content='To Show Problems with X3dToJson.xslt' name='info'/>
+    <meta content='Example SmokeTestProgram creates an X3D model using the X3D Java Scene Access Interface Library (X3DJSAIL)' name='description'/>
+    <meta content='28 October 2026' name='created'/>
+    <meta content='John Carlson' name='creator'/>
+    <meta content='https://www.web3d.org/specifications/java/examples/SmokeTestProgram.java' name='refernce'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <MetadataString containerField="metadata" value='"Metadata 1 String"'/>
+    <Transform translation='0 1.5 0'>
+        <MetadataString containerField="metadata" value='"Metadata 2 String"'/>
+        <Shape>
+          <Appearance>
+            <Material DEF='GreenMaterial' diffuseColor='0 1 0'/>
+          </Appearance>
+          <Box/>
+        </Shape>
+    </Transform>
+    <MetadataString containerField="metadata" value='"Metadata 3 String"'/>
+    <Transform translation='0 -1.5 0'>
+        <Shape>
+          <Appearance>
+            <Material DEF='RedMaterial' diffuseColor='1 0 0'/>
+          </Appearance>
+          <Box/>
+        </Shape>
+        <MetadataString containerField="metadata" value='"Metadata 4 String"'/>
+        <MetadataString containerField="metadata" value='"Metadata 5 String"'/>
+        <Shape>
+          <Appearance>
+            <Material DEF='BlueMaterial' diffuseColor='0 0 1'/>
+          </Appearance>
+          <Sphere radius="1.1"/>
+        </Shape>
+    </Transform>
+    <MetadataString containerField="metadata" value='"Metadata 6 String"'/>
+  </Scene>
+</X3D>
