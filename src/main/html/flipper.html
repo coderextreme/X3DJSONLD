@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/dev/x3dom.css"></link>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
-<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
+    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.min.js"></script>
    <script
 	     src="https://code.jquery.com/jquery-3.7.1.js"
 	       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -103,7 +103,7 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
-			var url = '../data/abox.json';
+			var url = '../data/abox.x3dj';
 			getJSON(url).then(function(subjson) {
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), url);  // returns Scene element
 				$(selector).empty();
@@ -122,7 +122,7 @@ function getJSON(url) {
 		getJSON(url).then(function(json) {
 			var parent = X3DJSONLD.CreateElement(document, x3dtag, "http://www.web3d.org/specifications/x3d-namespace");
 			var element =  X3DJSONLD.ConvertToX3DOM(document, json, x3dtag, parent, url); // returns an element
-			var suburl = '../data/abox.json';
+			var suburl = '../data/abox.x3dj';
 			getJSON(suburl).then(function(subjson) {
 				var sceneElement = X3DJSONLD.ConvertToX3DOM(document, subjson[x3dtag][scenetag], scenetag, element.querySelector(scenetag), suburl);  // returns Scene element
 				window.load_X_ITE_DOM(element, selector); // reloads X_ITE element on page.
@@ -136,8 +136,8 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load_X3DOM('#x3domjson', '../data/flipp.json');
-		load_X_ITE("#x_itedom", '../data/flipp.json');
+		load_X3DOM('#x3domjson', '../data/flipp.x3dj');
+		load_X_ITE("#x_itedom", '../data/flipp.x3dj');
 	});
     </script>
 </html>

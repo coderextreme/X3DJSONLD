@@ -521,6 +521,9 @@ $("#file").change(function() {
 	if (url.endsWith(".json")) {
 		myLoadJson(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);
+	} else if (url.endsWith(".x3dj")) {
+		myLoadJson(url);
+		if (typeof threeLoadFile === 'function') threeLoadFile(url);
 	} else if (url.endsWith(".x3d")) {
 		loadXml(url);
 		if (typeof threeLoadFile === 'function') threeLoadFile(url);

@@ -9,7 +9,7 @@
 	       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	       crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.x3dom.org/download/dev/x3dom-full.debug.js"></script>
-<script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/dist/x_ite.min.js"></script>
+    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.min.js"></script>
    <!--
     <script type="text/javascript" language="javascript" src="Saxonce/Saxonce.nocache.js"></script>
     <script type="text/javascript" src="../../../node_modules/saxon-js/SaxonJS2N.js"></script>
@@ -30,7 +30,7 @@
     </style>
 </head>
 <body>
-    <button onclick="myLoadJson('../data/flipp.json'); return false">Load</button>
+    <button onclick="myLoadJson('../data/flipp.x3dj'); return false">Load</button>
 <table>
 <tr>
 <td>
@@ -130,7 +130,7 @@ function getJSON(url) {
 	function load(url) {
 		getJSON(url).then(function(json) {
 			window.loadX3D('#x3domjson', "x3domjson", json, url);
-			var suburl = '../data/abox.json';
+			var suburl = '../data/abox.x3dj';
 			getJSON(suburl).then(function(subjson) {
 
 				for (var c in subjson["X3D"]["Scene"]["-children"]) {
@@ -147,7 +147,7 @@ function getJSON(url) {
 		});
 	}
 	$(document).ready(function() {
-		load('../data/flipp.json');
+		load('../data/flipp.x3dj');
 	});
     </script>
 </html>

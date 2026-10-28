@@ -5,8 +5,7 @@
     <title>X3D JSON Loader</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta name="viewport"/>
-    <link rel="stylesheet" type="text/css" href="https://create3000.github.io/code/x_ite/latest/dist/x_ite.css"/>
-    <script type="text/javascript" src="https://create3000.github.io/code/x_ite/latest/x_ite.js"></script>
+    <script defer="true" src="https://cdn.jsdelivr.net/npm/x_ite@latest/dist/x_ite.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript">var exports = {};</script>
     <script type="importmap">
@@ -827,7 +826,7 @@ Click <a onclick='window.updateFromPly($("#file option:selected").text()); retur
 		setIS_X3DOM(false);
 		setIS_X_ITE(true);
 		$(document).ready(function() {
-			loadJson('../personal/rubikFurnace.json');
+			loadJson('../personal/rubikFurnace.x3dj');
 		});
 	</script>
 </html>
