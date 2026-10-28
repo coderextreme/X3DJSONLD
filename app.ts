@@ -140,7 +140,7 @@ try {
   // This example shows the structure, but will use HTTP in practice
   // unless you provide real cert/key files
   
-  console.log(`🔒 HTTPS Server running on https://localhost:${port}`);
+  console.log(`🔒 HTTPS Server running on https://127.0.0.1:${port}`);
   console.log("\nAvailable endpoints:");
   console.log("  GET  /              - Hello message");
   console.log("  GET  /api/status    - JSON status response");

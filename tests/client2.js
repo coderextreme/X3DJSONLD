@@ -4,7 +4,7 @@ import { glob } from 'node:fs/promises';
 
 // The URL is correct. The options are simplified.
 // We have REMOVED the `transports: ["polling"]` option.
-const socket = io("http://localhost:3000", {
+const socket = io("http://127.0.0.1:3000", {
     cors: {
       origin: "*",
       methods: ["GET", "POST"]
@@ -97,7 +97,7 @@ socket.on("connect", () => {
 // It's crucial to also handle connection errors for debugging.
 socket.on("connect_error", (err) => {
     console.error(`❌ FAILED to connect. Reason: ${err.message}`);
-    console.error("   Please ensure the server at http://localhost:3000 is running.");
+    console.error("   Please ensure the server at http://127.0.0.1:3000 is running.");
 });
 
 console.log("Attempting to connect to the server...");

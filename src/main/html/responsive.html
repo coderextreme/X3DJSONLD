@@ -303,7 +303,7 @@
       import { decodeJSON } from './exi.js';
 
     // Socket.IO connection
-    let socket = io("http://localhost:3000", { cors: { origin: "*", methods: ["GET", "POST"] }, maxHttpBufferSize: 1e8, pingTimeout: 60000 });
+    let socket = io("http://127.0.0.1:3000", { cors: { origin: "*", methods: ["GET", "POST"] }, maxHttpBufferSize: 1e8, pingTimeout: 60000 });
     socket.on("connect", () => console.log("Socket.IO client connected!"));
 
     // --- File search and menu building logic (unchanged but included for completeness) ---

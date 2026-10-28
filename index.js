@@ -76,7 +76,7 @@ function templatize(req, sessionType, ws) {
 	let sns = templateparams.sessionName.split(":");
 	let tos = templateparams.sessionToken.split(":");
 	for (let sn in sns) {
-		console.log(`http://localhost:${port}/tapi/template/group1-petname/${tos[sn]}/${webSocket}`)
+		console.log(`http://127.0.0.1:${port}/tapi/template/group1-petname/${tos[sn]}/${webSocket}`)
 	}
 	return templateparams;
 }
@@ -111,8 +111,8 @@ var port = process.env.X3DJSONPORT || defaultPort;
 
 http.listen(port);
 
-console.log('\thttp://localhost:%s/main_viewer.html', port);
-console.log('\thttp://localhost:%s/responsive.html', port);
+console.log('\thttp://127.0.0.1:%s/main_viewer.html', port);
+console.log('\thttp://127.0.0.1:%s/responsive.html', port);
 
 http.on('error', function (e) {
   if (e.code == 'EADDRINUSE') {

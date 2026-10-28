@@ -141,9 +141,9 @@ class Sessions {
 					    }
 					}
 					if (socket === null || typeof socket === 'undefined') {
-					     // if all else fails, connect to localhost
+					     // if all else fails, connect to 127.0.0.1
 					     try {
-						 socket = io("http://localhost:8088", {
+						 socket = io("http://127.0.0.1:8088", {
 							maxHttpBufferSize: 1e8, pingTimeout: 60000,
 							transports: [ "polling" ]
 						});
@@ -155,7 +155,7 @@ class Sessions {
 					if (socket === null || typeof socket === 'undefined') {
 					     // if all else fails, connect to websocket
 					     try {
-						 socket = io("ws://localhost:8088", {
+						 socket = io("ws://127.0.0.1:8088", {
 							maxHttpBufferSize: 1e8, pingTimeout: 60000,
 							transports: [ "websocket" ]
 						});

@@ -481,7 +481,7 @@ export default class Multiplayer {
             var hostport = uri.substr(hostIndex, trailing);
             var portIndex = -1;
             portIndex = hostport.indexOf(":");
-            var host = "localhost";
+            var host = "127.0.0.1";
             var port = 51000;
             if (portIndex >= 0) {
                 host = hostport.substr(0, portIndex);
