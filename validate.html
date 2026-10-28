@@ -21,7 +21,7 @@
       <textarea style="width: 100%; height: 300px" id="log"></textarea>
    </div>
 <script type="text/javascript">
-   var xsdjs = xmlschema(['https://localhost:3000/src/specifications/x3d-4.0.xsd']);
+   var xsdjs = xmlschema(['https://127.0.0.1:3000/src/specifications/x3d-4.0.xsd']);
 
    function validate(xml, callback) {
       xsdjs.validate(xml).then(function(result) {

@@ -284,7 +284,7 @@ if __name__ == "__main__":
 #    HTTPS = "https://"
 #    BASE = "www.web3d.org/x3d/content/examples/"
     HOME = "C:/Users/jcarl/X3DJSONLD/"
-    HTTPS = "https://localhost:3000/"
+    HTTPS = "https://127.0.0.1:3000/"
     BASE = "src/main/data/"
     PATH = HOME+BASE
 

@@ -1800,7 +1800,7 @@ Open-source license:
           <xs:appinfo>The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used.</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"FRICTION_COEFFICIENT_2"'>
+      <xs:enumeration value='"FRICTION_COEFFICIENT-2"'>
         <xs:annotation>
           <xs:appinfo>Apply frictionCoefficients values</xs:appinfo>
         </xs:annotation>
@@ -1815,22 +1815,22 @@ Open-source license:
           <xs:appinfo>Apply softnessConstantForceMix value</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED_1"'>
+      <xs:enumeration value='"SPEED-1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED_2"'>
+      <xs:enumeration value='"SPEED-2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP_1"'>
+      <xs:enumeration value='"SLIP-1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of slipFactors array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP_2"'>
+      <xs:enumeration value='"SLIP-2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of slipFactors array</xs:appinfo>
         </xs:annotation>
@@ -3264,7 +3264,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="MFMatrix4d">
         <xs:annotation>
-          <xs:appinfo>Multiple Field (list) 4×4 matrix of double-precision floating point numbers</xs:appinfo>
+          <xs:appinfo>Multiple Field (list) 4×4 matric3w of double-precision floating point numbers</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SFMatrix4f">
@@ -3599,14 +3599,14 @@ Open-source license:
     <xs:restriction base="xs:NMTOKEN">
       <xs:enumeration value="BOUNDS">
         <xs:annotation>
-          <xs:appinfo>When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
+          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="GEOMETRY">
         <xs:annotation>
-          <xs:appinfo>When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
+          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -13858,7 +13858,7 @@ Open-source license:
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DChildNode"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="Core"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
-        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.
+        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the specification.
       </xs:appinfo>
       <xs:documentation source="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"/>
     </xs:annotation>
@@ -20080,7 +20080,6 @@ Open-source license:
   <xs:element name="HAnimHumanoid">
     <xs:annotation>
       <xs:appinfo>
-        <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:element name="joints" type="MFNode" fixed="inputOutputField" default="HAnimJoint"/>
         <xs:element name="segments" type="MFNode" fixed="inputOutputField" default="HAnimSegment"/>
         <xs:element name="sites" type="MFNode" fixed="inputOutputField" default="HAnimSite"/>
@@ -20105,11 +20104,6 @@ Open-source license:
       <xs:complexContent>
         <xs:extension base="X3DChildNode">
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="HAnimDisplacer" minOccurs="0" maxOccurs="unbounded">
-              <xs:annotation>
-                <xs:documentation>displacers</xs:documentation>
-              </xs:annotation>
-            </xs:element>
             <xs:element ref="HAnimJoint" minOccurs="0" maxOccurs="unbounded">
               <xs:annotation>
                 <xs:documentation>SFNode skeleton, or MFNode joints (USE nodes)</xs:documentation>
@@ -20198,7 +20192,7 @@ Open-source license:
           <xs:attribute name="scaleOrientation" type="SFRotation" default="0 0 1 0"/>
           <xs:attribute name="skeletalConfiguration" type="SFString" default="BASIC"/>
           <xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
-          <xs:attribute name="version" type="hanimVersionChoices" use="required"/>
+          <xs:attribute name="version" type="hanimVersionChoices" default="2.0"/>
           <xs:attribute name="containerField" type="xs:NMTOKEN" default="children"/>
         </xs:extension>
         <!-- multiple fields added in X3D version 4.0 -->
@@ -24868,6 +24862,7 @@ Open-source license:
             </xs:appinfo>
           </xs:annotation>
         </xs:element>
+        <xs:attribute name="castShadow" type="SFBool" default="true"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="ParticleSystems"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
       </xs:appinfo>
@@ -26158,7 +26153,13 @@ Open-source license:
           </xs:attribute>
           <xs:attribute name="channelCountMode" type="channelCountModeChoices" default="MAX"/>
           <xs:attribute name="channelInterpretation" type="channelInterpretationChoices" default="SPEAKERS"/>
-          <xs:attribute name="detune" type="SFFloat" default="0"/>
+          <xs:attribute name="detune" default="0">
+            <xs:simpleType>
+              <xs:restriction base="SFFloat">
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
           <xs:attribute name="load" type="SFBool" default="true"/>
           <xs:attribute name="loop" type="SFBool" default="false"/>
           <xs:attribute name="loopEnd" default="0">
@@ -26255,7 +26256,13 @@ Open-source license:
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="X3DSoundProcessingNode">
-          <xs:attribute name="detune" type="SFFloat" default="0"/>
+          <xs:attribute name="detune" default="0">
+            <xs:simpleType>
+              <xs:restriction base="SFFloat">
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
           <xs:attribute name="frequency" default="350">
             <xs:simpleType>
               <xs:restriction base="SFFloat">

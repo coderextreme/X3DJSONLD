@@ -77,8 +77,6 @@ Design summary:
 			<xs:enumeration value="MFVec3f"/>
 			<xs:enumeration value="MFVec4d"/>
 			<xs:enumeration value="MFVec4f"/>
-			<xs:enumeration value="SFQuaternion"/>
-			<xs:enumeration value="MFQuaternion"/>
 			<xs:enumeration value="xs:NMTOKEN"/>
 			<xs:enumeration value="xs:string"/><!-- allowed for sourceCode CDATA blocks -->
 		</xs:restriction>
@@ -479,7 +477,7 @@ Design summary:
 				<xs:element ref="ConcreteNodes" minOccurs="0"/>
 				<xs:element ref="Statements" minOccurs="0"/>
 			</xs:sequence>
-			<xs:attribute name="version" type="versionValues" default="4.0"/>
+			<xs:attribute name="version" type="versionValues" default="3.3"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>

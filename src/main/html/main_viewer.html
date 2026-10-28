@@ -179,7 +179,7 @@
     // CORRECTED CONNECTION:
     // 1. URL is just the server's base address.
     // 2. The 'transports' option is removed to allow WebSocket upgrades.
-    let socket = io("http://localhost:3000", {
+    let socket = io("http://127.0.0.1:3000", {
 	cors: {
 	      origin: "*",
 	      methods: ["GET", "POST"]

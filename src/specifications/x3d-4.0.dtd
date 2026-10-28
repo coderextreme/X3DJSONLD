@@ -2863,7 +2863,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	USE		IDREF		#IMPLIED>
 
 <!ELEMENT HAnimHumanoid (IS?, (%MetadataNodes;)?,
-	(HAnimDisplacer*, HAnimJoint*, HAnimSegment*, HAnimSite*, HAnimMotion*, (%HAnimSkinNodes;)?, (Coordinate | CoordinateDouble)*, (%NormalNodes;)*, ( %WildcardNodes; )* )* ) >
+	(HAnimJoint*,	HAnimSegment*, HAnimSite*, HAnimMotion*, (%HAnimSkinNodes;)?, (Coordinate | CoordinateDouble)*, (%NormalNodes;)*, ( %WildcardNodes; )* )* ) >
 <!-- skeleton/joints, segments, sites/viewpoints,  motion,        skin,                  skinCoord,                  skinNormal -->
 <!-- Note that version 2.0 is approved for X3D4 HAnim component, and version 1.0 is approved for X3D3 H-Anim component -->
 <!-- Note that joints, segments and sites should be USE nodes.  skin Shapes will USE preceding skinCoord, skinNormal definitions. -->
@@ -2887,7 +2887,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	scaleOrientation	  %SFRotation;	"0 0 1 0"
 	skeletalConfiguration %SFString;	"BASIC"
 	translation		%SFVec3f;	"0 0 0"
-	version         (2.0 | 2.1) #REQUIRED
+	version          CDATA  #FIXED          "2.0"
 	containerField NMTOKEN "children"
 	class NMTOKENS   #IMPLIED
         id    NMTOKEN    #IMPLIED

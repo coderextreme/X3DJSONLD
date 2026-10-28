@@ -87,9 +87,11 @@ ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -P 
 #ls -d "$@" | grep -v intermediate | grep -v '\.new' | tr '\n' '\0'| xargs -0 -L 33 -P "$PROCESSORS" bash runtidy.sh | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "../node/json2all.js"
 # ls -d "$@" | grep -v intermediate | grep -v "\.new" | tr '\n' '\0' | xargs -0 -L 1 bash runtidy.sh | sed '/^$/d' | sed 's/^\(.*\)$/"\1"/' | xargs -P "$PROCESSORS" "${NODE}" "../node/json2all.js"
 
-echo Running Clojure
 OLDCLASSPATH=${CLASSPATH}
 unset CLASSPATH
+
+if uname | grep -q "Linux"; then
+echo Running Clojure
 for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.clj/' -e 's/^\/c/../' -e "$EXTOCLOJURE" -e "$DATATOCLOJURE" -e "$ROOTTOCLOJURE" -e "$PERSONALTOCLOJURE" | sed -e 's/\(data\)\/\(.*\).clj/\1\/\2\/\1\/\2.clj/' | xargs ls -d`
 do
 	MODEL=`basename "$i" .clj`
@@ -117,9 +119,11 @@ do
 	echo "${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
 	"${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
 done
+fi
 
 export CLASSPATH=${OLDCLASSPATH}
 
+if uname | grep -q "Linux"; then
 echo Running TruffleRuby
 pushd ../truffleruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOTRUFFLERUBY" -e "$DATATOTRUFFLERUBY" -e "$ROOTTOTRUFFLERUBY" -e "$PERSONALTOTRUFFLERUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
@@ -128,7 +132,9 @@ do
 	$TRUFFLERUBY -vm.cp='$CLASSPAth" $i
 done
 popd
+fi
 
+if uname | grep -vq "Linux"; then
 echo Running JRuby
 pushd ../jruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
@@ -137,6 +143,7 @@ do
 	$JRUBY -J-Xss1g -J-Xmx19g $i
 done
 popd
+fi
 export CLASSPATH=${OLDCLASSPATH}
 
 

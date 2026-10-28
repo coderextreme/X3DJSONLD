@@ -116,7 +116,7 @@ GraalPySerializer.prototype = {
 				if (attrs.hasOwnProperty(a) && attrsa.nodeType == 2) {
 					if (attr === "containerField") {
 						if (method === "setShaders") {
-							method = "addShaders"
+							method = "addShaders";
 							addpre = "";
 						} else {
 							if (attrs[a].nodeValue === "joints" 
@@ -139,7 +139,7 @@ GraalPySerializer.prototype = {
 			}
 		}
 		if (addpre+method === "setSegments") {
-			method = "Segments"
+			method = "Segments";
 			addpre = "add";
 		}
 		if (method === "addChildren") {
@@ -151,27 +151,27 @@ GraalPySerializer.prototype = {
 			addpre = "set";
 		}
 		if (addpre+method === "setPoses") {
-			method = "Child"
+			method = "Child";
 			addpre = "add";
 		}
 		if (addpre+method === "setJoints") {
-			method = "Joints"
+			method = "Joints";
 			addpre = "add";
 		}
 		if (addpre+method === "setViewpoints") {
-			method = "Viewpoints"
+			method = "Viewpoints";
 			addpre = "add";
 		}
 		if (addpre+method === "setSkeleton") {
-			method = "Skeleton"
+			method = "Skeleton";
 			addpre = "add";
 		}
 		if (addpre+method === "setSkin") {
-			method = "Skin"
+			method = "Skin";
 			addpre = "add";
 		}
 		if (element.nodeName === 'Transform' && addpre+method === "addSkin") {
-			method = "Child"
+			method = "Child";
 			addpre = "add";
 		}
 		if (addpre+method === "setValue") {                                                                                                      
@@ -179,55 +179,59 @@ GraalPySerializer.prototype = {
 			addpre = "add";
 		}
 		if (addpre+method === "setBack") {
-			method = "BackTexture"
+			method = "BackTexture";
 			addpre = "set";
 		}
 		if (addpre+method === "setFront") {
-			method = "FrontTexture"
+			method = "FrontTexture";
 			addpre = "set";
 		}
 		if (addpre+method === "setLeft") {
-			method = "LeftTexture"
+			method = "LeftTexture";
 			addpre = "set";
 		}
 		if (addpre+method === "setRight") {
-			method = "RightTexture"
+			method = "RightTexture";
 			addpre = "set";
 		}
 		if (addpre+method === "setTop") {
-			method = "TopTexture"
+			method = "TopTexture";
 			addpre = "set";
 		}
 		if (addpre+method === "setBottom") {
-			method = "BottomTexture"
+			method = "BottomTexture";
 			addpre = "set";
 		}
 		if (element.nodeName === 'Scene' && addpre+method === "setMetadata") {
-			method = "Metadata"
+			method = "Metadata";
 			addpre = "add";
 		}
 		if (node.nodeName === 'MetadataSet' && addpre+method === "addValue") {
-			method = "Metadata"
+			method = "Metadata";
 			addpre = "set";
 		}
 		if (node.nodeName === 'MetadataString' && addpre+method === "addValue") {
-			method = "Metadata"
+			method = "Metadata";
 			addpre = "set";
 		}
 		if (element.nodeName === 'HAnimHumanoid' && addpre+method === "addValue") {
-			method = "Metadata"
+			method = "Metadata";
 			addpre = "set";
 		}
 		if (element.nodeName === 'Shape' && addpre+method === "addValue") {
 			method = "Metadata";
 			addpre = "set";
 		}
+		if (node.nodeName.startsWith("Metadata") && !element.nodeName.startsWith("Metadata") && addpre+method === "addChild") {
+			method = "Metadata";
+			addpre = "add";
+		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
-			method = "LayerSet"
+			method = "LayerSet";
 			addpre = "add";
 		}
 		if (element.nodeName === "field" && addpre+method === "addJoints") {
-			method = "Child"
+			method = "Child";
 			addpre = "add";
 		}
 		return prepre+addpre+method;
@@ -410,7 +414,7 @@ GraalPySerializer.prototype = {
 				ch += "()\n";
 				var bodystr = this.subSerializeToString(node, mapToMethod, fieldTypes, n+1, stack);
 				ch += bodystr;
-				ch += "\n"
+				ch += "\n";
 				method = this.printParentChild(element, node, cn, mapToMethod, n);
 				ch += element.nodeName+stack[1]+method+"("+node.nodeName+stack[0]+")\n";
 				str += ch;

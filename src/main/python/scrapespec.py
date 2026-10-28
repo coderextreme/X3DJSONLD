@@ -45,7 +45,7 @@ python scrapespec.py < nodeInterfaces.html > nodeInterfaces.h
 python scrapespec.py < nodeTypeInterfaces.html > nodeTypeInterfaces.h
 '''
 
-soup = BeautifulSoup(sys.stdin, features="lxml")
+soup = BeautifulSoup(sys.stdin, features="xml")
 
 if soup is not None:
     f = sys.stdout

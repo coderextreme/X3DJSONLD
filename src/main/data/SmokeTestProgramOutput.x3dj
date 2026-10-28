@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 October 2026"
+            "@content":"28 October 2026"
           },
           {
             "@name":"generator",
@@ -229,13 +229,13 @@
           { "MetadataString":
             {
               "@name":"test",
-              "@DEF":"scene_addChildMetadata",
+              "@DEF":"scene.addChildMetadata",
               "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
             }
           },
           { "LayerSet":
             {
-              "@DEF":"scene_addChildLayerSetTest"
+              "@DEF":"scene.addChildLayerSetTest"
             }
           },
           { "Transform":
@@ -275,7 +275,7 @@
                           "-geometry":
                             { "Box":
                               {
-                                "@DEF":"test_NMTOKEN_regex_0123456789",
+                                "@DEF":"test-NMTOKEN_regex.0123456789",
                                 "@class":"untextured"
                               }
                             }
@@ -1505,13 +1505,13 @@
           { "MetadataString":
             {
               "@name":"test",
-              "@DEF":"scene_addChildMetadata",
+              "@DEF":"scene.addChildMetadata",
               "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
             }
           },
           { "LayerSet":
             {
-              "@DEF":"scene_addChildLayerSetTest"
+              "@DEF":"scene.addChildLayerSetTest"
             }
           },
           { "Transform":
@@ -1551,7 +1551,7 @@
                           "-geometry":
                             { "Box":
                               {
-                                "@DEF":"test_NMTOKEN_regex_0123456789",
+                                "@DEF":"test-NMTOKEN_regex.0123456789",
                                 "@class":"untextured"
                               }
                             }

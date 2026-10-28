@@ -71,6 +71,11 @@ async function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes
     } catch (e) { $('#javascript').val("Error generating JavaScript: " + e.message); }
 
     try {
+        let pythonSerializer = new PythonSerializer();
+        $('#python').val(pythonSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
+    } catch (e) { $('#python').val("Error generating Python: " + e.message); }
+
+    try {
         let graalpySerializer = new GraalPySerializer();
         $('#python').val(graalpySerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));
     } catch (e) { $('#python').val("Error generating GraalPy: " + e.message); }
@@ -102,6 +107,7 @@ async function updateOthersFromJsonObj(jsonObj, element, mapToMethod, fieldTypes
 	    $('#truffleruby').val("Error generating TruffleRuby: " + e.message);
 	    console.trace(e);
     }
+
     try {
         let guraSerializer = new GuraSerializer();
         $('#gura').val(guraSerializer.serializeToString(jsonObj, element, baseFileName, mapToMethod, fieldTypes));

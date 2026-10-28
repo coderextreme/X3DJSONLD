@@ -5,7 +5,7 @@ import ssl
 # openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out cert.pem
 
 # Define the server address and port
-server_address = ('localhost', 3000) # Listen on all interfaces, port 4443
+server_address = ('127.0.0.1', 3000) # Listen on all interfaces, port 4443
 
 # Create an HTTP request handler
 httpd = http.server.HTTPServer(server_address, http.server.SimpleHTTPRequestHandler)

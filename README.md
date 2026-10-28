@@ -1,4 +1,4 @@
-﻿# X3D JSON loader and node.js express web server for serving files from localhost
+﻿# X3D JSON loader and node.js express web server for serving files from 127.0.0.1
 
 # Convert X3D JSON to DOM and a host of X3D binding files
 
@@ -44,15 +44,15 @@ edit src/main/shell/classpath
 npm install
 npm run start
 
-# interactive, 10 years expiration in git for windows (git bash), non-localhost
+# interactive, 10 years expiration in git for windows (git bash), non-127.0.0.1
 openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes
 
-# non-interactive, 10 years expiration in git for windows (git bash), localhost
-openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj '//CN=localhost'
+# non-interactive, 10 years expiration in git for windows (git bash), 127.0.0.1
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj '//CN=127.0.0.1'
 ```
-Then go to http://localhost:3000/index.html in your web browser and select a JSON file in
-the pulldown.  You can try: http://localhost:3000/X3DExamplesViewer.html
-Or for X3DJSONLD 12, there's a new viewer: https://localhost:3000/src/main/html/main_viewer.html
+Then go to http://127.0.0.1:3000/index.html in your web browser and select a JSON file in
+the pulldown.  You can try: http://127.0.0.1:3000/X3DExamplesViewer.html
+Or for X3DJSONLD 12, there's a new viewer: https://127.0.0.1:3000/src/main/html/main_viewer.html
 
 
 * WARNING
