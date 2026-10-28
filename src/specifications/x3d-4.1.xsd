@@ -417,7 +417,7 @@ Open-source license:
   <xs:simpleType name="SFString">
     <xs:annotation>
       <xs:appinfo>
-        <xs:attribute name="defaultValue" type="SFString" default=""/>
+        <xs:attribute name="defaultValue" type="SFString" default="SRGB_REC709_DISPLAY"/>
         <xs:pattern value="(\s|\S)*"/><!-- TODO improve regex pattern -->
         SFString defines a single string encoded with the UTF-8 universal character set.
       </xs:appinfo>
@@ -635,7 +635,7 @@ Open-source license:
   <xs:simpleType name="SFQuaternion">
     <xs:annotation>
       <xs:appinfo>
-        <xs:attribute name="defaultValue" type="SFQuaternion" default="0.0 0.0 0.0 0.0"/>
+        <xs:attribute name="defaultValue" type="SFVec4d" default="0.0 0.0 0.0 1.0"/>
         SFQuaternion is a 4-tuple set of double-precision floating-point values, specifying a 3D homogeneous vector.
         Warning: comma characters within singleton values do not pass strict XML validation.
       </xs:appinfo>
@@ -1851,7 +1851,7 @@ Open-source license:
           <xs:appinfo>The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used.</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"FRICTION_COEFFICIENT_2"'>
+      <xs:enumeration value='"FRICTION_COEFFICIENT-2"'>
         <xs:annotation>
           <xs:appinfo>Apply frictionCoefficients values</xs:appinfo>
         </xs:annotation>
@@ -1866,22 +1866,22 @@ Open-source license:
           <xs:appinfo>Apply softnessConstantForceMix value</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED_1"'>
+      <xs:enumeration value='"SPEED-1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED_2"'>
+      <xs:enumeration value='"SPEED-2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP_1"'>
+      <xs:enumeration value='"SLIP-1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of slipFactors array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP_2"'>
+      <xs:enumeration value='"SLIP-2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of slipFactors array</xs:appinfo>
         </xs:annotation>
@@ -3220,16 +3220,6 @@ Open-source license:
           <xs:appinfo>Multiple Field (list) nodes</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SFQuaternion">
-        <xs:annotation>
-          <xs:appinfo>Single Field (singleton) quaternion value</xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="MFQuaternion">
-        <xs:annotation>
-          <xs:appinfo>Multiple Field (list) quaternion values</xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
       <xs:enumeration value="SFRotation">
         <xs:annotation>
           <xs:appinfo>Single Field (singleton) rotation value using 3-tuple axis, radian angle</xs:appinfo>
@@ -3347,7 +3337,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="MFMatrix4d">
         <xs:annotation>
-          <xs:appinfo>Multiple Field (list) 4×4 matrix of double-precision floating point numbers</xs:appinfo>
+          <xs:appinfo>Multiple Field (list) 4×4 matric3w of double-precision floating point numbers</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SFMatrix4f">
@@ -3688,14 +3678,14 @@ Open-source license:
     <xs:restriction base="xs:NMTOKEN">
       <xs:enumeration value="BOUNDS">
         <xs:annotation>
-          <xs:appinfo>When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
+          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="GEOMETRY">
         <xs:annotation>
-          <xs:appinfo>When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
+          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -4439,9 +4429,9 @@ Open-source license:
           <xs:appinfo>Invert argument x as (1 - x)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"ALPHA_REPLICATE"'>
+      <xs:enumeration value='"ALPHAREPLICATE"'>
         <xs:annotation>
-          <xs:appinfo>Replicate alpha information to all color channels before  operation completes. (previously no underscore in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Replicate alpha information to all color channels before  operation completes.</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value='""'>
@@ -4453,29 +4443,29 @@ Open-source license:
   </xs:simpleType>
   <xs:simpleType name="multiTextureModeValues">
     <xs:annotation>
-      <xs:appinfo>multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended. (previously no underscores in X3D 3.0-4.0)</xs:appinfo>
+      <xs:appinfo>multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended.</xs:appinfo>
       <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#t-MultitextureModes"/>
     </xs:annotation>
     <xs:restriction base="MFString">
       <xs:enumeration value='"ADD"'/>
-      <xs:enumeration value='"ADD_SIGNED"'/>
-      <xs:enumeration value='"ADD_SIGNED_2X"'/>
-      <xs:enumeration value='"ADD_SMOOTH"'/>
-      <xs:enumeration value='"BLEND_CURRENT_ALPHA"'/>
-      <xs:enumeration value='"BLEND_DIFFUSE_ALPHA"'/>
-      <xs:enumeration value='"BLEND_FACTOR_ALPHA"'/>
-      <xs:enumeration value='"BLEND_TEXTURE_ALPHA"'/>
-      <xs:enumeration value='"DOT_PRODUCT_3"'/>
+      <xs:enumeration value='"ADDSIGNED"'/>
+      <xs:enumeration value='"ADDSIGNED2X"'/>
+      <xs:enumeration value='"ADDSMOOTH"'/>
+      <xs:enumeration value='"BLENDCURRENTALPHA"'/>
+      <xs:enumeration value='"BLENDDIFFUSEALPHA"'/>
+      <xs:enumeration value='"BLENDFACTORALPHA"'/>
+      <xs:enumeration value='"BLENDTEXTUREALPHA"'/>
+      <xs:enumeration value='"DOTPRODUCT3"'/>
       <xs:enumeration value='"MODULATE"'/>
-      <xs:enumeration value='"MODULATE_2X"'/>
-      <xs:enumeration value='"MODULATE_4X"'/>
-      <xs:enumeration value='"MODULATE_ALPHA_ADD_COLOR"'/>
-      <xs:enumeration value='"MODULATE_INV_ALPHA_ADD_COLOR"'/>
-      <xs:enumeration value='"MODULATE_INV_COLOR_ADD_ALPHA"'/>
+      <xs:enumeration value='"MODULATE2X"'/>
+      <xs:enumeration value='"MODULATE4X"'/>
+      <xs:enumeration value='"MODULATEALPHA_ADDCOLOR"'/>
+      <xs:enumeration value='"MODULATEINVALPHA_ADDCOLOR"'/>
+      <xs:enumeration value='"MODULATEINVCOLOR_ADDALPHA"'/>
       <xs:enumeration value='"OFF"'/>
       <xs:enumeration value='"REPLACE"'/>
-      <xs:enumeration value='"SELECT_ARG1"'/>
-      <xs:enumeration value='"SELECT_ARG2"'/>
+      <xs:enumeration value='"SELECTARG1"'/>
+      <xs:enumeration value='"SELECTARG2"'/>
       <xs:enumeration value='"SUBTRACT"'/>
     </xs:restriction>
   </xs:simpleType>
@@ -4950,24 +4940,24 @@ Open-source license:
           <xs:appinfo>Creates texture coordinates for a spherical environment</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="CAMERA_SPACE_NORMAL">
+      <xs:enumeration value="CAMERASPACENORMAL">
         <xs:annotation>
-          <xs:appinfo>Use vertex normal, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Use vertex normal, transformed to camera space, as input texture coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="CAMERA_SPACE_POSITION">
+      <xs:enumeration value="CAMERASPACEPOSITION">
         <xs:annotation>
-          <xs:appinfo>Use vertex position, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Use vertex position, transformed to camera space, as input texture coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="CAMERA_SPACE_REFLECTION_VECTOR">
+      <xs:enumeration value="CAMERASPACEREFLECTIONVECTOR">
         <xs:annotation>
-          <xs:appinfo>Use reflection vector, transformed to camera space, as input texture coordinates. (previously no underscores in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Use reflection vector, transformed to camera space, as input texture coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SPHERE_LOCAL">
+      <xs:enumeration value="SPHERE-LOCAL">
         <xs:annotation>
-          <xs:appinfo>Sphere mapping but in local coordinates. (previously hypenated in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Sphere mapping but in local coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="COORD">
@@ -4975,9 +4965,9 @@ Open-source license:
           <xs:appinfo>Use vertex coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="COORD_EYE">
+      <xs:enumeration value="COORD-EYE">
         <xs:annotation>
-          <xs:appinfo>Use vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Use vertex coordinates transformed to camera space</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="NOISE">
@@ -4985,19 +4975,19 @@ Open-source license:
           <xs:appinfo>Apply Perlin solid noise function on vertex coordinates</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="NOISE_EYE">
+      <xs:enumeration value="NOISE-EYE">
         <xs:annotation>
-          <xs:appinfo>Apply Perlin solid noise function on vertex coordinates transformed to camera space. (previously hypenated in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Apply Perlin solid noise function on vertex coordinates transformed to camera space</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SPHERE_REFLECT">
+      <xs:enumeration value="SPHERE-REFLECT">
         <xs:annotation>
-          <xs:appinfo>similar to CAMERA_SPACE_REFLECTION_VECTOR with optional index of refraction. (previously hypenated in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="SPHERE_REFLECT_LOCAL">
+      <xs:enumeration value="SPHERE-REFLECT-LOCAL">
         <xs:annotation>
-          <xs:appinfo>Similar to SPHERE_REFLECT transformed to camera space. (previously hypenated in X3D 3.0-4.0)</xs:appinfo>
+          <xs:appinfo>Similar to SPHERE-REFLECT transformed to camera space</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -7749,8 +7739,6 @@ Open-source license:
       <xs:element ref="StreamAudioDestination"/>
       <xs:element ref="StreamAudioSource"/>
       <xs:element ref="WaveShaper"/>
-      <!-- X3D4 4.1 GaussianSplats Component -->
-      <xs:element ref="GaussianSplats"/>
     </xs:choice>
   </xs:group>
   <xs:group name="ChildContentModelDIS">
@@ -11182,6 +11170,8 @@ Open-source license:
   <xs:element name="FontLibrary">
     <xs:annotation>
       <xs:appinfo>
+        <!-- optional values, can be extended -->
+        <xs:attribute name="family" type="fontFamilyValues"/>
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DUrlObject"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="Text"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
@@ -11208,7 +11198,7 @@ Open-source license:
             </xs:simpleType>
           </xs:attribute>
           <xs:attribute name="description" type="SFString"/>
-          <xs:attribute name="family" type="SFString"/>
+          <xs:attribute name="family" type="MFString"/>
           <xs:attribute name="load" type="SFBool" default="true"/>
           <xs:attribute name="url" type="MFString">
             <xs:annotation>
@@ -12697,6 +12687,7 @@ Open-source license:
           <xs:attribute name="maxNumberFrames" type="SFInt32" default="1000"/>
           <xs:attribute name="replaceImage" type="SFBool" default="true"/>
           <xs:attribute name="singleFrame" type="SFBool" default="true"/>
+          <xs:attribute name="update" type="generatedCubeMapTextureUpdateChoices" default="NONE"/>
           <xs:attribute name="updateInterval" type="SFTime" default="0.1"/>
           <xs:attribute name="url" type="MFString">
             <xs:annotation>
@@ -14174,7 +14165,7 @@ Open-source license:
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DChildNode"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="Core"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
-        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.
+        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the specification.
       </xs:appinfo>
       <xs:documentation source="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"/>
     </xs:annotation>
@@ -15048,7 +15039,7 @@ Open-source license:
     <xs:annotation>
       <xs:appinfo>The enumeration keys for the GeoMetadata summary field. This list is unbounded, additional enumeration values are allowed. </xs:appinfo>
       <!-- Note that strict validation does not occur via X3D XML schema since MetadataString/MetadataFloat nodes allow any value, additional quality assurance (QA) performed by X3D Schematron and X3dTidy.xslt. -->
-      <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geospatial.html#t-keywordsandvalues"/>
+      <xs:documentation source="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#t-keywordsandvalues"/>
     </xs:annotation>
     <xs:restriction base="xs:NMTOKEN">
       <xs:enumeration value="title">
@@ -20408,7 +20399,6 @@ Open-source license:
   <xs:element name="HAnimHumanoid">
     <xs:annotation>
       <xs:appinfo>
-        <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:element name="joints" type="MFNode" fixed="inputOutputField" default="HAnimJoint"/>
         <xs:element name="segments" type="MFNode" fixed="inputOutputField" default="HAnimSegment"/>
         <xs:element name="sites" type="MFNode" fixed="inputOutputField" default="HAnimSite"/>
@@ -20434,11 +20424,6 @@ Open-source license:
       <xs:complexContent>
         <xs:extension base="X3DChildNode">
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="HAnimDisplacer" minOccurs="0" maxOccurs="unbounded">
-              <xs:annotation>
-                <xs:documentation>displacers</xs:documentation>
-              </xs:annotation>
-            </xs:element>
             <xs:element ref="HAnimJoint" minOccurs="0" maxOccurs="unbounded">
               <xs:annotation>
                 <xs:documentation>SFNode skeleton, or MFNode joints (USE nodes)</xs:documentation>
@@ -20532,7 +20517,7 @@ Open-source license:
           <xs:attribute name="scaleOrientation" type="SFRotation" default="0 0 1 0"/>
           <xs:attribute name="skeletalConfiguration" type="SFString" default="BASIC"/>
           <xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
-          <xs:attribute name="version" type="hanimVersionChoices" use="required"/>
+          <xs:attribute name="version" type="hanimVersionChoices" default="2.0"/>
           <xs:attribute name="containerField" type="xs:NMTOKEN" default="children"/>
         </xs:extension>
         <!-- multiple fields added in X3D version 4.0 -->
@@ -25254,6 +25239,7 @@ Open-source license:
             </xs:appinfo>
           </xs:annotation>
         </xs:element>
+        <xs:attribute name="castShadow" type="SFBool" default="true"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="ParticleSystems"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
       </xs:appinfo>
@@ -26548,7 +26534,13 @@ Open-source license:
           </xs:attribute>
           <xs:attribute name="channelCountMode" type="channelCountModeChoices" default="MAX"/>
           <xs:attribute name="channelInterpretation" type="channelInterpretationChoices" default="SPEAKERS"/>
-          <xs:attribute name="detune" type="SFFloat" default="0"/>
+          <xs:attribute name="detune" default="0">
+            <xs:simpleType>
+              <xs:restriction base="SFFloat">
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
           <xs:attribute name="load" type="SFBool" default="true"/>
           <xs:attribute name="loop" type="SFBool" default="false"/>
           <xs:attribute name="loopEnd" default="0">
@@ -26645,7 +26637,13 @@ Open-source license:
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="X3DSoundProcessingNode">
-          <xs:attribute name="detune" type="SFFloat" default="0"/>
+          <xs:attribute name="detune" default="0">
+            <xs:simpleType>
+              <xs:restriction base="SFFloat">
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
           <xs:attribute name="frequency" default="350">
             <xs:simpleType>
               <xs:restriction base="SFFloat">
@@ -26940,7 +26938,13 @@ Open-source license:
             </xs:annotation>
             <xs:element ref="PeriodicWave"/>
           </xs:sequence>
-          <xs:attribute name="detune" type="SFFloat" default="0"/>
+          <xs:attribute name="detune" default="0">
+            <xs:simpleType>
+              <xs:restriction base="SFFloat">
+                <xs:minInclusive value="0"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:attribute>
           <xs:attribute name="frequency" default="440">
             <xs:simpleType>
               <xs:restriction base="SFFloat">

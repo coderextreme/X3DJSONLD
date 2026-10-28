@@ -1,7 +1,11 @@
-cp x3d_validator.py ../python/venv/lib/python3.12/site-packages/x3d/x3d_validator.py
+cp x3d_validator.py ../python/venv/lib/site-packages/x3d/x3d_validator.py
 cp x3d_validator.py ../python/net/x3djsonld/data/x3d_validator.py
 cp x3d_validator.py ../python/net/coderextreme/data/x3d_validator.py
 cp x3d_validator.py ../graalpy/net/coderextreme/data/x3d_validator.py
+
+source venv/{Scripts,bin}/activate
+
+pip install BeautifulSoup4
 
 python autoclass.py
 python classesNew.py
