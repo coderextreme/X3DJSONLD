@@ -70,7 +70,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 October 2026"
+            "@content":"28 October 2026"
           },
           {
             "@name":"generator",
@@ -143,6 +143,7 @@
                       { "HAnimHumanoid":
                         {
                           "@name":"Leif_WS",
+                          "@version":"2.0",
                           "@DEF":"Leif",
                           "-skeleton":[
                             { "HAnimJoint":

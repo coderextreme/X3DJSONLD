@@ -82,7 +82,7 @@
           },
           {
             "@name":"translated",
-            "@content":"26 October 2026"
+            "@content":"28 October 2026"
           },
           {
             "@name":"generator",
@@ -126,6 +126,7 @@
           { "HAnimHumanoid":
             {
               "@name":"humanoid",
+              "@version":"2.0",
               "@DEF":"hanim_humanoid",
               "-skeleton":[
                 { "HAnimJoint":
