@@ -2,10 +2,10 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-4.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-4.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 4.0 of X3D -->
-<!-- Generated 2026-05-10-07:00 22:51:16.5110675-07:00 -->
+<!-- Generated 2026-09-27-07:00 13:37:33.1285231-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="4.0"
-                       xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
+                       xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/X3dUnifiedObjectModel.xsd">
    <SimpleTypeEnumerations>
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
@@ -66,15 +66,15 @@
          <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
          <enumeration value="&#34;USER_FRICTION&#34;"
                       appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-         <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+         <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                       appinfo="Apply frictionCoefficients values"/>
          <enumeration value="&#34;ERROR_REDUCTION&#34;" appinfo="Apply softnessErrorCorrection value"/>
          <enumeration value="&#34;CONSTANT_FORCE&#34;" appinfo="Apply softnessConstantForceMix value"/>
-         <enumeration value="&#34;SPEED-1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
-         <enumeration value="&#34;SPEED-2&#34;"
+         <enumeration value="&#34;SPEED_1&#34;" appinfo="Apply first component of surfaceSpeed array"/>
+         <enumeration value="&#34;SPEED_2&#34;"
                       appinfo="Apply second component of surfaceSpeed array"/>
-         <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array"/>
-         <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array"/>
+         <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array"/>
+         <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array"/>
       </SimpleType>
       <SimpleType name="bboxSizeType"
                   baseType="SFVec3f"
@@ -624,7 +624,7 @@
          <enumeration value="SFMatrix4d"
                       appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers"/>
          <enumeration value="MFMatrix4d"
-                      appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers"/>
+                      appinfo="Multiple Field (list) 4×4 matrix of double-precision floating point numbers"/>
          <enumeration value="SFMatrix4f"
                       appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers"/>
          <enumeration value="MFMatrix4f"
@@ -4074,11 +4074,11 @@
                   appinfo="intersectionTypeValues are supported enumeration values for X3DPickSensorNode type intersectionType field. This list is unbounded, additional enumeration values are allowed."
                   documentation="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/picking.html#X3DPickSensorNode">
          <enumeration value="BOUNDS"
-                      appinfo="TODO undefined in X3D specification"
-                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                      appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
          <enumeration value="GEOMETRY"
-                      appinfo="TODO undefined in X3D specification"
-                      documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                      appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object"
+                      documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
       </SimpleType>
       <SimpleType name="justifyChoices"
                   baseType="MFString"
@@ -7658,11 +7658,11 @@
                    simpleType="intersectionTypeValues"
                    baseType="xs:NMTOKEN">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -11437,7 +11437,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   minInclusive="0"
                    description="The detune field, measured in cents, modulates the speed at which the the audio stream is rendered."/>
             <field name="elapsedTime"
                    type="SFTime"
@@ -12301,7 +12300,6 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   minInclusive="0"
                    description="The detune field, measured in cents, modulates the speed at which the the audio stream is rendered."/>
             <field name="elapsedTime"
                    type="SFTime"
@@ -13818,18 +13816,18 @@
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-               <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+               <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                             appinfo="Apply frictionCoefficients values."/>
                <enumeration value="&#34;ERROR_REDUCTION&#34;"
                             appinfo="Apply softnessErrorCorrection value."/>
                <enumeration value="&#34;CONSTANT_FORCE&#34;"
                             appinfo="Apply softnessConstantForceMix value."/>
-               <enumeration value="&#34;SPEED-1&#34;"
+               <enumeration value="&#34;SPEED_1&#34;"
                             appinfo="Apply first component of surfaceSpeed array."/>
-               <enumeration value="&#34;SPEED-2&#34;"
+               <enumeration value="&#34;SPEED_2&#34;"
                             appinfo="Apply second component of surfaceSpeed array."/>
-               <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array."/>
-               <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array."/>
             </field>
             <field name="bboxCenter"
                    type="SFVec3f"
@@ -15117,18 +15115,18 @@
                <enumeration value="&#34;BOUNCE&#34;" appinfo="The bounce field value is used."/>
                <enumeration value="&#34;USER_FRICTION&#34;"
                             appinfo="The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used."/>
-               <enumeration value="&#34;FRICTION_COEFFICIENT-2&#34;"
+               <enumeration value="&#34;FRICTION_COEFFICIENT_2&#34;"
                             appinfo="Apply frictionCoefficients values."/>
                <enumeration value="&#34;ERROR_REDUCTION&#34;"
                             appinfo="Apply softnessErrorCorrection value."/>
                <enumeration value="&#34;CONSTANT_FORCE&#34;"
                             appinfo="Apply softnessConstantForceMix value."/>
-               <enumeration value="&#34;SPEED-1&#34;"
+               <enumeration value="&#34;SPEED_1&#34;"
                             appinfo="Apply first component of surfaceSpeed array."/>
-               <enumeration value="&#34;SPEED-2&#34;"
+               <enumeration value="&#34;SPEED_2&#34;"
                             appinfo="Apply second component of surfaceSpeed array."/>
-               <enumeration value="&#34;SLIP-1&#34;" appinfo="Apply first component of slipFactors array."/>
-               <enumeration value="&#34;SLIP-2&#34;" appinfo="Apply second component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_1&#34;" appinfo="Apply first component of slipFactors array."/>
+               <enumeration value="&#34;SLIP_2&#34;" appinfo="Apply second component of slipFactors array."/>
             </field>
             <field name="body1"
                    type="SFNode"
@@ -20425,13 +20423,13 @@
       </ConcreteNode>
       <ConcreteNode name="HAnimDisplacer">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/hanim.html#HAnimDisplacer"
-                              appinfo="HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimJoint or HAnimSegment nodes.">
+                              appinfo="HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimSegment or ancestor HAnimHumanoid nodes.">
             <componentInfo name="HAnim" level="1"/>
             <Inheritance baseType="X3DGeometricPropertyNode"/>
             <field name="coordIndex"
                    type="MFInt32"
                    accessType="inputOutput"
-                   description="Defines index values into the parent HAnimSegment or HAnimBody/HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
+                   description="Defines index values into the parent HAnimSegment or ancestor HAnimHumanoid coordinate array for the mesh of vertices affected by this HAnimDisplacer."/>
             <field name="description"
                    type="SFString"
                    accessType="inputOutput"
@@ -21280,6 +21278,10 @@
                    type="SFString"
                    accessType="inputOutput"
                    description="Author-provided prose that describes intended purpose of this node."/>
+            <field name="displacers"
+                   type="MFNode"
+                   accessType="inputOutput"
+                   acceptableNodeTypes="HAnimDisplacer"/>
             <field name="info"
                    type="MFString"
                    accessType="inputOutput"
@@ -21409,11 +21411,11 @@
             <field name="version"
                    type="SFString"
                    accessType="inputOutput"
-                   default="2.0"
+                   use="required"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN"
-                   description="HAnimHumanoid version, where allowed value is 2.">
+                   description="HAnimHumanoid version is required, where allowed value is 2.">
                <enumeration value="2.0"
                             appinfo="Revised standard HAnim 19774 version 2 (parts 1 and 2) were approved by ISO in November 2019, published by Web3D Consortium May 2020."
                             documentation="https://www.web3d.org/documents/specifications/19774/V2.0"/>
@@ -21461,6 +21463,7 @@
             <containerField default="children" type="xs:NMTOKEN"/>
             <ContentModel>
                <GroupContentModel name="ChildContentModelCore" minOccurs="0"/>
+               <NodeContentModel name="HAnimDisplacer" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimJoint" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSegment" minOccurs="0" maxOccurs="unbounded"/>
                <NodeContentModel name="HAnimSite" minOccurs="0" maxOccurs="unbounded"/>
@@ -26649,11 +26652,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -27117,7 +27120,7 @@
       </ConcreteNode>
       <ConcreteNode name="LoadSensor">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/networking.html#LoadSensor"
-                              appinfo="LoadSensor generates events as watchList child nodes are either loaded or fail to load.">
+                              appinfo="LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.">
             <componentInfo name="Networking" level="3"/>
             <Inheritance baseType="X3DNetworkSensorNode"/>
             <field name="children"
@@ -27151,7 +27154,7 @@
             <field name="isLoaded"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Notify when all watchList child nodes are loaded, or at least one has failed."/>
+                   description="Notify when all children/watchList child nodes are loaded, or at least one has failed."/>
             <field name="loadTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -28052,7 +28055,7 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DMetadataObject"
-                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is determined by the name field."/>
+                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is each determined by their respective name field."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -28682,7 +28685,7 @@
                    additionalEnumerationValuesAllowed="true"
                    simpleType="multiTextureFunctionValues"
                    baseType="MFString"
-                   description="function operators COMPLEMENT or ALPHAREPLICATE can be applied after the mode blending operation.">
+                   description="function operators COMPLEMENT or ALPHA_REPLICATE can be applied after the mode blending operation.">
                <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)."/>
                <enumeration value="&#34;ALPHAREPLICATE&#34;"
                             appinfo="Replicate alpha information to all color channels before operation completes."/>
@@ -32153,11 +32156,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -33217,11 +33220,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -41609,11 +41612,11 @@
                    baseType="xs:NMTOKEN"
                    description="intersectionType specifies precision of the collision computation.">
                <enumeration value="BOUNDS"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
                <enumeration value="GEOMETRY"
-                            appinfo="TODO undefined in X3D specification."
-                            documentation="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+                            appinfo="When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object."
+                            documentation="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
             </field>
             <field name="IS"
                    type="SFNode"
@@ -42484,7 +42487,7 @@
                <enumeration value="SFMatrix4d"
                             appinfo="Single Field (singleton) 4×4 matrix of double-precision floating point numbers."/>
                <enumeration value="MFMatrix4d"
-                            appinfo="Multiple Field (list) 4×4 matric3w of double-precision floating point numbers."/>
+                            appinfo="Multiple Field (list) 4×4 matrix of double-precision floating point numbers."/>
                <enumeration value="SFMatrix4f"
                             appinfo="Single Field (singleton) 4×4 matrix of single-precision floating point numbers."/>
                <enumeration value="MFMatrix4f"
@@ -42858,7 +42861,7 @@
       </Statement>
       <Statement name="ProtoDeclare">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
-                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.">
+                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.">
             <componentInfo name="Core" level="2"/>
             <field name="appinfo"
                    type="SFString"

@@ -54,12 +54,13 @@
 <!ENTITY % FollowersComponent "INCLUDE">
 <!ENTITY % ParticleSystemsComponent "INCLUDE">
 <!ENTITY % VolumeRenderComponent "INCLUDE">
+<!ENTITY % GaussianSplatsComponent "INCLUDE">
 <!ENTITY % Web3dExtensionComponent "INCLUDE">
 <!ENTITY % X3dInputOutputFields "INCLUDE">
 <!ENTITY % X3dExtensions "IGNORE">
 <!ENTITY % profileNames "(Core|Interchange|CADInterchange|Interactive|Immersive|MedicalInterchange|MPEG4Interactive|Full)">
 <!-- H-Anim is an allowed value for backwards validation of X3D version 3 HAnim version 1 models, but is not legal for X3D version 4 HAnim version 2 -->
-<!ENTITY % componentNames "(Core|CADGeometry|CubeMapTexturing|DIS|EnvironmentalEffects|EnvironmentalSensor|EventUtilities|Followers|Geometry2D|Geometry3D|Geospatial|Grouping|HAnim|H-Anim|Interpolation|KeyDeviceSensor|Layering|Layout|Lighting|Navigation|Networking|NURBS|ParticleSystems|Picking|PointingDeviceSensor|Rendering|RigidBodyPhysics|Scripting|Shaders|Shape|Sound|Text|TextureProjection|Texturing|Texturing3D|Time|VolumeRendering)">
+<!ENTITY % componentNames "(Core|CADGeometry|CubeMapTexturing|DIS|EnvironmentalEffects|EnvironmentalSensor|EventUtilities|Followers|GaussianSplats|Geometry2D|Geometry3D|Geospatial|Grouping|HAnim|H-Anim|Interpolation|KeyDeviceSensor|Layering|Layout|Lighting|Navigation|Networking|NURBS|ParticleSystems|Picking|PointingDeviceSensor|Rendering|RigidBodyPhysics|Scripting|Shaders|Shape|Sound|Text|TextureProjection|Texturing|Texturing3D|Time|VolumeRendering)">
 <!ENTITY % componentLevels "(1|2|3|4|5)">
 <!ENTITY % X3dFieldTypes "SFBool|MFBool|SFColor|MFColor|SFColorRGBA|MFColorRGBA|SFDouble|MFDouble|SFFloat|MFFloat|SFImage|MFImage|SFInt32|MFInt32|SFNode|MFNode|SFRotation|MFRotation|SFString|MFString|SFTime|MFTime|SFVec2f|MFVec2f|SFVec2d|MFVec2d|SFVec3f|MFVec3f|SFVec3d|MFVec3d|SFMatrix3d|MFMatrix3d|SFMatrix3f|MFMatrix3f|SFMatrix4d|MFMatrix4d|SFMatrix4f|MFMatrix4f|SFVec4d|MFVec4d|SFVec4f|MFVec4f|SFQuaternion|MFQuaternion">
 <!-- X3D type definitions as DTD types -->
@@ -131,7 +132,7 @@
 <!ENTITY % TextureMagnificationModeValues   "(AVG_PIXEL|DEFAULT|FASTEST|NEAREST_PIXEL|NICEST)">
 <!ENTITY % TextureMinificationModeValues    "(AVG_PIXEL|AVG_PIXEL_AVG_MIPMAP|AVG_PIXEL_NEAREST_MIPMAP|DEFAULT|FASTEST|NEAREST_PIXEL|NEAREST_PIXEL_AVG_MIPMAP|NEAREST_PIXEL_NEAREST_MIPMAP|NICEST)">
 <!ENTITY % TextureCompressionModeValues     "(DEFAULT|FASTEST|HIGH|LOW|MEDIUM|NICEST)">
-<!ENTITY % TextureCoordinateGeneratorModes  "(SPHERE|CAMERASPACENORMAL|CAMERASPACEPOSITION|CAMERASPACEREFLECTIONVECTOR|SPHERE-LOCAL|COORD|COORD-EYE|NOISE|NOISE-EYE|SPHERE-REFLECT|SPHERE-REFLECT-LOCAL)">
+<!ENTITY % TextureCoordinateGeneratorModes  "(SPHERE|CAMERA_SPACE_NORMAL|CAMERA_SPACE_POSITION|CAMERA_SPACE_REFLECTION_VECTOR|SPHERE_LOCAL|COORD|COORD_EYE|NOISE|NOISE_EYE|SPHERE_REFLECT|SPHERE_REFLECT_LOCAL)">
 
 <!--	DTD authors making modifications need to append | after listing each new node in any of these extensions.
 	For an example, see examples/development/ProtoTagDtdDeclarationExamples.x3d   -->
@@ -217,6 +218,10 @@
 <!ENTITY % X3DComposableVolumeRenderStyleNode " %X3DComposableVolumeRenderStyleNodeExtensions; BlendedVolumeStyle|BoundaryEnhancementVolumeStyle|CartoonVolumeStyle|ComposedVolumeStyle|EdgeEnhancementVolumeStyle|OpacityMapVolumeStyle|ProjectionVolumeStyle|ShadedVolumeStyle|SilhouetteEnhancementVolumeStyle|ToneMappedVolumeStyle " >
 <!ENTITY % X3DVolumeDataNodeExtensions "" >
 <!ENTITY % X3DVolumeDataNodes " %X3DVolumeDataNodeExtensions; IsoSurfaceVolumeData|SegmentedVolumeData|VolumeData| " >
+]]>
+<![%GaussianSplatsComponent;[
+<!ENTITY % X3DGaussianSplatsNodeExtensions "" >
+<!ENTITY % X3DaussianSplatsNodes " %X3DGaussianSplatsNodeExtensions; GaussianSplats| " >
 ]]>
 
 <![%Web3dExtensionComponent;[
@@ -1005,6 +1010,8 @@
     id    NMTOKEN    #IMPLIED
 	DEF         ID          #IMPLIED
 	USE         IDREF       #IMPLIED>
+
+<![%GaussianSplatsComponent;[
 <!ELEMENT GaussianSplats ( (IS?), (%MetadataNodes;)? ) >
 <!ATTLIST GaussianSplats
 	colorSpace    (SRGB_REC709_DISPLAY|LIN_REC709_DISPLAY) "SRGB_REC709_DISPLAY"
@@ -1039,6 +1046,7 @@
     id    NMTOKEN    #IMPLIED
 	DEF         ID          #IMPLIED
 	USE         IDREF       #IMPLIED>
+]]>
 <!ELEMENT Group (IS?, (%MetadataNodes;)?, (%ChildrenNodes; | %WildcardNodes;)*)>
 <!ATTLIST Group
 	bboxCenter  %SFVec3f; "0 0 0"
@@ -2965,7 +2973,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	USE		IDREF		#IMPLIED>
 
 <!ELEMENT HAnimHumanoid (IS?, (%MetadataNodes;)?,
-	(HAnimJoint*,	HAnimSegment*, HAnimSite*, HAnimMotion*, (%HAnimSkinNodes;)?, HAnimPose*, (Coordinate | CoordinateDouble)*, (%NormalNodes;)*, ( %WildcardNodes; )* )* ) >
+	(HAnimDisplacer*, HAnimJoint*, HAnimSegment*, HAnimSite*, HAnimMotion*, (%HAnimSkinNodes;)?, HAnimPose*, (Coordinate | CoordinateDouble)*, (%NormalNodes;)*, ( %WildcardNodes; )* )* ) >
 <!-- skeleton/joints, segments, sites/viewpoints,  motion,        skin,                  skinCoord,                  skinNormal -->
 <!-- Note that version 2.0 is approved for X3D4 HAnim component, and version 1.0 is approved for X3D3 H-Anim component -->
 <!-- Note that joints, segments and sites should be USE nodes.  skin Shapes will USE preceding skinCoord, skinNormal definitions. -->
@@ -2989,7 +2997,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	scaleOrientation	  %SFRotation;	"0 0 1 0"
 	skeletalConfiguration %SFString;	"BASIC"
 	translation		%SFVec3f;	"0 0 0"
-	version         (2.0 | 2.1) "2.0"
+	version         (2.0 | 2.1) #IMPLIED
 	containerField NMTOKEN "children"
 	class NMTOKENS   #IMPLIED
     id    NMTOKEN    #IMPLIED
@@ -3013,7 +3021,7 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	weight			%SFString;	#IMPLIED
 -->
 <![%HAnimComponent;[
-<!ELEMENT HAnimJoint (IS?, (%MetadataNodes;)?, ( HAnimDisplacer|HAnimJoint|HAnimSegment|%WildcardNodes; )* ) >
+<!ELEMENT HAnimJoint (IS?, (%MetadataNodes;)?, ( HAnimDisplacer|HAnimJoint|HAnimSegment|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%ShapeNodes;|Inline|%WildcardNodes;)* ) >
 <!ATTLIST HAnimJoint
 	name			NMTOKEN		#IMPLIED
 	description     %SFString; #IMPLIED
@@ -3082,9 +3090,9 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 <!-- Multiple HAnimDisplacer nodes must appear consecutively inside HAnimSegment -->
 
 <!ELEMENT HAnimSegment (IS?, (%MetadataNodes;)?, (
-	((%ChildrenNodes;|%WildcardNodes;)*, ((Coordinate, HAnimDisplacer*)|(HAnimDisplacer+, Coordinate?))? ) |
-	(Coordinate, (((%ChildrenNodes;)*, HAnimDisplacer*)|(HAnimDisplacer+, (%ChildrenNodes;|%WildcardNodes;)*))? ) |
-	(HAnimDisplacer+, ((Coordinate, (%ChildrenNodes;|%WildcardNodes;)*)|((%ChildrenNodes;|%WildcardNodes;)*, Coordinate?))? )?
+	((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%WildcardNodes;)*, (((Coordinate|CoordinateDouble), HAnimDisplacer*)|(HAnimDisplacer+, (Coordinate|CoordinateDouble)?))? ) |
+	((Coordinate|CoordinateDouble), (((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform)*, HAnimDisplacer*)|(HAnimDisplacer+, (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%WildcardNodes;)*))? ) |
+	(HAnimDisplacer+, (((Coordinate|CoordinateDouble), (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%WildcardNodes;)*)|((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|%WildcardNodes;)*, (Coordinate|CoordinateDouble)?))? )?
 ) ) >
 <!ATTLIST HAnimSegment
 	name			NMTOKEN	#IMPLIED
@@ -3103,7 +3111,11 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 	DEF			ID		#IMPLIED
 	USE			IDREF		#IMPLIED>
 
-<!ELEMENT HAnimSite (IS?, (%MetadataNodes;)?, ( %ChildrenNodes;|%WildcardNodes; )* ) >
+<!ELEMENT HAnimSite (IS?, (%MetadataNodes;)?, (
+	((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*, (((Coordinate|CoordinateDouble), HAnimDisplacer*)|(HAnimDisplacer+, (Coordinate|CoordinateDouble)?))? ) |
+	((Coordinate|CoordinateDouble), (((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform)*, HAnimDisplacer*)|(HAnimDisplacer+, (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*))? ) |
+	(HAnimDisplacer+, (((Coordinate|CoordinateDouble), (HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|OrthoViewpoint|ViewpointGroup|%WildcardNodes;)*)|((HAnimSite|%ShapeNodes;|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup|%WildcardNodes;)*, (Coordinate|CoordinateDouble)?))? )?
+) ) >
 <!ATTLIST HAnimSite
 	name			NMTOKEN 	#IMPLIED
 	description     %SFString; #IMPLIED
@@ -4403,7 +4415,6 @@ rib10_midspine|sellion|skull_tip|substernale|supramenton|suprasternale|waist_pre
 >
 ]]>
 <![%ParticleSystemsComponent;[
-
 <!ELEMENT BoundedPhysicsModel (IS?, (%MetadataNodes;)?, (%GeometryNodes; | %WildcardNodes;)? )>
 <!ATTLIST BoundedPhysicsModel
 	enabled %SFBool; "true"

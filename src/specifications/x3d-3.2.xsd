@@ -805,7 +805,7 @@ Open-source license:
 					<xs:appinfo>The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used.</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value='"FRICTION_COEFFICIENT-2"'>
+			<xs:enumeration value='"FRICTION_COEFFICIENT_2"'>
 				<xs:annotation>
 					<xs:appinfo>Apply frictionCoefficients values</xs:appinfo>
 				</xs:annotation>
@@ -820,22 +820,22 @@ Open-source license:
 					<xs:appinfo>Apply softnessConstantForceMix value</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value='"SPEED-1"'>
+			<xs:enumeration value='"SPEED_1"'>
 				<xs:annotation>
 					<xs:appinfo>Apply first component of surfaceSpeed array</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value='"SPEED-2"'>
+			<xs:enumeration value='"SPEED_2"'>
 				<xs:annotation>
 					<xs:appinfo>Apply second component of surfaceSpeed array</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value='"SLIP-1"'>
+			<xs:enumeration value='"SLIP_1"'>
 				<xs:annotation>
 					<xs:appinfo>Apply first component of slipFactors array</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
-			<xs:enumeration value='"SLIP-2"'>
+			<xs:enumeration value='"SLIP_2"'>
 				<xs:annotation>
 					<xs:appinfo>Apply second component of slipFactors array</xs:appinfo>
 				</xs:annotation>
@@ -1839,7 +1839,7 @@ Open-source license:
 			</xs:enumeration>
 			<xs:enumeration value="MFMatrix4d">
 				<xs:annotation>
-					<xs:appinfo>Multiple Field (list) 4×4 matric3w of double-precision floating point numbers</xs:appinfo>
+					<xs:appinfo>Multiple Field (list) 4×4 matrix of double-precision floating point numbers</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SFMatrix4f">
@@ -10882,7 +10882,7 @@ Open-source license:
 				<xs:attribute name="additionalInterface" type="xs:string" default="X3DChildNode"/>
 				<xs:attribute name="componentName" type="componentNameChoices" fixed="Core"/>
 				<xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
-				ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the specification.
+				ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.
 			</xs:appinfo>
 			<xs:documentation source="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"/>
 		</xs:annotation>
@@ -14470,7 +14470,7 @@ Open-source license:
 					</xs:attribute>
 					<xs:attribute name="scaleOrientation" type="SFRotation" default="0 0 1 0"/>
 					<xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
-					<xs:attribute name="version" type="hanimVersionChoices" default="1.0"/>
+					<xs:attribute name="version" type="hanimVersionChoices" use="required"/>
 					<xs:attribute name="containerField" type="xs:NMTOKEN" default="children"/>
 				</xs:extension>
 				<!-- TODO when specification is revised:

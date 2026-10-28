@@ -6,7 +6,8 @@
   <xs:include schemaLocation="x3d-4.0-Web3dExtensionsPublic.xsd"/>
   <xs:include schemaLocation="x3d-4.0-Web3dExtensionsPrivate.xsd"/>
   <!-- https://stackoverflow.com/questions/2120562/what-is-this-xsd-import-namespace-for -->
-  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <!-- <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/> -->
   <!--======================================================================-->
   <xs:annotation>
     <xs:appinfo>XML Schema for the Extensible 3D (X3D) Graphics Specification tagset</xs:appinfo>
@@ -1800,7 +1801,7 @@ Open-source license:
           <xs:appinfo>The system will normally calculate the friction direction vector that is perpendicular to the contact normal. This setting indicates that the user-supplied value in this contact should be used.</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"FRICTION_COEFFICIENT-2"'>
+      <xs:enumeration value='"FRICTION_COEFFICIENT_2"'>
         <xs:annotation>
           <xs:appinfo>Apply frictionCoefficients values</xs:appinfo>
         </xs:annotation>
@@ -1815,22 +1816,22 @@ Open-source license:
           <xs:appinfo>Apply softnessConstantForceMix value</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED-1"'>
+      <xs:enumeration value='"SPEED_1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SPEED-2"'>
+      <xs:enumeration value='"SPEED_2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of surfaceSpeed array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP-1"'>
+      <xs:enumeration value='"SLIP_1"'>
         <xs:annotation>
           <xs:appinfo>Apply first component of slipFactors array</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value='"SLIP-2"'>
+      <xs:enumeration value='"SLIP_2"'>
         <xs:annotation>
           <xs:appinfo>Apply second component of slipFactors array</xs:appinfo>
         </xs:annotation>
@@ -3264,7 +3265,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="MFMatrix4d">
         <xs:annotation>
-          <xs:appinfo>Multiple Field (list) 4×4 matric3w of double-precision floating point numbers</xs:appinfo>
+          <xs:appinfo>Multiple Field (list) 4×4 matrix of double-precision floating point numbers</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SFMatrix4f">
@@ -3599,14 +3600,14 @@ Open-source license:
     <xs:restriction base="xs:NMTOKEN">
       <xs:enumeration value="BOUNDS">
         <xs:annotation>
-          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+          <xs:appinfo>When testing intersections, BOUNDS indicates that the pickingGeometry is intersected with the bounding box of the pickable object</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="GEOMETRY">
         <xs:annotation>
-          <xs:appinfo>TODO undefined in X3D specification</xs:appinfo>
-          <xs:documentation source="https://www.web3d.org/member-only/mantis/view.php?id=1294"/>
+          <xs:appinfo>When testing intersections, GEOMETRY indicates that the pickingGeometry is intersected with the geometry of the pickable object</xs:appinfo>
+          <xs:documentation source="https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/picking.html#X3DPickSensorNode"/>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -4364,7 +4365,7 @@ Open-source license:
   </xs:simpleType>
   <xs:simpleType name="multiTextureModeValues">
     <xs:annotation>
-      <xs:appinfo>multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended.</xs:appinfo>
+      <xs:appinfo>multiTextureModeValues are supported enumeration values for the MultiTexture mode attribute, one per each texture. Multiple optional values, but cannot be extended. (Note: underscores inserted in X3D 4.1 for consistency)</xs:appinfo>
       <xs:documentation source="https://www.web3d.org/specifications/X3Dv4/ISO-IEC19775-1v4-IS/Part01/components/texturing.html#t-MultitextureModes"/>
     </xs:annotation>
     <xs:restriction base="MFString">
@@ -4863,22 +4864,22 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="CAMERASPACENORMAL">
         <xs:annotation>
-          <xs:appinfo>Use vertex normal, transformed to camera space, as input texture coordinates</xs:appinfo>
+          <xs:appinfo>Use vertex normal, transformed to camera space, as input texture coordinates. (underscores inserted in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CAMERASPACEPOSITION">
         <xs:annotation>
-          <xs:appinfo>Use vertex position, transformed to camera space, as input texture coordinates</xs:appinfo>
+          <xs:appinfo>Use vertex position, transformed to camera space, as input texture coordinates. (underscores inserted in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="CAMERASPACEREFLECTIONVECTOR">
         <xs:annotation>
-          <xs:appinfo>Use reflection vector, transformed to camera space, as input texture coordinates</xs:appinfo>
+          <xs:appinfo>Use reflection vector, transformed to camera space, as input texture coordinates. (underscores inserted in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SPHERE-LOCAL">
         <xs:annotation>
-          <xs:appinfo>Sphere mapping but in local coordinates</xs:appinfo>
+          <xs:appinfo>Sphere mapping but in local coordinates. (underscores used in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="COORD">
@@ -4888,7 +4889,7 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="COORD-EYE">
         <xs:annotation>
-          <xs:appinfo>Use vertex coordinates transformed to camera space</xs:appinfo>
+          <xs:appinfo>Use vertex coordinates transformed to camera space. (underscores used in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="NOISE">
@@ -4898,17 +4899,17 @@ Open-source license:
       </xs:enumeration>
       <xs:enumeration value="NOISE-EYE">
         <xs:annotation>
-          <xs:appinfo>Apply Perlin solid noise function on vertex coordinates transformed to camera space</xs:appinfo>
+          <xs:appinfo>Apply Perlin solid noise function on vertex coordinates transformed to camera space. (Underscores used in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SPHERE-REFLECT">
         <xs:annotation>
-          <xs:appinfo>similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction</xs:appinfo>
+          <xs:appinfo>similar to CAMERASPACEREFLECTIONVECTOR with optional index of refraction. (Underscores used in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="SPHERE-REFLECT-LOCAL">
         <xs:annotation>
-          <xs:appinfo>Similar to SPHERE-REFLECT transformed to camera space</xs:appinfo>
+          <xs:appinfo>Similar to SPHERE-REFLECT transformed to camera space. (Underscores used in X3D 4.1)</xs:appinfo>
         </xs:annotation>
       </xs:enumeration>
     </xs:restriction>
@@ -13644,7 +13645,12 @@ Open-source license:
       <xs:complexContent>
         <xs:extension base="X3DStatement">
           <xs:attribute name="inlineDEF" type="xs:IDREF" use="required"/>
-          <xs:attribute name="importedDEF" type="xs:NMTOKEN" use="required"/>
+          <xs:attribute name="importedDEF" type="xs:NMTOKEN" use="required">
+            <xs:annotation>
+                <xs:appinfo>Preferred type is xs:ID (since it can be used in ROUTE if no AS provided) but importedDEF might duplicate DEF in current scene</xs:appinfo>
+                <!-- also can't have two xs:ID attributes in a single element (IMPORT) -->
+            </xs:annotation>
+          </xs:attribute>
           <xs:attribute name="AS" type="xs:ID"/>
         </xs:extension>
       </xs:complexContent>
@@ -13858,7 +13864,7 @@ Open-source license:
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DChildNode"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="Core"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
-        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the specification.
+        ProtoDeclare defines new Prototype nodes.  Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.
       </xs:appinfo>
       <xs:documentation source="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"/>
     </xs:annotation>
@@ -20080,6 +20086,7 @@ Open-source license:
   <xs:element name="HAnimHumanoid">
     <xs:annotation>
       <xs:appinfo>
+        <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:element name="joints" type="MFNode" fixed="inputOutputField" default="HAnimJoint"/>
         <xs:element name="segments" type="MFNode" fixed="inputOutputField" default="HAnimSegment"/>
         <xs:element name="sites" type="MFNode" fixed="inputOutputField" default="HAnimSite"/>
@@ -20104,6 +20111,11 @@ Open-source license:
       <xs:complexContent>
         <xs:extension base="X3DChildNode">
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="HAnimDisplacer" minOccurs="0" maxOccurs="unbounded">
+              <xs:annotation>
+                <xs:documentation>displacers</xs:documentation>
+              </xs:annotation>
+            </xs:element>
             <xs:element ref="HAnimJoint" minOccurs="0" maxOccurs="unbounded">
               <xs:annotation>
                 <xs:documentation>SFNode skeleton, or MFNode joints (USE nodes)</xs:documentation>
@@ -20192,7 +20204,13 @@ Open-source license:
           <xs:attribute name="scaleOrientation" type="SFRotation" default="0 0 1 0"/>
           <xs:attribute name="skeletalConfiguration" type="SFString" default="BASIC"/>
           <xs:attribute name="translation" type="SFVec3f" default="0 0 0"/>
-          <xs:attribute name="version" type="hanimVersionChoices" default="2.0"/>
+          <xs:attribute name="version" type="hanimVersionChoices">
+            <xs:annotation>
+                <xs:appinfo>version attribute is ordinarily required, unless this is a USE node</xs:appinfo>
+                <!-- Design note: cannot REQUIRE @name field or else USE nodes incorrectly fail to validate -->
+                <xs:documentation source="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NameTyping"/>
+            </xs:annotation>
+        </xs:attribute>
           <xs:attribute name="containerField" type="xs:NMTOKEN" default="children"/>
         </xs:extension>
         <!-- multiple fields added in X3D version 4.0 -->
@@ -20214,12 +20232,11 @@ Open-source license:
     <xs:annotation>
       <xs:appinfo>
         <xs:attribute name="name" type="hanimJointNameValues"/>
-        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment"/>
-        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment"/>
-        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSegment"/>
+        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
+        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
+        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="HAnimJoint|HAnimSegment|Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
         <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:attribute name="additionalInterface" type="xs:string" default="X3DBoundedObject"/>
-        <!--<xs:attribute name="additionalInterface" type="xs:string" default="X3DGroupingNode"/> TODO fix construction collision -->
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
         <!-- TODO Why is HAnimSite present in X3D 26.3.3? not listed in HAnim 6.3, but excluded in HAnim 4.6? -->
@@ -20229,29 +20246,14 @@ Open-source license:
     </xs:annotation>
     <xs:complexType>
       <xs:complexContent>
-        <xs:extension base="X3DChildNode">
+        <xs:extension base="X3DGroupingNode">
           <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
-              <xs:documentation>restricted version of X3DGroupingNode, content model is [HAnimJoint,HAnimSegment,HAnimSite] children and HAnimDisplacer displacers</xs:documentation>
+              <xs:documentation>extended version of X3DGroupingNode, content model adds [HAnimJoint,HAnimSegment,HAnimSite,Shape,Inline] children and HAnimDisplacer displacers</xs:documentation>
             </xs:annotation>
             <xs:element ref="HAnimDisplacer">
               <xs:annotation>
                 <xs:documentation>displacers</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="HAnimJoint">
-              <xs:annotation>
-                <xs:documentation>children</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="HAnimSegment">
-              <xs:annotation>
-                <xs:documentation>children</xs:documentation>
-              </xs:annotation>
-            </xs:element>
-            <xs:element ref="ProtoInstance">
-              <xs:annotation>
-                <xs:documentation>Appropriately typed substitution node</xs:documentation>
               </xs:annotation>
             </xs:element>
           </xs:choice>
@@ -20303,10 +20305,6 @@ Open-source license:
               </xs:appinfo>
             </xs:annotation>
           </xs:attribute>
-          <xs:attribute name="bboxCenter" type="SFVec3f" default="0 0 0"/>
-          <xs:attribute name="bboxSize" type="bboxSizeType" default="-1 -1 -1"/>
-          <xs:attribute name="bboxDisplay" type="SFBool" default="false"/>
-          <xs:attribute name="visible" type="SFBool" default="true"/>
           <xs:attribute name="containerField" type="containerFieldChoicesHAnimJoint" default="children"/>
         </xs:extension>
       </xs:complexContent>
@@ -20407,6 +20405,9 @@ Open-source license:
     <xs:annotation>
       <xs:appinfo>
         <xs:attribute name="name" type="hanimSegmentNameValues"/>
+        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
+        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
+        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform"/>
         <xs:element name="coord" type="SFNode" fixed="inputOutputField" default="Coordinate|CoordinateDouble"/>
         <xs:element name="displacers" type="MFNode" fixed="inputOutputField" default="HAnimDisplacer"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
@@ -20418,13 +20419,26 @@ Open-source license:
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="X3DGroupingNode">
-          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:annotation>
-              <xs:documentation>displacers</xs:documentation>
-            </xs:annotation>
-            <!-- TODO add child Coordinate SFNode? -->
-            <xs:element ref="HAnimDisplacer"/>
-          </xs:sequence>
+          <xs:sequence minOccurs="0" maxOccurs="1">
+              <!-- single coord Coordinate precedes displacers and other children nodes-->
+              <xs:choice minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                  <xs:documentation>coord</xs:documentation>
+                </xs:annotation>
+                <xs:element ref="Coordinate"/>
+                <xs:element ref="CoordinateDouble"/>
+              </xs:choice>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+                <xs:documentation>extended version of X3DGroupingNode, content model begins with Coordinate|CoordinateDouble then adds [HAnimJoint,HAnimSegment,HAnimSite,Shape,Inline] children and HAnimDisplacer displacers</xs:documentation>
+              </xs:annotation>
+              <xs:element ref="HAnimDisplacer">
+                <xs:annotation>
+				  <xs:documentation>displacers</xs:documentation>
+				</xs:annotation>
+              </xs:element>
+          </xs:choice>
+			  </xs:sequence>
           <xs:attribute name="name" type="xs:NMTOKEN">
             <xs:annotation>
               <xs:appinfo>name attribute is ordinarily required, unless this is a USE node</xs:appinfo>
@@ -20469,6 +20483,10 @@ Open-source license:
             <xs:documentation source="https://www.web3d.org/x3d/content/examples/X3dSceneAuthoringHints.html#NameTyping"/>
           </xs:annotation>
         </xs:attribute>
+        <xs:element name="addChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
+        <xs:element name="removeChildren" type="MFNode" fixed="inputOnlyField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
+        <xs:element name="children" type="MFNode" fixed="inputOutputField" default="Shape|Inline|Anchor|Billboard|Collision|Group|Inline|LOD|StaticGroup|Switch|Transform|Viewpoint|ViewpointGroup"/>
+        <xs:element name="coord" type="SFNode" fixed="inputOutputField" default="X3DCoordinateNode"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="HAnim"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="1"/>
       </xs:appinfo>
@@ -20478,6 +20496,17 @@ Open-source license:
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="X3DGroupingNode">
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>extended version of X3DGroupingNode, content model begins with Coordinate|CoordinateDouble then adds [HAnimJoint,HAnimSegment,HAnimSite,Shape,Inline] children, Viewpoint, ViewpointGroup, and HAnimDisplacer displacers</xs:documentation>
+                </xs:annotation>
+                <xs:element ref="HAnimDisplacer">
+                    <xs:annotation>
+                        <xs:documentation>displacers</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <!-- also allowed: Viewpoint and ViewpointGroup -->
+            </xs:choice>
           <xs:attribute name="name" type="xs:NMTOKEN">
             <xs:annotation>
               <xs:appinfo>name attribute is ordinarily required, unless this is a USE node</xs:appinfo>
@@ -24862,7 +24891,6 @@ Open-source license:
             </xs:appinfo>
           </xs:annotation>
         </xs:element>
-        <xs:attribute name="castShadow" type="SFBool" default="true"/>
         <xs:attribute name="componentName" type="componentNameChoices" fixed="ParticleSystems"/>
         <xs:attribute name="componentLevel" type="xs:positiveInteger" fixed="2"/>
       </xs:appinfo>
@@ -26153,13 +26181,7 @@ Open-source license:
           </xs:attribute>
           <xs:attribute name="channelCountMode" type="channelCountModeChoices" default="MAX"/>
           <xs:attribute name="channelInterpretation" type="channelInterpretationChoices" default="SPEAKERS"/>
-          <xs:attribute name="detune" default="0">
-            <xs:simpleType>
-              <xs:restriction base="SFFloat">
-                <xs:minInclusive value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
+          <xs:attribute name="detune" type="SFFloat" default="0"/>
           <xs:attribute name="load" type="SFBool" default="true"/>
           <xs:attribute name="loop" type="SFBool" default="false"/>
           <xs:attribute name="loopEnd" default="0">
@@ -26256,13 +26278,7 @@ Open-source license:
     <xs:complexType>
       <xs:complexContent>
         <xs:extension base="X3DSoundProcessingNode">
-          <xs:attribute name="detune" default="0">
-            <xs:simpleType>
-              <xs:restriction base="SFFloat">
-                <xs:minInclusive value="0"/>
-              </xs:restriction>
-            </xs:simpleType>
-          </xs:attribute>
+          <xs:attribute name="detune" type="SFFloat" default="0"/>
           <xs:attribute name="frequency" default="350">
             <xs:simpleType>
               <xs:restriction base="SFFloat">

@@ -2,10 +2,10 @@
 <!-- X3D Unified Object Model (X3DUOM) X3dUnifiedObjectModel-3.0.xml -->
 <!-- Online at https://www.web3d.org/specifications/X3dUnifiedObjectModel-3.0.xml -->
 <!-- This file contains a listing of all abstract and concrete nodes in version 3.0 of X3D -->
-<!-- Generated 2025-08-02-07:00 10:36:04.4707328-07:00 -->
+<!-- Generated 2026-08-03-07:00 20:53:40.2888546-07:00 -->
 <X3dUnifiedObjectModel xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
                        version="3.0"
-                       xsd:noNamespaceSchemaLocation="X3dUnifiedObjectModel.xsd">
+                       xsd:noNamespaceSchemaLocation="https://www.web3d.org/specifications/X3dUnifiedObjectModel.xsd">
    <SimpleTypeEnumerations>
       <!-- For schema xs:simpleType with contained xs:enumeration definitions, follow naming convention of name ending in 'Type', 'Choices' (for strict enumeration set) or 'Values' (for suggested tokens). -->
       <SimpleType name="accessTypeChoices"
@@ -2015,7 +2015,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2055,7 +2055,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2144,7 +2144,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2187,7 +2187,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2227,7 +2227,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2267,7 +2267,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2343,7 +2343,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2384,7 +2384,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2446,7 +2446,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2499,7 +2499,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2543,7 +2543,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2583,7 +2583,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2623,7 +2623,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2689,7 +2689,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2730,7 +2730,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2772,7 +2772,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2821,7 +2821,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2882,7 +2882,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2922,7 +2922,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -2971,7 +2971,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3047,7 +3047,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3088,7 +3088,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3184,7 +3184,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3224,7 +3224,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3275,7 +3275,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3337,7 +3337,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3382,7 +3382,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3426,7 +3426,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3486,7 +3486,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3527,7 +3527,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3621,7 +3621,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3669,7 +3669,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3709,7 +3709,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3749,7 +3749,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3789,7 +3789,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3861,7 +3861,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3919,7 +3919,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -3959,7 +3959,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4051,7 +4051,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4075,7 +4075,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="FillProperties"
-                   description="Single contained FillProperties node that can specify additional visual attributes applied to polygonal areas of corresponding geometry, on top of whatever other appearance is already defined.">
+                   description="Optional single contained FillProperties node that can specify additional visual attributes applied to polygonal areas of corresponding geometry, on top of whatever other appearance is already defined.">
                <componentInfo name="Shape" level="3"/>
             </field>
             <field name="IS"
@@ -4089,7 +4089,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="LineProperties"
-                   description="Single contained LineProperties node that can specify additional visual attributes applied to corresponding line geometry.">
+                   description="Optional single contained LineProperties node that can specify additional visual attributes applied to corresponding line geometry.">
                <componentInfo name="Shape" level="2"/>
             </field>
             <field name="material"
@@ -4097,7 +4097,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DMaterialNode"
-                   description="Single contained Material, PhysicalMaterial, TwoSidedMaterial (deprecated), or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc."/>
+                   description="Optional single contained Material, PhysicalMaterial, TwoSidedMaterial (deprecated), or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc."/>
             <field name="metadata"
                    type="SFNode"
                    accessType="inputOutput"
@@ -4110,13 +4110,13 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTextureNode"
-                   description="Single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry."/>
+                   description="Optional single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry."/>
             <field name="textureTransform"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTextureTransformNode"
-                   description="Single contained TextureTransform node that defines 2D transformation applied to texture coordinates.">
+                   description="Optional single contained TextureTransform node that defines 2D transformation applied to texture coordinates.">
                <componentInfo name="Shape" level="2"/>
             </field>
             <field name="DEF"
@@ -4130,7 +4130,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4195,7 +4195,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4275,7 +4275,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4395,7 +4395,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4538,7 +4538,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4618,7 +4618,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4677,7 +4677,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4747,7 +4747,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4798,7 +4798,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4848,7 +4848,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4900,7 +4900,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -4948,7 +4948,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5045,7 +5045,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5094,7 +5094,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5158,7 +5158,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5208,7 +5208,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5379,7 +5379,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5459,7 +5459,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5509,7 +5509,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5555,7 +5555,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5601,7 +5601,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5661,7 +5661,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5721,7 +5721,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5795,7 +5795,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5904,7 +5904,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -5983,7 +5983,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -6042,7 +6042,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -6072,7 +6072,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorPerVertex field."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorPerVertex field."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -6106,7 +6106,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -6126,7 +6126,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="xDimension"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -6162,7 +6162,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -6645,7 +6645,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -6820,7 +6820,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7004,7 +7004,7 @@
       </ConcreteNode>
       <ConcreteNode name="FillProperties">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#FillProperties"
-                              appinfo="FillProperties indicates whether appearance is filled or hatched for associated geometry nodes inside the same Shape.">
+                              appinfo="FillProperties indicates whether appearance is filled or hatched for associated geometry inside the same Shape.">
             <componentInfo name="Shape" level="3"/>
             <Inheritance baseType="X3DAppearanceChildNode"/>
             <field name="filled"
@@ -7053,7 +7053,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7135,7 +7135,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7265,7 +7265,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7288,7 +7288,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7324,7 +7324,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7353,7 +7353,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorPerVertex field."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorPerVertex field."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -7375,7 +7375,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7406,7 +7406,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -7426,7 +7426,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="xDimension"
                    type="SFInt32"
                    accessType="initializeOnly"
@@ -7468,7 +7468,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7485,7 +7485,7 @@
       </ConcreteNode>
       <ConcreteNode name="GeoLocation">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/geodata.html#GeoLocation"
-                              appinfo="GeoLocation positions a regular X3D model onto earth's surface.">
+                              appinfo="GeoLocation positions a regular X3D model onto the earth's surface.">
             <componentInfo name="Geospatial" level="1"/>
             <Inheritance baseType="X3DGroupingNode"/>
             <field name="addChildren"
@@ -7524,7 +7524,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7563,7 +7563,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7637,7 +7637,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7692,7 +7692,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7753,7 +7753,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7821,7 +7821,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7844,7 +7844,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7898,7 +7898,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -7933,7 +7933,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -7996,7 +7996,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8036,7 +8036,7 @@
                    accessType="initializeOnly"
                    default="NULL"
                    acceptableNodeTypes="GeoOrigin"
-                   description="Single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
+                   description="Optional single contained GeoOrigin node that can specify a local coordinate frame for extended precision."/>
             <field name="geoSystem"
                    type="MFString"
                    accessType="initializeOnly"
@@ -8107,7 +8107,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8183,7 +8183,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8391,7 +8391,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8511,7 +8511,7 @@
             <field name="version"
                    type="SFString"
                    accessType="inputOutput"
-                   default="1.0"
+                   use="required"
                    additionalEnumerationValuesAllowed="false"
                    simpleType="hanimVersionChoices"
                    baseType="xs:NMTOKEN"
@@ -8539,7 +8539,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8789,7 +8789,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -8847,7 +8847,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="the coord field is used for HAnimSegment objects that have deformable meshes and shall contain coordinates referenced from the IndexedFaceSet for the paarent HAnimSegment object."/>
+                   description="the coord field is used for HAnimSegment objects that have deformable meshes and shall contain coordinates referenced from the IndexedFaceSet for the parent HAnimSegment object."/>
             <field name="displacers"
                    type="MFNode"
                    accessType="inputOutput"
@@ -9007,7 +9007,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9262,7 +9262,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9352,7 +9352,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9412,7 +9412,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9437,7 +9437,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="coordIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9470,7 +9470,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9520,7 +9520,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="texCoordIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9537,7 +9537,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9561,7 +9561,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9577,7 +9577,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="coordIndex"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9621,7 +9621,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9652,7 +9652,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9665,7 +9665,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="index"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9690,7 +9690,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9714,7 +9714,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -9726,7 +9726,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9757,7 +9757,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9770,7 +9770,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="index"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9795,7 +9795,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9819,7 +9819,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -9831,7 +9831,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9862,7 +9862,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9875,7 +9875,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="index"
                    type="MFInt32"
                    accessType="initializeOnly"
@@ -9900,7 +9900,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -9924,7 +9924,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -9936,7 +9936,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -9980,7 +9980,7 @@
                    type="SFBool"
                    accessType="inputOutput"
                    default="true"
-                   description="load=true means load immediately, load=false means defer loading or else unload a previously loaded scene.">
+                   description="load=true means load immediately, load=false means defer loading or else unload a previously loaded asset.">
                <componentInfo name="Networking" level="3"/>
             </field>
             <field name="metadata"
@@ -10008,7 +10008,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10078,7 +10078,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10133,7 +10133,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10235,7 +10235,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10250,7 +10250,7 @@
       </ConcreteNode>
       <ConcreteNode name="LineProperties">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#LineProperties"
-                              appinfo="LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry nodes inside the same Shape.">
+                              appinfo="LineProperties allows precise fine-grained control over the rendering style of lines and edges for associated geometry inside the same Shape.">
             <componentInfo name="Shape" level="2"/>
             <Inheritance baseType="X3DAppearanceChildNode"/>
             <field name="applied"
@@ -10293,7 +10293,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10316,13 +10316,13 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="coord"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -10352,7 +10352,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10368,7 +10368,7 @@
       </ConcreteNode>
       <ConcreteNode name="LoadSensor">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/networking.html#LoadSensor"
-                              appinfo="LoadSensor generates events as watchList child nodes are either loaded or fail to load.">
+                              appinfo="LoadSensor generates events as children (watchList in X3Dv3) child nodes are either loaded or fail to load.">
             <componentInfo name="Networking" level="3"/>
             <Inheritance baseType="X3DNetworkSensorNode"/>
             <field name="enabled"
@@ -10391,7 +10391,7 @@
             <field name="isLoaded"
                    type="SFBool"
                    accessType="outputOnly"
-                   description="Notify when all watchList child nodes are loaded, or at least one has failed."/>
+                   description="Notify when all children/watchList child nodes are loaded, or at least one has failed."/>
             <field name="loadTime"
                    type="SFTime"
                    accessType="outputOnly"
@@ -10428,7 +10428,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10515,7 +10515,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10531,7 +10531,7 @@
       </ConcreteNode>
       <ConcreteNode name="Material">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/shape.html#Material"
-                              appinfo="Material specifies surface rendering properties for associated geometry nodes.">
+                              appinfo="Material specifies surface rendering properties for associated geometry.">
             <componentInfo name="Shape" level="1"/>
             <Inheritance baseType="X3DMaterialNode"/>
             <field name="ambientIntensity"
@@ -10613,7 +10613,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10826,7 +10826,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10883,7 +10883,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10940,7 +10940,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -10984,7 +10984,7 @@
                    type="MFNode"
                    accessType="inputOutput"
                    acceptableNodeTypes="X3DMetadataObject"
-                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is determined by the name field."/>
+                   description="The value field provides a list of X3DMetadataObject nodes whose meaning is each determined by their respective name field."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -10996,7 +10996,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11054,7 +11054,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11192,7 +11192,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11230,7 +11230,7 @@
                    additionalEnumerationValuesAllowed="true"
                    simpleType="multiTextureFunctionValues"
                    baseType="MFString"
-                   description="function operators COMPLEMENT or ALPHAREPLICATE can be applied after the mode blending operation.">
+                   description="function operators COMPLEMENT or ALPHA_REPLICATE can be applied after the mode blending operation.">
                <enumeration value="&#34;COMPLEMENT&#34;" appinfo="Invert argument x as (1 - x)."/>
                <enumeration value="&#34;ALPHAREPLICATE&#34;"
                             appinfo="Replicate alpha information to all color channels before operation completes."/>
@@ -11306,7 +11306,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11357,7 +11357,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11407,7 +11407,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11537,7 +11537,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11552,7 +11552,7 @@
       </ConcreteNode>
       <ConcreteNode name="Normal">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/rendering.html#Normal"
-                              appinfo="Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate|CoordinateDouble node, or else to a parent ElevationGrid node.">
+                              appinfo="Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate | CoordinateDouble node, or else to a parent ElevationGrid node.">
             <componentInfo name="Rendering" level="2"/>
             <Inheritance baseType="X3DNormalNode"/>
             <field name="IS"
@@ -11585,7 +11585,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11645,7 +11645,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11673,7 +11673,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -11718,7 +11718,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11793,7 +11793,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11816,7 +11816,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -11863,7 +11863,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -11890,7 +11890,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -11916,7 +11916,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode|NurbsTextureCoordinate"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
-                   description="Single contained NurbsTextureCoordinate, TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained NurbsTextureCoordinate, TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="uClosed"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -11996,7 +11996,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12025,7 +12025,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -12072,7 +12072,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12150,7 +12150,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12178,7 +12178,7 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -12251,7 +12251,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12318,7 +12318,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12386,7 +12386,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12472,7 +12472,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12500,7 +12500,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify control points for NURBS geometry definitions."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -12530,7 +12530,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode|NurbsTextureCoordinate"
                    inheritedFrom="X3DNurbsSurfaceGeometryNode"
-                   description="Single contained NurbsTextureCoordinate, TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained NurbsTextureCoordinate, TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="trimmingContour"
                    type="MFNode"
                    accessType="inputOutput"
@@ -12615,7 +12615,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12682,7 +12682,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12741,7 +12741,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12839,7 +12839,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12932,7 +12932,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -12955,13 +12955,13 @@
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="coord"
                    type="SFNode"
                    accessType="inputOutput"
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -12986,7 +12986,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13033,7 +13033,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13079,7 +13079,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13139,7 +13139,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13199,7 +13199,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13236,7 +13236,7 @@
       </ConcreteNode>
       <ConcreteNode name="ProtoDeclare">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19776-1/V3.3/Part01/concepts.html#PrototypeAndFieldDeclarationSyntax"
-                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the specification.">
+                              appinfo="ProtoDeclare defines new Prototype nodes. Nested ProtoDeclares and ProtoInstances are allowed by the X3D Architecture specification.">
             <componentInfo name="Core" level="2"/>
             <Inheritance baseType="SceneGraphStructureStatement"/>
             <AdditionalInheritance baseType="X3DChildNode"/>
@@ -13317,7 +13317,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13427,7 +13427,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13633,7 +13633,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13685,7 +13685,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13783,7 +13783,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13869,7 +13869,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -13895,7 +13895,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DAppearanceNode"
                    inheritedFrom="X3DShapeNode"
-                   description="Single contained Appearance node that can specify visual attributes (such as material, texture, fillProperties and lineProperties) applied to corresponding geometry."/>
+                   description="Optional single contained Appearance node that can specify visual attributes (such as material, texture, fillProperties and lineProperties) applied to corresponding geometry."/>
             <field name="bboxCenter"
                    type="SFVec3f"
                    accessType="initializeOnly"
@@ -13915,7 +13915,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DGeometryNode"
                    inheritedFrom="X3DShapeNode"
-                   description="Single contained geometry node that is rendered according to corresponding appearance."/>
+                   description="Optional single contained geometry node that is rendered according to corresponding appearance."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -13940,7 +13940,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14146,7 +14146,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14249,7 +14249,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14303,7 +14303,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14386,7 +14386,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14500,7 +14500,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14561,7 +14561,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14577,7 +14577,7 @@
       </ConcreteNode>
       <ConcreteNode name="StringSensor">
          <InterfaceDefinition specificationUrl="https://www.web3d.org/documents/specifications/19775-1/V3.3/Part01/components/keyboard.html#StringSensor"
-                              appinfo="StringSensor generates events as the user presses keys on the keyboard.">
+                              appinfo="StringSensor generates events as the user enters strings on the keyboard.">
             <componentInfo name="KeyDeviceSensor" level="2"/>
             <Inheritance baseType="X3DKeyDeviceSensorNode"/>
             <field name="deletionAllowed"
@@ -14628,7 +14628,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14709,7 +14709,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14778,7 +14778,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14916,7 +14916,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -14965,7 +14965,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15040,7 +15040,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15080,7 +15080,7 @@
                    type="SFFloat"
                    accessType="inputOutput"
                    default="0"
-                   description="single rotation angle of texture about center (opposite effect appears on geometry)."/>
+                   description="Single rotation angle of texture about center (opposite effect appears on geometry)."/>
             <field name="scale"
                    type="SFVec2f"
                    accessType="inputOutput"
@@ -15102,7 +15102,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15223,7 +15223,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15273,7 +15273,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15353,7 +15353,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15453,7 +15453,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15740,7 +15740,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15770,7 +15770,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -15783,7 +15783,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="fanCount"
                    type="MFInt32"
                    accessType="inputOutput"
@@ -15808,7 +15808,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -15827,7 +15827,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -15839,7 +15839,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15870,7 +15870,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -15883,7 +15883,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -15903,7 +15903,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -15922,7 +15922,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -15934,7 +15934,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -15986,7 +15986,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -16016,7 +16016,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DColorNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
+                   description="Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields."/>
             <field name="colorPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -16029,7 +16029,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
+                   description="Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values."/>
             <field name="IS"
                    type="SFNode"
                    accessType="inputOutput"
@@ -16049,7 +16049,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DNormalNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
+                   description="Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field."/>
             <field name="normalPerVertex"
                    type="SFBool"
                    accessType="initializeOnly"
@@ -16073,7 +16073,7 @@
                    default="NULL"
                    acceptableNodeTypes="X3DTextureCoordinateNode"
                    inheritedFrom="X3DComposedGeometryNode"
-                   description="Single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
+                   description="Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry."/>
             <field name="DEF"
                    type="SFString"
                    accessType="inputOutput"
@@ -16085,7 +16085,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -16176,7 +16176,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -16248,7 +16248,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
@@ -16298,7 +16298,7 @@
                    accessType="inputOutput"
                    inheritedFrom="X3DNode"
                    baseType="xs:IDREF"
-                   description="USE means reuse an already DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
+                   description="USE means reference a separately DEF-ed node ID, excluding all child nodes and all other attributes (except for containerField, which can have a different value)."/>
             <field name="class"
                    type="SFString"
                    accessType="inputOutput"
