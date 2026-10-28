@@ -23,9 +23,9 @@ src/main/ppp/Gramps8Final.x3dj
 src/main/ppp/GrampsAnimations.x3dj
 src/main/ppp/walking_man_cc_test.x3dj
 src/main/ppp/YehudiMenuJin.x3dj
-./blend/venv
-./gltf/venv
-./src/main/python/venv
+blend/venv
+gltf/venv
+src/main/python/venv
 ./gltf/0skeleton1.bin
 ./gltf/0skeleton1.gltf
 ./gltf/0skeleton1.zip
