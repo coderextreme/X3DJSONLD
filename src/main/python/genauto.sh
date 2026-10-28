@@ -26,3 +26,5 @@ python mapToMethodGenerator.py
 # pynodelist.py:f = open("nodelist.txt", "w")
 # python Visitor.py
 # python removeGenerator.py
+
+cp X3Dautoclass.py net/coderextreme/data/

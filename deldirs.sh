@@ -16,3 +16,10 @@ rm ./src/main/python/net/coderextreme/data/*
 rm ./src/main/quarter/net/coderextreme/data/*
 rm ./src/main/truffleruby/net/coderextreme/data/*
 rm ./src/main/vrml/net/coderextreme/data/*
+pushd src/specifications
+bash genX3DUOM.sh
+popd
+pushd src/main/python
+source venv/{Scripts,bin}/activate
+bash genauto.sh
+popd
