@@ -243,6 +243,10 @@ JRubySerializer.prototype = {
 			method = "Value";
 			addpre = "add";
 		}
+		if (node.nodeName.startsWith("Metadata") && !element.nodeName.startsWith("Metadata") && addpre+method === "addChild") {
+			method = "Metadata";
+			addpre = "add";
+		}
 		if (node.nodeName === 'LayerSet' && addpre+method === "addChild") {
 			method = "LayerSet"
 			addpre = "add";
