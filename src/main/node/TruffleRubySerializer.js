@@ -423,6 +423,9 @@ TruffleRubySerializer.prototype = {
 					if (attr === "class") {
 						method = "CssClass";
 					}
+					if (attr === "style") {
+						method = "CssStyle";
+					}
 					if (attr === "id") {
 						method = "HtmlId";
 					}

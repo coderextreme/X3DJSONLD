@@ -156,7 +156,7 @@
           },
           {
             "@name":"translated",
-            "@content":"28 October 2026"
+            "@content":"29 October 2026"
           },
           {
             "@name":"generator",
@@ -229,13 +229,13 @@
           { "MetadataString":
             {
               "@name":"test",
-              "@DEF":"scene.addChildMetadata",
+              "@DEF":"scene_addChildMetadata",
               "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
             }
           },
           { "LayerSet":
             {
-              "@DEF":"scene.addChildLayerSetTest"
+              "@DEF":"scene_addChildLayerSetTest"
             }
           },
           { "Transform":
@@ -1505,13 +1505,13 @@
           { "MetadataString":
             {
               "@name":"test",
-              "@DEF":"scene.addChildMetadata",
+              "@DEF":"scene_addChildMetadata",
               "@value":["Top-level root Metadata node beneath Scene needs to be one of '-children' in JSON encoding"]
             }
           },
           { "LayerSet":
             {
-              "@DEF":"scene.addChildLayerSetTest"
+              "@DEF":"scene_addChildLayerSetTest"
             }
           },
           { "Transform":

@@ -50,8 +50,8 @@
     <WorldInfo DEF='WorldInfoDEF' class='worldInfoNode.class' id='worldInfoNode.id' style='worldInfoNode.style' title='SmokeTestProgram produced by X3D Java SAI Library (X3DJSAIL)'/>
     <WorldInfo USE='WorldInfoDEF'/>
     <WorldInfo USE='WorldInfoDEF'/>
-    <MetadataString DEF='scene.addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
-    <LayerSet DEF='scene.addChildLayerSetTest'/>
+    <MetadataString DEF='scene_addChildMetadata' name='test' value='"Top-level root Metadata node beneath Scene needs to be one of &apos;-children&apos; in JSON encoding"'/>
+    <LayerSet DEF='scene_addChildLayerSetTest'/>
     <Transform DEF='LogoGeometryTransform' translation='0 1.5 0'>
       <Anchor DEF='siteAnchor' description='select for X3D Java SAI Library (X3DJSAIL) description' url='"../X3DJSAIL.html" "https://www.web3d.org/specifications/java/X3DJSAIL.html"'>
         <Shape DEF='BoxShape' id='BoxShapeID'>

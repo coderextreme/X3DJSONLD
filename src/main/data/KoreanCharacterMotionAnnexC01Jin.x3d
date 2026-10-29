@@ -29,7 +29,7 @@
     <HAnimHumanoid DEF='hanim_AnnexC01Jin' name='AnnexC01Jin' scale='0.0225 0.0225 0.0225' version='2.0'>
       <!-- original HAnimHumanoid info='"humanoidVersion=2.0"' -->
       <MetadataSet containerField='metadata' name='HAnimHumanoid.info' reference='https://www.web3d.org/documents/specifications/19774/V2.0/Architecture/ObjectInterfaces.html#Humanoid'>
-        <MetadataString name='humanoidVersion' value='2.0'/>
+        <MetadataString name='humanoidVersion' value='"2.0"'/>
       </MetadataSet>
       <HAnimJoint DEF='hanim_humanoid_root' center='0 30.53 -0.7076' containerField='skeleton' name='humanoid_root'>
         <HAnimSegment DEF='hanim_sacrum' name='sacrum'>

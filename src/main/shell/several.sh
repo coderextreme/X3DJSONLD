@@ -128,13 +128,13 @@ echo Running TruffleRuby
 pushd ../truffleruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOTRUFFLERUBY" -e "$DATATOTRUFFLERUBY" -e "$ROOTTOTRUFFLERUBY" -e "$PERSONALTOTRUFFLERUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$TRUFFLERUBY -vm.cp='$CLASSPAth" $i"
-	$TRUFFLERUBY -vm.cp='$CLASSPAth" $i
+	echo "$TRUFFLERUBY --jvm --vm.classpath='$CLASSPATH' $i"
+	$TRUFFLERUBY --jvm --vm.classpath="$CLASSPATH" $i
 done
 popd
 fi
 
-if uname | grep -vq "Linux"; then
+if uname | grep -v "Linux"; then
 echo Running JRuby
 pushd ../jruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOJRUBY" -e "$DATATOJRUBY" -e "$ROOTTOJRUBY" -e "$PERSONALTOJRUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
