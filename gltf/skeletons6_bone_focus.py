@@ -2007,18 +2007,46 @@ def _inline_world_bounds(ctx, wrapper_idx, worlds):
             M = worlds[ni]
             mesh = gltf.meshes[node.mesh]
             for prim in (mesh.primitives or []):
-                attrs = prim.attributes
-                pos_idx = getattr(attrs, 'POSITION', None) if not isinstance(attrs, dict) else attrs.get('POSITION')
+                # Handle prim whether it is a dict or a pygltflib object
+                attrs = prim.get('attributes') if isinstance(prim, dict) else getattr(prim, 'attributes', None)
+                if not attrs: continue
+                pos_idx = attrs.get('POSITION') if isinstance(attrs, dict) else getattr(attrs, 'POSITION', None)
                 if pos_idx is None or pos_idx >= len(gltf.accessors): continue
                 acc = gltf.accessors[pos_idx]
                 if not acc.min or not acc.max: continue
                 mn, mx = np.asarray(acc.min, dtype=np.float64), np.asarray(acc.max, dtype=np.float64)
-                corners = np.array([[x,y,z,1.0] for x in (mn[0],mx[0]) for y in (mn[1],mx[1]) for z in (mn[2],mx[2])])
+                corners = np.array([[x, y, z, 1.0] for x in (mn[0], mx[0]) for y in (mn[1], mx[1]) for z in (mn[2], mx[2])])
                 wc = (M @ corners.T).T[:, :3]
                 lo = np.minimum(lo, wc.min(axis=0)); hi = np.maximum(hi, wc.max(axis=0))
         stack.extend(node.children or [])
     if not np.all(np.isfinite(lo)) or not np.all(np.isfinite(hi)): return None
     return lo, hi
+
+#def _inline_world_bounds(ctx, wrapper_idx, worlds):
+#    gltf = ctx.gltf
+#    lo = np.array([np.inf, np.inf, np.inf], dtype=np.float64)
+#    hi = np.array([-np.inf, -np.inf, -np.inf], dtype=np.float64)
+#    stack = [wrapper_idx]
+#    while stack:
+#        ni = stack.pop()
+#        if ni < 0 or ni >= len(gltf.nodes): continue
+#        node = gltf.nodes[ni]
+#        if node.mesh is not None and 0 <= node.mesh < len(gltf.meshes):
+#            M = worlds[ni]
+#            mesh = gltf.meshes[node.mesh]
+#            for prim in (mesh.primitives or []):
+#                attrs = prim.attributes
+#                pos_idx = getattr(attrs, 'POSITION', None) if not isinstance(attrs, dict) else attrs.get('POSITION')
+#                if pos_idx is None or pos_idx >= len(gltf.accessors): continue
+#                acc = gltf.accessors[pos_idx]
+#                if not acc.min or not acc.max: continue
+#                mn, mx = np.asarray(acc.min, dtype=np.float64), np.asarray(acc.max, dtype=np.float64)
+#                corners = np.array([[x,y,z,1.0] for x in (mn[0],mx[0]) for y in (mn[1],mx[1]) for z in (mn[2],mx[2])])
+#                wc = (M @ corners.T).T[:, :3]
+#                lo = np.minimum(lo, wc.min(axis=0)); hi = np.maximum(hi, wc.max(axis=0))
+#        stack.extend(node.children or [])
+#    if not np.all(np.isfinite(lo)) or not np.all(np.isfinite(hi)): return None
+#    return lo, hi
 
 
 def generate_inline_focus_animations(ctx, duration=1.15, margin=1.55):
@@ -2457,7 +2485,8 @@ def build_skins_and_displacers(ctx):
     if ctx.displacers:
         for disp in ctx.displacers:
             p_node_idx = disp['parent_idx']
-            if p_node_idx is None or p_node_idx >= len(gltf.nodes): continue
+            if p_node_idx is None or p_node_idx >= len(gltf.nodes):
+                continue
             node = gltf.nodes[p_node_idx]
             target_mesh_idx = node.mesh
             if target_mesh_idx is None and node.children:
@@ -2470,12 +2499,16 @@ def build_skins_and_displacers(ctx):
                 mesh = gltf.meshes[target_mesh_idx]
                 disp_map = dict(zip(disp['coordIndex'], disp['displacements']))
 
-                for prim in mesh.primitives:
-                    p_indices = getattr(prim, '_p_indices', None)
-                    if not p_indices and isinstance(prim, dict):
-                        p_indices = prim.get('_p_indices')
-                    
-                    pos_acc_idx = prim.attributes.POSITION if hasattr(prim, 'attributes') else prim['attributes']['POSITION']
+                for prim in (mesh.primitives or []):
+                    p_indices = prim.get('_p_indices') if isinstance(prim, dict) else getattr(prim, '_p_indices', None)
+
+                    attrs = prim.get('attributes') if isinstance(prim, dict) else getattr(prim, 'attributes', None)
+                    if not attrs:
+                        continue
+                    pos_acc_idx = attrs.get('POSITION') if isinstance(attrs, dict) else getattr(attrs, 'POSITION', None)
+                    if pos_acc_idx is None or pos_acc_idx >= len(gltf.accessors):
+                        continue
+
                     pos_count = gltf.accessors[pos_acc_idx].count
                     delta_pos = np.zeros((pos_count, 3), dtype=np.float32)
 
@@ -2485,11 +2518,12 @@ def build_skins_and_displacers(ctx):
                                 delta_pos[v_i] = disp_map[coord_i]
 
                     d_acc = add_accessor(gltf, bin_blob, delta_pos, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True)
-                    if hasattr(prim, 'targets'):
-                        if prim.targets is None: prim.targets = []
-                        prim.targets.append({"POSITION": d_acc})
-                    else:
+                    if isinstance(prim, dict):
                         prim.setdefault('targets', []).append({"POSITION": d_acc})
+                    elif hasattr(prim, 'targets'):
+                        if prim.targets is None:
+                            prim.targets = []
+                        prim.targets.append({"POSITION": d_acc})
 
                 if not hasattr(mesh, 'weights') or mesh.weights is None:
                     mesh.weights = [disp['weight']]
@@ -2500,13 +2534,15 @@ def build_skins_and_displacers(ctx):
 
     for scope, cname, entries in ctx.orphan_shapes:
         owner = next((g for g in ctx.skin_groups if cname and g.scope is scope and g.skincoord_name == cname), None)
-        if owner is not None: owner.meshes.extend(entries)
+        if owner is not None:
+            owner.meshes.extend(entries)
 
     world_mats = compute_world_matrices(gltf.nodes)
     skinned_nodes = []
 
     for g in ctx.skin_groups:
-        if not g.joint_skinning: continue
+        if not g.joint_skinning:
+            continue
 
         joint_defs = sorted(g.joint_skinning.keys(), key=lambda d: ctx.def_to_node_idx.get(d, 999999))
         joint_node_indices, joint_order = [], {}
@@ -2514,23 +2550,28 @@ def build_skins_and_displacers(ctx):
             if d in ctx.def_to_node_idx:
                 joint_order[d] = len(joint_node_indices)
                 joint_node_indices.append(ctx.def_to_node_idx[d])
-        if not joint_node_indices: continue
+        if not joint_node_indices:
+            continue
         print(f"  INFO: HAnim skinning '{g.name}': {len(joint_node_indices)} joints, {len(g.meshes)} skin primitive(s)")
 
         per_vertex = {}
         for j_def, infl in g.joint_skinning.items():
-            if j_def not in joint_order: continue
+            if j_def not in joint_order:
+                continue
             for coord_idx, weight in infl:
                 if weight > 1e-6:
                     per_vertex.setdefault(coord_idx, []).append((joint_order[j_def], float(weight)))
 
         for v in per_vertex.values():
-            if not v: continue
+            if not v:
+                continue
             v.sort(key=lambda x: x[1], reverse=True)
-            if len(v) > 4: v[:] = v[:4]
+            if len(v) > 4:
+                v[:] = v[:4]
             total = sum(w for _, w in v)
             if total > 0.0:
-                for i in range(len(v)): v[i] = (v[i][0], v[i][1] / total)
+                for i in range(len(v)):
+                    v[i] = (v[i][0], v[i][1] / total)
             else:
                 v[:] = [(0, 1.0)]
 
@@ -2552,7 +2593,13 @@ def build_skins_and_displacers(ctx):
 
         for mesh_idx, prim_local_idx, p_indices_list in g.meshes:
             prim = gltf.meshes[mesh_idx].primitives[prim_local_idx]
-            prim_attrs = prim.attributes if hasattr(prim, 'attributes') else prim.setdefault("attributes", {})
+            if isinstance(prim, dict):
+                prim_attrs = prim.setdefault("attributes", {})
+            else:
+                if getattr(prim, 'attributes', None) is None:
+                    prim.attributes = {}
+                prim_attrs = prim.attributes
+
             num_verts = len(p_indices_list)
             joints_data = np.zeros((num_verts, 4), dtype=np.uint16)
             weights_data = np.zeros((num_verts, 4), dtype=np.float32)
@@ -2587,26 +2634,194 @@ def build_skins_and_displacers(ctx):
             weights_data[np.arange(num_verts), max_cols] += row_diffs
             weights_data = np.clip(weights_data, 0.0, 1.0).astype(np.float32)
 
-            prim_attrs["JOINTS_0"] = add_accessor(gltf, bin_blob, joints_data, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
-            prim_attrs["WEIGHTS_0"] = add_accessor(gltf, bin_blob, weights_data, VEC4, FLOAT, ARRAY_BUFFER)
+            j_acc = add_accessor(gltf, bin_blob, joints_data, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
+            w_acc = add_accessor(gltf, bin_blob, weights_data, VEC4, FLOAT, ARRAY_BUFFER)
+
+            if isinstance(prim_attrs, dict):
+                prim_attrs["JOINTS_0"] = j_acc
+                prim_attrs["WEIGHTS_0"] = w_acc
+            else:
+                setattr(prim_attrs, "JOINTS_0", j_acc)
+                setattr(prim_attrs, "WEIGHTS_0", w_acc)
 
             node_idx = ctx.mesh_to_node.get(mesh_idx)
             if node_idx is not None:
                 gltf.nodes[node_idx].skin = skin_idx
-                if node_idx not in skinned_nodes: skinned_nodes.append(node_idx)
+                if node_idx not in skinned_nodes:
+                    skinned_nodes.append(node_idx)
 
     if skinned_nodes:
         parent_of = {c: i for i, n in enumerate(gltf.nodes) for c in (n.children or [])}
         root_node = gltf.nodes[0]
-        if root_node.children is None: root_node.children = []
+        if root_node.children is None:
+            root_node.children = []
         for n_idx in skinned_nodes:
             node = gltf.nodes[n_idx]
             node.translation, node.rotation, node.scale = [0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0], [1.0, 1.0, 1.0]
             old = parent_of.get(n_idx)
             if old is not None and gltf.nodes[old].children and n_idx in gltf.nodes[old].children:
                 gltf.nodes[old].children.remove(n_idx)
-            if n_idx not in root_node.children: root_node.children.append(n_idx)
+            if n_idx not in root_node.children:
+                root_node.children.append(n_idx)
 
+
+#def build_skins_and_displacers(ctx):
+#    gltf, bin_blob = ctx.gltf, ctx.bin_blob
+#
+#    # Process HAnimDisplacer morph targets
+#    if ctx.displacers:
+#        for disp in ctx.displacers:
+#            p_node_idx = disp['parent_idx']
+#            if p_node_idx is None or p_node_idx >= len(gltf.nodes): continue
+#            node = gltf.nodes[p_node_idx]
+#            target_mesh_idx = node.mesh
+#            if target_mesh_idx is None and node.children:
+#                for ch in node.children:
+#                    if gltf.nodes[ch].mesh is not None:
+#                        target_mesh_idx = gltf.nodes[ch].mesh
+#                        break
+#
+#            if target_mesh_idx is not None and target_mesh_idx < len(gltf.meshes):
+#                mesh = gltf.meshes[target_mesh_idx]
+#                disp_map = dict(zip(disp['coordIndex'], disp['displacements']))
+#
+#                for prim in mesh.primitives:
+#                    p_indices = getattr(prim, '_p_indices', None)
+#                    if not p_indices and isinstance(prim, dict):
+#                        p_indices = prim.get('_p_indices')
+#                    
+#                    pos_acc_idx = prim.attributes.POSITION if hasattr(prim, 'attributes') else prim['attributes']['POSITION']
+#                    pos_count = gltf.accessors[pos_acc_idx].count
+#                    delta_pos = np.zeros((pos_count, 3), dtype=np.float32)
+#
+#                    if p_indices:
+#                        for v_i, coord_i in enumerate(p_indices[:pos_count]):
+#                            if coord_i in disp_map:
+#                                delta_pos[v_i] = disp_map[coord_i]
+#
+#                    d_acc = add_accessor(gltf, bin_blob, delta_pos, VEC3, FLOAT, ARRAY_BUFFER, add_min_max=True)
+#                    if hasattr(prim, 'targets'):
+#                        if prim.targets is None: prim.targets = []
+#                        prim.targets.append({"POSITION": d_acc})
+#                    else:
+#                        prim.setdefault('targets', []).append({"POSITION": d_acc})
+#
+#                if not hasattr(mesh, 'weights') or mesh.weights is None:
+#                    mesh.weights = [disp['weight']]
+#                else:
+#                    mesh.weights.append(disp['weight'])
+#                if disp['def']:
+#                    ctx.def_to_node_idx[disp['def']] = p_node_idx
+#
+#    for scope, cname, entries in ctx.orphan_shapes:
+#        owner = next((g for g in ctx.skin_groups if cname and g.scope is scope and g.skincoord_name == cname), None)
+#        if owner is not None: owner.meshes.extend(entries)
+#
+#    world_mats = compute_world_matrices(gltf.nodes)
+#    skinned_nodes = []
+#
+#    for g in ctx.skin_groups:
+#        if not g.joint_skinning: continue
+#
+#        joint_defs = sorted(g.joint_skinning.keys(), key=lambda d: ctx.def_to_node_idx.get(d, 999999))
+#        joint_node_indices, joint_order = [], {}
+#        for d in joint_defs:
+#            if d in ctx.def_to_node_idx:
+#                joint_order[d] = len(joint_node_indices)
+#                joint_node_indices.append(ctx.def_to_node_idx[d])
+#        if not joint_node_indices: continue
+#        print(f"  INFO: HAnim skinning '{g.name}': {len(joint_node_indices)} joints, {len(g.meshes)} skin primitive(s)")
+#
+#        per_vertex = {}
+#        for j_def, infl in g.joint_skinning.items():
+#            if j_def not in joint_order: continue
+#            for coord_idx, weight in infl:
+#                if weight > 1e-6:
+#                    per_vertex.setdefault(coord_idx, []).append((joint_order[j_def], float(weight)))
+#
+#        for v in per_vertex.values():
+#            if not v: continue
+#            v.sort(key=lambda x: x[1], reverse=True)
+#            if len(v) > 4: v[:] = v[:4]
+#            total = sum(w for _, w in v)
+#            if total > 0.0:
+#                for i in range(len(v)): v[i] = (v[i][0], v[i][1] / total)
+#            else:
+#                v[:] = [(0, 1.0)]
+#
+#        humanoid_world = world_mats[g.inner_idx].astype(np.float64)
+#        ibms = []
+#        for j in joint_node_indices:
+#            m = np.linalg.pinv(world_mats[j].astype(np.float64)) @ humanoid_world
+#            m[np.abs(m) < 1e-6] = 0.0
+#            m[3, :3] = 0.0
+#            m[3, 3] = 1.0
+#            ibms.append(m.T.flatten())
+#
+#        ibm_array = np.array(ibms, dtype=np.float32)
+#        ibm_array[np.abs(ibm_array) < 1e-6] = 0.0
+#        ibm_acc = add_accessor(gltf, bin_blob, ibm_array, MAT4, FLOAT, None)
+#
+#        gltf.skins.append(Skin(name=g.name, joints=joint_node_indices, inverseBindMatrices=ibm_acc))
+#        skin_idx = len(gltf.skins) - 1
+#
+#        for mesh_idx, prim_local_idx, p_indices_list in g.meshes:
+#            prim = gltf.meshes[mesh_idx].primitives[prim_local_idx]
+#            prim_attrs = prim.attributes if hasattr(prim, 'attributes') else prim.setdefault("attributes", {})
+#            num_verts = len(p_indices_list)
+#            joints_data = np.zeros((num_verts, 4), dtype=np.uint16)
+#            weights_data = np.zeros((num_verts, 4), dtype=np.float32)
+#
+#            for v in range(num_verts):
+#                infs = per_vertex.get(p_indices_list[v])
+#                if infs:
+#                    infs = [x for x in infs if x[1] > 1e-6]
+#                    infs.sort(key=lambda x: x[1], reverse=True)
+#                    k_max = min(len(infs), 4)
+#                    w_sum = sum(infs[k][1] for k in range(k_max))
+#                    if w_sum > 0.0:
+#                        for k in range(k_max):
+#                            joints_data[v, k] = infs[k][0]
+#                            weights_data[v, k] = max(0.0, float(infs[k][1]) / w_sum)
+#                    else:
+#                        joints_data[v, 0], weights_data[v, 0] = 0, 1.0
+#                else:
+#                    joints_data[v, 0], weights_data[v, 0] = 0, 1.0
+#
+#            weights_data = np.maximum(0.0, weights_data)
+#            row_sums = weights_data.sum(axis=1)
+#            bad_rows = (row_sums <= 1e-7)
+#            weights_data[bad_rows] = [1.0, 0.0, 0.0, 0.0]
+#            joints_data[bad_rows, 0] = 0
+#
+#            good_rows = ~bad_rows
+#            weights_data[good_rows] /= row_sums[good_rows, np.newaxis]
+#
+#            row_diffs = 1.0 - weights_data.sum(axis=1)
+#            max_cols = np.argmax(weights_data, axis=1)
+#            weights_data[np.arange(num_verts), max_cols] += row_diffs
+#            weights_data = np.clip(weights_data, 0.0, 1.0).astype(np.float32)
+#
+#            prim_attrs["JOINTS_0"] = add_accessor(gltf, bin_blob, joints_data, VEC4, UNSIGNED_SHORT, ARRAY_BUFFER)
+#            prim_attrs["WEIGHTS_0"] = add_accessor(gltf, bin_blob, weights_data, VEC4, FLOAT, ARRAY_BUFFER)
+#
+#            node_idx = ctx.mesh_to_node.get(mesh_idx)
+#            if node_idx is not None:
+#                gltf.nodes[node_idx].skin = skin_idx
+#                if node_idx not in skinned_nodes: skinned_nodes.append(node_idx)
+#
+#    if skinned_nodes:
+#        parent_of = {c: i for i, n in enumerate(gltf.nodes) for c in (n.children or [])}
+#        root_node = gltf.nodes[0]
+#        if root_node.children is None: root_node.children = []
+#        for n_idx in skinned_nodes:
+#            node = gltf.nodes[n_idx]
+#            node.translation, node.rotation, node.scale = [0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 1.0], [1.0, 1.0, 1.0]
+#            old = parent_of.get(n_idx)
+#            if old is not None and gltf.nodes[old].children and n_idx in gltf.nodes[old].children:
+#                gltf.nodes[old].children.remove(n_idx)
+#            if n_idx not in root_node.children: root_node.children.append(n_idx)
+#
 # ---------------------------------------------------------------------------
 # Reports
 # ---------------------------------------------------------------------------
