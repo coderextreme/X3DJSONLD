@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.1//EN" "https://www.web3d.org/specifications/x3d-4.1.dtd">
+<X3D profile='Interactive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <meta content='pelvis.x3d' name='title'/>
+    <meta content='pelvis includes sacrum_bone, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx. Note that sacrum_bone is considered part of pelvis anatomy, but the segment named sacrum is modeled in LOA-0 as segment for parent humanoid_root joint' name='description'/>
+    <meta content='Don Brutzman, Joe Williams' name='creator'/>
+    <meta content='15 March 2026' name='created'/>
+    <meta content='17 October 2026' name='modified'/>
+    <meta content='In mammals, the bony pelvis has a gap in the middle, significantly larger in females than in males. Their offspring pass through this gap when they are born.' name='info'/>
+    <meta content='sacrum belongs with pelvis, specification change needed to make topmost segment virtual' name='TODO'/>
+    <meta content='Mantis 1531 https://mantis.web3d.org/view.php?id=1531' name='TODO'/>
+    <meta content='https://en.wikipedia.org/wiki/Pelvis' name='reference'/>
+    <meta content='usage examples https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Medical' name='reference'/>
+    <meta content='X3D-Edit 4.0, https://www.web3d.org/x3d/tools/X3D-Edit' name='generator'/>
+    <meta content='X3D Tidy, https://www.web3d.org/x3d/stylesheets/X3dTidy.html' name='generator'/>
+    <meta content='https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/pelvis.x3d' name='identifier'/>
+    <meta content='../license.html' name='license'/>
+  </head>
+  <Scene>
+    <WorldInfo title='pelvis.x3d'/>
+    <Background skyColor='0.858824 1 0.94902'/>
+    <!-- vertical offset to max height of l_hip_bone and r_hip_bone -->
+    <Transform DEF='pelvis' center='+0.0005 +1.0150 -0.0369' translation='0 0.9525 0'>
+      <!-- sacrum_bone offset to match joint socket: -->
+      <!-- sacrum_bone.x3d + translation +0.0005 +0.9750 -0.0769 -->
+      <!-- sacrum_bone.x3d adjusted axes +0.0000 +0.0400 +0.0400 -->
+      <!-- sacrum_bone.x3d =joint center +0.0005 +1.0150 -0.0369 -->
+      <ViewpointGroup DEF='ViewpointGroupPelvis' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) model' retainUserOffsets='true'>
+        <Viewpoint DEF='ViewFromFront' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from front' nearDistance='0.001' position='0 0 0.4' retainUserOffsets='true'/>
+        <Viewpoint DEF='ViewFromBehind' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from left side' nearDistance='0.001' orientation='0 1 0 1.5708' position='0.4 0 0' retainUserOffsets='true'/>
+        <Viewpoint DEF='ViewFromLeft' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from behind' nearDistance='0.001' orientation='0 1 0 3.1416' position='0 0 -0.4' retainUserOffsets='true'/>
+        <Viewpoint DEF='ViewFromRight' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from right side' nearDistance='0.001' orientation='0 1 0 -1.5708' position='-0.4 0 0' retainUserOffsets='true'/>
+        <Viewpoint DEF='ViewFromAbove' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from above' nearDistance='0.001' orientation='1 0 0 -1.5708' position='0 0.4 0' retainUserOffsets='true'/>
+        <Viewpoint DEF='ViewFromBelow' description='pelvis LOA-1 (sacrum, l_hip_bone, r_hip_bone, pubic_symphysis, coccyx) from below' nearDistance='0.001' orientation='1 0 0 1.5708' position='0 -0.4 0' retainUserOffsets='true'/>
+      </ViewpointGroup>
+    </Transform>
+    <Inline DEF='sacrum_bone' url='"sacrum_bone.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/sacrum_bone.x3d" "sacrum_bone.x3dv" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/sacrum_bone.x3dv"'/>
+    <Inline DEF='l_hip_bone' url='"l_hip_bone.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/l_hip_bone.x3d" "l_hip_bone.x3dv" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/l_hip_bone.x3dv"'/>
+    <Inline DEF='r_hip_bone' url='"r_hip_bone.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/r_hip_bone.x3d" "r_hip_bone.x3dv" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/r_hip_bone.x3dv"'/>
+    <Inline DEF='pubic_symphysis' url='"pubic_symphysis.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/pubic_symphysis.x3d" "pubic_symphysis.x3dv" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/pubic_symphysis.x3dv"'/>
+    <Inline DEF='coccyx' url='"coccyx.x3d" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/coccyx.x3d" "coccyx.x3dv" "https://www.web3d.org/x3d/content/examples/HumanoidAnimation/Bones/coccyx.x3dv"'/>
+  </Scene>
+</X3D>
