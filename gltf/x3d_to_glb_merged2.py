@@ -3179,16 +3179,18 @@ def build_khr_interactivity(ctx):
     if not graph_nodes:
         return None
 
+    graph_dict = {
+        "types": types,
+        "declarations": declarations,
+        "nodes": graph_nodes
+    }
+    # Only include "variables" if there is at least 1 variable (satisfies minItems: 1)
+    if variables:
+        graph_dict["variables"] = variables
+
     return {
         "graph": 0,
-        "graphs": [
-            {
-                "types": types,
-                "declarations": declarations,
-                "variables": variables,
-                "nodes": graph_nodes
-            }
-        ]
+        "graphs": [graph_dict]
     }
 
 def _interactivity_extensions_used(gltf_dict, interactivity_data):
