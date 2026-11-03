@@ -128,8 +128,11 @@ echo Running TruffleRuby
 pushd ../truffleruby
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.rb/' -e 's/^\/c/../' -e "$EXTOTRUFFLERUBY" -e "$DATATOTRUFFLERUBY" -e "$ROOTTOTRUFFLERUBY" -e "$PERSONALTOTRUFFLERUBY"| sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g'| tr '\n' '\0' | while read -d $'\0' -r i
 do
-	echo "$TRUFFLERUBY --jvm --vm.classpath='$CLASSPATH' $i"
-	$TRUFFLERUBY --jvm --vm.classpath="$CLASSPATH" $i
+	if [ -e "$i" ]
+	then
+		echo "$TRUFFLERUBY --jvm --vm.classpath='$CLASSPATH' $i"
+		$TRUFFLERUBY --jvm --vm.classpath="$CLASSPATH" "$i"
+	fi
 done
 popd
 fi
@@ -155,9 +158,12 @@ do
 	#echo BASE `mybasename "$file" .new`
 	X3D=`mydirname "$file" | sed -e "$LOCALTOROOT"`/`mybasename "$file" .new`
 	FILE=`mydirname "$file" | sed -e "$LOCALTOROOT"`/`mybasename "$file" | sed -e s/-/_/g`
-	# echo X3D "$X3D"
-	echo "${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$FILE"
-	"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$FILE"
+	if [ -e "$FILE" -a -e "$X3D" ]
+	then
+		# echo X3D "$X3D"
+		echo "${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$FILE"
+		"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$FILE"
+	fi
 done
 
 echo compile java programs
@@ -165,8 +171,12 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.java/' -e
 do
 	# echo JAVAC "$i"
 	pushd `mydirname "$i"` 2> /dev/null
-	echo javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i" | sed -e s/-/_/g`
-	javac -proc:full -J-Xss1g -J-Xmx4g `mybasename "$i" | sed -e s/-/_/g`
+	FILE=`mybasename "$i" | sed -e s/-/_/g`
+	echo javac -proc:full -J-Xss1g -J-Xmx4g 
+	if [ -e "$FILE" ]
+	then
+		javac -proc:full -J-Xss1g -J-Xmx4g "$FILE"
+	fi
 	popd 2> /dev/null
 done
 
@@ -174,8 +184,11 @@ echo run java programs
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.class/' -e 's/^\/c/../' -e "$EXTOJAVA" -e "$DATATOJAVA" -e "$ROOTTOJAVA" -e "$PERSONALTOJAVA" | sed -e 's/\.class$//' -e 's/^\.\.\/java\///' | sed -e 's/\(.*\)/'"\1"'/' -e 's/ /$/g' | sed -e s/-/_/g | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	pushd ../java
-	echo java -Xss1g -Xmx4g "$i"
-	java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+	if [ -e "$i" ]
+	then
+		echo java -Xss1g -Xmx4g "$i"
+		java -Xss1g -Xmx4g "$i" # sh runToError.sh || echo "Failed"
+	fi
 	popd
 done
 
@@ -183,26 +196,34 @@ echo comparing java created json
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.java.'${JSONEXT}'/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | sed -e s/-/_/g | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	OLDJSON=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.java.${JSONEXT}`.${JSONEXT}
-	echo "${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
-	"${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
-	# jsonlint "$i"
+	if [ -e "$OLDJSON" -a -e "$i" ]
+	then
+		echo "${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
+		"${NODE}" --trace-warnings "../node/jsondiff.js" "$OLDJSON" "$i"
+		# jsonlint "$i"
+	fi
 done
 
 echo Comparing old xml and pretty printed intermediate xml
 ls -d "$@" | grep -v intermediate | grep -v "\.new" |  sed -e 's/\.x3d/.new.javaPrettyPrint.intermediate.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | sed -e 's/ /$/g' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.javaPrettyPrint.intermediate.x3d | sed 's/\\$/ /g'`.x3d 
-	# echo "$X3D" "$i"
-	echo "${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
-	"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	if [ -e "$X3D" -a -e "$i" ]
+	then
+		echo "${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+		"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	fi
 done
 
 echo Running Graal JavaScript
 for i in `ls -d "$@" | sed 's/\(.*\)/"\1"/' | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.js/' -e 's/^\/c/../' -e "$EXTOGRAAL" -e "$DATATOGRAAL" -e "$ROOTTOGRAAL" -e "$PERSONALTOGRAAL" | xargs ls -d`
 do
 	pushd ../graaljs
-	echo "../shell/jjs.sh $i"
+	if [ -e "$i" ]
+	then
+		echo "../shell/jjs.sh $i"
 	      ../shell/jjs.sh "$i"
+	fi
 	popd
 done
 
@@ -210,8 +231,11 @@ echo Diffing .new.graaljs.x3d from graalvm with original x3d
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.graaljs.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.graaljs.x3d`.x3d
-	echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
-	"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	if [ -e "$X3D" -a -e "$i" ]
+	then
+		echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
+		"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	fi
 done
 
 #echo Running Node JavaScript
@@ -245,18 +269,24 @@ ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e "s/\.x3d/.${JSONEXT
 do
 	GPY=`echo "$i" | sed -e "$DATATOGRAALPY" -e "$PERSONALTOGRAALPY" -e "$ROOTTOGRAALPY" -e "s/\.${JSONEXT}/.py/"`
 	X3D=`echo "$i" | sed -e "s/\.${JSONEXT}/.new.graalpy.x3d/"`
-	echo "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY"
-	( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY" 2>&1 | grep -A 4 ERROR >> errors.txt ) &
-	JOB_PID=$!
-	wait $JOB_PID
+	if [ -e "$GPY" ]
+	then 
+		echo "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY"
+		( "${GRAALPY}" --jvm --vm.cp="${CLASSPATH}" "$GPY" 2>&1 | grep -A 4 ERROR >> errors.txt ) &
+		JOB_PID=$!
+		wait $JOB_PID
+	fi
 done
 
 echo Diffing .new.graalpy.x3d .py with original x3d
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.graalpy.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.graalpy.x3d`.x3d
-	echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
-	"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	if [ -e "$X3D" -a -e "$i" ]
+	then
+		echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
+		"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	fi
 done
 
 echo Running python code
@@ -266,14 +296,20 @@ do
 	X3D=`echo "$i" | sed -e "s/\.${JSONEXT}/.new.python.x3d/"`
 	#echo ${PYTHON} ../python/x3djsonld.py "'$i'" ">" "'$PY'" and ${PYTHON} "'$PY'" ">" "'$X3D'"
 	#${PYTHON} ../python/x3djsonld.py "$i" > "$PY" && ${PYTHON} "$PY" > "$X3D" && echo "$PY" "$X3D" || echo "Error: "$PY" failed to parse"
-	echo "${PYTHON}" "$PY"
-	"${PYTHON}" "$PY"
+	if [ -e "$PY" ]
+	then
+		echo "${PYTHON}" "$PY"
+		"${PYTHON}" "$PY"
+	fi
 done
 
 echo Diffing .new.python.x3d .py with original x3d
 ls -d "$@" | grep -v intermediate | grep -v "\.new" | sed -e 's/\.x3d/.new.python.x3d/' -e "$ROOTTOLOCAL" -e 's/^\/c/../' | tr '\n' '\0' | while read -d $'\0' -r i
 do
 	X3D=`mydirname "$i" | sed -e "$LOCALTOROOT" `/`mybasename "$i" .new.python.x3d`.x3d
-	echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
-	"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	if [ -e "$X3D" -a -e "$i" ]
+	then
+		echo "${NODE}" --trace-warnings "../node/xmldiff.js" "'$X3D'" "'$i'"
+		"${NODE}" --trace-warnings "../node/xmldiff.js" "$X3D" "$i"
+	fi
 done
