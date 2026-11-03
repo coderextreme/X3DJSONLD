@@ -261,9 +261,9 @@ magic(/.*\/schema\/.*\.json$/i, "text/json");
 magic(/.*\.x3d$/i, "model/x3d+xml");
 magic(/.*\.x3dv$/i, "model/x3d+vrml");
 magic(/.*\.wrl$/i, "model/vrml");
-magic(/.*\.gltf$/i, "text/json");
-magic(/.*\.glb$/i, "application/octet-stream");
 magic(/.*\.bin$/i, "application/octet-stream");
+magic(/.*\.gltf$/i, "model/gltf+json");
+magic(/.*\.glb$/i, "model/gltf-binary");
 magic(/.*\.zip$/i, "application/zip");
 magic(/.*\.wasm$/i, "application/octet-stream");
 
