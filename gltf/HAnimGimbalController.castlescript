@@ -1,0 +1,278 @@
+{ HAnim gimbal controller in CastleScript.
+  CastleScript functions cannot call other user functions and cannot touch other nodes, so:
+   - every effect on the scene is an outputOnly event that the X3D file ROUTEs to the target node;
+   - shared work is done by two functions, refresh and apply, that are triggered by the
+     outputOnly events doRefresh / doApply, which the X3D file ROUTEs back into this Script;
+   - variables are initializeOnly fields of the Script node (there are no local variables).
+  Gimbal rotation order: X (outer ring), Y, Z (inner ring); joint rotation = Rx * Ry * Rz. }
+
+function refresh(value, timestamp)
+  (
+  when(or(sel = 0, oldSel = 0), col_HumanoidRoot := if(sel = 0, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 1, oldSel = 1), col_sacroiliac := if(sel = 1, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 2, oldSel = 2), col_vl5 := if(sel = 2, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 3, oldSel = 3), col_vc7 := if(sel = 3, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 4, oldSel = 4), col_skullbase := if(sel = 4, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 5, oldSel = 5), col_l_hip := if(sel = 5, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 6, oldSel = 6), col_l_knee := if(sel = 6, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 7, oldSel = 7), col_l_talocrural := if(sel = 7, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 8, oldSel = 8), col_l_shoulder := if(sel = 8, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 9, oldSel = 9), col_l_elbow := if(sel = 9, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 10, oldSel = 10), col_l_radiocarpal := if(sel = 10, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 11, oldSel = 11), col_r_hip := if(sel = 11, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 12, oldSel = 12), col_r_knee := if(sel = 12, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 13, oldSel = 13), col_r_talocrural := if(sel = 13, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 14, oldSel = 14), col_r_shoulder := if(sel = 14, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 15, oldSel = 15), col_r_elbow := if(sel = 15, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 16, oldSel = 16), col_r_radiocarpal := if(sel = 16, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  t_lo := array_get(limits, 6*sel + 0);
+  t_hi := array_get(limits, 6*sel + 3);
+  array_set(ang, 3*sel + 0, max(t_lo, min(t_hi, array_get(ang, 3*sel + 0))));
+  sMinX := t_lo;
+  sMaxX := t_hi;
+  sOffX := array_get(ang, 3*sel + 0);
+  sEnaX := abs(t_hi - t_lo) > 0.000001;
+  ringTrX := if(abs(t_hi - t_lo) > 0.000001, 0.0, 0.65);
+  ringRotX := vector(1.0, 0.0, 0.0, array_get(ang, 3*sel + 0));
+  t_lo := array_get(limits, 6*sel + 1);
+  t_hi := array_get(limits, 6*sel + 4);
+  array_set(ang, 3*sel + 1, max(t_lo, min(t_hi, array_get(ang, 3*sel + 1))));
+  sMinY := t_lo;
+  sMaxY := t_hi;
+  sOffY := array_get(ang, 3*sel + 1);
+  sEnaY := abs(t_hi - t_lo) > 0.000001;
+  ringTrY := if(abs(t_hi - t_lo) > 0.000001, 0.0, 0.65);
+  ringRotY := vector(0.0, 1.0, 0.0, array_get(ang, 3*sel + 1));
+  t_lo := array_get(limits, 6*sel + 2);
+  t_hi := array_get(limits, 6*sel + 5);
+  array_set(ang, 3*sel + 2, max(t_lo, min(t_hi, array_get(ang, 3*sel + 2))));
+  sMinZ := t_lo;
+  sMaxZ := t_hi;
+  sOffZ := array_get(ang, 3*sel + 2);
+  sEnaZ := abs(t_hi - t_lo) > 0.000001;
+  ringTrZ := if(abs(t_hi - t_lo) > 0.000001, 0.0, 0.65);
+  ringRotZ := vector(0.0, 0.0, 1.0, array_get(ang, 3*sel + 2));
+  doApply := timestamp
+  )
+
+function apply(value, timestamp)
+  (
+  t_sx := sin(array_get(ang, 3*sel) / 2.0);
+  t_cx := cos(array_get(ang, 3*sel) / 2.0);
+  t_sy := sin(array_get(ang, 3*sel + 1) / 2.0);
+  t_cy := cos(array_get(ang, 3*sel + 1) / 2.0);
+  t_sz := sin(array_get(ang, 3*sel + 2) / 2.0);
+  t_cz := cos(array_get(ang, 3*sel + 2) / 2.0);
+  t_qx := t_sx*t_cy*t_cz + t_cx*t_sy*t_sz;
+  t_qy := t_cx*t_sy*t_cz - t_sx*t_cy*t_sz;
+  t_qz := t_cx*t_cy*t_sz + t_sx*t_sy*t_cz;
+  t_qw := t_cx*t_cy*t_cz - t_sx*t_sy*t_sz;
+  t_s := sqrt(t_qx*t_qx + t_qy*t_qy + t_qz*t_qz);
+  t_rot := if(t_s < 0.000001, vector(0.0, 0.0, 1.0, 0.0), vector(t_qx / t_s, t_qy / t_s, t_qz / t_s, 2.0 * arccos(max(-1.0, min(1.0, t_qw)))));
+  when(sel = 0, rot_HumanoidRoot := t_rot);
+  when(sel = 1, rot_sacroiliac := t_rot);
+  when(sel = 2, rot_vl5 := t_rot);
+  when(sel = 3, rot_vc7 := t_rot);
+  when(sel = 4, rot_skullbase := t_rot);
+  when(sel = 5, rot_l_hip := t_rot);
+  when(sel = 6, rot_l_knee := t_rot);
+  when(sel = 7, rot_l_talocrural := t_rot);
+  when(sel = 8, rot_l_shoulder := t_rot);
+  when(sel = 9, rot_l_elbow := t_rot);
+  when(sel = 10, rot_l_radiocarpal := t_rot);
+  when(sel = 11, rot_r_hip := t_rot);
+  when(sel = 12, rot_r_knee := t_rot);
+  when(sel = 13, rot_r_talocrural := t_rot);
+  when(sel = 14, rot_r_shoulder := t_rot);
+  when(sel = 15, rot_r_elbow := t_rot);
+  when(sel = 16, rot_r_radiocarpal := t_rot);
+  labelText := array(
+    array_get(sideNames, array_get(sideOf, sel)) + ': ' + array_get(names, sel),
+    'X ' + string(round(array_get(ang, 3*sel + 0) * 180.0 / pi)) + '   ' + 'Y ' + string(round(array_get(ang, 3*sel + 1) * 180.0 / pi)) + '   ' + 'Z ' + string(round(array_get(ang, 3*sel + 2) * 180.0 / pi)),
+    'limits ' + 'X[' + string(round(array_get(limits, 6*sel + 0) * 180.0 / pi)) + ',' + string(round(array_get(limits, 6*sel + 3) * 180.0 / pi)) + ']' + ' ' + 'Y[' + string(round(array_get(limits, 6*sel + 1) * 180.0 / pi)) + ',' + string(round(array_get(limits, 6*sel + 4) * 180.0 / pi)) + ']' + ' ' + 'Z[' + string(round(array_get(limits, 6*sel + 2) * 180.0 / pi)) + ',' + string(round(array_get(limits, 6*sel + 5) * 180.0 / pi)) + ']'
+  )
+  )
+
+function rotX(value, timestamp)
+  when(sel >= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) < 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 0);
+    t_hi := array_get(limits, 6*sel + 3);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 0, t_a);
+    ringRotX := vector(1.0, 0.0, 0.0, t_a);
+    doApply := timestamp
+    ))
+
+function rotY(value, timestamp)
+  when(sel >= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) < 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 1);
+    t_hi := array_get(limits, 6*sel + 4);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 1, t_a);
+    ringRotY := vector(0.0, 1.0, 0.0, t_a);
+    doApply := timestamp
+    ))
+
+function rotZ(value, timestamp)
+  when(sel >= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) < 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 2);
+    t_hi := array_get(limits, 6*sel + 5);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 2, t_a);
+    ringRotZ := vector(0.0, 0.0, 1.0, t_a);
+    doApply := timestamp
+    ))
+
+function next(value, timestamp)
+  (
+  oldSel := sel;
+  sel := if(sel >= 16, 0, sel + 1);
+  doRefresh := timestamp
+  )
+
+function prev(value, timestamp)
+  (
+  oldSel := sel;
+  sel := if(sel <= 0, 16, sel - 1);
+  doRefresh := timestamp
+  )
+
+function reset(value, timestamp)
+  (
+  array_set(ang, 3*sel, 0.0);
+  array_set(ang, 3*sel + 1, 0.0);
+  array_set(ang, 3*sel + 2, 0.0);
+  oldSel := sel;
+  doRefresh := timestamp
+  )
+
+function pick_HumanoidRoot(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 0;
+  doRefresh := timestamp
+  )
+
+function pick_sacroiliac(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 1;
+  doRefresh := timestamp
+  )
+
+function pick_vl5(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 2;
+  doRefresh := timestamp
+  )
+
+function pick_vc7(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 3;
+  doRefresh := timestamp
+  )
+
+function pick_skullbase(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 4;
+  doRefresh := timestamp
+  )
+
+function pick_l_hip(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 5;
+  doRefresh := timestamp
+  )
+
+function pick_l_knee(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 6;
+  doRefresh := timestamp
+  )
+
+function pick_l_talocrural(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 7;
+  doRefresh := timestamp
+  )
+
+function pick_l_shoulder(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 8;
+  doRefresh := timestamp
+  )
+
+function pick_l_elbow(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 9;
+  doRefresh := timestamp
+  )
+
+function pick_l_radiocarpal(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 10;
+  doRefresh := timestamp
+  )
+
+function pick_r_hip(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 11;
+  doRefresh := timestamp
+  )
+
+function pick_r_knee(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 12;
+  doRefresh := timestamp
+  )
+
+function pick_r_talocrural(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 13;
+  doRefresh := timestamp
+  )
+
+function pick_r_shoulder(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 14;
+  doRefresh := timestamp
+  )
+
+function pick_r_elbow(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 15;
+  doRefresh := timestamp
+  )
+
+function pick_r_radiocarpal(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 16;
+  doRefresh := timestamp
+  )
+
+function initialize(timestamp)
+  doRefresh := timestamp

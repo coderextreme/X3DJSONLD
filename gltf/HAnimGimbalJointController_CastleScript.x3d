@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 4.0//EN" "https://www.web3d.org/specifications/x3d-4.0.dtd">
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+  <head>
+    <component name='HAnim' level='1'/>
+    <meta name='title' content='HAnimGimbalJointController_CastleScript.x3d'/>
+    <meta name='description' content='HAnim humanoid with one large gimbal controlling one joint at a time. Logic is written in CastleScript (Castle Game Engine / castle-model-viewer). Click a joint or use PREV/NEXT, then drag the X/Y/Z rings; rotation is clamped to each joint llimit/ulimit.'/>
+  </head>
+  <Scene>
+    <!-- Joint colours: left = blue, right = red, center = green, selected = yellow.
+         Ring colours: X = red, Y = green, Z = blue.  Faded ring = axis locked (llimit == ulimit).
+         NOTE: the 'limits' field of the Script repeats the llimit/ulimit values of the joints
+         (CastleScript cannot read other nodes).  Keep them in sync if you edit the limits. -->
+    <NavigationInfo type='"NONE"' headlight='true'/>
+    <Background skyColor='0.12 0.13 0.18'/>
+    <Viewpoint description='Front' position='0.9 1.1 5.8'/>
+
+    <HAnimHumanoid DEF='humanoid' name='GimbalDemo' version='2.0' loa='-1'>
+      <HAnimJoint DEF='HumanoidRoot' name='HumanoidRoot' center='0 0.95 0' llimit='-0.7854 -3.1416 -0.7854' ulimit='0.7854 3.1416 0.7854' containerField='skeleton'>
+        <HAnimSegment DEF='pelvis' name='pelvis'>
+          <TouchSensor DEF='ts_HumanoidRoot' description='HumanoidRoot (click to select)'/>
+          <Transform translation='0 0.95 0'><Shape><Appearance DEF='ap_HumanoidRoot'><Material DEF='m_HumanoidRoot' diffuseColor='0.4 0.8 0.4'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+          <Transform translation='0 0.97 0'><Shape><Appearance USE='ap_HumanoidRoot'/><Box size='0.3 0.13 0.17'/></Shape></Transform>
+        </HAnimSegment>
+        <HAnimJoint DEF='sacroiliac' name='sacroiliac' center='0 1 0' llimit='-0.3491 -0.3491 -0.2618' ulimit='0.5236 0.3491 0.2618'>
+          <HAnimSegment DEF='sacrum' name='sacrum'>
+            <TouchSensor DEF='ts_sacroiliac' description='sacroiliac (click to select)'/>
+            <Transform translation='0 1 0'><Shape><Appearance DEF='ap_sacroiliac'><Material DEF='m_sacroiliac' diffuseColor='0.4 0.8 0.4'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+            <Transform translation='0 1.05 0' rotation='0 0 1 0'><Shape><Appearance USE='ap_sacroiliac'/><Cylinder height='0.1' radius='0.09'/></Shape></Transform>
+          </HAnimSegment>
+          <HAnimJoint DEF='vl5' name='vl5' center='0 1.1 0' llimit='-0.5236 -0.5236 -0.4363' ulimit='0.7854 0.5236 0.4363'>
+            <HAnimSegment DEF='l5' name='l5'>
+              <TouchSensor DEF='ts_vl5' description='vl5 (click to select)'/>
+              <Transform translation='0 1.1 0'><Shape><Appearance DEF='ap_vl5'><Material DEF='m_vl5' diffuseColor='0.4 0.8 0.4'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+              <Transform translation='0 1.275 0' rotation='0 0 1 0'><Shape><Appearance USE='ap_vl5'/><Cylinder height='0.35' radius='0.13'/></Shape></Transform>
+            </HAnimSegment>
+            <HAnimJoint DEF='vc7' name='vc7' center='0 1.45 0' llimit='-0.5236 -0.6981 -0.5236' ulimit='0.6981 0.6981 0.5236'>
+              <HAnimSegment DEF='c7' name='c7'>
+                <TouchSensor DEF='ts_vc7' description='vc7 (click to select)'/>
+                <Transform translation='0 1.45 0'><Shape><Appearance DEF='ap_vc7'><Material DEF='m_vc7' diffuseColor='0.4 0.8 0.4'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+                <Transform translation='0 1.525 0' rotation='0 0 1 0'><Shape><Appearance USE='ap_vc7'/><Cylinder height='0.15' radius='0.045'/></Shape></Transform>
+              </HAnimSegment>
+              <HAnimJoint DEF='skullbase' name='skullbase' center='0 1.6 0' llimit='-0.6981 -1.2217 -0.6109' ulimit='0.8727 1.2217 0.6109'>
+                <HAnimSegment DEF='skull' name='skull'>
+                  <TouchSensor DEF='ts_skullbase' description='skullbase (click to select)'/>
+                  <Transform translation='0 1.6 0'><Shape><Appearance DEF='ap_skullbase'><Material DEF='m_skullbase' diffuseColor='0.4 0.8 0.4'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+                  <Transform translation='0 1.7 0'><Shape><Appearance USE='ap_skullbase'/><Sphere radius='0.1'/></Shape></Transform>
+                </HAnimSegment>
+              </HAnimJoint>
+              <HAnimJoint DEF='l_shoulder' name='l_shoulder' center='0.2 1.4 0' llimit='-1.5708 -2.3562 -1.5708' ulimit='1.5708 0.7854 3.1416'>
+                <HAnimSegment DEF='l_upperarm' name='l_upperarm'>
+                  <TouchSensor DEF='ts_l_shoulder' description='l_shoulder (click to select)'/>
+                  <Transform translation='0.2 1.4 0'><Shape><Appearance DEF='ap_l_shoulder'><Material DEF='m_l_shoulder' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+                  <Transform translation='0.34 1.4 0' rotation='0 0 -1 1.5708'><Shape><Appearance USE='ap_l_shoulder'/><Cylinder height='0.28' radius='0.045'/></Shape></Transform>
+                </HAnimSegment>
+                <HAnimJoint DEF='l_elbow' name='l_elbow' center='0.48 1.4 0' llimit='-1.5708 -2.5307 0' ulimit='1.5708 0 0'>
+                  <HAnimSegment DEF='l_forearm' name='l_forearm'>
+                    <TouchSensor DEF='ts_l_elbow' description='l_elbow (click to select)'/>
+                    <Transform translation='0.48 1.4 0'><Shape><Appearance DEF='ap_l_elbow'><Material DEF='m_l_elbow' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.05'/></Shape></Transform>
+                    <Transform translation='0.61 1.4 0' rotation='0 0 -1 1.5708'><Shape><Appearance USE='ap_l_elbow'/><Cylinder height='0.26' radius='0.038'/></Shape></Transform>
+                  </HAnimSegment>
+                  <HAnimJoint DEF='l_radiocarpal' name='l_radiocarpal' center='0.74 1.4 0' llimit='-0.1745 -0.5236 -1.2217' ulimit='0.1745 0.3491 1.0472'>
+                    <HAnimSegment DEF='l_hand' name='l_hand'>
+                      <TouchSensor DEF='ts_l_radiocarpal' description='l_radiocarpal (click to select)'/>
+                      <Transform translation='0.74 1.4 0'><Shape><Appearance DEF='ap_l_radiocarpal'><Material DEF='m_l_radiocarpal' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.045'/></Shape></Transform>
+                      <Transform translation='0.8 1.4 0' rotation='0 0 -1 1.5708'><Shape><Appearance USE='ap_l_radiocarpal'/><Cylinder height='0.12' radius='0.032'/></Shape></Transform>
+                    </HAnimSegment>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+              <HAnimJoint DEF='r_shoulder' name='r_shoulder' center='-0.2 1.4 0' llimit='-1.5708 -0.7854 -3.1416' ulimit='1.5708 2.3562 1.5708'>
+                <HAnimSegment DEF='r_upperarm' name='r_upperarm'>
+                  <TouchSensor DEF='ts_r_shoulder' description='r_shoulder (click to select)'/>
+                  <Transform translation='-0.2 1.4 0'><Shape><Appearance DEF='ap_r_shoulder'><Material DEF='m_r_shoulder' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+                  <Transform translation='-0.34 1.4 0' rotation='0 0 1 1.5708'><Shape><Appearance USE='ap_r_shoulder'/><Cylinder height='0.28' radius='0.045'/></Shape></Transform>
+                </HAnimSegment>
+                <HAnimJoint DEF='r_elbow' name='r_elbow' center='-0.48 1.4 0' llimit='-1.5708 0 0' ulimit='1.5708 2.5307 0'>
+                  <HAnimSegment DEF='r_forearm' name='r_forearm'>
+                    <TouchSensor DEF='ts_r_elbow' description='r_elbow (click to select)'/>
+                    <Transform translation='-0.48 1.4 0'><Shape><Appearance DEF='ap_r_elbow'><Material DEF='m_r_elbow' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.05'/></Shape></Transform>
+                    <Transform translation='-0.61 1.4 0' rotation='0 0 1 1.5708'><Shape><Appearance USE='ap_r_elbow'/><Cylinder height='0.26' radius='0.038'/></Shape></Transform>
+                  </HAnimSegment>
+                  <HAnimJoint DEF='r_radiocarpal' name='r_radiocarpal' center='-0.74 1.4 0' llimit='-0.1745 -0.3491 -1.0472' ulimit='0.1745 0.5236 1.2217'>
+                    <HAnimSegment DEF='r_hand' name='r_hand'>
+                      <TouchSensor DEF='ts_r_radiocarpal' description='r_radiocarpal (click to select)'/>
+                      <Transform translation='-0.74 1.4 0'><Shape><Appearance DEF='ap_r_radiocarpal'><Material DEF='m_r_radiocarpal' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.045'/></Shape></Transform>
+                      <Transform translation='-0.8 1.4 0' rotation='0 0 1 1.5708'><Shape><Appearance USE='ap_r_radiocarpal'/><Cylinder height='0.12' radius='0.032'/></Shape></Transform>
+                    </HAnimSegment>
+                  </HAnimJoint>
+                </HAnimJoint>
+              </HAnimJoint>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+        <HAnimJoint DEF='l_hip' name='l_hip' center='0.09 0.92 0' llimit='-2.0944 -0.7854 -0.5236' ulimit='0.5236 0.7854 0.7854'>
+          <HAnimSegment DEF='l_thigh' name='l_thigh'>
+            <TouchSensor DEF='ts_l_hip' description='l_hip (click to select)'/>
+            <Transform translation='0.09 0.92 0'><Shape><Appearance DEF='ap_l_hip'><Material DEF='m_l_hip' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+            <Transform translation='0.09 0.71 0' rotation='1 0 0 3.1416'><Shape><Appearance USE='ap_l_hip'/><Cylinder height='0.42' radius='0.065'/></Shape></Transform>
+          </HAnimSegment>
+          <HAnimJoint DEF='l_knee' name='l_knee' center='0.09 0.5 0' llimit='0 -0.0873 0' ulimit='2.3562 0.0873 0'>
+            <HAnimSegment DEF='l_calf' name='l_calf'>
+              <TouchSensor DEF='ts_l_knee' description='l_knee (click to select)'/>
+              <Transform translation='0.09 0.5 0'><Shape><Appearance DEF='ap_l_knee'><Material DEF='m_l_knee' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+              <Transform translation='0.09 0.29 0' rotation='1 0 0 3.1416'><Shape><Appearance USE='ap_l_knee'/><Cylinder height='0.42' radius='0.05'/></Shape></Transform>
+            </HAnimSegment>
+            <HAnimJoint DEF='l_talocrural' name='l_talocrural' center='0.09 0.08 0' llimit='-0.4363 -0.2618 -0.1745' ulimit='0.8727 0.2618 0.1745'>
+              <HAnimSegment DEF='l_hindfoot' name='l_hindfoot'>
+                <TouchSensor DEF='ts_l_talocrural' description='l_talocrural (click to select)'/>
+                <Transform translation='0.09 0.08 0'><Shape><Appearance DEF='ap_l_talocrural'><Material DEF='m_l_talocrural' diffuseColor='0.35 0.55 0.95'/></Appearance><Sphere radius='0.05'/></Shape></Transform>
+                <Transform translation='0.09 0.05 0.06' rotation='1 0 0 1.5708'><Shape><Appearance USE='ap_l_talocrural'/><Cylinder height='0.2' radius='0.04'/></Shape></Transform>
+              </HAnimSegment>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+        <HAnimJoint DEF='r_hip' name='r_hip' center='-0.09 0.92 0' llimit='-2.0944 -0.7854 -0.7854' ulimit='0.5236 0.7854 0.5236'>
+          <HAnimSegment DEF='r_thigh' name='r_thigh'>
+            <TouchSensor DEF='ts_r_hip' description='r_hip (click to select)'/>
+            <Transform translation='-0.09 0.92 0'><Shape><Appearance DEF='ap_r_hip'><Material DEF='m_r_hip' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+            <Transform translation='-0.09 0.71 0' rotation='1 0 0 3.1416'><Shape><Appearance USE='ap_r_hip'/><Cylinder height='0.42' radius='0.065'/></Shape></Transform>
+          </HAnimSegment>
+          <HAnimJoint DEF='r_knee' name='r_knee' center='-0.09 0.5 0' llimit='0 -0.0873 0' ulimit='2.3562 0.0873 0'>
+            <HAnimSegment DEF='r_calf' name='r_calf'>
+              <TouchSensor DEF='ts_r_knee' description='r_knee (click to select)'/>
+              <Transform translation='-0.09 0.5 0'><Shape><Appearance DEF='ap_r_knee'><Material DEF='m_r_knee' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.055'/></Shape></Transform>
+              <Transform translation='-0.09 0.29 0' rotation='1 0 0 3.1416'><Shape><Appearance USE='ap_r_knee'/><Cylinder height='0.42' radius='0.05'/></Shape></Transform>
+            </HAnimSegment>
+            <HAnimJoint DEF='r_talocrural' name='r_talocrural' center='-0.09 0.08 0' llimit='-0.4363 -0.2618 -0.1745' ulimit='0.8727 0.2618 0.1745'>
+              <HAnimSegment DEF='r_hindfoot' name='r_hindfoot'>
+                <TouchSensor DEF='ts_r_talocrural' description='r_talocrural (click to select)'/>
+                <Transform translation='-0.09 0.08 0'><Shape><Appearance DEF='ap_r_talocrural'><Material DEF='m_r_talocrural' diffuseColor='0.95 0.45 0.35'/></Appearance><Sphere radius='0.05'/></Shape></Transform>
+                <Transform translation='-0.09 0.05 0.06' rotation='1 0 0 1.5708'><Shape><Appearance USE='ap_r_talocrural'/><Cylinder height='0.2' radius='0.04'/></Shape></Transform>
+              </HAnimSegment>
+            </HAnimJoint>
+          </HAnimJoint>
+        </HAnimJoint>
+      </HAnimJoint>
+      <HAnimJoint USE='HumanoidRoot' containerField='joints'/>
+      <HAnimJoint USE='sacroiliac' containerField='joints'/>
+      <HAnimJoint USE='vl5' containerField='joints'/>
+      <HAnimJoint USE='vc7' containerField='joints'/>
+      <HAnimJoint USE='skullbase' containerField='joints'/>
+      <HAnimJoint USE='l_hip' containerField='joints'/>
+      <HAnimJoint USE='l_knee' containerField='joints'/>
+      <HAnimJoint USE='l_talocrural' containerField='joints'/>
+      <HAnimJoint USE='l_shoulder' containerField='joints'/>
+      <HAnimJoint USE='l_elbow' containerField='joints'/>
+      <HAnimJoint USE='l_radiocarpal' containerField='joints'/>
+      <HAnimJoint USE='r_hip' containerField='joints'/>
+      <HAnimJoint USE='r_knee' containerField='joints'/>
+      <HAnimJoint USE='r_talocrural' containerField='joints'/>
+      <HAnimJoint USE='r_shoulder' containerField='joints'/>
+      <HAnimJoint USE='r_elbow' containerField='joints'/>
+      <HAnimJoint USE='r_radiocarpal' containerField='joints'/>
+      <HAnimSegment USE='pelvis' containerField='segments'/>
+      <HAnimSegment USE='sacrum' containerField='segments'/>
+      <HAnimSegment USE='l5' containerField='segments'/>
+      <HAnimSegment USE='c7' containerField='segments'/>
+      <HAnimSegment USE='skull' containerField='segments'/>
+      <HAnimSegment USE='l_thigh' containerField='segments'/>
+      <HAnimSegment USE='l_calf' containerField='segments'/>
+      <HAnimSegment USE='l_hindfoot' containerField='segments'/>
+      <HAnimSegment USE='l_upperarm' containerField='segments'/>
+      <HAnimSegment USE='l_forearm' containerField='segments'/>
+      <HAnimSegment USE='l_hand' containerField='segments'/>
+      <HAnimSegment USE='r_thigh' containerField='segments'/>
+      <HAnimSegment USE='r_calf' containerField='segments'/>
+      <HAnimSegment USE='r_hindfoot' containerField='segments'/>
+      <HAnimSegment USE='r_upperarm' containerField='segments'/>
+      <HAnimSegment USE='r_forearm' containerField='segments'/>
+      <HAnimSegment USE='r_hand' containerField='segments'/>
+    </HAnimHumanoid>
+
+    <Transform DEF='gimbalG' translation='2.1 1.1 0'>
+      <Group>
+        <CylinderSensor DEF='csGX' axisRotation='0 0 1 -1.5708' description='X ring'/>
+        <Transform DEF='ringGX'>
+          <Transform rotation='0 0 1 1.5708'><Shape><Appearance><Material DEF='rmGX' diffuseColor='1 0.2 0.2' emissiveColor='0.3 0.06 0.06'/></Appearance><Extrusion beginCap='false' endCap='false' solid='false' creaseAngle='1.57' crossSection='0.045 0 0.0318 0.0318 0 0.045 -0.0318 0.0318 -0.045 0 -0.0318 -0.0318 0 -0.045 0.0318 -0.0318 0.045 0' spine='0.6 0 0 0.5949 0 0.0783 0.5796 0 0.1553 0.5543 0 0.2296 0.5196 0 0.3 0.476 0 0.3653 0.4243 0 0.4243 0.3653 0 0.476 0.3 0 0.5196 0.2296 0 0.5543 0.1553 0 0.5796 0.0783 0 0.5949 0 0 0.6 -0.0783 0 0.5949 -0.1553 0 0.5796 -0.2296 0 0.5543 -0.3 0 0.5196 -0.3653 0 0.476 -0.4243 0 0.4243 -0.476 0 0.3653 -0.5196 0 0.3 -0.5543 0 0.2296 -0.5796 0 0.1553 -0.5949 0 0.0783 -0.6 0 0 -0.5949 0 -0.0783 -0.5796 0 -0.1553 -0.5543 0 -0.2296 -0.5196 0 -0.3 -0.476 0 -0.3653 -0.4243 0 -0.4243 -0.3653 0 -0.476 -0.3 0 -0.5196 -0.2296 0 -0.5543 -0.1553 0 -0.5796 -0.0783 0 -0.5949 0 0 -0.6 0.0783 0 -0.5949 0.1553 0 -0.5796 0.2296 0 -0.5543 0.3 0 -0.5196 0.3653 0 -0.476 0.4243 0 -0.4243 0.476 0 -0.3653 0.5196 0 -0.3 0.5543 0 -0.2296 0.5796 0 -0.1553 0.5949 0 -0.0783 0.6 0 0'/></Shape></Transform>
+          <Group>
+            <CylinderSensor DEF='csGY' axisRotation='0 0 1 0' description='Y ring'/>
+            <Transform DEF='ringGY'>
+              <Transform rotation='0 0 1 0'><Shape><Appearance><Material DEF='rmGY' diffuseColor='0.2 0.9 0.2' emissiveColor='0.06 0.27 0.06'/></Appearance><Extrusion beginCap='false' endCap='false' solid='false' creaseAngle='1.57' crossSection='0.045 0 0.0318 0.0318 0 0.045 -0.0318 0.0318 -0.045 0 -0.0318 -0.0318 0 -0.045 0.0318 -0.0318 0.045 0' spine='0.48 0 0 0.4759 0 0.0627 0.4636 0 0.1242 0.4435 0 0.1837 0.4157 0 0.24 0.3808 0 0.2922 0.3394 0 0.3394 0.2922 0 0.3808 0.24 0 0.4157 0.1837 0 0.4435 0.1242 0 0.4636 0.0627 0 0.4759 0 0 0.48 -0.0627 0 0.4759 -0.1242 0 0.4636 -0.1837 0 0.4435 -0.24 0 0.4157 -0.2922 0 0.3808 -0.3394 0 0.3394 -0.3808 0 0.2922 -0.4157 0 0.24 -0.4435 0 0.1837 -0.4636 0 0.1242 -0.4759 0 0.0627 -0.48 0 0 -0.4759 0 -0.0627 -0.4636 0 -0.1242 -0.4435 0 -0.1837 -0.4157 0 -0.24 -0.3808 0 -0.2922 -0.3394 0 -0.3394 -0.2922 0 -0.3808 -0.24 0 -0.4157 -0.1837 0 -0.4435 -0.1242 0 -0.4636 -0.0627 0 -0.4759 0 0 -0.48 0.0627 0 -0.4759 0.1242 0 -0.4636 0.1837 0 -0.4435 0.24 0 -0.4157 0.2922 0 -0.3808 0.3394 0 -0.3394 0.3808 0 -0.2922 0.4157 0 -0.24 0.4435 0 -0.1837 0.4636 0 -0.1242 0.4759 0 -0.0627 0.48 0 0'/></Shape></Transform>
+              <Group>
+                <CylinderSensor DEF='csGZ' axisRotation='1 0 0 1.5708' description='Z ring'/>
+                <Transform DEF='ringGZ'>
+                  <Transform rotation='1 0 0 1.5708'><Shape><Appearance><Material DEF='rmGZ' diffuseColor='0.3 0.5 1' emissiveColor='0.09 0.15 0.3'/></Appearance><Extrusion beginCap='false' endCap='false' solid='false' creaseAngle='1.57' crossSection='0.045 0 0.0318 0.0318 0 0.045 -0.0318 0.0318 -0.045 0 -0.0318 -0.0318 0 -0.045 0.0318 -0.0318 0.045 0' spine='0.36 0 0 0.3569 0 0.047 0.3477 0 0.0932 0.3326 0 0.1378 0.3118 0 0.18 0.2856 0 0.2192 0.2546 0 0.2546 0.2192 0 0.2856 0.18 0 0.3118 0.1378 0 0.3326 0.0932 0 0.3477 0.047 0 0.3569 0 0 0.36 -0.047 0 0.3569 -0.0932 0 0.3477 -0.1378 0 0.3326 -0.18 0 0.3118 -0.2192 0 0.2856 -0.2546 0 0.2546 -0.2856 0 0.2192 -0.3118 0 0.18 -0.3326 0 0.1378 -0.3477 0 0.0932 -0.3569 0 0.047 -0.36 0 0 -0.3569 0 -0.047 -0.3477 0 -0.0932 -0.3326 0 -0.1378 -0.3118 0 -0.18 -0.2856 0 -0.2192 -0.2546 0 -0.2546 -0.2192 0 -0.2856 -0.18 0 -0.3118 -0.1378 0 -0.3326 -0.0932 0 -0.3477 -0.047 0 -0.3569 0 0 -0.36 0.047 0 -0.3569 0.0932 0 -0.3477 0.1378 0 -0.3326 0.18 0 -0.3118 0.2192 0 -0.2856 0.2546 0 -0.2546 0.2856 0 -0.2192 0.3118 0 -0.18 0.3326 0 -0.1378 0.3477 0 -0.0932 0.3569 0 -0.047 0.36 0 0'/></Shape></Transform>
+                  <Transform translation='0.15 0 0' rotation='0 0 1 -1.5708'><Shape><Appearance><Material diffuseColor='1 0 0' emissiveColor='1 0 0'/></Appearance><Cylinder height='0.3' radius='0.015'/></Shape></Transform><Transform translation='0 0.15 0' rotation='0 0 1 0'><Shape><Appearance><Material diffuseColor='0 1 0' emissiveColor='0 1 0'/></Appearance><Cylinder height='0.3' radius='0.015'/></Shape></Transform><Transform translation='0 0 0.15' rotation='1 0 0 1.5708'><Shape><Appearance><Material diffuseColor='0 0 1' emissiveColor='0 0 1'/></Appearance><Cylinder height='0.3' radius='0.015'/></Shape></Transform>
+                </Transform>
+              </Group>
+            </Transform>
+          </Group>
+        </Transform>
+      </Group>
+      <Shape><Appearance><Material diffuseColor='0.8 0.8 0.8'/></Appearance><Sphere radius='0.05'/></Shape>
+      <Transform translation='0 -0.85 0'>
+        <Shape><Appearance><Material diffuseColor='1 1 1' emissiveColor='1 1 1'/></Appearance>
+          <Text DEF='txtG' string='"GIMBAL"'><FontStyle justify='"MIDDLE" "FIRST"' size='0.075' spacing='1.2'/></Text></Shape>
+      </Transform>
+      <Group>
+        <TouchSensor DEF='tsPrev' description='previous joint'/>
+        <Transform translation='-0.42 -1.35 0'>
+          <Shape><Appearance><Material diffuseColor='0.2 0.2 0.28' emissiveColor='0.08 0.08 0.14'/></Appearance><Box size='0.36 0.14 0.04'/></Shape>
+          <Transform translation='0 0 0.03'><Shape><Appearance><Material diffuseColor='1 1 1' emissiveColor='1 1 1'/></Appearance><Text string='"PREV"'><FontStyle justify='"MIDDLE" "MIDDLE"' size='0.075'/></Text></Shape></Transform>
+        </Transform>
+      </Group>
+      <Group>
+        <TouchSensor DEF='tsNext' description='next joint'/>
+        <Transform translation='0 -1.35 0'>
+          <Shape><Appearance><Material diffuseColor='0.2 0.2 0.28' emissiveColor='0.08 0.08 0.14'/></Appearance><Box size='0.36 0.14 0.04'/></Shape>
+          <Transform translation='0 0 0.03'><Shape><Appearance><Material diffuseColor='1 1 1' emissiveColor='1 1 1'/></Appearance><Text string='"NEXT"'><FontStyle justify='"MIDDLE" "MIDDLE"' size='0.075'/></Text></Shape></Transform>
+        </Transform>
+      </Group>
+      <Group>
+        <TouchSensor DEF='tsReset' description='reset joint'/>
+        <Transform translation='0.42 -1.35 0'>
+          <Shape><Appearance><Material diffuseColor='0.2 0.2 0.28' emissiveColor='0.08 0.08 0.14'/></Appearance><Box size='0.36 0.14 0.04'/></Shape>
+          <Transform translation='0 0 0.03'><Shape><Appearance><Material diffuseColor='1 1 1' emissiveColor='1 1 1'/></Appearance><Text string='"RESET"'><FontStyle justify='"MIDDLE" "MIDDLE"' size='0.075'/></Text></Shape></Transform>
+        </Transform>
+      </Group>
+    </Transform>
+
+    <Script DEF='controller' url='&quot;castlescript:
+{ HAnim gimbal controller in CastleScript.
+  CastleScript functions cannot call other user functions and cannot touch other nodes, so:
+   - every effect on the scene is an outputOnly event that the X3D file ROUTEs to the target node;
+   - shared work is done by two functions, refresh and apply, that are triggered by the
+     outputOnly events doRefresh / doApply, which the X3D file ROUTEs back into this Script;
+   - variables are initializeOnly fields of the Script node (there are no local variables).
+  Gimbal rotation order: X (outer ring), Y, Z (inner ring); joint rotation = Rx * Ry * Rz. }
+
+function refresh(value, timestamp)
+  (
+  when(or(sel = 0, oldSel = 0), col_HumanoidRoot := if(sel = 0, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 1, oldSel = 1), col_sacroiliac := if(sel = 1, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 2, oldSel = 2), col_vl5 := if(sel = 2, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 3, oldSel = 3), col_vc7 := if(sel = 3, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 4, oldSel = 4), col_skullbase := if(sel = 4, vector(1.0, 0.85, 0.1), vector(0.4, 0.8, 0.4)));
+  when(or(sel = 5, oldSel = 5), col_l_hip := if(sel = 5, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 6, oldSel = 6), col_l_knee := if(sel = 6, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 7, oldSel = 7), col_l_talocrural := if(sel = 7, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 8, oldSel = 8), col_l_shoulder := if(sel = 8, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 9, oldSel = 9), col_l_elbow := if(sel = 9, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 10, oldSel = 10), col_l_radiocarpal := if(sel = 10, vector(1.0, 0.85, 0.1), vector(0.35, 0.55, 0.95)));
+  when(or(sel = 11, oldSel = 11), col_r_hip := if(sel = 11, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 12, oldSel = 12), col_r_knee := if(sel = 12, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 13, oldSel = 13), col_r_talocrural := if(sel = 13, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 14, oldSel = 14), col_r_shoulder := if(sel = 14, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 15, oldSel = 15), col_r_elbow := if(sel = 15, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  when(or(sel = 16, oldSel = 16), col_r_radiocarpal := if(sel = 16, vector(1.0, 0.85, 0.1), vector(0.95, 0.45, 0.35)));
+  t_lo := array_get(limits, 6*sel + 0);
+  t_hi := array_get(limits, 6*sel + 3);
+  array_set(ang, 3*sel + 0, max(t_lo, min(t_hi, array_get(ang, 3*sel + 0))));
+  sMinX := t_lo;
+  sMaxX := t_hi;
+  sOffX := array_get(ang, 3*sel + 0);
+  sEnaX := abs(t_hi - t_lo) &gt; 0.000001;
+  ringTrX := if(abs(t_hi - t_lo) &gt; 0.000001, 0.0, 0.65);
+  ringRotX := vector(1.0, 0.0, 0.0, array_get(ang, 3*sel + 0));
+  t_lo := array_get(limits, 6*sel + 1);
+  t_hi := array_get(limits, 6*sel + 4);
+  array_set(ang, 3*sel + 1, max(t_lo, min(t_hi, array_get(ang, 3*sel + 1))));
+  sMinY := t_lo;
+  sMaxY := t_hi;
+  sOffY := array_get(ang, 3*sel + 1);
+  sEnaY := abs(t_hi - t_lo) &gt; 0.000001;
+  ringTrY := if(abs(t_hi - t_lo) &gt; 0.000001, 0.0, 0.65);
+  ringRotY := vector(0.0, 1.0, 0.0, array_get(ang, 3*sel + 1));
+  t_lo := array_get(limits, 6*sel + 2);
+  t_hi := array_get(limits, 6*sel + 5);
+  array_set(ang, 3*sel + 2, max(t_lo, min(t_hi, array_get(ang, 3*sel + 2))));
+  sMinZ := t_lo;
+  sMaxZ := t_hi;
+  sOffZ := array_get(ang, 3*sel + 2);
+  sEnaZ := abs(t_hi - t_lo) &gt; 0.000001;
+  ringTrZ := if(abs(t_hi - t_lo) &gt; 0.000001, 0.0, 0.65);
+  ringRotZ := vector(0.0, 0.0, 1.0, array_get(ang, 3*sel + 2));
+  doApply := timestamp
+  )
+
+function apply(value, timestamp)
+  (
+  t_sx := sin(array_get(ang, 3*sel) / 2.0);
+  t_cx := cos(array_get(ang, 3*sel) / 2.0);
+  t_sy := sin(array_get(ang, 3*sel + 1) / 2.0);
+  t_cy := cos(array_get(ang, 3*sel + 1) / 2.0);
+  t_sz := sin(array_get(ang, 3*sel + 2) / 2.0);
+  t_cz := cos(array_get(ang, 3*sel + 2) / 2.0);
+  t_qx := t_sx*t_cy*t_cz + t_cx*t_sy*t_sz;
+  t_qy := t_cx*t_sy*t_cz - t_sx*t_cy*t_sz;
+  t_qz := t_cx*t_cy*t_sz + t_sx*t_sy*t_cz;
+  t_qw := t_cx*t_cy*t_cz - t_sx*t_sy*t_sz;
+  t_s := sqrt(t_qx*t_qx + t_qy*t_qy + t_qz*t_qz);
+  t_rot := if(t_s &lt; 0.000001, vector(0.0, 0.0, 1.0, 0.0), vector(t_qx / t_s, t_qy / t_s, t_qz / t_s, 2.0 * arccos(max(-1.0, min(1.0, t_qw)))));
+  when(sel = 0, rot_HumanoidRoot := t_rot);
+  when(sel = 1, rot_sacroiliac := t_rot);
+  when(sel = 2, rot_vl5 := t_rot);
+  when(sel = 3, rot_vc7 := t_rot);
+  when(sel = 4, rot_skullbase := t_rot);
+  when(sel = 5, rot_l_hip := t_rot);
+  when(sel = 6, rot_l_knee := t_rot);
+  when(sel = 7, rot_l_talocrural := t_rot);
+  when(sel = 8, rot_l_shoulder := t_rot);
+  when(sel = 9, rot_l_elbow := t_rot);
+  when(sel = 10, rot_l_radiocarpal := t_rot);
+  when(sel = 11, rot_r_hip := t_rot);
+  when(sel = 12, rot_r_knee := t_rot);
+  when(sel = 13, rot_r_talocrural := t_rot);
+  when(sel = 14, rot_r_shoulder := t_rot);
+  when(sel = 15, rot_r_elbow := t_rot);
+  when(sel = 16, rot_r_radiocarpal := t_rot);
+  labelText := array(
+    array_get(sideNames, array_get(sideOf, sel)) + &#x27;: &#x27; + array_get(names, sel),
+    &#x27;X &#x27; + string(round(array_get(ang, 3*sel + 0) * 180.0 / pi)) + &#x27;   &#x27; + &#x27;Y &#x27; + string(round(array_get(ang, 3*sel + 1) * 180.0 / pi)) + &#x27;   &#x27; + &#x27;Z &#x27; + string(round(array_get(ang, 3*sel + 2) * 180.0 / pi)),
+    &#x27;limits &#x27; + &#x27;X[&#x27; + string(round(array_get(limits, 6*sel + 0) * 180.0 / pi)) + &#x27;,&#x27; + string(round(array_get(limits, 6*sel + 3) * 180.0 / pi)) + &#x27;]&#x27; + &#x27; &#x27; + &#x27;Y[&#x27; + string(round(array_get(limits, 6*sel + 1) * 180.0 / pi)) + &#x27;,&#x27; + string(round(array_get(limits, 6*sel + 4) * 180.0 / pi)) + &#x27;]&#x27; + &#x27; &#x27; + &#x27;Z[&#x27; + string(round(array_get(limits, 6*sel + 2) * 180.0 / pi)) + &#x27;,&#x27; + string(round(array_get(limits, 6*sel + 5) * 180.0 / pi)) + &#x27;]&#x27;
+  )
+  )
+
+function rotX(value, timestamp)
+  when(sel &gt;= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) &lt; 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 0);
+    t_hi := array_get(limits, 6*sel + 3);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 0, t_a);
+    ringRotX := vector(1.0, 0.0, 0.0, t_a);
+    doApply := timestamp
+    ))
+
+function rotY(value, timestamp)
+  when(sel &gt;= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) &lt; 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 1);
+    t_hi := array_get(limits, 6*sel + 4);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 1, t_a);
+    ringRotY := vector(0.0, 1.0, 0.0, t_a);
+    doApply := timestamp
+    ))
+
+function rotZ(value, timestamp)
+  when(sel &gt;= 0,
+    (
+    t_sg := if(vector_get(value, 0) + vector_get(value, 1) + vector_get(value, 2) &lt; 0.0, -1.0, 1.0);
+    t_a := t_sg * vector_get(value, 3);
+    t_lo := array_get(limits, 6*sel + 2);
+    t_hi := array_get(limits, 6*sel + 5);
+    t_a := max(t_lo, min(t_hi, t_a));
+    array_set(ang, 3*sel + 2, t_a);
+    ringRotZ := vector(0.0, 0.0, 1.0, t_a);
+    doApply := timestamp
+    ))
+
+function next(value, timestamp)
+  (
+  oldSel := sel;
+  sel := if(sel &gt;= 16, 0, sel + 1);
+  doRefresh := timestamp
+  )
+
+function prev(value, timestamp)
+  (
+  oldSel := sel;
+  sel := if(sel &lt;= 0, 16, sel - 1);
+  doRefresh := timestamp
+  )
+
+function reset(value, timestamp)
+  (
+  array_set(ang, 3*sel, 0.0);
+  array_set(ang, 3*sel + 1, 0.0);
+  array_set(ang, 3*sel + 2, 0.0);
+  oldSel := sel;
+  doRefresh := timestamp
+  )
+
+function pick_HumanoidRoot(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 0;
+  doRefresh := timestamp
+  )
+
+function pick_sacroiliac(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 1;
+  doRefresh := timestamp
+  )
+
+function pick_vl5(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 2;
+  doRefresh := timestamp
+  )
+
+function pick_vc7(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 3;
+  doRefresh := timestamp
+  )
+
+function pick_skullbase(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 4;
+  doRefresh := timestamp
+  )
+
+function pick_l_hip(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 5;
+  doRefresh := timestamp
+  )
+
+function pick_l_knee(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 6;
+  doRefresh := timestamp
+  )
+
+function pick_l_talocrural(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 7;
+  doRefresh := timestamp
+  )
+
+function pick_l_shoulder(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 8;
+  doRefresh := timestamp
+  )
+
+function pick_l_elbow(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 9;
+  doRefresh := timestamp
+  )
+
+function pick_l_radiocarpal(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 10;
+  doRefresh := timestamp
+  )
+
+function pick_r_hip(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 11;
+  doRefresh := timestamp
+  )
+
+function pick_r_knee(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 12;
+  doRefresh := timestamp
+  )
+
+function pick_r_talocrural(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 13;
+  doRefresh := timestamp
+  )
+
+function pick_r_shoulder(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 14;
+  doRefresh := timestamp
+  )
+
+function pick_r_elbow(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 15;
+  doRefresh := timestamp
+  )
+
+function pick_r_radiocarpal(value, timestamp)
+  (
+  oldSel := sel;
+  sel := 16;
+  doRefresh := timestamp
+  )
+
+function initialize(timestamp)
+  doRefresh := timestamp
+&quot;'>
+      <field name='rotX' type='SFRotation' accessType='inputOnly'/>
+      <field name='rotY' type='SFRotation' accessType='inputOnly'/>
+      <field name='rotZ' type='SFRotation' accessType='inputOnly'/>
+      <field name='next' type='SFTime' accessType='inputOnly'/>
+      <field name='prev' type='SFTime' accessType='inputOnly'/>
+      <field name='reset' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_HumanoidRoot' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_sacroiliac' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_vl5' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_vc7' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_skullbase' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_hip' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_knee' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_talocrural' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_shoulder' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_elbow' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_l_radiocarpal' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_hip' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_knee' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_talocrural' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_shoulder' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_elbow' type='SFTime' accessType='inputOnly'/>
+      <field name='pick_r_radiocarpal' type='SFTime' accessType='inputOnly'/>
+      <field name='rot_HumanoidRoot' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_sacroiliac' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_vl5' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_vc7' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_skullbase' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_hip' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_knee' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_talocrural' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_shoulder' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_elbow' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_l_radiocarpal' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_hip' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_knee' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_talocrural' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_shoulder' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_elbow' type='SFRotation' accessType='outputOnly'/>
+      <field name='rot_r_radiocarpal' type='SFRotation' accessType='outputOnly'/>
+      <field name='col_HumanoidRoot' type='SFColor' accessType='outputOnly'/>
+      <field name='col_sacroiliac' type='SFColor' accessType='outputOnly'/>
+      <field name='col_vl5' type='SFColor' accessType='outputOnly'/>
+      <field name='col_vc7' type='SFColor' accessType='outputOnly'/>
+      <field name='col_skullbase' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_hip' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_knee' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_talocrural' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_shoulder' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_elbow' type='SFColor' accessType='outputOnly'/>
+      <field name='col_l_radiocarpal' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_hip' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_knee' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_talocrural' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_shoulder' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_elbow' type='SFColor' accessType='outputOnly'/>
+      <field name='col_r_radiocarpal' type='SFColor' accessType='outputOnly'/>
+      <field name='ringRotX' type='SFRotation' accessType='outputOnly'/>
+      <field name='sOffX' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMinX' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMaxX' type='SFFloat' accessType='outputOnly'/>
+      <field name='sEnaX' type='SFBool' accessType='outputOnly'/>
+      <field name='ringTrX' type='SFFloat' accessType='outputOnly'/>
+      <field name='ringRotY' type='SFRotation' accessType='outputOnly'/>
+      <field name='sOffY' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMinY' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMaxY' type='SFFloat' accessType='outputOnly'/>
+      <field name='sEnaY' type='SFBool' accessType='outputOnly'/>
+      <field name='ringTrY' type='SFFloat' accessType='outputOnly'/>
+      <field name='ringRotZ' type='SFRotation' accessType='outputOnly'/>
+      <field name='sOffZ' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMinZ' type='SFFloat' accessType='outputOnly'/>
+      <field name='sMaxZ' type='SFFloat' accessType='outputOnly'/>
+      <field name='sEnaZ' type='SFBool' accessType='outputOnly'/>
+      <field name='ringTrZ' type='SFFloat' accessType='outputOnly'/>
+      <field name='labelText' type='MFString' accessType='outputOnly'/>
+      <field name='sel' type='SFInt32' accessType='initializeOnly' value='8'/>
+      <field name='oldSel' type='SFInt32' accessType='initializeOnly' value='-1'/>
+      <field name='doRefresh' type='SFTime' accessType='outputOnly'/>
+      <field name='doApply' type='SFTime' accessType='outputOnly'/>
+      <field name='refresh' type='SFTime' accessType='inputOnly'/>
+      <field name='apply' type='SFTime' accessType='inputOnly'/>
+      <field name='ang' type='MFFloat' accessType='initializeOnly' value='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0'/>
+      <field name='limits' type='MFFloat' accessType='initializeOnly' value='-0.7854 -3.1416 -0.7854 0.7854 3.1416 0.7854 -0.3491 -0.3491 -0.2618 0.5236 0.3491 0.2618 -0.5236 -0.5236 -0.4363 0.7854 0.5236 0.4363 -0.5236 -0.6981 -0.5236 0.6981 0.6981 0.5236 -0.6981 -1.2217 -0.6109 0.8727 1.2217 0.6109 -2.0944 -0.7854 -0.5236 0.5236 0.7854 0.7854 0 -0.0873 0 2.3562 0.0873 0 -0.4363 -0.2618 -0.1745 0.8727 0.2618 0.1745 -1.5708 -2.3562 -1.5708 1.5708 0.7854 3.1416 -1.5708 -2.5307 0 1.5708 0 0 -0.1745 -0.5236 -1.2217 0.1745 0.3491 1.0472 -2.0944 -0.7854 -0.7854 0.5236 0.7854 0.5236 0 -0.0873 0 2.3562 0.0873 0 -0.4363 -0.2618 -0.1745 0.8727 0.2618 0.1745 -1.5708 -0.7854 -3.1416 1.5708 2.3562 1.5708 -1.5708 0 0 1.5708 2.5307 0 -0.1745 -0.3491 -1.0472 0.1745 0.5236 1.2217'/>
+      <field name='sideOf' type='MFInt32' accessType='initializeOnly' value='2 2 2 2 2 0 0 0 0 0 0 1 1 1 1 1 1'/>
+      <field name='sideNames' type='MFString' accessType='initializeOnly' value='"LEFT" "RIGHT" "CENTER"'/>
+      <field name='names' type='MFString' accessType='initializeOnly' value='"HumanoidRoot" "sacroiliac" "vl5" "vc7" "skullbase" "l_hip" "l_knee" "l_talocrural" "l_shoulder" "l_elbow" "l_radiocarpal" "r_hip" "r_knee" "r_talocrural" "r_shoulder" "r_elbow" "r_radiocarpal"'/>
+      <field name='t_sx' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_cx' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_sy' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_cy' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_sz' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_cz' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_qx' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_qy' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_qz' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_qw' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_s' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_lo' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_hi' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_a' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_sg' type='SFFloat' accessType='initializeOnly' value='0'/>
+      <field name='t_rot' type='SFRotation' accessType='initializeOnly' value='0 0 1 0'/>
+    </Script>
+
+    <ROUTE fromNode='csGX' fromField='rotation_changed' toNode='controller' toField='rotX'/>
+    <ROUTE fromNode='csGY' fromField='rotation_changed' toNode='controller' toField='rotY'/>
+    <ROUTE fromNode='csGZ' fromField='rotation_changed' toNode='controller' toField='rotZ'/>
+    <ROUTE fromNode='tsNext' fromField='touchTime' toNode='controller' toField='next'/>
+    <ROUTE fromNode='tsPrev' fromField='touchTime' toNode='controller' toField='prev'/>
+    <ROUTE fromNode='tsReset' fromField='touchTime' toNode='controller' toField='reset'/>
+    <ROUTE fromNode='ts_HumanoidRoot' fromField='touchTime' toNode='controller' toField='pick_HumanoidRoot'/>
+    <ROUTE fromNode='ts_sacroiliac' fromField='touchTime' toNode='controller' toField='pick_sacroiliac'/>
+    <ROUTE fromNode='ts_vl5' fromField='touchTime' toNode='controller' toField='pick_vl5'/>
+    <ROUTE fromNode='ts_vc7' fromField='touchTime' toNode='controller' toField='pick_vc7'/>
+    <ROUTE fromNode='ts_skullbase' fromField='touchTime' toNode='controller' toField='pick_skullbase'/>
+    <ROUTE fromNode='ts_l_hip' fromField='touchTime' toNode='controller' toField='pick_l_hip'/>
+    <ROUTE fromNode='ts_l_knee' fromField='touchTime' toNode='controller' toField='pick_l_knee'/>
+    <ROUTE fromNode='ts_l_talocrural' fromField='touchTime' toNode='controller' toField='pick_l_talocrural'/>
+    <ROUTE fromNode='ts_l_shoulder' fromField='touchTime' toNode='controller' toField='pick_l_shoulder'/>
+    <ROUTE fromNode='ts_l_elbow' fromField='touchTime' toNode='controller' toField='pick_l_elbow'/>
+    <ROUTE fromNode='ts_l_radiocarpal' fromField='touchTime' toNode='controller' toField='pick_l_radiocarpal'/>
+    <ROUTE fromNode='ts_r_hip' fromField='touchTime' toNode='controller' toField='pick_r_hip'/>
+    <ROUTE fromNode='ts_r_knee' fromField='touchTime' toNode='controller' toField='pick_r_knee'/>
+    <ROUTE fromNode='ts_r_talocrural' fromField='touchTime' toNode='controller' toField='pick_r_talocrural'/>
+    <ROUTE fromNode='ts_r_shoulder' fromField='touchTime' toNode='controller' toField='pick_r_shoulder'/>
+    <ROUTE fromNode='ts_r_elbow' fromField='touchTime' toNode='controller' toField='pick_r_elbow'/>
+    <ROUTE fromNode='ts_r_radiocarpal' fromField='touchTime' toNode='controller' toField='pick_r_radiocarpal'/>
+    <ROUTE fromNode='controller' fromField='rot_HumanoidRoot' toNode='HumanoidRoot' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_HumanoidRoot' toNode='m_HumanoidRoot' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_sacroiliac' toNode='sacroiliac' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_sacroiliac' toNode='m_sacroiliac' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_vl5' toNode='vl5' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_vl5' toNode='m_vl5' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_vc7' toNode='vc7' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_vc7' toNode='m_vc7' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_skullbase' toNode='skullbase' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_skullbase' toNode='m_skullbase' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_hip' toNode='l_hip' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_hip' toNode='m_l_hip' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_knee' toNode='l_knee' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_knee' toNode='m_l_knee' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_talocrural' toNode='l_talocrural' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_talocrural' toNode='m_l_talocrural' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_shoulder' toNode='l_shoulder' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_shoulder' toNode='m_l_shoulder' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_elbow' toNode='l_elbow' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_elbow' toNode='m_l_elbow' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_l_radiocarpal' toNode='l_radiocarpal' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_l_radiocarpal' toNode='m_l_radiocarpal' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_hip' toNode='r_hip' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_hip' toNode='m_r_hip' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_knee' toNode='r_knee' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_knee' toNode='m_r_knee' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_talocrural' toNode='r_talocrural' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_talocrural' toNode='m_r_talocrural' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_shoulder' toNode='r_shoulder' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_shoulder' toNode='m_r_shoulder' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_elbow' toNode='r_elbow' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_elbow' toNode='m_r_elbow' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='rot_r_radiocarpal' toNode='r_radiocarpal' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='col_r_radiocarpal' toNode='m_r_radiocarpal' toField='set_diffuseColor'/>
+    <ROUTE fromNode='controller' fromField='ringRotX' toNode='ringGX' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='sOffX' toNode='csGX' toField='set_offset'/>
+    <ROUTE fromNode='controller' fromField='sMinX' toNode='csGX' toField='set_minAngle'/>
+    <ROUTE fromNode='controller' fromField='sMaxX' toNode='csGX' toField='set_maxAngle'/>
+    <ROUTE fromNode='controller' fromField='sEnaX' toNode='csGX' toField='set_enabled'/>
+    <ROUTE fromNode='controller' fromField='ringTrX' toNode='rmGX' toField='set_transparency'/>
+    <ROUTE fromNode='controller' fromField='ringRotY' toNode='ringGY' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='sOffY' toNode='csGY' toField='set_offset'/>
+    <ROUTE fromNode='controller' fromField='sMinY' toNode='csGY' toField='set_minAngle'/>
+    <ROUTE fromNode='controller' fromField='sMaxY' toNode='csGY' toField='set_maxAngle'/>
+    <ROUTE fromNode='controller' fromField='sEnaY' toNode='csGY' toField='set_enabled'/>
+    <ROUTE fromNode='controller' fromField='ringTrY' toNode='rmGY' toField='set_transparency'/>
+    <ROUTE fromNode='controller' fromField='ringRotZ' toNode='ringGZ' toField='set_rotation'/>
+    <ROUTE fromNode='controller' fromField='sOffZ' toNode='csGZ' toField='set_offset'/>
+    <ROUTE fromNode='controller' fromField='sMinZ' toNode='csGZ' toField='set_minAngle'/>
+    <ROUTE fromNode='controller' fromField='sMaxZ' toNode='csGZ' toField='set_maxAngle'/>
+    <ROUTE fromNode='controller' fromField='sEnaZ' toNode='csGZ' toField='set_enabled'/>
+    <ROUTE fromNode='controller' fromField='ringTrZ' toNode='rmGZ' toField='set_transparency'/>
+    <ROUTE fromNode='controller' fromField='labelText' toNode='txtG' toField='set_string'/>
+    <ROUTE fromNode='controller' fromField='doRefresh' toNode='controller' toField='refresh'/>
+    <ROUTE fromNode='controller' fromField='doApply' toNode='controller' toField='apply'/>
+  </Scene>
+</X3D>
