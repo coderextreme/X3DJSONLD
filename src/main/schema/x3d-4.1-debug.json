@@ -1,7 +1,7 @@
 {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://www.web3d.org/specifications/x3d-4.1-JSONSchema.json",
-        "title": "X3D V4.1 JSON Schema, generated 2026/10/27 01:48:29",
+        "title": "X3D V4.1 JSON Schema, generated 2026/11/09 04:28:02",
         "description": "Experimental JSON Schema for X3D V4.1.  License: Web3D Consortium License: https://www.web3d.org/license",
         "type": "object",
         "properties": {
@@ -126,7 +126,7 @@
             ]
         },
         "@geoSystem-GD": {
-            "title": "geoSystem GD/GDC — Geographic Degrees",
+            "title": "geoSystem GD/GDC - Geographic Degrees",
             "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
             "type": "array",
             "minItems": 1,
@@ -167,7 +167,7 @@
             }
         },
         "@geoSystem-GC": {
-            "title": "geoSystem GC/GCC — Geocentric",
+            "title": "geoSystem GC/GCC - Geocentric",
             "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
             "type": "array",
             "minItems": 1,
@@ -192,7 +192,7 @@
         },
         "@geoSystem-UTM-zone": {
             "title": "UTM zone number",
-            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "$comment": "Zone 1-60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
             "type": "string",
             "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
         },
@@ -9511,7 +9511,7 @@
 		},
 		"HAnimDisplacer" : {
 			"title" : "HAnimDisplacer",
-			"description" : "HAnimDisplacer nodes alter the shape of coordinate-based geometry within parent HAnimSegment or ancestor HAnimHumanoid nodes.",
+			"description" : "HAnimDisplacer nodes alter the shape of coordinate-based geometry within HAnim nodes.",
 			"oneOf": [
 {"$ref": "#/$defs/-USEField" },				{
                                  "type": "object",
@@ -9979,9 +9979,6 @@
 						"type":"string"
 					}
 				},
-				"required": [
-					"@version"
-				],
 				"additionalProperties": false
 			}
 		]
@@ -10032,7 +10029,7 @@
 						"type":"number"
 						}					},
 					"-children" : {
-						"$ref":"#/$defs/-HAnimJoint-HAnimSegmentMFNode"
+						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
 					"@description" : {
 						"pattern" : "^(\\s|\\S)*$",
@@ -10900,10 +10897,16 @@
 					"-children" : {
 						"$ref":"#/$defs/-X3DChildNodeMFNode"
 					},
+					"-coord" : {
+						"$ref":"#/$defs/-X3DCoordinateNodeSFNode"
+					},
 					"@description" : {
 						"pattern" : "^(\\s|\\S)*$",
 						"$comment":"SFString inputOutput",
 						"type":"string"
+					},
+					"-displacers" : {
+						"$ref":"#/$defs/-HAnimDisplacerMFNode"
 					},
 					"IS" : {
 						"$ref":"#/$defs/IS"
@@ -12587,9 +12590,9 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"RIGHT",
 									"CENTER",
-									"LEFT"
+									"LEFT",
+									"RIGHT"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12598,8 +12601,8 @@
 							{
 								"enum": [
 									"BOTTOM",
-									"CENTER",
-									"TOP"
+									"TOP",
+									"CENTER"
 								],
 								"default":"CENTER",
 								"type":"string"
@@ -12630,9 +12633,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"WORLD",
 									"FRACTION",
-									"PIXEL",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12640,9 +12643,9 @@
 							,
 							{
 								"enum": [
+									"WORLD",
 									"FRACTION",
-									"PIXEL",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12658,8 +12661,8 @@
 						"prefixItems": [
 							{
 								"enum": [
-									"NONE",
 									"FRACTION",
+									"NONE",
 									"PIXEL",
 									"STRETCH"
 								],
@@ -12669,8 +12672,8 @@
 							,
 							{
 								"enum": [
-									"NONE",
 									"FRACTION",
+									"NONE",
 									"PIXEL",
 									"STRETCH"
 								],
@@ -12697,9 +12700,9 @@
 						"prefixItems": [
 							{
 								"enum": [
+									"WORLD",
 									"FRACTION",
-									"PIXEL",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -12707,9 +12710,9 @@
 							,
 							{
 								"enum": [
+									"WORLD",
 									"FRACTION",
-									"PIXEL",
-									"WORLD"
+									"PIXEL"
 								],
 								"default":"WORLD",
 								"type":"string"
@@ -27989,6 +27992,9 @@
 								"Group" : {
 									"$ref":"#/$defs/Group"
 								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
+								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
 								},
@@ -28282,9 +28288,6 @@
 								},
 								"HAnimHumanoid" : {
 									"$ref":"#/$defs/HAnimHumanoid"
-								},
-								"HAnimJoint" : {
-									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimMotion" : {
 									"$ref":"#/$defs/HAnimMotion"
@@ -28967,6 +28970,9 @@
 								"Group" : {
 									"$ref":"#/$defs/Group"
 								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
+								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
 								},
@@ -29260,9 +29266,6 @@
 								},
 								"HAnimHumanoid" : {
 									"$ref":"#/$defs/HAnimHumanoid"
-								},
-								"HAnimJoint" : {
-									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimMotion" : {
 									"$ref":"#/$defs/HAnimMotion"
@@ -29879,6 +29882,9 @@
 								"Group" : {
 									"$ref":"#/$defs/Group"
 								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
+								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
 								},
@@ -30169,9 +30175,6 @@
 								},
 								"HAnimHumanoid" : {
 									"$ref":"#/$defs/HAnimHumanoid"
-								},
-								"HAnimJoint" : {
-									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimMotion" : {
 									"$ref":"#/$defs/HAnimMotion"
@@ -30718,30 +30721,6 @@
 							},
 							"additionalProperties": false
 					},
-					"-HAnimJoint-HAnimSegmentMFNode" : {
-			"title" : "HAnimJoint-HAnimSegment",
-						"$comment":"MFNode inputOutput",
-						"type": "array",
-						"minItems": 1,
-						"items": {
-							"type": "object",
-							"properties": {
-								"#comment": {
-									"type": "string"
-								},
-								"HAnimJoint" : {
-									"$ref":"#/$defs/HAnimJoint"
-								},
-								"HAnimSegment" : {
-									"$ref":"#/$defs/HAnimSegment"
-								},
-								"ProtoInstance" : {
-									"$ref":"#/$defs/ProtoInstance"
-								}
-							},
-							"additionalProperties": false
-						}
-					},
 					"-X3DCoordinateNodeSFNode" : {
 			"title" : "X3DCoordinateNode",
 						"$comment":"SFNode inputOutput",
@@ -30945,6 +30924,9 @@
 								},
 								"Group" : {
 									"$ref":"#/$defs/Group"
+								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
@@ -31653,6 +31635,9 @@
 								"Group" : {
 									"$ref":"#/$defs/Group"
 								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
+								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
 								},
@@ -31881,6 +31866,9 @@
 								},
 								"Group" : {
 									"$ref":"#/$defs/Group"
+								},
+								"HAnimJoint" : {
+									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimSegment" : {
 									"$ref":"#/$defs/HAnimSegment"
@@ -32175,9 +32163,6 @@
 								},
 								"HAnimHumanoid" : {
 									"$ref":"#/$defs/HAnimHumanoid"
-								},
-								"HAnimJoint" : {
-									"$ref":"#/$defs/HAnimJoint"
 								},
 								"HAnimMotion" : {
 									"$ref":"#/$defs/HAnimMotion"
