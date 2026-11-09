@@ -954,7 +954,7 @@ code = '''{
             ]
         },
         "@geoSystem-GD": {
-            "title": "geoSystem GD/GDC — Geographic Degrees",
+            "title": "geoSystem GD/GDC - Geographic Degrees",
             "$comment": "Geographic lat/lon degrees. Optional second token selects ellipsoid datum; defaults to WE (WGS84 ellipsoid).",
             "type": "array",
             "minItems": 1,
