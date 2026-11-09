@@ -995,7 +995,7 @@ code = '''{
             }
         },
         "@geoSystem-GC": {
-            "title": "geoSystem GC/GCC — Geocentric",
+            "title": "geoSystem GC/GCC - Geocentric",
             "$comment": "Earth-centered geocentric coordinate system. No additional parameters.",
             "type": "array",
             "minItems": 1,
@@ -1020,7 +1020,7 @@ code = '''{
         },
         "@geoSystem-UTM-zone": {
             "title": "UTM zone number",
-            "$comment": "Zone 1–60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
+            "$comment": "Zone 1-60 prefixed with Z. Leading zero is optional: Z1 and Z01 are both valid.",
             "type": "string",
             "pattern": "^Z(0?[1-9]|[1-5][0-9]|60)$"
         },
